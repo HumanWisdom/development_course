@@ -33,7 +33,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt0px mb15px">
                   <h4 class="mtb0px fw_500 fs_24px lh_140p fc_ffffff">
-For parents                 </h4>
+Supporting Parents                 </h4>
                 </div>
               </div>
 
@@ -63,7 +63,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
 
                       <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                         <h4 class=" fs_15px fw_500 lh_130p fc_e58d82">
-                          Introduction to For parents 
+                          Introduction 
                       <!--   </h4>
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis"> -->
                          
@@ -750,6 +750,75 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
+
+                             <a (click)="enableRoute('/journal/inner-critic')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Being happier 
+                                    </h4>
+                                  </div>
+
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </a>
+                             <a (click)="enableRoute('/journal/inner-critic')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Develop a positive mindset
+                                    </h4>
+                                  </div>
+
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </a>
+                             <a (click)="enableRoute('/journal/inner-critic')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Worrying what others think
+                                    </h4>
+                                  </div>
+
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </a>
+                             <a (click)="enableRoute('/journal/inner-critic')">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                    <h4 class="mtb0px fw_600 fs_15px lh_140p fc_e58d82">
+                                      Overthinking
+                                    </h4>
+                                  </div>
+
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                    <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </a>
                           </div>
 
                         </div>
@@ -891,7 +960,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                   </div>
 
                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a routerLink="/adults/stress">
+                    <a routerLink="/adults/anger">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -956,7 +1025,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                     </a>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
                     <a routerLink="/adults/conditioning">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1023,7 +1092,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
-                    <a  routerLink="/adults/dealing-with-depression">
+                    <a  routerLink="/adults/relationships">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -1056,7 +1125,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
-                    <a routerLink="/adults/external-approval">
+                    <a routerLink="/adults/communication">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -1089,7 +1158,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
-                    <a routerLink="/adults/bullying">
+                    <a routerLink="/adults/money">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -1122,7 +1191,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="!enablepathwayViewMore">
-                    <a routerLink="/adults/dealing-with-death">
+                    <a routerLink="/adults/kindness">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -1465,7 +1534,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                         <img
-                                          src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/01.webp"
+                                          src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/06.webp"
                                           class="img-responsive w100 img_cbr_01">
                                       </div>
                                     </div>
@@ -1488,7 +1557,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
 
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                                         <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          30:49
+                                          36:40
                                         </h4>
                                       </div>
                                     </div>
@@ -1502,7 +1571,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                         <img
-                                          src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/02.webp"
+                                          src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/26.webp"
                                           class="img-responsive w100 img_cbr_01">
                                       </div>
                                     </div>
@@ -1525,7 +1594,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
 
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                                         <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          01:18:05
+                                          00:30:04
                                         </h4>
                                       </div>
                                     </div>
@@ -1539,7 +1608,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                         <img
-                                          src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/03.webp"
+                                          src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/72.webp"
                                           class="img-responsive w100 img_cbr_01">
                                       </div>
                                     </div>
@@ -1562,7 +1631,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
 
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                                         <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          01:18:05
+                                          01:06:06
                                         </h4>
                                       </div>
                                     </div>
@@ -1576,7 +1645,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                         <img
-                                          src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/04.webp"
+                                          src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/images/events/76.webp"
                                           class="img-responsive w100 img_cbr_01">
                                       </div>
                                     </div>
@@ -1599,7 +1668,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
 
                                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                                         <h4 class="mtb0px fs_12px lh_140p fc_64688e tright">
-                                          44:52
+                                          39:38
                                         </h4>
                                       </div>
                                     </div>
@@ -1758,7 +1827,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                               </div>
                             </a>
 
-                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.13.mp3', '3 ways to overcome stress', '2')">
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.13.mp3', '3 ways to overcome stress', '13')">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1783,7 +1852,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                               </div>
                             </a>
 
-                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.15.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                            <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.11.mp3', 'Releasing negative thoughts', '11')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1808,7 +1877,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                               </div>
                             </a>
 
-                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.1.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.1.mp3', ' Body Scan', '1')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1833,7 +1902,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                               </div>
                             </a>
                                
-                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.2.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.2.mp3', 'Noticing Thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1857,7 +1926,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.3.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.3.mp3', 'Tuning In', '3')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1881,7 +1950,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.15.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.19.mp3', 'Listening', '19')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1905,7 +1974,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.15.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.23.mp3', 'Be present in your own life', '23')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1929,7 +1998,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.15.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.31.mp3', 'Dealing with depression', '31')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1953,7 +2022,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.15.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.33.mp3', 'Heart meditation', '33')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -1977,7 +2046,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.15.mp3', 'Releasing negative thoughts', '2')" *ngIf="!enableGuidedMediViewMore">
+                               <a (click)="audiopage('/guided-meditation/audios/guided-meditation+1.35.mp3', 'Releasing anxiety', '35')" *ngIf="!enableGuidedMediViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex div_gm">
 
@@ -2120,7 +2189,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                               </div>
                             </a>
 
-                            <a (click)="viewblog('16')" *ngIf="enableblogViewMore">
+                            <a (click)="viewblog('59')" *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
 
@@ -2144,7 +2213,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                             </a>
 
 
-                             <a (click)="viewblog('20')" *ngIf="enableblogViewMore">
+                             <a (click)="viewblog('62')" *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
 
@@ -2165,7 +2234,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                             <a (click)="viewblog('20')" *ngIf="enableblogViewMore">
+                             <a (click)="viewblog('63')" *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
 
@@ -2186,7 +2255,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                             <a (click)="viewblog('20')" *ngIf="enableblogViewMore">
+                             <a (click)="viewblog('65')" *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
 
@@ -2207,7 +2276,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                             <a (click)="viewblog('67')" *ngIf="enableblogViewMore">
+                             <a (click)="viewblog('67')" *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
 
@@ -2228,7 +2297,7 @@ Welcome to this new section, where we have curated a wealth of content to suppor
                                 </div>
                               </div>
                             </a>
-                             <a (click)="viewblog('68')" *ngIf="enableblogViewMore">
+                             <a (click)="viewblog('68')" *ngIf="!enableblogViewMore">
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_06 center_flex">
 
