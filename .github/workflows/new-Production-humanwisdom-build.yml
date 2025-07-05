@@ -64,6 +64,7 @@ jobs:
           path: HumanWisdom/builds/compressed/program.tgz
 
   adults-deploy:
+    if: false
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -102,7 +103,7 @@ jobs:
 
   build-teenagers:
     runs-on: ubuntu-latest
-    needs: adults-deploy
+    needs: build
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -154,6 +155,7 @@ jobs:
           path: HumanWisdom/builds/compressed/program.tgz
   
   deploy-teenagers:
+      if: false
       runs-on: ubuntu-latest
       needs: build-teenagers
       steps:
