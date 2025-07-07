@@ -51,4 +51,8 @@ export class S75001Page implements OnInit {
     else
      this.location.back()
   }
+
+    routeTointroDash() {
+      this.router.navigate(['/adults/dashboard/wisdom-exercise']);
+    }
 }

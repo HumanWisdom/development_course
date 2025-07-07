@@ -52,4 +52,8 @@ export class S157001Page implements OnInit {
       this.router.navigate([url]);
     }
   }
+
+   routeTointroDash() {
+    this.router.navigate(['/teenagers/dashboard/wisdom-exercise']);
+  }
 }
