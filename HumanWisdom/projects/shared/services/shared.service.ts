@@ -256,15 +256,15 @@ export class SharedService {
         },
          {
           id: "18",
-          displayName: "Parent-hub",
+          displayName: "For Parents",
           active: false,
           name: 'For Parents',
         },
         {
           id: "0",
           active: false,
-          displayName: "Wisdom",
-          name: 'Wisdom',
+          displayName: "Key Ideas",
+          name: 'Key Ideas',
         }
       ]
     } else {
