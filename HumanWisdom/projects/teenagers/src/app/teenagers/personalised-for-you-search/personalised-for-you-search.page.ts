@@ -411,6 +411,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
         break;
       }
      default: {
+       if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
+       let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
+        url = `${m.ModuleUrl}`;
+         break;
+      }
       let searchInpt = (' ' + this.searchinp).slice(1);
       searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
        url = `/teenagers/site-search/${searchInpt}`

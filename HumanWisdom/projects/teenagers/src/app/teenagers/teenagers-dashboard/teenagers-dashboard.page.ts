@@ -2044,8 +2044,15 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         url = `/teenagers/curated/overcome-stress-anxiety`
         break;
       }
-     default: {
-       url = `/teenagers/site-search/${this.searchinp}`
+      default: {
+       if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
+       let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
+        url = `${m.ModuleUrl}`;
+         break;
+      }
+      let searchInpt = (' ' + this.searchinp).slice(1);
+      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+       url = `/teenagers/site-search/${searchInpt}`
         break;
       }
 

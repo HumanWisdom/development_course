@@ -21,7 +21,7 @@ export class S92177Page implements OnInit {
   link="/adults/dealing-with-depression/s92178"
   name="#6 Phase 4 -Understand your mind"
   progressImg=""
-  toc="dealing-with-depression/s92001"
+  toc="adults/dealing-with-depression/s92001"
 
   constructor(private router: Router, private location:Location,private service: AdultsService) { }
 

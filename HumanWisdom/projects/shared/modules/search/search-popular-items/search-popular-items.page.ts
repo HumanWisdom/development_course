@@ -132,7 +132,7 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
       case "exercises":
-      case "Awareness Exercises":
+      case "awareness exercises":
         {
         url = `/${SharedService.getprogramName()}/wisdom-exercise`
         break;
@@ -170,6 +170,12 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
      default: {
+      if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.search.toLocaleLowerCase()).length > 0) {
+       let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.search.toLocaleLowerCase())[0];
+        url = `${m.ModuleUrl}`;
+         break;
+      }
+
       let regexp =  this.search.repeat(1);
       let searchInpt = regexp;
       searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");

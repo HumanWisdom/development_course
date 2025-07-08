@@ -10,7 +10,7 @@ import { AdultsService } from '../../adults.service';
 })
 export class S92268Page implements OnInit {
   
-  toc="dealing-with-depression/s92001"
+  toc="adults/dealing-with-depression/s92001"
   moduleImg="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/20.webp"
   
   bg=""
