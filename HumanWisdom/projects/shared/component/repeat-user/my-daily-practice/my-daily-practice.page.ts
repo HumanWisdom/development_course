@@ -47,7 +47,8 @@ export class MyDailyPracticePage implements OnInit {
   }
 
   ngOnInit() {
-    this.userName = localStorage.getItem('userName');
+ 
+    this.userName =JSON.parse(localStorage.getItem('userName'));
     this.userName = this.userName ? this.userName.replace('"',''): this.userName;
   if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
