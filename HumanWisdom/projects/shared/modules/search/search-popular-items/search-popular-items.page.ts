@@ -170,11 +170,11 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
      default: {
-      if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.search.toLocaleLowerCase()).length > 0) {
-       let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.search.toLocaleLowerCase())[0];
-        url = `${m.ModuleUrl}`;
-         break;
-      }
+      // if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.search.toLocaleLowerCase()).length > 0) {
+      //  let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.search.toLocaleLowerCase())[0];
+      //   url = `${m.ModuleUrl}`;
+      //    break;
+      // }
 
       let regexp =  this.search.repeat(1);
       let searchInpt = regexp;
