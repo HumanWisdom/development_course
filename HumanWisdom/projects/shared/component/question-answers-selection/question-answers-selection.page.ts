@@ -102,10 +102,14 @@ progress=0;
     this.selectedObj[index] = strSelected;
     this.receiveRating(JSON.stringify(obj));
     this.btnDisabled = false;
-    if(index==9)
-     this.submitProgress();
-    else
-       this.next('click_Daily_Practice_Next');
+    setTimeout(() => {   
+  
+        if(index==9)
+          this.submitProgress();
+        else
+          this.next('click_Daily_Practice_Next');
+
+    }, 500);
 
   }
 

@@ -55,7 +55,7 @@ export class AdultsService {
     },
      {
       id: "19",
-      name: 'Build your self awareness',
+      name: 'Develop your self awareness',
     }
   ]
 
