@@ -234,6 +234,8 @@ export class WisdomScalePage implements OnInit {
 
   ngOnInit() {
 
+     
+
     this.title.setTitle('Mindful Insights: Our Happiness Survey for a More Fulfilling Life')
     this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Happiness Survey for a More Fulfilling Life' })
     this.meta.updateTag({ property: 'description', content: 'Discover mindful insights with our Happiness Survey. Share your thoughts on meditation, spirituality, and other topics related to a more fulfilling life.' })

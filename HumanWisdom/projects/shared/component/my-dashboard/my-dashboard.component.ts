@@ -9,6 +9,7 @@ import { NavigationService } from '../../services/navigation.service';
 import { CommonService } from '../../services/common.service';
 import { SectionCard } from '../section-card/section-card.page';
 import { LogEventService } from '../../services/log-event.service';
+import { Constant } from "../../services/constant";
 
 
 
@@ -57,7 +58,8 @@ export class MyDashboardComponent implements OnInit {
      }
 
   ngOnInit() {
-   
+           SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+
   }
 
     goBack(){
