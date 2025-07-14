@@ -4813,6 +4813,9 @@ padding: 15px;
   .pd-left{
     padding-left: 25%;
   }
+   .pd-left-10p{
+    padding-left: 10%;
+  }
   .max-width-px {
     max-width: 300px !important;
   }
@@ -5161,6 +5164,11 @@ padding: 15px;
     margin-left: 3% !important;
   }
 
+  .mt-3p{
+    margin-top: 3% !important;
+  }
+
+
   .w-88p{
     width: 88% !important;
   }
@@ -5179,8 +5187,8 @@ margin-top: -72px !important;
 }
 .quotation-comma{
   justify-content: right;
-    display: flex
-;
+    display: flex;
+    margin-right: -20px !important;
 }
 
 .btn_disabled {

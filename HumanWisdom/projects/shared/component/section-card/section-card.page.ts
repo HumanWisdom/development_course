@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { SharedService } from "../../services/shared.service";
 import { LogEventService } from '../../services/log-event.service';
 import { ProgramType } from "../../models/program-model";
+import { Constant } from "../../services/constant";
 
 @Component({
   selector: 'app-section-card',
@@ -24,6 +25,7 @@ export class SectionCard implements OnInit {
 
   ngOnInit() {
     this.updateStyles();
+       SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
   }
 
   rouetToPath(section){
