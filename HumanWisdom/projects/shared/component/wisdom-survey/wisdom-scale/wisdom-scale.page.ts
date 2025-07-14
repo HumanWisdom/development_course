@@ -518,7 +518,11 @@ export class WisdomScalePage implements OnInit {
     } else {
       this.router.navigate([url]);
     } */
-    this.router.navigate([SharedService.getDashboardUrls()])
+   
+     if(localStorage.getItem("NaviagtedFrom"))  
+       this.router.navigate([localStorage.getItem("NaviagtedFrom")]);
+      else 
+         this.router.navigate([SharedService.getDashboardUrls()])
   }
 
   viewClickEvent(url) {

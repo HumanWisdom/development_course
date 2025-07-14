@@ -25,7 +25,6 @@ export class SectionCard implements OnInit {
 
   ngOnInit() {
     this.updateStyles();
-       SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
   }
 
   rouetToPath(section){
