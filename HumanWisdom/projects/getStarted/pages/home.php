@@ -271,8 +271,11 @@
       font-weight: 600;
       color: #000000;
       margin: 0;
-
       opacity: 75%;
+    }
+    .text-color{
+      opacity: 75%;
+      color: #000000;
     }
 
     .testimonial-info h3 {
@@ -423,7 +426,12 @@
               </div><span class="feature-txt">Develop soft skills to succeed at work</span>
             </li>
           </ul>
-          <button class="cta-button"><span class="btn-txt">Let's get started!</span></button>
+         <div id="PricingSelectBtnHomePage">
+           <button class="cta-button">
+            <span class="btn-txt">Let's get started!</span>
+          </button>
+        </div>
+
         </div>
       </div>
     </div>
@@ -487,7 +495,7 @@
   <div class="section-headernew mob-section section-text">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7">
+        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7 text-color" >
           Findings from a survey of 1,000 HappierMe app users </h2>
       </div>
     </div>
@@ -512,7 +520,7 @@
   <div class="section-headernew mob-section">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ">
-        <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0.7  section-text">
+        <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0.7  section-text text-color">
           Discover HappierMe in just 1 minute
         </h2>
       </div>
@@ -540,7 +548,9 @@
     </div>
 
   </div>
-
+    <!-- vendor_footer -->
+    <?php include('../includes/vendor_footer.php'); ?>
+    <!-- /vendor_footer -->
 </body>
 
 </html>
