@@ -37,6 +37,8 @@
 <link href="../assets/font/font_weight.css" rel="stylesheet" >
 <link href="../assets/font/line_height.css" rel="stylesheet" >
 <link href="../assets/css/style_hb.css" rel="stylesheet" > -->
+<link href="../assets/css/landing.css" rel="stylesheet">
+
 <link href="../assets/css/main.css" rel="stylesheet">
 <link href="../assets/css/responsive.css" rel="stylesheet">
 <link href="../assets/font/font_colour.css" rel="stylesheet">

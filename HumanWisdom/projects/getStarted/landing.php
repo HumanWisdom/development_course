@@ -78,15 +78,15 @@
 
 
     
-    <section class="hpt120px">
+    <section class="hpt120px ">
        <!-- header -->
       
-      <div class="row center_flex web_home_div">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock w-header">
+      <div class="row center_flex web_home_divlanding">
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ddflex_mblock w-header">
 
          
          
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100"> 
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100"> 
             <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
               controlsList="nodownload" id="vid">
@@ -97,12 +97,12 @@
             <!-- <iframe  width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>  -->
                <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>  -->
-              <img style="width:100%;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+              <img style="width:100%;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/Adults+teenagers+2.svg" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
              <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
@@ -129,8 +129,8 @@
 
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h1 class="mtb0px fs_56px fw_600 lh_130p fc_834b66 ta_lc">
-                HappierMe for a happier you
+                <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc">
+                Understand your mind. Transform your life.       
                 </h1>
               </div>
             </div>
