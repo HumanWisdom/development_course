@@ -58,7 +58,7 @@ export class MyDashboardComponent implements OnInit {
      }
 
   ngOnInit() {
-           SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+          //  SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
   }
 
