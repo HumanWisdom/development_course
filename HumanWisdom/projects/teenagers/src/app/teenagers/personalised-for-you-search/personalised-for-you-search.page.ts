@@ -139,7 +139,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right",
           align: "end"
         }
-      }, */
+      }, 
       {
        element: ".tour_exercises",
        popover: {
@@ -147,7 +147,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
          description: 'You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
          side: "right"
        }
-     },
+     },*/
       {
         element: ".tour_pathway",
         popover: {
