@@ -117,7 +117,7 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 10;
+  public tourTotalIndex = 9;
   public tourIndex = 1;
   public isSkip = false;
 
@@ -550,7 +550,7 @@ export class AdultDashboardPage implements OnInit {
           description: 'Explore our rich library of motivational content.',
           side: "right"
         }
-      },*/
+      },
       {
         element: ".tour_exercises",
         popover: {
@@ -558,7 +558,7 @@ export class AdultDashboardPage implements OnInit {
           description: ' You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
           side: "top"
         }
-      },
+      },*/
       {
         element: ".tour_explore",
         popover: {
@@ -604,7 +604,7 @@ export class AdultDashboardPage implements OnInit {
 
 
     if(!this.isloggedIn) {
-      this.tourTotalIndex = 8;
+      this.tourTotalIndex = 7;
       stepList.splice(1, 1);
       stepList.splice(8, 1);
     }
