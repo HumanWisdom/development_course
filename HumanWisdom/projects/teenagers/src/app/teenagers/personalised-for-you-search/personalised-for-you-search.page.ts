@@ -154,7 +154,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life.',
           // side: "right"
-          side: "right"
+          side: "left",
+            align:'end'
         }
       }
     ];
