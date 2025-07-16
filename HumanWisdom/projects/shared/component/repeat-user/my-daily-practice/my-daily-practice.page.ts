@@ -48,10 +48,14 @@ export class MyDailyPracticePage implements OnInit {
 
   ngOnInit() {
  
-    if(JSON.parse(localStorage.getItem('userName')) == undefined || JSON.parse(localStorage.getItem('userName')) == null)  
-         this.userName = localStorage.getItem('userName');
-    else
+    try{
+
         this.userName =JSON.parse(localStorage.getItem('userName'));
+    } catch (error) {
+         this.userName = localStorage.getItem('userName');
+    }
+
+       
    
 
    
