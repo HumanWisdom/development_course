@@ -14,7 +14,7 @@ export class NavigationService {
     var urls = url.split('/');
     var urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
-    if(!this.backClicked && !this.dontPushToHistory(url)) {
+    if(!this.backClicked) {
       if (urltoCheck) {
         let isNan = isNaN(urltoCheck[urltoCheck.length - 1]);
         if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
