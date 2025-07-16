@@ -115,7 +115,8 @@ if (discoverSectionPricingClick) {
 const teenagersLogin = document.getElementById('teenagersLogin');
 if (teenagersLogin) {
     teenagersLogin.addEventListener('click', function () {
-        window.location.href = url+"/teenagers/onboarding/login";
+        // window.location.href = url+"/teenagers/onboarding/login";
+         window.location.href = url+"/teenagers/intro-carousel";
     });
 }
 
@@ -149,7 +150,8 @@ if (teenagersClick) {
 const teenagerCoverClick = document.getElementById('teenagerCoverClick');
 if (teenagerCoverClick) {
     teenagerCoverClick.addEventListener('click', function () {
-           window.location.href = url+"/teenagers/onboarding/login/";
+        //    window.location.href = url+"/teenagers/onboarding/login/";
+        window.location.href = url+"/teenagers/intro-carousel";
     });
 }
 
