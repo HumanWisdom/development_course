@@ -53,7 +53,8 @@ export class DashboardComponent implements OnInit {
      }
 
   ngOnInit() {
-    
+   
+
   }
 
   explore(url:any){
@@ -61,7 +62,7 @@ export class DashboardComponent implements OnInit {
   }
 
     goBack(){
-    var url = this.navigationService.navigateToBackLink();
+    var url = this.navigationService.navigateToSkippedBackLink();
     if (url == null) {
       // this.router.navigate([SharedService.getDashboardUrls()]);
       this.location.back();

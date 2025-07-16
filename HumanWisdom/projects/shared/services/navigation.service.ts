@@ -86,6 +86,15 @@ export class NavigationService {
     return SharedService.getDashboardUrls();
   }
 
+  navigateToSkippedBackLink(){
+    this.history.splice(this.history.indexOf(this.router.url)+1)
+    const url = this.goBack();
+    if (url != null) {
+      return url;
+    }
+    return SharedService.getDashboardUrls();
+  }
+
   public goBack() {
     let prevPath=null;
     if (this.history.length > 0) {
