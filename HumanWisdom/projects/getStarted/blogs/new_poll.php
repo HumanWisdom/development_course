@@ -191,8 +191,7 @@ When leaders lack emotional intelligence, it shows — in how they handle stress
                 <h4 class="mtb0px blog_desc">
                   
 The effects ripple outward:
-                </h4>
-                <h4 class="mtb0px blog_desc">
+                
                   
               <ul>
 
@@ -457,8 +456,8 @@ Download the Happierme app </a>and explore it for free.
  <li>
  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/wisdom-for-workplace">
 
- Work and Leadership section in app
-</a></li>
+ Work and Leadership section 
+</a> <b>in app</b></li>
 <li>
 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/blog-article?sId=40">
 
