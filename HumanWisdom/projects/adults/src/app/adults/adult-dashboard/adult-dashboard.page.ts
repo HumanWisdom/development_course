@@ -117,7 +117,7 @@ export class AdultDashboardPage implements OnInit {
   public YourTopicofChoice = [];
   public registrationForm: any;
   public isIos = false;
-  public tourTotalIndex = 9;
+  public tourTotalIndex = 10;
   public tourIndex = 1;
   public isSkip = false;
 
@@ -541,24 +541,6 @@ export class AdultDashboardPage implements OnInit {
           side: "top"
         }
       },
-
-
-      /*{
-        element: ".tour_find_inspiration",
-        popover: {
-          title: 'Find Inspiration',
-          description: 'Explore our rich library of motivational content.',
-          side: "right"
-        }
-      },
-      {
-        element: ".tour_exercises",
-        popover: {
-          title: 'Healthy mind',
-          description: ' You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
-          side: "top"
-        }
-      },*/
       {
         element: ".tour_explore",
         popover: {
@@ -596,17 +578,38 @@ export class AdultDashboardPage implements OnInit {
         popover: {
           title: 'Begin Here',
           description: 'Begin with this guide to HappierMe. Explore the app for free. Start your free trial to unlock the full app. Cancel anytime.',
-          side: "bottom"
+          side: "top",
+          align:"start"
         }
       }
     ];
 
+    
+
+
+      /*{
+        element: ".tour_find_inspiration",
+        popover: {
+          title: 'Find Inspiration',
+          description: 'Explore our rich library of motivational content.',
+          side: "right"
+        }
+      },
+      {
+        element: ".tour_exercises",
+        popover: {
+          title: 'Healthy mind',
+          description: ' You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
+          side: "top"
+        }
+      },*/
+
 
 
     if(!this.isloggedIn) {
-      this.tourTotalIndex = 7;
+      this.tourTotalIndex = 8;
       stepList.splice(1, 1);
-      stepList.splice(8, 1);
+      stepList.splice(7, 1);
     }
 
     const driverObj = driver({
