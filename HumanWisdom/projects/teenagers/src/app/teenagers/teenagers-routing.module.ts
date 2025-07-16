@@ -11,6 +11,10 @@ import { NewsletterComponent } from '../../../../shared/component/newsletter/new
 import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/my-dashboard.component';
 import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
 import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
+import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
+import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -289,8 +293,8 @@ const routes: Routes = [
   },
   {
     path: 'find-answers/:url',
-    loadChildren: () => import('../teenagers/find-answers/find-answers.module').then(m => m.FindAnswersModule)
-  },
+    loadChildren: () => import('./find-answers/find-answers.module').then(m => m.FindAnswersModule)
+  }, 
   {
     path: 'feel-better-now',
     loadChildren: () => import('../../../../shared/component/feel-better-now/feel-better-now.module').then(m => m.FeelBetterNowModule),
@@ -312,6 +316,11 @@ const routes: Routes = [
   },
   {
     path: 'audiopage/:audiolink/:RowId/:enable/:title',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title/:moduleName',
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
   },
@@ -534,6 +543,14 @@ const routes: Routes = [
   {
     path: "quotation/:id",
     component: HappierMeQuotationPage
+  },
+  {
+    path: 'wellness-survey',
+    component: QuestionAnswersSelection
+  },
+  {
+    path: 'soundscapes',
+    component: CommonScreenPage
   }
 ];
 

@@ -152,7 +152,7 @@
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
-                                Introducing
+                                Introduction
                                 <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
                                   Noticing your body
                                 </h4>
@@ -301,7 +301,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <p class="fs_18px fw_400 lh_150p fc_ffffff">
-                            To take care of our body we have to begin by being sensitive to what it is telling us
+                            To take care of our body we have to begin by being sensitive to what it is telling us.
                           </p>
 
                         </div>
@@ -376,20 +376,10 @@
 
                   <div class="carousel-inner">
 
-                    <!-- journal -->
-                    <div class="item active">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="861"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
-
-                    <!-- journal -->
-                    <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="862"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
+                 
 
                     <!-- audio -->
-                    <div class="item">
+                    <div class="item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -447,6 +437,18 @@
                       <!-- /transcript -->
                     </div>
                     <!-- /audio -->
+
+                       <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="861"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="862"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
 
                     <!-- simple text -->
                     <div class="item">
@@ -544,32 +546,10 @@
 
                   <div class="carousel-inner">
 
-                    <!-- journal -->
-                    <div class="item active">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="863"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
-
-                    <!-- journal -->
-                    <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="864"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
-
-                    <!-- journal -->
-                    <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="865"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
-
-                    <!-- journal -->
-                    <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="866"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
+                 
 
                     <!-- audio -->
-                    <div class="item">
+                    <div class="item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -630,6 +610,30 @@
                     </div>
                     <!-- /audio -->
 
+                       <!-- journal -->
+                    <div class="item ">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="863"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="864"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="865"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="866"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
                     <!-- quotation -->
                     <div class="item">
                       <div class="row center_flex p20px">
@@ -685,6 +689,20 @@
                     </div>
                     <!-- /simple text -->
 
+                        <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
+                           Today, eat and drink with a deeper awareness of what is happening in your mind as you do so, and notice what your body is signaling to you.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
                   </div>
 
                 </div>
@@ -726,8 +744,70 @@
 
                   <div class="carousel-inner">
 
-                    <!-- journal -->
+                        <!-- audio -->
                     <div class="item active">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 3
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Notice your posture
+                                </h4>
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <app-audio-player class="audio-test"
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/2.3.1.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft" *ngIf="isShowAudio"
+                        [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div
+                          class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                          <p>
+                            Eating and drinking consciously based on what our body is telling us allows us to be
+                            healthy, avoid obesity, and stay well hydrated.
+                          </p>
+
+                          <p>
+                            Many diseases like diabetes are linked to people being overweight. Obesity rates are rising,
+                            and are 42% in the US and 28% in the UK. When we eat we are usually thinking of something
+                            else.
+                            If we lived with a greater awareness of what we were eating, and what the body was
+                            signaling, this problem could be avoided.
+                          </p>
+
+                          <p>
+                            Eating and drinking for pleasure is not wrong, but can contribute to obesity. Alcohol is a
+                            toxin which has been linked to several diseases including cancer.
+                          </p>
+
+                          <p>
+                            Scientists are also finding links between the type of food we eat and disease. Colon cancer
+                            for example is linked to eating too much red meat.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="867"></app-journal-we>
                     </div>
                     <!-- /journal -->
@@ -834,20 +914,10 @@
 
                   <div class="carousel-inner">
 
-                    <!-- journal -->
-                    <div class="item active">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="869"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
-
-                    <!-- journal -->
-                    <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="870"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
+                  
 
                     <!-- audio -->
-                    <div class="item">
+                    <div class="item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -905,6 +975,17 @@
                     </div>
                     <!-- /audio -->
 
+                      <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="869"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="870"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
                     <!-- quotation -->
                     <div class="item">
                       <div class="row center_flex p20px">

@@ -30,8 +30,13 @@ export class TeenTalkPage implements OnInit {
     })
   }
 
-  teentalkS3(id, title) {
-    this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', title])
+  teentalkS3(id, title, isFree) {
+       let sub: any = localStorage.getItem("Subscriber")
+        if (sub == 0 && isFree === "0") {
+            this.router.navigate(['teenagers/subscription/start-your-free-trial']);
+        } else {
+            this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', title])
+        }
   }
  
   searchTeenTalk($event) 

@@ -598,7 +598,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         element: ".tour_journal",
         popover: {
           title: 'Journal',
-          description: 'Your private journal with guided questions (visible only to you).',
+          description: 'Your private journal with Guided journaling (visible only to you).',
           side: "top"
         }
       },
@@ -1920,7 +1920,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     if (name === 'Manage your emotions') {
       this.logeventservice.logEvent('click_emotions');
       this.router.navigate(['/teenagers/curated/manage-your-emotions'])
-    } else if (name === 'Manage your mental health') {
+    } else if (name === 'Manage your mental wellbeing') {
       this.logeventservice.logEvent('click_mental_health');
       this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
     } else if (name === 'Overcome unhelpful habits') {
@@ -1941,6 +1941,9 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }  else if (name === 'Succeed in life') {
       this.logeventservice.logEvent('click_succeed_in_life');
       this.router.navigate(['/teenagers/curated/succeed-in-life'])
+    } else if (name === 'Build your self awareness') {
+      this.logeventservice.logEvent('click_self_awareness');
+      this.router.navigate(['/teenagers/wisdom-exercise'])
     }
   }
 
@@ -2041,8 +2044,15 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
         url = `/teenagers/curated/overcome-stress-anxiety`
         break;
       }
-     default: {
-       url = `/teenagers/site-search/${this.searchinp}`
+      default: {
+      //  if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
+      //  let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
+      //   url = `${m.ModuleUrl}`;
+      //    break;
+      // }
+      let searchInpt = (' ' + this.searchinp).slice(1);
+      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+       url = `/teenagers/site-search/${searchInpt}`
         break;
       }
 

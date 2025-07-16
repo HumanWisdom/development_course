@@ -130,7 +130,7 @@
                   </a>
                   is a type of therapy that focuses on changing negative thought patterns and behaviors. The HappierMe app offers CBT exercises and resources to help you manage anxiety and overcome negative thinking. This is done through the Wisdom Exercises section and using
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
-                  Guided Questions
+                  Guided journaling
                   </a>in the
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
                   Online Journal.

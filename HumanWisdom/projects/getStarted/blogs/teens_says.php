@@ -376,7 +376,7 @@ What sounds dismissive is often protective.
                    Tools to reflect, communicate, and self-regulate.                </li>
 
                    <li>
-                   Journaling spaces with guided questions that help teens explore their feelings without fear.
+                   Journaling spaces with Guided journaling that help teens explore their feelings without fear.
 
                    </li>
                    <li>

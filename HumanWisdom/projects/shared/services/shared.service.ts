@@ -254,11 +254,17 @@ export class SharedService {
           active: false,
           name: 'Manage your emotions',
         },
+         {
+          id: "18",
+          displayName: "For Parents",
+          active: false,
+          name: 'For Parents',
+        },
         {
           id: "0",
           active: false,
-          displayName: "Wisdom",
-          name: 'Wisdom',
+          displayName: "Key Ideas",
+          name: 'Key Ideas',
         }
       ]
     } else {
@@ -349,7 +355,9 @@ export class SharedService {
         { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addictions" },
         { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
         { "id": 9, "name": "meditation" ,"title":"Meditation" },
-        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" }
+        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" },
+        { "id": 19, "name": "parent-hub" ,"title":"For Parents" },
+        { "id": 20, "name": "wisdom-exercise" ,"title":"Develop your self awareness" }
       ]
       return data.filter(x => x.name == name)[0];
     }
@@ -363,7 +371,8 @@ export class SharedService {
         { "id": 15, "name": "manage-your-emotions"  ,"title":"Manage your emotions"},
         { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome Unhelpful Habits"},
         { "id": 17, "name": "understand-yourself" ,"title":"Understand yourself"},
-        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in Life"}]
+        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in Life"},
+        { "id": 21, "name": "wisdom-exercise" ,"title":"Develop your self awareness" }]
       return data.filter(x => x.name == name)[0];
     }
   }
@@ -379,7 +388,9 @@ export class SharedService {
         { "id": 7, "name": "habits-and-addiction" ,"title":"Habits and Addiction" },
         { "id": 8, "name": "deal-with-loss" ,"title":"Deal with loss" },
         { "id": 9, "name": "meditation" ,"title":"Meditation" },
-        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" }
+        { "id": 10, "name": "manage-your-emotions" ,"title":"Manage your emotions" },
+        { "id": 19, "name": "parent-hub" ,"title":"For Parents" },
+        { "id": 20, "name": "wisdom-exercise" ,"title":"Develop your self awareness" }
       ]
       return data.filter(x => x.title == name)[0];
     }
@@ -393,7 +404,8 @@ export class SharedService {
         { "id": 15, "name": "manage-your-emotions"  ,"title":"Manage your emotions"},
         { "id": 16, "name": "overcome-unhelpful-habits"  ,"title":"Overcome unhelpful habits"},
         { "id": 17, "name": "understand-yourself" ,"title":"Understand yourself"},
-        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in life"}]
+        { "id": 18, "name": "succeed-in-life" ,"title":"Succeed in life"},
+        { "id": 21, "name": "wisdom-exercise" ,"title":"Develop your self awareness" }]
       return data.filter(x => x.title == name)[0];
     }
   }
@@ -447,6 +459,47 @@ export class SharedService {
         return 4;
       }
     }
+  }
+
+
+  public static getScreenConfiguration(name="") {
+      if(name =='SoundCapes'){
+        return {
+          moduleName: "Soundscapes",
+          shortDescription: "Explore a variety of soundscapes designed to help you relax, focus, and sleep better. These sounds have been carefully chosen to help you relax. You can also use them as part of your meditation or breathing practice.",
+          preferenceData: [
+              {
+                id: "999",
+                active: true,
+                name: 'All'
+              },
+              {
+                id: "1",
+                active: false,
+                name: 'Sound For Relaxation'
+              },
+              {
+                id: "2",
+                active: false,
+                name: 'Sound For Sleep'
+              }
+            ],
+            apiMethod: "getSoundsCapesList",
+  filterByProgramId: "ProgIDs",
+  sort: null,
+  transform: null,
+  localStorageKey: "soundsCapes",
+  shareBaseUrl: "https://happierme.app",
+  shareTitle: "HappierMe Program",
+  shareText: "Hey, check out the HappierMe Program",
+  checkIsFreeMethod: "CheckShortsIsFree",
+  tocImage:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sounndscapes.webp",
+  searchFields: ["Title", "searchtags"],
+  videoUrlField: "VideoUrl",
+  titleField: "Title"
+        };
+      }
+
   }
 }
 

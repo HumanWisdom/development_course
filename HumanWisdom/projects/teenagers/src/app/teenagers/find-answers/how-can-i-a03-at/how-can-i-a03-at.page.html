@@ -1,9 +1,122 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>how_can_i_a03_at</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+      </a>
+    </div>
 
-<ion-content>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+      <!-- <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+          
+        </h1>
+      </a> -->
+    </div>
 
-</ion-content>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
+      <a (click)="changeType()" class="">
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
+          Read Text
+        </h4>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+
+<!-- page content -->
+<div class="right_col mc_01">
+  <div class="cw100p">
+    <div class="row flex_jc_center">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_183c79'">
+        <div class="x_panel p0">
+          <div class="x_content p0 mt40px">
+            <form>
+
+              <!-- audio -->
+              <div class="">
+                <div class="row center_flex p20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                    <div class="row center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                          Cope with exam pressure
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <app-audio-player class="audio-test" 
+                          audioLink="https://d1tenzemoxuh75.cloudfront.net/podcasts/128.mp3">
+                        </app-audio-player>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- transcript -->
+                <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                    <p>
+                      Exams are a fact of life when you are young. They are meant to be a test of your knowledge and how much you have understood. They can also create a  lot of stress and you may not have learned how to deal with it. A little bit of stress and anxiety can boost your performance, but too much of it can impact your mental health, and impair your performance in the exams. 
+                    </p>
+
+                    <p>
+What can you do to manage your mind so you can deal with the pressure of exams?
+
+                    </p>
+
+                    <p>
+The first thing to realise is that millions of young people have been through these exams and you will get through them as well.                     </p>
+
+                    <p>
+                      The first thing to do is practice a breathing exercise - there are many to choose from in the app. They activate your parasympatheic nervous system and help you feel calm now. You need to do them regularly. However powerful the feelings you are experiencing, it's
+important to remind yourself that all feelings eventually pass and this will as well, and that this is part of life. You will be loved and adored again. You probably already are by many people, your friends and family for example, but take that for granted. Try to stay with the feeling, breathing into it, and not allowing it to translate into anger or shame or regret or guilt. Don’t worry what others are thinking - it does not matter and does not help.
+
+                    </p>
+
+                    <p>
+If you are planning to run a marathon, you start preparing months before to get your body in to shape. You need the same approach to exams. There is a lot to learn and it can seem really daunting. You need to make a plan and break up your journey into many small steps.                   </p>
+
+                    <p>
+There are times when you are training for a marathon when you will feel its boring, can’t see the point of it, and want to give up - but you find the motivation to keep going because you want to complete the marathon and do well. Similarly when you are preparing for your exams you may feel you are never going to get through all the material and do well in the exams. You just need to remind yourself that your mind is much more capable than you realise, and once you start walking you will reach your destination.                    </p>
+
+                    <p>
+
+Just like most people who run a marathon will not worry about coming first and realize that taking part and getting through are more important, similarly plan to do your best in the exam and not think too much about how you will do compared to others. 
+
+                    </p>
+
+                    <p>
+                     Comparing yourself to others just increases your stress and anxiety, and may not improve how you do.
+
+
+                    </p>
+                    <p>Exams are important, but may not be the life changing events we may think they are. Whatever the outcome of the exam, there are many options that will open up for you to explore. Life is long and full of adventure, and as you get older you will not even remember the grades you got in your exams.
+</p>
+
+                  </div>
+                </div>
+                <!-- /transcript -->
+              </div>
+              <!-- /audio -->
+
+              <div class="pagebreak"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

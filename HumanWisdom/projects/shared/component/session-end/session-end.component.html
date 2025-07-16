@@ -1,4 +1,4 @@
-sessio<app-bg-video></app-bg-video>
+<app-bg-video></app-bg-video>
 
 <!-- page content -->
 <div class="right_col mc_03" role="main">
@@ -10,7 +10,7 @@ sessio<app-bg-video></app-bg-video>
           <div class="x_content p0 tcenter">
             <form>
 
-              <div class="row se_box">
+              <div class="row se_box mb20px">
                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
                   <button class="" (click)="routeJournal()" >
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -21,7 +21,7 @@ sessio<app-bg-video></app-bg-video>
                       </a>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h1 class="txt22 tcenter pt10px_so">
+                      <h1 class="txt22 tcenter ">
                         Fill your journal
                       </h1>
                     </div>
@@ -38,30 +38,17 @@ sessio<app-bg-video></app-bg-video>
                       </a>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h1 class="txt22 tcenter pt10px_so">
+                      <h1 class="txt22 tcenter ">
                         Join a discussion
                       </h1>
                     </div>
                   </button>
                 </div>
 
-                <!-- <div class="col-md-3 col-sm-3 col-xs-3 p0">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <a>
-                      <button type="button" class="btn btn-default mb0 btn_so" data-dismiss="modal">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_consult_coach.svg" alt="">
-                      </button>
-                    </a>
-                  </div>
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <h1 class="txt22 tcenter pt10px_so">
-                      Consult a coach
-                    </h1>
-                  </div>
-                </div> -->
+          
 
                 <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                  <button class="cuser-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false" (click)="shareIndex()">
+                  <button class=""  (click)="shareIndex()">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <button  id="btnShare" type="button" class="btn btn-default mb0 btn_so">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_share.svg" alt="">
@@ -69,8 +56,8 @@ sessio<app-bg-video></app-bg-video>
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h1 class="txt22 tcenter pt10px_so">
-                        Share with friends
+                      <h1 class="txt22 tcenter ">
+                        Share with Friends
                       </h1>
                     </div>
                   </button>
@@ -82,14 +69,14 @@ sessio<app-bg-video></app-bg-video>
               <div class="div_ns">
                 <!-- radial progress bar  -->
                 <div class="row tcenter">
-                  <div class="col-md-12 col-sm-12 col-xs-12 prelative">
+                  <div class="col-md-12 col-sm-12 col-xs-12 prelative p10">
                     <a routerLink="/adults/adult-dashboard">
                       <circle-progress
                         [percent]="progressPercent"
-                        [radius]="56"
-                        [space]="-10"
-                        [outerStrokeWidth]="10"
-                        [innerStrokeWidth]="10"
+                        [radius]="37.5"
+                        [space]="0"
+                        [outerStrokeWidth]="5"
+                        [innerStrokeWidth]="0"
                         [outerStrokeColor]="'#E58D82'"
                         [innerStrokeColor]="'rgba(255,255,255,0.2)'"
                         [animation]="true"
@@ -98,7 +85,7 @@ sessio<app-bg-video></app-bg-video>
                         [imageSrc]="progressImg"
                       >
                       </circle-progress>
-                      <h4 class="fw_500 fs_30px lh_35px fc_ffffff absolute_flex_center">
+                      <h4 class="fw_600 fs_15px lh_150p fc_ffffff absolute_flex_center">
                       {{progressText}}
                       </h4>
                     </a>
@@ -106,21 +93,28 @@ sessio<app-bg-video></app-bg-video>
                 </div>
                 <!-- /radial progress bar -->
 
-                <div class="row pt30px pb20px">
+                <div class="row pt20px pb20px">
                   <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
                     <button (click)="proceed()" type="button" class="btn btn-success mb0 btn_se" data-dismiss="modal">Continue to the next session</button>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                    <h4 class="mtb0px fw_700 fs_18px lh_130p fc_e58d82">
+                <div class="row pb10px">
+                  <div class="col-md-12 col-sm-12 col-xs-12  tcenter ">
+                    <h4 class="mtb0px fw_600 fs_15px lh_150p fc_e58d82">
                       {{name}}
                     </h4>
                   </div>
                 </div>
               </div>
 
+                 <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt30px">
+                        <h4 class=" fs_15px fw_400 lh_150p fc_ffffff center_flex">
+                        Complete all the sessions in this module to receive a certificate.
+                        </h4>
+                      </div>
+                    </div>
             </form>
           </div>
         </div>

@@ -14,7 +14,7 @@ export class NavigationService {
     var urls = url.split('/');
     var urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
-    if(!this.backClicked){
+    if(!this.backClicked) {
       if (urltoCheck) {
         let isNan = isNaN(urltoCheck[urltoCheck.length - 1]);
         if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
@@ -29,6 +29,13 @@ export class NavigationService {
 
     this.backClicked = false;
   }
+
+
+   dontPushToHistory(url: string) {
+    if(url.includes('wisdom-survey') || url.includes('wisdom-score')) {
+      return true;
+    }
+   }
 
    endsWith001ForModule(url: string): boolean {
     // Regular expression to match URLs ending with "001"
@@ -79,6 +86,15 @@ export class NavigationService {
 
 
   navigateToBackLink() {
+    const url = this.goBack();
+    if (url != null) {
+      return url;
+    }
+    return SharedService.getDashboardUrls();
+  }
+
+  navigateToSkippedBackLink(){
+    this.history.splice(this.history.indexOf(this.router.url)+1)
     const url = this.goBack();
     if (url != null) {
       return url;

@@ -13,6 +13,12 @@ import { NewsletterComponent } from '../../../../shared/component/newsletter/new
 import { MyDashboardComponent } from '../../../../shared/component/my-dashboard/my-dashboard.component';
 import { DashboardComponent } from '../../../../shared/component/dashboard/dashboard.component';
 import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
+import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
+import { ParentHubPageModule } from './curated/parent-hub/parent-hub.module';
+import { ParentHubPage } from './curated/parent-hub/parent-hub.page';
+import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -44,6 +50,11 @@ const routes: Routes = [
   {
     path: 'note',
     loadChildren: () => import('../../../../shared/component/note/note.module').then(m => m.NotePageModule)
+  },
+
+  {
+    path: 'parent-hub',
+    loadChildren: () => import('./curated/parent-hub/parent-hub.module').then( m => m.ParentHubPageModule)
   },
   {
     path: 'coursenote',
@@ -693,6 +704,19 @@ const routes: Routes = [
   {
     path: "quotation/:id",
     component: HappierMeQuotationPage
+  },
+  {
+    path: 'wellness-survey',
+    component: QuestionAnswersSelection
+  },
+  {
+    path: 'soundscapes',
+    component: CommonScreenPage
+  },
+  {
+    path: 'audiopage/:audiolink/:RowId/:enable/:title/:moduleName',
+    canActivate: [AudioVideoGuard],
+    component: SingleAudioContentComponent
   },
 ];
 

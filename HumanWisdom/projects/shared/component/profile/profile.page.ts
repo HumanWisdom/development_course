@@ -179,9 +179,9 @@ initialize(){
   }
 
     back(){
-      let url =  this.navigationService.navigateToBackLink();
+      let url =  this.navigationService.navigateToSkippedBackLink();
       if(url){
-        this.location.back();
+        this.router.navigate([url]);
 
       }else{
         url = SharedService.getDashboardUrls();

@@ -138,38 +138,43 @@ export class ChangeTopicPage implements OnInit {
             });
           } else {
             localStorage.setItem('storyNumber', this.selectedId);
-            if (name === 'Manage your emotions') {
+            if (id==14) {
               localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
               this.logeventservice.logEvent('click_emotions');
               this.router.navigate(['/teenagers/curated/manage-your-emotions'])
-            } else if (name === 'Manage your mental health') {
+            } else if (id==10) {
               localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
               this.logeventservice.logEvent('click_stress_anxiety');
               this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
-            } else if (name === 'Succeed in life') {
+            } else if (id==17) {
               localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
               this.logeventservice.logEvent('click_workplace');
               this.router.navigate(['/teenagers/curated/succeed-in-life'])
-            } else if (name === 'Relationships') {
+            } else if (id==11) {
               localStorage.setItem('curatedurl', '/teenagers/curated/have-fulfilling-relationships');
               this.logeventservice.logEvent('click_relationships');
               this.router.navigate(['/teenagers/curated/have-fulfilling-relationships'])
-            } else if (name === 'Be happier') {
+            } else if (id==13) {
               localStorage.setItem('curatedurl', '/teenagers/curated/be-happier');
               this.logeventservice.logEvent('click_be_happier');
               this.router.navigate(['/teenagers/curated/be-happier'])
-            } else if (name === 'Understand yourself') {
+            } else if (id==16) {
               localStorage.setItem('curatedurl', '/teenagers/curated/understand-yourself');
               this.logeventservice.logEvent('click_be_happier');
               this.router.navigate(['/teenagers/curated/understand-yourself'])
-            } else if (name.includes('Feel calm')) {
+            } else if (id==12) {
               localStorage.setItem('curatedurl', '/teenagers/curated/feel-calm');
-              this.logeventservice.logEvent('click_sorrow_loss');
+              this.logeventservice.logEvent('click_feel_calm');
               this.router.navigate(['/teenagers/curated/feel-calm'])
-            } else if (name === 'Overcome unhelpful habits') {
+            } else if (id==15) {
               localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
               this.logeventservice.logEvent('click_overcome_unhelpful_habits');
               this.router.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
+            }
+             else if (id==20) {
+              localStorage.setItem('curatedurl', '/teenagers/wisdom-exercise');
+              this.logeventservice.logEvent('click_self_awareness');
+              this.router.navigate(['/teenagers/wisdom-exercise'])
             }
           }
         }

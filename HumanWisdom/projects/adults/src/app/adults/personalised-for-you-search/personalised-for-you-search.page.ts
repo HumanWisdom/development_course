@@ -78,7 +78,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public bullyingP: any
   public externalapprovalP: any;
   public exerciseNo: any;
-  public tourTotalIndex = 3;
+  public tourTotalIndex = 1;
   public tourIndex = 1;
 
 
@@ -353,7 +353,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         break;
       }
       case "exercises":
-      case "awareness Exercises":
+      case "awareness exercises":
         {
         url = `/adults/wisdom-exercise`
         break;
@@ -386,8 +386,15 @@ export class PersonalisedForYouSearchPage implements OnInit {
         url = `/adults/curated/overcome-stress-anxiety`
         break;
       }
-     default: {
-       url = `/adults/site-search/${this.searchinp}`
+      default: {
+      //  if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
+      //  let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
+      //   url = `${m.ModuleUrl}`;
+      //    break;
+      // }
+      let searchInpt = (' ' + this.searchinp).slice(1);
+      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+       url = `/adults/site-search/${searchInpt}`
         break;
       }
 

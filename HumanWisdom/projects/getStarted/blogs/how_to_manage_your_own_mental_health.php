@@ -298,7 +298,7 @@
                   </span>
                   and we have an
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
-                    Online journal with Guided Questions
+                    Online journal with Guided journaling
                   </a>
                   you can explore in the app here.
                 </h4>

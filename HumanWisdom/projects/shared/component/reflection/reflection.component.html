@@ -73,13 +73,13 @@
 <div class="right_col mc_02" role="main">
   <!-- Class -->
   <div class="cw100p">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 bg_stake col_cw">
-        <div [ngClass]="[pageaction === 'next' ? 'x_panel p0' : pageaction === 'prev' ? 'x_panel p0' : 'x_panel p0' ]">
+    <div class="row center_flex ">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 bg_stake col_cw ">
+        <div [ngClass]="[pageaction === 'next' ? 'x_panel p0 ' : pageaction === 'prev' ? 'x_panel p0 ' : 'x_panel p0 ' ]">
           <div class="x_content p0">
             <form>
 
-              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_ffffff">
+              <h5 class="mtb0px v3_reflection_qtn fs_24px fw_400 lh_32px fc_ffffff">
                 {{this.reflection}}
               </h5>
 
@@ -93,7 +93,7 @@
 
               <!-- condition 1 -->
               <div *ngIf="!shared && !confirmed">
-                <div class="row mt20px mb15px">
+                <div class="row mt20px mb20px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <a class="">
                       <div class="row">
@@ -111,8 +111,9 @@
                     </a>
                   </div>
                 </div>
-                <h5 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
-                  All posts are encrypted and can only be seen by you, unless shared by you. The posts shared on the forum are moderated.
+                <h5 class="mlr20px fs_12px fw_400 lh_140p fc_ffffff_0_5 tcenter">
+                  Journaling can help you find clarity and calm. This online journal is private to you.
+                  <!-- All posts are encrypted and can only be seen by you, unless shared by you. The posts shared on the forum are moderated. -->
                 </h5>
               </div>
               <!-- /condition 1 -->

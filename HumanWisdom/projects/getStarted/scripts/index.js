@@ -52,7 +52,7 @@ setTimeout(() => {
             })
         document.getElementById('newsPopup')?.click();
     }
-}, 5000);
+}, 20000);
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
@@ -115,7 +115,8 @@ if (discoverSectionPricingClick) {
 const teenagersLogin = document.getElementById('teenagersLogin');
 if (teenagersLogin) {
     teenagersLogin.addEventListener('click', function () {
-        window.location.href = url+"/teenagers/onboarding/login";
+        // window.location.href = url+"/teenagers/onboarding/login";
+         window.location.href = url+"/teenagers/intro-carousel";
     });
 }
 
@@ -134,10 +135,14 @@ if (teenagersClick) {
            window.location.href = url+"/teenagers/subscription/start-your-free-trial";
         }
         else if(localStorage.getItem('login')=='true'){
-           window.location.href = url+"/teenagers/onboarding/login";
+        //    window.location.href = url+"/teenagers/onboarding/login";
+              window.location.href = url+"/teenagers/intro-carousel";           
+        
         }
         else {
-            window.location.href = url + "/teenagers/onboarding/login";
+            // window.location.href = url + "/teenagers/onboarding/login";
+                        window.location.href = url+"/teenagers/intro-carousel";
+
         }
     });
 }
@@ -145,7 +150,8 @@ if (teenagersClick) {
 const teenagerCoverClick = document.getElementById('teenagerCoverClick');
 if (teenagerCoverClick) {
     teenagerCoverClick.addEventListener('click', function () {
-           window.location.href = url+"/teenagers/onboarding/login/";
+        //    window.location.href = url+"/teenagers/onboarding/login/";
+        window.location.href = url+"/teenagers/intro-carousel";
     });
 }
 
@@ -158,11 +164,14 @@ if (adultsClick) {
         else if(localStorage.getItem('login')=='true'){
             localStorage.setItem('login',false);
             localStorage.setItem('pricing',false);
-           window.location.href = url+"/adults/onboarding/login";
+        //    window.location.href = url+"/adults/onboarding/login";
+            window.location.href = url+"/adults/intro/intro-carousel";
         } else {
              localStorage.setItem('login',false);
-               localStorage.setItem('pricing',false);
-            window.location.href = url + "/adults/onboarding/login";
+             localStorage.setItem('pricing',false);
+            // window.location.href = url + "/adults/onboarding/login";
+              window.location.href = url+"/adults/intro/intro-carousel";
+
         }
     });
 }

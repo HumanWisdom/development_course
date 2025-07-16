@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { SharedService } from "../../services/shared.service";
 import { LogEventService } from '../../services/log-event.service';
 import { ProgramType } from "../../models/program-model";
+import { Constant } from "../../services/constant";
 
 @Component({
   selector: 'app-section-card',
@@ -11,10 +12,10 @@ import { ProgramType } from "../../models/program-model";
 })
 export class SectionCard implements OnInit {
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.updateStyles();
-  }
-  leftSpacing: string = '18px';
+  // onResize(event: Event) {
+  //    this.updateStyles();
+  // }
+  leftSpacing: string = '1%';
   @Input() section: SectionCard;
 
   constructor(public service: AdultsService, 
@@ -23,7 +24,7 @@ export class SectionCard implements OnInit {
   }
 
   ngOnInit() {
-    this.updateStyles();
+    // this.updateStyles();
   }
 
   rouetToPath(section){
@@ -44,8 +45,10 @@ export class SectionCard implements OnInit {
   }
 
   getForumClass(){
-    return this.section.title.length>40 ? '':'mt10px mb5px';
+   if(this.section.module  === "FORUM" )
+      return   "mt0px";
   }
+
 }
 
 export interface SectionCard {

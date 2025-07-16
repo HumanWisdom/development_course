@@ -149,39 +149,49 @@ export class ChangeTopicPage implements OnInit {
               }else{
                 this.logeventservice.logEvent('click_change_topic_'+this.selectedname);
                 this.url = localStorage.getItem('lastRoute')?.toString();
-                if ( this.selectedname === 'Manage your emotions') {
+                if ( this.selectedId ==8) {
                   localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
                   this.logeventservice.logEvent('click_emotions');
                   this.url='/adults/curated/manage-your-emotions';
-                } else if ( this.selectedname === 'Manage your mental health') {
+                } else if ( this.selectedId ==2) {
                   localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
                   this.logeventservice.logEvent('click_stress_anxiety');
                   this.url='/adults/curated/overcome-stress-anxiety';
-                } else if (this.selectedname === 'Work and Leadership') {
+                } else if (this.selectedId ==1) {
                   localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
                   this.logeventservice.logEvent('click_workplace');
                   this.url='/adults/curated/wisdom-for-workplace';
-                } else if (this.selectedname.includes('Relationship')) {
+                } else if (this.selectedId ==3) {
                   localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
                   this.logeventservice.logEvent('click_relationships');
                   this.url='/adults/curated/have-fulfilling-relationships';
-                } else if (this.selectedname === 'Be happier') {
+                } else if (this.selectedId ==4) {
                   localStorage.setItem('curatedurl', '/adults/curated/be-happier');
                   this.logeventservice.logEvent('click_be_happier');
                   this.url='/adults/curated/be-happier';
-                } else if (this.selectedname === 'Habits and Addiction') {
+                } else if (this.selectedId ==5) {
                   localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
                   this.logeventservice.logEvent('click_be_happier');
                   this.url='/adults/curated/change-unhelpful-habits';
-                } else if (this.selectedname.includes('loss')) {
+                } else if (this.selectedId ==6) {
                   localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
                   this.logeventservice.logEvent('click_sorrow_loss');
                   this.url='/adults/curated/deal-with-sorrow-loss';
-                } else if (this.selectedname === 'Meditation') {
+                } else if (this.selectedId ==7) {
                   localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
                   this.logeventservice.logEvent('click_calm_mind');
                   this.url='/adults/curated/have-calm-mind';
+                } else if (this.selectedId ==18) {
+                  localStorage.setItem('curatedurl', '/adults/curated/parent-hub');
+                  this.logeventservice.logEvent('click_parent_hub');
+                  this.url='/adults/curated/parent-hub';
                 }
+                else if (this.selectedId ==19) {
+                  localStorage.setItem('curatedurl', '/adults/wisdom-exercise');
+                  this.logeventservice.logEvent('click_self_awareness');
+                  this.url='/adults/wisdom-exercise';
+                }
+
               }
             
 

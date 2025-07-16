@@ -4,8 +4,8 @@
   <head>
     <title>Discover the joys of journaling</title>
     <meta property="title" content="Unlock the Power of Journaling">
-    <meta property="description" content="Transform your life by using daily journaling tips and guided questions. Find out how to calm your mind, self-reflect, and make better choices.">
-    <meta property="keyword" content="Journaling tips,Self-reflection,Guided questions">
+    <meta property="description" content="Transform your life by using daily journaling tips and Guided journaling. Find out how to calm your mind, self-reflect, and make better choices.">
+    <meta property="keyword" content="Journaling tips,Self-reflection,Guided journaling">
 
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
@@ -96,7 +96,7 @@
                   </a>
                   offers
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
-                    guided questions
+                    Guided journaling
                   </a>
                   and a space to reflect and share what is happening in your mind. It could be to document what you have done that day, or notice what is happening right now, or plan what you need to do tomorrow, or as a vehicle for personal growth where you can question yourself and make sense of what you are thinking and feeling.
                 </h4>
@@ -180,7 +180,7 @@
                 <h4 class="mtb0px blog_sub_title">
                   Explore the
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
-                    Guided Questions
+                    Guided journaling
                   </a>
                   section in the app. There is a library of questions on different topics that can help you understand yourself better.
                 </h4>

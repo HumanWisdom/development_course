@@ -122,7 +122,7 @@ export class S28013Page implements OnInit {
 
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['/adults/nature/s28014'])
+    this.router.navigate(['/adults/nature/s28015p1'])
     localStorage.setItem("pageaction", 'next')
     if (this.userId === 563) return;
     this.service.submitProgressAv({

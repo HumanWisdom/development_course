@@ -101,7 +101,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  btn_happiermeyoutube_wrapper">
                   <div>
-                  <a href="#" id="whywecreatedvideo" data-videourl="bottohttps://https://www.youtube.com/watch?v=Da7CKigesTc" class=" btn tryhappiermeClick btn_happiermeyoutube mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex pd21">
+                  <a href="#" id="whywecreatedvideo" data-videourl="bottohttps://https://www.youtube.com/watch?v=3R4DufsvPss" class=" btn tryhappiermeClick btn_happiermeyoutube mtb10px fs_15px fw_600 lh_140p fc_ffffff center_flex pd21">
       <img style="width:10px;height:10px; margin:10px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/video_slider.svg" class="img-responsive">  
       Why we created HappierMe</a>
 

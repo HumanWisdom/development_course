@@ -105,3 +105,11 @@ dist
 
 # Compiled code
 www
+
+.scannerwork/scanner-report
+*.pb
+# SvelteKit build output
+.scannerwork/scanner-report/issues-48.pb
+
+*.ppk
+*.pem

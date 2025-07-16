@@ -77,8 +77,7 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px mb0px">
             <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
-              HappierMe aims to bring human beings together to explore our shared humanity and live with wisdom. We are here to reduce suffering, help people lead happier lives, and make the world a better place.
-            </h4>
+Here you will find easy to use tools to manage your emotions and mental health, build fulfilling relationships and live a happier life, in peace with yourself and others. We support you to feel better, and then go deeper to understand yourself and the root cause of problems for lasting change. Our mission is to reduce suffering, help people lead happier lives, and make the world a better place.            </h4>
           </div>
         </div>
       </div>
@@ -111,7 +110,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66">
-                    70+ modules
+                    75+ modules
                   </h3>
                 </div>
               </div>
@@ -119,7 +118,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-                    An all-in-one app with 70+ modules, covering every aspect of life
+                    Hundreds of videos, podcasts, stories, blogs and more.
                   </h5>
                 </div>
               </div>
@@ -212,7 +211,7 @@
   
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt30px mb60px">
               <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
-                With more than 70 bite-sized modules we help users feel better now, and then take them deeper to understand the root cause of problems, for prevention and long-term benefit. Additional support is available from our coaches and through our forum. Our online journal with guided questions aids self-reflection, which can bring transformation.
+                With more than 70 bite-sized modules we help users feel better now, and then take them deeper to understand the root cause of problems, for prevention and long-term benefit. Additional support is available from our coaches and through our forum. Our online journal with Guided journaling aids self-reflection, which can bring transformation.
               </h4>
             </div>
   
@@ -455,14 +454,14 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="1000">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_journal.svg" class="img-responsive img_aspects" alt="Journal & Guided Questions">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_journal.svg" class="img-responsive img_aspects" alt="Journal & Guided journaling">
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
-                    Journal & Guided Questions
+                    Journal & Guided journaling
                   </h3>
                 </div>
               </div>

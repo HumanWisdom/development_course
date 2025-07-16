@@ -74,6 +74,10 @@ const routes: Routes = [
     loadChildren: () => import('./manage-your-emotions-transcript/manage-your-emotions-transcript.module').then( m => m.ManageYourEmotionsTranscriptPageModule)
   },
   {
+    path: 'parent-hub',
+    loadChildren: () => import('./parent-hub/parent-hub.module').then( m => m.ParentHubPageModule)
+  },
+  {
     path: 'youtubelink/:videolink',
     component: YoutubeContentComponent
   },

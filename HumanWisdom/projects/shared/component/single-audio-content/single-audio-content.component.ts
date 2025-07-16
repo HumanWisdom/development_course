@@ -37,9 +37,14 @@ export class SingleAudioContentComponent implements OnInit {
       this.audioTitle = this.audioTitle.replace('-', ' ');
     }
     let rowid: any = this.route.snapshot.paramMap.get('RowId');
-    rowid = parseInt(rowid);
+     rowid = parseInt(rowid);
     let Id = rowid <= 9 ? '0' + rowid : rowid;
-    this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`;
+    let moduleName :any = this.route.snapshot.paramMap.get('moduleName');
+    if( moduleName && moduleName != 'undefined') {
+      this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/${moduleName.toLowerCase()}/${Id}.webp`;
+    }else{
+        this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`;
+    }
 
     let m: any = window.location.href;
     if (m.includes('introduction_to_happierme')) {

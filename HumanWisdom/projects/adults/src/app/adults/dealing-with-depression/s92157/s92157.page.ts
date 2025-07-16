@@ -19,7 +19,7 @@ export class S92157Page implements OnInit,OnDestroy {
   audioLink=this.mediaAudio+'/dealing-with-depression/audios/5.2.mp3'
 
   transcriptPage="dealing-with-depression/s92157t"
-  toc="dealing-with-depression/s92001"
+  toc="adults/dealing-with-depression/s92001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;
