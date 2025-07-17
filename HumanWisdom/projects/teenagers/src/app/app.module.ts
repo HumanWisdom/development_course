@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TeenagersService } from './teenagers/teenagers.service';
 import { TeenagerOnboardingService } from './teenagerOnboarding/teenager-onboarding.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { APP_INITIALIZER } from '@angular/core';
 import { SharedModule } from './../../../shared/shared.module'
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import {
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms';
 import { SplashPage } from './teenagers/splash/splash.page';
 import * as Hammer from 'hammerjs';
 import { SurveyPageModule } from '../../../shared/component/survey/survey.module';
+import { initDependency } from '../initdependency';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
     swipe: { direction: Hammer.DIRECTION_ALL },
