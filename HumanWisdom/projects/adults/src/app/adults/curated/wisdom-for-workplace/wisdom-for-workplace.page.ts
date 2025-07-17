@@ -564,7 +564,7 @@ export class WisdomForWorkplacePage implements OnInit {
               }
              audioContent.MediaUrl= encodeURIComponent(audioContent.MediaUrl.replaceAll('/', '~'));
              audioContent.Title =  audioContent.Title?.replaceAll(' ', '-')
-             this.router.navigate(['adults/audiopage/', audioContent.MediaUrl, audioContent.PodcastID, 'T', audioContent.Title])
+            //  this.router.navigate(['adults/audiopage/', audioContent.MediaUrl, audioContent.PodcastID, 'T', audioContent.Title])
 
       //  this.router.navigate(['/adults/curated/audiopage/', audioContent.url,audioContent.title, audioContent.id]);
     }
