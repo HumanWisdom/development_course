@@ -8,6 +8,7 @@ import { OnboardingService } from '../../../../shared/services/onboarding.servic
 import { SharedService } from "../../../../shared/services/shared.service";
 import { ProgramType } from "../../../../shared/models/program-model";
 import { Router } from '@angular/router';
+import { tap, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -451,7 +452,74 @@ export class AdultsService {
   encryptUserId(id) {
     return this.http.get(this.path + `/encryptURL?URL=${id}`)
   }
+ 
+ 
 
+initialLoginWithGuestUser(id: string = ''): Observable<any> {
+  const email = 'guest@humanwisdom.me';
+  const password = '12345';
+  const saveUsername = JSON.parse(localStorage.getItem("saveUsername") || 'false');
+  const mediaUrl = "https://d1tenzemoxuh75.cloudfront.net";
+
+  return this.services.emailLogin(email, password).pipe(
+    tap(res => {
+      const isGuest = res.Email === email;
+      const name = localStorage.getItem("nameupdate") || res.Name;
+      const namedata = name.split(' ');
+
+      const loginResponse = res;
+      const userId = res.UserId;
+      const userName = res.Name;
+
+      // Store session/local storage
+      localStorage.setItem("guest", isGuest ? 'T' : 'F');
+      localStorage.setItem("text", '2');
+      localStorage.setItem("video", '3');
+      localStorage.setItem("audio", '4');
+      localStorage.setItem("question", '6');
+      localStorage.setItem("reflection", '5');
+      localStorage.setItem("feedbackSurvey", '7');
+      localStorage.setItem("moduleId", '7');
+      localStorage.setItem("mediaAudio", JSON.stringify(mediaUrl));
+      localStorage.setItem("mediaVideo", JSON.stringify(mediaUrl));
+      localStorage.setItem("email", email);
+      localStorage.setItem("pswd", password);
+      localStorage.setItem("name", name);
+      localStorage.setItem("Subscriber", res.Subscriber);
+      localStorage.setItem("loginResponse", JSON.stringify(loginResponse));
+      localStorage.setItem("token", JSON.stringify(res.access_token));
+      localStorage.setItem("userId", JSON.stringify(userId));
+
+      const modaldata = {
+        email: email,
+        firstname: namedata[0],
+        lastname: namedata[1] || ''
+      };
+
+      if (saveUsername) {
+        localStorage.setItem("userId", JSON.stringify(userId));
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userName", userName);
+      } else {
+        sessionStorage.setItem("userId", JSON.stringify(userId));
+        sessionStorage.setItem("userEmail", email);
+        sessionStorage.setItem("userName", userName);
+      }
+
+      sessionStorage.setItem("loginResponse", JSON.stringify(loginResponse));
+
+      // Bookmark and module activation
+      setTimeout(() => {
+        this.getBookmark(userId);
+      }, 1000);
+
+      if (id) {
+        this.activateModule(id);
+      }
+    }),
+    map(res => res) // if you want to transform, you can adjust this
+  );
+}
 
   emaillogin(id = '') {
     let email = 'guest@humanwisdom.me';

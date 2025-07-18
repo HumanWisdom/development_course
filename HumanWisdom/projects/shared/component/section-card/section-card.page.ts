@@ -12,10 +12,10 @@ import { Constant } from "../../services/constant";
 })
 export class SectionCard implements OnInit {
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.updateStyles();
-  }
-  leftSpacing: string = '18px';
+  // onResize(event: Event) {
+  //    this.updateStyles();
+  // }
+  leftSpacing: string = '1%';
   @Input() section: SectionCard;
 
   constructor(public service: AdultsService, 
@@ -24,8 +24,7 @@ export class SectionCard implements OnInit {
   }
 
   ngOnInit() {
-    this.updateStyles();
-       SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    // this.updateStyles();
   }
 
   rouetToPath(section){
@@ -46,8 +45,10 @@ export class SectionCard implements OnInit {
   }
 
   getForumClass(){
-    return this.section.title.length>40 ? '':'mt10px mb5px';
+   if(this.section.module  === "FORUM" )
+      return   "mt0px";
   }
+
 }
 
 export interface SectionCard {
