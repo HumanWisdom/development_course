@@ -340,7 +340,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">HappierMe for Teenagers <i class="fa fa-search"></i></button>
+<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">HappierMe for Teenagers <i class="fa fa-search"></i></button>
 
                 </div>
               </div>
@@ -372,7 +372,7 @@
    
 
       <!-- aspects -->
-      <section class="support_section">
+      <!-- <section class="support_section">
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -530,7 +530,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- /aspects -->
 
       <!-- video -->
@@ -3154,70 +3154,240 @@
 
   <div class="modal fade product_view" id="product_view1">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content1">
             <div class="modal-header">
                 <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-                <h3 class="modal-title">HTML5 is a markup language</h3>
+               
+                <div class="row center_flex">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        </div>
+
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+                  
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/mental1.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        </div>
+        </div>
+              </div>
+                
             </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6 product_img">
-                        <img src="http://img.bbystatic.com/BestBuy_US/images/products/5613/5613060_sd.jpg" class="img-responsive">
-                    </div>
-                    <div class="col-md-6 product_content">
-                        <h4>Product Id: <span>51526</span></h4>
-                        <div class="rating">
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            (10 reviews)
-                        </div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <select class="form-control" name="select">
-                                    <option value="" selected="">Color</option>
-                                    <option value="black">Black</option>
-                                    <option value="white">White</option>
-                                    <option value="gold">Gold</option>
-                                    <option value="rose gold">Rose Gold</option>
-                                </select>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <select class="form-control" name="select">
-                                    <option value="">Capacity</option>
-                                    <option value="">16GB</option>
-                                    <option value="">32GB</option>
-                                    <option value="">64GB</option>
-                                    <option value="">128GB</option>
-                                </select>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-md-4 col-sm-12">
-                                <select class="form-control" name="select">
-                                    <option value="" selected="">QTY</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                </select>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <div class="space-ten"></div>
-                        <div class="btn-ground">
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Add To Wishlist</button>
-                        </div>
-                    </div>
+
+      <div class="section-header1">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+              <h2 class=" fs_36px fw_600 lh_120p fc_000000">
+                Overcome stress and anxiety
+              </h2>
+              <h5 class=" fs_15px fw_400 lh_150p fc_120f40">
+Learn to address the root cause, and not just the symptoms.                  </h5>
+            </div>
+          </div>
+        </div>
+          <div class="modal-body">
+
+
+        
+                    
+                   
+                       
+        <div class="row center_flex">
+                          
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ">
+          
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided1.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                </div>
+              
+
+             
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+
+                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_120f40">
+                    Guided programs
+                  </h3>
+                  <h5 class=" fs_12px fw_400  fc_120f40">
+Covering Stress, Anxiety, Depression and Bereavement                  </h5>
+                
+              </div>
+        </div>
+
+              
+               
+              
+            </div>
+
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast1.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                </div>
+              
+
+             
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+
+
+                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_120f40">
+                    Hundreds of podcasts
+                  </h3>
+                  <h5 class=" fs_12px fw_400  fc_120f40">
+Insightful conversations on mental wellbeing            
+      </h5>
+                
+              </div>
+        </div>
+
+              
+               
+              
+            </div>
+          
+
+           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/feel1.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                </div>
+              
+
+             
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+
+
+                  <h3  style="margin-top:0px;"class="  fs_18px fw_600  fc_120f40">
+                    Feel better now
+                  </h3>
+                  <h5 class=" fs_12px fw_400  fc_120f40">
+Breathing and tapping exercises for quick relief                  </h5>
+                
+              </div>
+        </div>
+
+              
+               
+              
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="row center_flex">
+                          
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ">
+          
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video1.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                </div>
+              
+
+             
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+
+                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
+                    Short videos
+                  </h3>
+                  <h5 class=" fs_12px fw_400  fc_120f40">
+Wellbeing tips from trained coaches               
+  </h5>
+                
+              </div>
+        </div>
+
+              
+               
+              
+            </div>
+
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journili.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                </div>
+              
+
+             
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+
+
+                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
+                    Guided journaling
+                  </h3>
+                  <h5 class=" fs_12px fw_400  fc_120f40">
+Your private journal with questions for personal growth            
+    </h5>
+                
+              </div>
+        </div>
+
+              
+               
+              
+            </div>
+          
+
+           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community1.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                </div>
+              
+
+             
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+
+
+                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
+                    Community forum
+                  </h3>
+                  <h5 class=" fs_12px fw_400  fc_120f40">
+Find support, share your thoughts and make friends   
+        </h5>             
+              </div>
+        </div>
+
+              
+               
+              
+            </div>
+          </div>
+        </div>
+<div class="row center_flex mtb30px">
+  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 tcenter">
+      <div>
+      <a class="tryhappiermeClick"  id="happiermeTryForFree" > 
+              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              Try HappierMe for free
+                </button>
+      </a> 
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+        </div>
+        </div>
+        
+                        
                 </div>
             </div>
         </div>
+
+        
     </div>
 </div>
+
+
+<!-- <popup1> -->
   <div class="modal fade product_view" id="product_view">
         <div class="modal-dialog">
           <div class="modal-content">
