@@ -492,7 +492,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
                 audioContent.MediaUrl = audioContent.MediaUrl.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
               }
              audioContent.MediaUrl= encodeURIComponent(audioContent.MediaUrl.replaceAll('/', '~'));
-             audioContent.Title =  audioContent.Title?.replaceAll(' ', '-')
+            //  audioContent.Title =  audioContent.Title?.replaceAll(' ', '-')
        this.router.navigate(['adults/audiopage/', audioContent.MediaUrl, audioContent.PodcastID, 'T', audioContent.Title])
       // this.router.navigate(['/adults/curated/audiopage/', audioContent.MediaUrl,audioContent.Title, audioContent.PodcastID]);
     //this.router.navigate(['/adults/guided-meditation/audiopage/', audioContent.MediaUrl,audioContent.Title, audioContent.PodcastID,'Audio'])
