@@ -26,7 +26,7 @@
 /* Colors */
 :root {
   --color-default: #212529;
-  --color-primary: #E58D82;
+  --color-primary: #E58D82 !important;
   --color-secondary: #37373f;
 }
 
@@ -35,6 +35,11 @@
   scroll-behavior: smooth;
 }
 
+/* @media (min-width: 1200px) {
+    .col-lg-4 {
+        width: 32.33333333%;
+    }
+} */
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -519,7 +524,7 @@ label > input[type="checkbox"] + *::before {
     font-size: 15px;
     font-weight: 500;
     line-height: 130%;
-    /* color: #CB6171; */
+    color: #CB6171 !important;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -1810,6 +1815,8 @@ div.scroll-container img {
   flex-direction: column;
   /* margin-left: -350px; */
   z-index: 3;
+  margin-left: 30px;
+  margin-top: 1%;
 }
 
 .hero h2 {
@@ -3432,10 +3439,10 @@ padding:20px;
 
 .cvideo
 {
-  width: 100%;
+  width: 90%;
   border-radius: 12px;
   position:relative;
-  min-height: 30rem;
+  min-height: 20rem;
    background: #120F40; 
 }
 
@@ -5198,4 +5205,9 @@ margin-top: -72px !important;
 
 .mt10{
 margin-top: 10px !important;
+}
+
+.testimonial_user_image {
+  height: 78.33px !important;
+  width: 78.33px !important
 }

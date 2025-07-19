@@ -249,7 +249,7 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element d-flex">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
@@ -355,7 +355,7 @@
         </div>
 
         <div class="row center_flex display_m_none">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ta_lc aspects_outer element d-flex">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -529,7 +529,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class=" testimonial_user_image img-responsive width_unseti testimonial_user_image"  alt="quotation" loading=lazy> 
                       </div>
                     </div>
 
@@ -560,7 +560,7 @@
                  <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_rahul_bagale.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_rahul_bagale.webp" class=" testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
 
                       
@@ -589,7 +589,7 @@
                  <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_leah_christensen.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_leah_christensen.webp" class=" testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
 
                       
@@ -619,7 +619,7 @@
                  <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_dan_reidenberg.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_dan_reidenberg.webp" class=" testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
 
                       
@@ -650,7 +650,7 @@
                  <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_leah_christensen.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_leah_christensen.webp" class="testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
 
                       
@@ -680,7 +680,7 @@
                  <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_tinamarie_rodriguez.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_tinamarie_rodriguez.webp" class=" testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
 
                       
@@ -710,7 +710,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_jondi_whitis.webp" class="img-responsive width_unseti" alt="Jondi Whitis" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_jondi_whitis.webp" class="testimonial_user_image img-responsive width_unseti" alt="Jondi Whitis" loading=lazy>
                       </div>
                     </div>
 
@@ -742,7 +742,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_garry_prigg.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_garry_prigg.webp" class="testimonial_user_image img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
                       </div>
                     </div>
 
@@ -772,7 +772,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_julie_goodfellow.webp" class="img-responsive width_unseti" alt="Julie Goodfellow" loading=lazy> 
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_julie_goodfellow.webp" class="testimonial_user_image img-responsive width_unseti" alt="Julie Goodfellow" loading=lazy> 
                       </div>
                     </div>
 
@@ -803,7 +803,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_roland_yeo.webp" class="img-responsive width_unseti" alt="Roland Yeo" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_roland_yeo.webp" class="testimonial_user_image img-responsive width_unseti" alt="Roland Yeo" loading=lazy> 
                       </div>
                     </div>
 
@@ -833,7 +833,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_saakshi_singla.webp" class="testimonial_user_image img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
 
                       </div>
                     </div>
@@ -863,7 +863,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive width_unseti" alt="Adam Beagley" loading=lazy> 
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="testimonial_user_image img-responsive width_unseti" alt="Adam Beagley" loading=lazy> 
 
                       </div>
                     </div>
@@ -893,7 +893,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_samaira_giri.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_samaira_giri.webp" class="testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy> 
                       </div>
                     </div>
 
@@ -923,7 +923,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_swati_nair.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_swati_nair.webp" class="testimonial_user_image img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
@@ -952,7 +952,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_sree.webp" class="img-responsive width_unseti" alt="Sree" loading=lazy> 
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_sree.webp" class="testimonial_user_image img-responsive width_unseti" alt="Sree" loading=lazy> 
                       </div>
                     </div>
 
@@ -1030,7 +1030,7 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 tcenter work_edu_health_outer">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 tcenter work_edu_health_outer d-flex">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <a  class="" href="./pages/work.php"  onclick="return logevent('click_for_work_home', 'index.php')">
@@ -2069,7 +2069,7 @@
 
         <!-- desktop -->
         <div class="row center_flex prelative display_m_none">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 d-flex">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <ul class="nav nav-tabs m0px tab_faqs">
