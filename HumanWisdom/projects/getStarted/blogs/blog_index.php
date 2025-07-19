@@ -1064,7 +1064,9 @@
   </div>
 
 
+
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 rp0" data-aos="fade-up" data-aos-delay="1100">
+
   <a class="" href="new_poll.php">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1079,6 +1081,7 @@
         <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
         Work and Leadership
         </button>
+
 
       </div>
     </div>
@@ -1095,11 +1098,14 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
         <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
 
+
+
         </h6>
       </div>
     </div>
   </a>
   </div>
+
 </span>
       <div class="btn-container">
          <button id="toggle" style="text-decoration:underline;">View More</button>
