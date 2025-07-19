@@ -88,7 +88,10 @@ export class CourseFooterComponent implements OnInit {
     //   }
     //  this.goToDash();
     // }
-      if(localStorage.getItem("NaviagtedFrom"))  
+      if(localStorage.getItem("NaviagtedFrom") == "undefined" || localStorage.getItem("NaviagtedFrom") == null || localStorage.getItem("NaviagtedFrom") == '')
+        this.router.navigateByUrl(SharedService.getDashboardUrls());
+      else
+      
        this.router.navigate([localStorage.getItem("NaviagtedFrom")]);
   }
 
