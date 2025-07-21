@@ -3,14 +3,14 @@
 
   <!-- desktop -->
   <div class="row center_flex display_m_none">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 d-flex">
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 d-flex">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0">
         <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
           About us
         </h4>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dfooter_links">
             <a id="ourStory">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Our story
@@ -50,13 +50,13 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0">
         <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
           Get HappierMe
         </h4>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dfooter_links">
             <a href="https://happierme.app/adults/onboarding/add-to-cart">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Gift HappierMe
@@ -96,13 +96,13 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0">
         <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
           Support
         </h4>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dfooter_links">
             <a href="https://happierme.app/adults/faqs">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 FAQ
@@ -136,9 +136,9 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0">
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_social_links">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dfooter_social_links">
             <a href="https://facebook.com/happiermeapp/" target="_blank">
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_facebook.svg" class="img-responsive" alt="facebook">
             </a>
@@ -162,7 +162,7 @@
         </div>
 
         <div class="row mtb20px">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 tright">
             <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567" target="_blank">
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_appstore.svg" class="img-responsive" alt="appstore">
             </a>
@@ -170,7 +170,7 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 tright">
             <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US" target="_blank">
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_playstore.svg" class="img-responsive" alt="playstore">
             </a>
@@ -197,7 +197,7 @@
             <div class="panel-body">
               <!-- links -->
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dfooter_links">
                   <a href="../pages/about_us.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Our story
@@ -241,7 +241,7 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
             <hr class="hr_style_web_01new">
           </div>
         </div>
@@ -258,7 +258,7 @@
             <div class="panel-body">
               <!-- links -->
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dfooter_links">
                   <a href="https://happierme.app/adults/onboarding/add-to-cart">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Gift HappierMe
@@ -302,7 +302,7 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
             <hr class="hr_style_web_01new">
           </div>
         </div>
@@ -319,7 +319,7 @@
             <div class="panel-body">
               <!-- links -->
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 dfooter_links">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dfooter_links">
                   <a href="https://happierme.app/adults/faqs">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       FAQ
@@ -361,13 +361,13 @@
 
   <div class="row center_flex mt40px display_df_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tcenter">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl0px">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 pl0px">
         <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_appstore.svg" class="img-responsive" alt="appstore">
         </a>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr0px">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 pr0px">
         <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_playstore.svg" class="img-responsive" alt="playstore">
         </a>
@@ -421,7 +421,7 @@
 
 <!-- sticky rating banner -->
 <div   id="closeableElement" class="row center_flex sticky_rating_banner display_df_none">
-  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 p0 flex_ai">
+  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-12 p0 flex_ai">
 
     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tcenter">
       <a class="" href="javascript:void(0);" onclick="closeElement();">

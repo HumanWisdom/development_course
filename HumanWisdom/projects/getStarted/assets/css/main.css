@@ -2479,6 +2479,11 @@ a
   margin-left: 10px;
 }
 
+.ml15px 
+{
+  margin-left: 15px;
+}
+
 .mr15px 
 {
   margin-right: 15px;
@@ -2767,6 +2772,11 @@ animation-name: slideInRight;
   max-width: 100%;
   height: auto;
 }
+
+.teens-app-img {
+  max-width: 97% !important;
+}
+
 /* /image */
 
 /* ellipsis */
@@ -3636,7 +3646,7 @@ audio::-webkit-media-controls-enclosure
   background: rgba(232, 168, 128, 0.20);  
   border: 0;
   text-align: center;
-  cursor: auto;
+  cursor: auo;
 }
 
 .img_blogs
@@ -3644,6 +3654,7 @@ audio::-webkit-media-controls-enclosure
   border-radius: 20px;
   object-fit: fill;
   height: 300px;
+  width: 92% !important;
 }
 
 .blog_title 
@@ -3708,9 +3719,22 @@ audio::-webkit-media-controls-enclosure
 {
   border-radius: 10px;
   background: var(--Light-pink, linear-gradient(93deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%));
-  padding: 27px 36px;
+  padding: 27px 37px;
   margin-right: 20px;
 }
+
+.work_app_img {
+  width: 96% !important;
+}
+
+.education_app_img {
+  width: 96% !important;
+}
+
+.healthcare_app_img {
+  width: 96% !important;
+}
+
 
 .div_price > [class^="col-"]:last-child
 {
@@ -3787,7 +3811,7 @@ audio::-webkit-media-controls-enclosure
 .absolute_desc
 {
   position: absolute;
-  top: 0;
+  top: 280px;
   left: 230px;
   right: 0;
   bottom: 0;
