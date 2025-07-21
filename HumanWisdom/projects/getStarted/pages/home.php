@@ -276,10 +276,18 @@
 
     }
 
+    .bg-circle {
+      background-color: #FFF9EE;
+    }
+
     .testimonial-text2 {
       height: 115px;
       width: 403px;
       margin-top: 20px;
+    }
+
+    .circle-mobile {
+      display: none;
     }
 
     .app-title2 {
@@ -297,7 +305,7 @@
       display: none;
     }
 
-    @media (min-width: 1600px) {
+    @media (min-width: 1800px) {
 
       .display_mw_none,
       /* mobile image */
@@ -309,6 +317,10 @@
       .happy-wide-img {
         display: block;
         width: 100%
+      }
+
+      .d-wider {
+        display: none !important;
       }
     }
 
@@ -481,8 +493,47 @@
       .section-text {
         margin-top: 20px;
       }
-      .m-top54{
-        margin-top: 54px;
+
+      .m-top54 {
+        margin-top: 26px;
+      }
+
+      .scroller-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        height: 167px;
+        width: 373px;
+        padding-top: 24px;
+        padding-left: 16px;
+      }
+
+      .scroller-container>div {
+        flex: 0 0 auto;
+        min-width: 335px;
+        /* Adjust based on actual content */
+      }
+
+      .scroller-container img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .circle-mobile {
+        display: block;
+      }
+
+      .d-wider {
+        display: none !important;
+      }
+
+      .text-wider {
+        width: 335px;
+        margin: 0 auto;
       }
 
     }
@@ -634,23 +685,25 @@
 
   <!-- section end -->
 
-  <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-    <div>
-      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
-        class="img-responsive display_m_none display_mw_none w100p" alt="modules" loading=lazy>
+  <div class="row center_flex bg-circle" data-aos="fade-up" data-aos-delay="200">
+    <div class="scroller-container">
+      <div>
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
+          class="img-responsive d-wider w100p" alt="modules" loading="lazy">
 
-      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp"
-        class="img-responsive display_d_none display_dw_none ml-mobile" alt="modules" loading=lazy>
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp"
+          class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
 
-      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
-        alt="happy user" loading=lazy>
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
+          alt="happy user" loading="lazy">
+      </div>
     </div>
   </div>
 
   <!-- video -->
   <div class="section-headernew mob-section m-top54">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 ">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 text-wider">
         <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0.7 fs_18px_mobile section-text text-color">
           Discover HappierMe in just 1 minute
         </h2>
