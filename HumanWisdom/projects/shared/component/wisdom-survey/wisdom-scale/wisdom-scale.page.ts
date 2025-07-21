@@ -234,7 +234,7 @@ export class WisdomScalePage implements OnInit {
 
   ngOnInit() {
 
-     
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.navigationService.goBack())
 
     this.title.setTitle('Mindful Insights: Our Happiness Survey for a More Fulfilling Life')
     this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Happiness Survey for a More Fulfilling Life' })
@@ -518,7 +518,11 @@ export class WisdomScalePage implements OnInit {
     } else {
       this.router.navigate([url]);
     } */
-    this.router.navigate([SharedService.getDashboardUrls()])
+   
+     if(localStorage.getItem("NaviagtedFrom"))  
+       this.router.navigate([localStorage.getItem("NaviagtedFrom")]);
+      else 
+         this.router.navigate([SharedService.getDashboardUrls()])
   }
 
   viewClickEvent(url) {

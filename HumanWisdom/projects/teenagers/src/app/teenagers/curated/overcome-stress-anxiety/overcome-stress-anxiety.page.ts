@@ -161,11 +161,14 @@ export class OvercomeStressAnxietyPage implements OnInit {
     }
   }
 
-  s3video(link) {
+   s3video(link) {
     if (this.guest || !this.Subscriber) {
-      this.router.navigate(['/subscription/start-your-free-trial']);
+         this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
+
     } else {
-      this.router.navigate([link])
+
+         this.router.navigate([link.replace('/adults/', '/teenagers/')]);
+
     }
   }
 
@@ -528,7 +531,7 @@ export class OvercomeStressAnxietyPage implements OnInit {
           audioContent.MediaUrl = audioContent.MediaUrl.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
         }
        audioContent.MediaUrl= encodeURIComponent(audioContent.MediaUrl.replaceAll('/', '~'));
-       audioContent.Title =  audioContent.Title?.replaceAll(' ', '-')
+      //  audioContent.Title =  audioContent.Title?.replaceAll(' ', '-')
 
             this.router.navigate(['teenagers/audiopage/', audioContent.MediaUrl, audioContent.PodcastID, 'T', audioContent.Title])
 

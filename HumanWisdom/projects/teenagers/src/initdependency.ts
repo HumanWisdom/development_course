@@ -1,5 +1,4 @@
-import { AdultsService } from "./adults/adults.service";
-
+import { AdultsService } from "../../adults/src/app/adults/adults.service";
 export function initDependency(adultsService: AdultsService): () => Promise<void> {
   return () => adultsService.initialLoginWithGuestUser()
     .toPromise()
