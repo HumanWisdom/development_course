@@ -130,15 +130,15 @@
 
     <!-- header -->
     <div class="row ">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header_new">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 center_flex header_new">
 
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 col-4 p0">
 
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo.svg" class="img-responsive"  alt="logo">
       
     </div>
 
-    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 p0 dflex_end">
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 col-8 p0 dflex_end">
       <!-- <nav id="navbar" class="navbar m0pxi">
         <ul>
 
@@ -189,9 +189,9 @@
     <section class="hpt1px">
         
       <div class="row center_flex web_home_divnew">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  ddflex_mblock">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10  ddflex_mblock">
 
-          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 p0 pd-left"  data-aos="fade-up" data-aos-delay="100">
             
               <img
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/adult_mind.webp" class="img-responsive w100p display_m_none max-width-px h-402" loading="lazy"  alt="performance"
@@ -200,13 +200,13 @@
 
           </div>
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 m-top72"  data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 m-top72"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 home_page_title">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 home_page_title">
               
 
             <div class="row mt20px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-tp">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p-tp">
                 <h1  style=" color:#000c;" class="mt10px f-48px fw_600 lh_130p  ta_lc">
                 Transform your emotional wellbeing with HappierMe
                 </h1>
@@ -214,8 +214,8 @@
             </div>
 
              <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-flex">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 p0 w5p">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""  alt="wh_tick_black" loading=lazy>
                 </div>
 
@@ -227,8 +227,8 @@
             </div>
 
             <div class="row mtb5px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-flex">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 p0 w5p">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
                 </div>
 
@@ -241,8 +241,8 @@
             </div>
 
              <div class="row mtb5px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-flex">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 p0 w5p">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
                 </div>
 
@@ -254,8 +254,8 @@
               </div>
             </div>
              <div class="row mtb5px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-flex">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 p0 w5p">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class="" alt="wh_tick_black" loading=lazy>
                 </div>
 
@@ -271,8 +271,8 @@
             
 
             <div class="row mt30px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ddflex_mblock_a">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 mb15px mr15px btn-res">
               <a href="signup.php">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn-started" >
                     Let’s get started!
@@ -299,26 +299,26 @@
         <div class="section-header">
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 res-testemonial testi-flex">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12  "  data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 res-testemonial testi-flex d-flex d-lg-flex d-md-flex d-sm-flex">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12  "  data-aos="fade-up" data-aos-delay="100">
            <div class="testnew w-98p">
               
 
            
 
              <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
               <div class="quotation-comma">
                         <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 
     </div>
     </div> 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0">
                         <img style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" class="img-responsive img-test width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12">
                   <h5  style="margin-top:21px ; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
                         Brenda McChesney
                         </h5>
@@ -334,7 +334,7 @@
 
             
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
                 <h3 class="mtb25px fs_15px fw_400 lh_140p fc_000000 dinline_block res-mr" style="text-align:left; font-style:italic;" ; >
 
@@ -344,27 +344,27 @@ HappierMe is the best app I have found to assist entire families, and the root c
           </div>
     </div>
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 "  data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 "  data-aos="fade-up" data-aos-delay="200">
           <div class="testnew ml-res w-88p ml-3p">  
           <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
               
 
            
 
              <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
               <div class="quotation-comma">
                         <img  style="margin-top:-53px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
                 
     </div>
     </div> 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 p0">
                         <img  style="height: 100px;" src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" class="img-responsive img-test width_unseti" alt="quotation" loading=lazy> 
                 </div>
 
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12">
                   <h5  style="margin-top:21px; text-align:left;"class="mtb0px fs_21px fw_600 lh_150p fc_000000" >
                        
                         Adam Beagley
@@ -380,7 +380,7 @@ Student, UK    </h3>
 
             
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
                 <h3 class="mtb10px fs_15px fw_400 lh_140p fc_000000 res-mr dinline_block"style=" text-align:left; font-style:italic;";>
 
@@ -400,7 +400,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
  
         <div class="section-headernew">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
               <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7">
               Findings from a survey of 1,000 HappierMe app users </h2>
             </div>
@@ -408,7 +408,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
         </div>
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/survey.webp" class="img-responsive display_m_none w100p" alt="modules" loading=lazy>
 
             <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
@@ -422,7 +422,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
       <section>
       <div class="section-headernew">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 p0">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0">
               <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7">
                 Discover HappierMe in just 1 minute
               </h2>
@@ -431,7 +431,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
         </div>
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 p0">
+          <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0">
             <!-- <video id="homeVideo" controls playinline class="w100p"
               poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
               controlsList="nodownload">
@@ -448,8 +448,8 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
 
       <!-- <div class="row center_flex mt_d100px_m60px">
-  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 tcenter">
+  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 p0 center_flex">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 p0 tcenter">
       <div>
       <a class="tryhappiermeClick"  id="happiermeTryForFree" > 
               <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
@@ -466,10 +466,10 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
          <!-- subscription -->
       <section id="div_subscription">
         <!-- <div class="row center_flex div_subscription">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
 
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                   40% off HappierMe Premium
                 </h2>
@@ -481,11 +481,11 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
             </div>
 
             <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 p0">
 
                 <button class="btn_subscription">
                   <div class="row center_flex btn_subscription_trial">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                         14-day free trial
                       </h6>
@@ -493,7 +493,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
                   </div>
 
                   <div class="row center_flex">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6  p0 tleft">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6  p0 tleft">
                       <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
                         Yearly
                       </h5>
@@ -505,7 +505,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
                       </h6>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
                       <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
                     </div>
                   </div>
@@ -513,7 +513,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
 
                 <button class="btn_subscription mt20pxi">
                   <div class="row center_flex">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tleft">
                       <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
                         Monthly
                       </h5>
@@ -523,7 +523,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
                       </h6>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
                      
 
                       <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading"></h4>
@@ -535,7 +535,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
             </div>
 
             <div class="row center_flex">
-              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0">
                 <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
                   After your free trial, the yearly subscription is INR 5,999 and automatically 
                   renews each year until cancelled.
@@ -555,7 +555,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
             </div>
 
             <div id="PricingSelectBtn" class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" >
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
               <a > 
               <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Start your free trial today
@@ -577,7 +577,7 @@ HappierMe has helped me become emotionally intelligent. I used to be shy, passiv
         
       <div class="row center_flex divhome">
          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
               <h2 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
               Copyright © 2024 HappierMe. All rights reserved </h2>
             </div>
