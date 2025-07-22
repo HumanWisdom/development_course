@@ -209,20 +209,7 @@
               </div>
             </div>
 
-            <!-- <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block ta_lc">
-                  Start your free trial now. Download the app on
-                  <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="mlr5px" alt="appstore" loading=lazy>
-                  </a>
-                  and
-                  <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="mlr5px" alt="playstore" loading=lazy>
-                  </a>
-                </h3>
-              </div>
-            </div> -->
+            
 
           </div>
         </div>
