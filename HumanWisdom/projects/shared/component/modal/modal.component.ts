@@ -34,6 +34,9 @@ export class ModalComponent implements OnInit {
 
   modalopened = false;
 
+  @Input()
+  isFreeTrialEnable = false;
+
   constructor() { }
 
   ngOnInit() {

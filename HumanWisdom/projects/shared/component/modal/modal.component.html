@@ -2,44 +2,83 @@
 
 <!-- v1.1 -->
 <div class="modal fade in" id="modal-alert" data-keyboard="false" data-backdrop="false" data-dismiss="modal">
-  
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
 
-        <div class="row mb10px">
+
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw" *ngIf="isFreeTrialEnable">
+      <form>
+        <div class="row mt100px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-            <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
-              {{title}}
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/free_trial.svg"
+              class="img-responsive">
+          </div>
+        </div>
+
+        <div class="row mt60px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="mtb0px fs_21px fw_400 lh_140p fc_ffffff tcenter">
+              The best is yet to come 
             </h4>
           </div>
         </div>
-  
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
-              {{content}}
+
+        <div class="row mt10px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tcenter">
+              Unlock the full experience and continue
+            </h4>
+            <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tcenter">
+              Your journey to live your best life
             </h4>
           </div>
         </div>
 
-        <div class="row mt30px">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
-            <button type="btn" class="btn btn_ctd" data-dismiss="modal" *ngIf="modalid === ''" (click)="close('ok')">
-              {{okText}}
-            </button>
-  
-            <button type="btn" class="btn btn_ctd" data-dismiss="modal" id="liLogout" *ngIf="modalid === 'logout'"  (click)="close('ok')">
-              {{okText}}
-            </button>
-  
-            <button type="btn" class="btn btn_ctd" data-dismiss="modal" *ngIf="enableCancel" (click)="close('cancel')">
-              {{cancelText}}
+        <div class="row mt50px" (click)="routeToDashboard()">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+            <button type="btn" class="btn btn_ctd">
+             Start your free trial
             </button>
           </div>
         </div>
-
-      </div>
+        <div class="pagebreak"></div>
+      </form>
     </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw" *ngIf="!isFreeTrialEnable">
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+            {{title}}
+          </h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
+            {{content}}
+          </h4>
+        </div>
+      </div>
+
+      <div class="row mt30px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
+          <button type="btn" class="btn btn_ctd" data-dismiss="modal" *ngIf="modalid === ''" (click)="close('ok')">
+            {{okText}}
+          </button>
+
+          <button type="btn" class="btn btn_ctd" data-dismiss="modal" id="liLogout" *ngIf="modalid === 'logout'"
+            (click)="close('ok')">
+            {{okText}}
+          </button>
+
+          <button type="btn" class="btn btn_ctd" data-dismiss="modal" *ngIf="enableCancel" (click)="close('cancel')">
+            {{cancelText}}
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 <!-- /v1.1 -->
 

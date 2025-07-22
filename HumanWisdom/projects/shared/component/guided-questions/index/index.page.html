@@ -406,4 +406,4 @@
 <!-- /footer -->
 
 <app-modal *ngIf="enableAlert" [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
-  [content]="'Start your free trial to activate this feature'"></app-modal>
+  [content]="'Start your free trial to activate this feature'" [isFreeTrialEnable]="isFreeTrialEnable"></app-modal>
