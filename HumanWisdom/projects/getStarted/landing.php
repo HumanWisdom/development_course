@@ -236,7 +236,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Mental wellbeing <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Mental wellbeing <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -245,7 +245,7 @@
            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Better relationships <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Better relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -256,7 +256,7 @@
                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button"
                
                class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">
-               Succeed at work <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+               Succeed at work <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -276,7 +276,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Learn meditation <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Learn meditation <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -285,7 +285,7 @@
            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Overcome harmful habits <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Overcome harmful habits <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -293,7 +293,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 " data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Manage emotions <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Manage emotions <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -314,7 +314,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Build self-awareness <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Build self-awareness <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -323,7 +323,7 @@
            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Better parenting <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Better parenting <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -331,7 +331,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">HappierMe for Teenagers <i class='fa fa-angle-right' style='font-size:36px'></i></button>
+<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">HappierMe for Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -370,7 +370,7 @@
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 We are here to support you to succeed in all aspects of life
               </h2>
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:36px'></i> Quick View</button>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> Quick View</button>
 
             </div>
           </div>
@@ -2150,7 +2150,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive" alt="calm_anxiety_blog" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/25.webp" class="img-responsive" alt="calm_anxiety_blog" loading=lazy>
                       </div>
                     </div>
 
@@ -3129,7 +3129,7 @@
   </div>
 
       </section>
-      <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:36px'></i> News popup</button>
+      <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> News popup</button>
   
       <?php include('./includes/footer.php'); ?>
       <!-- /footer -->
@@ -3284,7 +3284,7 @@ Breathing and tapping exercises for quick relief                  </h5>
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
                     Short videos
                   </h3>
-                  <h5 class=" fs_12px fw_400  fc_120f40 pr20px">
+                  <h5 class="review">
 Wellbeing tips from trained coaches               
   </h5>
                 
@@ -3310,7 +3310,7 @@ Wellbeing tips from trained coaches
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
                     Guided journaling
                   </h3>
-                  <h5 class=" fs_12px fw_400  fc_120f40 pr20px">
+                  <h5 class="review">
 Your private journal with questions for personal growth            
     </h5>
                 
@@ -3337,7 +3337,7 @@ Your private journal with questions for personal growth
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
                     Community forum
                   </h3>
-                  <h5 class=" fs_12px fw_400  fc_120f40 pr20px">
+                  <h5 class="review">
 Find support, share your thoughts and make friends   
         </h5>             
               </div>
