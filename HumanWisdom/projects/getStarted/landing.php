@@ -1786,7 +1786,7 @@
 
               <li>
                 <a data-toggle="tab" id="pathWay" href="#pathway">
-                  PATHWAY
+                   Guided programs
                 </a>
               </li>
 
@@ -1876,7 +1876,7 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                        PATHWAY
+                         Guided programs
                       </h3>
 
                       <h5 class="mt10px mb15px fs_15px fw_400 lh_150p fc_000000">
