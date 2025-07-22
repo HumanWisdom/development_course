@@ -50,7 +50,7 @@
     line-height: 140%;
     opacity: 75%;
     color: #000000;
-  margin-top: -4px;  
+  margin-top: -5px;  
 }
 .h5{
     margin-top: -5px;
@@ -60,7 +60,7 @@
     border: 0;
     /* width: 314px; */
     width: 100%;
-    height: 65px;
+    height: 70px;
     text-align: left;
     border-radius: 12px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
