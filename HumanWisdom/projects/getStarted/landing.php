@@ -86,7 +86,7 @@
        <!-- header -->
       
       <div class="row center_flex web_home_divlanding">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock w-header">
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ddflex_mblock w-header">
 
          
          
@@ -189,7 +189,7 @@
               </div>
             </div> -->
 
-            <div class="row mt20px">
+            <div class="row mt40px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
                   <a href="https://happierme.app/pages/splash_options.php"  class="">
@@ -250,7 +250,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 " data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button"
@@ -290,7 +290,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 " data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                    <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Manage emotions <i class='fa fa-angle-right' style='font-size:36px'></i></button>
@@ -328,7 +328,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">HappierMe for Teenagers <i class='fa fa-angle-right' style='font-size:36px'></i></button>

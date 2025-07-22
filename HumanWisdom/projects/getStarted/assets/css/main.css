@@ -3096,7 +3096,7 @@ animation-name: slideInRight;
 .tool_tabs li a 
 {
   /* width: 121px; */
-  width: 109px;
+  /* width: 109px; */
   height: 28px;
   border-radius: 10px;
   background: #E8A880;
@@ -4424,7 +4424,7 @@ background: #FCF2EC;
 .rating_a .fa
 {
   font-size: 15px;
-  color: #000000;
+  /* color: #000000; */
   margin-right: 4px;
 }
 
