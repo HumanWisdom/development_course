@@ -3821,6 +3821,18 @@ audio::-webkit-media-controls-enclosure
   justify-content: flex-start;
 }
 
+.absolute_desc_pship {
+    position: absolute;
+  top: 0px;
+  left: 230px;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .fc_select_01
 {
   appearance: none;
