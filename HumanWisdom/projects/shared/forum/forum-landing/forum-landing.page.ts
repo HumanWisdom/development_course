@@ -107,6 +107,8 @@ export class ForumLandingPage implements OnInit {
   public bookmarkLength: any;
   public isLoading:boolean = false;
   public programType :ProgramType.Adults;
+  isFreeTrialEnable = false;
+
   constructor(private serivce: ForumService, public platform: Platform, private router: Router,
     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService,
     private meta: Meta, private title: Title, public service: OnboardingService, public logeventservice: LogEventService,
@@ -144,7 +146,8 @@ export class ForumLandingPage implements OnInit {
         this.getForumSearchData();
     }
 
-     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.isSubscribe = localStorage.getItem('Subscriber') === '1' ? true : false;
   }
   like(item, index) {
     if (this.isLoggedIn) {
@@ -662,6 +665,7 @@ export class ForumLandingPage implements OnInit {
   }
 
   getAlertcloseEvent($event) {
+    this.isFreeTrialEnable = false;
     if ($event == 'cancel') {
       this.enableAlert = false;
     } else {
@@ -704,7 +708,8 @@ export class ForumLandingPage implements OnInit {
     if(this.isLoggedIn){
       localStorage.setItem('tagId',tagId);
       this.router.navigate([SharedService.getUrlfromFeatureName('forum/forum-thread-start-new')]);
-    }else{
+    }else if(!this.isLoggedIn || !this.isSubscribe){
+      this.isFreeTrialEnable = true;
       this.enableAlert= true;
     }
   }
