@@ -69,17 +69,15 @@
                 <span class="fs_15px fw_700 lh_140p fc_ffffff">4.8</span> App store rating
               </h6>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="w3-container">
+                <div class="w3-container w3-animate-bottom">
                   <span class="mt20px slider-heading  fw_500 lh_130p fc_ffffff">With HappierMe you can</span>
+                  <span class="mtb0px slider-heading fw_500 lh_130p fc_ffffff" style="display:block; margin-top:4px;"><?= $slide['heading'] ?></span>
                 </div>
               </div>
-              <div class="row">
-                <div class="w3-container w3-animate-bottom">
-                  <span class="mtb0px slider-heading fw_500 lh_130p fc_ffffff"><?= $slide['heading'] ?></span>
-                </div>
-
-                
+              <div class="row" style="width:100%;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h5 class="fs_21px fw_400 lh_150p fc_ffffff">Find long-term solutions by addressing the root cause</h5>
+               </div>
               </div>
               <div class="row mt10px">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
@@ -195,4 +193,5 @@ var youtubeVideo = {
 };
 
 youtubeVideo.init();
+    </script>
     </script>

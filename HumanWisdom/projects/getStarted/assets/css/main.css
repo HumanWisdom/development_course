@@ -26,7 +26,7 @@
 /* Colors */
 :root {
   --color-default: #212529;
-  --color-primary: #E58D82;
+  --color-primary: #E58D82 !important;
   --color-secondary: #37373f;
 }
 
@@ -35,6 +35,11 @@
   scroll-behavior: smooth;
 }
 
+/* @media (min-width: 1200px) {
+    .col-lg-4 {
+        width: 32.33333333%;
+    }
+} */
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -519,7 +524,7 @@ label > input[type="checkbox"] + *::before {
     font-size: 15px;
     font-weight: 500;
     line-height: 130%;
-    /* color: #CB6171; */
+    color: #CB6171 !important;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -1810,6 +1815,8 @@ div.scroll-container img {
   flex-direction: column;
   /* margin-left: -350px; */
   z-index: 3;
+  margin-left: 30px;
+  margin-top: 1%;
 }
 
 .hero h2 {
@@ -2472,6 +2479,11 @@ a
   margin-left: 10px;
 }
 
+.ml15px 
+{
+  margin-left: 15px;
+}
+
 .mr15px 
 {
   margin-right: 15px;
@@ -2761,6 +2773,11 @@ animation-name: slideInRight;
   max-width: 100%;
   height: auto;
 }
+
+.teens-app-img {
+  max-width: 97% !important;
+}
+
 /* /image */
 
 /* ellipsis */
@@ -3433,10 +3450,10 @@ padding:20px;
 
 .cvideo
 {
-  width: 100%;
+  width: 90%;
   border-radius: 12px;
   position:relative;
-  min-height: 30rem;
+  min-height: 20rem;
    background: #120F40; 
 }
 
@@ -3630,7 +3647,7 @@ audio::-webkit-media-controls-enclosure
   background: rgba(232, 168, 128, 0.20);  
   border: 0;
   text-align: center;
-  cursor: auto;
+  cursor: auo;
 }
 
 .img_blogs
@@ -3638,6 +3655,7 @@ audio::-webkit-media-controls-enclosure
   border-radius: 20px;
   object-fit: fill;
   height: 300px;
+  width: 92% !important;
 }
 
 .blog_title 
@@ -3702,9 +3720,22 @@ audio::-webkit-media-controls-enclosure
 {
   border-radius: 10px;
   background: var(--Light-pink, linear-gradient(93deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%));
-  padding: 27px 36px;
+  padding: 27px 37px;
   margin-right: 20px;
 }
+
+.work_app_img {
+  width: 96% !important;
+}
+
+.education_app_img {
+  width: 96% !important;
+}
+
+.healthcare_app_img {
+  width: 96% !important;
+}
+
 
 .div_price > [class^="col-"]:last-child
 {
@@ -3781,7 +3812,19 @@ audio::-webkit-media-controls-enclosure
 .absolute_desc
 {
   position: absolute;
-  top: 0;
+  top: 280px;
+  left: 230px;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.absolute_desc_pship {
+    position: absolute;
+  top: 0px;
   left: 230px;
   right: 0;
   bottom: 0;
@@ -5199,4 +5242,9 @@ margin-top: -72px !important;
 
 .mt10{
 margin-top: 10px !important;
+}
+
+.testimonial_user_image {
+  height: 78.33px !important;
+  width: 78.33px !important
 }
