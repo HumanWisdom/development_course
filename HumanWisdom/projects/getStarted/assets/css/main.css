@@ -2498,6 +2498,7 @@ a
 .cml40px 
 {
   margin-left: 40px;
+  margin-top: 20px;
 }
 
 .cmh40px 
@@ -3113,7 +3114,7 @@ animation-name: slideInRight;
 .tool_tabs li a 
 {
   /* width: 121px; */
-  width: 109px;
+  /* width: 109px; */
   height: 28px;
   border-radius: 10px;
   background: #E8A880;
@@ -4467,7 +4468,7 @@ background: #FCF2EC;
 .rating_a .fa
 {
   font-size: 15px;
-  color: #000000;
+  /* color: #000000; */
   margin-right: 4px;
 }
 
@@ -5143,9 +5144,9 @@ padding: 15px;
 }
 
 @media screen and (max-width: 820px) {
-.support_section {
+/* .support_section {
   margin-top: 19rem !important;
-}
+} */
 .btn_happiermeyoutube {
   margin-left: -10px;
 }
