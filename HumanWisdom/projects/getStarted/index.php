@@ -1747,7 +1747,7 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                        Guided programs
+                        PATHWAY - Guided program
                       </h3>
 
                       <h5 class="mt10px mb15px fs_15px fw_400 lh_150p fc_000000">
