@@ -1876,7 +1876,7 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                         Guided programs
+                         PATHWAY - Guided program
                       </h3>
 
                       <h5 class="mt10px mb15px fs_15px fw_400 lh_150p fc_000000">
@@ -3147,7 +3147,11 @@
     <div class="modal-dialog">
         <div class="modal-content1">
             <div class="modal-header">
-                <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                <a href="#" data-dismiss="modal" class="class pull-right">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+
+                
+              </a>
                
                 <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px">
@@ -3214,7 +3218,7 @@ Covering Stress, Anxiety, Depression and Bereavement                  </h6>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast1.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
@@ -3241,7 +3245,7 @@ Insightful conversations on mental wellbeing
 
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/feel1.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
@@ -3273,7 +3277,7 @@ Breathing and tapping exercises for quick relief                  </h5>
           
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video1.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
@@ -3298,7 +3302,7 @@ Wellbeing tips from trained coaches
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journili.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
@@ -3325,7 +3329,7 @@ Your private journal with questions for personal growth
 
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community1.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
