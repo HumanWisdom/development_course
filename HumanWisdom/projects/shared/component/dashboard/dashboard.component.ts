@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
   }
 
     goBack(){
-    var url = this.navigationService.navigateToSkippedBackLink();
+    var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       // this.router.navigate([SharedService.getDashboardUrls()]);
       this.location.back();

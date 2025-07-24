@@ -343,7 +343,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
 
     this.service.GetGuidedQs_Topics().subscribe((res) => {
       this.viewMore = res.filter((d, i) => i < 6);
-      this.viewLess = res.filter((d, i) => i > 6);
+      this.viewLess = res.filter((d, i) => i >= 6);
       this.topic = this.viewMore;
     });
   }
