@@ -98,7 +98,7 @@ Here you will find easy to use tools to manage your emotions and mental health, 
       <!-- aspects -->
       <section>
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_au">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_au d-lg-flex d-md-flex d-sm-flex d-block ">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 pr20px cpr_a" data-aos="fade-up" data-aos-delay="100">
               <div class="row">
