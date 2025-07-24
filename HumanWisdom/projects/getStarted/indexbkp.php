@@ -57,11 +57,7 @@
     </script> -->
     <!-- End Google Tag Manager -->
 
-  <style>
-    .h5{
-      margin-top:-8px;
-    }
-    </style>
+  
     
   </head>
 
@@ -82,31 +78,35 @@
 
 
     
-    <section class="hpt120px ">
+    <section class="hpt120px">
        <!-- header -->
-      
-      <div class="row center_flex web_home_divlanding">
-        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ddflex_mblock w-header">
+      <!-- header -->
+      <?php include('./includes/slider-index.php'); ?>
+          <!-- /header -->
+
+
+      <!-- <div class="row center_flex web_home_div">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ddflex_mblock w-header">
 
          
          
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100"> 
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 land-video-sec"  data-aos="fade-up" data-aos-delay="100"> -->
             <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
               controlsList="nodownload" id="vid">
               <source
                 src="https://d1tenzemoxuh75.cloudfront.net/website/videos/launch.mp4#t=1"
                 type="video/mp4">
-            </video>  -->
+            </video> -->
             <!-- <iframe  width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
-            <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>  -->
-               <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>  -->
-              <img style="width:100%;height:auto;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/Adults+teenagers+2.svg" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
+            <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe> -->
+              <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+              <!-- <img style="width:100%;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index.webp" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
 
 
              <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
           </div>
-          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
@@ -133,8 +133,8 @@
 
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc">
-                Understand your mind. Transform your life.       
+                <h1 class="mtb0px fs_56px fw_600 lh_130p fc_834b66 ta_lc">
+                HappierMe for a happier you
                 </h1>
               </div>
             </div>
@@ -142,13 +142,13 @@
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                <h2 class="mtb0px fs_18px fw_400 lh_140p fc_000000 ta_lc">
-                A happier mind starts with understanding it. We support you to manage your emotions, build stronger relationships, and handle life with more clarity and calm. </h2>
+                <h2 class="mtb0px fs_21px fw_400 lh_140p fc_000000 ta_lc">
+                Manage your emotions, have happier relationships and succeed in life. </h2>
 
               </div>
             </div>
 
-            <!-- <div class="row">
+            <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""  alt="wh_tick_black" loading=lazy>
@@ -187,191 +187,63 @@
                   </h3>
                 </div>
               </div>
-            </div> -->
+            </div>
 
-            <div class="row mt40px">
+            <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_21px fw_600 lh_140p fc_ffffff btn_landing" >
-                     Try HappierMe for free
+                  <a id="adultsWeb"  class="">
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                      HappierMe for Adults
                     </button>
                   </a>
                 </div>
 
-                <!-- <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px btn-res">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px btn-res">
                   <a id ="teensWeb" class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
                       HappierMe for Teens
                     </button>
                   </a>
-                </div> -->
+                </div>
               </div>
             </div>
 
-            
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 dinline_block ta_lc">
+                  Start your free trial now. Download the app on
+                  <a class="" href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="mlr5px" alt="appstore" loading=lazy>
+                  </a>
+                  and
+                  <a class="" href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="mlr5px" alt="playstore" loading=lazy>
+                  </a>
+                </h3>
+              </div>
+            </div>
 
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <main id="main">
      
- <!-- popup -->
-      <section>
-        <div class="section-header">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
-                Find out how HappierMe can help you
-              </h2>
-            </div>
-          </div>
-        </div>
 
-        <div class="row center_flex">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Mental wellbeing <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Better relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 " data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-               <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button"
-               
-               class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">
-               Succeed at work <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-            
-
-              
-
-              
-
-          </div>
-        </div>
-
-        <div class="row center_flex mt20px" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Learn meditation <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Overcome harmful habits <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 " data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Manage emotions <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-            
-
-              
-
-              
-
-          </div>
-        </div>
-
-
-        <div class="row center_flex mt20px" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Build self-awareness <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Better parenting <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">HappierMe for Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
-
-                </div>
-              </div>
-            </div>
-            
-
-              
-
-              
-
-          </div>
-        </div>
-
-        <!-- <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p0">
-              <a href="#bring_happierme">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
-                  Request a demo
-                </button>
-              </a>
-            </div>
-          </div>
-        </div> -->
-      </section>
-      <!-- /popup -->
     
     
    
 
       <!-- aspects -->
-      <!-- <section class="support_section">
+      <section class="support_section">
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 We are here to support you to succeed in all aspects of life
               </h2>
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> Quick View</button>
-
             </div>
           </div>
         </div>
@@ -521,7 +393,7 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
       <!-- /aspects -->
 
       <!-- video -->
@@ -551,7 +423,6 @@
         </div>
       </section>
       <!-- /video -->
-
       <div class="row center_flex mt_d100px_m60px">
   <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0 tcenter">
@@ -1786,7 +1657,7 @@
 
               <li>
                 <a data-toggle="tab" id="pathWay" href="#pathway">
-                   Guided programs
+                  Guided programs
                 </a>
               </li>
 
@@ -1876,7 +1747,7 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
-                         PATHWAY - Guided program
+                        PATHWAY - Guided program
                       </h3>
 
                       <h5 class="mt10px mb15px fs_15px fw_400 lh_150p fc_000000">
@@ -2150,7 +2021,7 @@
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/25.webp" class="img-responsive" alt="calm_anxiety_blog" loading=lazy>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive" alt="calm_anxiety_blog" loading=lazy>
                       </div>
                     </div>
 
@@ -3129,7 +3000,7 @@
   </div>
 
       </section>
-      <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> News popup</button>
+      <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> News popup</button>
   
       <?php include('./includes/footer.php'); ?>
       <!-- /footer -->
@@ -3141,247 +3012,6 @@
     <!-- /vendor_footer -->
 
   </body>
-
-
-  <div class="modal fade product_view" id="product_view1">
-    <div class="modal-dialog">
-        <div class="modal-content1">
-            <div class="modal-header">
-                <a href="#" data-dismiss="modal" class="class pull-right">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-                
-              </a>
-               
-                <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-        </div>
-
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-
-                  
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/mental1.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        </div>
-        </div>
-              </div>
-                
-            </div>
-
-      <div class="section-header1">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
-                Overcome stress and anxiety
-              </h2>
-              <h5 class="para">
-Learn to address the root cause, and not just the symptoms.                  </h5>
-            </div>
-          </div>
-        </div>
-          <div class="modal-body">
-
-
-        
-                    
-                   
-                       
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided1.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_120f40">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">
-Covering Stress, Anxiety, Depression and Bereavement                  </h6>
-                
-              </div>
-        </div>
-
-              
-               
-              
-            </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast1.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_120f40">
-                    Hundreds of podcasts
-                  </h3>
-                  <h5 class=" review">
-Insightful conversations on mental wellbeing            
-      </h5>
-                
-              </div>
-        </div>
-
-              
-               
-              
-            </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/feel1.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-
-
-                  <h3  style="margin-top:0px;"class="  fs_18px fw_600  fc_120f40">
-                    Feel better now
-                  </h3>
-                  <h5 class=" review">
-Breathing and tapping exercises for quick relief                  </h5>
-                
-              </div>
-        </div>
-
-              
-               
-              
-            </div>
-          </div>
-        </div>
-
-      
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/video1.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
-                    Short videos
-                  </h3>
-                  <h5 class="review">
-Wellbeing tips from trained coaches               
-  </h5>
-                
-              </div>
-        </div>
-
-              
-               
-              
-            </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journili.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
-                    Guided journaling
-                  </h3>
-                  <h5 class="review">
-Your private journal with questions for personal growth            
-    </h5>
-                
-              </div>
-        </div>
-
-              
-               
-              
-            </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community1.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_120f40">
-                    Community forum
-                  </h3>
-                  <h5 class="review">
-Find support, share your thoughts and make friends   
-        </h5>             
-              </div>
-        </div>
-
-              
-               
-              
-            </div>
-          </div>
-        </div>
-<div class="row center_flex mtb20px">
-  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
-
-  <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_21px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
-                  </a>
-                </div>
-    
-  </div>
-</div>
-
-
-        </div>
-        </div>
-        
-                        
-                </div>
-            </div>
-        </div>
-
-        
-    </div>
-</div>
-
-
-<!-- <popup1> -->
   <div class="modal fade product_view" id="product_view">
         <div class="modal-dialog">
           <div class="modal-content">
