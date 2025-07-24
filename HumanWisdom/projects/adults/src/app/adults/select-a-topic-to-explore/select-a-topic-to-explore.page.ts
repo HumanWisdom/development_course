@@ -258,7 +258,7 @@ export class SelectATopicToExplorePage implements OnInit {
         localStorage.setItem('curatedurl', '/adults/wisdom-exercise');
         this.logeventservice.logEvent('click_for_self_awareness');
         // this.route.navigate(['/adults/curated/have-calm-mind'])
-        this.route.navigate(['/adults/wisdom-exercise'])
+        this.route.navigate(['/adults/dashboard/wisdom-exercise'])
 
       }
     }else {
