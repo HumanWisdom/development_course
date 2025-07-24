@@ -86,7 +86,7 @@
        <!-- header -->
       
       <div class="row center_flex web_home_divlanding">
-        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ddflex_mblock w-header">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
 
          
          
@@ -106,7 +106,7 @@
 
              <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index_new.webp" class="img-responsive w100p display_d_none"  loading="lazy"alt="performance">
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 cml40px"  data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px mtb40px"  data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
@@ -189,12 +189,12 @@
               </div>
             </div> -->
 
-            <div class="row mt20px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ddflex_mblock_a">
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 p0 mb15px mr15px btn-res">
-                  <a id="adultsWeb"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
-                      HappierMe for Adults
+             <div class="row mt40px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
+                  <a href="https://happierme.app/pages/splash_options.php"  class="">
+                    <button class="fs_21px fw_600 lh_140p fc_ffffff btn_landing" >
+                     Try HappierMe for free
                     </button>
                   </a>
                 </div>
@@ -236,7 +236,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Mental wellbeing <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal">Mental wellbeing <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -245,7 +245,7 @@
            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view1">Better relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal">Better relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -276,7 +276,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-toggle="modal" data-target="#product_view2">Learn meditation <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModal2">Learn meditation <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -551,6 +551,7 @@
         </div>
 
         
+
       </section>
       <!-- /video -->
 
@@ -3146,18 +3147,25 @@
 
 <!-- <mental-wellbeing> -->
 
-  <div class="modal fade product_view" id="product_view1">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content1">
             <div class="modal-header">
-                <a href="#" data-dismiss="modal" class="class pull-right">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+              
 
-                </a>
+              <!-- <i class="fa fa-times-circle" aria-hidden="true"></i> -->
+
+                <!-- <a href="#" data-dismiss="modal"   class="float-end">
+
+<button type="button" class="btn-close" aria-label="Close"></button>
+
+                </a> -->
                
-                <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px">
+                     <div class="modal-body">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+
                      </div>
 
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -3165,7 +3173,13 @@
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/mental1.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+ <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+                     </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+
+                                    <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+
                 </div>
               </div>
               </div>
@@ -3185,11 +3199,11 @@
           <div class="modal-body">
               <div class="row center_flex">
                           
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ">
+                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block ">
           
                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-3" >
                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided1.svg" class="img-responsive img_aspects" alt="PATHWAY">
                          </div>
               
@@ -3250,7 +3264,7 @@ Breathing and tapping exercises for quick relief                  </h5>
       
         <div class="row center_flex">
                           
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
           
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
@@ -3338,26 +3352,31 @@ Breathing and tapping exercises for quick relief                  </h5>
 
 <!-- <learn meditation> -->
 
-  <div class="modal fade product_view" id="product_view2">
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content1">
             <div class="modal-header">
-                <a href="#" data-dismiss="modal" class="class pull-right">
+                <!-- <a href="#" data-dismiss="modal" class="class pull-right">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
-                </a>
+                </a> -->
                
-                <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px">
+                 <div class="modal-body">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                      </div>
 
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                   
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/mental1.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+                     </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+
                 </div>
               </div>
               </div>
@@ -3377,7 +3396,7 @@ Breathing and tapping exercises for quick relief                  </h5>
           <div class="modal-body">
               <div class="row center_flex">
                           
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ">
+                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
           
                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
@@ -3401,7 +3420,7 @@ Breathing and tapping exercises for quick relief                  </h5>
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast1.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/nature.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
 
@@ -3609,6 +3628,25 @@ A library of audio meditations and soundscapes                  </h5>
 </div>
 <!-- <Build soft skills> -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- <popup1> -->
   <div class="modal fade product_view" id="product_view">
         <div class="modal-dialog">
