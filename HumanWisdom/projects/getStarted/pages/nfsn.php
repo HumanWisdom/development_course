@@ -397,7 +397,7 @@
         </div> -->
 
         <div class="row center_flex div_benifit">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 ta_lc aspects_outer">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 ta_lc aspects_outer d-lg-flex d-md-flex d-sm-flex d-block">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
