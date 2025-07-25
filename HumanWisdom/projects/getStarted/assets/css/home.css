@@ -499,5 +499,8 @@
       }
 
     }
+      .btn-gradient{
+        background: linear-gradient(180deg, #E58D82 0%, #CB6171 100%) !important;
+      }
     
   
