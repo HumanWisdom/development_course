@@ -324,7 +324,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.enableAlert = true;
       this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
     } else {
-      this.Onboardingservice.navigateToUpgradeToPremium = true;
+      // this.Onboardingservice.navigateToUpgradeToPremium = true;
+      //this.router.navigate(['adults/partnership-app']);
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
     }
     this.closemodal?.nativeElement?.click();

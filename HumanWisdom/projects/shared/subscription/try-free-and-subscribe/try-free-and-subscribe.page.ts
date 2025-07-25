@@ -236,14 +236,28 @@ export class TryFreeAndSubscribePage implements OnInit {
 
   back() {
     if (sessionStorage.getItem('isPaymentBackClicked') && sessionStorage.getItem('isPaymentBackClicked') == 'T') {
-      var url = this.navigateService.goBack();
-      this.router.navigateByUrl(url);
+      // var url = this.navigateService.goBack();
+      // this.router.navigateByUrl(url);
     } else {
       sessionStorage.setItem('isPaymentBackClicked', 'T');
       this.commonService.updateSurveyData(2);
-      var url = this.navigateService.goBack();
-      this.router.navigateByUrl(url);
+      // var url = this.navigateService.goBack();
+      // this.router.navigateByUrl(url);
     }
+
+        var url = this.navigateService.navigateToBackLink();
+        if(url==null){
+          url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+          if(url && url!=null && url != 'null'){
+            this.router.navigate([url]);
+          }else{
+            this.location.back();
+          }
+         }
+         else{
+          this.router.navigate([url]);
+        }
+
   }
 
   routeToDashboard() {

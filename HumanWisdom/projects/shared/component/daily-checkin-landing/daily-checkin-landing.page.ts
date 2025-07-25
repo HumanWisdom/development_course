@@ -70,7 +70,7 @@ export class DailyCheckInLandingPage implements OnInit {
           localStorage.setItem("FnName", namedata[0]);
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '');
           localStorage.setItem("Subscriber", res['Subscriber']);
-          localStorage.setItem("NoOfVisits", res['NoOfVisits']);
+          localStorage.setItem("NoOfVisits", res['NoOfVisits']);         
         }
       });
     }
@@ -104,19 +104,20 @@ export class DailyCheckInLandingPage implements OnInit {
     this.isRoutedFromLogin =true;
     SharedService.isRoutedFromLogin = this.isRoutedFromLogin;
 
-    if (localStorage.getItem("token") && (this.saveUsername == true)) {
+   /*  if (localStorage.getItem("token") && (this.saveUsername == true)) {
       this.userId = JSON.parse(localStorage.getItem("userId"));
       this.userName = JSON.parse(localStorage.getItem("userName"));
     } else {
       this.userId = JSON.parse(sessionStorage.getItem("userId"));
       this.userName = JSON.parse(sessionStorage.getItem("userName"));
-    }
+    } */
     //    this.getBookmarks();
     if (res.UserId == 0) {
     } else {
       this.userId = res.UserId;
       this.userName = res.Name;
       localStorage.setItem("isloggedin",'T');
+      localStorage.setItem("remember", 'T')      
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse));
       localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("token", JSON.stringify(res.access_token));
