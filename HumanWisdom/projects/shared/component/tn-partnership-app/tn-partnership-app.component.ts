@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Router } from '@angular/router';
+import { NavigationService } from '../../../shared/services/navigation.service';
+
 
 @Component({
   selector: 'app-tn-partnership-app',
@@ -15,7 +17,9 @@ export class TnPartnershipAppComponent implements OnInit {
   isPartner=false;
 
  @Input() isShowLink:boolean=true;
-  constructor(public location:Location, private ngNavigatorShareService: NgNavigatorShareService, private router :Router) { }
+  constructor(public location:Location, private ngNavigatorShareService: NgNavigatorShareService,
+    private navigationService: NavigationService,
+    private router :Router) { }
 
   ngOnInit() {
     if(window.history.state && window.history.state.isPartnerFaq){
@@ -29,7 +33,17 @@ export class TnPartnershipAppComponent implements OnInit {
 
   goBack()
   {
-    this.location.back();
+    // this.location.back();
+
+    var url = this.navigationService.navigateToBackLink();
+            if(url==null){
+              
+                this.location.back();
+              
+             }
+             else{
+              this.router.navigate([url]);
+            }
   }
 
   share(){
