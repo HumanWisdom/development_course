@@ -78,34 +78,37 @@
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""
                   alt="wh_tick_black" loading="lazy">
-              </div><span class="feature-txt">Overcome stress and anxiety</span>
+              </div><span class="feature-txt">Overcome stress and anxiety.</span>
             </li>
           
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""
                   alt="wh_tick_black" loading="lazy">
-              </div><span class="feature-txt">Build stronger relationships</span>
+              </div><span class="feature-txt">Build stronger relationships.</span>
             </li>
              <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""
                   alt="wh_tick_black" loading="lazy">
-              </div><span class="feature-txt"> Address the root cause, not just the symptoms</span>
+              </div><span class="feature-txt"> Address the root cause, not just the symptoms.</span>
             </li>
            
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""
                   alt="wh_tick_black" loading="lazy">
-              </div><span class="feature-txt">Manage your emotions and be happier</span>
+              </div><span class="feature-txt">Manage your emotions and be happier.</span>
             </li>
           </ul>
           <div id="PricingSelectBtnHomePage">
-            <button class="cta-button">
-              <span class="btn-txt">Let's get started!</span>
-            </button>
+            <a href="signup.php">
+              <button class="cta-button btn-gradient">
+                <span class="btn-txt">Let's get started!</span>
+              </button>
+            </a>
           </div>
+
 
         </div>
       </div>
