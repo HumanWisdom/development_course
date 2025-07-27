@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5.3 Test</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+    .test-button {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Bootstrap 5.3 Test</h1>
+        
+        <!-- Test button -->
+        <button type="button" id="testNewsPopup" class="test-button">Test Newsletter Popup</button>
+        
+        <!-- Hidden trigger button -->
+        <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product_view">
+            <i class='fa fa-angle-right' style='font-size:25px'></i> News popup
+        </button>
+        
+        <!-- Tabs Test -->
+        <h2>Tabs Test</h2>
+        <ul class="nav nav-tabs" id="toolTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">
+                    Tab 1
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">
+                    Tab 2
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">
+                    Tab 3
+                </button>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="toolTabsContent">
+            <div id="tab1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab1-tab">
+                <h3>Tab 1 Content</h3>
+                <p>This is the content for tab 1. If you can see this, the tabs are working!</p>
+            </div>
+            
+            <div id="tab2" class="tab-pane fade" role="tabpanel" aria-labelledby="tab2-tab">
+                <h3>Tab 2 Content</h3>
+                <p>This is the content for tab 2. Click on the tabs above to switch between them.</p>
+            </div>
+            
+            <div id="tab3" class="tab-pane fade" role="tabpanel" aria-labelledby="tab3-tab">
+                <h3>Tab 3 Content</h3>
+                <p>This is the content for tab 3. The tabs should be fully functional now.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Newsletter Modal -->
+    <div class="modal fade product_view" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <div class="row center_flex">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+                            <div class="back1">
+                                <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
+                                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
+                                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
+                                            <div class="box">
+                                                <div class="row">
+                                                </div>
+                                                <div class="row mt30px">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                                                        <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">Sign up for our newsletter!</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mtb15px">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                                                    <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc">Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                                                    <form action="javascript:void(0);">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
+                                                                    <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
+                                                                    <div class="fc_icons">
+                                                                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_user.svg" class="img-responsive" alt="name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
+                                                                <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
+                                                                <div class="fc_icons">
+                                                                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_mail.svg" class="img-responsive" alt="email">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
+                                                                <div class="row mt15px">
+                                                                    <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">Subscribe</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Test Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Bootstrap 5.3 test page loaded');
+        
+        // Newsletter popup test button
+        const testNewsPopupBtn = document.getElementById('testNewsPopup');
+        if (testNewsPopupBtn) {
+            testNewsPopupBtn.addEventListener('click', function() {
+                console.log('Manual newsletter popup trigger clicked');
+                sessionStorage.removeItem('newsLetterOpened'); // Reset for testing
+                
+                const newsPopupBtn = document.getElementById('newsPopup');
+                if (newsPopupBtn) {
+                    newsPopupBtn.click();
+                } else {
+                    // Fallback: show modal directly using Bootstrap 5.3
+                    const modal = document.getElementById('product_view');
+                    if (modal) {
+                        console.log('Showing modal directly...');
+                        const bsModal = new bootstrap.Modal(modal);
+                        bsModal.show();
+                    }
+                }
+            });
+        }
+        
+        // Newsletter form handler
+        const newsLetterForm = document.getElementById("news-contact-form");
+        if (newsLetterForm) {
+            newsLetterForm.addEventListener("click", () => {
+                const email = document.getElementById("news-email").value;
+                const name = document.getElementById("news-name").value;
+              
+                if (!(email && name && "" != email && "" != name)) {
+                    alert("All fields must be filled out");
+                    return false;
+                }
+                
+                // Simple email validation
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if(!emailRegex.test(email)){
+                    alert("Please enter valid email");
+                    return false;
+                }
+                
+                alert("Newsletter subscription test successful! Email: " + email + ", Name: " + name);
+                
+                // Close modal after successful submission using Bootstrap 5.3
+                const modal = document.getElementById('product_view');
+                if (modal) {
+                    const bsModal = new bootstrap.Modal(modal);
+                    bsModal.hide();
+                }
+            });
+        }
+        
+        console.log('Bootstrap 5.3 test functionality initialized');
+    });
+    </script>
+</body>
+</html> 

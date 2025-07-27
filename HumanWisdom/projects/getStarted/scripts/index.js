@@ -27,32 +27,77 @@ setTimeout(() => {
     }  
 }, 1000);
 
+// Newsletter popup functionality
 setTimeout(() => {
-    if(sessionStorage.getItem('newsLetterOpened')!='true'){
-        sessionStorage.setItem('newsLetterOpened','true')
+    console.log("Checking newsletter popup...");
+    console.log("Session storage value:", sessionStorage.getItem('newsLetterOpened'));
+    
+    if(sessionStorage.getItem('newsLetterOpened') !== 'true'){
+        console.log("Newsletter popup should open");
+        sessionStorage.setItem('newsLetterOpened','true');
+        
+        // Set up newsletter form handler
         const newsLetterForm = document.getElementById("news-contact-form");
-        newsLetterForm?.addEventListener("click", () => {
-                  const  email = document.getElementById("news-email").value;
-                  const  name = document.getElementById("news-name").value;
-                    const o = { Name: name, EmailID: email };
-                  
-                    if (!(email && name && "" != email && "" != name)) return alert("All fields must be filled out"), !1;
-                    if(!validateEmail(email)){
-                        return alert("Please enter valid email"), !1;
+        if (newsLetterForm) {
+            newsLetterForm.addEventListener("click", () => {
+                const email = document.getElementById("news-email").value;
+                const name = document.getElementById("news-name").value;
+                const o = { Name: name, EmailID: email };
+              
+                if (!(email && name && "" != email && "" != name)) {
+                    alert("All fields must be filled out");
+                    return false;
+                }
+                if(!validateEmail(email)){
+                    alert("Please enter valid email");
+                    return false;
+                }
+                
+                fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { 
+                    method: "POST", 
+                    headers: { "Content-Type": "application/json" }, 
+                    body: JSON.stringify(o) 
+                })
+                .then((e) => e.json())
+                .then((e) => {
+                    document.getElementById("news-email").value = "";
+                    document.getElementById("news-name").value = "";
+                    alert(e?.Message ? e.Message : e);
+                    
+                    // Close modal after successful submission using Bootstrap 5.3
+                    const modal = document.getElementById('product_view');
+                    if (modal) {
+                        const bsModal = new bootstrap.Modal(modal);
+                        bsModal.hide();
                     }
-                    fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
-                        .then((e) => e.json())
-                        .then((e) => {
-                            (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );
-                        })
-                        .catch((e) => {
-                            let content = e['error']['Message'];
-                            console.error("Error:", e), alert(content);
-                        });
-            })
-        document.getElementById('newsPopup')?.click();
+                })
+                .catch((e) => {
+                    let content = e['error'] ? e['error']['Message'] : 'An error occurred';
+                    console.error("Error:", e);
+                    alert(content);
+                });
+            });
+        }
+        
+        // Trigger the popup using Bootstrap 5.3
+        const newsPopupBtn = document.getElementById('newsPopup');
+        if (newsPopupBtn) {
+            console.log("Triggering newsletter popup...");
+            newsPopupBtn.click();
+        } else {
+            console.error("News popup button not found");
+            // Fallback: try to show modal directly using Bootstrap 5.3
+            const modal = document.getElementById('product_view');
+            if (modal) {
+                console.log("Showing modal directly...");
+                const bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+            }
+        }
+    } else {
+        console.log("Newsletter popup already shown");
     }
-}, 20000);
+}, 10000); // Reduced from 20000 to 10000 for faster testing
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
@@ -493,5 +538,106 @@ $(document).ready(function(){
        $('.video-popup').fadeOut('slow');
         return false;
      });
+    
+    // Initialize Bootstrap tabs with conflict resolution
+    function initializeTabs() {
+        console.log('Initializing tabs...');
+        
+        // Remove any existing event handlers to prevent conflicts
+        $('a[data-toggle="tab"]').off('click');
+        $('.nav-tabs a').off('click');
+        
+        // Initialize Bootstrap 5.3 tabs
+        $('a[data-bs-toggle="tab"]').on('click', function (e) {
+            e.preventDefault();
+            console.log('Tab clicked:', $(this).attr('href'));
+            const target = $(this).attr('href');
+            const tab = new bootstrap.Tab(this);
+            tab.show();
+        });
+        
+        // Ensure tabs work on page load
+        $('.nav-tabs a').on('click', function (e) {
+            e.preventDefault();
+            console.log('Nav tab clicked:', $(this).attr('href'));
+            const target = $(this).attr('href');
+            const tab = new bootstrap.Tab(this);
+            tab.show();
+        });
+        
+        // Initialize all tabs with proper state management
+        $('.nav-tabs a[data-toggle="tab"], .nav-tabs a[data-bs-toggle="tab"]').each(function() {
+            $(this).on('click', function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                console.log('Tab clicked:', target);
+                
+                // Update active states
+                $('.nav-tabs li').removeClass('active');
+                $(this).parent().addClass('active');
+                
+                // Show the target tab content
+                $('.tab-pane').removeClass('show active');
+                $(target).addClass('show active');
+                
+                // Trigger Bootstrap 5.3 tab show
+                const tab = new bootstrap.Tab(this);
+                tab.show();
+                
+                console.log('Tab activated:', target);
+            });
+        });
+        
+        console.log('Tabs initialized successfully');
+    }
+    
+    // Initialize tabs immediately
+    initializeTabs();
+    
+    // Re-initialize tabs after a short delay to handle any loading issues
+    setTimeout(function() {
+        initializeTabs();
+    }, 500);
+    
+    // Add click event listeners for debugging
+    $('.nav-tabs a').on('click', function() {
+        console.log('Tab clicked via direct listener:', $(this).attr('href'));
+    });
+    
+    // Newsletter popup test button
+    const testNewsPopupBtn = document.getElementById('testNewsPopup');
+    if (testNewsPopupBtn) {
+        testNewsPopupBtn.addEventListener('click', function() {
+            console.log('Manual newsletter popup trigger clicked');
+            sessionStorage.removeItem('newsLetterOpened'); // Reset for testing
+            
+            const newsPopupBtn = document.getElementById('newsPopup');
+            if (newsPopupBtn) {
+                newsPopupBtn.click();
+            } else {
+                // Fallback: show modal directly using Bootstrap 5.3
+                const modal = document.getElementById('product_view');
+                if (modal) {
+                    console.log('Showing modal directly...');
+                    const bsModal = new bootstrap.Modal(modal);
+                    bsModal.show();
+                }
+            }
+        });
+    }
+    
+    // Ensure Bootstrap 5.3 modal functionality works
+    document.addEventListener('click', function(e) {
+        if (e.target.matches('[data-bs-toggle="modal"]')) {
+            const target = e.target.getAttribute('data-bs-target');
+            if (target) {
+                const modal = document.querySelector(target);
+                if (modal) {
+                    const bsModal = new bootstrap.Modal(modal);
+                    bsModal.show();
+                }
+            }
+        }
+    });
     
 });
