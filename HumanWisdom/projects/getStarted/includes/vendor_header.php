@@ -11,33 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" >
 
-<!-- Vendor CSS Files -->
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!-- Bootstrap 5.3 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
-<!-- <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+<!-- Vendor CSS Files -->
 <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" >
-<!-- <link href="../assets/vendor/aos/aos.css" rel="stylesheet"> -->
 <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
- <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
-
 
 <!-- Template Main CSS File -->
-<!-- <link href="../assets/css/style_hb.css" rel="stylesheet"> -->
-<!-- <link href="../assets/css/main.css" rel="stylesheet" >
-<link href="../assets/css/responsive.css" rel="stylesheet" >
-<link href="../assets/font/font_colour.css" rel="stylesheet" >
-<link href="../assets/font/font_size.css" rel="stylesheet" >
-<link href="../assets/font/font_weight.css" rel="stylesheet" >
-<link href="../assets/font/line_height.css" rel="stylesheet" >
-<link href="../assets/css/style_hb.css" rel="stylesheet" > -->
 <link href="../assets/css/landing.css" rel="stylesheet">
-
 <link href="../assets/css/main.css" rel="stylesheet">
 <link href="../assets/css/home.css" rel="stylesheet">
 <link href="../assets/css/responsive.css" rel="stylesheet">
@@ -46,15 +29,109 @@
 <link href="../assets/font/font_weight.css" rel="stylesheet">
 <link href="../assets/font/line_height.css" rel="stylesheet">
 <link href="../assets/css/style_hb.css" rel="stylesheet"> 
- <!-- Vendor CSS Files -->
- <!-- <link href="./assets_new/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">  -->
-  <!-- <link href="./assets_new/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> -->
-  <!-- <link href="./assets_new/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
 
-  <!-- Main CSS File -->
-  <!-- <link href="./assets_new/css/main.css" rel="stylesheet">  -->
-
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"  /> 
+
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"  /> 
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WBHRGL7VH"></script>
+
+<!-- Debug CSS for tabs and modals -->
+<style>
+/* Ensure tab content is visible when active */
+.tab-content > .tab-pane.active {
+    display: block !important;
+}
+
+.tab-content > .tab-pane.active.show {
+    display: block !important;
+}
+
+/* Ensure tab navigation is clickable */
+.nav-tabs > li > a {
+    cursor: pointer;
+}
+
+.nav-tabs > li.active > a {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+/* Debug styles to ensure tabs are working */
+.tab-pane {
+    transition: opacity 0.3s ease;
+}
+
+.tab-pane.show.active {
+    opacity: 1;
+}
+
+.tab-pane:not(.show.active) {
+    opacity: 0;
+    display: none;
+}
+
+/* Bootstrap 5.3 Modal styles */
+.modal {
+    display: none;
+}
+
+.modal.show {
+    display: block !important;
+}
+
+.modal.fade .modal-dialog {
+    transform: translate(0, -25%);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: translate(0, 0) !important;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+
+.modal-backdrop.show {
+    opacity: 0.5;
+}
+
+/* Ensure modal is visible when shown */
+.modal.show {
+    display: block !important;
+}
+
+.modal.show .modal-dialog {
+    transform: translate(0, 0) !important;
+}
+
+/* Bootstrap 5.3 specific styles */
+.btn-close {
+    background: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn-close::before {
+    content: "×";
+    display: block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-align: center;
+}
+</style>
