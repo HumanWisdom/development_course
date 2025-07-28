@@ -324,7 +324,7 @@ export class AppComponent implements OnDestroy {
               let arr;
               result = result.forEach(element => {
                 if (element && element.length !== 0) {
-                  x.push(element.map(a => a.ScrNo))
+                  x.push(element.map(a =>parseInt(a.ScrNo)))
                   arr = Array.prototype.concat.apply([], x);
                 }
               })

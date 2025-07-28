@@ -975,7 +975,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.modaldata['email'] = localStorage.getItem('email');
     this.modaldata['firstname'] = namedata[0];
     this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
-    this.freescreens();
+    // this.freescreens();
     localStorage.setItem("text", JSON.stringify(this.text))
     localStorage.setItem("video", JSON.stringify(this.video))
     localStorage.setItem("audio", JSON.stringify(this.audio))
