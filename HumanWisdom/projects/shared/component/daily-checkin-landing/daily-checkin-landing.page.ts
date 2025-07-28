@@ -31,6 +31,7 @@ export class DailyCheckInLandingPage implements OnInit {
   public moduleId = 7
   public bookmarks = []
   public userId = 100;
+    x = [];
   constructor(
     public commonService: CommonService,
     public router: Router,
@@ -118,6 +119,7 @@ export class DailyCheckInLandingPage implements OnInit {
       this.userName = res.Name;
       localStorage.setItem("isloggedin",'T');
       localStorage.setItem("remember", 'T')      
+      this.freescreens();
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse));
       localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("token", JSON.stringify(res.access_token));
@@ -173,4 +175,24 @@ export class DailyCheckInLandingPage implements OnInit {
   routetoBlog() {
     this.router.navigateByUrl('/' + SharedService.getprogramName() + '/blog-article?sId=66');
   }
+
+  
+    freescreens() {
+      this.commonService.freeScreens().subscribe((res) => {
+        this.x = [];
+        let result = res.map((a) => a.FreeScrs);
+        let arr;
+        result = result.forEach((element) => {
+          if (element && element.length !== 0) {
+            this.x.push(element.map((a) => parseInt(a.ScrNo)));
+            arr = Array.prototype.concat.apply([], this.x);
+          }
+        });
+        // this.closemodal.nativeElement.click()
+        localStorage.setItem("freeScreens", JSON.stringify(arr));
+        // localStorage.setItem("isloggedin", 'T')
+        // this.router.navigate(['/adults/adult-dashboard'])
+      });
+    }
+  
 }
