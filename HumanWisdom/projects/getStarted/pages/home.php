@@ -101,7 +101,7 @@
             </li>
           </ul>
           <div id="PricingSelectBtnHomePage">
-            <button class="cta-button">
+            <button class="cta-button btn-gradient">
               <span class="btn-txt">Let's get started!</span>
             </button>
           </div>

@@ -1875,47 +1875,47 @@
         <div class="row center_flex prelative" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0">
 
-            <ul class="nav nav-tabs flex_ai m0px tool_tabs">
-              <li class="active">
-                <a data-toggle="tab" id="feelbetterNow" href="#fbn">
+            <ul class="nav nav-tabs flex_ai m0px tool_tabs" id="toolTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="feelbetterNow-tab" data-bs-toggle="tab" data-bs-target="#fbn" type="button" role="tab" aria-controls="fbn" aria-selected="true">
                   Feel better now
-                </a>
+                </button>
               </li>
 
-              <li>
-                <a data-toggle="tab" id="pathWay" href="#pathway">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pathWay-tab" data-bs-toggle="tab" data-bs-target="#pathway" type="button" role="tab" aria-controls="pathway" aria-selected="false">
                    Guided programs
-                </a>
+                </button>
               </li>
 
-              <li>
-                <a data-toggle="tab" id="journal" href="#journal_tab">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="journal-tab" data-bs-toggle="tab" data-bs-target="#journal_tab" type="button" role="tab" aria-controls="journal_tab" aria-selected="false">
                   Journal
-                </a>
+                </button>
               </li>
 
-              <li>
-                <a data-toggle="tab"  id="podcast" href="#podcast_tab">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="podcast-tab" data-bs-toggle="tab" data-bs-target="#podcast_tab" type="button" role="tab" aria-controls="podcast_tab" aria-selected="false">
                   Podcast
-                </a>
+                </button>
               </li>
 
-              <li>
-                <a data-toggle="tab" id="community" href="#forum">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="community-tab" data-bs-toggle="tab" data-bs-target="#forum" type="button" role="tab" aria-controls="forum" aria-selected="false">
                   Community
-                </a>
+                </button>
               </li>
 
-              <li>
-                <a data-toggle="tab" id="HapinessScore" href="#survey">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="HapinessScore-tab" data-bs-toggle="tab" data-bs-target="#survey" type="button" role="tab" aria-controls="survey" aria-selected="false">
                   Wellness score
-                </a>
+                </button>
               </li>
             </ul>
 
             <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
               <!-- fbn -->
-              <div id="fbn" class="tab-pane fade in active">
+              <div id="fbn" class="tab-pane fade show active" role="tabpanel" aria-labelledby="feelbetterNow-tab">
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr">
 
@@ -1965,7 +1965,7 @@
               <!-- /fbn -->
 
               <!-- pathway -->
-              <div id="pathway" class="tab-pane fade">
+              <div id="pathway" class="tab-pane fade" role="tabpanel" aria-labelledby="pathWay-tab">
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  mtb20px flex_fd_cr">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
@@ -2008,7 +2008,7 @@
               <!-- /pathway -->
 
               <!-- journal -->
-              <div id="journal_tab" class="tab-pane fade">
+              <div id="journal_tab" class="tab-pane fade" role="tabpanel" aria-labelledby="journal-tab">
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
@@ -2036,7 +2036,7 @@
               <!-- /journal -->
 
               <!-- podcast -->
-              <div id="podcast_tab" class="tab-pane fade">
+              <div id="podcast_tab" class="tab-pane fade" role="tabpanel" aria-labelledby="podcast-tab">
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
@@ -2072,7 +2072,7 @@
               <!-- /podcast -->
 
               <!-- forum -->
-              <div id="forum" class="tab-pane fade">
+              <div id="forum" class="tab-pane fade" role="tabpanel" aria-labelledby="community-tab">
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
@@ -2100,7 +2100,7 @@
               <!-- /forum -->
 
               <!-- survey -->
-              <div id="survey" class="tab-pane fade">
+              <div id="survey" class="tab-pane fade" role="tabpanel" aria-labelledby="HapinessScore-tab">
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
@@ -3227,7 +3227,7 @@
   </div>
 
       </section>
-      <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> News popup</button>
+      <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> News popup</button>
   
       <?php include('./includes/footer.php'); ?>
       <!-- /footer -->
@@ -3237,6 +3237,43 @@
     <!-- vendor_footer -->
     <?php include('./includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
+
+    <!-- Fallback tab functionality -->
+    <script>
+    // Fallback tab functionality in case Bootstrap tabs don't work
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all tab links
+        var tabLinks = document.querySelectorAll('a[data-toggle="tab"]');
+        
+        tabLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the target tab content
+                var targetId = this.getAttribute('href');
+                var targetContent = document.querySelector(targetId);
+                
+                if (targetContent) {
+                    // Hide all tab contents
+                    var allTabContents = document.querySelectorAll('.tab-pane');
+                    allTabContents.forEach(function(content) {
+                        content.classList.remove('in', 'active');
+                    });
+                    
+                    // Remove active class from all tab links
+                    var allTabLinks = document.querySelectorAll('.nav-tabs li');
+                    allTabLinks.forEach(function(li) {
+                        li.classList.remove('active');
+                    });
+                    
+                    // Show target content and activate tab
+                    targetContent.classList.add('in', 'active');
+                    this.parentElement.classList.add('active');
+                }
+            });
+        });
+    });
+    </script>
 
   </body>
 
@@ -3782,11 +3819,12 @@ A library of audio meditations and soundscapes                  </h5>
 
 
 <!-- <popup1> -->
-  <div class="modal fade product_view" id="product_view">
+  <div class="modal fade product_view" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <a href="#" id="closebtn" data-dismiss="modal" class="class pull-right">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                 <span class="glyphicon glyphicon-remove"></span>
               </a>
               <div class="row center_flex">
