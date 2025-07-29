@@ -105,7 +105,7 @@
 
 .testimonial-cardnew {
     /* width: 490px; */
-    /* height: 302px; */
+     height: 302px; 
     padding: 36px;
     position: relative;
     display: flex
