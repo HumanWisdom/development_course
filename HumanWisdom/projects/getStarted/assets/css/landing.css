@@ -19,26 +19,33 @@
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
     background: linear-gradient(180deg, #4267A5, #183C79);
 }
+.btn_landing:hover{
+      background: linear-gradient(180deg, #2D5392, #0E2E64);
+
+}
 .btn_popup {
     margin: 0;
     border: 0;
     /* width: 314px; */
-    width: 317px;
-    height: 61px;
+    width: 249px;
+    height: 51px;
     border-radius: 36px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-    background: linear-gradient(180deg, #CB6171, #E58D82);
+    background: linear-gradient(180deg,  #E58D82, #CB6171);
+}
+.btn_popup:hover{
+  background: linear-gradient(180deg, #BF5061, #DA7D71);;
 }
 .popuptitle{
     font-weight: 600;
-    font-size: 36px;
+    font-size: 27px;
     line-height: 120%;
     opacity: 75%;
     color: #000000;
 }
 .para{
   font-weight: 400;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 150%;
     opacity: 75%;
     color: #000000;
@@ -94,6 +101,39 @@
     text-align: center;
     padding-bottom: 10px;
     margin-top: -24px;
+}
+
+.testimonial-cardnew {
+    /* width: 490px; */
+    /* height: 302px; */
+    padding: 36px;
+    position: relative;
+    display: flex
+;
+    flex-direction: column;
+    background: #FCF2EC;
+    border-radius: 20px;
+    gap: 30px;
+}
+
+.testnew-info1 h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    opacity: 75%;
+}
+
+.testimonial-info h3 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+    margin: 5px 0 0 0;
+    line-height: 150%;
+    opacity: 75%;
+}
+h3 {
+    font-size: 24px;
 }
 .modal-content1 {
     position: relative;
