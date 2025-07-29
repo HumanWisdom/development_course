@@ -211,10 +211,16 @@ export class S156001Page implements OnInit,OnDestroy {
   } */
    youtube(link) 
   {
-    this.router.navigate(['/teenagers/curated/youtubelink', link],{
-    state: {
-      class: this.bg,
-    }})
+    if(this.isSubscriber == false){
+    this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
+
+
+    }
+    else
+        this.router.navigate(['/teenagers/curated/youtubelink', link],{
+        state: {
+          class: this.bg,
+        }});
   }
 
   Resume(url)
