@@ -2346,17 +2346,15 @@
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="tab-content tc_faqs desktop">
                 <div id="about_happierme" class="tab-pane fade in active">
-                  <div class="panel-group" id="accordion_faq">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c11">
-                            What is HappierMe?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c11" class="panel-collapse collapse in">
-                        <div class="panel-body">
+                  <div class="accordion" id="accordion_faq_about">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading_c11">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c11" aria-expanded="true" aria-controls="c11">
+                          What is HappierMe?
+                        </button>
+                      </h2>
+                      <div id="c11" class="accordion-collapse collapse show" aria-labelledby="heading_c11" data-bs-parent="#accordion_faq_about">
+                        <div class="accordion-body">
                           HappierMe is an app that you can use on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
                         </div>
                       </div>
@@ -2368,16 +2366,14 @@
                       </div>
                     </div>
 
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c12">
-                            How do I start my free trial?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c12" class="panel-collapse collapse">
-                        <div class="panel-body">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading_c12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c12" aria-expanded="false" aria-controls="c12">
+                          How do I start my free trial?
+                        </button>
+                      </h2>
+                      <div id="c12" class="accordion-collapse collapse" aria-labelledby="heading_c12" data-bs-parent="#accordion_faq_about">
+                        <div class="accordion-body">
                           From the desktop or in the app you will have an option of starting a free trial. You can choose whether to have a one week or 2 week free trial. You can cancel anytime during the free trial.
                         </div>
                       </div>
@@ -2389,17 +2385,14 @@
                       </div>
                     </div>
 
-
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c13">
-                            How do I get started with HappierMe?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c13" class="panel-collapse collapse">
-                        <div class="panel-body">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading_c13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c13" aria-expanded="false" aria-controls="c13">
+                          How do I get started with HappierMe?
+                        </button>
+                      </h2>
+                      <div id="c13" class="accordion-collapse collapse" aria-labelledby="heading_c13" data-bs-parent="#accordion_faq_about">
+                        <div class="accordion-body">
                           On the app there is an Introduction section. Begin here. It has videos and audios which help you understand what the app does, and how to make the most of it.
                         </div>
                       </div>
@@ -2412,20 +2405,20 @@
                     </div>
 
 
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c14">
-                            How much time do I need to spend every day on the app?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c14" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          It is up to you but 10 minutes/day will be enough to begin feeling the benefits. You could just do the ‘My daily practice’ every day.
+                       <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading_c14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c13" aria-expanded="false" aria-controls="c13">
+                         How much time do I need to spend every day on the app?
+                        </button>
+                      </h2>
+                      <div id="c13" class="accordion-collapse collapse" aria-labelledby="heading_c14" data-bs-parent="#accordion_faq_about">
+                        <div class="accordion-body">
+                         It is up to you but 10 minutes/day will be enough to begin feeling the benefits. You could just do the ‘My daily practice’ every day.
                         </div>
                       </div>
                     </div>
+
+                
                   </div>
                 </div>
 
@@ -4054,10 +4047,9 @@ A library of audio meditations and soundscapes                  </h5>
   <div class="modal fade product_view" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header d-block" style="float: right;">
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                <span class="glyphicon glyphicon-remove"></span>
+                <span class="bi bi-x"></span>
               </a>
               <div class="row center_flex">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
@@ -4069,7 +4061,7 @@ A library of audio meditations and soundscapes                  </h5>
                   Connect with our specialists today and see how we can help you
                 </h4></div></div> -->
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-flex">
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
