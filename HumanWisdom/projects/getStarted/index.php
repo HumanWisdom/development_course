@@ -2482,11 +2482,11 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                        <div class="accordion-item">
                       <h2 class="accordion-header" id="heading_c14">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c13" aria-expanded="false" aria-controls="c13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c14" aria-expanded="false" aria-controls="c14">
                          How much time do I need to spend every day on the app?
                         </button>
                       </h2>
-                      <div id="c13" class="accordion-collapse collapse" aria-labelledby="heading_c14" data-bs-parent="#accordion_faq_about">
+                      <div id="c14" class="accordion-collapse collapse" aria-labelledby="heading_c14" data-bs-parent="#accordion_faq_about">
                         <div class="accordion-body">
                          It is up to you but 10 minutes/day will be enough to begin feeling the benefits. You could just do the ‘My daily practice’ every day.
                         </div>

@@ -3286,6 +3286,11 @@ padding:20px;
   
 }
 
+.nav-tabs > li.active > a {
+    background-color:transparent !important;
+    border-color: transparent !important;
+}
+
 .tab_faqs.nav-tabs>li>a:hover,
 .tab_faqs.nav-tabs>li>a:focus,
 .tab_faqs.nav-tabs>li>a:active,
