@@ -587,7 +587,7 @@
   </div>
 
  <div class="row center_flex">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-flex">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block ">
 
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="testimonial-cardnew">
