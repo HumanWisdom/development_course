@@ -14,7 +14,6 @@
       </div>
     </div>
 
-    <br>
 
     <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
@@ -24,7 +23,6 @@
       </div>
     </div>                    
 
-    <br>
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -322,7 +320,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
               </div>
   
-              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+              <div class="col-md-7 col-sm-7 col-xs-7 p0 pl20pxi">
                 <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                   Session #10
                 </h4>
@@ -336,8 +334,14 @@
               
             </div>
   
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
             </div>
           </div>
         </div>

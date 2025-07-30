@@ -31,7 +31,7 @@
     height: 51px;
     border-radius: 36px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-    background: linear-gradient(180deg,  #E58D82, #CB6171);
+    background: linear-gradient(180deg,  #CB6171, #E58D82);
 }
 .btn_popup:hover{
   background: linear-gradient(180deg, #BF5061, #DA7D71);;
@@ -105,17 +105,29 @@
 
 .testimonial-cardnew {
     /* width: 490px; */
-    /* height: 302px; */
+     height: 305px; 
     padding: 36px;
     position: relative;
     display: flex
 ;
     flex-direction: column;
-    background: #FCF2EC;
+    background: #FFF4E6;
     border-radius: 20px;
     gap: 30px;
 }
 
+
+
+.div_subscriptionnew {
+    /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
+    background: 
+    -webkit-linear-gradient(180deg, #4267A5 , #183C79 );
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 90px 20px;
+}
 .testnew-info1 h5 {
     font-size: 18px;
     font-weight: 600;
