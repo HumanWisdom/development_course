@@ -661,7 +661,7 @@ export class ForumLandingPage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.router.navigate([SharedService.getUrlfromFeatureName('/onboarding/login')])
+    this.router.navigate([SharedService.getUrlfromFeatureName('/subscription/start-your-free-trial')]);
   }
 
   getAlertcloseEvent($event) {
@@ -670,7 +670,7 @@ export class ForumLandingPage implements OnInit {
       this.enableAlert = false;
     } else {
       this.enableAlert = false;
-        this.loginpage();
+        // this.loginpage();
     }
   }
 
@@ -704,11 +704,12 @@ export class ForumLandingPage implements OnInit {
       this.logeventservice.logEvent("click_AskExpert")
     else
       this.logeventservice.logEvent("click_NewThread")
-
+/* 
     if(this.isLoggedIn){
       localStorage.setItem('tagId',tagId);
       this.router.navigate([SharedService.getUrlfromFeatureName('forum/forum-thread-start-new')]);
-    }else if(!this.isLoggedIn || !this.isSubscribe){
+    }else  */
+      if(!this.isLoggedIn || !this.isSubscribe){
       this.isFreeTrialEnable = true;
       this.enableAlert= true;
     }
