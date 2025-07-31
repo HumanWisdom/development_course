@@ -31,10 +31,10 @@
     height: 51px;
     border-radius: 36px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-    background: linear-gradient(180deg,  #CB6171, #E58D82);
+    background: linear-gradient(180deg,   #E58D82, #CB6171);
 }
 .btn_popup:hover{
-  background: linear-gradient(180deg, #BF5061, #DA7D71);;
+  background: linear-gradient(180deg,  #DA7D71, #BF5061);;
 }
 .popuptitle{
     font-weight: 600;
@@ -42,6 +42,7 @@
     line-height: 120%;
     opacity: 75%;
     color: #000000;
+    margin: 8px;
 }
 .para{
   font-weight: 400;
@@ -57,7 +58,7 @@
     line-height: 140%;
     opacity: 75%;
     color: #000000;
-  margin-top: -8px;  
+  margin-top: -3px;  
   padding-right: 11px;
 }
 .h5{
