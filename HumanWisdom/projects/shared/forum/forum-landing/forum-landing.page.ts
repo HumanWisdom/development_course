@@ -661,14 +661,19 @@ export class ForumLandingPage implements OnInit {
 
   loginpage() {
     this.closepopup.nativeElement.click();
-    this.router.navigate([SharedService.getUrlfromFeatureName('/subscription/start-your-free-trial')]);
+    this.router.navigate([SharedService.getUrlfromFeatureName('/onboarding/login')])
   }
 
   getAlertcloseEvent($event) {
     this.isFreeTrialEnable = false;
     if ($event == 'cancel') {
       this.enableAlert = false;
-    } else {
+    }
+    else if ($event == 'ok') {
+      this.enableAlert = false;
+      this.loginpage();
+    }
+    else {
       this.enableAlert = false;
         // this.loginpage();
     }
