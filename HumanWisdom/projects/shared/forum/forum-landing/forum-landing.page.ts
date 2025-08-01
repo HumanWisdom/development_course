@@ -668,9 +668,14 @@ export class ForumLandingPage implements OnInit {
     this.isFreeTrialEnable = false;
     if ($event == 'cancel') {
       this.enableAlert = false;
-    } else {
+    }
+    else if ($event == 'ok') {
       this.enableAlert = false;
-        this.loginpage();
+      this.loginpage();
+    }
+    else {
+      this.enableAlert = false;
+        // this.loginpage();
     }
   }
 
@@ -705,10 +710,11 @@ export class ForumLandingPage implements OnInit {
     else
       this.logeventservice.logEvent("click_NewThread")
 
-    if(this.isLoggedIn){
+    if(this.isSubscribe){
       localStorage.setItem('tagId',tagId);
       this.router.navigate([SharedService.getUrlfromFeatureName('forum/forum-thread-start-new')]);
-    }else if(!this.isLoggedIn || !this.isSubscribe){
+    }else  
+      if(!this.isLoggedIn || !this.isSubscribe){
       this.isFreeTrialEnable = true;
       this.enableAlert= true;
     }
