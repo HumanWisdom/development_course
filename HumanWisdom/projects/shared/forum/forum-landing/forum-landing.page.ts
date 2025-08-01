@@ -709,11 +709,11 @@ export class ForumLandingPage implements OnInit {
       this.logeventservice.logEvent("click_AskExpert")
     else
       this.logeventservice.logEvent("click_NewThread")
-/* 
-    if(this.isLoggedIn){
+
+    if(this.isSubscribe){
       localStorage.setItem('tagId',tagId);
       this.router.navigate([SharedService.getUrlfromFeatureName('forum/forum-thread-start-new')]);
-    }else  */
+    }else  
       if(!this.isLoggedIn || !this.isSubscribe){
       this.isFreeTrialEnable = true;
       this.enableAlert= true;
