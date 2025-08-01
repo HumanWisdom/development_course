@@ -530,7 +530,7 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
                 Discover HappierMe in just 1 minute
               </h2>
             </div>
@@ -580,14 +580,14 @@
        <div class="section-headernew mob-section section-text section-text1">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 text-color fs_18px_mobile">
+        <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
           Users love HappierMe </h2>
       </div>
     </div>
   </div>
 
  <div class="row center_flex">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-flex">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block ">
 
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="testimonial-cardnew">
@@ -601,14 +601,14 @@
             >
           <div class="testimonial-info">
             <h5  style="font-size:18px;"class="testimonial-h5">Brenda McChesney</h5>
-            <h3 class="testimonial-h3">Director, National Family Support Network, USA</h3>
+            <h3 class="testimonial-h3">Director, National Family <br>Support Network, USA</h3>
           </div>
         </div>
          <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <h5 class="mt20px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%;">
-                         <i>                         HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms. 
-.</i>
+                         <i>"HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms." 
+</i>
                         </h5>
                       </div>
                     </div>
@@ -635,10 +635,10 @@
           </div>
         </div>
         <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <h5 class="mt20px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%;">
                          <i> 
-                          HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety.
+                         "HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety."
                         </i>
                         </h5>
                       </div>
@@ -665,12 +665,12 @@
           </div>
         </div>
         <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <h5 class="mt20px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%";>
                          <i>
                            
-                        HappierMe is a well-designed app that provides many useful tools and resources 
-                        for anyone wanting to improve their life, resilience and well-being. HappierMe increases your knowledge, awareness and internal strength.</i>
+                        "HappierMe is a well-designed app that provides many useful tools and resources 
+                        for anyone wanting to improve their life, resilience and well-being. HappierMe increases your knowledge, awareness and internal strength."</i>
                         </h5>
                       </div>
                     </div> 
@@ -680,10 +680,30 @@
             
 
               
-
+<div class="owl-theme">
+                <div class="owl-controls">
+                  <div class="owl-nav">
+                    <a class="sap" id="viewallsuccessstories">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      View all success stories >
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+              </div>
               
 
           </div>
+          <div class="owl-theme mt40px">
+                <div class="owl-controls">
+                  <div class="owl-nav">
+                    <a class="sap" href="https://happierme.app/adults/testimonials">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      View all Success stories  <i  style="margin-left:11px;"class="bi bi-chevron-right"></i> 
+                    </a>
+                  </div>
+                </div>
+              </div>
         </div>
 
 
@@ -1282,7 +1302,7 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 tcenter work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11 col-11 p0 tcenter work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="200">
               <a  class="" href="./pages/work.php"  onclick="return logevent('click_for_work_home', 'index.php')">
@@ -1295,14 +1315,27 @@
 
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col_weh">
-                      <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
-                        HappierMe for 
-                        <span class="fw_600">
+                      <h3 class="mtb0px fs_24px fw_500 lh_150p fc_000000">
+                       HappierMe for the Workplace
+                        <!-- <span class="fw_600">
                           Work
-                        </span>
+                        </span> -->
                       </h3>
+                      
                     </div>
                   </div>
+                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+Upskill your staff to be happier, emotionally intelligent and make better decisions.              </h5>
+
+  <a id="findoutMore" aria-label="Explore the teenagers app" class="">
+                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                    <h4 class="mtb0px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
+                      Find out more
+                      <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                    </h4>
+                  </a>
+
+              
                 </div>
                 </a>
             </div>
@@ -1318,13 +1351,25 @@
 
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col_weh">
-                      <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
-                        HappierMe for  <span class="fw_600">
+                      <h3 class="mtb0px fs_24px fw_500 lh_150p fc_000000">
+                        HappierMe for  
                           Education
-                        </span>
+                        
                       </h3>
+
+                        
                     </div>
                   </div>
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+Help students manage stress and anxiety, and to be happier and successful.             </h5>
+
+  <a id="findoutMore" aria-label="Explore the teenagers app" class="">
+                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                    <h4 class="mtb0px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
+                      Find out more
+                      <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                    </h4>
+                  </a>
                 </div>
                 </a>
             </div>
@@ -1340,13 +1385,26 @@
 
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col_weh">
-                      <h3 class="mtb0px fs_21px fw_400 lh_150p fc_000000">
-                        HappierMe for <span class="fw_600">
+                      <h3 class="mtb0px fs_24px fw_500 lh_150p fc_000000">
+                        HappierMe for 
                           Healthcare
-                        </span>
+                        
                       </h3>
+
+                      
+                      
                     </div>
                   </div>
+                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+Help students manage stress and anxiety, and to be happier and successful.             </h5>
+
+  <a id="findoutMore" aria-label="Explore the teenagers app" class="">
+                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                    <h4 class="mtb0px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
+                      Find out more
+                      <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                    </h4>
+                  </a>
                 </div>
                 </a>
             </div>
@@ -1357,7 +1415,7 @@
       <!-- /work_education_healtcare -->
       
        <!-- happyuser -->
-    <section>
+    <!-- <section>
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
@@ -1374,7 +1432,7 @@
             <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/happy_mobile.webp" class="img-responsive display_d_none" alt="modules" loading=lazy>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- /happyuser -->
 
 
@@ -1389,10 +1447,10 @@
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
              <div class="land-happierme-margin"> 
-             <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                <!-- COMING SOON! -->
+             <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+               
                 NEW!
-              </h2>
+              </h2> -->
 
               <h2 class="mb0px fs_24px fw_600 lh_120p fc_834b66">
                 HappierMe for Teenagers
@@ -1400,13 +1458,12 @@
 
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy>
 
-              <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
-                Guiding teenagers to flourish in life
+              <h3 class="mt15px mb10px fs_36pxpx fw_600 lh_150p fc_000000">
+               Help teenagers feel happier and succeed in life
               </h3>
 
               <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-                Introducing a new edition of the app especially curated to help teenagers manage their own mental health, have better friendships, deal with various challenges and succeed in life.
-              </h5>
+The HappierMe app for teens has been designed to help them manage their emotions, build better friendships, navigate the challenges of social media, anxiety and peer pressure, and develop their soft skills to succeed in life.              </h5>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt15px mb30px">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
@@ -1452,117 +1509,7 @@
 
       
       <!-- subscription -->
-      <section id="div_subscription">
-        <div class="row center_flex div_subscription">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                   HappierMe Premium
-                </h2>
-
-                <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
-                  Start your free trial today!
-                </h6>
-              </div>
-            </div>
-
-            <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 p0">
-
-                <button class="btn_subscription">
-                  <div class="row center_flex btn_subscription_trial">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                        14-day free trial
-                      </h6>
-                    </div>
-                  </div>
-
-                  <div class="row center_flex">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6  p0 tleft">
-                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
-                        Yearly
-                      </h5>
-
-                      <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                        INR 5,999/yr
-                      </h4> -->
-
-                      <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
-                        <!-- <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span> -->
-
-                        <span class="" id="annualPricingModelHeading"></span>
-                      </h6>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
-                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 500/mo.
-                      </h4> -->
-
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
-                    </div>
-                  </div>
-                </button>
-
-                <button class="btn_subscription mt20pxi">
-                  <div class="row center_flex">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tleft">
-                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
-                        Monthly
-                      </h5>
-
-                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                        7-day free trial
-                      </h6>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
-                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 700/mo.
-                      </h4> -->
-
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading"></h4>
-                    </div>
-                  </div>
-                </button>
-
-              </div>
-            </div>
-
-            <div class="row center_flex">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
-                  <!-- After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled. -->
-                  <span class="">
-                    <a class="fc_000000">
-                      Terms
-                    </a>
-                  </span>
-                  |
-                  <span class="">
-                    <a class="fc_000000">
-                      Cancel anytime
-                    </a>
-                  </span>
-                </h6>
-              </div>
-            </div>
-
-            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
-              <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" id="startyourfreetrial">
-                  Start your free trial
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      <!-- /subscription -->
+    
 
       <!-- coaches -->
       <section>
@@ -1885,6 +1832,119 @@
         </div>
       </section>
       <!-- /coaches -->
+
+
+        <section id="div_subscription">
+        <div class="row center_flex div_subscriptionnew">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+
+            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                   HappierMe Premium
+                </h2>
+
+                <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
+                  Start your free trial today!
+                </h6>
+              </div>
+            </div>
+
+            <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 p0">
+
+                <button class="btn_subscription">
+                  <div class="row center_flex btn_subscription_trial">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                        14-day free trial
+                      </h6>
+                    </div>
+                  </div>
+
+                  <div class="row center_flex">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6  p0 tleft">
+                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
+                        Yearly
+                      </h5>
+
+                      <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                        INR 5,999/yr
+                      </h4> -->
+
+                      <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
+                        <!-- <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span> -->
+
+                        <span class="" id="annualPricingModelHeading"></span>
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
+                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+                        INR 500/mo.
+                      </h4> -->
+
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
+                    </div>
+                  </div>
+                </button>
+
+                <button class="btn_subscription mt20pxi">
+                  <div class="row center_flex">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tleft">
+                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
+                        Monthly
+                      </h5>
+
+                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                        7-day free trial
+                      </h6>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
+                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+                        INR 700/mo.
+                      </h4> -->
+
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading"></h4>
+                    </div>
+                  </div>
+                </button>
+
+              </div>
+            </div>
+
+            <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
+                  <!-- After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled. -->
+                  <span class="">
+                    <a class="fc_000000">
+                      Terms
+                    </a>
+                  </span>
+                  |
+                  <span class="">
+                    <a class="fc_000000">
+                      Cancel anytime
+                    </a>
+                  </span>
+                </h6>
+              </div>
+            </div>
+
+            <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
+              <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" id="startyourfreetrial">
+                  Start your free trial
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- /subscription -->
 
       <!-- tools -->
       <section>
@@ -2360,17 +2420,15 @@
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="tab-content tc_faqs desktop">
                 <div id="about_happierme" class="tab-pane fade in active">
-                  <div class="panel-group" id="accordion_faq">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c11">
-                            What is HappierMe?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c11" class="panel-collapse collapse in">
-                        <div class="panel-body">
+                  <div class="accordion" id="accordion_faq_about">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading_c11">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c11" aria-expanded="true" aria-controls="c11">
+                          What is HappierMe?
+                        </button>
+                      </h2>
+                      <div id="c11" class="accordion-collapse collapse show" aria-labelledby="heading_c11" data-bs-parent="#accordion_faq_about">
+                        <div class="accordion-body">
                           HappierMe is an app that you can use on your desktop, and on your phone. It can be downloaded onto your phone from the Android or App store. Many users think it has been life changing for them. It is your guide to lead a happier and more successful life.
                         </div>
                       </div>
@@ -2382,16 +2440,14 @@
                       </div>
                     </div>
 
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c12">
-                            How do I start my free trial?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c12" class="panel-collapse collapse">
-                        <div class="panel-body">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading_c12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c12" aria-expanded="false" aria-controls="c12">
+                          How do I start my free trial?
+                        </button>
+                      </h2>
+                      <div id="c12" class="accordion-collapse collapse" aria-labelledby="heading_c12" data-bs-parent="#accordion_faq_about">
+                        <div class="accordion-body">
                           From the desktop or in the app you will have an option of starting a free trial. You can choose whether to have a one week or 2 week free trial. You can cancel anytime during the free trial.
                         </div>
                       </div>
@@ -2403,17 +2459,14 @@
                       </div>
                     </div>
 
-
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c13">
-                            How do I get started with HappierMe?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c13" class="panel-collapse collapse">
-                        <div class="panel-body">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading_c13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c13" aria-expanded="false" aria-controls="c13">
+                          How do I get started with HappierMe?
+                        </button>
+                      </h2>
+                      <div id="c13" class="accordion-collapse collapse" aria-labelledby="heading_c13" data-bs-parent="#accordion_faq_about">
+                        <div class="accordion-body">
                           On the app there is an Introduction section. Begin here. It has videos and audios which help you understand what the app does, and how to make the most of it.
                         </div>
                       </div>
@@ -2426,20 +2479,20 @@
                     </div>
 
 
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c14">
-                            How much time do I need to spend every day on the app?
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="c14" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          It is up to you but 10 minutes/day will be enough to begin feeling the benefits. You could just do the ‘My daily practice’ every day.
+                       <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading_c14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c14" aria-expanded="false" aria-controls="c14">
+                         How much time do I need to spend every day on the app?
+                        </button>
+                      </h2>
+                      <div id="c14" class="accordion-collapse collapse" aria-labelledby="heading_c14" data-bs-parent="#accordion_faq_about">
+                        <div class="accordion-body">
+                         It is up to you but 10 minutes/day will be enough to begin feeling the benefits. You could just do the ‘My daily practice’ every day.
                         </div>
                       </div>
                     </div>
+
+                
                   </div>
                 </div>
 
@@ -3308,20 +3361,15 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content1">
-            <div class="modal-header">
-              
+           <div class="modal-header d-block" style="float: right;">
+              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
-              <!-- <i class="fa fa-times-circle" aria-hidden="true"></i> -->
-
-                <!-- <a href="#" data-dismiss="modal"   class="float-end">
-
-<button type="button" class="btn-close" aria-label="Close"></button>
-
-                </a> -->
+              </a>
                
-                     <div class="modal-body">
+                   <div class="row center_flex">
 
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
 
                      </div>
@@ -3331,14 +3379,17 @@
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/overcome.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+ <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 
                      </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 
-                                    <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+ <button  type="button"  data-bs-dismiss="modal" aria-label="#" style="background-color:#fff8f1;">
 
-                </div>
+                          <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
+
+                          </button>
+                </div> -->
               </div>
               </div>
                 
@@ -3361,12 +3412,12 @@
           
                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-3" >
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0" >
                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
                          </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                     Guided programs
@@ -3380,10 +3431,10 @@
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
@@ -3397,13 +3448,13 @@
      </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/feel.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
              
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class="  fs_18px fw_600  fc_000000">
@@ -3426,13 +3477,13 @@ Breathing and tapping exercises for quick relief                  </h5>
           
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
              
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                     Short videos
@@ -3447,15 +3498,15 @@ Breathing and tapping exercises for quick relief                  </h5>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                  <h5 class="review">Your private journal with questions for personal growth </h5>
+                  <h5 class="review">Your private journal with questions &nbsp; for personal growth </h5>
                 
               </div>
         </div>
@@ -3465,14 +3516,14 @@ Breathing and tapping exercises for quick relief                  </h5>
 
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                  <h5 class="review">Find support, share your thoughts and make friends    </h5>             
+                  <h5 class="review">Find support, share your thoughts &nbsp; and make friends    </h5>             
               </div>
         </div>
 
@@ -3515,7 +3566,11 @@ Breathing and tapping exercises for quick relief                  </h5>
 <div class="modal fade" id="exampleModalbuild" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content1">
-            <div class="modal-header">
+           <div class="modal-header d-block" style="float: right;">
+              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+
+              </a>
               
 
               <!-- <i class="fa fa-times-circle" aria-hidden="true"></i> -->
@@ -3526,9 +3581,9 @@ Breathing and tapping exercises for quick relief                  </h5>
 
                 </a> -->
                
-                     <div class="modal-body">
+                     <div class="row center_flex">
 
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
 
                      </div>
@@ -3538,16 +3593,16 @@ Breathing and tapping exercises for quick relief                  </h5>
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_d.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+ <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 
                      </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <button type="button"  data-bs-dismiss="modal" aria-label="Close">
+                <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+        <button type="button"  data-bs-dismiss="modal" aria-label="Close"  style="background-color:#fff8f1;">
 
 
                <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
   </button>
-                </div>
+                </div> -->
               </div>
               </div>
                 
@@ -3570,17 +3625,17 @@ Breathing and tapping exercises for quick relief                  </h5>
           
                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-3" >
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
                          </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                     Guided programs
                   </h3>
-                  <h6  class="review">Covering Relationships, Emotional needs, Communication, Kindness and Love </h6>
+                  <h6  class="review">Covering Relationships, Emotional needs, Communication, Kindness  &nbsp;and Love </h6>
                 
               </div>
         </div>
@@ -3589,10 +3644,10 @@ Breathing and tapping exercises for quick relief                  </h5>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
@@ -3606,13 +3661,13 @@ Breathing and tapping exercises for quick relief                  </h5>
      </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/blog_b.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
              
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class="  fs_18px fw_600  fc_000000">
@@ -3635,13 +3690,13 @@ In-depth articles on building your relationship skills                  </h5>
           
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
              
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                     Short videos
@@ -3656,15 +3711,15 @@ In-depth articles on building your relationship skills                  </h5>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                  <h5 class="review">Your private journal with questions for personal growth </h5>
+                  <h5 class="review">Your private journal with questions  &nbsp; &nbsp;for personal growth </h5>
                 
               </div>
         </div>
@@ -3674,14 +3729,14 @@ In-depth articles on building your relationship skills                  </h5>
 
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                  <h5 class="review">Find support, share your thoughts and make friends    </h5>             
+                  <h5 class="review">Find support, share your thoughts &nbsp;and make friends    </h5>             
               </div>
         </div>
 
@@ -3689,7 +3744,10 @@ In-depth articles on building your relationship skills                  </h5>
           </div>
         </div>
            <div class="row center_flex mtb10px">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
+             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
+  </div>
 
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 mb15px  btn-res">
                   <a href="https://happierme.app/pages/splash_options.php"  class="">
@@ -3698,6 +3756,9 @@ In-depth articles on building your relationship skills                  </h5>
                     </button>
                   </a>
                 </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0">
+  </div>
+
     
               </div>
            </div>
@@ -3720,16 +3781,16 @@ In-depth articles on building your relationship skills                  </h5>
 <!-- <learn meditation> -->
 
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="top:70px;">
         <div class="modal-content1">
-            <div class="modal-header">
-                <!-- <a href="#" data-dismiss="modal" class="class pull-right">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+           <div class="modal-header d-block" style="float: right;">
+              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
-                </a> -->
+              </a>
                
-                 <div class="modal-body">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                 <div class="row center_flex">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                      </div>
 
@@ -3738,18 +3799,18 @@ In-depth articles on building your relationship skills                  </h5>
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/practice.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 
                      </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 
- <button type="button"  data-bs-dismiss="modal">
+ <button type="button"  data-bs-dismiss="modal"  style="background-color:#fff8f1;">
 
 
                <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
   </button>
   
-                </div>
+                </div> -->
               </div>
               </div>
                 
@@ -3758,7 +3819,7 @@ In-depth articles on building your relationship skills                  </h5>
         <div class="section-header1">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
+              <h2 style="margin:16px;"class="popuptitle">
                 Build a meditation practice
               </h2>
               <h5 class="para">Learn how to get started and reap the benefits of meditation.</h5>
@@ -3772,12 +3833,12 @@ In-depth articles on building your relationship skills                  </h5>
           
                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
                          </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                     Guided programs
@@ -3791,16 +3852,16 @@ In-depth articles on building your relationship skills                  </h5>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/self_build.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                     Nature meditations
                   </h3>
-                  <h5 class=" review">Explore a fresh way of connecting with nature  </h5>
+                  <h5 class=" review">Explore a fresh way of connecting  &nbsp; with nature  </h5>
                 
               </div>
         </div>
@@ -3808,13 +3869,13 @@ In-depth articles on building your relationship skills                  </h5>
      </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/audio.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
              
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class="  fs_18px fw_600  fc_000000">
@@ -3876,7 +3937,7 @@ A library of audio meditations and soundscapes                  </h5>
                 </a> -->
                
                <div class="modal-body">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                      </div>
 
@@ -3889,7 +3950,7 @@ A library of audio meditations and soundscapes                  </h5>
 
                      </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                          <button type="button"  data-bs-dismiss="modal" aria-label="#">
+                          <button type="button"  data-bs-dismiss="modal" aria-label="#"  style="background-color:#fff8f1;">
 
                           <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
 
@@ -4035,6 +4096,9 @@ A library of audio meditations and soundscapes                  </h5>
               </div>
           </div>
         </div>
+        <div class="row center_flex">
+                          
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px">
             
            <div class="row center_flex mtb10px">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
@@ -4049,7 +4113,8 @@ A library of audio meditations and soundscapes                  </h5>
     
               </div>
            </div>
-
+  </div>
+  </div>
 
           </div>
       </div>
@@ -4075,7 +4140,7 @@ A library of audio meditations and soundscapes                  </h5>
                 </a> -->
                
                <div class="modal-body">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                      </div>
 
@@ -4088,7 +4153,7 @@ A library of audio meditations and soundscapes                  </h5>
 
                      </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                          <button type="button"  data-bs-dismiss="modal" aria-label="#">
+                          <button type="button"  data-bs-dismiss="modal" aria-label="#"  style="background-color:#fff8f1;">
 
                           <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
 
@@ -4272,7 +4337,7 @@ A library of audio meditations and soundscapes                  </h5>
                 </a> -->
                
                <div class="modal-body">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                      </div>
 
@@ -4285,7 +4350,7 @@ A library of audio meditations and soundscapes                  </h5>
 
                      </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                          <button type="button"  data-bs-dismiss="modal" aria-label="#">
+                          <button type="button"  data-bs-dismiss="modal" aria-label="#"  style="background-color:#fff8f1;">
 
                           <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
 
@@ -4483,7 +4548,7 @@ Understand your feelings and where they come from </h5>
 
                      </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                          <button type="button"  data-bs-dismiss="modal" aria-label="#">
+                          <button type="button"  data-bs-dismiss="modal" aria-label="#"  style="background-color:#fff8f1;">
 
                           <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
 
@@ -4681,7 +4746,7 @@ Understand your feelings and where they come from </h5>
 
                      </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                          <button type="button"  data-bs-dismiss="modal" aria-label="#">
+                          <button type="button"  data-bs-dismiss="modal" aria-label="#"  style="background-color:#fff8f1;">
 
                           <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
 
@@ -4858,13 +4923,17 @@ Understand your feelings and where they come from </h5>
 <div class="modal fade" id="exampleModalteen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content1">
-            <div class="modal-header">
+              <div class="modal-header d-block" style="float: right;">
+              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+
+              </a>
                 <!-- <a href="#" data-dismiss="modal" class="class pull-right">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
                 </a> -->
                
-               <div class="modal-body">
+               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                      </div>
@@ -4878,11 +4947,11 @@ Understand your feelings and where they come from </h5>
 
                      </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                          <button type="button"  data-bs-dismiss="modal" aria-label="#">
+                          <!-- <button type="button"  data-bs-dismiss="modal" aria-label="#">
 
                           <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
 
-                          </button>
+                          </button> -->
 
                                     <!-- <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/cross.svg" class="img-responsive" alt="Mental Health" loading=lazy> -->
 
@@ -5057,10 +5126,9 @@ Understand your feelings and where they come from </h5>
   <div class="modal fade product_view" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header d-block" style="float: right;">
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                <span class="glyphicon glyphicon-remove"></span>
+                <span class="bi bi-x"></span>
               </a>
               <div class="row center_flex">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
@@ -5072,7 +5140,7 @@ Understand your feelings and where they come from </h5>
                   Connect with our specialists today and see how we can help you
                 </h4></div></div> -->
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-flex">
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">

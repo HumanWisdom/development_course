@@ -128,7 +128,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       this.logeventservice.logEvent("click_tapToAnswer")
 
 
-    if (this.guest || !this.Subscriber) {
+    if (!this.Subscriber) {
       this.isFreeTrialEnable = true;
       this.enableAlert = true;
     } else {
@@ -156,6 +156,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
 
   RouteToToQuestions(item) {
     if (this.guest || !this.Subscriber) {
+      this.isFreeTrialEnable = true;
       this.enableAlert = true;
     } else {
       let url =  `${SharedService.getUrlfromFeatureName('journal')}/${item.Landing_URL}`;

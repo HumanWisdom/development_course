@@ -12,9 +12,9 @@
       <nav id="navbar" class="navbar m0pxi">
         <ul>
 
-          <li><a href="../pages/about_us.php"  id="AboutUs" >About us</a></li>
+          <li><a href="../pages/about_us.php"  id="AboutUs"  class="nav">About us</a></li>
           <li class="prelative">
-            <a id="teenagersHeaderClick">       
+            <a id="teenagersHeaderClick" class="nav">       
               Teenagers
               <div class="badge_new">
                 <h6 class="mtb0px fs_6px fw_600 lh_130p fc_ffffff">
@@ -27,17 +27,17 @@
           <li><a href="../blogs/blog_index.php" class="blog_main">Blog</a></li>
           <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
           </li> -->
-          <li><a href="../blogs/blog_index.php" id="blogs" class="">Blog</a></li>
-          <li class="dropdown"><a id="organisation"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="../blogs/blog_index.php" id="blogs" class="nav">Blog</a></li>
+          <li class="dropdown"><a id="organisation" class="nav"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a  id="work">HappierMe for Work</a></li>
-              <li><a id="education" >HappierMe for Education</a></li>
-              <li><a id="healthcare">HappierMe for Healthcare</a></li>
+              <li><a  id="work" class="nav">HappierMe for Work</a></li>
+              <li><a id="education" class="nav">HappierMe for Education</a></li>
+              <li><a id="healthcare" class="nav">HappierMe for Healthcare</a></li>
             </ul>
           </li>
-          <li><a id="pricing">Pricing</a></li>
-          <li><a id="partnership">Partnership</a></li>
-          <li><a id="loginClick">Login</a></li>
+          <li><a id="pricing" class="nav">Pricing</a></li>
+          <li><a id="partnership" class="nav">Partnership</a></li>
+          <li><a id="loginClick" class="nav">Login</a></li>
         </ul>
       </nav>
 
