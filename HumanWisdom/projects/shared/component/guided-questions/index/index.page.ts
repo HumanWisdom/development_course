@@ -41,6 +41,7 @@ export class IndexPage implements OnInit, AfterViewInit {
   isViewMore = true;
   isAdults: boolean = true;
   dailyCheckIn:any;
+  isFreeTrialEnable = false
 
   constructor(
     private router: Router,
@@ -127,7 +128,8 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       this.logeventservice.logEvent("click_tapToAnswer")
 
 
-    if (this.guest || !this.Subscriber) {
+    if (!this.Subscriber) {
+      this.isFreeTrialEnable = true;
       this.enableAlert = true;
     } else {
       this.router.navigate([
@@ -154,6 +156,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
 
   RouteToToQuestions(item) {
     if (this.guest || !this.Subscriber) {
+      this.isFreeTrialEnable = true;
       this.enableAlert = true;
     } else {
       let url =  `${SharedService.getUrlfromFeatureName('journal')}/${item.Landing_URL}`;
@@ -341,7 +344,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
 
     this.service.GetGuidedQs_Topics().subscribe((res) => {
       this.viewMore = res.filter((d, i) => i < 6);
-      this.viewLess = res.filter((d, i) => i > 6);
+      this.viewLess = res.filter((d, i) => i >= 6);
       this.topic = this.viewMore;
     });
   }
@@ -366,6 +369,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
 
   getAlertcloseEvent(event) {
     this.enableAlert = false;
+    this.isFreeTrialEnable = false;
     if (event === 'ok') {
       if (!this.guest && !this.Subscriber) {
         this.router.navigate([SharedService.getUrlfromFeatureName('subscription/start-your-free-trial')]);

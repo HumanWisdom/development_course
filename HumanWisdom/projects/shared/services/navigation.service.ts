@@ -86,6 +86,8 @@ export class NavigationService {
 
 
   navigateToBackLink() {
+        this.history.splice(this.history.indexOf(this.router.url)+1)
+
     const url = this.goBack();
     if (url != null) {
       return url;

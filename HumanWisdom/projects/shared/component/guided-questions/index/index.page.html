@@ -405,5 +405,5 @@
 <app-bottom-navigation *ngIf="defaultShow"></app-bottom-navigation>
 <!-- /footer -->
 
-<app-modal *ngIf="enableAlert" [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
-  [content]="'Start your free trial to activate this feature'"></app-modal>
+<app-modal *ngIf="enableAlert" [modalid]="'logout'"  [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'Start your free trial to activate this feature'" [isFreeTrialEnable]="isFreeTrialEnable"></app-modal>

@@ -1,4 +1,8 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { SharedService } from '../../services/shared.service';  
+
+
 
 @Component({
   selector: 'app-modal',
@@ -34,7 +38,10 @@ export class ModalComponent implements OnInit {
 
   modalopened = false;
 
-  constructor() { }
+  @Input()
+  isFreeTrialEnable = false;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -54,6 +61,13 @@ export class ModalComponent implements OnInit {
         this.closeEvent.emit('');
       })
     }
+  }
+
+  routeTofreetrial(){
+    this.closeEvent.emit(''); 
+      this.router.navigate([SharedService.getUrlfromFeatureName('subscription/start-your-free-trial')]);
+    
+    
   }
 }
 

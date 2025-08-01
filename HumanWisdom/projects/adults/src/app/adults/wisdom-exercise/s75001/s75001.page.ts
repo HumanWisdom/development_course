@@ -5,6 +5,8 @@ import { AdultsService } from "../../adults.service";
 import { Location } from '@angular/common';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../../shared/services/constant';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
+
 
 @Component({
   selector: 'HumanWisdom-s75001',
@@ -20,6 +22,7 @@ export class S75001Page implements OnInit {
   }, 1000);
   constructor(
     public ngNavigatorShareService: NgNavigatorShareService,
+     private navigationService:NavigationService,
     private router: Router,
     private service: AdultsService,
     private location: Location ) 
@@ -43,13 +46,27 @@ export class S75001Page implements OnInit {
   }
 
   goBack(){
-    if(this.service.previousUrl.includes('wisdom-exercise'))
-    {
-      this.router.navigateByUrl("/adults/adult-dashboard");
+    // if(this.service.previousUrl.includes('wisdom-exercise'))
+    // {
+    //   this.router.navigateByUrl("/adults/adult-dashboard");
 
-    }
-    else
-     this.location.back()
+    // }
+    // else
+    //  this.location.back()
+       var url = this.navigationService.navigateToBackLink();
+        if(url==null){
+          url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+          if(url && url!=null && url != 'null'){
+            this.router.navigate([url]);
+          }else{
+            this.location.back();
+          }
+        }
+        else
+        {
+          this.router.navigate([url]);
+        }
+
   }
 
     routeTointroDash() {

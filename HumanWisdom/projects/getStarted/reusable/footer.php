@@ -162,7 +162,7 @@
         </div>
 
         <div class="row mtb20px">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright d-flex" >
             <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567" target="_blank">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" class="img-responsive">
             </a>

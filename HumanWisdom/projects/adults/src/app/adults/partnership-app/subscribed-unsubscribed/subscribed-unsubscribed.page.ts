@@ -215,15 +215,20 @@ export class SubscribedUnsubscribedPage implements OnInit {
       }
 
       tryFreeSubscribe() {
-        if (this.CheckIfUserIsLoggedIn()) {
-          // this.SetPaymentIntentModel();
-          // this.SetDataInLocalStorage();
-          this.services.navigateToUpgradeToPremium=true;
-          this.router.navigate(['/subscription/try-free-and-subscribe']);
-        } else {
-          SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
-          this.router.navigate(['/adults/onboarding/login']);
+         
+        if (!(SharedService.isIOSApp() || SharedService.isAndroid())) {
+   
+            if (this.CheckIfUserIsLoggedIn()) {
+              // this.SetPaymentIntentModel();
+              // this.SetDataInLocalStorage();
+              this.services.navigateToUpgradeToPremium=true;
+              this.router.navigate(['/subscription/try-free-and-subscribe']);
+            } else {
+              SharedService.UrlToRedirect='/subscription/try-free-and-subscribe';
+              this.router.navigate(['/adults/onboarding/login']);
+            }
         }
+
       }
 
       SetDataInLocalStorage() {

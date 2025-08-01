@@ -63,7 +63,7 @@ export class SearchPopularItemsPage implements OnInit {
   ngOnInit() {
     this.isSubscriber = SharedService.isSubscriber();
 
-    this.search = this.route.snapshot.paramMap.get('word')
+    this.search =decodeURIComponent(this.route.snapshot.paramMap.get('word'))
     this.UserID = localStorage.getItem('userId');
     this.initializeSearchObject();
     this.getSearchData();
