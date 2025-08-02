@@ -622,10 +622,7 @@
            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
                <div class="testimonial-cardnew">
       <div class="testimonial-card-section">
-        <!-- <div class="quotation-comma">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" alt="quotation"
-            loading="lazy">
-        </div> -->
+        
         <div class="testimonial-header">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/adam_te.webp" alt="Brenda McChesney"
             >
