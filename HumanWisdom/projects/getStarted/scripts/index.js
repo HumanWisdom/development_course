@@ -20,11 +20,20 @@ function gtag() {
 }
 
 // Function to remove active_nav class from all navigation elements
-function removeActiveNavClass() {
-    const navElements = [
+function removeActiveNavClass(tab) {
+ 
+      let  navElements = [
         'AboutUs', 'blogs', 'organisation', 'work', 'education', 
         'healthcare', 'pricing', 'teenagersHeaderClick', 'partnership'
     ];
+     if(tab == 'work' || tab =='education' || tab == 'healthcare'){
+      navElements = [
+        'AboutUs', 'blogs', 'work', 'education', 
+        'healthcare', 'pricing', 'teenagersHeaderClick', 'partnership'
+      ];
+     }
+
+   
     navElements.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
@@ -35,7 +44,7 @@ function removeActiveNavClass() {
 
 // Function to add active_nav class to a specific element
 function setActiveNav(elementId) {
-    removeActiveNavClass();
+    removeActiveNavClass(elementId);
     const element = document.getElementById(elementId);
     if (element) {
         element.classList.add("active_nav");
@@ -44,6 +53,7 @@ function setActiveNav(elementId) {
 
 // Function to update FAQ tab attributes to Bootstrap 5.3
 function updateFAQTabAttributes() {
+    // Only target FAQ tabs, not tool tabs
     const faqTabLinks = document.querySelectorAll('.tab_faqs a[data-toggle="tab"]');
     
     faqTabLinks.forEach(link => {
@@ -55,7 +65,7 @@ function updateFAQTabAttributes() {
 
 // FAQ Tab functionality
 function initializeFAQTabs() {
-    // Update tab attributes to Bootstrap 5.3
+    // Update tab attributes to Bootstrap 5.3 only for FAQ tabs
     updateFAQTabAttributes();
     
     // Get all FAQ tab links (both old and new Bootstrap syntax)
@@ -66,7 +76,7 @@ function initializeFAQTabs() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Remove active class from all tabs
+            // Remove active class from all FAQ tabs
             faqTabLinks.forEach(tab => {
                 tab.parentElement.classList.remove('active');
             });
@@ -78,9 +88,9 @@ function initializeFAQTabs() {
             const targetId = this.getAttribute('href');
             const targetContent = document.querySelector(targetId);
             
-            // Hide all tab content
-            const allTabContent = document.querySelectorAll('.tc_faqs .tab-pane');
-            allTabContent.forEach(content => {
+            // Hide all FAQ tab content
+            const allFAQTabContent = document.querySelectorAll('.tc_faqs .tab-pane');
+            allFAQTabContent.forEach(content => {
                 content.classList.remove('in', 'active', 'show');
             });
             
@@ -106,6 +116,43 @@ function initializeFAQTabs() {
             aboutContent.classList.add('in', 'active', 'show');
         }
     }
+}
+
+// Initialize tool tabs separately to avoid conflicts
+function initializeToolTabs() {
+    // Get all tool tab buttons (Bootstrap 5.3 syntax)
+    const toolTabButtons = document.querySelectorAll('#toolTabs .nav-link');
+    
+    toolTabButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove active class from all tool tabs
+            toolTabButtons.forEach(tab => {
+                tab.classList.remove('active');
+                tab.setAttribute('aria-selected', 'false');
+            });
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+            
+            // Get target tab content
+            const targetId = this.getAttribute('data-bs-target');
+            const targetContent = document.querySelector(targetId);
+            
+            // Hide all tool tab content
+            const allToolTabContent = document.querySelectorAll('#toolTabs + .tab-content .tab-pane');
+            allToolTabContent.forEach(content => {
+                content.classList.remove('show', 'active');
+            });
+            
+            // Show target tab content
+            if (targetContent) {
+                targetContent.classList.add('show', 'active');
+            }
+        });
+    });
 }
 
 // Accordion functionality with smooth transitions
@@ -488,6 +535,7 @@ requestDemoForWork &&
                     localStorage.setItem("activeTab", "org-work"),
                     logevent("click_Happierme_For_Work", "index.php"),
                     setActiveNav("work");
+                    setActiveNav("organisation");
                     (window.location.href = "../pages/work.php");
                 },
                 !1
@@ -499,6 +547,7 @@ requestDemoForWork &&
                 function (e) {
                     localStorage.setItem("activeTab", "org-work"), 
                     setActiveNav("education");
+                    setActiveNav("organisation");
                     logevent("click_Happierme_For_education", "index.php"),
                     (window.location.href = "../pages/education.php");
                 },
@@ -509,7 +558,7 @@ requestDemoForWork &&
             i.addEventListener("click", function (e) {
                 localStorage.setItem("activeTab", "org-healthcare"),
                 logevent("click_Happierme_For_healthcare", "index.php"),
-                setActiveNav("healthcare");
+                setActiveNav("organisation");
                 (window.location.href = "../pages/healthcare.php");
             });
         var c = document.getElementById("pricing");
@@ -546,10 +595,13 @@ requestDemoForWork &&
         if (s.includes("blogs")) {
             setActiveNav("blogs");
         } else if (s.includes("work.php")) {
+               setActiveNav("organisation");
             setActiveNav("work");
         } else if (s.includes("healthcare.php")) {
+               setActiveNav("organisation");
             setActiveNav("healthcare");
         } else if (s.includes("education.php")) {
+               setActiveNav("organisation");
             setActiveNav("education");
         } else if (s.includes("index.php#div_subscription")) {
             setActiveNav("pricing");
@@ -791,6 +843,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
+    // Initialize tool tabs separately
+    initializeToolTabs();
+    
     // const e = document.getElementById("AnnualType");
     // e?.addEventListener("click", () => {
     //     window.location.href = url+"/adults/subscription/start-your-free-trial";
@@ -825,6 +880,9 @@ $(document).ready(function(){
     initializeFAQTabs();
     initializeFAQAccordion();
     
+    // Initialize tool tabs separately to avoid conflicts
+    initializeToolTabs();
+    
     // Add modal hidden event listener for backdrop cleanup
     const modal = document.getElementById('product_view');
     if (modal) {
@@ -841,48 +899,48 @@ $(document).ready(function(){
         $('a[data-toggle="tab"]').off('click');
         $('.nav-tabs a').off('click');
         
-        // Initialize Bootstrap 5.3 tabs
-        $('a[data-bs-toggle="tab"]').on('click', function (e) {
+        // Initialize Bootstrap 5.3 tabs for FAQ tabs only
+        $('.tab_faqs a[data-bs-toggle="tab"]').on('click', function (e) {
             e.preventDefault();
-            console.log('Tab clicked:', $(this).attr('href'));
+            console.log('FAQ Tab clicked:', $(this).attr('href'));
             const target = $(this).attr('href');
             const tab = new bootstrap.Tab(this);
             tab.show();
         });
         
-        // Ensure tabs work on page load
-        $('.nav-tabs a').on('click', function (e) {
+        // Ensure FAQ tabs work on page load
+        $('.tab_faqs a').on('click', function (e) {
             e.preventDefault();
-            console.log('Nav tab clicked:', $(this).attr('href'));
+            console.log('FAQ Nav tab clicked:', $(this).attr('href'));
             const target = $(this).attr('href');
             const tab = new bootstrap.Tab(this);
             tab.show();
         });
         
-        // Initialize all tabs with proper state management
-        $('.nav-tabs a[data-toggle="tab"], .nav-tabs a[data-bs-toggle="tab"]').each(function() {
+        // Initialize FAQ tabs with proper state management
+        $('.tab_faqs a[data-toggle="tab"], .tab_faqs a[data-bs-toggle="tab"]').each(function() {
             $(this).on('click', function(e) {
                 e.preventDefault();
                 var target = $(this).attr('href');
-                console.log('Tab clicked:', target);
+                console.log('FAQ Tab clicked:', target);
                 
-                // Update active states
-                $('.nav-tabs li').removeClass('active');
+                // Update active states for FAQ tabs only
+                $('.tab_faqs li').removeClass('active');
                 $(this).parent().addClass('active');
                 
-                // Show the target tab content
-                $('.tab-pane').removeClass('show active');
+                // Show the target FAQ tab content
+                $('.tc_faqs .tab-pane').removeClass('show active');
                 $(target).addClass('show active');
                 
                 // Trigger Bootstrap 5.3 tab show
                 const tab = new bootstrap.Tab(this);
                 tab.show();
                 
-                console.log('Tab activated:', target);
+                console.log('FAQ Tab activated:', target);
             });
         });
         
-        console.log('Tabs initialized successfully');
+        console.log('FAQ Tabs initialized successfully');
     }
     
     // Initialize tabs immediately
@@ -894,8 +952,8 @@ $(document).ready(function(){
     }, 500);
     
     // Add click event listeners for debugging
-    $('.nav-tabs a').on('click', function() {
-        console.log('Tab clicked via direct listener:', $(this).attr('href'));
+    $('.tab_faqs a').on('click', function() {
+        console.log('FAQ Tab clicked via direct listener:', $(this).attr('href'));
     });
     
     // Newsletter popup test button
