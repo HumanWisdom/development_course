@@ -1,133 +1,220 @@
-import { Location } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AdultsService } from "../../adults.service";
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { ProgramModel } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-s30001',
   templateUrl: './s30001.page.html',
   styleUrls: ['./s30001.page.scss'],
 })
-export class S30001Page implements OnInit, OnDestroy {
-
-  bg_tts = "bg_blue"
-  bg_tn = "bg_blue"
-  bg_cft = "bg_blue"
-  bg = "blue_flat"
+export class S30001Page implements OnInit,OnDestroy {
+  
+  bg_tn = ""
+  bg_cft = ""
+  bg = ""
   toc = ""
-  userId: any
-  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  screenType = localStorage.getItem("text")
-  moduleId = localStorage.getItem("moduleId")
-  screenNumber = 30001
-  startTime: any
-  endTime: any
-  totalTime: any
-  bookmark = 0
 
-   path = setTimeout(() => {
+  userId:any
+  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  screenType=localStorage.getItem("text")
+  moduleId=localStorage.getItem("moduleId")
+  screenNumber=30001
+  startTime:any
+  endTime:any
+  totalTime:any
+  bookmark:any
+  bookmarkList=[]
+  path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+  token="1234"
+  shareUrl=this.path+"?t="+this.token
+  localFreeScreens =localStorage.getItem("freeScreens");
+  freeScreens= this.localFreeScreens != "undefined"? JSON.parse(localStorage.getItem("freeScreens")):"";
+  socialShare=false
+  loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
+  t:any
+  kindnessResume=sessionStorage.getItem("kindnessResume")
+  tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/30.webp"
+  tocColor="white"
+  lastvisited = false;
+  stories: any = []
+  isLoggedIn = false;
+  isSubscriber = false;
+  pgResume=sessionStorage.getItem("pgResume")
+  moduleData:ProgramModel;
 
-
-  bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
-
-
-
-  constructor(
+  constructor
+  (
     private router: Router,
-    private service: AdultsService,
-    private location: Location
-  ) { }
-  ngOnInit() {
+    private service:AdultsService,
+    private location:Location,
+    private url: ActivatedRoute
+  ) 
+  { 
     
+    this.url.queryParams.subscribe(params => {
+      this.t = params['t'];
+    })
+    
+  }
+
+  ngOnInit() 
+  {
+    this.service.setmoduleID(30);
+    setTimeout(() => {
+      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
+    story = JSON.parse(story)
+    let splitarr = []
+    let arraythree = []
+    if(story?.length <= 2)
+    {
+      story.forEach((e) =>
+      {
+        arraythree.push(e)
+      })
+      splitarr.push(arraythree)
+    }
+    else
+    {
+      story?.forEach((e) =>
+      {
+        if(arraythree.length < 2)
+        {
+          arraythree.push(e)
+        }
+        else
+        {
+          splitarr.push(arraythree)
+          arraythree = []
+          arraythree.push(e)
+        }
+      })
+      splitarr.push(arraythree)
+
+    }
+    this.stories = splitarr
+    
+    }, 2000)
+
+    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
    
     if(!localStorage.getItem("NaviagtedFrom")) 
         localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
     else
         this.toc = localStorage.getItem("NaviagtedFrom").toString(); 
-      
+
+    // continue where you left    
+    let last = localStorage.getItem('lastvisited');
+    if(last === 'T') 
+    {
+      this.lastvisited = true;
+    }
+    else 
+    {
+      this.lastvisited = false;
+    }    
+    // /continue where you left
 
     
-    this.service.setmoduleID(30);
-    //localStorage.removeItem("bookmarkList")
-    this.createScreen()
-
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-
-
-    this.startTime = Date.now();
-
-    if (JSON.parse(sessionStorage.getItem("bookmark30001")) == 0)
-      this.bookmark = 0
-    else if (this.bookmarkList.includes(this.screenNumber) || JSON.parse(sessionStorage.getItem("bookmark30001")) == 30001)
-      this.bookmark = 30001
-
-  }
-  receiveBookmark(e) {
-    console.log(e)
-    if (e == true)
-      this.bookmark = 30001
+    
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
     else
-      this.bookmark = 0
-    sessionStorage.setItem("bookmark30001", JSON.stringify(this.bookmark))
-  }
-  createScreen() {
-    this.service.createScreen({
-      "ScrId": 0,
-      "ModuleId": this.moduleId,
-      "GSetID": this.screenType,
-      "ScreenNo": this.screenNumber
-    }).subscribe(res => {
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
 
-    })
-
-
-  }
-  submitProgress() {
-    this.service.submitProgressText({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime
-    }).subscribe(res => {
-
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
-      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
-    },
-      error => { console.log(error) },
-      () => {
-        //this.router.navigate(['/adults/conditioning/s234'])
-      })
+    if(!this.t) //if no token in url- not shared
+    {
+      if(this.loginResponse.Subscriber!=1 && !this.freeScreens.includes(this.screenNumber))
+        console.log("move")
+    }
+    else
+    {
+      console.log("show")
+    }
    
-
-
+    this.startTime = Date.now();
+    this.startTime = Date.now();
+    this.createScreen()
   }
 
-  goNext() {
-    localStorage.setItem("pageaction", 'next')
-    this.router.navigate(['/adults/noticing-thoughts/s30002'])
-    this.endTime = Date.now();
-    this.totalTime = this.endTime - this.startTime;
-
-    if (this.userId !== 563) this.submitProgress()
-
+  addToken()
+  {
+    history.replaceState(null, null, this.path+`?t=${this.token}`);
+    this.socialShare=true
   }
 
-  goToToc() {
-    console.log('/adults/pathway/develop-a-calm-mind')
-    this.router.navigate(['/adults/pathway/develop-a-calm-mind'])
+  toggleBookmark()
+  {
+    if(this.bookmark==0)
+      this.bookmark=1
+    else
+      this.bookmark=0
   }
 
-  ngOnDestroy() {
+  createScreen()
+  {
+    this.service.createScreen({
+      "ScrId":0,
+      "ModuleId":this.moduleId,
+      "GSetID":this.screenType,
+      "ScreenNo":this.screenNumber
+    }).subscribe(res=>
+      {
+        
+      })
+  }
 
+  submitProgress()
+  {
+    this.service.submitProgressText({
+      "ScrNumber":this.screenNumber,
+      "UserId":this.userId,
+      "BookMark":this.bookmark,
+      "ModuleId":this.moduleId,
+      "screenType":this.screenType,
+      "timeSpent":this.totalTime
+    }).subscribe(res=>
+      { 
+        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
+      })
+  }
 
+  ngOnDestroy()
+  {}
 
+  routeJournal()
+  {
+    this.router.navigate(['/adults/journal'])
+  }
 
+  getSetModuleData(moduleId){
+    this.service.setmoduleID(moduleId);
+   /*  this.service.getModulebyId(moduleId).subscribe(res=>{
+      this.moduleData=res;
+      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+      
+     }); */
+  }
+   youtube(link) 
+  {
+    this.router.navigate(['/curated/youtubelink', link],{
+    state: {
+      class: this.bg,
+    }})
   }
 
 }

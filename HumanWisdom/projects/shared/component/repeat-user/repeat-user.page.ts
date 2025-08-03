@@ -17,7 +17,8 @@ export class RepeatUserPage implements OnInit {
   public userId = 100;
   searchResult = [];
   mediaPercent: any
-  freeScreens = []
+  // freeScreens = []
+     x = [];
   public qrList: any
   public goToPage: any
   public points: any
@@ -155,6 +156,7 @@ export class RepeatUserPage implements OnInit {
       SharedService.setUserId(res.UserId.toString());
       SharedService.setUsername(res.Name);
      SharedService.setEmail(res.Email);
+     this.freescreens();
     }
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
       this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -165,6 +167,8 @@ export class RepeatUserPage implements OnInit {
     }
     this.getBookmarks()
     this.getProgress()
+   
+    
     if (res.UserId == 0) {
     }
     else {
@@ -457,7 +461,7 @@ export class RepeatUserPage implements OnInit {
         }
         sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
         this.mediaPercent = parseInt(res.MediaPercent)
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       },
@@ -792,7 +796,7 @@ export class RepeatUserPage implements OnInit {
         sessionStorage.setItem("resumeBenefitsEnquiry", resumeBenefitsEnquiry)
         this.mediaPercent = parseInt(res.MediaPercent)
         //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       },
@@ -1116,8 +1120,8 @@ export class RepeatUserPage implements OnInit {
         // /continue where you left
         sessionStorage.setItem("comparisonR", comparisonR)
         this.mediaPercent = parseInt(res.MediaPercent)
-        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        // this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       },
@@ -1186,7 +1190,7 @@ export class RepeatUserPage implements OnInit {
         sessionStorage.setItem("siR", siR)
         this.mediaPercent = parseInt(res.MediaPercent)
         //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       },
@@ -1480,7 +1484,7 @@ export class RepeatUserPage implements OnInit {
         sessionStorage.setItem("pleasureResume", pleasureResume)
         this.mediaPercent = parseInt(res.MediaPercent)
         // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       },
@@ -2233,8 +2237,8 @@ export class RepeatUserPage implements OnInit {
         // /continue where you left
         sessionStorage.setItem("hcwhR", hcwhR)
         this.mediaPercent = parseInt(res.MediaPercent)
-        this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
-        localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
+        // this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
+        // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       },
@@ -2339,5 +2343,24 @@ export class RepeatUserPage implements OnInit {
     })
   }
   // /search
+
+  
+  freescreens() {
+    this.service.freeScreens().subscribe((res) => {
+      this.x = [];
+      let result = res.map((a) => a.FreeScrs);
+      let arr;
+      result = result.forEach((element) => {
+        if (element && element.length !== 0) {
+          this.x.push(element.map((a) => parseInt(a.ScrNo)));
+          arr = Array.prototype.concat.apply([], this.x);
+        }
+      });
+      // this.closemodal.nativeElement.click()
+      localStorage.setItem("freeScreens", JSON.stringify(arr));
+      // localStorage.setItem("isloggedin", 'T')
+      // this.router.navigate(['/adults/adult-dashboard'])
+    });
+  }
 
 }

@@ -16,10 +16,12 @@ import { S30004Page } from './s30004/s30004.page';
 import { S30005Page } from './s30005/s30005.page';
 import { S30006Page } from './s30006/s30006.page';
 import { S30007Page } from './s30007/s30007.page';
+import { S30001p1Page } from './s30001p1/s30001p1.page';
 
 @NgModule({
   declarations: [
     S30001Page,
+    S30001p1Page,
     S30002Page,
     S30002tPage,
     S30003Page,

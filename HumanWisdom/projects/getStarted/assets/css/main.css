@@ -53,8 +53,14 @@ a {
   text-decoration: none;
 }
 
+.active_nav
+{
+  color: #834B66 !important;
+}
+
+
 a:hover {
-  color: #ec2727;
+  color: #834B66;
   text-decoration: none;
 }
 
@@ -486,6 +492,10 @@ label > input[type="checkbox"] + *::before {
   background: #E58D82;
 }
 
+.navbar a, .navbar a:focus {
+  color: #CB6171;
+}
+
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
@@ -524,7 +534,7 @@ label > input[type="checkbox"] + *::before {
     font-size: 15px;
     font-weight: 500;
     line-height: 130%;
-    color: #CB6171 !important;
+    color: #CB6171;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -3271,7 +3281,14 @@ padding:20px;
   text-transform: uppercase;
   color: #CB6171;
   text-decoration: underline;
+  transition: all 0.3s ease;
+  cursor: pointer;
   
+}
+
+.nav-tabs > li.active > a {
+    background-color:transparent !important;
+    border-color: transparent !important;
 }
 
 .tab_faqs.nav-tabs>li>a:hover,
@@ -3286,12 +3303,74 @@ padding:20px;
   font-weight: 600;
   color: #834B66;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .tab-content.tc_faqs 
 {
   padding: 0;
   background: transparent;
+}
+
+/* Smooth transitions for tab content */
+.tab-content.tc_faqs .tab-pane {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tab-content.tc_faqs .tab-pane.fade {
+  opacity: 0;
+}
+
+.tab-content.tc_faqs .tab-pane.fade.in {
+  opacity: 1;
+}
+
+/* Smooth transitions for accordion */
+.panel-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.panel-collapse.collapse {
+  display: none;
+}
+
+.panel-collapse.collapse.in {
+  display: block;
+}
+
+.panel-collapse.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+/* FAQ tab active state improvements */
+.tab_faqs.nav-tabs>li.active>a {
+  position: relative;
+}
+
+.tab_faqs.nav-tabs>li.active>a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #834B66;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for FAQ tabs */
+.tab_faqs.nav-tabs>li>a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #CB6171;
+  transition: all 0.3s ease;
 }
 
 #accordion_faq .panel-title>a[aria-expanded=true]:after 
@@ -4570,10 +4649,6 @@ background: #FCF2EC;
   background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 
-.active_nav
-{
-  color: #834B66 !important;
-}
 
 .bg_adults
 {
@@ -5247,4 +5322,170 @@ margin-top: 10px !important;
 .testimonial_user_image {
   height: 78.33px !important;
   width: 78.33px !important
+}
+
+
+.nav-tabs .nav-link {
+  border-radius: 10px !important;
+    border: 1px solid #834b66 !important;
+    background: #e58d82 !important;
+    color: #fff !important;
+    width: 109px;
+    height: 28px;
+    font-size: 11px;
+    padding: 2px;
+}
+
+.nav-tabs .nav-link.active {
+  background:#CB6171 !important;
+}
+
+/* Hover effect for FAQ tabs */
+.tab_faqs.nav-tabs>li>a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #CB6171;
+  transition: all 0.3s ease;
+}
+
+/* Mobile FAQ styles */
+@media (max-width: 768px) {
+  .tab_faqs.nav-tabs>li>a {
+    font-size: 14px;
+    padding: 0 0 15px 0;
+  }
+  
+  .tc_faqs.mobile .tab-pane {
+    display: none;
+  }
+  
+  .tc_faqs.mobile .tab-pane.active {
+    display: block;
+  }
+  
+  .tc_faqs.mobile .tab-pane.fade {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .tc_faqs.mobile .tab-pane.fade.in {
+    opacity: 1;
+  }
+}
+
+/* FAQ Tab Active States */
+.tab_faqs.nav-tabs>li.active>a {
+  color: #834B66 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tab_faqs.nav-tabs>li>a {
+  transition: all 0.3s ease;
+}
+
+.tab_faqs.nav-tabs>li>a:hover {
+  color: #834B66 !important;
+}
+
+/* FAQ Tab Content Visibility */
+.tc_faqs .tab-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tc_faqs .tab-pane.active,
+.tc_faqs .tab-pane.show {
+  display: block;
+  opacity: 1;
+}
+
+.tc_faqs .tab-pane.fade.in {
+  opacity: 1;
+}
+
+/* Bootstrap 5.3 Accordion Custom Styling */
+.accordion {
+  border: none;
+  background: transparent;
+}
+
+.accordion-item {
+  border: none;
+  background: transparent;
+  margin-bottom: 0;
+}
+
+.accordion-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #000;
+  box-shadow: none;
+  position: relative;
+}
+
+.accordion-button:not(.collapsed) {
+  background: transparent;
+  color: #000;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.accordion-button::after {
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_down_web.svg);
+  background-image: none;
+  width: auto;
+  height: auto;
+  transform: none;
+  transition: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_up_web.svg);
+  background-image: none;
+  transform: none;
+}
+
+.accordion-body {
+  padding: 10px 0 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #000;
+  border: none;
+  background: transparent;
+}
+
+.accordion-collapse {
+  border: none;
+  background: transparent;
+}
+
+.accordion-collapse.show {
+  border: none;
+  background: transparent;
+}
+
+/* Remove default Bootstrap accordion styling */
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }

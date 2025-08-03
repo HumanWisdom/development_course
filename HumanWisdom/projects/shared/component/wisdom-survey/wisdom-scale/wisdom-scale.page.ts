@@ -234,7 +234,7 @@ export class WisdomScalePage implements OnInit {
 
   ngOnInit() {
 
-    // SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.navigationService.goBack())
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.navigationService.getLastUrlVisited())
 
     this.title.setTitle('Mindful Insights: Our Happiness Survey for a More Fulfilling Life')
     this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Happiness Survey for a More Fulfilling Life' })
