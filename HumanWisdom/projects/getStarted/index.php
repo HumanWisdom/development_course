@@ -2066,10 +2066,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  mtb20px flex_fd_cr">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" class="img-responsive" alt="tools_pathway" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" class="img-responsive w-90per"  alt="tools_pathway" loading=lazy>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                          PATHWAY - Guided program
                       </h3>
@@ -2109,10 +2109,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_journal.webp" class="img-responsive" alt="Journal" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_journal.webp" class="img-responsive w-90per" alt="Journal" loading=lazy>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Your private journal
                       </h3>
@@ -2137,10 +2137,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" class="img-responsive" alt="Podcast" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" class="img-responsive w-90per" alt="Podcast" loading=lazy>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         HappierMe Podcast
                       </h3>
@@ -2173,10 +2173,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr mtb20px">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" class="img-responsive" alt="Forum" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" class="img-responsive w-90per" alt="Forum" loading=lazy>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Community forum
                       </h3>
@@ -2201,10 +2201,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="row center_flex">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_survey.webp" class="img-responsive" alt="Survey" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_survey.webp" class="img-responsive w-90per" alt="Survey" loading=lazy>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up" data-aos-delay="200">
                       <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                         Track your wellness score
                       </h3>

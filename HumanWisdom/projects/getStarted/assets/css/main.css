@@ -5489,3 +5489,11 @@ margin-top: 10px !important;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+.w-90per {
+  width: 90% !important;
+}
+
+.w-336px {
+  width: 336px !important;
+}
