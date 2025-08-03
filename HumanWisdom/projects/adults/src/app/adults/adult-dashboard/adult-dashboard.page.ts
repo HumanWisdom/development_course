@@ -541,24 +541,6 @@ export class AdultDashboardPage implements OnInit {
           side: "top"
         }
       },
-
-
-      /*{
-        element: ".tour_find_inspiration",
-        popover: {
-          title: 'Find Inspiration',
-          description: 'Explore our rich library of motivational content.',
-          side: "right"
-        }
-      },*/
-      {
-        element: ".tour_exercises",
-        popover: {
-          title: 'Healthy mind',
-          description: ' You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
-          side: "top"
-        }
-      },
       {
         element: ".tour_explore",
         popover: {
@@ -596,17 +578,38 @@ export class AdultDashboardPage implements OnInit {
         popover: {
           title: 'Begin Here',
           description: 'Begin with this guide to HappierMe. Explore the app for free. Start your free trial to unlock the full app. Cancel anytime.',
-          side: "bottom"
+          side: "top",
+          align:"start"
         }
       }
     ];
+
+    
+
+
+      /*{
+        element: ".tour_find_inspiration",
+        popover: {
+          title: 'Find Inspiration',
+          description: 'Explore our rich library of motivational content.',
+          side: "right"
+        }
+      },
+      {
+        element: ".tour_exercises",
+        popover: {
+          title: 'Healthy mind',
+          description: ' You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
+          side: "top"
+        }
+      },*/
 
 
 
     if(!this.isloggedIn) {
       this.tourTotalIndex = 8;
       stepList.splice(1, 1);
-      stepList.splice(8, 1);
+      stepList.splice(7, 1);
     }
 
     const driverObj = driver({
@@ -4388,11 +4391,17 @@ export class AdultDashboardPage implements OnInit {
         url = `/adults/curated/overcome-stress-anxiety`
         break;
       }
-     default: {
-       url = `/adults/site-search/${this.searchinp}`
+      default: {
+      //  if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
+      //  let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
+      //   url = `${m.ModuleUrl}`;
+      //    break;
+      // }
+      let searchInpt = (' ' + this.searchinp).slice(1);
+      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+       url = `/adults/site-search/${searchInpt}`
         break;
       }
-
     }
 
 

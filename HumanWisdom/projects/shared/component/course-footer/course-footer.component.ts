@@ -6,6 +6,7 @@ import { NgxCaptureService } from 'ngx-capture';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
 import { LogEventService } from '../../services/log-event.service';
+import { NavigationService } from '../../services/navigation.service';
 
 
 
@@ -36,7 +37,8 @@ export class CourseFooterComponent implements OnInit {
     private ac:ActivatedRoute,
     private sharedService:SharedService,
     //private captureService:NgxCaptureService
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService,
+     private navigationService:NavigationService, 
   ) {
     this.isAdults= SharedService.isAdultProgram();
     if(this.router.getCurrentNavigation()) {
@@ -77,16 +79,20 @@ export class CourseFooterComponent implements OnInit {
 
   }
   routeDashboard(){
-    if(this.enabledDailyCheckin){
-       this.router.navigate([`${SharedService.getprogramName()}/my-dashboard`])
-    }else{
-      this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
-      if(this.programName=='teenagers'){
-        this.programName='';
-      }
-     this.goToDash();
-    }
-
+    // if(this.enabledDailyCheckin){
+    //    this.router.navigate([`${SharedService.getprogramName()}/my-dashboard`])
+    // }else{
+    //   this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase().toString();
+    //   if(this.programName=='teenagers'){
+    //     this.programName='';
+    //   }
+    //  this.goToDash();
+    // }
+      if(localStorage.getItem("NaviagtedFrom") == "undefined" || localStorage.getItem("NaviagtedFrom") == null || localStorage.getItem("NaviagtedFrom") == '')
+        this.router.navigateByUrl(SharedService.getDashboardUrls());
+      else
+      
+       this.router.navigate([localStorage.getItem("NaviagtedFrom")]);
   }
 
   goToDash() {

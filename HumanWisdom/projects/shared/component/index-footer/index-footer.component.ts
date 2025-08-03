@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService,  UrlConstant } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 
 @Component({
   selector: 'app-index-footer',
@@ -19,11 +20,18 @@ export class IndexFooterComponent implements OnInit {
   Subscriber: any;
   url='';
   userdetail:any;
+  isAdults: boolean = true; 
+  
   defaultUrl = "https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_active.svg";
   constructor(private router: Router,private onboardingService: OnboardingService) { }
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
+      if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
     if(userid === 'T') {
       this.isloggedIn = true;
       this.Subscriber = localStorage.getItem('Subscriber')

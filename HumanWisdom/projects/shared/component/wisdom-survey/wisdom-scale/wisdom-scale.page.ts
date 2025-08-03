@@ -234,6 +234,8 @@ export class WisdomScalePage implements OnInit {
 
   ngOnInit() {
 
+    // SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.navigationService.goBack())
+
     this.title.setTitle('Mindful Insights: Our Happiness Survey for a More Fulfilling Life')
     this.meta.updateTag({ property: 'title', content: 'Mindful Insights: Our Happiness Survey for a More Fulfilling Life' })
     this.meta.updateTag({ property: 'description', content: 'Discover mindful insights with our Happiness Survey. Share your thoughts on meditation, spirituality, and other topics related to a more fulfilling life.' })
@@ -505,7 +507,7 @@ export class WisdomScalePage implements OnInit {
   }
 
   goBack() {
-    /* var url = this.navigationService.navigateToBackLink();
+   /*  var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
       if (url && url != null && url != 'null') {
@@ -516,7 +518,24 @@ export class WisdomScalePage implements OnInit {
     } else {
       this.router.navigate([url]);
     } */
-    this.router.navigate([SharedService.getDashboardUrls()])
+   
+    //  if(localStorage.getItem("NaviagtedFrom"))  
+    //    this.router.navigate([localStorage.getItem("NaviagtedFrom")]);
+    //   else 
+    //      this.router.navigate([SharedService.getDashboardUrls()])
+
+ var url = this.navigationService.navigateToBackLink();
+    if(url==null){
+      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+      if(url && url!=null && url != 'null'){
+        this.router.navigate([url]);
+      }else{
+        this.location.back();
+      }
+     }
+     else{
+      this.router.navigate([url]);
+    }
   }
 
   viewClickEvent(url) {

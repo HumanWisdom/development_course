@@ -55,7 +55,7 @@ export class TeenagersService {
     },
     {
       id: "20",
-      name: 'Build your self awareness'
+      name: 'Develop your self awareness'
     }
   ]
 

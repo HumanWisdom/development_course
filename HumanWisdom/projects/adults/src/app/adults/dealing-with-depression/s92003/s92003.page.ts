@@ -26,7 +26,7 @@ export class S92003Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
-  toc="/dealing-with-depression/s92001"
+  toc="/adults/dealing-with-depression/s92001"
   bookmark=0
   path = setTimeout(() => {
     return this.router.url;

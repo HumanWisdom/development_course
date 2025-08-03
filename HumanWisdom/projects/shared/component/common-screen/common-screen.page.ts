@@ -47,7 +47,7 @@ export class CommonScreenPage implements OnInit {
   }
 
     getClickEvent(data) {
-    if(!this.isSubscriber && data['SoundscapeID'] > 3) {
+    if(!this.isSubscriber && data['SoundscapeID'] > 1) {
          this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
          return ;
     }

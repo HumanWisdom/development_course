@@ -139,7 +139,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           side: "right",
           align: "end"
         }
-      }, */
+      }, 
       {
        element: ".tour_exercises",
        popover: {
@@ -147,14 +147,15 @@ export class PersonalisedForYouSearchPage implements OnInit {
          description: 'You go to the gym to look after your physical health. Use these mini-workouts to look after your mental health.',
          side: "right"
        }
-     },
+     },*/
       {
         element: ".tour_pathway",
         popover: {
           title: 'PATHWAY',
           description: 'A step-by-step guide for a happier life.',
           // side: "right"
-          side: "right"
+          side: "left",
+            align:'end'
         }
       }
     ];
@@ -411,6 +412,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
         break;
       }
      default: {
+      //  if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
+      //  let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
+      //   url = `${m.ModuleUrl}`;
+      //    break;
+      // }
       let searchInpt = (' ' + this.searchinp).slice(1);
       searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
        url = `/teenagers/site-search/${searchInpt}`

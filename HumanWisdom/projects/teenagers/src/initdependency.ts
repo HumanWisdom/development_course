@@ -1,7 +1,7 @@
-import { AdultsService } from "./adults/adults.service";
-
+import { AdultsService } from "../../adults/src/app/adults/adults.service";
 export function initDependency(adultsService: AdultsService): () => Promise<void> {
   return () => {
+    // Only call API if not logged in
     if (!(localStorage.getItem("isloggedin")) || localStorage.getItem("isloggedin") !== 'T') {
       return adultsService.initialLoginWithGuestUser()
         .toPromise()
@@ -13,6 +13,7 @@ export function initDependency(adultsService: AdultsService): () => Promise<void
           throw err;
         });
     }
+    // Already logged in, resolve immediately
     return Promise.resolve();
   };
 }
