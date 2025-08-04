@@ -1851,23 +1851,84 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                   HappierMe Premium
+                <h2 class="mtb20px fs_30px fw_600 lh_120p fc_ffffff">
+                  Subscribe to HappierMe Premium
                 </h2>
 
-                <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
+                <!-- <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
                   Start your free trial today!
-                </h6>
+                </h6> -->
               </div>
             </div>
 
+
+                           <div class="row center_flex">
+                          
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12   d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+          
+                       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                             <img  style="marginn-left:23px; "src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/star.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                         </div>
+              
+
+             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+
+                  <h3 style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
+                   Expert guidance
+                  </h3>
+                
+              </div>
+        </div>
+
+        </div>
+
+             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                  <img style="marginn-left:23px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/goals.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                </div>
+                    <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 p0">
+
+
+                  <h3  style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
+                    Personalised content to meet your goals
+                  </h3>
+                
+              </div>
+        </div>
+
+     </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                  <img  style="marginn-left:23px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/daily.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                </div>
+              
+
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+
+<h3  style="margin-top:0px;"class=" fs_18px fw_500  fc_ffffff"> Daily practices that fit your life</h3>
+                
+              </div>
+        </div>
+
+              </div>
+
+              </div>
+          </div>
+        </div>
+           
             <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 p0">
+              <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0">
+                <div class="row center_flex">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
 
                 <button class="btn_subscription">
                   <div class="row center_flex btn_subscription_trial">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      <h6 style="color:#325795;" class="mtb0px fs_12px fw_400 lh_150p fc_325795">
                         14-day free trial
                       </h6>
                     </div>
@@ -1875,7 +1936,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                   <div class="row center_flex">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6  p0 tleft">
-                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
+                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
                         Yearly
                       </h5>
 
@@ -1883,7 +1944,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         INR 5,999/yr
                       </h4> -->
 
-                      <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
+                      <h6 class="mtb0px fs_12px fw_600 lh_150p fc_ffffff">
                         <!-- <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span> -->
 
                         <span class="" id="annualPricingModelHeading"></span>
@@ -1895,19 +1956,23 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         INR 500/mo.
                       </h4> -->
 
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff" id="spanAnnualLabel"></h4>
                     </div>
                   </div>
                 </button>
+            </div>
+            
+                          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
 
-                <button class="btn_subscription mt20pxi">
+
+                <button class="btn_subscription">
                   <div class="row center_flex">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tleft">
-                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
+                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
                         Monthly
                       </h5>
 
-                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                         7-day free trial
                       </h6>
                     </div>
@@ -1917,17 +1982,19 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         INR 700/mo.
                       </h4> -->
 
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000"  id="monthlyPricingModelHeading"></h4>
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff"  id="monthlyPricingModelHeading"></h4>
                     </div>
                   </div>
                 </button>
+            </div>
+            </div>
 
               </div>
             </div>
 
             <div class="row center_flex">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
+                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" id="totalAnnualPricingModelHeading">
                   <!-- After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled. -->
                   <span class="">
                     <a class="fc_000000">
@@ -1936,7 +2003,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                   </span>
                   |
                   <span class="">
-                    <a class="fc_000000">
+                    <a class="fc_ffffff">
                       Cancel anytime
                     </a>
                   </span>
@@ -1946,7 +2013,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
             <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
               <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" id="startyourfreetrial">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
                   Start your free trial
                 </button>
               </div>
@@ -4713,13 +4780,13 @@ Understand your feelings and where they come from </h5>
 <div class="modal fade" id="exampleModalparent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content1">
-            <div class="modal-header">
-                <!-- <a href="#" data-dismiss="modal" class="class pull-right">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+            <div class="modal-header d-block" style="float: right;">
+              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
-                </a> -->
+              </a>
                
-               <div class="modal-body">
+               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                      </div>
@@ -4729,19 +4796,10 @@ Understand your feelings and where they come from </h5>
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Hearts.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 
                      </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                          <button type="button"  data-bs-dismiss="modal" aria-label="#"  style="background-color:#fff8f1;">
-
-                          <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
-
-                          </button>
-
-                                    <!-- <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy> -->
-
-                </div>
+               
               </div>
               </div>
                 
@@ -4764,12 +4822,12 @@ Understand your feelings and where they come from </h5>
           
                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
                          </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                     Guided programs
@@ -4783,16 +4841,16 @@ Understand your feelings and where they come from </h5>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                     Hundreds of podcasts
                   </h3>
-                  <h5 class=" review">On dealing with overwhelm, talking to kids, mistakes to avoid and more </h5>
+                  <h5 class=" review">On dealing with overwhelm, talking  &nbsp;&nbsp; &nbsp; &nbsp;to kids, mistakes to avoid and more </h5>
                 
               </div>
         </div>
@@ -4800,12 +4858,12 @@ Understand your feelings and where they come from </h5>
      </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
                   <h5 class="review">In-depth articles on parenting </h5>
@@ -4822,22 +4880,22 @@ Understand your feelings and where they come from </h5>
       
         <div class="row center_flex">
                           
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
           
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
              
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                     Community forum
                   </h3>
-                  <h5 class="review">Find support, share your thoughts and make friends </h5>
+                  <h5 class="review">Find support, share your thoughts  &nbsp;&nbsp; &nbsp; &nbsp;and make friends </h5>
                 
               </div>
         </div>
@@ -4847,12 +4905,12 @@ Understand your feelings and where they come from </h5>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/breath.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Breathing exercises</h3>
                   <h5 class="review">To deal with stressful situations </h5>
@@ -4865,10 +4923,10 @@ Understand your feelings and where they come from </h5>
 
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
@@ -4880,7 +4938,7 @@ Understand your feelings and where they come from </h5>
           </div>
         </div>
             
-           <div class="row center_flex mtb10px">
+           <div class="row center_flex mtb20px">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
@@ -4907,6 +4965,7 @@ Understand your feelings and where they come from </h5>
 <!-- <Supporting parents to flourish> -->
   <!-- <A separate app, just for teenagers> -->
 
+
 <div class="modal fade" id="exampleModalteen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content1">
@@ -4930,19 +4989,10 @@ Understand your feelings and where they come from </h5>
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teebagers.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 
                      </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                          <!-- <button type="button"  data-bs-dismiss="modal" aria-label="#">
-
-                          <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
-
-                          </button> -->
-
-                                    <!-- <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy> -->
-
-                </div>
+               
               </div>
               </div>
                 
@@ -4965,12 +5015,12 @@ Understand your feelings and where they come from </h5>
           
                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
                          </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                     Guided programs
@@ -4984,16 +5034,16 @@ Understand your feelings and where they come from </h5>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                     Hundreds of podcasts
                   </h3>
-                  <h5 class=" review">On dealing with common challenges teenagers face </h5>
+                  <h5 class=" review">On dealing with common &nbsp;&nbsp; &nbsp; &nbsp; challenges teenagers face </h5>
                 
               </div>
         </div>
@@ -5001,12 +5051,12 @@ Understand your feelings and where they come from </h5>
      </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/feel.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Feel better now</h3>
                   <h5 class="review">Breathing and tapping exercises for quick relief </h5>
@@ -5023,22 +5073,22 @@ Understand your feelings and where they come from </h5>
       
         <div class="row center_flex">
                           
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
           
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
              
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                     Community forum
                   </h3>
-                  <h5 class="review">Find support, share your thoughts and make friends </h5>
+                  <h5 class="review">Find support, share your thoughts &nbsp;&nbsp; &nbsp; &nbsp; and make friends </h5>
                 
               </div>
         </div>
@@ -5048,15 +5098,15 @@ Understand your feelings and where they come from </h5>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/talk.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Teen talk</h3>
-                  <h5 class="review">Conversations with teens from around the world </h5>
+                  <h5 class="review">Conversations with teens from  &nbsp;&nbsp; &nbsp; &nbsp;around the world </h5>
                 
               </div>
         </div>
@@ -5066,14 +5116,14 @@ Understand your feelings and where they come from </h5>
 
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
-              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
 
                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
-                  <h5 class="review">Quick tips from trained coaches to help teens flourish in life   </h5>             
+                  <h5 class="review">Quick tips from trained coaches to &nbsp;&nbsp; &nbsp; &nbsp; help teens flourish in life   </h5>             
               </div>
         </div>
 
@@ -5081,7 +5131,7 @@ Understand your feelings and where they come from </h5>
           </div>
         </div>
             
-           <div class="row center_flex mtb10px">
+           <div class="row center_flex mtb20px">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
