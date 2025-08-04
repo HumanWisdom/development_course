@@ -3241,7 +3241,7 @@ padding:20px;
   margin: 0;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #CB6171;
+  border: 1px solid #ffffff;
   background: rgba(232, 168, 128, 0.10);
   position: relative;
 }
@@ -3252,7 +3252,7 @@ padding:20px;
   width: auto;
   height: 26px;
   border-radius: 10px;
-  background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%));
+  background: #ffffff;
   padding: 4px 10px;
   position: absolute;
   top: -14px;

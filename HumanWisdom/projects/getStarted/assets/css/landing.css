@@ -118,7 +118,24 @@
     gap: 30px;
 }
 
-
+.btn_tffland {
+    margin: 0;
+    border: 0;
+    /* width: 314px; */
+    width: 100%;
+    height: 65px;
+    border-radius: 35px;
+    /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
+    background: linear-gradient(180deg, #E58D82, #CB6171);
+}
+.sap:hover{
+    color:green;
+}
+.img_aspects1 {
+    /* max-height: 155px; */
+    /* margin-right: 50px; */
+    margin-left: 28px;
+}
 
 .div_subscriptionnew {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
