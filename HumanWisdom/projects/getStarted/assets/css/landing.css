@@ -123,7 +123,7 @@
 .div_subscriptionnew {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
     background: 
-    -webkit-linear-gradient(180deg, #4267A5 , #183C79 );
+    -webkit-linear-gradient(#4267A5 , #183C79 );
     
     background-repeat: no-repeat;
     background-position: center;
