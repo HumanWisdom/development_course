@@ -134,4 +134,14 @@
     line-height: 1;
     text-align: center;
 }
+
+/* Prevent Bootstrap from adding padding-right to body when modal opens */
+body {
+    padding-right: 0px !important;
+}
+
+body.modal-open {
+    padding-right: 0px !important;
+    overflow: hidden;
+}
 </style>

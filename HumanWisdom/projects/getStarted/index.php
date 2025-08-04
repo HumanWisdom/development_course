@@ -65,7 +65,7 @@
     
   </head>
 
-  <body id="body">
+  <body id="body" style="padding:0px !important">
 
     <!-- header -->
     <?php include('./includes/header.php'); ?>
@@ -3318,6 +3318,26 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
       </section>
       <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> News popup</button>
+      
+      <!-- Test button to demonstrate ModalManager functionality -->
+      <button style="display:none" type="button" id="testModalManager" class="btn btn-secondary" onclick="testModalManager()">
+        Test Modal Manager
+      </button>
+      
+      <!-- Test button to test modal closing -->
+      <button style="display:none" type="button" id="testCloseModal" class="btn btn-warning" onclick="testCloseModal()">
+        Test Close Modal
+      </button>
+      
+      <!-- Debug button to check modal status -->
+      <button style="display:none" type="button" id="debugModals" class="btn btn-info" onclick="debugModals()">
+        Debug Modals
+      </button>
+      
+      <!-- Test button to force newsletter popup -->
+      <button style="display:none" type="button" id="testNewsletterPopup" class="btn btn-success" onclick="testNewsletterPopup()">
+        Test Newsletter Popup
+      </button>
   
       <?php include('./includes/footer.php'); ?>
       <!-- /footer -->
