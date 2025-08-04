@@ -65,7 +65,7 @@
     
   </head>
 
-  <body>
+  <body id="body">
 
     <!-- header -->
     <?php include('./includes/header.php'); ?>
@@ -5090,7 +5090,7 @@ Understand your feelings and where they come from </h5>
 
 
 <!-- <popup1> -->
-  <div class="modal fade product_view" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+  <div class="modal fade product_view" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true" style="overflow:hidden">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header d-block" style="float: right;">

@@ -118,6 +118,13 @@ function initializeFAQTabs() {
     }
 }
 
+function handleUiShakingOnModelPopupOpen(){
+         setTimeout(() => {
+           var body = document.getElementById('body');
+           body.style.paddingRight = '0px';
+        }, 100);
+}
+
 // Initialize tool tabs separately to avoid conflicts
 function initializeToolTabs() {
     // Get all tool tab buttons (Bootstrap 5.3 syntax)
@@ -356,18 +363,15 @@ setTimeout(() => {
         // Trigger the popup using Bootstrap 5.3
         const newsPopupBtn = document.getElementById('newsPopup');
         if (newsPopupBtn) {
-            console.log("Triggering newsletter popup...");
-            newsPopupBtn.click();
-        } else {
-            console.error("News popup button not found");
-            // Fallback: try to show modal directly using Bootstrap 5.3
-            const modal = document.getElementById('product_view');
+                console.log("Triggering newsletter popup...");
+               const modal = document.getElementById('product_view');
             if (modal) {
                 console.log("Showing modal directly...");
                 const bsModal = new bootstrap.Modal(modal);
                 bsModal.show();
+                handleUiShakingOnModelPopupOpen();
             }
-        }
+        } 
     } else {
         console.log("Newsletter popup already shown");
     }
