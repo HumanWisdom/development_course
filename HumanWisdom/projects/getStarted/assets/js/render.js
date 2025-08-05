@@ -8,8 +8,11 @@ $(".owl_container .owl-carousel").owlCarousel({
     nav: !0,
     autoWidth: !0,
     dots: !1,
-    navText: ['<span class="glyphicon glyphicon glyphicon-menu-left"></span>', 
-        '<span class="glyphicon glyphicon glyphicon-menu-right"></span>'],
+    navText: ['<i class="bi bi-chevron-left"></i>',
+        // <span class="glyphicon glyphicon glyphicon-menu-left"></span>', 
+        '<i class="bi bi-chevron-right"></i>'
+        // '<span class="glyphicon glyphicon glyphicon-menu-right"></span>'
+    ],
     navContainer: ".owl_container .owl-nav",
     responsive: { 0: { items: 1 }, 600: { items: 3 }, 1e3: { items: 3 } },
 }),
