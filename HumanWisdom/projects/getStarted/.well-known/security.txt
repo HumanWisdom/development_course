@@ -1,0 +1,30 @@
+# Security Policy for HappierMe
+# This file follows RFC 9116 standard for security.txt
+
+# Contact Information
+Contact: mailto:security@happierme.app
+Contact: https://happierme.app/security
+
+# Encryption
+Encryption: https://happierme.app/pgp-key.txt
+
+# Acknowledgments
+Acknowledgments: https://happierme.app/security/acknowledgments
+
+# Policy
+Policy: https://happierme.app/security/policy
+
+# Hiring
+Hiring: https://happierme.app/careers
+
+# Preferred Languages
+Preferred-Languages: en
+
+# Canary
+Canary: https://happierme.app/security/canary.txt
+
+# Expires
+Expires: 2025-12-31T23:59:59.000Z
+
+# Last Updated
+Last-Updated: 2024-12-19T00:00:00.000Z 

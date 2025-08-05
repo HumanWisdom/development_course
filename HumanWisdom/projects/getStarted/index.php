@@ -1,3 +1,7 @@
+<?php
+// Include security configuration
+require_once('./includes/security_config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
