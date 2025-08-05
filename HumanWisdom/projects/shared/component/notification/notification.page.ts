@@ -1,5 +1,5 @@
 import { OnboardingService } from './../../services/onboarding.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { NotificationModel } from './notification-model';
@@ -27,6 +27,9 @@ export class NotificationPage implements OnInit {
     'Nov',
     'Dec',
   ];
+  showOlderNotifications: boolean = false;
+  @ViewChild('notificationTop') notificationTop!: ElementRef;
+  
   constructor(
     private adultService: OnboardingService,
     private datePipe: DatePipe,
@@ -182,4 +185,21 @@ export class NotificationPage implements OnInit {
     }
     return 'nrow_inactive row';
   }
+
+  get toggleText(): string {
+  return this.showOlderNotifications ? 'View latest notifications only' : 'View older Notifications';
+}
+
+toggleNotifications() {
+  this.showOlderNotifications = !this.showOlderNotifications;
+
+  if (!this.showOlderNotifications && this.notificationTop) {
+    setTimeout(() => {
+      this.notificationTop.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 100);
+  }
+}
 }
