@@ -550,7 +550,7 @@
                 type="video/mp4">
             </video> -->
 
-            <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1" class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture" onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
+            <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro" src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1&enablejsapi=1" class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen onclick="return logevent('click_play_video_home', 'index.php')" ></iframe>
           </div>
         </div>
 

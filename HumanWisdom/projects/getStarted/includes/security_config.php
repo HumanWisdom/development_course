@@ -26,12 +26,13 @@ function setSecurityHeaders() {
     
     // Content Security Policy
     $csp = "default-src 'self'; " .
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com; " .
-            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; " .
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com https://www.youtube.com https://s.ytimg.com; " .
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.youtube.com; " .
             "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; " .
-            "img-src 'self' data: https: http:; " .
-            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; " .
-            "frame-src 'self' https://www.googletagmanager.com https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; " .
+            "img-src 'self' data: https: http: https://www.youtube.com https://i.ytimg.com https://s.ytimg.com; " .
+            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.youtube.com; " .
+            "frame-src 'self' https://www.googletagmanager.com https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com https://www.youtube-nocookie.com; " .
+            "child-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; " .
             "object-src 'none'; " .
             "base-uri 'self'; " .
             "form-action 'self'; " .
