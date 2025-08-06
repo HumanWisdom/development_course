@@ -31,7 +31,7 @@ function setSecurityHeaders() {
             "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; " .
             "img-src 'self' data: https: http:; " .
             "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; " .
-            "frame-src 'self' https://www.googletagmanager.com; " .
+            "frame-src 'self' https://www.googletagmanager.com https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; " .
             "object-src 'none'; " .
             "base-uri 'self'; " .
             "form-action 'self'; " .
