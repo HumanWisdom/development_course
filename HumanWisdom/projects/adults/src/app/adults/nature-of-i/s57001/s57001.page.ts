@@ -32,7 +32,7 @@ export class S57001Page implements OnInit,OnDestroy {
   isLoggedIn = false;
   isSubscriber = false;
 
-  modulename = "The Nature of the 'I'";
+  modulename = "The nature of the 'I'";
 
   constructor(
     private router: Router,
