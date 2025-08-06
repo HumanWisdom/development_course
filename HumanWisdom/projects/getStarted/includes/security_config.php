@@ -4,6 +4,11 @@
  * This file contains all security-related headers and configurations
  */
 
+// Start session immediately to avoid "headers already sent" error
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Prevent direct access to this file
 if (!defined('SECURITY_CONFIG_LOADED')) {
     define('SECURITY_CONFIG_LOADED', true);
@@ -172,8 +177,5 @@ if (!headers_sent()) {
     disableDebugMethods();
 }
 
-// Start session if not already started
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+// Remove the session_start() from here since we moved it to the top
 ?> 
