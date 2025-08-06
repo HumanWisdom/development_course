@@ -2931,8 +2931,8 @@ animation-name: slideInRight;
   border-radius: 10px;
   background: #FCF2EC;
   padding: 20px;
-  width: 254px !important;
-  height: 327px !important;
+  width: 234px !important;
+  height: 287px !important;
 }
 
 .div_coaches img
@@ -2946,8 +2946,8 @@ animation-name: slideInRight;
 
 .div_coaches.slick-slide 
 {
-  width: 254px !important;
-  height: 327px !important;
+  width: 234px !important;
+  height: 287px !important;
   margin: 0 40px 0 0 !important;
 }
 
