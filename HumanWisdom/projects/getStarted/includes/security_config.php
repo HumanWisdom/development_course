@@ -31,7 +31,7 @@ function setSecurityHeaders() {
             "font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; " .
             "img-src 'self' data: https: http: https://www.youtube.com https://i.ytimg.com https://s.ytimg.com; " .
             "media-src 'self' https://d1tenzemoxuh75.cloudfront.net; " .
-            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.youtube.com https://ipapi.co https://analytics.google.com; " .
+            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.youtube.com https://ipapi.co https://analytics.google.com https://www.humanwisdom.info https://ka-f.fontawesome.com; " .
             "frame-src 'self' https://www.googletagmanager.com https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com https://www.youtube-nocookie.com; " .
             "child-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; " .
             "object-src 'none'; " .
