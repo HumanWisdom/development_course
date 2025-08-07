@@ -33,10 +33,14 @@
 .btn_popup {
     margin: 0;
     border: 0;
+    padding:18px 40px;
+    /* right:40px;
+    bottom:18px;
+    left:18px; */
     /* width: 314px; */
     /* width: 249px; */
-    width: 90%;
-    height: 51px;
+    /* width: 90%;
+    height: 51px; */
     /* margin-left: 30px; */
     border-radius: 36px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
