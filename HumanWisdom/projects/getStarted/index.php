@@ -336,7 +336,7 @@ require_once('./includes/security_config.php');
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-<button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModalteen">HappierMe for Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModalteen">HappierMe for Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
@@ -1494,7 +1494,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12 center_flex p0" style="margin-left: 12px;">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12">
                   <!-- <a id="happiermeTryForFree" class="btn btn_pricing fs_15px fw_600 lh_140p fc_ffffff center_flex">
                     Try HappierMe for free
                   </a> -->
@@ -1926,14 +1926,14 @@ The HappierMe app for teens has been designed to help them manage their emotions
         </div>
            
             <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0">
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0">
                 <div class="row center_flex">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
 
                 <button class="btn_subscription">
                   <div class="row center_flex btn_subscription_trial">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h6 style="color:#325795;" class="mtb0px fs_12px fw_400 lh_150p fc_325795">
+                      <h6 style="color:#325795;" class="mtb0px fs_12px fw_600 lh_150p fc_325795">
                         14-day free trial
                       </h6>
                     </div>
@@ -1999,17 +1999,19 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
             <div class="row center_flex">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff" id="totalAnnualPricingModelHeading">
-                  <!-- After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled. -->
+                <h6 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" id="">
+                  After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled. 
+                  
+                 
+                  |<br/>
                   <span class="">
                     <a class="fc_ffffff">
-                      Terms
+                      Cancel anytime.
                     </a>
                   </span>
-                  |
-                  <span class="">
-                    <a class="fc_ffffff">
-                      Cancel anytime
+                   <span class="">
+                    <a class="fc_ffffff td_underline">
+                      Terms & Conditions
                     </a>
                   </span>
                 </h6>
@@ -2299,13 +2301,23 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 </div>
               </div>
               <!-- /survey -->
+
+
+              
             </div>
 
           </div>
         </div>
       </section>
       <!-- /tools -->
-
+        <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
+              <div id="PricingSelectBtn" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0 mtb20px">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
+                  Start your free trial
+                </button>
+              </div>
+            </div>
+       
       <!-- blog -->
       <section>
         <div class="section-header">
@@ -3640,10 +3652,10 @@ Breathing and tapping exercises for quick relief                  </h5>
   </div>
             <div class="row center_flex mb20px">
                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
 
   </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                   <a href="https://happierme.app/pages/splash_options.php"  class="">
                     <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
                      Try HappierMe for free
@@ -3651,7 +3663,7 @@ Breathing and tapping exercises for quick relief                  </h5>
                   </a>
   </div>
                          
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
   </div>
 
                 </div>
