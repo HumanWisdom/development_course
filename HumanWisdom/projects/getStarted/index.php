@@ -2001,7 +2001,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <h6 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" id="">
                   After your free trial, the yearly subscription is INR 5,999 and automatically renews each year until cancelled. 
-                  
+
                  
                   |<br/>
                   <span class="">
@@ -2312,8 +2312,8 @@ The HappierMe app for teens has been designed to help them manage their emotions
       <!-- /tools -->
         <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
               <div id="PricingSelectBtn" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0 mtb20px">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
-                  Start your free trial
+                <button class="fs_21px fw_600 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
+                  Try HappierMe for free
                 </button>
               </div>
             </div>
