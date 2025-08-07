@@ -4,6 +4,23 @@
  * This file contains all security-related headers and configurations
  */
 
+// Configure secure session cookie parameters before starting session
+function configureSecureSession() {
+    // Set secure session cookie parameters
+    $cookie_params = session_get_cookie_params();
+    session_set_cookie_params([
+        'lifetime' => $cookie_params['lifetime'],
+        'path' => $cookie_params['path'],
+        'domain' => $cookie_params['domain'],
+        'secure' => true,  // Only send cookie over HTTPS
+        'httponly' => true,  // Prevent JavaScript access to session cookie
+        'samesite' => 'Strict'  // Prevent CSRF attacks
+    ]);
+}
+
+// Configure secure session before starting
+configureSecureSession();
+
 // Start session immediately to avoid "headers already sent" error
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -173,11 +190,64 @@ function checkRateLimit($identifier, $max_requests = 10, $time_window = 60) {
     return true;
 }
 
+/**
+ * Set secure cookie with proper flags
+ * @param string $name Cookie name
+ * @param string $value Cookie value
+ * @param int $expire Expiration time (0 for session cookie)
+ * @param string $path Cookie path
+ * @param string $domain Cookie domain
+ * @param bool $secure Whether cookie should only be sent over HTTPS
+ * @param bool $httponly Whether cookie should be HTTP only
+ * @param string $samesite SameSite attribute ('Strict', 'Lax', or 'None')
+ * @return bool True on success, false on failure
+ */
+function setSecureCookie($name, $value, $expire = 0, $path = '/', $domain = '', $secure = true, $httponly = true, $samesite = 'Strict') {
+    // Build the cookie string with secure parameters
+    $cookie_string = $name . '=' . urlencode($value);
+    
+    if ($expire > 0) {
+        $cookie_string .= '; expires=' . gmdate('D, d M Y H:i:s T', $expire);
+    }
+    
+    if ($path) {
+        $cookie_string .= '; path=' . $path;
+    }
+    
+    if ($domain) {
+        $cookie_string .= '; domain=' . $domain;
+    }
+    
+    if ($secure) {
+        $cookie_string .= '; secure';
+    }
+    
+    if ($httponly) {
+        $cookie_string .= '; httponly';
+    }
+    
+    if ($samesite) {
+        $cookie_string .= '; samesite=' . $samesite;
+    }
+    
+    // Set the cookie using header()
+    return header('Set-Cookie: ' . $cookie_string, false);
+}
+
+/**
+ * Delete a secure cookie
+ * @param string $name Cookie name
+ * @param string $path Cookie path
+ * @param string $domain Cookie domain
+ * @return bool True on success, false on failure
+ */
+function deleteSecureCookie($name, $path = '/', $domain = '') {
+    return setSecureCookie($name, '', time() - 3600, $path, $domain, true, true, 'Strict');
+}
+
 // Initialize security settings
 if (!headers_sent()) {
     setSecurityHeaders();
     disableDebugMethods();
 }
-
-// Remove the session_start() from here since we moved it to the top
 ?> 
