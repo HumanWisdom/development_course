@@ -3474,7 +3474,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 <!-- <mental-wellbeing> -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog model-dialog-centered">
+   <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -3690,7 +3690,7 @@ Breathing and tapping exercises for quick relief                  </h5>
 <!-- <Build deeper relationships> -->
 
 <div class="modal fade" id="exampleModalbuild" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog model-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -3906,7 +3906,7 @@ In-depth articles on building your relationship skills                  </h5>
 <!-- <learn meditation> -->
 
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog model-dialog-centered">
+   <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -4055,7 +4055,7 @@ A library of audio meditations and soundscapes                  </h5>
 <!-- <build soft skills> -->
 
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog model-dialog-centered">
+   <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -4258,7 +4258,7 @@ A library of audio meditations and soundscapes                  </h5>
 <!-- <Break harmful habits> -->
 
 <div class="modal fade" id="exampleModalbreak" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog model-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -4458,7 +4458,7 @@ A library of audio meditations and soundscapes                  </h5>
   <!-- <Manage your emotions> -->
 
 <div class="modal fade" id="exampleModalemotions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog model-dialog-centered">
+   <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -4660,7 +4660,7 @@ Understand your feelings and where they come from </h5>
   <!-- <Develop your self-awareness> -->
 
 <div class="modal fade" id="exampleModalself" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog model-dialog-centered">
+   <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -4863,7 +4863,7 @@ Understand your feelings and where they come from </h5>
 <!-- <Supporting parents to flourish> -->
 
 <div class="modal fade" id="exampleModalparent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog model-dialog-centered">
+     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -5066,7 +5066,7 @@ Understand your feelings and where they come from </h5>
 
 
 <div class="modal fade" id="exampleModalteen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog model-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">

@@ -143,7 +143,7 @@
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_facebook.svg" class="img-responsive" alt="facebook">
             </a>
 
-            <a href="https://www.instagram.com/happierme_app/" target="_blank">
+            <a href="https://www.instagram.com/happierme.app/" target="_blank">
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_instagram.svg" class="img-responsive" alt="instagram">
             </a>
 
