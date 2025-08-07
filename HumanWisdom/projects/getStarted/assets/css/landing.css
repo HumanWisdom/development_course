@@ -167,10 +167,7 @@
 h3 {
     font-size: 24px;
 }
-.modal-dialog {
-    top:4%;
-    right:2%;
-}
+
 .modal-content1 {
     position: relative;
     display: flex
@@ -197,8 +194,8 @@ h3 {
 
   @media (min-width: 576px) {
     .modal-dialog {
-        max-width: 900px;
-        margin-right: 84px;
-        margin-left: 207px;
+        max-width: 980px;
+        /* margin-right: 84px;
+        margin-left: 207px; */
     }   
   }   

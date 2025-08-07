@@ -3462,22 +3462,26 @@ The HappierMe app for teens has been designed to help them manage their emotions
 <!-- <mental-wellbeing> -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+   <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
-           <div class="modal-header d-block" style="float: right;">
+              <div class="modal-header d-block" >
+                 <div class="row center_flex ">
+                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
               </a>
-               
-                   <div class="row center_flex">
-
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-
+  </div>
+  </div>
+                <div class="row center_flex">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    
+                
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                      </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 plr20px">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
 
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/overcome.svg" class="img-responsive" alt="Mental Health" loading=lazy>
@@ -3633,8 +3637,9 @@ Breathing and tapping exercises for quick relief                  </h5>
               </div>
           </div>
         </div>
-            <div class="row center_flex mtb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+  </div>
+            <div class="row center_flex mb20px">
+                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
   </div>
@@ -3673,25 +3678,29 @@ Breathing and tapping exercises for quick relief                  </h5>
 <!-- <Build deeper relationships> -->
 
 <div class="modal fade" id="exampleModalbuild" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
-           <div class="modal-header d-block" style="float: right;">
+              <div class="modal-header d-block" >
+                 <div class="row center_flex ">
+                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
               </a>
+  </div>
+  </div>
               
 
-              
+     <div class="row center_flex">          
                
-                     <div class="row center_flex">
-
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    
+                
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                      </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
 
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_d.svg" class="img-responsive" alt="Mental Health" loading=lazy>
@@ -3846,7 +3855,8 @@ In-depth articles on building your relationship skills                  </h5>
               </div>
           </div>
         </div>
-           <div class="row center_flex mtb20px">
+  </div>
+           <div class="row center_flex mb20px">
                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
@@ -3884,20 +3894,26 @@ In-depth articles on building your relationship skills                  </h5>
 <!-- <learn meditation> -->
 
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="top:70px;">
+   <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
-           <div class="modal-header d-block" style="float: right;">
+              <div class="modal-header d-block" >
+                 <div class="row center_flex ">
+                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
               </a>
-               
-                 <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+  </div>
+  </div>
+              <div class="row center_flex">  
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    
+                
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                      </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
 
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/practice.svg" class="img-responsive" alt="Mental Health" loading=lazy>
@@ -4027,25 +4043,32 @@ A library of audio meditations and soundscapes                  </h5>
 <!-- <build soft skills> -->
 
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+   <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
-            <div class="modal-header d-block" style="float: right;">
+              <div class="modal-header d-block" >
+                 <div class="row center_flex ">
+                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
               </a>
+  </div>
+  </div>
+   <div class="row center_flex">
                
-                 <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    
+                
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                      </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
 
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/soft_skill.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
                      </div>
                
@@ -4124,7 +4147,7 @@ A library of audio meditations and soundscapes                  </h5>
 
               </div>
           </div>
-        </div>
+        
 
       
         <div class="row center_flex">
@@ -4186,7 +4209,8 @@ A library of audio meditations and soundscapes                  </h5>
               </div>
           </div>
         </div>
-        <div class="row center_flex mtb20px">
+  </div>
+        <div class="row center_flex mb20px">
                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
@@ -4222,24 +4246,30 @@ A library of audio meditations and soundscapes                  </h5>
 <!-- <Break harmful habits> -->
 
 <div class="modal fade" id="exampleModalbreak" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
-            <div class="modal-header d-block" style="float: right;">
+              <div class="modal-header d-block" >
+                 <div class="row center_flex ">
+                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
               </a>
-               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+  </div>
+  </div>
+   <div class="row center_flex">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    
+                
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                      </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/break.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
                      </div>
                 
@@ -4318,7 +4348,7 @@ A library of audio meditations and soundscapes                  </h5>
 
               </div>
           </div>
-        </div>
+        
 
       
         <div class="row center_flex">
@@ -4380,8 +4410,9 @@ A library of audio meditations and soundscapes                  </h5>
               </div>
           </div>
         </div>
+  </div>
             
-           <div class="row center_flex mtb20px">
+           <div class="row center_flex mb20px">
                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
@@ -4415,19 +4446,26 @@ A library of audio meditations and soundscapes                  </h5>
   <!-- <Manage your emotions> -->
 
 <div class="modal fade" id="exampleModalemotions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+   <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
-             <div class="modal-header d-block" style="float: right;">
+              <div class="modal-header d-block" >
+                 <div class="row center_flex ">
+                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
               </a>
-               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+  </div>
+  </div>
+   <div class="row center_flex">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    
+                
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                      </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
 
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Character.svg" class="img-responsive" alt="Mental Health" loading=lazy>
@@ -4512,7 +4550,7 @@ Understand your feelings and where they come from </h5>
 
               </div>
           </div>
-        </div>
+        
 
       
         <div class="row center_flex">
@@ -4574,8 +4612,9 @@ Understand your feelings and where they come from </h5>
               </div>
           </div>
         </div>
+  </div>
             
- <div class="row center_flex mtb20px">
+ <div class="row center_flex mb20px">
                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
@@ -4609,25 +4648,32 @@ Understand your feelings and where they come from </h5>
   <!-- <Develop your self-awareness> -->
 
 <div class="modal fade" id="exampleModalself" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+   <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
-            <div class="modal-header d-block" style="float: right;">
+              <div class="modal-header d-block" >
+                 <div class="row center_flex ">
+                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
               </a>
+  </div>
+  </div>
+   <div class="row center_flex">
                
-               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    
+                
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                      </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
 
                   
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/awarness.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
                      </div>
                 
@@ -4706,7 +4752,7 @@ Understand your feelings and where they come from </h5>
 
               </div>
           </div>
-        </div>
+        
 
       
         <div class="row center_flex">
@@ -4768,8 +4814,9 @@ Understand your feelings and where they come from </h5>
               </div>
           </div>
         </div>
+  </div>
             
-           <div class="row center_flex mtb20px">
+           <div class="row center_flex mb20px">
                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
@@ -4804,25 +4851,33 @@ Understand your feelings and where they come from </h5>
 <!-- <Supporting parents to flourish> -->
 
 <div class="modal fade" id="exampleModalparent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+     <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
-            <div class="modal-header d-block" style="float: right;">
+              <div class="modal-header d-block" >
+                 <div class="row center_flex ">
+                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
                                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
 
               </a>
+  </div>
+  </div>
                
                <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt40px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    
+                
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                      </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
 
                   
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Hearts.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teebagers.svg" class="img-responsive" alt="Mental Health" loading=lazy>
                 </div>
-                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
                      </div>
                
@@ -4830,7 +4885,6 @@ Understand your feelings and where they come from </h5>
               </div>
                 
             </div>
-
         <div class="section-header1">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4863,7 +4917,7 @@ Understand your feelings and where they come from </h5>
               </div>
         </div>
 
-        </div>
+  </div>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
@@ -4901,7 +4955,7 @@ Understand your feelings and where they come from </h5>
 
               </div>
           </div>
-        </div>
+        
 
       
         <div class="row center_flex">
@@ -4963,8 +5017,9 @@ Understand your feelings and where they come from </h5>
               </div>
           </div>
         </div>
+  </div>
             
-           <div class="row center_flex mtb20px">
+           <div class="row center_flex mb20px">
                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
@@ -4999,7 +5054,7 @@ Understand your feelings and where they come from </h5>
 
 
 <div class="modal fade" id="exampleModalteen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog model-dialog-centered">
         <div class="modal-content1">
               <div class="modal-header d-block" >
                  <div class="row center_flex ">
@@ -5019,7 +5074,7 @@ Understand your feelings and where they come from </h5>
                
                <div class="row center_flex">
 
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     
                 
                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
@@ -5173,7 +5228,7 @@ Understand your feelings and where they come from </h5>
         </div>
   
           </div>  
-           <div class="row center_flex mtb20px">
+           <div class="row center_flex mb20px">
                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
 
