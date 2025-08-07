@@ -5497,3 +5497,7 @@ margin-top: 10px !important;
 .w-336px {
   width: 336px !important;
 }
+.ofscroll{
+  overflow:scroll;
+  width: 103%;
+}

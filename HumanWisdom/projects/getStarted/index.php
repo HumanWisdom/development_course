@@ -5090,7 +5090,7 @@ Understand your feelings and where they come from </h5>
 
 
 <!-- <popup1> -->
-  <div class="modal fade product_view" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+  <div class="modal fade product_view ofscroll" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header d-block" style="float: right;">
@@ -5107,7 +5107,7 @@ Understand your feelings and where they come from </h5>
                   Connect with our specialists today and see how we can help you
                 </h4></div></div> -->
                     <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
