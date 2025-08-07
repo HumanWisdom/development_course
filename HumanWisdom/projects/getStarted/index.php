@@ -3618,10 +3618,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                               </div>
                         
 
-                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px">
 
                                   <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                                  <h5 class="review">Your private journal with questions &nbsp; for personal growth </h5>
+                                  <h5 class="review">Your private journal with questions for personal growth </h5>
                                 
                               </div>
                         </div>
@@ -3634,11 +3634,11 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
                           </div>
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px">
 
 
                               <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                              <h5 class="review">Find support, share your thoughts &nbsp; and make friends    </h5>             
+                              <h5 class="review">Find support, share your thoughts and make friends </h5>             
                           </div>
                         </div>
 
