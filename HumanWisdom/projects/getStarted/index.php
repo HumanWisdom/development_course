@@ -3647,215 +3647,160 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
 <!-- <Build deeper relationships> -->
 
-<div class="modal fade" id="exampleModalbuild" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content1">
-              <div class="modal-header d-block" >
-                 <div class="row center_flex ">
-                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
-
-              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-              </a>
-  </div>
-  </div>
-              
-
-     <div class="row center_flex">          
-               
-                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    
-                
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                     </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-
-                  
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_d.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+  <div class="modal fade" id="exampleModalbuild" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content1">
+        <div class="modal-header d-block">
+          <div class="row center_flex ">
+            <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
+                <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading="lazy">
+                </a>
+            </div>
+          </div>
+          <div class="row center_flex">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                 </div>
- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-
-                     </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_d.svg" class="img-responsive" alt="Mental Health" loading="lazy">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                </div>
                 <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-        <button type="button"  data-bs-dismiss="modal" aria-label="Close"  style="background-color:#fff8f1;">
-
-
-               <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
-  </button>
-                </div> -->
-              </div>
-              </div>
-                
+                  <button type="button"  data-bs-dismiss="modal" aria-label="Close"  style="background-color:#fff8f1;">
+                  
+                  
+                          <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
+                  </button>
+                          </div> -->
             </div>
-
+          </div>
+        </div>
         <div class="section-header1">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
-                Build deeper relationships
-              </h2>
-              <h5 class="para">Learn to avoid and overcome relationship problems and build deeper connections.</h5>
+          <div class="row center_flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                <h2 class="popuptitle">
+                    Build deeper relationships
+                </h2>
+                <h5 class="para">Learn to avoid and overcome relationship problems and build deeper connections.</h5>
+              </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="row center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block ">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
+                            Guided programs
+                        </h3>
+                        <h6 class="review">Covering Relationships, Emotional needs, Communication, Kindness  &nbsp;and Love </h6>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
+                            Hundreds of podcasts
+                        </h3>
+                        <h5 class=" review">Conversations on healing strained relationships, building deeper connections and finding love  </h5>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/blog_b.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3 style="margin-top:0px;" class="  fs_18px fw_600  fc_000000">
+                            Blog
+                        </h3>
+                        <h5 class=" review">
+                            In-depth articles on building your relationship skills                  
+                        </h5>
+                      </div>
+                  </div>
+                </div>
             </div>
           </div>
-        </div>
-          <div class="modal-body">
-              <div class="row center_flex">
-                          
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block ">
-          
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                         </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">Covering Relationships, Emotional needs, Communication, Kindness  &nbsp;and Love </h6>
-                
-              </div>
-        </div>
-
-        </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+          <div class="row center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">
+                            Short videos
+                        </h3>
+                        <h5 class="review">Relationship tips from trained coaches  </h5>
+                      </div>
+                  </div>
                 </div>
-                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Hundreds of podcasts
-                  </h3>
-                  <h5 class=" review">Conversations on healing strained relationships, building deeper connections and finding love  </h5>
-                
-              </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/blog_b.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
+                        <h5 class="review">Your private journal with questions  &nbsp; &nbsp;for personal growth </h5>
+                      </div>
+                  </div>
                 </div>
-              
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">Community forum</h3>
+                        <h5 class="review">Find support, share your thoughts &nbsp;and make friends    </h5>
+                      </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="row justify-content-center align-items-center mb-4" style="/* min-height: 150px; */">
+            <div class="col-lg-11 d-flex justify-content-center">
+              <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+                <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+                  Try HappierMe for free
+                </button>
+              </a>
+            </div>
+          </div>
 
-             
-                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="  fs_18px fw_600  fc_000000">
-                    Blog
-                  </h3>
-                  <h5 class=" review">
-In-depth articles on building your relationship skills                  </h5>
-                
-              </div>
         </div>
-
+        <!-- <div class="row center_flex mb20px">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://happierme.app/pages/splash_options.php" class="">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup">
+                Try HappierMe for free
+                </button>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
               </div>
           </div>
-        </div>
-
-      
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
-                    Short videos
-                  </h3>
-                  <h5 class="review">Relationship tips from trained coaches  </h5>
-                
-              </div>
-        </div>
-
-              
-           </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                  <h5 class="review">Your private journal with questions  &nbsp; &nbsp;for personal growth </h5>
-                
-              </div>
-        </div>
-
-              </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                  <h5 class="review">Find support, share your thoughts &nbsp;and make friends    </h5>             
-              </div>
-        </div>
-
-              </div>
-          </div>
-        </div>
-  </div>
-           <div class="row center_flex mb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-  </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
-                  </a>
-  </div>
-                         
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-  </div>
-
-                </div>
-    
-              </div>
-
-
-          </div>
+        </div> -->
       </div>
-        
-                        
     </div>
   </div>
-  </div>
-</div>
-</div>
 <!-- <Build deeper relationships> -->
 
 
@@ -3864,351 +3809,259 @@ In-depth articles on building your relationship skills                  </h5>
 <!-- <learn meditation> -->
 
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content1">
-              <div class="modal-header d-block" >
-                 <div class="row center_flex ">
-                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
-
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content1">
+      <div class="modal-header d-block" >
+        <div class="row center_flex ">
+            <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
               </a>
-  </div>
-  </div>
-              <div class="row center_flex">  
-                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    
-                
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                     </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-
-                  
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/practice.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-                </div>
-                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-
-                     </div>
-                <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-
- <button type="button"  data-bs-dismiss="modal"  style="background-color:#fff8f1;">
-
-
-               <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
-  </button>
-  
-                </div> -->
-              </div>
-              </div>
-                
             </div>
-
-        <div class="section-header1">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+        </div>
+        <div class="row center_flex">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/practice.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+              <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                  <button type="button"  data-bs-dismiss="modal"  style="background-color:#fff8f1;">
+                  
+                  
+                                <img  style="float:inline-end; margin-top:-50px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy> 
+                  </button>
+                  
+                                </div> -->
+            </div>
+        </div>
+      </div>
+      <div class="section-header1">
+        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
               <h2 style="margin:16px;"class="popuptitle">
-                Build a meditation practice
+                  Build a meditation practice
               </h2>
               <h5 class="para">Learn how to get started and reap the benefits of meditation.</h5>
             </div>
-          </div>
         </div>
-          <div class="modal-body">
-              <div class="row center_flex">
-                          
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                         </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">Covering Meditation, Breathing exercises, and Inner boredom  </h6>
-                
-              </div>
-        </div>
-
-        </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/self_build.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
+      </div>
+      <div class="modal-body">
+        <div class="row center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Nature meditations
-                  </h3>
-                  <h5 class=" review">Explore a fresh way of connecting  &nbsp; with nature  </h5>
-                
+                        <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                          Guided programs
+                        </h3>
+                        <h6  class="review">Covering Meditation, Breathing exercises, and Inner boredom  </h6>
+                    </div>
+                  </div>
               </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/audio.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="  fs_18px fw_600  fc_000000">
-                    Audio meditations
-                  </h3>
-                  <h5 class=" review">
-
-A library of audio meditations and soundscapes                  </h5>
-                
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/self_build.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                          Nature meditations
+                        </h3>
+                        <h5 class=" review">Explore a fresh way of connecting  &nbsp; with nature  </h5>
+                    </div>
+                  </div>
               </div>
-        </div>
-
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/audio.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3  style="margin-top:0px;"class="  fs_18px fw_600  fc_000000">
+                          Audio meditations
+                        </h3>
+                        <h5 class=" review">
+                          A library of audio meditations and soundscapes                  
+                        </h5>
+                    </div>
+                  </div>
               </div>
-          </div>
+            </div>
         </div>
-
-      
-       <div class="row center_flex mtb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-  </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+        <div class="row center_flex mtb20px">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
+                  <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
+                  Try HappierMe for free
+                  </button>
                   </a>
-  </div>
-                         
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-  </div>
-
-                </div>
-    
               </div>
-                        
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              </div>
+            </div>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
 </div>
-</div>
+
 <!-- <Learn meditation> -->
 
 
 <!-- <build soft skills> -->
 
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content1">
-              <div class="modal-header d-block" >
-                 <div class="row center_flex ">
-                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
-
-              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-              </a>
-  </div>
-  </div>
-   <div class="row center_flex">
-               
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    
-                
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                     </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-
-                  
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/soft_skill.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-                </div>
-                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-
-                     </div>
-               
-              </div>
-              </div>
-                
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content1">
+        <div class="modal-header d-block">
+          <div class="row center_flex ">
+            <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
+                <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading="lazy">
+                </a>
             </div>
-
+          </div>
+          <div class="row center_flex">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/soft_skill.svg" class="img-responsive" alt="Mental Health" loading="lazy">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                </div>
+            </div>
+          </div>
+        </div>
         <div class="section-header1">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="row center_flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
-                Build soft skills for work success
-              </h2>
-              <h5 class="para">Learn to be a better leader and succeed at work.</h5>
+                <h2 class="popuptitle">
+                  Build soft skills for work success
+                </h2>
+                <h5 class="para">Learn to be a better leader and succeed at work.</h5>
             </div>
           </div>
         </div>
-          <div class="modal-body">
-              <div class="row center_flex">
-                          
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                         </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">Covering Work, Leadership, Critical thinking, Decision making, Communication, Success and  &nbsp; &nbsp; failure, and Bullying  </h6>
-                
-              </div>
-        </div>
-
-        </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+        <div class="modal-body">
+          <div class="row center_flex">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
+                            Guided programs
+                          </h3>
+                          <h6 class="review">Covering Work, Leadership, Critical thinking, Decision making, Communication, Success and  &nbsp; &nbsp; failure, and Bullying  </h6>
+                      </div>
+                    </div>
                 </div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Hundreds of podcasts
-                  </h3>
-                  <h5 class=" review">Conversations on leadership, &nbsp; &nbsp; dealing with work pressures,&nbsp; &nbsp; decision making, finding your&nbsp; &nbsp; purpose and bullying </h5>
-                
-              </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
+                            Hundreds of podcasts
+                          </h3>
+                          <h5 class=" review">Conversations on leadership, &nbsp; &nbsp; dealing with work pressures,&nbsp; &nbsp; decision making, finding your&nbsp; &nbsp; purpose and bullying </h5>
+                      </div>
+                    </div>
                 </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                  <h5 class="review">your private journal for reflection  &nbsp; &nbsp;and personal growth </h5>
-                
-              </div>
-        </div>
-
-              </div>
-
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
+                          <h5 class="review">your private journal for reflection  &nbsp; &nbsp;and personal growth </h5>
+                      </div>
+                    </div>
+                </div>
               </div>
           </div>
-        
-
-      
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
+          <div class="row center_flex mtb20px">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">
+                            Blog
+                          </h3>
+                          <h5 class="review">In-depth articles on being happier  &nbsp; &nbsp; &nbsp; &nbsp; at work and developing your people skills  </h5>
+                      </div>
+                    </div>
                 </div>
-              
-
-             
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
-                    Blog
-                   </h3>
-                  <h5 class="review">In-depth articles on being happier  &nbsp; &nbsp; &nbsp; &nbsp; at work and developing your people skills  </h5>
-                
-              </div>
-        </div>
-
-              
-           </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/coaching_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/coaching_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000"> Coaching</h3>
+                          <h5 class="review">Trained coaches for personalised support </h5>
+                      </div>
+                    </div>
                 </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Coaching</h3>
-                  <h5 class="review">Trained coaches for personalised support </h5>
-                
-              </div>
-        </div>
-
-              </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/self_build.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/self_build.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">Self-awareness</h3>
+                          <h5 class="review">Exercises to develop your self-awareness and emotional  &nbsp; &nbsp;intelligence   </h5>
+                      </div>
+                    </div>
                 </div>
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Self-awareness</h3>
-                  <h5 class="review">Exercises to develop your self-awareness and emotional  &nbsp; &nbsp;intelligence   </h5>             
-              </div>
-        </div>
-
               </div>
           </div>
-        </div>
-  </div>
-        <div class="row center_flex mb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-  </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
-                  </a>
-  </div>
-                         
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-  </div>
-
-                </div>
-    
+            <div class="row justify-content-center align-items-center mb-4">
+              <div class="col-lg-11 d-flex justify-content-center">
+                <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+                  <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+                    Try HappierMe for free
+                  </button>
+                </a>
               </div>
-  </div>
+            </div>
 
+        </div>
+      <!--  <div class="row center_flex mb20px">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://happierme.app/pages/splash_options.php"  class="">
+                  <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
+                  Try HappierMe for free
+                  </button>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+              </div>
           </div>
-      </div>
-        
-                        
+        </div> -->
     </div>
   </div>
-  </div>
-</div>
 </div>
 <!-- <Build soft skills> -->
 
@@ -4216,1019 +4069,758 @@ A library of audio meditations and soundscapes                  </h5>
 <!-- <Break harmful habits> -->
 
 <div class="modal fade" id="exampleModalbreak" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content1">
-              <div class="modal-header d-block" >
-                 <div class="row center_flex ">
-                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
-
-              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-              </a>
-  </div>
-  </div>
-   <div class="row center_flex">
-               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    
-                
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                     </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/break.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content1">
+        <div class="modal-header d-block" >
+          <div class="row center_flex ">
+              <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+                <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                </a>
+              </div>
+          </div>
+          <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
-                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-
-                     </div>
-                
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/break.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                </div>
               </div>
-              </div>
-                
-            </div>
-
+          </div>
+        </div>
         <div class="section-header1">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
-                Break harmful habits
-              </h2>
-              <h5 class="para">Understand why harmful habits develop and how to break free from them</h5>
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                <h2 class="popuptitle">
+                    Break harmful habits
+                </h2>
+                <h5 class="para">Understand why harmful habits develop and how to break free from them</h5>
+              </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="row center_flex">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                            Guided programs
+                          </h3>
+                          <h6  class="review">Covering Addiction, Emotional pain, Pleasure, Boredom and Conditioning  </h6>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                            Hundreds of podcasts
+                          </h3>
+                          <h5 class=" review">Discussions on why addiction  &nbsp; &nbsp; &nbsp; &nbsp;occurs and how to overcome it </h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
+                          <h5 class="review">In-depth articles on understanding and overcoming harmful habits </h5>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="row center_flex">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/breath.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
+                            Breathing exercises
+                          </h3>
+                          <h5 class="review">To regain control of your emotions</h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/coaching_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Coaching</h3>
+                          <h5 class="review">Speak to one of our trained coaches &nbsp; &nbsp; for extra support </h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
+                          <h5 class="review">Find support, share your thoughts &nbsp; &nbsp; and make friends  </h5>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="row justify-content-center align-items-center mb-4" >
+            <div class="col-lg-11 d-flex justify-content-center">
+              <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+                <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+                  Try HappierMe for free
+                </button>
+              </a>
             </div>
           </div>
+
         </div>
-          <div class="modal-body">
-              <div class="row center_flex">
-                          
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                         </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">Covering Addiction, Emotional pain, Pleasure, Boredom and Conditioning  </h6>
-                
+        <!-- <div class="row center_flex mb20px">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
-        </div>
-
-        </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Hundreds of podcasts
-                  </h3>
-                  <h5 class=" review">Discussions on why addiction  &nbsp; &nbsp; &nbsp; &nbsp;occurs and how to overcome it </h5>
-                
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://happierme.app/pages/splash_options.php"  class="">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
+                Try HappierMe for free
+                </button>
+                </a>
               </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
-                  <h5 class="review">In-depth articles on understanding and overcoming harmful habits </h5>
-                
-              </div>
-        </div>
-
-              </div>
-
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
           </div>
-        
-
-      
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mtb20px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/breath.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
-                   Breathing exercises
-                  </h3>
-                  <h5 class="review">To regain control of your emotions</h5>
-                
-              </div>
-        </div>
-
-              
-           </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/coaching_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Coaching</h3>
-                  <h5 class="review">Speak to one of our trained coaches &nbsp; &nbsp; for extra support </h5>
-                
-              </div>
-        </div>
-
-              </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                  <h5 class="review">Find support, share your thoughts &nbsp; &nbsp; and make friends  </h5>             
-              </div>
-        </div>
-
-              </div>
-          </div>
-        </div>
-  </div>
-            
-           <div class="row center_flex mb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-  </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
-                  </a>
-  </div>
-                         
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-  </div>
-
-                </div>
-    
-              </div>
-
-
-          </div>
-      </div>
-        
-                        
+        </div> -->
     </div>
   </div>
-  </div>
 </div>
-</div>
+
 <!-- <Break harmful habits> -->
   <!-- <Manage your emotions> -->
 
 <div class="modal fade" id="exampleModalemotions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content1">
-              <div class="modal-header d-block" >
-                 <div class="row center_flex ">
-                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
-
-              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-              </a>
-  </div>
-  </div>
-   <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    
-                
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                     </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-
-                  
+  <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content1">
+      <div class="modal-header d-block" >
+         <div class="row center_flex ">
+            <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+               </a>
+            </div>
+         </div>
+         <div class="row center_flex">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Character.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-                </div>
-                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-
-                     </div>
-               
-              </div>
-              </div>
-                
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+               </div>
             </div>
-
-        <div class="section-header1">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
-                Manage your emotions
-              </h2>
-              <h5 class="para">Learn to understand and master your emotions.</h5>
-            </div>
-          </div>
-        </div>
-          <div class="modal-body">
-              <div class="row center_flex">
-                          
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                         </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">Covering Anger, Fear, Desire, Loneliness and Envy </h6>
-                
-              </div>
-        </div>
-
-        </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Hundreds of podcasts
-                  </h3>
-                  <h5 class=" review">Conversations on understanding   &nbsp; &nbsp; and managing emotions </h5>
-                
-              </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                  <h5 class="review">
-Understand your feelings and where they come from </h5>
-                
-              </div>
-        </div>
-
-              </div>
-
-              </div>
-          </div>
-        
-
-      
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/breath.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
-                    Breathing exercises 
-                  </h3>
-                  <h5 class="review">To regain control of your emotions </h5>
-                
-              </div>
-        </div>
-
-              
-           </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Short videos</h3>
-                  <h5 class="review">Quick tips from trained coaches on regulating emotions </h5>
-                
-              </div>
-        </div>
-
-              </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                  <h5 class="review">Find support, share your thoughts   &nbsp;&nbsp; &nbsp; &nbsp;and make friends   </h5>             
-              </div>
-        </div>
-
-              </div>
-          </div>
-        </div>
-  </div>
-            
- <div class="row center_flex mb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-  </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
-                  </a>
-  </div>
-                         
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-  </div>
-
-                </div>
-    
-              </div>
-
-
-          </div>
+         </div>
       </div>
-        
-                        
-    </div>
-  </div>
+      <div class="section-header1">
+         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+               <h2 class="popuptitle">
+                  Manage your emotions
+               </h2>
+               <h5 class="para">Learn to understand and master your emotions.</h5>
+            </div>
+         </div>
+      </div>
+      <div class="modal-body">
+        <div class="row center_flex">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                          Guided programs
+                      </h3>
+                      <h6  class="review">Covering Anger, Fear, Desire, Loneliness and Envy </h6>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                          Hundreds of podcasts
+                      </h3>
+                      <h5 class=" review">Conversations on understanding   &nbsp; &nbsp; and managing emotions </h5>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
+                      <h5 class="review">
+                          Understand your feelings and where they come from 
+                      </h5>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row center_flex mtb20px">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/breath.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
+                          Breathing exercises 
+                      </h3>
+                      <h5 class="review">To regain control of your emotions </h5>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Short videos</h3>
+                      <h5 class="review">Quick tips from trained coaches on regulating emotions </h5>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                      <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
+                      <h5 class="review">Find support, share your thoughts   &nbsp;&nbsp; &nbsp; &nbsp;and make friends   </h5>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center mb-4" >
+          <div class="col-lg-11 d-flex justify-content-center">
+            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+                Try HappierMe for free
+              </button>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="row center_flex mb20px">
+         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+               <a href="https://happierme.app/pages/splash_options.php"  class="">
+               <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
+               Try HappierMe for free
+               </button>
+               </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+            </div>
+         </div>
+      </div> -->
+   </div>
   </div>
 </div>
+<!-- </div>
 </div>
+</div>
+</div> -->
 <!-- <Manage your emotions> -->
   <!-- <Develop your self-awareness> -->
 
 <div class="modal fade" id="exampleModalself" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content1">
-              <div class="modal-header d-block" >
-                 <div class="row center_flex ">
-                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
-
-              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-              </a>
-  </div>
-  </div>
-   <div class="row center_flex">
-               
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    
-                
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                     </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-
-                  
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/awarness.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content1">
+        <div class="modal-header d-block" >
+          <div class="row center_flex ">
+              <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+                <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                </a>
+              </div>
+          </div>
+          <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
-                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-
-                     </div>
-                
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/awarness.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                </div>
               </div>
-              </div>
-                
-            </div>
-
+          </div>
+        </div>
         <div class="section-header1">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
-                Develop your self-awareness
-              </h2>
-              <h5 class="para">A life-changing skill for a happier and more successful life</h5>
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                <h2 class="popuptitle">
+                    Develop your self-awareness
+                </h2>
+                <h5 class="para">A life-changing skill for a happier and more successful life</h5>
+              </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="row center_flex">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                            Guided programs
+                          </h3>
+                          <h6  class="review">Covering Awareness, Insight, Inquiry, Seeing the world freshly </h6>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                            Hundreds of podcasts
+                          </h3>
+                          <h5 class=" review">Discussions on how to learn about ourselves and how our minds work</h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
+                          <h5 class="review">In-depth articles on the benefits of self-awareness </h5>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="row center_flex mtb20px">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
+                            Guided journaling
+                          </h3>
+                          <h5 class="review">Exercises to learn about thoughts  &nbsp; &nbsp;  &nbsp; &nbsp;and feelings</h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/meditation.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided meditations</h3>
+                          <h5 class="review">To feel calm, find clarity and be your best self</h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
+                          <h5 class="review">Helpful tips to discover who you are  </h5>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="row justify-content-center align-items-center mb-4" >
+            <div class="col-lg-11 d-flex justify-content-center">
+              <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+                <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+                  Try HappierMe for free
+                </button>
+              </a>
             </div>
           </div>
+
         </div>
-          <div class="modal-body">
-              <div class="row center_flex">
-                          
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                         </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">Covering Awareness, Insight, Inquiry, Seeing the world freshly </h6>
-                
+        <!-- <div class="row center_flex mb20px">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
-        </div>
-
-        </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Hundreds of podcasts
-                  </h3>
-                  <h5 class=" review">Discussions on how to learn about ourselves and how our minds work</h5>
-                
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://happierme.app/pages/splash_options.php"  class="">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
+                Try HappierMe for free
+                </button>
+                </a>
               </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
-                  <h5 class="review">In-depth articles on the benefits of self-awareness </h5>
-                
-              </div>
-        </div>
-
-              </div>
-
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
           </div>
-        
-
-      
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
-                   Guided journaling
-                  </h3>
-                  <h5 class="review">Exercises to learn about thoughts  &nbsp; &nbsp;  &nbsp; &nbsp;and feelings</h5>
-                
-              </div>
-        </div>
-
-              
-           </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/meditation.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided meditations</h3>
-                  <h5 class="review">To feel calm, find clarity and be your best self</h5>
-                
-              </div>
-        </div>
-
-              </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
-                  <h5 class="review">Helpful tips to discover who you are  </h5>             
-              </div>
-        </div>
-
-              </div>
-          </div>
-        </div>
-  </div>
-            
-           <div class="row center_flex mb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-  </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
-                  </a>
-  </div>
-                         
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-  </div>
-
-                </div>
-    
-              </div>
-
-
-          </div>
-      </div>
-        
-                        
+        </div> -->
     </div>
   </div>
-  </div>
+</div>
+<!-- </div>
 </div>
 </div>
+</div> -->
 <!-- <Develop your self-awareness> -->
 
 <!-- <Supporting parents to flourish> -->
 
 <div class="modal fade" id="exampleModalparent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content1">
-              <div class="modal-header d-block" >
-                 <div class="row center_flex ">
-                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
-
-              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-              </a>
-  </div>
-  </div>
-               
-               <div class="row center_flex">
-
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    
-                
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                     </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-
-                  
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teebagers.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content1">
+        <div class="modal-header d-block" >
+          <div class="row center_flex ">
+              <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+                <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                </a>
+              </div>
+          </div>
+          <div class="row center_flex">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-                     </div>
-               
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teebagers.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                </div>
               </div>
-              </div>
-                
-            </div>
+          </div>
+        </div>
         <div class="section-header1">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
-                Supporting parents to flourish
-              </h2>
-              <h5 class="para">Learn how to look after yourself, and be the best parent you can be.</h5>
+              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                <h2 class="popuptitle">
+                    Supporting parents to flourish
+                </h2>
+                <h5 class="para">Learn how to look after yourself, and be the best parent you can be.</h5>
+              </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="row center_flex">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                            Guided programs
+                          </h3>
+                          <h6  class="review">Covering Stress, Anxiety and Communication</h6>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                            Hundreds of podcasts
+                          </h3>
+                          <h5 class=" review">On dealing with overwhelm, talking  &nbsp;&nbsp; &nbsp; &nbsp;to kids, mistakes to avoid and more </h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
+                          <h5 class="review">In-depth articles on parenting </h5>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="row center_flex mtb20px">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
+                            Community forum
+                          </h3>
+                          <h5 class="review">Find support, share your thoughts  &nbsp;&nbsp; &nbsp; &nbsp;and make friends </h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/breath.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Breathing exercises</h3>
+                          <h5 class="review">To deal with stressful situations </h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                      </div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                          <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
+                          <h5 class="review">Quick tips on parenting from trained coaches   </h5>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="row justify-content-center align-items-center mb-4" >
+            <div class="col-lg-11 d-flex justify-content-center">
+              <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+                <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+                  Try HappierMe for free
+                </button>
+              </a>
             </div>
           </div>
+
         </div>
-          <div class="modal-body">
-              <div class="row center_flex">
-                          
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                         </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">Covering Stress, Anxiety and Communication</h6>
-                
+        <!-- <div class="row center_flex mb20px">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
-        </div>
-
-  </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Hundreds of podcasts
-                  </h3>
-                  <h5 class=" review">On dealing with overwhelm, talking  &nbsp;&nbsp; &nbsp; &nbsp;to kids, mistakes to avoid and more </h5>
-                
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://happierme.app/pages/splash_options.php"  class="">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
+                Try HappierMe for free
+                </button>
+                </a>
               </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build_soft.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
-                  <h5 class="review">In-depth articles on parenting </h5>
-                
-              </div>
-        </div>
-
-              </div>
-
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
           </div>
-        
-
-      
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
-                    Community forum
-                  </h3>
-                  <h5 class="review">Find support, share your thoughts  &nbsp;&nbsp; &nbsp; &nbsp;and make friends </h5>
-                
-              </div>
-        </div>
-
-              
-           </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/breath.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Breathing exercises</h3>
-                  <h5 class="review">To deal with stressful situations </h5>
-                
-              </div>
-        </div>
-
-              </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
-                  <h5 class="review">Quick tips on parenting from trained coaches   </h5>             
-              </div>
-        </div>
-
-              </div>
-          </div>
-        </div>
-  </div>
-            
-           <div class="row center_flex mb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-  </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
-                  </a>
-  </div>
-                         
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-  </div>
-
-                </div>
-    
-              </div>
-
-
-          </div>
-      </div>
-        
-                        
+        </div> -->
     </div>
   </div>
-  </div>
+</div>
+<!-- </div>
 </div>
 </div>
+</div> -->
 <!-- <Supporting parents to flourish> -->
   <!-- <A separate app, just for teenagers> -->
 
 
 <div class="modal fade" id="exampleModalteen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content1">
-              <div class="modal-header d-block" >
-                 <div class="row center_flex ">
-                  <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
-
-              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-              </a>
-  </div>
-  </div>
-  
-                <!-- <a href="#" data-dismiss="modal" class="class pull-right">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-
-                </a> -->
-               
-               <div class="row center_flex">
-
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                    
-                
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                     </div>
-
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-
-                  
+  <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content1">
+      <div class="modal-header d-block" >
+         <div class="row center_flex ">
+            <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright" >
+               <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+               </a>
+            </div>
+         </div>
+         <!-- <a href="#" data-dismiss="modal" class="class pull-right">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/crosspop.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+            
+            </a> -->
+         <div class="row center_flex">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/teebagers.svg" class="img-responsive" alt="Mental Health" loading=lazy>
-                </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-                     </div>
-               
-              </div>
-              </div>
-                
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+               </div>
             </div>
-
-        <div class="section-header1">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h2 class="popuptitle">
-                A separate app, just for teenagers
-              </h2>
-              <h5 class="para">Supporting teenagers to be happier and succeed in life</h5>
-            </div>
-          </div>
-        </div>
-          <div class="modal-body">
-              <div class="row center_flex">
-                          
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                         </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Guided programs
-                  </h3>
-                  <h6  class="review">75+ in-depth programs on Mental health, Emotions, Relationships, and Success in school </h6>
-                
-              </div>
-        </div>
-
-        </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
-                    Hundreds of podcasts
-                  </h3>
-                  <h5 class=" review">On dealing with common &nbsp;&nbsp; &nbsp; &nbsp; challenges teenagers face </h5>
-                
-              </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/feel.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Feel better now</h3>
-                  <h5 class="review">Breathing and tapping exercises for quick relief </h5>
-                
-              </div>
-        </div>
-
-              </div>
-
-              </div>
-          </div>
-        
-
-       
-        <div class="row center_flex">
-                          
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
-                    Community forum
-                  </h3>
-                  <h5 class="review">Find support, share your thoughts &nbsp;&nbsp; &nbsp; &nbsp; and make friends </h5>
-                
-              </div>
-        </div>
-
-              
-           </div>
-
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/talk.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Teen talk</h3>
-                  <h5 class="review">Conversations with teens from  &nbsp;&nbsp; &nbsp; &nbsp;around the world </h5>
-                
-              </div>
-        </div>
-
-              </div>
-          
-
-           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
-                </div>
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-
-
-                  <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
-                  <h5 class="review">Quick tips from trained coaches to &nbsp;&nbsp; &nbsp; &nbsp; help teens flourish in life   </h5>             
-              </div>
-        </div>
-
-              </div>
-          </div>
-        </div>
-  
-          </div>  
-           <div class="row center_flex mb20px">
-                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-
-  </div>
-                       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
-                     Try HappierMe for free
-                    </button>
-                  </a>
-  </div>
-                         
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-  </div>
-
-                </div>
-    
-              </div>
-           </div>
-
-
-          </div>
+         </div>
       </div>
-        
-                        
-    </div>
-  </div>
+      <div class="section-header1">
+         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+               <h2 class="popuptitle">
+                  A separate app, just for teenagers
+               </h2>
+               <h5 class="para">Supporting teenagers to be happier and succeed in life</h5>
+            </div>
+         </div>
+      </div>
+      <div class="modal-body">
+         <div class="row center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/guided.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                     </div>
+                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3 style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                           Guided programs
+                        </h3>
+                        <h6  class="review">75+ in-depth programs on Mental health, Emotions, Relationships, and Success in school </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/podcast.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                     </div>
+                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
+                           Hundreds of podcasts
+                        </h3>
+                        <h5 class=" review">On dealing with common &nbsp;&nbsp; &nbsp; &nbsp; challenges teenagers face </h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/feel.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                     </div>
+                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Feel better now</h3>
+                        <h5 class="review">Breathing and tapping exercises for quick relief </h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row center_flex mtb20px">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                     </div>
+                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
+                           Community forum
+                        </h3>
+                        <h5 class="review">Find support, share your thoughts &nbsp;&nbsp; &nbsp; &nbsp; and make friends </h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/talk.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                     </div>
+                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Teen talk</h3>
+                        <h5 class="review">Conversations with teens from  &nbsp;&nbsp; &nbsp; &nbsp;around the world </h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row">
+                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/short.svg" class="img-responsive img_aspects" alt="PATHWAY">
+                     </div>
+                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                        <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
+                        <h5 class="review">Quick tips from trained coaches to &nbsp;&nbsp; &nbsp; &nbsp; help teens flourish in life   </h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+          <div class="row justify-content-center align-items-center mb-4" >
+            <div class="col-lg-11 d-flex justify-content-center">
+              <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+                <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+                  Try HappierMe for free
+                </button>
+              </a>
+            </div>
+          </div>
+
+      </div>
+     <!--  <div class="row center_flex mb20px">
+         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 mt10px d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+               <a href="https://happierme.app/pages/splash_options.php"  class="">
+               <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
+               Try HappierMe for free
+               </button>
+               </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+            </div>
+         </div>
+      </div> -->
+   </div>
   </div>
 </div>
+<!-- </div>
 </div>
+</div>
+</div>
+</div> -->
 <!-- <A separate app, just for teenagers> -->
 
 
