@@ -118,42 +118,364 @@ function initializeFAQTabs() {
     }
 }
 
-// Initialize tool tabs separately to avoid conflicts
-function initializeToolTabs() {
-    // Get all tool tab buttons (Bootstrap 5.3 syntax)
-    const toolTabButtons = document.querySelectorAll('#toolTabs .nav-link');
-    
-    toolTabButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all tool tabs
-            toolTabButtons.forEach(tab => {
-                tab.classList.remove('active');
-                tab.setAttribute('aria-selected', 'false');
+
+// Common Modal Management for Bootstrap 5.3
+class ModalManager {
+    constructor() {
+        this.activeModal = null;
+        this.init();
+    }
+
+    init() {
+        // Initialize global modal event listeners
+        this.setupGlobalModalEvents();
+    }
+
+    /**
+     * Open a modal by ID or element
+     * @param {string|HTMLElement} modalTarget - Modal ID or element
+     * @param {Object} options - Additional options
+     * @param {boolean} options.handleBackdrop - Whether to handle backdrop cleanup
+     * @param {boolean} options.handleUI - Whether to handle UI shaking
+     * @param {Function} options.onShow - Callback when modal is shown
+     * @param {Function} options.onHide - Callback when modal is hidden
+     */
+    openModal(modalTarget, options = {}) {
+        const {
+            handleBackdrop = true,
+            handleUI = true,
+            onShow = null,
+            onHide = null
+        } = options;
+
+        let modal;
+        this.handleUiShakingOnModalOpen();
+        if (typeof modalTarget === 'string') {
+            modal = document.getElementById(modalTarget);
+              
+             
+        } else if (modalTarget instanceof HTMLElement) {
+            modal = modalTarget;
+        } else {
+            console.error('Invalid modal target:', modalTarget);
+            return false;
+        }
+
+        if (!modal) {
+            console.error('Modal not found:', modalTarget);
+            return false;
+        }
+         
+        try {
+            // Prevent Bootstrap from adding padding-right to body
+            if (handleUI) {
+                document.body.style.paddingRight = '0px !important';
+            }
+
+            // Create Bootstrap 5.3 modal instance
+            const bsModal = new bootstrap.Modal(modal, {
+                backdrop: true,
+                keyboard: true,
+                focus: true
             });
             
-            // Add active class to clicked tab
-            this.classList.add('active');
-            this.setAttribute('aria-selected', 'true');
+            // Store active modal reference
+            this.activeModal = modal;
+
+            // Add event listeners
+            if (onShow) {
+                modal.addEventListener('shown.bs.modal', onShow);
+            }
             
-            // Get target tab content
-            const targetId = this.getAttribute('data-bs-target');
-            const targetContent = document.querySelector(targetId);
-            
-            // Hide all tool tab content
-            const allToolTabContent = document.querySelectorAll('#toolTabs + .tab-content .tab-pane');
-            allToolTabContent.forEach(content => {
-                content.classList.remove('show', 'active');
+            if (onHide) {
+                modal.addEventListener('hidden.bs.modal', onHide);
+            }
+
+            // Always add cleanup event listener
+            modal.addEventListener('hidden.bs.modal', () => {
+                this.cleanupModalBackdrop();
+                this.activeModal = null;
             });
-            
-            // Show target tab content
-            if (targetContent) {
-                targetContent.classList.add('show', 'active');
+
+            // Show the modal
+            bsModal.show();
+
+            // Handle UI adjustments
+            if (handleUI) {
+                this.handleUiShakingOnModalOpen();
+            }
+
+            console.log('Modal opened successfully:', modalTarget);
+            return true;
+
+        } catch (error) {
+            console.error('Error opening modal:', error);
+            return false;
+        }
+    }
+
+    /**
+     * Close a modal by ID or element
+     * @param {string|HTMLElement} modalTarget - Modal ID or element
+     */
+    closeModal(modalTarget) {
+        let modal;
+        
+        if (typeof modalTarget === 'string') {
+            modal = document.getElementById(modalTarget);
+        } else if (modalTarget instanceof HTMLElement) {
+            modal = modalTarget;
+        } else {
+            console.error('Invalid modal target:', modalTarget);
+            return false;
+        }
+
+        if (!modal) {
+            console.error('Modal not found:', modalTarget);
+            return false;
+        }
+
+        try {
+            const bsModal = bootstrap.Modal.getInstance(modal);
+            if (bsModal) {
+                bsModal.hide();
+                console.log('Modal closed successfully via Bootstrap instance:', modalTarget);
+            } else {
+                // Fallback: create new instance and hide
+                const newBsModal = new bootstrap.Modal(modal);
+                newBsModal.hide();
+                console.log('Modal closed successfully via new Bootstrap instance:', modalTarget);
+            }
+
+            // Let Bootstrap handle the cleanup, but we can add a backup cleanup
+            setTimeout(() => {
+                this.cleanupModalBackdrop();
+            }, 100);
+
+            return true;
+
+        } catch (error) {
+            console.error('Error closing modal:', error);
+            return false;
+        }
+    }
+
+    /**
+     * Close all open modals
+     */
+    closeAllModals() {
+        const openModals = document.querySelectorAll('.modal.show');
+        openModals.forEach(modal => {
+            const bsModal = bootstrap.Modal.getInstance(modal);
+            if (bsModal) {
+                bsModal.hide();
             }
         });
-    });
+        this.cleanupModalBackdrop();
+    }
+
+    /**
+     * Check if a modal is currently open
+     * @param {string|HTMLElement} modalTarget - Modal ID or element
+     * @returns {boolean}
+     */
+    isModalOpen(modalTarget) {
+        let modal;
+        
+        if (typeof modalTarget === 'string') {
+            modal = document.getElementById(modalTarget);
+        } else if (modalTarget instanceof HTMLElement) {
+            modal = modalTarget;
+        } else {
+            return false;
+        }
+
+        return modal && modal.classList.contains('show');
+    }
+
+    /**
+     * Get the currently active modal
+     * @returns {HTMLElement|null}
+     */
+    getActiveModal() {
+        return this.activeModal;
+    }
+
+    /**
+     * Handle UI shaking when modal opens
+     */
+    handleUiShakingOnModalOpen() {
+        setTimeout(() => {
+            const body = document.getElementById('body');
+            if (body) {
+                // Prevent Bootstrap from adding padding-right to body
+                body.style.paddingRight = '0px !important';
+                body.style.overflow = 'hidden';
+            }
+        }, 50);
+    }
+
+    /**
+     * Clean up modal backdrop and body classes
+     */
+    cleanupModalBackdrop() {
+        setTimeout(() => {
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '0px';
+        }, 150);
+    }
+
+    /**
+     * Setup global modal event listeners
+     */
+    setupGlobalModalEvents() {
+        // Handle modal triggers with data-bs-toggle="modal"
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('[data-bs-toggle="modal"]')) {
+                const target = e.target.getAttribute('data-bs-target');
+                if (target) {
+                    e.preventDefault();
+                    this.openModal(target);
+                }
+            }
+        });
+
+        // Handle modal close buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('[data-bs-dismiss="modal"]') || e.target.closest('[data-bs-dismiss="modal"]')) {
+                const modal = e.target.closest('.modal') || e.target.closest('[data-bs-dismiss="modal"]').closest('.modal');
+                if (modal) {
+                    e.preventDefault();
+                    console.log('Close button clicked, closing modal:', modal.id);
+                    this.closeModal(modal);
+                }
+            }
+        });
+
+        // Handle escape key to close modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const openModal = document.querySelector('.modal.show');
+                if (openModal) {
+                    this.closeModal(openModal);
+                }
+            }
+        });
+
+        // Handle backdrop clicks
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-backdrop')) {
+                const openModal = document.querySelector('.modal.show');
+                if (openModal) {
+                    this.closeModal(openModal);
+                }
+            }
+        });
+    }
+
+    /**
+     * Initialize modals for specific elements
+     * @param {string} selector - CSS selector for modal triggers
+     */
+    initializeModalTriggers(selector) {
+        const triggers = document.querySelectorAll(selector);
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = trigger.getAttribute('data-bs-target') || trigger.getAttribute('data-target');
+                if (target) {
+                    this.openModal(target);
+                }
+            });
+        });
+    }
+
+    /**
+     * Get all modal elements on the page
+     * @returns {NodeList}
+     */
+    getAllModals() {
+        return document.querySelectorAll('.modal');
+    }
+
+    /**
+     * Get all open modals
+     * @returns {NodeList}
+     */
+    getOpenModals() {
+        return document.querySelectorAll('.modal.show');
+    }
+
+    /**
+     * Check if any modal is currently open
+     * @returns {boolean}
+     */
+    hasOpenModals() {
+        return this.getOpenModals().length > 0;
+    }
+
+    /**
+     * Add custom event listener to a modal
+     * @param {string|HTMLElement} modalTarget - Modal ID or element
+     * @param {string} event - Event name (e.g., 'shown.bs.modal', 'hidden.bs.modal')
+     * @param {Function} callback - Event callback function
+     */
+    addModalEventListener(modalTarget, event, callback) {
+        let modal;
+        
+        if (typeof modalTarget === 'string') {
+            modal = document.getElementById(modalTarget);
+        } else if (modalTarget instanceof HTMLElement) {
+            modal = modalTarget;
+        } else {
+            console.error('Invalid modal target:', modalTarget);
+            return false;
+        }
+
+        if (!modal) {
+            console.error('Modal not found:', modalTarget);
+            return false;
+        }
+
+        modal.addEventListener(event, callback);
+        return true;
+    }
+
+    /**
+     * Remove custom event listener from a modal
+     * @param {string|HTMLElement} modalTarget - Modal ID or element
+     * @param {string} event - Event name
+     * @param {Function} callback - Event callback function
+     */
+    removeModalEventListener(modalTarget, event, callback) {
+        let modal;
+        
+        if (typeof modalTarget === 'string') {
+            modal = document.getElementById(modalTarget);
+        } else if (modalTarget instanceof HTMLElement) {
+            modal = modalTarget;
+        } else {
+            console.error('Invalid modal target:', modalTarget);
+            return false;
+        }
+
+        if (!modal) {
+            console.error('Modal not found:', modalTarget);
+            return false;
+        }
+
+        modal.removeEventListener(event, callback);
+        return true;
+    }
 }
+
+// Create global modal manager instance
+const modalManager = new ModalManager();
 
 // Accordion functionality with smooth transitions
 function initializeFAQAccordion() {
@@ -270,29 +592,123 @@ function convertAccordionToBootstrap53() {
     });
 }
 
-setTimeout(() => {
-    console.log("User Agent:", "adtraction");
-      if(window.location.href.includes('adtraction')){
-        var val =  window.location.href.split("at_gd=")
-        localStorage.setItem("adtraction",val[1]);
-        localStorage.setItem("adtraction",val[1]);
-    }  
-}, 1000);
-
-// Function to clean up modal backdrop
-function cleanupModalBackdrop() {
-    setTimeout(() => {
-        const backdrop = document.querySelector('.modal-backdrop');
-        if (backdrop) {
-            backdrop.remove();
-        }
-        document.body.classList.remove('modal-open');
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '';
-    }, 150);
+// Legacy function for backward compatibility
+function openModelPopup(modal) {
+    return modalManager.openModal(modal);
 }
 
-// Newsletter popup functionality
+// Legacy function for backward compatibility
+function handleUiShakingOnModelPopupOpen() {
+    modalManager.handleUiShakingOnModalOpen();
+}
+
+// Legacy function for backward compatibility
+function cleanupModalBackdrop() {
+    modalManager.cleanupModalBackdrop();
+}
+
+// Test function to demonstrate ModalManager functionality
+function testModalManager() {
+    console.log('Testing ModalManager functionality...');
+    
+    // Test opening a modal
+    const success = modalManager.openModal('exampleModal', {
+        handleUI: true,
+        onShow: () => {
+            console.log('Modal opened successfully via ModalManager');
+            alert('Modal opened successfully via ModalManager!');
+        },
+        onHide: () => {
+            console.log('Modal closed via ModalManager');
+        }
+    });
+    
+    if (!success) {
+        alert('Failed to open modal. Check console for details.');
+    }
+    
+    // Test checking if modal is open
+    setTimeout(() => {
+        const isOpen = modalManager.isModalOpen('exampleModal');
+        console.log('Modal is open:', isOpen);
+    }, 1000);
+}
+
+// Test function to test modal closing
+function testCloseModal() {
+    console.log('Testing modal close functionality...');
+    
+    // Check if any modal is open
+    if (modalManager.hasOpenModals()) {
+        const openModals = modalManager.getOpenModals();
+        console.log('Found open modals:', openModals);
+        
+        // Close the first open modal
+        if (openModals.length > 0) {
+            const modalToClose = openModals[0];
+            console.log('Closing modal:', modalToClose.id);
+            modalManager.closeModal(modalToClose);
+        }
+    } else {
+        console.log('No open modals found');
+        alert('No open modals to close');
+    }
+}
+
+// Debug function to check modal status
+function debugModals() {
+    console.log('=== Modal Debug Information ===');
+    
+    // Check all modals
+    const allModals = modalManager.getAllModals();
+    console.log('All modals found:', allModals.length);
+    allModals.forEach(modal => {
+        console.log('Modal ID:', modal.id, 'Classes:', modal.className);
+    });
+    
+    // Check open modals
+    const openModals = modalManager.getOpenModals();
+    console.log('Open modals:', openModals.length);
+    openModals.forEach(modal => {
+        console.log('Open modal ID:', modal.id);
+    });
+    
+    // Check close buttons
+    const closeButtons = document.querySelectorAll('[data-bs-dismiss="modal"]');
+    console.log('Close buttons found:', closeButtons.length);
+    closeButtons.forEach(btn => {
+        console.log('Close button:', btn, 'Parent modal:', btn.closest('.modal')?.id);
+    });
+    
+    // Check Bootstrap instances
+    allModals.forEach(modal => {
+        const bsInstance = bootstrap.Modal.getInstance(modal);
+        console.log('Modal', modal.id, 'Bootstrap instance:', bsInstance ? 'Exists' : 'None');
+    });
+    
+    console.log('=== End Debug Information ===');
+}
+
+// Test function to force newsletter popup
+function testNewsletterPopup() {
+    console.log('Forcing newsletter popup...');
+    
+    // Clear session storage to allow popup
+    sessionStorage.removeItem('newsLetterOpened');
+    
+    // Trigger the popup
+    modalManager.openModal('product_view', {
+        handleUI: true,
+        onShow: () => {
+            console.log("Newsletter modal shown successfully");
+        },
+        onHide: () => {
+            console.log("Newsletter modal hidden");
+        }
+    });
+}
+
+// Newsletter popup functionality using ModalManager
 setTimeout(() => {
     console.log("Checking newsletter popup...");
     console.log("Session storage value:", sessionStorage.getItem('newsLetterOpened'));
@@ -329,13 +745,8 @@ setTimeout(() => {
                     document.getElementById("news-name").value = "";
                     alert(e?.Message ? e.Message : e);
                     
-                    // Close modal after successful submission using Bootstrap 5.3
-                    const modal = document.getElementById('product_view');
-                    if (modal) {
-                        const bsModal = new bootstrap.Modal(modal);
-                        bsModal.hide();
-                        cleanupModalBackdrop();
-                    }
+                    // Close modal after successful submission using ModalManager
+                    modalManager.closeModal('product_view');
                 })
                 .catch((e) => {
                     let content = e['error'] ? e['error']['Message'] : 'An error occurred';
@@ -345,29 +756,33 @@ setTimeout(() => {
             });
         }
         
-        // Add event listener for close button
-        const closeBtn = document.getElementById('closebtn');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', function() {
-                cleanupModalBackdrop();
+        // Add event listener for close button - handle multiple close buttons
+        const closeBtns = document.querySelectorAll('#closebtn');
+        closeBtns.forEach(closeBtn => {
+            closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modal = this.closest('.modal');
+                if (modal) {
+                    console.log('Close button clicked for modal:', modal.id);
+                    modalManager.closeModal(modal);
+                } else {
+                    // Fallback to product_view modal
+                    modalManager.closeModal('product_view');
+                }
             });
-        }
+        });
         
-        // Trigger the popup using Bootstrap 5.3
-        const newsPopupBtn = document.getElementById('newsPopup');
-        if (newsPopupBtn) {
-            console.log("Triggering newsletter popup...");
-            newsPopupBtn.click();
-        } else {
-            console.error("News popup button not found");
-            // Fallback: try to show modal directly using Bootstrap 5.3
-            const modal = document.getElementById('product_view');
-            if (modal) {
-                console.log("Showing modal directly...");
-                const bsModal = new bootstrap.Modal(modal);
-                bsModal.show();
+        // Trigger the popup using ModalManager
+        console.log("Triggering newsletter popup...");
+        modalManager.openModal('product_view', {
+            handleUI: true,
+            onShow: () => {
+                console.log("Newsletter modal shown successfully");
+            },
+            onHide: () => {
+                console.log("Newsletter modal hidden");
             }
-        }
+        }); 
     } else {
         console.log("Newsletter popup already shown");
     }
@@ -382,6 +797,8 @@ if (loginClick) {
         window.location.href = "../pages/splash_options.php";
     });
 }
+
+
 
 const happiermeTryForFree =  document.getElementById('happiermeTryForFree');
 if (happiermeTryForFree) {
@@ -808,13 +1225,8 @@ newsLetterForm && newsLetterForm.addEventListener("click", () => {
                 .then((e) => {
                     (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );
                     
-                    // Close modal and clean up backdrop
-                    const modal = document.getElementById('product_view');
-                    if (modal) {
-                        const bsModal = new bootstrap.Modal(modal);
-                        bsModal.hide();
-                        cleanupModalBackdrop();
-                    }
+                    // Close modal using ModalManager
+                    modalManager.closeModal('product_view');
                 })
                 .catch((e) => {
                     let content = e['error']['Message'];
@@ -834,12 +1246,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize FAQ functionality
     initializeFAQTabs();
     initializeFAQAccordion();
+
+    const arr = ["mental-wellbeing"];
+    arr.forEach(element => {
+    const modal = document.getElementById(element);
+    if (modal) {
+          modal.addEventListener("click", () => {
+                modalManager.openModal(modal);
+        });
+    }
+    });
+    
+    // Initialize modal manager for the page
+    modalManager.initializeModalTriggers('[data-bs-toggle="modal"]');
     
     // Add modal hidden event listener for backdrop cleanup
     const modal = document.getElementById('product_view');
     if (modal) {
         modal.addEventListener('hidden.bs.modal', function () {
-            cleanupModalBackdrop();
+            modalManager.cleanupModalBackdrop();
         });
     }
     
@@ -883,11 +1308,14 @@ $(document).ready(function(){
     // Initialize tool tabs separately to avoid conflicts
     initializeToolTabs();
     
+    // Initialize modal manager for the page
+    modalManager.initializeModalTriggers('[data-bs-toggle="modal"]');
+    
     // Add modal hidden event listener for backdrop cleanup
     const modal = document.getElementById('product_view');
     if (modal) {
         modal.addEventListener('hidden.bs.modal', function () {
-            cleanupModalBackdrop();
+            modalManager.cleanupModalBackdrop();
         });
     }
     

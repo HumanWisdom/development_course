@@ -2931,8 +2931,8 @@ animation-name: slideInRight;
   border-radius: 10px;
   background: #FCF2EC;
   padding: 20px;
-  width: 254px !important;
-  height: 327px !important;
+  width: 234px !important;
+  height: 287px !important;
 }
 
 .div_coaches img
@@ -2946,8 +2946,8 @@ animation-name: slideInRight;
 
 .div_coaches.slick-slide 
 {
-  width: 254px !important;
-  height: 327px !important;
+  width: 234px !important;
+  height: 287px !important;
   margin: 0 40px 0 0 !important;
 }
 
@@ -3241,7 +3241,7 @@ padding:20px;
   margin: 0;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #CB6171;
+  border: 1px solid #ffffff;
   background: rgba(232, 168, 128, 0.10);
   position: relative;
 }
@@ -3252,7 +3252,7 @@ padding:20px;
   width: auto;
   height: 26px;
   border-radius: 10px;
-  background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%));
+  background: #ffffff;
   padding: 4px 10px;
   position: absolute;
   top: -14px;
@@ -3945,7 +3945,7 @@ audio::-webkit-media-controls-enclosure
 
 .work_edu_health_outer > [class^="col-"]
 {
-  padding: 0 20px 0 20px;
+  padding: 0 10px 0 14px;
 }
 
 .aspects_outer > [class^="col-"]
@@ -4517,10 +4517,10 @@ background: #FCF2EC;
 
 .col_weh
 {
-  height: 110px;
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 .web_home_divcircle 
 {
@@ -4882,7 +4882,14 @@ padding: 15px;
 
 @media (min-width: 1024px) {
   .element {
-    width: 60%; /* Keeps the element at 60% width */
+    width: 66%; /* Keeps the element at 60% width */
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .element1 {
+    width: 76%; /* Keeps the element at 60% width */
   }
 }
 
