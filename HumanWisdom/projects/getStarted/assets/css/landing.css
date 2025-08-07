@@ -9,6 +9,13 @@
      background-attachment: fixed;
   background-size: 100% 100%;
 }
+
+
+.btn_subscription:hover{
+    
+    border: 1px solid #fff;
+    
+}
 .btn_landing {
     margin: 0;
     border: 0;
