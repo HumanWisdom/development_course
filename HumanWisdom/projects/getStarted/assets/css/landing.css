@@ -9,11 +9,6 @@
      background-attachment: fixed;
   background-size: 100% 100%;
 }
-<<<<<<< HEAD
-
-
-.btn_subscription:hover{
-=======
 .btn_subscription_trialindex 
 {
   /* width: 114px; */
@@ -35,11 +30,10 @@ a:hover{
     color: #fff;
 }
 /* .btn_subscription:hover{
->>>>>>> 2fc0fab1f986eb10ceb887711a5f56d41f42d64c
     
     border: 1px solid #fff;
     
-}
+}*/
 .btn_landing {
     margin: 0;
     border: 0;
