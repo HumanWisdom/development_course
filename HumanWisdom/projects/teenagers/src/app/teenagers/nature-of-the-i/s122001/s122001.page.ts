@@ -44,6 +44,7 @@ export class S122001Page implements OnInit,OnDestroy {
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
+  modulename = "The nature of the 'I'";
 
   constructor
   (
