@@ -541,6 +541,7 @@ export class LoginSignupPage implements OnInit {
       localStorage.setItem("token", JSON.stringify(res.access_token));
       localStorage.setItem("Subscriber", res.Subscriber);
       localStorage.setItem("SubscriberType", res.SubscriberType);
+      localStorage.setItem('NoOfDPVisits', res.NoOfDPVisits?.toString() || '0');
       localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
       localStorage.setItem("email", res.Email);
