@@ -2,6 +2,8 @@
 // Include security configuration
 require_once('./includes/security_config.php');
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,9 +75,13 @@ require_once('./includes/security_config.php');
 
     <!-- header -->
     <?php include('./includes/header.php'); ?>
+  <?php include('../includes/assets/css/landing.css'); ?>
+  <?php include('.../includes/assets/css/landing.css'); ?>
+
+
     <!-- /header -->
 
-    
+
 
     <!-- Google Tag Manager (noscript) -->
     <!-- <noscript><iframe title="IframeGtag" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPHHF97"
@@ -779,9 +785,9 @@ require_once('./includes/security_config.php');
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 p0 center_flex">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
                   <a href="https://happierme.app/pages/splash_options.php"   class="tryhappiermeClick"> 
-              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width">
               Try HappierMe for free
                 </button>
       </a> 
@@ -1551,7 +1557,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
-Contact our experienced coaches for personalised support              </h2>
+                    Contact our experienced coaches for personalised support              </h2>
             </div>
           </div>
         </div>
@@ -1559,12 +1565,12 @@ Contact our experienced coaches for personalised support              </h2>
         <div class="row center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
-            <div class="owl_coach">
+            <div class="owl_coach" style="width: auto;margin-right: 20px !important;">
               <div class="owl-carousel owl-theme">
                 <a class="item" data-aos="fade-up" data-aos-delay="200" href="https://happierme.app/adults/coach/profile/692">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/1.webp" class="img-responsive" alt="Carolyn King" loading=lazy>
                       </div>
                     </div>
@@ -1590,7 +1596,7 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="300" href="https://happierme.app/adults/coach/profile/18814">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/2.webp" class="img-responsive" alt="Deyvis  Bebicaci" loading=lazy>
                       </div>
                     </div>
@@ -1605,7 +1611,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           France
                         </h5>
                       </div>
@@ -1616,7 +1622,7 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="400" href="https://happierme.app/adults/coach/profile/776">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/10.webp" class="img-responsive" alt="Saakshi  Singla" loading=lazy>
                       </div>
                     </div>
@@ -1631,7 +1637,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           India
                         </h5>
                       </div>
@@ -1642,7 +1648,7 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="500" href="https://happierme.app/adults/coach/profile/675">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/3.webp" class="img-responsive" alt="Dominic  Curran" loading=lazy>
                       </div>
                     </div>
@@ -1657,7 +1663,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           United Kingdom
                         </h5>
                       </div>
@@ -1668,14 +1674,14 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="600" href="https://happierme.app/adults/coach/profile/755">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/4.webp" class="img-responsive" alt="Gopalan  Nair" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Gopalan  Nair
                         </h4>
                       </div>
@@ -1683,7 +1689,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           Singapore
                         </h5>
                       </div>
@@ -1694,14 +1700,15 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="700" href="https://happierme.app/adults/coach/profile/760">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/5.webp" class="img-responsive" alt="Jondi  Whitis" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+                                                <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
+
                           Jondi  Whitis
                         </h4> 
                       </div>
@@ -1709,7 +1716,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           USA
                         </h5>
                       </div>
@@ -1720,14 +1727,14 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="800" href="https://happierme.app/adults/coach/profile/926">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/11.webp" class="img-responsive" alt="Sam  Dossa" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Sam  Dossa
                         </h4>
                       </div>
@@ -1735,7 +1742,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           United Kingdom
                         </h5>
                       </div>
@@ -1746,14 +1753,14 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="900" href="https://happierme.app/adults/coach/profile/733">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/6.webp" class="img-responsive" alt="Maria  Vieira" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Maria  Vieira
                         </h4>
                       </div>
@@ -1761,7 +1768,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           Portugal
                         </h5>
                       </div>
@@ -1772,14 +1779,14 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="1000" href="https://happierme.app/adults/coach/profile/702">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/7.webp" class="img-responsive" alt="Natasha  Zervaas" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Natasha  Zervaas
                         </h4>
                       </div>
@@ -1787,7 +1794,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           Australia
                         </h5>
                       </div>
@@ -1798,14 +1805,14 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="1100" href="https://happierme.app/adults/coach/profile/19199">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/8.webp" class="img-responsive" alt="Robin  Johnson" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Robin  Johnson
                         </h4>
                       </div>
@@ -1813,7 +1820,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           USA
                         </h5>
                       </div>
@@ -1824,14 +1831,14 @@ Contact our experienced coaches for personalised support              </h2>
                 <a class="item" data-aos="fade-up" data-aos-delay="1200" href="https://happierme.app/adults/coach/profile/740">
                   <div class="div_coaches">
                     <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/9.webp" class="img-responsive" alt="Roland  Yeo" loading=lazy>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Roland  Yeo
                         </h4>
                       </div>
@@ -1839,7 +1846,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
+                        <h5 class="mtb0px fs_12px fw_400 lh_130p fc_000000 tcenter">
                           Singapore
                         </h5>
                       </div>
@@ -1884,18 +1891,18 @@ Contact our experienced coaches for personalised support              </h2>
             </div>
 
 
-                           <div class="row center_flex">
+            <div class="row  mt20px"  data-aos="fade-up" data-aos-delay="100">
                           
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12   d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
           
                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                             <img  style="marginn-left:23px; "src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                             <img  src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-responsive img_aspects1" alt="PATHWAY">
                          </div>
               
 
-             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tleft">
 
                   <h3 style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
                    Expert guidance
@@ -1908,10 +1915,10 @@ Contact our experienced coaches for personalised support              </h2>
 
              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                  <img style="marginn-left:23px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                  <img  src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-responsive img_aspects1" alt="PATHWAY">
                 </div>
-                    <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 p0">
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
 
 
                   <h3  style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
@@ -1924,12 +1931,12 @@ Contact our experienced coaches for personalised support              </h2>
      </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                  <img  style="marginn-left:23px;" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                  <img   src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-responsive img_aspects1" alt="PATHWAY">
                 </div>
               
 
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
 
 <h3  style="margin-top:0px;"class=" fs_18px fw_500  fc_ffffff"> Daily practices that fit your life</h3>
                 
@@ -1948,7 +1955,7 @@ Contact our experienced coaches for personalised support              </h2>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
 
                 <button class="btn_subscription">
-                  <div class="row center_flex btn_subscription_trial">
+                  <div class="row center_flex btn_subscription_trialindex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <h6 style="color:#325795;" class="mtb0px fs_12px fw_600 lh_150p fc_325795">
                         14-day free trial
@@ -1958,7 +1965,7 @@ Contact our experienced coaches for personalised support              </h2>
 
                   <div class="row center_flex">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6  p0 tleft">
-                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
+                      <h5 class="mtb0px fs_18px fw_500 lh_150p fc_ffffff">
                         Yearly
                       </h5>
 
@@ -1966,19 +1973,19 @@ Contact our experienced coaches for personalised support              </h2>
                         INR 5,999/yr
                       </h4> -->
 
-                      <h6 class="mtb0px fs_12px fw_600 lh_150p fc_ffffff">
+                      <h6 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
                         <!-- <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span> -->
 
                         <span class="" id="annualPricingModelHeading"></span>
                       </h6>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright mt20px">
                       <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                         INR 500/mo.
                       </h4> -->
 
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff" id="spanAnnualLabel"></h4>
+                      <h4 class="mtb0px fs_21px fw_600 lh_150p fc_ffffff" id="spanAnnualLabel"></h4>
                     </div>
                   </div>
                 </button>
@@ -1990,21 +1997,21 @@ Contact our experienced coaches for personalised support              </h2>
                 <button class="btn_subscription">
                   <div class="row center_flex">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tleft">
-                      <h5 class="mtb0px fs_15px fw_500 lh_150p fc_ffffff">
+                      <h5 class="mtb0px fs_18px fw_500 lh_150p fc_ffffff">
                         Monthly
                       </h5>
 
-                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      <h6 class="mtb0px fs_15x fw_400 lh_150p fc_ffffff">
                         7-day free trial
                       </h6>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright mt20px">
                       <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                         INR 700/mo.
                       </h4> -->
 
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff"  id="monthlyPricingModelHeading"></h4>
+                      <h4 class="mtb0px fs_21px fw_600 lh_150p fc_ffffff"  id="monthlyPricingModelHeading"></h4>
                     </div>
                   </div>
                 </button>
@@ -2326,9 +2333,11 @@ Contact our experienced coaches for personalised support              </h2>
       <!-- /tools -->
         <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
               <div id="PricingSelectBtn" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0 mtb20px">
+                <a href="https://happierme.app/pages/splash_options.php">
                 <button class="fs_21px fw_500 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
                   Try HappierMe for free
                 </button>
+             </a>
               </div>
             </div>
        
