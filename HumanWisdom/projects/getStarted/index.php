@@ -2002,18 +2002,17 @@ The HappierMe app for teens has been designed to help them manage their emotions
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <h6 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" id="totalAnnualPricingModelHeading">
                   After your free trial, the yearly subscription is INR  and automatically renews each year until cancelled.                  
-                  <br/>
-                  <span class="">
-                  
-                      Cancel anytime.
-                   
-                  </span>
-                   <span class="">
-                    <a  href="https://happierme.app/pages/terms_conditions.php" class="fc_ffffff td_underline">
-                      Terms & Conditions
-                    </a>
-                  </span>
                 </h6>
+                <span class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                  Cancel anytime.
+                  
+                </span>
+                <span class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                  <a  href="https://happierme.app/pages/terms_conditions.php" class="fc_ffffff td_underline">
+                    Terms & Conditions
+                  </a>
+                </span>
+                
               </div>
             </div>
 
