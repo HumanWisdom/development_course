@@ -21,7 +21,14 @@
   top: -14px;
   right: 20px;
 }
-
+.btn_tff_widthnew {
+    width: 314px !important;
+    border-radius: 35px;
+    height: 65px;
+}
+a:hover{
+    color: #fff;
+}
 /* .btn_subscription:hover{
     
     border: 1px solid #fff;
