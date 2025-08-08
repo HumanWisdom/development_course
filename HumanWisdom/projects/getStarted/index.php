@@ -699,7 +699,7 @@ require_once('./includes/security_config.php');
            <div class="owl-theme mt40px" >
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" id="viewallsuccessstories">
+                    <a  class="sap" href="https://happierme.app/adults/testimonials">
                       <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                          View all Success stories
 
@@ -1320,7 +1320,6 @@ require_once('./includes/security_config.php');
           <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11 col-11 p0 tcenter work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <a  class="" href="./pages/work.php"  onclick="return logevent('click_for_work_home', 'index.php')">
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -1339,24 +1338,29 @@ require_once('./includes/security_config.php');
                       
                     </div>
                   </div>
-                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 plr20px tleft">
+                  <div class="row">
+                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
 Upskill your staff to be happier, emotionally intelligent and make better decisions.              </h5>
-
+             </div>
+             </div>
+<div class="row">
+                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
   <a  href=" https://happierme.app/pages/work.php"iaria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h4 class="mtb0px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                    <h4 class=" mtb20px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       Find out more
                       <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
                     </h4>
                   </a>
-
+             </div>
+             </div>
               
                 </div>
-                </a>
+                
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
-              <a class="" href="./pages/education.php" onclick="return logevent('click_for_education_home', 'index.php')" >
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -1375,22 +1379,28 @@ Upskill your staff to be happier, emotionally intelligent and make better decisi
                         
                     </div>
                   </div>
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 plr20px tleft">
+                   <div class="row">
+                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
 Help students manage stress and anxiety, and to be happier and successful.             </h5>
-
+             </div>
+             </div>
+ <div class="row">
+                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
   <a href="https://happierme.app/pages/education.php"  aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h4 class="mtb0px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                    <h4 class="mtb20px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       Find out more
                       <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
                     </h4>
                   </a>
                 </div>
-                </a>
+             </div>
+             </div>
+               
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="400">
-              <a  class="" href="./pages/healthcare.php" onclick="return logevent('click_for_healthcare_home', 'index.php')" >
                 <div class="div_work_edu_health">
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -1410,20 +1420,27 @@ Help students manage stress and anxiety, and to be happier and successful.      
                       
                     </div>
                   </div>
-                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tleft plr20px" >
+                   <div class="row">
+                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tleft" >
 Help students manage stress and anxiety, and to be happier and successful.             </h5>
+             </div>
+             </div>
 
-<div class="row mtb10px">
-  <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
+ <div class="row">
+                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">  
+                      <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h4 class="mtb0px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                    <h4 class="mtb20px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       Find out more
                       <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
                     </h4>
                   </a>
             </div>
                 </div>
-                </a>
+
+             </div>
+             </div>
             </div>
 
           </div>
@@ -1501,7 +1518,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                   </a> -->
 
                   <a id="happiermeTryForFree" href="https://happierme.app/teenagers/intro-carousel" class="tryhappiermeClick"> 
-              <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width">
               Try HappierMe for free
                 </button>
       </a> 
@@ -1533,9 +1550,8 @@ The HappierMe app for teens has been designed to help them manage their emotions
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-              Our qualified coaches, providing additional support.
-              </h2>
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
+Contact our experienced coaches for personalised support              </h2>
             </div>
           </div>
         </div>
@@ -1555,7 +1571,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Carolyn King
                         </h4>
                       </div>
@@ -1563,7 +1579,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_12px fw_400 lh_150p fc_000000 tcenter">
                           Australia
                         </h5>
                       </div>
@@ -1581,7 +1597,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Deyvis  Bebicaci
                         </h4>
                       </div>
@@ -1589,7 +1605,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           France
                         </h5>
                       </div>
@@ -1607,7 +1623,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Saakshi  Singla
                         </h4>
                       </div>
@@ -1615,7 +1631,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           India
                         </h5>
                       </div>
@@ -1633,7 +1649,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt10px mb0px fs_18px fw_500 lh_150p fc_000000 tcenter">
                           Dominic  Curran
                         </h4>
                       </div>
@@ -1641,7 +1657,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           United Kingdom
                         </h5>
                       </div>
@@ -1659,7 +1675,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
                           Gopalan  Nair
                         </h4>
                       </div>
@@ -1667,7 +1683,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           Singapore
                         </h5>
                       </div>
@@ -1685,15 +1701,15 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
                           Jondi  Whitis
-                        </h4>
+                        </h4> 
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           USA
                         </h5>
                       </div>
@@ -1711,7 +1727,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
                           Sam  Dossa
                         </h4>
                       </div>
@@ -1719,7 +1735,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           United Kingdom
                         </h5>
                       </div>
@@ -1737,7 +1753,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
                           Maria  Vieira
                         </h4>
                       </div>
@@ -1745,7 +1761,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           Portugal
                         </h5>
                       </div>
@@ -1763,7 +1779,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
                           Natasha  Zervaas
                         </h4>
                       </div>
@@ -1771,7 +1787,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           Australia
                         </h5>
                       </div>
@@ -1789,7 +1805,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
                           Robin  Johnson
                         </h4>
                       </div>
@@ -1797,7 +1813,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           USA
                         </h5>
                       </div>
@@ -1815,7 +1831,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000">
+                        <h4 class="mt20px mb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
                           Roland  Yeo
                         </h4>
                       </div>
@@ -1823,7 +1839,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+                        <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tcenter">
                           Singapore
                         </h5>
                       </div>
@@ -4521,7 +4537,9 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
+
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/parents.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>

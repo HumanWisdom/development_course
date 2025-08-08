@@ -90,6 +90,9 @@
     background: #FFFAF4;  
     border: 0.5px solid #CB6171; 
 }
+.sap:hover{
+ color:greenyellow;   
+}
 
 .btn-primarypop:hover{
   background-color: #FFEACF;

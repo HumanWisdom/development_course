@@ -2930,7 +2930,7 @@ animation-name: slideInRight;
 {
   border-radius: 10px;
   background: #FCF2EC;
-  padding: 20px;
+  padding: 10px;
   width: 234px !important;
   height: 287px !important;
 }
@@ -3931,10 +3931,10 @@ audio::-webkit-media-controls-enclosure
   height: auto;
 }
 
-.div_work_edu_health h4 
+/* .div_work_edu_health h4 
 {
   padding: 20px; 
-}
+} */
 
 .div_work_edu_health img
 {
