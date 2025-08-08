@@ -691,7 +691,9 @@ function debugModals() {
 
 // Test function to force newsletter popup
 function testNewsletterPopup() {
-    console.log('Forcing newsletter popup...');
+    if (NEWSLETTER_CONFIG.debug) {
+        console.log('Forcing newsletter popup...');
+    }
     
     // Clear session storage to allow popup
     sessionStorage.removeItem('newsLetterOpened');
@@ -700,21 +702,37 @@ function testNewsletterPopup() {
     modalManager.openModal('product_view', {
         handleUI: true,
         onShow: () => {
-            console.log("Newsletter modal shown successfully");
+            if (NEWSLETTER_CONFIG.debug) {
+                console.log("Newsletter modal shown successfully");
+            }
         },
         onHide: () => {
-            console.log("Newsletter modal hidden");
+            if (NEWSLETTER_CONFIG.debug) {
+                console.log("Newsletter modal hidden");
+            }
         }
     });
 }
 
-// Newsletter popup functionality using ModalManager
-setTimeout(() => {
-    console.log("Checking newsletter popup...");
-    console.log("Session storage value:", sessionStorage.getItem('newsLetterOpened'));
+// Newsletter popup configuration
+const NEWSLETTER_CONFIG = {
+    delayAfterPreloader: 5000, // 5 seconds after preloader finishes
+    fallbackDelay: 10000, // 10 seconds as fallback
+    checkInterval: 100, // Check interval for preloader status
+    debug: true // Enable debug logging
+};
+
+// Newsletter popup functionality using ModalManager - Dynamic timing based on preloader
+function initializeNewsletterPopup() {
+    if (NEWSLETTER_CONFIG.debug) {
+        console.log("Checking newsletter popup...");
+        console.log("Session storage value:", sessionStorage.getItem('newsLetterOpened'));
+    }
     
     if(sessionStorage.getItem('newsLetterOpened') !== 'true'){
-        console.log("Newsletter popup should open");
+        if (NEWSLETTER_CONFIG.debug) {
+            console.log("Newsletter popup should open");
+        }
         sessionStorage.setItem('newsLetterOpened','true');
         
         // Set up newsletter form handler
@@ -773,20 +791,134 @@ setTimeout(() => {
         });
         
         // Trigger the popup using ModalManager
-        console.log("Triggering newsletter popup...");
+        if (NEWSLETTER_CONFIG.debug) {
+            console.log("Triggering newsletter popup...");
+        }
         modalManager.openModal('product_view', {
             handleUI: true,
             onShow: () => {
-                console.log("Newsletter modal shown successfully");
+                if (NEWSLETTER_CONFIG.debug) {
+                    console.log("Newsletter modal shown successfully");
+                }
             },
             onHide: () => {
-                console.log("Newsletter modal hidden");
+                if (NEWSLETTER_CONFIG.debug) {
+                    console.log("Newsletter modal hidden");
+                }
             }
         }); 
     } else {
-        console.log("Newsletter popup already shown");
+        if (NEWSLETTER_CONFIG.debug) {
+            console.log("Newsletter popup already shown");
+        }
     }
-}, 10000); // Reduced from 20000 to 10000 for faster testing
+}
+
+// Function to check if preloader is finished and then trigger newsletter popup
+function checkPreloaderAndShowNewsletter() {
+    const preloader = document.querySelector("#preloader");
+    
+    if (preloader && preloader.parentNode) {
+        // Preloader still exists, wait for it to be removed
+        if (NEWSLETTER_CONFIG.debug) {
+            console.log("Preloader still active, waiting...");
+        }
+        setTimeout(checkPreloaderAndShowNewsletter, NEWSLETTER_CONFIG.checkInterval);
+    } else {
+        // Preloader is gone, wait additional delay then show newsletter
+        if (NEWSLETTER_CONFIG.debug) {
+            console.log("Preloader finished, waiting additional delay before showing newsletter...");
+        }
+        setTimeout(initializeNewsletterPopup, NEWSLETTER_CONFIG.delayAfterPreloader);
+    }
+}
+
+// Enhanced preloader detection with multiple approaches
+function setupNewsletterTiming() {
+    let newsletterTriggered = false;
+    
+    // Method 1: Use MutationObserver to watch for preloader removal
+    function setupPreloaderObserver() {
+        const preloader = document.querySelector("#preloader");
+        if (preloader) {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList') {
+                        mutation.removedNodes.forEach(function(node) {
+                            if (node.id === 'preloader' || (node.nodeType === 1 && node.querySelector('#preloader'))) {
+                                if (NEWSLETTER_CONFIG.debug) {
+                                    console.log("Preloader removed from DOM detected");
+                                }
+                                if (!newsletterTriggered) {
+                                    newsletterTriggered = true;
+                                    setTimeout(initializeNewsletterPopup, NEWSLETTER_CONFIG.delayAfterPreloader);
+                                }
+                                observer.disconnect();
+                            }
+                        });
+                    }
+                });
+            });
+            
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
+    }
+    
+    // Method 2: Listen for window load event (when preloader is removed)
+    window.addEventListener('load', function() {
+        if (!newsletterTriggered) {
+            if (NEWSLETTER_CONFIG.debug) {
+                console.log("Window loaded, preloader should be finished");
+            }
+            setTimeout(() => {
+                if (!newsletterTriggered) {
+                    newsletterTriggered = true;
+                    initializeNewsletterPopup();
+                }
+            }, NEWSLETTER_CONFIG.delayAfterPreloader);
+        }
+    });
+    
+    // Method 3: Fallback polling approach
+    setTimeout(() => {
+        if (!newsletterTriggered) {
+            checkPreloaderAndShowNewsletter();
+        }
+    }, 3000); // Start checking after 3 seconds as fallback
+    
+    // Initialize the observer
+    setupPreloaderObserver();
+}
+
+// Initialize newsletter timing system
+setupNewsletterTiming();
+
+// Function to manually trigger newsletter popup (for testing)
+function forceNewsletterPopup() {
+    if (NEWSLETTER_CONFIG.debug) {
+        console.log("Manually forcing newsletter popup...");
+    }
+    sessionStorage.removeItem('newsLetterOpened');
+    initializeNewsletterPopup();
+}
+
+// Function to update newsletter timing configuration
+function updateNewsletterConfig(newConfig) {
+    Object.assign(NEWSLETTER_CONFIG, newConfig);
+    if (NEWSLETTER_CONFIG.debug) {
+        console.log("Newsletter configuration updated:", NEWSLETTER_CONFIG);
+    }
+}
+
+// Expose functions globally for debugging
+window.newsletterDebug = {
+    forcePopup: forceNewsletterPopup,
+    updateConfig: updateNewsletterConfig,
+    getConfig: () => NEWSLETTER_CONFIG
+};
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
