@@ -60,8 +60,8 @@
 
               <div class="toc_adiv_mp mt30px mb20px">
                 <!-- audio row -->
-                <a routerLink="../how-can-i-a01-at">
-                  <div class="row">
+                <a (click)="handleMiniPodcastClick()">
+                  <div class="row" style="cursor: pointer;">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
@@ -91,6 +91,17 @@
                           2:54 mins
                         </h4>
                       </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      </div>
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                        *ngIf="!isSubscriber">
+                        <!-- lock -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
+                        <!-- /lock -->
+                      </div>
 
                     </div>
                   </div>
@@ -115,7 +126,7 @@
                           Stress
                         </h4>
                         <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                          7 sessions
+                          9 sessions
                         </h4>
                       </div>
       

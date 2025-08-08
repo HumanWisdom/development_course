@@ -10,7 +10,7 @@
         </h4>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  dfooter_links">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  dfooter_links">
             <a id="ourStory">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Our story
@@ -56,7 +56,7 @@
         </h4>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  dfooter_links">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dfooter_links">
             <a href="https://happierme.app/adults/onboarding/add-to-cart">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Gift HappierMe
@@ -102,7 +102,7 @@
         </h4>
 
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  dfooter_links">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  dfooter_links">
             <a href="https://happierme.app/adults/faqs">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 FAQ
@@ -143,7 +143,7 @@
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_facebook.svg" class="img-responsive" alt="facebook">
             </a>
 
-            <a href="https://www.instagram.com/happierme_app/" target="_blank">
+            <a href="https://www.instagram.com/happierme.app/" target="_blank">
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_instagram.svg" class="img-responsive" alt="instagram">
             </a>
 
@@ -197,7 +197,7 @@
             <div class="panel-body">
               <!-- links -->
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  dfooter_links">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  dfooter_links">
                   <a href="../pages/about_us.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Our story
@@ -410,7 +410,7 @@
 
   <div class="row center_flex mt70px display_m_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  tcenter">
-      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff opacity-50 ">
         Copyright © 2024 HappierMe. All rights reserved
       </h4>
     </div>

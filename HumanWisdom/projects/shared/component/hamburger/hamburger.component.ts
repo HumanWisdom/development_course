@@ -436,6 +436,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
             ;
             localStorage.clear();
+            sessionStorage.clear(); 
             if (firstTimeTour === 'T') {
               localStorage.setItem('firstTimeTour', 'T');
             }
