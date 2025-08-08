@@ -35,7 +35,6 @@
     #toggle {
       background: none;
       border: none;
-      color: #834b66;
       cursor: pointer;
       font-size: 16px;
     }
@@ -98,7 +97,7 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                     #10 ways understanding your mind could transform your life
                   </h4>
@@ -106,7 +105,7 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
                     <!-- 25 days ago  -->
                   </h6>
@@ -133,7 +132,7 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                     Difficult emotions: a guide to freedom
                   </h4>
@@ -141,7 +140,7 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
                     <!-- 25 days ago  -->
                   </h6>
@@ -204,7 +203,7 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                     Self-Awareness can help relationships flourish
                   </h4>
@@ -239,7 +238,7 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                     Why are we critical of ourselves
                   </h4>
@@ -247,7 +246,7 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
                     <!-- 2 years ago  -->
                   </h6>
@@ -315,7 +314,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       The missed opportunity in relationships
                     </h4>
@@ -354,7 +353,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       How to manage your own mental health
                     </h4>
@@ -393,7 +392,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Discover the joys of journaling
                     </h4>
@@ -430,7 +429,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       6 ways to transform organisations
                     </h4>
@@ -469,7 +468,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       6 Barriers to overcoming stress
                     </h4>
@@ -504,7 +503,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Addressing health problems with emotional intelligence
                     </h4>
@@ -543,7 +542,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Does education make us intelligent?
                     </h4>
@@ -580,7 +579,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       A fresh way to avoid and overcome addiction
                     </h4>
@@ -616,7 +615,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       How to manage anxiety attacks
                     </h4>
@@ -689,7 +688,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       HappierMe survey into causes of work stress
                     </h4>
@@ -724,7 +723,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Avoid and overcome burnout, with self-awareness
                     </h4>
@@ -798,7 +797,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       To succeed as a leader you need self-awareness
                     </h4>
@@ -833,7 +832,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Boosting well-being and productivity at work
                     </h4>
@@ -868,7 +867,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Transforming the lives of children through self-knowledge
                     </h4>
@@ -905,7 +904,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       The Future of Education: A HappierMe Survey
                     </h4>
@@ -940,7 +939,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Transforming education to meet the needs of students and society
                     </h4>
@@ -975,7 +974,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Tackling The Teen Suicide Crisis
                     </h4>
@@ -1010,7 +1009,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Alarming impact of work stress on sleep
                     </h4>
@@ -1045,7 +1044,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       If Teens Says This, They Might Be Struggling
                     </h4>
@@ -1080,7 +1079,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Workplace Bullying
                     </h4>
@@ -1119,7 +1118,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
                       Why Do Leaders Fail? Insights from a new poll
                     </h4>
@@ -1160,21 +1159,18 @@
   <!-- /vendor_footer -->
 
   <script>
-    $(document).ready(function () {
-      // Hide the additional blogs initially
-      $('#text').hide();
+ $(document).ready(function () {
+  $('#toggle').click();
+  // Hide the additional blogs initially
+ $('#text').toggle(0, function () {
+  if ($(this).is(':visible')) {
+    $('#toggle').text('View Less');
+  } else {
+    $('#toggle').text('View More');
+  }
+});
 
-      // Toggle functionality for View More button
-      $('#toggle').click(function () {
-        $('#text').toggle();
-
-        if ($('#text').is(':visible')) {
-          $(this).text('View Less');
-        } else {
-          $(this).text('View More');
-        }
-      });
-    });
+});
   </script>
 
 </body>
