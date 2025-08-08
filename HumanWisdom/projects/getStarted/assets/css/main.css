@@ -3258,7 +3258,16 @@ padding:20px;
   top: -14px;
   right: 20px;
 }
-
+.btn-subscription-color{
+  background: var(--Linear, linear-gradient(180deg, #cb6171 100%, #e58d82 0));
+}
+.btn-subscription-border{
+  border: 1px solid #cb6171;
+      
+}
+.btn-subscription-border:hover {
+  border: 1px solid #cb6171;
+}
 .tab_faqs
 {
   border: 0;
@@ -5522,4 +5531,7 @@ button {
     line-height: 27px;
     color: #cb6171;
     text-align: center;
+}
+.opacity-50 {
+  opacity: 0.5;
 }

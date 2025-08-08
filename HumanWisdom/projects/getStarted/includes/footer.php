@@ -410,7 +410,7 @@
 
   <div class="row center_flex mt70px display_m_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  tcenter">
-      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff opacity-50 ">
         Copyright © 2024 HappierMe. All rights reserved
       </h4>
     </div>
