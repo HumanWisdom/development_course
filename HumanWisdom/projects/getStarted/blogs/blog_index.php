@@ -36,7 +36,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     #toggle:hover {
