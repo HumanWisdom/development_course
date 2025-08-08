@@ -33,7 +33,7 @@ a:hover{
     
     border: 1px solid #fff;
     
-} */
+}*/
 .btn_landing {
     margin: 0;
     border: 0;
@@ -108,9 +108,6 @@ a:hover{
     background: #FFFAF4;  
     border: 0.5px solid #CB6171; 
 }
-.sap:hover{
- color:greenyellow;   
-}
 
 .btn-primarypop:hover{
   background-color: #FFEACF;
@@ -162,9 +159,13 @@ a:hover{
     background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 .sap:hover{
-    color:rgb(233, 226, 226);
+    color:green;
 }
-
+.img_aspects1 {
+    /* max-height: 155px; */
+    /* margin-right: 50px; */
+    margin-left: 28px;
+}
 
 .div_subscriptionnew {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
@@ -174,7 +175,7 @@ a:hover{
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
-    padding:  40px;
+    padding: 90px 20px;
 }
 .testnew-info1 h5 {
     font-size: 18px;
