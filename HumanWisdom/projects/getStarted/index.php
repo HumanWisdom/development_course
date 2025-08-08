@@ -3687,7 +3687,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/parents.svg" class="img-responsive" alt="Mental Health" loading="lazy">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build_d.svg" class="img-responsive" alt="Mental Health" loading="lazy">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 </div>
@@ -4546,7 +4546,9 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/parents.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/parents.svg" class="img-responsive" alt="Mental Health" loading=lazy>
+
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
