@@ -2816,6 +2816,8 @@ animation-name: slideInRight;
 .btn_tff_width 
 {
   width: 314px !important;
+  border-radius: 35px;
+    height: 65px;
 }
 
 .btn_pricing {

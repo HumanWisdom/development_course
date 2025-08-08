@@ -9,9 +9,33 @@
      background-attachment: fixed;
   background-size: 100% 100%;
 }
+<<<<<<< HEAD
 
 
 .btn_subscription:hover{
+=======
+.btn_subscription_trialindex 
+{
+  /* width: 114px; */
+  width: auto;
+  height: 26px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 4px 10px;
+  position: absolute;
+  top: -14px;
+  right: 20px;
+}
+.btn_tff_widthnew {
+    width: 314px !important;
+    border-radius: 35px;
+    height: 65px;
+}
+a:hover{
+    color: #fff;
+}
+/* .btn_subscription:hover{
+>>>>>>> 2fc0fab1f986eb10ceb887711a5f56d41f42d64c
     
     border: 1px solid #fff;
     
