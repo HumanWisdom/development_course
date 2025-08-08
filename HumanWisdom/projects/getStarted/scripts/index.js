@@ -786,7 +786,7 @@ setTimeout(() => {
     } else {
         console.log("Newsletter popup already shown");
     }
-}, 10000); // Reduced from 20000 to 10000 for faster testing
+}, 200); // Reduced from 20000 to 10000 for faster testing
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
