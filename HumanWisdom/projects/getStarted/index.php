@@ -1876,79 +1876,111 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
 
         <section id="div_subscription">
-        <div class="row center_flex div_subscriptionnew">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+          <div class="row center_flex div_subscriptionnew">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
 
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <h2 class="mtb10px fs_30px fw_600 lh_120p fc_ffffff">
-                  Subscribe to HappierMe Premium
-                </h2>
+              <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                  <h2 class="mtb10px fs_30px fw_600 lh_120p fc_ffffff">
+                    Subscribe to HappierMe Premium
+                  </h2>
 
-                <!-- <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
-                  Start your free trial today!
-                </h6> -->
+                  <!-- <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
+                    Start your free trial today!
+                  </h6> -->
+                </div>
               </div>
-            </div>
 
 
-            <div class="row  mt20px"  data-aos="fade-up" data-aos-delay="100">
+               <!--  <div class="row  mt20px"  data-aos="fade-up" data-aos-delay="100">
                           
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12   d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-          
-                       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                             <img  src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-responsive img_aspects1" alt="PATHWAY">
-                         </div>
-              
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                          </div>
+            
 
-             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tleft">
+                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tleft">
 
-                  <h3 style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
-                   Expert guidance
-                  </h3>
-                
-              </div>
-        </div>
+                              <h3 style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
+                              Expert guidance
+                              </h3>
+                            
+                          </div>
+                        </div>
 
-        </div>
+                      </div>
 
-             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                  <img  src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="row">
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                          </div>
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
+                            <h3  style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
+                              Personalised content to meet your goals
+                            </h3>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="row">
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                            <img   src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                          </div>
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
+
+                              <h3  style="margin-top:0px;"class=" fs_18px fw_500  fc_ffffff"> Daily practices that fit your life</h3>
+                            
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                </div> -->
+                <div class="row mt20px aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                      <div class="row">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                          </div>
+                          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10 tleft">
+                            <span class="fs_18px fw_500  fc_ffffff">
+                            Expert guidance
+                            </span>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                      <div class="row">
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                          </div>
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
+                            <h3 style="margin-top:0px;" class="fs_18px fw_500  fc_ffffff">
+                                Personalised content to meet your goals
+                            </h3>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                      <div class="row">
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-responsive img_aspects1" alt="PATHWAY">
+                          </div>
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p10 tleft">
+                            <h3 style="margin-top:0px;" class=" fs_18px fw_500  fc_ffffff"> Daily practices that fit your life</h3>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
-
-
-                  <h3  style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
-                    Personalised content to meet your goals
-                  </h3>
-                
-              </div>
-        </div>
-
-     </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                  <img   src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-responsive img_aspects1" alt="PATHWAY">
-                </div>
-              
-
-             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
-
-<h3  style="margin-top:0px;"class=" fs_18px fw_500  fc_ffffff"> Daily practices that fit your life</h3>
-                
-              </div>
-        </div>
-
-              </div>
-
-              </div>
-          </div>
-        </div>
+            </div>
            
             <div class="row center_flex mtb20px" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0">
@@ -2379,7 +2411,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <a class="item" data-aos="fade-up" data-aos-delay="500" href="./blogs/self_Awareness_can_help_relationships_flourish.php">
                   <div class="div_blog">
                     <div class="row">
-                      <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive" alt="flourish_relationships_blog" loading=lazy>
                       </div>
                     </div>
@@ -2398,7 +2430,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/real_success.php">
                   <div class="div_blog">
                     <div class="row">
-                      <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive" alt="Real_success_blog" loading=lazy>
                       </div>
                     </div>
