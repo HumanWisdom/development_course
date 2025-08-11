@@ -2816,8 +2816,6 @@ animation-name: slideInRight;
 .btn_tff_width 
 {
   width: 314px !important;
-  border-radius: 35px;
-    height: 65px;
 }
 
 .btn_pricing {
@@ -2931,10 +2929,10 @@ animation-name: slideInRight;
 .div_coaches 
 {
   border-radius: 10px;
-  background: #FFF4E6;
-  padding: 10px;
-  width: 234px !important;
-  height: 287px !important;
+  background: #FCF2EC;
+  padding: 20px;
+  width: 254px !important;
+  height: 327px !important;
 }
 
 .div_coaches img
@@ -2948,22 +2946,20 @@ animation-name: slideInRight;
 
 .div_coaches.slick-slide 
 {
-  width: 234px !important;
-  height: 287px !important;
+  width: 254px !important;
+  height: 327px !important;
   margin: 0 40px 0 0 !important;
 }
 
 .div_blog
 {
   border-radius: 10px;
-  background: #FFF4E6;
+  background: rgba(232, 168, 128, 0.10);
   padding: 0;
   width: 470px !important;
   height: 370px !important;
 }
-.a, h4:hover{
-  color:#834B66;
-}
+
 .div_blog.slick-slide 
 {
   width: 470px !important;
@@ -3003,10 +2999,6 @@ animation-name: slideInRight;
   max-width: 100%;
   width: auto;
   object-fit: cover;
-}
-
-.owl-item{
-  margin-right: 20px !important;
 }
 
 .owl-carousel .owl-stage 
@@ -3178,7 +3170,7 @@ animation-name: slideInRight;
 .tab-content 
 {
   border-radius: 10px;
-  background: #FFF4E6;  
+  background: rgba(232, 168, 128, 0.20);  
   padding: 80px;
 }
 
@@ -3249,8 +3241,8 @@ padding:20px;
   margin: 0;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: transparent;
+  border: 1px solid #CB6171;
+  background: rgba(232, 168, 128, 0.10);
   position: relative;
 }
 
@@ -3260,24 +3252,16 @@ padding:20px;
   width: auto;
   height: 26px;
   border-radius: 10px;
-  background: var(--Linear,linear-gradient(180deg,#cb6171 100%,#e58d82 0));
+  background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%));
   padding: 4px 10px;
   position: absolute;
   top: -14px;
   right: 20px;
 }
-.btn-subscription-color{
-  background: var(--Linear, linear-gradient(180deg, #cb6171 100%, #e58d82 0));
-}
-.btn-subscription-border{
-  border: 1px solid #cb6171;
-      
-}
-.btn-subscription-border:hover {
-  border: 1px solid #cb6171;
-}
+
 .tab_faqs
 {
+  gap: 12px;
   border: 0;
 }
 
@@ -3291,6 +3275,7 @@ padding:20px;
 {
   padding: 0 0 20px 0;
   border: 0;
+  gap:12px;
   margin: 0;
   font-size: 15px;
   font-weight: 500;
@@ -3317,6 +3302,7 @@ padding:20px;
   padding: 0 0 20px 0;
   border: 0;
   margin: 0;
+  gap:12px;
   font-weight: 600;
   color: #834B66;
   text-decoration: none;
@@ -3368,26 +3354,14 @@ padding:20px;
 }
 
 .tab_faqs.nav-tabs>li.active>a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #834B66;
-  transition: all 0.3s ease;
+  display: none !important; /* Remove underline effect */
+  content: none !important;
 }
 
 /* Hover effect for FAQ tabs */
 .tab_faqs.nav-tabs>li>a:hover::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #CB6171;
-  transition: all 0.3s ease;
+  display: none !important; /* Remove underline effect */
+  content: none !important;
 }
 
 #accordion_faq .panel-title>a[aria-expanded=true]:after 
@@ -3940,7 +3914,7 @@ audio::-webkit-media-controls-enclosure
 .div_work_edu_health
 {
   border-radius: 10px;
-  background: #FFF4E6;
+  background: rgba(232, 168, 128, 0.20);
   padding: 0;
   /* width: 300px !important;
   height: 260px !important; */
@@ -3948,10 +3922,10 @@ audio::-webkit-media-controls-enclosure
   height: auto;
 }
 
-/* .div_work_edu_health h4 
+.div_work_edu_health h4 
 {
   padding: 20px; 
-} */
+}
 
 .div_work_edu_health img
 {
@@ -3962,7 +3936,7 @@ audio::-webkit-media-controls-enclosure
 
 .work_edu_health_outer > [class^="col-"]
 {
-  padding: 0 10px 0 14px;
+  padding: 0 20px 0 20px;
 }
 
 .aspects_outer > [class^="col-"]
@@ -4531,14 +4505,14 @@ background: #FCF2EC;
   line-height: 150%;
   color: #183C79;
 }
+
 .col_weh
 {
-  height: 80px;
+  height: 110px;
   display: flex;
   align-items: center;
-  justify-content: let;
+  justify-content: center;
 }
-
 .web_home_divcircle 
 {
   background: #FFF9EE;
@@ -4677,9 +4651,9 @@ background: #FCF2EC;
   background: #183C79;
 }
 
-/* #text{
+#text{
   display:none;
-  } */
+  }
   .btn-container{
     margin: auto;
     height:44px;
@@ -4899,14 +4873,7 @@ padding: 15px;
 
 @media (min-width: 1024px) {
   .element {
-    width: 66%; /* Keeps the element at 60% width */
-  }
-}
-
-
-@media (min-width: 1024px) {
-  .element1 {
-    width: 76%; /* Keeps the element at 60% width */
+    width: 60%; /* Keeps the element at 60% width */
   }
 }
 
@@ -5364,16 +5331,10 @@ margin-top: 10px !important;
   background:#CB6171 !important;
 }
 
-/* Hover effect for FAQ tabs */
+/* Hover effect for FAQ tabs - Underline removed */
 .tab_faqs.nav-tabs>li>a:hover::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #CB6171;
-  transition: all 0.3s ease;
+  display: none !important;
+  content: none !important;
 }
 
 /* Mobile FAQ styles */
@@ -5410,10 +5371,12 @@ margin-top: 10px !important;
 
 .tab_faqs.nav-tabs>li>a {
   transition: all 0.3s ease;
+  text-decoration: underline !important;
 }
 
 .tab_faqs.nav-tabs>li>a:hover {
   color: #834B66 !important;
+  text-decoration: none !important;
 }
 
 /* FAQ Tab Content Visibility */
@@ -5520,26 +5483,4 @@ margin-top: 10px !important;
 
 .w-336px {
   width: 336px !important;
-}
-.ofscroll{
-  overflow:scroll;
-  width: 103%;
-}
-
-button {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    cursor: pointer;
-    border: none;
-    background-color: #fff;
-    padding: 8px;
-    font-size: 18px;
-    line-height: 27px;
-    color: #cb6171;
-    text-align: center;
-}
-.opacity-50 {
-  opacity: 0.5;
 }
