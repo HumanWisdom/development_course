@@ -21,6 +21,13 @@
   top: -14px;
   right: 20px;
 }
+.a, h5:hover{
+  color:#834B66;
+}
+/* .a,img:hover{
+    color:red
+    
+} */
 .btn_tff_widthnew {
     width: 314px !important;
     border-radius: 35px;

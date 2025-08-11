@@ -706,11 +706,11 @@ require_once('./includes/security_config.php');
                 <div class="owl-controls">
                   <div class="owl-nav">
                     <a  class="sap" href="https://happierme.app/adults/testimonials">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h5 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                          View all Success stories
 
                          <i  style="margin-left:11px;"class="bi bi-chevron-right"></i>
-                      </h4>
+                      </h5>
                     </a>
                   </div>
                 </div>
@@ -1346,18 +1346,18 @@ require_once('./includes/security_config.php');
                   </div>
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
-Upskill your staff to be happier, emotionally intelligent and make better decisions.              </h5>
+                   <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
+Upskill your staff to be happier, emotionally intelligent and make better decisions.              </h3>
              </div>
              </div>
 <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
   <a  href=" https://happierme.app/pages/work.php"iaria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h4 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more
-                      <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
-                    </h4>
+                    <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                      Find out more <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                    </h5>
                   </a>
              </div>
              </div>
@@ -1387,17 +1387,17 @@ Upskill your staff to be happier, emotionally intelligent and make better decisi
                   </div>
                    <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
-Help students manage stress and anxiety, and to be happier and successful.             </h5>
+                  <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
+Help students manage stress and anxiety, and to be happier and successful.             </h3>
              </div>
              </div>
  <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
   <a href="https://happierme.app/pages/education.php"  aria-label="Explore the teenagers app" class="">
-                    <h4 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more
-                      <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
-                    </h4>
+                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                      Find out more  <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                    </h5>
                   </a>
                 </div>
              </div>
@@ -1415,11 +1415,11 @@ Help students manage stress and anxiety, and to be happier and successful.      
 
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col_weh">
-                      <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000">
+                      <h4 class="mt40px fs_24px fw_500 lh_150p fc_000000">
                         HappierMe for 
                           Healthcare
                         
-                      </h3>
+                      </h4>
 
                       
                       
@@ -1427,8 +1427,8 @@ Help students manage stress and anxiety, and to be happier and successful.      
                   </div>
                    <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                   <h5 class="mt0px fs_15px fw_400 lh_150p fc_000000 tleft" >
-Help students manage stress and anxiety, and to be happier and successful.             </h5>
+                   <h3 class="mt0px fs_15px fw_400 lh_150p fc_000000 tleft" >
+Help students manage stress and anxiety, and to be happier and successful.             </h3>
              </div>
              </div>
 
@@ -1436,10 +1436,10 @@ Help students manage stress and anxiety, and to be happier and successful.      
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">  
                       <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h4 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more
-                      <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
-                    </h4>
+                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                      Find out more  <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                    </h5>
                   </a>
             </div>
                 </div>
@@ -1508,10 +1508,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                 <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                   <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
-                      Find out more
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
-                    </h4>
+                    <h5 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                      Find out more  <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
+                      <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                    </h5>
                   </a>
                 </div>
               </div>
@@ -1857,11 +1857,12 @@ The HappierMe app for teens has been designed to help them manage their emotions
               <div class="owl-theme" >
                 <div class="owl-controls">
                   <div class="owl-nav">
-                    <a class="sap" id="view-all-coaches">
-                      <h4 class="mt40px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                    <a class="sap" href="https://happierme.app/adults/coach">
+                      <h5 class="mt40px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       Find out more
-                      <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
-                    </h4>
+                       <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy></a> -->
+                    </h5>
                     </a>
                   </div>
                 </div>
@@ -2311,7 +2312,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       <div class="row mtb15px">
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 mtb15px">
                           <a href="https://happierme.app/adults/wisdom-survey">
-                            <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                            <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                               Check your wellness score
                             </button>
                           </a>
@@ -2471,9 +2472,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="owl-controls">
                   <div class="owl-nav">
                     <a class="sap" id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
-                       <h4 class="mt40px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
-                      See all posts
-                      <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                       <h5 class="mt40px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                      See all posts 
+                      <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h4>
                     </a>
                   </div>
