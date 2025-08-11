@@ -9,13 +9,31 @@
      background-attachment: fixed;
   background-size: 100% 100%;
 }
-
-
-.btn_subscription:hover{
+.btn_subscription_trialindex 
+{
+  /* width: 114px; */
+  width: auto;
+  height: 26px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 4px 10px;
+  position: absolute;
+  top: -14px;
+  right: 20px;
+}
+.btn_tff_widthnew {
+    width: 314px !important;
+    border-radius: 35px;
+    height: 65px;
+}
+a:hover{
+    color: #fff;
+}
+/* .btn_subscription:hover{
     
     border: 1px solid #fff;
     
-}
+} */
 .btn_landing {
     margin: 0;
     border: 0;
@@ -90,6 +108,9 @@
     background: #FFFAF4;  
     border: 0.5px solid #CB6171; 
 }
+.sap:hover{
+ color:greenyellow;   
+}
 
 .btn-primarypop:hover{
   background-color: #FFEACF;
@@ -141,13 +162,9 @@
     background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 .sap:hover{
-    color:green;
+    color:rgb(233, 226, 226);
 }
-.img_aspects1 {
-    /* max-height: 155px; */
-    /* margin-right: 50px; */
-    margin-left: 28px;
-}
+
 
 .div_subscriptionnew {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
@@ -157,7 +174,7 @@
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
-    padding: 90px 20px;
+    padding:  40px;
 }
 .testnew-info1 h5 {
     font-size: 18px;

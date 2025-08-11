@@ -913,13 +913,6 @@ function updateNewsletterConfig(newConfig) {
     }
 }
 
-// Expose functions globally for debugging
-window.newsletterDebug = {
-    forcePopup: forceNewsletterPopup,
-    updateConfig: updateNewsletterConfig,
-    getConfig: () => NEWSLETTER_CONFIG
-};
-
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
     loginClick.addEventListener('click', function () {

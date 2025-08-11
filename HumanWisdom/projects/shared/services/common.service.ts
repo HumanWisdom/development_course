@@ -415,7 +415,13 @@ export class CommonService {
   SkipFeedBkSurvey(): Observable<any> {
     return this.http.post(this.path + '/SkipFeedBkSurvey',null)
   }
-   
+
+  InsertDailyPracticeVisitLog(progId: number): Observable<any> {
+    const body = {};
+
+    return this.http.post(this.path + `/AddDailyPractiseVisitLogs/${progId}`, body);
+  }
+
 
   updateSurveyData(data: any): void {
     this.surveySubject.next(data);
