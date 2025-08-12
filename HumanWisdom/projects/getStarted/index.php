@@ -67,6 +67,48 @@ require_once('./includes/security_config.php');
     .h5{
       margin-top:-8px;
     }
+   @media screen and (max-width: 768px) {
+     .subs_mobile_view {
+        margin-right: 35%;
+        padding: 8px;
+  
+     }
+
+      .mobile_view_topic_tile {
+        margin-bottom:10px !important;
+      }
+
+     .mobile_view_topic_parent{
+      margin-top:0px !important;
+     }
+     .mobile_view_topic {
+      margin-left:28px !important
+     }
+        
+    .mobile_view_testimonial {
+      margin-left:30px !important
+     }
+
+     .sap {
+      width: 60% !important;
+     }
+     
+     .btn_tff_width {
+      margin: 0;
+    border: 0;
+    width: 345px;
+    height: 65px;
+    border-radius: 36px;
+     }
+
+.btn_subscription 
+{
+      width: 300px !important;
+
+  gap:24px;
+}
+   }
+
     </style>
     
   </head>
@@ -241,29 +283,29 @@ require_once('./includes/security_config.php');
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-flex">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal">Mental wellbeing <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
             </div>
 
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"
  data-bs-toggle="modal" data-bs-target="#exampleModalbuild">Better relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 " data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button"
                
                class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal3">
@@ -281,29 +323,29 @@ require_once('./includes/security_config.php');
           </div>
         </div>
 
-        <div class="row center_flex mt20px" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-flex">
+        <div class="row center_flex mt20px mobile_view_topic_parent" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModal2">Learn meditation <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
             </div>
 
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
          <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModalbreak">Overcome harmful habits <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 " data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                                                    <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModalemotions">Manage emotions <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
@@ -319,29 +361,29 @@ require_once('./includes/security_config.php');
         </div>
 
 
-        <div class="row center_flex mt20px" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-flex">
+        <div class="row center_flex mt20px mobile_view_topic_parent" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                  <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModalself">Build self-awareness <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
             </div>
 
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  p0">
                                                    <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModalparent">Better parenting <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                    <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button" class="btn btn-primarypop"  data-bs-toggle="modal" data-bs-target="#exampleModalteen">HappierMe for Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
                 </div>
@@ -597,9 +639,9 @@ require_once('./includes/security_config.php');
   </div>
 
  <div class="row center_flex">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block ">
+          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block mobile_view_testimonial">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px mb10px" data-aos="fade-up" data-aos-delay="200">
               <div class="testimonial-cardnew">
       <div class="testimonial-card-section">
         <!-- <div class="quotation-comma">
@@ -629,7 +671,7 @@ require_once('./includes/security_config.php');
 
 
 
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px mb10px" data-aos="fade-up" data-aos-delay="200">
                <div class="testimonial-cardnew">
       <div class="testimonial-card-section">
         
@@ -656,7 +698,7 @@ require_once('./includes/security_config.php');
 
 
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 " data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
               <div class="testimonial-cardnew">
       <div class="testimonial-card-section">
         <!-- <div class="quotation-comma">
@@ -1378,7 +1420,7 @@ require_once('./includes/security_config.php');
                       </div>
                   </div>
                   <div class="row center_flex">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  downloadApp_slider_text pr20px">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  downloadApp_slider_text pr20px mb10px">
                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000   ">
                             Help students manage stress and anxiety, and to be happier and successful.             
                         </h3>
@@ -1412,7 +1454,7 @@ require_once('./includes/security_config.php');
                       </div>
                   </div>
                   <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text pr20px">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text pr20px mb10px">
                         <h3 class="mt0px fs_15px fw_400 lh_150p fc_000000 tleft">
                             Help students manage stress and anxiety, and to be happier and successful.             
                         </h3>
@@ -1931,10 +1973,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                       <div class="row">
-                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-2 p0 tright">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-responsive img_aspects1" alt="PATHWAY">
                           </div>
-                          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p10 tleft">
+                          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-10 p10 tleft">
                             <span class="fs_18px fw_500  fc_ffffff">
                             Expert guidance
                             </span>
@@ -1943,10 +1985,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                       <div class="row">
-                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-2 p0">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-responsive img_aspects1" alt="PATHWAY">
                           </div>
-                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12 col-10 p0 tleft">
                             <h3 style="margin-top:0px;" class="fs_18px fw_500  fc_ffffff">
                                 Personalised content to meet your goals
                             </h3>
@@ -1955,10 +1997,10 @@ The HappierMe app for teens has been designed to help them manage their emotions
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                       <div class="row">
-                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-2 p0 tright">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-responsive img_aspects1" alt="PATHWAY">
                           </div>
-                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p10 tleft">
+                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10 col-10 p10 tleft">
                             <h3 style="margin-top:0px;" class=" fs_18px fw_500  fc_ffffff"> Daily practices that fit your life</h3>
                           </div>
                       </div>
@@ -1970,7 +2012,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
             <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 plr20px">
                 <div class="row center_flex">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 subs_mobile_view">
 
                 <button class="btn_subscription">
                   <div class="row center_flex btn_subscription_trialindex">
@@ -2009,7 +2051,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 </button>
             </div>
             
-                          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+                          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 subs_mobile_view ">
 
 
                 <button class="btn_subscription">
@@ -3624,7 +3666,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg" class="img-responsive img_aspects" alt="PATHWAY">
                         </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
                            <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
                            <h5 class="review">Your private journal with questions for personal growth </h5>
                         </div>
@@ -3635,7 +3677,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg" class="img-responsive img_aspects" alt="PATHWAY">
                         </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
                            <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
                            <h5 class="review">Find support, share your thoughts and make friends </h5>
                         </div>
