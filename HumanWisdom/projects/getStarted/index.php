@@ -1321,135 +1321,120 @@ require_once('./includes/security_config.php');
             </div>
           </div>
         </div>
-
         <div class="row center_flex">
-          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11 col-11 p0 tcenter work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col-12 p10  work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                 <div class="div_work_edu_health">
                   <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_work.webp" class="img-responsive" alt="Work" loading=lazy>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col_weh">
-                      <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000">
-                       HappierMe for the Workplace
-                        <!-- <span class="fw_600">
-                          Work
-                        </span> -->
-                      </h3>
-                      
-                    </div>
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_work.webp" class="img-responsive" alt="Work" loading="lazy">
+                      </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                   <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
-Upskill your staff to be happier, emotionally intelligent and make better decisions.              </h3>
-             </div>
-             </div>
-<div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-  <a  href=" https://happierme.app/pages/work.php"iaria-label="Explore the teenagers app" class="">
-                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
-                    </h5>
-                  </a>
-             </div>
-             </div>
-              
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text" style="
+                        /* padding-left: 25px; */
+                        ">
+                        <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000 ">
+                            HappierMe for the Workplace
+                            <!-- <span class="fw_600">
+                              Work
+                              </span> -->
+                        </h3>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
+                        <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
+                            Upskill your staff to be happier, emotionally intelligent and make better decisions.              
+                        </h3>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
+                        <a href=" https://happierme.app/pages/work.php" iaria-label="Explore the teenagers app" class="">
+                            <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                            <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                              Find out more <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                              <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                            </h5>
+                        </a>
+                      </div>
+                  </div>
                 </div>
-                
             </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
                 <div class="div_work_edu_health">
                   <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_education.webp" class="img-responsive" alt="Education" loading=lazy>
-                    </div>
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_education.webp" class="img-responsive" alt="Education" loading="lazy">
+                      </div>
                   </div>
-
+                  <div class="row center_flex">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
+                        <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000">
+                            HappierMe for  
+                            Education
+                        </h3>
+                      </div>
+                  </div>
+                  <div class="row center_flex">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  downloadApp_slider_text pr20px">
+                        <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000   ">
+                            Help students manage stress and anxiety, and to be happier and successful.             
+                        </h3>
+                      </div>
+                  </div>
                   <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col_weh">
-                      <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000">
-                        HappierMe for  
-                          Education
-                        
-                      </h3>
-
-                        
-                    </div>
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
+                        <a href="https://happierme.app/pages/education.php" aria-label="Explore the teenagers app" class="">
+                            <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                              Find out more  <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                              <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                            </h5>
+                        </a>
+                      </div>
                   </div>
-                   <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000  tleft">
-Help students manage stress and anxiety, and to be happier and successful.             </h3>
-             </div>
-             </div>
- <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-  <a href="https://happierme.app/pages/education.php"  aria-label="Explore the teenagers app" class="">
-                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more  <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
-                    </h5>
-                  </a>
                 </div>
-             </div>
-             </div>
-               
             </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
                 <div class="div_work_edu_health">
                   <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_healthcare.webp" class="img-responsive" alt="Healthcare" loading=lazy>
-                    </div>
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_healthcare.webp" class="img-responsive" alt="Healthcare" loading="lazy">
+                      </div>
                   </div>
-
                   <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col_weh">
-                      <h4 class="mt40px fs_24px fw_500 lh_150p fc_000000">
-                        HappierMe for 
-                          Healthcare
-                        
-                      </h4>
-
-                      
-                      
-                    </div>
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
+                        <h4 class="mt40px fs_24px fw_500 lh_150p fc_000000">
+                            HappierMe for 
+                            Healthcare
+                        </h4>
+                      </div>
                   </div>
-                   <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                   <h3 class="mt0px fs_15px fw_400 lh_150p fc_000000 tleft" >
-Help students manage stress and anxiety, and to be happier and successful.             </h3>
-             </div>
-             </div>
-
-       <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">  
-                      <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
-                  <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more  <span  style="margin-left:10px;"class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
-                    </h5>
-                  </a>
-            </div>
+                  <div class="row">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text pr20px">
+                        <h3 class="mt0px fs_15px fw_400 lh_150p fc_000000 tleft">
+                            Help students manage stress and anxiety, and to be happier and successful.             
+                        </h3>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
+                        <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
+                            <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                            <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                              Find out more  <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                              <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                            </h5>
+                        </a>
+                      </div>
+                  </div>
                 </div>
-
-             </div>
-             </div>
             </div>
-
           </div>
         </div>
+
+       
       </section>
       <!-- /work_education_healtcare -->
       
