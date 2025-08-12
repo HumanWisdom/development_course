@@ -4879,9 +4879,9 @@ The HappierMe app for teens has been designed to help them manage their emotions
 
   <div class="modal fade product_view ofscroll" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
 
-    <div class="modal-dialog">
-      <div class="modal-content" style="width: 958px;">
-        <div class="modal-header d-block" style="float: right;">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="width: 96%;">
+        <div class="modal-header d-block" >
           <div class="row center_flex">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
@@ -4896,12 +4896,12 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <div class="row center_flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
                     <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
-                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 col-7 p0 center_flex ">
+                    <div class="col-lg-7 col-md-7 col-12 p0 center_flex ">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive display_m_none " loading="lazy" alt="performance">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
                     </div>
                     <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12 p0"></div>   -->
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5 p0">
+                    <div class="col-lg-5 col-md-5 col-12 p0">
                       <div class="box">
                         
                         <div class="row mt30px center_flex">
