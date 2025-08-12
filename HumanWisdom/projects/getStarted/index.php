@@ -4865,95 +4865,86 @@ The HappierMe app for teens has been designed to help them manage their emotions
    </div>
   </div>
 </div>
-<!-- </div>
-</div>
-</div>
-</div>
-</div> -->
-<!-- <A separate app, just for teenagers> -->
+  <!-- </div>
+  </div>
+  </div>
+  </div>
+  </div> -->
+  <!-- <A separate app, just for teenagers> -->
 
 
 
-<!-- <popup1> -->
+    <!-- <popup1> -->
 
   <div class="modal fade product_view ofscroll" id="product_view" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
 
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header d-block" style="float: right;">
-              <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-                <span class="bi bi-x"></span>
-              </a>
-              <div class="row center_flex">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-                  <div class=" back1">
-                    <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                  Bring HappierMe to your organization
-                </h4></div></div> -->
-                    <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12"><h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
-                  Connect with our specialists today and see how we can help you
-                </h4></div></div> -->
-                    <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 958px;">
+        <div class="modal-header d-block" style="float: right;">
+          <div class="row center_flex">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+
+              <a href="#" id="closebtn" data-bs-dismiss="modal" class="pull-right">
+                <h2 class="bi bi-x" style="color: black;"></h2>
+              </a> 
+            </div> 
+          </div>
+          <div class="row center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11 p0  ">
+              <div class=" back1">
+                <div class="row center_flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+                    <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 col-7 p0 center_flex ">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Isolation_Mode.webp" class="img-responsive display_m_none " loading="lazy" alt="performance">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+                    </div>
+                    <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12 p0"></div>   -->
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5 p0">
+                      <div class="box">
+                        
+                        <div class="row mt30px center_flex">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p10">
+                            <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc"> Sign up for our newsletter! </h1>
+                          </div>
                         </div>
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12 p0"></div>   -->
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
-                          <div class="box">
+                      </div>
+                      <div class="row mtb15px center_flex ">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p10">
+                          <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
+                        </div>
+                      </div>
+                      <div class="row center_flex mt40px aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p10">
+                          <form action="javascript:void(0);">
                             <div class="row">
-                              
-                            </div>
-                            <div class="row mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                                <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc"> Sign up for our newsletter! </h1>
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
+                                  <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
+                                  <div class="fc_icons">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_user.svg" class="img-responsive" alt="name">
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="row mtb15px">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                              <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
+                            <!-- <div class="row mt15px"> -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
+                                <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
+                                <div class="fc_icons">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_mail.svg" class="img-responsive" alt="email">
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                          <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0"><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
-                Subscribe to our newsletter!
-                </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
-                Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
-                          <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="100">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                              <form action="javascript:void(0);">
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
-                                      <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
-                                      <div class="fc_icons">
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_user.svg" class="img-responsive" alt="name">
-                                      </div>
-                                    </div>
-                                  </div>
+                            <!-- </div> -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
+                                <div class="row mt20px">
+                                  <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" href="../pages/splash_options.php"> Subscribe </button>
                                 </div>
-                                <!-- <div class="row mt15px"> -->
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
-                                    <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
-                                    <div class="fc_icons">
-                                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_mail.svg" class="img-responsive" alt="email">
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- </div> -->
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
-                                    <div class="row mt15px">
-                                      <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Subscribe </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>
+                              </div>
                             </div>
-                          </div>
+                          </form>
                         </div>
                       </div>
                     </div>
@@ -4964,6 +4955,9 @@ The HappierMe app for teens has been designed to help them manage their emotions
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  
 </html>
 
 
