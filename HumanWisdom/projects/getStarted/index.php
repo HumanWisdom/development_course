@@ -1982,8 +1982,8 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 </div>
             </div>
            
-            <div class="row center_flex mtb20px" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0">
+            <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 plr20px">
                 <div class="row center_flex">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
 
@@ -2063,11 +2063,12 @@ The HappierMe app for teens has been designed to help them manage their emotions
                   Cancel anytime.
                   
                 </span>
-                <span class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                  <a  href="https://happierme.app/pages/terms_conditions.php" class="fc_ffffff td_underline">
-                    Terms & Conditions
+               
+                  
+                  <a  href="https://happierme.app/pages/terms_conditions.php"> <span class="mtb0px fs_15px fw_400 lh_150p fc_ffffff td_underline">
+                    Terms & Conditions</span>
                   </a>
-                </span>
+                
                 
               </div>
             </div>
@@ -2342,9 +2343,9 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </h5>
 
                       <div class="row mtb15px">
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 mtb15px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb15px">
                           <a href="https://happierme.app/adults/wisdom-survey">
-                            <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+                            <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup">
                               Check your wellness score
                             </button>
                           </a>
