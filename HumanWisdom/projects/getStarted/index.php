@@ -1368,7 +1368,7 @@ require_once('./includes/security_config.php');
                 <div class="div_work_edu_health">
                   <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_work.webp" class="img-responsive" alt="Work" loading="lazy">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/work.svg" class="img-responsive" alt="Work" loading="lazy">
                       </div>
                   </div>
                   <div class="row">
@@ -1407,7 +1407,7 @@ require_once('./includes/security_config.php');
                 <div class="div_work_edu_health">
                   <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_education.webp" class="img-responsive" alt="Education" loading="lazy">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/education.svg" class="img-responsive" alt="Education" loading="lazy">
                       </div>
                   </div>
                   <div class="row center_flex">
@@ -1440,7 +1440,7 @@ require_once('./includes/security_config.php');
                 <div class="div_work_edu_health">
                   <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_healthcare.webp" class="img-responsive" alt="Healthcare" loading="lazy">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/healthcare.svg" class="img-responsive" alt="Healthcare" loading="lazy">
                       </div>
                   </div>
                   <div class="row">
