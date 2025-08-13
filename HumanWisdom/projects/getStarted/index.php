@@ -3595,7 +3595,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                   <h2 class="popuptitle">
                      Overcome stress and anxiety
                   </h2>
-                  <h5 class="para">Learn to address the root cause, and not just the symptoms.</h5>
+                  <h6 class="para">Learn to address the root cause, and not just the symptoms.</h5>
                </div>
             </div>
          </div>
@@ -3657,7 +3657,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                            <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                               Short videos
                            </h3>
-                           <h5 class="review">Wellbeing tips from trained coaches  </h5>
+                           <h6  class="review">Wellbeing tips from trained coaches  </h5>
                         </div>
                      </div>
                   </div>
@@ -3668,7 +3668,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
                            <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                           <h5 class="review">Your private journal with questions for personal growth </h5>
+                           <h6  class="review">Your private journal with questions for personal growth </h5>
                         </div>
                      </div>
                   </div>
@@ -3679,7 +3679,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
                            <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                           <h5 class="review">Find support, share your thoughts and make friends </h5>
+                           <h6  class="review">Find support, share your thoughts and make friends </h5>
                         </div>
                      </div>
                   </div>
@@ -3770,7 +3770,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <h2 class="popuptitle">
                     Build deeper relationships
                 </h2>
-                <h5 class="para">Learn to avoid and overcome relationship problems and build deeper connections.</h5>
+                <h6 class="para">Learn to avoid and overcome relationship problems and build deeper connections.</h5>
               </div>
           </div>
         </div>
@@ -3786,7 +3786,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
                             Guided programs
                         </h3>
-                        <h6 class="review">Covering Relationships, Emotional needs, Communication, Kindness  &nbsp;and Love </h6>
+                        <h6 class="review" style="word-spacing: 10px;">Covering Relationships, Emotional needs, Communication, Kindness and Love </h6>
                       </div>
                   </div>
                 </div>
@@ -3831,7 +3831,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">
                             Short videos
                         </h3>
-                        <h5 class="review">Relationship tips from trained coaches  </h5>
+                        <h6  class="review">Relationship tips from trained coaches  </h5>
                       </div>
                   </div>
                 </div>
@@ -3842,7 +3842,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                        <h5 class="review">Your private journal with questions  &nbsp; &nbsp;for personal growth </h5>
+                        <h6  class="review">Your private journal with questions for personal growth </h5>
                       </div>
                   </div>
                 </div>
@@ -3853,7 +3853,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                        <h5 class="review">Find support, share your thoughts &nbsp;and make friends    </h5>
+                        <h6  class="review">Find support, share your thoughts and make friends    </h5>
                       </div>
                   </div>
                 </div>
@@ -3925,7 +3925,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
               <h2 class="popuptitle">
                   Build a meditation practice
               </h2>
-              <h5 class="para">Learn how to get started and reap the benefits of meditation.</h5>
+              <h6 class="para">Learn how to get started and reap the benefits of meditation.</h5>
             </div>
         </div>
       </div>
@@ -3954,7 +3954,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                           Nature meditations
                         </h3>
-                        <h6  class="review">Explore a fresh way of connecting  &nbsp; with nature  </h5>
+                        <h6  class="review">Explore a fresh way of connecting  with nature  </h5>
                     </div>
                   </div>
               </div>
@@ -4024,7 +4024,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <h2 class="popuptitle">
                   Build soft skills for work success
                 </h2>
-                <h5 class="para">Learn to be a better leader and succeed at work.</h5>
+                <h6 class="para">Learn to be a better leader and succeed at work.</h5>
             </div>
           </div>
         </div>
@@ -4040,7 +4040,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
                             Guided programs
                           </h3>
-                          <h6 class="review">Covering Work, Leadership, Critical thinking, Decision making, Communication, Success and  &nbsp; &nbsp; failure, and Bullying  </h6>
+                          <h6 class="review">Covering Work, Leadership, Critical thinking, Decision making, Communication, Success and   failure, and Bullying  </h6>
                       </div>
                     </div>
                 </div>
@@ -4053,7 +4053,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
                             Hundreds of podcasts
                           </h3>
-                          <h6  class="review">Conversations on leadership, &nbsp; &nbsp; dealing with work pressures,&nbsp; &nbsp; decision making, finding your&nbsp; &nbsp; purpose and bullying </h5>
+                          <h6  class="review">Conversations on leadership,  dealing with work pressures, decision making, finding your purpose and bullying </h5>
                       </div>
                     </div>
                 </div>
@@ -4064,7 +4064,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                          <h5 class="review">your private journal for reflection  &nbsp; &nbsp;and personal growth </h5>
+                          <h6  class="review">your private journal for reflection  and personal growth </h5>
                       </div>
                     </div>
                 </div>
@@ -4081,7 +4081,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">
                             Blog
                           </h3>
-                          <h5 class="review">In-depth articles on being happier  &nbsp; &nbsp; &nbsp; &nbsp; at work and developing your people skills  </h5>
+                          <h6  class="review">In-depth articles on being happier   at work and developing your people skills  </h5>
                       </div>
                     </div>
                 </div>
@@ -4092,7 +4092,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000"> Coaching</h3>
-                          <h5 class="review">Trained coaches for personalised support </h5>
+                          <h6  class="review">Trained coaches for personalised support </h5>
                       </div>
                     </div>
                 </div>
@@ -4103,7 +4103,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">Self-awareness</h3>
-                          <h5 class="review">Exercises to develop your self-awareness and emotional  &nbsp; &nbsp;intelligence   </h5>
+                          <h6  class="review">Exercises to develop your self-awareness and emotional  intelligence   </h5>
                       </div>
                     </div>
                 </div>
@@ -4172,7 +4172,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <h2 class="popuptitle">
                     Break harmful habits
                 </h2>
-                <h5 class="para">Understand why harmful habits develop and how to break free from them</h5>
+                <h6 class="para">Understand why harmful habits develop and how to break free from them</h5>
               </div>
           </div>
         </div>
@@ -4201,7 +4201,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                             Hundreds of podcasts
                           </h3>
-                          <h6  class="review">Discussions on why addiction  &nbsp; &nbsp; &nbsp; &nbsp;occurs and how to overcome it </h5>
+                          <h6  class="review">Discussions on why addiction occurs and how to overcome it </h5>
                       </div>
                     </div>
                 </div>
@@ -4212,7 +4212,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
-                          <h5 class="review">In-depth articles on understanding and overcoming harmful habits </h5>
+                          <h6  class="review">In-depth articles on understanding and overcoming harmful habits </h5>
                       </div>
                     </div>
                 </div>
@@ -4229,7 +4229,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                             Breathing exercises
                           </h3>
-                          <h5 class="review">To regain control of your emotions</h5>
+                          <h6  class="review">To regain control of your emotions</h5>
                       </div>
                     </div>
                 </div>
@@ -4240,7 +4240,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Coaching</h3>
-                          <h5 class="review">Speak to one of our trained coaches &nbsp; &nbsp; for extra support </h5>
+                          <h6  class="review">Speak to one of our trained coaches  for extra support </h5>
                       </div>
                     </div>
                 </div>
@@ -4251,7 +4251,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                          <h5 class="review">Find support, share your thoughts &nbsp; &nbsp; and make friends  </h5>
+                          <h6  class="review">Find support, share your thoughts  and make friends  </h5>
                       </div>
                     </div>
                 </div>
@@ -4319,7 +4319,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                <h2 class="popuptitle">
                   Manage your emotions
                </h2>
-               <h5 class="para">Learn to understand and master your emotions.</h5>
+               <h6 class="para">Learn to understand and master your emotions.</h5>
             </div>
          </div>
       </div>
@@ -4348,7 +4348,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                           Hundreds of podcasts
                       </h3>
-                      <h6  class="review">Conversations on understanding   &nbsp; &nbsp; and managing emotions </h5>
+                      <h6  class="review">Conversations on understanding    and managing emotions </h5>
                     </div>
                 </div>
               </div>
@@ -4359,7 +4359,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                       <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
-                      <h5 class="review">
+                      <h6  class="review">
                           Understand your feelings and where they come from 
                       </h5>
                     </div>
@@ -4378,7 +4378,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                           Breathing exercises 
                       </h3>
-                      <h5 class="review">To regain control of your emotions </h5>
+                      <h6  class="review">To regain control of your emotions </h5>
                     </div>
                 </div>
               </div>
@@ -4389,7 +4389,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                       <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Short videos</h3>
-                      <h5 class="review">Quick tips from trained coaches on regulating emotions </h5>
+                      <h6  class="review">Quick tips from trained coaches on regulating emotions </h5>
                     </div>
                 </div>
               </div>
@@ -4400,7 +4400,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                       <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Community forum</h3>
-                      <h5 class="review">Find support, share your thoughts   &nbsp;&nbsp; &nbsp; &nbsp;and make friends   </h5>
+                      <h6  class="review">Find support, share your thoughts   and make friends   </h5>
                     </div>
                 </div>
               </div>
@@ -4471,7 +4471,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <h2 class="popuptitle">
                     Develop your self-awareness
                 </h2>
-                <h5 class="para">A life-changing skill for a happier and more successful life</h5>
+                <h6 class="para">A life-changing skill for a happier and more successful life</h5>
               </div>
           </div>
         </div>
@@ -4511,7 +4511,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
-                          <h5 class="review">In-depth articles on the benefits of self-awareness </h5>
+                          <h6  class="review">In-depth articles on the benefits of self-awareness </h5>
                       </div>
                     </div>
                 </div>
@@ -4528,7 +4528,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                             Guided journaling
                           </h3>
-                          <h5 class="review">Exercises to learn about thoughts  &nbsp; &nbsp;  &nbsp; &nbsp;and feelings</h5>
+                          <h6  class="review">Exercises to learn about thoughts  and feelings</h5>
                       </div>
                     </div>
                 </div>
@@ -4539,7 +4539,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Guided meditations</h3>
-                          <h5 class="review">To feel calm, find clarity and be your best self</h5>
+                          <h6  class="review">To feel calm, find clarity and be your best self</h5>
                       </div>
                     </div>
                 </div>
@@ -4550,7 +4550,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
-                          <h5 class="review">Helpful tips to discover who you are  </h5>
+                          <h6  class="review">Helpful tips to discover who you are  </h5>
                       </div>
                     </div>
                 </div>
@@ -4624,7 +4624,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                 <h2 class="popuptitle">
                     Supporting parents to flourish
                 </h2>
-                <h5 class="para">Learn how to look after yourself, and be the best parent you can be.</h5>
+                <h6 class="para">Learn how to look after yourself, and be the best parent you can be.</h5>
               </div>
           </div>
         </div>
@@ -4653,7 +4653,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                             Hundreds of podcasts
                           </h3>
-                          <h6  class="review">On dealing with overwhelm, talking  &nbsp;&nbsp; &nbsp; &nbsp;to kids, mistakes to avoid and more </h5>
+                          <h6 style="word-spacing: 5px;" class="review">On dealing with overwhelm, talking  to kids, mistakes to avoid and more </h5>
                       </div>
                     </div>
                 </div>
@@ -4664,7 +4664,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Blog</h3>
-                          <h5 class="review">In-depth articles on parenting </h5>
+                          <h6  class="review">In-depth articles on parenting </h5>
                       </div>
                     </div>
                 </div>
@@ -4681,7 +4681,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                             Community forum
                           </h3>
-                          <h5 class="review">Find support, share your thoughts  &nbsp;&nbsp; &nbsp; &nbsp;and make friends </h5>
+                          <h6  class="review">Find support, share your thoughts  and make friends </h5>
                       </div>
                     </div>
                 </div>
@@ -4692,7 +4692,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Breathing exercises</h3>
-                          <h5 class="review">To deal with stressful situations </h5>
+                          <h6  class="review">To deal with stressful situations </h5>
                       </div>
                     </div>
                 </div>
@@ -4703,7 +4703,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
-                          <h5 class="review">Quick tips on parenting from trained coaches   </h5>
+                          <h6  class="review">Quick tips on parenting from trained coaches   </h5>
                       </div>
                     </div>
                 </div>
@@ -4779,7 +4779,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                <h2 class="popuptitle">
                   A separate app, just for teenagers
                </h2>
-               <h5 class="para">Supporting teenagers to be happier and succeed in life</h5>
+               <h6 class="para">Supporting teenagers to be happier and succeed in life</h5>
             </div>
          </div>
       </div>
@@ -4808,7 +4808,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <h3  style="margin-top:0px;"class="fs_18px fw_600  fc_000000">
                            Hundreds of podcasts
                         </h3>
-                        <h6  class="review">On dealing with common &nbsp;&nbsp; &nbsp; &nbsp; challenges teenagers face </h5>
+                        <h6   style="word-spacing: 5px;"class="review">On dealing with common  challenges teenagers face </h5>
                      </div>
                   </div>
                </div>
@@ -4819,7 +4819,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                      </div>
                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Feel better now</h3>
-                        <h5 class="review">Breathing and tapping exercises for quick relief </h5>
+                        <h6  class="review">Breathing and tapping exercises for quick relief </h5>
                      </div>
                   </div>
                </div>
@@ -4836,7 +4836,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">
                            Community forum
                         </h3>
-                        <h5 class="review">Find support, share your thoughts &nbsp;&nbsp; &nbsp; &nbsp; and make friends </h5>
+                        <h6  style="word-spacing: px;" class="review">Find support, share your thoughts  and make friends </h5>
                      </div>
                   </div>
                </div>
@@ -4847,7 +4847,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                      </div>
                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000"> Teen talk</h3>
-                        <h5 class="review">Conversations with teens from  &nbsp;&nbsp; &nbsp; &nbsp;around the world </h5>
+                        <h6 style="word-spacing: 5px;" class="review">Conversations with teens from  around the world </h5>
                      </div>
                   </div>
                </div>
@@ -4858,7 +4858,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                      </div>
                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h3  style="margin-top:0px;"class=" fs_18px fw_600  fc_000000">Short videos</h3>
-                        <h5 class="review">Quick tips from trained coaches to &nbsp;&nbsp; &nbsp; &nbsp; help teens flourish in life   </h5>
+                        <h6  class="review">Quick tips from trained coaches to  help teens flourish in life   </h5>
                      </div>
                   </div>
                </div>
