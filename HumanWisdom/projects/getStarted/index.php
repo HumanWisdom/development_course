@@ -1414,13 +1414,12 @@ require_once('./includes/security_config.php');
                   <div class="row center_flex">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                         <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000">
-                            HappierMe for  
-                            Education
+                            HappierMe for Education
                         </h3>
                       </div>
                   </div>
                   <div class="row center_flex">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  downloadApp_slider_text pr20px mb10px">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  downloadApp_slider_text pr20px ">
                         <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000   ">
                             Help students manage stress and anxiety, and to be happier and successful.             
                         </h3>
@@ -1448,14 +1447,13 @@ require_once('./includes/security_config.php');
                   <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                         <h4 class="mt40px fs_24px fw_500 lh_150p fc_000000">
-                            HappierMe for 
-                            Healthcare
+                            HappierMe for Healthcare
                         </h4>
                       </div>
                   </div>
                   <div class="row">
-                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text pr20px mb10px">
-                        <h3 class="mt0px fs_15px fw_400 lh_150p fc_000000 tleft">
+                      <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text pr20px ">
+                        <h3 class="mtb0px fs_15px fw_400 lh_150p fc_000000 tleft">
                             Help students manage stress and anxiety, and to be happier and successful.             
                         </h3>
                       </div>
