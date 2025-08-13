@@ -148,6 +148,41 @@ export class DailyCheckInLandingPage implements OnInit {
   }
 
   dailyCheckInRowClick(item) {
+    const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
+    const isSubscribed = localStorage.getItem("Subscriber") === '1' || localStorage.getItem("Subscriber") === 'T';
+    const noOfDPVisits = parseInt(localStorage.getItem('NoOfDPVisits') || '0');
+    const alreadyVisited = sessionStorage.getItem('dpSessionVisited');
+
+    const isTeenagerRoute = this.router.url.includes('/teenagers/');
+    const progId = isTeenagerRoute ? 11 : 9;
+    const trialRedirectPath = isTeenagerRoute
+      ? '/teenagers/subscription/start-your-free-trial'
+      : '/subscription/start-your-free-trial';
+
+    // Apply only for logged-in but not subscribed users
+    if (isLoggedIn && !isSubscribed) {
+
+      // First visit in this session → call API + increment
+      if (!alreadyVisited) {
+        this.commonService.InsertDailyPracticeVisitLog(progId).subscribe({
+          next: (res) => {
+            console.log('API Success:', res);
+            const current = parseInt(localStorage.getItem('NoOfDPVisits') || '0');
+            localStorage.setItem('NoOfDPVisits', (current + 1).toString());
+          },
+          error: (err) => console.error('API Failed:', err)
+        });
+
+        sessionStorage.setItem('dpSessionVisited', 'T');
+      }
+
+      // Limit reached → redirect
+      if (noOfDPVisits >= 2) {
+        this.router.navigate([trialRedirectPath]);
+        return; // Stop here
+      }
+    }
+
     this.logeventservice.logEvent('click_emoji_' + item.Expression.toString());
     SharedService.setDataInLocalStorage('dailyCheckIn', JSON.stringify(item));
     this.router.navigate([SharedService.getUrlfromFeatureName('daily-checkin-save')]);
