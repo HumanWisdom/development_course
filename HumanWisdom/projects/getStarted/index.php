@@ -150,7 +150,6 @@ require_once('./includes/security_config.php');
                 src="https://d1tenzemoxuh75.cloudfront.net/website/videos/launch.mp4#t=1"
                 type="video/mp4">
             </video>  -->
-            <!-- <iframe  width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>  -->
                <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>  -->
               <img style="width:100%;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/Adults+teenagers+2.svg" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
@@ -1369,7 +1368,7 @@ require_once('./includes/security_config.php');
                 <div class="div_work_edu_health">
                   <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_work.webp" class="img-responsive" alt="Work" loading="lazy">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/work.svg" class="img-responsive" alt="Work" loading="lazy">
                       </div>
                   </div>
                   <div class="row">
@@ -1408,7 +1407,7 @@ require_once('./includes/security_config.php');
                 <div class="div_work_edu_health">
                   <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_education.webp" class="img-responsive" alt="Education" loading="lazy">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/education.svg" class="img-responsive" alt="Education" loading="lazy">
                       </div>
                   </div>
                   <div class="row center_flex">
@@ -1441,7 +1440,7 @@ require_once('./includes/security_config.php');
                 <div class="div_work_edu_health">
                   <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tile_healthcare.webp" class="img-responsive" alt="Healthcare" loading="lazy">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/healthcare.svg" class="img-responsive" alt="Healthcare" loading="lazy">
                       </div>
                   </div>
                   <div class="row">
@@ -3784,7 +3783,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
                             Guided programs
                         </h3>
-                        <h6 class="review" style="word-spacing: 10px;">Covering Relationships, Emotional needs, Communication, Kindness and Love </h6>
+                        <h6 class="review" >Covering Relationships, Emotional needs, Communication, Kindness and Love </h6>
                       </div>
                   </div>
                 </div>
