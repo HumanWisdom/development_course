@@ -150,7 +150,6 @@ require_once('./includes/security_config.php');
                 src="https://d1tenzemoxuh75.cloudfront.net/website/videos/launch.mp4#t=1"
                 type="video/mp4">
             </video>  -->
-            <!-- <iframe  width="450" height="451" src="https://www.youtube.com/embed/Zv5SN0TfnXQ?si=KWWbhGLl2prBDPRp&rel=0&loop=1" title="YouTube video player"  class="cvideo_a land-iframe-sec" frameborder="0"   ></iframe> -->
             <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>  -->
                <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>  -->
               <img style="width:100%;height:auto;" src="https://d1tenzemoxuh75.cloudfront.net/website/Adults+teenagers+2.svg" class="img-responsive w100p display_m_none" loading="lazy"  alt="performance">
