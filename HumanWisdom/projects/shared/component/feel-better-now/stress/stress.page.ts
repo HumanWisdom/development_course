@@ -12,17 +12,21 @@ import { NavigationService } from '../../../../shared/services/navigation.servic
 export class StressPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
-  mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
   isAdults = true;
+  isSubscribed = false;
 
-  constructor(private location: Location, private router: Router,private navigationService: NavigationService) { }
+  constructor(private location: Location, private router: Router, private navigationService: NavigationService) { }
 
   ngOnInit() {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
+
+    const subValue = localStorage.getItem('Subscriber');
+    this.isSubscribed = subValue === '1' || subValue === 'T';
   }
 
   getclcickevent(event) {
@@ -35,7 +39,7 @@ export class StressPage implements OnInit {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.defaultGoBack();
-    }else{
+    } else {
       this.router.navigate([url]);
     }
   }
@@ -50,41 +54,65 @@ export class StressPage implements OnInit {
   }
 
 
-  routeVideoaudio(type, url, title = '') {
-    if(type === 'video') {
-     this.router.navigate([url, 'F', title])
-    }else{
-      let concat = encodeURIComponent(url.replaceAll('/','~'));
-      if ( SharedService.ProgramId == ProgramType.Teenagers) {
-        this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title])
+  //   routeVideoaudio(type, url, title = '') {
+  //     if(type === 'video') {
+  //      this.router.navigate([url, 'F', title])
+  //     }else{
+  //       let concat = encodeURIComponent(url.replaceAll('/','~'));
+  //       if ( SharedService.ProgramId == ProgramType.Teenagers) {
+  //         this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title])
+  //       }
+  //       else{
+  //         this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
+  //       }
+  //     }
+  //  }
+  routeVideoaudio(type: string, url: string, title = '') {
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+
+    if (isLoggedIn && this.isSubscribed) {
+      // Normal flow
+      if (type === 'video') {
+        this.router.navigate([url, 'F', title]); // video route
+      } else {
+        let concat = encodeURIComponent(url.split('/').join('~'));
+        if (SharedService.ProgramId === ProgramType.Teenagers) {
+          this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title]);
+        } else {
+          this.router.navigate(['adults/audiopage/', concat, '1', 'F', title]);
+        }
       }
-      else{
-        this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
-      }
+    } else {
+      // Redirect to trial page
+      const isTeenagerRoute = this.router.url.includes('/teenagers/');
+      const trialRedirectPath = isTeenagerRoute
+        ? '/teenagers/subscription/start-your-free-trial'
+        : '/subscription/start-your-free-trial';
+      this.router.navigate([trialRedirectPath]);
     }
- }
+  }
 
- determineVideoUrl(url): string {
-  if (SharedService.ProgramId == ProgramType.Teenagers) {
-    return `/teenagers/videopage/${url}`;
-  } else {
-    return `/adults/videopage/${url}`;
+  determineVideoUrl(url): string {
+    if (SharedService.ProgramId == ProgramType.Teenagers) {
+      return `/teenagers/videopage/${url}`;
+    } else {
+      return `/adults/videopage/${url}`;
+    }
   }
-}
 
-determineRouterLink(data){
-  if (SharedService.ProgramId == ProgramType.Teenagers) {
-    this.router.navigateByUrl(`/teenagers/${data}`);
-  } else {
-    this.router.navigateByUrl(`/adults/${data}`);
+  determineRouterLink(data) {
+    if (SharedService.ProgramId == ProgramType.Teenagers) {
+      this.router.navigateByUrl(`/teenagers/${data}`);
+    } else {
+      this.router.navigateByUrl(`/adults/${data}`);
+    }
   }
-}
-determinePathway(data){
-  if (SharedService.ProgramId == ProgramType.Teenagers) {
-    this.router.navigate([`/teenagers/${data}`]);
-  } else {
-    this.router.navigate([`/adults/${data}`]);
+  determinePathway(data) {
+    if (SharedService.ProgramId == ProgramType.Teenagers) {
+      this.router.navigate([`/teenagers/${data}`]);
+    } else {
+      this.router.navigate([`/adults/${data}`]);
+    }
   }
-}
 
 }
