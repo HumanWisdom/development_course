@@ -3786,7 +3786,7 @@ The HappierMe app for teens has been designed to help them manage their emotions
                         <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
                             Guided programs
                         </h3>
-                        <h6 class="review" style="word-spacing: 10px;">Covering Relationships, Emotional needs, Communication, Kindness and Love </h6>
+                        <h6 class="review" >Covering Relationships, Emotional needs, Communication, Kindness and Love </h6>
                       </div>
                   </div>
                 </div>
