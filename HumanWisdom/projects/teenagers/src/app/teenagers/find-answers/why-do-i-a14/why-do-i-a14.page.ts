@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 export class WhyDoIA14Page implements OnInit {
   isAdults = false;
   isSubscriber = false;
+  videoLink='https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/modules/social-media/videos/1.2.mp4'  
+  title="The pressure to conform"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/introduction_01.jpg"
+  
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
