@@ -67,29 +67,40 @@ export class StressPage implements OnInit {
   //       }
   //     }
   //  }
-  routeVideoaudio(type: string, url: string, title = '') {
+  routeVideoaudio(type: string, url: string, title = '', event?: MouseEvent) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
     const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
 
-    if (isLoggedIn && this.isSubscribed) {
-      // Normal flow
-      if (type === 'video') {
-        this.router.navigate([url, 'F', title]); // video route
-      } else {
-        let concat = encodeURIComponent(url.split('/').join('~'));
-        if (SharedService.ProgramId === ProgramType.Teenagers) {
-          this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title]);
-        } else {
-          this.router.navigate(['adults/audiopage/', concat, '1', 'F', title]);
-        }
-      }
-    } else {
-      // Redirect to trial page
+    if (!isLoggedIn || !this.isSubscribed) {
       const isTeenagerRoute = this.router.url.includes('/teenagers/');
       const trialRedirectPath = isTeenagerRoute
         ? '/teenagers/subscription/start-your-free-trial'
         : '/subscription/start-your-free-trial';
       this.router.navigate([trialRedirectPath]);
+      return;
     }
+
+    if (type === 'video') {
+      this.router.navigate([url, 'F', title]);
+    } else if (type === 'audio') {
+      let concat = encodeURIComponent(url.split('/').join('~'));
+      if (SharedService.ProgramId === ProgramType.Teenagers) {
+        this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title]);
+      } else {
+        this.router.navigate(['adults/audiopage/', concat, '1', 'F', title]);
+      }
+    }else if (type === 'page') {
+  if (SharedService.ProgramId === ProgramType.Teenagers) {
+    this.router.navigate(['/teenagers/feel-better-now', url]);
+  } else {
+    this.router.navigate(['/adults/feel-better-now', url]);
+  }
+}
+
   }
 
   determineVideoUrl(url): string {
@@ -100,13 +111,25 @@ export class StressPage implements OnInit {
     }
   }
 
-  determineRouterLink(data) {
+determineRouterLink(data) {
+  if (!this.isSubscribed) {
+    // Not subscribed → trial page
     if (SharedService.ProgramId == ProgramType.Teenagers) {
-      this.router.navigateByUrl(`/teenagers/${data}`);
+      this.router.navigateByUrl('/teenagers/subscription/start-your-free-trial');
     } else {
-      this.router.navigateByUrl(`/adults/${data}`);
+      this.router.navigateByUrl('/subscription/start-your-free-trial');
     }
+    return;
   }
+
+  // Subscribed → normal navigation
+  if (SharedService.ProgramId == ProgramType.Teenagers) {
+    this.router.navigateByUrl(`/teenagers/${data}`);
+  } else {
+    this.router.navigateByUrl(`/adults/${data}`);
+  }
+}
+
   determinePathway(data) {
     if (SharedService.ProgramId == ProgramType.Teenagers) {
       this.router.navigate([`/teenagers/${data}`]);
