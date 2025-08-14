@@ -206,7 +206,7 @@ Here you will find easy to use tools to manage your emotions and mental health, 
         </div>
 
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0">
+          <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0">
             <!-- <video id="homeVideo" controls playinline class="w100p"
               poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
               controlsList="nodownload">
