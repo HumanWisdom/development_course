@@ -716,7 +716,7 @@ function testNewsletterPopup() {
 
 // Newsletter popup configuration
 const NEWSLETTER_CONFIG = {
-    delayAfterPreloader: 8000, // 5 seconds after preloader finishes
+    delayAfterPreloader: 2000, // 5 seconds after preloader finishes
     fallbackDelay: 50000, // 10 seconds as fallback
     checkInterval: 100, // Check interval for preloader status
     debug: true // Enable debug logging
