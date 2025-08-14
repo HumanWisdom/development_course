@@ -29309,6 +29309,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   bottom: -1px;
   width: 100%;
   z-index: 98;
+  right: 0;
 }
 
 .btn_gqtns_std
@@ -37995,3 +37996,28 @@ span
   }
 }
 
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1351px !important;
+    }
+}
+
+.fade.in {
+  opacity:1  !important;
+}
+/* @media (min-width: 992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 960px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .container, .container-md, .container-sm {
+        max-width: 720px !important;
+    }
+}
+@media (min-width: 576px) {
+    .container, .container-sm {
+        max-width: 540px !important;
+    }
+} */
