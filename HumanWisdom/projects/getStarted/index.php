@@ -107,6 +107,16 @@ require_once('./includes/security_config.php');
 
   gap:24px;
 }
+.fs27px{
+  font-size: 27px !important;
+}
+.w-335px{
+  width: 335px !important;
+}
+.mbtn_landing{
+  width: 335px;
+    height: 48px;
+}
    }
 
     </style>
@@ -184,7 +194,7 @@ require_once('./includes/security_config.php');
 
             <div class="row mt30px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc">
+                <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc fs27px">
                 Understand your mind. Transform your life.       
                 </h1>
               </div>
@@ -193,7 +203,7 @@ require_once('./includes/security_config.php');
             <div class="row mtb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
-                <h2 class="mtb0px fs_18px fw_400 lh_140p fc_000000 ta_lc">
+                <h2 class="mtb0px fs_18px fw_400 lh_140p fc_000000 ta_lc w-335px">
                 A happier mind starts with understanding it. We support you to manage your emotions, build stronger relationships, and handle life with more clarity and calm. </h2>
 
               </div>
@@ -244,7 +254,7 @@ require_once('./includes/security_config.php');
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
                   <a href="https://happierme.app/pages/splash_options.php"  class="">
-                    <button class="fs_21px fw_500 lh_140p fc_ffffff btn_landing" >
+                    <button class="fs_21px fw_500 lh_140p fc_ffffff btn_landing mbtn_landing" >
                      Try HappierMe for free
                     </button>
                   </a>
