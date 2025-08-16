@@ -10,13 +10,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
- 
+
       - name: Install dependencies
         run: |
           cd HumanWisdom/projects/getStarted
@@ -36,36 +36,10 @@ jobs:
           mkdir -p builds/compressed
           tar -czf builds/compressed/website.tgz projects/getStarted
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4.4.0
-        with:
-          name: website-artifact
-          path: HumanWisdom/builds/compressed/website.tgz
-
-  website-deploy:
-    runs-on: self-hosted
-    needs: build-website
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4.1.5
-        with:
-          name: website-artifact
-
-      - name: Copy artifact to remote server
-        uses: appleboy/scp-action@v0.1.3
-        with:
-          host: ${{ secrets.STAGING_HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.NEWSERVERKEY }}
-          source: "website.tgz"
-          target: "builds/compressed/${{ github.run_id }}"
-
-      - name: Deploy on remote server
+      - name: Deploy locally
         run: |
-            sudo rm -rf builds/uncompressed/${{ github.run_id }}
-            sudo mkdir -p builds/uncompressed/${{ github.run_id }}
-            sudo tar -zxf builds/compressed/${{ github.run_id }}/website.tgz -C builds/uncompressed/${{ github.run_id }}
-            sudo rm -rf /var/www/html/getStarted/
-            sudo mv builds/uncompressed/${{ github.run_id }}/projects/getStarted /var/www/html/
-            sudo chown -R ubuntu:ubuntu /var/www/html/getStarted
+          mkdir -p builds/uncompressed/${{ github.run_id }}
+          tar -zxf HumanWisdom/builds/compressed/website.tgz -C builds/uncompressed/${{ github.run_id }}
+          sudo rm -rf /var/www/html/getStarted/
+          sudo mv builds/uncompressed/${{ github.run_id }}/projects/getStarted /var/www/html/
+          sudo chown -R ubuntu:ubuntu /var/www/html/getStarted
