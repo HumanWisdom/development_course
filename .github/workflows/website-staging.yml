@@ -67,9 +67,6 @@ jobs:
 
       - name: Deploy on remote server
         run: |
-            echo "${{ secrets.NEWSERVERKEY }}" > testkey.pem
-            chmod 600 testkey.pem
-            ssh -i testkey.pem ubuntu@172.31.48.138
             sudo rm -rf builds/uncompressed/${{ github.run_id }}
             sudo mkdir -p builds/uncompressed/${{ github.run_id }}
             sudo tar -zxf builds/compressed/${{ github.run_id }}/website.tgz -C builds/uncompressed/${{ github.run_id }}
