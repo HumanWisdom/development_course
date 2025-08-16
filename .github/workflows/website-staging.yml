@@ -43,7 +43,7 @@ jobs:
           path: HumanWisdom/builds/compressed/website.tgz
 
   website-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build-website
 
     steps:
