@@ -5,13 +5,10 @@ on:
     branches: [dev]
 
 jobs:
-  build-website:
+  build:
     runs-on: self-hosted
 
     steps:
-      - name: Cleanup builds before checkout
-        run: sudo rm -rf /home/ubuntu/actions-runner/_work/development_course/development_course/builds || true
-
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -39,10 +36,27 @@ jobs:
           mkdir -p builds/compressed
           tar -czf builds/compressed/website.tgz projects/getStarted
 
-      - name: Deploy locally
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-artifact
+          path: HumanWisdom/builds/compressed/website.tgz
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: website-artifact
+          path: builds/compressed/${{ github.run_id }}
+
+      - name: Deploy website
         run: |
           mkdir -p builds/uncompressed/${{ github.run_id }}
-          tar -zxf HumanWisdom/builds/compressed/website.tgz -C builds/uncompressed/${{ github.run_id }}
+          tar -zxf builds/compressed/${{ github.run_id }}/website.tgz -C builds/uncompressed/${{ github.run_id }}
           sudo rm -rf /var/www/html/getStarted/
           sudo mv builds/uncompressed/${{ github.run_id }}/projects/getStarted /var/www/html/
           sudo chown -R ubuntu:ubuntu /var/www/html/getStarted
