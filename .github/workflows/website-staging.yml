@@ -61,10 +61,6 @@ jobs:
           source: "website.tgz"
           target: "builds/compressed/${{ github.run_id }}"
 
-      - name: List files
-        run: ls -R builds/compressed/${{ github.run_id }}
-
-
       - name: Deploy on remote server
         run: |
             sudo rm -rf builds/uncompressed/${{ github.run_id }}
