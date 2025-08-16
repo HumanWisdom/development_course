@@ -62,7 +62,7 @@ jobs:
           target: "builds/compressed/${{ github.run_id }}"
 
       - name: List files
-        run: sudo ls -R builds/compressed/${{ github.run_id }}
+        run: ls -R builds/compressed/${{ github.run_id }}
 
 
       - name: Deploy on remote server
