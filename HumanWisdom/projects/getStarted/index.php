@@ -132,8 +132,6 @@ require_once('./includes/security_config.php');
 
 
 
-
-    
     <section class="hpt120px ">
        <!-- header -->
       
@@ -177,7 +175,7 @@ require_once('./includes/security_config.php');
                     4.8  
                   </span>  
 
-                  App store rating
+                 HWP App store rating
                 </h6>
               </div>
             </div>
