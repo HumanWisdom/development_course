@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta property="og:title" id="tag1" content="HappierMe: For a happier life" />
     <meta property="og:type" content="website" />

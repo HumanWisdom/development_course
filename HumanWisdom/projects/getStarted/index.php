@@ -246,7 +246,6 @@ require_once('./includes/security_config.php');
 
 
 
-
   <section class="hpt120px ">
     <!-- header -->
 
