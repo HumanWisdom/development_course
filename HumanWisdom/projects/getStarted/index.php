@@ -73,7 +73,7 @@ require_once('./includes/security_config.php');
 
     @media screen and (max-width: 768px) {
       .subs_mobile_view {
-        margin-right: 35%;
+        margin-right: 48%;
         padding: 8px;
 
       }
@@ -198,6 +198,29 @@ require_once('./includes/security_config.php');
         font-size: 15px !important;
         font-weight: 600;
       }
+
+      .tool_tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .f_12px {
+        font-size: 12px !important;
+      }
+
+      .owl-stage-outer {
+        overflow: scroll !important
+      }
+
+      .owl-stage-outer::-webkit-scrollbar {
+        display: none;
+      }
+
+      .w-382px {
+        width: 356px !important;
+      }
+      .p-18px{
+        padding-left: 18px !important;
+      }
     }
   </style>
 
@@ -255,7 +278,7 @@ require_once('./includes/security_config.php');
         <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px mtb40px" data-aos="fade-up"
           data-aos-delay="200">
           <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 p-18px">
               <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
                 <span class="rating_a">
                   <i class="fa fa-star"></i>
@@ -289,7 +312,7 @@ require_once('./includes/security_config.php');
           <div class="row mtb15px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
-              <h2 class="mtb0px fs_18px fw_400 lh_140p fc_000000 ta_lc w-335px">
+              <h2 class="mtb0px fs_18px fw_400 lh_140p fc_000000 ta_lc w-382px">
                 A happier mind starts with understanding it. We support you to manage your emotions, build stronger
                 relationships, and handle life with more clarity and calm. </h2>
 
@@ -339,7 +362,7 @@ require_once('./includes/security_config.php');
 
           <div class="row mt40px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res">
+              <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res card_center">
                 <a href="https://happierme.app/pages/splash_options.php" class="">
                   <button class="fs_21px fw_500 lh_140p fc_ffffff btn_landing mbtn_landing">
                     Try HappierMe for free
@@ -2141,49 +2164,35 @@ require_once('./includes/security_config.php');
                     </div>
                 </div> -->
           <div class="row mt20px aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-              <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up"
-                data-aos-delay="200">
-                <div class="row">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-2 p0 tright">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg"
-                      class="img-responsive img_aspects1" alt="PATHWAY">
-                  </div>
-                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-10 p10 tleft">
-                    <span class="fs_18px fw_500  fc_ffffff">
-                      Expert guidance
-                    </span>
-                  </div>
+            <div class="row p0 text-white">
+              <!-- First box -->
+              <div class="col-lg-3 col-md-3 col-sm-12 mb-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="d-flex align-items-center">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-fluid me-2"
+                    alt="PATHWAY" style="width:20px;">
+                  <span class="fs_18px fw_500 f_15px">Expert guidance</span>
                 </div>
               </div>
-              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up"
-                data-aos-delay="200">
-                <div class="row">
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-2 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg"
-                      class="img-responsive img_aspects1" alt="PATHWAY">
-                  </div>
-                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12 col-10 p0 tleft">
-                    <h3 style="margin-top:0px;" class="fs_18px fw_500  fc_ffffff">
-                      Personalised content to meet your goals
-                    </h3>
-                  </div>
+
+              <!-- Second box -->
+              <div class="col-lg-5 col-md-5 col-sm-12 mb-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="d-flex align-items-center">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-fluid me-2"
+                    alt="PATHWAY" style="width:20px;">
+                  <h3 class="fs_18px fw_500 m-0 f_15px">Personalised content to meet your goals</h3>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up"
-                data-aos-delay="200">
-                <div class="row">
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-2 p0 tright">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg"
-                      class="img-responsive img_aspects1" alt="PATHWAY">
-                  </div>
-                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10 col-10 p10 tleft">
-                    <h3 style="margin-top:0px;" class=" fs_18px fw_500  fc_ffffff"> Daily practices that fit your life
-                    </h3>
-                  </div>
+
+              <!-- Third box -->
+              <div class="col-lg-4 col-md-4 col-sm-12 mb-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="d-flex align-items-center ">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-fluid me-2"
+                    alt="PATHWAY" style="width:20px;">
+                  <h3 class="fs_18px fw_500 m-0 f_15px">Daily practices that fit your life</h3>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -2355,7 +2364,7 @@ require_once('./includes/security_config.php');
             <!-- fbn -->
             <div id="fbn" class="tab-pane fade show active" role="tabpanel" aria-labelledby="feelbetterNow-tab">
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr card_center">
 
 
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
@@ -2598,7 +2607,7 @@ require_once('./includes/security_config.php');
       </div>
     </section>
     <!-- /tools -->
-    <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
+    <div class="row center_flex mt40px card_center" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
       <div id="PricingSelectBtn" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0 mtb20px">
         <a href="https://happierme.app/pages/splash_options.php">
           <button class="fs_21px fw_500 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
