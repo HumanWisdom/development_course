@@ -5530,3 +5530,7 @@ button {
 .opacity-50 {
   opacity: 0.5;
 }
+
+.no-hover:hover {
+    background: linear-gradient(180deg, #E58D82, #CB6171) !important;
+}

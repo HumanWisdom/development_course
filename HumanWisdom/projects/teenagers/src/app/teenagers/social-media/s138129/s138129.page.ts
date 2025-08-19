@@ -14,8 +14,8 @@ export class S138129Page implements OnInit,OnDestroy {
   bg=""
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/teenagers/modules/social-media/videos/1.2.mp4'  
-  title="In this video two teenagers discuss how social media puts a pressure on them to conform and behave in a way that others do."
-  poster="https://humanwisdoms138129.s138129.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/comparison/comparison_01.jpg"
+  title="The pressure to conform"
+  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/video_posters/introduction/introduction_01.jpg"
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("video")
