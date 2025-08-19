@@ -3931,7 +3931,7 @@ audio::-webkit-media-controls-enclosure
 .div_work_edu_health
 {
   border-radius: 20px;
-  background: #FFF4E6;
+  background: rgba(232, 168, 128, 0.2);
   /* width: 300px !important;
   height: 260px !important; */
   width: 100%;
@@ -5534,3 +5534,8 @@ button {
 .no-hover:hover {
     background: linear-gradient(180deg, #E58D82, #CB6171) !important;
 }
+
+/* Frame 14264 */
+
+
+

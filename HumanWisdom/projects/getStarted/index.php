@@ -1533,12 +1533,12 @@ require_once('./includes/security_config.php');
                   style="
                         /* padding-left: 25px; */
                         ">
-                  <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000 mt_mb">
-                    HappierMe for the Workplace
-                    <!-- <span class="fw_600">
-                              Work
-                              </span> -->
-                  </h3>
+                  <h3 class="mt40px fs_24px fw_400 lh_150p fc_000000 mt_mb">
+                    HappierMe for the 
+                    <span class="fw_600">
+                              Workplace
+                              </span>
+          </h3>
                 </div>
               </div>
               <div class="row d_none">
@@ -1573,8 +1573,11 @@ require_once('./includes/security_config.php');
               <div class="row center_flex ">
                 <div
                   class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text card_center">
-                  <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000 mt_mb">
-                    HappierMe for Education
+                  <h3 class="mt40px fs_24px fw_400 lh_150p fc_000000 mt_mb">
+                    HappierMe for 
+                     <span class="fw_600">
+                              Education
+                              </span>
                   </h3>
                 </div>
               </div>
@@ -1610,9 +1613,12 @@ require_once('./includes/security_config.php');
               <div class="row">
                 <div
                   class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text card_center">
-                  <h4 class="mt40px fs_24px fw_500 lh_150p fc_000000 mt_mb">
-                    HappierMe for Healthcare
-                  </h4>
+                  <h3 class="mt40px fs_24px fw_400 lh_150p fc_000000 mt_mb">
+                    HappierMe for 
+                      <span class="fw_600">
+                              Healthcare
+                              </span>
+                  </h3>
                 </div>
               </div>
               <div class="row d_none">
