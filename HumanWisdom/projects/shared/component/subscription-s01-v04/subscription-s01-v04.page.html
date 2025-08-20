@@ -225,7 +225,7 @@
   </div>
 </div>
 <!-- /page content -->
-<div *ngIf="ios || isAndroid"
+<div *ngIf="ios || isAndroid" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'" 
   style="height: calc(100vh - 8rem); padding: 0 2rem; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
   <h4 class="fs_16px fw_500 lh_150p fc_ffffff">
     If you would like to subscribe for family and friends, and get our special discount,
