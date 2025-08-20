@@ -226,7 +226,7 @@
 </div>
 <!-- /page content -->
 <div *ngIf="ios || isAndroid"
-  style="height: 100vh; padding: 0 2rem; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
+  style="height: calc(100vh - 8rem); padding: 0 2rem; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
   <h4 class="fs_16px fw_500 lh_150p fc_ffffff">
     If you would like to subscribe for family and friends, and get our special discount,
     please email us:
@@ -236,7 +236,7 @@
 
 
 <!-- footer  -->
-<div class="mfooter">
+<div class="mfooter" *ngIf="!ios && !isAndroid">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext col_cw"
       [ngClass]="isAdults ? '' : 'we_ft_cl'">
