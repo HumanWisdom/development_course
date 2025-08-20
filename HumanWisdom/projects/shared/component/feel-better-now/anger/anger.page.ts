@@ -16,8 +16,11 @@ export class AngerPage implements OnInit {
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   isAdults = true;
   isSubscribed = false;
+  config: any;
 
-  constructor(private location: Location, private router: Router,private navigationService:NavigationService){ }
+  constructor(private location: Location, private router: Router,private navigationService:NavigationService){ 
+    this.config = SharedService.getScreenConfiguration("SoundCapes");
+  }
 
   ngOnInit() {
      if (SharedService.ProgramId == ProgramType.Adults) {
@@ -122,6 +125,36 @@ determinePathway(data){
   } else {
     this.router.navigate([`/adults/${data}`]);
   }
+}
+
+getClickEvent(data) {
+  if (!this.isSubscribed) {
+    const isTeenagerRoute = this.router.url.includes('/teenagers/');
+      const trialRedirectPath = isTeenagerRoute
+        ? '/teenagers/subscription/start-your-free-trial'
+        : '/subscription/start-your-free-trial';
+      this.router.navigate([trialRedirectPath]);
+      return;
+  }
+
+  let mediaUrl = data['MediaUrl'];
+  if (mediaUrl.startsWith('https://d1tenzemoxuh75.cloudfront.net/')) {
+    mediaUrl = mediaUrl.replace('https://d1tenzemoxuh75.cloudfront.net/', '/');
+  }
+
+  let concat = encodeURIComponent(mediaUrl.replaceAll('/', '~'));
+
+  const title = data['Title']?.replaceAll(' ', '-');
+  const moduleName = this.config?.['moduleName'] || 'Soundscapes';
+
+  this.router.navigate([
+    `${SharedService.getprogramName()}/audiopage/`,
+    concat,
+    data['SoundscapeID'],
+    'T',
+    title,
+    moduleName
+  ]);
 }
 
 }
