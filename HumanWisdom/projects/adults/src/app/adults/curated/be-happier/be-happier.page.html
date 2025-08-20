@@ -923,11 +923,14 @@
                           <div class="">
                             <div class="toc_adiv_02">
 
-                             <!-- audio row -->
-                             <a (click)="audioevent(data)" *ngFor="let data of mediaUrl; let i=index">
+                            <!-- audio row -->
+                            <a (click)="audioevent(data)" *ngFor="let data of mediaUrl; let i = index">
+
+                              <!-- Row for first item when view more is enabled -->
                               <div class="row" *ngIf="i === 0 && enablePodcastViewMore">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
+                                  <!-- Podcast Image -->
                                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                                     <div class="prelative">
                                       <div class="row">
@@ -939,6 +942,7 @@
                                     </div>
                                   </div>
 
+                                  <!-- Podcast Title & Timing -->
                                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                       {{data.Title}}
@@ -948,26 +952,26 @@
                                     </h4>
                                   </div>
 
-                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                                  <!-- Right Arrow / Lock -->
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="isSubscriber || data.PodcastID < 4">
                                     <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                   </div>
 
                                   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                    *ngIf="!isSubscriber">
-                                    <!-- lock -->
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                      *ngIf="!isSubscriber && data.PodcastID >= 4">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
                                       class="img-responsive">
-                                    <!-- /lock -->
                                   </div>
-
 
                                 </div>
                               </div>
 
+                              <!-- Row for second item when view more is enabled -->
                               <div class="row" *ngIf="i === 1 && enablePodcastViewMore">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
+                                  <!-- Podcast Image -->
                                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                                     <div class="prelative">
                                       <div class="row">
@@ -979,6 +983,7 @@
                                     </div>
                                   </div>
 
+                                  <!-- Podcast Title & Timing -->
                                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                       {{data.Title}}
@@ -988,26 +993,26 @@
                                     </h4>
                                   </div>
 
-                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                                  <!-- Right Arrow / Lock -->
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="isSubscriber || data.PodcastID < 4">
                                     <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                   </div>
 
                                   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                    *ngIf="!isSubscriber">
-                                    <!-- lock -->
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                      *ngIf="!isSubscriber && data.PodcastID >= 4">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
                                       class="img-responsive">
-                                    <!-- /lock -->
                                   </div>
-
 
                                 </div>
                               </div>
 
+                              <!-- Rows when view more is disabled -->
                               <div class="row" *ngIf="!enablePodcastViewMore">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
+                                  <!-- Podcast Image -->
                                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                                     <div class="prelative">
                                       <div class="row">
@@ -1019,6 +1024,7 @@
                                     </div>
                                   </div>
 
+                                  <!-- Podcast Title & Timing -->
                                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_02">
                                       {{data.Title}}
@@ -1028,22 +1034,21 @@
                                     </h4>
                                   </div>
 
-                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                                  <!-- Right Arrow / Lock -->
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                                      *ngIf="isSubscriber || data.PodcastID < 4">
                                     <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                   </div>
 
                                   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                    *ngIf="!isSubscriber">
-                                    <!-- lock -->
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                                      *ngIf="!isSubscriber && data.PodcastID >= 4">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
                                       class="img-responsive">
-                                    <!-- /lock -->
                                   </div>
-
 
                                 </div>
                               </div>
+
                             </a>
                             <!-- /audio row -->
 

@@ -142,14 +142,14 @@ determineRouterLink(data) {
   }
 
   getClickEvent(data) {
-    if (!this.isSubscribed) {
-      const isTeenagerRoute = this.router.url.includes('/teenagers/');
-      const trialRedirectPath = isTeenagerRoute
-        ? '/teenagers/subscription/start-your-free-trial'
-        : '/subscription/start-your-free-trial';
-      this.router.navigate([trialRedirectPath]);
-      return;
-    }
+    // if (!this.isSubscribed) {
+    //   const isTeenagerRoute = this.router.url.includes('/teenagers/');
+    //   const trialRedirectPath = isTeenagerRoute
+    //     ? '/teenagers/subscription/start-your-free-trial'
+    //     : '/subscription/start-your-free-trial';
+    //   this.router.navigate([trialRedirectPath]);
+    //   return;
+    // }
   
     let mediaUrl = data['MediaUrl'];
     if (mediaUrl.startsWith('https://d1tenzemoxuh75.cloudfront.net/')) {
