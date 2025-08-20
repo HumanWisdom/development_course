@@ -10790,7 +10790,8 @@ body,
 } */
 
 /* modal test */
-.modal.fade.in .lab-modal-body {
+
+.modal.fade.inp .lab-modal-body {
   /* bottom: 0;
   opacity: 1; */
 
@@ -10799,7 +10800,7 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
-  /* width: 98%; */
+   width: 335px;
   position: absolute;
    top:25% !important; 
    height: fit-content;
