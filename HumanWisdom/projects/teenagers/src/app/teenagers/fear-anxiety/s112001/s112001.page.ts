@@ -3,6 +3,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import {Location } from '@angular/common'
 import { ProgramModel } from '../../../../../../shared/models/program-model';
 import { TeenagersService } from '../../teenagers.service';
+import { SharedService } from "../../../../../../shared/services/shared.service";
 
 @Component({
   selector: 'app-s112001',
@@ -38,6 +39,7 @@ export class S112001Page implements OnInit,OnDestroy {
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
+  config: any;
  
   moduleData:ProgramModel;
  
@@ -49,7 +51,7 @@ export class S112001Page implements OnInit,OnDestroy {
     private location:Location
   )
   { 
-   
+   this.config = SharedService.getScreenConfiguration("SoundCapes");
    
   }
 
@@ -192,4 +194,33 @@ export class S112001Page implements OnInit,OnDestroy {
   }
 
 
+    getClickEvent(data) {
+    if (!this.isSubscriber) {
+      const isTeenagerRoute = this.router.url.includes('/teenagers/');
+      const trialRedirectPath = isTeenagerRoute
+        ? '/teenagers/subscription/start-your-free-trial'
+        : '/subscription/start-your-free-trial';
+      this.router.navigate([trialRedirectPath]);
+      return;
+    }
+  
+    let mediaUrl = data['MediaUrl'];
+    if (mediaUrl.startsWith('https://d1tenzemoxuh75.cloudfront.net/')) {
+      mediaUrl = mediaUrl.replace('https://d1tenzemoxuh75.cloudfront.net/', '/');
+    }
+  
+    let concat = encodeURIComponent(mediaUrl.replaceAll('/', '~'));
+  
+    const title = data['Title']?.replaceAll(' ', '-');
+    const moduleName = this.config?.['moduleName'] || 'Soundscapes';
+  
+    this.router.navigate([
+      `${SharedService.getprogramName()}/audiopage/`,
+      concat,
+      data['SoundscapeID'],
+      'T',
+      title,
+      moduleName
+    ]);
+  }
 }

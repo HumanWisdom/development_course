@@ -7,6 +7,7 @@ import { ForumService } from '../../forum/forum.service';
 import { SharedService } from '../../services/shared.service';
 import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
+import { Platform } from '@angular/cdk/platform';
 @Component({
   selector: 'app-subscription-s01-v04',
   templateUrl: './subscription-s01-v04.page.html',
@@ -72,6 +73,8 @@ export class SubscriptionS01V04Page implements OnInit {
   selectedProgram = '';
   selectedMonth = '';
   selectedPrice = '';
+  ios: boolean;
+  isAndroid = false;
 
   constructor(
     private router: Router,
@@ -80,8 +83,10 @@ export class SubscriptionS01V04Page implements OnInit {
     private location: Location,
     public logeventservice: LogEventService,
     private cd: ChangeDetectorRef,
-    private forumservice: ForumService
+    private forumservice: ForumService,
+    public platform: Platform,
   ) {
+    this.isAndroidDevice();
     let res = localStorage.getItem("isloggedin")
     if (res !== 'T') this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`], { replaceUrl: true, skipLocationChange: true })
     if (localStorage.getItem('subscribepage') === 'T') {
@@ -140,6 +145,9 @@ export class SubscriptionS01V04Page implements OnInit {
 
     }, 7000)
 
+    if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
+      this.ios = true;
+    }
   }
 
   EnableAddMemForm() {
@@ -873,5 +881,22 @@ export class SubscriptionS01V04Page implements OnInit {
 
   goBack() {
     this.location.back()
+  }
+  
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
+  isAndroidDevice(){
+    this.isAndroid = SharedService.isAndroid();
   }
 }
