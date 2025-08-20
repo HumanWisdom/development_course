@@ -10791,9 +10791,31 @@ body,
 
 /* modal test */
 
+
+
+
+.modal.fade.in .lab-modal-body {
+  bottom: 0;
+  opacity: 1; 
+  padding:30px 20px;
+
+  /* bottom: 0; */
+  opacity: 1;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  /* width: 98%; */
+  position: absolute;
+   top:18% !important; 
+   height: fit-content;
+}
+
+
 .modal.fade.inp .lab-modal-body {
-  /* bottom: 0;
-  opacity: 1; */
+  bottom: 0;
+  opacity: 1; 
+  padding:30px 20px;
+  border-radius: 12px;
 
   /* bottom: 0; */
   opacity: 1;
@@ -10802,7 +10824,7 @@ body,
   margin: 0 auto;
    width: 335px;
   position: absolute;
-   top:25% !important; 
+   top:18% !important; 
    height: fit-content;
 }
 .modal.fade.in .lab-modal-body_new {
@@ -37928,6 +37950,11 @@ span
 {
   border-top: 1px rgba(255, 255, 255, 0.5) dashed;
   margin: 15px 0;
+}
+.hr_style_v3_14 {
+    border-top: 1px rgba(255, 255, 255, 0.5) dashed;
+    margin: 15px 0;
+    opacity: 50%;
 }
 
 .dflex_start 
