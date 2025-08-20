@@ -17,8 +17,11 @@ export class SorrowAndLossPage implements OnInit {
   isAdults = true;
   audioData:any;
   isSubscribed = false;
+  config: any;
 
-  constructor(private router: Router, private location: Location,private navigationService:NavigationService){}
+  constructor(private router: Router, private location: Location,private navigationService:NavigationService){
+    this.config = SharedService.getScreenConfiguration("SoundCapes");
+  }
 
   ngOnInit() {
     this.audioData={
@@ -129,4 +132,33 @@ determinePathway(data){
   }
 }
 
+getClickEvent(data) {
+  if (!this.isSubscribed) {
+    const isTeenagerRoute = this.router.url.includes('/teenagers/');
+      const trialRedirectPath = isTeenagerRoute
+        ? '/teenagers/subscription/start-your-free-trial'
+        : '/subscription/start-your-free-trial';
+      this.router.navigate([trialRedirectPath]);
+      return;
+  }
+
+  let mediaUrl = data['MediaUrl'];
+  if (mediaUrl.startsWith('https://d1tenzemoxuh75.cloudfront.net/')) {
+    mediaUrl = mediaUrl.replace('https://d1tenzemoxuh75.cloudfront.net/', '/');
+  }
+
+  let concat = encodeURIComponent(mediaUrl.replaceAll('/', '~'));
+
+  const title = data['Title']?.replaceAll(' ', '-');
+  const moduleName = this.config?.['moduleName'] || 'Soundscapes';
+
+  this.router.navigate([
+    `${SharedService.getprogramName()}/audiopage/`,
+    concat,
+    data['SoundscapeID'],
+    'T',
+    title,
+    moduleName
+  ]);
+}
 }

@@ -16,9 +16,11 @@ export class CopingWithIllnessPage implements OnInit {
   isAdults = false;
   mediaUrl:any;
   isSubscribed = false;
+  config: any;
 
   constructor(private router: Router, private location: Location,private navigationService:NavigationService)
   {
+    this.config = SharedService.getScreenConfiguration("SoundCapes");
     this.mediaUrl = {
       url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.30.mp3',
       youtubeUrl: 'tsl5QK9aqTI'
@@ -164,4 +166,33 @@ determinePathway(data){
   }
 }
 
+getClickEvent(data) {
+  if (!this.isSubscribed) {
+    const isTeenagerRoute = this.router.url.includes('/teenagers/');
+      const trialRedirectPath = isTeenagerRoute
+        ? '/teenagers/subscription/start-your-free-trial'
+        : '/subscription/start-your-free-trial';
+      this.router.navigate([trialRedirectPath]);
+      return;
+  }
+
+  let mediaUrl = data['MediaUrl'];
+  if (mediaUrl.startsWith('https://d1tenzemoxuh75.cloudfront.net/')) {
+    mediaUrl = mediaUrl.replace('https://d1tenzemoxuh75.cloudfront.net/', '/');
+  }
+
+  let concat = encodeURIComponent(mediaUrl.replaceAll('/', '~'));
+
+  const title = data['Title']?.replaceAll(' ', '-');
+  const moduleName = this.config?.['moduleName'] || 'Soundscapes';
+
+  this.router.navigate([
+    `${SharedService.getprogramName()}/audiopage/`,
+    concat,
+    data['SoundscapeID'],
+    'T',
+    title,
+    moduleName
+  ]);
+}
 }
