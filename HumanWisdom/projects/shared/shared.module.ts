@@ -98,6 +98,8 @@ import { ForgetPasswordPage } from './component/forget-password/forget-password.
 import { ChangePasswordPage } from './component/change-password/change-password.page';
 import { SetPasswordPage } from './component/set-password/set-password.page';
 import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.page';
+import { HomeComponent } from './component/home/home.component';
+import { ContentCardComponent } from './component/content-card/content-card.component';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { SectionCard } from './component/section-card/section-card.page';
 import { MyDashboardComponent } from './component/my-dashboard/my-dashboard.component';
@@ -206,7 +208,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     HappierMeQuotationPage,
     FindInspiration,
     QuestionAnswersSelection,
-    CommonScreenPage
+    CommonScreenPage,
+    HomeComponent,
+    ContentCardComponent
   ],
   imports: [
     CommonModule,
@@ -326,7 +330,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     MyDashboardComponent,
     FindInspiration,
     QuestionAnswersSelection,
-    CommonScreenPage
+    CommonScreenPage,
+    HomeComponent,
+    ContentCardComponent
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },

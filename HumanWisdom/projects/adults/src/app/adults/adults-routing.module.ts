@@ -17,9 +17,18 @@ import { QuestionAnswersSelection } from '../../../../shared/component/question-
 import { ParentHubPageModule } from './curated/parent-hub/parent-hub.module';
 import { ParentHubPage } from './curated/parent-hub/parent-hub.page';
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
+import { HomeComponent } from '../../../../shared/component/home/home.component';
 
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'home-demo',
+    component: HomeComponent
+  },
   {
     path: '',
     loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then(m => m.AdultDashboardPageModule),

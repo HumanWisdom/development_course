@@ -1,0 +1,16 @@
+<div class="content-card " (click)="onCardClick()">
+  <div class="card-image">
+    <img [src]="card.imageUrl" [alt]="card.title" class="card-img">
+    <div class="card-overlay">
+      <i [class]="getOverlayIconClass(card.overlayIcon)" class="overlay-icon"></i>
+    </div>
+  </div>
+  <div class="card-content">
+    <h4 class="card-title">{{ card.title }}</h4>
+    <p class="card-subtitle" *ngIf="card.subtitle">{{ card.subtitle }}</p>
+    <div class="card-meta">
+      <span class="media-type">{{ card.mediaType }}</span>
+      <span class="duration" *ngIf="card.duration">• {{ card.duration }}</span>
+    </div>
+  </div>
+</div>

@@ -6,9 +6,9 @@ import { TokenInterceptorService} from '../token-interceptor.service'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons'
 import { BrowserModule } from '@angular/platform-browser';
-
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     //ComparisonModule,

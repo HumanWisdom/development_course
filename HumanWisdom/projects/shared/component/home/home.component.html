@@ -1,0 +1,87 @@
+<title>Best Mental Health Apps|Stress, Anger & Depression Management|HappierMe</title>
+<meta name="description"
+  content="HappierMe apps can guide you to become the best person you can be, and discover life-changing wisdom through self-understanding. Learn the art of anger and stress management, get solutions for anxiety and depression.">
+
+<!-- header -->
+<!-- <app-tn-dashboard-v03 [enableplaystore]="true"  [enableHamburger]="isEnableHam"  (playstoreenable)="getplaystore($event)"></app-tn-dashboard-v03> -->
+<!-- /header -->
+
+<app-bg-video></app-bg-video>
+
+
+<div class="right_col mc_03 ">
+  <div class="cw100p">
+
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw home-container">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+
+            <div class="navigation-bar row">
+              <div class="nav-items col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div *ngFor="let item of navigationItems" class="nav-item" [class.active]="item.isActive"
+                  (click)="onNavigationClick(item)">
+                  {{ item.label }}
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="description-section">
+                  <p class="description-text">{{ description }}</p>
+                </div>
+              </div>
+            </div>
+            <!-- Description Text -->
+
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class=" content-scroll">
+                  <!-- Content Sections -->
+                  <div class="content-sections">
+                    <div *ngFor="let section of contentSections" class="content-section"
+                      [class.expanded]="section.isExpanded">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <h2 class="section-title section-toggle">{{ section.title }}</h2>
+                        </div>
+                      </div>
+
+
+                      <!-- Section Content -->
+                      <div class="section-content " [class.collapsed]="!section.isExpanded">
+                        <div class="row cards-container">
+                          <app-content-card *ngFor="let card of section.cards" [card]="card"
+                            (cardClick)="onCardClick($event)"
+                            class="col-md-4 col-lg-4 col-sm-4 col-lg-4"></app-content-card>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </div>
+      <app-index-footer></app-index-footer>
+    </div>
+  </div>
+
+
+  <!-- Top Navigation Bar -->
+
+
+
+</div>
