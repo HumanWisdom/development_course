@@ -345,6 +345,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
           route == '/adults/help-support/faq' ||
           route == '/adults/help-support/terms-conditions' ||
           route == '/adults/help-support/support' ||
+          route == '/adults/help-support/accessibility-policy' ||
           route == '/adults/partnership-webpage/partnership-index/') {
           this.navigate(route);
           return;
@@ -369,6 +370,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
           route == '/teenagers/help-support/terms-conditions' ||
           route == '/teenagers/help-support/privacy-policy' ||
           route == '/teenagers/help-support/cookie-policy' ||
+          route == '/teenagers/help-support/accessibility-policy' ||
           route == '/teenagers/help-support/support' ||
           route == '/teenagers/partnership-webpage/partnership-index/') {
           this.navigate(route);

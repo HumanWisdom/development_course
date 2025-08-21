@@ -882,7 +882,7 @@
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
-                                Inner boredom
+                                Inner boredom and emptiness
                               </h4>
                             </div>
                           </div>
@@ -1084,13 +1084,13 @@
 
                                     <!-- arrow if subscriber OR free (id < 4) -->
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                        *ngIf="isSubscriber || data.PodcastID < 4">
+                                        *ngIf="isSubscriber || data.PodcastID < 1">
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
 
                                     <!-- lock if not subscriber AND id >= 4 -->
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                        *ngIf="!isSubscriber && data.PodcastID >= 4">
+                                        *ngIf="!isSubscriber && data.PodcastID >= 1">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
                                           class="img-responsive">
                                     </div>
@@ -1123,13 +1123,13 @@
 
                                     <!-- arrow -->
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                        *ngIf="isSubscriber || data.PodcastID < 4">
+                                        *ngIf="isSubscriber || data.PodcastID < 1">
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
 
                                     <!-- lock -->
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                        *ngIf="!isSubscriber && data.PodcastID >= 4">
+                                        *ngIf="!isSubscriber && data.PodcastID >= 1">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
                                           class="img-responsive">
                                     </div>
@@ -1162,13 +1162,13 @@
 
                                     <!-- arrow -->
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                        *ngIf="isSubscriber || data.PodcastID < 4">
+                                        *ngIf="isSubscriber || data.PodcastID < 1">
                                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                                     </div>
 
                                     <!-- lock -->
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                                        *ngIf="!isSubscriber && data.PodcastID >= 4">
+                                        *ngIf="!isSubscriber && data.PodcastID >= 1">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
                                           class="img-responsive">
                                     </div>

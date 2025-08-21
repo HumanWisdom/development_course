@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'privacy-policy',
     loadChildren: () => import('./privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
   },
+    {
+    path: 'accessibility-policy',
+    loadChildren: () => import('./accessibility/accessibility.module').then( m => m.AccessibilityModule)
+  },
   {
     path: 'terms-conditions',
     loadChildren: () => import('./terms-conditions/terms-conditions.module').then( m => m.TermsConditionsPageModule)
