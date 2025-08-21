@@ -477,7 +477,7 @@ export class BeHappierPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    if (!this.isSubscriber && audioContent.PodcastID >= 4) {
+    if (!this.isSubscriber && audioContent.PodcastID >= 1) {
       this.router.navigate(['teenagers/subscription/start-your-free-trial']);
     } else {
         if (audioContent.MediaUrl.includes('https://d1tenzemoxuh75.cloudfront.net/')) {
