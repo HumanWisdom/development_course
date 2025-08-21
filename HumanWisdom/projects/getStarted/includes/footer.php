@@ -132,6 +132,12 @@
                 Cookie policy
               </h4>
             </a>
+
+            <a href="../pages/accessibility.php">
+              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                Accessibility
+              </h4>
+            </a>
           </div>
         </div>
       </div>
@@ -347,6 +353,12 @@
                   <a href="../pages/cookie_policy.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Cookie policy
+                    </h4>
+                  </a>
+
+                  <a href="../pages/accessibility.php">
+                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      Accessibility
                     </h4>
                   </a>
                 </div>
