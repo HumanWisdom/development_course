@@ -1,16 +1,19 @@
-<div class="content-card " (click)="onCardClick()">
-  <div class="card-image">
-    <img [src]="card.imageUrl" [alt]="card.title" class="card-img">
-    <div class="card-overlay">
-      <i [class]="getOverlayIconClass(card.overlayIcon)" class="overlay-icon"></i>
+<div class="content-card rounded-4 overflow-hidden position-relative" (click)="onCardClick()" style="width: 200px; height: 250px;">
+  <div class="card-image position-relative" style="height: auto;">
+    <img [src]="card.imageUrl" [alt]="card.title" class="custom-box-img object-fit-cover">
+
+    <!-- Overlay -->
+    <div class="card-overlay d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100">
+      <i [class]="getOverlayIconClass(card.overlayIcon)" class="overlay-icon fs-2 text-white bg-dark bg-opacity-50 rounded-circle p-3"></i>
     </div>
   </div>
-  <div class="card-content">
-    <h4 class="card-title">{{ card.title }}</h4>
-    <p class="card-subtitle" *ngIf="card.subtitle">{{ card.subtitle }}</p>
-    <div class="card-meta">
-      <span class="media-type">{{ card.mediaType }}</span>
-      <span class="duration" *ngIf="card.duration">• {{ card.duration }}</span>
+
+  <div class="card-content p-3 custom-box-text-container">
+    <h6 class="card-title mb-2 text-truncate custom-box-text-container-title">{{ card.title }}</h6>
+    <p class="card-subtitle small text-muted mb-2" *ngIf="card.subtitle">{{ card.subtitle }}</p>
+    <div class="card-meta d-flex align-items-center gap-2 small text-muted">
+      <span class="media-type fw-bold text-uppercase custom-box-text-container-mediaType">{{ card.mediaType }}</span>
+      <span class="duration custom-box-text-container-mediaType" *ngIf="card.duration">• {{ card.duration }}</span>
     </div>
   </div>
 </div>

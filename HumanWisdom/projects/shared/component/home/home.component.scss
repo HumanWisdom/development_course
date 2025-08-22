@@ -1,220 +1,31 @@
-/* Home Component Styles - Based on Figma Design */
+/* Home Component - Only Background Color */
 .home-container {
-  min-height: 100vh;
   background: #FFF4E6;
 }
 
-/* Navigation Bar - Frame 1437256119 */
-.navigation-bar {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0px;
-
-  position: absolute;
-  width: 381px;
-  height: 59px;
-  left: 0px;
-
-  background: #FFF4E6;
-  z-index: 100;
-  
-  .nav-items {
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    
-    &::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-    }
-    
-    .nav-item {
-      flex-shrink: 0;
-      padding: 16px 24px;
-      font-size: 16px;
-      font-weight: 500;
-      color: #666666;
-      cursor: pointer;
-      position: relative;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      
-      &:hover {
-        color: #333333;
-      }
-      &.active {
-        color:  #000000;
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: #CB6171;
-          border-radius: 2px 2px 0 0;
-        }
-      }
-    }
-  }
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-style: normal; /* SemiBold is represented by font-weight 600 */
+  font-size: 18px;
+  line-height: 140%; /* or 1.4 */
+  letter-spacing: 0;
+  vertical-align: bottom;
+  color: #000000;
 }
 
-/* Description Section - Frame 1437256065 */
-.description-section {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
-
-  width: 381px;
-  height: 103px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  
-  .description-text {
-    font-family: Poppins;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 12px;
-    leading-trim: NONE;
-    line-height: 140%;
-    letter-spacing: 0%;
-  }
+/* Icon styling to ensure proper display */
+.text-muted i {
+  font-size: 16px;
+  color: #6c757d;
+  transition: transform 0.2s ease;
 }
 
-/* Content Scroll */
-.content-scroll {
-  overflow-y: auto;
-  max-height: calc(100vh - 140px); /* Adjust based on navigation height */
-  
-  .content-sections {
-    padding: 0 20px;
-    display: flex;
-    .content-section {
-      margin-bottom: 32px;
-      
-      .section-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 0;
-        cursor: pointer;
-        border-bottom: 1px solid #e5e5e5;
-        
-        .section-title {
-          margin: 0;
-          font-size: 18px;
-          line-height: 140%;
-          font-weight: 600;
-          letter-spacing: 0%;
-          color: #000000;
-        }
-        
-        .section-toggle {
-          color: #999999;
-          transition: transform 0.2s ease;
-          
-          i.rotated {
-            transform: rotate(180deg);
-          }
-        }
-      }
-      
-      .section-content {
-        transition: all 0.3s ease;
-        overflow: hidden;
-        
-        &.collapsed {
-          max-height: 0;
-          opacity: 0;
-        }
-        
-        .cards-container {
-          display: flex;
-          gap: 16px;
-          overflow-x: auto;
-          padding: 20px 0;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-          
-          &::-webkit-scrollbar {
-            display: none;
-          }
-        }
-      }
-    }
-  }
+.text-muted i.fa-chevron-down {
+  transform: rotate(0deg);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navigation-bar {
-    padding: 0 16px;
-    
-    .nav-items .nav-item {
-      padding: 14px 20px;
-      font-size: 15px;
-    }
-  }
-  
-  .description-section {
-    padding: 20px 16px;
-    margin-top: 67px; 
-    .description-text {
-      font-size: 12px;
-    }
-  }
-  
-  .content-scroll .content-sections {
-    padding: 0 16px;
-    
-    .content-section .section-content .cards-container {
-      gap: 12px;
-    }
-  }
+.text-muted i.fa-chevron-right {
+  transform: rotate(0deg);
 }
-
-/* Animation Classes */
-@keyframes slideDown {
-  from {
-    max-height: 0;
-    opacity: 0;
-  }
-  to {
-    max-height: 500px;
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    max-height: 500px;
-    opacity: 1;
-  }
-  to {
-    max-height: 0;
-    opacity: 0;
-  }
-}
-
-.section-content:not(.collapsed) {
-  animation: slideDown 0.3s ease-out;
-}
-
-.section-content.collapsed {
-  animation: slideUp 0.3s ease-out;
-}
-
-
 

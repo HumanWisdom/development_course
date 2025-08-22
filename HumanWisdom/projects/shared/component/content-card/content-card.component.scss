@@ -1,97 +1,41 @@
-/* Content Card Component Styles */
-.content-card {
-  flex-shrink: 0;
+.custom-box-img {
   width: 150px;
+  height: 150px;
+  transform: rotate(0deg);
+  opacity: 1;
+  gap: 10px;
   border-radius: 12px;
-  overflow: hidden;
-  height: 205px;
-  cursor: pointer;
-
-  .card-image {
-    position: relative;
-    height: 150px;
-    overflow: hidden;
-    
-    .card-img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-    }
-    
-    .card-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 48px;
-      height: 48px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
-      .overlay-icon {
-        color: #ffffff;
-        font-size: 18px;
-      }
-    }
-  }
-  
-  .card-content {
-    padding: 16px;
-    width: 150px;
-    height: 55px;
-    .card-title {
-      margin: 0 0 8px 0;
-      font-size: 15px;
-      font-weight: 500;
-      color: #000000;
-      line-height: 130%
-    }
-    
-    .card-subtitle {
-      margin: 0 0 8px 0;
-      font-size: 14px;
-      color: #666666;
-      line-height: 1.4;
-    }
-    
-    .card-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: #999999;
-      
-      .media-type {
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      
-      .duration {
-        color: #666666;
-      }
-    }
-  }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .content-card {
-    width: 240px;
-    
-    .card-image {
-      height: 140px;
-    }
-    
-    .card-content {
-      padding: 12px;
-      
-      .card-title {
-        font-size: 15px;
-      }
-    }
-  }
+.custom-box-text-container {
+  width: 150;
+  height: 55;
+  angle: 0 deg;
+  opacity: 1;
+  gap: 2px;
 }
+
+.custom-box-text-container-title {
+  font-family: Poppins;
+font-weight: 500;
+font-size: 15px;
+leading-trim: NONE;
+line-height: 130%;
+letter-spacing: 0px;
+color: #000000;
+width: 150px;
+height: 35px;
+}
+
+.custom-box-text-container-mediaType {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 10px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  color:rgba(0, 0, 0, 1);
+}
+/* Content Card Component - Bootstrap Only */
