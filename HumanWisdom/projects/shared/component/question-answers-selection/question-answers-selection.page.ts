@@ -33,7 +33,7 @@ export class QuestionAnswersSelection implements OnInit {
     return this.router.url;
   }, 1000);
 
-progress=0;
+  progress = 0;
 
   @Input()
   questionAndAns = JSON.parse(localStorage.getItem("questionAns"));
@@ -102,12 +102,12 @@ progress=0;
     this.selectedObj[index] = strSelected;
     this.receiveRating(JSON.stringify(obj));
     this.btnDisabled = false;
-    setTimeout(() => {   
-  
-        if(index==9)
-          this.submitProgress();
-        else
-          this.next('click_Daily_Practice_Next');
+    setTimeout(() => {
+
+      if (index == 9)
+        this.submitProgress();
+      else
+        this.next('click_Daily_Practice_Next');
 
     }, 500);
 
@@ -133,7 +133,7 @@ progress=0;
     if (this.currentSection === 1) {
       this.prevBtnDisabled = true;
     }
-    this.progress =this.progress + 10;
+    this.progress = this.progress + 10;
     if (this.currentSection === 1 && this.s2) {
 
       this.btnDisabled = false;
@@ -171,13 +171,13 @@ progress=0;
       this.currentSection--;
     }
     this.direction = 'right';
-        this.progress =this.progress- 10;
+    this.progress = this.progress - 10;
 
     if (this.currentSection === 0) {
       this.prevBtnDisabled = false;
-      if(this.s1)
+      if (this.s1)
         this.btnDisabled = false;
-      
+
     }
 
     if (this.currentSection === 1 && this.s2) {
@@ -206,62 +206,62 @@ progress=0;
     switch (e.Id) {
       case "1": {
         // this.rating1 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        this.rating1 =  Number(e.Rating)
+        this.rating1 = Number(e.Rating)
         this.s1 = e.s
         break;
       }
       case "2": {
         // this.rating2 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-         this.rating2 = Number(e.Rating)
+        this.rating2 = Number(e.Rating)
         this.s2 = e.s
         break;
       }
       case "3": {
         // this.rating3 = (e.Rating == 0) ? (1) : e.Rating
-         this.rating3 = Number(e.Rating)
+        this.rating3 = Number(e.Rating)
         this.s3 = e.s
         break;
       } case "4": {
         // this.rating4 = (e.Rating == 0) ? (1) : e.Rating
-         this.rating4 = Number(e.Rating)
+        this.rating4 = Number(e.Rating)
         this.s4 = e.s
         break;
       } case "5": {
         // this.rating5 = (e.Rating == 0) ? (1) : e.Rating
-         this.rating5 = Number(e.Rating)
+        this.rating5 = Number(e.Rating)
         this.s5 = e.s
         break;
       } case "6": {
         // this.rating6 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-         this.rating6 = Number(e.Rating)
+        this.rating6 = Number(e.Rating)
         this.s6 = e.s
         break;
 
       }
       case "7": {
         // this.rating7 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-         this.rating7 = Number(e.Rating)
+        this.rating7 = Number(e.Rating)
         this.s7 = e.s
         break;
 
       }
       case "8": {
         // this.rating8 = (e.Rating == 0) ? (1) : e.Rating
-         this.rating8 = Number(e.Rating)
+        this.rating8 = Number(e.Rating)
         this.s8 = e.s
         break;
 
       }
       case "9": {
         // this.rating9 = (e.Rating == 0) ? (1) : e.Rating
-         this.rating9 = Number(e.Rating)
+        this.rating9 = Number(e.Rating)
         this.s9 = e.s
         break;
 
       }
       case "10": {
         // this.rating10 = (e.Rating == 0) ? (1) : e.Rating
-         this.rating10 = Number(e.Rating)
+        this.rating10 = Number(e.Rating)
         this.s10 = e.s
         break;
 
@@ -278,11 +278,13 @@ progress=0;
       this.logeventservice.logEvent('click_survey_submit');
       this.endTime = Date.now();
       this.totalTime = this.endTime - this.startTime;
-      var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10]
-      this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2
-      localStorage.setItem("wisdomScore", this.wisdomScore)
 
-      this.option = optionT.join()
+      const optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10];
+      this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2;
+      localStorage.setItem("wisdomScore", this.wisdomScore);
+
+      this.option = optionT.join();
+
       this.service.submitProgressQuestion({
         "ModuleId": this.moduleId,
         "screenType": this.screenType,
@@ -291,35 +293,37 @@ progress=0;
         "UserId": this.userId,
         "timeSpent": this.totalTime,
         "OptionIDs": this.option
-      })
-        .subscribe((res) => { },
-          error => {
-            console.log(error)
-          },
-          () => {
-            this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
-            const { isUseCloseButton } = window.history.state;
-            if (isUseCloseButton) {
-              this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"], { state: { 'isUseCloseButton': true } });
-            } else {
-              this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"]);
+      }).subscribe((res: any) => {
+
+        this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r));
+
+        localStorage.setItem('wisdomRecomm', JSON.stringify(res.WisdomSurveyRecomm || []));
+
+        const { isUseCloseButton } = window.history.state;
+
+        this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"],
+          {
+            state: {
+              'isUseCloseButton': isUseCloseButton
             }
           });
+
+      }, error => {
+        console.log(error)
+      });
     } else {
       this.content = 'Please complete the survey';
       this.enableAlert = true;
     }
-
   }
-
 
 
   ngOnDestroy() { }
 
-  
+
   goBack() {
     // this.location.back()
-              this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey"]);
+    this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey"]);
 
   }
 

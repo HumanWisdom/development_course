@@ -1,7 +1,7 @@
 import { TeenagersService } from './../../../../teenagers/src/app/teenagers/teenagers.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 
@@ -13,60 +13,106 @@ import { ProgramType } from '../../../models/program-model';
 export class WisdomScorePage implements OnInit {
 
 
-  bg="purple_blue_w2"
+  bg = "purple_blue_w2"
 
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
 
-  overallPercentage:any
-  bookmark=0
-  toc=""
+  overallPercentage: any
+  bookmark = 0
+  toc = ""
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
-  points=localStorage.getItem("wisdomScore");
+  points = localStorage.getItem("wisdomScore");
   enableDash = false;
   isAdults: boolean = true;
 
-isUseCloseButton:boolean;
+  isUseCloseButton: boolean;
+  wisdomRecomm: any[] = [];
+  isSubscriber: boolean = false;
+
   constructor(private router: Router,
-    private service:TeenagersService,
-    private location:Location) {
-      if (SharedService.ProgramId == ProgramType.Adults) {
-        this.isAdults = true;
-      } else {
-        this.isAdults = false;
-      }
-     }
+    private service: TeenagersService,
+    private location: Location) {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
   ngOnInit() {
-    if(this.saveUsername==false)
-    {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
-      const {isUseCloseButton} = window.history.state;
-      this.isUseCloseButton=isUseCloseButton;
-      this.enableDash = true;
-      // if (this.service.previousUrl === '/' + SharedService.getprogramName() + '/wisdom-survey') {
-      //   this.enableDash = true;
-      // }
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"));
+    } else {
+      this.userId = JSON.parse(localStorage.getItem("userId"));
+    }
+
+    const { isUseCloseButton } = window.history.state;
+    this.isUseCloseButton = isUseCloseButton;
+
+    const recomm = localStorage.getItem('wisdomRecomm');
+    this.wisdomRecomm = recomm ? JSON.parse(recomm) : [];
+
+    const baseUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
+
+    this.wisdomRecomm = this.wisdomRecomm.map(item => {
+      const pathParts = item.path.split('/');
+      const cleanPath = pathParts.slice(0, -1).join('/');
+
+      const prefix = this.router.url.includes('/teenagers/')
+        ? '/teenagers'
+        : '/adults';
+
+      return {
+        ...item,
+        image_path: item.image_path.startsWith('http')
+          ? item.image_path
+          : baseUrl + item.image_path,
+        title: item.title,
+        cleanPath: prefix + cleanPath   
+      };
+    });
+
+    this.enableDash = true;
+
+    console.log("Final cleaned recommendations:", this.wisdomRecomm);
   }
-  receiveBookmark(e)
-{
-  console.log(e)
- if(e==true)
-  this.bookmark=1
-  else
-    this.bookmark=0
-}
+
+  navigateToRecommendation(item: any) {
+    if (!this.isSubscriber) {
+      const isTeenagerRoute = this.router.url.includes('/teenagers/');
+      const trialRedirectPath = isTeenagerRoute
+        ? '/teenagers/subscription/start-your-free-trial'
+        : '/subscription/start-your-free-trial';
+      this.router.navigate([trialRedirectPath]);
+      return;
+    }
+
+    this.router.navigate([item.cleanPath], {
+      state: { title: item.title }
+    });
+  }
+
+  receiveBookmark(e) {
+    console.log(e)
+    if (e == true)
+      this.bookmark = 1
+    else
+      this.bookmark = 0
+  }
 
 
-  submitProgress(){
+  submitProgress() {
 
     this.router.navigateByUrl('/' + SharedService.getprogramName() + '/discovering-wisdom/s27032');
 
   }
-  prev(){
+  prev() {
     this.router.navigateByUrl('/' + SharedService.getprogramName() + '/discovering-wisdom/s27020');
 
   }
