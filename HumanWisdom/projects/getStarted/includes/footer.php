@@ -135,7 +135,7 @@
 
             <a href="../pages/accessibility.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                Accessibility
+                Accessibility Statement
               </h4>
             </a>
           </div>
