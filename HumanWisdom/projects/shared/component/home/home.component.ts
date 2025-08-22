@@ -7,6 +7,18 @@ export interface NavigationItem {
   isActive: boolean;
 }
 
+// New interface to match your incoming data format
+export interface RawContentData {
+  icon_path: string;
+  image_path: string;
+  module: string;
+  path: string;
+  section_name: string;
+  subtitle: string;
+  timing: string;
+  title: string;
+}
+
 export interface ContentCard {
   id: string;
   imageUrl: string;
@@ -15,6 +27,7 @@ export interface ContentCard {
   mediaType: 'VIDEO' | 'AUDIO';
   duration?: string;
   overlayIcon?: string;
+  path?: string; // Added to store the navigation path
 }
 
 export interface ContentSection {
@@ -105,6 +118,93 @@ export class HomeComponent implements OnInit {
     console.log('Home component initialized');
   }
 
+  /**
+   * Transform raw content data to ContentCard format
+   */
+  transformRawDataToContentCard(rawData: RawContentData): ContentCard {
+    return {
+      id: this.generateId(rawData.title),
+      imageUrl: rawData.image_path,
+      title: rawData.title,
+      subtitle: rawData.subtitle || undefined,
+      mediaType: this.mapModuleToMediaType(rawData.module),
+      duration: this.formatTiming(rawData.timing),
+      overlayIcon: this.mapIconPathToOverlayIcon(rawData.icon_path),
+      path: rawData.path
+    };
+  }
+
+  /**
+   * Transform raw content data array to ContentSection format
+   */
+  transformRawDataToContentSections(rawDataArray: RawContentData[]): ContentSection[] {
+    // Group by section_name
+    const sectionsMap = new Map<string, RawContentData[]>();
+    
+    rawDataArray.forEach(item => {
+      const sectionName = item.section_name || 'Other';
+      if (!sectionsMap.has(sectionName)) {
+        sectionsMap.set(sectionName, []);
+      }
+      sectionsMap.get(sectionName)!.push(item);
+    });
+
+    // Convert to ContentSection array
+    return Array.from(sectionsMap.entries()).map(([sectionName, items]) => ({
+      id: this.generateId(sectionName),
+      title: sectionName,
+      isExpanded: true,
+      cards: items.map(item => this.transformRawDataToContentCard(item))
+    }));
+  }
+
+  /**
+   * Generate a unique ID from title
+   */
+  private generateId(title: string): string {
+    return title.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+  }
+
+  /**
+   * Map module field to mediaType
+   */
+  private mapModuleToMediaType(module: string): 'VIDEO' | 'AUDIO' {
+    const upperModule = module.toUpperCase();
+    if (upperModule === 'VIDEO' || upperModule === 'AUDIO') {
+      return upperModule as 'VIDEO' | 'AUDIO';
+    }
+    // Default to VIDEO if unknown
+    return 'VIDEO';
+  }
+
+  /**
+   * Format timing to duration format
+   */
+  private formatTiming(timing: string): string {
+    // Remove "min" suffix and ensure proper format
+    return timing.replace(/\s*min\s*$/i, '').trim();
+  }
+
+  /**
+   * Map icon_path to overlayIcon
+   */
+  private mapIconPathToOverlayIcon(iconPath: string): string {
+    if (iconPath.includes('play')) {
+      return 'play';
+    } else if (iconPath.includes('audio') || iconPath.includes('volume')) {
+      return 'audio';
+    }
+    // Default to play icon
+    return 'play';
+  }
+
+  /**
+   * Set content sections from raw data
+   */
+  setContentFromRawData(rawDataArray: RawContentData[]): void {
+    this.contentSections = this.transformRawDataToContentSections(rawDataArray);
+  }
+
   onNavigationClick(item: NavigationItem): void {
     this.navigationItems.forEach(nav => nav.isActive = false);
     item.isActive = true;
@@ -112,6 +212,10 @@ export class HomeComponent implements OnInit {
   }
 
   onCardClick(card: ContentCard): void {
+    // If card has a path, navigate to it
+    if (card.path) {
+      this.router.navigate([card.path]);
+    }
     this.cardClick.emit(card);
   }
 
