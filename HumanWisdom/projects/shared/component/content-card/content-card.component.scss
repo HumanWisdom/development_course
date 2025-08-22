@@ -27,6 +27,13 @@ width: 150px;
 height: 35px;
 }
 
+
+.no-break {
+  white-space: normal;       /* Allows wrapping to next line */
+  word-break: keep-all;      /* Prevents breaking within words */
+  overflow-wrap: normal;     /* Avoids breaking long words */
+}
+
 .custom-box-text-container-mediaType {
   font-family: Poppins;
   font-weight: 400;
