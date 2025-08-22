@@ -37815,6 +37815,11 @@ a.fc_e58d82:hover
   border-top: 1px rgba(255, 255, 255, 0.5) dashed;
   margin: 15px 0;
 }
+.hr_style_v3_14 {
+    border-top: 1px rgba(255, 255, 255, .5) dashed;
+    margin: 15px 0;
+    opacity: 50%;
+}
 
 .dflex_start 
 {
