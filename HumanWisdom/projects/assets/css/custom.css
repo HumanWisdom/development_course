@@ -10806,7 +10806,7 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-   top:18% !important; 
+   top:25% !important; 
    height: fit-content;
 }
 
@@ -37962,6 +37962,10 @@ span
   display: flex;
   align-items: start;
 }
+.dflex_start1 {
+    display: flex
+}
+;
 
 .v1_3_sfooter_ext_01
 {
