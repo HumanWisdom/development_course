@@ -1,7 +1,8 @@
 <nav class="lh0">
   <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox mc_main">
   <label class="m-menu__toggle m0px ihamburger" for="menu" (click)="disableClick ? $event.preventDefault() : null">
-    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/tn_hamburger.svg" class="" alt="" (click)="getmenuevent()">
+    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/tn_hamburger.svg" class="" alt=""
+      (click)="getmenuevent()">
   </label>
   <label class="m-menu__overlay m-menu__toggle" #closemodal for="menu"></label>
   <!-- submenu -->
@@ -11,8 +12,8 @@
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" *ngIf="!isDataRecieved">
-              <a (click)="Logevent('/onboarding/user-profile', '', 'click_profile')"  *ngIf="enableprofile"> 
-              <img [src]="url" alt="" class="img_profile"> </a>
+              <a (click)="Logevent('/onboarding/user-profile', '', 'click_profile')" *ngIf="enableprofile">
+                <img [src]="url" alt="" class="img_profile"> </a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
               <a class="" (click)="closemenuevent()">
@@ -21,13 +22,13 @@
             </div>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px mb15px">
-            <a  (click)="Logevent('/onboarding/user-profile', '', 'click_profile')"  *ngIf="enableprofile">
-            <h4 class="mt0px mb5px fs_20px fw_600 lh_150p fc_ffffff">
-              {{getName()}}
-            </h4>
+            <a (click)="Logevent('/onboarding/user-profile', '', 'click_profile')" *ngIf="enableprofile">
+              <h4 class="mt0px mb5px fs_20px fw_600 lh_150p fc_ffffff">
+                {{getName()}}
+              </h4>
             </a>
-            <a *ngIf="!subscriber"  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
-              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe" >
+            <a *ngIf="!subscriber" (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
+              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe">
                 Subscribe now
               </h4>
             </a>
@@ -59,23 +60,25 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai" (click)="onProgramChange()">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/tlogo.svg" alt="" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/tlogo.svg" alt=""
+                  class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                 {{isAdults ? "HappierMe for Teenagers" : "HappierMe for Adults" }}
+                  {{isAdults ? "HappierMe for Teenagers" : "HappierMe for Adults" }}
                 </h4>
               </div>
               <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/toggle.svg" alt="" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/toggle.svg" alt=""
+                  class="img-responsive">
               </div>
             </div>
           </div>
         </a>
       </li>
 
-      <li  *ngIf="!subscriber">
-        <a (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')"  class="p0 b0px">
+      <li *ngIf="!subscriber">
+        <a (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
@@ -92,11 +95,13 @@
       </li>
 
       <li *ngIf="getLoggedIn()  && getSubscriber()">
-        <a (click)="routeManageSubscriptiont('/onboarding/myprogram', '', 'click_MySubscription_Hamburger')"   class="p0 b0px">
+        <a (click)="routeManageSubscriptiont('/onboarding/myprogram', '', 'click_MySubscription_Hamburger')"
+          class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/06.svg" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/06.svg"
+                  class="img-responsive">
               </div>
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -126,15 +131,16 @@
       </li> -->
 
       <li>
-        <a (click)="Logevent('/adults/testimonials', '', 'click_testimonials')"  class="p0 b0px">
+        <a (click)="Logevent('/adults/testimonials', '', 'click_testimonials')" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/03.svg" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/03.svg"
+                  class="img-responsive">
               </div>
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                 Success stories
+                  Success stories
                 </h4>
               </div>
             </div>
@@ -149,7 +155,8 @@
           <div class="row" (click)="setLogevent('click_Partnership_Program')">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg"
+                  class="img-responsive">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -157,7 +164,8 @@
                 </h4>
               </div>
               <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/chevron_right_white.svg" alt="" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/chevron_right_white.svg" alt=""
+                  class="img-responsive">
               </div>
             </div>
           </div>
@@ -170,9 +178,8 @@
               <div class="row mb30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                   <div class="col-md-1 col-sm-1 col-xs-1 p0 mr20px">
-                    <img
-                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_back.svg"
-                      alt="" class="img-responsive back_p">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_back.svg" alt=""
+                      class="img-responsive back_p">
                   </div>
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
@@ -190,8 +197,8 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -208,8 +215,8 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -222,12 +229,13 @@
             </li>
 
             <li>
-              <a class="p0 b0px" (click)="Logevent('/adults/partnership-webpage/partnership-index/', '', 'click_About_Partnership_Hamburger')"   >
+              <a class="p0 b0px"
+                (click)="Logevent('/adults/partnership-webpage/partnership-index/', '', 'click_About_Partnership_Hamburger')">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -244,8 +252,8 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -264,8 +272,8 @@
 
 
       <li>
-        <a  (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness')"  class="p0 b0px">
-        <!-- <a routerLink="/give-the-gift-of-wisdom/" class="p0 b0px"> -->
+        <a (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness')" class="p0 b0px">
+          <!-- <a routerLink="/give-the-gift-of-wisdom/" class="p0 b0px"> -->
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
@@ -301,7 +309,7 @@
       </li> -->
 
       <li>
-        <a  (click)="handleReferFriend()"   class="p0 b0px">
+        <a (click)="handleReferFriend()" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
@@ -427,7 +435,7 @@
       </li> -->
 
       <li>
-        <a  (click)="handleTreeSistersClick()"  class="p0 b0px">
+        <a (click)="handleTreeSistersClick()" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
@@ -445,7 +453,7 @@
       </li>
 
       <li *ngIf="!ios">
-        <a href="https://happierme.app/pages/newsletter.php"  target="_blank"   class="p0 b0px hc_sfn">
+        <a href="https://happierme.app/pages/newsletter.php" target="_blank" class="p0 b0px hc_sfn">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
@@ -598,8 +606,8 @@
                 </h4>
               </div>
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px tright">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/chevron_right_white.svg"
-                  alt="" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/chevron_right_white.svg" alt=""
+                  class="img-responsive">
               </div>
             </div>
           </div>
@@ -612,9 +620,8 @@
               <div class="row mb30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                   <div class="col-md-1 col-sm-1 col-xs-1 p0 mr20px">
-                    <img
-                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_back.svg"
-                      alt="" class="img-responsive back_hs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_back.svg" alt=""
+                      class="img-responsive back_hs">
                   </div>
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
@@ -644,12 +651,12 @@
             </li> -->
 
             <li>
-              <a (click)="Logevent('/adults/help-support/faq', '', 'click_FAQ_Hamburger')"  class="p0 b0px">
+              <a (click)="Logevent('/adults/help-support/faq', '', 'click_FAQ_Hamburger')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -677,12 +684,12 @@
             </li> -->
 
             <li>
-              <a  (click)="Logevent('/adults/help-support/support', '', 'click_Contact_Us_Hamburger')"  class="p0 b0px">
+              <a (click)="Logevent('/adults/help-support/support', '', 'click_Contact_Us_Hamburger')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -695,12 +702,13 @@
             </li>
 
             <li>
-              <a  (click)="Logevent('/adults/help-support/terms-conditions', '', 'click_terms_conditions_Hamburger')"  class="p0 b0px">
+              <a (click)="Logevent('/adults/help-support/terms-conditions', '', 'click_terms_conditions_Hamburger')"
+                class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -713,12 +721,12 @@
             </li>
 
             <li>
-              <a  (click)="Logevent('/privacy-policy', '', 'click_privacy_policy')" class="p0 b0px">
+              <a (click)="Logevent('/privacy-policy', '', 'click_privacy_policy')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -735,8 +743,8 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
@@ -748,16 +756,17 @@
               </a>
             </li>
             <li>
-              <a  (click)="Logevent('/help-support/accessibility-policy', '', 'click_accessibility_policy')" class="p0 b0px">
+              <a (click)="Logevent('/help-support/accessibility-policy', '', 'click_accessibility_policy')"
+                class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg"
-                        alt="" class="img-responsive">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
+                        class="img-responsive">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                        Accessibility Policy
+                        Accessibility Statement
                       </h4>
                     </div>
                   </div>
@@ -771,27 +780,34 @@
       <div class="row mtb50px">
         <div class="col-md-12 col-sm-12 col-xs-12 hamburger_sociali p0">
           <a class="" href="https://facebook.com/happiermeapp/" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_facebook.svg" alt="" class="img-responsive">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_facebook.svg" alt=""
+              class="img-responsive">
           </a>
           <a class="" href="https://twitter.com/happiermeapp" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_twitter.svg" alt="" class="img-responsive">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_twitter.svg" alt=""
+              class="img-responsive">
           </a>
           <a class="" href="https://www.instagram.com/happiermeapp/" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_instagram.svg" alt="" class="img-responsive">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_instagram.svg" alt=""
+              class="img-responsive">
           </a>
           <a class="" href="https://www.linkedin.com/company/humanwisdom" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_linkedin.svg" alt="" class="img-responsive">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_linkedin.svg" alt=""
+              class="img-responsive">
           </a>
           <a class="" href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_youtube.svg" alt="" class="img-responsive">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_youtube.svg" alt=""
+              class="img-responsive">
           </a>
         </div>
       </div>
 
       <div class="row" *ngIf="isloggedIn">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="logout()" data-target="#modal_logout">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg" class="img-responsive mr5px">
+          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="logout()"
+            data-target="#modal_logout">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg"
+              class="img-responsive mr5px">
             Logout
           </button>
         </div>
