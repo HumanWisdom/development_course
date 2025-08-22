@@ -10831,7 +10831,7 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-  top: 18% !important; 
+  top: 25% !important; 
   height: fit-content;
 }
 
@@ -10922,7 +10922,7 @@ body,
   z-index: 999; */
 
   position: absolute;
-  bottom: -50px;
+  /* bottom: -50px; */
   right: 0;
   left: 0;
   /* width: 98%; */
