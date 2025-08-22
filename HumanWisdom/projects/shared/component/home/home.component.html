@@ -21,13 +21,8 @@
             <div class="row">
               <div class="col-12">
                 <div class="d-flex flex-wrap">
-                  <div *ngFor="let item of navigationItems" 
-                       class="nav-item px-3 py-2 me-2 mb-2 rounded cursor-pointer"
-                       [class.bg-primary]="item.isActive"
-                       [class.text-white]="item.isActive"
-                       [class.text-muted]="!item.isActive"
-                       (click)="onNavigationClick(item)">
-                    {{ item.label }}
+                  <div class="nav-menu">
+                    <a *ngFor="let item of navigationItems" class="nav-item" [class.nav-item--selected]="item.isActive" [class.nav-item--unselected]="!item.isActive">  {{ item.label }}</a>
                   </div>
                 </div>
               </div>
@@ -56,7 +51,7 @@
                        [attr.aria-controls]="'section-' + section.id">
                     <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
                     <div class="text-muted">
-                      <i class="fas" [class.fa-caret-down]="section.isExpanded" [class.fa-caret-right]="!section.isExpanded"></i>
+                      <i class="fa" [class.fa-caret-down]="section.isExpanded" [class.fa-caret-right]="!section.isExpanded"></i>
                     </div>
                   </div>
 
@@ -67,7 +62,7 @@
                        role="region"
                        [attr.aria-labelledby]="'section-title-' + section.id">
                     <div class="p-3">
-                      <div class="d-flex overflow-auto">
+                      <div class="d-flex card-container">
                         <div *ngFor="let card of section.cards" class="me-3" style="min-width: 200px; flex-shrink: 0;">
                           <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
                         </div>

@@ -2,6 +2,87 @@
 .home-container {
   background: #FFF4E6;
 }
+/* Navigation menu styling */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust spacing between items as needed */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 0 10px; /* Add some horizontal padding */
+  
+  /* Hide scrollbars */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+.nav-menu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scrolling */
+.nav-menu {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.nav-item {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  padding: 8px 12px; /* Add horizontal padding for better touch targets */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Selected/Active state */
+.nav-item.selected,
+.nav-item.active {
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-color: rgba(203, 97, 113, 1);
+  text-decoration-thickness: 6px;
+  text-underline-offset: 8px; /* Adjust distance from text */
+}
+
+/* Hover state (optional) */
+.nav-item:hover {
+  color: #000000;
+}
+
+/* Alternative class-based approach for different states */
+.nav-item--unselected {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+.nav-item--selected {
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-color: rgba(203, 97, 113, 1);
+  text-decoration-thickness: 6px;
+  text-underline-offset: 8px;
+}
+
+.card-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
 
 .section-title {
   font-family: 'Poppins', sans-serif;

@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
           title: 'Introduction to mental health',
           mediaType: 'VIDEO',
           duration: '00:58',
-          overlayIcon: 'play'
+          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg'
         },
         {
           id: 'look-without-judgement',
@@ -72,14 +72,14 @@ export class HomeComponent implements OnInit {
           title: 'Look at yourself without judgement',
           mediaType: 'AUDIO',
           duration: '01:35',
-          overlayIcon: 'audio'
+          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg'
         },
         {
           id: 'overcome-anxiety',
           imageUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/pathway/30.png',
           title: 'Overcome anxiety',
           mediaType: 'VIDEO',
-          overlayIcon: 'play'
+          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg'
         }
       ]
     },
@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit {
           title: 'Quick meditation',
           mediaType: 'VIDEO',
           duration: '02:15',
-          overlayIcon: 'play'
+          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg'
         },
         {
           id: 'mindfulness',
@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit {
           title: 'Mindfulness practice',
           mediaType: 'AUDIO',
           duration: '03:45',
-          overlayIcon: 'audio'
+          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg'
         }
       ]
     }
@@ -224,11 +224,5 @@ export class HomeComponent implements OnInit {
     this.sectionToggle.emit(section);
   }
 
-  getOverlayIconClass(overlayIcon: string): string {
-    switch (overlayIcon) {
-      case 'play': return 'fas fa-play';
-      case 'audio': return 'fas fa-volume-up';
-      default: return 'fas fa-play';
-    }
-  }
+
 }

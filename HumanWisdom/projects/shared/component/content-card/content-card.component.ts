@@ -15,10 +15,37 @@ export class ContentCardComponent {
   }
 
   getOverlayIconClass(overlayIcon: string): string {
-    switch (overlayIcon) {
-      case 'play': return 'fas fa-play';
-      case 'audio': return 'fas fa-volume-up';
-      default: return 'fas fa-play';
+    // Handle both simple strings and full URLs
+    if (this.isOverlayIconUrl(overlayIcon)) {
+      // If it's a URL, extract the icon type from the URL
+      if (overlayIcon.includes('play')) {
+        return 'fas fa-play';
+      } else if (overlayIcon.includes('audio') || overlayIcon.includes('volume')) {
+        return 'fas fa-volume-up';
+      }
+      // Default to play icon for unknown URLs
+      return 'fas fa-play';
+    } else {
+      // Handle simple string values
+      switch (overlayIcon) {
+        case 'play': return 'fas fa-play';
+        case 'audio': return 'fas fa-volume-up';
+        default: return 'fas fa-play';
+      }
     }
+  }
+
+  /**
+   * Check if the overlayIcon is a URL or a simple string
+   */
+  isOverlayIconUrl(overlayIcon: string): boolean {
+    return overlayIcon && (overlayIcon.startsWith('http://') || overlayIcon.startsWith('https://') || overlayIcon.includes('/'));
+  }
+
+  /**
+   * Get the overlay icon source - either the URL or null for FontAwesome icons
+   */
+  getOverlayIconSrc(overlayIcon: string): string | null {
+    return this.isOverlayIconUrl(overlayIcon) ? overlayIcon : null;
   }
 }

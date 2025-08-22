@@ -4,7 +4,15 @@
 
     <!-- Overlay -->
     <div class="card-overlay d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100">
-      <i [class]="getOverlayIconClass(card.overlayIcon)" class="overlay-icon fs-2 text-white bg-dark bg-opacity-50 rounded-circle p-3"></i>
+      <!-- Show image if overlayIcon is a URL, otherwise show FontAwesome icon -->
+      <img *ngIf="getOverlayIconSrc(card.overlayIcon)" 
+           [src]="getOverlayIconSrc(card.overlayIcon)" 
+           [alt]="'Overlay icon'" 
+           class="overlay-icon fs-2  rounded-circle p-3"
+           style="width: 48px; height: 48px; object-fit: contain;">
+      <i *ngIf="!getOverlayIconSrc(card.overlayIcon)" 
+         [class]="getOverlayIconClass(card.overlayIcon)" 
+         class="overlay-icon fs-2 text-white bg-opacity-50 p-3"></i>
     </div>
   </div>
 
