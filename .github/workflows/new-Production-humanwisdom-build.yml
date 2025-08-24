@@ -64,7 +64,7 @@ jobs:
           path: HumanWisdom/builds/compressed/program.tgz
 
   adults-deploy:
-    runs-on: self-hosted   #now runs on your EC2 runner
+    runs-on: prod-hosted   #now runs on your EC2 runner
     needs: build
     steps:
       - name: Download artifact
@@ -137,7 +137,7 @@ jobs:
           path: HumanWisdom/builds/compressed/program.tgz
   
   deploy-teenagers:
-      runs-on: self-hosted
+      runs-on: prod-hosted
       needs: build-teenagers
       steps:
         - name: Download artifact
