@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from '../../services/shared.service';
@@ -7,6 +7,8 @@ import { LogEventService } from '../../services/log-event.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { NavigationService } from '../../services/navigation.service';
 import { ProgramType } from '../../models/program-model';
+import { NgNavigatorShareService } from 'ng-navigator-share';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-start-your-free-trial',
@@ -14,10 +16,15 @@ import { ProgramType } from '../../models/program-model';
   styleUrls: ['./start-your-free-trial.page.scss'],
 })
 export class StartYourFreeTrialPage implements OnInit {
+  @ViewChild('closemodal') closemodal: ElementRef;
   isAdults = false;
+  path: any;
+  address: any;
+  ios = false;
   constructor(private router: Router, private location: Location, private servive: AdultsService,
     public logeventservice: LogEventService,
-    private navigateService: NavigationService) { }
+    private navigateService: NavigationService,
+    private ngNavigatorShareService: NgNavigatorShareService,) { }
 
   ngOnInit() {
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -86,5 +93,91 @@ export class StartYourFreeTrialPage implements OnInit {
   routeToTestimonial() {
 
     this.router.navigateByUrl(`/${SharedService.getprogramName()}/testimonials`)
+  }
+
+  share() {
+    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
+        alert(`This service/api is not supported in your Browser`);
+        return;
+      } */
+    console.log("url")
+    this.path = environment.production ? "https://happierme.app" + this.address:"https://staging.happierme.app" + this.address;
+    this.ngNavigatorShareService.share({
+      title: 'HappierMe Program',
+      text: 'Hey, check out the HappierMe Program',
+      url: this.path
+    }).then((response) => {
+      
+    })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+    giftwisdom() {
+    this.logeventservice.logEvent('click_gift_wisdom_Hamburger')
+    localStorage.setItem("giftwisdom", "T");
+  }
+
+    Logevent(route, params, evtName) {
+      this.logeventservice.logEvent(evtName);
+  
+      if (this.isAdults) {
+        if (params != '' && route != '') {
+          this.router.navigate([route, params]);
+        } else if (route != '') {
+          if (route == '/adults/testimonials' ||
+            route == '/adults/adverts-work' ||
+            route == '/adults/adverts-student' ||
+            route == '/adults/adverts-about' ||
+            route == '/adults/help-support/faq' ||
+            route == '/adults/help-support/terms-conditions' ||
+            route == '/adults/help-support/support' ||
+            route == '/adults/help-support/accessibility-policy' ||
+            route == '/adults/partnership-webpage/partnership-index/') {
+            this.navigate(route);
+            return;
+          }
+          if (!this.ios) {
+            // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
+            this.router.navigate(['/' + SharedService.getprogramName() + route])
+          } else {
+            this.router.navigate(['/' + SharedService.getprogramName() + route])
+          }
+        }
+      } else {
+        route = route.toString().replace('adults', 'teenagers');
+        if (params != '' && route != '') {
+          this.router.navigate([route, params]);
+        } else if (route != '') {
+          if (route == '/teenagers/testimonials' ||
+            route == '/teenagers/adverts-work' ||
+            route == '/teenagers/adverts-student' ||
+            route == '/teenagers/adverts-about' ||
+            route == '/teenagers/help-support/faq' ||
+            route == '/teenagers/help-support/terms-conditions' ||
+            route == '/teenagers/help-support/privacy-policy' ||
+            route == '/teenagers/help-support/cookie-policy' ||
+            route == '/teenagers/help-support/accessibility-policy' ||
+            route == '/teenagers/help-support/support' ||
+            route == '/teenagers/partnership-webpage/partnership-index/') {
+            this.navigate(route);
+            return;
+          }
+          if (!this.ios) {
+            // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
+            this.router.navigate(['/' + SharedService.getprogramName() + route])
+          } else {
+            this.router.navigate(['/' + SharedService.getprogramName() + route])
+          }
+        }
+      }
+  
+      this.closemodal?.nativeElement?.click();
+    }
+  
+      navigate(url) {
+    this.closemodal?.nativeElement?.click();
+    this.router.navigate([url]);
   }
 }
