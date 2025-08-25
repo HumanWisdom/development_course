@@ -1,9 +1,18 @@
+
+<style>
+  @media screen and (min-width: 1600px) {
+      .fixed_w {
+        width: 980px !important;
+         margin:0 auto !important;
+      }
+    }
+  </style>
 <!-- footer -->
-<div class="dfooter">
+<div class="dfooter ">
 
   <!-- desktop -->
   <div class="row center_flex display_m_none">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 d-flex">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 d-flex fixed_w">
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12">
         <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
           About us

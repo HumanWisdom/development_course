@@ -181,7 +181,6 @@ require_once('./includes/security_config.php');
       .mdiv_coaches {
         width: 190px !important;
         height: 245px !important;
-
         padding-left: 15px;
       }
 
@@ -222,6 +221,25 @@ require_once('./includes/security_config.php');
         padding-left: 18px !important;
       }
     }
+
+    @media screen and (min-width: 1600px) {
+      .fixed_w {
+        width: 980px !important;
+         margin:0 auto !important;
+      }
+      .f_18px {
+        font-size: 18px !important;
+      }
+      .t_align{
+        text-align: center !important;
+      }
+      .f_14px{
+        font-size:14px !important
+      }
+      .f_12px{
+        font-size:12px !important
+      }
+    }
   </style>
 
 </head>
@@ -251,7 +269,7 @@ require_once('./includes/security_config.php');
 
     <div class="row center_flex web_home_divlanding">
       <div
-        class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+        class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w">
 
 
 
@@ -389,7 +407,7 @@ require_once('./includes/security_config.php');
   <main id="main">
 
     <!-- popup -->
-    <section>
+    <section class="fixed_w">
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 w-335px">
@@ -734,7 +752,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-335px">
+        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-335px fixed_w">
           <!-- <video id="homeVideo" controls playinline class="w100p"
               poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
               controlsList="nodownload">
@@ -787,7 +805,7 @@ require_once('./includes/security_config.php');
 
     <div class="row center_flex">
       <div
-        class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block mobile_view_testimonial">
+        class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block mobile_view_testimonial fixed_w">
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px mb10px" data-aos="fade-up" data-aos-delay="200">
           <div class="testimonial-cardnew">
@@ -799,8 +817,8 @@ require_once('./includes/security_config.php');
               <div class="testimonial-header">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/sakshi_te.webp" alt="Brenda McChesney">
                 <div class="testimonial-info">
-                  <h5 style="font-size:18px;" class="testimonial-h5">Brenda McChesney</h5>
-                  <h3 class="testimonial-h3">Director, National Family <br>Support Network, USA</h3>
+                  <h5 style="font-size:18px;" class="testimonial-h5 f_12px">Brenda McChesney</h5>
+                  <h3 class="testimonial-h3 f_12px">Director, National Family <br>Support Network, USA</h3>
                 </div>
               </div>
               <div class="row">
@@ -826,8 +844,8 @@ require_once('./includes/security_config.php');
               <div class="testimonial-header">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/adam_te.webp" alt="Brenda McChesney">
                 <div class="testimonial-info">
-                  <h5 style="font-size:18px;" class="testimonial-h5">Adam Beagley</h5>
-                  <h3 class="testimonial-h3">Student, UK</h3>
+                  <h5 style="font-size:18px;" class="testimonial-h5 f_12px">Adam Beagley</h5>
+                  <h3 class="testimonial-h3 f_12px">Student, UK</h3>
                 </div>
               </div>
               <div class="row">
@@ -856,8 +874,8 @@ require_once('./includes/security_config.php');
               <div class="testimonial-header">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/dan_te.webp" alt="Brenda McChesney">
                 <div class="testimonial-info">
-                  <h5 style="font-size:18px;" class="testimonial-h5">Dr Dan Reidenberg</h5>
-                  <h3 class="testimonial-h3">Director,<br />Mental Health Coalition, USA</h3>
+                  <h5 style="font-size:18px;" class="testimonial-h5 f_12px">Dr Dan Reidenberg</h5>
+                  <h3 class="testimonial-h3 f_12px">Director,<br />Mental Health Coalition, USA</h3>
                 </div>
               </div>
               <div class="row">
@@ -928,7 +946,7 @@ require_once('./includes/security_config.php');
     <!-- teenagers -->
     <section>
       <div class="row center_flex web_home_divcircle">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element w-335px">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element w-335px fixed_w">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 land-happierMe-section" data-aos="fade-up"
             data-aos-delay="100">
 
@@ -952,7 +970,7 @@ require_once('./includes/security_config.php');
                 Our happiness depends on many factors.
               </h2> -->
 
-              <h2 class="mb0px fs_30px fw_600 lh_150p fc_000000 f_21px">
+              <h2 class="mb0px fs_30px fw_600 lh_150p fc_000000 f_21px f_18px">
                 Address the root cause of problems for lasting change.
               </h2>
 
@@ -1517,7 +1535,7 @@ require_once('./includes/security_config.php');
       </div>
       <div class="row center_flex">
         <div
-          class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col-12 p10  work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
+          class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col-12 p10  work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 aos-init aos-animate" data-aos="fade-up"
             data-aos-delay="200">
             <div class="div_work_edu_health">
@@ -1670,7 +1688,7 @@ require_once('./includes/security_config.php');
     <section>
       <div class="row center_flex">
         <div
-          class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element1 w-335px f_18px">
+          class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element1 w-335px f_18px fixed_w">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 land-happierMe-section" data-aos="fade-up"
             data-aos-delay="100">
             <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp"
@@ -2097,7 +2115,7 @@ require_once('./includes/security_config.php');
 
     <section id="div_subscription">
       <div class="row center_flex div_subscriptionnew">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 fixed_w">
 
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -2196,7 +2214,7 @@ require_once('./includes/security_config.php');
         </div>
 
         <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 plr20px">
+          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 plr20px fixed_w">
             <div class="row center_flex">
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 subs_mobile_view">
 
@@ -2313,7 +2331,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <div class="row center_flex prelative" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0 fixed_w">
 
           <ul class="nav nav-tabs flex_ai m0px tool_tabs" id="toolTabs" role="tablist">
             <li class="nav-item" role="presentation">
@@ -2607,7 +2625,7 @@ require_once('./includes/security_config.php');
     </section>
     <!-- /tools -->
     <div class="row center_flex mt40px card_center" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
-      <div id="PricingSelectBtn" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0 mtb20px">
+      <div id="PricingSelectBtn" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0 mtb20px fixed_w t_align" >
         <a href="https://happierme.app/pages/splash_options.php">
           <button class="fs_21px fw_500 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
             Try HappierMe for free
