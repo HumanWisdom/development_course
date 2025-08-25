@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta property="og:title" id="tag1" content="HappierMe: For a happier life" />
     <meta property="og:type" content="website" />
@@ -193,6 +192,37 @@ Here you will find easy to use tools to manage your emotions and mental health, 
                 Most problems we humans face, for which there is no easy answer, begin in our thinking. Our mission is to empower people to understand their own mind so they can be in charge of their thoughts, feelings and actions, and live a happier life. With a deeper understanding of ourselves we can manage our emotions, be mentally healthy, have happier relationships, avoid addiction and improve our soft skills.
               </h4>
             </div>
+
+            <section>
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+              <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
+                The inspiration behind HappierMe
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0">
+            <!-- <video id="homeVideo" controls playinline class="w100p"
+              poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
+              controlsList="nodownload">
+              <source
+                src="https://d1tenzemoxuh75.cloudfront.net/website/videos/adults_intro.mp4"
+                type="video/mp4">
+            </video> -->
+
+             <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro" src="https://www.youtube.com/embed/qcOZnwQ3jxM?si=h1vq4zHtZwaPYq8E" class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen onclick="return logevent('click_play_video_home', 'about_us.php')" ></iframe>
+          </div>
+        </div>
+
+        
+
+      </section>
+      <!-- /video -->
+
 
           </div>
         </div>

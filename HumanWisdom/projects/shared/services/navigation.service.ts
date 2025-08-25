@@ -11,6 +11,9 @@ export class NavigationService {
   constructor(private router: Router) { }
 
   addToHistory(url: string) {
+  if (url.includes('/onboarding/add-to-cart')) {
+    return;
+  }
     var urls = url.split('/');
     var urltoCheck: any;
     urltoCheck = urls[urls.length - 1];

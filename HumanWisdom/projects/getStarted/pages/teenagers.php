@@ -1015,8 +1015,8 @@
           <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 p0">
 
-              <button class="btn_subscription btn-subscription-border">
-                <div class="row center_flex btn_subscription_trial btn-subscription-color">
+              <button class="btn_subscription  btn-subscription-border">
+                <div class="row center_flex btn_subscription_trial  btn-subscription-color">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       14-day free trial

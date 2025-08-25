@@ -132,6 +132,12 @@
                 Cookie policy
               </h4>
             </a>
+
+            <a href="../pages/accessibility.php">
+              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                Accessibility Statement
+              </h4>
+            </a>
           </div>
         </div>
       </div>
@@ -349,6 +355,12 @@
                       Cookie policy
                     </h4>
                   </a>
+
+                  <a href="../pages/accessibility.php">
+                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      Accessibility
+                    </h4>
+                  </a>
                 </div>
               </div>
               <!-- /links -->
@@ -410,7 +422,7 @@
 
   <div class="row center_flex mt70px display_m_none">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  tcenter">
-      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff opacity-50 ">
+      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff  opacity-50">
         Copyright © 2024 HappierMe. All rights reserved
       </h4>
     </div>

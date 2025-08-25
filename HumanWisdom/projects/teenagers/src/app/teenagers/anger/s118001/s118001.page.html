@@ -161,6 +161,55 @@
           </div>
         </div>
       </a>
+
+            <a (click)="getClickEvent({
+              MediaUrl: 'https://d1tenzemoxuh75.cloudfront.net/soundscapes/2.mp3',
+              SoundscapeID: 2,
+              Title: 'Soft Horizon'
+            })">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+                  
+                  <!-- session image -->
+                  <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/soundscapes/02.webp" 
+                        alt="Soft Horizon" 
+                        class="p0 session_img">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" 
+                        alt="Play" 
+                        class="p0 session_img_play">
+                  </div>
+
+                  <!-- session content -->
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                    <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                      Session #5
+                    </h4>
+                    <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                      Soft Horizon
+                    </h4>
+                    <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                      30:00
+                    </h4>
+                  </div>
+
+                </div>
+
+                <!-- right side arrow / lock -->
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+                  <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                </div>
+
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+                  <!-- lock -->
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" 
+                      class="img-responsive">
+                  <!-- /lock -->
+                </div>
+              </div>
+            </div>
+          </a>
    <!-- hr -->
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
