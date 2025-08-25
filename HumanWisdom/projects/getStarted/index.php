@@ -220,6 +220,16 @@ require_once('./includes/security_config.php');
       .p-18px{
         padding-left: 18px !important;
       }
+        .m-popup{
+          height: 200px;
+          width: 208px;
+      }
+      .f_24px{
+        font-size:24px;
+      }
+      .m_auto{
+        margin:0 auto;
+      }
     }
 
     @media screen and (min-width: 1600px) {
@@ -290,7 +300,7 @@ require_once('./includes/security_config.php');
 
 
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index_new.webp"
-            class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+            class="img-responsive w100p display_d_none m-popup" loading="lazy" alt="performance">
         </div>
         <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px mtb40px" data-aos="fade-up"
           data-aos-delay="200">
@@ -3897,7 +3907,7 @@ require_once('./includes/security_config.php');
 <!-- <mental-wellbeing> -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered m_auto">
     <div class="modal-content1">
       <div class="modal-header d-block">
         <div class="row center_flex ">
@@ -5364,7 +5374,7 @@ require_once('./includes/security_config.php');
 
                       <div class="row mt30px center_flex">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p10">
-                          <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc"> Sign up for our newsletter! </h1>
+                          <h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc f_24px"> Sign up for our newsletter! </h1>
                         </div>
                       </div>
                     </div>
