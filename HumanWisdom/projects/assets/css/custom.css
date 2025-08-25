@@ -10840,7 +10840,7 @@ body,
   /* width: 98%; */
   position: absolute;
    top:25% !important; 
-   height: fit-content;
+   height: auto;
 }
 .lab-modal-body_new {
   position: absolute;
