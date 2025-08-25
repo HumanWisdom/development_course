@@ -95,24 +95,19 @@ export class StartYourFreeTrialPage implements OnInit {
     this.router.navigateByUrl(`/${SharedService.getprogramName()}/testimonials`)
   }
 
-  share() {
-    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
-        alert(`This service/api is not supported in your Browser`);
-        return;
-      } */
-    console.log("url")
-    this.path = environment.production ? "https://happierme.app" + this.address:"https://staging.happierme.app" + this.address;
-    this.ngNavigatorShareService.share({
-      title: 'HappierMe Program',
-      text: 'Hey, check out the HappierMe Program',
-      url: this.path
-    }).then((response) => {
-      
-    })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+share() {
+  const currentUrl = this.router.url; // ensures latest route
+  const path = environment.production 
+    ? "https://happierme.app" + currentUrl 
+    : "https://staging.happierme.app" + currentUrl;
+
+  this.ngNavigatorShareService.share({
+    title: 'HappierMe Program',
+    text: 'Hey, check out the HappierMe Program',
+    url: path
+  }).catch((error) => console.log(error));
+}
+
 
     giftwisdom() {
     this.logeventservice.logEvent('click_gift_wisdom_Hamburger')
