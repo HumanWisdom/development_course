@@ -2571,6 +2571,12 @@ a
 /* /padding */
 
 /* hr */
+.hr_style_weba_01
+{
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin: 20px -16px;
+}
+
 .hr_style_web_01
 {
   border: 1px solid rgba(0, 0, 0, 0.16);

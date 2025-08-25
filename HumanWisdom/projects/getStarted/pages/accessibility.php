@@ -106,7 +106,7 @@ We aim to respond to all inquiries within 3 working days.                </h6>
 
  <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_01">
+                <hr class="hr_style_weba_01">
               </div>
             </div>
 
