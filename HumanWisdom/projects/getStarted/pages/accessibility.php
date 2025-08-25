@@ -60,13 +60,14 @@ The HappierMe app currently supports the following accessibility features:      
 
  <ul class="hs_desc">
                   <li>Compatibility with screen readers</li>
-                  <li>Compatibility with screen readers</li>
+                  <li>High-contrast interface for better readability</li>
 
-                  <li>Compatibility with screen readers</li>
+                  <li>Clear, simple navigation and design</li>
 
-                  <li>Compatibility with screen readers</li>
+                  <li>Videos with subtitles</li>
 
-                  <li>Compatibility with screen readers</li>
+                  <li>Both text and audio formats in key areas</li>
+                  <li> Support for larger font sizes</li>
 
 </ul>
 
@@ -90,18 +91,24 @@ Accessibility is an ongoing effort. We are actively working to improve the usabi
 If you experience any difficulty accessing content or features in HappierMe, or if you have suggestions for improvement, we’d love to hear from you.
                 </h6>
 
-                <h2 class="hs_sub_title">
-                  Email: support@happierme.app
+                <h2 class="hs_desc">
+                 <b> Email: support@happierme.app</b>
 
                 </h2>
 
-                <h4 class="hs_sub_title">
-                Subject line: Accessibility Feedback
+                <h4 class="hs_desc">
+                <b>Subject line: Accessibility Feedback</b>
 
                 </h4>
 
                 <h6 class="hs_desc">
 We aim to respond to all inquiries within 3 working days.                </h6>
+
+ <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_01">
+              </div>
+            </div>
 
                
               
