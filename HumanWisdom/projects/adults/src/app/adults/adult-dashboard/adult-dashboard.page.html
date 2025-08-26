@@ -2502,3 +2502,7 @@
 <!-- /modal-tour -->
 
 <span #enabletourmodal data-toggle="modal" data-target="#tour_modal_welcome"></span>
+
+
+<app-modal *ngIf="enableAlert" [modalid]="'logout'"  [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'Start your free trial to activate this feature'" [isFreeTrialEnable]="isFreeTrialEnable"></app-modal>
