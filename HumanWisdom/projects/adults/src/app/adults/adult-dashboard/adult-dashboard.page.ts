@@ -30,6 +30,8 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('closetourmodal') closetourmodal: ElementRef;
   @ViewChild('enabletourmodal') enabletourmodal: ElementRef;
 
+  
+
   public dasboardUrl = '/adults/adult-dashboard';
   //get global settings here
   public text = 2
@@ -120,6 +122,9 @@ export class AdultDashboardPage implements OnInit {
   public tourTotalIndex = 10;
   public tourIndex = 1;
   public isSkip = false;
+  isFreeTrialEnable = false;
+    public enableAlert:any=false;
+
 
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
@@ -295,7 +300,20 @@ export class AdultDashboardPage implements OnInit {
     this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
 
-
+getAlertcloseEvent($event) {
+    this.isFreeTrialEnable = false;
+    if ($event == 'cancel') {
+      this.enableAlert = false;
+    }
+    else if ($event == 'ok') {
+      this.enableAlert = false;
+      this.loginpage();
+    }
+    else {
+      this.enableAlert = false;
+        // this.loginpage();
+    }
+  }
 
   loginpage() {
     // $("#signuplogin").modal("hide");
@@ -4101,6 +4119,7 @@ export class AdultDashboardPage implements OnInit {
 
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
+   
     if (evtName === 'click_journal') {
       this.router.navigate(['/adults/journal'])
 
@@ -4115,6 +4134,21 @@ export class AdultDashboardPage implements OnInit {
       //     this.enablepopup.nativeElement.click();
       //   }
     } else if (params != '' && route != '') {
+       if(route=="/adults/daily-practise"){
+      
+       let guest = localStorage.getItem('guest');
+       if(!this.isloggedIn || guest=='T'){
+          this.isFreeTrialEnable = true;
+          this.enableAlert= true;
+       }
+        else
+      this.router.navigate([route, params]);
+
+     
+     
+
+    }
+    else
       this.router.navigate([route, params]);
     } else if (route != '') {
       this.router.navigate([route])
