@@ -1,0 +1,156 @@
+    .h5 {
+      margin-top: -8px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .subs_mobile_view {
+        margin-right: 48%;
+        padding: 8px;
+
+      }
+
+      .mobile_view_topic_tile {
+        margin-bottom: 10px !important;
+      }
+
+      .mobile_view_topic_parent {
+        margin-top: 0px !important;
+      }
+
+      .mobile_view_topic {
+        margin-left: 28px !important
+      }
+
+      .mobile_view_testimonial {
+        margin-left: 30px !important
+      }
+
+      .sap {
+        width: 60% !important;
+      }
+
+      .btn_tff_width {
+        margin: 0;
+        border: 0;
+        width: 345px;
+        height: 65px;
+        border-radius: 36px;
+      }
+
+      .btn_subscription {
+        width: 300px !important;
+
+        gap: 24px;
+      }
+
+      .fs27px {
+        font-size: 27px !important;
+      }
+
+      .w-335px {
+        width: 335px !important;
+      }
+
+      .mbtn_landing {
+        width: 335px;
+        height: 48px;
+      }
+
+      .fs_18px {
+        font-size: 18px !important;
+
+      }
+
+      .w-335px {
+        width: 335px
+      }
+
+      .f_15px {
+        font-size: 15px !important;
+      }
+
+      .f_21px {
+        font-size: 21px !important;
+      }
+
+      .h_48px {
+        height: 48px !important;
+      }
+
+      .msection_header {
+        color: #834B66 !important;
+      }
+
+      .f_24px {
+        font-size: 24px !important;
+      }
+
+      .d_none {
+        display: none !important
+      }
+
+      .img_health {
+        width: 370px !important;
+        max-width: 348px !important;
+        border-radius: 10px !important;
+      }
+
+      .mt_mb {
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+
+      .card_center {
+        text-align: center !important;
+        padding: 0px !important;
+      }
+
+      .f_18px {
+        font-size: 18px !important;
+      }
+
+      .mdiv_coaches {
+        width: 190px !important;
+        height: 245px !important;
+
+        padding-left: 15px;
+      }
+
+      .wh_160px {
+        width: 160px;
+        height: 160px;
+      }
+
+      .h_160px {
+        height: 160px !important;
+      }
+
+      .contact_coaches {
+        font-size: 15px !important;
+        font-weight: 600;
+      }
+
+      .tool_tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .f_12px {
+        font-size: 12px !important;
+      }
+
+      .owl-stage-outer {
+        overflow: scroll !important
+      }
+
+      .owl-stage-outer::-webkit-scrollbar {
+        display: none;
+      }
+
+      .w-382px {
+        width: 356px !important;
+      }
+      .p-18px{
+        padding-left: 18px !important;
+      }
+    
+    }
