@@ -768,11 +768,24 @@ export class AdultDashboardPage implements OnInit {
 
   acceptCookies() {
     localStorage.setItem('acceptcookie', 'T');
+    localStorage.removeItem('tutorialOnCloseShown');
     this.closecookiemodal.nativeElement.click();
     setTimeout(() =>{
       this.enabletourmodal.nativeElement.click();
     }, 100);
     // this.enableDailypopup();
+  }
+
+  closeCookies() {
+    this.closecookiemodal.nativeElement.click();
+
+    const shown = localStorage.getItem('tutorialShown');
+    if (!shown) {
+      setTimeout(() => {
+        this.enabletourmodal.nativeElement.click();
+      }, 100);
+      localStorage.setItem('tutorialShown', 'Y'); // mark tutorial as shown
+    }
   }
 
   // freescreens() {

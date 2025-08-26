@@ -104,50 +104,58 @@ export class S3VideoComponent implements OnInit,OnDestroy {
     this.initializeData();
   }
 
-  initializeData() {
-    let url: any = window.location.href;
-    if (url.includes('videopage')) {
-      this.wisdomshort = false;
-      this.linkcode = this.route.snapshot.paramMap.get('videolink');
-      let name = this.linkcode.split('-videos')[0];
-      let link = this.linkcode.split('-videos')[1];
-      this.linkcode = name + '/videos' + link.replaceAll('-', '/');
-      if (this.linkcode.includes('teenagers')) {
-        this.linkcode = this.linkcode.replaceAll('-', '/');
-      }
-      this.linkcode=this.linkcode.replaceAll('~', '-');
-      this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
-    } else {
-      this.linkcode = this.route.snapshot.paramMap.get('videolink');
-      this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
+initializeData() {
+  let url: any = window.location.href;
+  if (url.includes('videopage')) {
+    this.wisdomshort = false;
+    this.linkcode = this.route.snapshot.paramMap.get('videolink');
+    let name = this.linkcode.split('-videos')[0];
+    let link = this.linkcode.split('-videos')[1];
+    this.linkcode = name + '/videos' + link.replaceAll('-', '/');
+    if (this.linkcode.includes('teenagers')) {
+      this.linkcode = this.linkcode.replaceAll('-', '/');
     }
-    const shortList = localStorage.getItem('wisdomShortData');
-    if(localStorage.getItem('isSwipeAllow')=='true'){
-      this.isSwipeAllow = true;
-      if (shortList) {
-        const wisdomShortList = JSON.parse(shortList);
-        this.wisdomShortOrderList = wisdomShortList.map((element, index) => {
-          let linklist = element.VideoUrl.split("/");
-          let linkcode = linklist[linklist.length - 1];
-          const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${linkcode}`;
-          let videoLink = this.getSafeUrl(code);
-          return {
-            url: videoLink,
-            order: index,
-            title:element.Title
-          }
-        });
-        this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.title.includes(this.videoTitle));
-        
-        if(this.currentIndex > 2 && !this.isSubscriber){
-          
-          this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
-        }
-      }
-    }
-  
+    this.linkcode = this.linkcode.replaceAll('~', '-');
+    this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
+  } else {
+    this.linkcode = this.route.snapshot.paramMap.get('videolink');
+    this.videoTitle = this.route.snapshot.paramMap.get('title') ? this.route.snapshot.paramMap.get('title') : localStorage.getItem('wisdomvideotitle');
   }
 
+  // check subscriber
+  if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+    this.isSubscriber = true;
+  } else {
+    this.isSubscriber = false;
+  }
+
+  // allow swipe only if subscriber
+  if (this.isSubscriber && localStorage.getItem('isSwipeAllow') === 'true') {
+    this.isSwipeAllow = true;
+    const shortList = localStorage.getItem('wisdomShortData');
+    if (shortList) {
+      const wisdomShortList = JSON.parse(shortList);
+      this.wisdomShortOrderList = wisdomShortList.map((element, index) => {
+        let linklist = element.VideoUrl.split("/");
+        let linkcode = linklist[linklist.length - 1];
+        const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${linkcode}`;
+        let videoLink = this.getSafeUrl(code);
+        return {
+          url: videoLink,
+          order: index,
+          title: element.Title
+        }
+      });
+      this.currentIndex = this.wisdomShortOrderList.findIndex(x => x.title.includes(this.videoTitle));
+
+      if (this.currentIndex > 2 && !this.isSubscriber) {
+        this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
+      }
+    }
+  } else {
+    this.isSwipeAllow = false; // hide swipe feature for non-subscribers
+  }
+}
 
   // Called when the video's metadata is loaded
   checkVideoOrientation() {
