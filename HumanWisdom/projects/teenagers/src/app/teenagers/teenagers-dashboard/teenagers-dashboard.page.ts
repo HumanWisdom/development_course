@@ -119,6 +119,8 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   public tourTotalIndex = 9;
   public tourIndex = 1;
   dashboardShorts = [];
+    isFreeTrialEnable = false;
+    public enableAlert:any=false;
 
   constructor(
     public router: Router, public service: TeenagersService, public services: OnboardingService,
@@ -334,6 +336,21 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }
 
 
+  }
+
+  getAlertcloseEvent($event) {
+      this.isFreeTrialEnable = false;
+      if ($event == 'cancel') {
+        this.enableAlert = false;
+      }
+      else if ($event == 'ok') {
+        this.enableAlert = false;
+        this.loginpage();
+      }
+      else {
+        this.enableAlert = false;
+          // this.loginpage();
+      }
   }
 
   getDashboardShorts() {
@@ -1864,7 +1881,19 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     if (evtName === 'click_journal') {
       this.router.navigate(['/teenagers/journal'])
     } else if (params != '' && route != '') {
+        if(route=="/teenagers/daily-practise"){
+      
+       let guest = localStorage.getItem('guest');
+       if(!this.isloggedIn || guest=='T'){
+          this.isFreeTrialEnable = true;
+          this.enableAlert= true;
+       }
+        else
       this.router.navigate([route, params]);
+      
+      }
+      else
+          this.router.navigate([route, params]);
     } else if (route != '') {
       this.router.navigate([route])
     }
