@@ -10854,7 +10854,7 @@ body,
   margin: 0 auto;
    width: 335px;
   position: absolute;
-   top:25% !important; 
+   top:30% !important; 
    height: fit-content;
 }
 .modal.fade.in .lab-modal-body_new {
