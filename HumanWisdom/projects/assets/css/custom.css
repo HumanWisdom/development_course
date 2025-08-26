@@ -10806,8 +10806,8 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-   /* top:25% !important;  */
-   align-self: anchor-center;
+   top:30% !important; 
+   /* align-self: center; */
    height: fit-content;
 }
 
