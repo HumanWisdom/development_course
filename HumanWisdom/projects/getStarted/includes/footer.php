@@ -1,11 +1,28 @@
+
+<style>
+  @media screen and (min-width: 1600px) {
+      .fixed_w {
+        width: 980px !important;
+         margin:0 auto !important;
+      }
+    }
+        @media screen and (max-width: 768px) {
+          .color_wh{
+            color:#fff !important
+          }
+          .display_flex{
+            display:flex
+          }
+        }
+  </style>
 <!-- footer -->
-<div class="dfooter">
+<div class="dfooter ">
 
   <!-- desktop -->
   <div class="row center_flex display_m_none">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 d-flex">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 d-flex fixed_w">
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12">
-        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
+        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff color_wh">
           About us
         </h4>
 
@@ -51,7 +68,7 @@
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 ">
-        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
+        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff color_wh">
           Get HappierMe
         </h4>
 
@@ -97,7 +114,7 @@
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 ">
-        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
+        <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff color_wh">
           Support
         </h4>
 
@@ -372,14 +389,14 @@
   </div>
 
   <div class="row center_flex mt40px display_df_none">
-    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  tcenter">
+    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  tcenter display_flex" >
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 pl0px">
         <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_appstore.svg" class="img-responsive" alt="appstore">
         </a>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 pr0px">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 pr0px display_flex">
         <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_playstore.svg" class="img-responsive" alt="playstore">
         </a>

@@ -10806,8 +10806,8 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-   /* top:25% !important;  */
-   align-self: anchor-center;
+   top:27% !important; 
+   /* align-self: center; */
    height: fit-content;
 }
 
@@ -10904,7 +10904,7 @@ body,
   padding: 20px;
   height: auto;
   /* background-color: #5D5D5D; */
-  background: #292D56;
+  background: linear-gradient(180deg,#834B66 0%,#120F40 100%)!important;
   color: #fff;
   border: 0;
   opacity: 0;
