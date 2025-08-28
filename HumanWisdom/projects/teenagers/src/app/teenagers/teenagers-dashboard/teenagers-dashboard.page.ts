@@ -756,26 +756,28 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     videoPlayer.pause()
   }
 
-  acceptCookies() {
-    localStorage.setItem('acceptcookie', 'T');
-    this.closecookiemodal.nativeElement.click();
+acceptCookies() {
+  localStorage.setItem('acceptcookie', 'T');
+  this.closecookiemodal.nativeElement.click();
+
+  // Tutorial can repeat on every Accept
+  setTimeout(() => {
+    this.enabletourmodal.nativeElement.click();
+  }, 200); // 200ms ensures the cookie modal fully closes
+}
+
+closeCookies() {
+  this.closecookiemodal.nativeElement.click();
+
+  // Tutorial only once per session on Close
+  if (!sessionStorage.getItem('tutorialShown')) {
     setTimeout(() => {
       this.enabletourmodal.nativeElement.click();
-    }, 100);
-    // this.enableDailypopup();
-  }
-
-  closeCookies() {
-    this.closecookiemodal.nativeElement.click();
-
-    const shown = sessionStorage.getItem('tutorialShown');
-    if (!shown) {
-      setTimeout(() => {
-        this.enabletourmodal.nativeElement.click();
-      }, 100);
       sessionStorage.setItem('tutorialShown', 'Y');
-    }
+    }, 200);
   }
+}
+
   subscribenow() {
 
   }
