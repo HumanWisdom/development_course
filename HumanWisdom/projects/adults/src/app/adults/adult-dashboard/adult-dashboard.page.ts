@@ -784,27 +784,25 @@ getAlertcloseEvent($event) {
     videoPlayer.pause()
   }
 
-  acceptCookies() {
-    localStorage.setItem('acceptcookie', 'T');
-    localStorage.removeItem('tutorialOnCloseShown');
-    this.closecookiemodal.nativeElement.click();
-    setTimeout(() =>{
+acceptCookies() {
+  localStorage.setItem('acceptcookie', 'T'); 
+  this.closecookiemodal.nativeElement.click();
+    setTimeout(() => {
+      this.enabletourmodal.nativeElement.click();
+    }, 100)
+}
+
+closeCookies() {
+  this.closecookiemodal.nativeElement.click();
+
+  const shown = sessionStorage.getItem('tutorialShown');
+  if (!shown) {
+    setTimeout(() => {
       this.enabletourmodal.nativeElement.click();
     }, 100);
-    // this.enableDailypopup();
+    sessionStorage.setItem('tutorialShown', 'Y');
   }
-
-  closeCookies() {
-    this.closecookiemodal.nativeElement.click();
-
-    const shown = localStorage.getItem('tutorialShown');
-    if (!shown) {
-      setTimeout(() => {
-        this.enabletourmodal.nativeElement.click();
-      }, 100);
-      localStorage.setItem('tutorialShown', 'Y'); // mark tutorial as shown
-    }
-  }
+}
 
   // freescreens() {
   //   this.service.freeScreens().subscribe(res => {
