@@ -4332,7 +4332,7 @@ getAlertcloseEvent($event) {
       this.logeventservice.logEvent('click_for_parents');
       this.router.navigate(['/adults/curated/parent-hub'])
     }
-    else if (name === 'Build your self awareness' || name === 'Develop your self awareness') {
+    else if (name === 'Develop your self awareness') {
       this.logeventservice.logEvent('click_self_awareness');
       this.router.navigate(['/adults/wisdom-exercise'])
     }
