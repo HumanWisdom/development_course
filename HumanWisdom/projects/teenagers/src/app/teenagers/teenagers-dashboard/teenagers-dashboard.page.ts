@@ -768,15 +768,14 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   closeCookies() {
     this.closecookiemodal.nativeElement.click();
 
-    const shown = localStorage.getItem('tutorialShown');
+    const shown = sessionStorage.getItem('tutorialShown');
     if (!shown) {
       setTimeout(() => {
         this.enabletourmodal.nativeElement.click();
       }, 100);
-      localStorage.setItem('tutorialShown', 'Y'); // mark tutorial as shown
+      sessionStorage.setItem('tutorialShown', 'Y');
     }
   }
-
   subscribenow() {
 
   }
