@@ -1981,7 +1981,7 @@ closeCookies() {
     }  else if (name === 'Succeed in life') {
       this.logeventservice.logEvent('click_succeed_in_life');
       this.router.navigate(['/teenagers/curated/succeed-in-life'])
-    } else if (name === 'Build your self awareness') {
+    } else if (name === 'Develop your self awareness') {
       this.logeventservice.logEvent('click_self_awareness');
       this.router.navigate(['/teenagers/wisdom-exercise'])
     }
