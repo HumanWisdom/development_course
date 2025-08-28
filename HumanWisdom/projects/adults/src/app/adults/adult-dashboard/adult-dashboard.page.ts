@@ -784,25 +784,25 @@ getAlertcloseEvent($event) {
     videoPlayer.pause()
   }
 
-acceptCookies() {
-  localStorage.setItem('acceptcookie', 'T'); 
-  this.closecookiemodal.nativeElement.click();
-    setTimeout(() => {
-      this.enabletourmodal.nativeElement.click();
-    }, 100)
-}
-
-closeCookies() {
-  this.closecookiemodal.nativeElement.click();
-
-  const shown = sessionStorage.getItem('tutorialShown');
-  if (!shown) {
-    setTimeout(() => {
-      this.enabletourmodal.nativeElement.click();
-    }, 100);
-    sessionStorage.setItem('tutorialShown', 'Y');
+  acceptCookies() {
+    localStorage.setItem('acceptcookie', 'T'); 
+    this.closecookiemodal.nativeElement.click();
+      setTimeout(() => {
+        this.enabletourmodal.nativeElement.click();
+      }, 100)
   }
-}
+
+  closeCookies() {
+    this.closecookiemodal.nativeElement.click();
+
+    const shown = sessionStorage.getItem('tutorialShown');
+    if (!shown) {
+      setTimeout(() => {
+        this.enabletourmodal.nativeElement.click();
+      }, 100);
+      sessionStorage.setItem('tutorialShown', 'Y');
+    }
+  }
 
   // freescreens() {
   //   this.service.freeScreens().subscribe(res => {
