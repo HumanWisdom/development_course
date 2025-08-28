@@ -1149,7 +1149,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
 
 
   opennewTab() {
-    window.open('/cookies-policy', '_blank');
+    window.open('teenagers/cookies-policy', '_blank');
   }
 
   socialLogin() {

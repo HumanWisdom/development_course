@@ -1244,7 +1244,7 @@ getAlertcloseEvent($event) {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-    window.open('/cookies-policy', '_blank');
+    window.open('./adults/cookies-policy', '_blank');
   }
 
   socialLogin() {
