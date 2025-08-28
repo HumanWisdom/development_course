@@ -37890,3 +37890,10 @@ a.fc_e58d82:hover
 .inspiration-item {
   background-color: #0C2B5F !important; 
 }
+
+
+@media screen and (max-width: 768px) {
+  .mheight-110px{
+    min-height: 115vh !important;
+  }
+}
