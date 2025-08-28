@@ -366,7 +366,7 @@ export class ChangeUnhelpfulHabitsPage implements OnInit {
   }
 
   audioevent(audioContent) {
-    if (!this.Subscriber && audioContent.id >= 4) {
+    if (!this.Subscriber && audioContent.PodcastID >= 1) {
       this.router.navigate(['/adults/subscription/start-your-free-trial']);
     } else {
         if (audioContent.MediaUrl.includes('https://d1tenzemoxuh75.cloudfront.net/')) {

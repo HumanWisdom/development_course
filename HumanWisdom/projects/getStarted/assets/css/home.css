@@ -279,7 +279,8 @@
 
     .iframe-video {
       width: 978px !important;
-      height: 606px !important gap:30px
+      height: 606px !important;
+      gap:30px
     }
 
     @media screen and (max-width: 768px) {

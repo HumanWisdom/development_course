@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AdultsService} from "../../adults.service"
 import { Router,ActivatedRoute } from '@angular/router';
 import {Location } from '@angular/common'
+import { SharedService } from "../../../../../../shared/services/shared.service";
 
 @Component({
   selector: 'app-s486',
@@ -37,6 +38,7 @@ export class S486Page implements OnInit,OnDestroy {
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
+  config: any;
 
 
 
@@ -46,6 +48,7 @@ export class S486Page implements OnInit,OnDestroy {
     private location:Location,
     private url: ActivatedRoute
   ) { 
+      this.config = SharedService.getScreenConfiguration("SoundCapes");
       this.service.setmoduleID(19);
       this.url.queryParams.subscribe(params => {
       this.t = params['t'];
@@ -203,4 +206,33 @@ export class S486Page implements OnInit,OnDestroy {
     this.router.navigate([url+sessionStorage.getItem("pgResume")])
   }
 
+  getClickEvent(data) {
+  if (!this.isSubscriber) {
+    const isTeenagerRoute = this.router.url.includes('/teenagers/');
+    const trialRedirectPath = isTeenagerRoute
+      ? '/teenagers/subscription/start-your-free-trial'
+      : '/subscription/start-your-free-trial';
+    this.router.navigate([trialRedirectPath]);
+    return;
+  }
+
+  let mediaUrl = data['MediaUrl'];
+  if (mediaUrl.startsWith('https://d1tenzemoxuh75.cloudfront.net/')) {
+    mediaUrl = mediaUrl.replace('https://d1tenzemoxuh75.cloudfront.net/', '/');
+  }
+
+  let concat = encodeURIComponent(mediaUrl.replaceAll('/', '~'));
+
+  const title = data['Title']?.replaceAll(' ', '-');
+  const moduleName = this.config?.['moduleName'] || 'Soundscapes';
+
+  this.router.navigate([
+    `${SharedService.getprogramName()}/audiopage/`,
+    concat,
+    data['SoundscapeID'],
+    'T',
+    title,
+    moduleName
+  ]);
+  }
 }
