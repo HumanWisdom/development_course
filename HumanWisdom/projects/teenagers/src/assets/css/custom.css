@@ -37893,7 +37893,12 @@ a.fc_e58d82:hover
 
 
 @media screen and (max-width: 768px) {
-  .mheight-110px{
-    min-height: 115vh !important;
+  .mheight{
+    min-height: auto !important;
+    height: auto !important;
   }
+  .pb_8rem{
+    padding-bottom: 8rem !important;
+  }
+  
 }
