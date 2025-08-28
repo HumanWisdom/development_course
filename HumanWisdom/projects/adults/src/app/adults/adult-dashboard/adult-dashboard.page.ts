@@ -785,24 +785,22 @@ getAlertcloseEvent($event) {
   }
 
   acceptCookies() {
-    localStorage.setItem('acceptcookie', 'T');
-    localStorage.removeItem('tutorialOnCloseShown');
+    localStorage.setItem('acceptcookie', 'T'); 
     this.closecookiemodal.nativeElement.click();
-    setTimeout(() =>{
-      this.enabletourmodal.nativeElement.click();
-    }, 100);
-    // this.enableDailypopup();
+      setTimeout(() => {
+        this.enabletourmodal.nativeElement.click();
+      }, 100)
   }
 
   closeCookies() {
     this.closecookiemodal.nativeElement.click();
 
-    const shown = localStorage.getItem('tutorialShown');
+    const shown = sessionStorage.getItem('tutorialShown');
     if (!shown) {
       setTimeout(() => {
         this.enabletourmodal.nativeElement.click();
       }, 100);
-      localStorage.setItem('tutorialShown', 'Y'); // mark tutorial as shown
+      sessionStorage.setItem('tutorialShown', 'Y');
     }
   }
 
@@ -1244,7 +1242,7 @@ getAlertcloseEvent($event) {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-    window.open('/cookies-policy', '_blank');
+    window.open('/adults/cookies-policy', '_blank');
   }
 
   socialLogin() {
@@ -4334,7 +4332,7 @@ getAlertcloseEvent($event) {
       this.logeventservice.logEvent('click_for_parents');
       this.router.navigate(['/adults/curated/parent-hub'])
     }
-    else if (name === 'Build your self awareness') {
+    else if (name === 'Develop your self awareness') {
       this.logeventservice.logEvent('click_self_awareness');
       this.router.navigate(['/adults/wisdom-exercise'])
     }
