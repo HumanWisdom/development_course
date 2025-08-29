@@ -11,12 +11,12 @@
             <div class="container">
               <ul class="nav nav-tabs login_signup_tab flex_ai m0px">
                 <li id="LoginTab" #enabletab [ngClass]="{'active' : !isSignUp }" (click)="getLoginTab()">
-                  <a data-toggle="tab" href="#tab2">
+                  <a data-toggle="tab" >
                     Login
                   </a>
                 </li>
                 <li id="SignupTab" [ngClass]="{'active' : isSignUp }" class="active">
-                  <a data-toggle="tab" href="#tab1" (click)="getsignuptab()">
+                  <a data-toggle="tab"  (click)="getsignuptab()">
                     Sign up
                   </a>
                 </li>

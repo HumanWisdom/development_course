@@ -28945,7 +28945,7 @@ video::-webkit-media-controls-panel
   justify-content: center;
 }
 .btn_aan2 {
-  height: 60px;
+  height: 50px;
   width: 155px;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
@@ -29335,6 +29335,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   bottom: -1px;
   width: 100%;
   z-index: 98;
+  right: 0;
 }
 
 .btn_gqtns_std
@@ -34865,7 +34866,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   margin: 0;
   border: 0;
   border-radius: 100px;
-  background: #E58D82;
+  background: #E58D82 !important;
   color: #FFF;
   font-size: 15px;
   font-weight: 600;
@@ -38048,3 +38049,28 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
   }
 }
 
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1351px !important;
+    }
+}
+
+.fade.in {
+  opacity:1  !important;
+}
+/* @media (min-width: 992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 960px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .container, .container-md, .container-sm {
+        max-width: 720px !important;
+    }
+}
+@media (min-width: 576px) {
+    .container, .container-sm {
+        max-width: 540px !important;
+    }
+} */

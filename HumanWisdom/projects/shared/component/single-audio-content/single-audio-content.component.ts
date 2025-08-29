@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonService } from '../../services/common.service';
 import { NavigationService } from '../../services/navigation.service';
 import { Location } from '@angular/common';
+import { ProgramType } from '../../models/program-model';
 
 
 @Component({
@@ -53,7 +54,12 @@ export class SingleAudioContentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isAdults = SharedService.isAdultProgram();
+    // this.isAdults = SharedService.program
+      if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
     this.setAudioControlsBackground();
   }
 

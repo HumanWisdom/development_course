@@ -784,25 +784,25 @@ getAlertcloseEvent($event) {
     videoPlayer.pause()
   }
 
-acceptCookies() {
-  localStorage.setItem('acceptcookie', 'T'); 
-  this.closecookiemodal.nativeElement.click();
-    setTimeout(() => {
-      this.enabletourmodal.nativeElement.click();
-    }, 100)
-}
-
-closeCookies() {
-  this.closecookiemodal.nativeElement.click();
-
-  const shown = sessionStorage.getItem('tutorialShown');
-  if (!shown) {
-    setTimeout(() => {
-      this.enabletourmodal.nativeElement.click();
-    }, 100);
-    sessionStorage.setItem('tutorialShown', 'Y');
+  acceptCookies() {
+    localStorage.setItem('acceptcookie', 'T'); 
+    this.closecookiemodal.nativeElement.click();
+      setTimeout(() => {
+        this.enabletourmodal.nativeElement.click();
+      }, 100)
   }
-}
+
+  closeCookies() {
+    this.closecookiemodal.nativeElement.click();
+
+    const shown = sessionStorage.getItem('tutorialShown');
+    if (!shown) {
+      setTimeout(() => {
+        this.enabletourmodal.nativeElement.click();
+      }, 100);
+      sessionStorage.setItem('tutorialShown', 'Y');
+    }
+  }
 
   // freescreens() {
   //   this.service.freeScreens().subscribe(res => {
@@ -1242,7 +1242,7 @@ closeCookies() {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-    window.open('./adults/cookies-policy', '_blank');
+    window.open('/adults/cookies-policy', '_blank');
   }
 
   socialLogin() {
@@ -4332,7 +4332,7 @@ closeCookies() {
       this.logeventservice.logEvent('click_for_parents');
       this.router.navigate(['/adults/curated/parent-hub'])
     }
-    else if (name === 'Build your self awareness') {
+    else if (name === 'Develop your self awareness') {
       this.logeventservice.logEvent('click_self_awareness');
       this.router.navigate(['/adults/wisdom-exercise'])
     }
