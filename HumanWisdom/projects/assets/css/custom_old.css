@@ -27280,12 +27280,10 @@ all and (min-width: 992px) and (-webkit-transform-3d)
   padding: 18px 0px;
 }
 
-
-
 .pfy_search_icon
 {
   /* color: #5D5D5D; */
-  color: rgba(0, 0, 0, 0.50);
+  color: rgba(255, 255, 255, 0.50);
   font-size: 20px;
   /* left: 30px !important; */
   left: 3% !important;
@@ -27299,7 +27297,7 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 .pfy_search
 {
   /* background: #EBEBEB; */
-  background: #ffffff;
+  background: #120F40;
   border-radius: 100px;
   font-family: 'Roboto';
   font-style: normal;
@@ -29325,7 +29323,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   bottom: 0;
   /* background: rgba(255,255,255,1);
   box-shadow: 0px -1px 2px rgb(0 0 0 / 20%); */
-  background: #ffffff;
+  background: #424675;
   box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -35892,7 +35890,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .toc_adiv_imgmy a>.row {
   border-radius: 12px;
   border: 0;
-  background: #FFE8BB;
+  background: rgb(0 0 0 / 25%);
   /* min-height: 130px; */
   /* margin-bottom: 10px; */
   padding: 12px;
@@ -37935,20 +37933,11 @@ span
   display: flex;
   align-items: center;
 }
-.td_points_boxnew {
-    border-radius: 12px;
-background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
-    height: 115px;
-    /* margin-left: -25px; */
-    padding: 10px !important;
-    align-content: center;
-}
 
 .td_points_box
 {
   border-radius: 12px;
-  background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
-
+  background: #120F40;
   height: 115px;
   /* margin-left: -25px; */
   padding: 10px !important;
