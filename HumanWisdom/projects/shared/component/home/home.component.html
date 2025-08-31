@@ -13,12 +13,12 @@
   <div class="cw100p">
 
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw home-container">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw ">
         <div class="x_panel p0">
           <div class="x_content p0">
 
               
-            <div class="row">
+            <div class="row home-container">
               <div class="col-12">
                 <div class="d-flex flex-wrap">
                   <div class="nav-menu">
@@ -28,7 +28,7 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row home-container">
               <div class="col-12">
                 <div class="p-3">
                   <p class="text-muted mb-0">{{ description }}</p>
@@ -37,8 +37,8 @@
             </div>
 
             <div class="row">
-              <div class="col-12">
-                <div *ngFor="let section of contentSections" class="mb-4">
+              <div class="col-12 p-0">
+                <div *ngFor="let section of contentSections" [class]="section.cssClass">
                   
                   <!-- Section Header - Clickable for accordion -->
                   <div class="d-flex justify-content-between align-items-center p-3  rounded-top border-bottom cursor-pointer"
@@ -49,9 +49,12 @@
                        role="button"
                        [attr.aria-expanded]="section.isExpanded"
                        [attr.aria-controls]="'section-' + section.id">
-                    <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
+                    <div class="d-flex flex-column">
+                      <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
+                      <small class="text-muted" *ngIf="section.subtitle">{{ section.subtitle }}</small>
+                    </div>
                     <div class="text-muted">
-                      <i class="fa" [class.fa-caret-down]="section.isExpanded" [class.fa-caret-right]="!section.isExpanded"></i>
+                      <i class="fa" [class.fa-caret-down]="section.isExpanded" [class.fa-caret-up]="!section.isExpanded"></i>
                     </div>
                   </div>
 

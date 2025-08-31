@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from '../../services/common.service';
 
 export interface NavigationItem {
   id: string;
@@ -7,16 +8,26 @@ export interface NavigationItem {
   isActive: boolean;
 }
 
-// New interface to match your incoming data format
-export interface RawContentData {
-  icon_path: string;
-  image_path: string;
-  module: string;
-  path: string;
-  section_name: string;
-  subtitle: string;
-  timing: string;
+// Interface for the API response structure
+export interface HomeContentResponse {
+  Introduction?: HomeSection;
+  Modules1?: HomeSection;
+  Modules2?: HomeSection;
+  Modules3?: HomeSection;
+  Blogs?: HomeSection;
+  Stories?: HomeSection;
+  Podcast?: HomeSection;
+  Shorts?: HomeSection;
+}
+
+export interface HomeSection {
+  id: string;
   title: string;
+  Subtitle: string;
+  isExpanded: boolean;
+  overlayIcon: string | null;
+  cssClass: string;
+  cards: any[];
 }
 
 export interface ContentCard {
@@ -24,17 +35,21 @@ export interface ContentCard {
   imageUrl: string;
   title: string;
   subtitle?: string;
-  mediaType: 'VIDEO' | 'AUDIO';
+  mediaType: 'VIDEO' | 'AUDIO' | 'BLOG' | 'FORUM' | 'BREATHING EXERCISE' | 'WELLNESS SURVEY' | 'PODCAST' | 'SHORT';
   duration?: string;
   overlayIcon?: string;
-  path?: string; // Added to store the navigation path
+  path?: string;
+  moduleType?: string;
 }
 
 export interface ContentSection {
   id: string;
   title: string;
+  subtitle: string;
   isExpanded: boolean;
   cards: ContentCard[];
+  overlayIcon?: string;
+  cssClass?: string;
 }
 
 @Component({
@@ -52,157 +67,264 @@ export class HomeComponent implements OnInit {
   
   @Input() description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
   
-  @Input() contentSections: ContentSection[] = [
-    {
-      id: 'begin-here',
-      title: 'Begin here',
-      isExpanded: true,
-      cards: [
-        {
-          id: 'intro-mental-health',
-          imageUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/pathway/30.png',
-          title: 'Introduction to mental health',
-          mediaType: 'VIDEO',
-          duration: '00:58',
-          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg'
-        },
-        {
-          id: 'look-without-judgement',
-          imageUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/pathway/30.png',
-          title: 'Look at yourself without judgement',
-          mediaType: 'AUDIO',
-          duration: '01:35',
-          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg'
-        },
-        {
-          id: 'overcome-anxiety',
-          imageUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/pathway/30.png',
-          title: 'Overcome anxiety',
-          mediaType: 'VIDEO',
-          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg'
-        }
-      ]
-    },
-    {
-      id: 'feel-better-now',
-      title: 'Feel better now',
-      isExpanded: true,
-      cards: [
-        {
-          id: 'meditation',
-          imageUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/pathway/30.png',
-          title: 'Quick meditation',
-          mediaType: 'VIDEO',
-          duration: '02:15',
-          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg'
-        },
-        {
-          id: 'mindfulness',
-          imageUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/pathway/30.png',
-          title: 'Mindfulness practice',
-          mediaType: 'AUDIO',
-          duration: '03:45',
-          overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg'
-        }
-      ]
-    }
-  ];
+  @Input() contentSections: ContentSection[] = [];
 
   @Output() navigationChange = new EventEmitter<string>();
   @Output() cardClick = new EventEmitter<ContentCard>();
   @Output() sectionToggle = new EventEmitter<ContentSection>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private commonService: CommonService) { }
 
   ngOnInit(): void {
+    this.loadHomeContents();
     console.log('Home component initialized');
   }
 
+  private loadHomeContents(): void {
+    this.commonService.GetHomeContents(9, 2).subscribe((res: HomeContentResponse) => {
+      if (res) {
+        console.log('Raw API response:', res);
+        this.contentSections = this.transformApiResponseToContentSections(res);
+        console.log('Transformed content sections:', this.contentSections);
+      } else {
+        console.warn('API response is empty or null');
+      }
+    });
+  }
+
   /**
-   * Transform raw content data to ContentCard format
+   * Transform API response to ContentSection format
    */
-  transformRawDataToContentCard(rawData: RawContentData): ContentCard {
+  transformApiResponseToContentSections(apiResponse: HomeContentResponse): ContentSection[] {
+    const sections: ContentSection[] = [];
+
+    // Process Introduction section
+    if (apiResponse.Introduction) {
+      sections.push(this.transformSection(apiResponse.Introduction, 'introduction'));
+    }
+
+    // Process Modules1 section
+    if (apiResponse.Modules1) {
+      sections.push(this.transformSection(apiResponse.Modules1, 'modules1'));
+    }
+
+    // Process Modules2 section
+    if (apiResponse.Modules2) {
+      sections.push(this.transformSection(apiResponse.Modules2, 'modules2'));
+    }
+
+    // Process Modules3 section
+    if (apiResponse.Modules3) {
+      sections.push(this.transformSection(apiResponse.Modules3, 'modules3'));
+    }
+
+    // Process Blogs section
+    if (apiResponse.Blogs) {
+      sections.push(this.transformSection(apiResponse.Blogs, 'blogs'));
+    }
+
+    // Process Stories section
+    if (apiResponse.Stories) {
+      sections.push(this.transformSection(apiResponse.Stories, 'stories'));
+    }
+
+    // Process Podcast section
+    if (apiResponse.Podcast) {
+      sections.push(this.transformSection(apiResponse.Podcast, 'podcast'));
+    }
+
+    // Process Shorts section
+    if (apiResponse.Shorts) {
+      sections.push(this.transformSection(apiResponse.Shorts, 'shorts'));
+    }
+
+    return sections;
+  }
+
+  /**
+   * Transform individual section
+   */
+  transformSection(section: HomeSection, sectionType: string): ContentSection {
     return {
-      id: this.generateId(rawData.title),
-      imageUrl: rawData.image_path,
-      title: rawData.title,
-      subtitle: rawData.subtitle || undefined,
-      mediaType: this.mapModuleToMediaType(rawData.module),
-      duration: this.formatTiming(rawData.timing),
-      overlayIcon: this.mapIconPathToOverlayIcon(rawData.icon_path),
-      path: rawData.path
+      id: section.id,
+      title: section.title,
+      subtitle: section.Subtitle,
+      isExpanded: section.isExpanded,
+      cards: this.transformCards(section.cards, sectionType),
+      overlayIcon: section.overlayIcon,
+      cssClass: section.cssClass
     };
   }
 
   /**
-   * Transform raw content data array to ContentSection format
+   * Transform cards based on section type
    */
-  transformRawDataToContentSections(rawDataArray: RawContentData[]): ContentSection[] {
-    // Group by section_name
-    const sectionsMap = new Map<string, RawContentData[]>();
-    
-    rawDataArray.forEach(item => {
-      const sectionName = item.section_name || 'Other';
-      if (!sectionsMap.has(sectionName)) {
-        sectionsMap.set(sectionName, []);
+  transformCards(cards: any[], sectionType: string): ContentCard[] {
+    return cards.map((card, index) => {
+      switch (sectionType) {
+        case 'introduction':
+          return this.transformIntroductionCard(card);
+        case 'modules1':
+        case 'modules2':
+        case 'modules3':
+          return this.transformModuleCard(card);
+        case 'blogs':
+          return this.transformBlogCard(card);
+        case 'stories':
+          return this.transformStoryCard(card);
+        case 'podcast':
+          return this.transformPodcastCard(card);
+        case 'shorts':
+          return this.transformShortCard(card);
+        default:
+          return this.transformGenericCard(card);
       }
-      sectionsMap.get(sectionName)!.push(item);
     });
-
-    // Convert to ContentSection array
-    return Array.from(sectionsMap.entries()).map(([sectionName, items]) => ({
-      id: this.generateId(sectionName),
-      title: sectionName,
-      isExpanded: true,
-      cards: items.map(item => this.transformRawDataToContentCard(item))
-    }));
   }
 
   /**
-   * Generate a unique ID from title
+   * Transform Introduction card
    */
-  private generateId(title: string): string {
-    return title.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+  transformIntroductionCard(card: any): ContentCard {
+    return {
+      id: card.title || `intro-${Date.now()}`,
+      imageUrl: card.image_path || '',
+      title: card.title || '',
+      subtitle: card.subtitle || '',
+      mediaType: this.mapModuleToMediaType(card.module),
+      duration: card.timing || '',
+      overlayIcon: card.icon_path || '',
+      path: card.path || '',
+      moduleType: card.module || ''
+    };
+  }
+
+  /**
+   * Transform Module card
+   */
+  transformModuleCard(card: any): ContentCard {
+    return {
+      id: card.moduleId?.toString() || `module-${Date.now()}`,
+      imageUrl: '', // Modules don't have images in the current response
+      title: card.moduleName || '',
+      subtitle: card.sectionName || '',
+      mediaType: 'VIDEO', // Default for modules
+      duration: card.SessionCnt ? `${card.SessionCnt} sessions` : '',
+      overlayIcon: '',
+      path: card.path || '',
+      moduleType: 'MODULE'
+    };
+  }
+
+  /**
+   * Transform Blog card
+   */
+  transformBlogCard(card: any): ContentCard {
+    return {
+      id: card.BlogID?.toString() || `blog-${Date.now()}`,
+      imageUrl: card.ImagePath || '',
+      title: card.Title || '',
+      subtitle: card.LikeCnt ? `${card.LikeCnt} likes` : '',
+      mediaType: 'BLOG',
+      duration: '',
+      overlayIcon: '',
+      path: `/adults/blog-article?sId=${card.BlogID}`,
+      moduleType: 'BLOG'
+    };
+  }
+
+  /**
+   * Transform Story card
+   */
+  transformStoryCard(card: any): ContentCard {
+    return {
+      id: card.ScenarioID?.toString() || `story-${Date.now()}`,
+      imageUrl: card.Img || '',
+      title: card.Title || '',
+      subtitle: card.PublishedOn ? new Date(card.PublishedOn).toLocaleDateString() : '',
+      mediaType: 'SHORT',
+      duration: '',
+      overlayIcon: '',
+      path: `/adults/wisdom-stories/${card.ScenarioID}`,
+      moduleType: 'STORY'
+    };
+  }
+
+  /**
+   * Transform Podcast card
+   */
+  transformPodcastCard(card: any): ContentCard {
+    return {
+      id: card.PodcastID?.toString() || `podcast-${Date.now()}`,
+      imageUrl: card.ImageUrl || '',
+      title: card.Title || '',
+      subtitle: card.Timing || '',
+      mediaType: 'PODCAST',
+      duration: card.Timing || '',
+      overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg',
+      path: `/adults/podcast/${card.URL || card.PodcastID}`,
+      moduleType: 'PODCAST'
+    };
+  }
+
+  /**
+   * Transform Short card
+   */
+  transformShortCard(card: any): ContentCard {
+    return {
+      id: card.RowID?.toString() || `short-${Date.now()}`,
+      imageUrl: card.ImgUrl || '',
+      title: card.Title || '',
+      subtitle: card.Timing ? `${card.Timing} min` : '',
+      mediaType: 'SHORT',
+      duration: card.Timing || '',
+      overlayIcon: 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg',
+      path: card.VideoUrl || '',
+      moduleType: 'SHORT'
+    };
+  }
+
+  /**
+   * Transform generic card
+   */
+  transformGenericCard(card: any): ContentCard {
+    return {
+      id: card.id || card.title || `card-${Date.now()}`,
+      imageUrl: card.image_path || card.imageUrl || card.ImagePath || '',
+      title: card.title || card.Title || '',
+      subtitle: card.subtitle || card.Subtitle || '',
+      mediaType: 'VIDEO',
+      duration: card.timing || card.duration || '',
+      overlayIcon: card.icon_path || card.overlayIcon || '',
+      path: card.path || '',
+      moduleType: card.module || card.moduleType || ''
+    };
   }
 
   /**
    * Map module field to mediaType
    */
-  private mapModuleToMediaType(module: string): 'VIDEO' | 'AUDIO' {
+  private mapModuleToMediaType(module: string): 'VIDEO' | 'AUDIO' | 'BLOG' | 'FORUM' | 'BREATHING EXERCISE' | 'WELLNESS SURVEY' | 'PODCAST' | 'SHORT' {
+    if (!module) return 'VIDEO';
+    
     const upperModule = module.toUpperCase();
-    if (upperModule === 'VIDEO' || upperModule === 'AUDIO') {
-      return upperModule as 'VIDEO' | 'AUDIO';
+    switch (upperModule) {
+      case 'VIDEO':
+        return 'VIDEO';
+      case 'AUDIO':
+      case 'PODCAST':
+        return 'PODCAST';
+      case 'BLOG':
+        return 'BLOG';
+      case 'FORUM':
+        return 'FORUM';
+      case 'BREATHING EXERCISE':
+        return 'BREATHING EXERCISE';
+      case 'WELLNESS SURVEY':
+        return 'WELLNESS SURVEY';
+      default:
+        return 'VIDEO';
     }
-    // Default to VIDEO if unknown
-    return 'VIDEO';
-  }
-
-  /**
-   * Format timing to duration format
-   */
-  private formatTiming(timing: string): string {
-    // Remove "min" suffix and ensure proper format
-    return timing.replace(/\s*min\s*$/i, '').trim();
-  }
-
-  /**
-   * Map icon_path to overlayIcon
-   */
-  private mapIconPathToOverlayIcon(iconPath: string): string {
-    if (iconPath.includes('play')) {
-      return 'play';
-    } else if (iconPath.includes('audio') || iconPath.includes('volume')) {
-      return 'audio';
-    }
-    // Default to play icon
-    return 'play';
-  }
-
-  /**
-   * Set content sections from raw data
-   */
-  setContentFromRawData(rawDataArray: RawContentData[]): void {
-    this.contentSections = this.transformRawDataToContentSections(rawDataArray);
   }
 
   onNavigationClick(item: NavigationItem): void {
@@ -223,6 +345,4 @@ export class HomeComponent implements OnInit {
     section.isExpanded = !section.isExpanded;
     this.sectionToggle.emit(section);
   }
-
-
 }
