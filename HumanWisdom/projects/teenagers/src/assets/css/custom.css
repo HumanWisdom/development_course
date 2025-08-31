@@ -10831,11 +10831,15 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-  top: 18% !important; 
+  top: 25% !important; 
   height: fit-content;
 }
 
-
+/* .modal-open .modal{
+  background: #000000;
+  backdrop-filter: blur(8px);
+  overflow: hidden!important;
+} */
 
 .modal.fade.inp .lab-modal-body {
   bottom: 0;
@@ -10850,7 +10854,7 @@ body,
   margin: 0 auto;
    width: 335px;
   position: absolute;
-   top:18% !important; 
+   top:27% !important; 
    height: fit-content;
 }
 .modal.fade.in .lab-modal-body_new {
@@ -10864,8 +10868,8 @@ body,
   margin: 0 auto;
   /* width: 98%; */
   position: absolute;
-   top:18%  !important; 
-   height: fit-content;
+   /* top:25%  !important; 
+   height: auto; */
 }
 .lab-modal-body_new {
   position: absolute;
@@ -10918,7 +10922,7 @@ body,
   z-index: 999; */
 
   position: absolute;
-  bottom: -50px;
+  /* bottom: -50px; */
   right: 0;
   left: 0;
   /* width: 98%; */
@@ -11123,6 +11127,7 @@ body,
   top: 0;
   opacity: 1;
 }
+
 
 .ex_modal_body h1 {
   font-size: 4rem;
@@ -28946,7 +28951,7 @@ video::-webkit-media-controls-panel
   justify-content: center;
 }
 .btn_aan2 {
-    height: 60px;
+    height: 50px;
     width: 155px;
     margin-right: 0 !important;
     margin-bottom: 0 !important;
@@ -29936,8 +29941,9 @@ svg path
 
 .modal-open .modal
 {
-  background: rgba(93,93,93,0.1);
-  backdrop-filter: blur(5px);
+  /* background: rgba(93,93,93,0.1); */
+  background: #00000080;
+  backdrop-filter: blur(8px);
   overflow: hidden !important;
 }
 
@@ -35322,7 +35328,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .div_intro 
 {
-   background: linear-gradient(180deg, #834B66 0%, #0C2B5F 100%);
+   background: linear-gradient(180deg, #183C79 0%, #4267A5 100%);
 }
 
 .mt70px
@@ -37815,6 +37821,11 @@ a.fc_e58d82:hover
   border-top: 1px rgba(255, 255, 255, 0.5) dashed;
   margin: 15px 0;
 }
+.hr_style_v3_14 {
+    border-top: 1px rgba(255, 255, 255, .5) dashed;
+    margin: 15px 0;
+    opacity: 50%;
+}
 
 .dflex_start 
 {
@@ -37822,6 +37833,11 @@ a.fc_e58d82:hover
   align-items: start;
 }
 
+.dflex_start1
+{
+  display: flex;
+  /* align-items: start; */
+}
 .v1_3_sfooter_ext_01
 {
   background: #120F40;
@@ -37873,4 +37889,16 @@ a.fc_e58d82:hover
 
 .inspiration-item {
   background-color: #0C2B5F !important; 
+}
+
+
+@media screen and (max-width: 768px) {
+  .mheight{
+    min-height: auto !important;
+    height: auto !important;
+  }
+  .pb_8rem{
+    padding-bottom: 8rem !important;
+  }
+  
 }

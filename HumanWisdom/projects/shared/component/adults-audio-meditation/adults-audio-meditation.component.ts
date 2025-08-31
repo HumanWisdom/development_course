@@ -2,6 +2,9 @@ import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../services/navigation.service';
+import { ProgramType } from '../../models/program-model';
+
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-adults-audio-meditation',
@@ -16,6 +19,8 @@ export class AdultsAudioMeditationComponent implements OnInit {
   @Input() audioTitle = ''
   type = ''
   rowId:any = 0;
+    isAdults: boolean = true; 
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -49,7 +54,30 @@ export class AdultsAudioMeditationComponent implements OnInit {
    }else{
     this.type = 'Audio';
    }
+     if (SharedService.ProgramId == ProgramType.Adults) {
+         this.isAdults = true;
+       } else {
+         this.isAdults = false;
+       }
+   this.setAudioControlsBackground();
+
   }
+
+  setAudioControlsBackground() {
+      const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
+  
+      // Create a new <style> element
+      const style = document.createElement('style');
+      style.textContent = `
+        audio::-webkit-media-controls-enclosure {
+          background: ${backgroundColor} !important;
+        }
+      `;
+  
+      // Append the <style> element to the document head
+      document.head.appendChild(style);
+    }
+  
 
   getclcickevent(event) {
     if (event === 'enablepopup') {

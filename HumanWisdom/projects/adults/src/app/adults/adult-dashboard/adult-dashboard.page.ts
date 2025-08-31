@@ -30,6 +30,8 @@ export class AdultDashboardPage implements OnInit {
   @ViewChild('closetourmodal') closetourmodal: ElementRef;
   @ViewChild('enabletourmodal') enabletourmodal: ElementRef;
 
+  
+
   public dasboardUrl = '/adults/adult-dashboard';
   //get global settings here
   public text = 2
@@ -120,6 +122,9 @@ export class AdultDashboardPage implements OnInit {
   public tourTotalIndex = 10;
   public tourIndex = 1;
   public isSkip = false;
+  isFreeTrialEnable = false;
+    public enableAlert:any=false;
+
 
   constructor(
     public router: Router, public service: AdultsService, public services: OnboardingService,
@@ -295,7 +300,20 @@ export class AdultDashboardPage implements OnInit {
     this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
 
-
+getAlertcloseEvent($event) {
+    this.isFreeTrialEnable = false;
+    if ($event == 'cancel') {
+      this.enableAlert = false;
+    }
+    else if ($event == 'ok') {
+      this.enableAlert = false;
+      this.loginpage();
+    }
+    else {
+      this.enableAlert = false;
+        // this.loginpage();
+    }
+  }
 
   loginpage() {
     // $("#signuplogin").modal("hide");
@@ -767,12 +785,23 @@ export class AdultDashboardPage implements OnInit {
   }
 
   acceptCookies() {
-    localStorage.setItem('acceptcookie', 'T');
+    localStorage.setItem('acceptcookie', 'T'); 
     this.closecookiemodal.nativeElement.click();
-    setTimeout(() =>{
-      this.enabletourmodal.nativeElement.click();
-    }, 100);
-    // this.enableDailypopup();
+      setTimeout(() => {
+        this.enabletourmodal.nativeElement.click();
+      }, 100)
+  }
+
+  closeCookies() {
+    this.closecookiemodal.nativeElement.click();
+
+    const shown = sessionStorage.getItem('tutorialShown');
+    if (!shown) {
+      setTimeout(() => {
+        this.enabletourmodal.nativeElement.click();
+      }, 100);
+      sessionStorage.setItem('tutorialShown', 'Y');
+    }
   }
 
   // freescreens() {
@@ -1213,7 +1242,7 @@ export class AdultDashboardPage implements OnInit {
 
   opennewTab() {
     // this.router.navigate([]).then(() => { window.open('https://humanwisdom.me/course/adults/cookie-policy', '_blank'); });
-    window.open('/cookies-policy', '_blank');
+    window.open('/adults/cookies-policy', '_blank');
   }
 
   socialLogin() {
@@ -4088,6 +4117,7 @@ export class AdultDashboardPage implements OnInit {
 
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
+   
     if (evtName === 'click_journal') {
       this.router.navigate(['/adults/journal'])
 
@@ -4102,6 +4132,21 @@ export class AdultDashboardPage implements OnInit {
       //     this.enablepopup.nativeElement.click();
       //   }
     } else if (params != '' && route != '') {
+       if(route=="/adults/daily-practise"){
+      
+       let guest = localStorage.getItem('guest');
+       if(!this.isloggedIn || guest=='T'){
+          this.isFreeTrialEnable = true;
+          this.enableAlert= true;
+       }
+        else
+      this.router.navigate([route, params]);
+
+     
+     
+
+    }
+    else
       this.router.navigate([route, params]);
     } else if (route != '') {
       this.router.navigate([route])
@@ -4287,7 +4332,7 @@ export class AdultDashboardPage implements OnInit {
       this.logeventservice.logEvent('click_for_parents');
       this.router.navigate(['/adults/curated/parent-hub'])
     }
-    else if (name === 'Build your self awareness') {
+    else if (name === 'Develop your self awareness') {
       this.logeventservice.logEvent('click_self_awareness');
       this.router.navigate(['/adults/wisdom-exercise'])
     }

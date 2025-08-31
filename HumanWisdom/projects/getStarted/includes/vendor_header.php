@@ -23,6 +23,7 @@
 <link href="../assets/css/landing.css" rel="stylesheet">
 <link href="../assets/css/main.css" rel="stylesheet">
 <link href="../assets/css/home.css" rel="stylesheet">
+<link href="../assets/css/index.css" rel="stylesheet">
 <link href="../assets/css/responsive.css" rel="stylesheet">
 <link href="../assets/font/font_colour.css" rel="stylesheet">
 <link href="../assets/font/font_size.css" rel="stylesheet">

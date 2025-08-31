@@ -119,6 +119,8 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   public tourTotalIndex = 9;
   public tourIndex = 1;
   dashboardShorts = [];
+    isFreeTrialEnable = false;
+    public enableAlert:any=false;
 
   constructor(
     public router: Router, public service: TeenagersService, public services: OnboardingService,
@@ -334,6 +336,21 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }
 
 
+  }
+
+  getAlertcloseEvent($event) {
+      this.isFreeTrialEnable = false;
+      if ($event == 'cancel') {
+        this.enableAlert = false;
+      }
+      else if ($event == 'ok') {
+        this.enableAlert = false;
+        this.loginpage();
+      }
+      else {
+        this.enableAlert = false;
+          // this.loginpage();
+      }
   }
 
   getDashboardShorts() {
@@ -739,16 +756,27 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     videoPlayer.pause()
   }
 
-  acceptCookies() {
-    localStorage.setItem('acceptcookie', 'T');
-    this.closecookiemodal.nativeElement.click();
+acceptCookies() {
+  localStorage.setItem('acceptcookie', 'T');
+  this.closecookiemodal.nativeElement.click();
+
+  // Tutorial can repeat on every Accept
+  setTimeout(() => {
+    this.enabletourmodal.nativeElement.click();
+  }, 200); // 200ms ensures the cookie modal fully closes
+}
+
+closeCookies() {
+  this.closecookiemodal.nativeElement.click();
+
+  // Tutorial only once per session on Close
+  if (!sessionStorage.getItem('tutorialShown')) {
     setTimeout(() => {
       this.enabletourmodal.nativeElement.click();
-    }, 100);
-    // this.enableDailypopup();
+      sessionStorage.setItem('tutorialShown', 'Y');
+    }, 200);
   }
-
-
+}
 
   subscribenow() {
 
@@ -1122,7 +1150,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
 
 
   opennewTab() {
-    window.open('/cookies-policy', '_blank');
+    window.open('/teenagers/cookies-policy', '_blank');
   }
 
   socialLogin() {
@@ -1854,7 +1882,19 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     if (evtName === 'click_journal') {
       this.router.navigate(['/teenagers/journal'])
     } else if (params != '' && route != '') {
+        if(route=="/teenagers/daily-practise"){
+      
+       let guest = localStorage.getItem('guest');
+       if(!this.isloggedIn || guest=='T'){
+          this.isFreeTrialEnable = true;
+          this.enableAlert= true;
+       }
+        else
       this.router.navigate([route, params]);
+      
+      }
+      else
+          this.router.navigate([route, params]);
     } else if (route != '') {
       this.router.navigate([route])
     }
@@ -1941,7 +1981,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
     }  else if (name === 'Succeed in life') {
       this.logeventservice.logEvent('click_succeed_in_life');
       this.router.navigate(['/teenagers/curated/succeed-in-life'])
-    } else if (name === 'Build your self awareness') {
+    } else if (name === 'Develop your self awareness') {
       this.logeventservice.logEvent('click_self_awareness');
       this.router.navigate(['/teenagers/wisdom-exercise'])
     }

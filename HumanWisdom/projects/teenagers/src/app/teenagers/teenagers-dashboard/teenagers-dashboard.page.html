@@ -1691,6 +1691,8 @@
             By continuing to browse you are agreeing to our use of cookies as explained in our
             <a class="underline fs_15px fw_400 lh_150p fc_ffffff_0_5" (click)="opennewTab()">Cookie Policy</a>
           </h4>
+
+         
         </div>
       </div>
 
@@ -1699,7 +1701,7 @@
           <button type="button" class="btn btn_ctd" (click)="acceptCookies()">
             Accept all cookies
           </button>
-          <button type="button" class="btn btn_ctd" data-dismiss="modal">
+          <button type="button" class="btn btn_ctd" data-dismiss="modal" (click)="closeCookies()">
             Close
           </button>
         </div>
@@ -1708,3 +1710,7 @@
   </div>
 </div>
 <!-- /cookie modal -->
+
+
+<app-modal *ngIf="enableAlert" [modalid]="'logout'"  [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'Start your free trial to activate this feature'" [isFreeTrialEnable]="isFreeTrialEnable"></app-modal>
