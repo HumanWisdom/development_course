@@ -13,6 +13,21 @@
     align-items: $align;
 }
 
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_down_white.svg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    bottom: 0;
+}
+
+.accordion-icon.open {
+  transform: rotate(-90deg);
+}
+
 @mixin justify-content($justify) 
 {
     -webkit-justify-content: $justify;

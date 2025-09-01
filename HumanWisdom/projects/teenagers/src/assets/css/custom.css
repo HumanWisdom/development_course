@@ -14,6 +14,15 @@ body { margin: 0px}
   position: fixed;
   height: 100%;
 }
+
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1351px !important;
+    }
+}
+
+
 .nav-sm .container.body .col-md-3.left_col .mCSB_container,
 .nav-sm .container.body .col-md-3.left_col .mCustomScrollBox {
   overflow: visible;
@@ -3276,6 +3285,10 @@ ul.project_files li a i {
   margin-top: 50px;
   border: none;
   position: relative;
+}
+
+.of-h {
+  overflow:hidden !important;
 }
 .sideways>li {
   height: 20px;
@@ -26239,6 +26252,10 @@ h1
   margin: 0;
 }
 
+.d-none{
+ display:none;
+}
+
 .best_value
 {
   height: 24px;
@@ -37902,3 +37919,6 @@ a.fc_e58d82:hover
   }
   
 }
+
+
+
