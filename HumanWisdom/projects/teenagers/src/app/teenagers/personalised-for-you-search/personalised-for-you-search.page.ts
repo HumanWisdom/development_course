@@ -6,11 +6,35 @@ import { TeenagersService } from '../teenagers.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-personalised-for-you-search',
   templateUrl: './personalised-for-you-search.page.html',
   styleUrls: ['./personalised-for-you-search.page.scss'],
+   animations: [
+    trigger('accordionAnimation', [
+      state('collapsed', style({
+        height: '0px',
+        overflow: 'hidden',
+        opacity: 0
+      })),
+      state('expanded', style({
+        height: '*',
+        overflow: 'auto',
+        opacity: 1
+      })),
+      transition('collapsed <=> expanded', [
+        animate('300ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class PersonalisedForYouSearchPage implements OnInit {
 
@@ -52,7 +76,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public fiveCirclesP: any
   public hcwhP: any
   public percentage: any
-
+  public isExpanded = false;
   wisdomExerciseList = [];
   mediaPercent: any
   freeScreens = []
@@ -103,6 +127,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
   }
 
+  getExpandClass(){
+    !this.isExpanded ? 'd-none' :'';
+  }
+
   ngOnInit() {
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let userid = localStorage.getItem('isloggedin');
@@ -128,6 +156,16 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.continueTour();
     }
   }
+
+
+  toggleAccordion() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  // logEvent(eventName: string, path: string) {
+  //   // your event logic here
+  //   console.log(`Event: ${eventName}, Path: ${path}`);
+  // }
   continueTour() {
     const driver = window['driver'].js.driver;
     let stepList = [
