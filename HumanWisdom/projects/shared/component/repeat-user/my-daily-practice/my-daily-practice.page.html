@@ -3,8 +3,10 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw"
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw "
         [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'">
+
+
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="row  mt50px mb5px">
@@ -104,7 +106,7 @@
               background: linear-gradient(180deg, #834B66 0%, #120F40 100%);
             </div> -->
              <!-- search -->
-             <div class="row prelative ptb30px plr20px">
+             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                 <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" 
                 placeholder="Search for a topic">
@@ -158,19 +160,20 @@
     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 td_points_box" style="margin-left:0px; width:31%;" >
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb5px tcenter">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_points.svg" class="img-responsive">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wellness_daily.svg" class="img-responsive">
                                   </div>
     
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                    <h4 class="mtb0px fs_15px fw_600 lh_120p fc_ffffff">
-                                       5,499 
+                                    <h4 class="mtb0px fs_15px fw_600 lh_120p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                      11 days
                                       <!-- {{loginResponse.Points}} -->
                                     </h4>
                                   </div>
     
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
-                                      Points
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                                     
+                                    Streak
                                     </h4>
                                   </div>
                                 </div>
@@ -192,11 +195,11 @@
     
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px">
                                       
-                                        <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ffffff flex_ai">
+                                        <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ffffff td_underline flex_ai">
                                           Take the survey
-                                          <!-- <span class="ml10px">
-                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_arrow_right.svg" class="img-responsive">
-                                          </span>  -->
+                                           <span class="ml10px">
+                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/right_icon.svg" class="img-responsive">
+                                          </span>  
                                         </h4>
                                      
                                     </div>
@@ -221,14 +224,81 @@
                 <!-- /v1.1 -->
                 <!-- /my progress -->
 
-                 <!-- hr -->
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <hr class="hr_style_v3_01">
+               <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
+
+           <div class="row">
+
+              <!-- <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="fw_400 fs_12px lh_130p fc_ffffff mtb0px">
+                    CONTINUE WHERE YOU LEFT
+                  </h4>
+                </div>
+              </div> -->
+
+              <h4 class="fw_400 fs_12px lh_130p fc_000000 mb10px">
+                CONTINUE WHERE YOU LEFT
+              </h4>
+              <!-- CONTINUE WHERE YOU LEFT -->
+            
+               <div class="toc_adiv_imgmy mb20px ">
+                 <a (click)="routeToDailyCheckIn()">
+                 <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/77.webp"  alt="" class="p0 session_img">
+
+                      <!-- <div class="progress dprogress">
+                        <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div> -->
+                  </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl15px ">
+                      <div class="row">
+                      <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+                       Stress
+                      </h4>
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                     Session #7
+                                      </h4>
+                      <h4 class="mt0px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+
+                       Meeting stress with wisdom
+                      </h4>
+                      
+                       <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_7">
+                        01:01
+                      </h4>  -->
+                    </div>
+                    </div>
+                
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+                    </div>
+
                   </div>
                 </div>
-                <!-- /hr -->
-          
+                 </a>
+               </div>
+            
+              <!-- CONTINUE WHERE YOU LEFT -->
+            </div>
+          <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
     
             <div class="toc_adiv_imgmy mb20px ">
 
@@ -240,7 +310,7 @@
                       <div class="prelative">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex tcenter">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/daily.svg"
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/daily_new.svg"
                               class="p0 session_imgnew" style="border: none; ">
                           </div>
                         </div>
@@ -261,8 +331,8 @@
 
                         How are you feeling today?
                       </h4>
-                      <h4 class="mtb0px fs_12px lh_130p fc_000000_0_5 ellipsis">
-
+                      <h4 class="mtb0px fs_12px lh_130p fc_000000_0_5">
+                      02:00
                       </h4>
                     </div>
 
@@ -303,6 +373,82 @@
                 </div>
               </a> -->
             </div>
+
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
+             <div class="row">
+
+              <!-- <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="fw_400 fs_12px lh_130p fc_ffffff mtb0px">
+                    CONTINUE WHERE YOU LEFT
+                  </h4>
+                </div>
+              </div> -->
+
+              <!-- <h4 class="fw_400 fs_12px lh_130p fc_000000 mb10px">
+                CONTINUE WHERE YOU LEFT
+              </h4> -->
+              <!-- CONTINUE WHERE YOU LEFT -->
+            
+               <div class="toc_adiv_imgmynew mb20px ">
+                 
+                 <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/overcome.svg"  alt="" class="p0 session_img">
+
+                      <!-- <div class="progress dprogress">
+                        <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div> -->
+                  </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px ">
+                      <div class="row">
+                      <h4 class="mtb0px fs_21px fw_500 lh_150p fc_ffffff">
+                      Start your free trial today!
+                      </h4>
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                     Get expert guidance and personalized tools with HappierMe Premium
+                                      </h4>
+                      <!-- <h4 class="mt0px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+
+                       Meeting stress with wisdom
+                      </h4>
+                       -->
+                       <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_7">
+                        01:01
+                      </h4>  -->
+                    </div>
+                    </div>
+                
+
+                    <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+                    </div> -->
+
+                  </div>
+                </div>
+                
+               </div>
+            
+              <!-- CONTINUE WHERE YOU LEFT -->
+            </div>
+          <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                  <hr class="hr_style_v3_02">
+                </div>
+              </div>
+              <!-- /hr -->
+    
 
             <div class="row mb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -380,9 +526,10 @@
 
                       </div> -->
                       <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
-                      <img
+                      <!-- <img
                         src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_inspiration_v3.svg"
-                        alt="insp" class="crimg1"> <!-- </div> -->
+                        alt="insp" class="crimg1"> -->
+                       <!-- </div> -->
                       <div class="row va_middle ">
                         <div id="photo">
                           
@@ -449,8 +596,8 @@
 
                       </div> -->
 
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3.svg"
-                        alt="breathingExercise" class="crimg1">
+                      <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3.svg"
+                        alt="breathingExercise" class="crimg1"> -->
                       <div class="row va_middle">
 
                         <div id="photo">
@@ -517,9 +664,9 @@
 
                   </div> -->
 
-                      <img
+                      <!-- <img
                         src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3.svg"
-                        alt="med" class="crimg1" >
+                        alt="med" class="crimg1" > -->
 
 
                       <div class="row va_middle">
@@ -563,24 +710,36 @@
               <!-- /hr -->
 
               <a>
-                <div class="row mtb10px">
-                  <div class="row mtb10px">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+                <div class="row mtb30px">
+                  
+                    <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+                       <div id="photo">
+                       <h4 class="mtb0px fs_12px fw_400 fc_000000" style="line-height: 16.8px ;">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/mdp_journal.svg"
                         alt="" class="img-responsive" style="width:30px; height:30px">
+                         QUESTION OF THE DAY
+                         </h4>
+                         </div>
                     </div>
-                  </div>
-                  <div class="row mb10px">
+                   -->
+                
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                      <h4 class="mtb0px fs_12px fw_400 fc_000000" style="line-height: 16.8px ;">
+                      <!-- <h4 class="mtb0px fs_12px fw_400 fc_000000" style="line-height: 16.8px ;">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/mdp_journal.svg"
+                        alt="" class="img-responsive" style="width:30px; height:30px">
                         QUESTION OF THE DAY
-                      </h4>
+                      </h4> -->
                     </div>
-                  </div>
-
+                 
+<h4 class="mtb5px fw_400 fs_12px  fc_000000 " style="line-height: 16.8px ;">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/mdp_journal.svg" alt="play"  style="width:30px; height:30px">
+                             QUESTION OF THE DAY
+                          </h4>
                   <div class="box_journalmy">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+
+                        
                         <h4 class="mtb0px v3_reflection_qtnmy fs_15px fw_500 fc_000000 tleft" style="line-height:19.5px;">
                           {{dailyqus}}
                         </h4>
@@ -630,17 +789,20 @@
                 <div class="row mtb10px">
                   <div class="row mtb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+                                            <h4 class="mtb0px fs_12px fw_400 fc_000000" style="line-height: 16.8px ;">
+
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3.svg"
-                        style="width:30px;height:30px;" alt="" class="img-responsive">
+                        style="width:30px;height:30px;" alt="" > QUOTE OF THE DAY
+                        </h4>
                     </div>
                   </div>
-                  <div class="row mb20px">
+                  <!-- <div class="row mb20px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                      <h4 class="mtb0px fs_12px fw_400 fc_e58d82" style="line-height: 16.8px ;">
+                      <h4 class="mtb0px fs_12px fw_400 fc_000000" style="line-height: 16.8px ;">
                         QUOTE OF THE DAY
                       </h4>
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="box_journal">
                     <!-- <div class="row">
@@ -653,7 +815,7 @@
 
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                        <h4 class="mtb0px fs_15px fw_500  fc_000000" style="line-height:22.5px;">
+                        <h4 class="mtb0px fs_15px fw_500  fc_000000 italic" style="line-height:22.5px;">
                           {{dailyinstext}}
                         </h4>
                       </div>
@@ -693,17 +855,20 @@
                 <div class="row mtb10px">
                   <div class="row mtb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+                                            <h4 class="mtb0px fs_12px fw_400  fc_000000" style="line-height: 16.8px ;">
+
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/mdp_exercise.svg"
-                        style="width:30px;height:30px;" alt="" class="img-responsive">
+                        style="width:30px;height:30px;" alt="" > DAILY CHALLENGE
+                        </h4>
                     </div>
                   </div>
-                  <div class="row mb10px">
+                  <!-- <div class="row mb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
                       <h4 class="mtb0px fs_12px fw_400  fc_000000" style="line-height: 16.8px ;">
                         DAILY CHALLENGE
                       </h4>
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="box_journal">
                     <div class="row mtb10px">
@@ -722,7 +887,59 @@
                   <hr class="hr_style_v3_02">
                 </div>
               </div>
-              <!-- /hr -->
+              
+
+
+               <!-- visit fouram -->
+            <div class="row divnew_is_02">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <a routerLink="/adults/forum">
+                  
+                    <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/fouram_new.svg"
+                        class="p0 session_imgforum">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                      <!-- <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                                    Teen Talk
+                      </h4> -->
+                      <div class="row mt10px mb5px plr20px">
+                        <div id="photo">
+                          <img style="vertical-align:middle" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg" alt="">
+                          <span style="vertical-align:middle" class="mt0px  fw_400 fs_12px lh_130p  plr5px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">FORUM</span>
+                        </div>
+                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fouram_new1.svg" class="img-responsive" style="width:12px; height:12px">
+                      </div>
+                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+
+                      <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_ffffff">
+                        FORUM
+                      </h4>
+                      </div> -->
+                      </div>
+                      <h4 class="mt0px fw_600 fs_12px lh_140p plr20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
+                        Visit the forum. Ask questions, share thoughts, and learn from others.                      </h4>
+                    </div>
+
+                    <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div> -->
+                 
+                </a>
+              </div>
+            </div>
+            <!-- /visit fouram -->
+          
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->  
+              
               <div class="row mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
                   <button  (click)="routeToDashboard()" type="submit" class="btn mdp_add_to_journal">
