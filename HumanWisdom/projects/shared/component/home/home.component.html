@@ -1,0 +1,84 @@
+<title>Best Mental Health Apps|Stress, Anger & Depression Management|HappierMe</title>
+<meta name="description"
+  content="HappierMe apps can guide you to become the best person you can be, and discover life-changing wisdom through self-understanding. Learn the art of anger and stress management, get solutions for anxiety and depression.">
+
+<!-- header -->
+<!-- <app-tn-dashboard-v03 [enableplaystore]="true"  [enableHamburger]="isEnableHam"  (playstoreenable)="getplaystore($event)"></app-tn-dashboard-v03> -->
+<!-- /header -->
+
+<app-bg-video></app-bg-video>
+
+
+<div class="right_col mc_03 ">
+  <div class="cw100p">
+
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw ">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+              
+            <div class="row home-container">
+              <div class="col-12">
+                <div class="d-flex flex-wrap">
+                  <div class="nav-menu">
+                    <a *ngFor="let item of navigationItems" class="nav-item" [class.nav-item--selected]="item.isActive" [class.nav-item--unselected]="!item.isActive">  {{ item.label }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row home-container">
+              <div class="col-12">
+                <div class="p-3">
+                  <p class="text-muted mb-0">{{ description }}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 p-0">
+                <div *ngFor="let section of contentSections" [class]="section.cssClass">
+                  
+                  <!-- Section Header - Clickable for accordion -->
+                  <div class="d-flex justify-content-between align-items-center p-3  rounded-top border-bottom cursor-pointer"
+                       (click)="onSectionToggle(section)"
+                       (keydown.enter)="onSectionToggle(section)"
+                       (keydown.space)="onSectionToggle(section)"
+                       tabindex="0"
+                       role="button"
+                       [attr.aria-expanded]="section.isExpanded"
+                       [attr.aria-controls]="'section-' + section.id">
+                    <div class="d-flex flex-column">
+                      <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
+                      <small class="text-muted" *ngIf="section.subtitle">{{ section.subtitle }}</small>
+                    </div>
+                    <div class="text-muted">
+                      <i class="fa" [class.fa-caret-down]="section.isExpanded" [class.fa-caret-up]="!section.isExpanded"></i>
+                    </div>
+                  </div>
+
+                  <!-- Section Content -->
+                  <div class="rounded-bottom" 
+                       [class.d-none]="!section.isExpanded"
+                       [id]="'section-' + section.id"
+                       role="region"
+                       [attr.aria-labelledby]="'section-title-' + section.id">
+                    <div class="p-3">
+                      <div class="d-flex card-container">
+                        <div *ngFor="let card of section.cards" class="me-3" style="min-width: 200px; flex-shrink: 0;">
+                          <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

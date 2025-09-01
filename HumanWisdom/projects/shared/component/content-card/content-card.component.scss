@@ -1,0 +1,76 @@
+.custom-box-img {
+  width: 150px;
+  height: 150px;
+  transform: rotate(0deg);
+  opacity: 1;
+  gap: 10px;
+  border-radius: 12px;
+}
+
+.custom-box-text-container {
+  width: 150;
+  height: 55;
+  angle: 0 deg;
+  opacity: 1;
+  gap: 2px;
+}
+
+.custom-box-text-container-title {
+  font-family: Poppins;
+font-weight: 500;
+font-size: 15px;
+leading-trim: NONE;
+line-height: 130%;
+letter-spacing: 0px;
+color: #000000;
+width: 150px;
+height: 35px;
+}
+
+
+.no-break {
+  white-space: normal;       /* Allows wrapping to next line */
+  word-break: keep-all;      /* Prevents breaking within words */
+  overflow-wrap: normal;     /* Avoids breaking long words */
+}
+
+.custom-box-text-container-mediaType {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+}
+
+/* Content Card Component - Bootstrap Only */
+
+/* Overlay icon styles */
+.overlay-icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-icon:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Ensure image overlay icons maintain aspect ratio */
+.overlay-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* FontAwesome icon specific styles */
+.overlay-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
