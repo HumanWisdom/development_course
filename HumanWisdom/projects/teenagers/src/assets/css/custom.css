@@ -14,6 +14,15 @@ body { margin: 0px}
   position: fixed;
   height: 100%;
 }
+
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1351px !important;
+    }
+}
+
+
 .nav-sm .container.body .col-md-3.left_col .mCSB_container,
 .nav-sm .container.body .col-md-3.left_col .mCustomScrollBox {
   overflow: visible;
@@ -37902,3 +37911,6 @@ a.fc_e58d82:hover
   }
   
 }
+
+
+
