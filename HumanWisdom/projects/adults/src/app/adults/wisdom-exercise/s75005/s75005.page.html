@@ -16,10 +16,13 @@
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-      <a (click)="changeType()" class="">
+      <a (click)="changeType()" class="" *ngIf="isShowTranscript || isShowAudio">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" />
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+      <a  *ngIf="!isShowTranscript && !isShowAudio && isShowBulb" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
       </a>
     </div>
   </div>
@@ -419,13 +422,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="896"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="896" data-hint="If you label a feeling as anger, you can blame someone else for causing it"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="897"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="897" data-hint=" If you called it excitement instead of fear, how would your reaction change?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -532,13 +535,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="898"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="898" data-hint="You might be feel really happy because someone praised you today, or because you were thinking of your next holiday"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="899"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="899" data-hint="when you feel anxious, watch your favourite TV program."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -717,13 +720,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="900"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="900" data-hint="Was it there when you were sleeping, for example?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                      <!-- journal -->
                      <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="901"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="901" data-hint="It may make you buy only what you need, and not for the pleasure it brings you"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -766,6 +769,20 @@
                       </div>
                     </div>
                     <!-- /quotation -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
+                            When you are feeling bad about anything, know that it will pass. You are not your feelings. You just have to keep walking and do the next thing that needs doing. 
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
 
                   </div>
 
@@ -863,7 +880,7 @@
                           </p>
 
                           <p>
-                            The body and mind are One - and intimately linked. The brain sends signals to the body using different neurotransmitters. Being sensitive to our body can help us identify our feelings before we feel them in our mind.
+                            The body and mind are One - and intimately linked. The brain sends signals to the body using different neurotransmitters. Being sensitive to our body can help us identify our feelings before we label them in our mind.
                           </p>
 
                         </div>
@@ -888,7 +905,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="902"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="902" data-hint="Fear can be felt in the skin for example, or make your heart beat faster"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1035,9 +1052,9 @@
                             Seeing food or alcohol can trigger a feeling of desire and this can make us eat and drink more than we need, or if we are in a shop – buy things on impulse.
                           </p>
 
-                          <p>
+                          <!-- <p>
                             The feeling of unbearable stress prompts many people to take their own lives every year.
-                          </p>
+                          </p> -->
 
                           <p>
                             Or the feeling of restlessness can prompt us to spend hours browsing our phones.
@@ -1103,13 +1120,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="904"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="904" data-hint="Were you aware of the feeling of restlessness when you reached for your phone?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="905"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="905" data-hint="When you stay with a feeling, it goes away"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1280,7 +1297,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="906"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="906" data-hint="Like anger, which made you shout at someone, or hit someone?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1300,7 +1317,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="907"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="907" data-hint="This is not easy, but if you keep practicing, you can do it"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1527,7 +1544,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="908"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="908" data-hint="you may have got anxious about what others were thinking of you, but then realsied that they were talking about something else "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1547,7 +1564,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="909"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="909" data-hint="A teacher may have got angry because she felt a student was misbehaving, when he was not"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1655,13 +1672,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="910"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="910" data-hint="you may feel being jealous is wrong, and being angry is justified, for example.."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="911"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="911" data-hint="You may feel guilty about being rude, but does that stop you from being rude the next time?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1830,13 +1847,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="912"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="912" data-hint="For example, when meeting someone you don’t like - does that create the same reaction each time? "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="913"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="913" data-hint="For example, challenge yourself to be more positive, when you notice negative feelings are rising in you."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1953,13 +1970,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="914"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="914" data-hint="For example if you were criticized and told you were not good enough, does that make you feel less confident today? "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="915"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="915" data-hint=" Being aware of a feeling as it rises, and its links to our past, allows us to be with it, and break the pattern "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -2116,13 +2133,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="916"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="916" data-hint="If you haven’t already, try talking about your feelings to people you trust. It is one way of making sense of them. "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="917"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="917" data-hint="Did you talk to someone? Did it feel scary before, and good afterwards? "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -2304,13 +2321,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="918"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="918" data-hint=" It could be you were teased and felt angry, or did not get selected for your sports team and felt disappointed "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="919"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="919" data-hint="It may be you did not invite them to your party, and they got upset with you. "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -2722,7 +2739,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="922"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="922" data-hint=" it could be boredom - just stay with that feeling and notice what happens "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -2932,4 +2949,14 @@
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Start your free trial to access your online Journal'">
 </app-modal>
+<!-- hint modal -->
+<div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <h4 id="hinttext" class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
+      </h4>
+    </div>
+  </div>
+  </div>
+<!-- /hint modal -->
 <!-- /footer -->

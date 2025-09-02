@@ -13,6 +13,8 @@ export class S75004Page implements OnInit {
   enableAlert = false;
   isShowTranscript = false;
   isShowAudio = false;
+  isShowBulb = false;
+  hintValue: any;
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -23,6 +25,7 @@ export class S75004Page implements OnInit {
   enableday7 = false;
   enableday8 = false;
   enableday9 = false;
+  enableday10 = true;
   isShowButton = false;
   vistedScreens: any[] = [];
   currentDay: number = 0;
@@ -39,7 +42,7 @@ export class S75004Page implements OnInit {
   bookmark: number = 0;
   screenType: string = "8";
   userId: any = localStorage.getItem('userId');
-  totaldays=9;
+  totaldays=10;
   DaysWithIntro=10;
   lastClick = 0;
   delay = 20;
@@ -136,6 +139,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p0";
       this.dayclass = "intro";
       this.currentDay = 0;
@@ -154,6 +158,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p1";
       this.dayclass = "1";
       this.currentDay = 1;
@@ -172,8 +177,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
-      this.enableday8 = false;
-      this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p2";
       this.dayclass = "2";
       this.currentDay = 2;
@@ -192,6 +196,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p3";
       this.dayclass = "3";
       this.currentDay = 3;
@@ -210,6 +215,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p4";
       this.dayclass = "4";
       this.currentDay = 4;
@@ -228,6 +234,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p5";
       this.dayclass = "5";
       this.currentDay = 5;
@@ -246,6 +253,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p6";
       this.dayclass = "6";
       this.currentDay = 6;
@@ -264,6 +272,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = true;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p7";
       this.dayclass = "7";
       this.currentDay = 7;
@@ -282,6 +291,7 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = true;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "75004p8";
       this.dayclass = "8";
       this.currentDay = 8;
@@ -300,24 +310,48 @@ export class S75004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = true;
+      this.enableday10 = false;
       this.screenNumber = "75004p9";
       this.dayclass = "9";
       this.currentDay = 9;
     }
+    else if (event === '10') {
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
+      this.enableintro = false;
+      this.enableday1 = false;
+      this.enableday2 = false;
+      this.enableday3 = false;
+      this.enableday4 = false;
+      this.enableday5 = false;
+      this.enableday6 = false;
+      this.enableday7 = false;
+      this.enableday8 = false;
+      this.enableday9 = false;
+      this.enableday10 = true;
+      this.screenNumber = "75004p10";
+      this.dayclass = "10";
+      this.currentDay = 10;
+    }
+
     this.next();
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");
       element.scrollIntoView({behavior: "smooth" ,inline: "center"});
-  }, 2000);
+    }, 2000);
   }
+
 
   next() {
     window.scrollTo(0,0);
-
     this.nextDay = null;
+    this.resetHintValue();
+
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
-        this.slideStart = this.slideStart + 1;
+        this.slideStart++;
+
         if (this.slideStart == this.totalSlidesCount) {
           this.nextDay = this.currentDay + 1;
           setTimeout(() => {
@@ -328,36 +362,45 @@ export class S75004Page implements OnInit {
         }
 
       } else if (this.slideStart == this.totalSlidesCount) {
-        this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
-          "ScreenNo": '75004p' + (parseInt(this.screenNumber.substring(6, 7))),
+          "ScreenNo": this.screenNumber,
           "ModuleID": 75,
           "SessionID": 0,
-        })
-        if(this.currentDay>this.totaldays){
+        });
+
+        this.currentDay++;
+
+        if (this.currentDay > 10) { // After Day 10 go to next session
           this.router.navigate(['adults/wisdom-exercise/s75005']);
-        }else{
+        } else {
           this.getdayevent(this.currentDay.toString());
         }
       } else {
         this.slideStart = 1;
       }
-      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
-      var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
-        children[1]?.children[0]?.lastChild?.classList.value;
-      if (data == undefined) {
-        data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
-          children[1]?.children[0]?.lastChild?.classList.value;
+
+      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) 
+        + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+
+      let data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]
+        ?.children[1]?.children[0]?.lastChild?.classList.value;
+
+      if (!data) {
+        data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]
+          ?.children[1]?.children[0]?.lastChild?.classList.value;
       }
-      if (data == "audio-test") {
-        this.isShowButton=true;
+
+      if (data === "audio-test") {
+        this.isShowButton = true;
         this.isShowTranscript = true;
-        this.isShowAudio=false;
+        this.isShowAudio = false;
       } else {
-        this.isShowButton=false;
+        this.isShowButton = false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+
+      this.setHint();
     }, 700);
   }
 
@@ -367,6 +410,7 @@ export class S75004Page implements OnInit {
   back() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
@@ -394,6 +438,7 @@ export class S75004Page implements OnInit {
           this.isShowTranscript = false;
           this.isShowAudio = false;
         }
+        this.setHint();
     }, 700);
   }
 
@@ -434,6 +479,27 @@ export class S75004Page implements OnInit {
       this.router.navigate(['/log-in']);
     }else{
       this.enableAlert = false;
+    }
+  }
+
+  resetHintValue(){
+    this.isShowBulb = false;
+    this.hintValue = '';
+  }
+
+  setHint(){
+    const activeSlides = document.getElementsByClassName('active');
+    if(activeSlides && activeSlides.length>0){
+      const container: any = activeSlides[0];
+      const journalWe = container.querySelector('app-journal-we') as any;
+      if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
+        this.hintValue = journalWe.dataset;
+        this.isShowBulb = true;
+        const element = document.getElementById('hinttext');
+        if(element){
+          element.innerHTML = this.hintValue.hint;
+        }
+      }
     }
   }
 }

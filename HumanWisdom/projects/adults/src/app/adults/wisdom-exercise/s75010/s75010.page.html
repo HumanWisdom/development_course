@@ -16,10 +16,13 @@
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-      <a (click)="changeType()" class="">
+      <a (click)="changeType()" class="" *ngIf="isShowTranscript || isShowAudio">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" />
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+      <a  *ngIf="!isShowTranscript && !isShowAudio && isShowBulb" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
       </a>
     </div>
   </div>
@@ -536,10 +539,53 @@
                   </ol>
 
                   <div class="carousel-inner">
-
-                    <!-- journal -->
+                    <!-- audio -->
                     <div class="item active">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="982"></app-journal-we>
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Begin with a conversation
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/9.10.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                          <p>
+                            A simple way to begin learning this new skill of looking without naming something or reacting to it is in a conversation.
+                            As someone is talking, notice how you are listening. Maybe you start thinking of something else halfway through, or have the urge to interrupt and say something.
+                            Just notice this without judging it as right or wrong, or even naming it.
+                            Just as you would feel a sensation of hunger without calling it hunger, you can notice this urge to say something.
+                          </p>
+
+                          <p>
+                            Two things happens when you do this - firstly self awareness brings self-correction and you automatically start listening better, or realise its best to say nothing in this situation. The second thing is that your mind becomes quiet - just for a moment.
+
+                          </p>
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="982" data-hint=" Just observe your urge to interrupt without giving in to it."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -676,7 +722,7 @@
 
                     <!-- journal -->
                     <div class="item active">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="984"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="984" data-hint=" Did you feel restless initially, but then more relaxed afterwards?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -735,13 +781,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="985"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="985" data-hint="Quote often we do not need to pick up the phone. Every thought does not need an action."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="986"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="986" data-hint=" This is not easy to do as the mind moves so quickly"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -893,7 +939,7 @@
                           </p>
 
                           <p>
-                            What is going on in our thinking to make us unable to manage our habits, despite our best efforts, and what can we do about it?
+                            What is going on in our thinking that make us unable to manage our habits, despite our best efforts, and what can we do about it?
                           </p>
 
                         </div>
@@ -904,7 +950,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="987"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="987" data-hint="It could be the need to have a sports drink regularly"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -991,7 +1037,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="988"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="988" data-hint="Whenever you pay attention, the mind quietens"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1101,7 +1147,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
 
                           <p>
-                            Anxiety affects between 20 and 40% of people. We know it is caused by our thinking because when we distract ourselves, the anxiety abates for a while.
+                            Anxiety affects between 20 and 40% of people. We know it is caused by our thinking because when we distract ourselves, the anxiety goes away for a while.
                           </p>
 
                           <p>
@@ -1156,7 +1202,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="991"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="991" data-hint=" Notice how feelings are felt in the body, and often the first signal that we may be anxious. "></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1338,7 +1384,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="992"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="992" data-hint="Did you feel restless, and were you thinking of other things?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1454,7 +1500,7 @@
                               <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
                                 Day 7
                                 <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
-                                  Meeting emotional pain
+                                  Feeling upset 
                                 </h4>
                               </h4>
                             </div>
@@ -1545,7 +1591,7 @@
 
                      <!-- journal -->
                      <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="995"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="995" data-hint="it usually makes us feel more calm"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1699,4 +1745,15 @@
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Start your free trial to access your online Journal'">
 </app-modal>
+
+<!-- hint modal -->
+<div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <h4 id="hinttext" class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
+      </h4>
+    </div>
+  </div>
+  </div>
+<!-- /hint modal -->
 <!-- /footer -->

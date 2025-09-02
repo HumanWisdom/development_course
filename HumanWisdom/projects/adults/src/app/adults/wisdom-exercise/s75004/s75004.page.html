@@ -9,17 +9,20 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <a class="">
-        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
-          #3 Notice your thoughts
-        </h1>
+      <h1 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
+        #3 Notice your thoughts
+      </h1>
       </a>
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-      <a (click)="changeType()" class="">
+      <a (click)="changeType()" class="" *ngIf="isShowTranscript || isShowAudio">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" />
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+      <a  *ngIf="!isShowTranscript && !isShowAudio && isShowBulb" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
       </a>
     </div>
   </div>
@@ -310,7 +313,7 @@
                           <p class="fs_18px fw_400 lh_150p fc_ffffff">
                             We are now going to set you an
                             <span class="fw_700">
-                              eight
+                              ten
                             </span>
                             day challenge.
                           </p>
@@ -368,30 +371,8 @@
 
                   <div class="carousel-inner">
 
-                    <!-- simple text -->
-                    <div class="item active">
-                      <div class="row center_flex tleft p20px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
-                            Sit down with a pen and paper.
-                            Write down every thought you notice for 10 minutes.
-                            Notice the quietest thoughts as well as the obvious ones.
-                          </p>
-                          
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /simple text -->
-
-                    <!-- journal -->
-                    <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="875"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
-
                     <!-- audio -->
-                    <div class="item">
+                    <div class="item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -442,6 +423,27 @@
                       <!-- /transcript -->
                     </div>
                     <!-- /audio -->
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex tleft p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
+                            Sit down with a pen and paper.
+                            Write down every thought you notice for 10 minutes.
+                            Notice the quietest thoughts as well as the obvious ones.
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
+                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="875"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
 
                     <!-- quotation -->
                     <div class="item">
@@ -576,9 +578,49 @@
                   </ol>
 
                   <div class="carousel-inner">
-
-                    <!-- simple text -->
+                    <!-- audio -->
                     <div class="item active">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
+                                Day 2
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  The wandering mind
+                                </h4>
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/3.3.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+
+                          <p>
+                            We are just looking and learning about our thoughts - and if we look carefully we notice how our mind has a habit of wandering. This is not right or wrong - but a fact to observe.
+                            We do not notice the moment the mind begins it wandering but are able to snap back to the present and relaise we have been doing so. While it's wandering we lose touch with our surroundings. If you are in a conversation you stop hearing what is being said. You may be able to remember what you have been thinking about and the chain of thoughts that you had. The more you are able to notice this happening, without trying to change it, the less your mind wanders, and the quieter it becomes. Be aware of this today and see what you notice. Don’t try to force anything - the awareness brings its own change
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+                    <!-- simple text -->
+                    <div class="item">
                       <div class="row center_flex tleft p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -619,48 +661,6 @@
                       <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="877"></app-journal-we>
                     </div>
                     <!-- /journal -->
-
-                    <!-- audio -->
-                    <div class="item">
-                      <div class="row center_flex p20px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                          <div class="row center_flex">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
-                                Day 2
-                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
-                                  The wandering mind
-                                </h4>
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <app-audio-player class="audio-test" 
-                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/3.3.mp3">
-                              </app-audio-player>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-
-                      <!-- transcript -->
-                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
-
-                          <p>
-                            We are just looking and learning about our thoughts - and if we look carefully we notice how our mind has a habit of wandering. This is not right or wrong - but a fact to observe.
-                            We do not notice the moment the mind begins it wandering but are able to snap back to the present and relaise we have been doing so. While it's wandering we lose touch with our surroundings. If you are in a conversation you stop hearing what is being said. You may be able to remember what you have been thinking about and the chain of thoughts that you had. The more you are able to notice this happening, without trying to change it, the less your mind wanders, and the quieter it becomes. Be aware of this today and see what you notice. Don’t try to force anything - the awareness brings its own change
-                          </p>
-
-                        </div>
-                      </div>
-                      <!-- /transcript -->
-                    </div>
-                    <!-- /audio -->
 
                     <!-- quotation -->
                     <div class="item">
@@ -851,13 +851,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="878"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="878" data-hint="It could be you felt envious when seeing someone get more likes than you"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
-                    <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="879"></app-journal-we>
+                    <div class="item"> 
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="879" data-hint="It could have resulted in an argument"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1078,19 +1078,20 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="880"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="880" data-hint="Challenge your own assumptions about yourself or someone you know. What is another way of seeing that person?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="881"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="881" data-hint=" We assume that everyone must think eating meat is good for your health, for example."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="882"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="882"
+                      data-hint="It could be about the food you eat, or about alcohol, or about how much sleep you need."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1774,13 +1775,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="887"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="887" data-hint=" It could be you have a certain opinion about them which repeats in your thinking."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="888"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="888" data-hint="For example when someone asks you to tidy your room"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1991,13 +1992,13 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="890"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="890" data-hint=" You may think all immigrants are the same, or all people from a certain country or religion are the same, for example."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="891"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="891" data-hint="What opinions do you have about yourself that you keep repeating, and believe to be true?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -2209,19 +2210,19 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="892"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="892" data-hint="You may feel frustrated"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="893"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="893" data-hint="You may want to be with people who are popular in your school"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="894"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="894" data-hint=" You want to be liked, because you worry otherwise you will be alone"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -2325,6 +2326,204 @@
               </div>
               <!-- /day 09 -->
 
+              <!-- day 10 -->
+              <div class="container" *ngIf="enableday10" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
+
+                  <ol class="carousel-indicators">
+                    <div class="row center_flex">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
+                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
+                              <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                              Previous
+                            </button>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <h4 class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
+                            <!-- {{title}} -->
+                          </h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                              Next
+                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </ol>
+
+                  <div class="carousel-inner">
+
+                    <!-- audio -->
+                    <div class="item active">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 10
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Learn to change what you think
+                                </h4>
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/2.8.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff txt_justify">
+
+                          <p>
+                            As you will have learned in the previous exercises, our mind is an automatic reaction machine and we are often not in control of what we think. We have about 6000 thoughts a day and they seem to arise automatically in reaction to whatever is happening, operating in predictable patterns.
+                          </p>
+
+                          <p>
+                            We believe what we think is true, and these thoughts influence what we feel—about ourselves, others, and the world. These thoughts are not right or wrong, but do not always serve us and can be behind many mental health problems.
+                          </p>
+
+                          <p>
+                            In this series of exercises we are going to explore noticing what we are thinking, consciously choose a different thought or way of thinking, and observe the impact. It is a great skill to learn and can help us manage our own mental health, build stronger relationships, make better decisions, and be happier.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
+                    </div>
+                    <!-- /audio -->
+
+                    <!-- exercise -->
+                    <div class="item">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                          <div class="row center_flex mb20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
+                                Learn to notice, and change what we think. It can help us:
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <ul class="mtb0px fs_15px fw_400 lh_150p fc_ffffff wec_ul">
+                                <li>Avoid getting trapped by automatic negative thoughts</li>
+                                <li>Think more clearly and make better decisions</li>
+                                <li>Manage our mental health</li>
+                                <li>Be happier</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /exercise -->
+
+                    <!-- journal 1 -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2416"></app-journal-we>
+                    </div>
+                    <!-- /journal 1 -->
+
+                    <!-- quotation 1 -->
+                    <div class="item">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg" alt="" class="img-responsive">
+                            </div>
+                          </div>
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff tcenter">
+                                It often takes more courage to change one’s opinion than to keep it.
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ls_01 ttuppercase">
+                                Willy Brandt
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation 1 -->
+
+                    <!-- journal 2 -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2417"></app-journal-we>
+                    </div>
+                    <!-- /journal 2 -->
+
+                    <!-- quotation 2 -->
+                    <div class="item">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg" alt="" class="img-responsive">
+                            </div>
+                          </div>
+                          <div class="row center_flex we_quotation">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff tcenter">
+                                Opinions are made to be changed - or how else is truth to be got at?
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <hr class="we_hr">
+                            </div>
+                          </div>
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ls_01 ttuppercase">
+                                Lord Byron
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /quotation 2 -->
+
+                    <!-- journal 3 -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2420"></app-journal-we>
+                    </div>
+                    <!-- /journal 3 -->
+
+                  </div>
+                </div>
+              </div>
+              <!-- /day 10 -->
+
               <div class="pagebreak"></div>
 
             </form>
@@ -2394,6 +2593,11 @@
           Day 9
         </button>
       </a>
+            <a>
+        <button type="button" class="btn btn_wec" [ngClass]="getClass('75004p10')" (click)="getdayevent('10')">
+          Day 10
+        </button>
+      </a>
 
     </div>
   </div>
@@ -2403,4 +2607,14 @@
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Start your free trial to access your online Journal'">
 </app-modal>
+<!-- hint modal -->
+<div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <h4 id="hinttext" class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
+      </h4>
+    </div>
+  </div>
+  </div>
+<!-- /hint modal -->
 <!-- /footer -->
