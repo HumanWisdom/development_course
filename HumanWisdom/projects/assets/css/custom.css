@@ -20163,6 +20163,10 @@ input{
 {
   padding-bottom: 15rem;
 }
+.pagebreak_new
+{
+  padding-bottom: 10rem;
+}
 
 .btn_plus_1
 {
@@ -26434,18 +26438,18 @@ h1
   color: #FFF;
 }
 .mdp_answer_heremy {
-  height: 130px;
+  height: 100px;
   width: 100%;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #FFFFFFBF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.75);
 
   /* background: #4b2c451f; */
   padding: 20px;
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: #ffffff !important;
+  color: #000000 !important;
   outline:none !important;
 }
 .mdp_answer_here
@@ -27288,7 +27292,7 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 {
   /* color: #5D5D5D; */
   color: rgba(0, 0, 0, 0.50);
-  font-size: 20px;
+  /* font-size: 20px; */
   /* left: 30px !important; */
   left: 3% !important;
   text-align: center;
@@ -27314,7 +27318,8 @@ all and (min-width: 992px) and (-webkit-transform-3d)
   color: rgba(255, 255, 255, 1)!important;
   /* height: 60px; */
   height: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  
+  border: 1px solid rgb(0 0 0 / 10%) !important;
 }
 
 .pfy_search::placeholder
@@ -35923,7 +35928,7 @@ background: linear-gradient(180deg, #803358 0%, #230F40 100%);
   border-radius: 12px;
   border: 0;
   background: #FFE8BB;
-  /* min-height: 130px; */
+   min-height: 130px; 
   /* margin-bottom: 10px; */
   padding: 12px;
   /* margin: 0 10px 10px 10px; */
