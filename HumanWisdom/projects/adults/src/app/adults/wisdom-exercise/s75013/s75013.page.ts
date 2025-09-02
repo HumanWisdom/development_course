@@ -14,7 +14,9 @@ export class S75013Page implements OnInit {
   dayclass = 'intro'
   isShowTranscript = false;
   enableAlert = false;
-  isShowAudio = false;
+  isShowAudio = false;  
+  isShowBulb = false;
+  hintValue: any;
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -121,7 +123,7 @@ export class S75013Page implements OnInit {
     }
     else if (event === '2') {
       this.slideStart = 0;
-      this.totalSlidesCount = 5;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -225,6 +227,7 @@ export class S75013Page implements OnInit {
   next() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
         this.slideStart = this.slideStart + 1;
@@ -268,6 +271,7 @@ export class S75013Page implements OnInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+      this.setHint();
     }, 700);
   }
   getClass(day) {
@@ -276,6 +280,7 @@ export class S75013Page implements OnInit {
   back() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
@@ -303,6 +308,7 @@ export class S75013Page implements OnInit {
           this.isShowTranscript = false;
           this.isShowAudio = false;
         }
+        this.setHint();
     }, 700);
   }
 
@@ -384,4 +390,26 @@ export class S75013Page implements OnInit {
       this.enableAlert = false;
     }
   }
+
+  resetHintValue(){
+    this.isShowBulb = false;
+    this.hintValue = '';
+  }
+
+  setHint(){
+    const activeSlides = document.getElementsByClassName('active');
+    if(activeSlides && activeSlides.length>0){
+      const container: any = activeSlides[0];
+      const journalWe = container.querySelector('app-journal-we') as any;
+      if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
+        this.hintValue = journalWe.dataset;
+        this.isShowBulb = true;
+        const element = document.getElementById('hinttext');
+        if(element){
+          element.innerHTML = this.hintValue.hint;
+        }
+      }
+    }
+  }
+
 }
