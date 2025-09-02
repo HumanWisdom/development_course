@@ -16,10 +16,13 @@
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-      <a (click)="changeType()" class="">
+      <a (click)="changeType()" class="" *ngIf="isShowTranscript || isShowAudio">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" />
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+      <a  *ngIf="!isShowTranscript && !isShowAudio && isShowBulb" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
       </a>
     </div>
   </div>
@@ -391,7 +394,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="998"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="998" data-hint=" There is no right or wrong. Just notice what you are feeling."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -574,7 +577,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="999"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="999" data-hint="He could accept that people’s feelings change, and he will move on."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -894,6 +897,20 @@
                     </div>
                     <!-- /audio -->
 
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
+                            Your fear of failure must not stop you from pursuing your passion, and your dreams.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
+
                     <!-- exercise -->
                     <div class="item">
                       <div class="row center_flex p20px">
@@ -940,7 +957,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="1003"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="1003" data-hint=" you could realise that not doing well in an exam is not the end of the world for example."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1283,7 +1300,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="1007"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="1007" data-hint="You may have told the teacher you lost your notebook, when in fact you forgot to do your homework."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1513,7 +1530,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="1009"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="1009" data-hint="He could realise that he is being anti-social and losing quality time with his family."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1752,7 +1769,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="1013"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="1013" data-hint=" It could be failure in sport, or academics, or something else."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -2140,4 +2157,15 @@
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Start your free trial to access your online Journal'">
 </app-modal>
+
+<!-- hint modal -->
+<div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <h4 id="hinttext" class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
+      </h4>
+    </div>
+  </div>
+  </div>
+<!-- /hint modal -->
 <!-- /footer -->

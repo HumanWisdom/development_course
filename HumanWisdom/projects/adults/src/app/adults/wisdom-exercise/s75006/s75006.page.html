@@ -16,10 +16,13 @@
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-      <a (click)="changeType()" class="">
+      <a (click)="changeType()" class="" *ngIf="isShowTranscript || isShowAudio">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" />
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+      <a  *ngIf="!isShowTranscript && !isShowAudio && isShowBulb" aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
       </a>
     </div>
   </div>
@@ -146,12 +149,11 @@
 
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
-                                Introducing 
+                              
                                 <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
                                   How are thoughts and feelings connected?
                                 </h4>
-                              </h4>
+                              
                             </div>
                           </div>
 
@@ -424,7 +426,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="923"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="923" data-hint="He could ask - what is going on in my mind to make me react in this way?"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -449,7 +451,7 @@
                                 </li>
 
                                 <li class="">
-                                  How likely is to happen?
+                                  How likely is it to happen?
                                 </li>
 
                                 <li class="">
@@ -536,6 +538,20 @@
                       <!-- /transcript -->
                     </div>
                     <!-- /audio -->
+
+                    <!-- simple text -->
+                    <div class="item">
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <p class="fs_18px fw_400 lh_150p fc_ffffff">
+                            Our mind assumes that our stress and anxiety are being caused by external events, like exams. But if you look carefully, they are caused by how our mind automatically reacts to what is going on, because each person reacts in their own unique way, and some may not be stressed by the same event.
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /simple text -->
 
                     <!-- journal -->
                     <div class="item">
@@ -630,7 +646,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="925"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="925" data-hint="She could have accepted that her friend had other priorities"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -659,7 +675,7 @@
                                 </li>
 
                                 <li class="">
-                                  Were other people responsible for meeting her expectations?
+                                  Are other people responsible for meeting her expectations?
                                 </li>
 
                                 <li class="">
@@ -747,7 +763,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="926"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="926" data-hint="you could be angry with yourself for not getting the exam grades you want. You could just accept you did your best, and your anger would fade away."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -781,7 +797,7 @@
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ls_01 ttuppercase">
-                                Joan Lumden
+                                Joan Lunden
                               </h4>
                             </div>
                           </div>
@@ -985,7 +1001,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="928"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="928" data-hint="You could accept your friend as they are, and your relationship could improve."></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -995,7 +1011,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                           <p class="fs_18px fw_400 lh_150p fc_ffffff">
-                            Sometimes our feelings are a mix of many different emotions and we cannot give them a clear label. By looking at the relationship differently our feelings can also change.
+                            Sometimes our feelings are a mix of many different emotions and we cannot give them a clear label. By looking at the friendship differently our feelings can also change.
                           </p>
 
                         </div>
@@ -1489,7 +1505,7 @@
 
                     <!-- journal -->
                     <div class="item">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="932"></app-journal-we>
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="932" data-hint=" It could be that accepting your school grades as they are could help ease your stress"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
@@ -1615,4 +1631,15 @@
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Start your free trial to access your online Journal'">
 </app-modal>
+
+<!-- hint modal -->
+<div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
+      <h4 id="hinttext" class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
+      </h4>
+    </div>
+  </div>
+  </div>
+<!-- /hint modal -->
 <!-- /footer -->

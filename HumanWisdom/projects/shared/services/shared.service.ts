@@ -69,6 +69,19 @@ export class SharedService {
     var className = "";
     if (day.includes("p0")) {
       dayclass = "0";
+    } 
+    else if (day.includes("p10")) {
+      dayclass = "10";
+    } 
+    else if (day.includes("p11")) {
+      dayclass = "11";
+    }
+    else if (day.includes("p12")) {
+      dayclass = "12";
+    } else if (day.includes("p13")) {
+      dayclass = "13";
+    } else if (day.includes("p14")) {
+      dayclass = "14";
     } else if (day.includes("p1")) {
       dayclass = "1";
     } else if (day.includes("p2")) {
@@ -87,10 +100,6 @@ export class SharedService {
       dayclass = "8";
     } else if (day.includes("p9")) {
       dayclass = "9";
-    } else if (day.includes("p10")) {
-      dayclass = "10";
-    } else if (day.includes("p11")) {
-      dayclass = "11";
     }
 
     if (currentDay.toString() == dayclass) {

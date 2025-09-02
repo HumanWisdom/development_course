@@ -119,7 +119,7 @@ export class S75008Page implements OnInit {
   getdayevent(event) {
     if (event === 'intro') {
       this.slideStart = 0;
-      this.totalSlidesCount = 5;
+      this.totalSlidesCount = 4;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = true;
       this.enableday1 = false;

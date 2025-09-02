@@ -773,31 +773,15 @@
 
                       <!-- transcript -->
                       <div class="row center_flex tleft" *ngIf="isShowAudio"
-                        [ngClass]="{'transcript-display':!isShowAudio}">
-                        <div
-                          class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+                          [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff txt_justify">
 
                           <p>
-                            Eating and drinking consciously based on what our body is telling us allows us to be
-                            healthy, avoid obesity, and stay well hydrated.
+                            Self awareness begins with noticing your posture. You will also notice how this awareness automatically leads to a correction. As soon as you notice you are slouching, you sit up straight. Or if you notice your head is bent forwards, you can pull your head back in line with your shoulders.
                           </p>
 
                           <p>
-                            Many diseases like diabetes are linked to people being overweight. Obesity rates are rising,
-                            and are 42% in the US and 28% in the UK. When we eat we are usually thinking of something
-                            else.
-                            If we lived with a greater awareness of what we were eating, and what the body was
-                            signaling, this problem could be avoided.
-                          </p>
-
-                          <p>
-                            Eating and drinking for pleasure is not wrong, but can contribute to obesity. Alcohol is a
-                            toxin which has been linked to several diseases including cancer.
-                          </p>
-
-                          <p>
-                            Scientists are also finding links between the type of food we eat and disease. Colon cancer
-                            for example is linked to eating too much red meat.
+                            You can therefore see how self awareness brings self-correction. This skill will be valuable as you begin noticing your thoughts and feelings in the next section, and the same principle will apply there - becoming aware of what your mind is doing will allow you to self-correct - for example if you notice you are becoming reactive in a conversation, you could pause and suggest you continue the conversation later, or if you notice that you are being negative in your thinking, you can pause and explore a more positive way of seeing things.
                           </p>
 
                         </div>
@@ -1053,7 +1037,7 @@
 
               <!-- day 05 -->
               <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01"
+                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
                   data-ride="carousel" data-interval="3000000">
 
                   <ol class="carousel-indicators">
@@ -1068,9 +1052,7 @@
                           </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <h4 class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details">
-                            <!-- {{title}} -->
-                          </h4>
+                          <h4 class="mtb0px fs_12px fw_400 lh_18px fc_e58d82 tcenter cgqtns_sc" [innerHTML]="details"></h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                           <a (click)="next()" href="#mdp_carousel" data-slide="next">
@@ -1086,19 +1068,75 @@
 
                   <div class="carousel-inner">
 
-                    <!-- journal -->
+                    <!-- audio -->
                     <div class="item active">
-                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="871"></app-journal-we>
+                      <div class="row center_flex p20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <div class="row center_flex">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 5
+                                <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
+                                  Notice your habits
+                                </h4>
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row tcenter" [ngClass]="{'transcript-display':!isShowTranscript}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <app-audio-player class="audio-test"
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/2.7.mp3">
+                              </app-audio-player>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- transcript -->
+                      <div class="row center_flex tleft" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff txt_justify">
+
+                          <p>
+                            This exercise is about noticing our many habits that we are usually not aware of. 
+                            This awareness of what we are doing is a great skill to learn because it allows us to take charge 
+                            of our own life and only have habits that serve us, and let go of habits that don’t.
+                          </p>
+
+                          <p>
+                            Begin with noticing simple habits, like which side of the bed you sleep, or how you cross your legs, 
+                            or how you pick up the phone without any obvious reason. If you can notice the moment you are about to 
+                            pick up the phone, you can pause and notice what made you do that, and if there is no reason to do that, 
+                            to put it down. 
+                          </p>
+
+                          <p>
+                            Or, you can bring your awareness to how you eat. Do you eat mindfully, focusing on the food, its texture 
+                            and taste, or is your mind thinking of something else? Noticing this can stop us overeating or eating 
+                            impulsively when we do not need to.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- /transcript -->
                     </div>
-                    <!-- /journal -->
+                    <!-- /audio -->
 
                     <!-- journal -->
                     <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="871"></app-journal-we>
+                    </div>
+
+                    <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="872"></app-journal-we>
                     </div>
-                    <!-- /journal -->
 
-                    <!-- journal -->
+                    <div class="item">
+                      <app-journal-we (guestEvent)="guestEvent($event)" [rId]="2415"></app-journal-we>
+                    </div>
+
                     <div class="item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="873"></app-journal-we>
                     </div>
@@ -1108,15 +1146,12 @@
                     <div class="item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
-
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg"
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg"
                                 alt="" class="img-responsive">
                             </div>
                           </div>
-
                           <div class="row center_flex we_quotation">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff tcenter">
@@ -1124,13 +1159,11 @@
                               </h4>
                             </div>
                           </div>
-
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <hr class="we_hr">
                             </div>
                           </div>
-
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ls_01 ttuppercase">
@@ -1138,7 +1171,6 @@
                               </h4>
                             </div>
                           </div>
-
                         </div>
                       </div>
                     </div>
@@ -1148,30 +1180,25 @@
                     <div class="item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
-
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg"
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/we_quotation.svg"
                                 alt="" class="img-responsive">
                             </div>
                           </div>
-
                           <div class="row center_flex we_quotation">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff tcenter">
-                                You’ll never change your life until you change something you do daily. The secret of
-                                success is found in your daily routine.
+                                You’ll never change your life until you change something you do daily. 
+                                The secret of success is found in your daily routine.
                               </h4>
                             </div>
                           </div>
-
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <hr class="we_hr">
                             </div>
                           </div>
-
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ls_01 ttuppercase">
@@ -1179,7 +1206,6 @@
                               </h4>
                             </div>
                           </div>
-
                         </div>
                       </div>
                     </div>
@@ -1189,19 +1215,15 @@
                     <div class="item">
                       <div class="row center_flex tleft p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
                           <p class="fs_18px fw_400 lh_150p fc_ffffff">
-                            If you want to change an unhelpful habit, begin by changing small habits that are easier to
-                            change.
+                            If you want to change an unhelpful habit, begin by changing small habits that are easier to change.
                           </p>
-
                         </div>
                       </div>
                     </div>
                     <!-- /simple text -->
 
                   </div>
-
                 </div>
               </div>
               <!-- /day 05 -->

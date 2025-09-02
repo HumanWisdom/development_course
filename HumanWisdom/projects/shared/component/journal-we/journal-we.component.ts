@@ -11,11 +11,10 @@ import { SharedService } from '../../services/shared.service';
 })
 export class JournalWeComponent implements OnInit {
   qrList = JSON.parse(localStorage.getItem("qrList"))
-   @Input()
-   journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
+   @Input() journalques = 'Notice 3 things about the appearance of a person you see everyday that you normally overlook.';
   @Output() guestEvent=new EventEmitter<any>();
-  @Input()
-  rId = 854
+  @Input() rId = 854;
+  @Output() loaded = new EventEmitter<void>();
   enableAlert=false;
   enabletick = false;
   userId: any
@@ -44,6 +43,7 @@ export class JournalWeComponent implements OnInit {
     this.findReflection()
     this.startTime = Date.now();
     this.checkRoute();
+    this.loaded.emit();
   }
   checkRoute(): void {
     // Check if the current URL contains "wisdom-exercise"
