@@ -80,6 +80,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public exerciseNo: any;
   public tourTotalIndex = 1;
   public tourIndex = 1;
+  public streak: string = '';
 
 
   //static progress mapping
@@ -148,6 +149,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.getProgress();
     }
     this.GetWisdomScreens();
+    // initialize streak from stored response if available
+    if (this.loginResponse && this.loginResponse.Streak) {
+      this.streak = this.loginResponse.Streak;
+    }
     this.getUserPreference();
     this.isSubscribe = SharedService.isSubscriber();
     let closetour = localStorage.getItem('closeTour');
@@ -730,6 +735,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.fiveCirclesP = res.ModUserScrPc.find(e => e.Module == "5 Circles of Wisdom")?.Percentage
         this.discoveringP = res.ModUserScrPc.find(e => e.Module == "Discovering Wisdom")?.Percentage
         this.hcwhP = res.ModUserScrPc.find(e => e.Module == "How can wisdom help?")?.Percentage
+        // update streak from API response if available
+        if (res && res.Streak !== undefined) {
+          this.streak = res.Streak;
+        }
       })
 
   }
@@ -1082,6 +1091,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.router.navigate([url], { replaceUrl: true, skipLocationChange: true });
   }
 
+  routeDailyCheckIn(){
+    this.logeventservice.logEvent("Click_daily-checkin");
+    this.router.navigate(['/adults/daily-checkin']);
+  }
+
   GetWisdomScreens() {
     this.aservice.GetWisdomScreens().subscribe(res => {
       this.wisdomExerciseList = res;
@@ -1239,6 +1253,24 @@ export class PersonalisedForYouSearchPage implements OnInit {
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
     if(url!="") this.router.navigate([url]);
+  }
+
+  DashboardLogevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if (params != '' && route != '') {
+      if (route === '/adults/daily-practise') {
+        const guest = localStorage.getItem('guest');
+        if (!this.isloggedIn || guest === 'T') {
+          if (this.enablepopup && this.enablepopup.nativeElement) {
+            this.enablepopup.nativeElement.click();
+          }
+          return;
+        }
+      }
+      this.router.navigate([route, params]);
+    } else if (route != '') {
+      this.router.navigate([route])
+    }
   }
 
 
