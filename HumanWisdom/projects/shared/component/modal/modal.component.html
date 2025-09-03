@@ -2,45 +2,45 @@
 <span id="enablecookiemodal" data-bs-toggle="modal" data-bs-target="#modal-alert"></span>
 
 <!-- Modal Start -->
-<div class="modal fade in show d-block"  id="modal-alert" tabindex="-1" data-bs-backdrop="static" role="dialog" style="background-color: rgba(0, 0, 0, 0.5);">
-  <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade in show  d-block"  id="modal-alert" tabindex="-1"  >
+  <div class="modal-dialog modal-dialog-centered" >
     <div class="modal-content bg-transparent border-0 modal-w" >
       <div class="modal-body d-flex justify-content-center modal-bg">
 
-        <div class="col-lg-4 col-md-6 col-sm-8 col-12 p-3 rounded bg-dark text-white modal-content-width" *ngIf="isFreeTrialEnable">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3 rounded text-white modal-content-width" *ngIf="isFreeTrialEnable">
           <form>
 
             <div class="text-center mb-4">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/overcome.svg" class="img-fluid" style="width: 136px;" alt="Overcome Illustration">
             </div>
 
-            <h4 class="fs-4 fw-semibold text-center">The best is yet to come</h4>
-            <p class="fs-6 text-white-50 text-center mt-3 mb-1">Unlock the full experience and continue</p>
-            <p class="fs-6 text-white-50 text-center mb-4">your journey to live your best life</p>
+            <h4 class="fs_24px fw_500 fw_500 lh_130p fc_ffffff text-center">The best is yet to come</h4>
+            <p class="fs_15px fw_400 lh_150p fc_ffffff_0_7 text-center mt-3 mb-1">Unlock the full experience and continue</p>
+            <p class="fs_15px fw_400 lh_150p fc_ffffff_0_7 text-center mb-4">your journey to live your best life</p>
 
-            <div class="d-grid">
-              <button type="button" class="btn btn-primary" (click)="routeTofreetrial()">Start your free trial</button>
+            <div class="d-grid mb-5">
+              <button type="button" class="btn btn_ctd" (click)="routeTofreetrial()">Start your free trial</button>
             </div>
 
           </form>
         </div>
 
-        <div class="col-lg-4 col-md-6 col-sm-8 col-12 p-3 rounded text-white"
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3 rounded text-white"
              [ngClass]="isAdults ? 'v1_3_bg_splashnewpremium' : 'v1_3_bg_splash_teens'" *ngIf="!isFreeTrialEnable">
 
              <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5 p0 center_flex">
           <a class="">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/modal_logout.svg" alt="" class="p0">
           </a>
         </div>
       </div>
 
-          <h4 class="text-center mb-3 fsfw_18px">{{title}}</h4>
-          <p class="fs-6 text-white-50 text-center mb-4 fsfw_18px">{{content}}</p>
+          <h4 class="text-center mb-5 fs_18px fw_600">{{title}}</h4>
+          <p class="text-center mb-5 fs_18px fw_600 lh_150p fc_ffffff">{{content}}</p>
 
-          <div class="d-grid gap-2">
-            <button type="button" class="btn btn-primary modal-btn fsfw_18px" *ngIf="modalid === ''" data-bs-dismiss="modal" (click)="close('ok')">
+          <div class="d-grid gap-2 ">
+            <button type="button" class="btn btn-primary modal-btn fs_18px fw_600" *ngIf="modalid === ''" data-bs-dismiss="modal" (click)="close('ok')">
               {{okText}}
             </button>
 
@@ -48,9 +48,9 @@
               {{okText}}
             </button>
 
-            <button type="button" class="btn btn-outline-light modal_cancel_btn" *ngIf="enableCancel" data-bs-dismiss="modal" (click)="close('cancel')">
+            <a class="text-center fs_15px fw_400 lh_21px fc_e58d82 hcancel" *ngIf="enableCancel" data-bs-dismiss="modal" (click)="close('cancel')">
               {{cancelText}}
-            </button>
+            </a>
           </div>
 
         </div>

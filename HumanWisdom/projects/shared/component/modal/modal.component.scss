@@ -4,15 +4,15 @@
 .modal-w{
   border-radius: 24px !important;
 
-    width: 84% !important;
+  // width: 84% !important;
 }
 .modal-bg{
   background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important;
     border-radius: 24px !important;
 }
 .modal-content-width{
-  padding: 50px 0px !important;
-    width: 76% !important;
+  padding:  10px 0px !important;
+  width: 60% !important;
 }
 .fsfw_18px{
   font-size: 18x !important;
@@ -32,4 +32,6 @@
 }
 .modal_cancel_btn{
   border:none;
+  
   }
+
