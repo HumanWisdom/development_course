@@ -66,191 +66,6 @@ require_once('./includes/security_config.php');
     </script> -->
   <!-- End Google Tag Manager -->
 
-  <style>
-    .h5 {
-      margin-top: -8px;
-    }
-
-    @media screen and (max-width: 768px) {
-      .subs_mobile_view {
-        margin-right: 48%;
-        padding: 8px;
-
-      }
-
-      .mobile_view_topic_tile {
-        margin-bottom: 10px !important;
-      }
-
-      .mobile_view_topic_parent {
-        margin-top: 0px !important;
-      }
-
-      .mobile_view_topic {
-        margin-left: 28px !important
-      }
-
-      .mobile_view_testimonial {
-        margin-left: 30px !important
-      }
-
-      .sap {
-        width: 60% !important;
-      }
-
-      .btn_tff_width {
-        margin: 0;
-        border: 0;
-        width: 345px;
-        height: 65px;
-        border-radius: 36px;
-      }
-
-      .btn_subscription {
-        width: 300px !important;
-
-        gap: 24px;
-      }
-
-      .fs27px {
-        font-size: 27px !important;
-      }
-
-      .w-335px {
-        width: 335px !important;
-      }
-
-      .mbtn_landing {
-        width: 335px;
-        height: 48px;
-      }
-
-      .fs_18px {
-        font-size: 18px !important;
-
-      }
-
-      .w-335px {
-        width: 335px
-      }
-
-      .f_15px {
-        font-size: 15px !important;
-      }
-
-      .f_21px {
-        font-size: 21px !important;
-      }
-
-      .h_48px {
-        height: 48px !important;
-      }
-
-      .msection_header {
-        color: #834B66 !important;
-      }
-
-      .f_24px {
-        font-size: 24px !important;
-      }
-
-      .d_none {
-        display: none !important
-      }
-
-      .img_health {
-        width: 370px !important;
-        max-width: 348px !important;
-        border-radius: 10px !important;
-      }
-
-      .mt_mb {
-        margin-top: 20px;
-        margin-bottom: 15px;
-      }
-
-      .card_center {
-        text-align: center !important;
-        padding: 0px !important;
-      }
-
-      .f_18px {
-        font-size: 18px !important;
-      }
-
-      .mdiv_coaches {
-        width: 190px !important;
-        height: 245px !important;
-        padding-left: 15px;
-      }
-
-      .wh_160px {
-        width: 160px;
-        height: 160px;
-      }
-
-      .h_160px {
-        height: 160px !important;
-      }
-
-      .contact_coaches {
-        font-size: 15px !important;
-        font-weight: 600;
-      }
-
-      .tool_tabs::-webkit-scrollbar {
-        display: none;
-      }
-
-      .f_12px {
-        font-size: 12px !important;
-      }
-
-      .owl-stage-outer {
-        overflow: scroll !important
-      }
-
-      .owl-stage-outer::-webkit-scrollbar {
-        display: none;
-      }
-
-      .w-382px {
-        width: 356px !important;
-      }
-      .p-18px{
-        padding-left: 18px !important;
-      }
-        .m-popup{
-          height: 200px;
-          width: 208px;
-      }
-      .f_24px{
-        font-size:24px;
-      }
-      .m_auto{
-        margin:0 auto;
-      }
-    }
-
-    @media screen and (min-width: 1600px) {
-      .fixed_w {
-        width: 980px !important;
-         margin:0 auto !important;
-      }
-      .f_18px {
-        font-size: 18px !important;
-      }
-      .t_align{
-        text-align: center !important;
-      }
-      .f_14px{
-        font-size:14px !important
-      }
-      .f_12px{
-        font-size:12px !important
-      }
-    }
-  </style>
 
 </head>
 
@@ -279,7 +94,7 @@ require_once('./includes/security_config.php');
 
     <div class="row center_flex web_home_divlanding">
       <div
-        class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w">
+        class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w1340">
 
 
 
@@ -417,7 +232,7 @@ require_once('./includes/security_config.php');
   <main id="main">
 
     <!-- popup -->
-    <section class="fixed_w">
+    <section class="fixed_w1340">
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 w-335px">
@@ -815,7 +630,7 @@ require_once('./includes/security_config.php');
 
     <div class="row center_flex">
       <div
-        class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block mobile_view_testimonial fixed_w">
+        class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block mobile_view_testimonial fixed_w1340">
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px mb10px" data-aos="fade-up" data-aos-delay="200">
           <div class="testimonial-cardnew">
@@ -980,7 +795,7 @@ require_once('./includes/security_config.php');
                 Our happiness depends on many factors.
               </h2> -->
 
-              <h2 class="mb0px fs_30px fw_600 lh_150p fc_000000 f_21px f_18px">
+              <h2 class="mb0px fs_30px fw_600 lh_150p fc_000000 f_21px">
                 Address the root cause of problems for lasting change.
               </h2>
 
@@ -1545,7 +1360,7 @@ require_once('./includes/security_config.php');
       </div>
       <div class="row center_flex">
         <div
-          class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col-12 p10  work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w">
+          class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col-12 p10  work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w1340  ">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 aos-init aos-animate" data-aos="fade-up"
             data-aos-delay="200">
             <div class="div_work_edu_health">
@@ -1561,9 +1376,9 @@ require_once('./includes/security_config.php');
                   style="
                         /* padding-left: 25px; */
                         ">
-                  <h3 class="mt40px fs_24px fw_400 lh_150p fc_000000 mt_mb">
+                  <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000 mt_mb">
                     HappierMe for the 
-                    <span class="fw_600">
+                    <span class="fw_600p">
                               Workplace
                               </span>
           </h3>
@@ -1601,9 +1416,9 @@ require_once('./includes/security_config.php');
               <div class="row center_flex ">
                 <div
                   class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text card_center">
-                  <h3 class="mt40px fs_24px fw_400 lh_150p fc_000000 mt_mb">
+                  <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000 mt_mb">
                     HappierMe for 
-                     <span class="fw_600">
+                     <span class="fw_600p">
                               Education
                               </span>
                   </h3>
@@ -1641,9 +1456,9 @@ require_once('./includes/security_config.php');
               <div class="row">
                 <div
                   class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text card_center">
-                  <h3 class="mt40px fs_24px fw_400 lh_150p fc_000000 mt_mb">
+                  <h3 class="mt40px fs_24px fw_500 lh_150p fc_000000 mt_mb">
                     HappierMe for 
-                      <span class="fw_600">
+                      <span class="fw_600p">
                               Healthcare
                               </span>
                   </h3>
@@ -1704,7 +1519,7 @@ require_once('./includes/security_config.php');
     <section>
       <div class="row center_flex">
         <div
-          class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element1 w-335px f_18px fixed_w">
+          class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element1 w-335px f_18px fixed_w1340">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 land-happierMe-section" data-aos="fade-up"
             data-aos-delay="100">
             <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp"
@@ -2131,174 +1946,93 @@ require_once('./includes/security_config.php');
 
     <section id="div_subscription">
       <div class="row center_flex div_subscriptionnew">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 fixed_w">
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <div class="col-12">
+          <h2 class="mtb10px fs_30px fw_600 lh_120p fc_ffffff">
+            Subscribe to HappierMe Premium
+          </h2>
+        </div>
+      </div>
 
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-              <h2 class="mtb10px fs_30px fw_600 lh_120p fc_ffffff f_18px">
-                Subscribe to HappierMe Premium
-              </h2>
-
-              <!-- <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
-                    Start your free trial today!
-                  </h6> -->
-            </div>
-          </div>
-
-
-          <!--  <div class="row  mt20px"  data-aos="fade-up" data-aos-delay="100">
-                          
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12   d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
-                      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                            <img  src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-responsive img_aspects1" alt="PATHWAY">
-                          </div>
-            
-
-                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 tleft">
-
-                              <h3 style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
-                              Expert guidance
-                              </h3>
-                            
-                          </div>
-                        </div>
-
-                      </div>
-
-                      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                            <img  src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-responsive img_aspects1" alt="PATHWAY">
-                          </div>
-                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
-                            <h3  style="margin-top:0px;"class="fs_18px fw_500  fc_ffffff">
-                              Personalised content to meet your goals
-                            </h3>
-                          </div>
-                        </div>
-
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                            <img   src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-responsive img_aspects1" alt="PATHWAY">
-                          </div>
-                          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 tleft">
-
-                              <h3  style="margin-top:0px;"class=" fs_18px fw_500  fc_ffffff"> Daily practices that fit your life</h3>
-                            
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                </div> -->
-          <div class="row mt20px aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-            <div class="row p0 text-white">
-              <!-- First box -->
-              <div class="col-lg-3 col-md-3 col-sm-12 mb-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="d-flex align-items-center">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" class="img-fluid me-2"
-                    alt="PATHWAY" style="width:20px;">
-                  <span class="fs_18px fw_500 f_15px">Expert guidance</span>
-                </div>
-              </div>
-
-              <!-- Second box -->
-              <div class="col-lg-5 col-md-5 col-sm-12 mb-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="d-flex align-items-center">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" class="img-fluid me-2"
-                    alt="PATHWAY" style="width:20px;">
-                  <h3 class="fs_18px fw_500 m-0 f_15px">Personalised content to meet your goals</h3>
-                </div>
-              </div>
-
-              <!-- Third box -->
-              <div class="col-lg-4 col-md-4 col-sm-12 mb-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="d-flex align-items-center ">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg" class="img-fluid me-2"
-                    alt="PATHWAY" style="width:20px;">
-                  <h3 class="fs_18px fw_500 m-0 f_15px">Daily practices that fit your life</h3>
-                </div>
-              </div>
-            </div>
-
-          </div>
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-white gap-3 mt20px">
+        <!-- First -->
+        <div class="d-flex align-items-center">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg"
+              class="img-fluid me-2 icon-subcription" alt="Expert">
+          <span class="fs_18px fw_500 f_15px">Expert guidance</span>
         </div>
 
+        <!-- Second -->
+        <div class="d-flex align-items-center">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg"
+              class="img-fluid me-2 icon-subcription" alt="Goals">
+          <span class="fs_18px fw_500 f_15px">Personalised content to meet your goals</span>
+        </div>
+
+        <!-- Third -->
+        <div class="d-flex align-items-center">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg"
+              class="img-fluid me-2 icon-subcription" alt="Daily">
+          <span class="fs_18px fw_500 f_15px">Daily practices that fit your life</span>
+        </div>
+      </div>
+    </div>
+
+
+
         <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 plr20px fixed_w">
-            <div class="row center_flex">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 subs_mobile_view">
+<div class="plr20px fixed_w pl-0">
+  <div class="row g-3 j-center"> <!-- g-3 = gap between cols -->
+    
+    <!-- Yearly Subscription -->
+<div class="col-lg-6 col-md-6 col-sm-12 w-420px">
+  <button class="btn_subscription w-100 position-relative">
+    
+    <!-- Capsule floated -->
+    <div class="capsule position-absolute top-0 end-0 m-2">
+      <h6 class="fs_12px fw_600 lh_150p bg-white br-10px px-2 py-1 d-inline-block" style="color:#325795;">
+        14-day free trial
+      </h6>
+    </div>
 
-                <button class="btn_subscription">
-                  <div class="row center_flex btn_subscription_trialindex">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h6 style="color:#325795;" class="mtb0px fs_12px fw_600 lh_150p fc_325795">
-                        14-day free trial
-                      </h6>
-                    </div>
-                  </div>
+    <div class="row align-items-center">
+      <!-- Left Section -->
+      <div class="col-6 text-start">
+        <h4 class="mt-0 mb-1 fs_18px fw_500 lh_150p text-white">Yearly</h4>
+        <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white">
+          <span id="annualPricingModelHeading">₹2400/yr</span>
+        </h6>
+      </div>
 
-                  <div class="row center_flex">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6  p0 tleft">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_ffffff">
-                        Yearly
-                      </h4>
-
-                      <!-- <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                        INR 5,999/yr
-                      </h4> -->
-
-                      <h6 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-                        <!-- <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span> -->
-
-                        <span class="" id="annualPricingModelHeading"></span>
-                      </h6>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright mt20px">
-                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 500/mo.
-                      </h4> -->
-
-                      <h4 class="mtb0px fs_21px fw_600 lh_150p fc_ffffff" id="spanAnnualLabel"></h4>
-                    </div>
-                  </div>
-                </button>
-              </div>
-
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 subs_mobile_view ">
+      <!-- Right Section -->
+      <div class="col-6 text-end">
+        <h4 class="mt-0 mb-0 fs_21px fw_600 lh_150p text-white" id="spanAnnualLabel">₹200.00/mo</h4>
+      </div>
+    </div>
+  </button>
+</div>
 
 
-                <button class="btn_subscription">
-                  <div class="row center_flex">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tleft">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_ffffff">
-                        Monthly
-                      </h4>
 
-                      <h6 class="mtb0px fs_15x fw_400 lh_150p fc_ffffff">
-                        7-day free trial
-                      </h6>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright mt20px">
-                      <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 700/mo.
-                      </h4> -->
-
-                      <h4 class="mtb0px fs_21px fw_600 lh_150p fc_ffffff" id="monthlyPricingModelHeading"></h4>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </div>
-
+    <!-- Monthly Subscription -->
+    <div class="col-lg-6 col-md-6 col-sm-12 w-420px">
+      <button class="btn_subscription w-100">
+        <div class="row align-items-center">
+          <div class="col-6 text-start">
+            <h4 class="mt-0 mb-1 fs_18px fw_500 lh_150p text-white">Monthly</h4>
+            <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white">7-day free trial</h6>
           </div>
+          <div class="col-6 text-end">
+            <h4 class="mt-0 mb-0 fs_21px fw_600 lh_150p text-white" id="monthlyPricingModelHeading"></h4>
+          </div>
+        </div>
+      </button>
+    </div>
+
+  </div>
+</div>
+
         </div>
 
         <div class="row center_flex">
@@ -2328,7 +2062,7 @@ require_once('./includes/security_config.php');
             </button>
           </div>
         </div>
-
+          </div>
       </div>
       </div>
     </section>
@@ -2393,40 +2127,25 @@ require_once('./includes/security_config.php');
             </li>
           </ul>
 
-          <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+          <div class="tab-content p-50px h-500px" data-aos="fade-up" data-aos-delay="300">
             <!-- fbn -->
             <div id="fbn" class="tab-pane fade show active" role="tabpanel" aria-labelledby="feelbetterNow-tab">
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr card_center">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr card_center pt-20px">
 
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <!-- <video width="100%" playsinline autoplay loop muted id="myVideo"poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp">
-        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/webm; codecs="vp8.0, vorbis"'>
-        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/ogg; codecs="theora, vorbis"'>
-        <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'>
-    </video> -->
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  
 
-                    <!-- <video width="100%" height="auto" controls autoplay loop poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp">
-    <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4" />
-    <source src="how-it-works-short.webm" type="video/webm" />
-    Your browser does not support the video tag.
-</video>   -->
 
-                    <!-- <video width="320" height="240" controls>
-
-  <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
-  <source src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp" type="video/ogg">
-  
-</video> -->
                     <video controls playinline
                       poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp"
-                      controlsList="nodownload" class="cvideo">
+                      controlsList="nodownload" class="cvideo tool_video m-cvideo">
                       <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                     </video>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc" data-aos="fade-up"
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc pt-142px" data-aos="fade-up"
                     data-aos-delay="200">
                     <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                       Feel better now
@@ -2440,6 +2159,7 @@ require_once('./includes/security_config.php');
                     <a id="exploreAppWeb">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
+                         <i style="font-size:15px;" class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2451,10 +2171,10 @@ require_once('./includes/security_config.php');
             <!-- pathway -->
             <div id="pathway" class="tab-pane fade" role="tabpanel" aria-labelledby="pathWay-tab">
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  mtb20px flex_fd_cr">
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  mtb20px flex_fd_cr mt-56px">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 " data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp"
-                      class="img-responsive w-90per" alt="tools_pathway" loading=lazy>
+                      class="img-responsive w-90per guided_pgm_img" alt="tools_pathway" loading=lazy>
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
@@ -2487,6 +2207,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/pathway/">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
+                         <i style="font-size:15px;" class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2499,12 +2220,12 @@ require_once('./includes/security_config.php');
             <div id="journal_tab" class="tab-pane fade" role="tabpanel" aria-labelledby="journal-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px flex_fd_cr mtb20px">
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_journal.webp"
-                      class="img-responsive w-90per" alt="Journal" loading=lazy>
+                      class="img-responsive h-335px" alt="Journal" loading=lazy>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
                     data-aos-delay="200">
                     <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                       Your private journal
@@ -2518,6 +2239,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/journal">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
+                         <i style="font-size:15px;"class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2530,7 +2252,7 @@ require_once('./includes/security_config.php');
             <div id="podcast_tab" class="tab-pane fade" role="tabpanel" aria-labelledby="podcast-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr mtb20px">
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp"
                       class="img-responsive w-90per" alt="Podcast" loading=lazy>
                   </div>
@@ -2558,6 +2280,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/podcast">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
+                         <i style="font-size:15px;" class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2570,9 +2293,9 @@ require_once('./includes/security_config.php');
             <div id="forum" class="tab-pane fade" role="tabpanel" aria-labelledby="community-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr mtb20px">
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp"
-                      class="img-responsive w-90per" alt="Forum" loading=lazy>
+                      class="img-responsive w-90per community_img" alt="Forum" loading=lazy>
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
@@ -2589,6 +2312,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/forum">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
+                         <i style="font-size:15px;" class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2601,7 +2325,7 @@ require_once('./includes/security_config.php');
             <div id="survey" class="tab-pane fade" role="tabpanel" aria-labelledby="HapinessScore-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr">
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_survey.webp"
                       class="img-responsive w-90per" alt="Survey" loading=lazy>
                   </div>
@@ -2635,6 +2359,7 @@ require_once('./includes/security_config.php');
 
 
           </div>
+          <!-- tab content end -->
 
         </div>
       </div>
