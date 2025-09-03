@@ -18,7 +18,7 @@
         <div *ngIf="!dash">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_home_inactive.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5">
+          <p class="mb0px fw_400 fs_10px lh_15px "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
             Home
           </p>
         </div>
@@ -56,7 +56,7 @@
         <div *ngIf="!search">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_explore_inactive.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5">
+          <p class="mb0px fw_400 fs_10px lh_15px "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
             Explore
           </p>
         </div>
@@ -76,7 +76,7 @@
         <div *ngIf="!journal">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_journal_inactive.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5">
+          <p class="mb0px fw_400 fs_10px lh_15px"[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
             Journal
           </p>
         </div>
@@ -95,7 +95,7 @@
         <div *ngIf="!fourm">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_forum_inactive.svg"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5">
+          <p class="mb0px fw_400 fs_10px lh_15px "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
             Forum
           </p>
         </div>
@@ -124,7 +124,7 @@
           <img class="footer-user-profile"
           src="{{url === '' ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_inactive.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url}}"
             alt="">
-          <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5">
+          <p class="mb0px fw_400 fs_10px lh_15px"[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
             Profile
           </p>
         </div>
