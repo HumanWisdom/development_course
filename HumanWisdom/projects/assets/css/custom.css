@@ -10804,9 +10804,9 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
-   width: 335px !important;
+   width: 30% !important;
   position: absolute;
-   top:27% !important; 
+   top:28% !important; 
    /* align-self: center; */
    height: fit-content;
 }
