@@ -25,7 +25,7 @@ export class ReflectionComponent implements OnInit {
   @Output() goPrevious = new EventEmitter<string>();
   shared: any
   confirmed: any
-   path :any;
+  path :any;
   scrNumber: any
   progress = localStorage.getItem("progressbarvalue") ? parseFloat(localStorage.getItem("progressbarvalue")) : 0;
   showheaderbar = true
@@ -39,6 +39,8 @@ export class ReflectionComponent implements OnInit {
   programName:string="";
   reflectionA: any
   qrList = JSON.parse(localStorage.getItem("qrList"))
+  showHintModal = false;
+  isShowBulb = false;
 
   constructor(public router: Router, public service: AdultsService, public sharedService:SharedService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -64,7 +66,11 @@ export class ReflectionComponent implements OnInit {
 
     this.reflectionA = this.qrList.ListOfReflection;
     this.findReflection();
-
+    
+    // Check if hint is available and show hint bulb
+    if (this.hint && this.hint.trim() !== '') {
+      this.isShowBulb = true;
+    }
   }
   sharedForum(e) {
     console.log(e)
@@ -159,5 +165,14 @@ export class ReflectionComponent implements OnInit {
 
   goToForum() {
     this.router.navigate(["/"+ SharedService.getprogramName() +'/forum'])
+  }
+  
+  // Methods to handle hint modal functionality
+  showHint() {
+    this.showHintModal = true;
+  }
+  
+  closeHint() {
+    this.showHintModal = false;
   }
 }
