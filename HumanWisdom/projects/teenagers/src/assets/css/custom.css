@@ -10842,9 +10842,8 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
-  /* width: 98%; */
-  position: absolute;
-  top: 25% !important; 
+ width: 30% !important;
+  top: 28% !important; 
   height: fit-content;
 }
 
