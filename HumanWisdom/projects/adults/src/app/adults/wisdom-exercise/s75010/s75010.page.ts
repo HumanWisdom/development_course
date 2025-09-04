@@ -15,6 +15,8 @@ export class S75010Page implements OnInit {
   isShowAudio = false;  
   isShowBulb = false;
   hintValue: any;
+  showHintModal = false;
+  hintMessage = '';
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -95,10 +97,10 @@ export class S75010Page implements OnInit {
 
   eventText += `${x} ${y}<br/>`;
   if(eventText.includes("right")){
-    $('#mdp_carousel').carousel('prev');
+    $('#mdp_carousel_intro, #mdp_carousel_day1, #mdp_carousel_day2, #mdp_carousel_day3, #mdp_carousel_day4, #mdp_carousel_day5, #mdp_carousel_day6, #mdp_carousel_day7').carousel('prev');
   this.back();
   }else if(eventText.includes("left")){
-    $('#mdp_carousel').carousel('next');
+    $('#mdp_carousel_intro, #mdp_carousel_day1, #mdp_carousel_day2, #mdp_carousel_day3, #mdp_carousel_day4, #mdp_carousel_day5, #mdp_carousel_day6, #mdp_carousel_day7').carousel('next');
     this.next();
   }
   else if(eventText.includes('down')){
@@ -116,7 +118,7 @@ export class S75010Page implements OnInit {
   }
   else{
     this.next();
-    $('#mdp_carousel').carousel('next');
+    $('#mdp_carousel_intro, #mdp_carousel_day1, #mdp_carousel_day2, #mdp_carousel_day3, #mdp_carousel_day4, #mdp_carousel_day5, #mdp_carousel_day6, #mdp_carousel_day7').carousel('next');
   }
 }
   getdayevent(event) {
@@ -392,19 +394,72 @@ export class S75010Page implements OnInit {
   }
 
   setHint(){
-    const activeSlides = document.getElementsByClassName('active');
-    if(activeSlides && activeSlides.length>0){
-      const container: any = activeSlides[0];
-      const journalWe = container.querySelector('app-journal-we') as any;
-      if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
-        this.hintValue = journalWe.dataset;
-        this.isShowBulb = true;
-        const element = document.getElementById('hinttext');
-        if(element){
-          element.innerHTML = this.hintValue.hint;
+    try {
+      const activeSlides = document.getElementsByClassName('active');
+      if(activeSlides && activeSlides.length>0){
+        const container: any = activeSlides[0];
+        const journalWe = container.querySelector('app-journal-we') as any;
+        if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
+          this.hintValue = journalWe.dataset;
+          this.isShowBulb = true;
+          const element = document.getElementById('hinttext');
+          if(element){
+            element.innerHTML = this.hintValue.hint;
+            console.log('Hint text set:', this.hintValue.hint);
+          } else {
+            console.log('Hint text element not found');
+          }
         }
       }
+    } catch (error) {
+      console.error('Error setting hint:', error);
     }
   }
+
+openHintModal() {
+  try {
+    // Get the hint from the currently active carousel item
+    const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+    if (activeItem) {
+      const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+      this.hintMessage = hint || '';
+    }
+
+    this.showHintModal = true;
+
+    const modalElement = document.getElementById('ex_modal');
+    if (modalElement) {
+      modalElement.classList.add('show');
+      document.body.classList.add('modal-open');
+
+      // Add backdrop if it doesn't exist
+      if (!document.querySelector('.modal-backdrop')) {
+        const backdrop = document.createElement('div');
+        backdrop.className = 'modal-backdrop fade show';
+        document.body.appendChild(backdrop);
+      }
+    }
+  } catch (error) {
+    console.error('Error opening modal:', error);
+  }
+}
+
+closeHintModal() {
+  try {
+    this.showHintModal = false;
+    const modalElement = document.getElementById('ex_modal');
+    if (modalElement) {
+      modalElement.classList.remove('show');
+      document.body.classList.remove('modal-open');
+
+      const backdrop = document.querySelector('.modal-backdrop');
+      if (backdrop) {
+        backdrop.remove();
+      }
+    }
+  } catch (error) {
+    console.error('Error closing modal:', error);
+  }
+}
 
 }
