@@ -15,11 +15,14 @@
       </a>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright" *ngIf="isShowButton">
-      <a (click)="changeType()" class="">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+      <a (click)="changeType()" class="" *ngIf="isShowTranscript || isShowAudio">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" />
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
+      </a>
+      <a *ngIf="!isShowTranscript && !isShowAudio && isShowBulb" aria-expanded="false" (click)="openHintModal()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
       </a>
     </div>
   </div>
@@ -40,13 +43,13 @@
 
               <!-- carousel -->
               <div class="container" *ngIf="enableintro" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel" data-interval="3000000">
+                <div id="mdp_carousel_intro" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-bs-ride="carousel" data-bs-interval="3000000">
 
-                  <ol class="carousel-indicators">
+                  
                     <div class="row center_flex">
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                          <a (click)="back()" href="#mdp_carousel_intro" role="button" data-bs-slide="prev">
                             <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                               <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                               Previous
@@ -59,7 +62,7 @@
                            </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                          <a (click)="next()" href="#mdp_carousel_intro" role="button" data-bs-slide="next">
                             <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                               Next
                               <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -68,12 +71,12 @@
                         </div>
                       </div>
                     </div>
-                  </ol>
+                  
 
                   <div class="carousel-inner">
 
                     <!-- introduction -->
-                    <div class="item active">
+                    <div class="carousel-item active">
                       <div class="row center_flex">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -140,7 +143,7 @@
                     <!-- /introduction -->
 
                     <!-- audio -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -187,7 +190,7 @@
                     <!-- /audio -->
 
                     <!-- exercise -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -231,7 +234,7 @@
                     <!-- /exercise -->
 
                     <!-- simple text -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -250,7 +253,7 @@
                     <!-- /simple text -->
 
                     <!-- quotation -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
 
@@ -290,7 +293,7 @@
                     <!-- /quotation -->
 
                     <!-- simple text -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex tleft p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -319,14 +322,14 @@
 
               <!-- day 01 -->
               <div class="container" *ngIf="enableday1" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel_day1" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-bs-ride="carousel"
+                  data-bs-interval="3000000">
 
-                  <ol class="carousel-indicators">
+                  
                     <div class="row center_flex">
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                          <a (click)="back()" href="#mdp_carousel_day1" role="button" data-bs-slide="prev">
                             <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                               <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                               Previous
@@ -339,7 +342,7 @@
                            </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                          <a (click)="next()" href="#mdp_carousel_day1" role="button" data-bs-slide="next">
                             <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                               Next
                               <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -348,12 +351,12 @@
                         </div>
                       </div>
                     </div>
-                  </ol>
+                  
 
                   <div class="carousel-inner">
 
                     <!-- audio -->
-                    <div class="item active">
+                    <div class="carousel-item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -402,7 +405,7 @@
                     <!-- /audio -->
 
                     <!-- quotation -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
 
@@ -443,19 +446,19 @@
                     <!-- /quotation -->
 
                     <!-- journal -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <app-journal-we (guestEvent)="guestEvent($event)" [rId]="854"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="855"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- journal -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="856"></app-journal-we>
                     </div>
                     <!-- /journal -->
@@ -468,14 +471,14 @@
 
               <!-- day 02 -->
               <div class="container" *ngIf="enableday2" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel_day2" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-bs-ride="carousel"
+                  data-bs-interval="3000000">
 
-                  <ol class="carousel-indicators">
+                  
                     <div class="row center_flex">
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                          <a (click)="back()" href="#mdp_carousel_day2" role="button" data-bs-slide="prev">
                             <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                               <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                               Previous
@@ -488,7 +491,7 @@
                            </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                          <a (click)="next()" href="#mdp_carousel_day2" role="button" data-bs-slide="next">
                             <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                               Next
                               <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -497,14 +500,14 @@
                         </div>
                       </div>
                     </div>
-                  </ol>
+                  
 
                   <div class="carousel-inner">
 
                   
 
                     <!-- audio -->
-                    <div class="item active">
+                    <div class="carousel-item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -558,12 +561,12 @@
                     <!-- /audio -->
 
                       <!-- journal -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="857"></app-journal-we>
                     </div>
                     <!-- /journal -->
                     <!-- quotation -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
 
@@ -603,7 +606,7 @@
                     <!-- /quotation -->
 
                     <!-- simple text -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex tleft p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -619,7 +622,7 @@
                     <!-- /simple text -->
 
                     <!-- simple text -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex tleft p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -641,14 +644,14 @@
 
               <!-- day 03 -->
               <div class="container" *ngIf="enableday3" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel_day3" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-bs-ride="carousel"
+                  data-bs-interval="3000000">
 
-                  <ol class="carousel-indicators">
+                  
                     <div class="row center_flex">
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                          <a (click)="back()" href="#mdp_carousel_day3" role="button" data-bs-slide="prev">
                             <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                               <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                               Previous
@@ -661,7 +664,7 @@
                            </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                          <a (click)="next()" href="#mdp_carousel_day3" role="button" data-bs-slide="next">
                             <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                               Next
                               <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -670,14 +673,14 @@
                         </div>
                       </div>
                     </div>
-                  </ol>
+                  
 
                   <div class="carousel-inner">
 
                  
 
                     <!-- audio -->
-                    <div class="item active">
+                    <div class="carousel-item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -738,13 +741,13 @@
                     <!-- /audio -->
 
                        <!-- journal -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="858"></app-journal-we>
                     </div>
                     <!-- /journal -->
 
                     <!-- simple text -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -760,7 +763,7 @@
                     <!-- /simple text -->
 
                     <!-- quotation -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
 
@@ -808,14 +811,14 @@
 
               <!-- day 04 -->
               <div class="container" *ngIf="enableday4" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel_day4" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-bs-ride="carousel"
+                  data-bs-interval="3000000">
 
-                  <ol class="carousel-indicators">
+                  
                     <div class="row center_flex">
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                          <a (click)="back()" href="#mdp_carousel_day4" role="button" data-bs-slide="prev">
                             <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                               <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                               Previous
@@ -828,7 +831,7 @@
                            </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                          <a (click)="next()" href="#mdp_carousel_day4" role="button" data-bs-slide="next">
                             <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                               Next
                               <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -837,14 +840,14 @@
                         </div>
                       </div>
                     </div>
-                  </ol>
+                  
 
                   <div class="carousel-inner">
 
                  
 
                     <!-- audio -->
-                    <div class="item active">
+                    <div class="carousel-item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -899,7 +902,7 @@
                     <!-- /journal -->
 
                     <!-- quotation -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 safari_tcenter">
 
@@ -961,14 +964,14 @@
 
               <!-- day 05 -->
               <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel" class="carousel slide we_carouselmh100vh height_auto mb10rem wec_01" data-ride="carousel"
-                  data-interval="3000000">
+                <div id="mdp_carousel_day5" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01" data-bs-ride="carousel"
+                  data-bs-interval="3000000">
 
-                  <ol class="carousel-indicators">
+                  
                     <div class="row center_flex">
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                          <a (click)="back()" href="#mdp_carousel" data-slide="prev">
+                          <a (click)="back()" href="#mdp_carousel_day5" role="button" data-bs-slide="prev">
                             <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                               <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                               Previous
@@ -981,7 +984,7 @@
                            </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <a (click)="next()" href="#mdp_carousel" data-slide="next">
+                          <a (click)="next()" href="#mdp_carousel_day5" role="button" data-bs-slide="next">
                             <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                               Next
                               <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -990,14 +993,14 @@
                         </div>
                       </div>
                     </div>
-                  </ol>
+                  
 
                   <div class="carousel-inner">
 
             
 
                     <!-- audio -->
-                    <div class="item active">
+                    <div class="carousel-item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 cnexrol-xs-12">
 
@@ -1046,7 +1049,7 @@
                     <!-- /audio -->
 
                             <!-- journal -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="860"></app-journal-we>
                     </div>
                     <!-- /journal -->
@@ -1094,7 +1097,7 @@
                     <!-- /quotation -->
 
                     <!-- simple text -->
-                    <div class="item">
+                    <div class="carousel-item">
                       <div class="row center_flex tleft p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -1131,7 +1134,7 @@
   <!-- carousel indicators -->
   <!-- <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex bg_whitesmoke">
-      <ol class="carousel-indicators">
+      
         <li data-target="#mdp_carousel" data-slide-to="0" class="active"></li>
         <li data-target="#mdp_carousel" data-slide-to="1"></li>
         <li data-target="#mdp_carousel" data-slide-to="2"></li>
@@ -1150,7 +1153,7 @@
           </h4>
           <span class="sr-only">Next</span>
         </a>
-      </ol>
+      
     </div>
   </div> -->
   <!-- /carousel indicators -->
@@ -1209,4 +1212,22 @@
 <app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true"
 [content]="'Please subscribe to access your online Journal'">
 </app-modal>
+
+<!-- hint modal -->
+<div *ngIf="showHintModal" class="modal fade in" id="ex_modal" data-keyboard="false" data-backdrop="false" (click)="closeHintModal()">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 rhdm hm p20px" 
+         (click)="$event.stopPropagation()" >
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <h4 id="hinttext" class="fs_12px fw_400 lh_140p">{{ hintMessage }}</h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- /hint modal -->
+
 <!-- /footer -->
