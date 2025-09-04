@@ -33678,7 +33678,7 @@ body *
 }
 .session_imgforum {
   width: 100px;
-    height: 100px;
+    height: 70px;
     border-radius: 6px;
     /* border: 1px solid rgba(255, 255, 255, .25); */
     object-fit: cover;
@@ -35568,6 +35568,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
 
   padding: 12px;
+  height: 107px;
   /* margin-bottom: 10px; */
 }
 .pl12px
@@ -35921,7 +35922,7 @@ background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
     border-radius: 12px;
     border: 0;
 background: linear-gradient(180deg, #803358 0%, #230F40 100%);
-    /* min-height: 130px; */
+    height: 152px;
     /* margin-bottom: 10px; */
     padding: 12px;
     /* margin: 0 10px 10px 10px; */
