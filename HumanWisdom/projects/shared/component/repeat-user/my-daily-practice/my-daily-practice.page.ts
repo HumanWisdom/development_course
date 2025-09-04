@@ -21,7 +21,7 @@ export class MyDailyPracticePage implements OnInit {
   DailyInspirationLink:string='';
   isVoices:boolean;
   dailyInsModule:string =''
-  DailyInspirationImg:any='';
+  DailyInspirationImg:string='';
   dailyinsAuthor:string='';
   dailyinstext:string='';
   audioTitle:string ='';
