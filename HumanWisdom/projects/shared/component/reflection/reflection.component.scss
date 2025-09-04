@@ -1,0 +1,44 @@
+.modal.fade.in {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.rhdm 
+{
+  border-radius: 10px;
+  background: #E58D82;
+  padding: 16px 20px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  color: #FFF;
+  top: 80px;
+  margin: 0 20px;
+  position: absolute;
+}
+
+#ex_modal .hm::before 
+{
+  border-bottom: 9px solid rgba(0, 0, 0, 0.2);
+  border-left: 9px solid rgba(0, 0, 0, 0);
+  border-right: 9px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  /* left: 86px; */
+  position: absolute;
+  top: -9px;
+  right: 5%;
+}
+
+#ex_modal .hm::after 
+{
+  border-bottom: 9px solid #E58D82;
+  border-left: 9px solid rgba(0, 0, 0, 0);
+  border-right: 9px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  /* left: 86px; */
+  position: absolute;
+  top: -8px;
+  right: 3%;
+}
