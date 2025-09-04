@@ -324,10 +324,10 @@
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                      <h4 class="mt0px mb5px fw_400 fs_12px" style="line-height: 15.6px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                      <h4 class="mt0px mb5px fw_400 fs_12px lh_140p"  [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                         DAILY CHECK-IN
                       </h4>
-                      <h4 class="mt0px fs_15px fw_500   ellipsis"  style="line-height: 19.5px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                      <h4 class="mt0px fs_15px fw_500  lh_130p ellipsis"  style="line-height: 19.5px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
 
                         How are you feeling today?
                       </h4>
@@ -402,7 +402,7 @@
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/overcome.svg"  alt="" class="p0 session_img">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start.svg"  alt="" class="p0 session_img">
 
                       <!-- <div class="progress dprogress">
                         <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -412,10 +412,10 @@
 
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px ">
                       <div class="row">
-                      <h4 class="mtb0px fs_21px fw_500 lh_150p fc_ffffff">
+                      <h4 class="mtb0px fs_21px fw_500 lh_130p " [ngClass]="isAdults ? 'fc_ffffff' : 'fc_0C2B5F'">
                       Start your free trial today!
                       </h4>
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                      <h4 class="mtb0px fs_12px fw_400 lh_130p" [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
                      Get expert guidance and personalized tools with HappierMe Premium
                                       </h4>
                       <!-- <h4 class="mt0px fs_15px fw_500 lh_130p fc_000000 ellipsis">
@@ -538,7 +538,7 @@
                             DAILY INSPIRATION
                           </h4>
 
-                           <h4 class=" fw_400 fs_12px  lh_140p fc_ffffff"  *ngIf="!isAdults">
+                           <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82"  *ngIf="!isAdults">
                             <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg" alt="play" style="margin-top: -1px;">
                             DAILY INSPIRATION
                           </h4>
@@ -610,7 +610,7 @@
                             <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg" alt="play" style="margin-top: -3px;">
                             BREATHING EXERCISE
                           </h4>
-                           <h4 class=" fw_400 fs_12px  lh_140p fc_ffffff"  *ngIf="!isAdults">
+                           <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82"  *ngIf="!isAdults">
                             <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg" alt="play" style="margin-top: -3px;">
                             BREATHING EXERCISE
                           </h4>
@@ -684,7 +684,7 @@
                             <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audii_daily1.svg" alt="play" style="margin-top: -3px;">
                             DAILY MEDITATION
                           </h4>
-                          <h4 class=" fw_400 fs_12px  lh_140p fc_ffffff"  *ngIf="!isAdults">
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82"  *ngIf="!isAdults">
                             <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_inv.svg" alt="play" style="margin-top: -3px;">
                             DAILY MEDITATION
                           </h4>
@@ -725,6 +725,16 @@
 
               <a>
                 <div class="row">
+
+                   <div class="row mtb10px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+                                           <h4 class="mtb5px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/questions.svg"
+                        alt="play" class="mr10px" style="width:30px; height:30px">
+                        QUESTION OF THE DAY
+                      </h4> 
+                    </div>
+                  </div>
                   
                     <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
                        <div id="photo">
@@ -737,13 +747,13 @@
                     </div>
                    -->
                 
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+                    <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
                       <h4 class="mtb5px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/questions.svg"
                         alt="play" class="mr10px" style="width:30px; height:30px">
                         QUESTION OF THE DAY
                       </h4> 
-                    </div>
+                    </div> -->
                  
 <!-- <h4 class="mtb5px fw_400 fs_12px   " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/questions.svg" alt="play" class="mr10px" style="width:30px; height:30px">
@@ -751,7 +761,7 @@
                           </h4> -->
                   <div class="box_journalmy">
                     <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0 mtb10px plr10pxi">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0  plr10pxi">
 
                         
                         <h4 class="mtb0px v3_reflection_qtnmy fs_15px fw_500  tleft" style="line-height:19.5px;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -804,7 +814,7 @@
                 <div class="row">
                   <div class="row mtb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                                            <h4 class="mtb0px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                            <h4 class="mtb0px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
 
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quete.svg" class=" mr10px"
                         style="width:30px;height:30px;" alt="" > QUOTE OF THE DAY
@@ -844,7 +854,7 @@
 
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                        <h4 class="mt5px mb0px fs_15px fw_500   tright" style="line-height:22.5px;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <h4 class="mt5px mb0px fs_15px fw_400 lh_150p   tright" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           - {{dailyinsAuthor}}
                         </h4>
                       </div>
@@ -870,7 +880,7 @@
                 <div class="row">
                   <div class="row mtb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                                            <h4 class="mtb0px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                            <h4 class="mtb0px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
 
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dailyy.svg"class=" mr10px"
                         style="width:30px;height:30px;" alt="" > DAILY CHALLENGE
@@ -907,7 +917,7 @@
 
                <!-- visit fouram -->
             <div class="row divnew_is_02">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb10px">
                 <a routerLink="/adults/forum">
                   
                     <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4 p0 prelative  plr10pxi">
@@ -917,10 +927,20 @@
 
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                       
-                      <div class="row mt10px mb5px p0 plr20px">
+                      <div class="row  p0 plr10px">
                         <div id="photo">
-                          <img style="vertical-align:middle" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg" alt="" >
-                          <span style="vertical-align:middle" class="mt0px  fw_400 fs_12px lh_130p  plr5px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">FORUM</span>
+
+                            <h4 class=" fw_400 fs_12px  lh_140p fc_000000"  *ngIf="isAdults">
+                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg" alt="play" >
+                           FORUM
+                          </h4>
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_ffffff"  *ngIf="!isAdults">
+                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fouram_new1.svg" alt="play" >
+                            FORUM
+                          </h4>
+                          
+                          <!-- <img style="vertical-align:middle" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg" alt="" >
+                          <span style="vertical-align:middle" class="mt0px  fw_400 fs_12px lh_130p  plr5px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">FORUM</span> -->
                         </div>
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fouram_new1.svg" class="img-responsive" style="width:12px; height:12px">
@@ -932,7 +952,7 @@
                       </h4>
                       </div> -->
                       </div>
-                      <h4 class="mt0px fw_600 fs_12px lh_150p plr20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
+                      <h4 class="mt0px fw_600 fs_12px lh_150p plr10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                         Visit the forum. Ask questions, share thoughts, and learn from others.                      </h4>
                     </div>
 

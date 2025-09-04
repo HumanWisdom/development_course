@@ -13,23 +13,9 @@
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai jc_flexend">
       <div class="p0">
-        <a aria-expanded="false" data-toggle="modal" data-target="#ex_modal">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
+        <a *ngIf="isShowBulb" (click)="showHint()">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="Hint">
         </a>
-        <!-- <a aria-expanded="false" id="dropdownMenuButton" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hint_bulb.svg" class="img-responsive" alt="">
-        </a> -->
-        <!-- /dropdown -->
-        <div class="dropdown-menu rdm" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item">
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                Aliquam erat volutpat. Maecenas sit amet velit mollis, ornare mi ac, ullamcorper leo. Pellentesque eget volutpat purus. Etiam dolor quam, suscipit nec porttitor at, imperdiet bibendum magna. Nunc sollicitudin ornare.
-              </div>
-            </div>
-          </a>
-        </div>
-        <!-- dropdown -->
       </div>
     </div>
     <!-- /v1.3 -->
@@ -184,17 +170,19 @@
               </div>
               <!-- /condition 3 -->
 
-              <!-- modal -->
-              <div class="modal fade" id="ex_modal" data-keyboard="false" data-backdrop="true">
+              <!-- hint modal -->
+              <div *ngIf="showHintModal" class="modal fade in" id="ex_modal" data-keyboard="false" data-backdrop="false" (click)="closeHint()">
                 <div class="row center_flex">
-                  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
-                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">
-                      {{hint}}
-                    </h4>
+                  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0" 
+                       (click)="$event.stopPropagation()" >
+
+                  
+                        <h4 id="hinttext"  class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">{{ hint }}</h4>
+
                   </div>
                 </div>
               </div>
-              <!-- /modal -->
+              <!-- /hint modal -->
 
               <div class="pagebreak"></div>
 

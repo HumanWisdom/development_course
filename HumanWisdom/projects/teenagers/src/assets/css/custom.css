@@ -33626,7 +33626,7 @@ body *
 {
   width: 100%;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
 }
 
 .session_img_play
@@ -37923,14 +37923,14 @@ a.fc_e58d82:hover
 /* <new-screen> */
 .td_points_box {
     border-radius: 12px;
-    background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
+background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
     height: 115px;
     padding: 10px !important;
     align-content: center;
 }
 .td_points_boxnew {
     border-radius: 12px;
-    background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
+background: linear-gradient(180deg, #65BFC2 0%, #469FA2 100%);
     height: 115px;
     padding: 10px !important;
     align-content: center;
@@ -37938,12 +37938,12 @@ a.fc_e58d82:hover
 .toc_adiv_imgmynew>.row {
     border-radius: 12px;
     border: 0;
-    background: linear-gradient(180deg, #803358 0%, #230F40 100%);
+background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%);
     padding: 12px;
 }
 .divnew_is_02 {
     border-radius: 12px;
-    background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
+background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
     padding: 12px;
 }
 

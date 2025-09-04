@@ -38,7 +38,7 @@ export class MyDailyPracticePage implements OnInit {
   userId = JSON.parse(localStorage.getItem("userID"))
   isloggedIn = localStorage.getItem("isloggedin") === 'T' ? true : false;
   breatheTime:string = '';
-  placeholder = 'Answer here'
+  placeholder = 'Tap to answer'
   guest = true;
   isFirstLogin:boolean = false;
   constructor(private  commonService:CommonService, public logeventservice: LogEventService, private router:Router) { 
