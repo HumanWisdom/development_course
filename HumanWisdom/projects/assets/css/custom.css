@@ -10823,7 +10823,7 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
-   width: 335px;
+   width: 335px !important;
   position: absolute;
    /* top:25% !important;  */
    height: fit-content;
@@ -28950,7 +28950,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #e58d82;
+  background: #e58d82 !important;
   border-radius: 100%;
   border: 2px solid white;
   text-align: center;
@@ -28984,7 +28984,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #e58d82;
+  background: #e58d82 !important;
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;

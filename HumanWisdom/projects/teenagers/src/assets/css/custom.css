@@ -10864,7 +10864,7 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
-   width: 335px;
+   width: 335px ;
   position: absolute;
    top:27% !important; 
    height: fit-content;
@@ -27303,7 +27303,7 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 .pfy_search
 {
   /* background: #EBEBEB; */
-  background: #0C2B5F;
+  background: #0C2B5F !important;
   border-radius: 100px;
   font-family: 'Roboto';
   font-style: normal;
@@ -28938,7 +28938,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #e58d82;
+  background: #e58d82 !important;
   border-radius: 100%;
   border: 2px solid white;
   text-align: center;
@@ -28957,7 +28957,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #e58d82;
+  background: #e58d82 !important;
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
