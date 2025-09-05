@@ -15301,7 +15301,7 @@ input[type="number"] {
 {
   border: unset;
   box-shadow: unset;
-  background-color: transparent;
+  background-color: #FFE8BB;
 }
 
 .plr5px
@@ -32792,7 +32792,9 @@ body *
 }
 .box_v3_01
 {
-  background: #9B526A;
+  
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   display: flex;
@@ -33402,7 +33404,7 @@ body *
 
 .box_v3_05
 {
-  background: #120F40;
+  background: #FFE8BB;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   padding: 20px !important;
@@ -35715,7 +35717,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #120F40;
+  background: #FFD889;
   min-height: 88px;
   margin-bottom: 10px;
   padding: 12px;
@@ -37083,7 +37085,7 @@ a.fc_e58d82:hover
 }
 
 .bg_profile_t{
-  background: #120F40 !important;
+  background: #FFF7E6 !important;
 }
 .bg_profile_blog{
   background: #ffffff !important;
@@ -37989,8 +37991,7 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
 .td_points_box
 {
   border-radius: 12px;
-  background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
-
+  background: #FFE8BB;
   height: 115px;
   /* margin-left: -25px; */
   padding: 10px !important;
