@@ -6,7 +6,7 @@
   <!-- <div class="modal-backdrop" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:1040;opacity:0.5;background:#000;"></div> -->
       <div class="row center_flex" (click)="$event.stopPropagation()">
 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3 rounded text-white modal-content-width" *ngIf="isFreeTrialEnable">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw" [ngClass]="isAdults ? 'v1_3_bg_splashnewpremium' : 'v1_3_bg_splash_teens'" *ngIf="isFreeTrialEnable">
           <form>
 
             <div class="text-center mb-4">
@@ -14,8 +14,8 @@
             </div>
 
             <h4 class="fs_24px fw_500 fw_500 lh_130p fc_ffffff text-center">The best is yet to come</h4>
-            <p class="fs_15px fw_400 lh_150p fc_ffffff_0_7 text-center mt-3 mb-1">Unlock the full experience and continue</p>
-            <p class="fs_15px fw_400 lh_150p fc_ffffff_0_7 text-center mb-4">your journey to live your best life</p>
+            <h4 class="fs_15px fw_400 lh_150p fc_ffffff_0_7 text-center mt-3 mb-1">Unlock the full experience and continue</h4>
+            <h4 class="fs_15px fw_400 lh_150p fc_ffffff_0_7 text-center mb-4">your journey to live your best life</h4>
 
             <div class="d-grid mb-5">
               <button type="button" class="btn btn_ctd" (click)="routeTofreetrial()">Start your free trial</button>
