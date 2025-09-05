@@ -26418,7 +26418,7 @@ h1
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  background: #E58D82;
+  background: #E58D82 !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -37946,6 +37946,7 @@ background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%);
     border-radius: 12px;
 background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
     padding: 12px;
+    height: 110px;
 }
 
 .pagebreak_new {
