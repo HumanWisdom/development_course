@@ -10842,9 +10842,8 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
-  /* width: 98%; */
-  position: absolute;
-  top: 25% !important; 
+ width: 30% !important;
+  top: 28% !important; 
   height: fit-content;
 }
 
@@ -22139,7 +22138,7 @@ ul.dh_ul li:last-child
   font-weight: 600;
   line-height: 150%;
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .login_signup_tab>li>a:hover
@@ -22157,7 +22156,7 @@ ul.dh_ul li:last-child
   font-weight: 400;
   font-size: 15px;
   line-height: 140%;
-  color: #A0A3BD;
+  color: #A0A3BD !important;
   text-align: center;
   border: 0;
 }
@@ -24805,6 +24804,9 @@ a
 {
   padding: 0 !important;
   overflow: overlay !important;
+  background: #00000080 !important;
+  backdrop-filter: blur(8px) !important;
+  overflow: hidden !important;
 }
 
 .index_rwst_title
@@ -34834,7 +34836,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   margin: 0;
   border: 0;
   border-radius: 100px;
-  background: #E58D82;
+  background: #E58D82 !important;
   color: #FFF;
   font-size: 15px;
   font-weight: 600;
@@ -37951,4 +37953,10 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
 
 .pagebreak_new {
     padding-bottom: 10rem;
+}
+
+
+/* fix bootstrap issues */
+.fade.in {
+  opacity:1  !important;
 }
