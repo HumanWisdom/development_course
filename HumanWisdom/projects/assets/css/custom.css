@@ -26417,7 +26417,8 @@ h1
    width: 100%; 
   overflow:visible;
    border-radius: 100px; 
-  background: #E58D82;
+  background: #E58D82 !important;
+
   font-size: 15px;
   position: static;
   font-weight: 600;
@@ -35571,7 +35572,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
 
   padding: 12px;
-  height: 107px;
+  height: 110px;
   /* margin-bottom: 10px; */
 }
 .pl12px
@@ -35936,7 +35937,7 @@ background: linear-gradient(180deg, #803358 0%, #230F40 100%);
   background: #FFE8BB;
    min-height: 130px; 
   /* margin-bottom: 10px; */
-  padding: 12px;
+  padding: 3px 4px;
   /* margin: 0 10px 10px 10px; */
 }
 .toc_adiv_imgmy a:last-child>.row
