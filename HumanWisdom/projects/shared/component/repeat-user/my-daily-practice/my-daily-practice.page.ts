@@ -324,6 +324,9 @@ onFocus() {
 
     }
 
+    if(!this.isAdults)
+      url=url.replace("/adults/","/teenagers/")
+
     this.router.navigate([url])
   }
 
