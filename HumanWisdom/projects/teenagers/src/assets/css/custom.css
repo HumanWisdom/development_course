@@ -10842,7 +10842,7 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
- width: 30% !important;
+ width: 335px !important;
   top: 28% !important; 
   height: fit-content;
 }
@@ -10864,7 +10864,7 @@ body,
   right: 0;
   left: 0;
   margin: 0 auto;
-   width: 335px;
+   width: 335px ;
   position: absolute;
    top:27% !important; 
    height: fit-content;
@@ -22138,7 +22138,7 @@ ul.dh_ul li:last-child
   font-weight: 600;
   line-height: 150%;
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .login_signup_tab>li>a:hover
@@ -22156,7 +22156,7 @@ ul.dh_ul li:last-child
   font-weight: 400;
   font-size: 15px;
   line-height: 140%;
-  color: #A0A3BD;
+  color: #A0A3BD !important;
   text-align: center;
   border: 0;
 }
@@ -24804,6 +24804,9 @@ a
 {
   padding: 0 !important;
   overflow: overlay !important;
+  background: #00000080 !important;
+  backdrop-filter: blur(8px) !important;
+  overflow: hidden !important;
 }
 
 .index_rwst_title
@@ -26417,7 +26420,7 @@ h1
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  background: #E58D82;
+  background: #E58D82 !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -27300,7 +27303,7 @@ all and (min-width: 992px) and (-webkit-transform-3d)
 .pfy_search
 {
   /* background: #EBEBEB; */
-  background: #0C2B5F;
+  background: #0C2B5F !important;
   border-radius: 100px;
   font-family: 'Roboto';
   font-style: normal;
@@ -28935,7 +28938,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #e58d82;
+  background: #e58d82 !important;
   border-radius: 100%;
   border: 2px solid white;
   text-align: center;
@@ -28954,7 +28957,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #e58d82;
+  background: #e58d82 !important;
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
@@ -34833,7 +34836,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   margin: 0;
   border: 0;
   border-radius: 100px;
-  background: #E58D82;
+  background: #E58D82 !important;
   color: #FFF;
   font-size: 15px;
   font-weight: 600;
@@ -37945,8 +37948,15 @@ background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%);
     border-radius: 12px;
 background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
     padding: 12px;
+    height: 110px;
 }
 
 .pagebreak_new {
     padding-bottom: 10rem;
+}
+
+
+/* fix bootstrap issues */
+.fade.in {
+  opacity:1  !important;
 }
