@@ -118,3 +118,20 @@ background: #FFF4E6;
 .p-0{
   padding:0;
 }
+
+/* style for inline module titles inside combined Modules parent */
+.section-title-inline {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+/* indentation for nested sections inside parent */
+.modules-combined .nested-sections {
+  padding-left: 6px;
+  border-left: 2px solid rgba(0,0,0,0.03);
+}
+
+/* smaller spacing for inline modules cards */
+.modules-combined .card-container { gap: 12px; }
