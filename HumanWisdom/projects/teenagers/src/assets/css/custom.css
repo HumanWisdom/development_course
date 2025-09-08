@@ -26424,7 +26424,7 @@ h1
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
 }
 .mdp_answer_heremy {
   height: 130px;

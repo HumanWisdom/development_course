@@ -26423,7 +26423,7 @@ h1
   position: static;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
 }
 .mdp_add_to_saved
 {
