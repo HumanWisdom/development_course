@@ -7,7 +7,7 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_292d56 col_cw">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
 
@@ -42,17 +42,17 @@
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                               <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
                                   My daily practice
                                 </h2>
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                 <a>
-                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff_0_5 mtb0px tright">
+                                  <h2 class="fw_500 fs_12px lh_140p fc_000000_0_5 mtb0px tright">
                                     Streak:
-                                    <span class="fw_600">
+                                    <!-- <span class="fw_600">
                                       {{streak}}
-                                    </span>
+                                    </span> -->
                                     days
                                   </h2>
                                 </a>
@@ -62,7 +62,7 @@
                         </div>
                       </h4>
                     </div>
-                    <div id="ca_mdp" >
+                    <div id="ca_mdp">
                       <div class="panel-body">
 
                         <div class="row">
@@ -70,8 +70,8 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/daily_checkin.svg" alt="" class="crimg" >
-                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/checkin.svg" alt="" class="crimg" >
+                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
                                   Daily <br/> check-in
                                 </h4>
                               </a>
@@ -84,9 +84,9 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '0', 'click_daily_inspiration') : $event.preventDefault()">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_daily_inspiration_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/inspiration.svg"
                                   alt="Testimonials" class="crimg">
-                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
                                   Daily
                                   <br>
                                   inspiration
@@ -97,9 +97,9 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_video_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/breathing.svg"
                                   alt="Wisdom Stories" class="crimg">
-                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
                                   Breathing <br/> exercise
                                 </h4>
                               </a>
@@ -109,9 +109,9 @@
                               <a
                                 (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '2', 'click_question_of_the_day') : $event.preventDefault()">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_journal_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question.svg"
                                   alt="Journal" class="crimg">
-                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
                                   Question
                                   <br>
                                   of the day
@@ -122,9 +122,9 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '3','click_daily_quotation') : $event.preventDefault()">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quete_new.svg"
                                   alt="Testimonials" class="crimg">
-                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
                                   Quote  <br> of the day
                                 </h4>
                               </a>
@@ -133,9 +133,9 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '4', 'click_daily_meditation') : $event.preventDefault()">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_audio_meditation_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audio.svg"
                                   alt="Forum" class="crimg">
-                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
                                   Daily  <br> meditation
                                 </h4>
                               </a>
@@ -144,9 +144,9 @@
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '5', 'click_daily_challenge') : $event.preventDefault()">
                                 <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_daily_challenge_v3.svg"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/challenge.svg"
                                   alt="Forum" class="crimg">
-                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
                                   Daily
                                   <br>
                                   challenge
@@ -265,7 +265,7 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
-                      <h4 class="mtb0px fw_700 fs_24px lh_140p fc_ffffff">
+                      <h4 class="mtb0px fw_700 fs_24px lh_140p fc_000000">
                         PATHWAY - Guided program
                       </h4>
                     </div>
@@ -273,7 +273,7 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                      <h4 class="mtb0px fw_400 fs_15px lh_140p fc_000000">
                         Explore our 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.
                       </h4>
                     </div>
@@ -305,10 +305,10 @@
                         </div>
   
                         <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
-                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
                             Introduction to PATHWAY
                           </h4>
-                          <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                          <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
                             02:00
                           </h4>
                         </div>
@@ -316,7 +316,7 @@
                       </div>
   
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tleft">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                        <i class="fa fa-angle-right fc_000000 fs_20px"></i>
                       </div>
                     </div>
                   </div>
@@ -334,18 +334,18 @@
                         <div class="prelative">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_01.webp" alt="Happiness" class="ctimg">
 
-                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_000000 ptileno">
                             01
                           </h4>
 
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_000000 ptilemodule">
                             6 modules
                           </h4>
                         </div>
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
-                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                            <h4 class="fw_600 fs_18px lh_120p fc_000000 mtb0px ws_preline">
                               Develop a calm mind
                             </h4>
                           </div>
@@ -353,7 +353,7 @@
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                            <h4 class="fw_400 fs_12px lh_120p fc_000000_0_5 mtb0px">
                               Breathing • Nature • Meditation
                             </h4>
                           </div>
@@ -366,18 +366,18 @@
                         <div class="prelative">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_02.webp" alt="Happiness" class="ctimg">
 
-                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_000000 ptileno">
                             02
                           </h4>
 
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_000000 ptilemodule">
                             9 modules
                           </h4>
                         </div>
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
-                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                            <h4 class="fw_600 fs_18px lh_120p fc_000000 mtb0px ws_preline">
                               Learn about yourself
                               <!-- Learn to question yourself -->
                             </h4>
@@ -386,7 +386,7 @@
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                            <h4 class="fw_400 fs_12px lh_120p fc_000000_0_5 mtb0px">
                               Enquiry • Insight • Awareness
                             </h4>
                           </div>
@@ -399,18 +399,18 @@
                         <div class="prelative">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_03.webp" alt="Happiness" class="ctimg">
 
-                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_000000 ptileno">
                             03
                           </h4>
 
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_000000 ptilemodule">
                             10 modules
                           </h4>
                         </div>
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
-                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                            <h4 class="fw_600 fs_18px lh_120p fc_000000 mtb0px ws_preline">
                               Understand your mind
                             </h4>
                           </div>
@@ -418,7 +418,7 @@
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                            <h4 class="fw_400 fs_12px lh_120p fc_000000_0_5 mtb0px">
                               Conditioning • Comparison & envy • Awareness
                             </h4>
                           </div>
@@ -431,18 +431,18 @@
                         <div class="prelative">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_04.webp" alt="Happiness" class="ctimg">
 
-                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_000000 ptileno">
                             04
                           </h4>
 
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_000000 ptilemodule">
                             7 modules
                           </h4>
                         </div>
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
-                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                            <h4 class="fw_600 fs_18px lh_120p fc_000000 mtb0px ws_preline">
                               Manage your emotions
                             </h4>
                           </div>
@@ -450,7 +450,7 @@
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                            <h4 class="fw_400 fs_12px lh_120p fc_000000_0_5 mtb0px">
                               Anger • Loneliness • Pleasure
                             </h4>
                           </div>
@@ -463,18 +463,18 @@
                         <div class="prelative">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_05.webp" alt="Happiness" class="ctimg">
 
-                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
+                          <h4 class="mtb0px fw_700 fs_18px lh_120p fc_000000 ptileno">
                             05
                           </h4>
 
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ptilemodule">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_000000 ptilemodule">
                             20 modules
                           </h4>
                         </div>
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px mb10px">
-                            <h4 class="fw_600 fs_18px lh_120p fc_ffffff mtb0px ws_preline">
+                            <h4 class="fw_600 fs_18px lh_120p fc_000000 mtb0px ws_preline">
                               <!-- Live your best life -->
                               Transform your life
                             </h4>
@@ -483,7 +483,7 @@
 
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                            <h4 class="fw_400 fs_12px lh_120p fc_ffffff_0_5 mtb0px">
+                            <h4 class="fw_400 fs_12px lh_120p fc_000000_0_5 mtb0px">
                               Happiness • Relationships • Stress
                             </h4>
                           </div>
@@ -545,7 +545,7 @@
             <!-- find inspiration -->
             <div class="row tour_find_inspiration" style="display: none;">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mb20px mt0px fw_600 fs_18px lh_24px fc_ffffff">
+                <h4 class="mb20px mt0px fw_600 fs_18px lh_24px fc_000000">
                   Get more out of HappierMe
                 </h4>
               </div>
@@ -563,7 +563,7 @@
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_life_stories.svg" class="img-responsive">
                             </h4>
 
-                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                               Life stories
                             </h4>
                           </div>
@@ -579,7 +579,7 @@
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_audio_meditation.svg" class="img-responsive">
                             </h4>
 
-                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                               Audio meditation
                             </h4>
                           </div>
@@ -595,7 +595,7 @@
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_blog.svg" class="img-responsive">
                             </h4>
 
-                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                               Blog
                             </h4>
                           </div>
@@ -611,7 +611,7 @@
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_podcast.svg" class="img-responsive">
                             </h4>
 
-                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                               Podcast
                             </h4>
                           </div>
@@ -627,7 +627,7 @@
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_short_videos.svg" class="img-responsive">
                             </h4>
 
-                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                               Short videos
                             </h4>
                           </div>
@@ -643,7 +643,7 @@
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_events.svg" class="img-responsive">
                             </h4>
 
-                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                            <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                               Events
                             </h4>
                           </div>
@@ -678,7 +678,7 @@
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                               <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px" >
+                                <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px" >
                                   My progress
                                 </h2>
                               </div>
@@ -705,14 +705,14 @@
                               </div>
                               
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                <h4 class="mtb0px fs_15px fw_600 lh_120p fc_ffffff">
+                                <h4 class="mtb0px fs_15px fw_600 lh_120p fc_000000">
                                   <!-- 5,499 -->
                                   {{loginResponse.Points}}
                                 </h4>
                               </div>
 
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                <h4 class="mt0px fs_12px fw_400 lh_140p fc_ffffff">
+                                <h4 class="mt0px fs_12px fw_400 lh_140p fc_000000">
                                   Points
                                 </h4>
                               </div>
@@ -728,7 +728,7 @@
                                 </div>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_000000">
                                   My wellness score
                                   </h4>
                                 </div>
@@ -788,19 +788,19 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                               <div class="col-md-8 col-sm-8 col-xs-8 p0">
                                 <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex === 1" href="#ca_ae" aria-expanded="true">
-                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
                                    Emotional Intelligence 
                                   </h2>
                                 </a>
                                 <a data-toggle="collapse" data-parent="#accordion" *ngIf="tourIndex !== 1" aria-expanded="true">
-                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
                                    Emotional Intelligence 
                                   </h2>
                                 </a>
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0" (click)="tourIndex === 1 ? RouteToWisdomExercise(null) : $event.preventDefault()">
                                 <a>
-                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff underline mtb0px tright">
+                                  <h2 class="fw_500 fs_12px lh_140p fc_000000 underline mtb0px tright">
                                     View all
                                   </h2>
                                 </a>
@@ -816,7 +816,7 @@
                         <div class="p20px">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="fw_400 fs_15px lh_140p fc_ffffff mtb0px">
+                              <h4 class="fw_400 fs_15px lh_140p fc_000000 mtb0px">
                                 Do one of these short exercises daily to improve your self awareness and emotional intelligence, which can contribute to your happiness and success.
                               </h4>
                             </div>
@@ -864,7 +864,7 @@
 
                           <div class="row pt20px">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="fw_500 fs_15px lh_140p fc_ffffff mtb0px">
+                              <h4 class="fw_500 fs_15px lh_140p fc_000000 mtb0px">
                                 #{{exerciseNo}} {{Title}}
                               </h4>
                             </div>
@@ -920,17 +920,17 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
                       <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11">
-                        <h4 class="mt0px mb5px fw_600 fs_18px lh_24px fc_ffffff">
+                        <h4 class="mt0px mb5px fw_600 fs_18px lh_24px fc_000000">
                           Explore a topic of interest
                         </h4>
 
-                        <h4 class="mtb0px fc_ffffff fs_12px fw_400 lh_140p">
+                        <h4 class="mtb0px fc_000000 fs_12px fw_400 lh_140p">
                           Stress. Relationships. Happiness. Loss. Work. Emotions. Habits. Mindfulness.
                         </h4>
                       </div>
 
                       <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1 tright">
-                        <i class="fa fa-angle-right fs_20px fc_ffffff"></i>
+                        <i class="fa fa-angle-right fs_20px fc_000000"></i>
                       </div>
                     </div>
                   </div>
@@ -950,7 +950,7 @@
             <!-- get more out of HappierMe -->
             <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_ffffff">
+                <h4 class="mtb0px fw_600 fs_18px lh_24px fc_000000">
                   Get more out of HappierMe
                 </h4>
               </div>
@@ -969,7 +969,7 @@
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_journal.svg" class="img-responsive">
                           </h4>
 
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                             Journal
                           </h4>
                         </div>
@@ -985,7 +985,7 @@
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_guided_questions.svg" class="img-responsive">
                           </h4>
 
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                             Guided journaling
                           </h4>
                         </div>
@@ -1003,7 +1003,7 @@
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_contact_a_coach.svg" class="img-responsive">
                           </h4>
 
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                             Contact a coach
                           </h4>
                         </div>
@@ -1019,7 +1019,7 @@
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/fi_forum.svg" class="img-responsive">
                           </h4>
 
-                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_ffffff tcenter">
+                          <h4 class="mtb0px fw_600 fs_15px lh_120p fc_000000 tcenter">
                             Forum
                           </h4>
                         </div>
@@ -1065,14 +1065,14 @@
                 <div class="panel-group" id="accordion_make">
                   <div class="panel panel-default plr20px">
                     <div class="panel-heading">
-                      <h4 class="panel-title fs_15px fw_600 lh_150p fc_ffffff">
+                      <h4 class="panel-title fs_15px fw_600 lh_150p fc_000000">
 
                   
                         <a  class="accordion-toggle" data-toggle="collapse"  data-parent="#accordion" href="#ca_wfgi" (click)="logEvent('MakeWorldBetter','')" >
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="">
-                                <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
                                   <!-- Wisdom for global impact -->
                                   Make the world a better place
                                 </h2>
@@ -1118,13 +1118,13 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
                                         Climate change
                                       </h4>
                                     </div>
 
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
                                         06:27
                                       </h4>
                                     </div>
@@ -1152,13 +1152,13 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
                                         Tackling racism
                                       </h4>
                                     </div>
 
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
                                         10:17
                                       </h4>
                                     </div>
@@ -1186,13 +1186,13 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
                                         Root cause of climate change
                                       </h4>
                                     </div>
 
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
                                         02:01
                                       </h4>
                                     </div>
@@ -1220,13 +1220,13 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
                                         Global health challenges
                                       </h4>
                                     </div>
 
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
                                         07:19
                                       </h4>
                                     </div>
@@ -1254,13 +1254,13 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
                                         Ending conflict
                                       </h4>
                                     </div>
 
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
                                         12:15
                                       </h4>
                                     </div>
@@ -1288,13 +1288,13 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
                                         Transforming education
                                       </h4>
                                     </div>
 
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
                                         10:23
                                       </h4>
                                     </div>
@@ -1322,13 +1322,13 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title">
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_ffffff whitespace_preline">
+                                      <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
                                        Preventing war
                                       </h4>
                                     </div>
 
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                      <h4 class="mtb0px fs_12px lh_140p fc_ffffff_0_5 tright">
+                                      <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
                                         01:01:39
                                       </h4>
                                     </div>
@@ -1375,3 +1375,4 @@
 <!-- footer  -->
 <!-- <app-bottom-navigation (journalclick)="getclcickevent($event)"></app-bottom-navigation> -->
 <!-- /footer -->
+y
