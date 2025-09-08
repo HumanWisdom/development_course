@@ -15311,6 +15311,12 @@ input[type="number"] {
     box-shadow: unset;
     background-color: #fff7e6;
 }
+.dpanel_daily
+ {
+    border: unset;
+    box-shadow: unset;
+    background-color: #FFE8BB;
+}
 .plr5px
 {
   padding: 0 5px;
