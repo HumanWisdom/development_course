@@ -66,7 +66,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" >
         <a (click)="routedashboard()">
           <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/logo/hwp_logo_v3.svg" class="img-responsive" alt="HumanWisdom"> -->
-          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hwp_logo_v3_white.svg"
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/logo_orange.svg"
             class="img-responsive img_logo" alt="HumanWisdom" *ngIf="isAdults"  >
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/logo_teens_4x.png"
             class="img-responsive img_logo" alt="HumanWisdom"  *ngIf="!isAdults">
@@ -118,7 +118,7 @@
                  class="prelative" alt="">
               <img
                 *ngIf="!loginResponse || !loginResponse?.NewNotifications || loginResponse?.NewNotifications === 0"
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_inactive.svg"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/notification.svg"
                 class="prelative" alt="">
               <span class="bell_badge"
               *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0">

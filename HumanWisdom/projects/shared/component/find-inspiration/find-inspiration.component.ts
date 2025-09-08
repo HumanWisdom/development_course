@@ -14,7 +14,7 @@ export class FindInspiration  {
   inspirationItems = [
     { 
       title: 'Podcasts', 
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/podcast_without_bg.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/podcast.svg',
       icon: 'headphones', 
       height:'',
       color: '#191d3a',
@@ -25,7 +25,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/blog.svg',
       url:'blogs'
     },   
      
@@ -34,7 +34,7 @@ export class FindInspiration  {
       icon: 'map', 
       color: '#191d3a',
       height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg",
+      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/guided.svg",
     url:'journal'
     }, 
      { 
@@ -67,7 +67,7 @@ export class FindInspiration  {
       icon: 'play-circle', 
       color: '#191d3a',
       height:'',
-      img:'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg',
+      img:'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/video.svg',
       url:'wisdom-shorts'
     },  
     { 
@@ -75,7 +75,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audio_new.svg',
       url:'audio-meditation'
     },
     { 
@@ -83,7 +83,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/life.svg',
       url:'wisdom-stories'
     },
      
