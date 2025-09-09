@@ -48,4 +48,12 @@ export class ContentCardComponent {
   getOverlayIconSrc(overlayIcon: string): string | null {
     return this.isOverlayIconUrl(overlayIcon) ? overlayIcon : null;
   }
+
+  /**
+   * Check if this card is from the Begin Here section
+   */
+  isBeginHereCard(): boolean {
+    // Check if the card's subtitle contains the play outline SVG path
+    return this.card.subtitle && this.card.subtitle.includes('/assets/svgs/v1_3/play_outline.svg');
+  }
 }
