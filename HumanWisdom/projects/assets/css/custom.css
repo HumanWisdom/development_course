@@ -29536,6 +29536,12 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   padding: 20px 20px;
 }
 
+.sc_01_home {
+  min-height: 110vh;
+  padding: 80px 20px;
+  background: #FFF4E6;
+}
+
 .sc_02
 {
   display: flex;
@@ -38150,3 +38156,4 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
         max-width: 540px !important;
     }
 } */
+
