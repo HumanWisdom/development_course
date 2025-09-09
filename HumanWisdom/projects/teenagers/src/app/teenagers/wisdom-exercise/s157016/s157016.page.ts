@@ -23,7 +23,10 @@ export class S157016Page implements OnInit {
   enableday5 = false;
   enableday6 = false;
   enableday7 = false;
-
+  isShowBulb = false;
+  hintValue: any;
+  showHintModal = false;
+  hintMessage = '';
 
   slideStart = 0;
   totalSlidesCount = 4;
@@ -114,6 +117,7 @@ export class S157016Page implements OnInit {
   next() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
     //  this.router.navigate(['/wisdom-exercise/s157001']);
       if (this.slideStart < this.totalSlidesCount) {
@@ -158,6 +162,7 @@ export class S157016Page implements OnInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+      this.setHint();
     }, 700);
   }
   // getClass(day) {
@@ -187,6 +192,7 @@ export class S157016Page implements OnInit {
   back() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
@@ -214,6 +220,7 @@ export class S157016Page implements OnInit {
           this.isShowTranscript = false;
           this.isShowAudio = false;
         }
+        this.setHint();
     }, 700);
   }
 
@@ -246,44 +253,45 @@ export class S157016Page implements OnInit {
     }
   }
   onSwipe($event) {
-    if (this.lastClick >= (Date.now() - this.delay))
-  {
-    return;
-  }
-    this.lastClick = Date.now();
-    $event.srcEvent.stopPropagation()
-    $event.srcEvent.cancelBubble=true;
-    this.methodSTartTime=Date.now();
-    let eventText="";
-    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
-    const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
-  
-    eventText += `${x} ${y}<br/>`;
-    if(eventText.includes("right")){
-      $('#mdp_carousel').carousel('prev');
-    this.back();
-    }else if(eventText.includes("left")){
-      $('#mdp_carousel').carousel('next');
-      this.next();
-    }
-    else if(eventText.includes('down')){
-      window.scrollTo({
-        behavior:'smooth',
-        top:0
-      });
+      if (this.lastClick >= (Date.now() - this.delay))
+    {
       return;
     }
-    else if(eventText.includes('up')){
-      window.scrollTo({
-        behavior:'smooth',
-        top:800
-      });
-    }
-    else{
-      this.next();
+      this.lastClick = Date.now();
+      $event.srcEvent.stopPropagation()
+      $event.srcEvent.cancelBubble=true;
+      this.methodSTartTime=Date.now();
+      let eventText="";
+      const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+      const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+
+      eventText += `${x} ${y}<br/>`;
+      if(eventText.includes("right")){
+      $('#mdp_carousel').carousel('prev');
+        this.back();
+      }else if(eventText.includes("left")){
       $('#mdp_carousel').carousel('next');
-    }
+        this.next();
+      }
+      else if(eventText.includes('down')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:0
+        });
+        return;
+      }
+      else if(eventText.includes('up')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:800
+        });
+      }
+      else{
+        this.next();
+      $('#mdp_carousel').carousel('next');
+      }
   }
+
   guestEvent($event){
     this.enableAlert = true;
   }
@@ -293,6 +301,80 @@ export class S157016Page implements OnInit {
       this.router.navigate(['/log-in']);
     }else{
       this.enableAlert = false;
+    }
+  }
+
+      resetHintValue(){
+    this.isShowBulb = false;
+    this.hintValue = '';
+  }
+
+  setHint(){
+    try {
+      const activeSlides = document.getElementsByClassName('active');
+      if(activeSlides && activeSlides.length>0){
+        const container: any = activeSlides[0];
+        const journalWe = container.querySelector('app-journal-we') as any;
+        if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
+          this.hintValue = journalWe.dataset;
+          this.isShowBulb = true;
+          const element = document.getElementById('hinttext');
+          if(element){
+            element.innerHTML = this.hintValue.hint;
+            console.log('Hint text set:', this.hintValue.hint);
+          } else {
+            console.log('Hint text element not found');
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error setting hint:', error);
+    }
+  }
+
+  openHintModal() {
+    try {
+      // Get the hint from the currently active carousel item
+      const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+      if (activeItem) {
+        const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+        this.hintMessage = hint || '';
+      }
+
+      this.showHintModal = true;
+
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.add('show');
+        document.body.classList.add('modal-open');
+
+        // Add backdrop if it doesn't exist
+        if (!document.querySelector('.modal-backdrop')) {
+          const backdrop = document.createElement('div');
+          backdrop.className = 'modal-backdrop fade show';
+          document.body.appendChild(backdrop);
+        }
+      }
+    } catch (error) {
+      console.error('Error opening modal:', error);
+    }
+  }
+
+  closeHintModal() {
+    try {
+      this.showHintModal = false;
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.remove('show');
+        document.body.classList.remove('modal-open');
+
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.remove();
+        }
+      }
+    } catch (error) {
+      console.error('Error closing modal:', error);
     }
   }
 }

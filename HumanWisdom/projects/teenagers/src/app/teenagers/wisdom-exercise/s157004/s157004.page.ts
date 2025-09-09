@@ -16,6 +16,10 @@ export class S157004Page implements OnInit {
   enableAlert = false;
   isShowTranscript = false;
   isShowAudio = false;
+  isShowBulb = false;
+  hintValue: any;
+  showHintModal = false;
+  hintMessage = '';
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -26,6 +30,7 @@ export class S157004Page implements OnInit {
   enableday7 = false;
   enableday8 = false;
   enableday9 = false;
+  enableday10 = false;
   isShowButton = false;
   vistedScreens: any[] = [];
   currentDay: number = 0;
@@ -42,15 +47,14 @@ export class S157004Page implements OnInit {
   bookmark: number = 0;
   screenType: string = "8";
   userId: any = localStorage.getItem('userId');
-  totaldays=9;
+  totaldays=10;
   DaysWithIntro=10;
   lastClick = 0;
   delay = 20;
   methodSTartTime: any;
   methodEndTime: any;
   showModel =  false;
-  isShowBulb =  false;
-  hintValue :any;
+
   constructor(private elementRef: ElementRef,
     public service: TeenagersService, private teenagers: TeenagersService,public router:Router) {
     this.startTime = Date.now()
@@ -87,45 +91,59 @@ export class S157004Page implements OnInit {
    });
  }
 
- onSwipe($event) {
-  if (this.lastClick >= (Date.now() - this.delay))
-{
-  return;
-}
-  this.lastClick = Date.now();
-  $event.srcEvent.stopPropagation()
-  $event.srcEvent.cancelBubble=true;
-  this.methodSTartTime=Date.now();
-  let eventText="";
-  const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
-  const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+  onSwipe($event) {
+      if (this.lastClick >= (Date.now() - this.delay))
+    {
+      return;
+    }
+      this.lastClick = Date.now();
+      $event.srcEvent.stopPropagation()
+      $event.srcEvent.cancelBubble=true;
+      this.methodSTartTime=Date.now();
+      let eventText="";
+      const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+      const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
 
-  eventText += `${x} ${y}<br/>`;
-  if(eventText.includes("right")){
-    $('#mdp_carousel').carousel('prev');
-  this.back();
-  }else if(eventText.includes("left")){
-    $('#mdp_carousel').carousel('next');
-    this.next();
+      eventText += `${x} ${y}<br/>`;
+      let carouselId = '';
+      
+      if (this.enableintro) carouselId = 'mdp_carousel_intro';
+      else if (this.enableday1) carouselId = 'mdp_carousel_day1';
+      else if (this.enableday2) carouselId = 'mdp_carousel_day2';
+      else if (this.enableday3) carouselId = 'mdp_carousel_day3';
+      else if (this.enableday4) carouselId = 'mdp_carousel_day4';
+      else if (this.enableday5) carouselId = 'mdp_carousel_day5';
+      else if (this.enableday6) carouselId = 'mdp_carousel_day6';
+      else if (this.enableday7) carouselId = 'mdp_carousel_day7';
+      else if (this.enableday8) carouselId = 'mdp_carousel_day8';
+      else if (this.enableday9) carouselId = 'mdp_carousel_day9';
+      else if (this.enableday10) carouselId = 'mdp_carousel_day10';
+      
+      if(eventText.includes("right")){
+        $(`#${carouselId}`).carousel('prev');
+        this.back();
+      }else if(eventText.includes("left")){
+        $(`#${carouselId}`).carousel('next');
+        this.next();
+      }
+      else if(eventText.includes('down')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:0
+        });
+        return;
+      }
+      else if(eventText.includes('up')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:800
+        });
+      }
+      else{
+        this.next();
+        $(`#${carouselId}`).carousel('next');
+      }
   }
-  else if(eventText.includes('down')){
-    window.scrollTo({
-      behavior:'smooth',
-      top:0
-    });
-    return;
-  }
-  else if(eventText.includes('up')){
-    window.scrollTo({
-      behavior:'smooth',
-      top:800
-    });
-  }
-  else{
-    this.next();
-    $('#mdp_carousel').carousel('next');
-  }
-}
 
   getdayevent(event) {
     if (event === 'intro') {
@@ -276,7 +294,7 @@ export class S157004Page implements OnInit {
     }
     else if (event === '8') {
       this.slideStart = 0;
-      this.totalSlidesCount = 7;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -305,10 +323,30 @@ export class S157004Page implements OnInit {
       this.enableday6 = false;
       this.enableday7 = false;
       this.enableday8 = false;
-      this.enableday9 = true;
+      this.enableday9 = false;
+      this.enableday10 = true;
       this.screenNumber = "157004p9";
       this.dayclass = "9";
       this.currentDay = 9;
+    }
+    else if (event === '10') {
+      this.slideStart = 0;
+      this.totalSlidesCount = 7;
+      this.details = this.slideStart + '/' + this.totalSlidesCount;
+      this.enableintro = false;
+      this.enableday1 = false;
+      this.enableday2 = false;
+      this.enableday3 = false;
+      this.enableday4 = false;
+      this.enableday5 = false;
+      this.enableday6 = false;
+      this.enableday7 = false;
+      this.enableday8 = false;
+      this.enableday9 = false;
+      this.enableday10 = true;
+      this.screenNumber = "75004p10";
+      this.dayclass = "10";
+      this.currentDay = 10;
     }
     this.next();
     setTimeout(() => {
@@ -348,7 +386,7 @@ export class S157004Page implements OnInit {
       } else {
         this.slideStart = 1;
       }
-      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+      this.details = (this.slideStart > 10 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 10 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
       var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
         children[1]?.children[0]?.lastChild?.classList.value;
       if (data == undefined) {
@@ -387,7 +425,7 @@ export class S157004Page implements OnInit {
       else {
         this.slideStart = this.slideStart - 1;
       }
-      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+      this.details = (this.slideStart > 10 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 10 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
       var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
         children[1]?.children[0]?.lastChild?.classList.value;
         if (data == undefined) {
@@ -447,21 +485,77 @@ export class S157004Page implements OnInit {
   }
 
 
-  resetHintValue(){
+    resetHintValue(){
     this.isShowBulb = false;
     this.hintValue = '';
   }
 
   setHint(){
-    var hintDetails = document.getElementsByClassName('active');
-    if(hintDetails && hintDetails!=null){
-    var journalWe =  hintDetails[0].querySelector('app-journal-we') as any;
-    if(journalWe!=null && journalWe.dataset.hint){
-      this.hintValue = journalWe.dataset;
-      this.isShowBulb = true;
-      const element = document.getElementById('hinttext');
-        element.innerHTML = this.hintValue.hint;
+    try {
+      const activeSlides = document.getElementsByClassName('active');
+      if(activeSlides && activeSlides.length>0){
+        const container: any = activeSlides[0];
+        const journalWe = container.querySelector('app-journal-we') as any;
+        if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
+          this.hintValue = journalWe.dataset;
+          this.isShowBulb = true;
+          const element = document.getElementById('hinttext');
+          if(element){
+            element.innerHTML = this.hintValue.hint;
+            console.log('Hint text set:', this.hintValue.hint);
+          } else {
+            console.log('Hint text element not found');
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error setting hint:', error);
     }
+  }
+
+  openHintModal() {
+    try {
+      // Get the hint from the currently active carousel item
+      const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+      if (activeItem) {
+        const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+        this.hintMessage = hint || '';
+      }
+
+      this.showHintModal = true;
+
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.add('show');
+        document.body.classList.add('modal-open');
+
+        // Add backdrop if it doesn't exist
+        if (!document.querySelector('.modal-backdrop')) {
+          const backdrop = document.createElement('div');
+          backdrop.className = 'modal-backdrop fade show';
+          document.body.appendChild(backdrop);
+        }
+      }
+    } catch (error) {
+      console.error('Error opening modal:', error);
+    }
+  }
+
+  closeHintModal() {
+    try {
+      this.showHintModal = false;
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.remove('show');
+        document.body.classList.remove('modal-open');
+
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.remove();
+        }
+      }
+    } catch (error) {
+      console.error('Error closing modal:', error);
     }
   }
 }
