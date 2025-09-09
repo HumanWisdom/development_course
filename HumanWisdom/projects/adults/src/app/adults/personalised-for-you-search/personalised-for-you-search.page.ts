@@ -50,6 +50,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   searchResult = [];
   personalisedforyou = []
 
+  public isExpanded = false;
+
   indList = []
   isEnableHam = true;
   isloggedIn = false;
@@ -289,6 +291,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
       }
     })
   }
+toggleAccordion() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  
   getAutoCompleteList(value) {
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
@@ -1300,6 +1307,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
   }
 
+getExpandClass(){
+    !this.isExpanded ? 'd-none' :'';
+  }
 
 
   routeToFindAnswer(param) {
