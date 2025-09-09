@@ -10,11 +10,38 @@ import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { Platform } from '@angular/cdk/platform';
 
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
 @Component({
   selector: 'app-personalised-for-you-search',
   templateUrl: './personalised-for-you-search.page.html',
   styleUrls: ['./personalised-for-you-search.page.scss'],
-})
+
+  animations: [
+      trigger('accordionAnimation', [
+        state('collapsed', style({
+          height: '0px',
+          overflow: 'hidden',
+          opacity: 0
+        })),
+        state('expanded', style({
+          height: '*',
+          overflow: 'auto',
+          opacity: 1
+        })),
+        transition('collapsed <=> expanded', [
+          animate('300ms ease-in-out')
+        ])
+      ])
+    ]
+  })
+
 export class PersonalisedForYouSearchPage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('welcome') welcome: ElementRef;
