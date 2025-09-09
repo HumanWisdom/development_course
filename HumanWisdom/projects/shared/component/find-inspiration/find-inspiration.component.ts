@@ -37,20 +37,20 @@ export class FindInspiration  {
       img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/guided.svg",
     url:'journal'
     }, 
-     { 
-      title: 'PATHWAY', 
-      icon: 'star', 
-      color: '#191d3a',
-      height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/pathway_without_bg.svg",
-      url:'pathway'
-    },  
+    //  { 
+    //   title: 'PATHWAY', 
+    //   icon: 'star', 
+    //   color: '#191d3a',
+    //   height:'',
+    //   img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/pathway_without_bg.svg",
+    //   url:'pathway'
+    // },  
       { 
       title: 'Wellness Survey', 
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wellness.svg',
       url:'wisdom-survey'
     },  
    
@@ -59,7 +59,7 @@ export class FindInspiration  {
       icon: 'message-circle', 
       color: '#191d3a',
       height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg",
+      img:"https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_1.svg",
       url:'coach'
     },    
     { 
@@ -92,7 +92,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/find_ans_wihout_bg.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/answer1.svg',
       url:'find-answers/why-do-i'
     }, 
     { 
@@ -100,7 +100,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/soundscape1.svg',
       url:'soundscapes'
     },   
      
@@ -109,7 +109,7 @@ export class FindInspiration  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg',
+      img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/events.svg',
       url:'events'
     },   
    

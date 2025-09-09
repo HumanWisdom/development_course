@@ -38031,7 +38031,9 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
 .td_points_box
 {
   border-radius: 12px;
-  background: #FFE8BB;
+  background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
+
+  /* background: #FFE8BB; */
   height: 115px;
   /* margin-left: -25px; */
   padding: 10px !important;
