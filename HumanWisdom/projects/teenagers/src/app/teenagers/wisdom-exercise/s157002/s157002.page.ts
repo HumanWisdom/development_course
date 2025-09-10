@@ -5,6 +5,7 @@ import "hammerjs";
 import { TeenagersService } from "../../teenagers.service";
 import { SharedService } from '../../../../../../shared/services/shared.service';
 declare var $: any;
+declare var bootstrap: any;
 var moveleft = false;
 @Component({
   selector: "HumanWisdom-s157002",
@@ -16,6 +17,10 @@ export class S157002Page implements OnInit, AfterViewInit {
   enableAlert =false;
   isShowTranscript = false;
   isShowAudio = true;
+  isShowBulb = false;
+  hintValue: any;
+  showHintModal = false;
+  hintMessage = '';
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -92,7 +97,7 @@ export class S157002Page implements OnInit, AfterViewInit {
    // container.addEventListener("touchmove", this.moveTouch.bind(this), false);
   }
 
-    onSwipe($event) {
+  onSwipe($event) {
       if (this.lastClick >= (Date.now() - this.delay))
     {
       return;
@@ -106,11 +111,20 @@ export class S157002Page implements OnInit, AfterViewInit {
       const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
 
       eventText += `${x} ${y}<br/>`;
+      let carouselId = '';
+      
+      if (this.enableintro) carouselId = 'mdp_carousel_intro';
+      else if (this.enableday1) carouselId = 'mdp_carousel_day1';
+      else if (this.enableday2) carouselId = 'mdp_carousel_day2';
+      else if (this.enableday3) carouselId = 'mdp_carousel_day3';
+      else if (this.enableday4) carouselId = 'mdp_carousel_day4';
+      else if (this.enableday5) carouselId = 'mdp_carousel_day5';
+      
       if(eventText.includes("right")){
-        $('#mdp_carousel').carousel('prev');
-      this.back();
+        $(`#${carouselId}`).carousel('prev');
+        this.back();
       }else if(eventText.includes("left")){
-        $('#mdp_carousel').carousel('next');
+        $(`#${carouselId}`).carousel('next');
         this.next();
       }
       else if(eventText.includes('down')){
@@ -128,48 +142,9 @@ export class S157002Page implements OnInit, AfterViewInit {
       }
       else{
         this.next();
-        $('#mdp_carousel').carousel('next');
+        $(`#${carouselId}`).carousel('next');
       }
   }
-  // moveTouch(e) {
-  //   if (this.lastClick >= Date.now() - this.delay) {
-  //     return;
-  //   }
-  //   this.lastClick = Date.now();
-  //   if (moveleft) {
-  //     this.next();
-  //   } else {
-  //     this.back();
-  //   }
-  // }
-  // getClass(day) {
-  //   var dayclass = "";
-  //   var className = "";
-  //   if (day === "157002p0") {
-  //     dayclass = "0";
-  //   } else if (day === "157002p1") {
-  //     dayclass = "1";
-  //   } else if (day === "157002p2") {
-  //     dayclass = "2";
-  //   } else if (day === "157002p3") {
-  //     dayclass = "3";
-  //   } else if (day === "157002p4") {
-  //     dayclass = "4";
-  //   } else if (day === "157002p5") {
-  //     dayclass = "5";
-  //   }
-
-  //   if (this.currentDay.toString() == dayclass) {
-  //     className += "editable ";
-  //   }
-  //   if (this.vistedScreens.some((x) => x.ScreenNo == day)) {
-  //     className += "inactive ";
-  //   }
-  //   if (this.nextDay == +dayclass) {
-  //     className = "nextDayButton ";
-  //   }
-  //   return className;
-  // }
 
   getClass(day) {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
@@ -270,6 +245,7 @@ export class S157002Page implements OnInit, AfterViewInit {
   next() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
         this.slideStart = this.slideStart + 1;
@@ -320,12 +296,14 @@ export class S157002Page implements OnInit, AfterViewInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+      this.setHint();
     }, 700);
   }
 
   back() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount;
@@ -359,6 +337,7 @@ export class S157002Page implements OnInit, AfterViewInit {
         this.isShowAudio = false;
         this.isShowButton=false;
       }
+      this.setHint();
     }, 700);
   }
 
@@ -403,6 +382,80 @@ export class S157002Page implements OnInit, AfterViewInit {
       this.router.navigate(['/log-in']);
     }else{
       this.enableAlert = false;
+    }
+  }
+
+    resetHintValue(){
+    this.isShowBulb = false;
+    this.hintValue = '';
+  }
+
+  setHint(){
+    try {
+      const activeSlides = document.getElementsByClassName('active');
+      if(activeSlides && activeSlides.length>0){
+        const container: any = activeSlides[0];
+        const journalWe = container.querySelector('app-journal-we') as any;
+        if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
+          this.hintValue = journalWe.dataset;
+          this.isShowBulb = true;
+          const element = document.getElementById('hinttext');
+          if(element){
+            element.innerHTML = this.hintValue.hint;
+            console.log('Hint text set:', this.hintValue.hint);
+          } else {
+            console.log('Hint text element not found');
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error setting hint:', error);
+    }
+  }
+
+  openHintModal() {
+    try {
+      // Get the hint from the currently active carousel item
+      const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+      if (activeItem) {
+        const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+        this.hintMessage = hint || '';
+      }
+
+      this.showHintModal = true;
+
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.add('show');
+        document.body.classList.add('modal-open');
+
+        // Add backdrop if it doesn't exist
+        if (!document.querySelector('.modal-backdrop')) {
+          const backdrop = document.createElement('div');
+          backdrop.className = 'modal-backdrop fade show';
+          document.body.appendChild(backdrop);
+        }
+      }
+    } catch (error) {
+      console.error('Error opening modal:', error);
+    }
+  }
+
+  closeHintModal() {
+    try {
+      this.showHintModal = false;
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.remove('show');
+        document.body.classList.remove('modal-open');
+
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.remove();
+        }
+      }
+    } catch (error) {
+      console.error('Error closing modal:', error);
     }
   }
 }
