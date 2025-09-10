@@ -1925,7 +1925,7 @@ require_once('./includes/security_config.php');
 
             <div class="owl-theme">
               <div class="owl-controls">
-                <div class="owl-nav">
+                <div class="owl-nav fixed_w1340">
                   <a class="sap" href="https://happierme.app/adults/coach">
                     <h5 class="mt40px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       Find out more
@@ -1957,21 +1957,21 @@ require_once('./includes/security_config.php');
       <div class="fixed_w">
       <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-white gap-3 mt20px">
         <!-- First -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg"
               class="img-fluid me-2 icon-subcription" alt="Expert">
           <span class="fs_18px fw_500 f_15px">Expert guidance</span>
         </div>
 
         <!-- Second -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg"
               class="img-fluid me-2 icon-subcription" alt="Goals">
           <span class="fs_18px fw_500 f_15px">Personalised content to meet your goals</span>
         </div>
 
         <!-- Third -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg"
               class="img-fluid me-2 icon-subcription" alt="Daily">
           <span class="fs_18px fw_500 f_15px">Daily practices that fit your life</span>
