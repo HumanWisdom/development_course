@@ -24208,6 +24208,8 @@ a
   opacity: 1;
 }
 
+
+
 .btn_login
 {
   margin: 0;
@@ -37927,7 +37929,7 @@ a.fc_e58d82:hover, .btn.focus, .btn:hover
 /* <new-screen> */
 .td_points_box {
     border-radius: 12px;
-background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
+background: #0C2B5F;
     height: 115px;
     padding: 10px !important;
     align-content: center;

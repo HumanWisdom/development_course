@@ -24214,13 +24214,14 @@ a
   border: 0;
   height: 40px;
   width: 92px;
-  background: #FFF;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
   border-radius: 20px;
   font-weight: 600;
   font-size: 12px;
   line-height: 140%;
   text-align: center;
-  color: #CB6171;
+  color: #fff;
 }
 
 .dheader
@@ -26257,7 +26258,9 @@ h1
   align-items: center;
   border: 0 !important;
 }
-
+.d-none{
+ display:none;
+}
 .psubscription_options
 {
   background: transparent;
@@ -33705,6 +33708,13 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   padding-left: 20px !important;
 }
 
+.session_imgscreen{
+  width: 100%;
+    border-radius: 6px;
+     border: 1px solid #FFFFFF40;
+    height: 76px;
+
+}
 .session_img
 {
   width: 100%;
@@ -35756,7 +35766,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #FFD889;
-  min-height: 88px;
+  min-height: 106px;
   margin-bottom: 10px;
   padding: 12px;
   /* margin: 0 10px 10px 10px; */
