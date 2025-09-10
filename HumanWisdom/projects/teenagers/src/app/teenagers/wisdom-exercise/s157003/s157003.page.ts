@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import "bcswipe";
 import { TeenagersService } from '../../teenagers.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
-
+declare var bootstrap: any;
 declare var $: any;
 @Component({
   selector: 'HumanWisdom-s157003',
@@ -15,6 +15,10 @@ export class S157003Page implements OnInit {
   isShowTranscript = false;
   isShowAudio = false;
   isShowButton = false;
+  isShowBulb = false;
+  hintValue: any;
+  showHintModal = false;
+  hintMessage = '';
   enableintro = true;
   enableday1 = false;
   enableday2 = false;
@@ -80,45 +84,55 @@ export class S157003Page implements OnInit {
    });
  }
 
- onSwipe($event) {
-  if (this.lastClick >= (Date.now() - this.delay))
-{
-  return;
-}
-  this.lastClick = Date.now();
-  $event.srcEvent.stopPropagation()
-  $event.srcEvent.cancelBubble=true;
-  this.methodSTartTime=Date.now();
-  let eventText="";
-  const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
-  const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+  onSwipe($event) {
+      if (this.lastClick >= (Date.now() - this.delay))
+    {
+      return;
+    }
+      this.lastClick = Date.now();
+      $event.srcEvent.stopPropagation()
+      $event.srcEvent.cancelBubble=true;
+      this.methodSTartTime=Date.now();
+      let eventText="";
+      const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+      const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
 
-  eventText += `${x} ${y}<br/>`;
-  if(eventText.includes("right")){
-    $('#mdp_carousel').carousel('prev');
-  this.back();
-  }else if(eventText.includes("left")){
-    $('#mdp_carousel').carousel('next');
-    this.next();
+      eventText += `${x} ${y}<br/>`;
+      let carouselId = '';
+      
+      if (this.enableintro) carouselId = 'mdp_carousel_intro';
+      else if (this.enableday1) carouselId = 'mdp_carousel_day1';
+      else if (this.enableday2) carouselId = 'mdp_carousel_day2';
+      else if (this.enableday3) carouselId = 'mdp_carousel_day3';
+      else if (this.enableday4) carouselId = 'mdp_carousel_day4';
+      else if (this.enableday5) carouselId = 'mdp_carousel_day5';
+      else if (this.enableday6) carouselId = 'mdp_carousel_day6';
+      
+      if(eventText.includes("right")){
+        $(`#${carouselId}`).carousel('prev');
+        this.back();
+      }else if(eventText.includes("left")){
+        $(`#${carouselId}`).carousel('next');
+        this.next();
+      }
+      else if(eventText.includes('down')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:0
+        });
+        return;
+      }
+      else if(eventText.includes('up')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:800
+        });
+      }
+      else{
+        this.next();
+        $(`#${carouselId}`).carousel('next');
+      }
   }
-  else if(eventText.includes('down')){
-    window.scrollTo({
-      behavior:'smooth',
-      top:0
-    });
-    return;
-  }
-  else if(eventText.includes('up')){
-    window.scrollTo({
-      behavior:'smooth',
-      top:800
-    });
-  }
-  else{
-    this.next();
-    $('#mdp_carousel').carousel('next');
-  }
-}
 
 
   getdayevent(event) {
@@ -205,7 +219,7 @@ export class S157003Page implements OnInit {
     else if (event === '5') {
       this.startTime = Date.now()
       this.slideStart = 0;
-      this.totalSlidesCount = 6;
+      this.totalSlidesCount = 8;
       this.currentDay = 5;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
@@ -245,6 +259,7 @@ export class S157003Page implements OnInit {
   next() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
         this.slideStart = this.slideStart + 1;
@@ -288,6 +303,7 @@ export class S157003Page implements OnInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+      this.setHint();
     }, 700);
   }
   // getClass(day) {
@@ -334,6 +350,7 @@ export class S157003Page implements OnInit {
   back() {
     window.scrollTo(0,0);
     this.nextDay = null;
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
@@ -361,6 +378,7 @@ export class S157003Page implements OnInit {
           this.isShowTranscript = false;
           this.isShowAudio = false;
         }
+        this.setHint();
     }, 700);
   }
 
@@ -403,4 +421,67 @@ export class S157003Page implements OnInit {
       this.enableAlert = false;
     }
   }
+
+    resetHintValue(){
+    this.isShowBulb = false;
+    this.hintValue = '';
+  }
+
+setHint() {
+  try {
+    const activeSlides = document.getElementsByClassName('active');
+    if (activeSlides && activeSlides.length > 0) {
+      const container: any = activeSlides[0];
+      const journalWe = container.querySelector('app-journal-we') as any;
+      if (journalWe != null && journalWe.dataset && journalWe.dataset.hint) {
+        this.hintValue = journalWe.dataset;
+        this.hintMessage = this.hintValue.hint;
+        this.isShowBulb = true;
+      }
+    }
+  } catch (error) {
+    console.error('Error setting hint:', error);
+  }
+}
+
+openHintModal() {
+  try {
+    this.showHintModal = true;
+
+    const modalElement = document.getElementById('ex_modal');
+    if (modalElement) {
+      modalElement.classList.add('show');
+      document.body.classList.add('modal-open');
+
+      // Add backdrop if it doesn't exist
+      if (!document.querySelector('.modal-backdrop')) {
+        const backdrop = document.createElement('div');
+        backdrop.className = 'modal-backdrop fade show';
+        document.body.appendChild(backdrop);
+      }
+    }
+  } catch (error) {
+    console.error('Error opening modal:', error);
+  }
+}
+
+
+  closeHintModal() {
+    try {
+      this.showHintModal = false;
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.remove('show');
+        document.body.classList.remove('modal-open');
+
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.remove();
+        }
+      }
+    } catch (error) {
+      console.error('Error closing modal:', error);
+    }
+  }
+
 }

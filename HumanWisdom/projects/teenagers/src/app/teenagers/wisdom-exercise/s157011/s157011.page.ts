@@ -44,8 +44,10 @@ export class S157011Page implements OnInit {
   totaldays=8;
   DaysWithIntro=9;
   isShowButton = false;
-  isShowBulb=false;
-  hintValue:any;
+  isShowBulb = false;
+  hintValue: any;
+  showHintModal = false;
+  hintMessage = '';
   userId: any = localStorage.getItem('userId');
   constructor(private elementRef: ElementRef,
     public service:TeenagersService, private teenagers:TeenagersService,public router:Router) {
@@ -138,7 +140,7 @@ export class S157011Page implements OnInit {
     }
     else if (event === '3') {
       this.slideStart = 0;
-      this.totalSlidesCount = 7;
+      this.totalSlidesCount = 8;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -407,44 +409,57 @@ export class S157011Page implements OnInit {
     }
   }
   onSwipe($event) {
-    if (this.lastClick >= (Date.now() - this.delay))
-  {
-    return;
-  }
-    this.lastClick = Date.now();
-    $event.srcEvent.stopPropagation()
-    $event.srcEvent.cancelBubble=true;
-    this.methodSTartTime=Date.now();
-    let eventText="";
-    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
-    const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
-  
-    eventText += `${x} ${y}<br/>`;
-    if(eventText.includes("right")){
-      $('#mdp_carousel').carousel('prev');
-    this.back();
-    }else if(eventText.includes("left")){
-      $('#mdp_carousel').carousel('next');
-      this.next();
-    }
-    else if(eventText.includes('down')){
-      window.scrollTo({
-        behavior:'smooth',
-        top:0
-      });
+      if (this.lastClick >= (Date.now() - this.delay))
+    {
       return;
     }
-    else if(eventText.includes('up')){
-      window.scrollTo({
-        behavior:'smooth',
-        top:800
-      });
-    }
-    else{
-      this.next();
-      $('#mdp_carousel').carousel('next');
-    }
+      this.lastClick = Date.now();
+      $event.srcEvent.stopPropagation()
+      $event.srcEvent.cancelBubble=true;
+      this.methodSTartTime=Date.now();
+      let eventText="";
+      const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+      const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+
+      eventText += `${x} ${y}<br/>`;
+      let carouselId = '';
+      
+      if (this.enableintro) carouselId = 'mdp_carousel_intro';
+      else if (this.enableday1) carouselId = 'mdp_carousel_day1';
+      else if (this.enableday2) carouselId = 'mdp_carousel_day2';
+      else if (this.enableday3) carouselId = 'mdp_carousel_day3';
+      else if (this.enableday4) carouselId = 'mdp_carousel_day4';
+      else if (this.enableday5) carouselId = 'mdp_carousel_day5';
+      else if (this.enableday6) carouselId = 'mdp_carousel_day6';
+      else if (this.enableday7) carouselId = 'mdp_carousel_day7';
+      else if (this.enableday8) carouselId = 'mdp_carousel_day8';
+      
+      if(eventText.includes("right")){
+        $(`#${carouselId}`).carousel('prev');
+        this.back();
+      }else if(eventText.includes("left")){
+        $(`#${carouselId}`).carousel('next');
+        this.next();
+      }
+      else if(eventText.includes('down')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:0
+        });
+        return;
+      }
+      else if(eventText.includes('up')){
+        window.scrollTo({
+          behavior:'smooth',
+          top:800
+        });
+      }
+      else{
+        this.next();
+        $(`#${carouselId}`).carousel('next');
+      }
   }
+
 
   guestEvent($event){
     this.enableAlert = true;
@@ -457,21 +472,77 @@ export class S157011Page implements OnInit {
       this.enableAlert = false;
     }
   }
-  resetHintValue(){
+    resetHintValue(){
     this.isShowBulb = false;
     this.hintValue = '';
   }
 
   setHint(){
-    var hintDetails = document.getElementsByClassName('active');
-    if(hintDetails && hintDetails!=null){
-    var journalWe =  hintDetails[0].querySelector('app-journal-we') as any;
-    if(journalWe!=null && journalWe.dataset.hint){
-      this.hintValue = journalWe.dataset;
-      this.isShowBulb = true;
-      const element = document.getElementById('hinttext');
-        element.innerHTML = this.hintValue.hint;
+    try {
+      const activeSlides = document.getElementsByClassName('active');
+      if(activeSlides && activeSlides.length>0){
+        const container: any = activeSlides[0];
+        const journalWe = container.querySelector('app-journal-we') as any;
+        if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
+          this.hintValue = journalWe.dataset;
+          this.isShowBulb = true;
+          const element = document.getElementById('hinttext');
+          if(element){
+            element.innerHTML = this.hintValue.hint;
+            console.log('Hint text set:', this.hintValue.hint);
+          } else {
+            console.log('Hint text element not found');
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error setting hint:', error);
     }
+  }
+
+  openHintModal() {
+    try {
+      // Get the hint from the currently active carousel item
+      const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+      if (activeItem) {
+        const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+        this.hintMessage = hint || '';
+      }
+
+      this.showHintModal = true;
+
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.add('show');
+        document.body.classList.add('modal-open');
+
+        // Add backdrop if it doesn't exist
+        if (!document.querySelector('.modal-backdrop')) {
+          const backdrop = document.createElement('div');
+          backdrop.className = 'modal-backdrop fade show';
+          document.body.appendChild(backdrop);
+        }
+      }
+    } catch (error) {
+      console.error('Error opening modal:', error);
+    }
+  }
+
+  closeHintModal() {
+    try {
+      this.showHintModal = false;
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.remove('show');
+        document.body.classList.remove('modal-open');
+
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.remove();
+        }
+      }
+    } catch (error) {
+      console.error('Error closing modal:', error);
     }
   }
 }
