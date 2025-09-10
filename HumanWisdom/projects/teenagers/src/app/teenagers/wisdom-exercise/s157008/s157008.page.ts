@@ -29,7 +29,10 @@ export class S157008Page implements OnInit {
   enableday5 = false;
   enableday6 = false;
   enableday7 = false;
-
+  isShowBulb = false;
+  hintValue: any;
+  showHintModal = false;
+  hintMessage = '';
   slideStart = 0;
   totalSlidesCount = 5;
 
@@ -121,7 +124,7 @@ export class S157008Page implements OnInit {
   getdayevent(event) {
     if (event === 'intro') {
       this.slideStart = 0;
-      this.totalSlidesCount = 5;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = true;
       this.enableday1 = false;
@@ -153,7 +156,7 @@ export class S157008Page implements OnInit {
     }
     else if (event === '2') {
       this.slideStart = 0;
-      this.totalSlidesCount = 6;
+      this.totalSlidesCount = 7;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -297,6 +300,7 @@ export class S157008Page implements OnInit {
     window.scrollTo(0,0);
 
     this.nextDay = null;
+    this.resetHintValue();
 
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
@@ -342,6 +346,7 @@ export class S157008Page implements OnInit {
         this.isShowAudio = false;
       }
 
+      this.setHint();
     }, 700);
    
 
@@ -398,6 +403,7 @@ export class S157008Page implements OnInit {
 
     this.nextDay = null;
 
+    this.resetHintValue();
     setTimeout(() => {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
@@ -427,6 +433,7 @@ export class S157008Page implements OnInit {
           this.isShowAudio = false;
         }
 
+        this.setHint();
     }, 700);
   }
 
@@ -469,6 +476,80 @@ export class S157008Page implements OnInit {
       this.router.navigate(['/log-in']);
     }else{
       this.enableAlert = false;
+    }
+  }
+
+      resetHintValue(){
+    this.isShowBulb = false;
+    this.hintValue = '';
+  }
+
+  setHint(){
+    try {
+      const activeSlides = document.getElementsByClassName('active');
+      if(activeSlides && activeSlides.length>0){
+        const container: any = activeSlides[0];
+        const journalWe = container.querySelector('app-journal-we') as any;
+        if(journalWe!=null && journalWe.dataset && journalWe.dataset.hint){
+          this.hintValue = journalWe.dataset;
+          this.isShowBulb = true;
+          const element = document.getElementById('hinttext');
+          if(element){
+            element.innerHTML = this.hintValue.hint;
+            console.log('Hint text set:', this.hintValue.hint);
+          } else {
+            console.log('Hint text element not found');
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error setting hint:', error);
+    }
+  }
+
+  openHintModal() {
+    try {
+      // Get the hint from the currently active carousel item
+      const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+      if (activeItem) {
+        const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+        this.hintMessage = hint || '';
+      }
+
+      this.showHintModal = true;
+
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.add('show');
+        document.body.classList.add('modal-open');
+
+        // Add backdrop if it doesn't exist
+        if (!document.querySelector('.modal-backdrop')) {
+          const backdrop = document.createElement('div');
+          backdrop.className = 'modal-backdrop fade show';
+          document.body.appendChild(backdrop);
+        }
+      }
+    } catch (error) {
+      console.error('Error opening modal:', error);
+    }
+  }
+
+  closeHintModal() {
+    try {
+      this.showHintModal = false;
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.remove('show');
+        document.body.classList.remove('modal-open');
+
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.remove();
+        }
+      }
+    } catch (error) {
+      console.error('Error closing modal:', error);
     }
   }
 
