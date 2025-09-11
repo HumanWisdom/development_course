@@ -232,7 +232,7 @@ require_once('./includes/security_config.php');
   <main id="main">
 
     <!-- popup -->
-    <section class="fixed_w1340">
+    <section class="fixed_w1340 ">
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 w-335px">
@@ -742,7 +742,7 @@ require_once('./includes/security_config.php');
               <h5 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                 View all Success stories
 
-                <i style="margin-left:11px;" class="bi bi-chevron-right"></i>
+                <i style="margin-left:11px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
               </h5>
             </a>
           </div>
@@ -824,7 +824,7 @@ require_once('./includes/security_config.php');
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
                   <a href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick">
-                    <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width h_48px">
+                    <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width h_48px btn_popup">
                       Try HappierMe for free
                     </button>
                   </a>
@@ -1363,7 +1363,7 @@ require_once('./includes/security_config.php');
           class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 col-12 p10  work_edu_health_outer  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w1340  ">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 aos-init aos-animate" data-aos="fade-up"
             data-aos-delay="200">
-            <div class="div_work_edu_health">
+            <div class="div_work_edu_health color_beige">
               <div class="row">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-335px">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/work.svg"
@@ -1396,7 +1396,7 @@ require_once('./includes/security_config.php');
                   <a href=" https://happierme.app/pages/work.php" iaria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                      Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>
                   </a>
@@ -1406,7 +1406,7 @@ require_once('./includes/security_config.php');
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 aos-init aos-animate" data-aos="fade-up"
             data-aos-delay="300">
-            <div class="div_work_edu_health">
+            <div class="div_work_edu_health color_beige">
               <div class="row">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-335px">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/education.svg"
@@ -1436,7 +1436,7 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/education.php" aria-label="Explore the teenagers app" class="">
                     <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                      Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>
                   </a>
@@ -1446,7 +1446,7 @@ require_once('./includes/security_config.php');
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 aos-init aos-animate" data-aos="fade-up"
             data-aos-delay="400">
-            <div class="div_work_edu_health">
+            <div class="div_work_edu_health color_beige">
               <div class="row">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-335px">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/healthcare.svg"
@@ -1477,7 +1477,7 @@ require_once('./includes/security_config.php');
                   <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
-                      Find out more <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                      Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>
                   </a>
@@ -1519,7 +1519,7 @@ require_once('./includes/security_config.php');
     <section>
       <div class="row center_flex">
         <div
-          class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element1 w-335px f_18px fixed_w1340">
+          class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element1 w-335px f_18px fixed_w">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 land-happierMe-section" data-aos="fade-up"
             data-aos-delay="100">
             <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp"
@@ -1541,7 +1541,7 @@ require_once('./includes/security_config.php');
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg"
                 class="img-responsive mobile" alt="app screen" loading=lazy>
 
-              <h3 class="mt15px mb10px fs_36px fw_600 lh_150p fc_000000 f_18px">
+              <h3 class="mt15px mb10px fs_36px fw_600 lh_150p fc_000000 f_30px">
                 Help teenagers feel happier and succeed in life
               </h3>
 
@@ -1555,7 +1555,7 @@ require_once('./includes/security_config.php');
                     <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                       <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                       <h5 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
-                        Find out more <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                        Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                         <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
               </h4>
               </a>
@@ -1570,7 +1570,7 @@ require_once('./includes/security_config.php');
 
               <a id="happiermeTryForFree" href="https://happierme.app/teenagers/intro-carousel"
                 class="tryhappiermeClick">
-                <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width h_48px">
+                <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width h_48px btn_popup ">
                   Try HappierMe for free
                 </button>
               </a>
@@ -1925,11 +1925,11 @@ require_once('./includes/security_config.php');
 
             <div class="owl-theme">
               <div class="owl-controls">
-                <div class="owl-nav">
+                <div class="owl-nav fixed_w1340">
                   <a class="sap" href="https://happierme.app/adults/coach">
                     <h5 class="mt40px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       Find out more
-                      <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                      <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy></a> -->
                     </h5>
                   </a>
@@ -1954,29 +1954,30 @@ require_once('./includes/security_config.php');
           </h2>
         </div>
       </div>
-
+      <div class="fixed_w">
       <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-white gap-3 mt20px">
         <!-- First -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg"
               class="img-fluid me-2 icon-subcription" alt="Expert">
           <span class="fs_18px fw_500 f_15px">Expert guidance</span>
         </div>
 
         <!-- Second -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg"
               class="img-fluid me-2 icon-subcription" alt="Goals">
           <span class="fs_18px fw_500 f_15px">Personalised content to meet your goals</span>
         </div>
 
         <!-- Third -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center gap-2">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg"
               class="img-fluid me-2 icon-subcription" alt="Daily">
           <span class="fs_18px fw_500 f_15px">Daily practices that fit your life</span>
         </div>
       </div>
+          </div>
     </div>
 
 
@@ -2073,7 +2074,7 @@ require_once('./includes/security_config.php');
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p">
               Tools for a happier life
             </h2>
           </div>
@@ -2131,7 +2132,7 @@ require_once('./includes/security_config.php');
             <!-- fbn -->
             <div id="fbn" class="tab-pane fade show active" role="tabpanel" aria-labelledby="feelbetterNow-tab">
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr card_center pt-20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr card_center pt-20px card_gap">
 
 
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
@@ -2157,9 +2158,9 @@ require_once('./includes/security_config.php');
                     </h4>
 
                     <a id="exploreAppWeb">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline mt2rem">
                         Explore on app
-                         <i style="font-size:15px;" class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2171,7 +2172,7 @@ require_once('./includes/security_config.php');
             <!-- pathway -->
             <div id="pathway" class="tab-pane fade" role="tabpanel" aria-labelledby="pathWay-tab">
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  mtb20px flex_fd_cr mt-56px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  mtb20px flex_fd_cr mt-56px card_gap">
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 " data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp"
                       class="img-responsive w-90per guided_pgm_img" alt="tools_pathway" loading=lazy>
@@ -2207,7 +2208,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/pathway/">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
-                         <i style="font-size:15px;" class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2219,7 +2220,7 @@ require_once('./includes/security_config.php');
             <!-- journal -->
             <div id="journal_tab" class="tab-pane fade" role="tabpanel" aria-labelledby="journal-tab">
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px flex_fd_cr mtb20px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px flex_fd_cr mtb20px card_gap">
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_journal.webp"
                       class="img-responsive h-335px" alt="Journal" loading=lazy>
@@ -2239,7 +2240,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/journal">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
-                         <i style="font-size:15px;"class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2280,7 +2281,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/podcast">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
-                         <i style="font-size:15px;" class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2312,7 +2313,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/forum">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                         Explore on app
-                         <i style="font-size:15px;" class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
                       </h5>
                     </a>
                   </div>
@@ -2380,7 +2381,7 @@ require_once('./includes/security_config.php');
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p">
               Explore our blog
             </h2>
           </div>
@@ -2517,7 +2518,7 @@ require_once('./includes/security_config.php');
                   <a class="sap" id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
                     <h5 class="mt20px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       See all posts
-                      <span style="margin-left:10px;" class="bi bi-chevron-right"></span>
+                      <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                       </h4>
                   </a>
@@ -2532,11 +2533,11 @@ require_once('./includes/security_config.php');
     <!-- /blog -->
 
     <!-- faqs -->
-    <section>
+    <section class="">
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p">
               Frequently asked questions
             </h2>
           </div>
@@ -2545,7 +2546,7 @@ require_once('./includes/security_config.php');
 
       <!-- desktop -->
       <div class="row center_flex prelative display_m_none">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8  p0 d-flex">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8  p0 d-flex fixed_w">
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="200">
             <ul class="nav nav-tabs m0px tab_faqs">

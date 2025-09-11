@@ -72,7 +72,7 @@ a:hover{
     background: linear-gradient(180deg,   #E58D82, #CB6171);
 }
 .btn_popup:hover{
-  background: linear-gradient(180deg,  #DA7D71, #BF5061);;
+  background: linear-gradient(180deg,  #DA7D71, #BF5061)!important;
 }
 .popuptitle{
     font-weight: 600;
