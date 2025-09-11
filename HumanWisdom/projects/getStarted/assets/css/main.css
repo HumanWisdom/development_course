@@ -3063,20 +3063,22 @@ animation-name: slideInRight;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* width: 100%;   */
-  width: 84%;
+  width: 100%;  
+  /* width: 84%; */
 }
 
 .sap 
 {
   position: absolute;
-  left: 240px;
+  /* left: 240px; */
   right: 0;
   margin: 0 auto;
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+      width: 100%;
+    margin: 0 auto;
 }
 
 .owl_blog .owl-nav .owl-prev
