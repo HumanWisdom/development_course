@@ -15096,7 +15096,7 @@ input[type="number"] {
   overflow-x: auto;
   white-space: nowrap;
   /* padding-bottom: 5px; */
-  padding: 0 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
 }
 
 .odiv > [class^="col-"]:last-child
@@ -32895,6 +32895,12 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   opacity: 0.1;
   margin: 30px 0;
 }
+.hr_style_v3_02make
+{
+  border: 1px solid #000000;
+  opacity: 0.1;
+  margin: 20px 0;
+}
 
 .odiv_mdp > [class^="col-"]
 {
@@ -33348,7 +33354,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .odiv_pathway
 {
-  padding: 0 0 7px 0;
+  padding: 0 0 7px 7px;
 }
 
 .odiv_pathway > [class^="col-"]
@@ -33363,9 +33369,9 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   margin: 0 0px 0 0 !important;
 }
 
-.mr-20pxi
+.mr-10pxi
 {
-  margin-right: -20px !important;
+  margin-right: -10px !important;
 }
 
 .mtb10pxi
