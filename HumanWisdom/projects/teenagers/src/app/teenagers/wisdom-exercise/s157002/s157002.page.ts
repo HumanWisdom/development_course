@@ -413,17 +413,19 @@ export class S157002Page implements OnInit, AfterViewInit {
     }
   }
 
-  openHintModal() {
-    try {
-      // Get the hint from the currently active carousel item
-      const activeItem = document.querySelector('.carousel-item.active app-journal-we');
-      if (activeItem) {
-        const hint = (activeItem as HTMLElement).getAttribute('data-hint');
-        this.hintMessage = hint || '';
-      }
+openHintModal() {
+  try {
+    // Get the hint from the currently active carousel item
+    const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+    if (activeItem) {
+      const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+      this.hintMessage = hint || '';
+    }
 
-      this.showHintModal = true;
+    this.showHintModal = true;
 
+    // Defer DOM class updates until after Angular renders the modal via *ngIf
+    setTimeout(() => {
       const modalElement = document.getElementById('ex_modal');
       if (modalElement) {
         modalElement.classList.add('show');
@@ -436,10 +438,11 @@ export class S157002Page implements OnInit, AfterViewInit {
           document.body.appendChild(backdrop);
         }
       }
-    } catch (error) {
-      console.error('Error opening modal:', error);
-    }
+    }, 0);
+  } catch (error) {
+    console.error('Error opening modal:', error);
   }
+}
 
   closeHintModal() {
     try {

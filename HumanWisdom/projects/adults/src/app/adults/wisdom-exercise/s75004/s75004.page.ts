@@ -28,7 +28,7 @@ export class S75004Page implements OnInit {
   enableday7 = false;
   enableday8 = false;
   enableday9 = false;
-  enableday10 = true;
+  enableday10 = false;
   isShowButton = false;
   vistedScreens: any[] = [];
   currentDay: number = 0;
@@ -101,11 +101,13 @@ export class S75004Page implements OnInit {
   const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
 
   eventText += `${x} ${y}<br/>`;
+  let carouselId = `#mdp_carousel_${this.dayclass}`;
+  
   if(eventText.includes("right")){
-    $('#mdp_carousel').carousel('prev');
-  this.back();
+    $(carouselId).carousel('prev');
+    this.back();
   }else if(eventText.includes("left")){
-    $('#mdp_carousel').carousel('next');
+    $(carouselId).carousel('next');
     this.next();
   }
   else if(eventText.includes('down')){
@@ -123,7 +125,7 @@ export class S75004Page implements OnInit {
   }
   else{
     this.next();
-    $('#mdp_carousel').carousel('next');
+    $(carouselId).carousel('next');
   }
 }
 
@@ -524,18 +526,21 @@ openHintModal() {
 
     this.showHintModal = true;
 
-    const modalElement = document.getElementById('ex_modal');
-    if (modalElement) {
-      modalElement.classList.add('show');
-      document.body.classList.add('modal-open');
+    // Defer DOM class updates until after Angular renders the modal via *ngIf
+    setTimeout(() => {
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.add('show');
+        document.body.classList.add('modal-open');
 
-      // Add backdrop if it doesn't exist
-      if (!document.querySelector('.modal-backdrop')) {
-        const backdrop = document.createElement('div');
-        backdrop.className = 'modal-backdrop fade show';
-        document.body.appendChild(backdrop);
+        // Add backdrop if it doesn't exist
+        if (!document.querySelector('.modal-backdrop')) {
+          const backdrop = document.createElement('div');
+          backdrop.className = 'modal-backdrop fade show';
+          document.body.appendChild(backdrop);
+        }
       }
-    }
+    }, 0);
   } catch (error) {
     console.error('Error opening modal:', error);
   }

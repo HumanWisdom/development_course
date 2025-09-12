@@ -164,7 +164,7 @@ export class S75003Page implements OnInit {
       this.startTime = Date.now()
       this.slideStart = 0;
       this.currentDay = 2;
-      this.totalSlidesCount = 7;
+      this.totalSlidesCount = 8;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -179,7 +179,7 @@ export class S75003Page implements OnInit {
       this.startTime = Date.now()
       this.slideStart = 0;
       this.currentDay = 3;
-      this.totalSlidesCount = 4;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -210,7 +210,7 @@ export class S75003Page implements OnInit {
     else if (event === '5') {
       this.startTime = Date.now()
       this.slideStart = 0;
-      this.totalSlidesCount = 6;
+      this.totalSlidesCount = 8;
       this.currentDay = 5;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
@@ -404,17 +404,19 @@ export class S75003Page implements OnInit {
     }
   }
 
-  openHintModal() {
-    try {
-      // Get the hint from the currently active carousel item
-      const activeItem = document.querySelector('.carousel-item.active app-journal-we');
-      if (activeItem) {
-        const hint = (activeItem as HTMLElement).getAttribute('data-hint');
-        this.hintMessage = hint || '';
-      }
+openHintModal() {
+  try {
+    // Get the hint from the currently active carousel item
+    const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+    if (activeItem) {
+      const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+      this.hintMessage = hint || '';
+    }
 
-      this.showHintModal = true;
+    this.showHintModal = true;
 
+    // Defer DOM class updates until after Angular renders the modal via *ngIf
+    setTimeout(() => {
       const modalElement = document.getElementById('ex_modal');
       if (modalElement) {
         modalElement.classList.add('show');
@@ -427,10 +429,11 @@ export class S75003Page implements OnInit {
           document.body.appendChild(backdrop);
         }
       }
-    } catch (error) {
-      console.error('Error opening modal:', error);
-    }
+    }, 0);
+  } catch (error) {
+    console.error('Error opening modal:', error);
   }
+}
 
   closeHintModal() {
     try {
