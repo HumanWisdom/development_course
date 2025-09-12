@@ -114,7 +114,7 @@
             <a class="prelative display_flex" (click)="disableClick ? $event.preventDefault() : goToNotification()">
               <img
                 *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0"
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/alert_badge_inactive.svg"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/notification.svg"
                  class="prelative" alt="">
               <img
                 *ngIf="!loginResponse || !loginResponse?.NewNotifications || loginResponse?.NewNotifications === 0"

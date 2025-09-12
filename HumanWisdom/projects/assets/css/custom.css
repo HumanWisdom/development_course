@@ -32893,7 +32893,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 {
   border: 1px solid #000000;
   opacity: 0.1;
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .odiv_mdp > [class^="col-"]
@@ -33448,7 +33448,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   background: #FFE8BB;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
-  padding: 20px !important;
+  padding: 10px !important;
   white-space: normal;
 }
 
@@ -37824,7 +37824,8 @@ span
   border: 1px solid rgba(0, 0, 0, 0.25);
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
   margin: 0 auto;
-  height: 81px;
+  height: 88px;
+  opacity:100% !important;
   display: -webkit-inline-box;
   display: inline-block;
 }
