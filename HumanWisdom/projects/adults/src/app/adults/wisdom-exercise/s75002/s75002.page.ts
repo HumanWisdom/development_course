@@ -220,7 +220,7 @@ export class S75002Page implements OnInit, AfterViewInit {
     } else if (event === "4") {
       this.startTime = Date.now();
       this.slideStart = 0;
-      this.totalSlidesCount = 3;
+      this.totalSlidesCount = 4;
       this.currentDay = 4;
       this.details = this.slideStart + "/" + this.totalSlidesCount;
       this.enableintro = false;

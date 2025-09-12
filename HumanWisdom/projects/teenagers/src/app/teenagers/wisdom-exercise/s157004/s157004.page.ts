@@ -160,6 +160,7 @@ export class S157004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p0";
       this.dayclass = "intro";
       this.currentDay = 0;
@@ -178,6 +179,7 @@ export class S157004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p1";
       this.dayclass = "1";
       this.currentDay = 1;
@@ -198,6 +200,7 @@ export class S157004Page implements OnInit {
       this.enableday9 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p2";
       this.dayclass = "2";
       this.currentDay = 2;
@@ -216,6 +219,7 @@ export class S157004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p3";
       this.dayclass = "3";
       this.currentDay = 3;
@@ -234,6 +238,7 @@ export class S157004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p4";
       this.dayclass = "4";
       this.currentDay = 4;
@@ -252,6 +257,7 @@ export class S157004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p5";
       this.dayclass = "5";
       this.currentDay = 5;
@@ -270,6 +276,7 @@ export class S157004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p6";
       this.dayclass = "6";
       this.currentDay = 6;
@@ -288,6 +295,7 @@ export class S157004Page implements OnInit {
       this.enableday7 = true;
       this.enableday8 = false;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p7";
       this.dayclass = "7";
       this.currentDay = 7;
@@ -306,6 +314,7 @@ export class S157004Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = true;
       this.enableday9 = false;
+      this.enableday10 = false;
       this.screenNumber = "157004p8";
       this.dayclass = "8";
       this.currentDay = 8;
@@ -323,8 +332,8 @@ export class S157004Page implements OnInit {
       this.enableday6 = false;
       this.enableday7 = false;
       this.enableday8 = false;
-      this.enableday9 = false;
-      this.enableday10 = true;
+      this.enableday9 = true;
+      this.enableday10 = false;
       this.screenNumber = "157004p9";
       this.dayclass = "9";
       this.currentDay = 9;
@@ -513,17 +522,19 @@ export class S157004Page implements OnInit {
     }
   }
 
-  openHintModal() {
-    try {
-      // Get the hint from the currently active carousel item
-      const activeItem = document.querySelector('.carousel-item.active app-journal-we');
-      if (activeItem) {
-        const hint = (activeItem as HTMLElement).getAttribute('data-hint');
-        this.hintMessage = hint || '';
-      }
+openHintModal() {
+  try {
+    // Get the hint from the currently active carousel item
+    const activeItem = document.querySelector('.carousel-item.active app-journal-we');
+    if (activeItem) {
+      const hint = (activeItem as HTMLElement).getAttribute('data-hint');
+      this.hintMessage = hint || '';
+    }
 
-      this.showHintModal = true;
+    this.showHintModal = true;
 
+    // Defer DOM class updates until after Angular renders the modal via *ngIf
+    setTimeout(() => {
       const modalElement = document.getElementById('ex_modal');
       if (modalElement) {
         modalElement.classList.add('show');
@@ -536,10 +547,11 @@ export class S157004Page implements OnInit {
           document.body.appendChild(backdrop);
         }
       }
-    } catch (error) {
-      console.error('Error opening modal:', error);
-    }
+    }, 0);
+  } catch (error) {
+    console.error('Error opening modal:', error);
   }
+}
 
   closeHintModal() {
     try {
