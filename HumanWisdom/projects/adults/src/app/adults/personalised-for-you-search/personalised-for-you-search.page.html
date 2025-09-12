@@ -43,7 +43,7 @@
                   <div class="panel panel-default dpanel_daily dpanel_01">
                      
                     <div id="ca_mdp">
-                      <div class="panel-body">
+                      <div class="">
 
                         <div class="row">
                           <div class="odiv odiv_mdp pl0">
@@ -196,7 +196,7 @@
             <!-- find inspiration -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="row p-bt">
+                <div class="row ">
                   <h2 class="inspiration-title">Find inspiration</h2>
                   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 odiv p-section">
                     <app-find-inspiration></app-find-inspiration>
@@ -252,7 +252,7 @@
                     </div>
                   </div>
 
-                  <div class="row mb20px">
+                  <div class="row mb20px mt5px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fw_400 fs_12px lh_140p fc_000000">
                         Explore our 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.
@@ -300,13 +300,13 @@
               </div>
               </div>
               
-                <div class="row mr-20pxi mt20px">
+                <div class="row mr-10pxi mt20px">
                   <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_pathway">
 
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
                       <a class="prelative" (click)="navigateToPathway('/adults/pathway/develop-a-calm-mind')">
                         <div class="prelative">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/p_01.webp" alt="Happiness" class="ctimg">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/pathway_new.svg" alt="Happiness" class="ctimg">
 
                           <h4 class="mtb0px fw_700 fs_18px lh_120p fc_ffffff ptileno">
                             01
@@ -645,7 +645,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel_new dpanel_01 plr20px">
-                    <div class="mb20px" >
+                    <div class="mb10px" >
                       <h4 class="panel-title dpaneltitle">
                         <!-- <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#ca_mdp" aria-expanded="true"> -->
                         <div aria-expanded="true">
@@ -657,7 +657,7 @@
                                 </h2>
                                
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4  plr15px " *ngIf="isloggedIn" (click)="viewDetails()">
+                              <div class="col-md-4 col-sm-4 col-xs-4  pl18px " *ngIf="isloggedIn" (click)="viewDetails()">
                                 <a  (click)="viewDetails()">
                                   <h2 class="mtb0px fs_12px fw_500 lh_150p fc_D7586B tright td_underline flex_ai">
                                     View details
@@ -1048,7 +1048,7 @@
           <h4 class="panel-title">
             <a class="accordion-toggle" (click)="toggleAccordion()">
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-md-12 col-sm-12 col-xs-12 ">
                   <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
                     Make the world a better place
                     <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }" style="float: right;">
@@ -1060,7 +1060,7 @@
             </a>
           </h4>
         </div>
-       <div [ngClass]="getExpandClass()" [@accordionAnimation]="isExpanded ? 'expanded' : 'collapsed'" class="panel-collapse mt10px of-h"style="overflow:visible !important">
+       <div [ngClass]="getExpandClass()" [@accordionAnimation]="isExpanded ? 'expanded' : 'collapsed'" class="panel-collapse  of-h"style="overflow:visible !important">
           <div class="panel-body border-0">
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
@@ -1327,7 +1327,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_02">
+                <hr class="hr_style_v3_02make">
               </div>
             </div>
             <!-- /accordion -->
