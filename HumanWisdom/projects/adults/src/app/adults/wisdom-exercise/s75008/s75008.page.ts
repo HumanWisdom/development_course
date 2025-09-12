@@ -312,9 +312,11 @@ export class S75008Page implements OnInit {
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
+
     setTimeout(() => {
       if (this.slideStart < this.totalSlidesCount) {
-        this.slideStart = this.slideStart + 1;
+        this.slideStart++;
+
         if (this.slideStart == this.totalSlidesCount) {
           this.nextDay = this.currentDay + 1;
           setTimeout(() => {
@@ -325,41 +327,46 @@ export class S75008Page implements OnInit {
         }
 
       } else if (this.slideStart == this.totalSlidesCount) {
-        this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
-          "ScreenNo": '75008p' + (parseInt(this.screenNumber.substring(6, 7))),
+          "ScreenNo": this.screenNumber,
           "ModuleID": 75,
           "SessionID": 0,
-        })
-        if(this.currentDay>this.totaldays){
+        });
+
+        this.currentDay++;
+
+        if (this.currentDay > 10) { // After Day 10 go to next session
           this.router.navigate(['adults/wisdom-exercise/s75009']);
-        }else{
+        } else {
           this.getdayevent(this.currentDay.toString());
         }
       } else {
         this.slideStart = 1;
       }
-      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
-      var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
-        children[1]?.children[0]?.lastChild?.classList.value;
-      if (data == undefined) {
-        data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
-          children[1]?.children[0]?.lastChild?.classList.value;
+
+      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) 
+        + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+
+      let data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]
+        ?.children[1]?.children[0]?.lastChild?.classList.value;
+
+      if (!data) {
+        data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]
+          ?.children[1]?.children[0]?.lastChild?.classList.value;
       }
-      if (data == "audio-test") {
-        this.isShowButton=true;
+
+      if (data === "audio-test") {
+        this.isShowButton = true;
         this.isShowTranscript = true;
-        this.isShowAudio=false;
+        this.isShowAudio = false;
       } else {
-        this.isShowButton=false;
+        this.isShowButton = false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
+
       this.setHint();
     }, 700);
-   
-
-
   }
 
   getClass(day) {

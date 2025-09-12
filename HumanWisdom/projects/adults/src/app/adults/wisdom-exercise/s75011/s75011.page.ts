@@ -225,7 +225,7 @@ export class S75011Page implements OnInit {
     }
     else if (event === '8') {
       this.slideStart = 0;
-      this.totalSlidesCount = 6;
+      this.totalSlidesCount = 5;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
