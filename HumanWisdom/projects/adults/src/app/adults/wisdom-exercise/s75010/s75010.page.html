@@ -145,7 +145,7 @@
 
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                              <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
                                 Introduction - Learn an amazing new skill
                               </h4>
                             </div>
@@ -384,12 +384,9 @@
 
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
-                                Day 1
                                 <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
                                   A simple breathing exercise to quieten your mind
                                 </h4>
-                              </h4>
                             </div>
                           </div>
 
@@ -547,7 +544,10 @@
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                                Day 2
+                              <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
                                 Begin with a conversation
+                              </h4>
                               </h4>
                             </div>
                           </div>
@@ -720,14 +720,8 @@
 
                   <div class="carousel-inner">
 
-                    <!-- journal -->
-                    <div class="carousel-item active">
-                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="984" data-hint=" Did you feel restless initially, but then more relaxed afterwards?"></app-journal-we>
-                    </div>
-                    <!-- /journal -->
-
                     <!-- audio -->
-                    <div class="carousel-item">
+                    <div class="carousel-item active">
                       <div class="row center_flex p20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
@@ -778,6 +772,12 @@
                       <!-- /transcript -->
                     </div>
                     <!-- /audio -->
+
+                    <!-- journal -->
+                    <div class="carousel-item">
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="984" data-hint=" Did you feel restless initially, but then more relaxed afterwards?"></app-journal-we>
+                    </div>
+                    <!-- /journal -->
 
                     <!-- journal -->
                     <div class="carousel-item">
@@ -961,12 +961,10 @@
 
                           <div class="row center_flex">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
-                                Day 4
+                                
                                 <h4 class="mt10px mb0px fs_24px fw_500 lh_130p fc_e58d82">
                                   Noticing habits around food
                                 </h4>
-                              </h4>
                             </div>
                           </div>
 
@@ -1730,11 +1728,6 @@
       <a>
         <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p7')" (click)="getdayevent('7')">
           Day 7
-        </button>
-      </a>
-      <a>
-        <button type="button" class="btn btn_wec" [ngClass]="getClass('75011p8')" (click)="getdayevent('8')">
-          Day 8
         </button>
       </a>
     </div>

@@ -223,7 +223,7 @@ export class S75009Page implements OnInit {
     }
     else if (event === '7') {
       this.slideStart = 0;
-      this.totalSlidesCount = 5;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -280,7 +280,7 @@ export class S75009Page implements OnInit {
     }
     else if (event === '10') {
       this.slideStart = 0;
-      this.totalSlidesCount = 10;
+      this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
       this.enableintro = false;
       this.enableday1 = false;
@@ -524,18 +524,21 @@ openHintModal() {
 
     this.showHintModal = true;
 
-    const modalElement = document.getElementById('ex_modal');
-    if (modalElement) {
-      modalElement.classList.add('show');
-      document.body.classList.add('modal-open');
+    // Defer DOM class updates until after Angular renders the modal via *ngIf
+    setTimeout(() => {
+      const modalElement = document.getElementById('ex_modal');
+      if (modalElement) {
+        modalElement.classList.add('show');
+        document.body.classList.add('modal-open');
 
-      // Add backdrop if it doesn't exist
-      if (!document.querySelector('.modal-backdrop')) {
-        const backdrop = document.createElement('div');
-        backdrop.className = 'modal-backdrop fade show';
-        document.body.appendChild(backdrop);
+        // Add backdrop if it doesn't exist
+        if (!document.querySelector('.modal-backdrop')) {
+          const backdrop = document.createElement('div');
+          backdrop.className = 'modal-backdrop fade show';
+          document.body.appendChild(backdrop);
+        }
       }
-    }
+    }, 0);
   } catch (error) {
     console.error('Error opening modal:', error);
   }

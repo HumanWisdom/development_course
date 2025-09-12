@@ -37125,7 +37125,16 @@ section > .row
 a.fc_e58d82:focus, 
 a.fc_e58d82:hover 
 {
-  color: #e58d82;
+  color: #e58d82 !important;
+}
+
+#mdp_carousel_intro .btn_next_v3:hover,
+#mdp_carousel_intro .btn_next_v3:focus,
+a[href^="#mdp_carousel_day"] .btn_next_v3:hover,
+a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
+  color: #e58d82 !important;
+  background-color: #FFF;
+  border-color: transparent;
 }
 
 .profile_pe_div_01

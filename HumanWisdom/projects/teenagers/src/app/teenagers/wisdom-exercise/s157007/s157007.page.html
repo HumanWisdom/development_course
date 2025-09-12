@@ -767,7 +767,7 @@
                           <div class="row center_flex mb20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fs_24px fw_400 lh_150p fc_ffffff">
-                                Excessively self-criticism can make us:
+                                Excessive self-criticism can make us:
                               </h4>
                             </div>
                           </div>
@@ -1087,6 +1087,12 @@
                       <!-- /transcript -->
                     </div>
                     <!-- /audio -->
+                     
+                    <!-- journal -->
+                    <div class="carousel-item" (swipe)="onSwipe($event)">
+                      <app-journal-we (guestEvent)="guestEvent($event)"  [rId]="2429" data-hint="It is okay if you could not manage that. Keep exploring that."></app-journal-we>
+                    </div>
+                    <!-- /journal -->
 
                     <!-- exercise -->
                     <div class="carousel-item" (swipe)="onSwipe($event)">
@@ -1355,7 +1361,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <ul class="mtb0px fs_15px fw_400 lh_150p fc_ffffff wec_ul">
                                 <li class="">
-                                  Feel anxious what others are thinking
+                                  Feel anxious about what others are thinking
                                 </li>
 
                                 <li class="">
