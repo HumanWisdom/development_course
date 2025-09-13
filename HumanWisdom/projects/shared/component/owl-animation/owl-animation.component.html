@@ -1,0 +1,36 @@
+<div class="owl-animation-wrapper" style="width: 15%;height: 15%;"
+     [ngClass]="{'center': isPlaying || isTransitioning, 'corner': isAtCorner, 'transitioning': isTransitioning}">
+   
+<video
+  #videoElement
+  class="owl-video"
+  autoplay
+  playsinline
+  preload="auto"
+  webkit-playsinline
+  x5-playsinline
+  x5-video-player-type="h5"
+  x5-video-player-fullscreen="false"
+  controls
+  loop
+  draggable="false"
+  poster="">
+  <source src="assets/video/final.mp4" type="video/mp4">
+  <source src="assets/video/final.webm" type="video/webm">
+  <source src="assets/video/final.mov" type="video/quicktime">
+  Your browser does not support the video tag.
+</video>
+
+
+
+  <!-- Debug Info (remove in production) -->
+  <div class="debug-info" *ngIf="videoError">
+    <p>Video Error: WebM format may not be supported in this browser</p>
+    <p>Please check browser compatibility or use MP4 format as fallback</p>
+  </div>
+
+  <!-- Loading indicator -->
+  <div class="loading-indicator" *ngIf="!videoLoaded && !videoError">
+    <p>Loading owl animation...</p>
+  </div>
+</div>

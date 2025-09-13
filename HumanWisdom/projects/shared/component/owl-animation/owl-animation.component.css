@@ -1,0 +1,181 @@
+.owl-animation-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+  /* Mobile performance optimizations */
+  will-change: transform;
+  -webkit-transform: translate(-50%, -50%);
+  -webkit-transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.owl-animation-wrapper.corner {
+  top: auto;
+  left: auto;
+  bottom: 30px;
+  right: 37rem;
+  transform: none;
+  -webkit-transform: none;
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.owl-animation-wrapper.transitioning {
+  /* Optionally scale up or add effect during transition */
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
+}
+
+.owl-video {
+
+  width: 100%;
+  max-width: 1080px;   /* match video source resolution */
+  height: auto;
+  transform: scale(0.4);    /* shrink to 40% size */
+  transform-origin: center center;
+
+  max-height: 90vh;
+  border-radius: 18px;
+  /*box-shadow: 0 8px 32px rgba(0,0,0,0.25);*/
+  background: transparent;
+  user-select: none;
+  pointer-events: none;
+  transition: box-shadow 0.3s, border-radius 0.3s;
+  /* High quality video settings */
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  object-fit: contain;
+  /* Ensure video is visible */
+  display: block;
+  /* High quality rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  /* Additional quality enhancements */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Text visibility enhancements */
+  filter: contrast(1.1) brightness(1.05);
+  /* Hide video controls */
+  &::-webkit-media-controls {
+    display: none !important;
+  }
+  &::-webkit-media-controls-panel {
+    display: none !important;
+  }
+  &::-webkit-media-controls-play-button {
+    display: none !important;
+  }
+  &::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+}
+
+/* Debug and Loading Indicators */
+.debug-info, .loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  z-index: 1001;
+}
+
+.debug-info p, .loading-indicator p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.loading-indicator {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .owl-video {
+    width: 400px;
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+  
+  .owl-animation-wrapper.corner {
+    bottom: 25px;
+    right: 25px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .owl-video {
+    width: 280px;
+    max-width: 85vw;
+    max-height: 70vh;
+    border-radius: 12px;
+    object-fit: contain;
+  }
+  
+  .owl-animation-wrapper.corner {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .owl-video {
+    width: 240px;
+    max-width: 90vw;
+    max-height: 65vh;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  
+  .owl-animation-wrapper.corner {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Extra small mobile styles */
+@media (max-width: 360px) {
+  .owl-video {
+    width: 200px;
+    max-width: 95vw;
+    max-height: 60vh;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  
+  .owl-animation-wrapper.corner {
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+/* Mobile-specific performance optimizations */
+@media (max-width: 768px) {
+  .owl-animation-wrapper {
+    /* Reduce transition duration for mobile */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .owl-animation-wrapper.corner {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .owl-video {
+    /* Enhanced text visibility for mobile */
+    filter: contrast(1.2) brightness(1.1) saturate(1.1);
+  }
+} 
