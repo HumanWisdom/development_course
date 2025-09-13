@@ -211,7 +211,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     QuestionAnswersSelection,
     CommonScreenPage,
     HomeComponent,
-    ContentCardComponent
+    ContentCardComponent,
+    OwlAnimationComponent
   ],
   imports: [
     CommonModule,

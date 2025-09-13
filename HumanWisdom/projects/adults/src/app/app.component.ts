@@ -57,6 +57,7 @@ export class AppComponent implements OnDestroy {
   isEnableHam = true;
   enablebanner = false;
   isShowHeader = false;
+  owlEnable = true; 
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
   userdetail:any;
