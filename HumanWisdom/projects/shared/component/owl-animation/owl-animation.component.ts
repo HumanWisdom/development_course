@@ -80,7 +80,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     console.log('Setting up video element:', video);
     
     // Set video source - use the same source as in HTML
-    const videoSrc = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/videos/owl-animation.mp4';
+    const videoSrc = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/videos/final.webm';
     console.log('Video source:', videoSrc);
     video.src = videoSrc;
     

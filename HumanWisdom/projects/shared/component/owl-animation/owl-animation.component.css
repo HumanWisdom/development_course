@@ -6,6 +6,8 @@
   z-index: 1000;
   transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   pointer-events: none;
+  background: transparent;
+  background-color: transparent;
   /* Mobile performance optimizations */
   will-change: transform;
   -webkit-transform: translate(-50%, -50%);
@@ -15,8 +17,8 @@
 .owl-animation-wrapper.corner {
   top: auto;
   left: auto;
-  bottom: 30px;
-  right: 37rem;
+  bottom: 65px;
+  right: 48rem;
   transform: none;
   -webkit-transform: none;
   transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -29,7 +31,6 @@
 }
 
 .owl-video {
-
   width: 100%;
   max-width: 1080px;   /* match video source resolution */
   height: auto;
@@ -40,6 +41,7 @@
   border-radius: 18px;
   /*box-shadow: 0 8px 32px rgba(0,0,0,0.25);*/
   background: transparent;
+  background-color: transparent;
   user-select: none;
   pointer-events: none;
   transition: box-shadow 0.3s, border-radius 0.3s;
