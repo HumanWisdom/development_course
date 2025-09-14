@@ -49,6 +49,8 @@ export interface ContentCard {
   overlayIcon?: string;
   path?: string;
   moduleType?: string;
+  isFree?: string | number; // "0" means locked, "1" means free
+  isRead?: string | number; // "0" means not read, "1" means read/completed
 }
 
 export interface ContentSection {
@@ -99,22 +101,25 @@ export class HomeComponent implements OnInit {
   @Output() navigationChange = new EventEmitter<string>();
   @Output() cardClick = new EventEmitter<ContentCard>();
   @Output() sectionToggle = new EventEmitter<ContentSection>();
-
+  personalisedList = [];
+  YourTopicofChoice;
   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
-
+   mainheader:string='';
   constructor(private router: Router, private commonService: CommonService) {
     this.navigationItems = SharedService.getPreferenceData();
    }
 
   ngOnInit(): void {
     this.loadHomeContents(2);
+     this.getUserPreference();
     console.log('Home component initialized');
   }
 
    loadHomeContents(id): void {
     this.commonService.GetHomeContents(9, id).subscribe((res: HomeContentResponse) => {
       if (res) {
+        this.mainheader =res.MainHeader;
         console.log('Raw API response:', res);
         this.contentSections = this.transformApiResponseToContentSections(res);
         console.log('Transformed content sections:', this.contentSections);
@@ -245,7 +250,7 @@ export class HomeComponent implements OnInit {
     const cardsArray = Array.isArray(section.Cards) ? section.Cards : (Array.isArray(section.cards) ? section.cards : []);
 
     const rawType = typeof section.sectionType === 'string' ? Number(section.sectionType) : section.sectionType;
-    const isVertical = rawType === 2;
+    const isVertical = rawType === 2 || rawType === 3;
 
     const transformedCards = this.transformCards(cardsArray, sectionType);
 
@@ -262,6 +267,29 @@ export class HomeComponent implements OnInit {
       rawSectionType: rawType,
       isVerticalCards: isVertical
     };
+  }
+
+   getUserPreference() {
+    this.commonService.getUserpreference().subscribe((res) => {
+      let perd = this.commonService.getperList();
+      this.personalisedList = []
+      if (res) {
+        localStorage.setItem('userPreference', res);
+        perd.forEach((r) => {
+          if (res === r.id) {
+            r['active'] = true;
+            this.personalisedList.push(r);
+          } else {
+            r['active'] = false;
+            this.personalisedList.push(r);
+          }
+        })
+        this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+      console.log('YourTopicofChoice', this.YourTopicofChoice);
+        console.log(this.YourTopicofChoice);
+        
+      }
+    })
   }
 
   /**
@@ -304,7 +332,9 @@ export class HomeComponent implements OnInit {
       duration: card.Timing || card.timing || '',
       overlayIcon: card.overlayIcon || card.icon_path || '',
       path: card.URL || card.path || '',
-      moduleType: card.cardtype || card.module || ''
+      moduleType: card.cardtype || card.module || '',
+      isFree: card.isFree,
+      isRead: card.isRead
     };
   }
 
@@ -318,7 +348,9 @@ export class HomeComponent implements OnInit {
       duration: card.Timing || (card.SessionCnt ? `${card.SessionCnt} sessions` : ''),
       overlayIcon: card.overlayIcon || '',
       path: card.URL || card.path || card.modulePath || '',
-      moduleType: card.cardtype || 'MODULE'
+      moduleType: card.cardtype || 'MODULE',
+      isFree: card.isFree,
+      isRead: card.isRead
     };
   }
 
@@ -332,7 +364,9 @@ export class HomeComponent implements OnInit {
       duration: card.Timing || card.isRead || '',
       overlayIcon: card.overlayIcon || '',
       path: card.URL || `/adults/blog-article?sId=${card.BlogID}`,
-      moduleType: card.cardtype || 'BLOG'
+      moduleType: card.cardtype || 'BLOG',
+      isFree: card.isFree,
+      isRead: card.isRead
     };
   }
 
@@ -346,7 +380,9 @@ export class HomeComponent implements OnInit {
       duration: card.Timing || card.isRead || '',
       overlayIcon: card.overlayIcon || '',
       path: card.URL || `/adults/wisdom-stories/${card.ScenarioID}`,
-      moduleType: card.cardtype || 'STORY'
+      moduleType: card.cardtype || 'STORY',
+      isFree: card.isFree,
+      isRead: card.isRead
     };
   }
 
@@ -360,7 +396,9 @@ export class HomeComponent implements OnInit {
       duration: card.Timing || '',
       overlayIcon: card.overlayIcon || 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg',
       path: card.URL || `/adults/podcast/${card.PodcastID}`,
-      moduleType: card.cardtype || 'PODCAST'
+      moduleType: card.cardtype || 'PODCAST',
+      isFree: card.isFree,
+      isRead: card.isRead
     };
   }
 
@@ -374,7 +412,9 @@ export class HomeComponent implements OnInit {
       duration: card.Timing || '',
       overlayIcon: card.overlayIcon || 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg',
       path: card.URL || card.VideoUrl || card.path || '',
-      moduleType: card.cardtype || 'VIDEO'
+      moduleType: card.cardtype || 'VIDEO',
+      isFree: card.isFree,
+      isRead: card.isRead
     };
   }
 
@@ -388,7 +428,9 @@ export class HomeComponent implements OnInit {
       duration: card.Timing || card.timing || card.duration || '',
       overlayIcon: card.overlayIcon || card.icon_path || '',
       path: card.URL || card.path || '',
-      moduleType: card.cardtype || card.module || card.moduleType || ''
+      moduleType: card.cardtype || card.module || card.moduleType || '',
+      isFree: card.isFree,
+      isRead: card.isRead
     };
   }
 
@@ -448,9 +490,10 @@ export class HomeComponent implements OnInit {
 
   getDisplayCards(section: ContentSection): any[] {
     const isStoriesOrBlogs = section.rawSectionType === 2;
+    const isQuickAnswers = section.rawSectionType === 3;
     const showAll = this.showAllCards[section.id];
 
-    if (isStoriesOrBlogs && !showAll) {
+    if ((isStoriesOrBlogs || isQuickAnswers) && !showAll) {
       return section.cards?.slice(0, 3) || [];
     }
 
@@ -467,17 +510,19 @@ export class HomeComponent implements OnInit {
 
   shouldShowViewAll(section: ContentSection): boolean {
     const isStoriesOrBlogs = section.rawSectionType === 2;
+    const isQuickAnswers = section.rawSectionType === 3;
     const showAll = this.showAllCards[section.id];
     const hasMoreThan3Cards = (section.cards?.length || 0) > 3;
 
-    return isStoriesOrBlogs && !showAll && hasMoreThan3Cards;
+    return (isStoriesOrBlogs || isQuickAnswers) && !showAll && hasMoreThan3Cards;
   }
 
   shouldShowViewLess(section: ContentSection): boolean {
     const isStoriesOrBlogs = section.rawSectionType === 2;
+    const isQuickAnswers = section.rawSectionType === 3;
     const showAll = this.showAllCards[section.id];
     const hasMoreThan3Cards = (section.cards?.length || 0) > 3;
 
-    return isStoriesOrBlogs && showAll && hasMoreThan3Cards;
+    return (isStoriesOrBlogs || isQuickAnswers) && showAll && hasMoreThan3Cards;
   }
 }

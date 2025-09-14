@@ -176,9 +176,11 @@ background: #FFF4E6;
 }
 
 .section-header {
-  height: 105px;
+  height: 75px;
+  padding: 10px;
   width: auto;
 }
+
 
 /* Long term solutions section styling */
 .long-term-solutions-header {
@@ -213,4 +215,32 @@ background: #FFF4E6;
 
 .view-toggle-btn:hover {
   color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Quick Answers (sectionType 3) styling */
+.quick-answers-header {
+  background-color: rgba(173, 216, 230, 0.8) !important; /* Light blue background */
+}
+
+.quick-answer-card {
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  min-height: 60px;
+  background-color: rgba(255, 232, 187, 1) !important; /* Light orange/cream background */
+}
+
+.quick-answer-card:hover {
+  background-color: rgba(255, 232, 187, 0.9) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quick-answer-card h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+  margin: 0;
 }

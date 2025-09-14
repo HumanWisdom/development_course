@@ -15,6 +15,10 @@
   gap: 2px;
 }
 
+.end-50{
+  right: 50px !important;
+}
+
 .custom-box-text-container-title {
   font-family: Poppins;
 font-weight: 500;
@@ -73,4 +77,42 @@ height: 35px;
 .overlay-icon i {
   color: white;
   font-size: 1.5rem;
+}
+
+/* Status Icons Styling */
+.status-icons {
+  z-index: 10; /* Ensure icons appear above other elements */
+}
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Tick Icon - Red background with white checkmark */
+.tick-icon {
+  background-color: #dc3545; /* Bootstrap danger red */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tick-icon i {
+  color: white !important;
+  font-size: 10px;
+}
+
+/* Lock Icon - Grey background with white lock */
+.lock-icon {
+  background-color: #6c757d; /* Bootstrap secondary grey */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.lock-icon i {
+  color: white !important;
+  font-size: 10px;
 }

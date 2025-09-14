@@ -12,16 +12,18 @@
           <div class="x_content p0">
 
             <div class="row home-container">
-              <div class="col-12">
+              <div class="col-12 border-bottom">
                 <div class="d-flex flex-wrap">
                   <div class="nav-menu">
-                      <a *ngFor="let item of navigationItems"
+                    <ng-container *ngFor="let item of navigationItems">
+                      <a *ngIf="item.id!='999'"
                          class="nav-item"
                          [class.nav-item--selected]="item.active"
                          [class.nav-item--unselected]="!item.active"
                          (click)="onNavigationClick(item)">
-                        <span *ngIf="item.id!='999'">{{ item.displayName }}</span>
+                        <span >{{ item.displayName }}</span>
                       </a>
+                      </ng-container>
                   </div>
                 </div>
               </div>
@@ -30,7 +32,7 @@
             <div class="row home-container">
               <div class="col-12">
                 <div class="p-3">
-                  <p class="text-muted mb-0 mt-4">{{ description }}</p>
+                  <p class="text-muted mb-0 mt-4">{{ mainheader }}</p>
                 </div>
               </div>
             </div>
@@ -82,8 +84,20 @@
                                     </p>
                                   </div>
                                 </div>
+                                <!-- Special layout for Quick Answers (sectionType 3) -->
+                                <div *ngIf="section.rawSectionType === 3" 
+                                     class="quick-answer-card d-flex align-items-center justify-content-between p-3 cursor-pointer" 
+                                     style="background-color: rgba(255, 232, 187, 1);"
+                                     (click)="onCardClick(card)">
+                                  <div class="flex-grow-1">
+                                    <span class="mb-0 fw-normal fs15">{{ card.title }}</span>
+                                  </div>
+                                  <div class="ms-3">
+                                   <span class="fs15">  > </span>
+                                  </div>
+                                </div>
                                 <!-- Default card layout for other sections -->
-                                <app-content-card *ngIf="section.rawSectionType !== 2"
+                                <app-content-card *ngIf="section.rawSectionType !== 2 && section.rawSectionType !== 3"
                                                   [card]="card" 
                                                   (cardClick)="onCardClick($event)">
                                 </app-content-card>
@@ -120,6 +134,7 @@
                       <!-- Section Header (clickable for accordion) -->
                       <div class="d-flex justify-content-between align-items-center p-3 section-header rounded-top border-bottom cursor-pointer"
                            [class.long-term-solutions-header]="section.title === 'Long term solutions'"
+                           [class.quick-answers-header]="section.rawSectionType === 3"
                            (click)="onSectionToggle(section)"
                            (keydown.enter)="onSectionToggle(section)"
                            (keydown.space)="onSectionToggle(section)"
@@ -186,8 +201,20 @@
                                       </p>
                                     </div>
                                   </div>
+                                  <!-- Special layout for Quick Answers (sectionType 3) -->
+                                  <div *ngIf="section.rawSectionType === 3" 
+                                       class="quick-answer-card d-flex align-items-center justify-content-between p-3 cursor-pointer" 
+                                       style="background-color: rgba(255, 232, 187, 1);"
+                                       (click)="onCardClick(card)">
+                                    <div class="flex-grow-1">
+                                      <h6 class="mb-0 fw-normal">{{ card.title }}</h6>
+                                    </div>
+                                    <div class="ms-3">
+                                      <i class="fas fa-chevron-right text-dark"></i>
+                                    </div>
+                                  </div>
                                   <!-- Default card layout for other sections -->
-                                  <app-content-card *ngIf="section.rawSectionType !== 2"
+                                  <app-content-card *ngIf="section.rawSectionType !== 2 && section.rawSectionType !== 3"
                                                     [card]="card" 
                                                     (cardClick)="onCardClick($event)">
                                   </app-content-card>
