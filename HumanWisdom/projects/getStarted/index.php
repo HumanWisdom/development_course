@@ -1395,7 +1395,7 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href=" https://happierme.app/pages/work.php" iaria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                    <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>
@@ -1435,7 +1435,7 @@ require_once('./includes/security_config.php');
               <div class="row d_none">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/education.php" aria-label="Explore the teenagers app" class="">
-                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>
@@ -1476,7 +1476,7 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>

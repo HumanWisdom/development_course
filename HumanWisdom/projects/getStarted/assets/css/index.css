@@ -1,13 +1,14 @@
     .h5 {
       margin-top: -8px;
-    }
-
-    
+    }    
     .color_beige{
       background: #FFF4E6;
     }
     .card_gap{
       gap:45px;
+    }
+    .w-40p{
+      width:40%
     }
 
     @media screen and (max-width: 768px) {
