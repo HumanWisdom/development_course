@@ -33354,13 +33354,13 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .odiv_pathway
 {
-  padding: 0 0 7px 7px;
+  padding: 0 0 7px 5px;
 }
 
 .odiv_pathway > [class^="col-"]
 {
   width: 65%;
-  padding: 0 20px 0 0 !important;
+  padding: 0 15px 0 0 !important;
 }
 
 .odiv_pathway > [class^="col-"]:last-child
@@ -33480,7 +33480,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .odiv_wfgi
 {
   /* padding: 0 0 10px 0; */
-  padding: 0 8px 10px 0;
+  padding: 0 8px 10px 20px;
 }
 
 .odiv_wfgi > [class^="col-"]
