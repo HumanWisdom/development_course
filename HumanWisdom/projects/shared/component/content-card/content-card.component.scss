@@ -19,6 +19,15 @@
   right: 50px !important;
 }
 
+/* Bottom right positioning for status icons */
+.bottom-0 {
+  bottom: 0 !important;
+}
+
+.end-0 {
+  right: 0 !important;
+}
+
 .custom-box-text-container-title {
   font-family: Poppins;
 font-weight: 500;
@@ -115,4 +124,20 @@ height: 35px;
 .lock-icon i {
   color: white !important;
   font-size: 10px;
+}
+
+/* Lock Icon Image - Custom SVG styling */
+.lock-icon-img {
+  width: 25px !important;
+  height: 35px !important;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes the SVG white */
+}
+
+/* Tick Icon Image - Custom SVG styling */
+.tick-icon-img {
+  width: 16px !important;
+  height: 16px !important;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes the SVG white */
 }

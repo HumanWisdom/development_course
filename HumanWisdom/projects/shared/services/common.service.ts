@@ -98,6 +98,10 @@ export class CommonService {
     return this.http.post(this.path + '/UserProgress', data)
   }
 
+    AddUserPreference(data: any): Observable<any> {
+      return this.http.post(this.path + `/AddUserPreference/${data}`, null)
+    }
+
   GetAudioMeditation(): Observable<any> {
     return this.http.get(this.path + '/GetAudioMeditationsListing');
   }

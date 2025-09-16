@@ -244,3 +244,11 @@ background: #FFF4E6;
   color: #000000;
   margin: 0;
 }
+
+/* Quick Answer Lock Icon Styling */
+.quick-answer-lock-icon {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain;
+  filter: brightness(0) invert(0.5); /* Makes the SVG grey */
+}

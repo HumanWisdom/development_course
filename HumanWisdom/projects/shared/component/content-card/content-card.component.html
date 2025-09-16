@@ -2,15 +2,21 @@
   <div class="card-image position-relative" style="height: auto;">
     <img [src]="card.imageUrl" [alt]="card.title" class="custom-box-img object-fit-cover">
 
-    <!-- Status Icons (Top Right Corner) -->
-    <div class="status-icons position-absolute top-0 end-50 p-2">
+    <!-- Status Icons (Bottom Right Corner) -->
+    <div class="status-icons position-absolute bottom-0 end-50 p-2">
       <!-- Tick Icon - Show when isRead is "1" -->
       <div *ngIf="shouldShowTickIcon()" class="status-icon tick-icon">
-        <i class="fas fa-check text-white"></i>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
+             alt="Read icon" 
+             class="tick-icon-img"
+             style="width: 16px; height: 16px;">
       </div>
       <!-- Lock Icon - Show when isFree is "0" -->
       <div *ngIf="shouldShowLockIcon()" class="status-icon lock-icon">
-        <i class="fas fa-lock text-white"></i>
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" 
+             alt="Lock icon" 
+             class="lock-icon-img"
+             style="width: 16px; height: 16px;">
       </div>
     </div>
 

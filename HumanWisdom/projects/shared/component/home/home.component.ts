@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -92,7 +92,7 @@ export interface ContentSection {
     ])
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   @Input() navigationItems= [];
   @Input() description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
 
@@ -101,19 +101,26 @@ export class HomeComponent implements OnInit {
   @Output() navigationChange = new EventEmitter<string>();
   @Output() cardClick = new EventEmitter<ContentCard>();
   @Output() sectionToggle = new EventEmitter<ContentSection>();
+  @ViewChild('sectionElement', { static: false }) sectionElement: ElementRef;
   personalisedList = [];
   YourTopicofChoice;
   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
    mainheader:string='';
   constructor(private router: Router, private commonService: CommonService) {
-    this.navigationItems = SharedService.getPreferenceData();
+    this.navigationItems = SharedService.getPreferenceDataForHome();
    }
 
   ngOnInit(): void {
-    this.loadHomeContents(2);
      this.getUserPreference();
     console.log('Home component initialized');
+  }
+
+  ngAfterViewInit(): void {
+    // Scroll to active personalized list after view is initialized
+    // setTimeout(() => {
+    //   this.scrollToActiveList();
+    // }, 100);
   }
 
    loadHomeContents(id): void {
@@ -123,6 +130,11 @@ export class HomeComponent implements OnInit {
         console.log('Raw API response:', res);
         this.contentSections = this.transformApiResponseToContentSections(res);
         console.log('Transformed content sections:', this.contentSections);
+        
+        // Scroll to active list after content is loaded
+        // setTimeout(() => {
+        //   this.scrollToActiveList();
+        // }, 200);
       } else {
         console.warn('API response is empty or null');
       }
@@ -269,9 +281,9 @@ export class HomeComponent implements OnInit {
     };
   }
 
-   getUserPreference() {
+   async getUserPreference() {
     this.commonService.getUserpreference().subscribe((res) => {
-      let perd = this.commonService.getperList();
+      let perd = SharedService.getPreferenceDataForHome();
       this.personalisedList = []
       if (res) {
         localStorage.setItem('userPreference', res);
@@ -284,10 +296,21 @@ export class HomeComponent implements OnInit {
             this.personalisedList.push(r);
           }
         })
-        this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+      this.loadHomeContents(Number(res));
+      this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
       console.log('YourTopicofChoice', this.YourTopicofChoice);
         console.log(this.YourTopicofChoice);
-        
+      }else{
+          this.loadHomeContents(2);
+         perd.forEach((r) => {
+          if (res === 2) {
+            r['active'] = true;
+            this.personalisedList.push(r);
+          } else {
+            r['active'] = false;
+            this.personalisedList.push(r);
+          }
+        });
       }
     })
   }
@@ -328,7 +351,7 @@ export class HomeComponent implements OnInit {
       imageUrl: card.imgUrl || card.image_path || card.imageUrl || '',
       title: card.title || '',
       subtitle: card.Subtitle || card.subtitle || '',
-      mediaType: this.mapModuleToMediaType(card.cardtype || card.module),
+      mediaType:card.cardtype,
       duration: card.Timing || card.timing || '',
       overlayIcon: card.overlayIcon || card.icon_path || '',
       path: card.URL || card.path || '',
@@ -344,7 +367,7 @@ export class HomeComponent implements OnInit {
       imageUrl: card.imgUrl || card.image_path || card.ImagePath || card.imageUrl || '',
       title: card.title || card.moduleName || card.Title || '',
       subtitle: card.Subtitle || card.sectionName || card.SectionName || card.subtitle || '',
-      mediaType: this.mapModuleToMediaType(card.cardtype || 'MODULE'),
+      mediaType: card.cardtype,
       duration: card.Timing || (card.SessionCnt ? `${card.SessionCnt} sessions` : ''),
       overlayIcon: card.overlayIcon || '',
       path: card.URL || card.path || card.modulePath || '',
@@ -360,7 +383,7 @@ export class HomeComponent implements OnInit {
       imageUrl: card.imgUrl || card.ImagePath || card.imageUrl || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || (card.LikeCnt ? `${card.LikeCnt} likes` : ''),
-      mediaType: this.mapModuleToMediaType(card.cardtype || 'BLOG'),
+      mediaType: card.cardtype,
       duration: card.Timing || card.isRead || '',
       overlayIcon: card.overlayIcon || '',
       path: card.URL || `/adults/blog-article?sId=${card.BlogID}`,
@@ -376,7 +399,7 @@ export class HomeComponent implements OnInit {
       imageUrl: card.imgUrl || card.Img || card.image || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || (card.PublishedOn ? new Date(card.PublishedOn).toLocaleDateString() : ''),
-      mediaType: this.mapModuleToMediaType(card.cardtype || 'SHORT'),
+      mediaType: card.cardtype,
       duration: card.Timing || card.isRead || '',
       overlayIcon: card.overlayIcon || '',
       path: card.URL || `/adults/wisdom-stories/${card.ScenarioID}`,
@@ -392,7 +415,7 @@ export class HomeComponent implements OnInit {
       imageUrl: card.imgUrl || card.ImageUrl || card.image || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || card.Timing || '',
-      mediaType: this.mapModuleToMediaType(card.cardtype || 'PODCAST'),
+      mediaType: card.cardtype,
       duration: card.Timing || '',
       overlayIcon: card.overlayIcon || 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg',
       path: card.URL || `/adults/podcast/${card.PodcastID}`,
@@ -408,7 +431,7 @@ export class HomeComponent implements OnInit {
       imageUrl: card.imgUrl || card.ImgUrl || card.image || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || (card.Timing ? `${card.Timing} min` : ''),
-      mediaType: this.mapModuleToMediaType(card.cardtype || 'VIDEO'),
+      mediaType: card.cardtype,
       duration: card.Timing || '',
       overlayIcon: card.overlayIcon || 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg',
       path: card.URL || card.VideoUrl || card.path || '',
@@ -424,7 +447,7 @@ export class HomeComponent implements OnInit {
       imageUrl: card.imgUrl || card.image_path || card.imageUrl || card.ImagePath || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || card.subtitle || '',
-      mediaType: this.mapModuleToMediaType(card.cardtype || card.module || 'VIDEO'),
+      mediaType: card.cardtype,
       duration: card.Timing || card.timing || card.duration || '',
       overlayIcon: card.overlayIcon || card.icon_path || '',
       path: card.URL || card.path || '',
@@ -434,38 +457,23 @@ export class HomeComponent implements OnInit {
     };
   }
 
-  private mapModuleToMediaType(module: string): 'VIDEO' | 'AUDIO' | 'BLOG' | 'FORUM' | 'BREATHING EXERCISE' | 'WELLNESS SURVEY' | 'PODCAST' | 'SHORT' {
-    if (!module) return 'VIDEO';
-    const upperModule = module.toUpperCase();
-    switch (upperModule) {
-      case 'VIDEO':
-        return 'VIDEO';
-      case 'AUDIO':
-      case 'PODCAST':
-        return 'PODCAST';
-      case 'BLOG':
-        return 'BLOG';
-      case 'FORUM':
-        return 'FORUM';
-      case 'BREATHING EXERCISE':
-        return 'BREATHING EXERCISE';
-      case 'WELLNESS SURVEY':
-        return 'WELLNESS SURVEY';
-      case 'SHORT':
-        return 'SHORT';
-      case 'MODULE':
-        return 'VIDEO'; // Modules are typically video content
-      default:
-        return 'VIDEO';
-    }
-  }
-
   onNavigationClick(item): void {
     console.log(item);
-    this.navigationItems.forEach(nav => nav.active = false);
+    this.personalisedList.forEach(nav => nav.active = false);
     item.active = true;
     this.loadHomeContents(item.id);
+    this.update(item.id);
+    // Update YourTopicofChoice to reflect the new active item
+    this.YourTopicofChoice = [item];
   }
+
+   update(id) {
+      console.log("update")
+      this.commonService.AddUserPreference(id).subscribe(res => {
+        if (res) {
+         console.log(res)
+     }})
+    };
 
   onCardClick(card: ContentCard): void {
     if (card.path) {
@@ -524,5 +532,41 @@ export class HomeComponent implements OnInit {
     const hasMoreThan3Cards = (section.cards?.length || 0) > 3;
 
     return (isStoriesOrBlogs || isQuickAnswers) && showAll && hasMoreThan3Cards;
+  }
+
+  /**
+   * Scroll to the active personalized list section
+   */
+  scrollToActiveList(): void {
+    if (this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
+      const activeItem = this.YourTopicofChoice[0];
+      console.log('Scrolling to active list:', activeItem);
+      
+      // Find the corresponding section in contentSections
+      const targetSection = this.contentSections.find(section => {
+        // Check if section title matches the active item's display name or name
+        return section.title === activeItem.displayName || 
+               section.title === activeItem.name ||
+               section.id === activeItem.id;
+      });
+
+      if (targetSection) {
+        const elementId = 'section-' + targetSection.id;
+        const element = document.getElementById(elementId);
+        
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start',
+            inline: 'nearest'
+          });
+          console.log('Scrolled to section:', targetSection.title);
+        } else {
+          console.warn('Element not found for section:', elementId);
+        }
+      } else {
+        console.warn('Target section not found for active item:', activeItem);
+      }
+    }
   }
 }
