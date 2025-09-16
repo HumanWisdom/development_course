@@ -917,17 +917,21 @@
   <div class="col-md-12 col-sm-12 col-xs-12 p0">
     <div class="panel-group">
       <div class="">
-        <div class="panel-heading">
+        <div class="panel-heading p0">
           <h4 class="panel-title">
             <a class="accordion-toggle" (click)="toggleAccordion()">
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-md-11 col-sm-11 col-xs-11 p0">
                   <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                     Make the world a better place
-                    <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }" style="float: right;">
+                  
+                  </h2>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1 p0 tright center_flex">
+
+                  <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }" >
                     
                     </span>
-                  </h2>
                 </div>
               </div>
             </a>
@@ -935,7 +939,7 @@
         </div>
 
         <div [ngClass]="getExpandClass()" [@accordionAnimation]="isExpanded ? 'expanded' : 'collapsed'" class="panel-collapse of-h">
-          <div class="panel-body border-0">
+          <div class="panel-body pl0px pr0px border-0">
             <div class="row cmr-20pxi">
               <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
 
