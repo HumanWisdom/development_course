@@ -42,10 +42,11 @@ export class MyDailyPracticePage implements OnInit {
   placeholder = 'Tap to answer'
   guest = true;
   isFirstLogin:boolean = false;
- searchinp = '';
-   searchResult = [];
+  searchinp = '';
+  searchResult = [];
   public moduleList = [];
-
+  loginResponse: any;
+  streak: number = 0;
 
   constructor(private  commonService:CommonService, public logeventservice: LogEventService, private router:Router) { 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
@@ -76,6 +77,13 @@ export class MyDailyPracticePage implements OnInit {
     if (this.guest || !this.isloggedIn) {
       this.placeholder = 'Login to use this feature' ;
     }
+
+    const savedLogin = localStorage.getItem("loginResponse") || sessionStorage.getItem("loginResponse");
+    if (savedLogin) {
+      this.loginResponse = JSON.parse(savedLogin);
+    }
+
+    this.streak = this.loginResponse?.Streak || 0;
   }
 
   getdailyquestion() {
