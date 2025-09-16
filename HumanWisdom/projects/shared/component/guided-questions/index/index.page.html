@@ -8,7 +8,7 @@
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_000000 mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         {{ !isGuidedQueestionsTab ? 'Journal' : 'Guided journaling'}}
       </h1>
     </div>
