@@ -353,7 +353,7 @@ export class S157004Page implements OnInit {
       this.enableday8 = false;
       this.enableday9 = false;
       this.enableday10 = true;
-      this.screenNumber = "75004p10";
+      this.screenNumber = "157004p10";
       this.dayclass = "10";
       this.currentDay = 10;
     }
