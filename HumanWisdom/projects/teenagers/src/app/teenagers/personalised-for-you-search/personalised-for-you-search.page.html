@@ -788,17 +788,36 @@
                             <div aria-expanded="true" >
                               <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <div class="col-md-9 col-sm-9 col-xs-9 p0">
                                     <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                       My progress
                                     </h2>
                                   </div>
-                                  <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
-                                    <a (click)="viewDetails()">
+                                  <div class="col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isloggedIn" (click)="viewDetails()">
+                                    <!-- <a (click)="viewDetails()">
                                       <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ee9596 tright underline">
                                         View details
                                       </h2>
-                                    </a>
+                                    </a> -->
+                                     <a  (click)="viewDetails()">
+                                  <div class="row">
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                                      <h2 class="mtb0px fs_12px fw_500 lh_150p fc_ee9596 tleft td_underline flex_ai">
+                                          View details
+                                      </h2>
+                                      
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright flex_ai">
+
+                                       <span >
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_orange.svg" class="img-responsive">
+                                      </span>
+                                    </div>
+
+                                  </div>
+                                 
+                                </a>
+
                                   </div>
                                 </div>
                               </div>
@@ -810,7 +829,7 @@
                             <div class="row" >
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
     
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 td_points_box" style="margin-left:0px; width:31%;" >
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 td_points_boxnew1" style="margin-left:0px; width:31%;" >
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb5px tcenter">
                                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_points.svg" class="img-responsive">
                                   </div>
@@ -829,7 +848,7 @@
                                   </div>
                                 </div>
     
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 td_points_box " style="float: right;">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 td_points_boxnew1 " style="float: right;">
                                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                       <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ee9596">
@@ -878,7 +897,7 @@
                 <!-- hr -->
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <hr class="hr_style_v3_01">
+                    <hr class="hr_style_v3_02">
                   </div>
                 </div>
                 <!-- /hr -->
@@ -898,25 +917,29 @@
   <div class="col-md-12 col-sm-12 col-xs-12 p0">
     <div class="panel-group">
       <div class="">
-        <div class="panel-heading">
+        <div class="panel-heading p0">
           <h4 class="panel-title">
             <a class="accordion-toggle" (click)="toggleAccordion()">
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-md-11 col-sm-11 col-xs-11 p0">
                   <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                     Make the world a better place
-                    <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }" style="float: right;">
+                  
+                  </h2>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1 p0 tright center_flex">
+
+                  <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }" >
                     
                     </span>
-                  </h2>
                 </div>
               </div>
             </a>
           </h4>
         </div>
 
-        <div [ngClass]="getExpandClass()" [@accordionAnimation]="isExpanded ? 'expanded' : 'collapsed'" class="panel-collapse mt10px of-h">
-          <div class="panel-body border-0">
+        <div [ngClass]="getExpandClass()" [@accordionAnimation]="isExpanded ? 'expanded' : 'collapsed'" class="panel-collapse of-h">
+          <div class="panel-body pl0px pr0px border-0">
             <div class="row cmr-20pxi">
               <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
 
@@ -1129,7 +1152,7 @@
             <!-- /tour -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_v3_01">
+                <hr class="hr_style_v3_02">
               </div>
             </div>
             <div class="pagebreak"></div>
