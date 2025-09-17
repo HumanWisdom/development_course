@@ -120,7 +120,7 @@ background: #FFF4E6;
 
 /* style for inline module titles inside combined Modules parent */
 .section-title-inline {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   color: #222;
   margin-bottom: 6px;
@@ -195,7 +195,8 @@ background: #FFF4E6;
 .story-blog-card {
   transition: all 0.2s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 335px;
+  // width: 335px;
+  width:100%;
   height: 130px;
   border-radius: 12px;
 }
@@ -250,5 +251,10 @@ background: #FFF4E6;
   width: 20px !important;
   height: 20px !important;
   object-fit: contain;
-  filter: brightness(0) invert(0.5); /* Makes the SVG grey */
+  // filter: brightness(0) invert(0.5); /* Makes the SVG grey */
+}
+.hr_style_v4 {
+    border: 1px solid #000000;
+    opacity: 0.1;
+    margin: 10px 0;
 }
