@@ -1,9 +1,7 @@
 <div class="content-card rounded-4 overflow-hidden position-relative" (click)="onCardClick()" style="width: 160px;">
   <div class="card-image position-relative" style="height: auto;">
     <img [src]="card.imageUrl" [alt]="card.title" class="custom-box-img object-fit-cover">
-
-    <!-- Status Icons (Bottom Right Corner) -->
-    <div class="status-icons position-absolute bottom-5 end-10 p-2">
+ <div class="status-icons position-absolute bottom-5 end-10 p-2 top-0">
       <!-- Tick Icon - Show when isRead is "1" -->
       <div *ngIf="shouldShowTickIcon()" class="status-icon tick-icon">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
@@ -11,6 +9,12 @@
              class="tick-icon-img"
              style="width: 16px; height: 16px;">
       </div>
+      </div>
+
+    <!-- Status Icons (Bottom Right Corner) -->
+    <div class="status-icons position-absolute bottom-5 end-10 p-2">
+      <!-- Tick Icon - Show when isRead is "1" -->
+      
       <!-- Lock Icon - Show when isFree is "0" -->
       <div *ngIf="shouldShowLockIcon()" class="status-icon lock-icon">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" 
