@@ -28959,6 +28959,10 @@ video::-webkit-media-controls-panel
 }
 /* /gqtns navtabs */
 
+
+.of-h {
+    overflow: hidden !important;
+}
 .btn_aan
 {
   height: 50px;
@@ -28966,7 +28970,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #e58d82 !important;
+  background: #ED7D6F !important;
   border-radius: 100%;
   border: 2px solid white;
   text-align: center;
