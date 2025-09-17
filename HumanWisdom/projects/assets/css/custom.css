@@ -15775,7 +15775,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   right: 0;
   top: 0;
   /* background: #E58D82 !important; */
-  background: #834B66 !important;
+  background: #803358 !important;
   border-radius: 0px 10px;
   /* font-family: Roboto; */
   font-style: normal;
@@ -29000,7 +29000,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #e58d82 !important;
+  background: #ED7D6F !important;
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
@@ -29972,7 +29972,7 @@ svg path
 .gray_light
 {
   /* background: #ADADAD !important; */
-  background: #E58D82 !important;
+  background: #ED7D6F!important;
 }
 
 .float_none
