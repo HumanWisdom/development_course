@@ -251,10 +251,11 @@ background: #FFF4E6;
   width: 20px !important;
   height: 20px !important;
   object-fit: contain;
-  // filter: brightness(0) invert(0.5); /* Makes the SVG grey */
 }
+
 .hr_style_v4 {
     border: 1px solid #000000;
     opacity: 0.1;
     margin: 10px 0;
+  //filter: brightness(0) invert(0.5); /* Makes the SVG grey */
 }

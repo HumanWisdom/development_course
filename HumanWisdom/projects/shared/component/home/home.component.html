@@ -123,6 +123,12 @@
                                     (click)="onViewAllClick(section)">
                               View all <i class="fas fa-chevron-down ms-1"></i>
                             </button>
+                             <button *ngIf="shouldShowViewLess(section) && section.viewall_Url && section.rawSectionType == 2 || section.rawSectionType == 3" 
+                                    class="btn btn-link text-decoration-underline view-toggle-btn" 
+                                    (click)="onViewAll(section)">
+                              View All <i class="fas fa-chevron-up ms-1"></i>
+                            </button>
+
                             <button *ngIf="shouldShowViewLess(section)" 
                                     class="btn btn-link text-decoration-underline view-toggle-btn" 
                                     (click)="onViewLessClick(section)">

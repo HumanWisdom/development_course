@@ -114,13 +114,67 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
      this.getUserPreference();
     console.log('Home component initialized');
+    this.logUserStatus();
+  }
+
+
+  private logUserStatus(): void {
+    const userId = SharedService.getUserId();
+    const userName = SharedService.getUserName();
+    const isGuest = !userId || userId === 0 || !userName;
+    
+  }
+
+  private handleGuestUserDefault(preferenceData: any[]): void {
+    console.log('No user preference found, defaulting to Mental health for guest user');
+    
+    // Load Mental health content (id: "2")
+    this.loadHomeContents(2);
+    
+    // Set Mental health as active in navigation
+    preferenceData.forEach((item) => {
+      if (item.id === "2") { // Mental health ID
+        item['active'] = true;
+        this.personalisedList.push(item);
+        console.log('Activated Mental health navigation item:', item);
+      } else {
+        item['active'] = false;
+        this.personalisedList.push(item);
+      }
+    });
+    
+        this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+        console.log('Guest user default selection:', this.YourTopicofChoice);
+        
+        setTimeout(() => {
+          this.scrollToActiveList();
+        }, 400);
   }
 
   ngAfterViewInit(): void {
+    // Ensure navigation container has horizontal scrolling
+    this.setupHorizontalScrolling();
+    
     // Scroll to active personalized list after view is initialized
-    // setTimeout(() => {
-    //   this.scrollToActiveList();
-    // }, 100);
+    setTimeout(() => {
+      this.scrollToActiveList();
+    }, 100);
+  }
+
+  /**
+   * Setup horizontal scrolling for navigation container
+   */
+  private setupHorizontalScrolling(): void {
+    const navContainer = document.querySelector('.nav-menu') as HTMLElement;
+    if (navContainer) {
+      // Ensure horizontal scrolling is enabled
+      navContainer.style.overflowX = 'auto';
+      navContainer.style.overflowY = 'hidden';
+      navContainer.style.whiteSpace = 'nowrap';
+      navContainer.style.scrollBehavior = 'smooth';
+      
+      console.log('Navigation container setup for horizontal scrolling');
+    }
   }
 
    loadHomeContents(id): void {
@@ -132,9 +186,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         console.log('Transformed content sections:', this.contentSections);
         
         // Scroll to active list after content is loaded
-        // setTimeout(() => {
-        //   this.scrollToActiveList();
-        // }, 200);
+        setTimeout(() => {
+          this.scrollToActiveList();
+        }, 300);
       } else {
         console.warn('API response is empty or null');
       }
@@ -144,11 +198,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   /**
    * Transform API response to ContentSection format
    * Combines Modules1/2/3 under a single parent "Modules" accordion whose children are inline module panels.
+   * Filters out sections with empty cards arrays.
    */
   transformApiResponseToContentSections(apiResponse: HomeContentResponse): ContentSection[] {
     const sections: ContentSection[] = [];
 
-    if (apiResponse.Introduction) {
+    if (apiResponse.Introduction && this.hasCards(apiResponse.Introduction)) {
       sections.push(this.transformSection(apiResponse.Introduction, 'introduction'));
     }
 
@@ -156,39 +211,53 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (apiResponse.Modules1) {
       const longTermSolutions = this.transformSection(apiResponse.Modules1, 'modules1');
       
-      // Add Modules2 and Modules3 as child sections
+      // Add Modules2 and Modules3 as child sections (only if they have cards)
       const childSections: ContentSection[] = [];
       
-      if (apiResponse.Modules2) {
+      if (apiResponse.Modules2 && this.hasCards(apiResponse.Modules2)) {
         const module2 = this.transformSection(apiResponse.Modules2, 'modules2');
         module2.isInlineSection = true;
         module2.isExpanded = true;
         childSections.push(module2);
       }
       
-      if (apiResponse.Modules3) {
+      if (apiResponse.Modules3 && this.hasCards(apiResponse.Modules3)) {
         const module3 = this.transformSection(apiResponse.Modules3, 'modules3');
         module3.isInlineSection = true;
         module3.isExpanded = true;
         childSections.push(module3);
       }
       
-      longTermSolutions.childSections = childSections;
-      sections.push(longTermSolutions);
+      // Only add the parent section if it has cards or has child sections with cards
+      if (this.hasCards(apiResponse.Modules1) || childSections.length > 0) {
+        longTermSolutions.childSections = childSections;
+        sections.push(longTermSolutions);
+      }
     }
 
-    if (apiResponse.Blogs) sections.push(this.transformSection(apiResponse.Blogs, 'blogs'));
-    if (apiResponse.Stories) sections.push(this.transformSection(apiResponse.Stories, 'stories'));
-    if (apiResponse.Podcast) sections.push(this.transformSection(apiResponse.Podcast, 'podcast'));
-    if (apiResponse.Shorts) sections.push(this.transformSection(apiResponse.Shorts, 'shorts'));
+    // Only add sections that have cards
+    if (apiResponse.Blogs && this.hasCards(apiResponse.Blogs)) {
+      sections.push(this.transformSection(apiResponse.Blogs, 'blogs'));
+    }
+    if (apiResponse.Stories && this.hasCards(apiResponse.Stories)) {
+      sections.push(this.transformSection(apiResponse.Stories, 'stories'));
+    }
+    if (apiResponse.Podcast && this.hasCards(apiResponse.Podcast)) {
+      sections.push(this.transformSection(apiResponse.Podcast, 'podcast'));
+    }
+    if (apiResponse.Shorts && this.hasCards(apiResponse.Shorts)) {
+      sections.push(this.transformSection(apiResponse.Shorts, 'shorts'));
+    }
 
+    // Handle other sections dynamically
     const knownKeys = ['Introduction','Modules1','Modules2','Modules3','Blogs','Stories','Podcast','Shorts'];
     Object.keys(apiResponse).forEach(key => {
-      if (!knownKeys.includes(key) && apiResponse[key] && apiResponse[key].title) {
+      if (!knownKeys.includes(key) && apiResponse[key] && apiResponse[key].title && this.hasCards(apiResponse[key])) {
         sections.push(this.transformSection(apiResponse[key], key.toLowerCase()));
       }
     });
 
+    console.log('Filtered sections (only those with cards):', sections.map(s => ({ title: s.title, cardCount: s.cards?.length || 0 })));
     return sections;
   }
 
@@ -248,6 +317,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   /**
+   * Check if a section has cards
+   */
+  private hasCards(section: HomeSection): boolean {
+    const cardsArray = Array.isArray(section.Cards) ? section.Cards : (Array.isArray(section.cards) ? section.cards : []);
+    return cardsArray && cardsArray.length > 0;
+  }
+
+  /**
+   * Check if a transformed section has cards (either direct cards or child sections with cards)
+   */
+  private hasCardsInTransformedSection(section: ContentSection): boolean {
+    const hasDirectCards = section.cards && section.cards.length > 0;
+    const hasChildSectionsWithCards = section.childSections && section.childSections.length > 0;
+    return hasDirectCards || hasChildSectionsWithCards;
+  }
+
+  /**
    * Transform individual section (handles nested internal sections recursively)
    */
   transformSection(section: HomeSection, sectionType: string): ContentSection {
@@ -257,7 +343,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       ...(section.internalSections || [])
     ].filter(Boolean);
 
-    const childSections = nestedSources.map((s) => this.transformSection(s, sectionType));
+    // Transform child sections and filter out those without cards
+    const childSections = nestedSources
+      .map((s) => this.transformSection(s, sectionType))
+      .filter(childSection => this.hasCardsInTransformedSection(childSection));
 
     const cardsArray = Array.isArray(section.Cards) ? section.Cards : (Array.isArray(section.cards) ? section.cards : []);
 
@@ -285,7 +374,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.commonService.getUserpreference().subscribe((res) => {
       let perd = SharedService.getPreferenceDataForHome();
       this.personalisedList = []
+      
       if (res) {
+        // User has a saved preference
         localStorage.setItem('userPreference', res);
         perd.forEach((r) => {
           if (res === r.id) {
@@ -296,21 +387,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.personalisedList.push(r);
           }
         })
-      this.loadHomeContents(Number(res));
-      this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-      console.log('YourTopicofChoice', this.YourTopicofChoice);
-        console.log(this.YourTopicofChoice);
-      }else{
-          this.loadHomeContents(2);
-         perd.forEach((r) => {
-          if (res === 2) {
-            r['active'] = true;
-            this.personalisedList.push(r);
-          } else {
-            r['active'] = false;
-            this.personalisedList.push(r);
-          }
-        });
+        this.loadHomeContents(Number(res));
+        this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+        console.log('User preference loaded:', this.YourTopicofChoice);
+        
+        // Scroll to the selected section after preference is loaded
+        setTimeout(() => {
+          this.scrollToActiveList();
+        }, 400);
+      } else {
+        // Guest user or no preference - default to Mental health
+        this.handleGuestUserDefault(perd);
       }
     })
   }
@@ -465,6 +552,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.update(item.id);
     // Update YourTopicofChoice to reflect the new active item
     this.YourTopicofChoice = [item];
+    
+    // Scroll to the selected section after content loads
+    setTimeout(() => {
+      this.scrollToActiveList();
+    }, 500);
   }
 
    update(id) {
@@ -534,39 +626,99 @@ export class HomeComponent implements OnInit, AfterViewInit {
     return (isStoriesOrBlogs || isQuickAnswers) && showAll && hasMoreThan3Cards;
   }
 
+
   /**
-   * Scroll to the active personalized list section
+   * Scroll to the active personalized list section (horizontal scrolling)
    */
   scrollToActiveList(): void {
+    console.log('=== HORIZONTAL SCROLL DEBUG START ===');
+    console.log('YourTopicofChoice:', this.YourTopicofChoice);
+    console.log('personalisedList:', this.personalisedList);
+    
     if (this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
       const activeItem = this.YourTopicofChoice[0];
-      console.log('Scrolling to active list:', activeItem);
+      console.log('Active item:', activeItem);
       
-      // Find the corresponding section in contentSections
-      const targetSection = this.contentSections.find(section => {
-        // Check if section title matches the active item's display name or name
-        return section.title === activeItem.displayName || 
-               section.title === activeItem.name ||
-               section.id === activeItem.id;
-      });
-
-      if (targetSection) {
-        const elementId = 'section-' + targetSection.id;
-        const element = document.getElementById(elementId);
+      // Find the active navigation item in the DOM
+      const navItems = document.querySelectorAll('.nav-item');
+      console.log('Found nav items:', navItems.length);
+      
+      let targetNavItem: HTMLElement | null = null;
+      
+      // Find the navigation item that matches the active item
+      for (let i = 0; i < navItems.length; i++) {
+        const navItem = navItems[i] as HTMLElement;
+        const navText = navItem.textContent?.trim();
+        console.log('Nav item text:', navText, 'Active item displayName:', activeItem.displayName);
         
-        if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'start',
-            inline: 'nearest'
+        if (navText === activeItem.displayName) {
+          targetNavItem = navItem;
+          console.log('Found matching nav item:', navItem);
+          break;
+        }
+      }
+      
+      if (targetNavItem) {
+        // Get the navigation container
+        const navContainer = document.querySelector('.nav-menu') as HTMLElement;
+        if (navContainer) {
+          console.log('Found nav container:', navContainer);
+          
+          // Calculate scroll position to center the active item
+          const containerRect = navContainer.getBoundingClientRect();
+          const itemRect = targetNavItem.getBoundingClientRect();
+          
+          // Calculate the scroll position to center the item
+          const scrollLeft = targetNavItem.offsetLeft - (containerRect.width / 2) + (itemRect.width / 2);
+          
+          console.log('Scrolling to position:', scrollLeft);
+          
+          // Smooth horizontal scroll
+          navContainer.scrollTo({
+            left: scrollLeft,
+            behavior: 'smooth'
           });
-          console.log('Scrolled to section:', targetSection.title);
+          
+          console.log('Horizontally scrolled to active nav item:', activeItem.displayName);
         } else {
-          console.warn('Element not found for section:', elementId);
+          console.warn('Navigation container not found');
         }
       } else {
-        console.warn('Target section not found for active item:', activeItem);
+        console.warn('Active navigation item not found in DOM');
+        console.log('Available nav items:', Array.from(navItems).map(item => item.textContent?.trim()));
       }
+    } else {
+      console.log('No active topic choice found');
     }
+    console.log('=== HORIZONTAL SCROLL DEBUG END ===');
+  }
+
+  /**
+   * Test method to manually trigger horizontal scroll - for debugging
+   */
+  testHorizontalScroll(): void {
+    console.log('=== MANUAL HORIZONTAL SCROLL TEST ===');
+    
+    const navContainer = document.querySelector('.nav-menu') as HTMLElement;
+    if (navContainer) {
+      console.log('Found nav container:', navContainer);
+      console.log('Current scroll left:', navContainer.scrollLeft);
+      console.log('Container width:', navContainer.clientWidth);
+      console.log('Container scroll width:', navContainer.scrollWidth);
+      
+      // Scroll to the right
+      navContainer.scrollTo({
+        left: navContainer.scrollWidth,
+        behavior: 'smooth'
+      });
+      
+      console.log('Scrolled to end');
+    } else {
+      console.log('Navigation container not found');
+    }
+  }
+
+   onViewAll(section):void{
+     this.router.navigate([section.viewall_Url]);
   }
 }
