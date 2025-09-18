@@ -3289,6 +3289,7 @@ ul.project_files li a i {
 
 .of-h {
   overflow:hidden !important;
+   display: inline;
 }
 .sideways>li {
   height: 20px;
