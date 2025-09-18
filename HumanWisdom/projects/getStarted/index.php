@@ -1395,7 +1395,7 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href=" https://happierme.app/pages/work.php" iaria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                    <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>
@@ -1435,7 +1435,7 @@ require_once('./includes/security_config.php');
               <div class="row d_none">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/education.php" aria-label="Explore the teenagers app" class="">
-                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>
@@ -1476,7 +1476,7 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px">
+                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                     </h5>
@@ -1923,19 +1923,22 @@ require_once('./includes/security_config.php');
               </a>
             </div>
 
+            <!-- Navigation arrows and Find out more on same line -->
             <div class="owl-theme">
               <div class="owl-controls">
-                <div class="owl-nav fixed_w1340">
+                <div class="fixed_w1340 d-flex justify-content-between align-items-center">
                   <a class="sap" href="https://happierme.app/adults/coach">
-                    <h5 class="mt40px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                    <h5 class="fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       Find out more
                       <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy></a> -->
                     </h5>
                   </a>
+                  <div class="owl-nav owl-nav-w"></div>
                 </div>
               </div>
             </div>
+          
           </div>
 
         </div>
@@ -1955,23 +1958,23 @@ require_once('./includes/security_config.php');
         </div>
       </div>
       <div class="fixed_w">
-      <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-white gap-3 mt20px">
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-white gap-4 mt20px">
         <!-- First -->
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg"
               class="img-fluid me-2 icon-subcription" alt="Expert">
           <span class="fs_18px fw_500 f_15px">Expert guidance</span>
         </div>
 
         <!-- Second -->
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg"
               class="img-fluid me-2 icon-subcription" alt="Goals">
           <span class="fs_18px fw_500 f_15px">Personalised content to meet your goals</span>
         </div>
 
         <!-- Third -->
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/daily.svg"
               class="img-fluid me-2 icon-subcription" alt="Daily">
           <span class="fs_18px fw_500 f_15px">Daily practices that fit your life</span>
@@ -2158,7 +2161,7 @@ require_once('./includes/security_config.php');
                     </h4>
 
                     <a id="exploreAppWeb">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline mt2rem">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline mt2rem w-40p ">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
                       </h5>
@@ -2206,7 +2209,7 @@ require_once('./includes/security_config.php');
                     </div>
 
                     <a href="https://happierme.app/adults/pathway/">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
                       </h5>
@@ -2238,7 +2241,7 @@ require_once('./includes/security_config.php');
                     </h4>
 
                     <a href="https://happierme.app/adults/journal">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right"></i>
                       </h5>
@@ -2279,7 +2282,7 @@ require_once('./includes/security_config.php');
                     </div>
 
                     <a href="https://happierme.app/adults/podcast">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
                       </h5>
@@ -2311,7 +2314,7 @@ require_once('./includes/security_config.php');
                     </h4>
 
                     <a href="https://happierme.app/adults/forum">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
                       </h5>
@@ -2514,7 +2517,7 @@ require_once('./includes/security_config.php');
 
             <div class="owl-theme">
               <div class="owl-controls">
-                <div class="owl-nav">
+                <div class="d-flex justify-content-between align-items-center">
                   <a class="sap" id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
                     <h5 class="mt20px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       See all posts
@@ -2522,6 +2525,7 @@ require_once('./includes/security_config.php');
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                       </h4>
                   </a>
+                  <div class="owl-nav owl-nav-w"></div>
                 </div>
               </div>
             </div>
@@ -2605,7 +2609,7 @@ require_once('./includes/security_config.php');
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <hr class="hr_style_web_01">
+                      <hr class="hr_style_web_01 hr-darker">
                     </div>
                   </div>
 
@@ -2627,7 +2631,7 @@ require_once('./includes/security_config.php');
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <hr class="hr_style_web_01">
+                      <hr class="hr_style_web_01 hr-darker">
                     </div>
                   </div>
 
@@ -2649,7 +2653,7 @@ require_once('./includes/security_config.php');
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <hr class="hr_style_web_01">
+                      <hr class="hr_style_web_01 hr-darker">
                     </div>
                   </div>
 
@@ -3627,6 +3631,7 @@ require_once('./includes/security_config.php');
       });
     });
   </script>
+
 
 </body>
 
