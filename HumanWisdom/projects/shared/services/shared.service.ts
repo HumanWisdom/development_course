@@ -178,7 +178,7 @@ export class SharedService {
   public static getDashboardUrls() {
     switch (this.ProgramId) {
       case ProgramType.Adults:
-        return '/adults/adult-dashboard';
+        return '/adults/home';
       case ProgramType.Teenagers:
         return '/teenagers/teenager-dashboard';
       case ProgramType.Young_Adults:
@@ -200,6 +200,74 @@ export class SharedService {
         return `/adults/${name}`;
     }
   }
+
+ public static getPreferenceDataForHome() {
+return [
+        {
+          id: "1",
+          displayName: "Work",
+          active: false,
+          name: 'Work and Leadership'
+        },
+        {
+          id: "2",
+          displayName: "Mental health",
+          active: false,
+          name: 'Manage your mental health'
+        },
+        {
+          id: "3",
+          displayName: "Relationships",
+          active: false,
+          name: 'Relationships'
+        },
+        {
+          id: "4",
+          displayName: "Happiness",
+          active: false,
+          name: 'Be happier'
+        },
+        {
+          id: "5",
+          displayName: "Addiction",
+          active: false,
+          name: 'Habits and Addictions'
+        },
+        {
+          id: "6",
+          displayName: "Sorrow and Loss",
+          active: false,
+          name: 'Deal with Sorrow and loss'
+        },
+        {
+          id: "7",
+          displayName: "Meditation",
+          active: false,
+          name: 'Meditation',
+        },
+        {
+          id: "8",
+          displayName: "Emotions",
+          active: false,
+          name: 'Manage your emotions',
+        },
+         {
+          id: "18",
+          displayName: "For Parents",
+          active: false,
+          name: 'For Parents',
+        },
+        {
+             id: "19",
+           displayName: "Self Awareness",
+          active: false,
+             name: 'Develop your self awareness',
+           }
+      ]
+
+
+ }
+
   public static getPreferenceData() {
     if (this.ProgramId == ProgramType.Adults) {
       return [

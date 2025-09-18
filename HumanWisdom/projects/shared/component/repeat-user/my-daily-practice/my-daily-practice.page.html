@@ -166,8 +166,7 @@
     
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter mt10px">
                                     <h4 class="mtb0px fs_15px fw_600 lh_120p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                      11 days
-                                      <!-- {{loginResponse.Points}} -->
+                                      {{ streak }} {{ streak === 1 ? 'day' : 'days' }}
                                     </h4>
                                   </div>
     
@@ -183,8 +182,8 @@
                                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p10">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                                       <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ffffff">
-                                         74% 
-                                        <!-- {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}% -->
+                                         <!-- 74%  -->
+                                        {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
                                       </h4>
                                     </div>
     
@@ -194,15 +193,15 @@
                                       </h4>
                                     </div>
     
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px">
-                                      
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px" click="survey()">
+                                        <a class="" (click)="survey()">                                 
                                         <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff td_underline flex_ai">
                                           Take the survey
                                            <span class="ml10px">
                                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/right_icon.svg" class="img-responsive">
                                           </span>  
                                         </h4>
-                                     
+                                      </a>
                                     </div>
                                   </div>
     
@@ -226,76 +225,69 @@
                 <!-- /my progress -->
 
                <!-- hr -->
-              <div class="row">
+              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
                   <hr class="hr_style_v3_02">
                 </div>
               </div>
               <!-- /hr -->
 
-           <div class="row">
+ <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
+  <h4 class="fw_400 fs_12px lh_130p mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+    CONTINUE WHERE YOU LEFT
+  </h4>
 
-              <!-- <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="fw_400 fs_12px lh_130p fc_ffffff mtb0px">
-                    CONTINUE WHERE YOU LEFT
-                  </h4>
+  <!-- clickable card -->
+  <div class="toc_adiv_imgmy">
+    <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+          <!-- image -->
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="prelative">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex tcenter">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp"
+                       class="p0 session_imgnew" style="border: none;">
                 </div>
-              </div> -->
+              </div>
 
-              <h4 class="fw_400 fs_12px lh_130p  mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                CONTINUE WHERE YOU LEFT
-              </h4>
-              <!-- CONTINUE WHERE YOU LEFT -->
-            
-               <div class="toc_adiv_imgmy ">
-                 <a (click)="routeToDailyCheckIn()">
-                 <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                      <div class="prelative">
-                        <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex tcenter">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/77.webp"
-                              class="p0 session_imgnew" style="border: none; ">
-                          </div>
-                        </div>
-                     </div>
-                     </div>
-                    
-
-                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 ">
-                      <div class="row">
-                      <h4 class="mtb0px fs_18px fw_600 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                       Stress
-                      </h4>
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                     Session #7
-                                      </h4>
-                      <h4 class="mt0px fs_15px fw_500 lh_130p  ellipsis p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-
-                       Meeting stress with wisdom
-                      </h4>
-                      
-                       <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_7">
-                        01:01
-                      </h4>  -->
-                    </div>
-                    </div>
-                
-
-                    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tcenter">
-                      <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
-                    </div>
-
-                  </div>
-                </div>
-                 </a>
-               </div>
-            
-              <!-- CONTINUE WHERE YOU LEFT -->
+              <!-- progress bar -->
+              <div class="progress dprogress">
+                <div class="progress-bar" role="progressbar"
+                     [style.width]="guideP + '%'"
+                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
+          </div>
+
+          <!-- text -->
+          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+            <div class="row">
+              <h4 class="mtb0px fs_18px fw_600 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                {{resumeLastvisited[0]['ModuleName']}}
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                Session #{{resumeLastvisited[0]['SessionCnt']}}
+              </h4>
+              <h4 class="mt0px fs_15px fw_500 lh_130p ellipsis p0 fc_e58d82">
+                {{resumeLastvisited[0]['SessionName']}}
+              </h4>
+            </div>
+          </div>
+
+          <!-- arrow -->
+          <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tcenter">
+            <i class="fa fa-angle-right fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
+          </div>
+
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
           <!-- hr -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
@@ -385,7 +377,7 @@
                 </div>
               </div>
               <!-- /hr -->
-             <div class="row">
+             <div class="row" *ngIf="!isSubscriber">
 
               <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -421,26 +413,20 @@
                       </div>
                     </div> -->
                   </div>
-
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px ">
+                  <!-- show only when user is NOT subscribed -->
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px">
                       <div class="row">
-                      <h4 class="mtb0px fs_21px  lh_130p " [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
-                      Start your free trial today!
-                      </h4>
-                      <h4 class="mtb0px fs_12px fw_400 " style="line-height:18px;" [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
-                     Get expert guidance and personalized tools with HappierMe Premium
-                                      </h4>
-                      <!-- <h4 class="mt0px fs_15px fw_500 lh_130p fc_000000 ellipsis">
-
-                       Meeting stress with wisdom
-                      </h4>
-                       -->
-                       <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_7">
-                        01:01
-                      </h4>  -->
+                        <h4 class="mtb0px fs_21px lh_130p"
+                            [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
+                          Start your free trial today!
+                        </h4>
+                        <h4 class="mtb0px fs_12px fw_400"
+                            style="line-height:18px;"
+                            [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
+                          Get expert guidance and personalized tools with HappierMe Premium
+                        </h4>
+                      </div>
                     </div>
-                    </div>
-                
 
                     <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                       <i class="fa fa-angle-right fc_000000 fs_20px"></i>
@@ -454,7 +440,7 @@
               <!-- CONTINUE WHERE YOU LEFT -->
             </div>
           <!-- hr -->
-              <div class="row">
+              <div class="row" *ngIf="!isSubscriber">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
                   <hr class="hr_style_v3_02">
                 </div>
@@ -943,11 +929,11 @@
                         <div id="photo">
 
                             <h4 class=" fw_400 fs_12px  lh_140p fc_000000"  *ngIf="isAdults">
-                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg" alt="play" >
+                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg" alt="play" nclass="img-responsive" style="width:10px; height:10px; margin-top:-3px" >
                            FORUM
                           </h4>
                           <h4 class=" fw_400 fs_12px  lh_140p fc_ffffff"  *ngIf="!isAdults">
-                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fouram_new1.svg" alt="play" >
+                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fouram_new1.svg" alt="play"  style="width:10px; height:10px; margin-top:-3px" >
                             FORUM
                           </h4>
                           

@@ -1,6 +1,6 @@
 <!-- top navigation -->
 <div class="row center_flex" *ngIf="defaultShow">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back bg_FFF7E6 col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
@@ -8,7 +8,7 @@
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         {{ !isGuidedQueestionsTab ? 'Journal' : 'Guided journaling'}}
       </h1>
     </div>
@@ -24,7 +24,7 @@
 
 <div class="cw100p" *ngIf="!defaultShow">
   <div class="row center_flex">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01 " [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01 " [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
       <div class="x_panel p0">
         <div class="x_content p0">
           <div class="container">
@@ -120,7 +120,7 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
@@ -188,19 +188,19 @@
 
                       <div class="row mt20px mb15px">
                         <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_e58d82">Question of the day</h4>
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_ffffff'">Question of the day</h4>
                         </div>
                       </div>
 
                       <div class="row mb20px">
                         <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                          <h4 class="mtb0px fs_24px fw_600 lh_150p fc_ffffff">{{dailyQuestion}}</h4>
+                          <h4 class="mtb0px fs_24px fw_600 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{dailyQuestion}}</h4>
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7"
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                             (click)="goToNote(dailyId,dailyQuestion,dailyResponse,'dq')">Tap to answer</h4>
                         </div>
                       </div>
@@ -208,13 +208,13 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <hr class="hr_style_v3_01">
+                        <hr class="hr_style_v3_02">
                       </div>
                     </div>
 
                     <div class="row mb15px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           All journal entries are encrypted and can only be seen by you, unless shared by you.
                         </h4>
                       </div>
@@ -223,7 +223,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <hr class="hr_style_v3_01">
+                        <hr class="hr_style_v3_02">
                       </div>
                     </div>
                     <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 form-group has-feedback mb0px"> -->
@@ -239,7 +239,7 @@
                       <!-- </div> -->
                       <div class="row mb15px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 tleft">
-                          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff ls_pt1em">Recent Notes</h4>
+                          <h4 class="mtb0px fs_18px fw_600 lh_150p  ls_pt1em" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Recent Notes</h4>
                         </div>
                       </div>
 
@@ -248,25 +248,25 @@
                     <div class="row gqtns_recent_tabs">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 pb10px odiv odiv_mdp">
                         <button type="button" class="btn btn_recent"
-                          [ngStyle]="{'background-color': enableTab === 'All' ? '' :(isAdults ? '#424675' : '#4267A5')}"
+                          [ngStyle]="{'background-color': enableTab === 'All' ? '' :(isAdults ? '#FFD889' : '#4267A5')}"
                           [ngClass]="{'active': enableTab === 'All'}" (click)="showAll()">
                           All Notes
                         </button>
 
                         <button (click)="showNotes()"
-                          [ngStyle]="{'background-color': enableTab === 'Diary' ? '' : (isAdults ? '#424675' : '#4267A5')}"
+                          [ngStyle]="{'background-color': enableTab === 'Diary' ? '' : (isAdults ? '#FFD889' : '#4267A5')}"
                           [ngClass]="{'active': enableTab === 'Diary'}" class="btn btn_recent">
                           Diary
                         </button>
 
                         <button (click)="showReflections()"
-                          [ngStyle]="{'background-color': enableTab === 'Reflections' ? '' : (isAdults ? '#424675' : '#4267A5')}"
+                          [ngStyle]="{'background-color': enableTab === 'Reflections' ? '' : (isAdults ? '#FFD889' : '#4267A5')}"
                           [ngClass]="{'active': enableTab === 'Reflections'}" class="btn btn_recent">
                           Reflections
                         </button>
 
                         <button (click)="showGuidedQuestions()"
-                          [ngStyle]="{'background-color': enableTab === 'Guided' ? '' : (isAdults ? '#424675' : '#4267A5')}"
+                          [ngStyle]="{'background-color': enableTab === 'Guided' ? '' : (isAdults ? '#FFD889' : '#4267A5')}"
                           [ngClass]="{'active': enableTab === 'Guided'}" class="btn btn_recent">
                           Guided journaling
                         </button>
@@ -283,13 +283,13 @@
                                 <h4 class="panel-title">{{j.JrType}}</h4>
                               </div>
                               <div class="panel-body">
-                                <h4 class="fs_12px fw_400 lh_150p fc_ffffff_0_7">{{j.Date| date}}</h4>
-                                <h4 class="fs_18px fw_500 lh_150p fc_ffffff"
+                                <h4 class="fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{j.Date| date}}</h4>
+                                <h4 class="fs_18px fw_500 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                                   *ngIf="j.JrType=='Reflections' || j.JrType=='Guided journaling'">
                                   {{j.ModuleName}}
                                 </h4>
-                                <h4 class="fs_18px fw_500 lh_150p fc_ffffff">{{j.TitleQue}}</h4>
-                                <h4 class="fs_15px fw_400 lh_150p fc_ffffff">
+                                <h4 class="fs_18px fw_500 lh_150p"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{j.TitleQue}}</h4>
+                                <h4 class="fs_15px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                   {{j.Response|slice:0:40}}...
                                 </h4>
                                 <ng-container *ngIf="j.TitleQue == 'Daily check-in'">
@@ -311,7 +311,7 @@
                             
                                       <div class="row mt5px">
                                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                          <h4 class="mtb0px fs_9px fw_400 lh_140p fc_ffffff">
+                                          <h4 class="mtb0px fs_9px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                             {{item.Expression}}
                                           </h4>
                                         </div>

@@ -15,6 +15,26 @@
   gap: 2px;
 }
 
+.end-50{
+  right: 50px !important;
+}
+
+/* Bottom right positioning for status icons */
+.bottom-0 {
+  bottom: 0 !important;
+}
+.bottom-5 {
+  bottom: 5px !important;
+}
+
+.end-10{
+  right: 10px !important;
+}
+
+.end-0 {
+  right: 0 !important;
+}
+
 .custom-box-text-container-title {
   font-family: Poppins;
 font-weight: 500;
@@ -24,7 +44,7 @@ line-height: 130%;
 letter-spacing: 0px;
 color: #000000;
 width: 150px;
-height: 35px;
+height:auto;
 }
 
 
@@ -38,7 +58,7 @@ height: 35px;
   font-family: Poppins;
   font-weight: 400;
   font-style: Regular;
-  font-size: 12px;
+  font-size: 10px;
   leading-trim: NONE;
   line-height: 100%;
   letter-spacing: 0px;
@@ -51,7 +71,7 @@ height: 35px;
 .overlay-icon {
   width: 48px;
   height: 48px;
-  margin-right: 55px;
+  // margin-right: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,4 +93,61 @@ height: 35px;
 .overlay-icon i {
   color: white;
   font-size: 1.5rem;
+}
+
+/* Status Icons Styling */
+.status-icons {
+  z-index: 10; /* Ensure icons appear above other elements */
+}
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Tick Icon - Red background with white checkmark */
+.tick-icon {
+  // background-color: #dc3545; /* Bootstrap danger red */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tick-icon i {
+  color: white !important;
+  font-size: 10px;
+}
+
+/* Lock Icon - Grey background with white lock */
+.lock-icon {
+  background-color: #6c757d; /* Bootstrap secondary grey */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.lock-icon i {
+  color: white !important;
+  font-size: 10px;
+}
+
+/* Lock Icon Image - Custom SVG styling */
+.lock-icon-img {
+  width: 25px !important;
+  height: 35px !important;
+  object-fit: contain;
+
+}
+
+/* Tick Icon Image - Custom SVG styling */
+.tick-icon-img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain;
+
+}
+.top-0{
+  top:0px
 }

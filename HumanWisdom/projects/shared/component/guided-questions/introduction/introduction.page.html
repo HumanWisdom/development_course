@@ -8,7 +8,7 @@
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         {{data.Topic}}
       </h1>
     </div>
@@ -26,7 +26,7 @@
   <!-- Class -->  
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_292d56' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">  
           <div class="x_content p0">
 
@@ -41,14 +41,14 @@
 
             <div class="row mt30px mb20px">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fs_30px fw_400 lh_150p fc_ffffff">
+                <h4 class="mtb0px fs_30px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   {{data?.Topic}}
                 </h4>
               </div>
             </div>
 
             <div class="row mb30px">
-              <div class="col-md-12 col-sm-12 col-xs-12 p0 fs_18px fw_400 lh_150p fc_ffffff">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0 fs_18px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 <p class="">
                  {{data?.introduction}}
                 </p>

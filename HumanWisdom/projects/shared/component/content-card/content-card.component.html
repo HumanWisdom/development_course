@@ -1,6 +1,28 @@
-<div class="content-card rounded-4 overflow-hidden position-relative" (click)="onCardClick()" style="width: 200px; height: 250px;">
+<div class="content-card rounded-4 overflow-hidden position-relative" (click)="onCardClick()" style="width: 160px;">
   <div class="card-image position-relative" style="height: auto;">
     <img [src]="card.imageUrl" [alt]="card.title" class="custom-box-img object-fit-cover">
+ <div class="status-icons position-absolute bottom-5 end-10 p-2 top-0">
+      <!-- Tick Icon - Show when isRead is "1" -->
+      <div *ngIf="shouldShowTickIcon()" class="status-icon tick-icon">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
+             alt="Read icon" 
+             class="tick-icon-img"
+             style="width: 16px; height: 16px;">
+      </div>
+      </div>
+
+    <!-- Status Icons (Bottom Right Corner) -->
+    <div class="status-icons position-absolute bottom-5 end-10 p-2">
+      <!-- Tick Icon - Show when isRead is "1" -->
+      
+      <!-- Lock Icon - Show when isFree is "0" -->
+      <div *ngIf="shouldShowLockIcon()" class="status-icon lock-icon">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" 
+             alt="Lock icon" 
+             class="lock-icon-img"
+             style="width: 16px; height: 16px;">
+      </div>
+    </div>
 
     <!-- Overlay -->
     <div class="card-overlay d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100">
@@ -16,11 +38,11 @@
     </div>
   </div>
 
-  <div class="card-content p-3 custom-box-text-container">
+  <div class="card-content pt-3 custom-box-text-container">
     <h6 class="card-title mb-2 text-truncate custom-box-text-container-title no-break">{{ card.title }}</h6>
-    <p class="card-subtitle small text-muted mb-2" *ngIf="card.subtitle && !isBeginHereCard()">{{ card.subtitle }}</p>
-    <div class="card-meta d-flex align-items-center gap-2 small text-muted">
-      <span class="media-type fw-bold text-uppercase custom-box-text-container-mediaType">{{ card.mediaType }}</span>
+    <p class="card-subtitle small text-muted mb-2" *ngIf="(card.duration=='')">{{ card.subtitle }}</p>
+    <div class="card-meta d-flex align-items-center gap-2 mb-2 small text-muted">
+      <span class="media-type text-uppercase custom-box-text-container-mediaType">{{ card.mediaType }}</span>
       <span class="duration custom-box-text-container-mediaType" *ngIf="card.duration">• {{ card.duration }}</span>
     </div>
   </div>

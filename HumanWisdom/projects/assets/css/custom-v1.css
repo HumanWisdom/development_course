@@ -13,6 +13,11 @@
   background: url(../images/human-wisdom-icon.png);
 }
 
+.fs15 {
+  font-size: 15px !important;
+}
+
+
 .cert-txt4 {
   /* margin-left: 1.8rem; */
   font-style: normal;

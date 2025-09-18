@@ -56,4 +56,20 @@ export class ContentCardComponent {
     // Check if the card's subtitle contains the play outline SVG path
     return this.card.subtitle && this.card.subtitle.includes('/assets/svgs/v1_3/play_outline.svg');
   }
+
+  /**
+   * Check if tick icon should be shown
+   * Show tick when isRead is "1" (completed/read)
+   */
+  shouldShowTickIcon(): boolean {
+    return this.card.isRead === "1" || this.card.isRead === 1;
+  }
+
+  /**
+   * Check if lock icon should be shown
+   * Show lock when isFree is "0" (locked/not free)
+   */
+  shouldShowLockIcon(): boolean {
+    return this.card.isFree === "0" || this.card.isFree === 0;
+  }
 }

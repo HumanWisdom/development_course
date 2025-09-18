@@ -46,6 +46,48 @@ export class CommonService {
   searchinp = '';
   public moduleList = [];
   isAdults = false;
+    personalisedforyoulist = [
+    {
+      id: "1",
+      name: 'Work and Leadership'
+    },
+    {
+      id: "2",
+      name: 'Manage your mental wellbeing'
+    },
+    {
+      id: "3",
+      name: 'Relationships'
+    },
+    {
+      id: "4",
+      name: 'Be happier'
+    },
+    {
+      id: "5",
+      name: 'Habits and Addiction'
+    },
+    {
+      id: "6",
+      name: 'Deal with loss'
+    },
+    {
+      id: "7",
+      name: 'Meditation',
+    },
+    {
+      id: "8",
+      name: 'Manage your emotions',
+    },
+     {
+      id: "18",
+      name: 'For Parents',
+    },
+     {
+      id: "19",
+      name: 'Develop your self awareness',
+    }
+  ]
   constructor(private http: HttpClient,
     handler: HttpBackend,
     private services: OnboardingService,
@@ -55,6 +97,10 @@ export class CommonService {
   submitProgressText(data: any): Observable<any> {
     return this.http.post(this.path + '/UserProgress', data)
   }
+
+    AddUserPreference(data: any): Observable<any> {
+      return this.http.post(this.path + `/AddUserPreference/${data}`, null)
+    }
 
   GetAudioMeditation(): Observable<any> {
     return this.http.get(this.path + '/GetAudioMeditationsListing');
@@ -71,6 +117,14 @@ export class CommonService {
   CheckShortsIsFree(data: any): Observable<any> {
     return this.http.get(this.path + `/CheckShortsIsFree/${data}`)
   }
+
+    getUserpreference(): Observable<any> {
+      return this.http.get(this.path + `/GetUserPreference/${SharedService.ProgramId}`)
+    }
+  
+    getperList() {
+      return this.personalisedforyoulist;
+    }
 
   GetWisdomShorts(): Observable<any> {
     return this.http.get(this.path + '/GetWisdomShortsListing');
