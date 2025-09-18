@@ -138,7 +138,7 @@ height:auto;
   width: 25px !important;
   height: 35px !important;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* Makes the SVG white */
+
 }
 
 /* Tick Icon Image - Custom SVG styling */
@@ -146,5 +146,8 @@ height:auto;
   width: 16px !important;
   height: 16px !important;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* Makes the SVG white */
+
+}
+.top-0{
+  top:0px
 }
