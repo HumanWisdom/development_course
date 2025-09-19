@@ -15096,7 +15096,7 @@ input[type="number"] {
   overflow-x: auto;
   white-space: nowrap;
   /* padding-bottom: 5px; */
-  padding: 10px 20px 10px 20px;
+  padding: 20px 20px 20px 20px;
 }
 
 .odiv > [class^="col-"]:last-child
@@ -16043,12 +16043,12 @@ input[type="search"].dark::-webkit-search-cancel-button {
   box-shadow: unset;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px !important;
-  background: #FFE8BB;
+  background: #FFE8BB !important;
   padding: 20px;
   font-size: 15px;
   font-weight: 500;
   line-height: 140%;
-  color: #FFF !important;
+  color: #000 !important;
 }
 
 .cta1::-webkit-input-placeholder
@@ -16056,7 +16056,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.30);
+  color: rgba(0, 0, 0, 0.30);
 }
 
 .pb20px
@@ -32897,8 +32897,8 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 {
   border: 1px solid #000000;
   opacity: 0.1;
-  margin: 30px 0;
-}
+  margin: 20px 0;
+} 
 .hr_style_v3_02make
 {
   border: 1px solid #000000;
@@ -34275,7 +34275,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .cfc_v3_01 
 {
-  background-color: transparent;
+  background-color: transparent !important;
   color: black;
   border-radius: 12px !important;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -34296,7 +34296,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 {
   color: #000;
   outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .fctray_gqtns
@@ -37195,7 +37195,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .div_fbn a:nth-child(19) .row,
 .div_fbn a:nth-child(22) .row
 {
-  background: #ED7D6F;
+  background: #803358;
 }
 
 /* .partnership_row a:nth-child(2) .box_02,

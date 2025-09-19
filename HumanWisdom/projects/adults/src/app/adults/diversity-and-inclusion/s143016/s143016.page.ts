@@ -10,9 +10,9 @@ import { Location } from '@angular/common';
 })
 export class S143016Page implements OnInit,OnDestroy {
 
-  bg_tn="bg_292d56"
-  bg_cft="bg_292d56"
-  bg="bg_292d56"
+  bg_tn="bg_FFF7E6"
+  bg_cft="bg_FFF7E6"
+  bg="bg_FFF7E6"
   mediaVideo=JSON.parse(localStorage.getItem("mediaVideo"))
   videoLink=this.mediaVideo+'/diversity-and-inclusion/videos/1.1.mp4'  
   title="Why is Diversity and Inclusion important?"

@@ -11,9 +11,9 @@ import * as jQuery from 'jquery';
 })
 export class S143019Page implements OnInit,OnDestroy 
 {
-  bg_tn="bg_292d56"
-  bg_cft="bg_292d56"
-  bg="bg_292d56"
+  bg_tn="bg_FFF7E6"
+  bg_cft="bg_FFF7E6"
+  bg="bg_FFF7E6"
   title="A US experiment"
   mediaAudio=JSON.parse(localStorage.getItem("mediaAudio"))
   audioLink=this.mediaAudio+'/diversity-and-inclusion/audios/1.5.mp3'

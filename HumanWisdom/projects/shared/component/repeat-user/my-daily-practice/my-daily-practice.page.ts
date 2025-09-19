@@ -4,7 +4,8 @@ import { ProgramType } from '../../../models/program-model';
 import { CommonService } from '../../../services/common.service';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { LogEventService } from '../../../services/log-event.service';
-
+import { AdultsService }   from '../../../../adults/src/app/adults/adults.service';
+import { TeenagersService } from '../../../../teenagers/src/app/teenagers/teenagers.service';
 
 
 @Component({
@@ -47,8 +48,16 @@ export class MyDailyPracticePage implements OnInit {
   public moduleList = [];
   loginResponse: any;
   streak: number = 0;
+  public resumeLastvisited = [];
+  isSubscriber = false;
+  journalHits = 0;
 
-  constructor(private  commonService:CommonService, public logeventservice: LogEventService, private router:Router) { 
+  constructor(
+    private commonService: CommonService,
+    public  logeventservice: LogEventService,
+    private router: Router,
+    private adultService: AdultsService,
+    private teenService: TeenagersService) { 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
      this.isFirstLogin = SharedService.isRoutedFromLogin;
   }
@@ -60,11 +69,7 @@ export class MyDailyPracticePage implements OnInit {
         this.userName =JSON.parse(localStorage.getItem('userName'));
     } catch (error) {
          this.userName = localStorage.getItem('userName');
-    }
-
-       
-   
-
+    }   
    
     this.userName = this.userName ? this.userName.replace('"',''): this.userName;
   if (SharedService.ProgramId == ProgramType.Adults) {
@@ -84,6 +89,24 @@ export class MyDailyPracticePage implements OnInit {
     }
 
     this.streak = this.loginResponse?.Streak || 0;
+    this.getLastvisitedScr(); 
+
+    this.journalHits = +(localStorage.getItem('journalHits') || 0);
+  }
+
+  private getLastvisitedScr(): void {
+    const service = SharedService.ProgramId === ProgramType.Adults
+      ? this.adultService
+      : this.teenService;
+
+    const userId = SharedService.getUserId();
+    service.GetLastVisitedScreen(userId).subscribe(res => {
+      this.resumeLastvisited = res || [];
+    });
+
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
   }
 
   getdailyquestion() {
@@ -149,42 +172,71 @@ export class MyDailyPracticePage implements OnInit {
   }
 
   subdailyques() {
-    this.logeventservice.logEvent('click_add_to_journal' );    
+  /* analytics */
+  this.logeventservice.logEvent('click_add_to_journal');
 
-    if (!this.isloggedIn) {
-      this.content = "Subscribe to activate your online journal";
-      this.enableAlert = true;
-      // alert("Subscribe to activate your online journal");
-    } else {
-      let obj = {
-        ReflectionId: this.dailyqusrefid,
-        SubscriberId: localStorage.getItem("userID"),
-        Resp: this.questext
-      }
-      this.commonService.submitDailypractiseQuestion(obj).subscribe((res) => {
-        if (res) {
-          this.content = "Successfully added to journal";
-          this.enableAlert = true;
-          this.questext='';
-          
-          // window.alert('Successfully added daily question')
-        }
-      })
+  /* login gate */
+  if (!this.isloggedIn) {
+    this.content = 'Subscribe to activate your online journal';
+    this.enableAlert = true;
+    return;
+  }
+
+  /* free-user hit limit */
+  if (!this.isSubscriber) {
+    if (this.journalHits >= 2) {        // already at limit
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+      return;
     }
+    this.journalHits++;
+    localStorage.setItem('journalHits', String(this.journalHits));
   }
 
+  /* save entry */
+  const obj = {
+    ReflectionId: this.dailyqusrefid,
+    SubscriberId: localStorage.getItem('userID'),
+    Resp: this.questext
+  };
+  this.commonService.submitDailypractiseQuestion(obj).subscribe(res => {
+    if (res) {
+      this.content = 'Successfully added to journal';
+      this.enableAlert = true;
+      this.questext = '';
+    }
+  });
+}
   
-  routeDailyPractice(id){
-    if(id==0) 
-      this.logeventservice.logEvent('click_daily_insiration' );
-    else if(id==1) 
-      this.logeventservice.logEvent('click_breathing_exercise' );
-    else if(id==4) 
-      this.logeventservice.logEvent('click_daily_meditation' );
-   
-
-    this.router.navigate([SharedService.getprogramName()+'/'+'daily-practise/'+id])
+  get disableJournalBtn(): boolean {
+    return this.guest || !this.isloggedIn || !this.questext ||
+          (!this.isSubscriber && this.journalHits >= 2);
   }
+
+routeDailyPractice(id: number): void {
+  /* analytics */
+  if (id === 0)       this.logeventservice.logEvent('click_daily_inspiration');
+  else if (id === 1)  this.logeventservice.logEvent('click_breathing_exercise');
+  else if (id === 4)  this.logeventservice.logEvent('click_daily_meditation');
+
+  /* already subscribed – go straight in */
+  if (this.isSubscriber) {          // <── use the boolean flag
+    this.router.navigate([SharedService.getprogramName(), 'daily-practise', id]);
+    return;
+  }
+
+  /* free-user gating: 2 hits per exercise */
+  const key = `dly_prac_${id}`;
+  let hits = +(localStorage.getItem(key) || 0);
+
+  if (hits >= 2) {
+    this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    return;
+  }
+
+  localStorage.setItem(key, String(hits + 1));
+  this.router.navigate([SharedService.getprogramName(), 'daily-practise', id]);
+}
+
   routeToDailyCheckIn(){
     this.logeventservice.logEvent('click_daily_checkin' );
 
@@ -347,4 +399,35 @@ onFocus() {
     this.getinp(module);
   }
 
+routeResume(r?: any, enableLastVisited = false): void {
+  this.logeventservice.logEvent('click_continue_where_left');
+  const isAdult = SharedService.ProgramId === ProgramType.Adults;
+  const service = isAdult ? this.adultService : this.teenService;
+  const fallbackUrl = isAdult
+    ? '/adults/happiness/'
+    : '/teenagers/happiness/';
+
+  if (enableLastVisited) {
+    const first = this.resumeLastvisited[0];
+    const id   = first ? first.ModuleId.toString() : '23';
+    const url  = first ? first.ModuleUrl.toString() : fallbackUrl;
+    service.setmoduleID(id, url, url);
+  }
+
+  localStorage.setItem('pageaction', 'next');
+}
+
+survey(): void {
+  this.logeventservice.logEvent('click_take_survey');
+
+  const prefix = this.isAdults ? '/adults' : '/teenagers';
+  this.router.navigate([`${prefix}/wisdom-survey`], { state: { isUseCloseButton: true } });
+}
+
+  getAlertcloseEvent() {
+    this.enableAlert = false;
+    this.questext="";
+
+    this.content = '';
+  }
 }
