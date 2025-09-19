@@ -11,9 +11,9 @@ import { AdultsService } from "../../adults.service";
 export class S143037Page implements OnInit 
 {
 
-  bg_tn = "bg_292d56"
-  bg_cft = "bg_292d56"
-  bg = "bg_292d56"
+  bg_tn = "bg_FFF7E6"
+  bg_cft = "bg_FFF7E6"
+  bg = "bg_FFF7E6"
   hint = "It is not easy to admit this but if you look carefully we all have some."
   toc = "/diversity-and-inclusion/s143001"
    path = setTimeout(() => {

@@ -334,7 +334,7 @@
                 <div id="tab2" class="tab-pane fade in active" *ngIf="isGuidedQueestionsTab">
                   <div class="row center_flex mtb30px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
+                      <h4 class="mtb0px fs_15px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Explore these questions to understand yourself, and find fresh ways of dealing with life’s
                         challenges
                       </h4>

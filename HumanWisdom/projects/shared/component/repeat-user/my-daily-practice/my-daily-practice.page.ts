@@ -402,6 +402,7 @@ onFocus() {
 routeResume(r?: any, enableLastVisited = false): void {
   this.logeventservice.logEvent('click_continue_where_left');
 
+
   const isAdult = SharedService.ProgramId === ProgramType.Adults;
   const service = isAdult ? this.adultService : this.teenService;
   const fallbackUrl = isAdult
@@ -452,4 +453,20 @@ get resumeThumb(): string {
     ? `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/${id}.webp`
     : `https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/${id}.webp`;
 }
+
+}
+
+survey(): void {
+  this.logeventservice.logEvent('click_take_survey');
+
+  const prefix = this.isAdults ? '/adults' : '/teenagers';
+  this.router.navigate([`${prefix}/wisdom-survey`], { state: { isUseCloseButton: true } });
+}
+
+  getAlertcloseEvent() {
+    this.enableAlert = false;
+    this.questext="";
+
+    this.content = '';
+  }
 }
