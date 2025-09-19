@@ -401,20 +401,27 @@ onFocus() {
 
 routeResume(r?: any, enableLastVisited = false): void {
   this.logeventservice.logEvent('click_continue_where_left');
+
   const isAdult = SharedService.ProgramId === ProgramType.Adults;
   const service = isAdult ? this.adultService : this.teenService;
   const fallbackUrl = isAdult
-    ? '/adults/happiness/'
-    : '/teenagers/happiness/';
+    ? '/adults/happiness/s23001'
+    : '/teenagers/happiness/s23001';
 
-  if (enableLastVisited) {
+  let targetUrl: string;
+
+  if (enableLastVisited && this.resumeLastvisited?.length) {
     const first = this.resumeLastvisited[0];
-    const id   = first ? first.ModuleId.toString() : '23';
-    const url  = first ? first.ModuleUrl.toString() : fallbackUrl;
-    service.setmoduleID(id, url, url);
+    service.setmoduleID(first.ModuleId.toString(), first.ModuleUrl, first.ModuleUrl);
+    targetUrl = first.ModuleUrl;
+  } else {
+    service.setmoduleID('23', fallbackUrl, fallbackUrl);
+    targetUrl = fallbackUrl;
   }
 
   localStorage.setItem('pageaction', 'next');
+  this.router.navigate([targetUrl]);   // <-- missing line
+  console.log(this.resumeLastvisited[0]);
 }
 
 survey(): void {
@@ -430,4 +437,19 @@ survey(): void {
 
     this.content = '';
   }
+
+  goToSubscribe(): void {
+  const prefix = SharedService.getprogramName();
+  this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+}
+get resumeThumb(): string {
+  if (!this.resumeLastvisited?.length) return '';
+
+  const id = this.resumeLastvisited[0].ModuleId;
+  const isAdult = SharedService.ProgramId === ProgramType.Adults;
+
+  return isAdult
+    ? `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/${id}.webp`
+    : `https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/${id}.webp`;
+}
 }
