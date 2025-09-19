@@ -454,19 +454,6 @@ get resumeThumb(): string {
     : `https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/${id}.webp`;
 }
 
-}
 
-survey(): void {
-  this.logeventservice.logEvent('click_take_survey');
 
-  const prefix = this.isAdults ? '/adults' : '/teenagers';
-  this.router.navigate([`${prefix}/wisdom-survey`], { state: { isUseCloseButton: true } });
-}
-
-  getAlertcloseEvent() {
-    this.enableAlert = false;
-    this.questext="";
-
-    this.content = '';
-  }
 }
