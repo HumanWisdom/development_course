@@ -1,13 +1,25 @@
     .h5 {
       margin-top: -8px;
-    }
-
-    
+    }    
     .color_beige{
       background: #FFF4E6;
     }
     .card_gap{
       gap:45px;
+    }
+    .w-40p{
+      width:40%
+    }
+    .hr-darker{
+      border-width: 1px;
+      border-color: rgba(0, 0, 0, 0.25);
+      opacity: 1;
+    }
+    .owl-nav-w{
+      width: 84% !important;
+    }
+    .sap-mt{
+      margin-top: -20px;
     }
 
     @media screen and (max-width: 768px) {
