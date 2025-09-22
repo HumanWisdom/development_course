@@ -98,13 +98,21 @@
                                     <span class="mb-0  fw-normal fs15">{{ card.title }}</span>
                                   </div>
                                   <div class="ms-3">
-                                    <!-- Show lock icon if card is locked, otherwise show arrow -->
-                                    <img *ngIf="card.isFree === '0' || card.isFree === 0" 
-                                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg" 
-                                         alt="Lock icon" 
-                                         class="quick-answer-lock-icon"
-                                         style="width: 20px; height: 20px;">
-                                    <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="fs15">  > </span>
+
+                                    <ng-container *ngIf="isSubscriber;else notSubscriber">
+                                      <span class="fs15">  > </span>
+                                    </ng-container>
+<ng-template #notSubscriber>
+    <img *ngIf=" card.isFree === '0' || card.isFree === 0" 
+                                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg" 
+                                           alt="Lock icon" 
+                                           class="quick-answer-lock-icon"
+                                           style="width: 20px; height: 20px;">
+                                             <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="fs15">  > </span>
+  </ng-template>
+
+                                  
+                                  
                                   </div>
                                 </div>
                                 <!-- Default card layout for other sections -->
@@ -227,13 +235,18 @@
                                       <h6 class="mb-0 fw-normal">{{ card.title }}</h6>
                                     </div>
                                     <div class="ms-3">
-                                      <!-- Show lock icon if card is locked, otherwise show arrow -->
-                                      <img *ngIf="card.isFree === '0' || card.isFree === 0" 
+
+                                            <ng-container *ngIf="isSubscriber;else notSubscriber">
+                                      <span class="fs15">  > </span>
+                                    </ng-container>
+<ng-template #notSubscriber>
+    <img *ngIf=" card.isFree === '0' || card.isFree === 0" 
                                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg" 
                                            alt="Lock icon" 
                                            class="quick-answer-lock-icon"
                                            style="width: 20px; height: 20px;">
-                                      <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="text-dark fs15"> > </span>
+                                             <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="fs15">  > </span>
+  </ng-template>
                                     </div>
                                   </div>
                                   <!-- Default card layout for other sections -->
