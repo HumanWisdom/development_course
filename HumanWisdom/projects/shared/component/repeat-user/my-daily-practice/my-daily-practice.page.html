@@ -249,9 +249,11 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex tcenter">
 
-                  <img [src]="resumeThumb"
-                  class="p0 session_imgnew" style="border: none;">
+                  <!-- <img [src]="resumeThumb"
+                  class="p0 session_imgnew" style="border: none;"> -->
 
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp"
+                       class="p0 session_imgnew" style="border: none;">
                 </div>
               </div>
 
@@ -267,9 +269,7 @@
           <!-- text -->
           <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
             <div class="row">
-
               <h4 class="mtb0px fs_18px fw_600 lh_120p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-
                 {{resumeLastvisited[0]['ModuleName']}}
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -419,21 +419,20 @@
                   </div>
                   <!-- show only when user is NOT subscribed -->
 
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px"
-                      *ngIf="!isSubscriber"
-                      (click)="goToSubscribe()">
-                    <div class="row">
-                      <h4 class="mtb0px fs_21px lh_130p"
-                          [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
-                        Start your free trial today!
-                      </h4>
-                      <h4 class="mtb0px fs_12px fw_400"
-                          style="line-height:18px;"
-                          [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
-                        Get expert guidance and personalized tools with HappierMe Premium
-                      </h4>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px">
+                      <div class="row">
+                        <h4 class="mtb0px fs_21px lh_130p"
+                            [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
+                          Start your free trial today!
+                        </h4>
+                        <h4 class="mtb0px fs_12px fw_400"
+                            style="line-height:18px;"
+                            [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
+                          Get expert guidance and personalized tools with HappierMe Premium
+                        </h4>
+                      </div>
                     </div>
-                  </div>
+
 
 
                     <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">

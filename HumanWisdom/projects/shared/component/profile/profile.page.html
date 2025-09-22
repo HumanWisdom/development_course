@@ -8,7 +8,7 @@
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Profile
       </h1>
     </div>
@@ -47,7 +47,7 @@
                   <div class="pt1 profile_pe_div" [ngClass]="isAdults ? '' : 'bg_profile_t'">
                     <div class="row mt35px mb5px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                        <h4 class="mtb0px fs_18px fw_600 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{loginResponse?.Name}}
                         </h4>
                       </div>
@@ -55,7 +55,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                        <h6 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                           {{email}}
                         </h6>
                       </div>
