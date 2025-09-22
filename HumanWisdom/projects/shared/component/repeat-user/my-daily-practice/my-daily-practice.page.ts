@@ -399,35 +399,4 @@ onFocus() {
     this.getinp(module);
   }
 
-routeResume(r?: any, enableLastVisited = false): void {
-  this.logeventservice.logEvent('click_continue_where_left');
-  const isAdult = SharedService.ProgramId === ProgramType.Adults;
-  const service = isAdult ? this.adultService : this.teenService;
-  const fallbackUrl = isAdult
-    ? '/adults/happiness/'
-    : '/teenagers/happiness/';
-
-  if (enableLastVisited) {
-    const first = this.resumeLastvisited[0];
-    const id   = first ? first.ModuleId.toString() : '23';
-    const url  = first ? first.ModuleUrl.toString() : fallbackUrl;
-    service.setmoduleID(id, url, url);
-  }
-
-  localStorage.setItem('pageaction', 'next');
-}
-
-survey(): void {
-  this.logeventservice.logEvent('click_take_survey');
-
-  const prefix = this.isAdults ? '/adults' : '/teenagers';
-  this.router.navigate([`${prefix}/wisdom-survey`], { state: { isUseCloseButton: true } });
-}
-
-  getAlertcloseEvent() {
-    this.enableAlert = false;
-    this.questext="";
-
-    this.content = '';
-  }
 }

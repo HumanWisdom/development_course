@@ -113,7 +113,7 @@ height:auto;
 
 /* Tick Icon - Red background with white checkmark */
 .tick-icon {
-  background-color: #dc3545; /* Bootstrap danger red */
+  // background-color: #dc3545; /* Bootstrap danger red */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -143,8 +143,8 @@ height:auto;
 
 /* Tick Icon Image - Custom SVG styling */
 .tick-icon-img {
-  width: 16px !important;
-  height: 16px !important;
+  width: 20px !important;
+  height: 20px !important;
   object-fit: contain;
 
 }
