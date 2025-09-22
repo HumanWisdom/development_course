@@ -508,18 +508,8 @@ navigationChange = new EventEmitter<string>();
 
   onCardClick(card: ContentCard): void {
     console.log('Card clicked:', card);
-
-    if(card.path && card.path.includes('~')){
-       let url = card.path.replaceAll(':', '_');
-       url = encodeURIComponent(url.replaceAll('/', '~'));
-       this.router.navigate([url]);
-       return;
-    }
-
    if(card.path && card.path.includes('?')) 
    {
-     
-
       const [basePath, queryString] = card.path.split('?');
       const queryParams = new URLSearchParams(queryString);
       const queryObj: any = {};

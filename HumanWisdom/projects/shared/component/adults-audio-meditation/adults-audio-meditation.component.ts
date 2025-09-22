@@ -29,9 +29,13 @@ export class AdultsAudioMeditationComponent implements OnInit {
     private navigationService:NavigationService
   )
   {
-    this.audioLink = this.route.snapshot.paramMap.get('audiolink')
+    this.audioLink = this.route.snapshot.paramMap.get('audiolink');
+    
     this.audioTitle = this.route.snapshot.paramMap.get('title')
     let audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
+    if (audioUrl.includes('%')) {
+      audioUrl = decodeURIComponent(audioUrl);
+    }
     audioUrl=audioUrl.replace('_',':');
     this.audioLink =  audioUrl.replace(/\~/g, '/');
     this.audioTitle = this.route.snapshot.paramMap.get('title');
