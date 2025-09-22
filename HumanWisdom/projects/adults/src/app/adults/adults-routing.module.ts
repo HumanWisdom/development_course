@@ -18,6 +18,7 @@ import { ParentHubPageModule } from './curated/parent-hub/parent-hub.module';
 import { ParentHubPage } from './curated/parent-hub/parent-hub.page';
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 import { HomeComponent } from '../../../../shared/component/home/home.component';
+import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 
 
 const routes: Routes = [
@@ -721,6 +722,10 @@ const routes: Routes = [
   {
     path: 'soundscapes',
     component: CommonScreenPage
+  },
+  {
+    path: 'chat-bot',
+    component: ChatBotComponent
   },
   {
     path: 'audiopage/:audiolink/:RowId/:enable/:title/:moduleName',
