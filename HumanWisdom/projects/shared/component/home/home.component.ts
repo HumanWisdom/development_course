@@ -507,6 +507,32 @@ navigationChange = new EventEmitter<string>();
     };
 
   onCardClick(card: ContentCard): void {
+    console.log('Card clicked:', card);
+
+    if(card.path && card.path.includes('~')){
+       let url = card.path.replaceAll(':', '_');
+       url = encodeURIComponent(url.replaceAll('/', '~'));
+       this.router.navigate([url]);
+       return;
+    }
+
+   if(card.path && card.path.includes('?')) 
+   {
+     
+
+      const [basePath, queryString] = card.path.split('?');
+      const queryParams = new URLSearchParams(queryString);
+      const queryObj: any = {};
+      queryParams.forEach((value, key) => {
+        queryObj[key] = value;
+      });
+      try {
+        this.router.navigate([basePath], { queryParams: queryObj });
+      } catch (e) {
+        console.warn('Navigation failed for path with query params:', card.path, e);
+      }
+    return;
+   }
     if (card.path) {
       try {
         this.router.navigate([card.path]);
