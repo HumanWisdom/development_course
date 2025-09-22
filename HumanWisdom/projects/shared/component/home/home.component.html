@@ -12,7 +12,7 @@
           <div class="x_content p0">
 
             <div class="row home-container">
-              <div class="col-12 border-bottom">
+              <div class="col-12 border-bottom pr0px">
                 <div class="d-flex flex-wrap">
                   <div class="nav-menu">
                     <ng-container *ngFor="let item of personalisedList">
@@ -36,6 +36,11 @@
                 </div>
               </div>
             </div>
+                <div class="row" >
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
+                            <hr class="hr_style_v4">
+                          </div>
+                        </div>
 
             <div class="row">
               <div class="col-12 p-0">
@@ -51,7 +56,7 @@
                             <hr class="hr_style_v4">
                           </div>
                         </div>
-                      <div class="py-3 px-3">
+                      <div class="p20px">
                         <h6 class="mb-0  section-title-inline">{{ section.title }}</h6>
                         <small class="text-muted" *ngIf="section.subtitle">{{ section.subtitle }}</small>
                       </div>
@@ -59,20 +64,20 @@
                         <!-- Horizontal vs Vertical card layout based on section.isVerticalCards flag -->
                         <div *ngIf="section.cards && section.cards.length">
                           <!-- HORIZONTAL (default) -->
-                          <div class="d-flex card-container ms-3" *ngIf="!section.isVerticalCards">
+                          <div class="d-flex card-container " *ngIf="!section.isVerticalCards">
                             <div *ngFor="let card of getDisplayCards(section)"  style="min-width: 160px; flex-shrink: 0;">
                               <app-content-card [card]="card"  (cardClick)="onCardClick($event)"></app-content-card>
                             </div>
                           </div>
 
                           <!-- VERTICAL (stacked cards) -->
-                          <div class="d-flex flex-column" *ngIf="section.isVerticalCards">
+                          <div class="d-flex flex-column pl20px pr20px" *ngIf="section.isVerticalCards">
                             <div *ngFor="let card of getDisplayCards(section)" class="mb-3" style="width: 100%;">
                               <!-- For stacked cards we want full width -->
                               <div style="width: 100%;">
                                 <!-- Special layout for Life stories and Blogs -->
                                 <div *ngIf="section.rawSectionType === 2" 
-                                     class="story-blog-card d-flex align-items-center p-3 " 
+                                     class="story-blog-card d-flex align-items-center " 
                                      style="background-color: rgba(255, 232, 187, 1);"
                                      (click)="onCardClick(card)">
                                   <div class="me-3" style="flex-shrink: 0;">
@@ -157,7 +162,7 @@
                     <!-- Accordion header + content for normal sections -->
                     <ng-template #accordionHeader>
                       <!-- Section Header (clickable for accordion) -->
-                      <div class="d-flex justify-content-between align-items-center p-3 section-header rounded-top  "
+                      <div class="d-flex justify-content-between align-items-center section-header rounded-top  "
                            [class.long-term-solutions-header]="section.title === 'Long term solutions'"
                            (click)="onSectionToggle(section)"
                            (keydown.enter)="onSectionToggle(section)"
@@ -188,7 +193,7 @@
                           <!-- [class.p-3]="section.title !== 'Long term solutions'" [class.p-3]="section.title === 'Long term solutions'" -->
                           <!-- Horizontal vs Vertical card layout for accordion content as well -->
                           <div *ngIf="section.cards && section.cards.length">
-                            <div class="d-flex card-container ms-3"                                 
+                            <div class="d-flex card-container "                                 
                                  *ngIf="!section.isVerticalCards"> 
                                   <!-- [class.p-3]="section.title !== 'Long term solutions'"
                                  [class.px-3]="section.title === 'Long term solutions'"
@@ -199,17 +204,17 @@
                               </div>
                             </div>
 
-                            <div class="d-flex flex-column p0"                                
+                            <div class="d-flex flex-column pl20px pr20px"                                
                                  *ngIf="section.isVerticalCards">
                                   <!--  [class.p-3]="section.title !== 'Long term solutions'"
                                  [class.px-3]="section.title === 'Long term solutions'"
                                  [class.py-3]="section.title === 'Long term solutions'" -->
 
                               <div *ngFor="let card of getDisplayCards(section)" class="mb-3" style="width: 100%;">
-                                <div style="width: 100%;" class="px-3">
+                                <div style="width: 100%;" >
                                   <!-- Special layout for Life stories and Blogs -->
                                   <div *ngIf="section.rawSectionType === 2" 
-                                       class="story-blog-card d-flex align-items-center p-3 " 
+                                       class="story-blog-card d-flex align-items-center  " 
                                        style="background-color: rgba(255, 232, 187, 1);"
                                        (click)="onCardClick(card)">
                                     <div class="me-3" style="flex-shrink: 0;">
@@ -228,7 +233,7 @@
                                   </div>
                                   <!-- Special layout for Quick Answers (sectionType 3) -->
                                   <div *ngIf="section.rawSectionType === 3" 
-                                       class="quick-answer-card d-flex align-items-center justify-content-between p-3 cursor-pointer" 
+                                       class="quick-answer-card d-flex align-items-center justify-content-between  cursor-pointer p-3" 
                                        style="background-color: rgba(255, 232, 187, 1);"
                                        (click)="onCardClick(card)">
                                     <div class="flex-grow-1">
