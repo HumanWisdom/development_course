@@ -75,9 +75,9 @@
 
             </form>
           </div>
-          <hr class="hr_style_v3_01">
+          <hr *ngIf="!justSignedUp && wisdomRecomm?.length" class="hr_style_v3_01">
           <!-- recommendations -->
-          <div *ngIf="wisdomRecomm?.length">
+          <div *ngIf="!justSignedUp && wisdomRecomm?.length">
             <h2 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter">
               Here are some recommendations for you to explore
             </h2>
@@ -123,6 +123,15 @@
               </a>
             </div>
 
+          </div>
+
+          <!-- Proceed to Home – only for brand-new users -->
+          <div *ngIf="justSignedUp" class="mtb20px">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+              <button (click)="routeToDashboard()" type="button" class="btn mdp_add_to_journal">
+                Proceed to Home
+              </button>
+            </div>
           </div>
 
         </div>

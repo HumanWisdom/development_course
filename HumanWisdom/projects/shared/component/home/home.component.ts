@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 
 export interface NavigationItem {
   id: string;
@@ -104,6 +105,8 @@ navigationChange = new EventEmitter<string>();
   @ViewChild('sectionElement', { static: false }) sectionElement: ElementRef;
   personalisedList = [];
   YourTopicofChoice;
+  isAdults = false;
+
   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
    mainheader:string='';
@@ -116,6 +119,12 @@ navigationChange = new EventEmitter<string>();
      console.log('Is Subscriber:', this.isSubscriber);
      this.getUserPreference();
     console.log('Home component initialized');
+    if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
+
   }
 
 
@@ -659,5 +668,10 @@ navigationChange = new EventEmitter<string>();
 
    onViewAll(section):void{
      this.router.navigate([section.viewall_Url]);
+  }
+
+  goToSubscribe(): void {
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
   }
 }

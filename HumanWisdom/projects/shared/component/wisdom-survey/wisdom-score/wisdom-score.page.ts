@@ -31,6 +31,7 @@ export class WisdomScorePage implements OnInit {
   isUseCloseButton: boolean;
   wisdomRecomm: any[] = [];
   isSubscriber: boolean = false;
+  justSignedUp = false;
 
   constructor(private router: Router,
     private service: TeenagersService,
@@ -80,7 +81,8 @@ export class WisdomScorePage implements OnInit {
 
     this.enableDash = true;
 
-    console.log("Final cleaned recommendations:", this.wisdomRecomm);
+    const visits = Number(localStorage.getItem('NoOfVisits') || '0');
+      this.justSignedUp = visits === 1;
   }
 
   navigateToRecommendation(item: any) {
@@ -121,6 +123,9 @@ export class WisdomScorePage implements OnInit {
     return parseInt(val)
   }
 
+  routeToDashboard() {
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
+  }
 }
 
 
