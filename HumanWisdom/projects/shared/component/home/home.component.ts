@@ -93,14 +93,14 @@ export interface ContentSection {
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  @Input() navigationItems= [];
-  @Input() description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
+ navigationItems= [];
+  description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
 
-  @Input() contentSections: ContentSection[] = [];
-
-  @Output() navigationChange = new EventEmitter<string>();
-  @Output() cardClick = new EventEmitter<ContentCard>();
-  @Output() sectionToggle = new EventEmitter<ContentSection>();
+ contentSections: ContentSection[] = [];
+  isSubscriber = false;
+navigationChange = new EventEmitter<string>();
+ cardClick = new EventEmitter<ContentCard>();
+ sectionToggle = new EventEmitter<ContentSection>();
   @ViewChild('sectionElement', { static: false }) sectionElement: ElementRef;
   personalisedList = [];
   YourTopicofChoice;
@@ -112,18 +112,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
    }
 
   ngOnInit(): void {
+     this.isSubscriber = SharedService.isSubscriber();
+     console.log('Is Subscriber:', this.isSubscriber);
      this.getUserPreference();
     console.log('Home component initialized');
-    this.logUserStatus();
   }
 
-
-  private logUserStatus(): void {
-    const userId = SharedService.getUserId();
-    const userName = SharedService.getUserName();
-    const isGuest = !userId || userId === 0 || !userName;
-    
-  }
 
   private handleGuestUserDefault(preferenceData: any[]): void {
     console.log('No user preference found, defaulting to Mental health for guest user');
@@ -259,61 +253,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     console.log('Filtered sections (only those with cards):', sections.map(s => ({ title: s.title, cardCount: s.cards?.length || 0 })));
     return sections;
-  }
-
-  /**
-   * Create a parent Modules section that contains Modules1/2/3 as inline child panels (not accordions).
-   */
-  private createCombinedModulesSection(apiResponse: HomeContentResponse, parentSectionType = 'modules'): ContentSection | undefined {
-    const modulesList: { section: HomeSection, type: string }[] = [];
-    if (apiResponse.Modules1) modulesList.push({ section: apiResponse.Modules1, type: 'modules1' });
-    if (apiResponse.Modules2) modulesList.push({ section: apiResponse.Modules2, type: 'modules2' });
-    if (apiResponse.Modules3) modulesList.push({ section: apiResponse.Modules3, type: 'modules3' });
-
-    if (!modulesList.length) return undefined;
-
-    // Convert each module to a ContentSection but mark as inline (so template renders title + cards)
-    const childSections = modulesList.map(({ section, type }) => {
-      const transformed = this.transformSection(section, type);
-      transformed.isInlineSection = true; // IMPORTANT: render as non-accordion inline panel
-      // ensure inline sections show cards (we'll ignore their isExpanded for inline)
-      transformed.isExpanded = true;
-
-      // copy raw sectionType -> isVerticalCards
-      const rawType = typeof section.sectionType === 'string' ? Number(section.sectionType) : section.sectionType;
-      transformed.rawSectionType = rawType;
-      transformed.isVerticalCards = rawType === 2;
-
-      return transformed;
-    });
-
-    const parentTitle =
-      (apiResponse.Modules1 && apiResponse.Modules1.title) ||
-      (apiResponse.Modules2 && apiResponse.Modules2.title) ||
-      (apiResponse.Modules3 && apiResponse.Modules3.title) ||
-      'Modules';
-
-    const parentSubtitle =
-      (apiResponse.Modules1 && apiResponse.Modules1.Subtitle) ||
-      (apiResponse.Modules2 && apiResponse.Modules2.Subtitle) ||
-      (apiResponse.Modules3 && apiResponse.Modules3.Subtitle) ||
-      '';
-
-    const parent: ContentSection = {
-      id: `combined-modules-${Date.now()}`,
-      title: parentTitle,
-      subtitle: parentSubtitle,
-      isExpanded: false,
-      cards: [], // top-level cards empty; children are inline panels
-      cssClass: 'modules-combined',
-      overlayIcon: undefined,
-      childSections: childSections,
-      isInlineSection: false,
-      rawSectionType: undefined,
-      isVerticalCards: false
-    };
-
-    return parent;
   }
 
   /**

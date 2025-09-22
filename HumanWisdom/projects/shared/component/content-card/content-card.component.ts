@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ContentCard } from '../home/home.component';
-
+import {SharedService} from '../../services/shared.service';
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
@@ -70,6 +70,9 @@ export class ContentCardComponent {
    * Show lock when isFree is "0" (locked/not free)
    */
   shouldShowLockIcon(): boolean {
+    if(SharedService.isSubscriber()){
+      return false;
+    }
     return this.card.isFree === "0" || this.card.isFree === 0;
   }
 }
