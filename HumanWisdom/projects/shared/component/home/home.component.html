@@ -318,40 +318,48 @@
                   <ng-container *ngTemplateOutlet="renderSection; context: { $implicit: section }"></ng-container>
 
                   <!-- ====== FREE-TRIAL BANNER – same spacing as sections ====== -->
-                  <a><div class="toc_adiv_imgmynew plr10px py-3" *ngIf="section.title==='Begin Here' && !isSubscriber">
-                    <div class="row center_flex py-3">   <!-- same vertical gap as section content -->
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <a  *ngIf="!isSubscriber">
+                    <div class="toc_adiv_imgmynew plr20px py-3" *ngIf="section.title==='Begin Here' && !isSubscriber">
+                      <div class="row center_flex py-3">   <!-- same vertical gap as section content -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
-                        <!-- image column -->
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative"
-                            [ngClass]="{'pr5px': !isAdults}">
-                          <img *ngIf="isAdults; else teenImg"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start.svg"
-                              alt="" class="p0 session_img">
-                          <ng-template #teenImg>
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_teen.svg"
+                          <!-- image column -->
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative"
+                              [ngClass]="{'pr5px': !isAdults}">
+                            <img *ngIf="isAdults; else teenImg"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start.svg"
                                 alt="" class="p0 session_img">
-                          </ng-template>
-                        </div>
+                            <ng-template #teenImg>
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_teen.svg"
+                                  alt="" class="p0 session_img">
+                            </ng-template>
+                          </div>
 
-                        <!-- copy column -->
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px"
-                            *ngIf="!isSubscriber"
-                            (click)="goToSubscribe()">
-                          <h4 class="mtb0px fs_21px lh_130p"
-                              [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
-                            Start your free trial today!
-                          </h4>
-                          <h4 class="mtb0px fs_12px fw_400 lh_130p"
-                              [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
-                            Get expert guidance and personalised tools with HappierMe Premium
-                          </h4>
-                        </div>
+                          <!-- copy column -->
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px"
+                            
+                              (click)="goToSubscribe()">
+                            <h4 class="mtb0px fs_21px lh_130p"
+                                [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
+                              Start your free trial today!
+                            </h4>
+                            <h4 class="mtb0px fs_12px fw_400 lh_130p"
+                                [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
+                              Get expert guidance and personalised tools with HappierMe Premium
+                            </h4>
+                          </div>
 
+                        </div>
+                      </div>
+                       
+                    </div>
+                    <div class="row"  *ngIf="section.title==='Begin Here' && !isSubscriber" >
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
+                        <hr class="hr_style_v4">
                       </div>
                     </div>
-                      <hr class="hr_style_v4">
-                  </div></a>
+                  </a>
+                  
                   <!-- ====== /FREE-TRIAL BANNER ====== -->
                 </div>
 
