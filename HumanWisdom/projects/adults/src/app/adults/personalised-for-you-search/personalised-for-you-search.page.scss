@@ -269,3 +269,45 @@ li:hover:before {
   .p-section{
     padding:0px 16px 0px 0px !important; 
   }
+
+  /* Desktop-only: only apply where hover and fine pointer exist */
+@media (hover: hover) and (pointer: fine) {
+  .odiv_mdp,
+  .odiv.p-section,
+  .odiv_wfgi,
+  .odiv_pathway {
+    /* hide scrollbar by default */
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .odiv_mdp::-webkit-scrollbar,
+  .odiv.p-section::-webkit-scrollbar,
+  .odiv_wfgi::-webkit-scrollbar,
+  .odiv_pathway::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .odiv_mdp:hover,
+  .odiv.p-section:hover,
+  .odiv_wfgi:hover,
+  .odiv_pathway:hover {
+    -ms-overflow-style: auto !important;
+    scrollbar-width: thin !important;
+  }
+
+  .odiv_mdp:hover::-webkit-scrollbar,
+  .odiv.p-section:hover::-webkit-scrollbar,
+  .odiv_wfgi:hover::-webkit-scrollbar,
+  .odiv_pathway:hover::-webkit-scrollbar {
+    width: 8px !important;
+  }
+
+  .odiv_mdp:hover::-webkit-scrollbar-track,
+  .odiv.p-section:hover::-webkit-scrollbar-track,
+  .odiv_wfgi:hover::-webkit-scrollbar-track,
+  .odiv_pathway:hover::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+}
