@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
         Wellness Survey
       </h1>
     </div>
@@ -34,7 +34,7 @@
             <form>
 
               <div class="scoreClass mtb20px">
-                <h2 style="color: white">Wellness score</h2>
+                <h2 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Wellness score</h2>
                 <h2 style="color: #e58d82">{{acheiviedScore}}</h2>
               </div>
 
@@ -82,7 +82,7 @@
 
               <div class="row mt40px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h3 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff tleft">Check your wellness score today. It takes 2 minutes to complete and helps you to track your progress.</h3>
+                                    <h3 class="mtb0px fs_15px fw_400 lh_150p  tleft" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Check your wellness score today. It takes 2 minutes to complete and helps you to track your progress.</h3>
 
                 </div>
               </div>
