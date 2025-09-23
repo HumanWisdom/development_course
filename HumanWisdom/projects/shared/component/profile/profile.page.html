@@ -83,14 +83,14 @@
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                           <div class="prelative">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/profile_wisdom_points.svg" class="img-responsive w100p">
-                            <h4 class="mtb0px fs_12px fw_600 lh_100p fc_ffffff absolute_center_txt">
+                            <h4 class="mtb0px fs_12px fw_600 lh_100p  absolute_center_txt" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{loginResponse?.Points}}
                             </h4>
                           </div>
                         </div>
 
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
-                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Points
                           </h4>
                         </div>
@@ -107,12 +107,12 @@
                     <div class="row mt20px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                          <h4 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tleft">
+                          <h4 class="mtb0px fs_12px fw_400 lh_18px  tleft" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                            Overall Progress
                           </h4>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                          <h4 class="mtb0px fs_15px fw_600 lh_18px fc_ffffff tright">
+                          <h4 class="mtb0px fs_15px fw_600 lh_18px  tright" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{overallPercentage}}%
                           </h4>
                         </div>
@@ -131,31 +131,31 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                          <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{loginResponse.Modules}}
                           </h4>
 
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Modules
                           </h4>
                         </div>
 
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                          <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{loginResponse.Notes}}
                           </h4>
 
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Notes
                           </h4>
                         </div>
 
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                          <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p  " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{loginResponse.Surveys}}
                           </h4>
 
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Surveys
                           </h4>
                         </div>
@@ -168,13 +168,13 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 tleft">
-                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff tleft">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p tleft" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Wellness score
                           </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                           <a (click)="Logevent('/wisdom-survey/progress', '', 'click_progress')">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                               Progress
                               <i class="fa fa-angle-right ml10px"></i>
                             </h4>
@@ -191,7 +191,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82 tleft">
+                        <h4 class="mtb0px fs_30px fw_700 lh_140p  tleft" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                           {{loginResponse.hwScore}}
                         </h4>
                       </div>
@@ -199,7 +199,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tleft">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p tleft" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{score}}% {{direction}} since last survey
                         </h4>
                       </div>
@@ -215,7 +215,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft">
+                        <h4 class="mtb0px fs_12px fw_400 lh_140p  tleft" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           <!-- Fill the happiness survey once a week and track your happiness progress -->
                           Fill the wellness survey once a month and track your wellness progress
                         </h4>
@@ -225,7 +225,7 @@
 
                   <div class="row mt20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff tleft">
+                      <h4 class="mtb0px fs_15px fw_600 lh_150p tleft"[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         This week
                       </h4>
                     </div>
@@ -269,14 +269,14 @@
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                            <h4 class="mt0px fs_15px fw_600 lh_150p fc_ffffff">
+                            <h4 class="mt0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{loginResponse.WkHours}} minutes
                             </h4>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               This week
                             </h4> 
                           </div>
@@ -288,7 +288,7 @@
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 div_middle">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                            <h4 class="mt0px fs_15px fw_600 lh_150p fc_ffffff">
+                            <h4 class="mt0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{loginResponse.Streak}} days
                             </h4>  
                           </div>
@@ -296,7 +296,7 @@
                         
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               Streak
                             </h4>
                           </div>
@@ -308,14 +308,14 @@
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                            <h4 class="mt0px fs_15px fw_600 lh_150p fc_ffffff">
+                            <h4 class="mt0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               72 hours
                             </h4> 
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               Total usage
                             </h4>
                           </div>
@@ -336,11 +336,11 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               Payment Details
                             </h4>
 
-                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7" *ngIf="paymentDetail">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p " *ngIf="paymentDetail" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               <!-- Mastercard 42xx xxxx xxxx xx91 -->
                               {{paymentDetail['CCName'] + ' ' + 'xxxx xxxx xxxx ' + paymentDetail['CCNumber']}}
                             </h4>
@@ -348,7 +348,7 @@
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                             <a (click)="Logevent('/onboarding/payment-details', '', 'click_payment_update')" >
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                                 Update
                                 <i class="fa fa-angle-right ml10px"></i>
                               </h4>
@@ -362,18 +362,18 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               Subscription
                             </h4>
 
-                            <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7" *ngFor="let p of myPrograms">
+                            <h4 class="mtb0px fs_12px fw_400 lh_150p " *ngFor="let p of myPrograms" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{p.Prog}}: {{p.ActKey}}
                             </h4>
                           </div>
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                             <a  (click)="Logevent('/onboarding/myprogram', '', 'click_subscription_details')"  >
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                                 Details
                                 <i class="fa fa-angle-right ml10px"></i>
                               </h4>
@@ -401,13 +401,13 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               Invite Friends
                             </h4>
                           </div>
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                               Share
                               <i class="fa fa-angle-right ml10px"></i>
                             </h4>

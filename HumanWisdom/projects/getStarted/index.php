@@ -1927,17 +1927,19 @@ require_once('./includes/security_config.php');
             <div class="owl-theme">
               <div class="owl-controls">
                 <div class="fixed_w1340 d-flex justify-content-between align-items-center">
-                  <a class="sap" href="https://happierme.app/adults/coach">
+               
+                  <div class="owl-nav owl-nav-w"></div>
+                </div>
+              </div>
+            </div>
+
+             <a class="sap" href="https://happierme.app/adults/coach">
                     <h5 class="fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       Find out more
                       <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy></a> -->
                     </h5>
                   </a>
-                  <div class="owl-nav owl-nav-w"></div>
-                </div>
-              </div>
-            </div>
           
           </div>
 
@@ -2161,7 +2163,7 @@ require_once('./includes/security_config.php');
                     </h4>
 
                     <a id="exploreAppWeb">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline mt2rem w-40p ">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline mt2rem w-45p ">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
                       </h5>
@@ -2211,7 +2213,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/pathway/">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2243,7 +2245,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/journal">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right ml10px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2284,7 +2286,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/podcast">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2316,7 +2318,7 @@ require_once('./includes/security_config.php');
                     <a href="https://happierme.app/adults/forum">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2518,17 +2520,19 @@ require_once('./includes/security_config.php');
             <div class="owl-theme">
               <div class="owl-controls">
                 <div class="d-flex justify-content-between align-items-center">
-                  <a class="sap" id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
+                 
+                  <div class="owl-nav owl-nav-w"></div>
+                </div>
+              </div>
+            </div>
+
+             <a class="sap" mb id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
                     <h5 class="mt20px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                       See all posts
                       <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
                       </h4>
                   </a>
-                  <div class="owl-nav owl-nav-w"></div>
-                </div>
-              </div>
-            </div>
           </div>
 
         </div>
@@ -2538,7 +2542,7 @@ require_once('./includes/security_config.php');
 
     <!-- faqs -->
     <section class="">
-      <div class="section-header">
+      <div class="section-header mt-sm-3">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
             <h2 class="mtb0px fs_24px fw_600 lh_120p">

@@ -1,4 +1,4 @@
-    .h5 {
+   .h5 {
       margin-top: -8px;
     }    
     .color_beige{
@@ -9,7 +9,11 @@
     }
     .w-40p{
       width:40%
-    }
+        }
+    .w-45p{
+      width:45%
+        }
+
     .hr-darker{
       border-width: 1px;
       border-color: rgba(0, 0, 0, 0.25);
