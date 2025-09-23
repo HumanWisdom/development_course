@@ -2161,7 +2161,7 @@ require_once('./includes/security_config.php');
                     </h4>
 
                     <a id="exploreAppWeb">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline mt2rem w-40p ">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline mt2rem w-45p ">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
                       </h5>
