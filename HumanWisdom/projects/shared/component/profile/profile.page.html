@@ -174,7 +174,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                           <a (click)="Logevent('/wisdom-survey/progress', '', 'click_progress')">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                               Progress
                               <i class="fa fa-angle-right ml10px"></i>
                             </h4>
@@ -191,7 +191,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82 tleft">
+                        <h4 class="mtb0px fs_30px fw_700 lh_140p  tleft" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                           {{loginResponse.hwScore}}
                         </h4>
                       </div>
@@ -348,7 +348,7 @@
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                             <a (click)="Logevent('/onboarding/payment-details', '', 'click_payment_update')" >
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                                 Update
                                 <i class="fa fa-angle-right ml10px"></i>
                               </h4>
@@ -373,7 +373,7 @@
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                             <a  (click)="Logevent('/onboarding/myprogram', '', 'click_subscription_details')"  >
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                                 Details
                                 <i class="fa fa-angle-right ml10px"></i>
                               </h4>
@@ -407,7 +407,7 @@
                           </div>
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                               Share
                               <i class="fa fa-angle-right ml10px"></i>
                             </h4>
