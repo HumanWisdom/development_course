@@ -12241,7 +12241,7 @@ h1.module_title
   line-height: 28px;
   /* text-align: center; */
   text-align: left;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .txt5
@@ -34899,7 +34899,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-size: 15px;
   font-weight: 400;
   line-height: normal;
-  color: #fff;
+  color: #000;
   text-align: left;
   padding: 12px 10px;
 }
@@ -36222,7 +36222,7 @@ li ol > li:before {
   font-size: 15px;
   font-weight: 400;
   line-height: normal;
-  color: #fff !important;
+  color: #000 !important;
   text-align: left !important;
   padding: 12px 10px !important;
 }
