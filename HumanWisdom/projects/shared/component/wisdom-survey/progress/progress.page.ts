@@ -7,6 +7,8 @@ import { SharedService } from'../../../services/shared.service';
 import { Router } from '@angular/router';
 import { NavigationService } from '../../../services/navigation.service';
 import { Constant } from  '../../../services/constant';
+import { ProgramType } from "../../../models/program-model";
+
 
 @Component({
   selector: 'app-progress',
@@ -14,7 +16,8 @@ import { Constant } from  '../../../services/constant';
   styleUrls: ['./progress.page.scss'],
 })
 export class ProgressPage implements OnInit {
-  public enableChart = false;
+    isAdults = true;
+  public enableChart = false;  
   public lineChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false
@@ -139,6 +142,12 @@ export class ProgressPage implements OnInit {
  private navigationService: NavigationService,
   )
   {
+
+  if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+  } else {
+    this.isAdults = false;
+  }
   let userId = JSON.parse(localStorage.getItem("userId"))
   this.service.wisdomSurveyinsights(userId).subscribe((r) => {
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
