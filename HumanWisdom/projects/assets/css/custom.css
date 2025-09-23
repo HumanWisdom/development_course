@@ -19909,7 +19909,7 @@ input{
 .active_programs
 {
   padding: 15px 20px;
-  background: #120F40;
+  background: #FFE8BB;
   height: 40px;
   display: flex;
   align-items: center;
@@ -21538,7 +21538,7 @@ and (orientation : portrait)
   /* background: #ffffff;
   border-bottom: 1px solid #ADADAD; */
   border-radius: 10px;
-  background: #120F40;
+  background: #FFE8BB;
 }
 
 .mb30px
@@ -21999,7 +21999,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
 
 .raf_div_01
 {
-  background: #120F40;
+  background: #FFE8BB;
   border-radius: 16px;
   padding: 20px;
   /* margin: 8px; */
@@ -22111,7 +22111,7 @@ ul.dh_ul li:last-child
   margin: 0 -32px; */
   border: 0;
   border-radius: 12px;
-  background: #120F40;
+  background: #FFE8BB;
 }
 
 .login_signup_tab>li
@@ -22132,13 +22132,13 @@ ul.dh_ul li:last-child
   border: 0;
   border-bottom: 0;
   border-radius: 6px;
-  background: #292D56;
+  background: #FFF7E6;
   padding: 10px;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
   text-align: center;
-  color: #FFFFFF !important;
+  color: #000 !important;
 }
 
 .login_signup_tab>li>a:hover
@@ -34206,7 +34206,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 {
   border-bottom: 0;
   border-radius: 12px;
-  background: #120F40;
+  background: #FFE8BB;
   padding: 8px;
 }
 
@@ -34894,7 +34894,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   border-radius: 16px;
   border: 1px solid rgba(204, 204, 204, 0.25);
-  background: #120F40;
+  background: #FFE8BB;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 400;
@@ -35150,7 +35150,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .prog_count 
 {
   border-radius: 15px;
-  background: #1F2241;
+  background: #FFF7E6;
   border: 0;
   width: 30px;
   height: 30px;
@@ -35272,7 +35272,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF !important;
+  color: #000 !important;
 }
 
 .profile_pe_div
@@ -35317,7 +35317,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .border_profile_img
 {
-  border: 10px solid #292D56 !important;
+  border: 10px solid #ffe8bb !important;
   border-radius: 50%;
   width: 82px;
   height: 82px;
@@ -36217,7 +36217,7 @@ li ol > li:before {
   width: 100%;
   border-radius: 16px !important;
   border: 1px solid rgba(204, 204, 204, 0.25) !important;
-  background: #120F40;
+  background: #FFE8BB;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 400;
