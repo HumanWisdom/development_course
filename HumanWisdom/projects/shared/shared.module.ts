@@ -100,6 +100,7 @@ import { SetPasswordPage } from './component/set-password/set-password.page';
 import { IntroCarouselPage } from './component/intro-carousel/intro-carousel.page';
 import { HomeComponent } from './component/home/home.component';
 import { ContentCardComponent } from './component/content-card/content-card.component';
+import { WisdomExerciseS75001Component } from './component/wisdom-exercise-s75001/wisdom-exercise-s75001.component';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { SectionCard } from './component/section-card/section-card.page';
 import { MyDashboardComponent } from './component/my-dashboard/my-dashboard.component';
@@ -214,7 +215,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     HomeComponent,
     ContentCardComponent,
     OwlAnimationComponent,
-    ChatBotComponent
+    ChatBotComponent,
+    WisdomExerciseS75001Component
   ],
   imports: [
     CommonModule,
@@ -338,7 +340,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     HomeComponent,
     ContentCardComponent,
     OwlAnimationComponent,
-    ChatBotComponent
+    ChatBotComponent,
+    WisdomExerciseS75001Component
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },

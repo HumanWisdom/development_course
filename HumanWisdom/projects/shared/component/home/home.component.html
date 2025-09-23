@@ -29,20 +29,27 @@
               </div>
             </div>
 
-            <div class="row home-container">
+            <!-- Wisdom Exercise Component Embedding -->
+            <div class="row" *ngIf="showWisdomExercise">
+              <div class="col-12 p-0">
+                <app-wisdom-exercise-s75001></app-wisdom-exercise-s75001>
+              </div>
+            </div>
+
+            <div class="row home-container" *ngIf="!showWisdomExercise">
               <div class="col-12">
                 <div class="p-3">
                   <p class="text-muted mb-0 mt-4">{{ mainheader }}</p>
                 </div>
               </div>
             </div>
-                <div class="row" >
+                <div class="row" *ngIf="!showWisdomExercise">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
                             <hr class="hr_style_v4">
                           </div>
                         </div>
 
-            <div class="row">
+            <div class="row" *ngIf="!showWisdomExercise">
               <div class="col-12 p-0">
 
                 <!-- recursive template for a section -->

@@ -106,6 +106,7 @@ navigationChange = new EventEmitter<string>();
   personalisedList = [];
   YourTopicofChoice;
   isAdults = false;
+  showWisdomExercise: boolean = false;
 
   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
@@ -124,12 +125,17 @@ navigationChange = new EventEmitter<string>();
       } else {
         this.isAdults = false;
       }
-
+    
+    // Initialize wisdom exercise as hidden
+    this.showWisdomExercise = false;
   }
 
 
   private handleGuestUserDefault(preferenceData: any[]): void {
     console.log('No user preference found, defaulting to Mental health for guest user');
+    
+    // Ensure wisdom exercise is hidden for guest users
+    this.showWisdomExercise = false;
     
     // Load Mental health content (id: "2")
     this.loadHomeContents(2);
@@ -335,9 +341,18 @@ navigationChange = new EventEmitter<string>();
             this.personalisedList.push(r);
           }
         })
-        this.loadHomeContents(Number(res));
-        this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-        console.log('User preference loaded:', this.YourTopicofChoice);
+        
+        // Handle Self Awareness (id: 19) specially
+        if (res === "19") {
+          this.showWisdomExercise = true;
+          this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+          console.log('User preference loaded (Self Awareness):', this.YourTopicofChoice);
+        } else {
+          this.showWisdomExercise = false;
+          this.loadHomeContents(Number(res));
+          this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+          console.log('User preference loaded:', this.YourTopicofChoice);
+        }
         
         // Scroll to the selected section after preference is loaded
         setTimeout(() => {
@@ -494,6 +509,20 @@ navigationChange = new EventEmitter<string>();
 
   onNavigationClick(item): void {
     console.log(item);
+    
+    // Handle Self Awareness (id: 19) - show wisdom exercise component
+    if (item.id === "19") {
+      this.showWisdomExercise = true;
+      this.personalisedList.forEach(nav => nav.active = false);
+      item.active = true;
+      this.YourTopicofChoice = [item];
+      // Save user preference for Self Awareness
+      this.update(item.id);
+      return;
+    }
+    
+    // Handle other navigation items normally
+    this.showWisdomExercise = false;
     this.personalisedList.forEach(nav => nav.active = false);
     item.active = true;
     this.loadHomeContents(item.id);
