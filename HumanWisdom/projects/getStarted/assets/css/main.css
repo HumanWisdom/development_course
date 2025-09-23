@@ -3079,8 +3079,7 @@ animation-name: slideInRight;
   justify-content: center;
       width: 100%;
     margin: 0 auto;
-  z-index:99999;
-}
+ }
 
 .owl_blog .owl-nav .owl-prev
 .owl_coach .owl-nav .owl-prev
