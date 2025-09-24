@@ -111,6 +111,7 @@ import { QuestionAnswersSelection } from './component/question-answers-selection
 import { CommonScreenPage } from './component/common-screen/common-screen.page';
 import { OwlAnimationComponent } from './component/owl-animation/owl-animation.component';
 import { ChatBotComponent } from './component/chat-bot/chat-bot.component';
+import { ChatbotService } from './services/chatbot.service';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -345,6 +346,7 @@ export class MyHammerConfig extends HammerGestureConfig {
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
+    ChatbotService
   ]
 })
 export class SharedModule { }

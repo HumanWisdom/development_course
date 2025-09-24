@@ -13,6 +13,7 @@ import { DashboardComponent } from '../../../../shared/component/dashboard/dashb
 import { HappierMeQuotationPage } from '../../../../shared/component/happierme-quotation/happierme-quotation.page';
 import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
+import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 
 
 const routes: Routes = [
@@ -551,6 +552,10 @@ const routes: Routes = [
   {
     path: 'soundscapes',
     component: CommonScreenPage
+  },
+  {
+    path: 'chat-bot',
+    component: ChatBotComponent
   }
 ];
 

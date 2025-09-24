@@ -6,6 +6,7 @@ import { TokenInterceptorService} from '../token-interceptor.service'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons'
 import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from '../../../../shared/shared.module';
 @NgModule({
   declarations: [
   ],
@@ -17,6 +18,7 @@ import { BrowserModule } from '@angular/platform-browser';
     ShareButtonsModule.withConfig({
         debug:true
        }),
+    SharedModule
   ],
   providers: [
     {

@@ -258,6 +258,142 @@
   }
 }
 
+// Error message styles
+.error-message {
+  margin: 16px 20px;
+  
+  .error-content {
+    background: #ffebee;
+    border: 1px solid #f44336;
+    border-radius: 8px;
+    padding: 12px 16px;
+    
+    p {
+      margin: 0 0 8px 0;
+      color: #d32f2f;
+      font-size: 14px;
+    }
+    
+    .error-actions {
+      display: flex;
+      gap: 8px;
+      
+      button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        
+        &.retry-button {
+          background: #f44336;
+          color: white;
+          
+          &:hover:not(:disabled) {
+            background: #d32f2f;
+          }
+          
+          &:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+          }
+        }
+        
+        &.clear-error-button {
+          background: #e0e0e0;
+          color: #333;
+          
+          &:hover {
+            background: #bdbdbd;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Loading spinner
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Disabled state for input and button
+.message-input:disabled {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.send-button:disabled {
+  background: #ccc !important;
+  cursor: not-allowed;
+  transform: none !important;
+  
+  &:hover {
+    transform: none !important;
+  }
+}
+
+// Improved scrolling for messages
+.chat-messages {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Enhanced message styling
+.message-content {
+  // Ensure HTML content is properly styled
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  // Style links in bot messages
+  u {
+    color: #1976d2;
+    text-decoration: underline;
+    cursor: pointer;
+    
+    &:hover {
+      color: #1565c0;
+    }
+  }
+  
+  // Style line breaks
+  br {
+    line-height: 1.6;
+  }
+}
+
 @media (max-width: 480px) {
   .chat-bot-container,
   .chat-header,
@@ -265,5 +401,23 @@
   .chat-input-area {
     width: 100%;
     max-width: 375px;
+  }
+  
+  .error-message {
+    margin: 16px 10px;
+    
+    .error-content {
+      padding: 10px 12px;
+      
+      .error-actions {
+        flex-direction: column;
+        gap: 6px;
+        
+        button {
+          width: 100%;
+          padding: 8px 12px;
+        }
+      }
+    }
   }
 }
