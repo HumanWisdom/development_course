@@ -87,7 +87,7 @@ nav
         z-index: 99;
         overflow: overlay;
         //   background-color: #fff;
-        background: #292D56;
+        // background: #292D56;
         box-shadow: unset;
         padding: 20px;
         border-radius: 16px 0 0 16px;
@@ -108,7 +108,7 @@ nav
         &__header
         {
             height: auto;
-            background: #292D56;
+            // background: #292D56;
             box-shadow: unset;
             display: flex;
             align-items: center;
@@ -133,7 +133,7 @@ nav
             height: 100%;
             height: -webkit-fill-available;
             overflow-y: unset;
-            background: #292D56;
+            // background: #292D56;
             box-shadow: unset;
             list-style-type: none!important;
             padding: 0;
