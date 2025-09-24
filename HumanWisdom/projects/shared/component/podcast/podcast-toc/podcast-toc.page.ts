@@ -128,25 +128,32 @@ export class PodcastTocPage implements OnInit {
     })
   }
 
-  audioevent(data) {
-    let sub: any = localStorage.getItem("Subscriber")
-    if (sub == 0 && data['PodcastID'] >= 2) {
-      this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
-    } else {
-      if (data['MediaUrl'].includes('https://d1tenzemoxuh75.cloudfront.net/')) {
-        data['MediaUrl'] = data['MediaUrl'].replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
-      }
-      let concat = encodeURIComponent(data['MediaUrl'].replaceAll('/', '~'));
-      const title = data['Title']?.replaceAll(' ', '-')
+audioevent(data: any) {
+  /* 1.  fire-and-forget click tracking */
+  this.service.clickPodcast(data.PodcastID).subscribe({
+    next: () => console.log('click logged'),
+    error: e => console.error('click log failed', e)
+  });
 
-      if (this.isAdults == true)
-        this.router.navigate(['adults/audiopage/', concat, data['PodcastID'], 'T', data['Title']])
-      else
-        this.router.navigate(['teenagers/audiopage/', concat, data['PodcastID'], 'T', data['Title']])
-      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'],   , data['RowID']])
-      // this.router.navigate(['adults/guided-meditation/audiopage/', data['MediaUrl'], data['Title'], data['PodcastID'],'Podcast'])
-    }
+  /* 2.  existing pay-wall logic (unchanged) */
+  const sub = localStorage.getItem('Subscriber');
+  if (sub === '0' && data.PodcastID >= 2) {
+    this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    return;
   }
+
+  /* 3.  existing routing logic (unchanged) */
+  let media = data.MediaUrl;
+  if (media.includes('https://d1tenzemoxuh75.cloudfront.net/')) {
+    media = media.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
+  }
+  const path = encodeURIComponent(media.replaceAll('/', '~'));
+  const route = this.isAdults
+    ? ['adults', 'audiopage', path, data.PodcastID, 'T', data.Title]
+    : ['teenagers', 'audiopage', path, data.PodcastID, 'T', data.Title];
+
+  this.router.navigate(route);
+}
 
   searchPodcast($event) {
     if ($event == '') {

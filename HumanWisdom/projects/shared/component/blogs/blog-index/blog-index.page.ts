@@ -58,18 +58,26 @@ export class BlogIndexPage implements OnInit {
     return moment.utc(date).fromNow();
   }
 
-  viewblog(item){
-    localStorage.setItem("blogdata",JSON.stringify(item))
-    localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
+viewblog(item) {
+  const blogId = item['BlogID'];
 
-    if(this.isAdults){
-      //this.router.navigate(['/adults/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
-      this.router.navigate(['/adults/blog-article'], { queryParams: { sId: `${item['BlogID']}` } })
-    }else{
-      //this.router.navigate(['/teenagers/blog-article'], { replaceUrl: true, skipLocationChange: true,queryParams: {sId: `${item['BlogID']}`}})
-      this.router.navigate(['/teenagers/blog-article'], { queryParams: { sId: `${item['BlogID']}` } })
-    }
-  }
+  // Log the click
+  this.service.clickBlog(blogId).subscribe({
+    next: (res) => console.log('Blog click logged:', res),
+    error: (err) => console.error('Error logging blog click:', err)
+  });
+
+  // Store in localStorage
+  localStorage.setItem("blogdata", JSON.stringify(item));
+  localStorage.setItem("blogId", JSON.stringify(blogId));
+
+  // Navigate
+  const route = this.isAdults
+    ? ['/adults/blog-article']
+    : ['/teenagers/blog-article'];
+
+  this.router.navigate(route, { queryParams: { sId: `${blogId}` } });
+}
 
   searchTitle($event) 
   {
