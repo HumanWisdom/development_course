@@ -637,4 +637,8 @@ export class CommonService {
   getSoundsCapesList(): Observable<any> {
     return this.http.get(this.path + '/GetSoundsCapesList/9');
   }
+
+  clickPodcast(podcastId: number): Observable<any> {
+  return this.http.post(this.path + `/clickPodcasts/${podcastId}`, {});
+}
 }

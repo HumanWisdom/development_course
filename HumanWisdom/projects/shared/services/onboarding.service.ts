@@ -693,4 +693,8 @@ export class OnboardingService {
 getHappierMeQuotation(id): Observable<any> {
   return this.http.get(this.path + `/GetQuotation/${id}`)
 }
+
+clickBlog(blogId: number): Observable<any> {
+  return this.http.post(this.path + `/clickBlogs/${blogId}`, {});
+}
 } 
