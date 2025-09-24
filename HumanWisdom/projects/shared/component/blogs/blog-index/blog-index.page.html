@@ -51,6 +51,13 @@
                           {{item['Title']}}
                         </h4>
                       </div>
+                      <div class="p0 tright">
+                        <!-- READ icon (top-right) – only when read -->
+                        <img *ngIf="item.isRead === '1'"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                          class="ws-read-icon"
+                          alt="read">
+                      </div>
                     </div>
     
                     <div class="row mt10px mb15px">
