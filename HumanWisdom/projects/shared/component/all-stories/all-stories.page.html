@@ -138,9 +138,10 @@
                       />
 
                       <!-- LOCK icon (bottom) -->
+                      <!-- LOCK icon (bottom) -->
                       <img
                         *ngIf="!isSubscriber && s.ExclFromChild === '0'"
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg"
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
                         class="img-responsive ws-lock-icon"
                       />
                     </div>
@@ -153,20 +154,82 @@
               </a>
               <!-- /stories -->
 
-              <!-- view more  -->
+              <!-- =====  VIEW MORE / VIEW LESS  ===== -->
               <div
                 class="panel-group ws_view_more"
                 id="accordion_ws"
-                *ngIf="secondstoryList.length !== 0"
+                *ngIf="secondstoryList.length"
               >
                 <div class="panel panel-default">
+                  <!-- stories container (shown/hidden by Angular only) -->
+                  <div class="panel-body" *ngIf="enable_view_more_less">
+                    <a *ngFor="let s of secondstoryList">
+                      <div
+                        (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))"
+                        class="row div_is_01"
+                      >
+                        <div
+                          class="col-md-12 col-sm-12 col-xs-12 p0 center_flex"
+                        >
+                          <!-- left thumbnail -->
+                          <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                            <img [src]="s.Img" alt="" class="w100 c120px" />
+                          </div>
+
+                          <!-- centre text (same as main stories) -->
+                          <div class="col-md-7 col-sm-7 col-xs-7 plr12px">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                <h6
+                                  class="mtb0px fs_15px fw_600 lh_150p fc_ffffff"
+                                >
+                                  {{s.Title}}
+                                </h6>
+                              </div>
+                            </div>
+
+                            <div class="row mt10px">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                <h6
+                                  class="mtb0px fs_12px fw_400 lh_150p fc_ffffff fc_ffffff_0_5 ellipsis"
+                                >
+                                  {{s.Story}}
+                                </h6>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- right icon column -->
+                          <div
+                            class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                          >
+                            <!-- read check -->
+                            <img
+                              *ngIf="s.isRead === '1'"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                              class="img-responsive ws-read-icon"
+                            />
+
+                            <!-- lock (teen / adult) -->
+                            <img
+                              *ngIf="!isSubscriber && s.ExclFromChild === '0'"
+                              [src]="isAdults
+                  ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
+                  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                              class="img-responsive ws-lock-icon"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- view more / less button -->
                   <div class="panel-heading">
                     <a
                       class="accordion-toggle"
-                      (click)="toggle_view_more_less()"
-                      data-toggle="collapse"
-                      data-parent="#accordion"
-                      href="#ws_01"
+                      href="javascript:void(0)"
+                      (click)="$event.preventDefault(); toggle_view_more_less()"
                     >
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -183,96 +246,9 @@
                       </div>
                     </a>
                   </div>
-                  <div
-                    id="ws_01"
-                    class="panel-collapse collapse"
-                    *ngIf="enable_view_more_less"
-                  >
-                    <div class="panel-body">
-                      <!-- stories -->
-                      <a *ngFor="let s of secondstoryList">
-                        <div
-                          (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))"
-                          class="row div_is_01"
-                        >
-                          <div
-                            class="col-md-12 col-sm-12 col-xs-12 p0 center_flex"
-                          >
-                            <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                              <img src="{{s.Img}}" alt="" class="w100 c150px" />
-                            </div>
-
-                            <div
-                              class="col-md-8 col-sm-8 col-xs-8 pl12px pr0px"
-                            >
-                              <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                  <h6
-                                    class="mtb0px fs_15px fw_600 lh_150p fc_ffffff"
-                                  >
-                                    {{s.Title}}
-                                  </h6>
-                                </div>
-                              </div>
-
-                              <div class="row mtb10px">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                  <h6
-                                    class="mtb0px fs_12px fw_400 lh_150p fc_ffffff fc_ffffff_0_5 ellipsis"
-                                  >
-                                    <!-- {{s.Story|slice:0:40}}... -->
-                                    {{s.Story}}
-                                  </h6>
-                                </div>
-                              </div>
-
-                              <!-- <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                                  <div class="col-md-5 col-sm-5 col-xs-5 p0">
-                                    <h6 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
-                                      Anonymous
-                                    </h6>
-                                  </div>
-                                  <div class="col-md-7 col-sm-7 col-xs-7 p0">
-                                    <h6 class="mtb0px fs_12px fw_600 lh_150p fc_ffffff_0_5">
-                                      {{s.PublishedOn|date:'dd MMM yy'}} | 5 mins
-                                    </h6>
-                                  </div>
-                                </div>
-                              </div> -->
-                            </div>
-
-                            <!-- right-hand icon column -->
-                            <div
-                              class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                            >
-                              <!-- READ icon (top) -->
-                              <img
-                                *ngIf="s.isRead === '1'"
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                                class="img-responsive ws-read-icon"
-                              />
-
-                              <!-- LOCK icon (bottom) -->
-                              <img
-                                *ngIf="!isSubscriber && s.ExclFromChild === '0'"
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg"
-                                class="img-responsive ws-lock-icon"
-                              />
-                            </div>
-
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber || s.ExclFromChild === '1'">
-                              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                            </div> -->
-                          </div>
-                        </div>
-                      </a>
-                      <!-- /stories -->
-                    </div>
-                  </div>
                 </div>
               </div>
-              <!-- /view more -->
+              <!-- =====  /VIEW MORE  ===== -->
             </form>
           </div>
         </div>

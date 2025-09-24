@@ -37976,3 +37976,6 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
 .fade.in {
   opacity:1  !important;
 }
+
+.ws-read-icon    { position: relative; bottom: 30px; }
+.ws-lock-icon    { position: relative; top:    30px; }
