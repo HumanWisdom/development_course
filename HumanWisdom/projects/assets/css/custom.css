@@ -11987,7 +11987,7 @@ h1.module_title
   font-weight: 400 !important;
   font-size: 15px !important;
   line-height: 140%;
-  color: #ffffff;
+  color: #000000;
   margin: 0;
 }
 
@@ -12204,7 +12204,7 @@ h1.module_title
   /* or 39px */
   /* text-align: center; */
   text-align: left;
-  color: #FFFFFF;
+  color: #000000;
   word-wrap: break-word;
 }
 
@@ -14721,7 +14721,7 @@ input[type="number"] {
 {
   /* background: linear-gradient(90deg, #FFC455 131.91%, #E69B5A 157.31%); */
   /* background: #E8A880; */
-  background: #E58D82;
+  background: #ED7D6F;
   box-shadow: 1px 0px 2px rgb(0 0 0 / 25%);
   /* border-radius: 0 5px 5px 0; */
   border-radius: 0;
@@ -33628,7 +33628,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   margin-bottom: 0 !important;
   display: flex;
   align-items: center;
-  color: #fff !important;
+  color: #000 !important;
 }
 
 .btn_next_v3
@@ -36687,7 +36687,7 @@ li ol > li:before {
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_03.svg) no-repeat; */
   /* background: #CB6171; */
-  background: #E58D82;
+  background: #ED7D6F;
   border-radius: 12px 0 0 12px;
 }
 
@@ -36711,7 +36711,7 @@ li ol > li:before {
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_06.svg) no-repeat; */
   /* background: #CB6171; */
-  background: #E58D82;
+  background: #ED7D6F;
   border-radius: 0 12px 12px 0;
 }
 
@@ -36719,7 +36719,7 @@ li ol > li:before {
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/btn_sate_07.svg) no-repeat; */
   /* background: #E58D82; */
-  background: #CB6171;
+  background: #D7586B;
   border-radius: 12px 0 12px 12px;
 }
 
