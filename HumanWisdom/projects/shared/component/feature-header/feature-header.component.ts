@@ -26,6 +26,7 @@ export class FeatureHeaderComponent implements OnInit {
   address: any;
   path:any;
   baseUrl:any;
+  isAdults: boolean = true; 
 
   constructor(private router: Router,
     private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
