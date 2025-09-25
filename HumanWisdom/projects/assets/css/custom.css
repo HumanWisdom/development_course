@@ -12174,7 +12174,7 @@ h1.module_title
   /* text-align: center; */
   text-align: left !important;
   /* color: #5D5D5D; */
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .quotation_writer
@@ -12186,7 +12186,7 @@ h1.module_title
   line-height: 23px;
   text-align: left !important;
   /* color: #5D5D5D; */
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .mt30px
@@ -18641,7 +18641,7 @@ ngx-circular-player svg
 {
   width: 124px;
   height: 124px;
-  background: #FFFFFF;
+  background: #000000;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
   /* border: 6px solid #E59B5A; */
   border: 0;
@@ -18655,7 +18655,7 @@ ngx-circular-player svg
 {
   width: 124px;
   height: 124px;
-  background: #FFFFFF;
+  background: #000000;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
   /* border: 6px solid #B92F48; */
   border: 0;
@@ -18669,7 +18669,7 @@ ngx-circular-player svg
 {
   width: 124px;
   height: 124px;
-  background: #FFFFFF;
+  background: #000000;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
   /* border: 6px solid #60A757; */
   border: 0;
@@ -18683,7 +18683,7 @@ ngx-circular-player svg
 {
   width: 124px;
   height: 124px;
-  background: #FFFFFF;
+  background: #000000;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
   /* border: 6px solid #F55858; */
   border: 0;
@@ -18697,7 +18697,7 @@ ngx-circular-player svg
 {
   width: 124px;
   height: 124px;
-  background: #FFFFFF;
+  background: #000000;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
   /* border: 6px solid #1092A7; */
   border: 0;
@@ -18738,14 +18738,14 @@ ngx-circular-player svg
 {
   /* background: #FFFFFF;
   border: 6px solid #c4c4c4; */
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.1);
   border: 0;
 }
 
 .circle-container .btn.disabled h6
 {
   /* color: #C4C4C4; */
-  color: rgba(255,255,255,0.50);
+  color: rgba(0,0,0,0.50);
 }
 
 .circle-container .btn h6
@@ -33610,7 +33610,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .hr_style_v3_05
 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #000000;
   opacity: 0.25;
 }
 
