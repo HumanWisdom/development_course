@@ -25,6 +25,8 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   @Input() bg: string;
   @Input() toc: string;
   @Input() moduleId: any;
+  isAdults=false;
+  
   qrList: any
   token = localStorage.getItem("shareToken")
   socialShare = false
