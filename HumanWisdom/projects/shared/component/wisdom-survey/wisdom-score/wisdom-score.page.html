@@ -41,32 +41,32 @@
 
               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px  tcenter wp_txt" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="parseint(points) < 40">
+                <h1 class="fw_600 fs_18px lh_27px mb20px fc_ffffff tcenter wp_txt" *ngIf="parseint(points) < 40">
                   Sorry that you’re not feeling great.
                 </h1>
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px tcenter wp_txt" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
+                <h1 class="fw_600 fs_18px lh_27px mb20px fc_ffffff tcenter wp_txt"
                   *ngIf="parseint(points) >= 41 && parseint(points) < 60">
                   Your wellness journey begins here.
                 </h1>
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px  tcenter wp_txt" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="parseint(points) >= 60">
+                <h1 class="fw_600 fs_18px lh_27px mb20px fc_ffffff tcenter wp_txt" *ngIf="parseint(points) >= 60">
                   You’re doing great!
                 </h1>
 
               </div>
 
               <!-- paragraphs below remain as is, showing additional guidance -->
-              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="parseint(points) < 40">
+              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter" *ngIf="parseint(points) < 40">
                 There are many resources in the app to help you boost your wellbeing and feel happier.
               </h1>
 
-              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
+              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter"
                 *ngIf="parseint(points) >= 41 && parseint(points) < 60">
                 There are so many resources in the app to help you be happier and succeed in life.
               </h1>
 
-              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="parseint(points) >= 60">
+              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter" *ngIf="parseint(points) >= 60">
                 There are many resources in the app to help you to grow even further as a person and succeed in every
                 way in life.
               </h1>
@@ -78,7 +78,7 @@
           <hr *ngIf="!justSignedUp && wisdomRecomm?.length" class="hr_style_v3_01">
           <!-- recommendations -->
           <div *ngIf="!justSignedUp && wisdomRecomm?.length">
-            <h2 class="fw_400 mb20px fs_15px lh_140p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+            <h2 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter">
               Here are some recommendations for you to explore
             </h2>
 
@@ -101,7 +101,7 @@
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
                           {{item.title}}
                         </h4>
-                        <h4 class="mtb0px fs_12px fw_400 lh_130p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                        <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
                           {{item.timing || ''}}
                         </h4>
                       </div>
@@ -109,7 +109,7 @@
 
                     <!-- right icon (arrow / lock) -->
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                      <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                     </div>
 
                     <!-- lock icon if NOT subscribed -->
