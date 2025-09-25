@@ -33608,7 +33608,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .hr_style_v3_05
 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #000000;
   opacity: 0.25;
 }
 
@@ -33628,7 +33628,8 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   margin-bottom: 0 !important;
   display: flex;
   align-items: center;
-  color: #000 !important;
+  color: #000!important;
+
 }
 
 .btn_next_v3
@@ -34178,9 +34179,9 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   box-shadow: unset;
   margin: 0;
   border-radius: 100px;
-  background: #ED7D6F;
+  background: #ED7D6F !important;
   font-size: 15px;
-  color: #ffffff !important;
+  color: #000000 !important;
   font-weight: 600;
   line-height: 150%;
 }
@@ -35390,7 +35391,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .div_middle.left
 {
-  border-left: 1px solid rgba(255,255,255,.1);
+  border-left: 1px solid rgba(0,0,0,.1);
   height: 24px;
   position: absolute;
   left: 33.33%;
@@ -35399,7 +35400,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .div_middle.right
 {
-  border-right: 1px solid rgba(255,255,255,.1);
+  border-right: 1px solid rgba(0,0,0,.1);
   height: 24px;
   position: absolute;
   right: 33.33%;
