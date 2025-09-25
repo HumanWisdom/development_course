@@ -65,7 +65,7 @@
           <div class="x_content p0">
             <form>
 
-              <h5 class="mtb0px v3_reflection_qtn fs_24px fw_400 lh_32px fc_ffffff">
+              <h5 class="mtb0px v3_reflection_qtn fs_24px fw_400 lh_32px " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                 {{this.reflection}}
               </h5>
 
@@ -86,7 +86,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <label for="cb1" class="tcenter chkb_post_anonymously mt0px">
                             <input id="cb1" type="checkbox" class="" [disabled]="textDisabled" name="shared" [(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               <span class="ml10px">
                                 Share this note on the forum
                               </span>
@@ -97,7 +97,7 @@
                     </a>
                   </div>
                 </div>
-                <h5 class="mlr20px fs_12px fw_400 lh_140p fc_ffffff_0_5 tcenter">
+                <h5 class="mlr20px fs_12px fw_400 lh_140p  tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                   Journaling can help you find clarity and calm. This online journal is private to you.
                   <!-- All posts are encrypted and can only be seen by you, unless shared by you. The posts shared on the forum are moderated. -->
                 </h5>
@@ -114,7 +114,7 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                             <label for="cb1" class="tcenter chkb_post_anonymously mt0px">
                               <input id="cb1" type="checkbox" class="" [disabled]="textDisabled" name="shared" [(ngModel)]="this.shared" (click)="sharedForum($event.target.checked)">
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                 <span class="ml10px">
                                   Share this note on the forum
                                 </span>
@@ -134,7 +134,7 @@
                     </div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <h5 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                  <h5 class="mtb0px fs_12px fw_400 lh_150p "  [ngClass]="isAdults ? 'fc_000000_0_7' : 'fc_ffffff_0_7'">
                     All posts are encrypted and can only be seen by you, unless shared by you. The posts shared on the forum are moderated.
                   </h5>
                   </div>
@@ -144,7 +144,7 @@
 
               <!-- condition 3 -->
               <div *ngIf="confirmed">
-                <h5 class="mtb20px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                <h5 class="mtb20px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_7' : 'fc_ffffff_0_7'">
                   Great! We will notify you once it is published.
                 </h5>
 
@@ -154,13 +154,13 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff tleft">
+                            <h4 class="mtb0px fs_15px fw_400 lh_150p  tleft" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               See what others have to say
                             </h4>
                           </div>
 
                           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                            <i class="fa fa-angle-right fc_ffffff"></i>
+                            <i class="fa fa-angle-right " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
                           </div>
                         </div>
                       </div>
@@ -177,7 +177,7 @@
                        (click)="$event.stopPropagation()" >
 
                   
-                        <h4 id="hinttext"  class="mtb0px fs_12px fw_400 lh_140p fc_ffffff tleft rhdm hm">{{ hint }}</h4>
+                        <h4 id="hinttext"  class="mtb0px fs_12px fw_400 lh_140p  tleft rhdm hm" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ hint }}</h4>
 
                   </div>
                 </div>
