@@ -202,22 +202,21 @@ export class S51000Page implements OnInit, OnDestroy {
     this.router.navigate(['/adults/curated/audiopage', audioLink, title, RowID])
   }
 
-  audioevent(data) {
-    let sub: any = localStorage.getItem("Subscriber")
-    if (sub == 0 && data['RowID'] >= 2) {
-      this.router.navigate([SharedService.getprogramName()+  '/subscription/start-your-free-trial']);
-    } else {
-      let url = data['Text_URL'].replaceAll(':', '_');
-       url = encodeURIComponent(url.replaceAll('/', '~'));
-      let title = encodeURIComponent(data['Title'].replaceAll(' ', '-'));
-      const prgType=SharedService.ProgramId;
-      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      if(prgType == 9){
-        this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
-      }else{
-        this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
-      }
+  audioevent(data: any) {
+    this.service.clickMeditations(data.dailyPractiseID).subscribe({
+      next : () => console.log('meditation click logged'),
+      error: (e) => console.error('meditation click failed', e)
+    });
+    const sub = localStorage.getItem('Subscriber');
+    if (sub === '0' && data.RowID >= 2) {
+      this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
+      return;
     }
+    let url   = encodeURIComponent(data.Text_URL.replaceAll(':', '_').replaceAll('/', '~'));
+    let title = encodeURIComponent(data.Title.replaceAll(' ', '-'));
+    const prg = SharedService.ProgramId === 9 ? 'adults' : 'teenagers';
+
+    this.router.navigate([`${prg}/guided-meditation/audiopage/`, url, title, data.RowID, 'Audio']);
   }
 
   share() {

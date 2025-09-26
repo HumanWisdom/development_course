@@ -640,5 +640,17 @@ export class CommonService {
 
   clickPodcast(podcastId: number): Observable<any> {
   return this.http.post(this.path + `/clickPodcasts/${podcastId}`, {});
-}
+  }
+
+  clickShorts(shortId: number): Observable<any> {
+  return this.http.post(this.path + `/clickShorts/${shortId}`, {});
+  }
+
+  clickEvents(eventId: number): Observable<any> {
+  return this.http.post(this.path + `/clickEvents/${eventId}`, {});
+  }
+
+  clickMeditations(dailyPractiseID: number): Observable<any> {
+    return this.http.post(`${this.path}/clickAudioMeditations/${dailyPractiseID}`, {});
+  }
 }
