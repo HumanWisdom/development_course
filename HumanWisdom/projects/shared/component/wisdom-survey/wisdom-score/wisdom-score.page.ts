@@ -12,6 +12,7 @@ import { ProgramType } from '../../../models/program-model';
 })
 export class WisdomScorePage implements OnInit {
 
+ formatTitle = (percent: number): string => `${percent}`;
 
   bg = "purple_blue_w2"
 
