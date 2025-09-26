@@ -17,7 +17,7 @@
 
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
         <a class="">
-          <h4 class="mtb0px fs_18px fw_600 lh_130p fc_ffffff tcenter">
+          <h4 class="mtb0px fs_18px fw_600 lh_130p tcenter" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
             Audio meditation
           </h4>
         </a>
@@ -50,7 +50,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mt0px mb15px fs_18px fw_600 lh_150p fc_ffffff">
+                  <h4 class="mt0px mb15px fs_18px fw_600 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     Audio Meditation
                   </h4>
                 </div>
@@ -58,7 +58,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="txt_comparison">
+                  <h4 class="txt_comparison" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     In this module you will find a series of guided audio meditations. You can listen to them anywhere.
                   </h4>
                 </div>
@@ -124,7 +124,7 @@
                       </div>
 
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                           Meditation #{{data['RowID']}}
                         </h4>
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
@@ -135,17 +135,23 @@
                         </h4>
                       </div>
 
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] <= 1">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                      </div>
+                      <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] <= 1">
+                        <i class="fa fa-angle-right [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'" fs_20px"></i>
+                      </div> -->
 
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                        <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                        <img *ngIf="data?.isRead === '1'" 
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                        class="img-responsive ws-read-icon">
                       </div>
 
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] > 1">
                         <!-- lock -->
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                          <img
+                        *ngIf="!isSubscriber"
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                        class="img-responsive ws-lock-icon"
+                      />
                         <!-- /lock -->
                       </div>
 
