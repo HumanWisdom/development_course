@@ -8,7 +8,7 @@
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p fc_000000 mtb0px tcenter">
         My Partnership
       </h1>
     </div>
@@ -38,7 +38,7 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_02">
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px">
-                            <h4 class="mtb0px fs_16px fw_600 lh_140p fc_ffffff">
+                            <h4 class="mtb0px fs_16px fw_600 lh_140p fc_000000">
                               Partnership Referral Code
                             </h4>
                           </div>
@@ -72,7 +72,7 @@
               <div class="pt1 profile_pe_div">
                 <div class="row mt35px mb5px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                       {{partnershipReport.AffName}}
                     </h4>
                   </div>
@@ -80,7 +80,7 @@
 
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5">
                       Lifetime earnings: ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt}}
                     </h6>
                   </div>
@@ -89,10 +89,10 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                      <h4 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tleft" *ngIf="partnershipReport.ByPaypal==0">
+                      <h4 class="mtb0px fs_12px fw_400 lh_18px fc_000000 tleft" *ngIf="partnershipReport.ByPaypal==0">
                         A/c # {{BankDet}}
                       </h4>
-                      <h4 class="mtb0px fs_12px fw_400 lh_18px fc_ffffff tleft" *ngIf="partnershipReport.ByPaypal==1">
+                      <h4 class="mtb0px fs_12px fw_400 lh_18px fc_000000 tleft" *ngIf="partnershipReport.ByPaypal==1">
                         Paypal # {{BankDet}}
                       </h4>
                     </div>
@@ -115,10 +115,10 @@
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr20px pl0px">
-                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_ffffff">
+                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_000000">
                           AVAILABLE BALANCE
                         </h4>
-                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_ffffff">
+                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_000000">
                           USD {{partnershipReport.BalanceAmt}}
                         </h4>
 
@@ -139,10 +139,10 @@
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl20px pr0px">
-                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_ffffff">
+                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_000000">
                           RECEIVED
                         </h4>
-                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_ffffff">
+                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_000000">
                           USD {{partnershipReport.WithdrawnAmt}}
                         </h4>
                         <a *ngIf="hasIncome"  (click)="redirectToIncomeReport()">
@@ -165,11 +165,11 @@
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_ffffff " *ngIf="partnershipReport.IncomeActivity.length>0">
+                        <h4 class="mt0px mb5px fs_18px fw_600 lh_150p fc_000000 " *ngIf="partnershipReport.IncomeActivity.length>0">
                           Income Activity
                         </h4>
 
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_7">
                           {{currentDate  | date: "longDate"}}
                         </h4>
                       </div>
@@ -196,7 +196,7 @@
                 <!-- date heading -->
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                       {{item.key}}
                     </h4>
 
@@ -214,11 +214,11 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_ffffff">
+                              <h4 class="mt0px mb5px fs_15px fw_600 lh_150p fc_000000">
                                 {{val.date}} {{val.month}}
                               </h4>
 
-                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_7">
                                 USD {{val.Comm_Earned}} 
                               </h4>
                             </div>
@@ -228,11 +228,11 @@
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                           <div class="row" *ngIf="partnershipReport.PartnerCount>0">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt0px mb5px fs_12px fw_400 lh_150p fc_ffffff">
+                              <h4 class="mt0px mb5px fs_12px fw_400 lh_150p fc_000000">
                                 ID #{{val.SubscriptionId}} | Level {{val.Level}} 
                               </h4>
 
-                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                              <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
                                 Partner Name: {{val.PartnerName}}
                               </h4>
                             </div>
@@ -251,7 +251,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <a class="btn_pdownload_pdf" (click)="DownloadPdf()">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/download_01.svg" alt="" class="img-responsive mr10px">
-                    <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_600 lh_150p fc_000000">
                       Download PDF
                     </h4>
                   </a>
@@ -261,7 +261,7 @@
 
               <div class="row mt20px" *ngIf="!isPdfDownloading">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
                     If you wish to switch your partnership benefits, and have a tree planted for every subscription instead of receiving an income , do write to us at
                     <a class="fs_12px fw_400 lh_150p fc_e58d82" href="mailto: team@happierme.app">
                       team@happierme.app
@@ -282,7 +282,7 @@
 
                     <div class="row mt20px mb40px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000 tcenter">
                           You have no active partners
                         </h4>
                       </div>
@@ -300,7 +300,7 @@
 
                 <div class="row mb10px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_14px fw_400 lh_150p fc_000000">
                       To get started, share your partnership referral code with friends and organizations.
                     </h4>
                   </div>
