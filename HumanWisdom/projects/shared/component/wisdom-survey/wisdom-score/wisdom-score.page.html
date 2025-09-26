@@ -1,7 +1,7 @@
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
-<div class="right_col mc_03" style="margin-bottom: 50px;">
+<div class="right_col mc_03" [ngClass]="isAdults? fc_000000 : fc_ffffff" style="margin-bottom: 50px;">
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex bg_stake col_cw">
@@ -28,12 +28,22 @@
               <!-- </h1>     -->
 
 
-              <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
+              <div class="col-md-12 col-sm-12 col-xs-12 center_flex" *ngIf="isAdults">
+                <!-- <div class="prelative center_flex"> -->
+                <circle-progress [percent]="points" [radius]="64" [space]="-15" [outerStrokeWidth]="15"
+                  [innerStrokeWidth]="15" [titleColor]="'#000000'" [outerStrokeColor]="'#ED7D6F'" [titleFontSize]="32"
+                  [titleFontWeight]="600" [innerStrokeColor]="'rgba(0,0,0,0.2)'" [showSubtitle]="false"
+                  [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle">
+                </circle-progress>
+
+                <!-- </div> -->
+              </div>
+               <div class="col-md-12 col-sm-12 col-xs-12 center_flex" *ngIf="!isAdults">
                 <!-- <div class="prelative center_flex"> -->
                 <circle-progress [percent]="points" [radius]="64" [space]="-15" [outerStrokeWidth]="15"
                   [innerStrokeWidth]="15" [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'" [titleFontSize]="32"
                   [titleFontWeight]="600" [innerStrokeColor]="'rgba(255,255,255,0.2)'" [showSubtitle]="false"
-                  [animation]="true" [showTitle]="true" [animationDuration]="100">
+                  [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle" >
                 </circle-progress>
 
                 <!-- </div> -->
@@ -41,32 +51,32 @@
 
               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px fc_ffffff tcenter wp_txt" *ngIf="parseint(points) < 40">
+                <h1 class="fw_600 fs_18px lh_27px mb20px  tcenter wp_txt" *ngIf="parseint(points) < 40">
                   Sorry that you’re not feeling great.
                 </h1>
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px fc_ffffff tcenter wp_txt"
+                <h1 class="fw_600 fs_18px lh_27px mb20px  tcenter wp_txt"
                   *ngIf="parseint(points) >= 41 && parseint(points) < 60">
                   Your wellness journey begins here.
                 </h1>
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px fc_ffffff tcenter wp_txt" *ngIf="parseint(points) >= 60">
+                <h1 class="fw_600 fs_18px lh_27px mb20px  tcenter wp_txt" *ngIf="parseint(points) >= 60">
                   You’re doing great!
                 </h1>
 
               </div>
 
               <!-- paragraphs below remain as is, showing additional guidance -->
-              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter" *ngIf="parseint(points) < 40">
+              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter" *ngIf="parseint(points) < 40">
                 There are many resources in the app to help you boost your wellbeing and feel happier.
               </h1>
 
-              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter"
+              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter"
                 *ngIf="parseint(points) >= 41 && parseint(points) < 60">
                 There are so many resources in the app to help you be happier and succeed in life.
               </h1>
 
-              <h1 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter" *ngIf="parseint(points) >= 60">
+              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter" *ngIf="parseint(points) >= 60">
                 There are many resources in the app to help you to grow even further as a person and succeed in every
                 way in life.
               </h1>
@@ -78,7 +88,7 @@
           <hr *ngIf="!justSignedUp && wisdomRecomm?.length" class="hr_style_v3_01">
           <!-- recommendations -->
           <div *ngIf="!justSignedUp && wisdomRecomm?.length">
-            <h2 class="fw_400 mb20px fs_15px lh_140p fc_ffffff tcenter">
+            <h2 class="fw_400 mb20px fs_15px lh_140p  tcenter">
               Here are some recommendations for you to explore
             </h2>
 
@@ -98,10 +108,10 @@
 
                       <!-- right content -->
                       <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
-                        <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                        <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"  [ngClass]="isAdults? fc_ED7D6F : fc_e58d82 " > 
                           {{item.title}}
                         </h4>
-                        <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fs_12px fw_400 lh_130p " [ngClass]="isAdults? fc_000000_0_5 : fc_ffffff_0_5 " >
                           {{item.timing || ''}}
                         </h4>
                       </div>
@@ -109,7 +119,7 @@
 
                     <!-- right icon (arrow / lock) -->
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                      <i class="fa fa-angle-right  fs_20px"></i>
                     </div>
 
                     <!-- lock icon if NOT subscribed -->
