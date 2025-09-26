@@ -26,6 +26,7 @@ export class FeatureHeaderComponent implements OnInit {
   address: any;
   path:any;
   baseUrl:any;
+  isAdults: boolean = true; 
 
   constructor(private router: Router,
     private service:AdultsService,private ngNavigatorShareService: NgNavigatorShareService,
@@ -39,7 +40,13 @@ export class FeatureHeaderComponent implements OnInit {
     if(this.saveUsername==false)
     {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
     else
-      {this.userId=JSON.parse(localStorage.getItem("userId"))}
+      {this.userId=JSON.parse(localStorage.getItem("userId"))};
+
+  if (SharedService.ProgramId == ProgramType.Adults) {
+    this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
 
   }
   shareUrl (programType) {

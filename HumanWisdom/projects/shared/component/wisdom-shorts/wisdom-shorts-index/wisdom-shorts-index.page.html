@@ -20,7 +20,7 @@
 
               <div class="row mt20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                  <h4 class="mtb0px fs_18px fw_600 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     Short videos
                   </h4>
                 </div>
@@ -133,18 +133,24 @@
                           </div>
 
                         </div>
-
+<!-- 
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID']<=2">
                           <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                        </div>
+                        </div> -->
 
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                          <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                            <img *ngIf="data?.isRead === '1'" 
+       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+       class="img-responsive ws-read-icon">
                         </div>
 
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] >1">
                           <!-- lock -->
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                          <img
+                        *ngIf="!isSubscriber"
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                        class="img-responsive ws-lock-icon"
+                      />
                           <!-- /lock -->
                         </div>
 

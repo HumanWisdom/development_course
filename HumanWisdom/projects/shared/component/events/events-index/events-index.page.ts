@@ -86,15 +86,24 @@ export class EventsIndexPage implements OnInit {
   goBack() {
     this.location.back()
   }
-  youtube(link, RowID) {
-    let sub: any = localStorage.getItem("Subscriber")
-    if(RowID>=2 && sub==0)
-    this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
-    else if (RowID<=1)
-      this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=rdtfghjhfdg"])
-    else
-       this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=vncbxdfchgvxd"])
+
+  youtube(link: string, RowID: number) {
+    this.service.clickEvents(RowID).subscribe({
+      next : () => console.log('youtube event logged'),
+      error: (e) => console.error('youtube event failed', e)
+    });
+    const sub = localStorage.getItem('Subscriber');
+    const prog = SharedService.getprogramName();
+
+    if (RowID >= 2 && sub === '0') {
+      this.router.navigate([`${prog}/subscription/start-your-free-trial`]);
+    } else if (RowID <= 1) {
+      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`]);
+    } else {
+      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=vncbxdfchgvxd`]);
+    }
   }
+
   share() {
     /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
        alert(`This service/api is not supported in your Browser`);
