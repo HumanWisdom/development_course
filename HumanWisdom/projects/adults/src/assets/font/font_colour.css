@@ -1,5 +1,5 @@
 /* font colour */
-.fc_ffffff
+.fc_000000
 {
     color: #FFFFFF;
 }
@@ -68,4 +68,11 @@
 {
     color: #5097A4;
 }
+
+
+fc_ED7D6F
+{
+    color: #ED7D6F;
+}
+
 /* /font colour */

@@ -8,7 +8,7 @@
     </div>
     
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p fc_000000 mtb0px tcenter">
         Select a topic to explore
       </h1>  
     </div>
@@ -35,7 +35,7 @@
 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of personalisedforyou; let i = index">
                     <button class="" [ngClass]="[item['active'] ? 'activebtn' : '']" (click)="clickbtn(item['name'], '', $event, i, item['id']);">
-                      <h4 class="mtb0px fw_600 fs_15px lh_140p fc_ffffff tcenter">
+                      <h4 class="mtb0px fw_600 fs_15px lh_140p fc_000000 tcenter">
                         {{item['name']}}
                       </h4>
                     </button>

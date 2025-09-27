@@ -18,9 +18,14 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
   enablewisdomstory = false;
   enable_view_more_less = false;
   view_more_less="View More"
-
+  isAdults = false;
   constructor(private router: Router,private service:AdultsService) {
 
+     if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
   }
 
   ngOnInit() {

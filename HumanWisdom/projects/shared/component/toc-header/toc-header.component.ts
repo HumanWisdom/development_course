@@ -22,10 +22,19 @@ export class TocHeaderComponent implements OnInit {
   path:any;
   baseUrl:string;
   programName:'';
-  constructor(private ngNavigatorShareService: NgNavigatorShareService,
+  isAdults = false;
+ 
+ constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router , public meta: Meta, private title: Title,
     private location: Location,
-    private navigationService: NavigationService) { }
+    private navigationService: NavigationService) { 
+      if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
+
+    }
 
   ngOnInit() {
     this.path = this.router.url;

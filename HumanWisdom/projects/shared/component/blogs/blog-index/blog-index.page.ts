@@ -18,6 +18,7 @@ export class BlogIndexPage implements OnInit {
   searchedTitle='';
   path:any;
   isAdults= true;
+  isSubscribed = false;
   constructor(private service: OnboardingService, private router: Router, 
     private ngNavigatorShareService: NgNavigatorShareService,
     public meta: Meta, private title: Title) { 
@@ -35,7 +36,10 @@ export class BlogIndexPage implements OnInit {
         } else {
          this.isAdults = false;
         }
-    this.getBlogs()
+    this.getBlogs();
+
+    const subValue = localStorage.getItem('Subscriber');
+    this.isSubscribed = subValue === '1' || subValue === 'T';
   }
 
 

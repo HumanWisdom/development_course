@@ -302,15 +302,21 @@
                                     </div>
                                   </div> -->
                                   <div class="row mtb10px tright" *ngFor="let item of getdailCheckInData(j.ModuleId)">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tcenter fright">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0  fright">
                                       <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                        <div class="col-md-10 col-sm-10 col-xs-10 p0 ">
+
+                                        </div>
+                                        <div class="col-md-2 col-sm-2 col-xs-2 p0 tcenter">
                                           <img src="{{item.ImgPath}}" alt="" class="img-responsive">
                                         </div>
                                       </div>
                             
-                                      <div class="row mt5px">
-                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                      <div class="row mt5px ">
+                                              <div class="col-md-10 col-sm-10 col-xs-10 p0 ">
+
+                                        </div>
+                                        <div class="col-md-2 col-sm-2 col-xs-2 p0 tcenter">
                                           <h4 class="mtb0px fs_9px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                             {{item.Expression}}
                                           </h4>

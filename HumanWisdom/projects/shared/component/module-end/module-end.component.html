@@ -87,11 +87,11 @@
 
                         <div class="me_overlay"></div>
 
-                        <h6 class="fw_400 fs_12px lh_130p fc_ffffff opacity_pt75 me_module_title">
+                        <h6 class="fw_400 fs_12px lh_130p  opacity_pt75 me_module_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                           {{sectionName}}
                         </h6>
 
-                        <h6 class="fw_500 fs_20px lh_130p fc_ffffff me_session_title">
+                        <h6 class="fw_500 fs_20px lh_130p  me_session_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                           {{moduleName}}
                         </h6>
 
@@ -110,11 +110,11 @@
                           
                           <div class="me_overlay"></div>
 
-                          <h6 class="fw_400 fs_12px lh_130p fc_ffffff opacity_pt75 me_module_title">
+                          <h6 class="fw_400 fs_12px lh_130p  opacity_pt75 me_module_title"  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'" >
                               {{sectionName}}
                           </h6>
 
-                          <h6 class="fw_500 fs_20px lh_130p fc_ffffff me_session_title">
+                          <h6 class="fw_500 fs_20px lh_130p  me_session_title"  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                               {{moduleName}}
                           </h6>
 
@@ -150,7 +150,7 @@
 
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                                <h4 class="mt10px mb10px fw_500 fs_15px lh_130p "  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                                   {{item['name']}}
                                 </h4>
                               </div>
@@ -158,7 +158,7 @@
 
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                <h4 class="mtb0px fw_400 fs_12px lh_130p "  [ngClass]="isAdults? 'fc_000000_0_5': 'fc_ffffff_0_5'">
                                   {{item['SessionCnt']}} Sessions
                                 </h4>
                               </div>

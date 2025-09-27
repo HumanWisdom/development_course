@@ -163,30 +163,31 @@ export class WisdomShortsIndexPage implements OnInit {
   }
 
   wisdoshortsevent(val, video, title) {
-    // localStorage.setItem('wisdomvideotitle', title);
-    let loggedin = localStorage.getItem("isloggedin")
-    let sub: any = localStorage.getItem("Subscriber")
-    let id = video.split("/")[3].split(".")[1]
-    localStorage.setItem('isSwipeAllow','true');
+    const loggedin = localStorage.getItem('isloggedin');
+    const sub      = localStorage.getItem('Subscriber');
+    const id       = video.split('/')[3].split('.')[1];   // short numeric id
+
+    /* 1.  register the click */
+    this.service.clickShorts(+id).subscribe({
+      next:  () => console.log('short click recorded'),
+      error: (e) => console.error('short click failed', e)
+    });
+
+    /* 2.  existing free/subscription check & navigation */
     this.service.CheckShortsIsFree(id).subscribe(res => {
+      const route = video.replace('adults', SharedService.getprogramName());
+      const extras = val['IsVoices'] === '1' ? { queryParams: { pref: 'voices' } } : undefined;
+
       if (res === true) {
-        if(val['IsVoices'] === '1') {
-          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
-        }else {
-          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
-        }
+        this.router.navigate([route, 'T', title], extras);
       } else {
-        if (loggedin && loggedin === 'T' && sub && sub === '1') {
-          if(val['IsVoices'] === '1') {
-            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
-          }else {
-            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
-          }
+        if (loggedin === 'T' && sub === '1') {
+          this.router.navigate([route, 'T', title], extras);
         } else {
-          this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
+          this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
         }
       }
-    })
+    });
   }
 
   searchShorts($event) {

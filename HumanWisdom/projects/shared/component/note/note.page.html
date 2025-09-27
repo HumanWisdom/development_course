@@ -1,6 +1,6 @@
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="goBack()"
@@ -13,13 +13,9 @@
         Note
       </h1>
     </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-      <a class="">
-        
-      </a>
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright" *ngIf="enableSave">
-      <a class="" (click)="save()">
+  
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright" >
+      <a class="" (click)="save()" *ngIf="enableSave">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_save.svg" alt="" class="p0">
       </a>
     </div>

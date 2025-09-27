@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { LogEventService } from '../../services/log-event.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
+
+
 
 @Component({
   selector: 'app-QuestionAnswersSelection',
@@ -87,7 +90,14 @@ export class QuestionAnswersSelection implements OnInit {
       private router: Router,
       private service: OnboardingService,
       public logeventservice: LogEventService,
-    ) { }
+    ) { 
+     if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+
+    }
 
   ngOnInit() {
     this.userId = JSON.parse(localStorage.getItem("userId"))

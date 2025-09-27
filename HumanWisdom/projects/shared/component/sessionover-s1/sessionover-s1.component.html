@@ -15,18 +15,18 @@
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/session_end_owl.svg" alt="" class="img-responsive animate_rotate_scale se_owl ">
                   <div class="prelative center_flex">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/wisdom_points_circle_02.svg" alt="" class="prelative">
-                    <h6 class="fw_700 fs_30px lh_35px fc_ffffff se_wpts_count center_flex">
+                    <h6 class="fw_700 fs_30px lh_35px  se_wpts_count center_flex"  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                       {{points}}
                     </h6>
                   </div>
                 </div>
               </div>
 
-              <h1 class="fw_500 fs_30px lh_35px fc_ffffff tcenter wp_txt">
+              <h1 class="fw_500 fs_30px lh_35px  tcenter wp_txt" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                 Well done!
               </h1>
 
-              <h1 class="fw_500 fs_16px lh_19px fc_ffffff tcenter">
+              <h1 class="fw_500 fs_16px lh_19px  tcenter" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                 You’ve earned {{points}} points. Check your Profile for more details.
               </h1>
 

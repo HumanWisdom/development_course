@@ -23,6 +23,8 @@ export class ReflectionComponent implements OnInit {
   @Input() rid: string;
   @Output() sendResponse = new EventEmitter<any>();
   @Output() goPrevious = new EventEmitter<string>();
+    isAdults = false;
+
   shared: any
   confirmed: any
   path :any;
@@ -44,6 +46,12 @@ export class ReflectionComponent implements OnInit {
 
   constructor(public router: Router, public service: AdultsService, public sharedService:SharedService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
+      if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
+    
   }
 
   ngOnInit() {

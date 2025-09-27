@@ -25,6 +25,8 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   @Input() bg: string;
   @Input() toc: string;
   @Input() moduleId: any;
+  isAdults=false;
+
   qrList: any
   token = localStorage.getItem("shareToken")
   socialShare = false
@@ -63,6 +65,11 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     private ngNavigatorShareService: NgNavigatorShareService) {
 
     this.ngNavigatorShareService = ngNavigatorShareService;
+     if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
   }
 
   ngOnInit() {
