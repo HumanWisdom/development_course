@@ -92,7 +92,8 @@ export class ChatbotService {
 
   checkHealth(): Observable<any> {
     return this.http.get(this.getHealthCheckUrl(), {
-      headers: this.getAuthHeaders()
+      headers: this.getAuthHeaders(),
+      withCredentials: true
     });
   }
 
@@ -105,7 +106,10 @@ export class ChatbotService {
     return this.http.post<ChatbotResponse>(
       this.getChatbotUrl(),
       request,
-      { headers: this.getAuthHeaders() }
+      { 
+        headers: this.getAuthHeaders(),
+        withCredentials: true
+      }
     );
   }
 
