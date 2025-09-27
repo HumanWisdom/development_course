@@ -25,7 +25,7 @@
           
           <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
             <!-- Regular message content -->
-            <div *ngIf="!message.isTyping" [innerHTML]="message.content"></div>
+            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"></div>
             
             <!-- Typing indicator -->
             <div *ngIf="message.isTyping" class="typing-dots">

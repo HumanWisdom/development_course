@@ -4,6 +4,23 @@
   margin: 0 auto;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
+  
+  // Global anchor styles for the entire chat container
+  a {
+    color: #1976d2 !important;
+    text-decoration: underline !important;
+    cursor: pointer !important;
+    
+    &:hover {
+      color: #1565c0 !important;
+      text-decoration: underline !important;
+    }
+    
+    &:visited {
+      color: #1976d2 !important;
+      text-decoration: underline !important;
+    }
+  }
 }
 
 .timestamp {
@@ -375,9 +392,48 @@
   p {
     margin: 0;
     line-height: 1.4;
+    white-space: pre-line; // Preserve line breaks and wrap text
   }
   
-  // Style links in bot messages
+  // Style links in bot messages with high specificity
+  .bot-message-content a,
+  .message-content a,
+  a {
+    color: #1976d2 !important;
+    text-decoration: underline !important;
+    cursor: pointer !important;
+    font-weight: normal !important;
+    
+    &:hover {
+      color: #1565c0 !important;
+      text-decoration: underline !important;
+    }
+    
+    &:visited {
+      color: #1976d2 !important;
+      text-decoration: underline !important;
+    }
+    
+    &:link {
+      color: #1976d2 !important;
+      text-decoration: underline !important;
+    }
+  }
+  
+  // Additional specificity for innerHTML content
+  .bot-message-content {
+    a {
+      color: #1976d2 !important;
+      text-decoration: underline !important;
+      cursor: pointer !important;
+      
+      &:hover {
+        color: #1565c0 !important;
+        text-decoration: underline !important;
+      }
+    }
+  }
+  
   u {
     color: #1976d2;
     text-decoration: underline;
@@ -391,6 +447,11 @@
   // Style line breaks
   br {
     line-height: 1.6;
+  }
+  
+  // Preserve formatting for bot messages
+  &.bot-message {
+    white-space: pre-line;
   }
 }
 

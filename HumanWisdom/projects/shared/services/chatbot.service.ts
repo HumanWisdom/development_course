@@ -130,9 +130,12 @@ export class ChatbotService {
       this.sessionId = sessionId;
     }
 
+    // Convert \n to <br> for proper HTML line breaks
+    const formattedContent = content.replace(/\n/g, '<br>');
+
     const botMessage: ChatMessage = {
       id: Date.now().toString(),
-      content: content,
+      content: formattedContent,
       sender: 'bot',
       timestamp: new Date()
     };

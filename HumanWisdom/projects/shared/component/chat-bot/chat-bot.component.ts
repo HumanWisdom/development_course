@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ChatbotService, ChatMessage } from '../../services/chatbot.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-chat-bot',
@@ -20,7 +21,10 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   private messagesSubscription: Subscription = new Subscription();
   private typingSubscription: Subscription = new Subscription();
 
-  constructor(private chatbotService: ChatbotService) {}
+  constructor(
+    private chatbotService: ChatbotService,
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit(): void {
     // Subscribe to messages
@@ -28,6 +32,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       messages => {
         this.messages = messages;
         setTimeout(() => this.scrollToBottom(), 100);
+        // Style anchor tags after messages are updated
+        this.styleAnchorTags();
       }
     );
 
@@ -43,6 +49,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.messageInput) {
       this.messageInput.nativeElement.focus();
     }
+    this.styleAnchorTags();
   }
 
   ngOnDestroy(): void {
@@ -129,5 +136,51 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   clearError(): void {
     this.errorMessage = '';
+  }
+
+  sanitizeHtml(html: string): SafeHtml {
+    console.log('HTML Content:', html);
+    console.log('Contains anchor tags:', html.includes('<a'));
+    
+    // Add inline styles to anchor tags as a workaround
+    const styledHtml = html.replace(/<a\s+([^>]*?)>/gi, (match, attributes) => {
+      // Check if style attribute already exists
+      if (attributes.includes('style=')) {
+        return match.replace(/style="([^"]*)"/, 'style="$1; color: #1976d2 !important; text-decoration: underline !important;"');
+      } else {
+        return `<a ${attributes} style="color: #1976d2 !important; text-decoration: underline !important; cursor: pointer !important;">`;
+      }
+    });
+    
+    console.log('Styled HTML:', styledHtml);
+    const sanitized = this.sanitizer.bypassSecurityTrustHtml(styledHtml);
+    console.log('Sanitized result:', sanitized);
+    return sanitized;
+  }
+
+  styleAnchorTags(): void {
+    // Use setTimeout to ensure DOM is updated
+    setTimeout(() => {
+      const anchorTags = document.querySelectorAll('.chat-bot-container a');
+      console.log('Found anchor tags:', anchorTags.length);
+      
+      anchorTags.forEach((anchor: Element) => {
+        const htmlAnchor = anchor as HTMLAnchorElement;
+        htmlAnchor.style.color = '#1976d2';
+        htmlAnchor.style.textDecoration = 'underline';
+        htmlAnchor.style.cursor = 'pointer';
+        
+        // Add hover event listener
+        htmlAnchor.addEventListener('mouseenter', () => {
+          htmlAnchor.style.color = '#1565c0';
+        });
+        
+        htmlAnchor.addEventListener('mouseleave', () => {
+          htmlAnchor.style.color = '#1976d2';
+        });
+        
+        console.log('Styled anchor:', htmlAnchor);
+      });
+    }, 100);
   }
 }
