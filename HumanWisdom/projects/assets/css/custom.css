@@ -38230,3 +38230,18 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
 
 .ws-read-icon    { position: relative; bottom: 50px; }
 .ws-lock-icon    { position: relative; top:    50px; }
+
+.blog_tick{
+  position: relative;
+  top: 5px;
+}
+.div_like_cnt1 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a:hover .div_like_cnt1 span {
+    color: #000000 !important;
+    text-decoration: none;
+}
