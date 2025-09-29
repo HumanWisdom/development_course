@@ -33386,6 +33386,11 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   margin-right: -10px !important;
 }
 
+.ml-10pxi
+{
+  margin-left: -10px !important;
+}
+
 .mtb10pxi
 {
   margin-top: 10px !important;
@@ -33467,6 +33472,14 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   padding: 10px !important;
+  white-space: normal;
+}
+
+.box_v5_05
+{
+  background: #FFE8BB;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
   white-space: normal;
 }
 
@@ -38215,5 +38228,5 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
     }
 } */
 
-.ws-read-icon    { position: relative; bottom: 30px; }
-.ws-lock-icon    { position: relative; top:    30px; }
+.ws-read-icon    { position: relative; bottom: 50px; }
+.ws-lock-icon    { position: relative; top:    50px; }

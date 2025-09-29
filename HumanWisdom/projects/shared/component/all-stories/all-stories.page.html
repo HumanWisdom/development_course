@@ -5,7 +5,7 @@
 />
 
 <!-- top navigation -->
-<app-feature-header [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'" title="Life Stories"></app-feature-header>
+<app-feature-header title="Life Stories"></app-feature-header>
 <!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
@@ -42,7 +42,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <h6 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults? 'fc_ffffff_0_5': 'fc_ffffff_0_5'">
+                      <h6 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
                         These are all real-life stories submitted by users from
                         across the world. All names have been changed. They
                         offer illumination, hope, and nuggets of wisdom, and we
@@ -67,7 +67,7 @@
 
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                      <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                      <h6 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
                         All stories are subject to approval
                       </h6>
                     </div>
@@ -95,7 +95,7 @@
                     <div class="col-md-7 col-sm-7 col-xs-7 plr12px">
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <h6 class="mtb0px fs_15px fw_600 lh_150p" [ngClass]="isAdults? 'fc_ffffff': 'fc_ffffff'">
+                          <h6 class="mtb0px fs_15px fw_600 lh_150p"[ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                             {{s.Title}}
                           </h6>
                         </div>
@@ -104,7 +104,7 @@
                       <div class="row mt10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <h6
-                            class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5 ellipsis" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'"
+                            class="mtb0px fs_12px fw_400 lh_150p ellipsis" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'"
                           >
                             <!-- {{s.Story|slice:0:40}}... -->
                             {{s.Story}}
@@ -180,7 +180,7 @@
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <h6
-                                  class="mtb0px fs_15px fw_600 lh_150p" [ngClass]="isAdults? 'fc_ffffff': 'fc_ffffff'"
+                                  class="mtb0px fs_15px fw_600 lh_150p"[ngClass]="isAdults? 'fc_000000': 'fc_ffffff'"
                                 >
                                   {{s.Title}}
                                 </h6>
@@ -190,7 +190,7 @@
                             <div class="row mt10px">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                 <h6
-                                  class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5 ellipsis" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'"
+                                  class="mtb0px fs_12px fw_400 lh_150p  ellipsis" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'"
                                 >
                                   {{s.Story}}
                                 </h6>
@@ -233,7 +233,7 @@
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                           <h4
-                            class="mtb0px fs_12px fw_400 lh_150p mb10px"  [ngClass]="isAdults? 'fc_ffffff_0_5': 'fc_ffffff_0_5'"
+                            class="mtb0px fs_12px fw_400 lh_150p mb10px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'"
                           >
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_view_more.svg"

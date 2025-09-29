@@ -310,4 +310,13 @@ li:hover:before {
   .odiv_pathway:hover::-webkit-scrollbar-track {
     background: transparent !important;
   }
+
+:host ::ng-deep .odiv_pathway > [class^="col-"] {
+  padding: 0 15px 0 5px !important;
+}
+
+:host ::ng-deep .box_v3_05 {
+    padding: 11px 11px 5px 11px !important;
+}
+
 }
