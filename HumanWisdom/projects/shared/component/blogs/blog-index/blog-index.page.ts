@@ -13,7 +13,7 @@ import { ProgramType } from '../../../models/program-model';
   styleUrls: ['./blog-index.page.scss'],
 })
 export class BlogIndexPage implements OnInit {
-  blogList:any;
+  blogList:any[]=[];
   filteredblogList:any;
   searchedTitle='';
   path:any;
@@ -50,13 +50,13 @@ export class BlogIndexPage implements OnInit {
           this.blogList=res
           this.blogList =  this.blogList.filter(x=>x.ProgIDs.includes(SharedService.ProgramId));
           this.filteredblogList = this.blogList
-        }
-      },
+      }
+    },
       error=>console.log(error),
       ()=>{
       }
     )
-  }
+}
 
   timeSince(date) {
     return moment.utc(date).fromNow();
