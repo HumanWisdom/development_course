@@ -284,3 +284,6 @@ li:hover:before {
   .ae_days:hover {
       overflow: auto;
   }
+:host ::ng-deep .box_v3_05 {
+  padding: 10px 10px 1px 10px !important;
+}
