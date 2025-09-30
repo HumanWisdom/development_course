@@ -86,7 +86,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     
     // High quality video settings
     video.playsInline = true; // Prevents fullscreen on iOS
-    video.muted = true; // Mute initially to allow autoplay
+    video.muted = true; // Start muted for autoplay compatibility
     video.preload = 'auto';
     video.controls = false;
     video.loop = false;
@@ -179,36 +179,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   }
 
   private showPlayButton() {
-    // Add a play button overlay for user interaction
-    const playButton = document.createElement('button');
-    playButton.textContent = 'Click to Play Owl Animation';
-    playButton.className = 'play-button';
-    
-    playButton.addEventListener('click', () => {
-      const video = this.videoElement.nativeElement;
-      video.play().then(() => {
-        console.log('Video started playing with user interaction');
-        playButton.remove();
-      }).catch((error: any) => {
-        console.error('Error playing video after user interaction:', error);
-      });
-    });
-    
-    playButton.addEventListener('mouseenter', () => {
-      playButton.style.background = 'rgba(0, 0, 0, 0.9)';
-    });
-    
-    playButton.addEventListener('mouseleave', () => {
-      playButton.style.background = 'rgba(0, 0, 0, 0.8)';
-    });
-    
-    // Append to the component's wrapper instead of body
-    const wrapper = document.querySelector('.owl-animation-wrapper');
-    if (wrapper) {
-      wrapper.appendChild(playButton);
-    } else {
-      document.body.appendChild(playButton);
-    }
+    // Play button functionality removed - no UI button needed
+    console.log('Autoplay failed, but no play button will be shown');
   }
 
   private onVideoEnded() {
