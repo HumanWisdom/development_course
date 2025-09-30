@@ -37979,3 +37979,11 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
 
 .ws-read-icon    { position: relative; bottom: 30px; }
 .ws-lock-icon    { position: relative; top:    30px; }
+
+.labelClass{
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+}
