@@ -32835,9 +32835,6 @@ body *
   
   /* background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%); */
   background: linear-gradient(180deg, #803358 0%, #230F40 100%);
-
-
-  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -38263,4 +38260,19 @@ color: #6c757d !important;
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
+}
+.blog_tick{
+  position: relative;
+  top: 5px;
+  left: 10px;
+}
+.div_like_cnt1 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a:hover .div_like_cnt1 span {
+    color: #000000 !important;
+    text-decoration: none;
 }

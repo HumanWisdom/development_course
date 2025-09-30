@@ -292,31 +292,9 @@ li:hover:before {
   .odiv_mdp:hover,
   .odiv.p-section:hover,
   .odiv_wfgi:hover,
-  .odiv_pathway:hover {
-    -ms-overflow-style: auto !important;
-    scrollbar-width: thin !important;
+  .ae_days:hover {
+      overflow: auto;
   }
-
-  .odiv_mdp:hover::-webkit-scrollbar,
-  .odiv.p-section:hover::-webkit-scrollbar,
-  .odiv_wfgi:hover::-webkit-scrollbar,
-  .odiv_pathway:hover::-webkit-scrollbar {
-    width: 8px !important;
-  }
-
-  .odiv_mdp:hover::-webkit-scrollbar-track,
-  .odiv.p-section:hover::-webkit-scrollbar-track,
-  .odiv_wfgi:hover::-webkit-scrollbar-track,
-  .odiv_pathway:hover::-webkit-scrollbar-track {
-    background: transparent !important;
-  }
-
-:host ::ng-deep .odiv_pathway > [class^="col-"] {
-  padding: 0 15px 0 5px !important;
-}
-
 :host ::ng-deep .box_v3_05 {
-    padding: 11px 11px 5px 11px !important;
-}
-
+  padding: 10px 10px 1px 10px !important;
 }
