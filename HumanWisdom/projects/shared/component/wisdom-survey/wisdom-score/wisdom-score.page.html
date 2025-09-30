@@ -31,9 +31,10 @@
               <div class="col-md-12 col-sm-12 col-xs-12 center_flex" *ngIf="isAdults">
                 <!-- <div class="prelative center_flex"> -->
                 <circle-progress [percent]="points" [radius]="64" [space]="-15" [outerStrokeWidth]="15"
-                  [innerStrokeWidth]="15" [titleColor]="'#000000'" [outerStrokeColor]="'#ED7D6F'" [titleFontSize]="32"
-                  [titleFontWeight]="600" [innerStrokeColor]="'rgba(0,0,0,0.2)'" [showSubtitle]="false"
-                  [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle">
+                  [innerStrokeWidth]="15" [titleColor]="'#000000'" [outerStrokeColor]="'#1FCED7'" [titleFontSize]="32"
+                  [titleFontWeight]="600" [innerStrokeColor]="'rgba(0,0,0,0.1)'" [showSubtitle]="false"
+                  [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle" 
+                  [showUnits]="false">
                 </circle-progress>
 
                 <!-- </div> -->
@@ -43,7 +44,8 @@
                 <circle-progress [percent]="points" [radius]="64" [space]="-15" [outerStrokeWidth]="15"
                   [innerStrokeWidth]="15" [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'" [titleFontSize]="32"
                   [titleFontWeight]="600" [innerStrokeColor]="'rgba(255,255,255,0.2)'" [showSubtitle]="false"
-                  [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle" >
+                  [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle" 
+                  [showUnits]="false">
                 </circle-progress>
 
                 <!-- </div> -->

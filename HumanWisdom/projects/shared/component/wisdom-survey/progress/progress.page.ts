@@ -22,12 +22,17 @@ export class ProgressPage implements OnInit {
     responsive: true,
     maintainAspectRatio: false
   };
-  public lineChartColors: Color[] = [
-    {
+  public lineChartColors: Color[] =  (this.isAdults? [
+ {
+      borderColor: '#ED7D6F',
+      backgroundColor: '#ED7D6F33',
+    },
+  ]:[
+ {
       borderColor: '#E58D82',
       backgroundColor: 'rgba(229, 141, 130, 0.2)',
     },
-  ];
+  ] );
   public lineChartLegend = false;
   public lineChartType: ChartType = 'line';
   public chartData = [
