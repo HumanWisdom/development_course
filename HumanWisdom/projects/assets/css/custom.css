@@ -32835,9 +32835,6 @@ body *
   
   /* background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%); */
   background: linear-gradient(180deg, #803358 0%, #230F40 100%);
-
-
-  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -38268,6 +38265,7 @@ color: #6c757d !important;
 .blog_tick{
   position: relative;
   top: 5px;
+  left: 10px;
 }
 .div_like_cnt1 
 {
