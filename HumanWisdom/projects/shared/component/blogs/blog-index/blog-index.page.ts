@@ -19,6 +19,7 @@ export class BlogIndexPage implements OnInit {
   path:any;
   isAdults= true;
   isSubscribed = false;
+  isLoggedIn = false;
   constructor(private service: OnboardingService, private router: Router, 
     private ngNavigatorShareService: NgNavigatorShareService,
     public meta: Meta, private title: Title) { 
@@ -40,6 +41,9 @@ export class BlogIndexPage implements OnInit {
 
     const subValue = localStorage.getItem('Subscriber');
     this.isSubscribed = subValue === '1' || subValue === 'T';
+        if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
+          this.isLoggedIn = true;
+        }
   }
 
 

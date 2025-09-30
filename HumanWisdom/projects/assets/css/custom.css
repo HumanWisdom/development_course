@@ -38246,6 +38246,7 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
 .ws-lock-icon    { position: relative; top:    50px; }
 
 
+
 .nav-link.active 
 {
   background: #ED7D6F !important;
@@ -38263,4 +38264,18 @@ color: #6c757d !important;
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
+}
+.blog_tick{
+  position: relative;
+  top: 5px;
+}
+.div_like_cnt1 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a:hover .div_like_cnt1 span {
+    color: #000000 !important;
+    text-decoration: none;
 }

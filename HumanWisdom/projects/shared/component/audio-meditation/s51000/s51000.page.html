@@ -135,9 +135,11 @@
                         </h4>
                       </div>
 
-                      <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] <= 1">
-                        <i class="fa fa-angle-right [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'" fs_20px"></i>
-                      </div> -->
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID'] <= 1">
+                        <img *ngIf="data?.isRead === '1'" 
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                        class="img-responsive ws-read-icon">
+                      </div>
 
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
                         <img *ngIf="data?.isRead === '1'" 
