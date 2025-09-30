@@ -28,7 +28,7 @@
 
               <div class="row mt10px mb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     Explore these short videos which offer a nugget of wisdom to reflect on. Carry that thought with you through the day and see how you can apply it in your life.
                   </h4>
                 </div>
@@ -105,7 +105,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="title_content">
+                  <h4 class="title_content" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     CONTENTS
                   </h4>
                 </div>
@@ -123,7 +123,7 @@
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg" alt="" class="p0 session_img_play">
                           </div>
 
-                          <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                          <div class="col-md-7 col-sm-7 col-xs-7 p0 pl20pxi">
                             <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ">
                               {{data['Title']}}
                             </h4>
@@ -133,10 +133,12 @@
                           </div>
 
                         </div>
-<!-- 
+
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && data['RowID']<=2">
-                          <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                        </div> -->
+                          <img *ngIf="data?.isRead === '1'" 
+       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+       class="img-responsive ws-read-icon">
+                        </div>
 
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
                             <img *ngIf="data?.isRead === '1'" 

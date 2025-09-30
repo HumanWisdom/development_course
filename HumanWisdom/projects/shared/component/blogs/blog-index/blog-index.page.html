@@ -54,7 +54,7 @@
                           </div>
                           <div class="col-md-1 col-sm-1 col-xs-1 p0 tright center_flex">
                             <!-- READ icon (top-right) – only when read -->
-                            <img *ngIf="item.isRead === '1' && isSubscribed"
+                            <img *ngIf="item.isRead === '1' && isLoggedIn"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                               class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" />
                           </div>
