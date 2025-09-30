@@ -275,7 +275,7 @@
               <h4 class="mtb0px fs_12px fw_400 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 Session #{{resumeLastvisited[0]['SessionCnt']}}
               </h4>
-              <h4 class="mt0px fs_15px fw_500 lh_130p ellipsis p0 fc_e58d82">
+              <h4 class="mt0px fs_15px fw_500 lh_130p ellipsis p0 " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 {{resumeLastvisited[0]['SessionName']}}
               </h4>
             </div>

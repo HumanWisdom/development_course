@@ -73,16 +73,16 @@
                           </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
-                          <span class="mtb0px fs_12px fw_400 lh_18px fc_ED7D6F tcenter cgqtns_sc">{{ currentSection + 1 }} / 10</span>
+                          <span class="mtb0px fs_12px fw_400 lh_18px  tcenter cgqtns_sc">{{ currentSection + 1 }} / 10</span>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                          <a data-slide="next" class="next" (click)="this.currentSection === 9 ? this.submitProgress() : next('click_Daily_Practice_Next')">
-                            <button type="button" [disabled]="btnDisabled" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
+                          <!-- <a data-bs-slide="next" [ngClass]="btnDisabled? 'disabled':''" class="next" > -->
+                            <button type="button" [disabled]="btnDisabled" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff" (click)="this.currentSection === 9 ? this.submitProgress() : next('click_Daily_Practice_Next')">
                               {{ this.currentSection === 9 ? 'Submit' : 'Next' }}
                               <i class="fa fa-angle-right fs_16px ml10px"></i>
 
                             </button>
-                          </a>
+                          <!-- </a> -->
                         </div>
 
 
@@ -111,7 +111,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12  p0">
 
                               <div>
-                                <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
+                                <a class="sb_anchor" data-bs-toggle="modal" data-bs-target="#lab-slide-bottom-popup">
                                   <div id="{{o['OptStr'][i] + o['Que']}}"
                                     [ngClass]="{'single_select_active': (selectedObj[ind] === o['OptStr'][i]) || false}"
                                     class="box select_box fleft">

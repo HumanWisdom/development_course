@@ -66,9 +66,9 @@ export class MyDailyPracticePage implements OnInit {
  
     try{
 
-        this.userName =JSON.parse(localStorage.getItem('userName'));
+        this.userName =JSON.parse(localStorage.getItem('userName').split(' ')[0]);
     } catch (error) {
-         this.userName = localStorage.getItem('userName');
+         this.userName = localStorage.getItem('userName').split(' ')[0];
     }   
    
     this.userName = this.userName ? this.userName.replace('"',''): this.userName;
