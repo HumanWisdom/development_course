@@ -34970,7 +34970,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   border: 0;
   border-radius: 100px;
   background: #ED7D6F !important;
-  color: #FFF;
+  color: #FFF !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;

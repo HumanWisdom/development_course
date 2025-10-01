@@ -6,7 +6,7 @@
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex bg_stake col_cw">
         <div class="x_panel p0">
-          <div class="x_content mtb20px">
+          <div class="x_content mt20px mb50px">
             <form>
 
               <!-- <div class="row">
@@ -33,7 +33,7 @@
                 <circle-progress [percent]="points" [radius]="80" [outerStrokeWidth]="15" [space]="-10" [innerStrokeWidth]="10"  
                   [titleColor]="'#000000'" [StrokeColor]="'rgba(64, 172, 178, 0.1);'" [titleFontSize]="32"
                   [titleFontWeight]="600"  [showSubtitle]="false" [backgroundColor]="'#FFE8BB'" 
-  [outerStrokeGradient]="true"  [outerStrokeGradientStartColor]="'#0B8A8D 0%'"  [outerStrokeGradientStopColor]="'#3CD5DB'"   [innerStrokeColor]="'rgba(0,0,0,0.1)'"
+  [outerStrokeGradient]="true"  [outerStrokeGradientStartColor]="'#0B8A8D 0%'"  [outerStrokeGradientStopColor]="'#3CD5DB'"   [innerStrokeColor]="'rgba(64, 172, 178, 0.1)'"
                   [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle" 
                   [showUnits]="false">
                 </circle-progress>
@@ -54,32 +54,32 @@
 
               <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px  tcenter wp_txt" *ngIf="parseint(points) < 40">
+                <h1 class="fw_600 fs_18px lh_150p mt20px  tcenter wp_txt" *ngIf="parseint(points) < 40">
                   Sorry that you’re not feeling great.
                 </h1>
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px  tcenter wp_txt"
+                <h1 class="fw_600 fs_18px lh150p mt20px  tcenter wp_txt"
                   *ngIf="parseint(points) >= 41 && parseint(points) < 60">
                   Your wellness journey begins here.
                 </h1>
 
-                <h1 class="fw_600 fs_18px lh_27px mb20px  tcenter wp_txt" *ngIf="parseint(points) >= 60">
+                <h1 class="fw_600 fs_18px lh_150p mt20px  tcenter wp_txt" *ngIf="parseint(points) >= 60">
                   You’re doing great!
                 </h1>
 
               </div>
 
               <!-- paragraphs below remain as is, showing additional guidance -->
-              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter" *ngIf="parseint(points) < 40">
+              <h1 class="fw_400 mb20px fs_12px lh_150p  tcenter" *ngIf="parseint(points) < 40">
                 There are many resources in the app to help you boost your wellbeing and feel happier.
               </h1>
 
-              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter"
+              <h1 class="fw_400 mb20px fs_12px lh_150p  tcenter"
                 *ngIf="parseint(points) >= 41 && parseint(points) < 60">
                 There are so many resources in the app to help you be happier and succeed in life.
               </h1>
 
-              <h1 class="fw_400 mb20px fs_15px lh_140p  tcenter" *ngIf="parseint(points) >= 60">
+              <h1 class="fw_400 mb20px fs_12px lh_150p  tcenter" *ngIf="parseint(points) >= 60">
                 There are many resources in the app to help you to grow even further as a person and succeed in every
                 way in life.
               </h1>
@@ -91,26 +91,26 @@
           <!-- <hr *ngIf="!justSignedUp && wisdomRecomm?.length" class="hr_style_v3_01"> -->
           <!-- recommendations -->
           <div *ngIf="!justSignedUp && wisdomRecomm?.length">
-            <h2 class="fw_400 mtb20px fs_15px lh_140p  tcenter">
+            <h2 class="fw_500 mt50px mb20px fs_12px lh_150p  tcenter">
               Here are some recommendations for you to explore
             </h2>
 
             <div *ngFor="let item of wisdomRecomm" class="toc_adiv">
               <a (click)="navigateToRecommendation(item)">
                 <div class="row mb15px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                     <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex"> -->
 
                       <!-- left thumbnail -->
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative center_flex">
-                        <img [src]="item.image_path" alt="{{item.title}}" class="p0 session_imgnew">
+                        <img [src]="item.image_path" alt="{{item.title}}" class="p0 session_imgnew border-0">
                         <img [src]="isAdults?'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_session.svg'"
                           alt="" class="p0 session_img_play"
                           *ngIf="item.path.includes('.mp3') || item.path.includes('.mp4')">
                       </div>
 
                       <!-- right content -->
-                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 pl15px">
+                      <div class="h-100 col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 d-flex flex-column justify-content-center">
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"  [ngClass]="isAdults? fc_ED7D6F : fc_e58d82 " > 
                           {{item.title}}
                         </h4>
@@ -121,12 +121,12 @@
                     <!-- </div> -->
 
                     <!-- right icon (arrow / lock) -->
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright  d-flex flex-column justify-content-end" *ngIf="isSubscriber">
                       <i class="fa fa-angle-right  fs_20px"></i>
                     </div>
 
                     <!-- lock icon if NOT subscribed -->
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber">
+                    <div class="h-100 col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright  d-flex flex-column justify-content-end" *ngIf="!isSubscriber">
                       <img [src]="isAdults? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' :'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
                         class="img-responsive">
                     </div>
