@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { OwlStore } from '../../stores/owl.store';
 
 @Component({
   selector: 'app-owl-animation',
@@ -8,6 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./owl-animation.component.css']
 })
 export class OwlAnimationComponent implements OnInit, OnDestroy {
+  // Configuration: Time to wait (in milliseconds) before marking as initialized
+  // Increase this value to keep the owl visible longer
+  private readonly WAIT_TIME_BEFORE_INITIALIZATION = 5000; // 5 seconds
+  
   @ViewChild('videoElement', { static: true }) videoElement!: ElementRef<HTMLVideoElement>;
   videoError = false;
   private _isPlaying: boolean = true;
@@ -47,11 +52,17 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   
   private isMobile = this.detectMobile();
 
-  constructor(private cdr: ChangeDetectorRef,private router:Router) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private router: Router,
+    private owlStore: OwlStore
+  ) {}
 
   ngOnInit() {
     console.log('OwlAnimationComponent initialized');
     console.log('Video element:', this.videoElement);
+    
+    // Don't mark as initialized yet - let the animation play first
     this.setupVideo();
   }
   
@@ -201,10 +212,14 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
       this.isAtCorner = true;
       this.cdr.detectChanges();
       
-      // Keep video visible and restart after a delay
+      // Wait longer before marking as initialized to keep owl visible
+      // This gives users time to see and interact with the owl
       setTimeout(() => {
-        // this.restartAnimation();
-      }, 3000); // Restart after 3 seconds
+        // Mark as initialized in the store to prevent re-rendering on navigation
+        this.owlStore.markAsInitialized();
+        console.log('Owl animation marked as initialized - will not show on next navigation');
+      }, this.WAIT_TIME_BEFORE_INITIALIZATION);
+      
     }, 1000);
   }
 
@@ -220,6 +235,12 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
         this.isTransitioning = false;
         this.isAtCorner = true;
         this.cdr.detectChanges();
+        
+        // Wait before marking as initialized even on error
+        setTimeout(() => {
+          this.owlStore.markAsInitialized();
+          console.log('Owl animation marked as initialized (after error)');
+        }, this.WAIT_TIME_BEFORE_INITIALIZATION);
       }, 1000);
     }, 2000);
   }

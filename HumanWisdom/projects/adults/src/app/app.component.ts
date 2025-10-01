@@ -19,6 +19,8 @@ import { environment } from '../../../environments/environment';
 import { NavigationService } from '../../../shared/services/navigation.service';
 import { CommonService } from '../../../shared/services/common.service';
 import { ParentHubPage } from './adults/curated/parent-hub/parent-hub.page';
+import { OwlStore } from '../../../shared/stores/owl.store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -57,7 +59,9 @@ export class AppComponent implements OnDestroy {
   isEnableHam = true;
   enablebanner = false;
   isShowHeader = false;
-  owlEnable = true; 
+  
+  // Observable for owl component state management
+  owlEnable$: Observable<boolean>;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
   userdetail:any;
@@ -71,9 +75,29 @@ export class AppComponent implements OnDestroy {
     private onboardingService:OnboardingService,
     private commonService:CommonService,
     private renderer: Renderer2,
+    private owlStore: OwlStore,
     // public moengageService: MoengageService,
     private navigationService:NavigationService
   ) {
+    // IMPORTANT: Reset owl state to clear any previous localStorage data
+    // Comment this line back after first successful run
+    this.owlStore.reset();
+    
+    // Initialize owl state from store (after reset)
+    this.owlEnable$ = this.owlStore.shouldShow$;
+    
+    // Debug: Check owl state
+    console.log('Owl Store State (after reset):', {
+      isEnabled: this.owlStore.getIsEnabled(),
+      isInitialized: this.owlStore.getIsInitialized(),
+      shouldShow: this.owlStore.getShouldShow()
+    });
+    
+    // Debug: Subscribe to owl state changes
+    this.owlEnable$.subscribe(shouldShow => {
+      console.log('Owl shouldShow$ emitted:', shouldShow);
+    });
+    
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
   
     let urls = this.router.url.split('authtoken=');
@@ -467,6 +491,14 @@ export class AppComponent implements OnDestroy {
 
  openChat(){
   this.router.navigate(['/adults/chat-bot']);
+ }
+
+ /**
+  * Reset owl animation state - useful for testing or re-showing the animation
+  * Call this method if you want to show the owl animation again
+  */
+ resetOwlAnimation() {
+   this.owlStore.reset();
  }
 }
 
