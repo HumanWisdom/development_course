@@ -1,6 +1,9 @@
 import { Component, AfterViewInit, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { ChatbotService, ChatMessage } from '../../services/chatbot.service';
+import { ChatbotService } from '../../services/chatbot.service';
+import { ChatStore, ChatMessage } from '../../stores/chat.store';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -20,26 +23,40 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private messagesSubscription: Subscription = new Subscription();
   private typingSubscription: Subscription = new Subscription();
+  private sessionSubscription: Subscription = new Subscription();
 
   constructor(
     private chatbotService: ChatbotService,
-    private sanitizer: DomSanitizer
+    private chatStore: ChatStore,
+    private sanitizer: DomSanitizer,
+    private router: Router,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
-    // Subscribe to messages
-    this.messagesSubscription = this.chatbotService.messages$.subscribe(
+    // Subscribe to messages from store
+    this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
         this.messages = messages;
-        setTimeout(() => this.scrollToBottom(), 100);
+        // Scroll to bottom when messages update (with longer delay to ensure DOM is ready)
+        setTimeout(() => this.scrollToBottom(), 1000);
         // Style anchor tags after messages are updated
         this.styleAnchorTags();
       }
     );
 
-    // Subscribe to typing indicator
-    this.typingSubscription = this.chatbotService.isTyping$.subscribe(
+    // Subscribe to typing indicator from store
+    this.typingSubscription = this.chatStore.isTyping$.subscribe(
       isTyping => this.isTyping = isTyping
+    );
+
+    // Optional: Subscribe to session ID for monitoring
+    this.sessionSubscription = this.chatStore.sessionId$.subscribe(
+      sessionId => {
+        if (sessionId) {
+          console.log('Chat session ID:', sessionId);
+        }
+      }
     );
   }
 
@@ -55,6 +72,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     this.messagesSubscription.unsubscribe();
     this.typingSubscription.unsubscribe();
+    this.sessionSubscription.unsubscribe();
   }
 
   onSendMessage(): void {
@@ -82,6 +100,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         
         if (response.status === 'success') {
           this.chatbotService.addBotMessage(response.response, response.session_id);
+          // Note: Scrolling is handled automatically by messages$ subscription
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
         }
@@ -93,6 +112,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         this.chatbotService.setTyping(false);
         this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
         this.isLoading = false;
+        // Note: Scrolling is handled automatically by messages$ subscription
       }
     });
   }
@@ -105,15 +125,33 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onCloseChat(): void {
-    // This would typically emit an event to parent component or use a service
-    // For now, we'll just clear the messages
-    this.chatbotService.clearMessages();
+    // Navigate back to dashboard
+    // Option 1: Go back in browser history
+    // this.location.back();
+    
+    // Option 2: Navigate to specific dashboard route (uncomment if needed)
+   this.router.navigate(['/adults/home']);
+    
+    // Optional: Clear messages when closing (uncomment if you want to clear chat history)
+    // this.chatbotService.clearMessages();
   }
 
   scrollToBottom(): void {
     if (this.messageContainer) {
-      const element = this.messageContainer.nativeElement;
-      element.scrollTop = element.scrollHeight;
+      try {
+        const element = this.messageContainer.nativeElement;
+        // Force immediate scroll first
+        element.scrollTop = element.scrollHeight;
+        // Then smooth scroll to ensure we're at the bottom
+        requestAnimationFrame(() => {
+          element.scrollTo({
+            top: element.scrollHeight,
+            behavior: 'smooth'
+          });
+        });
+      } catch (err) {
+        console.error('Error scrolling to bottom:', err);
+      }
     }
   }
 

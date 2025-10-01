@@ -1,16 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { SharedService } from './shared.service';
 import { ProgramType } from '../models/program-model';
-
-export interface ChatMessage {
-  id: string;
-  content: string;
-  sender: 'user' | 'bot';
-  timestamp: Date;
-  isTyping?: boolean;
-}
+import { ChatStore, ChatMessage } from '../stores/chat.store';
 
 export interface ChatbotRequest {
   message: string;
@@ -33,14 +27,22 @@ export class ChatbotService {
   private readonly HEALTH_CHECK_URL_ADULT = 'https://adults-staging.happierme.app/api/health';
   private readonly HEALTH_CHECK_URL_TEEN = 'https://teenagers-staging.happierme.app/api/health';
 
-  private messagesSubject = new BehaviorSubject<ChatMessage[]>([]);
-  public messages$ = this.messagesSubject.asObservable();
+  // Expose store observables
+  public messages$: Observable<ChatMessage[]>;
+  public isTyping$: Observable<boolean>;
+  public sessionId$: Observable<string | null>;
+  public messageCount$: Observable<number>;
 
-  private sessionId: string | null = null;
-  private isTypingSubject = new BehaviorSubject<boolean>(false);
-  public isTyping$ = this.isTypingSubject.asObservable();
-
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private chatStore: ChatStore
+  ) {
+    // Initialize observables from store after injection
+    this.messages$ = this.chatStore.messages$;
+    this.isTyping$ = this.chatStore.isTyping$;
+    this.sessionId$ = this.chatStore.sessionId$;
+    this.messageCount$ = this.chatStore.messageCount$;
+    
     this.initializeWelcomeMessage();
   }
 
@@ -59,7 +61,7 @@ export class ChatbotService {
         timestamp: new Date()
       }
     ];
-    this.messagesSubject.next(welcomeMessages);
+    this.chatStore.initializeWelcomeMessages(welcomeMessages);
   }
 
   private getChatbotUrl(): string {
@@ -100,7 +102,7 @@ export class ChatbotService {
   sendMessage(message: string): Observable<ChatbotResponse> {
     const request: ChatbotRequest = {
       message: message,
-      session_id: this.sessionId || undefined
+      session_id: this.chatStore.getCurrentSessionId() || undefined
     };
 
     return this.http.post<ChatbotResponse>(
@@ -114,67 +116,32 @@ export class ChatbotService {
   }
 
   addUserMessage(content: string): void {
-    const userMessage: ChatMessage = {
-      id: Date.now().toString(),
-      content: content,
-      sender: 'user',
-      timestamp: new Date()
-    };
-
-    const currentMessages = this.messagesSubject.value;
-    this.messagesSubject.next([...currentMessages, userMessage]);
+    this.chatStore.addUserMessage(content);
   }
 
   addBotMessage(content: string, sessionId?: string): void {
-    if (sessionId) {
-      this.sessionId = sessionId;
-    }
-
-    // Convert \n to <br> for proper HTML line breaks
-    const formattedContent = content.replace(/\n/g, '<br>');
-
-    const botMessage: ChatMessage = {
-      id: Date.now().toString(),
-      content: formattedContent,
-      sender: 'bot',
-      timestamp: new Date()
-    };
-
-    const currentMessages = this.messagesSubject.value;
-    this.messagesSubject.next([...currentMessages, botMessage]);
+    this.chatStore.addBotMessage({ content, sessionId });
   }
 
   addTypingIndicator(): void {
-    const typingMessage: ChatMessage = {
-      id: 'typing-' + Date.now(),
-      content: '',
-      sender: 'bot',
-      timestamp: new Date(),
-      isTyping: true
-    };
-
-    const currentMessages = this.messagesSubject.value;
-    this.messagesSubject.next([...currentMessages, typingMessage]);
+    this.chatStore.addTypingIndicator();
   }
 
   removeTypingIndicator(): void {
-    const currentMessages = this.messagesSubject.value;
-    const filteredMessages = currentMessages.filter(msg => !msg.isTyping);
-    this.messagesSubject.next(filteredMessages);
+    this.chatStore.removeTypingIndicator();
   }
 
   setTyping(isTyping: boolean): void {
-    this.isTypingSubject.next(isTyping);
+    this.chatStore.setTyping(isTyping);
   }
 
   clearMessages(): void {
-    this.messagesSubject.next([]);
-    this.sessionId = null;
+    this.chatStore.clearChat();
     this.initializeWelcomeMessage();
   }
 
   getCurrentSessionId(): string | null {
-    return this.sessionId;
+    return this.chatStore.getCurrentSessionId();
   }
 
   formatTimestamp(date: Date): string {

@@ -464,5 +464,9 @@ export class AppComponent implements OnDestroy {
   setDynamicCSS(){
      //   window.document.getElementById('adultsCss').setAttribute('href',this.adultsCss);
  }
+
+ openChat(){
+  this.router.navigate(['/adults/chat-bot']);
+ }
 }
 

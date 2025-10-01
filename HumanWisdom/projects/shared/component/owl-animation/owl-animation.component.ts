@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-owl-animation',
@@ -46,7 +47,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   
   private isMobile = this.detectMobile();
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef,private router:Router) {}
 
   ngOnInit() {
     console.log('OwlAnimationComponent initialized');
@@ -61,6 +62,11 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
       this.videoElement.nativeElement.pause();
     }
   }
+
+  
+ openChat(){
+  this.router.navigate(['/adults/chat-bot']);
+ }
 
   private detectMobile(): boolean {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 

@@ -4,6 +4,8 @@
   margin: 0 auto;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
+  z-index: 1000; // Ensure container is above other elements
+  pointer-events: auto; // Enable clicks
   
   // Global anchor styles for the entire chat container
   a {
@@ -38,12 +40,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  z-index: 10;
+  z-index: 1001; // Higher than container
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 375px;
+  pointer-events: auto; // Enable clicks on header
 
   .header-content {
     display: flex;
@@ -55,6 +58,8 @@
     width: 60px;
     height: 60px;
     object-fit: contain;
+    pointer-events: auto; // Ensure icon is clickable
+    cursor: pointer; // Show pointer cursor
   }
 
   .bot-title {
@@ -76,6 +81,8 @@
     cursor: pointer;
     backdrop-filter: blur(10px);
     transition: background-color 0.2s ease;
+    pointer-events: auto; // Ensure button is clickable
+    z-index: 1002; // Higher than header
 
     &:hover {
       background: rgba(255, 255, 255, 0.3);
@@ -101,7 +108,29 @@
   gap: 16px;
   margin: 0 20px;
   padding-top: 120px;
-  padding-bottom: 20px;
+  padding-bottom: 100px; // Space for input area
+  overflow-y: auto; // Enable vertical scrolling
+  max-height: calc(100vh - 100px); // Full height minus header
+  height: 100%;
+  scroll-behavior: smooth; // Smooth scrolling
+  
+  // Custom scrollbar styling (optional)
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
 }
 
 .message {
@@ -255,8 +284,9 @@
   transform: translateX(-50%);
   background: #FFF7E6;
   // padding: 20px;
-  z-index: 10;
+  z-index: 1001; // Same as header
   width: 375px;
+  pointer-events: auto; // Enable clicks on input area
 
 
   .input-container {
@@ -267,6 +297,7 @@
     padding: 8px 12px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     gap: 12px;
+    pointer-events: auto; // Enable clicks in input container
     
 
     .user-avatar {
@@ -289,6 +320,7 @@
       font-size: 14px;
       background: transparent;
       text-align: left;
+      pointer-events: auto; // Enable typing in input
 
       &::placeholder {
         color: #999999;
@@ -308,6 +340,7 @@
       color: #ffffff;
       transition: transform 0.2s ease;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      pointer-events: auto; // Ensure send button is clickable
 
       &:hover {
         transform: scale(1.05);
@@ -352,6 +385,7 @@
         font-size: 12px;
         cursor: pointer;
         transition: background-color 0.2s ease;
+        pointer-events: auto; // Ensure error buttons are clickable
         
         &.retry-button {
           background: #f44336;
