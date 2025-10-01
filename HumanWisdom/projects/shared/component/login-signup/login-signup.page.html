@@ -96,8 +96,8 @@
                           </div>
                         </div>
                         <div *ngIf="fullname.invalid && fullname.touched">
-                          <small *ngIf="fullname.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Full Name is required</small>
-                          <small *ngIf="fullname.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Full Name must be at least 6 characters</small>
+                          <small *ngIf="fullname.errors?.required" class="fs_12px fw_400 lh_150p " [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Full Name is required</small>
+                          <small *ngIf="fullname.errors?.minlength" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Full Name must be at least 6 characters</small>
                         </div>
                       </div>
 
@@ -118,8 +118,8 @@
                           </div>
                         </div>
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
-                          <small *ngIf="emailvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter email address</small>
-                          <small *ngIf="emailvalid.errors?.pattern" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter a valid email</small>
+                          <small *ngIf="emailvalid.errors?.required" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter email address</small>
+                          <small *ngIf="emailvalid.errors?.pattern" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter a valid email</small>
                         </div>
                       </div>
 
@@ -164,11 +164,11 @@
                           </div>
                         </div>
                         <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
-                          <small *ngIf="confirmpasswordvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter Repeat password</small>
-                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Repeat password must be at least 6 characters</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.required" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter Repeat password</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Repeat password must be at least 6 characters</small>
                         </div>
                         <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
-                          <small *ngIf="passwordvalidation" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Password and Repeat password must be same</small>
+                          <small *ngIf="passwordvalidation" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Password and Repeat password must be same</small>
                         </div>
                       </div>
                     </div>
@@ -184,15 +184,15 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
                           <label for="privacy_checkbox" class="chkb_post_anonymously ">
                             <input id="privacy_checkbox"formControlName="privacychk" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
+                            <h4 class=" fs_12px fw_500 lh_130p "  [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
                             </h4>
                           </label>
                       </div>
                       <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_ffffff_0_5">
+                        <h4 class=" fs_12px fw_500 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">
                           <span>I agree to HappierMe's 
-                            <a  class="fw_500 fc_ffffff"   (click)="routetoUrl('/help-support/terms-conditions')"
-                             > User agreement</a> and <a class="fw_500 fc_ffffff"   
+                            <a  class="fw_500 "  [ngClass]="isAdults?'fc_000000':'fc_ffffff'"   (click)="routetoUrl('/help-support/terms-conditions')"
+                             > User agreement</a> and <a class="fw_500 "    [ngClass]="isAdults?'fc_000000':'fc_ffffff'"
                              (click)="routetoUrl('/help-support/privacy-policy')">privacy policy</a>.
                           </span>
                         </h4>
@@ -203,12 +203,12 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
                           <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
                             <input id="marketing_checkbox" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_150p fc_ffffff">
+                            <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'" >
                             </h4>
                             </label>
                       </div>
                       <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem ">
-                          <h4 class=" fs_12px fw_500 lh_150p fc_ffffff_0_5">
+                          <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">
                             <span>Receive wellness tips and updates from HappierMe.</span>
                           </h4>
                     </div>
