@@ -202,7 +202,7 @@ export class S51000Page implements OnInit, OnDestroy {
     this.router.navigate(['/adults/curated/audiopage', audioLink, title, RowID])
   }
 
-  audioevent(data: any) {
+audioevent(data: any) {
     this.service.clickMeditations(data.dailyPractiseID).subscribe({
       next : () => console.log('meditation click logged'),
       error: (e) => console.error('meditation click failed', e)

@@ -96,7 +96,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv " [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
                   <div class="col-md-5 col-sm-5 col-xs-5 p0 tcenter " > 
 
-                  <button id="MiniPodcast" type="button" class="btn"  style="background-color:#E58D82;color:#fff;" (click)="getUserPref('MiniPodcast')" >
+                  <button id="MiniPodcast" type="button" class="btn"  style="background-color:#ED7D6F;color:#fff;" (click)="getUserPref('MiniPodcast')" >
                     Mini podcasts
                   </button>
                   <!-- <button class="v1">
@@ -116,10 +116,9 @@
 
                   <ng-container *ngFor="let data of prefData">   
                  
-                    <button type="button"  id="All" class="btn" *ngIf="data['active'] && data['displayName'] === 'All'"  style="background-color:#FFFFFF;color:#000000;" (click)="getUserPref('All')"  [ngClass]="isAdults ? '' : 'bg-clr'">
+                    <button type="button"  id="All" class="btn" *ngIf="data['active'] && data['displayName'] === 'All'" (click)="getUserPref('All')"  [ngClass]="isAdults ? '' : 'bg-clr'">
                       {{data['displayName']}}
                     </button>
-
                     <button type="button"  id="{{data['id']}}" class="btn" *ngIf="data['active'] && data['displayName'] !== 'All'" (click)="getUserPref(data['id'])"  [ngClass]="isAdults ? '' : 'bg-clr'">
                      {{data['displayName']}}
                    </button>
@@ -133,7 +132,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="title_content">
+                  <h4 class="title_content" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     CONTENTS
                   </h4>
                 </div>
@@ -142,14 +141,15 @@
               <div class="toc_adiv_02">
                 <!-- audio row -->
                 <a *ngFor="let data of podcastList; let i=index" (click)="audioevent(data)">
-                  <div class="row">
+                  <div class="row p10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative center_flex">
                         <div class="prelative">
                           <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img [src]="getimage(data['PodcastID'])" class="img-responsive w100 img_podcast_01">
+                            <div class="p0">
+                              <img [src]="getimage(data['PodcastID'])" class="session_imgnew img-responsive img_podcast_01">
+                              <img class="session_img_play" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" alt="Overlay icon">
                             </div>
                           </div>
 
@@ -161,11 +161,11 @@
                         </div>
                       </div>
 
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                         <!-- <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                           Podcast #{{data['PodcastID']}}
                         </h4> -->
-                        <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82">
+                        <h4 class="mt0px mb5px fs_15px fw_500 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
                           {{data['Title']}}
                         </h4>
                         <h4 class="mtb0px fs_12px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
@@ -234,7 +234,7 @@
         </div>
            
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82">
+          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
             {{data['Title']}}
           </h4>
           <h4 class="mtb0px fs_12px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
