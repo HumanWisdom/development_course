@@ -35394,11 +35394,11 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background: #FFE8BB;
+  background: #FFE8BB !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #fff;
+  color: #fff !important;
   text-transform: capitalize;
   margin-right: 10px;
 }
@@ -35410,13 +35410,13 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .btn_profile_days.peach 
 {
-  background: #ED7D6F;
+  background: #ED7D6F !important;
 }
 
 .btn_profile_days.gray
 {
   /* background: rgba(0, 0, 0, 0.25); */
-  background: #FFD889;
+  background: #FFD889 !important;
 }
 
 .div_middle.left
