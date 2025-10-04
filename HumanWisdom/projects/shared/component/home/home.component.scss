@@ -193,13 +193,25 @@ background: #FFF4E6;
   // background:rgba(255, 232, 187, 1) !important; /* or your header background color */
 }
 
+@media only screen and (max-width: 768px) {
+  .row.home-container:first-of-type {
+    position: static; /* or 'relative', depending on your mobile layout needs */
+    z-index: 10;       /* Lower z-index if overlapping is an issue */
+    max-width: 100%;
+    margin-top: 0;
+    /* Optional mobile background */
+    /* background: rgba(255, 255, 255, 1) !important; */
+  }
+}
+
+
 /* Long term solutions section styling */
 .long-term-solutions-header {
-  background-color: rgba(255, 232, 187, 1) !important;
+  background-color: rgba(255, 232, 187, 1);
 }
 
 .long-term-solutions-content {
-  background-color: rgba(255, 232, 187, 1) !important;
+  background-color: rgba(255, 232, 187, 1);
 }
 
 /* Story and Blog card styling */
