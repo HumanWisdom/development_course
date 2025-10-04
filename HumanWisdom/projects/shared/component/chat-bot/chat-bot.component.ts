@@ -20,10 +20,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   isTyping: boolean = false;
   isLoading: boolean = false;
   errorMessage: string = '';
+  activeSuggestions: string[] = [];
 
   private messagesSubscription: Subscription = new Subscription();
   private typingSubscription: Subscription = new Subscription();
   private sessionSubscription: Subscription = new Subscription();
+  private suggestionsSubscription: Subscription = new Subscription();
 
   constructor(
     private chatbotService: ChatbotService,
@@ -58,6 +60,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         }
       }
     );
+
+    // Subscribe to active suggestions
+    this.suggestionsSubscription = this.chatStore.activeSuggestions$.subscribe(
+      suggestions => {
+        this.activeSuggestions = suggestions;
+      }
+    );
   }
 
   ngAfterViewInit(): void {
@@ -73,6 +82,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.messagesSubscription.unsubscribe();
     this.typingSubscription.unsubscribe();
     this.sessionSubscription.unsubscribe();
+    this.suggestionsSubscription.unsubscribe();
   }
 
   onSendMessage(): void {
@@ -80,20 +90,23 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
-    const message = this.currentMessage.trim();
+    const originalMessage = this.currentMessage.trim();
     this.currentMessage = '';
     this.errorMessage = '';
     this.isLoading = true;
 
-    // Add user message to chat
-    this.chatbotService.addUserMessage(message);
+    // Check if it's a number and get the full question for display
+    const displayMessage = this.chatbotService.getFullQuestionForNumber(originalMessage);
+
+    // Add user message to chat (show the full question if it was a number)
+    this.chatbotService.addUserMessage(displayMessage);
 
     // Add typing indicator
     this.chatbotService.addTypingIndicator();
     this.chatbotService.setTyping(true);
 
-    // Send message to chatbot API
-    this.chatbotService.sendMessage(message).subscribe({
+    // Send original message to chatbot API (keep it as number for API)
+    this.chatbotService.sendMessage(originalMessage).subscribe({
       next: (response) => {
         this.chatbotService.removeTypingIndicator();
         this.chatbotService.setTyping(false);
@@ -174,6 +187,18 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   clearError(): void {
     this.errorMessage = '';
+  }
+
+  /**
+   * Handle suggestion click - add the suggestion to input and send
+   */
+  onSuggestionClick(suggestion: string): void {
+    if (this.isLoading) {
+      return;
+    }
+    
+    this.currentMessage = suggestion;
+    this.onSendMessage();
   }
 
   sanitizeHtml(html: string): SafeHtml {

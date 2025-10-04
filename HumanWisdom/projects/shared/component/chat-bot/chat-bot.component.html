@@ -27,6 +27,19 @@
             <!-- Regular message content -->
             <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"></div>
             
+            <!-- Suggestions -->
+            <div *ngIf="!message.isTyping && message.suggestions && message.suggestions.length > 0" class="suggestions-container">
+              <div class="suggestions-label">Click on a suggestion or type the number:</div>
+              <div class="suggestions-list">
+                <button 
+                  *ngFor="let suggestion of message.suggestions; let i = index" 
+                  class="suggestion-button"
+                  (click)="onSuggestionClick(suggestion)">
+                  {{ i + 1 }}. {{ suggestion }}
+                </button>
+              </div>
+            </div>
+            
             <!-- Typing indicator -->
             <div *ngIf="message.isTyping" class="typing-dots">
               <span></span>

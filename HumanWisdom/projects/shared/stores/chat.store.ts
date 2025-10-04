@@ -12,6 +12,7 @@ export interface ChatMessage {
   sender: 'user' | 'bot';
   timestamp: Date;
   isTyping?: boolean;
+  suggestions?: string[]; // Array of suggested questions
 }
 
 /**
@@ -22,6 +23,7 @@ export interface ChatState {
   sessionId: string | null;
   isTyping: boolean;
   lastUpdated: Date;
+  activeSuggestions: string[]; // Currently active suggestions
 }
 
 /**
@@ -31,7 +33,8 @@ const initialState: ChatState = {
   messages: [],
   sessionId: null,
   isTyping: false,
-  lastUpdated: new Date()
+  lastUpdated: new Date(),
+  activeSuggestions: []
 };
 
 /**
@@ -106,6 +109,13 @@ export class ChatStore extends ComponentStore<ChatState> {
    */
   readonly botMessages$: Observable<ChatMessage[]> = this.select(
     state => state.messages.filter(msg => msg.sender === 'bot' && !msg.isTyping)
+  );
+
+  /**
+   * Select currently active suggestions
+   */
+  readonly activeSuggestions$: Observable<string[]> = this.select(
+    state => state.activeSuggestions
   );
 
   // ========================================
@@ -225,6 +235,24 @@ export class ChatStore extends ComponentStore<ChatState> {
     return newState;
   });
 
+  /**
+   * Set active suggestions
+   */
+  readonly setActiveSuggestions = this.updater((state, suggestions: string[]) => ({
+    ...state,
+    activeSuggestions: suggestions,
+    lastUpdated: new Date()
+  }));
+
+  /**
+   * Clear active suggestions
+   */
+  readonly clearActiveSuggestions = this.updater((state) => ({
+    ...state,
+    activeSuggestions: [],
+    lastUpdated: new Date()
+  }));
+
   // ========================================
   // EFFECTS - Async operations with side effects
   // ========================================
@@ -235,6 +263,9 @@ export class ChatStore extends ComponentStore<ChatState> {
   readonly addUserMessage = this.effect((message$: Observable<string>) =>
     message$.pipe(
       tap((content: string) => {
+        console.log('Adding user message:', content);
+        console.log('Current active suggestions before user message:', this.get().activeSuggestions);
+        
         const userMessage: ChatMessage = {
           id: this.generateMessageId(),
           content: content,
@@ -242,6 +273,8 @@ export class ChatStore extends ComponentStore<ChatState> {
           timestamp: new Date()
         };
         this.addMessage(userMessage);
+        
+        console.log('Current active suggestions after user message:', this.get().activeSuggestions);
       })
     )
   );
@@ -258,14 +291,31 @@ export class ChatStore extends ComponentStore<ChatState> {
           this.setSessionId(sessionId);
         }
 
-        // Convert \n to <br> for proper HTML line breaks
-        const formattedContent = content.replace(/\n/g, '<br>');
+        // Extract suggestions from bot message if it contains numbered list
+        const suggestions = this.extractSuggestions(content);
+
+        console.log('Extracted suggestions from bot message:', suggestions);
+
+        // Update active suggestions if new suggestions are found
+        if (suggestions.length > 0) {
+          console.log('Setting new active suggestions:', suggestions);
+          this.setActiveSuggestions(suggestions);
+        }
+
+        // Format content - remove numbered list if suggestions are shown as buttons
+        let formattedContent = content.replace(/\n/g, '<br>');
+        
+        if (suggestions.length > 0) {
+          // Remove the numbered list from the message text since we're showing it as buttons
+          formattedContent = this.removeNumberedListFromContent(formattedContent);
+        }
 
         const botMessage: ChatMessage = {
           id: this.generateMessageId(),
           content: formattedContent,
           sender: 'bot',
-          timestamp: new Date()
+          timestamp: new Date(),
+          suggestions: suggestions.length > 0 ? suggestions : undefined
         };
         this.addMessage(botMessage);
       })
@@ -390,7 +440,8 @@ export class ChatStore extends ComponentStore<ChatState> {
         messages,
         sessionId: parsed.sessionId,
         isTyping: false,
-        lastUpdated
+        lastUpdated,
+        activeSuggestions: parsed.activeSuggestions || []
       });
     } catch (error) {
       console.error('Error loading chat session from localStorage:', error);
@@ -418,6 +469,90 @@ export class ChatStore extends ComponentStore<ChatState> {
     if (currentMessages.length === 0) {
       this.setMessages(messages);
     }
+  }
+
+  /**
+   * Extract numbered suggestions from bot message content
+   */
+  private extractSuggestions(content: string): string[] {
+    const suggestions: string[] = [];
+    
+    console.log('Extracting suggestions from content:', content);
+    
+    // Only extract suggestions if the message contains the pattern that indicates it's a suggestions message
+    // Look for phrases like "Please choose a number" or "Which of these" to identify suggestion messages
+    const isSuggestionsMessage = content.includes('Please choose a number') || 
+                                 content.includes('Which of these') ||
+                                 content.includes('choose a number');
+    
+    if (!isSuggestionsMessage) {
+      console.log('Not a suggestions message, skipping extraction');
+      return suggestions;
+    }
+    
+    // Look for numbered list patterns like "1. Why do I feel stressed"
+    const numberedListRegex = /(\d+)\.\s*([^\n\r]+)/g;
+    let match;
+    
+    while ((match = numberedListRegex.exec(content)) !== null) {
+      const suggestion = match[2].trim();
+      console.log('Found suggestion:', suggestion);
+      if (suggestion) {
+        suggestions.push(suggestion);
+      }
+    }
+    
+    console.log('Final extracted suggestions:', suggestions);
+    return suggestions;
+  }
+
+  /**
+   * Remove numbered list from message content when suggestions are shown as buttons
+   */
+  private removeNumberedListFromContent(content: string): string {
+    // Remove numbered list lines like "1. Why do I feel stressed<br>2. Why do I feel anxious<br>3. How to manage stress<br>"
+    // Keep the introductory text and the closing instruction
+    const lines = content.split('<br>');
+    const filteredLines = lines.filter(line => {
+      // Keep lines that don't match the numbered list pattern
+      return !line.match(/^\d+\.\s*.+$/);
+    });
+    
+    return filteredLines.join('<br>');
+  }
+
+  /**
+   * Get the full question text for a numbered input
+   */
+  getFullQuestionForNumber(input: string): string {
+    const trimmedInput = input.trim();
+    const numberMatch = trimmedInput.match(/^(\d+)$/);
+    
+    if (!numberMatch) {
+      return input; // Not a number, return as-is
+    }
+    
+    const selectedNumber = parseInt(numberMatch[1], 10);
+    
+    // Find the most recent bot message with suggestions
+    const messages = this.get().messages;
+    for (let i = messages.length - 1; i >= 0; i--) {
+      if (messages[i].sender === 'bot' && messages[i].suggestions) {
+        const suggestions = messages[i].suggestions;
+        console.log('Found suggestions in message:', suggestions);
+        console.log('Selected number:', selectedNumber);
+        
+        if (selectedNumber >= 1 && selectedNumber <= suggestions.length) {
+          const fullQuestion = suggestions[selectedNumber - 1];
+          console.log('Expanding to:', fullQuestion);
+          return fullQuestion;
+        }
+        break;
+      }
+    }
+    
+    console.log('No valid suggestion found, returning original input');
+    return input; // No valid suggestion found
   }
 }
 

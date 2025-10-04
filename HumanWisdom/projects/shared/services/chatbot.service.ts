@@ -160,4 +160,11 @@ export class ChatbotService {
       });
     }
   }
+
+  /**
+   * Get the full question text for display when user types a number
+   */
+  getFullQuestionForNumber(input: string): string {
+    return this.chatStore.getFullQuestionForNumber(input);
+  }
 }
