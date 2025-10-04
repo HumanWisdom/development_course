@@ -4,6 +4,7 @@ import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
+import { HomeStateService } from '../../services/home-state.service';
 
 export interface NavigationItem {
   id: string;
@@ -111,13 +112,21 @@ navigationChange = new EventEmitter<string>();
   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
    mainheader:string='';
-  constructor(private router: Router, private commonService: CommonService) {
+  constructor(
+    private router: Router, 
+    private commonService: CommonService,
+    private homeStateService: HomeStateService
+  ) {
     this.navigationItems = SharedService.getPreferenceDataForHome();
    }
 
   ngOnInit(): void {
      this.isSubscriber = SharedService.isSubscriber();
      console.log('Is Subscriber:', this.isSubscriber);
+     
+     // Restore state from store
+     this.restoreStateFromStore();
+     
      this.getUserPreference();
     console.log('Home component initialized');
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -136,6 +145,9 @@ navigationChange = new EventEmitter<string>();
     
     // Ensure wisdom exercise is hidden for guest users
     this.showWisdomExercise = false;
+    
+    // Save default preference to store
+    this.homeStateService.setActivePreference("2"); // Mental health ID
     
     // Load Mental health content (id: "2")
     this.loadHomeContents(2);
@@ -187,12 +199,34 @@ navigationChange = new EventEmitter<string>();
   }
 
    loadHomeContents(id): void {
+    // Check cache first
+    const cachedContent = this.homeStateService.getCachedContent(id.toString());
+    if (cachedContent) {
+      console.log('Using cached content for preference:', id);
+      this.mainheader = cachedContent.MainHeader;
+      this.contentSections = this.transformApiResponseToContentSections(cachedContent);
+      this.restoreExpandedState();
+      
+      // Scroll to active list after content is loaded
+      setTimeout(() => {
+        this.scrollToActiveList();
+      }, 300);
+      return;
+    }
+
+    // Fetch from API if not cached
     this.commonService.GetHomeContents(9, id).subscribe((res: HomeContentResponse) => {
       if (res) {
-        this.mainheader =res.MainHeader;
+        this.mainheader = res.MainHeader;
         console.log('Raw API response:', res);
+        
+        // Cache the response
+        this.homeStateService.setCachedContent(id.toString(), res);
+        
         this.contentSections = this.transformApiResponseToContentSections(res);
         console.log('Transformed content sections:', this.contentSections);
+        
+        this.restoreExpandedState();
         
         // Scroll to active list after content is loaded
         setTimeout(() => {
@@ -329,11 +363,18 @@ navigationChange = new EventEmitter<string>();
       let perd = SharedService.getPreferenceDataForHome();
       this.personalisedList = []
       
+      // Check if we have a stored active preference from our state service
+      const storedActivePreference = this.homeStateService.getActivePreference();
+      
       if (res) {
         // User has a saved preference
         localStorage.setItem('userPreference', res);
+        
+        // Use stored preference if available, otherwise use the API response
+        const preferenceToUse = storedActivePreference || res;
+        
         perd.forEach((r) => {
-          if (res === r.id) {
+          if (preferenceToUse === r.id) {
             r['active'] = true;
             this.personalisedList.push(r);
           } else {
@@ -343,13 +384,13 @@ navigationChange = new EventEmitter<string>();
         })
         
         // Handle Self Awareness (id: 19) specially
-        if (res === "19") {
+        if (preferenceToUse === "19") {
           this.showWisdomExercise = true;
           this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
           console.log('User preference loaded (Self Awareness):', this.YourTopicofChoice);
         } else {
           this.showWisdomExercise = false;
-          this.loadHomeContents(Number(res));
+          this.loadHomeContents(Number(preferenceToUse));
           this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
           console.log('User preference loaded:', this.YourTopicofChoice);
         }
@@ -359,8 +400,37 @@ navigationChange = new EventEmitter<string>();
           this.scrollToActiveList();
         }, 400);
       } else {
-        // Guest user or no preference - default to Mental health
-        this.handleGuestUserDefault(perd);
+        // Guest user or no preference - check if we have stored state
+        if (storedActivePreference) {
+          // Use stored preference for guest users too
+          perd.forEach((r) => {
+            if (storedActivePreference === r.id) {
+              r['active'] = true;
+              this.personalisedList.push(r);
+            } else {
+              r['active'] = false;
+              this.personalisedList.push(r);
+            }
+          });
+          
+          if (storedActivePreference === "19") {
+            this.showWisdomExercise = true;
+            this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+            console.log('Guest user with stored preference (Self Awareness):', this.YourTopicofChoice);
+          } else {
+            this.showWisdomExercise = false;
+            this.loadHomeContents(Number(storedActivePreference));
+            this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+            console.log('Guest user with stored preference:', this.YourTopicofChoice);
+          }
+          
+          setTimeout(() => {
+            this.scrollToActiveList();
+          }, 400);
+        } else {
+          // No stored preference - default to Mental health
+          this.handleGuestUserDefault(perd);
+        }
       }
     })
   }
@@ -510,6 +580,9 @@ navigationChange = new EventEmitter<string>();
   onNavigationClick(item): void {
     console.log(item);
     
+    // Save active preference to store
+    this.homeStateService.setActivePreference(item.id);
+    
     // Handle Self Awareness (id: 19) - show wisdom exercise component
     if (item.id === "19") {
       this.showWisdomExercise = true;
@@ -577,6 +650,10 @@ navigationChange = new EventEmitter<string>();
       return;
     }
     section.isExpanded = !section.isExpanded;
+    
+    // Save state to store
+    this.homeStateService.setSectionExpanded(section.id, section.isExpanded);
+    
     this.sectionToggle.emit(section);
   }
 
@@ -595,10 +672,12 @@ navigationChange = new EventEmitter<string>();
 
   onViewAllClick(section: ContentSection): void {
     this.showAllCards[section.id] = true;
+    this.homeStateService.setShowAllCards(section.id, true);
   }
 
   onViewLessClick(section: ContentSection): void {
     this.showAllCards[section.id] = false;
+    this.homeStateService.setShowAllCards(section.id, false);
   }
 
   shouldShowViewAll(section: ContentSection): boolean {
@@ -718,5 +797,37 @@ navigationChange = new EventEmitter<string>();
   goToSubscribe(): void {
     const prefix = SharedService.getprogramName();
     this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+  }
+
+  /**
+   * Restore state from the store on component initialization
+   */
+  private restoreStateFromStore(): void {
+    const state = this.homeStateService.getCurrentState();
+    this.showAllCards = { ...state.showAllCards };
+    console.log('Restored state from store:', state);
+  }
+
+  /**
+   * Restore expanded state for sections after content is loaded
+   */
+  private restoreExpandedState(): void {
+    this.contentSections.forEach(section => {
+      // Restore main section expanded state
+      const wasExpanded = this.homeStateService.getSectionExpanded(section.id);
+      if (wasExpanded !== undefined) {
+        section.isExpanded = wasExpanded;
+      }
+
+      // Restore child sections expanded state
+      if (section.childSections) {
+        section.childSections.forEach(childSection => {
+          const childWasExpanded = this.homeStateService.getSectionExpanded(childSection.id);
+          if (childWasExpanded !== undefined) {
+            childSection.isExpanded = childWasExpanded;
+          }
+        });
+      }
+    });
   }
 }
