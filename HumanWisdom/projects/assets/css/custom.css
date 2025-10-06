@@ -33787,6 +33787,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   right: 0;
   left: 0;
   margin: auto;
+  width: auto;
 }
 
 /* v3 - five dots */
@@ -36593,7 +36594,7 @@ li ol > li:before {
   margin-right: 0;
 }
 
-.btn_podcast .btn:active,
+.btn_podcast .btn.active ,
 .btn_podcast .btn:focus
 {
   background: rgba(0, 0, 0, .05);
@@ -37290,6 +37291,11 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .div_fbn h4
 {
   color: #fff !important;
+}
+
+.div_fq h4.fc_000000
+{
+  color: #000000 !important;
 }
 
 .adsearch_ext_01
@@ -38020,7 +38026,7 @@ span
   background: #FFE8BB;
   min-height: 88px;
   margin-bottom: 10px;
-  padding: 15px;
+  padding: 12px;
   /* margin: 0 10px 10px 10px; */
 }
 
@@ -38301,6 +38307,11 @@ a:hover .div_like_cnt1 span {
     border: 1px solid rgba(0, 0, 0, 0.25);
     object-fit: cover;
     object-position: 50% 25%;
+}
+
+.fa-lock-icon {
+    position: relative;
+    top: 40px;
 }
 
 .img_subscription_giftee{

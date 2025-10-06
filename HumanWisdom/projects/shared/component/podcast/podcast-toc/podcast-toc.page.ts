@@ -179,50 +179,35 @@ audioevent(data: any) {
     return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
   }
 
-  getUserPref(type) {
-    this.selectedPref = '';
+getUserPref(type) {
+  this.selectedPref = '';
 
-    const btns = Array.from(document.getElementsByClassName('btn'));
-
-    for (const b of btns) {
-        const y = <HTMLElement> b;
-        if(y.id=="MiniPodcast")
-           y.style.backgroundColor = '#E58D82';
-        else{
-              if(this.isAdults ==true)
-                y.style.backgroundColor = '#424675';
-              else
-                y.style.backgroundColor = '#4267A5';
-            }
-            y.style.color = '#FFFFFF';
-    }
-
-
-    this.selectedPref = type;
-
-    this.podcastList = this.allpodcastList;
-    if (type === 'All') {
-      this.podcastList = this.allpodcastList;
-    } else {
-      if (type === '0') {  //for Wisdom
-        this.podcastList = this.podcastList.filter((d) => (!d['PreferenceIDs']));
-      } else if (type === "MiniPodcast") {
-        
-        this.podcastList = this.podcastList.filter((d) => (d['IsMiniPodcast'] === '1'));
-        // const y = document.getElementById('mini_podcast');
-        // if (this.isAdults ==true)
-        //   y.style.backgroundColor = '#424675';
-        // else
-        //   y.style.backgroundColor = '#4267A5';
-        //  y.style.color = '#FFFFFF';
-      } else {
-        this.podcastList = this.podcastList.filter((d) => d['PreferenceIDs'].split(",").includes(type));
-      }
-    }
-
-    document.getElementById(type).style.backgroundColor = '#FFFFFF';
-    document.getElementById(type).style.color = '#000000';
+  const btns = Array.from(document.getElementsByClassName('btn'));
+  for (const b of btns) {
+    const btn = b as HTMLElement;
+    btn.classList.remove('active');
   }
+
+  const selectedBtn = document.getElementById(type);
+  if (selectedBtn) {
+    selectedBtn.classList.add('active');
+  }
+
+  this.selectedPref = type;
+  this.podcastList = this.allpodcastList;
+
+  if (type === 'All') {
+    this.podcastList = this.allpodcastList;
+  } else if (type === '0') {
+    this.podcastList = this.podcastList.filter((d) => !d['PreferenceIDs']);
+  } else if (type === 'MiniPodcast') {
+    this.podcastList = this.podcastList.filter((d) => d['IsMiniPodcast'] === '1');
+  } else {
+    this.podcastList = this.podcastList.filter((d) =>
+      d['PreferenceIDs'].split(',').includes(type)
+    );
+  }
+}
 
   share() {
     /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {

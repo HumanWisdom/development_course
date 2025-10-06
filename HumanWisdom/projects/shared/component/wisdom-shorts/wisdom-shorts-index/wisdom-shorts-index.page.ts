@@ -201,24 +201,19 @@ export class WisdomShortsIndexPage implements OnInit {
   }
   
   getUserPref(type) {
-    
-    const btns = Array.from(document.getElementsByClassName('btn'));
-
-    for (const b of btns) {
-        const y = <HTMLElement> b;
-        if(y.id=="voices")
-           y.style.backgroundColor = '#E58D82';
-        else{
-              if(this.isAdults ==true)
-                y.style.backgroundColor = '#424675';
-              else
-                y.style.backgroundColor = '#4267A5';
-            }
-            y.style.color = '#FFFFFF';
-    }
 
     type=type.toLowerCase()
    
+  const btns = Array.from(document.getElementsByClassName('btn'));
+  for (const b of btns) {
+    const btn = b as HTMLElement;
+    btn.classList.remove('active');
+  }
+
+  const selectedBtn = document.getElementById(type);
+  if (selectedBtn) {
+    selectedBtn.classList.add('active');
+  }
     
     this.selectedPref = type;
     this.wisdomshorts = this.allwisdomshorts;
@@ -244,8 +239,6 @@ export class WisdomShortsIndexPage implements OnInit {
                 this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes(type))));
       }
     }
-    document.getElementById(type).style.backgroundColor = '#FFFFFF';
-    document.getElementById(type).style.color = '#000000';
          
 
   }
