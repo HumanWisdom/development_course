@@ -17,9 +17,16 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   videoError = false;
   private _isPlaying: boolean = true;
   private _isTransitioning: boolean = false;
-  private _isAtCorner: boolean = false;
+  private _isAtCorner: boolean = true; // Video plays in corner position from the start
   private _videoLoaded: boolean = false;
   private _videoError: boolean = false;
+  
+  // Static owl properties
+  public showStaticOwl: boolean = false; // Start with video, show static owl after video ends
+  public owlMessage: string = "Hi! I'm Olly."; // Customizable message
+  
+  // Debug flag - set to true to test static owl immediately
+  private debugMode: boolean = false;
 
   // Getters and setters
   get isPlaying(): boolean {
@@ -61,6 +68,16 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   ngOnInit() {
     console.log('OwlAnimationComponent initialized');
     console.log('Video element:', this.videoElement);
+    console.log('Initial showStaticOwl:', this.showStaticOwl);
+    console.log('Initial isAtCorner:', this.isAtCorner);
+    
+    // Debug mode - show static owl immediately for testing
+    if (this.debugMode) {
+      console.log('DEBUG MODE: Showing static owl immediately');
+      this.showStaticOwl = true;
+      this.cdr.detectChanges();
+      return;
+    }
     
     // Don't mark as initialized yet - let the animation play first
     this.setupVideo();
@@ -201,47 +218,27 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   }
 
   private onVideoEnded() {
-    console.log('Video ended, transitioning to corner');
+    console.log('Video ended, showing static owl permanently');
+    console.log('showStaticOwl before:', this.showStaticOwl);
     this.isPlaying = false;
-    this.isTransitioning = true;
+    this.showStaticOwl = true; // Show static owl after video ends - PERMANENTLY
+    console.log('showStaticOwl after:', this.showStaticOwl);
     this.cdr.detectChanges();
     
-    // After a short delay, move to the corner within the container
-    setTimeout(() => {
-      this.isTransitioning = false;
-      this.isAtCorner = true;
-      this.cdr.detectChanges();
-      
-      // Wait longer before marking as initialized to keep owl visible
-      // This gives users time to see and interact with the owl
-      setTimeout(() => {
-        // Mark as initialized in the store to prevent re-rendering on navigation
-        this.owlStore.markAsInitialized();
-        console.log('Owl animation marked as initialized - will not show on next navigation');
-      }, this.WAIT_TIME_BEFORE_INITIALIZATION);
-      
-    }, 1000);
+    // DO NOT mark as initialized - we want the owl to stay visible permanently
+    console.log('Static owl is now permanently visible');
   }
 
   private handleVideoError() {
-    console.log('Handling video error - WebM format may not be supported');
-    // You might want to convert the video to MP4 or provide a fallback
-    // For now, let's just transition to corner after a delay
+    console.log('Handling video error - showing static owl permanently');
+    // Show static owl image permanently on video error
     setTimeout(() => {
       this.isPlaying = false;
-      this.isTransitioning = true;
+      this.showStaticOwl = true; // Show static owl permanently on error
       this.cdr.detectChanges();
-      setTimeout(() => {
-        this.isTransitioning = false;
-        this.isAtCorner = true;
-        this.cdr.detectChanges();
-        
-        // Wait before marking as initialized even on error
-        setTimeout(() => {
-          this.owlStore.markAsInitialized();
-          console.log('Owl animation marked as initialized (after error)');
-        }, this.WAIT_TIME_BEFORE_INITIALIZATION);
-      }, 1000);
+      
+      // DO NOT mark as initialized - we want the owl to stay visible permanently
+      console.log('Static owl is now permanently visible (after error)');
     }, 2000);
   }
 
@@ -254,11 +251,12 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     video.pause();
     video.muted = true; // Ensure muted for autoplay
     
-    // Reset component state
+    // Reset component state - start with video again
     this.isPlaying = true;
     this.isTransitioning = false;
-    this.isAtCorner = false;
+    this.isAtCorner = true; // Keep video in corner position
     this.videoError = false;
+    this.showStaticOwl = false; // Hide static owl to show video again
     this.cdr.detectChanges();
     
     // Start playing after a short delay to ensure state is updated
@@ -273,5 +271,30 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
         });
       }
     }, 100);
+  }
+
+  // Method to set custom owl message
+  setOwlMessage(message: string) {
+    this.owlMessage = message;
+    this.cdr.detectChanges();
+  }
+
+  // Method to toggle between static owl and video
+  toggleOwlDisplay(showStatic: boolean = true) {
+    this.showStaticOwl = showStatic;
+    this.cdr.detectChanges();
+  }
+
+  // Method to show static owl with custom message
+  showStaticOwlWithMessage(message: string) {
+    this.showStaticOwl = true;
+    this.owlMessage = message;
+    this.cdr.detectChanges();
+  }
+
+  // Method to show video instead of static owl
+  showVideo() {
+    this.showStaticOwl = false;
+    this.cdr.detectChanges();
   }
 } 
