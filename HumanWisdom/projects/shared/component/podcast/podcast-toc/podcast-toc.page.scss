@@ -7,3 +7,38 @@
 .ws-lock-icon {
     top: 40px !important;
 }
+
+.btn_podcast .btn {
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0 10px 0 0;
+  padding: 9px 10px;
+  height: 36px;
+  box-shadow: unset;
+  transition: all 0.3s ease;
+}
+
+#MiniPodcast {
+  background-color: #ed7d6f;
+  color: #fff;
+}
+
+.btn_podcast .btn.active,
+.btn_podcast .btn.focus {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #000 !important;
+  filter: unset !important;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  border-color: transparent !important;
+}
+
+.btn_podcast .btn:not(.active):not(#MiniPodcast) {
+  background: #ffd889;
+  color: #000;
+}
+
+.btn_podcast .btn:focus-visible {
+  outline: none;
+}
