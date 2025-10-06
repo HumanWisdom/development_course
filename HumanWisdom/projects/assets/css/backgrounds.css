@@ -265,7 +265,9 @@
   transition: none;
   /* background-color: none !important; */
   /* background: #000000 !important; */
-  background: #f9e9df !important
+  /* background: #f9e9df !important */
+      background: #803358 !important;
+
 }
 .bg_ffffff{
   background: #FFFFFF;
@@ -347,3 +349,10 @@
   min-height: 100vh !important;
   padding: 8rem 20px 20px 20px;
 }
+
+.bg_login
+{
+  background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%);
+
+}
+

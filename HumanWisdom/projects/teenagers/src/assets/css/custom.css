@@ -35055,6 +35055,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #E58D82;
 }
 
 .btn_subscription_cancel 
@@ -37986,4 +37987,16 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
+}
+
+.img_subscription_giftee{
+  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_giftee.svg);
+
+
+}
+
+.img_subscription_user{
+
+    content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg);
+
 }
