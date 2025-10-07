@@ -182,7 +182,7 @@
                            <!-- [class.quick-answers-header]="section.rawSectionType === 3" -->
                         <div class="d-flex flex-column">
                           <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
-                          <span class="text-muted" *ngIf="section.subtitle && !(section.title === 'Begin Here' && section.isExpanded)">{{ section.subtitle }}</span>
+                            <span class="text-muted" *ngIf="section.subtitle && !section.isExpanded">{{ section.subtitle }}</span>
                         </div>
                         <div class="text-muted">
                          <span class="chev" *ngIf="section.isExpanded">></span>  <!-- use › or > or < -->
