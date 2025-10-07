@@ -25395,10 +25395,10 @@ a
   margin: 0px 0 0px 0;
 }
 
-a
+/* a
 {
   cursor: pointer !important;
-}
+} */
 
 .fp_ml
 {
@@ -38317,6 +38317,12 @@ a:hover .div_like_cnt1 span {
 .img_subscription_giftee{
   content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/subscription_giftee.svg);
 
+
+}
+
+.img_subscription_user{
+
+    content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/subscription_user_01.svg);
 
 }
 
