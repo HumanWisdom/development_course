@@ -6,7 +6,7 @@
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 center_flex bg_stake col_cw">
         <div class="x_panel p0">
-          <div class="x_content mt20px mb50px">
+          <div class=" mt20px mb50px" [ngClass]="isAdults? 'x_content_adults' : 'x_content_teens'">
             <form>
 
               <!-- <div class="row">
@@ -42,8 +42,8 @@
               </div>
                <div class="col-md-12 col-sm-12 col-xs-12 center_flex" *ngIf="!isAdults">
                 <!-- <div class="prelative center_flex"> -->
-                <circle-progress [percent]="points" [radius]="64" [space]="-15" [outerStrokeWidth]="15"
-                  [innerStrokeWidth]="15" [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'" [titleFontSize]="32"
+                <circle-progress [percent]="points" [radius]="80"  [outerStrokeWidth]="15" [space]="-10" [innerStrokeWidth]="10" 
+                 [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'" [titleFontSize]="32"
                   [titleFontWeight]="600" [innerStrokeColor]="'rgba(255,255,255,0.2)'" [showSubtitle]="false"
                   [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle" 
                   [showUnits]="false">
@@ -98,7 +98,7 @@
             <div *ngFor="let item of wisdomRecomm" class="toc_adiv">
               <a (click)="navigateToRecommendation(item)">
                 <div class="row mb15px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex"> -->
 
                       <!-- left thumbnail -->
@@ -110,7 +110,7 @@
                       </div>
 
                       <!-- right content -->
-                      <div class="h-100 col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 d-flex flex-column justify-content-center">
+                      <div class="h-100 col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 pr10px d-flex flex-column justify-content-center">
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"  [ngClass]="isAdults? fc_ED7D6F : fc_e58d82 " > 
                           {{item.title}}
                         </h4>
@@ -121,15 +121,16 @@
                     <!-- </div> -->
 
                     <!-- right icon (arrow / lock) -->
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright  d-flex flex-column justify-content-end" *ngIf="isSubscriber">
-                      <i class="fa fa-angle-right  fs_20px"></i>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright d-flex flex-column justify-content-center">
+                      <i class="fa fa-angle-right  fs_20px"  *ngIf="isSubscriber"></i>
+                       <img [src]="isAdults? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' :'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                        class="img-responsive w-50"  *ngIf="!isSubscriber" >
+
+                       
+                  
                     </div>
 
-                    <!-- lock icon if NOT subscribed -->
-                    <div class="h-100 col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright  d-flex flex-column justify-content-end" *ngIf="!isSubscriber">
-                      <img [src]="isAdults? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' :'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
-                        class="img-responsive">
-                    </div>
+                  
 
                   </div>
                 </div>

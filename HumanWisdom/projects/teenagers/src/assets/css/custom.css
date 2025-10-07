@@ -34065,9 +34065,9 @@ body *
   box-shadow: unset;
   margin: 0;
   border-radius: 100px;
-  background: #E58D82;
+  background: #E58D82 !important;
   font-size: 15px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
   line-height: 150%;
 }
@@ -34203,6 +34203,7 @@ body *
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #FFF;
 }
 
 .btn_forum_ask_a_coach 
