@@ -33643,6 +33643,7 @@ body *
   right: 0;
   left: 0;
   margin: auto;
+  width: auto;
 }
 
 /* v3 - five dots */
@@ -37978,8 +37979,8 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
   opacity:1  !important;
 }
 
-.ws-read-icon    { position: relative; bottom: 30px; }
-.ws-lock-icon    { position: relative; top:    30px; }
+.ws-read-icon    { position: relative; bottom: 50px; }
+.ws-lock-icon    { position: relative; top:    50px; }
 
 .labelClass{
   color: #FFF;
@@ -37997,4 +37998,16 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
 
     content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_user_01.svg);
 
+}
+
+.div_like_cnt1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog_tick {
+    position: relative;
+    top: 5px;
+    left: 10px;
 }
