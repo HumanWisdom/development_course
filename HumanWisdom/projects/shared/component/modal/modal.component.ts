@@ -40,6 +40,8 @@ export class ModalComponent implements OnInit {
 
   @Input()
   isFreeTrialEnable = false;
+    isAdults: boolean = true;
+  
 
   constructor(private router: Router) { }
 
@@ -48,6 +50,8 @@ export class ModalComponent implements OnInit {
       this.enablecookiemodal.nativeElement.click();
       this.modalopened = true;
     }, 100);
+        this.isAdults = SharedService.ProgramId === 9;
+    
   }
 
   close(text) {

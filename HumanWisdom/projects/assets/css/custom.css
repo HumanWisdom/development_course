@@ -10914,9 +10914,12 @@ body,
   /* padding: 40px; */
   padding: 20px;
   height: auto;
-  /* background-color: #5D5D5D; */
-  background: linear-gradient(180deg,#803358 0%,#FFE8BB 100%)!important;
-  color: #fff;
+  /* background-color: #5D5D5D; */ 
+
+  background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%) !important;
+
+  /* background: linear-gradient(180deg,#230F40 0%,#FFE8BB 100%)!important; */
+  color: #000;
   border: 0;
   opacity: 0;
   /* transition: opacity 0.3s ease-out, bottom 0.3s ease-out; */
@@ -34879,7 +34882,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v1_3_sfooter 
 {
   height: 110px;
-  padding: 20px 20px;
+  padding: 30px 20px;
   /* background: #424675; */
    background: #ffffff;
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
@@ -35815,9 +35818,9 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .toc_adiv_01 a .row 
 {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background: #FFE8BB;
-  min-height: px;
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
+  background: #FFD889;
+  /* min-height: px; */
   margin-bottom: 10px;
   padding: 12px;
   /* margin: 0 10px 10px 10px; */
