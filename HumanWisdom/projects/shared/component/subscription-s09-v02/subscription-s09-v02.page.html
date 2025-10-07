@@ -85,41 +85,41 @@
                                 <div style="cursor: pointer ;" class="col-md-6 col-sm-6 col-xs-6 p0 tright">
 
                                   <div *ngIf="item.isTrial==1 && item.canceled == 0">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ED7D6F">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"   >
                                       Next Payment
                                     </h4>
 
-                                    <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ED7D6F">
+                                    <h4 class="mtb0px fs_12px fw_600 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"   >
                                       {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                     </h4>
                                   </div>
 
                               
                                     <div style="cursor: pointer ;" *ngIf="item.canceled == 0 && item['AutoRenew'] == 1 && item.isTrial==0">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ED7D6F" (click)="autorenew(item)">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"   (click)="autorenew(item)">
                                         Auto-renew
                                       </h4>
 
-                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ED7D6F">
+                                      <h4 class="mtb0px fs_12px fw_600 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"  >
                                         {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                       </h4>
                                     </div>
                                     <div *ngIf="item.canceled == 0 && item['AutoRenew'] == 0 && item.isTrial==0">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ED7D6F" (click)="autorenew(it0em)">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"   (click)="autorenew(it0em)">
                                         Expiry
                                       </h4>
 
-                                      <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ED7D6F">
+                                      <h4 class="mtb0px fs_12px fw_600 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"  >
                                         {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                       </h4>
                                     </div>
                     
                                   <div *ngIf="(item.canceled == 1)" >
-                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ED7D6F">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"  >
                                       Cancelled At
                                     </h4>
 
-                                    <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ED7D6F">
+                                    <h4 class="mtb0px fs_12px fw_600 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"  >
                                       {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                     </h4>
                                   </div>
@@ -255,20 +255,20 @@
                                       </div>
                                     </ng-template> -->
                                   <div *ngIf="!donotautorenew(item, 'compareauto')">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ED7D6F">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"  >
                                       Expired
                                     </h4>
 
-                                    <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ED7D6F">
+                                    <h4 class="mtb0px fs_12px fw_600 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"  >
                                       {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                     </h4>
                                   </div>
                                   <div *ngIf="donotautorenew(item, 'compareauto') && item['MySelf'] === '0'">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ED7D6F">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"  >
                                       Expiry
                                     </h4>
 
-                                    <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ED7D6F">
+                                    <h4 class="mtb0px fs_12px fw_600 lh_150p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_E58D82'"  >
                                       {{ item['ExpDate'] | date : 'dd LLL yy'}}
                                     </h4>
                                   </div>
