@@ -56,7 +56,7 @@
 
 
               
-                  <button id="voices" type="button" class="btn" sstyle="background-color:#E58D82;color:#fff;"
+                  <button id="voices"  type="button" class="btn"  style="background-color:#ED7D6F;color:#fff;"
                                (click)="getUserPref('Voices')" >
                     Voices
                   </button>
@@ -123,7 +123,7 @@
                           </div>
 
                           <div class="col-md-7 col-sm-7 col-xs-7 p0 pl20pxi">
-                            <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ">
+                            <h4 class="mt0px mb5px fs_15px fw_500 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
                               {{data['Title']}}
                             </h4>
                             <h4 class="mtb0px fs_12px fw_400 lh_130p"  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">

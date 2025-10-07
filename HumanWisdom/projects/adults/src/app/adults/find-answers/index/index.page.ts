@@ -3,6 +3,8 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LogEventService } from '../../../../../../shared/services/log-event.service'; 
 import { linkRadial } from 'd3-shape';
+import { SharedService } from '../../../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-index',
@@ -12,6 +14,7 @@ import { linkRadial } from 'd3-shape';
 export class IndexPage implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
+  isAdults = true;
 
   defaultUrl = 'how-can-i';
   activeClass = 'active';
@@ -25,6 +28,11 @@ export class IndexPage implements OnInit {
 
   ngOnInit() {
     // debugger;
+        if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getActiveClass(param){
