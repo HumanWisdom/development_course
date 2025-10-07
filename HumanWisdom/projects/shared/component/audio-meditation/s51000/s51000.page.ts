@@ -213,10 +213,13 @@ audioevent(data: any) {
       return;
     }
     let url   = encodeURIComponent(data.Text_URL.replaceAll(':', '_').replaceAll('/', '~'));
-    let title = encodeURIComponent(data.Title.replaceAll(' ', '-'));
     const prg = SharedService.ProgramId === 9 ? 'adults' : 'teenagers';
 
-    this.router.navigate([`${prg}/guided-meditation/audiopage/`, url, title, data.RowID, 'Audio']);
+    // Ensure autoplay by setting localStorage flag before navigation
+    localStorage.setItem('autoplay', 'T');
+    
+    // Pass autoplay flag ('T') and raw title similar to podcast implementation
+    this.router.navigate([prg, 'guided-meditation', 'audiopage', url, data.RowID, 'T', data.Title]);
   }
 
   share() {

@@ -79,6 +79,16 @@ export class PodcastTocPage implements OnInit {
     } else {
       this.isSubscriber = false;
     }
+
+    this.getUserPref("all");
+    
+    // Make the "All" button active by default
+    setTimeout(() => {
+      const allBtn = document.getElementById('all');
+      if (allBtn) {
+        allBtn.classList.add('active');
+      }
+    }, 100);
   }
 
   getSourceForPodBin() {
@@ -196,7 +206,7 @@ getUserPref(type) {
   this.selectedPref = type;
   this.podcastList = this.allpodcastList;
 
-  if (type === 'All') {
+  if (type === 'all') {
     this.podcastList = this.allpodcastList;
   } else if (type === '0') {
     this.podcastList = this.podcastList.filter((d) => !d['PreferenceIDs']);

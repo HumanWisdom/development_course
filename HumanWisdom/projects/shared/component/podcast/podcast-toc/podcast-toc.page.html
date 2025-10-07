@@ -116,8 +116,8 @@
 
                   <ng-container *ngFor="let data of prefData">   
                  
-                    <button type="button" class="btn" id="All"  *ngIf="data['active'] && data['displayName'] === 'All'" 
-                   (click)="getUserPref('All')" [ngClass]="isAdults ? '' : 'bg-clr'">
+                    <button type="button" class="btn" id="all"  *ngIf="data['active'] && data['displayName'] === 'All'" 
+                   (click)="getUserPref('all')" [ngClass]="isAdults ? '' : 'bg-clr'">
                     {{data['displayName']}}
                   </button>
 
