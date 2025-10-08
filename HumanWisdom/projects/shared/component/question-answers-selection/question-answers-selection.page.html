@@ -66,7 +66,7 @@
                           <a class="skip" (click)="back('click_Breathingexercise_Previous')"  *ngIf="prevBtnDisabled" >
                             <button  type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                               <!-- Skip -->
-                                <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                                <i class="fa fa-angle-left fs_16px  mr10px" [ngClass]="isAdults? 'fc_000000':'fc_ffffff'"></i>
 
                               Previous
                             </button>
