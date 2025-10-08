@@ -43,7 +43,7 @@
                <div class="col-md-12 col-sm-12 col-xs-12 center_flex" *ngIf="!isAdults">
                 <!-- <div class="prelative center_flex"> -->
                 <circle-progress [percent]="points" [radius]="80"  [outerStrokeWidth]="15" [space]="-10" [innerStrokeWidth]="10" 
-                 [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'" [titleFontSize]="32"
+                 [titleColor]="'#ffffff'" [outerStrokeColor]="'#E58D82'" [titleFontSize]="32"  [backgroundColor]="'#0C2B5F'" 
                   [titleFontWeight]="600" [innerStrokeColor]="'rgba(255,255,255,0.2)'" [showSubtitle]="false"
                   [animation]="true" [showTitle]="true" [animationDuration]="100" [titleFormat]="formatTitle" 
                   [showUnits]="false">
@@ -110,7 +110,7 @@
                       </div>
 
                       <!-- right content -->
-                      <div class="h-100 col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 pr10px d-flex flex-column justify-content-center">
+                      <div class="h-100 col-lg-7 col-md-7 col-sm-7 col-xs-7 pl5px pr10px d-flex flex-column justify-content-center">
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"  [ngClass]="isAdults? fc_ED7D6F : fc_e58d82 " > 
                           {{item.title}}
                         </h4>
@@ -123,8 +123,11 @@
                     <!-- right icon (arrow / lock) -->
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright d-flex flex-column justify-content-center">
                       <i class="fa fa-angle-right  fs_20px"  *ngIf="isSubscriber"></i>
-                       <img [src]="isAdults? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' :'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
-                        class="img-responsive w-50"  *ngIf="!isSubscriber" >
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg"
+                        class="img-responsive "  *ngIf="!isSubscriber && isAdults" >
+
+                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                        class="img-responsive w-50"  *ngIf="!isSubscriber && !isAdults" >
 
                        
                   

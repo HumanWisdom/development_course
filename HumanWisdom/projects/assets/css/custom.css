@@ -22000,7 +22000,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   font-weight: 600;
   font-size: 15px;
   line-height: 150%;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .pb40px
@@ -34214,6 +34214,8 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   margin: 0;
   border-radius: 100px;
   background: #ED7D6F !important;
+    box-shadow: 1px 1px 2px #00000040;
+
   font-size: 15px;
   color: #ffffff !important;
   font-weight: 600;
@@ -34915,6 +34917,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   border-radius: 100px;
   background: #ED7D6F  !important;
+    box-shadow: 1px 1px 2px #00000040;
   padding: 10px 20px;
   color: #FFF  !important;
   font-size: 15px;
