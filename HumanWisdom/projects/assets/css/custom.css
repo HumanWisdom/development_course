@@ -34940,15 +34940,29 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   /* border: 1px solid rgba(204, 204, 204, 0.25); */
     border: 1px solid rgba(50, 50, 50, 0.25);
 
-  background: #FFFFFF;
+  background: #FFFFFF !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 400;
   line-height: normal;
-  color: #000;
+  color: #000 !important;
   text-align: left;
   padding: 12px 10px;
 }
+
+#card-element input {
+color: black !important;
+}
+
+#card-element .InputElement {
+  color: black !important;
+}
+#root > form > span:nth-child(4) > div > div > div.CardNumberField-input-wrapper > span > input{
+  color: black !important;
+}
+
+
+
 .sp_fc1 {
   height: 50px;
   width: 100%;
