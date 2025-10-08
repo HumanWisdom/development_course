@@ -2284,6 +2284,8 @@ input.parsley-error, textarea.parsley-error, select.parsley-error {
 /* ***** buttons ********/
 .btn {
   border-radius: 3px;
+      box-shadow: 1px 1px 2px #00000040;
+
 }
 a.btn-success, a.btn-primary, a.btn-warning, a.btn-danger {
   color: #000;
@@ -10807,7 +10809,7 @@ body,
 .modal.fade.in .lab-modal-body {
   bottom: 0;
   opacity: 1; 
-  padding:30px 20px;
+  padding:30px 15px;
 
   /* bottom: 0; */
   opacity: 1;
@@ -35163,7 +35165,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   /* width: 100%; */
   margin: 0;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   background: #ED7D6F !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 12px;
@@ -35386,7 +35388,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-size: 15px;
   font-weight: 600;
   line-height: 22px;
-  color: #ED7D6F;
+  color: #ED7D6F !important;
 }
   
 .div_wss 
@@ -35417,6 +35419,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   color: #fff !important;
   text-transform: capitalize;
   margin-right: 10px;
+  cursor: unset !important;
 }
 
 .btn_days .btn:last-child
@@ -35478,6 +35481,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-weight: 600;
   line-height: 150%;
   color: #ffffff !important;
+  box-shadow: 1px 1px 2px #00000040;
+
 }
 
 .div_inputs .row 
@@ -36264,7 +36269,7 @@ li ol > li:before {
   width: 100%;
   border-radius: 16px !important;
   border: 1px solid rgba(204, 204, 204, 0.25) !important;
-  background: #FFE8BB;
+  background: #FFFFFF;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 400;
