@@ -35242,11 +35242,11 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   height: 32px;
   border-radius: 8px;
-  background: #FFF;
+  background: #FFF !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 22px;
-  color: #E58D82;
+  color: #E58D82 !important;
 }
 
 .div_wss 
