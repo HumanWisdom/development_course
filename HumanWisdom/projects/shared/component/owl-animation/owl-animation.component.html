@@ -1,10 +1,10 @@
-<div (click)="openChat()" class="owl-animation-wrapper" style="width: 12%;height: 15%;z-index: 999;top:44rem"
+<div *ngIf="showOwl" (click)="openChat()" class="owl-animation-wrapper"
      [ngClass]="{'center': isPlaying || isTransitioning, 'corner': isAtCorner, 'transitioning': isTransitioning}">
    
 <!-- Static Owl Image with Customizable Text - Shows after video ends -->
 <div class="static-owl-container" *ngIf="showStaticOwl">
   <img 
-    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-img.png" 
+    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owlwingsdown.png" 
     alt="Olly the Owl" 
     class="static-owl-image"
   />
@@ -15,34 +15,26 @@
   </div>
 </div>
 
-<!-- Video - Plays first in corner position -->
-<video
-  #videoElement
-  class="owl-video"
-  [style.display]="showStaticOwl ? 'none' : 'block'"
-  autoplay
-  playsinline
-  preload="auto"
-  webkit-playsinline
-  x5-playsinline
-  x5-video-player-type="h5"
-  x5-video-player-fullscreen="false"
+<!-- Animated GIF - Plays first in corner position -->
+<img
+  #gifElement
+  class="owl-gif"
+  *ngIf="!showStaticOwl"
+  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.gif"
+  alt="Animated Owl"
   draggable="false"
-  poster="">
-  <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/videos/final.webm" type="video/webm">
-  <!-- <source src="assets/video/final.webm" type="video/webm">
-  <source src="assets/video/final.mov" type="video/quicktime"> -->
-  Your browser does not support the video tag.
-</video>
+  (load)="onGifLoaded()"
+  (error)="handleGifError()"
+/>
 
   <!-- Debug Info (remove in production) -->
-  <div class="debug-info" *ngIf="videoError">
-    <p>Video Error: WebM format may not be supported in this browser</p>
-    <p>Please check browser compatibility or use MP4 format as fallback</p>
+  <div class="debug-info" *ngIf="gifError">
+    <p>GIF Error: Unable to load the animation</p>
+    <p>Please check the connection or URL</p>
   </div>
 
   <!-- Loading indicator -->
-  <div class="loading-indicator" *ngIf="!videoLoaded && !videoError">
+  <!-- <div class="loading-indicator" *ngIf="!gifLoaded && !gifError">
     <p>Loading owl animation...</p>
-  </div>
+  </div> -->
 </div>

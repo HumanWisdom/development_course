@@ -1,28 +1,27 @@
 .owl-animation-wrapper {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 60px;              /* sit along footer line (adjust if footer height changes) */
+  /* Align to the right edge of a centered 30% content column */
+  right: calc((100vw - 30vw) / 2 + 16px);
   z-index: 1000;
-  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
+  pointer-events: auto;      /* allow click to open chat */
   background: transparent;
   background-color: transparent;
-  /* Mobile performance optimizations */
   will-change: transform;
-  -webkit-transform: translate(-50%, -50%);
-  -webkit-transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
 }
 
 .owl-animation-wrapper.corner {
-  top: auto;
-  left: auto;
-  bottom: 80px;
-  right: 43rem;
+  bottom: 60px;
+  right: calc((100vw - 30vw) / 2 + 16px);
   transform: none;
   -webkit-transform: none;
-  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
+  -webkit-transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
+  width: auto;
+  height: auto;
+  z-index: 999;
 }
 
 .owl-animation-wrapper.transitioning {
@@ -77,6 +76,29 @@
   }
 }
 
+/* GIF styles - original size */
+.owl-gif {
+  width: 100px;          /* Original size */
+  height: 100px;         /* Original size */
+  max-width: 100px;      /* Prevent scaling up */
+  max-height: 100px;     /* Prevent scaling up */
+  object-fit: contain;   /* Maintain aspect ratio */
+  border-radius: 50%;    /* Make it circular */
+  user-select: none;
+  pointer-events: none;  /* image itself doesn't intercept to keep consistent */
+  transition: all 0.3s ease;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  /* High quality rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  /* Additional quality enhancements */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 /* Debug and Loading Indicators */
 .debug-info, .loading-indicator {
   position: absolute;
@@ -103,69 +125,86 @@
 
 /* Tablet styles */
 @media (max-width: 768px) {
-  .owl-video {
-    width: 400px;
-    max-width: 90vw;
-    max-height: 80vh;
+  .owl-video, .owl-gif {
+    width: 80px;          /* Increased size */
+    height: 80px;         /* Increased size */
+    max-width: 80px;
+    max-height: 80px;
   }
   
   .owl-animation-wrapper.corner {
-    bottom: 80px;
-    right: 25px;
-        width: 45%;
-    height: 15%;
-    z-index: 999;
-    top: 67rem;
-    /* right: -18px; */
-    left: 24rem;
+    bottom: 60px;        /* Positioned on footer line */
+    right: 16px;         /* mobile: content is near full width, align to safe margin */
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
   }
 }
 
 /* Mobile styles */
 @media (max-width: 600px) {
-  .owl-video {
-    width: 280px;
-    max-width: 85vw;
-    max-height: 70vh;
-    border-radius: 12px;
-    object-fit: contain;
+  .owl-video, .owl-gif {
+    width: 70px;          /* Increased size */
+    height: 70px;         /* Increased size */
+    max-width: 70px;
+    max-height: 70px;
   }
   
   .owl-animation-wrapper.corner {
-    bottom: 80px;
-    right: 15px;
+    bottom: 60px;        /* Positioned on footer line */
+    right: 16px;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
   }
 }
 
 /* Small mobile styles */
 @media (max-width: 480px) {
-  .owl-video {
-    width: 240px;
-    max-width: 90vw;
-    max-height: 65vh;
-    border-radius: 10px;
-    object-fit: contain;
+  .owl-video, .owl-gif {
+    width: 60px;          /* Increased size */
+    height: 60px;         /* Increased size */
+    max-width: 60px;
+    max-height: 60px;
   }
   
   .owl-animation-wrapper.corner {
-    bottom: 80px;
-    right: 10px;
+    bottom: 60px;        /* Positioned on footer line */
+    right: 12px;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
   }
 }
 
 /* Extra small mobile styles */
 @media (max-width: 360px) {
-  .owl-video {
-    width: 200px;
-    max-width: 95vw;
-    max-height: 60vh;
-    border-radius: 8px;
-    object-fit: contain;
+  .owl-video, .owl-gif {
+    width: 55px;          /* Increased size */
+    height: 55px;         /* Increased size */
+    max-width: 55px;
+    max-height: 55px;
   }
   
   .owl-animation-wrapper.corner {
-    bottom: 80px;
-    right: 8px;
+    bottom: 60px;        /* Positioned on footer line */
+    right: 10px;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
+  }
+}
+
+/* For wide screens where content is 30% of width, calculation above applies.
+   For smaller screens, fall back to safe margins to keep it visible within content. */
+@media (max-width: 1024px) {
+  .owl-animation-wrapper,
+  .owl-animation-wrapper.corner {
+    right: 16px;
   }
 }
 
@@ -198,11 +237,11 @@
 .owl-speech-bubble {
   position: absolute;
   top: -35px;
-  left: 41%;
+  left: 15%;
   transform: translateX(-50%);
   background: #20B2AA; /* Teal color like in the image */
   border-radius: 20px;
-  padding: 10px 18px;
+  padding: 5px 18px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1001;
   min-width: 140px;
@@ -240,29 +279,11 @@
     /* Reduce transition duration for mobile */
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -webkit-transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        width: 45%;
-    height: 15%;
-    z-index: 999;
-    top: 67rem;
-    /* right: -18px; */
-    left: 24rem;
   }
   
-  .owl-animation-wrapper.corner {
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -webkit-transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-           width: 45% !important;
-    height: 15% !important;
-    z-index: 999;
-    top: 67rem !important;
-    /* right: -18px; */
-    left: 24rem !important;
-  }
-  
-  .owl-video {
-    /* Enhanced text visibility for mobile */
-    filter: contrast(1.2) brightness(1.1) saturate(1.1);
-    width: 95% !important;
+  .owl-video, .owl-gif {
+    /* Enhanced visibility for mobile */
+    filter: contrast(1.1) brightness(1.05);
   }
 
   .static-owl-image {
