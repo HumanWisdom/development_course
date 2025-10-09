@@ -16,7 +16,9 @@
   box-shadow: unset;
   transition: all 0.3s ease;
 }
-
+.session_img_play{
+  right: 18px !important;
+}
 .btn_podcast .btn.active,
 .btn_podcast .btn:focus {
   background: rgba(0, 0, 0, 0.05) !important;
@@ -39,7 +41,20 @@
   background-color: #ed7d6f;
   color: #fff;
 }
+  .odiv,
+  .odiv_pathway,
+  .odiv_wfgi,
+  .ae_days {
+      overflow: hidden;
+      transition: overflow .01s;
+  }
 
+  .odiv:hover,
+  .odiv_pathway:hover,
+  .odiv_wfgi:hover,
+  .ae_days:hover {
+      overflow: auto;
+  }
 
 .btn_podcast .btn:focus-visible {
   outline: none;

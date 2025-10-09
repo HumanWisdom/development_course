@@ -48,3 +48,17 @@
 .btn_podcast .btn:focus-visible {
   outline: none;
 }
+  .odiv,
+  .odiv_pathway,
+  .odiv_wfgi,
+  .ae_days {
+      overflow: hidden;
+      transition: overflow .01s;
+  }
+
+  .odiv:hover,
+  .odiv_pathway:hover,
+  .odiv_wfgi:hover,
+  .ae_days:hover {
+      overflow: auto;
+  }
