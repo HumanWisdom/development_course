@@ -30229,11 +30229,11 @@ svg path
 
 .link{
 text-decoration: underline;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 .link:hover{
   text-decoration: underline;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
   }
  /* a:hover{
   text-decoration: underline;
@@ -35515,7 +35515,8 @@ color: black !important;
 
 .div_intro 
 {
-   background: linear-gradient(180deg, #803358 0%, #FFE8BB 100%) !important;
+   /* background: linear-gradient(180deg, #803358 0%, #FFE8BB 100%) !important; */
+   background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%) !important;
 }
 
 .mt70px
@@ -37979,7 +37980,7 @@ span
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(0, 0, 0, 0.70);
 }
 
 .ta_dailycheckin::-webkit-input-placeholder
@@ -37987,13 +37988,13 @@ span
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 0.25);
   padding: 0 0 0 0;
 }
 
 .ta_dailycheckin:focus
 {
-  color: #FFF;
+  color: #000;
   outline: none;
   /* padding: 90px 0 0 20px; */
   /* padding: 90px 20px 20px 20px; */
