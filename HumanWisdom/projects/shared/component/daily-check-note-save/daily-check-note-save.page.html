@@ -26,7 +26,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji" *ngIf="isAdults">
               <img src="{{rowData.ImgPath.replace('/assets/svgs/v1_3/emojis/','/teenagers/assets/svgs/emojis/') }}" alt="" class="img-responsive img_journal_emoji" *ngIf="!isAdults">
-              <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+              <h4 class="mtb0px fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 {{rowData.Expression}}
               </h4>
             </div>
@@ -34,7 +34,7 @@
 
           <div class="row mt40px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-              <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+              <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 {{rowData.Description}}
               </h4>
             </div>
@@ -76,7 +76,7 @@
 
           <div class="row mb15px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-              <h4 class="mtb0px fs_12px fw_600 lh_150p fc_ffffff_0_7 tcenter">
+              <h4 class="mtb0px fs_12px fw_600 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_7'">
                 We understand how important privacy is. Your journal entries are encrypted and can be seen only by you.
                 
                 <!-- Your online journal is secure and private to you. -->
@@ -88,7 +88,7 @@
           <div class="row center_flex">
             <div class="col-md-12 col-sm-12 col-xs-12 p0"  (click)="this.logeventservice.logEvent('click_emoji_save_skip_findOutmore'); findOutMore();">
               <a>
-                <h4 class="mtb10px fs_15px fw_400 lh_130p fc_ffffff td_underline tcenter">
+                <h4 class="mtb10px fs_15px fw_400 lh_130p  td_underline tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Skip and explore further
                 </h4>
               </a>
@@ -124,7 +124,7 @@
 
       <div class="row mtb20px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
             Successfully saved
           </h4>
         </div>
@@ -132,11 +132,11 @@
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="isFirstLogin">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="isFirstLogin">
             Your note was successfully saved to your HappierMe journal. You can access it in the app.
           </h4>
 
-          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="!isFirstLogin">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="!isFirstLogin">
             You can continue to explore the app.</h4>
         </div>
       </div>

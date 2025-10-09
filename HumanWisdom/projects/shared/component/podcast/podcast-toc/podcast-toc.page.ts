@@ -139,20 +139,17 @@ export class PodcastTocPage implements OnInit {
   }
 
 audioevent(data: any) {
-  /* 1.  fire-and-forget click tracking */
   this.service.clickPodcast(data.PodcastID).subscribe({
     next: () => console.log('click logged'),
     error: e => console.error('click log failed', e)
   });
 
-  /* 2.  existing pay-wall logic (unchanged) */
   const sub = localStorage.getItem('Subscriber');
   if (sub === '0' && data.PodcastID >= 2) {
     this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
     return;
   }
 
-  /* 3.  existing routing logic (unchanged) */
   let media = data.MediaUrl;
   if (media.includes('https://d1tenzemoxuh75.cloudfront.net/')) {
     media = media.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');

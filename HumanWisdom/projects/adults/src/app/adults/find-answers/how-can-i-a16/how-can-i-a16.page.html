@@ -74,8 +74,8 @@
                         </div>
                       </div>
 
-                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_e58d82">
+                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
+                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                           Mini Podcast
                         </h4>
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis_02">
@@ -91,11 +91,11 @@
 
                       <div *ngIf="!isSubscriber" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                       <!-- lock -->
-                          <img
-                        
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
-                        class="img-responsive fa-lock-icon"
-                      />
+                        <img
+            *ngIf="!isSubscriber"
+            [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon"
+          />
                         <!-- /lock -->
                       </div>
 
@@ -115,7 +115,7 @@
                       </div>
       
                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_e58d82">
+                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_000000">
                           Manage your emotions
                         </h4>
                         <h4 class="mt0px mb5px fs_18px fw_500 lh_130p fc_000000 ellipsis">
@@ -139,7 +139,7 @@
                       </div>
       
                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_e58d82">
+                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_000000">
                           Manage your emotions
                         </h4>
                         <h4 class="mt0px mb5px fs_18px fw_500 lh_130p fc_000000 ellipsis">
@@ -163,7 +163,7 @@
                       </div>
       
                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_e58d82">
+                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_000000">
                           Manage your emotions
                         </h4>
                         <h4 class="mt0px mb5px fs_18px fw_500 lh_130p fc_000000 ellipsis">
@@ -187,7 +187,7 @@
                       </div>
       
                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_e58d82">
+                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_000000">
                           Live your best life
                         </h4>
                         <h4 class="mt0px mb5px fs_18px fw_500 lh_130p fc_000000 ellipsis">
@@ -211,7 +211,7 @@
                       </div>
       
                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_e58d82">
+                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_000000">
                           Live your best life
                         </h4>
                         <h4 class="mt0px mb5px fs_18px fw_500 lh_130p fc_000000 ellipsis">
@@ -235,7 +235,7 @@
                       </div>
       
                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_e58d82">
+                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_000000">
                           Understand how your mind works
                         </h4>
                         <h4 class="mt0px mb5px fs_18px fw_500 lh_130p fc_000000 ellipsis">
@@ -259,7 +259,7 @@
                       </div>
       
                       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_e58d82">
+                        <h4 class="mt0px mb5px fs_12px fw_500 lh_130p fc_000000">
                           Understand yourself
                         </h4>
                         <h4 class="mt0px mb5px fs_18px fw_500 lh_130p fc_000000 ellipsis">

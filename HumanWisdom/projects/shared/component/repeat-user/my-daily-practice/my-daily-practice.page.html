@@ -252,7 +252,9 @@
                   <!-- <img [src]="resumeThumb"
                   class="p0 session_imgnew" style="border: none;"> -->
 
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp" *ngIf="isAdults"
+                       class="p0 session_imgnew" style="border: none;">
+                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{resumeLastvisited[0]['ModuleId']}}.webp" *ngIf="!isAdults"
                        class="p0 session_imgnew" style="border: none;">
                 </div>
               </div>

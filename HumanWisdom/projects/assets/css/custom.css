@@ -2284,6 +2284,8 @@ input.parsley-error, textarea.parsley-error, select.parsley-error {
 /* ***** buttons ********/
 .btn {
   border-radius: 3px;
+      box-shadow: 1px 1px 2px #00000040;
+
 }
 a.btn-success, a.btn-primary, a.btn-warning, a.btn-danger {
   color: #000;
@@ -10807,7 +10809,7 @@ body,
 .modal.fade.in .lab-modal-body {
   bottom: 0;
   opacity: 1; 
-  padding:30px 20px;
+  padding:30px 15px;
 
   /* bottom: 0; */
   opacity: 1;
@@ -10914,9 +10916,12 @@ body,
   /* padding: 40px; */
   padding: 20px;
   height: auto;
-  /* background-color: #5D5D5D; */
-  background: linear-gradient(180deg,#803358 0%,#FFE8BB 100%)!important;
-  color: #fff;
+  /* background-color: #5D5D5D; */ 
+
+  background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%) !important;
+
+  /* background: linear-gradient(180deg,#230F40 0%,#FFE8BB 100%)!important; */
+  color: #000;
   border: 0;
   opacity: 0;
   /* transition: opacity 0.3s ease-out, bottom 0.3s ease-out; */
@@ -21997,7 +22002,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
   font-weight: 600;
   font-size: 15px;
   line-height: 150%;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .pb40px
@@ -30224,11 +30229,11 @@ svg path
 
 .link{
 text-decoration: underline;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 .link:hover{
   text-decoration: underline;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
   }
  /* a:hover{
   text-decoration: underline;
@@ -34211,6 +34216,8 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   margin: 0;
   border-radius: 100px;
   background: #ED7D6F !important;
+    box-shadow: 1px 1px 2px #00000040;
+
   font-size: 15px;
   color: #ffffff !important;
   font-weight: 600;
@@ -34879,7 +34886,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .v1_3_sfooter 
 {
   height: 110px;
-  padding: 20px 20px;
+  padding: 30px 20px;
   /* background: #424675; */
    background: #ffffff;
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
@@ -34912,6 +34919,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   border-radius: 100px;
   background: #ED7D6F  !important;
+    box-shadow: 1px 1px 2px #00000040;
   padding: 10px 20px;
   color: #FFF  !important;
   font-size: 15px;
@@ -34932,15 +34940,29 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   /* border: 1px solid rgba(204, 204, 204, 0.25); */
     border: 1px solid rgba(50, 50, 50, 0.25);
 
-  background: #FFFFFF;
+  background: #FFFFFF !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 400;
   line-height: normal;
-  color: #000;
+  color: #000 !important;
   text-align: left;
   padding: 12px 10px;
 }
+
+#card-element input {
+color: black !important;
+}
+
+#card-element .InputElement {
+  color: black !important;
+}
+#root > form > span:nth-child(4) > div > div > div.CardNumberField-input-wrapper > span > input{
+  color: black !important;
+}
+
+
+
 .sp_fc1 {
   height: 50px;
   width: 100%;
@@ -35157,7 +35179,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   /* width: 100%; */
   margin: 0;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   background: #ED7D6F !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 12px;
@@ -35380,7 +35402,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-size: 15px;
   font-weight: 600;
   line-height: 22px;
-  color: #ED7D6F;
+  color: #ED7D6F !important;
 }
   
 .div_wss 
@@ -35411,6 +35433,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   color: #fff !important;
   text-transform: capitalize;
   margin-right: 10px;
+  cursor: unset !important;
 }
 
 .btn_days .btn:last-child
@@ -35472,6 +35495,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   font-weight: 600;
   line-height: 150%;
   color: #ffffff !important;
+  box-shadow: 1px 1px 2px #00000040;
+
 }
 
 .div_inputs .row 
@@ -35490,7 +35515,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .div_intro 
 {
-   background: linear-gradient(180deg, #803358 0%, #FFE8BB 100%) !important;
+   /* background: linear-gradient(180deg, #803358 0%, #FFE8BB 100%) !important; */
+   background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%) !important;
 }
 
 .mt70px
@@ -35815,9 +35841,9 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 .toc_adiv_01 a .row 
 {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background: #FFE8BB;
-  min-height: px;
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
+  background: #FFD889;
+  /* min-height: px; */
   margin-bottom: 10px;
   padding: 12px;
   /* margin: 0 10px 10px 10px; */
@@ -36258,7 +36284,7 @@ li ol > li:before {
   width: 100%;
   border-radius: 16px !important;
   border: 1px solid rgba(204, 204, 204, 0.25) !important;
-  background: #FFE8BB;
+  background: #FFFFFF;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 400;
@@ -36537,7 +36563,6 @@ li ol > li:before {
 .toc_adiv_02 a > .row 
 {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
   background: #FFE8BB;
   min-height: 88px;
   margin-bottom: 10px;
@@ -37874,7 +37899,6 @@ span
 .toc_adiv_04 a .row 
 {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
   background: #FFE8BB;
   min-height: 60px;
   margin-bottom: 10px;
@@ -37956,7 +37980,7 @@ span
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(0, 0, 0, 0.70);
 }
 
 .ta_dailycheckin::-webkit-input-placeholder
@@ -37964,13 +37988,13 @@ span
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 0.25);
   padding: 0 0 0 0;
 }
 
 .ta_dailycheckin:focus
 {
-  color: #FFF;
+  color: #000;
   outline: none;
   /* padding: 90px 0 0 20px; */
   /* padding: 90px 20px 20px 20px; */
@@ -38022,7 +38046,6 @@ span
 .toc_adiv_mp a > .row 
 {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
   background: #FFE8BB;
   min-height: 88px;
   margin-bottom: 10px;

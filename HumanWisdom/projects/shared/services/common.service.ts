@@ -653,4 +653,8 @@ export class CommonService {
   clickMeditations(dailyPractiseID: number): Observable<any> {
     return this.http.post(`${this.path}/clickAudioMeditations/${dailyPractiseID}`, {});
   }
+
+  clickSoundscapes(SoundscapeID: number): Observable<any> {
+  return this.http.post(this.path + `/clickSoundscapes/${SoundscapeID}`, {});
+  }
 }
