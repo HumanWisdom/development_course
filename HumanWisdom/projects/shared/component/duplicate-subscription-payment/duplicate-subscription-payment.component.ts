@@ -43,20 +43,20 @@ cardCaptureReady = false
       var style = {
         base: {
           iconColor: '#c4f0ff',
-           color: '#fff',
+           color:  this.isAdults? '#000':'#fff',
           '::placeholder': {
-
+              color: this.isAdults? 'rgba(0, 0, 0, 0.5)':'rgba(255, 255, 255, 0.5)',
           },
           ':-webkit-autofill': {
-            color: '#000000',
+              color:  this.isAdults? '#000':'#fff',
           },
           ':focus': {
-            color: '#fff',
+            color: this.isAdults? '#000':'#fff',
           },
         },
         invalid: {
           iconColor: '#FFC7EE',
-          color: '#fff',
+          color: this.isAdults? '#000':'#fff',
         },
       };
         let stripe = Stripe(this.stripeKey);

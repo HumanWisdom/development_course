@@ -34783,14 +34783,14 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 
 #card-element input {
-color: black !important;
+color: white !important;
 }
 
 #card-element .InputElement {
-  color: black !important;
+  color: white !important;
 }
 #root > form > span:nth-child(4) > div > div > div.CardNumberField-input-wrapper > span > input{
-  color: black !important;
+  color: white !important;
 }
 
 .sp_fc::-webkit-input-placeholder 
