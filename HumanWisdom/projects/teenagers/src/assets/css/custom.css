@@ -33737,7 +33737,7 @@ body *
   border: 0;
   border-bottom: 1px solid #E58D82;
   margin-bottom: -1px;
-  color: #E58D82;
+  color: #E58D82 !important;
 }
 
 .fqant>li>a:hover
@@ -36411,6 +36411,7 @@ h3_blogs p a font,
   padding: 9px 10px;
   height: 36px;
   box-shadow: unset;
+  border: transparent !important;
 }
 
 .btn_podcast .btn:last-child
