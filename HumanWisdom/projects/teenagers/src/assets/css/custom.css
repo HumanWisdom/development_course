@@ -35531,7 +35531,7 @@ color: white !important;
   border-radius: 12px;
   background: #0C2B5F;
   padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   margin-bottom: 10px;
 }
 .div_is_02 {
@@ -36341,7 +36341,7 @@ h3_blogs p a font,
 .toc_adiv_02 a > .row 
 {
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
@@ -36356,7 +36356,7 @@ h3_blogs p a font,
 
 .img_podcast_01
 {
-  border: 1px solid #FFF;
+  /* border: 1px solid #FFF; */
   border-radius: 6px;
 }
 
@@ -37788,7 +37788,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .toc_adiv_mp a > .row 
 {
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
