@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { OwlStore } from '../../stores/owl.store';
 
 @Component({
@@ -13,17 +13,18 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   // Increase this value to keep the owl visible longer
   private readonly WAIT_TIME_BEFORE_INITIALIZATION = 5000; // 5 seconds
   
-  @ViewChild('videoElement', { static: true }) videoElement!: ElementRef<HTMLVideoElement>;
-  videoError = false;
+  @ViewChild('gifElement', { static: false }) gifElement!: ElementRef<HTMLImageElement>;
+  gifError = false;
+  gifLoaded = false;
   private _isPlaying: boolean = true;
   private _isTransitioning: boolean = false;
-  private _isAtCorner: boolean = true; // Video plays in corner position from the start
-  private _videoLoaded: boolean = false;
-  private _videoError: boolean = false;
+  private _isAtCorner: boolean = true; // GIF plays in corner position from the start
+  private gifAnimationDuration = 8000; // Duration of GIF animation in milliseconds (8 seconds)
   
   // Static owl properties
   public showStaticOwl: boolean = false; // Start with video, show static owl after video ends
   public owlMessage: string = "Hi! I'm Olly."; // Customizable message
+  public showOwl: boolean = true; // Control visibility based on route (home only)
   
   // Debug flag - set to true to test static owl immediately
   private debugMode: boolean = false;
@@ -49,13 +50,6 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   set isAtCorner(value: boolean) {
     this._isAtCorner = value;
   }
-
-  get videoLoaded(): boolean {
-    return this._videoLoaded;
-  }
-  set videoLoaded(value: boolean) {
-    this._videoLoaded = value;
-  }
   
   private isMobile = this.detectMobile();
 
@@ -67,7 +61,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('OwlAnimationComponent initialized');
-    console.log('Video element:', this.videoElement);
+    console.log('GIF element:', this.gifElement);
     console.log('Initial showStaticOwl:', this.showStaticOwl);
     console.log('Initial isAtCorner:', this.isAtCorner);
     
@@ -79,16 +73,21 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
       return;
     }
     
-    // Don't mark as initialized yet - let the animation play first
-    this.setupVideo();
+    // Show only on home route; hide on chat-bot and others
+    this.updateShowOwlForRoute(this.router.url);
+    this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        this.updateShowOwlForRoute(evt.urlAfterRedirects || evt.url);
+      }
+    });
+
+    // GIF will play automatically when loaded
+    // After the GIF animation duration, show the static owl
   }
   
 
   ngOnDestroy() {
-    // Cleanup video if needed
-    if (this.videoElement?.nativeElement) {
-      this.videoElement.nativeElement.pause();
-    }
+    // No cleanup needed for GIF
   }
 
   
@@ -105,172 +104,65 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     return window.innerWidth <= 600;
   }
 
-  private setupVideo() {
-    if (!this.videoElement) {
-      console.error('Video element not found');
-      return;
-    }
-    const video = this.videoElement.nativeElement;
-    console.log('Setting up video element:', video);
-    
-    // Set video source - use the same source as in HTML
-    const videoSrc = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/videos/final.webm';
-    console.log('Video source:', videoSrc);
-    video.src = videoSrc;
-    
-    // High quality video settings
-    video.playsInline = true; // Prevents fullscreen on iOS
-    video.muted = true; // Start muted for autoplay compatibility
-    video.preload = 'auto';
-    video.controls = false;
-    video.loop = false;
-    // Quality optimizations
-    video.autoplay = true; // Enable autoplay for better user experience
-    video.defaultPlaybackRate = 1.0; // Ensure normal playback speed
-    
-    // Mobile-specific quality settings
-    if (this.isSmallScreen()) {
-      video.style.objectFit = 'contain';
-    }
-    
-    console.log('Video attributes set:', {
-      playsInline: video.playsInline,
-      muted: video.muted,
-      preload: video.preload,
-      controls: video.controls,
-      loop: video.loop,
-      autoplay: video.autoplay,
-      defaultPlaybackRate: video.defaultPlaybackRate
-    });
-    
-    // Add event listeners
-    video.addEventListener('loadstart', () => {
-      console.log('Video loadstart event');
-    });
-    
-    video.addEventListener('loadedmetadata', () => {
-      console.log('Video loadedmetadata event - duration:', video.duration);
-      this.videoLoaded = true;
-      this.cdr.detectChanges();
-      this.startVideoPlayback();
-    });
-    
-    video.addEventListener('canplay', () => {
-      console.log('Video canplay event');
-    });
-    
-    video.addEventListener('play', () => {
-      console.log('Video play event');
-    });
-    
-    video.addEventListener('playing', () => {
-      console.log('Video playing event');
-    });
-    
-    video.addEventListener('ended', () => {
-      console.log('Video ended event');
-      this.onVideoEnded();
-    });
-    
-    video.addEventListener('error', (e) => {
-      console.error('Video error event:', e);
-      console.error('Video error details:', video.error);
-      this.videoError = true;
-      this.cdr.detectChanges();
-      // Fallback: show error message or use alternative
-      this.handleVideoError();
-    });
-    
-    video.addEventListener('abort', () => {
-      console.log('Video abort event');
-    });
-    
-    // Load the video
-    console.log('Loading video...');
-    video.load();
-  }
-
-  private startVideoPlayback() {
-    const video = this.videoElement.nativeElement;
-    console.log('Starting video playback...');
-    
-    // Ensure video is muted for autoplay
-    video.muted = true;
-    
-    // Start playing
-    const playPromise = video.play();
-    
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        console.log('Video started playing successfully');
-      }).catch(error => {
-        console.error('Error playing video:', error);
-        // If autoplay fails, show play button
-        console.log('Autoplay failed, showing play button');
-        this.showPlayButton();
-      });
-    }
-  }
-
-  private showPlayButton() {
-    // Play button functionality removed - no UI button needed
-    console.log('Autoplay failed, but no play button will be shown');
-  }
-
-  private onVideoEnded() {
-    console.log('Video ended, showing static owl permanently');
-    console.log('showStaticOwl before:', this.showStaticOwl);
-    this.isPlaying = false;
-    this.showStaticOwl = true; // Show static owl after video ends - PERMANENTLY
-    console.log('showStaticOwl after:', this.showStaticOwl);
+  // GIF load handler
+  onGifLoaded() {
+    console.log('GIF loaded successfully');
+    this.gifLoaded = true;
     this.cdr.detectChanges();
     
-    // DO NOT mark as initialized - we want the owl to stay visible permanently
-    console.log('Static owl is now permanently visible');
+    // After the GIF animation duration, show the static owl
+    setTimeout(() => {
+      this.onGifAnimationComplete();
+    }, this.gifAnimationDuration);
   }
 
-  private handleVideoError() {
-    console.log('Handling video error - showing static owl permanently');
-    // Show static owl image permanently on video error
+  private updateShowOwlForRoute(url: string) {
+    // Only show on adults home route; hide on chat-bot and elsewhere
+    const isAdultsHome = /\/adults\/home(\b|\?|#|$)/.test(url);
+    this.showOwl = isAdultsHome;
+    this.cdr.detectChanges();
+  }
+
+  // GIF error handler
+  handleGifError() {
+    console.error('GIF loading error');
+    this.gifError = true;
+    this.cdr.detectChanges();
+    
+    // Show static owl after error
     setTimeout(() => {
       this.isPlaying = false;
-      this.showStaticOwl = true; // Show static owl permanently on error
+      this.showStaticOwl = true;
       this.cdr.detectChanges();
-      
-      // DO NOT mark as initialized - we want the owl to stay visible permanently
-      console.log('Static owl is now permanently visible (after error)');
+      console.log('Static owl is now visible (after GIF error)');
     }, 2000);
+  }
+
+  // Called when GIF animation completes
+  private onGifAnimationComplete() {
+    console.log('GIF animation completed, showing static owl permanently');
+    this.isPlaying = false;
+    this.showStaticOwl = true;
+    this.cdr.detectChanges();
+    console.log('Static owl is now permanently visible');
   }
 
   // Method to restart animation (if needed)
   restartAnimation() {
-    const video = this.videoElement.nativeElement;
+    console.log('Restarting animation');
     
-    // Reset video state
-    video.currentTime = 0;
-    video.pause();
-    video.muted = true; // Ensure muted for autoplay
-    
-    // Reset component state - start with video again
+    // Reset component state - start with GIF again
     this.isPlaying = true;
     this.isTransitioning = false;
-    this.isAtCorner = true; // Keep video in corner position
-    this.videoError = false;
-    this.showStaticOwl = false; // Hide static owl to show video again
+    this.isAtCorner = true;
+    this.gifError = false;
+    this.showStaticOwl = false;
     this.cdr.detectChanges();
     
-    // Start playing after a short delay to ensure state is updated
+    // Restart the timer for showing static owl
     setTimeout(() => {
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          console.log('Video restarted successfully');
-        }).catch((error: any) => {
-          console.error('Error restarting video:', error);
-          this.showPlayButton();
-        });
-      }
-    }, 100);
+      this.onGifAnimationComplete();
+    }, this.gifAnimationDuration);
   }
 
   // Method to set custom owl message
