@@ -34781,6 +34781,18 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding: 12px 10px;
 }
 
+
+#card-element input {
+color: black !important;
+}
+
+#card-element .InputElement {
+  color: black !important;
+}
+#root > form > span:nth-child(4) > div > div > div.CardNumberField-input-wrapper > span > input{
+  color: black !important;
+}
+
 .sp_fc::-webkit-input-placeholder 
 {
   color: rgba(255, 255, 255, 0.50);
