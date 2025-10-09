@@ -12,6 +12,7 @@ import { ProgramType } from "../../../shared/models/program-model";
 @Component({
   selector: 'HumanWisdom-common-screen',
   templateUrl: './common-screen.page.html',
+  styleUrls: ['./common-screen.page.scss'],
 })
 export class CommonScreenPage implements OnInit {
 
@@ -47,6 +48,10 @@ export class CommonScreenPage implements OnInit {
   }
 
     getClickEvent(data) {
+    this.service.clickSoundscapes(data.SoundscapeID).subscribe({
+    next: () => console.log('click logged'),
+    error: e => console.error('click log failed', e)
+  });
     if(!this.isSubscriber && data['SoundscapeID'] > 1) {
          this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
          return ;
