@@ -29251,7 +29251,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   font-weight: 600;
   line-height: 150%;
   text-align: center;
-  color: #ED7D6F;
+  color: #ED7D6F !important;
 }
 
 .cfa_a1_01
@@ -33162,7 +33162,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 {
   height: 60px;
   background: #FFE8BB;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 12px;
   display: flex;
   align-items: center;

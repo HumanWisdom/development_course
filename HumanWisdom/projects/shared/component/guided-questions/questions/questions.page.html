@@ -115,8 +115,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter center_flex fctray_gqtns  col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
                         <a (click)="back()">
-                          <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5" *ngIf="counter!=1" >
-                            <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
+                          <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px  shadow-none"  *ngIf="counter!=1" >
+                            <i class="fa fa-angle-left fs_16px  mr10px"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
                             Previous
                           </button>
                         </a>
