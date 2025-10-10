@@ -35318,7 +35318,7 @@ color: black !important;
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
-  color: #ED7D6F;
+  color: #ED7D6F !important;
 }
 
 .btn_profile_cp
