@@ -19,6 +19,19 @@ export interface ChatbotResponse {
   session_id: string;
 }
 
+export interface HistoryMessage {
+  user_message: string;
+  bot_response: string;
+  created_at: string;
+  is_followup: number;
+}
+
+export interface HistoryResponse {
+  status: 'success' | 'error';
+  history: HistoryMessage[];
+  user_id: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,6 +40,7 @@ export class ChatbotService {
   private readonly TEEN_CHATBOT_URL = 'https://teenagers-staging.happierme.app/api/chat';
   private readonly HEALTH_CHECK_URL_ADULT = 'https://adults-staging.happierme.app/api/health';
   private readonly HEALTH_CHECK_URL_TEEN = 'https://teenagers-staging.happierme.app/api/health';
+  private readonly HISTORY_URL = 'https://adults-staging.happierme.app/api/history';
 
   // Expose store observables
   public messages$: Observable<ChatMessage[]>;
@@ -185,5 +199,45 @@ export class ChatbotService {
    */
   getFullQuestionForNumber(input: string): string {
     return this.chatStore.getFullQuestionForNumber(input);
+  }
+
+  /**
+   * Load conversation history from the API
+   */
+  loadHistory(): Observable<HistoryResponse> {
+    return this.http.get<HistoryResponse>(this.HISTORY_URL, {
+      headers: this.getAuthHeaders(),
+      withCredentials: true
+    });
+  }
+
+  /**
+   * Prepend history messages to the current chat
+   */
+  prependHistoryMessages(historyMessages: HistoryMessage[]): void {
+    // Convert API format to internal format
+    const convertedMessages: Array<{
+      content: string;
+      sender: 'user' | 'bot';
+      timestamp: string;
+    }> = [];
+
+    historyMessages.forEach(historyItem => {
+      // Add user message
+      convertedMessages.push({
+        content: historyItem.user_message,
+        sender: 'user',
+        timestamp: historyItem.created_at
+      });
+
+      // Add bot response
+      convertedMessages.push({
+        content: historyItem.bot_response,
+        sender: 'bot',
+        timestamp: historyItem.created_at
+      });
+    });
+
+    this.chatStore.prependHistoryMessages(convertedMessages);
   }
 }

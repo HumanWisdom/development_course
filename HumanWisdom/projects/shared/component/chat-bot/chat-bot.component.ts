@@ -19,6 +19,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   currentMessage: string = '';
   isTyping: boolean = false;
   isLoading: boolean = false;
+  isLoadingHistory: boolean = false;
   errorMessage: string = '';
   activeSuggestions: string[] = [];
 
@@ -147,6 +148,37 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     
     // Optional: Clear messages when closing (uncomment if you want to clear chat history)
     // this.chatbotService.clearMessages();
+  }
+
+  onLoadHistory(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+    }
+    
+    if (this.isLoadingHistory) {
+      return;
+    }
+
+    this.isLoadingHistory = true;
+    this.errorMessage = '';
+
+    this.chatbotService.loadHistory().subscribe({
+      next: (response) => {
+        if (response.status === 'success' && response.history.length > 0) {
+          // Prepend the history messages to the current chat
+          this.chatbotService.prependHistoryMessages(response.history);
+          console.log('Loaded history messages:', response.history);
+        } else {
+          this.errorMessage = 'No previous conversations found.';
+        }
+        this.isLoadingHistory = false;
+      },
+      error: (error) => {
+        console.error('Error loading history:', error);
+        this.errorMessage = 'Failed to load previous conversations. Please try again.';
+        this.isLoadingHistory = false;
+      }
+    });
   }
 
   scrollToBottom(): void {
