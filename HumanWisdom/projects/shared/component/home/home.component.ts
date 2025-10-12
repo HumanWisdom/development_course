@@ -242,6 +242,7 @@ navigationChange = new EventEmitter<string>();
    * Transform API response to ContentSection format
    * Combines Modules1/2/3 under a single parent "Modules" accordion whose children are inline module panels.
    * Filters out sections with empty cards arrays.
+   * Sorts sections by ID in ascending order (1, 2, 3, etc.)
    */
   transformApiResponseToContentSections(apiResponse: HomeContentResponse): ContentSection[] {
     const sections: ContentSection[] = [];
@@ -300,7 +301,15 @@ navigationChange = new EventEmitter<string>();
       }
     });
 
-    console.log('Filtered sections (only those with cards):', sections.map(s => ({ title: s.title, cardCount: s.cards?.length || 0 })));
+    // Sort sections by ID in ascending order (1, 2, 3, etc.)
+    sections.sort((a, b) => {
+      const idA = parseInt(a.id) || 0;
+      const idB = parseInt(b.id) || 0;
+      return idA - idB;
+    });
+
+    console.log('Filtered sections (only those with cards):', sections.map(s => ({ title: s.title, id: s.id, cardCount: s.cards?.length || 0 })));
+    console.log('Sections sorted by ID:', sections.map(s => ({ title: s.title, id: s.id })));
     return sections;
   }
 
@@ -810,8 +819,18 @@ navigationChange = new EventEmitter<string>();
 
   /**
    * Restore expanded state for sections after content is loaded
+   * Also ensures sections are sorted by ID
    */
   private restoreExpandedState(): void {
+    // Ensure sections are sorted by ID before restoring state
+    this.contentSections.sort((a, b) => {
+      const idA = parseInt(a.id) || 0;
+      const idB = parseInt(b.id) || 0;
+      return idA - idB;
+    });
+    
+    console.log('Sections restored and sorted by ID:', this.contentSections.map(s => ({ title: s.title, id: s.id })));
+
     this.contentSections.forEach(section => {
       // Restore main section expanded state
       const wasExpanded = this.homeStateService.getSectionExpanded(section.id);
