@@ -106,9 +106,10 @@
                         </h4>
                       </div> -->
 
-                      <audio id="aud1" controls controlsList="nodownload" #audio>
-                        <source [src]="audioLink" type="audio/mpeg">
-                      </audio>
+                      <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio
+                   [ngClass]="[isAdults ? 'invert-controls' : '']">
+                    <source [src]="audioLink" type="audio/mpeg">
+                  </audio>
       
                     </div>
                   </div>
