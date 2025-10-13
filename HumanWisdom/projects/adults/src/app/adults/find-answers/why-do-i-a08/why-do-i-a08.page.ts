@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class WhyDoIA08Page implements OnInit {
 
-  isAdults = false;
+  isAdults = true;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
@@ -18,6 +18,7 @@ export class WhyDoIA08Page implements OnInit {
   constructor(private location: Location, private router:Router) { }
 
   ngOnInit() {
+    this.setAudioControlsBackground();
   }
 
   getclcickevent(event) 
@@ -32,6 +33,18 @@ export class WhyDoIA08Page implements OnInit {
   {
     // this.location.back()
     this.router.navigate(["/adults/find-answers/why-do-i"])
+  }
+
+    setAudioControlsBackground() {
+    const backgroundColor = this.isAdults ? '#FFE8BB' : '#0C2B5F';
+
+    const style = document.createElement('style');
+    style.textContent = `
+      audio::-webkit-media-controls-enclosure {
+        background: ${backgroundColor} !important;
+      }
+    `;
+    document.head.appendChild(style);
   }
 
 }
