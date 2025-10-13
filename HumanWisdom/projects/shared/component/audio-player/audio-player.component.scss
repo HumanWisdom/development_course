@@ -199,3 +199,24 @@ width: 100%;
 // .adults-false::-webkit-media-controls-enclosure {
 //   background: #0C2B5F; /* Change this to your desired color */
 // }
+
+.invert-controls::-webkit-media-controls-play-button,
+.invert-controls::-webkit-media-controls-mute-button,
+.invert-controls::-webkit-media-controls-timeline,
+.invert-controls::-webkit-media-controls-volume-slider,
+.invert-controls::-webkit-media-controls-current-time-display,
+.invert-controls::-webkit-media-controls-time-remaining-display,
+.invert-controls::-webkit-media-controls-seek-back-button,
+.invert-controls::-webkit-media-controls-seek-forward-button,
+.invert-controls::-webkit-media-controls-fullscreen-button,
+.invert-controls::-webkit-media-controls-rewind-button,
+.invert-controls::-webkit-media-controls-return-to-realtime-button {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+.invert-controls::-webkit-media-controls-enclosure {
+  background: transparent !important;
+}
+
+.invert-controls::-webkit-media-controls-enclosure {
+  background: #FFE8BB !important; 
+}

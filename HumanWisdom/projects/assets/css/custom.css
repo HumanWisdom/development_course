@@ -35684,7 +35684,7 @@ color: black !important;
   border-radius: 12px;
   background: #FFE8BB;
   padding: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   margin-bottom: 10px;
 }
 .div_is_02 {

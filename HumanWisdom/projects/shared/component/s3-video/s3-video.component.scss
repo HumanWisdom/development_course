@@ -150,3 +150,8 @@ video::-internal-media-controls-overflow-button {
 .fc_000000 {
   color: #000 !important;
 }
+
+.invert-controls::-webkit-media-controls {
+  filter: invert(1) hue-rotate(180deg);
+}
+
