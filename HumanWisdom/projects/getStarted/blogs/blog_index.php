@@ -1176,7 +1176,7 @@
               <a class="" href="10-ways-to-thrive-as-a-parent.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/723.webp" class="img-responsive img_blogs" alt="Why Do Leaders Fail? Insights from a new poll">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/73.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
