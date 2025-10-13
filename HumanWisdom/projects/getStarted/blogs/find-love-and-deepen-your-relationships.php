@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>Workplace Bullying</title>
+    <title>Find love and deepen your relationships</title>
     <meta property="title" content="12 questions to deepen your relationships">
     <meta property="description" content="12 questions to deepen your relationships">
     <meta property="keyword" content="">
@@ -227,6 +227,14 @@
                       <h4 class="mtb0px blog_desc">
                           Explore the <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/self-interest">Guided program on Self-interest</a> to find out more.
                       </h4>
+                      <iframe 
+                            class="yt-embed"
+                            src="https://www.youtube.com/embed/VLQJKIf0n8k?si=wkzICmixo1xvHNU9"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+                            >
+                      </iframe>
                       <h4 class="mtb0px blog_desc">
                           <p class="fw-bold">8. How much commitment do you bring to a relationship?</p>
                           Relationships can be hard work sometimes, and the temptation when the going gets tough is to
