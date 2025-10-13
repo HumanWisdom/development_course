@@ -65,7 +65,6 @@ export class AdultsAudioMeditationComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // 👇 autoplay logic
     if (this.audioRef && this.audioRef.nativeElement) {
       const audioEl = this.audioRef.nativeElement;
 
