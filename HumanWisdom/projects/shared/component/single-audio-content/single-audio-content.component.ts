@@ -93,7 +93,7 @@ export class SingleAudioContentComponent implements OnInit {
 
 
   setAudioControlsBackground() {
-    const backgroundColor = this.isAdults ? 'rgb(18, 15, 64)' : '#0C2B5F';
+    const backgroundColor = this.isAdults ? '#FFE8BB' : '#0C2B5F';
 
     // Create a new <style> element
     const style = document.createElement('style');

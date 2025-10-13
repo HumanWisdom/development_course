@@ -25,7 +25,7 @@ export class AudioPlayerComponent implements OnInit  {
   }
 
   setAudioControlsBackground() {
-    const backgroundColor = this.isAdults ? '#ED7D6F' : '#0C2B5F';
+    const backgroundColor = this.isAdults ? '#FFE8BB' : '#0C2B5F';
   
     // Create a new <style> element
     const style = document.createElement('style');
