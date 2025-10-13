@@ -162,6 +162,31 @@ export class ChatStore extends ComponentStore<ChatState> {
   });
 
   /**
+   * Prepend history messages to the beginning of the chat
+   */
+  readonly prependHistoryMessages = this.updater((state, historyMessages: Array<{
+    content: string;
+    sender: 'user' | 'bot';
+    timestamp: string;
+  }>) => {
+    // Convert history messages to ChatMessage format
+    const convertedMessages: ChatMessage[] = historyMessages.map(msg => ({
+      id: this.generateMessageId(),
+      content: msg.content,
+      sender: msg.sender,
+      timestamp: new Date(msg.timestamp)
+    }));
+
+    const newState = {
+      ...state,
+      messages: [...convertedMessages, ...state.messages],
+      lastUpdated: new Date()
+    };
+    this.persistToStorage(newState);
+    return newState;
+  });
+
+  /**
    * Remove a specific message by ID
    */
   readonly removeMessage = this.updater((state, messageId: string) => {

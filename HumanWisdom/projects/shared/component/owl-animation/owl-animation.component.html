@@ -8,8 +8,13 @@
     alt="Olly the Owl" 
     class="static-owl-image"
   />
-  <div class="owl-speech-bubble" *ngIf="owlMessage">
-    <div class="speech-bubble-content">
+  <div class="owl-cloud-container" *ngIf="owlMessage">
+    <img 
+      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/cloud.png" 
+      alt="Cloud" 
+      class="cloud-image"
+    />
+    <div class="cloud-text">
       {{ owlMessage }}
     </div>
   </div>
