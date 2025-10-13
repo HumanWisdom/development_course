@@ -38027,3 +38027,7 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
     top: 5px;
     left: 10px;
 }
+.fa-lock-icon {
+    position: relative;
+    top: 40px;
+}

@@ -29,20 +29,20 @@ export class AdultsAudioMeditationComponent implements OnInit, AfterViewInit {
   ) {
     this.audioLink = this.route.snapshot.paramMap.get('audiolink');
 
-    this.audioTitle = this.route.snapshot.paramMap.get('title')
+    this.audioTitle = this.route.snapshot.paramMap.get('type')
     let audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
     if (audioUrl.includes('%')) {
       audioUrl = decodeURIComponent(audioUrl);
     }
     audioUrl = audioUrl.replace('_', ':');
     this.audioLink = audioUrl.replace(/\~/g, '/');
-    this.audioTitle = this.route.snapshot.paramMap.get('title');
+    this.audioTitle = this.route.snapshot.paramMap.get('type');
     if (this.audioTitle) {
-      this.audioTitle = this.audioTitle.replaceAll('-', ' ');
+      this.audioTitle = this.audioTitle.replaceAll(/-/g, ' ');
     }
 
     this.type = this.route.snapshot.paramMap.get('type')
-    this.rowId = this.route.snapshot.paramMap.get('RowId');
+    this.rowId = this.route.snapshot.paramMap.get('title');
     this.rowId = this.rowId ? parseInt(this.rowId) : 0;
     if (this.rowId <= 9) {
       this.rowId = '0' + this.rowId;
