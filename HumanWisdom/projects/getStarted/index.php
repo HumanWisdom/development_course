@@ -1371,7 +1371,7 @@ require_once('./includes/security_config.php');
             <div class="div_work_edu_health color_beige">
               <div class="row">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-335px">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/work.svg"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/work.svg"
                     class="img-responsive img_health" alt="Work" loading="lazy">
                 </div>
               </div>
@@ -1414,7 +1414,7 @@ require_once('./includes/security_config.php');
             <div class="div_work_edu_health color_beige">
               <div class="row">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-335px">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/education.svg"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/education.svg"
                     class="img-responsive img_health" alt="Education" loading="lazy">
                 </div>
               </div>
@@ -1454,7 +1454,7 @@ require_once('./includes/security_config.php');
             <div class="div_work_edu_health color_beige">
               <div class="row">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-335px">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/healthcare.svg"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/healthcare.svg"
                     class="img-responsive img_health" alt="Healthcare" loading="lazy">
                 </div>
               </div>
