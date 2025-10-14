@@ -157,7 +157,7 @@
 
               <div class="row mt20px mb40px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000_i">
                           Life can be tough. The HappierMe app is your personal guide to help you feel better now, but
                           also to take you deeper to understand your thoughts and feelings. It supports you to become the
                           person you want to be, to be happier, manage your emotions and  succeed in the world. There are
