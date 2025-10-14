@@ -196,13 +196,6 @@
 
                       </h4>
                       <h4 class="mtb0px blog_desc">
-                          The more expectations we have of ourselves or others, the more likely we are to feel hurt. We
-                          feel all our expectations of others are reasonable and justified but may not feel the same of
-                          the expectations others have of us.
-
-
-                      </h4>
-                      <h4 class="mtb0px blog_desc">
                           But, is love something more than that? Is it instead putting the needs of others above our own,
                           wanting the very best for the other person, and doing what we can to make them happy?
                       </h4>
@@ -275,7 +268,7 @@
                       </h4>
                       <h4 class="mtb0px blog_desc">
                           Explore the <a class="blog_highlight_peach td_underline"
-                              href="https://happierme.app/adults/curated/have-fulfilling-relationships">Guided program on
+                              href="https://happierme.app/adults/relationships">Guided program on
                               Relationships</a> to explore this further.
                       </h4>
                       <h4 class="mtb0px blog_desc">
@@ -292,7 +285,7 @@
                           of maturity and strength, not one of weakness.
                       </h4>
                       <h4 class="mtb0px blog_desc">
-                          Listen to this podcast on &lt;<a class="blog_highlight_peach td_underline"
+                          Listen to this podcast on <a class="blog_highlight_peach td_underline"
                               href="https://happierme.app/adults/audiopage/~podcasts~167.mp3/167/T/Saying%20sorry">The
                               importance of saying Sorry.</a>
                       </h4>
@@ -337,133 +330,6 @@
                           To find out more, visit the HappierMe website <a class="blog_highlight_peach td_underline"
                               href="https://happierme.app">https://happierme.app
                           </a></h4>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      <!-- <h4 class="mtb0px blog_title">
-                  Find out how HappierMe can help: <a class="blog_highlight_peach td_underline" href="https://happierme.app/"> https://happierme.app   </a>
-                  </h4> -->
-
-
-                      <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <hr class="hr_style_web_02">
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
-                                  Understand your mind. Live a happier life.
-                              </h1>
-                          </div>
-                      </div>
-
-                      <div class="row mt20px mb40px">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                                  Life can be tough. The HappierMe app is your personal guide to help you feel better now,
-                                  but also to take you deeper to understand your thoughts and feelings. It supports you to
-                                  become the person you want to be, to be happier, manage your emotions and&nbsp; succeed
-                                  in the world. There are also coaches you can speak to through the app.
-                              </h5>
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-                              <a href="../pages/splash_options.php"
-                                  class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
-                                  Try HappierMe for free
-                              </a>
-                          </div>
-                      </div>
-
                   </div>
               </div>
 

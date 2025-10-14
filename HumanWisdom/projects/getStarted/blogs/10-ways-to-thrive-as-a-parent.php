@@ -71,7 +71,7 @@
 
               <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/72.webp" class="img-responsive"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/73.webp" class="img-responsive"
                           alt="Real success">
                   </div>
               </div>
@@ -96,7 +96,7 @@
                         <h4 class="mtb0px blog_desc"><p class="fw-bold">#1 Create a Safe Space</p></h4>
                         <h4 class="mtb0px blog_desc ">Children thrive when they feel safe, not just physically, but emotionally.</h4>
                         <h4 class="mtb0px blog_desc">When a child knows, they can come to you without fear of judgement or punishment, they’re more likely to open up, even when they’re struggling. That emotional safety is the foundation of trust.</h4>
-                        <h4 class="mtb0px blog_desc">HappierMe has reflection prompts and <<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling tools</a> that can help parents explore how to offer more presence and empathy in difficult moments.</h4>
+                        <h4 class="mtb0px blog_desc">HappierMe has reflection prompts and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling tools</a> that can help parents explore how to offer more presence and empathy in difficult moments.</h4>
                         
                         <h4 class="mtb0px blog_desc"><p class="fw-bold">#2 Practice Forgiveness</p></h4>
 
@@ -112,7 +112,7 @@
 
                         <h4 class="mtb0px blog_desc">We often think time with our children means doing more. But what they truly need is our presence. Time, more than gifts and activities, is the most valuable gift we can give them.</h4>
                         <h4 class="mtb0px blog_desc">Put away the phone. Sit beside them. Watch their favourite show, even if you don’t love it. These small moments become the foundation of connection. Listen to this <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~122.mp3/122/T/Communicating%20effectively%20with%20kids"> podcast on Communicating effectively with kids</a> </h4>
-                        <h4 class="mtb0px blog_desc"><p class="fw-bold">#5 Set Clear Boundaries with Love</p></h4><
+                        <h4 class="mtb0px blog_desc"><p class="fw-bold">#5 Set Clear Boundaries with Love</p></h4>
                         <h4 class="mtb0px blog_desc">Boundaries are not about punishment, they’re about protection and guidance. Children actually feel safer when they know what’s expected of them.</h4>
                         <h4 class="mtb0px blog_desc">Set rules with clarity and consistency, but also with empathy. Let them know you’re on their side, even when you’re saying “no.” Listen to this <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~142.mp3/142/T/How%20to%20discipline%20children%20with%20care">podcast on Disciplining children with care</a>.</h4>
                         <h4 class="mtb0px blog_desc"><p class="fw-bold">#6 Celebrate Imperfection</p></h4>
@@ -139,43 +139,7 @@
                                                 
                                                     
                     </div>
-              </div> 
-
-                      <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <hr class="hr_style_web_02">
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
-                                  Understand your mind. Live a happier life.
-                              </h1>
-                          </div>
-                      </div>
-
-                      <div class="row mt20px mb40px">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                                  Life can be tough. The HappierMe app is your personal guide to help you feel better now,
-                                  but also to take you deeper to understand your thoughts and feelings. It supports you to
-                                  become the person you want to be, to be happier, manage your emotions and&nbsp; succeed
-                                  in the world. There are also coaches you can speak to through the app.
-                              </h5>
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
-                              <a href="../pages/splash_options.php"
-                                  class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
-                                  Try HappierMe for free
-                              </a>
-                          </div>
-                      </div>
-
-                 
+              </div>                
 
               <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">

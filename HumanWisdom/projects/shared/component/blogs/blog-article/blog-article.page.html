@@ -8,7 +8,7 @@
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Blog
       </h1>
     </div>
@@ -113,7 +113,7 @@
 
               <div class="row mtb40px mb15px ">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                  <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     {{'Comments' + '(' + BlogCommentsLen + ')'}}
                   </h4>
                 </div>
@@ -130,7 +130,7 @@
                         alt="" class="img-responsive img_comment">
                       </div>
                       <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                        <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{item['UpdatedBy']}}
                         </h4>
                       </div>
@@ -138,14 +138,14 @@
 
 
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 mtb10px">
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         {{item['Comments']}}
                       </h4>
                     </div>
 
 
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 tright">
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_5">
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                         {{timeSince(item['UpdatedOn'])}}
                       </h4>
                     </div>
@@ -220,7 +220,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <button type="submit" class="btn btn_ls_post_comment" (click)="postcomment()">
+                  <button type="button" class="btn btn_ls_post_comment" (click)="postcomment()">
                     Post comment
                   </button>
                 </div>
