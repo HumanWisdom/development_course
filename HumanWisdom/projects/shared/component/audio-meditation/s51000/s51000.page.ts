@@ -43,7 +43,9 @@ export class S51000Page implements OnInit, OnDestroy {
 
   searchedText='';
   isSubscriber = false;
-
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   constructor(
     private router: Router,
     private service: CommonService,
@@ -209,7 +211,8 @@ audioevent(data: any) {
     });
     const sub = localStorage.getItem('Subscriber');
     if (sub === '0' && data.RowID >= 2) {
-      this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
+      // this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
+      this.showModal = true;
       return;
     }
     let url   = encodeURIComponent(data.Text_URL.replaceAll(':', '_').replaceAll('/', '~'));
@@ -275,4 +278,12 @@ audioevent(data: any) {
     let Id = id <= 9 ? '0' + id : id;
     return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/audio_meditation/${Id}.webp`
   }
+
+    onModalClose(event: string) {
+      this.showModal = false;
+      if (event === 'ok') {
+        // Navigate to free trial when user clicks "Start your free trial"
+        this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+      }
+    }
 }

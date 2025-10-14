@@ -182,5 +182,14 @@
   <!--/Class -->
 </div>
 <!-- /page content -->
-
+<app-modal 
+  *ngIf="showModal" 
+  [title]="modalTitle" 
+  [content]="modalContent" 
+  [okText]="'Start your free trial'"
+  [cancelText]="'Cancel'"
+  [enableCancel]="true"
+  [isFreeTrialEnable]="true"
+  (closeEvent)="onModalClose($event)">
+</app-modal>
 <app-index-footer></app-index-footer>
