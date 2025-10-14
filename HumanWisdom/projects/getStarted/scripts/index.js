@@ -19,6 +19,12 @@ function gtag() {
     gtag("event", e, { screen_name: t });
 }
 
+
+setTimeout(() => {
+    console.log("Removing preloader...");
+    document.getElementById("preloader").remove();
+}, 500);
+
 // Function to remove active_nav class from all navigation elements
 function removeActiveNavClass(tab) {
  
