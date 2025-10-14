@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit  } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
@@ -7,13 +7,14 @@ import { Meta, Title } from '@angular/platform-browser';
 import { CommonService } from '../../../services/common.service';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
+declare var bootstrap: any;
 
 @Component({
   selector: 'HumanWisdom-events-index',
   templateUrl: './events-index.page.html',
   styleUrls: ['./events-index.page.scss'],
 })
-export class EventsIndexPage implements OnInit {
+export class EventsIndexPage implements OnInit, AfterViewInit  {
   path: string;
   address: string;
   futureeventList: any = [];
@@ -22,6 +23,9 @@ export class EventsIndexPage implements OnInit {
   backupList:any=[];
   isSubscriber = false;
   isAdults =  true;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   constructor(private location: Location, private router: Router,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -79,6 +83,16 @@ export class EventsIndexPage implements OnInit {
     }
   }
 
+    ngAfterViewInit() {
+    // initialize Bootstrap collapse after view is rendered
+    const collapseElements = document.querySelectorAll('.accordion-collapse');
+    collapseElements.forEach((el: any) => {
+      new bootstrap.Collapse(el, {
+        toggle: false, // prevents it from auto-opening
+      });
+    });
+  }
+
   getStyle(url){
     return "background-image: url("+url+")";
   }
@@ -96,7 +110,8 @@ export class EventsIndexPage implements OnInit {
     const prog = SharedService.getprogramName();
 
     if (RowID >= 2 && sub === '0') {
-      this.router.navigate([`${prog}/subscription/start-your-free-trial`]);
+      // this.router.navigate([`${prog}/subscription/start-your-free-trial`]);
+      this.showModal = true;
     } else if (RowID <= 1) {
       this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`]);
     } else {
@@ -121,5 +136,13 @@ export class EventsIndexPage implements OnInit {
         console.log(error);
       });
   }
+
+  onModalClose(event: string) {
+this.showModal = false;
+if (event === 'ok') {
+  // Navigate to free trial when user clicks "Start your free trial"
+  this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
+  }
 
 }

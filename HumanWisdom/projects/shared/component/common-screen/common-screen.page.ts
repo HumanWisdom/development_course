@@ -29,7 +29,9 @@ export class CommonScreenPage implements OnInit {
   searchedText:any='';
   isAdults = true;
   prefData:any;
-
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   selectedPref = 'All'
   constructor(
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -53,7 +55,8 @@ export class CommonScreenPage implements OnInit {
     error: e => console.error('click log failed', e)
   });
     if(!this.isSubscriber && data['SoundscapeID'] > 1) {
-         this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
+        //  this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
+        this.showModal = true;
          return ;
     }
 
@@ -174,6 +177,14 @@ export class CommonScreenPage implements OnInit {
         this.filteredData= this.allData.filter((d) => d['PreferenceIDs'].includes(type.id));
       }
     }
+
+    onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      // Navigate to free trial when user clicks "Start your free trial"
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+        }
+      }
   }
 
  /*  getVoicesData() {

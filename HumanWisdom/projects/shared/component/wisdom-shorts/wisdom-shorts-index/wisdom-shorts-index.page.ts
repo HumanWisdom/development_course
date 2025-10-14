@@ -27,7 +27,9 @@ export class WisdomShortsIndexPage implements OnInit {
   searchedText:any='';
   isAdults = true;
   prefData:any;
-
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   selectedPref = 'All'
   constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
     private location: Location, private service: CommonService, private meta: Meta, private title: Title) {
@@ -184,7 +186,8 @@ export class WisdomShortsIndexPage implements OnInit {
         if (loggedin === 'T' && sub === '1') {
           this.router.navigate([route, 'T', title], extras);
         } else {
-          this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
+          // this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
+          this.showModal = true;
         }
       }
     });
@@ -250,6 +253,12 @@ export class WisdomShortsIndexPage implements OnInit {
     document.getElementById("VoiceBtn").style.backgroundColor = '#E58D82';
 
   } */
-
+onModalClose(event: string) {
+this.showModal = false;
+if (event === 'ok') {
+  // Navigate to free trial when user clicks "Start your free trial"
+  this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
+  }
 
 }
