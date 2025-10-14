@@ -361,7 +361,7 @@
               <div class="row">
                   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p0">
                       <a href="https://happierme.app/adults/intro/intro-carousel"
-                          class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex">
+                          class="btn btn_tff fs_15px fw_600 lh_140p fc_ffffff center_flex btn_popup">
                           Try HappierMe for free
                       </a>
                   </div>
