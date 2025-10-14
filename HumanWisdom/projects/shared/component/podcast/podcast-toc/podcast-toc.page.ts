@@ -31,6 +31,9 @@ export class PodcastTocPage implements OnInit {
   prefData = [];
   selectedPref = 'All'
   isAdults = true;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private router: Router, public platform: Platform,
     private activatedRoute: ActivatedRoute,
@@ -146,7 +149,8 @@ audioevent(data: any) {
 
   const sub = localStorage.getItem('Subscriber');
   if (sub === '0' && data.PodcastID >= 2) {
-    this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    // this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    this.showModal = true;
     return;
   }
 
@@ -234,4 +238,11 @@ getUserPref(type) {
         console.log(error);
       });
   }
+    onModalClose(event: string) {
+  this.showModal = false;
+  if (event === 'ok') {
+    // Navigate to free trial when user clicks "Start your free trial"
+    this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+      }
+    }
 }
