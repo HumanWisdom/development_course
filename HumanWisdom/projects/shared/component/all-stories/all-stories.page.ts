@@ -22,6 +22,9 @@ export class AllStoriesPage implements OnInit {
   view_more_less="View More"
   isSubscriber = false;
   isAdults = true;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   constructor(private router: Router,
     private service:OnboardingService,
     private location:Location,
@@ -111,8 +114,9 @@ export class AllStoriesPage implements OnInit {
       }
     }else{
       if(!this.isSubscriber) {
-        this.router.navigateByUrl(SharedService.getprogramName()+'/subscription/start-your-free-trial')
+        // this.router.navigateByUrl(SharedService.getprogramName()+'/subscription/start-your-free-trial')
         // this.router.navigate(['/subscription/start-your-free-trial']);
+        this.showModal = true;
       }
     }
   }
@@ -170,5 +174,13 @@ export class AllStoriesPage implements OnInit {
       this.router.navigate(['/teenagers/wisdom-stories/view-stories'],{ queryParams: {sId: `${this.sId}`}})
     }
   }
+
+  onModalClose(event: string) {
+  this.showModal = false;
+  if (event === 'ok') {
+    // Navigate to free trial when user clicks "Start your free trial"
+    this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
+  }
 
 }
