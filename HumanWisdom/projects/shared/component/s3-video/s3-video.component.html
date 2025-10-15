@@ -1,7 +1,7 @@
 <!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"
-    [ngClass]="isAdults ? !isSwipeAllow ? 'bg_FFF7E6' : 'bg_black'  : !isSwipeAllow ?  'bg_183c79' : 'bg_black'">
+    [ngClass]="isAdults ? 'bg_white' : 'bg_black'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a (click)="goBack()">
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
@@ -18,15 +18,15 @@
   </div>
 </div>
 <!-- /top navigation -->
-<div class="right_col mc_02" #swipeContainer *ngIf="isSwipeAllow">
+<div class="right_col mc_02" (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()"  *ngIf="isSwipeAllow">
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_03_v3 col_cw"
-        [ngClass]="'bg_black'">
+        [ngClass]="isAdults ? 'bg_white' : 'bg_black'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-              <div class="video-slider-container">
+              <div class="video-slider-container" >
                 <div
                   class="video-wrapper"
                   *ngFor="let video of wisdomShortOrderList; let i = index"
@@ -35,13 +35,18 @@
                 >
                 <video #videoPlayer class="video-width" *ngIf="currentIndex === i"  width="400px" height="450px" autoplay controls
                 controlsList="nodownload nofullscreen"
-                  disablePictureInPicture playsinline>
+                  disablePictureInPicture playsinline
+                  [ngClass]="['cvideo_01', isAdults ? 'invert-controls' : '']" 
+                  controlsList="nodownload">
                   <source [src]="video.url" type="video/mp4" />
                 </video>
-                <div  *ngIf="currentIndex === i" class="swipe-up-alt">
+                <div *ngIf="currentIndex === i" 
+                    class="swipe-up-alt" 
+                    [ngClass]="isAdults ? 'black-theme' : ''">
                   <div class="chevron"></div>
                   <span class="text">Swipe Up</span>
-               </div>
+                </div>
+
                
                 </div>
               </div>
@@ -116,5 +121,4 @@
     </div>
   </div>
 </div>
-
 <!-- /page content -->
