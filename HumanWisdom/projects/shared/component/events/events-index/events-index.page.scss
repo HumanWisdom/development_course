@@ -7,3 +7,78 @@
 .session_img_play{
   right: 18px !important;
 }
+/* Bootstrap 5 accordion overrides to preserve legacy panel UI on Events page */
+#accordion_event.accordion {
+  border: none;
+}
+#accordion_event .accordion-item {
+  border: none;
+  background: transparent;
+}
+#accordion_event .accordion-header {
+  padding: 0;
+  margin: 0;
+}
+#accordion_event .accordion-button {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+#accordion_event .accordion-button:focus {
+  box-shadow: none;
+}
+#accordion_event .accordion-button::after {
+  display: none;
+}
+#accordion_event .accordion-collapse {
+  border: none;
+}
+#accordion_event .accordion-body {
+  padding: 0;
+}
+
+/* Preserve original panel classes spacing if used elsewhere */
+#accordion_event .panel-heading { margin: 0; }
+#accordion_event .panel-body { padding: 0; }
+
+/* Custom chevron preceding title */
+#accordion_event .accordion-button {
+  position: relative;
+  padding-left: 24px;
+}
+#accordion_event .accordion-button .accordion-chevron {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="%23000" d="M1.5 5l6 6 6-6"/></svg>') no-repeat center / contain;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="%23000" d="M1.5 5l6 6 6-6"/></svg>') no-repeat center / contain;
+  background-color: currentColor;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate when collapsed/expanded based on aria-expanded */
+#accordion_event .accordion-button[aria-expanded="true"] .accordion-chevron {
+  transform: rotate(180deg);
+}
+#accordion_event .accordion-button {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  color: #000 !important; 
+}
+.accordion-button {
+  padding: 0 !important;
+}
+#accordion_event .accordion-button .fa {
+  font-size: 18px;
+  color: #000;
+  transition: transform 0.2s ease;
+}

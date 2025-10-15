@@ -1,39 +1,18 @@
-.swipe {
-  background-color: #76b490;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 3px;
-  height: 500px;
-  text-align: center;
-  overflow: auto;
-  color: rgb(78, 22, 131);
-  user-select: none;
-}
-
+/* General resets */
 h1,
 p {
   color: rgb(116, 49, 11);
 }
 
-.video-container {
-  margin-top: 20px;
-}
-
-.video-title {
-  color: rgb(78, 22, 131);
-}
-
-/* Loader styling */
+/* Loader */
 .loader {
-  border: 4px solid #f3f3f3; /* Light grey */
-  border-top: 4px solid #3498db; /* Blue */
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
 }
-
-/* Animation keyframes */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -42,7 +21,40 @@ p {
     transform: rotate(360deg);
   }
 }
-/* Container */
+
+/* Background colors */
+.bg_black {
+  background-color: #000 !important;
+}
+.bg_white {
+  background-color: #fff !important;
+}
+.bg_183c79 {
+  background-color: #183c79 !important;
+}
+
+/* Video container */
+.video-slider-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.video-width {
+  width: -webkit-fill-available !important;
+}
+.video-wrapper {
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  opacity: 0;
+}
+.video {
+  width: 32rem;
+  margin-left: 7.5rem;
+}
+
+/* Swipe Up animation */
 .swipe-up-alt {
   position: relative;
   width: 64px;
@@ -56,102 +68,78 @@ p {
 .chevron {
   width: 20px;
   height: 20px;
-  border-left: 3px solid white;
-  border-bottom: 3px solid white;
   transform: rotate(134deg);
   opacity: 1;
   animation: fadeInOut 1.5s infinite;
-  margin-left:20px
-}
-
-.chevron:nth-child(1) {
-  animation-delay: 0s;
-}
-.chevron:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.chevron:nth-child(3) {
-  animation-delay: 0.6s;
+  margin-left: 20px;
 }
 
 .text {
-  color: white;
   font-size: 14px;
   margin-top: 8px;
   opacity: 0.5;
   animation: fadeInOut 1.5s infinite;
 }
 
-/* Animation */
-@keyframes swipe-up-alt {
-  0% {
-      opacity: 1;
-      // transform: translateY(10px) rotate(45deg);
-  }
-  50% {
-      opacity: 1;
-      // transform: translateY(0) rotate(45deg);
-  }
-  100% {
-      opacity: 1;
-      // transform: translateY(-10px) rotate(45deg);
-  }
+/* Adult (black on white) */
+.black-theme .text {
+  color: #000 !important;
+  opacity: 0.8;
+}
+.black-theme .chevron {
+  border-left: 3px solid #000 !important;
+  border-bottom: 3px solid #000 !important;
 }
 
+/* Teen (white on dark) */
+.white-theme .text {
+  color: #fff !important;
+}
+.white-theme .chevron {
+  border-left: 3px solid #fff !important;
+  border-bottom: 3px solid #fff !important;
+}
+
+/* Animations */
 @keyframes fadeInOut {
-  0%, 100% {
-      opacity: 0.5;
+  0%,
+  100% {
+    opacity: 0.5;
   }
   50% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
+/* Video controls */
 video::-webkit-media-controls-volume-slider {
-  display: none !important; /* Hide the volume slider in WebKit browsers */
+  display: none !important;
 }
-
 video::-webkit-media-controls-mute-button {
-  display: none !important; /* Hide the mute button in WebKit browsers */
+  display: none !important;
 }
 video::-internal-media-controls-overflow-button {
   display: none !important;
 }
 
-.bg_black {
-  background: black !important;
-}
-.video-slider-container {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.video-width {
-  width: -webkit-fill-available !important;
-}
-
-.video-wrapper {
-  //position: absolute;
-  // width: 100%;
-  // height: 100%;
-  // display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s ease-in-out;
-  opacity: 0;
-}
-.video{
-  width: 32rem;
-  margin-left: 7.5rem;
-}
+/* Title */
 .fc_000000 {
   color: #000 !important;
 }
 
+/* Inverted controls for dark mode */
 .invert-controls::-webkit-media-controls {
   filter: invert(1) hue-rotate(180deg);
+  transition: filter 0.3s ease;
+}
+video.cvideo_01.invert-controls {
+  background-color: #fff;
 }
 
+.black-theme .chevron {
+  border-left: 3px solid #000 !important;
+  border-bottom: 3px solid #000 !important;
+  transform: rotate(134deg);
+  animation: fadeInOut 1.5s infinite;
+  opacity: 1;
+}

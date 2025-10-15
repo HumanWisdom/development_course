@@ -159,38 +159,7 @@ initializeData() {
         this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
       }
     } else {
-      console.log('No wisdom short data found in localStorage, creating sample data');
-      // Create sample data if no data exists
-      const sampleData = [
-        {
-          Title: "Sample Video 1",
-          VideoUrl: "sample/video1.mp4"
-        },
-        {
-          Title: "Sample Video 2",
-          VideoUrl: "sample/video2.mp4"
-        },
-        {
-          Title: "Sample Video 3",
-          VideoUrl: "sample/video3.mp4"
-        }
-      ];
-      localStorage.setItem('wisdomShortData', JSON.stringify(sampleData));
-      
-      // Process the sample data
-      this.wisdomShortOrderList = sampleData.map((element, index) => {
-        const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/sample${index+1}.mp4`;
-        let videoLink = this.getSafeUrl(code);
-        return {
-          url: videoLink,
-          order: index,
-          title: element.Title
-        }
-      });
-      
-      this.currentIndex = 0;
-      this.videoTitle = this.wisdomShortOrderList[0].title;
-      console.log('Created sample wisdom short data with', this.wisdomShortOrderList.length, 'items');
+      console.log('No wisdom short data found in localStorage');
     }
   } else {
     this.isSwipeAllow = false; // hide swipe feature for non-subscribers
@@ -362,10 +331,9 @@ initializeData() {
 
   onSwipeDown() {
     if (this.isSwipeAllow && this.wisdomShortOrderList.length > 0) {
-      console.log('Executing swipe down action');
       if(this.currentIndex == this.wisdomShortOrderList.length-1){
         this.currentIndex = 0;
-      } else {
+      }else{
         if (this.currentIndex > 0) {
           this.direction = 'down';
           this.currentIndex--;

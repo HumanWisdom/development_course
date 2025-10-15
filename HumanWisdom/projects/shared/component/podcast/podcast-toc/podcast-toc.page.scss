@@ -62,3 +62,9 @@
   .ae_days:hover {
       overflow: auto;
   }
+.odiv::-webkit-scrollbar-thumb,
+.odiv_pathway::-webkit-scrollbar-thumb,
+.odiv_wfgi::-webkit-scrollbar-thumb,
+.ae_days::-webkit-scrollbar-thumb {
+    background-color: #EEA170; /* your color */
+}

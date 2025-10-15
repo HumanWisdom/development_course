@@ -53,67 +53,69 @@
                 </div>
               </div>
 
-<!-- accordion -->
-<div class="row center_flex" *ngIf="futureeventList.length !== 0">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group" id="accordion_event">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title mtb0px fs_18px fw_600 lh_24px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                            href="#collapse_01" aria-expanded="true">
-            Upcoming Free Events
-                          </a>
-        </h4>
-                      </div>
-                      <div id="collapse_01" class="panel-collapse collapse in">
-                        <div class="panel-body">
+              <!-- accordion -->
+              <div class="row center_flex" *ngIf="futureeventList.length !== 0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="accordion panel-group" id="accordion_event">
+                    <div class="accordion-item panel panel-default">
+                      <h2 class="accordion-header panel-heading" id="heading_01">
+<button class="accordion-button mtb0px fs_18px fw_600 lh_24px d-flex justify-content-between align-items-center"
+        type="button"
+        (click)="toggleEventsAccordion()"
+        [attr.aria-expanded]="isEventsOpen"
+        [class.collapsed]="!isEventsOpen"
+        aria-controls="collapse_01">
+  Upcoming Free Events
+  <i class="fa" [ngClass]="{'fa-angle-right': !isEventsOpen, 'fa-angle-down': isEventsOpen}"></i>
+</button>
 
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="toc_adiv_01">
-                  <!-- video row -->
-                  <a (click)="routeFutureEvents(item)" *ngFor="let item of futureeventList">
-                    <div class="row mb0pxi">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
-                          <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                      </h2>
+                      <div id="collapse_01" class="accordion-collapse panel-collapse" [ngClass]="{'collapse': true, 'show': isEventsOpen}" aria-labelledby="heading_01">
+                        <div class="accordion-body panel-body">
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="toc_adiv_01">
+                                <!-- video row -->
+                                <a (click)="routeFutureEvents(item)" *ngFor="let item of futureeventList">
+                                  <div class="row mb0pxi">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
                                           <img src="{{item.ImgUrl}}" alt="" class="p0 session_img">
                                           <!-- <img
                                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
                                             alt="" class="p0 session_img_play"> -->
-                          </div>
+                                        </div>
 
-                          <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                                        <div class="col-md-7 col-sm-7 col-xs-7 p0 pl20pxi">
                                           <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis" [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
                                             {{item.Title}}
-                            </h4>
+                                          </h4>
                                           <h4 class="mtb0px fs_12px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
                                             {{item.Event_Date}}
-                            </h4>
+                                          </h4>
+                                        </div>
+
+
+                                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                                        <i class="fa fa-angle-right fs_20px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'"></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                                <!-- /video row -->
+                              </div>
+
+                            </div>
                           </div>
 
-                        </div>
-
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                                        <i class="fa fa-angle-right fs_20px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'"></i>
                         </div>
                       </div>
                     </div>
-                  </a>
-                  <!-- /video row -->
+                  </div>
                 </div>
-
               </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /accordion -->
+              <!-- /accordion -->
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -188,16 +190,7 @@
   <!--/class -->
 </div>
 <!-- /page content -->
-<app-modal 
-  *ngIf="showModal" 
-  [title]="modalTitle" 
-  [content]="modalContent" 
-  [okText]="'Start your free trial'"
-  [cancelText]="'Cancel'"
-  [enableCancel]="true"
-  [isFreeTrialEnable]="true"
-  (closeEvent)="onModalClose($event)">
-</app-modal>
+
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
