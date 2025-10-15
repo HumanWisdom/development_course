@@ -23,6 +23,7 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
   backupList:any=[];
   isSubscriber = false;
   isAdults =  true;
+  isEventsOpen = true;
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
@@ -144,5 +145,9 @@ if (event === 'ok') {
   this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
     }
   }
+
+  toggleEventsAccordion() {
+    this.isEventsOpen = !this.isEventsOpen;
+  }
 
 }
