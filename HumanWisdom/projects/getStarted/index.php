@@ -147,7 +147,9 @@ require_once('./includes/security_config.php');
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc fs27px">
                 <!-- Understand your mind. Transform your life. -->
-                 Understand your mind. Gain clarity. Be happier.
+                 Understand your mind.
+              </h1>
+              <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc fs27px"> Gain clarity. Be happier.
               </h1>
             </div>
           </div>

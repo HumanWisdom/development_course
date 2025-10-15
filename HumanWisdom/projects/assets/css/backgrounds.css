@@ -266,8 +266,8 @@
   /* background-color: none !important; */
   /* background: #000000 !important; */
   /* background: #f9e9df !important */
-      background: #803358 !important;
-
+      /* background: #803358 !important; */
+    background: #535353 !important;
 }
 .bg_ffffff{
   background: #FFFFFF;
