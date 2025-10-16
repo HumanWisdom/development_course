@@ -212,7 +212,7 @@
                       </div>
                     </div>
 
-                    <div class="row mb15px">
+                    <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           All journal entries are encrypted and can only be seen by you, unless shared by you.
@@ -369,7 +369,7 @@
                     <div class="row bg_transparent p0 filter_unseti fa_vm" id="vm" (click)="viewMoreAndLess(false)"
                       *ngIf="isViewMore">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb30px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                        <h4 class="mtb30px fw_500 fs_12px lh_140p tcenter underline" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
                             class="img-responsive mb10px">
                           View More
@@ -380,7 +380,7 @@
                     <div class="row bg_transparent p0 filter_unseti fa_vm" (click)="viewMoreAndLess(true)" id="vl_gq"
                       *ngIf="!isViewMore">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb30px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                        <h4 class="mtb30px fw_500 fs_12px lh_140p tcenter underline" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
                             class="img-responsive mb10px">
                           View Less
