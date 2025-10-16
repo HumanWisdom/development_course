@@ -29224,7 +29224,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   border: 0;
   height: 40px;
   width: 156px;
-  background: #FFF;
+  background: #FFF !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   padding: 0;
@@ -38075,4 +38075,10 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
   font-size: 18px;
   color: #ffffff;
   transition: transform 0.2s ease;
+}
+.fc_ED7D6F{
+  color: #e58d82;
+}
+.fc_000000_0_5{
+  color: #ffffff80;
 }
