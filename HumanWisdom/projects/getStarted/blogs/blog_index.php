@@ -64,9 +64,9 @@
             Insightful articles with practical tips to be happier
           </h2>
 
-          <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
             Find articles on meditation, mental health, relationships, and how to succeed at work
-          </h5>
+          </h4>
         </div>
       </div>
     </div>
