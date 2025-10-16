@@ -143,3 +143,11 @@ video.cvideo_01.invert-controls {
   animation: fadeInOut 1.5s infinite;
   opacity: 1;
 }
+
+.white-theme .chevron {
+  border-left: 3px solid #fff !important;
+  border-bottom: 3px solid #fff !important;
+  transform: rotate(134deg);
+  animation: fadeInOut 1.5s infinite;
+  opacity: 1;
+}

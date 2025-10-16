@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonService } from '../../../services/common.service';
+import { SharedService } from '../../../services/shared.service';
+import { ProgramType } from '../../../models/program-model';
 
 @Component({
   selector: 'app-e01',
@@ -21,7 +23,7 @@ export class E01Page implements OnInit {
   enableAlert = false;
   isdcode: any = '';
   phoneno: any = '';
-
+  isAdults = true;
   constructor(private service: CommonService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.eventID = params?.eid
@@ -30,6 +32,11 @@ export class E01Page implements OnInit {
   }
 
   ngOnInit() {
+        if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+        } else {
+         this.isAdults = false;
+        }
   }
 
   getEventID() {
