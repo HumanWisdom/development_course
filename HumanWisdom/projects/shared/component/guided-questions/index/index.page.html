@@ -181,14 +181,19 @@
                     <div class="div_qod">
                       <div class="row tcenter">
                         <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg"
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/question.svg" *ngIf="isAdults"
                             alt="" class="img-responsive" />
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg" *ngIf="!isAdults"
+                            alt="" class="img-responsive" />
+                        
+
+                            
                         </div>
                       </div>
 
                       <div class="row mt20px mb15px">
                         <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">Question of the day</h4>
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">Question of the day</h4>
                         </div>
                       </div>
 
