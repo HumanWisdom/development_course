@@ -15811,6 +15811,9 @@ input[type="search"].dark::-webkit-search-cancel-button {
   text-align: right;
   color: #ffffff;
   border: 0;
+  padding: 5px;
+  width: 130px;
+  text-align: center;
 }
 
 .absolute_ptitle .panel-title
