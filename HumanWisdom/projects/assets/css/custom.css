@@ -38391,3 +38391,17 @@ a:hover .div_like_cnt1 span {
     content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/subscription_user_01.svg);
 
 }
+
+#accordion_event .accordion-button {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  color: #000 !important; 
+}
+#accordion_event .accordion-button .fa {
+  font-size: 18px;
+  color: #000;
+  transition: transform 0.2s ease;
+}

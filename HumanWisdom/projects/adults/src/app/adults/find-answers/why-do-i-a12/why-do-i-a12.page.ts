@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { SharedService } from '../../../../../../shared/services/shared.service';
 @Component({
   selector: 'app-why-do-i-a12',
   templateUrl: './why-do-i-a12.page.html',
@@ -10,7 +11,9 @@ export class WhyDoIA12Page implements OnInit {
 
   isAdults = false;
   isSubscriber = false;
-
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
   constructor(private location: Location, private router:Router) { }
@@ -51,4 +54,13 @@ export class WhyDoIA12Page implements OnInit {
       this.router.navigate(['/subscription/start-your-free-trial']);
   }
   }
+
+  onModalClose(event: string) {
+  this.showModal = false;
+  if (event === 'ok') {
+    // Navigate to free trial when user clicks "Start your free trial"
+    this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+      }
+    }
+
 }
