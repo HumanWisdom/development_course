@@ -45,6 +45,7 @@ export class CourseHeaderComponent implements OnInit {
   enableAlert = false;
   content = '';
   enablecancel = false;
+  isAdults = false;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -57,6 +58,12 @@ export class CourseHeaderComponent implements OnInit {
     if (this.router.getCurrentNavigation()) {
       this.urlT = this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t : ''
     }
+     if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
+
     this.programName = this.getProgramTypeName(SharedService.ProgramId)?.toLowerCase();
     if (this.programName == 'teenagers') {
       this.programName = '';

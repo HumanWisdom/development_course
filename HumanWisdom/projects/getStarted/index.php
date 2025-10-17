@@ -783,7 +783,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="100">
 
 
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Design.webp"
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Design.svg"
               class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 

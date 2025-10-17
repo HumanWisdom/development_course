@@ -11,7 +11,9 @@
       <div class="p0">
         <a class="tcenter"  (click)="goToToc()">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive" alt="HumanWisdom"> -->
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="HumanWisdom">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" class="img-responsive" alt="HumanWisdom"  *ngIf="isAdults">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="HumanWisdom"  *ngIf="!isAdults">
+
         </a>
       </div>
     </div>
@@ -20,7 +22,9 @@
       <div class="p0 mr10px" *ngIf="showheaderbar">
         <a data-toggle="modal" data-target="#exampleModalCenter">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt=""> -->
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/edit.svg" class="img-responsive" alt="edit" *ngIf="isAdults">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="edit" *ngIf="!isAdults">
+
         </a>
       </div>
       <!-- <div class="p0 mlr10px" >
@@ -34,7 +38,9 @@
       <div class="p0">
         <a href="javascript:;" (click)="share()" id="btnShare" rel="module" >
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_opaque.svg" class="img-responsive" alt=""> -->
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" class="img-responsive" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg" class="img-responsive" alt="share" *ngIf="isAdults">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" class="img-responsive" alt="share"  *ngIf="!isAdults">
+
         </a>
       </div>
     </div>
@@ -62,7 +68,9 @@
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
         <a class="" href="javascript:;" *ngIf="toc" (click)="goToToc()">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/toc.svg" class="img-responsive" alt="HumanWisdom"> -->
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="HumanWisdom">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" class="img-responsive" alt="back" *ngIf="isAdults"> >
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="back" *ngIf="!isAdults">
+
         </a>
       </div>
     </div>
@@ -72,7 +80,9 @@
         class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
         <a data-toggle="modal" data-target="#exampleModalCenter">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt=""> -->
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/edit.svg" class="img-responsive" alt="edit" *ngIf="isAdults">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="edit" *ngIf="!isAdults">
+
         </a>
       </div>
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
@@ -84,7 +94,9 @@
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
         <a (click)="shareUrl()" id="btnShare">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/share_opaque.svg" class="img-responsive" alt=""> -->
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" class="img-responsive" alt="">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg" class="img-responsive" alt="share" *ngIf="isAdults" >
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share.svg" class="img-responsive" alt="share" *ngIf="!isAdults" >
+
         </a>
       </div>
     </div>
