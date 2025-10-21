@@ -10817,7 +10817,7 @@ background: #535353 !important;
   left: 0;
   margin: 0 auto;
    /* width: 30% !important; */
-   width: 335px !important;   
+  width: 335px !important;   
   position: absolute;
    top:28% !important; 
    /* align-self: center; */
@@ -16065,7 +16065,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   box-shadow: unset;
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 12px !important;
-  background: #FFE8BB !important;
+  background: #FFFFFF !important;
   padding: 20px;
   font-size: 15px;
   font-weight: 500;
@@ -34354,7 +34354,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .cfc_v3_01 
 {
   /* background-color: transparent !important; */
-  background-color: #FFE8BB !important;
+  background-color: #FFFFFF !important;
   color: black;
   border-radius: 12px !important;
   border: 1px solid rgba(0, 0, 0, 0.25);
