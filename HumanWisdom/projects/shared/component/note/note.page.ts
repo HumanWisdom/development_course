@@ -172,7 +172,9 @@ export class NotePage implements OnInit {
   continue() {
     this.successfullySaved = false;
     this.isSave = false;
-    this.location.back()
+    // this.location.back();
+    this.router.navigate(['/' + SharedService.getprogramName() +'/journal'])
+
   }
 
   save() {
