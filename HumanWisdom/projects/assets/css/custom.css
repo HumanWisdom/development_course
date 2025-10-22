@@ -38409,3 +38409,11 @@ a:hover .div_like_cnt1 span {
   color: #000;
   transition: transform 0.2s ease;
 }
+.modal-backdrop.show {
+  --bs-backdrop-bg: rgba(0, 0, 0, 0.25);
+  --bs-backdrop-opacity: 1;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background-color: var(--bs-backdrop-bg) !important;
+  opacity: 1 !important;
+}
