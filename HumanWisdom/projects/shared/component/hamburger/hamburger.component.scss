@@ -141,9 +141,15 @@ nav
 
             ul.dh_ul li
             {
-                border-bottom: 1px solid rgba(255,255,255,0.2);
+               
                 padding: 15px 0 15px 0;
 
+                adultsli{
+                   border-bottom: 1px solid rgba(0,0,0,0.2);
+                }
+                teensli{
+                   border-bottom: 1px solid rgba(255,255,255,0.2);
+                }
                 a, label
                 {
                     display: block;

@@ -1,7 +1,7 @@
 <nav class="lh0">
   <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox mc_main">
   <label class="m-menu__toggle m0px ihamburger" for="menu" (click)="disableClick ? $event.preventDefault() : null" *ngIf="isAdults">
-    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/menu.svg" class="" alt=""
+    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/menu.svg" class="" alt=""
       (click)="getmenuevent()">
   </label>
 
@@ -184,7 +184,9 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                   <div class="col-md-1 col-sm-1 col-xs-1 p0 mr20px">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_back.svg" alt=""
-                      class="img-responsive back_p">
+                      class="img-responsive back_p" *ngIf="!isAdults">
+                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt=""
+                      class="img-responsive back_p" *ngIf="isAdults">
                   </div>
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
@@ -626,7 +628,9 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                   <div class="col-md-1 col-sm-1 col-xs-1 p0 mr20px">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_back.svg" alt=""
-                      class="img-responsive back_hs">
+                      class="img-responsive back_hs" *ngIf="!isAdults">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt=""
+                      class="img-responsive back_p" *ngIf="isAdults">
                   </div>
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
@@ -655,7 +659,7 @@
               </a>
             </li> -->
 
-            <li>
+            <li  [ngClass]="isAdults ? 'adultsli' : 'teensli'">
               <a (click)="Logevent('/adults/help-support/faq', '', 'click_FAQ_Hamburger')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">

@@ -22055,7 +22055,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
 ul.dh_ul li
 {
   /* padding: 22px 0  0 0!important; */
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
   padding: 15px 0 15px 0;
 }
 
@@ -33164,7 +33164,8 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .tn_title_back
 {
   height: 80px;
-  background: #FFF7E6;
+  /* background: #FFF7E6; */
+  background: #FFFFFF;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
