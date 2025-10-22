@@ -89,7 +89,7 @@
 //   background-color:#ffcd9cf7
 // }
 
-audio::-webkit-media-controls-play-button {
+.invert-controls::-webkit-media-controls-play-button {
   background-color: #64bbeb !important;
   border-radius: 15px;
   box-shadow: none !important;
@@ -97,7 +97,10 @@ audio::-webkit-media-controls-play-button {
   filter: none !important;
 }
 
-
+audio::-webkit-media-controls-play-button {
+  background-color: #178da8 !important;
+  border-radius: 15px;
+}
 audio::-webkit-media-controls-current-time-display {
   color: #000 !important;
   font-weight: bold;

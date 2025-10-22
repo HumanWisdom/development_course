@@ -34221,6 +34221,7 @@ body *
   color: #FFF;
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
 }
 
 .fctray_gqtns
@@ -38084,4 +38085,12 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
 }
 .fc_000000_0_5{
   color: #ffffff80;
+}
+.modal-backdrop.show {
+  --bs-backdrop-bg: rgba(0, 0, 0, 0.25);
+  --bs-backdrop-opacity: 1;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background-color: var(--bs-backdrop-bg) !important;
+  opacity: 1 !important;
 }
