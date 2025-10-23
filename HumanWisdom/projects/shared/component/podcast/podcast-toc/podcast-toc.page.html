@@ -7,7 +7,7 @@
   <div class="row center_flex bg_bv">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw img_podcast" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
       <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp" alt="" class="img-responsive w100"> -->
-      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/podcast.svg" alt=""
+      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/podcast.svg" alt=""
         class="img-responsive w100">
     </div>
   </div>
@@ -16,7 +16,8 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 toc_nvmenu_v3 col_cw">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
         <a (click)="goBack()" class="">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg" alt="" class="p0" *ngIf="!isAdults">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
         </a>
       </div>
 
@@ -30,8 +31,9 @@
 
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
         <a id="btnShare" (click)="share()"  data-toggle="dropdown" aria-expanded="false">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_round.svg" alt=""
-            class="p0">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share_round.svg" alt=""
+            class="p0" *ngIf="!isAdults">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share_round.svg" alt="" class="p0" *ngIf="isAdults">
         </a>
       </div>
     </div>
@@ -156,7 +158,7 @@
 
                           <!-- <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
                             </div>
                           </div> -->
                         </div>
@@ -177,14 +179,14 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
                         *ngIf="!isSubscriber && data['PodcastID'] <= 1">
                         <img *ngIf="data.isRead === '1'"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
                               class="ws-read-icon"
                               alt="read">
                       </div>
 
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
                             <img *ngIf="data.isRead === '1'"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
                               class="ws-read-icon"
                               alt="read">
                       </div>
@@ -194,7 +196,7 @@
                         <!-- lock -->
                         <img
             *ngIf="!isSubscriber"
-            [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
             class="img-responsive ws-lock-icon"
           />
                         <!-- /lock -->
@@ -249,7 +251,7 @@
 
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"  *ngIf="isSubscriber">
           <img *ngIf="data.isRead === '1'"
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
             class="ws-read-icon"
             alt="read">
         </div>
@@ -258,7 +260,7 @@
           <!-- lock -->
           <img
             *ngIf="!isSubscriber"
-            [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
             class="img-responsive ws-lock-icon"
           />
           <!-- /lock -->
