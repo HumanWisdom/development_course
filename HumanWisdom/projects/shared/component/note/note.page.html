@@ -7,7 +7,13 @@
           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg"
           (click)="goBack()"
           alt=""
-          class="p0"
+          class="p0" *ngIf="!isAdults"
+        />
+         <img
+          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg"
+          (click)="goBack()"
+          alt=""
+          class="p0" *ngIf="isAdults"
         />
       </a>
     </div>
