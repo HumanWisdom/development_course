@@ -16074,14 +16074,6 @@ input[type="search"].dark::-webkit-search-cancel-button {
   
 }
 
-.cta1::-webkit-input-placeholder
-{
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 140%;
-  color: red !important;
-}
-
 
 
 .pb20px
@@ -29428,7 +29420,8 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   /* background: rgba(255,255,255,1);
   box-shadow: 0px -1px 2px rgb(0 0 0 / 20%); */
   background: #ffffff;
-  box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2); */
+  box-shadow:  0 -2px 2px #00000020;
 }
 
 .mfooter
