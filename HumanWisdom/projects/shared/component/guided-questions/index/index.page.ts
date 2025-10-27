@@ -114,10 +114,10 @@ if (SharedService.ProgramId == ProgramType.Adults) {
             it?.TitleQue?.toLowerCase().includes(
               this.searchedText.toLowerCase())
           ) &&
-          it?.JrType == "Guided journaling"
+          it?.JrType == "Guided Journaling"
       );
     } else {
-      this.jrList = this.jrListC.filter((p) => p.JrType == "Guided journaling");
+      this.jrList = this.jrListC.filter((p) => p.JrType == "Guided Journaling");
     }
   }
 
@@ -213,7 +213,7 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     if (this.guest || !this.Subscriber) {
       this.enableAlert = true;
     } else {
-      if (data.JrType == "Guided journaling") {
+      if (data.JrType == "Guided Journaling") {
         this.NavigateToQuestions(data);
       } else {
         this.goToNote(data.RowId, data.TitleQue, data.Response, data.JrType);
