@@ -118,7 +118,7 @@
 </div>
 <!--/Class -->
 
-<div class="right_col mc_01" *ngIf="defaultShow">
+<div class="right_col mc_01" *ngIf="defaultShow"  [ngClass]="{'adults-scroll': isAdults}">
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
@@ -252,7 +252,7 @@
 
                     
 
-                    <div class="row gqtns_recent_tabs">
+                    <div class="row gqtns_recent_tabs p0">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 pb10px odiv odiv_mdp">
                         <button type="button" class="btn btn_recent"
                           [ngStyle]="{'background-color': enableTab === 'All' ? '' :(isAdults ? '#FFD889' : '#4267A5')}"
