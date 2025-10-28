@@ -44,7 +44,7 @@ export class AudioHeaderComponent implements OnInit {
   enableAlert = false;
   content = '';
   enablecancel = false;
-
+  isAdult: boolean = false;
   constructor(private router: Router,
     private service: AdultsService, public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -58,6 +58,7 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isAdult = SharedService.ProgramId == ProgramType.Adults;
     if (this.guest || !this.Subscriber) {
       this.placeHolder = "Start your free trial to access your online journal";
     }

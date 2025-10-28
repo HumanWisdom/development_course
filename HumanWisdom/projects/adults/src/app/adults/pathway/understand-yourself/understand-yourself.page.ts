@@ -6,6 +6,7 @@ import { SharedService } from '../../../../../../shared/services/shared.service'
 import { Constant } from '../../../../../../shared/services/constant';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { LogEventService } from '../../../../../../shared/services/log-event.service'; 
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-understand-yourself',
@@ -25,7 +26,8 @@ export class UnderstandYourselfPage implements OnInit {
   public questionKeyP: any
   public lookWithoutLanguageP: any
   public obstaclesEnquiryP: any
- 
+ isAdults:boolean=false;
+
 
 
 
@@ -34,7 +36,7 @@ export class UnderstandYourselfPage implements OnInit {
     private navigationService:NavigationService) { }
 
   ngOnInit() {
-
+    this.isAdults = SharedService.ProgramId === ProgramType.Adults;
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
       this.benefitsSelfAwarenessP = d['ModUserScrPc'].find(e => e.ModuleId  == 26)?.Percentage;

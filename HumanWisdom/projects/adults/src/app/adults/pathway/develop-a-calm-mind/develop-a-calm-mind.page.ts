@@ -23,6 +23,7 @@ export class DevelopACalmMindPage implements OnInit {
   public ntP: any
   public gamP: any
   mediaUrl: any;
+  isAdults:boolean=false;
 
   constructor(public router: Router, public service: AdultsService,
     public logeventservice: LogEventService,
@@ -35,6 +36,7 @@ export class DevelopACalmMindPage implements OnInit {
     }
 
   ngOnInit() {
+    this.isAdults=SharedService.ProgramId==ProgramType.Adults;
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
       this.natureP = d['ModUserScrPc'].find(e => e.ModuleId  == 28)?.Percentage;
