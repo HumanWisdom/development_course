@@ -2284,7 +2284,6 @@ input.parsley-error, textarea.parsley-error, select.parsley-error {
 /* ***** buttons ********/
 .btn {
   border-radius: 3px;
-      box-shadow: 1px 1px 2px #00000040;
 
 }
 a.btn-success, a.btn-primary, a.btn-warning, a.btn-danger {
@@ -24909,7 +24908,7 @@ a
 
 .mb20px
 {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .me_box .txt22

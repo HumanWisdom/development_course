@@ -93,7 +93,7 @@
                 </div>
               </div>
               
-              <div class="toc_adiv mt20px">
+              <div class="toc_adiv_01 mt20px">
                 <a (click)="routeTointroDash()">
 
                 <div class="row p0 center_flex "  >
@@ -102,7 +102,7 @@
                    
                         <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/Introduction/images/selfawareness.webp" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/Introduction/images/selfawareness.webp" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div> -->
                       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pl20px">
@@ -137,7 +137,7 @@
                       
                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_01.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_01.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -168,7 +168,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                        
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_02.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_02.svg" class="session_imgnew img-responsive img_podcast_01">
                           
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -187,7 +187,9 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                          class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -200,7 +202,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_03.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_03.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -219,7 +221,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -233,7 +236,7 @@
                       
                           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_04.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_04.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -252,7 +255,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -266,7 +270,7 @@
                       
                           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_05.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_05.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -285,7 +289,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"            [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -299,7 +304,7 @@
                       
                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_06.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_06.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -318,7 +323,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -332,7 +338,7 @@
                       
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_07.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_07.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -350,7 +356,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -364,7 +371,7 @@
                       
                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_08.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_08.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -382,7 +389,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -394,12 +402,12 @@
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_09.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_09.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
                         <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                           Exercise #9
                         </h4>
@@ -414,7 +422,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -427,7 +436,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_10.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_10.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -445,7 +454,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -459,7 +469,7 @@
                       
                           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_11.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_11.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -477,7 +487,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 
@@ -491,7 +502,7 @@
                       
                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10">
                       
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_12.svg" class="img-responsive w100 img_podcast_01">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_12.svg" class="session_imgnew img-responsive img_podcast_01">
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -509,7 +520,8 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_000000 fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"             [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+            class="img-responsive ws-lock-icon">
                         <!-- /lock -->
                       </div>
 

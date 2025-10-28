@@ -48,23 +48,43 @@
 .btn_podcast .btn:focus-visible {
   outline: none;
 }
-  .odiv,
-  .odiv_pathway,
-  .odiv_wfgi,
-  .ae_days {
-      overflow: hidden;
-      transition: overflow .01s;
-  }
+/* Adults only scrollbar styling */
+.adults-scroll .odiv,
+.adults-scroll .odiv_pathway,
+.adults-scroll .odiv_wfgi,
+.adults-scroll .ae_days {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #eea170 #f6d1b7;
+}
 
-  .odiv:hover,
-  .odiv_pathway:hover,
-  .odiv_wfgi:hover,
-  .ae_days:hover {
-      overflow: auto;
-  }
-.odiv::-webkit-scrollbar-thumb,
-.odiv_pathway::-webkit-scrollbar-thumb,
-.odiv_wfgi::-webkit-scrollbar-thumb,
-.ae_days::-webkit-scrollbar-thumb {
-    background-color: #EEA170; /* your color */
+.adults-scroll .odiv:not(:hover),
+.adults-scroll .odiv_pathway:not(:hover),
+.adults-scroll .odiv_wfgi:not(:hover),
+.adults-scroll .ae_days:not(:hover) {
+  scrollbar-color: transparent transparent;
+}
+
+.adults-scroll .odiv::-webkit-scrollbar,
+.adults-scroll .odiv_pathway::-webkit-scrollbar,
+.adults-scroll .odiv_wfgi::-webkit-scrollbar,
+.adults-scroll .ae_days::-webkit-scrollbar {
+  height: 2px;
+  border-radius: 6px;
+}
+
+.adults-scroll .odiv::-webkit-scrollbar-thumb,
+.adults-scroll .odiv_pathway::-webkit-scrollbar-thumb,
+.adults-scroll .odiv_wfgi::-webkit-scrollbar-thumb,
+.adults-scroll .ae_days::-webkit-scrollbar-thumb {
+  background-color: #eea170;
+  border-radius: 6px;
+}
+
+.adults-scroll .odiv::-webkit-scrollbar-track,
+.adults-scroll .odiv_pathway::-webkit-scrollbar-track,
+.adults-scroll .odiv_wfgi::-webkit-scrollbar-track,
+.adults-scroll .ae_days::-webkit-scrollbar-track {
+  background-color: #f6d1b7;
+  border-radius: 10px;
 }
