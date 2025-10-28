@@ -34390,7 +34390,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .cgqtns_sc 
 {
   border-radius: 6px;
-  background: rgba(255, 255,255, 0.75);
+  background: transparent;
   width: 41px;
   height: 32px;
   display: flex;

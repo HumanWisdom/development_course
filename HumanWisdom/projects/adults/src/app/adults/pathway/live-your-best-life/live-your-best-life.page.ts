@@ -6,6 +6,7 @@ import { SharedService } from '../../../../../../shared/services/shared.service'
 import { Constant } from '../../../../../../shared/services/constant';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { LogEventService } from '../../../../../../shared/services/log-event.service'; 
+import { ProgramType } from '../../../../../../shared/models/program-model';
 
 @Component({
   selector: 'app-live-your-best-life',
@@ -36,7 +37,7 @@ export class LiveYourBestLifePage implements OnInit {
   public diversityP: any
   public kindnessP: any
   public socialmedP: any
- 
+ isAdults:boolean=false;
 
 
 
@@ -45,6 +46,7 @@ export class LiveYourBestLifePage implements OnInit {
     private navigationService:NavigationService) { }
 
   ngOnInit() {
+    this.isAdults=SharedService.ProgramId==ProgramType.Adults;
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
       this.stressP = d['ModUserScrPc'].find(e => e.ModuleId  == 44)?.Percentage;
