@@ -24878,7 +24878,7 @@ a
 
 .mb20px
 {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .me_box .txt22
