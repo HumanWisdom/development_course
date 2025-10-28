@@ -12010,14 +12010,14 @@ h1.module_title
 {
   width: 100%;
   height: 32px;
-  background: #ffffff;
+  background: #ED7D6F !important;
   box-shadow: unset;
   border-radius: 8px;
   font-weight: 600;
   font-size: 15px;
   line-height: 22px;
   text-align: center;
-  color: #ED7D6F;
+  color: #ffffff !important;
   border: 0;
   margin: 40px 0 0 0;
 }
@@ -12047,7 +12047,7 @@ h1.module_title
   font-weight: 400 !important;
   font-size: 12px !important;
   line-height: 140%;
-  color: #ffffff;
+  color: #000000;
   /* opacity: 0.75; */
   margin-top: 40px;
 }
@@ -12306,7 +12306,7 @@ h1.module_title
   line-height: 35px;
   /* text-align: center; */
   text-align: left;
-  color: #FFFFFF;
+  color: #000000;
   padding-bottom: 20px;
 }
 
@@ -16523,7 +16523,7 @@ textarea:focus
   font-size: 24px;
   line-height: 130%;
   /* or 31px */
-  color: #FFFFFF;
+  color: #000000;
 }
 
 @media (max-width: 360px)
@@ -33685,7 +33685,8 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .sc_02_v3
 {
   text-align: left;
-  min-height: calc(100vh - 125px) !important;
+  /* min-height: calc(100vh - 125px) !important; */
+  min-height: 110vh !important;
   padding: 20px 20px;
 }
 
