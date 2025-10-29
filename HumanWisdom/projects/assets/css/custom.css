@@ -33475,21 +33475,22 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .box_v3_04,
 .box_v3_04b
 {
-  height: 210px;
+  height: 195px;
+  width:162px;
   background: #FFE8BB;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 12px;
   padding: 15px !important;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   white-space: normal;
 }
 
 .box_v3_04 img,
 .box_v3_04a img
 {
-  width: 100%;
+  width: 132px;
   height: 100px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 6px;
   object-fit: cover;
 }
