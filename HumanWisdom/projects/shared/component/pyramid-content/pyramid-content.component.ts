@@ -2,6 +2,9 @@ import { Component, OnInit,Input,ViewChild,  ElementRef,AfterViewInit,Output,Eve
 import { Router,ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
+
 
 @Component({
   selector: 'app-pyramid-content',
@@ -26,6 +29,8 @@ export class PyramidContentComponent implements OnInit,OnDestroy,AfterViewInit{
   scrId:any
   reachedLimit = false;
   enableAlert = false;
+  isAdults: boolean = true; 
+
 
   @ViewChild('audio') audio;
   @ViewChild('screen', { static: true }) screen: any;
@@ -43,6 +48,12 @@ constructor(
 
 ngOnInit() {
 
+  if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+    
   var str=this.router.url
     var lastSlash = str.lastIndexOf("/");
      str=str.substring(lastSlash+2);
