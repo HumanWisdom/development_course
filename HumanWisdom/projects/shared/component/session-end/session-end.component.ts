@@ -2,6 +2,9 @@ import { Platform } from "@angular/cdk/platform";
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
+
 
 @Component({
   selector: 'app-session-end',
@@ -20,6 +23,8 @@ export class SessionEndComponent implements OnInit {
   token = localStorage.getItem("shareToken")
   socialShare = false
   shareUrl: any
+  isAdults: boolean = true; 
+
 
   constructor(private router: Router, public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService) {
@@ -29,6 +34,11 @@ export class SessionEndComponent implements OnInit {
 
   ngOnInit() {
     
+      if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
   }
 
   shareIndex() {

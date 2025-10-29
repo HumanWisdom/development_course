@@ -16,7 +16,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter"  (click)="gotoTranscript()">
                   <a class="">
                     <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt=""> -->
-                    <h6 class="fs_15px fw_400 lh_140p fc_e58d82 underline">
+                    <h6 class="fs_15px fw_400 lh_140p fc_ED7D6F underline">
                       Read Text
                     </h6>
                   </a>
@@ -41,7 +41,8 @@
               -->
               <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 pt30px">
-                  <audio id="aud1" controls controlsList="nodownload" #audio >
+                  <audio id="aud1" controls controlsList="nodownload" #audio 
+                  [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
                   <!-- <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio>

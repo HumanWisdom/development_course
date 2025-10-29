@@ -2,6 +2,8 @@ import { Component, OnInit,Input,AfterViewInit,ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-transcript-content',
@@ -14,6 +16,8 @@ export class TranscriptContentComponent implements OnInit,AfterViewInit {
 
   scrId:any
   @ViewChild('screen', { static: true }) screen: any;
+  isAdults: boolean = true; 
+
 
   constructor(
     private captureService:NgxCaptureService,
@@ -21,7 +25,15 @@ export class TranscriptContentComponent implements OnInit,AfterViewInit {
     private next: ActivatedRoute
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
+  }
 
   ngAfterViewInit(){
     

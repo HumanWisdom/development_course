@@ -12062,7 +12062,7 @@ h1.module_title
   line-height: 12px;
   display: flex;
   align-items: center;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .session_time
@@ -12234,7 +12234,7 @@ h1.module_title
   line-height: 35px;
   /* text-align: center; */
   text-align: left;
-  color: #FFFFFF;
+  color: #000000;
   padding-bottom: 20px;
 }
 
@@ -12559,7 +12559,7 @@ h1.module_title
   /* line-height: 150%; */
   line-height: 180%;
   /* or 36px */
-  color: #FFFFFF;
+  color: #000000;
   text-align: left;
 }
 
@@ -14597,7 +14597,7 @@ input[type="number"] {
 
 .btn_so
 {
-  background: #ED7D6F;
+  background: #ED7D6F !important;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   /* font-family: Roboto; */
@@ -33763,7 +33763,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .toc_adiv a .row 
 {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   background: #FFE8BB;
   min-height: 88px;
   margin-bottom: 10px;
@@ -34762,7 +34762,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background: #FFE8BB;
+  background: #FFFFFF;
   padding: 20px;
   font-size: 15px;
   font-weight: 400;
