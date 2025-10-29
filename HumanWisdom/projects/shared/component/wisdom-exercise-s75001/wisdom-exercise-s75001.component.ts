@@ -49,18 +49,31 @@ export class WisdomExerciseS75001Component implements OnInit {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
 
     SharedService.ProgramId == ProgramType.Adults ? this.isAdults = true : this.isAdults = false;
-            this.dashboardType = this.route.snapshot.paramMap.get('type');
-            this.dashboardData = SharedService.contentIdData(this.dashboardType);
-            this.service.GetIntroContents(this.dashboardData.id).subscribe(res=>{
-              if(res){
-                this.cardList = res.content;
-                this.introData =  res;
-                this.introTitle = res.introPara;
-                for(var item of this.metadata){
-                  item.data = this.cardList.filter(x=>x.section_name == item.section_name)
-                }
-              }
-          });
+    
+    // Get dashboard type from route, or default to 'wisdom-exercise' if not in route (e.g., when used in home component)
+    this.dashboardType = this.route.snapshot.paramMap.get('type');
+    if (!this.dashboardType) {
+      this.dashboardType = 'wisdom-exercise';
+    }
+    
+    this.dashboardData = SharedService.contentIdData(this.dashboardType);
+    
+    // Ensure we have valid dashboard data and ID before making API call
+    if (this.dashboardData && this.dashboardData.id) {
+      console.log('Calling GetIntroContents with ID:', this.dashboardData.id);
+      this.service.GetIntroContents(this.dashboardData.id).subscribe(res=>{
+        if(res){
+          this.cardList = res.content;
+          this.introData =  res;
+          this.introTitle = res.introPara;
+          for(var item of this.metadata){
+            item.data = this.cardList.filter(x=>x.section_name == item.section_name)
+          }
+        }
+      });
+    } else {
+      console.error('Dashboard data not found for type:', this.dashboardType);
+    }
   }
   share(){
     this.ngNavigatorShareService.share({
@@ -99,7 +112,12 @@ export class WisdomExerciseS75001Component implements OnInit {
 
   }
 
-    routeTointroDash() {
-      this.router.navigate(['/adults/dashboard/wisdom-exercise']);
-    }
+  routeTointroDash() {
+    this.router.navigate(['/adults/dashboard/wisdom-exercise']);
+  }
+
+  goToSubscribe(): void {
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+  }
 }
