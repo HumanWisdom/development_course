@@ -194,6 +194,13 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
       this.cdr.detectChanges();
     }, 6000);
     this.messageTimers.push(stopSpeaking);
+
+    // After showing the question for a bit, remove the cloud entirely
+    const hideCloud = setTimeout(() => {
+      this.owlMessage = '';
+      this.cdr.detectChanges();
+    }, 9000);
+    this.messageTimers.push(hideCloud);
   }
 
   // Method to set custom owl message

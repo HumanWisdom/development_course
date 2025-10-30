@@ -217,8 +217,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-      width: 72%;
+
     left: 16%;
+        height: 72px;
+    width: 65px
 }
 
 .static-owl-image {
@@ -236,8 +238,8 @@
 /* Cloud Container Styles */
 .owl-cloud-container {
   position: absolute;
-  top: -37px;
-  left: -31%;
+  top: -95px;
+  left: -65%;
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;
@@ -268,8 +270,8 @@
 }
 
 .cloud-image {
-  width: 64px;
-  height: auto;
+  width: 178px;
+  height: 140px;
   max-width: 140px;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
@@ -284,8 +286,8 @@
   transform: translate(-50%, -50%);
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-size: 6px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 1.2;
   text-align: center;
   white-space: pre-line; /* respect \n and wrap */
