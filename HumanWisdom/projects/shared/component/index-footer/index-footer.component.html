@@ -118,10 +118,7 @@
 
       <a (click)="profileclickevent()" class="footer_index">
         <div *ngIf="!enableprofile && isloggedIn">
-          <img class="footer-user-profile" style="
-          border-radius: 25px;
-          height: 32px;
-          width: 32px;"
+          <img class="footer-user-profile" 
             src="{{url === '' ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_inactive.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url}}"
             alt="">
 

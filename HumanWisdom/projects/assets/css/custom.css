@@ -10742,9 +10742,9 @@ background: #535353 !important;
   /* background: #FFFFFF;
   opacity: 0.75; */
   /* background: rgba(255,255,255,0.1); */
-  background: #FFE8BB;
+  background: #FFE8BB !important;
   /* color: #5D5D5D; */
-  color: rgba(0,0,0,0.50);
+  color: rgba(0,0,0,0.50) !important;
   /* color: #ED7D6F; */
   border-radius: 12px;
   padding: 0 2rem !important;
@@ -10761,6 +10761,7 @@ background: #535353 !important;
 .select_box:visited:focus
 {
   background: #FFD889 !important;
+  color: #000000 !important;
 }
 
 /* .select_box:hover
@@ -19279,7 +19280,7 @@ ngx-circular-player svg
 .btn_se
 {
   height: 50px;
-  background: #ED7D6F;
+  background: #ED7D6F !important;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
   border: 0;
@@ -19292,7 +19293,7 @@ ngx-circular-player svg
   font-size: 15px;
   line-height: 150%;
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   white-space: pre-wrap;
 }
 
@@ -34786,7 +34787,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding-top: 40px !important;
   padding-bottom: 40px !important;
 }
-
+/* 
 .btn_se:hover,
 .btn_se:active,
 .btn_se:focus
@@ -34794,7 +34795,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   background: white !important;
   color: #ED7D6F !important;
   filter: unset !important;
-}
+} */
 
 .ae_days > [class^="col-"]
 {
@@ -37273,7 +37274,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   background: #FFF7E6 !important;
 }
 .bg_profile_blog{
-  background: #ffffff !important;
+  background: #FFF7E6 !important;
   margin: -20px -20px 0 -20px;
   padding: 20px;
 
