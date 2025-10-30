@@ -7,7 +7,21 @@
     [ngClass]="isAdults ?'bg_FFF7E6':'bg_183c79'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a (click)="goBack()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <!-- adult version -->
+        <img
+          *ngIf="isAdults"
+          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg"
+          alt=""
+          class="p0"
+        />
+
+        <!-- teen version -->
+        <img
+          *ngIf="!isAdults"
+          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg"
+          alt=""
+          class="p0"
+        />
       </a>
     </div>
 
@@ -65,7 +79,7 @@
 
               <div class="row tcenter" *ngIf="!enableTextContent">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0" *ngIf="audioLink !== ''">
-                  <audio autoplay id="aud1" controls controlsList="nodownload noplaybackrate" #audio
+                  <audio autoplay id="aud1" controls controlsList="nodownload" #audio
                    [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>

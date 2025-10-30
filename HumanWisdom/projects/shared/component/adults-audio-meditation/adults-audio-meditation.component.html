@@ -4,19 +4,32 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw am_tn">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+      <a (click)="goBack()">
+        <!-- adult version -->
+        <img
+          *ngIf="isAdults"
+          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg"
+          alt=""
+          class="p0"
+        />
+
+        <!-- teen version -->
+        <img
+          *ngIf="!isAdults"
+          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg"
+          alt=""
+          class="p0"
+        />
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <!-- <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
         {{ type === 'Audio' ? 'Audio meditation' : 'Podcast' }}
       </h1> -->
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0"></div>
 
     <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
       <div class="progress progress-sm hprogress" [ngStyle]="{'visibility': !showheaderbar ? 'hidden' : 'visible'}">
@@ -34,12 +47,17 @@
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 am_bg_01 col_cw center_flex"
-       [style.background]="'url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/audio_meditation/' + rowId + '.webp) no-repeat center center'">
+      <div
+        class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 am_bg_01 col_cw center_flex"
+        [style.background]="
+          'url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/audio_meditation/' +
+          rowId +
+          '.webp) no-repeat center center'
+        "
+      >
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-
               <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/audio_meditation/01.webp" class="img-responsive img_podcast_02">
@@ -48,26 +66,34 @@
 
               <div class="row mt40px mb30px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h1 class="txt1 ww_break_word mtb0px" [ngClass]="isAdults? 'fc_ffffff': 'fc_ffffff'">
-                    {{audioTitle}}
+                  <h1
+                    class="txt1 ww_break_word mtb0px"
+                    [ngClass]="isAdults ? 'fc_ffffff' : 'fc_ffffff'"
+                  >
+                    {{ audioTitle }}
                   </h1>
                 </div>
               </div>
 
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0" *ngIf="audioLink !== ''">
-                  <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio
-                   [ngClass]="[isAdults ? 'invert-controls' : '']">
-                    <source [src]="audioLink" type="audio/mpeg">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 center_flex p0"
+                  *ngIf="audioLink !== ''"
+                >
+                  <audio
+                    id="aud1"
+                    controls
+                    controlsList="nodownload"
+                    #audio
+                    [ngClass]="[isAdults ? 'invert-controls' : '']"
+                  >
+                    <source [src]="audioLink" type="audio/mpeg" />
                   </audio>
-
                 </div>
               </div>
-
             </form>
 
             <div class="pagebreak"></div>
-
           </div>
         </div>
       </div>
