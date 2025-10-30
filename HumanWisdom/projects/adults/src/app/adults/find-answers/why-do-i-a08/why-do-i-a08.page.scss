@@ -190,22 +190,28 @@ color: white; /* Set the color of the pause icon */
 /* audio::-webkit-media-controls-enclosure {
   background: rgb(18, 15, 64);
 } */
-
-/* Ensure the invert-controls class is properly applied */
-.invert-controls::-webkit-media-controls-play-button,
-.invert-controls::-webkit-media-controls-mute-button,
-.invert-controls::-webkit-media-controls-timeline,
-.invert-controls::-webkit-media-controls-volume-slider,
-.invert-controls::-webkit-media-controls-current-time-display,
-.invert-controls::-webkit-media-controls-time-remaining-display,
-.invert-controls::-webkit-media-controls-seek-back-button,
-.invert-controls::-webkit-media-controls-seek-forward-button,
-.invert-controls::-webkit-media-controls-fullscreen-button,
-.invert-controls::-webkit-media-controls-rewind-button,
-.invert-controls::-webkit-media-controls-return-to-realtime-button {
-  filter: invert(1) hue-rotate(180deg) !important;
+/* Keep everything normal — light bg, black controls */
+.invert-controls::-webkit-media-controls-panel {
+  filter: none !important;
+  background-color: #FFE8BB !important;
 }
 
-.invert-controls::-webkit-media-controls-enclosure {
-  background: #FFE8BB !important; 
+/* Force playback rate text black without inversion */
+.invert-controls::-webkit-media-controls-playback-rate-button {
+  color: #000 !important;
+  background-color: transparent !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: multiply !important;
+}
+/* Play–pause button background color */
+.invert-controls::-webkit-media-controls-play-button {
+  background-color: #EEA170 !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+}
+#aud1 {
+  width: 100% !important;  
+  max-width: 480px;         
+  border-radius: 40px;
 }
