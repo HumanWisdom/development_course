@@ -5,7 +5,6 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 
-
 @Component({
   selector: 'app-pyramid-content',
   templateUrl: './pyramid-content.component.html',
@@ -30,8 +29,7 @@ export class PyramidContentComponent implements OnInit,OnDestroy,AfterViewInit{
   reachedLimit = false;
   enableAlert = false;
   isAdults: boolean = true; 
-
-
+  
   @ViewChild('audio') audio;
   @ViewChild('screen', { static: true }) screen: any;
 
@@ -64,6 +62,12 @@ ngOnInit() {
         this.interval = setInterval(() => this.reachedLimit ? null : this.checkPauseTime(), 1000);
       }
     }
+
+  if (SharedService.ProgramId == ProgramType.Adults) {
+    this.isAdults = true;
+  } else {
+    this.isAdults = false;
+  }
 }
 
 getTime(){
