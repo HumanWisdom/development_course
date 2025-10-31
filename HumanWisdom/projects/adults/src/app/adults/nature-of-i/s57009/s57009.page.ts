@@ -3,6 +3,8 @@ import {AdultsService} from "../../adults.service"
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import * as jQuery from 'jquery';
+import {SharedService} from "../../../../../../shared/services/shared.service";
+import {ProgramType} from "../../../../../../shared/models/program-model";
 
 @Component({
   selector: 'app-s57009',
@@ -32,6 +34,7 @@ export class S57009Page implements OnInit,OnDestroy {
   moduleId=localStorage.getItem("moduleId")
   screenNumber=57009
   startTime:any
+  isAdults = false;
   endTime:any
   totalTime:any
   list=["It helps us to understand ourselves and others ",
@@ -61,6 +64,11 @@ export class S57009Page implements OnInit,OnDestroy {
     else if(this.bookmarkList.includes(this.screenNumber)||JSON.parse(sessionStorage.getItem("bookmark57009"))==1)
       this.bookmark=1
  
+         if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
   }
  
   createScreen(){

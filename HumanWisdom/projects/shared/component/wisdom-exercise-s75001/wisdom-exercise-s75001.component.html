@@ -1,12 +1,12 @@
-<div class="row">
+<!-- <div class="row">
   <div
     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt0px mb15px pl20px pr20px"
   >
     <h4 class="mtb0px fw_500 fs_24px lh_140p fc_ffffff">Self awareness</h4>
   </div>
-</div>
+</div> -->
 
-<div class="row">
+<div class="row mt40px">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl20px pr20px pb15px">
     <h4 class="mtb0px fw_400 fs_15px lh_140p fc_000000">
       Self awareness involves noticing what you are thinking, feeling and doing
@@ -62,7 +62,7 @@
       [attr.aria-labelledby]="'section-title-' + section.id"
     >
       <div *ngIf="section.cards && section.cards.length">
-        <div class="d-flex card-container">
+        <div class="d-flex card-container" [ngClass]="(section.title || '').toLowerCase() === 'begin here' && section.isExpanded ? 'odiv' : ''">
           <div *ngFor="let card of section.cards">
             <app-content-card
               [card]="card"
