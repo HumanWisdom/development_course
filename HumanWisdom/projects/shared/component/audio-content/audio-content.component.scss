@@ -193,6 +193,8 @@ width: 100%;
 .invert-controls::-webkit-media-controls-panel {
   filter: none !important;
   background-color: #FFE8BB !important;
+  border: none !important;
+  border: transparent !important;
 }
 
 /* Force playback rate text black without inversion */

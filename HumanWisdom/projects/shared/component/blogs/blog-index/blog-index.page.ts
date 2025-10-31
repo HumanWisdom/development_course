@@ -10,7 +10,6 @@ import { ProgramType } from '../../../models/program-model';
 @Component({
   selector: 'HumanWisdom-blog-index',
   templateUrl: './blog-index.page.html',
-  styleUrls: ['./blog-index.page.scss'],
 })
 export class BlogIndexPage implements OnInit {
   blogList:any[]=[];
