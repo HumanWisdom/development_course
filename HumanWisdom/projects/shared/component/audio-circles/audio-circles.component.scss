@@ -107,3 +107,29 @@
 {
   width: 100%;
 }
+
+/* Keep everything normal — light bg, black controls */
+.invert-controls::-webkit-media-controls-panel {
+  filter: none !important;
+  background-color: #FFE8BB !important;
+}
+
+/* Force playback rate text black without inversion */
+.invert-controls::-webkit-media-controls-playback-rate-button {
+  color: #000 !important;
+  background-color: transparent !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: multiply !important;
+}
+/* Play–pause button background color */
+.invert-controls::-webkit-media-controls-play-button {
+  background-color: #EEA170 !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+}
+#aud1 {
+  width: 100% !important;  
+  max-width: 480px;         
+  border-radius: 40px;
+}

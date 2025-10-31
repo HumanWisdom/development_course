@@ -6,7 +6,8 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
       <div class="p0">
         <a class="" (click)="goToToc()">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="HumanWisdom">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="back" *ngIf="!isAdults">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" class="img-responsive" alt="back" *ngIf="isAdults">
         </a>
       </div>
     </div>
