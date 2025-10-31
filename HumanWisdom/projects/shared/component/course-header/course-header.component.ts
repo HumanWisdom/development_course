@@ -11,7 +11,6 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
-  styleUrls: ['./course-header.component.scss'],
 })
 export class CourseHeaderComponent implements OnInit {
   @Input() bookmark: boolean;

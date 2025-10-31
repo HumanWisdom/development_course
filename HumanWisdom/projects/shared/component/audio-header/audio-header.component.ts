@@ -10,15 +10,14 @@ import { NavigationService } from "../../services/navigation.service";
 @Component({
   selector: 'app-audio-header',
   templateUrl: './audio-header.component.html',
-  styleUrls: ['./audio-header.component.scss'],
 })
 export class AudioHeaderComponent implements OnInit {
   @Input() bookmark: boolean;
   @Input() bg_tn: string;
   @Input() bg: string;
-  @Input() path: string; //to go back to the course page from note
-  @Input() toc: string;//path of table of contents
-  @Input() dashboard: string;//path to the dashboard
+  @Input() path: string; 
+  @Input() toc: string;
+  @Input() dashboard: string;
   @Input() transcriptPage: string;
   @Input() progName: string;
   progUrl: string;
