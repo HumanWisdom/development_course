@@ -110,11 +110,11 @@ export class S11Page implements OnInit {
     {
       this.enableTick = true;
       
-      document.getElementById(opt.OptId).style.background = '#E58D82';
-      document.getElementById(opt.OptId+ 'text').style.color = '#FFFFFF';
+       document.getElementById(opt.OptId).style.background = '#ED7D6F';
+      document.getElementById(opt.OptId+ 'text').style.color = '#000000';
       if (this.falseans !== '') {
-        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
-        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
+        document.getElementById(this.falseans).style.background = '#FFE8BB';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(0,0,0,0.50)';
         document.getElementById(this.falseans).style.opacity = '0.75';
         this.falseans = opt.OptId
       }
@@ -129,8 +129,8 @@ export class S11Page implements OnInit {
 
       if (this.falseans !== '')
       {
-        document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
-        document.getElementById(this.falseans + 'text').style.color = 'rgba(255, 255, 255, 0.50)';
+        document.getElementById(this.falseans).style.background = '#FFE8BB';
+        document.getElementById(this.falseans + 'text').style.color = 'rgba(0,0,0,0.50)';
         // document.getElementById(this.falseans).style.opacity = '0.1';
         this.falseans = opt.OptId
       }
@@ -138,8 +138,8 @@ export class S11Page implements OnInit {
       {
         this.falseans = opt.OptId
       }
-      document.getElementById(opt.OptId).style.background = '#120F40';
-      // document.getElementById(opt.OptId + 'text').style.color = '#FFFFFF';
+      document.getElementById(opt.OptId).style.background = '#FFD889'; 
+      document.getElementById(opt.OptId + 'text').style.color = '#000000';
     }
     
   }

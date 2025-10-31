@@ -10742,9 +10742,9 @@ background: #535353 !important;
   /* background: #FFFFFF;
   opacity: 0.75; */
   /* background: rgba(255,255,255,0.1); */
-  background: #FFE8BB !important;
+  background: #FFE8BB;
   /* color: #5D5D5D; */
-  color: rgba(0,0,0,0.50) !important;
+  color: rgba(0,0,0,0.50);
   /* color: #ED7D6F; */
   border-radius: 12px;
   padding: 0 2rem !important;
@@ -10805,7 +10805,7 @@ background: #535353 !important;
 
 
 
-
+.modal.fade.show,
 .modal.fade.in .lab-modal-body {
   bottom: 0;
   opacity: 1; 
@@ -12215,7 +12215,8 @@ h1.module_title
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: 24px;
   line-height: 130%;
   /* or 39px */
   /* text-align: center; */
@@ -12568,7 +12569,7 @@ h1.module_title
 {
   height: 5rem;
   /* background: #FFFFFF; */
-  background: #ED7D6F;
+  background: #ED7D6F !important;
   /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); */
   border-radius: 100px;
   /* width: 139px; */
@@ -12582,7 +12583,7 @@ h1.module_title
   line-height: 19px;
   text-align: center;
   /* color: #5D5D5D; */
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .mt20px
@@ -18651,14 +18652,14 @@ ngx-circular-player svg
   font-size: 12px;
   line-height: 1.42857;
 } */
-
+ 
 .btn_5circles_01
 {
   width: 124px;
   height: 124px;
-  background: #000000;
+  background: #FFD889 !important;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  /* border: 6px solid #E59B5A; */
+  
   border: 0;
   border-radius: 50%;
   overflow: auto;
@@ -18672,7 +18673,7 @@ ngx-circular-player svg
   height: 124px;
   background: #FFD889 !important;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  /* border: 6px solid #B92F48; */
+ 
   border: 0;
   border-radius: 50%;
   overflow: auto;
@@ -18684,9 +18685,9 @@ ngx-circular-player svg
 {
   width: 124px;
   height: 124px;
-  background: #000000;
+  background: #FFD889 !important;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  /* border: 6px solid #60A757; */
+  
   border: 0;
   border-radius: 50%;
   overflow: auto;
@@ -18698,9 +18699,9 @@ ngx-circular-player svg
 {
   width: 124px;
   height: 124px;
-  background: #000000;
+  background: #FFD889 !important;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  /* border: 6px solid #F55858; */
+
   border: 0;
   border-radius: 50%;
   overflow: auto;
@@ -18712,15 +18713,27 @@ ngx-circular-player svg
 {
   width: 124px;
   height: 124px;
-  background: #000000;
+  background: #FFD889 !important;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
-  /* border: 6px solid #1092A7; */
+
   border: 0;
   border-radius: 50%;
   overflow: auto;
   white-space: pre-line;
   text-align: center;
+} 
+
+.btn_5circles_01.disabled,
+.btn_5circles_02.disabled,
+.btn_5circles_03.disabled,
+.btn_5circles_04.disabled,
+.btn_5circles_05.disabled 
+{
+  background: rgba(0,0,0,.1) !important;
+  border: 1px solid #c4c4c4 !important;
 }
+
+
 
 .btn_5circles_txt1
 {
@@ -18780,7 +18793,7 @@ ngx-circular-player svg
 .circle-container .btn:hover h6,
 .circle-container .btn:focus h6 
 {
-  color: #FFF7E6;
+  color: #00000080;
 }
 /* /circular btns */
 
@@ -24871,11 +24884,13 @@ a
 
 .modal
 {
-  padding: 0 !important;
+  padding: 5px !important;
   overflow: overlay !important;
-  background: #00000080 !important;
+  /* background: #00000080 !important; */
+  background: #FFFFFF !important;
   backdrop-filter: blur(8px) !important;
   overflow: hidden !important;
+  border-radius: 12px;
 }
 
 .index_rwst_title
