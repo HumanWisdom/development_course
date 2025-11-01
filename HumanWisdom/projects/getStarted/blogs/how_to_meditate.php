@@ -8,14 +8,14 @@
     <meta property="keyword" content="Personal growth,Anxiety management,Self-improvement">
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include '../includes/vendor_header.php'; ?>
     <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include('../includes/header.php'); ?>
+    <?php include '../includes/header.php'; ?>
     <!-- /header -->
 
     <main id="main" class="hptblog120px">
@@ -546,13 +546,13 @@ Cultivating an attitude of acceptance and non-judgment towards your experiences
       <!-- /aspects -->
 
       <!-- footer -->
-      <?php include('../includes/footer.php'); ?>
+      <?php include '../includes/footer.php'; ?>
       <!-- /footer -->
 
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include '../includes/vendor_footer.php'; ?>
     <!-- /vendor_footer -->
 
   </body>

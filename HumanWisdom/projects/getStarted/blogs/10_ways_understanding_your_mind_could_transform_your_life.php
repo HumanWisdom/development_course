@@ -8,14 +8,14 @@
     <meta property="keyword" content="understanding your mind, mental health, self-awareness, personal growth, mindfulness, emotional intelligence, cognitive skills, mental transformation, happier life, self-improvement">
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include '../includes/vendor_header.php'; ?>
     <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include('../includes/header.php'); ?>
+    <?php include '../includes/header.php'; ?>
     <!-- /header -->
 
     <main id="main" class="hptblog120px">
@@ -318,13 +318,13 @@
       <!-- /aspects -->
 
       <!-- footer -->
-      <?php include('../includes/footer.php'); ?>
+      <?php include '../includes/footer.php'; ?>
       <!-- /footer -->
 
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include '../includes/vendor_footer.php'; ?>
     <!-- /vendor_footer -->
 
   </body>
