@@ -1229,16 +1229,17 @@
 
   <script>
  $(document).ready(function () {
-  $('#toggle').click();
-  // Hide the additional blogs initially
- $('#text').toggle(0, function () {
-  if ($(this).is(':visible')) {
-    $('#toggle').text('View Less');
-  } else {
-    $('#toggle').text('View More');
-  }
-});
-
+  // Toggle button click handler
+  $('#toggle').on('click', function(e) {
+    e.preventDefault();
+    $('#text').toggle(0, function () {
+      if ($(this).is(':visible')) {
+        $('#toggle').text('View Less');
+      } else {
+        $('#toggle').text('View More');
+      }
+    });
+  });
 });
   </script>
 

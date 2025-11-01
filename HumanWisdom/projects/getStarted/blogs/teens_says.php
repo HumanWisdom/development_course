@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -20,26 +20,6 @@
     <!-- header -->
     <?php include('../includes/header.php'); ?>
     <!-- /header -->
-
-    <!-- <section class="hpt120px">
-      <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png" class="img-responsive">
-        </div>
-
-        <div class="row bl_text">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-            <h4 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
-              Insightful articles with practical tips to be happier
-            </h4>
-  
-            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-              Find articles on meditation, mental health, relationships, and how to succeed at work
-            </h4>
-          </div>
-        </div>
-      </div>
-    </section> -->  
 
     <main id="main" class="hptblog120px">
 
