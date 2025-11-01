@@ -23,8 +23,8 @@
           <div class="col-md-12 col-sm-12 col-xs-12  p0">
 
             <div *ngIf="!o.CorrectAns">
-              <a class="sb_anchor" data-toggle="modal" data-target="#lab-slide-bottom-popup">
-                <div id="{{o.OptId}}"  (click)="checkOption(o, false)" [ngClass]="{'single_select_active': o.OptId==this.sessionOption}" class="box select_box fleft">
+              <a class="sb_anchor" data-bs-toggle="modal" data-bs-target="#lab-slide-bottom-popup">
+                <div id="{{o.OptId}}"  (click)="checkOption(o, false)" class="box select_box fleft">
                   <div>
                     <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                       {{o.OptStr}}
@@ -36,7 +36,7 @@
   
             <div *ngIf="o.CorrectAns">
               <a class="sb_anchor">
-                <div id="{{o.OptId}}" (click)="checkOption(o, true)" [ngClass]="{'single_select_active': false}" class="box select_box fleft">
+                <div id="{{o.OptId}}" (click)="checkOption(o, true)" class="box select_box fleft">
                   <div>
                     <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
                       {{o.OptStr}}
@@ -58,7 +58,8 @@
     </div>
 
      <!-- modal test -->
-     <div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
+     <div class="modal fade " id="lab-slide-bottom-popup" tabindex="-1" aria-hidden="true">
+<!-- 
       <div class="row center_flex">
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
           <div class="row">
@@ -71,11 +72,32 @@
 
           <div class="row center_flex pt30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <button type="button" class="btn btn-default btn_try_again" data-dismiss="modal">Try Again</button>
+              <button type="button" class="btn btn-secondary btn_try_again" (click)="closeModal()" >Try Again</button>
             </div>
           </div>
         </div>
+      </div> -->
+
+      <div class="modal-dialog ">
+    <!-- <div class="modal-content "> -->
+      <div class="modal-body text-center ">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <h3 class="mtb0px fs_18px fw_400 lh_150p fc_000000 tcenter">
+                You have selected the wrong answer. Please try again
+              </h3>
+            </div>
+          </div>
+           <div class="row center_flex pt30px">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+              <button type="button" class="btn btn-secondary btn_try_again" data-bs-dismiss="modal">Try Again</button>
+            </div>
+          </div>
+     
       </div>
+    <!-- </div> -->
+  </div>
+
     </div>
     <!-- /modal test -->
 

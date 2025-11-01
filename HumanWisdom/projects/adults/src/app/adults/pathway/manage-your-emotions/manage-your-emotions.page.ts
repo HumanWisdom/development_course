@@ -6,6 +6,8 @@ import { SharedService } from '../../../../../../shared/services/shared.service'
 import { Constant } from '../../../../../../shared/services/constant'; 
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { LogEventService } from '../../../../../../shared/services/log-event.service'; 
+import { ProgramType } from '../../../../../../shared/models/program-model';
+
 
 @Component({
   selector: 'app-manage-your-emotions',
@@ -22,13 +24,14 @@ export class ManageYourEmotionsPage implements OnInit {
   public lonelinessP: any
   public angerP: any
   public deathP: any
-
+isAdults:boolean=false;
 
   constructor(public router: Router, public service: AdultsService,
      private location: Location,     public logeventservice: LogEventService,
      private navigationService: NavigationService) { }
 
   ngOnInit() {
+    this.isAdults=SharedService.ProgramId==ProgramType.Adults;
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
       this.anxietyP = d['ModUserScrPc'].find(e => e.ModuleId  == 19)?.Percentage;

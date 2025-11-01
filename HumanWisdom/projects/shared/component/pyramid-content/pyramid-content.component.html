@@ -31,7 +31,8 @@
               <!-- audio player plugin  -->
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
-                  <audio id="aud1" controls controlsList="nodownload" #audio>
+                  <audio id="aud1" controls controlsList="nodownload" #audio
+                   [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
                 </div>

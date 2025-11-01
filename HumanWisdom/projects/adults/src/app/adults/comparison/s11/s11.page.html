@@ -19,7 +19,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12  p0">
 
           <div *ngIf="!o.CorrectAns">
-            <a class="sb_anchor" (click)="checkOption(o, false)" data-toggle="modal" data-target="#lab-slide-bottom-popup">
+            <a class="sb_anchor" (click)="checkOption(o, false)" data-bs-toggle="modal" data-bs-target="#lab-slide-bottom-popup">
               <div id="{{o.OptId}}" [ngClass]="{'single_select_active': false}" class="box select_box fleft">
                 <div>
                   <h3 class="txt9 ctxt9" id="{{o.OptId+'text'}}">
@@ -53,9 +53,12 @@
     </div>
 
     <!-- modal test -->
-    <div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
-      <div class="row center_flex">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
+    <div class="modal fade" id="lab-slide-bottom-popup" tabindex="-1" aria-hidden="true" >
+      <!-- <div class="row center_flex">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body"> -->
+            <div class="modal-dialog ">
+    <!-- <div class="modal-content "> -->
+      <div class="modal-body text-center ">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
               <h3 class="mtb0px fs_18px fw_400 lh_150p fc_000000 tcenter">
@@ -66,7 +69,7 @@
 
           <div class="row center_flex pt30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <button type="button" class="btn btn-default btn_try_again" data-dismiss="modal">Try Again</button>
+              <button type="button" class="btn btn-default btn_try_again" data-bs-dismiss="modal">Try Again</button>
             </div>
           </div>
         </div>

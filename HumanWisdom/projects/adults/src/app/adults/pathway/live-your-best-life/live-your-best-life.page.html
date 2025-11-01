@@ -3,7 +3,9 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class=""  (click)="goBack()" >                     
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+
       </a>  
     </div>
     
@@ -55,7 +57,7 @@
               </div>
             
               <!-- five dots -->
-              <div class="row mt30px">
+        <!--       <div class="row mt30px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 phbtns">
                   <a>
                     <button type="button" class="btn"></button>
@@ -77,11 +79,11 @@
                     <button type="button" class="btn"></button>
                   </a>
                 </div>
-              </div>
+              </div> -->
               <!-- /five dots -->
 
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt15px mb15px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt30px mb15px">
                   <h4 class="mtb0px fw_500 fs_24px lh_140p fc_000000">
                     <!-- Live your best life -->
                     Transform your life
@@ -113,19 +115,21 @@
               ">
                 <div class="row mb0pxi">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+                    <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex"> -->
                       <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_67.webp" alt="" class="p0 session_img">
                          <img
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
-                          alt="" class="p0 session_img_play">
+                          alt="" class="p0 session_img_play" *ngIf="!isAdults">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" alt="" class="p0 session_img_play" *ngIf="isAdults">
+
                       </div>
 
-                      <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                      <div class="col-md-6 col-sm-6 col-xs-6  pl10px">
                         <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000">
                           Introduction
                         </h4>
-                        <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                        <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis" [ngClass]="isAdults ? 'fc_000000':'fc_e58d82'">
                           Succeed in life
 
                         </h4>
@@ -134,7 +138,7 @@
                         </h4>
                       </div>
 
-                    </div>
+                    <!-- </div> -->
 
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tleft">
                       <i class="fa fa-angle-right fc_000000 fs_20px"></i>
@@ -147,7 +151,7 @@
             </div>
             </div>
 
-              <div class="row mt40px">
+              <div class="row mt40px tcenter">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow">
                   
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -167,7 +171,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Stress
                               </h4>
                             </div>
@@ -175,7 +179,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 10 sessions
                               </h4>
                             </div>
@@ -204,7 +208,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Relationships
                               </h4>
                             </div>
@@ -212,7 +216,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 13 sessions
                               </h4>
                             </div>
@@ -241,7 +245,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Communication
                               </h4>
                             </div>
@@ -249,7 +253,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 7 sessions
                               </h4>
                             </div>
@@ -276,7 +280,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Happiness
                               </h4>
                             </div>
@@ -284,7 +288,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 5 sessions
                               </h4>
                             </div>
@@ -311,7 +315,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Love
                               </h4>
                             </div>
@@ -319,7 +323,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 6 sessions
                               </h4>
                             </div>
@@ -346,7 +350,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Criticism
                               </h4>
                             </div>
@@ -354,7 +358,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 5 sessions
                               </h4>
                             </div>
@@ -381,7 +385,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Habits and addictions
                               </h4>
                             </div>
@@ -389,7 +393,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 6 sessions
                               </h4>
                             </div>
@@ -416,7 +420,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Food and health
                               </h4>
                             </div>
@@ -424,7 +428,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 2 sessions
                               </h4>
                             </div>
@@ -451,7 +455,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Self-esteem
                               </h4>
                             </div>
@@ -459,7 +463,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 2 sessions
                               </h4>
                             </div>
@@ -486,7 +490,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Bullying
                               </h4>
                             </div>
@@ -494,7 +498,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 4 sessions
                               </h4>
                             </div>
@@ -521,7 +525,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Opinions and beliefs
                               </h4>
                             </div>
@@ -529,7 +533,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 2 sessions
                               </h4>
                             </div>
@@ -556,7 +560,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Work
                               </h4>
                             </div>
@@ -564,7 +568,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 8 sessions
                               </h4>
                             </div>
@@ -591,7 +595,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Leadership
                               </h4>
                             </div>
@@ -599,7 +603,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 8 sessions
                               </h4>
                             </div>
@@ -626,7 +630,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Money
                               </h4>
                             </div>
@@ -634,7 +638,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 3 sessions
                               </h4>
                             </div>
@@ -661,7 +665,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Success and failure
                               </h4>
                             </div>
@@ -669,7 +673,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 5 sessions
                               </h4>
                             </div>
@@ -696,7 +700,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Making better decisions
                               </h4>
                             </div>
@@ -704,7 +708,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 3 sessions
                               </h4>
                             </div>
@@ -732,7 +736,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Living with peace
                               </h4>
                             </div>
@@ -740,7 +744,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 2 sessions
                               </h4>
                             </div>
@@ -764,7 +768,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Fear of death
                               </h4>
                             </div>
@@ -772,7 +776,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 3 sessions
                               </h4>
                             </div>
@@ -799,7 +803,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Diversity and inclusion
                               </h4>
                             </div>
@@ -807,7 +811,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 3 sessions
                               </h4>
                             </div>
@@ -834,7 +838,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Kindness
                               </h4>
                             </div>
@@ -842,7 +846,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 5 sessions
                               </h4>
                             </div>
@@ -869,7 +873,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_000000">
+                              <h4 class="mt10px mb5px fw_500 fs_15px lh_130p fc_000000 tleft">
                                 Social media
                               </h4>
                             </div>
@@ -877,7 +881,7 @@
       
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_000000_0_5 tleft">
                                 4 sessions
                               </h4>
                             </div>

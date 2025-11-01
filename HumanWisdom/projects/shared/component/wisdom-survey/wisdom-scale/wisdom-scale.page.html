@@ -5,7 +5,8 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
 
@@ -35,7 +36,7 @@
 
               <div class="scoreClass mtb20px">
                 <h2 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Wellness score</h2>
-                <h2 style="color: #e58d82">{{acheiviedScore}}</h2>
+                <h2  [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">{{acheiviedScore}}%</h2>
               </div>
 
               <div class="row" id="div_graph" *ngIf="enablebtn && this.lineChartData[0]['data'].length !== 0">

@@ -3,7 +3,7 @@
 <app-toc-header [moduleName]="'Short videos'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
 <!-- page content -->
-<div class="right_col mc_01_v3 mc_01_v3_ext">
+<div class="right_col mc_01_v3 mc_01_v3_ext"  [ngClass]="{'adults-scroll': isAdults}"> 
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">

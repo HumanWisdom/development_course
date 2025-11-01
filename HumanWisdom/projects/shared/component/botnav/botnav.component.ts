@@ -5,7 +5,6 @@ import {Location } from '@angular/common'
 @Component({
   selector: 'app-botnav',
   templateUrl: './botnav.component.html',
-  styleUrls: ['./botnav.component.scss'],
 })
 export class BotnavComponent implements OnInit {
 

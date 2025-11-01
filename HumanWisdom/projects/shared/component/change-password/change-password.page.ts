@@ -9,7 +9,6 @@ import { ProgramType } from "../../models/program-model";
 @Component({
   selector: 'app-common-change-password',
   templateUrl: './change-password.page.html',
-  styleUrls: ['./change-password.page.scss'],
 })
 export class ChangePasswordPage implements OnInit {
   email: any

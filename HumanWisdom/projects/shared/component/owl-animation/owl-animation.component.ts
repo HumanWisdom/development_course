@@ -23,8 +23,10 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   
   // Static owl properties
   public showStaticOwl: boolean = false; // Start with video, show static owl after video ends
-  public owlMessage: string = "Hi! I'm Olly."; // Customizable message
+  public owlMessage: string = "Hi! I'm Olly I am here to help"; // Customizable message
   public showOwl: boolean = true; // Control visibility based on route (home only)
+  public isSpeaking: boolean = false; // Controls cloud speaking animation
+  private messageTimers: any[] = [];
   
   // Debug flag - set to true to test static owl immediately
   private debugMode: boolean = false;
@@ -69,6 +71,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     if (this.debugMode) {
       console.log('DEBUG MODE: Showing static owl immediately');
       this.showStaticOwl = true;
+      this.startSpeakingSequence();
       this.cdr.detectChanges();
       return;
     }
@@ -87,7 +90,9 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   
 
   ngOnDestroy() {
-    // No cleanup needed for GIF
+    // Clear any pending timers
+    this.messageTimers.forEach(t => clearTimeout(t));
+    this.messageTimers = [];
   }
 
   
@@ -133,6 +138,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.isPlaying = false;
       this.showStaticOwl = true;
+      this.startSpeakingSequence();
       this.cdr.detectChanges();
       console.log('Static owl is now visible (after GIF error)');
     }, 2000);
@@ -143,6 +149,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     console.log('GIF animation completed, showing static owl permanently');
     this.isPlaying = false;
     this.showStaticOwl = true;
+    this.startSpeakingSequence();
     this.cdr.detectChanges();
     console.log('Static owl is now permanently visible');
   }
@@ -157,12 +164,43 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     this.isAtCorner = true;
     this.gifError = false;
     this.showStaticOwl = false;
+    this.isSpeaking = false;
+    this.messageTimers.forEach(t => clearTimeout(t));
+    this.messageTimers = [];
     this.cdr.detectChanges();
     
     // Restart the timer for showing static owl
     setTimeout(() => {
       this.onGifAnimationComplete();
     }, this.gifAnimationDuration);
+  }
+
+  private startSpeakingSequence() {
+    // Begin with the intro message and speaking animation
+    this.owlMessage = "Hi I am olly\nI am here to help";
+    this.isSpeaking = true;
+    this.cdr.detectChanges();
+
+    // After a few seconds, switch to the next prompt
+    const toNext = setTimeout(() => {
+      this.owlMessage = 'Ask me\nany questions';
+      this.cdr.detectChanges();
+    }, 3000);
+    this.messageTimers.push(toNext);
+
+    // Stop the speaking animation after a short while
+    const stopSpeaking = setTimeout(() => {
+      this.isSpeaking = false;
+      this.cdr.detectChanges();
+    }, 6000);
+    this.messageTimers.push(stopSpeaking);
+
+    // After showing the question for a bit, remove the cloud entirely
+    const hideCloud = setTimeout(() => {
+      this.owlMessage = '';
+      this.cdr.detectChanges();
+    }, 9000);
+    this.messageTimers.push(hideCloud);
   }
 
   // Method to set custom owl message

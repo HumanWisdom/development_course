@@ -217,8 +217,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-      width: 72%;
+
     left: 16%;
+        height: 72px;
+    width: 65px
 }
 
 .static-owl-image {
@@ -236,8 +238,8 @@
 /* Cloud Container Styles */
 .owl-cloud-container {
   position: absolute;
-  top: -21px;
-  left: -18%;
+  top: -95px;
+  left: -65%;
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;
@@ -246,9 +248,30 @@
   justify-content: center;
 }
 
+/* Bubble speaking animation */
+.owl-cloud-container.speaking {
+  transform-origin: bottom left;
+  animation: bubble-pop 0.9s ease-in-out infinite;
+}
+
+@keyframes bubble-pop {
+  0% {
+    transform: translateX(-50%) scale(0.92);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+  }
+  55% {
+    transform: translateX(-50%) scale(1.08);
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16));
+  }
+  100% {
+    transform: translateX(-50%) scale(1.0);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+  }
+}
+
 .cloud-image {
-  width: 49px;
-  height: auto;
+  width: 178px;
+  height: 140px;
   max-width: 140px;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
@@ -263,11 +286,11 @@
   transform: translate(-50%, -50%);
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-size: 6px;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
   text-align: center;
-  white-space: nowrap;
+  white-space: pre-line; /* respect \n and wrap */
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100px;

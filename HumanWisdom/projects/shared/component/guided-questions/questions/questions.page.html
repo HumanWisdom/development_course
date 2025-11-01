@@ -3,7 +3,8 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="Backward()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
 
@@ -122,21 +123,21 @@
                         </a>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tcenter">
-                        <h4  class="mtb0px fs_12px fw_400 lh_18px fc_ED7D6F tcenter cgqtns_sc">
+                        <h4  class="mtb0px fs_12px fw_400 lh_18px bg-transparent  tcenter cgqtns_sc" ngClass="isAdults ? 'fc_5d5d5d' : 'fc_ED7D6F'">
                           {{title}}
                          </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                         <a>
-                          <button (click)="forward()" *ngIf="counter!=numSlides;else savetoDiary" type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                          <button (click)="forward()" *ngIf="counter!=numSlides;else savetoDiary" type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
                             <!-- Save to diary -->
                           </button>
                           <ng-template #savetoDiary>
-                            <button type="button" (click)="SaveBtn()"   class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+                            <button type="button" (click)="SaveBtn()"   class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff">
                               Save to Diary
-                              <i class="fs_16px ml10px"></i>
+                              <!-- <i class="fs_16px ml10px"></i> -->
                               <!-- Save to diary -->
                             </button>
                           </ng-template>

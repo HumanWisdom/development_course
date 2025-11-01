@@ -203,17 +203,18 @@ export class SharedService {
 
  public static getPreferenceDataForHome() {
 return [
-        {
-          id: "1",
-          displayName: "Work",
-          active: false,
-          name: 'Work and Leadership'
-        },
+      
         {
           id: "2",
           displayName: "Mental health",
           active: false,
           name: 'Manage your mental health'
+        },
+          {
+          id: "1",
+          displayName: "Work",
+          active: false,
+          name: 'Work and Leadership'
         },
         {
           id: "3",
@@ -227,25 +228,7 @@ return [
           active: false,
           name: 'Be happier'
         },
-        {
-          id: "5",
-          displayName: "Addiction",
-          active: false,
-          name: 'Habits and Addictions'
-        },
-        {
-          id: "6",
-          displayName: "Sorrow and Loss",
-          active: false,
-          name: 'Deal with Sorrow and loss'
-        },
-        {
-          id: "7",
-          displayName: "Meditation",
-          active: false,
-          name: 'Meditation',
-        },
-        {
+         {
           id: "8",
           displayName: "Emotions",
           active: false,
@@ -262,7 +245,27 @@ return [
            displayName: "Self Awareness",
           active: false,
              name: 'Develop your self awareness',
-           }
+        },
+         {
+          id: "7",
+          displayName: "Meditation",
+          active: false,
+          name: 'Meditation',
+        },       
+        {
+          id: "6",
+          displayName: "Sorrow and Loss",
+          active: false,
+          name: 'Deal with Sorrow and loss'
+        },
+         {
+          id: "5",
+          displayName: "Addiction",
+          active: false,
+          name: 'Habits and Addictions'
+        }
+       
+       
       ]
 
 

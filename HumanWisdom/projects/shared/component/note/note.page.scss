@@ -1,0 +1,77 @@
+.modal-content {
+  border-radius: 12px;
+  padding: 25px 20px;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Save Changes Modal */
+#save_changes .btn {
+  width: 80%;
+  max-width: 300px;
+  margin: 5px 0;
+}
+
+#save_changes .btn_e58d82 {
+  background-color: #e58d82;
+  color: white;
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 10px 0;
+}
+
+#save_changes .btn_e58d82t {
+  background: transparent;
+  border: none;
+  color: #e58d82;
+  font-weight: 600;
+  text-decoration: underline;
+}
+#successfully_saved img {
+  max-width: 80px;
+  margin-bottom: 15px;
+}
+
+#successfully_saved .btn_e58d82 {
+  width: 80%;
+  max-width: 250px;
+  margin: 0 auto;
+  border-radius: 25px;
+  padding: 10px 0;
+}
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+.modal.show {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 99999 !important;
+}
+.modal-backdrop.show {
+  z-index: 99998 !important;
+}
+.modal-content {
+  position: relative;
+  z-index: 999999 !important;
+}
+.bg-dark{
+  background: #183C79 !important;
+}
+:is(textarea, input)::placeholder {
+  color: inherit;
+}
+:host ::ng-deep .bg_FFF7E6 textarea::placeholder,
+:host ::ng-deep .bg_FFF7E6 input::placeholder {
+  color: #5d5d5d !important;
+  opacity: 0.9 !important;
+}
+:host ::ng-deep .bg_stake textarea::placeholder,
+:host ::ng-deep .bg_stake input::placeholder {
+  color: #ffffff !important;
+  opacity: 0.8 !important;
+}
