@@ -10819,7 +10819,7 @@ background: #535353 !important;
    /* width: 30% !important; */
   width: 335px !important;   
   position: absolute;
-   top:28% !important; 
+   top: 45% !important; 
    /* align-self: center; */
    height: fit-content;
 }
@@ -11229,7 +11229,8 @@ background: #535353 !important;
   border: 0 !important;
   border-radius: 12px;
   padding: 0 20px;
-  background: rgba(255,255,255,0.10);
+  /* background: rgba(255,255,255,0.10); */
+  background: #FFE8BB;
   display: flex;
   align-items: center;
 }
@@ -12232,7 +12233,7 @@ h1.module_title
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 35px;
   /* text-align: center; */
   text-align: left;
@@ -12269,7 +12270,7 @@ h1.module_title
   font-size: 13px;
   line-height: 14px;
   text-align: left;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .txt6
@@ -12304,8 +12305,8 @@ h1.module_title
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 24px;
+  line-height: 130%;
   /* text-align: center; */
   text-align: left;
   color: #000000;
@@ -13515,7 +13516,7 @@ and (orientation : portrait)
   .txt3,
   .txt8
   {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .dflexbox_kta_1liner .txt3
@@ -17254,11 +17255,17 @@ textarea:focus
 .lengthy_txt_pointer
 {
   padding-bottom: 3%;
+  font-size: 18px;
+  font-weight: 400px;
+  line-height: 150%;
 }
 
 .oneliner_txt_pointer
 {
   padding-bottom: 2%;
+   font-size: 18px;
+    font-weight: 400px;
+  line-height: 150%;
 }
 
 .cmw
@@ -17314,7 +17321,7 @@ textarea:focus
   display: flex;
   align-items: center;
   /* color: #5D5D5D; */
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .navleft

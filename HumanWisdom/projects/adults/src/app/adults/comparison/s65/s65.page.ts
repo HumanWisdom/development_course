@@ -81,7 +81,7 @@ export class S65Page implements OnInit {
     if(this.optionList && this.sessionOption65) {
       this.optionList.forEach((d) => {
         if(this.sessionOption65.includes(d['OptId'])) {
-          document.getElementById(d['OptStr']).style.backgroundColor = '#E58D82';
+          document.getElementById(d['OptStr']).style.backgroundColor = '#ED7D6F';
         }
       }) 
     }   
@@ -126,12 +126,12 @@ export class S65Page implements OnInit {
    console.log(id,e)
    if(e==true)
    {
-   document.getElementById(divid).style.backgroundColor = '#E58D82';
+   document.getElementById(divid).style.backgroundColor = '#ED7D6F';
      this.sendOption.push(id)
    }
    else if(e==false)
    {
-    document.getElementById(divid).style.backgroundColor = 'rgba(255,255,255,0.1)';
+    document.getElementById(divid).style.backgroundColor = '#FFE8BB';
     this.sendOption.forEach((element,index)=>{
       if(element==id) this.sendOption.splice(index,1);
    });
