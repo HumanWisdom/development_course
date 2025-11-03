@@ -48,7 +48,6 @@ var style = {
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.page.html',
-  styleUrls: ['./payment.page.scss'],
 })
 export class PaymentPage implements AfterViewInit, OnDestroy {
   //stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';

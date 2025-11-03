@@ -13,8 +13,7 @@ import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-start-your-free-trial',
   templateUrl: './start-your-free-trial.page.html',
-  styleUrls: ['./start-your-free-trial.page.scss'],
-})
+  })
 export class StartYourFreeTrialPage implements OnInit {
   @ViewChild('closemodal') closemodal: ElementRef;
   isAdults = false;

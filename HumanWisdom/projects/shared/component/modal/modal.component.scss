@@ -50,3 +50,11 @@
 
 min-height: auto;
 }
+
+
+.modal{
+  position: fixed !important;
+  top:50%   !important;
+  bottom: 50% !important;
+  transform: translate(0%,-50% ) !important;
+}
