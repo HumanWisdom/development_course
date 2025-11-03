@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +10,7 @@
     content="Personal growth blog, Self-improvement blog, Inspirational blog, Life lessons blog, Mindfulness blog, Adult development blog">
 
   <!-- vendor_header -->
-  <?php include('../includes/vendor_header.php'); ?>
+  <?php include '../includes/vendor_header.php'; ?>
   <!-- /vendor_header -->
 
   <style>
@@ -48,7 +48,7 @@
 <body>
 
   <!-- header -->
-  <?php include('../includes/header.php'); ?>
+  <?php include '../includes/header.php'; ?>
   <!-- /header -->
 
   <section class="hpt120px">
@@ -1218,27 +1218,28 @@
     <!-- /aspects -->
 
     <!-- footer -->
-    <?php include('../includes/footer.php'); ?>
+    <?php include '../includes/footer.php'; ?>
     <!-- /footer -->
 
   </main>
 
   <!-- vendor_footer -->
-  <?php include('../includes/vendor_footer.php'); ?>
+  <?php include '../includes/vendor_footer.php'; ?>
   <!-- /vendor_footer -->
 
   <script>
  $(document).ready(function () {
-  $('#toggle').click();
-  // Hide the additional blogs initially
- $('#text').toggle(0, function () {
-  if ($(this).is(':visible')) {
-    $('#toggle').text('View Less');
-  } else {
-    $('#toggle').text('View More');
-  }
-});
-
+  // Toggle button click handler
+  $('#toggle').on('click', function(e) {
+    e.preventDefault();
+    $('#text').toggle(0, function () {
+      if ($(this).is(':visible')) {
+        $('#toggle').text('View Less');
+      } else {
+        $('#toggle').text('View More');
+      }
+    });
+  });
 });
   </script>
 

@@ -3,12 +3,12 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="routeToLanding()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0">
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
         New Thread
       </h1>
     </div>
@@ -36,7 +36,7 @@
                     <option *ngFor="let item of categoryList" [value]="item.value" >{{item.label}}</option>
                   </select> -->
 
-                  <div class="row">
+                  <div class="">
                     <button type="button"  class="btn btn_all_threads btn-thread" data-toggle="modal"
                       data-target="#choose_category"[innerText]="buttonText" >   
                                                      
@@ -87,7 +87,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <label for="forum_post_checkbox" class="tcenter chkb_post_anonymously mt0px">
                     <input id="forum_post_checkbox" #checkboxSelect [(ngModel)]="isChecked" (change)="onChange($event)" type="checkbox">
-                    <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                       <span class="ml10px">
                         Post anonymously
                       </span>
@@ -169,7 +169,7 @@
       <div class="row mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-            <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+            <h4 class="mtb0px fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
               CHOOSE CATEGORY
             </h4>
           </div>
@@ -193,7 +193,7 @@
 
         <div class="row" >
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
               Stress, anxiety, depression and mental health issues
             </h3>
           </div>
@@ -217,7 +217,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
               The many different relationships we have, with ourselves and others
             </h3>
           </div>
@@ -241,7 +241,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
               Work related issues
             </h3>
           </div>
@@ -264,7 +264,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
               School related issues
             </h3>
           </div>
@@ -288,7 +288,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
               Stories, quotes, and what makes you happy
             </h3>
           </div>
@@ -312,7 +312,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+            <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
               Questions for our team of HappierMe coaches
             </h3>
           </div>
@@ -330,7 +330,7 @@
  <a class="" (click)="filterBasedOnTags(3,'Work and Leadership')" *ngIf="isAdults">
   <div class="row mb10px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'" >
         Work and Leadership
       </h3>
     </div>
@@ -338,7 +338,7 @@
 
  <!--  <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Work related issues
       </h3>
     </div>
@@ -354,7 +354,7 @@
 <a class="" (click)="filterBasedOnTags(1,'Manage your mental health')" *ngIf="isAdults">
   <div class="row mtb10pxi">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Manage your mental health
       </h3>
     </div>
@@ -372,7 +372,7 @@
 <a class="" (click)="filterBasedOnTags(2,'Relationships')" *ngIf="isAdults">
   <div class="row mtb10pxi">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Relationships
       </h3>
     </div>
@@ -380,7 +380,7 @@
 
  <!--  <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         The many different relationships we have, with ourselves and others
       </h3>
     </div>
@@ -395,7 +395,7 @@
 <a class="" (click)="filterBasedOnTags(11,'Be happier')" *ngIf="isAdults">
   <div class="row mtb10pxi">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Be happier
       </h3>
     </div>
@@ -410,7 +410,7 @@
 <a class="" (click)="filterBasedOnTags(12,'Habits and Addiction')" *ngIf="isAdults">
   <div class="row mtb10pxi">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Habits and Addiction
       </h3>
     </div>
@@ -425,7 +425,7 @@
 <a class="" (click)="filterBasedOnTags(13,'Deal with loss')" *ngIf="isAdults">
   <div class="row mtb10pxi">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Deal with loss
       </h3>
     </div>
@@ -440,7 +440,7 @@
 <a class="" (click)="filterBasedOnTags(14,'Meditation')" *ngIf="isAdults">
   <div class="row mtb10pxi">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Meditation
       </h3>
     </div>
@@ -455,7 +455,7 @@
 <a class="" (click)="filterBasedOnTags(15,'Manage your emotions')" *ngIf="isAdults">
   <div class="row mtb10pxi">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Manage your emotions
       </h3>
     </div>
@@ -471,7 +471,7 @@
 <a class="" (click)="filterBasedOnTags(16,'Manage your mental health')" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Manage your mental health
       </h3>
     </div>
@@ -479,7 +479,7 @@
 
  <!--  <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         School related issues
       </h3>
     </div>
@@ -494,7 +494,7 @@
 <a class="" (click)="filterBasedOnTags(17,'Relationships')" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Relationships
       </h3>
     </div>
@@ -511,7 +511,7 @@
 <a class="" (click)="filterBasedOnTags(18,'Feel calm')" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Feel calm
       </h3>
     </div>
@@ -528,7 +528,7 @@
 <a class="" (click)="filterBasedOnTags(19,'Be happier')" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Be happier
       </h3>
     </div>
@@ -546,7 +546,7 @@
 <a class="" (click)="filterBasedOnTags(20,'Manage your emotions')" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Manage your emotions
       </h3>
     </div>
@@ -564,7 +564,7 @@
 <a class="" (click)="filterBasedOnTags(21,'Overcome unhelpful habits')" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Overcome unhelpful habits
       </h3>
     </div>
@@ -582,7 +582,7 @@
 <a class="" (click)="filterBasedOnTags(22,'Understand yourself')" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Understand yourself
       </h3>
     </div>
@@ -600,7 +600,7 @@
 <a class="" (click)="filterBasedOnTags(23,'Succeed in life')" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Succeed in life
       </h3>
     </div>
@@ -618,7 +618,7 @@
 <!--   <a class="" (click)="filterBasedOnTags(6)" *ngIf="!isAdults">
   <div class="row mb5px">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         School
       </h3>
     </div>
@@ -637,7 +637,7 @@
 <a class="" (click)="filterBasedOnTags(4,'Nuggets of Inspiration')">
   <div class="row mtb10pxi">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_15px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Nuggets of Inspiration
       </h3>
     </div>
@@ -645,7 +645,7 @@
 
  <!--  <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Stories, quotes, and what makes you happy
       </h3>
     </div>
@@ -669,7 +669,7 @@
 <!-- 
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h3 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+      <h3 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Questions for our team of HappierMe coaches
       </h3>
     </div>
@@ -702,7 +702,7 @@
 
       <div class="row mtb30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
             Are you sure you want to continue without Category?
           </h4>
         </div>
