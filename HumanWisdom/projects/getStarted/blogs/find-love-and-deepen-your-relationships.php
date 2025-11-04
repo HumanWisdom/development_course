@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -7,16 +8,16 @@
     <meta property="description" content="12 questions to deepen your relationships">
     <meta property="keyword" content="">
 
-    <!-- vendor_header -->
-    <?php include '../includes/vendor_header.php'; ?>
-    <!-- /vendor_header -->
+  <!-- vendor_header -->
+  <?php Template::vendorHeader(); ?>
+  <!-- /vendor_header -->
   </head>
 
   <body>
 
-    <!-- header -->
-    <?php include '../includes/header.php'; ?>
-    <!-- /header -->
+  <!-- header -->
+  <?php Template::header(); ?>
+  <!-- /header -->
 
     <main id="main" class="hptblog120px">
 
@@ -360,15 +361,15 @@
       </section>
       <!-- /aspects -->
 
-      <!-- footer -->
-      <?php include '../includes/footer.php'; ?>
-      <!-- /footer -->
+    <!-- footer -->
+    <?php Template::footer(); ?>
+    <!-- /footer -->
 
     </main>
 
-    <!-- vendor_footer -->
-    <?php include '../includes/vendor_footer.php'; ?>
-    <!-- /vendor_footer -->
+  <!-- vendor_footer -->
+  <?php Template::vendorFooter(); ?>
+  <!-- /vendor_footer -->
 
   </body>
 
