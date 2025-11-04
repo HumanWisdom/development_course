@@ -34,18 +34,26 @@
                   [@slideAnimation]="currentIndex === i ? 'active' : (currentIndex > i ? 'previous' : 'next')"
                   [style.zIndex]="currentIndex === i ? 1 : 0"
                 >
-                <video #videoPlayer class="video-width" *ngIf="currentIndex === i"  width="400px" height="450px" autoplay controls
-                controlsList="nodownload nofullscreen"
-                  disablePictureInPicture playsinline
-                  [ngClass]="['cvideo_01', isAdults ? 'invert-controls' : '']" 
-                  controlsList="nodownload">
-                  <source [src]="video.url" type="video/mp4" />
-                </video>
+                <video
+  playsinline
+  class="cvideo"
+  [ngClass]="[
+    isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di']"
+  *ngIf="videoLink"
+  #videoPlayer
+  controls
+  controlsList="nodownload nofullscreen"
+  preload="metadata"
+  [poster]="videoPoster"
+  (play)="Logevent && Logevent('click_play_video')">
+  <source [src]="videoLink" type="video/mp4" />
+</video>
+
                 <div *ngIf="currentIndex === i" 
                     class="swipe-up-alt" 
                     [ngClass]="isAdults ? 'black-theme' : 'white-theme'">
-                  <div class="chevron"></div>
-                  <span class="text">Swipe Up</span>
+                    <span class="text">Swipe for next</span>
+                    <div class="chevron"></div>
                 </div>
 
                
@@ -105,13 +113,22 @@
               <h1 class="txt1" [ngStyle]="{'color': isAdults ? 'black' : 'white'}">{{ videoTitle }}</h1>
               <div class="row tcenter">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                 <video controls 
-                  playsinline 
-                  autoplay 
-                  [ngClass]="['cvideo_01', isAdults ? 'invert-controls' : '']" 
-                  controlsList="nodownload">
-                  <source [src]="videoLink" type="video/mp4">
-                </video>
+                 <video
+  playsinline
+  class="cvideo"
+  [ngClass]="[
+    isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di'
+  ]"
+  *ngIf="videoLink"
+  #videoPlayer
+  controls
+  controlsList="nodownload nofullscreen"
+  preload="metadata"
+  [poster]="videoPoster"
+  (play)="Logevent && Logevent('click_play_video')">
+  <source [src]="videoLink" type="video/mp4" />
+</video>
+
 
                 </div>
               </div>

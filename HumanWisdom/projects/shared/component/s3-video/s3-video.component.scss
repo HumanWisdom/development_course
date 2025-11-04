@@ -13,6 +13,7 @@ p {
   height: 40px;
   animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -54,64 +55,63 @@ p {
   margin-left: 7.5rem;
 }
 
-/* Swipe Up animation */
+/* -------------------------------------- */
+/* Swipe for Next Section (matches image) */
+/* -------------------------------------- */
+
 .swipe-up-alt {
-  position: relative;
-  width: 64px;
-  height: 100px;
-  margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-}
-
-.chevron {
-  width: 20px;
-  height: 20px;
-  transform: rotate(134deg);
-  opacity: 1;
-  animation: fadeInOut 1.5s infinite;
-  margin-left: 20px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  padding: 10px 0;
 }
 
 .text {
-  font-size: 14px;
-  margin-top: 8px;
-  opacity: 0.5;
-  animation: fadeInOut 1.5s infinite;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  letter-spacing: 0.5px;
 }
 
-/* Adult (black on white) */
-.black-theme .text {
-  color: #000 !important;
+.chevron {
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  transform: rotate(-45deg);
+  margin-top: 6px;
   opacity: 0.8;
 }
+// .swipe-up-alt {
+//   animation: fadeInOut 1.8s ease-in-out infinite;
+// }
+
+/* Theme variations */
+.black-theme .text {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
 .black-theme .chevron {
-  border-left: 3px solid #000 !important;
-  border-bottom: 3px solid #000 !important;
+  border-left: 2px solid rgba(0, 0, 0, 0.5) !important;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Teen (white on dark) */
 .white-theme .text {
   color: #fff !important;
 }
 .white-theme .chevron {
-  border-left: 3px solid #fff !important;
-  border-bottom: 3px solid #fff !important;
+  border-left: 2px solid #fff !important;
+  border-bottom: 2px solid #fff !important;
 }
 
-/* Animations */
-@keyframes fadeInOut {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-}
+/* -------------------------------------- */
+/* Video Controls Tweaks */
+/* -------------------------------------- */
 
-/* Video controls */
 video::-webkit-media-controls-volume-slider {
   display: none !important;
 }
@@ -136,18 +136,15 @@ video.cvideo_01.invert-controls {
   background-color: #fff;
 }
 
-.black-theme .chevron {
-  border-left: 3px solid #000 !important;
-  border-bottom: 3px solid #000 !important;
-  transform: rotate(134deg);
-  animation: fadeInOut 1.5s infinite;
-  opacity: 1;
+/* Video size and layout adjustments */
+.cvideo_ext_di_no_radius {
+  width: 70%;
+  max-height: 86vh;
+  object-fit: cover;
+  border-radius: 0px !important;
+  padding: 20px;
 }
 
-.white-theme .chevron {
-  border-left: 3px solid #fff !important;
-  border-bottom: 3px solid #fff !important;
-  transform: rotate(134deg);
-  animation: fadeInOut 1.5s infinite;
-  opacity: 1;
+.cvideo_ext_di {
+  width: 100% !important;
 }
