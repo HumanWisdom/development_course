@@ -34556,18 +34556,18 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background: #FFE8BB;
+  /* background: #FFE8BB; */
   /* padding: 20px; */
   font-size: 15px;
   margin-top: 10px;
   font-weight: 400;
   line-height: 140%;
-  color: #000;
+   color: #000; 
 }
 
 .ta_new_thread::-webkit-input-placeholder
 {
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(0, 0, 0, 0.50);
 }
 
 .ta_new_thread:focus
@@ -34672,7 +34672,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   margin: 0;
   padding: 0;
   background: transparent;
-  color: #EEA170;
+  color: #EEA170 !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
