@@ -429,7 +429,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
           this.logeventservice.logEvent('click_logout_Hamburger');
           if (this.platform.isBrowser) {
             this.closemenuevent();
-            this.closeLogoutmodal.nativeElement.click();
+            // this.closeLogoutmodal.nativeElement.click();
             this.isloggedIn = false;
             this.isPartner = false;
             this.initialize();

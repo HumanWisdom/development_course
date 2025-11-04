@@ -5,6 +5,9 @@
   margin: auto;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  position: relative;
+  z-index: 999999 !important;
 }
 
 /* Save Changes Modal */
@@ -16,7 +19,7 @@
 
 #save_changes .btn_e58d82 {
   background-color: #e58d82;
-  color: white;
+  color: black;
   font-weight: 600;
   border-radius: 25px;
   padding: 10px 0;
@@ -55,10 +58,7 @@
 .modal-backdrop.show {
   z-index: 99998 !important;
 }
-.modal-content {
-  position: relative;
-  z-index: 999999 !important;
-}
+
 .bg-dark{
   background: #183C79 !important;
 }

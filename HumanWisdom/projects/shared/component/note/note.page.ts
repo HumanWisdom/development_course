@@ -32,15 +32,17 @@ export class NotePage implements OnInit {
   enableSave = false;
   oldnotes = '';
   isAdults: boolean = true; 
+   enableAlert = false;
+   enableSuccessAlert = false;
 
-  @ViewChild('savebtn') savebtn!: ElementRef;
+  // @ViewChild('savebtn') savebtn!: ElementRef;
   @ViewChild('successbtn') successbtn!: ElementRef;
 
   constructor(
-    private router: Router,
-    private service: CommonService,
-    private location: Location,
-    private activate: ActivatedRoute,
+    private readonly router: Router,
+    private readonly service: CommonService,
+    private readonly location: Location,
+    private readonly activate: ActivatedRoute,
     public logeventservice: LogEventService,
   ) {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
@@ -66,7 +68,8 @@ export class NotePage implements OnInit {
   }
 
   save() {
-    this.savebtn.nativeElement.click();
+    // this.savebtn.nativeElement.click();
+     this.enableAlert = true;
   }
 
   doNotSave() {
@@ -80,6 +83,7 @@ export class NotePage implements OnInit {
     else if (this.urlId == 0) this.addNote();
 
     this.isSave = false;
+    this.enableAlert = false;
   }
 
   addNote() {
@@ -92,7 +96,7 @@ export class NotePage implements OnInit {
     }).subscribe({
       next: () => {},
       error: err => console.log(err),
-      complete: () => this.successbtn.nativeElement.click()
+      complete: () => this.enableSuccessAlert= true
     });
   }
 
@@ -106,7 +110,7 @@ export class NotePage implements OnInit {
     }).subscribe({
       next: () => {},
       error: err => console.log(err),
-      complete: () => this.successbtn.nativeElement.click()
+      complete: () => this.enableSuccessAlert= true
     });
   }
 
@@ -118,7 +122,7 @@ export class NotePage implements OnInit {
     }).subscribe({
       next: () => {},
       error: err => console.log(err),
-      complete: () => this.successbtn.nativeElement.click()
+      complete: () => this.enableSuccessAlert= true
     });
   }
 
@@ -130,12 +134,12 @@ export class NotePage implements OnInit {
     }).subscribe({
       next: () => {},
       error: err => console.log(err),
-      complete: () => this.successfullySaved = true
+      complete: () => this.enableSuccessAlert = true
     });
   }
 
   continue() {
-    this.successfullySaved = false;
+    this.enableSuccessAlert = false;
     this.isSave = false;
     this.router.navigate(['/' + SharedService.getprogramName() + '/journal']);
   }
@@ -169,4 +173,10 @@ export class NotePage implements OnInit {
     document.body.classList.remove('modal-open');
     document.body.style.overflow = '';
   }
+
+   getAlertcloseEvent(event) {
+      if(event==='Save') this.submitProgress();
+      if(event==='continue') this.continue();
+          
+   }
 }
