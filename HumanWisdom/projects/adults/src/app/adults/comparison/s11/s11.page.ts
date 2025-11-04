@@ -38,7 +38,8 @@ export class S11Page implements OnInit {
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
   enableTick = false;
-
+   enableAlert = false;
+  
   constructor
   (
     private router: Router,
@@ -68,6 +69,10 @@ export class S11Page implements OnInit {
     }
     this.startTime = Date.now();
   }
+
+   getAlertcloseEvent(event) {
+    this.enableAlert = false;
+   }
 
   createScreen()
   {
@@ -126,6 +131,7 @@ export class S11Page implements OnInit {
     else
     {
       this.enableTick = false;
+      this.enableAlert = true;
 
       if (this.falseans !== '')
       {
