@@ -166,12 +166,12 @@
     </div>
   </div>
 </div> -->
-<app-modal *ngIf="enableAlert"  (closeEvent)="getAlertcloseEvent('Save')" [okText]="'Save'" [cancelText]="'Discard changes'" [enableCancel]="true"
-  [title]="'Save changes'" [content]="'Do you want to save the changes?'" >
+<app-modal [modalid]="'save_changes'" *ngIf="enableAlert"  (closeEvent)="Save($event)" [okText]="'Save'" [cancelText]="'Discard changes'" [enableCancel]="true"
+  [title]="'Save changes'" [content]="'Do you want to save the changes?'" data-bs-dismiss="modal" >
 </app-modal>
 
-<app-modal *ngIf="enableSuccessAlert"  (closeEvent)="getAlertcloseEvent('continue')" [okText]="'Continue'"   [enableCancel]="false"
-  [title]="'Successfully saved'"  >
+<app-modal *ngIf="enableSuccessAlert"  (closeEvent)="save_continue($event)" [okText]="'Continue'"   [enableCancel]="false"
+  [title]="'Successfully saved'" data-bs-dismiss="modal"  >
 </app-modal>
 <!-- Successfully Saved Modal -->
 <!-- <div
