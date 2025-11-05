@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -9,14 +10,14 @@
     <meta property="keyword" content="work stress, sleep problems, stress and sleep, workplace stress, sleep deprivation solutions, better sleep tips, HappierMe app">
 
     <!-- vendor_header -->
-    <?php include '../includes/vendor_header.php'; ?>
+    <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include '../includes/header.php'; ?>
+    <?php Template::header(); ?>
     <!-- /header -->
 
     <main id="main" class="hptblog120px">
@@ -491,13 +492,13 @@ Healing strained relationships
       <!-- /aspects -->
 
       <!-- footer -->
-      <?php include '../includes/footer.php'; ?>
+      <?php Template::footer(); ?>
       <!-- /footer -->
 
     </main>
 
     <!-- vendor_footer -->
-    <?php include '../includes/vendor_footer.php'; ?>
+    <?php Template::vendorFooter(); ?>
     <!-- /vendor_footer -->
 
   </body>

@@ -5,13 +5,13 @@
       <a>
         <img
           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg"
-          (click)="goBack()"
+          (click)="goBack()" (keydown)="goBack()"
           alt=""
           class="p0" *ngIf="!isAdults"
         />
          <img
           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg"
-          (click)="goBack()"
+          (click)="goBack()" (keydown)="goBack()"
           alt=""
           class="p0" *ngIf="isAdults"
         />
@@ -100,13 +100,13 @@
               </div>
 
               <!-- Hidden buttons for Angular-triggered modals -->
-              <button
+          <!--     <button
                 type="button"
                 style="display: none"
                 #savebtn
                 data-bs-toggle="modal"
                 data-bs-target="#save_changes"
-              ></button>
+              ></button> -->
               <button
                 type="button"
                 style="display: none"
@@ -128,7 +128,7 @@
 <!-- /footer -->
 
 <!-- Save Changes Modal -->
-<div
+<!-- <div
   class="modal fade"
   id="save_changes"
   tabindex="-1"
@@ -165,10 +165,16 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<app-modal *ngIf="enableAlert"  (closeEvent)="getAlertcloseEvent('Save')" [okText]="'Save'" [cancelText]="'Discard changes'" [enableCancel]="true"
+  [title]="'Save changes'" [content]="'Do you want to save the changes?'" >
+</app-modal>
 
+<app-modal *ngIf="enableSuccessAlert"  (closeEvent)="getAlertcloseEvent('continue')" [okText]="'Continue'"   [enableCancel]="false"
+  [title]="'Successfully saved'"  >
+</app-modal>
 <!-- Successfully Saved Modal -->
-<div
+<!-- <div
   class="modal fade"
   id="successfully_saved"
   tabindex="-1"
@@ -183,9 +189,9 @@
     >
       <div class="row mb20px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <img
+          <img 
             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/v3_tick_successfull.svg"
-            class="img-responsive"
+            class="img-responsive" alt="success"
           />
         </div>
       </div>
@@ -215,4 +221,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

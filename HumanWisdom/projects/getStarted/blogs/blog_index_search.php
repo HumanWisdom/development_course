@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -8,14 +9,14 @@
     <meta property="keyword" content="Personal growth blog, Self-improvement blog, Inspirational blog, Life lessons blog, Mindfulness blog, Adult development blog">
 
     <!-- vendor_header -->
-    <?php include '../includes/vendor_header.php'; ?>
+  <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include '../includes/header.php'; ?>
+  <?php Template::header(); ?>
     <!-- /header -->
 
     <section class="hpt120px">
@@ -653,13 +654,13 @@
       <!-- /aspects -->
 
       <!-- footer -->
-      <?php include '../includes/footer.php'; ?>
+    <?php Template::footer(); ?>
       <!-- /footer -->
 
     </main>
 
     <!-- vendor_footer -->
-    <?php include '../includes/vendor_footer.php'; ?>
+  <?php Template::vendorFooter(); ?>
     <!-- /vendor_footer -->
 
     <script type="text/javascript">
