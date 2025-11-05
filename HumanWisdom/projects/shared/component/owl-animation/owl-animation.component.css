@@ -76,12 +76,12 @@
   }
 }
 
-/* GIF styles - original size */
+/* GIF styles - match static owl image size */
 .owl-gif {
-  width: 100px;          /* Original size */
-  height: 100px;         /* Original size */
-  max-width: 100px;      /* Prevent scaling up */
-  max-height: 100px;     /* Prevent scaling up */
+  width: 140px;          /* Match static-owl-image rendered size (200px * 0.7 scale) */
+  height: 140px;         /* Match static-owl-image rendered size */
+  max-width: 140px;      /* Prevent scaling up */
+  max-height: 140px;     /* Prevent scaling up */
   object-fit: contain;   /* Maintain aspect ratio */
   border-radius: 50%;    /* Make it circular */
   user-select: none;
@@ -126,10 +126,10 @@
 /* Tablet styles */
 @media (max-width: 768px) {
   .owl-video, .owl-gif {
-    width: 80px;          /* Increased size */
-    height: 80px;         /* Increased size */
-    max-width: 80px;
-    max-height: 80px;
+    width: 140px;         /* Match static owl size */
+    height: 140px;        /* Match static owl size */
+    max-width: 140px;
+    max-height: 140px;
   }
   
   .owl-animation-wrapper.corner {
@@ -145,10 +145,10 @@
 /* Mobile styles */
 @media (max-width: 600px) {
   .owl-video, .owl-gif {
-    width: 70px;          /* Increased size */
-    height: 70px;         /* Increased size */
-    max-width: 70px;
-    max-height: 70px;
+    width: 140px;         /* Match static owl size */
+    height: 140px;        /* Match static owl size */
+    max-width: 140px;
+    max-height: 140px;
   }
   
   .owl-animation-wrapper.corner {
@@ -164,10 +164,10 @@
 /* Small mobile styles */
 @media (max-width: 480px) {
   .owl-video, .owl-gif {
-    width: 60px;          /* Increased size */
-    height: 60px;         /* Increased size */
-    max-width: 60px;
-    max-height: 60px;
+    width: 120px;         /* Match static owl size */
+    height: 120px;        /* Match static owl size */
+    max-width: 120px;
+    max-height: 120px;
   }
   
   .owl-animation-wrapper.corner {
@@ -183,10 +183,10 @@
 /* Extra small mobile styles */
 @media (max-width: 360px) {
   .owl-video, .owl-gif {
-    width: 55px;          /* Increased size */
-    height: 55px;         /* Increased size */
-    max-width: 55px;
-    max-height: 55px;
+    width: 100px;         /* Match static owl size */
+    height: 100px;        /* Match static owl size */
+    max-width: 100px;
+    max-height: 100px;
   }
   
   .owl-animation-wrapper.corner {
