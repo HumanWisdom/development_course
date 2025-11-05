@@ -20,7 +20,7 @@
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai jc_flexend">
       <div class="p0 mr10px" *ngIf="showheaderbar">
-        <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+        <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter" (click)="onEditIconClick($event)">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt=""> -->
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/edit.svg" class="img-responsive" alt="edit" *ngIf="isAdults">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="edit" *ngIf="!isAdults">
@@ -115,7 +115,6 @@
 <div class="modal fade in" id="exampleModalCenter" tabindex="-1"  aria-hidden="true" >
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
-
       <div class="mregister">
         <div class="row mb10px" >
           <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
