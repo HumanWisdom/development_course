@@ -174,9 +174,15 @@ export class NotePage implements OnInit {
     document.body.style.overflow = '';
   }
 
-   getAlertcloseEvent(event) {
-      if(event==='Save') this.submitProgress();
-      if(event==='continue') this.continue();
-          
+   Save(event) {
+      if(event==='ok') this.submitProgress();
+       if(event==='cancel') this.enableAlert = false;
+           document.body.style.overflow = 'auto';
    }
+    save_continue(event) {
+      if(event==='ok') this.continue();
+        if(event==='cancel') this.enableAlert = false;
+           document.body.style.overflow = 'auto';
+   }
+
 }

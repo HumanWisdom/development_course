@@ -53,10 +53,10 @@
                         <div class="row ">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_popups">
                       <div class="d-grid gap-0 ">
-                        <button type="button" class="btn btn-primary modal-btn fs_18px fw_600"  [ngClass]="isAdults? 'modal-btn-adults':'modal-btn-teens'" *ngIf="modalid === ''" data-bs-dismiss="modal" (click)="close('ok')">
+                        <button type="button" class="btn btn-primary modal-btn fs_18px fw_600"  [ngClass]="isAdults? 'modal-btn-adults':'modal-btn-teens'" *ngIf="modalid != 'logout'" data-bs-dismiss="modal" (click)="close('ok')">
                           {{okText}}
                         </button>
-
+                          <!-- ok button only for logout modal popup-->
                         <button type="button" class="btn btn-primary modal-btn fs_18px fw_600" [ngClass]="isAdults? 'modal-btn-adults':'modal-btn-teens'" id="liLogout" *ngIf="modalid === 'logout'" data-bs-dismiss="modal" (click)="close('ok')">
                           {{okText}}
                         </button>
@@ -64,7 +64,11 @@
                         <a class="text-center fs_15px fw_400 lh_21px mt10px  hcancel" [ngClass]="isAdults ? 'fc_000000_i' : 'fc_e58d82'" *ngIf="enableCancel && modalid === 'logout'" data-bs-dismiss="modal" (click)="close('cancel')">
                           {{cancelText}}
                         </a>
-                        <button type="button" class="btn btn-primary modal-btn modal_cancel_btn" [ngClass]="isAdults? 'modal-btn-adults':'modal-btn-teens'" *ngIf="enableCancel && modalid != 'logout'" data-bs-dismiss="modal" (click)="close('cancel')">
+
+                        <a class="text-center fs_15px fw_400 lh_21px mt10px  hcancel" [ngClass]="isAdults ? 'fc_000000_i' : 'fc_e58d82'" *ngIf="enableCancel && modalid === 'save_changes'" data-bs-dismiss="modal" (click)="close('cancel')">
+                          {{cancelText}}
+                        </a>
+                        <button type="button" class="btn btn-primary modal-btn modal_cancel_btn" [ngClass]="isAdults? 'modal-btn-adults':'modal-btn-teens'" *ngIf="enableCancel && modalid != 'save_changes' && modalid != 'logout'" data-bs-dismiss="modal" (click)="close('cancel')">
                           {{cancelText}}
                         </button>
                       
