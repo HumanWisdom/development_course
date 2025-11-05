@@ -20,7 +20,7 @@
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai jc_flexend">
       <div class="p0 mr10px" *ngIf="showheaderbar">
-        <a data-toggle="modal" data-target="#exampleModalCenter">
+        <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt=""> -->
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/edit.svg" class="img-responsive" alt="edit" *ngIf="isAdults">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="edit" *ngIf="!isAdults">
@@ -78,7 +78,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
       <div
         class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
-        <a data-toggle="modal" data-target="#exampleModalCenter">
+        <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt=""> -->
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/edit.svg" class="img-responsive" alt="edit" *ngIf="isAdults">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="edit" *ngIf="!isAdults">
@@ -112,21 +112,22 @@
 <!-- /top navigation -->
 
 <!-- add note modal -->
-<div class="modal fade in" id="exampleModalCenter" data-keyboard="false" data-backdrop="false">
+<div class="modal fade in" id="exampleModalCenter" tabindex="-1"  aria-hidden="true" >
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
 
       <div class="mregister">
-        <div class="row mb10px">
+        <div class="row mb10px" >
           <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
             <textarea id="message" required="required" class="rtextarea v3_reflection_ta" name="message" rows="12" [disabled]="guest || !Subscriber" [placeholder]="placeHolder" [(ngModel)]="note"></textarea>
           </div>
         </div>
       </div>
 
+
       <div class="row mt30px mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <button type="btn" class="btn btn_ctd" [disabled]="guest || !Subscriber" (click)="addNote()" data-dismiss="modal">
+          <button type="btn" class="btn btn_ctd" [disabled]="guest || !Subscriber" (click)="addNote()" data-bs-dismiss="modal">
             Add note
           </button>
         </div>
@@ -134,7 +135,7 @@
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" data-dismiss="modal">
+          <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" data-bs-dismiss="modal" (click)="CloseModal()">
             Skip
           </a>
         </div>
