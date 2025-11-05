@@ -8,6 +8,7 @@ import { SharedService } from "../../services/shared.service";
 import { NavigationService } from "../../services/navigation.service";
 import { Location } from '@angular/common';
 
+
 @Component({
   selector: 'app-course-header',
   templateUrl: './course-header.component.html',
@@ -45,6 +46,8 @@ export class CourseHeaderComponent implements OnInit {
   content = '';
   enablecancel = false;
   isAdults = false;
+
+
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -279,6 +282,24 @@ export class CourseHeaderComponent implements OnInit {
         this.router.navigate(["/onboarding/login"]);
       }
     }
+  }
+
+  CloseModal() {
+    // const modal =   document.getElementById('exampleModalCenter');
+    // modal.style.display = 'none';
+
+    const bootstrap: any = (window as any).bootstrap;
+
+    const modalElement = document.getElementById('exampleModalCenter');
+  const modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (modalInstance) {
+    modalInstance.hide();
+  }
+
+
+
+        
+
   }
 
 }
