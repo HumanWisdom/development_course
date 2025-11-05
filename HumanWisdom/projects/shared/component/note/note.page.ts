@@ -68,7 +68,6 @@ export class NotePage implements OnInit {
   }
 
   save() {
-    // this.savebtn.nativeElement.click();
      this.enableAlert = true;
   }
 
@@ -175,14 +174,25 @@ export class NotePage implements OnInit {
   }
 
    Save(event) {
-      if(event==='ok') this.submitProgress();
-       if(event==='cancel') this.enableAlert = false;
-           document.body.style.overflow = 'auto';
+      if(event==='ok')
+      { 
+        this.submitProgress();
+      }
+      else if(event==='cancel'){
+        this.enableAlert = false;
+      } 
+      document.body.style.overflow = 'auto';
    }
+
     save_continue(event) {
-      if(event==='ok') this.continue();
-        if(event==='cancel') this.enableAlert = false;
-           document.body.style.overflow = 'auto';
+      if(event==='ok'){
+        this.continue();
+      } 
+      else if(event==='cancel')
+      {
+          this.enableAlert = false;
+      } 
+      document.body.style.overflow = 'auto';
    }
 
 }
