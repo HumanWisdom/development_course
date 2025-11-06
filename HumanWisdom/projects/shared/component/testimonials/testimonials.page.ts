@@ -12,12 +12,14 @@ import { Constant } from '../../services/constant';
 @Component({
   selector: 'app-testimonials',
   templateUrl: './testimonials.page.html',
-  styleUrls: ['./testimonials.page.scss'],
 })
 export class TestimonialsPage implements OnInit,OnDestroy {
   isAdults = false;
   divId :any;
-  constructor(private location :Location,private meta: Meta, public logeventservice: LogEventService, private title: Title) { 
+  constructor(private readonly  location :Location,
+    private readonly  meta: Meta, public logeventservice: LogEventService, 
+    private readonly title: Title) 
+  { 
    this.divId = SharedService.getDataFromLocalStorage(Constant.TestimonialId);
    this.isAdults = SharedService.isAdultProgram();
    if(this.divId && this.divId !=null && this.divId!='' && this.divId!='null' ){
