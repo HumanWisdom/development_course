@@ -31,19 +31,17 @@ export class WisdomShortsIndexPage implements OnInit {
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
   selectedPref = 'All'
-  constructor(private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform, private router: Router,
-    private location: Location, private service: CommonService, private meta: Meta, private title: Title) {
-    this.ngNavigatorShareService = ngNavigatorShareService;
-    this.address = this.router.url
+  constructor(
+    private readonly ngNavigatorShareService: NgNavigatorShareService,
+    public readonly platform: Platform,
+    private readonly router: Router,
+    private readonly location: Location,
+    private readonly service: CommonService,
+    private readonly meta: Meta,
+    private readonly title: Title
+  ) {
+    this.address = this.router.url;
     this.prefData = SharedService.getPreferenceData();
-   /*  this.prefData.unshift({
-      id: "88",
-      displayName: "Voices",
-      active: false,
-      name: 'Voices'
-    })
- */
-  
   }
 
   ngOnInit() {
@@ -146,10 +144,6 @@ export class WisdomShortsIndexPage implements OnInit {
     this.location.back()
   }
   share() {
-    /*  if (!this.ngNavigatorShareService.canShare() &&  (this.platform.isBrowser)  ) {
-       alert(`This service/api is not supported in your Browser`);
-       return;
-     } */
     console.log("url")
     this.path = "https://happierme.app" + this.address;
     this.ngNavigatorShareService.share({
@@ -186,7 +180,6 @@ export class WisdomShortsIndexPage implements OnInit {
         if (loggedin === 'T' && sub === '1') {
           this.router.navigate([route, 'T', title], extras);
         } else {
-          // this.router.navigate([`${SharedService.getprogramName()}/subscription/start-your-free-trial`]);
           this.showModal = true;
         }
       }
