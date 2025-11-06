@@ -23824,10 +23824,11 @@ a
   background: #FFFFFF;
 }
 
+
 .search_nav_tabs
 {
-  /* border-bottom: 1px solid #ADADAD; */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+   border-bottom: 1px solid #ADADAD; 
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.25); */
 
 }
 
@@ -31866,8 +31867,8 @@ input[type="search"].hide_search::-webkit-search-cancel-button
 
 .ad_sclose_icon
 {
-  /* color: #5D5D5D; */
-  color: #fff;
+  color: #5D5D5D; 
+  /* color: #fff; */
   font-size: 20px;
   right: 8% !important;
   text-align: center;
