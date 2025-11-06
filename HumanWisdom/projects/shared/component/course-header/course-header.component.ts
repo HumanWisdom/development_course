@@ -242,6 +242,7 @@ export class CourseHeaderComponent implements OnInit {
         this.enablecancel = false;
         this.enableAlert = true;
       })
+      this.CloseModal();
   }
 
   share() {
@@ -353,6 +354,7 @@ export class CourseHeaderComponent implements OnInit {
     document.body.classList.remove('modal-open');
     (document.body as any).style.paddingRight = '';
 
+    document.body.style.overflow = 'auto';
 
   }
 
