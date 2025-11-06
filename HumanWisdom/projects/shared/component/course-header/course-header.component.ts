@@ -46,7 +46,8 @@ export class CourseHeaderComponent implements OnInit {
   content = '';
   enablecancel = false;
   isAdults = false;
-
+  isModalPopupOpen = false;
+  isEditClicked = false;
 
 
   constructor(private router: Router,
@@ -113,6 +114,40 @@ export class CourseHeaderComponent implements OnInit {
       this.socialShare = true
     }
   }
+
+  onEditIconClick(event?: Event) {
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    this.isEditClicked = true;
+    this.isModalPopupOpen = true;
+
+    const modalElement = document.getElementById('exampleModalCenter');
+    if (!modalElement) {
+      return;
+    }
+
+    // Ensure classes and styles to show the modal
+    modalElement.classList.add('fade', 'in', 'show');
+    (modalElement as HTMLElement).style.display = 'block';
+    modalElement.setAttribute('aria-hidden', 'false');
+
+    // Add backdrop if missing
+    if (!document.querySelector('.modal-backdrop')) {
+      const backdrop = document.createElement('div');
+      backdrop.className = 'modal-backdrop fade in show';
+      document.body.appendChild(backdrop);
+    }
+
+    // Prevent background scroll
+    document.body.classList.add('modal-open');
+  }
+
+  OpenPopup(){
+    this.isModalPopupOpen = true;
+  }
+
   toggleBookmark() {
     if (this.guest || !this.Subscriber) {
       this.content = 'Start your free trial to activate this feature';
@@ -285,20 +320,39 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   CloseModal() {
-    // const modal =   document.getElementById('exampleModalCenter');
-    // modal.style.display = 'none';
-
-    const bootstrap: any = (window as any).bootstrap;
-
     const modalElement = document.getElementById('exampleModalCenter');
-  const modalInstance = bootstrap.Modal.getInstance(modalElement);
-  if (modalInstance) {
-    modalInstance.hide();
-  }
+    if (!modalElement) {
+      return;
+    }
+    this.isModalPopupOpen = false;
+    // Try Bootstrap v5 first
+    const bootstrapAny: any = (window as any).bootstrap;
+    if (bootstrapAny && bootstrapAny.Modal) {
+      let instance = bootstrapAny.Modal.getInstance(modalElement);
+      if (!instance) {
+        try {
+          instance = new bootstrapAny.Modal(modalElement);
+        } catch (_) {
+          // fall through to manual close
+        }
+      }
+      if (instance && instance.hide) {
+        instance.hide();
+      }
+    }
 
+    this.isModalPopupOpen = false;
+    // Fallback: force-close for mixed/legacy markup (v4/v5)
+    modalElement.classList.remove('show', 'in');
+    modalElement.setAttribute('aria-hidden', 'true');
+    (modalElement as HTMLElement).style.display = 'none';
 
+    const backdrops = document.querySelectorAll('.modal-backdrop');
+    backdrops.forEach(b => b.parentElement?.removeChild(b));
 
-        
+    document.body.classList.remove('modal-open');
+    (document.body as any).style.paddingRight = '';
+
 
   }
 

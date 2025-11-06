@@ -12185,7 +12185,7 @@ h1.module_title
   /* font-family: Roboto; */
   /* font-style: italic; */
   font-weight: 300;
-  font-size: 24px;
+  font-size: 30px;
   line-height: 35px;
   /* text-align: center; */
   text-align: left !important;
@@ -16241,7 +16241,7 @@ span.ctag
   height: 55px;
   width: 100%;
   margin: 0;
-  background: #ED7D6F !important;
+  background: #ED7D6F;
   box-shadow: unset;
   border-radius: 12px;
   padding: 16px 20px;
@@ -16276,14 +16276,14 @@ span.ctag
   width: 100%;
   border: 0;
   margin: 0;
-  background: #ED7D6F !important;
+  background: #ED7D6F;
   border-radius: 8px;
   padding: 8px 10px;
   text-align: center;
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
-  color: #FFF !important;
+  color: #FFF;
 }
 
 .igbtn1[disabled]

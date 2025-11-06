@@ -7,11 +7,12 @@ import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'HumanWisdom-treesisters',
   templateUrl: './treesisters.page.html',
+  styleUrls: ['./treesisters.page.scss'],
 })
 export class TreesistersPage implements OnInit {
   isAdults: boolean = true; 
 
-  constructor(private readonly location:Location,private readonly ngNavigatorShareService: NgNavigatorShareService,) {
+  constructor(private location:Location,private ngNavigatorShareService: NgNavigatorShareService,) {
      if (SharedService.ProgramId == ProgramType.Adults) {
     this.isAdults = true;
   } else {

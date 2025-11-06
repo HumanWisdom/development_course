@@ -661,7 +661,7 @@ navigationChange = new EventEmitter<string>();
     section.isExpanded = !section.isExpanded;
     
     // Save state to store
-    this.homeStateService.setSectionExpanded(section.id, section.isExpanded);
+    this.homeStateService.setSectionExpanded(this.getScopedSectionId(section.id), section.isExpanded);
     
     this.sectionToggle.emit(section);
   }
@@ -833,7 +833,7 @@ navigationChange = new EventEmitter<string>();
 
     this.contentSections.forEach(section => {
       // Restore main section expanded state
-      const wasExpanded = this.homeStateService.getSectionExpanded(section.id);
+      const wasExpanded = this.homeStateService.getSectionExpanded(this.getScopedSectionId(section.id));
       if (wasExpanded !== undefined) {
         section.isExpanded = wasExpanded;
       }
@@ -841,12 +841,20 @@ navigationChange = new EventEmitter<string>();
       // Restore child sections expanded state
       if (section.childSections) {
         section.childSections.forEach(childSection => {
-          const childWasExpanded = this.homeStateService.getSectionExpanded(childSection.id);
+          const childWasExpanded = this.homeStateService.getSectionExpanded(this.getScopedSectionId(childSection.id));
           if (childWasExpanded !== undefined) {
             childSection.isExpanded = childWasExpanded;
           }
         });
       }
     });
+  }
+
+  /**
+   * Scope a section id by active preference so expanded state is per-nav item
+   */
+  private getScopedSectionId(sectionId: string): string {
+    const activePreference = this.homeStateService.getActivePreference() || 'global';
+    return `${activePreference}::${sectionId}`;
   }
 }

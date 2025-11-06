@@ -12215,7 +12215,7 @@ h1.module_title
   /* font-family: Roboto; */
   /* font-style: italic; */
   font-weight: 300;
-  font-size: 24px;
+  font-size: 30px;
   line-height: 35px;
   /* text-align: center; */
   text-align: left !important;
@@ -12245,7 +12245,7 @@ h1.module_title
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 30px;
   line-height: 130%;
   /* or 39px */
   /* text-align: center; */
@@ -12259,7 +12259,7 @@ h1.module_title
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 30px;
   line-height: 35px;
   /* text-align: center; */
   text-align: left;
@@ -16252,7 +16252,7 @@ span.ctag
   height: 55px;
   width: 100%;
   margin: 0;
-  background: #E58D82 !important;
+  background: #E58D82;
   box-shadow: unset;
   border-radius: 12px;
   padding: 16px 20px;
@@ -16287,14 +16287,14 @@ span.ctag
   width: 100%;
   border: 0;
   margin: 0;
-  background: #E58D82 !important;
+  background: #E58D82;
   border-radius: 8px;
   padding: 8px 10px;
   text-align: center;
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
-  color: #FFF !important;
+  color: #FFF;
 }
 
 .igbtn1[disabled]
@@ -19270,7 +19270,7 @@ ngx-circular-player svg
 .btn_se
 {
   height: 60px;
-  background: #E58D82 !important;
+  background: #E58D82;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
   border: 0;
@@ -19280,10 +19280,10 @@ ngx-circular-player svg
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 150%;
+  font-size: 20px;
+  line-height: 23px;
   text-align: center;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   white-space: pre-wrap;
 }
 
@@ -34222,8 +34222,7 @@ body *
   color: #FFF;
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #0C2B5F;
-
+  background: transparent;
 }
 
 .fctray_gqtns
@@ -34626,7 +34625,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   padding-bottom: 40px !important;
 }
 
-/* .btn_se:hover,
+.btn_se:hover,
 .btn_se:active,
 .btn_se:focus
 {
@@ -34634,7 +34633,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   color: #E58D82 !important;
   filter: unset !important;
 }
- */
+
 .ae_days > [class^="col-"]
 {
   margin-right: 10px;
