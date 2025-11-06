@@ -60,38 +60,36 @@ p {
 /* -------------------------------------- */
 
 .swipe-up-alt {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   text-align: center;
-  position: relative;
-  padding: 10px 0;
+  width: 100%;
 }
 
 .text {
   font-size: 18px;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.5);
   opacity: 0.9;
   letter-spacing: 0.5px;
+  margin-bottom: 6px;
 }
 
 .chevron {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-left: 2px solid rgba(0, 0, 0, 0.5);
   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
   transform: rotate(-45deg);
-  margin-top: 6px;
   opacity: 0.8;
 }
-// .swipe-up-alt {
-//   animation: fadeInOut 1.8s ease-in-out infinite;
-// }
 
-/* Theme variations */
+/* White/black themes preserved */
 .black-theme .text {
   color: rgba(0, 0, 0, 0.5) !important;
 }
