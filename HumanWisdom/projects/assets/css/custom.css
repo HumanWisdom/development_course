@@ -12119,12 +12119,13 @@ h1.module_title
   opacity: 0.75;
 }
 
+/* used in module start screen */
 .session_title
 {
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 300;
-  font-size: 51px;
+  font-size: 48px;
   line-height: 130%;
   color: #000000;
   word-wrap: break-word;

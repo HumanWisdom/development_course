@@ -55,7 +55,7 @@
     </div>
 
     <!-- modal test -->
-    <div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
+   <!--  <div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
       <div class="row center_flex">
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
           <div class="row">
@@ -73,9 +73,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- /modal test -->
 
+    <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+      [content]="'You have selected the wrong answer. Please try again'">
+    </app-modal>
   </form>
 
 </app-single-select>
