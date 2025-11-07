@@ -31038,7 +31038,7 @@ text-decoration: underline;
   border: 0; */
 
   background: #FFF7E6;
-  color: #FFFFFF;
+  color: #000 !important;
 }
 
 .btn_wec.editable
@@ -31062,7 +31062,7 @@ text-decoration: underline;
   font-weight: 500;
   border: 0; */
 
-  background: rgba(255, 255, 255, 0.25);
+  background: #FFD889;
   /* background: rgba(41, 45, 86, 1); */
   color: rgba(255, 255, 255, 0.50);
 }
@@ -31076,7 +31076,7 @@ text-decoration: underline;
   margin-right: 10px !important; */
   box-shadow: unset;
   border: 0;
-  color: #FFFFFF;
+  color: #000;
 }
 
 .wediv
@@ -31241,7 +31241,7 @@ text-decoration: underline;
   white-space: nowrap;
   padding: 20px 20px;
   bottom: 0;
-  background: #424675;
+  background: #FFE8BB;
   box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.2);
   /* height: 100px; */
 }
@@ -33738,7 +33738,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   align-items: center;
   justify-content: center;
   margin: 0;
-  color:#FFFFFF !important;
+   color:#FFFFFF !important; 
 }
 
 .btn_prev_v3:hover 
@@ -35224,7 +35224,7 @@ color: black !important;
 .we_ft .btn_wec:hover,
 .we_ft .btn_wec:focus
 {
-   color: #FFFFFF;
+   color: #000 !important;
    filter: none;
 }
 
