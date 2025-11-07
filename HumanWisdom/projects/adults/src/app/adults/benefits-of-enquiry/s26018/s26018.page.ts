@@ -39,6 +39,7 @@ export class S26018Page implements OnInit
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
   enableTick = false
+  enableAlert = false;
 
   constructor
   (
@@ -129,6 +130,8 @@ export class S26018Page implements OnInit
     else
     {
       this.enableTick = false;
+     this.enableAlert = true;
+
       if (this.falseans !== '')
       {
         document.getElementById(this.falseans).style.background = '#FFE8BB';
@@ -166,6 +169,10 @@ export class S26018Page implements OnInit
   {
     this.router.navigate(['/adults/benefits-of-enquiry/s26016'])
   }
+
+   getAlertcloseEvent(event) {
+    this.enableAlert = false;
+   }
 
   ngOnDestroy()
   {}
