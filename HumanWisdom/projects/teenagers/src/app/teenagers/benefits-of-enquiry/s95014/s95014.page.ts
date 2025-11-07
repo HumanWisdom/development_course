@@ -39,6 +39,7 @@ export class S95014Page implements OnInit {
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
   enableTick = false;
+  enableAlert = false;
 
   constructor(private router: Router,
     private service: TeenagersService,
@@ -128,6 +129,8 @@ export class S95014Page implements OnInit {
     else
     {
       this.enableTick = false;
+      this.enableAlert = true;
+
       if (this.falseans !== '')
       {
         document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
@@ -167,6 +170,11 @@ export class S95014Page implements OnInit {
   }
   prev() {
     this.router.navigate(['/teenagers/benefits-of-enquiry/s95013'])
+  }
+
+  
+  getAlertcloseEvent(event) {
+      this.enableAlert = false;
   }
 
   ngOnDestroy() {

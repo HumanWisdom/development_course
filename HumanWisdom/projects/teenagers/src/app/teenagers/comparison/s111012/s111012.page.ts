@@ -40,6 +40,7 @@ export class S111012Page implements OnInit
   bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"))
   falseans = '';
   enableTick = false;
+  enableAlert= false;
 
   constructor
   (
@@ -84,12 +85,13 @@ export class S111012Page implements OnInit
 
   findQuestion()
   {
+    this.enableTick = false;
     for (var i = 0; i < this.questionA.length; i++)
     {
       if (this.questionA[i].CorrectAns == "0"){
         this.questionA[i].CorrectAns = false
       } else{
-        this.enableTick = true;
+        
         this.questionA[i].CorrectAns = true
       }
       if (this.queId == this.questionA[i].QueId) {
@@ -124,6 +126,7 @@ export class S111012Page implements OnInit
     }
     else
     {
+      this.enableAlert=true;
       if (this.falseans !== '')
       {
         document.getElementById(this.falseans).style.background = 'rgba(255,255,255,0.1)';
@@ -173,6 +176,9 @@ export class S111012Page implements OnInit
     this.router.navigate(['/teenagers/comparison/s111011'])
   }
 
+  getAlertcloseEvent(event) {
+      this.enableAlert = false;
+  }
  
   ngOnDestroy()
   {}
