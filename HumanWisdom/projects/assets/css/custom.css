@@ -31168,7 +31168,7 @@ text-decoration: underline;
 
 .we_hr
 {
-  border: 1px solid #FFF;
+  border: 1px solid #000;
   margin: 25px 0;
   opacity: 0.1;
 }
@@ -31211,7 +31211,7 @@ text-decoration: underline;
   border: 0;
   width: 100%;
   height: 50px;
-  background: #ED7D6F;
+  background: #ED7D6F !important;
   border-radius: 100px;
 
   /* font-family: Roboto; */
@@ -31220,7 +31220,7 @@ text-decoration: underline;
   font-size: 15px;
   line-height: 150%;
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .we_add_to_journal.active
