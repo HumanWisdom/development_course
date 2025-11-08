@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
 import { HomeStateService } from '../../services/home-state.service';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 export interface NavigationItem {
   id: string;
@@ -94,7 +96,7 @@ export interface ContentSection {
     ])
   ]
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
  navigationItems= [];
   description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
 
@@ -112,12 +114,31 @@ navigationChange = new EventEmitter<string>();
   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
    mainheader:string='';
+  private routerSubscription: Subscription;
+  private hashChangeHandler: () => void;
+  
   constructor(
     private router: Router, 
     private commonService: CommonService,
     private homeStateService: HomeStateService
   ) {
     this.navigationItems = SharedService.getPreferenceDataForHome();
+    
+    // Listen to hash changes dynamically
+    this.hashChangeHandler = () => {
+      this.handleHashChange();
+    };
+    window.addEventListener('hashchange', this.hashChangeHandler);
+    
+    // Also listen to Angular router navigation events
+    this.routerSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        // Small delay to ensure hash is available after navigation
+        setTimeout(() => {
+          this.handleHashChange();
+        }, 100);
+      });
    }
 
   ngOnInit(): void {
@@ -127,7 +148,17 @@ navigationChange = new EventEmitter<string>();
      // Restore state from store
      this.restoreStateFromStore();
      
-     this.getUserPreference();
+     // Check for hash-based navigation before loading user preference
+     const hashNavigationItem = this.getNavigationItemFromHash();
+     if (hashNavigationItem) {
+       // Hash found and matched - activate it
+       console.log('Hash navigation detected, activating:', hashNavigationItem);
+       this.activateNavigationItemFromHash(hashNavigationItem);
+     } else {
+       // No hash or hash doesn't match - use default behavior
+       this.getUserPreference();
+     }
+     
     console.log('Home component initialized');
     if (SharedService.ProgramId == ProgramType.Adults) {
         this.isAdults = true;
@@ -856,5 +887,128 @@ navigationChange = new EventEmitter<string>();
   private getScopedSectionId(sectionId: string): string {
     const activePreference = this.homeStateService.getActivePreference() || 'global';
     return `${activePreference}::${sectionId}`;
+  }
+
+  /**
+   * Get navigation item from URL hash
+   * Returns the matching navigation item if hash is found and matches a displayName
+   * Returns null if no hash or no match found
+   */
+  private getNavigationItemFromHash(): NavigationItem | null {
+    // Get hash from URL (e.g., "#Mental-health" or "Mental-health")
+    const hash = window.location.hash;
+    if (!hash || hash.length <= 1) {
+      return null;
+    }
+
+    // Remove the # symbol and normalize
+    const hashValue = hash.substring(1).trim();
+    if (!hashValue) {
+      return null;
+    }
+
+    // Normalize hash: convert hyphens to spaces, handle case
+    const normalizedHash = this.normalizeHash(hashValue);
+    console.log('Hash detected:', hashValue, 'Normalized:', normalizedHash);
+
+    // Get all navigation items
+    const allNavItems = SharedService.getPreferenceDataForHome();
+    
+    // Find matching navigation item by displayName (case-insensitive, space/hyphen agnostic)
+    const matchingItem = allNavItems.find(item => {
+      const normalizedDisplayName = this.normalizeHash(item.displayName.replace(/\s+/g, "").toLocaleLowerCase());
+      return normalizedDisplayName === normalizedHash.toLocaleLowerCase();
+    });
+
+    if (matchingItem) {
+      console.log('Found matching navigation item:', matchingItem);
+      return matchingItem;
+    }
+
+    console.log('No matching navigation item found for hash:', hashValue);
+    return null;
+  }
+
+  /**
+   * Normalize hash value for comparison
+   * Converts to lowercase, replaces hyphens with spaces, trims whitespace
+   */
+  private normalizeHash(hash: string): string {
+    return hash.toLowerCase()
+      .replace(/-/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  ngOnDestroy(): void {
+    // Clean up event listeners
+    if (this.hashChangeHandler) {
+      window.removeEventListener('hashchange', this.hashChangeHandler);
+    }
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  }
+
+  /**
+   * Handle hash change events (both initial load and dynamic changes)
+   */
+  private handleHashChange(): void {
+    const hashNavigationItem = this.getNavigationItemFromHash();
+    if (hashNavigationItem) {
+      // Only activate if it's different from current active item
+      const currentActive = this.personalisedList.find(item => item.active);
+      if (!currentActive || currentActive.id !== hashNavigationItem.id) {
+        console.log('Hash changed, activating:', hashNavigationItem);
+        this.activateNavigationItemFromHash(hashNavigationItem);
+      }
+    }
+  }
+
+  /**
+   * Activate navigation item based on hash
+   * This method activates the navigation item and loads its content
+   */
+  private activateNavigationItemFromHash(item: NavigationItem): void {
+    // Initialize personalisedList
+    const allNavItems = SharedService.getPreferenceDataForHome();
+    this.personalisedList = [];
+    
+    // Set all items as inactive, then activate the matching one
+    allNavItems.forEach((navItem) => {
+      if (navItem.id === item.id) {
+        navItem.active = true;
+        this.personalisedList.push(navItem);
+      } else {
+        navItem.active = false;
+        this.personalisedList.push(navItem);
+      }
+    });
+
+    // Save active preference to store
+    this.homeStateService.setActivePreference(item.id);
+
+    // Handle Self Awareness (id: 19) specially
+    if (item.id === "19") {
+      this.showWisdomExercise = true;
+      this.YourTopicofChoice = [item];
+      // Save user preference for Self Awareness
+      this.update(item.id);
+      console.log('Activated Self Awareness from hash');
+      return;
+    }
+
+    // Handle other navigation items normally
+    this.showWisdomExercise = false;
+    this.loadHomeContents(Number(item.id));
+    this.update(item.id);
+    this.YourTopicofChoice = [item];
+    
+    console.log('Activated navigation item from hash:', item.displayName, 'ID:', item.id);
+    
+    // Scroll to the selected section after content loads
+    setTimeout(() => {
+      this.scrollToActiveList();
+    }, 500);
   }
 }
