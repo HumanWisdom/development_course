@@ -18,9 +18,9 @@
       </div>
     </div>
 
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai jc_flexend">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai jc_flexend">
       <div class="p0 mr10px" *ngIf="showheaderbar">
-        <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter" (click)="onEditIconClick($event)">
+        <a href="javascript:;" (click)="onEditIconClick($event)">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt=""> -->
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/edit.svg" class="img-responsive" alt="edit" *ngIf="isAdults">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="edit" *ngIf="!isAdults">
@@ -78,7 +78,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
       <div
         class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
-        <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+        <a href="javascript:;" (click)="onEditIconClick($event)">
           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/edit.svg" class="img-responsive" alt=""> -->
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/edit.svg" class="img-responsive" alt="edit" *ngIf="isAdults">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/edit.svg" class="img-responsive" alt="edit" *ngIf="!isAdults">
@@ -126,7 +126,7 @@
 
       <div class="row mt30px mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <button type="btn" class="btn btn_ctd" [disabled]="guest || !Subscriber" (click)="addNote()" data-bs-dismiss="modal">
+          <button type="btn" class="btn btn_ctd" [disabled]="guest || !Subscriber" (click)="addNote()">
             Add note
           </button>
         </div>
@@ -134,7 +134,7 @@
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" data-bs-dismiss="modal" (click)="CloseModal()">
+          <a href="javascript:;" class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" (click)="CloseModal()">
             Skip
           </a>
         </div>

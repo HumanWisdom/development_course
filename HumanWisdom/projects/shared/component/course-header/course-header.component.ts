@@ -7,6 +7,7 @@ import { ProgramType } from "../../models/program-model";
 import { SharedService } from "../../services/shared.service";
 import { NavigationService } from "../../services/navigation.service";
 import { Location } from '@angular/common';
+import { ModalService } from "../../services/modal.service";
 
 
 @Component({
@@ -56,7 +57,8 @@ export class CourseHeaderComponent implements OnInit {
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
     private naviagtorService: NavigationService,
-    private location: Location
+    private location: Location,
+    private modalService: ModalService
   ) {
     if (this.router.getCurrentNavigation()) {
       this.urlT = this.router.getCurrentNavigation().extractedUrl ? this.router.getCurrentNavigation().extractedUrl.queryParams.t : ''
@@ -116,36 +118,14 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   onEditIconClick(event?: Event) {
-    if (event) {
-      event.stopPropagation();
-      event.preventDefault();
-    }
     this.isEditClicked = true;
     this.isModalPopupOpen = true;
-
-    const modalElement = document.getElementById('exampleModalCenter');
-    if (!modalElement) {
-      return;
-    }
-
-    // Ensure classes and styles to show the modal
-    modalElement.classList.add('fade', 'in', 'show');
-    (modalElement as HTMLElement).style.display = 'block';
-    modalElement.setAttribute('aria-hidden', 'false');
-
-    // Add backdrop if missing
-    if (!document.querySelector('.modal-backdrop')) {
-      const backdrop = document.createElement('div');
-      backdrop.className = 'modal-backdrop fade in show';
-      document.body.appendChild(backdrop);
-    }
-
-    // Prevent background scroll
-    document.body.classList.add('modal-open');
+    this.modalService.openModal('exampleModalCenter', event);
   }
 
   OpenPopup(){
     this.isModalPopupOpen = true;
+    this.modalService.openModal('exampleModalCenter');
   }
 
   toggleBookmark() {
@@ -321,41 +301,8 @@ export class CourseHeaderComponent implements OnInit {
   }
 
   CloseModal() {
-    const modalElement = document.getElementById('exampleModalCenter');
-    if (!modalElement) {
-      return;
-    }
     this.isModalPopupOpen = false;
-    // Try Bootstrap v5 first
-    const bootstrapAny: any = (window as any).bootstrap;
-    if (bootstrapAny && bootstrapAny.Modal) {
-      let instance = bootstrapAny.Modal.getInstance(modalElement);
-      if (!instance) {
-        try {
-          instance = new bootstrapAny.Modal(modalElement);
-        } catch (_) {
-          // fall through to manual close
-        }
-      }
-      if (instance && instance.hide) {
-        instance.hide();
-      }
-    }
-
-    this.isModalPopupOpen = false;
-    // Fallback: force-close for mixed/legacy markup (v4/v5)
-    modalElement.classList.remove('show', 'in');
-    modalElement.setAttribute('aria-hidden', 'true');
-    (modalElement as HTMLElement).style.display = 'none';
-
-    const backdrops = document.querySelectorAll('.modal-backdrop');
-    backdrops.forEach(b => b.parentElement?.removeChild(b));
-
-    document.body.classList.remove('modal-open');
-    (document.body as any).style.paddingRight = '';
-
-    document.body.style.overflow = 'auto';
-
+    this.modalService.closeModal('exampleModalCenter');
   }
 
 }
