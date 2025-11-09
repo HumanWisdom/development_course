@@ -520,6 +520,55 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       }
     }, 1000);
 
+    // Add event listeners for submenu checkboxes to hide/show parent menu items
+    setTimeout(() => {
+      const partnershipCheckbox = document.getElementById('item-partnership') as HTMLInputElement;
+      const helpSupportCheckbox = document.getElementById('item-2') as HTMLInputElement;
+      const parentMenu = document.querySelector('ul.dh_ul') as HTMLElement;
+      const menuParent = document.querySelector('.menu_parent') as HTMLElement;
+
+      if (partnershipCheckbox && parentMenu && menuParent) {
+        const partnershipLi = partnershipCheckbox.closest('li') as HTMLElement;
+        partnershipCheckbox.addEventListener('change', () => {
+          if (partnershipCheckbox.checked) {
+            parentMenu.classList.add('submenu-open');
+            parentMenu.setAttribute('data-open-submenu', 'partnership');
+            menuParent.classList.add('has-submenu-open');
+            if (partnershipLi) {
+              partnershipLi.classList.add('submenu-active');
+            }
+          } else {
+            parentMenu.classList.remove('submenu-open');
+            parentMenu.removeAttribute('data-open-submenu');
+            menuParent.classList.remove('has-submenu-open');
+            if (partnershipLi) {
+              partnershipLi.classList.remove('submenu-active');
+            }
+          }
+        });
+      }
+
+      if (helpSupportCheckbox && parentMenu && menuParent) {
+        const helpSupportLi = helpSupportCheckbox.closest('li') as HTMLElement;
+        helpSupportCheckbox.addEventListener('change', () => {
+          if (helpSupportCheckbox.checked) {
+            parentMenu.classList.add('submenu-open');
+            parentMenu.setAttribute('data-open-submenu', 'help-support');
+            menuParent.classList.add('has-submenu-open');
+            if (helpSupportLi) {
+              helpSupportLi.classList.add('submenu-active');
+            }
+          } else {
+            parentMenu.classList.remove('submenu-open');
+            parentMenu.removeAttribute('data-open-submenu');
+            menuParent.classList.remove('has-submenu-open');
+            if (helpSupportLi) {
+              helpSupportLi.classList.remove('submenu-active');
+            }
+          }
+        });
+      }
+    }, 1500);
   }
 
   setProfileImage(detail) {

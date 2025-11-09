@@ -209,7 +209,7 @@ background: #FFF4E6;
 /* Make the first .row.home-container sticky */
 .row.home-container:first-of-type {
   position: fixed;
-  z-index: 100;
+  z-index: 98;
   max-width: 30%;
   margin-top: -10px;
   // background:rgba(255, 232, 187, 1) !important; /* or your header background color */
