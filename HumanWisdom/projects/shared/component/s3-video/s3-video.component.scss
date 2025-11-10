@@ -49,6 +49,7 @@ p {
   align-items: center;
   transition: transform 0.5s ease-in-out;
   opacity: 0;
+  display: flex;
 }
 .video {
   width: 32rem;
@@ -60,16 +61,17 @@ p {
 /* -------------------------------------- */
 
 .swipe-up-alt {
-  position: absolute;
-  bottom: -80px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   width: 100%;
+  padding: 8px 0;
 }
 
 .text {
@@ -134,15 +136,35 @@ video.cvideo_01.invert-controls {
   background-color: #fff;
 }
 
+.video-portrait {
+  width: 270px !important;
+  height: 400px !important;
+  object-fit: cover;
+}
+
+.video-landscape {
+  width: 355px !important;
+  height: 190px !important;
+  object-fit: cover;
+}
+
 /* Video size and layout adjustments */
-.cvideo_ext_di_no_radius {
+.cvideo_ext_di {
   width: 70%;
   max-height: 86vh;
   object-fit: cover;
-  border-radius: 0px !important;
-  padding: 20px;
+  border-radius: 16px !important;
+  margin: 20px;
+  padding: 0 !important;
 }
 
-.cvideo_ext_di {
-  width: 100% !important;
+// .cvideo_ext_di {
+//   // width: 100% !important;
+// }
+.swipe-up-landscape {
+  bottom: -125% !important;
+}
+
+.swipe-up-portrait {
+  bottom: -20% !important;
 }
