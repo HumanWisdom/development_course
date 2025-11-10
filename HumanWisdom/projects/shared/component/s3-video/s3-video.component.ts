@@ -83,13 +83,13 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public currentIndex = 0;
   public currentTime = 0;
   public isSubscriber = false;
-  public isSwipeAllow = false;
+  public isSwipeAllow = true;
   public isAdults = true;
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
   @ViewChild('swipeContainer') swipeContainer!: ElementRef;
 
-  // ✅ Marked dependencies as readonly — they are never reassigned
+  // Marked dependencies as readonly — they are never reassigned
   constructor(
     private readonly route: ActivatedRoute,
     private readonly _sanitizer: DomSanitizer,
@@ -98,11 +98,6 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     private readonly navigationService: NavigationService
   ) {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
-
-    const userid = localStorage.getItem('isloggedin');
-    const sub = localStorage.getItem('Subscriber');
-    this.isSubscriber = userid === 'T' && sub === '1';
-
     this.initializeData();
   }
 
@@ -125,12 +120,10 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       }
       this.linkcode = this.linkcode.replaceAll('~', '-');
     }
-
-    // ✅ Simplified using ternary operator
     this.isSubscriber = localStorage.getItem('Subscriber') === '1';
-    this.isSwipeAllow = this.isSubscriber;
+    this.isSwipeAllow = this.wisdomshort && this.isSubscriber ? true : false;
 
-    if (this.isSubscriber) {
+    if (this.isSwipeAllow) {
       localStorage.setItem('isSwipeAllow', 'true');
       const shortList = localStorage.getItem('wisdomShortData');
       if (shortList) {
@@ -168,9 +161,12 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
     this.videoLink = this.getSafeUrl(code);
 
-    if (this.isSubscriber) {
+    if (this.wisdomshort && this.isSubscriber) {
       localStorage.setItem('isSwipeAllow', 'true');
       this.isSwipeAllow = true;
+    } else {
+      localStorage.setItem('isSwipeAllow', 'false');
+      this.isSwipeAllow = false;
     }
   }
 
