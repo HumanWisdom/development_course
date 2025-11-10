@@ -32,13 +32,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then(m => m.AdultDashboardPageModule),
-    canActivate: [AuthGuard]
+    redirectTo: 'home',
   },
   {
     path: 'adult-dashboard',
-    loadChildren: () => import('./adult-dashboard/adult-dashboard.module').then(m => m.AdultDashboardPageModule),
-    canActivate: [AuthGuard]
+    redirectTo: 'home',
   },
   // {
   //   path: 'journal',
