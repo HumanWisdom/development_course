@@ -123,6 +123,12 @@ nav
             }
         }
 
+        /* Hide main menu header when submenu is open */
+        .menu_parent > .m-menu__header
+        {
+            /* This will be hidden by the rules below when submenu is open */
+        }
+
         .m-menu
         {
             @include transform(translate3d(480px, 0, 0));
@@ -213,6 +219,85 @@ nav
             overflow-y: auto;
             overflow-x: hidden;
         }
+    }
+
+    /* Hide parent menu items when submenu is open */
+    /* When partnership submenu is checked, hide all sibling li elements in parent ul */
+    ul.dh_ul > li:has(#item-partnership:checked) ~ li
+    {
+        display: none !important;
+    }
+
+    /* When help & support submenu is checked, hide all sibling li elements */
+    ul.dh_ul > li:has(#item-2:checked) ~ li
+    {
+        display: none !important;
+    }
+
+    /* Hide all previous siblings as well when submenu is open */
+    /* Target the parent ul and hide all li children except the one with checked checkbox */
+    ul.dh_ul:has(> li > #item-partnership:checked) > li:not(:has(#item-partnership:checked)),
+    ul.dh_ul:has(> li > #item-2:checked) > li:not(:has(#item-2:checked))
+    {
+        display: none !important;
+    }
+
+    /* Hide the label/content of the parent li containing the checkbox when submenu is open */
+    ul.dh_ul > li:has(#item-partnership:checked) > label.title_p,
+    ul.dh_ul > li:has(#item-2:checked) > label.title_hs
+    {
+        display: none !important;
+    }
+
+    /* Fallback: Pure class-based approach for browsers that don't support :has() */
+    /* Hide all menu items when submenu is open */
+    ul.dh_ul.submenu-open > li
+    {
+        display: none !important;
+    }
+
+    /* Show only the li with submenu-active class (the one containing the open submenu) */
+    ul.dh_ul.submenu-open > li.submenu-active
+    {
+        display: block !important;
+    }
+
+    /* Hide the label/content of the parent li when submenu is open (class-based) */
+    ul.dh_ul.submenu-open > li.submenu-active > label.title_p,
+    ul.dh_ul.submenu-open > li.submenu-active > label.title_hs
+    {
+        display: none !important;
+    }
+
+    /* Hide main menu header (profile image, username, subscribe now) when submenu is open */
+    /* Using :has() selector for modern browsers */
+    .menu_parent:has(ul.dh_ul.submenu-open) > .m-menu__header,
+    .menu_parent:has(#item-partnership:checked) > .m-menu__header,
+    .menu_parent:has(#item-2:checked) > .m-menu__header
+    {
+        display: none !important;
+    }
+
+    /* Class-based fallback: Hide header when submenu is open */
+    /* This works with the JavaScript that adds has-submenu-open class to menu_parent */
+    .menu_parent.has-submenu-open > .m-menu__header
+    {
+        display: none !important;
+    }
+
+    /* Hide all direct child div elements (social media, logout) of ul.dh_ul when submenu is open */
+    ul.dh_ul.submenu-open > div.row,
+    .menu_parent:has(ul.dh_ul.submenu-open) ul.dh_ul > div.row,
+    .menu_parent:has(#item-partnership:checked) ul.dh_ul > div.row,
+    .menu_parent:has(#item-2:checked) ul.dh_ul > div.row
+    {
+        display: none !important;
+    }
+
+    /* Class-based fallback: Hide all direct child divs when submenu is open */
+    .menu_parent.has-submenu-open ul.dh_ul > div.row
+    {
+        display: none !important;
     }
 }
 
