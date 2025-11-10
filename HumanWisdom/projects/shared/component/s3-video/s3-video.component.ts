@@ -85,6 +85,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public isSubscriber = false;
   public isSwipeAllow = true;
   public isAdults = true;
+  public isPortrait = false;
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
   @ViewChild('swipeContainer') swipeContainer!: ElementRef;
@@ -178,6 +179,36 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       hammertime.on('swipeup', () => this.onSwipeUp());
       hammertime.on('swipedown', () => this.onSwipeDown());
     }
+    
+    // Ensure auto-play for all videos
+    this.ensureAutoPlay();
+  }
+
+  private ensureAutoPlay(): void {
+    if (this.videoPlayer?.nativeElement) {
+      const video = this.videoPlayer.nativeElement as HTMLVideoElement;
+      
+      // Try to play the video
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Auto-play was prevented, try muted play
+          video.muted = true;
+          video.play().catch((err) => {
+            console.warn('Auto-play failed:', err);
+          });
+        });
+      }
+      
+      // Ensure orientation is determined when metadata is available
+      video.addEventListener('loadedmetadata', () => {
+        this.checkVideoOrientation();
+        video.play().catch((err) => {
+          console.warn('Auto-play after metadata loaded failed:', err);
+        });
+      });
+    }
   }
 
   getSafeUrl(url: string) {
@@ -185,8 +216,16 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   checkVideoOrientation(): void {
-    const videoEl = this.videoPlayer?.nativeElement;
+    const videoEl = this.videoPlayer?.nativeElement as HTMLVideoElement | undefined;
     if (videoEl) {
+      // Determine orientation based on intrinsic media dimensions
+      const vw = videoEl.videoWidth;
+      const vh = videoEl.videoHeight;
+      if (vw && vh) {
+        this.isPortrait = vh > vw;
+      }
+
+      // Keep control tweaks
       videoEl.setAttribute('controlsList', 'nodownload nofullscreen');
       setTimeout(() => {
         videoEl.setAttribute('controlsList', 'nodownload nofullscreen');
@@ -226,6 +265,11 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       }
       this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
       this.checkVideoOrientation();
+      
+      // Ensure auto-play for next video in swipe mode
+      setTimeout(() => {
+        this.ensureAutoPlay();
+      }, 100);
     }
   }
 
@@ -239,6 +283,11 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
     this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
     this.checkVideoOrientation();
+    
+    // Ensure auto-play for previous video in swipe mode
+    setTimeout(() => {
+      this.ensureAutoPlay();
+    }, 100);
   }
 
   updateProgress(video: HTMLVideoElement): void {
