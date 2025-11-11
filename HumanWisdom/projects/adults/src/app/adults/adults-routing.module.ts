@@ -32,11 +32,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    component: HomeComponent
   },
   {
     path: 'adult-dashboard',
-    redirectTo: 'home',
+     component: HomeComponent
   },
   // {
   //   path: 'journal',
