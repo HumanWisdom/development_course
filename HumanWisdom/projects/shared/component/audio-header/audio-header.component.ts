@@ -6,6 +6,8 @@ import { AdultsService } from "../../../adults/src/app/adults/adults.service";
 import { ProgramType } from "../../models/program-model";
 import { SharedService } from "../../services/shared.service";
 import { NavigationService } from "../../services/navigation.service";
+import { ModalService } from "../../services/modal.service";
+
 
 @Component({
   selector: 'app-audio-header',
@@ -50,7 +52,8 @@ export class AudioHeaderComponent implements OnInit {
   constructor(private router: Router,
     private service: AdultsService, public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
-    private navigationService:NavigationService) {
+    private navigationService:NavigationService,
+    private modalService: ModalService) {
     this.urlT = this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
@@ -84,7 +87,7 @@ export class AudioHeaderComponent implements OnInit {
   }
 
    onEditIconClick(event?: Event) {
-    if (event) {
+    /* if (event) {
       event.stopPropagation();
       event.preventDefault();
     }
@@ -109,7 +112,11 @@ export class AudioHeaderComponent implements OnInit {
     }
 
     // Prevent background scroll
-    document.body.classList.add('modal-open');
+    document.body.classList.add('modal-open'); */
+
+     this.isEditClicked = true;
+    this.isModalPopupOpen = true;
+    this.modalService.openModal('exampleModalCenter', event);
   }
 
  
@@ -266,7 +273,7 @@ export class AudioHeaderComponent implements OnInit {
 
   
   CloseModal() {
-    const modalElement = document.getElementById('exampleModalCenter');
+   /*  const modalElement = document.getElementById('exampleModalCenter');
     if (!modalElement) {
       return;
     }
@@ -300,7 +307,10 @@ export class AudioHeaderComponent implements OnInit {
     (document.body as any).style.paddingRight = '';
 
     document.body.style.overflow = 'auto';
+ */
 
+     this.isModalPopupOpen = false;
+    this.modalService.closeModal('exampleModalCenter');
   }
 
 }
