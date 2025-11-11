@@ -75,16 +75,16 @@ p {
 }
 
 .text {
-  font-size: 18px;
+  font-size: 12px;
+  line-height: 22px;
   font-weight: 400;
   opacity: 0.9;
   letter-spacing: 0.5px;
-  margin-bottom: 6px;
 }
 
 .chevron {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-left: 2px solid rgba(0, 0, 0, 0.5);
   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
   transform: rotate(-45deg);
@@ -162,9 +162,13 @@ video.cvideo_01.invert-controls {
 //   // width: 100% !important;
 // }
 .swipe-up-landscape {
-  bottom: -125% !important;
+  bottom: -114% !important;
 }
 
 .swipe-up-portrait {
-  bottom: -20% !important;
+  bottom: -12% !important;
+}
+
+.txt1{
+  margin: 0;
 }
