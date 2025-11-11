@@ -16416,7 +16416,12 @@ span.ctag
 
 .p20px
 {
-  padding: 20px
+  padding: 20px !important;
+}
+
+.p15px
+{
+  padding: 15px !important;
 }
 
 .lishare

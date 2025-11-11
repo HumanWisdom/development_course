@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Input } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Location } from "@angular/common";
 import { LogEventService } from '../../../services/log-event.service';
@@ -13,7 +13,7 @@ import { ProgramType } from '../../../models/program-model';
   templateUrl: "./index.page.html",
   styleUrls: ["./index.page.scss"],
 })
-export class IndexPage implements OnInit, AfterViewInit {
+export class IndexPage implements OnInit, AfterViewInit, OnChanges {
   @Input() defaultShow = true;
   @Input() search = '';
   saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
@@ -80,6 +80,14 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       this.GetGuidedQs_Topics();
       this.isGuidedQueestionsTab = true;
       this.isDiary = false;
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.search && !changes.search.firstChange) {
+      if (this.jrListC && this.jrListC.length > 0) {
+        this.searchjournal(this.search);
+      }
     }
   }
 
