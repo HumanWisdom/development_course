@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../services/navigation.service';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 import {
   trigger,
   state,
@@ -86,12 +87,15 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public isSwipeAllow = true;
   public isAdults = true;
   public isPortrait = false;
+  baseUrl:string;
+  path:any;
+
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
   @ViewChild('swipeContainer') swipeContainer!: ElementRef;
 
   // Marked dependencies as readonly — they are never reassigned
-  constructor(
+  constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private readonly route: ActivatedRoute,
     private readonly _sanitizer: DomSanitizer,
     private readonly location: Location,
@@ -156,6 +160,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.path = this.router.url;
+
     const code = this.wisdomshort
       ? `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`
       : `https://d1tenzemoxuh75.cloudfront.net/${this.linkcode}`;
@@ -305,5 +311,35 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {
     localStorage.setItem('isSwipeAllow', 'false');
+  }
+
+    share(){
+      this.shareUrl(SharedService.ProgramId);
+      
+      
+      
+      this.ngNavigatorShareService.share({
+        title: 'HappierMe Program',
+        text: 'Hey, check out the HappierMe Program',
+        url: this.baseUrl+this.path      
+      }).then( (response) => {
+        
+      })
+      .catch( (error) => {
+        console.log(error);
+      });
+    }
+
+  shareUrl (programType) {
+    switch (programType) {
+      case ProgramType.Adults:
+        this.baseUrl=SharedService.AdultsBaseUrl;
+      break;
+      case ProgramType.Teenagers:
+        this.baseUrl=SharedService.TeenagerBaseUrl;
+       break;
+      default:
+      this.baseUrl=SharedService.TeenagerBaseUrl;
+    }
   }
 }
