@@ -34,9 +34,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent
   },
+
   {
     path: 'adult-dashboard',
-     component: HomeComponent
+    redirectTo: 'home',
   },
   // {
   //   path: 'journal',
