@@ -19553,7 +19553,7 @@ share-buttons button
   width: 100%;
   margin: 0;
   border:0;
-  background: #FFF;
+  background: #ED7D6F!important;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   margin: 0;
@@ -19562,7 +19562,7 @@ share-buttons button
   font-size: 15px;
   line-height: 22px;
   text-align: center;
-  color: #ED7D6F;
+  color: #ffffff !important;
 }
 
 .c128px
@@ -38358,8 +38358,7 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
 
 .ws-read-icon    { position: relative; bottom: 50px; }
 .ws-lock-icon    { position: relative; 
-  /* top:    50px;  */
-}
+  top:    50px; }
 
 
 
