@@ -8,6 +8,7 @@ import { Constant } from '../../../shared/services/constant';
 import { NavigationService } from "../../../shared/services/navigation.service";
 import { Location } from '@angular/common';
 import { LogEventService } from "./../../services/log-event.service";
+import { ModalService } from '../../services/modal.service';
 
 
 @Component({
@@ -40,7 +41,8 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   constructor(private service: ForumService, private router: Router, private route: ActivatedRoute, 
     private logeventservice: LogEventService,
-    private location: Location,  private navigationService:NavigationService) {
+    private location: Location,  private navigationService:NavigationService,
+    private modalService: ModalService) {
     this.userID = localStorage.getItem('userId');
     this.router.events
       .pipe(filter(e => e instanceof NavigationStart))
@@ -108,6 +110,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
          this.submitPost();
     }else{
       this.selectedOption=0;
+      this.openModalLogout();
     }
   }
 
@@ -136,7 +139,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     ).subscribe(res => {
       if (res) {
         localStorage.setItem('postid', null);
-        this.postModal.nativeElement.click();
+        this.openPostedSuccessfullyModal();
         this.thread = "";
         this.postID = "",
         this.selectedOption = 0;
@@ -195,7 +198,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
 
   closeCategoryModal(){
-    this.closeCategory.nativeElement.click();
+    this.closeChooseCategoryModal();
   }
   filterBasedOnTags(value, name){
     this.logeventservice.logEvent("chooseCategory")
@@ -226,6 +229,31 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
        el.checked = true;
       }
     }},500);
+  }
+
+  // Modal service methods
+  openChooseCategoryModal(event?: Event) {
+    this.modalService.openModal('choose_category', event);
+  }
+
+  closeChooseCategoryModal() {
+    this.modalService.closeModal('choose_category');
+  }
+
+  openPostedSuccessfullyModal(event?: Event) {
+    this.modalService.openModal('posted_successfully', event);
+  }
+
+  closePostedSuccessfullyModal() {
+    this.modalService.closeModal('posted_successfully');
+  }
+
+  openModalLogout(event?: Event) {
+    this.modalService.openModal('modal_logout', event);
+  }
+
+  closeModalLogout() {
+    this.modalService.closeModal('modal_logout');
   }
 
 }
