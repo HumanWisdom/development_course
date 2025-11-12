@@ -12,6 +12,7 @@ import { OnboardingService } from "../../services/onboarding.service";
 import { ForumService } from '../forum.service';
 import { ProgramType } from "../../models/program-model";
 import { NavigationService } from "../../../shared/services/navigation.service";
+import { ModalService } from '../../services/modal.service';
 
 import { SharedService } from '../../services/shared.service';
 import { ShareService } from "ngx-sharebuttons";
@@ -112,7 +113,7 @@ export class ForumLandingPage implements OnInit {
   constructor(private serivce: ForumService, public platform: Platform, private router: Router,
     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService,
     private meta: Meta, private title: Title, public service: OnboardingService, public logeventservice: LogEventService,
-    public cd: ChangeDetectorRef) {
+    public cd: ChangeDetectorRef, private modalService: ModalService) {
       this.router.events
       .pipe(filter(e => e instanceof NavigationStart))
       .subscribe((e: NavigationStart) => {
@@ -459,7 +460,7 @@ export class ForumLandingPage implements OnInit {
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
-      this.enablepopup.nativeElement.click();
+      this.openSignuploginModal();
     }
   }
 
@@ -681,6 +682,23 @@ export class ForumLandingPage implements OnInit {
 
   closeCategoryModal(){
     this.closeCategory.nativeElement.click();
+  }
+
+  // Modal service methods
+  openSignuploginModal(event?: Event) {
+    this.modalService.openModal('signuplogin', event);
+  }
+
+  closeSignuploginModal() {
+    this.modalService.closeModal('signuplogin');
+  }
+
+  openChooseCategoryModal(event?: Event) {
+    this.modalService.openModal('choose_category', event);
+  }
+
+  closeChooseCategoryModal() {
+    this.modalService.closeModal('choose_category');
   }
 
   editPost(modelData,index) {
