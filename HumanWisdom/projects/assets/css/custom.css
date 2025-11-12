@@ -29574,7 +29574,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   /* box-shadow: 0 2px 2px rgb(0 0 0 / 10%); */
   /* background: #FFFFFF; */
   background: #fff;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
 }
 
 .dmain_container
@@ -33192,8 +33192,8 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 {
   height: 80px;
   /* background: #FFF7E6; */
-  background: #FFFFFF;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #FFF7E6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33759,8 +33759,8 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
   position: fixed; */
   height: 80px;
-  background: #FFFFFF;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  background: #FFF7E6;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   position: fixed;
   top: 0;
   right: 0;
