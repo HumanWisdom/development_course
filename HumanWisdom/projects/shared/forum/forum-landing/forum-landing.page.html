@@ -705,7 +705,7 @@
 <span (click)="openSignuploginModal()" #enablepopup></span>
 
 <!-- signup_login modal -->
-<div class="modal fade" id="signuplogin" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade slide-up" id="signuplogin" tabindex="-1" role="dialog" aria-hidden="true">
   <!-- modal-body -->
   <div class="" role="document">
     <!-- modal content -->
@@ -777,7 +777,7 @@
 <!-- /signup_login modal -->
 
 <!-- choose category -->
-<div class="modal fade" id="choose_category" data-bs-keyboard="false" data-bs-backdrop="false">
+<div class="modal fade slide-up" id="choose_category" data-bs-keyboard="false" data-bs-backdrop="false">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_cc col_cw">
 
@@ -790,7 +790,8 @@
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
             <button type="button" class="btn_popup_close m0px" #closeCategory (click)="closeChooseCategoryModal()" aria-label="close">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg"
+              <img 
+                src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}" 
                 class="img-responsive fright">
             </button>
           </div>
