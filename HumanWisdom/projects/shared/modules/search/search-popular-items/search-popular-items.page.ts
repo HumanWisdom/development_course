@@ -434,6 +434,36 @@ export class SearchPopularItemsPage implements OnInit {
     }
   }
 
+  podcastevent(data: any) {
+    this.commonService.clickPodcast(data.PodcastID).subscribe({
+      next: () => {},
+      error: () => {}
+    });
+
+    const sub = localStorage.getItem('Subscriber');
+    if (sub === '0' && data.PodcastID > 3) {
+      this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
+      return;
+    }
+
+    let media = (data.MediaUrl || '').toString().trim();
+    media = media.replace(/`/g, '');
+    if (media.includes('https://d1tenzemoxuh75.cloudfront.net/')) {
+      media = media.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
+    }
+    const path = encodeURIComponent(media.replaceAll('/', '~'));
+    const route = this.isAdults
+      ? ['adults', 'audiopage', path, data.PodcastID, 'T', data.Title]
+      : ['teenagers', 'audiopage', path, data.PodcastID, 'T', data.Title];
+
+    this.router.navigate(route);
+  }
+
+  getPodcastImage(id: number) {
+    const Id = id <= 9 ? '0' + id : id;
+    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`;
+  }
+
   youtube(link, RowID) {
     let sub: any = localStorage.getItem("Subscriber")
     if(RowID>=4 && sub==0)
