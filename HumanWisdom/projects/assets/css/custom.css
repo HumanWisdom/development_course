@@ -34206,9 +34206,10 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .div_yes_no .btn 
 {
   border-radius: 100px;
-  background: rgba(0, 0, 0, 0.10);
+  /* background: rgba(0, 0, 0, 0.10); */
+  background: #FFE8BB;
   width: 100%;
-  margin: 30px 0 0 0;
+  margin: 10px 0 0 0;
   height: 50px;
   font-size: 15px;
   font-weight: 600;
