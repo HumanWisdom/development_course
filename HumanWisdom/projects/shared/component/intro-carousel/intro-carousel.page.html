@@ -12,7 +12,7 @@
 
               <!-- carousel -->
               <div class="container" (swipe)="onSwipe($event)">
-                <div id="ic_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div id="ic_carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
 
                   <ol class="m0px">
                     <div class="row">
@@ -54,20 +54,20 @@
                   </ol>
 
                   <div class="carousel-inner">
-                    <app-splash *ngIf="!loading"></app-splash>
+                    <!-- <app-splash *ngIf="!loading"></app-splash> -->
 
-                    <div class="item 0 active" [ngStyle]="{'display': currentSection==1 ? 'none' : ''}" [@slideAnimation]="direction" [hidden]="loading">
+                    <div class="carousel-item 0 active" [ngStyle]="{'display': currentSection==1 ? 'none' : ''}" [@slideAnimation]="direction" [hidden]="loading">
                       <!-- slide 1 -->
 
 
-                      <div class="row mt40px center_flex">
+                 <!--      <div class="row mt40px center_flex">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                           <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 p0">
                             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Circles_Adults.webp"
                               class="img-responsive" style="display:none" (load)="onLoad()" />
                           </div>
                         </div>
-                      </div>
+                      </div> -->
 
                       <div class="row mtb40px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -91,12 +91,12 @@
                       </div> -->
                       <div class="row  mt50px mb5px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Circles_Adults.webp"
-                            class="">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adultnew.svg"
+                            class="d-block ">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Circles_Teens.webp"
-                            class="">
+                            class="d-block">
                         </div>
                       </div>
 
@@ -105,7 +105,7 @@
                       <!-- /slide 1 -->
                     </div>
 
-                    <div class="item 1 active" [ngStyle]="{'display': currentSection==0 ? 'none' : ''}" [@slideAnimation]="direction">
+                    <div class="carousel-item  1 active" [ngStyle]="{'display': currentSection==0 ? 'none' : ''}" [@slideAnimation]="direction">
                       <!-- slide 2 -->
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
