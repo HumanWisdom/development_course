@@ -19919,7 +19919,7 @@ input{
 {
   padding: 15px 20px;
   background: #0C2B5F;
-  height: 40px;
+  /* height: 40px; */
   display: flex;
   align-items: center;
   margin: 0 -20px;
@@ -21980,14 +21980,14 @@ input[type="search"]:focus::-webkit-search-cancel-button
   width: 100%;
   margin: 0;
   border: 0;
-  background: #E58D82;
+  background: #E58D82 !important;
   box-shadow: unset;
   border-radius: 100px;
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
   line-height: 150%;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .pb40px
@@ -22544,7 +22544,7 @@ ul.dh_ul li:last-child
   border: 0;
   margin: 0;
   width: 100%;
-  background: #FFC455;
+  background: #FFC455 !important;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
@@ -29548,7 +29548,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   /* background: #1D3D7A; */
   min-height: 110vh;
    /* padding: 20px 10px;  */
- padding: 20px;
+ padding: 20px 20px;
 }
 
 .sc_02
@@ -29583,7 +29583,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   display: flex;
   align-items: center;
   padding: 0 20px;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
 }
 
 .tn_module_01
@@ -34026,8 +34026,8 @@ body *
 {
   border-radius: 100px;
   background: rgba(255, 255, 255, 0.10);
-  width: 100%;
-  margin: 30px 0 0 0;
+  width: 96%;
+  margin: 15px 0 0 0;
   height: 50px;
   font-size: 15px;
   font-weight: 600;
@@ -35205,11 +35205,11 @@ color: white !important;
   width: 145px;
   height: 42px;
   border-radius: 100px;
-  background: #FFF;
+  background: #FFF !important;
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
-  color: #E58D82;
+  color: #E58D82 !important;
 }
 
 .btn_profile_cp
@@ -35382,11 +35382,11 @@ color: white !important;
   margin: 0 !important;
   border: 0;
   border-radius: 100px;
-  background: #E58D82;
+  background: #E58D82 !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #fff;
+  color: #fff !important;
 }
 
 .div_inputs .row 
@@ -36125,7 +36125,7 @@ li ol > li:before {
   width: 100%;
   border-radius: 16px !important;
   border: 1px solid rgba(204, 204, 204, 0.25) !important;
-  background: #0C2B5F;
+  background: #0C2B5F !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 400;

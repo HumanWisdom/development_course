@@ -1,5 +1,16 @@
- li.is-search:hover,
+li.is-search:hover,
   li.is-search:hover:before {
     background: #E58D82;
     color: #fff !important;
   }
+  
+  .ws-lock-icon {
+    top: 40px !important;
+  }
+  .box_v3_04a img {
+    width: 150px !important;
+    height: 115px !important;
+  }
+  .nav>li>a:hover, .nav>li>a:focus {
+    color: #000000 !important;
+}

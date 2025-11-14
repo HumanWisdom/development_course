@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../services/navigation.service';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 import {
   trigger,
   state,
@@ -83,14 +84,18 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public currentIndex = 0;
   public currentTime = 0;
   public isSubscriber = false;
-  public isSwipeAllow = false;
+  public isSwipeAllow = true;
   public isAdults = true;
+  public isPortrait = false;
+  baseUrl:string;
+  path:any;
+
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
   @ViewChild('swipeContainer') swipeContainer!: ElementRef;
 
-  // ✅ Marked dependencies as readonly — they are never reassigned
-  constructor(
+  // Marked dependencies as readonly — they are never reassigned
+  constructor(private ngNavigatorShareService: NgNavigatorShareService,
     private readonly route: ActivatedRoute,
     private readonly _sanitizer: DomSanitizer,
     private readonly location: Location,
@@ -98,11 +103,6 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     private readonly navigationService: NavigationService
   ) {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
-
-    const userid = localStorage.getItem('isloggedin');
-    const sub = localStorage.getItem('Subscriber');
-    this.isSubscriber = userid === 'T' && sub === '1';
-
     this.initializeData();
   }
 
@@ -125,12 +125,10 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       }
       this.linkcode = this.linkcode.replaceAll('~', '-');
     }
-
-    // ✅ Simplified using ternary operator
     this.isSubscriber = localStorage.getItem('Subscriber') === '1';
-    this.isSwipeAllow = this.isSubscriber;
+    this.isSwipeAllow = this.wisdomshort && this.isSubscriber ? true : false;
 
-    if (this.isSubscriber) {
+    if (this.isSwipeAllow) {
       localStorage.setItem('isSwipeAllow', 'true');
       const shortList = localStorage.getItem('wisdomShortData');
       if (shortList) {
@@ -162,15 +160,20 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.path = this.router.url;
+
     const code = this.wisdomshort
       ? `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`
       : `https://d1tenzemoxuh75.cloudfront.net/${this.linkcode}`;
 
     this.videoLink = this.getSafeUrl(code);
 
-    if (this.isSubscriber) {
+    if (this.wisdomshort && this.isSubscriber) {
       localStorage.setItem('isSwipeAllow', 'true');
       this.isSwipeAllow = true;
+    } else {
+      localStorage.setItem('isSwipeAllow', 'false');
+      this.isSwipeAllow = false;
     }
   }
 
@@ -182,6 +185,36 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       hammertime.on('swipeup', () => this.onSwipeUp());
       hammertime.on('swipedown', () => this.onSwipeDown());
     }
+    
+    // Ensure auto-play for all videos
+    this.ensureAutoPlay();
+  }
+
+  private ensureAutoPlay(): void {
+    if (this.videoPlayer?.nativeElement) {
+      const video = this.videoPlayer.nativeElement as HTMLVideoElement;
+      
+      // Try to play the video
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Auto-play was prevented, try muted play
+          video.muted = true;
+          video.play().catch((err) => {
+            console.warn('Auto-play failed:', err);
+          });
+        });
+      }
+      
+      // Ensure orientation is determined when metadata is available
+      video.addEventListener('loadedmetadata', () => {
+        this.checkVideoOrientation();
+        video.play().catch((err) => {
+          console.warn('Auto-play after metadata loaded failed:', err);
+        });
+      });
+    }
   }
 
   getSafeUrl(url: string) {
@@ -189,8 +222,16 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   checkVideoOrientation(): void {
-    const videoEl = this.videoPlayer?.nativeElement;
+    const videoEl = this.videoPlayer?.nativeElement as HTMLVideoElement | undefined;
     if (videoEl) {
+      // Determine orientation based on intrinsic media dimensions
+      const vw = videoEl.videoWidth;
+      const vh = videoEl.videoHeight;
+      if (vw && vh) {
+        this.isPortrait = vh > vw;
+      }
+
+      // Keep control tweaks
       videoEl.setAttribute('controlsList', 'nodownload nofullscreen');
       setTimeout(() => {
         videoEl.setAttribute('controlsList', 'nodownload nofullscreen');
@@ -230,6 +271,11 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       }
       this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
       this.checkVideoOrientation();
+      
+      // Ensure auto-play for next video in swipe mode
+      setTimeout(() => {
+        this.ensureAutoPlay();
+      }, 100);
     }
   }
 
@@ -243,6 +289,11 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
     this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
     this.checkVideoOrientation();
+    
+    // Ensure auto-play for previous video in swipe mode
+    setTimeout(() => {
+      this.ensureAutoPlay();
+    }, 100);
   }
 
   updateProgress(video: HTMLVideoElement): void {
@@ -260,5 +311,35 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {
     localStorage.setItem('isSwipeAllow', 'false');
+  }
+
+    share(){
+      this.shareUrl(SharedService.ProgramId);
+      
+      
+      
+      this.ngNavigatorShareService.share({
+        title: 'HappierMe Program',
+        text: 'Hey, check out the HappierMe Program',
+        url: this.baseUrl+this.path      
+      }).then( (response) => {
+        
+      })
+      .catch( (error) => {
+        console.log(error);
+      });
+    }
+
+  shareUrl (programType) {
+    switch (programType) {
+      case ProgramType.Adults:
+        this.baseUrl=SharedService.AdultsBaseUrl;
+      break;
+      case ProgramType.Teenagers:
+        this.baseUrl=SharedService.TeenagerBaseUrl;
+       break;
+      default:
+      this.baseUrl=SharedService.TeenagerBaseUrl;
+    }
   }
 }

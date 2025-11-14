@@ -3,7 +3,8 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
       <a class="" (click)="goBack()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg " alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
 
@@ -18,7 +19,9 @@
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/comment_unfilled.svg" alt="" class="p0">
       </a>
       <a class="" id="btnShare" (click)="share()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0" *ngIf="!isAdults">
+
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg " alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
   </div>
@@ -161,7 +164,7 @@
                         <h4 class="panel-title">
                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                             href="#collapseOne">
-                            <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff">
+                            <h4 class="mt0px mb15px fs_15px fw_600 lh_150p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{'View all comments' + '(' + BlogCommentsListabove.length + ')'}}
                             </h4>
                           </a>

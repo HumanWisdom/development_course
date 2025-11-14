@@ -3,19 +3,24 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw" style="overflow-y: auto;">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="routeToDashboard()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         My daily practice
       </h1>
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="" id="btnShare" (click)="share()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg  " alt="" class="p0" *ngIf="isAdults">
+
       </a>
 
     </div>
@@ -49,7 +54,7 @@
                           </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
-                          <span class="fc_ffffff">{{ currentSection + 1 }} / 6</span>
+                          <span class="fc_ffffff" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ currentSection + 1 }} / 6</span>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
                           <a  data-slide="next" class="next"
@@ -59,6 +64,7 @@
                             </button>
                           </a>
                         </div>
+                        
 
 
                       </div>
@@ -83,7 +89,7 @@
                         <div class="row mb5px">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0" >
                             <a (click)="routeToUrl('/wisdom-shorts')">
-                              <h2 class=" fs_12px fw_500 lh_140p fc_ffffff tcenter underline">
+                              <h2 class=" fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                 View all
                               </h2>
                             </a>
@@ -91,12 +97,12 @@
                         </div>  
                         <div class="box_new_v3_03">
                          <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="fw_500 fs_12px lh_140p fc_ffffff mtb0px tcenter m-b4">
+                          <h1 class="fw_500 fs_12px lh_140p  mtb0px tcenter m-b4"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{ dailyInspirationTitle }}</h1>
                         </div>
                         <div class="row mt30px"  >
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isVoices">
-                            <button type="btn" class="btn btn_daily"style="color:#fff;" (click)="routetovoices()" >
+                            <button type="btn" class="btn btn_daily" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" (click)="routetovoices()" >
                               Voices
                             </button>
                           </div>
@@ -119,7 +125,7 @@
                     <br/>
                     <br/>
                           <div class="text-content module-name">
-                            <h1 class="fw_500 fs_12px lh_140p fc_ffffff mtb0px tcenter" *ngIf="dailyInsModule">
+                            <h1 class="fw_500 fs_12px lh_140p  mtb0px tcenter" *ngIf="dailyInsModule"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{ 'Explore related module ' }}
                             </h1>
                             <a (click)="routeModule()"> 
@@ -153,7 +159,7 @@
                       <div class="row mb5px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <a (click)="routeToUrl('/breathing')" >
-                            <h2 class=" fs_12px fw_500 lh_140p fc_ffffff tcenter underline">
+                            <h2 class=" fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               View all
                             </h2>
                           </a>
@@ -161,7 +167,7 @@
                       </div> 
                       <div class="box_journal_v3_03">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="fw_600 fs_15px lh_140p fc_ffffff mtb0px tcenter">
+                          <h1 class="fw_600 fs_15px lh_140p fc_fmtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{dailybreathTitle}}
                           </h1>
                         </div>
@@ -199,7 +205,7 @@
                     <div class="box_journal_v3_03">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_ffffff tleft">
+                        <h4 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p  tleft"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{dailyqus}}
                         </h4>
                       </div>
@@ -225,7 +231,7 @@
 
                     <div class="row mt15px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p "  [ngClass]="isAdults ? 'fc_000000_0_7' : 'fc_ffffff_0_7'">
                           Your online journal is secure and private to you.
                         </h4>
                       </div>
@@ -268,7 +274,7 @@
 
                     <div class="row mt20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff">
+                        <h4 class="mtb0px fs_18px fw_400 lh_150p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{dailyinstext}}
                         </h4>
                       </div>
@@ -282,7 +288,7 @@
 
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff ttuppercase">
+                        <h4 class="mtb0px fs_18px fw_400 lh_150p  ttuppercase"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{dailyinsAuthor}}
                         </h4>
                       </div>
@@ -310,7 +316,7 @@
                     <div class="row mb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0" >
                         <a (click)="routeToUrl('/audio-meditation')" >
-                          <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff tcenter underline">
+                          <h2 class="mtb0px fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             View all
                           </h2>
                         </a>
@@ -319,7 +325,7 @@
                     <div class="box_journal_v3_03">
                     <div class="row mb30px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h1 class="mtb0px fs_24px fw_500 lh_130p fc_ffffff">
+                        <h1 class="mtb0px fs_24px fw_500 lh_130p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{audioTitle}}
                         </h1>
                       </div>
@@ -360,7 +366,7 @@
                     <div class="box_journal_v3_03">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_18px fw_400 lh_150p fc_ffffff">
+                        <h4 class="mtb0px fs_18px fw_400 lh_150p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{trythistoday}}
                         </h4>
                       </div>
@@ -399,7 +405,7 @@
 
       <div class="row mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
             Successfully added daily question
           </h4>
         </div>
@@ -407,7 +413,7 @@
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p "  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
             Daily Question Sucessfully Added.
           </h4>
         </div>

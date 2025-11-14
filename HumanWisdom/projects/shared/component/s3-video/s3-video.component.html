@@ -21,10 +21,24 @@
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0"></div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0"></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+      <a id="btnShare" (click)="share()">
+        <img
+          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share_round.svg"
+          alt=""
+          class="p0"
+          *ngIf="!isAdults"
+        />
+        <img
+          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg"
+          alt=""
+          class="p0"
+          *ngIf="isAdults"
+        />
+      </a>
+    </div>
   </div>
 </div>
 <!-- /top navigation -->
@@ -43,6 +57,16 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
+              <h1
+                class="txt1 tcenter"
+                [ngStyle]="{
+                  color: isAdults ? 'black' : 'white',
+                  alignSelf: 'flex-start',
+                  display: 'flex'
+                }"
+              >
+                {{ videoTitle }}
+              </h1>
               <div class="video-slider-container">
                 <div
                   class="video-wrapper"
@@ -61,9 +85,11 @@
                     playsinline
                     disablePictureInPicture
                     autoplay
+                    muted
                     class="cvideo"
                     [ngClass]="[
-                      isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di'
+                      isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di',
+                      isPortrait ? 'video-portrait' : 'video-landscape'
                     ]"
                     #videoPlayer
                     controls
@@ -75,7 +101,10 @@
                   <div
                     *ngIf="currentIndex === i"
                     class="swipe-up-alt"
-                    [ngClass]="isAdults ? 'black-theme' : 'white-theme'"
+                    [ngClass]="[
+                      isAdults ? 'black-theme' : 'white-theme',
+                      isPortrait ? 'swipe-up-portrait' : 'swipe-up-landscape'
+                    ]"
                   >
                     <span class="text">Swipe for next</span>
                     <div class="chevron"></div>
@@ -110,7 +139,11 @@
             <form>
               <h1
                 class="txt1"
-                [ngStyle]="{ color: isAdults ? 'black' : 'white' }"
+                [ngStyle]="{
+                  color: isAdults ? 'black' : 'white',
+                  alignSelf: 'flex-start',
+                  display: 'flex'
+                }"
               >
                 {{ videoTitle }}
               </h1>
@@ -119,10 +152,12 @@
                   <video
                     playsinline
                     autoplay
+                    muted
                     disablePictureInPicture
                     class="cvideo"
                     [ngClass]="[
-                      isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di'
+                      isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di',
+                      isPortrait ? 'video-portrait' : 'video-landscape'
                     ]"
                     #videoPlayer
                     controls
