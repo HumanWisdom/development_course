@@ -64,7 +64,7 @@
                             </button>
                           </a>
                         </div>
-                        
+
 
 
                       </div>
@@ -337,10 +337,15 @@
                         <!-- <audio controls controlsList="nodownload" #audio (click)="Logevent('click_play_audio_meditation')">
                           <source [src]="audioLink" type="audio/mpeg">
                         </audio> -->
-                        <audio id="aud1" controls controlsList="nodownload" #audio
+                        <audio id="aud1"    class="audio-test"  controls controlsList="nodownload" #audio audio-test
+                         [ngClass]="[isAdults ? 'invert-controls' : '']"
                           (click)="Logevent('click_play_daily_meditation')">
                           <source [src]="audioLink" type="audio/mpeg">
-                        </audio>
+                        </audio> 
+
+                        <!-- <app-audio-player class="audio-test" 
+                                audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.1.mp3">
+                              </app-audio-player> -->
                       </div>
                     </div>
                     </div>
