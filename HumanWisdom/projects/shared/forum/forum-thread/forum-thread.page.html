@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Forum
       </h1>
     </div>
@@ -40,12 +40,12 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mtb0px fs_18px fw_600 lh_24px fc_ffffff" *ngIf="posttread.Anonymous=='1'">
+                        <h4 class="mtb0px fs_18px fw_600 lh_24px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="posttread.Anonymous=='1'">
                           <!-- Jennifer Hitchner -->
                           Anonymous
                         </h4>
 
-                        <h4 class="mtb0px fs_18px fw_600 lh_24px fc_ffffff" (click)="gotToProfile(posttread.UserId)" *ngIf="posttread.Anonymous=='0'">
+                        <h4 class="mtb0px fs_18px fw_600 lh_24px " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" (click)="gotToProfile(posttread.UserId)" *ngIf="posttread.Anonymous=='0'">
                           <!-- Jennifer Hitchner -->
                           {{posttread.UserName}}
                         </h4>
@@ -96,7 +96,7 @@
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" (click)="callEditPost()">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                       Edit
                                     </h4>
                                   </div>
@@ -119,7 +119,7 @@
                               <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                    <h4 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                       Delete
                                     </h4>
                                   </div>
@@ -154,7 +154,7 @@
                   <div class="row mtb15px" >
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" *ngIf="posttread.TagName!=''">
-                        <button type="button" class="btn fs_10px fw_700 lh_140p fc_ffffff ttuppercase btn_fpfy btn_fpfy_mh">
+                        <button type="button" class="btn fs_10px fw_700 lh_140p ttuppercase btn_fpfy btn_fpfy_mh" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{posttread.TagName}}
                         </button>
                       </div>
@@ -169,7 +169,7 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" *ngIf="!posttread.isEditPost">
+                      <h4 class="mtb0px fs_15px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="!posttread.isEditPost">
                         <!-- Freedom from active addiction they say addicts are addicted because we have had childhood trauma... which can be a number of different things that have happened... question is., what's the solution!??? can't find book or video that's helpful! please help -->
                         {{posttread.POST}}
                       </h4>
@@ -251,7 +251,7 @@
 
               <div class="row mt40px mb15px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff ttuppercase">
+                  <h4 class="mtb0px fs_12px fw_400 lh_140p ttuppercase" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     COMMENTS
                   </h4>
                 </div>
@@ -271,7 +271,7 @@
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff" *ngIf="(editCommentId != item.ReplyPostID)">
+                      <h4 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="(editCommentId != item.ReplyPostID)">
                         <!-- It is possible to move on from our past experiences and heal ourselves - see the modules on stress, conditioning in the app. See the podcast on Overcoming emotional pain in the app. -->
                         {{item.ReplyPost}}
                       </h4>
@@ -363,7 +363,7 @@
   
         <div class="row mt30px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_18px fw_600 lh_145p fc_ffffff tcenter">
+            <h3 class="mtb0px fs_18px fw_600 lh_145p tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
               Thread successfully posted. All posts to the Forum will appear after they are moderated
             </h3>
           </div>
