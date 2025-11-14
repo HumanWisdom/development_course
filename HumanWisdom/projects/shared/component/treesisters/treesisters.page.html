@@ -10,7 +10,7 @@
   <div class="cw100p">   
     <div class="row center_flex tcenter">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_FFF7E6 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
-        <div class="x_panel p0">
+        <div class="x_panel  raf_div_01">
           <div class="x_content p0">
             <form>
               
@@ -40,7 +40,9 @@
 
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/treesisters.svg" alt="" class="img-responsive">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/treesisters.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/treesisters.svg" alt="" class="img-responsive" *ngIf="isAdults">
+
                 </div>
               </div>
 
