@@ -34525,7 +34525,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   font-size: 12px;
   font-weight: 400;
   line-height: 140%;
-  color: #FFF;
+  color: #000;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   background: #FFE8BB;
@@ -34534,7 +34534,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .ta_forum_comment:focus 
 {
-  color: #FFF;
+  color: #000;
   outline: none;
 }
 
