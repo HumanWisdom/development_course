@@ -54,7 +54,7 @@
                           </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
-                          <span class="fc_ffffff">{{ currentSection + 1 }} / 6</span>
+                          <span class="fc_ffffff" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ currentSection + 1 }} / 6</span>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
                           <a  data-slide="next" class="next"
@@ -64,6 +64,7 @@
                             </button>
                           </a>
                         </div>
+                        
 
 
                       </div>
@@ -101,7 +102,7 @@
                         </div>
                         <div class="row mt30px"  >
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isVoices">
-                            <button type="btn" class="btn btn_daily"style="color:#fff;" (click)="routetovoices()" >
+                            <button type="btn" class="btn btn_daily" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" (click)="routetovoices()" >
                               Voices
                             </button>
                           </div>

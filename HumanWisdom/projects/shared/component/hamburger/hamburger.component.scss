@@ -84,7 +84,8 @@ nav
         height: 100%;
         @include transform(translate3d(450px, 0px,0px));
         @include transition(transform 0.35s);
-        z-index: 99;
+        z-index: 10000 !important;
+        isolation: isolate;
         overflow: overlay;
         //   background-color: #fff;
         // background: #292D56;
@@ -99,7 +100,7 @@ nav
             top: 0;
             width: 100%;
             bottom: 0;
-            z-index: 1;
+            z-index: 9999 !important;
             display: none;
             left:0;
             margin: 0 !important;
