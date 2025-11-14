@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { OwlStore } from '../../stores/owl.store';
 
@@ -8,7 +8,7 @@ import { OwlStore } from '../../stores/owl.store';
   templateUrl: './owl-animation.component.html',
   styleUrls: ['./owl-animation.component.css']
 })
-export class OwlAnimationComponent implements OnInit, OnDestroy {
+export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   // Configuration: Time to wait (in milliseconds) before marking as initialized
   // Increase this value to keep the owl visible longer
   private readonly WAIT_TIME_BEFORE_INITIALIZATION = 5000; // 5 seconds
@@ -24,9 +24,11 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
   // Static owl properties
   public showStaticOwl: boolean = false; // Start with video, show static owl after video ends
   public owlMessage: string = "Hi! I'm Olly I am here to help"; // Customizable message
-  public showOwl: boolean = true; // Control visibility based on route (home only)
+  public showOwl: boolean = true; // Show owl on all pages
   public isSpeaking: boolean = false; // Controls cloud speaking animation
   private messageTimers: any[] = [];
+  private menuCheckInterval: any = null;
+  private menuObserver: MutationObserver | null = null;
   
   // Debug flag - set to true to test static owl immediately
   private debugMode: boolean = false;
@@ -76,16 +78,62 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
       return;
     }
     
-    // Show only on home route; hide on chat-bot and others
-    this.updateShowOwlForRoute(this.router.url);
-    this.router.events.subscribe((evt) => {
-      if (evt instanceof NavigationEnd) {
-        this.updateShowOwlForRoute(evt.urlAfterRedirects || evt.url);
-      }
-    });
+    // Show owl on all pages
+    this.showOwl = true;
 
     // GIF will play automatically when loaded
     // After the GIF animation duration, show the static owl
+  }
+  
+  ngAfterViewInit() {
+    // Wait a bit for the DOM to be fully ready, then monitor menu state
+    setTimeout(() => {
+      this.monitorMenuState();
+    }, 500);
+  }
+  
+  private monitorMenuState() {
+    // Check for menu checkbox and monitor its state
+    const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+    if (menuCheckbox) {
+      // Initial check
+      this.adjustOwlZIndex(menuCheckbox.checked);
+      
+      // Monitor changes
+      menuCheckbox.addEventListener('change', () => {
+        this.adjustOwlZIndex(menuCheckbox.checked);
+      });
+      
+      // Also monitor with MutationObserver for cases where checkbox is toggled programmatically
+      this.menuObserver = new MutationObserver(() => {
+        this.adjustOwlZIndex(menuCheckbox.checked);
+      });
+      this.menuObserver.observe(menuCheckbox, { attributes: true, attributeFilter: ['checked'] });
+      
+      // Also use a polling approach as a fallback (check every 100ms)
+      this.menuCheckInterval = setInterval(() => {
+        this.adjustOwlZIndex(menuCheckbox.checked);
+      }, 100);
+    } else {
+      // Retry if checkbox not found yet
+      setTimeout(() => {
+        this.monitorMenuState();
+      }, 500);
+    }
+  }
+  
+  private adjustOwlZIndex(menuOpen: boolean) {
+    // Find the owl wrapper element
+    const owlWrapper = document.querySelector('.owl-animation-wrapper') as HTMLElement;
+    if (owlWrapper) {
+      if (menuOpen) {
+        owlWrapper.style.zIndex = '10';
+        owlWrapper.style.setProperty('z-index', '10', 'important');
+      } else {
+        owlWrapper.style.zIndex = '100';
+        owlWrapper.style.setProperty('z-index', '100', 'important');
+      }
+    }
   }
   
 
@@ -93,6 +141,16 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     // Clear any pending timers
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
+    
+    // Clear menu monitoring
+    if (this.menuCheckInterval) {
+      clearInterval(this.menuCheckInterval);
+      this.menuCheckInterval = null;
+    }
+    if (this.menuObserver) {
+      this.menuObserver.disconnect();
+      this.menuObserver = null;
+    }
   }
 
   
@@ -121,12 +179,6 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
     }, this.gifAnimationDuration);
   }
 
-  private updateShowOwlForRoute(url: string) {
-    // Only show on adults home route; hide on chat-bot and elsewhere
-    const isAdultsHome = /\/adults\/home(\b|\?|#|$)/.test(url);
-    this.showOwl = isAdultsHome;
-    this.cdr.detectChanges();
-  }
 
   // GIF error handler
   handleGifError() {
@@ -177,13 +229,13 @@ export class OwlAnimationComponent implements OnInit, OnDestroy {
 
   private startSpeakingSequence() {
     // Begin with the intro message and speaking animation
-    this.owlMessage = "Hi I am olly\nI am here to help";
+    this.owlMessage = "Hi I am Olly. I'm\n here to help.";
     this.isSpeaking = true;
     this.cdr.detectChanges();
 
     // After a few seconds, switch to the next prompt
     const toNext = setTimeout(() => {
-      this.owlMessage = 'Ask me\nany questions';
+      this.owlMessage = 'Ask me a\n question.';
       this.cdr.detectChanges();
     }, 3000);
     this.messageTimers.push(toNext);
