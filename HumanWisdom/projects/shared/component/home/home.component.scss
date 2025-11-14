@@ -126,12 +126,15 @@
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
+    padding-top: 5px;
 }
 
 .home_pathway {
       background: rgba(255, 232, 187, 1);
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
 }
 
 .home_introduction,.home_blogs ,.home_stories, .home_podcast ,.home_shorts  {
@@ -198,6 +201,7 @@ background: #FFF4E6;
   transform: rotate(270deg); /* > becomes ↓ visually */
   font-size: 18px;
   line-height: 1;
+  padding-left: 2px;
 }
 
 .section-header {
