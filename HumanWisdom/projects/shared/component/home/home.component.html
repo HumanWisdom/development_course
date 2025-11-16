@@ -115,6 +115,16 @@
                             <div *ngFor="let card of getDisplayCards(section)"  style="min-width: 160px; flex-shrink: 0;">
                               <app-content-card [card]="card"  (cardClick)="onCardClick($event)"></app-content-card>
                             </div>
+                            <!-- View More link for horizontal sections -->
+                            <div *ngIf="shouldShowViewMore(section)" 
+                                 class="d-flex align-items-center justify-content-center" 
+                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
+                                 (click)="onViewMoreClick(section)">
+                              <a class="btn btn-link text-decoration-underline view-more-btn" 
+                                 style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
+                                View More <i class="fas fa-chevron-right ms-1"></i>
+                              </a>
+                            </div>
                           </div>
 
                           <!-- VERTICAL (stacked cards) -->
@@ -248,6 +258,16 @@
                               <div *ngFor="let card of getDisplayCards(section)"                                  
                                    style="min-width: 160px; flex-shrink: 0;">
                                 <app-content-card [card]="card"  (cardClick)="onCardClick($event)"></app-content-card>
+                              </div>
+                              <!-- View More link for horizontal sections in accordion -->
+                              <div *ngIf="shouldShowViewMore(section)" 
+                                   class="d-flex align-items-center justify-content-center" 
+                                   style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
+                                   (click)="onViewMoreClick(section)">
+                                <a class="btn btn-link text-decoration-underline view-more-btn" 
+                                   style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
+                                  View More <i class="fas fa-chevron-right ms-1"></i>
+                                </a>
                               </div>
                             </div>
 

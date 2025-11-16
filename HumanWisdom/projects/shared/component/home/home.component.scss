@@ -390,6 +390,7 @@ background: #FFF4E6;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 0;
   padding: 0;
+  background-color: #ffffff !important;
 }
 
 .adsearch_ul {
@@ -403,10 +404,11 @@ background: #FFF4E6;
   padding: 12px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease;
+  background-color: #ffffff !important;
 }
 
 .is-search:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .is-search:last-child {

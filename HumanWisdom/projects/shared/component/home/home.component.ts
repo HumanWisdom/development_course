@@ -112,6 +112,8 @@ navigationChange = new EventEmitter<string>();
   showWisdomExercise: boolean = false;
   username:string = 'Guest';   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
+  // Track visible card count for horizontal sections (View More functionality)
+  visibleCardCount: { [sectionId: string]: number } = {};
    mainheader:string='';
   searchinp: string = '';
   searchResult: any[] = [];
@@ -709,9 +711,17 @@ navigationChange = new EventEmitter<string>();
     const isStoriesOrBlogs = section.rawSectionType === 2;
     const isQuickAnswers = section.rawSectionType === 3;
     const showAll = this.showAllCards[section.id];
+    const isHorizontal = !section.isVerticalCards;
 
+    // Handle vertical sections (stories/blogs/quick answers)
     if ((isStoriesOrBlogs || isQuickAnswers) && !showAll) {
       return section.cards?.slice(0, 3) || [];
+    }
+
+    // Handle horizontal sections - limit to visible count (default 4 if more than 4 cards exist)
+    if (isHorizontal && section.cards && section.cards.length > 4) {
+      const visibleCount = this.visibleCardCount[section.id] || 4;
+      return section.cards.slice(0, visibleCount);
     }
 
     return section.cards || [];
@@ -743,6 +753,41 @@ navigationChange = new EventEmitter<string>();
     const hasMoreThan3Cards = (section.cards?.length || 0) > 3;
 
     return (isStoriesOrBlogs || isQuickAnswers) && showAll && hasMoreThan3Cards;
+  }
+
+  /**
+   * Check if "View More" should be shown for horizontal sections
+   * Only show if section is horizontal, has more than 4 cards, and not all cards are visible
+   */
+  shouldShowViewMore(section: ContentSection): boolean {
+    const isHorizontal = !section.isVerticalCards;
+    if (!isHorizontal) {
+      return false;
+    }
+
+    const totalCards = section.cards?.length || 0;
+    if (totalCards <= 4) {
+      return false;
+    }
+
+    const visibleCount = this.visibleCardCount[section.id] || 4;
+    return visibleCount < totalCards;
+  }
+
+  /**
+   * Handle "View More" click for horizontal sections
+   * Incrementally loads 4 more cards each time
+   */
+  onViewMoreClick(section: ContentSection): void {
+    const totalCards = section.cards?.length || 0;
+    const currentVisible = this.visibleCardCount[section.id] || 4;
+    const increment = 4;
+    const newVisibleCount = Math.min(currentVisible + increment, totalCards);
+    
+    this.visibleCardCount[section.id] = newVisibleCount;
+    
+    // Save state to store if needed (optional, for persistence)
+    // this.homeStateService.setVisibleCardCount(section.id, newVisibleCount);
   }
 
 
@@ -852,6 +897,8 @@ navigationChange = new EventEmitter<string>();
   private restoreStateFromStore(): void {
     const state = this.homeStateService.getCurrentState();
     this.showAllCards = { ...state.showAllCards };
+    // Initialize visible card count for horizontal sections (default 4)
+    // Could restore from store if needed in future
     console.log('Restored state from store:', state);
   }
 
