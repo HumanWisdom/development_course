@@ -519,6 +519,16 @@ return [
     return '';
   }
 
+   public static FnName() {
+    let FnName = this.getDataFromLocalStorage('FnName');
+    if (FnName && FnName != null) {
+      return FnName;
+    }
+    return '';
+  }
+
+  
+
   public static getEmail() {
     let email = this.getDataFromLocalStorage('email');
     if (email && email != null) {
