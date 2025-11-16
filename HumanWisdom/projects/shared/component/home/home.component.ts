@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -110,12 +110,16 @@ navigationChange = new EventEmitter<string>();
   YourTopicofChoice;
   isAdults = false;
   showWisdomExercise: boolean = false;
-
-  // Track which sections are showing all cards
+  username:string = 'Guest';   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
    mainheader:string='';
+  searchinp: string = '';
+  searchResult: any[] = [];
+  moduleList: any[] = [];
+  showSearchBox: boolean = true;
   private routerSubscription: Subscription;
   private hashChangeHandler: () => void;
+  private lastScrollTop: number = 0;
   
   constructor(
     private router: Router, 
@@ -123,7 +127,6 @@ navigationChange = new EventEmitter<string>();
     private homeStateService: HomeStateService
   ) {
     this.navigationItems = SharedService.getPreferenceDataForHome();
-    
     // Listen to hash changes dynamically
     this.hashChangeHandler = () => {
       this.handleHashChange();
@@ -139,14 +142,18 @@ navigationChange = new EventEmitter<string>();
           this.handleHashChange();
         }, 100);
       });
+    
    }
 
   ngOnInit(): void {
      this.isSubscriber = SharedService.isSubscriber();
      console.log('Is Subscriber:', this.isSubscriber);
-     
+     this.username=SharedService.FnName();
      // Restore state from store
      this.restoreStateFromStore();
+     
+     // Load module list for search dropdown
+     this.getModuleList();
      
      // Check for hash-based navigation before loading user preference
      const hashNavigationItem = this.getNavigationItemFromHash();
@@ -940,6 +947,29 @@ navigationChange = new EventEmitter<string>();
       .trim();
   }
 
+  /**
+   * Handle scroll events to show/hide search box
+   * Using HostListener for better performance
+   * Hide search box when scroll exceeds 20% of viewport height
+   */
+  @HostListener('window:scroll', ['$event'])
+  handleScroll(): void {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const threshold = viewportHeight * 0.2; // 20% of viewport height
+    
+    // Hide search box when scroll exceeds 20% of screen height
+    if (scrollTop > threshold) {
+      this.showSearchBox = false;
+      this.searchResult = []; // Close dropdown when hiding search box
+    } else {
+      // Show search box when scroll is within 20% of screen height
+      this.showSearchBox = true;
+    }
+    
+    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }
+
   ngOnDestroy(): void {
     // Clean up event listeners
     if (this.hashChangeHandler) {
@@ -1010,5 +1040,87 @@ navigationChange = new EventEmitter<string>();
     setTimeout(() => {
       this.scrollToActiveList();
     }, 500);
+  }
+
+  /**
+   * Get module list from API for search dropdown
+   */
+  getModuleList(): void {
+    this.commonService.getModuleList().subscribe(res => {
+      if (res) {
+        this.moduleList = res;
+        console.log('Module list loaded for search:', this.moduleList.length);
+      }
+    }, error => {
+      console.error('Error loading module list:', error);
+    });
+  }
+
+  /**
+   * Get autocomplete list based on search input
+   */
+  getAutoCompleteList(value: string): void {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => 
+          (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
+        );
+      }
+    }
+  }
+
+  /**
+   * Handle focus event - show all modules or filtered results
+   */
+  onFocus(): void {
+    if (this.moduleList.length === 0) {
+      this.getModuleList();
+    }
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => 
+        (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
+      );
+    }
+  }
+
+  /**
+   * Handle focus out event - hide dropdown after delay
+   */
+  onFocusOutEvent(): void {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 400);
+  }
+
+  /**
+   * Navigate to search page when Enter is pressed or search result is clicked
+   */
+  getinp(searchTerm: string): void {
+    if (searchTerm && searchTerm.trim() !== '') {
+      const prefix = SharedService.getprogramName();
+      const url = `/${prefix}/site-search/${searchTerm}`;
+      this.router.navigate([url]);
+    }
+  }
+
+  /**
+   * Handle search result click - navigate to search page
+   */
+  searchEvent(moduleName: string): void {
+    this.searchinp = moduleName;
+    this.searchResult = [];
+    this.getinp(moduleName);
+  }
+
+  /**
+   * Clear search and hide dropdown
+   */
+  clearSearch(): void {
+    this.searchinp = '';
+    this.searchResult = [];
   }
 }
