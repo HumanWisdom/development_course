@@ -309,6 +309,7 @@ div[ng-reflect-value] {
 .invert-controls::-webkit-media-controls-panel {
   filter: none !important;
   background-color: #FFE8BB !important;
+  border: 1px solid #ffe8bb;
 }
 
 /* Force playback rate text black without inversion */

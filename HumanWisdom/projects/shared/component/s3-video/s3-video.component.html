@@ -94,22 +94,24 @@
                     #videoPlayer
                     controls
                     controlsList="nodownload nofullscreen"
+                    (click)="onVideoClick()"
+                    (play)="onVideoPlay()"
                   >
                     <source [src]="video.url" type="video/mp4" />
                   </video>
-
-                  <div
-                    *ngIf="currentIndex === i"
-                    class="swipe-up-alt"
-                    [ngClass]="[
-                      isAdults ? 'black-theme' : 'white-theme',
-                      isPortrait ? 'swipe-up-portrait' : 'swipe-up-landscape'
-                    ]"
-                  >
-                    <span class="text">Swipe for next</span>
-                    <div class="chevron"></div>
-                  </div>
                 </div>
+              </div>
+
+              <!-- Fixed swipe footer (rendered once, outside animated wrapper) -->
+              <div
+                class="swipe-up-alt"
+                [ngClass]="[
+                  isAdults ? 'black-theme' : 'white-theme',
+                  isPortrait ? 'swipe-up-portrait' : 'swipe-up-landscape'
+                ]"
+              >
+                <span class="text">Swipe for next</span>
+                <div class="chevron"></div>
               </div>
             </form>
           </div>
@@ -162,6 +164,8 @@
                     #videoPlayer
                     controls
                     controlsList="nodownload nofullscreen"
+                    (click)="onVideoClick()"
+                    (play)="onVideoPlay()"
                   >
                     <source [src]="videoLink" type="video/mp4" />
                   </video>
