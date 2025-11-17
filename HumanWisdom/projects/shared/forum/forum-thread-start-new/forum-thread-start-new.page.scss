@@ -34,3 +34,6 @@
   animation: modalSlideUp 700ms ease-out forwards;
   will-change: transform, opacity;
 }
+.modal.fade.in .lab-modal-body {
+  top: 22% !important;
+}
