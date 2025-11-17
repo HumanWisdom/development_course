@@ -668,29 +668,56 @@ navigationChange = new EventEmitter<string>();
 
   onCardClick(card: ContentCard): void {
     console.log('Card clicked:', card);
-   if(card.path && card.path.includes('?')) 
-   {
-      const [basePath, queryString] = card.path.split('?');
-      const queryParams = new URLSearchParams(queryString);
-      const queryObj: any = {};
-      queryParams.forEach((value, key) => {
-        queryObj[key] = value;
-      });
-      try {
-        this.router.navigate([basePath], { queryParams: queryObj });
-      } catch (e) {
-        console.warn('Navigation failed for path with query params:', card.path, e);
+    // Persist selected short video info so s3-video can play exact clicked item
+    try {
+      const isShortVideo = (card.moduleType || '').toUpperCase() === 'VIDEO' || (card.mediaType || '').toUpperCase() === 'SHORT';
+      if (isShortVideo && card.path) {
+        let linkcode = '';
+        if (card.path.includes('/wisdom_shorts/videos/')) {
+          const parts = card.path.split('/');
+          linkcode = parts[parts.length - 1] || '';
+        }
+        if (!linkcode && card.path.includes('?')) {
+          const [_, queryString] = card.path.split('?');
+          const queryParams = new URLSearchParams(queryString);
+          linkcode = queryParams.get('videolink') || '';
+        }
+        if (linkcode) {
+          localStorage.setItem('wisdomvideolink', linkcode);
+        }
+        if (card.title) {
+          localStorage.setItem('wisdomvideotitle', card.title);
+        }
+        // Ensure swipe is disabled when opening shorts from Home
+        localStorage.setItem('fromIndex', 'false');
+        localStorage.removeItem('wisdomShortData');
       }
-    return;
-   }
-    if (card.path) {
-      try {
-        this.router.navigate([card.path]);
-      } catch (e) {
-        console.warn('Navigation failed for path:', card.path, e);
-      }
+    } catch (e) {
+      console.warn('Failed to persist short video data', e);
     }
-    this.cardClick.emit(card);
+  if(card.path && card.path.includes('?')) 
+  {
+     const [basePath, queryString] = card.path.split('?');
+     const queryParams = new URLSearchParams(queryString);
+     const queryObj: any = {};
+     queryParams.forEach((value, key) => {
+       queryObj[key] = value;
+     });
+     try {
+       this.router.navigate([basePath], { queryParams: queryObj });
+     } catch (e) {
+       console.warn('Navigation failed for path with query params:', card.path, e);
+     }
+   return;
+  }
+   if (card.path) {
+     try {
+       this.router.navigate([card.path]);
+     } catch (e) {
+       console.warn('Navigation failed for path:', card.path, e);
+     }
+   }
+   this.cardClick.emit(card);
   }
 
   onSectionToggle(section: ContentSection): void {

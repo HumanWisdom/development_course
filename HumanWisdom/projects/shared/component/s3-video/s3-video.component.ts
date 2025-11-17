@@ -20,6 +20,7 @@ import {
   transition,
 } from '@angular/animations';
 import { SharedService } from '../../services/shared.service';
+import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
 import * as Hammer from 'hammerjs';
 
@@ -89,6 +90,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public isPortrait = false;
   baseUrl:string;
   path:any;
+  private hasTrackedThisVideo = false;
 
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
@@ -100,7 +102,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     private readonly _sanitizer: DomSanitizer,
     private readonly location: Location,
     private readonly router: Router,
-    private readonly navigationService: NavigationService
+    private readonly navigationService: NavigationService,
+    private readonly service: CommonService
   ) {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
     this.initializeData();
@@ -108,12 +111,14 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private initializeData(): void {
     const url = window.location.href;
+    // Support both route params and query params for videolink/title
     const routeParams = this.route.snapshot.paramMap;
-    this.linkcode = routeParams.get('videolink');
-    this.videoTitle =
-      routeParams.get('title') ??
-      localStorage.getItem('wisdomvideotitle') ??
-      '';
+    const queryParams = this.route.snapshot.queryParamMap;
+    const videolinkParam = routeParams.get('videolink') || queryParams.get('videolink') || localStorage.getItem('wisdomvideolink');
+    const titleParam = routeParams.get('title') || queryParams.get('title') || localStorage.getItem('wisdomvideotitle');
+
+    this.linkcode = videolinkParam ?? '';
+    this.videoTitle = titleParam ?? localStorage.getItem('wisdomvideotitle') ?? '';
 
     if (url.includes('videopage')) {
       this.wisdomshort = false;
@@ -126,7 +131,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       this.linkcode = this.linkcode.replaceAll('~', '-');
     }
     this.isSubscriber = localStorage.getItem('Subscriber') === '1';
-    this.isSwipeAllow = this.wisdomshort && this.isSubscriber ? true : false;
+    const fromIndex = localStorage.getItem('fromIndex') === 'true';
+    this.isSwipeAllow = this.wisdomshort && this.isSubscriber && fromIndex ? true : false;
 
     if (this.isSwipeAllow) {
       localStorage.setItem('isSwipeAllow', 'true');
@@ -142,13 +148,36 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
               url: this.getSafeUrl(code),
               order: index,
               title: element.Title,
+              code: linkcode, // store link code for exact matching
             };
           }
         );
 
-        this.currentIndex = this.wisdomShortOrderList.findIndex((x) =>
-          x.title.includes(this.videoTitle)
+        // Prefer exact match by link code over title includes
+        const normalizedLinkcode = (this.linkcode || '').trim();
+        this.currentIndex = this.wisdomShortOrderList.findIndex(
+          (x: any) => x.code === normalizedLinkcode
         );
+
+        // Fallback: if not found by code, try title match
+        if (this.currentIndex === -1 && this.videoTitle) {
+          this.currentIndex = this.wisdomShortOrderList.findIndex((x: any) =>
+            (x.title || '').toLowerCase().includes((this.videoTitle || '').toLowerCase())
+          );
+        }
+
+        // If still not found, inject the clicked video as the first item
+        if (this.currentIndex === -1 && normalizedLinkcode) {
+          const injectedCode = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${normalizedLinkcode}`;
+          const injectedItem: any = {
+            url: this.getSafeUrl(injectedCode),
+            order: -1,
+            title: this.videoTitle || 'Selected Video',
+            code: normalizedLinkcode,
+          };
+          this.wisdomShortOrderList.unshift(injectedItem);
+          this.currentIndex = 0;
+        }
 
         if (this.currentIndex > 2 && !this.isSubscriber) {
           this.router.navigate([
@@ -168,7 +197,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
     this.videoLink = this.getSafeUrl(code);
 
-    if (this.wisdomshort && this.isSubscriber) {
+    const fromIndex = localStorage.getItem('fromIndex') === 'true';
+    if (this.wisdomshort && this.isSubscriber && fromIndex) {
       localStorage.setItem('isSwipeAllow', 'true');
       this.isSwipeAllow = true;
     } else {
@@ -188,6 +218,13 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     
     // Ensure auto-play for all videos
     this.ensureAutoPlay();
+
+    // Track once on first play automatically (covers autoplay and manual play)
+    const video = this.videoPlayer?.nativeElement as HTMLVideoElement | undefined;
+    if (video) {
+      const trackOnce = () => this.trackShortClickIfApplicable();
+      video.addEventListener('play', trackOnce, { once: true });
+    }
   }
 
   private ensureAutoPlay(): void {
@@ -263,6 +300,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.currentIndex < this.wisdomShortOrderList.length - 1) {
       this.direction = 'up';
       this.currentIndex++;
+      this.hasTrackedThisVideo = false;
       if (this.currentIndex > 2 && !this.isSubscriber) {
         this.router.navigate([
           `${SharedService.getprogramName()}/subscription/start-your-free-trial`,
@@ -289,6 +327,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
     this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
     this.checkVideoOrientation();
+    this.hasTrackedThisVideo = false;
     
     // Ensure auto-play for previous video in swipe mode
     setTimeout(() => {
@@ -341,5 +380,53 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       default:
       this.baseUrl=SharedService.TeenagerBaseUrl;
     }
+  }
+
+  // UI events from template
+  onVideoClick(): void {
+    this.trackShortClickIfApplicable();
+  }
+
+  onVideoPlay(): void {
+    this.trackShortClickIfApplicable();
+  }
+
+  // Tracking helpers (short videos only)
+  private trackShortClickIfApplicable(): void {
+    if (this.hasTrackedThisVideo) return;
+    if (!this.wisdomshort) return; // only track wisdom shorts
+
+    const code = this.getCurrentShortCode();
+    const id = this.extractShortIdFromCode(code);
+    if (id !== null) {
+      this.service.clickShorts(id).subscribe({
+        next: () => {
+          this.hasTrackedThisVideo = true;
+          console.log('short click recorded');
+        },
+        error: (e) => console.error('short click failed', e)
+      });
+    }
+  }
+
+  private getCurrentShortCode(): string {
+    if (this.isSwipeAllow && this.wisdomShortOrderList.length) {
+      const item = this.wisdomShortOrderList[this.currentIndex];
+      return (item?.code || '').toString();
+    }
+    return (this.linkcode || '').toString();
+  }
+
+  private extractShortIdFromCode(code: string): number | null {
+    if (!code) return null;
+    // Typical pattern observed elsewhere: filename like "name.<id>.mp4"
+    const parts = code.split('.');
+    for (const part of parts) {
+      const n = Number(part);
+      if (!Number.isNaN(n) && Number.isFinite(n)) {
+        return n;
+      }
+    }
+    return null;
   }
 }
