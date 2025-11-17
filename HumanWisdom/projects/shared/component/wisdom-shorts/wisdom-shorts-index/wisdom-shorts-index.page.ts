@@ -175,9 +175,13 @@ export class WisdomShortsIndexPage implements OnInit {
       const extras = val['IsVoices'] === '1' ? { queryParams: { pref: 'voices' } } : undefined;
 
       if (res === true) {
+        // Mark origin so swipe-for-next is enabled only from index
+        localStorage.setItem('fromIndex', 'true');
         this.router.navigate([route, 'T', title], extras);
       } else {
         if (loggedin === 'T' && sub === '1') {
+          // Mark origin so swipe-for-next is enabled only from index
+          localStorage.setItem('fromIndex', 'true');
           this.router.navigate([route, 'T', title], extras);
         } else {
           this.showModal = true;
