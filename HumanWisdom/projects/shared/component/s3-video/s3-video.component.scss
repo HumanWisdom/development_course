@@ -156,19 +156,19 @@ video.cvideo_01.invert-controls {
 }
 
 .video-landscape {
-  width: 355px !important;
-  height: 190px !important;
-  margin-left: 0 !important;
-  object-fit: cover;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  object-fit: contain !important;
+  background: black;  
 }
-
 /* Video size and layout adjustments */
 .cvideo_ext_di {
   width: 70%;
   max-height: 86vh;
   object-fit: cover;
   border-radius: 16px !important;
-  margin: 20px;
+  margin-top: 20px;
   padding: 0 !important;
 }
 
