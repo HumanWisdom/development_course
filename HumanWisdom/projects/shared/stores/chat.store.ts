@@ -13,6 +13,8 @@ export interface ChatMessage {
   timestamp: Date;
   isTyping?: boolean;
   suggestions?: string[]; // Array of suggested questions
+  hideAvatar?: boolean;
+  hideSender?: boolean;
 }
 
 /**
@@ -489,11 +491,39 @@ export class ChatStore extends ComponentStore<ChatState> {
    * Initialize with welcome messages
    */
   initializeWelcomeMessages(messages: ChatMessage[]): void {
-    // Only add welcome messages if there are no existing messages
     const currentMessages = this.get().messages;
     if (currentMessages.length === 0) {
       this.setMessages(messages);
+      return;
     }
+
+    // Split legacy combined intro into two separate welcome messages
+    if (this.hasCombinedWelcomeMessage(currentMessages)) {
+      const remainingMessages = currentMessages.slice(1);
+      this.setMessages([...messages, ...remainingMessages]);
+    }
+  }
+
+  /**
+   * Detect older welcome-message state so it can be replaced/migrated
+   */
+  private hasCombinedWelcomeMessage(messages: ChatMessage[]): boolean {
+    if (messages.length === 0) {
+      return false;
+    }
+
+    const first = messages[0];
+    if (first.sender !== 'bot') {
+      return false;
+    }
+
+    const content = first.content || '';
+    const contentLower = content.toLowerCase();
+    const hasIntro = contentLower.includes('ask me a question');
+    const hasForum = contentLower.includes('community forum');
+    const hasLineBreak = content.includes('<br><br>');
+
+    return hasIntro && hasForum && hasLineBreak;
   }
 
   /**

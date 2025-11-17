@@ -68,7 +68,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     console.log('GIF element:', this.gifElement);
     console.log('Initial showStaticOwl:', this.showStaticOwl);
     console.log('Initial isAtCorner:', this.isAtCorner);
-    
+
     // Debug mode - show static owl immediately for testing
     if (this.debugMode) {
       console.log('DEBUG MODE: Showing static owl immediately');

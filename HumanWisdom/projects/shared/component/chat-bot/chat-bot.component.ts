@@ -278,4 +278,25 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       });
     }, 100);
   }
+
+  shouldShowTimestamp(message: ChatMessage, isFirst: boolean): boolean {
+    if (!message) {
+      return true;
+    }
+
+    const isIntroBotMessage =
+      message.sender === 'bot' &&
+      typeof message.content === 'string' &&
+      message.content.toLowerCase().includes("hi. i'm olly. ask me a question.");
+
+    if (isIntroBotMessage) {
+      return false;
+    }
+
+    if (isFirst && message.sender === 'bot') {
+      return false;
+    }
+
+    return true;
+  }
 }
