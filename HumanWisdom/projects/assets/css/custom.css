@@ -38361,7 +38361,7 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
 
 .ws-read-icon    { position: relative; bottom: 50px; }
 .ws-lock-icon    { position: relative; 
-  /* top:    50px;  */
+   top:    40px;  
 }
 
 
