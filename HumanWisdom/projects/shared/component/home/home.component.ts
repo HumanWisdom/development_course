@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -110,12 +110,18 @@ navigationChange = new EventEmitter<string>();
   YourTopicofChoice;
   isAdults = false;
   showWisdomExercise: boolean = false;
-
-  // Track which sections are showing all cards
+  username:string = 'Guest';   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
+  // Track visible card count for horizontal sections (View More functionality)
+  visibleCardCount: { [sectionId: string]: number } = {};
    mainheader:string='';
+  searchinp: string = '';
+  searchResult: any[] = [];
+  moduleList: any[] = [];
+  showSearchBox: boolean = true;
   private routerSubscription: Subscription;
   private hashChangeHandler: () => void;
+  private lastScrollTop: number = 0;
   
   constructor(
     private router: Router, 
@@ -123,7 +129,6 @@ navigationChange = new EventEmitter<string>();
     private homeStateService: HomeStateService
   ) {
     this.navigationItems = SharedService.getPreferenceDataForHome();
-    
     // Listen to hash changes dynamically
     this.hashChangeHandler = () => {
       this.handleHashChange();
@@ -139,14 +144,18 @@ navigationChange = new EventEmitter<string>();
           this.handleHashChange();
         }, 100);
       });
+    
    }
 
   ngOnInit(): void {
      this.isSubscriber = SharedService.isSubscriber();
      console.log('Is Subscriber:', this.isSubscriber);
-     
+     this.username=SharedService.FnName();
      // Restore state from store
      this.restoreStateFromStore();
+     
+     // Load module list for search dropdown
+     this.getModuleList();
      
      // Check for hash-based navigation before loading user preference
      const hashNavigationItem = this.getNavigationItemFromHash();
@@ -659,29 +668,56 @@ navigationChange = new EventEmitter<string>();
 
   onCardClick(card: ContentCard): void {
     console.log('Card clicked:', card);
-   if(card.path && card.path.includes('?')) 
-   {
-      const [basePath, queryString] = card.path.split('?');
-      const queryParams = new URLSearchParams(queryString);
-      const queryObj: any = {};
-      queryParams.forEach((value, key) => {
-        queryObj[key] = value;
-      });
-      try {
-        this.router.navigate([basePath], { queryParams: queryObj });
-      } catch (e) {
-        console.warn('Navigation failed for path with query params:', card.path, e);
+    // Persist selected short video info so s3-video can play exact clicked item
+    try {
+      const isShortVideo = (card.moduleType || '').toUpperCase() === 'VIDEO' || (card.mediaType || '').toUpperCase() === 'SHORT';
+      if (isShortVideo && card.path) {
+        let linkcode = '';
+        if (card.path.includes('/wisdom_shorts/videos/')) {
+          const parts = card.path.split('/');
+          linkcode = parts[parts.length - 1] || '';
+        }
+        if (!linkcode && card.path.includes('?')) {
+          const [_, queryString] = card.path.split('?');
+          const queryParams = new URLSearchParams(queryString);
+          linkcode = queryParams.get('videolink') || '';
+        }
+        if (linkcode) {
+          localStorage.setItem('wisdomvideolink', linkcode);
+        }
+        if (card.title) {
+          localStorage.setItem('wisdomvideotitle', card.title);
+        }
+        // Ensure swipe is disabled when opening shorts from Home
+        localStorage.setItem('fromIndex', 'false');
+        localStorage.removeItem('wisdomShortData');
       }
-    return;
-   }
-    if (card.path) {
-      try {
-        this.router.navigate([card.path]);
-      } catch (e) {
-        console.warn('Navigation failed for path:', card.path, e);
-      }
+    } catch (e) {
+      console.warn('Failed to persist short video data', e);
     }
-    this.cardClick.emit(card);
+  if(card.path && card.path.includes('?')) 
+  {
+     const [basePath, queryString] = card.path.split('?');
+     const queryParams = new URLSearchParams(queryString);
+     const queryObj: any = {};
+     queryParams.forEach((value, key) => {
+       queryObj[key] = value;
+     });
+     try {
+       this.router.navigate([basePath], { queryParams: queryObj });
+     } catch (e) {
+       console.warn('Navigation failed for path with query params:', card.path, e);
+     }
+   return;
+  }
+   if (card.path) {
+     try {
+       this.router.navigate([card.path]);
+     } catch (e) {
+       console.warn('Navigation failed for path:', card.path, e);
+     }
+   }
+   this.cardClick.emit(card);
   }
 
   onSectionToggle(section: ContentSection): void {
@@ -702,9 +738,17 @@ navigationChange = new EventEmitter<string>();
     const isStoriesOrBlogs = section.rawSectionType === 2;
     const isQuickAnswers = section.rawSectionType === 3;
     const showAll = this.showAllCards[section.id];
+    const isHorizontal = !section.isVerticalCards;
 
+    // Handle vertical sections (stories/blogs/quick answers)
     if ((isStoriesOrBlogs || isQuickAnswers) && !showAll) {
       return section.cards?.slice(0, 3) || [];
+    }
+
+    // Handle horizontal sections - limit to visible count (default 4 if more than 4 cards exist)
+    if (isHorizontal && section.cards && section.cards.length > 4) {
+      const visibleCount = this.visibleCardCount[section.id] || 4;
+      return section.cards.slice(0, visibleCount);
     }
 
     return section.cards || [];
@@ -736,6 +780,41 @@ navigationChange = new EventEmitter<string>();
     const hasMoreThan3Cards = (section.cards?.length || 0) > 3;
 
     return (isStoriesOrBlogs || isQuickAnswers) && showAll && hasMoreThan3Cards;
+  }
+
+  /**
+   * Check if "View More" should be shown for horizontal sections
+   * Only show if section is horizontal, has more than 4 cards, and not all cards are visible
+   */
+  shouldShowViewMore(section: ContentSection): boolean {
+    const isHorizontal = !section.isVerticalCards;
+    if (!isHorizontal) {
+      return false;
+    }
+
+    const totalCards = section.cards?.length || 0;
+    if (totalCards <= 4) {
+      return false;
+    }
+
+    const visibleCount = this.visibleCardCount[section.id] || 4;
+    return visibleCount < totalCards;
+  }
+
+  /**
+   * Handle "View More" click for horizontal sections
+   * Incrementally loads 4 more cards each time
+   */
+  onViewMoreClick(section: ContentSection): void {
+    const totalCards = section.cards?.length || 0;
+    const currentVisible = this.visibleCardCount[section.id] || 4;
+    const increment = 4;
+    const newVisibleCount = Math.min(currentVisible + increment, totalCards);
+    
+    this.visibleCardCount[section.id] = newVisibleCount;
+    
+    // Save state to store if needed (optional, for persistence)
+    // this.homeStateService.setVisibleCardCount(section.id, newVisibleCount);
   }
 
 
@@ -845,6 +924,8 @@ navigationChange = new EventEmitter<string>();
   private restoreStateFromStore(): void {
     const state = this.homeStateService.getCurrentState();
     this.showAllCards = { ...state.showAllCards };
+    // Initialize visible card count for horizontal sections (default 4)
+    // Could restore from store if needed in future
     console.log('Restored state from store:', state);
   }
 
@@ -940,6 +1021,29 @@ navigationChange = new EventEmitter<string>();
       .trim();
   }
 
+  /**
+   * Handle scroll events to show/hide search box
+   * Using HostListener for better performance
+   * Hide search box when scroll exceeds 20% of viewport height
+   */
+  @HostListener('window:scroll', ['$event'])
+  handleScroll(): void {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const threshold = viewportHeight * 0.2; // 20% of viewport height
+    
+    // Hide search box when scroll exceeds 20% of screen height
+    if (scrollTop > threshold) {
+      this.showSearchBox = false;
+      this.searchResult = []; // Close dropdown when hiding search box
+    } else {
+      // Show search box when scroll is within 20% of screen height
+      this.showSearchBox = true;
+    }
+    
+    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }
+
   ngOnDestroy(): void {
     // Clean up event listeners
     if (this.hashChangeHandler) {
@@ -1010,5 +1114,87 @@ navigationChange = new EventEmitter<string>();
     setTimeout(() => {
       this.scrollToActiveList();
     }, 500);
+  }
+
+  /**
+   * Get module list from API for search dropdown
+   */
+  getModuleList(): void {
+    this.commonService.getModuleList().subscribe(res => {
+      if (res) {
+        this.moduleList = res;
+        console.log('Module list loaded for search:', this.moduleList.length);
+      }
+    }, error => {
+      console.error('Error loading module list:', error);
+    });
+  }
+
+  /**
+   * Get autocomplete list based on search input
+   */
+  getAutoCompleteList(value: string): void {
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => 
+          (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
+        );
+      }
+    }
+  }
+
+  /**
+   * Handle focus event - show all modules or filtered results
+   */
+  onFocus(): void {
+    if (this.moduleList.length === 0) {
+      this.getModuleList();
+    }
+    if (this.searchinp == '') {
+      this.searchResult = this.moduleList;
+    } else {
+      this.searchResult = this.moduleList.filter(x => 
+        (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
+      );
+    }
+  }
+
+  /**
+   * Handle focus out event - hide dropdown after delay
+   */
+  onFocusOutEvent(): void {
+    setTimeout(() => {
+      this.searchResult = [];
+    }, 400);
+  }
+
+  /**
+   * Navigate to search page when Enter is pressed or search result is clicked
+   */
+  getinp(searchTerm: string): void {
+    if (searchTerm && searchTerm.trim() !== '') {
+      const prefix = SharedService.getprogramName();
+      const url = `/${prefix}/site-search/${searchTerm}`;
+      this.router.navigate([url]);
+    }
+  }
+
+  /**
+   * Handle search result click - navigate to search page
+   */
+  searchEvent(moduleName: string): void {
+    this.searchinp = moduleName;
+    this.searchResult = [];
+    this.getinp(moduleName);
+  }
+
+  /**
+   * Clear search and hide dropdown
+   */
+  clearSearch(): void {
+    this.searchinp = '';
+    this.searchResult = [];
   }
 }

@@ -10,9 +10,53 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01_home col_cw home-content">
         <div class="x_panel p0">
           <div class="x_content p0">
+   
+            <div class="row home-container sticky-top-section">
 
-            <div class="row home-container">
-              <div class="col-12 border-bottom pr0px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="showSearchBox" >
+                <h2 class="fw_700 fs_24px lh_140p fc_000000 mt20px mb0px plr20px">
+                  Hi {{username}}!
+                </h2>
+              </div>
+              <!-- Search Box -->
+              <div class="col-12 pr0px plr10px mt-3 mb-3 prelative search-box-container" 
+                   [class.search-box-hidden]="!showSearchBox">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                  <input type="search" 
+                    placeholder="How can we help you today?" 
+                    class="form-control has-feedback-left pfy_search hide_search" 
+                    name="search-list" 
+                    [(ngModel)]="searchinp" 
+                    autocomplete="off"
+                    (keyup)="getAutoCompleteList($event.target.value)"
+                    (focus)="onFocus()"
+                    (focusout)="onFocusOutEvent()"
+                    (keyup.enter)="getinp(searchinp)"
+                    [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}">
+                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                  <span *ngIf="searchinp!=''" 
+                    (click)="clearSearch()"
+                    class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                    aria-hidden="true"></span>
+                </div>
+                
+                <!-- Search Dropdown -->
+                <div class="row adsearch" *ngIf="searchResult.length > 0">
+                  <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                    <ul class="list-group autocomplete-list adsearch_ul">
+                      <li *ngFor="let item of searchResult" 
+                          (click)="searchEvent(item.ModuleName)" 
+                          name="list"
+                          class="is-search list-group-item">
+                        {{item.ModuleName}}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Navigation Menu - Sticky Header -->
+              <div class="col-12 border-bottom pr0px sticky-nav-container">
                 <div class="d-flex flex-wrap">
                   <div class="nav-menu">
                     <ng-container *ngFor="let item of personalisedList">
@@ -28,6 +72,9 @@
                 </div>
               </div>
             </div>
+            
+            <!-- Spacer to prevent content from being hidden behind fixed header -->
+            <div class="fixed-header-spacer" [style.min-height.px]="showSearchBox ? 120 : 60"></div>
 
             <!-- Wisdom Exercise Component Embedding -->
             <div class="row" *ngIf="showWisdomExercise">
@@ -43,7 +90,7 @@
                         </div>
 
             <div class="row" *ngIf="!showWisdomExercise">
-              <div class="col-12 p-0">
+              <div class="col-12 p-0" style="margin-top: 10% ;">
 
                 <!-- recursive template for a section -->
                 <ng-template #renderSection let-section>
@@ -67,6 +114,16 @@
                           <div class="d-flex card-container " *ngIf="!section.isVerticalCards">
                             <div *ngFor="let card of getDisplayCards(section)"  style="min-width: 160px; flex-shrink: 0;">
                               <app-content-card [card]="card"  (cardClick)="onCardClick($event)"></app-content-card>
+                            </div>
+                            <!-- View More link for horizontal sections -->
+                            <div *ngIf="shouldShowViewMore(section)" 
+                                 class="d-flex align-items-center justify-content-center" 
+                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
+                                 (click)="onViewMoreClick(section)">
+                              <a class="btn btn-link text-decoration-underline view-more-btn" 
+                                 style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
+                                View More <i class="fas fa-chevron-right ms-1"></i>
+                              </a>
                             </div>
                           </div>
 
@@ -201,6 +258,16 @@
                               <div *ngFor="let card of getDisplayCards(section)"                                  
                                    style="min-width: 160px; flex-shrink: 0;">
                                 <app-content-card [card]="card"  (cardClick)="onCardClick($event)"></app-content-card>
+                              </div>
+                              <!-- View More link for horizontal sections in accordion -->
+                              <div *ngIf="shouldShowViewMore(section)" 
+                                   class="d-flex align-items-center justify-content-center" 
+                                   style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
+                                   (click)="onViewMoreClick(section)">
+                                <a class="btn btn-link text-decoration-underline view-more-btn" 
+                                   style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
+                                  View More <i class="fas fa-chevron-right ms-1"></i>
+                                </a>
                               </div>
                             </div>
 
