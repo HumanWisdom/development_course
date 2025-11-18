@@ -85,9 +85,9 @@ p {
 .swipe-up-alt.black-theme {
   background: #FFF7E6;
 }
-.swipe-up-alt.white-theme {
-  background: rgba(0, 0, 0, 0.85);
-}
+// .swipe-up-alt.white-theme {
+//   background: rgba(0, 0, 0, 0.85);
+// }
 
 .text {
   font-size: 12px;
@@ -156,19 +156,21 @@ video.cvideo_01.invert-controls {
 }
 
 .video-landscape {
-  width: 355px !important;
-  height: 190px !important;
-  margin-left: 0 !important;
-  object-fit: cover;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  object-fit: contain !important;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); 
 }
-
 /* Video size and layout adjustments */
 .cvideo_ext_di {
   width: 70%;
   max-height: 86vh;
   object-fit: cover;
   border-radius: 16px !important;
-  margin: 20px;
+  margin-top: 20px;
   padding: 0 !important;
 }
 
@@ -185,5 +187,5 @@ video.cvideo_01.invert-controls {
 }
 
 .txt1{
-  margin: 0;
+  margin: 0 !important;
 }

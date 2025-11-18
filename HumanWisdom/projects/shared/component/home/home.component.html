@@ -122,7 +122,17 @@
                                  (click)="onViewMoreClick(section)">
                               <a class="btn btn-link text-decoration-underline view-more-btn" 
                                  style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                View More <i class="fas fa-chevron-right ms-1"></i>
+                                View More <i class="fa fa-angle-right ms-1"></i>
+                              </a>
+                            </div>
+                            <!-- View All link for horizontal sections - only show when reached end -->
+                            <div *ngIf="hasReachedEnd(section)" 
+                                 class="d-flex align-items-center justify-content-center" 
+                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
+                                 (click)="onViewAll(section)">
+                              <a class="btn btn-link text-decoration-underline view-more-btn" 
+                                 style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
+                                View all <i class="fa fa-angle-down ms-1"></i>
                               </a>
                             </div>
                           </div>
@@ -184,14 +194,23 @@
                                 </app-content-card>
                               </div>
                             </div>
+                            <!-- View All link for vertical sections - only show when reached end -->
+                            <div *ngIf="hasReachedEnd(section)" class="mb-3" style="width: 100%;">
+                              <div class="text-center">
+                                <button class="btn btn-link text-decoration-underline view-toggle-btn"
+                                        (click)="onViewAll(section)">
+                                  View all <i class="fa fa-angle-down ms-1"></i>
+                                </button>
+                              </div>
+                            </div>
                           </div>
                           
-                          <!-- View All/View Less buttons for Life stories and Blogs -->
+                          <!-- View More/View Less buttons for Life stories and Blogs -->
                           <div *ngIf="shouldShowViewAll(section) || shouldShowViewLess(section)" class="text-center mt-3">
                             <button *ngIf="shouldShowViewAll(section)" 
                                     class="btn btn-link text-decoration-underline view-toggle-btn" 
                                     (click)="onViewAllClick(section)">
-                              View all <i class="fas fa-chevron-down ms-1"></i>
+                              View more <i class="fas fa-chevron-down ms-1"></i>
                             </button>
                              <button *ngIf="shouldShowViewLess(section) && section.viewall_Url && section.rawSectionType == 2 || section.rawSectionType == 3" 
                                     class="btn btn-link text-decoration-underline view-toggle-btn" 
@@ -266,7 +285,17 @@
                                    (click)="onViewMoreClick(section)">
                                 <a class="btn btn-link text-decoration-underline view-more-btn" 
                                    style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                  View More <i class="fas fa-chevron-right ms-1"></i>
+                                  View More <i class="fa fa-angle-right ms-1"></i>
+                                </a>
+                              </div>
+                              <!-- View All link for horizontal sections in accordion - only show when reached end -->
+                              <div *ngIf="hasReachedEnd(section)" 
+                                   class="d-flex align-items-center justify-content-center" 
+                                   style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
+                                   (click)="onViewAll(section)">
+                                <a class="btn btn-link text-decoration-underline view-more-btn" 
+                                   style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
+                                  View all <i class="fa fa-angle-down ms-1"></i>
                                 </a>
                               </div>
                             </div>
@@ -328,9 +357,18 @@
                                   </app-content-card>
                                 </div>
                               </div>
+                              <!-- View All link for vertical sections in accordion - only show when reached end -->
+                              <div *ngIf="hasReachedEnd(section)" class="mb-3" style="width: 100%;">
+                                <div class="text-center">
+                                  <button class="btn btn-link text-decoration-underline view-toggle-btn" 
+                                          (click)="onViewAll(section)">
+                                    View all <i class="fa fa-angle-down ms-1"></i>
+                                  </button>
+                                </div>
+                              </div>
                             </div>
                             
-                            <!-- View All/View Less buttons for Life stories and Blogs -->
+                            <!-- View More/View Less buttons for Life stories and Blogs -->
                             <div *ngIf="shouldShowViewAll(section) || shouldShowViewLess(section)" 
                                  class="text-center mt-3"
                                  [class.px-3]="section.title === 'Long term solutions'"
@@ -338,12 +376,12 @@
                               <button *ngIf="shouldShowViewAll(section)" 
                                       class="btn btn-link text-decoration-underline view-toggle-btn" 
                                       (click)="onViewAllClick(section)">
-                                View all <i class="fas fa-chevron-right ms-1"></i>
+                                View more <i class="fa fa-angle-right ms-1"></i>
                               </button>
                               <button *ngIf="shouldShowViewLess(section)" 
                                       class="btn btn-link text-decoration-underline view-toggle-btn" 
                                       (click)="onViewLessClick(section)">
-                                View less <i class="fas fa-chevron-right ms-1"></i>
+                                View less <i class="fa fa-angle-right ms-1"></i>
                               </button>
                             </div>
                           </div>

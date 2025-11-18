@@ -72,6 +72,8 @@ export interface ContentSection {
   rawSectionType?: number;
   // if true, render cards stacked vertically
   isVerticalCards?: boolean;
+  // optional deep-link for full listing
+  viewall_Url?: string;
 }
 
 @Component({
@@ -112,8 +114,10 @@ navigationChange = new EventEmitter<string>();
   showWisdomExercise: boolean = false;
   username:string = 'Guest';   // Track which sections are showing all cards
   showAllCards: { [sectionId: string]: boolean } = {};
-  // Track visible card count for horizontal sections (View More functionality)
+  // Track visible card count per section (View More functionality)
   visibleCardCount: { [sectionId: string]: number } = {};
+  private readonly DEFAULT_VISIBLE_CARD_COUNT = 5;
+  private readonly VIEW_MORE_INCREMENT = 5;
    mainheader:string='';
   searchinp: string = '';
   searchResult: any[] = [];
@@ -361,6 +365,34 @@ navigationChange = new EventEmitter<string>();
     return cardsArray && cardsArray.length > 0;
   }
 
+  private getDefaultVisibleCount(section: ContentSection): number {
+    const totalCards = section.cards?.length || 0;
+    if (!totalCards) {
+      return 0;
+    }
+    return Math.min(this.DEFAULT_VISIBLE_CARD_COUNT, totalCards);
+  }
+
+  private getVisibleCount(section: ContentSection): number {
+    const totalCards = section.cards?.length || 0;
+    if (!totalCards) {
+      return 0;
+    }
+
+    if (this.showAllCards[section.id]) {
+      return totalCards;
+    }
+
+    const storedCount = this.visibleCardCount[section.id];
+    if (storedCount) {
+      return Math.min(storedCount, totalCards);
+    }
+
+    const defaultCount = this.getDefaultVisibleCount(section);
+    this.visibleCardCount[section.id] = defaultCount;
+    return defaultCount;
+  }
+
   /**
    * Check if a transformed section has cards (either direct cards or child sections with cards)
    */
@@ -403,7 +435,8 @@ navigationChange = new EventEmitter<string>();
       childSections: childSections.length ? childSections : undefined,
       isInlineSection: false,
       rawSectionType: rawType,
-      isVerticalCards: isVertical
+      isVerticalCards: isVertical,
+      viewall_Url: section['viewall_Url'] || section['viewAllUrl'] || section['viewAll_url']
     };
   }
 
@@ -735,31 +768,21 @@ navigationChange = new EventEmitter<string>();
 
 
   getDisplayCards(section: ContentSection): any[] {
-    const isStoriesOrBlogs = section.rawSectionType === 2;
-    const isQuickAnswers = section.rawSectionType === 3;
-    const showAll = this.showAllCards[section.id];
-    const isHorizontal = !section.isVerticalCards;
-
-    // Handle vertical sections (stories/blogs/quick answers)
-    if ((isStoriesOrBlogs || isQuickAnswers) && !showAll) {
-      return section.cards?.slice(0, 3) || [];
+    if (!section.cards || !section.cards.length) {
+      return [];
     }
 
-    // Handle horizontal sections - limit to visible count (default 4 if more than 4 cards exist)
-    if (isHorizontal && section.cards && section.cards.length > 4) {
-      const visibleCount = this.visibleCardCount[section.id] || 4;
-      return section.cards.slice(0, visibleCount);
-    }
-
-    return section.cards || [];
+    const visibleCount = this.getVisibleCount(section);
+    return section.cards.slice(0, visibleCount);
   }
 
   onViewAllClick(section: ContentSection): void {
-    this.showAllCards[section.id] = true;
-    this.homeStateService.setShowAllCards(section.id, true);
+    this.onViewMoreClick(section);
   }
 
   onViewLessClick(section: ContentSection): void {
+    const defaultCount = this.getDefaultVisibleCount(section);
+    this.visibleCardCount[section.id] = defaultCount;
     this.showAllCards[section.id] = false;
     this.homeStateService.setShowAllCards(section.id, false);
   }
@@ -767,19 +790,33 @@ navigationChange = new EventEmitter<string>();
   shouldShowViewAll(section: ContentSection): boolean {
     const isStoriesOrBlogs = section.rawSectionType === 2;
     const isQuickAnswers = section.rawSectionType === 3;
-    const showAll = this.showAllCards[section.id];
-    const hasMoreThan3Cards = (section.cards?.length || 0) > 3;
+    if (!(isStoriesOrBlogs || isQuickAnswers)) {
+      return false;
+    }
 
-    return (isStoriesOrBlogs || isQuickAnswers) && !showAll && hasMoreThan3Cards;
+    const totalCards = section.cards?.length || 0;
+    if (totalCards <= this.DEFAULT_VISIBLE_CARD_COUNT) {
+      return false;
+    }
+
+    const visibleCount = this.getVisibleCount(section);
+    return visibleCount < totalCards;
   }
 
   shouldShowViewLess(section: ContentSection): boolean {
     const isStoriesOrBlogs = section.rawSectionType === 2;
     const isQuickAnswers = section.rawSectionType === 3;
-    const showAll = this.showAllCards[section.id];
-    const hasMoreThan3Cards = (section.cards?.length || 0) > 3;
+    if (!(isStoriesOrBlogs || isQuickAnswers)) {
+      return false;
+    }
 
-    return (isStoriesOrBlogs || isQuickAnswers) && showAll && hasMoreThan3Cards;
+    const totalCards = section.cards?.length || 0;
+    if (totalCards <= this.DEFAULT_VISIBLE_CARD_COUNT) {
+      return false;
+    }
+
+    const visibleCount = this.getVisibleCount(section);
+    return visibleCount > this.getDefaultVisibleCount(section);
   }
 
   /**
@@ -793,11 +830,11 @@ navigationChange = new EventEmitter<string>();
     }
 
     const totalCards = section.cards?.length || 0;
-    if (totalCards <= 4) {
+    if (totalCards <= this.DEFAULT_VISIBLE_CARD_COUNT) {
       return false;
     }
 
-    const visibleCount = this.visibleCardCount[section.id] || 4;
+    const visibleCount = this.getVisibleCount(section);
     return visibleCount < totalCards;
   }
 
@@ -807,14 +844,39 @@ navigationChange = new EventEmitter<string>();
    */
   onViewMoreClick(section: ContentSection): void {
     const totalCards = section.cards?.length || 0;
-    const currentVisible = this.visibleCardCount[section.id] || 4;
-    const increment = 4;
-    const newVisibleCount = Math.min(currentVisible + increment, totalCards);
+    if (!totalCards) {
+      return;
+    }
+
+    const currentVisible = this.getVisibleCount(section);
+    const newVisibleCount = Math.min(currentVisible + this.VIEW_MORE_INCREMENT, totalCards);
     
     this.visibleCardCount[section.id] = newVisibleCount;
+
+    const reachedEnd = newVisibleCount >= totalCards;
+    this.showAllCards[section.id] = reachedEnd;
+    this.homeStateService.setShowAllCards(section.id, reachedEnd);
     
     // Save state to store if needed (optional, for persistence)
     // this.homeStateService.setVisibleCardCount(section.id, newVisibleCount);
+  }
+
+  /**
+   * Check if we've reached the end of cards (all cards are visible)
+   * Only show "View all" link when we've reached the end
+   */
+  hasReachedEnd(section: ContentSection): boolean {
+    if (!section.viewall_Url) {
+      return false;
+    }
+
+    const totalCards = section.cards?.length || 0;
+    if (!totalCards) {
+      return false;
+    }
+
+    const visibleCount = this.getVisibleCount(section);
+    return visibleCount >= totalCards;
   }
 
 
