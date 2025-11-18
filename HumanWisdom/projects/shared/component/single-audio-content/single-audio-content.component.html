@@ -79,10 +79,14 @@
 
               <div class="row tcenter" *ngIf="!enableTextContent">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0" *ngIf="audioLink !== ''">
-                  <audio autoplay id="aud1" controls controlsList="nodownload" #audio
+                 <!--  <audio autoplay id="aud1" controls controlsList="nodownload" #audio
                    [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
+                  </audio> -->
+                      <app-audio-player  id="aud1"  
+                        [ngClass]="[isAdults ? 'invert-controls' : '']"
+                                [audioLink]="audioLink">
+                              </app-audio-player>  
                 </div>
               </div>
 
