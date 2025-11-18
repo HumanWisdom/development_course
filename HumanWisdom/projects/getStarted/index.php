@@ -145,11 +145,10 @@ require_once('./includes/security_config.php');
 
           <div class="row mt30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-             <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc fs27px">
+             <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc fs27px w-75">
                 <!-- Understand your mind. Transform your life. -->
-                 Understand your emotions.
-              </h1>
-              <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc fs27px"> Gain clarity. Be happier.
+                <!-- Understand your emotions. Gain clarity. Be happier. -->
+                  Everything you need for a happier life              
               </h1>
             </div>
           </div>
@@ -157,10 +156,12 @@ require_once('./includes/security_config.php');
           <div class="row mtb15px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
-              <h2 class="mtb0px fs_18px fw_400 lh_140p fc_000000 ta_lc w-382px">
+              <h2 class="mtb0px fs_18px fw_400 lh_140p fc_000000 ta_lc w-75">
                 <!-- A happier mind starts with understanding it. We support you to manage your emotions, build stronger
                 relationships, and handle life with more clarity and calm.  -->
-                Guided programs to transform your emotional wellbeing, strengthen your relationships and succeed in life.
+                <!-- Guided programs to transform your emotional wellbeing, strengthen your relationships and succeed in life.
+               -->
+                Transform your emotional well-being, strengthen your relationships and succeed in life.
               
               
               </h2>
