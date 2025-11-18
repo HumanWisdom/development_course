@@ -157,12 +157,7 @@ video.cvideo_01.invert-controls {
 
 .video-landscape {
   width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 16 / 9;
-  object-fit: contain !important;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); 
+  height: 230px !important;
 }
 /* Video size and layout adjustments */
 .cvideo_ext_di {
