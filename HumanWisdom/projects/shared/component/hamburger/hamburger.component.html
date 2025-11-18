@@ -43,17 +43,39 @@
                 Subscribe now
               </h4>
             </a> -->
-            <!-- <div class="row" *ngIf="!isloggedIn"> -->
-              <div class="row" >
+            <div class="row" *ngIf="!subscriber"> 
+              <!-- <div class="row" > -->
             <a (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg" class="img-responsive">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg" class="img-responsive" *ngIf="!isAdults">
+
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg" class="img-responsive" *ngIf="isAdults">
               </div>
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
-                <h4 class="fw_500 fs_15px lh_16px  mtb0px  fc_ED7D6F underline subscribe" >
+                <h4 class="fw_500 fs_15px lh_16px  mtb0px   underline subscribe" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" >
                   Start your free trial
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+            </div>
+
+            <div class="row" *ngIf="subscriber"> 
+              <!-- <div class="row" > -->
+            <a (click)="Logevent('/onboarding/user-profile', '', 'click_profile')" class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg" class="img-responsive" *ngIf="!isAdults">
+
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg" class="img-responsive" *ngIf="isAdults">
+              </div> -->
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_15px lh_16px  mtb0px   underline subscribe" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" >
+                  view Profile
                 </h4>
               </div>
             </div>
@@ -111,7 +133,10 @@
         </a>
       </li>
        <!-- <li *ngIf="subscriber"> -->
-      <li *ngIf="!subscriber">
+
+      <!-- <li *ngIf="isloggedIn   && getSubscriber()"> -->
+        <!-- <li *ngIf="!subscriber">
+
         <a (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -126,7 +151,7 @@
             </div>
           </div>
         </a>
-      </li>
+      </li> -->
 
       <li *ngIf="getLoggedIn()  && getSubscriber()">
         <a (click)="routeManageSubscriptiont('/onboarding/myprogram', '', 'click_MySubscription_Hamburger')"
@@ -246,12 +271,12 @@
               <a (click)="RouteToBecomeAPartner()" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive" *ngIf="isAdults"  >
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive" *ngIf="isAdults"  > 
 
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Become a Partner
@@ -918,7 +943,7 @@
 
       <div class="row" *ngIf="!isloggedIn">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="Login()"
+          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="loginroute()"
             data-target="#modal_logout">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg"
               class="img-responsive mr5px">
