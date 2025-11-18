@@ -226,6 +226,13 @@ width: 100%;
   background-color: #FFE8BB !important;
 }
 
+//  Keep everything normal — light bg, black controls */
+.invert-controls::-webkit-media-controls-panel {
+  filter: none !important;
+  background-color: #FFE8BB !important;
+  border: 1px solid #ffe8bb;
+}
+
 /* Force playback rate text black without inversion */
 .invert-controls::-webkit-media-controls-playback-rate-button {
   color: #000 !important;
@@ -239,9 +246,4 @@ width: 100%;
   background-color: #EEA170 !important;
   border-radius: 50% !important;
   box-shadow: none !important;
-}
-#aud1 {
-  width: 100% !important;  
-  max-width: 480px;         
-  border-radius: 40px;
 }
