@@ -58,7 +58,7 @@
 
             <div class="row tab_lfj center_flex">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <ul class="nav nav-tabs search_nav_tabs mtb30px">
+                <ul class="nav nav-tabs search_nav_tabs mtb30px" [ngClass]="isAdults ? 'adults-theme' : 'teens-theme'">
                   <li [class.active]="tabName=='Learning'">
                     <a data-toggle="tab" (click)="pageChangeEvent('Learning')" class="fs_12px fw_500 lh_150p "
                       [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -205,7 +205,7 @@
                           *ngIf="!enableShortViewMore  && searchDataDup.WisdomShortsRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -231,7 +231,7 @@
                           *ngIf="enableShortViewMore  && searchDataDup.WisdomShortsRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -315,7 +315,7 @@
                           *ngIf="!enablePodcastViewMore && searchDataDup.PodCastRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -341,7 +341,7 @@
                           *ngIf="enablePodcastViewMore && searchData.PodCastRes.length > 2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -445,7 +445,7 @@
                           *ngIf="!enableAudioMedViewMore  && searchDataDup.AudioMeditationRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 1.5rem !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -471,7 +471,7 @@
                           *ngIf="enableAudioMedViewMore  && searchDataDup.AudioMeditationRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 1.5rem !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -548,7 +548,7 @@
                             *ngIf="!enableStoryViewMore && searchDataDup.WisdomStoriesRes.length>2">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="mt30px">
-                                <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                                <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
                               </div>
                             </div>
                           </div>
@@ -575,7 +575,7 @@
                             *ngIf="enableStoryViewMore  && searchDataDup.WisdomStoriesRes.length>2">
                             <div class="mt30px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                                <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
                               </div>
                             </div>
                           </div>
@@ -664,7 +664,7 @@
                           *ngIf="!enableBlogViewMore && searchDataDup.BlogRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -690,7 +690,7 @@
                           *ngIf="enableBlogViewMore && searchDataDup.BlogRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -774,7 +774,7 @@
                           *ngIf="!enableModuleViewMore && searchDataDup.ModuleRes.length > 2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -800,7 +800,7 @@
                           *ngIf="enableModuleViewMore && searchDataDup.ModuleRes.length > 2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -906,7 +906,7 @@
                           *ngIf="!enableEventsViewMore  && searchDataDup.EventsRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important;">View more</a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important;">View more</a>
                             </div>
                           </div>
                         </div>
@@ -932,7 +932,7 @@
                           *ngIf="enableEventsViewMore  && searchDataDup.EventsRes.length>2">
                           <div class="mt30px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.5) !important;">View less</a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important;">View less</a>
                             </div>
                           </div>
                         </div>
