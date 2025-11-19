@@ -3,7 +3,7 @@ name: Website-Production
 on:
   push:
     branches: [Production]
-    
+
 jobs:
   build-website:
      runs-on: ubuntu-latest
