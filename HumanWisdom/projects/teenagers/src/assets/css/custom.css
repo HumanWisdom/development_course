@@ -36379,7 +36379,7 @@ h3_blogs p a font,
 .toc_adiv_02 a > .row 
 {
   border-radius: 12px;
-  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+  border: 1px solid rgba(255, 255, 255, 0.25);
   background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;

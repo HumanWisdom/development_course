@@ -11,6 +11,12 @@ li.is-search:hover,
     width: 150px !important;
     height: 115px !important;
   }
-  .nav>li>a:hover, .nav>li>a:focus {
+  .nav.adults-theme>li>a:hover, .nav.adults-theme>li>a:focus {
     color: #000000 !important;
+  }
+  .nav.teens-theme>li>a:hover, .nav.teens-theme>li>a:focus {
+    color: #ffffff !important;
+  }
+a{
+  padding: 0;
 }
