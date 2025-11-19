@@ -33,11 +33,55 @@
                 {{getName()}}
               </h4>
             </a>
-            <a *ngIf="!subscriber" (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
+
+            <!-- <a  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
+              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe">
+                View Profile
+              </h4> -->
+            <!-- <a *ngIf="!subscriber" (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
               <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe">
                 Subscribe now
               </h4>
-            </a>
+            </a> -->
+            <div class="row" *ngIf="!subscriber"> 
+              <!-- <div class="row" > -->
+            <a (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')" class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg" class="img-responsive" *ngIf="!isAdults">
+
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg" class="img-responsive" *ngIf="isAdults">
+              </div>
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_15px lh_16px  mtb0px   underline subscribe" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" >
+                  Start your free trial
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+            </div>
+
+            <div class="row" *ngIf="subscriber"> 
+              <!-- <div class="row" > -->
+            <a (click)="Logevent('/onboarding/user-profile', '', 'click_profile')" class="p0 b0px">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+              <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg" class="img-responsive" *ngIf="!isAdults">
+
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg" class="img-responsive" *ngIf="isAdults">
+              </div> -->
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                <h4 class="fw_500 fs_15px lh_16px  mtb0px   underline subscribe" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" >
+                  view Profile
+                </h4>
+              </div>
+            </div>
+          </div>
+        </a>
+            </div>
           </div>
         </div>
       </div>
@@ -88,8 +132,11 @@
           </div>
         </a>
       </li>
+       <!-- <li *ngIf="subscriber"> -->
 
-      <li *ngIf="!subscriber">
+      <!-- <li *ngIf="isloggedIn   && getSubscriber()"> -->
+        <!-- <li *ngIf="!subscriber">
+
         <a (click)="Logevent('/subscription/start-your-free-trial', '', 'click_Subscribe')" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -97,14 +144,14 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg" class="img-responsive">
               </div>
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
-                <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                <h4 class="fw_500 fs_15px lh_1px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Start your free trial
                 </h4>
               </div>
             </div>
           </div>
         </a>
-      </li>
+      </li> -->
 
       <li *ngIf="getLoggedIn()  && getSubscriber()">
         <a (click)="routeManageSubscriptiont('/onboarding/myprogram', '', 'click_MySubscription_Hamburger')"
@@ -224,12 +271,12 @@
               <a (click)="RouteToBecomeAPartner()" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive" *ngIf="isAdults"  >
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive" *ngIf="isAdults"  > 
 
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Become a Partner
@@ -244,12 +291,12 @@
               <a (click)="routeToPartnerScreen()" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive"  *ngIf="isAdults"  >
 
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         My Partnership
@@ -265,12 +312,12 @@
                 (click)="Logevent('/adults/partnership-webpage/partnership-index/', '', 'click_About_Partnership_Hamburger')">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive"  *ngIf="isAdults"  >
 
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         About Partnership
@@ -285,12 +332,12 @@
               <a class="p0 b0px" (click)="RouteToFaq()">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive"  *ngIf="isAdults"  >
 
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Partnership FAQ
@@ -709,12 +756,12 @@
               <a (click)="Logevent('/adults/help-support/faq', '', 'click_FAQ_Hamburger')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         FAQ
@@ -744,12 +791,12 @@
               <a (click)="Logevent('/adults/help-support/support', '', 'click_Contact_Us_Hamburger')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Contact Us
@@ -765,12 +812,12 @@
                 class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive" *ngIf="isAdults">
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         User Agreement
@@ -785,12 +832,12 @@
               <a (click)="Logevent('/privacy-policy', '', 'click_privacy_policy')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive" *ngIf="isAdults">
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Privacy Policy
@@ -805,12 +852,12 @@
               <a (click)="Logevent('/cookies-policy', '', 'click_cookie_policy')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Cookie Policy
@@ -825,12 +872,12 @@
                 class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
+                    <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
                         class="img-responsive" *ngIf="!isAdults">
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
-                    </div>
+                    </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Accessibility Statement
@@ -890,6 +937,17 @@
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg"
               class="img-responsive mr5px">
             Logout
+          </button>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="!isloggedIn">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="loginroute()"
+            data-target="#modal_logout">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg"
+              class="img-responsive mr5px">
+            Login
           </button>
         </div>
       </div>

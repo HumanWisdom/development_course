@@ -41,23 +41,15 @@
               -->
               <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 pt30px">
-                  <audio id="aud1" controls controlsList="nodownload" #audio 
+                  <!-- <audio id="aud1" controls controlsList="nodownload" #audio 
                   [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
-                  <!-- <audio id="aud1" controls controlsList="nodownload noplaybackrate" #audio>
-                    <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
-                  <select id="playbackspeed" (change)="onChange($event.target.value)" class="playback">
-                    <option value="0.5">0.5x</option>
-                    <option value="0.75">0.75x</option>
-                    <option value="1.25">1.25x</option>
-                    <option value="1.5">1.5x</option>
-                    <option value="2">2x</option>
-                  </select> -->
-                  <!-- <ngx-circular-player id="aud1"  [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player> -->
-                  <!-- <ngx-circular-player id="aud1" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio></ngx-circular-player> -->
-                </div>
+                  </audio> -->
+                   <app-audio-player  id="aud1"  
+                        [ngClass]="[isAdults ? 'invert-controls' : '']"
+                                [audioLink]="audioLink">
+                              </app-audio-player> 
+                     </div>
               </div>
               <!-- /angular audio player plugin  -->
 

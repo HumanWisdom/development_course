@@ -54,10 +54,12 @@ export class JournalWeComponent implements OnInit {
 
   findReflection() {
     let reflectionA=[];
-    reflectionA = this.qrList?.ListOfReflection
-    for (var i = 0; i < reflectionA.length; i++) {
-      if (this.rId == reflectionA[i].ReflectionId) {
-        this.journalques = reflectionA[i].Que
+    if(this.qrList){
+      reflectionA = this.qrList?.ListOfReflection
+      for (var i = 0; i < reflectionA.length; i++) {
+        if (this.rId == reflectionA[i].ReflectionId) {
+          this.journalques = reflectionA[i].Que
+        }
       }
     }
   }

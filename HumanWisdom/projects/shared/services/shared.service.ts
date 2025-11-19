@@ -214,7 +214,7 @@ return [
           id: "1",
           displayName: "Work",
           active: false,
-          name: 'Work and Leadership'
+          name: 'Work and leadership'
         },
         {
           id: "3",
@@ -236,13 +236,13 @@ return [
         },
          {
           id: "18",
-          displayName: "For Parents",
+          displayName: "For parents",
           active: false,
-          name: 'For Parents',
+          name: 'For parents',
         },
         {
              id: "19",
-           displayName: "Self Awareness",
+           displayName: "Self-awareness",
           active: false,
              name: 'Develop your self awareness',
         },
@@ -254,15 +254,15 @@ return [
         },       
         {
           id: "6",
-          displayName: "Sorrow and Loss",
+          displayName: "Sorrow and loss",
           active: false,
-          name: 'Deal with Sorrow and loss'
+          name: 'Deal with sorrow and loss'
         },
          {
           id: "5",
           displayName: "Addiction",
           active: false,
-          name: 'Habits and Addictions'
+          name: 'Habits and addictions'
         }
        
        
@@ -518,6 +518,16 @@ return [
     }
     return '';
   }
+
+   public static FnName() {
+    let FnName = this.getDataFromLocalStorage('FnName');
+    if (FnName && FnName != null) {
+      return FnName;
+    }
+    return '';
+  }
+
+  
 
   public static getEmail() {
     let email = this.getDataFromLocalStorage('email');

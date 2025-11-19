@@ -26562,7 +26562,7 @@ h1
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background: #FFE8BB;
+  background: #FFffff;
   padding: 20px;
   font-size: 15px;
   font-weight: 400;
@@ -26570,11 +26570,13 @@ h1
   color: rgba(255, 255, 255, 0.70);
 }
 
-/* .mdp_answer_here::-webkit-input-placeholder
+ .mdp_answer_here::-webkit-input-placeholder
 {
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(0, 0, 0, 0.25);
+} 
+/* .invert-controls{
+  background-color: red;
 } */
-
 .mdp_answer_here:focus
 {
   color: #FFF;
@@ -33689,7 +33691,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   border-radius: 12px;
   /* background: #D7586B; */
   padding: 20px;
-  height: 116px;
+  height: 102px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38046,7 +38048,7 @@ span
   height: 163px;
   width: 100%;
   border-radius: 12px;
-  border: 1px solid rgba(204, 204, 204, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   background: rgb(255, 255, 255);
   padding: 20px;
   /* padding: 90px 20px 20px 20px; */
@@ -38359,7 +38361,7 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
 
 .ws-read-icon    { position: relative; bottom: 50px; }
 .ws-lock-icon    { position: relative; 
-  /* top:    50px;  */
+   top:    40px;  
 }
 
 
