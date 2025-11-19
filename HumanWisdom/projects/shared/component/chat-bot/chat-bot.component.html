@@ -13,28 +13,23 @@
   <!-- Chat Area -->
   <div class="chat-area">
    
-    <!-- Load History Link - Show only when there are exactly 2 messages -->
-    <div *ngIf="messages.length === 2" class="load-history-container">
+    <!-- Load History Link - Show only when there are previous conversations -->
+    <div *ngIf="messages.length > 2" class="load-history-container">
       <a href="#" class="load-history-link" (click)="onLoadHistory($event)" [class.loading]="isLoadingHistory">
-        <svg *ngIf="!isLoadingHistory" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
-        </svg>
-        <div *ngIf="isLoadingHistory" class="loading-spinner-small"></div>
-        <span *ngIf="!isLoadingHistory">Load Old Conversation</span>
-        <span *ngIf="isLoadingHistory">Loading...</span>
+        <span>{{ isLoadingHistory ? 'Loading...' : 'Load Old Conversation' }}</span>
       </a>
     </div>
 
     <div class="chat-messages" #messageContainer>
       <!-- Dynamic Messages -->
-      <div *ngFor="let message of messages" class="message" [ngClass]="message.sender + '-message'">
+      <div *ngFor="let message of messages; let isFirst = first" class="message" [ngClass]="[message.sender + '-message', message.hideAvatar ? 'bot-followup' : '']">
         <!-- Bot Message -->
-        <div *ngIf="message.sender === 'bot'" class="message-avatar">
+        <div *ngIf="message.sender === 'bot' && !message.hideAvatar" class="message-avatar">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.png"  />
         </div>
         
         <div class="message-content-wrapper">
-          <div *ngIf="message.sender === 'bot'" class="message-sender">Olly</div>
+          <div *ngIf="message.sender === 'bot' && !message.hideSender" class="message-sender">Olly</div>
           
           <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
             <!-- Regular message content -->
@@ -61,7 +56,7 @@
             </div>
           </div>
           
-          <span class="timestamp">{{ formatTimestamp(message.timestamp) }}</span>
+          <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp) }}</span>
         </div>
       </div>
 
