@@ -63,35 +63,24 @@ export class ChatbotService {
   }
 
   private initializeWelcomeMessage(): void {
-    // Array of welcome messages to randomly choose from
-    const welcomeMessageOptions = [
-      "Hi 👋 I'm Olly — how are you today? Can I help?",
-      "Welcome! 🦉 I'm Olly, here to help you find what you need.",
-      "Hi 👋 I'm Olly — your friendly guide to HappierMe.",
-      "Hi 👋 I'm Olly — here to make your journey easier. What do you need today?",
-      "Welcome! 🦉 I'm Olly, here to help you find clarity and calm"
-    ];
-
-    // Randomly select one welcome message
-    const randomIndex = Math.floor(Math.random() * welcomeMessageOptions.length);
-    const selectedWelcomeMessage = welcomeMessageOptions[randomIndex];
-
     // Get the program name for the community forum link
     const programName = SharedService.getprogramName();
     const communityForumUrl = `/${programName}/forum`;
 
     const welcomeMessages: ChatMessage[] = [
       {
-        id: '1',
-        content: selectedWelcomeMessage,
+        id: 'welcome-intro-1',
+        content: `Hi. I'm Olly. Ask me a question.`,
         sender: 'bot',
         timestamp: new Date()
       },
       {
-        id: '2',
+        id: 'welcome-intro-2',
         content: `You can also ask a question in the <a href="${communityForumUrl}" onclick="window.open('${communityForumUrl}', '_self'); return false;">community forum</a>, where one of our coaches will answer your question.`,
         sender: 'bot',
-        timestamp: new Date()
+        timestamp: new Date(),
+        hideAvatar: true,
+        hideSender: true
       }
     ];
     this.chatStore.initializeWelcomeMessages(welcomeMessages);
