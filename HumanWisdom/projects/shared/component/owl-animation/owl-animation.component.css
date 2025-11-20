@@ -13,8 +13,8 @@
 }
 
 .owl-animation-wrapper.corner {
-  bottom: 60px;
-  right: calc((100vw - 30vw) / 2 + 16px);
+  bottom: 55px;
+  right: calc((100vw - 30vw) / 2 + 10px);
   transform: none;
   -webkit-transform: none;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
@@ -78,10 +78,12 @@
 
 /* GIF styles - match static owl image size */
 .owl-gif {
-  width: 140px;          /* Match static-owl-image rendered size (200px * 0.7 scale) */
+  /* width: 140px;          Match static-owl-image rendered size (200px * 0.7 scale) */
   /* height: 140px;         */
-  max-width: 140px;      /* Prevent scaling up */
-  max-height: 140px;     /* Prevent scaling up */
+ /*  max-width: 140px;      /* Prevent scaling up 
+  max-height: 140px;     /* Prevent scaling up */ 
+  height: 100px;
+  width: auto;
   object-fit: contain;   /* Maintain aspect ratio */
   border-radius: 50%;    /* Make it circular */
   user-select: none;
@@ -97,7 +99,7 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
-  margin-right: -33px;
+  margin-right: -40px;
 }
 
 /* Debug and Loading Indicators */
@@ -219,21 +221,21 @@ body:has(#menu:checked) .owl-animation-wrapper {
 /* Static Owl Image Styles */
 .static-owl-container {
   position: relative;
-  width: 100%;
-  height: 100%;
+ /*  width: 100%;
+  height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-        height: 72px;
-    width: 65px
+      /*   height: 100px;
+    width: auto; */
 }
 
 .static-owl-image {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+  width: auto;
+  /* max-width: 200px; */
+  height: 100px;
   transform: scale(0.7);
   transform-origin: center center;
   border-radius: 18px;
