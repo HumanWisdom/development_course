@@ -241,9 +241,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     const styledHtml = html.replace(/<a\s+([^>]*?)>/gi, (match, attributes) => {
       // Check if style attribute already exists
       if (attributes.includes('style=')) {
-        return match.replace(/style="([^"]*)"/, 'style="$1; color: #1976d2 !important; text-decoration: underline !important;"');
+        return match.replace(/style="([^"]*)"/, 'style="$1; font-weight:500; text-decoration: underline !important;"');
       } else {
-        return `<a ${attributes} style="color: #1976d2 !important; text-decoration: underline !important; cursor: pointer !important;">`;
+        return `<a ${attributes} style="font-weight:500; text-decoration: underline !important; cursor: pointer !important;">`;
       }
     });
     
