@@ -36040,7 +36040,7 @@ color: black !important;
   left: 0;
   margin: 0 auto;
   z-index: 999;
-   background: #1e1544; 
+   background: #FFACA2; 
   padding: 30px 0 20px 0;
 }
 
@@ -37269,10 +37269,10 @@ section > .row
   margin-bottom: 0 !important;
 }
 
-a.fc_e58d82:focus, 
-a.fc_e58d82:hover 
+a.fc_000000:focus, 
+a.fc_000000:hover 
 {
-  color: #ED7D6F !important;
+  color: #000000 !important;
 }
 
 a.fc_ed7d6f:focus, 

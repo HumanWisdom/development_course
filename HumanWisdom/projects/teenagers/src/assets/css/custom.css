@@ -34894,7 +34894,7 @@ color: white !important;
   border: 0;
   border-radius: 100px;
   background: #E58D82 !important;
-  color: #FFF;
+  color: #FFF !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -36379,7 +36379,7 @@ h3_blogs p a font,
 .toc_adiv_02 a > .row 
 {
   border-radius: 12px;
-  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+  border: 1px solid rgba(255, 255, 255, 0.25);
   background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
@@ -37041,10 +37041,10 @@ section > .row
   margin-bottom: 0 !important;
 }
 
-a.fc_e58d82:focus, 
-a.fc_e58d82:hover
+a.fc_ffffff:focus, 
+a.fc_ffffff:hover
 {
-  color: #e58d82;
+  color: #ffffff;
 }
 
 #mdp_carousel_intro .btn_next_v3:hover,

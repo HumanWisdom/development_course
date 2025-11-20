@@ -260,21 +260,21 @@ body:has(#menu:checked) .owl-animation-wrapper {
 /* Bubble speaking animation */
 .owl-cloud-container.speaking {
   transform-origin: bottom left;
-  animation: bubble-pop 0.9s ease-in-out infinite;
+  animation: bubble-pop 1.8s ease-in-out infinite;
 }
 
 @keyframes bubble-pop {
   0% {
-    transform: translateX(-50%) scale(0.92);
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    transform: translateX(-50%) scale(0.96);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   }
   55% {
-    transform: translateX(-50%) scale(1.08);
-    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16));
+    transform: translateX(-50%) scale(1.04);
+    filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.13));
   }
   100% {
     transform: translateX(-50%) scale(1.0);
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   }
 }
 
