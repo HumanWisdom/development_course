@@ -38217,8 +38217,10 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
    height: 50px;
    /* // background:transparent;
 //   background: #FFFFFF80;; */
-background: rgba(255,255,255,0.5);
-   
+
+/* background: rgba(255,255,255,0.5); */
+
+background: #ffffff80 !important;
    box-shadow: 1px 1px 2px #00000040;
    border-radius: 12px;
    width: 101px;
