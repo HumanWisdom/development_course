@@ -9,6 +9,7 @@ import { SearchDataModel } from '../../../models/search-data-model';
 import { ProgramType } from '../../../models/program-model';
 import { SharedService } from '../../../services/shared.service';
 import { CommonService } from '../../../services/common.service';
+import { OnboardingService } from '../../../services/onboarding.service';
 
 @Component({
   selector: 'app-search-popular-items',
@@ -41,6 +42,7 @@ export class SearchPopularItemsPage implements OnInit {
   enablePodcastViewMore: boolean = false;
   enableAudioMedViewMore: boolean = false;
   isSubscriber = false;
+  storyFreeMap: { [key: number]: boolean } = {};
 
 
   searchDataDup: any;
@@ -52,6 +54,7 @@ export class SearchPopularItemsPage implements OnInit {
     private serivce: ForumService,
     private router: Router,
     private route: ActivatedRoute,
+    private onboardingService: OnboardingService,
   ) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -204,11 +207,20 @@ export class SearchPopularItemsPage implements OnInit {
 
   }
   view(item) {
-    /* localStorage.setItem("blogdata",JSON.stringify(item))
-    localStorage.setItem("blogId",JSON.stringify(item['BlogID']))
-   */
+    this.onboardingService.clickBlog(Number(item['BlogID'])).subscribe({
+      next: () => {},
+      error: () => {}
+    });
     this.router.navigateByUrl(SharedService.getprogramName() + item['url']);
 
+  }
+
+  viewStory(item) {
+    const id = Number(item['ScenarioID']);
+    if (!isNaN(id)) {
+      this.onboardingService.clickStory(id).subscribe({ next: () => {}, error: () => {} });
+    }
+    this.router.navigateByUrl(SharedService.getprogramName() + item['url']);
   }
 
   getSourceForPodBin(url) {
@@ -285,6 +297,18 @@ export class SearchPopularItemsPage implements OnInit {
         this.feelBetterNowTopic = this.getFeelBetterNowTitle(this.searchData.FeelBetterNowRes);
       }
     });
+    // fetch story free/lock info
+    if (this.searchData && this.searchData.WisdomStoriesRes && this.searchData.WisdomStoriesRes.length > 0) {
+      this.searchData.WisdomStoriesRes.forEach((s: any) => {
+        const id = Number(s['ScenarioID']);
+        if (!isNaN(id)) {
+          this.onboardingService.CheckStoryIsFree(id).subscribe({
+            next: (res) => { this.storyFreeMap[id] = !!res; },
+            error: () => { this.storyFreeMap[id] = false; }
+          });
+        }
+      });
+    }
     this.getForumSearchData();
   }
   getTotalRecords() {
@@ -465,6 +489,10 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   youtube(link, RowID) {
+    this.commonService.clickEvents(RowID).subscribe({
+      next: () => {},
+      error: () => {}
+    });
     let sub: any = localStorage.getItem("Subscriber")
     if(RowID>=4 && sub==0)
     this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
@@ -480,6 +508,7 @@ export class SearchPopularItemsPage implements OnInit {
     let loggedin = localStorage.getItem("isloggedin")
     let sub: any = localStorage.getItem("Subscriber")
     let id = video.split("/")[3].split(".")[1]
+    this.commonService.clickShorts(+id).subscribe();
     this.commonService.CheckShortsIsFree(id).subscribe(res => {
       if (res === true) {
         if(val['IsVoices'] === '1') {
