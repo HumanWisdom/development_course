@@ -21,7 +21,7 @@
   
   // Global anchor styles for the entire chat container
   a {
-    color: #1976d2 !important;
+    // color: #1976d2 !important;
     text-decoration: underline !important;
     cursor: pointer !important;
     
@@ -31,7 +31,7 @@
     }
     
     &:visited {
-      color: #1976d2 !important;
+      // color: #1976d2 !important;
       text-decoration: underline !important;
     }
   }
@@ -218,7 +218,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      max-width: 280px;
+      max-width: 285px;
 
       .message-sender {
         font-weight: bold;
@@ -230,7 +230,7 @@
       .message-content {
         background: #FFE8BB;
       width: fit-content;
-      max-width: 280px;
+      max-width: 285px;
         height: auto;
         opacity: 1;
         gap: 8px;
@@ -250,7 +250,7 @@
       font-size: 15px;
       line-height: 22px;
       letter-spacing: 0;
-        
+        color: #000000;
         // Create upward pointing tail
         &::before {
           //content: '';
@@ -284,13 +284,14 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      max-width: 280px;
+      max-width: 319px;
     }
 
     .message-content {
       background: #FFACA2;
       color: #333333;
-      width: 180px;
+      max-width: 319px;
+      width: fit-content;
       // height: 44px;
       opacity: 1;
       gap: 8px;
@@ -301,7 +302,10 @@
       padding-right: 15px;
       padding-bottom: 10px;
       padding-left: 15px;
-      text-align: center;
+      text-align: left;
+      color: #000000;
+      line-height: 22px;
+      font-size: 15px;
     }
 
     .timestamp {
@@ -527,7 +531,7 @@
   .bot-message-content a,
   .message-content a,
   a {
-    color: #1976d2 !important;
+    // color: #1976d2 !important;
     text-decoration: underline !important;
     cursor: pointer !important;
     font-weight: normal !important;
@@ -538,12 +542,12 @@
     }
     
     &:visited {
-      color: #1976d2 !important;
+      // color: #1976d2 !important;
       text-decoration: underline !important;
     }
     
     &:link {
-      color: #1976d2 !important;
+      // color: #1976d2 !important;
       text-decoration: underline !important;
     }
   }
@@ -551,7 +555,7 @@
   // Additional specificity for innerHTML content
   .bot-message-content {
     a {
-      color: #1976d2 !important;
+      // color: #1976d2 !important;
       text-decoration: underline !important;
       cursor: pointer !important;
       
@@ -563,7 +567,7 @@
   }
   
   u {
-    color: #1976d2;
+    // color: #1976d2;
     text-decoration: underline;
     cursor: pointer;
     
