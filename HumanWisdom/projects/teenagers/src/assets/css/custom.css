@@ -18766,6 +18766,11 @@ ngx-circular-player svg
   filter: unset;
   opacity: 1;
 }
+.btn_daily:focus{
+  border: none;
+  background: rgb(255 255 255 / 20%);
+  
+}
 
 .circle-container .btn:hover h6,
 .circle-container .btn:focus h6 
@@ -29032,10 +29037,10 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px #00000040;
-  background: rgb(255 255 255 / 20%);
+  background: #fff3 !important;
   border-radius: 100px;
   text-align: center;
-  color: #fff;
+  color: #fff !important;
   line-height: 140%;
   font-size: 12px;
   font-weight: 500;
@@ -35519,7 +35524,7 @@ color: white !important;
 {
   box-shadow: unset;
   position: fixed;
-  bottom: 70px;
+  bottom: 0px;
   right: 0;
   left: 0;
   margin: 0 auto;
