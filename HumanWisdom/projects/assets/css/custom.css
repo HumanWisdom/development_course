@@ -38211,6 +38211,21 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
     align-content: center;
 }
 
+.btn_login_signup_new {
+   border: 0;
+   margin: 0;
+   height: 50px;
+   /* // background:transparent;
+//   background: #FFFFFF80;; */
+background: rgba(255,255,255,0.5);
+   
+   box-shadow: 1px 1px 2px #00000040;
+   border-radius: 12px;
+   width: 101px;
+   height: 52px;
+  
+
+}
 .td_points_box
 {
   border-radius: 12px;
