@@ -99,7 +99,7 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
-  margin-right: -33px;
+  margin-right: -40px;
 }
 
 /* Debug and Loading Indicators */
