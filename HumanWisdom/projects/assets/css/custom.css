@@ -26517,7 +26517,7 @@ h1
    width: 100%; 
   overflow:visible;
    border-radius: 100px; 
-  background: #ED7D6F !important;
+  background: rgb(237 125 111 / 50%) !important;
 
   font-size: 15px;
   position: static;
