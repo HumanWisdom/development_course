@@ -494,9 +494,9 @@ export class SearchPopularItemsPage implements OnInit {
       error: () => {}
     });
     let sub: any = localStorage.getItem("Subscriber")
-    if(RowID>=4 && sub==0)
+    if(RowID>=3 && sub==0)
     this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
-    else if (RowID<=3)
+    else if (RowID<=2)
       this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=rdtfghjhfdg"])
     else
        this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=vncbxdfchgvxd"])
