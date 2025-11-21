@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { OwlStore } from '../../stores/owl.store';
+import { filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-owl-animation',
@@ -26,9 +28,13 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   public owlMessage: string = "Hi! I'm Olly I am here to help"; // Customizable message
   public showOwl: boolean = true; // Show owl on all pages
   public isSpeaking: boolean = false; // Controls cloud speaking animation
+  public showGif: boolean = false; // Control whether to show GIF animation
+  private hasCheckedHomePage: boolean = false; // Track if we've checked for home page
   private messageTimers: any[] = [];
   private menuCheckInterval: any = null;
   private menuObserver: MutationObserver | null = null;
+  private routerSubscription: Subscription | null = null;
+  private readonly GIF_SHOWN_KEY = 'owl_gif_shown'; // localStorage key to track if GIF has been shown
   
   // Debug flag - set to true to test static owl immediately
   private debugMode: boolean = false;
@@ -64,14 +70,9 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   ngOnInit() {
-    console.log('OwlAnimationComponent initialized');
-    console.log('GIF element:', this.gifElement);
-    console.log('Initial showStaticOwl:', this.showStaticOwl);
-    console.log('Initial isAtCorner:', this.isAtCorner);
 
     // Debug mode - show static owl immediately for testing
     if (this.debugMode) {
-      console.log('DEBUG MODE: Showing static owl immediately');
       this.showStaticOwl = true;
       this.startSpeakingSequence();
       this.cdr.detectChanges();
@@ -81,8 +82,136 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     // Show owl on all pages
     this.showOwl = true;
 
-    // GIF will play automatically when loaded
-    // After the GIF animation duration, show the static owl
+    // IMPORTANT: Initialize both to false - we'll determine which to show
+    this.showStaticOwl = false;
+    this.showGif = false;
+
+    // Check immediately and aggressively for home page
+    // Use multiple timeouts to ensure DOM is fully loaded
+    this.checkRouteAndSetOwlDisplay();
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 50);
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 150);
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 300);
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 500);
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 1000);
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 2000);
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 3000);
+
+    // Subscribe to route changes
+    this.routerSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.checkRouteAndSetOwlDisplay();
+      });
+  }
+
+  /**
+   * Check current route and set owl display accordingly
+   * GIF only shows on home page and only once
+   */
+  private checkRouteAndSetOwlDisplay(): void {
+    const currentUrl = this.router.url;
+    const hasGifBeenShown = localStorage.getItem(this.GIF_SHOWN_KEY) === 'true';
+
+    // Check if home component exists in DOM (most reliable method)
+    // Try multiple selectors to be sure
+    const homeComponent = document.querySelector('app-home');
+    const homeContainer = document.querySelector('.home-container');
+    const homeContent = document.querySelector('.home-content');
+    const stickyTopSection = document.querySelector('.sticky-top-section');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    // Also check route-based detection as fallback
+    const isHomeRoute = this.isHomePage(currentUrl);
+    
+    const isHomeComponentPresent = !!(homeComponent || homeContainer || homeContent || stickyTopSection || navMenu);
+    
+    // Use either DOM detection OR route detection
+    const isHomePage = isHomeComponentPresent || isHomeRoute;
+
+    // Show GIF if home page is detected AND GIF hasn't been shown
+    if (isHomePage && !hasGifBeenShown) {
+      // Show GIF on home page if it hasn't been shown before
+      this.showGif = true;
+      this.showStaticOwl = false;
+      this.isPlaying = true;
+      this.gifLoaded = false;
+      this.gifError = false;
+      this.hasCheckedHomePage = true;
+      
+      // Force change detection to ensure it sticks
+      this.cdr.detectChanges();
+      setTimeout(() => {
+        this.cdr.detectChanges();
+      }, 0);
+      setTimeout(() => {
+        this.cdr.detectChanges();
+      }, 100);
+      
+      // Don't start speaking sequence yet - wait for GIF to complete
+      return; // Exit early to prevent setting static owl
+    } 
+    
+    // Only show static owl if we're NOT on home page OR if GIF has already been shown
+    // BUT ONLY if showGif is not already true (to prevent overriding)
+    if (!this.showGif && !this.hasCheckedHomePage) {
+      if (!isHomePage) {
+        // Non-home page - show static owl
+      } else if (hasGifBeenShown) {
+        // Home page but GIF already shown - show static owl
+      } else {
+        // Home page detected but showGif is still false - force it as a last resort
+        this.showGif = true;
+        this.showStaticOwl = false;
+        this.cdr.detectChanges();
+        return;
+      }
+      this.showGif = false;
+      this.showStaticOwl = true;
+      this.isPlaying = false;
+      if (!isHomePage) {
+        this.startSpeakingSequence();
+      }
+    }
+    this.cdr.detectChanges();
+  }
+
+  /**
+   * Check if current route is the home page
+   */
+  private isHomePage(url: string): boolean {
+    if (!url) {
+      return false;
+    }
+    
+    // Remove query params and hash for comparison
+    const baseUrl = url.split('?')[0].split('#')[0];
+    
+    // Check for various home page route patterns
+    const isHome = baseUrl === '/' || 
+                   baseUrl === '/adults' || 
+                   baseUrl === '/adults/' ||
+                   baseUrl.endsWith('/adults') ||
+                   baseUrl.includes('/adults/home') ||
+                   baseUrl.includes('/home') ||
+                   (baseUrl.split('/').length <= 2 && baseUrl.includes('adults')) ||
+                   (baseUrl === '' || baseUrl === '/');
+    
+    return isHome;
   }
   
   ngAfterViewInit() {
@@ -90,6 +219,14 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     setTimeout(() => {
       this.monitorMenuState();
     }, 500);
+    
+    // Also check for home component after view init (in case it loads late)
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 200);
+    setTimeout(() => {
+      this.checkRouteAndSetOwlDisplay();
+    }, 800);
   }
   
   private monitorMenuState() {
@@ -142,6 +279,12 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
     
+    // Clear router subscription
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+      this.routerSubscription = null;
+    }
+    
     // Clear menu monitoring
     if (this.menuCheckInterval) {
       clearInterval(this.menuCheckInterval);
@@ -169,9 +312,11 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // GIF load handler
   onGifLoaded() {
-    console.log('GIF loaded successfully');
     this.gifLoaded = true;
     this.cdr.detectChanges();
+    
+    // Mark GIF as shown in localStorage (only once)
+    localStorage.setItem(this.GIF_SHOWN_KEY, 'true');
     
     // After the GIF animation duration, show the static owl
     setTimeout(() => {
@@ -182,34 +327,33 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // GIF error handler
   handleGifError() {
-    console.error('GIF loading error');
     this.gifError = true;
     this.cdr.detectChanges();
+    
+    // Mark GIF as shown even on error to prevent retrying
+    localStorage.setItem(this.GIF_SHOWN_KEY, 'true');
     
     // Show static owl after error
     setTimeout(() => {
       this.isPlaying = false;
       this.showStaticOwl = true;
+      this.showGif = false;
       this.startSpeakingSequence();
       this.cdr.detectChanges();
-      console.log('Static owl is now visible (after GIF error)');
     }, 2000);
   }
 
   // Called when GIF animation completes
   private onGifAnimationComplete() {
-    console.log('GIF animation completed, showing static owl permanently');
     this.isPlaying = false;
+    this.showGif = false;
     this.showStaticOwl = true;
     this.startSpeakingSequence();
     this.cdr.detectChanges();
-    console.log('Static owl is now permanently visible');
   }
 
   // Method to restart animation (if needed)
   restartAnimation() {
-    console.log('Restarting animation');
-    
     // Reset component state - start with GIF again
     this.isPlaying = true;
     this.isTransitioning = false;
@@ -277,6 +421,18 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   // Method to show video instead of static owl
   showVideo() {
     this.showStaticOwl = false;
+    this.cdr.detectChanges();
+  }
+
+  // Debug method to force show GIF (for testing)
+  // Call this from browser console: ng.probe(document.querySelector('app-owl-animation')).componentInstance.forceShowGif()
+  forceShowGif() {
+    localStorage.removeItem(this.GIF_SHOWN_KEY);
+    this.showGif = true;
+    this.showStaticOwl = false;
+    this.isPlaying = true;
+    this.gifLoaded = false;
+    this.gifError = false;
     this.cdr.detectChanges();
   }
 } 

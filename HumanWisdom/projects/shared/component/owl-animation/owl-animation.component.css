@@ -24,6 +24,11 @@
   z-index: 100;
 }
 
+/* Prevent duplicate owl instances */
+.owl-animation-wrapper:not(:first-of-type) {
+  display: none !important;
+}
+
 .owl-animation-wrapper.transitioning {
   /* Optionally scale up or add effect during transition */
   filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
@@ -207,6 +212,24 @@
   .owl-animation-wrapper.corner {
     right: 16px;
   }
+}
+
+/* Journal page specific positioning - handles col-lg-4 (33.33% width) layout */
+.bg_journal .owl-animation-wrapper,
+.bg_journal .owl-animation-wrapper.corner {
+  right: calc((100vw - 33.33vw) / 2 + 16px);
+}
+
+@media (max-width: 1024px) {
+  .bg_journal .owl-animation-wrapper,
+  .bg_journal .owl-animation-wrapper.corner {
+    right: 16px;
+  }
+}
+
+/* Ensure only one owl instance is visible at a time */
+body .owl-animation-wrapper ~ .owl-animation-wrapper {
+  display: none !important;
 }
 
 /* Lower owl z-index when hamburger menu is open */

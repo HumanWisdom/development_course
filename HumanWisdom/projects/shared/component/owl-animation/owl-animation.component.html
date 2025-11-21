@@ -20,11 +20,11 @@
   </div>
 </div>
 
-<!-- Animated GIF - Plays first in corner position -->
+<!-- Animated GIF - Plays only on home page and only once -->
 <img
   #gifElement
   class="owl-gif"
-  *ngIf="!showStaticOwl"
+  *ngIf="showGif && !showStaticOwl"
   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.gif"
   alt="Animated Owl"
   draggable="false"
