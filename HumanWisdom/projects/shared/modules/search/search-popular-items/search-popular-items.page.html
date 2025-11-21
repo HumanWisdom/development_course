@@ -193,7 +193,7 @@
     <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
 
     <!-- LOCK only when NOT read & isFree = 0 -->
-    <img *ngIf="item?.isRead !== '1' && item.isFree === '0'"
+    <img *ngIf="!isSubscriber && item.isFree === '0'"
       [src]="isAdults 
       ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
       : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
@@ -318,7 +318,7 @@
                                   <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
 
                                   <!-- LOCK only when NOT read & isFree = 0 -->
-                                  <img *ngIf="item?.isRead !== '1' && item.isFree === '0'"
+                                  <img *ngIf="!isSubscriber && item.isFree === '0'"
                                     [src]="isAdults 
                                     ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
                                     : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
@@ -440,7 +440,7 @@
                                   <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
 
                                   <!-- LOCK only when NOT read & isFree = 0 -->
-                                  <img *ngIf="item?.isRead !== '1' && item.isFree === '0'"
+                                  <img *ngIf="!isSubscriber && item.isFree === '0'"
                                     [src]="isAdults 
                                     ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
                                     : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
@@ -554,14 +554,14 @@
                               </div>
                             </div>
                               <img 
-                                *ngIf="item?.isRead === '1' && (isSubscriber || isloggedin === 'T')" 
+                                *ngIf="item?.isRead === '1'" 
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
                                 class="ls-read-icon" 
                               />
 
                               <!-- LOCK: only for non-subscriber AND isFree = 0 AND not read -->
                               <img 
-                                *ngIf="!isSubscriber && item.isFree === '0' && item?.isRead !== '1'"
+                                *ngIf="!isSubscriber && item.isFree === '0'"
                                 [src]="isAdults 
                                   ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
                                   : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
@@ -923,7 +923,7 @@
                                   <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
 
                                   <!-- LOCK only when NOT read & isFree = 0 -->
-                                  <img *ngIf="item?.isRead !== '1' && item.isFree === '0'"
+                                  <img *ngIf="!isSubscriber && item.isFree === '0'"
                                     [src]="isAdults 
                                     ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
                                     : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
