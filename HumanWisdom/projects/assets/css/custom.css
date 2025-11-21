@@ -29110,7 +29110,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: rgb(255 255 255 / 20%);
+  background: #fff3 !important;
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
@@ -34488,7 +34488,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #ED7D6F;
+  color: #ffffff;
 }
 
 .btn_fpfy
@@ -34501,7 +34501,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .btn_fpfy_mh
 {
-  background: #803358 !important;
+  background: #D7586B !important;
 }
 
 .btn_fpfy_rel
@@ -35702,7 +35702,7 @@ color: black !important;
 
 .mdp_oli_tray 
 {
-  box-shadow: unset;
+  box-shadow: 0 -2px 2px #00000010;
   position: fixed;
   bottom: 0px;
   right: 0;
@@ -36033,7 +36033,7 @@ color: black !important;
 
 .ic_tray_ext 
 {
-  box-shadow: unset;
+  box-shadow: 0 -2px 2px #00000010;
   position: fixed;
   bottom: 0 !important;
   right: 0;
@@ -36694,6 +36694,9 @@ li ol > li:before {
   margin-right: 0;
 }
 
+.btn_daily:focus{
+  border: none;
+}
 .btn_podcast .btn.active ,
 .btn_podcast .btn:focus
 {

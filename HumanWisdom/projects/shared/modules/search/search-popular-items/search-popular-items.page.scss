@@ -20,6 +20,9 @@ li.is-search:hover,
 a{
   padding: 0;
 }
+.msrow a {
+  position: relative;
+}
 .session_img_play {
     right: 12px !important;
 }
@@ -27,12 +30,14 @@ a{
     bottom: 40px !important;
 } 
 .ls-read-icon {
-  position: relative;
-  bottom: 170px;
-  left: 130px;
+  position: absolute;
+  right: 19px;
+  bottom: 145px;
+  z-index: 2;
 }
 .ls-lock-icon {
-  position: relative;
-  bottom: 74px;
-  left: 145px;
+  position: absolute;
+  right: 19px;
+  bottom: 57px;
+  z-index: 2;
 }
