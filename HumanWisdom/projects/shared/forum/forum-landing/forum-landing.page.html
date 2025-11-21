@@ -317,7 +317,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
                           <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
@@ -328,13 +328,27 @@
                             {{item.PostLikeCount}}
                           </button>
                         </div>
+                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isAdults">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+                            <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                              class="img-responsive mr5px">
+                            <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                              class="img-responsive mr5px">
+                            {{item.PostLikeCount}}
+                          </button>
+                        </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
                             class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'"  [disabled]="DisabledComment(item)"  (click)="reportpost(item,'comment')">
                             <img
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
-                              class="img-responsive mr5px">
+                              class="img-responsive mr5px" *ngIf="!isAdults">
+                               <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment.svg"
+                              class="img-responsive mr5px" *ngIf="isAdults">
                             {{item.ReplyCount}}
                           </button>
                         </div>
@@ -343,7 +357,10 @@
                           <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
                             <img
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
-                              class="img-responsive mr5px">
+                              class="img-responsive mr5px" *ngIf="!isAdults">
+                              <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg"
+                              class="img-responsive mr5px" *ngIf="isAdults">
                             Share
                           </button>
                         </div>
@@ -354,7 +371,10 @@
                           (click)="reportpost(item,'report')">
                           <img
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
-                            class="img-responsive mr5px">
+                            class="img-responsive mr5px" *ngIf="!isAdults">
+                            <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report.svg"
+                            class="img-responsive mr5px" *ngIf="isAdults">
                           Report
                         </button>
                       </div>
