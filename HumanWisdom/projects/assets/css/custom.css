@@ -35702,7 +35702,7 @@ color: black !important;
 
 .mdp_oli_tray 
 {
-  box-shadow: unset;
+  box-shadow: 0 -2px 2px #00000010;
   position: fixed;
   bottom: 0px;
   right: 0;
@@ -36033,7 +36033,7 @@ color: black !important;
 
 .ic_tray_ext 
 {
-  box-shadow: unset;
+  box-shadow: 0 -2px 2px #00000010;
   position: fixed;
   bottom: 0 !important;
   right: 0;
