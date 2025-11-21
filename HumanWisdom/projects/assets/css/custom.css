@@ -34488,7 +34488,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #ED7D6F;
+  color: #D7586B;
 }
 
 .btn_fpfy
@@ -34501,7 +34501,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .btn_fpfy_mh
 {
-  background: #803358 !important;
+  background: #D7586B !important;
 }
 
 .btn_fpfy_rel
