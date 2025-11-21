@@ -178,24 +178,32 @@
                           />
                               </div> -->
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+<!-- STATUS COLUMN -->
+<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber || item.isFree ==='0'">
-                              <!-- lock -->
-                              <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" />
-                              <!-- /lock -->
-                            </div>
+  <!-- TICK for subscriber OR non-subscriber -->
+  <img *ngIf="item?.isRead === '1'" 
+    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+    class="img-responsive ws-read-icon"/>
+
+  <!-- NON-SUBSCRIBER BLOCK -->
+  <ng-container *ngIf="!isSubscriber">
+
+    <!-- EMPTY DIV only when NOT read & isFree = 1 -->
+    <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
+
+    <!-- LOCK only when NOT read & isFree = 0 -->
+    <img *ngIf="item?.isRead !== '1' && item.isFree === '0'"
+      [src]="isAdults 
+      ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+      : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+      class="img-responsive ws-lock-icon"/>
+
+  </ng-container>
+
+</div>
+
+
                           </div>
                         </div>
                       </a>
@@ -295,22 +303,30 @@
                               </h4>
                             </div>
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                              <!-- <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                               <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+                              <!-- STATUS COLUMN -->
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber || item.isFree === '0'">
-                              <!-- lock -->
-                              <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" />
-                              <!-- /lock -->
-                            </div>
+                                <!-- TICK for subscriber OR non-subscriber -->
+                                <img *ngIf="item?.isRead === '1'" 
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  class="img-responsive ws-read-icon"/>
+
+                                <!-- NON-SUBSCRIBER BLOCK -->
+                                <ng-container *ngIf="!isSubscriber">
+
+                                  <!-- EMPTY DIV only when NOT read & isFree = 1 -->
+                                  <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
+
+                                  <!-- LOCK only when NOT read & isFree = 0 -->
+                                  <img *ngIf="item?.isRead !== '1' && item.isFree === '0'"
+                                    [src]="isAdults 
+                                    ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                    : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    class="img-responsive ws-lock-icon"/>
+
+                                </ng-container>
+
+                              </div>
                           </div>
                         </div>
                       </a>
@@ -409,40 +425,30 @@
                               </h4>
                             </div>
 
+                              <!-- STATUS COLUMN -->
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
+                                <!-- TICK for subscriber OR non-subscriber -->
+                                <img *ngIf="item?.isRead === '1'" 
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  class="img-responsive ws-read-icon"/>
 
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                                <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                              </div> -->
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber && item.RowID <= 3">
-                              <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div> -->
+                                <!-- NON-SUBSCRIBER BLOCK -->
+                                <ng-container *ngIf="!isSubscriber">
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+                                  <!-- EMPTY DIV only when NOT read & isFree = 1 -->
+                                  <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber || item.isFree === '0'">
-                              <!-- lock -->
-                              <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" />
-                              <!-- /lock -->
-                            </div>
+                                  <!-- LOCK only when NOT read & isFree = 0 -->
+                                  <img *ngIf="item?.isRead !== '1' && item.isFree === '0'"
+                                    [src]="isAdults 
+                                    ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                    : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    class="img-responsive ws-lock-icon"/>
+
+                                </ng-container>
+
+                              </div>
                           </div>
                         </div>
                       </a>
@@ -547,10 +553,20 @@
 
                               </div>
                             </div>
-                                                            <img *ngIf="isSubscriber && item?.isRead === '1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" class="ls-read-icon" />
-                                                            <img *ngIf="!isSubscriber || item.isFree === '0'"
-                                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                        class="ls-lock-icon" />
+                              <img 
+                                *ngIf="item?.isRead === '1' && (isSubscriber || isloggedin === 'T')" 
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
+                                class="ls-read-icon" 
+                              />
+
+                              <!-- LOCK: only for non-subscriber AND isFree = 0 AND not read -->
+                              <img 
+                                *ngIf="!isSubscriber && item.isFree === '0' && item?.isRead !== '1'"
+                                [src]="isAdults 
+                                  ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                  : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                class="ls-lock-icon" 
+                              />
                           </a>
                         </div>
 
@@ -892,38 +908,30 @@
                               </h4>
                             </div>
 
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-          </div> -->
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber && item.RowID <= 3">
-                              <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div> -->
+                              <!-- STATUS COLUMN -->
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+                                <!-- TICK for subscriber OR non-subscriber -->
+                                <img *ngIf="item?.isRead === '1'" 
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  class="img-responsive ws-read-icon"/>
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber || item.isFree === '0'">
-                              <!-- lock -->
-                              <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" />
-                              <!-- /lock -->
-                            </div>
+                                <!-- NON-SUBSCRIBER BLOCK -->
+                                <ng-container *ngIf="!isSubscriber">
+
+                                  <!-- EMPTY DIV only when NOT read & isFree = 1 -->
+                                  <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
+
+                                  <!-- LOCK only when NOT read & isFree = 0 -->
+                                  <img *ngIf="item?.isRead !== '1' && item.isFree === '0'"
+                                    [src]="isAdults 
+                                    ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                    : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    class="img-responsive ws-lock-icon"/>
+
+                                </ng-container>
+
+                              </div>
                           </div>
                         </div>
                       </a>
