@@ -61,24 +61,43 @@ function setActiveNav(elementId) {
 function isPageLoaded() {
     return document.readyState === 'complete' && 
            document.body && 
-           document.body.scrollHeight > 0;
+           document.body.scrollHeight > 0 &&
+           document.querySelector('.header') !== null;
 }
 
-// Function to wait for page to be fully loaded
-function waitForPageLoad(callback, maxAttempts = 50, attempt = 0) {
-    if (isPageLoaded() || attempt >= maxAttempts) {
-        callback();
+// Function to check if element is ready and visible
+function isElementReady(element) {
+    if (!element) return false;
+    const rect = element.getBoundingClientRect();
+    return rect.height > 0 && rect.width > 0 && element.offsetParent !== null;
+}
+
+// Function to wait for page to be fully loaded with longer timeout for first load
+function waitForPageLoad(callback, isFirstLoad = false, maxAttempts = 100, attempt = 0) {
+    // For first-time page loads, allow more time (10 seconds instead of 5)
+    const maxAttemptsForFirstLoad = 100;
+    const actualMaxAttempts = isFirstLoad ? maxAttemptsForFirstLoad : maxAttempts;
+    
+    if (isPageLoaded() || attempt >= actualMaxAttempts) {
+        // Use requestAnimationFrame for smoother execution, add 1000ms extra timeout
+        requestAnimationFrame(() => {
+            setTimeout(callback, 1050);
+        });
     } else {
         setTimeout(() => {
-            waitForPageLoad(callback, maxAttempts, attempt + 1);
+            waitForPageLoad(callback, isFirstLoad, actualMaxAttempts, attempt + 1);
         }, 100);
     }
 }
 
-// Function to scroll to element with offset for fixed header
-function scrollToElement(elementId, offset = null) {
+// Function to scroll to element with offset for fixed header and focus
+function scrollToElement(elementId, offset = null, isFirstLoad = false) {
     const element = document.getElementById(elementId);
     if (!element) {
+        // If element doesn't exist yet, wait and retry with 1000ms extra timeout
+        if (isFirstLoad) {
+            setTimeout(() => scrollToElement(elementId, offset, isFirstLoad), 1300);
+        }
         return false;
     }
     
@@ -87,32 +106,71 @@ function scrollToElement(elementId, offset = null) {
         // Re-check element exists after page load
         const targetElement = document.getElementById(elementId);
         if (!targetElement) {
+            // Retry if element still doesn't exist (for first load) with 1000ms extra timeout
+            if (isFirstLoad) {
+                setTimeout(() => scrollToElement(elementId, offset, isFirstLoad), 1300);
+            }
             return false;
         }
         
-        // Calculate header height dynamically (120px desktop, 70px mobile)
-        if (offset === null) {
-            const header = document.querySelector('.header');
-            offset = header ? header.offsetHeight : 120;
-        }
+        // Wait for element to be ready and visible
+        let attempts = 0;
+        const checkElementReady = () => {
+            if (isElementReady(targetElement) || attempts >= 20) {
+                performScroll(targetElement, offset);
+            } else {
+                attempts++;
+                setTimeout(checkElementReady, 100);
+            }
+        };
         
-        // Ensure element is in the DOM and has dimensions
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        if (elementPosition === 0 && targetElement.offsetHeight === 0) {
-            // Element might not be rendered yet, try again after a short delay
-            setTimeout(() => scrollToElement(elementId, offset), 200);
-            return;
-        }
-        
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-        
-        window.scrollTo({
-            top: Math.max(0, offsetPosition),
-            behavior: 'smooth'
-        });
-    });
+        checkElementReady();
+    }, isFirstLoad);
     
     return true;
+}
+
+// Function to perform the actual scroll and focus
+function performScroll(targetElement, offset) {
+    // Calculate header height dynamically (120px desktop, 70px mobile)
+    if (offset === null) {
+        const header = document.querySelector('.header');
+        offset = header ? header.offsetHeight : 120;
+    }
+    
+    // Get element position relative to viewport
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    // Calculate scroll position: current scroll + element position - offset (no extra pixels)
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+    
+    // Scroll to element (only once, no double scrolling)
+    window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+    });
+    
+    // Focus the element for accessibility and ensure it's visible (add 1000ms extra timeout)
+    setTimeout(() => {
+        // Set tabindex if it doesn't have one, then focus
+        if (!targetElement.hasAttribute('tabindex')) {
+            targetElement.setAttribute('tabindex', '-1');
+        }
+        targetElement.focus();
+        
+        // Verify element is in correct position (only adjust if significantly off, to avoid extra scrolling)
+        const currentPosition = targetElement.getBoundingClientRect().top;
+        const expectedPosition = offset; // Element should be at offset distance from top
+        const positionDifference = Math.abs(currentPosition - expectedPosition);
+        
+        // Only re-scroll if position is off by more than 10px (to avoid unnecessary extra scrolling)
+        if (positionDifference > 10) {
+            const newOffsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({
+                top: Math.max(0, newOffsetPosition),
+                behavior: 'smooth'
+            });
+        }
+    }, 1300);
 }
 
 // Function to update FAQ tab attributes to Bootstrap 5.3
@@ -1181,13 +1239,15 @@ requestDemoForWork &&
                     if (window.location.pathname.includes("index.php")) {
                         // Update URL without reload first
                         window.history.pushState(null, null, "#div_subscription");
-                        // Scroll to section on same page (120px header + 20px extra for better alignment)
-                        // Wait for page to be ready before scrolling
-                        waitForPageLoad(() => {
-                            scrollToElement("div_subscription", 140);
-                        });
+                        // Scroll to section on same page (header height + 20px extra for better alignment)
+                        // Calculate header height dynamically to avoid extra pixels
+                        const header = document.querySelector('.header');
+                        const headerHeight = header ? header.offsetHeight : 120;
+                        setTimeout(() => {
+                            scrollToElement("div_subscription", headerHeight + 20, false);
+                        }, 100);
                     } else {
-                        // Navigate to index.php with hash
+                        // Navigate to index.php with hash (this will be a first load)
                         window.location.href = "../index.php#div_subscription";
                     }
                 },
@@ -1226,11 +1286,14 @@ requestDemoForWork &&
             setActiveNav("education");
         } else if (s.includes("index.php#div_subscription") || window.location.hash === "#div_subscription") {
             setActiveNav("pricing");
-            // Scroll to subscription section after page loads (120px header + 20px extra for better alignment)
-            // Wait for page to be fully loaded before scrolling
-            waitForPageLoad(() => {
-                scrollToElement("div_subscription", 140);
-            });
+            // Scroll to subscription section after page loads (header height + 20px extra for better alignment)
+            // Calculate header height dynamically to avoid extra pixels
+            const header = document.querySelector('.header');
+            const headerHeight = header ? header.offsetHeight : 120;
+            // This is likely a first-time page load, so use longer timeout
+            const isFirstLoad = !document.getElementById("div_subscription") || 
+                               document.getElementById("div_subscription").offsetHeight === 0;
+            scrollToElement("div_subscription", headerHeight + 20, isFirstLoad);
         } else if (s.includes("about")) {
             setActiveNav("AboutUs");
         } else if (s.includes("pages/teenagers.php")) {
@@ -1482,25 +1545,21 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Handle hash navigation on page load
     if (window.location.hash === "#div_subscription") {
-        // Wait for page to be fully loaded before scrolling
-        waitForPageLoad(() => {
-            // Calculate header height + 20px extra for better alignment
-            const header = document.querySelector('.header');
-            const headerHeight = header ? header.offsetHeight : 120;
-            scrollToElement("div_subscription", headerHeight + 20);
-        });
+        // This is a first-time page load, use longer timeout
+        const header = document.querySelector('.header');
+        const headerHeight = header ? header.offsetHeight : 120;
+        scrollToElement("div_subscription", headerHeight + 20, true);
     }
     
     // Handle hash changes (e.g., when clicking pricing link on same page)
     window.addEventListener('hashchange', function() {
         if (window.location.hash === "#div_subscription") {
-            // Wait for page to be fully loaded before scrolling
-            waitForPageLoad(() => {
-                // Calculate header height + 20px extra for better alignment
-                const header = document.querySelector('.header');
-                const headerHeight = header ? header.offsetHeight : 120;
-                scrollToElement("div_subscription", headerHeight + 20);
-            });
+            // Check if this is a first load or just hash change
+            const isFirstLoad = !document.getElementById("div_subscription") || 
+                               document.getElementById("div_subscription").offsetHeight === 0;
+            const header = document.querySelector('.header');
+            const headerHeight = header ? header.offsetHeight : 120;
+            scrollToElement("div_subscription", headerHeight + 20, isFirstLoad);
         }
     });
     
