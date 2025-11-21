@@ -57,6 +57,26 @@ function setActiveNav(elementId) {
     }
 }
 
+// Function to scroll to element with offset for fixed header
+function scrollToElement(elementId, offset = null) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        // Calculate header height dynamically (120px desktop, 70px mobile)
+        if (offset === null) {
+            const header = document.querySelector('.header');
+            offset = header ? header.offsetHeight : 120;
+        }
+        
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        window.scrollTo({
+            top: Math.max(0, offsetPosition),
+            behavior: 'smooth'
+        });
+    }
+}
+
 // Function to update FAQ tab attributes to Bootstrap 5.3
 function updateFAQTabAttributes() {
     // Only target FAQ tabs, not tool tabs
@@ -1114,9 +1134,23 @@ requestDemoForWork &&
             c.addEventListener(
                 "click",
                 function (e) {
+                    e.preventDefault();
                     localStorage.setItem("activeTab", "pricing"), 
                     setActiveNav("pricing");
-                    logevent("Click_Pricing", "index.php#div_subscription"), (window.location.href = "../index.php#div_subscription");
+                    logevent("Click_Pricing", "index.php#div_subscription");
+                    
+                    // Check if we're already on index.php
+                    if (window.location.pathname.includes("index.php")) {
+                        // Scroll to section on same page (120px header + 20px extra for better alignment)
+                        setTimeout(() => {
+                            scrollToElement("div_subscription", 140);
+                        }, 100);
+                        // Update URL without reload
+                        window.history.pushState(null, null, "#div_subscription");
+                    } else {
+                        // Navigate to index.php with hash
+                        window.location.href = "../index.php#div_subscription";
+                    }
                 },
                 !1
             );
@@ -1151,8 +1185,12 @@ requestDemoForWork &&
         } else if (s.includes("education.php")) {
                setActiveNav("organisation");
             setActiveNav("education");
-        } else if (s.includes("index.php#div_subscription")) {
+        } else if (s.includes("index.php#div_subscription") || window.location.hash === "#div_subscription") {
             setActiveNav("pricing");
+            // Scroll to subscription section after page loads (120px header + 20px extra for better alignment)
+            setTimeout(() => {
+                scrollToElement("div_subscription", 140);
+            }, 300);
         } else if (s.includes("about")) {
             setActiveNav("AboutUs");
         } else if (s.includes("pages/teenagers.php")) {
@@ -1401,6 +1439,28 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Initialize tool tabs separately
     initializeToolTabs();
+    
+    // Handle hash navigation on page load
+    if (window.location.hash === "#div_subscription") {
+        setTimeout(() => {
+            // Calculate header height + 20px extra for better alignment
+            const header = document.querySelector('.header');
+            const headerHeight = header ? header.offsetHeight : 120;
+            scrollToElement("div_subscription", headerHeight + 20);
+        }, 500);
+    }
+    
+    // Handle hash changes (e.g., when clicking pricing link on same page)
+    window.addEventListener('hashchange', function() {
+        if (window.location.hash === "#div_subscription") {
+            setTimeout(() => {
+                // Calculate header height + 20px extra for better alignment
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 120;
+                scrollToElement("div_subscription", headerHeight + 20);
+            }, 100);
+        }
+    });
     
     // const e = document.getElementById("AnnualType");
     // e?.addEventListener("click", () => {
