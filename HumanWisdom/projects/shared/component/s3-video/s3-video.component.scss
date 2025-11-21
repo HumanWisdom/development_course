@@ -40,6 +40,7 @@ p {
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .video-width {
   width: -webkit-fill-available !important;
@@ -85,9 +86,9 @@ p {
 .swipe-up-alt.black-theme {
   background: #FFF7E6;
 }
-// .swipe-up-alt.white-theme {
-//   background: rgba(0, 0, 0, 0.85);
-// }
+.swipe-up-alt.white-theme {
+  background: #183C79 !important;
+}
 
 .text {
   font-size: 12px;
