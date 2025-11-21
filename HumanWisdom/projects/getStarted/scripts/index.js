@@ -57,24 +57,62 @@ function setActiveNav(elementId) {
     }
 }
 
+// Function to check if page is fully loaded
+function isPageLoaded() {
+    return document.readyState === 'complete' && 
+           document.body && 
+           document.body.scrollHeight > 0;
+}
+
+// Function to wait for page to be fully loaded
+function waitForPageLoad(callback, maxAttempts = 50, attempt = 0) {
+    if (isPageLoaded() || attempt >= maxAttempts) {
+        callback();
+    } else {
+        setTimeout(() => {
+            waitForPageLoad(callback, maxAttempts, attempt + 1);
+        }, 100);
+    }
+}
+
 // Function to scroll to element with offset for fixed header
 function scrollToElement(elementId, offset = null) {
     const element = document.getElementById(elementId);
-    if (element) {
+    if (!element) {
+        return false;
+    }
+    
+    // Wait for page to be fully loaded before scrolling
+    waitForPageLoad(() => {
+        // Re-check element exists after page load
+        const targetElement = document.getElementById(elementId);
+        if (!targetElement) {
+            return false;
+        }
+        
         // Calculate header height dynamically (120px desktop, 70px mobile)
         if (offset === null) {
             const header = document.querySelector('.header');
             offset = header ? header.offsetHeight : 120;
         }
         
-        const elementPosition = element.getBoundingClientRect().top;
+        // Ensure element is in the DOM and has dimensions
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        if (elementPosition === 0 && targetElement.offsetHeight === 0) {
+            // Element might not be rendered yet, try again after a short delay
+            setTimeout(() => scrollToElement(elementId, offset), 200);
+            return;
+        }
+        
         const offsetPosition = elementPosition + window.pageYOffset - offset;
         
         window.scrollTo({
             top: Math.max(0, offsetPosition),
             behavior: 'smooth'
         });
-    }
+    });
+    
+    return true;
 }
 
 // Function to update FAQ tab attributes to Bootstrap 5.3
@@ -1141,12 +1179,13 @@ requestDemoForWork &&
                     
                     // Check if we're already on index.php
                     if (window.location.pathname.includes("index.php")) {
-                        // Scroll to section on same page (120px header + 20px extra for better alignment)
-                        setTimeout(() => {
-                            scrollToElement("div_subscription", 140);
-                        }, 100);
-                        // Update URL without reload
+                        // Update URL without reload first
                         window.history.pushState(null, null, "#div_subscription");
+                        // Scroll to section on same page (120px header + 20px extra for better alignment)
+                        // Wait for page to be ready before scrolling
+                        waitForPageLoad(() => {
+                            scrollToElement("div_subscription", 140);
+                        });
                     } else {
                         // Navigate to index.php with hash
                         window.location.href = "../index.php#div_subscription";
@@ -1188,9 +1227,10 @@ requestDemoForWork &&
         } else if (s.includes("index.php#div_subscription") || window.location.hash === "#div_subscription") {
             setActiveNav("pricing");
             // Scroll to subscription section after page loads (120px header + 20px extra for better alignment)
-            setTimeout(() => {
+            // Wait for page to be fully loaded before scrolling
+            waitForPageLoad(() => {
                 scrollToElement("div_subscription", 140);
-            }, 300);
+            });
         } else if (s.includes("about")) {
             setActiveNav("AboutUs");
         } else if (s.includes("pages/teenagers.php")) {
@@ -1442,23 +1482,25 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Handle hash navigation on page load
     if (window.location.hash === "#div_subscription") {
-        setTimeout(() => {
+        // Wait for page to be fully loaded before scrolling
+        waitForPageLoad(() => {
             // Calculate header height + 20px extra for better alignment
             const header = document.querySelector('.header');
             const headerHeight = header ? header.offsetHeight : 120;
             scrollToElement("div_subscription", headerHeight + 20);
-        }, 500);
+        });
     }
     
     // Handle hash changes (e.g., when clicking pricing link on same page)
     window.addEventListener('hashchange', function() {
         if (window.location.hash === "#div_subscription") {
-            setTimeout(() => {
+            // Wait for page to be fully loaded before scrolling
+            waitForPageLoad(() => {
                 // Calculate header height + 20px extra for better alignment
                 const header = document.querySelector('.header');
                 const headerHeight = header ? header.offsetHeight : 120;
                 scrollToElement("div_subscription", headerHeight + 20);
-            }, 100);
+            });
         }
     });
     
