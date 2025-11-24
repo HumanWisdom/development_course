@@ -27,11 +27,13 @@ export class SubmitStoryPage implements OnInit {
   
   goBack(){
     var url = this.navigationService.navigateToBackLink();
-    if(url==null){
-        this.location.back();
-     } else {
+   
+    if (url == null) {
+     this.location.back();
+    }else{
       this.router.navigate([url]);
-     }
+    }
+      
   }
 
 }

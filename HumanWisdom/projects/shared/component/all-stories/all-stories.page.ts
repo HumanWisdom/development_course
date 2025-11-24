@@ -58,6 +58,8 @@ export class AllStoriesPage implements OnInit {
     }else{
       this.router.navigate([url]);
     }
+
+     
   }
 
   getStories(){
