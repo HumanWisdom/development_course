@@ -37242,14 +37242,14 @@ section > .row
   margin: 0;
   box-shadow: unset;
   border-radius: 8px;
-  background: #FFF;
+  color: #FFF !important;
   padding: 5px 14px;
   height: 32px;
   width: 100%;
   font-size: 15px;
   font-weight: 600;
   line-height: 22px;
-  color: #ED7D6F;
+  background: #ED7D6F !important;
 }
 
 .div_copy_01 
