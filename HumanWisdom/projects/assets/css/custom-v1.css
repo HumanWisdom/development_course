@@ -110,7 +110,7 @@ margin-bottom: 8%;
   margin-bottom: 3rem; 
 }
 .btn-down{
-  color:#E8A880;
+  /* color:#E8A880; */
   background: transparent;
   cursor: pointer;
   padding-left: 9px;
