@@ -20255,19 +20255,21 @@ input{
 
 .fc_comment
 {
-  height: 40px;
-  background: #EBEBEB;
+  height: 50px;
+  background: #FFFFFF !important;
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 100px;
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 15px;
   line-height: 14px;
+  padding: 15px;
   display: flex;
   align-items: center;
   text-align: left;
-  color: #5D5D5D;
+  color: rgba(0, 0, 0, 0.5);
+  /* color: #5D5D5D; */
   border: 0;
 }
 
@@ -30369,7 +30371,7 @@ text-decoration: underline;
   right: 0;
   left: 0;
   margin: 0 auto;
-  background: #424675;
+  background: white;
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .vl {
@@ -34488,7 +34490,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #ffffff;
+  color: #000000;
 }
 
 .btn_fpfy
@@ -34681,7 +34683,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   margin: 0;
   padding: 0;
   background: transparent;
-  color: #EEA170 !important;
+  color: #000000 !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -34699,8 +34701,9 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 
 .forum_profile_desc
 {
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_profile_box.svg) no-repeat;
-  background-size:cover;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/forum_profile_box.svg) no-repeat; */
+  /* background-size:cover; */
+  background: rgba(255, 232, 187, 1);
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   text-align: center;
@@ -37239,14 +37242,14 @@ section > .row
   margin: 0;
   box-shadow: unset;
   border-radius: 8px;
-  background: #FFF;
+  color: #FFF !important;
   padding: 5px 14px;
   height: 32px;
   width: 100%;
   font-size: 15px;
   font-weight: 600;
   line-height: 22px;
-  color: #ED7D6F;
+  background: #ED7D6F !important;
 }
 
 .div_copy_01 
@@ -37811,6 +37814,8 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   right: 5px;
   margin: 0 auto;
   bottom: 5px;
+  height: 24px;
+  width: 24px;
 }
 
 .cvideo_coach
@@ -37831,27 +37836,27 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 {
   width: 100%;
   height: auto !important;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .25);
-  background: #FFE8BB;
+  border-radius: 16px;
+  border:1px solid rgba(50, 50, 50, 0.25);
+  background: white;
   padding: 20px 10px;
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: #fff;
+  color: #000;
 }
 
 .v3_ta_coach:focus,
 .v3_ta_coach:active
 {
-  color: #FFF;
+  color: #000;
   outline: none;
   padding: 20px 10px;
 }
 
 .v3_ta_coach::-webkit-input-placeholder
 {
-  color: rgba(255,255,255,0.5);
+  color: rgba(0,0,0,0.5);
 }
 
 .ca_wdi,

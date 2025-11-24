@@ -147,7 +147,7 @@
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright dflex_01">
                         <div class="" *ngIf="item.UserName != userName" (click)="follow(item,index)">
-                          <button type="button" class="btn fs_12px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'"
+                          <button type="button" class="btn fs_12px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
                           
                          *ngIf="item.Followed=='0'">
                             <i class="fa fa-plus mr3px"></i>
@@ -156,7 +156,7 @@
                             </span>
                           </button>
 
-                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
                             <i class="fa fa-minus mr3px"></i>
                             <span class="underline">
                               Unfollow
@@ -165,14 +165,14 @@
                         </div>
 
                         <div class="" *ngIf="item.UserName == userName" (click)="follow(item,index)">
-                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" *ngIf="item.Followed=='0'">
+                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='0'">
                             <i class="fa fa-plus mr3px"></i>
                             <span class="underline">
                               Follow
                             </span>
                           </button>
   
-                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
                             <i class="fa fa-minus mr3px"></i>
                             <span class="underline">
                               Unfollow
@@ -310,7 +310,7 @@
                       <h4 (click)="postnavigate(item)" *ngIf="!item.isEditPost"  class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         {{item.POST}}
                       </h4>
-                      <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text"name="Post" id="Post" [(ngModel)]="item.POST" required="required" class="txtarea_fl_comment" placeholder="Edit Post" rows="5"></textarea>           
+                      <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text"name="Post" id="Post" [(ngModel)]="item.POST" required="required" class="txtarea_fc_comment" placeholder="Edit Post" rows="5"></textarea>           
                     </div>
                   </div>
 
@@ -318,7 +318,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                               class="img-responsive mr5px">
@@ -329,7 +329,7 @@
                           </button>
                         </div>
                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isAdults">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
                               class="img-responsive mr5px">
@@ -342,7 +342,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
-                            class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'"  [disabled]="DisabledComment(item)"  (click)="reportpost(item,'comment')">
+                            class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"  [disabled]="DisabledComment(item)"  (click)="reportpost(item,'comment')">
                             <img
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
@@ -354,12 +354,12 @@
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+                          <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                             <img
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                               <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_v4_share.svg"
                               class="img-responsive mr5px" *ngIf="isAdults">
                             Share
                           </button>
@@ -367,7 +367,7 @@
                       </div>
 
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'"
+                        <button type="button" class="btn fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
                           (click)="reportpost(item,'report')">
                           <img
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
@@ -392,7 +392,7 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn && actionType=='comment'">
                           <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment"
-                            required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
+                            required="required" class="txtarea_fc_comment" placeholder="Comment Here" rows="5"></textarea>
                         </div>
     
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
@@ -458,14 +458,14 @@
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright dflex_01">
           <div class="" *ngIf="item.UserName != userName" (click)="follow(item,index)">
-            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" *ngIf="item.Followed=='0'">
+            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='0'">
               <i class="fa fa-plus mr3px"></i>
               <span class="underline">
                 Follow
               </span>
             </button>
 
-            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
               <i class="fa fa-minus mr3px"></i>
               <span class="underline">
                 Unfollow
@@ -474,14 +474,14 @@
           </div>
 
           <div class="" *ngIf="item.UserName == userName" (click)="follow(item,index)">
-            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" *ngIf="item.Followed=='0'">
+            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='0'">
               <i class="fa fa-plus mr3px"></i>
               <span class="underline">
                 Follow
               </span>
             </button>
 
-            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
               <i class="fa fa-minus mr3px"></i>
               <span class="underline">
                 Unfollow
@@ -619,7 +619,7 @@
         <h4 (click)="postnavigate(item)" *ngIf="!item.isEditPost"  class="mtb0px fs_15px fw_400 lh_150p fc_000000">
           {{item.POST}}
         </h4>
-        <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text"name="Post" id="Post" [(ngModel)]="item.POST" required="required" class="txtarea_fl_comment" placeholder="Edit Post" rows="5"></textarea>           
+        <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text"name="Post" id="Post" [(ngModel)]="item.POST" required="required" class="txtarea_fc_comment" placeholder="Edit Post" rows="5"></textarea>           
       </div>
     </div>
 
@@ -627,7 +627,7 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-            <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+            <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
               <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                 class="img-responsive mr5px">
@@ -640,7 +640,7 @@
 
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
             <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
-              class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'"  [disabled]="DisabledComment(item)"  (click)="reportpost(item,'comment')">
+              class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"  [disabled]="DisabledComment(item)"  (click)="reportpost(item,'comment')">
               <img
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
                 class="img-responsive mr5px">
@@ -649,7 +649,7 @@
           </div>
 
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-            <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+            <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
               <img
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
                 class="img-responsive mr5px">
@@ -659,7 +659,7 @@
         </div>
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'"
+          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
             (click)="reportpost(item,'report')">
             <img
               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
@@ -677,11 +677,11 @@
 
           <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="actionType=='report'">
             <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext"
-              required="required" class="form-control fc_comment" placeholder="Report Post">
+              required="required" class="form-control fc_comment" placeholder="Let us know what’s wrong">
           </div>
           <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn && actionType=='comment'">
             <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment"
-              required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
+              required="required" class="txtarea_fc_comment" placeholder="Comment Here" rows="5"></textarea>
           </div>
 
           <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
@@ -1152,7 +1152,7 @@
       <a class="" (click)="filterBasedOnTags(5,'Ask our expert coaches')">
         <div class="row mtb10pxi">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
               Ask our expert coaches
             </h3>
           </div>
@@ -1185,7 +1185,7 @@
         <a class=""  (click)="onChange(1)">
           <div class="row mb5px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Threads I’m following
               </h3>
             </div>
@@ -1201,7 +1201,7 @@
         <a class=""  (click)="onChange(2)">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 My threads
               </h3>
             </div>
@@ -1217,7 +1217,7 @@
         <a class=""  (click)="onChange(3)">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Reflections
               </h3>
             </div>
@@ -1233,7 +1233,7 @@
         <a class="" (click)="getAllRecords()">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 All threads
               </h3>
             </div>
