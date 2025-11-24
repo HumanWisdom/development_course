@@ -102,7 +102,7 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
     this.location.back()
   }
 
-  youtube(link: string, RowID: number) {
+  youtube(link: string, RowID: number, title?: string) {
     this.service.clickEvents(RowID).subscribe({
       next : () => console.log('youtube event logged'),
       error: (e) => console.error('youtube event failed', e)
@@ -114,9 +114,9 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
       // this.router.navigate([`${prog}/subscription/start-your-free-trial`]);
       this.showModal = true;
     } else if (RowID <= 1) {
-      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`]);
+      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`], { state: { title } });
     } else {
-      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=vncbxdfchgvxd`]);
+      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=vncbxdfchgvxd`], { state: { title } });
     }
   }
 

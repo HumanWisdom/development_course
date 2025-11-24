@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../services/navigation.service';
+import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'HumanWisdom-youtube-content',
   templateUrl: './youtube-content.component.html',
@@ -11,6 +13,8 @@ import { NavigationService } from '../../services/navigation.service';
 export class YoutubeContentComponent implements OnInit {
   public videoLink: any;
   public linkcode: any;
+  public title: string = '';
+  public isAdults: boolean = true;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
@@ -55,6 +59,12 @@ export class YoutubeContentComponent implements OnInit {
     localStorage.setItem('program-guide-class',null)
     this.bg='dark_blue_w1';
     }
+
+    if (window.history.state && window.history.state.title) {
+      this.title = window.history.state.title;
+    }
+
+    this.isAdults = SharedService.ProgramId == ProgramType.Adults;
   }
 
   ngOnInit()
