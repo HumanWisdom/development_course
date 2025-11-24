@@ -43,6 +43,9 @@ export class SearchPopularItemsPage implements OnInit {
   enableAudioMedViewMore: boolean = false;
   isSubscriber = false;
   storyFreeMap: { [key: number]: boolean } = {};
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
 
 
   searchDataDup: any;
@@ -216,6 +219,11 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   viewStory(item) {
+    const locked = !this.isSubscriber && (item?.isFree === '0');
+    if (locked) {
+      this.showModal = true;
+      return;
+    }
     const id = Number(item['ScenarioID']);
     if (!isNaN(id)) {
       this.onboardingService.clickStory(id).subscribe({ next: () => {}, error: () => {} });
@@ -441,35 +449,32 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   audioevent(data) {
-    let sub: any = localStorage.getItem("Subscriber")
-    if (sub == 0 && data['RowID'] >= 4) {
-      this.router.navigate([SharedService.getprogramName()+  '/subscription/start-your-free-trial']);
+    const locked = !this.isSubscriber && (data?.isFree === '0' || data['RowID'] >= 4);
+    if (locked) {
+      this.showModal = true;
+      return;
+    }
+    let url = (data['AudioUrl'] || '').replaceAll(':', '_');
+    url = encodeURIComponent(url.replaceAll('/', '~'));
+    let title = encodeURIComponent((data['Title'] || '').replaceAll(' ', '-'));
+    const prgType = SharedService.ProgramId;
+    if (prgType == 9) {
+      this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio']);
     } else {
-      let url = data['AudioUrl'].replaceAll(':', '_');
-       url = encodeURIComponent(url.replaceAll('/', '~'));
-      let title = encodeURIComponent(data['Title'].replaceAll(' ', '-'));
-      const prgType=SharedService.ProgramId;
-      // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-      if(prgType == 9){
-        this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
-      }else{
-        this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
-      }
+      this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio']);
     }
   }
 
   podcastevent(data: any) {
+    const locked = !this.isSubscriber && (data?.isFree === '0');
+    if (locked) {
+      this.showModal = true;
+      return;
+    }
     this.commonService.clickPodcast(data.PodcastID).subscribe({
       next: () => {},
       error: () => {}
     });
-
-    const sub = localStorage.getItem('Subscriber');
-    if (sub === '0' && data.PodcastID > 3) {
-      this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
-      return;
-    }
-
     let media = (data.MediaUrl || '').toString().trim();
     media = media.replace(/`/g, '');
     if (media.includes('https://d1tenzemoxuh75.cloudfront.net/')) {
@@ -479,7 +484,6 @@ export class SearchPopularItemsPage implements OnInit {
     const route = this.isAdults
       ? ['adults', 'audiopage', path, data.PodcastID, 'T', data.Title]
       : ['teenagers', 'audiopage', path, data.PodcastID, 'T', data.Title];
-
     this.router.navigate(route);
   }
 
@@ -488,46 +492,40 @@ export class SearchPopularItemsPage implements OnInit {
     return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`;
   }
 
-  youtube(link, RowID) {
-    this.commonService.clickEvents(RowID).subscribe({
+  youtube(item: any) {
+    const locked = !this.isSubscriber && (item?.isFree === '0');
+    if (locked) {
+      this.showModal = true;
+      return;
+    }
+    this.commonService.clickEvents(item?.RowID).subscribe({
       next: () => {},
       error: () => {}
     });
-    let sub: any = localStorage.getItem("Subscriber")
-    if(RowID>=3 && sub==0)
-    this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
-    else if (RowID<=2)
-      this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=rdtfghjhfdg"])
-    else
-       this.router.navigate([SharedService.getprogramName()+ '/curated/youtubelink', link+"=vncbxdfchgvxd"])
+    if (item?.RowID <= 2) {
+      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=rdtfghjhfdg']);
+    } else {
+      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=vncbxdfchgvxd']);
+    }
   }
 
  
   wisdoshortsevent(val, video, title) {
-    // localStorage.setItem('wisdomvideotitle', title);
-    let loggedin = localStorage.getItem("isloggedin")
-    let sub: any = localStorage.getItem("Subscriber")
-    let id = video.split("/")[3].split(".")[1]
-    this.commonService.clickShorts(+id).subscribe();
-    this.commonService.CheckShortsIsFree(id).subscribe(res => {
-      if (res === true) {
-        if(val['IsVoices'] === '1') {
-          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
-        }else {
-          this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title])
-        }
-      } else {
-        if (loggedin && loggedin === 'T' && sub && sub === '1') {
-          if(val['IsVoices'] === '1') {
-            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T', title], {queryParams:{pref: 'voices'}})
-          }else {
-            this.router.navigate([video.replace('adults',SharedService.getprogramName()), 'T',title])
-          }
-        } else {
-          this.router.navigate([SharedService.getprogramName()+ '/subscription/start-your-free-trial']);
-        }
-      }
-    })
+    const locked = !this.isSubscriber && (val?.isFree === '0');
+    if (locked) {
+      this.showModal = true;
+      return;
+    }
+    const idPart = (video || '').split('/')[3] || '';
+    const id = Number(idPart.split('.')[1]);
+    if (!isNaN(id)) {
+      this.commonService.clickShorts(id).subscribe({ next: () => {}, error: () => {} });
+    }
+    if (val['IsVoices'] === '1') {
+      this.router.navigate([video.replace('adults', SharedService.getprogramName()), 'T', title], { queryParams: { pref: 'voices' } });
+    } else {
+      this.router.navigate([video.replace('adults', SharedService.getprogramName()), 'T', title]);
+    }
   }
 
   like(item, index) {
@@ -643,6 +641,13 @@ export class SearchPopularItemsPage implements OnInit {
 
   routeToFeelBetterNow(url) {
     this.router.navigate([SharedService.getUrlfromFeatureName(url)]);
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 
 
