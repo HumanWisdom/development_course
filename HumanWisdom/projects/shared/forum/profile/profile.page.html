@@ -110,7 +110,7 @@
                       </div>
 
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright"  *ngIf="item.UserName != userName" (click)="follow(item,index)">
-                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='0'">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p " *ngIf="item.Followed=='0'" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                           <i class="fa fa-plus mr3px"></i>
                           <span class="underline">
                             Follow
@@ -173,7 +173,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
@@ -184,33 +184,54 @@
                             {{item.PostLikeCount}}
                           </button>
                         </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isAdults">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_000000">
+                            <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                              class="img-responsive mr5px">
+                            <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                              class="img-responsive mr5px">
+                            {{item.PostLikeCount}}
+                          </button>
+                        </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button" [disabled]="DisabledComment(item)"
-                            class="btn fs_12px fw_400 lh_140p fc_e58d82" (click)="reportpost(item,'comment')">
+                            class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="reportpost(item,'comment')">
                             <img
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
-                              class="img-responsive mr5px">
+                              class="img-responsive mr5px" *ngIf="!isAdults">
+                              <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment.svg"
+                              class="img-responsive mr5px" *ngIf="isAdults">
+                            
                             {{item.ReplyCount}}
                           </button>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                          <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                          <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                             <img
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
-                              class="img-responsive mr5px">
+                              class="img-responsive mr5px" *ngIf="!isAdults">
+                               <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_v4_share.svg"
+                              class="img-responsive mr5px" *ngIf="isAdults">
                             Share
                           </button>
                         </div>
                       </div>
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                        <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82"
+                        <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
                           (click)="reportpost(item,'report')">
                           <img
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
-                            class="img-responsive mr5px">
+                            class="img-responsive mr5px" *ngIf="!isAdults">
+                             <img
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report.svg"
+                            class="img-responsive mr5px" *ngIf="isAdults">
                           Report
                         </button>
                       </div>
