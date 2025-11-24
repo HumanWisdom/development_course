@@ -20,3 +20,24 @@ li.is-search:hover,
 a{
   padding: 0;
 }
+.msrow a {
+  position: relative;
+}
+.session_img_play {
+    right: 12px !important;
+}
+.ws-read-icon {
+    bottom: 40px !important;
+} 
+.ls-read-icon {
+  position: absolute;
+  right: 19px;
+  bottom: 145px;
+  z-index: 2;
+}
+.ls-lock-icon {
+  position: absolute;
+  right: 19px;
+  bottom: 57px;
+  z-index: 2;
+}

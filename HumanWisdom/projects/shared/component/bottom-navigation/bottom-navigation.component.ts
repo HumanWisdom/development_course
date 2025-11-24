@@ -5,6 +5,9 @@ import { SharedService, UrlConstant } from '../../services/shared.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { Subscription } from 'rxjs';
 import { LogEventService } from '../../services/log-event.service';
+import { OwlStore } from '../../../shared/stores/owl.store';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-bottom-navigation',
@@ -32,9 +35,35 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   disableClick = false;
   isAdults = false;
   isDataRecieved = false;
+  
+    // Observable for owl component state management
+    owlEnable$: Observable<boolean>;
   constructor(private router: Router,private onboardingService: OnboardingService, 
-    private logeventservice: LogEventService
+    private logeventservice: LogEventService,
+        private owlStore: OwlStore,
+    
   ) {
+// IMPORTANT: Reset owl state to clear any previous localStorage data
+    // Comment this line back after first successful run
+    this.owlStore.reset();
+    
+    // Initialize owl state from store (after reset)
+    this.owlEnable$ = this.owlStore.shouldShow$;
+    
+    // Debug: Check owl state
+    console.log('Owl Store State (after reset):', {
+      isEnabled: this.owlStore.getIsEnabled(),
+      isInitialized: this.owlStore.getIsInitialized(),
+      shouldShow: this.owlStore.getShouldShow()
+    });
+    
+    // Debug: Subscribe to owl state changes
+    this.owlEnable$.subscribe(shouldShow => {
+      console.log('Owl shouldShow$ emitted:', shouldShow);
+    });
+
+
+
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -183,6 +212,19 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     ngOnDestroy(): void {
       this.toursubscription?.unsubscribe();
     }
+
+    
+ openChat(){
+  this.router.navigate(['/adults/chat-bot']);
+ }
+
+ /**
+  * Reset owl animation state - useful for testing or re-showing the animation
+  * Call this method if you want to show the owl animation again
+  */
+ resetOwlAnimation() {
+   this.owlStore.reset();
+ }
 
 
   }

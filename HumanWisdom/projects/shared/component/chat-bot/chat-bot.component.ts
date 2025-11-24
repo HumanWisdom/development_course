@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { ChatbotService } from '../../services/chatbot.service';
 import { ChatStore, ChatMessage } from '../../stores/chat.store';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-chat-bot',
@@ -159,6 +160,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
+    // Don't load history for guest users
+    if (this.isGuestUser()) {
+      console.log('Guest user cannot load history.');
+      return;
+    }
+
     this.isLoadingHistory = true;
     this.errorMessage = '';
 
@@ -241,9 +248,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     const styledHtml = html.replace(/<a\s+([^>]*?)>/gi, (match, attributes) => {
       // Check if style attribute already exists
       if (attributes.includes('style=')) {
-        return match.replace(/style="([^"]*)"/, 'style="$1; color: #1976d2 !important; text-decoration: underline !important;"');
+        return match.replace(/style="([^"]*)"/, 'style="$1; font-weight:500; text-decoration: underline !important;"');
       } else {
-        return `<a ${attributes} style="color: #1976d2 !important; text-decoration: underline !important; cursor: pointer !important;">`;
+        return `<a ${attributes} style="font-weight:500; text-decoration: underline !important; cursor: pointer !important;">`;
       }
     });
     
@@ -298,5 +305,15 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     return true;
+  }
+
+  /**
+   * Check if the current user is a guest user (userId = 563)
+   * Guest users should not see old conversation history
+   */
+  isGuestUser(): boolean {
+    const currentUserId = SharedService.getUserId();
+    const GUEST_USER_ID = 563;
+    return currentUserId === GUEST_USER_ID;
   }
 }

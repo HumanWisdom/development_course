@@ -167,35 +167,43 @@
                             <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                                 <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                               </div> -->
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
+                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
                               *ngIf="!isSubscriber && item.RowID<=7">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
+                              <i class="fa fa-angle-right  fs_20px"
+                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
                             <img
                             *ngIf="item?.isRead === '1'"
                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                             class="img-responsive ws-read-icon"
                           />
-                              </div>
+                              </div> -->
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+<!-- STATUS COLUMN -->
+<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber && item.RowID >7">
-                              <!-- lock -->
-                              <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" />
-                              <!-- /lock -->
-                            </div>
+  <!-- TICK for subscriber OR non-subscriber -->
+  <img *ngIf="item?.isRead === '1'" 
+    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+    class="img-responsive ws-read-icon"/>
+
+  <!-- NON-SUBSCRIBER BLOCK -->
+  <ng-container *ngIf="!isSubscriber">
+
+    <!-- EMPTY DIV only when NOT read & isFree = 1 -->
+    <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
+
+    <!-- LOCK only when NOT read & isFree = 0 -->
+    <img *ngIf="!isSubscriber && item.isFree === '0'"
+      [src]="isAdults 
+      ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+      : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+      class="img-responsive ws-lock-icon"/>
+
+  </ng-container>
+
+</div>
+
+
                           </div>
                         </div>
                       </a>
@@ -203,9 +211,9 @@
                       <ng-container *ngIf="isAdults; else shortViewMoreDefault">
                         <div (click)="enableViewMore('short','more')"
                           *ngIf="!enableShortViewMore  && searchDataDup.WisdomShortsRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -213,7 +221,7 @@
                       <ng-template #shortViewMoreDefault>
                         <a (click)="enableViewMore('short','more')"
                           *ngIf="!enableShortViewMore  && searchDataDup.WisdomShortsRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -229,9 +237,9 @@
                       <ng-container *ngIf="isAdults; else shortViewLessDefault">
                         <div (click)="enableViewMore('short','less')"
                           *ngIf="enableShortViewMore  && searchDataDup.WisdomShortsRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -239,7 +247,7 @@
                       <ng-template #shortViewLessDefault>
                         <a (click)="enableViewMore('short','less')"
                           *ngIf="enableShortViewMore  && searchDataDup.WisdomShortsRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -277,6 +285,11 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
                               <img [src]="getPodcastImage(item.PodcastID)" alt="" class="session_imgnew img-responsive img_podcast_01">
+                              <img class="session_img_play" [src]="
+                                isAdults
+                                  ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
+                                  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'
+                              " alt="Overlay icon" />
                             </div>
 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0">
@@ -290,22 +303,30 @@
                               </h4>
                             </div>
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber || item.PodcastID <= 3">
-                              <!-- <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                               <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+                              <!-- STATUS COLUMN -->
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscriber && item.PodcastID > 3">
-                              <!-- lock -->
-                              <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" />
-                              <!-- /lock -->
-                            </div>
+                                <!-- TICK for subscriber OR non-subscriber -->
+                                <img *ngIf="item?.isRead === '1'" 
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  class="img-responsive ws-read-icon"/>
+
+                                <!-- NON-SUBSCRIBER BLOCK -->
+                                <ng-container *ngIf="!isSubscriber">
+
+                                  <!-- EMPTY DIV only when NOT read & isFree = 1 -->
+                                  <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
+
+                                  <!-- LOCK only when NOT read & isFree = 0 -->
+                                  <img *ngIf="!isSubscriber && item.isFree === '0'"
+                                    [src]="isAdults 
+                                    ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                    : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    class="img-responsive ws-lock-icon"/>
+
+                                </ng-container>
+
+                              </div>
                           </div>
                         </div>
                       </a>
@@ -313,9 +334,9 @@
                       <ng-container *ngIf="isAdults; else podcastViewMoreDefault">
                         <div (click)="enableViewMore('podcast','more')"
                           *ngIf="!enablePodcastViewMore && searchDataDup.PodCastRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -323,7 +344,7 @@
                       <ng-template #podcastViewMoreDefault>
                         <a (click)="enableViewMore('podcast','more')"
                           *ngIf="!enablePodcastViewMore && searchDataDup.PodCastRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -339,9 +360,9 @@
                       <ng-container *ngIf="isAdults; else podcastViewLessDefault">
                         <div (click)="enableViewMore('podcast','less')"
                           *ngIf="enablePodcastViewMore && searchData.PodCastRes.length > 2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -349,7 +370,7 @@
                       <ng-template #podcastViewLessDefault>
                         <a (click)="enableViewMore('podcast','less')"
                           *ngIf="enablePodcastViewMore && searchData.PodCastRes.length > 2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -386,9 +407,11 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
                               <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
-                              <!-- <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
-                                    alt="" class="p0 session_img_play"> -->
+                              <img class="session_img_play" [src]="
+                                isAdults
+                                  ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
+                                  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'
+                              " alt="Overlay icon" />
                             </div>
 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0">
@@ -402,40 +425,30 @@
                               </h4>
                             </div>
 
+                              <!-- STATUS COLUMN -->
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
+                                <!-- TICK for subscriber OR non-subscriber -->
+                                <img *ngIf="item?.isRead === '1'" 
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  class="img-responsive ws-read-icon"/>
 
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                                <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                              </div> -->
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber && item.RowID <= 3">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+                                <!-- NON-SUBSCRIBER BLOCK -->
+                                <ng-container *ngIf="!isSubscriber">
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+                                  <!-- EMPTY DIV only when NOT read & isFree = 1 -->
+                                  <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber && item.RowID > 3">
-                              <!-- lock -->
-                              <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" />
-                              <!-- /lock -->
-                            </div>
+                                  <!-- LOCK only when NOT read & isFree = 0 -->
+                                  <img *ngIf="!isSubscriber && item.isFree === '0'"
+                                    [src]="isAdults 
+                                    ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                    : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    class="img-responsive ws-lock-icon"/>
+
+                                </ng-container>
+
+                              </div>
                           </div>
                         </div>
                       </a>
@@ -443,9 +456,9 @@
                       <ng-container *ngIf="isAdults; else audioMedViewMoreDefault">
                         <div (click)="enableViewMore('audiomed','more')"
                           *ngIf="!enableAudioMedViewMore  && searchDataDup.AudioMeditationRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -453,7 +466,7 @@
                       <ng-template #audioMedViewMoreDefault>
                         <a (click)="enableViewMore('audiomed','more')"
                           *ngIf="!enableAudioMedViewMore  && searchDataDup.AudioMeditationRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -469,9 +482,9 @@
                       <ng-container *ngIf="isAdults; else audioMedViewLessDefault">
                         <div (click)="enableViewMore('audiomed','less')"
                           *ngIf="enableAudioMedViewMore  && searchDataDup.AudioMeditationRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -479,7 +492,7 @@
                       <ng-template #audioMedViewLessDefault>
                         <a (click)="enableViewMore('audiomed','less')"
                           *ngIf="enableAudioMedViewMore  && searchDataDup.AudioMeditationRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -519,27 +532,41 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"
                           *ngFor="let item of searchData.WisdomStoriesRes">
                           <!-- <a href="https://humanwisdom.me/wisdom-stories/view-stories?sId={{item.ScenarioID}}"> -->
-                          <a (click)="view(item)">
+                          <a (click)="viewStory(item)">
                             <div class="row box_v3_04a">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                                 <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 prelative">
                                     <img [src]="item.ImgUrl" class="img-responsive">
                                   </div>
                                 </div>
 
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="mt10px mb10px fw_500 fs_12px lh_130p "
-                                      [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                      {{item.Title}}
-                                    </h4>
+                                      <h4 class="mt10px mb10px fw_500 fs_12px lh_130p"
+                                        [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                        {{item.Title}}
+                                      </h4>
                                   </div>
                                 </div>
 
                               </div>
                             </div>
+                              <img 
+                                *ngIf="item?.isRead === '1'" 
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
+                                class="ls-read-icon" 
+                              />
+
+                              <!-- LOCK: only for non-subscriber AND isFree = 0 AND not read -->
+                              <img 
+                                *ngIf="!isSubscriber && item.isFree === '0'"
+                                [src]="isAdults 
+                                  ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                  : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                class="ls-lock-icon" 
+                              />
                           </a>
                         </div>
 
@@ -547,8 +574,8 @@
                           <div (click)="enableViewMore('story','more')"
                             *ngIf="!enableStoryViewMore && searchDataDup.WisdomStoriesRes.length>2">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="mt30px">
-                                <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <div  class="mt20px">
+                                <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                               </div>
                             </div>
                           </div>
@@ -556,8 +583,8 @@
                         <ng-template #storyViewMoreDefault>
                           <a (click)="enableViewMore('story','more')"
                             *ngIf="!enableStoryViewMore && searchDataDup.WisdomStoriesRes.length>2">
-                            <div class="mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="mt20px">
                                 <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                   [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                   <img
@@ -573,9 +600,9 @@
                         <ng-container *ngIf="isAdults; else storyViewLessDefault">
                           <div (click)="enableViewMore('story','less')"
                             *ngIf="enableStoryViewMore  && searchDataDup.WisdomStoriesRes.length>2">
-                            <div class="mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="mt20px">
+                                <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                               </div>
                             </div>
                           </div>
@@ -583,8 +610,8 @@
                         <ng-template #storyViewLessDefault>
                           <a (click)="enableViewMore('story','less')"
                             *ngIf="enableStoryViewMore  && searchDataDup.WisdomStoriesRes.length>2">
-                            <div class="mt30px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <div class="mt20px">
                                 <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                   [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                   <img
@@ -614,7 +641,7 @@
                       </div>
                     </div>
 
-                    <div class="div_blogs" *ngIf="searchData && searchData.BlogRes.length>0">
+                    <div class="row div_blogs" *ngIf="searchData && searchData.BlogRes.length>0">
                       <!-- article 01
     <a *ngFor="let item of searchData.BlogRes" (click)="viewblog(item)"> href="{{item['url']}}"   -->
                       <a *ngFor="let item of searchData.BlogRes; let i=index" (click)="view(item)">
@@ -628,11 +655,18 @@
                             </div>
 
                             <div class="row mt15px">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="mtb0px fs_18px fw_600 lh_150p "
-                                  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                  {{item['Title']}}
-                                </h4>
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flexai_baseline">
+                                <div class="col-md-10 col-sm-10 col-xs-10 p0">
+                                  <h4 class="mtb0px fs_18px fw_600 lh_150p ellipsis"
+                                    [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                    {{item['Title']}}
+                                  </h4>
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2 p0 tright center_flex">
+                                  <img *ngIf="item?.isRead === '1'"
+                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                    class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" />
+                                </div>
                               </div>
                             </div>
 
@@ -646,11 +680,20 @@
                             </div>
 
                             <div class="row">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <h4 class="mtb0px fs_12px fw_400 lh_150p "
-                                  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <h4 class="p0 col-md-11 col-sm-11 col-xs-11 mtb0px fs_12px fw_400 lh_150p"
+                                  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'">
                                   {{timeSince(item['CreatedDate'])}}
                                 </h4>
+                                <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 tright center_flex">
+                                  <div class="div_like_cnt1">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/ls_like_filled_b.svg"
+                                      class="img-responsive" />
+                                    <span class="mtb0px fs_15px fw_600 lh_150p ml5px mr5px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                      {{ item?.LikeCnt }}
+                                    </span>
+                                  </div>
+                                </div> -->
                               </div>
                             </div>
 
@@ -662,9 +705,9 @@
                       <ng-container *ngIf="isAdults; else blogViewMoreDefault">
                         <div (click)="enableViewMore('blog','more')"
                           *ngIf="!enableBlogViewMore && searchDataDup.BlogRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -672,7 +715,7 @@
                       <ng-template #blogViewMoreDefault>
                         <a (click)="enableViewMore('blog','more')"
                           *ngIf="!enableBlogViewMore && searchDataDup.BlogRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -688,9 +731,9 @@
                       <ng-container *ngIf="isAdults; else blogViewLessDefault">
                         <div (click)="enableViewMore('blog','less')"
                           *ngIf="enableBlogViewMore && searchDataDup.BlogRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -698,7 +741,7 @@
                       <ng-template #blogViewLessDefault>
                         <a (click)="enableViewMore('blog','less')"
                           *ngIf="enableBlogViewMore && searchDataDup.BlogRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -772,9 +815,9 @@
                       <ng-container *ngIf="isAdults; else moduleViewMoreDefault">
                         <div (click)="enableViewMore('module','more')"
                           *ngIf="!enableModuleViewMore && searchDataDup.ModuleRes.length > 2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View more <i class="fa fa-angle-down ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -782,7 +825,7 @@
                       <ng-template #moduleViewMoreDefault>
                         <a (click)="enableViewMore('module','more')"
                           *ngIf="!enableModuleViewMore && searchDataDup.ModuleRes.length > 2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -798,9 +841,9 @@
                       <ng-container *ngIf="isAdults; else moduleViewLessDefault">
                         <div (click)="enableViewMore('module','less')"
                           *ngIf="enableModuleViewMore && searchDataDup.ModuleRes.length > 2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important;">View less <i class="fa fa-angle-up ms-1" aria-hidden="true"></i></a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -808,7 +851,7 @@
                       <ng-template #moduleViewLessDefault>
                         <a (click)="enableViewMore('module','less')"
                           *ngIf="enableModuleViewMore && searchDataDup.ModuleRes.length > 2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -865,38 +908,30 @@
                               </h4>
                             </div>
 
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-            <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-          </div> -->
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber && item.RowID <= 3">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+                              <!-- STATUS COLUMN -->
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                              <!-- <i class="fa fa-angle-right  fs_20px"
-                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                                <img
-                            *ngIf="item?.isRead === '1'"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon"
-                          />
-                            </div>
+                                <!-- TICK for subscriber OR non-subscriber -->
+                                <img *ngIf="item?.isRead === '1'" 
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  class="img-responsive ws-read-icon"/>
 
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                              *ngIf="!isSubscriber && item.RowID > 3">
-                              <!-- lock -->
-                              <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" />
-                              <!-- /lock -->
-                            </div>
+                                <!-- NON-SUBSCRIBER BLOCK -->
+                                <ng-container *ngIf="!isSubscriber">
+
+                                  <!-- EMPTY DIV only when NOT read & isFree = 1 -->
+                                  <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
+
+                                  <!-- LOCK only when NOT read & isFree = 0 -->
+                                  <img *ngIf="!isSubscriber && item.isFree === '0'"
+                                    [src]="isAdults 
+                                    ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                    : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    class="img-responsive ws-lock-icon"/>
+
+                                </ng-container>
+
+                              </div>
                           </div>
                         </div>
                       </a>
@@ -904,9 +939,9 @@
                       <ng-container *ngIf="isAdults; else eventsViewMoreDefault">
                         <div (click)="enableViewMore('events','more')"
                           *ngIf="!enableEventsViewMore  && searchDataDup.EventsRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important;">View more</a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -914,7 +949,7 @@
                       <ng-template #eventsViewMoreDefault>
                         <a (click)="enableViewMore('events','more')"
                           *ngIf="!enableEventsViewMore  && searchDataDup.EventsRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -930,9 +965,9 @@
                       <ng-container *ngIf="isAdults; else eventsViewLessDefault">
                         <div (click)="enableViewMore('events','less')"
                           *ngIf="enableEventsViewMore  && searchDataDup.EventsRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important;">View less</a>
+                              <a class="btn btn-link view-more-btn" style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </div>
@@ -940,7 +975,7 @@
                       <ng-template #eventsViewLessDefault>
                         <a (click)="enableViewMore('events','less')"
                           *ngIf="enableEventsViewMore  && searchDataDup.EventsRes.length>2">
-                          <div class="mt30px">
+                          <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">

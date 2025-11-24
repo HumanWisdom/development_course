@@ -18766,6 +18766,11 @@ ngx-circular-player svg
   filter: unset;
   opacity: 1;
 }
+.btn_daily:focus{
+  border: none;
+  background: rgb(255 255 255 / 20%);
+  
+}
 
 .circle-container .btn:hover h6,
 .circle-container .btn:focus h6 
@@ -22289,7 +22294,7 @@ ul.dh_ul li:last-child
   border: 0;
   margin: 0;
   height: 50px;
-  background: #0C2B5F;
+  background: #0C2B5F !important;
   box-shadow: 1px 1px 2px #00000040;
   border-radius: 12px;
   width: 101px;
@@ -29032,10 +29037,10 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px #00000040;
-  background: rgb(255 255 255 / 20%);
+  background: #fff3 !important;
   border-radius: 100px;
   text-align: center;
-  color: #fff;
+  color: #fff !important;
   line-height: 140%;
   font-size: 12px;
   font-weight: 500;
@@ -35519,7 +35524,7 @@ color: white !important;
 {
   box-shadow: unset;
   position: fixed;
-  bottom: 70px;
+  bottom: 0px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -37041,10 +37046,10 @@ section > .row
   margin-bottom: 0 !important;
 }
 
-a.fc_e58d82:focus, 
-a.fc_e58d82:hover
+a.fc_ffffff:focus, 
+a.fc_ffffff:hover
 {
-  color: #e58d82;
+  color: #ffffff;
 }
 
 #mdp_carousel_intro .btn_next_v3:hover,
@@ -37852,6 +37857,22 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   object-fit: cover;
   border-radius: 46px;
   padding: 20px;
+}
+.btn_login_signup_new {
+   border: 0;
+   margin: 0;
+   height: 50px;
+   /* // background:transparent;
+//   background: #FFFFFF80;; */
+/* background: rgba(255,255,255,.1019607843); */
+background: #ffffff1a !important;
+   
+   box-shadow: 1px 1px 2px #00000040;
+   border-radius: 12px;
+   width: 101px;
+   height: 52px;
+  
+
 }
 
 .mdp_add_to_journal_new {

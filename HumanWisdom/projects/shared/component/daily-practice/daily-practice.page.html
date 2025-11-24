@@ -77,7 +77,9 @@
                     <div [@slideAnimation]="direction" *ngIf="currentSection === 0">
                       <div class="row mb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/inspiration.svg" alt="" class="img-responsive" *ngIf="isAdults">
+
                         </div>
                       </div>
                       <div class="row mb5px">
@@ -147,7 +149,9 @@
                     <div [@slideAnimation]="direction" *ngIf="currentSection === 1">
                       <div class="row mtb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_video.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/breathing.svg" alt="" class="img-responsive" *ngIf="isAdults">
+
                         </div>
 
                       </div>
@@ -194,7 +198,9 @@
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_journal.svg"
-                          alt="" class="img-responsive">
+                          alt="" class="img-responsive" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/question.svg"
+                          alt="" class="img-responsive" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -255,7 +261,9 @@
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mdp_quotation_v3.svg"
-                          alt="" class="img-responsive" style="width:45px;height:45px;">
+                          alt="" class="img-responsive" *ngIf="!isAdults" >
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/quete_new.svg"
+                          alt="" class="img-responsive" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -271,7 +279,10 @@
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_quotation_a.svg"
-                          alt="" class="img-responsive" >
+                          alt="" class="img-responsive" *ngif="!isAdults" >
+                          <img
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/qutation.svg"
+                          alt="" class="img-responsive" *ngif="isAdults" >
                       </div>
                     </div>
 
@@ -305,7 +316,9 @@
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_audio.svg"
-                          alt="" class="img-responsive">
+                          alt="" class="img-responsive"*ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg"
+                          alt="" class="img-responsive"*ngIf="isAdults">
                       </div>
                     </div>
 
@@ -366,7 +379,9 @@
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_exercise.svg"
-                          alt="" class="img-responsive">
+                          alt="" class="img-responsive" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/challenge.svg"
+                          alt="" class="img-responsive" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -408,7 +423,7 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
 <!-- /footer -->
 
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { SharedService } from './shared.service';
 import { ProgramType } from '../models/program-model';
@@ -192,12 +192,53 @@ export class ChatbotService {
 
   /**
    * Load conversation history from the API
+   * Filters by current user ID to ensure only the authenticated user's history is returned
+   * Guest users (userId = 563) should not see old conversation history
    */
   loadHistory(): Observable<HistoryResponse> {
+    const currentUserId = SharedService.getUserId();
+    const GUEST_USER_ID = 563;
+    
+    // Don't load history for guest users
+    if (currentUserId === GUEST_USER_ID) {
+      console.log('Guest user detected. Skipping history load.');
+      return new Observable<HistoryResponse>(observer => {
+        observer.next({
+          status: 'success',
+          history: [],
+          user_id: currentUserId.toString()
+        });
+        observer.complete();
+      });
+    }
+    
+    // Add user_id as query parameter if available
+    let params = new HttpParams();
+    if (currentUserId && currentUserId > 0) {
+      params = params.set('user_id', currentUserId.toString());
+    }
+
     return this.http.get<HistoryResponse>(this.HISTORY_URL, {
       headers: this.getAuthHeaders(),
+      params: params,
       withCredentials: true
-    });
+    }).pipe(
+      map((response: HistoryResponse) => {
+        // Additional frontend filtering: ensure response user_id matches current user
+        if (currentUserId && currentUserId > 0 && response.user_id) {
+          const responseUserId = parseInt(response.user_id, 10);
+          if (responseUserId !== currentUserId) {
+            // If user_id doesn't match, return empty history
+            console.warn('History response user_id does not match current user. Filtering out history.');
+            return {
+              ...response,
+              history: []
+            };
+          }
+        }
+        return response;
+      })
+    );
   }
 
   /**

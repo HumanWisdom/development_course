@@ -26517,7 +26517,7 @@ h1
    width: 100%; 
   overflow:visible;
    border-radius: 100px; 
-  background: #ED7D6F !important;
+  background: rgb(237 125 111 / 50%) !important;
 
   font-size: 15px;
   position: static;
@@ -29110,7 +29110,7 @@ video::-webkit-media-controls-panel
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: rgb(255 255 255 / 20%);
+  background: #fff3 !important;
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
@@ -34488,7 +34488,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #ED7D6F;
+  color: #ffffff;
 }
 
 .btn_fpfy
@@ -34501,7 +34501,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .btn_fpfy_mh
 {
-  background: #803358 !important;
+  background: #D7586B !important;
 }
 
 .btn_fpfy_rel
@@ -35702,9 +35702,9 @@ color: black !important;
 
 .mdp_oli_tray 
 {
-  box-shadow: unset;
+  box-shadow: 0 -2px 2px #00000010;
   position: fixed;
-  bottom: 69px;
+  bottom: 0px;
   right: 0;
   left: 0;
   /* padding: 20px ;20px
@@ -36033,14 +36033,14 @@ color: black !important;
 
 .ic_tray_ext 
 {
-  box-shadow: unset;
+  box-shadow: 0 -2px 2px #00000010;
   position: fixed;
   bottom: 0 !important;
   right: 0;
   left: 0;
   margin: 0 auto;
   z-index: 999;
-   background: #1e1544; 
+   background: #FFACA2; 
   padding: 30px 0 20px 0;
 }
 
@@ -36694,6 +36694,9 @@ li ol > li:before {
   margin-right: 0;
 }
 
+.btn_daily:focus{
+  border: none;
+}
 .btn_podcast .btn.active ,
 .btn_podcast .btn:focus
 {
@@ -37269,10 +37272,10 @@ section > .row
   margin-bottom: 0 !important;
 }
 
-a.fc_e58d82:focus, 
-a.fc_e58d82:hover 
+a.fc_000000:focus, 
+a.fc_000000:hover 
 {
-  color: #ED7D6F !important;
+  color: #000000 !important;
 }
 
 a.fc_ed7d6f:focus, 
@@ -38211,6 +38214,23 @@ background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%);
     align-content: center;
 }
 
+.btn_login_signup_new {
+   border: 0;
+   margin: 0;
+   height: 50px;
+   /* // background:transparent;
+//   background: #FFFFFF80;; */
+
+/* background: rgba(255,255,255,0.5); */
+
+background: #ffffff80 !important;
+   box-shadow: 1px 1px 2px #00000040;
+   border-radius: 12px;
+   width: 101px;
+   height: 52px;
+  
+
+}
 .td_points_box
 {
   border-radius: 12px;

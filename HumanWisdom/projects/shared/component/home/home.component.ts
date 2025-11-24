@@ -303,10 +303,11 @@ navigationChange = new EventEmitter<string>();
       const childSections: ContentSection[] = [];
       
       if (apiResponse.Modules2 && this.hasCards(apiResponse.Modules2)) {
-        const module2 = this.transformSection(apiResponse.Modules2, 'modules2');
+       /* const module2 = this.transformSection(apiResponse.Modules2, 'modules2');
         module2.isInlineSection = true;
         module2.isExpanded = true;
-        childSections.push(module2);
+        childSections.push(module2); */
+         sections.push(this.transformSection(apiResponse.Modules2, 'Modules2'));
       }
       
       if (apiResponse.Modules3 && this.hasCards(apiResponse.Modules3)) {
