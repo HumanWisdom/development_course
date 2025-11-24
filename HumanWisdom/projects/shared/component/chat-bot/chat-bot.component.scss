@@ -26,7 +26,7 @@
     cursor: pointer !important;
     
     &:hover {
-      color: #1565c0 !important;
+      color: #000000 !important;
       text-decoration: underline !important;
     }
     
@@ -325,7 +325,7 @@
     span {
       width: 6px;
       height: 6px;
-      background-color: #999999;
+      background-color: rgba(238, 161, 112, 1);
       border-radius: 50%;
       animation: typing 1.4s infinite ease-in-out;
 
@@ -537,7 +537,7 @@
     font-weight: normal !important;
     
     &:hover {
-      color: #1565c0 !important;
+      color: #000000 !important;
       text-decoration: underline !important;
     }
     
@@ -560,7 +560,7 @@
       cursor: pointer !important;
       
       &:hover {
-        color: #1565c0 !important;
+        color: #000000 !important;
         text-decoration: underline !important;
       }
     }
@@ -572,7 +572,7 @@
     cursor: pointer;
     
     &:hover {
-      color: #1565c0;
+      color: #000000;
     }
   }
   
