@@ -155,7 +155,7 @@ function performScroll(targetElement, offset) {
         if (!targetElement.hasAttribute('tabindex')) {
             targetElement.setAttribute('tabindex', '-1');
         }
-        targetElement.focus();
+        // targetElement.focus();
         
         // Verify element is in correct position (only adjust if significantly off, to avoid extra scrolling)
         const currentPosition = targetElement.getBoundingClientRect().top;
