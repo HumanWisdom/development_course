@@ -3,22 +3,69 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.reflection-hint-header {
+  position: relative;
+  z-index: 1010;
+}
+
+.reflection-hint-header.hint-open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px 18px 0 0;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.reflection-hint-header.hint-open .hint-back,
+.reflection-hint-header.hint-open .hint-progress {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.reflection-hint-header.hint-open .hint-trigger {
+  justify-content: flex-end;
+}
+
+.reflection-hint-popover {
+  position: absolute;
+  top: -131px;
+  right: 4px;
+  left: auto;
+  width: auto;
+  display: inline-flex;
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.reflection-hint-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 900;
+}
+
 .rhdm 
 {
   border-radius: 10px;
   background: #E58D82;
-  padding: 16px 20px;
-  font-size: 12px;
+  padding: 20px 24px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 140%;
   color: #FFF;
-  top: 80px;
-  margin: 0 20px;
-  position: absolute;
+  margin: 0;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0;
+  font-style: normal;
+  max-width: 360px;
+  pointer-events: auto;
 }
 
-#ex_modal .hm::before 
-{
+.reflection-hint-popover .hm::before {
   border-bottom: 9px solid rgba(0, 0, 0, 0.2);
   border-left: 9px solid rgba(0, 0, 0, 0);
   border-right: 9px solid rgba(0, 0, 0, 0);
@@ -27,11 +74,10 @@
   /* left: 86px; */
   position: absolute;
   top: -9px;
-  right: 5%;
+  right: 32px;
 }
 
-#ex_modal .hm::after 
-{
+.reflection-hint-popover .hm::after {
   border-bottom: 9px solid #E58D82;
   border-left: 9px solid rgba(0, 0, 0, 0);
   border-right: 9px solid rgba(0, 0, 0, 0);
@@ -40,5 +86,20 @@
   /* left: 86px; */
   position: absolute;
   top: -8px;
-  right: 5%;
+  right: 32px;
+}
+
+@media (max-width: 767px) {
+  .reflection-hint-popover {
+    top: 0;
+    right: 0;
+    transform: translateY(calc(100% + 12px));
+  }
+
+  .rhdm {
+    left: 0;
+    right: auto;
+    margin: 0 8px;
+    max-width: none;
+  }
 }

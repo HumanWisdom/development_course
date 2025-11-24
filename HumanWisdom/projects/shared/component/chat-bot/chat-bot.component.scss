@@ -21,17 +21,17 @@
   
   // Global anchor styles for the entire chat container
   a {
-    // color: #1976d2 !important;
+    color: inherit !important;
     text-decoration: underline !important;
     cursor: pointer !important;
     
     &:hover {
-      color: #000000 !important;
+      color: inherit !important;
       text-decoration: underline !important;
     }
     
     &:visited {
-      // color: #1976d2 !important;
+      color: inherit !important;
       text-decoration: underline !important;
     }
   }
@@ -113,8 +113,8 @@
 .load-history-container {
   display: flex;
   justify-content: center;
-  margin: 100px 20px 16px 20px;
-  padding-top: 20px;
+  margin: 120px 20px 16px 20px;
+  padding-top: 0;
   text-align: center;
   
   .load-history-link {
@@ -130,9 +130,15 @@
     transition: color 0.2s ease;
     cursor: pointer;
     pointer-events: auto;
+    color: #1f5bd6 !important;
     
     &:hover:not(.loading) {
+      color: #1f5bd6 !important;
       transform: none;
+    }
+
+    &:visited {
+      color: #1f5bd6 !important;
     }
     
     &.loading {
@@ -147,6 +153,8 @@
   background: #FFF7E6;
   height: auto;
   min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .chat-messages {
@@ -154,11 +162,8 @@
   flex-direction: column;
   gap: 8px;
   margin: 0 20px;
-  padding-top: 120px;
-  padding-bottom: 100px; // Space for input area
-  overflow-y: auto; // Enable vertical scrolling
-  max-height: calc(100vh - 100px); // Full height minus header
-  height: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px; // Space for input area
   scroll-behavior: smooth; // Smooth scrolling
   
   // Custom scrollbar styling (optional)
@@ -353,7 +358,6 @@
   left: 50%;
   transform: translateX(-50%);
   background: #FFF7E6;
-  // padding: 20px;
   z-index: 1001; // Same as header
   width: 375px;
   pointer-events: auto; // Enable clicks on input area
@@ -531,48 +535,34 @@
   .bot-message-content a,
   .message-content a,
   a {
-    // color: #1976d2 !important;
+    color: inherit !important;
     text-decoration: underline !important;
     cursor: pointer !important;
     font-weight: normal !important;
     
     &:hover {
-      color: #000000 !important;
+      color: inherit !important;
       text-decoration: underline !important;
     }
     
     &:visited {
-      // color: #1976d2 !important;
+      color: inherit !important;
       text-decoration: underline !important;
     }
     
     &:link {
-      // color: #1976d2 !important;
+      color: inherit !important;
       text-decoration: underline !important;
-    }
-  }
-  
-  // Additional specificity for innerHTML content
-  .bot-message-content {
-    a {
-      // color: #1976d2 !important;
-      text-decoration: underline !important;
-      cursor: pointer !important;
-      
-      &:hover {
-        color: #000000 !important;
-        text-decoration: underline !important;
-      }
     }
   }
   
   u {
-    // color: #1976d2;
+    color: inherit;
     text-decoration: underline;
     cursor: pointer;
     
     &:hover {
-      color: #000000;
+      color: inherit;
     }
   }
   
@@ -585,6 +575,20 @@
   // Preserve formatting for bot messages
   &.bot-message {
     white-space: pre-line;
+  }
+}
+
+// Additional specificity for innerHTML content with no Angular scoping attrs
+:host ::ng-deep .bot-message-content a {
+  color: inherit !important;
+  text-decoration: underline !important;
+  cursor: pointer !important;
+
+  &:hover,
+  &:visited,
+  &:link {
+    color: inherit !important;
+    text-decoration: underline !important;
   }
 }
 
