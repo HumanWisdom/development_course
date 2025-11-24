@@ -347,12 +347,14 @@ export class ViewStoriesPage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
+   var url = this.navigationService.navigateToBackLink();
+   
     if (url == null) {
-      this.defaultGoBack();
+     this.location.back();
     }else{
       this.router.navigate([url]);
     }
+      
   }
 
   defaultGoBack() {
