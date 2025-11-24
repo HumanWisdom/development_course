@@ -103,6 +103,9 @@
   backface-visibility: hidden;
   perspective: 1000px;
   margin-right: -33px;
+  /* Prevent GIF from looping - will be controlled by JavaScript */
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
 }
 
 /* Debug and Loading Indicators */
@@ -265,23 +268,58 @@ body:has(#menu:checked) .owl-animation-wrapper {
   transition: all 0.3s ease;
 }
 
-/* Cloud Container Styles */
+/* Cloud Container Styles - positioned closer to owl (near mouth area) */
 .owl-cloud-container {
   position: absolute;
-  top: -95px;
-  left: -65%;
+  top: -88px;           /* Closer to owl's head/mouth area (was -95px) */
+  left: -60%;           /* Closer horizontally to owl (was -65%) */
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Animation starts from owl's mouth area */
+  animation: dialogue-entrance 0.5s ease-out forwards;
+  transform-origin: bottom center;
 }
 
-/* Bubble speaking animation */
+/* Dialogue entrance animation from owl's mouth - starts near mouth, expands upward */
+@keyframes dialogue-entrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px) scale(0.2);
+    /* Start from near owl's mouth position (below and smaller) */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    /* End at final position above owl */
+  }
+}
+
+/* Bubble speaking animation - entrance first, then speaking */
 .owl-cloud-container.speaking {
-  transform-origin: bottom left;
-  animation: bubble-pop 1.8s ease-in-out infinite;
+  transform-origin: bottom center;
+  /* Entrance animation, then speaking animation starts after 0.5s */
+  animation: dialogue-entrance 0.5s ease-out forwards,
+             bubble-pop 1.8s ease-in-out 0.5s infinite;
+}
+
+/* Update bubble-pop to maintain position from entrance */
+@keyframes bubble-pop {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(0.96);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  }
+  55% {
+    transform: translateX(-50%) translateY(0) scale(1.04);
+    filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.13));
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1.0);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  }
 }
 
 @keyframes bubble-pop {
@@ -297,6 +335,11 @@ body:has(#menu:checked) .owl-animation-wrapper {
     transform: translateX(-50%) scale(1.0);
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   }
+}
+
+/* Ensure dialogue without speaking class still has entrance animation */
+.owl-cloud-container:not(.speaking) {
+  animation: dialogue-entrance 0.5s ease-out forwards;
 }
 
 .cloud-image {
@@ -350,18 +393,21 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 
   .owl-cloud-container {
-    top: -52px;
+    top: -55px;          /* Keep bubble near the owl's mouth */
+    left: -35%;          /* Match desktop alignment horizontally */
   }
 
   .cloud-image {
-    width: 65px;
-    max-width: 120px;
+    width: 110px;        /* Give copy enough room inside the bubble */
+    max-width: 110px;
+    height: auto;
   }
 
   .cloud-text {
-    font-size: 8px;
-    max-width: 90px;
-    width: 90px;
+    font-size: 9px;
+    line-height: 1.25;
+    max-width: 80px;
+    width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;

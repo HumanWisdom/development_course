@@ -25,7 +25,7 @@
   #gifElement
   class="owl-gif"
   *ngIf="showGif && !showStaticOwl"
-  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.gif"
+  [src]="gifUrl"
   alt="Animated Owl"
   draggable="false"
   (load)="onGifLoaded()"
