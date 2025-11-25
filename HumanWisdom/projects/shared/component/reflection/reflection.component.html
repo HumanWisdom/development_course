@@ -1,9 +1,9 @@
 <!-- top navigation - with hint -->
-<div *ngIf="hint" class="row center_flex">
+<div *ngIf="hint" class="row center_flex reflection-hint-header" [class.hint-open]="showHintModal">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_module bg_stake col_cw" [ngClass]="bg_tn">
 
     <!-- v1.3 -->
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai hint-back">
       <div class="p0">
         <a class="" (click)="goToToc()">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" class="img-responsive" alt="back" *ngIf="!isAdults">
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai jc_flexend">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai jc_flexend hint-trigger">
       <div class="p0">
         <a *ngIf="isShowBulb" (click)="showHint()">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hint_bulb.svg" class="img-responsive" alt="Hint">
@@ -21,14 +21,27 @@
     </div>
     <!-- /v1.3 -->
 
-    <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv">
+    <div class="col-md-12 col-sm-12 col-xs-12 p0 hprogressdiv hint-progress">
       <div class="progress progress-sm hprogress">
         <div class="progress-bar" role="progressbar" [style.width]="progress + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
     </div>
+
+    <!-- hint popover -->
+    <div class="reflection-hint-popover" *ngIf="showHintModal">
+      <h4
+        id="hinttext"
+        class="mtb0px fs_12px fw_400 lh_140p tleft rhdm hm"
+        [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+        {{ hint }}
+      </h4>
+    </div>
   </div>
 </div>
 <!-- /top navigation -->
+
+<!-- hint overlay -->
+<div *ngIf="showHintModal" class="reflection-hint-overlay" (click)="closeHint()"></div>
 
 <!-- top navigation - without hint -->
 <div *ngIf="!hint" class="row center_flex">
@@ -171,20 +184,6 @@
                 </div>
               </div>
               <!-- /condition 3 -->
-
-              <!-- hint modal -->
-              <div *ngIf="showHintModal" class="modal fade in" id="ex_modal" data-keyboard="false" data-backdrop="false" (click)="closeHint()">
-                <div class="row center_flex">
-                  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0" 
-                       (click)="$event.stopPropagation()" >
-
-                  
-                        <h4 id="hinttext"  class="mtb0px fs_12px fw_400 lh_140p  tleft rhdm hm" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ hint }}</h4>
-
-                  </div>
-                </div>
-              </div>
-              <!-- /hint modal -->
 
               <div class="pagebreak"></div>
 

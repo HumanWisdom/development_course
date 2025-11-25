@@ -62,7 +62,7 @@
             class="img-responsive">
         </div>
       </div>
-      <small class="text danger ml-10">{{namevalidation()}}</small>
+      <small class="text danger ml-10" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">{{namevalidation()}}</small>
     </div>
 
     <div class="row mb10px">
@@ -73,7 +73,7 @@
             class="img-responsive">
         </div>
       </div>
-      <small class="text danger ml-10">{{emailvalidation()}}</small>
+      <small class="text danger ml-10" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">{{emailvalidation()}}</small>
     </div>
 
     <div class="row mt20px">
