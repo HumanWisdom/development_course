@@ -722,6 +722,18 @@ export class ForumLandingPage implements OnInit {
     this.posts[index].isEditPost = true;
   }
 
+  onEditClick(event: Event, item: any, index: number) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.callEditPost(item, index);
+  }
+
+  onDeleteClick(event: Event, item: any) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.DeletePost(item);
+  }
+
   startNewThread(tagId){
     if(tagId==5)
       this.logeventservice.logEvent("click_AskExpert")
