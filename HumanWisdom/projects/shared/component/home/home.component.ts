@@ -154,7 +154,7 @@ navigationChange = new EventEmitter<string>();
   ngOnInit(): void {
      this.isSubscriber = SharedService.isSubscriber();
      console.log('Is Subscriber:', this.isSubscriber);
-     this.username=SharedService.FnName();
+     this.username=SharedService.getUserName();
      // Restore state from store
      this.restoreStateFromStore();
      

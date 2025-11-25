@@ -146,12 +146,15 @@
             <!-- /accordion -->
             <!-- /daily practice -->
 
-                        <!-- hr -->
-                        <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                            <hr class="hr_style_v3_01">
-                          </div>
-                        </div>
+<app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
+  [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)"></app-modal>
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
             
                         <!-- /hr -->
                          

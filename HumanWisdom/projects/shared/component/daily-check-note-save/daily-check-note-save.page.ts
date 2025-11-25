@@ -102,10 +102,10 @@ export class DailyCheckinNoteSavePage implements OnInit {
     }
 
     findOutMore(){
-      if(this.isFirstLogin){
-        this.continue();
-      }
-      else if(this.rowData.Expression=="Tired")
+      // if(this.isFirstLogin){
+      //   this.continue();
+      // }
+       if(this.rowData.Expression=="Tired")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/pathway/develop-a-calm-mind`)]);
       else if(this.rowData.Expression=="Overwhelmed")
         this.router.navigate([SharedService.getUrlfromFeatureName(`/feel-better-now/stress`)]);
