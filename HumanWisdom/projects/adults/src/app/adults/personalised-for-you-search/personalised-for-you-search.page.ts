@@ -110,6 +110,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public tourTotalIndex = 1;
   public tourIndex = 1;
   public streak: string = '';
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your\u00a0best\u00a0life';
 
 
   //static progress mapping
@@ -1293,13 +1296,24 @@ toggleAccordion() {
     this.logeventservice.logEvent(evtName);
     if (params != '' && route != '') {
       if (route === '/adults/daily-practise') {
-        const guest = localStorage.getItem('guest');
-        if (!this.isloggedIn || guest === 'T') {
-          if (this.enablepopup && this.enablepopup.nativeElement) {
-            this.enablepopup.nativeElement.click();
-          }
+        const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+        const isSubscribed = localStorage.getItem('Subscriber') === '1';
+        if (isSubscribed) {
+          this.router.navigate([route, params]);
           return;
         }
+        if (!isLoggedIn) {
+          this.showModal = true;
+          return;
+        }
+        let c = parseInt(localStorage.getItem('dpClicks') || '0');
+        if (isNaN(c)) c = 0;
+        if (c >= 2) {
+          this.showModal = true;
+          return;
+        }
+        c = c + 1;
+        localStorage.setItem('dpClicks', c.toString());
       }
       this.router.navigate([route, params]);
     } else if (route != '') {
@@ -1324,11 +1338,17 @@ getExpandClass(){
       this.router.navigate(["/adults/onboarding/user-profile"]);
     }
 
-     survey() {
+    survey() {
       this.logeventservice.logEvent("click_take_survey");
 
         this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });
       }
-    
+  
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
+  }
 
 }
