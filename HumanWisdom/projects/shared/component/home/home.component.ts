@@ -781,13 +781,6 @@ navigationChange = new EventEmitter<string>();
     this.onViewMoreClick(section);
   }
 
-  onViewLessClick(section: ContentSection): void {
-    const defaultCount = this.getDefaultVisibleCount(section);
-    this.visibleCardCount[section.id] = defaultCount;
-    this.showAllCards[section.id] = false;
-    this.homeStateService.setShowAllCards(section.id, false);
-  }
-
   shouldShowViewAll(section: ContentSection): boolean {
     const isStoriesOrBlogs = section.rawSectionType === 2;
     const isQuickAnswers = section.rawSectionType === 3;
@@ -802,22 +795,6 @@ navigationChange = new EventEmitter<string>();
 
     const visibleCount = this.getVisibleCount(section);
     return visibleCount < totalCards;
-  }
-
-  shouldShowViewLess(section: ContentSection): boolean {
-    const isStoriesOrBlogs = section.rawSectionType === 2;
-    const isQuickAnswers = section.rawSectionType === 3;
-    if (!(isStoriesOrBlogs || isQuickAnswers)) {
-      return false;
-    }
-
-    const totalCards = section.cards?.length || 0;
-    if (totalCards <= this.DEFAULT_VISIBLE_CARD_COUNT) {
-      return false;
-    }
-
-    const visibleCount = this.getVisibleCount(section);
-    return visibleCount > this.getDefaultVisibleCount(section);
   }
 
   /**

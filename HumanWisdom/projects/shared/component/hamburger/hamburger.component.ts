@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
 import { ProgramType } from '../../models/program-model';
+import { ChatbotService } from "../../services/chatbot.service";
 
 import {
   getSupportedInputTypes,
@@ -56,7 +57,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     private Onboardingservice: OnboardingService,
     public platform: Platform,
     public logeventservice: LogEventService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private chatbotService: ChatbotService
   ) {
     this.isAndroidDevice();
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -427,6 +429,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
           }
         } else {
           this.logeventservice.logEvent('click_logout_Hamburger');
+          this.chatbotService.clearMessages(); // reset chat history on logout
           if (this.platform.isBrowser) {
             this.closemenuevent();
             // this.closeLogoutmodal.nativeElement.click();
