@@ -512,7 +512,7 @@ return [
   }
 
   public static getUserName() {
-    let username = this.getDataFromLocalStorage('username');
+    let username = this.getDataFromLocalStorage('userName');
     if (username && username != null) {
       return username;
     }
