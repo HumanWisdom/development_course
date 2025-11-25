@@ -22,7 +22,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private _isTransitioning: boolean = false;
   private _isAtCorner: boolean = true; // GIF plays in corner position from the start
   private gifAnimationDuration = 8000; // Duration of GIF animation in milliseconds (8 seconds)
-  public gifUrl: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owlGif.gif'; // Dynamic GIF URL
+  public gifUrl: string = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif'; // Dynamic GIF URL
   private gifPlayedOnce: boolean = false; // Track if GIF has played once
   private gifAnimationTimeout: any = null; // Track GIF animation timeout to prevent multiple calls
   private gifAlreadyStarting: boolean = false; // Prevent multiple GIF starts before localStorage is set
@@ -171,7 +171,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       this.gifError = false;
       this.gifPlayedOnce = false;
       // Reset GIF URL to ensure fresh load
-      this.gifUrl = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owlGif.gif?t=' + Date.now();
+      this.gifUrl = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif?t=' + Date.now();
       this.hasCheckedHomePage = true;
       
       // Force change detection to ensure it sticks
@@ -474,7 +474,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.isSpeaking = false;
     this.gifPlayedOnce = false;
     this.gifAlreadyStarting = false; // Reset flag to allow restart
-    this.gifUrl = 'hhttps://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owlGif.gif?t=' + Date.now();
+    this.gifUrl = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif?t=' + Date.now();
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
     this.cdr.detectChanges();
@@ -570,7 +570,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.gifPlayedOnce = false;
     this.gifAlreadyStarting = false; // Reset flag for testing
     this.dialogueAlreadyShown = false; // Reset dialogue flag for testing
-    this.gifUrl = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owlGif.gif?t=' + Date.now();
+    this.gifUrl = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif?t=' + Date.now();
     this.cdr.detectChanges();
   }
 } 
