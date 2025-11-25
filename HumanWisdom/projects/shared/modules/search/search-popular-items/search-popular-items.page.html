@@ -184,6 +184,7 @@
   <!-- TICK for subscriber OR non-subscriber -->
   <img *ngIf="item?.isRead === '1'" 
     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+    [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
     class="img-responsive ws-read-icon"/>
 
   <!-- NON-SUBSCRIBER BLOCK -->
@@ -197,6 +198,7 @@
       [src]="isAdults 
       ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
       : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+      [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
       class="img-responsive ws-lock-icon"/>
 
   </ng-container>
@@ -309,6 +311,7 @@
                                 <!-- TICK for subscriber OR non-subscriber -->
                                 <img *ngIf="item?.isRead === '1'" 
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                   class="img-responsive ws-read-icon"/>
 
                                 <!-- NON-SUBSCRIBER BLOCK -->
@@ -322,6 +325,7 @@
                                     [src]="isAdults 
                                     ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
                                     : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                     class="img-responsive ws-lock-icon"/>
 
                                 </ng-container>
@@ -431,6 +435,7 @@
                                 <!-- TICK for subscriber OR non-subscriber -->
                                 <img *ngIf="item?.isRead === '1'" 
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                   class="img-responsive ws-read-icon"/>
 
                                 <!-- NON-SUBSCRIBER BLOCK -->
@@ -444,6 +449,7 @@
                                     [src]="isAdults 
                                     ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
                                     : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                     class="img-responsive ws-lock-icon"/>
 
                                 </ng-container>
@@ -914,6 +920,7 @@
                                 <!-- TICK for subscriber OR non-subscriber -->
                                 <img *ngIf="item?.isRead === '1'" 
                                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                  [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                   class="img-responsive ws-read-icon"/>
 
                                 <!-- NON-SUBSCRIBER BLOCK -->
@@ -927,6 +934,7 @@
                                     [src]="isAdults 
                                     ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
                                     : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                    [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                     class="img-responsive ws-lock-icon"/>
 
                                 </ng-container>

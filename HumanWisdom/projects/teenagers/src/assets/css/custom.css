@@ -35522,7 +35522,7 @@ color: white !important;
 }
 .mdp_oli_tray 
 {
-  box-shadow: unset;
+  box-shadow: 0 -2px 2px #00000010;
   position: fixed;
   bottom: 0px;
   right: 0;
