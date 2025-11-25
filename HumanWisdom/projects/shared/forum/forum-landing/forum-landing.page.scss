@@ -42,3 +42,36 @@
 .lab-modal-body{
   padding: 20px 20px 35px !important;
 }
+
+.cfdm {
+  min-width: 180px;
+  padding: 8px 0;
+  border-radius: 12px;
+  background: #F5C26B;
+  border: 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  right: 0;
+  left: auto;
+}
+
+.cfdm::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #F5C26B;
+}
+
+.cfdm .dropdown-item {
+  padding: 10px 14px;
+}
+
+.position_unseti .btn.dropdown-toggle {
+  background: transparent;
+  border: 0;
+  padding: 4px;
+}
