@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { ProgramType } from '../models/program-model';
+import { SharedService } from '../services/shared.service';
 
 /**
  * Chat Message Interface
@@ -26,6 +28,7 @@ export interface ChatState {
   isTyping: boolean;
   lastUpdated: Date;
   activeSuggestions: string[]; // Currently active suggestions
+  programType: ProgramType | null; // Track which program (Adults/Teenagers) the chat belongs to
 }
 
 /**
@@ -36,7 +39,8 @@ const initialState: ChatState = {
   sessionId: null,
   isTyping: false,
   lastUpdated: new Date(),
-  activeSuggestions: []
+  activeSuggestions: [],
+  programType: null
 };
 
 /**
@@ -118,6 +122,13 @@ export class ChatStore extends ComponentStore<ChatState> {
    */
   readonly activeSuggestions$: Observable<string[]> = this.select(
     state => state.activeSuggestions
+  );
+
+  /**
+   * Select program type
+   */
+  readonly programType$: Observable<ProgramType | null> = this.select(
+    state => state.programType
   );
 
   // ========================================
@@ -244,6 +255,19 @@ export class ChatStore extends ComponentStore<ChatState> {
       lastUpdated: new Date()
     };
     this.clearStorage();
+    return newState;
+  });
+
+  /**
+   * Set program type
+   */
+  readonly setProgramType = this.updater((state, programType: ProgramType) => {
+    const newState = {
+      ...state,
+      programType,
+      lastUpdated: new Date()
+    };
+    this.persistToStorage(newState);
     return newState;
   });
 
@@ -399,6 +423,13 @@ export class ChatStore extends ComponentStore<ChatState> {
   }
 
   /**
+   * Get current program type synchronously
+   */
+  getCurrentProgramType(): ProgramType | null {
+    return this.get().programType;
+  }
+
+  /**
    * Check if session is expired
    */
   private isSessionExpired(lastUpdated: Date): boolean {
@@ -462,14 +493,32 @@ export class ChatStore extends ComponentStore<ChatState> {
         timestamp: new Date(msg.timestamp)
       }));
 
-      // Restore state
+      // Check if program type has changed
+      const storedProgramType = parsed.programType !== undefined ? parsed.programType : null;
+      const currentProgramType = SharedService.ProgramId;
+      
+      // If program type changed, clear the chat
+      if (storedProgramType !== null && storedProgramType !== currentProgramType) {
+        console.log('Program type changed from', storedProgramType, 'to', currentProgramType, '- clearing chat');
+        this.clearStorage();
+        return;
+      }
+
+      // Restore state - if programType is missing (legacy data), set it to current
+      const programTypeToRestore = storedProgramType !== null ? storedProgramType : currentProgramType;
       this.setState({
         messages,
         sessionId: parsed.sessionId,
         isTyping: false,
         lastUpdated,
-        activeSuggestions: parsed.activeSuggestions || []
+        activeSuggestions: parsed.activeSuggestions || [],
+        programType: programTypeToRestore
       });
+      
+      // If programType was missing, persist it
+      if (storedProgramType === null) {
+        this.persistToStorage(this.get());
+      }
     } catch (error) {
       console.error('Error loading chat session from localStorage:', error);
       this.clearStorage();
@@ -491,6 +540,23 @@ export class ChatStore extends ComponentStore<ChatState> {
    * Initialize with welcome messages
    */
   initializeWelcomeMessages(messages: ChatMessage[]): void {
+    const currentProgramType = SharedService.ProgramId;
+    const storedProgramType = this.get().programType;
+    
+    // If program type changed, clear and reinitialize
+    if (storedProgramType !== null && storedProgramType !== currentProgramType) {
+      console.log('Program type changed - clearing chat and reinitializing');
+      this.clearChat();
+      this.setProgramType(currentProgramType);
+      this.setMessages(messages);
+      return;
+    }
+    
+    // Set program type if not set
+    if (storedProgramType === null) {
+      this.setProgramType(currentProgramType);
+    }
+    
     const currentMessages = this.get().messages;
     if (currentMessages.length === 0) {
       this.setMessages(messages);
