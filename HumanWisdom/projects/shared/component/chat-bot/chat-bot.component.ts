@@ -2,7 +2,7 @@ import { Component, AfterViewInit, OnInit, OnDestroy, ViewChild, ElementRef } fr
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { ChatbotService } from '../../services/chatbot.service';
+import { ChatbotService, HistoryMessage } from '../../services/chatbot.service';
 import { ChatStore, ChatMessage } from '../../stores/chat.store';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
@@ -23,6 +23,10 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   isLoadingHistory: boolean = false;
   errorMessage: string = '';
   activeSuggestions: string[] = [];
+  hasHistoryAvailable: boolean = false;
+  private cachedHistoryMessages: HistoryMessage[] | null = null;
+  private cachedHistoryUserId: number | null = null;
+  private historyCheckInProgress: boolean = false;
 
   private messagesSubscription: Subscription = new Subscription();
   private typingSubscription: Subscription = new Subscription();
@@ -71,6 +75,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         this.activeSuggestions = suggestions;
       }
     );
+
+    this.checkHistoryAvailability();
   }
 
   ngAfterViewInit(): void {
@@ -171,14 +177,26 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isLoadingHistory = true;
     this.errorMessage = '';
 
+    const currentUserId = SharedService.getUserId();
+    if (
+      this.cachedHistoryMessages &&
+      this.cachedHistoryMessages.length > 0 &&
+      this.cachedHistoryUserId === currentUserId
+    ) {
+      this.applyHistoryMessages(this.cachedHistoryMessages);
+      this.isLoadingHistory = false;
+      return;
+    }
+
     this.chatbotService.loadHistory().subscribe({
       next: (response) => {
         if (response.status === 'success' && response.history.length > 0) {
-          // Prepend the history messages to the current chat
-          this.chatbotService.prependHistoryMessages(response.history);
-          console.log('Loaded history messages:', response.history);
+          this.applyHistoryMessages(response.history);
         } else {
           this.errorMessage = 'No previous conversations found.';
+          this.hasHistoryAvailable = false;
+          this.cachedHistoryMessages = null;
+          this.cachedHistoryUserId = null;
         }
         this.isLoadingHistory = false;
       },
@@ -319,6 +337,58 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     return currentUserId === GUEST_USER_ID;
   }
 
+  private checkHistoryAvailability(): void {
+    if (this.isGuestUser() || this.historyCheckInProgress) {
+      return;
+    }
+
+    const currentUserId = SharedService.getUserId();
+    if (!currentUserId || currentUserId <= 0) {
+      return;
+    }
+
+    if (this.cachedHistoryUserId && this.cachedHistoryUserId !== currentUserId) {
+      this.cachedHistoryMessages = null;
+      this.hasHistoryAvailable = false;
+    }
+
+    this.historyCheckInProgress = true;
+
+    this.chatbotService.loadHistory().subscribe({
+      next: (response) => {
+        if (response.status === 'success' && response.history.length > 0) {
+          this.hasHistoryAvailable = true;
+          this.cachedHistoryMessages = response.history;
+          this.cachedHistoryUserId = currentUserId;
+        } else {
+          this.hasHistoryAvailable = false;
+          this.cachedHistoryMessages = null;
+          this.cachedHistoryUserId = null;
+        }
+        this.historyCheckInProgress = false;
+      },
+      error: (error) => {
+        console.error('Error checking history availability:', error);
+        this.hasHistoryAvailable = false;
+        this.cachedHistoryMessages = null;
+        this.cachedHistoryUserId = null;
+        this.historyCheckInProgress = false;
+      }
+    });
+  }
+
+  private applyHistoryMessages(history: HistoryMessage[]): void {
+    this.chatbotService.prependHistoryMessages(history);
+    this.cachedHistoryMessages = null;
+    this.hasHistoryAvailable = false;
+    this.cachedHistoryUserId = null;
+    console.log('Loaded history messages:', history);
+  }
+ private getDefaultAvatar(): string {
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
+
+  }
+
   private setUserAvatar(): void {
     const storedDetails = localStorage.getItem('userDetails');
     if (!storedDetails) {
@@ -343,9 +413,5 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.userAvatarUrl = this.getDefaultAvatar();
-  }
-
-  private getDefaultAvatar(): string {
-    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
   }
 }
