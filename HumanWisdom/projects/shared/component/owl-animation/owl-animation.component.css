@@ -274,8 +274,8 @@ body:has(#menu:checked) .owl-animation-wrapper {
 /* Cloud Container Styles - positioned closer to owl (near mouth area) */
 .owl-cloud-container {
   position: absolute;
-  top: -88px;           /* Closer to owl's head/mouth area (was -95px) */
-  left: -60%;           /* Closer horizontally to owl (was -65%) */
+  top: -80px;           /* Closer to owl's head/mouth area (was -95px) */
+  left: -40%;           /* Closer horizontally to owl (was -65%) */
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;

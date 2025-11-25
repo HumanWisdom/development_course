@@ -118,7 +118,7 @@
                                           class="p0 session_img session_imgnew"
                                         />
                                         <!-- <img
-                                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
+src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
                                             alt="" class="p0 session_img_play"> -->
                                       </div>
 
@@ -195,11 +195,11 @@
                           alt=""
                           class="p0 session_img session_imgnew"
                         />
-                        <img
-                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg"
-                          alt=""
-                          class="p0 session_img_play"
-                        />
+                        <img class="session_img_play" [src]="
+                          isAdults
+                            ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
+                            : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'
+                        " alt="Overlay icon" />
                       </div>
 
                       <div class="col-md-7 col-sm-7 col-xs-7 p0">
@@ -267,6 +267,8 @@
   <!--/class -->
 </div>
 <!-- /page content -->
+
+<app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'" [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)"></app-modal>
 
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
