@@ -176,6 +176,7 @@ export class ChatStore extends ComponentStore<ChatState> {
 
   /**
    * Prepend history messages to the beginning of the chat
+   * Filters out duplicate messages that already exist in the current chat
    */
   readonly prependHistoryMessages = this.updater((state, historyMessages: Array<{
     content: string;
@@ -190,9 +191,28 @@ export class ChatStore extends ComponentStore<ChatState> {
       timestamp: new Date(msg.timestamp)
     }));
 
+    // Filter out duplicate messages that already exist in current messages
+    // Check for duplicates based on content, sender, and timestamp (within 5 minutes tolerance)
+    const existingMessages = state.messages.filter(msg => !msg.isTyping);
+    const uniqueHistoryMessages = convertedMessages.filter(historyMsg => {
+      // Check if a similar message already exists
+      const isDuplicate = existingMessages.some(existingMsg => {
+        const contentMatch = existingMsg.content.trim() === historyMsg.content.trim();
+        const senderMatch = existingMsg.sender === historyMsg.sender;
+        
+        // Check timestamp within 5 minutes tolerance (to account for slight time differences)
+        const timeDiff = Math.abs(existingMsg.timestamp.getTime() - historyMsg.timestamp.getTime());
+        const timeMatch = timeDiff < 5 * 60 * 1000; // 5 minutes in milliseconds
+        
+        return contentMatch && senderMatch && timeMatch;
+      });
+      
+      return !isDuplicate;
+    });
+
     const newState = {
       ...state,
-      messages: [...convertedMessages, ...state.messages],
+      messages: [...uniqueHistoryMessages, ...state.messages],
       lastUpdated: new Date()
     };
     this.persistToStorage(newState);
