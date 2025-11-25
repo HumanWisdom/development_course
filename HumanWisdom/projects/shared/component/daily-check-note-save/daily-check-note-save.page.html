@@ -27,7 +27,7 @@
           <div class="row mtb10px">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img src="{{rowData.ImgPath}}" alt="" class="img-responsive img_journal_emoji" *ngIf="isAdults">
-              <img src="{{rowData.ImgPath.replace('/assets/svgs/v1_3/emojis/','/teenagers/assets/svgs/emojis/') }}" alt="" class="img-responsive img_journal_emoji" *ngIf="!isAdults">
+              <img src="{{rowData.ImgPath.replace('/assets/svgs/v_1_4/emojis/','/teenagers/assets/svgs/emojis/') }}" alt="" class="img-responsive img_journal_emoji" *ngIf="!isAdults">
               <!-- <h4 class="mtb0px fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 {{rowData.Expression}}
               </h4> -->
@@ -94,7 +94,7 @@
 
             <div class="col-md-12 col-sm-12 col-xs-12 p0"  (click)="this.logeventservice.logEvent('click_emoji_save_skip_findOutmore'); findOutMore();">
               <a>
-                <h4 class="mtb10px fs_15px fw_400 lh_130p  td_underline tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
+                <h4 class="mtb10px fs_15px fw_400 lh_130p  td_underline tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                   Skip and explore further
                 </h4>
               </a>

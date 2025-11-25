@@ -70,7 +70,7 @@ export class DailyPracticePage implements OnInit {
   address:any;
   isIOS:boolean = false;
  currentSection = 0;
-  isAdults = true;
+  isAdults = false;
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
@@ -147,7 +147,8 @@ export class DailyPracticePage implements OnInit {
     })
     this.commonService.getDailyInspirationQuestion().subscribe((res) => {
       if (res) {
-        this.dailyInspirationTitle = res.split(';')[0]
+        this.dailyInspirationTitle = res.split(';')[0];
+        this.dailyInspirationTitle = this.dailyInspirationTitle.replace(/:(\S)/, ': $1');
         this.DailyInspirationLink = res.split(';')[1];
        if(res.split(';')[3]==="6")
        { 
