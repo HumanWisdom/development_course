@@ -310,7 +310,7 @@
                       <h4 (click)="postnavigate(item)" *ngIf="!item.isEditPost"  class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         {{item.POST}}
                       </h4>
-                      <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text"name="Post" id="Post" [(ngModel)]="item.POST" required="required" class="txtarea_fc_comment" placeholder="Edit Post" rows="5"></textarea>           
+                      <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text"name="Post" id="Post" [(ngModel)]="item.POST" required="required" class="txtarea_fl_comment" placeholder="Edit Post" rows="5"></textarea>           
                     </div>
                   </div>
 
@@ -392,7 +392,7 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn && actionType=='comment'">
                           <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment"
-                            required="required" class="txtarea_fc_comment" placeholder="Comment Here" rows="5"></textarea>
+                            required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
                         </div>
     
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
