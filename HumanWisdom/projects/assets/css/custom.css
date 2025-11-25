@@ -26519,7 +26519,7 @@ h1
    width: 100%; 
   overflow:visible;
    border-radius: 100px; 
-  background: rgb(237 125 111 / 50%) !important;
+  background: #ED7D6F !important;
 
   font-size: 15px;
   position: static;
@@ -26569,7 +26569,7 @@ h1
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(0, 0, 0, 0.70);
 }
 
  .mdp_answer_here::-webkit-input-placeholder
@@ -26581,7 +26581,7 @@ h1
 } */
 .mdp_answer_here:focus
 {
-  color: #FFF;
+  color: #000;
   outline: none;
 }
 
