@@ -425,6 +425,13 @@ navigationChange = new EventEmitter<string>();
 
     const transformedCards = this.transformCards(cardsArray, sectionType);
 
+    // Get viewall_Url - preserve null if explicitly set, otherwise try alternatives
+    const viewallUrl = section['viewall_Url'] !== undefined 
+      ? section['viewall_Url'] 
+      : (section['viewAllUrl'] !== undefined 
+          ? section['viewAllUrl'] 
+          : section['viewAll_url']);
+
     return {
       id: section.id || `section-${Date.now()}`,
       title: section.title || '',
@@ -437,7 +444,7 @@ navigationChange = new EventEmitter<string>();
       isInlineSection: false,
       rawSectionType: rawType,
       isVerticalCards: isVertical,
-      viewall_Url: section['viewall_Url'] || section['viewAllUrl'] || section['viewAll_url']
+      viewall_Url: viewallUrl
     };
   }
 
@@ -841,10 +848,11 @@ navigationChange = new EventEmitter<string>();
 
   /**
    * Check if we've reached the end of cards (all cards are visible)
-   * Only show "View all" link when we've reached the end
+   * Only show "View all" link when we've reached the end AND viewall_Url has a valid value
    */
   hasReachedEnd(section: ContentSection): boolean {
-    if (!section.viewall_Url) {
+    // Only show "View all" if viewall_Url exists and is not null/empty
+    if (!section.viewall_Url || section.viewall_Url === null || section.viewall_Url.trim() === '') {
       return false;
     }
 

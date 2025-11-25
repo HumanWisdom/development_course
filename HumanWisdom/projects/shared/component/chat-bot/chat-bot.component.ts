@@ -6,6 +6,7 @@ import { ChatbotService, HistoryMessage } from '../../services/chatbot.service';
 import { ChatStore, ChatMessage } from '../../stores/chat.store';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 
 @Component({
   selector: 'app-chat-bot',
@@ -44,6 +45,10 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     this.setUserAvatar();
+    
+    // Check if program type has changed and clear chat if needed
+    this.checkAndHandleProgramTypeChange();
+    
     // Subscribe to messages from store
     this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
@@ -151,9 +156,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Navigate back to dashboard
     // Option 1: Go back in browser history
     // this.location.back();
-    
-    // Option 2: Navigate to specific dashboard route (uncomment if needed)
-   this.router.navigate(['/adults/home']);
+   if(SharedService.ProgramId === ProgramType.Adults) {
+    this.router.navigate(['/adults/home']);
+   } else {
+    this.router.navigate(['/teenagers/teenager-dashboard']);
+   }
+ 
     
     // Optional: Clear messages when closing (uncomment if you want to clear chat history)
     // this.chatbotService.clearMessages();
@@ -413,5 +421,23 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.userAvatarUrl = this.getDefaultAvatar();
+  }
+
+  /**
+   * Check if program type has changed and clear chat store if needed
+   */
+  private checkAndHandleProgramTypeChange(): void {
+    const currentProgramType = SharedService.ProgramId;
+    const storedProgramType = this.chatStore.getCurrentProgramType();
+
+    // If program type has changed, clear the chat
+    if (storedProgramType !== null && storedProgramType !== currentProgramType) {
+      console.log('Program type changed from', storedProgramType, 'to', currentProgramType, '- clearing chat');
+      this.chatbotService.clearMessages();
+      // Clear cached history as well
+      this.cachedHistoryMessages = null;
+      this.cachedHistoryUserId = null;
+      this.hasHistoryAvailable = false;
+    }
   }
 }
