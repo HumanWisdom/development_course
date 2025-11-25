@@ -28,6 +28,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   private typingSubscription: Subscription = new Subscription();
   private sessionSubscription: Subscription = new Subscription();
   private suggestionsSubscription: Subscription = new Subscription();
+  userAvatarUrl: string = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
 
   constructor(
     private chatbotService: ChatbotService,
@@ -38,6 +39,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.setUserAvatar();
     // Subscribe to messages from store
     this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
@@ -315,5 +317,35 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     const currentUserId = SharedService.getUserId();
     const GUEST_USER_ID = 563;
     return currentUserId === GUEST_USER_ID;
+  }
+
+  private setUserAvatar(): void {
+    const storedDetails = localStorage.getItem('userDetails');
+    if (!storedDetails) {
+      this.userAvatarUrl = this.getDefaultAvatar();
+      return;
+    }
+
+    try {
+      const detail = JSON.parse(storedDetails);
+      const rawPath: string = detail?.UserImagePath || '';
+      if (rawPath && !rawPath.includes('undefined')) {
+        const normalizedPath = rawPath.replace('\\', '/');
+        if (normalizedPath.startsWith('http')) {
+          this.userAvatarUrl = `${normalizedPath}?${Date.now()}`;
+        } else {
+          this.userAvatarUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/${normalizedPath}?${Date.now()}`;
+        }
+        return;
+      }
+    } catch (error) {
+      console.warn('Failed to parse userDetails for avatar', error);
+    }
+
+    this.userAvatarUrl = this.getDefaultAvatar();
+  }
+
+  private getDefaultAvatar(): string {
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
   }
 }
