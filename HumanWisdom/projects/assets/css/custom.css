@@ -28442,15 +28442,17 @@ body
 .txtarea_fl_comment
 {
   width: 100%;
-  background: #EBEBEB;
+  /* background: #EBEBEB; */
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 14px;
   display: flex;
+  height: 120px;
+  padding: 15px;
   align-items: center;
   text-align: left;
   color: #5D5D5D;
@@ -34532,7 +34534,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   color: #000;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background: #FFE8BB;
+  /* background: #FFE8BB; */
   width: 100%;
 }
 
