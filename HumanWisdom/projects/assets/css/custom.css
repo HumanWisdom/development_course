@@ -24444,7 +24444,7 @@ a
   border: 0;
 
   height: 50px;
-  width: 100%;
+  width: 335px;
   background: #1092A7;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -28440,8 +28440,9 @@ body
 }
 
 .txtarea_fl_comment
+
 {
-  width: 100%;
+  width: 335px;
   /* background: #EBEBEB; */
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
@@ -28457,6 +28458,7 @@ body
   text-align: left;
   color: #5D5D5D;
   border: 0;
+  border-radius: 12px;
 }
 
 .txtarea_fl_comment:focus,
@@ -34492,7 +34494,11 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #000000;
+  color: #000000 !important;
+}
+.div_forum_post .btn:focus{
+  border: none !important;
+  /* outline: none; */
 }
 
 .btn_fpfy
@@ -34707,7 +34713,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   /* background-size:cover; */
   background: rgba(255, 232, 187, 1);
   border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   text-align: center;
   margin-top: -12%;
   padding: 20px;
