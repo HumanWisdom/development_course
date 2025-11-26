@@ -745,7 +745,11 @@ navigationChange = new EventEmitter<string>();
        queryObj[key] = value;
      });
      try {
-       this.router.navigate([basePath], { queryParams: queryObj });
+       const navExtras: any = { queryParams: queryObj };
+       if (basePath.includes('youtubelink')) {
+         navExtras.state = { title: card.title };
+       }
+       this.router.navigate([basePath], navExtras);
      } catch (e) {
        console.warn('Navigation failed for path with query params:', card.path, e);
      }
@@ -753,7 +757,11 @@ navigationChange = new EventEmitter<string>();
   }
    if (card.path) {
      try {
-       this.router.navigate([card.path]);
+       if (card.path.includes('youtubelink')) {
+         this.router.navigate([card.path], { state: { title: card.title } });
+       } else {
+         this.router.navigate([card.path]);
+       }
      } catch (e) {
        console.warn('Navigation failed for path:', card.path, e);
      }

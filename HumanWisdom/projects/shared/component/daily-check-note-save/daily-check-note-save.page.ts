@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../../services/common.service';
 import { SharedService } from '../../services/shared.service';
 import { Router } from '@angular/router';
@@ -13,7 +13,6 @@ import { LogEventService } from '../../services/log-event.service';
 })
 export class DailyCheckinNoteSavePage implements OnInit {
   rowData:any;
-  @ViewChild('saveJournal') saveJournal: any;
   checkInDescription:string= '';
   t = new Date();
   minDate:any;
@@ -21,6 +20,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
   isLoggedIn:boolean;
   isAdults:boolean = false;
   isFirstLogin:any;
+  showSuccessModal:boolean = false;
   constructor(public commonService:CommonService,public router:Router,public navigationService:NavigationService,public location:Location,
     public logeventservice: LogEventService
   ) {
@@ -56,7 +56,7 @@ export class DailyCheckinNoteSavePage implements OnInit {
         };
         this.commonService.submitJournal(obj).subscribe(res=>{
           if(res == 0 || res){
-              this.saveJournal.nativeElement.click();
+              this.showSuccessModal = true;
               if(!this.isFirstLogin){
                 setTimeout(() => {
                   this.findOutMore();
