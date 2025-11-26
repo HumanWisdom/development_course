@@ -28440,6 +28440,7 @@ body
 }
 
 .txtarea_fl_comment
+
 {
   width: 335px;
   /* background: #EBEBEB; */
@@ -34494,6 +34495,10 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   filter: none;
   box-shadow: unset;
   color: #000000 !important;
+}
+.div_forum_post .btn:focus{
+  border: none !important;
+  /* outline: none; */
 }
 
 .btn_fpfy
