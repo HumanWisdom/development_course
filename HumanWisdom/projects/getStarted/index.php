@@ -145,11 +145,11 @@ require_once('./includes/security_config.php');
 
           <div class="row mt30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-             <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc fs27px w-75">
+              <h1 class="mtb0px fs_54px fw_600 lh_130p fc_000000 ta_lc fs27px w-75">
                 <!-- Understand your mind. Transform your life. -->
-                <!-- Understand your emotions. Gain clarity. Be happier. -->
-                  Everything you need for a happier life              
-              </h1>
+                 <!-- Understand your emotions. Gain clarity. Be happier. -->
+                  Everything you need for a happier life
+               </h1>
             </div>
           </div>
 
@@ -162,7 +162,6 @@ require_once('./includes/security_config.php');
                 <!-- Guided programs to transform your emotional wellbeing, strengthen your relationships and succeed in life.
                -->
                 Transform your emotional well-being, strengthen your relationships and succeed in life.
-              
               
               </h2>
 
@@ -624,7 +623,31 @@ require_once('./includes/security_config.php');
 
     <!-- topics -->
 
+<div class="section-headernew mob-section section-text section-text1">
+    <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7 text-color fs_18px_mobile">
+          Findings from a survey of 1,000 HappierMe app users </h2>
+      </div>
+    </div>
+  </div>
 
+  <!-- section end -->
+
+  <div class="row center_flex bg-circle" data-aos="fade-up" data-aos-delay="200">
+    <div class="scroller-container">
+      <div>
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
+          class="img-responsive d-wider w100p" alt="modules" loading="lazy">
+
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/home_circle.svg"
+          class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
+
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
+          alt="happy user" loading="lazy">
+      </div>
+    </div>
+  </div>
     <!-- testimonial -->
 
     <div class="section-headernew mob-section section-text section-text1">
@@ -747,11 +770,11 @@ require_once('./includes/security_config.php');
         <div class="owl-controls">
           <div class="owl-nav">
             <a class="sap" href="https://happierme.app/adults/testimonials">
-              <h5 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+              <h6 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                 View all Success stories
 
                 <i style="margin-left:11px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
-              </h5>
+              </h6>
             </a>
           </div>
         </div>
@@ -784,7 +807,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="100">
 
 
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Design.webp"
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Design.svg"
               class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 
@@ -1403,10 +1426,10 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href=" https://happierme.app/pages/work.php" iaria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h5 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                    <h6 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
-                    </h5>
+                    </h6>
                   </a>
                 </div>
               </div>
@@ -1443,10 +1466,10 @@ require_once('./includes/security_config.php');
               <div class="row d_none">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/education.php" aria-label="Explore the teenagers app" class="">
-                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                    <h6 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
-                    </h5>
+                    </h6>
                   </a>
                 </div>
               </div>
@@ -1484,10 +1507,10 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                    <h6 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
-                    </h5>
+                    </h6>
                   </a>
                 </div>
               </div>
@@ -1562,10 +1585,10 @@ require_once('./includes/security_config.php');
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                     <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                       <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                      <h5 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                      <h6 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
                         Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                         <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
-              </h4>
+              </h6>
               </a>
             </div>
           </div>
