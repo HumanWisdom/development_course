@@ -1,3 +1,4 @@
+﻿<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
     content="Personal growth blog, Self-improvement blog, Inspirational blog, Life lessons blog, Mindfulness blog, Adult development blog">
 
   <!-- vendor_header -->
-  <?php include('../includes/vendor_header.php'); ?>
+  <?php Template::vendorHeader(); ?>
   <!-- /vendor_header -->
 
   <style>
@@ -48,7 +49,7 @@
 <body>
 
   <!-- header -->
-  <?php include('../includes/header.php'); ?>
+  <?php Template::header(); ?>
   <!-- /header -->
 
   <section class="hpt120px">
@@ -64,9 +65,9 @@
             Insightful articles with practical tips to be happier
           </h2>
 
-          <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
             Find articles on meditation, mental health, relationships, and how to succeed at work
-          </h5>
+          </h4>
         </div>
       </div>
     </div>
@@ -1218,27 +1219,28 @@
     <!-- /aspects -->
 
     <!-- footer -->
-    <?php include('../includes/footer.php'); ?>
+    <?php Template::footer(); ?>
     <!-- /footer -->
 
   </main>
 
   <!-- vendor_footer -->
-  <?php include('../includes/vendor_footer.php'); ?>
+  <?php Template::vendorFooter(); ?>
   <!-- /vendor_footer -->
 
   <script>
  $(document).ready(function () {
-  $('#toggle').click();
-  // Hide the additional blogs initially
- $('#text').toggle(0, function () {
-  if ($(this).is(':visible')) {
-    $('#toggle').text('View Less');
-  } else {
-    $('#toggle').text('View More');
-  }
-});
-
+  // Toggle button click handler
+  $('#toggle').on('click', function(e) {
+    e.preventDefault();
+    $('#text').toggle(0, function () {
+      if ($(this).is(':visible')) {
+        $('#toggle').text('View Less');
+      } else {
+        $('#toggle').text('View More');
+      }
+    });
+  });
 });
   </script>
 

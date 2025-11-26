@@ -1,3 +1,4 @@
+﻿<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,20 +9,20 @@
     <meta property="keyword" content="Personal growth blog, Self-improvement blog, Inspirational blog, Life lessons blog, Mindfulness blog, Adult development blog">
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+  <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include('../includes/header.php'); ?>
+  <?php Template::header(); ?>
     <!-- /header -->
 
     <section class="hpt120px">
       <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png" class="img-responsive img_bl">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png" class="img-responsive img_bl" alt="Insightful articles with practical tips to be happier">
         </div>
 
         <div class="row bl_text">
@@ -138,7 +139,7 @@
                 <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs" alt="#10 ways understanding your mind could transform your life">
                     </div>
                   </div>
 
@@ -172,7 +173,7 @@
                 <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs" alt="#10 ways understanding your mind could transform your life">
                     </div>
                   </div>
 
@@ -254,7 +255,7 @@
               <a class="" href="difficult_emotions.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive img_blogs" alt="Difficult emotions: a guide to freedom">
                   </div>
                 </div>
 
@@ -288,7 +289,7 @@
               <a class="" href="real_success.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive img_blogs" alt="Real success">
                   </div>
                 </div>
 
@@ -324,7 +325,7 @@
               <a class="" href="self_Awareness_can_help_relationships_flourish.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive img_blogs" alt="Self-Awareness can help relationships flourish">
                   </div>
                 </div>
 
@@ -358,7 +359,7 @@
               <a class="" href="why_are_we_critical_of_ourselves.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/12.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/12.webp" class="img-responsive img_blogs" alt="Why are we critical of ourselves">
                   </div>
                 </div>
 
@@ -392,7 +393,7 @@
               <a class="" href="how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive img_blogs" alt="How to calm anxiety">
                   </div>
                 </div>
 
@@ -428,7 +429,7 @@
               <a class="" href="the_missed_opportunity_in_relationships.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/53.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/53.webp" class="img-responsive img_blogs" alt="The missed opportunity in relationships">
                   </div>
                 </div>
 
@@ -466,7 +467,7 @@
               <a class="" href="how_to_manage_your_own_mental_health.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" class="img-responsive img_blogs" alt="How to manage your own mental health">
                   </div>
                 </div>
 
@@ -504,7 +505,7 @@
               <a class="" href="discover_the_joys_of_journaling.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/55.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/55.webp" class="img-responsive img_blogs" alt="Discover the joys of journaling">
                   </div>
                 </div>
 
@@ -545,7 +546,7 @@
               <a class="" href="6_ways_to_transform_organisations.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/56.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/56.webp" class="img-responsive img_blogs" alt="6 ways to transform organisations">
                   </div>
                 </div>
 
@@ -579,7 +580,7 @@
               <a class="" href="6_barriers_to_overcoming_stress.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/57.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/57.webp" class="img-responsive img_blogs" alt="6 Barriers to overcoming stress">
                   </div>
                 </div>
 
@@ -617,7 +618,7 @@
               <a class="" href="addressing_health_problems_with_emotional_intelligence.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/59.webp" class="img-responsive img_blogs">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/59.webp" class="img-responsive img_blogs" alt="Addressing health problems with emotional intelligence">
                   </div>
                 </div>
 
@@ -653,13 +654,13 @@
       <!-- /aspects -->
 
       <!-- footer -->
-      <?php include('../includes/footer.php'); ?>
+    <?php Template::footer(); ?>
       <!-- /footer -->
 
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+  <?php Template::vendorFooter(); ?>
     <!-- /vendor_footer -->
 
     <script type="text/javascript">

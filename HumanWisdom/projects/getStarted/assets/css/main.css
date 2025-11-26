@@ -2931,6 +2931,18 @@ animation-name: slideInRight;
   -webkit-line-clamp: 9;
   -webkit-box-orient: vertical;
   word-break: break-word;
+  color: #ffffff;
+  /* font-style: italic; */
+}
+
+.div_testimonialst h5:first-child
+{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  color: #ffffff;
   /* font-style: italic; */
 }
 
@@ -3768,8 +3780,8 @@ audio::-webkit-media-controls-enclosure
 
 .blog_sub_title 
 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 500;
   line-height: 180%;
   color: #000;
   margin-bottom: 20px;

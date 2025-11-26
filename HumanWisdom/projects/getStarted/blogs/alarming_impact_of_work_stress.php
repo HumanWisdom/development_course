@@ -1,3 +1,4 @@
+﻿<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,35 +10,15 @@
     <meta property="keyword" content="work stress, sleep problems, stress and sleep, workplace stress, sleep deprivation solutions, better sleep tips, HappierMe app">
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
   </head>
 
   <body>
 
     <!-- header -->
-    <?php include('../includes/header.php'); ?>
+    <?php Template::header(); ?>
     <!-- /header -->
-
-    <!-- <section class="hpt120px">
-      <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png" class="img-responsive">
-        </div>
-
-        <div class="row bl_text">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-            <h4 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
-              Insightful articles with practical tips to be happier
-            </h4>
-  
-            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-              Find articles on meditation, mental health, relationships, and how to succeed at work
-            </h4>
-          </div>
-        </div>
-      </div>
-    </section> -->  
 
     <main id="main" class="hptblog120px">
 
@@ -333,13 +314,13 @@
       <!-- /aspects -->
 
       <!-- footer -->
-      <?php include('../includes/footer.php'); ?>
+      <?php Template::footer(); ?>
       <!-- /footer -->
 
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php Template::vendorFooter(); ?>
     <!-- /vendor_footer -->
 
   </body>
