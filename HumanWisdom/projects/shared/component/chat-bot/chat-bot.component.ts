@@ -53,8 +53,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
         this.messages = messages;
-        // Scroll to bottom when messages update (with longer delay to ensure DOM is ready)
-        setTimeout(() => this.scrollToBottom(), 1000);
+        // Scroll to bottom quickly when messages update
+        setTimeout(() => this.scrollToBottom(), 100);
         // Style anchor tags after messages are updated
         this.styleAnchorTags();
       }
@@ -120,6 +120,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.chatbotService.addTypingIndicator();
     this.chatbotService.setTyping(true);
 
+    // Nudge the view slightly down immediately so the typing area / new content is visible
+    setTimeout(() => this.scrollSlightlyDown(), 100);
+
     // Send original message to chatbot API (keep it as number for API)
     this.chatbotService.sendMessage(originalMessage).subscribe({
       next: (response) => {
@@ -161,7 +164,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
    } else {
     this.router.navigate(['/teenagers/teenager-dashboard']);
    }
- 
+    
     
     // Optional: Clear messages when closing (uncomment if you want to clear chat history)
     // this.chatbotService.clearMessages();
@@ -217,21 +220,50 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   scrollToBottom(): void {
-    if (this.messageContainer) {
       try {
-        const element = this.messageContainer.nativeElement;
-        // Force immediate scroll first
-        element.scrollTop = element.scrollHeight;
-        // Then smooth scroll to ensure we're at the bottom
+      // Prefer scrolling the last message into view to handle dynamic content heights
         requestAnimationFrame(() => {
-          element.scrollTo({
-            top: element.scrollHeight,
-            behavior: 'smooth'
+        const container: HTMLElement | null = this.messageContainer
+          ? this.messageContainer.nativeElement
+          : document.querySelector('.chat-messages') as HTMLElement;
+
+        if (!container) {
+          return;
+        }
+
+        const lastMessage = container.querySelector('.message:last-child') as HTMLElement | null;
+        if (lastMessage) {
+          lastMessage.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
           });
+        } else {
+          // Fallback to container scroll if no message element is found
+          container.scrollTop = container.scrollHeight;
+        }
         });
       } catch (err) {
         console.error('Error scrolling to bottom:', err);
       }
+  }
+
+  /**
+   * Scroll the chat container slightly down (about 20px)
+   * to give immediate feedback while waiting for the bot response.
+   */
+  private scrollSlightlyDown(): void {
+    try {
+      const container: HTMLElement | null = this.messageContainer
+        ? this.messageContainer.nativeElement
+        : document.querySelector('.chat-messages') as HTMLElement;
+
+      if (!container) {
+        return;
+      }
+
+      container.scrollTop = container.scrollTop + 20;
+    } catch (err) {
+      console.error('Error scrolling slightly down:', err);
     }
   }
 
