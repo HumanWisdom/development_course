@@ -13,8 +13,8 @@
   <!-- Chat Area -->
   <div class="chat-area">
    
-    <!-- Load History Link - Show only when there are previous conversations and user is not a guest -->
-    <div *ngIf="messages.length > 2 && !isGuestUser()" class="load-history-container">
+    <!-- Load History Link - Show when standard welcome plus any prior chat exist -->
+    <div *ngIf="hasHistoryAvailable && !isGuestUser()" class="load-history-container">
       <a href="#" class="load-history-link" (click)="onLoadHistory($event)" [class.loading]="isLoadingHistory">
         <span>{{ isLoadingHistory ? 'Loading...' : 'Load Old Conversation' }}</span>
       </a>

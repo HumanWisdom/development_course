@@ -215,7 +215,11 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     
  openChat(){
-  this.router.navigate(['/adults/chat-bot']);
+  if(this.isAdults){
+    this.router.navigate(['/adults/chat-bot']);
+  } else {
+    this.router.navigate(['/teenagers/chat-bot']);
+  }
  }
 
  /**

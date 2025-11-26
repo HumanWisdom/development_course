@@ -40,7 +40,8 @@ export class ChatbotService {
   private readonly TEEN_CHATBOT_URL = 'https://teenagers-staging.happierme.app/api/chat';
   private readonly HEALTH_CHECK_URL_ADULT = 'https://adults-staging.happierme.app/api/health';
   private readonly HEALTH_CHECK_URL_TEEN = 'https://teenagers-staging.happierme.app/api/health';
-  private readonly HISTORY_URL = 'https://adults-staging.happierme.app/api/history';
+  private readonly HISTORY_URL_ADULT = 'https://adults-staging.happierme.app/api/history';
+  private readonly HISTORY_URL_TEEN = 'https://teenagers-staging.happierme.app/api/history';
 
   // Expose store observables
   public messages$: Observable<ChatMessage[]>;
@@ -67,10 +68,20 @@ export class ChatbotService {
     const programName = SharedService.getprogramName();
     const communityForumUrl = `/${programName}/forum`;
 
+    const introMessages = [
+      `Hi 👋 I’m Olly — how are you today? Can I help?`,
+      `Welcome! 🦉 I’m Olly, here to help you find what you need.`,
+      `Hi 👋 I’m Olly — your friendly guide to HappierMe.`,
+      `Hi 👋 I’m Olly — here to make your journey easier. What do you need today?`,
+      `Welcome! 🦉 I’m Olly, here to help you find clarity and calm`
+    ];
+
+    const randomIntro = introMessages[Math.floor(Math.random() * introMessages.length)];
+
     const welcomeMessages: ChatMessage[] = [
       {
         id: 'welcome-intro-1',
-        content: `Hi. I'm Olly. Ask me a question.`,
+        content: randomIntro,
         sender: 'bot',
         timestamp: new Date()
       },
@@ -112,6 +123,12 @@ export class ChatbotService {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${authToken}`
     });
+  }
+
+  private getHistoryUrl(): string {
+    return SharedService.ProgramId === ProgramType.Adults
+      ? this.HISTORY_URL_ADULT
+      : this.HISTORY_URL_TEEN;
   }
 
   checkHealth(): Observable<any> {
@@ -218,7 +235,7 @@ export class ChatbotService {
       params = params.set('user_id', currentUserId.toString());
     }
 
-    return this.http.get<HistoryResponse>(this.HISTORY_URL, {
+    return this.http.get<HistoryResponse>(this.getHistoryUrl(), {
       headers: this.getAuthHeaders(),
       params: params,
       withCredentials: true

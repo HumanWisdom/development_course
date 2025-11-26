@@ -2,10 +2,11 @@ import { Component, AfterViewInit, OnInit, OnDestroy, ViewChild, ElementRef } fr
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { ChatbotService } from '../../services/chatbot.service';
+import { ChatbotService, HistoryMessage } from '../../services/chatbot.service';
 import { ChatStore, ChatMessage } from '../../stores/chat.store';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
 
 @Component({
   selector: 'app-chat-bot',
@@ -23,6 +24,10 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   isLoadingHistory: boolean = false;
   errorMessage: string = '';
   activeSuggestions: string[] = [];
+  hasHistoryAvailable: boolean = false;
+  private cachedHistoryMessages: HistoryMessage[] | null = null;
+  private cachedHistoryUserId: number | null = null;
+  private historyCheckInProgress: boolean = false;
 
   private messagesSubscription: Subscription = new Subscription();
   private typingSubscription: Subscription = new Subscription();
@@ -40,6 +45,10 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     this.setUserAvatar();
+    
+    // Check if program type has changed and clear chat if needed
+    this.checkAndHandleProgramTypeChange();
+    
     // Subscribe to messages from store
     this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
@@ -71,6 +80,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         this.activeSuggestions = suggestions;
       }
     );
+
+    this.checkHistoryAvailability();
   }
 
   ngAfterViewInit(): void {
@@ -145,9 +156,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Navigate back to dashboard
     // Option 1: Go back in browser history
     // this.location.back();
-    
-    // Option 2: Navigate to specific dashboard route (uncomment if needed)
-   this.router.navigate(['/adults/home']);
+   if(SharedService.ProgramId === ProgramType.Adults) {
+    this.router.navigate(['/adults/home']);
+   } else {
+    this.router.navigate(['/teenagers/teenager-dashboard']);
+   }
+ 
     
     // Optional: Clear messages when closing (uncomment if you want to clear chat history)
     // this.chatbotService.clearMessages();
@@ -171,14 +185,26 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isLoadingHistory = true;
     this.errorMessage = '';
 
+    const currentUserId = SharedService.getUserId();
+    if (
+      this.cachedHistoryMessages &&
+      this.cachedHistoryMessages.length > 0 &&
+      this.cachedHistoryUserId === currentUserId
+    ) {
+      this.applyHistoryMessages(this.cachedHistoryMessages);
+      this.isLoadingHistory = false;
+      return;
+    }
+
     this.chatbotService.loadHistory().subscribe({
       next: (response) => {
         if (response.status === 'success' && response.history.length > 0) {
-          // Prepend the history messages to the current chat
-          this.chatbotService.prependHistoryMessages(response.history);
-          console.log('Loaded history messages:', response.history);
+          this.applyHistoryMessages(response.history);
         } else {
           this.errorMessage = 'No previous conversations found.';
+          this.hasHistoryAvailable = false;
+          this.cachedHistoryMessages = null;
+          this.cachedHistoryUserId = null;
         }
         this.isLoadingHistory = false;
       },
@@ -319,6 +345,58 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     return currentUserId === GUEST_USER_ID;
   }
 
+  private checkHistoryAvailability(): void {
+    if (this.isGuestUser() || this.historyCheckInProgress) {
+      return;
+    }
+
+    const currentUserId = SharedService.getUserId();
+    if (!currentUserId || currentUserId <= 0) {
+      return;
+    }
+
+    if (this.cachedHistoryUserId && this.cachedHistoryUserId !== currentUserId) {
+      this.cachedHistoryMessages = null;
+      this.hasHistoryAvailable = false;
+    }
+
+    this.historyCheckInProgress = true;
+
+    this.chatbotService.loadHistory().subscribe({
+      next: (response) => {
+        if (response.status === 'success' && response.history.length > 0) {
+          this.hasHistoryAvailable = true;
+          this.cachedHistoryMessages = response.history;
+          this.cachedHistoryUserId = currentUserId;
+        } else {
+          this.hasHistoryAvailable = false;
+          this.cachedHistoryMessages = null;
+          this.cachedHistoryUserId = null;
+        }
+        this.historyCheckInProgress = false;
+      },
+      error: (error) => {
+        console.error('Error checking history availability:', error);
+        this.hasHistoryAvailable = false;
+        this.cachedHistoryMessages = null;
+        this.cachedHistoryUserId = null;
+        this.historyCheckInProgress = false;
+      }
+    });
+  }
+
+  private applyHistoryMessages(history: HistoryMessage[]): void {
+    this.chatbotService.prependHistoryMessages(history);
+    this.cachedHistoryMessages = null;
+    this.hasHistoryAvailable = false;
+    this.cachedHistoryUserId = null;
+    console.log('Loaded history messages:', history);
+  }
+ private getDefaultAvatar(): string {
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
+
+  }
+
   private setUserAvatar(): void {
     const storedDetails = localStorage.getItem('userDetails');
     if (!storedDetails) {
@@ -345,7 +423,21 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.userAvatarUrl = this.getDefaultAvatar();
   }
 
-  private getDefaultAvatar(): string {
-    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
+  /**
+   * Check if program type has changed and clear chat store if needed
+   */
+  private checkAndHandleProgramTypeChange(): void {
+    const currentProgramType = SharedService.ProgramId;
+    const storedProgramType = this.chatStore.getCurrentProgramType();
+
+    // If program type has changed, clear the chat
+    if (storedProgramType !== null && storedProgramType !== currentProgramType) {
+      console.log('Program type changed from', storedProgramType, 'to', currentProgramType, '- clearing chat');
+      this.chatbotService.clearMessages();
+      // Clear cached history as well
+      this.cachedHistoryMessages = null;
+      this.cachedHistoryUserId = null;
+      this.hasHistoryAvailable = false;
+    }
   }
 }
