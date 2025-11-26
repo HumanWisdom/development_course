@@ -14,6 +14,8 @@ export class TeenTalkPage implements OnInit {
   public teenTalkList = [];
   public unFilterTeenTalkList = [];
   public searchedText ="";
+    isSubscriber = false;
+  
   constructor(private router: Router, private service: TeenagersService, private meta: Meta, private title: Title) { }
 
   ngOnInit() {
@@ -28,6 +30,9 @@ export class TeenTalkPage implements OnInit {
        this.teenTalkList = res;
        this.unFilterTeenTalkList = JSON.parse(JSON.stringify(res));
     })
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
   }
 
   teentalkS3(id, title, isFree) {
