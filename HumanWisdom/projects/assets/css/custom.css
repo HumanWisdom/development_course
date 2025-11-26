@@ -30374,7 +30374,8 @@ text-decoration: underline;
   left: 0;
   margin: 0 auto;
   background: white;
-  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25); */
+  box-shadow:0 -2px 2px #00000010;
 }
 .vl {
   border-left: 1px solid green;
@@ -37790,10 +37791,10 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   border-radius: 12px;
   border: 0;
   background: #FFE8BB;
-  min-height: 108px;
-  margin-bottom: 10px;
-  padding: 16px;
-  /* margin: 0 10px 10px 10px; */
+  /* min-height: 108px; */
+  margin-bottom: 16px;
+  padding: 12px;
+ 
 }
 
 .toc_adiv_03 a:last-child > .row
@@ -37803,17 +37804,20 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
 .toc_adiv_03 .tile
 {
-  width: 100%;
+  /* width: 100%; */
+  width: 88px;
+  height: 76px;
   border-radius: 6px;
   border: 0;
   position: relative;
+  object-fit: cover;
 }
 
 .toc_adiv_03 .play 
 {
   position: absolute;
   margin: auto;
-  right: 5px;
+  right: 3px;
   margin: 0 auto;
   bottom: 5px;
   height: 24px;
@@ -37827,7 +37831,8 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   border-radius: 12px;
   height: 190px;
   background: black; */
-  width:65%;
+  width:100%;
+  max-height:400px;
   border-radius: 12px;
   height: auto;
   background: black;
