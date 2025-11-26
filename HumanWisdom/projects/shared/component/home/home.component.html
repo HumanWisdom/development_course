@@ -206,22 +206,10 @@
                           </div>
                           
                           <!-- View More/View Less buttons for Life stories and Blogs -->
-                          <div *ngIf="shouldShowViewAll(section) || shouldShowViewLess(section)" class="text-center mt-3">
-                            <button *ngIf="shouldShowViewAll(section)" 
-                                    class="btn btn-link text-decoration-underline view-toggle-btn" 
+                          <div *ngIf="shouldShowViewAll(section)" class="text-center mt-3">
+                            <button class="btn btn-link text-decoration-underline view-toggle-btn" 
                                     (click)="onViewAllClick(section)">
                               View more <i class="fas fa-chevron-down ms-1"></i>
-                            </button>
-                             <button *ngIf="shouldShowViewLess(section) && section.viewall_Url && section.rawSectionType == 2 || section.rawSectionType == 3" 
-                                    class="btn btn-link text-decoration-underline view-toggle-btn" 
-                                    (click)="onViewAll(section)">
-                              View All <i class="fas fa-chevron-up ms-1"></i>
-                            </button>
-
-                            <button *ngIf="shouldShowViewLess(section)" 
-                                    class="btn btn-link text-decoration-underline view-toggle-btn" 
-                                    (click)="onViewLessClick(section)">
-                              View less <i class="fas fa-chevron-up ms-1"></i>
                             </button>
                           </div>
                         </div>
@@ -369,19 +357,13 @@
                             </div>
                             
                             <!-- View More/View Less buttons for Life stories and Blogs -->
-                            <div *ngIf="shouldShowViewAll(section) || shouldShowViewLess(section)" 
+                            <div *ngIf="shouldShowViewAll(section)" 
                                  class="text-center mt-3"
                                  [class.px-3]="section.title === 'Long term solutions'"
                                  [class.py-2]="section.title === 'Long term solutions'">
-                              <button *ngIf="shouldShowViewAll(section)" 
-                                      class="btn btn-link text-decoration-underline view-toggle-btn" 
+                              <button class="btn btn-link text-decoration-underline view-toggle-btn" 
                                       (click)="onViewAllClick(section)">
                                 View more <i class="fa fa-angle-right ms-1"></i>
-                              </button>
-                              <button *ngIf="shouldShowViewLess(section)" 
-                                      class="btn btn-link text-decoration-underline view-toggle-btn" 
-                                      (click)="onViewLessClick(section)">
-                                View less <i class="fa fa-angle-right ms-1"></i>
                               </button>
                             </div>
                           </div>

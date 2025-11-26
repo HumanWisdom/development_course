@@ -1295,7 +1295,7 @@ toggleAccordion() {
   DashboardLogevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
     if (params != '' && route != '') {
-      if (route === '/adults/daily-practise') {
+      if (route === '/adults/daily-practise' || route === '/adults/daily-checkin') {
         const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
         const isSubscribed = localStorage.getItem('Subscriber') === '1';
         if (isSubscribed) {
@@ -1317,6 +1317,24 @@ toggleAccordion() {
       }
       this.router.navigate([route, params]);
     } else if (route != '') {
+      if (route === '/adults/daily-checkin') {
+        const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+        const isSubscribed = localStorage.getItem('Subscriber') === '1';
+        if (!isSubscribed) {
+          if (!isLoggedIn) {
+            this.showModal = true;
+            return;
+          }
+          let c = parseInt(localStorage.getItem('dpClicks') || '0');
+          if (isNaN(c)) c = 0;
+          if (c >= 2) {
+            this.showModal = true;
+            return;
+          }
+          c = c + 1;
+          localStorage.setItem('dpClicks', c.toString());
+        }
+      }
       this.router.navigate([route])
     }
   }

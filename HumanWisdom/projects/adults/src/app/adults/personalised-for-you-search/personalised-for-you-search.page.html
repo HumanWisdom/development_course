@@ -49,7 +49,7 @@
                           <div class="odiv odiv_mdp pl0">
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
+                              <a (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-checkin', '', 'click_daily_checkin') : $event.preventDefault()">
                                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/checkin.svg" alt="" class="crimg" >
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
                                   Daily <br/> check-in

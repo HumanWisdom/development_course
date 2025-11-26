@@ -41,3 +41,9 @@ a{
   bottom: 57px;
   z-index: 2;
 }
+.ws-status-both.ws-read-icon {
+  bottom: 30px !important;
+}
+.ws-status-both.ws-lock-icon {
+  top: 30px !important;
+}
