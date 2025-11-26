@@ -240,14 +240,14 @@
 
 
                   <div class="row forum_pt20px" *ngIf="isLoggedIn && replyflag && activereply.PostID === item.PostID">
-                    <div class="col-md-12 col-sm-12 col-xs-12 pl0 plr10px_01">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
+                    <!-- <div class="col-md-12 col-sm-12 col-xs-12 ">
+                      <div class="col-md-12 col-sm-12 col-xs-12"> -->
     
                         <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="actionType=='report'">
                           <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext"
                             required="required" class="form-control fc_comment" placeholder="Report Post">
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn && actionType=='comment'">
+                        <div class="col-md-12 col-sm-12 col-xs-12 " *ngIf="isLoggedIn && actionType=='comment'">
                           <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment"
                             required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
                         </div>
@@ -266,8 +266,8 @@
                         </div>
     
                       </div>
-                    </div>
-                  </div>
+                    <!-- </div>
+                  </div> -->
 
 
                   <div class="row">
