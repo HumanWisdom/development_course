@@ -157,8 +157,9 @@ navigationChange = new EventEmitter<string>();
   ngOnInit(): void {
      this.isSubscriber = SharedService.isSubscriber();
      console.log('Is Subscriber:', this.isSubscriber);
-     this.username=SharedService.getUserName();
+     this.username=JSON.parse(SharedService.getUserName());
      // Restore state from store
+     
      this.restoreStateFromStore();
      
      // Load module list for search dropdown

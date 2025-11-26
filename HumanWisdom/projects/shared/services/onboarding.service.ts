@@ -10,6 +10,7 @@ import { ToastrService } from "ngx-toastr";
 import { SharedService } from "./shared.service";
 import {  from, throwError } from 'rxjs';  // Import 'from' and 'throwError' here
 import { catchError, tap } from 'rxjs/operators';
+import { ChatStore } from "../stores/chat.store";
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class OnboardingService {
   public countryData:any;
   public userDetails:any;
   // Subscribe to the Subject
-  constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService,private ngZone: NgZone) {
+  constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService,private ngZone: NgZone,public chatStore:ChatStore) {
     // this.http =  new HttpClient(handler);
     this.toastrService = this.toastr;
     this.updateUserDetails.subscribe(val => {
@@ -270,6 +271,7 @@ export class OnboardingService {
   }
 
   emailLogin(email: any, password: any): Observable<any> {
+      this.chatStore.clearChat();
     let param1 = new HttpParams().set("email", email)
       .set("pwd", password).set("ProgID", SharedService.ProgramId)
     return this.http.get(this.path + '/login', { params: param1 })
