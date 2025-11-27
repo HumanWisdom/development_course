@@ -41,6 +41,8 @@ export class TranscriptHeaderComponent implements OnInit {
   Subscriber = false;
   enableAlert = false;
   programName:string="adults";
+  isAdults: boolean = true; 
+
   constructor(private router: Router,
     private service:AdultsService,
     public platform: Platform,
@@ -58,6 +60,12 @@ export class TranscriptHeaderComponent implements OnInit {
     if(this.guest || !this.Subscriber) {
       this.placeHolder = "Start your free trial to access your online journal";
     }
+
+     if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
 
     var lastSlash = this.path.lastIndexOf("/");
      this.scrNumber=this.path.substring(lastSlash+2);
