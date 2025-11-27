@@ -1883,18 +1883,44 @@ closeCookies() {
       this.router.navigate(['/teenagers/journal'])
     } else if (params != '' && route != '') {
         if(route=="/teenagers/daily-practise"){
-      
-       let guest = localStorage.getItem('guest');
-       if(!this.isloggedIn || guest=='T'){
-          this.isFreeTrialEnable = true;
-          this.enableAlert= true;
-       }
+          let guest = localStorage.getItem('guest');
+          if(!this.isloggedIn || guest=='T'){
+            this.isFreeTrialEnable = true;
+            this.enableAlert= true;
+          } else {
+            let sub = localStorage.getItem('Subscriber');
+            if (sub === '0') {
+              let uid = localStorage.getItem('userId') || '';
+              let key = `dailyPracticeVisitCount_${uid}`;
+              let tsKey = `dailyPracticeVisitCountTs_${uid}`;
+              let ts = this.getCookie(tsKey);
+              let now = new Date();
+              let reset = false;
+              if (ts) {
+                let d = new Date(ts);
+                if (d.toDateString() !== now.toDateString()) reset = true;
+              } else { reset = true; }
+              if (reset) {
+                this.setCookie(key, '0');
+                this.setCookie(tsKey, now.toISOString());
+              }
+              let countStr = this.getCookie(key) || '0';
+              let count = parseInt(countStr);
+              if (count >= 2) {
+                this.isFreeTrialEnable = true;
+                this.enableAlert = true;
+              } else {
+                this.setCookie(key, (count + 1).toString());
+                this.setCookie(tsKey, now.toISOString());
+                this.router.navigate([route, params]);
+              }
+            } else {
+              this.router.navigate([route, params]);
+            }
+          }
+        }
         else
-      this.router.navigate([route, params]);
-      
-      }
-      else
-          this.router.navigate([route, params]);
+            this.router.navigate([route, params]);
     } else if (route != '') {
       this.router.navigate([route])
     }
@@ -2180,14 +2206,58 @@ closeCookies() {
 
   routeDailyCheckIn(){
     this.logeventservice.logEvent("Click_daily-checkin");
-
-    this.router.navigate(['/teenagers/daily-checkin']);
+    let guest = localStorage.getItem('guest');
+    if(!this.isloggedIn || guest=='T'){
+      this.isFreeTrialEnable = true;
+      this.enableAlert= true;
+    } else {
+      let sub = localStorage.getItem('Subscriber');
+      if (sub === '0') {
+        let uid = localStorage.getItem('userId') || '';
+        let key = `dailyPracticeVisitCount_${uid}`;
+        let tsKey = `dailyPracticeVisitCountTs_${uid}`;
+        let ts = this.getCookie(tsKey);
+        let now = new Date();
+        let reset = false;
+        if (ts) {
+          let d = new Date(ts);
+          if (d.toDateString() !== now.toDateString()) reset = true;
+        } else { reset = true; }
+        if (reset) {
+          this.setCookie(key, '0');
+          this.setCookie(tsKey, now.toISOString());
+        }
+        let countStr = this.getCookie(key) || '0';
+        let count = parseInt(countStr);
+        if (count >= 2) {
+          this.isFreeTrialEnable = true;
+          this.enableAlert = true;
+        } else {
+          this.setCookie(key, (count + 1).toString());
+          this.setCookie(tsKey, now.toISOString());
+          this.router.navigate(['/teenagers/daily-checkin']);
+        }
+      } else {
+        this.router.navigate(['/teenagers/daily-checkin']);
+      }
+    }
   }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
         this.cd.detectChanges();
     }, 1000);
+  }
+
+  getCookie(name: string) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
+
+  setCookie(name: string, value: string) {
+    document.cookie = `${name}=${value}; path=/`;
   }
 
 }
