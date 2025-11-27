@@ -35530,7 +35530,7 @@ color: white !important;
   margin: 0 auto;
   z-index: 999;
   background: #183C79;
-  height: 50px;
+  height: 60px;
 }
 
 #mdp_carousel .skip 
@@ -37551,9 +37551,9 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   border-radius: 12px;
   border: 0;
   background: #120F40;
-  min-height: 108px;
-  margin-bottom: 10px;
-  padding: 16px;
+  /* min-height: 108px; */
+  margin-bottom: 16px;
+  padding: 12px;
   /* margin: 0 10px 10px 10px; */
 }
 
@@ -37564,17 +37564,20 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
 .toc_adiv_03 .tile
 {
-  width: 100%;
+  /* width: 100%; */
+  width: 88px;
+  height: 76px;
   border-radius: 6px;
   border: 0;
   position: relative;
+  object-fit: cover;
 }
 
 .toc_adiv_03 .play 
 {
   position: absolute;
   margin: auto;
-  right: 5px;
+  right: 3px;
   margin: 0 auto;
   bottom: 5px;
 }
@@ -37582,10 +37585,13 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .cvideo_coach
 {
   width: 100%;
-  max-height: 100%;
+
+  max-height:400px;
+
   border-radius: 12px;
-  height: 190px;
+  height: auto;
   background: black;
+  object-fit: cover;
 }
 
 .v3_ta_coach 
@@ -38055,7 +38061,7 @@ background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
 }
 
 .ws-read-icon    { position: relative; bottom: 50px; }
-.ws-lock-icon    { position: relative; top:    50px; }
+.ws-lock-icon    { position: relative; top:    40px; }
 
 .labelClass{
   color: #FFF;

@@ -29,6 +29,7 @@ export interface ChatState {
   lastUpdated: Date;
   activeSuggestions: string[]; // Currently active suggestions
   programType: ProgramType | null; // Track which program (Adults/Teenagers) the chat belongs to
+  userId: number | null; // Track which user the chat belongs to (guest vs logged-in)
 }
 
 /**
@@ -40,7 +41,8 @@ const initialState: ChatState = {
   isTyping: false,
   lastUpdated: new Date(),
   activeSuggestions: [],
-  programType: null
+  programType: null,
+  userId: null
 };
 
 /**
@@ -129,6 +131,13 @@ export class ChatStore extends ComponentStore<ChatState> {
    */
   readonly programType$: Observable<ProgramType | null> = this.select(
     state => state.programType
+  );
+
+  /**
+   * Select current user id
+   */
+  readonly userId$: Observable<number | null> = this.select(
+    state => state.userId
   );
 
   // ========================================
@@ -285,6 +294,19 @@ export class ChatStore extends ComponentStore<ChatState> {
     const newState = {
       ...state,
       programType,
+      lastUpdated: new Date()
+    };
+    this.persistToStorage(newState);
+    return newState;
+  });
+
+  /**
+   * Set user ID
+   */
+  readonly setUserId = this.updater((state, userId: number | null) => {
+    const newState = {
+      ...state,
+      userId,
       lastUpdated: new Date()
     };
     this.persistToStorage(newState);
@@ -450,6 +472,13 @@ export class ChatStore extends ComponentStore<ChatState> {
   }
 
   /**
+   * Get current user ID synchronously
+   */
+  getCurrentUserId(): number | null {
+    return this.get().userId;
+  }
+
+  /**
    * Check if session is expired
    */
   private isSessionExpired(lastUpdated: Date): boolean {
@@ -516,7 +545,26 @@ export class ChatStore extends ComponentStore<ChatState> {
       // Check if program type has changed
       const storedProgramType = parsed.programType !== undefined ? parsed.programType : null;
       const currentProgramType = SharedService.ProgramId;
-      
+
+      // Check if user has changed (guest vs logged-in)
+      const storedUserId: number | null =
+        typeof parsed.userId === 'number' ? parsed.userId : null;
+      const currentUserId = SharedService.getUserId();
+
+      // If we now have a logged-in user and the stored session either belongs to a different
+      // user or has no user information (legacy/guest), clear the chat so guest history
+      // is not shown to the logged-in user
+      if (currentUserId && currentUserId > 0) {
+        if (storedUserId === null || storedUserId !== currentUserId) {
+          console.log(
+            'User changed or missing in stored chat session. Clearing chat for userId:',
+            currentUserId
+          );
+          this.clearStorage();
+          return;
+        }
+      }
+
       // If program type changed, clear the chat
       if (storedProgramType !== null && storedProgramType !== currentProgramType) {
         console.log('Program type changed from', storedProgramType, 'to', currentProgramType, '- clearing chat');
@@ -524,19 +572,25 @@ export class ChatStore extends ComponentStore<ChatState> {
         return;
       }
 
-      // Restore state - if programType is missing (legacy data), set it to current
+      // Restore state - if programType or userId are missing (legacy data), set them to current
       const programTypeToRestore = storedProgramType !== null ? storedProgramType : currentProgramType;
+      const userIdToRestore =
+        storedUserId !== null
+          ? storedUserId
+          : (currentUserId && currentUserId > 0 ? currentUserId : null);
+
       this.setState({
         messages,
         sessionId: parsed.sessionId,
         isTyping: false,
         lastUpdated,
         activeSuggestions: parsed.activeSuggestions || [],
-        programType: programTypeToRestore
+        programType: programTypeToRestore,
+        userId: userIdToRestore
       });
       
-      // If programType was missing, persist it
-      if (storedProgramType === null) {
+      // If programType or userId were missing, persist updated state
+      if (storedProgramType === null || storedUserId === null) {
         this.persistToStorage(this.get());
       }
     } catch (error) {
@@ -561,13 +615,16 @@ export class ChatStore extends ComponentStore<ChatState> {
    */
   initializeWelcomeMessages(messages: ChatMessage[]): void {
     const currentProgramType = SharedService.ProgramId;
+    const currentUserId = SharedService.getUserId();
     const storedProgramType = this.get().programType;
+    const storedUserId = this.get().userId;
     
     // If program type changed, clear and reinitialize
     if (storedProgramType !== null && storedProgramType !== currentProgramType) {
       console.log('Program type changed - clearing chat and reinitializing');
       this.clearChat();
       this.setProgramType(currentProgramType);
+      this.setUserId(currentUserId && currentUserId > 0 ? currentUserId : null);
       this.setMessages(messages);
       return;
     }
@@ -575,6 +632,11 @@ export class ChatStore extends ComponentStore<ChatState> {
     // Set program type if not set
     if (storedProgramType === null) {
       this.setProgramType(currentProgramType);
+    }
+
+    // Set userId if not set
+    if (storedUserId === null) {
+      this.setUserId(currentUserId && currentUserId > 0 ? currentUserId : null);
     }
     
     const currentMessages = this.get().messages;

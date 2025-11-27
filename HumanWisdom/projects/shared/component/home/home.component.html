@@ -14,7 +14,7 @@
             <div class="row home-container sticky-top-section">
 
                 <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="showSearchBox" >
-                <h2 class="fw_700 fs_24px lh_140p fc_000000 mt20px mb0px plr20px">
+                <h2 *ngIf="username!='' || username!='Guest'" class="fw_700 fs_24px lh_140p fc_000000 mt20px mb0px plr20px">
                   Hi {{username}}!
                 </h2>
               </div>
@@ -459,3 +459,4 @@
     </div>
   </div>
 </div>
+<app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'" [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)"></app-modal>

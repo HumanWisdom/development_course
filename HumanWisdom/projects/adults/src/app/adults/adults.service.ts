@@ -9,6 +9,7 @@ import { SharedService } from "../../../../shared/services/shared.service";
 import { ProgramType } from "../../../../shared/models/program-model";
 import { Router } from '@angular/router';
 import { tap, map } from 'rxjs/operators';
+import { ChatStore } from "../../../../shared/stores/chat.store";
 @Injectable({
   providedIn: 'root'
 })
@@ -66,7 +67,8 @@ export class AdultsService {
   constructor(private http: HttpClient,
     handler: HttpBackend,
     private services: OnboardingService,
-    private router: Router,
+    private router: Router, 
+     public chatStore:ChatStore
   ) {
     if (SharedService.ProgramId === 11) {
       this.programId = ProgramType.Teenagers;
@@ -466,7 +468,7 @@ initialLoginWithGuestUser(id: string = ''): Observable<any> {
       const isGuest = res.Email === email;
       const name = localStorage.getItem("nameupdate") || res.Name;
       const namedata = name.split(' ');
-
+      this.chatStore.clearChat();
       const loginResponse = res;
       const userId = res.UserId;
       const userName = res.Name;
