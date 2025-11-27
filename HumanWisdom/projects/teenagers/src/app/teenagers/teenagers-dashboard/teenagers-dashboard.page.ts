@@ -1890,20 +1890,7 @@ closeCookies() {
           } else {
             let sub = localStorage.getItem('Subscriber');
             if (sub === '0') {
-              let uid = localStorage.getItem('userId') || '';
-              let key = `dailyPracticeVisitCount_${uid}`;
-              let tsKey = `dailyPracticeVisitCountTs_${uid}`;
-              let ts = this.getCookie(tsKey);
-              let now = new Date();
-              let reset = false;
-              if (ts) {
-                let d = new Date(ts);
-                if (d.toDateString() !== now.toDateString()) reset = true;
-              } else { reset = true; }
-              if (reset) {
-                this.setCookie(key, '0');
-                this.setCookie(tsKey, now.toISOString());
-              }
+              let key = 'dailyPracticeVisitCount';
               let countStr = this.getCookie(key) || '0';
               let count = parseInt(countStr);
               if (count >= 2) {
@@ -1911,7 +1898,6 @@ closeCookies() {
                 this.enableAlert = true;
               } else {
                 this.setCookie(key, (count + 1).toString());
-                this.setCookie(tsKey, now.toISOString());
                 this.router.navigate([route, params]);
               }
             } else {
@@ -2213,20 +2199,7 @@ closeCookies() {
     } else {
       let sub = localStorage.getItem('Subscriber');
       if (sub === '0') {
-        let uid = localStorage.getItem('userId') || '';
-        let key = `dailyPracticeVisitCount_${uid}`;
-        let tsKey = `dailyPracticeVisitCountTs_${uid}`;
-        let ts = this.getCookie(tsKey);
-        let now = new Date();
-        let reset = false;
-        if (ts) {
-          let d = new Date(ts);
-          if (d.toDateString() !== now.toDateString()) reset = true;
-        } else { reset = true; }
-        if (reset) {
-          this.setCookie(key, '0');
-          this.setCookie(tsKey, now.toISOString());
-        }
+        let key = 'dailyPracticeVisitCount';
         let countStr = this.getCookie(key) || '0';
         let count = parseInt(countStr);
         if (count >= 2) {
@@ -2234,7 +2207,6 @@ closeCookies() {
           this.enableAlert = true;
         } else {
           this.setCookie(key, (count + 1).toString());
-          this.setCookie(tsKey, now.toISOString());
           this.router.navigate(['/teenagers/daily-checkin']);
         }
       } else {
