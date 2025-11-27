@@ -14,7 +14,9 @@ export class TeenTalkPage implements OnInit {
   public teenTalkList = [];
   public unFilterTeenTalkList = [];
   public searchedText ="";
-    isSubscriber = false;
+  isSubscriber = false;
+  showModal = false;
+    
 
   constructor(private router: Router, private service: TeenagersService, private meta: Meta, private title: Title) { }
 
@@ -37,11 +39,21 @@ export class TeenTalkPage implements OnInit {
 
   teentalkS3(id, title, isFree) {
        let sub: any = localStorage.getItem("Subscriber")
-        if (sub == 0 && isFree === "0") {
+        /* if (sub == 0 && isFree === "0") {
             this.router.navigate(['teenagers/subscription/start-your-free-trial']);
         } else {
             this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', title])
+        } */
+      if (sub == 0 && isFree === "0") {
+          // this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+          this.showModal = true;
+          return;
+      }
+      else {
+            this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', title])
         }
+        
+
   }
  
   searchTeenTalk($event) 

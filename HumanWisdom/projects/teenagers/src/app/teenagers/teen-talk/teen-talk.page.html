@@ -120,6 +120,10 @@
 </div>
 <!-- /page content -->
 
+<app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
+  [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)">
+</app-modal>
+
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->
