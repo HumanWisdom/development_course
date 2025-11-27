@@ -142,10 +142,6 @@ export class PodcastTocPage implements OnInit {
   }
 
 audioevent(data: any) {
-  this.service.clickPodcast(data.PodcastID).subscribe({
-    next: () => console.log('click logged'),
-    error: e => console.error('click log failed', e)
-  });
 
   const sub = localStorage.getItem('Subscriber');
   if (sub === '0' && data.PodcastID >= 2) {
@@ -153,6 +149,13 @@ audioevent(data: any) {
     this.showModal = true;
     return;
   }
+  
+  this.service.clickPodcast(data.PodcastID).subscribe({
+    next: () => console.log('click logged'),
+    error: e => console.error('click log failed', e)
+  });
+
+  
 
   let media = data.MediaUrl;
   if (media.includes('https://d1tenzemoxuh75.cloudfront.net/')) {

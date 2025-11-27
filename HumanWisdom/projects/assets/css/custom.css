@@ -38516,3 +38516,9 @@ a:hover .div_like_cnt1 span {
   background-color: var(--bs-backdrop-bg) !important;
   opacity: 1 !important;
 }
+
+.nohover { 
+
+  color: inherit  !important; 
+  text-decoration: none !important;
+}
