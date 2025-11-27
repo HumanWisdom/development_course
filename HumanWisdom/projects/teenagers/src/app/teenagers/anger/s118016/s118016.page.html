@@ -14,30 +14,28 @@
           <div class="x_content p0">
             <form>
               <!-- <h5 class="txt4 justified_center"> -->
-              <h5 class="txt4">
+              <h5 class="txt4 mb20px">
                {{reflection}}
               </h5>
-              <div class="clearfix"></div>
+             
 
-              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_ffffff">                
+              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_ffffff p0">                
                 1. 	Apparent cause (what you think) 
               </h5>
               <div class="clearfix"></div>
 
-              <div class="row pt20px">
+              <div class="row pt5px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <textarea id="message" required="required" class="rtextarea v3_reflection_ta" name="message" rows="12" [(ngModel)]="r118016" placeholder="Write your answer here"></textarea>
                 </div>
-              </div>
-
-              <br>
+              </div>      
               
-              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_ffffff">                
+              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_ffffff p0 mt40px">                
                 2. 	Real cause (layer 3)
               </h5>
-              <div class="clearfix"></div>
+             
 
-              <div class="row pt20px">
+              <div class="row pt5px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <textarea id="message1" required="required" class="rtextarea v3_reflection_ta" name="message1" rows="12" [(ngModel)]="r118016_1" placeholder="Write your answer here"></textarea>
                 </div>
@@ -161,7 +159,7 @@
 <!-- /page content -->
 
 <!-- footer -->
-<div class="mfooter">
+<!-- <div class="mfooter">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray bg_stake col_cw" [ngClass]="bg_cft">
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
@@ -183,5 +181,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- /footer -->
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress()" (previousEmitter)="previous()"></app-course-footer>
