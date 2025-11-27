@@ -18,24 +18,24 @@
                {{reflection}}
               </h5>
 
-              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_000000">
+              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_000000 p0">
                 1. 	Apparent cause (what you think)
               </h5>
 
-              <div class="row pt20px">
+              <div class="row pt5px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <textarea id="message" required="required" class="rtextarea v3_reflection_ta" name="message" rows="12" [(ngModel)]="r176" placeholder="Write your answer here"></textarea>
                 </div>
               </div>
 
-              <br>
+              
 
-              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_000000">
+              <h5 class="mtb0px v3_reflection_qtn fs_15px fw_400 lh_150p fc_000000  p0 mt40px">
                 2. 	Real cause (layer 3)
               </h5>
-              <div class="clearfix"></div>
+              
 
-              <div class="row pt20px">
+              <div class="row pt5px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <textarea id="message1" required="required" class="rtextarea v3_reflection_ta" name="message1" [(ngModel)]="r176_1" rows="12" placeholder="Write your answer here"></textarea>
                 </div>
@@ -89,7 +89,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                      <button type="button" (click)="confirmShare()" [disabled]="textDisabled || reflectionData === ''" class="btn igbtn1">
+                      <button type="button" (click)="confirmShare()" [disabled]="r176_1==='' && r176 === ''" class="btn igbtn1">
                         Confirm?
                        </button>
                     </div>
@@ -151,7 +151,7 @@
 <!-- /page content -->
 
 <!-- footer -->
-<div class="mfooter">
+<!-- <div class="mfooter">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex fctray bg_FFF7E6 col_cw" [ngClass]="bg_cft">
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
@@ -165,7 +165,7 @@
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0"></div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
         <a (click)="submitProgress_1()">
-          <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
+          <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px ">
             Next
             <i class="fa fa-angle-right fs_16px ml10px"></i>
           </button>
@@ -173,5 +173,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- /footer -->
+
+<app-course-footer [bg_cft]="bg_cft" [bg]="bg" (nextEmitter)="submitProgress_1()" (previousEmitter)="prev()"></app-course-footer>
