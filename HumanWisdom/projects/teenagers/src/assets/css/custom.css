@@ -12282,9 +12282,9 @@ h1.module_title
 {
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 28px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
   /* text-align: center; */
   text-align: left;
   color: #FFFFFF;
@@ -33593,6 +33593,7 @@ body *
   align-items: center;
   justify-content: center;
   margin: 0;
+  color: #e58d82 ;
 }
 
 .btn_prev_v3:hover 

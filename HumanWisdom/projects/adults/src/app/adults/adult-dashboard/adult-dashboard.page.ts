@@ -3982,8 +3982,27 @@ getAlertcloseEvent($event) {
   }
   routeDailyCheckIn(){
     this.logeventservice.logEvent("Click_daily-checkin");
-
-    this.router.navigate(['/adults/daily-checkin']);
+    let guest = localStorage.getItem('guest');
+    if(!this.isloggedIn || guest=='T'){
+      this.isFreeTrialEnable = true;
+      this.enableAlert= true;
+    } else {
+      let sub = localStorage.getItem('Subscriber');
+      if (sub === '0') {
+        let key = 'dailyPracticeVisitCount';
+        let countStr = this.getCookie(key) || '0';
+        let count = parseInt(countStr);
+        if (count >= 2) {
+          this.isFreeTrialEnable = true;
+          this.enableAlert = true;
+        } else {
+          this.setCookie(key, (count + 1).toString());
+          this.router.navigate(['/adults/daily-checkin']);
+        }
+      } else {
+        this.router.navigate(['/adults/daily-checkin']);
+      }
+    }
   }
 
   // getinp(event) {
@@ -4016,6 +4035,16 @@ getAlertcloseEvent($event) {
   //   this.searchResult = [];
   //   this.getinp(module);
   // }
+  getCookie(name: string) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
+
+  setCookie(name: string, value: string) {
+    document.cookie = `${name}=${value}; path=/`;
+  }
 
 
   GetWisdomScreens() {
@@ -4132,22 +4161,31 @@ getAlertcloseEvent($event) {
       //     this.enablepopup.nativeElement.click();
       //   }
     } else if (params != '' && route != '') {
-       if(route=="/adults/daily-practise"){
-      
-       let guest = localStorage.getItem('guest');
-       if(!this.isloggedIn || guest=='T'){
+      if(route=="/adults/daily-practise"){
+        let guest = localStorage.getItem('guest');
+        if(!this.isloggedIn || guest=='T'){
           this.isFreeTrialEnable = true;
           this.enableAlert= true;
-       }
-        else
-      this.router.navigate([route, params]);
-
-     
-     
-
-    }
-    else
-      this.router.navigate([route, params]);
+        } else {
+          let sub = localStorage.getItem('Subscriber');
+          if (sub === '0') {
+            let key = 'dailyPracticeVisitCount';
+            let countStr = this.getCookie(key) || '0';
+            let count = parseInt(countStr);
+            if (count >= 2) {
+              this.isFreeTrialEnable = true;
+              this.enableAlert = true;
+            } else {
+              this.setCookie(key, (count + 1).toString());
+              this.router.navigate([route, params]);
+            }
+          } else {
+            this.router.navigate([route, params]);
+          }
+        }
+      }
+      else
+        this.router.navigate([route, params]);
     } else if (route != '') {
       this.router.navigate([route])
     }

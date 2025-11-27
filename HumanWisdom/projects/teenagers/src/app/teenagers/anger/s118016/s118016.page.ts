@@ -120,40 +120,34 @@ export class S118016Page implements OnInit
     this.r118016 = sessionStorage.getItem("r118016")
     this.r118016_1 = sessionStorage.getItem("r118016_1")
  //   
- if(this.r118016 !=''){
-    this.service.submitProgressReflection({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime,
-      "ReflectionId": this.rId,
-      "Resp": this.r118016
-    }).subscribe();
-  }
-if(this.r118016_1 !='')
-{ 
-    this.service.submitProgressReflection({
-      "ScrNumber": this.screenNumber,
-      "UserId": this.userId,
-      "BookMark": this.bookmark,
-      "ModuleId": this.moduleId,
-      "screenType": this.screenType,
-      "timeSpent": this.totalTime,
-      "ReflectionId": this.rId_1,
-      "Resp": this.r118016_1
-    }).subscribe(res => {},
-      error => {
-        console.log(error)
+  if(this.r118016 !=''){
+      this.service.submitProgressReflection({
+        "ScrNumber": this.screenNumber,
+        "UserId": this.userId,
+        "BookMark": this.bookmark,
+        "ModuleId": this.moduleId,
+        "screenType": this.screenType,
+        "timeSpent": this.totalTime,
+        "ReflectionId": this.rId,
+        "Resp": this.r118016
+      }).subscribe();
+    }
+    if(this.r118016_1 !='')
+    { 
+        this.service.submitProgressReflection({
+          "ScrNumber": this.screenNumber,
+          "UserId": this.userId,
+          "BookMark": this.bookmark,
+          "ModuleId": this.moduleId,
+          "screenType": this.screenType,
+          "timeSpent": this.totalTime,
+          "ReflectionId": this.rId_1,
+          "Resp": this.r118016_1
+        }).subscribe()
+    }
+
         this.router.navigate(['/teenagers/anger/s118017'])
 
-      },
-      () => {
-        this.router.navigate(['/teenagers/anger/s118017'])
-        
-      })
-    }
   }
 
   previous() 

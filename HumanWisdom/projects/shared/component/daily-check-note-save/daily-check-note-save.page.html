@@ -147,7 +147,7 @@
       <div class="row mt30px" *ngIf="isFirstLogin">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0px">
-            <button (click)="continue()" type="btn" class="btn btn_ctd">
+            <button (click)="logeventservice.logEvent('click_emoji_save_skip_findOutmore'); findOutMore();" type="btn" class="btn btn_ctd">
               Continue
             </button>
           </div>
