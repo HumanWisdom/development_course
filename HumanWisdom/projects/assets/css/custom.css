@@ -20302,7 +20302,7 @@ input{
 
 .btn_post
 {
-  background: #FFC455;
+  /* background: #FFC455; */
   border-radius: 5px;
   /* font-family: Roboto; */
   font-style: normal;
@@ -34496,10 +34496,10 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   box-shadow: unset;
   color: #000000 !important;
 }
-.div_forum_post .btn:focus{
+/* .div_forum_post .btn:focus{
   border: none !important;
-  /* outline: none; */
-}
+   outline: none; 
+} */
 
 .btn_fpfy
 {
