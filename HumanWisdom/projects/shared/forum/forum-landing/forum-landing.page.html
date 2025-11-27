@@ -129,7 +129,7 @@
               </div>
 
               <!-- post -->
-              <div class="div_forum_post">
+              <div class="div_forum_postf">
                 <a class="" *ngFor="let item of posts;let index=index;">
 
                   <div class="row mb10px">
@@ -395,17 +395,19 @@
                             required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
                         </div>
     
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                        <div class="col-md-12 col-sm-12 col-xs-12  tright mtb20px"
                           *ngIf="isLoggedIn && actionType=='comment'">
-                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                          <button type="submit" class="btn btn_ctdf center_flex fc_ffffff" (click)="postreport(item,actionType)" style="color:#fff;">
                             Comment
                           </button>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+                        <div class="row" > 
+                        <div class="col-md-12 col-sm-12 col-xs-12  tright mtb20px"
                           *ngIf="isLoggedIn && actionType=='report'">
-                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+                          <button type="button" class="btn btn_ctdf center_flex fc_ffffff" (click)="postreport(item,actionType)" style="color:#fff;">
                             Report
                           </button>
+                        </div>
                         </div>
     
                       <!-- </div>
@@ -440,7 +442,7 @@
 </div>
 
 
-<div class="div_forum_post" *ngIf="!defaultShow">
+<div class="div_forum_postf" *ngIf="!defaultShow">
   <a class="" *ngFor="let item of posts;let index=index;">
 
     <div class="row mb10px">
@@ -684,17 +686,19 @@
               required="required" class="txtarea_fc_comment" placeholder="Comment Here" rows="5"></textarea>
           </div>
 
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+          <div class="col-md-12 col-sm-12 col-xs-12  tright mtb20px"
             *ngIf="isLoggedIn && actionType=='comment'">
-            <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+            <button type="submit" class="btn btn_ctdf center_flex fc_ffffff" (click)="postreport(item,actionType)" style="color:#fff;">
               Comment
             </button>
           </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt5px"
+          <div class="row" > 
+          <div class="col-md-12 col-sm-12 col-xs-12  tright mtb20px"
             *ngIf="isLoggedIn && actionType=='report'">
-            <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
+            <button type="button" class="btn btn_ctdf center_flex fc_ffffff" (click)="postreport(item,actionType)" style="color:#fff;">
               Report
             </button>
+          </div>
           </div>
 
         <!-- </div>
