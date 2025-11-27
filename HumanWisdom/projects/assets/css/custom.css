@@ -34497,6 +34497,18 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   box-shadow: unset;
   color: #000000 !important;
 }
+.div_forum_postf .btn
+{
+  margin: 0 !important;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: none;
+  box-shadow: unset;
+  /* color: #000000 !important; */
+}
 /* .div_forum_post .btn:focus{
   border: none !important;
    outline: none; 
@@ -35077,6 +35089,19 @@ color: black !important;
 }
 
 .btn_ctd 
+{
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 100px;
+  background: #ED7D6F !important;
+  color: #FFF !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+}
+.btn_ctdf 
 {
   height: 50px;
   width: 100%;
