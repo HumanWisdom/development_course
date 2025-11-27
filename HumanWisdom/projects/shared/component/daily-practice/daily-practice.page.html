@@ -366,7 +366,7 @@
 
                         <app-audio-player class="audio-test" 
                         [ngClass]="[isAdults ? 'invert-controls' : '']"
-                                audioLink="https://d1tenzemoxuh75.cloudfront.net/guided-meditation/audios/guided-meditation+1.13.mp3">
+                                [audioLink]="audioLink">
                               </app-audio-player>  
                       </div>
                     </div>

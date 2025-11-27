@@ -34240,6 +34240,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .div_yes_no .btn:focus
 {
   background: #ED7D6F;
+  border: #ED7D6F;
 }
 
 .hr_style_v3_06

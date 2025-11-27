@@ -1,5 +1,8 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import {Options} from '@angular-slider/ngx-slider'
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
+
 
 @Component({
   selector: 'app-progress-slider',
@@ -19,9 +22,17 @@ export class ProgressSliderComponent implements OnInit {
   }
   value=100
   slideChange = false;
+    isAdults: boolean = true; 
+  
   constructor() { }
 
   ngOnInit() {
+
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
 
   }
 
