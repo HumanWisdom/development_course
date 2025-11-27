@@ -20270,7 +20270,7 @@ input{
   text-align: left;
   color: rgba(0, 0, 0, 0.5);
   /* color: #5D5D5D; */
-  border: 0;
+  border: 1px solid rgba(0, 0, 0, .25);
 }
 
 .forum_pb10px
@@ -20302,16 +20302,17 @@ input{
 
 .btn_post
 {
-  /* background: #FFC455; */
-  border-radius: 5px;
-  /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  color: #5D5D5D;
-  margin: 0;
-  border: 0;
-  box-shadow: unset;
+  height: 50px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 100px;
+    background: #ED7D6F !important;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%;
+
 }
 
 .placeholder_odiv
@@ -28457,7 +28458,7 @@ body
   align-items: center;
   text-align: left;
   color: #5D5D5D;
-  border: 0;
+  border: 1px solid rgba(0, 0, 0, .25);
   border-radius: 12px;
 }
 
@@ -34496,7 +34497,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #000000 !important;
+  /* color: #000000 !important; */
 }
 .div_forum_postf .btn
 {
