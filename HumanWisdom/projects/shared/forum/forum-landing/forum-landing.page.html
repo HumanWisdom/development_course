@@ -388,27 +388,27 @@
     
                         <div class="col-md-12 col-sm-12 col-xs-12 " *ngIf="actionType=='report'">
                           <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext"
-                            required="required" class="form-control fc_comment" placeholder="Report Post">
+                            required="required" class="form-control fc_comment" placeholder="Let us know what’s wrong">
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 " *ngIf="isLoggedIn && actionType=='comment'">
                           <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment"
-                            required="required" class="txtarea_fl_comment" placeholder="Comment Here" rows="5"></textarea>
+                            required="required" class="txtarea_fl_comment" placeholder="Comment here" rows="5"></textarea>
                         </div>
     
-                        <div class="col-md-12 col-sm-12 col-xs-12  tright mtb20px"
+                        <div class="col-md-12 col-sm-12 col-xs-12   mt15px"
                           *ngIf="isLoggedIn && actionType=='comment'">
                           <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" style="color:#fff;">
                             Comment
                           </button>
                         </div>
-                        <div class="row" > 
-                        <div class="col-md-12 col-sm-12 col-xs-12  tright mtb20px"
+                        <!-- <div class="row" >  -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 mt15px"
                           *ngIf="isLoggedIn && actionType=='report'">
                           <button type="button" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" style="color:#fff;">
-                            Report
+                            Submit
                           </button>
                         </div>
-                        </div>
+                        <!-- </div> -->
     
                       <!-- </div>
                     </div> -->
