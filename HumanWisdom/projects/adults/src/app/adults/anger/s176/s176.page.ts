@@ -26,8 +26,12 @@ export class S176Page implements OnInit, OnDestroy {
 
   reflection: any
   reflectionA: any
-  r176 = JSON.parse(sessionStorage.getItem("r176"))
-  r176_1 = JSON.parse(sessionStorage.getItem("r176_1"))
+
+  r176 = '';
+  r176_1 = '';
+  
+/*   r176 = JSON.parse(sessionStorage.getItem("r176"))
+  r176_1 = JSON.parse(sessionStorage.getItem("r176_1")) */
   hint = "My son did not call on my birthday, My anger is caused by my own expectations";
    path = setTimeout(() => {
     return this.router.url;
@@ -143,10 +147,10 @@ export class S176Page implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.endTime = Date.now();
+  /*   this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
 
-    if (this.userId !== 563) this.submitProgress()
+    if (this.userId !== 563) this.submitProgress() */
   }
 
   getProgress(p) {

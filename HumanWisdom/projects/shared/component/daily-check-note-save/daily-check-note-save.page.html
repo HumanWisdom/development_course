@@ -92,7 +92,7 @@
           <div class="row center_flex">
                                   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray col_cw">
 
-            <div class="col-md-12 col-sm-12 col-xs-12 p0"  (click)="this.logeventservice.logEvent('click_emoji_save_skip_findOutmore'); findOutMore();">
+            <div class="col-md-12 col-sm-12 col-xs-12 p0"  (click)="logeventservice.logEvent('click_emoji_save_skip_findOutmore'); findOutMore();">
               <a>
                 <h4 class="mtb10px fs_15px fw_400 lh_130p  td_underline tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                   Skip and explore further
@@ -108,18 +108,14 @@
   </div>
 </div>
 
-<div class="row" style="display: none;">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 btn_post_anonymously">
-   <button type="button" #saveJournal class="btn btn_ctd center_flex" data-toggle="modal" data-target="#added"></button>
-  </div>
-</div>
+ 
 
 <div class="mfooter">
  
 </div>
 
 <!-- successfully saved -->
-<div class="modal fade in" id="added" data-keyboard="false" data-backdrop="false" data-dismiss="modal">
+<div class="custom-modal-overlay" *ngIf="showSuccessModal">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body lab-modal-body_dc col_cw">
 
@@ -151,7 +147,7 @@
       <div class="row mt30px" *ngIf="isFirstLogin">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0px">
-            <button (click)="continue()" type="btn" class="btn btn_ctd">
+            <button (click)="logeventservice.logEvent('click_emoji_save_skip_findOutmore'); findOutMore();" type="btn" class="btn btn_ctd">
               Continue
             </button>
           </div>

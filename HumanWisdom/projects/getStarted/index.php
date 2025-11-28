@@ -623,7 +623,31 @@ require_once('./includes/security_config.php');
 
     <!-- topics -->
 
+<div class="section-headernew mob-section section-text section-text1">
+    <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7 text-color fs_18px_mobile">
+          Findings from a survey of 1,000 HappierMe app users </h2>
+      </div>
+    </div>
+  </div>
 
+  <!-- section end -->
+
+  <div class="row center_flex bg-circle" data-aos="fade-up" data-aos-delay="200">
+    <div class="scroller-container">
+      <div>
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
+          class="img-responsive d-wider w100p" alt="modules" loading="lazy">
+
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/home_circle.svg"
+          class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
+
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
+          alt="happy user" loading="lazy">
+      </div>
+    </div>
+  </div>
     <!-- testimonial -->
 
     <div class="section-headernew mob-section section-text section-text1">

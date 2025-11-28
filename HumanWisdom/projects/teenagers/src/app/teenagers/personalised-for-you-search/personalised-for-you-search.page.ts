@@ -93,8 +93,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public resume = []
   public bookmarkLength: any
   public exerciseNo: any;
-  public tourTotalIndex = 1;
-  public tourIndex = 1;
+  public tourTotalIndex = 0;
+  public tourIndex = 0;
   public Title: string = '';
   currentList = [];
   public day: string = '';
@@ -152,9 +152,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.isSubscribe = SharedService.isSubscriber();
     let closetour = localStorage.getItem('closeTour');
 
-    if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
+   /*  if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
       this.continueTour();
-    }
+    } */
   }
 
 

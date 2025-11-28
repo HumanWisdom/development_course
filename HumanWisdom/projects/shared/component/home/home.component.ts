@@ -123,6 +123,9 @@ navigationChange = new EventEmitter<string>();
   searchResult: any[] = [];
   moduleList: any[] = [];
   showSearchBox: boolean = true;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   private routerSubscription: Subscription;
   private hashChangeHandler: () => void;
   private lastScrollTop: number = 0;
@@ -759,6 +762,12 @@ navigationChange = new EventEmitter<string>();
 
   onCardClick(card: ContentCard): void {
     console.log('Card clicked:', card);
+    const isLocked = card && (card.isFree === '0' || card.isFree === 0);
+    if (!this.isSubscriber && isLocked) {
+      this.showModal = true;
+      this.cardClick.emit(card);
+      return;
+    }
     // Persist selected short video info so s3-video can play exact clicked item
     try {
       const isShortVideo = (card.moduleType || '').toUpperCase() === 'VIDEO' || (card.mediaType || '').toUpperCase() === 'SHORT';
@@ -795,7 +804,11 @@ navigationChange = new EventEmitter<string>();
        queryObj[key] = value;
      });
      try {
-       this.router.navigate([basePath], { queryParams: queryObj });
+       const navExtras: any = { queryParams: queryObj };
+       if (basePath.includes('youtubelink')) {
+         navExtras.state = { title: card.title };
+       }
+       this.router.navigate([basePath], navExtras);
      } catch (e) {
        console.warn('Navigation failed for path with query params:', card.path, e);
      }
@@ -803,12 +816,23 @@ navigationChange = new EventEmitter<string>();
   }
    if (card.path) {
      try {
-       this.router.navigate([card.path]);
+       if (card.path.includes('youtubelink')) {
+         this.router.navigate([card.path], { state: { title: card.title } });
+       } else {
+         this.router.navigate([card.path]);
+       }
      } catch (e) {
        console.warn('Navigation failed for path:', card.path, e);
      }
    }
    this.cardClick.emit(card);
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 
   onSectionToggle(section: ContentSection): void {

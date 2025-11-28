@@ -16,10 +16,14 @@
 
               <!-- angular audio player plugin  -->
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 mtb30px">
-                  <audio id="aud1" controls controlsList="nodownload" #audio>
+                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 mt10px mb30px">
+                  <!-- <audio id="aud1" controls controlsList="nodownload" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
+                  </audio> -->
+
+                   <app-audio-player  id="aud1"                           
+                                [audioLink]="audioLink">
+                              </app-audio-player>  
                   <!-- <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" #audio ></ngx-circular-player>                   -->
                 </div>
               </div>
