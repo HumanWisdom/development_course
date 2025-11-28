@@ -157,9 +157,21 @@ navigationChange = new EventEmitter<string>();
   ngOnInit(): void {
      this.isSubscriber = SharedService.isSubscriber();
      console.log('Is Subscriber:', this.isSubscriber);
-     this.username=JSON.parse(SharedService.getUserName());
-     // Restore state from store
      
+     // Safely parse username - handle guest users who might have empty/null username
+     try {
+       const userName = SharedService.getUserName();
+       if (userName && userName.trim() !== '') {
+         this.username = JSON.parse(userName);
+       } else {
+         this.username = '';
+       }
+     } catch (error) {
+       console.warn('Error parsing username, defaulting to Guest:', error);
+       this.username = '';
+     }
+     
+     // Restore state from store
      this.restoreStateFromStore();
      
      // Load module list for search dropdown
@@ -453,14 +465,15 @@ navigationChange = new EventEmitter<string>();
   }
 
    async getUserPreference() {
-    this.commonService.getUserpreference().subscribe((res) => {
-      let perd = SharedService.getPreferenceDataForHome();
-      this.personalisedList = []
-      
-      // Check if we have a stored active preference from our state service
-      const storedActivePreference = this.homeStateService.getActivePreference();
-      
-      if (res) {
+    this.commonService.getUserpreference().subscribe({
+      next: (res) => {
+        let perd = SharedService.getPreferenceDataForHome();
+        this.personalisedList = []
+        
+        // Check if we have a stored active preference from our state service
+        const storedActivePreference = this.homeStateService.getActivePreference();
+        
+        if (res) {
         // User has a saved preference
         localStorage.setItem('userPreference', res);
         
@@ -493,7 +506,7 @@ navigationChange = new EventEmitter<string>();
         setTimeout(() => {
           this.scrollToActiveList();
         }, 400);
-      } else {
+        } else {
         // Guest user or no preference - check if we have stored state
         if (storedActivePreference) {
           // Use stored preference for guest users too
@@ -525,8 +538,44 @@ navigationChange = new EventEmitter<string>();
           // No stored preference - default to Mental health
           this.handleGuestUserDefault(perd);
         }
+        }
+      },
+      error: (error) => {
+        console.error('Error loading user preference:', error);
+        // On error (e.g., guest user, API failure), use default behavior
+        let perd = SharedService.getPreferenceDataForHome();
+        const storedActivePreference = this.homeStateService.getActivePreference();
+        
+        if (storedActivePreference) {
+          // Use stored preference if available
+          perd.forEach((r) => {
+            if (storedActivePreference === r.id) {
+              r['active'] = true;
+              this.personalisedList.push(r);
+            } else {
+              r['active'] = false;
+              this.personalisedList.push(r);
+            }
+          });
+          
+          if (storedActivePreference === "19") {
+            this.showWisdomExercise = true;
+            this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+          } else {
+            this.showWisdomExercise = false;
+            this.loadHomeContents(Number(storedActivePreference));
+            this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+          }
+          
+          setTimeout(() => {
+            this.scrollToActiveList();
+          }, 400);
+        } else {
+          // Default to Mental health for guest users
+          this.handleGuestUserDefault(perd);
+        }
       }
-    })
+    });
   }
 
   /**
