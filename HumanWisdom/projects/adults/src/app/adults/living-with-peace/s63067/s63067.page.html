@@ -14,7 +14,10 @@
               <div class="row mt10px mb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" (click)="gotoTranscript()">
                   <a class="">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt="">
+                    <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt=""> -->
+                     <h6 class="fs_15px fw_400 lh_140p underline fc_ED7D6F"  >
+                      Read Text
+                    </h6>
                   </a>
                 </div>
               </div>
@@ -24,57 +27,82 @@
 
               <!-- angular audio player plugin  -->
               <div class="row tcenter">
-                <div class="col-md-12 col-sm-12 col-xs-12 p7rem circular-player-container" *ngIf="audioLink !== ''">
-                  <audio controls controlsList="nodownload" #audio>
+                <div class="col-md-12 col-sm-12 col-xs-12 pb20px circular-player-container" *ngIf="audioLink !== ''">
+                  <!-- <audio controls controlsList="nodownload" #audio>
                     <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
+                  </audio> -->
                   <!-- <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" (click)="getTime()" #audio ></ngx-circular-player> -->
+                   <app-audio-player  id="aud1"                           
+                      [audioLink]="audioLink">
+                    </app-audio-player> 
                 </div>
               </div>
               <!-- /angular audio player plugin -->
 
               <div class="prelative">
-                <div class="row ia_below_content">
+              <!--   <div class="row ia_below_content">
                   <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/inward_arrow_short.svg" class="img-responsive inward_arrow">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/inward_arrow_short.svg" class="img-responsive inward_arrow">
                   </div>
-                </div>
+                </div> -->
 
-                <div class="center_flex">
-                  <div class="">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
+              <!--   <div class="center_flex">
+                  <div class=""> -->
+                    <div class="row pt10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                         <div class="col-md-6 col-sm-6 col-xs-6 center_flex">
                           <div class="noi_body">
                             <h4 class="fw_700 fs_16px lh_19px fc_000000 tcenter">
-                              THE BODY
+                             &nbsp;
                             </h4>
                           </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 noi_right center_flex">
                           <div class="noi_i">
                             <h4 class="fw_700 fs_16px lh_19px fc_000000 tcenter">
-                              THE ‘I’
+                               &nbsp;
                             </h4>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="row pt5px">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="row pt10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                         <div class="col-md-6 col-sm-6 col-xs-6 noi_left">
                           <div class="prelative">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/white_man_02.png" class="img-responsive img_man">
-                            <h6 class="noi_left_right_txt">
-                              A physical pain in my body calls my attention to an issue that I need to address. E.g. a toothache
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/white_man_02.svg" class="img-responsive img_man">
+                            <h6 class="noi_left_right_txt ">
+                              <!-- A physical pain in my body calls my attention to an issue that I need to address. E.g. a toothache -->
+                              The body
                             </h6>
                           </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 noi_right">
                           <div class="prelative">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/coach/yellow_man_02.png" class="img-responsive img_man">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/yellow_man_02.svg" class="img-responsive img_man">
                             <h6 class="noi_left_right_txt">
+                                THE ‘I’
+                              <!-- An emotional pain calls my attention to an issue inside me. I need to travel inwards and understand the root cause of it in my thinking. If I ignore it or blame others, it never goes away. -->
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                        <div class="row pt10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-6 noi_left">
+                          <div class="prelative">
+                            <h6 class="noi_left_bottom_txt ">
+                              A physical pain in my body calls my attention to an issue that I need to address. E.g. a toothache
+                             
+                            </h6>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 noi_right">
+                          <div class="prelative">
+                            <h6 class="noi_left_bottom_txt">
+                               
                               An emotional pain calls my attention to an issue inside me. I need to travel inwards and understand the root cause of it in my thinking. If I ignore it or blame others, it never goes away.
                             </h6>
                           </div>
@@ -82,13 +110,13 @@
                       </div>
                     </div>
 
-                    <div class="row pt15px">
+                   <!--  <div class="row pt15px">
                       <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/inward_arrow_long.svg" class="img-responsive">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/inward_arrow_long.svg" class="img-responsive">
                       </div>
-                    </div>
-                  </div>
-                </div>
+                    </div> -->
+                 <!--  </div>
+                </div> -->
               </div>
             </form>
             <div class="pagebreak"></div>

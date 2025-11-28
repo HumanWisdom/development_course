@@ -20921,11 +20921,11 @@ and (orientation : portrait)
 
 .noi_body
 {
-  background: #FFFFFF;
+  background: #FFD889;
   color: black;
   border-radius: 50%;
-  width: 8rem;
-  height: 8rem;
+  width: 56px;
+  height: 56px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
@@ -20935,11 +20935,11 @@ and (orientation : portrait)
 
 .noi_i
 {
-  background: #FFC455;
+  background: #EEA170;
   color: black;
   border-radius: 50%;
-  width: 8rem;
-  height: 8rem;
+  width: 56px;
+  height: 56px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
@@ -20949,19 +20949,21 @@ and (orientation : portrait)
 
 .noi_left
 {
-  padding: 0 5px 0 0;
+  padding: 0 10px 0 0;
 }
 
 .noi_right
 {
-  padding: 0 0 0 5px;
+  padding: 0 0 0 10px;
+   
+
 }
 
 .noi_left_right_txt
 {
   position: absolute;
-  top: 20%;
-  bottom: 5%;
+  /* top: 20%; */
+  bottom: 33%;
   left: 0;
   right: 0;
   margin: auto;
@@ -20971,14 +20973,31 @@ and (orientation : portrait)
   justify-content: center;
   padding: 0 10px;
   /* font-family: Roboto; */
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 130%;
+  font-style: bold;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
   text-align: center;
   color: #000000;
-  overflow: overlay;
+  /* overflow: overlay; */
+
 }
+
+.noi_left_bottom_txt
+{
+  position: absolute;
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 130%;
+  text-align: center;
+  color: #000000;  
+   width:157px;
+}
+
 
 .highligted_span
 {
