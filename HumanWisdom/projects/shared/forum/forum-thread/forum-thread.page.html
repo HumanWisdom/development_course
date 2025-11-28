@@ -248,16 +248,17 @@
                   <div class="row"  *ngIf="isReportPost">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext"
-                            required="required" class="form-control fc_comment" placeholder="Report Post">
+                            required="required" class="form-control fc_comment" placeholder="Let us know what’s wrong">
                     </div>
                   </div>
-
-                  <div class="col-md-12 col-sm-12 col-xs-12 mtb20px tright mt5px"  *ngIf="isEditComment">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12 mt15px"  *ngIf="isEditComment">
                   <button type="submit" class="btn btn_post"  [disabled]="DisabledComment(posttread)"  (click)="commentPost()">
                     Comment
                   </button>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 mtb20px tright mt5px"
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 mtb20px  mt15px"
                   *ngIf="isLoggedIn && isReportPost">
                   <button type="submit" class="btn btn-warning btn_post" (click)="submitComment()">
                     Report
@@ -267,13 +268,13 @@
               </div>
               <!-- /post -->
 
-              <!-- <div class="row mt40px mb15px">
+              <div class="row mt40px mb15px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mtb0px fs_12px fw_400 lh_140p ttuppercase" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     COMMENTS
                   </h4>
                 </div>
-              </div> -->
+              </div> 
 
               <!-- comment -->
               <ng-container *ngIf="list && list.ReplyPost.ReplyPostUserID!=''">
@@ -298,7 +299,7 @@
 
                   <div class="row div_forum_post mt20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft" *ngIf="!isAdults">
                         <button type="button"  (click)="like(item.ReplyPostID,posttread.PostID,index)"  class="btn fs_12px fw_400 lh_140p fc_e58d82">
                           
                           <img *ngIf="item.Liked=='0'"
@@ -310,6 +311,20 @@
                           <span [innerText]="item.ReplyPostLikeCount"></span>
                         </button>
                       </div>
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft" *ngIf="isAdults">
+                        <button type="button"  (click)="like(item.ReplyPostID,posttread.PostID,index)"  class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                          
+                          <img *ngIf="item.Liked=='0'"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment.svg"
+                          class="img-responsive mr5px">
+                        <img *ngIf="item.Liked=='1'"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment.svg"
+                          class="img-responsive mr5px">
+                          <span [innerText]="item.ReplyPostLikeCount"></span>
+                        </button>
+                      </div>
+
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
                         <button type="button"  (click)="toggle(item)" class="btn fs_12px fw_400 lh_140p fc_e58d82">

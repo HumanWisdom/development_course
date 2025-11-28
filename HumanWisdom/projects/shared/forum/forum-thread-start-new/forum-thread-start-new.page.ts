@@ -25,7 +25,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     userimage: null,
     username: '',
   };
-  buttonText:string ="Choose Category"
+  buttonText:string ="Choose category"
   imageUrl: string | ArrayBuffer | null = null;
   isChecked = false;
   categoryList: any = [];
