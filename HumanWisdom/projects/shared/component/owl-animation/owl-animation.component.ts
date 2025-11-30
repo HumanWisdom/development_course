@@ -29,7 +29,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   
   // Static owl properties
   public showStaticOwl: boolean = false; // Start with video, show static owl after video ends
-  public owlMessage: string = "Hi! I'm Olly I am here to help"; // Customizable message
+  public owlMessage: string = "Hi! I'm Olly.\nAsk me a question."; // Customizable message
   public showOwl: boolean = true; // Show owl on all pages
   public isSpeaking: boolean = false; // Controls cloud speaking animation
   public isDisappearing: boolean = false; // Controls cloud disappearing animation
@@ -511,16 +511,16 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     localStorage.setItem(this.DIALOGUE_SHOWN_KEY, 'true');
     
     // Begin with the intro message and speaking animation
-    this.owlMessage = "Hi I am Olly. I'm\n here to help.";
+    this.owlMessage = "Hi! I'm Olly.\nAsk me a question.";
     this.isSpeaking = true;
     this.cdr.detectChanges();
 
     // After a few seconds, switch to the next prompt
-    const toNext = setTimeout(() => {
-      this.owlMessage = 'Ask me a\n question.';
-      this.cdr.detectChanges();
-    }, 3000);
-    this.messageTimers.push(toNext);
+    // const toNext = setTimeout(() => {
+    //   this.owlMessage = 'Ask me a\n question.';
+    //   this.cdr.detectChanges();
+    // }, 3000);
+    // this.messageTimers.push(toNext);
 
     // Stop the speaking animation after a short while
     const stopSpeaking = setTimeout(() => {
