@@ -101,7 +101,7 @@ export interface ContentSection {
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
  navigationItems= [];
   description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
-
+  isloggedIn:boolean;
  contentSections: ContentSection[] = [];
   isSubscriber = false;
 navigationChange = new EventEmitter<string>();
@@ -113,6 +113,7 @@ navigationChange = new EventEmitter<string>();
   isAdults = false;
   showWisdomExercise: boolean = false;
   username:string = 'Guest';   // Track which sections are showing all cards
+  streak: string = ''; // Streak for logged-in users
   showAllCards: { [sectionId: string]: boolean } = {};
   // Track visible card count per section (View More functionality)
   visibleCardCount: { [sectionId: string]: number } = {};
@@ -141,7 +142,7 @@ navigationChange = new EventEmitter<string>();
       this.handleHashChange();
     };
     window.addEventListener('hashchange', this.hashChangeHandler);
-    
+    this.isloggedIn = SharedService.isLoggedIn();
     // Also listen to Angular router navigation events
     this.routerSubscription = this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
@@ -157,18 +158,22 @@ navigationChange = new EventEmitter<string>();
   ngOnInit(): void {
      this.isSubscriber = SharedService.isSubscriber();
      console.log('Is Subscriber:', this.isSubscriber);
-     
+    
      // Safely parse username - handle guest users who might have empty/null username
      try {
-       const userName = SharedService.getUserName();
+       const userName = SharedService.FnName();
        if (userName && userName.trim() !== '') {
          this.username = JSON.parse(userName);
+         // Fetch streak for logged-in users
+         this.getStreak();
        } else {
          this.username = '';
+         this.streak = '';
        }
      } catch (error) {
        console.warn('Error parsing username, defaulting to Guest:', error);
        this.username = '';
+       this.streak = '';
      }
      
      // Restore state from store
@@ -1032,7 +1037,7 @@ navigationChange = new EventEmitter<string>();
   }
 
    onViewAll(section):void{
-     this.router.navigate([section.viewall_Url]);
+     this.router.navigateByUrl(section.viewall_Url);
   }
 
   goToSubscribe(): void {
@@ -1318,5 +1323,28 @@ navigationChange = new EventEmitter<string>();
   clearSearch(): void {
     this.searchinp = '';
     this.searchResult = [];
+  }
+
+  /**
+   * Get streak for logged-in users from localStorage
+   * Similar to adult-dashboard component implementation
+   */
+  getStreak(): void {
+    try {
+      // Get streak from loginResponse in localStorage (same as adult-dashboard)
+      const loginResponse = localStorage.getItem('loginResponse');
+      if (loginResponse) {
+        const loginData = JSON.parse(loginResponse);
+        if (loginData && loginData.Streak) {
+          this.streak = loginData.Streak;
+          return;
+        }
+      }
+      // If not found, set empty string
+      this.streak = '';
+    } catch (error) {
+      console.warn('Error getting streak from localStorage:', error);
+      this.streak = '';
+    }
   }
 }
