@@ -32,6 +32,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   public owlMessage: string = "Hi! I'm Olly I am here to help"; // Customizable message
   public showOwl: boolean = true; // Show owl on all pages
   public isSpeaking: boolean = false; // Controls cloud speaking animation
+  public isDisappearing: boolean = false; // Controls cloud disappearing animation
   public showGif: boolean = false; // Control whether to show GIF animation
   private hasCheckedHomePage: boolean = false; // Track if we've checked for home page
   private messageTimers: any[] = [];
@@ -225,6 +226,16 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       if (this.dialogueAlreadyShown) {
         this.owlMessage = '';
         this.isSpeaking = false;
+      }
+    } else {
+      // Fallback: if none of the above conditions are met, show static owl
+      if (!this.showGif) {
+        this.showStaticOwl = true;
+        this.isPlaying = false;
+        if (this.dialogueAlreadyShown) {
+          this.owlMessage = '';
+          this.isSpeaking = false;
+        }
       }
     }
     this.cdr.detectChanges();
@@ -518,16 +529,38 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     }, 6000);
     this.messageTimers.push(stopSpeaking);
 
-    // After showing the question for a bit, remove the cloud entirely
+    // After showing the question for a bit, remove the cloud entirely with reverse animation
     const hideCloud = setTimeout(() => {
-      this.owlMessage = '';
-      this.cdr.detectChanges();
+      this.hideCloudWithAnimation();
     }, 9000);
     this.messageTimers.push(hideCloud);
   }
 
+  // Method to hide cloud with reverse animation (same as appearance but in reverse)
+  hideCloudWithAnimation() {
+    if (!this.owlMessage || this.isDisappearing) {
+      return; // Already disappearing or no message
+    }
+    
+    // Start disappearing animation
+    this.isDisappearing = true;
+    this.isSpeaking = false; // Stop speaking animation
+    this.cdr.detectChanges();
+    
+    // Wait for animation to complete (0.6s for text fade + 1.2s for cloud shrink = 1.8s total)
+    setTimeout(() => {
+      this.owlMessage = '';
+      this.isDisappearing = false;
+      this.cdr.detectChanges();
+    }, 1800);
+  }
+
   // Method to set custom owl message
   setOwlMessage(message: string) {
+    // Reset disappearing state if setting a new message
+    if (this.isDisappearing) {
+      this.isDisappearing = false;
+    }
     this.owlMessage = message;
     this.cdr.detectChanges();
   }

@@ -368,9 +368,9 @@
     align-items: center;
     background: #ffffff;
     // border-radius: 25px;
-    padding: 8px 12px;
+    height: 80px;
+    padding: 20px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    gap: 12px;
     pointer-events: auto; // Enable clicks in input container
     
 
@@ -378,8 +378,8 @@
       flex-shrink: 0;
 
       .avatar-img {
-        width: 40px;
-        height: 40px;
+        height: 24px;
+        width: 24px;
         border-radius: 50%;
         border: 3px solid #FF6B6B;
         object-fit: cover;
@@ -402,8 +402,8 @@
     }
 
     .send-button {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border: none;
       background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
       border-radius: 50%;
