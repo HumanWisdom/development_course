@@ -62,7 +62,9 @@ export class SharedService {
     return this.getDataFromLocalStorage(Constant.subscriber) == Constant.One.toString();
   }
 
-
+  public static isLoggedIn():boolean {
+    return this.getDataFromLocalStorage('isloggedin') == 'T';
+  }
 
   public static GetExerciseClassName(day, currentDay, vistedScreens, nextDay) {
     var dayclass = "";
