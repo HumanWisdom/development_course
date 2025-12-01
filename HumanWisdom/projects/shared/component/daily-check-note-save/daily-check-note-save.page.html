@@ -43,7 +43,7 @@
           </div>
 
           <div class="row mtb30px prelative">
-            <div class="row prelative">
+            <div class="row prelative p0">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <textarea type="text" [disabled]="!isLoggedIn" class="ta_dailycheckin" id="textArea" name="textArea" [(ngModel)]="checkInDescription" [placeholder]="!isLoggedIn ? 'Login to use this feature' : 'Type here...'" maxlength="256"></textarea>
               </div>
@@ -144,7 +144,7 @@
         </div>
       </div>
 
-      <div class="row mt30px" *ngIf="isFirstLogin">
+      <div class="row mt30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0px">
             <button (click)="logeventservice.logEvent('click_emoji_save_skip_findOutmore'); findOutMore();" type="btn" class="btn btn_ctd">
