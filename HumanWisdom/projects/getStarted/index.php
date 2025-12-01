@@ -145,11 +145,11 @@ require_once('./includes/security_config.php');
 
           <div class="row mt30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h1 class="mtb0px fs_45px fw_600 lh_130p fc_000000 ta_lc  w-75">
+              <h1 class="mtb0px fs_45px fw_600 lh_130p fc_000000 ta_lc  w-100">
                 <!-- Understand your mind. Transform your life. -->
                  <!-- Understand your emotions. Gain clarity. Be happier. -->
                   <!-- Everything you need for a happier life -->
-                   Improve your relationships. Manage stress. Feel happier.
+                   Strengthen relationships. Manage emotions. Feel happier.
                </h1>
             </div>
           </div>
