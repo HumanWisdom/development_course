@@ -149,7 +149,7 @@ require_once('./includes/security_config.php');
                 <!-- Understand your mind. Transform your life. -->
                  <!-- Understand your emotions. Gain clarity. Be happier. -->
                   <!-- Everything you need for a happier life -->
-                   Strengthen relationships. Manage emotions. Feel happier.
+                   Strengthen your relationships. Manage emotions. Feel happier.
                </h1>
             </div>
           </div>
