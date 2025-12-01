@@ -10254,6 +10254,10 @@ ul
 {
   margin-bottom: 5px !important;
 }
+.mb6px
+{
+  margin-bottom: 6px !important;
+}
 
 .cblack
 {
@@ -38209,7 +38213,7 @@ span
   
   object-fit: cover;
   border-radius: 46px;
-  padding:20px;
+  padding: 10px;
 }
 
 .toc_adiv_mp

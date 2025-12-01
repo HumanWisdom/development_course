@@ -75,31 +75,31 @@
                   <div  class="section-container">
                     <!-- Daily Inspiration -->
                     <div [@slideAnimation]="direction" *ngIf="currentSection === 0">
-                      <div class="row mb10px">
+                      <div class="row mb6px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_inspiration_v3_teens.svg" alt="" class="img-responsive crimg" *ngIf="!isAdults">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/inspiration.svg" alt="" class="img-responsive" *ngIf="isAdults">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/inspiration.svg" alt="" class="img-responsive crimg" *ngIf="isAdults">
 
                         </div>
                       </div>
-                      <div class="row mb5px">
+                      <div class="row mb6px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px fs_15px fw_600 lh_150p fc_e58d82">Daily inspiration</h4>
 
                         </div>
                       </div>
-                        <div class="row mb5px">
+                        <div class="row mb30px">
                           <div class="col-md-12 col-sm-12 col-xs-12 p0" >
                             <a (click)="routeToUrl('/wisdom-shorts')">
-                              <h2 class=" fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                              <span class=" fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                                 View all
-                              </h2>
+                              </span>
                             </a>
                           </div>
                         </div>  
                         <div class="box_new_v3_03">
                          <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="fw_500 fs_12px lh_140p  mtb0px tcenter m-b4"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h1 class="fw_500 fs_12px lh_140p mt10px tcenter m-b4"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{ dailyInspirationTitle }}</h1>
                         </div>
                         <div class="row mt30px"  >
@@ -147,37 +147,36 @@
 
                     <!-- Breathing Exercise -->
                     <div [@slideAnimation]="direction" *ngIf="currentSection === 1">
-                      <div class="row mtb10px">
+                      <div class="row mb6px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3_teens.svg" alt="" class="img-responsive crimg" *ngIf="!isAdults">
-                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/breathing.svg" alt="" class="img-responsive" *ngIf="isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/breathing.svg" alt="" class="img-responsive crimg" *ngIf="isAdults">
 
                         </div>
 
                       </div>
-                      <div class="row mb5px">
+                      <div class="row mb6px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class=" fs_18px fw_600 lh_150p fc_e58d82">Breathing Exercise</h4>
                         </div>                     
                       </div> 
-                      <div class="row mb5px">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <a (click)="routeToUrl('/breathing')" >
-                            <h2 class=" fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                              View all
-                            </h2>
-                          </a>
+                      <div class="row mb30px">
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0" >
+                            <a (click)="routeToUrl('/breathing')">
+                              <span class=" fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
+                                View all
+                              </span>
+                            </a>
                         </div>
-                      </div> 
+                          </div>
                       <div class="box_journal_v3_03">
                          <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="fw_600 fs_15px lh_140p fc_fmtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h1 class="fw_600 fs_15px lh_140p fc_fmtb0px tcenter m0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{dailybreathTitle}}
                           </h1>
                         </div>
                       </div>
-                        <br/>
                         <br/>
                    
                       <div class="row">
@@ -195,12 +194,12 @@
            
                   <!-- journal -->
                   <div  [@slideAnimation]="direction" *ngIf="currentSection === 2">
-                    <div class="row mtb10px">
+                    <div class="row mb6px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3_teens.svg"
                           alt="" class="img-responsive crimg" *ngIf="!isAdults">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/question.svg"
-                          alt="" class="img-responsive" *ngIf="isAdults">
+                          alt="" class="img-responsive crimg" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -258,12 +257,12 @@
 
                    <!-- quotation -->
                    <div [@slideAnimation]="direction" *ngIf="currentSection === 3">
-                    <div class="row mtb10px">
+                    <div class="row mb6px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3_teens.svg"
                           alt="" class="img-responsive crimg" *ngIf="!isAdults" >
                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/quete_new.svg"
-                          alt="" class="img-responsive" *ngIf="isAdults">
+                          alt="" class="img-responsive crimg" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -313,28 +312,28 @@
 
                    <!-- audio -->
                    <div [@slideAnimation]="direction" *ngIf="currentSection === 4">
-                    <div class="row mtb10px">
+                    <div class="row mb6px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3_teens.svg"
                           alt="" class="img-responsive crimg"*ngIf="!isAdults">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg"
-                          alt="" class="img-responsive"*ngIf="isAdults">
+                          alt="" class="img-responsive crimg"*ngIf="isAdults">
                       </div>
                     </div>
 
-                    <div class="row mb10px">
+                    <div class="row mb6px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
                           Daily meditation
                         </h4>
                       </div>
                     </div>
-                    <div class="row mb10px">
+                    <div class="row mb30px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0" >
                         <a (click)="routeToUrl('/audio-meditation')" >
-                          <h2 class="mtb0px fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <span class="mtb0px fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                             View all
-                          </h2>
+                          </span>
                         </a>
                       </div>
                       </div> 
@@ -376,12 +375,12 @@
 
                   <!-- exercise -->
                   <div [@slideAnimation]="direction" *ngIf="currentSection === 5">
-                    <div class="row mtb10px">
+                    <div class="row mb6px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3_teens.svg"
                           alt="" class="img-responsive crimg" *ngIf="!isAdults">
                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/challenge.svg"
-                          alt="" class="img-responsive" *ngIf="isAdults">
+                          alt="" class="img-responsive crimg" *ngIf="isAdults">
                       </div>
                     </div>
 

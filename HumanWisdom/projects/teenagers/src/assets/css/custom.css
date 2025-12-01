@@ -10293,6 +10293,10 @@ ul
 {
   margin-bottom: 5px !important;
 }
+.mb6px
+{
+  margin-bottom: 6px !important;
+}
 
 .cblack
 {
@@ -35523,7 +35527,7 @@ color: white !important;
 }
 .mdp_oli_tray 
 {
-  box-shadow: 0 -2px 2px #00000010;
+  /* box-shadow: 0 -2px 2px #00000010; */
   position: fixed;
   bottom: 0px;
   right: 0;
@@ -37863,7 +37867,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   max-height: 86vh;
   object-fit: cover;
   border-radius: 46px;
-  padding: 20px;
+  padding: 10px;
 }
 .btn_login_signup_new {
    border: 0;
