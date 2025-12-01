@@ -8,7 +8,7 @@
     alt="Olly the Owl" 
     class="static-owl-image"
   />
-  <div class="owl-cloud-container" *ngIf="owlMessage" [ngClass]="{'speaking': isSpeaking}">
+  <div class="owl-cloud-container" *ngIf="owlMessage || isDisappearing" [ngClass]="{'speaking': isSpeaking, 'disappearing': isDisappearing}">
     <img 
       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/animatedCloud.png" 
       alt="Cloud" 
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<!-- Animated GIF - Plays only on home page and only once -->
+<!-- Animated GIF - Plays only on home page and only once (fallback) -->
 <img
   #gifElement
   class="owl-gif"

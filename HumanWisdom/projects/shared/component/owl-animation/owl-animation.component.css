@@ -271,42 +271,55 @@ body:has(#menu:checked) .owl-animation-wrapper {
   transition: all 0.3s ease;
 }
 
-/* Cloud Container Styles - positioned closer to owl (near mouth area) */
+/* Cloud Container Styles - positioned above owl */
 .owl-cloud-container {
   position: absolute;
-  top: -80px;           /* Closer to owl's head/mouth area (was -95px) */
-  left: -40%;           /* Closer horizontally to owl (was -65%) */
+  top: -80px;           /* Positioned above owl */
+  left: -30%;           /* Closer horizontally to owl (was -65%) */
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Animation starts from owl's mouth area */
-  animation: dialogue-entrance 0.5s ease-out forwards;
+  /* Animation starts from owl's top - multi-stage growth */
+  animation: cloud-grow 1.2s ease-out forwards;
   transform-origin: bottom center;
 }
 
-/* Dialogue entrance animation from owl's mouth - starts near mouth, expands upward */
-@keyframes dialogue-entrance {
+/* Multi-stage cloud growth animation: starts from bottom-right (around 20px from top), expands upward to top */
+/* Owl image: height 100px * scale(0.7) = 70px actual height, centered in container */
+/* Cloud container at top: -80px relative to static-owl-container */
+/* Start from bottom-right area (around 20px from top, matching shrink end position), grow upward to final position */
+@keyframes cloud-grow {
   0% {
     opacity: 0;
-    transform: translateX(-50%) translateY(30px) scale(0.2);
-    /* Start from near owl's mouth position (below and smaller) */
+    transform: translateX(20%) translateY(20px) scale(0.05);
+    /* Start very small at bottom-right area (around 20px from top, matching shrink end) */
+  }
+  30% {
+    opacity: 0.7;
+    transform: translateX(-10%) translateY(15px) scale(0.3);
+    /* Grow and move upward and toward center */
+  }
+  60% {
+    opacity: 0.9;
+    transform: translateX(-30%) translateY(8px) scale(0.7);
+    /* Continue growing and moving up toward final position */
   }
   100% {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
-    /* End at final position above owl */
+    /* Reach complete/full size at final position above owl (centered at top) */
   }
 }
 
-/* Bubble speaking animation - entrance first, then speaking */
-.owl-cloud-container.speaking {
+/* Bubble speaking animation - cloud growth first, then speaking */
+.owl-cloud-container.speaking:not(.disappearing) {
   transform-origin: bottom center;
-  /* Entrance animation, then speaking animation starts after 0.5s */
-  animation: dialogue-entrance 0.5s ease-out forwards,
-             bubble-pop 1.8s ease-in-out 0.5s infinite;
+  /* Cloud growth animation, then speaking animation starts after cloud is fully grown */
+  animation: cloud-grow 1.2s ease-out forwards,
+             bubble-pop 1.8s ease-in-out 1.8s infinite;
 }
 
 /* Update bubble-pop to maintain position from entrance */
@@ -340,9 +353,61 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 }
 
-/* Ensure dialogue without speaking class still has entrance animation */
-.owl-cloud-container:not(.speaking) {
-  animation: dialogue-entrance 0.5s ease-out forwards;
+/* Ensure dialogue without speaking class still has cloud growth animation */
+.owl-cloud-container:not(.speaking):not(.disappearing) {
+  animation: cloud-grow 1.2s ease-out forwards;
+}
+
+/* Cloud disappearing animation - reverse of cloud-grow */
+.owl-cloud-container.disappearing {
+  animation: cloud-shrink 1.2s ease-in 0.6s forwards;
+  transform-origin: bottom center;
+}
+
+/* Reverse animation: complete size -> larger -> small -> disappear at around 20px from top */
+/* Owl's top is at translateY(45px), animation completes at translateY(20px) - moved up more */
+/* Move horizontally from center (-50%) to right edge (positive translateX) */
+@keyframes cloud-shrink {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    /* Start at complete/full size above owl */
+  }
+  40% {
+    opacity: 0.9;
+    transform: translateX(-30%) translateY(10px) scale(0.7);
+    /* Shrink and move down and to the right */
+  }
+  70% {
+    opacity: 0.7;
+    transform: translateX(-10%) translateY(15px) scale(0.3);
+    /* Continue shrinking and moving down-right */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20%) translateY(20px) scale(0.05);
+    /* Shrink to very small and disappear at around 20px from top (moved up more) */
+  }
+}
+
+/* Text disappearing animation - reverse of text-fill-in (happens first) */
+.owl-cloud-container.disappearing .cloud-text {
+  animation: text-fade-out 0.6s ease-out forwards;
+}
+
+@keyframes text-fade-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
 }
 
 .cloud-image {
@@ -376,6 +441,25 @@ body:has(#menu:checked) .owl-animation-wrapper {
   justify-content: center;
   width: 120px;
   min-height: 60px;
+  /* Text appears after cloud reaches full size */
+  opacity: 0;
+  animation: text-fill-in 0.6s ease-in 1.2s forwards;
+}
+
+/* Text fill-in animation - appears after cloud is fully grown */
+@keyframes text-fill-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 /* Mobile-specific performance optimizations */
@@ -396,7 +480,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 
   .owl-cloud-container {
-    top: -55px;          /* Keep bubble near the owl's mouth */
+    top: -55px;          /* Keep bubble above the owl */
     left: -35%;          /* Match desktop alignment horizontally */
   }
 
@@ -415,5 +499,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
     align-items: center;
     justify-content: center;
     min-height: 40px;
+    /* Text animation on mobile too */
+    animation: text-fill-in 0.6s ease-in 1.2s forwards;
   }
 } 
