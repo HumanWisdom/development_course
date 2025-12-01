@@ -526,6 +526,10 @@ return [
     if (FnName && FnName != null) {
       return FnName;
     }
+    let name = this.getDataFromLocalStorage('name');
+    if (name && name != null) {
+      return name.split(' ')[0];
+    }
     return '';
   }
 
