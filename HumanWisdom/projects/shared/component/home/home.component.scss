@@ -87,8 +87,7 @@
   overflow-y: hidden;
   scroll-behavior: smooth;
   padding-left: 20px;
-  padding-bottom: 12px;
-  margin-bottom: -12px;
+  padding-bottom: 10px;
   scrollbar-width: thin;
   scrollbar-color: #eea170 #f6d1b7;
 }
@@ -132,11 +131,15 @@
 }
 
 .home_pathway {
-      background: rgba(255, 232, 187, 1);
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding-top: 10px;
-      padding-bottom: 10px;
+  background: rgba(255, 232, 187, 1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.home_pathway:hover {
+  padding-bottom: 0;
 }
 
 .home_introduction,.home_blogs ,.home_stories, .home_podcast ,.home_shorts  {
@@ -367,7 +370,7 @@ background: #FFF7E6;
 .hr_style_v4 {
     border: 1px solid #000000;
     opacity: 0.1;
-    margin: 10px 0;
+    margin: 0 0 10px 0;
   //filter: brightness(0) invert(0.5); /* Makes the SVG grey */
 }
 

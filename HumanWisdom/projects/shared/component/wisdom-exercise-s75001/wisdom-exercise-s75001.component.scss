@@ -71,6 +71,7 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-left: 20px !important;
+  padding-bottom: 10px;
 }
 .section-title {
   font-family: 'Poppins', sans-serif;
@@ -217,7 +218,7 @@
 .hr_style_v4 {
   border: 1px solid #000000;
   opacity: 0.1;
-  margin: 10px 0;
+  margin: 0 0 10px 0;
 }
 .card-container.odiv {
   scrollbar-width: thin !important;
