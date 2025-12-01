@@ -41,34 +41,33 @@ export class DailyCheckinNoteSavePage implements OnInit {
     return { RowId:"", Expression:"",ImgPath:"",SearchTerm:"",Description:""}
     }
 
-    SaveJournal(){
-      this.logeventservice.logEvent('click_daily_checkin_save_'+ this.rowData.Expression);
+SaveJournal(){
+  this.logeventservice.logEvent('click_daily_checkin_save_'+ this.rowData.Expression);
 
-      if(this.isLoggedIn){
-        let userId = JSON.parse(localStorage.getItem("userId"));
-        var obj = {
-         "JournalId":0,
-         "JDate":this.minDate,
-         "Notes":this.checkInDescription,
-         "UserId":userId,
-         "CheckinID":this.rowData.RowID,
-         "Title":'Daily check-in'
-        };
-        this.commonService.submitJournal(obj).subscribe(res=>{
-          if(res == 0 || res){
-              this.showSuccessModal = true;
-              if(!this.isFirstLogin){
-                setTimeout(() => {
-                  this.findOutMore();
-                }, 3000)
-              }
-          }
-        })
-      }else{
-        this.enableAlert = true;
+  if(this.isLoggedIn){
+    let userId = JSON.parse(localStorage.getItem("userId"));
+    var obj = {
+     "JournalId":0,
+     "JDate":this.minDate,
+     "Notes":this.checkInDescription,
+     "UserId":userId,
+     "CheckinID":this.rowData.RowID,
+     "Title":'Daily check-in'
+    };
+    this.commonService.submitJournal(obj).subscribe(res=>{
+      if(res == 0 || res){
+          this.showSuccessModal = true;
+          // if(!this.isFirstLogin){
+          //   setTimeout(() => {
+          //     this.findOutMore();
+          //   }, 3000)
+          // }
       }
-
-    }
+    })
+  }else{
+    this.enableAlert = true;
+  }
+}
 
     addZero(i) {
       if (i < 10) {
