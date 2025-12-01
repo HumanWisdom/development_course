@@ -161,13 +161,15 @@ export class WisdomShortsIndexPage implements OnInit {
   wisdoshortsevent(val, video, title) {
     const loggedin = localStorage.getItem('isloggedin');
     const sub      = localStorage.getItem('Subscriber');
-    const id       = video.split('/')[3].split('.')[1];   // short numeric id
+    const id       = this.extractShortIdFromUrl(video);
 
     /* 1.  register the click */
-    this.service.clickShorts(+id).subscribe({
+    if (id !== null) {
+      this.service.clickShorts(id).subscribe({
       next:  () => console.log('short click recorded'),
       error: (e) => console.error('short click failed', e)
-    });
+      });
+    }
 
     /* 2.  existing free/subscription check & navigation */
     this.service.CheckShortsIsFree(id).subscribe(res => {
@@ -188,6 +190,25 @@ export class WisdomShortsIndexPage implements OnInit {
         }
       }
     });
+  }
+
+  private extractShortIdFromUrl(url: string): number | null {
+    if (!url) return null;
+    const withoutQuery = url.split('?')[0];
+    const filename = (withoutQuery.split('/').pop() || withoutQuery).toString();
+    const extMatch = filename.match(/\.(\d+)\.(mp4|webm|mov)$/i);
+    if (extMatch && extMatch[1]) {
+      const n = Number(extMatch[1]);
+      return Number.isFinite(n) ? n : null;
+    }
+    const parts = filename.split('.').reverse();
+    for (const part of parts) {
+      const n = Number(part);
+      if (!Number.isNaN(n) && Number.isFinite(n)) {
+        return n;
+      }
+    }
+    return null;
   }
 
   searchShorts($event) {

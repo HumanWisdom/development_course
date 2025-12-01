@@ -419,8 +419,16 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private extractShortIdFromCode(code: string): number | null {
     if (!code) return null;
-    // Typical pattern observed elsewhere: filename like "name.<id>.mp4"
-    const parts = code.split('.');
+    const withoutQuery = code.split('?')[0];
+    const filename = (withoutQuery.split('/').pop() || withoutQuery).toString();
+
+    const extMatch = filename.match(/\.(\d+)\.(mp4|webm|mov)$/i);
+    if (extMatch && extMatch[1]) {
+      const n = Number(extMatch[1]);
+      return Number.isFinite(n) ? n : null;
+    }
+
+    const parts = filename.split('.').reverse();
     for (const part of parts) {
       const n = Number(part);
       if (!Number.isNaN(n) && Number.isFinite(n)) {
