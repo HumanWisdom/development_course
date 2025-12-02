@@ -1889,19 +1889,25 @@ closeCookies() {
             this.enableAlert= true;
           } else {
             let sub = localStorage.getItem('Subscriber');
-            if (sub === '0') {
-              let key = 'dailyPracticeVisitCount';
-              let countStr = this.getCookie(key) || '0';
-              let count = parseInt(countStr);
-              if (count >= 2) {
+            if (sub === '1') {
+              this.router.navigate([route, params]);
+            } else {
+              const lr = this.loginResponse || JSON.parse(localStorage.getItem('loginResponse') || 'null');
+              const base = lr && lr.NoOfDPVisits ? parseInt(lr.NoOfDPVisits as any, 10) : 0;
+              if (base > 2) {
                 this.isFreeTrialEnable = true;
                 this.enableAlert = true;
               } else {
-                this.setCookie(key, (count + 1).toString());
-                this.router.navigate([route, params]);
+                let sc = parseInt(localStorage.getItem('dpClicks') || '0');
+                if (isNaN(sc)) sc = 0;
+                if ((base + sc) >= 2) {
+                  this.isFreeTrialEnable = true;
+                  this.enableAlert = true;
+                } else {
+                  localStorage.setItem('dpClicks', (sc + 1).toString());
+                  this.router.navigate([route, params]);
+                }
               }
-            } else {
-              this.router.navigate([route, params]);
             }
           }
         }
@@ -2198,19 +2204,25 @@ closeCookies() {
       this.enableAlert= true;
     } else {
       let sub = localStorage.getItem('Subscriber');
-      if (sub === '0') {
-        let key = 'dailyPracticeVisitCount';
-        let countStr = this.getCookie(key) || '0';
-        let count = parseInt(countStr);
-        if (count >= 2) {
+      if (sub === '1') {
+        this.router.navigate(['/teenagers/daily-checkin']);
+      } else {
+        const lr = this.loginResponse || JSON.parse(localStorage.getItem('loginResponse') || 'null');
+        const base = lr && lr.NoOfDPVisits ? parseInt(lr.NoOfDPVisits as any, 10) : 0;
+        if (base > 2) {
           this.isFreeTrialEnable = true;
           this.enableAlert = true;
         } else {
-          this.setCookie(key, (count + 1).toString());
-          this.router.navigate(['/teenagers/daily-checkin']);
+          let sc = parseInt(localStorage.getItem('dpClicks') || '0');
+          if (isNaN(sc)) sc = 0;
+          if ((base + sc) >= 2) {
+            this.isFreeTrialEnable = true;
+            this.enableAlert = true;
+          } else {
+            localStorage.setItem('dpClicks', (sc + 1).toString());
+            this.router.navigate(['/teenagers/daily-checkin']);
+          }
         }
-      } else {
-        this.router.navigate(['/teenagers/daily-checkin']);
       }
     }
   }
@@ -2233,4 +2245,3 @@ closeCookies() {
   }
 
 }
-

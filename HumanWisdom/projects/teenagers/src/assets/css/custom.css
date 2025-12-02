@@ -10958,6 +10958,8 @@ body,
   border-radius: 24px 24px 24px 24px ;
   z-index: 999;
   transition: all 1s;
+  width:390px !important;
+  height: fit-content;
 }
 .v1_3_sfooterpremium {
     height: 110px;
@@ -35527,7 +35529,7 @@ color: white !important;
 }
 .mdp_oli_tray 
 {
-  /* box-shadow: 0 -2px 2px #00000010; */
+  box-shadow: 0 -2px 2px #00000010;
   position: fixed;
   bottom: 0px;
   right: 0;
