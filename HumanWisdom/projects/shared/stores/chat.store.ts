@@ -524,6 +524,7 @@ export class ChatStore extends ComponentStore<ChatState> {
     try {
       const stored = localStorage.getItem(this.STORAGE_KEY);
       if (!stored) {
+        // If no stored session, welcome messages will be initialized by ChatbotService
         return;
       }
 
@@ -533,6 +534,7 @@ export class ChatStore extends ComponentStore<ChatState> {
       // Check if session is expired
       if (this.isSessionExpired(lastUpdated)) {
         this.clearStorage();
+        // Welcome messages will be initialized by ChatbotService
         return;
       }
 
@@ -561,6 +563,7 @@ export class ChatStore extends ComponentStore<ChatState> {
             currentUserId
           );
           this.clearStorage();
+          // Welcome messages will be initialized by ChatbotService
           return;
         }
       }
@@ -569,6 +572,7 @@ export class ChatStore extends ComponentStore<ChatState> {
       if (storedProgramType !== null && storedProgramType !== currentProgramType) {
         console.log('Program type changed from', storedProgramType, 'to', currentProgramType, '- clearing chat');
         this.clearStorage();
+        // Welcome messages will be initialized by ChatbotService
         return;
       }
 
@@ -597,6 +601,9 @@ export class ChatStore extends ComponentStore<ChatState> {
       console.error('Error loading chat session from localStorage:', error);
       this.clearStorage();
     }
+    
+    // After loading, if messages are empty, the service will initialize welcome messages
+    // This is handled by ChatbotService.ensureWelcomeMessages() when component loads
   }
 
   /**
@@ -640,7 +647,11 @@ export class ChatStore extends ComponentStore<ChatState> {
     }
     
     const currentMessages = this.get().messages;
-    if (currentMessages.length === 0) {
+    // Filter out typing indicators when checking if messages are empty
+    const nonTypingMessages = currentMessages.filter(msg => !msg.isTyping);
+    
+    if (nonTypingMessages.length === 0) {
+      console.log('Store is empty - setting welcome messages');
       this.setMessages(messages);
       return;
     }

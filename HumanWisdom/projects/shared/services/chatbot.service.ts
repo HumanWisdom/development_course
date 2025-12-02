@@ -179,6 +179,24 @@ export class ChatbotService {
     this.initializeWelcomeMessage();
   }
 
+  /**
+   * Ensure welcome messages are present in the chat
+   * If messages are empty, initialize with welcome messages
+   * This is useful after logout or when the store is empty
+   */
+  ensureWelcomeMessages(): void {
+    const currentMessages = this.chatStore.getAllMessages();
+    // Filter out typing indicators when checking if messages are empty
+    const nonTypingMessages = currentMessages.filter(msg => !msg.isTyping);
+    
+    if (nonTypingMessages.length === 0) {
+      console.log('Store is empty - initializing welcome messages');
+      this.initializeWelcomeMessage();
+    } else {
+      console.log('Store has messages, count:', nonTypingMessages.length);
+    }
+  }
+
   getCurrentSessionId(): string | null {
     return this.chatStore.getCurrentSessionId();
   }
