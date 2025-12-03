@@ -49,10 +49,22 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Check if program type has changed and clear chat if needed
     this.checkAndHandleProgramTypeChange();
     
+    // Ensure welcome messages are shown if store is empty (e.g., after logout)
+    this.chatbotService.ensureWelcomeMessages();
+    
     // Subscribe to messages from store
     this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
         this.messages = messages;
+        
+        // Ensure welcome messages if store becomes empty (e.g., after logout)
+        if (messages.length === 0) {
+          // Use setTimeout to avoid infinite loop and ensure store is ready
+          setTimeout(() => {
+            this.chatbotService.ensureWelcomeMessages();
+          }, 50);
+        }
+        
         // Scroll to bottom quickly when messages update
         setTimeout(() => this.scrollToBottom(), 100);
         // Style anchor tags after messages are updated
@@ -85,6 +97,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    // Ensure welcome messages are present after view initializes
+    // This handles cases where store was empty when ngOnInit ran
+    setTimeout(() => {
+      this.chatbotService.ensureWelcomeMessages();
+    }, 100);
+    
     this.scrollToBottom();
     // Focus on input when component loads
     if (this.messageInput) {
