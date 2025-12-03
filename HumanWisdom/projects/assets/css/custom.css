@@ -30759,7 +30759,7 @@ text-decoration: underline;
 {
   /* filter: invert(0.1); */
   filter: none;
-  color:#000000 !important;
+  /* color:#000000 !important; */
 }
 
 .join_anyway
