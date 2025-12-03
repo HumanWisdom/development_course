@@ -10293,6 +10293,10 @@ ul
 {
   margin-bottom: 5px !important;
 }
+.mb6px
+{
+  margin-bottom: 6px !important;
+}
 
 .cblack
 {
@@ -10954,6 +10958,8 @@ body,
   border-radius: 24px 24px 24px 24px ;
   z-index: 999;
   transition: all 1s;
+  width:390px !important;
+  height: fit-content;
 }
 .v1_3_sfooterpremium {
     height: 110px;
@@ -37863,7 +37869,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   max-height: 86vh;
   object-fit: cover;
   border-radius: 46px;
-  padding: 20px;
+  padding: 10px;
 }
 .btn_login_signup_new {
    border: 0;

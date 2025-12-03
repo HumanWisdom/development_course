@@ -1306,14 +1306,19 @@ toggleAccordion() {
           this.showModal = true;
           return;
         }
-        let c = parseInt(localStorage.getItem('dpClicks') || '0');
-        if (isNaN(c)) c = 0;
-        if (c >= 2) {
+        const lr = this.loginResponse || JSON.parse(localStorage.getItem('loginResponse') || 'null');
+        const base = lr && lr.NoOfDPVisits ? parseInt(lr.NoOfDPVisits as any, 10) : 0;
+        if (base > 2) {
           this.showModal = true;
           return;
         }
-        c = c + 1;
-        localStorage.setItem('dpClicks', c.toString());
+        let sc = parseInt(localStorage.getItem('dpClicks') || '0');
+        if (isNaN(sc)) sc = 0;
+        if ((base + sc) >= 2) {
+          this.showModal = true;
+          return;
+        }
+        localStorage.setItem('dpClicks', (sc + 1).toString());
       }
       this.router.navigate([route, params]);
     } else if (route != '') {
@@ -1325,14 +1330,19 @@ toggleAccordion() {
             this.showModal = true;
             return;
           }
-          let c = parseInt(localStorage.getItem('dpClicks') || '0');
-          if (isNaN(c)) c = 0;
-          if (c >= 2) {
+          const lr = this.loginResponse || JSON.parse(localStorage.getItem('loginResponse') || 'null');
+          const base = lr && lr.NoOfDPVisits ? parseInt(lr.NoOfDPVisits as any, 10) : 0;
+          if (base > 2) {
             this.showModal = true;
             return;
           }
-          c = c + 1;
-          localStorage.setItem('dpClicks', c.toString());
+          let sc = parseInt(localStorage.getItem('dpClicks') || '0');
+          if (isNaN(sc)) sc = 0;
+          if ((base + sc) >= 2) {
+            this.showModal = true;
+            return;
+          }
+          localStorage.setItem('dpClicks', (sc + 1).toString());
         }
       }
       this.router.navigate([route])

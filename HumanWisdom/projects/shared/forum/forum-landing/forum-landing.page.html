@@ -92,7 +92,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <button type="button"  (click)="startNewThread(5)" class="btn btn_ttws">
+                  <button type="button"  (click)="startNewThread(5)" class="btn btn-warning btn_post">
                     Ask our expert coaches
                   </button>
                 </div>
@@ -156,9 +156,9 @@
                             </span>
                           </button>
 
-                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
                             <i class="fa fa-minus mr3px"></i>
-                            <span class="underline">
+                            <span  class="underline">
                               Unfollow
                             </span>
                           </button>
@@ -172,7 +172,7 @@
                             </span>
                           </button>
   
-                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
                             <i class="fa fa-minus mr3px"></i>
                             <span class="underline">
                               Unfollow
@@ -467,7 +467,7 @@
               </span>
             </button>
 
-            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
               <i class="fa fa-minus mr3px"></i>
               <span class="underline">
                 Unfollow
@@ -483,7 +483,7 @@
               </span>
             </button>
 
-            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
               <i class="fa fa-minus mr3px"></i>
               <span class="underline">
                 Unfollow
@@ -1237,7 +1237,7 @@
         <a class="" (click)="getAllRecords()">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_18px fw_500 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 All threads
               </h3>
             </div>

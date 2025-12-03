@@ -106,6 +106,17 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     private readonly service: CommonService
   ) {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
+    const url = window.location.href;
+    const isShort = !url.includes('videopage');
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    if (isShort && !isLoggedIn) {
+      this.router.navigate([
+        `${SharedService.getprogramName()}/subscription/start-your-free-trial`,
+      ]);
+      localStorage.setItem('isSwipeAllow', 'false');
+      this.isSwipeAllow = false;
+      return;
+    }
     this.initializeData();
   }
 
@@ -190,6 +201,15 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit(): void {
     this.path = this.router.url;
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    if (this.wisdomshort && !isLoggedIn) {
+      this.router.navigate([
+        `${SharedService.getprogramName()}/subscription/start-your-free-trial`,
+      ]);
+      localStorage.setItem('isSwipeAllow', 'false');
+      this.isSwipeAllow = false;
+      return;
+    }
 
     const code = this.wisdomshort
       ? `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`
@@ -208,6 +228,10 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    if (this.wisdomshort && !isLoggedIn) {
+      return;
+    }
     if (this.swipeContainer && this.isSwipeAllow) {
       const hammertime = new Hammer(this.swipeContainer.nativeElement);
       hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
@@ -216,7 +240,6 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       hammertime.on('swipedown', () => this.onSwipeDown());
     }
     
-    // Ensure auto-play for all videos
     this.ensureAutoPlay();
 
     // Track once on first play automatically (covers autoplay and manual play)

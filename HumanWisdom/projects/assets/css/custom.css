@@ -10254,6 +10254,10 @@ ul
 {
   margin-bottom: 5px !important;
 }
+.mb6px
+{
+  margin-bottom: 6px !important;
+}
 
 .cblack
 {
@@ -10886,6 +10890,9 @@ background: #535353 !important;
   color: #666;
 }
 
+.forum_all_threads{
+  background: #FFE8BB !important;
+}
 .lab-modal-body {
   /* position: fixed;
   bottom: -250px;
@@ -10917,7 +10924,7 @@ background: #535353 !important;
   padding: 20px;
   height: auto;
   /* background-color: #5D5D5D; */
-  background: #ffffff;
+  background: #FFF7E6!important;
   color: #000;
   border: 0;
   opacity: 0;
@@ -30752,6 +30759,7 @@ text-decoration: underline;
 {
   /* filter: invert(0.1); */
   filter: none;
+  /* color:#000000 !important; */
 }
 
 .join_anyway
@@ -34728,7 +34736,7 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
   color: #000000 !important;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 24px;
   display: flex;
   align-items: center;
@@ -38209,7 +38217,7 @@ span
   
   object-fit: cover;
   border-radius: 46px;
-  padding:20px;
+  padding: 10px;
 }
 
 .toc_adiv_mp
