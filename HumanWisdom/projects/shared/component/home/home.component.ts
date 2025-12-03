@@ -266,32 +266,21 @@ navigationChange = new EventEmitter<string>();
   }
 
    loadHomeContents(id): void {
-    // Check cache first
-    const cachedContent = this.homeStateService.getCachedContent(id.toString());
-    if (cachedContent) {
-      console.log('Using cached content for preference:', id);
-      this.mainheader = cachedContent.MainHeader;
-      this.contentSections = this.transformApiResponseToContentSections(cachedContent);
-      this.restoreExpandedState();
-      
-      // Scroll to active list after content is loaded
-      setTimeout(() => {
-        this.scrollToActiveList();
-      }, 300);
-      return;
-    }
-
-    // Fetch from API if not cached
+    // Always call API to get fresh data
     this.commonService.GetHomeContents(9, id).subscribe((res: HomeContentResponse) => {
       if (res) {
         this.mainheader = res.MainHeader;
         console.log('Raw API response:', res);
         
-        // Cache the response
+        // Cache the response for future use (optional)
         this.homeStateService.setCachedContent(id.toString(), res);
         
+        // Transform API response to content sections
         this.contentSections = this.transformApiResponseToContentSections(res);
         console.log('Transformed content sections:', this.contentSections);
+        
+        // Merge seen status from state management (background update)
+        this.mergeSeenStatusFromState();
         
         this.restoreExpandedState();
         
@@ -792,6 +781,23 @@ navigationChange = new EventEmitter<string>();
     }
     this.trackCardClick(card);
     console.log('Card clicked:', card);
+    
+    // Mark card as seen in state management if it's currently unseen
+    // This will be merged when content is reloaded
+    const isUnseen = card && card.id && (
+      card.isRead === undefined || 
+      card.isRead === null || 
+      card.isRead === '0' || 
+      card.isRead === 0
+    );
+    
+    if (isUnseen) {
+      console.log('Marking card as seen in state:', card.id);
+      this.homeStateService.markCardAsSeen(card.id);
+      // Update the card immediately for UI feedback
+      card.isRead = '1';
+    }
+    
     const isLocked = card && (card.isFree === '0' || card.isFree === 0);
     if (!this.isSubscriber && isLocked) {
       this.showModal = true;
@@ -1495,5 +1501,47 @@ navigationChange = new EventEmitter<string>();
       console.warn('Error getting streak from localStorage:', error);
       this.streak = '';
     }
+  }
+
+  /**
+   * Merge seen status from state management into cards
+   * This updates the isRead property based on user interactions stored in state
+   * Called after API response is received and transformed
+   */
+  private mergeSeenStatusFromState(): void {
+    const seenCards = this.homeStateService.getSeenCards();
+    if (!seenCards || Object.keys(seenCards).length === 0) {
+      return;
+    }
+
+    console.log('Merging seen status from state:', seenCards);
+
+    // Update cards in all sections
+    this.contentSections.forEach(section => {
+      if (section.cards) {
+        section.cards.forEach(card => {
+          if (card.id && seenCards[card.id]) {
+            // Override API's isRead with state management value
+            card.isRead = '1';
+            console.log('Updated card isRead from state:', card.id, card.title);
+          }
+        });
+      }
+
+      // Update cards in child sections
+      if (section.childSections) {
+        section.childSections.forEach(childSection => {
+          if (childSection.cards) {
+            childSection.cards.forEach(card => {
+              if (card.id && seenCards[card.id]) {
+                // Override API's isRead with state management value
+                card.isRead = '1';
+                console.log('Updated child card isRead from state:', card.id, card.title);
+              }
+            });
+          }
+        });
+      }
+    });
   }
 }

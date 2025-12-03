@@ -6,6 +6,7 @@ export interface HomeState {
   showAllCards: { [sectionId: string]: boolean };
   cachedContent: { [preferenceId: string]: any };
   lastActivePreference: string | null;
+  seenCards: { [cardId: string]: boolean }; // Track which cards have been seen/read
 }
 
 @Injectable({
@@ -16,7 +17,8 @@ export class HomeStateService {
     expandedSections: {},
     showAllCards: {},
     cachedContent: {},
-    lastActivePreference: null
+    lastActivePreference: null,
+    seenCards: {}
   };
 
   private stateSubject = new BehaviorSubject<HomeState>(this.loadStateFromStorage());
@@ -128,5 +130,23 @@ export class HomeStateService {
   clearCache(): void {
     const currentState = this.stateSubject.value;
     this.updateState({ cachedContent: {} });
+  }
+
+  // Mark card as seen/read
+  markCardAsSeen(cardId: string): void {
+    const currentState = this.stateSubject.value;
+    const seenCards = { ...currentState.seenCards };
+    seenCards[cardId] = true;
+    this.updateState({ seenCards });
+  }
+
+  // Check if card has been seen/read
+  isCardSeen(cardId: string): boolean {
+    return this.stateSubject.value.seenCards[cardId] || false;
+  }
+
+  // Get all seen cards
+  getSeenCards(): { [cardId: string]: boolean } {
+    return { ...this.stateSubject.value.seenCards };
   }
 }
