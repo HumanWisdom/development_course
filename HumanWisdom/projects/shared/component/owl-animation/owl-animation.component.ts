@@ -318,8 +318,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
         owlWrapper.style.zIndex = '10';
         owlWrapper.style.setProperty('z-index', '10', 'important');
       } else {
-        owlWrapper.style.zIndex = '100';
-        owlWrapper.style.setProperty('z-index', '100', 'important');
+        owlWrapper.style.zIndex = '10';
+        owlWrapper.style.setProperty('z-index', '10', 'important');
       }
     }
   }
