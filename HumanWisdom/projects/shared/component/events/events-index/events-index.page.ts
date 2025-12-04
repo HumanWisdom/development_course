@@ -109,6 +109,12 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
     });
     const sub = localStorage.getItem('Subscriber');
     const prog = SharedService.getprogramName();
+    const isGuest = localStorage.getItem('guest') === 'T';
+
+    if (isGuest && RowID !== 1) {
+      this.router.navigate([prog, 'subscription', 'start-your-free-trial']);
+      return;
+    }
 
     if (RowID >= 2 && sub === '0') {
       // this.router.navigate([`${prog}/subscription/start-your-free-trial`]);
