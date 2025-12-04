@@ -256,13 +256,16 @@
                   <button type="submit" class="btn btn_post"  [disabled]="DisabledComment(posttread)"  (click)="commentPost()">
                     Comment
                   </button>
+                  </div>
                 </div>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 mtb10px "
-                  *ngIf="isLoggedIn && isReportPost">
-                  <button type="submit" class="btn btn-warning btn_post" (click)="submitComment()">
-                    Submit
-                  </button>
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 mtb10px "
+                      *ngIf="isLoggedIn && isReportPost">
+                      <button type="submit" class="btn btn-warning btn_post" (click)="submitComment()">
+                        Submit
+                      </button>
+                    </div>
                 </div>
                 </a>
               </div>
@@ -297,11 +300,12 @@
                     </div>
                   </div>
 
-                  <div class=" div_forum_post mt20px">
+                  <div class="row div_forum_post mt20px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    
                       
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft" *ngIf="!isAdults">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tleft" *ngIf="!isAdults">
                         <button type="button"  (click)="like(item.ReplyPostID,posttread.PostID,index)"  class="btn fs_12px fw_400 lh_140p fc_e58d82">
                           
                           <img *ngIf="item.Liked=='0'"
@@ -313,8 +317,9 @@
                           <span [innerText]="item.ReplyPostLikeCount"></span>
                         </button>
                       </div>
-
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft" *ngIf="isAdults">
+                  </div>    
+                  <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tleft" *ngIf="isAdults">
                         <button type="button"  (click)="like(item.ReplyPostID,posttread.PostID,index)"  class="btn fs_12px fw_400 lh_140p fc_000000">
                           
                           <img *ngIf="item.Liked=='0'"
@@ -326,9 +331,10 @@
                           <span [innerText]="item.ReplyPostLikeCount"></span>
                         </button>
                       </div>
+                   </div>    
+                  <div class="row">
 
-
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
                         <button type="button"  (click)="toggle(item)" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" >
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px" *ngif="!isAdults">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report.svg" class="img-responsive mr5px" *ngIf="isAdults">
@@ -336,7 +342,8 @@
                           Report
                         </button>
                       </div>
-                    </div>
+                    
+                  </div>
                   </div>
                  </div>
                   <div class="row forum_pt20px" *ngIf="replyflag && activereply.ReplyPostID === item.ReplyPostID">
