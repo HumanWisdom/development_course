@@ -395,14 +395,14 @@
                             required="required" class="txtarea_fl_comment" placeholder="Comment here" rows="5"></textarea>
                         </div>
     
-                        <div class="col-md-12 col-sm-12 col-xs-12   mt15px"
+                        <div class="col-md-12 col-sm-12 col-xs-12   mt10px"
                           *ngIf="isLoggedIn && actionType=='comment'">
                           <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" style="color:#fff;">
                             Comment
                           </button>
                         </div>
                         <!-- <div class="row" >  -->
-                        <div class="col-md-12 col-sm-12 col-xs-12 mt15px"
+                        <div class="col-md-12 col-sm-12 col-xs-12 mt10px"
                           *ngIf="isLoggedIn && actionType=='report'">
                           <button type="button" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" style="color:#fff;">
                             Submit
@@ -803,7 +803,7 @@
 <!-- choose category -->
 <div class="modal fade slide-up" id="choose_category" data-bs-keyboard="false" data-bs-backdrop="false">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_cc col_cw">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-bodyfourm modal_cc col_cw">
 
       <div class="row mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -1237,7 +1237,7 @@
         <a class="" (click)="getAllRecords()">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_18px fw_500 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 All threads
               </h3>
             </div>
