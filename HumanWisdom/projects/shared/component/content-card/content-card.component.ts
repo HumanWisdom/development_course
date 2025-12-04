@@ -62,6 +62,11 @@ export class ContentCardComponent {
    * Show tick when isRead is "1" (completed/read)
    */
   shouldShowTickIcon(): boolean {
+    const isLoggedIn = SharedService.isLoggedIn();
+    const isGuest = (localStorage.getItem('guest') === 'T');
+    if (!isLoggedIn || isGuest) {
+      return false;
+    }
     return this.card.isRead === "1" || this.card.isRead === 1;
   }
 
