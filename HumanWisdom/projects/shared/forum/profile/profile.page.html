@@ -117,7 +117,7 @@
                           </span>
                         </button>
 
-                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_e58d82" *ngIf="item.Followed=='1'">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p" *ngIf="item.Followed=='1'">
                           <i class="fa fa-minus mr3px"></i>
                           <span class="underline">
                             Unfollow
@@ -252,13 +252,13 @@
                             required="required" class="txtarea_fl_comment" placeholder="Comment here" rows="5"></textarea>
                         </div>
     
-                        <div class="col-md-12 col-sm-12 col-xs-12   mt15px"
+                        <div class="col-md-12 col-sm-12 col-xs-12   mt10px"
                           *ngIf="isLoggedIn && actionType=='comment'">
                           <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
                             Comment
                           </button>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12   mt15px"
+                        <div class="col-md-12 col-sm-12 col-xs-12   mt10px"
                           *ngIf="isLoggedIn && actionType=='report'">
                           <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
                             Submit
