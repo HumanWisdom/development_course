@@ -24,6 +24,8 @@ export class SingleAudioContentComponent implements OnInit {
   enableTextContent = false;
   textContent = "";
   audioLinkUrl = "";
+  rowId: number = 0
+  moduleName: any = ''
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, 
      private location: Location, private navigationService: NavigationService, 
@@ -39,10 +41,11 @@ export class SingleAudioContentComponent implements OnInit {
     }
     let rowid: any = this.route.snapshot.paramMap.get('RowId');
      rowid = parseInt(rowid);
+    this.rowId = rowid;
     let Id = rowid <= 9 ? '0' + rowid : rowid;
-    let moduleName :any = this.route.snapshot.paramMap.get('moduleName');
-    if( moduleName && moduleName != 'undefined') {
-      this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/${moduleName.toLowerCase()}/${Id}.webp`;
+    this.moduleName = this.route.snapshot.paramMap.get('moduleName');
+    if( this.moduleName && this.moduleName != 'undefined') {
+      this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/${this.moduleName.toLowerCase()}/${Id}.webp`;
     }else{
         this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`;
     }
@@ -51,6 +54,8 @@ export class SingleAudioContentComponent implements OnInit {
     if (m.includes('introduction_to_happierme')) {
       this.enableImage = false
     }
+
+    this.redirectIfGuest()
   }
 
   ngOnInit() {
@@ -91,6 +96,17 @@ export class SingleAudioContentComponent implements OnInit {
     })
   }
 
+
+  redirectIfGuest() {
+    const guest = localStorage.getItem('guest') === 'T'
+    const isPodcast = this.moduleName && this.moduleName != 'undefined' ? this.moduleName.toLowerCase() === 'podcast' : true
+    const allow = isPodcast && this.rowId === 1
+    if (guest && !allow) {
+      const isAdultsProgram = SharedService.ProgramId == ProgramType.Adults
+      const url = isAdultsProgram ? '/subscription/start-your-free-trial' : '/teenagers/subscription/start-your-free-trial'
+      this.router.navigateByUrl(url)
+    }
+  }
 
   setAudioControlsBackground() {
     const backgroundColor = this.isAdults ? '#FFE8BB' : '#0C2B5F';
