@@ -27,6 +27,8 @@ export class SingleAudioContentComponent implements OnInit {
   rowId: number = 0
   moduleName: any = ''
   headerTitle = ''
+  isFree: any = ''
+
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, 
      private location: Location, private navigationService: NavigationService, 
@@ -45,6 +47,8 @@ export class SingleAudioContentComponent implements OnInit {
     this.rowId = rowid;
     let Id = rowid <= 9 ? '0' + rowid : rowid;
     this.moduleName = this.route.snapshot.paramMap.get('moduleName');
+    this.isFree= this.route.snapshot.paramMap.get('enable');
+
     this.headerTitle = this.moduleName && this.moduleName != 'undefined' ? this.titleCase(this.moduleName) : '';
     if( this.moduleName && this.moduleName != 'undefined') {
       this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/${this.moduleName.toLowerCase()}/${Id}.webp`;
@@ -103,9 +107,9 @@ export class SingleAudioContentComponent implements OnInit {
     const guest = localStorage.getItem('guest') === 'T'
     const hasModule = this.moduleName && this.moduleName != 'undefined'
     const lowerModule = hasModule ? this.moduleName.toLowerCase() : ''
-    const isPodcast = hasModule ? lowerModule === 'podcast' : true
+    const isPodcast = hasModule ? lowerModule === 'podcast' : false
     const isSoundscapes = hasModule ? lowerModule === 'soundscapes' : false
-    const allow = (isPodcast && this.rowId === 1) || (isSoundscapes && this.rowId === 1)
+    const allow = (isPodcast && (this.isFree =='T')) || (isSoundscapes && this.rowId === 1)
     if (guest && !allow) {
       const isAdultsProgram = SharedService.ProgramId == ProgramType.Adults
       const url = isAdultsProgram ? '/subscription/start-your-free-trial' : '/teenagers/subscription/start-your-free-trial'
