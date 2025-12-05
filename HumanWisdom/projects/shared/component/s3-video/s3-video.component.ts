@@ -88,6 +88,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public isSwipeAllow = true;
   public isAdults = true;
   public isPortrait = false;
+  public fromIndex = false;
   baseUrl:string;
   path:any;
   private hasTrackedThisVideo = false;
@@ -203,6 +204,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     this.videoTitle = titleParam ?? localStorage.getItem('wisdomvideotitle') ?? '';
 
     const fromIndex = localStorage.getItem('fromIndex') === 'true';
+    this.fromIndex = fromIndex;
     const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
     const isSubscriber = localStorage.getItem('Subscriber') === '1';
 
@@ -451,6 +453,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {
     localStorage.setItem('isSwipeAllow', 'false');
+    localStorage.removeItem('fromIndex');
   }
 
     share(){
