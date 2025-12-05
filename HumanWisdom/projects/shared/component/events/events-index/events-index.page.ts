@@ -104,22 +104,20 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
 
   youtube(link: string, RowID: number, title?: string) {
     this.service.clickEvents(RowID).subscribe({
-      next : () => console.log('youtube event logged'),
+      next: () => console.log('youtube event logged'),
       error: (e) => console.error('youtube event failed', e)
     });
-    const sub = localStorage.getItem('Subscriber');
-    const prog = SharedService.getprogramName();
-    const isGuest = localStorage.getItem('guest') === 'T';
 
-    if (isGuest && RowID !== 1) {
-      this.router.navigate([prog, 'subscription', 'start-your-free-trial']);
+    const prog = SharedService.getprogramName();
+    const isLocked = RowID > 1;
+    const isSub = this.isSubscriber;
+
+    if (isLocked && !isSub) {
+      this.showModal = true;
       return;
     }
 
-    if (RowID >= 2 && sub === '0') {
-      // this.router.navigate([`${prog}/subscription/start-your-free-trial`]);
-      this.showModal = true;
-    } else if (RowID <= 1) {
+    if (RowID <= 1) {
       this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`], { state: { title } });
     } else {
       this.router.navigate([`${prog}/curated/youtubelink`, `${link}=vncbxdfchgvxd`], { state: { title } });
