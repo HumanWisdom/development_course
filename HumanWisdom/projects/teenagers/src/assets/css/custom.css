@@ -20300,9 +20300,9 @@ input{
 .fc_comment
 {
   height: 40px;
-  background: #EBEBEB;
+  background: #0C2B5F;
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 100px;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
@@ -20313,8 +20313,12 @@ input{
   text-align: left;
   color: #5D5D5D;
   border: 0;
+  /* padding: 12px; */
 }
 
+.fc_comment::placeholder{
+  color:#fff;
+}
 .forum_pb10px
 {
   padding-bottom: 10px;
@@ -20360,7 +20364,7 @@ input{
 {
   width: 100%;
   background: #ffffff !important;
-  border-radius: 5px;
+  border-radius: 100px;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 600;
@@ -20370,7 +20374,7 @@ input{
   /* color: #5D5D5D; */
   margin: 0;
   border: 0;
-  height: 32px;
+  height: 40px;
   box-shadow: unset;
 }
 
@@ -20480,7 +20484,7 @@ input{
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  color: #1092A7;
+  /* color: #1092A7; */
 }
 
 .btn_fw_post
@@ -28465,7 +28469,7 @@ body
 .txtarea_fl_comment
 {
   width: 100%;
-  background: #EBEBEB;
+  background: #0C2B5F;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
   /* font-family: Roboto; */
@@ -28479,7 +28483,9 @@ body
   color: #5D5D5D;
   border: 0;
 }
-
+.txtarea_fl_comment::placeholder{
+  color:#fff;
+}
 .txtarea_fl_comment:focus,
 .txtarea_fl_comment:hover
 {
@@ -34436,7 +34442,7 @@ body *
   font-size: 12px;
   font-weight: 400;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.50);
+  color: #fff;
 }
 
 .ta_forum_comment
