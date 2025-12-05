@@ -164,9 +164,11 @@ audioevent(data: any) {
   const path = encodeURIComponent(media.replaceAll('/', '~'));
   const title = (data.Title || '').replaceAll(' ', '-');
   const moduleName = 'podcast';
-  const route = this.isAdults
-    ? ['adults', 'audiopage', path, data.PodcastID, 'T', title, moduleName]
-    : ['teenagers', 'audiopage', path, data.PodcastID, 'T', title, moduleName];
+  const enable = data.isFree=="1"?'T':'F';
+
+  const route = this.isAdults  
+    ? ['adults', 'audiopage', path, data.PodcastID, enable, title, moduleName]
+    : ['teenagers', 'audiopage', path, data.PodcastID, enable, title, moduleName];
 
   this.router.navigate(route);
 }
