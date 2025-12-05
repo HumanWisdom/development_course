@@ -26,6 +26,7 @@ export class SingleAudioContentComponent implements OnInit {
   audioLinkUrl = "";
   rowId: number = 0
   moduleName: any = ''
+  headerTitle = ''
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, 
      private location: Location, private navigationService: NavigationService, 
@@ -44,6 +45,7 @@ export class SingleAudioContentComponent implements OnInit {
     this.rowId = rowid;
     let Id = rowid <= 9 ? '0' + rowid : rowid;
     this.moduleName = this.route.snapshot.paramMap.get('moduleName');
+    this.headerTitle = this.moduleName && this.moduleName != 'undefined' ? this.titleCase(this.moduleName) : '';
     if( this.moduleName && this.moduleName != 'undefined') {
       this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/${this.moduleName.toLowerCase()}/${Id}.webp`;
     }else{
@@ -121,6 +123,11 @@ export class SingleAudioContentComponent implements OnInit {
 
     // Append the <style> element to the document head
     document.head.appendChild(style);
+  }
+
+  titleCase(str) {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   goBack() {
