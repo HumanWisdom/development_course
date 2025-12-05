@@ -30,9 +30,9 @@
 
 .reflection-hint-popover {
   position: absolute;
-  top: -131px;
+  top: -113px;
   right: 4px;
-  left: auto;
+  left: 19px;
   width: auto;
   display: inline-flex;
   transform: translateY(100%);
@@ -61,7 +61,7 @@
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
   letter-spacing: 0;
   font-style: normal;
-  max-width: 360px;
+  max-width: 364px;
   pointer-events: auto;
 }
 
@@ -74,7 +74,7 @@
   /* left: 86px; */
   position: absolute;
   top: -9px;
-  right: 32px;
+  right: 14px;
 }
 
 .reflection-hint-popover .hm::after {
@@ -86,7 +86,7 @@
   /* left: 86px; */
   position: absolute;
   top: -8px;
-  right: 32px;
+  right: 14px;
 }
 
 @media (max-width: 767px) {
