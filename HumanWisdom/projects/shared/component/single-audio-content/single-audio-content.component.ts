@@ -101,8 +101,11 @@ export class SingleAudioContentComponent implements OnInit {
 
   redirectIfGuest() {
     const guest = localStorage.getItem('guest') === 'T'
-    const isPodcast = this.moduleName && this.moduleName != 'undefined' ? this.moduleName.toLowerCase() === 'podcast' : true
-    const allow = isPodcast && this.rowId === 1
+    const hasModule = this.moduleName && this.moduleName != 'undefined'
+    const lowerModule = hasModule ? this.moduleName.toLowerCase() : ''
+    const isPodcast = hasModule ? lowerModule === 'podcast' : true
+    const isSoundscapes = hasModule ? lowerModule === 'soundscapes' : false
+    const allow = (isPodcast && this.rowId === 1) || (isSoundscapes && this.rowId === 1)
     if (guest && !allow) {
       const isAdultsProgram = SharedService.ProgramId == ProgramType.Adults
       const url = isAdultsProgram ? '/subscription/start-your-free-trial' : '/teenagers/subscription/start-your-free-trial'

@@ -216,8 +216,9 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
             if (isFree === true) {
               this.isFreeShort = true;
               this.initializeData();
-              localStorage.setItem('isSwipeAllow', fromIndex ? 'true' : 'false');
-              this.isSwipeAllow = fromIndex ? true : false;
+              const allowSwipe = isLoggedIn && isSubscriber && fromIndex;
+              localStorage.setItem('isSwipeAllow', allowSwipe ? 'true' : 'false');
+              this.isSwipeAllow = allowSwipe;
               const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
               this.videoLink = this.getSafeUrl(code);
               this.canRender = true;
