@@ -88,9 +88,12 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public isSwipeAllow = true;
   public isAdults = true;
   public isPortrait = false;
+  public fromIndex = false;
   baseUrl:string;
   path:any;
   private hasTrackedThisVideo = false;
+  private isFreeShort = false;
+  public canRender = false;
 
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
@@ -106,7 +109,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     private readonly service: CommonService
   ) {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
-    this.initializeData();
+    
   }
 
   private initializeData(): void {
@@ -190,24 +193,126 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit(): void {
     this.path = this.router.url;
+    const url = window.location.href;
+    this.wisdomshort = !url.includes('videopage');
 
-    const code = this.wisdomshort
-      ? `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`
-      : `https://d1tenzemoxuh75.cloudfront.net/${this.linkcode}`;
-
-    this.videoLink = this.getSafeUrl(code);
+    const routeParams = this.route.snapshot.paramMap;
+    const queryParams = this.route.snapshot.queryParamMap;
+    const videolinkParam = routeParams.get('videolink') || queryParams.get('videolink') || localStorage.getItem('wisdomvideolink');
+    const titleParam = routeParams.get('title') || queryParams.get('title') || localStorage.getItem('wisdomvideotitle');
+    this.linkcode = videolinkParam ?? '';
+    this.videoTitle = titleParam ?? localStorage.getItem('wisdomvideotitle') ?? '';
 
     const fromIndex = localStorage.getItem('fromIndex') === 'true';
-    if (this.wisdomshort && this.isSubscriber && fromIndex) {
-      localStorage.setItem('isSwipeAllow', 'true');
-      this.isSwipeAllow = true;
+    this.fromIndex = fromIndex;
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    const isSubscriber = localStorage.getItem('Subscriber') === '1';
+
+    if (this.wisdomshort) {
+      const shortId = this.extractShortIdFromCode((this.linkcode || '').toString());
+      if (shortId !== null) {
+        this.service.CheckShortsIsFree(shortId).subscribe({
+          next: (isFree: any) => {
+            if (isFree === true) {
+              this.isFreeShort = true;
+              this.initializeData();
+              const allowSwipe = isLoggedIn && isSubscriber && fromIndex;
+              localStorage.setItem('isSwipeAllow', allowSwipe ? 'true' : 'false');
+              this.isSwipeAllow = allowSwipe;
+              const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
+              this.videoLink = this.getSafeUrl(code);
+              this.canRender = true;
+              setTimeout(() => this.ensureAutoPlay(), 0);
+            } else {
+              if (isLoggedIn && isSubscriber) {
+                this.initializeData();
+                const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
+                this.videoLink = this.getSafeUrl(code);
+                if (fromIndex) {
+                  localStorage.setItem('isSwipeAllow', 'true');
+                  this.isSwipeAllow = true;
+                } else {
+                  localStorage.setItem('isSwipeAllow', 'false');
+                  this.isSwipeAllow = false;
+                }
+                this.canRender = true;
+                setTimeout(() => this.ensureAutoPlay(), 0);
+              } else {
+                localStorage.setItem('isSwipeAllow', 'false');
+                this.isSwipeAllow = false;
+                this.canRender = false;
+                this.router.navigate([
+                  `${SharedService.getprogramName()}/subscription/start-your-free-trial`,
+                ]);
+                return;
+              }
+            }
+          },
+          error: () => {
+            if (isLoggedIn && isSubscriber) {
+              this.initializeData();
+              const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
+              this.videoLink = this.getSafeUrl(code);
+              if (fromIndex) {
+                localStorage.setItem('isSwipeAllow', 'true');
+                this.isSwipeAllow = true;
+              } else {
+                localStorage.setItem('isSwipeAllow', 'false');
+                this.isSwipeAllow = false;
+              }
+              this.canRender = true;
+              setTimeout(() => this.ensureAutoPlay(), 0);
+            } else {
+              localStorage.setItem('isSwipeAllow', 'false');
+              this.isSwipeAllow = false;
+              this.canRender = false;
+              this.router.navigate([
+                `${SharedService.getprogramName()}/subscription/start-your-free-trial`,
+              ]);
+              return;
+            }
+          }
+        });
+      } else {
+        if (isLoggedIn && isSubscriber) {
+          this.initializeData();
+          const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${this.linkcode}`;
+          this.videoLink = this.getSafeUrl(code);
+          if (fromIndex) {
+            localStorage.setItem('isSwipeAllow', 'true');
+            this.isSwipeAllow = true;
+          } else {
+            localStorage.setItem('isSwipeAllow', 'false');
+            this.isSwipeAllow = false;
+          }
+          this.canRender = true;
+          setTimeout(() => this.ensureAutoPlay(), 0);
+        } else {
+          localStorage.setItem('isSwipeAllow', 'false');
+          this.isSwipeAllow = false;
+          this.canRender = false;
+          this.router.navigate([
+            `${SharedService.getprogramName()}/subscription/start-your-free-trial`,
+          ]);
+          return;
+        }
+      }
     } else {
+      this.initializeData();
+      const code = `https://d1tenzemoxuh75.cloudfront.net/${this.linkcode}`;
+      this.videoLink = this.getSafeUrl(code);
       localStorage.setItem('isSwipeAllow', 'false');
       this.isSwipeAllow = false;
+      this.canRender = true;
+      setTimeout(() => this.ensureAutoPlay(), 0);
     }
   }
 
   ngAfterViewInit(): void {
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    if (!this.canRender || (this.wisdomshort && !this.videoLink)) {
+      return;
+    }
     if (this.swipeContainer && this.isSwipeAllow) {
       const hammertime = new Hammer(this.swipeContainer.nativeElement);
       hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
@@ -216,7 +321,6 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       hammertime.on('swipedown', () => this.onSwipeDown());
     }
     
-    // Ensure auto-play for all videos
     this.ensureAutoPlay();
 
     // Track once on first play automatically (covers autoplay and manual play)
@@ -350,6 +454,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {
     localStorage.setItem('isSwipeAllow', 'false');
+    localStorage.removeItem('fromIndex');
   }
 
     share(){

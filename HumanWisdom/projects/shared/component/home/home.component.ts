@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SharedService } from '../../services/shared.service';
+import { OnboardingService } from '../../services/onboarding.service';
 import { ProgramType } from '../../models/program-model';
 import { HomeStateService } from '../../services/home-state.service';
 import { Subscription } from 'rxjs';
@@ -142,7 +143,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private router: Router,
     private commonService: CommonService,
-    private homeStateService: HomeStateService
+    private homeStateService: HomeStateService,
+    private onboardingService: OnboardingService
   ) {
     this.navigationItems = SharedService.getPreferenceDataForHome();
     // Listen to hash changes dynamically
@@ -765,6 +767,29 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   };
 
   onCardClick(card: ContentCard): void {
+    const type = (card.moduleType || card.mediaType || '').toUpperCase();
+    const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/');
+    if (isEvent) {
+      const id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'eid') ?? this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.commonService.clickEvents(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      const sub = localStorage.getItem('Subscriber');
+      if (id != null && id >= 2 && sub === '0') {
+        this.showModal = true;
+        this.cardClick.emit(card);
+        return;
+      }
+      const prog = SharedService.getprogramName();
+      const link = this.extractYoutubeLink(card.path);
+      if (link) {
+        const code = id != null && id <= 1 ? 'rdtfghjhfdg' : 'vncbxdfchgvxd';
+        this.router.navigate([`${prog}/curated/youtubelink`, `${link}=${code}`], { state: { title: card.title } });
+        this.cardClick.emit(card);
+        return;
+      }
+    }
+    this.trackCardClick(card);
     console.log('Card clicked:', card);
 
     // Mark card as seen in state management if it's currently unseen
@@ -846,6 +871,130 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     }
     this.cardClick.emit(card);
+  }
+
+  private trackCardClick(card: ContentCard): void {
+    const type = (card.moduleType || card.mediaType || '').toUpperCase();
+    if (!type) return;
+    if (type.includes('PODCAST')) {
+      const id = this.extractNumericId(card.id) ?? this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.commonService.clickPodcast(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+    if (type.includes('BLOG')) {
+      const id = this.extractNumericId(card.id) ?? this.extractBlogIdFromPath(card.path);
+      if (id != null) {
+        this.onboardingService.clickBlog(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+    if (type.includes('STORY') || (card.path || '').includes('/wisdom-stories/')) {
+      const id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'sId') ?? this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.onboardingService.clickStory(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+    if (type.includes('EVENT') || (card.path || '').includes('/events/')) {
+      const id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'eid') ?? this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.commonService.clickEvents(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+    if (type.includes('VIDEO') || type.includes('SHORT')) {
+      const url = card.path || '';
+      if (url.includes('/wisdom_shorts/videos/')) {
+        const shortId = this.extractShortIdFromUrl(url);
+        if (shortId != null) {
+          this.commonService.clickShorts(shortId).subscribe({ next: () => { }, error: () => { } });
+        }
+      }
+      return;
+    }
+    if (type.includes('AUDIO') || type.includes('BREATHING')) {
+      const id = this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.commonService.clickMeditations(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+    if (type.includes('SOUNDSCAPE')) {
+      const id = this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.commonService.clickSoundscapes(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+  }
+
+  private extractNumericId(idValue: any): number | null {
+    const n = Number(idValue);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  private extractIdFromPath(path?: string): number | null {
+    if (!path) return null;
+    const withoutQuery = path.split('?')[0];
+    const parts = withoutQuery.split('/').filter(Boolean);
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const n = Number(parts[i]);
+      if (Number.isFinite(n)) return n;
+    }
+    return null;
+  }
+
+  private extractBlogIdFromPath(path?: string): number | null {
+    if (!path || !path.includes('?')) return null;
+    const qs = path.split('?')[1] || '';
+    const params = new URLSearchParams(qs);
+    const v = params.get('sId');
+    const n = v ? Number(v) : NaN;
+    return Number.isFinite(n) ? n : null;
+  }
+
+  private extractQueryIdFromPath(path?: string, key?: string): number | null {
+    if (!path || !key || !path.includes('?')) return null;
+    const qs = path.split('?')[1] || '';
+    const params = new URLSearchParams(qs);
+    const v = params.get(key || '');
+    const n = v ? Number(v) : NaN;
+    return Number.isFinite(n) ? n : null;
+  }
+
+  private extractShortIdFromUrl(url: string): number | null {
+    if (!url) return null;
+    const withoutQuery = url.split('?')[0];
+    const filename = (withoutQuery.split('/').pop() || withoutQuery).toString();
+    const extMatch = filename.match(/\.(\d+)\.(mp4|webm|mov)$/i);
+    if (extMatch && extMatch[1]) {
+      const n = Number(extMatch[1]);
+      return Number.isFinite(n) ? n : null;
+    }
+    const parts = filename.split('.').reverse();
+    for (const part of parts) {
+      const n = Number(part);
+      if (!Number.isNaN(n) && Number.isFinite(n)) {
+        return n;
+      }
+    }
+    return null;
+  }
+
+  private extractYoutubeLink(path?: string): string | null {
+    if (!path) return null;
+    if (path.includes('?')) {
+      const qs = path.split('?')[1] || '';
+      const params = new URLSearchParams(qs);
+      const v = params.get('videolink');
+      if (v) return v;
+    }
+    const parts = path.split('/').filter(Boolean);
+    const last = parts[parts.length - 1] || '';
+    if (last && !last.includes('youtubelink')) return last;
+    return null;
   }
 
   onModalClose(event: string) {

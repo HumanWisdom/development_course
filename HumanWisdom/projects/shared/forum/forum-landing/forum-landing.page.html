@@ -156,9 +156,9 @@
                             </span>
                           </button>
 
-                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+                          <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
                             <i class="fa fa-minus mr3px"></i>
-                            <span class="underline">
+                            <span  class="underline">
                               Unfollow
                             </span>
                           </button>
@@ -172,7 +172,7 @@
                             </span>
                           </button>
   
-                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+                          <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
                             <i class="fa fa-minus mr3px"></i>
                             <span class="underline">
                               Unfollow
@@ -395,16 +395,16 @@
                             required="required" class="txtarea_fl_comment" placeholder="Comment here" rows="5"></textarea>
                         </div>
     
-                        <div class="col-md-12 col-sm-12 col-xs-12   mt15px"
+                        <div class="col-md-12 col-sm-12 col-xs-12   mt10px"
                           *ngIf="isLoggedIn && actionType=='comment'">
-                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" style="color:#fff;">
+                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" >
                             Comment
                           </button>
                         </div>
                         <!-- <div class="row" >  -->
-                        <div class="col-md-12 col-sm-12 col-xs-12 mt15px"
+                        <div class="col-md-12 col-sm-12 col-xs-12 mtb10px"
                           *ngIf="isLoggedIn && actionType=='report'">
-                          <button type="button" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" style="color:#fff;">
+                          <button type="button" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" >
                             Submit
                           </button>
                         </div>
@@ -467,7 +467,7 @@
               </span>
             </button>
 
-            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
               <i class="fa fa-minus mr3px"></i>
               <span class="underline">
                 Unfollow
@@ -483,7 +483,7 @@
               </span>
             </button>
 
-            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
+            <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="item.Followed=='1'">
               <i class="fa fa-minus mr3px"></i>
               <span class="underline">
                 Unfollow
@@ -803,7 +803,7 @@
 <!-- choose category -->
 <div class="modal fade slide-up" id="choose_category" data-bs-keyboard="false" data-bs-backdrop="false">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_cc col_cw">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-bodyfourm modal_cc col_cw">
 
       <div class="row mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">

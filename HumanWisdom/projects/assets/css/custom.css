@@ -33694,6 +33694,10 @@ body * {
   justify-content: left;
 }
 
+.div_forum_post .btn:hover {
+  color: #000000;
+}
+
 .div_forum_post .btn {
   margin: 0 !important;
   padding: 0;
@@ -33893,9 +33897,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   padding: 0;
   background: transparent;
   color: #000000 !important;
-  font-size: 15px;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 24px;
   display: flex;
   align-items: center;
@@ -37365,6 +37369,21 @@ a:hover .div_like_cnt1 span {
   font-size: 18px;
   color: #000;
   transition: transform 0.2s ease;
+}
+
+.modal-backdrop.show {
+  --bs-backdrop-bg: rgba(0, 0, 0, 0.25);
+  --bs-backdrop-opacity: 1;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background-color: var(--bs-backdrop-bg) !important;
+  opacity: 1 !important;
+}
+
+.nohover {
+
+  color: inherit !important;
+  text-decoration: none !important;
 }
 
 .modal-backdrop.show {

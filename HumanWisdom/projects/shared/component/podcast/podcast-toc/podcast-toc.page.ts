@@ -162,9 +162,13 @@ audioevent(data: any) {
     media = media.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
   }
   const path = encodeURIComponent(media.replaceAll('/', '~'));
-  const route = this.isAdults
-    ? ['adults', 'audiopage', path, data.PodcastID, 'T', data.Title]
-    : ['teenagers', 'audiopage', path, data.PodcastID, 'T', data.Title];
+  const title = (data.Title || '').replaceAll(' ', '-');
+  const moduleName = 'podcast';
+  const enable = data.isFree=="1"?'T':'F';
+
+  const route = this.isAdults  
+    ? ['adults', 'audiopage', path, data.PodcastID, enable, title, moduleName]
+    : ['teenagers', 'audiopage', path, data.PodcastID, enable, title, moduleName];
 
   this.router.navigate(route);
 }
