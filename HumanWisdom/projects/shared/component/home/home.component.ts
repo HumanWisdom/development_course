@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -79,7 +79,7 @@ export interface ContentSection {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrls: ['./home.component.scss', './home-teenager.component.scss'],
   animations: [
     trigger('slideDown', [
       state('collapsed', style({
@@ -99,27 +99,35 @@ export interface ContentSection {
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
- navigationItems= [];
+  // Dynamic theme class based on ProgramId
+  @HostBinding('class.teenager-theme') get isTeenagerTheme() {
+    return SharedService.ProgramId == ProgramType.Teenagers;
+  }
+  @HostBinding('class.adults-theme') get isAdultsTheme() {
+    return SharedService.ProgramId == ProgramType.Adults;
+  }
+
+  navigationItems = [];
   description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
-  isloggedIn:boolean;
- contentSections: ContentSection[] = [];
+  isloggedIn: boolean;
+  contentSections: ContentSection[] = [];
   isSubscriber = false;
-navigationChange = new EventEmitter<string>();
- cardClick = new EventEmitter<ContentCard>();
- sectionToggle = new EventEmitter<ContentSection>();
+  navigationChange = new EventEmitter<string>();
+  cardClick = new EventEmitter<ContentCard>();
+  sectionToggle = new EventEmitter<ContentSection>();
   @ViewChild('sectionElement', { static: false }) sectionElement: ElementRef;
   personalisedList = [];
   YourTopicofChoice;
   isAdults = false;
   showWisdomExercise: boolean = false;
-  username:string = 'Guest';   // Track which sections are showing all cards
+  username: string = 'Guest';   // Track which sections are showing all cards
   streak: string = ''; // Streak for logged-in users
   showAllCards: { [sectionId: string]: boolean } = {};
   // Track visible card count per section (View More functionality)
   visibleCardCount: { [sectionId: string]: number } = {};
   private readonly DEFAULT_VISIBLE_CARD_COUNT = 5;
   private readonly VIEW_MORE_INCREMENT = 5;
-   mainheader:string='';
+  mainheader: string = '';
   searchinp: string = '';
   searchResult: any[] = [];
   moduleList: any[] = [];
@@ -130,9 +138,9 @@ navigationChange = new EventEmitter<string>();
   private routerSubscription: Subscription;
   private hashChangeHandler: () => void;
   private lastScrollTop: number = 0;
-  
+
   constructor(
-    private router: Router, 
+    private router: Router,
     private commonService: CommonService,
     private homeStateService: HomeStateService
   ) {
@@ -152,54 +160,54 @@ navigationChange = new EventEmitter<string>();
           this.handleHashChange();
         }, 100);
       });
-    
-   }
+
+  }
 
   ngOnInit(): void {
-     this.isSubscriber = SharedService.isSubscriber();
-     console.log('Is Subscriber:', this.isSubscriber);
-    
-     // Safely parse username - handle guest users who might have empty/null username
-     try {
-       const userName = SharedService.FnName();
-       if (userName && userName.trim() !== '') {
-         this.username = JSON.parse(userName);
-         // Fetch streak for logged-in users
-         this.getStreak();
-       } else {
-         this.username = '';
-         this.streak = '';
-       }
-     } catch (error) {
-       console.warn('Error parsing username, defaulting to Guest:', error);
-       this.username = '';
-       this.streak = '';
-     }
-     
-     // Restore state from store
-     this.restoreStateFromStore();
-     
-     // Load module list for search dropdown
-     this.getModuleList();
-     
-     // Check for hash-based navigation before loading user preference
-     const hashNavigationItem = this.getNavigationItemFromHash();
-     if (hashNavigationItem) {
-       // Hash found and matched - activate it
-       console.log('Hash navigation detected, activating:', hashNavigationItem);
-       this.activateNavigationItemFromHash(hashNavigationItem);
-     } else {
-       // No hash or hash doesn't match - use default behavior
-       this.getUserPreference();
-     }
-     
+    this.isSubscriber = SharedService.isSubscriber();
+    console.log('Is Subscriber:', this.isSubscriber);
+
+    // Safely parse username - handle guest users who might have empty/null username
+    try {
+      const userName = SharedService.FnName();
+      if (userName && userName.trim() !== '') {
+        this.username = JSON.parse(userName);
+        // Fetch streak for logged-in users
+        this.getStreak();
+      } else {
+        this.username = '';
+        this.streak = '';
+      }
+    } catch (error) {
+      console.warn('Error parsing username, defaulting to Guest:', error);
+      this.username = '';
+      this.streak = '';
+    }
+
+    // Restore state from store
+    this.restoreStateFromStore();
+
+    // Load module list for search dropdown
+    this.getModuleList();
+
+    // Check for hash-based navigation before loading user preference
+    const hashNavigationItem = this.getNavigationItemFromHash();
+    if (hashNavigationItem) {
+      // Hash found and matched - activate it
+      console.log('Hash navigation detected, activating:', hashNavigationItem);
+      this.activateNavigationItemFromHash(hashNavigationItem);
+    } else {
+      // No hash or hash doesn't match - use default behavior
+      this.getUserPreference();
+    }
+
     console.log('Home component initialized');
     if (SharedService.ProgramId == ProgramType.Adults) {
-        this.isAdults = true;
-      } else {
-        this.isAdults = false;
-      }
-    
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+
     // Initialize wisdom exercise as hidden
     this.showWisdomExercise = false;
   }
@@ -207,16 +215,16 @@ navigationChange = new EventEmitter<string>();
 
   private handleGuestUserDefault(preferenceData: any[]): void {
     console.log('No user preference found, defaulting to Mental health for guest user');
-    
+
     // Ensure wisdom exercise is hidden for guest users
     this.showWisdomExercise = false;
-    
+
     // Save default preference to store
     this.homeStateService.setActivePreference("2"); // Mental health ID
-    
+
     // Load Mental health content (id: "2")
     this.loadHomeContents(2);
-    
+
     // Set Mental health as active in navigation
     preferenceData.forEach((item) => {
       if (item.id === "2") { // Mental health ID
@@ -228,19 +236,19 @@ navigationChange = new EventEmitter<string>();
         this.personalisedList.push(item);
       }
     });
-    
-        this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-        console.log('Guest user default selection:', this.YourTopicofChoice);
-        
-        setTimeout(() => {
-          this.scrollToActiveList();
-        }, 400);
+
+    this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+    console.log('Guest user default selection:', this.YourTopicofChoice);
+
+    setTimeout(() => {
+      this.scrollToActiveList();
+    }, 400);
   }
 
   ngAfterViewInit(): void {
     // Ensure navigation container has horizontal scrolling
     this.setupHorizontalScrolling();
-    
+
     // Scroll to active personalized list after view is initialized
     setTimeout(() => {
       this.scrollToActiveList();
@@ -258,30 +266,31 @@ navigationChange = new EventEmitter<string>();
       navContainer.style.overflowY = 'hidden';
       navContainer.style.whiteSpace = 'nowrap';
       navContainer.style.scrollBehavior = 'smooth';
-      
+
       console.log('Navigation container setup for horizontal scrolling');
     }
   }
 
-   loadHomeContents(id): void {
+  loadHomeContents(id): void {
+    let programId = SharedService.ProgramId;
     // Always call API to get fresh data
-    this.commonService.GetHomeContents(9, id).subscribe((res: HomeContentResponse) => {
+    this.commonService.GetHomeContents(programId, id).subscribe((res: HomeContentResponse) => {
       if (res) {
         this.mainheader = res.MainHeader;
         console.log('Raw API response:', res);
-        
+
         // Cache the response for future use (optional)
         this.homeStateService.setCachedContent(id.toString(), res);
-        
+
         // Transform API response to content sections
         this.contentSections = this.transformApiResponseToContentSections(res);
         console.log('Transformed content sections:', this.contentSections);
-        
+
         // Merge seen status from state management (background update)
         this.mergeSeenStatusFromState();
-        
+
         this.restoreExpandedState();
-        
+
         // Scroll to active list after content is loaded
         setTimeout(() => {
           this.scrollToActiveList();
@@ -308,25 +317,25 @@ navigationChange = new EventEmitter<string>();
     // Handle Long term solutions as parent with Modules2 and Modules3 as children
     if (apiResponse.Modules1) {
       const longTermSolutions = this.transformSection(apiResponse.Modules1, 'modules1');
-      
+
       // Add Modules2 and Modules3 as child sections (only if they have cards)
       const childSections: ContentSection[] = [];
-      
+
       if (apiResponse.Modules2 && this.hasCards(apiResponse.Modules2)) {
-       /* const module2 = this.transformSection(apiResponse.Modules2, 'modules2');
-        module2.isInlineSection = true;
-        module2.isExpanded = true;
-        childSections.push(module2); */
-         sections.push(this.transformSection(apiResponse.Modules2, 'Modules2'));
+        /* const module2 = this.transformSection(apiResponse.Modules2, 'modules2');
+         module2.isInlineSection = true;
+         module2.isExpanded = true;
+         childSections.push(module2); */
+        sections.push(this.transformSection(apiResponse.Modules2, 'Modules2'));
       }
-      
+
       if (apiResponse.Modules3 && this.hasCards(apiResponse.Modules3)) {
         const module3 = this.transformSection(apiResponse.Modules3, 'modules3');
         module3.isInlineSection = true;
         module3.isExpanded = true;
         childSections.push(module3);
       }
-      
+
       // Only add the parent section if it has cards or has child sections with cards
       if (this.hasCards(apiResponse.Modules1) || childSections.length > 0) {
         longTermSolutions.childSections = childSections;
@@ -349,7 +358,7 @@ navigationChange = new EventEmitter<string>();
     }
 
     // Handle other sections dynamically
-    const knownKeys = ['Introduction','Modules1','Modules2','Modules3','Blogs','Stories','Podcast','Shorts'];
+    const knownKeys = ['Introduction', 'Modules1', 'Modules2', 'Modules3', 'Blogs', 'Stories', 'Podcast', 'Shorts'];
     Object.keys(apiResponse).forEach(key => {
       if (!knownKeys.includes(key) && apiResponse[key] && apiResponse[key].title && this.hasCards(apiResponse[key])) {
         sections.push(this.transformSection(apiResponse[key], key.toLowerCase()));
@@ -436,11 +445,11 @@ navigationChange = new EventEmitter<string>();
     const transformedCards = this.transformCards(cardsArray, sectionType);
 
     // Get viewall_Url - preserve null if explicitly set, otherwise try alternatives
-    const viewallUrl = section['viewall_Url'] !== undefined 
-      ? section['viewall_Url'] 
-      : (section['viewAllUrl'] !== undefined 
-          ? section['viewAllUrl'] 
-          : section['viewAll_url']);
+    const viewallUrl = section['viewall_Url'] !== undefined
+      ? section['viewall_Url']
+      : (section['viewAllUrl'] !== undefined
+        ? section['viewAllUrl']
+        : section['viewAll_url']);
 
     return {
       id: section.id || `section-${Date.now()}`,
@@ -458,80 +467,80 @@ navigationChange = new EventEmitter<string>();
     };
   }
 
-   async getUserPreference() {
+  async getUserPreference() {
     this.commonService.getUserpreference().subscribe({
       next: (res) => {
         let perd = SharedService.getPreferenceDataForHome();
         this.personalisedList = []
-        
+
         // Check if we have a stored active preference from our state service
         const storedActivePreference = this.homeStateService.getActivePreference();
-        
+
         if (res) {
-        // User has a saved preference
-        localStorage.setItem('userPreference', res);
-        
-        // Use stored preference if available, otherwise use the API response
-        const preferenceToUse = storedActivePreference || res;
-        
-        perd.forEach((r) => {
-          if (preferenceToUse === r.id) {
-            r['active'] = true;
-            this.personalisedList.push(r);
-          } else {
-            r['active'] = false;
-            this.personalisedList.push(r);
-          }
-        })
-        
-        // Handle Self Awareness (id: 19) specially
-        if (preferenceToUse === "19") {
-          this.showWisdomExercise = true;
-          this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-          console.log('User preference loaded (Self Awareness):', this.YourTopicofChoice);
-        } else {
-          this.showWisdomExercise = false;
-          this.loadHomeContents(Number(preferenceToUse));
-          this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-          console.log('User preference loaded:', this.YourTopicofChoice);
-        }
-        
-        // Scroll to the selected section after preference is loaded
-        setTimeout(() => {
-          this.scrollToActiveList();
-        }, 400);
-        } else {
-        // Guest user or no preference - check if we have stored state
-        if (storedActivePreference) {
-          // Use stored preference for guest users too
+          // User has a saved preference
+          localStorage.setItem('userPreference', res);
+
+          // Use stored preference if available, otherwise use the API response
+          const preferenceToUse = storedActivePreference || res;
+
           perd.forEach((r) => {
-            if (storedActivePreference === r.id) {
+            if (preferenceToUse === r.id) {
               r['active'] = true;
               this.personalisedList.push(r);
             } else {
               r['active'] = false;
               this.personalisedList.push(r);
             }
-          });
-          
-          if (storedActivePreference === "19") {
+          })
+
+          // Handle Self Awareness (id: 19) specially
+          if (preferenceToUse === "19") {
             this.showWisdomExercise = true;
             this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-            console.log('Guest user with stored preference (Self Awareness):', this.YourTopicofChoice);
+            console.log('User preference loaded (Self Awareness):', this.YourTopicofChoice);
           } else {
             this.showWisdomExercise = false;
-            this.loadHomeContents(Number(storedActivePreference));
+            this.loadHomeContents(Number(preferenceToUse));
             this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-            console.log('Guest user with stored preference:', this.YourTopicofChoice);
+            console.log('User preference loaded:', this.YourTopicofChoice);
           }
-          
+
+          // Scroll to the selected section after preference is loaded
           setTimeout(() => {
             this.scrollToActiveList();
           }, 400);
         } else {
-          // No stored preference - default to Mental health
-          this.handleGuestUserDefault(perd);
-        }
+          // Guest user or no preference - check if we have stored state
+          if (storedActivePreference) {
+            // Use stored preference for guest users too
+            perd.forEach((r) => {
+              if (storedActivePreference === r.id) {
+                r['active'] = true;
+                this.personalisedList.push(r);
+              } else {
+                r['active'] = false;
+                this.personalisedList.push(r);
+              }
+            });
+
+            if (storedActivePreference === "19") {
+              this.showWisdomExercise = true;
+              this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+              console.log('Guest user with stored preference (Self Awareness):', this.YourTopicofChoice);
+            } else {
+              this.showWisdomExercise = false;
+              this.loadHomeContents(Number(storedActivePreference));
+              this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+              console.log('Guest user with stored preference:', this.YourTopicofChoice);
+            }
+
+            setTimeout(() => {
+              this.scrollToActiveList();
+            }, 400);
+          } else {
+            // No stored preference - default to Mental health
+            this.handleGuestUserDefault(perd);
+          }
         }
       },
       error: (error) => {
@@ -539,7 +548,7 @@ navigationChange = new EventEmitter<string>();
         // On error (e.g., guest user, API failure), use default behavior
         let perd = SharedService.getPreferenceDataForHome();
         const storedActivePreference = this.homeStateService.getActivePreference();
-        
+
         if (storedActivePreference) {
           // Use stored preference if available
           perd.forEach((r) => {
@@ -551,7 +560,7 @@ navigationChange = new EventEmitter<string>();
               this.personalisedList.push(r);
             }
           });
-          
+
           if (storedActivePreference === "19") {
             this.showWisdomExercise = true;
             this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
@@ -560,7 +569,7 @@ navigationChange = new EventEmitter<string>();
             this.loadHomeContents(Number(storedActivePreference));
             this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
           }
-          
+
           setTimeout(() => {
             this.scrollToActiveList();
           }, 400);
@@ -608,7 +617,7 @@ navigationChange = new EventEmitter<string>();
       imageUrl: card.imgUrl || card.image_path || card.imageUrl || '',
       title: card.title || '',
       subtitle: card.Subtitle || card.subtitle || '',
-      mediaType:card.cardtype,
+      mediaType: card.cardtype,
       duration: card.Timing || card.timing || '',
       overlayIcon: card.overlayIcon || card.icon_path || '',
       path: card.URL || card.path || '',
@@ -716,10 +725,10 @@ navigationChange = new EventEmitter<string>();
 
   onNavigationClick(item): void {
     console.log(item);
-    
+
     // Save active preference to store
     this.homeStateService.setActivePreference(item.id);
-    
+
     // Handle Self Awareness (id: 19) - show wisdom exercise component
     if (item.id === "19") {
       this.showWisdomExercise = true;
@@ -730,7 +739,7 @@ navigationChange = new EventEmitter<string>();
       this.update(item.id);
       return;
     }
-    
+
     // Handle other navigation items normally
     this.showWisdomExercise = false;
     this.personalisedList.forEach(nav => nav.active = false);
@@ -739,40 +748,41 @@ navigationChange = new EventEmitter<string>();
     this.update(item.id);
     // Update YourTopicofChoice to reflect the new active item
     this.YourTopicofChoice = [item];
-    
+
     // Scroll to the selected section after content loads
     setTimeout(() => {
       this.scrollToActiveList();
     }, 500);
   }
 
-   update(id) {
-      console.log("update")
-      this.commonService.AddUserPreference(id).subscribe(res => {
-        if (res) {
-         console.log(res)
-     }})
-    };
+  update(id) {
+    console.log("update")
+    this.commonService.AddUserPreference(id).subscribe(res => {
+      if (res) {
+        console.log(res)
+      }
+    })
+  };
 
   onCardClick(card: ContentCard): void {
     console.log('Card clicked:', card);
-    
+
     // Mark card as seen in state management if it's currently unseen
     // This will be merged when content is reloaded
     const isUnseen = card && card.id && (
-      card.isRead === undefined || 
-      card.isRead === null || 
-      card.isRead === '0' || 
+      card.isRead === undefined ||
+      card.isRead === null ||
+      card.isRead === '0' ||
       card.isRead === 0
     );
-    
+
     if (isUnseen) {
       console.log('Marking card as seen in state:', card.id);
       this.homeStateService.markCardAsSeen(card.id);
       // Update the card immediately for UI feedback
       card.isRead = '1';
     }
-    
+
     const isLocked = card && (card.isFree === '0' || card.isFree === 0);
     if (!this.isSubscriber && isLocked) {
       this.showModal = true;
@@ -806,37 +816,36 @@ navigationChange = new EventEmitter<string>();
     } catch (e) {
       console.warn('Failed to persist short video data', e);
     }
-  if(card.path && card.path.includes('?')) 
-  {
-     const [basePath, queryString] = card.path.split('?');
-     const queryParams = new URLSearchParams(queryString);
-     const queryObj: any = {};
-     queryParams.forEach((value, key) => {
-       queryObj[key] = value;
-     });
-     try {
-       const navExtras: any = { queryParams: queryObj };
-       if (basePath.includes('youtubelink')) {
-         navExtras.state = { title: card.title };
-       }
-       this.router.navigate([basePath], navExtras);
-     } catch (e) {
-       console.warn('Navigation failed for path with query params:', card.path, e);
-     }
-   return;
-  }
-   if (card.path) {
-     try {
-       if (card.path.includes('youtubelink')) {
-         this.router.navigate([card.path], { state: { title: card.title } });
-       } else {
-         this.router.navigate([card.path]);
-       }
-     } catch (e) {
-       console.warn('Navigation failed for path:', card.path, e);
-     }
-   }
-   this.cardClick.emit(card);
+    if (card.path && card.path.includes('?')) {
+      const [basePath, queryString] = card.path.split('?');
+      const queryParams = new URLSearchParams(queryString);
+      const queryObj: any = {};
+      queryParams.forEach((value, key) => {
+        queryObj[key] = value;
+      });
+      try {
+        const navExtras: any = { queryParams: queryObj };
+        if (basePath.includes('youtubelink')) {
+          navExtras.state = { title: card.title };
+        }
+        this.router.navigate([basePath], navExtras);
+      } catch (e) {
+        console.warn('Navigation failed for path with query params:', card.path, e);
+      }
+      return;
+    }
+    if (card.path) {
+      try {
+        if (card.path.includes('youtubelink')) {
+          this.router.navigate([card.path], { state: { title: card.title } });
+        } else {
+          this.router.navigate([card.path]);
+        }
+      } catch (e) {
+        console.warn('Navigation failed for path:', card.path, e);
+      }
+    }
+    this.cardClick.emit(card);
   }
 
   onModalClose(event: string) {
@@ -852,10 +861,10 @@ navigationChange = new EventEmitter<string>();
       return;
     }
     section.isExpanded = !section.isExpanded;
-    
+
     // Save state to store
     this.homeStateService.setSectionExpanded(this.getScopedSectionId(section.id), section.isExpanded);
-    
+
     this.sectionToggle.emit(section);
   }
 
@@ -920,13 +929,13 @@ navigationChange = new EventEmitter<string>();
 
     const currentVisible = this.getVisibleCount(section);
     const newVisibleCount = Math.min(currentVisible + this.VIEW_MORE_INCREMENT, totalCards);
-    
+
     this.visibleCardCount[section.id] = newVisibleCount;
 
     const reachedEnd = newVisibleCount >= totalCards;
     this.showAllCards[section.id] = reachedEnd;
     this.homeStateService.setShowAllCards(section.id, reachedEnd);
-    
+
     // Save state to store if needed (optional, for persistence)
     // this.homeStateService.setVisibleCardCount(section.id, newVisibleCount);
   }
@@ -958,51 +967,51 @@ navigationChange = new EventEmitter<string>();
     console.log('=== HORIZONTAL SCROLL DEBUG START ===');
     console.log('YourTopicofChoice:', this.YourTopicofChoice);
     console.log('personalisedList:', this.personalisedList);
-    
+
     if (this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
       const activeItem = this.YourTopicofChoice[0];
       console.log('Active item:', activeItem);
-      
+
       // Find the active navigation item in the DOM
       const navItems = document.querySelectorAll('.nav-item');
       console.log('Found nav items:', navItems.length);
-      
+
       let targetNavItem: HTMLElement | null = null;
-      
+
       // Find the navigation item that matches the active item
       for (let i = 0; i < navItems.length; i++) {
         const navItem = navItems[i] as HTMLElement;
         const navText = navItem.textContent?.trim();
         console.log('Nav item text:', navText, 'Active item displayName:', activeItem.displayName);
-        
+
         if (navText === activeItem.displayName) {
           targetNavItem = navItem;
           console.log('Found matching nav item:', navItem);
           break;
         }
       }
-      
+
       if (targetNavItem) {
         // Get the navigation container
         const navContainer = document.querySelector('.nav-menu') as HTMLElement;
         if (navContainer) {
           console.log('Found nav container:', navContainer);
-          
+
           // Calculate scroll position to center the active item
           const containerRect = navContainer.getBoundingClientRect();
           const itemRect = targetNavItem.getBoundingClientRect();
-          
+
           // Calculate the scroll position to center the item
           const scrollLeft = targetNavItem.offsetLeft - (containerRect.width / 2) + (itemRect.width / 2);
-          
+
           console.log('Scrolling to position:', scrollLeft);
-          
+
           // Smooth horizontal scroll
           navContainer.scrollTo({
             left: scrollLeft,
             behavior: 'smooth'
           });
-          
+
           console.log('Horizontally scrolled to active nav item:', activeItem.displayName);
         } else {
           console.warn('Navigation container not found');
@@ -1022,28 +1031,28 @@ navigationChange = new EventEmitter<string>();
    */
   testHorizontalScroll(): void {
     console.log('=== MANUAL HORIZONTAL SCROLL TEST ===');
-    
+
     const navContainer = document.querySelector('.nav-menu') as HTMLElement;
     if (navContainer) {
       console.log('Found nav container:', navContainer);
       console.log('Current scroll left:', navContainer.scrollLeft);
       console.log('Container width:', navContainer.clientWidth);
       console.log('Container scroll width:', navContainer.scrollWidth);
-      
+
       // Scroll to the right
       navContainer.scrollTo({
         left: navContainer.scrollWidth,
         behavior: 'smooth'
       });
-      
+
       console.log('Scrolled to end');
     } else {
       console.log('Navigation container not found');
     }
   }
 
-   onViewAll(section):void{
-     this.router.navigateByUrl(section.viewall_Url);
+  onViewAll(section): void {
+    this.router.navigateByUrl(section.viewall_Url);
   }
 
   goToSubscribe(): void {
@@ -1073,7 +1082,7 @@ navigationChange = new EventEmitter<string>();
       const idB = parseInt(b.id) || 0;
       return idA - idB;
     });
-    
+
     console.log('Sections restored and sorted by ID:', this.contentSections.map(s => ({ title: s.title, id: s.id })));
 
     this.contentSections.forEach(section => {
@@ -1127,7 +1136,7 @@ navigationChange = new EventEmitter<string>();
 
     // Get all navigation items
     const allNavItems = SharedService.getPreferenceDataForHome();
-    
+
     // Find matching navigation item by displayName (case-insensitive, space/hyphen agnostic)
     const matchingItem = allNavItems.find(item => {
       const normalizedDisplayName = this.normalizeHash(item.displayName.replace(/\s+/g, "").toLocaleLowerCase());
@@ -1164,7 +1173,7 @@ navigationChange = new EventEmitter<string>();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     const threshold = viewportHeight * 0.2; // 20% of viewport height
-    
+
     // Hide search box when scroll exceeds 20% of screen height
     if (scrollTop > threshold) {
       this.showSearchBox = false;
@@ -1173,7 +1182,7 @@ navigationChange = new EventEmitter<string>();
       // Show search box when scroll is within 20% of screen height
       this.showSearchBox = true;
     }
-    
+
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
@@ -1210,7 +1219,7 @@ navigationChange = new EventEmitter<string>();
     // Initialize personalisedList
     const allNavItems = SharedService.getPreferenceDataForHome();
     this.personalisedList = [];
-    
+
     // Set all items as inactive, then activate the matching one
     allNavItems.forEach((navItem) => {
       if (navItem.id === item.id) {
@@ -1240,9 +1249,9 @@ navigationChange = new EventEmitter<string>();
     this.loadHomeContents(Number(item.id));
     this.update(item.id);
     this.YourTopicofChoice = [item];
-    
+
     console.log('Activated navigation item from hash:', item.displayName, 'ID:', item.id);
-    
+
     // Scroll to the selected section after content loads
     setTimeout(() => {
       this.scrollToActiveList();
@@ -1271,7 +1280,7 @@ navigationChange = new EventEmitter<string>();
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
-        this.searchResult = this.moduleList.filter(x => 
+        this.searchResult = this.moduleList.filter(x =>
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
       }
@@ -1288,7 +1297,7 @@ navigationChange = new EventEmitter<string>();
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
     } else {
-      this.searchResult = this.moduleList.filter(x => 
+      this.searchResult = this.moduleList.filter(x =>
         (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
       );
     }

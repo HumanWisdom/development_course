@@ -14,11 +14,12 @@ import { HappierMeQuotationPage } from '../../../../shared/component/happierme-q
 import { QuestionAnswersSelection } from '../../../../shared/component/question-answers-selection/question-answers-selection.page';
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
-
+import { HomeComponent } from '../../../../shared/component/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: HomeComponent,
     loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
     canActivate: [AuthGuard]
   },
@@ -64,6 +65,7 @@ const routes: Routes = [
   },
   {
     path: 'teenager-dashboard',
+    component: HomeComponent,
     loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
     canActivate: [AuthGuard]
   },
@@ -295,7 +297,7 @@ const routes: Routes = [
   {
     path: 'find-answers/:url',
     loadChildren: () => import('./find-answers/find-answers.module').then(m => m.FindAnswersModule)
-  }, 
+  },
   {
     path: 'feel-better-now',
     loadChildren: () => import('../../../../shared/component/feel-better-now/feel-better-now.module').then(m => m.FeelBetterNowModule),
@@ -386,14 +388,14 @@ const routes: Routes = [
     path: 'wisdom-stories',
     loadChildren: () => import('./wisdom-stories/wisdom-stories.module').then(m => m.WisdomStoriesModule)
   },
-    {
-      path: 'chat-bot',
-      component: ChatBotComponent
-    },
-  // {
-  //     path: 'blogs',
-  //     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
-  // },
+  {
+    path: 'chat-bot',
+    component: ChatBotComponent
+  },
+  {
+    path: 'blogs',
+    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+  },
   {
     path: 'blogs',
     component: BlogIndexPage
