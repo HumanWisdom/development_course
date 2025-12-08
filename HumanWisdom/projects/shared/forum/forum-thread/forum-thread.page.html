@@ -333,7 +333,7 @@
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
                         <button type="button"  (click)="toggle(item)" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" >
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px" *ngif="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg" class="img-responsive mr5px" *ngIf="!isAdults">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report.svg" class="img-responsive mr5px" *ngIf="isAdults">
 
                           Report
