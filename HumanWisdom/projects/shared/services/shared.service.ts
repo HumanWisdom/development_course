@@ -204,6 +204,61 @@ export class SharedService {
   }
 
  public static getPreferenceDataForHome() {
+
+  if(SharedService.ProgramId == ProgramType.Teenagers){
+    return  [
+{
+          id: "10",
+          active: false,
+          displayName: "Mental health",
+          name: 'Manage your mental health'
+        },
+        {
+          id: "17",
+          active: false,
+          displayName: "Success",
+          name: 'Succeed in life'
+        },
+        {
+          id: "11",
+          active: false,
+          displayName: "Relationships",
+          name: 'Relationships'
+        },
+        {
+          id: "13",
+          active: false,
+          displayName: "Happiness",
+          name: 'Be happier'
+        },
+	{
+          id: "14",
+          displayName: "Emotions",
+          active: false,
+          name: 'Manage your emotions',
+        },       
+         {
+             id: "20",
+           displayName: "Self-awareness",
+          active: false,
+             name: 'Develop your self awareness',
+        },
+        {
+          id: "12",
+          active: false,
+          displayName: "Feel calm",
+          name: 'Feel calm',
+        },
+ 	{
+          id: "15",
+          displayName: "Habits",
+          active: false,
+          name: 'Overcome unhelpful habits'
+        }
+
+    ]
+  }
+
 return [
       
         {
