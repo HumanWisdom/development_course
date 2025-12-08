@@ -20958,13 +20958,8 @@ input {
    padding: 15px; 
 }
 
-<<<<<<< HEAD
 .fc_comment::placeholder{
   color: rgba(255, 255, 255, 0.50);
-=======
-.fc_comment::placeholder {
-  color: #fff;
->>>>>>> 126c33c5620b0b8a093fd2180cf3986f08772775
 }
 
 .forum_pb10px {
@@ -21012,13 +21007,8 @@ input {
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
-<<<<<<< HEAD
    color: #e58d82 !important;
     text-align: center;
-=======
-  color: #e58d82;
-  text-align: center;
->>>>>>> 126c33c5620b0b8a093fd2180cf3986f08772775
   /* color: #5D5D5D; */
   margin: 0;
   border: 0;
@@ -28250,15 +28240,9 @@ body {
   color: #5D5D5D;
   border: 1px solid rgba(0,0,0,.25);
 }
-<<<<<<< HEAD
 .txtarea_fl_comment::placeholder{
     color: rgba(255, 255, 255, 0.50);
 
-=======
-
-.txtarea_fl_comment::placeholder {
-  color: #fff;
->>>>>>> 126c33c5620b0b8a093fd2180cf3986f08772775
 }
 
 .txtarea_fl_comment:focus,
@@ -33657,14 +33641,9 @@ body * {
   color: #fff;
 }
 
-<<<<<<< HEAD
 .ta_forum_comment
 {
   font-size: 15px;
-=======
-.ta_forum_comment {
-  font-size: 12px;
->>>>>>> 126c33c5620b0b8a093fd2180cf3986f08772775
   font-weight: 400;
   line-height: 140%;
   color: #FFF;
