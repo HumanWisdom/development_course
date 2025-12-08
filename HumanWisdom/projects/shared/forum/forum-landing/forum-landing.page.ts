@@ -109,6 +109,45 @@ export class ForumLandingPage implements OnInit {
   public isLoading:boolean = false;
   public programType :ProgramType.Adults;
   isFreeTrialEnable = false;
+  openDropdownIndex: number | null = null;
+  editingPostIndex: number | null = null;
+  editingItem: any = null;
+  editingPostText: string = '';
+  getTagClass(name: string): string {
+    if (!name) return '';
+    const n = name.trim().toLowerCase();
+    switch (n) {
+      case 'manage your mental health':
+        return 'tag-mental-health';
+      case 'relationships':
+        return 'tag-relationships';
+      case 'work & leadership':
+      case 'work and leadership':
+        return 'tag-work-leadership';
+      case 'be happier':
+        return 'tag-be-happier';
+      case 'habits & addiction':
+      case 'habits and addiction':
+        return 'tag-habits-addiction';
+      case 'deal with loss':
+      case 'dealing with loss':
+        return 'tag-dealing-loss';
+      case 'meditation':
+        return 'tag-meditation';
+      case 'manage your emotions':
+      case 'managing emotions':
+        return 'tag-managing-emotions';
+      case 'nuggets of inspiration':
+        return 'tag-nuggets-inspiration';
+      case 'ask our expert coaches':
+      case 'ask a coach':
+        return 'tag-ask-coach';
+      case 'other':
+        return 'tag-other';
+      default:
+        return '';
+    }
+  }
 
   constructor(private serivce: ForumService, public platform: Platform, private router: Router,
     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService,
@@ -213,11 +252,20 @@ export class ForumLandingPage implements OnInit {
 
 
 
-  DeletePost(item){
+  DeletePost(item, index?: number){
+    item.isDeleting = true;
+    this.openDropdownIndex = null;
     this.serivce.deletePost(item.PostID).subscribe(res=>{
       if(res){
-          this.getAllposts(0);
+          const idx = (typeof index === 'number') ? index : this.posts.findIndex(p => p.PostID === item.PostID);
+          if (idx > -1) {
+            this.posts.splice(idx, 1);
+          }
+      } else {
+        item.isDeleting = false;
       }
+    }, _ => {
+      item.isDeleting = false;
     })
   }
 
@@ -719,19 +767,28 @@ export class ForumLandingPage implements OnInit {
   }
 
   callEditPost(item,index){
-    this.posts[index].isEditPost = true;
+    this.openEditPostModal(item, index);
   }
 
   onEditClick(event: Event, item: any, index: number) {
     event.stopPropagation();
     event.preventDefault();
-    this.callEditPost(item, index);
+    this.openEditPostModal(item, index, event);
+    this.openDropdownIndex = null;
   }
 
   onDeleteClick(event: Event, item: any) {
     event.stopPropagation();
     event.preventDefault();
     this.DeletePost(item);
+  }
+
+  toggleDropdown(index: number, event?: Event) {
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    this.openDropdownIndex = this.openDropdownIndex === index ? null : index;
   }
 
   startNewThread(tagId){
@@ -769,5 +826,54 @@ export class ForumLandingPage implements OnInit {
     const scrollTop = 'pageYOffset' in window ? window.pageYOffset : document.documentElement.scrollTop || body.scrollTop;
 
     return docHeight - scrollTop - windowHeight < 1;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    const target = event.target as HTMLElement;
+    if (target && (target as any).closest && (target as any).closest('.dropdown')) {
+      return;
+    }
+    this.openDropdownIndex = null;
+  }
+
+  openEditPostModal(item: any, index: number, event?: Event) {
+    this.editingItem = item;
+    this.editingPostIndex = index;
+    this.editingPostText = item && (item.POST ?? item.Post ?? '');
+    this.modalService.openModal('edit_post', event);
+  }
+
+  closeEditPostModal() {
+    this.modalService.closeModal('edit_post');
+    this.editingItem = null;
+    this.editingPostIndex = null;
+    this.editingPostText = '';
+  }
+
+  saveEditedPost() {
+    if (this.editingItem == null || this.editingPostIndex == null) {
+      return;
+    }
+    const updated = this.editingPostText?.trim() ?? '';
+    const model = {
+      PostId: this.editingItem.PostID,
+      Post: updated,
+      UserId: this.editingItem.UserId,
+      ParentPostID: '0',
+      ReflectionID: '0',
+      TagIds: this.editingItem.TagIds
+    } as any;
+    const idx = this.editingPostIndex;
+    this.serivce.UpdatePost(model).subscribe(res => {
+      if (res) {
+        if (this.posts[idx]) {
+          this.posts[idx].POST = updated;
+          this.posts[idx].Post = updated;
+          this.posts[idx].isEditPost = false;
+        }
+        this.closeEditPostModal();
+      }
+    });
   }
 }
