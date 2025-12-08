@@ -1,13 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from "@angular/core";
 import { AbstractControl, NgForm, UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
-import {
-  FacebookLoginProvider,
-  GoogleLoginProvider,
-  SocialAuthService,
-  SocialAuthServiceConfig,
-  SocialLoginModule
-} from "@abacritt/angularx-social-login";
 import { PlatformModule } from '@angular/cdk/platform';
 import { LogEventService } from "../../services/log-event.service";
 import { OnboardingService } from "../..//services/onboarding.service";
@@ -18,42 +11,22 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from "../../shared.module";
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from "ng-recaptcha";
-
-import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { Constant } from "../../services/constant";
 import { CommonService } from "../../services/common.service";
 declare var $: any;
 @Component({
   selector: "app-common-login",
-  imports: [SocialLoginModule, CommonModule,
+  imports: [CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
     PlatformModule,
     RecaptchaModule,
-    GoogleSigninButtonModule,
-
     RecaptchaFormsModule,
     SharedModule],
   standalone: true,
   providers: [
-    SocialAuthService,
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('238869214957032')
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    },
+
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
@@ -160,7 +133,7 @@ export class LoginSignupPage implements OnInit {
     private router: Router,
     public logeventservice: LogEventService,
     private activate: ActivatedRoute,
-    private authService: SocialAuthService,
+  //  private authService: SocialAuthService,
     private service: OnboardingService,
     private navigtionService: NavigationService,
     private renderer: Renderer2, private el: ElementRef,
@@ -345,7 +318,7 @@ export class LoginSignupPage implements OnInit {
       this.logeventservice.logEvent('google_signup');
     else
       this.logeventservice.logEvent('google_login');
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  //  this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
 
   }
 
@@ -413,35 +386,35 @@ export class LoginSignupPage implements OnInit {
   }
 
   private VerifyGoogle() {
-    this.authService.authState.subscribe(
-      (user) => {
-        if (user.provider?.toLowerCase() == 'google') {
-          this.user = user;
-          this.idToken = user.idToken;
-          this.socialFirstName = user.firstName;
-          this.socialLastName = user.lastName;
-          this.socialEmail = user.email;
+    // this.authService.authState.subscribe(
+    //   (user) => {
+    //     if (user.provider?.toLowerCase() == 'google') {
+    //       this.user = user;
+    //       this.idToken = user.idToken;
+    //       this.socialFirstName = user.firstName;
+    //       this.socialLastName = user.lastName;
+    //       this.socialEmail = user.email;
 
-          this.service
-            .verifyGoogle({
-              TokenID: this.idToken,
-              FName: this.socialFirstName,
-              LName: this.socialLastName,
-              Email: this.socialEmail,
-              VCode: "",
-              Pwd: "",
-            })
-            .subscribe((res) => {
-              if(res){
-                this.setUpLoginConfiguration(res);
-              }
-            });
-        }
-      },
-      (error) => console.log(error),
-      () => {
-      }
-    );
+    //       this.service
+    //         .verifyGoogle({
+    //           TokenID: this.idToken,
+    //           FName: this.socialFirstName,
+    //           LName: this.socialLastName,
+    //           Email: this.socialEmail,
+    //           VCode: "",
+    //           Pwd: "",
+    //         })
+    //         .subscribe((res) => {
+    //           if(res){
+    //             this.setUpLoginConfiguration(res);
+    //           }
+    //         });
+    //     }
+    //   },
+    //   (error) => console.log(error),
+    //   () => {
+    //   }
+    // );
   }
 
   fbLogin(reqtype) {
@@ -450,35 +423,35 @@ export class LoginSignupPage implements OnInit {
     else
       this.logeventservice.logEvent('facebook_login');
 
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      // this.user = user;
-      this.user = user;
+    // this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    // this.authService.authState.subscribe((user) => {
+    //   // this.user = user;
+    //   this.user = user;
 
-      this.idToken = user.authToken;
-      this.socialFirstName = user.firstName;
-      this.socialLastName = user.lastName;
-      this.socialEmail = user.email;
-      if (user.email !== undefined) {
-        this.service
-          .verifyFb({
-            TokenID: this.idToken,
-            FName: this.socialFirstName,
-            LName: this.socialLastName,
-            Email: this.socialEmail,
-            VCode: "",
-            Pwd: "",
-          })
-          .subscribe((res) => {
-               if(res){
-                this.setUpLoginConfiguration(res);
-               }
-          });
-      } else {
-        this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
-        this.enableAlert = true;
-      }
-    });
+    //   this.idToken = user.authToken;
+    //   this.socialFirstName = user.firstName;
+    //   this.socialLastName = user.lastName;
+    //   this.socialEmail = user.email;
+    //   if (user.email !== undefined) {
+    //     this.service
+    //       .verifyFb({
+    //         TokenID: this.idToken,
+    //         FName: this.socialFirstName,
+    //         LName: this.socialLastName,
+    //         Email: this.socialEmail,
+    //         VCode: "",
+    //         Pwd: "",
+    //       })
+    //       .subscribe((res) => {
+    //            if(res){
+    //             this.setUpLoginConfiguration(res);
+    //            }
+    //       });
+    //   } else {
+    //     this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
+    //     this.enableAlert = true;
+    //   }
+    // });
   }
 
   emailLogin() {

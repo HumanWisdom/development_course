@@ -1,4 +1,5 @@
-.modal.fade.in .lab-modal-body {
+.modal.fade.show .lab-modal-body,
+.modal.fade.show .lab-modal-bodyfourm {
   top: 5% !important;
   overflow-y: auto;
   max-height: 100vh !important;
@@ -11,6 +12,7 @@
 
 /* Initial state before showing */
 .modal.slide-up .lab-modal-body,
+.modal.slide-up .lab-modal-bodyfourm,
 .modal.slide-up .modal_inner,
 .modal.slide-up .choose-category-popup {
   transform: translateY(100%);
@@ -31,6 +33,7 @@
 
 /* Apply animation when modal becomes visible */
 .modal.slide-up.show .lab-modal-body,
+.modal.slide-up.show .lab-modal-bodyfourm,
 .modal.slide-up.show .modal_inner,
 .modal.slide-up.show .choose-category-popup {
   animation: modalSlideUp 700ms ease-out forwards;
@@ -43,35 +46,74 @@
   padding: 20px 20px 35px !important;
 }
 
+.lab-modal-bodyfourm{
+  padding: 20px 20px 35px !important;
+}
+
 .cfdm {
-  min-width: 180px;
+  min-width: 162px;
+  min-height: 82px;
   padding: 8px 0;
   border-radius: 12px;
-  background: #F5C26B;
+  background: #FFD889;
   border: 0;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   right: 0;
   left: auto;
 }
 
-.cfdm::before {
+.dropdown-menu::after {
   content: "";
-  position: absolute;
-  top: -8px;
-  right: 16px;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid #F5C26B;
+  border-left: 9px solid transparent !important;
+  border-right: 9px solid transparent !important;
+  border-bottom: 8px solid #FFD889 !important;
+  top: -7px !important;
 }
 
 .cfdm .dropdown-item {
   padding: 10px 14px;
 }
 
+.cfdm .dropdown-item {
+  background: transparent;
+  color: inherit;
+}
+
+.cfdm .dropdown-item:hover,
+.cfdm .dropdown-item:focus,
+.cfdm .dropdown-item.active,
+.cfdm .dropdown-item:active {
+  background: transparent;
+  color: inherit;
+}
+
+.tag-mental-health { background: #803358; color: #FFFFFF !important; }
+.tag-relationships { background: #D7586B; color: #FFFFFF !important; }
+.tag-work-leadership { background: #05BBBF; color: #FFFFFF !important; }
+.tag-be-happier { background: #EEA170; color: #FFFFFF !important; }
+.tag-habits-addiction { background: #FFACA2; color: #FFFFFF !important; }
+.tag-dealing-loss { background: #EEA170; color: #FFFFFF !important; }
+.tag-meditation { background: #1092A7; color: #FFFFFF !important; }
+.tag-managing-emotions { background: #803358; color: #FFFFFF !important; }
+.tag-nuggets-inspiration { background: #D7586B; color: #FFFFFF !important; }
+.tag-ask-coach { background: #EEA170; color: #FFFFFF !important; }
+.tag-other { background: #FFE8BB; color: #FFFFFF !important; }
+
 .position_unseti .btn.dropdown-toggle {
   background: transparent;
   border: 0;
   padding: 4px;
+}
+
+#edit_post .txtarea_fc_comment {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+
+.div_forum_post a.deleting,
+.div_forum_postf a.deleting {
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 200ms ease-in-out;
 }
