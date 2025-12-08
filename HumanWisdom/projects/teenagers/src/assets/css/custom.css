@@ -20953,8 +20953,8 @@ input {
   display: flex;
   align-items: center;
   text-align: left;
-  color: #5D5D5D;
-  border: 0;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
    padding: 15px; 
 }
 
@@ -28237,8 +28237,8 @@ body {
   display: flex;
   align-items: center;
   text-align: left;
-  color: #5D5D5D;
-  border: 1px solid rgba(0,0,0,.25);
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .txtarea_fl_comment::placeholder{
     color: rgba(255, 255, 255, 0.50);
@@ -33426,7 +33426,7 @@ body * {
   margin: 0;
   border-radius: 100px;
   background: #E58D82 !important;
-  box-shadow: 1px 1px 2px #00000040;
+  /* box-shadow: 1px 1px 2px #00000040; */
   font-size: 15px;
   color: #ffffff !important;
   font-weight: 600;
@@ -33638,7 +33638,8 @@ body * {
   font-size: 12px;
   font-weight: 400;
   line-height: 140%;
-  color: #fff;
+      color: rgba(255, 255, 255, 0.50);
+
 }
 
 .ta_forum_comment
@@ -33785,7 +33786,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0;
   padding: 0;
   background: transparent;
-  color: #E8A880;
+  color: #E8A880 !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -34157,6 +34158,18 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   line-height: 150%;
 }
 
+.btn_ctd1 {
+    height: 40px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 100px;
+  background: #E58D82 !important;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%;
+}
 .fc_img {
   position: absolute;
   right: 20px;
@@ -34306,12 +34319,12 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #E58D82;
+  background: #E58D82 !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #fff !important;
 }
 
 .panel-body .ms_program {
