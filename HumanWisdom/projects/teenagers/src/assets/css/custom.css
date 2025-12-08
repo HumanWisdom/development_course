@@ -20942,24 +20942,24 @@ input {
 
 .fc_comment {
   height: 40px;
-  background: #0C2B5F;
+  background: #0C2B5F !important;
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 100px;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 14px;
   display: flex;
   align-items: center;
   text-align: left;
   color: #5D5D5D;
   border: 0;
-  /* padding: 12px; */
+   padding: 15px; 
 }
 
-.fc_comment::placeholder {
-  color: #fff;
+.fc_comment::placeholder{
+  color: rgba(255, 255, 255, 0.50);
 }
 
 .forum_pb10px {
@@ -21007,8 +21007,8 @@ input {
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
-  color: #e58d82;
-  text-align: center;
+   color: #e58d82 !important;
+    text-align: center;
   /* color: #5D5D5D; */
   margin: 0;
   border: 0;
@@ -28225,21 +28225,24 @@ body {
   width: 100%;
   background: #0C2B5F;
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
-  border-radius: 5px;
+  border-radius: 12px;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 15px;
+  padding: 15px;
+  height: 120px;
+  box-shadow: inset 1px 1px 2px #0000001a;
   line-height: 14px;
   display: flex;
   align-items: center;
   text-align: left;
   color: #5D5D5D;
-  border: 0;
+  border: 1px solid rgba(0,0,0,.25);
 }
+.txtarea_fl_comment::placeholder{
+    color: rgba(255, 255, 255, 0.50);
 
-.txtarea_fl_comment::placeholder {
-  color: #fff;
 }
 
 .txtarea_fl_comment:focus,
@@ -33595,7 +33598,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #E58D82;
+  color: #E58D82 !important;
 }
 
 .btn_forum_ask_a_gift {
@@ -33638,8 +33641,9 @@ body * {
   color: #fff;
 }
 
-.ta_forum_comment {
-  font-size: 12px;
+.ta_forum_comment
+{
+  font-size: 15px;
   font-weight: 400;
   line-height: 140%;
   color: #FFF;
