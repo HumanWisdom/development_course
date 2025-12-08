@@ -41,22 +41,22 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     private sanitizer: DomSanitizer,
     private router: Router,
     private location: Location
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.setUserAvatar();
-
+    
     // Check if program type has changed and clear chat if needed
     this.checkAndHandleProgramTypeChange();
-
+    
     // Ensure welcome messages are shown if store is empty (e.g., after logout)
     this.chatbotService.ensureWelcomeMessages();
-
+    
     // Subscribe to messages from store
     this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
         this.messages = messages;
-
+        
         // Ensure welcome messages if store becomes empty (e.g., after logout)
         if (messages.length === 0) {
           // Use setTimeout to avoid infinite loop and ensure store is ready
@@ -64,7 +64,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             this.chatbotService.ensureWelcomeMessages();
           }, 50);
         }
-
+        
         // Scroll to bottom quickly when messages update
         setTimeout(() => this.scrollToBottom(), 100);
         // Style anchor tags after messages are updated
@@ -102,7 +102,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     setTimeout(() => {
       this.chatbotService.ensureWelcomeMessages();
     }, 100);
-
+    
     this.scrollToBottom();
     // Focus on input when component loads
     if (this.messageInput) {
@@ -146,7 +146,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       next: (response) => {
         this.chatbotService.removeTypingIndicator();
         this.chatbotService.setTyping(false);
-
+        
         if (response.status === 'success') {
           this.chatbotService.addBotMessage(response.response, response.session_id);
           // Note: Scrolling is handled automatically by messages$ subscription
@@ -177,13 +177,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Navigate back to dashboard
     // Option 1: Go back in browser history
     // this.location.back();
-    if (SharedService.ProgramId === ProgramType.Adults) {
-      this.router.navigate(['/adults/home']);
-    } else {
-      this.router.navigate(['/teenagers/teenager-dashboard']);
-    }
-
-
+   if(SharedService.ProgramId === ProgramType.Adults) {
+    this.router.navigate(['/adults/home']);
+   } else {
+    this.router.navigate(['/teenagers/teenager-dashboard']);
+   }
+    
+    
     // Optional: Clear messages when closing (uncomment if you want to clear chat history)
     // this.chatbotService.clearMessages();
   }
@@ -192,7 +192,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     if (event) {
       event.preventDefault();
     }
-
+    
     if (this.isLoadingHistory) {
       return;
     }
@@ -238,19 +238,31 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   scrollToBottom(): void {
-    try {
-      // Use setTimeout to allow DOM to update
-      setTimeout(() => {
-        // Since the layout uses the main window scroll with fixed header/footer,
-        // we should scroll the window to the bottom
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: 'smooth'
+      try {
+      // Prefer scrolling the last message into view to handle dynamic content heights
+        requestAnimationFrame(() => {
+        const container: HTMLElement | null = this.messageContainer
+          ? this.messageContainer.nativeElement
+          : document.querySelector('.chat-messages') as HTMLElement;
+
+        if (!container) {
+          return;
+        }
+
+        const lastMessage = container.querySelector('.message:last-child') as HTMLElement | null;
+        if (lastMessage) {
+          lastMessage.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+          });
+        } else {
+          // Fallback to container scroll if no message element is found
+          container.scrollTop = container.scrollHeight;
+        }
         });
-      }, 100);
-    } catch (err) {
-      console.error('Error scrolling to bottom:', err);
-    }
+      } catch (err) {
+        console.error('Error scrolling to bottom:', err);
+      }
   }
 
   /**
@@ -259,10 +271,15 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   private scrollSlightlyDown(): void {
     try {
-      window.scrollBy({
-        top: 20,
-        behavior: 'smooth'
-      });
+      const container: HTMLElement | null = this.messageContainer
+        ? this.messageContainer.nativeElement
+        : document.querySelector('.chat-messages') as HTMLElement;
+
+      if (!container) {
+        return;
+      }
+
+      container.scrollTop = container.scrollTop + 20;
     } catch (err) {
       console.error('Error scrolling slightly down:', err);
     }
@@ -277,7 +294,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       const lastUserMessage = this.messages
         .filter(msg => msg.sender === 'user')
         .pop();
-
+      
       if (lastUserMessage) {
         this.currentMessage = lastUserMessage.content;
         this.onSendMessage();
@@ -296,7 +313,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.isLoading) {
       return;
     }
-
+    
     this.currentMessage = suggestion;
     this.onSendMessage();
   }
@@ -304,7 +321,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   sanitizeHtml(html: string): SafeHtml {
     console.log('HTML Content:', html);
     console.log('Contains anchor tags:', html.includes('<a'));
-
+    
     // Add inline styles to anchor tags as a workaround
     const styledHtml = html.replace(/<a\s+([^>]*?)>/gi, (match, attributes) => {
       // Check if style attribute already exists
@@ -314,7 +331,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         return `<a ${attributes} style="font-weight:500; text-decoration: underline !important; cursor: pointer !important;">`;
       }
     });
-
+    
     console.log('Styled HTML:', styledHtml);
     const sanitized = this.sanitizer.bypassSecurityTrustHtml(styledHtml);
     console.log('Sanitized result:', sanitized);
@@ -326,22 +343,22 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     setTimeout(() => {
       const anchorTags = document.querySelectorAll('.chat-bot-container a');
       console.log('Found anchor tags:', anchorTags.length);
-
+      
       anchorTags.forEach((anchor: Element) => {
         const htmlAnchor = anchor as HTMLAnchorElement;
         htmlAnchor.style.color = '#1976d2';
         htmlAnchor.style.textDecoration = 'underline';
         htmlAnchor.style.cursor = 'pointer';
-
+        
         // Add hover event listener
         htmlAnchor.addEventListener('mouseenter', () => {
           htmlAnchor.style.color = '#1565c0';
         });
-
+        
         htmlAnchor.addEventListener('mouseleave', () => {
           htmlAnchor.style.color = '#1976d2';
         });
-
+        
         console.log('Styled anchor:', htmlAnchor);
       });
     }, 100);
@@ -425,7 +442,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.cachedHistoryUserId = null;
     console.log('Loaded history messages:', history);
   }
-  private getDefaultAvatar(): string {
+ private getDefaultAvatar(): string {
     return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
 
   }
