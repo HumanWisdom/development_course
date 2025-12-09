@@ -130,7 +130,7 @@
 
               <!-- post -->
               <div class="div_forum_post">
-                <a class="" *ngFor="let item of posts;let index=index;">
+                <a class="" *ngFor="let item of posts;let index=index;" [ngClass]="{'deleting': item.isDeleting}">
 
                   <div class="row mb10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -182,10 +182,10 @@
 
                         <div class="ml10px" *ngIf="item.UserName == userName && (item.ReplyCount=='0')">
                            <div class="dropdown position_unseti">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{index}}" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{index}}" (click)="toggleDropdown(index, $event)" aria-haspopup="true" [attr.aria-expanded]="openDropdownIndex===index">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_more.svg" class="img-responsive">
-                            </button>
-                            <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton{{index}}">
+                           </button>
+                           <div class="dropdown-menu cfdm" [attr.aria-labelledby]="'dropdownMenuButton' + index" [class.show]="openDropdownIndex===index" [style.display]="openDropdownIndex===index ? 'block' : null">
                               <div class="">
                                 <a class="dropdown-item" href="#" (click)="onEditClick($event, item, index)">
                                   <div class="row">
@@ -292,7 +292,7 @@
                   <div class="row mb10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <button *ngIf="item.TagName && item.TagName!=null" type="button" class="btn fs_10px fw_700 lh_140p fc_ffffff ttuppercase btn_fpfy btn_fpfy_mh">
+                        <button *ngIf="item.TagName && item.TagName!=null" type="button" class="btn fs_10px fw_700 lh_140p ttuppercase btn_fpfy" [ngClass]="getTagClass(item.TagName)">
                           {{item.TagName}}
                         </button>
                       </div>
@@ -397,7 +397,7 @@
     
                         <div class="col-md-12 col-sm-12 col-xs-12   mt10px"
                           *ngIf="isLoggedIn && actionType=='comment'">
-                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)" >
+                          <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)">
                             Comment
                           </button>
                         </div>
@@ -443,7 +443,7 @@
 
 
 <div class="div_forum_postf" *ngIf="!defaultShow">
-  <a class="" *ngFor="let item of posts;let index=index;">
+  <a class="" *ngFor="let item of posts;let index=index;" [ngClass]="{'deleting': item.isDeleting}">
 
     <div class="row mb10px">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -493,10 +493,10 @@
 
           <div class="ml10px" *ngIf="item.UserName == userName && (item.ReplyCount=='0')">
             <div class="dropdown position_unseti">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{index}}" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{index}}" (click)="toggleDropdown(index, $event)" aria-haspopup="true" [attr.aria-expanded]="openDropdownIndex===index">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_more.svg" class="img-responsive">
               </button>
-              <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton{{index}}">
+              <div class="dropdown-menu cfdm" [attr.aria-labelledby]="'dropdownMenuButton' + index" [class.show]="openDropdownIndex===index" [style.display]="openDropdownIndex===index ? 'block' : null">
                 <div class="">
                   <a class="dropdown-item" href="#" (click)="onEditClick($event, item, index)">
                     <div class="row">
@@ -521,7 +521,7 @@
                     </div>
                   </div>
 
-                  <a class="dropdown-item" href="#" (click)="onDeleteClick($event, item)">
+                  <a class="dropdown-item" href="#" (click)="onDeleteClick($event, item, index)">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -603,7 +603,7 @@
     <div class="row mb10px">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <button *ngIf="item.TagName && item.TagName!=null" type="button" class="btn fs_10px fw_700 lh_140p fc_ffffff ttuppercase btn_fpfy btn_fpfy_mh">
+          <button *ngIf="item.TagName && item.TagName!=null" type="button" class="btn fs_10px fw_700 lh_140p ttuppercase btn_fpfy" [ngClass]="getTagClass(item.TagName)">
             {{item.TagName}}
           </button>
         </div>
@@ -1249,3 +1249,36 @@
   </div>
 </div>
 <!-- /choose category -->
+
+<div class="modal fade slide-up" id="edit_post" data-bs-keyboard="false" data-bs-backdrop="false">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-bodyfourm modal_cc col_cw">
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+            <h4 class="mtb0px fs_12px fw_500 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Edit post</h4>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+            <button type="button" class="btn_popup_close m0px" (click)="closeEditPostModal()" aria-label="close">
+              <img src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}" class="img-responsive fright">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <textarea [(ngModel)]="editingPostText" class="txtarea_fc_comment" rows="5" placeholder="Edit Post"></textarea>
+        </div>
+      </div>
+
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
+          <button type="button" class="btn btn-default btn_fpfy_mh mr10px" (click)="closeEditPostModal()">Cancel</button>
+          <button type="button" class="btn btn-default btn_fpfy_mh" (click)="saveEditedPost()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

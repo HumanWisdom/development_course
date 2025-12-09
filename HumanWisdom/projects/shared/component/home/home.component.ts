@@ -496,7 +496,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           })
 
           // Handle Self Awareness (id: 19) specially
-          if (preferenceToUse === "19") {
+          if (preferenceToUse === "19" ||preferenceToUse === "20" ) {
             this.showWisdomExercise = true;
             this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
             console.log('User preference loaded (Self Awareness):', this.YourTopicofChoice);
@@ -732,7 +732,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.homeStateService.setActivePreference(item.id);
 
     // Handle Self Awareness (id: 19) - show wisdom exercise component
-    if (item.id === "19") {
+    if (item.id === "19" || item.id === "20") {
       this.showWisdomExercise = true;
       this.personalisedList.forEach(nav => nav.active = false);
       item.active = true;
