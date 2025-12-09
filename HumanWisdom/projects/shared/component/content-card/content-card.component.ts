@@ -1,14 +1,25 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter,OnInit, HostBinding } from '@angular/core';
 import { ContentCard } from '../home/home.component';
 import {SharedService} from '../../services/shared.service';
+import { ProgramType } from '../../models/program-model';
+
+
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
-  styleUrls: ['./content-card.component.scss']
+  styleUrls: ['./content-card.component.scss', './content-card-teenagers.component.scss']
 })
 export class ContentCardComponent {
   @Input() card: ContentCard;
   @Output() cardClick = new EventEmitter<ContentCard>();
+
+   @HostBinding('class.teenager-theme') get isTeenagerTheme() {
+      return SharedService.ProgramId == ProgramType.Teenagers;
+    }
+    @HostBinding('class.adults-theme') get isAdultsTheme() {
+      return SharedService.ProgramId == ProgramType.Adults;
+    }
+  
 
   onCardClick(): void {
     this.cardClick.emit(this.card);

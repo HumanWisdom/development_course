@@ -10,6 +10,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1050;
+  }
+  .spinner-overlay--dark {
+    background: rgba(0, 0, 0, 0.6);
   }
   
   .spinner {
