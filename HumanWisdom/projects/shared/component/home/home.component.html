@@ -290,8 +290,8 @@
                                         style="width: 107px; height: 100px; object-fit: cover;">
                                     </div>
                                     <div class="flex-grow-1">
-                                      <h6 class="mb-1 fs15  fw_500 lh_130p fc_000000 ">{{ card.title }}</h6>
-                                      <p class="mb-0 fs_12px fw_400 lh_130p fc_000000_0_5" [innerHTML]="card.subtitle"
+                                      <h6 class="mb-1 fs_15px  fw_500 lh_130p  " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ card.title }}</h6>
+                                      <p class="mb-0 fs_12px fw_400 lh_130p fc_000000_0_5" [ngClass]="isAdults?'fc_000000_0_5': 'fc_ffffff_0_7'" [innerHTML]="card.subtitle"
                                         style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
                                       </p>
                                     </div>
