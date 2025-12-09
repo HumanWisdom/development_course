@@ -113,6 +113,9 @@ export class ForumLandingPage implements OnInit {
   editingPostIndex: number | null = null;
   editingItem: any = null;
   editingPostText: string = '';
+  isProcessing: boolean = false;
+  submissionState: 'processing' | 'success' | 'error' | '' = '';
+  modalText: string = '';
   getTagClass(name: string): string {
     if (!name) return '';
     const n = name.trim().toLowerCase();
@@ -278,14 +281,26 @@ export class ForumLandingPage implements OnInit {
 
   postreport(item, actionType) {
     console.log(item);
-    this.replyflag = !this.replyflag;
+    this.isProcessing = true;
+    this.submissionState = 'processing';
+    this.modalText = 'Submitting...';
+    
     if (this.actionType == 'report') {
       this.serivce.reportPost({ PostID: item.PostID, UserID: this.UserID, Comment: this.commenttext }).subscribe(res => {
         if (res) {
-          this.replyflag = !this.replyflag;
+          this.replyflag = false;
           this.getAllposts(0);
           this.actionType = '';
+          this.submissionState = 'success';
+          this.modalText = 'Submitted successfully. Your entry will be visible after moderation';
+          this.isProcessing = false;
+          this.openPostedSuccessfullyModal();
         }
+      }, _ => { 
+        this.submissionState = 'error';
+        this.modalText = 'Something went wrong. Please try again';
+        this.isProcessing = false; 
+        this.openPostedSuccessfullyModal();
       });
     }
     else {
@@ -294,7 +309,17 @@ export class ForumLandingPage implements OnInit {
           this.getAllposts(0);
           this.actionType = '';
           this.PostComment = '';
+          this.replyflag = false;
+          this.submissionState = 'success';
+          this.modalText = 'Submitted successfully. Your entry will be visible after moderation';
+          this.isProcessing = false;
+          this.openPostedSuccessfullyModal();
         }
+      }, _ => { 
+        this.submissionState = 'error';
+        this.modalText = 'Something went wrong. Please try again';
+        this.isProcessing = false; 
+        this.openPostedSuccessfullyModal();
       })
     }
   }
@@ -747,6 +772,14 @@ export class ForumLandingPage implements OnInit {
 
   closeChooseCategoryModal() {
     this.modalService.closeModal('choose_category');
+  }
+
+  openPostedSuccessfullyModal(event?: Event) {
+    this.modalService.openModal('posted_successfully', event);
+  }
+
+  closePostedSuccessfullyModal() {
+    this.modalService.closeModal('posted_successfully');
   }
 
   editPost(modelData,index) {

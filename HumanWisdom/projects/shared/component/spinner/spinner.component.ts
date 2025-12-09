@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-spinner',
   template: `
-    <div *ngIf="show" class="spinner-overlay">
+    <div *ngIf="show" [ngClass]="{'spinner-overlay': true, 'spinner-overlay--dark': dark}">
       <div class="spinner"></div>
     </div>
   `,
@@ -11,4 +11,5 @@ import { Component, Input } from '@angular/core';
 })
 export class SpinnerComponent {
   @Input() show: boolean = false;
+  @Input() dark: boolean = false;
 }

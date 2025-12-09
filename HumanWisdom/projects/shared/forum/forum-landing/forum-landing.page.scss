@@ -14,7 +14,8 @@
 .modal.slide-up .lab-modal-body,
 .modal.slide-up .lab-modal-bodyfourm,
 .modal.slide-up .modal_inner,
-.modal.slide-up .choose-category-popup {
+.modal.slide-up .choose-category-popup,
+.modal.slide-up .v3_modal_posted_successfully {
   transform: translateY(100%);
   opacity: 0;
 }
@@ -35,8 +36,9 @@
 .modal.slide-up.show .lab-modal-body,
 .modal.slide-up.show .lab-modal-bodyfourm,
 .modal.slide-up.show .modal_inner,
-.modal.slide-up.show .choose-category-popup {
-  animation: modalSlideUp 700ms ease-out forwards;
+.modal.slide-up.show .choose-category-popup,
+.modal.slide-up.show .v3_modal_posted_successfully {
+  animation: modalSlideUp 250ms ease-out forwards;
   will-change: transform, opacity;
 }
 // .forum_all_threads{
@@ -116,4 +118,70 @@
   opacity: 0.5;
   pointer-events: none;
   transition: opacity 200ms ease-in-out;
+}
+/* Follow button: always black */
+button.fc_000000 {
+  color: #000000 !important;
+  border-color: transparent !important;
+  &:hover {
+    color: #000000 !important;
+  }
+}
+.div_forum_post .btn{
+  border-color: transparent !important;
+}
+/* Unfollow button: always black with 50% opacity */
+button.fc_000000_0_5 {
+  color: rgba(0, 0, 0, 0.5) !important;
+  &:hover {
+    color: rgba(0, 0, 0, 0.5) !important;
+  }
+}
+button.fc_000000_0_5 span.underline:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Click feedback */
+.btn_post:active,
+.btn_ctdf:active,
+.btn-thread:active,
+.btn_aan:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+  transition: transform 80ms ease, opacity 80ms ease;
+}
+
+/* Processing state */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.btn_post.loading::after,
+.btn_ctdf.loading::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: spin 600ms linear infinite;
+}
+
+.modal-spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  border-right-color: transparent;
+  margin: 0 auto;
+  animation: spin 600ms linear infinite;
+}
+.btn-default {
+  color: #FFFFFF !important;
 }
