@@ -16,7 +16,9 @@
 
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
       <a class="mr10px" (click)="commentbottom()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/comment_unfilled.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/comment_unfilled.svg" alt="" class="p0" *ngIf="!isAdults">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment.svg" alt="" class="p0" *ngIf="isAdults">
+
       </a>
       <a class="" id="btnShare" (click)="share()">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0" *ngIf="!isAdults">
@@ -111,8 +113,9 @@
                 </div>
               </div> 
             </div>
-              <div class="row center_flex">
-              <div class="blog"  [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+            
+              <div class="blog"  [ngClass]="isAdults ? 'bg_FFE8BB' : 'bg_stake'">
+                  <div class="row">
 
               <div class="row mtb40px mb15px ">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -268,6 +271,12 @@
                   <!-- /desktop appstore -->
                 </div>
               </div>
+
+              <div class="row mtb20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_04">
+                </div>
+              </div>
               <!-- /desktop -->
 
               <div class="row mtb20px">
@@ -392,7 +401,7 @@
               </div> 
             </div>
             </div>
-              <div class="pagebreak"></div>
+              <!-- <div class="pagebreak"></div> -->
 
             </form>
           </div>
