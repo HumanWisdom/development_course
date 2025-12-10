@@ -23,7 +23,9 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
       <h4 class="mtb0px fs_12px fw_400 lh_150p flex_ai" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_date.svg"
-          class="img-responsive mr5px">
+          class="img-responsive mr5px" *ngIf="!isAdults">
+           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/event_date.svg"
+          class="img-responsive mr5px" *ngIf="isAdults">
         Date: {{eventData['Event_Date']}}
       </h4>
     </div>
@@ -33,7 +35,9 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
       <h4 class="mtb0px fs_12px fw_400 lh_150p flex_ai" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_time.svg"
-          class="img-responsive mr5px">
+          class="img-responsive mr5px" *ngIf="!isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/event_time.svg"
+          class="img-responsive mr5px" *ngIf="isAdults">
         {{eventData['EventTiming']}}
       </h4>
     </div>
