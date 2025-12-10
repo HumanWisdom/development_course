@@ -33723,6 +33723,20 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   justify-content: center;
 }
 
+.img_absolute_01adult{
+   position: absolute;
+  top: 0;
+  width: 305px;
+  height: 201px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ls_1_2px
 {
   letter-spacing: 1.2px;
@@ -33731,7 +33745,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .box_v3_06
 {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   background: #FFE8BB;
   padding: 15px !important;
   margin-bottom: 10px;
