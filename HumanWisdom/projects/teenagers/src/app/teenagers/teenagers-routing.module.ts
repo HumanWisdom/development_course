@@ -63,6 +63,12 @@ const routes: Routes = [
     path: 'key-ideas',
     loadChildren: () => import('../teenagers/key-ideas/key-ideas.module').then(m => m.KeyIdeasModule)
   },
+    {
+    path: 'home',
+    component: HomeComponent,
+    loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
+    canActivate: [AuthGuard]
+  },
   {
     path: 'teenager-dashboard',
     component: HomeComponent,

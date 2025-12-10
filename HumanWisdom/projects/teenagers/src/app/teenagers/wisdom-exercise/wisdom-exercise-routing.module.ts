@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActiveGuard } from 'src/app/authGuard/active.guard';
-
+import { S157001Page } from '../../../../../shared/component/s157001/s157001.page';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./s157001/s157001.module').then( m => m.S157001PageModule)
+    component: S157001Page,
   },
   {
     path: 's157001',
-    loadChildren: () => import('./s157001/s157001.module').then( m => m.S157001PageModule)
+    component: S157001Page,
   },
   {
     path: 's157002',   
