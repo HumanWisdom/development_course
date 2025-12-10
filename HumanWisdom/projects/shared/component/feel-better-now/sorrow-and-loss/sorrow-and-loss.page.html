@@ -3,12 +3,12 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
-      </a>
+<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">      </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Sorrow and loss
       </h1>
     </div>
@@ -55,7 +55,7 @@
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/breathing_exercise.svg" class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             BREATHING EXERCISE
                           </h4>
                         </div>
@@ -64,7 +64,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Smooth slow exhale
                         </h4>
                       </div>
@@ -72,7 +72,7 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           02:54
                         </h4>
                       </div>
@@ -115,7 +115,7 @@
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_meditation.svg" class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px"[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             SOUNDSCAPE
                           </h4>
                         </div>
@@ -124,7 +124,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Golden moments
                         </h4>
                       </div>
@@ -132,7 +132,7 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           30:00
                         </h4>
                       </div>
@@ -172,7 +172,7 @@
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_meditation.svg" class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10" >
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             AUDIO MEDITATION
                           </h4>
                         </div>
@@ -181,7 +181,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Responding to grief
                         </h4>
                       </div>
@@ -189,7 +189,7 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           05:32
                         </h4>
                       </div>
@@ -229,7 +229,7 @@
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/short_video.svg" class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             SHORT VIDEO
                           </h4>
                         </div>
@@ -238,7 +238,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Dealing with grief
                         </h4>
                       </div>
@@ -246,7 +246,7 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           00:34
                         </h4>
                       </div>
@@ -286,7 +286,7 @@
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/short_video.svg" class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             VIDEO
                           </h4>
                         </div>
@@ -295,7 +295,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Dealing with loss
                         </h4>
                       </div>
@@ -303,7 +303,7 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           09:30
                         </h4>
                       </div>
@@ -343,7 +343,7 @@
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_podcast.svg" class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             MINI PODCAST
                           </h4>
                         </div>
@@ -352,7 +352,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Understand and overcome sorrow
                         </h4>
                       </div>
@@ -360,7 +360,7 @@
 
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           01:41
                         </h4>
                       </div>
@@ -393,15 +393,15 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px mb15px">
-                <h4 class="mtb0px fw_500 fs_24px lh_140p fc_ffffff">
+                <h4 class="mtb0px fw_500 fs_24px lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                   PATHWAY
                 </h4>
               </div>
-            </div>
+            </div>                                                                   
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                <h4 class="mtb0px fw_400 fs_15px lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                   To find long-term solutions continue now to explore these modules.
                 </h4>
               </div>
@@ -426,7 +426,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                               Sorrow and Loss
                             </h4>
                           </div>
@@ -434,7 +434,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                            <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                               3 sessions
                             </h4>
                           </div>
@@ -461,7 +461,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                               Emotional Needs
                             </h4>
                           </div>
@@ -469,7 +469,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                            <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                               3 sessions
                             </h4>
                           </div>

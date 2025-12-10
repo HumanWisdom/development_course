@@ -4,12 +4,14 @@
     [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
         Stress
       </h1>
     </div>
@@ -60,7 +62,7 @@
                             class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                             BREATHING EXERCISE
                           </h4>
                         </div>
@@ -69,7 +71,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Humming bee
                         </h4>
                       </div>
@@ -83,7 +85,9 @@
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -120,7 +124,7 @@
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_meditation.svg" class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             SOUNDSCAPE
                           </h4>
                         </div>
@@ -129,7 +133,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Morning chime
                         </h4>
                       </div>
@@ -137,7 +141,7 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           30:00
                         </h4>
                       </div>
@@ -181,7 +185,7 @@
                             class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             AUDIO MEDITATION
                           </h4>
                         </div>
@@ -190,7 +194,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Voice yoga
                         </h4>
                       </div>
@@ -198,13 +202,15 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           05:09
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngif="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -241,7 +247,7 @@
                             class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             SHORT VIDEO
                           </h4>
                         </div>
@@ -250,7 +256,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Overcoming stress
                         </h4>
                       </div>
@@ -258,13 +264,15 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           01:03
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -302,7 +310,7 @@
                             class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             VIDEO
                           </h4>
                         </div>
@@ -311,7 +319,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Tips to get over stress right now
                         </h4>
                       </div>
@@ -319,13 +327,15 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           11:47
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive">
+                          class="img-responsive" *ngif="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -362,7 +372,7 @@
                             class="img-responsive w100">
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-10">
-                          <h4 class="mtb0px fw_700 fs_12px lh_140p fc_ffffff ttuppercase ls_1_2px">
+                          <h4 class="mtb0px fw_700 fs_12px lh_140p  ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             MINI PODCAST
                           </h4>
                         </div>
@@ -371,7 +381,7 @@
 
                     <div class="row mb5px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fw_400 fs_18px lh_130p fc_ffffff">
+                        <h4 class="mtb0px fw_400 fs_18px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                           Long term solutions to stress
                         </h4>
                       </div>
@@ -379,13 +389,15 @@
 
                     <div class="row">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
-                        <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           03:07
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -412,7 +424,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px mb15px">
-                <h4 class="mtb0px fw_500 fs_24px lh_140p fc_ffffff">
+                <h4 class="mtb0px fw_500 fs_24px lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                   PATHWAY
                 </h4>
               </div>
@@ -420,7 +432,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fw_400 fs_15px lh_140p fc_ffffff">
+                <h4 class="mtb0px fw_400 fs_15px lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                   To find long-term solutions continue now to explore these modules.
                 </h4>
               </div>
@@ -448,7 +460,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                               Stress
                             </h4>
                           </div>
@@ -456,7 +468,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                            <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                               8 sessions
                             </h4>
                           </div>
@@ -486,7 +498,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                               Conditioning
                             </h4>
                           </div>
@@ -494,7 +506,7 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                            <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                               4 sessions
                             </h4>
                           </div>
@@ -513,7 +525,7 @@
             <a (click)="determinePathway('pathway/index')">
               <div class="row mt40px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                  <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Go to PATHWAY
                   </h4>
                 </div>
