@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Location } from '@angular/common';
-import { SharedService } from '../../../../../../shared/services/shared.service';
-import { Constant } from '../../../../../../shared/services/constant';
-import { TeenagersService } from '../../teenagers.service';
-import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import {  Input } from '@angular/core';
+import { NavigationService } from '../../services/navigation.service';
+import { SharedService } from '../../services/shared.service';
+import { TeenagersService } from '../../../teenagers/src/app/teenagers/teenagers.service';
 @Component({
   selector: 'HumanWisdom-s157001',
   templateUrl: './s157001.page.html',
@@ -14,6 +14,7 @@ import { NavigationService } from '../../../../../../shared/services/navigation.
 export class S157001Page implements OnInit {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/wisdom_exercise.svg"
   tocColor="white"
+  @Input() isHome = false;
   isGuest : boolean =  true;
    path = setTimeout(() => {
     return this.router.url;
