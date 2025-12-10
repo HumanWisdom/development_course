@@ -79,8 +79,10 @@
             <!-- Wisdom Exercise Component Embedding -->
             <div class="row" *ngIf="showWisdomExercise">
               <div class="col-12 p-0">
-                <app-wisdom-exercise-s75001></app-wisdom-exercise-s75001>
+                <app-wisdom-exercise-s75001 *ngIf="preference == '19'"></app-wisdom-exercise-s75001>
+                <HumanWisdom-s157001 [isHome] ="true" *ngIf="preference == '20'"></HumanWisdom-s157001>
               </div>
+              
             </div>
 
             <div class="row" *ngIf="!showWisdomExercise">

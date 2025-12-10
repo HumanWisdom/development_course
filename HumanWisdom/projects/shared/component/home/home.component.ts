@@ -139,7 +139,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private routerSubscription: Subscription;
   private hashChangeHandler: () => void;
   private lastScrollTop: number = 0;
-
+  preference = '';  
   constructor(
     private router: Router,
     private commonService: CommonService,
@@ -498,6 +498,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           // Handle Self Awareness (id: 19) specially
           if (preferenceToUse === "19" ||preferenceToUse === "20" ) {
             this.showWisdomExercise = true;
+            this.preference = preferenceToUse;
             this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
             console.log('User preference loaded (Self Awareness):', this.YourTopicofChoice);
           } else {
@@ -734,6 +735,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     // Handle Self Awareness (id: 19) - show wisdom exercise component
     if (item.id === "19" || item.id === "20") {
       this.showWisdomExercise = true;
+      this.preference = item.id;
       this.personalisedList.forEach(nav => nav.active = false);
       item.active = true;
       this.YourTopicofChoice = [item];

@@ -148,7 +148,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
 
   closePost() {
-    this.router.navigateByUrl(SharedService.getUrlfromFeatureName("/forum"), { state: { programType: this.programType } });
+    this.router.navigateByUrl(SharedService.getUrlfromFeatureName('forum/forum-landing'), { state: { programType: this.programType } });
   }
 
   handleEvent(payload: any) {
