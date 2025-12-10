@@ -22,7 +22,7 @@
 </div> -->
 <!-- /top navigation -->
  <!-- top navigation -->
-<div class="row center_flex">
+<div class="row center_flex" *ngIf="!isHome">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
@@ -623,5 +623,5 @@
 <!-- /page content -->
 
 <!-- footer -->
-<app-index-footer></app-index-footer>
+<app-index-footer *ngIf="!isHome"></app-index-footer>
 <!-- /footer -->
