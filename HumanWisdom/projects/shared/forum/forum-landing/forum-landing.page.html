@@ -16,7 +16,7 @@
         Forum
       </h1>
     </div>
-    <app-spinner [show]="isLoading || isProcessing" [dark]="isProcessing"></app-spinner>
+    <app-spinner [show]="isLoading"></app-spinner>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a id="btnShare" class="">
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" (click)="shareLandingPage()" alt="" class="p0" *ngIf="!isAdults">
@@ -191,7 +191,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" (click)="callEditPost(item,index)">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                                           Edit
                                         </h4>
                                       </div>
@@ -214,7 +214,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
                                           Delete
                                         </h4>
                                       </div>
@@ -292,9 +292,9 @@
                   <div class="row mb10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <button *ngIf="item.TagName && item.TagName!=null" type="button" class="btn fs_10px fw_700 lh_140p ttuppercase btn_fpfy" [ngClass]="getTagClass(item.TagName)">
+                        <span *ngIf="item.TagName && item.TagName!=null" class="fs_10px fw_700 lh_140p ttuppercase tag-static" [ngClass]="getTagClass(item.TagName)">
                           {{item.TagName}}
-                        </button>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -348,7 +348,7 @@
                               class="img-responsive mr5px" *ngIf="!isAdults">
                                <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment.svg"
-                              class="img-responsive mr5px" *ngIf="isAdults">
+                              class="img-responsive mr5px" style="height:24px; width:24px" *ngIf="isAdults">
                             {{item.ReplyCount}}
                           </button>
                         </div>
@@ -603,9 +603,9 @@
     <div class="row mb10px">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <button *ngIf="item.TagName && item.TagName!=null" type="button" class="btn fs_10px fw_700 lh_140p ttuppercase btn_fpfy" [ngClass]="getTagClass(item.TagName)">
+          <span *ngIf="item.TagName && item.TagName!=null" class="fs_10px fw_700 lh_140p ttuppercase tag-static" [ngClass]="getTagClass(item.TagName)">
             {{item.TagName}}
-          </button>
+          </span>
         </div>
       </div>
     </div>
@@ -760,7 +760,7 @@
 <!-- /posted successfully -->
 
 <!-- signup_login modal -->
-<div class="modal fade slide-up" id="signuplogin" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade slide-up" id="signuplogin" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="false">
   <!-- modal-body -->
   <div class="" role="document">
     <!-- modal content -->
