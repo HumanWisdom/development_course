@@ -101,6 +101,15 @@
 .tag-ask-coach { background: #EEA170; color: #FFFFFF !important; }
 .tag-other { background: #FFE8BB; color: #FFFFFF !important; }
 
+.tag-static {
+  display: inline-block;
+  padding: 4px 8px;
+  // border-radius: 12px;
+  border: 0;
+  pointer-events: none;
+  cursor: default;
+}
+
 .position_unseti .btn.dropdown-toggle {
   background: transparent;
   border: 0;
