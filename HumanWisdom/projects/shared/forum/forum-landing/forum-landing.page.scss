@@ -53,8 +53,8 @@
 }
 
 .cfdm {
-  min-width: 162px;
-  min-height: 82px;
+  width: 162px;
+  height: 92px;
   padding: 8px 0;
   border-radius: 12px;
   background: #FFD889;
@@ -104,7 +104,7 @@
 .tag-static {
   display: inline-block;
   padding: 4px 8px;
-  // border-radius: 12px;
+  border-radius: 2px;
   border: 0;
   pointer-events: none;
   cursor: default;
@@ -114,6 +114,10 @@
   background: transparent;
   border: 0;
   padding: 4px;
+}
+
+.position_unseti .dropdown-toggle::after {
+  display: none;
 }
 
 #edit_post .txtarea_fc_comment {
