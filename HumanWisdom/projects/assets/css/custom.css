@@ -35215,7 +35215,9 @@ color: black !important;
   margin: 0;
   border: 0;
   border-radius: 100px;
-  background: #ED7D6F !important;
+  /* background: #ED7D6F !important; */
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;;
+
   color: #FFF !important;
   font-size: 15px;
   font-weight: 600;

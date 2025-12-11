@@ -20,7 +20,14 @@
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" 
              alt="Lock icon" 
              class="lock-icon-img"
-             style="width: 16px; height: 16px;" *ngIf="isAdults">
+               *ngIf="isAdults">
+                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
+             alt="Lock icon" 
+             class="lock-icon-img"
+             *ngIf="!isAdults">
+
+
+             
       </div>
     </div>
 
