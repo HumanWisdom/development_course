@@ -149,7 +149,7 @@
 
                   <div class="row mt5px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff_0_5">
+                      <h4 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                         <!-- March 26 -->
                         {{getLocalPostDate(posttread?.PostDate)}}
                       </h4>
@@ -191,7 +191,7 @@
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                             class="img-responsive mr5px">
                             <img *ngIf="posttread.Liked=='1'"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
                               class="img-responsive mr5px">
                             {{posttread.PostLikeCount}}
                         </button>
@@ -202,7 +202,7 @@
                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
                             class="img-responsive mr5px">
                             <img *ngIf="posttread.Liked=='1'"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
                               class="img-responsive mr5px">
                             {{posttread.PostLikeCount}}
                           </button>
@@ -311,7 +311,7 @@
                           src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                           class="img-responsive mr5px">
                         <img *ngIf="item.Liked=='1'"
-                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
                           class="img-responsive mr5px">
                           <span [innerText]="item.ReplyPostLikeCount"></span>
                         </button>
@@ -324,7 +324,7 @@
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
                           class="img-responsive mr5px">
                         <img *ngIf="item.Liked=='1'"
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
                           class="img-responsive mr5px">
                           <span [innerText]="item.ReplyPostLikeCount"></span>
                         </button>

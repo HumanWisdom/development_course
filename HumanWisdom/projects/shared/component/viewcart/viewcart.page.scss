@@ -1,0 +1,23 @@
+.btn_tfas {
+  background-color: #ED7D6F;
+  color: #ffffff;
+  border-color: #ED7D6F;
+}
+
+.btn_tfas:hover,
+.btn_tfas:active,
+.btn_tfas:focus,
+.btn_tfas:visited,
+.btn_tfas:disabled,
+.btn_subscription_apply:hover,
+.btn_subscription_apply:active,
+.btn_subscription_apply:focus,
+.btn_subscription_apply:visited,
+.btn_subscription_apply:disabled {
+  background-color: #ED7D6F;
+  color: #ffffff;
+  border-color: #ED7D6F;
+}
+.btn_subscription_apply{
+  border: transparent !important;
+}
