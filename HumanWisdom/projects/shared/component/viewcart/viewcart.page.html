@@ -4,12 +4,13 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="back()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Cart
       </h1>
     </div>
@@ -51,7 +52,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{cartListResult[0]?.Plan}}
                           </h4>
                         </div>
@@ -59,7 +60,7 @@
 
                       <div class="row mb15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             HappierMe Premium
                           </h4>
                         </div>
@@ -68,7 +69,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                            <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
+                            <h4 class="mtb0px fs_15px fw_700 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{this.symbol + cartListResult[0]?.Amt}}
                             </h4>
                           </div>
@@ -144,7 +145,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{cartListResult[1]?.Plan}}
                           </h4>
                         </div>
@@ -152,7 +153,7 @@
 
                       <div class="row mb15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             HappierMe Premium
                           </h4>
                         </div>
@@ -161,7 +162,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                            <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
+                            <h4 class="mtb0px fs_15px fw_700 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{this.symbol + cartListResult[1]?.Amt}}
                             </h4>
                           </div>
@@ -238,7 +239,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{cartListResult[2]?.Plan}}
                           </h4>
                         </div>
@@ -246,7 +247,7 @@
 
                       <div class="row mb15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             HappierMe Premium Teenagers
                           </h4>
                         </div>
@@ -255,7 +256,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                            <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
+                            <h4 class="mtb0px fs_15px fw_700 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{this.symbol + cartListResult[2]?.Amt}}
                             </h4>
                           </div>
@@ -330,7 +331,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{cartListResult[3]?.Plan}}
                           </h4>
                         </div>
@@ -338,7 +339,7 @@
 
                       <div class="row mb15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             HappierMe Premium Teenagers
                           </h4>
                         </div>
@@ -347,7 +348,7 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                            <h4 class="mtb0px fs_15px fw_700 lh_140p fc_ffffff">
+                            <h4 class="mtb0px fs_15px fw_700 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               {{this.symbol + cartListResult[3]?.Amt}}
                             </h4>
                           </div>
@@ -425,11 +426,11 @@
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <div class="row center_flex mb0px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                        <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{data['LearnerEmail']}}
   
                         </h4>
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
   
                           {{data['Program']}} - {{data['Plan']}} subscription
                         </h4>
@@ -437,7 +438,7 @@
                     </div>
                     <!-- <div class="row mb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
   
                           {{data['Program']}} - {{data['Plan']}} subscription
                         </h4>
@@ -447,7 +448,7 @@
   
                   </div>
                   <div class="col-md-1 col-sm-1 col-xs-1 p0" (click)="removeFromCart(data['CartId'])">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
+                    <img src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
                       class="img-responsive img_close_delete1">
   
                   </div>
@@ -484,7 +485,7 @@
 
               <div class="row mb10px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                  <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Enter a Discount code (optional)
                   </h4>
                 </div>
@@ -526,11 +527,11 @@
                   </div>
 
                   <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pr0px">
-                    <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{this.couponCode}}
                     </h4>
 
-                    <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{percentage}}% discount applied
                     </h4>
                   </div>
@@ -546,7 +547,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       Item Total
                     </h4>
                   </div>
@@ -556,7 +557,7 @@
                   </div>
 
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{this.symbol + totalCartAmount}}
                     </h4>
                   </div>
@@ -566,7 +567,7 @@
               <div class="row mb15px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       Discount
                     </h4>
                   </div>
@@ -576,7 +577,7 @@
                   </div>
 
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{this.symbol + this.discount}}
                     </h4>
                   </div>
@@ -586,7 +587,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       Subtotal
                     </h4>
                   </div>
@@ -596,7 +597,7 @@
                   </div>
 
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{this.symbol + totalCartValueDiscount}}
                     </h4>
                   </div>
@@ -623,7 +624,7 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter center_flex col_cw" [ngClass]="isAdults ? '' : 'we_ft_cl'">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-        <h4 class="mtb0px fs_18px fw_700 lh_140p fc_ffffff">
+        <h4 class="mtb0px fs_18px fw_700 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
           {{this.symbol + totalCartValueDiscount}}
         </h4>
       </div>
