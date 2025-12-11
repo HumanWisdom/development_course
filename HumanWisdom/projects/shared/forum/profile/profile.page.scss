@@ -1,6 +1,12 @@
-// .fc_comment {
-//     color: #000000 !important;
-// }
-// .txtarea_fl_comment, .fc_comment{
-//     background: #ffffff !important;
-// }
+button.fc_000000_0_5 {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+button.fc_000000_0_5:hover {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+button.fc_000000_0_5 span.underline:hover {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+.div_forum_post .btn{
+  border-color: transparent !important;
+}

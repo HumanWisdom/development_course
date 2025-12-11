@@ -117,7 +117,7 @@
                           </span>
                         </button>
 
-                        <button type="button" class="btn fs_12px fw_600 lh_140p" *ngIf="item.Followed=='1'">
+                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_000000_0_5" *ngIf="item.Followed=='1'">
                           <i class="fa fa-minus mr3px"></i>
                           <span class="underline">
                             Unfollow
@@ -179,7 +179,7 @@
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                               class="img-responsive mr5px">
                             <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
                               class="img-responsive mr5px">
                             {{item.PostLikeCount}}
                           </button>
@@ -190,7 +190,7 @@
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
                               class="img-responsive mr5px">
                             <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
                               class="img-responsive mr5px">
                             {{item.PostLikeCount}}
                           </button>
