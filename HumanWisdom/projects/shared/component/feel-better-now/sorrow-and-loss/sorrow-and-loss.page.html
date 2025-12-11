@@ -3,8 +3,9 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
-<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
-             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">      </a>
+           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
@@ -44,7 +45,9 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults">
+                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive" style=" height:60px" *ngIf="isAdults">
+
                         </div>
                       </div>
                     </div>
@@ -78,7 +81,9 @@
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -104,7 +109,9 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive" style=" height:60px" *ngIf="isAdults">
+
                         </div>
                       </div>
                     </div>
@@ -138,7 +145,9 @@
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -161,7 +170,9 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio.svg" class="img-responsive">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio.svg" class="img-responsive" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg"
+                            class="img-responsive"  style="height:60px;"*ngIf="isAdults">
                         </div>
                       </div>
                     </div>
@@ -195,7 +206,9 @@
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -218,7 +231,9 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive" style=" height:60px" *ngIf="isAdults">
+
                         </div>
                       </div>
                     </div>
@@ -252,7 +267,9 @@
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -275,7 +292,9 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive" style=" height:60px" *ngIf="isAdults">
+
                         </div>
                       </div>
                     </div>
@@ -309,7 +328,9 @@
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -332,7 +353,9 @@
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio.svg" class="img-responsive">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio.svg" class="img-responsive" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg"
+                            class="img-responsive"  style="height:60px;"*ngIf="isAdults">
                         </div>
                       </div>
                     </div>
@@ -366,7 +389,9 @@
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;">
+                          class="img-responsive" style="max-height: 16px;"*ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -488,7 +513,7 @@
             <a (click)="determinePathway('pathway/index')">
               <div class="row mt40px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                  <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Go to PATHWAY
                   </h4>
                 </div>
