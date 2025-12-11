@@ -12,6 +12,7 @@ import { ProgramType } from '../../models/program-model';
 export class ContentCardComponent {
   @Input() card: ContentCard;
   @Output() cardClick = new EventEmitter<ContentCard>();
+  isAdults = false;
 
    @HostBinding('class.teenager-theme') get isTeenagerTheme() {
       return SharedService.ProgramId == ProgramType.Teenagers;
@@ -20,6 +21,15 @@ export class ContentCardComponent {
       return SharedService.ProgramId == ProgramType.Adults;
     }
   
+
+    ngOnInit(): void {
+      if (SharedService.ProgramId == ProgramType.Adults) {
+            this.isAdults = true;
+          } else {
+            this.isAdults = false;
+          }
+      
+     }
 
   onCardClick(): void {
     this.cardClick.emit(this.card);

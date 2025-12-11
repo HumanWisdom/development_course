@@ -1,3 +1,4 @@
+:host(.adults-theme) {
 .custom-box-img {
   width: 150px;
   height: 150px;
@@ -124,7 +125,7 @@ height:auto;
 
 /* Lock Icon - Grey background with white lock */
 .lock-icon {
-  background-color: #6c757d; /* Bootstrap secondary grey */
+  background-color: rgba(0, 0, 0, 0.5);; /* Bootstrap secondary grey */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -135,8 +136,8 @@ height:auto;
 
 /* Lock Icon Image - Custom SVG styling */
 .lock-icon-img {
-  width: 25px !important;
-  height: 35px !important;
+  width: 22px !important;
+  // height: 35px !important;
   object-fit: contain;
 
 }
@@ -150,4 +151,5 @@ height:auto;
 }
 .top-0{
   top:0px
+}
 }
