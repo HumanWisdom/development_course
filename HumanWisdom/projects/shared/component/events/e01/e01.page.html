@@ -20,8 +20,8 @@
   </div>
 
   <div class="row mb5px">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h4 class="mtb0px fs_12px fw_400 lh_150p flex_ai" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" style="opacity: 50%;">
+      <h4 class="mtb0px fs_12px fw_400 lh_150p flex_ai" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_date.svg"
           class="img-responsive mr5px" *ngIf="!isAdults">
            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/event_date.svg"
@@ -32,19 +32,19 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h4 class="mtb0px fs_12px fw_400 lh_150p flex_ai" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" style="opacity: 50%;" >
+      <h4 class="mtb0px fs_12px fw_400 lh_150p flex_ai" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/event_time.svg"
           class="img-responsive mr5px" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/event_time.svg"
           class="img-responsive mr5px" *ngIf="isAdults">
-        {{eventData['EventTiming']}}
+        {{eventData['EventTiming']}}.
       </h4>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+    <div class="col-md-12 col-sm-12 col-xs-12 p0"  >
       <hr class="hr_style_v3_05 mtb30px">
     </div>
   </div>
