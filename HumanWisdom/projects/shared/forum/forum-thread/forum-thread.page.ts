@@ -12,6 +12,7 @@ import { Constant } from '../../../shared/services/constant';
 import { NavigationService } from "../../../shared/services/navigation.service";
 import { Location } from '@angular/common';
 import { LogEventService } from "./../../services/log-event.service";
+import { ModalService } from '../../services/modal.service';
 
 
 
@@ -68,9 +69,12 @@ export class ForumThreadPage implements OnInit {
   sharedPostId = '';
   isReportPost = false;
   isAdults: boolean = true; 
+  submissionState: 'processing' | 'success' | 'error' | '' = '';
+  modalText: string = '';
 
   constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute, public logeventservice: LogEventService,
-     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService) {
+     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService,
+     private modalService: ModalService) {
     this.userID = localStorage.getItem('userId');
     this.token = localStorage.getItem("shareToken");
     this.sharedPostId = this.activateRoute.snapshot.paramMap.get('sharedPostId');
@@ -315,7 +319,14 @@ export class ForumThreadPage implements OnInit {
         this.replyflag = !this.replyflag;
         this.reploadpage();
         this.commenttext = '';
+        this.submissionState = 'success';
+        this.modalText = 'submitted successfully';
+        this.openPostedSuccessfullyModal();
       }
+    }, _ => {
+      this.submissionState = 'error';
+      this.modalText = 'Something went wrong. Please try again';
+      this.openPostedSuccessfullyModal();
     });
   }
 
@@ -402,10 +413,16 @@ export class ForumThreadPage implements OnInit {
         if (res) {
           this.isReportPost =  false;
           this.isEditComment = false;
-          this.postModal.nativeElement.click();
+          this.submissionState = 'success';
+          this.modalText = 'Submitted successfully. Your comment will be visible after moderation';
+          this.openPostedSuccessfullyModal();
           this.getPostData();
           this.PostComment = '';
         }
+      }, _ => {
+        this.submissionState = 'error';
+        this.modalText = 'Something went wrong. Please try again';
+        this.openPostedSuccessfullyModal();
       })
     }
     else {
@@ -416,13 +433,13 @@ export class ForumThreadPage implements OnInit {
 
 
   closePost(){
-
+    this.closePostedSuccessfullyModal();
   }
   post(item) {
     if (this.isLoggedIn) {
       this.service.submitPost({ POST: this.posttext, UserId: item.userID, ParentPostID: item.ReplyPostID }).subscribe(res => {
         if (res) {
-          this.postModal.nativeElement.click();
+          this.openPostedSuccessfullyModal();
           this.reploadpage();
         }
       })
@@ -445,7 +462,14 @@ export class ForumThreadPage implements OnInit {
                 this.activereply = null;
                 this.reploadpage();
                 this.reportText = '';
+                this.submissionState = 'success';
+                this.modalText = 'submitted successfully';
+                this.postModal.nativeElement.click();
               }
+            }, _ => {
+              this.submissionState = 'error';
+              this.modalText = 'Something went wrong. Please try again';
+              this.openPostedSuccessfullyModal();
             });
       }
       else 
@@ -487,16 +511,30 @@ export class ForumThreadPage implements OnInit {
       }
       this.service.submitPost({ POST: this.PostComment, UserId: this.userID, ParentPostID: parentPostId }).subscribe(res => {
         if (res) {
-          this.postModal.nativeElement.click();
+          this.submissionState = 'success';
+          this.modalText = 'Submitted successfully. Your comment will be visible after moderation';
+          this.openPostedSuccessfullyModal();
           this.isEditComment = false;
           this.isReportPost = false;
           this.PostComment = '';
           this.reploadpage();
         }
+      }, _ => {
+        this.submissionState = 'error';
+        this.modalText = 'Something went wrong. Please try again';
+        this.openPostedSuccessfullyModal();
       })
     } else {
       this.enableAlert = true;
     }
+  }
+
+  openPostedSuccessfullyModal(event?: Event) {
+    this.modalService.openModal('posted_successfully', event);
+  }
+
+  closePostedSuccessfullyModal() {
+    this.modalService.closeModal('posted_successfully');
   }
   GetReplyCount() {
     return this.list.ReplyPost.length;

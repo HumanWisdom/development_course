@@ -10,6 +10,7 @@ import { environment } from '../../../environments/environment';
 import { SharedService } from '../../services/shared.service';
 import { NavigationService } from '../../services/navigation.service';
 import { Constant } from '../../../shared/services/constant';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-profile',
@@ -57,11 +58,15 @@ export class ProfilePage implements OnInit {
   profileUsername:string="";
   programType = ProgramType.Adults
   isAdults:boolean = false;
+  isProcessing: boolean = false;
+  submissionState: 'processing' | 'success' | 'error' | '' = '';
+  modalText: string = '';
   constructor(private route: ActivatedRoute, private forumService: ForumService,
      public platform: Platform, private router: Router,
     private ngNavigatorShareService: NgNavigatorShareService, 
     private location: Location, public onboardingService: OnboardingService,
-    private navigationService:NavigationService
+    private navigationService:NavigationService,
+    private modalService: ModalService
   ) {
     this.userId= this.route.snapshot.paramMap.get('userId');
     this.address = this.router.url;
@@ -173,13 +178,26 @@ export class ProfilePage implements OnInit {
   postreport(item, actionType) {
     console.log(item);
     this.replyflag = !this.replyflag;
+    this.isProcessing = true;
+    this.submissionState = 'processing';
+    this.modalText = 'Submitting...';
+
     if (this.actionType == 'report') {
       this.forumService.reportPost({ PostID: item.PostID, UserID: this.UserID, Comment: this.commenttext }).subscribe(res => {
         if (res) {
           this.replyflag = !this.replyflag;
           this.getAllPosts(2, this.userId);
           this.actionType = '';
+          this.submissionState = 'success';
+          this.modalText = 'submitted successfully';
+          this.isProcessing = false;
+          this.openPostedSuccessfullyModal();
         }
+      }, _ => {
+        this.submissionState = 'error';
+        this.modalText = 'Something went wrong. Please try again';
+        this.isProcessing = false;
+        this.openPostedSuccessfullyModal();
       });
     }
     else {
@@ -188,7 +206,16 @@ export class ProfilePage implements OnInit {
           this.getAllPosts(2, this.userId);
           this.actionType = '';
           this.PostComment = '';
+          this.submissionState = 'success';
+          this.modalText = 'Submitted successfully. Your comment will be visible after moderation';
+          this.isProcessing = false;
+          this.openPostedSuccessfullyModal();
         }
+      }, _ => {
+        this.submissionState = 'error';
+        this.modalText = 'Something went wrong. Please try again';
+        this.isProcessing = false;
+        this.openPostedSuccessfullyModal();
       })
     }
   }
@@ -232,5 +259,14 @@ export class ProfilePage implements OnInit {
     }else{
       this.router.navigate([url]);
     }
+  }
+
+  // Modal service methods
+  openPostedSuccessfullyModal(event?: Event) {
+    this.modalService.openModal('posted_successfully', event);
+  }
+
+  closePostedSuccessfullyModal() {
+    this.modalService.closeModal('posted_successfully');
   }
 }
