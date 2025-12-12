@@ -12337,7 +12337,7 @@ h1.module_title
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
-  line-height: 28px;
+  line-height: 150%;
   /* text-align: center; */
   text-align: left;
   color: #000000;
@@ -12550,7 +12550,7 @@ h1.module_title
   font-size: 10px;
   line-height: 12px;
   /* identical to box height */
-  color: #F55858;
+  color: #000000;
 }
 
 .txt17
@@ -12562,7 +12562,7 @@ h1.module_title
   line-height: 12px;
   /* identical to box height */
   text-align: right;
-  color: #60A757;
+  color: #000000;
 }
 
 .txt18
@@ -34359,7 +34359,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 .hr_style_v3_06
 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #000000;
   opacity: 0.1;
   margin: 10px 0;
 }
