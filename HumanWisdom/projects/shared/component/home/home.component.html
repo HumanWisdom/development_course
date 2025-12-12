@@ -13,7 +13,7 @@
 
             <div class="row home-container sticky-top-section">
 
-              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="showSearchBox">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="d-flex justify-content-between align-items-center plr20px mt20px mb0px">
                   <h2 *ngIf="username && username !== ''" class="fw_700 fs_24px lh_140p fc_000000 mt0px mb0px">
                     Hi {{username}}!
@@ -92,7 +92,7 @@
             </div>
 
             <div class="row" *ngIf="!showWisdomExercise">
-              <div class="col-12 p-0" [ngStyle]="isloggedIn ? {'margin-top.px': 10} : {}">
+              <div class="col-12 p-0" [ngStyle]="isloggedIn ? {'margin-top.px': 50} : {}">
 
                 <!-- recursive template for a section -->
                 <ng-template #renderSection let-section>

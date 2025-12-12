@@ -182,8 +182,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     } catch (error) {
       console.warn('Error parsing username, defaulting to Guest:', error);
-      this.username = '';
+      this.username =  SharedService.FnName();
       this.streak = '';
+          this.getStreak();
     }
 
     // Restore state from store
@@ -1356,7 +1357,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Hide search box when scroll exceeds 20% of screen height
     if (scrollTop > threshold) {
-      this.showSearchBox = false;
+      this.showSearchBox =true;
       this.searchResult = []; // Close dropdown when hiding search box
     } else {
       // Show search box when scroll is within 20% of screen height
