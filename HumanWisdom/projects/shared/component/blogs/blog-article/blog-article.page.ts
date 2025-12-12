@@ -32,6 +32,7 @@ export class BlogArticlePage implements OnInit {
   address:any;
   token = localStorage.getItem("shareToken")
   isAdults =  true;
+  sanitizedBlogHtml: any;
   constructor(private sanitizer: DomSanitizer, private service: OnboardingService, private location: Location,private renderer: Renderer2,
     private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
     private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform,
@@ -93,6 +94,8 @@ export class BlogArticlePage implements OnInit {
      tempEl.querySelectorAll('img')[i].style.width='100%';
      }
      res.Blog=tempEl.innerHTML;
+     // Sanitize HTML once and store it to prevent re-renders
+     this.sanitizedBlogHtml = this.sanitizer.bypassSecurityTrustHtml(res.Blog);
         this.BlogCommentsLen = this.blogList['BlogComments'].length
         if (this.BlogCommentsLen !== 0) {
           this.BlogCommentsList = this.blogList['BlogComments'].slice(0, 3)
