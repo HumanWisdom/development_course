@@ -275,6 +275,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   loadHomeContents(id): void {
     let programId = SharedService.ProgramId;
+    
+    // Clear other program's data before loading new data
+    // This ensures only one program's data exists at a time
+    this.homeStateService.clearOtherProgramData();
+    
     // Always call API to get fresh data
     this.commonService.GetHomeContents(programId, id).subscribe((res: HomeContentResponse) => {
       if (res) {
@@ -282,6 +287,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         console.log('Raw API response:', res);
 
         // Cache the response for future use (optional)
+        // This will automatically save to the current program's storage
         this.homeStateService.setCachedContent(id.toString(), res);
 
         // Transform API response to content sections
@@ -469,6 +475,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     };
   }
 
+  /**
+   * Validate if a preference ID exists in the available preferences list
+   */
+  private isValidPreference(preferenceId: string, preferenceList: any[]): boolean {
+    if (!preferenceId) {
+      return false;
+    }
+    return preferenceList.some(item => item.id === preferenceId);
+  }
+
   async getUserPreference() {
     this.commonService.getUserpreference().subscribe({
       next: (res) => {
@@ -482,8 +498,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           // User has a saved preference
           localStorage.setItem('userPreference', res);
 
-          // Use stored preference if available, otherwise use the API response
-          const preferenceToUse = storedActivePreference || res;
+          // Use stored preference if available and valid, otherwise use the API response
+          let preferenceToUse = storedActivePreference || res;
+          
+          // Validate preference - if invalid, default to Mental health (ID "2")
+          if (!this.isValidPreference(preferenceToUse, perd)) {
+            console.warn(`Invalid preference "${preferenceToUse}", defaulting to Mental health (ID: 2)`);
+            preferenceToUse = "2"; // Mental health ID
+            this.homeStateService.setActivePreference("2");
+          }
 
           perd.forEach((r) => {
             if (preferenceToUse === r.id) {
@@ -514,8 +537,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           }, 400);
         } else {
           // Guest user or no preference - check if we have stored state
-          if (storedActivePreference) {
-            // Use stored preference for guest users too
+          if (storedActivePreference && this.isValidPreference(storedActivePreference, perd)) {
+            // Use stored preference for guest users too (only if valid)
             perd.forEach((r) => {
               if (storedActivePreference === r.id) {
                 r['active'] = true;
@@ -541,7 +564,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
               this.scrollToActiveList();
             }, 400);
           } else {
-            // No stored preference - default to Mental health
+            // No stored preference or invalid preference - default to Mental health
+            if (storedActivePreference && !this.isValidPreference(storedActivePreference, perd)) {
+              console.warn(`Invalid stored preference "${storedActivePreference}", defaulting to Mental health`);
+            }
             this.handleGuestUserDefault(perd);
           }
         }
@@ -552,8 +578,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         let perd = SharedService.getPreferenceDataForHome();
         const storedActivePreference = this.homeStateService.getActivePreference();
 
-        if (storedActivePreference) {
-          // Use stored preference if available
+        if (storedActivePreference && this.isValidPreference(storedActivePreference, perd)) {
+          // Use stored preference if available and valid
           perd.forEach((r) => {
             if (storedActivePreference === r.id) {
               r['active'] = true;
@@ -577,7 +603,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             this.scrollToActiveList();
           }, 400);
         } else {
-          // Default to Mental health for guest users
+          // No valid stored preference - default to Mental health
+          if (storedActivePreference && !this.isValidPreference(storedActivePreference, perd)) {
+            console.warn(`Invalid stored preference "${storedActivePreference}", defaulting to Mental health`);
+          }
           this.handleGuestUserDefault(perd);
         }
       }
