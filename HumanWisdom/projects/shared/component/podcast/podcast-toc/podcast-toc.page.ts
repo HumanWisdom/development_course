@@ -162,7 +162,8 @@ audioevent(data: any) {
     media = media.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
   }
   const path = encodeURIComponent(media.replaceAll('/', '~'));
-  const title = (data.Title || '').replaceAll(' ', '-');
+  // const title = (data.Title || '').replaceAll(' ', '-');
+  const title = data.Title
   const moduleName = 'podcast';
   const enable = data.isFree=="1"?'T':'F';
 
