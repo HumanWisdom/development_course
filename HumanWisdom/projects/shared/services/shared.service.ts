@@ -415,7 +415,7 @@ return [
         {
           id: "999",
           displayName: "All",
-          active: true,
+          active: false,
           name: 'All'
         },
         {
@@ -456,7 +456,7 @@ return [
         },
         {
           id: "10",
-          active: false,
+          active: true,
           displayName: "Mental health",
           name: 'Manage your mental health'
         },
