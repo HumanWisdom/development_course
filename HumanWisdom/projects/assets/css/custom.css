@@ -33613,7 +33613,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 .box_v3_04,
 .box_v3_04b
 {
-  height: 195px;
+  height: 220px;
   width:162px;
   background: #FFE8BB;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
@@ -33637,7 +33637,7 @@ background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 {
   width: 100%;
   height: 100px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 6px;
   object-fit: cover;
 }
