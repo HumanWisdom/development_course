@@ -60,8 +60,11 @@
 
               <!-- Navigation Menu - Sticky Header -->
               <div class="col-12 border-bottom pr0px sticky-nav-container">
-                <div class="d-flex flex-wrap">
-                  <div class="nav-menu">
+                <div class="d-flex flex-wrap nav-wrapper">
+                  <button class="nav-scroll-btn nav-scroll-btn-left" (click)="scrollNavBackward()" aria-label="Scroll left">
+                    <i class="fa fa-chevron-left"></i>
+                  </button>
+                  <div class="nav-menu" #navMenu>
                     <ng-container *ngFor="let item of personalisedList">
                       <a *ngIf="item.id!='999'" class="nav-item" [class.nav-item--selected]="item.active"
                         [class.nav-item--unselected]="!item.active" (click)="onNavigationClick(item)">
@@ -69,6 +72,9 @@
                       </a>
                     </ng-container>
                   </div>
+                  <button class="nav-scroll-btn nav-scroll-btn-right" (click)="scrollNavForward()" aria-label="Scroll right">
+                    <i class="fa fa-chevron-right"></i>
+                  </button>
                 </div>
               </div>
             </div>
