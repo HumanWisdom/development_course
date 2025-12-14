@@ -9,6 +9,11 @@
         padding-bottom: 9rem;
     }
 
+.username-clr {
+  color:#ffffff
+}
+
+
     /* Navigation menu styling */
     .nav-menu {
         display: flex;
@@ -311,10 +316,10 @@
 
     @media only screen and (max-width: 768px) {
         .row.home-container:first-of-type {
-            position: static;
+            position: fixed;
             z-index: 10;
             max-width: 100%;
-            margin-top: 0;
+            margin-top: -10px;
         }
 
         .sticky-nav-container {
