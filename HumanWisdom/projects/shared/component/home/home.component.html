@@ -13,7 +13,7 @@
 
             <div class="row home-container sticky-top-section">
 
-              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isGuest">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isGuest && showSearchBox">
                 <div class="d-flex justify-content-between align-items-center plr20px mt20px mb0px">
                   <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
                     Hi {{username}}!
@@ -31,9 +31,9 @@
                 </div>
               </div>
               <!-- Search Box -->
-              <div class="col-12 pr0px plr10px mt-3 mb-3 prelative search-box-container"
+              <div class="col-12 pr0px pdl20px pdr20px mt-3 mb-3 prelative search-box-container"
                 [class.search-box-hidden]="!showSearchBox">
-                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group  has-feedback zi0 p0 mb0px">
                   <input type="search" placeholder="How can we help you today?"
                     class="form-control has-feedback-left pfy_search hide_search" name="search-list"
                     [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
@@ -59,7 +59,7 @@
               </div>
 
               <!-- Navigation Menu - Sticky Header -->
-              <div class="col-12 border-bottom pr0px sticky-nav-container">
+              <div class="col-12 pr0px sticky-nav-container">
                 <div class="d-flex flex-wrap nav-wrapper">
                   <button class="nav-scroll-btn nav-scroll-btn-left" (click)="scrollNavBackward()" aria-label="Scroll left">
                     <i class="fa fa-chevron-left"></i>
@@ -91,11 +91,11 @@
               
             </div>
 
-            <div class="row" *ngIf="!showWisdomExercise">
+            <!-- <div class="row" *ngIf="!showWisdomExercise">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
                 <hr class="hr_style_v4">
               </div>
-            </div>
+            </div> -->
 
             <div class="row" *ngIf="!showWisdomExercise">
               <div class="col-12 p-0" [ngStyle]="isloggedIn ? {'margin-top.px': 50} : {}">
@@ -121,25 +121,26 @@
                           <!-- HORIZONTAL (default) -->
                           <div class="d-flex card-container " *ngIf="!section.isVerticalCards">
                             <div *ngFor="let card of getDisplayCards(section)"
+                              class="card-wrapper"
                               style="min-width: 160px; flex-shrink: 0;">
                               <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
                             </div>
                             <!-- View More link for horizontal sections -->
                             <div *ngIf="shouldShowViewMore(section)"
-                              class="d-flex align-items-center justify-content-center"
+                              class="d-flex align-items-center justify-content-center view-more-container"
                               style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
                               (click)="onViewMoreClick(section)">
                               <a class="btn btn-link text-decoration-underline view-more-btn"
                                 style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                View More <i class="fa fa-angle-right ms-1"></i>
+                                View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-1" [class.arrow-teenagers]="!isAdults" alt="arrow">
                               </a>
                             </div>
                             <!-- View All link for horizontal sections - only show when reached end -->
-                            <div *ngIf="hasReachedEnd(section)" class="d-flex align-items-center justify-content-center"
+                            <div *ngIf="hasReachedEnd(section)" class="d-flex align-items-center justify-content-center view-more-container"
                               style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)">
                               <a class="btn btn-link text-decoration-underline view-more-btn"
                                 style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                View all <i class="fa fa-angle-down ms-1"></i>
+                                View all<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-1" [class.arrow-teenagers]="!isAdults" alt="arrow">
                               </a>
                             </div>
                           </div>
@@ -199,7 +200,7 @@
                               <div class="text-center">
                                 <button class="btn btn-link text-decoration-underline view-toggle-btn"
                                   (click)="onViewAll(section)">
-                                  View all <i class="fa fa-angle-down ms-1"></i>
+                                  View all<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="view-all-arrow ms-1" [class.arrow-teenagers]="!isAdults" alt="arrow">
                                 </button>
                               </div>
                             </div>
@@ -207,9 +208,9 @@
 
                           <!-- View More/View Less buttons for Life stories and Blogs -->
                           <div *ngIf="shouldShowViewAll(section)" class="text-center mt-3">
-                            <button class="btn btn-link text-decoration-underline view-toggle-btn"
-                              (click)="onViewAllClick(section)">
-                              View more <i class="fas fa-chevron-down ms-1"></i>
+                              <button class="btn btn-link text-decoration-underline view-toggle-btn"
+                                (click)="onViewAllClick(section)">
+                              View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-1" [class.arrow-teenagers]="!isAdults" alt="arrow">
                             </button>
                           </div>
                         </div>
@@ -240,9 +241,12 @@
                             section.subtitle }}</span>
                         </div>
                         <div class="text-muted">
-                          <span class="chev" *ngIf="section.isExpanded">></span> <!-- use › or > or < -->
-                          <span class="chev-rot" *ngIf="!section.isExpanded">
-                            < </span>
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" 
+                               alt="arrow" 
+                               class="section-arrow"
+                               [class.arrow-expanded]="section.isExpanded"
+                               [class.arrow-collapsed]="!section.isExpanded"
+                               [class.arrow-teenagers]="!isAdults">
                         </div>
                       </div>
 
@@ -260,26 +264,27 @@
                                  [class.px-3]="section.title === 'Long term solutions'"
                                  [class.py-3]="section.title === 'Long term solutions'" -->
                               <div *ngFor="let card of getDisplayCards(section)"
+                                class="card-wrapper"
                                 style="min-width: 160px; flex-shrink: 0;">
                                 <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
                               </div>
                               <!-- View More link for horizontal sections in accordion -->
                               <div *ngIf="shouldShowViewMore(section)"
-                                class="d-flex align-items-center justify-content-center"
+                                class="d-flex align-items-center justify-content-center view-more-container"
                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
                                 (click)="onViewMoreClick(section)">
                                 <a class="btn btn-link text-decoration-underline view-more-btn"
                                   style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                  View More <i class="fa fa-angle-right ms-1"></i>
+                                  View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-1" [class.arrow-teenagers]="!isAdults" alt="arrow">
                                 </a>
                               </div>
                               <!-- View All link for horizontal sections in accordion - only show when reached end -->
                               <div *ngIf="hasReachedEnd(section)"
-                                class="d-flex align-items-center justify-content-center"
+                                class="d-flex align-items-center justify-content-center view-more-container"
                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)">
                                 <a class="btn btn-link text-decoration-underline view-more-btn"
                                   style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                  View all <i class="fa fa-angle-down ms-1"></i>
+                                  View all<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-1" [class.arrow-teenagers]="!isAdults" alt="arrow">
                                 </a>
                               </div>
                             </div>
@@ -337,7 +342,7 @@
                                 <div class="text-center">
                                   <button class="btn btn-link text-decoration-underline view-toggle-btn"
                                     (click)="onViewAll(section)">
-                                    View all <i class="fa fa-angle-down ms-1"></i>
+                                    View all<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-1" [class.arrow-teenagers]="!isAdults" alt="arrow">
                                   </button>
                                 </div>
                               </div>
@@ -349,7 +354,7 @@
                               [class.py-2]="section.title === 'Long term solutions'">
                               <button class="btn btn-link text-decoration-underline view-toggle-btn"
                                 (click)="onViewAllClick(section)">
-                                View more <i class="fa fa-angle-right ms-1"></i>
+                                View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-1" [class.arrow-teenagers]="!isAdults" alt="arrow">
                               </button>
                             </div>
                           </div>
