@@ -5398,6 +5398,12 @@ input[type=checkbox], input[type=radio]
   border-radius: 6px;
 
 }
+.w100explore
+{
+	width:100%;
+  border-radius: 12px;
+
+}
 
 /* .cloning_div
 {
@@ -23712,6 +23718,7 @@ ul.dh_ul li:last-child
 
 .img_profile_01
 {
+  object-fit: cover;
   height: 12rem;
   width: 12rem;
 }
@@ -35101,8 +35108,8 @@ label.chkb_post_anonymously > input[type="checkbox"]:checked + *
 }
 .v1_3_sfooter 
 {
-  height: 110px;
-  padding: 30px 20px;
+  height: 90px;
+  padding: 20px 20px;
   /* background: #424675; */
    background: #ffffff;
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
@@ -35297,7 +35304,7 @@ color: black !important;
   font-size: 12px;
   font-weight: 400;
   line-height: normal;
-  color: #fff;
+  color: #000;
   text-align: left;
   padding: 13px 20px;
 }

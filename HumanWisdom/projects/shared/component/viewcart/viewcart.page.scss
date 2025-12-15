@@ -21,3 +21,18 @@
 .btn_subscription_apply{
   border: transparent !important;
 }
+
+/* Ensure coupon input placeholder is readable on both themes */
+.sr_fc_01::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+}
+.bg_stake .sr_fc_01::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.sr_fc_01 {
+  color: #000000;
+}
+.bg_stake .sr_fc_01 {
+  color: #ffffff;
+}
