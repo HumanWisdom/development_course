@@ -180,7 +180,7 @@
                     <div class="dropdown dropdown_outer">
                       <label class="select_label m0px w100">
                         <!-- <input type="text" id="email"  class="sp_fc" placeholder="Choose program "> -->
-                        <select type="text" id="program" class="sp_fc btn_select"
+                        <select type="text" id="program" class="sp_fc btn_select" [ngClass]="{'placeholder_faint': !selectedProgram}"
                           (change)="selectProgram($event.target.value)">
                           <option value="" class="sp_fc">Choose program</option>
                           <option *ngFor="let data of cartList"
@@ -203,11 +203,9 @@
                 <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 p0">
                 </div>
                 <div class="row mb15px">
-                  <div class="col-lg-6 col-md-6 col-sm-4 col-xs-4 p0 tright">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button type="button" [disabled]="!learnermail || !selectedProgram" (click)="addToCartForm()"
                       class="btn btn_forum_ask_a_gift">Add to cart
-
-                      <!-- <i class="fa fa-plus">New note</i> -->
                     </button>
                   </div>
                 </div>

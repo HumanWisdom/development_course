@@ -158,30 +158,30 @@ export class SubscriptionPaymentPage implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       if (this.stripeId !== undefined) {
+        const isLight = this.isAdults;
         var style = {
           base: {
-            iconColor: '#c4f0ff',
-            color: '#fff',
+            iconColor: isLight ? '#7a7a7a' : '#c4f0ff',
+            color: isLight ? '#000000' : '#ffffff',
             '::placeholder': {
               fontFamily: "'Poppins', sans-serif",
               fontSize: '15px',
               fontWeight: 400,
               lineHeight: "14px",
-              color: "rgba(255, 255, 255, 0.50)"
-
+              color: isLight ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)'
             },
             ':-webkit-autofill': {
-              color: '#000000',
-              backgroundColor: '#120F40',
-              colorBackground: '#120F40',
+              color: isLight ? '#000000' : '#ffffff',
+              backgroundColor: isLight ? '#ffffff' : '#120F40',
+              colorBackground: isLight ? '#ffffff' : '#120F40',
             },
             ':focus': {
-              color: '#fff',
+              color: isLight ? '#000000' : '#ffffff',
             },
           },
           invalid: {
             iconColor: '#FFC7EE',
-            color: '#FFC7EE',
+            color: '#FF5A5F',
           },
         };
         let stripe = Stripe(this.stripeKey);
