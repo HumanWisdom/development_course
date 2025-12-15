@@ -372,21 +372,21 @@ background: #FFF7E6;/* Ensure proper stacking context */
 
 .section-header[aria-expanded="true"] {
   padding-bottom: 10px;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .section-header:hover {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
+  // padding-top: 40px;
+  // padding-bottom: 40px;
+  // padding-left: 20px;
+  // padding-right: 20px;
 }
 
 .section-header[aria-expanded="true"]:hover {
-  padding-bottom: 10px;
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
+  // padding-bottom: 10px;
+  // padding-top: 30px;
+  // padding-left: 20px;
+  // padding-right: 20px;
 }
 
 /* Search box container with show/hide animation */
@@ -514,6 +514,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 /* View More and View All container styling */
 .view-more-container {
   // height: 100%;
+  padding-bottom: 15%;
   // display: flex;
   // align-items: center;
   // justify-content: center;
