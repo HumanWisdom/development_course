@@ -494,7 +494,7 @@
             <a (click)="determinePathway('pathway/index')">
               <div class="row mt40px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fw_500 fs_12px lh_140p fc_ffffff tcenter underline">
+                  <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Go to PATHWAY
                   </h4>
                 </div>

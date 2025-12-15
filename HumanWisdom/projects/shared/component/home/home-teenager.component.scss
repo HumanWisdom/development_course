@@ -9,6 +9,11 @@
         padding-bottom: 9rem;
     }
 
+.username-clr {
+  color:#ffffff
+}
+
+
     /* Navigation menu styling */
     .nav-menu {
         display: flex;
@@ -91,6 +96,80 @@
         text-decoration-color: rgba(203, 97, 113, 1);
         text-decoration-thickness: 6px;
         text-underline-offset: 8px;
+    }
+
+    /* Navigation wrapper with scroll buttons */
+    .nav-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Navigation scroll buttons */
+    .nav-scroll-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.8);
+        border: none;
+        color: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        flex-shrink: 0;
+    }
+
+    .nav-scroll-btn:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-scroll-btn:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    .nav-scroll-btn-left {
+        left: 0;
+        padding-right: -3px;
+    }
+
+    .nav-scroll-btn-right {
+        right: 0;
+        padding-left: -3px;
+    }
+
+    .nav-scroll-btn i {
+        font-size: 14px;
+    }
+
+    /* Adjust nav-menu to account for buttons */
+    .nav-wrapper .nav-menu {
+        flex: 1;
+        margin: 0 40px;
+        padding: 0 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .nav-scroll-btn {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-scroll-btn i {
+            font-size: 12px;
+        }
+
+        .nav-wrapper .nav-menu {
+            margin: 0 36px;
+        }
     }
 
     .card-container {
@@ -311,10 +390,10 @@
 
     @media only screen and (max-width: 768px) {
         .row.home-container:first-of-type {
-            position: static;
+            position: fixed;
             z-index: 10;
             max-width: 100%;
-            margin-top: 0;
+            margin-top: -10px;
         }
 
         .sticky-nav-container {
