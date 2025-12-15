@@ -35354,12 +35354,12 @@ color: black !important;
   height: 50px;
   border-radius: 25px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background: #ED7D6F;
+  background: #ED7D6F !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
 }
 
 .hr_style_v3_10
