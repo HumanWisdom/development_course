@@ -13,9 +13,9 @@
 
             <div class="row home-container sticky-top-section">
 
-              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="showSearchBox">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isGuest">
                 <div class="d-flex justify-content-between align-items-center plr20px mt20px mb0px">
-                  <h2 *ngIf="username && username !== ''" class="fw_700 fs_24px lh_140p fc_000000 mt0px mb0px">
+                  <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
                     Hi {{username}}!
                   </h2>
                   <div *ngIf="streak && streak !== '' " class="streak-container"
@@ -60,8 +60,11 @@
 
               <!-- Navigation Menu - Sticky Header -->
               <div class="col-12 border-bottom pr0px sticky-nav-container">
-                <div class="d-flex flex-wrap">
-                  <div class="nav-menu">
+                <div class="d-flex flex-wrap nav-wrapper">
+                  <button class="nav-scroll-btn nav-scroll-btn-left" (click)="scrollNavBackward()" aria-label="Scroll left">
+                    <i class="fa fa-chevron-left"></i>
+                  </button>
+                  <div class="nav-menu" #navMenu>
                     <ng-container *ngFor="let item of personalisedList">
                       <a *ngIf="item.id!='999'" class="nav-item" [class.nav-item--selected]="item.active"
                         [class.nav-item--unselected]="!item.active" (click)="onNavigationClick(item)">
@@ -69,6 +72,9 @@
                       </a>
                     </ng-container>
                   </div>
+                  <button class="nav-scroll-btn nav-scroll-btn-right" (click)="scrollNavForward()" aria-label="Scroll right">
+                    <i class="fa fa-chevron-right"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -92,7 +98,7 @@
             </div>
 
             <div class="row" *ngIf="!showWisdomExercise">
-              <div class="col-12 p-0" [ngStyle]="isloggedIn ? {'margin-top.px': 10} : {}">
+              <div class="col-12 p-0" [ngStyle]="isloggedIn ? {'margin-top.px': 50} : {}">
 
                 <!-- recursive template for a section -->
                 <ng-template #renderSection let-section>
@@ -223,6 +229,7 @@
                       <!-- Section Header (clickable for accordion) -->
                       <div class="d-flex justify-content-between align-items-center section-header rounded-top  "
                         [class.long-term-solutions-header]="section.title === 'Long term solutions'"
+                        [ngStyle]="{'margin-top.px': enableBanner ? (isGuest ? 50 : 120) : 0}"
                         (click)="onSectionToggle(section)" (keydown.enter)="onSectionToggle(section)"
                         (keydown.space)="onSectionToggle(section)" tabindex="0" role="button"
                         [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id">
