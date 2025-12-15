@@ -12,6 +12,10 @@
   background-color: #ED7D6F;
   color: #ffffff;
   border-color: #ED7D6F;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 28px;
+  text-align: center;
 }
 
 .btn_aan2:hover,
@@ -27,4 +31,17 @@
   background-color: #ED7D6F;
   color: #ffffff;
   border-color: #ED7D6F;
+}
+a:hover{
+  text-decoration: underline !important;
+}
+
+.sp_fc::placeholder {
+  color: rgba(0,0,0,0.5);
+  font-weight: 400;
+}
+
+.placeholder_faint {
+  color: rgba(0,0,0,0.5) !important;
+  font-weight: 400 !important;
 }

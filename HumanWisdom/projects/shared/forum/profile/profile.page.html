@@ -148,7 +148,7 @@
                   <div class="row mtb15px" *ngIf="item.TagName!=null && item.TagName!=''">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                        <button type="button" class="btn fs_10px fw_700 lh_140p ttuppercase btn_fpfy btn_fpfy_mh"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <button type="button" class="btn fs_10px fw_700 lh_140p ttuppercase btn_fpfy btn_fpfy_mh fc_ffffff">
                            {{item.TagName}}
                         </button>
                       </div>
@@ -291,6 +291,37 @@
   <!-- <app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="true" [content]="'Please register to use this feature'"></app-modal> -->
 </div>
 <!-- /page content -->
+
+<!-- posted successfully -->
+<div class="modal fade slide-up" id="posted_successfully" data-keyboard="false" data-backdrop="false">
+  <div class="row center_flex h100p">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v3_modal_posted_successfully" [ngClass]="isAdults ? 'bg_ffffff' : ' h280 bg_stake'">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+          <button type="button" class="btn_popup_close m0px" (click)="closePostedSuccessfullyModal()" aria-label="close">
+            <img src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}" class="img-responsive fright">
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+          <img *ngIf="submissionState==='success'" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_tick_successfull.svg" class="img-responsive">
+          <div *ngIf="submissionState!=='success'" class="modal-spinner"></div>
+        </div>
+      </div>
+
+      <div class="row mt30px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <h3 class="mtb0px fs_18px fw_600 lh_145p tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+            {{ modalText }}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /posted successfully -->
 
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>

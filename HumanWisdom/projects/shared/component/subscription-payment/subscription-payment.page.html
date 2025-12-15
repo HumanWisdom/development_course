@@ -145,15 +145,7 @@
                 </div>
               </div>
 
-              <div class="row center_flex">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 btn_post_anonymously plr20pxi col_cw">
-                  <form id="payment-form">
-                    <button id="btnsubmit" class="btn btn_ctd" data-dismiss="modal" type="button">
-                      Confirm Payment
-                    </button>
-                  </form>
-                </div>
-              </div>
+              
 
               <button id="hiddenSubmit" #payementSubmitBtnClick style="visibility: hidden" type="button">
                 hidden Submit
@@ -197,7 +189,24 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<div class="mfooter">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter center_flex col_cw" [ngClass]="isAdults ? '' : 'we_ft_cl'">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+        <h4 class="mtb0px fs_18px fw_700 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+          {{symbol + amount}}{{getIsoCode()}}
+        </h4>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+        <a>
+          <button id="btnsubmit" type="button" class="btn btn_tfas">
+            Confirm Payment
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- /footer -->
 
 <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content">
