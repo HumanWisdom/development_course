@@ -5398,6 +5398,12 @@ input[type=checkbox], input[type=radio]
   border-radius: 6px;
 
 }
+.w100explore
+{
+	width:100%;
+  border-radius: 12px;
+
+}
 
 /* .cloning_div
 {
