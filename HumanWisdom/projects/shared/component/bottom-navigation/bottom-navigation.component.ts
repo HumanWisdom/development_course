@@ -127,7 +127,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.search = true;
         this.enableprofile = false;
       }
-      if (this.router.url == SharedService.getDashboardUrls()) {
+      if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` ) {
         this.dash = true;
         this.journal = false;
         this.search = false;
