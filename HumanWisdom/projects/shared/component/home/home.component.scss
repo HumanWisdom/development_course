@@ -371,8 +371,8 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .section-header[aria-expanded="true"] {
-  padding-bottom: 10px;
-  padding-top: 20px;
+  padding-bottom: 16px;
+  height: 75px;
 }
 
 .section-header:hover {
