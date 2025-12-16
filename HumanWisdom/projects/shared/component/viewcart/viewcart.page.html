@@ -4,12 +4,14 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="back()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Cart
       </h1>
@@ -27,22 +29,24 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
 
-              <div class="row mb30px" [routerLink]="isAdults ? '/onboarding/add-to-cart' : '/teenagers/onboarding/add-to-cart'">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_left_orange.svg" class="img-responsive">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82 ml10px">
-                    Continue shopping
-                  </h4>
-                </div>
+            <div class="row mb30px"
+              [routerLink]="isAdults ? '/onboarding/add-to-cart' : '/teenagers/onboarding/add-to-cart'">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_left_orange.svg"
+                  class="img-responsive">
+                <h4 class="mtb0px fs_12px fw_400 lh_150p fc_e58d82 ml10px">
+                  Continue shopping
+                </h4>
               </div>
+            </div>
 
-              <!-- adults -->
-              <!-- annual -->
-              <!-- <div class="subscription_box mt30px" *ngIf="cartListResult[0]?.LearnerEmail.length !== 0">
+            <!-- adults -->
+            <!-- annual -->
+            <!-- <div class="subscription_box mt30px" *ngIf="cartListResult[0]?.LearnerEmail.length !== 0">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -131,11 +135,11 @@
                   </div>
                 </div>
               </div> -->
-              <!-- /annual -->
+            <!-- /annual -->
 
 
-              <!-- Monthly -->
-              <!-- <div class="subscription_box mt30px" *ngIf="cartListResult[1]?.LearnerEmail.length !== 0">
+            <!-- Monthly -->
+            <!-- <div class="subscription_box mt30px" *ngIf="cartListResult[1]?.LearnerEmail.length !== 0">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -224,12 +228,12 @@
                   </div>
                 </div>
               </div> -->
-              <!-- /Monthly -->
-              <!-- /adults -->
+            <!-- /Monthly -->
+            <!-- /adults -->
 
-              <!-- teenagers -->
-              <!-- annual -->
-              <!-- <div class="subscription_box mt30px" *ngIf="cartListResult[2]?.LearnerEmail.length !== 0">
+            <!-- teenagers -->
+            <!-- annual -->
+            <!-- <div class="subscription_box mt30px" *ngIf="cartListResult[2]?.LearnerEmail.length !== 0">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -318,10 +322,10 @@
                   </div>
                 </div>
               </div> -->
-              <!-- /annual -->
+            <!-- /annual -->
 
-              <!-- monthly -->
-              <!-- <div class="subscription_box mt30px" *ngIf="cartListResult[3]?.LearnerEmail.length !== 0">
+            <!-- monthly -->
+            <!-- <div class="subscription_box mt30px" *ngIf="cartListResult[3]?.LearnerEmail.length !== 0">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
@@ -410,10 +414,10 @@
                   </div>
                 </div>
               </div> -->
-              <!-- /monthly -->
-              <!-- /teenagers -->
-              <div class="row" *ngFor="let data of cartList">
-              <div class="raf_div_01" >
+            <!-- /monthly -->
+            <!-- /teenagers -->
+            <div class="row" *ngFor="let data of cartList">
+              <div class="raf_div_01">
                 <div class="row center_flex mb15px">
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
                     <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tcenter">
@@ -421,17 +425,17 @@
                       </h4> -->
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <div class="col-md-11 col-sm-11 col-xs-11 p0">
                     <div class="row center_flex mb0px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{data['LearnerEmail']}}
-  
+
                         </h4>
                         <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-  
+
                           {{data['Program']}} - {{data['Plan']}} subscription
                         </h4>
                       </div>
@@ -444,27 +448,29 @@
                         </h4>
                       </div>
                     </div> -->
-  
-  
+
+
                   </div>
                   <div class="col-md-1 col-sm-1 col-xs-1 p0" (click)="removeFromCart(data['CartId'])">
-                    <img src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
+                    <img
+                      src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
                       class="img-responsive img_close_delete1">
-  
+
                   </div>
                 </div>
-  
-  
+
+
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <hr class="hr_style_v3_02">
                   </div>
                 </div>
-  
+
                 <div class="row ">
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
                     <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
-                      {{data['Symbol'] + ' ' + (data['Amt'])}} <span *ngIf="data['Plan'] === 'Annual'" class="mtb0px fs_15px fw_700 lh_150p fc_e58d82">
+                      {{data['Symbol'] + ' ' + (data['Amt'])}} <span *ngIf="data['Plan'] === 'Annual'"
+                        class="mtb0px fs_15px fw_700 lh_150p fc_e58d82">
                         ({{cartList[0]['ISOCode']}} {{getAnnualVal(data['Amt'])}}/{{'mo'}}.)</span>
                     </h4>
                   </div>
@@ -472,26 +478,26 @@
               </div>
               <div class="row mtb10px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                   <hr class="hr_style_v3_02"> 
+                  <hr class="hr_style_v3_02">
                 </div>
               </div>
-              </div>
+            </div>
 
-              <!-- <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <hr class="hr_style_v3_01">
                 </div>
               </div> -->
 
-              <div class="row mb10px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                    Enter a Discount code (optional)
-                  </h4>
-                </div>
+            <div class="row mb10px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  Enter a Discount code (optional)
+                </h4>
               </div>
+            </div>
 
-              <!-- <div class="row mb15px">
+            <!-- <div class="row mb15px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                   <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82 mr10px">
                     Show available vouchers
@@ -500,111 +506,116 @@
                 </div>
               </div> -->
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pl0px">
-                    <input type="text" id="name" class="sr_fc_01 voucher_code" placeholder="Discount code" [(ngModel)]="this.couponCode">
-                  </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pl0px">
+                  <input type="text" id="name" class="sr_fc_01 voucher_code" placeholder="Discount code"
+                    [(ngModel)]="this.couponCode">
+                </div>
 
-                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0px tright">
-                    <button type="button" class="btn btn_subscription_apply" (click)="couponValidation()">
-                      Apply
-                    </button>
-                  </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0px tright">
+                  <button type="button" class="btn btn_subscription_apply" (click)="couponValidation()">
+                    Apply
+                  </button>
                 </div>
               </div>
+            </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <hr class="hr_style_v3_10 mtb30px">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_10 mtb30px">
+              </div>
+            </div>
+
+            <div class="row mb40px" *ngIf="couponCodeApplied">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                  <img
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_discount_cart.svg"
+                    class="img-responsive w100">
+                </div>
+
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pr0px">
+                  <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    {{this.couponCode}}
+                  </h4>
+
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    {{percentage}}% discount applied
+                  </h4>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                  <button type="button" class="btn subscription_btn_mp" (click)="closeApplycoupon()">
+                    <img
+                      src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
+                      class="img-responsive">
+                  </button>
                 </div>
               </div>
+            </div>
 
-              <div class="row mb40px" *ngIf="couponCodeApplied">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_discount_cart.svg" class="img-responsive w100">
-                  </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    Item Total
+                  </h4>
+                </div>
 
-                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pr0px">
-                    <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      {{this.couponCode}}
-                    </h4>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                  <hr class="hr_style_v3_04">
+                </div>
 
-                    <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      {{percentage}}% discount applied
-                    </h4>
-                  </div>
-
-                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                    <button type="button" class="btn subscription_btn_mp" (click)="closeApplycoupon()">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_cross.svg" class="img-responsive">
-                    </button>
-                  </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
+                  <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    {{this.symbol + totalCartAmount}}
+                  </h4>
                 </div>
               </div>
+            </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      Item Total
-                    </h4>
-                  </div>
+            <div class="row mb15px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    Discount
+                  </h4>
+                </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                    <hr class="hr_style_v3_04">
-                  </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                  <hr class="hr_style_v3_04">
+                </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      {{this.symbol + totalCartAmount}}
-                    </h4>
-                  </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
+                  <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    {{this.symbol + this.discount}}
+                  </h4>
                 </div>
               </div>
+            </div>
 
-              <div class="row mb15px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      Discount
-                    </h4>
-                  </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    Subtotal
+                  </h4>
+                </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                    <hr class="hr_style_v3_04">
-                  </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                  <hr class="hr_style_v3_04">
+                </div>
 
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      {{this.symbol + this.discount}}
-                    </h4>
-                  </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
+                  <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    {{this.symbol + totalCartValueDiscount}}
+                  </h4>
                 </div>
               </div>
+            </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      Subtotal
-                    </h4>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                    <hr class="hr_style_v3_04">
-                  </div>
-
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      {{this.symbol + totalCartValueDiscount}}
-                    </h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="pagebreak"></div>
+            <div class="pagebreak"></div>
 
           </div>
         </div>
@@ -614,15 +625,16 @@
 </div>
 <!-- /page content -->
 
-<app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [enableCancel]="false"
-[content]="errMsg">
+<app-modal *ngIf="enableAlert" [modalid]="''" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [enableCancel]="false" [content]="errMsg">
 </app-modal>
 
 
 <!-- footer  -->
 <div class="mfooter">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter center_flex col_cw" [ngClass]="isAdults ? '' : 'we_ft_cl'">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter center_flex col_cw"
+      [ngClass]="isAdults ? '' : 'we_ft_cl'">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
         <h4 class="mtb0px fs_18px fw_700 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
           {{this.symbol + totalCartValueDiscount}}

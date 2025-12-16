@@ -3,19 +3,23 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="back()" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="back()" alt="" class="p0" *ngIf="!isAdults">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" (click)="back()" alt="" class="p0" *ngIf="isAdults"> 
+
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         HappierMe Premium
       </h1>
     </div>
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" (click)="routeToDashboard()" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" (click)="routeToDashboard()" alt="" class="p0" *ngIf="!isAdults">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" (click)="routeToDashboard()" alt="" class="p0" *ngIf="isAdults">
+
       </a>
     </div>
   </div>
@@ -33,25 +37,25 @@
 
               <div class="row mb20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4  *ngIf="trialStatus == 'No Trial'" class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                  <h4  *ngIf="trialStatus == 'No Trial'" class="mtb0px fs_24px fw_600 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Start your free trial today
                   </h4>
 
-                  <h4  *ngIf="trialStatus == 'underway'" class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                  <h4  *ngIf="trialStatus == 'underway'" class="mtb0px fs_24px fw_600 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Your free trial is currently {{trialStatus}}
                   </h4>
                
 
                   
-                  <h4 *ngIf="trialStatus == 'ended'" class="mtb0px fs_24px fw_600 lh_140p fc_ffffff">
+                  <h4 *ngIf="trialStatus == 'ended'" class="mtb0px fs_24px fw_600 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Your free trial has {{trialStatus}}
                   </h4>
                 </div>
               </div>
               <div class="row mb20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <span *ngIf="trialStatus == 'ended'" style="font-size: small;" class="fc_ffffff">To access HappierMe Premium, choose one of the subscription options below:</span>
-                  <span *ngIf="trialStatus == 'underway'" style="font-size: small;" class="fc_ffffff"> Your premium access lasts until {{expDate}}. To revive your subscription and continue to access HappierMe Premium after  {{expDate}} , choose one of the subscription options below:</span>
+                  <span *ngIf="trialStatus == 'ended'" style="font-size: small;" class=""[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">To access HappierMe Premium, choose one of the subscription options below:</span>
+                  <span *ngIf="trialStatus == 'underway'" style="font-size: small;" class=""[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"> Your premium access lasts until {{expDate}}. To revive your subscription and continue to access HappierMe Premium after  {{expDate}} , choose one of the subscription options below:</span>
                 </div>
               </div>
 
@@ -61,7 +65,7 @@
 
                     <div class="row div_best_value" [ngClass]="{'adult-best-value-annual': selectedSubscription === Annual}">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_500 lh_140p fc_ffffff">
+                        <h4 class="mtb0px fs_15px fw_500 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Best value
                         </h4>
                       </div>
@@ -70,7 +74,7 @@
                     <div class="div_annual" [ngClass]="{'adult-selected-plan-border': selectedSubscription === Annual}">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
+                          <h4 class="mtb0px fs_15px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Annual
                           </h4>
                         </div>
@@ -78,9 +82,9 @@
 
                       <div class="row mtb5px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_24px fw_600 lh_170p fc_ffffff">
+                          <h4 class="mtb0px fs_24px fw_600 lh_170p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{pricingModel.CurSymbol}}{{pricingModel.Annual}} {{getIsoCode() }}
-                            <span class="fs_15px fw_400 lh_170p fc_ffffff_0_5">
+                            <span class="fs_15px fw_400 lh_170p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                               ({{pricingModel.CurSymbol}}{{this.pricingModel.PerMonthAmountOnAnnual }}/month)
                             </span>
                           </h4>
@@ -89,7 +93,7 @@
 
                       <div class="row"  *ngIf="trialStatus == 'No Trial'">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_170p fc_ffffff_0_5">
+                          <h4 class="mtb0px fs_15px fw_400 lh_170p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                             after 14-day trial
                           </h4>
                         </div>
@@ -106,7 +110,7 @@
 
                     <div class="row mb5px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
+                        <h4 class="mtb0px fs_15px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Monthly
                         </h4>
                       </div>
@@ -114,9 +118,9 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_24px fw_600 lh_170p fc_ffffff">
+                        <h4 class="mtb0px fs_24px fw_600 lh_170p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{pricingModel.CurSymbol}}{{pricingModel.Monthly}}{{getIsoCode()}}
-                          <span class="fs_15px fw_400 lh_170p fc_ffffff_0_5" *ngIf="trialStatus == 'No Trial'">
+                          <span class="fs_15px fw_400 lh_170p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" *ngIf="trialStatus == 'No Trial'">
                             month after 7-day trial
                           </span>
                         </h4>
@@ -129,7 +133,7 @@
 
               <div class="row mtb15px" *ngIf="trialStatus == 'No Trial'">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Cancel anytime during the trial period
                   </h4>
                 </div>
@@ -138,7 +142,7 @@
               <!-- <a class="" (click)="SelectSubscriptionType(Redeem)">
                 <div class="row div_monthly mt15px"  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Redeem}">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff">
+                    <h4 class="mtb0px fs_15px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       Redeem subscription code
                     </h4>
                   </div>
@@ -147,9 +151,9 @@
 
               <div class="row mtb30px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="buyGift()">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff tcenter">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Buying this for someone else?
-                    <a class="fs_12px fw_600 lh_150p fc_e58d82" >
+                    <a class="fs_12px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'" >
                       Click here
                     </a>
                   </h4>
@@ -158,7 +162,7 @@
               
               <div class="row" (click)="terms()">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <a class="fs_12px fw_500 lh_150p fc_e58d82">
+                  <a class="fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
                     User Agreement
                   </a>
                 </div>
