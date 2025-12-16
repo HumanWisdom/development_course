@@ -1,9 +1,8 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ForumService } from '../forum.service';
-import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
+import { ToastContainerDirective } from 'ngx-toastr';
 import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
 import { NgNavigatorShareService } from 'ng-navigator-share';
@@ -72,15 +71,16 @@ export class ForumThreadPage implements OnInit {
   submissionState: 'processing' | 'success' | 'error' | '' = '';
   modalText: string = '';
 
-  constructor(private service: ForumService, private router: Router, private activateRoute: ActivatedRoute, public logeventservice: LogEventService,
-     private ngNavigatorShareService: NgNavigatorShareService, private location: Location,  private navigationService:NavigationService,
-     private modalService: ModalService) {
+  constructor(private readonly service: ForumService, private readonly router: Router, private readonly activateRoute: ActivatedRoute, public logeventservice: LogEventService,
+     private readonly ngNavigatorShareService: NgNavigatorShareService, private readonly location: Location,  private readonly navigationService:NavigationService,
+     private readonly modalService: ModalService) {
     this.userID = localStorage.getItem('userId');
     this.token = localStorage.getItem("shareToken");
     this.sharedPostId = this.activateRoute.snapshot.paramMap.get('sharedPostId');
     this.address = this.router.url;
     this.UserName = localStorage.getItem('name');
-    this.isLoggedIn = localStorage.getItem('isloggedin') == 'T' ? true : false;
+    this.isLoggedIn = localStorage.getItem('isloggedin') == 'T';
+
     this.service.toastrService.overlayContainer = this.toastContainer;
     this.router.events
       .pipe(filter(e => e instanceof NavigationStart))
@@ -103,12 +103,7 @@ export class ForumThreadPage implements OnInit {
   enableCommentTextBox() {
     this.isReportPost = false;
     this.PostComment = "";
-    if (this.isLoggedIn) {
-      /* if (this.isEditComment) {
-        this.isEditComment = false;
-      } else {s
-        this.isEditComment = true;
-      } */
+    if (this.isLoggedIn) {      
       this.isEditComment = true;
     }
   }
@@ -186,7 +181,6 @@ export class ForumThreadPage implements OnInit {
           if (ParentPOstID != null && this.list.ReplyPost.length > 0) {
             this.list.ReplyPost[index].ReplyPostLikeCount = res;
             this.list.ReplyPost[index].Liked = this.list.ReplyPost[index].Liked == "1" ? "0" : "1";
-            // this.refreshPage(ParentPOstID);
           } else {
             this.posttread.PostLikeCount = res;
             this.posttread.Liked = this.posttread.Liked == "1" ? "0" : "1";
