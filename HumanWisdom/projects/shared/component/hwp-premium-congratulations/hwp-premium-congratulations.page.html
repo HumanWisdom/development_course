@@ -3,12 +3,15 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="{'fc_000000': isAdults, 'fc_ffffff': !isAdults}">
         HappierMe Premium
       </h1>
     </div>
@@ -20,7 +23,7 @@
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01">	
+<div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_FFF7E6 col_cw">
@@ -34,13 +37,17 @@
                   <div class="row div_pdollar">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/star_hwp_premium.svg" alt="" class="img-responsive"/> 
+                        <img
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/star_hwp_premium.svg"
+                          alt="" class="img-responsive" />
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pl20px pr0px">
-                        <h4 class="fw_600 fs_18px lh_150p fc_ffffff mtb0px">
+                        <h4 class="fw_600 fs_18px lh_150p mtb0px"
+                          [ngClass]="{'fc_000000': isAdults, 'fc_ffffff': !isAdults}">
                           HAPPIERME
                         </h4>
-                        <h4 class="fw_400 fs_15px lh_150p fc_ffffff mtb0px">
+                        <h4 class="fw_400 fs_15px lh_150p mtb0px"
+                          [ngClass]="{'fc_000000': isAdults, 'fc_ffffff': !isAdults}">
                           Premium
                         </h4>
                       </div>
@@ -49,16 +56,19 @@
 
                   <div class="row mt30px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <p class="fw_600 fs_24px lh_150p fc_ffffff">
+                      <p class="fw_600 fs_24px lh_150p" [ngClass]="{'fc_000000': isAdults, 'fc_ffffff': !isAdults}">
                         Congratulations!
                       </p>
 
                       <!-- annual -->
-                      <p class="fw_400 fs_15px lh_150p fc_ffffff">
-                        You have successfully subscribed to HappierMe Premium. As part of your annual subscription, we invite you to join the HappierMe Partnership Program for no extra fee. Find out how it can help you, help others, make the world a better place, and perhaps deliver a secondary income for you.
+                      <p class="fw_400 fs_15px lh_150p" [ngClass]="{'fc_000000': isAdults, 'fc_ffffff': !isAdults}">
+                        You have successfully subscribed to HappierMe Premium. As part of your annual subscription, we
+                        invite you to join the HappierMe Partnership Program for no extra fee. Find out how it can help
+                        you, help others, make the world a better place, and perhaps deliver a secondary income for you.
                       </p>
-  
-                      <p *ngIf="isAdults" class="fw_400 fs_15px lh_150p fc_ffffff">
+
+                      <p *ngIf="isAdults" class="fw_400 fs_15px lh_150p"
+                        [ngClass]="{'fc_000000': isAdults, 'fc_ffffff': !isAdults}">
                         For more information on the Partnership Program,
                         <a (click)="GoToIndex()">
                           <span class="fw_600 fs_15px lh_150p fc_e58d82">
@@ -77,19 +87,19 @@
                   </div>
 
                   <!-- annual -->
-                 
+
                   <!-- /annual -->
 
                   <!-- monthly -->
                   <div class="row" *ngIf="!isAdults">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a>
-                        <button type="button"  (click)="ProceedToDashboard()" class="btn btn_tfas" >
+                        <button type="button" (click)="ProceedToDashboard()" class="btn btn_tfas">
                           Proceed to Dashboard
                         </button>
                       </a>
                     </div>
-                  </div> 
+                  </div>
                   <!-- /monthly -->
 
                 </div>
@@ -110,15 +120,16 @@
                   <div class="row center_flex mt20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <a class="" (click)="NotNow()">
-                        <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                        <h4 class="mtb0px fs_15px fw_600 lh_150p"
+                          [ngClass]="{'fc_000000': isAdults, 'fc_ffffff': !isAdults}">
                           Not now
                         </h4>
                       </a>
                     </div>
                   </div>
                 </div>
-              </div>   
-              
+              </div>
+
               <div class="pagebreak"></div>
 
             </form>

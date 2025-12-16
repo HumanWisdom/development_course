@@ -270,14 +270,7 @@ export class SubscriptionPaymentPage implements OnInit {
                         this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                       }
                     } else {
-
-
-                      // alert('Your Payment Is Successfully Submitted');
-                      setTimeout(() => {
-                        this.content = 'Your Payment Is Successfully Submitted';
-                        this.enableAlert = true;
-                        this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                      }, 5000);
+                      this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                     }
                   }
                 });
@@ -310,13 +303,7 @@ export class SubscriptionPaymentPage implements OnInit {
                     this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                   }
                 } else {
-
-                  // alert('Your Payment Is Successfully Submitted');
-                  setTimeout(() => {
-                    this.content = 'Your Payment Is Successfully Submitted';
-                    this.enableAlert = true;
-                    this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-                  }, 3000);
+                  this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
                 }
 
               }
@@ -412,12 +399,7 @@ export class SubscriptionPaymentPage implements OnInit {
                   this.router.navigate(['/adults/hwp-premium-congratulations']);
                 }
               } else {
-               
-                  this.content = 'Your Payment Is Successfully Submitted';
-                  this.enableAlert = true;
-                  this.router.navigate([`${SharedService.getprogramName()}/onboarding/myprogram`])
-               
-                // alert('Your Payment Is Successfully Submitted');
+                  this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
               } }, 5000);
             }
           });
