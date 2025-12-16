@@ -16095,15 +16095,14 @@ input[type="search"].dark::-webkit-search-cancel-button {
 {
   animation-name: kf_ars;
   animation-duration:2s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
   animation-timing-function:ease-in-out;
 }
 
 @keyframes kf_ars
 {
   0% { -webkit-transform:scale(1) rotate(0deg); }
-  10% { -webkit-transform:scale(1.1) rotate(0deg); }
-  100% {-webkit-transform:scale(1.1) rotate(360deg); }
+  100% {-webkit-transform:scale(1) rotate(360deg); }
 }
 
 .float_left
