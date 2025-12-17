@@ -5,13 +5,15 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg  " alt="" class="p0"  *ngIf="isAdults"  >
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg  " alt="" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+      <h1 class="fw_600 fs_18px lh_140p mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Gift HappierMe
       </h1>
     </div>
@@ -39,15 +41,16 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <div class="row mb30px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_discount.svg"
+            <div class="row mb30px purple_banner plr0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tcenter">
+                  <img
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/subscription_discount.svg"
                     class="p0">
                 </div>
 
-                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl15px">
-                  <h4 class="mtb0px fs_15px fw_500 lh_140p fc_e58d82">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                  <h4 class="mtb0px fs_12px fw_500 lh_140p fc_ffffff">
                     Get 30% discount on more than one subscription. Use code FAMILY30 at checkout.
                   </h4>
                 </div>
@@ -56,15 +59,16 @@
 
             <div class="row mb10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fs_24px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                  Help your loved ones to be happier and succeed in life. </h4>
+                <h4 class="mtb0px fs_24px fw_400 lh_130p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  Support your friends and family to be happier and succeed in life. </h4>
               </div>
             </div>
 
             <div class="row mb10px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                  Gift them a subscription to the HappierMe app.
+                  Gift your friends and family a subscription to the HappierMe app, and help them overcome their
+                  challenges, be mentally healthy and happy, and have successful relationships.
                 </h4>
               </div>
             </div>
@@ -72,11 +76,9 @@
             <div class="row mb30px" *ngIf="!enablepopup">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_12px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                  To subscribe for yourself:
-                  <a class="fs_12px fw_600 lh_150p fc_e58d82 underline" (click)="clickFreeTrial()">
-
+                  To subscribe for yourself,
+                  <a class="fs_12px fw_600 lh_150p fc_D7586B underline" (click)="clickFreeTrial()">
                     click here
-
                   </a>
                 </h4>
               </div>
@@ -110,7 +112,8 @@
 
                   </div>
                   <div class="col-md-1 col-sm-1 col-xs-1 p0" (click)="removeFromCart(data['CartId'])">
-                    <img src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
+                    <img
+                      src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
                       class="img-responsive img_close_delete1">
 
                   </div>
@@ -126,9 +129,9 @@
 
                 <div class="row ">
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
+                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                       {{data['Symbol'] + ' ' + (data['Amt'])}} <span *ngIf="data['Plan'] === 'Annual'"
-                        class="mtb0px fs_15px fw_700 lh_150p fc_e58d82">
+                        class="mtb0px fs_15px fw_400 lh_150p fc_000000">
                         ({{cartList[0]['ISOCode']}} {{getAnnualVal(data['Amt'])}}/{{'mo'}}.)</span>
                     </h4>
                   </div>
@@ -160,7 +163,7 @@
             </div>
             <br />
 
-            <div class="raf_div_01" *ngIf="enableAddMemForm">
+            <div *ngIf="enableAddMemForm">
 
               <div>
                 <div class="row">
@@ -175,12 +178,13 @@
 
                   </div>
                 </div>
-                <div class="row mtb10px">
+                <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                     <div class="dropdown dropdown_outer">
                       <label class="select_label m0px w100">
                         <!-- <input type="text" id="email"  class="sp_fc" placeholder="Choose program "> -->
-                        <select type="text" id="program" class="sp_fc btn_select" [ngClass]="{'placeholder_faint': !selectedProgram}"
+                        <select type="text" id="program" class="sp_fc btn_select"
+                          [ngClass]="{'placeholder_faint': !selectedProgram}"
                           (change)="selectProgram($event.target.value)">
                           <option value="" class="sp_fc">Choose program</option>
                           <option *ngFor="let data of cartList"
@@ -198,14 +202,14 @@
             </div>
 
             <div class="row mtb20px" *ngIf="enableAddMemForm">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mtb20px form-group has-feedback mb0px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group has-feedback mb0px">
 
-                <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 p0">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
                 </div>
                 <div class="row mb15px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <button type="button" [disabled]="!learnermail || !selectedProgram" (click)="addToCartForm()"
-                      class="btn btn_forum_ask_a_gift">Add to cart
+                      class="btn btn_forum_ask_a_gift" style="width: 103px; height: 30px;">Add to cart
                     </button>
                   </div>
                 </div>
@@ -224,7 +228,7 @@
   </div>
 </div>
 <!-- /page content -->
-<div *ngIf="ios || isAndroid" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'" 
+<div *ngIf="ios || isAndroid" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
   style="height: calc(100vh - 8rem); padding: 0 2rem; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
   <h4 class="fs_16px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
     If you would like to subscribe for family and friends, and get our special discount,
@@ -241,19 +245,13 @@
       [ngClass]="isAdults ? '' : 'we_ft_cl'">
       <a>
         <!-- Web/Desktop -->
-        <button *ngIf="!ios && !isAndroid"
-                [disabled]="cartitemList.length === 0"
-                (click)="proceedcart()"
-                type="button"
-                class="btn btn_tfas">
+        <button *ngIf="!ios && !isAndroid" [disabled]="cartitemList.length === 0" (click)="proceedcart()" type="button"
+          class="btn btn_tfas">
           View cart
         </button>
 
         <!-- iOS/Android -->
-        <button *ngIf="ios || isAndroid"
-                (click)="goBack()"
-                type="button"
-                class="btn btn_tfas">
+        <button *ngIf="ios || isAndroid" (click)="goBack()" type="button" class="btn btn_tfas">
           Continue to dashboard
         </button>
       </a>

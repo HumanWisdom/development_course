@@ -6,11 +6,14 @@
 
 <!-- page content -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"
+    [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+      <a [routerLink]="isAdults ? '/adults/onboarding/viewcart' : '/teenagers/onboarding/viewcart'">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
@@ -31,7 +34,8 @@
   <div class="cw100p">
 
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_FFF7E6 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_FFF7E6 col_cw"
+        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
 
@@ -54,15 +58,15 @@
                 </div>
 
                 <div class="col-md-5 col-sm-5 col-xs-5 p0">
-                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tright">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/visa_active.svg" alt=""
                       class="">
                   </div>
-                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                  <div class="col-md-3 col-sm-3 col-xs-3 p0 tright">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/mastercard_active.svg"
                       alt="" class="">
                   </div>
-                  <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                  <div class="col-md-3 col-sm-3 col-xs-3 p0 tright">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/maestro_active.svg"
                       alt="" class="">
                   </div>
@@ -79,8 +83,7 @@
               <div id="card-element" class="mtb30px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="text" id="name"
-                    class="sp_fc mb10px" placeholder="Cardholder’s Name">
+                    <input type="text" id="name" class="sp_fc mb10px" placeholder="Cardholder’s Name">
                   </div>
                 </div>
 
@@ -145,7 +148,7 @@
                 </div>
               </div>
 
-              
+
 
               <button id="hiddenSubmit" #payementSubmitBtnClick style="visibility: hidden" type="button">
                 hidden Submit
@@ -191,19 +194,13 @@
 <!-- footer  -->
 <div class="mfooter">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter center_flex col_cw" [ngClass]="isAdults ? '' : 'we_ft_cl'">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-        <h4 class="mtb0px fs_18px fw_700 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-          {{symbol + amount}}{{getIsoCode()}}
-        </h4>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-        <a>
-          <button id="btnsubmit" type="button" class="btn btn_tfas">
-            Confirm Payment
-          </button>
-        </a>
-      </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter v1_3_sfooter_ext col_cw"
+      [ngClass]="isAdults ? '' : 'we_ft_cl'">
+      <a>
+        <button id="btnsubmit" type="button" class="btn btn_tfas">
+          Confirm Payment
+        </button>
+      </a>
     </div>
   </div>
 </div>

@@ -292,13 +292,13 @@ export class ForumLandingPage implements OnInit {
           this.getAllposts(0);
           this.actionType = '';
           this.submissionState = 'success';
-          this.modalText = 'submitted successfully';
+          this.modalText = 'submitted successfully.';
           this.isProcessing = false;
           this.openPostedSuccessfullyModal();
         }
       }, _ => { 
         this.submissionState = 'error';
-        this.modalText = 'Something went wrong. Please try again';
+        this.modalText = 'Something went wrong. Please try again.';
         this.isProcessing = false; 
         this.openPostedSuccessfullyModal();
       });
@@ -311,13 +311,13 @@ export class ForumLandingPage implements OnInit {
           this.PostComment = '';
           this.replyflag = false;
           this.submissionState = 'success';
-          this.modalText = 'Submitted successfully. Your comment will be visible after moderation';
+          this.modalText = 'Submitted successfully. Your comment will be visible after moderation.';
           this.isProcessing = false;
           this.openPostedSuccessfullyModal();
         }
       }, _ => { 
         this.submissionState = 'error';
-        this.modalText = 'Something went wrong. Please try again';
+        this.modalText = 'Something went wrong. Please try again.';
         this.isProcessing = false; 
         this.openPostedSuccessfullyModal();
       })

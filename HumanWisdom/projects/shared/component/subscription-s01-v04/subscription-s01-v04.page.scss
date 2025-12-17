@@ -7,31 +7,39 @@
 }
 
 // .div-box img { position: absolute; top: 2px; right: 5px }
-.btn_aan2,
-.btn_forum_ask_a_gift {
-    background-color: #ED7D6F;
+.btn_forum_ask_a_gift,
+.btn_tfas {
+    background-color: #D7586B;
     color: #ffffff;
-    border-color: #ED7D6F;
-    width: 155px;
-    height: 50px;
-    padding: 12px 16px;
+    border-color: #D7586B;
+    width: 100%;
     border-radius: 28px;
     text-align: center;
+    box-shadow: none !important;
 }
 
-.btn_aan2:hover,
-.btn_aan2:active,
-.btn_aan2:focus,
-.btn_aan2:visited,
-.btn_aan2:disabled,
+.btn_aan2{
+      background-color: #FFE8BB;
+    color: #000000;
+    border-color: #FFE8BB;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: none !important;
+    font-weight: 400;
+    line-height: 150%;
+}
+
 .btn_forum_ask_a_gift:hover,
 .btn_forum_ask_a_gift:active,
 .btn_forum_ask_a_gift:focus,
 .btn_forum_ask_a_gift:visited,
-.btn_forum_ask_a_gift:disabled {
-  background-color: #ED7D6F;
+.btn_forum_ask_a_gift:disabled,
+.btn_tfas:hover,
+.btn_tfas:active,
+.btn_tfas:focus {
+  background-color: #D7586B;
   color: #ffffff;
-  border-color: #ED7D6F;
+  border-color: #D7586B;
 }
 a:hover{
   text-decoration: underline !important;
@@ -46,3 +54,45 @@ a:hover{
   color: rgba(0,0,0,0.5) !important;
   font-weight: 400 !important;
 }
+
+.purple_banner {
+  background-color: #803358;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp_fc, select.sp_fc {
+  background-color: #FFE8BB !important;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
+  border-radius: 12px !important;
+  height: 50px !important;
+  padding-left: 20px !important;
+  color: #000 !important;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+select.sp_fc {
+  padding-right: 40px !important; /* Make room for arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+}
+
+.fc_D7586B {
+  color: #D7586B !important;
+}
+
+.btn_view_cart {
+    width: 100%;
+    margin-top: 20px;
+}
+
+  label.select_label:after{
+    color: #000 !important;
+  }
