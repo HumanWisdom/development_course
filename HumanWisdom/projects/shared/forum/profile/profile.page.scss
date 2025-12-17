@@ -14,3 +14,28 @@ button.fc_000000_0_5 span.underline:hover {
   transform: scale(0.7);
     font-size: 12px;
 }
+.btn_fpfy_mh:hover{
+  color: #ffffff !important;
+}
+
+// Tag color classes
+.tag-mental-health { background: #803358; color: #FFFFFF !important; }
+.tag-relationships { background: #D7586B; color: #FFFFFF !important; }
+.tag-work-leadership { background: #05BBBF; color: #FFFFFF !important; }
+.tag-be-happier { background: #EEA170; color: #FFFFFF !important; }
+.tag-habits-addiction { background: #FFACA2; color: #FFFFFF !important; }
+.tag-dealing-loss { background: #EEA170; color: #FFFFFF !important; }
+.tag-meditation { background: #1092A7; color: #FFFFFF !important; }
+.tag-managing-emotions { background: #803358; color: #FFFFFF !important; }
+.tag-nuggets-inspiration { background: #D7586B; color: #FFFFFF !important; }
+.tag-ask-coach { background: #EEA170; color: #FFFFFF !important; }
+.tag-other { background: #FFE8BB; color: #FFFFFF !important; }
+
+.tag-static {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 2px;
+  border: 0;
+  pointer-events: none;
+  cursor: default;
+}
