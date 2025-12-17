@@ -269,4 +269,40 @@ export class ProfilePage implements OnInit {
   closePostedSuccessfullyModal() {
     this.modalService.closeModal('posted_successfully');
   }
+
+  getTagClass(name: string): string {
+    if (!name) return '';
+    const n = name.trim().toLowerCase();
+    switch (n) {
+      case 'manage your mental health':
+        return 'tag-mental-health';
+      case 'relationships':
+        return 'tag-relationships';
+      case 'work & leadership':
+      case 'work and leadership':
+        return 'tag-work-leadership';
+      case 'be happier':
+        return 'tag-be-happier';
+      case 'habits & addiction':
+      case 'habits and addiction':
+        return 'tag-habits-addiction';
+      case 'deal with loss':
+      case 'dealing with loss':
+        return 'tag-dealing-loss';
+      case 'meditation':
+        return 'tag-meditation';
+      case 'manage your emotions':
+      case 'managing emotions':
+        return 'tag-managing-emotions';
+      case 'nuggets of inspiration':
+        return 'tag-nuggets-inspiration';
+      case 'ask our expert coaches':
+      case 'ask a coach':
+        return 'tag-ask-coach';
+      case 'other':
+        return 'tag-other';
+      default:
+        return '';
+    }
+  }
 }

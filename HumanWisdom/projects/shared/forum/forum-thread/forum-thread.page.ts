@@ -314,12 +314,12 @@ export class ForumThreadPage implements OnInit {
         this.reploadpage();
         this.commenttext = '';
         this.submissionState = 'success';
-        this.modalText = 'submitted successfully';
+        this.modalText = 'submitted successfully.';
         this.openPostedSuccessfullyModal();
       }
     }, _ => {
       this.submissionState = 'error';
-      this.modalText = 'Something went wrong. Please try again';
+      this.modalText = 'Something went wrong. Please try again.';
       this.openPostedSuccessfullyModal();
     });
   }
@@ -532,5 +532,41 @@ export class ForumThreadPage implements OnInit {
   }
   GetReplyCount() {
     return this.list.ReplyPost.length;
+  }
+
+  getTagClass(name: string): string {
+    if (!name) return '';
+    const n = name.trim().toLowerCase();
+    switch (n) {
+      case 'manage your mental health':
+        return 'tag-mental-health';
+      case 'relationships':
+        return 'tag-relationships';
+      case 'work & leadership':
+      case 'work and leadership':
+        return 'tag-work-leadership';
+      case 'be happier':
+        return 'tag-be-happier';
+      case 'habits & addiction':
+      case 'habits and addiction':
+        return 'tag-habits-addiction';
+      case 'deal with loss':
+      case 'dealing with loss':
+        return 'tag-dealing-loss';
+      case 'meditation':
+        return 'tag-meditation';
+      case 'manage your emotions':
+      case 'managing emotions':
+        return 'tag-managing-emotions';
+      case 'nuggets of inspiration':
+        return 'tag-nuggets-inspiration';
+      case 'ask our expert coaches':
+      case 'ask a coach':
+        return 'tag-ask-coach';
+      case 'other':
+        return 'tag-other';
+      default:
+        return '';
+    }
   }
 }
