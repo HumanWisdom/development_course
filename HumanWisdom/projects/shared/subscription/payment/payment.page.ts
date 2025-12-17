@@ -102,12 +102,26 @@ export class PaymentPage implements OnInit, AfterViewInit {
   setTimeout(() => {
       let stripe = Stripe(environment.stripeKey) as any;
       
-      const appearance = {
+       const appearance = {
         theme: 'flat',  
         rules: {
           '.Label': {
             fontSize: '0'
           },
+          '.Input': {
+            border: '1px solid rgba(50, 50, 50, 0.25)',
+            borderRadius: '16px',
+            height: '50px',
+            boxShadow: '1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset'
+          },
+          '.p-Input': {
+            height: '50px',
+          },
+         '.TermsText': {
+            fontSize: '10px',
+            color: 'rgba(0,0,0,0.50)'
+          },
+
           /* '.Input::placeholder': {
             color: '#000000'
           },  */        
@@ -116,16 +130,13 @@ export class PaymentPage implements OnInit, AfterViewInit {
           colorBackground: (this.isAdults? '#fff' : '#0C2B5F' ) ,
           colorDanger: '#df1b41',
           fontFamily: 'Poppins,sans-serif !important;',
-          spacingUnit: '4px',
           borderRadius: '16px',
-          border:'1px solid #ddd',
+          border:'1px solid #ddd',         
           colorText: (this.isAdults? '#000' : '#fff' ) ,
-          colorTextPlaceholder: (this.isAdults? 'rgba(255, 255, 255, 0.50)' : 'rgba(0, 0, 0, 0.50)' ) ,
-          // "rgba(255, 255, 255, 0.50)"
+          colorTextPlaceholder: (this.isAdults? 'rgba(0, 0, 0, 0.50)'  : 'rgba(255, 255, 255, 0.50)'  ) ,
+          inputHeight: '50px',
         }
-        
       };
-
       
 
      
