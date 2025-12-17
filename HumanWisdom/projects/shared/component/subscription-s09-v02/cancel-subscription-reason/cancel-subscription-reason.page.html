@@ -3,12 +3,14 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="back()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Cancel subscription
       </h1>
     </div>
@@ -32,7 +34,7 @@
 
               <div class="row mb20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff">
+                  <h4 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     What’s making you cancel?
                   </h4>
                 </div>
@@ -50,7 +52,7 @@
                       </div>
                     </div>
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                      <h4 class="mtb0px fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{item.Reason}}
                       </h4>
                     </div>
@@ -174,7 +176,7 @@
 
       <div class="row">                    
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+          <h4 class="mtb0px fs_18px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
             Cancel subscription?
           </h4>
         </div>
@@ -182,7 +184,7 @@
 
       <div class="row mt10px mb30px">                    
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff_0_5">
+          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
             Your subscription will be cancelled at the end of your billing period on Jul 29, 2024, and you won’t be charged any more. You can change your mind any time before this date.
           </h4>
         </div>
