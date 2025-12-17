@@ -34250,7 +34250,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .v1_3_sfooter_ext {
   /* background: #424675; */
-  background: #ffffff;
+  background: #FFF7E6;
   box-shadow: unset;
 }
 
@@ -34537,7 +34537,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   /* height: 40px;
   width: 148px; */
   min-height: 40px;
-  min-width: 128px;
+  min-width: 95px;
   /* width: 100%; */
   margin: 0;
   border-radius: 10px;
@@ -34602,9 +34602,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   width: 100%;
   border-radius: 100px;
   border: 1px solid #ED7D6F;
-  background: transparent;
+  background: linear-gradient(180deg,#ED7D6F 0%,#D7586B 100%)!important;
   padding: 10px 20px;
-  color: #ED7D6F !important;
+  color: #fff!important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
