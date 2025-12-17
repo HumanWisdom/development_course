@@ -123,6 +123,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           colorTextPlaceholder: (this.isAdults? 'rgba(255, 255, 255, 0.50)' : 'rgba(0, 0, 0, 0.50)' ) ,
           // "rgba(255, 255, 255, 0.50)"
         }
+        
       };
 
       
@@ -250,5 +251,10 @@ export class PaymentPage implements OnInit, AfterViewInit {
   getCurrCode(){
     return this.pricingModel.ISOCode;
   }
-
+terms() {
+    this.router.navigateByUrl('/terms-and-conditions');
+  }
+  privacy() {
+    this.router.navigateByUrl('/privacy-policy');
+  }
 }
