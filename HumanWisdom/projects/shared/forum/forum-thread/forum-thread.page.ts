@@ -12,6 +12,7 @@ import { NavigationService } from "../../../shared/services/navigation.service";
 import { Location } from '@angular/common';
 import { LogEventService } from "./../../services/log-event.service";
 import { ModalService } from '../../services/modal.service';
+import { HostListener } from '@angular/core';
 
 
 
@@ -41,6 +42,11 @@ export class ForumThreadPage implements OnInit {
   isEditComment = true;
   sub: Subscription;
   userID = '107';
+  openDropdownIndex: number | null = null;
+  editingPostIndex: number | null = null;
+  editingItem: any = null;
+  editingPostText: string = '';
+  isProcessing: boolean = false;
   posttread = {
     PostID: '',
     POST: '',
@@ -159,6 +165,74 @@ export class ForumThreadPage implements OnInit {
     else {
       this.enableAlert = true;
     }
+  }
+
+  toggleDropdown(index: number, event?: Event) {
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    this.openDropdownIndex = this.openDropdownIndex === index ? null : index;
+  }
+
+  onEditClick(event: Event, item: any, index: number) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.openEditPostModal(item, index, event);
+    this.openDropdownIndex = null;
+  }
+
+  onDeleteClick(event: Event, item: any) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.deletePost();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    const target = event.target as HTMLElement;
+    if (target && (target as any).closest && (target as any).closest('.dropdown')) {
+      return;
+    }
+    this.openDropdownIndex = null;
+  }
+
+  openEditPostModal(item: any, index: number, event?: Event) {
+    this.editingItem = item;
+    this.editingPostIndex = index;
+    this.editingPostText = item && (item.POST ?? item.Post ?? '');
+    this.modalService.openModal('edit_post', event);
+  }
+
+  closeEditPostModal() {
+    this.modalService.closeModal('edit_post');
+    this.editingItem = null;
+    this.editingPostIndex = null;
+    this.editingPostText = '';
+  }
+
+  saveEditedPost() {
+    if (this.editingItem == null) {
+      return;
+    }
+    const updated = this.editingPostText?.trim() ?? '';
+    const model = {
+      PostId: this.editingItem.PostID,
+      Post: updated,
+      UserId: this.editingItem.UserId,
+      ParentPostID: '0',
+      ReflectionID: '0',
+      TagIds: this.editingItem.TagIds
+    } as any;
+    
+    this.service.UpdatePost(model).subscribe(res => {
+      if (res) {
+        this.posttread.POST = updated;
+        this.posttread.POST = updated;
+        this.posttread.isEditPost = false;
+        this.closeEditPostModal();
+      }
+    });
   }
   navi() {
     localStorage.setItem('postid', this.posttread.PostID);
