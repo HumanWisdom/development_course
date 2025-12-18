@@ -463,21 +463,39 @@
     </div>
 
     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 ">
-      <h6 class="mtb0px flex_ai">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="img-responsive mr6px" alt="app">
+      <div class="d-flex flex-column">
+        <h6 class="mtb0px flex_ai mb2px">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="img-responsive mr6px" alt="app">
 
-        <span class="fs_9px fw_400 lh_140p fc_000000 mr6px">
-          App Store
-        </span>
+          <span class="fs_9px fw_400 lh_140p fc_000000 mr6px">
+            App store
+          </span>
 
-        <span class="fs_9px fw_600 lh_140p fc_000000 mr6px">
-          4.8
-        </span>
+          <span class="fs_9px fw_600 lh_140p fc_000000 mr6px">
+            4.8
+          </span>
 
-        <span class="rating_a">
-          <i class="fa fa-star"></i>
-        </span>
-      </h6>
+          <span class="rating_a">
+            <i class="fa fa-star"></i>
+          </span>
+        </h6>
+
+        <h6 class="mtb0px flex_ai">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="img-responsive mr6px" alt="playstore">
+
+          <span class="fs_9px fw_400 lh_140p fc_000000 mr6px">
+            Google Play
+          </span>
+
+          <span class="fs_9px fw_600 lh_140p fc_000000 mr6px">
+            4.8
+          </span>
+
+          <span class="rating_a">
+            <i class="fa fa-star"></i>
+          </span>
+        </h6>
+      </div>
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">

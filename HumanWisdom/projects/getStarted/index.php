@@ -114,7 +114,8 @@ require_once('./includes/security_config.php');
             class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index_new.webp"
+          <img style="width:100%;height:auto;"
+            src="https://d1tenzemoxuh75.cloudfront.net/website/Adults+teenagers+2.svg"
             class="img-responsive w100p display_d_none m-popup m-auto" loading="lazy" alt="performance">
         </div>
         <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px mtb40px" data-aos="fade-up"
