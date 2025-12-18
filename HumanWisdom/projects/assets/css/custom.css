@@ -33820,6 +33820,13 @@ body * {
    outline: none; 
 } */
 
+.div_forum_post  {
+    background: #FFE8BB;
+    border-radius: 12px;
+    padding: 20px;
+  
+}
+
 .btn_fpfy {
   height: 22px;
   border-radius: 2px;
