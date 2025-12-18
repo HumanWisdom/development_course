@@ -62,15 +62,15 @@
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" *ngIf="posttread.UserName != UserName"
                         (click)="follow(posttread)" (onkeypress)="follow(posttread)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p "
-                          [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="posttread.Followed=='0'">
-                          <i class="fa fa-plus mr3px"></i>
+                          [ngClass]="isAdults ? 'fc_000000' : ''" *ngIf="posttread.Followed=='0'">
+                          <i class="fa fa-plus fa-xs mr3px"></i>
                           <span class="underline">
                             Follow
                           </span>
                         </button>
 
                         <button type="button" class="btn fs_12px fw_600 lh_140p"
-                          [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="posttread.Followed=='1'">
+                          [ngClass]="isAdults ? 'fc_000000_0_5' : ''" *ngIf="posttread.Followed=='1'">
                           <i class="fa fa-minus mr3px"></i>
                           <span class="underline">
                             Unfollow
@@ -82,7 +82,7 @@
                         (click)="follow(posttread)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p fc_000000"
                           *ngIf="posttread.Followed=='0'">
-                          <i class="fa fa-plus mr3px"></i>
+                          <i class="fa fa-plus fa-xs mr3px"></i>
                           <span class="underline">
                             Follow
                           </span>
@@ -202,7 +202,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82"
+                          <button type="button" class="btn fs_12px fw_400 lh_140p "
                             (click)="like(posttread.PostID,null,0)">
                             <img alt="like" *ngIf="posttread.Liked=='0'"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
@@ -228,7 +228,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" [disabled]="DisabledComment(posttread)"
+                            [ngClass]="isAdults ? 'fc_000000' : ''" [disabled]="DisabledComment(posttread)"
                             (click)="enableCommentTextBox()">
                             <img alt="comment"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
@@ -242,7 +242,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="shareOnThread(posttread)">
+                            [ngClass]="isAdults ? 'fc_000000' : ''" (click)="shareOnThread(posttread)">
                             <img alt="shareicon"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
@@ -256,7 +256,7 @@
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                         <button type="button" class="btn fs_12px fw_400 lh_140p "
-                          [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="reportpost()">
+                          [ngClass]="isAdults ? 'fc_000000' : ''" (click)="reportpost()">
                           <img alt="report"
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                             class="img-responsive mr5px" *ngIf="!isAdults">
@@ -341,7 +341,7 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft" *ngIf="!isAdults">
                           <button type="button" (click)="like(item.ReplyPostID,posttread.PostID,index)"
-                            class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                            class="btn fs_12px fw_400 lh_140p ">
 
                             <img alt="heart" *ngIf="item.Liked=='0'"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
@@ -370,7 +370,7 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
                           <button type="button" (click)="toggle(item)" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                            [ngClass]="isAdults ? 'fc_000000' : ''">
                             <img alt="report"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
@@ -434,7 +434,12 @@
               aria-label="close">
               <img alt="close popup button"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg"
-                class="img-responsive fright">
+                class="img-responsive fright" *ngIf="!isAdults">
+
+                 <img alt="close popup button"
+                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/close.svg"
+                class="img-responsive fright" *ngIf="isAdults">
+
             </button>
           </div>
         </div>
