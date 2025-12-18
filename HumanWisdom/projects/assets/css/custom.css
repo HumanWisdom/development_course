@@ -34256,10 +34256,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.v1_3_sfooter_ext {
+
+.v1_3_sfooter_extfail {
   /* background: #424675; */
   background: #FFF7E6;
-  box-shadow: unset;
+   box-shadow: none;
 }
 
 .btn_tfasnew {
@@ -34644,7 +34645,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .rgdivs input[type=radio] {
   -webkit-appearance: none;
-  background: transparent !important;
+  background: #fff7e6 !important;
   border-radius: 100%;
   width: 16px !important;
   height: 16px;
