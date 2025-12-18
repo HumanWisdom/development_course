@@ -42,7 +42,7 @@
 
               <!-- post -->
               <div class="div_forum_post" *ngIf="posttread">
-                <a class="">
+                <a class="bg_FFE8BB">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -208,7 +208,7 @@
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                               class="img-responsive mr5px">
                             <img alt="like_filled" *ngIf="posttread.Liked=='1'"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
                               class="img-responsive mr5px">
                             {{posttread.PostLikeCount}}
                           </button>
@@ -217,10 +217,10 @@
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_000000"
                             (click)="like(posttread.PostID,null,0)">
                             <img alt="heart" *ngIf="posttread.Liked=='0'"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_heart.svg"
                               class="img-responsive mr5px">
                             <img alt="heart_filled" *ngIf="posttread.Liked=='1'"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_like_filled.svg"
                               class="img-responsive mr5px">
                             {{posttread.PostLikeCount}}
                           </button>
@@ -234,7 +234,7 @@
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img alt="comments"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_comment.svg"
                               class="img-responsive mr5px" *ngIf="isAdults">
                             {{posttread.ReplyCount}}
                           </button>
@@ -247,7 +247,7 @@
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img alt="shareicon"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_v4_share.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_share.svg"
                               class="img-responsive mr5px" *ngIf="isAdults">
                             Share
                           </button>
@@ -261,7 +261,7 @@
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                             class="img-responsive mr5px" *ngIf="!isAdults">
                           <img alt="report"
-                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report.svg"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_report.svg"
                             class="img-responsive mr5px" *ngIf="isAdults">
 
                           Report
@@ -271,20 +271,20 @@
                   </div>
 
                   <div class="row" *ngIf="isEditComment">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                       <textarea type="text" rows="5" placeholder="Comment here" class="ta_forum_comment"
                         id="PostComment" name="PostComment" [(ngModel)]="PostComment"></textarea>
                     </div>
                   </div>
 
                   <div class="row" *ngIf="isReportPost">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext"
                         required="required" class="form-control fc_comment" placeholder="Let us know what’s wrong">
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 mt10px" *ngIf="isEditComment">
+                    <div class="col-md-12 col-sm-12 col-xs-12 mt10px p0" *ngIf="isEditComment">
                       <button type="submit" class="btn btn_post" [disabled]="DisabledComment(posttread)"
                         (click)="commentPost()">
                         Comment
@@ -293,7 +293,7 @@
                   </div>
                   <div class="row">
 
-                    <div class="col-md-12 col-sm-12 col-xs-12 mtb10px " *ngIf="isLoggedIn && isReportPost">
+                    <div class="col-md-12 col-sm-12 col-xs-12 mtb10px p0" *ngIf="isLoggedIn && isReportPost">
                       <button type="submit" class="btn btn-warning btn_post" (click)="submitComment()">
                         Submit
                       </button>
@@ -313,7 +313,7 @@
 
               <!-- comment -->
               <ng-container *ngIf="list && list.ReplyPost.ReplyPostUserID!=''">
-                <div class="div_comment_list" *ngFor="let item of list.ReplyPost;let index=index">
+                <div class="div_comment_list div_forum_post mt10px " *ngFor="let item of list.ReplyPost;let index=index">
                   <div class="row mt15px mb5px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="gotToProfile(item.ReplyPostUserID)"
                       (onkeypress)="gotToProfile(item.ReplyPostUserID)">
@@ -324,7 +324,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row mt15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_12px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                         *ngIf="(editCommentId != item.ReplyPostID)">
@@ -334,7 +334,7 @@
                     </div>
                   </div>
 
-                  <div class="row div_forum_post mt20px">
+                  <div class="row  mt40px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="row">
 
@@ -358,10 +358,10 @@
                             class="btn fs_12px fw_400 lh_140p fc_000000">
 
                             <img alt="heart" *ngIf="item.Liked=='0'"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/heart.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_heart.svg"
                               class="img-responsive mr5px">
                             <img alt="filled_heart" *ngIf="item.Liked=='1'"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_like_filled.svg"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_like_filled.svg"
                               class="img-responsive mr5px">
                             <span [innerText]="item.ReplyPostLikeCount"></span>
                           </button>
@@ -375,7 +375,7 @@
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img alt="report"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_report.svg"
                               class="img-responsive mr5px" *ngIf="isAdults">
 
                             Report
@@ -400,11 +400,11 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <hr class="hr_style_v3_05 mtb20px">
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </ng-container>
               <!-- /comment -->

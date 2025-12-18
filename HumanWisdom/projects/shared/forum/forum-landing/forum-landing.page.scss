@@ -126,6 +126,13 @@
   box-sizing: border-box;
 }
 
+.div_forum_post  {
+    background: #FFE8BB;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
 .div_forum_post a.deleting,
 .div_forum_postf a.deleting {
   opacity: 0.5;
