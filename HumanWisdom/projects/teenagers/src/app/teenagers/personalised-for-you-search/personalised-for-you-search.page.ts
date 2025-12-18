@@ -94,12 +94,16 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public bookmarkLength: any
   public exerciseNo: any;
   public tourTotalIndex = 0;
-  public tourIndex = 0;
+  public tourIndex = 1;
   public Title: string = '';
   currentList = [];
   public day: string = '';
+  public streak = '';
+  public isFreeTrialEnable = false;
+  public enableAlert:any=false;
 
-  constructor(private route: Router, private aservice: TeenagersService,
+
+  constructor(private route: Router, public router: Router, private aservice: TeenagersService,
    public service: OnboardingService, public logeventservice: LogEventService,
     public cd: ChangeDetectorRef
   ) {
@@ -1022,6 +1026,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     localStorage.setItem("userId", JSON.stringify(this.userId))
     localStorage.setItem("email", res['Email'])
     localStorage.setItem("name", res.Name)
+    this.streak = res.Streak || '0';
     let nameupdate = localStorage.getItem(
       "nameupdate"
     );
@@ -1155,6 +1160,107 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   viewDetails() {
     this.route.navigate(["teenagers/onboarding/user-profile"]);
+  }
+
+  DashboardLogevent(route, params, evtName) {
+    this.logeventservice.logEvent(evtName);
+    if (evtName === 'click_journal') {
+      this.router.navigate(['/teenagers/journal'])
+    } else if (params != '' && route != '') {
+        if(route=="/teenagers/daily-practise"){
+          let guest = localStorage.getItem('guest');
+          if(!this.isloggedIn || guest=='T'){
+            this.isFreeTrialEnable = true;
+            this.enableAlert= true;
+          } else {
+            let sub = localStorage.getItem('Subscriber');
+            if (sub === '1') {
+              this.router.navigate([route, params]);
+            } else {
+              const lr = this.loginResponse || JSON.parse(localStorage.getItem('loginResponse') || 'null');
+              const base = lr && lr.NoOfDPVisits ? parseInt(lr.NoOfDPVisits as any, 10) : 0;
+              if (base > 2) {
+                this.isFreeTrialEnable = true;
+                this.enableAlert = true;
+              } else {
+                let sc = parseInt(localStorage.getItem('dpClicks') || '0');
+                if (isNaN(sc)) sc = 0;
+                if ((base + sc) >= 2) {
+                  this.isFreeTrialEnable = true;
+                  this.enableAlert = true;
+                } else {
+                  localStorage.setItem('dpClicks', (sc + 1).toString());
+                  this.router.navigate([route, params]);
+                }
+              }
+            }
+          }
+        }
+        else
+            this.router.navigate([route, params]);
+    } else if (route != '') {
+      this.router.navigate([route])
+    }
+  }
+
+  routeDailyCheckIn(){
+    this.logeventservice.logEvent("Click_daily-checkin");
+    let guest = localStorage.getItem('guest');
+    if(!this.isloggedIn || guest=='T'){
+      this.isFreeTrialEnable = true;
+      this.enableAlert= true;
+    } else {
+      let sub = localStorage.getItem('Subscriber');
+      if (sub === '1') {
+        this.router.navigate(['/teenagers/daily-checkin']);
+      } else {
+        const lr = this.loginResponse || JSON.parse(localStorage.getItem('loginResponse') || 'null');
+        const base = lr && lr.NoOfDPVisits ? parseInt(lr.NoOfDPVisits as any, 10) : 0;
+        if (base > 2) {
+          this.isFreeTrialEnable = true;
+          this.enableAlert = true;
+        } else {
+          let sc = parseInt(localStorage.getItem('dpClicks') || '0');
+          if (isNaN(sc)) sc = 0;
+          if ((base + sc) >= 2) {
+            this.isFreeTrialEnable = true;
+            this.enableAlert = true;
+          } else {
+            localStorage.setItem('dpClicks', (sc + 1).toString());
+            this.router.navigate(['/teenagers/daily-checkin']);
+          }
+        }
+      }
+    }
+  }
+
+  routeToFindAnswer(param) {
+    localStorage.setItem('lastRoute', param);
+    this.logeventservice.logEvent("click_find-answers-" + param);
+    this.router.navigate(['/teenagers/find-answers/' + param]);
+  }
+
+
+  shortVideos(data) {
+    this.logeventservice.logEvent("click_"+data['Title'].substring(0,15));
+
+    let id = data['VideoUrl'].split('/');
+    id = id[id.length - 1]
+    this.route.navigate(['/teenagers/wisdom-shorts/' + id])
+  }
+
+  getAlertcloseEvent($event) {
+      this.isFreeTrialEnable = false;
+      if ($event == 'cancel') {
+        this.enableAlert = false;
+      }
+      else if ($event == 'ok') {
+        this.enableAlert = false;
+        this.loginpage();
+      }
+      else {
+        this.enableAlert = false;
+      }
   }
 
 }

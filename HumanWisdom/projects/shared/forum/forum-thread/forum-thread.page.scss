@@ -66,3 +66,110 @@
     border: transparent !important;
 }
 
+.cfdm {
+  width: 162px;
+  height: 92px;
+  padding: 8px 0;
+  border-radius: 12px;
+  background: #FFD889;
+  border: 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  right: -12px;
+  left: auto;
+}
+
+.dropdown-menu::after {
+  content: "";
+  border-left: 9px solid transparent !important;
+  border-right: 9px solid transparent !important;
+  border-bottom: 8px solid #FFD889 !important;
+  top: -7px !important;
+}
+
+.cfdm .dropdown-item {
+  padding: 10px 14px;
+}
+
+.cfdm .dropdown-item {
+  background: transparent;
+  color: inherit;
+}
+
+.cfdm .dropdown-item:hover,
+.cfdm .dropdown-item:focus,
+.cfdm .dropdown-item.active,
+.cfdm .dropdown-item:active {
+  background: transparent;
+  color: inherit;
+}
+
+.position_unseti .btn.dropdown-toggle {
+  background: transparent;
+  border: 0;
+  padding: 4px;
+}
+
+.position_unseti .dropdown-toggle::after {
+  display: none;
+}
+
+/* Slide-up modal animation */
+.modal.slide-up {
+  overflow: hidden;
+}
+
+/* Initial state before showing */
+.modal.slide-up .lab-modal-body,
+.modal.slide-up .lab-modal-bodyfourm,
+.modal.slide-up .modal_inner,
+.modal.slide-up .choose-category-popup,
+.modal.slide-up .v3_modal_posted_successfully,
+.modal.slide-up .modal_cc {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Keyframes for reliable bottom-up animation */
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animation when modal becomes visible */
+.modal.slide-up.show .lab-modal-body,
+.modal.slide-up.show .lab-modal-bodyfourm,
+.modal.slide-up.show .modal_inner,
+.modal.slide-up.show .choose-category-popup,
+.modal.slide-up.show .v3_modal_posted_successfully,
+.modal.slide-up.show .modal_cc {
+  animation: modalSlideUp 250ms ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.lab-modal-bodyfourm{
+    padding: 20px 20px 35px !important;
+}
+
+.modal_cc {
+    background: #FFD889;
+    border-radius: 20px 20px 0 0;
+    margin-top: auto;
+    width: 100%;
+    max-width: 400px;
+}
+
+.ta_new_thread {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+    line-height: normal;
+    color: #000;
+}
