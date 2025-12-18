@@ -34252,7 +34252,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .v1_3_sfooter_ext {
   /* background: #424675; */
   background: #FFF7E6;
-  box-shadow: unset;
+  box-shadow: 0 -2px 2px #00000010 ;
 }
 
 .btn_tfasnew {
@@ -34637,7 +34637,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .rgdivs input[type=radio] {
   -webkit-appearance: none;
-  background: transparent !important;
+  background: #fff7e6 !important;
   border-radius: 100%;
   width: 16px !important;
   height: 16px;
