@@ -482,7 +482,7 @@ export class ForumThreadPage implements OnInit {
           this.isReportPost =  false;
           this.isEditComment = false;
           this.submissionState = 'success';
-          this.modalText = 'Submitted successfully. Your comment will be visible after moderation';
+          this.modalText = 'Submitted successfully. Your comment will be visible after moderation.';
           this.openPostedSuccessfullyModal();
           this.getPostData();
           this.PostComment = '';

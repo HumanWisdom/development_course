@@ -33602,7 +33602,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #E58D82 !important;
+  color: #e8a880 !important;
 }
 
 .btn_forum_ask_a_gift {
@@ -33773,9 +33773,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .v3_modal_posted_successfully {
   width: 335px;
-  height: 204px;
+  height: 275px;
   border-radius: 8px;
-  background: #424675;
+  background: #0C2B5F;
   padding: 24px;
 }
 
