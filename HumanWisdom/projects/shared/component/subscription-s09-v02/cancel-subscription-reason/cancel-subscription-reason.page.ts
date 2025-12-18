@@ -47,6 +47,12 @@ export class CancelSubscriptionReasonPage implements OnInit {
       }
     });
   }
+   if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+          } else {
+           this.isAdults = false;
+          }     
+    
   }
 
   back(){

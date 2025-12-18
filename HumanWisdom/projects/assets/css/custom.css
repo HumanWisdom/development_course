@@ -28282,7 +28282,8 @@ body {
 }
 
 .txtarea_fl_comment {
-  width: 339px;
+  /* width: 339px; */
+  width:100%;
   /* background: #EBEBEB; */
   box-shadow: inset 1px 1px 2px rgb(0 0 0 / 10%);
   border-radius: 5px;
@@ -33819,6 +33820,13 @@ body * {
    outline: none; 
 } */
 
+.div_forum_post  {
+    background: #FFE8BB;
+    border-radius: 12px;
+    padding: 20px;
+  
+}
+
 .btn_fpfy {
   height: 22px;
   border-radius: 2px;
@@ -33973,7 +33981,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   width: 335px;
   height: 275px;
   border-radius: 8px;
-  background: #424675;
+  background: #FFFFFF;
   padding: 24px;
 }
 
@@ -34248,10 +34256,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.v1_3_sfooter_ext {
+
+.v1_3_sfooter_extfail {
   /* background: #424675; */
-  background: #ffffff;
-  box-shadow: unset;
+  background: #FFF7E6;
+   box-shadow: none;
 }
 
 .btn_tfasnew {
@@ -34537,7 +34546,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   /* height: 40px;
   width: 148px; */
   min-height: 40px;
-  min-width: 128px;
+  min-width: 95px;
   /* width: 100%; */
   margin: 0;
   border-radius: 10px;
@@ -34602,9 +34611,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   width: 100%;
   border-radius: 100px;
   border: 1px solid #ED7D6F;
-  background: transparent;
+  background: linear-gradient(180deg,#ED7D6F 0%,#D7586B 100%)!important;
   padding: 10px 20px;
-  color: #ED7D6F !important;
+  color: #fff!important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -34636,7 +34645,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .rgdivs input[type=radio] {
   -webkit-appearance: none;
-  background: transparent !important;
+  background: #fff7e6 !important;
   border-radius: 100%;
   width: 16px !important;
   height: 16px;
