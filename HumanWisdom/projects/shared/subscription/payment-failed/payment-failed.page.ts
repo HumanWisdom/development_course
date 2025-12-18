@@ -27,7 +27,7 @@ export class PaymentFailedPage implements OnInit {
     SharedService.setDataInSessionStorage(Constant.ClientSecret, null);
   }
   routeToIndex(){
-    this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/index`);
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`);
   }
 
   routeToDashboard(){
