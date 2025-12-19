@@ -37,10 +37,7 @@
               "projects/adults/src/.htaccess"
             ],
             "styles": [
-              {
-                "input": "node_modules/font-awesome/css/font-awesome.css",
-                "inject": true
-              },
+
               {
                 "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "inject": true
@@ -321,10 +318,7 @@
               "projects/teenagers/src/.htaccess"
             ],
             "styles": [
-              {
-                "input": "node_modules/font-awesome/css/font-awesome.css",
-                "inject": true
-              },
+
               {
                 "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "inject": true

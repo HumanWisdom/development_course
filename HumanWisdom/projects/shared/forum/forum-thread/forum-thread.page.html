@@ -62,15 +62,15 @@
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" *ngIf="posttread.UserName != UserName"
                         (click)="follow(posttread)" (onkeypress)="follow(posttread)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p "
-                          [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="posttread.Followed=='0'">
-                          <i class="fa fa-plus mr3px"></i>
+                          [ngClass]="isAdults ? 'fc_000000' : ''" *ngIf="posttread.Followed=='0'">
+                          <i class="fa fa-plus  mr3px"></i>
                           <span class="underline">
                             Follow
                           </span>
                         </button>
 
                         <button type="button" class="btn fs_12px fw_600 lh_140p"
-                          [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'" *ngIf="posttread.Followed=='1'">
+                          [ngClass]="isAdults ? 'fc_000000_0_5' : ''" *ngIf="posttread.Followed=='1'">
                           <i class="fa fa-minus mr3px"></i>
                           <span class="underline">
                             Unfollow
@@ -82,7 +82,7 @@
                         (click)="follow(posttread)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p fc_000000"
                           *ngIf="posttread.Followed=='0'">
-                          <i class="fa fa-plus mr3px"></i>
+                          <i class="fa fa-plus fa-xs mr3px"></i>
                           <span class="underline">
                             Follow
                           </span>
@@ -99,55 +99,59 @@
 
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
                         *ngIf="(posttread.UserName == UserName) && (posttread.ReplyCount=='0')">
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img alt="more"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_more.svg"
-                              class="img-responsive">
+                        <div class="dropdown position_unseti">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton0"
+                            (click)="toggleDropdown(0, $event)" aria-haspopup="true"
+                            [attr.aria-expanded]="openDropdownIndex===0">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_more.svg"
+                              class="img-responsive" *ngIf="!isAdults">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_v4_more.svg"
+                              class="img-responsive" *ngIf="isAdults">
                           </button>
-                          <div class="dropdown-menu cfdm" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0" (click)="callEditPost()">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_140p"
-                                      [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                      Edit
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                                    <img alt="dropdown_edit"
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dropdown_edit.svg"
-                                      class="img-responsive">
+                          <div class="dropdown-menu cfdm" [attr.aria-labelledby]="'dropdownMenuButton0'"
+                            [class.show]="openDropdownIndex===0"
+                            [style.display]="openDropdownIndex===0 ? 'block' : null">
+                            <div class="">
+                              <a class="dropdown-item" href="#" (click)="onEditClick($event, posttread, 0)">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                                        Edit
+                                      </h4>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                      <img
+                                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/dropdown_edit.svg"
+                                        class="img-responsive">
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </a>
+                              </a>
 
-                            <div class="row">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                <hr class="hr_style_v3_07 mtb10pxi">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                  <hr class="m0px">
+                                </div>
                               </div>
+
+                              <a class="dropdown-item" href="#" (click)="onDeleteClick($event, posttread)">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                                        Delete
+                                      </h4>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                                      <img
+                                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/dropdown_trash.svg"
+                                        class="img-responsive">
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
                             </div>
-
-                            <a class="dropdown-item" (click)="deletePost()">
-                              <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_140p"
-                                      [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                      Delete
-                                    </h4>
-                                  </div>
-                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                                    <img alt="trash"
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dropdown_trash.svg"
-                                      class="img-responsive">
-                                  </div>
-                                </div>
-                              </div>
-                            </a>
                           </div>
                         </div>
                       </div>
@@ -202,7 +206,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_e58d82"
+                          <button type="button" class="btn fs_12px fw_400 lh_140p "
                             (click)="like(posttread.PostID,null,0)">
                             <img alt="like" *ngIf="posttread.Liked=='0'"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
@@ -228,7 +232,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" [disabled]="DisabledComment(posttread)"
+                            [ngClass]="isAdults ? 'fc_000000' : ''" [disabled]="DisabledComment(posttread)"
                             (click)="enableCommentTextBox()">
                             <img alt="comment"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
@@ -242,7 +246,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="shareOnThread(posttread)">
+                            [ngClass]="isAdults ? 'fc_000000' : ''" (click)="shareOnThread(posttread)">
                             <img alt="shareicon"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
@@ -256,7 +260,7 @@
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                         <button type="button" class="btn fs_12px fw_400 lh_140p "
-                          [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="reportpost()">
+                          [ngClass]="isAdults ? 'fc_000000' : ''" (click)="reportpost()">
                           <img alt="report"
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                             class="img-responsive mr5px" *ngIf="!isAdults">
@@ -294,7 +298,7 @@
                   <div class="row">
 
                     <div class="col-md-12 col-sm-12 col-xs-12 mtb10px p0" *ngIf="isLoggedIn && isReportPost">
-                      <button type="submit" class="btn btn-warning btn_post" (click)="submitComment()">
+                      <button type="submit" class="btn btn-warning btn_post" (click)="reportComment(posttread)">
                         Submit
                       </button>
                     </div>
@@ -341,7 +345,7 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft" *ngIf="!isAdults">
                           <button type="button" (click)="like(item.ReplyPostID,posttread.PostID,index)"
-                            class="btn fs_12px fw_400 lh_140p fc_e58d82">
+                            class="btn fs_12px fw_400 lh_140p ">
 
                             <img alt="heart" *ngIf="item.Liked=='0'"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
@@ -370,7 +374,7 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
                           <button type="button" (click)="toggle(item)" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                            [ngClass]="isAdults ? 'fc_000000' : ''">
                             <img alt="report"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
@@ -430,11 +434,16 @@
 
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <button type="button" class="btn_popup_close m0px" (click)="closePost()" data-dismiss="modal"
+            <button type="button" class="btn_popup_close m0px" (click)="closePost()" data-bs-dismiss="modal"
               aria-label="close">
               <img alt="close popup button"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg"
-                class="img-responsive fright">
+                class="img-responsive fright" *ngIf="!isAdults">
+
+                 <img alt="close popup button"
+                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/close.svg"
+                class="img-responsive fright" *ngIf="isAdults">
+
             </button>
           </div>
         </div>
@@ -461,6 +470,43 @@
   </div>
   <app-modal *ngIf="enableAlert" [modalid]="'logout'" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
     [enableCancel]="true" [content]="'Please register to use this feature'"></app-modal>
+</div>
+
+<div class="modal fade slide-up" id="edit_post" data-bs-keyboard="false" data-bs-backdrop="false">
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-bodyfourm modal_cc col_cw">
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+            <h4 class="mtb0px fs_18px fw_500 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Edit post</h4>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+            <button type="button" class="btn_popup_close m0px" (click)="closePost()" aria-label="close" data-bs-dismiss="modal">
+              <img
+                src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
+                class="img-responsive fright">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <textarea [(ngModel)]="editingPostText" class="mtb0px ta_new_thread" maxlength="256" rows="5"
+            placeholder="Edit Post"></textarea>
+        </div>
+      </div>
+
+      <div class="row mb10px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
+          <button type="button" class="btn btn-default btn_fpfy_mh mr10px"
+            (click)="closeEditPostModal()">Cancel</button>
+          <button type="button" class="btn btn-default btn_fpfy_mh" (click)="saveEditedPost()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 <!-- /page content -->
 

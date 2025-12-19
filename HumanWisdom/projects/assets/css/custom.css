@@ -33823,6 +33823,13 @@ body * {
    outline: none; 
 } */
 
+.div_forum_post  {
+    background: #FFE8BB;
+    border-radius: 12px;
+    padding: 20px;
+  
+}
+
 .btn_fpfy {
   height: 22px;
   border-radius: 2px;
@@ -33975,10 +33982,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .v3_modal_posted_successfully {
   width: 335px;
-  height: 275px;
-  border-radius: 8px;
-  background: #424675;
+  height: auto;
+  border-radius: 16px;
+  background: #FFFFFF;
   padding: 24px;
+  padding-bottom: 45px;
 }
 
 .forum_all_threads {

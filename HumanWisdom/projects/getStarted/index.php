@@ -114,7 +114,8 @@ require_once('./includes/security_config.php');
             class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/index_new.webp"
+          <img style="width:100%;height:auto;"
+            src="https://d1tenzemoxuh75.cloudfront.net/website/Adults+teenagers+2.svg"
             class="img-responsive w100p display_d_none m-popup m-auto" loading="lazy" alt="performance">
         </div>
         <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px mtb40px" data-aos="fade-up"
@@ -144,7 +145,7 @@ require_once('./includes/security_config.php');
           </div>
 
           <div class="row mt30px">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 w-75">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
               <h1 class="mtb0px fs_45px fw_600 lh_130p fc_000000 ta_lc  ">
                 <!-- Understand your mind. Transform your life. -->
                  <!-- Understand your emotions. Gain clarity. Be happier. -->
@@ -156,7 +157,7 @@ require_once('./includes/security_config.php');
           </div>
 
           <div class="row mtb15px">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-75">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ">
 
               <h2 class="mtb0px fs_21px fw_400 lh_130p fc_000000 ta_lc">
                 <!-- A happier mind starts with understanding it. We support you to manage your emotions, build stronger
@@ -166,7 +167,7 @@ require_once('./includes/security_config.php');
                 <!-- Transform your emotional well-being, strengthen your relationships and succeed in life.
                -->
                 <!-- AI-enabled practical tools to deepen self-awareness, improve communication, and excel in work and life. -->
-                 We support you to reduce stress and anxiety, manage your emotions, deepen relationships and handle life with clarity and calm.
+                 We support you to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within.
               </h2>
 
             </div>
