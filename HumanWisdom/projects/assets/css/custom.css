@@ -20348,7 +20348,7 @@ share-buttons button {
 }
 
 .c120px {
-  min-height: 120px !important;
+  min-height: 100px !important;
   object-fit: cover;
   /* border-radius: 10px 0 0 10px; */
   border-radius: 6px;
@@ -32590,7 +32590,7 @@ body * {
 }
 
 .div_ru .row:hover,
-.div_fbn .row:hover,
+/* .div_fbn .row:hover, */
 .div_sate button:hover,
 .div_fi_a button:hover,
 .div_fi_b button:hover {
@@ -32658,7 +32658,10 @@ body * {
   left: 0;
   margin: 0 auto;
 }
-
+ .div_fbn .row:hover{
+  background-color: #FFD889;
+  /* color:#fff; */
+}
 
 .div_fbn a .row {
   height: 60px;
@@ -36416,15 +36419,16 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .div_fq a:nth-child(7) .row,
 .div_fq a:nth-child(10) .row,
 .div_fq a:nth-child(13) .row,
-.div_fq a:nth-child(16) .row,
-.div_fbn a:nth-child(1) .row,
-.div_fbn a:nth-child(4) .row,
-.div_fbn a:nth-child(7) .row,
-.div_fbn a:nth-child(10) .row,
-.div_fbn a:nth-child(13) .row,
-.div_fbn a:nth-child(16) .row,
-.div_fbn a:nth-child(19) .row,
-.div_fbn a:nth-child(22) .row {
+.div_fq a:nth-child(16) .row
+/* .div_fbn a:nth-child(1) .row, */
+/* .div_fbn a:nth-child(4) .row, */
+/* .div_fbn a:nth-child(7) .row, */
+/* .div_fbn a:nth-child(10) .row, */
+/* .div_fbn a:nth-child(13) .row, */
+/* .div_fbn a:nth-child(16) .row, */
+/* .div_fbn a:nth-child(19) .row, */
+/* .div_fbn a:nth-child(22) .row */
+ {
   background: #803358;
 }
 
@@ -36437,9 +36441,9 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .div_fq a:nth-child(11) .row,
 .div_fq a:nth-child(14) .row,
 .div_fq a:nth-child(17) .row,
-.div_fbn a:nth-child(2) .row,
-.div_fbn a:nth-child(5) .row,
-.div_fbn a:nth-child(8) .row,
+/* .div_fbn a:nth-child(2) .row, */
+/* .div_fbn a:nth-child(5) .row, */
+/* .div_fbn a:nth-child(8) .row, */
 .div_fbn a:nth-child(11) .row,
 .div_fbn a:nth-child(14) .row,
 .div_fbn a:nth-child(17) .row,
@@ -36455,9 +36459,9 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .div_fq a:nth-child(9) .row,
 .div_fq a:nth-child(12) .row,
 .div_fq a:nth-child(15) .row,
-.div_fbn a:nth-child(3) .row,
-.div_fbn a:nth-child(6) .row,
-.div_fbn a:nth-child(9) .row,
+/* .div_fbn a:nth-child(3) .row, */
+/* .div_fbn a:nth-child(6) .row, */
+/* .div_fbn a:nth-child(9) .row, */
 .div_fbn a:nth-child(12) .row,
 .div_fbn a:nth-child(15) .row,
 .div_fbn a:nth-child(18) .row,
@@ -36467,7 +36471,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
 .div_fq h4,
 .div_fbn h4 {
-  color: #fff !important;
+  color: #000 !important;
 }
 
 .div_fq h4.fc_000000 {
