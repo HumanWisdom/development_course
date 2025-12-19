@@ -59,11 +59,11 @@
                         </h4>
                       </div>
 
-                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright" *ngIf="posttread.UserName != UserName"
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" *ngIf="posttread.UserName != UserName"
                         (click)="follow(posttread)" (onkeypress)="follow(posttread)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p "
                           [ngClass]="isAdults ? 'fc_000000' : ''" *ngIf="posttread.Followed=='0'">
-                          <i class="fa fa-plus fa-xs mr3px"></i>
+                          <i class="fa fa-plus  mr3px"></i>
                           <span class="underline">
                             Follow
                           </span>
@@ -298,7 +298,7 @@
                   <div class="row">
 
                     <div class="col-md-12 col-sm-12 col-xs-12 mtb10px p0" *ngIf="isLoggedIn && isReportPost">
-                      <button type="submit" class="btn btn-warning btn_post" (click)="submitComment()">
+                      <button type="submit" class="btn btn-warning btn_post" (click)="reportComment(item)">
                         Submit
                       </button>
                     </div>
@@ -434,7 +434,7 @@
 
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0">
-            <button type="button" class="btn_popup_close m0px" (click)="closePost()" data-dismiss="modal"
+            <button type="button" class="btn_popup_close m0px" (click)="closePost()" data-bs-dismiss="modal"
               aria-label="close">
               <img alt="close popup button"
                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg"
@@ -481,7 +481,7 @@
             <h4 class="mtb0px fs_18px fw_500 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Edit post</h4>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-            <button type="button" class="btn_popup_close m0px" (click)="closeEditPostModal()" aria-label="close">
+            <button type="button" class="btn_popup_close m0px" (click)="closePost()" aria-label="close" data-bs-dismiss="modal">
               <img
                 src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
                 class="img-responsive fright">
