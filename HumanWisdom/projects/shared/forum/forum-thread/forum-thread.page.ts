@@ -522,18 +522,19 @@ export class ForumThreadPage implements OnInit {
   }
 
   reportComment(item) {
+     this.isEditComment = false;
+          this.isReportPost = false;
       if(this.isLoggedIn) 
       {
             this.service.reportPost({ PostID: this.posttread.PostID, UserID: this.userID, Comment: this.commenttext }).subscribe(res => {
               if (res) {
-                this.replyflag = !this.replyflag;
-                this.activereply = null;
-                this.reploadpage();
-                this.reportText = '';
+                this.commenttext = '';
+                this.isReportPost = false;
                 this.submissionState = 'success';
                 this.modalText = 'Submitted successfully';
                  this.openPostedSuccessfullyModal();
-                 
+                 this.reploadpage();
+
               }
             }, _ => {
               this.submissionState = 'error';
