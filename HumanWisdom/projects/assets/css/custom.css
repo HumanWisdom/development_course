@@ -33789,9 +33789,9 @@ body * {
   justify-content: left;
 }
 
-.div_forum_post .btn:hover {
+/* .div_forum_post .btn:hover {
   color: #000000;
-}
+} */
 
 .div_forum_post .btn {
   margin: 0 !important;
@@ -33853,7 +33853,7 @@ body * {
   font-size: 12px;
   font-weight: 400;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(0, 0, 0, 0.50);
 }
 
 .ta_forum_comment {

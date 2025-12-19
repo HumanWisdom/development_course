@@ -123,7 +123,7 @@
                           </span>
                         </button>
 
-                        <button type="button" class="btn fs_12px fw_600 lh_140p fc_000000_0_5"
+                        <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e8a880_0_5'"
                           *ngIf="item.Followed=='1'">
                           <i class="fa fa-minus mr3px"></i>
                           <span class="underline">
