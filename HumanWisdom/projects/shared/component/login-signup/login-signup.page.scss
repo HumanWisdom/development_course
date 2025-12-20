@@ -46,3 +46,70 @@
   width: 65px;
   left: 45px;
 }
+
+// Style Google Sign-In button to match Facebook and Apple buttons
+#googleBtnSignupWrapper,
+#googleBtnLoginWrapper {
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:focus,
+  &:active,
+  &:hover {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+            border: none !important;
+  }
+  
+  #googleBtnSignup,
+  #googleBtnLogin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+    
+    // Target Google's button element
+    div[id*="google"],
+    div[class*="abcRioButton"],
+    div[class*="gsi"],
+    div[role="button"] {
+      background: transparent !important;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+              border: none !important;
+      
+      &:focus,
+      &:active,
+      &:hover {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+                border: none !important;
+      }
+      
+      // Style the icon/svg inside
+      svg,
+      img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        border: none !important;
+      }
+    }
+  }
+}
