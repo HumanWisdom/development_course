@@ -38,7 +38,6 @@ import { initDependency } from './initdependency';
 import { AudioVideoGuard } from './audio-video.guard';
 import { EnableRouteGuard } from './enable-route.guard';
 import { NavigationService } from '../../../shared/services/navigation.service';
-import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider } from '@abuelwiss/angularx-social-login';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -77,8 +76,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         AngularFireAnalyticsModule,
         NgxJsonLdModule,
         ToastrModule.forRoot(),
-        SurveyPageModule,
-SocialLoginModule
+        SurveyPageModule
     ],
     providers: [
         StatusBar,
@@ -107,25 +105,7 @@ SocialLoginModule
           deps: [AdultsService],
           multi: true
         },
-        {
-                  provide: 'SocialAuthServiceConfig',
-                  useValue: {
-                    autoLogin: false,
-                    providers: [
-                      {
-                        id: GoogleLoginProvider.PROVIDER_ID,
-                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
-                      },
-                      {
-                        id: FacebookLoginProvider.PROVIDER_ID,
-                        provider: new FacebookLoginProvider('238869214957032')
-                      }
-                    ],
-                    onError: (err) => {
-                      console.error(err);
-                    }
-                  } as SocialAuthServiceConfig,
-                },
+      
         //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         AudioVideoGuard,
         EnableRouteGuard
