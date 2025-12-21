@@ -9,10 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule } from '@ionic/angular';
-// import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,
-//     SocialLoginModule,
-//     SocialAuthService
-//  } from '@abacritt/angularx-social-login';
 import { NgxCaptureModule } from 'ngx-capture';
 import { StripeModule } from "stripe-angular";
 import { environment } from '../../../environments/environment';
@@ -32,7 +28,6 @@ import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import{BlogIndexPage}  from './../../../shared/component/blogs/blog-index/blog-index.page';
 import{BlogArticlePage}  from './../../../shared/component/blogs/blog-article/blog-article.page';
 import{SurveyPageModule}  from './../../../shared/component/survey/survey.module';
-
 // Import library module
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { SharedService } from '../../../shared/services/shared.service';
@@ -43,6 +38,7 @@ import { initDependency } from './initdependency';
 import { AudioVideoGuard } from './audio-video.guard';
 import { EnableRouteGuard } from './enable-route.guard';
 import { NavigationService } from '../../../shared/services/navigation.service';
+import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider } from '@abuelwiss/angularx-social-login';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -72,7 +68,6 @@ export class MyHammerConfig extends HammerGestureConfig {
         HammerModule,
         SharedModule,
         HttpClientModule,
-      //  SocialLoginModule,
         SplashPageModule,
         StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
         NgxCaptureModule,
@@ -82,7 +77,8 @@ export class MyHammerConfig extends HammerGestureConfig {
         AngularFireAnalyticsModule,
         NgxJsonLdModule,
         ToastrModule.forRoot(),
-        SurveyPageModule 
+        SurveyPageModule,
+SocialLoginModule
     ],
     providers: [
         StatusBar,
@@ -111,23 +107,26 @@ export class MyHammerConfig extends HammerGestureConfig {
           deps: [AdultsService],
           multi: true
         },
+        {
+                  provide: 'SocialAuthServiceConfig',
+                  useValue: {
+                    autoLogin: false,
+                    providers: [
+                      {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
+                      },
+                      {
+                        id: FacebookLoginProvider.PROVIDER_ID,
+                        provider: new FacebookLoginProvider('238869214957032')
+                      }
+                    ],
+                    onError: (err) => {
+                      console.error(err);
+                    }
+                  } as SocialAuthServiceConfig,
+                },
         //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-        // {
-        //     provide: 'SocialAuthServiceConfig',
-        //     useValue: {
-        //         autoLogin: false,
-        //         providers: [
-        //             {
-        //                 id: GoogleLoginProvider.PROVIDER_ID,
-        //                 provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
-        //             },
-        //             {
-        //                 id: FacebookLoginProvider.PROVIDER_ID,
-        //                 provider: new FacebookLoginProvider('238869214957032')
-        //             }
-        //         ]
-        //     } as SocialAuthServiceConfig,
-        // },
         AudioVideoGuard,
         EnableRouteGuard
     ],
