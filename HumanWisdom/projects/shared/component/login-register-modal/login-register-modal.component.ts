@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, EventEmitter, Output, Input, HostListener } from "@angular/core";
 import { UntypedFormBuilder, Validators, AbstractControl, ReactiveFormsModule, FormsModule } from "@angular/forms";
-// import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { LogEventService } from "../../services/log-event.service";
 import { Platform, PlatformModule } from '@angular/cdk/platform';
@@ -10,40 +9,19 @@ import { SharedService } from "../../services/shared.service";
 import { Constant } from "../../services/constant";
 import { CommonModule } from "@angular/common";
 import { SharedModule } from "../../shared.module";
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig,SocialAuthService, SocialLoginModule } from "@abacritt/angularx-social-login";
-import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { environment } from "../../../../projects/environments/environment";
 @Component({
   selector: 'Login-register-modal',
   templateUrl: './login-register-modal.component.html',
   styleUrls: ['./login-register-modal.component.scss'],
-  imports: [SocialLoginModule, CommonModule,
+  imports: [CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
     PlatformModule,
-    GoogleSigninButtonModule,
     SharedModule],
   standalone: true,
-  providers: [
-    SocialAuthService,
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com')
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('238869214957032')
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    },
-  ],
+  providers: [],
 })
 export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   @ViewChild('actclosemodal') actclosemodal: ElementRef;
@@ -100,8 +78,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     private services: OnboardingService,
     public fb: UntypedFormBuilder,
     public service: AdultsService,
-    public logeventservice: LogEventService,
-    public authService: SocialAuthService
+    public logeventservice: LogEventService
   ) {
     this.registrationForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(3)]],
@@ -138,7 +115,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.modaldata['firstname'] = namedata[0];
       this.modaldata['lastname'] = namedata[1] ? namedata[1] : '';
     }
-    this.VerifyGoogle();
+    // VerifyGoogle removed - no longer using angularx-social-login
   }
 
   @HostListener('document:mousedown', ['$event'])
@@ -149,37 +126,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private VerifyGoogle() {
-    this.authService.authState.subscribe(
-      (user) => {
-        if (user.provider?.toLowerCase() == 'google') {
-          this.user = user;
-          this.idToken = user.idToken;
-          this.socialFirstName = user.firstName;
-          this.socialLastName = user.lastName;
-          this.socialEmail = user.email;
-
-          this.services
-            .verifyGoogle({
-              TokenID: this.idToken,
-              FName: this.socialFirstName,
-              LName: this.socialLastName,
-              Email: this.socialEmail,
-              VCode: "",
-              Pwd: "",
-            })
-            .subscribe((res) => {
-              if(res){
-                this.setUpLoginConfiguration(res);
-              }
-            });
-        }
-      },
-      (error) => console.log(error),
-      () => {
-      }
-    );
-  }
+  // VerifyGoogle method removed - no longer using angularx-social-login
 
   googleLogin(d = '') {
 
@@ -772,35 +719,9 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     else
       this.logeventservice.logEvent('facebook_login');
 
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      // this.user = user;
-      this.user = user;
-
-      this.idToken = user.authToken;
-      this.socialFirstName = user.firstName;
-      this.socialLastName = user.lastName;
-      this.socialEmail = user.email;
-      if (user.email !== undefined) {
-        this.
-        services.verifyFb({
-            TokenID: this.idToken,
-            FName: this.socialFirstName,
-            LName: this.socialLastName,
-            Email: this.socialEmail,
-            VCode: "",
-            Pwd: "",
-          })
-          .subscribe((res) => {
-               if(res){
-                this.setUpLoginConfiguration(res);
-               }
-          });
-      } else {
-        this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
-        this.enableAlert = true;
-      }
-    });
+    // Facebook login implementation removed - no longer using angularx-social-login
+    // Implement Facebook login using Facebook SDK or alternative method
+    console.log('Facebook login - angularx-social-login removed');
   }
 
   freescreens() {
