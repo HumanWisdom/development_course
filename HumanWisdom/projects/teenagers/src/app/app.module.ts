@@ -10,9 +10,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { APP_INITIALIZER } from '@angular/core';
 import { SharedModule } from './../../../shared/shared.module'
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import {
-  SocialAuthService
-} from '@abacritt/angularx-social-login';
+
 import { HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { TokenInterceptorService } from './teenagerOnboarding/token-interceptor.service';
 import { SharedService } from '../../../shared/services/shared.service';

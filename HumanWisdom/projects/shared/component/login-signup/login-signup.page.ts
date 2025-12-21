@@ -13,6 +13,7 @@ import { SharedModule } from "../../shared.module";
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from "ng-recaptcha";
 import { Constant } from "../../services/constant";
 import { CommonService } from "../../services/common.service";
+import { ProgramType } from "../../models/program-model";
 declare var $: any;
 declare var google: any;
 declare var FB: any;
@@ -142,7 +143,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
           client_id: environment.googleClientId,
           callback: (response: any) => this.handleCredentialResponse(response),
         });
-
+         this.hideSocial = true;
         // Render Google buttons safely (will skip if already rendered)
         this.renderGoogleButtonSafely('googleBtnSignup');
         this.renderGoogleButtonSafely('googleBtnLogin');
@@ -203,6 +204,14 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
         // Find the Google button element (it's usually a div with class containing 'abcRioButton' or 'gsi')
         const googleButton = buttonContainer.querySelector('div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"], div[role="button"]') as HTMLElement;
         if (googleButton) {
+          // Hide the Google button but keep it functional
+          buttonContainer.style.position = 'relative';
+          googleButton.style.opacity = '0';
+          googleButton.style.position = 'absolute';
+          googleButton.style.pointerEvents = 'auto';
+          googleButton.style.width = '100%';
+          googleButton.style.height = '100%';
+          googleButton.style.zIndex = '1';
           // Remove default Google button styling
           googleButton.style.background = 'transparent';
           googleButton.style.border = 'none';
@@ -251,10 +260,173 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
             wrapper.style.border = 'none';
             wrapper.style.borderWidth = '0';
             wrapper.style.outline = 'none';
+            
+            // Apply conditional color filter based on ProgramId
+            // Adults (ProgramId 9) = white, Teenagers (ProgramId 11) = red
+            if (SharedService.ProgramId === ProgramType.Adults) {
+              // White filter: brightness(0) invert(1)
+                wrapper.style.backgroundColor = 'none !important';
+            } else if (SharedService.ProgramId === ProgramType.Teenagers) {
+              // Red filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)
+              wrapper.style.backgroundColor = 'none !important';
+            }
+          }
+          
+          // Also apply filter to the iframe if it exists (Google button is rendered in iframe)
+          const iframe = buttonContainer.querySelector('iframe') as HTMLIFrameElement;
+          if (iframe) {
+            // Function to get container-div by ID and remove background color and border
+            const styleContainerDiv = () => {
+              try {
+                const iframeDoc = iframe.contentDocument || (iframe.contentWindow as any)?.document;
+                if (iframeDoc) {
+                  const containerDiv = iframeDoc.getElementById('container-div');
+                  if (containerDiv) {
+                    // Remove background color and border
+                    (containerDiv as HTMLElement).style.background = 'none';
+                    (containerDiv as HTMLElement).style.backgroundColor = 'transparent';
+                    (containerDiv as HTMLElement).style.border = 'none';
+                    (containerDiv as HTMLElement).style.borderWidth = '0';
+                    (containerDiv as HTMLElement).style.borderStyle = 'none';
+                    
+                    // Inject CSS to ensure styles persist
+                    if (!iframeDoc.getElementById('container-div-styles')) {
+                      const style = iframeDoc.createElement('style');
+                      style.id = 'container-div-styles';
+                      style.textContent = '#container-div { background: none !important; background-color: transparent !important; border: none !important; border-width: 0 !important; border-style: none !important; }';
+                      iframeDoc.head.appendChild(style);
+                    }
+                  }
+                }
+              } catch (e) {
+                // Cross-origin restriction - cannot access iframe content
+                console.log('Cannot access iframe content (cross-origin restriction)');
+              }
+            };
+            
+            // Try to style when iframe loads
+            iframe.onload = () => setTimeout(styleContainerDiv, 100);
+            // Also try after delays in case iframe is already loaded
+            setTimeout(styleContainerDiv, 500);
+            setTimeout(styleContainerDiv, 1000);
+            
+            if (SharedService.ProgramId === ProgramType.Adults) {
+              // White filter for adults
+            //  iframe.style.filter = 'brightness(0) invert(1)';
+            } else if (SharedService.ProgramId === ProgramType.Teenagers) {
+              // Red filter for teenagers
+             wrapper.style.backgroundColor = 'none !important';
+            }
           }
         }
       }, 200);
     }
+  }
+
+  // Trigger Google Sign-In by clicking the hidden button
+  triggerGoogleSignIn(buttonId: string, event?: Event): void {
+    console.log('=== triggerGoogleSignIn called ===', buttonId);
+    
+    const buttonContainer = document.getElementById(buttonId);
+    if (!buttonContainer) {
+      console.log('Button container not found:', buttonId);
+      return;
+    }
+
+    // Function to try triggering the click with retries
+    const tryTriggerClick = (attempt: number = 1, delay: number = 0) => {
+      setTimeout(() => {
+        console.log(`Attempt ${attempt} to trigger Google Sign-In for:`, buttonId);
+        
+        // Method 1: Find the iframe and try to click it
+        const iframe = buttonContainer.querySelector('iframe') as HTMLIFrameElement;
+        if (iframe) {
+          console.log('Found iframe, attempting to click');
+          
+          try {
+            // Get iframe position for accurate click simulation
+            const rect = iframe.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            // Try direct click first
+            if (iframe.click && typeof iframe.click === 'function') {
+              iframe.click();
+              console.log('Called iframe.click()');
+            }
+            
+            // Also dispatch a click event at the center of the iframe
+            const clickEvent = new MouseEvent('click', {
+              view: window,
+              bubbles: true,
+              cancelable: true,
+              buttons: 1,
+              clientX: centerX,
+              clientY: centerY,
+              screenX: centerX,
+              screenY: centerY
+            });
+            iframe.dispatchEvent(clickEvent);
+            console.log('Dispatched click event on iframe at center');
+            
+            // Try mousedown + mouseup sequence
+            ['mousedown', 'mouseup'].forEach((eventType, index) => {
+              setTimeout(() => {
+                const evt = new MouseEvent(eventType, {
+                  view: window,
+                  bubbles: true,
+                  cancelable: true,
+                  buttons: eventType === 'mousedown' ? 1 : 0,
+                  clientX: centerX,
+                  clientY: centerY
+                });
+                iframe.dispatchEvent(evt);
+              }, index * 50);
+            });
+            
+          } catch (e) {
+            console.log('Error clicking iframe:', e);
+          }
+          return;
+        }
+        
+        // Method 2: Try to find and click the Google button div
+        const googleButton = buttonContainer.querySelector('div[role="button"], div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"]') as HTMLElement;
+        if (googleButton) {
+          console.log('Found Google button div, attempting to click');
+          try {
+            googleButton.click();
+            console.log('Called googleButton.click()');
+          } catch (e) {
+            console.log('Error clicking Google button:', e);
+          }
+          return;
+        }
+        
+        // Method 3: Try clicking any clickable element
+        const allClickable = buttonContainer.querySelectorAll('div, button, a');
+        for (let i = 0; i < allClickable.length; i++) {
+          const el = allClickable[i] as HTMLElement;
+          try {
+            if (el.click && typeof el.click === 'function') {
+              el.click();
+              console.log('Clicked element:', el.tagName, el.className);
+              return;
+            }
+          } catch (e) {
+            // Continue
+          }
+        }
+        
+        console.log('Could not find clickable element, retrying...');
+        if (attempt < 3) {
+          tryTriggerClick(attempt + 1, 200);
+        }
+      }, delay);
+    };
+
+    // Start trying immediately, then retry with delays
+    tryTriggerClick(1, 0);
   }
 
   constructor(
@@ -291,13 +463,17 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   }
 
    handleCredentialResponse(response: any) {
+    console.log('=== handleCredentialResponse CALLBACK TRIGGERED ===');
+    console.log('Response received:', response);
+    
     // JWT token from Google
     const idToken = response.credential;
-    console.log('Google ID Token:', idToken);
+    console.log('Google ID Token:', idToken ? 'Token present (' + idToken.substring(0, 20) + '...)' : 'No token');
 
     // IMPORTANT: run inside Angular zone
     this.zone.run(() => {
       // Send token to backend
+      console.log('Processing Google credential in Angular zone');
       this.handleCredential(response);
       // this.authService.googleLogin(idToken)
     });
