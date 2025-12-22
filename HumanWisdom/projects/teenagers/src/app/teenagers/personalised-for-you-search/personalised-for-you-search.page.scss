@@ -262,3 +262,40 @@ li:hover:before {
 .p-section{
     padding:0px 16px 10px 0px !important; 
   }
+
+  
+.odiv,
+.odiv_pathway,
+.odiv_wfgi,
+.ae_days {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #8a8a8a #2b2b2b;
+}
+.odiv:not(:hover),
+.odiv_pathway:not(:hover),
+.odiv_wfgi:not(:hover),
+.ae_days:not(:hover) {
+  scrollbar-color: transparent transparent;
+}
+.odiv::-webkit-scrollbar,
+.odiv_pathway::-webkit-scrollbar,
+.odiv_wfgi::-webkit-scrollbar,
+.ae_days::-webkit-scrollbar {
+  height: 2px;
+  border-radius: 6px;
+}
+.odiv::-webkit-scrollbar-thumb,
+.odiv_pathway::-webkit-scrollbar-thumb,
+.odiv_wfgi::-webkit-scrollbar-thumb,
+.ae_days::-webkit-scrollbar-thumb {
+  background-color: #8a8a8a;
+  border-radius: 6px;
+}
+.odiv::-webkit-scrollbar-track,
+.odiv_pathway::-webkit-scrollbar-track,
+.odiv_wfgi::-webkit-scrollbar-track,
+.ae_days::-webkit-scrollbar-track {
+  background-color: #2b2b2b;
+  border-radius: 10px;
+}
