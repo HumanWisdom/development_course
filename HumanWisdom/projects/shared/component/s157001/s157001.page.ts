@@ -14,7 +14,7 @@ import { TeenagersService } from '../../../teenagers/src/app/teenagers/teenagers
 export class S157001Page implements OnInit {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/wisdom_exercise.svg"
   tocColor="white"
-  @Input() isHome = false;
+  @Input() isHome = true;
   isGuest : boolean =  true;
    path = setTimeout(() => {
     return this.router.url;
