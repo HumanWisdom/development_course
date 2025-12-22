@@ -33811,7 +33811,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  /* color: #000000 !important; */
+  color: #000000 !important;
 }
 
 
@@ -33859,14 +33859,14 @@ body * {
 }
 
 .ta_forum_comment::-webkit-input-placeholder {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 140%;
   color: rgba(0, 0, 0, 0.50);
 }
 
 .ta_forum_comment {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 140%;
   color: #000;
