@@ -7,28 +7,52 @@
 }
 
 // .div-box img { position: absolute; top: 2px; right: 5px }
-.btn_forum_ask_a_gift,
-.btn_tfas {
+.btn_forum_ask_a_gift_1,
+.btn_tfas_1 {
     background-color: #D7586B;
     color: #ffffff;
     border-color: #D7586B;
     width: 100%;
-    border-radius: 28px;
     text-align: center;
     box-shadow: none !important;
+    height: 50px;
+    width: 100%;
+    border-radius: 100px;
+    box-shadow: 1px 1px 2px #00000040;
+    font-weight: 600;
+    line-height: 150%;
 }
-
-.btn_aan2{
-      background-color: #FFE8BB;
+.btn_forum_ask_a_gift_1{
+  width: 103px;
+  height: 30px;
+  border-radius: 100px;
+}
+.btn_aan2_1{
+    background-color: #FFE8BB;
     color: #000000;
     border-color: #FFE8BB;
-    border-radius: 28px;
+    border-radius: 100px;
     text-align: center;
     box-shadow: none !important;
     font-weight: 400;
     line-height: 150%;
+    height: 50px;
+    width: 154px;
+    font-size: 15px;
 }
 
+.btn_forum_ask_a_gift_1:hover,
+.btn_forum_ask_a_gift_1:active,
+.btn_forum_ask_a_gift_1:focus,
+.btn_forum_ask_a_gift_1:visited,
+.btn_forum_ask_a_gift_1:disabled,
+.btn_tfas_1:hover,
+.btn_tfas_1:active,
+.btn_tfas_1:focus {
+  background-color: #D7586B;
+  color: #ffffff;
+  border-color: #D7586B;
+}
 .btn_forum_ask_a_gift:hover,
 .btn_forum_ask_a_gift:active,
 .btn_forum_ask_a_gift:focus,
@@ -36,16 +60,26 @@
 .btn_forum_ask_a_gift:disabled,
 .btn_tfas:hover,
 .btn_tfas:active,
-.btn_tfas:focus {
-  background-color: #D7586B;
+.btn_tfas:focus{
+  background-color: #ffffff;
+  color: #e58d82;
+  border-color: #ffffff;
+}
+
+.btn_aan2:hover,
+.btn_aan2:active,
+.btn_aan2:focus,
+.btn_aan2:visited,
+.btn_aan2:disabled {
+  background-color: #e58d82;
   color: #ffffff;
-  border-color: #D7586B;
+  border-color: #e58d82;
 }
 a:hover{
   text-decoration: underline !important;
 }
 
-.sp_fc::placeholder {
+.sp_fc_1::placeholder {
   color: rgba(0,0,0,0.5);
   font-weight: 400;
 }
@@ -57,12 +91,15 @@ a:hover{
 
 .purple_banner {
   background-color: #803358;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
   padding: 20px;
   align-items: center;
   justify-content: center;
 }
 
-.sp_fc, select.sp_fc {
+.sp_fc_1, select.sp_fc_1 {
   background-color: #FFE8BB !important;
   border: 1px solid rgba(0, 0, 0, 0.25) !important;
   border-radius: 12px !important;
@@ -70,10 +107,9 @@ a:hover{
   padding-left: 20px !important;
   color: #000 !important;
   width: 100%;
-  margin-bottom: 10px;
 }
 
-select.sp_fc {
+select.sp_fc_1 {
   padding-right: 40px !important; /* Make room for arrow */
   appearance: none;
   -webkit-appearance: none;
@@ -93,6 +129,6 @@ select.sp_fc {
     margin-top: 20px;
 }
 
-  label.select_label:after{
+  label.select_label_1:after{
     color: #000 !important;
   }
