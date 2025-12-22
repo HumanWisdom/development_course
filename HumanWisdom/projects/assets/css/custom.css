@@ -6019,9 +6019,17 @@ input[type=radio] {
 .w100 {
   width: 100%;
   border-radius: 6px;
+  /* border: 1px solid rgba(0, 0, 0, 0.25);
+  height: 201px; */
 
 }
-
+.w100stress
+{
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  height: 201px;
+}
 .w100explore {
   width: 100%;
   border-radius: 12px;
@@ -33027,6 +33035,7 @@ body * {
   background: #FFE8BB;
   padding: 15px !important;
   margin-bottom: 10px;
+  height: 306px;
 }
 
 .fbns {
