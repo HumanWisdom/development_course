@@ -910,46 +910,95 @@
         display: block;
       }
 
-      /* Reduce close button size */
+      /* Modal header positioning for close button */
+      .modal-content1 .modal-header,
+      .product_view .modal-header {
+        position: relative !important;
+      }
+
+      .modal-content1 .modal-header .row,
+      .product_view .modal-header .row {
+        position: relative !important;
+      }
+
+      /* Close button size for mobile */
       .modal-content1 #closebtn,
       .product_view #closebtn {
-        width: 20px !important;
-        height: 20px !important;
+        width: 48px !important;
+        height: 48px !important;
         padding: 0 !important;
-        border-radius: 10px !important;
+        border-radius: 24px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         box-sizing: border-box;
-        min-width: 20px !important;
-        min-height: 20px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        z-index: 1000 !important;
+        background-color: transparent !important;
+        cursor: pointer !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      .modal-content1 #closebtn.pull-right,
+      .product_view #closebtn.pull-right {
+        float: none !important;
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
       }
 
       .modal-content1 #closebtn img,
       .product_view #closebtn img {
-        width: 10px !important;
-        height: 10px !important;
+        width: 32px !important;
+        height: 32px !important;
         object-fit: contain;
         margin: 0;
-        max-width: 10px !important;
-        max-height: 10px !important;
+        max-width: 32px !important;
+        max-height: 32px !important;
+        display: block !important;
       }
 
       .modal-content1 #closebtn .bi-x,
       .product_view #closebtn .bi-x,
       .modal-content1 #closebtn h2,
       .product_view #closebtn h2 {
-        width: 10px !important;
-        height: 10px !important;
-        font-size: 10px !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 32px !important;
         line-height: 1 !important;
         margin: 0 !important;
         padding: 0 !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 10px !important;
-        min-height: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        max-width: 32px !important;
+        max-height: 32px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      .modal-content1 #closebtn h2.bi-x,
+      .product_view #closebtn h2.bi-x {
+        font-size: 32px !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        max-width: 32px !important;
+        max-height: 32px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
 
       .modal-content1 .tcenter {
