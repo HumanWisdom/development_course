@@ -9,6 +9,8 @@ export const environment = {
   appleSignInAPIAdults:"https://staging.humanwisdom.info/api/verifyAppleToken_htmlAdults",
   appleSignInAPITeenagers:"https://staging.humanwisdom.info/api/verifyAppleToken_htmlTeens",
   appleSignInHtmlLocal:"https://staging.humanwisdom.info/api/verifyAppleToken_htmlLocal",
+  googleClientId: "907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com",
+  facebookAppId: "238869214957032",
   stripeKey: "pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl",
   firebase: {
     apiKey: "AIzaSyD4ll7dKbi1JtHBr7Raqmgpz_Xve2bDDX0",

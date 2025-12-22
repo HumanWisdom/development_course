@@ -5,6 +5,8 @@ export const environment = {
   appleSignInAPIAdults:"https://www.humanwisdom.info/api/verifyAppleToken_htmlAdults",
   appleSignInAPITeenagers:"https://www.humanwisdom.info/api/verifyAppleToken_htmlTeens",
   appleSignInHtmlLocal:"",
+  googleClientId: "907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com",
+   facebookAppId: "238869214957032",
   stripeKey: "pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a",
   firebase: {
     apiKey: "AIzaSyBvrX8WpyA4YoqdzwhNOmCG4tDP34_92Nc",

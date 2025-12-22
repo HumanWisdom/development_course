@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import 'bcswipe';
 import { UntypedFormBuilder } from '@angular/forms';
-import { SocialAuthService, GoogleLoginProvider, FacebookLoginProvider, } from '@abacritt/angularx-social-login';
 import { LogEventService } from '../../services/log-event.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
@@ -85,7 +84,6 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     public logeventservice: LogEventService,
     private fb: UntypedFormBuilder,
     private activate: ActivatedRoute,
-    private authService: SocialAuthService,
     private aservice: AdultsService,
     private onservice: OnboardingService
   ) { }
@@ -429,7 +427,10 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
   }
 
-  private VerifyGoogle() {
+  //private VerifyGoogle() {
+    // Method removed - no longer using angularx-social-login
+    // All code below commented out as it depends on angularx-social-login
+    /*
     this.authService.authState.subscribe(
       (user) => {
         this.user = user;
@@ -586,20 +587,20 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
                         localStorage.setItem(
                           "signupfirst", 'F'
                         );
-                        /* if(SharedService.ProgramId === 9) {
-                          this.router.navigate(["/adults/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        }else if(SharedService.ProgramId === 11) {
-                          // window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        } */
+                        // if(SharedService.ProgramId === 9) {
+                        //   this.router.navigate(["/adults/change-topic"], {
+                        //     state: {
+                        //       routedFromLogin: true,
+                        //     }
+                        //   });
+                        // }else if(SharedService.ProgramId === 11) {
+                        //   // window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                        //   this.router.navigate(["/teenagers/change-topic"], {
+                        //     state: {
+                        //       routedFromLogin: true,
+                        //     }
+                        //   });
+                        // }
                         this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
                           state: {
                             routedFromLogin: true,
@@ -608,30 +609,30 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
 
                       }
                       else {
-                        /* if(SharedService.ProgramId === 9) {
-                          this.router.navigate(["/adults/repeat-user"]);
-                        }else if(SharedService.ProgramId === 11) {
-                       //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        }
-                        } */
+                        // if(SharedService.ProgramId === 9) {
+                        //   this.router.navigate(["/adults/repeat-user"]);
+                        // }else if(SharedService.ProgramId === 11) {
+                        //   //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                        //   this.router.navigate(["/teenagers/change-topic"], {
+                        //     state: {
+                        //       routedFromLogin: true,
+                        //     }
+                        //   });
+                        // }
+                        // }
 
                         this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
                       }
                     }
                   }
 
-                  /* if(this.urlEmail)
-                  {
-                    this.service.verifyUser(this.userId)
-                    .subscribe(res=>{
-
-                    })
-                  }*/
+                  // if(this.urlEmail)
+                  // {
+                  //   this.service.verifyUser(this.userId)
+                  //   .subscribe(res=>{
+                  //
+                  //   })
+                  // }
                 }
               }
             }
@@ -643,7 +644,8 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
       }
     );
-  }
+    */
+  //}
 
   Logevent(route, params, evtName) {
     if (evtName === 'click_next_onboarding') {
@@ -694,195 +696,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       this.logeventservice.logEvent('google_signup');
     else
       this.logeventservice.logEvent('google_login');
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe(
-      (user) => {
-        this.user = user;
-        this.idToken = user.idToken;
-        this.socialFirstName = user.firstName;
-        this.socialLastName = user.lastName;
-        this.socialEmail = user.email;
-
-        this.onservice
-          .verifyGoogle({
-            TokenID: this.idToken,
-            FName: this.socialFirstName,
-            LName: this.socialLastName,
-            Email: this.socialEmail,
-            VCode: "",
-            Pwd: "",
-          })
-          .subscribe((res) => {
-            if (res) {
-              this.loginResponse = res;
-              localStorage.setItem("guest", "F");
-              localStorage.setItem("remember", "T");
-              localStorage.setItem("socialLogin", "T");
-              localStorage.setItem(
-                "mediaAudio",
-                JSON.stringify(this.mediaAudio)
-              );
-              localStorage.setItem(
-                "mediaVideo",
-                JSON.stringify(this.mediaVideo)
-              );
-              localStorage.setItem("video", JSON.stringify(this.video));
-              localStorage.setItem("audio", JSON.stringify(this.audio));
-              localStorage.setItem("btnclick", "F");
-              localStorage.setItem(
-                "loginResponse",
-                JSON.stringify(this.loginResponse)
-              );
-              sessionStorage.setItem(
-                "loginResponse",
-                JSON.stringify(this.loginResponse)
-              );
-              localStorage.setItem(
-                "token",
-                JSON.stringify(this.loginResponse.access_token)
-              );
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-              localStorage.setItem("userId", JSON.stringify(this.userId));
-              localStorage.setItem("email", this.socialEmail);
-              localStorage.setItem("FnName", this.socialFirstName);
-              localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-              localStorage.setItem("LName", this.socialLastName);
-              localStorage.setItem("pswd", "");
-              localStorage.setItem("name", this.loginResponse.Name);
-              localStorage.setItem("first", "T");
-              if (parseInt(this.loginResponse.UserId) == 0) {
-                this.showAlert = true;
-                this.content = "You have entered wrong credentials. Please try again.";
-                this.enableAlert = true;
-                this.email = "";
-                this.password = "";
-              } else {
-                this.showAlert = false;
-                this.userId = this.loginResponse.UserId;
-                this.userName = this.loginResponse.Name;
-                localStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                sessionStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                localStorage.setItem("userId", JSON.stringify(this.userId));
-                localStorage.setItem(
-                  "token",
-                  JSON.stringify(this.loginResponse.access_token)
-                );
-                if (this.saveUsername == true) {
-                  localStorage.setItem("userId", JSON.stringify(this.userId));
-                  localStorage.setItem(
-                    "userEmail",
-                    JSON.stringify(this.socialEmail)
-                  );
-                  localStorage.setItem(
-                    "userName",
-                    JSON.stringify(this.userName)
-                  );
-                } else {
-                  sessionStorage.setItem("userId", JSON.stringify(this.userId));
-                  sessionStorage.setItem(
-                    "userEmail",
-                    JSON.stringify(this.socialEmail)
-                  );
-                  sessionStorage.setItem(
-                    "userName",
-                    JSON.stringify(this.userName)
-                  );
-                }
-
-                let pers = localStorage.getItem("personalised");
-                let persub = localStorage.getItem("personalised subscription");
-                let acceptCookie = localStorage.getItem("activeCode");
-                let subscribePage = localStorage.getItem("subscribepage");
-                let option = localStorage.getItem("introoption");
-                let giftwisdom = localStorage.getItem("giftwisdom");
-                const url = SharedService.UrlToRedirect;
-                if (url != null) {
-                  SharedService.UrlToRedirect = null;
-                  this.router.navigate([url]);
-                }
-                else if (option === "T") {
-                  localStorage.setItem("introoption", "F");
-                  localStorage.setItem("isloggedin", "T");
-                  this.router.navigate(["/intro/personalised-for-you"]);
-                } else {
-                  if (acceptCookie === "T" || subscribePage === "T") {
-                    localStorage.setItem("isloggedin", "T");
-                    if (acceptCookie === "T") {
-                      localStorage.setItem("activeCode", "F");
-                    }
-                    if (subscribePage === "T") {
-                      localStorage.setItem("subscribepage", "F");
-                    }
-                    if (giftwisdom === 'T') {
-                      this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else if (this.loginResponse.Subscriber === 0) {
-                      this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else {
-                      this.router.navigate(["/onboarding/viewcart"])
-                    }
-                  } else {
-                    localStorage.setItem("isloggedin", "T");
-                    if (pers && persub && pers === "T") {
-                      this.router.navigate(["/onboarding/viewcart"], {
-                        state: { quan: "1", plan: persub },
-                      });
-                    } else {
-                      localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if (this.loginResponse?.NoOfVisits === 1) {
-                        localStorage.setItem(
-                          "signupfirst", 'F'
-                        );
-                        if (this.isAdults) {
-                          this.router.navigate(["/adults/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        } else {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        }
-
-                      } else {
-                        if (this.isAdults) {
-                          this.router.navigate(["/adults/repeat-user"]);
-
-                        } else {
-                          this.router.navigate(["/teenagers/repeat-user"]);
-
-                        }
-
-                      }
-                    }
-                  }
-                }
-
-                /* if(this.urlEmail)
-                {
-                  this.service.verifyUser(this.userId)
-                  .subscribe(res=>{
-
-                  })
-                }*/
-              }
-            }
-          });
-      },
-      (error) => console.log(error),
-      () => {
-        //this.router.navigate[('/onboarding/addcart')]
-        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
-      }
-    );
+    // Method removed - no longer using angularx-social-login
+    // TODO: Implement Google login using Google Sign-In API or alternative method
+    console.log('Google login - angularx-social-login removed');
   }
 
   fbLogin(reqtype) {
@@ -891,200 +707,15 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     else
       this.logeventservice.logEvent('facebook_login');
 
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this.authService.authState.subscribe((user) => {
-      // this.user = user;
-      this.user = user;
-      this.idToken = user.authToken;
-      this.socialFirstName = user.firstName;
-      this.socialLastName = user.lastName;
-      this.socialEmail = user.email;
-      if (user.email !== undefined) {
-        this.onservice
-          .verifyFb({
-            TokenID: this.idToken,
-            FName: this.socialFirstName,
-            LName: this.socialLastName,
-            Email: this.socialEmail,
-            VCode: "",
-            Pwd: "",
-          })
-          .subscribe((res) => {
-            if (res) {
-
-
-              this.loginResponse = res;
-              localStorage.setItem("socialLogin", "T");
-              localStorage.setItem(
-                "mediaAudio",
-                JSON.stringify(this.mediaAudio)
-              );
-              localStorage.setItem(
-                "mediaVideo",
-                JSON.stringify(this.mediaVideo)
-              );
-              localStorage.setItem("video", JSON.stringify(this.video));
-              localStorage.setItem("audio", JSON.stringify(this.audio));
-              localStorage.setItem("remember", "T");
-              localStorage.setItem("guest", "F");
-              localStorage.setItem("btnclick", "F");
-              localStorage.setItem("FnName", this.socialFirstName);
-              localStorage.setItem("LName", this.socialLastName);
-              localStorage.setItem(
-                "loginResponse",
-                JSON.stringify(this.loginResponse)
-              );
-              sessionStorage.setItem(
-                "loginResponse",
-                JSON.stringify(this.loginResponse)
-              );
-              localStorage.setItem(
-                "token",
-                JSON.stringify(this.loginResponse.access_token)
-              );
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-              localStorage.setItem("userId", JSON.stringify(this.userId));
-              localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-              localStorage.setItem("email", this.socialEmail);
-              localStorage.setItem("pswd", "");
-              localStorage.setItem("name", this.loginResponse.Name);
-              localStorage.setItem("first", "T");
-              if (parseInt(this.loginResponse.UserId) == 0) {
-                this.showAlert = true;
-                this.content = "You have entered wrong credentials. Please try again.";
-                this.enableAlert = true;
-                this.email = "";
-                this.password = "";
-              } else {
-                this.showAlert = false;
-                this.userId = this.loginResponse.UserId;
-                this.userName = this.loginResponse.Name;
-                localStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                sessionStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                localStorage.setItem("userId", JSON.stringify(this.userId));
-                localStorage.setItem(
-                  "token",
-                  JSON.stringify(this.loginResponse.access_token)
-                );
-                if (this.saveUsername == true) {
-                  localStorage.setItem("userId", JSON.stringify(this.userId));
-                  localStorage.setItem(
-                    "userEmail",
-                    JSON.stringify(this.socialEmail)
-                  );
-                  localStorage.setItem(
-                    "userName",
-                    JSON.stringify(this.userName)
-                  );
-                } else {
-                  sessionStorage.setItem("userId", JSON.stringify(this.userId));
-                  sessionStorage.setItem(
-                    "userEmail",
-                    JSON.stringify(this.socialEmail)
-                  );
-                  sessionStorage.setItem(
-                    "userName",
-                    JSON.stringify(this.userName)
-                  );
-                }
-
-                let pers = localStorage.getItem("personalised");
-                let persub = localStorage.getItem("personalised subscription");
-                let acceptCookie = localStorage.getItem("activeCode");
-                let subscribePage = localStorage.getItem("subscribepage");
-                let option = localStorage.getItem("introoption");
-                let giftwisdom = localStorage.getItem("giftwisdom");
-                const url = SharedService.UrlToRedirect;
-                if (url != null) {
-                  SharedService.UrlToRedirect = null;
-                  this.router.navigate([url]);
-                }
-                else if (option === "T") {
-                  localStorage.setItem("introoption", "F");
-                  localStorage.setItem("isloggedin", "T");
-                  this.router.navigate(["/intro/personalised-for-you"]);
-                } else {
-                  if (acceptCookie === "T" || subscribePage === "T") {
-                    localStorage.setItem("isloggedin", "T");
-                    if (acceptCookie === "T") {
-                      localStorage.setItem("activeCode", "F");
-                    }
-                    if (subscribePage === "T") {
-                      localStorage.setItem("subscribepage", "F");
-                    }
-                    if (giftwisdom === 'T') {
-                      this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else if (this.loginResponse.Subscriber === 0) {
-                      this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else {
-                      this.router.navigate(["/onboarding/viewcart"])
-                    }
-                  } else {
-                    localStorage.setItem("isloggedin", "T");
-                    if (pers && persub && pers === "T") {
-                      this.router.navigate(["/onboarding/viewcart"], {
-                        state: { quan: "1", plan: persub },
-                      });
-                    } else {
-                      localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if (this.loginResponse?.NoOfVisits === 1) {
-                        localStorage.setItem(
-                          "signupfirst", 'F'
-                        );
-                        if (this.isAdults) {
-                          this.router.navigate(["/adults/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-                        } else {
-                          this.router.navigate(["/teenagers/change-topic"], {
-                            state: {
-                              routedFromLogin: true,
-                            }
-                          });
-
-                        }
-
-                      } else {
-                        if (this.isAdults) {
-                          this.router.navigate(["/adults/repeat-user"]);
-
-                        } else {
-                          this.router.navigate(["/teenagers/repeat-user"]);
-
-                        }
-                      }
-                    }
-                  }
-                }
-
-                /* if(this.urlEmail)
-                  {
-                    this.service.verifyUser(this.userId)
-                    .subscribe(res=>{
-
-                    })
-                  }*/
-              }
-            }
-          });
-      } else {
-        this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
-        this.enableAlert = true;
-      }
-    });
+    // Method removed - no longer using angularx-social-login
+    // TODO: Implement Facebook login using Facebook SDK or alternative method
+    console.log('Facebook login - angularx-social-login removed');
   }
-   routetoUrl(url){
+
+  routetoUrl(url){
   
       // this.router.navigate(["/" + SharedService.getprogramName() + url]);
-      window.open("/" + SharedService.getprogramName() + url,"_blank")
+      window.open("/" + SharedService.getprogramName() + url,"_blank");
     }
 
   signInWithApple(reqtype) {
@@ -1105,3 +736,4 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
 }
+

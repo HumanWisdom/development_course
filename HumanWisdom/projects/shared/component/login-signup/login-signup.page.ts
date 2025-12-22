@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from "@angular/core";
+import { Component, ElementRef, NgZone, OnInit, AfterViewInit, Renderer2, ViewChild } from "@angular/core";
 import { AbstractControl, NgForm, UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { PlatformModule } from '@angular/cdk/platform';
@@ -13,20 +13,24 @@ import { SharedModule } from "../../shared.module";
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from "ng-recaptcha";
 import { Constant } from "../../services/constant";
 import { CommonService } from "../../services/common.service";
+import { ProgramType } from "../../models/program-model";
 declare var $: any;
+declare var google: any;
+declare var FB: any;
 @Component({
   selector: "app-common-login",
-  imports: [CommonModule,
+  imports: [ CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
     PlatformModule,
     RecaptchaModule,
+
     RecaptchaFormsModule,
     SharedModule],
   standalone: true,
   providers: [
-
+    
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
@@ -37,7 +41,7 @@ declare var $: any;
   templateUrl: "./login-signup.page.html",
   styleUrls: ["./login-signup.page.scss"],
 })
-export class LoginSignupPage implements OnInit {
+export class LoginSignupPage implements OnInit, AfterViewInit {
   //static progress mapping
   mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
   mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
@@ -70,6 +74,7 @@ export class LoginSignupPage implements OnInit {
   showButton = true;
   enableLogin = false;
   scrId: any;
+  hideSocial = false;
   x = [];
   isSignUp = true;
   value: number = 100;
@@ -128,12 +133,311 @@ export class LoginSignupPage implements OnInit {
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
 
+
+  ngAfterViewInit(): void {
+    // Load Google Sign-In script if not already loaded
+    this.loadGoogleSignInScript().then(() => {
+      if (typeof google !== 'undefined' && google.accounts) {
+        // Initialize Google Identity Services
+        google.accounts.id.initialize({
+          client_id: environment.googleClientId,
+          callback: (response: any) => this.handleCredentialResponse(response),
+        });
+         this.hideSocial = true;
+        // Render Google buttons safely (will skip if already rendered)
+        this.renderGoogleButtonSafely('googleBtnSignup');
+        this.renderGoogleButtonSafely('googleBtnLogin');
+      }
+    }).catch((error) => {
+      console.error('Failed to load Google Sign-In:', error);
+    });
+  }
+
+  private renderGoogleButtonSafely(buttonId: string): void {
+    // Wait a bit to ensure DOM is ready (especially after tab switches)
+    setTimeout(() => {
+      const buttonContainer = document.getElementById(buttonId);
+      if (!buttonContainer) {
+        // Element doesn't exist (likely hidden by *ngIf), skip rendering
+        return;
+      }
+
+      // Check if button is already rendered by looking for Google button elements
+      const hasExistingButton = buttonContainer.querySelector('div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"], div[role="button"]');
+      
+      // If button already exists, don't re-render
+      if (hasExistingButton) {
+        return;
+      }
+
+      // Ensure Google API is available
+      if (typeof google === 'undefined' || !google.accounts || !google.accounts.id) {
+        console.warn(`Google Sign-In API not available when trying to render ${buttonId}`);
+        return;
+      }
+
+      // Clear container before rendering (in case of any leftover content)
+      buttonContainer.innerHTML = '';
+
+      // Render the button
+      try {
+        google.accounts.id.renderButton(buttonContainer, {
+          type: 'icon',
+          theme: 'outline',
+          size: 'large',
+        });
+        // Style the button after rendering
+        setTimeout(() => {
+          this.styleGoogleButton(buttonId);
+        }, 100);
+      } catch (error) {
+        console.error(`Error rendering Google button ${buttonId}:`, error);
+      }
+    }, 50);
+  }
+
+  private styleGoogleButton(buttonId: string): void {
+    const buttonContainer = document.getElementById(buttonId);
+    if (buttonContainer) {
+      // Wait a bit more for Google button to fully render
+      setTimeout(() => {
+        // Find the Google button element (it's usually a div with class containing 'abcRioButton' or 'gsi')
+        const googleButton = buttonContainer.querySelector('div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"], div[role="button"]') as HTMLElement;
+        if (googleButton) {
+          // Hide the Google button but keep it functional
+          buttonContainer.style.position = 'relative';
+          googleButton.style.opacity = '0';
+          googleButton.style.position = 'absolute';
+          googleButton.style.pointerEvents = 'auto';
+          googleButton.style.width = '100%';
+          googleButton.style.height = '100%';
+          googleButton.style.zIndex = '1';
+          // Remove default Google button styling
+          googleButton.style.background = 'transparent';
+          googleButton.style.border = 'none';
+          googleButton.style.borderWidth = '0';
+          googleButton.style.outline = 'none';
+          googleButton.style.boxShadow = 'none';
+          googleButton.style.padding = '0';
+          googleButton.style.margin = '0';
+          googleButton.style.width = '100%';
+          googleButton.style.height = '100%';
+          googleButton.style.display = 'flex';
+          googleButton.style.alignItems = 'center';
+          googleButton.style.justifyContent = 'center';
+          googleButton.style.minWidth = 'auto';
+          googleButton.style.minHeight = 'auto';
+          
+          // Remove border on focus/active/hover
+          googleButton.addEventListener('focus', () => {
+            googleButton.style.border = 'none';
+            googleButton.style.outline = 'none';
+            googleButton.style.boxShadow = 'none';
+          });
+          
+          // Style the icon inside
+          const icon = googleButton.querySelector('svg, img, [class*="icon"], [class*="Icon"]') as HTMLElement;
+          if (icon) {
+            icon.style.width = '100%';
+            icon.style.height = 'auto';
+            icon.style.maxWidth = '100%';
+            icon.style.display = 'block';
+          }
+          
+          // Also style any nested divs
+          const nestedDivs = googleButton.querySelectorAll('div');
+          nestedDivs.forEach((div: HTMLElement) => {
+            div.style.background = 'transparent';
+            div.style.border = 'none';
+            div.style.borderWidth = '0';
+            div.style.outline = 'none';
+            div.style.boxShadow = 'none';
+          });
+          
+          // Style the wrapper button
+          const wrapper = document.getElementById(buttonId + 'Wrapper');
+          if (wrapper) {
+            wrapper.style.border = 'none';
+            wrapper.style.borderWidth = '0';
+            wrapper.style.outline = 'none';
+            
+            // Apply conditional color filter based on ProgramId
+            // Adults (ProgramId 9) = white, Teenagers (ProgramId 11) = red
+            if (SharedService.ProgramId === ProgramType.Adults) {
+              // White filter: brightness(0) invert(1)
+                wrapper.style.backgroundColor = 'none !important';
+            } else if (SharedService.ProgramId === ProgramType.Teenagers) {
+              // Red filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)
+              wrapper.style.backgroundColor = 'none !important';
+            }
+          }
+          
+          // Also apply filter to the iframe if it exists (Google button is rendered in iframe)
+          const iframe = buttonContainer.querySelector('iframe') as HTMLIFrameElement;
+          if (iframe) {
+            // Function to get container-div by ID and remove background color and border
+            const styleContainerDiv = () => {
+              try {
+                const iframeDoc = iframe.contentDocument || (iframe.contentWindow as any)?.document;
+                if (iframeDoc) {
+                  const containerDiv = iframeDoc.getElementById('container-div');
+                  if (containerDiv) {
+                    // Remove background color and border
+                    (containerDiv as HTMLElement).style.background = 'none';
+                    (containerDiv as HTMLElement).style.backgroundColor = 'transparent';
+                    (containerDiv as HTMLElement).style.border = 'none';
+                    (containerDiv as HTMLElement).style.borderWidth = '0';
+                    (containerDiv as HTMLElement).style.borderStyle = 'none';
+                    
+                    // Inject CSS to ensure styles persist
+                    if (!iframeDoc.getElementById('container-div-styles')) {
+                      const style = iframeDoc.createElement('style');
+                      style.id = 'container-div-styles';
+                      style.textContent = '#container-div { background: none !important; background-color: transparent !important; border: none !important; border-width: 0 !important; border-style: none !important; }';
+                      iframeDoc.head.appendChild(style);
+                    }
+                  }
+                }
+              } catch (e) {
+                // Cross-origin restriction - cannot access iframe content
+                console.log('Cannot access iframe content (cross-origin restriction)');
+              }
+            };
+            
+            // Try to style when iframe loads
+            iframe.onload = () => setTimeout(styleContainerDiv, 100);
+            // Also try after delays in case iframe is already loaded
+            setTimeout(styleContainerDiv, 500);
+            setTimeout(styleContainerDiv, 1000);
+            
+            if (SharedService.ProgramId === ProgramType.Adults) {
+              // White filter for adults
+            //  iframe.style.filter = 'brightness(0) invert(1)';
+            } else if (SharedService.ProgramId === ProgramType.Teenagers) {
+              // Red filter for teenagers
+             wrapper.style.backgroundColor = 'none !important';
+            }
+          }
+        }
+      }, 200);
+    }
+  }
+
+  // Trigger Google Sign-In by clicking the hidden button
+  triggerGoogleSignIn(buttonId: string, event?: Event): void {
+    console.log('=== triggerGoogleSignIn called ===', buttonId);
+    
+    // Prevent default but don't stop propagation - let it bubble to hidden button
+    if (event) {
+      event.preventDefault();
+    }
+    
+    const buttonContainer = document.getElementById(buttonId);
+    if (!buttonContainer) {
+      console.log('Button container not found:', buttonId);
+      return;
+    }
+
+    // Function to try triggering the click with retries
+    const tryTriggerClick = (attempt: number = 1, delay: number = 0) => {
+      setTimeout(() => {
+        console.log(`Attempt ${attempt} to trigger Google Sign-In for:`, buttonId);
+        
+        // Method 1: Find the hidden button and temporarily enable it, then click
+        const hiddenButton = buttonContainer.querySelector('.google-button-hidden') as HTMLElement;
+        if (hiddenButton) {
+          console.log('Found hidden button, attempting to click');
+          
+          try {
+            // Temporarily enable pointer events and make visible
+            const originalPointerEvents = hiddenButton.style.pointerEvents;
+            const originalOpacity = hiddenButton.style.opacity;
+            
+            hiddenButton.style.pointerEvents = 'auto';
+            hiddenButton.style.opacity = '1';
+            hiddenButton.style.zIndex = '20';
+            
+            // Find the iframe inside
+            const iframe = hiddenButton.querySelector('iframe') as HTMLIFrameElement;
+            if (iframe) {
+              iframe.style.pointerEvents = 'auto';
+              
+              // Get the center position
+              const rect = hiddenButton.getBoundingClientRect();
+              const centerX = rect.left + rect.width / 2;
+              const centerY = rect.top + rect.height / 2;
+              
+              // Try clicking the hidden button directly
+              hiddenButton.click();
+              console.log('Called hiddenButton.click()');
+              
+              // Also dispatch click events
+              const clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true,
+                buttons: 1,
+                clientX: centerX,
+                clientY: centerY
+              });
+              
+              hiddenButton.dispatchEvent(clickEvent);
+              iframe.dispatchEvent(clickEvent);
+              
+              // Restore styles after a delay
+              setTimeout(() => {
+                hiddenButton.style.pointerEvents = originalPointerEvents || 'none';
+                hiddenButton.style.opacity = originalOpacity || '0';
+                hiddenButton.style.zIndex = '1';
+                if (iframe) {
+                  iframe.style.pointerEvents = 'none';
+                }
+              }, 300);
+              
+              return;
+            }
+          } catch (e) {
+            console.log('Error clicking hidden button:', e);
+          }
+        }
+        
+        // Method 2: Try to find and click the Google button div
+        const googleButton = buttonContainer.querySelector('div[role="button"], div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"]') as HTMLElement;
+        if (googleButton) {
+          console.log('Found Google button div, attempting to click');
+          try {
+            googleButton.style.pointerEvents = 'auto';
+            googleButton.style.opacity = '1';
+            googleButton.click();
+            console.log('Called googleButton.click()');
+            
+            setTimeout(() => {
+              googleButton.style.pointerEvents = 'none';
+              googleButton.style.opacity = '0';
+            }, 200);
+          } catch (e) {
+            console.log('Error clicking Google button:', e);
+          }
+          return;
+        }
+        
+        console.log('Could not find clickable element, retrying...');
+        if (attempt < 3) {
+          tryTriggerClick(attempt + 1, 200);
+        }
+      }, delay);
+    };
+
+    // Start trying immediately
+    tryTriggerClick(1, 0);
+  }
+
   constructor(
+    private zone: NgZone,
     private fb: UntypedFormBuilder,
     private router: Router,
     public logeventservice: LogEventService,
     private activate: ActivatedRoute,
-  //  private authService: SocialAuthService,
     private service: OnboardingService,
     private navigtionService: NavigationService,
     private renderer: Renderer2, private el: ElementRef,
@@ -141,7 +445,7 @@ export class LoginSignupPage implements OnInit {
   ) {
     this.loadRecaptchaScript();
     this.initializeRegistrationForm();
-    this.VerifyGoogle();
+    this.loadFacebookSDK();
     // let acceptCookie = localStorage.getItem('acceptcookie');
     // if(acceptCookie === null)
     //   this.router.navigate(['/adults/help-support/cookie-policy'])
@@ -159,6 +463,23 @@ export class LoginSignupPage implements OnInit {
     });
     localStorage.setItem("remember", "T");
     localStorage.setItem("firsttime", "T");
+  }
+
+   handleCredentialResponse(response: any) {
+    console.log('=== handleCredentialResponse CALLBACK TRIGGERED ===');
+    console.log('Response received:', response);
+    
+    // JWT token from Google
+    const idToken = response.credential;
+    console.log('Google ID Token:', idToken ? 'Token present (' + idToken.substring(0, 20) + '...)' : 'No token');
+
+    // IMPORTANT: run inside Angular zone
+    this.zone.run(() => {
+      // Send token to backend
+      console.log('Processing Google credential in Angular zone');
+      this.handleCredential(response);
+      // this.authService.googleLogin(idToken)
+    });
   }
 
   loadRecaptchaScript() {
@@ -192,6 +513,7 @@ export class LoginSignupPage implements OnInit {
       this.isSignUp = false;
     }
   }
+
 
   forbiddenNameValidator(
     control: AbstractControl
@@ -318,140 +640,373 @@ export class LoginSignupPage implements OnInit {
       this.logeventservice.logEvent('google_signup');
     else
       this.logeventservice.logEvent('google_login');
-  //  this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-
+    
+    this.handleGoogleSignIn();
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.loadGoogleScript();
-    }, 1000);
-  }
-
-  getDisplay() {
-    if (!this.renderGoogle) {
-      return 'display:none;'
+  private handleGoogleSignIn(): void {
+    // Ensure Google script is loaded
+    if (typeof google === 'undefined' || !google.accounts) {
+      this.loadGoogleSignInScript()
+        .then(() => {
+          this.initializeGoogleSignIn();
+        })
+        .catch((error) => {
+          console.error('Failed to load Google Sign-In:', error);
+          this.content = "Google Sign-In is not available. Please refresh the page.";
+          this.enableAlert = true;
+        });
+    } else {
+      this.initializeGoogleSignIn();
     }
   }
 
-  private loadGoogleScript(): void {
-    this.renderButton();
-  }
+  private initializeGoogleSignIn(): void {
+    if (typeof google === 'undefined' || !google.accounts) {
+      this.content = "Google Sign-In is not available. Please refresh the page.";
+      this.enableAlert = true;
+      return;
+    }
 
-  private renderButton(): void {
-    const gapi = (window as any).gapi;
-    if (gapi) {
-      gapi.signin2.render('my-signin2', {
-        scope: 'profile email',
-        width: 38,
-        height: 38,
-        longtitle: false,
-        theme: 'dark',
-        onsuccess: this.onSuccess.bind(this),
-        onfailure: this.onFailure.bind(this)
+    try {
+      // Initialize Google Identity Services
+      google.accounts.id.initialize({
+        client_id: environment.googleClientId,
+        callback: this.handleCredentialResponse.bind(this),
+        auto_select: false,
+        cancel_on_tap_outside: true
       });
+
+      // Prompt the user to sign in
+      google.accounts.id.prompt((notification: any) => {
+        if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+          // One Tap not available, use button flow instead
+          this.showGoogleSignInButton();
+        }
+      });
+    } catch (error) {
+      console.error('Error initializing Google Sign-In:', error);
+      this.showGoogleSignInButton();
     }
-    this.renderGoogle = true;
   }
 
-  private onSuccess(googleUser: any): void {
-    console.log('Logged in as: ' + googleUser);
-    this.idToken = googleUser.getAuthResponse().id_token;
-    this.socialFirstName = googleUser.getBasicProfile().getGivenName();
-    this.socialLastName = googleUser.getBasicProfile().getFamilyName()
-    this.socialEmail = googleUser.getBasicProfile().getEmail()
-    this.service
-      .verifyGoogle({
+  private showGoogleSignInButton(): void {
+    if (typeof google === 'undefined' || !google.accounts) {
+      this.content = "Google Sign-In is not available. Please refresh the page.";
+      this.enableAlert = true;
+      return;
+    }
+
+    // Create overlay for button
+    const overlay = document.createElement('div');
+    overlay.id = 'google-signin-overlay';
+    overlay.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `;
+    
+    const container = document.createElement('div');
+    container.id = 'google-signin-container';
+    container.style.cssText = `
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      min-width: 300px;
+      text-align: center;
+      position: relative;
+    `;
+    
+    // Close button
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '×';
+    closeBtn.style.cssText = `
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #666;
+      line-height: 1;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+    `;
+    closeBtn.onclick = () => {
+      if (document.body.contains(overlay)) {
+        document.body.removeChild(overlay);
+      }
+    };
+    container.appendChild(closeBtn);
+    
+    overlay.appendChild(container);
+    document.body.appendChild(overlay);
+
+    // Close on outside click
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        document.body.removeChild(overlay);
+      }
+    });
+
+    // Render Google button
+    setTimeout(() => {
+      try {
+        google.accounts.id.renderButton(container, {
+          type: 'standard',
+          theme: 'outline',
+          size: 'large',
+          text: 'signin_with',
+          width: '250'
+        });
+      } catch (error) {
+        console.error('Error rendering Google button:', error);
+        if (document.body.contains(overlay)) {
+          document.body.removeChild(overlay);
+        }
+        this.content = "Google Sign-In failed to initialize. Please refresh the page.";
+        this.enableAlert = true;
+      }
+    }, 100);
+  }
+
+  private handleCredential(response: any): void {
+    // Close overlay if exists
+
+    try {
+      // Decode JWT to get user information
+      const payload = this.decodeJwt(response.credential);
+      this.idToken = response.credential;
+      this.socialFirstName = payload.given_name || '';
+      this.socialLastName = payload.family_name || '';
+      this.socialEmail = payload.email || '';
+
+      if (!this.socialEmail) {
+        this.content = "Unable to retrieve email from Google account. Please try again.";
+        this.enableAlert = true;
+        return;
+      }
+
+      // Verify with backend
+      this.service.verifyGoogle({
         TokenID: this.idToken,
         FName: this.socialFirstName,
         LName: this.socialLastName,
         Email: this.socialEmail,
         VCode: "",
         Pwd: "",
-      })
-      .subscribe((res) => {
-        if (res) {
-          this.setUpLoginConfiguration(res);
+      }).subscribe(
+        (res) => {
+          if (res) {
+            this.setUpLoginConfiguration(res);
+          } else {
+            this.content = "Google login verification failed. Please try again.";
+            this.enableAlert = true;
+          }
+        },
+        (error) => {
+          console.error('Google verification error:', error);
+          this.content = error.error?.Message || error.message || "Google login verification failed. Please try again.";
+          this.enableAlert = true;
         }
-      })
+      );
+    } catch (error) {
+      console.error('Error processing Google response:', error);
+      this.content = "Google login failed. Please try again.";
+      this.enableAlert = true;
+    }
   }
 
-  signInWithGoogle() {
-    var element = document.getElementById('googleLoginbtn');
-    element.click();
+  private decodeJwt(token: string): any {
+    try {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(
+        atob(base64)
+          .split('')
+          .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+          .join('')
+      );
+      return JSON.parse(jsonPayload);
+    } catch (error) {
+      console.error('Error decoding JWT:', error);
+      throw error;
+    }
   }
 
-  private onFailure(error: any): void {
-    console.log(error);
+  private loadGoogleSignInScript(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      // Check if already loaded
+      if (typeof google !== 'undefined' && google.accounts) {
+        resolve();
+        return;
+      }
+
+      // Check if script already exists
+      const existingScript = document.getElementById('google-signin-script') || 
+                             document.querySelector('script[src*="accounts.google.com/gsi/client"]');
+      
+      if (existingScript) {
+        // Wait for script to load
+        let attempts = 0;
+        const maxAttempts = 50;
+        const checkInterval = setInterval(() => {
+          attempts++;
+          if (typeof google !== 'undefined' && google.accounts) {
+            clearInterval(checkInterval);
+            resolve();
+          } else if (attempts >= maxAttempts) {
+            clearInterval(checkInterval);
+            reject(new Error('Google Sign-In script timeout'));
+          }
+        }, 100);
+        return;
+      }
+
+      // Load script dynamically
+      const script = document.createElement('script');
+      script.src = 'https://accounts.google.com/gsi/client';
+      script.id = 'google-signin-script';
+      script.async = true;
+      script.defer = true;
+      
+      script.onload = () => {
+        // Wait for google object
+        setTimeout(() => {
+          if (typeof google !== 'undefined' && google.accounts) {
+            resolve();
+          } else {
+            let attempts = 0;
+            const maxAttempts = 20;
+            const checkInterval = setInterval(() => {
+              attempts++;
+              if (typeof google !== 'undefined' && google.accounts) {
+                clearInterval(checkInterval);
+                resolve();
+              } else if (attempts >= maxAttempts) {
+                clearInterval(checkInterval);
+                reject(new Error('Google object not available'));
+              }
+            }, 100);
+          }
+        }, 200);
+      };
+      
+      script.onerror = () => {
+        reject(new Error('Failed to load Google Sign-In script'));
+      };
+      
+      document.head.appendChild(script);
+    });
   }
 
-  private VerifyGoogle() {
-    // this.authService.authState.subscribe(
-    //   (user) => {
-    //     if (user.provider?.toLowerCase() == 'google') {
-    //       this.user = user;
-    //       this.idToken = user.idToken;
-    //       this.socialFirstName = user.firstName;
-    //       this.socialLastName = user.lastName;
-    //       this.socialEmail = user.email;
-
-    //       this.service
-    //         .verifyGoogle({
-    //           TokenID: this.idToken,
-    //           FName: this.socialFirstName,
-    //           LName: this.socialLastName,
-    //           Email: this.socialEmail,
-    //           VCode: "",
-    //           Pwd: "",
-    //         })
-    //         .subscribe((res) => {
-    //           if(res){
-    //             this.setUpLoginConfiguration(res);
-    //           }
-    //         });
-    //     }
-    //   },
-    //   (error) => console.log(error),
-    //   () => {
-    //   }
-    // );
-  }
 
   fbLogin(reqtype) {
     if (reqtype == "signup")
       this.logeventservice.logEvent('facebook_signup');
     else
       this.logeventservice.logEvent('facebook_login');
+    
+    this.handleFacebookLogin();
+  }
 
-    // this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    // this.authService.authState.subscribe((user) => {
-    //   // this.user = user;
-    //   this.user = user;
+  private handleFacebookLogin(): void {
+    if (typeof FB === 'undefined') {
+      console.error('Facebook SDK not loaded');
+      this.content = "Facebook login is not available. Please refresh the page.";
+      this.enableAlert = true;
+      return;
+    }
 
-    //   this.idToken = user.authToken;
-    //   this.socialFirstName = user.firstName;
-    //   this.socialLastName = user.lastName;
-    //   this.socialEmail = user.email;
-    //   if (user.email !== undefined) {
-    //     this.service
-    //       .verifyFb({
-    //         TokenID: this.idToken,
-    //         FName: this.socialFirstName,
-    //         LName: this.socialLastName,
-    //         Email: this.socialEmail,
-    //         VCode: "",
-    //         Pwd: "",
-    //       })
-    //       .subscribe((res) => {
-    //            if(res){
-    //             this.setUpLoginConfiguration(res);
-    //            }
-    //       });
-    //   } else {
-    //     this.content = "Please ensure that you use an email based authentication with your Auth provider or try another method";
-    //     this.enableAlert = true;
-    //   }
-    // });
+    FB.login((response: any) => {
+      if (response.authResponse) {
+        // User logged in successfully
+        const accessToken = response.authResponse.accessToken;
+        const userId = response.authResponse.userID;
+
+        // Get user info
+        FB.api('/me', { fields: 'id,name,email,first_name,last_name' }, (userInfo: any) => {
+          if (userInfo && !userInfo.error) {
+            this.idToken = accessToken;
+            this.socialFirstName = userInfo.first_name || '';
+            this.socialLastName = userInfo.last_name || '';
+            this.socialEmail = userInfo.email || '';
+
+            if (!this.socialEmail) {
+              this.content = "Please ensure that you use an email based authentication with your Facebook account or try another method";
+              this.enableAlert = true;
+              return;
+            }
+
+            this.service
+              .verifyFb({
+                TokenID: this.idToken,
+                FName: this.socialFirstName,
+                LName: this.socialLastName,
+                Email: this.socialEmail,
+                VCode: "",
+                Pwd: "",
+              })
+              .subscribe((res) => {
+                if (res) {
+                  this.setUpLoginConfiguration(res);
+                } else {
+                  this.content = "Facebook login verification failed. Please try again.";
+                  this.enableAlert = true;
+                }
+              }, (error) => {
+                console.error('Facebook verification error:', error);
+                this.content = error.error?.Message || "Facebook login failed. Please try again.";
+                this.enableAlert = true;
+              });
+          } else {
+            console.error('Error fetching Facebook user info:', userInfo.error);
+            this.content = "Failed to fetch Facebook user information. Please try again.";
+            this.enableAlert = true;
+          }
+        });
+      } else {
+        // User cancelled login or did not fully authorize
+        if (response.status !== 'unknown') {
+          this.content = "Facebook login was cancelled. Please try again.";
+          this.enableAlert = true;
+        }
+      }
+    }, { scope: 'email,public_profile' });
+  }
+
+  private loadFacebookSDK(): void {
+    if (document.getElementById('facebook-jssdk')) {
+      return; // Script already loaded
+    }
+
+    // Initialize Facebook SDK
+    (window as any).fbAsyncInit = () => {
+      FB.init({
+        appId: environment.facebookAppId,
+        cookie: true,
+        xfbml: true,
+        version: 'v18.0'
+      });
+    };
+
+    // Load Facebook SDK script
+    const script = document.createElement('script');
+    script.id = 'facebook-jssdk';
+    script.src = 'https://connect.facebook.net/en_US/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
   }
 
   emailLogin() {
@@ -714,9 +1269,6 @@ export class LoginSignupPage implements OnInit {
     this.freescreens();
   }
 
-  handleCredentialResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-  }
 
   getrenew() {
     this.closemodal.nativeElement.click();
@@ -729,11 +1281,31 @@ export class LoginSignupPage implements OnInit {
     this.showAlert = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
-    this.renderGoogle = false;
+    this.hideSocial = false;
     setTimeout(() => {
-      this.loadGoogleScript();
-      this.renderGoogle = true;
-    }, 200);
+        this.hideSocial = true;
+    }, 1000);
+    // Wait for Angular to update the DOM after tab switch
+    this.zone.runOutsideAngular(() => {
+      setTimeout(() => {
+        // Ensure Google script is loaded, then render buttons safely
+        this.loadGoogleSignInScript().then(() => {
+          if (typeof google !== 'undefined' && google.accounts) {
+            // Initialize Google Identity Services
+            google.accounts.id.initialize({
+              client_id: environment.googleClientId,
+              callback: (response: any) => this.handleCredentialResponse(response),
+            });
+
+            // Render Google buttons safely (will skip if already rendered)
+            this.renderGoogleButtonSafely('googleBtnSignup');
+            this.renderGoogleButtonSafely('googleBtnLogin');
+          }
+        }).catch((error) => {
+          console.error('Failed to load Google Sign-In:', error);
+        });
+      }, 100);
+    });
   }
 
   freescreens() {
@@ -837,11 +1409,31 @@ export class LoginSignupPage implements OnInit {
     this.isSignUp = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
-    this.renderGoogle = false;
+    this.hideSocial = false;
     setTimeout(() => {
-      this.loadGoogleScript();
-      this.renderGoogle = true;
-    }, 200);
+        this.hideSocial = true;
+    }, 500);
+    // Wait for Angular to update the DOM after tab switch
+    this.zone.runOutsideAngular(() => {
+      setTimeout(() => {
+        // Ensure Google script is loaded, then render buttons safely
+        this.loadGoogleSignInScript().then(() => {
+          if (typeof google !== 'undefined' && google.accounts) {
+            // Initialize Google Identity Services
+            google.accounts.id.initialize({
+              client_id: environment.googleClientId,
+              callback: (response: any) => this.handleCredentialResponse(response),
+            });
+
+            // Render Google buttons safely (will skip if already rendered)
+            this.renderGoogleButtonSafely('googleBtnSignup');
+            this.renderGoogleButtonSafely('googleBtnLogin');
+          }
+        }).catch((error) => {
+          console.error('Failed to load Google Sign-In:', error);
+        });
+      }, 100);
+    });
   }
 
   initializeRegistrationForm() {
