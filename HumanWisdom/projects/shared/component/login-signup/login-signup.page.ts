@@ -327,6 +327,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   triggerGoogleSignIn(buttonId: string, event?: Event): void {
     console.log('=== triggerGoogleSignIn called ===', buttonId);
     
+    // Prevent default but don't stop propagation - let it bubble to hidden button
+    if (event) {
+      event.preventDefault();
+    }
+    
     const buttonContainer = document.getElementById(buttonId);
     if (!buttonContainer) {
       console.log('Button container not found:', buttonId);
@@ -338,56 +343,62 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       setTimeout(() => {
         console.log(`Attempt ${attempt} to trigger Google Sign-In for:`, buttonId);
         
-        // Method 1: Find the iframe and try to click it
-        const iframe = buttonContainer.querySelector('iframe') as HTMLIFrameElement;
-        if (iframe) {
-          console.log('Found iframe, attempting to click');
+        // Method 1: Find the hidden button and temporarily enable it, then click
+        const hiddenButton = buttonContainer.querySelector('.google-button-hidden') as HTMLElement;
+        if (hiddenButton) {
+          console.log('Found hidden button, attempting to click');
           
           try {
-            // Get iframe position for accurate click simulation
-            const rect = iframe.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
+            // Temporarily enable pointer events and make visible
+            const originalPointerEvents = hiddenButton.style.pointerEvents;
+            const originalOpacity = hiddenButton.style.opacity;
             
-            // Try direct click first
-            if (iframe.click && typeof iframe.click === 'function') {
-              iframe.click();
-              console.log('Called iframe.click()');
-            }
+            hiddenButton.style.pointerEvents = 'auto';
+            hiddenButton.style.opacity = '1';
+            hiddenButton.style.zIndex = '20';
             
-            // Also dispatch a click event at the center of the iframe
-            const clickEvent = new MouseEvent('click', {
-              view: window,
-              bubbles: true,
-              cancelable: true,
-              buttons: 1,
-              clientX: centerX,
-              clientY: centerY,
-              screenX: centerX,
-              screenY: centerY
-            });
-            iframe.dispatchEvent(clickEvent);
-            console.log('Dispatched click event on iframe at center');
-            
-            // Try mousedown + mouseup sequence
-            ['mousedown', 'mouseup'].forEach((eventType, index) => {
+            // Find the iframe inside
+            const iframe = hiddenButton.querySelector('iframe') as HTMLIFrameElement;
+            if (iframe) {
+              iframe.style.pointerEvents = 'auto';
+              
+              // Get the center position
+              const rect = hiddenButton.getBoundingClientRect();
+              const centerX = rect.left + rect.width / 2;
+              const centerY = rect.top + rect.height / 2;
+              
+              // Try clicking the hidden button directly
+              hiddenButton.click();
+              console.log('Called hiddenButton.click()');
+              
+              // Also dispatch click events
+              const clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true,
+                buttons: 1,
+                clientX: centerX,
+                clientY: centerY
+              });
+              
+              hiddenButton.dispatchEvent(clickEvent);
+              iframe.dispatchEvent(clickEvent);
+              
+              // Restore styles after a delay
               setTimeout(() => {
-                const evt = new MouseEvent(eventType, {
-                  view: window,
-                  bubbles: true,
-                  cancelable: true,
-                  buttons: eventType === 'mousedown' ? 1 : 0,
-                  clientX: centerX,
-                  clientY: centerY
-                });
-                iframe.dispatchEvent(evt);
-              }, index * 50);
-            });
-            
+                hiddenButton.style.pointerEvents = originalPointerEvents || 'none';
+                hiddenButton.style.opacity = originalOpacity || '0';
+                hiddenButton.style.zIndex = '1';
+                if (iframe) {
+                  iframe.style.pointerEvents = 'none';
+                }
+              }, 300);
+              
+              return;
+            }
           } catch (e) {
-            console.log('Error clicking iframe:', e);
+            console.log('Error clicking hidden button:', e);
           }
-          return;
         }
         
         // Method 2: Try to find and click the Google button div
@@ -395,27 +406,19 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
         if (googleButton) {
           console.log('Found Google button div, attempting to click');
           try {
+            googleButton.style.pointerEvents = 'auto';
+            googleButton.style.opacity = '1';
             googleButton.click();
             console.log('Called googleButton.click()');
+            
+            setTimeout(() => {
+              googleButton.style.pointerEvents = 'none';
+              googleButton.style.opacity = '0';
+            }, 200);
           } catch (e) {
             console.log('Error clicking Google button:', e);
           }
           return;
-        }
-        
-        // Method 3: Try clicking any clickable element
-        const allClickable = buttonContainer.querySelectorAll('div, button, a');
-        for (let i = 0; i < allClickable.length; i++) {
-          const el = allClickable[i] as HTMLElement;
-          try {
-            if (el.click && typeof el.click === 'function') {
-              el.click();
-              console.log('Clicked element:', el.tagName, el.className);
-              return;
-            }
-          } catch (e) {
-            // Continue
-          }
         }
         
         console.log('Could not find clickable element, retrying...');
@@ -425,7 +428,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       }, delay);
     };
 
-    // Start trying immediately, then retry with delays
+    // Start trying immediately
     tryTriggerClick(1, 0);
   }
 
