@@ -39,10 +39,10 @@ const routes: Routes = [
     path: 'adult-dashboard',
     redirectTo: 'home',
   },
-  {
+ /*  {
     path: 'journal',
     loadChildren: () => import('./journal/journal.module').then( m => m.JournalPageModule)
-  },
+  }, */
   {
     path: "journal/:TopicName",
     loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
