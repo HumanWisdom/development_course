@@ -23034,6 +23034,13 @@ ul.dh_ul li:last-child {
   width: 100% !important;
 }
 
+.w100stress
+{
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  height: 201px;
+}
 .boldi {
   font-weight: bold !important;
 }
