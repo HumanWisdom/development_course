@@ -33646,7 +33646,7 @@ body * {
 }
 
 .ta_forum_comment::-webkit-input-placeholder {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 140%;
       color: rgba(255, 255, 255, 0.50);
