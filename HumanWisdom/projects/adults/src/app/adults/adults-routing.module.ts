@@ -39,10 +39,10 @@ const routes: Routes = [
     path: 'adult-dashboard',
     redirectTo: 'home',
   },
-  // {
-  //   path: 'journal',
-  //   loadChildren: () => import('./journal/journal.module').then( m => m.JournalPageModule)
-  // },
+  {
+    path: 'journal',
+    loadChildren: () => import('./journal/journal.module').then( m => m.JournalPageModule)
+  },
   {
     path: "journal/:TopicName",
     loadChildren: () => import('../../../../shared/component/guided-questions/introduction/introduction.module').then(m => m.IntroductionPageModule),
@@ -550,10 +550,7 @@ const routes: Routes = [
     path: 'kindness',
     loadChildren: () => import('./kindness/kindness.module').then(m => m.KindnessModule)
   },
-  {
-    path: 'social-login',
-    loadChildren: () => import('../../../../shared/component/social-login/social-login.module').then(m => m.SocialLoginPageModule)
-  },
+ 
   {
     path: 'social-media',
     loadChildren: () => import('./social-media/social-media.module').then(m => m.SocialMediaModule)
@@ -675,11 +672,7 @@ const routes: Routes = [
     path: 'wisdom-for-students',
     loadChildren: () => import('../adults/adverts-student/adverts-student.module').then(m => m.AdvertsStudentPageModule)
   },
-  {
-    path: 'log-in',
-    canActivate: [authLoginGuard],
-    loadChildren: () => import('../onboarding/login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
-  },
+  
   {
     path: 'partnership-app',
     canActivate: [AuthGuard],
@@ -691,7 +684,7 @@ const routes: Routes = [
   },
   {
     path: 'blog-article',
-    // canActivate:[ActiveGuard],
+    canActivate:[ActiveGuard],
     component:BlogArticlePage
   },
   {

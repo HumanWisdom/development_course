@@ -1,3 +1,6 @@
+<!-- Google Sign-In Script -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
@@ -51,6 +54,40 @@
                       </div>
                     </div>
 
+                    <div class="row center_flex mt15px" [ngClass]="{'d-none': !hideSocial}">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
+                          <button type="button" class="btn btn_login_signup tcenter" (click)="fbLogin('signup')">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
+                          </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter myLogin"  >
+                          <button type="button" class="btn btn_login_signup tcenter" id="googleBtnSignupWrapper">
+                            <div id="googleBtnSignup" class="tcenter google-button-hidden"></div>
+                            <div class="google-custom-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
+                          <button type="submit" class="btn btn_login_signup tcenter " (click)="signInWithApple('signup')">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/cw_apple.svg" alt="" class="img-responsive" *ngIf="isAdults">
+
+                          </button>
+                        </div>
+                        <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tcenter pr0px">
+                          <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginWithInstagram()">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/instagram.svg" alt="" class="h-34 img-responsive">
+                          </button>
+                        </div>-->
+                      </div>
+                    </div>
                     
 
                     <div class="mtb30px mregister">
@@ -245,27 +282,25 @@
                     </div>
                   </div>
 
-                  <div class="row center_flex mt15px">
+                  <div class="row center_flex mt15px" [ngClass]="{'d-none': !hideSocial}">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
-                        <button type="submit" class="btn btn_login_signup tcenter" (click)="fbLogin('signup')">
+                        <button type="button" class="btn btn_login_signup tcenter" (click)="fbLogin('login')">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
                         </button>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
-                        <button type="submit" class="btn btn_login_signup tcenter ">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-                       
+                        <button type="button" class="btn btn_login_signup tcenter" id="googleBtnLoginWrapper">
+                          <div id="googleBtnLogin" class="tcenter google-button-hidden"></div>
+                          <div class="google-custom-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                          </div>
                         </button>
-                       
-                        <!-- <div class="google-login-socialx" id="googleLoginbtn">
-                          <asl-google-signin-button  type='icon' size='large' class="googlelogin">
-                          </asl-google-signin-button>
-                         </div> -->
-                        <!-- <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter w-75"></div> -->
-                        <!-- <button *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-                        </button> -->
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
                         <button type="submit" class="btn btn_login_signup tcenter " (click)="signInWithApple('signup')">
