@@ -33848,7 +33848,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #000000 !important;
+  /* color: #ffffff !important; */
 }
 
 

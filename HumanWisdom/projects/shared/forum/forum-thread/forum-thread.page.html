@@ -62,7 +62,7 @@
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" *ngIf="posttread.UserName != UserName"
                         (click)="follow(posttread)" (onkeypress)="follow(posttread)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p "
-                          [ngClass]="isAdults ? 'fc_000000' : ''" *ngIf="posttread.Followed=='0'">
+                          [ngClass]="isAdults ? 'fc_000000_i' : ''" *ngIf="posttread.Followed=='0'">
                           <i class="fa fa-plus  mr3px"></i>
                           <span class="underline">
                             Follow
@@ -218,7 +218,7 @@
                           </button>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isAdults">
-                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_000000"
+                          <button type="button" class="btn fs_12px fw_400 lh_140p fc_000000_i"
                             (click)="like(posttread.PostID,null,0)">
                             <img alt="heart" *ngIf="posttread.Liked=='0'"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_heart.svg"
@@ -246,7 +246,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : ''" (click)="shareOnThread(posttread)">
+                            [ngClass]="isAdults ? 'fc_000000_i' : ''" (click)="shareOnThread(posttread)">
                             <img alt="shareicon"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
@@ -260,7 +260,7 @@
 
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                         <button type="button" class="btn fs_12px fw_400 lh_140p "
-                          [ngClass]="isAdults ? 'fc_000000' : ''" (click)="reportpost()">
+                          [ngClass]="isAdults ? 'fc_000000_i' : ''" (click)="reportpost()">
                           <img alt="report"
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                             class="img-responsive mr5px" *ngIf="!isAdults">
