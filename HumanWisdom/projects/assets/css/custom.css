@@ -3672,6 +3672,15 @@ ul.project_files li a i {
   border-top: 2px solid #5b90bf;
 }
 
+.rotate-90 {
+    transform: rotate(90deg);
+  }
+
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+
+
 .ui-ribbon-container .ui-ribbon:before {
   left: 0;
   bottom: -1px;
@@ -34357,7 +34366,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   /* border: 1px solid rgba(204, 204, 204, 0.25); */
   border: 1px solid rgba(50, 50, 50, 0.25);
 
-  background: #FFE8BB !important;
+  background: #ffffff !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 400;
