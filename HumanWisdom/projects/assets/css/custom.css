@@ -3672,6 +3672,15 @@ ul.project_files li a i {
   border-top: 2px solid #5b90bf;
 }
 
+.rotate-90 {
+    transform: rotate(90deg);
+  }
+
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+
+
 .ui-ribbon-container .ui-ribbon:before {
   left: 0;
   bottom: -1px;
