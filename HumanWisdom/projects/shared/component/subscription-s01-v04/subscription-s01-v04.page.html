@@ -24,7 +24,14 @@
           {{cartitemList.length}}
         </h6>
         <div class="">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tn_cart.svg" alt="" class="p0">
+          <img *ngIf="isAdults; else teenCart"
+     src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/tn_cart.svg"
+     alt="" class="p0">
+
+<ng-template #teenCart>
+  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tn_cart.svg"
+       alt="" class="p0">
+</ng-template>
         </div>
       </a>
     </div>
@@ -113,7 +120,7 @@
                   </div>
                   <div class="col-md-1 col-sm-1 col-xs-1 p0" (click)="removeFromCart(data['CartId'])">
                     <img
-                      src="{{ isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
+                      src="{{ isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/cart_delete_cross.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg' }}"
                       class="img-responsive img_close_delete1">
 
                   </div>
@@ -129,11 +136,15 @@
 
                 <div class="row ">
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                      {{data['Symbol'] + ' ' + (data['Amt'])}} <span *ngIf="data['Plan'] === 'Annual'"
-                        class="mtb0px fs_15px fw_400 lh_150p fc_000000">
-                        ({{cartList[0]['ISOCode']}} {{getAnnualVal(data['Amt'])}}/{{'mo'}}.)</span>
-                    </h4>
+<h4 class="mtb0px fs_18px fw_600 lh_150p"
+    [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+  {{ data['Symbol'] + ' ' + data['Amt'] }}
+  <span *ngIf="data['Plan'] === 'Annual'"
+        class="mtb0px fs_15px fw_400 lh_150p"
+        [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+    ({{ cartList[0]['ISOCode'] }} {{ getAnnualVal(data['Amt']) }}/mo.)
+  </span>
+</h4>
                   </div>
 
                 </div>
@@ -154,7 +165,7 @@
               </div>
               <div class="row mtb15px">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 p0">
-                  <button id="noteId" type="button" (click)="EnableAddMemForm()" class="btn btn_aan2"> + Add member
+                  <button id="noteId" type="button" (click)="EnableAddMemForm()" class="btn btn_aan2" [ngClass]="isAdults ? 'btn_aan2_1' : ''"> + Add member
 
                     <!-- <i class="fa fa-plus">New note</i> -->
                   </button>
@@ -174,21 +185,21 @@
 
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                    <input type="text" id="email" [(ngModel)]="learnermail" class="sp_fc" placeholder="Friend email">
+                    <input type="text" id="email" [(ngModel)]="learnermail" class="sp_fc" [ngClass]="isAdults ? 'sp_fc_1' : ''" placeholder="Friend email">
 
                   </div>
                 </div>
-                <div class="row">
+                <div class="row mt10px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                     <div class="dropdown dropdown_outer">
-                      <label class="select_label m0px w100">
+                      <label class="select_label m0px w100" [ngClass]="isAdults ? 'select_label_1' : ''">
                         <!-- <input type="text" id="email"  class="sp_fc" placeholder="Choose program "> -->
-                        <select type="text" id="program" class="sp_fc btn_select"
-                          [ngClass]="{'placeholder_faint': !selectedProgram}"
+                        <select type="text" id="program" class="btn_select sp_fc" [ngClass]="isAdults ? 'sp_fc_1' : ''"
+                          [ngClass]="{'placeholder_faint': !selectedProgram && isAdults}"
                           (change)="selectProgram($event.target.value)">
-                          <option value="" class="sp_fc">Choose program</option>
+                          <option value="" class="sp_fc" [ngClass]="isAdults ? 'sp_fc_1' : ''">Choose program</option>
                           <option *ngFor="let data of cartList"
-                            value="{{data['Amt']+','+data['Plan']+','+data['Program']}}" class="sp_fc">
+                            value="{{data['Amt']+','+data['Plan']+','+data['Program']}}" [ngClass]="isAdults ? 'sp_fc_1' : ''" class="sp_fc">
                             {{data['Program']}} - {{data['Plan']}} ({{defaultCurrencySymbol}} {{data['Amt']}}/{{'mo'}}.)
                           </option>
                         </select>
@@ -204,12 +215,12 @@
             <div class="row mtb20px" *ngIf="enableAddMemForm">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group has-feedback mb0px">
 
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                 </div>
                 <div class="row mb15px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <button type="button" [disabled]="!learnermail || !selectedProgram" (click)="addToCartForm()"
-                      class="btn btn_forum_ask_a_gift" style="width: 103px; height: 30px;">Add to cart
+                    <button type="button" (click)="addToCartForm()"
+                      class="btn btn_forum_ask_a_gift" [ngClass]="isAdults ? 'btn_forum_ask_a_gift_1' : ''">Add to cart
                     </button>
                   </div>
                 </div>
@@ -246,12 +257,12 @@
       <a>
         <!-- Web/Desktop -->
         <button *ngIf="!ios && !isAndroid" [disabled]="cartitemList.length === 0" (click)="proceedcart()" type="button"
-          class="btn btn_tfas">
+          class="btn btn_tfas" [ngClass]="isAdults ? 'btn_tfas_1' : ''">
           View cart
         </button>
 
         <!-- iOS/Android -->
-        <button *ngIf="ios || isAndroid" (click)="goBack()" type="button" class="btn btn_tfas">
+        <button *ngIf="ios || isAndroid" (click)="goBack()" type="button" class="btn btn_tfas" [ngClass]="isAdults ? 'btn_tfas_1' : ''">
           Continue to dashboard
         </button>
       </a>

@@ -1193,9 +1193,9 @@ h2 {
 
 }
 
-.x_content .txt1 {
+/* .x_content .txt1 {
   margin-top: 50px;
-}
+} */
 
 /* .x_content h4 {
   font-size: 16px;
@@ -20300,7 +20300,7 @@ share-buttons button {
   width: 100%;
   margin: 0;
   border: 0;
-  background: #FFF;
+  background: #FFF !important;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   margin: 0;
@@ -20309,7 +20309,7 @@ share-buttons button {
   font-size: 15px;
   line-height: 22px;
   text-align: center;
-  color: #E58D82;
+  color: #E58D82 !important;
 }
 
 .c128px {
@@ -23034,6 +23034,13 @@ ul.dh_ul li:last-child {
   width: 100% !important;
 }
 
+.w100stress
+{
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  height: 201px;
+}
 .boldi {
   font-weight: bold !important;
 }
@@ -33639,7 +33646,7 @@ body * {
 }
 
 .ta_forum_comment::-webkit-input-placeholder {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 140%;
       color: rgba(255, 255, 255, 0.50);

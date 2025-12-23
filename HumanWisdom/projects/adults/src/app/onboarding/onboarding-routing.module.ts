@@ -4,6 +4,7 @@ import { autoLoginGuard } from '../auto-login-guard';
 import { AuthGuard } from '../auth.guard';
 import { EnableRouteGuard } from '../enable-route.guard';
 import { ActiveGuard } from '../active.guard';
+import { LoginSignupPage } from '../../../../shared/component/login-signup/login-signup.page';
 
 const routes: Routes = [
   {
@@ -30,8 +31,8 @@ const routes: Routes = [
   }, */
   {
     path: 'login',
-    canActivate: [autoLoginGuard],
-    loadChildren: () => import('./login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
+   // canActivate: [autoLoginGuard],
+    component:LoginSignupPage
   },
  /*  {
     path: 'activationkey',

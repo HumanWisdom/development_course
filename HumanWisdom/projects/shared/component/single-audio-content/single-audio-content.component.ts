@@ -75,7 +75,7 @@ export class SingleAudioContentComponent implements OnInit {
   }
 
   readText(text) {
-    if (text === 'Read Text') {
+    if (text === 'Read text') {
       this.enableTextContent = true;
     } else {
       this.enableTextContent = false;

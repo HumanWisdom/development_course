@@ -113,8 +113,8 @@
 
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js" async defer></script>
-
-  <script src="https://kit.fontawesome.com/034bb2cff8.js" crossorigin="anonymous"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <!-- <script src="https://kit.fontawesome.com/c233f16095.js" crossorigin="anonymous"></script> -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -142,10 +142,10 @@
 
   <script src="https://js.stripe.com/v3/" defer></script>
 
-    <!-- jQuery library -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+  <!-- jQuery library -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211149613-1"></script>
     <script>
@@ -160,7 +160,7 @@
   <!-- Google tag (gtag.js) -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-44RHVTTNB8"></script> -->
 
-<!--   <script>
+  <!--   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
@@ -233,25 +233,25 @@
       let getAt_Gt = localStorage.getItem("adtraction");
 if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != "")
  {    let t = localStorage.getItem('stripeqty');
-      let c = localStorage.getItem('stripecountrycode');
-      let am = localStorage.getItem('stripeamount');
-      let cpn = localStorage.getItem('stripeDiscountCode');
-      let ti = localStorage.getItem('stripeid');
+        let c = localStorage.getItem('stripecountrycode');
+        let am = localStorage.getItem('stripeamount');
+        let cpn = localStorage.getItem('stripeDiscountCode');
+        let ti = localStorage.getItem('stripeid');
 
-      // window.ADT.Tag.t = t ? t : 0;
+        // window.ADT.Tag.t = t ? t : 0;
       window.ADT.Tag.t =3;
 
-      window.ADT.Tag.c = "GBP";
-      window.ADT.Tag.am = am ? [am] : 0;
-      window.ADT.Tag.ti = ti ? ti : "";
-      window.ADT.Tag.cpn = cpn ? cpn : "";
-      window.ADT.Tag.tp = 1963208868;
-      // window.ADT.Tag.xd = "XD";
+        window.ADT.Tag.c = "GBP";
+        window.ADT.Tag.am = am ? [am] : 0;
+        window.ADT.Tag.ti = ti ? ti : "";
+        window.ADT.Tag.cpn = cpn ? cpn : "";
+        window.ADT.Tag.tp = 1963208868;
+        // window.ADT.Tag.xd = "XD";
 
-      window.ADT.Tag.doEvent();
-    }
+        window.ADT.Tag.doEvent();
+      }
     });
-    
+
   </script>
 
   <!-- accordion -->
@@ -430,7 +430,7 @@ if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != "")
           else
             window.AndroidHandler.share(window.location.href);
 
-          }
+        }
       });
 
       $(document).on('click', '#mailto', function (e) {
@@ -517,8 +517,8 @@ if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != "")
 
     window.addEventListener('subscribeToPremium', function () {
       if (window.webkit) {
-          window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
-        }
+        window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
+      }
     });
 
     function triggerAngularEvent(data) {
@@ -565,8 +565,8 @@ if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != "")
         window.webkit.messageHandlers.nativeActionHandler.postMessage("manage_subscr");
       }
       if (window.AndroidHandler) {
-          window.AndroidHandler.manage_subscr();
-        }
+        window.AndroidHandler.manage_subscr();
+      }
     })
 
     window.addEventListener('nativeEvent', function () {
@@ -763,7 +763,7 @@ if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != "")
     function ImageSelectedEventFromAndroid(str) {
       if (window.AndroidHandler) {
         triggerAngularEvent(str);
-       //  window.AndroidHandler.showToast(str);
+        //  window.AndroidHandler.showToast(str);
       }
     }
 

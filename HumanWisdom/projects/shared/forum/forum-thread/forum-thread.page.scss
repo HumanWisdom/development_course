@@ -62,8 +62,30 @@
   pointer-events: none;
   cursor: default;
 }
-.div_forum_post .btn:active{
+.div_forum_post .btn{
     border: transparent !important;
+}
+
+/* Unfollow button: always black with 50% opacity */
+button.fc_000000_0_5 {
+  color: rgba(0, 0, 0, 0.5) !important;
+  &:hover {
+    color: rgba(0, 0, 0, 0.5) !important;
+  }
+}
+button.fc_000000_0_5 span.underline:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Unfollow button: always black with 50% opacity */
+button.fc_e8a880_0_5 {
+  color: rgb(232, 168, 128, 0.5) !important;
+  &:hover {
+    color: rgb(232, 168, 128, 0.5) !important;
+  }
+}
+button.fc_e8a880_0_5 span.underline:hover {
+  color: rgba(232, 168, 128,0.5);
 }
 
 .cfdm {
