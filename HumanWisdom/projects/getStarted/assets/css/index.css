@@ -121,7 +121,7 @@
       }
 
       .msection_header {
-        color: #834B66 !important;
+        color: rgba(131, 75, 102, 1) !important;
       }
 
       .f_24px {
@@ -435,7 +435,7 @@
       }
 
       .msection_header {
-        color: #834B66 !important;
+        color: rgba(131, 75, 102, 1) !important;
       }
 
       .f_24px {
@@ -815,8 +815,8 @@
       .modal-content1 .modal-body .col-md-2 img,
       .modal-content1 .modal-body .col-sm-2 img,
       .modal-content1 .modal-body .col-xs-2 img {
-        width: 24px !important;
-        height: 24px !important;
+        width: 20px !important;
+        height: 20px !important;
         max-width: 24px !important;
         max-height: 24px !important;
         min-width: 24px !important;
@@ -914,10 +914,16 @@
       .modal-content1 .modal-header,
       .product_view .modal-header {
         position: relative !important;
+        padding-top: 10px !important;
       }
 
       .modal-content1 .modal-header .row,
       .product_view .modal-header .row {
+        position: relative !important;
+      }
+
+      .modal-content1 .modal-content,
+      .product_view .modal-content {
         position: relative !important;
       }
 
@@ -935,8 +941,8 @@
         min-width: 48px !important;
         min-height: 48px !important;
         position: absolute !important;
-        top: 10px !important;
-        right: 10px !important;
+        top: 0px !important;
+        right: 0px !important;
         z-index: 1000 !important;
         background-color: transparent !important;
         cursor: pointer !important;
@@ -948,8 +954,9 @@
       .product_view #closebtn.pull-right {
         float: none !important;
         position: absolute !important;
-        top: 10px !important;
-        right: 10px !important;
+        top: 0px !important;
+        right: 0px !important;
+        margin: 0 !important;
       }
 
       .modal-content1 #closebtn img,
@@ -1129,8 +1136,8 @@
 
       /* Feature icons - proper size and spacing */
       .div_subscriptionnew .icon-subcription {
-        width: 24px !important;
-        height: 24px !important;
+        width: 20px !important;
+        height: 20px !important;
         max-width: 24px !important;
         max-height: 24px !important;
         min-width: 24px !important;
@@ -1232,15 +1239,19 @@
       }
 
       .div_subscriptionnew .row.center_flex .col-12 {
-        max-width: 335px !important;
+        max-width: 90% !important;
+        width: 90% !important;
         margin: 0 auto !important;
         padding: 0 !important;
         font-size: 12px !important;
         line-height: 1.4 !important;
         text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
       }
 
-      /* Make all disclaimer elements inline so they flow together */
+      /* Make h6 wrap into 1 line by making container wider */
       .div_subscriptionnew #totalAnnualPricingModelHeading,
       .div_subscriptionnew h6.fs_15px {
         font-size: 12px !important;
@@ -1248,32 +1259,40 @@
         text-align: center !important;
         margin-bottom: 0 !important;
         margin-top: 0 !important;
-        display: inline !important;
-        width: auto !important;
-        max-width: none !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
         word-wrap: break-word !important;
-        word-break: normal !important;
+        word-break: break-word !important;
         hyphens: auto !important;
-        padding-right: 4px !important;
+        padding-right: 0 !important;
+        color: rgba(255, 255, 255, 1) !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
       }
 
+      /* Span on line 2 */
       .div_subscriptionnew .row.center_flex span.fs_15px {
         font-size: 12px !important;
         line-height: 1.4 !important;
         text-align: center !important;
-        display: inline !important;
+        display: block !important;
         margin-bottom: 0 !important;
         margin-top: 0 !important;
-        width: auto !important;
-        padding-right: 4px !important;
+        width: 100% !important;
+        padding-right: 0 !important;
+        color: rgba(255, 255, 255, 1) !important;
       }
 
+      /* Anchor on line 3 */
       .div_subscriptionnew .row.center_flex a {
-        display: inline !important;
+        display: block !important;
         text-align: center !important;
-        width: auto !important;
+        width: 100% !important;
         font-size: 12px !important;
         line-height: 1.4 !important;
+        color: rgba(255, 255, 255, 1) !important;
+        margin-top: 0 !important;
       }
 
       .div_subscriptionnew .row.center_flex a span.td_underline {
@@ -1281,12 +1300,21 @@
         line-height: 1.4 !important;
         text-align: center !important;
         display: inline !important;
+        color: rgba(255, 255, 255, 1) !important;
       }
 
       /* Center align subscription terms text */
       .div_subscriptionnew h6,
       .div_subscriptionnew span {
         text-align: center !important;
+      }
+
+      /* Ensure white color for all text in disclaimer section */
+      .div_subscriptionnew .row.center_flex .col-12 .fc_ffffff,
+      .div_subscriptionnew .row.center_flex .col-12 h6.fc_ffffff,
+      .div_subscriptionnew .row.center_flex .col-12 span.fc_ffffff,
+      .div_subscriptionnew .row.center_flex .col-12 a .fc_ffffff {
+        color: rgba(255, 255, 255, 1) !important;
       }
 
       /* Center align all links in mobile */
@@ -1484,6 +1512,7 @@
         align-items: center !important;
         justify-content: space-between !important;
         gap: 8px !important;
+        background: #FFFFFF !important;
       }
 
       .sticky_rating_banner .row.center_flex {
@@ -1509,9 +1538,10 @@
         align-items: center !important;
         justify-content: space-between !important;
         gap: 8px !important;
+        flex-wrap: nowrap !important;
       }
 
-      /* Close button */
+      /* Close button - far left */
       .sticky_rating_banner .col-lg-1,
       .sticky_rating_banner .col-md-1,
       .sticky_rating_banner .col-sm-1,
@@ -1525,7 +1555,8 @@
         flex-shrink: 0 !important;
         display: flex !important;
         align-items: center !important;
-        justify-content: center !important;
+        justify-content: flex-start !important;
+        order: 1 !important;
       }
 
       .sticky_rating_banner .col-lg-1 img,
@@ -1538,7 +1569,7 @@
         max-height: 14px !important;
       }
 
-      /* App icon */
+      /* App icon - after cross */
       .sticky_rating_banner .col-lg-2,
       .sticky_rating_banner .col-md-2,
       .sticky_rating_banner .col-sm-2,
@@ -1553,6 +1584,7 @@
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        order: 2 !important;
       }
 
       .sticky_rating_banner .col-lg-2 img,
@@ -1566,7 +1598,7 @@
         object-fit: contain !important;
       }
 
-      /* App Store info */
+      /* App Store and Google Play info - horizontal layout */
       .sticky_rating_banner .col-lg-5,
       .sticky_rating_banner .col-md-5,
       .sticky_rating_banner .col-sm-5,
@@ -1579,6 +1611,7 @@
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
+        order: 3 !important;
       }
 
       .sticky_rating_banner .col-lg-5 .d-flex.flex-column,
@@ -1586,11 +1619,11 @@
       .sticky_rating_banner .col-sm-5 .d-flex.flex-column,
       .sticky_rating_banner .col-xs-5 .d-flex.flex-column {
         display: flex !important;
-        flex-direction: column !important;
-        gap: 2px !important;
-        align-items: flex-start !important;
-        justify-content: center !important;
-        width: 100% !important;
+        flex-direction: row !important;
+        gap: 12px !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: auto !important;
         min-height: auto !important;
         height: auto !important;
         max-height: none !important;
@@ -1607,7 +1640,7 @@
         height: auto !important;
       }
 
-      /* Force both h6 children to be visible */
+      /* Force both h6 children to be visible - horizontal layout */
       .sticky_rating_banner .col-lg-5 .d-flex.flex-column > h6,
       .sticky_rating_banner .col-md-5 .d-flex.flex-column > h6,
       .sticky_rating_banner .col-sm-5 .d-flex.flex-column > h6,
@@ -1616,6 +1649,7 @@
         flex-shrink: 0 !important;
         flex-grow: 0 !important;
         order: 0 !important;
+        margin: 0 !important;
       }
 
       /* Specifically target the second h6 (Google Play) */
@@ -1628,8 +1662,9 @@
         opacity: 1 !important;
         height: auto !important;
         min-height: auto !important;
-        margin-top: 2px !important;
-        order: 2 !important;
+        margin-top: 0 !important;
+        margin-left: 12px !important;
+        order: 0 !important;
       }
 
       .sticky_rating_banner .col-lg-5 h6,
@@ -1645,6 +1680,7 @@
         width: auto !important;
         visibility: visible !important;
         opacity: 1 !important;
+        color: #000000 !important;
       }
 
       /* Ensure both h6 elements are visible */
@@ -1669,7 +1705,8 @@
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        margin-top: 2px !important;
+        margin-top: 0 !important;
+        margin-left: 12px !important;
         height: auto !important;
         min-height: auto !important;
       }
@@ -1689,7 +1726,7 @@
       .sticky_rating_banner .col-md-5 h6.mb2px,
       .sticky_rating_banner .col-sm-5 h6.mb2px,
       .sticky_rating_banner .col-xs-5 h6.mb2px {
-        margin-bottom: 2px !important;
+        margin-bottom: 0 !important;
       }
 
       .sticky_rating_banner .col-lg-5 h6 img,
@@ -1711,6 +1748,7 @@
         flex-shrink: 0 !important;
         font-size: 9px !important;
         line-height: 1.4 !important;
+        color: #000000 !important;
       }
 
       .sticky_rating_banner .col-lg-5 h6 .rating_a,
@@ -1728,7 +1766,7 @@
         color: #FF0000 !important;
       }
 
-      /* Download button */
+      /* Download button - far right */
       .sticky_rating_banner .col-lg-4,
       .sticky_rating_banner .col-md-4,
       .sticky_rating_banner .col-sm-4,
@@ -1738,10 +1776,12 @@
         max-width: 130px !important;
         padding: 0 !important;
         margin: 0 !important;
+        margin-left: auto !important;
         flex-shrink: 0 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: flex-end !important;
+        order: 4 !important;
       }
 
       .sticky_rating_banner .btn_download {
@@ -1758,8 +1798,10 @@
         font-size: 11px !important;
         font-weight: 600 !important;
         line-height: 1.4 !important;
-        background: linear-gradient(180deg, #E58D82, #CB6171) !important;
+        background: linear-gradient(90deg, #E58D82, #CB6171) !important;
         white-space: nowrap !important;
+        color: #FFFFFF !important;
+        border: none !important;
       }
 
       /* Ensure tab-pane doesn't center align headings */
@@ -1839,7 +1881,7 @@
       #accordion_footer .panel-title a,
       #accordion_footer .panel-title h4,
       #accordion_footer .accordion-toggle {
-        color: #ffffff !important;
+        color: rgba(255, 255, 255, 1) !important;
       }
 
       /* Override any other color classes in footer */
@@ -1880,27 +1922,97 @@
         align-items: center !important;
       }
 
-      /* Make accordion icons white plus/minus on mobile */
-      /* Collapsed state - show PLUS icon */
-      #accordion_footer .panel-title>a:not([aria-expanded="true"]):after {
-        content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_plus.svg) !important;
-        filter: brightness(0) invert(1) !important; /* Make SVG white */
+      /* Make accordion icons white plus/minus on mobile - OVERRIDE ALL BASE STYLES */
+      /* Force override main.css base styles - Collapsed state - show PLUS icon */
+      .dfooter #accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
+      .dfooter #accordion_footer .panel-title a:not([aria-expanded="true"]):after,
+      #accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
+      #accordion_footer .panel-title a:not([aria-expanded="true"]):after,
+      .dfooter .accordion-toggle:not([aria-expanded="true"]):after,
+      .dfooter .panel-title a:not([aria-expanded="true"]):after,
+      .dfooter .panel-heading .panel-title a:not([aria-expanded="true"]):after,
+      .dfooter .panel-heading h4 a:not([aria-expanded="true"]):after,
+      .dfooter .panel-group#accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
+      .dfooter .panel-group#accordion_footer .panel-title a:not([aria-expanded="true"]):after {
+        content: "+" !important;
+        color: rgba(255, 255, 255, 1) !important;
+        font-size: 18px !important;
+        font-weight: 300 !important;
+        line-height: 1 !important;
         opacity: 1 !important;
         float: right !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        display: block !important;
+        width: 20px !important;
+        height: 20px !important;
+        text-align: center !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
       }
 
-      /* Expanded state - show MINUS icon */
-      #accordion_footer .panel-title>a[aria-expanded="true"]:after {
-        content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_minus.svg) !important;
-        filter: brightness(0) invert(1) !important; /* Make SVG white */
+      /* Force override main.css base styles - Expanded state - show MINUS icon */
+      .dfooter #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+      .dfooter #accordion_footer .panel-title a[aria-expanded="true"]:after,
+      #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+      #accordion_footer .panel-title a[aria-expanded="true"]:after,
+      .dfooter .accordion-toggle[aria-expanded="true"]:after,
+      .dfooter .panel-title a[aria-expanded="true"]:after,
+      .dfooter .panel-heading .panel-title a[aria-expanded="true"]:after,
+      .dfooter .panel-heading h4 a[aria-expanded="true"]:after,
+      .dfooter .panel-group#accordion_footer .panel-title>a[aria-expanded="true"]:after,
+      .dfooter .panel-group#accordion_footer .panel-title a[aria-expanded="true"]:after {
+        content: "-" !important;
+        color: rgba(255, 255, 255, 1) !important;
+        font-size: 20px !important;
+        font-weight: 300 !important;
+        line-height: 1 !important;
         opacity: 1 !important;
         float: right !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        display: block !important;
+        width: 20px !important;
+        height: 20px !important;
+        text-align: center !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
+      }
+
+      /* Ensure any icon fonts inside accordion are white */
+      .dfooter .accordion-toggle i,
+      .dfooter .accordion-toggle .bi,
+      .dfooter .accordion-toggle .fa,
+      #accordion_footer .accordion-toggle i,
+      #accordion_footer .accordion-toggle .bi,
+      #accordion_footer .accordion-toggle .fa,
+      .dfooter .panel-title a i,
+      .dfooter .panel-title a .bi,
+      .dfooter .panel-title a .fa,
+      #accordion_footer .panel-title a i,
+      #accordion_footer .panel-title a .bi,
+      #accordion_footer .panel-title a .fa {
+        color: #ffffff !important;
+      }
+
+      /* Ensure chevron icons are white */
+      .dfooter .bi-chevron-down,
+      .dfooter .bi-chevron-up,
+      .dfooter .fa-chevron-down,
+      .dfooter .fa-chevron-up,
+      .dfooter .fa-angle-down,
+      .dfooter .fa-angle-up,
+      .dfooter .fa-plus,
+      .dfooter .fa-minus,
+      #accordion_footer .bi-chevron-down,
+      #accordion_footer .bi-chevron-up,
+      #accordion_footer .fa-chevron-down,
+      #accordion_footer .fa-chevron-up,
+      #accordion_footer .fa-angle-down,
+      #accordion_footer .fa-angle-up,
+      #accordion_footer .fa-plus,
+      #accordion_footer .fa-minus {
+        color: #ffffff !important;
       }
 
       /* Fix tabs horizontal scroll - no white space - single row */

@@ -363,6 +363,50 @@ label > input[type="checkbox"] + *::before {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+
+  /* Override accordion footer icons to be white on mobile - USE EXACT SAME SELECTORS AS BASE STYLES */
+  /* Base style line 3529: #accordion_footer .panel-title>a[aria-expanded=true]:after shows PLUS (expanded) */
+  /* Base style line 3538: #accordion_footer .panel-title>a:after shows MINUS (all links) */
+  /* We need to override BOTH with white text characters */
+  
+  /* Override the general selector first (this affects all links) */
+  #accordion_footer .panel-title>a:after {
+    content: "+" !important;
+    color: rgba(255, 255, 255, 1) !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    float: right !important;
+    display: block !important;
+    width: 24px !important;
+    height: 24px !important;
+    text-align: center !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+
+  /* Override the expanded state (higher specificity, comes after) */
+  #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  #accordion_footer .panel-title>a[aria-expanded=true]:after {
+    content: "-" !important;
+    color: rgba(255, 255, 255, 1) !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    float: right !important;
+    display: block !important;
+    width: 24px !important;
+    height: 24px !important;
+    text-align: center !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -3502,6 +3546,55 @@ padding:20px;
   line-height: normal;
 }
 
+/* MOBILE OVERRIDE - Replace SVG icons with white + and - characters */
+/* This override comes RIGHT AFTER base styles to ensure it takes precedence */
+@media screen and (max-width: 768px) {
+  /* Override ALL accordion icons - collapsed state shows PLUS (+) */
+  #accordion_footer .panel-title>a:after,
+  #accordion_footer .panel-title a:after,
+  .dfooter #accordion_footer .panel-title>a:after,
+  .dfooter #accordion_footer .panel-title a:after {
+    content: "+" !important;
+    color: rgba(255, 255, 255, 1) !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    float: right !important;
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+
+  /* Override expanded state - show MINUS (-) */
+  /* Note: Base styles show PLUS when expanded, but we want MINUS for expanded */
+  #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  #accordion_footer .panel-title>a[aria-expanded=true]:after,
+  .dfooter #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  .dfooter #accordion_footer .panel-title>a[aria-expanded=true]:after {
+    content: "-" !important;
+    color: rgba(255, 255, 255, 1) !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    float: right !important;
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+}
+
 #accordion_footer .panel-title>a
 {
   font-size: 15px;
@@ -5560,6 +5653,62 @@ button {
 }
 
 /* Frame 14264 */
+
+/* FINAL OVERRIDE - Mobile accordion icons MUST be white - Highest priority at end of file */
+@media screen and (max-width: 768px), (max-width: 768px) {
+  /* Override ALL possible accordion icon selectors with white + and - characters */
+  /* Collapsed state - show PLUS (+) */
+  #accordion_footer .panel-title>a:after,
+  #accordion_footer .panel-title a:after,
+  .dfooter #accordion_footer .panel-title>a:after,
+  .dfooter #accordion_footer .panel-title a:after,
+  .panel-group#accordion_footer .panel-title>a:after,
+  .panel-group#accordion_footer .panel-title a:after {
+    content: "+" !important;
+    color: rgba(255, 255, 255, 1) !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    float: right !important;
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+
+  /* Expanded state - show MINUS (-) */
+  #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  #accordion_footer .panel-title>a[aria-expanded=true]:after,
+  #accordion_footer .panel-title a[aria-expanded="true"]:after,
+  #accordion_footer .panel-title a[aria-expanded=true]:after,
+  .dfooter #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  .dfooter #accordion_footer .panel-title>a[aria-expanded=true]:after,
+  .dfooter #accordion_footer .panel-title a[aria-expanded="true"]:after,
+  .dfooter #accordion_footer .panel-title a[aria-expanded=true]:after,
+  .panel-group#accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  .panel-group#accordion_footer .panel-title>a[aria-expanded=true]:after {
+    content: "-" !important;
+    color: rgba(255, 255, 255, 1) !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    float: right !important;
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+}
 
 
 
