@@ -134,7 +134,7 @@ export class AppComponent implements OnDestroy {
       return true;
     }
     if ((this.router.url == "/teenagers" || this.router.url == "/teenagers/teenager-dashboard") || (this.router.url == "/teenager-dashboard")
-      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard")) {
+      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard") || this.router.url == "/teenagers/home" || this.router.url == "/home" || this.router.url.includes("home") ) {
       this.dash = true;
       this.journal = false;
       this.search = false;
