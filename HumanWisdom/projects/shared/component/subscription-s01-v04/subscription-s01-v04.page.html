@@ -24,7 +24,14 @@
           {{cartitemList.length}}
         </h6>
         <div class="">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tn_cart.svg" alt="" class="p0">
+          <img *ngIf="isAdults; else teenCart"
+     src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/tn_cart.svg"
+     alt="" class="p0">
+
+<ng-template #teenCart>
+  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tn_cart.svg"
+       alt="" class="p0">
+</ng-template>
         </div>
       </a>
     </div>
@@ -167,7 +174,7 @@
             </div>
             <br />
 
-            <div *ngIf="enableAddMemForm" [ngClass]="isAdults ? '' : 'raf_div_01'">
+            <div *ngIf="enableAddMemForm">
 
               <div>
                 <div class="row">

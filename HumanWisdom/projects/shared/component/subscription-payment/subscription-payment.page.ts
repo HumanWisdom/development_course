@@ -52,6 +52,9 @@ export class SubscriptionPaymentPage implements OnInit {
   isoCode: any;
   isAdults = false;
   amountGBP = "";
+  cardNumberElement: any;
+  cardExpiryElement: any;
+  cardCvcElement: any;
 
   constructor(private service: OnboardingService,
     private location: Location,
@@ -253,25 +256,9 @@ export class SubscriptionPaymentPage implements OnInit {
                     localStorage.setItem('stripecountrycode', c);
 
                     this.getOrderId();
-                
-
-                    // this.payementSubmitBtnClick.nativeElement.click();
-
-                    // The payment has succeeded.
                     localStorage.setItem('personalised', 'F');
-                    if (localStorage.getItem('ispartnershipClick') == 'T') {
-                      if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
-                        localStorage.setItem('ispartnershipClick', 'F');
-                        localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                        this.router.navigate([`${SharedService.getprogramName()}/humanwisdom-premium`]);
-                      } else {
-                        localStorage.setItem('ispartnershipClick', 'F');
-                        localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                        this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
-                      }
-                    } else {
-                      this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
-                    }
+                    this.content = 'Payment Successful';
+                    this.enableAlert = true;
                   }
                 });
               } else {
@@ -287,24 +274,9 @@ export class SubscriptionPaymentPage implements OnInit {
                 localStorage.setItem('stripeDiscountCode', localStorage.getItem('discountCode') ?? "0");
                 localStorage.setItem('stripeqty', t);
                 localStorage.setItem('stripecountrycode', c);
-
-                // this.payementSubmitBtnClick.nativeElement.click();
-
-                // The payment has succeeded.0.
                 localStorage.setItem('personalised', 'F');
-                if (localStorage.getItem('ispartnershipClick') == 'T') {
-                  if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
-                    localStorage.setItem('ispartnershipClick', 'F');
-                    localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                    this.router.navigate([`${SharedService.getprogramName()}/humanwisdom-premium`]);
-                  } else {
-                    localStorage.setItem('ispartnershipClick', 'F');
-                    localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                    this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
-                  }
-                } else {
-                  this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
-                }
+                this.content = 'Payment Successful';
+                this.enableAlert = true;
 
               }
             }
@@ -312,7 +284,7 @@ export class SubscriptionPaymentPage implements OnInit {
         });
 
 
-        var cardNumberElement = elements.create('cardNumber', {
+        this.cardNumberElement = elements.create('cardNumber', {
           placeholder: 'Card Number',
           style: style,
           classes: {
@@ -322,7 +294,7 @@ export class SubscriptionPaymentPage implements OnInit {
             invalid: 'is-invalid',
           },
         });
-        var cardExpiryElement = elements.create('cardExpiry', {
+        this.cardExpiryElement = elements.create('cardExpiry', {
           style: style,
           classes: {
             base: 'form-control w-full',
@@ -331,7 +303,7 @@ export class SubscriptionPaymentPage implements OnInit {
             invalid: 'is-invalid',
           },
         });
-        var cardCvcElement = elements.create('cardCvc', {
+        this.cardCvcElement = elements.create('cardCvc', {
           style: style,
           classes: {
             base: 'form-control w-full',
@@ -341,9 +313,9 @@ export class SubscriptionPaymentPage implements OnInit {
           },
         });
 
-        cardNumberElement.mount('#card-number');
-        cardExpiryElement.mount('#card-expiry');
-        cardCvcElement.mount('#card-cvc');
+        this.cardNumberElement.mount('#card-number');
+        this.cardExpiryElement.mount('#card-expiry');
+        this.cardCvcElement.mount('#card-cvc');
 
         const btn = document.querySelector('#btnsubmit');
         btn.addEventListener('click', async (e) => {
@@ -353,7 +325,7 @@ export class SubscriptionPaymentPage implements OnInit {
           // Create payment method and confirm payment intent.
           stripe.confirmCardPayment(this.stripeId, {
             payment_method: {
-              card: cardNumberElement,
+              card: this.cardNumberElement,
               billing_details: {
                 name: (<HTMLInputElement>document.getElementById('name')).value,
                 address: {
@@ -381,26 +353,9 @@ export class SubscriptionPaymentPage implements OnInit {
               localStorage.setItem('stripecountrycode', c);
 
               this.getOrderId();
-             
-
-           
-              
-
               localStorage.setItem('personalised', 'F');
-               setTimeout(() => {
-              if (localStorage.getItem('ispartnershipClick') == 'T') {
-                if (localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
-                  localStorage.setItem('ispartnershipClick', 'F');
-                  localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                  this.router.navigate(['/adults/humanwisdom-premium']);
-                } else {
-                  localStorage.setItem('ispartnershipClick', 'F');
-                  localStorage.setItem('isMonthlySelectedForPayment', 'F');
-                  this.router.navigate(['/adults/hwp-premium-congratulations']);
-                }
-              } else {
-                  this.router.navigate([`${SharedService.getprogramName()}/hwp-premium-congratulations`]);
-              } }, 5000);
+              this.content = 'Payment Successful';
+              this.enableAlert = true;
             }
           });
         });
@@ -445,7 +400,7 @@ export class SubscriptionPaymentPage implements OnInit {
   }
 
   back() {
-    this.location.back();
+    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/viewcart`]);
   }
 
   ngOnInit() {
@@ -454,6 +409,15 @@ export class SubscriptionPaymentPage implements OnInit {
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+    const nameEl = document.getElementById('name') as HTMLInputElement;
+    const postalEl = document.getElementById('postal-code') as HTMLInputElement;
+    const saveChk = document.getElementById('forum_post_checkbox') as HTMLInputElement;
+    if (nameEl) nameEl.value = '';
+    if (postalEl) postalEl.value = '';
+    if (saveChk) saveChk.checked = false;
+    if (this.cardNumberElement && this.cardNumberElement.clear) this.cardNumberElement.clear();
+    if (this.cardExpiryElement && this.cardExpiryElement.clear) this.cardExpiryElement.clear();
+    if (this.cardCvcElement && this.cardCvcElement.clear) this.cardCvcElement.clear();
   }
   getIsoCode() {
     if (this.symbol == '$') {
