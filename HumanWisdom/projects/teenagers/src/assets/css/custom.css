@@ -20696,7 +20696,7 @@ input {
 }
 
 .underline {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 
@@ -32366,7 +32366,11 @@ body * {
   opacity: 0.1;
   margin: 30px 0;
 }
-
+.hr_style_v4 {
+    border: 1px solid #FFFFFF;
+    opacity: 0.1;
+    /* margin: 30px 0; */
+}
 .hr_style_v3_02 {
   border: 1px solid #FFFFFF;
   opacity: 0.1;
@@ -34273,12 +34277,12 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #E58D82;
+  background: #E58D82 !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
 }
 
 .hr_style_v3_10 {
