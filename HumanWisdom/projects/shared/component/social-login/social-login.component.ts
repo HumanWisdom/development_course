@@ -26,8 +26,8 @@ export class SocialLoginPage implements OnInit {
   public userName: any
   public qrList: any
   public goToPage: any
-  public saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-  public loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+  public saveUsername = this.safeJsonParse(localStorage.getItem("saveUsername"))
+  public loginResponse = this.safeJsonParse(localStorage.getItem("loginResponse"))
   public points: any
   public daysVisited: any
   public timeSpent: any
@@ -221,7 +221,7 @@ export class SocialLoginPage implements OnInit {
     localStorage.setItem("question", JSON.stringify(this.question))
     localStorage.setItem("reflection", JSON.stringify(this.reflection))
     localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
-    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userId = this.safeJsonParse(localStorage.getItem("userId"))
     this.Subscriber = localStorage.getItem('Subscriber')
     SharedService.setUserId(res.UserId.toString());
     SharedService.setUsername(res.Name);
@@ -231,12 +231,12 @@ export class SocialLoginPage implements OnInit {
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
     let isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
     if (localStorage.getItem("token") && (this.saveUsername == true)) {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-      this.userName = JSON.parse(localStorage.getItem("userName"))
+      this.userId = this.safeJsonParse(localStorage.getItem("userId"))
+      this.userName = this.safeJsonParse(localStorage.getItem("userName"))
     }
     else {
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-      this.userName = JSON.parse(sessionStorage.getItem("userName"))
+      this.userId = this.safeJsonParse(sessionStorage.getItem("userId"))
+      this.userName = this.safeJsonParse(sessionStorage.getItem("userName"))
     }
     // this.getBookmarks()
     if (res.UserId == 0) {
@@ -279,4 +279,32 @@ export class SocialLoginPage implements OnInit {
 
   }
 
+  /**
+   * Safely parse JSON from localStorage/sessionStorage
+   * Returns the parsed value if valid JSON, otherwise returns the original value or null
+   */
+  private safeJsonParse(value: string | null): any {
+    if (!value || value === 'null' || value === 'undefined') {
+      return null;
+    }
+    
+    // If it's already a plain string (not JSON), return it as is
+    const trimmed = value.trim();
+    if (!trimmed.startsWith('{') && !trimmed.startsWith('[') && !trimmed.startsWith('"')) {
+      // Check if it's a number string
+      if (!isNaN(Number(trimmed)) && trimmed !== '') {
+        return Number(trimmed);
+      }
+      // Return as plain string
+      return trimmed;
+    }
+    
+    try {
+      return JSON.parse(value);
+    } catch (e) {
+      // If parsing fails, return the original value as string
+      console.warn('Failed to parse JSON, returning as string:', value, e);
+      return value;
+    }
+  }
 }
