@@ -1110,7 +1110,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
         if (userInfo) {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
           // Trigger update to refresh hamburger menu and other components
-          this.service.updateUserDetails.next(true);
+        //  this.service.updateUserDetails.next(true);
           if(userInfo[0]?.SurveyDone=='0'){
             setTimeout(() => {
               this.commonService.updateSurveyData(1);
