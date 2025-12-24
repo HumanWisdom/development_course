@@ -604,7 +604,7 @@ export class ViewcartPage implements OnInit {
   }
 
   back() {
-    this.location.back();
+    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
   }
 
 }
