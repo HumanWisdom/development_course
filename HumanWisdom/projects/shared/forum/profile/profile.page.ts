@@ -54,6 +54,7 @@ export class ProfilePage implements OnInit {
   public bookmarkLength: any;
   profileData: any = [];
   profileImage: string='';
+  profileImageUrl: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
   enableAlert: boolean;
   profileUsername:string="";
   programType = ProgramType.Adults
@@ -75,8 +76,14 @@ export class ProfilePage implements OnInit {
     if (this.userId != null) {
       setTimeout(() => {
         this.onboardingService.getuser(this.userId).subscribe((res) => {
-          // this.profileImage = res[0]['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
-          this.profileImage = res[0]['UserImagePath'].replace('\\','/')+ '?' + (new Date()).getTime();
+          const data = res && res[0] ? res[0] : null;
+          const rawPath = data && data['UserImagePath'] ? String(data['UserImagePath']) : '';
+          const first = data && data['FName'] ? String(data['FName']).trim() : '';
+          const last = data && data['LName'] ? String(data['LName']).trim() : '';
+          const name = [first, last].filter(Boolean).join(' ');
+          this.profileUsername = name || this.profileUsername || (data && data['Email'] ? String(data['Email']) : '');
+          this.profileImage = rawPath;
+          this.profileImageUrl = this.buildProfileImageUrl(rawPath);
         })
       }, 100);
     }
@@ -166,7 +173,9 @@ export class ProfilePage implements OnInit {
     this.forumService.getposts(index, null, userID).subscribe((res) => {
       if (res) {
         this.posts = this.forumService.FormatForumPostData(res);
-        this.profileUsername = this.posts[0].UserName;
+        if (!this.profileUsername && this.posts.length > 0) {
+          this.profileUsername = this.posts[0].UserName;
+        }
       }
     });
   }
@@ -245,7 +254,6 @@ export class ProfilePage implements OnInit {
     }
   }
 
-
   postnavigate(item) {
     this.forumService.postdataSource.next(item);
     this.router.navigateByUrl('/forum/forum-thread/'+item.PostID);
@@ -304,5 +312,17 @@ export class ProfilePage implements OnInit {
       default:
         return '';
     }
+  }
+
+  private buildProfileImageUrl(path: string): string {
+    const ts = (new Date()).getTime();
+    if (!path) {
+      return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+    }
+    const normalized = String(path).replace(/\\/g, '/').trim();
+    if (!normalized || normalized.toLowerCase() === 'null' || normalized.includes('undefined')) {
+      return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+    }
+    return `https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/${normalized}?${ts}`;
   }
 }
