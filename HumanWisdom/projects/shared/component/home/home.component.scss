@@ -434,7 +434,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 /* Sticky Navigation Container */
 .sticky-nav-container {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   margin-top: 0;
   margin-bottom: 0;
   width: 100%;
@@ -469,7 +469,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 
   .sticky-nav-container {
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 0px;
   }
 }
 
