@@ -146,10 +146,17 @@
 
                           <div class="fc_img" (click)="hideFunction('password')">
                        
-                            <img [src]="passwordhide ? 
-                            'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg' : 
-                            'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg'"
-                                 class="img-responsive">
+                            <img [src]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg'"
+                                 class="img-responsive" *ngIf="passwordhide && isAdults">
+                                   <img [src]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show'"
+                                 class="img-responsive" *ngIf="!passwordhide && isAdults">
+                                 
+             
+
+                                   <img [src]="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                                 class="img-responsive" *ngIf="passwordhide && !isAdults">
+                                   <img [src]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg'"  
+                                 class="img-responsive" *ngIf="!passwordhide && !isAdults">
                           </div>
                         </div>
                         <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
@@ -163,7 +170,10 @@
                           <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc" placeholder="Confirm Password" id="repeatpassowrd" formControlName="confirmPassword" maxlength="15" (keydown.space)="$event.preventDefault();">
 
                           <div class="fc_img" (click)="hideFunction('')">
-                            <img *ngIf="confirmpasswordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                            <img *ngIf="confirmpasswordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
+                              class="img-responsive">
+
+                               <img *ngIf="confirmpasswordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
                               class="img-responsive">
 
                               <img *ngIf="!confirmpasswordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
@@ -337,8 +347,12 @@
                         <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password2" [(ngModel)]="this.password" autocomplete="new-password" required>
 
                         <div class="fc_img" (click)="hideFunction('password')">
-                          <img *ngIf="passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                          <img *ngIf="passwordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
                             class="img-responsive" >
+
+                              <img *ngIf="passwordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
+                            class="img-responsive" >
+
                             <img *ngIf="!passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
                             class="img-responsive" >
                         </div>
