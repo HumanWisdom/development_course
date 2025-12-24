@@ -61,7 +61,7 @@
               <!-- Navigation Menu - Sticky Header -->
               <div class="col-12 pr0px sticky-nav-container">
                 <div class="d-flex flex-wrap nav-wrapper">
-                  <button class="nav-scroll-btn nav-scroll-btn-left" (click)="scrollNavBackward()" aria-label="Scroll left">
+                  <button class="nav-scroll-btn nav-scroll-btn-left" (click)="scrollNavBackward()" aria-label="Scroll left" style="border: 2px solid white; border-radius: 50%;">
                     <i class="fa fa-chevron-left"></i>
                   </button>
                   <div class="nav-menu" #navMenu>
@@ -72,7 +72,7 @@
                       </a>
                     </ng-container>
                   </div>
-                  <button class="nav-scroll-btn nav-scroll-btn-right" (click)="scrollNavForward()" aria-label="Scroll right">
+                  <button class="nav-scroll-btn nav-scroll-btn-right" (click)="scrollNavForward()" aria-label="Scroll right" style="border: 2px solid white; border-radius: 50%;">
                     <i class="fa fa-chevron-right"></i>
                   </button>
                 </div>
@@ -210,7 +210,7 @@
                           <div *ngIf="shouldShowViewAll(section)" class="text-center mt-3">
                               <button class="btn btn-link text-decoration-underline view-toggle-btn"
                                 (click)="onViewAllClick(section)">
-                              View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-3 rotate-90" [class.arrow-teenagers]="!isAdults" alt="arrow">
+                              View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);" alt="arrow">
                             </button>
                           </div>
                         </div>
@@ -354,7 +354,7 @@
                               [class.py-2]="section.title === 'Long term solutions'">
                               <button class="btn btn-link text-decoration-underline view-toggle-btn"
                                 (click)="onViewAllClick(section)">
-                                View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
+                                View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);" alt="arrow">
                               </button>
                             </div>
                           </div>

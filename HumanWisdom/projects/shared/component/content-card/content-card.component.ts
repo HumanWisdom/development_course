@@ -67,7 +67,24 @@ export class ContentCardComponent {
    * Get the overlay icon source - either the URL or null for FontAwesome icons
    */
   getOverlayIconSrc(overlayIcon: string): string | null {
+    // Return null if overlayIcon is null, undefined, or empty
+    if (!overlayIcon || overlayIcon === '' || overlayIcon === null || overlayIcon === undefined) {
+      return null;
+    }
     return this.isOverlayIconUrl(overlayIcon) ? overlayIcon : null;
+  }
+
+  /**
+   * Check if FontAwesome icon should be shown
+   * Only show if overlayIcon exists and is not a URL
+   */
+  shouldShowFontAwesomeIcon(overlayIcon: string): boolean {
+    // Don't show if overlayIcon is null, undefined, or empty
+    if (!overlayIcon || overlayIcon === '' || overlayIcon === null || overlayIcon === undefined) {
+      return false;
+    }
+    // Only show if it's not a URL (meaning it's a simple string like 'play' or 'audio')
+    return !this.isOverlayIconUrl(overlayIcon);
   }
 
   /**
