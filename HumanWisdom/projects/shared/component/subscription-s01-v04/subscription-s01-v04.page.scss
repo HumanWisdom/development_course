@@ -85,13 +85,22 @@ a:hover{
 }
 
 .placeholder_faint {
-  color: rgba(0,0,0,0.5) !important;
   font-weight: 400 !important;
   background: #ffe8bb !important;
 }
 
 .purple_banner {
   background-color: #803358;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue_banner {
+  background-color: #05BBBF;
   margin-left: -20px;
   margin-right: -20px;
   margin-top: -20px;

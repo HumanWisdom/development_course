@@ -26560,7 +26560,7 @@ h1 {
   width: 100%;
   overflow: visible;
   border-radius: 100px;
-  background: #ED7D6F !important;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
 
   font-size: 15px;
   position: static;
@@ -30012,7 +30012,7 @@ svg path
   /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
   background: #FFE8BB;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   height: 289px;
   text-align: center;
   margin-top: -12%;
@@ -30471,8 +30471,8 @@ svg path
 .p_rc {
   min-height: 64px;
   height: auto;
-  background: #FFE8BB;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* background: #FFE8BB; */
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 12px;
   padding: 20px;
   letter-spacing: 2.4px;
@@ -30481,6 +30481,8 @@ svg path
   line-height: 150%;
   color: #FFF;
 }
+
+
 
 .btn_jhwpp {
   height: 100px;
@@ -33409,7 +33411,9 @@ body * {
 }
 
 .div_fq .row:hover {
-  filter: brightness(90%);
+   background-color: #FFD889;
+
+  /* filter: brightness(90%); */
 }
 
 .box_v3_08 {
@@ -33485,6 +33489,18 @@ body * {
   justify-content: center;
   padding: 20px;
   /* opacity: 0.5; */
+}
+
+.adult-selected-plan-border {
+    border: 1px solid #ED7D6F !important;
+}
+
+.adult-best-value-annual {
+    background: #ED7D6F;
+}
+
+.adult-monthly {
+    background: #424675;
 }
 
 .div_ct .col-lg-6:nth-child(even) {
@@ -34772,7 +34788,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: unset;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 16px;
   height: auto;
 }
@@ -34905,7 +34921,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0 !important;
   border: 0;
   border-radius: 100px;
-  background: #ED7D6F !important;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -36496,12 +36512,12 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 /* .partnership_row a:nth-child(1) .box_02,
 .partnership_row a:nth-child(4) .box_02,
 .partnership_row a:nth-child(7) .box_02, */
-.div_fq a:nth-child(1) .row,
+/* .div_fq a:nth-child(1) .row,
 .div_fq a:nth-child(4) .row,
 .div_fq a:nth-child(7) .row,
 .div_fq a:nth-child(10) .row,
 .div_fq a:nth-child(13) .row,
-.div_fq a:nth-child(16) .row
+.div_fq a:nth-child(16) .row */
 /* .div_fbn a:nth-child(1) .row, */
 /* .div_fbn a:nth-child(4) .row, */
 /* .div_fbn a:nth-child(7) .row, */
@@ -36510,46 +36526,46 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 /* .div_fbn a:nth-child(16) .row, */
 /* .div_fbn a:nth-child(19) .row, */
 /* .div_fbn a:nth-child(22) .row */
- {
+ /* {
   background: #803358;
-}
+} */
 
 /* .partnership_row a:nth-child(2) .box_02,
 .partnership_row a:nth-child(5) .box_02,
 .partnership_row a:nth-child(8) .box_02, */
-.div_fq a:nth-child(2) .row,
+/* .div_fq a:nth-child(2) .row,
 .div_fq a:nth-child(5) .row,
 .div_fq a:nth-child(8) .row,
 .div_fq a:nth-child(11) .row,
 .div_fq a:nth-child(14) .row,
-.div_fq a:nth-child(17) .row,
+.div_fq a:nth-child(17) .row, */
 /* .div_fbn a:nth-child(2) .row, */
 /* .div_fbn a:nth-child(5) .row, */
 /* .div_fbn a:nth-child(8) .row, */
-.div_fbn a:nth-child(11) .row,
+/* .div_fbn a:nth-child(11) .row,
 .div_fbn a:nth-child(14) .row,
 .div_fbn a:nth-child(17) .row,
 .div_fbn a:nth-child(20) .row,
 .div_fbn a:nth-child(23) .row {
   background: #D7586B;
-}
+} */
 
 /* .partnership_row a:nth-child(3) .box_02,
 .partnership_row a:nth-child(6) .box_02, */
-.div_fq a:nth-child(3) .row,
+/* .div_fq a:nth-child(3) .row,
 .div_fq a:nth-child(6) .row,
 .div_fq a:nth-child(9) .row,
 .div_fq a:nth-child(12) .row,
-.div_fq a:nth-child(15) .row,
+.div_fq a:nth-child(15) .row, */
 /* .div_fbn a:nth-child(3) .row, */
 /* .div_fbn a:nth-child(6) .row, */
 /* .div_fbn a:nth-child(9) .row, */
-.div_fbn a:nth-child(12) .row,
+/* .div_fbn a:nth-child(12) .row,
 .div_fbn a:nth-child(15) .row,
 .div_fbn a:nth-child(18) .row,
 .div_fbn a:nth-child(21) .row {
   background: #ED7D6F;
-}
+} */
 
 .div_fq h4,
 .div_fbn h4 {
@@ -36590,7 +36606,8 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 }
 
 .div_fq .fa_vm:hover {
-  filter: unset !important;
+    background-color: #FFD889;
+
 }
 
 .popover .arrow {

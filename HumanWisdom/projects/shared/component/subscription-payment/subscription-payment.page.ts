@@ -407,8 +407,12 @@ export class SubscriptionPaymentPage implements OnInit {
   }
 
   getAlertcloseEvent(event) {
+    let isSuccess = this.content === 'Payment Successful';
     this.content = '';
     this.enableAlert = false;
+    if (isSuccess) {
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/myprogram`]);
+    }
     const nameEl = document.getElementById('name') as HTMLInputElement;
     const postalEl = document.getElementById('postal-code') as HTMLInputElement;
     const saveChk = document.getElementById('forum_post_checkbox') as HTMLInputElement;
