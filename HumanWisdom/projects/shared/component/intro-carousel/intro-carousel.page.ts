@@ -273,6 +273,8 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
           this.onservice.getuser(res.UserId).subscribe(userInfo => {
             if (userInfo) {
               localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+              // Trigger update to refresh hamburger menu and other components
+              this.onservice.updateUserDetails.next(true);
             }
           })
           localStorage.setItem("guest", "F");
@@ -1234,21 +1236,23 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
 
   signInWithApple(reqtype) {
-    if (reqtype == "signup")
-      this.logeventservice.logEvent('apple_signup');
-    else
-      this.logeventservice.logEvent('apple_login');
-    const CLIENT_ID = "humanwisdom.web.service";
-    const REDIRECT_API_URL =
-      "https://www.humanwisdom.info/api/verifyAppleToken_html";
-
-    window.open(
-      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
-        REDIRECT_API_URL
-      )}&response_type=code id_token&scope=name email&response_mode=form_post`,
-      "_self"
-    );
-  }
+     if (reqtype == "signup")
+       this.logeventservice.logEvent('apple_signup');
+     else
+       this.logeventservice.logEvent('apple_login');
+     const CLIENT_ID = "humanwisdom.web.service";
+     localStorage.setItem('appleLogin','T');
+     let REDIRECT_API_URL = environment.appleSignInAPIAdults;
+     if(!SharedService.isAdultProgram()){
+       REDIRECT_API_URL = environment.appleSignInAPITeenagers;
+     }
+      window.open(
+       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+         REDIRECT_API_URL
+       )}&response_type=code id_token&scope=name email&response_mode=form_post`,"_self"
+     );
+    // this.pollPopup(popup);
+   }
 
 }
 
