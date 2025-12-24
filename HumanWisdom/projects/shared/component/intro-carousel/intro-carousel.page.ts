@@ -120,8 +120,19 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
 
     $('.carousel').bcSwipe({ threshold: 50 });
-    // Don't load Google Sign-In script here - it will be loaded when googleLogin is called
-    // This prevents timeout errors if the script is already loading from another component
+    
+    // Initialize Google Sign-In callback
+    this.loadGoogleSignInScript().then(() => {
+      if (typeof google !== 'undefined' && google.accounts) {
+        // Initialize Google Identity Services
+        google.accounts.id.initialize({
+          client_id: environment.googleClientId,
+          callback: (response: any) => this.handleCredentialResponse(response),
+        });
+      }
+    }).catch((error) => {
+      console.error('Failed to load Google Sign-In:', error);
+    });
   }
 
   skip() {
@@ -215,6 +226,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     console.log('=== handleCredentialResponse CALLBACK TRIGGERED ===');
     console.log('Response received:', response);
     
+    // Close the overlay immediately when credential is received
+    this.closeGoogleSignInOverlay();
+    
     // JWT token from Google
     const idToken = response.credential;
     console.log('Google ID Token:', idToken ? 'Token present (' + idToken.substring(0, 20) + '...)' : 'No token');
@@ -237,6 +251,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       this.socialEmail = payload.email || '';
 
       if (!this.socialEmail) {
+        this.closeGoogleSignInOverlay();
         this.content = "Unable to retrieve email from Google account. Please try again.";
         this.enableAlert = true;
         return;
@@ -443,6 +458,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       });
     } catch (error) {
       console.error('Error processing Google credential:', error);
+      this.closeGoogleSignInOverlay();
       this.content = "Google login failed. Please try again.";
       this.enableAlert = true;
     }
@@ -870,14 +886,41 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
   }
 
+  /**
+   * Close the Google sign-in overlay if it exists
+   */
+  private closeGoogleSignInOverlay(): void {
+    try {
+      const overlay = document.getElementById('google-signin-overlay');
+      if (overlay) {
+        if (document.body.contains(overlay)) {
+          document.body.removeChild(overlay);
+        } else if (overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+        console.log('Google sign-in overlay closed');
+      }
+    } catch (error) {
+      console.warn('Error closing Google sign-in overlay:', error);
+      // Try alternative method
+      const overlays = document.querySelectorAll('#google-signin-overlay');
+      overlays.forEach((el) => {
+        try {
+          if (el.parentNode) {
+            el.parentNode.removeChild(el);
+          }
+        } catch (e) {
+          console.warn('Error removing overlay element:', e);
+        }
+      });
+    }
+  }
+
   private showGoogleSignInButton(): void {
     console.log('=== showGoogleSignInButton called ===');
     
     // Remove existing overlay if any
-    const existingOverlay = document.getElementById('google-signin-overlay');
-    if (existingOverlay) {
-      document.body.removeChild(existingOverlay);
-    }
+    this.closeGoogleSignInOverlay();
 
     if (typeof google === 'undefined' || !google.accounts) {
       console.error('Google not available when trying to show button');
@@ -932,9 +975,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       height: 30px;
     `;
     closeBtn.onclick = () => {
-      if (document.body.contains(overlay)) {
-        document.body.removeChild(overlay);
-      }
+      this.closeGoogleSignInOverlay();
     };
     container.appendChild(closeBtn);
     
@@ -945,7 +986,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     // Close on outside click
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) {
-        document.body.removeChild(overlay);
+        this.closeGoogleSignInOverlay();
       }
     });
 
@@ -963,9 +1004,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         console.log('Google button rendered successfully');
       } catch (error) {
         console.error('Error rendering Google button:', error);
-        if (document.body.contains(overlay)) {
-          document.body.removeChild(overlay);
-        }
+        this.closeGoogleSignInOverlay();
         this.content = "Google Sign-In failed to initialize. Please refresh the page.";
         this.enableAlert = true;
       }
