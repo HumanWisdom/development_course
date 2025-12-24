@@ -40,13 +40,12 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0  prelative">
-                  <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 mb20px tcenter">
-                      <img
-                        src="{{ profileImage  === undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/guest.svg' :  (this.profileImage.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/guest.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/' + profileImage)}}"
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 mb20px tcenter">
+                      <img [src]="profileImageUrl"
                         alt="" class="p0 opaque_border_inner img-responsive img_profile_01" />
-                    </div>
-                  </div>
+                        </div>
+                      </div>
 
                   <div [ngClass]="isAdults ? 'forum_profile_desc' : 'forum_profile_desc_teenagers'"
                     *ngIf="profileUsername">
@@ -99,6 +98,14 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <hr class="hr_style_v3_05 mtb30px">
+                </div>
+              </div>
+
+              <div class="row" *ngIf="!posts || posts.length === 0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    No response to show
+                  </h4>
                 </div>
               </div>
 
