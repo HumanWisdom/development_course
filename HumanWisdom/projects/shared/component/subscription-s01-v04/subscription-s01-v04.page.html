@@ -20,7 +20,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="prelative" (click)="proceedcart()" *ngIf="!ios && !isAndroid">
-        <h6 class="mtb0px fs_12px fw_500 lh_140p fc_e58d82 cart_cnt">
+        <h6 class="mtb0px fs_12px fw_500 lh_140p cart_cnt" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
           {{cartitemList.length}}
         </h6>
         <div class="">
@@ -48,7 +48,7 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <div class="row mb30px purple_banner plr0">
+            <div class="row mb30px plr0" [ngClass]="isAdults ? 'purple_banner' : 'blue_banner'">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tcenter">
                   <img
@@ -91,7 +91,7 @@
               </div>
             </div>
 
-            <div class="row mt10px" *ngFor="let data of cartitemList">
+            <div class="row mt20px" *ngFor="let data of cartitemList">
               <div class="raf_div_01">
                 <div class="row center_flex">
                   <div class="col-md-10 col-sm-10 col-xs-10 p0">
@@ -213,12 +213,9 @@
             </div>
 
             <div class="row mtb20px" *ngIf="enableAddMemForm">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group has-feedback mb0px">
-
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                </div>
+              <div class="form-group has-feedback mb0px">
                 <div class="row mb15px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="flexjc_end p0">
                     <button type="button" (click)="addToCartForm()"
                       class="btn btn_forum_ask_a_gift" [ngClass]="isAdults ? 'btn_forum_ask_a_gift_1' : ''">Add to cart
                     </button>
@@ -244,7 +241,7 @@
   <h4 class="fs_16px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
     If you would like to subscribe for family and friends, and get our special discount,
     please email us:
-    <a href="mailto:team@happierme.app" class="fc_e58d82 underline">team@happierme.app</a>
+    <a href="mailto:team@happierme.app" class="underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'" >team@happierme.app</a>
   </h4>
 </div>
 
