@@ -117,6 +117,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   cardClick = new EventEmitter<ContentCard>();
   sectionToggle = new EventEmitter<ContentSection>();
   @ViewChild('sectionElement', { static: false }) sectionElement: ElementRef;
+  @ViewChild('navMenu', { static: false }) navMenu: ElementRef;
   personalisedList = [];
   YourTopicofChoice;
   isAdults = false;
@@ -1583,5 +1584,31 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         });
       }
     });
+  }
+
+  /**
+   * Scroll navigation menu backward (left)
+   */
+  scrollNavBackward(): void {
+    if (this.navMenu && this.navMenu.nativeElement) {
+      const scrollAmount = 200; // Adjust scroll distance as needed
+      this.navMenu.nativeElement.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  /**
+   * Scroll navigation menu forward (right)
+   */
+  scrollNavForward(): void {
+    if (this.navMenu && this.navMenu.nativeElement) {
+      const scrollAmount = 200; // Adjust scroll distance as needed
+      this.navMenu.nativeElement.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
   }
 }

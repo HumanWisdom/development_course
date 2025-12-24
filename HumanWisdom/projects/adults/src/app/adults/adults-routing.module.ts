@@ -19,7 +19,7 @@ import { ParentHubPage } from './curated/parent-hub/parent-hub.page';
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 import { HomeComponent } from '../../../../shared/component/home/home.component';
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
-
+import { SocialLoginPage } from '../../../../shared/component/social-login/social-login.component';
 
 const routes: Routes = [
   {
@@ -551,6 +551,10 @@ const routes: Routes = [
     loadChildren: () => import('./kindness/kindness.module').then(m => m.KindnessModule)
   },
  
+  {
+    path: 'social-login',
+    component: SocialLoginPage
+  },
   {
     path: 'social-media',
     loadChildren: () => import('./social-media/social-media.module').then(m => m.SocialMediaModule)
