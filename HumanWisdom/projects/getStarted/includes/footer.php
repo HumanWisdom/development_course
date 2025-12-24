@@ -448,68 +448,83 @@
 </div>
 <!-- /footer -->
 
-<!-- sticky rating banner -->
-<div   id="closeableElement" class="row center_flex sticky_rating_banner display_df_none">
-  <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-12  flex_ai">
+<!-- sticky rating banner - DESKTOP VERSION -->
+<div id="closeableElementDesktop" class="sticky_rating_banner display_df_none display_m_none">
+  <div class="sticky_banner_inner">
 
-    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  tcenter">
+    <div class="banner_close">
       <a class="" href="javascript:void(0);" onclick="closeElement();">
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_close_grey.svg" class="img-responsive" alt="close">
       </a>
     </div>
 
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+    <div class="banner_logo">
       <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_footer_hwp.svg" class="img-responsive" alt="banner">
     </div>
 
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 ">
-      <div class="d-flex flex-column">
-        <h6 class="mtb0px flex_ai mb2px">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="img-responsive mr6px" alt="app">
-
-          <span class="fs_9px fw_400 lh_140p fc_000000 mr6px">
-            App store
-          </span>
-
-          <span class="fs_9px fw_600 lh_140p fc_000000 mr6px">
-            4.8
-          </span>
-
-          <span class="rating_a">
-            <i class="fa fa-star"></i>
-          </span>
-        </h6>
-
-        <h6 class="mtb0px flex_ai">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="img-responsive mr6px" alt="playstore">
-
-          <span class="fs_9px fw_400 lh_140p fc_000000 mr6px">
-            Google Play
-          </span>
-
-          <span class="fs_9px fw_600 lh_140p fc_000000 mr6px">
-            4.8
-          </span>
-
-          <span class="rating_a">
-            <i class="fa fa-star"></i>
-          </span>
-        </h6>
+    <div class="banner_ratings">
+      <div class="rating_row">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="rating_icon" alt="app">
+        <span class="rating_text">App store</span>
+        <span class="rating_score">4.8</span>
+        <span class="rating_star"><i class="fa fa-star"></i></span>
+      </div>
+      <div class="rating_row">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="rating_icon" alt="playstore">
+        <span class="rating_text">Google Play</span>
+        <span class="rating_score">4.8</span>
+        <span class="rating_star"><i class="fa fa-star"></i></span>
       </div>
     </div>
 
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+    <div class="banner_button">
       <a href="https://onelink.to/qsptex" class="">
-        <button class="fs_12px fw_600 lh_140p fc_ffffff btn_download" >
-          Download app
-        </button>
+        <button class="btn_download">Download app</button>
       </a>
     </div>
 
   </div>  
 </div>
-<!-- /sticky rating banner -->
+<!-- /sticky rating banner - DESKTOP VERSION -->
 
+<!-- sticky rating banner - MOBILE VERSION -->
+<div id="closeableElement" class="sticky_rating_banner display_df_none display_d_none">
+  <div class="row">
+
+    <div class="banner_close">
+      <a class="" href="javascript:void(0);" onclick="closeElement();">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_close_grey.svg" class="img-responsive" alt="close">
+      </a>
+    </div>
+
+    <div class="banner_logo" style="width: 46px !important;">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_footer_hwp.svg" class="img-responsive" alt="banner">
+    </div>
+
+    <div style="width: 50%;padding-left:0px !important">
+      <div class="rating_row" style="width: 20%;">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="rating_icon" alt="app">
+        <span class="rating_text">App store</span>
+        <span class="rating_score">4.8</span>
+        <span class="rating_star"><i class="fa fa-star"></i></span>
+      </div>
+      <div class="rating_row" style="width: 20%;">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="rating_icon" alt="playstore">
+        <span class="rating_text">Google Play</span>
+        <span class="rating_score">4.8</span>
+        <span class="rating_star"><i class="fa fa-star"></i></span>
+      </div>
+    </div>
+
+    <div class="banner_button" style="width: 20%;">
+      <a href="https://onelink.to/qsptex" class="">
+        <button class="btn_download">Download app</button>
+      </a>
+    </div>
+
+  </div>  
+</div>
+<!-- /sticky rating banner - MOBILE VERSION -->
 <script>
     // Ensure Bootstrap 5 collapse works for mobile accordion
     document.addEventListener('DOMContentLoaded', function () {

@@ -26560,7 +26560,7 @@ h1 {
   width: 100%;
   overflow: visible;
   border-radius: 100px;
-  background: #ED7D6F !important;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
 
   font-size: 15px;
   position: static;
@@ -30012,7 +30012,7 @@ svg path
   /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
   background: #FFE8BB;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   height: 289px;
   text-align: center;
   margin-top: -12%;
@@ -30471,8 +30471,8 @@ svg path
 .p_rc {
   min-height: 64px;
   height: auto;
-  background: #FFE8BB;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* background: #FFE8BB; */
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 12px;
   padding: 20px;
   letter-spacing: 2.4px;
@@ -30481,6 +30481,8 @@ svg path
   line-height: 150%;
   color: #FFF;
 }
+
+
 
 .btn_jhwpp {
   height: 100px;
@@ -34786,7 +34788,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: unset;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 16px;
   height: auto;
 }
@@ -34919,7 +34921,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0 !important;
   border: 0;
   border-radius: 100px;
-  background: #ED7D6F !important;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -37493,12 +37495,12 @@ span {
         max-width: 720px !important;
     }
 }
+*/
 @media (min-width: 576px) {
     .container, .container-sm {
-        max-width: 540px !important;
+        max-width: 100% !important;
     }
-} */
-
+} 
 .ws-read-icon {
   position: relative;
   bottom: 50px;

@@ -13,7 +13,7 @@
 
             <div class="row home-container sticky-top-section">
 
-              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isGuest && showSearchBox">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isloggedIn && showSearchBox">
                 <div class="d-flex justify-content-between align-items-center plr20px mt20px mb0px">
                   <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
                     Hi {{username}}!
@@ -230,7 +230,7 @@
                       <!-- Section Header (clickable for accordion) -->
                       <div class="d-flex justify-content-between align-items-center section-header rounded-top  "
                         [class.long-term-solutions-header]="section.title === 'Long term solutions'"
-                        [ngStyle]="{'margin-top.px': enableBanner ? (isGuest ? 50 : 120) : 0}"
+                        [ngStyle]="{'margin-top.px': enableBanner ? (!isloggedIn ? 50 : 120) : 0}"
                         (click)="onSectionToggle(section)" (keydown.enter)="onSectionToggle(section)"
                         (keydown.space)="onSectionToggle(section)" tabindex="0" role="button"
                         [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id">

@@ -41,6 +41,11 @@ body {
   background-color: #183C79 !important;
 }
 
+@media (min-width: 576px) {
+    .container, .container-sm {
+        max-width: 100% !important;
+    }
+} 
 
 .nav-sm .container.body .col-md-3.left_col .mCSB_container,
 .nav-sm .container.body .col-md-3.left_col .mCustomScrollBox {

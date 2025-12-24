@@ -115,7 +115,7 @@ require_once('./includes/security_config.php');
 
 
           <img style="width:100%;height:auto;"
-            src="https://d1tenzemoxuh75.cloudfront.net/website/Adults+teenagers+2.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/website/index_mobile.png"
             class="img-responsive w100p display_d_none m-popup m-auto" loading="lazy" alt="performance">
         </div>
         <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px mtb40px" data-aos="fade-up"
@@ -816,7 +816,7 @@ require_once('./includes/security_config.php');
               class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/circle_mobile.svg"
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/circles.png"
               class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
 
             <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
@@ -2078,22 +2078,15 @@ require_once('./includes/security_config.php');
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-            <h6 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" id="totalAnnualPricingModelHeading">
-              After your free trial, the yearly subscription is INR and automatically renews each year until cancelled.
-            </h6>
-            <span class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-              Cancel anytime.
-
-            </span>
-
-
-            <a href="https://happierme.app/pages/terms_conditions.php"> <span
-                class="mtb0px fs_15px fw_400 lh_150p fc_ffffff td_underline">
-                Terms & Conditions</span>
-            </a>
-
-
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 tcenter">
+            <div class="mtb0px fs_12px fw_400 lh_130p fc_ffffff">
+              <span id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is INR and automatically renews each year until cancelled.Cancel anytime.
+                <a href="https://happierme.app/pages/terms_conditions.php"><span
+                  class="fs_12px fw_400 lh_130p fc_ffffff td_underline">Terms & Conditions</span></a>
+              </span>
+              
+              
+            </div>
           </div>
         </div>
 
@@ -5204,4 +5197,5 @@ require_once('./includes/security_config.php');
   </div>
 </div>
 
+</body>
 </html>
