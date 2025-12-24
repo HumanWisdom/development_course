@@ -26560,7 +26560,7 @@ h1 {
   width: 100%;
   overflow: visible;
   border-radius: 100px;
-  background: #ED7D6F !important;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
 
   font-size: 15px;
   position: static;
@@ -34907,7 +34907,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0 !important;
   border: 0;
   border-radius: 100px;
-  background: #ED7D6F !important;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
