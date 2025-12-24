@@ -146,16 +146,16 @@
 
                           <div class="fc_img" (click)="hideFunction('password')">
                        
-                            <img [src]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg'"
-                                 class="img-responsive" *ngIf="passwordhide && isAdults">
-                                   <img [src]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show'"
-                                 class="img-responsive" *ngIf="!passwordhide && isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
+                                 class="img-responsive opacity-50" *ngIf="passwordhide && isAdults">
+                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show"
+                                 class="img-responsive  opacity-50" *ngIf="!passwordhide && isAdults">
                                  
              
 
-                                   <img [src]="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
                                  class="img-responsive" *ngIf="passwordhide && !isAdults">
-                                   <img [src]="'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg'"  
+                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"  
                                  class="img-responsive" *ngIf="!passwordhide && !isAdults">
                           </div>
                         </div>
@@ -171,12 +171,15 @@
 
                           <div class="fc_img" (click)="hideFunction('')">
                             <img *ngIf="confirmpasswordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
-                              class="img-responsive">
+                              class="img-responsive  opacity-50">
 
                                <img *ngIf="confirmpasswordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
                               class="img-responsive">
 
-                              <img *ngIf="!confirmpasswordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
+                              <img *ngIf="!confirmpasswordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_show.svg"
+                              class="img-responsive">
+
+                                   <img *ngIf="!confirmpasswordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
                               class="img-responsive">
                           </div>
                         </div>
@@ -353,7 +356,10 @@
                               <img *ngIf="passwordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
                             class="img-responsive" >
 
-                            <img *ngIf="!passwordhide" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
+                            <img *ngIf="!passwordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_show.svg"
+                            class="img-responsive" >
+
+                             <img *ngIf="!passwordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
                             class="img-responsive" >
                         </div>
 
