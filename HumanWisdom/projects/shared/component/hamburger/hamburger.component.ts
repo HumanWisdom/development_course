@@ -225,10 +225,39 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   getName() {
-    return this.name === "" ? 'guest' : this.name
+    var name = this.safeJsonParse(localStorage.getItem("name"));
+    if(name==null || name==undefined || name ==''){
+       return this.name === "" ?   'guest'  : this.name
+    }
+    return name;
+   
 
   }
 
+   private safeJsonParse(value: string | null): any {
+    if (!value || value === 'null' || value === 'undefined') {
+      return null;
+    }
+    
+    // If it's already a plain string (not JSON), return it as is
+    const trimmed = value.trim();
+    if (!trimmed.startsWith('{') && !trimmed.startsWith('[') && !trimmed.startsWith('"')) {
+      // Check if it's a number string
+      if (!isNaN(Number(trimmed)) && trimmed !== '') {
+        return Number(trimmed);
+      }
+      // Return as plain string
+      return trimmed;
+    }
+    
+    try {
+      return JSON.parse(value);
+    } catch (e) {
+      // If parsing fails, return the original value as string
+      console.warn('Failed to parse JSON, returning as string:', value, e);
+      return value;
+    }
+  }
 
   routeGuide() {
     this.router.navigate([`/adults/program-guide/s35001`]);
