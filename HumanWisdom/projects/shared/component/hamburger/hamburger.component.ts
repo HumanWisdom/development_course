@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChanges, OnDestroy, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, NavigationEnd } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
 import { ProgramType } from '../../models/program-model';
@@ -47,6 +47,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   @Input() userDetails: any
   subscription: Subscription;
   toursubscription: Subscription;
+  routerSubscription: Subscription;
   disableClick = true;
   isAdults: boolean = true;
   isDataRecieved = false;
@@ -73,13 +74,27 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.closemodal.nativeElement.click();
     })
     this.Onboardingservice.getUserDetails.subscribe(res => {
-      if (res) {
+      if (res && res[0]) {
         console.log('hamburger subscription called');
         console.log(res);
         this.userDetails = res[0];
         this.isDataRecieved = true;
         this.setInitialData();
         this.setProfileImage(this.userDetails);
+        // Update name from userDetails or loginResponse
+        const loginResponse = localStorage.getItem("loginResponse");
+        if (loginResponse) {
+          try {
+            const userRes = JSON.parse(loginResponse);
+            this.name = userRes["Name"] || this.name;
+          } catch (e) {
+            // Fallback to localStorage name
+            this.name = localStorage.getItem("name") || this.name;
+          }
+        } else {
+          this.name = localStorage.getItem("name") || this.name;
+        }
+        this.isloggedIn = localStorage.getItem("isloggedin") === "T";
         console.log(res);
         this.isDataRecieved = false;
       }
@@ -95,6 +110,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   getmenuevent() {
+    // Refresh user details when menu is opened
+    this.refreshUserDetails();
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
     }
@@ -161,6 +178,10 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     if(this.isBrowser()){
         this.isWeb = true;
     }
+    
+    // Refresh user details from localStorage on initialization
+    this.refreshUserDetails();
+    
     let userId = JSON.parse(localStorage.getItem("userId"));
     this.Onboardingservice.getuserDetail();
     if (localStorage.getItem("isPartner") != null) {
@@ -203,7 +224,17 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
           this.subscriber = true;
         }
       }
-    })
+    });
+
+    // Listen to router navigation events to refresh user details after login
+    this.routerSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Small delay to ensure localStorage is updated after navigation
+        setTimeout(() => {
+          this.refreshUserDetails();
+        }, 100);
+      }
+    });
   }
 
 
@@ -225,8 +256,48 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   getName() {
+    // Always refresh from localStorage before returning name
+    this.refreshUserDetails();
     return this.name === "" ? 'guest' : this.name
+  }
 
+  /**
+   * Refresh user details from localStorage
+   * Called on initialization and when menu is opened
+   */
+  private refreshUserDetails(): void {
+    const isLoggedIn = localStorage.getItem("isloggedin") === "T";
+    if (isLoggedIn) {
+      // Get name from loginResponse
+      const loginResponse = localStorage.getItem("loginResponse");
+      if (loginResponse) {
+        try {
+          const userRes = JSON.parse(loginResponse);
+          this.name = userRes["Name"] || localStorage.getItem("name") || "";
+          this.isloggedIn = true;
+        } catch (e) {
+          this.name = localStorage.getItem("name") || "";
+        }
+      } else {
+        this.name = localStorage.getItem("name") || "";
+      }
+      
+      // Get user details if available
+      const userDetailsStr = localStorage.getItem("userDetails");
+      if (userDetailsStr) {
+        try {
+          const userDetails = JSON.parse(userDetailsStr);
+          this.userDetails = userDetails;
+          this.setInitialData();
+          this.setProfileImage(userDetails);
+        } catch (e) {
+          console.error('Error parsing userDetails:', e);
+        }
+      }
+    } else {
+      this.name = "";
+      this.isloggedIn = false;
+    }
   }
 
 
@@ -505,7 +576,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   ngOnDestroy() {
     // this.closemodal?.nativeElement?.click();
-    this.toursubscription.unsubscribe();
+    this.toursubscription?.unsubscribe();
+    this.routerSubscription?.unsubscribe();
   }
 
   ngAfterViewInit(): void {
