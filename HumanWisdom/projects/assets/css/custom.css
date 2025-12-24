@@ -33409,7 +33409,9 @@ body * {
 }
 
 .div_fq .row:hover {
-  filter: brightness(90%);
+   background-color: #FFD889;
+
+  /* filter: brightness(90%); */
 }
 
 .box_v3_08 {
@@ -33485,6 +33487,18 @@ body * {
   justify-content: center;
   padding: 20px;
   /* opacity: 0.5; */
+}
+
+.adult-selected-plan-border {
+    border: 1px solid #ED7D6F !important;
+}
+
+.adult-best-value-annual {
+    background: #ED7D6F;
+}
+
+.adult-monthly {
+    background: #424675;
 }
 
 .div_ct .col-lg-6:nth-child(even) {
@@ -36496,12 +36510,12 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 /* .partnership_row a:nth-child(1) .box_02,
 .partnership_row a:nth-child(4) .box_02,
 .partnership_row a:nth-child(7) .box_02, */
-.div_fq a:nth-child(1) .row,
+/* .div_fq a:nth-child(1) .row,
 .div_fq a:nth-child(4) .row,
 .div_fq a:nth-child(7) .row,
 .div_fq a:nth-child(10) .row,
 .div_fq a:nth-child(13) .row,
-.div_fq a:nth-child(16) .row
+.div_fq a:nth-child(16) .row */
 /* .div_fbn a:nth-child(1) .row, */
 /* .div_fbn a:nth-child(4) .row, */
 /* .div_fbn a:nth-child(7) .row, */
@@ -36510,46 +36524,46 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 /* .div_fbn a:nth-child(16) .row, */
 /* .div_fbn a:nth-child(19) .row, */
 /* .div_fbn a:nth-child(22) .row */
- {
+ /* {
   background: #803358;
-}
+} */
 
 /* .partnership_row a:nth-child(2) .box_02,
 .partnership_row a:nth-child(5) .box_02,
 .partnership_row a:nth-child(8) .box_02, */
-.div_fq a:nth-child(2) .row,
+/* .div_fq a:nth-child(2) .row,
 .div_fq a:nth-child(5) .row,
 .div_fq a:nth-child(8) .row,
 .div_fq a:nth-child(11) .row,
 .div_fq a:nth-child(14) .row,
-.div_fq a:nth-child(17) .row,
+.div_fq a:nth-child(17) .row, */
 /* .div_fbn a:nth-child(2) .row, */
 /* .div_fbn a:nth-child(5) .row, */
 /* .div_fbn a:nth-child(8) .row, */
-.div_fbn a:nth-child(11) .row,
+/* .div_fbn a:nth-child(11) .row,
 .div_fbn a:nth-child(14) .row,
 .div_fbn a:nth-child(17) .row,
 .div_fbn a:nth-child(20) .row,
 .div_fbn a:nth-child(23) .row {
   background: #D7586B;
-}
+} */
 
 /* .partnership_row a:nth-child(3) .box_02,
 .partnership_row a:nth-child(6) .box_02, */
-.div_fq a:nth-child(3) .row,
+/* .div_fq a:nth-child(3) .row,
 .div_fq a:nth-child(6) .row,
 .div_fq a:nth-child(9) .row,
 .div_fq a:nth-child(12) .row,
-.div_fq a:nth-child(15) .row,
+.div_fq a:nth-child(15) .row, */
 /* .div_fbn a:nth-child(3) .row, */
 /* .div_fbn a:nth-child(6) .row, */
 /* .div_fbn a:nth-child(9) .row, */
-.div_fbn a:nth-child(12) .row,
+/* .div_fbn a:nth-child(12) .row,
 .div_fbn a:nth-child(15) .row,
 .div_fbn a:nth-child(18) .row,
 .div_fbn a:nth-child(21) .row {
   background: #ED7D6F;
-}
+} */
 
 .div_fq h4,
 .div_fbn h4 {
@@ -36590,7 +36604,8 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 }
 
 .div_fq .fa_vm:hover {
-  filter: unset !important;
+    background-color: #FFD889;
+
 }
 
 .popover .arrow {
