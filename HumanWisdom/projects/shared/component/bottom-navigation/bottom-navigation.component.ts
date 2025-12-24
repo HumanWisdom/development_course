@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 import { ProgramType } from '../../models/program-model';
 import { SharedService, UrlConstant } from '../../services/shared.service';
 import { OnboardingService } from '../../services/onboarding.service';
@@ -7,19 +7,6 @@ import { Subscription } from 'rxjs';
 import { LogEventService } from '../../services/log-event.service';
 import { OwlStore } from '../../../shared/stores/owl.store';
 import { Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
-
-/**
- * Enum for navigation states in bottom navigation
- */
-export enum NavigationState {
-  None = 'none',
-  Home = 'home',
-  Search = 'search',
-  Journal = 'journal',
-  Forum = 'forum',
-  Profile = 'profile'
-}
 
 
 @Component({
@@ -28,11 +15,6 @@ export enum NavigationState {
   styleUrls: ['./bottom-navigation.component.scss'],
 })
 export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
-  // Enum-based navigation state
-  NavigationState = NavigationState;
-  currentNavigationState: NavigationState = NavigationState.None;
-
-  // Keep @Input properties for backward compatibility
   @Input() dash = false;
   @Input() programType: ProgramType = ProgramType.Adults;
   @Input() journal = false
@@ -50,7 +32,6 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   @Output() saveQuestion = new EventEmitter();
   @Output() journalclick = new EventEmitter();
   toursubscription: Subscription;
-  routerSubscription: Subscription;
   disableClick = false;
   isAdults = false;
   isDataRecieved = false;
@@ -137,63 +118,52 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         }
       }
 
-      // Update navigation state based on current URL
-      this.updateNavigationState(this.router.url);
+      if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
+        || this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
+        this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search))) {
+        this.dash = false
+        this.journal = false
+        this.fourm = false;
+        this.search = true;
+        this.enableprofile = false;
+      }
+      if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` ) {
+        this.dash = true;
+        this.journal = false;
+        this.search = false;
+        this.fourm = false;
+        this.enableprofile = false;
+      }
+      if ((this.router.url == `/${SharedService.getprogramName()}/journal`) ||
+        this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
+        (this.router.url.indexOf(`/${SharedService.getprogramName()}/note`) > -1)) {
+        this.dash = false
+        this.journal = true;
+        this.search = false;
+        this.fourm = false;
+        this.enableprofile = false;
+      }
+      let reg = new RegExp('forum')
+      if ((reg.test(this.router.url))) {
+        this.dash = false
+        this.journal = false
+        this.fourm = true;
+        this.enableprofile = false;
+        this.journal = false;
+      }
+      if (this.router.url == `/${SharedService.getprogramName()}/onboarding/user-profile`
+        || this.router.url.includes('/profile-edit')) {
+        this.dash = false
+        this.journal = false
+        this.fourm = false;
+        this.enableprofile = true;
+        this.search = false;
+      }
 
 
       this.toursubscription = this.onboardingService.getEnableTour().subscribe((value) => {
         this.disableClick = value;
       });
-
-      // Listen to router navigation events to update navigation state
-      this.routerSubscription = this.router.events
-        .pipe(filter(event => event instanceof NavigationEnd))
-        .subscribe((event: NavigationEnd) => {
-          this.updateNavigationState(event.url);
-        });
-    }
-
-    /**
-     * Update navigation state based on current URL
-     */
-    private updateNavigationState(url: string): void {
-      let newState: NavigationState = NavigationState.None;
-
-      // Check for home FIRST to ensure it takes precedence
-      if (url == `/${SharedService.getprogramName()}/home` || url.includes("/home")) {
-        newState = NavigationState.Home;
-      }
-      // Then check for search (only if not on home page)
-      else if (url == SharedService.getUrlfromFeatureName(UrlConstant.search)
-        || url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
-        url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search))) {
-        newState = NavigationState.Search;
-      }
-      // Check for journal
-      else if ((url == `/${SharedService.getprogramName()}/journal`) ||
-        url.includes('/journal') || url.includes('/guidedquestions') ||
-        (url.indexOf(`/${SharedService.getprogramName()}/note`) > -1)) {
-        newState = NavigationState.Journal;
-      }
-      // Check for forum
-      else if (new RegExp('forum').test(url)) {
-        newState = NavigationState.Forum;
-      }
-      // Check for profile
-      else if (url == `/${SharedService.getprogramName()}/onboarding/user-profile`
-        || url.includes('/profile-edit')) {
-        newState = NavigationState.Profile;
-      }
-
-      // Update enum state
-      this.currentNavigationState = newState;
-
-      // Update boolean properties for backward compatibility with template
-      this.dash = newState === NavigationState.Home;
-      this.search = newState === NavigationState.Search;
-      this.journal = newState === NavigationState.Journal;
-      this.fourm = newState === NavigationState.Forum;
-      this.enableprofile = newState === NavigationState.Profile;
     }
 
     routeDash() {
@@ -241,7 +211,6 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     ngOnDestroy(): void {
       this.toursubscription?.unsubscribe();
-      this.routerSubscription?.unsubscribe();
     }
 
     

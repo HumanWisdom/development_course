@@ -274,7 +274,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
             if (userInfo) {
               localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
               // Trigger update to refresh hamburger menu and other components
-              this.onservice.updateUserDetails.next(true);
+          //    this.onservice.updateUserDetails.next(true);
             }
           })
           localStorage.setItem("guest", "F");
