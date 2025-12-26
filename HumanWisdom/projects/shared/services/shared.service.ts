@@ -182,11 +182,11 @@ export class SharedService {
       case ProgramType.Adults:
         return '/adults/home';
       case ProgramType.Teenagers:
-        return '/teenagers/teenager-dashboard';
+        return '/teenagers/home';
       case ProgramType.Young_Adults:
         return '/teenagers/teenager-dashboard';
       default:
-        return '/adults/adult-dashboard';
+        return '/adults/home';
     }
   }
 

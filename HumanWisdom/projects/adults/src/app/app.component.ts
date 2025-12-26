@@ -385,7 +385,7 @@ export class AppComponent implements OnDestroy {
   }
 
   enableFooter() {
-    if (this.router.url == "/adults/search" || this.router.url == "/search" || this.router.url == "/adults/home"
+    if (this.router.url == "/adults/search" || this.router.url == "/search"
       || this.router.url.includes('/adults/site-search/') ||
       this.router.url.includes('/adults/search')) {
       this.dash = false
@@ -400,8 +400,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    if ((this.router.url == "/adults" || this.router.url == "/adults/adult-dashboard") || (this.router.url == "/adult-dashboard")
-     || this.router.url.includes("/adults/adult-dashboard") || this.router.url.includes("adult-dashboard") || this.router.url.includes("home")) {
+    else if (this.router.url.includes("home")) {
       this.dash = true;
       this.journal = false;
       this.search = false;
@@ -418,7 +417,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    if ((this.router.url == "/adults/journal") ||
+    else if ((this.router.url == "/adults/journal") ||
       this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
       (this.router.url.indexOf('/adults/note') > -1)) {
       this.dash = false
@@ -432,8 +431,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    let reg = new RegExp('forum')
-    if ((reg.test(this.router.url))) {
+    else if (this.router.url.includes('/forum')) {
       this.dash = false
       this.journal = false
       this.fourm = true;
@@ -446,7 +444,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    if (this.router.url == "/onboarding/user-profile"
+   else if (this.router.url == "/onboarding/user-profile"
       || this.router.url.includes('/profile-edit')) {
       this.dash = false
       this.journal = false
@@ -459,7 +457,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-  if (this.router.url == "/adults/notification") {
+  else if (this.router.url == "/adults/notification") {
     this.dash = false
     this.journal = false
     this.fourm = false;
@@ -471,7 +469,7 @@ export class AppComponent implements OnDestroy {
     this.isLoginPage = false;
     return true;
   }
-  if (this.router.url == "/adults/onboarding/login") {
+  else if (this.router.url == "/adults/onboarding/login") {
     this.isLoginPage = true;
   }
     this.isShowHeader=false;

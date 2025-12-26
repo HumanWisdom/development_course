@@ -127,14 +127,14 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.search = true;
         this.enableprofile = false;
       }
-      if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` ) {
+      else if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` ) {
         this.dash = true;
         this.journal = false;
         this.search = false;
         this.fourm = false;
         this.enableprofile = false;
       }
-      if ((this.router.url == `/${SharedService.getprogramName()}/journal`) ||
+      else if ((this.router.url == `/${SharedService.getprogramName()}/journal`) ||
         this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
         (this.router.url.indexOf(`/${SharedService.getprogramName()}/note`) > -1)) {
         this.dash = false
@@ -143,15 +143,14 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.fourm = false;
         this.enableprofile = false;
       }
-      let reg = new RegExp('forum')
-      if ((reg.test(this.router.url))) {
+    else if (this.router.url.includes('/forum')) {
         this.dash = false
         this.journal = false
         this.fourm = true;
         this.enableprofile = false;
         this.journal = false;
       }
-      if (this.router.url == `/${SharedService.getprogramName()}/onboarding/user-profile`
+      else if (this.router.url == `/${SharedService.getprogramName()}/onboarding/user-profile`
         || this.router.url.includes('/profile-edit')) {
         this.dash = false
         this.journal = false
@@ -159,7 +158,6 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.enableprofile = true;
         this.search = false;
       }
-
 
       this.toursubscription = this.onboardingService.getEnableTour().subscribe((value) => {
         this.disableClick = value;
