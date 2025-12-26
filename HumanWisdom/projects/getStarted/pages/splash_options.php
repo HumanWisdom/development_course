@@ -33,7 +33,14 @@
       <link href="../assets/font/font_size.css" rel="stylesheet">
       <link href="../assets/font/font_weight.css" rel="stylesheet">
       <link href="../assets/font/line_height.css" rel="stylesheet">
+
       <!-- <link href="./assets/css/backgrounds.css" rel="stylesheet"> -->
+       <style>
+        body
+        {
+          font-family: 'Poppins' !important;
+        }
+        </style>
   </head>
 
   <body>
