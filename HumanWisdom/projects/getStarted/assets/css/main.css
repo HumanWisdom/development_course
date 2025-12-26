@@ -3314,9 +3314,12 @@ padding:20px;
   margin: 0;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 1);
   background: transparent;
   position: relative;
+}
+.btn_subscription_selected{
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .btn_subscription_trial 

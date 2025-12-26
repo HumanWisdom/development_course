@@ -343,7 +343,7 @@
   .modal-content1 .col-xs-2 {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     margin: 0;
     flex-shrink: 0;
     width: auto !important;
@@ -428,7 +428,7 @@
     text-align: left !important;
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     flex-wrap: nowrap !important;
   }
 
@@ -439,7 +439,7 @@
     text-align: left !important;
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     flex-wrap: nowrap !important;
   }
 
