@@ -154,25 +154,25 @@
 
                   <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <input type="text" class="sp_fc" id="BankName" name="BankName" [(ngModel)]="paymentBank.BankName" placeholder="Bank Name">
+                      <input type="text" class="sp_fc" id="BankName" name="BankName" maxlength="100" [(ngModel)]="paymentBank.BankName" placeholder="Bank Name">
                     </div>
                   </div>
 
                   <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <input type="text" class="sp_fc" id="Acc_Number" name="Acc_Number"  [(ngModel)]="paymentBank.Acc_Number" placeholder="Bank Account number">
+                      <input type="text" class="sp_fc" id="Acc_Number" name="Acc_Number"  [(ngModel)]="paymentBank.Acc_Number"  maxlength="100"  placeholder="Bank Account number">
                     </div>
                   </div>
 
                   <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <input type="text" class="sp_fc" id="Swift" name="Swift" [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" [placeholder]="getPlaceHolder()">
+                      <input type="text" class="sp_fc" id="Swift" name="Swift" [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" maxlength="100"  [placeholder]="getPlaceHolder()">
                     </div>
                   </div>
                 
                   <div class="row mb10px" *ngIf="LinkBankAccount=='Paypal'">                    
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <input type="text" class="sp_fc" id="PaypalId" name="PaypalId" [(ngModel)]="paymentBank.PayPalID" placeholder="PayPalId">
+                      <input type="text" class="sp_fc" id="PaypalId" name="PaypalId" [(ngModel)]="paymentBank.PayPalID" maxlength="30" placeholder="PayPalId">
                     </div>
                   </div>
          
