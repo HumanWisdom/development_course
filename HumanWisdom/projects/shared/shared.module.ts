@@ -113,6 +113,7 @@ import { OwlAnimationComponent } from './component/owl-animation/owl-animation.c
 import { ChatBotComponent } from './component/chat-bot/chat-bot.component';
 import { ChatbotService } from './services/chatbot.service';
 import { S157001Page } from './component/s157001/s157001.page';
+import {SocialLoginPage} from './component/social-login/social-login.component';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -219,7 +220,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     OwlAnimationComponent,
     ChatBotComponent,
     WisdomExerciseS75001Component,
-    S157001Page 
+    S157001Page,
+    SocialLoginPage 
   ],
   imports: [
     CommonModule,
@@ -345,7 +347,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     OwlAnimationComponent,
     ChatBotComponent,
     WisdomExerciseS75001Component,
-    S157001Page
+    S157001Page,
+    SocialLoginPage
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },

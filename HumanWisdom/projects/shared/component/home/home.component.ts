@@ -140,8 +140,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private routerSubscription: Subscription;
   private hashChangeHandler: () => void;
   private lastScrollTop: number = 0;
-  isGuest = true;
-  enableBanner = false;
   preference = '';  
   constructor(
     private router: Router,
@@ -165,13 +163,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           this.handleHashChange();
         }, 100);
       });
-     this.enableBanner = SharedService.enablebanner;
+
   }
 
   ngOnInit(): void {
     this.isSubscriber = SharedService.isSubscriber();
     console.log('Is Subscriber:', this.isSubscriber);
-    this.isGuest = !this.isloggedIn;
+
     // Safely parse username - handle guest users who might have empty/null username
     try {
       const userName = SharedService.FnName();
@@ -185,9 +183,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     } catch (error) {
       console.warn('Error parsing username, defaulting to Guest:', error);
-      this.username =  SharedService.FnName();
+      this.username = '';
       this.streak = '';
-          this.getStreak();
     }
 
     // Restore state from store
@@ -1360,7 +1357,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Hide search box when scroll exceeds 20% of screen height
     if (scrollTop > threshold) {
-      this.showSearchBox =false;
+      this.showSearchBox = false;
       this.searchResult = []; // Close dropdown when hiding search box
     } else {
       // Show search box when scroll is within 20% of screen height
@@ -1589,21 +1586,27 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  scrollNavForward(): void {
-    if (this.navMenu && this.navMenu.nativeElement) {
-      const scrollAmount = 200; // Adjust scroll distance as needed
-      this.navMenu.nativeElement.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  }
-
+  /**
+   * Scroll navigation menu backward (left)
+   */
   scrollNavBackward(): void {
     if (this.navMenu && this.navMenu.nativeElement) {
       const scrollAmount = 200; // Adjust scroll distance as needed
       this.navMenu.nativeElement.scrollBy({
         left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  /**
+   * Scroll navigation menu forward (right)
+   */
+  scrollNavForward(): void {
+    if (this.navMenu && this.navMenu.nativeElement) {
+      const scrollAmount = 200; // Adjust scroll distance as needed
+      this.navMenu.nativeElement.scrollBy({
+        left: scrollAmount,
         behavior: 'smooth'
       });
     }

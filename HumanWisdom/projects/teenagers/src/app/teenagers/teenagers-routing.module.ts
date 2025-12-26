@@ -15,13 +15,17 @@ import { QuestionAnswersSelection } from '../../../../shared/component/question-
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 import { HomeComponent } from '../../../../shared/component/home/home.component';
-
+import { SocialLoginPage } from '../../../../shared/component/social-login/social-login.component';
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
     canActivate: [AuthGuard]
+  },
+    {
+    path: 'social-login',
+    component: SocialLoginPage
   },
   {
     path: 'change-topic',
