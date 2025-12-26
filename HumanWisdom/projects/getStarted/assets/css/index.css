@@ -36,6 +36,10 @@
       .mobile_view_topic_tile {
         margin-bottom: 10px !important;
       }
+      .web_home_divlanding{
+        width: 104% !important;
+        padding: 40px 10px 5px 10px !important;
+      }
 
       /* Left align text on tiles - vertically centered, horizontally left-aligned */
       .btn-primarypop {
@@ -61,7 +65,7 @@
       }
 
       .mobile_view_topic {
-        margin-left: 28px !important
+        margin-left: 32px !important
       }
 
       .mobile_view_testimonial {
@@ -796,7 +800,7 @@
       .modal-content1 .col-xs-2 {
         display: flex;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         margin: 0;
         flex-shrink: 0;
         width: auto !important;
@@ -844,7 +848,7 @@
         text-align: left !important;
         display: flex !important;
         flex-direction: row !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         flex-wrap: nowrap !important;
       }
 
@@ -855,7 +859,7 @@
         text-align: left !important;
         display: flex !important;
         flex-direction: row !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         flex-wrap: nowrap !important;
       }
 
@@ -1026,6 +1030,22 @@
       /* Frequently asked questions title text color */
       .section-header h2.fs_24px {
         color: rgba(131, 75, 102, 1) !important;
+      }
+
+      .cross_btn_row{
+        bottom: 12px;
+        left: 12px;
+      }
+      .popup_w{
+        width: 295px !important;
+        padding-top: 15px;
+      }
+
+      .popuptitle{
+        font-size: 21px !important;
+      }
+      .align_n{
+        align-items: normal !important;
       }
 
       /* Set video iframe size for mobile */

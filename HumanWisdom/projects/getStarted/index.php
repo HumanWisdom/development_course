@@ -216,7 +216,7 @@ require_once('./includes/security_config.php');
 
           <div class="row mt40px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res card_center">
+              <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px  btn-res card_center">
                 <a href="https://happierme.app/pages/splash_options.php" class="">
                   <button class="fs_21px fw_500 lh_140p fc_ffffff btn_landing mbtn_landing">
                     Try HappierMe for free
@@ -3677,7 +3677,7 @@ require_once('./includes/security_config.php');
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -3703,7 +3703,7 @@ require_once('./includes/security_config.php');
         </div>
       </div>
       <div class="section-header1">
-        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="row center_flex popup_w" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             <h2 class="popuptitle">
               Overcome stress and anxiety
@@ -3717,7 +3717,7 @@ require_once('./includes/security_config.php');
           <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block ">
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                <div class="row">
+                <div class="row" >
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                       class="img-responsive img_aspects" alt="PATHWAY">
