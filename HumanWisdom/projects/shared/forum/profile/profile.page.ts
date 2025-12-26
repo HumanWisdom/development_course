@@ -28,6 +28,7 @@ export class ProfilePage implements OnInit {
   searchText = '';
   path = '';
   posts = [];
+  totalThreads = 0;
   selectIndex = 0;
   token = localStorage.getItem("shareToken");
   urlT: any
@@ -171,8 +172,10 @@ export class ProfilePage implements OnInit {
   }
   getAllPosts(index, userID) {
     this.forumService.getposts(index, null, userID).subscribe((res) => {
+      this.totalThreads = 0;
       if (res) {
         this.posts = this.forumService.FormatForumPostData(res);
+        this.totalThreads = res.filter(x => x.ParentPOstID == "0").length;
         if (!this.profileUsername && this.posts.length > 0) {
           this.profileUsername = this.posts[0].UserName;
         }
