@@ -20,18 +20,13 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="prelative" (click)="proceedcart()" *ngIf="!ios && !isAndroid">
-        <h6 class="mtb0px fs_12px fw_500 lh_140p cart_cnt" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
+        <h6 class="mtb0px fs_12px fw_500 lh_140p cart_cnt fc_e58d82">
           {{cartitemList.length}}
         </h6>
         <div class="">
-          <img *ngIf="isAdults; else teenCart"
+          <img
      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/tn_cart.svg"
      alt="" class="p0">
-
-<ng-template #teenCart>
-  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tn_cart.svg"
-       alt="" class="p0">
-</ng-template>
         </div>
       </a>
     </div>
