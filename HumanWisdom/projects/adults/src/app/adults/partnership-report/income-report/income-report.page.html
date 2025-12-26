@@ -37,8 +37,8 @@
                     <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg"
                       class="img-responsive w100"> -->
                     <div class="row  p_rc bg_803358 ">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px">
                             <h4 class="mtb0px fs_16px fw_600 lh_140p fc_ffffff">
                               Partnership Referral Code
@@ -56,7 +56,7 @@
                           </div>
                         </div>
 
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 h-100 p0 center_flex">
                           <a class="" (click)="share(partnershipReport.AffRefCode,'code')">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_share.svg"
@@ -71,14 +71,14 @@
 
               
               <div class="row mt20px">
-                <div class="mb15px fw_500 lh_150p fc_000000">
+                <div class="mt10px mb5px fw_500 lh_150p fc_000000">
                  <h4>Partnership referral link</h4>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex box_blue_01">
                     <div class="w100p">
                      
-                      <h4 class="fw_500 fs_15px lh_150p fc_000000 mtb0px p_rc">
+                      <h4 class="fw_500 fs_15px lh_150p fc_000000 mtb0px p_rc align-content-center">
                         {{this.partnershipReport.ReferralLink}}
                       </h4>
                     </div>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
                       <a class="" (click)="ChangeAccountDetais()">
-                        <h4 class="mtb0px fs_15px fw_600 lh_18px fc_e58d82 ws_nowrap tright">
+                        <h4 class="mtb0px fs_15px fw_600 lh_18px fc_D7586B ws_nowrap tright">
                           Change
                         </h4>
                       </a>
@@ -163,21 +163,21 @@
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr20px pl0px">
-                        <h4 class="mtb0px fs_12px fw_500 lh_14px fc_000000">
+                        <h4 class="mtb0px fs_12px fw_500 lh_100p fc_000000">
                           AVAILABLE BALANCE
                         </h4>
-                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_000000">
+                        <h4 class="mt20px mb0px fs_15px fw_700 lh_100p fc_000000">
                           USD {{partnershipReport.BalanceAmt}}
                         </h4>
 
                         <a id="mailto"
                           href="mailto:info@humanwisdom.me?subject=Request to Withdraw Partner Commission&body= I would Like to withdraw the partner commission I have earned till date.My Partner Referral Code: {{partnershipReport.AffRefCode}} .%0D%0D Thanks %0D {{partnershipReport.AffName}}"
-                          *ngIf="partnershipReport.BalanceAmt>=100">
-                          <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82 underline ws_nowrap">
+                          *ngIf="(partnershipReport.BalanceAmt>=100)">
+                          <h4 class="mt20px mb0px fs_12px fw_400 lh_100p fc_D7586B underline ws_nowrap">
                             Request to withdraw
                           </h4>
                         </a>
-                        <h4 class="mtb0px fs_12px fw_400 lh_140p fc_e58d82" *ngIf="partnershipReport.BalanceAmt<100">
+                        <h4 class="mt20px mb0px fs_12px fw_400 lh_100p fc_D7586B" *ngIf="(partnershipReport.BalanceAmt<100)">
                           Reach $100 to get paid
                         </h4>
                       </div>
@@ -192,7 +192,7 @@
                         <h4 class="mtb0px fs_12px fw_500 lh_14px fc_000000">
                           RECEIVED
                         </h4>
-                        <h4 class="mt10px mb5px fs_15px fw_700 lh_14px fc_000000">
+                        <h4 class="mt20px mb5px fs_15px fw_700 lh_14px fc_000000">
                           USD {{partnershipReport.WithdrawnAmt}}
                         </h4>
                         <!-- <a (click)="redirectToIncomeActivity()">
@@ -206,7 +206,7 @@
 
                 </div>
               </div>
-              <div class="row mt20px">
+              <div class="row mt30px">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
                     INCOME ACTIVITY
@@ -236,7 +236,7 @@
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                         <img
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_no_partner.svg"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share_no_partner.svg"
                           alt="" class="img-responsive" />
                       </div>
                     </div>
@@ -447,7 +447,7 @@
                   <a class="btn_pdownload_pdf" (click)="DownloadPdf()">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/download_01.svg" alt=""
                       class="img-responsive mr10px">
-                    <h4 class="mtb0px fs_15px fw_600 lh_150p fc_000000">
+                    <h4 class="mtb0px fs_15px fw_600 lh_150p ">
                       Download PDF
                     </h4>
                   </a>
