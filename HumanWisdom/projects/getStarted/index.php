@@ -216,7 +216,7 @@ require_once('./includes/security_config.php');
 
           <div class="row mt40px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
-              <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px mr15px btn-res card_center">
+              <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px  btn-res card_center">
                 <a href="https://happierme.app/pages/splash_options.php" class="">
                   <button class="fs_21px fw_500 lh_140p fc_ffffff btn_landing mbtn_landing">
                     Try HappierMe for free
@@ -631,7 +631,7 @@ require_once('./includes/security_config.php');
 <div class="section-headernew mob-section section-text section-text1">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7 text-color fs_18px_mobile">
+        <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000  fs_18px_mobile">
           Findings from a survey of 1,000 HappierMe app users </h2>
       </div>
     </div>
@@ -2029,7 +2029,7 @@ require_once('./includes/security_config.php');
     
     <!-- Yearly Subscription -->
 <div class="col-lg-6 col-md-6 col-sm-12 w-420px">
-  <button class="btn_subscription w-100 position-relative">
+  <button class="btn_subscription w-100 position-relative btn_subscription_selected">
     
     <!-- Capsule floated -->
     <div class="capsule position-absolute top-0 end-0 m-2">
@@ -2092,7 +2092,7 @@ require_once('./includes/security_config.php');
 
         <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
           <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-            <button class="fs_21px fw_500 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
+            <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width btn_popup" id="startyourfreetrial">
               Start your free trial
             </button>
           </div>
@@ -2403,7 +2403,7 @@ require_once('./includes/security_config.php');
     <div class="row center_flex mt40px card_center" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
       <div id="PricingSelectBtn" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0 mtb20px fixed_w t_align" >
         <a href="https://happierme.app/pages/splash_options.php">
-          <button class="fs_21px fw_500 lh_140p fc_ffffff btn_popup" id="startyourfreetrial">
+          <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width btn_popup" id="startyourfreetrial">
             Try HappierMe for free
           </button>
         </a>
@@ -3674,20 +3674,20 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered m_auto">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
         </div>
-        <div class="row center_flex">
+        <div class="row center_flex ">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/overcome.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/overcome.svg" class="img-responsive "
                 alt="Mental Health" loading=lazy>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3703,7 +3703,7 @@ require_once('./includes/security_config.php');
         </div>
       </div>
       <div class="section-header1">
-        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="row center_flex popup_w" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             <h2 class="popuptitle">
               Overcome stress and anxiety
@@ -3717,7 +3717,7 @@ require_once('./includes/security_config.php');
           <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block ">
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                <div class="row">
+                <div class="row" >
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                       class="img-responsive img_aspects" alt="PATHWAY">

@@ -3,6 +3,8 @@ import { SubscriptionType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
 import { Router } from '@angular/router';
+import { ProgramType } from '../../models/program-model';
+
 import { OnboardingService } from '../../services/onboarding.service';
 import { paymentIntentModel } from '../../models/search-data-model';
 import { DatePipe, Location } from '@angular/common';
@@ -24,6 +26,7 @@ export class IndexPage implements OnInit {
   pricingModel: any;
   userId: number;
   enabledModal = false;
+  isAdults = true;
   
   constructor(private router: Router, private onboardingService: OnboardingService,
     private location: Location) {
@@ -31,8 +34,14 @@ export class IndexPage implements OnInit {
     this.Annual = Constant.AnnualPlan;
     this.Redeem = Constant.Redeem;
     this.selectedSubscription = this.Annual;
+     if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
   }
 
+  
   ngOnInit() {
     this.InitializeDefaultValues();
     this.getCountry();

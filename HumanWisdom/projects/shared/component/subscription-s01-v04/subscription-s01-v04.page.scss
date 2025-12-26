@@ -119,6 +119,14 @@ a:hover{
   width: 100%;
 }
 
+select.sp_fc_1:focus,
+select.sp_fc_1:active,
+select.sp_fc_1:visited {
+  background-color: #FFE8BB !important;
+  color: #000 !important;
+  outline: none;
+}
+
 select.sp_fc_1 {
   padding-right: 40px !important; /* Make room for arrow */
   appearance: none;
