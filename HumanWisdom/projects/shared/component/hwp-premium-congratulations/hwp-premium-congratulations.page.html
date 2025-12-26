@@ -71,7 +71,7 @@
                         [ngClass]="{'fc_000000': isAdults, 'fc_ffffff': !isAdults}">
                         For more information on the Partnership Program,
                         <a (click)="GoToIndex()">
-                          <span class="fw_600 fs_15px lh_150p fc_e58d82">
+                          <span class="fw_600 fs_15px lh_150p "  [ngClass]="isAdults ? 'fc_803358' : 'fc_e58d82'">
                             click here.
                           </span>
                         </a>
