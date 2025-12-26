@@ -36057,7 +36057,7 @@ section>.row {
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
   display: flex;
   align-items: center;
   justify-content: center;

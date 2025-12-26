@@ -30469,12 +30469,12 @@ svg path
 }
 
 .p_rc {
-  min-height: 64px;
+  min-height: 50px;
   height: auto;
   /* background: #FFE8BB; */
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
   letter-spacing: 2.4px;
   font-size: 24px;
   font-weight: 500;
@@ -36365,7 +36365,7 @@ section>.row {
 
 /* /partnership webpage */
 .hr_style_v3_12 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #000000;
   opacity: 0.1;
   margin: 16px 0;
 }
@@ -36383,8 +36383,8 @@ section>.row {
 }
 
 .vertical_line_01 {
-  border-right: 1px solid rgba(255, 255, 255, .1);
-  height: 50px;
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  height: 80px;
   position: absolute;
   right: 50%;
   top: 0;
@@ -36401,17 +36401,17 @@ section>.row {
 }
 
 .btn_pdownload_pdf {
-  height: 43px;
+  height: 52px;
   width: 100%;
   margin: 0;
   box-shadow: unset;
   border-radius: 100px;
-  background: #ED7D6F;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   padding: 10px 20px;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
   display: flex;
   align-items: center;
   justify-content: center;
