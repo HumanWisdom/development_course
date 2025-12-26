@@ -30474,7 +30474,7 @@ svg path
   /* background: #FFE8BB; */
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 12px;
-  padding: 10px;
+  padding: 20px;
   letter-spacing: 2.4px;
   font-size: 24px;
   font-weight: 500;
@@ -36292,7 +36292,7 @@ section>.row {
 
 .div_copy_rc {
   position: absolute;
-  right: 20px;
+  right: 14px;
   top: 0;
   bottom: 0;
   margin: 0 auto;
@@ -36379,7 +36379,7 @@ section>.row {
 .box_blue_01 {
   border-radius: 12px;
   background: #FFE8BB;
-  padding: 20px;
+  padding: 14px;
 }
 
 .vertical_line_01 {
