@@ -611,6 +611,34 @@ return [
       }
     }
   }
+ /**
+   * Safely parse JSON from localStorage/sessionStorage
+   * Returns the parsed value if valid JSON, otherwise returns the original value or null
+   */
+   public static safeJsonParse(value: string | null): any {
+    if (!value || value === 'null' || value === 'undefined') {
+      return null;
+    }
+    
+    // If it's already a plain string (not JSON), return it as is
+    const trimmed = value.trim();
+    if (!trimmed.startsWith('{') && !trimmed.startsWith('[') && !trimmed.startsWith('"')) {
+      // Check if it's a number string
+      if (!isNaN(Number(trimmed)) && trimmed !== '') {
+        return Number(trimmed);
+      }
+      // Return as plain string
+      return trimmed;
+    }
+    
+    try {
+      return JSON.parse(value);
+    } catch (e) {
+      // If parsing fails, return the original value as string
+      console.warn('Failed to parse JSON, returning as string:', value, e);
+      return value;
+    }
+  }
 
 
   public static getScreenConfiguration(name="") {
@@ -666,3 +694,4 @@ export class UrlConstant {
   public static notification = 'notification';
   public static startFreeTrial = '/subscription/start-your-free-trial';
 }
+
