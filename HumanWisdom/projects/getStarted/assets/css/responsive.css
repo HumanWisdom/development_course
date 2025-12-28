@@ -667,7 +667,12 @@
   .tab-content {
     padding: 20px 0 !important;
     text-align: center !important;
+    width: 104%;
   }
+
+  .dfooter {
+  width: 104%;
+    }
 
   .tab-content .row.center_flex {
     justify-content: center !important;
@@ -1319,6 +1324,7 @@
 
   .div_subscriptionnew {
     text-align: center;
+    width: 104%;
   }
 
   .div_subscriptionnew .container-fluid {
@@ -1546,7 +1552,7 @@
     width: 100% !important;
     max-width: 335px !important;
     height: 65px !important;
-    background: linear-gradient(180deg, #CB6171 100%, #E58D82 0%) !important;
+     background: linear-gradient(180deg, #E58D82, #CB6171)  !important;
     border-radius: 36px !important;
     margin: 0 auto;
     display: flex !important;
@@ -2039,12 +2045,13 @@
     align-items: center !important;
     justify-content: center !important;
     border-radius: 16px !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     font-weight: 600 !important;
-    background: linear-gradient(90deg, #E58D82, #CB6171) !important;
+    background: linear-gradient(180deg, #E58D82, #CB6171) !important ;
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;
+    margin-left: 10px;
   }
 
   /* Mobile footer accordion icons - white - OVERRIDE ALL BASE STYLES */
