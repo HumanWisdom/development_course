@@ -24351,7 +24351,7 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #CB6171 !important;
+  color: #803358!important;
   text-decoration: underline !important;
 }
 
@@ -30469,7 +30469,7 @@ svg path
 }
 
 .p_rc {
-  min-height: 64px;
+  min-height: 50px;
   height: auto;
   /* background: #FFE8BB; */
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
@@ -34382,7 +34382,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   /* border: 1px solid rgba(204, 204, 204, 0.25); */
   border: 1px solid rgba(50, 50, 50, 0.25);
 
-  background: #ffffff !important;
+  background: #ffe8bb;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 400;
@@ -36292,7 +36292,7 @@ section>.row {
 
 .div_copy_rc {
   position: absolute;
-  right: 20px;
+  right: 14px;
   top: 0;
   bottom: 0;
   margin: 0 auto;
@@ -36365,7 +36365,7 @@ section>.row {
 
 /* /partnership webpage */
 .hr_style_v3_12 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #000000;
   opacity: 0.1;
   margin: 16px 0;
 }
@@ -36379,12 +36379,12 @@ section>.row {
 .box_blue_01 {
   border-radius: 12px;
   background: #FFE8BB;
-  padding: 20px;
+  padding: 14px;
 }
 
 .vertical_line_01 {
-  border-right: 1px solid rgba(255, 255, 255, .1);
-  height: 50px;
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  height: 80px;
   position: absolute;
   right: 50%;
   top: 0;
@@ -36401,17 +36401,17 @@ section>.row {
 }
 
 .btn_pdownload_pdf {
-  height: 43px;
+  height: 52px;
   width: 100%;
   margin: 0;
   box-shadow: unset;
   border-radius: 100px;
-  background: #ED7D6F;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   padding: 10px 20px;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #FFF !important;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -11276,7 +11276,7 @@ background: rgb(0 0 0 / 20%);
     padding-top: 25px;
     width: 307px;
     height: 197px;
-    border-radius: 14px;
+    border-radius: 10px;
 }
 body {
   color: #73879C;
@@ -43466,7 +43466,7 @@ label.select_label:after
 
 body *
 {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: Poppins !important;
 }
 
 .nav_v3
@@ -48152,8 +48152,10 @@ span
 .v1_3_bg_splash
 {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/splash.svg) no-repeat center center fixed !important; */
-   background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important;
-  -webkit-background-size: cover;
+   /* background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important; */
+ background: linear-gradient(180deg, #803358 0%, #230F40 100%);
+
+   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover !important;
   -o-background-size: cover !important;

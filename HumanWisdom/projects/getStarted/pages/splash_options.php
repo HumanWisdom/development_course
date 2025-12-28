@@ -33,7 +33,15 @@
       <link href="../assets/font/font_size.css" rel="stylesheet">
       <link href="../assets/font/font_weight.css" rel="stylesheet">
       <link href="../assets/font/line_height.css" rel="stylesheet">
+
       <!-- <link href="./assets/css/backgrounds.css" rel="stylesheet"> -->
+       <style>
+        body
+        {
+          /* font-family: verdana; */
+          font-family:poppins !important;
+        }
+        </style>
   </head>
 
   <body>
@@ -43,7 +51,7 @@
         <div class="row mt80px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 tcenter">
-              <h4 class="mtb0px fs_24px fw_400 lh_140p fc_ffffff tcenter">
+              <h4 class="mtb0px fs_24px fw_400 lh_140p fc_ffffff tcenter" style="font-family:poppins">
                 Welcome to HappierMe!
               </h4>
       

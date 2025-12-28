@@ -135,25 +135,40 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit(): void {
+    // Check if we need to force re-initialization (e.g., after logout)
+    const forceReinit = sessionStorage.getItem('forceGoogleReinit') === 'true';
+    if (forceReinit) {
+      sessionStorage.removeItem('forceGoogleReinit');
+    }
+    
     // Load Google Sign-In script if not already loaded
     this.loadGoogleSignInScript().then(() => {
       if (typeof google !== 'undefined' && google.accounts) {
+        // Cancel any existing prompts before re-initializing
+        if (forceReinit && google.accounts.id) {
+          try {
+            google.accounts.id.cancel();
+          } catch (e) {
+            console.warn('Error canceling Google prompts:', e);
+          }
+        }
+        
         // Initialize Google Identity Services
         google.accounts.id.initialize({
           client_id: environment.googleClientId,
           callback: (response: any) => this.handleCredentialResponse(response),
         });
          this.hideSocial = true;
-        // Render Google buttons safely (will skip if already rendered)
-        this.renderGoogleButtonSafely('googleBtnSignup');
-        this.renderGoogleButtonSafely('googleBtnLogin');
+        // Render Google buttons safely (force re-render if coming from logout)
+        this.renderGoogleButtonSafely('googleBtnSignup', forceReinit);
+        this.renderGoogleButtonSafely('googleBtnLogin', forceReinit);
       }
     }).catch((error) => {
       console.error('Failed to load Google Sign-In:', error);
     });
   }
 
-  private renderGoogleButtonSafely(buttonId: string): void {
+  private renderGoogleButtonSafely(buttonId: string, forceReinit: boolean = false): void {
     // Wait a bit to ensure DOM is ready (especially after tab switches)
     setTimeout(() => {
       const buttonContainer = document.getElementById(buttonId);
@@ -165,8 +180,8 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       // Check if button is already rendered by looking for Google button elements
       const hasExistingButton = buttonContainer.querySelector('div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"], div[role="button"]');
       
-      // If button already exists, don't re-render
-      if (hasExistingButton) {
+      // If button already exists and we're not forcing reinit, don't re-render
+      if (hasExistingButton && !forceReinit) {
         return;
       }
 
@@ -193,7 +208,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       } catch (error) {
         console.error(`Error rendering Google button ${buttonId}:`, error);
       }
-    }, 50);
+    }, forceReinit ? 200 : 50); // Longer delay if forcing reinit to ensure cleanup is complete
   }
 
   private styleGoogleButton(buttonId: string): void {
@@ -511,6 +526,19 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     const lastUrl = this.navigtionService.getLastUrlVisited()
     if (lastUrl != null && lastUrl.includes('forgotpassword')) {
       this.isSignUp = false;
+    }
+    
+    // If coming from logout, ensure Google buttons are cleared
+    const forceReinit = sessionStorage.getItem('forceGoogleReinit') === 'true';
+    if (forceReinit) {
+      // Clear any existing Google button containers
+      const buttonContainers = ['googleBtnSignup', 'googleBtnLogin'];
+      buttonContainers.forEach(buttonId => {
+        const container = document.getElementById(buttonId);
+        if (container) {
+          container.innerHTML = '';
+        }
+      });
     }
   }
 
@@ -1300,8 +1328,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
             });
 
             // Render Google buttons safely (will skip if already rendered)
-            this.renderGoogleButtonSafely('googleBtnSignup');
-            this.renderGoogleButtonSafely('googleBtnLogin');
+            const forceReinit = sessionStorage.getItem('forceGoogleReinit') === 'true';
+            if (forceReinit) {
+              sessionStorage.removeItem('forceGoogleReinit');
+            }
+            this.renderGoogleButtonSafely('googleBtnSignup', forceReinit);
+            this.renderGoogleButtonSafely('googleBtnLogin', forceReinit);
           }
         }).catch((error) => {
           console.error('Failed to load Google Sign-In:', error);
@@ -1428,8 +1460,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
             });
 
             // Render Google buttons safely (will skip if already rendered)
-            this.renderGoogleButtonSafely('googleBtnSignup');
-            this.renderGoogleButtonSafely('googleBtnLogin');
+            const forceReinit = sessionStorage.getItem('forceGoogleReinit') === 'true';
+            if (forceReinit) {
+              sessionStorage.removeItem('forceGoogleReinit');
+            }
+            this.renderGoogleButtonSafely('googleBtnSignup', forceReinit);
+            this.renderGoogleButtonSafely('googleBtnLogin', forceReinit);
           }
         }).catch((error) => {
           console.error('Failed to load Google Sign-In:', error);
