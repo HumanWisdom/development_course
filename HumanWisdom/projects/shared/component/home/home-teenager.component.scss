@@ -328,6 +328,7 @@
         /* Changed from hidden to allow sticky to work */
         max-height: 200px;
         opacity: 1;
+        margin-top: 10px;
     }
 
     .story-blog-card {
@@ -371,7 +372,7 @@
     .sticky-nav-container {
         padding-top: 10px;
         padding-bottom: 0px;
-        margin-top: 0;
+        margin-top: 16px;
         margin-bottom: 0;
         width: 100%;
         background-color: #0C2B5F;

@@ -385,7 +385,7 @@ export class AppComponent implements OnDestroy {
   }
 
   enableFooter() {
-    if (this.router.url == "/adults/search" || this.router.url == "/search"
+    if (this.router.url == "/adults/search" || this.router.url == "/search" || this.router.url =="/adults"
       || this.router.url.includes('/adults/site-search/') ||
       this.router.url.includes('/adults/search')) {
       this.dash = false
@@ -400,7 +400,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    else if (this.router.url.includes("home")) {
+    else if (this.router.url.includes("home") || this.router.url == "/adults") {
       this.dash = true;
       this.journal = false;
       this.search = false;
@@ -417,7 +417,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    else if ((this.router.url == "/adults/journal") ||
+    else if ((this.router.url == "/adults/journal") ||  this.router.url == "/adults" ||
       this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
       (this.router.url.indexOf('/adults/note') > -1)) {
       this.dash = false
