@@ -1,0 +1,35 @@
+.odiv,
+.odiv_pathway,
+.odiv_wfgi,
+.ae_days {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #eea170 #f6d1b7;
+}
+.odiv:not(:hover),
+.odiv_pathway:not(:hover),
+.odiv_wfgi:not(:hover),
+.ae_days:not(:hover) {
+  scrollbar-color: transparent transparent;
+}
+.odiv::-webkit-scrollbar,
+.odiv_pathway::-webkit-scrollbar,
+.odiv_wfgi::-webkit-scrollbar,
+.ae_days::-webkit-scrollbar {
+  height: 2px;
+  border-radius: 6px;
+}
+.odiv::-webkit-scrollbar-thumb,
+.odiv_pathway::-webkit-scrollbar-thumb,
+.odiv_wfgi::-webkit-scrollbar-thumb,
+.ae_days::-webkit-scrollbar-thumb {
+  background-color: #eea170;
+  border-radius: 6px;
+}
+.odiv::-webkit-scrollbar-track,
+.odiv_pathway::-webkit-scrollbar-track,
+.odiv_wfgi::-webkit-scrollbar-track,
+.ae_days::-webkit-scrollbar-track {
+  background-color: #f6d1b7;
+  border-radius: 10px;
+}

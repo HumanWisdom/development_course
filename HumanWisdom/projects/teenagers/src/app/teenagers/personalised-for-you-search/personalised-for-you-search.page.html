@@ -64,7 +64,7 @@
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                 <a>
 
-                                  <h2  class="fw_500 fs_12px lh_140p fc_ffffff_0_5 mtb0px tright">
+                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff_0_5 mtb0px tright">
                                     Streak:
                                     <span class="fw_600">
                                       {{streak}}
@@ -78,7 +78,7 @@
                         </div>
                       </h4>
                     </div>
-                    <div id="ca_mdp"  class="panel-collapse " >
+                    <div id="ca_mdp" class="panel-collapse ">
                       <div class="panel-body">
 
                         <div class="row">
@@ -86,10 +86,12 @@
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
                               <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/daily_checkin.svg" alt="" class="crimg">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/daily_checkin.svg"
+                                  alt="" class="crimg">
 
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                  Daily <br/> check-in
+                                  Daily <br /> check-in
                                 </h4>
                               </a>
                             </div>
@@ -99,7 +101,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise','0', 'click_daily_inspiration') : $event.preventDefault()">
+                              <a
+                                (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise','0', 'click_daily_inspiration') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_inspiration_v3_teens.svg"
                                   alt="Testimonials" class="crimg">
@@ -112,7 +115,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
+                              <a
+                                (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3_teens.svg"
                                   alt="Wisdom Stories" class="crimg">
@@ -123,7 +127,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '2', 'click_question_of_the_day') : $event.preventDefault()">
+                              <a
+                                (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '2', 'click_question_of_the_day') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3_teens.svg"
                                   alt="Journal" class="crimg">
@@ -136,7 +141,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '3','click_quote_of_day') : $event.preventDefault()">
+                              <a
+                                (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '3','click_quote_of_day') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3_teens.svg"
                                   alt="Testimonials" class="crimg">
@@ -148,7 +154,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '4', 'click_daily_meditation') : $event.preventDefault()">
+                              <a
+                                (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '4', 'click_daily_meditation') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3_teens.svg"
                                   alt="Forum" class="crimg">
@@ -159,7 +166,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '5', 'click_daily_challenge') : $event.preventDefault()">
+                              <a
+                                (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '5', 'click_daily_challenge') : $event.preventDefault()">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3_teens.svg"
                                   alt="Forum" class="crimg">
@@ -182,7 +190,7 @@
             </div>
             <!-- /accordion -->
             <!-- /daily practice -->
-             
+
             <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -244,7 +252,7 @@
             <!-- /hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
+                <hr class="hr_style_new">
               </div>
             </div>
             <!-- Find Inspiration -->
@@ -549,7 +557,7 @@
                   </div>
                 </div>
 
-                <div class="row mr-20pxi mt40px">
+                <div class="row pathway_scroll_row mt40px">
                   <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_pathway">
 
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
@@ -1131,7 +1139,7 @@
                     <div [ngClass]="getExpandClass()" [@accordionAnimation]="isExpanded ? 'expanded' : 'collapsed'"
                       class="panel-collapse of-h">
                       <div class="panel-body pl20px pr0px border-0">
-                        <div class="row ">
+                        <div class="row world_scroll_row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
