@@ -155,9 +155,33 @@
                               <div style="width: 100%;">
                                 <!-- Special layout for Life stories and Blogs -->
                                 <div *ngIf="section.rawSectionType === 2"
-                                  class="story-blog-card d-flex align-items-center "
+                                  class="story-blog-card d-flex align-items-center position-relative"
                                   style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
-                                  <div class="me-3" style="flex-shrink: 0;">
+                                  <!-- Tick Icon - Top Right Corner of Card -->
+                                  <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
+                                    <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
+                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
+                                           alt="Read icon" 
+                                           class="tick-icon-img"
+                                           style="width: 16px; height: 16px;">
+                                    </div>
+                                  </div>
+                                  <!-- Lock Icon - Bottom Right Corner of Card -->
+                                  <div class="position-absolute" style="bottom: 8px; right: 8px; z-index: 10;">
+                                    <div *ngIf="shouldShowLockIcon(card)" class="status-icon lock-icon">
+                                      <img *ngIf="isAdults"
+                                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" 
+                                           alt="Lock icon" 
+                                           class="lock-icon-img"
+                                           style="width: 16px; height: 16px;">
+                                      <img *ngIf="!isAdults"
+                                           src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
+                                           alt="Lock icon" 
+                                           class="lock-icon-img"
+                                           style="width: 16px; height: 16px;">
+                                    </div>
+                                  </div>
+                                  <div class="me-3" style="flex-shrink: 0; position: relative;">
                                     <img [src]="card.imageUrl" [alt]="card.title" class="rounded"
                                       style="width: 60px; height: 60px; object-fit: cover;">
                                   </div>
@@ -301,8 +325,32 @@
                                 <div style="width: 100%;">
                                   <!-- Special layout for Life stories and Blogs -->
                                   <div *ngIf="section.rawSectionType === 2"
-                                    class="story-blog-card d-flex align-items-center  " (click)="onCardClick(card)">
-                                    <div class="me-3" style="flex-shrink: 0;">
+                                    class="story-blog-card d-flex align-items-center position-relative" (click)="onCardClick(card)">
+                                    <!-- Tick Icon - Top Right Corner of Card -->
+                                    <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
+                                      <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
+                                             alt="Read icon" 
+                                             class="tick-icon-img"
+                                             style="width: 16px; height: 16px;">
+                                      </div>
+                                    </div>
+                                    <!-- Lock Icon - Bottom Right Corner of Card -->
+                                    <div class="position-absolute" style="bottom: 8px; right: 8px; z-index: 10;">
+                                      <div *ngIf="shouldShowLockIcon(card)" class="status-icon lock-icon">
+                                        <img *ngIf="isAdults"
+                                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" 
+                                             alt="Lock icon" 
+                                             class="lock-icon-img"
+                                             style="width: 16px; height: 16px;">
+                                        <img *ngIf="!isAdults"
+                                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
+                                             alt="Lock icon" 
+                                             class="lock-icon-img"
+                                             style="width: 16px; height: 16px;">
+                                      </div>
+                                    </div>
+                                    <div class="me-3" style="flex-shrink: 0; position: relative;">
                                       <img [src]="card.imageUrl" [alt]="card.title" class="rounded"
                                         style="width: 107px; height: 100px; object-fit: cover;">
                                     </div>
