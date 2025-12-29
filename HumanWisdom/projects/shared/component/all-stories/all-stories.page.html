@@ -233,13 +233,15 @@
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                           <h4
-                            class="mtb0px fs_12px fw_400 lh_150p mb10px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'"
+                            class="mtb10px fs_12px fw_400 lh_150p mb10px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'"
                           >
-                            <img
+                            <!-- <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_view_more.svg"
                               class="img-responsive mb10px"
-                            />
-                            {{view_more_less}}
+                            /> -->
+
+                            {{view_more_less}}                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);" alt="arrow">
+
                           </h4>
                         </div>
                       </div>

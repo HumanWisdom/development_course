@@ -17019,6 +17019,14 @@ input[type="search"].dark::-webkit-search-cancel-button {
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
 }
+.rotate-90 {
+    transform: rotate(90deg);
+  }
+
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+
 
 @keyframes kf_ars {
   0% {
