@@ -30,14 +30,17 @@ export class RedeemCongratulationPage {
 
   route(event) {
     if (event === 'dash') {
-      if (this.programName !== 'Teenagers') {
-        window.location.href = environment.clientUrl + '/adults/home';
-      } else {
-        window.location.href = environment.clientUrl + "/teenagers/home";
-      }
+      // if (this.programName !== 'Teenagers') {
+      //   window.location.href = environment.clientUrl + '/adults/home';
+      // } else {
+      //   window.location.href = environment.clientUrl + "/teenagers/home";
+      // }
+       this.router.navigate(['/' + SharedService.getprogramName() + '/home'])
     } else {
-       window.location.href = environment.clientUrl + '/' + this.programName.toLowerCase() + '/onboarding/myprogram'
+      //  window.location.href = environment.clientUrl + '/' + this.programName.toLowerCase() + '/onboarding/myprogram'
+       this.router.navigate(['/' + SharedService.getprogramName() + '/onboarding/myprogram'])
     }
+    
   }
 }
 
