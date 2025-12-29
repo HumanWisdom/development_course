@@ -482,6 +482,10 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             localStorage.setItem("acceptcookie", acceptCookie);
             localStorage.setItem("navigateToUpgradeToPremium", "false");
             localStorage.setItem("btnClickBecomePartner", "false");
+            
+            // Reset Google Identity Services state
+            this.resetGoogleSignIn();
+            
             const auth2 = (window as any).gapi?.auth2?.getAuthInstance();
             if (auth2) {
               auth2.signOut().then(() => {
@@ -526,6 +530,32 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     this.subscriber = false;
     this.partnerOption = "";
     this.enableplaystore = true;
+  }
+
+  private resetGoogleSignIn(): void {
+    try {
+      // Reset Google Identity Services if available
+      if (typeof (window as any).google !== 'undefined' && (window as any).google.accounts) {
+        // Cancel any pending One Tap prompts
+        if ((window as any).google.accounts.id) {
+          (window as any).google.accounts.id.cancel();
+        }
+      }
+      
+      // Clear any existing Google button containers to force re-render
+      const buttonContainers = ['googleBtnSignup', 'googleBtnLogin'];
+      buttonContainers.forEach(buttonId => {
+        const container = document.getElementById(buttonId);
+        if (container) {
+          container.innerHTML = '';
+        }
+      });
+      
+      // Set flag to force re-initialization on login page
+      sessionStorage.setItem('forceGoogleReinit', 'true');
+    } catch (error) {
+      console.warn('Error resetting Google Sign-In:', error);
+    }
   }
 
   setLogevent(evtName, param = '') {

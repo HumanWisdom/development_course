@@ -43466,7 +43466,7 @@ label.select_label:after
 
 body *
 {
-  font-family: Poppins !important;
+  /* font-family: Poppins !important; */
 }
 
 .nav_v3
@@ -48162,5 +48162,6 @@ span
   font-family: 'Roboto', sans-serif;
   z-index: 0 !important;
   min-height: 120vh !important;
+  width: 375px;
 }
 /* /version - 03 */

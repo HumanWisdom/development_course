@@ -179,7 +179,7 @@ export class IncomeActivityPage implements OnInit {
     
     let htmlString =`<html><body>`
      htmlString=`<div style="background-color: #2A3F54;min-height:100%">`
-    htmlString+=` <div style="background-color: #2A3F54;" ><img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hwp_logo_v3_white.svg" alt="HumanWisdom" class="img-responsive img_logo"> </div>`
+    htmlString+=` <div style="background-color: #2A3F54;" ><img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/logo_orange.svg" alt="HumanWisdom" class="img-responsive img_logo"> </div>`
     htmlString+=`<h2 style="color:white;float: right;">Income Activity Report</h2>`
     htmlString += '<table style="border: 1px solid black;width: 100%; color:white ;min-height:100%" >';
     htmlString += '<thead>';

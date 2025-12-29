@@ -25567,7 +25567,7 @@ a {
 /* /coach checkbox */
 
 .td_underline {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .btn_coach_continue {
@@ -34026,6 +34026,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   border-radius: 0px 0px 16px 16px;
   background: #0C2B5F;
   padding: 20px;
+  border: 1px solid #E58D82!important;
 }
 
 .div_monthly {
