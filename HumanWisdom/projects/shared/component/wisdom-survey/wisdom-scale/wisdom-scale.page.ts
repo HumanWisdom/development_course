@@ -133,6 +133,7 @@ export class WisdomScalePage implements OnInit {
   constructor(private router: Router,
     private service: OnboardingService,
     private location: Location,
+    private activatedRoute: ActivatedRoute, 
     private services: AdultsService,
     public logeventservice: LogEventService,
     private ac: ActivatedRoute, private navigationService: NavigationService,
@@ -148,12 +149,24 @@ export class WisdomScalePage implements OnInit {
     });
 
 
+    
+
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
       this.isAdults = false;
     }
-    let authtoken = JSON.parse(localStorage.getItem("token"));
+    
+    let authtoken
+    
+    this.activatedRoute.queryParams.subscribe(params => {
+      authtoken = params?.authtoken;
+    });
+   
+    if(authtoken){
+      authtoken = JSON.parse(localStorage.getItem("token"));
+    }
+    
     if (authtoken) {
       this.service.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');
