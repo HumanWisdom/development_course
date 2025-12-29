@@ -61,9 +61,9 @@
 .btn_tfas:hover,
 .btn_tfas:active,
 .btn_tfas:focus{
-  background-color: #e58d82;
+  background-color: #ee9596;
   color: #ffffff;
-  border-color: #e58d82;
+  border-color: #ee9596;
 }
 
 .btn_aan2:hover,
@@ -99,16 +99,18 @@ a:hover{
   margin-right: -20px;
   margin-top: -20px;
   padding: 20px;
+  height: 76px;
   align-items: center;
   justify-content: center;
 }
 
 .blue_banner {
-  background-color: #05BBBF;
+  background-color: #60BEC2;
   margin-left: -20px;
   margin-right: -20px;
   margin-top: -20px;
   padding: 20px;
+  height: 76px;
   align-items: center;
   justify-content: center;
 }
@@ -159,6 +161,8 @@ select.sp_fc_1 {
     color: #EE9596 !important;
   }
   .btn_forum_ask_a_gift{
-    background: #e58d82;
+    width: 103px;
+    height: 30px;
+    background: #ee9596;
     color: #ffffff;
   }
