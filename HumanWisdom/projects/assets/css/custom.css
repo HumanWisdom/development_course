@@ -25635,7 +25635,7 @@ a {
 /* /coach checkbox */
 
 .td_underline {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .btn_coach_continue {
@@ -33961,6 +33961,8 @@ body * {
   align-items: center;
   justify-content: left;
 }
+
+
 
 .ta_new_thread {
   width: 100%;
