@@ -76,7 +76,7 @@
             </span>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-             <i class="fa fa-close fs_20px fc_000000 m0px fright" (click)="onCloseClick()"  ></i>
+             <i class="fa fa-close fs_20px  m0px fright" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" (click)="onCloseClick()"  ></i>
             
           </div>
         </div>

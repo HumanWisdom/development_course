@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonService } from '../../services/common.service';
 import { Platform } from '@angular/cdk/platform';
 import { Subscription } from 'rxjs';
+import { ProgramType } from '../../models/program-model';
+
 import { SharedService } from '../../services/shared.service';
 
 @Component({
@@ -18,6 +20,7 @@ export class SurveyPage implements OnInit, OnDestroy {
   isSubmitted = false;
   isPaymentSurvey: boolean = false;
   showModal: boolean = false;
+  isAdults = true;
   private subscription!: Subscription;
   constructor(private commonService: CommonService, private platform: Platform) {
     this.userName =localStorage.getItem('name');
@@ -37,7 +40,11 @@ export class SurveyPage implements OnInit, OnDestroy {
         }
       })
     });
-
+ if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
 
   }
 
