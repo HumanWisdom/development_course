@@ -220,6 +220,22 @@
   }
 }
 
+/* iPad specific positioning (600px width) */
+@media (min-width: 600px) and (max-width: 911px) {
+  .owl-animation-wrapper,
+  .owl-animation-wrapper.corner {
+    right: 140px;
+  }
+}
+
+/* Surface Pro specific positioning (912px width) */
+@media (min-width: 912px) and (max-width: 1024px) {
+  .owl-animation-wrapper,
+  .owl-animation-wrapper.corner {
+    right: 210px;
+  }
+}
+
 /* Journal page specific positioning - handles col-lg-4 (33.33% width) layout */
 .bg_journal .owl-animation-wrapper,
 .bg_journal .owl-animation-wrapper.corner {
