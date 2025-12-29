@@ -63,7 +63,9 @@
         <input type="text" class="sp_fc" placeholder="Name" required [(ngModel)]="name">
         <div class="fc_img">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg"
-            class="img-responsive">
+            class="img-responsive" *ngIf="!isAdults">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_user.svg"
+            class="img-responsive" *ngIf="isAdults">
         </div>
       </div>
       <small class="text danger ml-10 p0" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">{{namevalidation()}}</small>
@@ -74,7 +76,9 @@
         <input type="text" class="sp_fc" placeholder="Email address" required [(ngModel)]="email">
         <div class="fc_img">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg"
-            class="img-responsive">
+            class="img-responsive" *ngIf="!isAdults">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_email.svg"
+            class="img-responsive" *ngIf="isAdults">
         </div>
       </div>
       <small class="text danger ml-10 p0" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">{{emailvalidation()}}</small>
