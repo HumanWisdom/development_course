@@ -459,7 +459,18 @@ background: #FFF7E6;/* Ensure proper stacking context */
   margin-top: -10px;
 }
 
-@media only screen and (max-width: 768px) {
+/* Tablet and iPad devices (600px to 1024px) */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .row.home-container:first-of-type {
+    position: fixed;
+    z-index: 98;
+    max-width: 50%;
+    margin-top: -10px;
+  }
+}
+
+/* Mobile devices (max-width: 599px) */
+@media only screen and (max-width: 599px) {
   .row.home-container:first-of-type {
     position: fixed;
     z-index: 10;

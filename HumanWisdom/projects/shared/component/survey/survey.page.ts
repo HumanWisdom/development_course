@@ -17,6 +17,7 @@ export class SurveyPage implements OnInit, OnDestroy {
   selectedId = 0;
   isSubmitted = false;
   isPaymentSurvey: boolean = false;
+  showModal: boolean = false;
   private subscription!: Subscription;
   constructor(private commonService: CommonService, private platform: Platform) {
     this.userName =localStorage.getItem('name');
@@ -30,6 +31,7 @@ export class SurveyPage implements OnInit, OnDestroy {
           }
           this.feedbackList = res;
           if (data != null) {
+            this.showModal = true;
             document.getElementById('test1').click();
           }
         }
@@ -53,7 +55,36 @@ export class SurveyPage implements OnInit, OnDestroy {
   }
 
   onCloseClick() {
+    this.closeModal();
+  }
+
+  onBackdropClick(event: MouseEvent): void {
+    // Check if the click is directly on the modal backdrop (not on modal content)
+    const target = event.target as HTMLElement;
+    
+    // Check if click is on the modal backdrop itself or empty space
+    // Make sure we're not clicking on any modal content
+    const clickedOnModalContent = target.closest('.lab-modal-body_new') || 
+                                   target.closest('.lab-modal-body') || 
+                                   target.closest('.col-lg-4') ||
+                                   target.closest('.col-md-6') ||
+                                   target.closest('.col-sm-6') ||
+                                   target.closest('.col-xs-12');
+    
+    // If we didn't click on modal content, close the modal
+    if (!clickedOnModalContent) {
+      this.closeModal();
+    }
+  }
+
+  closeModal(): void {
+    this.showModal = false;
     this.isSubmitted = false;
+    // Trigger the hidden dismiss button to close the modal
+    const dismissBtn = document.getElementById('btnSurveyDismiss');
+    if (dismissBtn) {
+      dismissBtn.click();
+    }
     if (!this.isPaymentSurvey) {
       this.commonService.SkipFeedBkSurvey().subscribe(res => {
         //
@@ -90,9 +121,7 @@ export class SurveyPage implements OnInit, OnDestroy {
   }
 
   GoToAppStore() {
-    this.isSubmitted = false;
-   // this.clickbanner();
-    document.getElementById('btnSurveyDismiss').click();
+    this.closeModal();
   }
 
 

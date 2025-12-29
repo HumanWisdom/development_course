@@ -173,8 +173,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     // Safely parse username - handle guest users who might have empty/null username
     try {
       const userName = SharedService.FnName();
+          if(userName=="null" || userName=="undefined" || userName==""){
+          this.username = localStorage.getItem('FnName');
+        }
       if (userName && userName.trim() !== '') {
+       
         this.username = JSON.parse(userName);
+     
         // Fetch streak for logged-in users
         this.getStreak();
       } else {
@@ -185,6 +190,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       console.warn('Error parsing username, defaulting to Guest:', error);
       this.username = '';
       this.streak = '';
+         this.username = SharedService.FnName();
     }
 
     // Restore state from store

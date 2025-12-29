@@ -4,16 +4,18 @@
 
 <app-bg-video></app-bg-video>
 
-<div class="right_col mc_03 ">
+<!-- page content -->
+<div class="right_col mc_03">
+  <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01_home col_cw home-content">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01_home col_cw home-content">
         <div class="x_panel p0">
           <div class="x_content p0">
+            <div class="container">
+              <div class="row home-container sticky-top-section">
 
-            <div class="row home-container sticky-top-section">
-
-              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isloggedIn && showSearchBox">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showSearchBox">
                 <div class="d-flex justify-content-between align-items-center plr20px mt20px mb0px">
                   <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
                     Hi {{username}}!
@@ -58,6 +60,7 @@
                 </div>
               </div>
 
+              <!-- Navigation Menu - Sticky Header -->
               <!-- Navigation Menu - Sticky Header -->
               <div class="col-12 pr0px sticky-nav-container">
                 <div class="d-flex flex-wrap nav-wrapper">
@@ -439,13 +442,16 @@
 
               </div>
             </div>
-
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!--/Class -->
 </div>
+<!-- /page content -->
+
 <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
   [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true"
   (closeEvent)="onModalClose($event)"></app-modal>
