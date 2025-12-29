@@ -182,6 +182,7 @@ export class SocialLoginPage implements OnInit {
   loginadult(res) {
     this.loginResponse = res
     let NoOfVisits = this.loginResponse.NoOfVisits
+    localStorage.setItem("NoOfVisits", NoOfVisits.toString());
     this.userId = this.loginResponse.UserId
     if (res.Subscriber === 0) {
       this.isSubscribe = true;
