@@ -5483,6 +5483,11 @@ margin-top: 10px !important;
 
 /* Mobile FAQ styles */
 @media (max-width: 768px) {
+  .web_home_divcircle 
+{
+
+      width: 104%;
+}
   .tab_faqs.nav-tabs>li>a {
     font-size: 14px;
     padding: 0 0 15px 0;

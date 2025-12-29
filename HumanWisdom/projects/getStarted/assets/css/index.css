@@ -115,6 +115,9 @@
       .f_15px {
         font-size: 15px !important;
       }
+      .pr15px {
+       padding-right: 13px !important;
+    }
 
       .f_21px {
         font-size: 21px !important;
@@ -392,6 +395,9 @@
         width: 345px;
         height: 65px;
         border-radius: 36px;
+      }
+      .pb_4px {
+        padding-bottom: 4px !important;
       }
 
       .btn_subscription {

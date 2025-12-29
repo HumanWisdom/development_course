@@ -178,6 +178,18 @@ export class ReflectionComponent implements OnInit {
   // Methods to handle hint modal functionality
   showHint() {
     this.showHintModal = true;
+    // Calculate and set the reflection question position for popover positioning
+    setTimeout(() => {
+      const reflectionQtn = document.querySelector('.v3_reflection_qtn') as HTMLElement;
+      const header = document.querySelector('.reflection-hint-header') as HTMLElement;
+      if (reflectionQtn && header) {
+        const reflectionQtnRect = reflectionQtn.getBoundingClientRect();
+        const headerRect = header.getBoundingClientRect();
+        // Calculate the distance from header bottom to reflection question top
+        const offsetTop = reflectionQtnRect.top - headerRect.bottom;
+        header.style.setProperty('--reflection-qtn-offset', `${offsetTop}px`);
+      }
+    }, 0);
   }
   
   closeHint() {

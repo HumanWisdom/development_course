@@ -259,7 +259,7 @@ require_once('./includes/security_config.php');
         <div
           class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -271,7 +271,7 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -282,7 +282,7 @@ require_once('./includes/security_config.php');
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -306,7 +306,7 @@ require_once('./includes/security_config.php');
         <div
           class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -318,7 +318,7 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -329,7 +329,7 @@ require_once('./includes/security_config.php');
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -354,7 +354,7 @@ require_once('./includes/security_config.php');
         <div
           class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -366,7 +366,7 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  p0">
@@ -377,7 +377,7 @@ require_once('./includes/security_config.php');
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -1388,7 +1388,7 @@ require_once('./includes/security_config.php');
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 w-335px ">
-            <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 f_24px msection_header">
+            <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 f_24px ">
               Find out how HappierMe can help your organisation
             </h2>
           </div>
@@ -1570,7 +1570,7 @@ require_once('./includes/security_config.php');
                 NEW!
               </h2> -->
 
-              <h2 class="mb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mb0px fs_24px fw_600 lh_120p">
                 HappierMe for Teenagers
               </h2>
 
@@ -1638,7 +1638,7 @@ require_once('./includes/security_config.php');
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000 msection_header">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000 ">
               Contact our experienced coaches for personalised support </h2>
           </div>
         </div>
@@ -3723,7 +3723,7 @@ require_once('./includes/security_config.php');
                       class="img-responsive img_aspects" alt="PATHWAY">
                   </div>
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                    <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
+                    <h3 style="margin-top:0px;" class="fs_18px fw_600 f_15px  fc_000000">
                       Guided programs
                     </h3>
                     <h6 class="review">Covering Stress, Anxiety, Depression and Bereavement </h6>
@@ -3737,7 +3737,7 @@ require_once('./includes/security_config.php');
                       class="img-responsive img_aspects" alt="PATHWAY">
                   </div>
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                    <h3 style="margin-top:0px;" class="fs_18px fw_600  fc_000000">
+                    <h3 style="margin-top:0px;" class="fs_18px fw_600 f_15px  fc_000000">
                       Hundreds of podcasts
                     </h3>
                     <h6 class="review">Insightful conversations on mental wellbeing </h5>
@@ -3751,7 +3751,7 @@ require_once('./includes/security_config.php');
                       class="img-responsive img_aspects" alt="PATHWAY">
                   </div>
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                    <h3 style="margin-top:0px;" class="  fs_18px fw_600  fc_000000">
+                    <h3 style="margin-top:0px;" class="  fs_18px fw_600 f_15px  fc_000000">
                       Feel better now
                     </h3>
                     <h6 class="review">Breathing and tapping exercises for quick relief </h5>
@@ -3772,7 +3772,7 @@ require_once('./includes/security_config.php');
                       class="img-responsive img_aspects" alt="PATHWAY">
                   </div>
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                    <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">
+                    <h3 style="margin-top:0px;" class=" fs_18px fw_600 f_15px  fc_000000">
                       Short videos
                     </h3>
                     <h6 class="review">Wellbeing tips from trained coaches </h5>
@@ -3786,7 +3786,7 @@ require_once('./includes/security_config.php');
                       class="img-responsive img_aspects" alt="PATHWAY">
                   </div>
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
-                    <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000"> Guided journaling</h3>
+                    <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000 f_15px "> Guided journaling</h3>
                     <h6 class="review">Your private journal with questions for personal growth </h5>
                   </div>
                 </div>
@@ -3798,7 +3798,7 @@ require_once('./includes/security_config.php');
                       class="img-responsive img_aspects" alt="PATHWAY">
                   </div>
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
-                    <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000">Community forum</h3>
+                    <h3 style="margin-top:0px;" class=" fs_18px fw_600  fc_000000 f_15px ">Community forum</h3>
                     <h6 class="review">Find support, share your thoughts and make friends </h5>
                   </div>
                 </div>
@@ -3832,7 +3832,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mb-4" style="/* min-height: 150px; */">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>
@@ -3858,10 +3858,10 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading="lazy">
             </a>
           </div>
@@ -3999,7 +3999,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mb-4" style="/* min-height: 150px; */">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>
@@ -4036,10 +4036,10 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4120,7 +4120,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mt20px mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>
@@ -4141,10 +4141,10 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading="lazy">
             </a>
           </div>
@@ -4271,7 +4271,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>
@@ -4306,10 +4306,10 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4428,7 +4428,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>
@@ -4462,10 +4462,10 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4585,7 +4585,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>
@@ -4622,10 +4622,10 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4743,7 +4743,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>
@@ -4781,10 +4781,10 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4904,7 +4904,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>
@@ -4942,10 +4942,10 @@ require_once('./includes/security_config.php');
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content1">
       <div class="modal-header d-block">
-        <div class="row center_flex ">
+        <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -5068,7 +5068,7 @@ require_once('./includes/security_config.php');
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
                 Try HappierMe for free
               </button>
             </a>

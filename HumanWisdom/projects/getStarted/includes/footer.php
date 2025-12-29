@@ -498,7 +498,7 @@
     </div>
 
     <div class="banner_logo" style="width: 46px !important;">
-      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_footer_hwp.svg" class="img-responsive" alt="banner">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_footer_hwp.svg" alt="banner">
     </div>
 
     <div style="width: 50%;padding-left:0px !important">
@@ -506,13 +506,13 @@
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="rating_icon" alt="app">
         <span class="rating_text">App store</span>
         <span class="rating_score">4.8</span>
-        <span class="rating_star"><i class="fa fa-star"></i></span>
+        <span class="rating_star"><img class="pb_4px" src ="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/star.png"/></span>
       </div>
       <div class="rating_row" style="width: 20%;">
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="rating_icon" alt="playstore">
         <span class="rating_text">Google Play</span>
         <span class="rating_score">4.8</span>
-        <span class="rating_star"><i class="fa fa-star"></i></span>
+        <span class="rating_star"><img class="pb_4px" src ="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/star.png"/></span>
       </div>
     </div>
 
