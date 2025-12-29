@@ -1,4 +1,4 @@
-import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { OnboardingService } from '../../services/onboarding.service';
 import {
   Component,
   AfterViewInit,
@@ -15,25 +15,13 @@ import { NgForm } from "@angular/forms"
 import { AngularStripeService } from '@fireflysemantics/angular-stripe-service'
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { LogEventService } from "src/app/log-event.service";
+import { environment } from '../../../environments/environment';
+import { LogEventService } from '../../services/log-event.service';
 
-var style = {
-  base: {
-    color: "#32325d",
-    fontFamily: 'Arial, sans-serif',
-    fontSmoothing: "antialiased",
-    fontSize: "16px",
-    "::placeholder": {
-      color: "#32325d"
-    }
-  },
-  invalid: {
-    fontFamily: 'Arial, sans-serif',
-    color: "#fa755a",
-    iconColor: "#fa755a"
-  }
-};
+import { ProgramType  } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
+
+
 
 // var ADT = ADT || {};
 // ADT.Tag = ADT.Tag || {};
@@ -68,6 +56,8 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   enableAlert = false;
   content = '';
   obj = {};
+    isAdults = true;
+
 
   constructor(private cd: ChangeDetectorRef,
     private service: OnboardingService,
@@ -75,6 +65,16 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
     private stripeService: AngularStripeService,
     public logeventservice: LogEventService
   ) {
+
+     if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
+
+
+    
+
     let quan = this.router.getCurrentNavigation().extras.state.quan;
     let plan = this.router.getCurrentNavigation().extras.state.plan;
     let userId = JSON.parse(localStorage.getItem("userId"))
@@ -107,24 +107,47 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     setTimeout(() => {
       if (this.stripeId !== undefined) {
+
+            
+        var style = {
+          base: {
+            color: "#32325d",
+            fontFamily: 'Arial, sans-serif',
+            fontSmoothing: "antialiased",
+            fontSize: "16px",
+            "::placeholder": {
+              color: "#32325d"
+            }
+          },
+          invalid: {
+            fontFamily: 'Arial, sans-serif',
+            color: "#fa755a",
+            iconColor: "#fa755a"
+          },
+        
+                  variables: {
+                  colorBackground: (this.isAdults? '#fff' : '#0C2B5F' ) ,
+                  colorDanger: '#df1b41',
+                  fontFamily: 'Poppins,sans-serif !important;',
+                  borderRadius: '16px',
+                  border:'1px solid #ddd',         
+                  colorText: (this.isAdults? '#000' : '#fff' ) ,
+                  colorTermsText: (this.isAdults? 'rgba(0, 0, 0, 0.50)'  : 'rgba(255, 255, 255, 0.50)'  ) ,
+                  colorTextPlaceholder: (this.isAdults? 'rgba(0, 0, 0, 0.50)'  : 'rgba(255, 255, 255, 0.50)'  ) ,
+                  inputHeight: '50px',
+                }     
+        };
         let stripe = Stripe(this.stripeKey);
         let elements = stripe.elements();
+        
         let card = elements.create('card', { style: style });
         card.mount('#card-element');
 
         card.on('change', function (event) {
-          displayError(event);
+          this.displayError(event);
         });
 
-        function displayError(event) {
-
-          let displayError = document.getElementById('card-element-errors');
-          if (event.error) {
-            displayError.textContent = event.error.message;
-          } else {
-            displayError.textContent = '';
-          }
-        }
+        
 
         const btn = document.querySelector('#btnsubmit');
         btn.addEventListener('click', async (e) => {
@@ -140,6 +163,8 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
             }
           }).then((result) => {
            setTimeout(() => {             
+
+            
            
             if (result.error) {
               // alert(result.error.message);
@@ -199,7 +224,16 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   ngOnInit() {
 
   }
+  
+   displayError(event) {
 
+          let displayError = document.getElementById('card-element-errors');
+          if (event.error) {
+            displayError.textContent = event.error.message;
+          } else {
+            displayError.textContent = '';
+          }
+        }
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
