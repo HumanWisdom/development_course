@@ -10,6 +10,7 @@ import { Constant } from "../../services/constant";
 import { CommonModule } from "@angular/common";
 import { SharedModule } from "../../shared.module";
 import { environment } from "../../../../projects/environments/environment";
+import { ProgramType } from '../../../shared/models/program-model';
 
 declare var google: any;
 declare var FB: any;
@@ -74,6 +75,8 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
   alertenabled: boolean = false;
+    isAdults: boolean = true;
+
 
   constructor(
     public platform: Platform,
@@ -84,6 +87,13 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     public logeventservice: LogEventService,
     private zone: NgZone
   ) {
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+            this.isAdults = true;
+          } else {
+            this.isAdults = false;
+          }
+
     this.registrationForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(3)]],
       lname: ['', [Validators.required, Validators.minLength(3)]],
