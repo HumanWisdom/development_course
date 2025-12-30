@@ -396,6 +396,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
   /* Changed from hidden to allow sticky to work */
   max-height: 200px;
   opacity: 1;
+  margin-top: 10px;
 }
 
 .search-box-container.search-box-hidden {
@@ -435,7 +436,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 .sticky-nav-container {
   padding-top: 10px;
   padding-bottom: 0px;
-  margin-top: 0;
+  margin-top: 16px;
   margin-bottom: 0;
   width: 100%;
   background: rgba(255, 232, 187, 1);
