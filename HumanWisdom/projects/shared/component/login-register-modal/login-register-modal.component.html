@@ -128,7 +128,7 @@
             </div>
           </div>
 
-          <div class="row center_flex mt15px">
+          <div class="row center_flex mt15px" [ngClass]="{'d-none': !enableIcon}">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="fbLogin('signup')">
@@ -136,16 +136,13 @@
               </button>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
-            
-             
-               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginGoogle()">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-             
+              <button type="button" class="btn btn_login_signup tcenter w-75" id="googleBtnSignupWrapper" (click)="triggerGoogleSignIn('googleBtnSignup', $event)">
+                <div id="googleBtnSignup" class="tcenter google-button-hidden"></div>
+                <div class="google-custom-icon">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/cw_google.svg" alt="" class="img-responsive" *ngIf="isAdults">
+                </div>
               </button>
-              <!-- <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter w-75"></div> -->
-              <!-- <button *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-              </button> -->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="signInWithApple('signup')">
@@ -312,7 +309,7 @@
           </div>
         </div>
 
-        <div class="row center_flex mt15px">
+        <div class="row center_flex mt15px" [ngClass]="{'d-none': !enableIcon}">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="fbLogin('signup')">
@@ -320,16 +317,13 @@
               </button>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
-            
-             
-               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginGoogle()">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-             
+              <button type="button" class="btn btn_login_signup tcenter w-75" id="googleBtnLoginWrapper" (click)="triggerGoogleSignIn('googleBtnLogin', $event)">
+                <div id="googleBtnLogin" class="tcenter google-button-hidden"></div>
+                <div class="google-custom-icon">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/cw_google.svg" alt="" class="img-responsive" *ngIf="isAdults">
+                </div>
               </button>
-              <!-- <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter w-75"></div> -->
-              <!-- <button *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-              </button> -->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="signInWithApple('signup')">
@@ -347,7 +341,7 @@
         </div>
 
 
-        <div class="row mtb30px">
+        <div class="row mtb30px" >
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
             <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'" (click)="already('register')">
               Not a registered user?
