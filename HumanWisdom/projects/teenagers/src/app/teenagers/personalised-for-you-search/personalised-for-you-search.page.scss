@@ -21,6 +21,7 @@
     align-items: center;
     justify-content: center;
     line-height: 0;
+    margin: 10px;
     bottom: 0;
 }
 
@@ -262,7 +263,9 @@ li:hover:before {
 .p-section{
     padding:0px 16px 10px 0px !important; 
   }
-
+.odiv_wfgi {
+  padding: 0 8px 10px 20px;
+}
   
 .odiv,
 .odiv_pathway,
@@ -282,7 +285,7 @@ li:hover:before {
 .odiv_pathway::-webkit-scrollbar,
 .odiv_wfgi::-webkit-scrollbar,
 .ae_days::-webkit-scrollbar {
-  height: 1px;
+  height: 2px;
   border-radius: 6px;
 }
 .odiv::-webkit-scrollbar-thumb,
@@ -311,13 +314,7 @@ li:hover:before {
   margin-bottom: -20px !important;
 }
 
-.world_scroll_row {
-  margin-left: -20px !important;
-  margin-right: -10px !important;
-}
-.odiv_wfgi {
-    padding: 0 8px 10px 20px;
-}
+
 .odiv_pathway {
     padding: 0 10px 10px 20px;
 }
