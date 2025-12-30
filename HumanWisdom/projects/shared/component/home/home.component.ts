@@ -191,6 +191,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.username = '';
       this.streak = '';
          this.username = SharedService.FnName();
+       this.getStreak();
     }
 
     // Restore state from store
@@ -556,8 +557,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
               }
             });
 
-            if (storedActivePreference === "19") {
+            if (storedActivePreference === "19" || storedActivePreference === "20") {
               this.showWisdomExercise = true;
+              this.preference = storedActivePreference;
               this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
               console.log('Guest user with stored preference (Self Awareness):', this.YourTopicofChoice);
             } else {
@@ -1425,7 +1427,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.homeStateService.setActivePreference(item.id);
 
     // Handle Self Awareness (id: 19) specially
-    if (item.id === "19") {
+    if (item.id === "19" || item.id === "20") {
       this.showWisdomExercise = true;
       this.YourTopicofChoice = [item];
       // Save user preference for Self Awareness
