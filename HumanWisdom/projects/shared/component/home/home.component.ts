@@ -191,7 +191,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.username = '';
       this.streak = '';
          this.username = SharedService.FnName();
-          this.getStreak();
+       this.getStreak();
     }
 
     // Restore state from store
