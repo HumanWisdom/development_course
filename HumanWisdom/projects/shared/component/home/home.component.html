@@ -22,8 +22,8 @@
                     Hi {{username}}!
                   </h2>
                   <div *ngIf="streak && streak !== '' " class="streak-container"
-                  [ngStyle]="{'background-color': !isAdults ? '#0C2B5F': '#FFE8BB'}"
-                    style=" width: 138px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: center; padding: 0 10px;">
+                  [ngStyle]="{'background-color': !isAdults ? '#F1AC5E': '#FFE8BB'}"
+                    style=" width: 128px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: center; padding: 0 10px;">
                     <img *ngIf="isAdults" class="stk-icon" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak.svg">
                       <img  *ngIf="!isAdults" class="stk-icon" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg">
                     <span class="fw_500 fs_12px lh_140p" [ngClass]="isAdults ?'fc_000000':'fc_ffffff'">
