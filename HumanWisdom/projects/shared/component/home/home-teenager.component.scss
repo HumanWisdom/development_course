@@ -100,7 +100,7 @@
     .nav-item--selected {
         color: white;
         text-decoration: underline;
-        text-decoration-color: rgba(203, 97, 113, 1);
+        text-decoration-color: #EE9596;
         text-decoration-thickness: 6px;
         text-underline-offset: 8px;
     }
@@ -163,7 +163,9 @@
         // margin: 0 20px;
         padding: 0 10px;
     }
-
+.btn-link{
+  color:#fff;
+}
     @media only screen and (max-width: 768px) {
         .nav-scroll-btn {
             width: 32px;
@@ -382,7 +384,7 @@
         margin-top: 16px;
         margin-bottom: 0;
         width: 100%;
-        background-color: #0C2B5F;
+        background-color: #4267A5;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 

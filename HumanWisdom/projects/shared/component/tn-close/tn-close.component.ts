@@ -13,16 +13,19 @@ import { ProgramType } from "../../models/program-model";
   styleUrls: ['./tn-close.component.scss'],
 })
 export class TnCloseComponent implements OnInit {
-        isAdults = true;
+        isAdults = false;
 
 
   constructor(private location:Location, private navigationService: NavigationService, 
  
     private router: Router) { }
 
-  ngOnInit(
-    
-  ) {
+  ngOnInit() {
+        if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
   }
 
  /*  goBack(){
