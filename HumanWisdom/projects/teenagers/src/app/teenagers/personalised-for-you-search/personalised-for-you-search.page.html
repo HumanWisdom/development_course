@@ -240,7 +240,7 @@
 
             <!-- Find Inspiration -->
 
-            <div class="row  p-bt">
+            <div class="row">
               <h2 class="inspiration-title">Find Inspiration
               </h2>
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 odiv p-section">
@@ -1094,7 +1094,7 @@
 
             <!-- hr -->
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
             </div>
@@ -1115,21 +1115,18 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group">
                   <div class="">
-                    <div class="panel-heading p0 ml20px mr20px ">
+                    <div class="panel-heading pt0px">
                       <h4 class="panel-title">
                         <a class="accordion-toggle" (click)="toggleAccordion()">
                           <div class="row">
-                            <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ">
                               <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                 Make the world a better place
+                                <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }"
+                                  style="float: right;">
 
+                                </span>
                               </h2>
-                            </div>
-                            <div class="col-md-1 col-sm-1 col-xs-1 p0 tright center_flex">
-
-                              <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }">
-
-                              </span>
                             </div>
                           </div>
                         </a>
@@ -1137,9 +1134,9 @@
                     </div>
 
                     <div [ngClass]="getExpandClass()" [@accordionAnimation]="isExpanded ? 'expanded' : 'collapsed'"
-                      class="panel-collapse of-h">
-                      <div class="panel-body pl20px pr0px border-0">
-                        <div class="row world_scroll_row">
+                      class="panel-collapse of-h" style="overflow:visible !important">
+                      <div class="">
+                        <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
@@ -1384,8 +1381,8 @@
             </button> -->
             <!-- /tour -->
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_v3_01">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_new">
               </div>
             </div>
             <div class="pagebreak"></div>
