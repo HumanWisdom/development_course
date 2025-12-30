@@ -880,7 +880,7 @@ export class SubscriptionS01V04Page implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    this.router.navigate([SharedService.getDashboardUrls()])
   }
   
   iOS() {
