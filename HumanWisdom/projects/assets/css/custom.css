@@ -31790,7 +31790,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 .adsearch_ul .list-group-item {
   border-radius: 0 !important;
   /* border: 0; */
-  border-bottom: 2px solid #EBEBEB;
+  border-bottom: 2px solid #ffe8bb;
 }
 
 .adsearch_ul .list-group-item:last-child {
@@ -32182,7 +32182,7 @@ label.select_label:after {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: #fff;
+  color: #000;
 }
 
 .tn_bv {
@@ -35643,7 +35643,7 @@ li ol > li:before {
   width: 100%;
   border-radius: 16px !important;
   border: 1px solid rgba(204, 204, 204, 0.25) !important;
-  background: #FFFFFF;
+  background: #ffe8bb;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 400;
