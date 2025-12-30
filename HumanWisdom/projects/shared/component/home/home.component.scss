@@ -558,6 +558,14 @@ background: #FFF7E6;/* Ensure proper stacking context */
   filter: brightness(0) invert(1);
   /* Makes the arrow white for teenagers */
 }
+.btn-link{
+  color:#000;
+}
+
+.arrow-teenagers {
+  filter: brightness(0) invert(1);
+  /* Makes the arrow white for teenagers */
+}
 
 /* Quick Answers (sectionType 3) styling */
 .quick-answers-header {

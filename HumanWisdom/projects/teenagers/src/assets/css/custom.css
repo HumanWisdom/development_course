@@ -37012,9 +37012,12 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   border-radius: 12px;
   border: 0;
   background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%);
-  padding: 12px;
+  padding: 20px;
 }
-
+.arrow-teenagers {
+  filter: brightness(0) invert(1);
+  /* Makes the arrow white for teenagers */
+}
 .divnew_is_02 {
   border-radius: 12px;
   background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
