@@ -165,15 +165,15 @@ export class AllStoriesPage implements OnInit {
 
   toggle_view_more_less()
   {
-    if(this.view_more_less == "View More")
+    if(this.view_more_less == "View more")
     {
       this.enable_view_more_less = true;
-      this.view_more_less = "View Less";
+      this.view_more_less = "View less";
     }
     else
     {
       this.enable_view_more_less = false;
-      this.view_more_less = "View More";
+      this.view_more_less = "View more";
     }
   }
 
