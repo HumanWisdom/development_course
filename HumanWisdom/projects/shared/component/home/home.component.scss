@@ -3,6 +3,16 @@
 background: #FFF7E6;/* Ensure proper stacking context */
 }
 
+.stk-icon {
+    margin-right: 5px;
+    width: 8px;
+    height: 18px;
+}
+
+.header-blk {
+  border-radius: 10px;
+}
+
 .home-content {
   padding-left: 0;
   padding-right: 0;

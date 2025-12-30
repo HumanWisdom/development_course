@@ -16,12 +16,15 @@
               <div class="row home-container sticky-top-section">
 
               <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showSearchBox">
-                <div class="d-flex justify-content-between align-items-center plr20px mt20px mb0px">
+                <div class="d-flex header-blk justify-content-between align-items-center plr20px mb0px" 
+                     [ngStyle]="{'margin-top': (username && username !== '') ? '20px': '20px'}">
                   <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
                     Hi {{username}}!
                   </h2>
                   <div *ngIf="streak && streak !== '' " class="streak-container"
-                    style="background-color: #FFE8BB; width: 138px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 0 10px;">
+                    style="background-color: #FFE8BB; width: 138px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: center; padding: 0 10px;">
+                    <img *ngIf="isAdults" class="stk-icon" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak.svg">
+                      <img  *ngIf="!isAdults" class="stk-icon" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg">
                     <span class="fw_500 fs_12px lh_140p fc_000000">
                       Streak:
                       <span class="fw_600">
@@ -169,16 +172,11 @@
                                   <!-- Lock Icon - Bottom Right Corner of Card -->
                                   <div class="position-absolute" style="bottom: 8px; right: 8px; z-index: 10;">
                                     <div *ngIf="shouldShowLockIcon(card)" class="status-icon lock-icon">
-                                      <img *ngIf="isAdults"
+                                      <img 
                                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" 
                                            alt="Lock icon" 
                                            class="lock-icon-img"
-                                           style="width: 16px; height: 16px;">
-                                      <img *ngIf="!isAdults"
-                                           src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
-                                           alt="Lock icon" 
-                                           class="lock-icon-img"
-                                           style="width: 16px; height: 16px;">
+                                           style="width: 20px; height: 20px;">
                                     </div>
                                   </div>
                                   <div class="me-3" style="flex-shrink: 0; position: relative;">
@@ -338,16 +336,16 @@
                                     <!-- Lock Icon - Bottom Right Corner of Card -->
                                     <div class="position-absolute" style="bottom: 8px; right: 8px; z-index: 10;">
                                       <div *ngIf="shouldShowLockIcon(card)" class="status-icon lock-icon">
-                                        <img *ngIf="isAdults"
+                                        <img 
                                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg" 
                                              alt="Lock icon" 
                                              class="lock-icon-img"
                                              style="width: 20px; height: 20px;">
-                                        <img *ngIf="!isAdults"
+                                        <!-- <img *ngIf="!isAdults"
                                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
                                              alt="Lock icon" 
                                              class="lock-icon-img"
-                                             style="width: 20px; height: 20px;">
+                                             style="width: 20px; height: 20px;"> -->
                                       </div>
                                     </div>
                                     <div class="me-3" style="flex-shrink: 0; position: relative;">
