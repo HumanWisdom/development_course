@@ -5900,6 +5900,10 @@ input[type=radio] {
   padding: 0 !important;
 }
 
+.pb0{
+  padding-bottom: 0 !important;
+}
+
 .top_nav .navbar-right li {
   font-size: 15px !important;
 }
@@ -34081,9 +34085,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  background: #E58D82;
+  background: #E58D82 !important;
   padding: 10px 20px;
-  color: #FFF;
+  color: #FFF !important;
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
