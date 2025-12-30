@@ -54,11 +54,11 @@ export class HomeStateService {
    */
   private checkAndClearOtherProgramData(): void {
     const currentProgramId = SharedService.ProgramId;
-    
+
     // If program has changed, clear the other program's data
     if (this.currentProgramId !== null && this.currentProgramId !== currentProgramId) {
       console.log(`Program changed from ${this.currentProgramId} to ${currentProgramId}, clearing other program's data`);
-      
+
       // Clear the previous program's data
       const previousProgramKey = this.getStorageKeyForProgram(this.currentProgramId);
       try {
@@ -68,7 +68,7 @@ export class HomeStateService {
         console.warn(`Failed to clear data for program ${this.currentProgramId}:`, error);
       }
     }
-    
+
     // Update current program ID
     this.currentProgramId = currentProgramId;
   }
@@ -77,7 +77,7 @@ export class HomeStateService {
     try {
       // Check and clear other program's data if program has changed
       this.checkAndClearOtherProgramData();
-      
+
       const storageKey = this.getStorageKey();
       const savedState = localStorage.getItem(storageKey);
       if (savedState) {
@@ -94,7 +94,7 @@ export class HomeStateService {
     try {
       // Check and clear other program's data if program has changed
       this.checkAndClearOtherProgramData();
-      
+
       const storageKey = this.getStorageKey();
       localStorage.setItem(storageKey, JSON.stringify(state));
     } catch (error) {
@@ -117,8 +117,14 @@ export class HomeStateService {
     this.updateState({ expandedSections });
   }
 
-  getSectionExpanded(sectionId: string): boolean {
-    return this.stateSubject.value.expandedSections[sectionId] || false;
+  getSectionExpanded(sectionId: string): boolean | undefined {
+    const expandedSections = this.stateSubject.value.expandedSections;
+    // Return undefined if section was never stored (user never toggled it)
+    // This allows API's isExpanded to take priority when state is empty
+    if (!(sectionId in expandedSections)) {
+      return undefined;
+    }
+    return expandedSections[sectionId];
   }
 
   // Show all cards state
@@ -205,7 +211,7 @@ export class HomeStateService {
    */
   clearOtherProgramData(): void {
     const currentProgramId = SharedService.ProgramId;
-    
+
     // Clear Adults data if current is Teenagers
     if (currentProgramId === ProgramType.Teenagers) {
       this.clearProgramData(ProgramType.Adults);
@@ -214,7 +220,7 @@ export class HomeStateService {
     else if (currentProgramId === ProgramType.Adults) {
       this.clearProgramData(ProgramType.Teenagers);
     }
-    
+
     // Update current program ID
     this.currentProgramId = currentProgramId;
   }
