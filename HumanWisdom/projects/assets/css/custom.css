@@ -35645,6 +35645,7 @@ li ol > li:before {
   border: 1px solid rgba(204, 204, 204, 0.25) !important;
   background: #ffe8bb;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
+  border: 1px solid rgba(50, 50, 50, .25);
   font-size: 15px;
   font-weight: 400;
   line-height: normal;
@@ -36977,12 +36978,12 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: #000;
+  color: #ffe8bb;
 }
 
 .v3_ta_coach:focus,
 .v3_ta_coach:active {
-  color: #000;
+  color: #ffe8bb;
   outline: none;
   padding: 20px 10px;
 }
