@@ -35642,10 +35642,9 @@ li ol > li:before {
   height: 50px;
   width: 100%;
   border-radius: 16px !important;
-  border: 1px solid rgba(204, 204, 204, 0.25) !important;
+  border: 1px solid rgba(50, 50, 50, 0.25) !important;
   background: #ffe8bb;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
-  border: 1px solid rgba(50, 50, 50, .25);
   font-size: 15px;
   font-weight: 400;
   line-height: normal;
@@ -36973,17 +36972,17 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   height: auto !important;
   border-radius: 16px;
   border: 1px solid rgba(50, 50, 50, 0.25);
-  background: white;
+  background: #ffe8bb;
   padding: 20px 10px;
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: #ffe8bb;
+  color: #000;
 }
 
 .v3_ta_coach:focus,
 .v3_ta_coach:active {
-  color: #ffe8bb;
+  color: #000;
   outline: none;
   padding: 20px 10px;
 }
