@@ -19,7 +19,7 @@ export class AllStoriesPage implements OnInit {
   searchedText='';
   sId:any;
   enable_view_more_less = false;
-  view_more_less="View More"
+  view_more_less="View more"
   isSubscriber = false;
   isAdults = true;
   showModal = false;
