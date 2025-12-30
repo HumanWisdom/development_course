@@ -1,8 +1,6 @@
 <title>Wisdom Stories|Wisdom for Personal Growth|HumanWisdom</title>
-<meta
-  name="description"
-  content="Real-life stories submitted by users across the world. You can also submit your own story. All the stories are subject to approval."
-/>
+<meta name="description"
+  content="Real-life stories submitted by users across the world. You can also submit your own story. All the stories are subject to approval." />
 
 <!-- top navigation -->
 <app-feature-header title="Life Stories"></app-feature-header>
@@ -15,10 +13,7 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div
-        class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"
-        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
-      >
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -28,11 +23,8 @@
                   <input type="search" class="form-control has-feedback-left pfy_search hide_search searchtxt"  placeholder="Search for a topic" id="inputSuccess2" name="textSearch" [(ngModel)]="searchedText" (ngModelChange)="searchStory()">
                   <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                 </div> -->
-                <app-hwp-search-bar
-                  [searchinp]="searchedText"
-                  [placeholder]="'Search for a topic'"
-                  (textBoxEvent)="searchStory($event)"
-                ></app-hwp-search-bar>
+                <app-hwp-search-bar [searchinp]="searchedText" [placeholder]="'Search for a topic'"
+                  (textBoxEvent)="searchStory($event)"></app-hwp-search-bar>
 
                 <div class="col-md-12 col-sm-12 col-xs-12 p0"></div>
               </div>
@@ -54,11 +46,7 @@
                   <div class="row mt15px mb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <a (click)="Submit()">
-                        <button
-                          type="button"
-                          class="btn btn_submit_story"
-                          data-dismiss="modal"
-                        >
+                        <button type="button" class="btn btn_submit_story" data-dismiss="modal">
                           Submit your own story
                         </button>
                       </a>
@@ -83,10 +71,7 @@
 
               <!-- stories -->
               <a *ngFor="let s of storyList">
-                <div
-                  (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))"
-                  class="row div_is_01"
-                >
+                <div (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))" class="row div_is_01">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-md-4 col-sm-4 col-xs-4 p0">
                       <img src="{{s.Img}}" alt="" class="w100 c120px" />
@@ -95,7 +80,7 @@
                     <div class="col-md-7 col-sm-7 col-xs-7 plr12px">
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <h6 class="mtb0px fs_15px fw_600 lh_150p"[ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                          <h6 class="mtb0px fs_15px fw_600 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                             {{s.Title}}
                           </h6>
                         </div>
@@ -103,9 +88,8 @@
 
                       <div class="row mt10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <h6
-                            class="mtb0px fs_12px fw_400 lh_150p ellipsis" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'"
-                          >
+                          <h6 class="mtb0px fs_12px fw_400 lh_150p ellipsis"
+                            [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
                             <!-- {{s.Story|slice:0:40}}... -->
                             {{s.Story}}
                           </h6>
@@ -131,18 +115,14 @@
                     <!-- right-hand icon column -->
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                       <!-- READ icon (top) -->
-                      <img
-                        *ngIf="s.isRead === '1'"
+                      <img *ngIf="s.isRead === '1'"
                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                        class="img-responsive ws-read-icon"
-                      />
+                        class="img-responsive ws-read-icon" />
 
                       <!-- LOCK icon (bottom) -->
-                      <img
-                        *ngIf="!isSubscriber && s.ExclFromChild === '0'"
+                      <img *ngIf="!isSubscriber && s.ExclFromChild === '0'"
                         [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
-                        class="img-responsive ws-lock-icon"
-                      />
+                        class="img-responsive ws-lock-icon" />
                     </div>
 
                     <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber || s.ExclFromChild === '1'">
@@ -154,22 +134,13 @@
               <!-- /stories -->
 
               <!-- =====  VIEW MORE / VIEW LESS  ===== -->
-              <div
-                class="panel-group ws_view_more"
-                id="accordion_ws"
-                *ngIf="secondstoryList.length"
-              >
+              <div class="panel-group ws_view_more" id="accordion_ws" *ngIf="secondstoryList.length">
                 <div class="panel panel-default">
                   <!-- stories container (shown/hidden by Angular only) -->
                   <div class="panel-body" *ngIf="enable_view_more_less">
                     <a *ngFor="let s of secondstoryList">
-                      <div
-                        (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))"
-                        class="row div_is_01"
-                      >
-                        <div
-                          class="col-md-12 col-sm-12 col-xs-12 p0 center_flex"
-                        >
+                      <div (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))" class="row div_is_01">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <!-- left thumbnail -->
                           <div class="col-md-4 col-sm-4 col-xs-4 p0">
                             <img [src]="s.Img" alt="" class="w100 c120px" />
@@ -179,9 +150,8 @@
                           <div class="col-md-7 col-sm-7 col-xs-7 plr12px">
                             <div class="row">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h6
-                                  class="mtb0px fs_15px fw_600 lh_150p"[ngClass]="isAdults? 'fc_000000': 'fc_ffffff'"
-                                >
+                                <h6 class="mtb0px fs_15px fw_600 lh_150p"
+                                  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                                   {{s.Title}}
                                 </h6>
                               </div>
@@ -189,9 +159,8 @@
 
                             <div class="row mt10px">
                               <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h6
-                                  class="mtb0px fs_12px fw_400 lh_150p  ellipsis" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'"
-                                >
+                                <h6 class="mtb0px fs_12px fw_400 lh_150p  ellipsis"
+                                  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
                                   {{s.Story}}
                                 </h6>
                               </div>
@@ -199,24 +168,17 @@
                           </div>
 
                           <!-- right icon column -->
-                          <div
-                            class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
-                          >
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                             <!-- read check -->
-                            <img
-                              *ngIf="s.isRead === '1'"
+                            <img *ngIf="s.isRead === '1'"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                              class="img-responsive ws-read-icon"
-                            />
+                              class="img-responsive ws-read-icon" />
 
                             <!-- lock (teen / adult) -->
-                            <img
-                              *ngIf="!isSubscriber && s.ExclFromChild === '0'"
-                              [src]="isAdults
+                            <img *ngIf="!isSubscriber && s.ExclFromChild === '0'" [src]="isAdults
                   ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                   : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
-                              class="img-responsive ws-lock-icon"
-                            />
+                              class="img-responsive ws-lock-icon" />
                           </div>
                         </div>
                       </div>
@@ -225,22 +187,21 @@
 
                   <!-- view more / less button -->
                   <div class="panel-heading">
-                    <a
-                      class="accordion-toggle"
-                      href="javascript:void(0)"
-                      (click)="$event.preventDefault(); toggle_view_more_less()"
-                    >
+                    <a class="accordion-toggle" href="javascript:void(0)"
+                      (click)="$event.preventDefault(); toggle_view_more_less()">
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                          <h4
-                            class="mtb10px fs_12px fw_400 lh_150p mb10px tcenter underline" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'"
-                          >
+                          <h4 class="mtb10px fs_12px fw_400 lh_150p mb10px tcenter underline"
+                            [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
                             <!-- <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/ls_view_more.svg"
                               class="img-responsive mb10px"
                             /> -->
 
-                            {{view_more_less}}                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);" alt="arrow">
+                            {{view_more_less}}
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3"
+                              [class.arrow-teenagers]="!isAdults"
+                              [style.transform]="enable_view_more_less ? 'rotate(0deg)' : 'rotate(180deg)'" alt="arrow">
 
                           </h4>
                         </div>
@@ -259,15 +220,8 @@
   <!--/Class -->
 </div>
 <!-- /page content -->
-<app-modal 
-  *ngIf="showModal" 
-  [title]="modalTitle" 
-  [content]="modalContent" 
-  [okText]="'Start your free trial'"
-  [cancelText]="'Cancel'"
-  [enableCancel]="true"
-  [isFreeTrialEnable]="true"
-  (closeEvent)="onModalClose($event)">
+<app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
+  [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)">
 </app-modal>
 <!-- footer  -->
 <app-bottom-navigation></app-bottom-navigation>
