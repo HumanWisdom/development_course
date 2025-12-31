@@ -53,7 +53,7 @@ export class FindInspiration implements OnInit  {
       url:'journal'
     }, 
     { 
-      title: 'Wellness Survey', 
+      title: 'Wellness survey', 
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
