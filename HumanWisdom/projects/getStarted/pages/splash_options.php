@@ -55,11 +55,11 @@
                 Welcome to HappierMe!
               </h4>
       
-              <h4 class="mt0px mb15px fs_15px fw_400 lh_140p fc_ffffff_0_5 tcenter">
+              <h4 class="mt0px mb20px fs_15px fw_400 lh_140p fc_ffffff_0_5 tcenter">
               Your companion for a happier life
               </h4>
               
-              <h4 class="mtb20px fs_15px fw_400 lh_140p fc_ffffff tcenter">
+              <h4 class="mt60px mb20px fs_15px fw_400 lh_140p fc_ffffff tcenter">
               Pick a section to get started
               </h4>
 
