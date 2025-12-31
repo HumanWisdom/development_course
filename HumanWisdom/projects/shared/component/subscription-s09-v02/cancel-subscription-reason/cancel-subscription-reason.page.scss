@@ -1,0 +1,6 @@
+::ng-deep .modal {
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  opacity: 1 !important;
+}
