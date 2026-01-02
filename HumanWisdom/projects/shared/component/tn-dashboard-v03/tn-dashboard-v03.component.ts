@@ -4,13 +4,14 @@ import {
   supportsPassiveEventListeners,
   supportsScrollBehavior
 } from '@angular/cdk/platform';
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnChanges, OnDestroy, OnInit, Output, PLATFORM_ID, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService, UrlConstant } from '../../../shared/services/shared.service';
 import { Subscription } from 'rxjs';
 import { ProgramType } from '../../models/program-model';
 import { LogEventService } from '../../services/log-event.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-tn-dashboard-v03',
@@ -48,7 +49,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   disableClick = false;
   isAdults = false;
 
-  constructor(private router: Router, public Onboardingservice: OnboardingService,public logeventservice: LogEventService, public platform: Platform) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private router: Router, public Onboardingservice: OnboardingService,public logeventservice: LogEventService, public platform: Platform) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -145,13 +146,20 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     if (ban === null || ban === 'T') {
       if (this.platform.IOS || this.platform.SAFARI || this.iOS()) {
         this.ios = true;
-      } else if (this.platform.ANDROID) {
+      } else if (this.IsAndroid()) {
         this.android = true;
       }
     } else {
       this.enableplaystore = false;
     }
   }
+
+  IsAndroid(): boolean {
+  if (isPlatformBrowser(this.platformId)) {
+    return /Android/i.test(navigator.userAgent);
+  }
+  return false;
+}
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
