@@ -13664,8 +13664,8 @@ h1.module_title {
 .txt4 {
   /* font-family: Roboto; */
   font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 24px;
   line-height: 150%;
   /* text-align: center; */
   text-align: left;
@@ -34101,7 +34101,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   width: 100%;
   border-radius: 16px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255,255,255,.25);
   background: #0C2B5F !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;

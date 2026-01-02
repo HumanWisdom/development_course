@@ -2,24 +2,24 @@ import { SingleAudioContentComponent } from '../../../../../shared/component/sin
 import { YoutubeContentComponent } from '../../../../../shared/component/youtube-content/youtube-content.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdultsAudioMeditationComponent } from '../../../../../shared/component/adults-audio-meditation/adults-audio-meditation.component';
+import { CuratedRedirectComponent } from './curated-redirect/curated-redirect.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./overcome-stress-anxiety/overcome-stress-anxiety.module').then( m => m.OvercomeStressAnxietyPageModule),
+    component: CuratedRedirectComponent
   },
   {
     path: 'overcome-stress-anxiety',
-    loadChildren: () => import('./overcome-stress-anxiety/overcome-stress-anxiety.module').then( m => m.OvercomeStressAnxietyPageModule),
-  },   
+    component: CuratedRedirectComponent
+  },
   {
     path: 'overcome-stress-anxiety-transcript',
     loadChildren: () => import('./overcome-stress-anxiety-transcript/overcome-stress-anxiety-transcript.module').then( m => m.OvercomeStressAnxietyTranscriptPageModule)
   },
   {
     path: 'have-fulfilling-relationships',
-    loadChildren: () => import('./have-fulfilling-relationships/have-fulfilling-relationships.module').then( m => m.HaveFulfillingRelationshipsPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'have-fulfilling-relationships-transcript',
@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'be-happier',
-    loadChildren: () => import('./be-happier/be-happier.module').then( m => m.BeHappierPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'be-happier-transcript',
@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   {
     path: 'overcome-unhelpful-habits',
-    loadChildren: () => import('./overcome-unhelpful-habits/overcome-unhelpful-habits.module').then( m => m.OvercomeUnhelpfulHabitsPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'overcome-unhelpful-habits-transcript',
@@ -43,7 +43,7 @@ const routes: Routes = [
   },
   {
     path: 'feel-calm',
-    loadChildren: () => import('./feel-calm/feel-calm.module').then( m => m.FeelCalmPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'feel-calm-transcript',
@@ -51,7 +51,7 @@ const routes: Routes = [
   },
   {
     path: 'manage-your-emotions',
-    loadChildren: () => import('./manage-your-emotions/manage-your-emotions.module').then( m => m.ManageYourEmotionsPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'manage-your-emotions-transcript',
@@ -59,7 +59,7 @@ const routes: Routes = [
   },
   {
     path: 'succeed-in-life',
-    loadChildren: () => import('./succeed-in-life/succeed-in-life.module').then( m => m.SucceedInLifePageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'succeed-in-life-transcript',
@@ -67,7 +67,7 @@ const routes: Routes = [
   },
    {
     path: 'understand-yourself',
-    loadChildren: () => import('./understand-yourself/understand-yourself.module').then( m => m.UnderstandYourselfPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'understand-yourself-transcript',

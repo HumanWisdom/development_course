@@ -38,9 +38,11 @@
                   <div class="row mb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                       <input type="text" id="name" (keyup)="keyname($event.target)" class="sp_fc" required [(ngModel)]="name" placeholder="Friend name">
-                      <div class="fc_img">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive">
-                      </div>
+                     <div class="fc_img">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive" *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_user.svg" class="img-responsive" *ngIf="isAdults">
+
+                          </div>
                     </div>
 
                     <small class="danger ms-1 mt-1">{{namevalidation()}}</small>
@@ -51,8 +53,10 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                       <input type="text" id="email" (keyup)="keyemail($event.target)" required [(ngModel)]="email" class="sp_fc" placeholder="Friend email">
                       <div class="fc_img">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
-                      </div>
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive" *ngIf="!isAdults">
+                                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_email.svg" class="img-responsive" *ngIf="isAdults">
+
+                        </div>
                     </div>
                     <small class="danger ms-1 mt-1">{{emailvalidation()}}</small>
                   </div>
