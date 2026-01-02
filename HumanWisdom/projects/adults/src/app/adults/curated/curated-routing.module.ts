@@ -2,80 +2,80 @@ import { SingleAudioContentComponent } from '../../../../../shared/component/sin
 import { YoutubeContentComponent } from '../../../../../shared/component/youtube-content/youtube-content.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdultsAudioMeditationComponent } from '../../../../../shared/component/adults-audio-meditation/adults-audio-meditation.component';
+import { CuratedRedirectComponent } from './curated-redirect/curated-redirect.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./overcome-stress-anxiety/overcome-stress-anxiety.module').then( m => m.OvercomeStressAnxietyPageModule),
+    component: CuratedRedirectComponent
   },
   {
     path: 'overcome-stress-anxiety',
-    loadChildren: () => import('./overcome-stress-anxiety/overcome-stress-anxiety.module').then( m => m.OvercomeStressAnxietyPageModule),
-  },   
+    component: CuratedRedirectComponent
+  },
   {
     path: 'overcome-stress-anxiety-transcript',
-    loadChildren: () => import('./overcome-stress-anxiety-transcript/overcome-stress-anxiety-transcript.module').then( m => m.OvercomeStressAnxietyTranscriptPageModule)
+    loadChildren: () => import('./overcome-stress-anxiety-transcript/overcome-stress-anxiety-transcript.module').then(m => m.OvercomeStressAnxietyTranscriptPageModule)
   },
   {
     path: 'wisdom-for-workplace',
-    loadChildren: () => import('./wisdom-for-workplace/wisdom-for-workplace.module').then( m => m.WisdomForWorkplacePageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'wisdom-for-workplace-transcript',
-    loadChildren: () => import('./wisdom-for-workplace-transcript/wisdom-for-workplace-transcript.module').then( m => m.WisdomForWorkplaceTranscriptPageModule)
+    loadChildren: () => import('./wisdom-for-workplace-transcript/wisdom-for-workplace-transcript.module').then(m => m.WisdomForWorkplaceTranscriptPageModule)
   },
   {
     path: 'have-fulfilling-relationships',
-    loadChildren: () => import('./have-fulfilling-relationships/have-fulfilling-relationships.module').then( m => m.HaveFulfillingRelationshipsPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'have-fulfilling-relationships-transcript',
-    loadChildren: () => import('./have-fulfilling-relationships-transcript/have-fulfilling-relationships-transcript.module').then( m => m.HaveFulfillingRelationshipsTranscriptPageModule)
+    loadChildren: () => import('./have-fulfilling-relationships-transcript/have-fulfilling-relationships-transcript.module').then(m => m.HaveFulfillingRelationshipsTranscriptPageModule)
   },
   {
     path: 'be-happier',
-    loadChildren: () => import('./be-happier/be-happier.module').then( m => m.BeHappierPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'be-happier-transcript',
-    loadChildren: () => import('./be-happier-transcript/be-happier-transcript.module').then( m => m.BeHappierTranscriptPageModule)
+    loadChildren: () => import('./be-happier-transcript/be-happier-transcript.module').then(m => m.BeHappierTranscriptPageModule)
   },
   {
     path: 'change-unhelpful-habits',
-    loadChildren: () => import('./change-unhelpful-habits/change-unhelpful-habits.module').then( m => m.ChangeUnhelpfulHabitsPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'change-unhelpful-habits-transcript',
-    loadChildren: () => import('./change-unhelpful-habits-transcript/change-unhelpful-habits-transcript.module').then( m => m.ChangeUnhelpfulHabitsTranscriptPageModule)
+    loadChildren: () => import('./change-unhelpful-habits-transcript/change-unhelpful-habits-transcript.module').then(m => m.ChangeUnhelpfulHabitsTranscriptPageModule)
   },
   {
     path: 'have-calm-mind',
-    loadChildren: () => import('./have-calm-mind/have-calm-mind.module').then( m => m.HaveCalmMindPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'have-calm-mind-transcript',
-    loadChildren: () => import('./have-calm-mind-transcript/have-calm-mind-transcript.module').then( m => m.HaveCalmMindTranscriptPageModule)
+    loadChildren: () => import('./have-calm-mind-transcript/have-calm-mind-transcript.module').then(m => m.HaveCalmMindTranscriptPageModule)
   },
   {
     path: 'deal-with-sorrow-loss',
-    loadChildren: () => import('./deal-with-sorrow-loss/deal-with-sorrow-loss.module').then( m => m.DealWithSorrowLossPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'deal-with-sorrow-loss-transcript',
-    loadChildren: () => import('./deal-with-sorrow-loss-transcript/deal-with-sorrow-loss-transcript.module').then( m => m.DealWithSorrowLossTranscriptPageModule)
+    loadChildren: () => import('./deal-with-sorrow-loss-transcript/deal-with-sorrow-loss-transcript.module').then(m => m.DealWithSorrowLossTranscriptPageModule)
   },
   {
     path: 'manage-your-emotions',
-    loadChildren: () => import('./manage-your-emotions/manage-your-emotions.module').then( m => m.ManageYourEmotionsPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'manage-your-emotions-transcript',
-    loadChildren: () => import('./manage-your-emotions-transcript/manage-your-emotions-transcript.module').then( m => m.ManageYourEmotionsTranscriptPageModule)
+    loadChildren: () => import('./manage-your-emotions-transcript/manage-your-emotions-transcript.module').then(m => m.ManageYourEmotionsTranscriptPageModule)
   },
   {
     path: 'parent-hub',
-    loadChildren: () => import('./parent-hub/parent-hub.module').then( m => m.ParentHubPageModule)
+    component: CuratedRedirectComponent
   },
   {
     path: 'youtubelink/:videolink',
