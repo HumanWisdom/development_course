@@ -19757,7 +19757,7 @@ ngx-circular-player svg {
 .nrow_active {
   padding: 20px 10px;
   border-bottom: 1px solid #DADADA;
-  background: #F2F2F2;
+  /* background: #F2F2F2; */
 }
 
 .notification_panel {
@@ -28906,14 +28906,14 @@ video::-webkit-media-controls-panel {
   width: 125px;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25); */
   /* background: #ED7D6F !important; */
   background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
 
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   line-height: 140%;
   font-size: 15px;
   font-weight: 600;
