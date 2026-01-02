@@ -56,6 +56,7 @@ export interface ContentCard {
   moduleType?: string;
   isFree?: string | number; // "0" means locked, "1" means free
   isRead?: string | number; // "0" means not read, "1" means read/completed
+  isTeenTalk?: boolean;
 }
 
 export interface ContentSection {
@@ -458,7 +459,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const rawType = typeof section.sectionType === 'string' ? Number(section.sectionType) : section.sectionType;
     const isVertical = rawType === 2 || rawType === 3;
 
-    const transformedCards = this.transformCards(cardsArray, sectionType);
+    const transformedCards = this.transformCards(cardsArray, sectionType, section.title);
 
     // Get viewall_Url - preserve null if explicitly set, otherwise try alternatives
     const viewallUrl = section['viewall_Url'] !== undefined
@@ -625,30 +626,44 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Transform cards based on section type
    */
-  transformCards(cards: any[], sectionType: string): ContentCard[] {
+  transformCards(cards: any[], sectionType: string, sectionTitle: string = ''): ContentCard[] {
     if (!Array.isArray(cards)) {
       return [];
     }
 
     return cards.map((card, index) => {
+      let transformedCard: ContentCard;
       switch (sectionType) {
         case 'introduction':
-          return this.transformIntroductionCard(card);
+          transformedCard = this.transformIntroductionCard(card);
+          break;
         case 'modules1':
         case 'modules2':
         case 'modules3':
-          return this.transformModuleCard(card);
+          transformedCard = this.transformModuleCard(card);
+          break;
         case 'blogs':
-          return this.transformBlogCard(card);
+          transformedCard = this.transformBlogCard(card);
+          break;
         case 'stories':
-          return this.transformStoryCard(card);
+          transformedCard = this.transformStoryCard(card);
+          break;
         case 'podcast':
-          return this.transformPodcastCard(card);
+          transformedCard = this.transformPodcastCard(card);
+          break;
         case 'shorts':
-          return this.transformShortCard(card);
+          transformedCard = this.transformShortCard(card);
+          break;
         default:
-          return this.transformGenericCard(card);
+          transformedCard = this.transformGenericCard(card);
+          break;
       }
+
+      if (sectionTitle && sectionTitle.trim().toLowerCase() === 'teen talk') {
+        transformedCard.isTeenTalk = true;
+      }
+
+      return transformedCard;
     });
   }
 
@@ -918,6 +933,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private trackCardClick(card: ContentCard): void {
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
+
+    if (card.isTeenTalk) {
+      const id = this.extractNumericId(card.id) ?? this.extractShortIdFromUrl(card.path) ?? this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.commonService.clickTeenTalk(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+
     if (!type) return;
     if (type.includes('PODCAST')) {
       const id = this.extractNumericId(card.id) ?? this.extractIdFromPath(card.path);
