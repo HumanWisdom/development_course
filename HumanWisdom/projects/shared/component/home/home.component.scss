@@ -638,41 +638,61 @@ background: #FFF7E6;/* Ensure proper stacking context */
 .adsearch {
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 1001;
-  /* Higher than sticky nav to appear above it */
-  margin-top: 0;
+  left: -20px; /* Counteract parent padding to cover full width */
+  right: -20px;
+  z-index: 2000; /* Ensure it stays on top */
+  margin-top: 20px;
 }
 
 .autocomplete-list {
-  max-height: 300px;
+  height: 90vh; /* Extend to cover the screen */
+  max-height: none; /* Remove height limit */
   overflow-y: auto;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px 20px 0 0;
+  box-shadow: none !important; /* Remove shadow/border appearance */
   margin: 0;
   padding: 0;
-  background-color: #ffffff !important;
+  padding-bottom: 250px; /* Increased to ensure last item is fully visible above footer */
+  background-color: #FFF7E6 !important; /* Theme background color */
+  border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
 }
 
 .adsearch_ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  border: none !important;
 }
 
 .is-search {
+  position: relative;
   cursor: pointer;
-  padding: 12px 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 20px; /* Maintained user's preferred padding */
+  border: none !important; /* Remove Bootstrap default borders */
+  margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
   transition: background-color 0.2s ease;
-  background-color: #ffffff !important;
+  background-color: #FFF7E6 !important; /* Theme background color */
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1) !important; /* Slightly more visible separator */
+    z-index: 2; /* Ensure it stays above siblings */
+    display: block;
+  }
 }
 
 .is-search:hover {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-.is-search:last-child {
-  border-bottom: none;
+.is-search:last-child::after {
+  display: none !important; /* Correctly hide the after-item separator for the last element */
 }
