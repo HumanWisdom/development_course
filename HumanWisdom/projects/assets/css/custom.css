@@ -11756,7 +11756,7 @@ div.rbox {
 }
 
 .bg_white {
-  background-color: #fff !important;
+  background-color: #FFF7E6 !important;
 }
 
 .b0 {
@@ -21039,9 +21039,10 @@ input {
   width: 100%;
   margin: 0;
   border: 0;
+  
   border-radius: 100px;
-  /* background: #ED7D6F !important; */
-    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+   background: #ED7D6F !important; 
+    /* background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important; */
 
   color: #fff !important;
   font-size: 15px;
