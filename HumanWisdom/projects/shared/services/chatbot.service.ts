@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { SharedService } from './shared.service';
 import { ProgramType } from '../models/program-model';
 import { ChatStore, ChatMessage } from '../stores/chat.store';
-
+import { environment } from '../../../../HumanWisdom/projects/environments/environment';
 export interface ChatbotRequest {
   message: string;
   session_id?: string;
@@ -36,12 +36,12 @@ export interface HistoryResponse {
   providedIn: 'root'
 })
 export class ChatbotService {
-  private readonly ADULT_CHATBOT_URL = 'https://adults-staging.happierme.app/chat';
-  private readonly TEEN_CHATBOT_URL = 'https://teenagers-staging.happierme.app/api/chat';
-  private readonly HEALTH_CHECK_URL_ADULT = 'https://adults-staging.happierme.app/api/health';
-  private readonly HEALTH_CHECK_URL_TEEN = 'https://teenagers-staging.happierme.app/api/health';
-  private readonly HISTORY_URL_ADULT = 'https://adults-staging.happierme.app/api/history';
-  private readonly HISTORY_URL_TEEN = 'https://teenagers-staging.happierme.app/api/history';
+  private readonly ADULT_CHATBOT_URL = environment.ADULT_CHATBOT_URL;
+  private readonly TEEN_CHATBOT_URL = environment.TEEN_CHATBOT_URL
+  private readonly HEALTH_CHECK_URL_ADULT = environment.HEALTH_CHECK_URL_ADULT
+  private readonly HEALTH_CHECK_URL_TEEN = environment.HEALTH_CHECK_URL_TEEN
+  private readonly HISTORY_URL_ADULT = environment.HISTORY_URL_ADULT
+  private readonly HISTORY_URL_TEEN = environment.HISTORY_URL_TEEN
 
   // Expose store observables
   public messages$: Observable<ChatMessage[]>;
