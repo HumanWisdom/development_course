@@ -357,13 +357,13 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .section-arrow.arrow-expanded {
-  transform: rotate(180deg);
-  /* Arrow points down when expanded */
+  transform: rotate(0deg);
+  /* Arrow points up when expanded */
 }
 
 .section-arrow.arrow-collapsed {
-  transform: rotate(0deg);
-  /* Arrow points up when collapsed */
+  transform: rotate(180deg);
+  /* Arrow points down when collapsed */
 }
 
 .section-arrow.arrow-teenagers {
@@ -372,32 +372,15 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .section-header {
-  height: 100px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  height: 60px;
+  // padding-top: 40px;
+  // padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;  
   width: auto;
 }
 
-.section-header[aria-expanded="true"] {
-  padding-bottom: 16px;
-  height: 75px;
-}
 
-.section-header:hover {
-  // padding-top: 40px;
-  // padding-bottom: 40px;
-  // padding-left: 20px;
-  // padding-right: 20px;
-}
-
-.section-header[aria-expanded="true"]:hover {
-  // padding-bottom: 10px;
-  // padding-top: 30px;
-  // padding-left: 20px;
-  // padding-right: 20px;
-}
 
 /* Search box container with show/hide animation */
 .search-box-container {

@@ -42,7 +42,7 @@
                 <div class="col-12 pr0px pdl20px pdr20px mt-3 mb-3 prelative search-box-container"
                   [class.search-box-hidden]="!showSearchBox">
                   <div class="col-md-12 col-sm-12 col-xs-12 form-group  has-feedback zi0 p0 mb0px">
-                    <input type="search" placeholder="How can we help you today?"
+                    <input type="search" placeholder="Search for a topic"
                       class="form-control has-feedback-left pfy_search hide_search" name="search-list"
                       [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
                       (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(searchinp)"
@@ -78,7 +78,7 @@
                       <ng-container *ngFor="let item of personalisedList">
                         <a *ngIf="item.id!='999'" class="nav-item" [class.nav-item--selected]="item.active"
                           [class.nav-item--unselected]="!item.active" (click)="onNavigationClick(item)">
-                          <span>{{ item.displayName }}</span>
+                          <span [style.font-weight]="item.active ? 'bold' : 'normal'">{{ item.displayName }}</span>
                         </a>
                       </ng-container>
                     </div>
@@ -261,12 +261,14 @@
                         </div>
                       </ng-container>
 
+                        <!-- [ngStyle]="{'margin-top.px': enableBanner ? (!isloggedIn ? 50 : 120) : 20}" -->
                       <!-- Accordion header + content for normal sections -->
                       <ng-template #accordionHeader>
                         <!-- Section Header (clickable for accordion) -->
                         <div class="d-flex justify-content-between align-items-center section-header rounded-top  "
                           [class.long-term-solutions-header]="section.title === 'Long term solutions'"
-                          [ngStyle]="{'margin-top.px': enableBanner ? (!isloggedIn ? 50 : 120) : 0}"
+                          [style.margin-bottom.px]="section.isExpanded ? 0 : 20"
+                          [style.margin-top.px]="section.isExpanded ? (section.id == 3 || section.id == 4) ? 0: 10 : (section.id == 3 || section.id == 4) ? 20 :20"
                           (click)="onSectionToggle(section)" (keydown.enter)="onSectionToggle(section)"
                           (keydown.space)="onSectionToggle(section)" tabindex="0" role="button"
                           [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id">
