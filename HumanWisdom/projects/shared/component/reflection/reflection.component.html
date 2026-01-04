@@ -28,7 +28,7 @@
     </div>
 
     <!-- hint popover -->
-    <div class="reflection-hint-popover" *ngIf="showHintModal">
+    <div [ngClass]="isIos ? 'reflection-hint-popover_safari' : 'reflection-hint-popover'" *ngIf="showHintModal">
       <h4
         id="hinttext"
         class="mtb0px fs_12px fw_400 lh_140p tleft rhdm hm"

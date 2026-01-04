@@ -43,6 +43,7 @@ export class ReflectionComponent implements OnInit {
   qrList = JSON.parse(localStorage.getItem("qrList"))
   showHintModal = false;
   isShowBulb = false;
+  isIos = false;
 
   constructor(public router: Router, public service: AdultsService, public sharedService:SharedService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -55,6 +56,7 @@ export class ReflectionComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isIos = SharedService.isIOSApp();
     this.showheaderbar = true
     this.path = this.router.url;
     var lastSlash = this.path?.lastIndexOf("/");
