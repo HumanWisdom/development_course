@@ -326,7 +326,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     // Track once on first play automatically (covers autoplay and manual play)
     const video = this.videoPlayer?.nativeElement as HTMLVideoElement | undefined;
     if (video) {
-      const trackOnce = () => this.trackShortClickIfApplicable();
+      const trackOnce = () => this.trackVideoClickIfApplicable();
       video.addEventListener('play', trackOnce, { once: true });
     }
   }
@@ -489,19 +489,36 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // UI events from template
   onVideoClick(): void {
-    this.trackShortClickIfApplicable();
+    this.trackVideoClickIfApplicable();
   }
 
   onVideoPlay(): void {
-    this.trackShortClickIfApplicable();
+    this.trackVideoClickIfApplicable();
   }
 
-  // Tracking helpers (short videos only)
-  private trackShortClickIfApplicable(): void {
+  // Tracking helpers (short videos and teen talk)
+  private trackVideoClickIfApplicable(): void {
     if (this.hasTrackedThisVideo) return;
-    if (!this.wisdomshort) return; // only track wisdom shorts
-
+    
     const code = this.getCurrentShortCode();
+    const isTeenTalk = (code && (code.includes('teen_talk') || code.includes('teen-talk'))) || (this.path && (this.path.includes('teen_talk') || this.path.includes('teen-talk')));
+    
+    if (isTeenTalk) {
+      const id = this.extractShortIdFromCode(code);
+      if (id !== null) {
+        this.service.clickTeenTalk(id).subscribe({
+          next: () => {
+            this.hasTrackedThisVideo = true;
+            console.log('teen talk click recorded');
+          },
+          error: (e) => console.error('teen talk click failed', e)
+        });
+      }
+      return;
+    }
+
+    if (!this.wisdomshort) return; // only track wisdom shorts if not teen talk
+
     const id = this.extractShortIdFromCode(code);
     if (id !== null) {
       this.service.clickShorts(id).subscribe({
@@ -533,7 +550,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       return Number.isFinite(n) ? n : null;
     }
 
-    const parts = filename.split('.').reverse();
+    const parts = filename.split(/[\.\-_]/).reverse();
     for (const part of parts) {
       const n = Number(part);
       if (!Number.isNaN(n) && Number.isFinite(n)) {
