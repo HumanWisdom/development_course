@@ -108,7 +108,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostBinding('class.adults-theme') get isAdultsTheme() {
     return SharedService.ProgramId == ProgramType.Adults;
   }
-
+  enableBanner: boolean = false;
   navigationItems = [];
   description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
   isloggedIn: boolean;
@@ -148,6 +148,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private homeStateService: HomeStateService,
     private onboardingService: OnboardingService
   ) {
+ 
     this.navigationItems = SharedService.getPreferenceDataForHome();
     // Listen to hash changes dynamically
     this.hashChangeHandler = () => {

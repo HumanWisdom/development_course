@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { NotificationModel } from './notification-model';
 import { SharedService } from '../../../shared/services/shared.service';
+import { NavigationService } from "../../../shared/services/navigation.service";
+import { Location } from '@angular/common';
+import { ProgramType } from '../../models/program-model';
+
 
 @Component({
   selector: 'HumanWisdom-notification',
@@ -28,20 +32,39 @@ export class NotificationPage implements OnInit {
     'Dec',
   ];
   showOlderNotifications: boolean = false;
+     isAdults: boolean = true; 
+
   @ViewChild('notificationTop') notificationTop!: ElementRef;
   
   constructor(
     private adultService: OnboardingService,
     private datePipe: DatePipe,
-    public router: Router
-  ) {}
+    public router: Router,
+    private navigationService:NavigationService,
+    private location: Location,
+  ) {
+
+     if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
   ngOnInit() {
     this.notificationModel = [];
     this.olderNotitification = [];
     this.getNotificationList();
   }
-
+ routeToLanding(){
+    // this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
+  }
   convertUTCToIST(date: any) {
     var dateUTC: any = new Date(date);
     dateUTC = dateUTC.getTime();
