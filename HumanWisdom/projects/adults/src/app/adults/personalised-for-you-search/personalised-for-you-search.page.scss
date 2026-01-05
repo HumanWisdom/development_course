@@ -243,7 +243,8 @@ li:hover:before {
 .odiv_pathway,
 .odiv_wfgi,
 .ae_days {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: thin;
   scrollbar-color: #eea170 #f6d1b7;
 }
@@ -275,9 +276,10 @@ li:hover:before {
   border-radius: 10px;
 }
 
-:host ::ng-deep .box_v3_05 {
-  padding: 10px 10px 1px 0px !important;
-}
+// :host ::ng-deep .box_v3_05 {
+//   padding: 10px 10px 1px 0px !important;
+// }
+
 .hr_style_new{
   margin: 0 0 30px !important; 
   border: 1px solid #000000;
