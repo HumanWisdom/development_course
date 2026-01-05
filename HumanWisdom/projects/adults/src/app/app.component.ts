@@ -465,7 +465,7 @@ export class AppComponent implements OnDestroy {
     this.search = false;
     this.isEnableHam = false;
     this.enableplaystore = false;
-    this.isShowHeader=true;
+    this.isShowHeader=false;
     this.isLoginPage = false;
     return true;
   }
