@@ -659,7 +659,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           break;
       }
 
-      if (sectionTitle && sectionTitle.trim().toLowerCase() === 'teen talk') {
+      if (sectionTitle && sectionTitle.trim().toLowerCase().includes('teen talk')) {
         transformedCard.isTeenTalk = true;
       }
 
@@ -765,7 +765,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   transformGenericCard(card: any): ContentCard {
     return {
-      id: card.id || card.title || `card-${Date.now()}`,
+      id: card.RowID?.toString() || card.id?.toString() || card.title || `card-${Date.now()}`,
       imageUrl: card.imgUrl || card.image_path || card.imageUrl || card.ImagePath || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || card.subtitle || '',
@@ -934,7 +934,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private trackCardClick(card: ContentCard): void {
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
 
-    if (card.isTeenTalk) {
+    if (card.isTeenTalk || (card.path && (card.path.includes('teen_talk') || card.path.includes('teen-talk')))) {
       const id = this.extractNumericId(card.id) ?? this.extractShortIdFromUrl(card.path) ?? this.extractIdFromPath(card.path);
       if (id != null) {
         this.commonService.clickTeenTalk(id).subscribe({ next: () => { }, error: () => { } });
@@ -1040,7 +1040,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       const n = Number(extMatch[1]);
       return Number.isFinite(n) ? n : null;
     }
-    const parts = filename.split('.').reverse();
+    const parts = filename.split(/[\.\-_]/).reverse();
     for (const part of parts) {
       const n = Number(part);
       if (!Number.isNaN(n) && Number.isFinite(n)) {
