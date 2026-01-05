@@ -3,6 +3,11 @@
 background: #FFF7E6;/* Ensure proper stacking context */
 }
 
+.pointer-events-auto {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
+
 .stk-icon {
     margin-right: 5px;
     width: 8px;
@@ -85,6 +90,14 @@ background: #FFF7E6;/* Ensure proper stacking context */
   /* Prevent text wrapping */
 }
 
+.nav-item>span {
+  vertical-align: super;
+}
+
+.nav-scroll-btn>i {
+  vertical-align: middle;
+}
+
 /* Selected/Active state */
 .nav-item.selected,
 .nav-item.active {
@@ -93,6 +106,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
   text-decoration-color: rgba(203, 97, 113, 1);
   text-decoration-thickness: 6px;
   text-underline-offset: 8px;
+ 
   /* Adjust distance from text */
 }
 
@@ -132,7 +146,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 /* Navigation scroll buttons */
 .nav-scroll-btn {
   position: absolute;
-  top: 50%;
+  top: 42%;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -370,6 +384,11 @@ background: #FFF7E6;/* Ensure proper stacking context */
   filter: brightness(0) invert(1);
   /* Makes the arrow white for teenagers */
 }
+
+.mttopbot20 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
 .section-header {
   height: 60px;
@@ -658,7 +677,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
   background-color: #FFF7E6 !important; /* Theme background color */
   color: rgba(0, 0, 0, 0.75);
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
 
   &::after {
     content: "";
