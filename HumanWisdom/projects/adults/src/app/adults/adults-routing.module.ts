@@ -24,6 +24,7 @@ import { SocialLoginPage } from '../../../../shared/component/social-login/socia
 const routes: Routes = [
   {
     path: 'home',
+    canActivate: [AuthGuard],
     component: HomeComponent
   },
   {
@@ -32,6 +33,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    canActivate: [AuthGuard],
     component: HomeComponent
   },
 

@@ -1,24 +1,25 @@
-<span #redeemsubscription data-toggle="modal" data-target="#activate_subscription">
+<span #redeemsubscription data-bs-toggle="modal" data-bs-target="#activate_subscription">
 </span>
 
 <!-- activate subscription modal -->
-<div class="modal fade in" id="activate_subscription" data-keyboard="false" data-backdrop="true">
+<div class="modal fade in" id="activate_subscription" data-bs-keyboard="false" data-bs-backdrop="false">
   <div #activemodal class="modal-ext-scroll">
     <div class="row center_flex" *ngIf="firstpage">
       <form [formGroup]="registrationForm" autocomplete="off">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_ext_01 modal-top">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body modal_ext_01 modal-top" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                <h3 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+                <h3 class="mtb0px fs_18px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Register
                 </h3>
               </div>
 
               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                 <a class="" data-dismiss="modal" #actclosemodal (click)="closeModalevent()">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt=""
-                    class="p0">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" alt="close"
+                    class="p0" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/close.svg" alt="close" class="p0" *ngIf="isAdults">
                 </a>
               </div>
             </div>
@@ -29,8 +30,10 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <input type="text" class="sp_fc" formControlName="fname" placeholder="First Name" required>
                 <div class="fc_img">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg"
-                    class="img-responsive">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/svg_user.svg"
+                    class="img-responsive" *ngIf="!isAdults">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/svg_user.svg"
+                    class="img-responsive" *ngIf="isAdults">
                 </div>
               </div>
               <div *ngIf="fname.invalid && fname.touched">
@@ -43,8 +46,9 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <input type="text" id="name" class="sp_fc" placeholder="Last Name" formControlName="lname" required>
                 <div class="fc_img">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg"
-                    class="img-responsive">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/svg_user.svg"
+                    class="img-responsive" *ngIf="!isAdults">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/svg_user.svg" class="img-responsive" *ngIf="isAdults">
                 </div>
               </div>
               <div *ngIf="lname.invalid && lname.touched">
@@ -57,7 +61,9 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <input type="text" class="sp_fc" placeholder="Email Address" formControlName="email" autocomplete="new-password" required>
                 <div class="fc_img">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/svg_email.svg" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/svg_email.svg" class="img-responsive" *ngIf="isAdults">
+
                 </div>
               </div>
               <div *ngIf="emailvalid.invalid && emailvalid.touched">
@@ -70,10 +76,13 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <input class="sp_fc" placeholder="Password" [type]="passwordhide ? 'password' : 'text'" autocomplete="on" (keydown.space)="$event.preventDefault();" formControlName="password" required>
                 <div class="fc_img" (click)="hideFunction('password')" *ngIf="passwordhide">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg" class="img-responsive" >
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/password_hide.svg" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/password_hide.svg" class="img-responsive opacity-50" *ngIf="isAdults">
+
                 </div>
                 <div class="fc_img" (click)="hideFunction('password')" *ngIf="!passwordhide">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg" class="img-responsive" >
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/password_show.svg" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/password_show.svg" class="img-responsive" *ngIf="isAdults">
                 </div>
               </div>
               <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
@@ -86,10 +95,12 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <input class="sp_fc" placeholder="Confirm Password" [type]="confirmpasswordhide ? 'password' : 'text'" autocomplete="on" (keydown.space)="$event.preventDefault();" formControlName="confirmPassword" required>
                 <div class="fc_img" (click)="hideFunction('')" *ngIf="confirmpasswordhide">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg" class="img-responsive">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/password_hide.svg" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/password_hide.svg" class="img-responsive opacity-50" *ngIf="isAdults">
                 </div>
                 <div class="fc_img" (click)="hideFunction('')" *ngIf="!confirmpasswordhide">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg" class="img-responsive">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/password_show.svg" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/password_show.svg" class="img-responsive" *ngIf="isAdults">
                 </div>
               </div>
               <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
@@ -117,33 +128,31 @@
             </div>
           </div>
 
-          <div class="row center_flex mt15px">
+          <div class="row center_flex mt15px" [ngClass]="{'d-none': !enableIcon}">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="fbLogin('signup')">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
               </button>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
-            
-             
-               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginGoogle()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-             
+              <button type="button" class="btn btn_login_signup tcenter w-75" id="googleBtnSignupWrapper" (click)="triggerGoogleSignIn('googleBtnSignup', $event)">
+                <div id="googleBtnSignup" class="tcenter google-button-hidden"></div>
+                <div class="google-custom-icon">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/cw_google.svg" alt="" class="img-responsive" *ngIf="isAdults">
+                </div>
               </button>
-              <!-- <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter w-75"></div> -->
-              <!-- <button *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-              </button> -->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="signInWithApple('signup')">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/cw_apple.svg" alt="" class="img-responsive" *ngIf="isAdults" >  
               </button>
             </div>
             <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tcenter pr0px">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginWithInstagram()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/instagram.svg" alt="" class="h-34 img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/instagram.svg" alt="" class="h-34 img-responsive">
               </button>
               
             </div> -->
@@ -152,7 +161,7 @@
 
           <div class="row mtb30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" (click)="already('login')">
+              <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'" (click)="already('login')">
                 Already a registered user?
               </a>
             </div>
@@ -185,7 +194,7 @@
 
               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                 <a class="" data-dismiss="modal" #actclosemodal (click)="closeModalevent()">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" alt="" class="p0">
                 </a>
               </div>
             </div>
@@ -196,7 +205,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <input type="text" placeholder="{{email}}" disabled class="sp_fc active">
                 <div class="fc_img">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
                 </div>
               </div>
             </div>
@@ -218,7 +227,7 @@
 
           <div class="row mb30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" (click)="resendotp()">
+              <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'" (click)="resendotp()">
                 Resend verification code
               </a>
             </div>
@@ -235,21 +244,22 @@
       </div>
     </div>
 
-    <div class="row center_flex" *ngIf="fifthpage">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body">
+    <div class="row center_flex" *ngIf="fifthpage" >
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-              <h3 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff">
+              <h3 class="mtb0px fs_18px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 Sign in
               </h3>
             </div>
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
               <a class="" data-dismiss="modal" #actclosemodal (click)="closeModalevent()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt=""
-                  class="p0">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" alt="close"
+                  class="p0" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/close.svg" alt="close" class="p0" *ngIf="isAdults"> 
               </a>
             </div>
           </div>
@@ -260,7 +270,8 @@
             <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
               <input type="text" class="sp_fc" placeholder="Email" [(ngModel)]="this.loginemail">
               <div class="fc_img">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/svg_email.svg" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/svg_email.svg" class="img-responsive" *ngIf="isAdults"> 
               </div>
             </div>
           </div>
@@ -269,10 +280,12 @@
             <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
               <input type="password" class="sp_fc" [type]="passwordhide ? 'password' : 'text'" placeholder="Password" [(ngModel)]="this.loginpassword">
               <div class="fc_img" (click)="hideFunction('password')" *ngIf="passwordhide">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/password_hide.svg" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/password_hide.svg" class="img-responsive opacity-50" *ngIf="isAdults" >
               </div>
               <div class="fc_img" (click)="hideFunction('password')" *ngIf="!passwordhide">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/password_show.svg" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/password_show.svg" class="img-responsive" *ngIf="isAdults">
               </div>
             </div>
           </div>
@@ -296,33 +309,31 @@
           </div>
         </div>
 
-        <div class="row center_flex mt15px">
+        <div class="row center_flex mt15px" [ngClass]="{'d-none': !enableIcon}">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="fbLogin('signup')">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
               </button>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
-            
-             
-               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginGoogle()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-             
+              <button type="button" class="btn btn_login_signup tcenter w-75" id="googleBtnLoginWrapper" (click)="triggerGoogleSignIn('googleBtnLogin', $event)">
+                <div id="googleBtnLogin" class="tcenter google-button-hidden"></div>
+                <div class="google-custom-icon">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/cw_google.svg" alt="" class="img-responsive" *ngIf="isAdults">
+                </div>
               </button>
-              <!-- <div id="my-signin2" class="myGooglebtn btn btn_login_signup tcenter w-75"></div> -->
-              <!-- <button *ngIf="!renderGoogle" type="submit" class="btn btn_login_signup tcenter">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google.svg" alt="" class="img-responsive">
-              </button> -->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
               <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="signInWithApple('signup')">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive" *ngIf="!isAdults">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/cw_apple.svg" alt="" class="img-responsive" *ngIf="isAdults"> 
               </button>
             </div>
             <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tcenter pr0px">
-              <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginWithInstagram()">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/instagram.svg" alt="" class="h-34 img-responsive">
+              <button type="submit" class="btn btn_login_signup tcenter w-75" (click)="loginWithInstagram()"> 
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/instagram.svg" alt="" class="h-34 img-responsive">
               </button>
               
             </div> -->
@@ -330,9 +341,9 @@
         </div>
 
 
-        <div class="row mtb30px">
+        <div class="row mtb30px" >
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-            <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" (click)="already('register')">
+            <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'" (click)="already('register')">
               Not a registered user?
             </a>
           </div>

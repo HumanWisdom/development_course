@@ -59,4 +59,18 @@ export class CancelSubscriptionReasonPage implements OnInit {
     this.location.back();
   }
 
+  closePopUp(){
+       var myModal = document.getElementById('cancel_subscription_add_info');
+         myModal.style.display = "none";
+
+
+
+  }
+
+  OpenPopup(){
+      var myModal = document.getElementById('cancel_subscription_add_info');
+         myModal.style.display = "block";
+
+  }
+
 }

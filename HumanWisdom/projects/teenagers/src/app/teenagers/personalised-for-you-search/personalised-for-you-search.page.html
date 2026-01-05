@@ -64,7 +64,7 @@
                               <div class="col-md-4 col-sm-4 col-xs-4 p0">
                                 <a>
 
-                                  <h2  class="fw_500 fs_12px lh_140p fc_ffffff_0_5 mtb0px tright">
+                                  <h2 class="fw_500 fs_12px lh_140p fc_ffffff_0_5 mtb0px tright">
                                     Streak:
                                     <span class="fw_600">
                                       {{streak}}
@@ -78,18 +78,20 @@
                         </div>
                       </h4>
                     </div>
-                    <div id="ca_mdp"  class="panel-collapse " >
+                    <div id="ca_mdp">
                       <div class="panel-body">
 
                         <div class="row">
                           <div class="odiv odiv_mdp pl0px">
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? routeDailyCheckIn() : $event.preventDefault()">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/daily_checkin.svg" alt="" class="crimg">
+                              <a (click)="routeDailyCheckIn()">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/daily_checkin.svg"
+                                  alt="" class="crimg">
 
                                 <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                  Daily <br/> check-in
+                                  Daily <br /> check-in
                                 </h4>
                               </a>
                             </div>
@@ -99,7 +101,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise','0', 'click_daily_inspiration') : $event.preventDefault()">
+                              <a
+                                (click)="DashboardLogevent('/teenagers/daily-practise','0', 'click_daily_inspiration')">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_inspiration_v3_teens.svg"
                                   alt="Testimonials" class="crimg">
@@ -112,7 +115,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
+                              <a
+                                (click)="DashboardLogevent('/teenagers/daily-practise', '1', 'click_breathing_exercise')">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3_teens.svg"
                                   alt="Wisdom Stories" class="crimg">
@@ -123,7 +127,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '2', 'click_question_of_the_day') : $event.preventDefault()">
+                              <a
+                                (click)="DashboardLogevent('/teenagers/daily-practise', '2', 'click_question_of_the_day')">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3_teens.svg"
                                   alt="Journal" class="crimg">
@@ -136,7 +141,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '3','click_quote_of_day') : $event.preventDefault()">
+                              <a (click)="DashboardLogevent('/teenagers/daily-practise', '3','click_quote_of_day')">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3_teens.svg"
                                   alt="Testimonials" class="crimg">
@@ -148,7 +153,8 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '4', 'click_daily_meditation') : $event.preventDefault()">
+                              <a
+                                (click)="DashboardLogevent('/teenagers/daily-practise', '4', 'click_daily_meditation')">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3_teens.svg"
                                   alt="Forum" class="crimg">
@@ -159,7 +165,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6 col-xs-6">
-                              <a (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/daily-practise', '5', 'click_daily_challenge') : $event.preventDefault()">
+                              <a (click)="DashboardLogevent('/teenagers/daily-practise', '5', 'click_daily_challenge')">
                                 <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3_teens.svg"
                                   alt="Forum" class="crimg">
@@ -182,7 +188,7 @@
             </div>
             <!-- /accordion -->
             <!-- /daily practice -->
-             
+
             <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -194,8 +200,7 @@
             <!-- feel better now -->
             <div class="row tour_fbn ">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a
-                  (click)="tourIndex === 1 ? DashboardLogevent('/teenagers/feel-better-now', '', 'click_feel-better-now') : $event.preventDefault()">
+                <a (click)="DashboardLogevent('/teenagers/feel-better-now', '', 'click_feel-better-now')">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like_teens.svg"
@@ -232,7 +237,7 @@
 
             <!-- Find Inspiration -->
 
-            <div class="row  p-bt">
+            <div class="row">
               <h2 class="inspiration-title">Find Inspiration
               </h2>
               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 odiv p-section">
@@ -244,7 +249,7 @@
             <!-- /hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
+                <hr class="hr_style_new">
               </div>
             </div>
             <!-- Find Inspiration -->
@@ -426,7 +431,7 @@
 
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
                       <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                        Contact a Coach
+                        Contact a coach
                       </h4>
 
                       <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
@@ -549,7 +554,7 @@
                   </div>
                 </div>
 
-                <div class="row mr-20pxi mt40px">
+                <div class="row pathway_scroll_row mt40px">
                   <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_pathway">
 
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
@@ -727,6 +732,41 @@
             <!-- /pathway -->
 
             <!-- /hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+             <!-- teen talk -->
+            <div class="row tour_fbn">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a routerLink="" (click)="DashboardLogevent('teenagers/teen-talk', '', 'click_teenTalk')" >
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teen_talk.svg" class="img-responsive w100">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                        Teen talk
+                      </h4>
+
+                      <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
+                        Conversations with teens from around the world
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /teen talk -->
+
+            <!-- hr -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
@@ -1086,7 +1126,7 @@
 
             <!-- hr -->
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
             </div>
@@ -1107,21 +1147,18 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group">
                   <div class="">
-                    <div class="panel-heading p0 ml20px mr20px ">
+                    <div class="panel-heading pt0px">
                       <h4 class="panel-title">
                         <a class="accordion-toggle" (click)="toggleAccordion()">
                           <div class="row">
-                            <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ">
                               <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                 Make the world a better place
+                                <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }"
+                                  style="float: right;">
 
+                                </span>
                               </h2>
-                            </div>
-                            <div class="col-md-1 col-sm-1 col-xs-1 p0 tright center_flex">
-
-                              <span class="accordion-icon" [ngClass]="{ 'open': isExpanded, 'closed': !isExpanded }">
-
-                              </span>
                             </div>
                           </div>
                         </a>
@@ -1129,9 +1166,9 @@
                     </div>
 
                     <div [ngClass]="getExpandClass()" [@accordionAnimation]="isExpanded ? 'expanded' : 'collapsed'"
-                      class="panel-collapse of-h">
-                      <div class="panel-body pl20px pr0px border-0">
-                        <div class="row ">
+                      class="panel-collapse of-h" style="overflow:visible !important">
+                      <div class="">
+                        <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
@@ -1147,7 +1184,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg"
-                                        class="img-responsive">
+                                        class="img-responsive hw30">
                                     </div>
                                   </div>
                                 </div>
@@ -1179,7 +1216,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg"
-                                        class="img-responsive">
+                                        class="img-responsive hw30">
                                     </div>
                                   </div>
                                 </div>
@@ -1211,7 +1248,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg"
-                                        class="img-responsive">
+                                        class="img-responsive hw30">
                                     </div>
                                   </div>
                                 </div>
@@ -1243,7 +1280,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg"
-                                        class="img-responsive">
+                                        class="img-responsive hw30">
                                     </div>
                                   </div>
                                 </div>
@@ -1275,7 +1312,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg"
-                                        class="img-responsive">
+                                        class="img-responsive hw30">
                                     </div>
                                   </div>
                                 </div>
@@ -1307,7 +1344,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg"
-                                        class="img-responsive">
+                                        class="img-responsive hw30">
                                     </div>
                                   </div>
                                 </div>
@@ -1339,7 +1376,7 @@
                                   <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg"
-                                        class="img-responsive">
+                                        class="img-responsive hw30">
                                     </div>
                                   </div>
                                 </div>
@@ -1376,8 +1413,8 @@
             </button> -->
             <!-- /tour -->
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_v3_01">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_new">
               </div>
             </div>
             <div class="pagebreak"></div>
@@ -1406,3 +1443,7 @@
 <!-- welcome popup -->
 
 <!-- /welcome popup -->
+
+<app-modal *ngIf="enableAlert" [modalid]="'logout'" [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)"
+  [okText]="'Ok'" [content]="'Start your free trial to activate this feature'"
+  [isFreeTrialEnable]="isFreeTrialEnable"></app-modal>

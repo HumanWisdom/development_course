@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '../../../../shared/services/shared.service';
+import { ProgramType } from '../../../models/program-model';
 
 @Component({
   selector: 'app-redeem-subscription-landing',
@@ -14,8 +15,17 @@ export class RedeemSubscriptionLandingPage implements OnInit {
   public email = '';
   public enabledModal = false;
   public enabledGiftCard = false;
+  isAdults: boolean = true;
+  
+    constructor(private router:Router) {
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
+     }
 
-  constructor(private router: Router) { }
+  // constructor(private router: Router) { }
 
   ngOnInit() {
     this.getUserDetail();

@@ -131,11 +131,11 @@
                               {{ 'Explore related module ' }}
                             </h1>
                             <a (click)="routeModule()"> 
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p fc_e58d82" style="text-decoration:underline"> {{ capitalizeFirstLetter(dailyInsModule)}}</h4>
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'"style="text-decoration:underline"> {{ capitalizeFirstLetter(dailyInsModule)}}</h4>
                             </a>
                           </div>
                         
-                     
+                    
                       
                     
                       <div class="row">

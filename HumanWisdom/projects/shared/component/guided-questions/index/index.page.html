@@ -213,17 +213,16 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <hr class="hr_style_v3_02">
                       </div>
-                    </div>
+                    </div> -->
 
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          All journal entries are encrypted and can only be seen by you, unless shared by you.
-                        </h4>
+                    <div class="row mt40px mb10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 ">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+All journal entries are encrypted and can only be seen by you, unless shared by you.                        </h4>
                       </div>
                     </div>
                           
@@ -377,9 +376,11 @@
                       *ngIf="isViewMore">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb30px fw_500 fs_12px lh_140p tcenter underline" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/view_more.svg"
-                            class="img-responsive mb10px">
-                          View More
+                          <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/view_more.svg"
+                            class="img-responsive mb10px"> -->
+                          
+                            View more
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);" alt="arrow">
                         </h4>
                       </div>
                     </div>
@@ -388,9 +389,11 @@
                       *ngIf="!isViewMore">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb30px fw_500 fs_12px lh_140p tcenter underline" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/view_less.svg"
-                            class="img-responsive mb10px">
-                          View Less
+                          <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/view_less.svg"
+                            class="img-responsive mb10px"> -->
+                          View less
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3" [class.arrow-teenagers]="!isAdults"  alt="arrow">
+
                         </h4>
                       </div>
                     </div>

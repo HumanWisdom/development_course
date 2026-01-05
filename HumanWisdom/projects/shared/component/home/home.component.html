@@ -15,310 +15,197 @@
             <div class="container">
               <div class="row home-container sticky-top-section">
 
-              <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showSearchBox">
-                <div class="d-flex justify-content-between align-items-center plr20px mt20px mb0px">
-                  <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
-                    Hi {{username}}!
-                  </h2>
-                  <div *ngIf="streak && streak !== '' " class="streak-container"
-                    style="background-color: #FFE8BB; width: 138px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 0 10px;">
-                    <span class="fw_500 fs_12px lh_140p fc_000000">
-                      Streak:
-                      <span class="fw_600">
-                        {{streak}}
+                <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showSearchBox">
+                  <div class="d-flex header-blk justify-content-between align-items-center plr20px mb0px"
+                    [ngStyle]="{'margin-top': (username && username !== '') ? '20px': '20px'}">
+                    <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
+                      Hi {{username}}!
+                    </h2>
+                    <div *ngIf="streak && streak !== '' " class="streak-container"
+                      [ngStyle]="{'background-color': !isAdults ? '#F1AC5E': '#FFE8BB'}"
+                      style=" width: 128px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: center; padding: 0 10px;">
+                      <img *ngIf="isAdults" class="stk-icon"
+                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak.svg">
+                      <img *ngIf="!isAdults" class="stk-icon"
+                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg">
+                      <span class="fw_500 fs_12px lh_140p" [ngClass]="isAdults ?'fc_000000':'fc_ffffff'">
+                        Streak:
+                        <span class="fw_600">
+                          {{streak}}
+                        </span>
+                        days
                       </span>
-                      days
-                    </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Search Box -->
+                <div class="col-12 pr0px pdl20px pdr20px mt-3 mb-3 prelative search-box-container"
+                  [class.search-box-hidden]="!showSearchBox">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group  has-feedback zi0 p0 mb0px">
+                    <input type="search" placeholder="Search for a topic"
+                      class="form-control has-feedback-left pfy_search hide_search" name="search-list"
+                      [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
+                      (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(searchinp)"
+                      style="border-radius: 100px !important;">
+                    <span *ngIf="searchResult.length == 0"
+                      class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                    <span *ngIf="searchResult.length > 0" (click)="clearSearch()"
+                      class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
+                      aria-hidden="true"></span>
+                    <span *ngIf="searchinp!=''" (click)="clearSearch()"
+                      class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                      aria-hidden="true"></span>
+                  </div>
+
+                  <!-- Search Dropdown -->
+                  <div class="row adsearch" *ngIf="searchResult.length > 0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                      <ul class="list-group autocomplete-list adsearch_ul">
+                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                          class="is-search list-group-item">
+                          {{item.ModuleName}}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Navigation Menu - Sticky Header -->
+                <!-- Navigation Menu - Sticky Header -->
+                <div class="col-12 pr0px sticky-nav-container">
+                  <div class="d-flex flex-wrap nav-wrapper">
+                    <button class="nav-scroll-btn nav-scroll-btn-left" (click)="scrollNavBackward()"
+                      aria-label="Scroll left" style="border: 2px solid white; border-radius: 50%;">
+                      <i class="fa fa-chevron-left"></i>
+                    </button>
+                    <div class="nav-menu" #navMenu>
+                      <ng-container *ngFor="let item of personalisedList">
+                        <a *ngIf="item.id!='999'" class="nav-item" [class.nav-item--selected]="item.active"
+                          [class.nav-item--unselected]="!item.active" (click)="onNavigationClick(item)">
+                          <span [style.font-weight]="item.active ? 'bold' : 'normal'">{{ item.displayName }}</span>
+                        </a>
+                      </ng-container>
+                    </div>
+                    <button class="nav-scroll-btn nav-scroll-btn-right" (click)="scrollNavForward()"
+                      aria-label="Scroll right" style="border: 2px solid white; border-radius: 50%;">
+                      <i class="fa fa-chevron-right"></i>
+                    </button>
                   </div>
                 </div>
               </div>
-              <!-- Search Box -->
-              <div class="col-12 pr0px pdl20px pdr20px mt-3 mb-3 prelative search-box-container"
-                [class.search-box-hidden]="!showSearchBox">
-                <div class="col-md-12 col-sm-12 col-xs-12 form-group  has-feedback zi0 p0 mb0px">
-                  <input type="search" placeholder="How can we help you today?"
-                    class="form-control has-feedback-left pfy_search hide_search" name="search-list"
-                    [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
-                    (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(searchinp)"
-                    [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}">
-                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                  <span *ngIf="searchinp!=''" (click)="clearSearch()"
-                    class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
-                    aria-hidden="true"></span>
+
+              <!-- Spacer to prevent content from being hidden behind fixed header -->
+              <div class="fixed-header-spacer" [style.min-height.px]="showSearchBox ? 120 : 60"></div>
+
+              <!-- Wisdom Exercise Component Embedding -->
+              <div class="row" *ngIf="showWisdomExercise">
+                <div class="col-12 p-0">
+                  <app-wisdom-exercise-s75001 *ngIf="preference == '19'"></app-wisdom-exercise-s75001>
+                  <HumanWisdom-s157001 [isHome]="true" *ngIf="preference == '20'"></HumanWisdom-s157001>
                 </div>
 
-                <!-- Search Dropdown -->
-                <div class="row adsearch" *ngIf="searchResult.length > 0">
-                  <div class="col-md-12 col-sm-12 col-xs-12 tsp">
-                    <ul class="list-group autocomplete-list adsearch_ul">
-                      <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
-                        class="is-search list-group-item">
-                        {{item.ModuleName}}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
               </div>
 
-              <!-- Navigation Menu - Sticky Header -->
-              <!-- Navigation Menu - Sticky Header -->
-              <div class="col-12 pr0px sticky-nav-container">
-                <div class="d-flex flex-wrap nav-wrapper">
-                  <button class="nav-scroll-btn nav-scroll-btn-left" (click)="scrollNavBackward()" aria-label="Scroll left" style="border: 2px solid white; border-radius: 50%;">
-                    <i class="fa fa-chevron-left"></i>
-                  </button>
-                  <div class="nav-menu" #navMenu>
-                    <ng-container *ngFor="let item of personalisedList">
-                      <a *ngIf="item.id!='999'" class="nav-item" [class.nav-item--selected]="item.active"
-                        [class.nav-item--unselected]="!item.active" (click)="onNavigationClick(item)">
-                        <span>{{ item.displayName }}</span>
-                      </a>
-                    </ng-container>
-                  </div>
-                  <button class="nav-scroll-btn nav-scroll-btn-right" (click)="scrollNavForward()" aria-label="Scroll right" style="border: 2px solid white; border-radius: 50%;">
-                    <i class="fa fa-chevron-right"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Spacer to prevent content from being hidden behind fixed header -->
-            <div class="fixed-header-spacer" [style.min-height.px]="showSearchBox ? 120 : 60"></div>
-
-            <!-- Wisdom Exercise Component Embedding -->
-            <div class="row" *ngIf="showWisdomExercise">
-              <div class="col-12 p-0">
-                <app-wisdom-exercise-s75001 *ngIf="preference == '19'"></app-wisdom-exercise-s75001>
-                <HumanWisdom-s157001 [isHome] ="true" *ngIf="preference == '20'"></HumanWisdom-s157001>
-              </div>
-              
-            </div>
-
-            <!-- <div class="row" *ngIf="!showWisdomExercise">
+              <!-- <div class="row" *ngIf="!showWisdomExercise">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
                 <hr class="hr_style_v4">
               </div>
             </div> -->
 
-            <div class="row" *ngIf="!showWisdomExercise">
-              <div class="col-12 p-0" [ngStyle]="isloggedIn ? {'margin-top.px': 50} : {}">
+              <div class="row" *ngIf="!showWisdomExercise">
+                <div class="col-12 p-0" [ngStyle]="isloggedIn ? {'margin-top.px': 50} : {}">
 
-                <!-- recursive template for a section -->
-                <ng-template #renderSection let-section>
-                  <div [class]="section.cssClass ? section.cssClass : ''">
+                  <!-- recursive template for a section -->
+                  <ng-template #renderSection let-section>
+                    <div [class]="section.cssClass ? section.cssClass : ''">
 
-                    <!-- If section is an inline panel (non-accordion), render as title + visible cards -->
-                    <ng-container *ngIf="section.isInlineSection; else accordionHeader">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
-                          <hr class="hr_style_v4">
-                        </div>
-                      </div>
-                      <div class="p20px">
-                        <h6 class="mb-0  section-title-inline">{{ section.title }}</h6>
-                        <small class="text-muted" *ngIf="section.subtitle">{{ section.subtitle }}</small>
-                      </div>
-                      <div>
-                        <!-- Horizontal vs Vertical card layout based on section.isVerticalCards flag -->
-                        <div *ngIf="section.cards && section.cards.length">
-                          <!-- HORIZONTAL (default) -->
-                          <div class="d-flex card-container " *ngIf="!section.isVerticalCards">
-                            <div *ngFor="let card of getDisplayCards(section)"
-                              class="card-wrapper"
-                              style="min-width: 160px; flex-shrink: 0;">
-                              <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
-                            </div>
-                            <!-- View More link for horizontal sections -->
-                            <div *ngIf="shouldShowViewMore(section)"
-                              class="d-flex align-items-center justify-content-center view-more-container"
-                              style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
-                              (click)="onViewMoreClick(section)">
-                              <a class="btn btn-link text-decoration-underline view-more-btn"
-                                style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
-                              </a>
-                            </div>
-                            <!-- View All link for horizontal sections - only show when reached end -->
-                            <div *ngIf="hasReachedEnd(section)" class="d-flex align-items-center justify-content-center view-more-container"
-                              style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)">
-                              <a class="btn btn-link text-decoration-underline view-more-btn"
-                                style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                View all<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
-                              </a>
-                            </div>
-                          </div>
-
-                          <!-- VERTICAL (stacked cards) -->
-                          <div class="d-flex flex-column pl20px pr20px" *ngIf="section.isVerticalCards">
-                            <div *ngFor="let card of getDisplayCards(section)" class="mb-3" style="width: 100%;">
-                              <!-- For stacked cards we want full width -->
-                              <div style="width: 100%;">
-                                <!-- Special layout for Life stories and Blogs -->
-                                <div *ngIf="section.rawSectionType === 2"
-                                  class="story-blog-card d-flex align-items-center "
-                                  style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
-                                  <div class="me-3" style="flex-shrink: 0;">
-                                    <img [src]="card.imageUrl" [alt]="card.title" class="rounded"
-                                      style="width: 60px; height: 60px; object-fit: cover;">
-                                  </div>
-                                  <div class="flex-grow-1">
-                                    <h6 class="mb-1 fs15 fw-bold">{{ card.title }}</h6>
-                                    <p class="mb-0 fs_12px text-muted small" [innerHTML]="card.subtitle"
-                                      style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                                    </p>
-                                  </div>
-                                </div>
-                                <!-- Special layout for Quick Answers (sectionType 3) -->
-                                <div *ngIf="section.rawSectionType === 3"
-                                  class="quick-answer-card d-flex align-items-center justify-content-between p-3 "
-                                  style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
-                                  <div class="flex-grow-1">
-                                    <span class="mb-0  fw-normal fs15">{{ card.title }}</span>
-                                  </div>
-                                  <div class="ms-3">
-
-                                    <ng-container *ngIf="isSubscriber;else notSubscriber">
-                                      <span class="fs15"> > </span>
-                                    </ng-container>
-                                    <ng-template #notSubscriber>
-                                      <img *ngIf=" card.isFree === '0' || card.isFree === 0"
-                                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
-                                        alt="Lock icon" class="quick-answer-lock-icon"
-                                        style="width: 20px; height: 20px;">
-                                      <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="fs15"> > </span>
-                                    </ng-template>
-
-
-
-                                  </div>
-                                </div>
-                                <!-- Default card layout for other sections -->
-                                <app-content-card *ngIf="section.rawSectionType !== 2 && section.rawSectionType !== 3"
-                                  [card]="card" (cardClick)="onCardClick($event)">
-                                </app-content-card>
-                              </div>
-                            </div>
-                            <!-- View All link for vertical sections - only show when reached end -->
-                            <div *ngIf="hasReachedEnd(section)" class="mb-3" style="width: 100%;">
-                              <div class="text-center">
-                                <button class="btn btn-link text-decoration-underline view-toggle-btn"
-                                  (click)="onViewAll(section)">
-                                  View all<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="view-all-arrow ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- View More/View Less buttons for Life stories and Blogs -->
-                          <div *ngIf="shouldShowViewAll(section)" class="text-center mt-3">
-                              <button class="btn btn-link text-decoration-underline view-toggle-btn"
-                                (click)="onViewAllClick(section)">
-                              View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);" alt="arrow">
-                            </button>
+                      <!-- If section is an inline panel (non-accordion), render as title + visible cards -->
+                      <ng-container *ngIf="section.isInlineSection; else accordionHeader">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
+                            <hr class="hr_style_v4">
                           </div>
                         </div>
-
-                        <!-- If this inline section has nested childSections (rare), render them too as inline by default -->
-                        <div *ngIf="section.childSections && section.childSections.length" class="mt-3 nested-sections">
-                          <div *ngFor="let child of section.childSections">
-                            <ng-container
-                              *ngTemplateOutlet="renderSection; context: { $implicit: child }"></ng-container>
-                          </div>
+                        <div class="p20px">
+                          <h6 class="mb-0  section-title-inline">{{ section.title }}</h6>
+                          <small class="text-muted" *ngIf="section.subtitle">{{ section.subtitle }}</small>
                         </div>
-                      </div>
-                    </ng-container>
-
-                    <!-- Accordion header + content for normal sections -->
-                    <ng-template #accordionHeader>
-                      <!-- Section Header (clickable for accordion) -->
-                      <div class="d-flex justify-content-between align-items-center section-header rounded-top  "
-                        [class.long-term-solutions-header]="section.title === 'Long term solutions'"
-                        [ngStyle]="{'margin-top.px': enableBanner ? (!isloggedIn ? 50 : 120) : 0}"
-                        (click)="onSectionToggle(section)" (keydown.enter)="onSectionToggle(section)"
-                        (keydown.space)="onSectionToggle(section)" tabindex="0" role="button"
-                        [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id">
-                        <!-- [class.quick-answers-header]="section.rawSectionType === 3" -->
-                        <div class="d-flex flex-column">
-                          <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
-                          <span class="text-muted" *ngIf="section.subtitle && !section.isExpanded">{{
-                            section.subtitle }}</span>
-                        </div>
-                        <div class="text-muted">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" 
-                               alt="arrow" 
-                               class="section-arrow"
-                               [class.arrow-expanded]="section.isExpanded"
-                               [class.arrow-collapsed]="!section.isExpanded"
-                               [class.arrow-teenagers]="!isAdults">
-                        </div>
-                      </div>
-
-                      <!-- Section Content -->
-                      <div class="rounded-bottom"
-                        [class.long-term-solutions-content]="section.title === 'Long term solutions'"
-                        [@slideDown]="section.isExpanded ? 'expanded' : 'collapsed'" [id]="'section-' + section.id"
-                        role="region" [attr.aria-labelledby]="'section-title-' + section.id">
-                        <div class="p0 ">
-                          <!-- [class.p-3]="section.title !== 'Long term solutions'" [class.p-3]="section.title === 'Long term solutions'" -->
-                          <!-- Horizontal vs Vertical card layout for accordion content as well -->
+                        <div>
+                          <!-- Horizontal vs Vertical card layout based on section.isVerticalCards flag -->
                           <div *ngIf="section.cards && section.cards.length">
+                            <!-- HORIZONTAL (default) -->
                             <div class="d-flex card-container " *ngIf="!section.isVerticalCards">
-                              <!-- [class.p-3]="section.title !== 'Long term solutions'"
-                                 [class.px-3]="section.title === 'Long term solutions'"
-                                 [class.py-3]="section.title === 'Long term solutions'" -->
-                              <div *ngFor="let card of getDisplayCards(section)"
-                                class="card-wrapper"
+                              <div *ngFor="let card of getDisplayCards(section)" class="card-wrapper"
                                 style="min-width: 160px; flex-shrink: 0;">
                                 <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
                               </div>
-                              <!-- View More link for horizontal sections in accordion -->
+                              <!-- View More link for horizontal sections -->
                               <div *ngIf="shouldShowViewMore(section)"
                                 class="d-flex align-items-center justify-content-center view-more-container"
                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
                                 (click)="onViewMoreClick(section)">
-                                <a class="btn btn-link text-decoration-underline view-more-btn"
-                                  style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                  View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
+                                <a class="btn btn-link text-decoration-underline view-more-btn" style="text-decoration: underline !important; 
+                                font-size: 1.5rem !important;">
+                                  View more<img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg"
+                                    class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
                                 </a>
                               </div>
-                              <!-- View All link for horizontal sections in accordion - only show when reached end -->
+                              <!-- View All link for horizontal sections - only show when reached end -->
                               <div *ngIf="hasReachedEnd(section)"
                                 class="d-flex align-items-center justify-content-center view-more-container"
                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)">
                                 <a class="btn btn-link text-decoration-underline view-more-btn"
-                                  style="text-decoration: underline !important; color: #000000 !important; font-size: 1.5rem !important;">
-                                  View all<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
+                                  style="text-decoration: underline !important;  font-size: 1.5rem !important;">
+                                  View all<img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg"
+                                    class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
                                 </a>
                               </div>
                             </div>
 
+                            <!-- VERTICAL (stacked cards) -->
                             <div class="d-flex flex-column pl20px pr20px" *ngIf="section.isVerticalCards">
-                              <!--  [class.p-3]="section.title !== 'Long term solutions'"
-                                 [class.px-3]="section.title === 'Long term solutions'"
-                                 [class.py-3]="section.title === 'Long term solutions'" -->
-
                               <div *ngFor="let card of getDisplayCards(section)" class="mb-3" style="width: 100%;">
+                                <!-- For stacked cards we want full width -->
                                 <div style="width: 100%;">
                                   <!-- Special layout for Life stories and Blogs -->
                                   <div *ngIf="section.rawSectionType === 2"
-                                    class="story-blog-card d-flex align-items-center  " (click)="onCardClick(card)">
-                                    <div class="me-3" style="flex-shrink: 0;">
+                                    class="story-blog-card d-flex align-items-center position-relative"
+                                    style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
+                                    <!-- Tick Icon - Top Right Corner of Card -->
+                                    <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
+                                      <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
+                                        <img
+                                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                          alt="Read icon" class="tick-icon-img" style="width: 20px; height: 20px;">
+                                      </div>
+                                    </div>
+                                    <!-- Lock Icon - Bottom Right Corner of Card -->
+                                    <div class="position-absolute" style="bottom: 8px; right: 8px; z-index: 10;">
+                                      <div *ngIf="shouldShowLockIcon(card)" class="status-icon lock-icon">
+                                        <img
+                                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg"
+                                          alt="Lock icon" class="lock-icon-img" style="width: 20px; height: 20px;">
+                                      </div>
+                                    </div>
+                                    <div class="me-3" style="flex-shrink: 0; position: relative;">
                                       <img [src]="card.imageUrl" [alt]="card.title" class="rounded"
-                                        style="width: 107px; height: 100px; object-fit: cover;">
+                                        style="width: 60px; height: 60px; object-fit: cover;">
                                     </div>
                                     <div class="flex-grow-1">
-                                      <h6 class="mb-1 fs_15px  fw_500 lh_130p  " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ card.title }}</h6>
-                                      <p class="mb-0 fs_12px fw_400 lh_130p fc_000000_0_5" [ngClass]="isAdults?'fc_000000_0_5': 'fc_ffffff_0_7'" [innerHTML]="card.subtitle"
+                                      <h6 class="mb-1 fs15 fw-bold">{{ card.title }}</h6>
+                                      <p class="mb-0 fs_12px text-muted small" [innerHTML]="card.subtitle"
                                         style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
                                       </p>
                                     </div>
                                   </div>
                                   <!-- Special layout for Quick Answers (sectionType 3) -->
                                   <div *ngIf="section.rawSectionType === 3"
-                                    class="quick-answer-card d-flex align-items-center justify-content-between  cursor-pointer p-3"
-                                    (click)="onCardClick(card)">
+                                    class="quick-answer-card d-flex align-items-center justify-content-between p-3 "
+                                    style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
                                     <div class="flex-grow-1">
-                                      <h6 class="mb-0 fw-normal">{{ card.title }}</h6>
+                                      <span class="mb-0  fw-normal fs15">{{ card.title }}</span>
                                     </div>
                                     <div class="ms-3">
 
@@ -332,6 +219,9 @@
                                           style="width: 20px; height: 20px;">
                                         <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="fs15"> > </span>
                                       </ng-template>
+
+
+
                                     </div>
                                   </div>
                                   <!-- Default card layout for other sections -->
@@ -340,108 +230,289 @@
                                   </app-content-card>
                                 </div>
                               </div>
-                              <!-- View All link for vertical sections in accordion - only show when reached end -->
+                              <!-- View All link for vertical sections - only show when reached end -->
                               <div *ngIf="hasReachedEnd(section)" class="mb-3" style="width: 100%;">
                                 <div class="text-center">
                                   <button class="btn btn-link text-decoration-underline view-toggle-btn"
                                     (click)="onViewAll(section)">
-                                    View all<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
+                                    View all<img
+                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                      class="view-all-arrow ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
                                   </button>
                                 </div>
                               </div>
                             </div>
 
                             <!-- View More/View Less buttons for Life stories and Blogs -->
-                            <div *ngIf="shouldShowViewAll(section)" class="text-center mt-3"
-                              [class.px-3]="section.title === 'Long term solutions'"
-                              [class.py-2]="section.title === 'Long term solutions'">
+                            <div *ngIf="shouldShowViewAll(section)" class="text-center mt-3">
                               <button class="btn btn-link text-decoration-underline view-toggle-btn"
                                 (click)="onViewAllClick(section)">
-                                View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);" alt="arrow">
+                                View more<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                  class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);"
+                                  alt="arrow">
                               </button>
                             </div>
                           </div>
 
-                          <!-- Show message if no cards -->
-                          <!-- <div *ngIf="!section.cards || !section.cards.length" class="text-muted text-center p-3">
-                            No cards available for this section
-                          </div> -->
-
-                          <!-- child sections (these may be inline or accordion depending on their flag) -->
-                          <div *ngIf="section.childSections && section.childSections.length" class="nested-sections">
-                            <!--        [class.px-3]="section.title === 'Long term solutions'"
-                               [class.py-2]="section.title === 'Long term solutions'" -->
+                          <!-- If this inline section has nested childSections (rare), render them too as inline by default -->
+                          <div *ngIf="section.childSections && section.childSections.length"
+                            class="mt-3 nested-sections">
                             <div *ngFor="let child of section.childSections">
                               <ng-container
                                 *ngTemplateOutlet="renderSection; context: { $implicit: child }"></ng-container>
                             </div>
                           </div>
-
                         </div>
-                      </div>
+                      </ng-container>
 
-                    </ng-template>
-
-
-                  </div>
-                  <div class="row" *ngIf="!section.isInlineSection;">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
-                      <hr class="hr_style_v4">
-                    </div>
-                  </div>
-                </ng-template>
-
-
-                <!-- Top-level sections -->
-                <div *ngFor="let section of contentSections" [attr.id]="'section-' + section.id" #sectionElement>
-                  <ng-container *ngTemplateOutlet="renderSection; context: { $implicit: section }"></ng-container>
-
-                  <!-- ====== FREE-TRIAL BANNER – same spacing as sections ====== -->
-                  <a *ngIf="!isSubscriber">
-                    <div class="toc_adiv_imgmynew plr20px py-3" *ngIf="section.title==='Begin Here' && !isSubscriber">
-                      <div class="row center_flex py-3"> <!-- same vertical gap as section content -->
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-
-                          <!-- image column -->
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative"
-                            [ngClass]="{'pr5px': !isAdults}">
-                            <img *ngIf="isAdults; else teenImg"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start.svg" alt=""
-                              class="p0 session_img">
-                            <ng-template #teenImg>
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start_teen.svg" alt=""
-                                class="p0 session_img">
-                            </ng-template>
+                      <!-- [ngStyle]="{'margin-top.px': enableBanner ? (!isloggedIn ? 50 : 120) : 20}" -->
+                      <!-- Accordion header + content for normal sections -->
+                      <ng-template #accordionHeader>
+                        <!-- Section Header (clickable for accordion) -->
+                        <div class="d-flex justify-content-between align-items-center section-header rounded-top  "
+                          [class.long-term-solutions-header]="section.title === 'Long term solutions'"
+                          [style.margin-bottom.px]="section.isExpanded ? 0 : 20"
+                          [style.margin-top.px]="section.isExpanded ? (section.id == 3 || section.id == 4) ? 0: 10 : (section.id == 3 || section.id == 4) ? 20 :20"
+                          (click)="onSectionToggle(section)" (keydown.enter)="onSectionToggle(section)"
+                          (keydown.space)="onSectionToggle(section)" tabindex="0" role="button"
+                          [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id">
+                          <!-- [class.quick-answers-header]="section.rawSectionType === 3" -->
+                          <div class="d-flex flex-column">
+                            <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
+                            <span class="text-muted" *ngIf="section.subtitle && !section.isExpanded">{{
+                              section.subtitle }}</span>
                           </div>
-
-                          <!-- copy column -->
-                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()">
-                            <h4 class="mtb0px fs_21px lh_130p"
-                              [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
-                              Start your free trial today!
-                            </h4>
-                            <h4 class="mtb0px fs_12px fw_400 lh_130p"
-                              [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
-                              Get expert guidance and personalised tools with HappierMe Premium
-                            </h4>
+                          <div class="text-muted">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" alt="arrow"
+                              class="section-arrow" [class.arrow-expanded]="section.isExpanded"
+                              [class.arrow-collapsed]="!section.isExpanded" [class.arrow-teenagers]="!isAdults">
                           </div>
-
                         </div>
-                      </div>
+
+                        <!-- Section Content -->
+                        <div class="rounded-bottom"
+                          [class.long-term-solutions-content]="section.title === 'Long term solutions'"
+                          [@slideDown]="section.isExpanded ? 'expanded' : 'collapsed'" [id]="'section-' + section.id"
+                          role="region" [attr.aria-labelledby]="'section-title-' + section.id">
+                          <div class="p0 ">
+                            <!-- [class.p-3]="section.title !== 'Long term solutions'" [class.p-3]="section.title === 'Long term solutions'" -->
+                            <!-- Horizontal vs Vertical card layout for accordion content as well -->
+                            <div *ngIf="section.cards && section.cards.length">
+                              <div class="d-flex card-container " *ngIf="!section.isVerticalCards">
+                                <!-- [class.p-3]="section.title !== 'Long term solutions'"
+                                 [class.px-3]="section.title === 'Long term solutions'"
+                                 [class.py-3]="section.title === 'Long term solutions'" -->
+                                <div *ngFor="let card of getDisplayCards(section)" class="card-wrapper"
+                                  style="min-width: 160px; flex-shrink: 0;">
+                                  <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
+                                </div>
+                                <!-- View More link for horizontal sections in accordion -->
+                                <div *ngIf="shouldShowViewMore(section)"
+                                  class="d-flex align-items-center justify-content-center view-more-container"
+                                  style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
+                                  (click)="onViewMoreClick(section)">
+                                  <a class="btn btn-link text-decoration-underline view-more-btn"
+                                    style="text-decoration: underline !important;  font-size: 1.5rem !important;">
+                                    View more<img
+                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg"
+                                      class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
+                                  </a>
+                                </div>
+                                <!-- View All link for horizontal sections in accordion - only show when reached end -->
+                                <div *ngIf="hasReachedEnd(section)"
+                                  class="d-flex align-items-center justify-content-center view-more-container"
+                                  style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
+                                  (click)="onViewAll(section)">
+                                  <a class="btn btn-link text-decoration-underline view-more-btn"
+                                    style="text-decoration: underline !important;  font-size: 1.5rem !important;">
+                                    View all<img
+                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg"
+                                      class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
+                                  </a>
+                                </div>
+                              </div>
+
+                              <div class="d-flex flex-column pl20px pr20px" *ngIf="section.isVerticalCards">
+                                <!--  [class.p-3]="section.title !== 'Long term solutions'"
+                                 [class.px-3]="section.title === 'Long term solutions'"
+                                 [class.py-3]="section.title === 'Long term solutions'" -->
+
+                                <div *ngFor="let card of getDisplayCards(section)" class="mb-3" style="width: 100%;">
+                                  <div style="width: 100%;">
+                                    <!-- Special layout for Life stories and Blogs -->
+                                    <div *ngIf="section.rawSectionType === 2"
+                                      class="story-blog-card d-flex align-items-center position-relative"
+                                      (click)="onCardClick(card)">
+                                      <!-- Tick Icon - Top Right Corner of Card -->
+                                      <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
+                                        <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
+                                          <img
+                                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                            alt="Read icon" class="tick-icon-img" style="width: 20px; height: 20px;">
+                                        </div>
+                                      </div>
+                                      <!-- Lock Icon - Bottom Right Corner of Card -->
+                                      <div class="position-absolute" style="bottom: 8px; right: 8px; z-index: 10;">
+                                        <div *ngIf="shouldShowLockIcon(card)" class="status-icon lock-icon">
+                                          <img
+                                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg"
+                                            alt="Lock icon" class="lock-icon-img" style="width: 20px; height: 20px;">
+                                          <!-- <img *ngIf="!isAdults"
+                                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
+                                             alt="Lock icon" 
+                                             class="lock-icon-img"
+                                             style="width: 20px; height: 20px;"> -->
+                                        </div>
+                                      </div>
+                                      <div class="me-3" style="flex-shrink: 0; position: relative;">
+                                        <img [src]="card.imageUrl" [alt]="card.title" class="rounded"
+                                          style="width: 107px; height: 100px; object-fit: cover;">
+                                      </div>
+                                      <div class="flex-grow-1">
+                                        <h6 class="mb-1 fs_15px  fw_500 lh_130p  "
+                                          [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ card.title }}</h6>
+                                        <p class="mb-0 fs_12px fw_400 lh_130p fc_000000_0_5"
+                                          [ngClass]="isAdults?'fc_000000_0_5': 'fc_ffffff_0_7'"
+                                          [innerHTML]="card.subtitle"
+                                          style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <!-- Special layout for Quick Answers (sectionType 3) -->
+                                    <div *ngIf="section.rawSectionType === 3"
+                                      class="quick-answer-card d-flex align-items-center justify-content-between  cursor-pointer p-3"
+                                      (click)="onCardClick(card)">
+                                      <div class="flex-grow-1">
+                                        <h6 class="mb-0 fw-normal">{{ card.title }}</h6>
+                                      </div>
+                                      <div class="ms-3">
+
+                                        <ng-container *ngIf="isSubscriber;else notSubscriber">
+                                          <span class="fs15"> > </span>
+                                        </ng-container>
+                                        <ng-template #notSubscriber>
+                                          <img *ngIf=" card.isFree === '0' || card.isFree === 0"
+                                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                                            alt="Lock icon" class="quick-answer-lock-icon"
+                                            style="width: 20px; height: 20px;">
+                                          <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="fs15"> > </span>
+                                        </ng-template>
+                                      </div>
+                                    </div>
+                                    <!-- Default card layout for other sections -->
+                                    <app-content-card
+                                      *ngIf="section.rawSectionType !== 2 && section.rawSectionType !== 3" [card]="card"
+                                      (cardClick)="onCardClick($event)">
+                                    </app-content-card>
+                                  </div>
+                                </div>
+                                <!-- View All link for vertical sections in accordion - only show when reached end -->
+                                <div *ngIf="hasReachedEnd(section)" class="mb-3" style="width: 100%;">
+                                  <div class="text-center">
+                                    <button class="btn btn-link text-decoration-underline view-toggle-btn"
+                                      (click)="onViewAll(section)">
+                                      View all<img
+                                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_right.svg"
+                                        class="ms-3" [class.arrow-teenagers]="!isAdults" alt="arrow">
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- View More/View Less buttons for Life stories and Blogs -->
+                              <div *ngIf="shouldShowViewAll(section)" class="text-center mt-3"
+                                [class.px-3]="section.title === 'Long term solutions'"
+                                [class.py-2]="section.title === 'Long term solutions'">
+                                <button class="btn btn-link text-decoration-underline view-toggle-btn"
+                                  (click)="onViewAllClick(section)">
+                                  View more<img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                    class="ms-3" [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);"
+                                    alt="arrow">
+                                </button>
+                              </div>
+                            </div>
+
+                            <!-- Show message if no cards -->
+                            <!-- <div *ngIf="!section.cards || !section.cards.length" class="text-muted text-center p-3">
+                            No cards available for this section
+                          </div> -->
+
+                            <!-- child sections (these may be inline or accordion depending on their flag) -->
+                            <div *ngIf="section.childSections && section.childSections.length" class="nested-sections">
+                              <!--        [class.px-3]="section.title === 'Long term solutions'"
+                               [class.py-2]="section.title === 'Long term solutions'" -->
+                              <div *ngFor="let child of section.childSections">
+                                <ng-container
+                                  *ngTemplateOutlet="renderSection; context: { $implicit: child }"></ng-container>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </ng-template>
+
 
                     </div>
-                    <div class="row" *ngIf="section.title==='Begin Here' && !isSubscriber">
+                    <div class="row" *ngIf="!section.isInlineSection;">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
                         <hr class="hr_style_v4">
                       </div>
                     </div>
-                  </a>
+                  </ng-template>
 
-                  <!-- ====== /FREE-TRIAL BANNER ====== -->
+
+                  <!-- Top-level sections -->
+                  <div *ngFor="let section of contentSections" [attr.id]="'section-' + section.id" #sectionElement>
+                    <ng-container *ngTemplateOutlet="renderSection; context: { $implicit: section }"></ng-container>
+
+                    <!-- ====== FREE-TRIAL BANNER – same spacing as sections ====== -->
+                    <a *ngIf="!isSubscriber">
+                      <div class="toc_adiv_imgmynew plr20px py-3" *ngIf="section.title==='Begin Here' && !isSubscriber">
+                        <div class="row center_flex py-3"> <!-- same vertical gap as section content -->
+                          <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+
+                            <!-- image column -->
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative"
+                              [ngClass]="{'pr5px': !isAdults}">
+                              <img *ngIf="isAdults; else teenImg"
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start.svg" alt=""
+                                class="p0 session_img">
+                              <ng-template #teenImg>
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start_teen.svg" alt=""
+                                  class="p0 session_img">
+                              </ng-template>
+                            </div>
+
+                            <!-- copy column -->
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()">
+                              <h4 class="mtb0px fs_21px lh_130p"
+                                [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
+                                Start your free trial today!
+                              </h4>
+                              <h4 class="mtb0px fs_12px fw_400 lh_130p"
+                                [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
+                                Get expert guidance and personalised tools with HappierMe Premium
+                              </h4>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="row" *ngIf="section.title==='Begin Here' && !isSubscriber">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
+                          <hr class="hr_style_v4">
+                        </div>
+                      </div>
+                    </a>
+
+                    <!-- ====== /FREE-TRIAL BANNER ====== -->
+                  </div>
+
                 </div>
-
               </div>
-            </div>
             </div>
           </div>
         </div>

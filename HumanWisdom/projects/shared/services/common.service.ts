@@ -655,6 +655,10 @@ export class CommonService {
   }
 
   clickSoundscapes(SoundscapeID: number): Observable<any> {
-  return this.http.post(this.path + `/clickSoundscapes/${SoundscapeID}`, {});
+    return this.http.post(this.path + `/clickSoundscapes/${SoundscapeID}`, {});
+  }
+
+  clickTeenTalk(id: number): Observable<any> {
+    return this.http.post(this.path + `/clickteentalk/${id}`, {});
   }
 }

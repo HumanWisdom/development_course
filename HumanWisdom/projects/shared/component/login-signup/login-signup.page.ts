@@ -13,13 +13,14 @@ import { SharedModule } from "../../shared.module";
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from "ng-recaptcha";
 import { Constant } from "../../services/constant";
 import { CommonService } from "../../services/common.service";
+import { HomeStateService } from "../../services/home-state.service";
 import { ProgramType } from "../../models/program-model";
 declare var $: any;
 declare var google: any;
 declare var FB: any;
 @Component({
   selector: "app-common-login",
-  imports: [ CommonModule,
+  imports: [CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
@@ -30,7 +31,7 @@ declare var FB: any;
     SharedModule],
   standalone: true,
   providers: [
-    
+
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
@@ -140,7 +141,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     if (forceReinit) {
       sessionStorage.removeItem('forceGoogleReinit');
     }
-    
+
     // Load Google Sign-In script if not already loaded
     this.loadGoogleSignInScript().then(() => {
       if (typeof google !== 'undefined' && google.accounts) {
@@ -152,13 +153,13 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
             console.warn('Error canceling Google prompts:', e);
           }
         }
-        
+
         // Initialize Google Identity Services
         google.accounts.id.initialize({
           client_id: environment.googleClientId,
           callback: (response: any) => this.handleCredentialResponse(response),
         });
-         this.hideSocial = true;
+        this.hideSocial = true;
         // Render Google buttons safely (force re-render if coming from logout)
         this.renderGoogleButtonSafely('googleBtnSignup', forceReinit);
         this.renderGoogleButtonSafely('googleBtnLogin', forceReinit);
@@ -179,7 +180,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
 
       // Check if button is already rendered by looking for Google button elements
       const hasExistingButton = buttonContainer.querySelector('div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"], div[role="button"]');
-      
+
       // If button already exists and we're not forcing reinit, don't re-render
       if (hasExistingButton && !forceReinit) {
         return;
@@ -242,14 +243,14 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
           googleButton.style.justifyContent = 'center';
           googleButton.style.minWidth = 'auto';
           googleButton.style.minHeight = 'auto';
-          
+
           // Remove border on focus/active/hover
           googleButton.addEventListener('focus', () => {
             googleButton.style.border = 'none';
             googleButton.style.outline = 'none';
             googleButton.style.boxShadow = 'none';
           });
-          
+
           // Style the icon inside
           const icon = googleButton.querySelector('svg, img, [class*="icon"], [class*="Icon"]') as HTMLElement;
           if (icon) {
@@ -258,7 +259,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
             icon.style.maxWidth = '100%';
             icon.style.display = 'block';
           }
-          
+
           // Also style any nested divs
           const nestedDivs = googleButton.querySelectorAll('div');
           nestedDivs.forEach((div: HTMLElement) => {
@@ -268,25 +269,25 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
             div.style.outline = 'none';
             div.style.boxShadow = 'none';
           });
-          
+
           // Style the wrapper button
           const wrapper = document.getElementById(buttonId + 'Wrapper');
           if (wrapper) {
             wrapper.style.border = 'none';
             wrapper.style.borderWidth = '0';
             wrapper.style.outline = 'none';
-            
+
             // Apply conditional color filter based on ProgramId
             // Adults (ProgramId 9) = white, Teenagers (ProgramId 11) = red
             if (SharedService.ProgramId === ProgramType.Adults) {
               // White filter: brightness(0) invert(1)
-                wrapper.style.backgroundColor = 'none !important';
+              wrapper.style.backgroundColor = 'none !important';
             } else if (SharedService.ProgramId === ProgramType.Teenagers) {
               // Red filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)
               wrapper.style.backgroundColor = 'none !important';
             }
           }
-          
+
           // Also apply filter to the iframe if it exists (Google button is rendered in iframe)
           const iframe = buttonContainer.querySelector('iframe') as HTMLIFrameElement;
           if (iframe) {
@@ -303,7 +304,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
                     (containerDiv as HTMLElement).style.border = 'none';
                     (containerDiv as HTMLElement).style.borderWidth = '0';
                     (containerDiv as HTMLElement).style.borderStyle = 'none';
-                    
+
                     // Inject CSS to ensure styles persist
                     if (!iframeDoc.getElementById('container-div-styles')) {
                       const style = iframeDoc.createElement('style');
@@ -318,19 +319,19 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
                 console.log('Cannot access iframe content (cross-origin restriction)');
               }
             };
-            
+
             // Try to style when iframe loads
             iframe.onload = () => setTimeout(styleContainerDiv, 100);
             // Also try after delays in case iframe is already loaded
             setTimeout(styleContainerDiv, 500);
             setTimeout(styleContainerDiv, 1000);
-            
+
             if (SharedService.ProgramId === ProgramType.Adults) {
               // White filter for adults
-            //  iframe.style.filter = 'brightness(0) invert(1)';
+              //  iframe.style.filter = 'brightness(0) invert(1)';
             } else if (SharedService.ProgramId === ProgramType.Teenagers) {
               // Red filter for teenagers
-             wrapper.style.backgroundColor = 'none !important';
+              wrapper.style.backgroundColor = 'none !important';
             }
           }
         }
@@ -341,12 +342,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   // Trigger Google Sign-In by clicking the hidden button
   triggerGoogleSignIn(buttonId: string, event?: Event): void {
     console.log('=== triggerGoogleSignIn called ===', buttonId);
-    
+
     // Prevent default but don't stop propagation - let it bubble to hidden button
     if (event) {
       event.preventDefault();
     }
-    
+
     const buttonContainer = document.getElementById(buttonId);
     if (!buttonContainer) {
       console.log('Button container not found:', buttonId);
@@ -357,35 +358,35 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     const tryTriggerClick = (attempt: number = 1, delay: number = 0) => {
       setTimeout(() => {
         console.log(`Attempt ${attempt} to trigger Google Sign-In for:`, buttonId);
-        
+
         // Method 1: Find the hidden button and temporarily enable it, then click
         const hiddenButton = buttonContainer.querySelector('.google-button-hidden') as HTMLElement;
         if (hiddenButton) {
           console.log('Found hidden button, attempting to click');
-          
+
           try {
             // Temporarily enable pointer events and make visible
             const originalPointerEvents = hiddenButton.style.pointerEvents;
             const originalOpacity = hiddenButton.style.opacity;
-            
+
             hiddenButton.style.pointerEvents = 'auto';
             hiddenButton.style.opacity = '1';
             hiddenButton.style.zIndex = '20';
-            
+
             // Find the iframe inside
             const iframe = hiddenButton.querySelector('iframe') as HTMLIFrameElement;
             if (iframe) {
               iframe.style.pointerEvents = 'auto';
-              
+
               // Get the center position
               const rect = hiddenButton.getBoundingClientRect();
               const centerX = rect.left + rect.width / 2;
               const centerY = rect.top + rect.height / 2;
-              
+
               // Try clicking the hidden button directly
               hiddenButton.click();
               console.log('Called hiddenButton.click()');
-              
+
               // Also dispatch click events
               const clickEvent = new MouseEvent('click', {
                 view: window,
@@ -395,10 +396,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
                 clientX: centerX,
                 clientY: centerY
               });
-              
+
               hiddenButton.dispatchEvent(clickEvent);
               iframe.dispatchEvent(clickEvent);
-              
+
               // Restore styles after a delay
               setTimeout(() => {
                 hiddenButton.style.pointerEvents = originalPointerEvents || 'none';
@@ -408,14 +409,14 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
                   iframe.style.pointerEvents = 'none';
                 }
               }, 300);
-              
+
               return;
             }
           } catch (e) {
             console.log('Error clicking hidden button:', e);
           }
         }
-        
+
         // Method 2: Try to find and click the Google button div
         const googleButton = buttonContainer.querySelector('div[role="button"], div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"]') as HTMLElement;
         if (googleButton) {
@@ -425,7 +426,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
             googleButton.style.opacity = '1';
             googleButton.click();
             console.log('Called googleButton.click()');
-            
+
             setTimeout(() => {
               googleButton.style.pointerEvents = 'none';
               googleButton.style.opacity = '0';
@@ -435,7 +436,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
           }
           return;
         }
-        
+
         console.log('Could not find clickable element, retrying...');
         if (attempt < 3) {
           tryTriggerClick(attempt + 1, 200);
@@ -456,7 +457,8 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     private service: OnboardingService,
     private navigtionService: NavigationService,
     private renderer: Renderer2, private el: ElementRef,
-    private commonService:CommonService
+    private commonService: CommonService,
+    private homeStateService: HomeStateService
   ) {
     this.loadRecaptchaScript();
     this.initializeRegistrationForm();
@@ -480,10 +482,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     localStorage.setItem("firsttime", "T");
   }
 
-   handleCredentialResponse(response: any) {
+  handleCredentialResponse(response: any) {
     console.log('=== handleCredentialResponse CALLBACK TRIGGERED ===');
     console.log('Response received:', response);
-    
+
     // JWT token from Google
     const idToken = response.credential;
     console.log('Google ID Token:', idToken ? 'Token present (' + idToken.substring(0, 20) + '...)' : 'No token');
@@ -527,7 +529,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     if (lastUrl != null && lastUrl.includes('forgotpassword')) {
       this.isSignUp = false;
     }
-    
+
     // If coming from logout, ensure Google buttons are cleared
     const forceReinit = sessionStorage.getItem('forceGoogleReinit') === 'true';
     if (forceReinit) {
@@ -668,7 +670,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       this.logeventservice.logEvent('google_signup');
     else
       this.logeventservice.logEvent('google_login');
-    
+
     this.handleGoogleSignIn();
   }
 
@@ -740,7 +742,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       justify-content: center;
       align-items: center;
     `;
-    
+
     const container = document.createElement('div');
     container.id = 'google-signin-container';
     container.style.cssText = `
@@ -752,7 +754,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       text-align: center;
       position: relative;
     `;
-    
+
     // Close button
     const closeBtn = document.createElement('button');
     closeBtn.innerHTML = '×';
@@ -776,7 +778,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       }
     };
     container.appendChild(closeBtn);
-    
+
     overlay.appendChild(container);
     document.body.appendChild(overlay);
 
@@ -881,9 +883,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       }
 
       // Check if script already exists
-      const existingScript = document.getElementById('google-signin-script') || 
-                             document.querySelector('script[src*="accounts.google.com/gsi/client"]');
-      
+      const existingScript = document.getElementById('google-signin-script') ||
+        document.querySelector('script[src*="accounts.google.com/gsi/client"]');
+
       if (existingScript) {
         // Wait for script to load
         let attempts = 0;
@@ -907,7 +909,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       script.id = 'google-signin-script';
       script.async = true;
       script.defer = true;
-      
+
       script.onload = () => {
         // Wait for google object
         setTimeout(() => {
@@ -929,11 +931,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
           }
         }, 200);
       };
-      
+
       script.onerror = () => {
         reject(new Error('Failed to load Google Sign-In script'));
       };
-      
+
       document.head.appendChild(script);
     });
   }
@@ -944,7 +946,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       this.logeventservice.logEvent('facebook_signup');
     else
       this.logeventservice.logEvent('facebook_login');
-    
+
     this.handleFacebookLogin();
   }
 
@@ -1069,15 +1071,18 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       this.email = "";
       this.password = "";
     } else {
+      // Clear home state on successful login so API's isExpanded values are used fresh
+      this.homeStateService.resetState();
+
       const accessObj: any = window;
       (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
         (accessObj)?.Moengage.add_email(this.email);
         (accessObj)?.Moengage.add_first_name(res.Name);
       })
       this.loginResponse = res;
-      if(this.loginResponse.LastVisit &&  new Date(this.loginResponse.LastVisit).getDate()){
-        if(new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()){
-          SharedService.FirstLoginOfTheDay =true;
+      if (this.loginResponse.LastVisit && new Date(this.loginResponse.LastVisit).getDate()) {
+        if (new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()) {
+          SharedService.FirstLoginOfTheDay = true;
         }
       }
       localStorage.setItem("socialLogin", "F");
@@ -1138,12 +1143,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
         if (userInfo) {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
           // Trigger update to refresh hamburger menu and other components
-        //  this.service.updateUserDetails.next(true);
-          if(userInfo[0]?.SurveyDone=='0'){
+          //  this.service.updateUserDetails.next(true);
+          if (userInfo[0]?.SurveyDone == '0') {
             setTimeout(() => {
               this.commonService.updateSurveyData(1);
             }, 160000);
-           // document.getElementById('test1').click();
+            // document.getElementById('test1').click();
           }
         }
       })
@@ -1279,7 +1284,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
                     }
 
                   } else {
-                      this.router.navigate([`${SharedService.getprogramName()}/repeat-user`]);
+                    this.router.navigate([`${SharedService.getprogramName()}/repeat-user`]);
                   }
                 }
               }
@@ -1290,10 +1295,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     }
   }
 
-  routetoUrl(url){
+  routetoUrl(url) {
 
     // this.router.navigate(["/" + SharedService.getprogramName() + url]);
-    window.open("/" + SharedService.getprogramName() + url,"_blank")
+    window.open("/" + SharedService.getprogramName() + url, "_blank")
   }
   getfreeuser() {
     this.freescreens();
@@ -1313,7 +1318,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     this.confirmpasswordhide = true;
     this.hideSocial = false;
     setTimeout(() => {
-        this.hideSocial = true;
+      this.hideSocial = true;
     }, 1000);
     // Wait for Angular to update the DOM after tab switch
     this.zone.runOutsideAngular(() => {
@@ -1361,34 +1366,34 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   }
 
 
- 
+
   signInWithApple(reqtype) {
     if (reqtype == "signup")
       this.logeventservice.logEvent('apple_signup');
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
-    localStorage.setItem('appleLogin','T');
+    localStorage.setItem('appleLogin', 'T');
     let REDIRECT_API_URL = environment.appleSignInAPIAdults;
-    if(!SharedService.isAdultProgram()){
+    if (!SharedService.isAdultProgram()) {
       REDIRECT_API_URL = environment.appleSignInAPITeenagers;
     }
-     window.open(
+    window.open(
       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
         REDIRECT_API_URL
-      )}&response_type=code id_token&scope=name email&response_mode=form_post`,"_self"
+      )}&response_type=code id_token&scope=name email&response_mode=form_post`, "_self"
     );
-   // this.pollPopup(popup);
+    // this.pollPopup(popup);
   }
   private pollPopup(popup): void {
     const intervalId = setInterval(() => {
       if (popup && !popup.closed) {
         try {
-         if(localStorage.getItem('isloggedin')=='T'){
-           setTimeout(() => {
-             this.handleAppleLoginResponse();
-           },200);
-         }
+          if (localStorage.getItem('isloggedin') == 'T') {
+            setTimeout(() => {
+              this.handleAppleLoginResponse();
+            }, 200);
+          }
         } catch (e) {
           clearInterval(intervalId);
           console.error('Unable to access popup location:', e);
@@ -1396,22 +1401,22 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       } else {
         clearInterval(intervalId);
         const token = localStorage.getItem('token');
-        if(token!=null || token!=''){
+        if (token != null || token != '') {
           popup.close();
         }
         console.log('Popup was closed');
-      
+
       }
     }, 1000); // Poll every 500 milliseconds
   }
 
   handleAppleLoginResponse() {
     const token = localStorage.getItem('token');
-     if (token) {
-        this.router.navigate([SharedService.getDashboardUrls()]);
-      }
-    } 
-  
+    if (token) {
+      this.router.navigate([SharedService.getDashboardUrls()]);
+    }
+  }
+
 
   routedashboard() {
     this.logeventservice.logEvent('Guest_Login');
@@ -1445,7 +1450,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     this.confirmpasswordhide = true;
     this.hideSocial = false;
     setTimeout(() => {
-        this.hideSocial = true;
+      this.hideSocial = true;
     }, 500);
     // Wait for Angular to update the DOM after tab switch
     this.zone.runOutsideAngular(() => {
@@ -1507,19 +1512,19 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
 
   public verifyCaptcha(): void {
     const self = this;  // Store the component's 'this' context
-    grecaptcha.ready(function() {
-      grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', {action: 'submit'}).then(function(token) {
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', { action: 'submit' }).then(function (token) {
         self.service.verifyCaptcha(token).subscribe(res => {
           if (res) {
             self.signup();
-          }else{
+          } else {
             alert("Unexpected error ocurred ,try again after refreshing the page.");
           }
         });
       });
     });
   }
-  
+
 
   loginWithInstagram() {
     const url = `${this.authUrl}?client_id=${this.clientId}&redirect_uri=${encodeURIComponent(this.redirectUri)}&scope=user_profile,user_media&response_type=code`;
@@ -1728,7 +1733,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   //               {
   //                 this.service.verifyUser(this.userId)
   //                 .subscribe(res=>{
-    
+
   //                 })
   //               }*/
   //             }

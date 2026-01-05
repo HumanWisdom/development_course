@@ -6,6 +6,8 @@ import { LogEventService } from '../../../../shared/services/log-event.service';
 import { Location } from '@angular/common';
 import { SharedService } from '../../../../shared/services/shared.service';
 import { CommonService } from '../../../../shared/services/common.service';
+import { ProgramType } from '../../../models/program-model';
+
 
 @Component({
   selector: 'redeem-subscription',
@@ -50,6 +52,8 @@ export class RedeemSubscriptionPage implements OnInit {
   public enabledGiftCard = false;
   productNo = '';
   redeemErrMsg = '';
+    isAdults: boolean = true;
+
 
   constructor(
     public platform: Platform,
@@ -59,6 +63,12 @@ export class RedeemSubscriptionPage implements OnInit {
     public logeventservice: LogEventService,
     private location: Location
   ) {
+
+     if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
     localStorage.setItem('personalised', 'T');
     let guest = localStorage.getItem('guest');
     if (localStorage.getItem('giftcard') === 'T') {

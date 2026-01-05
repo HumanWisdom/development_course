@@ -1,3 +1,11 @@
+
+::ng-deep .modal {
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  opacity: 1 !important;
+}
+
 .modal.fade.show .lab-modal-body,
 .modal.fade.show .lab-modal-bodyfourm {
   top: 5% !important;

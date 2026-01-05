@@ -6044,7 +6044,10 @@ input[type=radio] {
   border-radius: 12px;
 
 }
-
+.notic{
+  width: 24px;
+  height: 24px;
+}
 /* .cloning_div
 {
 	display:-webkit-box;
@@ -11756,7 +11759,7 @@ div.rbox {
 }
 
 .bg_white {
-  background-color: #fff !important;
+  background-color: #FFF7E6 !important;
 }
 
 .b0 {
@@ -19757,7 +19760,7 @@ ngx-circular-player svg {
 .nrow_active {
   padding: 20px 10px;
   border-bottom: 1px solid #DADADA;
-  background: #F2F2F2;
+  /* background: #F2F2F2; */
 }
 
 .notification_panel {
@@ -21039,9 +21042,10 @@ input {
   width: 100%;
   margin: 0;
   border: 0;
+  
   border-radius: 100px;
-  /* background: #ED7D6F !important; */
-    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+   background: #ED7D6F !important; 
+    /* background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important; */
 
   color: #fff !important;
   font-size: 15px;
@@ -25635,7 +25639,7 @@ a {
 /* /coach checkbox */
 
 .td_underline {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .btn_coach_continue {
@@ -27363,7 +27367,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 19px;
   /* identical to box height */
   /* color: #5D5D5D !important; */
@@ -28906,14 +28910,14 @@ video::-webkit-media-controls-panel {
   width: 125px;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25); */
   /* background: #ED7D6F !important; */
   background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
 
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   line-height: 140%;
   font-size: 15px;
   font-weight: 600;
@@ -31790,7 +31794,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 .adsearch_ul .list-group-item {
   border-radius: 0 !important;
   /* border: 0; */
-  border-bottom: 2px solid #EBEBEB;
+  border-bottom: 2px solid #ffe8bb;
 }
 
 .adsearch_ul .list-group-item:last-child {
@@ -32182,7 +32186,7 @@ label.select_label:after {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: #fff;
+  color: #000;
 }
 
 .tn_bv {
@@ -33962,6 +33966,8 @@ body * {
   justify-content: left;
 }
 
+
+
 .ta_new_thread {
   width: 100%;
   border-radius: 12px;
@@ -34677,8 +34683,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  border: 1px solid #ED7D6F;
-  background: transparent;
+  border: 1px solid #ED7D6F !important;
+  background: transparent !important;
   padding: 10px 20px;
   color: #ED7D6F !important;
   font-size: 12px;
@@ -35640,8 +35646,8 @@ li ol > li:before {
   height: 50px;
   width: 100%;
   border-radius: 16px !important;
-  border: 1px solid rgba(204, 204, 204, 0.25) !important;
-  background: #FFFFFF;
+  border: 1px solid rgba(50, 50, 50, 0.25) !important;
+  background: #ffe8bb;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 400;
@@ -36970,7 +36976,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   height: auto !important;
   border-radius: 16px;
   border: 1px solid rgba(50, 50, 50, 0.25);
-  background: white;
+  background: #ffe8bb;
   padding: 20px 10px;
   font-size: 15px;
   font-weight: 400;

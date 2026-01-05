@@ -12,8 +12,20 @@
 .username-clr {
   color:#ffffff
 }
+.header-blk {
+  border-radius: 10px;
+}
 
+.pointer-events-auto {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
 
+.stk-icon {
+    margin-right: 5px;
+    width: 8px;
+    height: 18px;
+}
     /* Navigation menu styling */
     .nav-menu {
         display: flex;
@@ -93,7 +105,7 @@
     .nav-item--selected {
         color: white;
         text-decoration: underline;
-        text-decoration-color: rgba(203, 97, 113, 1);
+        text-decoration-color: #EE9596;
         text-decoration-thickness: 6px;
         text-underline-offset: 8px;
     }
@@ -156,7 +168,9 @@
         // margin: 0 20px;
         padding: 0 10px;
     }
-
+.btn-link{
+  color:#fff;
+}
     @media only screen and (max-width: 768px) {
         .nav-scroll-btn {
             width: 32px;
@@ -177,7 +191,7 @@
         overflow-y: hidden;
         scroll-behavior: smooth;
         padding-left: 20px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
         scrollbar-width: thin;
         scrollbar-color: #778899 #16366D;
     }
@@ -328,6 +342,7 @@
         /* Changed from hidden to allow sticky to work */
         max-height: 200px;
         opacity: 1;
+        margin-top: 10px;
     }
 
     .story-blog-card {
@@ -371,10 +386,10 @@
     .sticky-nav-container {
         padding-top: 10px;
         padding-bottom: 0px;
-        margin-top: 0;
+        margin-top: 16px;
         margin-bottom: 0;
         width: 100%;
-        background-color: #0C2B5F;
+        background-color: #4267A5;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 

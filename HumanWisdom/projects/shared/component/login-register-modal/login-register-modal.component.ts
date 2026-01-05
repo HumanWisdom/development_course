@@ -10,6 +10,7 @@ import { Constant } from "../../services/constant";
 import { CommonModule } from "@angular/common";
 import { SharedModule } from "../../shared.module";
 import { environment } from "../../../../projects/environments/environment";
+import { ProgramType } from '../../../shared/models/program-model';
 
 declare var google: any;
 declare var FB: any;
@@ -65,7 +66,8 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   public audio = 4
   public saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
   public userName: any
-  public showWarning = false
+  public showWarning = false;
+  enableIcon = false;
   enableAlert = false;
   content = '';
   enablecancel = false;
@@ -74,6 +76,8 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
   alertenabled: boolean = false;
+    isAdults: boolean = true;
+
 
   constructor(
     public platform: Platform,
@@ -84,6 +88,17 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     public logeventservice: LogEventService,
     private zone: NgZone
   ) {
+    setTimeout(() => {  
+      this.enableIcon = true;
+      // Render Google buttons when icons are enabled
+      this.renderGoogleButtonsWhenReady();
+    }, 4000);
+    if (SharedService.ProgramId == ProgramType.Adults) {
+            this.isAdults = true;
+          } else {
+            this.isAdults = false;
+          }
+
     this.registrationForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(3)]],
       lname: ['', [Validators.required, Validators.minLength(3)]],
@@ -131,182 +146,321 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // VerifyGoogle method removed - no longer using angularx-social-login
-
-  googleLogin(d = '') {
-    console.log('=== googleLogin called ===', d);
-    this.handleGoogleSignIn();
+  loginGoogle(reqtype = '') {
+    if (reqtype == "signup")
+      this.logeventservice.logEvent('google_signup');
+    else
+      this.logeventservice.logEvent('google_login');
+    
+    // Determine which button to trigger based on current page
+    const buttonId = this.firstpage ? 'googleBtnSignup' : 'googleBtnLogin';
+    this.triggerGoogleSignIn(buttonId);
   }
 
-  private handleGoogleSignIn(): void {
-    console.log('=== handleGoogleSignIn called ===');
-    // Ensure Google script is loaded
-    if (typeof google === 'undefined' || !google.accounts) {
-      console.log('Google not available, loading script...');
-      this.loadGoogleSignInScript()
-        .then(() => {
-          console.log('Google script loaded, initializing...');
-          setTimeout(() => {
-            this.initializeGoogleSignIn();
-          }, 300);
-        })
-        .catch((error) => {
-          console.error('Failed to load Google Sign-In:', error);
-          // Still try to show button - script might be loading
-          setTimeout(() => {
-            if (typeof google !== 'undefined' && google.accounts) {
-              this.initializeGoogleSignIn();
-            } else {
-              this.content = "Google Sign-In is not available. Please refresh the page.";
-              this.enableAlert = true;
-            }
-          }, 1000);
-        });
-    } else {
-      console.log('Google already available, initializing...');
-      this.initializeGoogleSignIn();
-    }
-  }
-
-  private initializeGoogleSignIn(): void {
-    console.log('=== initializeGoogleSignIn called ===');
-    if (typeof google === 'undefined' || !google.accounts) {
-      console.error('Google still not available after load attempt');
-      this.content = "Google Sign-In is not available. Please refresh the page.";
-      this.enableAlert = true;
-      return;
-    }
-
-    try {
-      // Initialize Google Identity Services
-      google.accounts.id.initialize({
-        client_id: environment.googleClientId,
-        callback: (response: any) => this.handleCredentialResponse(response),
-        auto_select: false,
-        cancel_on_tap_outside: true
-      });
-      console.log('Google Identity Services initialized');
-
-      // Always show button overlay - don't rely on prompt
-      // The prompt is unreliable and may not show, so we'll show the button directly
-      this.showGoogleSignInButton();
-      
-      // Optionally try prompt as well (but button is already shown)
-      try {
-        google.accounts.id.prompt((notification: any) => {
-          console.log('Google prompt notification:', notification);
-          // Button is already shown, so we don't need to do anything here
-        });
-      } catch (promptError) {
-        console.log('Prompt not available (this is OK):', promptError);
-        // Button is already shown, so this is fine
-      }
-    } catch (error) {
-      console.error('Error initializing Google Sign-In:', error);
-      this.showGoogleSignInButton();
-    }
-  }
-
-  private showGoogleSignInButton(): void {
-    console.log('=== showGoogleSignInButton called ===');
-    
-    // Remove existing overlay if any
-    const existingOverlay = document.getElementById('google-signin-overlay');
-    if (existingOverlay) {
-      document.body.removeChild(existingOverlay);
-    }
-
-    if (typeof google === 'undefined' || !google.accounts) {
-      console.error('Google not available when trying to show button');
-      this.content = "Google Sign-In is not available. Please refresh the page.";
-      this.enableAlert = true;
-      return;
-    }
-
-    // Create overlay for button
-    const overlay = document.createElement('div');
-    overlay.id = 'google-signin-overlay';
-    overlay.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 10000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `;
-    
-    const container = document.createElement('div');
-    container.id = 'google-signin-container';
-    container.style.cssText = `
-      background-color: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      min-width: 300px;
-      text-align: center;
-      position: relative;
-    `;
-    
-    // Close button
-    const closeBtn = document.createElement('button');
-    closeBtn.innerHTML = '×';
-    closeBtn.style.cssText = `
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: #666;
-      line-height: 1;
-      padding: 0;
-      width: 30px;
-      height: 30px;
-    `;
-    closeBtn.onclick = () => {
-      if (document.body.contains(overlay)) {
-        document.body.removeChild(overlay);
-      }
-    };
-    container.appendChild(closeBtn);
-    
-    overlay.appendChild(container);
-    document.body.appendChild(overlay);
-    console.log('Overlay created and added to DOM');
-
-    // Close on outside click
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) {
-        document.body.removeChild(overlay);
-      }
-    });
-
-    // Render Google button
+  private renderGoogleButtonSafely(buttonId: string, forceReinit: boolean = false): void {
+    // Wait a bit to ensure DOM is ready (especially after tab switches)
     setTimeout(() => {
+      const buttonContainer = document.getElementById(buttonId);
+      if (!buttonContainer) {
+        // Element doesn't exist (likely hidden by *ngIf), skip rendering
+        return;
+      }
+
+      // Check if button is already rendered by looking for Google button elements
+      const hasExistingButton = buttonContainer.querySelector('div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"], div[role="button"]');
+      
+      // If button already exists and we're not forcing reinit, don't re-render
+      if (hasExistingButton && !forceReinit) {
+        return;
+      }
+
+      // Ensure Google API is available
+      if (typeof google === 'undefined' || !google.accounts || !google.accounts.id) {
+        console.warn(`Google Sign-In API not available when trying to render ${buttonId}`);
+        return;
+      }
+
+      // Clear container before rendering (in case of any leftover content)
+      buttonContainer.innerHTML = '';
+
+      // Render the button
       try {
-        console.log('Attempting to render Google button...');
-        google.accounts.id.renderButton(container, {
-          type: 'standard',
+        google.accounts.id.renderButton(buttonContainer, {
+          type: 'icon',
           theme: 'outline',
           size: 'large',
-          text: 'signin_with',
-          width: '250'
         });
-        console.log('Google button rendered successfully');
+        // Style the button after rendering
+        setTimeout(() => {
+          this.styleGoogleButton(buttonId);
+        }, 100);
       } catch (error) {
-        console.error('Error rendering Google button:', error);
-        if (document.body.contains(overlay)) {
-          document.body.removeChild(overlay);
-        }
-        this.content = "Google Sign-In failed to initialize. Please refresh the page.";
-        this.enableAlert = true;
+        console.error(`Error rendering Google button ${buttonId}:`, error);
       }
-    }, 200);
+    }, forceReinit ? 200 : 50); // Longer delay if forcing reinit to ensure cleanup is complete
+  }
+
+  private styleGoogleButton(buttonId: string): void {
+    const buttonContainer = document.getElementById(buttonId);
+    if (buttonContainer) {
+      // Wait a bit more for Google button to fully render
+      setTimeout(() => {
+        // Find the Google button element (it's usually a div with class containing 'abcRioButton' or 'gsi')
+        const googleButton = buttonContainer.querySelector('div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"], div[role="button"]') as HTMLElement;
+        if (googleButton) {
+          // Hide the Google button but keep it functional
+          buttonContainer.style.position = 'relative';
+          googleButton.style.opacity = '0';
+          googleButton.style.position = 'absolute';
+          googleButton.style.pointerEvents = 'auto';
+          googleButton.style.width = '100%';
+          googleButton.style.height = '100%';
+          googleButton.style.zIndex = '1';
+          // Remove default Google button styling
+          googleButton.style.background = 'transparent';
+          googleButton.style.border = 'none';
+          googleButton.style.borderWidth = '0';
+          googleButton.style.borderStyle = 'none';
+          googleButton.style.outline = 'none';
+          googleButton.style.boxShadow = 'none';
+          googleButton.style.padding = '0';
+          googleButton.style.margin = '0';
+          googleButton.style.width = '100%';
+          googleButton.style.height = '100%';
+          googleButton.style.display = 'flex';
+          googleButton.style.alignItems = 'center';
+          googleButton.style.justifyContent = 'center';
+          googleButton.style.minWidth = 'auto';
+          googleButton.style.minHeight = 'auto';
+          
+          // Remove border on focus/active/hover
+          googleButton.addEventListener('focus', () => {
+            googleButton.style.border = 'none';
+            googleButton.style.borderWidth = '0';
+            googleButton.style.borderStyle = 'none';
+            googleButton.style.outline = 'none';
+            googleButton.style.boxShadow = 'none';
+          });
+          
+          googleButton.addEventListener('mouseenter', () => {
+            googleButton.style.border = 'none';
+            googleButton.style.borderWidth = '0';
+            googleButton.style.borderStyle = 'none';
+            googleButton.style.outline = 'none';
+            googleButton.style.boxShadow = 'none';
+          });
+          
+          googleButton.addEventListener('mouseleave', () => {
+            googleButton.style.border = 'none';
+            googleButton.style.borderWidth = '0';
+            googleButton.style.borderStyle = 'none';
+            googleButton.style.outline = 'none';
+            googleButton.style.boxShadow = 'none';
+          });
+          
+          // Style the icon inside
+          const icon = googleButton.querySelector('svg, img, [class*="icon"], [class*="Icon"]') as HTMLElement;
+          if (icon) {
+            icon.style.width = '100%';
+            icon.style.height = 'auto';
+            icon.style.maxWidth = '100%';
+            icon.style.display = 'block';
+          }
+          
+          // Also style any nested divs
+          const nestedDivs = googleButton.querySelectorAll('div');
+          nestedDivs.forEach((div: HTMLElement) => {
+            div.style.background = 'transparent';
+            div.style.border = 'none';
+            div.style.borderWidth = '0';
+            div.style.borderStyle = 'none';
+            div.style.outline = 'none';
+            div.style.boxShadow = 'none';
+          });
+          
+          // Style the wrapper button - remove all borders
+          const wrapper = document.getElementById(buttonId + 'Wrapper');
+          if (wrapper) {
+            wrapper.style.border = 'none';
+            wrapper.style.borderWidth = '0';
+            wrapper.style.borderStyle = 'none';
+            wrapper.style.outline = 'none';
+            wrapper.style.boxShadow = 'none';
+            
+            // Also remove border on wrapper focus/hover
+            wrapper.addEventListener('focus', () => {
+              wrapper.style.border = 'none';
+              wrapper.style.borderWidth = '0';
+              wrapper.style.borderStyle = 'none';
+              wrapper.style.outline = 'none';
+              wrapper.style.boxShadow = 'none';
+            });
+          }
+          
+          // Also apply border removal to the iframe if it exists (Google button is rendered in iframe)
+          const iframe = buttonContainer.querySelector('iframe') as HTMLIFrameElement;
+          if (iframe) {
+            iframe.style.border = 'none';
+            iframe.style.borderWidth = '0';
+            iframe.style.borderStyle = 'none';
+            iframe.style.outline = 'none';
+            
+            // Function to get container-div by ID and remove background color and border
+            const styleContainerDiv = () => {
+              try {
+                const iframeDoc = iframe.contentDocument || (iframe.contentWindow as any)?.document;
+                if (iframeDoc) {
+                  const containerDiv = iframeDoc.getElementById('container-div');
+                  if (containerDiv) {
+                    // Remove background color and border
+                    (containerDiv as HTMLElement).style.background = 'none';
+                    (containerDiv as HTMLElement).style.backgroundColor = 'transparent';
+                    (containerDiv as HTMLElement).style.border = 'none';
+                    (containerDiv as HTMLElement).style.borderWidth = '0';
+                    (containerDiv as HTMLElement).style.borderStyle = 'none';
+                    
+                    // Inject CSS to ensure styles persist
+                    if (!iframeDoc.getElementById('container-div-styles')) {
+                      const style = iframeDoc.createElement('style');
+                      style.id = 'container-div-styles';
+                      style.textContent = '#container-div { background: none !important; background-color: transparent !important; border: none !important; border-width: 0 !important; border-style: none !important; }';
+                      iframeDoc.head.appendChild(style);
+                    }
+                  }
+                  
+                  // Also remove borders from all elements in iframe
+                  const allElements = iframeDoc.querySelectorAll('*');
+                  allElements.forEach((el: HTMLElement) => {
+                    el.style.border = 'none';
+                    el.style.borderWidth = '0';
+                    el.style.borderStyle = 'none';
+                    el.style.outline = 'none';
+                  });
+                }
+              } catch (e) {
+                // Cross-origin restriction - cannot access iframe content
+                console.log('Cannot access iframe content (cross-origin restriction)');
+              }
+            };
+            
+            // Try to style when iframe loads
+            iframe.onload = () => setTimeout(styleContainerDiv, 100);
+            // Also try after delays in case iframe is already loaded
+            setTimeout(styleContainerDiv, 500);
+            setTimeout(styleContainerDiv, 1000);
+          }
+        }
+      }, 200);
+    }
+  }
+
+  // Trigger Google Sign-In by clicking the hidden button
+  triggerGoogleSignIn(buttonId: string, event?: Event): void {
+    console.log('=== triggerGoogleSignIn called ===', buttonId);
+    
+    // Prevent default but don't stop propagation - let it bubble to hidden button
+    if (event) {
+      event.preventDefault();
+    }
+    
+    const buttonContainer = document.getElementById(buttonId);
+    if (!buttonContainer) {
+      console.log('Button container not found:', buttonId);
+      return;
+    }
+
+    // Function to try triggering the click with retries
+    const tryTriggerClick = (attempt: number = 1, delay: number = 0) => {
+      setTimeout(() => {
+        console.log(`Attempt ${attempt} to trigger Google Sign-In for:`, buttonId);
+        
+        // Method 1: Find the hidden button and temporarily enable it, then click
+        const hiddenButton = buttonContainer.querySelector('.google-button-hidden') as HTMLElement;
+        if (hiddenButton) {
+          console.log('Found hidden button, attempting to click');
+          
+          try {
+            // Temporarily enable pointer events and make visible
+            const originalPointerEvents = hiddenButton.style.pointerEvents;
+            const originalOpacity = hiddenButton.style.opacity;
+            
+            hiddenButton.style.pointerEvents = 'auto';
+            hiddenButton.style.opacity = '1';
+            hiddenButton.style.zIndex = '20';
+            
+            // Find the iframe inside
+            const iframe = hiddenButton.querySelector('iframe') as HTMLIFrameElement;
+            if (iframe) {
+              iframe.style.pointerEvents = 'auto';
+              
+              // Get the center position
+              const rect = hiddenButton.getBoundingClientRect();
+              const centerX = rect.left + rect.width / 2;
+              const centerY = rect.top + rect.height / 2;
+              
+              // Try clicking the hidden button directly
+              hiddenButton.click();
+              console.log('Called hiddenButton.click()');
+              
+              // Also dispatch click events
+              const clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true,
+                buttons: 1,
+                clientX: centerX,
+                clientY: centerY
+              });
+              
+              hiddenButton.dispatchEvent(clickEvent);
+              iframe.dispatchEvent(clickEvent);
+              
+              // Restore styles after a delay
+              setTimeout(() => {
+                hiddenButton.style.pointerEvents = originalPointerEvents || 'none';
+                hiddenButton.style.opacity = originalOpacity || '0';
+                hiddenButton.style.zIndex = '1';
+                if (iframe) {
+                  iframe.style.pointerEvents = 'none';
+                }
+              }, 300);
+              
+              return;
+            }
+          } catch (e) {
+            console.log('Error clicking hidden button:', e);
+          }
+        }
+        
+        // Method 2: Try to find and click the Google button div
+        const googleButton = buttonContainer.querySelector('div[role="button"], div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"]') as HTMLElement;
+        if (googleButton) {
+          console.log('Found Google button div, attempting to click');
+          try {
+            googleButton.style.pointerEvents = 'auto';
+            googleButton.style.opacity = '1';
+            googleButton.click();
+            console.log('Called googleButton.click()');
+            
+            setTimeout(() => {
+              googleButton.style.pointerEvents = 'none';
+              googleButton.style.opacity = '0';
+            }, 200);
+          } catch (e) {
+            console.log('Error clicking Google button:', e);
+          }
+          return;
+        }
+        
+        console.log('Could not find clickable element, retrying...');
+        if (attempt < 3) {
+          tryTriggerClick(attempt + 1, 200);
+        }
+      }, delay);
+    };
+
+    // Start trying immediately
+    tryTriggerClick(1, 0);
   }
 
   private loadGoogleSignInScript(): Promise<void> {
@@ -586,8 +740,39 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-
     this.already(this.isLoggedIn ? 'login' : 'register');
+    
+    // Check if we need to force re-initialization (e.g., after logout)
+    const forceReinit = sessionStorage.getItem('forceGoogleReinit') === 'true';
+    if (forceReinit) {
+      sessionStorage.removeItem('forceGoogleReinit');
+    }
+    
+    // Load Google Sign-In script if not already loaded
+    this.loadGoogleSignInScript().then(() => {
+      if (typeof google !== 'undefined' && google.accounts) {
+        // Cancel any existing prompts before re-initializing
+        if (forceReinit && google.accounts.id) {
+          try {
+            google.accounts.id.cancel();
+          } catch (e) {
+            console.warn('Error canceling Google prompts:', e);
+          }
+        }
+        
+        // Initialize Google Identity Services
+        google.accounts.id.initialize({
+          client_id: environment.googleClientId,
+          callback: (response: any) => this.handleCredentialResponse(response),
+        });
+        
+        // Render Google buttons safely (force re-render if coming from logout)
+        this.renderGoogleButtonSafely('googleBtnSignup', forceReinit);
+        this.renderGoogleButtonSafely('googleBtnLogin', forceReinit);
+      }
+    }).catch((error) => {
+      console.error('Failed to load Google Sign-In:', error);
+    });
   }
 
   get fname() {
@@ -614,21 +799,53 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       }, 1000)
     }
     if (value === 'login') {
-      // Google Sign-In script will be loaded when needed
       this.firstpage = false;
       this.fourthpage = false;
       this.thirdpage = false;
       this.passwordhide = true;
       this.confirmpasswordhide = true;
       this.fifthpage = true;
+      
+      // Re-render Google buttons when switching to login page
+      setTimeout(() => {
+        this.renderGoogleButtonsWhenReady();
+      }, 300);
     } else if (value === 'register') {
-      // Google Sign-In script will be loaded when needed
       this.firstpage = true;
       this.passwordhide = true;
       this.confirmpasswordhide = true;
       this.secondpage = false;
-      this.fifthpage = false
+      this.fifthpage = false;
+      
+      // Re-render Google buttons when switching to register page
+      setTimeout(() => {
+        this.renderGoogleButtonsWhenReady();
+      }, 300);
     }
+  }
+
+  private renderGoogleButtonsWhenReady(): void {
+    // Wait for Angular to update the DOM after page switch
+    this.zone.runOutsideAngular(() => {
+      setTimeout(() => {
+        // Ensure Google script is loaded, then render buttons safely
+        this.loadGoogleSignInScript().then(() => {
+          if (typeof google !== 'undefined' && google.accounts) {
+            // Initialize Google Identity Services
+            google.accounts.id.initialize({
+              client_id: environment.googleClientId,
+              callback: (response: any) => this.handleCredentialResponse(response),
+            });
+
+            // Render Google buttons safely (force re-render when switching pages)
+            this.renderGoogleButtonSafely('googleBtnSignup', true);
+            this.renderGoogleButtonSafely('googleBtnLogin', true);
+          }
+        }).catch((error) => {
+          console.error('Failed to load Google Sign-In:', error);
+        });
+      }, 100);
+    });
   }
 
   PasswordValidator(control: AbstractControl): { [key: string]: boolean } | null {
@@ -745,7 +962,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
             localStorage.setItem("Subscriber", this.loginResponse.Subscriber)
             localStorage.setItem("userId", JSON.stringify(this.userId))
             localStorage.setItem("email", email)
-            localStorage.setItem("FnName", this.socialFirstName)
+            localStorage.setItem("FnName", this.loginResponse.Name.split(' ')[0])
             localStorage.setItem("RoleID", JSON.stringify(res.RoleID))
             localStorage.setItem("LName", this.socialLastName)
             localStorage.setItem("pswd", '')

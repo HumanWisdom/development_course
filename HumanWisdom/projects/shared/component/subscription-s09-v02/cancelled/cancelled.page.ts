@@ -36,11 +36,11 @@ export class CancelledPage implements OnInit {
 
   dashboard(){
     if (this.isAdults) {
-      this.router.navigate(['/' + SharedService.getprogramName() + '/adult-dashboard'])
+      this.router.navigate(['/' + SharedService.getprogramName() + '/home'])
     } else {
-      this.router.navigate(['/teenagers/teenager-dashboard'])
+      this.router.navigate(['/teenagers/home'])
     }
-    this.router.navigate(['/adults/adult-dashboard']);
+    // this.router.navigate(['/adults/home']);
   }
 
 }

@@ -51,15 +51,15 @@
         <div class="row mt80px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 tcenter">
-              <h4 class="mtb0px fs_24px fw_400 lh_140p fc_ffffff tcenter" style="font-family:poppins">
+              <h4 class="mtb0px fs_24px fw_400 lh_140p fc_ffffff tcenter">
                 Welcome to HappierMe!
               </h4>
       
-              <h4 class="mt0px mb15px fs_15px fw_400 lh_140p fc_ffffff_0_5 tcenter">
+              <h4 class="mt0px mb20px fs_15px fw_400 lh_140p fc_ffffff_0_5 tcenter">
               Your companion for a happier life
               </h4>
               
-              <h4 class="mtb20px fs_15px fw_400 lh_140p fc_ffffff tcenter">
+              <h4 class="mt60px mb20px fs_15px fw_400 lh_140p fc_ffffff tcenter">
               Pick a section to get started
               </h4>
 

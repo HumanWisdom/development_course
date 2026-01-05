@@ -56,6 +56,7 @@ export interface ContentCard {
   moduleType?: string;
   isFree?: string | number; // "0" means locked, "1" means free
   isRead?: string | number; // "0" means not read, "1" means read/completed
+  isTeenTalk?: boolean;
 }
 
 export interface ContentSection {
@@ -191,6 +192,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.username = '';
       this.streak = '';
          this.username = SharedService.FnName();
+       this.getStreak();
     }
 
     // Restore state from store
@@ -457,7 +459,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const rawType = typeof section.sectionType === 'string' ? Number(section.sectionType) : section.sectionType;
     const isVertical = rawType === 2 || rawType === 3;
 
-    const transformedCards = this.transformCards(cardsArray, sectionType);
+    const transformedCards = this.transformCards(cardsArray, sectionType, section.title);
 
     // Get viewall_Url - preserve null if explicitly set, otherwise try alternatives
     const viewallUrl = section['viewall_Url'] !== undefined
@@ -556,8 +558,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
               }
             });
 
-            if (storedActivePreference === "19") {
+            if (storedActivePreference === "19" || storedActivePreference === "20") {
               this.showWisdomExercise = true;
+              this.preference = storedActivePreference;
               this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
               console.log('Guest user with stored preference (Self Awareness):', this.YourTopicofChoice);
             } else {
@@ -623,30 +626,44 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Transform cards based on section type
    */
-  transformCards(cards: any[], sectionType: string): ContentCard[] {
+  transformCards(cards: any[], sectionType: string, sectionTitle: string = ''): ContentCard[] {
     if (!Array.isArray(cards)) {
       return [];
     }
 
     return cards.map((card, index) => {
+      let transformedCard: ContentCard;
       switch (sectionType) {
         case 'introduction':
-          return this.transformIntroductionCard(card);
+          transformedCard = this.transformIntroductionCard(card);
+          break;
         case 'modules1':
         case 'modules2':
         case 'modules3':
-          return this.transformModuleCard(card);
+          transformedCard = this.transformModuleCard(card);
+          break;
         case 'blogs':
-          return this.transformBlogCard(card);
+          transformedCard = this.transformBlogCard(card);
+          break;
         case 'stories':
-          return this.transformStoryCard(card);
+          transformedCard = this.transformStoryCard(card);
+          break;
         case 'podcast':
-          return this.transformPodcastCard(card);
+          transformedCard = this.transformPodcastCard(card);
+          break;
         case 'shorts':
-          return this.transformShortCard(card);
+          transformedCard = this.transformShortCard(card);
+          break;
         default:
-          return this.transformGenericCard(card);
+          transformedCard = this.transformGenericCard(card);
+          break;
       }
+
+      if (sectionTitle && sectionTitle.trim().toLowerCase().includes('teen talk')) {
+        transformedCard.isTeenTalk = true;
+      }
+
+      return transformedCard;
     });
   }
 
@@ -748,7 +765,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   transformGenericCard(card: any): ContentCard {
     return {
-      id: card.id || card.title || `card-${Date.now()}`,
+      id: card.RowID?.toString() || card.id?.toString() || card.title || `card-${Date.now()}`,
       imageUrl: card.imgUrl || card.image_path || card.imageUrl || card.ImagePath || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || card.subtitle || '',
@@ -830,8 +847,18 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.trackCardClick(card);
     console.log('Card clicked:', card);
 
+    // Check if card is locked BEFORE marking as seen
+    // Only mark as seen if user can actually access the content
+    const isLocked = card && (card.isFree === '0' || card.isFree === 0);
+    if (!this.isSubscriber && isLocked) {
+      // Card is locked and user is not subscriber - don't mark as seen
+      this.showModal = true;
+      this.cardClick.emit(card);
+      return;
+    }
+
     // Mark card as seen in state management if it's currently unseen
-    // This will be merged when content is reloaded
+    // Only mark if card is not locked OR user is subscriber (can access it)
     const isUnseen = card && card.id && (
       card.isRead === undefined ||
       card.isRead === null ||
@@ -844,13 +871,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.homeStateService.markCardAsSeen(card.id);
       // Update the card immediately for UI feedback
       card.isRead = '1';
-    }
-
-    const isLocked = card && (card.isFree === '0' || card.isFree === 0);
-    if (!this.isSubscriber && isLocked) {
-      this.showModal = true;
-      this.cardClick.emit(card);
-      return;
     }
     // Persist selected short video info so s3-video can play exact clicked item
     try {
@@ -913,6 +933,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private trackCardClick(card: ContentCard): void {
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
+
+    if (card.isTeenTalk || (card.path && (card.path.includes('teen_talk') || card.path.includes('teen-talk')))) {
+      const id = this.extractNumericId(card.id) ?? this.extractShortIdFromUrl(card.path) ?? this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.commonService.clickTeenTalk(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+
     if (!type) return;
     if (type.includes('PODCAST')) {
       const id = this.extractNumericId(card.id) ?? this.extractIdFromPath(card.path);
@@ -1011,7 +1040,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       const n = Number(extMatch[1]);
       return Number.isFinite(n) ? n : null;
     }
-    const parts = filename.split('.').reverse();
+    const parts = filename.split(/[\.\-_]/).reverse();
     for (const part of parts) {
       const n = Number(part);
       if (!Number.isNaN(n) && Number.isFinite(n)) {
@@ -1422,7 +1451,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.homeStateService.setActivePreference(item.id);
 
     // Handle Self Awareness (id: 19) specially
-    if (item.id === "19") {
+    if (item.id === "19" || item.id === "20") {
       this.showWisdomExercise = true;
       this.YourTopicofChoice = [item];
       // Save user preference for Self Awareness
@@ -1554,6 +1583,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Merge seen status from state management into cards
    * This updates the isRead property based on user interactions stored in state
    * Called after API response is received and transformed
+   * Only marks cards as seen if they are accessible (not locked or user is subscriber)
    */
   private mergeSeenStatusFromState(): void {
     const seenCards = this.homeStateService.getSeenCards();
@@ -1568,9 +1598,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       if (section.cards) {
         section.cards.forEach(card => {
           if (card.id && seenCards[card.id]) {
-            // Override API's isRead with state management value
-            card.isRead = '1';
-            console.log('Updated card isRead from state:', card.id, card.title);
+            // Only mark as seen if card is accessible (not locked or user is subscriber)
+            const isLocked = card.isFree === "0" || card.isFree === 0;
+            if (!isLocked || this.isSubscriber) {
+              // Override API's isRead with state management value
+              card.isRead = '1';
+              console.log('Updated card isRead from state:', card.id, card.title);
+            } else {
+              // Card is locked and user is not subscriber - don't mark as seen
+              console.log('Skipping locked card from state (not accessible):', card.id, card.title);
+            }
           }
         });
       }
@@ -1581,9 +1618,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           if (childSection.cards) {
             childSection.cards.forEach(card => {
               if (card.id && seenCards[card.id]) {
-                // Override API's isRead with state management value
-                card.isRead = '1';
-                console.log('Updated child card isRead from state:', card.id, card.title);
+                // Only mark as seen if card is accessible (not locked or user is subscriber)
+                const isLocked = card.isFree === "0" || card.isFree === 0;
+                if (!isLocked || this.isSubscriber) {
+                  // Override API's isRead with state management value
+                  card.isRead = '1';
+                  console.log('Updated child card isRead from state:', card.id, card.title);
+                } else {
+                  // Card is locked and user is not subscriber - don't mark as seen
+                  console.log('Skipping locked child card from state (not accessible):', card.id, card.title);
+                }
               }
             });
           }
@@ -1616,5 +1660,44 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         behavior: 'smooth'
       });
     }
+  }
+
+  /**
+   * Check if tick icon should be shown for Life Stories
+   * Show tick when isRead is "1" (completed/read) AND user can actually access the content
+   * Don't show tick for locked content that user hasn't accessed
+   */
+  shouldShowTickIcon(card: ContentCard): boolean {
+    const isLoggedIn = SharedService.isLoggedIn();
+    const isGuest = (localStorage.getItem('guest') === 'T');
+    if (!isLoggedIn || isGuest) {
+      return false;
+    }
+    
+    // Card must be marked as read
+    const isRead = card.isRead === "1" || card.isRead === 1;
+    if (!isRead) {
+      return false;
+    }
+    
+    // If card is locked and user is not subscriber, don't show tick
+    // (because they couldn't have actually seen it)
+    const isLocked = card.isFree === "0" || card.isFree === 0;
+    if (isLocked && !this.isSubscriber) {
+      return false;
+    }
+    
+    return true;
+  }
+
+  /**
+   * Check if lock icon should be shown for Life Stories
+   * Show lock when isFree is "0" (locked/not free) and user is not a subscriber
+   */
+  shouldShowLockIcon(card: ContentCard): boolean {
+    if (this.isSubscriber) {
+      return false;
+    }
+    return card.isFree === "0" || card.isFree === 0;
   }
 }

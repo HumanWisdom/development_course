@@ -87,6 +87,8 @@ export class WisdomScalePage implements OnInit {
   rating10 = 1
   wisdomScore: any
   nextPath: any
+    isAdults = true;
+
   public lineChartData: ChartDataSets[] = [
     { data: [], label: 'Happiness Survey' },
   ];
@@ -106,13 +108,13 @@ export class WisdomScalePage implements OnInit {
   };
   public lineChartColors: Color[] = [
     {
-      borderColor: '#E58D82',
-      backgroundColor: 'rgba(229, 141, 130, 0.2)',
+      borderColor: (this.isAdults? '#ED7D6F' : '#E58D82'),
+      backgroundColor:(this.isAdults? 'rgba(229, 141, 130, 0.2)' : 'rgba(229, 141, 130, 0.2)') ,
     },
   ];
   public lineChartLegend = false;
   public lineChartType: ChartType = 'line';
-  isAdults = true;
+
 
   public text = 2
   public video = 3
@@ -133,6 +135,7 @@ export class WisdomScalePage implements OnInit {
   constructor(private router: Router,
     private service: OnboardingService,
     private location: Location,
+    private activatedRoute: ActivatedRoute, 
     private services: AdultsService,
     public logeventservice: LogEventService,
     private ac: ActivatedRoute, private navigationService: NavigationService,
@@ -148,12 +151,24 @@ export class WisdomScalePage implements OnInit {
     });
 
 
+    
+
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
       this.isAdults = false;
     }
-    let authtoken = JSON.parse(localStorage.getItem("token"));
+    
+    let authtoken
+    
+    this.activatedRoute.queryParams.subscribe(params => {
+      authtoken = params?.authtoken;
+    });
+   
+    if(authtoken){
+      authtoken = JSON.parse(localStorage.getItem("token"));
+    }
+    
     if (authtoken) {
       this.service.setDataRecievedState(false);
       localStorage.setItem('socialLogin', 'T');

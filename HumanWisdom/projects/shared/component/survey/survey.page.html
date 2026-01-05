@@ -13,7 +13,7 @@
       <div class="row mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-            <h4 class="mtb0px fs_15px fw_600 lh_140p fc_000000" >
+            <h4 class="mtb0px fs_15px fw_600 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
               Hello {{getUserName()}}, <br/>
               <span *ngIf="!isPaymentSurvey">We would love your feedback on the app, so we can
                 make it better: </span>
@@ -21,7 +21,7 @@
             </h4>
           </div>
          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-             <i class="fa fa-close fs_20px fc_000000 m0px fright" (click)="onCloseClick()"  ></i>
+             <i class="fa fa-close fs_20px  m0px fright "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"  (click)="onCloseClick()"  ></i>
             
           </div>
         </div>
@@ -37,14 +37,14 @@
                       (change)="onSelectionChange(item.OptionStr,item.OptionID)"  [checked]="item.OptionStr === selectedText" />
                   </div>
                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                    <h4 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
+                    <h4 class="mtb0px fs_12px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{ item.OptionStr }}
                     </h4>
                   </div>
                 </div>
                 <div class="row" style="margin-top: 20px;"  *ngIf="item.OptionStr === selectedText && item.display_text != ''">
                   <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0">
-                    <textarea type="text" #myTextarea class="mtb0px ta_new_thread fc_000000" id="Post" name="Post" 
+                    <textarea type="text" #myTextarea class="mtb0px ta_new_thread "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" id="Post" name="Post" 
                      rows="3" 
                      placeholder="{{item.display_text}}"
                       maxlength="256" 
@@ -71,12 +71,12 @@
       <div class="row mb10px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-            <span class="mtb0px fs_18px fw_600 lh_150p fc_000000">
+            <span class="mtb0px fs_18px fw_600 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
               Thank you for the feedback. 
             </span>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-             <i class="fa fa-close fs_20px fc_000000 m0px fright" (click)="onCloseClick()"  ></i>
+             <i class="fa fa-close fs_20px  m0px fright" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" (click)="onCloseClick()"  ></i>
             
           </div>
         </div>

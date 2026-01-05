@@ -9,7 +9,7 @@
 // .div-box img { position: absolute; top: 2px; right: 5px }
 .btn_forum_ask_a_gift_1,
 .btn_tfas_1 {
-    background-color: #D7586B;
+    background-color: #D7586B !important;
     color: #ffffff;
     border-color: #D7586B;
     width: 100%;
@@ -61,9 +61,9 @@
 .btn_tfas:hover,
 .btn_tfas:active,
 .btn_tfas:focus{
-  background-color: #ffffff;
-  color: #cb6171;
-  border-color: #ffffff;
+  background-color: #ee9596;
+  color: #ffffff;
+  border-color: #ee9596;
 }
 
 .btn_aan2:hover,
@@ -77,6 +77,10 @@
 }
 a:hover{
   text-decoration: underline !important;
+}
+
+.no_underline_hover:hover {
+  text-decoration: none !important;
 }
 
 .sp_fc_1::placeholder {
@@ -95,16 +99,18 @@ a:hover{
   margin-right: -20px;
   margin-top: -20px;
   padding: 20px;
+  height: 76px;
   align-items: center;
   justify-content: center;
 }
 
 .blue_banner {
-  background-color: #05BBBF;
+  background-color: #60BEC2;
   margin-left: -20px;
   margin-right: -20px;
   margin-top: -20px;
   padding: 20px;
+  height: 76px;
   align-items: center;
   justify-content: center;
 }
@@ -149,4 +155,14 @@ select.sp_fc_1 {
 
   label.select_label_1:after{
     color: #000 !important;
+  }
+
+  .fc_ee9596 {
+    color: #EE9596 !important;
+  }
+  .btn_forum_ask_a_gift{
+    width: 103px;
+    height: 30px;
+    background: #ee9596;
+    color: #ffffff;
   }

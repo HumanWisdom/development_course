@@ -485,7 +485,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
             
             // Reset Google Identity Services state
             this.resetGoogleSignIn();
-            
+            this.Onboardingservice.guestEmailLogin();
             const auth2 = (window as any).gapi?.auth2?.getAuthInstance();
             if (auth2) {
               auth2.signOut().then(() => {
