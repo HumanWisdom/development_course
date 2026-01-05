@@ -21,6 +21,10 @@
   cursor: pointer !important;
 }
 
+.nav-item>span {
+  vertical-align: super;
+}
+
 .stk-icon {
     margin-right: 5px;
     width: 8px;
@@ -121,7 +125,7 @@
     /* Navigation scroll buttons */
     .nav-scroll-btn {
         position: absolute;
-        top: 50%;
+         top: 42%;
         transform: translateY(-50%);
         width: 30px;
         height: 30px;
@@ -238,15 +242,15 @@
 
     .home_pathway {
         background: #0C2B5F;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        // margin-top: 10px;
+        // margin-bottom: 10px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
 
-    .home_pathway:hover {
-        padding-bottom: 0;
-    }
+    // .home_pathway:hover {
+    //     padding-bottom: 0;
+    // }
 
     .home_introduction,
     .home_blogs,
@@ -330,8 +334,9 @@
     }
 
     .section-header {
-        height: 100px;
-        padding: 20px;
+        height: 60px;
+          padding-left: 20px;
+  padding-right: 20px;  
         width: auto;
     }
 
@@ -380,6 +385,11 @@
         /* Approximate height of search box + navigation */
         transition: min-height 0.3s ease;
         width: 100%;
+    }
+
+    .mttopbot20 {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     /* Sticky Navigation Container */
