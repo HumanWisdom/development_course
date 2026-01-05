@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../teenagers.service';
 import {Meta,Title }  from '@angular/platform-browser';
 import { CommonService } from '../../../../../shared/services/common.service';
+import { HomeStateService } from '../../../../../shared/services/home-state.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class TeenTalkPage implements OnInit {
   showModal = false;
     
 
-  constructor(private router: Router, private service: TeenagersService, private meta: Meta, private title: Title, private commonService: CommonService) { }
+  constructor(private router: Router, private service: TeenagersService, private meta: Meta, private title: Title, private commonService: CommonService, private homeStateService: HomeStateService) { }
 
   ngOnInit() {
 
@@ -42,6 +43,7 @@ export class TeenTalkPage implements OnInit {
     let sub: any = localStorage.getItem("Subscriber")
     this.commonService.clickTeenTalk(data.RowID).subscribe(res => {
       data.isRead = '1';
+      this.homeStateService.markCardAsSeen(data.RowID.toString());
     })
     /* if (sub == 0 && isFree === "0") {
         this.router.navigate(['teenagers/subscription/start-your-free-trial']);
