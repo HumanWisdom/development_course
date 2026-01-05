@@ -6044,7 +6044,10 @@ input[type=radio] {
   border-radius: 12px;
 
 }
-
+.notic{
+  width: 24px;
+  height: 24px;
+}
 /* .cloning_div
 {
 	display:-webkit-box;

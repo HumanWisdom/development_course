@@ -60,11 +60,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
     this.isSubscriber = SharedService.isSubscriber(); 
     this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 0;
 
-    if (SharedService.ProgramId == ProgramType.Adults) {
-      this.isAdults = true;
-    } else {
-      this.isAdults = false;
-    }
+   
 
   
   }
