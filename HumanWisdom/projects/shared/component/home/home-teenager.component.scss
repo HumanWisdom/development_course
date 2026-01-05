@@ -16,6 +16,11 @@
   border-radius: 10px;
 }
 
+.pointer-events-auto {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
+
 .stk-icon {
     margin-right: 5px;
     width: 8px;
