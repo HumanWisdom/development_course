@@ -40,18 +40,18 @@
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" *ngFor="let item of dailyCheckInList; index as i">
                 <a class="" (click)="dailyCheckInRowClick(item)">
                   <div class="row">
-                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
+                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 text-center" *ngIf="isAdults">
 
                       <img src="{{item.ImgPath }}" class="img-responsive">
                     </div>
-                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
+                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 text-center" *ngIf="!isAdults">
 
                       <img src="{{item.ImgPath.replace('/assets/svgs/v_1_4/emojis/','/teenagers/assets/svgs/emojis/') }}" class="img-responsive">
                     </div>
                   </div>
                   <div class="row mt5px">
-                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_10px fw_400 lh_140p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0 text-center">
+                      <h4 class="mtb0px fs_10px fw_400 lh_140p  " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         {{item.Expression}}
                       </h4>
                     </div>
