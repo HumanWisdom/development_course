@@ -17080,7 +17080,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color:  rgba(0, 0, 0, 0.5)!important;
+  color: #000 !important;
 
 }
 
@@ -19753,13 +19753,13 @@ ngx-circular-player svg {
 }
 
 .nrow_inactive {
-  padding: 20px 10px;
+   padding: 10px 10px; 
   border-bottom: 1px solid #DADADA;
   background: #fff;
 }
 
 .nrow_active {
-  padding: 20px 10px;
+   padding: 10px 10px; 
   border-bottom: 1px solid #DADADA;
   /* background: #F2F2F2; */
 }
