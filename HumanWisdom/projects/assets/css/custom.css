@@ -19753,15 +19753,17 @@ ngx-circular-player svg {
 }
 
 .nrow_inactive {
-   padding: 10px 10px; 
+   padding:  10px; 
   border-bottom: 1px solid #DADADA;
   background: #fff;
+  margin-top: 15px;
 }
 
 .nrow_active {
-   padding: 10px 10px; 
+   padding:  10px; 
   border-bottom: 1px solid #DADADA;
   /* background: #F2F2F2; */
+  margin-top: 15px;
 }
 
 .notification_panel {

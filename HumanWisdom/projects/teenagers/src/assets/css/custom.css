@@ -17135,7 +17135,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 .bootstrap-tagsinput.form-control input::-moz-placeholder {
   color: #777;
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .bootstrap-tagsinput.form-control input:-ms-input-placeholder {
@@ -19724,14 +19724,16 @@ ngx-circular-player svg {
 }
 
 .nrow_inactive {
-  padding: 20px 10px;
+  padding: 10px;
   border-bottom: 1px solid #DADADA;
+  margin-top: 15px;
 }
 
 .nrow_active {
-  padding: 20px 10px;
+  padding:  10px;
   border-bottom: 1px solid #DADADA;
   background: #F2F2F2;
+  /* margin-top: 15px; */
 }
 
 .notification_panel {
@@ -37111,9 +37113,9 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   color: #EE9596;
 }
 
-.fc_000000_0_5 {
+/* .fc_000000_0_5 {
   color: #ffffff80;
-}
+} */
 
 .modal-backdrop.show {
   --bs-backdrop-bg: rgba(0, 0, 0, 0.25);
