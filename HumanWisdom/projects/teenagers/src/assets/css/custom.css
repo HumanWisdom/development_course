@@ -17088,17 +17088,17 @@ input[type="search"].dark::-webkit-search-cancel-button {
   background: #0C2B5F;
   padding: 20px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 140%;
   color: #FFF !important;
 }
 
-.cta1::-webkit-input-placeholder {
+/* .cta1::-webkit-input-placeholder {
   font-size: 15px;
   font-weight: 400;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.30);
-}
+  color: rgba(255, 255, 255, 0.7);
+} */
 
 .pb20px {
   padding-bottom: 20px;
@@ -28819,7 +28819,7 @@ video::-webkit-media-controls-panel {
   border-radius: 100px;
   /* border: 2px solid white; */
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   line-height: 140%;
   font-size: 15px;
   font-weight: 600;
@@ -33446,9 +33446,9 @@ body * {
   padding: 0;
 }
 
-.textarea_fs::placeholder {
+/* .textarea_fs::placeholder {
   color: rgba(255, 255, 255, 0.50) !important;
-}
+} */
 
 .btn_e58d82 {
   height: 50px;
