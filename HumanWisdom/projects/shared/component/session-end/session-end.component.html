@@ -94,13 +94,13 @@
                 <!-- /radial progress bar -->
 
                 <div class="row pt20px pb20px">
-                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                  <div class="col-md-12 col-sm-12 col-xs-12 ">
                     <button (click)="proceed()" type="button" class="btn btn-success mb0 btn_se" data-dismiss="modal">Continue to the next session</button>
                   </div>
                 </div>
 
                 <div class="row pb10px">
-                  <div class="col-md-12 col-sm-12 col-xs-12  text-center ">
+                  <div class="col-md-12 col-sm-12 col-xs-12  ">
                     <h4 class="mtb0px fw_600 fs_15px lh_150p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                       {{name}}
                     </h4>
@@ -110,7 +110,7 @@
 
                  <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt30px">
-                        <h4 class=" fs_15px fw_400 lh_150p  center_flex" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <h4 class=" fs_15px fw_400 lh_150p  " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Complete all the sessions in this module to receive a certificate.
                         </h4>
                       </div>
