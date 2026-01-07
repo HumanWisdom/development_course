@@ -23973,6 +23973,7 @@ ul.dh_ul li:last-child {
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .img_profile_01 {
