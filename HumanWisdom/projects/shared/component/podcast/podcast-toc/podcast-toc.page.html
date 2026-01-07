@@ -35,7 +35,7 @@
         <a id="btnShare" (click)="share()" data-toggle="dropdown" aria-expanded="false">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share_round.svg" alt="" class="p0"
             *ngIf="!isAdults">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share_round.svg" alt="" class="p0"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg" alt="" class="p0"
             *ngIf="isAdults">
         </a>
       </div>
@@ -100,8 +100,8 @@
 
               <!-- overflow buttons -->
               <div class="row mr-20pxi mtb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 odiv " [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
-                  <div class="col-md-5 col-sm-5 col-xs-5 p0 tcenter ">
+                <div class="col-md-12 col-sm-12 col-xs-12 odiv d-flex text-center" [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
+                  <div class="col-5 p0 d-flex justify-content-center">
 
                     <button id="MiniPodcast" type="button" class="btn" style="background-color:#ED7D6F;color:#fff;"
                       (click)="getUserPref('MiniPodcast')">
@@ -117,7 +117,7 @@
                     margin-top: 0px;
                     margin-left: 0px;" >  </span>   -->
 
-                    <div style="border-left: 2px solid #80808066; height: 35px;float: right; width: 20px;"></div>
+                    <div class="ms-2" style="border-left: 2px solid #80808066; height: 35px;  width: 20px;"></div>
 
                   </div>
                   <div class="col-md-7 col-sm-7 col-xs-7">
@@ -143,7 +143,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="title_content" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                  <h4 class="" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     CONTENTS
                   </h4>
                 </div>
