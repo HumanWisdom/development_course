@@ -588,10 +588,10 @@ Here you will find easy to use tools to manage your emotions and mental health, 
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
-              <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+              <h1 class="mtb60px fs_36px fw_600 lh_120p fc_834b66">
 The Founder              </h1>
             </div>      <div class="row center_flex">
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 flex_block">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11 p0 flex_block">
                 <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc mb20px display_d_none" data-aos="fade-up" data-aos-delay="200">
                   <h2 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
                       The Founder                  </h2>
@@ -600,8 +600,8 @@ The Founder              </h1>
                 <!-- <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66 tcenter">
               The Founder
             </h1> -->
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-3 pl0px cpr_a" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp" class="img-responsive" alt="Dr Manoj Krishna">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4 pl0px cpr_a" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp" class="img-responsive" alt="Dr Manoj Krishna" style="width:300px;">
                 </div>
 
         <!-- <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
@@ -619,7 +619,7 @@ The Founder              </h1>
             </div> -->
   
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-9 pr0px tleft ta_lc mt_m24px ml10px" data-aos="fade-up" data-aos-delay="200">
-                 <h3 class="mtb0px fs_21px fw_500 lh_160p fc_000000">
+                 <h3 class="mtb10px fs_24px fw_500 lh_160p fc_000000">
                 Dr Manoj Krishna
               </h3>
                 <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
@@ -639,13 +639,27 @@ The Founder              </h1>
 
        <!-- content -->
       <section>
-        <div class="section-header">
+        <!-- <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+                          <div class=" row center_flex col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+
               <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
 Our Content Experts              </h1>
 
               <h2 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
+We gratefully acknowledge the contributions of the following content experts, and the many teenagers who contributed to the development of the app for Teenagers.              </h2>
+            </div>
+             </div>
+          </div>
+        </div> -->
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-9 p0">
+              <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+Our Content Experts              </h1>
+
+              <h2 class="mtb20px fs_18px fw_400 lh_160p fc_000000">
 We gratefully acknowledge the contributions of the following content experts, and the many teenagers who contributed to the development of the app for Teenagers.              </h2>
             </div>
           </div>
