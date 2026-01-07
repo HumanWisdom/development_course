@@ -525,42 +525,67 @@
     .adsearch {
         position: absolute;
         top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 1001;
-        /* Higher than sticky nav to appear above it */
-        margin-top: 0;
+        left: -20px; /* Counteract parent padding to cover full width */
+        right: -20px;
+        z-index: 2000; /* Ensure it stays on top */
+        margin-top: 20px;
     }
 
     .autocomplete-list {
-        max-height: 300px;
+        height: 96vh; /* Adjusted to be slightly more precise */
+        max-height: none; /* Remove height limit */
         overflow-y: auto;
-        border-radius: 0 0 20px 20px;
-        background-color: #0C2B5F !important;
+        overscroll-behavior: contain; /* Prevents scroll leakage and accidental dropdown closure */
+        border-radius: 0; /* Removed curved background for the first option as requested */
+        box-shadow: none !important; /* Remove shadow/border appearance */
         margin: 0;
         padding: 0;
-        background-color: white !important;
+        padding-bottom: 300px; /* Slightly increased padding to further improve scroll buffer */
+        background-color: white !important; /* White background as requested */
+        border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
     }
 
     .adsearch_ul {
         list-style: none;
         padding: 0;
         margin: 0;
+        border: none !important;
     }
 
     .is-search {
+        position: relative;
         cursor: pointer;
-        padding: 12px 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 20px; /* Maintained layout consistency */
+        border: none !important; /* Remove Bootstrap default borders */
+        margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
         transition: background-color 0.2s ease;
-        background-color: #ffffff !important;
+        background-color: white !important; /* White background as requested */
+        color: rgba(0, 0, 0, 0.75); /* Same text color as adults */
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.1) !important; /* Slightly more visible separator */
+            z-index: 2; /* Ensure it stays above siblings */
+            display: block;
+        }
     }
 
     .is-search:hover {
-        background-color: rgba(0, 0, 0, 0.08) !important;
+        background-color: #EE9596 !important; /* Hover background color as requested */
     }
 
-    .is-search:last-child {
-        border-bottom: none;
+    .is-search:last-child::after {
+        display: none !important; /* Correctly hide the after-item separator for the last element */
+    }
+
+    .home-container.search-active {
+        background-color: white !important;
     }
 }

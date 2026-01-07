@@ -9,6 +9,7 @@ import { ShareService } from 'ngx-sharebuttons';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { Platform } from '@angular/cdk/platform';
+import { ProgramType } from '../../../../../shared/models/program-model';
 
 import {
   trigger,
@@ -113,6 +114,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your\u00a0best\u00a0life';
+  showSearchBox: boolean = true;
+  isAdults: boolean = false;
 
 
   //static progress mapping
@@ -187,6 +190,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     this.getUserPreference();
     this.isSubscribe = SharedService.isSubscriber();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
     let closetour = localStorage.getItem('closeTour');
 
     // if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
@@ -304,7 +312,7 @@ toggleAccordion() {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
     }
   }
@@ -357,92 +365,12 @@ toggleAccordion() {
      }) */
   }
 
-  getinp(event) {
-    this.logeventservice.logEvent("search_"+ event)
-    
-    let url=""
-    switch(event.toLowerCase())
-    {
-      case "events":{
-          url = `/adults/events`
-          break;
-      }
-      case "blogs":{
-        url = `/adults/blogs`
-        break;
-      }
-      case "life stories":
-      case "stories":{
-        url = `/adults/wisdom-stories`
-        break;
-      }
-      case "podcast":{
-        url = `/adults/podcast`
-        break;
-      }
-      case "audio meditations":{
-        url = `/adults/audio-meditation`
-        break;
-      }
-      case ("short videos"):
-      case ("videos"):
-        {
-        url = `/adults/wisdom-shorts`
-        break;
-      }
-     case "journal":{
-        url = `/adults/journal`
-        break;
-      }
-      case "exercises":
-      case "awareness exercises":
-        {
-        url = `/adults/wisdom-exercise`
-        break;
-      }
-      case "forum":{
-        url = `/adults/forum`
-        break;
-      }
-      case "develop a calm mind":{
-        url = `/adults/pathway/develop-a-calm-mind`
-        break;
-      }
-      case "understand yourself":{
-        url = `/adults/pathway/understand-yourself`
-        break;
-      }
-      case "understand how your mind works":{
-        url = `/adults/pathway/understand-how-your-mind-works`
-        break;
-      }
-      case "manage your emotions":{
-        url = `/adults/pathway/manage-your-emotions`
-        break;
-      }
-      case "succeed in life":{
-        url = `/adults/pathway/live-your-best-life`
-        break;
-      }
-      case "mental health":{
-        url = `/adults/curated/overcome-stress-anxiety`
-        break;
-      }
-      default: {
-      //  if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
-      //  let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
-      //   url = `${m.ModuleUrl}`;
-      //    break;
-      // }
-      let searchInpt = (' ' + this.searchinp).slice(1);
-      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
-       url = `/adults/site-search/${searchInpt}`
-        break;
-      }
-
+  getinp(searchTerm: string): void {
+    if (searchTerm && searchTerm.trim() !== '') {
+      const prefix = SharedService.getprogramName();
+      const url = `/${prefix}/site-search/${searchTerm}`;
+      this.route.navigate([url]);
     }
-
-    this.route.navigate([url])
   }
 
   searchEvent(module) {
