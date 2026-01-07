@@ -66,11 +66,11 @@
 }
 
 /* reset */
-* 
+/* * 
 {
     // padding: 0;
     // margin: 0;
-}
+} */
 
 nav 
 {
@@ -264,7 +264,7 @@ li:hover:before {
     padding:0px 16px 10px 0px !important; 
   }
 .odiv_wfgi {
-  padding: 0 8px 10px 20px;
+    padding: 0 8px 10px 20px;
 }
 .panel-heading {
   padding-bottom: 30px;
@@ -323,4 +323,96 @@ li:hover:before {
 
 .odiv_pathway {
     padding: 0 10px 10px 20px;
+}
+
+/* Search row for background toggle */
+.search-row {
+  transition: background-color 0.3s ease;
+  
+  &.search-active {
+    background-color: white !important;
+  }
+}
+
+/* Search box container with show/hide animation */
+.search-box-container {
+  transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+  overflow: visible;
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 10px;
+  position: relative; /* Ensure relative positioning for absolute child */
+}
+
+/* Search dropdown styling */
+.prelative {
+  position: relative;
+}
+
+.adsearch {
+  position: absolute;
+  top: 100%;
+  left: -20px; /* Counteract parent padding to cover full width */
+  right: -20px;
+  z-index: 2000; /* Ensure it stays on top */
+}
+
+.autocomplete-list {
+  max-height: 90vh; /* Maximum height before scrolling */
+  width: 100%;
+  height: auto; /* Let it grow based on content */
+  overflow-y: auto;
+  overscroll-behavior: contain; /* Prevents scroll leakage and accidental dropdown closure */
+  border-radius: 0; /* Removed curved background for the first option as requested */
+  box-shadow: none !important; /* Remove shadow/border appearance */
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px; /* Small padding at bottom */
+  background-color: #FFFFFF !important; /* Theme background color */
+  border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
+}
+
+.adsearch_ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none !important;
+}
+
+.is-search {
+  position: relative;
+  cursor: pointer;
+  padding: 10px 20px; /* Maintained user's preferred padding */
+  border: none !important; /* Remove Bootstrap default borders */
+  margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
+  transition: background-color 0.2s ease;
+  background-color: #FFFFFF !important; /* Theme background color */
+  color: rgba(0, 0, 0, 0.75);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1) !important; /* Slightly more visible separator */
+    z-index: 2; /* Ensure it stays above siblings */
+    display: block;
+  }
+}
+
+.is-search:hover {
+  background-color: #EE9596 !important;
+}
+
+.is-search:last-child::after {
+  display: none !important; /* Correctly hide the after-item separator for the last element */
+}
+
+.pointer-events-auto {
+  pointer-events: all !important;
+  cursor: pointer !important;
 }
