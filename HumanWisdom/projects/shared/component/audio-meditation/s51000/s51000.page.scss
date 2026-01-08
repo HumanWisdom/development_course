@@ -4,9 +4,18 @@
 .ws-lock-icon {
     top: 40px !important;
 }
-.toc_adiv_02 a > .row {
-    padding: 10px !important;
+ .toc_adiv_02 a > .row {
+        padding-left: 0px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
+@media (max-width: 414px) {
+.toc_adiv_02 a > .row {
+      padding-left: 5px;
+  }
+}
+/*
 .session_img_play{
   right: 18px !important;
-}
+} */
