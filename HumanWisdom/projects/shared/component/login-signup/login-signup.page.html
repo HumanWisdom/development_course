@@ -200,15 +200,15 @@
                     data-action='submit'>
                          Submit
                    </button> -->
-                    <div class="row middle">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-1 text-center ">
                           <label for="privacy_checkbox" class="chkb_post_anonymously ">
                             <input id="privacy_checkbox"formControlName="privacychk" type="checkbox">
                             <h4 class=" fs_12px fw_500 lh_130p "  [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
                             </h4>
                           </label>
                       </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem">
+                      <div class="col-11 p0">
                         <h4 class=" fs_12px fw_500 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">
                           <span>I agree to HappierMe's 
                             <a  class="fw_500 "  [ngClass]="isAdults?'fc_000000_i':'fc_ffffff'"   (click)="routetoUrl('/help-support/terms-conditions')"
@@ -219,15 +219,15 @@
                     </div>
                     </div>
 
-                    <div class="row middle  ">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 ">
+                    <div class="row d-flex justify-content-center  ">
+                      <div class="col-1  text-center ">
                           <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
                             <input id="marketing_checkbox" type="checkbox">
                             <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'" >
                             </h4>
                             </label>
                       </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 pl0_3rem ">
+                      <div class="col-11 p0 ">
                           <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">
                             <span>Receive wellness tips and updates from HappierMe.</span>
                           </h4>
