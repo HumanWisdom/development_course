@@ -344,8 +344,7 @@
     .search-box-container {
         transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
         overflow: visible;
-        /* Changed from hidden to allow sticky to work */
-        max-height: 200px;
+        /* Removed max-height to prevent clipping of absolute children in complex fixed layouts */
         opacity: 1;
         margin-top: 10px;
     }
@@ -532,17 +531,32 @@
     }
 
     .autocomplete-list {
-        height: 96vh; /* Adjusted to be slightly more precise */
-        max-height: none; /* Remove height limit */
-        overflow-y: auto;
-        overscroll-behavior: contain; /* Prevents scroll leakage and accidental dropdown closure */
-        border-radius: 0; /* Removed curved background for the first option as requested */
-        box-shadow: none !important; /* Remove shadow/border appearance */
+        max-height: calc(100vh - 280px); /* Significantly reduced to ensure it fits above the footer on most devices */
+        height: auto;
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+        border-radius: 0;
+        box-shadow: none !important;
         margin: 0;
         padding: 0;
-        padding-bottom: 300px; /* Slightly increased padding to further improve scroll buffer */
-        background-color: white !important; /* White background as requested */
+        padding-bottom: 150px; /* Increased buffer to ensure items can scroll well above the footer */
+        background-color: #4267A5 !important; /* Blue background to match personalised search */
         border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
+
+        /* Scrollbar styling */
+        scrollbar-width: thin;
+        scrollbar-color: #778899 #4267A5; /* thumb track */
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #4267A5;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #778899;
+            border-radius: 20px;
+        }
     }
 
     .adsearch_ul {
@@ -559,8 +573,8 @@
         border: none !important; /* Remove Bootstrap default borders */
         margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
         transition: background-color 0.2s ease;
-        background-color: white !important; /* White background as requested */
-        color: rgba(0, 0, 0, 0.75); /* Same text color as adults */
+        background-color: #4267A5 !important; /* Blue background to match personalised search */
+        color: rgba(235, 235, 235, 0.75); /* Whitish text color to match personalised search */
         font-family: 'Poppins', sans-serif;
         font-size: 15px;
 
@@ -586,6 +600,6 @@
     }
 
     .home-container.search-active {
-        background-color: white !important;
+        background-color: #4267A5 !important;
     }
 }
