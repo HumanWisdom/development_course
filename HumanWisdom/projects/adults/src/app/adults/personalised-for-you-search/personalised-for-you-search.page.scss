@@ -217,7 +217,6 @@ nav {
   overflow: hidden;
 }
 
-/* Search dropdown styling */
 .prelative {
   position: relative;
 }
@@ -225,26 +224,39 @@ nav {
 .adsearch {
   position: absolute;
   top: 100%;
-  left: -20px; /* Counteract parent padding to cover full width */
+  left: -20px; 
   right: -20px;
-  z-index: 97; /* Ensure it stays on top */
+  z-index: 97; 
   // margin: 0 !important;
   margin-top: 20px;
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 160px); /* Maximum height before scrolling, adjusted for footer */
+  max-height: calc(100vh - 160px); 
   width: 100%;
-  height: auto; /* Let it grow based on content */
+  height: auto; 
   overflow-y: auto;
-  overscroll-behavior: contain; /* Prevents scroll leakage and accidental dropdown closure */
-  border-radius: 0; /* Removed curved background for the first option as requested */
-  box-shadow: none !important; /* Remove shadow/border appearance */
+  overscroll-behavior: contain;
+  border-radius: 0;
+  box-shadow: none !important; 
   margin: 0;
   padding: 0;
-  padding-bottom: 20px; /* Small padding at bottom */
-  background-color: #FFF7E6 !important; /* Theme background color */
-  border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
+  padding-bottom: 20px;
+  background-color: #FFF7E6 !important; 
+  border: none !important; 
+  scrollbar-width: thin;
+  scrollbar-color: #778899 #FFF7E6; 
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #FFF7E6;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #778899;
+    border-radius: 20px;
+  }
 }
 
 .adsearch_ul {
@@ -257,11 +269,11 @@ nav {
 .is-search {
   position: relative;
   cursor: pointer;
-  padding: 10px 20px; /* Maintained user's preferred padding */
-  border: none !important; /* Remove Bootstrap default borders */
-  margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
+  padding: 10px 20px; 
+  border: none !important; 
+  margin-bottom: 0 !important; 
   transition: background-color 0.2s ease;
-  background-color: #FFF7E6 !important; /* Theme background color */
+  background-color: #FFF7E6 !important; 
   color: rgba(0, 0, 0, 0.75);
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
@@ -284,7 +296,7 @@ nav {
 }
 
 .is-search:last-child::after {
-  display: none !important; /* Correctly hide the after-item separator for the last element */
+  display: none !important;
 }
 .pdr20px {
   padding-right: 20px !important;
