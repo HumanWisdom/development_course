@@ -52,142 +52,140 @@
             <!-- daily practice -->
             <!-- accordion -->
             <div class="row">
-              <div class="col-12 pr0px pdl20px pdr20px">
-                <div class="accordion_row bg_profile_t">
-                  <div class="col-md-12 col-sm-12 col-xs-12 mt20px p0">
-                    <div class="panel-group dpanelgroup tour_dp" id="accordion">
-                      <div class="panel panel-default dpanel dpanel_01">
-                        <div class="panel-heading">
-                          <h4 class="panel-title dpaneltitle">
-                            <div aria-expanded="true">
-                              <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                    <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
-                                      My daily practice
-                                    </h2>
-                                  </div>
-                                  <div class="col-md-4 col-sm-4 col-xs-4 p0">
-                                    <a>
-
-                                      <h2 class="fw_500 fs_12px lh_140p fc_ffffff_0_5 mtb0px tright">
-                                        Streak:
-                                        <span class="fw_600">
-                                          {{streak}}
-                                        </span>
-                                        days
-                                      </h2>
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </h4>
-                        </div>
-                        <div id="ca_mdp">
-                          <div class="panel-body">
-
+              <div class="col-12 p0 pdl20px pdr20px accordion_row bg_profile_t">
+                <div class="col-md-12 col-sm-12 col-xs-12 mt20px p0">
+                  <div class="panel-group dpanelgroup tour_dp" id="accordion">
+                    <div class="panel panel-default dpanel dpanel_01">
+                      <div class="panel-heading">
+                        <h4 class="panel-title dpaneltitle">
+                          <div aria-expanded="true">
                             <div class="row">
-                              <div class="odiv odiv_mdp pl0px">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                    My daily practice
+                                  </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                  <a>
 
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-                                  <a (click)="routeDailyCheckIn()">
-                                    <img
-                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/daily_checkin.svg"
-                                      alt="" class="crimg">
-
-                                    <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                      Daily <br /> check-in
-                                    </h4>
+                                    <h2 class="fw_500 fs_12px lh_140p fc_ffffff_0_5 mtb0px tright">
+                                      Streak:
+                                      <span class="fw_600">
+                                        {{streak}}
+                                      </span>
+                                      days
+                                    </h2>
                                   </a>
                                 </div>
-
-                                <div class="col-md-1 col-sm-1 col-xs-1 w0p">
-                                  <hr class="vhr_03">
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-                                  <a
-                                    (click)="DashboardLogevent('/teenagers/daily-practise','0', 'click_daily_inspiration')">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_inspiration_v3_teens.svg"
-                                      alt="Testimonials" class="crimg">
-                                    <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                      Daily
-                                      <br>
-                                      inspiration
-                                    </h4>
-                                  </a>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-                                  <a
-                                    (click)="DashboardLogevent('/teenagers/daily-practise', '1', 'click_breathing_exercise')">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3_teens.svg"
-                                      alt="Wisdom Stories" class="crimg">
-                                    <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                      Breathing <br /> exercise
-                                    </h4>
-                                  </a>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-                                  <a
-                                    (click)="DashboardLogevent('/teenagers/daily-practise', '2', 'click_question_of_the_day')">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3_teens.svg"
-                                      alt="Journal" class="crimg">
-                                    <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                      Question
-                                      <br />
-                                      of the day
-                                    </h4>
-                                  </a>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-                                  <a (click)="DashboardLogevent('/teenagers/daily-practise', '3','click_quote_of_day')">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3_teens.svg"
-                                      alt="Testimonials" class="crimg">
-                                    <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                      Quote <br />
-                                      of the day
-                                    </h4>
-                                  </a>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-                                  <a
-                                    (click)="DashboardLogevent('/teenagers/daily-practise', '4', 'click_daily_meditation')">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3_teens.svg"
-                                      alt="Forum" class="crimg">
-                                    <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                      Daily <br /> meditation
-                                    </h4>
-                                  </a>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-                                  <a
-                                    (click)="DashboardLogevent('/teenagers/daily-practise', '5', 'click_daily_challenge')">
-                                    <img
-                                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3_teens.svg"
-                                      alt="Forum" class="crimg">
-                                    <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
-                                      Daily
-                                      <br />
-                                      challenge
-                                    </h4>
-                                  </a>
-                                </div>
-
                               </div>
                             </div>
-
                           </div>
+                        </h4>
+                      </div>
+                      <div id="ca_mdp">
+                        <div class="panel-body">
+
+                          <div class="row">
+                            <div class="odiv odiv_mdp pl0px">
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a (click)="routeDailyCheckIn()">
+                                  <img
+                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/daily_checkin.svg"
+                                    alt="" class="crimg">
+
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                    Daily <br /> check-in
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-1 col-sm-1 col-xs-1 w0p">
+                                <hr class="vhr_03">
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="DashboardLogevent('/teenagers/daily-practise','0', 'click_daily_inspiration')">
+                                  <img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_inspiration_v3_teens.svg"
+                                    alt="Testimonials" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                    Daily
+                                    <br>
+                                    inspiration
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="DashboardLogevent('/teenagers/daily-practise', '1', 'click_breathing_exercise')">
+                                  <img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3_teens.svg"
+                                    alt="Wisdom Stories" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                    Breathing <br /> exercise
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="DashboardLogevent('/teenagers/daily-practise', '2', 'click_question_of_the_day')">
+                                  <img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_journal_v3_teens.svg"
+                                    alt="Journal" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                    Question
+                                    <br />
+                                    of the day
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a (click)="DashboardLogevent('/teenagers/daily-practise', '3','click_quote_of_day')">
+                                  <img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_quotation_v3_teens.svg"
+                                    alt="Testimonials" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                    Quote <br />
+                                    of the day
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="DashboardLogevent('/teenagers/daily-practise', '4', 'click_daily_meditation')">
+                                  <img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3_teens.svg"
+                                    alt="Forum" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                    Daily <br /> meditation
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="DashboardLogevent('/teenagers/daily-practise', '5', 'click_daily_challenge')">
+                                  <img
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_challenge_v3_teens.svg"
+                                    alt="Forum" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_ffffff mdpd_title">
+                                    Daily
+                                    <br />
+                                    challenge
+                                  </h4>
+                                </a>
+                              </div>
+
+                            </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>

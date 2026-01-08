@@ -354,11 +354,11 @@ li:hover:before {
   top: 100%;
   left: -20px; /* Counteract parent padding to cover full width */
   right: -20px;
-  z-index: 2000; /* Ensure it stays on top */
+  z-index: 97; /* Ensure it stays on top */
 }
 
 .autocomplete-list {
-  max-height: 90vh; /* Maximum height before scrolling */
+  max-height: calc(100vh - 160px); /* Maximum height before scrolling, adjusted for footer */
   width: 100%;
   height: auto; /* Let it grow based on content */
   overflow-y: auto;
@@ -415,4 +415,7 @@ li:hover:before {
 .pointer-events-auto {
   pointer-events: all !important;
   cursor: pointer !important;
+}
+.dpanel .panel-body {
+    padding: 0 !important;
 }
