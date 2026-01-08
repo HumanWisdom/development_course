@@ -74,18 +74,18 @@
                <div class="toc_adiv_02">
                 <!-- audio row -->
                 <a *ngFor="let data of filteredData; let i=index" (click)="getClickEvent(data)">
-                  <div class="row p10px">
+                  <div class="row ">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
                         <div class="prelative">
-                          <div class="row">
+                          <div class="row"> <div class="text-center"> 
                               <img [src]="data['ImageUrl']" class="p0 session_imgnew img-responsive img_podcast_01">
                                <img class="session_img_play" [src]="
                                 isAdults
                                   ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
                                   : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_play.svg'
-                              " alt="Overlay icon" />
+                              " alt="Overlay icon" /></div>
                             </div>
                         </div>
                       </div>
