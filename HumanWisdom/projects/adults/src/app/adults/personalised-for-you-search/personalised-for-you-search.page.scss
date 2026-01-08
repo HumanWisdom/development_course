@@ -227,20 +227,22 @@ nav {
   top: 100%;
   left: -20px; /* Counteract parent padding to cover full width */
   right: -20px;
-  z-index: 2000; /* Ensure it stays on top */
-  margin-top: 50px;
+  z-index: 97; /* Ensure it stays on top */
+  // margin: 0 !important;
+  margin-top: 20px;
 }
 
 .autocomplete-list {
-  height: 96vh; /* Adjusted to be slightly more precise */
-  max-height: none; /* Remove height limit */
+  max-height: calc(100vh - 160px); /* Maximum height before scrolling, adjusted for footer */
+  width: 100%;
+  height: auto; /* Let it grow based on content */
   overflow-y: auto;
   overscroll-behavior: contain; /* Prevents scroll leakage and accidental dropdown closure */
   border-radius: 0; /* Removed curved background for the first option as requested */
   box-shadow: none !important; /* Remove shadow/border appearance */
   margin: 0;
   padding: 0;
-  padding-bottom: 300px; /* Slightly increased padding to further improve scroll buffer */
+  padding-bottom: 20px; /* Small padding at bottom */
   background-color: #FFF7E6 !important; /* Theme background color */
   border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
 }
@@ -271,8 +273,8 @@ nav {
     left: 20px;
     right: 20px;
     height: 1px;
-    background-color: rgba(0, 0, 0, 0.1) !important; /* Slightly more visible separator */
-    z-index: 2; /* Ensure it stays above siblings */
+    background-color: #0000001a !important;
+    z-index: 2;
     display: block;
   }
 }
@@ -290,6 +292,11 @@ nav {
 
 .pdl20px {
   padding-left: 20px !important;
+}
+
+.plr20px {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 
 .circular-player-container {
@@ -365,4 +372,7 @@ nav {
 }
 .panel-heading {
   padding-bottom: 30px;
+}
+.dpanel .panel-body {
+    padding: 0 !important;
 }
