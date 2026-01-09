@@ -341,7 +341,7 @@ li:hover:before {
   max-height: 200px;
   opacity: 1;
   margin-top: 10px;
-  position: relative; /* Ensure relative positioning for absolute child */
+  position: relative;
 }
 
 /* Search dropdown styling */
@@ -352,28 +352,29 @@ li:hover:before {
 .adsearch {
   position: absolute;
   top: 100%;
-  left: -20px; /* Counteract parent padding to cover full width */
+  left: -20px;
   right: -20px;
-  z-index: 97; /* Ensure it stays on top */
+  z-index: 97;
+  margin-top: 20px;
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 160px); /* Maximum height before scrolling, adjusted for footer */
+  max-height: calc(100vh - 250px); 
   width: 100%;
-  height: auto; /* Let it grow based on content */
+  height: auto;
   overflow-y: auto;
-  overscroll-behavior: contain; /* Prevents scroll leakage and accidental dropdown closure */
-  border-radius: 0; /* Removed curved background for the first option as requested */
-  box-shadow: none !important; /* Remove shadow/border appearance */
+  overscroll-behavior: contain;
+  border-radius: 0;
+  box-shadow: none !important;
   margin: 0;
   padding: 0;
-  padding-bottom: 20px; /* Small padding at bottom */
-  background-color: #4267A5 !important; /* Theme background color */
-  border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
+  padding-bottom: 20px;
+  background-color: #4267A5 !important;
+  border: none !important;
 
   /* Scrollbar styling */
   scrollbar-width: thin;
-  scrollbar-color: #778899 #4267A5; /* thumb track */
+  scrollbar-color: #778899 #4267A5;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -397,11 +398,11 @@ li:hover:before {
 .is-search {
   position: relative;
   cursor: pointer;
-  padding: 10px 20px; /* Maintained user's preferred padding */
-  border: none !important; /* Remove Bootstrap default borders */
-  margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
+  padding: 10px 20px;
+  border: none !important;
+  margin-bottom: 0 !important;
   transition: background-color 0.2s ease;
-  background-color: #4267A5 !important; /* Theme background color */
+  background-color: #4267A5 !important;
   color: rgba(235, 235, 235, 0.75);
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
@@ -413,8 +414,8 @@ li:hover:before {
     left: 20px;
     right: 20px;
     height: 1px;
-    background-color: rgba(0, 0, 0, 0.1) !important; /* Slightly more visible separator */
-    z-index: 2; /* Ensure it stays above siblings */
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    z-index: 2;
     display: block;
   }
 }
@@ -423,8 +424,12 @@ li:hover:before {
   background-color: #EE9596 !important;
 }
 
-.is-search:last-child::after {
-  display: none !important; /* Correctly hide the after-item separator for the last element */
+.is-search:last-child {
+  margin-bottom: 10px !important;
+
+  &::after {
+    display: block !important;
+  }
 }
 
 .pointer-events-auto {

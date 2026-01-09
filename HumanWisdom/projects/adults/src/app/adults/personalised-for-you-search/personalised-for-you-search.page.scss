@@ -232,7 +232,7 @@ nav {
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 160px); 
+  max-height: calc(100vh - 250px); 
   width: 100%;
   height: auto; 
   overflow-y: auto;
@@ -295,8 +295,12 @@ nav {
   background-color: #FFD889 !important;
 }
 
-.is-search:last-child::after {
-  display: none !important;
+.is-search:last-child {
+  margin-bottom: 10px !important;
+
+  &::after {
+    display: block !important;
+  }
 }
 .pdr20px {
   padding-right: 20px !important;

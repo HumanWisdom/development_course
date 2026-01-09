@@ -710,6 +710,10 @@ background: #FFF7E6;/* Ensure proper stacking context */
   background-color: #FFD889 !important;
 }
 
-.is-search:last-child::after {
-  display: none !important; 
+.is-search:last-child {
+  margin-bottom: 10px !important;
+
+  &::after {
+    display: block !important;
+  }
 }

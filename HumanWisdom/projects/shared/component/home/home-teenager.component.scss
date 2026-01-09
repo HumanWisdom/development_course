@@ -595,10 +595,13 @@
         background-color: #EE9596 !important; /* Hover background color as requested */
     }
 
-    .is-search:last-child::after {
-        display: none !important; /* Correctly hide the after-item separator for the last element */
-    }
+    .is-search:last-child {
+    margin-bottom: 15px !important;
 
+    &::after {
+        display: block !important;
+    }
+    }
     .home-container.search-active {
         background-color: #4267A5 !important;
     }
