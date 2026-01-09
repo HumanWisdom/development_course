@@ -35042,6 +35042,10 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   padding: 20px;
   text-align: center;
 }
+.select_box:hover {
+   background: #FFD889 !important;
+  color: #000000 !important;
+}
 
 .mdp_oli_traywell {
   box-shadow: unset;
