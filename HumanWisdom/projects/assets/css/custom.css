@@ -295,6 +295,7 @@ body .container.body .right_col {
   .graph {
     zoom: 85%;
     height: inherit;
+    object-fit: cover;
   }
 }
 
@@ -36959,9 +36960,9 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .toc_adiv_03 .play {
   position: absolute;
   margin: auto;
-  right: 3px;
+  right: 5%;
   margin: 0 auto;
-  bottom: 5px;
+  bottom: 5%;
   height: 24px;
   width: 24px;
 }
