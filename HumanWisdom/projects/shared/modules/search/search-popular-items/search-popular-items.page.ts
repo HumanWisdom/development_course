@@ -459,9 +459,9 @@ export class SearchPopularItemsPage implements OnInit {
     let title = encodeURIComponent((data['Title'] || '').replaceAll(' ', '-'));
     const prgType = SharedService.ProgramId;
     if (prgType == 9) {
-      this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio']);
+      this.router.navigate(['adults/guided-meditation/audiopage/', url, data['RowID'], (data['isFree']==1)? "T":"F", title]);
     } else {
-      this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio']);
+      this.router.navigate(['teenagers/guided-meditation/audiopage/', url, data['RowID'], (data['isFree']==1)? "T":"F", title]);
     }
   }
 
