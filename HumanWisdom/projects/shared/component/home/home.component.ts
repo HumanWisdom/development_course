@@ -1501,6 +1501,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
       }
+      // Toggle body scroll based on search result visibility
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
+      }
     }
   }
 
@@ -1518,15 +1524,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
       );
     }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
+    }
   }
 
   /**
    * Handle focus out event - hide dropdown after delay
    */
   onFocusOutEvent(): void {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
+    // Removed auto-close to keep screen open until explicit close functionality is used
   }
 
   /**
@@ -1546,6 +1553,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   searchEvent(moduleName: string): void {
     this.searchinp = moduleName;
     this.searchResult = [];
+    this.toggleBodyScroll(false);
     this.getinp(moduleName);
   }
 
@@ -1555,6 +1563,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   clearSearch(): void {
     this.searchinp = '';
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   /**
