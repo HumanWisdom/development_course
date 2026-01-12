@@ -526,13 +526,16 @@
         top: 100%;
         left: -20px; /* Counteract parent padding to cover full width */
         right: -20px;
-        z-index: 2000; /* Ensure it stays on top */
-        margin-top: 20px;
+        z-index: 2005; /* Ensure it stays on top */
+        margin-top: 0;
+        padding-top: 20px;
+        height: 100vh;
+        background-color: #183C79;
     }
 
     .autocomplete-list {
-        max-height: calc(100vh - 280px); /* Significantly reduced to ensure it fits above the footer on most devices */
-        height: auto;
+        max-height: calc(100vh - 230px) !important;
+        height: 100vh !important;
         overflow-y: auto !important;
         overscroll-behavior: contain;
         border-radius: 0;
@@ -540,18 +543,18 @@
         margin: 0;
         padding: 0;
         padding-bottom: 150px; /* Increased buffer to ensure items can scroll well above the footer */
-        background-color: #4267A5 !important; /* Blue background to match personalised search */
+        background-color: #183C79 !important; /* Blue background to match personalised search */
         border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
 
         /* Scrollbar styling */
         scrollbar-width: thin;
-        scrollbar-color: #778899 #4267A5; /* thumb track */
+        scrollbar-color: #778899 #183C79; /* thumb track */
 
         &::-webkit-scrollbar {
             width: 6px;
         }
         &::-webkit-scrollbar-track {
-            background: #4267A5;
+            background: #183C79;
         }
         &::-webkit-scrollbar-thumb {
             background: #778899;
@@ -573,7 +576,7 @@
         border: none !important; /* Remove Bootstrap default borders */
         margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
         transition: background-color 0.2s ease;
-        background-color: #4267A5 !important; /* Blue background to match personalised search */
+        background-color: #183C79 !important; /* Blue background to match personalised search */
         color: rgba(235, 235, 235, 0.75); /* Whitish text color to match personalised search */
         font-family: 'Poppins', sans-serif;
         font-size: 15px;
@@ -592,14 +595,36 @@
     }
 
     .is-search:hover {
-        background-color: #EE9596 !important; /* Hover background color as requested */
+        background-color: #0C2B5F!important;
     }
 
-    .is-search:last-child::after {
-        display: none !important; /* Correctly hide the after-item separator for the last element */
+    .is-search:last-child {
+        margin-bottom: 15px !important;
+
+        &::after {
+            display: block !important;
+        }
+    }
+    .adsearch_ul .list-group-item:last-child {
+        border-radius: 0 !important;
     }
 
     .home-container.search-active {
-        background-color: #4267A5 !important;
+        background-color: #183C79 !important;
+        .sticky-nav-container {
+            display: none !important;
+        }
+        .header-blk {
+            display: none !important;
+        }
+        .col-12 {
+            width: 100vw;
+        }
+        .bg_nonei {
+            display: none !important;
+        }
+        .home-content {
+            padding-top: 40px !important;
+        }
     }
 }
