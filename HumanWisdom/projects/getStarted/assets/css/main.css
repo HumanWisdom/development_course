@@ -57,11 +57,14 @@ a {
 {
   color: #834B66 !important;
 }
-
+h4:hover{
+  color:green;
+  text-decoration: underline;
+}
 
 a:hover {
   color: #834B66;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 h1,
