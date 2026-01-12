@@ -330,7 +330,7 @@ li:hover:before {
   transition: background-color 0.3s ease;
   
   &.search-active {
-    background-color: #4267A5 !important;
+    background-color: #183C79 !important;
   }
 }
 
@@ -355,32 +355,35 @@ li:hover:before {
   left: -20px;
   right: -20px;
   z-index: 97;
-  margin-top: 20px;
+  margin-top: 0;
+  padding-top: 20px;
+  height: 100vh;
+  background-color: #183C79;
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 250px); 
+  max-height: calc(100vh - 250px) !important;
   width: 100%;
-  height: auto;
-  overflow-y: auto;
+  height: 100vh !important;
+  overflow-y: auto !important;
   overscroll-behavior: contain;
   border-radius: 0;
   box-shadow: none !important;
   margin: 0;
   padding: 0;
-  padding-bottom: 20px;
-  background-color: #4267A5 !important;
+  padding-bottom: 150px;
+  background-color: #183C79 !important;
   border: none !important;
 
   /* Scrollbar styling */
   scrollbar-width: thin;
-  scrollbar-color: #778899 #4267A5;
+  scrollbar-color: #778899 #183C79;
 
   &::-webkit-scrollbar {
     width: 6px;
   }
   &::-webkit-scrollbar-track {
-    background: #4267A5;
+    background: #183C79;
   }
   &::-webkit-scrollbar-thumb {
     background: #778899;
@@ -402,8 +405,8 @@ li:hover:before {
   border: none !important;
   margin-bottom: 0 !important;
   transition: background-color 0.2s ease;
-  background-color: #4267A5 !important;
-  color: rgba(235, 235, 235, 0.75);
+  background-color: #183C79 !important;
+  color: #fff;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
 
@@ -414,14 +417,14 @@ li:hover:before {
     left: 20px;
     right: 20px;
     height: 1px;
-    background-color: rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
     z-index: 2;
     display: block;
   }
 }
 
 .is-search:hover {
-  background-color: #EE9596 !important;
+  background-color: #0C2B5F !important
 }
 
 .is-search:last-child {
@@ -430,6 +433,10 @@ li:hover:before {
   &::after {
     display: block !important;
   }
+}
+
+.adsearch_ul .list-group-item:last-child{
+  border-radius: 0 !important;
 }
 
 .pointer-events-auto {

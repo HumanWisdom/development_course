@@ -262,18 +262,28 @@ routeDailyPractice(id: number): void {
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || ''));
     }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
+    }
   }
 
   onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
+    // Removed auto-close to keep screen open until explicit close
   }
 
   
   clearSearch() {
     this.searchinp = "";
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   getModuleList(isLoad?) {
@@ -300,6 +310,11 @@ routeDailyPractice(id: number): void {
         this.searchResult = this.moduleList;
       } else {
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
+      }
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
       }
     }
   }
@@ -404,6 +419,7 @@ routeDailyPractice(id: number): void {
 
     this.searchinp = module;
     this.searchResult = [];
+    this.toggleBodyScroll(false);
     this.getinp(module);
   }
 

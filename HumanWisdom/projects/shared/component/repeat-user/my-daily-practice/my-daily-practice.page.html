@@ -10,7 +10,7 @@
 
         <div class="x_panel p0">
           <div class="x_content p0">
-            <div class="row  mt50px mb5px">
+            <div class="row  mt50px mb5px" *ngIf="searchResult.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                 <h4 class="mtb0px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Welcome back, {{userName}}!
@@ -19,7 +19,7 @@
               </div>
             </div>
 
-            <div class="row mb20px mt10px">
+            <div class="row mb20px mt10px" *ngIf="searchResult.length === 0">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="mtb0px fw_400 fs_15px lh_140p" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                   Here’s your daily dose of happiness :)
