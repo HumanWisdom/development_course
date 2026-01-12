@@ -468,8 +468,9 @@
                     <ng-container *ngTemplateOutlet="renderSection; context: { $implicit: section }"></ng-container>
 
                     <!-- ====== FREE-TRIAL BANNER – same spacing as sections ====== -->
-                    <a >
-                      <div class="toc_adiv_imgmynew plr20px py-3 mttopbot20" *ngIf="section.title ==='Begin here' && (!isSubscriber || !isloggedIn)">
+                    <a>
+                      <div class="toc_adiv_imgmynew plr20px py-3 mttopbot20"
+                        *ngIf="section.title ==='Begin here' && (!isSubscriber || !isloggedIn)">
                         <div class="row center_flex py-3"> <!-- same vertical gap as section content -->
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
