@@ -369,6 +369,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
       } else {
         this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
+      }
     }
   }
 
@@ -475,6 +480,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
     this.searchinp = searchInpt;
     this.searchResult = [];
+    this.toggleBodyScroll(false);
     this.getinp(searchInpt);
   }
 
@@ -731,12 +737,13 @@ export class PersonalisedForYouSearchPage implements OnInit {
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
     }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
+    }
   }
 
   onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
+    // Removed auto-close to keep screen open until explicit close
   }
 
   signInWithApple() {
@@ -754,6 +761,15 @@ export class PersonalisedForYouSearchPage implements OnInit {
   clearSearch() {
     this.searchinp = "";
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
 

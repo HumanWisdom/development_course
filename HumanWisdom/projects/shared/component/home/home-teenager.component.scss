@@ -588,7 +588,7 @@
             left: 20px;
             right: 20px;
             height: 1px;
-            background-color: rgba(0, 0, 0, 0.1) !important; /* Slightly more visible separator */
+            background-color: rgba(255, 255, 255, 0.15) !important; /* Minimal white separator */
             z-index: 2; /* Ensure it stays above siblings */
             display: block;
         }
