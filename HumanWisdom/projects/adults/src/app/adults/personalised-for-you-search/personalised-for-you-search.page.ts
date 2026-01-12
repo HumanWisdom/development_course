@@ -314,6 +314,11 @@ toggleAccordion() {
       } else {
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
+      }
     }
   }
 
@@ -326,51 +331,87 @@ toggleAccordion() {
         this.personalisedforyou.push(r);
       }
     })
-
-
-
-    /*  this.aservice.getUserpreference().subscribe((res) => {
-       let perd = this.aservice.getperList();
-      // let perd = []
-       this.personalisedforyou = []
-       this.indList = []
-       if (res && res !== "") {
-         let arr = res.split('').filter((d) => d !== ',');
-         arr.forEach((d) => {
-           perd.forEach((r) => {
-             if (d === r['id']) {
-               r['active'] = true;
-               this.personalisedforyou.push(r);
-             }
-           })
-         })
-         perd.forEach((r) => {
-           let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
-           if (!find) {
-             r['active'] = false;
-             this.personalisedforyou.push(r);
-           }
-         })
-         this.personalisedforyou.forEach((d) => {
-           if (d['active']) {
-             this.indList.push(d['id'])
-           }
-         })
-       } else {
-         perd.forEach((r) => {
-           r['active'] = false;
-           this.personalisedforyou.push(r);
-         })
-       }
-     }) */
   }
 
-  getinp(searchTerm: string): void {
-    if (searchTerm && searchTerm.trim() !== '') {
-      const prefix = SharedService.getprogramName();
-      const url = `/${prefix}/site-search/${searchTerm}`;
-      this.route.navigate([url]);
+  getinp(event) {
+    this.logeventservice.logEvent("search_"+ event)
+    let url=""
+    switch(event.toLowerCase())
+    {
+      case "events":{
+          url = `/adults/events`
+          break;
+      }
+      case "blogs":{
+        url = `/adults/blogs`
+        break;
+      }
+      case "life stories":
+      case "stories":{
+        url = `/adults/wisdom-stories`
+        break;
+      }
+      case "podcast":{
+        url = `/adults/podcast`
+        break;
+      }
+      case "audio meditations":{
+        url = `/adults/audio-meditation`
+        break;
+      }
+      case ("short videos"):
+      case ("videos"):
+        {
+        url = `/adults/wisdom-shorts`
+        break;
+      }
+     case "journal":{
+        url = `/adults/journal`
+        break;
+      }
+      case "exercises":
+      case "awareness exercises":
+        {
+        url = `/adults/wisdom-exercise`
+        break;
+      }
+      case "forum":{
+        url = `/adults/forum`
+        break;
+      }
+      case "develop a calm mind":{
+        url = `/adults/pathway/develop-a-calm-mind`
+        break;
+      }
+      case "understand yourself":{
+        url = `/adults/pathway/understand-yourself`
+        break;
+      }
+      case "understand how your mind works":{
+        url = `/adults/pathway/understand-how-your-mind-works`
+        break;
+      }
+      case "manage your emotions":{
+        url = `/adults/pathway/manage-your-emotions`
+        break;
+      }
+      case "succeed in life":{
+        url = `/adults/pathway/live-your-best-life`
+        break;
+      }
+      case "mental health":{
+        url = `/adults/curated/overcome-stress-anxiety`
+        break;
+      }
+     default: {
+      let searchInpt = (' ' + this.searchinp).slice(1);
+      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+       url = `/adults/site-search/${searchInpt}`
+        break;
+      }
+
     }
+    this.route.navigate([url])
   }
 
   searchEvent(module) {
@@ -378,6 +419,7 @@ toggleAccordion() {
 
     this.searchinp = module;
     this.searchResult = [];
+    this.toggleBodyScroll(false);
     this.getinp(module);
   }
 
@@ -643,12 +685,13 @@ toggleAccordion() {
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
     }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
+    }
   }
 
   onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
+    // Removed auto-close to keep screen open until explicit close
   }
 
   signInWithApple() {
@@ -666,6 +709,15 @@ toggleAccordion() {
   clearSearch() {
     this.searchinp = "";
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
 

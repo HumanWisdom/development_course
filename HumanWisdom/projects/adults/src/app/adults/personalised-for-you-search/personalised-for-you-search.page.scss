@@ -228,20 +228,23 @@ nav {
   right: -20px;
   z-index: 97; 
   // margin: 0 !important;
-  margin-top: 20px;
+  margin-top: 0;
+  padding-top: 20px;
+  height: 100vh;
+  background-color: #FFF7E6;
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 250px); 
+  max-height: calc(100vh - 250px) !important; 
   width: 100%;
-  height: auto; 
-  overflow-y: auto;
+  height: 100vh !important; 
+  overflow-y: auto !important;
   overscroll-behavior: contain;
   border-radius: 0;
   box-shadow: none !important; 
   margin: 0;
   padding: 0;
-  padding-bottom: 20px;
+  padding-bottom: 150px;
   background-color: #FFF7E6 !important; 
   border: none !important; 
   scrollbar-width: thin;
@@ -302,6 +305,11 @@ nav {
     display: block !important;
   }
 }
+
+.adsearch_ul .list-group-item:last-child{
+  border-radius: 0 !important;
+}
+
 .pdr20px {
   padding-right: 20px !important;
 }
