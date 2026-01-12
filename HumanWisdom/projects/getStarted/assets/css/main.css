@@ -57,7 +57,7 @@ a {
 {
   color: #834B66 !important;
 }
-h4:hover{
+p:hover{
   color:green;
   text-decoration: underline;
 }
@@ -2133,7 +2133,10 @@ div.scroll-container img {
   margin-right: 10px;
   transition: 0.3s;
 }
-
+.section-headernew.a,h6:hover{
+  color:#cb6171;
+  text-decoration: underline;
+}
 .footer .social-links a:hover {
   color: #fff;
   border-color: #fff;

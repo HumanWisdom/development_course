@@ -674,17 +674,16 @@ We gratefully acknowledge the contributions of the following content experts, an
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_pathway.svg" class="img-responsive img_aspects" alt="PATHWAY">
                 </div>
               </div> -->
-
+<a href="https://www.linkedin.com/in/livingbeyondwithmarthavandam/
+">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft"><a href="https://www.linkedin.com/in/livingbeyondwithmarthavandam/
-">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
                    Martha Van Dam
-             </a>
                   </h6>
                 </div>
               </div> 
-             
+             </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
@@ -899,12 +898,12 @@ Paediatrician, and trained mindfulness and yoga teacher based in England        
            
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1100">
              
- <a href="https://justobe.co.uk">
+            <a href="https://justobe.co.uk">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h3 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
                    Dr Shubadha Suri
-                  </h3>
+                  </h6>
                 </div>
               </div>
 </a>
@@ -1112,16 +1111,16 @@ Coach and founder of Sacred Changemakers, based in Ohio, USA                  </
             </div>
              
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1300">
-            
+                          <a href="https://www.linkedin.com/in/jackiewoodside/">
 
 
-              <div class="rowcont">
+              <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class=" mtb0px fs_21px fw_500 lh_140p fc_000000 tleft"><a href="https://www.linkedin.com/in/jackiewoodside/">
-Jackie Woodside             </a>   </h5>
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+Jackie Woodside                </h6>
                 </div>
               </div>
-             
+             </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
