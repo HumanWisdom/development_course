@@ -32985,9 +32985,9 @@ body * {
 .btn_prev_v3 {
   background: transparent;
   border: 0;
-  /* padding: 0; */
+   padding: 0; 
   margin-right: 0 !important;
-  /* margin-bottom: 0 !important; */
+   margin-bottom: 0 !important; 
   display: flex;
   align-items: center;
   color: #fff !important;
@@ -33583,7 +33583,7 @@ body * {
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.25);
   width: 41px;
-  height: 32px;
+  height: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
