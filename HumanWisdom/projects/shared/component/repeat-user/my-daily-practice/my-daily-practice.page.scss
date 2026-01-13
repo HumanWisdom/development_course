@@ -2,6 +2,9 @@
 .sc_01 {
   min-height: 148vh !important;
   padding: 20px 20px;
+  &.search-active {
+    padding: 0 !important;
+  }
 }
 
 .v1_3_bg_splashnew {
@@ -52,6 +55,9 @@
   opacity: 1;
   margin-top: 10px;
 }
+.mt40px {
+  margin-top: 40px !important;
+}
 
 .search-box-container.search-box-hidden {
   opacity: 0;
@@ -97,7 +103,7 @@
 
   /* Scrollbar styling */
   scrollbar-width: thin;
-  scrollbar-color: #778899 #FFF7E6; /* thumb track */
+  scrollbar-color: #eea170 #FFF7E6; /* thumb track */
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -106,7 +112,7 @@
     background: #FFF7E6;
   }
   &::-webkit-scrollbar-thumb {
-    background: #778899;
+    background: #eea170;
     border-radius: 20px;
   }
 }
