@@ -19,7 +19,7 @@
               </div>
             </div>
 
-            <div class="row mb20px mt10px" *ngIf="searchResult.length === 0">
+            <div class="row mt10px" *ngIf="searchResult.length === 0">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="mtb0px fw_400 fs_15px lh_140p" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                   Here’s your daily dose of happiness :)
@@ -29,7 +29,7 @@
 
             <!-- search -->
             <div class="row">
-              <div class="col-12 pr0px mt-3 mb-3 prelative search-box-container"
+              <div class="col-12 pr0px mt-3 mb-3 prelative search-box-container mt40px plr20px"
                 [class.search-box-hidden]="!showSearchBox">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                   <input type="search" placeholder="Search for a topic"

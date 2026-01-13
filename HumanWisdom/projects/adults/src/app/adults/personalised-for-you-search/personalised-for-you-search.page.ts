@@ -372,8 +372,8 @@ toggleAccordion() {
       case "exercises":
       case "awareness exercises":
         {
-        url = `/adults/wisdom-exercise`
-        break;
+        this.route.navigate(['/adults/home'], { fragment: 'self-awareness' });
+        return;
       }
       case "forum":{
         url = `/adults/forum`

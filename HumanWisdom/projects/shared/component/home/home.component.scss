@@ -426,6 +426,9 @@ background: #FFF7E6;/* Ensure proper stacking context */
   .home-content{
     padding-top: 40px !important;
   }
+  .search-box-container{
+    margin-top: 40px !important;
+  }
 }
 
 .search-box-container.search-box-hidden {
@@ -681,7 +684,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 
   /* Scrollbar styling */
   scrollbar-width: thin;
-  scrollbar-color: #778899 #FFF7E6; /* thumb track */
+  scrollbar-color: #eea170 #FFF7E6;
 
   &::-webkit-scrollbar {
     width: 6px;

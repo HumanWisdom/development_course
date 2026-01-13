@@ -427,8 +427,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
       case "exercises":
       case "awareness exercises":
         {
-        url = `/teenagers/wisdom-exercise`
-        break;
+        this.route.navigate(['/teenagers/home'], { fragment: 'self-awareness' });
+        return;
       }
       case "forum":{
         url = `/teenagers/forum`
