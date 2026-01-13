@@ -106,6 +106,7 @@ export class SearchPopularItemsPage implements OnInit {
   
   getinp(event) {
     let url=""
+    let fragment = ""
     this.search= event;
 
     switch(event.toLowerCase())
@@ -140,7 +141,8 @@ export class SearchPopularItemsPage implements OnInit {
       case "exercises":
       case "awareness exercises":
         {
-        url = `/${SharedService.getprogramName()}/wisdom-exercise`
+        url = `/${SharedService.getprogramName()}/home`
+        fragment = "self-awareness"
         break;
       }
       case "journal":{
@@ -196,7 +198,7 @@ export class SearchPopularItemsPage implements OnInit {
     this.toggleBodyScroll(false);
     
     if(this.router.url.includes('site-search')){
-      this.router.navigate([url])
+      this.router.navigate([url], { fragment: fragment })
     }
   }
 
