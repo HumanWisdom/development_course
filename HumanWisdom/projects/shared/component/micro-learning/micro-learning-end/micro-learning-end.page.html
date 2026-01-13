@@ -1,0 +1,70 @@
+<app-course-header [innerHeight]="100" [bg_tn]="'bg_stake'" [bg]="'bg_FFF7E6'"></app-course-header>
+
+<div class="right_col mc_01_v3" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+    <div class="cw100p">
+        <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw">
+
+                <!-- Yellow Background Card Container -->
+                <div class="mc_end_container">
+
+                    <h2 class="mc_end_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                        What's your takeaway?<br>
+                        How can you apply it today?
+                    </h2>
+
+                    <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText">
+                    </textarea>
+
+                    <button class="mc_end_btn_journal" (click)="addJournal()">
+                        Add to journal
+                    </button>
+
+                    <p class="mc_end_secure_text">
+                        Your online journal is secure and private to you
+                    </p>
+
+                    <div class="mc_end_divider"></div>
+
+                    <h3 class="mc_end_explore_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                        Explore the resources below to go deeper
+                    </h3>
+
+                    <!-- Resource Card -->
+                    <div class="mc_end_resource_card">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/fear_anxiety.webp"
+                            class="resource_img" alt="Fear & Anxiety">
+                        <div class="resource_info">
+                            <h4>Fear & Anxiety</h4>
+                            <p>GUIDED PROGRAM</p>
+                        </div>
+                    </div>
+
+                    <!-- Page Number / Progress -->
+                    <div class="mt20px text-center">
+                        <span class="fs_12px fw_500" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">7/7</span>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Pagination and Navigation -->
+                <div class="mc_end_pagination">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot active"></span>
+                </div>
+
+                <div class="mc_end_footer_nav">
+                    <a class="nav_btn active" (click)="goBack()">Prev.</a>
+                    <a class="nav_btn" (click)="navigateToListing()">Next</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-course-footer></app-course-footer>

@@ -462,6 +462,10 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/treesisters/treesisters.module').then(m => m.TreesistersPageModule)
   },
   {
+    path: 'micro-learning',
+    loadChildren: () => import('../../../../shared/component/micro-learning/micro-learning.module').then(m => m.MicroLearningModule)
+  },
+  {
     path: 'intro-happierme',
     loadChildren: () => import('../../../../shared/component/intro-happierme/intro-happierme.module').then(m => m.IntroHappiermePageModule)
   },

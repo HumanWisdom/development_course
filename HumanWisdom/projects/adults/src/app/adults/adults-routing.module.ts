@@ -301,6 +301,10 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/treesisters/treesisters.module').then(m => m.TreesistersPageModule)
   },
   {
+    path: 'micro-learning',
+    loadChildren: () => import('../../../../shared/component/micro-learning/micro-learning.module').then(m => m.MicroLearningModule)
+  },
+  {
     path: 'add-to-home-screen-ios',
     loadChildren: () => import('./add-to-home-screen-ios/add-to-home-screen-ios.module').then(m => m.AddToHomeScreenIosPageModule)
   },
