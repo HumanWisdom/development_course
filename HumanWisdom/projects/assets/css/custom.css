@@ -33670,7 +33670,7 @@ body * {
 .textarea_fs {
   background: transparent;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(0, 0, 0, 0.50);
   font-weight: 400;
   line-height: 150%;
   border: 0;
@@ -33800,7 +33800,7 @@ body * {
 
 .cfc_v3_01:focus,
 .cta1:focus {
-  color: #fff;
+  color: #000;
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
