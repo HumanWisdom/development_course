@@ -670,7 +670,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 230px) !important;
+  max-height: calc(100vh - 262px) !important;
   height: 100vh !important;
   overflow-y: auto !important;
   overscroll-behavior: contain;
@@ -735,7 +735,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .is-search:last-child {
-  margin-bottom: 10px !important;
+  margin-bottom: 20px !important;
 
   &::after {
     display: block !important;

@@ -534,7 +534,7 @@
     }
 
     .autocomplete-list {
-        max-height: calc(100vh - 230px) !important;
+        max-height: calc(100vh - 260px) !important;
         height: 100vh !important;
         overflow-y: auto !important;
         overscroll-behavior: contain;
@@ -599,7 +599,7 @@
     }
 
     .is-search:last-child {
-        margin-bottom: 15px !important;
+        margin-bottom: 20px !important;
 
         &::after {
             display: block !important;
