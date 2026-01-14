@@ -592,6 +592,135 @@
   }
 }
 
+// Feedback buttons (Thumbs up/down)
+.feedback-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 4px 0;
+  
+  .feedback-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      color: rgba(0, 0, 0, 0.5);
+      transition: all 0.2s ease;
+    }
+    
+    &:hover:not(:disabled) {
+      background: rgba(0, 0, 0, 0.05);
+      
+      &.thumbs-up svg {
+        color: #4caf50;
+      }
+      
+      &.thumbs-down svg {
+        color: #f44336;
+      }
+    }
+    
+    &.active {
+      background: rgba(0, 0, 0, 0.05);
+      
+      &.thumbs-up svg {
+        color: #4caf50;
+      }
+      
+      &.thumbs-down svg {
+        color: #f44336;
+      }
+    }
+    
+    &:disabled {
+      cursor: default;
+      opacity: 0.7;
+    }
+  }
+}
+
+// Yes/No action buttons
+.yes-no-container {
+  margin: 0 20px 12px 20px;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  
+  .yes-no-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+  }
+  
+  .yes-no-buttons {
+    display: flex;
+    gap: 8px;
+    
+    .action-button {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      pointer-events: auto;
+      
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+      
+      &.yes-button {
+        background: #4caf50;
+        color: white;
+        
+        &:hover {
+          background: #45a049;
+          transform: translateY(-1px);
+          box-shadow: 0px 2px 6px rgba(76, 175, 80, 0.3);
+        }
+        
+        &:active {
+          transform: translateY(0);
+        }
+      }
+      
+      &.no-button {
+        background: #f44336;
+        color: white;
+        
+        &:hover {
+          background: #e53935;
+          transform: translateY(-1px);
+          box-shadow: 0px 2px 6px rgba(244, 67, 54, 0.3);
+        }
+        
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .chat-bot-container,
   .chat-header,

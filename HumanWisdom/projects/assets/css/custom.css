@@ -15881,9 +15881,10 @@ input[type="number"] {
   padding-top: 40px !important;
 }
 
+
 .progress {
   background: #FFFFFF;
-  box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
+  /* box-shadow: 1px 1px 2px rgb(0 0 0 / 25%); */
   border-radius: 5px;
   height: 40px;
 }
@@ -29034,7 +29035,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   line-height: 150%;
   color: #000000 !important;
   height: 36px;
-  margin-right: 20px !important;
+  margin-right: 21px !important;
 }
 
 .btn_recent:hover,
@@ -29066,7 +29067,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 
 .gqtns_recent_tabs {
   /* margin: 0 0 36px 0; */
-  margin: 0 -17px 26px -10px;
+  margin: 0 -17px 26px 0px;
 }
 
 .pdefault_01 {

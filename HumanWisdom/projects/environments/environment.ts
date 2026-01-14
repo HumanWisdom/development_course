@@ -18,6 +18,12 @@ export const environment = {
   HEALTH_CHECK_URL_TEEN: 'https://teenagers-staging-dev.happierme.app/api/health',
   HISTORY_URL_ADULT: 'https://adults-staging.happierme-dev.app/api/history',
   HISTORY_URL_TEEN: 'https://teenagers-staging.happierme-dev.app/api/history',
+  RELATED_CONTENT_URL_ADULT: 'https://adults-staging-dev.happierme.app/related',
+  RELATED_CONTENT_URL_TEEN: 'https://teenagers-staging-dev.happierme.app/related',
+  FEEDBACK_URL_ADULT: 'https://adults-staging-dev.happierme.app/feedback',
+  FEEDBACK_URL_TEEN: 'https://teenagers-staging-dev.happierme.app/feedback',
+  TRACK_CLICK_URL_ADULT: 'https://adults-staging-dev.happierme.app/track-click',
+  TRACK_CLICK_URL_TEEN: 'https://teenagers-staging-dev.happierme.app/track-click',
 
 
   firebase: {

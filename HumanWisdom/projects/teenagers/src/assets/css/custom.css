@@ -15905,7 +15905,7 @@ input[type="number"] {
 
 .progress {
   background: #FFFFFF;
-  box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
+  /* box-shadow: 1px 1px 2px rgb(0 0 0 / 25%); */
   border-radius: 5px;
   height: 40px;
 }
@@ -28951,7 +28951,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   line-height: 150%;
   color: #ffffff;
   height: 36px;
-  margin-right: 20px !important;
+  margin-right: 21px !important;
 }
 
 .btn_recent:hover,
