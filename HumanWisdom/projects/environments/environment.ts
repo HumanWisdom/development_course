@@ -13,7 +13,7 @@ export const environment = {
   facebookAppId: "238869214957032",
   stripeKey: "pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl",
   ADULT_CHATBOT_URL: 'https://adults-staging-dev.happierme.app/chat',
-  TEEN_CHATBOT_URL: 'https://teenagers-staging-dev.happierme.app/api/chat',
+  TEEN_CHATBOT_URL: 'https://teenagers-staging-dev.happierme.app/chat',
   HEALTH_CHECK_URL_ADULT: 'https://adults-staging-dev.happierme.app/api/health',
   HEALTH_CHECK_URL_TEEN: 'https://teenagers-staging-dev.happierme.app/api/health',
   HISTORY_URL_ADULT: 'https://adults-staging.happierme-dev.app/api/history',

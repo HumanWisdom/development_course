@@ -4,9 +4,9 @@
 .ws-lock-icon {
     top: 40px !important;
 }
-.session_img_play{
-  right: 18px !important;
-}
+// .session_img_play{
+//   right: 18px !important;
+// }
 /* Bootstrap 5 accordion overrides to preserve legacy panel UI on Events page */
 #accordion_event.accordion {
   border: none;
@@ -69,4 +69,17 @@
 
 .accordion-button {
   padding: 0 !important;
+}
+
+.toc_adiv_02 a > .row {
+    padding-left: 0px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+@media (max-width: 414px) {
+.toc_adiv_02 a > .row {
+      padding-left: 5px;
+  }
 }

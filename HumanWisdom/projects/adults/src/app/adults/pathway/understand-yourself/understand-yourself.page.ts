@@ -27,6 +27,7 @@ export class UnderstandYourselfPage implements OnInit {
   public lookWithoutLanguageP: any
   public obstaclesEnquiryP: any
  isAdults:boolean=false;
+  isIos = false;
 
 
 
@@ -36,6 +37,7 @@ export class UnderstandYourselfPage implements OnInit {
     private navigationService:NavigationService) { }
 
   ngOnInit() {
+    this.isIos = SharedService.isIOSApp();
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {

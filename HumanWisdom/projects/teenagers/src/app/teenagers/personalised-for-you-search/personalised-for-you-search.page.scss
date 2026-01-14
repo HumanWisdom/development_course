@@ -66,11 +66,11 @@
 }
 
 /* reset */
-* 
+/* * 
 {
     // padding: 0;
     // margin: 0;
-}
+} */
 
 nav 
 {
@@ -264,7 +264,7 @@ li:hover:before {
     padding:0px 16px 10px 0px !important; 
   }
 .odiv_wfgi {
-  padding: 0 8px 10px 20px;
+    padding: 0 8px 10px 20px;
 }
 .panel-heading {
   padding-bottom: 30px;
@@ -323,4 +323,126 @@ li:hover:before {
 
 .odiv_pathway {
     padding: 0 10px 10px 20px;
+}
+
+/* Search row for background toggle */
+.search-row {
+  transition: background-color 0.3s ease;
+  
+  &.search-active {
+    background-color: #183C79 !important;
+  }
+}
+
+/* Search box container with show/hide animation */
+.search-box-container {
+  transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+  overflow: visible;
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* Search dropdown styling */
+.prelative {
+  position: relative;
+}
+
+.adsearch {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  z-index: 97;
+  margin-top: 0;
+  padding-top: 20px;
+  height: 100vh;
+  background-color: #183C79;
+}
+
+.autocomplete-list {
+  max-height: calc(100vh - 250px) !important;
+  width: 100%;
+  height: 100vh !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  border-radius: 0;
+  box-shadow: none !important;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 150px;
+  background-color: #183C79 !important;
+  border: none !important;
+
+  /* Scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #778899 #183C79;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #183C79;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #778899;
+    border-radius: 20px;
+  }
+}
+
+.adsearch_ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none !important;
+}
+
+.is-search {
+  position: relative;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none !important;
+  margin-bottom: 0 !important;
+  transition: background-color 0.2s ease;
+  background-color: #183C79 !important;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    z-index: 2;
+    display: block;
+  }
+}
+
+.is-search:hover {
+  background-color: #0C2B5F !important
+}
+
+.is-search:last-child {
+  margin-bottom: 20px !important;
+
+  &::after {
+    display: block !important;
+  }
+}
+
+.adsearch_ul .list-group-item:last-child{
+  border-radius: 0 !important;
+}
+
+.pointer-events-auto {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
+.dpanel .panel-body {
+    padding: 0 !important;
 }

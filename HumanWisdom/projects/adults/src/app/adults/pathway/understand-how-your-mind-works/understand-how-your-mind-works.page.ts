@@ -27,6 +27,7 @@ export class UnderstandHowYourMindWorksPage implements OnInit {
   public natureOfIP: any
   public approvalP: any
 isAdults:boolean=false;
+  isIos = false;
 
 
   constructor(public router: Router, public service: AdultsService, 
@@ -34,6 +35,8 @@ isAdults:boolean=false;
     private location: Location,private navigationService:NavigationService) { }
 
   ngOnInit() {
+            this.isIos = SharedService.isIOSApp();
+
     this.isAdults=SharedService.ProgramId==ProgramType.Adults;
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {

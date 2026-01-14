@@ -1,11 +1,13 @@
 .owl-animation-wrapper {
   position: fixed;
-  bottom: 60px;              /* sit along footer line (adjust if footer height changes) */
+  bottom: 60px;
+  /* sit along footer line (adjust if footer height changes) */
   /* Align to the right edge of a centered 30% content column */
   right: calc((100vw - 30vw) / 2 + 16px);
   z-index: 100;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s, top 0.3s ease, right 0.3s ease;
-  pointer-events: auto;      /* allow click to open chat */
+  pointer-events: auto;
+  /* allow click to open chat */
   background: transparent;
   background-color: transparent;
   will-change: transform;
@@ -31,14 +33,16 @@
 
 .owl-animation-wrapper.transitioning {
   /* Optionally scale up or add effect during transition */
-  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.3));
 }
 
 .owl-video {
   width: 100%;
-  max-width: 1080px;   /* match video source resolution */
+  max-width: 1080px;
+  /* match video source resolution */
   height: auto;
-  transform: scale(0.4);    /* shrink to 40% size */
+  transform: scale(0.4);
+  /* shrink to 40% size */
   transform-origin: center center;
 
   max-height: 90vh;
@@ -66,16 +70,20 @@
   perspective: 1000px;
   /* Text visibility enhancements */
   filter: contrast(1.1) brightness(1.05);
+
   /* Hide video controls */
   &::-webkit-media-controls {
     display: none !important;
   }
+
   &::-webkit-media-controls-panel {
     display: none !important;
   }
+
   &::-webkit-media-controls-play-button {
     display: none !important;
   }
+
   &::-webkit-media-controls-start-playback-button {
     display: none !important;
   }
@@ -85,14 +93,17 @@
 .owl-gif {
   /* width: 140px;          Match static-owl-image rendered size (200px * 0.7 scale) */
   /* height: 140px;         */
- /*  max-width: 140px;      /* Prevent scaling up 
-  max-height: 140px;     /* Prevent scaling up */ 
+  /*  max-width: 140px;      /* Prevent scaling up 
+  max-height: 140px;     /* Prevent scaling up */
   height: 100px;
   width: auto;
-  object-fit: contain;   /* Maintain aspect ratio */
-  border-radius: 50%;    /* Make it circular */
+  object-fit: contain;
+  /* Maintain aspect ratio */
+  border-radius: 50%;
+  /* Make it circular */
   user-select: none;
-  pointer-events: none;  /* image itself doesn't intercept to keep consistent */
+  pointer-events: none;
+  /* image itself doesn't intercept to keep consistent */
   transition: all 0.3s ease;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
@@ -112,7 +123,8 @@
 }
 
 /* Debug and Loading Indicators */
-.debug-info, .loading-indicator {
+.debug-info,
+.loading-indicator {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -126,7 +138,8 @@
   z-index: 1001;
 }
 
-.debug-info p, .loading-indicator p {
+.debug-info p,
+.loading-indicator p {
   margin: 5px 0;
   font-size: 14px;
 }
@@ -137,16 +150,21 @@
 
 /* Tablet styles */
 @media (max-width: 768px) {
-  .owl-video, .owl-gif {
-    width: 140px;         /* Match static owl size */
+
+  .owl-video,
+  .owl-gif {
+    width: 140px;
+    /* Match static owl size */
     /* height: 140px;        */
     max-width: 140px;
     max-height: 140px;
   }
-  
+
   .owl-animation-wrapper.corner {
-    bottom: 60px;        /* Positioned on footer line */
-    right: 16px;         /* mobile: content is near full width, align to safe margin */
+    bottom: 60px;
+    /* Positioned on footer line */
+    right: 16px;
+    /* mobile: content is near full width, align to safe margin */
     width: auto;
     height: auto;
     top: auto;
@@ -156,15 +174,19 @@
 
 /* Mobile styles */
 @media (max-width: 600px) {
-  .owl-video, .owl-gif {
-    width: 140px;         /* Match static owl size */
+
+  .owl-video,
+  .owl-gif {
+    width: 140px;
+    /* Match static owl size */
     /* height: 140px;         */
     max-width: 140px;
     max-height: 140px;
   }
-  
+
   .owl-animation-wrapper.corner {
-    bottom: 60px;        /* Positioned on footer line */
+    bottom: 60px;
+    /* Positioned on footer line */
     right: 16px;
     width: auto;
     height: auto;
@@ -175,15 +197,19 @@
 
 /* Small mobile styles */
 @media (max-width: 480px) {
-  .owl-video, .owl-gif {
-    width: 120px;         /* Match static owl size */
+
+  .owl-video,
+  .owl-gif {
+    width: 120px;
+    /* Match static owl size */
     /* height: 120px;        */
     max-width: 120px;
     max-height: 120px;
   }
-  
+
   .owl-animation-wrapper.corner {
-    bottom: 60px;        /* Positioned on footer line */
+    bottom: 60px;
+    /* Positioned on footer line */
     right: 12px;
     width: auto;
     height: auto;
@@ -194,15 +220,19 @@
 
 /* Extra small mobile styles */
 @media (max-width: 360px) {
-  .owl-video, .owl-gif {
-    width: 100px;         /* Match static owl size */
+
+  .owl-video,
+  .owl-gif {
+    width: 100px;
+    /* Match static owl size */
     /* height: 100px;       */
     max-width: 100px;
     max-height: 100px;
   }
-  
+
   .owl-animation-wrapper.corner {
-    bottom: 60px;        /* Positioned on footer line */
+    bottom: 60px;
+    /* Positioned on footer line */
     right: 10px;
     width: auto;
     height: auto;
@@ -214,6 +244,7 @@
 /* For wide screens where content is 30% of width, calculation above applies.
    For smaller screens, fall back to safe margins to keep it visible within content. */
 @media (max-width: 1024px) {
+
   .owl-animation-wrapper,
   .owl-animation-wrapper.corner {
     right: 16px;
@@ -243,6 +274,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .bg_journal .owl-animation-wrapper,
   .bg_journal .owl-animation-wrapper.corner {
     right: 16px;
@@ -250,13 +282,13 @@
 }
 
 /* Ensure only one owl instance is visible at a time */
-body .owl-animation-wrapper ~ .owl-animation-wrapper {
+body .owl-animation-wrapper~.owl-animation-wrapper {
   display: none !important;
 }
 
 /* Lower owl z-index when hamburger menu is open */
-#menu:checked ~ .m-menu ~ * .owl-animation-wrapper,
-#menu:checked ~ * .owl-animation-wrapper,
+#menu:checked~.m-menu~* .owl-animation-wrapper,
+#menu:checked~* .owl-animation-wrapper,
 body:has(#menu:checked) .owl-animation-wrapper {
   z-index: 10 !important;
 }
@@ -264,14 +296,14 @@ body:has(#menu:checked) .owl-animation-wrapper {
 /* Static Owl Image Styles */
 .static-owl-container {
   position: relative;
- /*  width: 100%;
+  /*  width: 100%;
   height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-      /*   height: 100px;
+  /*   height: 100px;
     width: auto; */
 }
 
@@ -290,8 +322,10 @@ body:has(#menu:checked) .owl-animation-wrapper {
 /* Cloud Container Styles - positioned above owl */
 .owl-cloud-container {
   position: absolute;
-  top: -80px;           /* Positioned above owl */
-  left: -30%;           /* Closer horizontally to owl (was -65%) */
+  top: -80px;
+  /* Positioned above owl */
+  left: -50%;
+  /* Closer horizontally to owl (was -65%) */
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;
@@ -313,16 +347,19 @@ body:has(#menu:checked) .owl-animation-wrapper {
     transform: translateX(20%) translateY(20px) scale(0.05);
     /* Start very small at bottom-right area (around 20px from top, matching shrink end) */
   }
+
   30% {
     opacity: 0.7;
     transform: translateX(-10%) translateY(15px) scale(0.3);
     /* Grow and move upward and toward center */
   }
+
   60% {
     opacity: 0.9;
     transform: translateX(-30%) translateY(8px) scale(0.7);
     /* Continue growing and moving up toward final position */
   }
+
   100% {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
@@ -335,7 +372,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
   transform-origin: bottom center;
   /* Cloud growth animation, then speaking animation starts after cloud is fully grown */
   animation: cloud-grow 1.2s ease-out forwards,
-             bubble-pop 1.8s ease-in-out 1.8s infinite;
+    bubble-pop 1.8s ease-in-out 1.8s infinite;
 }
 
 /* Update bubble-pop to maintain position from entrance */
@@ -344,10 +381,12 @@ body:has(#menu:checked) .owl-animation-wrapper {
     transform: translateX(-50%) translateY(0) scale(0.96);
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   }
+
   55% {
     transform: translateX(-50%) translateY(0) scale(1.04);
     filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.13));
   }
+
   100% {
     transform: translateX(-50%) translateY(0) scale(1.0);
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
@@ -359,10 +398,12 @@ body:has(#menu:checked) .owl-animation-wrapper {
     transform: translateX(-50%) scale(0.96);
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   }
+
   55% {
     transform: translateX(-50%) scale(1.04);
     filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.13));
   }
+
   100% {
     transform: translateX(-50%) scale(1.0);
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
@@ -389,16 +430,19 @@ body:has(#menu:checked) .owl-animation-wrapper {
     transform: translateX(-50%) translateY(0) scale(1);
     /* Start at complete/full size above owl */
   }
+
   40% {
     opacity: 0.9;
     transform: translateX(-30%) translateY(10px) scale(0.7);
     /* Shrink and move down and to the right */
   }
+
   70% {
     opacity: 0.7;
     transform: translateX(-10%) translateY(15px) scale(0.3);
     /* Continue shrinking and moving down-right */
   }
+
   100% {
     opacity: 0;
     transform: translateX(20%) translateY(20px) scale(0.05);
@@ -416,10 +460,12 @@ body:has(#menu:checked) .owl-animation-wrapper {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     opacity: 0.4;
     transform: translate(-50%, -50%) scale(0.9);
   }
+
   100% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.7);
@@ -427,9 +473,9 @@ body:has(#menu:checked) .owl-animation-wrapper {
 }
 
 .cloud-image {
-  width: 185px;
+  width: 179px;
   height: 140px;
-  max-width: 140px;
+  max-width: 179px;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   user-select: none;
@@ -445,9 +491,11 @@ body:has(#menu:checked) .owl-animation-wrapper {
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
   font-weight: 500;
+  font-style: italic;
   line-height: 1.3;
   text-align: center;
-  white-space: pre-line; /* respect \n and wrap */
+  white-space: pre-line;
+  /* respect \n and wrap */
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 120px;
@@ -468,10 +516,12 @@ body:has(#menu:checked) .owl-animation-wrapper {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.8);
   }
+
   50% {
     opacity: 0.6;
     transform: translate(-50%, -50%) scale(1.05);
   }
+
   100% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -485,8 +535,9 @@ body:has(#menu:checked) .owl-animation-wrapper {
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -webkit-transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
-  
-  .owl-video, .owl-gif {
+
+  .owl-video,
+  .owl-gif {
     /* Enhanced visibility for mobile */
     filter: contrast(1.1) brightness(1.05);
   }
@@ -496,12 +547,15 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 
   .owl-cloud-container {
-    top: -55px;          /* Keep bubble above the owl */
-    left: -35%;          /* Match desktop alignment horizontally */
+    top: -55px;
+    /* Keep bubble above the owl */
+    left: -35%;
+    /* Match desktop alignment horizontally */
   }
 
   .cloud-image {
-    width: 110px;        /* Give copy enough room inside the bubble */
+    width: 110px;
+    /* Give copy enough room inside the bubble */
     max-width: 110px;
     height: auto;
   }
@@ -518,4 +572,4 @@ body:has(#menu:checked) .owl-animation-wrapper {
     /* Text animation on mobile too */
     animation: text-fill-in 0.6s ease-in 1.2s forwards;
   }
-} 
+}

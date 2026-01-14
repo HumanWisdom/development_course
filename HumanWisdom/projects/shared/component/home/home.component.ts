@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
+import { Component, OnInit, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -138,15 +138,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
-  private routerSubscription: Subscription;
-  private hashChangeHandler: () => void;
+  private readonly routerSubscription: Subscription;
+  private readonly hashChangeHandler: () => void;
   private lastScrollTop: number = 0;
   preference = '';  
   constructor(
-    private router: Router,
-    private commonService: CommonService,
-    private homeStateService: HomeStateService,
-    private onboardingService: OnboardingService
+    private readonly router: Router,
+    private readonly commonService: CommonService,
+    private readonly homeStateService: HomeStateService,
+    private readonly onboardingService: OnboardingService
   ) {
  
     this.navigationItems = SharedService.getPreferenceDataForHome();
@@ -154,7 +154,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.hashChangeHandler = () => {
       this.handleHashChange();
     };
-    window.addEventListener('hashchange', this.hashChangeHandler);
+    globalThis.addEventListener('hashchange', this.hashChangeHandler);
     this.isloggedIn = SharedService.isLoggedIn();
     // Also listen to Angular router navigation events
     this.routerSubscription = this.router.events
@@ -271,7 +271,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Setup horizontal scrolling for navigation container
    */
   private setupHorizontalScrolling(): void {
-    const navContainer = document.querySelector('.nav-menu') as HTMLElement;
+    const navContainer = globalThis.document.querySelector('.nav-menu') as HTMLElement;
     if (navContainer) {
       // Ensure horizontal scrolling is enabled
       navContainer.style.overflowX = 'auto';
@@ -332,67 +332,51 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       sections.push(this.transformSection(apiResponse.Introduction, 'introduction'));
     }
 
-    // Handle Long term solutions as parent with Modules2 and Modules3 as children
-    if (apiResponse.Modules1) {
-      const longTermSolutions = this.transformSection(apiResponse.Modules1, 'modules1');
+    this.processModules(apiResponse, sections);
 
-      // Add Modules2 and Modules3 as child sections (only if they have cards)
-      const childSections: ContentSection[] = [];
-
-      if (apiResponse.Modules2 && this.hasCards(apiResponse.Modules2)) {
-        /* const module2 = this.transformSection(apiResponse.Modules2, 'modules2');
-         module2.isInlineSection = true;
-         module2.isExpanded = true;
-         childSections.push(module2); */
-        sections.push(this.transformSection(apiResponse.Modules2, 'Modules2'));
+    const standardKeys = ['Blogs', 'Stories', 'Podcast', 'Shorts'];
+    standardKeys.forEach(key => {
+      const section = apiResponse[key];
+      if (section && this.hasCards(section)) {
+        sections.push(this.transformSection(section, key.toLowerCase()));
       }
-
-      if (apiResponse.Modules3 && this.hasCards(apiResponse.Modules3)) {
-        const module3 = this.transformSection(apiResponse.Modules3, 'modules3');
-        module3.isInlineSection = true;
-        module3.isExpanded = true;
-        childSections.push(module3);
-      }
-
-      // Only add the parent section if it has cards or has child sections with cards
-      if (this.hasCards(apiResponse.Modules1) || childSections.length > 0) {
-        longTermSolutions.childSections = childSections;
-        sections.push(longTermSolutions);
-      }
-    }
-
-    // Only add sections that have cards
-    if (apiResponse.Blogs && this.hasCards(apiResponse.Blogs)) {
-      sections.push(this.transformSection(apiResponse.Blogs, 'blogs'));
-    }
-    if (apiResponse.Stories && this.hasCards(apiResponse.Stories)) {
-      sections.push(this.transformSection(apiResponse.Stories, 'stories'));
-    }
-    if (apiResponse.Podcast && this.hasCards(apiResponse.Podcast)) {
-      sections.push(this.transformSection(apiResponse.Podcast, 'podcast'));
-    }
-    if (apiResponse.Shorts && this.hasCards(apiResponse.Shorts)) {
-      sections.push(this.transformSection(apiResponse.Shorts, 'shorts'));
-    }
+    });
 
     // Handle other sections dynamically
-    const knownKeys = ['Introduction', 'Modules1', 'Modules2', 'Modules3', 'Blogs', 'Stories', 'Podcast', 'Shorts'];
+    const knownKeys = new Set(['Introduction', 'Modules1', 'Modules2', 'Modules3', 'Blogs', 'Stories', 'Podcast', 'Shorts', 'MainHeader']);
     Object.keys(apiResponse).forEach(key => {
-      if (!knownKeys.includes(key) && apiResponse[key] && apiResponse[key].title && this.hasCards(apiResponse[key])) {
+      if (!knownKeys.has(key) && apiResponse[key]?.title && this.hasCards(apiResponse[key])) {
         sections.push(this.transformSection(apiResponse[key], key.toLowerCase()));
       }
     });
 
     // Sort sections by ID in ascending order (1, 2, 3, etc.)
-    sections.sort((a, b) => {
-      const idA = parseInt(a.id) || 0;
-      const idB = parseInt(b.id) || 0;
-      return idA - idB;
-    });
+    sections.sort((a, b) => (Number.parseInt(a.id) || 0) - (Number.parseInt(b.id) || 0));
 
-    console.log('Filtered sections (only those with cards):', sections.map(s => ({ title: s.title, id: s.id, cardCount: s.cards?.length || 0 })));
-    console.log('Sections sorted by ID:', sections.map(s => ({ title: s.title, id: s.id })));
     return sections;
+  }
+
+  private processModules(apiResponse: HomeContentResponse, sections: ContentSection[]): void {
+    if (!apiResponse.Modules1) return;
+
+    const longTermSolutions = this.transformSection(apiResponse.Modules1, 'modules1');
+    const childSections: ContentSection[] = [];
+
+    if (apiResponse.Modules2 && this.hasCards(apiResponse.Modules2)) {
+      sections.push(this.transformSection(apiResponse.Modules2, 'Modules2'));
+    }
+
+    if (apiResponse.Modules3 && this.hasCards(apiResponse.Modules3)) {
+      const module3 = this.transformSection(apiResponse.Modules3, 'modules3');
+      module3.isInlineSection = true;
+      module3.isExpanded = true;
+      childSections.push(module3);
+    }
+
+    if (this.hasCards(apiResponse.Modules1) || childSections.length > 0) {
+      longTermSolutions.childSections = childSections;
+      sections.push(longTermSolutions);
+    }
   }
 
   /**
@@ -400,7 +384,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   private hasCards(section: HomeSection): boolean {
     const cardsArray = Array.isArray(section.Cards) ? section.Cards : (Array.isArray(section.cards) ? section.cards : []);
-    return cardsArray && cardsArray.length > 0;
+    return cardsArray.length > 0;
   }
 
   private getDefaultVisibleCount(section: ContentSection): number {
@@ -463,11 +447,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const transformedCards = this.transformCards(cardsArray, sectionType, section.title);
 
     // Get viewall_Url - preserve null if explicitly set, otherwise try alternatives
-    const viewallUrl = section['viewall_Url'] !== undefined
-      ? section['viewall_Url']
-      : (section['viewAllUrl'] !== undefined
-        ? section['viewAllUrl']
-        : section['viewAll_url']);
+    let viewallUrl = section['viewall_Url'];
+    if (viewallUrl === undefined) {
+      viewallUrl = section['viewAllUrl'] !== undefined ? section['viewAllUrl'] : section['viewAll_url'];
+    }
 
     return {
       id: section.id || `section-${Date.now()}`,
@@ -497,131 +480,71 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   async getUserPreference() {
     this.commonService.getUserpreference().subscribe({
-      next: (res) => {
-        let perd = SharedService.getPreferenceDataForHome();
-        this.personalisedList = []
-
-        // Check if we have a stored active preference from our state service
-        const storedActivePreference = this.homeStateService.getActivePreference();
-
-        if (res) {
-          // User has a saved preference
-          localStorage.setItem('userPreference', res);
-
-          // Use stored preference if available and valid, otherwise use the API response
-          let preferenceToUse = storedActivePreference || res;
-          
-          // Validate preference - if invalid, default to Mental health (ID "2")
-          if (!this.isValidPreference(preferenceToUse, perd)) {
-            console.warn(`Invalid preference "${preferenceToUse}", defaulting to Mental health (ID: 2)`);
-            preferenceToUse = "2"; // Mental health ID
-            this.homeStateService.setActivePreference("2");
-          }
-
-          perd.forEach((r) => {
-            if (preferenceToUse === r.id) {
-              r['active'] = true;
-              this.personalisedList.push(r);
-            } else {
-              r['active'] = false;
-              this.personalisedList.push(r);
-            }
-          })
-
-          // Handle Self Awareness (id: 19) specially
-          if (preferenceToUse === "19" ||preferenceToUse === "20" ) {
-            this.showWisdomExercise = true;
-            this.preference = preferenceToUse;
-            this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-            console.log('User preference loaded (Self Awareness):', this.YourTopicofChoice);
-          } else {
-            this.showWisdomExercise = false;
-            this.loadHomeContents(Number(preferenceToUse));
-            this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-            console.log('User preference loaded:', this.YourTopicofChoice);
-          }
-
-          // Scroll to the selected section after preference is loaded
-          setTimeout(() => {
-            this.scrollToActiveList();
-          }, 400);
-        } else {
-          // Guest user or no preference - check if we have stored state
-          if (storedActivePreference && this.isValidPreference(storedActivePreference, perd)) {
-            // Use stored preference for guest users too (only if valid)
-            perd.forEach((r) => {
-              if (storedActivePreference === r.id) {
-                r['active'] = true;
-                this.personalisedList.push(r);
-              } else {
-                r['active'] = false;
-                this.personalisedList.push(r);
-              }
-            });
-
-            if (storedActivePreference === "19" || storedActivePreference === "20") {
-              this.showWisdomExercise = true;
-              this.preference = storedActivePreference;
-              this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-              console.log('Guest user with stored preference (Self Awareness):', this.YourTopicofChoice);
-            } else {
-              this.showWisdomExercise = false;
-              this.loadHomeContents(Number(storedActivePreference));
-              this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-              console.log('Guest user with stored preference:', this.YourTopicofChoice);
-            }
-
-            setTimeout(() => {
-              this.scrollToActiveList();
-            }, 400);
-          } else {
-            // No stored preference or invalid preference - default to Mental health
-            if (storedActivePreference && !this.isValidPreference(storedActivePreference, perd)) {
-              console.warn(`Invalid stored preference "${storedActivePreference}", defaulting to Mental health`);
-            }
-            this.handleGuestUserDefault(perd);
-          }
-        }
-      },
+      next: (res) => this.handleUserPreferenceResponse(res),
       error: (error) => {
         console.error('Error loading user preference:', error);
-        // On error (e.g., guest user, API failure), use default behavior
-        let perd = SharedService.getPreferenceDataForHome();
-        const storedActivePreference = this.homeStateService.getActivePreference();
-
-        if (storedActivePreference && this.isValidPreference(storedActivePreference, perd)) {
-          // Use stored preference if available and valid
-          perd.forEach((r) => {
-            if (storedActivePreference === r.id) {
-              r['active'] = true;
-              this.personalisedList.push(r);
-            } else {
-              r['active'] = false;
-              this.personalisedList.push(r);
-            }
-          });
-
-          if (storedActivePreference === "19") {
-            this.showWisdomExercise = true;
-            this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-          } else {
-            this.showWisdomExercise = false;
-            this.loadHomeContents(Number(storedActivePreference));
-            this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
-          }
-
-          setTimeout(() => {
-            this.scrollToActiveList();
-          }, 400);
-        } else {
-          // No valid stored preference - default to Mental health
-          if (storedActivePreference && !this.isValidPreference(storedActivePreference, perd)) {
-            console.warn(`Invalid stored preference "${storedActivePreference}", defaulting to Mental health`);
-          }
-          this.handleGuestUserDefault(perd);
-        }
+        this.handleUserPreferenceError();
       }
     });
+  }
+
+  private handleUserPreferenceResponse(res: any): void {
+    const perd = SharedService.getPreferenceDataForHome();
+    this.personalisedList = [];
+    const storedActivePreference = this.homeStateService.getActivePreference();
+
+    if (res) {
+      localStorage.setItem('userPreference', res);
+      let preferenceToUse = storedActivePreference || res;
+
+      if (!this.isValidPreference(preferenceToUse, perd)) {
+        console.warn(`Invalid preference "${preferenceToUse}", defaulting to Mental health (ID: 2)`);
+        preferenceToUse = "2";
+        this.homeStateService.setActivePreference("2");
+      }
+
+      this.activatePreferenceItems(preferenceToUse, perd);
+    } else if (storedActivePreference && this.isValidPreference(storedActivePreference, perd)) {
+      this.activatePreferenceItems(storedActivePreference, perd);
+    } else {
+      if (storedActivePreference && !this.isValidPreference(storedActivePreference, perd)) {
+        console.warn(`Invalid stored preference "${storedActivePreference}", defaulting to Mental health`);
+      }
+      this.handleGuestUserDefault(perd);
+    }
+  }
+
+  private activatePreferenceItems(preferenceToUse: string, perd: any[]): void {
+    this.personalisedList = perd.map(r => ({
+      ...r,
+      active: preferenceToUse === r.id
+    }));
+
+    if (preferenceToUse === "19" || preferenceToUse === "20") {
+      this.showWisdomExercise = true;
+      this.preference = preferenceToUse;
+      this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+    } else {
+      this.showWisdomExercise = false;
+      this.loadHomeContents(Number(preferenceToUse));
+      this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
+    }
+
+    setTimeout(() => this.scrollToActiveList(), 400);
+  }
+
+  private handleUserPreferenceError(): void {
+    const perd = SharedService.getPreferenceDataForHome();
+    const storedActivePreference = this.homeStateService.getActivePreference();
+
+    if (storedActivePreference && this.isValidPreference(storedActivePreference, perd)) {
+      this.activatePreferenceItems(storedActivePreference, perd);
+    } else {
+      if (storedActivePreference && !this.isValidPreference(storedActivePreference, perd)) {
+        console.warn(`Invalid stored preference "${storedActivePreference}", defaulting to Mental health`);
+      }
+      this.handleGuestUserDefault(perd);
+    }
   }
 
   /**
@@ -660,7 +583,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           break;
       }
 
-      if (sectionTitle && sectionTitle.trim().toLowerCase().includes('teen talk')) {
+      if (sectionTitle?.trim().toLowerCase().includes('teen talk')) {
         transformedCard.isTeenTalk = true;
       }
 
@@ -820,47 +743,66 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         console.log(res)
       }
     })
-  };
+  }
 
   onCardClick(card: ContentCard): void {
+    if (this.handleEventCardClick(card)) return;
+
+    this.trackCardClick(card);
+
+    if (this.handleLockedCard(card)) return;
+
+    this.markCardAsSeen(card);
+    this.handleShortVideoPersistence(card);
+    this.handleNavigation(card);
+
+    this.cardClick.emit(card);
+  }
+
+  private handleEventCardClick(card: ContentCard): boolean {
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
     const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/');
-    if (isEvent) {
-      const id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'eid') ?? this.extractIdFromPath(card.path);
-      if (id != null) {
-        this.commonService.clickEvents(id).subscribe({ next: () => { }, error: () => { } });
-      }
-      const sub = localStorage.getItem('Subscriber');
-      if (id != null && id >= 2 && sub === '0') {
-        this.showModal = true;
-        this.cardClick.emit(card);
-        return;
-      }
-      const prog = SharedService.getprogramName();
-      const link = this.extractYoutubeLink(card.path);
-      if (link) {
-        const code = id != null && id <= 1 ? 'rdtfghjhfdg' : 'vncbxdfchgvxd';
-        this.router.navigate([`${prog}/curated/youtubelink`, `${link}=${code}`], { state: { title: card.title } });
-        this.cardClick.emit(card);
-        return;
-      }
-    }
-    this.trackCardClick(card);
-    console.log('Card clicked:', card);
+    if (!isEvent) return false;
 
-    // Check if card is locked BEFORE marking as seen
-    // Only mark as seen if user can actually access the content
-    const isLocked = card && (card.isFree === '0' || card.isFree === 0);
-    if (!this.isSubscriber && isLocked) {
-      // Card is locked and user is not subscriber - don't mark as seen
+    const id = this.getCardId(card);
+    if (id != null) {
+      this.commonService.clickEvents(id).subscribe({ next: () => { }, error: () => { } });
+    }
+
+    if (id != null && id >= 2 && localStorage.getItem('Subscriber') === '0') {
       this.showModal = true;
       this.cardClick.emit(card);
-      return;
+      return true;
     }
 
-    // Mark card as seen in state management if it's currently unseen
-    // Only mark if card is not locked OR user is subscriber (can access it)
-    const isUnseen = card && card.id && (
+    const link = this.extractYoutubeLink(card.path);
+    if (link) {
+      const code = id != null && id <= 1 ? 'rdtfghjhfdg' : 'vncbxdfchgvxd';
+      this.router.navigate([`${SharedService.getprogramName()}/curated/youtubelink`, `${link}=${code}`], { state: { title: card.title } });
+      this.cardClick.emit(card);
+      return true;
+    }
+    return false;
+  }
+
+  private getCardId(card: ContentCard): number | null {
+    return this.extractNumericId(card.id) ?? 
+           this.extractQueryIdFromPath(card.path, 'eid') ?? 
+           this.extractIdFromPath(card.path);
+  }
+
+  private handleLockedCard(card: ContentCard): boolean {
+    const isLocked = card?.isFree === '0' || card?.isFree === 0;
+    if (!this.isSubscriber && isLocked) {
+      this.showModal = true;
+      this.cardClick.emit(card);
+      return true;
+    }
+    return false;
+  }
+
+  private markCardAsSeen(card: ContentCard): void {
+    const isUnseen = card?.id && (
       card.isRead === undefined ||
       card.isRead === null ||
       card.isRead === '0' ||
@@ -868,133 +810,94 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     );
 
     if (isUnseen) {
-      console.log('Marking card as seen in state:', card.id);
       this.homeStateService.markCardAsSeen(card.id);
-      // Update the card immediately for UI feedback
       card.isRead = '1';
     }
-    // Persist selected short video info so s3-video can play exact clicked item
+  }
+
+  private handleShortVideoPersistence(card: ContentCard): void {
     try {
-      const isShortVideo = (card.moduleType || '').toUpperCase() === 'VIDEO' || (card.mediaType || '').toUpperCase() === 'SHORT';
+      const type = (card.moduleType || '').toUpperCase();
+      const media = (card.mediaType || '').toUpperCase();
+      const isShortVideo = type === 'VIDEO' || media === 'SHORT';
       if (isShortVideo && card.path) {
-        let linkcode = '';
-        if (card.path.includes('/wisdom_shorts/videos/')) {
-          const parts = card.path.split('/');
-          linkcode = parts[parts.length - 1] || '';
-        }
-        if (!linkcode && card.path.includes('?')) {
-          const [_, queryString] = card.path.split('?');
-          const queryParams = new URLSearchParams(queryString);
-          linkcode = queryParams.get('videolink') || '';
-        }
-        if (linkcode) {
-          localStorage.setItem('wisdomvideolink', linkcode);
-        }
-        if (card.title) {
-          localStorage.setItem('wisdomvideotitle', card.title);
-        }
-        // Ensure swipe is disabled when opening shorts from Home
+        let linkcode = this.extractVideoLinkCode(card.path);
+        if (linkcode) localStorage.setItem('wisdomvideolink', linkcode);
+        if (card.title) localStorage.setItem('wisdomvideotitle', card.title);
         localStorage.setItem('fromIndex', 'false');
         localStorage.removeItem('wisdomShortData');
       }
     } catch (e) {
       console.warn('Failed to persist short video data', e);
     }
-    if (card.path && card.path.includes('?')) {
+  }
+
+  private extractVideoLinkCode(path: string): string {
+    if (path.includes('/wisdom_shorts/videos/')) {
+      const parts = path.split('/');
+      return parts[parts.length - 1] || '';
+    }
+    if (path.includes('?')) {
+      const queryParams = new URLSearchParams(path.split('?')[1]);
+      return queryParams.get('videolink') || '';
+    }
+    return '';
+  }
+
+  private handleNavigation(card: ContentCard): void {
+    if (!card.path) return;
+
+    if (card.path.includes('?')) {
       const [basePath, queryString] = card.path.split('?');
       const queryParams = new URLSearchParams(queryString);
       const queryObj: any = {};
-      queryParams.forEach((value, key) => {
-        queryObj[key] = value;
-      });
-      try {
-        const navExtras: any = { queryParams: queryObj };
-        if (basePath.includes('youtubelink')) {
-          navExtras.state = { title: card.title };
-        }
-        this.router.navigate([basePath], navExtras);
-      } catch (e) {
-        console.warn('Navigation failed for path with query params:', card.path, e);
-      }
-      return;
+      queryParams.forEach((value, key) => queryObj[key] = value);
+      
+      const navExtras: any = { queryParams: queryObj };
+      if (basePath.includes('youtubelink')) navExtras.state = { title: card.title };
+      this.router.navigate([basePath], navExtras);
+    } else {
+      const navExtras: any = card.path.includes('youtubelink') ? { state: { title: card.title } } : {};
+      this.router.navigate([card.path], navExtras);
     }
-    if (card.path) {
-      try {
-        if (card.path.includes('youtubelink')) {
-          this.router.navigate([card.path], { state: { title: card.title } });
-        } else {
-          this.router.navigate([card.path]);
-        }
-      } catch (e) {
-        console.warn('Navigation failed for path:', card.path, e);
-      }
-    }
-    this.cardClick.emit(card);
   }
 
   private trackCardClick(card: ContentCard): void {
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
+    const isTeenTalk = card.isTeenTalk || (card.path?.includes('teen_talk') || card.path?.includes('teen-talk'));
 
-    if (card.isTeenTalk || (card.path && (card.path.includes('teen_talk') || card.path.includes('teen-talk')))) {
-      const id = this.extractNumericId(card.id) ?? this.extractShortIdFromUrl(card.path) ?? this.extractIdFromPath(card.path);
-      if (id != null) {
-        this.commonService.clickTeenTalk(id).subscribe({ next: () => { }, error: () => { } });
-      }
+    if (isTeenTalk) {
+      const id = this.getCardId(card) ?? this.extractShortIdFromUrl(card.path);
+      if (id != null) this.commonService.clickTeenTalk(id).subscribe();
       return;
     }
 
     if (!type) return;
+
+    this.trackCategoryClick(type, card);
+  }
+
+  private trackCategoryClick(type: string, card: ContentCard): void {
+    const id = this.getCardId(card);
+    if (id == null) return;
+
     if (type.includes('PODCAST')) {
-      const id = this.extractNumericId(card.id) ?? this.extractIdFromPath(card.path);
-      if (id != null) {
-        this.commonService.clickPodcast(id).subscribe({ next: () => { }, error: () => { } });
+      this.commonService.clickPodcast(id).subscribe();
+    } else if (type.includes('BLOG')) {
+      this.onboardingService.clickBlog(id).subscribe();
+    } else if (type.includes('STORY') || card.path?.includes('/wisdom-stories/')) {
+      this.onboardingService.clickStory(id).subscribe();
+    } else if (type.includes('EVENT') || card.path?.includes('/events/')) {
+      this.commonService.clickEvents(id).subscribe();
+    } else if (type.includes('VIDEO') || type.includes('SHORT')) {
+      if (card.path?.includes('/wisdom_shorts/videos/')) {
+        const shortId = this.extractShortIdFromUrl(card.path);
+        if (shortId != null) this.commonService.clickShorts(shortId).subscribe();
       }
-      return;
-    }
-    if (type.includes('BLOG')) {
-      const id = this.extractNumericId(card.id) ?? this.extractBlogIdFromPath(card.path);
-      if (id != null) {
-        this.onboardingService.clickBlog(id).subscribe({ next: () => { }, error: () => { } });
-      }
-      return;
-    }
-    if (type.includes('STORY') || (card.path || '').includes('/wisdom-stories/')) {
-      const id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'sId') ?? this.extractIdFromPath(card.path);
-      if (id != null) {
-        this.onboardingService.clickStory(id).subscribe({ next: () => { }, error: () => { } });
-      }
-      return;
-    }
-    if (type.includes('EVENT') || (card.path || '').includes('/events/')) {
-      const id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'eid') ?? this.extractIdFromPath(card.path);
-      if (id != null) {
-        this.commonService.clickEvents(id).subscribe({ next: () => { }, error: () => { } });
-      }
-      return;
-    }
-    if (type.includes('VIDEO') || type.includes('SHORT')) {
-      const url = card.path || '';
-      if (url.includes('/wisdom_shorts/videos/')) {
-        const shortId = this.extractShortIdFromUrl(url);
-        if (shortId != null) {
-          this.commonService.clickShorts(shortId).subscribe({ next: () => { }, error: () => { } });
-        }
-      }
-      return;
-    }
-    if (type.includes('AUDIO') || type.includes('BREATHING')) {
-      const id = this.extractIdFromPath(card.path);
-      if (id != null) {
-        this.commonService.clickMeditations(id).subscribe({ next: () => { }, error: () => { } });
-      }
-      return;
-    }
-    if (type.includes('SOUNDSCAPE')) {
-      const id = this.extractIdFromPath(card.path);
-      if (id != null) {
-        this.commonService.clickSoundscapes(id).subscribe({ next: () => { }, error: () => { } });
-      }
-      return;
+    } else if (type.includes('AUDIO') || type.includes('BREATHING')) {
+      this.commonService.clickMeditations(id).subscribe();
+    } else if (type.includes('SOUNDSCAPE')) {
+      this.commonService.clickSoundscapes(id).subscribe();
     }
   }
 
@@ -1019,7 +922,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const qs = path.split('?')[1] || '';
     const params = new URLSearchParams(qs);
     const v = params.get('sId');
-    const n = v ? Number(v) : NaN;
+    const n = v ? Number(v) : Number.NaN;
     return Number.isFinite(n) ? n : null;
   }
 
@@ -1028,7 +931,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const qs = path.split('?')[1] || '';
     const params = new URLSearchParams(qs);
     const v = params.get(key || '');
-    const n = v ? Number(v) : NaN;
+    const n = v ? Number(v) : Number.NaN;
     return Number.isFinite(n) ? n : null;
   }
 
@@ -1036,12 +939,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!url) return null;
     const withoutQuery = url.split('?')[0];
     const filename = (withoutQuery.split('/').pop() || withoutQuery).toString();
-    const extMatch = filename.match(/\.(\d+)\.(mp4|webm|mov)$/i);
-    if (extMatch && extMatch[1]) {
+    const extMatch = /\.(\d+)\.(mp4|webm|mov)$/i.exec(filename);
+    if (extMatch?.[1]) {
       const n = Number(extMatch[1]);
       return Number.isFinite(n) ? n : null;
     }
-    const parts = filename.split(/[\.\-_]/).reverse();
+    const parts = filename.split(/[.\-_]/).reverse();
     for (const part of parts) {
       const n = Number(part);
       if (!Number.isNaN(n) && Number.isFinite(n)) {
@@ -1181,39 +1084,25 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Scroll to the active personalized list section (horizontal scrolling)
    */
   scrollToActiveList(): void {
-    console.log('=== HORIZONTAL SCROLL DEBUG START ===');
-    console.log('YourTopicofChoice:', this.YourTopicofChoice);
-    console.log('personalisedList:', this.personalisedList);
-
     if (this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
       const activeItem = this.YourTopicofChoice[0];
-      console.log('Active item:', activeItem);
 
       // Find the active navigation item in the DOM
       const navItems = document.querySelectorAll('.nav-item');
-      console.log('Found nav items:', navItems.length);
-
       let targetNavItem: HTMLElement | null = null;
 
       // Find the navigation item that matches the active item
-      for (let i = 0; i < navItems.length; i++) {
-        const navItem = navItems[i] as HTMLElement;
-        const navText = navItem.textContent?.trim();
-        console.log('Nav item text:', navText, 'Active item displayName:', activeItem.displayName);
-
-        if (navText === activeItem.displayName) {
+      for (const navItem of Array.from(navItems) as HTMLElement[]) {
+        if (navItem.textContent?.trim() === activeItem.displayName) {
           targetNavItem = navItem;
-          console.log('Found matching nav item:', navItem);
           break;
         }
       }
 
       if (targetNavItem) {
         // Get the navigation container
-        const navContainer = document.querySelector('.nav-menu') as HTMLElement;
+        const navContainer = globalThis.document.querySelector('.nav-menu');
         if (navContainer) {
-          console.log('Found nav container:', navContainer);
-
           // Calculate scroll position to center the active item
           const containerRect = navContainer.getBoundingClientRect();
           const itemRect = targetNavItem.getBoundingClientRect();
@@ -1221,26 +1110,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           // Calculate the scroll position to center the item
           const scrollLeft = targetNavItem.offsetLeft - (containerRect.width / 2) + (itemRect.width / 2);
 
-          console.log('Scrolling to position:', scrollLeft);
-
           // Smooth horizontal scroll
           navContainer.scrollTo({
             left: scrollLeft,
             behavior: 'smooth'
           });
-
-          console.log('Horizontally scrolled to active nav item:', activeItem.displayName);
-        } else {
-          console.warn('Navigation container not found');
         }
-      } else {
-        console.warn('Active navigation item not found in DOM');
-        console.log('Available nav items:', Array.from(navItems).map(item => item.textContent?.trim()));
       }
-    } else {
-      console.log('No active topic choice found');
     }
-    console.log('=== HORIZONTAL SCROLL DEBUG END ===');
   }
 
   /**
@@ -1281,11 +1158,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Restore state from the store on component initialization
    */
   private restoreStateFromStore(): void {
-    const state = this.homeStateService.getCurrentState();
-    this.showAllCards = { ...state.showAllCards };
+    const currentState = this.homeStateService.getCurrentState();
+    this.showAllCards = { ...currentState.showAllCards };
     // Initialize visible card count for horizontal sections (default 4)
     // Could restore from store if needed in future
-    console.log('Restored state from store:', state);
+    console.log('Restored state from store:', currentState);
   }
 
   /**
@@ -1295,8 +1172,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private restoreExpandedState(): void {
     // Ensure sections are sorted by ID before restoring state
     this.contentSections.sort((a, b) => {
-      const idA = parseInt(a.id) || 0;
-      const idB = parseInt(b.id) || 0;
+      const idA = Number.parseInt(a.id) || 0;
+      const idB = Number.parseInt(b.id) || 0;
       return idA - idB;
     });
 
@@ -1336,7 +1213,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   private getNavigationItemFromHash(): NavigationItem | null {
     // Get hash from URL (e.g., "#Mental-health" or "Mental-health")
-    const hash = window.location.hash;
+    const hash = globalThis.location.hash;
     if (!hash || hash.length <= 1) {
       return null;
     }
@@ -1387,8 +1264,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   @HostListener('window:scroll', ['$event'])
   handleScroll(): void {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const scrollTop = globalThis.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const viewportHeight = globalThis.innerHeight || document.documentElement.clientHeight;
     const threshold = viewportHeight * 0.2; // 20% of viewport height
 
     // Hide search box when scroll exceeds 20% of screen height
@@ -1400,13 +1277,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.showSearchBox = true;
     }
 
-    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    this.lastScrollTop = Math.max(0, scrollTop);
   }
 
   ngOnDestroy(): void {
     // Clean up event listeners
     if (this.hashChangeHandler) {
-      window.removeEventListener('hashchange', this.hashChangeHandler);
+      globalThis.removeEventListener('hashchange', this.hashChangeHandler);
     }
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
@@ -1501,6 +1378,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
       }
+      // Toggle body scroll based on search result visibility
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
+      }
     }
   }
 
@@ -1518,15 +1401,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
       );
     }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
+    }
   }
 
   /**
    * Handle focus out event - hide dropdown after delay
    */
   onFocusOutEvent(): void {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
+    // Removed auto-close to keep screen open until explicit close functionality is used
   }
 
   /**
@@ -1546,6 +1430,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   searchEvent(moduleName: string): void {
     this.searchinp = moduleName;
     this.searchResult = [];
+    this.toggleBodyScroll(false);
     this.getinp(moduleName);
   }
 
@@ -1555,6 +1440,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   clearSearch(): void {
     this.searchinp = '';
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    document.body.style.overflow = lock ? 'hidden' : '';
   }
 
   /**
@@ -1567,7 +1457,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       const loginResponse = localStorage.getItem('loginResponse');
       if (loginResponse) {
         const loginData = JSON.parse(loginResponse);
-        if (loginData && loginData.Streak) {
+        if (loginData?.Streak) {
           this.streak = loginData.Streak;
           return;
         }
@@ -1641,7 +1531,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Scroll navigation menu backward (left)
    */
   scrollNavBackward(): void {
-    if (this.navMenu && this.navMenu.nativeElement) {
+    if (this.navMenu?.nativeElement) {
       const scrollAmount = 200; // Adjust scroll distance as needed
       this.navMenu.nativeElement.scrollBy({
         left: -scrollAmount,
@@ -1654,7 +1544,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Scroll navigation menu forward (right)
    */
   scrollNavForward(): void {
-    if (this.navMenu && this.navMenu.nativeElement) {
+    if (this.navMenu?.nativeElement) {
       const scrollAmount = 200; // Adjust scroll distance as needed
       this.navMenu.nativeElement.scrollBy({
         left: scrollAmount,

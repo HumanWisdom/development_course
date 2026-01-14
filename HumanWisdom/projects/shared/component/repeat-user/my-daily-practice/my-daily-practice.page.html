@@ -4,21 +4,22 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw "
-        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'">
+        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'"
+        [class.search-active]="searchResult.length > 0">
 
 
         <div class="x_panel p0">
           <div class="x_content p0">
-            <div class="row  mt50px mb5px">
+            <div class="row  mt50px mb5px" *ngIf="searchResult.length === 0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                <h4 class="mtb0px fw_600 fs_24px lh_140p"[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                <h4 class="mtb0px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Welcome back, {{userName}}!
                 </h4>
 
               </div>
             </div>
 
-            <div class="row mb20px mt10px">
+            <div class="row mt10px" *ngIf="searchResult.length === 0">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="mtb0px fw_400 fs_15px lh_140p" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                   Here’s your daily dose of happiness :)
@@ -26,287 +27,231 @@
               </div>
             </div>
 
-            <!-- <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                  Here’s your daily dose of happiness :)                </h4>
-              </div>
-            </div> -->
+            <!-- search -->
+            <div class="row">
+              <div class="col-12 plr0px prelative search-box-container" [class.search-box-hidden]="!showSearchBox">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                  <input type="search" placeholder="Search for a topic"
+                    class="form-control has-feedback-left pfy_search hide_search" name="search-list"
+                    [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
+                    (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(searchinp)"
+                    style="border-radius: 100px !important;">
+                  <span *ngIf="searchResult.length == 0" class="fa fa-search form-control-feedback left pfy_search_icon"
+                    aria-hidden="true"></span>
+                  <span *ngIf="searchResult.length > 0" (click)="clearSearch()"
+                    class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
+                    aria-hidden="true" style="pointer-events: all !important; cursor: pointer !important;"></span>
+                  <span *ngIf="searchinp!=''" (click)="clearSearch()"
+                    class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                    aria-hidden="true"></span>
+                </div>
 
-            <!-- <div class="row mtb30px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="routeVideoaudio('video','/adults/videopage/introduction_to_happierme-videos-welcome_to_happierme.mp4', 'Welcome to HappierMe')">
-                <a class="">
-                  <div class="prelative">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/welcome_to_happierme.webp" class="img-responsive w100">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                      </div>
-                    </div>
+                <!-- Search Dropdown -->
+                <div class="row adsearch" *ngIf="searchResult.length > 0">
+                  <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                    <ul class="list-group autocomplete-list adsearch_ul">
+                      <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                        class="is-search list-group-item">
+                        {{item.ModuleName}}
+                      </li>
+                    </ul>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title" >
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
-                          Welcome to HappierMe
-                        </h4>
-                      </div>
-
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
-                          00:30
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div> -->
-
-            <!-- <div class="row mtb30px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="routeVideoaudio('video','/adults/videopage/introduction_to_happierme-videos-video_tour_of_the_app.mp4', 'Video tour of the app')">
-                <a class="">
-                  <div class="prelative">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/overview_of_app.webp" class="img-responsive w100">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tile_title" >
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                        <h4 class="mtb0px fw_500 fs_14px lh_24px fc_000000 whitespace_preline">
-                          Video tour of the app
-                        </h4>
-                      </div>
-
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <h4 class="mtb0px fs_12px lh_140p fc_000000_0_5 tright">
-                          02:25
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              background: linear-gradient(180deg, #834B66 0%, #120F40 100%);
-            </div> -->
-           
-
-               <!-- search -->
-            <div class="row  prelative ">
-              <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                <input type="search" class="form-control has-feedback-left pfy_search hide_search" name="search-list" [(ngModel)]="searchinp" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off" (focus)="onFocus()" (focusout)="onFocusOutEvent ()" (keyup.enter)="getinp($event.target.value)" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}" placeholder="Search for a topic">
-                <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                <span *ngIf=" searchinp!=''" (click)="clearSearch()" class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext" aria-hidden="true"></span>
-              </div>
-
-              <div class="row adsearch p0  ">
-                <div class="col-md-12 col-sm-12 col-xs-12 tsp">
-                  <ul class="list-group autocomplete-list adsearch_ul" *ngIf="searchResult.length>0">
-                    <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
-                      class="is-search list-group-item">{{item.ModuleName}}</li>
-                  </ul>
                 </div>
               </div>
             </div>
             <!-- /search -->
 
 
-  <!-- v1.1 -->
-                <div class="row ">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <div class="panel-group dpanelgroup" id="accordion">
-                      <div class="panel panel-default dpanel dpanel_01">
-                        <div class="mb20px">
-                          <h4 class="panel-title dpaneltitle">
-                            <div aria-expanded="true" >
-                              <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                                  <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                    <!-- <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+            <!-- v1.1 -->
+            <div class="row ">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="mb20px">
+                      <h4 class="panel-title dpaneltitle">
+                        <div aria-expanded="true">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <!-- <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
                                       My progress
                                     </h2> -->
-                                  </div>
-                                  <!-- <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
+                              </div>
+                              <!-- <div class="col-md-4 col-sm-4 col-xs-4 p0" *ngIf="isloggedIn" (click)="viewDetails()">
                                     <a (click)="viewDetails()">
                                       <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ee9596 tright underline">
                                         View details
                                       </h2>
                                     </a>
                                   </div> -->
-                                </div>
-                              </div>
                             </div>
-                          </h4>
-                        </div>
-                          <div >
-    
-                            <div class="row" >
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
-    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 td_points_box" style="margin-left:0px; width:31%;" >
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px tcenter">
-                                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wellness_daily.svg" class="img-responsive">
-                                  </div>
-    
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter mt10px">
-                                    <h4 class="mtb0px fs_15px fw_600 lh_120p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                      {{ streak }} {{ streak === 1 ? 'day' : 'days' }}
-                                    </h4>
-                                  </div>
-    
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                                    <h4 class="mtb0px fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                     
-                                    Streak
-                                    </h4>
-                                  </div>
-                                </div>
-    
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 td_points_boxnew " style="float: right;">
-                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p10">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                                      <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ffffff" *ngIf="loginResponse && loginResponse.hwScore;else noScore">
-                                         <!-- 74%  -->
-                                        {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
-                                      </h4>
-                                      <ng-template #noScore>
-                                        <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ffffff">
-                                          0%
-                                        </h4>
-                                        </ng-template>
-                                    </div>
-    
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                      <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
-                                         wellness score
-                                      </h4>
-                                    </div>
-    
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px" click="survey()">
-                                        <a class="" (click)="survey()">                                 
-                                        <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff td_underline flex_ai">
-                                          Take the survey
-                                           <span class="ml10px">
-                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/right_icon.svg" class="img-responsive">
-                                          </span>  
-                                        </h4>
-                                      </a>
-                                    </div>
-                                  </div>
-    
-                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_smiley.svg" class="img-responsive"> -->
-                                    </div>
-                                  </div>
-                                </div>
-    
-                              </div>
-                            </div>
-    
                           </div>
-                       
-                      </div>
+                        </div>
+                      </h4>
                     </div>
+                    <div>
+
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
+
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 td_points_box"
+                            style="margin-left:0px; width:31%;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wellness_daily.svg"
+                                class="img-responsive">
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter mt10px">
+                              <h4 class="mtb0px fs_15px fw_600 lh_120p"
+                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                {{ streak }} {{ streak === 1 ? 'day' : 'days' }}
+                              </h4>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                              <h4 class="mtb0px fs_12px fw_400 lh_140p "
+                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+
+                                Streak
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 td_points_boxnew " style="float: right;">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p10">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
+                                <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ffffff"
+                                  *ngIf="loginResponse && loginResponse.hwScore;else noScore">
+                                  <!-- 74%  -->
+                                  {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
+                                </h4>
+                                <ng-template #noScore>
+                                  <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ffffff">
+                                    0%
+                                  </h4>
+                                </ng-template>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                  wellness score
+                                </h4>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px" click="survey()">
+                                <a class="" (click)="survey()">
+                                  <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff td_underline flex_ai">
+                                    Take the survey
+                                    <span class="ml10px">
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/right_icon.svg"
+                                        class="img-responsive">
+                                    </span>
+                                  </h4>
+                                </a>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_smiley.svg" class="img-responsive"> -->
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+
                   </div>
                 </div>
-                <!-- /v1.1 -->
-                <!-- /my progress -->
-
-               <!-- hr -->
-              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
-                  <hr class="hr_style_v3_02">
-                </div>
               </div>
-              <!-- /hr -->
+            </div>
+            <!-- /v1.1 -->
+            <!-- /my progress -->
 
- <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
-  <h4 class="fw_400 fs_12px lh_130p mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-    CONTINUE WHERE YOU LEFT
-  </h4>
+            <!-- hr -->
+            <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                <hr class="hr_style_v3_02">
+              </div>
+            </div>
+            <!-- /hr -->
 
-  <!-- clickable card -->
-  <div class="toc_adiv_imgmy">
-    <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0">
+              <h4 class="fw_400 fs_12px lh_130p mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                CONTINUE WHERE YOU LEFT
+              </h4>
 
-          <!-- image -->
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div class="prelative">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex tcenter">
+              <!-- clickable card -->
+              <div class="toc_adiv_imgmy">
+                <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
-                  <!-- <img [src]="resumeThumb"
+                      <!-- image -->
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="prelative">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex tcenter">
+
+                              <!-- <img [src]="resumeThumb"
                   class="p0 session_imgnew" style="border: none;"> -->
 
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp" *ngIf="isAdults"
-                       class="p0 session_imgnew" style="border: none;">
-                         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{resumeLastvisited[0]['ModuleId']}}.webp" *ngIf="!isAdults"
-                       class="p0 session_imgnew" style="border: none;">
-                </div>
-              </div>
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp"
+                                *ngIf="isAdults" class="p0 session_imgnew" style="border: none;">
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{resumeLastvisited[0]['ModuleId']}}.webp"
+                                *ngIf="!isAdults" class="p0 session_imgnew" style="border: none;">
+                            </div>
+                          </div>
 
-              <!-- progress bar -->
-              <div class="progress dprogress">
-                <div class="progress-bar" role="progressbar"
-                     [style.width]="guideP + '%'"
-                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          <!-- progress bar -->
+                          <div class="progress dprogress">
+                            <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- text -->
+                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                        <div class="row">
+                          <h4 class="mtb0px fs_18px fw_600 lh_120p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                            {{resumeLastvisited[0]['ModuleName']}}
+                          </h4>
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                            Session #{{resumeLastvisited[0]['SessionCnt']}}
+                          </h4>
+                          <h4 class="mt0px fs_15px fw_500 lh_130p ellipsis p0 "
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                            {{resumeLastvisited[0]['SessionName']}}
+                          </h4>
+                        </div>
+                      </div>
+
+                      <!-- arrow -->
+                      <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tcenter">
+                        <i class="fa fa-angle-right fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
+                      </div>
+
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
-          </div>
 
-          <!-- text -->
-          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+            <!-- hr -->
             <div class="row">
-              <h4 class="mtb0px fs_18px fw_600 lh_120p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                {{resumeLastvisited[0]['ModuleName']}}
-              </h4>
-              <h4 class="mtb0px fs_12px fw_400 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                Session #{{resumeLastvisited[0]['SessionCnt']}}
-              </h4>
-              <h4 class="mt0px fs_15px fw_500 lh_130p ellipsis p0 " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
-                {{resumeLastvisited[0]['SessionName']}}
-              </h4>
-            </div>
-          </div>
-
-          <!-- arrow -->
-          <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 p0 tcenter">
-            <i class="fa fa-angle-right fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
-          </div>
-
-        </div>
-      </div>
-    </a>
-  </div>
-</div>
-
-          <!-- hr -->
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
-                  <hr class="hr_style_v3_02">
-                </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                <hr class="hr_style_v3_02">
               </div>
-              <!-- /hr -->
-    
+            </div>
+            <!-- /hr -->
+
             <div class="toc_adiv_imgmy ">
 
               <a (click)="routeToDailyCheckIn()">
@@ -331,15 +276,16 @@
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                      <h4 class="mt0px mb5px fw_400 fs_12px lh_140p"  [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                      <h4 class="mt0px mb5px fw_400 fs_12px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                         DAILY CHECK-IN
                       </h4>
-                      <h4 class="mt0px fs_15px fw_500  lh_130p ellipsis"  style="line-height: 19.5px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                      <h4 class="mt0px fs_15px fw_500  lh_130p ellipsis" style="line-height: 19.5px ;"
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
 
                         How are you feeling today?
                       </h4>
-                      <h4 class="mtb0px fs_12px lh_130p  fw_400"[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
-                      02:00
+                      <h4 class="mtb0px fs_12px lh_130p  fw_400" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
+                        02:00
                       </h4>
                     </div>
 
@@ -381,14 +327,14 @@
               </a> -->
             </div>
 
-              <!-- hr -->
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
-                  <hr class="hr_style_v3_02">
-                </div>
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                <hr class="hr_style_v3_02">
               </div>
-              <!-- /hr -->
-             <div class="row" *ngIf="!isSubscriber">
+            </div>
+            <!-- /hr -->
+            <div class="row" *ngIf="!isSubscriber">
 
               <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -402,39 +348,40 @@
                 CONTINUE WHERE YOU LEFT
               </h4> -->
               <!-- CONTINUE WHERE YOU LEFT -->
-            
-               <div class="toc_adiv_imgmynew ">
-                 
-                 <div class="row">
+
+              <div class="toc_adiv_imgmynew ">
+
+                <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="isAdults">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start.svg"  alt="" class="p0 session_img">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start.svg" alt=""
+                        class="p0 session_img">
 
                       <!-- <div class="progress dprogress">
                         <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div> -->
-                  </div>
-                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="!isAdults">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_teen.svg"  alt="" class="p0 session_img">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="!isAdults">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_teen.svg"
+                        alt="" class="p0 session_img">
 
                       <!-- <div class="progress dprogress">
                         <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div> -->
-                  </div>
-                  <!-- show only when user is NOT subscribed -->
+                    </div>
+                    <!-- show only when user is NOT subscribed -->
 
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px">
                       <div class="row">
                         <h4 class="mtb0px fs_21px lh_130p"
-                            [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
+                          [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
                           Start your free trial today!
                         </h4>
-                        <h4 class="mtb0px fs_12px fw_400"
-                            style="line-height:18px;"
-                            [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
+                        <h4 class="mtb0px fs_12px fw_400" style="line-height:18px;"
+                          [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
                           Get expert guidance and personalized tools with HappierMe Premium
                         </h4>
                       </div>
@@ -448,23 +395,23 @@
 
                   </div>
                 </div>
-                
-               </div>
-            
+
+              </div>
+
               <!-- CONTINUE WHERE YOU LEFT -->
             </div>
-          <!-- hr -->
-              <div class="row" *ngIf="!isSubscriber">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
-                  <hr class="hr_style_v3_02">
-                </div>
+            <!-- hr -->
+            <div class="row" *ngIf="!isSubscriber">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                <hr class="hr_style_v3_02">
               </div>
-              <!-- /hr -->
-    
+            </div>
+            <!-- /hr -->
+
 
             <div class="row mb15px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px fs_18px fw_600 lh_140p"[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                <h4 class="mtb0px fs_18px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Daily practice
                 </h4>
               </div>
@@ -541,37 +488,41 @@
                       <!-- <img
                         src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_daily_inspiration_v3.svg"
                         alt="insp" class="crimg1"> -->
-                       <!-- </div> -->
+                      <!-- </div> -->
                       <div class="va_middle ">
                         <div id="photo">
-                          
-                          <h4 class=" fw_400 fs_12px  lh_140p fc_000000"  *ngIf="isAdults">
-                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg" alt="play" style="margin-top: -1px;">
+
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_000000" *ngIf="isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg"
+                              alt="play" style="margin-top: -1px;">
                             DAILY INSPIRATION
                           </h4>
 
-                           <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82"  *ngIf="!isAdults">
-                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg" alt="play" style="margin-top: -1px;">
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82" *ngIf="!isAdults">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg"
+                              alt="play" style="margin-top: -1px;">
                             DAILY INSPIRATION
                           </h4>
                           <!-- <img  
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/dailymy.svg" alt=""> -->
                           <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_000000 plr5px"> DAILY INSPIRATION</span> -->
                         </div>
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/video-d.svg" class="img-responsive" style="width:12px; height:12px">
                           </div> -->
-                            <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                        <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
 
                           <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_000000">
                             DAILY INSPIRATION
                           </h4>
                           </div> -->
                       </div>
-                      <h4 class="mt0px mb5px fs_15px fw_500  lh_140p  ellipsis"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                      <h4 class="mt0px mb5px fs_15px fw_500  lh_140p  ellipsis"
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         {{dailyInspirationTitle}}
                       </h4>
-                      <h4 class="mt0px mb5px fs_12px  fw_400   lh_140p"  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
+                      <h4 class="mt0px mb5px fs_12px  fw_400   lh_140p"
+                        [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                         {{DailyInspirationTime}}
                       </h4>
                     </div>
@@ -618,12 +569,14 @@
                       <div class=" va_middle">
 
                         <div id="photo">
-                          <h4 class=" fw_400 fs_12px  lh_140p fc_000000"  *ngIf="isAdults">
-                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg" alt="play" style="margin-top: -3px;">
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_000000" *ngIf="isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg"
+                              alt="play" style="margin-top: -3px;">
                             BREATHING EXERCISE
                           </h4>
-                           <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82"  *ngIf="!isAdults">
-                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg" alt="play" style="margin-top: -3px;">
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82" *ngIf="!isAdults">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg"
+                              alt="play" style="margin-top: -3px;">
                             BREATHING EXERCISE
                           </h4>
 
@@ -641,10 +594,12 @@
                       </h4>
                       </div> -->
                       </div>
-                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         {{dailybreathTitle}}
                       </h4>
-                      <h4 class="mt0px mb5px fs_12px fw_400 lh_140p  "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
+                      <h4 class="mt0px mb5px fs_12px fw_400 lh_140p  "
+                        [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                         {{breatheTime}}
                       </h4>
                     </div>
@@ -692,12 +647,15 @@
 
                       <div class=" va_middle">
                         <div id="photo">
-                          <h4 class=" fw_400 fs_12px  lh_140p fc_000000"  *ngIf="isAdults">
-                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audii_daily1.svg" alt="play" style="margin-top: -3px;">
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_000000" *ngIf="isAdults">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audii_daily1.svg"
+                              alt="play" style="margin-top: -3px;">
                             DAILY MEDITATION
                           </h4>
-                          <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82"  *ngIf="!isAdults">
-                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_inv.svg" alt="play" style="margin-top: -3px;">
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82" *ngIf="!isAdults">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_inv.svg" alt="play"
+                              style="margin-top: -3px;">
                             DAILY MEDITATION
                           </h4>
 
@@ -716,10 +674,12 @@
                   </h4>
                   </div> -->
                       </div>
-                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         {{audioTitle}}
                       </h4>
-                      <h4 class="mt0px mb5px fs_12px  fw_400 lh_140p  "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
+                      <h4 class="mt0px mb5px fs_12px  fw_400 lh_140p  "
+                        [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                         {{audioTime}}
                       </h4>
                     </div>
@@ -738,17 +698,18 @@
               <a>
                 <div class="row">
 
-                   <div class="row mtb10px">
+                  <div class="row mtb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                                           <h4 class="mtb5px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                      <h4 class="mtb5px fs_12px fw_400 " style="line-height: 16.8px ;"
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/questions.svg"
-                        alt="play" class="mr10px" style="width:30px; height:30px">
+                          alt="play" class="mr10px" style="width:30px; height:30px">
                         QUESTION OF THE DAY
-                      </h4> 
+                      </h4>
                     </div>
                   </div>
-                  
-                    <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+
+                  <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
                        <div id="photo">
                        <h4 class="mtb0px fs_12px fw_400 fc_000000" style="line-height: 16.8px ;">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/mdp_journal.svg"
@@ -758,16 +719,16 @@
                          </div>
                     </div>
                    -->
-                
-                    <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
+
+                  <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
                       <h4 class="mtb5px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/questions.svg"
                         alt="play" class="mr10px" style="width:30px; height:30px">
                         QUESTION OF THE DAY
                       </h4> 
                     </div> -->
-                 
-<!-- <h4 class="mtb5px fw_400 fs_12px   " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+
+                  <!-- <h4 class="mtb5px fw_400 fs_12px   " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/questions.svg" alt="play" class="mr10px" style="width:30px; height:30px">
                              QUESTION OF THE DAY
                           </h4> -->
@@ -775,8 +736,9 @@
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0  plr10pxi">
 
-                        
-                        <h4 class="mtb0px v3_reflection_qtnmy fs_15px fw_500  tleft" style="line-height:19.5px;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+
+                        <h4 class="mtb0px v3_reflection_qtnmy fs_15px fw_500  tleft" style="line-height:19.5px;"
+                          [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{dailyqus}}
                         </h4>
                       </div>
@@ -784,8 +746,8 @@
 
                     <div class="row mt10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi ">
-                        <textarea type="text" id="comment" name="thread" [(ngModel)]="questext"  [placeholder]="placeholder"
-                          required="required" class="mdp_answer_heremy"
+                        <textarea type="text" id="comment" name="thread" [(ngModel)]="questext"
+                          [placeholder]="placeholder" required="required" class="mdp_answer_heremy"
                           maxlength="200"></textarea>
                       </div>
                     </div>
@@ -793,7 +755,8 @@
                     <div class="row mt15px" *ngIf="!(guest || !isloggedIn || questext === '')">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
 
-                        <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()" [hidden]="guest || !isloggedIn || (questext=='')" >
+                        <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()"
+                          [hidden]="guest || !isloggedIn || (questext=='')">
                           Add to journal
                         </button>
                       </div>
@@ -801,7 +764,8 @@
 
                     <div class="row mtb20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0  pl15px ">
-                        <h4 class=" fs_12px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
+                        <h4 class=" fs_12px fw_400 lh_150p  tcenter"
+                          [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                           Your online journal is secure and private to you.
                         </h4>
                       </div>
@@ -826,11 +790,12 @@
                 <div class="row">
                   <div class="row mtb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 ">
-                                            <h4 class="mtb0px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                      <h4 class="mtb0px fs_12px fw_400 " style="line-height: 16.8px ;"
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
 
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quete.svg" class=" mr10px"
-                        style="width:30px;height:30px;" alt="" > QUOTE OF THE DAY
-                        </h4>
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quete.svg"
+                          class=" mr10px" style="width:30px;height:30px;" alt=""> QUOTE OF THE DAY
+                      </h4>
                     </div>
                   </div>
                   <!-- <div class="row mb20px">
@@ -852,7 +817,8 @@
 
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4 class="mtb0px fs_15px fw_500   italic" style="line-height:22.5px;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <h4 class="mtb0px fs_15px fw_500   italic" style="line-height:22.5px;"
+                          [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{dailyinstext}}
                         </h4>
                       </div>
@@ -866,7 +832,8 @@
 
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                        <h4 class="mt5px mb0px fs_15px fw_400 lh_150p   tright" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <h4 class="mt5px mb0px fs_15px fw_400 lh_150p   tright"
+                          [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           - {{dailyinsAuthor}}
                         </h4>
                       </div>
@@ -892,11 +859,12 @@
                 <div class="row">
                   <div class="row mtb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                                            <h4 class="mtb0px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                      <h4 class="mtb0px fs_12px fw_400 " style="line-height: 16.8px ;"
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
 
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dailyy.svg"class=" mr10px"
-                        style="width:30px;height:30px;" alt="" > DAILY CHALLENGE
-                        </h4>
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dailyy.svg"
+                          class=" mr10px" style="width:30px;height:30px;" alt=""> DAILY CHALLENGE
+                      </h4>
                     </div>
                   </div>
                   <!-- <div class="row mb10px">
@@ -910,7 +878,8 @@
                   <div class="box_journal">
                     <div class="row mtb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                        <h4 class="mtb0px fs_15px fw_500  " style="line-height:22.5px;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"> {{trythistoday}}
+                        <h4 class="mtb0px fs_15px fw_500  " style="line-height:22.5px;"
+                          [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"> {{trythistoday}}
                         </h4>
                       </div>
                     </div>
@@ -924,33 +893,36 @@
                   <hr class="hr_style_v3_02">
                 </div>
               </div>
-              
 
 
-               <!-- visit fouram -->
-            <div class="row divnew_is_02">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb10px">
-                <a routerLink="/adults/forum">
-                  
+
+              <!-- visit fouram -->
+              <div class="row divnew_is_02">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb10px">
+                  <a routerLink="/adults/forum">
+
                     <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/fouram_new.svg"class="p0 session_imgforum">
-                        
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/fouram_new.svg"
+                        class="p0 session_imgforum">
+
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                      
+
                       <div class="va_middle">
                         <div id="photo">
 
-                            <h4 class=" fw_400 fs_12px  lh_140p fc_000000"  *ngIf="isAdults">
-                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg" alt="play" nclass="img-responsive" style="width:10px; height:10px; margin-top:-3px" >
-                           FORUM
-                          </h4>
-                          <h4 class=" fw_400 fs_12px  lh_140p fc_ffffff"  *ngIf="!isAdults">
-                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fouram_new1.svg" alt="play"  style="width:10px; height:10px; margin-top:-3px" >
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_000000" *ngIf="isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg"
+                              alt="play" nclass="img-responsive" style="width:10px; height:10px; margin-top:-3px">
                             FORUM
                           </h4>
-                          
+                          <h4 class=" fw_400 fs_12px  lh_140p fc_ffffff" *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fouram_new1.svg"
+                              alt="play" style="width:10px; height:10px; margin-top:-3px">
+                            FORUM
+                          </h4>
+
                           <!-- <img style="vertical-align:middle" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/ficon.svg" alt="" >
                           <span style="vertical-align:middle" class="mt0px  fw_400 fs_12px lh_130p  plr5px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">FORUM</span> -->
                         </div>
@@ -964,29 +936,29 @@
                       </h4>
                       </div> -->
                       </div>
-                      <h4 class="mt0px fw_600 fs_12px lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
-                        Visit the forum. Ask questions, share thoughts, and learn from others.                      </h4>
+                      <h4 class="mt0px fw_600 fs_12px lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        Visit the forum. Ask questions, share thoughts, and learn from others. </h4>
                     </div>
 
                     <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                         <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                     </div> -->
-                 
-                </a>
+
+                  </a>
+                </div>
               </div>
-            </div>
-            <!-- /visit fouram -->
-          
+              <!-- /visit fouram -->
+
               <!-- hr -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
                   <hr class="hr_style_v3_02">
                 </div>
               </div>
-              
+
               <div class="row mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
-                  <button  (click)="routeToDashboard()" type="submit" class="btn mdp_add_to_journal">
+                  <button (click)="routeToDashboard()" type="submit" class="btn mdp_add_to_journal">
                     Proceed to Home
                   </button>
                 </div>
@@ -1029,5 +1001,5 @@
   [content]="content"></app-modal>
 
 <!-- footer  -->
-<app-bottom-navigation ></app-bottom-navigation>
+<app-bottom-navigation></app-bottom-navigation>
 <!-- /footer -->

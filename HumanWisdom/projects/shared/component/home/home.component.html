@@ -13,7 +13,7 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
-              <div class="row home-container sticky-top-section">
+              <div class="row home-container sticky-top-section" [class.search-active]="searchResult.length > 0">
 
                 <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showSearchBox">
                   <div class="d-flex header-blk justify-content-between align-items-center plr20px mb0px"
@@ -25,9 +25,9 @@
                       [ngStyle]="{'background-color': !isAdults ? '#F1AC5E': '#FFE8BB'}"
                       style=" width: 128px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: center; padding: 0 10px;">
                       <img *ngIf="isAdults" class="stk-icon"
-                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak.svg">
+                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak.svg" alt="streak icon">
                       <img *ngIf="!isAdults" class="stk-icon"
-                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg">
+                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg" alt="streak icon">
                       <span class="fw_500 fs_12px lh_140p" [ngClass]="isAdults ?'fc_000000':'fc_ffffff'">
                         Streak:
                         <span class="fw_600">
@@ -39,7 +39,7 @@
                   </div>
                 </div>
                 <!-- Search Box -->
-                <div class="col-12 pr0px pdl20px pdr20px mt-3 mb-3 prelative search-box-container"
+                <div class="col-12 pr0px pdl20px pdr20px prelative search-box-container"
                   [class.search-box-hidden]="!showSearchBox">
                   <div class="col-md-12 col-sm-12 col-xs-12 form-group  has-feedback zi0 p0 mb0px">
                     <input type="search" placeholder="Search for a topic"
@@ -49,10 +49,11 @@
                       style="border-radius: 100px !important;">
                     <span *ngIf="searchResult.length == 0"
                       class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                    <span *ngIf="searchResult.length > 0" (click)="clearSearch()"
+                    <span *ngIf="searchResult.length > 0" (click)="clearSearch()" (keydown.enter)="clearSearch()"
+                      tabindex="0"
                       class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
                       aria-hidden="true"></span>
-                    <span *ngIf="searchinp!=''" (click)="clearSearch()"
+                    <span *ngIf="searchinp!=''" (click)="clearSearch()" (keydown.enter)="clearSearch()" tabindex="0"
                       class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
                       aria-hidden="true"></span>
                   </div>
@@ -61,7 +62,8 @@
                   <div class="row adsearch" *ngIf="searchResult.length > 0">
                     <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                       <ul class="list-group autocomplete-list adsearch_ul">
-                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)"
+                          (keydown.enter)="searchEvent(item.ModuleName)" tabindex="0" name="list"
                           class="is-search list-group-item">
                           {{item.ModuleName}}
                         </li>
@@ -106,11 +108,7 @@
 
               </div>
 
-              <!-- <div class="row" *ngIf="!showWisdomExercise">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
-                <hr class="hr_style_v4">
-              </div>
-            </div> -->
+
 
               <div class="row" *ngIf="!showWisdomExercise">
                 <div class="col-12 p-0" [ngStyle]="isloggedIn ? {'margin-top.px': 50} : {}">
@@ -143,7 +141,8 @@
                               <div *ngIf="shouldShowViewMore(section)"
                                 class="d-flex align-items-center justify-content-center view-more-container"
                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
-                                (click)="onViewMoreClick(section)">
+                                (click)="onViewMoreClick(section)" (keydown.enter)="onViewMoreClick(section)"
+                                tabindex="0">
                                 <a class="btn btn-link text-decoration-underline view-more-btn" style="text-decoration: underline !important; 
                                 font-size: 1.5rem !important;">
                                   View more<img
@@ -154,7 +153,8 @@
                               <!-- View All link for horizontal sections - only show when reached end -->
                               <div *ngIf="hasReachedEnd(section)"
                                 class="d-flex align-items-center justify-content-center view-more-container"
-                                style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)">
+                                style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)"
+                                (keydown.enter)="onViewAll(section)" tabindex="0">
                                 <a class="btn btn-link text-decoration-underline view-more-btn"
                                   style="text-decoration: underline !important;  font-size: 1.5rem !important;">
                                   View all<img
@@ -172,7 +172,8 @@
                                   <!-- Special layout for Life stories and Blogs -->
                                   <div *ngIf="section.rawSectionType === 2"
                                     class="story-blog-card d-flex align-items-center position-relative"
-                                    style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
+                                    style="background-color: rgba(255, 232, 187, 1); cursor: pointer;"
+                                    (click)="onCardClick(card)" (keydown.enter)="onCardClick(card)" tabindex="0">
                                     <!-- Tick Icon - Top Right Corner of Card -->
                                     <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
                                       <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
@@ -202,8 +203,9 @@
                                   </div>
                                   <!-- Special layout for Quick Answers (sectionType 3) -->
                                   <div *ngIf="section.rawSectionType === 3"
-                                    class="quick-answer-card d-flex align-items-center justify-content-between p-3 "
-                                    style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
+                                    class="quick-answer-card d-flex align-items-center justify-content-between p-3 cursor-pointer"
+                                    style="background-color: rgba(255, 232, 187, 1); cursor: pointer;"
+                                    (click)="onCardClick(card)" (keydown.enter)="onCardClick(card)" tabindex="0">
                                     <div class="flex-grow-1">
                                       <span class="mb-0  fw-normal fs15">{{ card.title }}</span>
                                     </div>
@@ -269,14 +271,16 @@
                       <!-- Accordion header + content for normal sections -->
                       <ng-template #accordionHeader>
                         <!-- Section Header (clickable for accordion) -->
-                        <div class="d-flex justify-content-between align-items-center section-header rounded-top  "
+                        <button
+                          class="d-flex justify-content-between align-items-center section-header rounded-top w-100 border-0"
                           [class.long-term-solutions-header]="section.title === 'Long term solutions'"
                           [style.margin-bottom.px]="section.isExpanded ? 0 : 20"
                           [style.margin-top.px]="section.isExpanded ? (section.id == 3 || section.id == 4) ? 0: 10 : (section.id == 3 || section.id == 4) ? 20 :20"
                           (click)="onSectionToggle(section)" (keydown.enter)="onSectionToggle(section)"
-                          (keydown.space)="onSectionToggle(section)" tabindex="0" role="button"
-                          [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id">
-                          <!-- [class.quick-answers-header]="section.rawSectionType === 3" -->
+                          (keydown.space)="onSectionToggle(section)" tabindex="0"
+                          [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id"
+                          style="background-color: transparent; padding: 0;">
+
                           <div class="d-flex flex-column">
                             <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
                             <span class="text-muted" *ngIf="section.subtitle && !section.isExpanded">{{
@@ -287,21 +291,17 @@
                               class="section-arrow" [class.arrow-expanded]="section.isExpanded"
                               [class.arrow-collapsed]="!section.isExpanded" [class.arrow-teenagers]="!isAdults">
                           </div>
-                        </div>
+                        </button>
 
-                        <!-- Section Content -->
-                        <div class="rounded-bottom"
+                        <section class="rounded-bottom"
                           [class.long-term-solutions-content]="section.title === 'Long term solutions'"
                           [@slideDown]="section.isExpanded ? 'expanded' : 'collapsed'" [id]="'section-' + section.id"
-                          role="region" [attr.aria-labelledby]="'section-title-' + section.id">
+                          [attr.aria-labelledby]="'section-title-' + section.id">
                           <div class="p0 ">
-                            <!-- [class.p-3]="section.title !== 'Long term solutions'" [class.p-3]="section.title === 'Long term solutions'" -->
                             <!-- Horizontal vs Vertical card layout for accordion content as well -->
                             <div *ngIf="section.cards && section.cards.length">
                               <div class="d-flex card-container " *ngIf="!section.isVerticalCards">
-                                <!-- [class.p-3]="section.title !== 'Long term solutions'"
-                                 [class.px-3]="section.title === 'Long term solutions'"
-                                 [class.py-3]="section.title === 'Long term solutions'" -->
+
                                 <div *ngFor="let card of getDisplayCards(section)" class="card-wrapper"
                                   style="min-width: 160px; flex-shrink: 0;">
                                   <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
@@ -310,7 +310,8 @@
                                 <div *ngIf="shouldShowViewMore(section)"
                                   class="d-flex align-items-center justify-content-center view-more-container"
                                   style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
-                                  (click)="onViewMoreClick(section)">
+                                  (click)="onViewMoreClick(section)" (keydown.enter)="onViewMoreClick(section)"
+                                  tabindex="0">
                                   <a class="btn btn-link text-decoration-underline view-more-btn"
                                     style="text-decoration: underline !important;  font-size: 1.5rem !important;">
                                     View more<img
@@ -322,7 +323,7 @@
                                 <div *ngIf="hasReachedEnd(section)"
                                   class="d-flex align-items-center justify-content-center view-more-container"
                                   style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
-                                  (click)="onViewAll(section)">
+                                  (click)="onViewAll(section)" (keydown.enter)="onViewAll(section)" tabindex="0">
                                   <a class="btn btn-link text-decoration-underline view-more-btn"
                                     style="text-decoration: underline !important;  font-size: 1.5rem !important;">
                                     View all<img
@@ -333,16 +334,14 @@
                               </div>
 
                               <div class="d-flex flex-column pl20px pr20px" *ngIf="section.isVerticalCards">
-                                <!--  [class.p-3]="section.title !== 'Long term solutions'"
-                                 [class.px-3]="section.title === 'Long term solutions'"
-                                 [class.py-3]="section.title === 'Long term solutions'" -->
+
 
                                 <div *ngFor="let card of getDisplayCards(section)" class="mb-3" style="width: 100%;">
                                   <div style="width: 100%;">
                                     <!-- Special layout for Life stories and Blogs -->
                                     <div *ngIf="section.rawSectionType === 2"
                                       class="story-blog-card d-flex align-items-center position-relative"
-                                      (click)="onCardClick(card)">
+                                      (click)="onCardClick(card)" (keydown.enter)="onCardClick(card)" tabindex="0">
                                       <!-- Tick Icon - Top Right Corner of Card -->
                                       <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
                                         <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
@@ -357,11 +356,6 @@
                                           <img
                                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg"
                                             alt="Lock icon" class="lock-icon-img" style="width: 20px; height: 20px;">
-                                          <!-- <img *ngIf="!isAdults"
-                                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
-                                             alt="Lock icon" 
-                                             class="lock-icon-img"
-                                             style="width: 20px; height: 20px;"> -->
                                         </div>
                                       </div>
                                       <div class="me-3" style="flex-shrink: 0; position: relative;">
@@ -381,7 +375,7 @@
                                     <!-- Special layout for Quick Answers (sectionType 3) -->
                                     <div *ngIf="section.rawSectionType === 3"
                                       class="quick-answer-card d-flex align-items-center justify-content-between  cursor-pointer p-3"
-                                      (click)="onCardClick(card)">
+                                      (click)="onCardClick(card)" (keydown.enter)="onCardClick(card)" tabindex="0">
                                       <div class="flex-grow-1">
                                         <h6 class="mb-0 fw-normal">{{ card.title }}</h6>
                                       </div>
@@ -433,15 +427,11 @@
                               </div>
                             </div>
 
-                            <!-- Show message if no cards -->
-                            <!-- <div *ngIf="!section.cards || !section.cards.length" class="text-muted text-center p-3">
-                            No cards available for this section
-                          </div> -->
+
 
                             <!-- child sections (these may be inline or accordion depending on their flag) -->
                             <div *ngIf="section.childSections && section.childSections.length" class="nested-sections">
-                              <!--        [class.px-3]="section.title === 'Long term solutions'"
-                               [class.py-2]="section.title === 'Long term solutions'" -->
+
                               <div *ngFor="let child of section.childSections">
                                 <ng-container
                                   *ngTemplateOutlet="renderSection; context: { $implicit: child }"></ng-container>
@@ -449,7 +439,7 @@
                             </div>
 
                           </div>
-                        </div>
+                        </section>
 
                       </ng-template>
 
@@ -468,8 +458,9 @@
                     <ng-container *ngTemplateOutlet="renderSection; context: { $implicit: section }"></ng-container>
 
                     <!-- ====== FREE-TRIAL BANNER – same spacing as sections ====== -->
-                    <a >
-                      <div class="toc_adiv_imgmynew plr20px py-3 mttopbot20" *ngIf="section.title ==='Begin here' && (!isSubscriber || !isloggedIn)">
+                    <a>
+                      <div class="toc_adiv_imgmynew plr20px py-3 mttopbot20"
+                        *ngIf="section.title ==='Begin here' && (!isSubscriber || !isloggedIn)">
                         <div class="row center_flex py-3"> <!-- same vertical gap as section content -->
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -477,16 +468,17 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative"
                               [ngClass]="{'pr5px': !isAdults}">
                               <img *ngIf="isAdults; else teenImg"
-                                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start.svg" alt=""
-                                class="p0 session_img">
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start.svg"
+                                alt="start trial" class="p0 session_img">
                               <ng-template #teenImg>
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start_teen.svg" alt=""
-                                  class="p0 session_img">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start_teen.svg"
+                                  alt="start trial" class="p0 session_img">
                               </ng-template>
                             </div>
 
                             <!-- copy column -->
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()"
+                              (keydown.enter)="goToSubscribe()" tabindex="0">
                               <h4 class="mtb0px fs_21px lh_130p"
                                 [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
                                 Start your free trial today!

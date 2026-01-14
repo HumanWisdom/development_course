@@ -1,49 +1,240 @@
-li.is-search:hover,
-  li.is-search:hover:before {
-    background: #E58D82;
-    color: #fff !important;
+/* Core Page Structure */
+.sc_01 {
+  min-height: 148vh !important;
+  padding: 20px 20px;
+  &.search-active {
+    padding: 0px !important;
   }
-  
-  .ws-lock-icon {
-    top: 40px !important;
+}
+
+.bg_FFF7E6 {
+  background: #FFF7E6 !important;
+  min-height: 100vh;
+
+  &.search-active {
+    background-color: #FFF7E6 !important;
   }
-  .box_v3_04a img {
-    width: 150px !important;
-    height: 115px !important;
+}
+.search-active .col-12{
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+.bg_stake {
+  background: #183C79 !important;
+  min-height: 100vh;
+
+  &.search-active {
+    background-color: #183C79 !important;
+    background-image: none !important;
   }
-  .nav.adults-theme>li>a:hover, .nav.adults-theme>li>a:focus {
-    color: #000000 !important;
+}
+
+/* Search box container with show/hide animation */
+.search-box-container {
+  transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+  overflow: visible;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.search-active .search-box-container {
+  margin-top: 40px !important;
+}
+
+.search-box-container.search-box-hidden {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Search dropdown styling */
+.prelative {
+  position: relative;
+}
+
+.adsearch {
+  position: absolute;
+  top: 100%;
+  z-index: 97; /* Ensure it stays on top */
+  margin-top: 0;
+  padding-top: 20px;
+  height: 100vh;
+  background-color: #FFF7E6;
+}
+
+.autocomplete-list {
+  max-height: calc(100vh - 260px) !important;
+  width: 100%;
+  height: 100vh !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  border-radius: 0;
+  box-shadow: none !important;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 250px;
+  background-color: #FFF7E6 !important;
+  border: none !important;
+
+  /* Scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #eea170 #FFF7E6; /* thumb track */
+
+  &::-webkit-scrollbar {
+    width: 6px;
   }
-  .nav.teens-theme>li>a:hover, .nav.teens-theme>li>a:focus {
-    color: #ffffff !important;
+  &::-webkit-scrollbar-track {
+    background: #FFF7E6;
   }
-a{
+  &::-webkit-scrollbar-thumb {
+    background: #eea170;
+    border-radius: 20px;
+  }
+}
+
+.adsearch_ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none !important;
+}
+
+.is-search {
+  position: relative;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none !important;
+  margin-bottom: 0 !important;
+  transition: background-color 0.2s ease;
+  background-color: #FFF7E6 !important;
+  color: rgba(0, 0, 0, 0.75);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    z-index: 2;
+    display: block;
+  }
+
+  &:hover {
+    background-color: #FFD889 !important;
+  }
+}
+.mt40px{
+  margin-top: 40px !important;
+}
+.is-search:last-child {
+  margin-bottom: 20px !important;
+
+  &::after {
+    display: block !important;
+  }
+}
+
+.adsearch_ul .list-group-item:last-child {
+  border-radius: 0 !important;
+}
+
+/* Teenager overrides */
+.bg_stake {
+  /* Full screen search background for teens */
+  .adsearch {
+    background-color: #183C79 !important;
+  }
+
+  .autocomplete-list {
+    background-color: #183C79 !important;
+    scrollbar-color: #778899 #183C79; /* thumb track */
+
+    &::-webkit-scrollbar-track {
+      background: #183C79;
+    }
+  }
+
+  .is-search {
+    background-color: #183C79 !important;
+    color: #fff; /* Whitish text color */
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.15) !important; /* Minimal white separator for teens */
+    }
+
+    &:hover {
+      background-color: #0C2B5F !important; /* Darker hover for teens */
+    }
+  }
+}
+
+.pointer-events-auto {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
+
+/* Existing styles */
+
+.ws-lock-icon {
+  top: 40px !important;
+}
+
+.box_v3_04a img {
+  width: 150px !important;
+  height: 115px !important;
+}
+
+.nav.adults-theme>li>a:hover, .nav.adults-theme>li>a:focus {
+  color: #000000 !important;
+}
+
+.nav.teens-theme>li>a:hover, .nav.teens-theme>li>a:focus {
+  color: #ffffff !important;
+}
+
+a {
   padding: 0;
 }
+
 .msrow a {
   position: relative;
 }
+
 .session_img_play {
-    right: 12px !important;
+  right: 12px !important;
 }
+
 .ws-read-icon {
-    bottom: 40px !important;
-} 
+  bottom: 40px !important;
+}
+
 .ls-read-icon {
   position: absolute;
   right: 19px;
   bottom: 145px;
   z-index: 2;
 }
+
 .ls-lock-icon {
   position: absolute;
   right: 19px;
   bottom: 57px;
   z-index: 2;
 }
+
 .ws-status-both.ws-read-icon {
   bottom: 30px !important;
 }
+
 .ws-status-both.ws-lock-icon {
   top: 30px !important;
 }

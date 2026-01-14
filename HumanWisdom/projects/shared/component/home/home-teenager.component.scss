@@ -7,6 +7,7 @@
         padding-right: 0;
         padding-top: 9rem;
         padding-bottom: 9rem;
+        overflow: visible !important;
     }
 
 .username-clr {
@@ -35,13 +36,10 @@
         display: flex;
         align-items: center;
         gap: 24px;
-        /* Adjust spacing between items as needed */
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-        // padding: 0 10px; /* Add some horizontal padding */
-
-        /* Hide scrollbars */
+        scroll-behavior: smooth;
         scrollbar-width: none;
         /* Firefox */
         -ms-overflow-style: none;
@@ -51,17 +49,6 @@
     /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
     .nav-menu::-webkit-scrollbar {
         display: none;
-    }
-
-    /* Smooth scrolling */
-    .nav-menu {
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        /* Firefox */
-        -ms-overflow-style: none;
-        /* Internet Explorer 10+ */
     }
 
     .nav-item {
@@ -166,10 +153,8 @@
         font-size: 14px;
     }
 
-    /* Adjust nav-menu to account for buttons */
     .nav-wrapper .nav-menu {
         flex: 1;
-        // margin: 0 20px;
         padding: 0 10px;
     }
 .btn-link{
@@ -186,7 +171,7 @@
         }
 
         .nav-wrapper .nav-menu {
-            margin: 0 36px;
+            margin: 0 ;
         }
     }
 
@@ -242,15 +227,11 @@
 
     .home_pathway {
         background: #0C2B5F;
-        // margin-top: 10px;
-        // margin-bottom: 10px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
 
-    // .home_pathway:hover {
-    //     padding-bottom: 0;
-    // }
+
 
     .home_introduction,
     .home_blogs,
@@ -344,14 +325,19 @@
     .search-box-container {
         transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
         overflow: visible;
-        /* Changed from hidden to allow sticky to work */
-        max-height: 200px;
+        /* Removed max-height to prevent clipping of absolute children in complex fixed layouts */
         opacity: 1;
         margin-top: 10px;
     }
 
+    /* Story and Blog card styling */
     .story-blog-card {
         background-color: #0C2B5F;
+        transition: all 0.2s ease;
+        width: 100%;
+        height: 130px;
+        border-radius: 12px;
+        padding: 15px;
     }
 
     .search-box-container.search-box-hidden {
@@ -367,17 +353,7 @@
     }
 
     /* Fixed Top Section - entire header with search and navigation */
-    // .sticky-top-section {
-    //   position: fixed;
-    //   top: 0;
-    //   left: 0;
-    //   right: 0;
-    //   z-index: 100;
-    //   background-color: #FFF4E6;
-    //   margin-bottom: 0;
-    //   width: 100%;
-    //   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow when fixed */
-    // }
+
 
     /* Spacer to prevent content from being hidden behind fixed header */
     .fixed-header-spacer {
@@ -408,18 +384,6 @@
         overflow: visible !important;
     }
 
-    .home-content {
-        overflow: visible !important;
-    }
-
-    /* Remove old sticky styles */
-    .row.home-container:first-of-type {
-        position: fixed;
-        z-index: 98;
-        max-width: 30%;
-        margin-top: -10px;
-    }
-
     @media only screen and (max-width: 768px) {
         .row.home-container:first-of-type {
             position: fixed;
@@ -444,22 +408,7 @@
         background-color: #0C2B5F
     }
 
-    /* Story and Blog card styling */
-    .story-blog-card {
-        transition: all 0.2s ease;
-        // border: 1px solid rgba(0, 0, 0, 0.1);
-        // width: 335px;
-        width: 100%;
-        height: 130px;
-        border-radius: 12px;
-        padding: 15px;
-    }
 
-    /* .story-blog-card:hover {
-     background-color: #FFE8BB !important;
-     transform: translateY(-2px);
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    } */
 
     /* View All/View Less button styling */
     .view-toggle-btn {
@@ -480,11 +429,9 @@
 
     .quick-answer-card {
         transition: all 0.2s ease;
-        // border: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 12px;
         min-height: 60px;
         background-color: #0C2B5F !important;
-        /* Light orange/cream background */
     }
 
     .quick-answer-card:hover {
@@ -514,7 +461,6 @@
         opacity: 0.1;
         margin: 10px 0;
         margin: 0 0 0 0;
-        //filter: brightness(0) invert(0.5); /* Makes the SVG grey */
     }
 
     /* Search dropdown styling */
@@ -525,42 +471,107 @@
     .adsearch {
         position: absolute;
         top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 1001;
-        /* Higher than sticky nav to appear above it */
+        left: -20px; /* Counteract parent padding to cover full width */
+        right: -20px;
+        z-index: 2005; /* Ensure it stays on top */
         margin-top: 0;
+        padding-top: 20px;
+        height: 100vh;
+        background-color: #183C79;
     }
 
     .autocomplete-list {
-        max-height: 300px;
-        overflow-y: auto;
-        border-radius: 0 0 20px 20px;
-        background-color: #0C2B5F !important;
+        max-height: calc(100vh - 260px) !important;
+        height: 100vh !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+        border-radius: 0;
+        box-shadow: none !important;
         margin: 0;
         padding: 0;
-        background-color: white !important;
+        padding-bottom: 150px; /* Increased buffer to ensure items can scroll well above the footer */
+        background-color: #183C79 !important; /* Blue background to match personalised search */
+        border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
+
+        /* Scrollbar styling */
+        scrollbar-width: thin;
+        scrollbar-color: #778899 #183C79; /* thumb track */
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #183C79;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #778899;
+            border-radius: 20px;
+        }
     }
 
     .adsearch_ul {
         list-style: none;
         padding: 0;
         margin: 0;
+        border: none !important;
     }
 
     .is-search {
+        position: relative;
         cursor: pointer;
-        padding: 12px 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 20px; /* Maintained layout consistency */
+        border: none !important; /* Remove Bootstrap default borders */
+        margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
         transition: background-color 0.2s ease;
-        background-color: #ffffff !important;
+        background-color: #183C79 !important; /* Blue background to match personalised search */
+        color: #ffffff; /* Whitish text color to match personalised search */
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.15) !important; /* Minimal white separator */
+            z-index: 2; /* Ensure it stays above siblings */
+            display: block;
+        }
     }
 
     .is-search:hover {
-        background-color: rgba(0, 0, 0, 0.08) !important;
+        background-color: #0C2B5F!important;
     }
 
     .is-search:last-child {
-        border-bottom: none;
+        margin-bottom: 20px !important;
+
+        &::after {
+            display: block !important;
+        }
+    }
+    .adsearch_ul .list-group-item:last-child {
+        border-radius: 0 !important;
+    }
+
+    .home-container.search-active {
+        background-color: #183C79 !important;
+        .sticky-nav-container {
+            display: none !important;
+        }
+        .header-blk {
+            display: none !important;
+        }
+        .col-12 {
+            width: 100vw;
+        }
+        .bg_nonei {
+            display: none !important;
+        }
+        .home-content {
+            padding-top: 40px !important;
+        }
     }
 }
