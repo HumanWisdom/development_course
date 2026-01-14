@@ -110,7 +110,7 @@ require_once('./includes/security_config.php');
           <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>  -->
           <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>  -->
           <img style="width:100%;height:auto;"
-            src="https://d1tenzemoxuh75.cloudfront.net/website/Adults+teenagers+2.svg"
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannerind.svg"
             class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 
@@ -156,6 +156,36 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
+
+           <div class="row mtb15px">
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" class=""  alt="wh_tick_black" loading=lazy>
+
+
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-12 p0 ">
+
+              <h2 class="mtb0px fs_21px fw_600 lh_130p fc_000000 ta_lc">
+                
+Now with Olly AI              </h2>
+
+            </div>
+          </div>
+
+          <!-- <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""  alt="wh_tick_black" loading=lazy>
+                </div>
+
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  Addresses the root cause, for lasting change.  </h3>
+                </div>
+              </div>
+            </div> -->
           <div class="row mtb15px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ">
 
@@ -575,6 +605,80 @@ require_once('./includes/security_config.php');
         </div>
       </section> -->
     <!-- /aspects -->
+
+
+
+
+ <!-- teenagers -->
+    <section>
+      <div class="row center_flex web_home_divcircle">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element w-335px fixed_w">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 land-happierMe-section" data-aos="fade-up"
+            data-aos-delay="100">
+
+
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/secowly.svg"
+              class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
+
+
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/circles.png"
+              class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+
+            <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 tleft ta_lc" data-aos="fade-up"
+            data-aos-delay="200">
+            <div class="land-happierme-margin">
+
+              <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                
+                Our happiness depends on many factors.
+              </h2> -->
+
+              <h2 class="mb0px fs_42px fw_600 lh_150p fc_000000 f_21px">
+Introducing Olly AI, your personal guide inside HappierMe.              </h2>
+
+              <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
+
+              <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
+                <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
+              </h3>
+
+              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_000000">
+Talk to Olly about what’s on your mind — stress, anxiety, relationships, tricky habits, parenting, or work. Olly offers practical support and guides you to trusted, expert-backed resources.              </h4>
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
+                  <a href="/pages/teenagers.php" aria-label="Explore more about the teenagers app" class="">
+                    <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                    <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
+                      Find out more
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                    </h4> -->
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
+                  <a href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick">
+                    <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width h_48px btn_popup">
+                      Chat with Olly now
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /teenagers -->
+
+
+
 
     <!-- video -->
     <section>
