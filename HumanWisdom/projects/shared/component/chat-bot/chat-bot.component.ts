@@ -37,7 +37,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private chatbotService: ChatbotService,
-    private chatStore: ChatStore,
+    public chatStore: ChatStore,
     private sanitizer: DomSanitizer,
     private router: Router,
     private location: Location
@@ -148,7 +148,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         this.chatbotService.setTyping(false);
 
         if (response.status === 'success') {
-          this.chatbotService.addBotMessage(response.response, response.session_id);
+          this.chatbotService.addBotMessage(
+            response.response, 
+            response.session_id,
+            response.allow_feedback,
+            response.offer_related,
+            response.is_followup
+          );
           // Note: Scrolling is handled automatically by messages$ subscription
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
@@ -301,6 +307,202 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.onSendMessage();
   }
 
+  /**
+   * Handle thumbs up click - send positive feedback
+   */
+  onThumbsUp(message: ChatMessage): void {
+    if (message.feedback_given || this.isLoading) {
+      return;
+    }
+
+    // Find the corresponding user message
+    const messageIndex = this.messages.findIndex(msg => msg.id === message.id);
+    let userMessage = '';
+    
+    // Look backwards for the most recent user message before this bot message
+    for (let i = messageIndex - 1; i >= 0; i--) {
+      if (this.messages[i].sender === 'user') {
+        userMessage = this.messages[i].content;
+        break;
+      }
+    }
+
+    // Update message to show feedback was given
+    this.chatStore.updateMessage({
+      id: message.id,
+      updates: { feedback_given: 'positive' }
+    });
+
+    // Send feedback to API with correct format
+    this.chatbotService.sendFeedback(
+      message.id,
+      'thumbs_up',
+      userMessage,
+      message.content
+    ).subscribe({
+      next: (response) => {
+        console.log('Positive feedback sent successfully:', response);
+      },
+      error: (error) => {
+        console.error('Error sending feedback:', error);
+        // Revert the feedback state if API call fails
+        this.chatStore.updateMessage({
+          id: message.id,
+          updates: { feedback_given: null }
+        });
+      }
+    });
+  }
+
+  /**
+   * Handle thumbs down click - send negative feedback
+   */
+  onThumbsDown(message: ChatMessage): void {
+    if (message.feedback_given || this.isLoading) {
+      return;
+    }
+
+    // Find the corresponding user message
+    const messageIndex = this.messages.findIndex(msg => msg.id === message.id);
+    let userMessage = '';
+    
+    // Look backwards for the most recent user message before this bot message
+    for (let i = messageIndex - 1; i >= 0; i--) {
+      if (this.messages[i].sender === 'user') {
+        userMessage = this.messages[i].content;
+        break;
+      }
+    }
+
+    // Update message to show feedback was given
+    this.chatStore.updateMessage({
+      id: message.id,
+      updates: { feedback_given: 'negative' }
+    });
+
+    // Send feedback to API with correct format
+    this.chatbotService.sendFeedback(
+      message.id,
+      'thumbs_down',
+      userMessage,
+      message.content
+    ).subscribe({
+      next: (response) => {
+        console.log('Negative feedback sent successfully:', response);
+      },
+      error: (error) => {
+        console.error('Error sending feedback:', error);
+        // Revert the feedback state if API call fails
+        this.chatStore.updateMessage({
+          id: message.id,
+          updates: { feedback_given: null }
+        });
+      }
+    });
+  }
+
+  /**
+   * Handle Yes button click - send yes response
+   */
+  onYesClick(): void {
+    if (this.isLoading) {
+      return;
+    }
+
+    this.currentMessage = 'Yes';
+    this.errorMessage = '';
+    this.isLoading = true;
+
+    // Add user message
+    this.chatbotService.addUserMessage('Yes');
+
+    // Add typing indicator
+    this.chatbotService.addTypingIndicator();
+    this.chatbotService.setTyping(true);
+
+    // Scroll to show the response
+    setTimeout(() => this.scrollSlightlyDown(), 100);
+
+    // Send yes response to chatbot API
+    this.chatbotService.sendYesNoResponse('yes').subscribe({
+      next: (response) => {
+        this.chatbotService.removeTypingIndicator();
+        this.chatbotService.setTyping(false);
+
+        if (response.status === 'success') {
+          this.chatbotService.addBotMessage(
+            response.response,
+            response.session_id,
+            response.allow_feedback,
+            response.offer_related,
+            response.is_followup
+          );
+        } else {
+          this.errorMessage = 'Sorry, I encountered an error. Please try again.';
+        }
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Chatbot API Error:', error);
+        this.chatbotService.removeTypingIndicator();
+        this.chatbotService.setTyping(false);
+        this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
+        this.isLoading = false;
+      }
+    });
+  }
+
+  /**
+   * Handle No button click - send no response
+   */
+  onNoClick(): void {
+    if (this.isLoading) {
+      return;
+    }
+
+    this.currentMessage = 'No';
+    this.errorMessage = '';
+    this.isLoading = true;
+
+    // Add user message
+    this.chatbotService.addUserMessage('No');
+
+    // Add typing indicator
+    this.chatbotService.addTypingIndicator();
+    this.chatbotService.setTyping(true);
+
+    // Scroll to show the response
+    setTimeout(() => this.scrollSlightlyDown(), 100);
+
+    // Send no response to chatbot API
+    this.chatbotService.sendYesNoResponse('no').subscribe({
+      next: (response) => {
+        this.chatbotService.removeTypingIndicator();
+        this.chatbotService.setTyping(false);
+
+        if (response.status === 'success') {
+          this.chatbotService.addBotMessage(
+            response.response,
+            response.session_id,
+            response.allow_feedback,
+            response.offer_related,
+            response.is_followup
+          );
+        } else {
+          this.errorMessage = 'Sorry, I encountered an error. Please try again.';
+        }
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Chatbot API Error:', error);
+        this.chatbotService.removeTypingIndicator();
+        this.chatbotService.setTyping(false);
+        this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
+        this.isLoading = false;
+      }
+    });
+  }
+
   sanitizeHtml(html: string): SafeHtml {
     console.log('HTML Content:', html);
     console.log('Contains anchor tags:', html.includes('<a'));
@@ -342,7 +544,43 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
           htmlAnchor.style.color = '#1976d2';
         });
 
-        console.log('Styled anchor:', htmlAnchor);
+        // Add click tracking for external links
+        // Remove any existing click listeners first to avoid duplicates
+        const newAnchor = htmlAnchor.cloneNode(true) as HTMLAnchorElement;
+        htmlAnchor.parentNode?.replaceChild(newAnchor, htmlAnchor);
+        
+        // Re-apply styles to the new element
+        newAnchor.style.color = '#1976d2';
+        newAnchor.style.textDecoration = 'underline';
+        newAnchor.style.cursor = 'pointer';
+        
+        // Add hover listeners to new element
+        newAnchor.addEventListener('mouseenter', () => {
+          newAnchor.style.color = '#1565c0';
+        });
+
+        newAnchor.addEventListener('mouseleave', () => {
+          newAnchor.style.color = '#1976d2';
+        });
+
+        // Add click tracking
+        newAnchor.addEventListener('click', (event: Event) => {
+          const clickedUrl = newAnchor.href;
+          if (clickedUrl) {
+            console.log('Link clicked, tracking:', clickedUrl);
+            // Track the click (don't wait for response to avoid blocking navigation)
+            this.chatbotService.trackLinkClick(clickedUrl).subscribe({
+              next: (response) => {
+                console.log('Link click tracked successfully:', response);
+              },
+              error: (error) => {
+                console.error('Error tracking link click:', error);
+              }
+            });
+          }
+        });
+
+        console.log('Styled and added tracking to anchor:', newAnchor);
       });
     }, 100);
   }
