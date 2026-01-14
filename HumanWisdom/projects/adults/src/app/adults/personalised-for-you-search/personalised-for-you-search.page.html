@@ -787,24 +787,14 @@
                               </div>
                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 " *ngIf="isloggedIn"
                                 (click)="viewDetails()">
-                                <a (click)="viewDetails()">
-                                  <div class="row">
-                                    <div class="col-11 p0">
-                                      <h2 class="mtb0px fs_12px fw_500 lh_150p fc_D7586B tleft td_underline flex_ai">
-                                        View details
-                                      </h2>
-
-                                    </div>
-                                    <div class="col-1 p0 tright flex_ai">
-
-                                      <span>
-                                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/view.svg"
-                                          class="img-responsive">
-                                      </span>
-                                    </div>
-
-                                  </div>
-
+                                <a (click)="viewDetails()" class="display_flex flex_ai justify-content-end">
+                                  <h2 class="mtb0px fs_12px fw_500 lh_150p fc_D7586B td_underline">
+                                    View details
+                                  </h2>
+                                  <span class="ml5px">
+                                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/view.svg"
+                                      class="img-responsive">
+                                  </span>
                                 </a>
                               </div>
                             </div>
