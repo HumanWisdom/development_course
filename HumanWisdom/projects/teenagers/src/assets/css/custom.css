@@ -15100,11 +15100,6 @@ label>input[type="radio"]:checked+*::before {
   color: #000000;
 }
 
-.mt5px {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 .btn_add {
 
   background: #FFFFFF;
@@ -19730,7 +19725,7 @@ ngx-circular-player svg {
 }
 
 .nrow_active {
-  padding:  10px;
+  padding: 10px;
   border-bottom: 1px solid #DADADA;
   background: #F2F2F2;
   /* margin-top: 15px; */
@@ -32985,9 +32980,9 @@ body * {
 .btn_prev_v3 {
   background: transparent;
   border: 0;
-   padding: 0; 
+  padding: 0;
   margin-right: 0 !important;
-   margin-bottom: 0 !important; 
+  margin-bottom: 0 !important;
   display: flex;
   align-items: center;
   color: #fff !important;
@@ -34749,10 +34744,12 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   padding: 20px;
   text-align: center;
 }
+
 .select_box:hover {
-   background: #0C2B5F !important;
-  color:#E58D82 !important;
+  background: #0C2B5F !important;
+  color: #E58D82 !important;
 }
+
 .mdp_oli_traywell {
   box-shadow: unset;
   position: fixed;

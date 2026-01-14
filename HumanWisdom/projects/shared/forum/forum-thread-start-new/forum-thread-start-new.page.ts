@@ -71,6 +71,13 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
    setTimeout(() => {
     this.myTextarea.nativeElement.focus();
   }, 2000);
+
+  
+        if (SharedService.ProgramId == ProgramType.Adults) {
+          this.isAdults = true;
+        } else {
+          this.isAdults = false;
+        }
   }
 
   ngOnDestroy(): void {

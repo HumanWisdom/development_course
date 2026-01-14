@@ -1,6 +1,3 @@
-
-
-
 .certificate {
   width: 316px;
   height: 433px;
@@ -32,7 +29,7 @@
   width: 316px;
   height: 433px;
   position: relative;
-  background:#120F40;
+  background: #120F40;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
@@ -203,32 +200,36 @@
 }
 
 /* /forum */
-.m-bottom{
-  margin-bottom: 3rem; 
+.m-bottom {
+  margin-bottom: 3rem;
 }
-.btn-down{
-  color:#E8A880;
+
+.btn-down {
+  color: #EE9596;
   background: transparent;
   cursor: pointer;
   padding-left: 9px;
   font-size: 16px;
 }
-.btn-thread{
-  display: contents!important;
+
+.btn-thread {
+  display: contents !important;
 }
-.choose-category-popup{
+
+.choose-category-popup {
   top: 40%;
 }
 
-.h-250{
-height: 250px;
+.h-250 {
+  height: 250px;
 }
 
-.img-forum{
-border-radius: 1rem;
+.img-forum {
+  border-radius: 1rem;
 }
-.btn-confirm{
-  margin-top:-2rem;
+
+.btn-confirm {
+  margin-top: -2rem;
 }
 
 /* /forum */
