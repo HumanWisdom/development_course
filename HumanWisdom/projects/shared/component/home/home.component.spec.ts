@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { HomeComponent } from './home.component';
+import { HomeComponent, NavigationItem, ContentCard, ContentSection } from './home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -61,5 +61,9 @@ describe('HomeComponent', () => {
     expect(component.cardClick.emit).toHaveBeenCalledWith(card);
   });
 
-
+  it('should return correct overlay icon class', () => {
+    expect(component.getOverlayIconClass('play')).toBe('fas fa-play');
+    expect(component.getOverlayIconClass('audio')).toBe('fas fa-volume-up');
+    expect(component.getOverlayIconClass('unknown')).toBe('fas fa-play');
+  });
 });
