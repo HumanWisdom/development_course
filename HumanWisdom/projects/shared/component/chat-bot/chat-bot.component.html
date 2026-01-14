@@ -33,7 +33,7 @@
           
           <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
             <!-- Regular message content -->
-            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"></div>
+            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)" (click)="onMessageContentClick($event)"></div>
             
             <!-- Suggestions -->
             <div *ngIf="!message.isTyping && message.suggestions && message.suggestions.length > 0" class="suggestions-container">

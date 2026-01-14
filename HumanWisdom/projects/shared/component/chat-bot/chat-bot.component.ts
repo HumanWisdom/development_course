@@ -308,6 +308,38 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
+   * Handle clicks on message content to track link clicks
+   */
+  onMessageContentClick(event: Event): void {
+    const target = event.target as HTMLElement;
+    
+    // Check if clicked element is an anchor tag or inside one
+    const anchor = target.closest('a') as HTMLAnchorElement;
+    
+    if (anchor && anchor.href) {
+      event.preventDefault(); // Prevent default navigation
+      event.stopPropagation(); // Stop event bubbling
+      
+      const clickedUrl = anchor.href;
+      console.log('Link clicked via delegation, tracking:', clickedUrl);
+      
+      // Track the click first, then navigate on success
+      this.chatbotService.trackLinkClick(clickedUrl).subscribe({
+        next: (response) => {
+          console.log('Link click tracked successfully:', response);
+          // Navigate to the URL in the same tab after successful tracking
+          window.location.href = clickedUrl;
+        },
+        error: (error) => {
+          console.error('Error tracking link click:', error);
+          // Even if tracking fails, navigate to the URL so user isn't blocked
+          window.location.href = clickedUrl;
+        }
+      });
+    }
+  }
+
+  /**
    * Handle thumbs up click - send positive feedback
    */
   onThumbsUp(message: ChatMessage): void {
@@ -524,13 +556,22 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   styleAnchorTags(): void {
-    // Use setTimeout to ensure DOM is updated
+    // Use setTimeout with longer delay to ensure DOM is updated after innerHTML rendering
     setTimeout(() => {
-      const anchorTags = document.querySelectorAll('.chat-bot-container a');
-      console.log('Found anchor tags:', anchorTags.length);
+      const anchorTags = document.querySelectorAll('.bot-message-content a');
+      console.log('Found anchor tags in bot messages:', anchorTags.length);
 
       anchorTags.forEach((anchor: Element) => {
         const htmlAnchor = anchor as HTMLAnchorElement;
+        
+        // Check if this anchor already has tracking (to avoid duplicates)
+        if (htmlAnchor.getAttribute('data-tracking-added')) {
+          return;
+        }
+        
+        // Mark as tracking added
+        htmlAnchor.setAttribute('data-tracking-added', 'true');
+        
         htmlAnchor.style.color = '#1976d2';
         htmlAnchor.style.textDecoration = 'underline';
         htmlAnchor.style.cursor = 'pointer';
@@ -544,45 +585,35 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
           htmlAnchor.style.color = '#1976d2';
         });
 
-        // Add click tracking for external links
-        // Remove any existing click listeners first to avoid duplicates
-        const newAnchor = htmlAnchor.cloneNode(true) as HTMLAnchorElement;
-        htmlAnchor.parentNode?.replaceChild(newAnchor, htmlAnchor);
-        
-        // Re-apply styles to the new element
-        newAnchor.style.color = '#1976d2';
-        newAnchor.style.textDecoration = 'underline';
-        newAnchor.style.cursor = 'pointer';
-        
-        // Add hover listeners to new element
-        newAnchor.addEventListener('mouseenter', () => {
-          newAnchor.style.color = '#1565c0';
-        });
-
-        newAnchor.addEventListener('mouseleave', () => {
-          newAnchor.style.color = '#1976d2';
-        });
-
         // Add click tracking
-        newAnchor.addEventListener('click', (event: Event) => {
-          const clickedUrl = newAnchor.href;
+        htmlAnchor.addEventListener('click', (event: Event) => {
+          event.preventDefault(); // Prevent default navigation
+          event.stopPropagation(); // Stop event bubbling
+          
+          const clickedUrl = htmlAnchor.href;
+          
           if (clickedUrl) {
             console.log('Link clicked, tracking:', clickedUrl);
-            // Track the click (don't wait for response to avoid blocking navigation)
+            
+            // Track the click first, then navigate on success
             this.chatbotService.trackLinkClick(clickedUrl).subscribe({
               next: (response) => {
                 console.log('Link click tracked successfully:', response);
+                // Navigate to the URL in the same tab after successful tracking
+                window.location.href = clickedUrl;
               },
               error: (error) => {
                 console.error('Error tracking link click:', error);
+                // Even if tracking fails, navigate to the URL so user isn't blocked
+                window.location.href = clickedUrl;
               }
             });
           }
         });
 
-        console.log('Styled and added tracking to anchor:', newAnchor);
+        console.log('Styled and added tracking to anchor:', htmlAnchor.href);
       });
-    }, 100);
+    }, 300);
   }
 
   shouldShowTimestamp(message: ChatMessage, isFirst: boolean): boolean {
