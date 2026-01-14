@@ -17,6 +17,10 @@ export interface ChatMessage {
   suggestions?: string[]; // Array of suggested questions
   hideAvatar?: boolean;
   hideSender?: boolean;
+  allow_feedback?: boolean; // Whether thumbs up/down should be shown
+  offer_related?: boolean; // Whether to offer related content
+  is_followup?: boolean; // Whether this is a followup question
+  feedback_given?: 'positive' | 'negative' | null; // Track user feedback
 }
 
 /**
@@ -375,10 +379,22 @@ export class ChatStore extends ComponentStore<ChatState> {
   /**
    * Add bot message effect
    */
-  readonly addBotMessage = this.effect((payload$: Observable<{ content: string, sessionId?: string }>) =>
+  readonly addBotMessage = this.effect((payload$: Observable<{ 
+    content: string, 
+    sessionId?: string,
+    allow_feedback?: boolean,
+    offer_related?: boolean,
+    is_followup?: boolean
+  }>) =>
     payload$.pipe(
-      tap((payload: { content: string, sessionId?: string }) => {
-        const { content, sessionId } = payload;
+      tap((payload: { 
+        content: string, 
+        sessionId?: string,
+        allow_feedback?: boolean,
+        offer_related?: boolean,
+        is_followup?: boolean
+      }) => {
+        const { content, sessionId, allow_feedback, offer_related, is_followup } = payload;
         
         if (sessionId) {
           this.setSessionId(sessionId);
@@ -408,7 +424,11 @@ export class ChatStore extends ComponentStore<ChatState> {
           content: formattedContent,
           sender: 'bot',
           timestamp: new Date(),
-          suggestions: suggestions.length > 0 ? suggestions : undefined
+          suggestions: suggestions.length > 0 ? suggestions : undefined,
+          allow_feedback,
+          offer_related,
+          is_followup,
+          feedback_given: null
         };
         this.addMessage(botMessage);
       })
