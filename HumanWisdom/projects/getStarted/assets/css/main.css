@@ -2133,6 +2133,11 @@ div.scroll-container img {
   margin-right: 10px;
   transition: 0.3s;
 }
+
+.web_home_divcircleolly{
+  background: #FFF9EE;
+    padding: 80px 0;
+}
 .section-headernew.a,h6:hover{
   color:#cb6171;
   text-decoration: underline;
