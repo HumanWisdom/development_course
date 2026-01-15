@@ -54,11 +54,13 @@ export class ProfilePage implements OnInit {
     }
     this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
 
-    if (this.score > 0 || this.score == 0) {
+    if (this.score > 0) {
       this.direction = "up";
-    } else {
+    } else if (this.score < 0) {
       this.score = -(this.score);
       this.direction = "down";
+    } else {
+      this.direction = "";
     }
   }
 
