@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LogEventService } from "../../../shared/services/log-event.service";
 import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { SharedService } from '../../../shared/services/shared.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../services/navigation.service';
@@ -47,6 +48,7 @@ export class ProfilePage implements OnInit {
   isAdults: boolean = true;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
+    private adultsService: AdultsService,
     public platform: Platform, public logeventservice: LogEventService,private location:Location , 
       private navigationService: NavigationService) {
       // this.initialize();
@@ -57,6 +59,7 @@ export class ProfilePage implements OnInit {
           this. actKeys = this.loginResponse?.ActKeys
           this. weekDays = this.loginResponse?.WkDays.split(",")
           this.score = (+this.loginResponse.hwScore) - (+this.loginResponse.hwPrevScore);
+          this.overallPercentage = this.loginResponse.OverallPercentage || this.loginResponse.overallPercentage || 0;
          }
       }else{
         this.initialize();
@@ -132,7 +135,15 @@ initialize(){
           this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
         }
         this.userData = res[0];
+        // this.overallPercentage = this.userData?.OverallPercentage || this.userData?.overallPercentage || 0;
       })
+
+      this.adultsService.getPoints(userId).subscribe(res => {
+         if(res) {
+            this.overallPercentage = parseInt(res.overallPercentage) || 0;
+         }
+      })
+
     }, 1000)
     let nameupdate = localStorage.getItem(
       "nameupdate"

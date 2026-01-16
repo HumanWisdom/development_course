@@ -8,18 +8,18 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"   [ngClass]="isAdults ? 'bg_login' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_login' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
               <ul class="nav nav-tabs login_signup_tab flex_ai m0px">
                 <li id="LoginTab" #enabletab [ngClass]="{'active' : !isSignUp }" (click)="getLoginTab()">
-                  <a data-toggle="tab" >
+                  <a data-toggle="tab">
                     Login
                   </a>
                 </li>
                 <li id="SignupTab" [ngClass]="{'active' : isSignUp }" class="active">
-                  <a data-toggle="tab"  (click)="getsignuptab()">
+                  <a data-toggle="tab" (click)="getsignuptab()">
                     Sign up
                   </a>
                 </li>
@@ -28,11 +28,12 @@
               <div class="tab-content">
                 <!-- signup -->
                 <div id="tab1" class="tab-pane fade" *ngIf="isSignUp" [ngClass]="{' in active' : isSignUp }">
-                  <form  [formGroup]="registrationForm">
+                  <form [formGroup]="registrationForm">
 
                     <div class="row mtb20px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_12px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_a0a3bd'">
+                        <h4 class="mtb0px fs_12px fw_400 lh_150p  tcenter"
+                          [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_a0a3bd'">
                           Register now and try HappierMe for free
                         </h4>
                       </div>
@@ -44,7 +45,8 @@
                           <hr class="hr_style_v3_05">
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_a0a3bd'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p  tcenter"
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_a0a3bd'">
                             Connect with
                           </h4>
                         </div>
@@ -58,26 +60,39 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
                           <button type="button" class="btn btn_login_signup tcenter" (click)="fbLogin('signup')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg"
+                              alt="" class="img-responsive">
                           </button>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter myLogin"  >
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter myLogin">
                           <button type="button" class="btn btn_login_signup tcenter" id="googleBtnSignupWrapper">
                             <div id="googleBtnSignup" class="tcenter google-button-hidden"></div>
                             <div class="google-custom-icon">
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                  fill="#4285F4" />
+                                <path
+                                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                  fill="#34A853" />
+                                <path
+                                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                  fill="#FBBC05" />
+                                <path
+                                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                  fill="#EA4335" />
                               </svg>
                             </div>
                           </button>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
-                          <button type="submit" class="btn btn_login_signup tcenter " (click)="signInWithApple('signup')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive" *ngIf="!isAdults">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/cw_apple.svg" alt="" class="img-responsive" *ngIf="isAdults">
+                          <button type="submit" class="btn btn_login_signup tcenter "
+                            (click)="signInWithApple('signup')">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg"
+                              alt="" class="img-responsive" *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/cw_apple.svg"
+                              alt="" class="img-responsive" *ngIf="isAdults">
 
                           </button>
                         </div>
@@ -88,21 +103,27 @@
                         </div>-->
                       </div>
                     </div>
-                    
+
 
                     <div class="mtb30px mregister">
                       <div class="row mb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                          <input type="text" class="sp_fc" placeholder="Full Name" formControlName="fullname" id="fullname" maxlength="20">
+                          <input type="text" class="sp_fc" placeholder="Full Name" formControlName="fullname"
+                            id="fullname" maxlength="20">
                           <div class="fc_img">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg" class="img-responsive" *ngIf="!isAdults">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_user.svg" class="img-responsive" *ngIf="isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_user.svg"
+                              class="img-responsive" *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_user.svg"
+                              class="img-responsive" *ngIf="isAdults">
 
                           </div>
                         </div>
                         <div *ngIf="fullname.invalid && fullname.touched">
-                          <small *ngIf="fullname.errors?.required" class="fs_12px fw_400 lh_150p " [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Full Name is required</small>
-                          <small *ngIf="fullname.errors?.minlength" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Full Name must be at least 6 characters</small>
+                          <small *ngIf="fullname.errors?.required" class="fs_12px fw_400 lh_150p "
+                            [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Full Name is required</small>
+                          <small *ngIf="fullname.errors?.minlength" class="fs_12px fw_400 lh_150p "
+                            [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Full Name must be at least 6
+                            characters</small>
                         </div>
                       </div>
 
@@ -117,82 +138,98 @@
 
                       <div class="row mb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                          <input type="text" class="sp_fc" placeholder="Email Address" id="email" formControlName="email" maxlength="50" autocomplete="new-password" required>
+                          <input type="text" class="sp_fc" placeholder="Email Address" id="email"
+                            formControlName="email" maxlength="50" autocomplete="new-password" required>
                           <div class="fc_img">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive" *ngIf="!isAdults">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_email.svg" class="img-responsive" *ngIf="isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg"
+                              class="img-responsive" *ngIf="!isAdults">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_email.svg"
+                              class="img-responsive" *ngIf="isAdults">
 
                           </div>
                         </div>
                         <div *ngIf="emailvalid.invalid && emailvalid.touched">
-                          <small *ngIf="emailvalid.errors?.required" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter email address</small>
-                          <small *ngIf="emailvalid.errors?.pattern" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter a valid email</small>
+                          <small *ngIf="emailvalid.errors?.required" class="fs_12px fw_400 lh_150p "
+                            [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter email address</small>
+                          <small *ngIf="emailvalid.errors?.pattern" class="fs_12px fw_400 lh_150p "
+                            [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter a valid email</small>
                         </div>
                       </div>
 
                       <div class="row mb10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                        <input 
-                        [type]="passwordhide ? 'password' : 'text'"
-                        class="sp_fc" 
-                        placeholder="Password" 
-                        id="password" 
-                        formControlName="ogpassword"
-                        (keydown.space)="$event.preventDefault()" 
-                        (keypress)="onKeyPress($event)"
-                        autocomplete="new-password" 
-                        maxlength="15" 
-                        required>
+                          <input [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password"
+                            id="password" formControlName="ogpassword" (keydown.space)="$event.preventDefault()"
+                            (keypress)="onKeyPress($event)" autocomplete="new-password" maxlength="15" required>
 
                           <div class="fc_img" (click)="hideFunction('password')">
-                       
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
-                                 class="img-responsive opacity-50" *ngIf="passwordhide && isAdults">
-                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_show.svg"
-                                 class="img-responsive" *ngIf="!passwordhide && isAdults">
-                                 
-             
 
-                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
-                                 class="img-responsive" *ngIf="passwordhide && !isAdults">
-                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"  
-                                 class="img-responsive" *ngIf="!passwordhide && !isAdults">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
+                              class="img-responsive opacity-50" *ngIf="passwordhide && isAdults">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_show.svg"
+                              class="img-responsive" *ngIf="!passwordhide && isAdults">
+
+
+
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                              class="img-responsive" *ngIf="passwordhide && !isAdults">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
+                              class="img-responsive" *ngIf="!passwordhide && !isAdults">
                           </div>
                         </div>
                         <div *ngIf="passwordvalid.invalid && passwordvalid.touched">
-                          <small *ngIf="passwordvalid.errors?.required" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">Please enter password</small>
-                          <small *ngIf="passwordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p fc_ffffff_0_5">password must be at least 6 characters</small>
+                          <small *ngIf="passwordvalid.errors?.required" class="fs_12px fw_400 lh_150p"
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">Please enter password</small>
+                          <small *ngIf="passwordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p"
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">password must be at least 6
+                            characters</small>
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                          <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc" placeholder="Confirm Password" id="repeatpassowrd" formControlName="confirmPassword" maxlength="15" (keydown.space)="$event.preventDefault();">
+                          <input maxlength="50" (keydown.space)="$event.preventDefault()"
+                            [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc"
+                            placeholder="Confirm Password" id="repeatpassowrd" formControlName="confirmPassword"
+                            maxlength="15" (keydown.space)="$event.preventDefault();">
 
                           <div class="fc_img" (click)="hideFunction('')">
-                            <img *ngIf="confirmpasswordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
+                            <img *ngIf="confirmpasswordhide && isAdults"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
                               class="img-responsive  opacity-50">
 
-                               <img *ngIf="confirmpasswordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                            <img *ngIf="confirmpasswordhide && !isAdults"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
                               class="img-responsive">
 
-                              <img *ngIf="!confirmpasswordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_show.svg"
+                            <img *ngIf="!confirmpasswordhide && isAdults"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_show.svg"
                               class="img-responsive">
 
-                                   <img *ngIf="!confirmpasswordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
+                            <img *ngIf="!confirmpasswordhide && !isAdults"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
                               class="img-responsive">
                           </div>
                         </div>
                         <div *ngIf="confirmpasswordvalid.invalid && confirmpasswordvalid.touched">
-                          <small *ngIf="confirmpasswordvalid.errors?.required" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter Repeat password</small>
-                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Repeat password must be at least 6 characters</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.required" class="fs_12px fw_400 lh_150p "
+                            [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Please enter Repeat password</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p "
+                            [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Repeat password must be at least 6
+                            characters</small>
                         </div>
                         <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
-                          <small *ngIf="passwordvalidation" class="fs_12px fw_400 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Password and Repeat password must be same</small>
+                          <small *ngIf="passwordvalidation" class="fs_12px fw_400 lh_150p "
+                            [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Password and Repeat password must be
+                            same</small>
                         </div>
                       </div>
                     </div>
-                        <!-- <re-captcha (resolved)="resolved($event)" siteKey="6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR"></re-captcha> -->
+                    <!-- <re-captcha (resolved)="resolved($event)" siteKey="6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR"></re-captcha> -->
 
                     <!-- <button class="g-recaptcha"
                     data-sitekey="6LdEcDIqAAAAACAcbDxCLhQOIePbpfZdSeuXORRM"
@@ -202,41 +239,43 @@
                    </button> -->
                     <div class="row d-flex justify-content-center">
                       <div class="col-1 text-center ">
-                          <label for="privacy_checkbox" class="chkb_post_anonymously ">
-                            <input id="privacy_checkbox"formControlName="privacychk" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_130p "  [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
-                            </h4>
-                          </label>
+                        <label for="privacy_checkbox" class="chkb_post_anonymously ">
+                          <input id="privacy_checkbox" formControlName="privacychk" type="checkbox">
+                          <h4 class=" fs_12px fw_500 lh_130p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
+                          </h4>
+                        </label>
                       </div>
                       <div class="col-11 p0">
-                        <h4 class=" fs_12px fw_500 lh_150p "  [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">
-                          <span>I agree to HappierMe's 
-                            <a  class="fw_500 "  [ngClass]="isAdults?'fc_000000_i':'fc_ffffff'"   (click)="routetoUrl('/help-support/terms-conditions')"
-                             > User agreement</a> and <a class="fw_500 "    [ngClass]="isAdults?'fc_000000_i':'fc_ffffff'"
-                             (click)="routetoUrl('/help-support/privacy-policy')">privacy policy</a>.
+                        <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">
+                          <span>I agree to HappierMe's
+                            <a class="fw_500 " [ngClass]="isAdults?'fc_000000_i':'fc_ffffff'"
+                              (click)="routetoUrl('/help-support/terms-conditions')"> User agreement</a> and <a
+                              class="fw_500 " [ngClass]="isAdults?'fc_000000_i':'fc_ffffff'"
+                              (click)="routetoUrl('/help-support/privacy-policy')">privacy policy</a>.
                           </span>
                         </h4>
-                    </div>
+                      </div>
                     </div>
 
                     <div class="row d-flex justify-content-center  ">
                       <div class="col-1  text-center ">
-                          <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
-                            <input id="marketing_checkbox" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'" >
-                            </h4>
-                            </label>
+                        <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
+                          <input id="marketing_checkbox" type="checkbox">
+                          <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
+                          </h4>
+                        </label>
                       </div>
                       <div class="col-11 p0 ">
-                          <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">
-                            <span>Receive wellness tips and updates from HappierMe.</span>
-                          </h4>
-                    </div>
+                        <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">
+                          <span>Receive wellness tips and updates from HappierMe.</span>
+                        </h4>
+                      </div>
                     </div>
                     <!-- [disabled]="!registrationForm.valid && !isValidCaptach" -->
                     <div class="row mt40px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid" (click)="verifyCaptcha()">
+                        <button type="btn" class="btn btn_ctd" [disabled]="!registrationForm.valid"
+                          (click)="verifyCaptcha()">
                           Sign up
                         </button>
                       </div>
@@ -245,18 +284,20 @@
                     <div class="row mt10px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 tleft">
-                          <h4 class="mtb0px fs_15px fw_400 lh_21px " (click)="getLoginTab()" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_21px " (click)="getLoginTab()"
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                             <span class="">
                               Already a user?
                             </span>
-                           <!--  <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')" data-toggle="tab" href="#tab2">
+                            <!--  <a class="mtb0px fs_15px fw_400 lh_21px fc_e58d82" onclick="$('#LoginTab').addClass('active'); $('#SignupTab').removeClass('active')" data-toggle="tab" href="#tab2">
                               Login here
                             </a> -->
                           </h4>
                         </div>
 
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
-                          <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="routedashboard()">
+                          <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
+                            (click)="routedashboard()">
                             Continue as Guest
                           </a>
                         </div>
@@ -268,13 +309,15 @@
                 <!-- /signup -->
 
                 <!-- login -->
-                <div id="tab2" class="tab-pane fade in active" *ngIf="!isSignUp" [ngClass]="{' in active' : !isSignUp }">
+                <div id="tab2" class="tab-pane fade in active" *ngIf="!isSignUp"
+                  [ngClass]="{' in active' : !isSignUp }">
 
                   <div class="row mtb20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <h4 class="mtb0px fs_12px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_a0a3bd'"  >
+                      <h4 class="mtb0px fs_12px fw_400 lh_150p  tcenter"
+                        [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_a0a3bd'">
                         Register now and try HappierMe for free
- 
+
                       </h4>
                     </div>
                   </div>
@@ -285,7 +328,8 @@
                         <hr class="hr_style_v3_05">
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <h4 class="mtb0px fs_15px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_a0a3bd'">
+                        <h4 class="mtb0px fs_15px fw_400 lh_150p  tcenter"
+                          [ngClass]="isAdults ? 'fc_000000' : 'fc_a0a3bd'">
                           Login with
                         </h4>
                       </div>
@@ -299,26 +343,38 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter pl0px">
                         <button type="button" class="btn btn_login_signup tcenter" (click)="fbLogin('login')">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg" alt="" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook.svg"
+                            alt="" class="img-responsive">
                         </button>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
                         <button type="button" class="btn btn_login_signup tcenter" id="googleBtnLoginWrapper">
                           <div id="googleBtnLogin" class="tcenter google-button-hidden"></div>
                           <div class="google-custom-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                              <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                              <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                fill="#FBBC05" />
+                              <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335" />
                             </svg>
                           </div>
                         </button>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tcenter">
                         <button type="submit" class="btn btn_login_signup tcenter " (click)="signInWithApple('signup')">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg" alt="" class="img-responsive" *ngIf="!isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/cw_apple.svg" alt="" class="img-responsive" *ngIf="isAdults">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple.svg"
+                            alt="" class="img-responsive" *ngIf="!isAdults">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/cw_apple.svg"
+                            alt="" class="img-responsive" *ngIf="isAdults">
 
                         </button>
                       </div>
@@ -330,16 +386,19 @@
                       </div> -->
                     </div>
                   </div>
-                  
-                  
+
+
 
                   <div class="mt30px mregister">
                     <div class="row mb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                        <input type="text" class="sp_fc" placeholder="Email Address" id="email2" [(ngModel)]="this.email" autocomplete="new-password" required>
+                        <input type="text" class="sp_fc" placeholder="Email Address" id="email2"
+                          [(ngModel)]="this.email" autocomplete="new-password" required>
                         <div class="fc_img">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg" class="img-responsive" *ngIf="!isAdults">
-                                                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_email.svg" class="img-responsive" *ngIf="isAdults">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svg_email.svg"
+                            class="img-responsive" *ngIf="!isAdults">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/svg_email.svg"
+                            class="img-responsive" *ngIf="isAdults">
 
                         </div>
                       </div>
@@ -347,20 +406,26 @@
 
                     <div class="row mb10px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                        <input maxlength="50" (keydown.space)="$event.preventDefault()" [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password" id="password2" [(ngModel)]="this.password" autocomplete="new-password" required>
+                        <input maxlength="50" (keydown.space)="$event.preventDefault()"
+                          [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password"
+                          id="password2" [(ngModel)]="this.password" autocomplete="new-password" required>
 
                         <div class="fc_img" (click)="hideFunction('password')">
-                          <img *ngIf="passwordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
-                            class="img-responsive" >
+                          <img *ngIf="passwordhide && !isAdults"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_hide.svg"
+                            class="img-responsive">
 
-                              <img *ngIf="passwordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
-                            class="img-responsive opacity-50"  >
+                          <img *ngIf="passwordhide && isAdults"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_hide.svg"
+                            class="img-responsive opacity-50">
 
-                            <img *ngIf="!passwordhide && isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_show.svg"
-                            class="img-responsive" >
+                          <img *ngIf="!passwordhide && isAdults"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/password_show.svg"
+                            class="img-responsive">
 
-                             <img *ngIf="!passwordhide && !isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
-                            class="img-responsive" >
+                          <img *ngIf="!passwordhide && !isAdults"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/password_show.svg"
+                            class="img-responsive">
                         </div>
 
                         <!-- <div class="fc_img">
@@ -383,7 +448,8 @@
 
                   <div class="row mt40px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <button type="btn" class="btn btn_ctd" [disabled]="!this.email||!this.password" (click)="emailLogin()">
+                      <button type="btn" class="btn btn_ctd" [disabled]="!this.email||!this.password"
+                        (click)="emailLogin()">
                         Sign in
                       </button>
                     </div>
@@ -392,13 +458,15 @@
                   <div class="row mt10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                        <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_000000_i' : 'fc_e58d82'"  (click)="routeForgotPassword()" routerLink="">
+                        <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_000000_i' : 'fc_e58d82'"
+                          (click)="routeForgotPassword()" routerLink="">
                           Forgot password ?
                         </a>
                       </div>
 
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                        <a class="mtb0px fs_15px fw_400 lh_21px "  [ngClass]="isAdults ? 'fc_000000_i' : 'fc_e58d82'" (click)="routedashboard()">
+                        <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_000000_i' : 'fc_e58d82'"
+                          (click)="routedashboard()">
                           Continue as Guest
                         </a>
                       </div>
@@ -474,8 +542,10 @@
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
 
-      <button type="button" style="visibility: hidden;" class="btn_popup_close m0px" #closeotpmodal data-dismiss="modal" aria-label="Close">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt="" class="img-responsive fright">
+      <button type="button" style="visibility: hidden;" class="btn_popup_close m0px" #closeotpmodal data-dismiss="modal"
+        aria-label="Close">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/close_white.svg" alt=""
+          class="img-responsive fright">
       </button>
 
       <div class="row">
@@ -518,4 +588,5 @@
 
 <span #enableotpmodal data-toggle="modal" data-target="#enableotpmodal"></span>
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="content"></app-modal>
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="content"></app-modal>

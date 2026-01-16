@@ -32,6 +32,12 @@ export class ChangePasswordPage implements OnInit {
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
   oldpasswordhide: boolean = true;
+  passwordTouched = false;
+  confirmPasswordTouched = false;
+  oldpasswordTouched = false;
+  passwordFocused = false;
+  confirmPasswordFocused = false;
+  oldpasswordFocused = false;
   isAdults = true;
 
   constructor(private router: Router,
@@ -72,7 +78,8 @@ export class ChangePasswordPage implements OnInit {
       let email = localStorage.getItem("email")
       this.service.setPassword({
         "UserID": userId,
-        "Pwd": this.password
+        "Pwd": this.password,
+        "OldPwd": this.oldpassword
       })
         .subscribe(
           resp => {
