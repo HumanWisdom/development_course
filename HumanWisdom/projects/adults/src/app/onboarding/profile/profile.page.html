@@ -7,7 +7,7 @@
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p fc_000000 mtb0px tcenter">
         Profile
       </h1>
@@ -40,7 +40,9 @@
 
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                      <img src="{{url === '' ||  url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}" alt="" class="img-responsive border_profile_img"/>
+                      <img
+                        src="{{url === '' ||  url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'  : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/UsersAvatar/' + url}}"
+                        alt="" class="img-responsive border_profile_img" />
                     </div>
                   </div>
 
@@ -64,12 +66,14 @@
                     <div class="row mt20px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft">
-                          <button type="button" class="btn btn_profile_ep" (click)="Logevent('/onboarding/profile-edit', '', 'click_edit_profile')">
+                          <button type="button" class="btn btn_profile_ep"
+                            (click)="Logevent('/onboarding/profile-edit', '', 'click_edit_profile')">
                             Edit Profile
                           </button>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
-                          <button type="button" class="btn btn_profile_cp" (click)="Logevent('/onboarding/change-password', '', 'click_change_password')">
+                          <button type="button" class="btn btn_profile_cp"
+                            (click)="Logevent('/onboarding/change-password', '', 'click_change_password')">
                             Change password
                           </button>
                         </div>
@@ -82,7 +86,9 @@
                       <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                           <div class="prelative">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/profile_wisdom_points.svg" class="img-responsive w100p">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/profile_wisdom_points.svg"
+                              class="img-responsive w100p">
                             <h4 class="mtb0px fs_12px fw_600 lh_100p fc_ffffff absolute_center_txt">
                               {{loginResponse.Points}}
                             </h4>
@@ -108,7 +114,7 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                           <h4 class="mtb0px fs_12px fw_400 lh_18px fc_000000 tleft">
-                           Overall Progress
+                            Overall Progress
                           </h4>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
@@ -122,7 +128,8 @@
                     <div class="row mt5px mb20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="progress progress-sm progress_profile">
-                          <div class="progress-bar" role="progressbar" aria-valuemax="100" [style.width]="overallPercentage + '%'"></div>
+                          <div class="progress-bar" role="progressbar" aria-valuemax="100"
+                            [style.width]="overallPercentage + '%'"></div>
                         </div>
                       </div>
                     </div>
@@ -146,8 +153,7 @@
                           </h4>
 
                           <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5">
-                            Notes
-                          </h4>
+                            {{loginResponse.Notes <= 1 ? 'Note' : 'Notes' }} </h4>
                         </div>
 
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
@@ -192,7 +198,7 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_30px fw_700 lh_140p fc_e58d82 tleft">
-                          {{loginResponse.hwScore}}
+                          {{loginResponse.hwScore || 0}}%
                         </h4>
                       </div>
                     </div>
@@ -200,7 +206,14 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000 tleft">
-                          {{score}}% {{direction}} since last survey
+                          <ng-container
+                            *ngIf="loginResponse.Surveys == 0 || loginResponse.Surveys == '0'; else surveyData">
+                            Your wellness journey starts here. Take your first survey now.
+                          </ng-container>
+                          <ng-template #surveyData>
+                            {{direction ? score + '% ' + direction + ' since last survey' : 'No change since last
+                            survey'}}
+                          </ng-template>
                         </h4>
                       </div>
                     </div>
@@ -278,7 +291,7 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                             <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5">
                               This week
-                            </h4> 
+                            </h4>
                           </div>
                         </div>
                       </div>
@@ -290,10 +303,10 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                             <h4 class="mt0px fs_15px fw_600 lh_150p fc_000000">
                               {{loginResponse.Streak}} days
-                            </h4>  
+                            </h4>
                           </div>
                         </div>
-                        
+
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                             <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5">
@@ -310,7 +323,7 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                             <h4 class="mt0px fs_15px fw_600 lh_150p fc_000000">
                               72 hours
-                            </h4> 
+                            </h4>
                           </div>
                         </div>
                         <div class="row">
@@ -420,7 +433,8 @@
                   <div class="row mt20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <button type="button" class="btn profile_dmd center_flex" (click)="deleteMyData()">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/profile_trash.svg" class="img-responsive mr10px">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/profile_trash.svg"
+                          class="img-responsive mr10px">
                         Delete my data
                       </button>
                     </div>
@@ -440,7 +454,7 @@
   </div>
 </div>
 <div style="display: none;">
-  <button id="liLogout" ></button>
+  <button id="liLogout"></button>
 </div>
 <!-- /page content -->
 

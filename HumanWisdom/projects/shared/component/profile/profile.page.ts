@@ -76,11 +76,13 @@ export class ProfilePage implements OnInit {
     }
     
 
-    if (this.score > 0 || this.score == 0) {
+    if (this.score > 0) {
       this.direction = "up";
-    } else {
+    } else if (this.score < 0) {
       this.score = -(this.score);
       this.direction = "down";
+    } else {
+      this.direction = "";
     }
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
