@@ -118,7 +118,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                           <h4 class="mtb0px fs_12px fw_400 lh_18px  tleft"
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            Overall Progress
+                            Progress
                           </h4>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
@@ -148,8 +148,7 @@
                           </h4>
 
                           <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            Modules
-                          </h4>
+                            {{loginResponse.Modules <= 1 ? 'Module' : 'Modules' }} </h4>
                         </div>
 
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
@@ -167,8 +166,7 @@
                           </h4>
 
                           <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            Surveys
-                          </h4>
+                            {{loginResponse.Surveys <= 1 ? 'Survey' : 'Surveys' }} </h4>
                         </div>
 
                       </div>
