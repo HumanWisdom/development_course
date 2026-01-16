@@ -94,11 +94,11 @@ require_once('./includes/security_config.php');
 
     <div class="row center_flex web_home_divlanding">
       <div
-        class="col-lg-11 col-md-11 col-sm-11 col-xs-11  col-11 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w1340">
+        class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w1340">
 
 
 
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 land-video-sec" data-aos="fade-up"
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 mt40px land-video-sec" data-aos="fade-up"
           data-aos-delay="100">
           <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
@@ -114,15 +114,15 @@ require_once('./includes/security_config.php');
             class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 
-          <img style="width:100%;height:auto;"
-            src="https://d1tenzemoxuh75.cloudfront.net/website/index_mobile.png"
+           <img style="width:237px;height:300px"
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannermobile11.svg"
             class="img-responsive w100p display_d_none m-popup m-auto" loading="lazy" alt="performance">
         </div>
-        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px mtb40px" data-aos="fade-up"
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px " data-aos="fade-up"
           data-aos-delay="200">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 p-18px">
-              <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
+              <h1 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
                 <span class="rating_a">
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
@@ -140,34 +140,34 @@ require_once('./includes/security_config.php');
                 </span>
 
                 App store rating
-              </h6>
+              </h1>
             </div>
           </div>
 
           <div class="row mt30px">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-              <h1 class="mtb0px fs_45px fw_600 lh_130p fc_000000 ta_lc  ">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ">
+              <h1 class="mtb0px fs_42px fw_600 lh_130p fc_000000 ta_lc  ">
                 <!-- Understand your mind. Transform your life. -->
                  <!-- Understand your emotions. Gain clarity. Be happier. -->
                   <!-- Everything you need for a happier life -->
                    <!-- Strengthen your relationships. Manage emotions. Feel happier. -->
-                    Understand your mind. Change your life.
-               </h1>
+Understand your mind.       Find peace. Feel happier.               </h1>
             </div>
           </div>
 
 
-           <div class="row mtb15px">
+           <div class="row">
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1">
+            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 p0">
 
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" class=""  alt="wh_tick_black" loading=lazy>
 
 
-            </div>
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-12 p0 mt10px">
+            </div> -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt10px">
 
-              <h2 class="mt5px fs_21px fw_600 lh_130p fc_000000 ta_lc">
+              <h2 class="mt5px fs_21px fw_600 lh_130p fc_000000 ta_lc">              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" class=""  alt="wh_tick_black" loading=lazy>
+
                 
 Now with Olly AI              </h2>
 
@@ -186,10 +186,10 @@ Now with Olly AI              </h2>
                 </div>
               </div>
             </div> -->
-          <div class="row mtb15px">
+          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ">
 
-              <h2 class="mtb0px fs_21px fw_400 lh_130p fc_000000 ta_lc">
+              <h2 class="mtb0px fs_18px fw_400 lh_150p fc_000000 ta_lc">
                 <!-- A happier mind starts with understanding it. We support you to manage your emotions, build stronger
                 relationships, and handle life with more clarity and calm.  -->
                 <!-- Guided programs to transform your emotional wellbeing, strengthen your relationships and succeed in life.
@@ -612,7 +612,7 @@ Now with Olly AI              </h2>
  <!-- teenagers -->
     <section>
       <div class="row center_flex web_home_divcircleolly">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element1 w-335px f_18px fixed_w">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap1 element1 w-335px f_18px fixed_w">
 
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 land-happierMe-section" data-aos="fade-up"
             data-aos-delay="100">
@@ -622,7 +622,7 @@ Now with Olly AI              </h2>
               class="img-responsive w100p display_m_none" loading="lazy" alt="performance" style="height:360px;">
 
 
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/circles.png"
+            <img style="width:200px; height:180px";src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/ollyai.svg"
               class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
 
             <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
@@ -642,7 +642,7 @@ Introducing Olly AI, <br/>your personal guide inside HappierMe.             </
 
               <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
 
-              <h3 class="mt15px mb10px fs_21px fw_500 lh_150p fc_000000">
+              <h3 class="mt0px mb10px fs_21px fw_500 lh_150p fc_000000">
                 <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
               </h3>
 
@@ -664,7 +664,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
                   <a href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick">
-                    <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width h_48px btn_popup">
+                    <button class="fs_21px fw_600 lh_140p fc_ffffff btn_tff btn_tff_widthnew h_48px btn_popup">
                       Chat with Olly now
                     </button>
                   </a>
