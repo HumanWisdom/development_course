@@ -30,6 +30,10 @@ export class SetPasswordPage implements OnInit {
   content = '';
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
+  passwordTouched = false;
+  confirmPasswordTouched = false;
+  passwordFocused = false;
+  confirmPasswordFocused = false;
   isAdults = true;
 
   constructor(private router:Router,

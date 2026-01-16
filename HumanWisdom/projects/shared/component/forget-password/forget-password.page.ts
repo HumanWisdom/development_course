@@ -24,6 +24,7 @@ export class ForgetPasswordPage implements OnInit {
   urlKey:any
   showMessage=false
   enableAlert = false;
+  emailTouched = false;
   content = '';
   isAdults:boolean =true;
   constructor(private fb: UntypedFormBuilder,
