@@ -728,7 +728,7 @@ label > input[type="checkbox"] + *::before {
 
   .navbar ul {
     position: absolute;
-    inset: 0;
+    /* inset: 0; */
     padding: 50px 0 10px 0;
     margin: 0;
     background: rgba(255, 255, 255, 0.9);
@@ -2874,13 +2874,17 @@ animation-name: slideInRight;
   background: linear-gradient(180deg, #E58D82, #CB6171) ;
 }
 
-.btn_tff_width 
+.btn_tff_widthnew 
 {
-  width: 314px !important;
-  border-radius: 35px;
+  width: 307px !important;
+  border-radius: 36px;
     height: 65px;
 }
-
+.btn_tff_width {
+    width: 314px !important;
+    border-radius: 35px;
+    height: 65px;
+}
 .btn_pricing {
   margin: 3px;
   border: 0;
