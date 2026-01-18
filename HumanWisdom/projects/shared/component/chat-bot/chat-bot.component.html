@@ -106,23 +106,11 @@
       </div>
     </div>
 
-    <!-- Yes/No Action Buttons (shown when bot asks a yes/no question) -->
-    <div *ngIf="messages.length > 0 && messages[messages.length - 1]?.sender === 'bot' && messages[messages.length - 1]?.offer_related && !isLoading" class="yes-no-container">
-      <div class="yes-no-label">Quick Actions:</div>
-      <div class="yes-no-buttons">
-        <button class="action-button yes-button" (click)="onYesClick()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Yes
-        </button>
-        <button class="action-button no-button" (click)="onNoClick()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          No
-        </button>
-      </div>
+    <!-- Give More Options Button (shown when bot offers related content) -->
+    <div *ngIf="messages.length > 0 && messages[messages.length - 1]?.sender === 'bot' && messages[messages.length - 1]?.offer_related && !isLoading" class="more-options-container">
+      <button class="action-button more-options-button" (click)="onGiveMoreOptions()">
+        → Give me more options
+      </button>
     </div>
 
     <!-- Input area -->

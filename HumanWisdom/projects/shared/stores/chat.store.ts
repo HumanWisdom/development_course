@@ -400,15 +400,22 @@ export class ChatStore extends ComponentStore<ChatState> {
           this.setSessionId(sessionId);
         }
 
+        console.log('🔵 ADD BOT MESSAGE - Raw content received:', content);
+        console.log('🔵 Content type:', typeof content);
+        console.log('🔵 Has <li> tags:', content.includes('<li>'));
+        console.log('🔵 Has <ol> tags:', content.includes('<ol>'));
+        
         // Extract suggestions from bot message if it contains numbered list
         const suggestions = this.extractSuggestions(content);
 
-        console.log('Extracted suggestions from bot message:', suggestions);
+        console.log('🔵 Extracted suggestions from bot message:', suggestions);
 
         // Update active suggestions if new suggestions are found
         if (suggestions.length > 0) {
-          console.log('Setting new active suggestions:', suggestions);
+          console.log('🔵 Setting new active suggestions:', suggestions);
           this.setActiveSuggestions(suggestions);
+        } else {
+          console.log('🔵 No suggestions found, clearing active suggestions');
         }
 
         // Format content - remove numbered list if suggestions are shown as buttons
@@ -417,6 +424,7 @@ export class ChatStore extends ComponentStore<ChatState> {
         if (suggestions.length > 0) {
           // Remove the numbered list from the message text since we're showing it as buttons
           formattedContent = this.removeNumberedListFromContent(formattedContent);
+          console.log('🔵 Content after removing list:', formattedContent);
         }
 
         const botMessage: ChatMessage = {
@@ -430,6 +438,7 @@ export class ChatStore extends ComponentStore<ChatState> {
           is_followup,
           feedback_given: null
         };
+        console.log('🔵 Created bot message with suggestions:', botMessage.suggestions);
         this.addMessage(botMessage);
       })
     )
@@ -711,32 +720,72 @@ export class ChatStore extends ComponentStore<ChatState> {
   private extractSuggestions(content: string): string[] {
     const suggestions: string[] = [];
     
-    console.log('Extracting suggestions from content:', content);
+    console.log('===== EXTRACTING SUGGESTIONS =====');
+    console.log('Raw content:', content);
+    console.log('Content length:', content.length);
     
-    // Only extract suggestions if the message contains the pattern that indicates it's a suggestions message
-    // Look for phrases like "Please choose a number" or "Which of these" to identify suggestion messages
-    const isSuggestionsMessage = content.includes('Please choose a number') || 
-                                 content.includes('Which of these') ||
-                                 content.includes('choose a number');
+    const tempSuggestions: string[] = [];
     
-    if (!isSuggestionsMessage) {
-      console.log('Not a suggestions message, skipping extraction');
-      return suggestions;
-    }
+    // Method 1: Extract from HTML ordered list (<li> tags)
+    // Handle both regular newlines and escaped \n characters
+    const liRegex = /<li>([^<]+)<\/li>/gi;
+    let liMatch;
+    const matches = content.match(liRegex);
+    console.log('Regex matches found:', matches);
     
-    // Look for numbered list patterns like "1. Why do I feel stressed"
-    const numberedListRegex = /(\d+)\.\s*([^\n\r]+)/g;
-    let match;
-    
-    while ((match = numberedListRegex.exec(content)) !== null) {
-      const suggestion = match[2].trim();
-      console.log('Found suggestion:', suggestion);
-      if (suggestion) {
-        suggestions.push(suggestion);
+    if (matches) {
+      for (const match of matches) {
+        const suggestion = match.replace(/<\/?li>/gi, '').trim();
+        console.log('Found suggestion in <li> tag:', suggestion);
+        if (suggestion) {
+          tempSuggestions.push(suggestion);
+        }
       }
     }
     
-    console.log('Final extracted suggestions:', suggestions);
+    // Method 2: If no <li> tags found, try plain numbered list format "1. Text"
+    if (tempSuggestions.length === 0) {
+      console.log('No <li> tags found, trying numbered list format');
+      const lines = content.split(/[\n\r<]/);
+      for (const line of lines) {
+        const match = line.match(/^(\d+)\.\s*(.+)$/);
+        if (match && match[2]) {
+          const suggestion = match[2].trim();
+          console.log('Found suggestion in numbered list:', suggestion);
+          if (suggestion) {
+            tempSuggestions.push(suggestion);
+          }
+        }
+      }
+    }
+    
+    console.log('Total temp suggestions found:', tempSuggestions.length, tempSuggestions);
+    
+    // Only treat as suggestions if:
+    // 1. We found at least 2 numbered items (likely a list of options)
+    // 2. AND the message contains suggestion-related phrases
+    const hasSuggestionPhrases = 
+      content.includes('choose a number') ||
+      content.includes('Please choose a number') ||
+      content.includes('Which of these') ||
+      content.includes('closest to what you need') ||
+      content.includes('related topics') ||
+      content.includes('select a number') ||
+      content.includes('pick a number') ||
+      content.includes('type a number') ||
+      content.includes('type the number');
+    
+    console.log('Has suggestion phrases:', hasSuggestionPhrases);
+    
+    // If we have multiple numbered items AND suggestion phrases, treat as suggestions
+    if (tempSuggestions.length >= 2 && hasSuggestionPhrases) {
+      suggestions.push(...tempSuggestions);
+      console.log('✅ DETECTED SUGGESTIONS LIST with', suggestions.length, 'options:', suggestions);
+    } else {
+      console.log('❌ NOT a suggestions message - found', tempSuggestions.length, 'numbered items, hasSuggestionPhrases:', hasSuggestionPhrases);
+    }
+    
+    console.log('===== END EXTRACTION =====');
     return suggestions;
   }
 
@@ -744,9 +793,23 @@ export class ChatStore extends ComponentStore<ChatState> {
    * Remove numbered list from message content when suggestions are shown as buttons
    */
   private removeNumberedListFromContent(content: string): string {
-    // Remove numbered list lines like "1. Why do I feel stressed<br>2. Why do I feel anxious<br>3. How to manage stress<br>"
+    // Remove HTML ordered lists (<ol>...</ol>) since we're showing them as buttons
+    let cleanedContent = content;
+    
+    // Find and remove <ol>...</ol> blocks by finding the opening and closing tags
+    const olStartIndex = cleanedContent.indexOf('<ol>');
+    if (olStartIndex !== -1) {
+      const olEndIndex = cleanedContent.indexOf('</ol>', olStartIndex);
+      if (olEndIndex !== -1) {
+        // Remove everything from <ol> to </ol> inclusive
+        cleanedContent = cleanedContent.substring(0, olStartIndex) + 
+                        cleanedContent.substring(olEndIndex + 5);
+      }
+    }
+    
+    // Also remove plain numbered list lines like "1. Why do I feel stressed<br>"
     // Keep the introductory text and the closing instruction
-    const lines = content.split('<br>');
+    const lines = cleanedContent.split('<br>');
     const filteredLines = lines.filter(line => {
       // Keep lines that don't match the numbered list pattern
       return !line.match(/^\d+\.\s*.+$/);
