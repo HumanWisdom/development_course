@@ -105,7 +105,7 @@ section {
 
 .section-header {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
 .section-headernew {
   text-align: center;
@@ -2565,7 +2565,7 @@ a
 .cml40px 
 {
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .cmh40px 
@@ -3273,11 +3273,11 @@ animation-name: slideInRight;
 .div_subscriptionvideo {
 padding:20px;
 }
-.yt-embed {
+ /* .yt-embed {
   aspect-ratio: 16 / 9;
   width: 100%;
   padding:30px 40px 40px 0px
-}
+}  */
 
 .div_subscriptionvideo {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
@@ -4901,11 +4901,12 @@ background: #FCF2EC;
 
 .cvideo_b
 {
-  width: 100%;
+  width: 810px;
   /* border-radius: 12px; */
   position:relative;
   /* background: #120F40; */
   border: 0;
+  height: 456px;
 }
 .product_view .modal-dialog{max-width: 1200px; width: 980px; height:550px; top:4%;}
 .pre-cost{text-decoration: line-through; color: #a5a5a5;}
