@@ -186,7 +186,7 @@
         }
 
         .nav-wrapper .nav-menu {
-            margin: 0 36px;
+            margin: 0 ;
         }
     }
 
@@ -344,8 +344,7 @@
     .search-box-container {
         transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
         overflow: visible;
-        /* Changed from hidden to allow sticky to work */
-        max-height: 200px;
+        /* Removed max-height to prevent clipping of absolute children in complex fixed layouts */
         opacity: 1;
         margin-top: 10px;
     }
@@ -525,42 +524,107 @@
     .adsearch {
         position: absolute;
         top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 1001;
-        /* Higher than sticky nav to appear above it */
+        left: -20px; /* Counteract parent padding to cover full width */
+        right: -20px;
+        z-index: 2005; /* Ensure it stays on top */
         margin-top: 0;
+        padding-top: 20px;
+        height: 100vh;
+        background-color: #183C79;
     }
 
     .autocomplete-list {
-        max-height: 300px;
-        overflow-y: auto;
-        border-radius: 0 0 20px 20px;
-        background-color: #0C2B5F !important;
+        max-height: calc(100vh - 260px) !important;
+        height: 100vh !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+        border-radius: 0;
+        box-shadow: none !important;
         margin: 0;
         padding: 0;
-        background-color: white !important;
+        padding-bottom: 150px; /* Increased buffer to ensure items can scroll well above the footer */
+        background-color: #183C79 !important; /* Blue background to match personalised search */
+        border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
+
+        /* Scrollbar styling */
+        scrollbar-width: thin;
+        scrollbar-color: #778899 #183C79; /* thumb track */
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #183C79;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #778899;
+            border-radius: 20px;
+        }
     }
 
     .adsearch_ul {
         list-style: none;
         padding: 0;
         margin: 0;
+        border: none !important;
     }
 
     .is-search {
+        position: relative;
         cursor: pointer;
-        padding: 12px 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 20px; /* Maintained layout consistency */
+        border: none !important; /* Remove Bootstrap default borders */
+        margin-bottom: 0 !important; /* Prevent Bootstrap's -1px margin from covering the separator */
         transition: background-color 0.2s ease;
-        background-color: #ffffff !important;
+        background-color: #183C79 !important; /* Blue background to match personalised search */
+        color: #ffffff; /* Whitish text color to match personalised search */
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.15) !important; /* Minimal white separator */
+            z-index: 2; /* Ensure it stays above siblings */
+            display: block;
+        }
     }
 
     .is-search:hover {
-        background-color: rgba(0, 0, 0, 0.08) !important;
+        background-color: #0C2B5F!important;
     }
 
     .is-search:last-child {
-        border-bottom: none;
+        margin-bottom: 20px !important;
+
+        &::after {
+            display: block !important;
+        }
+    }
+    .adsearch_ul .list-group-item:last-child {
+        border-radius: 0 !important;
+    }
+
+    .home-container.search-active {
+        background-color: #183C79 !important;
+        .sticky-nav-container {
+            display: none !important;
+        }
+        .header-blk {
+            display: none !important;
+        }
+        .col-12 {
+            width: 100vw;
+        }
+        .bg_nonei {
+            display: none !important;
+        }
+        .home-content {
+            padding-top: 40px !important;
+        }
     }
 }

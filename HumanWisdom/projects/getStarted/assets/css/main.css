@@ -56,7 +56,10 @@ a {
 .active_nav {
   color: #834B66 !important;
 }
-
+p:hover{
+  color:green;
+  text-decoration: underline;
+}
 
 a:hover {
   color: #834B66;
@@ -493,7 +496,9 @@ label>input[type="checkbox"]+*::before {
   color: #fff;
   /* background: var(--color-primary); */
   /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-  background: linear-gradient(180deg, #E58D82, #CB6171);
+  /* background: linear-gradient(180deg, #E58D82, #CB6171); */
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
   padding: 15px;
   /* margin-left: 30px; */
   border-radius: 24px;
@@ -589,7 +594,7 @@ label>input[type="checkbox"]+*::before {
     font-size: 15px;
     font-weight: 500;
     line-height: 130%;
-    color: #CB6171;
+    color: #D7586B;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -733,7 +738,7 @@ label>input[type="checkbox"]+*::before {
 
   .navbar ul {
     position: absolute;
-    inset: 0;
+    /* inset: 0; */
     padding: 50px 0 10px 0;
     margin: 0;
     background: #fff;
@@ -2174,6 +2179,14 @@ div.scroll-container img {
   transition: 0.3s;
 }
 
+.web_home_divcircleolly{
+  background: #FFF9EE;
+    padding: 80px 0;
+}
+.section-headernew.a,h6:hover{
+  color:#cb6171;
+  text-decoration: underline;
+}
 .footer .social-links a:hover {
   color: #fff;
   border-color: #fff;
@@ -2830,15 +2843,22 @@ animation-name: slideInRight;
   height: 48px;
   border-radius: 24px;
   /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-  background: linear-gradient(180deg, #E58D82, #CB6171);
+  /* background: linear-gradient(180deg, #E58D82, #CB6171) ; */
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
 }
 
+.btn_tff_widthnew 
+{
+  width: 307px !important;
+  border-radius: 36px;
+    height: 65px;
+}
 .btn_tff_width {
-  width: 314px !important;
-  border-radius: 35px;
-  height: 65px;
+    width: 314px !important;
+    border-radius: 35px;
+    height: 65px;
 }
-
 .btn_pricing {
   margin: 3px;
   border: 0;

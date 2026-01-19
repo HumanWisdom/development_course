@@ -67,11 +67,11 @@
 }
 :host ::ng-deep .bg_FFF7E6 textarea::placeholder,
 :host ::ng-deep .bg_FFF7E6 input::placeholder {
-  color: #5d5d5d !important;
-  opacity: 0.9 !important;
+  color: rgba(0, 0, 0, 0.5) !important;
+  // opacity: 0.9 !important;
 }
 :host ::ng-deep .bg_stake textarea::placeholder,
 :host ::ng-deep .bg_stake input::placeholder {
-  color: #ffffff !important;
-  opacity: 0.8 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  // opacity: 0.8 !important;
 }

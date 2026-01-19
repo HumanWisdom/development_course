@@ -51,6 +51,7 @@ export class MyDailyPracticePage implements OnInit {
   public resumeLastvisited = [];
   isSubscriber = false;
   journalHits = 0;
+  showSearchBox: boolean = true;
 
   constructor(
     private commonService: CommonService,
@@ -252,25 +253,37 @@ routeDailyPractice(id: number): void {
 
 
 
-onFocus() {
-    this.getModuleList(true);
+  onFocus() {
+    if (this.moduleList.length === 0) {
+      this.getModuleList(true);
+    }
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
     } else {
-      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || ''));
+    }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
     }
   }
 
   onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
+    // Removed auto-close to keep screen open until explicit close
   }
 
   
   clearSearch() {
     this.searchinp = "";
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   getModuleList(isLoad?) {
@@ -292,105 +305,112 @@ onFocus() {
   }
 
   getAutoCompleteList(value) {
-      if (this.moduleList.length > 0) {
-        if (value == null || value == "") {
-          this.searchResult = this.moduleList;
-        } else {
-          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
-        }
+    if (this.moduleList.length > 0) {
+      if (value == null || value == "") {
+        this.searchResult = this.moduleList;
+      } else {
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
+      }
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
       }
     }
+  }
 
     
-  getinp(event) {
-    this.logeventservice.logEvent("search_"+ event)
-    
-    let url=""
-    switch(event.toLowerCase())
-    {
-      case "events":{
+  getinp(searchTerm: string): void {
+    if (this.isAdults) {
+      if (searchTerm && searchTerm.trim() !== '') {
+        const prefix = SharedService.getprogramName();
+        const url = `/${prefix}/site-search/${searchTerm}`;
+        this.router.navigate([url]);
+      }
+    } else {
+      this.logeventservice.logEvent("search_" + searchTerm)
+
+      let url = ""
+      switch (searchTerm.toLowerCase()) {
+        case "events": {
           url = `/adults/events`
           break;
-      }
-      case "blogs":{
-        url = `/adults/blogs`
-        break;
-      }
-      case "life stories":
-      case "stories":{
-        url = `/adults/wisdom-stories`
-        break;
-      }
-      case "podcast":{
-        url = `/adults/podcast`
-        break;
-      }
-      case "audio meditations":{
-        url = `/adults/audio-meditation`
-        break;
-      }
-      case ("short videos"):
-      case ("videos"):
-        {
-        url = `/adults/wisdom-shorts`
-        break;
-      }
-     case "journal":{
-        url = `/adults/journal`
-        break;
-      }
-      case "exercises":
-      case "awareness exercises":
-        {
-        url = `/adults/wisdom-exercise`
-        break;
-      }
-      case "forum":{
-        url = `/adults/forum`
-        break;
-      }
-      case "develop a calm mind":{
-        url = `/adults/pathway/develop-a-calm-mind`
-        break;
-      }
-      case "understand yourself":{
-        url = `/adults/pathway/understand-yourself`
-        break;
-      }
-      case "understand how your mind works":{
-        url = `/adults/pathway/understand-how-your-mind-works`
-        break;
-      }
-      case "manage your emotions":{
-        url = `/adults/pathway/manage-your-emotions`
-        break;
-      }
-      case "succeed in life":{
-        url = `/adults/pathway/live-your-best-life`
-        break;
-      }
-      case "mental health":{
-        url = `/adults/curated/overcome-stress-anxiety`
-        break;
-      }
-      default: {
-      //  if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
-      //  let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
-      //   url = `${m.ModuleUrl}`;
-      //    break;
-      // }
-      let searchInpt = (' ' + this.searchinp).slice(1);
-      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
-       url = `/adults/site-search/${searchInpt}`
-        break;
+        }
+        case "blogs": {
+          url = `/adults/blogs`
+          break;
+        }
+        case "life stories":
+        case "stories": {
+          url = `/adults/wisdom-stories`
+          break;
+        }
+        case "podcast": {
+          url = `/adults/podcast`
+          break;
+        }
+        case "audio meditations": {
+          url = `/adults/audio-meditation`
+          break;
+        }
+        case ("short videos"):
+        case ("videos"):
+          {
+            url = `/adults/wisdom-shorts`
+            break;
+          }
+        case "journal": {
+          url = `/adults/journal`
+          break;
+        }
+        case "exercises":
+        case "awareness exercises":
+          {
+            url = `/adults/wisdom-exercise`
+            break;
+          }
+        case "forum": {
+          url = `/adults/forum`
+          break;
+        }
+        case "develop a calm mind": {
+          url = `/adults/pathway/develop-a-calm-mind`
+          break;
+        }
+        case "understand yourself": {
+          url = `/adults/pathway/understand-yourself`
+          break;
+        }
+        case "understand how your mind works": {
+          url = `/adults/pathway/understand-how-your-mind-works`
+          break;
+        }
+        case "manage your emotions": {
+          url = `/adults/pathway/manage-your-emotions`
+          break;
+        }
+        case "succeed in life": {
+          url = `/adults/pathway/live-your-best-life`
+          break;
+        }
+        case "mental health": {
+          url = `/adults/curated/overcome-stress-anxiety`
+          break;
+        }
+        default: {
+          let searchInpt = (' ' + searchTerm).slice(1);
+          searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+          url = `/adults/site-search/${searchInpt}`
+          break;
+        }
+
       }
 
+      if (!this.isAdults)
+        url = url.replace("/adults/", "/teenagers/")
+
+      this.router.navigate([url])
     }
-
-    if(!this.isAdults)
-      url=url.replace("/adults/","/teenagers/")
-
-    this.router.navigate([url])
   }
 
 
@@ -399,6 +419,7 @@ onFocus() {
 
     this.searchinp = module;
     this.searchResult = [];
+    this.toggleBodyScroll(false);
     this.getinp(module);
   }
 

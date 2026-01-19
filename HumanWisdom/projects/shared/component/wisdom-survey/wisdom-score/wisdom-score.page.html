@@ -114,9 +114,18 @@
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"  [ngClass]="isAdults? fc_ED7D6F : fc_e58d82 " > 
                           {{item.title}}
                         </h4>
-                        <h4 class="mtb0px fs_12px fw_400 lh_100p " [ngClass]="isAdults? fc_000000_0_5 : fc_ffffff_0_5 " >
-                          {{item.module + ' . ' + item.timing }}
-                        </h4>
+                        <!-- <h4 class="mtb0px fs_12px fw_400 lh_100p "[ngClass]="isAdults? 'fc_000000_0_5':'fc_ffffff_0_5'" >
+                          {{item.module +'&#x2022;' + item.timing }}
+                        </h4> -->
+
+                        <h4 class="mtb0px fs_12px fw_400 lh_100p "[ngClass]="isAdults? 'fc_000000_0_5':'fc_ffffff_0_5'" >
+  {{ item.module }} &#x2022;   {{ item.timing }}
+</h4>
+   <!-- <h4 class="bullet-text"
+    [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+  {{ item.module }} {{ item.timing }}
+</h4> -->
+                        
                       </div>
                     <!-- </div> -->
 

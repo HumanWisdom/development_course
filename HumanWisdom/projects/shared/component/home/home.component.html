@@ -13,7 +13,7 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
-              <div class="row home-container sticky-top-section">
+              <div class="row home-container sticky-top-section" [class.search-active]="searchResult.length > 0">
 
                 <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showSearchBox">
                   <div class="d-flex header-blk justify-content-between align-items-center plr20px mb0px"
@@ -39,7 +39,7 @@
                   </div>
                 </div>
                 <!-- Search Box -->
-                <div class="col-12 pr0px pdl20px pdr20px mt-3 mb-3 prelative search-box-container"
+                <div class="col-12 pr0px pdl20px pdr20px prelative search-box-container"
                   [class.search-box-hidden]="!showSearchBox">
                   <div class="col-md-12 col-sm-12 col-xs-12 form-group  has-feedback zi0 p0 mb0px">
                     <input type="search" placeholder="Search for a topic"
@@ -468,8 +468,9 @@
                     <ng-container *ngTemplateOutlet="renderSection; context: { $implicit: section }"></ng-container>
 
                     <!-- ====== FREE-TRIAL BANNER – same spacing as sections ====== -->
-                    <a >
-                      <div class="toc_adiv_imgmynew plr20px py-3 mttopbot20" *ngIf="section.title ==='Begin here' && (!isSubscriber || !isloggedIn)">
+                    <a>
+                      <div class="toc_adiv_imgmynew plr20px py-3 mttopbot20"
+                        *ngIf="section.title ==='Begin here' && (!isSubscriber || !isloggedIn)">
                         <div class="row center_flex py-3"> <!-- same vertical gap as section content -->
                           <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 

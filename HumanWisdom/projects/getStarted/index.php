@@ -94,11 +94,11 @@ require_once('./includes/security_config.php');
 
     <div class="row center_flex web_home_divlanding">
       <div
-        class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w1340">
+        class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 ddflex_mblock w-header d-lg-flex d-lg-flex d-md-flex d-sm-flex d-block fixed_w1340">
 
 
 
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 land-video-sec" data-aos="fade-up"
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 mt40px land-video-sec" data-aos="fade-up"
           data-aos-delay="100">
           <!-- <video id="vid" controls playinline autoplay loop muted class="w100p"
               poster=""
@@ -110,19 +110,19 @@ require_once('./includes/security_config.php');
           <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>  -->
           <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>  -->
           <img style="width:100%;height:auto;"
-            src="https://d1tenzemoxuh75.cloudfront.net/website/Adults+teenagers+2.svg"
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannerind.svg"
             class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 
-          <img style="width:100%;height:auto;"
-            src="https://d1tenzemoxuh75.cloudfront.net/website/index_mobile.png"
+           <img style="width:237px;height:300px"
+            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannermobile11.svg"
             class="img-responsive w100p display_d_none m-popup m-auto" loading="lazy" alt="performance">
         </div>
-        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px mtb40px" data-aos="fade-up"
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px " data-aos="fade-up"
           data-aos-delay="200">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 p-18px">
-              <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
+              <h1 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
                 <span class="rating_a">
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
@@ -140,26 +140,56 @@ require_once('./includes/security_config.php');
                 </span>
 
                 App store rating
-              </h6>
+              </h1>
             </div>
           </div>
 
           <div class="row mt30px">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-              <h1 class="mtb0px fs_45px fw_600 lh_130p fc_000000 ta_lc  ">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ">
+              <h1 class="mtb0px fs_42px fw_600 lh_130p fc_000000 ta_lc  ">
                 <!-- Understand your mind. Transform your life. -->
                  <!-- Understand your emotions. Gain clarity. Be happier. -->
                   <!-- Everything you need for a happier life -->
                    <!-- Strengthen your relationships. Manage emotions. Feel happier. -->
-                    Understand your mind. Change your life.
-               </h1>
+Understand your mind.       Find peace. Feel happier.               </h1>
             </div>
           </div>
 
-          <div class="row mtb15px">
+
+           <div class="row">
+
+            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 p0">
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" class=""  alt="wh_tick_black" loading=lazy>
+
+
+            </div> -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt10px">
+
+              <h2 class="mt5px fs_21px fw_600 lh_130p fc_000000 ta_lc">              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" class=""  alt="wh_tick_black" loading=lazy>
+
+                
+Now with Olly AI              </h2>
+
+            </div>
+          </div>
+
+          <!-- <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""  alt="wh_tick_black" loading=lazy>
+                </div>
+
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+                  <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
+                  Addresses the root cause, for lasting change.  </h3>
+                </div>
+              </div>
+            </div> -->
+          <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ">
 
-              <h2 class="mtb0px fs_21px fw_400 lh_130p fc_000000 ta_lc">
+              <h2 class="mtb0px fs_18px fw_400 lh_150p fc_000000 ta_lc">
                 <!-- A happier mind starts with understanding it. We support you to manage your emotions, build stronger
                 relationships, and handle life with more clarity and calm.  -->
                 <!-- Guided programs to transform your emotional wellbeing, strengthen your relationships and succeed in life.
@@ -214,7 +244,7 @@ require_once('./includes/security_config.php');
               </div>
             </div> -->
 
-          <div class="row mt40px">
+          <div class="row mt30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px  btn-res card_center">
                 <a href="https://happierme.app/pages/splash_options.php" class="">
@@ -263,7 +293,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal">Mental wellbeing <i
                     class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -275,7 +305,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalbuild">Better
                   relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -286,7 +316,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
                   class="btn btn-primarypop f_15px " data-bs-toggle="modal" data-bs-target="#exampleModal3">
                   Succeed at work <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -310,7 +340,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal2">Learn meditation <i
                     class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -322,7 +352,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalbreak">Overcome harmful
                   habits <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -333,7 +363,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p f_15px fc_CB6171 btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p f_15px fc_D7586B btn-primarypop" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalemotions">Manage
                   emotions <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -358,7 +388,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalself">Build
                   self-awareness <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -370,7 +400,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 f_15px btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B f_15px btn-primarypop" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalparent">Better
                   parenting <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -381,7 +411,7 @@ require_once('./includes/security_config.php');
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalteen">HappierMe for
                   Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -457,7 +487,7 @@ require_once('./includes/security_config.php');
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <a class="openInApp" id="openInApp1_1" >
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                       Open in app
                     </h4>
                   </a>
@@ -490,7 +520,7 @@ require_once('./includes/security_config.php');
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <a class="openInApp" id="openInApp2_2">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                       Open in app
                     </h4>
                   </a>
@@ -523,7 +553,7 @@ require_once('./includes/security_config.php');
               <div class="row display_d_none">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <a class="openInApp" id="openInApp3_2">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                       Open in app
                     </h4>
                   </a>
@@ -540,7 +570,7 @@ require_once('./includes/security_config.php');
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <a class="openInApp"  id="openInApp1_2" >
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline ">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline ">
                       Open in app
                     </h4>
                   </a>
@@ -552,7 +582,7 @@ require_once('./includes/security_config.php');
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <a class="openInApp"  id="openInApp2_1">
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline ">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline ">
                       Open in app
                     </h4>
                   </a>
@@ -564,7 +594,7 @@ require_once('./includes/security_config.php');
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <a class="openInApp"  id="openInApp3_1" >
-                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                    <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                       Open in app
                     </h4>
                   </a>
@@ -575,6 +605,81 @@ require_once('./includes/security_config.php');
         </div>
       </section> -->
     <!-- /aspects -->
+
+
+
+
+ <!-- teenagers -->
+    <section>
+      <div class="row center_flex web_home_divcircleolly">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap1 element1 w-335px f_18px fixed_w">
+
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 land-happierMe-section" data-aos="fade-up"
+            data-aos-delay="100">
+
+
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/secowly.svg"
+              class="img-responsive w100p display_m_none" loading="lazy" alt="performance" style="height:360px;">
+
+
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/ollyai.svg"
+              class="img-responsive w100p display_d_none" loading="lazy" alt="performance" style="width:200px; height:180px;">
+
+            <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/circle.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy> -->
+          </div>
+
+          <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 tleft ta_lc" data-aos="fade-up"
+            data-aos-delay="200">
+            <!-- <div class="land-happierme-margin"> -->
+
+              <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                
+                Our happiness depends on many factors.
+              </h2> -->
+
+              <h2 class="mb0px fs_42px fw_600 lh_140p fc_000000">
+Introducing Olly AI, <br/>your personal guide inside HappierMe.             </h2>
+
+              <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
+
+              <h3 class="mt0px mb10px fs_21px fw_500 lh_150p fc_000000">
+                <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
+              </h3>
+
+              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_000000">
+Talk to Olly about what’s on your mind — stress, anxiety, relationships, tricky habits, parenting, or work. Olly offers practical support and guides you to trusted, expert-backed resources.              </h4>
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
+                  <a href="/pages/teenagers.php" aria-label="Explore more about the teenagers app" class="">
+                    <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                    <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc">
+                      Find out more
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy>
+                    </h4> -->
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
+                  <a href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick">
+                    <button class="fs_21px fw_600 lh_140p fc_ffffff btn_tff btn_tff_widthnew h_48px btn_popup">
+                      Chat with Olly now
+                    </button>
+                  </a>
+                </div>
+              </div>
+            <!-- </div> -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /teenagers -->
+
+
+
 
     <!-- video -->
     <section>
@@ -760,7 +865,7 @@ require_once('./includes/security_config.php');
                 <div class="owl-controls">
                   <div class="owl-nav">
                     <a class="sap" id="viewallsuccessstories">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                       View all success stories >
                       </h4>
                     </a>
@@ -775,11 +880,11 @@ require_once('./includes/security_config.php');
         <div class="owl-controls">
           <div class="owl-nav">
             <a class="sap" href="https://happierme.app/adults/testimonials">
-              <h6 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+              <h3 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                 View all Success stories
 
-                <i style="margin-left:11px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
-              </h6>
+                <i style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
+              </h3>
             </a>
           </div>
         </div>
@@ -788,7 +893,7 @@ require_once('./includes/security_config.php');
                 <div class="owl-controls">
                   <div class="owl-nav">
                     <a class="sap" id="viewallsuccessstories">
-                      <h4  style="text-decoration:underline;"class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h4  style="text-decoration:underline;"class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                       View all Success stories  <i  style="margin-left:11px;"class="bi bi-chevron-right"></i> 
                     </a>
                   </div>
@@ -849,9 +954,9 @@ require_once('./includes/security_config.php');
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                   <a href="/pages/teenagers.php" aria-label="Explore more about the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc">
+                    <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc">
                       Find out more
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy>
                     </h4> -->
                   </a>
                 </div>
@@ -1348,7 +1453,7 @@ require_once('./includes/security_config.php');
                 <div class="owl-controls">
                   <div class="owl-nav">
                     <a class="sap" id="viewallsuccessstories">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                       View all Success stories
                       </h4>
                     </a>
@@ -1431,9 +1536,9 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href=" https://happierme.app/pages/work.php" iaria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h6 class=" mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                    <h6 class=" mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                     </h6>
                   </a>
                 </div>
@@ -1471,9 +1576,9 @@ require_once('./includes/security_config.php');
               <div class="row d_none">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/education.php" aria-label="Explore the teenagers app" class="">
-                    <h6 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                    <h6 class="mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                     </h6>
                   </a>
                 </div>
@@ -1512,9 +1617,9 @@ require_once('./includes/security_config.php');
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h6 class="mt10px fs_15px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                    <h6 class="mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                     </h6>
                   </a>
                 </div>
@@ -1590,9 +1695,9 @@ require_once('./includes/security_config.php');
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                     <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                       <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                      <h6 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                      <h6 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                         Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                        <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                        <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
               </h6>
               </a>
             </div>
@@ -1970,10 +2075,10 @@ require_once('./includes/security_config.php');
             </div>
 
              <a class="sap" href="https://happierme.app/adults/coach">
-                    <h5 class="fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                    <h5 class="fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                       Find out more
                       <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy></a> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy></a> -->
                     </h5>
                   </a>
           
@@ -2191,12 +2296,12 @@ require_once('./includes/security_config.php');
                       you feel better now.
                     </h4>
 
-                    <a id="exploreAppWeb">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline mt2rem w-45p ">
-                        Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
+                    
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline mt2rem w-45p "><a id="exploreAppWeb">
+                        Explore on app</a>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
-                    </a>
+                    
                   </div>
                 </div>
               </div>
@@ -2240,9 +2345,9 @@ require_once('./includes/security_config.php');
                     </div>
 
                     <a href="https://happierme.app/adults/pathway/">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2272,9 +2377,9 @@ require_once('./includes/security_config.php');
                     </h4>
 
                     <a href="https://happierme.app/adults/journal">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2313,9 +2418,9 @@ require_once('./includes/security_config.php');
                     </div>
 
                     <a href="https://happierme.app/adults/podcast">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2345,9 +2450,9 @@ require_once('./includes/security_config.php');
                     </h4>
 
                     <a href="https://happierme.app/adults/forum">
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_cb6171 td_underline w-50">
+                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2556,10 +2661,10 @@ require_once('./includes/security_config.php');
             </div>
 
              <a class="sap" mb id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
-                    <h5 class="mt20px fs_18px fw_500 lh_150p fc_cb6171 flex_ai dflex_jc_lc td_underline">
+                    <h5 class="mt20px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                       See all posts
                       <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                       </h4>
                   </a>
           </div>
@@ -3108,7 +3213,7 @@ require_once('./includes/security_config.php');
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
           <div class="tab-content tc_faqs mobile">
             <div id="about_happierme" class="tab-pane fade in active">
-              <h5 class="mt0px mb20px fs_15px fw_600 lh_150p fc_cb6171 tt_uppercase mobile">
+              <h5 class="mt0px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 About HappierMe
               </h5>
 
@@ -3201,7 +3306,7 @@ require_once('./includes/security_config.php');
             </div>
 
             <div id="how_can_the_app_help" class="tab-pane fade in active">
-              <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_cb6171 tt_uppercase mobile">
+              <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 How can the app help?
               </h5>
 
@@ -3349,7 +3454,7 @@ require_once('./includes/security_config.php');
             </div>
 
             <div id="app_features" class="tab-pane fade in active">
-              <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_cb6171 tt_uppercase mobile">
+              <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 App features
               </h5>
 
@@ -3466,7 +3571,7 @@ require_once('./includes/security_config.php');
             </div>
 
             <div id="teenage_program" class="tab-pane fade in active">
-              <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_cb6171 tt_uppercase mobile">
+              <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 Teenage program
               </h5>
 
@@ -3491,7 +3596,7 @@ require_once('./includes/security_config.php');
             </div>
 
             <div id="support" class="tab-pane fade in active">
-              <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_cb6171 tt_uppercase mobile">
+              <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 Support
               </h5>
 

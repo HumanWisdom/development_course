@@ -106,6 +106,7 @@ export class SearchPopularItemsPage implements OnInit {
   
   getinp(event) {
     let url=""
+    let fragment = ""
     this.search= event;
 
     switch(event.toLowerCase())
@@ -140,7 +141,8 @@ export class SearchPopularItemsPage implements OnInit {
       case "exercises":
       case "awareness exercises":
         {
-        url = `/${SharedService.getprogramName()}/wisdom-exercise`
+        url = `/${SharedService.getprogramName()}/home`
+        fragment = "self-awareness"
         break;
       }
       case "journal":{
@@ -190,8 +192,13 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
     }
+    
+    // Close dropdown after selection
+    this.searchResult = [];
+    this.toggleBodyScroll(false);
+    
     if(this.router.url.includes('site-search')){
-      this.router.navigate([url])
+      this.router.navigate([url], { fragment: fragment })
     }
   }
 
@@ -459,9 +466,9 @@ export class SearchPopularItemsPage implements OnInit {
     let title = encodeURIComponent((data['Title'] || '').replaceAll(' ', '-'));
     const prgType = SharedService.ProgramId;
     if (prgType == 9) {
-      this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio']);
+      this.router.navigate(['adults/guided-meditation/audiopage/', url, data['RowID'], (data['isFree']==1)? "T":"F", title]);
     } else {
-      this.router.navigate(['teenagers/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio']);
+      this.router.navigate(['teenagers/guided-meditation/audiopage/', url, data['RowID'], (data['isFree']==1)? "T":"F", title]);
     }
   }
 
@@ -663,17 +670,27 @@ export class SearchPopularItemsPage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
+      }
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
       }
     }
   }
 
   onFocus() {
-    this.getModuleList(true);
-    if (this.searchinp == '') {
+    if (this.moduleList.length === 0) {
+      this.getModuleList(true);
+    }
+    if (this.search == '') {
       this.searchResult = this.moduleList;
     } else {
-      this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(this.searchinp?.toLocaleLowerCase()));
+      this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(this.search?.toLocaleLowerCase() || ''));
+    }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
     }
   }
 
@@ -696,13 +713,19 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
   }
 
   clearSearch() {
     this.search = "";
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 }

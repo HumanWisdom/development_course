@@ -16,9 +16,9 @@
   box-shadow: unset;
   transition: all 0.3s ease;
 }
-.session_img_play{
-  right: 18px !important;
-}
+// .session_img_play{
+//   right: 18px !important;
+// }
 .btn_podcast .btn.active,
 .btn_podcast .btn:focus {
   background: rgba(0, 0, 0, 0.05) !important;
@@ -80,4 +80,17 @@
 .adults-scroll .ae_days::-webkit-scrollbar-track {
   background-color: #f6d1b7;
   border-radius: 10px;
+}
+
+.toc_adiv_02 a > .row {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+@media (max-width: 414px) {
+.toc_adiv_02 a > .row {
+      padding-left: 5px;
+  }
 }
