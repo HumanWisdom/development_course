@@ -2042,7 +2042,7 @@ require_once('./includes/security_config.php');
       <!-- Left Section -->
       <div class="col-6 text-start">
         <h4 class="mt-0 mb-1 fs_18px fw_500 lh_150p text-white">Yearly</h4>
-        <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white">
+        <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white" style="text-align: left !important;">
           <span id="annualPricingModelHeading">₹2400/yr</span>
         </h6>
       </div>
@@ -2063,7 +2063,7 @@ require_once('./includes/security_config.php');
         <div class="row align-items-center">
           <div class="col-6 text-start">
             <h4 class="mt-0 mb-1 fs_18px fw_500 lh_150p text-white">Monthly</h4>
-            <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white">7-day free trial</h6>
+            <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white" style="text-align: left !important;">7-day free trial</h6>
           </div>
           <div class="col-6 text-end">
             <h4 class="mt-0 mb-0 fs_21px fw_600 lh_150p text-white" id="monthlyPricingModelHeading"></h4>

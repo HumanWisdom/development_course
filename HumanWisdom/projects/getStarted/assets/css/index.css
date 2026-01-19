@@ -27,6 +27,10 @@
     }
 
     @media screen and (max-width: 768px) {
+      .txt-left{
+        text-align: left !important;
+      }
+      
       .subs_mobile_view {
         margin-right: 48%;
         padding: 8px;
