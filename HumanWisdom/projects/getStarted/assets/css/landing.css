@@ -21,7 +21,11 @@
   top: -14px;
   right: 20px;
 }
- .a,h6:hover{
+ /* .a,h3:hover{
+  color:#834B66;
+}  */
+
+.a,h5:hover{
   color:#834B66;
 } 
 /* .a,img:hover{
@@ -86,17 +90,19 @@ a:hover{
     font-size: 12px;
     line-height: 150%;
     opacity: 75%;
-    color: #000000;
+    color: #000000 !important;
   margin-top: -4px;
+  text-decoration: none !important;
 }
 .review{
   font-weight: 400;
     font-size: 12px;
     line-height: 140%;
     opacity: 75%;
-    color: #000000;
+    color: #000000 !important;
   margin-top: -3px;  
   padding-right: 15px;
+  text-decoration: none !important;
 }
 .h5{
     margin-top: -5px;

@@ -244,7 +244,7 @@ Now with Olly AI              </h2>
               </div>
             </div> -->
 
-          <div class="row mt40px">
+          <div class="row mt30px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px  btn-res card_center">
                 <a href="https://happierme.app/pages/splash_options.php" class="">
@@ -293,7 +293,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal">Mental wellbeing <i
                     class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -305,7 +305,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalbuild">Better
                   relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -316,7 +316,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
                   class="btn btn-primarypop f_15px " data-bs-toggle="modal" data-bs-target="#exampleModal3">
                   Succeed at work <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -340,7 +340,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal2">Learn meditation <i
                     class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -352,7 +352,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalbreak">Overcome harmful
                   habits <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -363,7 +363,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p f_15px fc_CB6171 btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p f_15px fc_D7586B btn-primarypop" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalemotions">Manage
                   emotions <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -388,7 +388,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalself">Build
                   self-awareness <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -400,7 +400,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 f_15px btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B f_15px btn-primarypop" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalparent">Better
                   parenting <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -411,7 +411,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fs_18px fw_500 lh_140p fc_CB6171 btn-primarypop f_15px" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalteen">HappierMe for
                   Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -655,7 +655,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc">
                       Find out more
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy>
                     </h4> -->
                   </a>
                 </div>
@@ -880,11 +880,11 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="owl-controls">
           <div class="owl-nav">
             <a class="sap" href="https://happierme.app/adults/testimonials">
-              <h6 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
+              <h3 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                 View all Success stories
 
-                <i style="margin-left:11px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
-              </h6>
+                <i style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
+              </h3>
             </a>
           </div>
         </div>
@@ -956,7 +956,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc">
                       Find out more
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy>
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy>
                     </h4> -->
                   </a>
                 </div>
@@ -1538,7 +1538,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h6 class=" mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                     </h6>
                   </a>
                 </div>
@@ -1578,7 +1578,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <a href="https://happierme.app/pages/education.php" aria-label="Explore the teenagers app" class="">
                     <h6 class="mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                     </h6>
                   </a>
                 </div>
@@ -1619,7 +1619,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                     <h6 class="mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
                       Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                     </h6>
                   </a>
                 </div>
@@ -1697,7 +1697,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
                       <h6 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                         Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                        <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                        <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
               </h6>
               </a>
             </div>
@@ -2078,7 +2078,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <h5 class="fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                       Find out more
                       <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy></a> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy></a> -->
                     </h5>
                   </a>
           
@@ -2299,7 +2299,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline mt2rem w-45p "><a id="exploreAppWeb">
                         Explore on app</a>
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     
                   </div>
@@ -2347,7 +2347,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <a href="https://happierme.app/adults/pathway/">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2379,7 +2379,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <a href="https://happierme.app/adults/journal">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2420,7 +2420,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <a href="https://happierme.app/adults/podcast">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2452,7 +2452,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <a href="https://happierme.app/adults/forum">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml10px"></i>
+                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
                     </a>
                   </div>
@@ -2664,7 +2664,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <h5 class="mt20px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                       See all posts
                       <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
-                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml10px" alt="angle_right_peach" loading=lazy> -->
+                      <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                       </h4>
                   </a>
           </div>
