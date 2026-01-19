@@ -483,7 +483,9 @@ label > input[type="checkbox"] + *::before {
   color: #fff;
   /* background: var(--color-primary); */
   /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-  background: linear-gradient(180deg, #E58D82, #CB6171);
+  /* background: linear-gradient(180deg, #E58D82, #CB6171); */
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
   padding: 15px;
   /* margin-left: 30px; */
   border-radius: 24px;
@@ -2871,7 +2873,9 @@ animation-name: slideInRight;
   height: 48px;
   border-radius: 24px;
   /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-  background: linear-gradient(180deg, #E58D82, #CB6171) ;
+  /* background: linear-gradient(180deg, #E58D82, #CB6171) ; */
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
 }
 
 .btn_tff_widthnew 
