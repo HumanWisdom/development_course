@@ -56,6 +56,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
         this.messages = messages;
+        
+        // Debug: Log messages with suggestions
+        messages.forEach((msg, index) => {
+          if (msg.suggestions && msg.suggestions.length > 0) {
+            console.log(`Message ${index} has ${msg.suggestions.length} suggestions:`, msg.suggestions);
+          }
+        });
 
         // Ensure welcome messages if store becomes empty (e.g., after logout)
         if (messages.length === 0) {
@@ -508,6 +515,54 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Send no response to chatbot API
     this.chatbotService.sendYesNoResponse('no').subscribe({
+      next: (response) => {
+        this.chatbotService.removeTypingIndicator();
+        this.chatbotService.setTyping(false);
+
+        if (response.status === 'success') {
+          this.chatbotService.addBotMessage(
+            response.response,
+            response.session_id,
+            response.allow_feedback,
+            response.offer_related,
+            response.is_followup
+          );
+        } else {
+          this.errorMessage = 'Sorry, I encountered an error. Please try again.';
+        }
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Chatbot API Error:', error);
+        this.chatbotService.removeTypingIndicator();
+        this.chatbotService.setTyping(false);
+        this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
+        this.isLoading = false;
+      }
+    });
+  }
+
+  /**
+   * Handle "Give me more options" button click - send yes in background
+   * This sends "Yes" to the API without displaying it as a user message
+   */
+  onGiveMoreOptions(): void {
+    if (this.isLoading) {
+      return;
+    }
+
+    this.errorMessage = '';
+    this.isLoading = true;
+
+    // Add typing indicator (no user message shown)
+    this.chatbotService.addTypingIndicator();
+    this.chatbotService.setTyping(true);
+
+    // Scroll to show the response
+    setTimeout(() => this.scrollSlightlyDown(), 100);
+
+    // Send yes response to chatbot API in the background
+    this.chatbotService.sendYesNoResponse('yes').subscribe({
       next: (response) => {
         this.chatbotService.removeTypingIndicator();
         this.chatbotService.setTyping(false);

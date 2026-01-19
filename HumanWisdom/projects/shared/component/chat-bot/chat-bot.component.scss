@@ -1,13 +1,49 @@
+// Suggestions container and buttons
+.suggestions-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  gap: 8px;
+  
+  .suggestions-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 4px;
+  }
+  
+  .suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
 .suggestion-button{
     background: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
     border-color: white;
     text-align: left;
     font-weight: 600;
     box-shadow: 1px 1px 2px 0px #0000001A;
-    margin:5px;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #000000;
+    pointer-events: auto;
+    
+    &:hover {
+      background: #f0f0f0;
+      transform: translateY(-1px);
+      box-shadow: 2px 2px 4px 0px #0000001A;
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
 }
 
 .chat-bot-container {
@@ -717,6 +753,42 @@
           transform: translateY(0);
         }
       }
+    }
+  }
+}
+
+// Give More Options button
+.more-options-container {
+  margin: 0 68px 12px 68px; // Align with bot messages (20px margin + 48px avatar space)
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  
+  .action-button.more-options-button {
+    width: fit-content;
+    max-width: 285px; // Match bot message width
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    background: white;
+    color: #000000;
+    box-shadow: 1px 1px 2px 0px #0000001A;
+    text-align: left;
+    
+    &:hover {
+      background: #f0f0f0;
+      transform: translateY(-1px);
+      box-shadow: 2px 2px 4px 0px #0000001A;
+    }
+    
+    &:active {
+      transform: translateY(0);
     }
   }
 }
