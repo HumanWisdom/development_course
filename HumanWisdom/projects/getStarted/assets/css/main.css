@@ -583,7 +583,7 @@ label > input[type="checkbox"] + *::before {
     font-size: 15px;
     font-weight: 500;
     line-height: 130%;
-    color: #CB6171;
+    color: #D7586B;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
