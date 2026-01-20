@@ -109,7 +109,7 @@ require_once('./includes/security_config.php');
             </video>  -->
           <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>  -->
           <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>  -->
-          <img style="width:100%;height:auto;"
+          <img style="width:415px;height:525px;"
             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannerind.svg"
             class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
@@ -144,14 +144,14 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
-          <div class="row mt30px">
+          <div class="row mt20px">
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ">
               <h1 class="mtb0px fs_42px fw_600 lh_130p fc_000000 ta_lc  ">
                 <!-- Understand your mind. Transform your life. -->
                  <!-- Understand your emotions. Gain clarity. Be happier. -->
                   <!-- Everything you need for a happier life -->
                    <!-- Strengthen your relationships. Manage emotions. Feel happier. -->
-Understand your mind.       Find peace. Feel happier.               </h1>
+Understand your mind. Change how you feel.          </h1>
             </div>
           </div>
 
@@ -244,7 +244,7 @@ Now with Olly AI              </h2>
               </div>
             </div> -->
 
-          <div class="row mt30px">
+          <div class="row mt20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px  btn-res card_center">
                 <a href="https://happierme.app/pages/splash_options.php" class="">
@@ -2314,10 +2314,17 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     </h4>
 
                     
-                      <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline mt2rem w-45p "><a id="exploreAppWeb">
-                        Explore on app</a>
+                      <!-- <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline ms-2 mt2rem w-45p "><a id="exploreAppWeb">
+                        Explore</a>
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
-                      </h5>
+                      </h5> -->
+
+                      <a id="exploreAppWeb" iaria-label="Explore the teenagers app" class="">
+                    <h5 class=" mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B  flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                       Explore on app 
+                       <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                    </h5>
+                  </a>
                     
                   </div>
                 </div>
@@ -2361,12 +2368,20 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       </div>
                     </div>
 
-                    <a href="https://happierme.app/adults/pathway/">
+
+                     <a href="https://happierme.app/adults/pathway/" iaria-label="Explore the teenagers app" class="">
+                    <h5 class=" mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B  flex_ai dflex_jc_lc td_underline mb40px ">
+                       Explore on app 
+                       <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                    </h5>
+                  </a>
+                  
+                    <!-- <a href="https://happierme.app/adults/pathway/">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
-                         <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
+                         <span style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></span>
                       </h5>
-                    </a>
+                    </a> -->
                   </div>
                 </div>
               </div>
@@ -2393,12 +2408,18 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       fresh ways of dealing with life’s challenges.
                     </h4>
 
-                    <a href="https://happierme.app/adults/journal">
+                    <!-- <a href="https://happierme.app/adults/journal">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;"class="bi bi-chevron-right ml6px"></i>
                       </h5>
-                    </a>
+                    </a> -->
+                     <a href="https://happierme.app/adults/journal" iaria-label="Explore the teenagers app" class="">
+                    <h5 class=" mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B  flex_ai dflex_jc_lc td_underline mb40px">
+                       Explore on app 
+                       <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                    </h5>
+                  </a>
                   </div>
                 </div>
               </div>
@@ -2434,12 +2455,19 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       </div>
                     </div>
 
-                    <a href="https://happierme.app/adults/podcast">
+                    <!-- <a href="https://happierme.app/adults/podcast">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
-                    </a>
+                    </a> -->
+
+                    <a href="https://happierme.app/adults/podcast" iaria-label="Explore the teenagers app" class="">
+                    <h5 class=" mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B  flex_ai dflex_jc_lc td_underline mb40px">
+                       Explore on app 
+                       <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                    </h5>
+                  </a>
                   </div>
                 </div>
               </div>
@@ -2466,12 +2494,19 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       HappierMe community.
                     </h4>
 
-                    <a href="https://happierme.app/adults/forum">
+                    <!-- <a href="https://happierme.app/adults/forum">
                       <h5 class="mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B td_underline w-50">
                         Explore on app
                          <i style="font-size:15px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right ml6px"></i>
                       </h5>
-                    </a>
+                    </a> -->
+
+                    <a href="https://happierme.app/adults/forum" iaria-label="Explore the teenagers app" class="">
+                    <h5 class=" mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B  flex_ai dflex_jc_lc td_underline mb40px ">
+                       Explore on app 
+                       <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                    </h5>
+                  </a>
                   </div>
                 </div>
               </div>
@@ -2692,7 +2727,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
     <!-- /blog -->
 
     <!-- faqs -->
-    <section class="">
+    <section class="faqqq">
       <div class="section-header mt-sm-3">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">

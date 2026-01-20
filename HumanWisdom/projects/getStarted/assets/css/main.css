@@ -52,7 +52,9 @@ a {
   color: var(--color-primary);
   text-decoration: none;
 }
-
+.faqqq{
+  margin-top: 30px;
+}
 .active_nav {
   color: #834B66 !important;
 }
@@ -62,7 +64,7 @@ p:hover{
 }
 
 a:hover {
-  color: #834B66;
+  color: #803358;
   text-decoration: none;
 }
 
@@ -2546,7 +2548,7 @@ a {
 
 .cml40px {
   margin-left: 40px;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .cmh40px {
@@ -3214,11 +3216,11 @@ animation-name: slideInRight;
 .div_subscriptionvideo {
   padding: 20px;
 }
- /* .yt-embed {
+  /* .yt-embed {
   aspect-ratio: 16 / 9;
   width: 100%;
   padding:30px 40px 40px 0px
-}
+} */
 
 .div_subscriptionvideo {
   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
@@ -3226,7 +3228,7 @@ animation-name: slideInRight;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-  /* padding: 90px 20px; */
+  /* padding: 90px 20px; 
 }
 
 .row {
@@ -3327,7 +3329,7 @@ animation-name: slideInRight;
   font-weight: 500;
   line-height: 150%;
   text-transform: uppercase;
-  color: #CB6171;
+  color: #D7586B;
   text-decoration: underline;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -4715,7 +4717,7 @@ button {
 
 .cvideo_b
 {
-  width: 100%;
+  width: 810px;
   /* border-radius: 12px; */
   position: relative;
   /* background: #120F40; */
@@ -5364,13 +5366,14 @@ input[type="password" i]::-ms-reveal {
   color: #fff !important;
   width: 109px;
   height: 28px;
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 500;
   padding: 2px;
 }
 
 .nav-tabs .nav-link.active {
   background: #CB6171 !important;
-  border: 1px solid #834b66 !important
+  border: 1px solid #803358 !important
 }
 
 /* Hover effect for FAQ tabs */
@@ -5411,7 +5414,7 @@ input[type="password" i]::-ms-reveal {
 
 /* FAQ Tab Active States */
 .tab_faqs.nav-tabs>li.active>a {
-  color: #834B66 !important;
+  color: #803358 !important;
   font-weight: 600;
   text-decoration: none;
 }
