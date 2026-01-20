@@ -689,12 +689,29 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 fs_18px ">
               Discover HappierMe in just 1 minute
             </h2>
+            <!-- <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1&enablejsapi=1"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe> -->
+          </div>
+        </div>
+      </div>
+      <div class="section-header">
+        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 w-335px">
+            <!-- <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 fs_18px ">
+              Discover HappierMe in just 1 minute
+            </h2> -->
+            <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1&enablejsapi=1"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
           </div>
         </div>
       </div>
 
-      <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-335px fixed_w">
+      <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-335px">
           <!-- <video id="homeVideo" controls playinline class="w100p"
               poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
               controlsList="nodownload">
@@ -703,10 +720,10 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 type="video/mp4">
             </video> -->
 
-          <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+           <!-- <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
             src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1&enablejsapi=1"
             class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
-            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>  -->
         </div>
       </div>
 
@@ -880,11 +897,11 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="owl-controls">
           <div class="owl-nav">
             <a class="sap" href="https://happierme.app/adults/testimonials">
-              <h3 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
+              <h5 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B td_underline">
                 View all Success stories
 
                 <i style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></i>
-              </h3>
+              </h5>
             </a>
           </div>
         </div>
@@ -1536,10 +1553,10 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href=" https://happierme.app/pages/work.php" iaria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h6 class=" mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
-                      Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                    <h5 class=" mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                      Find out more <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
-                    </h6>
+                    </h5>
                   </a>
                 </div>
               </div>
@@ -1576,10 +1593,10 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="row d_none">
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/education.php" aria-label="Explore the teenagers app" class="">
-                    <h6 class="mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
-                      Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                      Find out more <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
-                    </h6>
+                    </h5>
                   </a>
                 </div>
               </div>
@@ -1617,10 +1634,10 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 downloadApp_slider_text">
                   <a href="https://happierme.app/pages/healthcare.php" aria-label="Explore the teenagers app" class="">
                     <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                    <h6 class="mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
-                      Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                    <h5 class="mt10px fs_15px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline mb40px w-40p">
+                      Find out more <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
-                    </h6>
+                    </h5>
                   </a>
                 </div>
               </div>
@@ -1695,10 +1712,10 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                     <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                       <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                      <h6 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
-                        Find out more <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                      <h5 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
+                        Find out more <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                         <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
-              </h6>
+              </h5>
               </a>
             </div>
           </div>
@@ -2077,7 +2094,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
              <a class="sap" href="https://happierme.app/adults/coach">
                     <h5 class="fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                       Find out more
-                      <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                      <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy></a> -->
                     </h5>
                   </a>
@@ -2147,7 +2164,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <!-- Left Section -->
       <div class="col-6 text-start">
         <h4 class="mt-0 mb-1 fs_18px fw_500 lh_150p text-white">Yearly</h4>
-        <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white">
+        <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white" style="text-align: left !important;">
           <span id="annualPricingModelHeading">₹2400/yr</span>
         </h6>
       </div>
@@ -2168,7 +2185,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row align-items-center">
           <div class="col-6 text-start">
             <h4 class="mt-0 mb-1 fs_18px fw_500 lh_150p text-white">Monthly</h4>
-            <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white">7-day free trial</h6>
+            <h6 class="mt-0 mb-0 fs_15px fw_400 lh_150p text-white" style="text-align: left !important;">7-day free trial</h6>
           </div>
           <div class="col-6 text-end">
             <h4 class="mt-0 mb-0 fs_21px fw_600 lh_150p text-white" id="monthlyPricingModelHeading"></h4>
@@ -2663,7 +2680,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
              <a class="sap" mb id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
                     <h5 class="mt20px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                       See all posts
-                      <span style="margin-left:10px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
+                      <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
                       </h4>
                   </a>
