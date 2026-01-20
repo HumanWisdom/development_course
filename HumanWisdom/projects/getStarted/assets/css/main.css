@@ -104,7 +104,7 @@ section {
 
 .section-header {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
 
 .section-headernew {
@@ -2546,7 +2546,7 @@ a {
 
 .cml40px {
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .cmh40px {
@@ -3214,11 +3214,10 @@ animation-name: slideInRight;
 .div_subscriptionvideo {
   padding: 20px;
 }
-
-.yt-embed {
+ /* .yt-embed {
   aspect-ratio: 16 / 9;
   width: 100%;
-  padding: 30px 40px 40px 0px
+  padding:30px 40px 40px 0px
 }
 
 .div_subscriptionvideo {
@@ -4714,12 +4713,14 @@ button {
   border: 0;
 }
 
-.cvideo_b {
+.cvideo_b
+{
   width: 100%;
   /* border-radius: 12px; */
   position: relative;
   /* background: #120F40; */
   border: 0;
+  height: 456px;
 }
 
 .product_view .modal-dialog {
