@@ -17,7 +17,7 @@
 
       <a (click)="routeDash()" class="footer_index">
         <div *ngIf="!dash">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/home.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/home.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5"  >
             Home
@@ -25,7 +25,7 @@
         </div>
 
         <div *ngIf="dash">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_home_active.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/home_active.svg"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ED7D6F">
             Home
@@ -55,7 +55,7 @@
 
       <a (click)="disableClick ? $event.preventDefault() : routeSearch()" class="footer_index tour_explore">
         <div *ngIf="!search">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/explore.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/explore.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5"  >
             Explore
@@ -65,7 +65,7 @@
 
         <div *ngIf="search">
           <img
-            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_explore_active.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/explore_active.svg"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ED7D6F">
             Explore
@@ -75,7 +75,7 @@
 
       <a (click)="disableClick ? $event.preventDefault() : routeJournal()" class="footer_index tour_journal">
         <div *ngIf="!journal">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/journal.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/journal.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5"  >
             Journal
@@ -84,7 +84,7 @@
 
         <div *ngIf="journal">
           <img
-            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_journal_active.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/journal_active.svg"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ED7D6F">
             Journal
@@ -94,7 +94,7 @@
 
       <a (click)="disableClick ? $event.preventDefault() : routeForum()" class="footer_index tour_forum">
         <div *ngIf="!fourm">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/fouram.svg"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum.svg"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5"  >
             Forum
@@ -103,7 +103,7 @@
 
         <div *ngIf="fourm">
           <img
-            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/v3_footer_forum_active.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_active.svg"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ED7D6F">
             Forum
@@ -123,7 +123,7 @@
       <a (click)="profileclickevent()" class="footer_index tour_profile" *ngIf="!isDataRecieved">
         <div *ngIf="!enableprofile && isloggedIn">
           <img class="footer-user-profile"
-          src="{{url === '' ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_inactive.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url}}"
+          src="{{url === '' ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/profile_inactive.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url}}"
             alt="">
           <p class="mb0px fw_400 fs_10px lh_15px fc_000000_0_5" >
             Profile
@@ -132,7 +132,7 @@
 
         <div *ngIf="enableprofile && isloggedIn">
           <img class="footer-user-profile"
-          src="{{url === '' ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_active.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url}}"
+          src="{{url === '' ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/profile_active.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url}}"
             alt="">
           <p class="mb0px fw_600 fs_10px lh_15px fc_ED7D6F">
             Profile
