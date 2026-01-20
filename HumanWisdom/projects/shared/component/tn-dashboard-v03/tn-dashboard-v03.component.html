@@ -116,18 +116,19 @@
 
           <div class="mlr10px tour_notification " *ngIf="isAdults">
             <a class="prelative display_flex" (click)="disableClick ? $event.preventDefault() : goToNotification()">
+
+                    <img
+                *ngIf="loginResponse &&  loginResponse?.NewNotifications > 0"
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/notification_active.svg"
+                 class="prelative" alt="Active Notifications">
               <img
-                *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0"
+                *ngIf="loginResponse &&  loginResponse?.NewNotifications == 0"
                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/notification.svg"
-                 class="prelative" alt="">
-              <img
-                *ngIf="!loginResponse || !loginResponse?.NewNotifications || loginResponse?.NewNotifications === 0"
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/notification.svg"
-                class="prelative" alt="">
-              <span class="bell_badge"
+                class="prelative" alt="No Notifications">
+              <!-- <span class="bell_badge"
               *ngIf="loginResponse && loginResponse?.NewNotifications && loginResponse?.NewNotifications !== 0">
                 {{getNotifi(loginResponse?.NewNotifications)}}
-              </span>
+              </span> -->
             </a>
           </div>
 
