@@ -21,6 +21,7 @@ export interface ChatMessage {
   offer_related?: boolean; // Whether to offer related content
   is_followup?: boolean; // Whether this is a followup question
   feedback_given?: 'positive' | 'negative' | null; // Track user feedback
+  has_more?: boolean; // Whether there are more options available
 }
 
 /**
@@ -384,7 +385,8 @@ export class ChatStore extends ComponentStore<ChatState> {
     sessionId?: string,
     allow_feedback?: boolean,
     offer_related?: boolean,
-    is_followup?: boolean
+    is_followup?: boolean,
+    has_more?: boolean
   }>) =>
     payload$.pipe(
       tap((payload: { 
@@ -392,9 +394,10 @@ export class ChatStore extends ComponentStore<ChatState> {
         sessionId?: string,
         allow_feedback?: boolean,
         offer_related?: boolean,
-        is_followup?: boolean
+        is_followup?: boolean,
+        has_more?: boolean
       }) => {
-        const { content, sessionId, allow_feedback, offer_related, is_followup } = payload;
+        const { content, sessionId, allow_feedback, offer_related, is_followup, has_more } = payload;
         
         if (sessionId) {
           this.setSessionId(sessionId);
@@ -418,8 +421,16 @@ export class ChatStore extends ComponentStore<ChatState> {
           console.log('🔵 No suggestions found, clearing active suggestions');
         }
 
-        // Format content - remove numbered list if suggestions are shown as buttons
-        let formattedContent = content.replace(/\n/g, '<br>');
+        // Format content - only convert newlines to <br> if content doesn't already have HTML tags
+        let formattedContent = content;
+        
+        // Check if content already contains HTML tags (like <div>, <p>, <a>, etc.)
+        const hasHtmlTags = /<\/?[a-z][\s\S]*>/i.test(content);
+        
+        if (!hasHtmlTags) {
+          // Only convert newlines to <br> if no HTML tags present
+          formattedContent = content.replace(/\n/g, '<br>');
+        }
         
         if (suggestions.length > 0) {
           // Remove the numbered list from the message text since we're showing it as buttons
@@ -436,6 +447,7 @@ export class ChatStore extends ComponentStore<ChatState> {
           allow_feedback,
           offer_related,
           is_followup,
+          has_more,
           feedback_given: null
         };
         console.log('🔵 Created bot message with suggestions:', botMessage.suggestions);

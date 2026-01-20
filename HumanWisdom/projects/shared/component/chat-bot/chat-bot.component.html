@@ -106,10 +106,10 @@
       </div>
     </div>
 
-    <!-- Give More Options Button (shown when bot offers related content) -->
-    <div *ngIf="messages.length > 0 && messages[messages.length - 1]?.sender === 'bot' && messages[messages.length - 1]?.offer_related && !isLoading" class="more-options-container">
+    <!-- Give More Options Button (shown when bot offers related content or has more options) -->
+    <div *ngIf="messages.length > 0 && messages[messages.length - 1]?.sender === 'bot' && (messages[messages.length - 1]?.offer_related || messages[messages.length - 1]?.has_more) && !isLoading" class="more-options-container">
       <button class="action-button more-options-button" (click)="onGiveMoreOptions()">
-        → Give me more options
+          Give me more options
       </button>
     </div>
 
