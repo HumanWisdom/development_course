@@ -686,8 +686,8 @@ We gratefully acknowledge the contributions of the following content experts, an
              </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Psychotherapist based in Florida, USA                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Psychotherapist based in Florida, USA                  </h4>
                 </div>
               </div>
             </div>
@@ -711,8 +711,8 @@ Psychotherapist based in Florida, USA                  </h5>
              </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Life coach and EFT trainer based in Atlanta, USA                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Life coach and EFT trainer based in Atlanta, USA                  </h4>
                 </div>
               </div>
              
@@ -735,8 +735,8 @@ John O’Sullivan                  </h6>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Counsellor based in the North-East of England                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Counsellor based in the North-East of England                  </h4>
                 </div>
               </div>
              
@@ -759,8 +759,8 @@ Counsellor based in the North-East of England                  </h5>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Family and child therapist, based in New Delhi, India                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Family and child therapist, based in New Delhi, India                  </h4>
                 </div>
               </div>
             </div>
@@ -787,8 +787,8 @@ Hilary North Scheler                  </h6>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Neuroscientist based in New York, USA                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Neuroscientist based in New York, USA                  </h4>
                 </div>
               </div>
              
@@ -811,8 +811,8 @@ Dr Dan Reidenberg                  </h6>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Director of the National Council for Suicide Prevention, USA                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Director of the National Council for Suicide Prevention, USA                  </h4>
                 </div>
               </div>
              
@@ -836,8 +836,8 @@ Director of the National Council for Suicide Prevention, USA                  </
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Child and adolescent therapist, based in England                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Child and adolescent therapist, based in England                  </h4>
                 </div>
               </div>
              
@@ -861,9 +861,9 @@ Child and adolescent therapist, based in England                  </h5>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
                     Psychotherapist and Life Coach, based in Detroit, USA
-                  </h5>
+                  </h4>
                 </div>
               </div>
              
@@ -888,8 +888,8 @@ Dr Sanjay Suri                  </h6>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Paediatrician, and trained mindfulness and yoga teacher based in England                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Paediatrician, and trained mindfulness and yoga teacher based in England                  </h4>
                 </div>
               </div>
              
@@ -909,8 +909,8 @@ Paediatrician, and trained mindfulness and yoga teacher based in England        
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Retired GP with an interest in functional medicine, and a qualified mindfulness teacher based in England                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Retired GP with an interest in functional medicine, and a qualified mindfulness teacher based in England                  </h4>
                 </div>
               </div>
              
@@ -929,8 +929,8 @@ Retired GP with an interest in functional medicine, and a qualified mindfulness 
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Spiritual life coach based in Philadelphia, USA                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Spiritual life coach based in Philadelphia, USA                  </h4>
                 </div>
               </div>
              
@@ -949,8 +949,8 @@ Dr Tim Merrick                  </h6>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Executive life coach, based in North Carolina, USA                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Executive life coach, based in North Carolina, USA                  </h4>
                 </div>
               </div>
             </div>
@@ -975,8 +975,8 @@ Bhargavi Raman                 </h6>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Expressive arts therapist and mental health educator based in Bengaluru, India               </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Expressive arts therapist and mental health educator based in Bengaluru, India               </h4>
                 </div>
               </div>
              
@@ -996,8 +996,8 @@ Expressive arts therapist and mental health educator based in Bengaluru, India  
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Former headteacher and educator, is head of education at HappierMe - based in England                 </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Former headteacher and educator, is head of education at HappierMe - based in England                 </h4>
                 </div>
               </div>
              
@@ -1016,8 +1016,8 @@ Former headteacher and educator, is head of education at HappierMe - based in En
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Life coach and student of wisdom, based in Singapore, USA                </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Life coach and student of wisdom, based in Singapore, USA                </h4>
                 </div>
               </div>
              
@@ -1036,8 +1036,8 @@ Carolyn King                </h6>
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Kinesiologist and Hypnotherapist based in Melbourne, Australia                 </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Kinesiologist and Hypnotherapist based in Melbourne, Australia                 </h4>
                 </div>
               </div>
              
@@ -1062,8 +1062,8 @@ Maria Vieira                </h6>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Life and leadership coach based in Lisbon, Portugal               </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Life and leadership coach based in Lisbon, Portugal               </h4>
                 </div>
               </div>
             
@@ -1083,8 +1083,8 @@ Life and leadership coach based in Lisbon, Portugal               </h5>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Relationship and dating coach, based in California, USA                </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Relationship and dating coach, based in California, USA                </h4>
                 </div>
               </div>
              
@@ -1103,8 +1103,8 @@ Relationship and dating coach, based in California, USA                </h5>
 </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Coach and founder of Sacred Changemakers, based in Ohio, USA                  </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Coach and founder of Sacred Changemakers, based in Ohio, USA                  </h4>
                 </div>
               </div>
              
@@ -1123,8 +1123,8 @@ Jackie Woodside                </h6>
              </a>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-Executive and leadership coach, based in Boston, USA               </h5>
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Executive and leadership coach, based in Boston, USA               </h4>
                 </div>
               </div>
              

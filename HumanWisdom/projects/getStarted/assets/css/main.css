@@ -3228,7 +3228,7 @@ animation-name: slideInRight;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-  /* padding: 90px 20px; 
+   padding: 90px 20px; 
 }
 
 .row {
@@ -3598,10 +3598,10 @@ animation-name: slideInRight;
 }
 
 .cvideo {
-  width: 90%;
+  /* width: 90%; */
   border-radius: 12px;
   position: relative;
-  min-height: 20rem;
+  min-height: 310px;
   background: #120F40;
 }
 

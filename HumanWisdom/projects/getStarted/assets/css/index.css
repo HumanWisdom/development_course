@@ -302,7 +302,7 @@
 
     .tool_video {
       width: 313px;
-      height: 47px;
+      /* height: 47px; */
       left: 20px;
       top: 12px;
     }
