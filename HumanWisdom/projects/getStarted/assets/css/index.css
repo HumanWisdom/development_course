@@ -276,7 +276,7 @@
     .nav-tabs .nav-link {
       width: 127px;
       height: 26px;
-      background: #E8A880 !important;
+      background: #EEA170 !important;
       /* default */
       color: #fff !important;
       border: none !important;
@@ -291,7 +291,7 @@
     }
 
     .nav-tabs .nav-link.active {
-      background: #E58D82 !important;
+      background: #ED7D6F !important;
       /* active state */
       color: #fff !important;
     }
