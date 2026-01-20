@@ -55,7 +55,7 @@ export class ProfilePage implements OnInit {
   public bookmarkLength: any;
   profileData: any = [];
   profileImage: string='';
-  profileImageUrl: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+  profileImageUrl: string = '';
   enableAlert: boolean;
   profileUsername:string="";
   programType = ProgramType.Adults
@@ -94,6 +94,14 @@ export class ProfilePage implements OnInit {
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
 
     this.isAdults = SharedService.isAdultProgram();
+    if (this.isAdults) {
+       this.profileImageUrl  = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg';
+
+    } else {
+        this.profileImageUrl  = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+
+    } 
+
     this.getAllPosts(2, this.userId);
   }
 
@@ -320,11 +328,23 @@ export class ProfilePage implements OnInit {
   private buildProfileImageUrl(path: string): string {
     const ts = (new Date()).getTime();
     if (!path) {
-      return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+
+      if(this.isAdults){
+        return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg';
+      }
+      else{
+        return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+
+      }
     }
     const normalized = String(path).replace(/\\/g, '/').trim();
     if (!normalized || normalized.toLowerCase() === 'null' || normalized.includes('undefined')) {
-      return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+      if(this.isAdults){
+        return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg';
+      }
+      else{
+        return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+      }
     }
     return `https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/${normalized}?${ts}`;
   }
