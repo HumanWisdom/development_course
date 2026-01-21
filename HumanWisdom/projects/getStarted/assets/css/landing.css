@@ -53,7 +53,9 @@ a:hover{
     height: 65px;
     border-radius: 36px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-    background: linear-gradient(180deg, #4267A5, #183C79);
+     background: linear-gradient(180deg, #4267A5, #183C79); 
+    /* background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%); */
+
 }
 .btn_landing:hover{
       background: linear-gradient(180deg, #2D5392, #0E2E64);
@@ -72,7 +74,9 @@ a:hover{
     height: 51px; */
     /* margin-left: 30px; */
     border-radius: 36px;
-    background: linear-gradient(180deg, #CB6171 100%, #E58D82 0%);
+    /* background: linear-gradient(180deg, #CB6171 100%, #E58D82 0%); */
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
 }
 .btn_popup:hover{
   background: linear-gradient(180deg,  #DA7D71, #BF5061)!important;
@@ -174,7 +178,7 @@ a:hover{
     background: linear-gradient(180deg, #E58D82, #CB6171);
 }
 .sap:hover{
-    color:rgb(233, 226, 226);
+    color:#834B66;
 }
 
 

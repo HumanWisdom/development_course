@@ -160,7 +160,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.session_id,
             response.allow_feedback,
             response.offer_related,
-            response.is_followup
+            response.is_followup,
+            response.has_more
           );
           // Note: Scrolling is handled automatically by messages$ subscription
         } else {
@@ -474,7 +475,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.session_id,
             response.allow_feedback,
             response.offer_related,
-            response.is_followup
+            response.is_followup,
+            response.has_more
           );
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
@@ -525,7 +527,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.session_id,
             response.allow_feedback,
             response.offer_related,
-            response.is_followup
+            response.is_followup,
+            response.has_more
           );
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
@@ -543,8 +546,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Handle "Give me more options" button click - send yes in background
-   * This sends "Yes" to the API without displaying it as a user message
+   * Handle "Give me more options" button click - send yes response and show as user message
    */
   onGiveMoreOptions(): void {
     if (this.isLoading) {
@@ -554,14 +556,17 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.errorMessage = '';
     this.isLoading = true;
 
-    // Add typing indicator (no user message shown)
+    // Add user message to show the action
+    this.chatbotService.addUserMessage('Give me more options');
+
+    // Add typing indicator
     this.chatbotService.addTypingIndicator();
     this.chatbotService.setTyping(true);
 
     // Scroll to show the response
     setTimeout(() => this.scrollSlightlyDown(), 100);
 
-    // Send yes response to chatbot API in the background
+    // Send yes response to chatbot API
     this.chatbotService.sendYesNoResponse('yes').subscribe({
       next: (response) => {
         this.chatbotService.removeTypingIndicator();
@@ -573,7 +578,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.session_id,
             response.allow_feedback,
             response.offer_related,
-            response.is_followup
+            response.is_followup,
+            response.has_more
           );
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';

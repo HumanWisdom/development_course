@@ -63,7 +63,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     } else {
       this.isloggedIn = false;
     }
-
+      this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   }
 
   getLoggedIn() {
@@ -136,7 +136,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
             this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
           }
         }
-        this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
+      
       }
     });
 

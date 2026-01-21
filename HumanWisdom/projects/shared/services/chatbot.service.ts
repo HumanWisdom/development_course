@@ -19,6 +19,7 @@ export interface ChatbotResponse {
   session_id: string;
   allow_feedback?: boolean; // Whether to show thumbs up/down
   offer_related?: boolean; // Whether to offer related content
+  has_more?: boolean; // Whether there are more options available
 }
 
 export interface HistoryMessage {
@@ -248,8 +249,8 @@ export class ChatbotService {
     this.chatStore.addUserMessage(content);
   }
 
-  addBotMessage(content: string, sessionId?: string, allow_feedback?: boolean, offer_related?: boolean, is_followup?: boolean): void {
-    this.chatStore.addBotMessage({ content, sessionId, allow_feedback, offer_related, is_followup });
+  addBotMessage(content: string, sessionId?: string, allow_feedback?: boolean, offer_related?: boolean, is_followup?: boolean, has_more?: boolean): void {
+    this.chatStore.addBotMessage({ content, sessionId, allow_feedback, offer_related, is_followup, has_more });
   }
 
   addTypingIndicator(): void {

@@ -34,6 +34,7 @@ export class S44001Page implements OnInit,OnDestroy {
   isLoggedIn = false;
   isSubscriber = false;
   config: any;
+  isContentsOpen = false;
 
   constructor(
     private router: Router,
@@ -47,6 +48,8 @@ export class S44001Page implements OnInit,OnDestroy {
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
   }
+
+  resumeLastvisited = [];
 
   ngOnInit() {
     setTimeout(() => {
@@ -111,9 +114,13 @@ export class S44001Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
     this.createScreen()
 
-
-
+    // get last visited
+    this.service.GetLastVisitedScreen(this.userId).subscribe(res=>
+      {
+        this.resumeLastvisited=res;
+      })
   }
+
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
@@ -199,6 +206,21 @@ export class S44001Page implements OnInit,OnDestroy {
       title,
       moduleName
     ]);
+  }
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
+
+  routeResume() {
+    let id = 44;
+    let url = '/adults/stress/s44002';
+    if (this.resumeLastvisited && this.resumeLastvisited.length > 0) {
+      const first = this.resumeLastvisited[0];
+      id = first.ModuleId;
+      url = first.ModuleUrl;
+    }
+    this.service.setmoduleID(id, url, url);
   }
 
 }
