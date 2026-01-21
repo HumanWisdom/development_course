@@ -754,21 +754,40 @@ label>input[type="checkbox"]+*::before {
     display: block;
     height: 100%;
     width: 100%;
+    text-align: left !important;
   }
 
   .navbar a,
   .navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
     padding: 10px 20px;
     font-family: var(--font-secondary);
     border-bottom: 0;
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color: #D7586B;
     white-space: nowrap;
     transition: 0.3s;
+    text-align: left !important;
+  }
+
+  .navbar li {
+    text-align: left !important;
+    display: block !important;
+  }
+
+  /* Override Bootstrap .nav class */
+  .navbar a.nav,
+  .navbar a.nav:focus {
+    display: flex !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  .navbar a span {
+    text-align: left !important;
   }
 
   .navbar a i,
@@ -780,12 +799,12 @@ label>input[type="checkbox"]+*::before {
 
   .navbar a:hover,
   .navbar li:hover>a {
-    color: #000;
+    color: #803358;
   }
 
   .navbar .active,
   .navbar .active:focus {
-    color: #000;
+    color: #803358;
     border-color: var(--color-primary);
   }
 
@@ -797,6 +816,7 @@ label>input[type="checkbox"]+*::before {
     margin: 10px 20px;
     transition: all 0.5s ease-in-out;
     border: 1px solid #eee;
+    text-align: left !important;
   }
 
   .navbar .dropdown>.dropdown-active,
@@ -3438,13 +3458,76 @@ animation-name: slideInRight;
   content: none !important;
 }
 
-#accordion_faq .panel-title>a[aria-expanded=true]:after {
-  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_up_web.svg);
+/* FAQ Accordion Icons - Bootstrap Icons Chevron */
+
+/* Bootstrap 3 Panel structure - Make link flexbox to push icon to end */
+#accordion_faq .panel-title>a {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
+/* Bootstrap 3 Panel structure - Collapsed state - chevron down */
 #accordion_faq .panel-title>a:after {
-  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_down_web.svg);
-  float: right;
+  content: "\f282";
+  font-family: "bootstrap-icons";
+  color: #834B66;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Bootstrap 3 Panel structure - Expanded state - chevron up */
+#accordion_faq .panel-title>a[aria-expanded="true"]:after {
+  content: "\f286";
+  font-family: "bootstrap-icons";
+  color: #834B66;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Bootstrap 5 Accordion structure - Make button flexbox to push icon to end */
+#accordion_faq_about .accordion-button,
+.tc_faqs .accordion-button,
+#accordion_faq .accordion-button {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Bootstrap 5 Accordion structure - Collapsed state - chevron down */
+#accordion_faq_about .accordion-button.collapsed::after,
+.tc_faqs .accordion-button.collapsed::after,
+#accordion_faq .accordion-button.collapsed::after {
+  content: "\f282" !important;
+  font-family: "bootstrap-icons" !important;
+  color: #834B66 !important;
+  background-image: none !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+}
+
+/* Bootstrap 5 Accordion structure - Expanded state - chevron up */
+#accordion_faq_about .accordion-button:not(.collapsed)::after,
+.tc_faqs .accordion-button:not(.collapsed)::after,
+#accordion_faq .accordion-button:not(.collapsed)::after {
+  content: "\f286" !important;
+  font-family: "bootstrap-icons" !important;
+  color: #834B66 !important;
+  background-image: none !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
 }
 
 #accordion_faq .panel-title>a {

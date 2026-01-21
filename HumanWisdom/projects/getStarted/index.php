@@ -194,7 +194,7 @@ require_once('./includes/security_config.php');
 
           <div class="row mt20px">
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ">
-              <h1 class="mtb0px fs_hero_title fw_600 lh_130p fc_000000 ta_lc  ">
+              <h1 class="mtb0px fs_42px fw_600 lh_130p fc_000000 ta_lc  ">
                 <!-- Understand your mind. Transform your life. -->
                  <!-- Understand your emotions. Gain clarity. Be happier. -->
                   <!-- Everything you need for a happier life -->
@@ -326,7 +326,7 @@ Now with Olly AI              </h2>
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 w-335px">
-            <h2 class="mtb0px fs_section_title fw_600 lh_120p fc_000000">
+            <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 fs_18px">
               Find out how HappierMe can help you
             </h2>
           </div>
@@ -341,7 +341,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal">Mental wellbeing <i
                     class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -353,7 +353,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalbuild">Better
                   relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -364,8 +364,8 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
-                  class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                  class="btn btn-primarypop f_15px " data-bs-toggle="modal" data-bs-target="#exampleModal3">
                   Succeed at work <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
               </div>
@@ -388,7 +388,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal2">Learn meditation <i
                     class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -400,7 +400,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalbreak">Overcome harmful
                   habits <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -411,7 +411,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p f_15px fc_D7586B btn-primarypop" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalemotions">Manage
                   emotions <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -436,7 +436,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalself">Build
                   self-awareness <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -448,7 +448,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B f_15px btn-primarypop" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalparent">Better
                   parenting <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -459,7 +459,7 @@ Now with Olly AI              </h2>
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <button class="fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
+                <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalteen">HappierMe for
                   Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
 
@@ -734,7 +734,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 w-335px">
-            <h2 class="mtb0px fs_section_title fw_600 lh_120p fc_000000">
+            <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 fs_18px ">
               Discover HappierMe in just 1 minute
             </h2>
             <!-- <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
@@ -801,7 +801,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 <div class="section-headernew mob-section section-text section-text1">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h2 class="mtb0px fs_section_title fw_600 lh_120p fc_000000">
+        <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000  fs_18px_mobile">
           Findings from a survey of 1,000 HappierMe app users </h2>
       </div>
     </div>
@@ -1740,7 +1740,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 NEW!
               </h2> -->
 
-              <h2 class="mb0px fs_section_title fw_600 lh_120p">
+              <h2 class="mb0px fs_24px fw_600 lh_120p">
                 HappierMe for Teenagers
               </h2>
 
@@ -2262,7 +2262,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
         <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
           <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-            <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width  btn_popup_w" id="startyourfreetrial">
+            <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width btn_popup btn_popup_w" id="startyourfreetrial">
               Start your free trial
             </button>
           </div>
