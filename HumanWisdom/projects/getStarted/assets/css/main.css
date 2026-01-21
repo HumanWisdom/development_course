@@ -3601,8 +3601,9 @@ animation-name: slideInRight;
   /* width: 90%; */
   border-radius: 12px;
   position: relative;
-  min-height: 310px;
+  min-height: 340px;
   background: #120F40;
+  object-fit: cover;
 }
 
 video::-webkit-media-controls-panel {

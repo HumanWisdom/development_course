@@ -53,8 +53,8 @@ a:hover{
     height: 65px;
     border-radius: 36px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-    /* background: linear-gradient(180deg, #4267A5, #183C79); */
-    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+     background: linear-gradient(180deg, #4267A5, #183C79); 
+    /* background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%); */
 
 }
 .btn_landing:hover{
@@ -74,7 +74,9 @@ a:hover{
     height: 51px; */
     /* margin-left: 30px; */
     border-radius: 36px;
-    background: linear-gradient(180deg, #CB6171 100%, #E58D82 0%);
+    /* background: linear-gradient(180deg, #CB6171 100%, #E58D82 0%); */
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
 }
 .btn_popup:hover{
   background: linear-gradient(180deg,  #DA7D71, #BF5061)!important;
