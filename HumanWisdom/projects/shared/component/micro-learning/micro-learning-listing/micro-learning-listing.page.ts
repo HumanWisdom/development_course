@@ -12,7 +12,7 @@ import { ProgramType } from "../../../models/program-model";
 export class MicroLearningListingPage implements OnInit {
   isAdults = true;
   searchedText = '';
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/micro_learning.webp"; // placeholder
+  //  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/micro_learning.webp"; // placeholder
   tocColor = "white";
   
   // Dummy data for now - this would come from API
