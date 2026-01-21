@@ -1129,7 +1129,7 @@ if (teenagersClick) {
            window.location.href = url+"/teenagers/subscription/start-your-free-trial";
         }
          else if(localStorage.getItem('chat-bot')=='true'){
-           window.location.href = url+"/adults/chat-bot";
+           window.location.href = url+"/teenagers/chat-bot";
         }
         else if(localStorage.getItem('login')=='true'){
         //    window.location.href = url+"/teenagers/onboarding/login";
