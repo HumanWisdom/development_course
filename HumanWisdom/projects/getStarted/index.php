@@ -89,7 +89,7 @@ require_once('./includes/security_config.php');
 
 
 
-  <section class="hpt120px ">
+  <section class="">
     <!-- header -->
 
     <div class="row center_flex web_home_divlanding">
@@ -2296,7 +2296,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
 
                     <video controls playinline
-                      poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp"
+                      poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/tools.png"
                       controlsList="nodownload" class="cvideo tool_video m-cvideo">
                       <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                     </video>
