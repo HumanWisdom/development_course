@@ -2435,7 +2435,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       class="img-responsive w-90per" alt="Podcast" loading=lazy>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc pt-142px" data-aos="fade-up"
                     data-aos-delay="200">
                     <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                       HappierMe Podcast
@@ -2522,9 +2522,9 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       class="img-responsive w-90per" alt="Survey" loading=lazy>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px pt-142px mb50px" data-aos="fade-up"
                     data-aos-delay="200">
-                    <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
+                    <h3 class="mt20px fs_21px fw_500 lh_150p fc_000000">
                       Track your wellness score
                     </h3>
 
