@@ -648,7 +648,8 @@
   }
 
   .flex_block {
-    display: block;
+    display: flex !important;
+    flex-direction: column-reverse !important;
   }
 
   .desktop,
@@ -661,7 +662,7 @@
   }
 
   .flex_fd_cr {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
   }
 
   .tab-content {
@@ -671,8 +672,8 @@
   }
 
   .dfooter {
-  width: 104%;
-    }
+    width: 104%;
+  }
 
   .tab-content .row.center_flex {
     justify-content: center !important;
@@ -760,6 +761,7 @@
   }
 
   .tab-content .flex_fd_cr {
+    flex-direction: column-reverse !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
@@ -1039,8 +1041,25 @@
   .fs_24px {
     font-size: 18px !important;
   }
+
   .fs_42px {
     font-size: 24px !important;
+  }
+
+  .fs_hero_title {
+    font-size: 27px !important;
+  }
+
+  .fs_section_title {
+    font-size: 18px !important;
+  }
+
+  .btn-primarypop {
+    font-size: 15px !important;
+  }
+
+  .fs_root_title {
+    font-size: 21px !important;
   }
 
 
@@ -1300,6 +1319,10 @@
 }
 
 @media (max-width: 768px) {
+  .btn_popup {
+    padding: 0 !important;
+  }
+
   .section-header {
     margin-bottom: 20px !important;
     padding-bottom: 0 !important;
@@ -1309,9 +1332,9 @@
     margin-bottom: 20px !important;
   }
 
-  .section-header h2.fs_24px {
+  /* .section-header h2.fs_24px {
     color: rgba(131, 75, 102, 1) !important;
-  }
+  } */
 
   .cvideo_b,
   .yt-embed,
@@ -1551,12 +1574,23 @@
     padding: 0 !important;
   }
 
-  #PricingSelectBtn .btn_popup,
-  #startyourfreetrial {
+  .btn_popup_w {
+    width: 335px !important;
+    margin-right: -6px;
+    margin-left: -4px;
+    background: linear-gradient(180deg, #DA7D71, #BF5061) !important;
+
+  }
+
+  .btn_download {
+    margin-left: -10px !important;
+  }
+
+  #PricingSelectBtn .btn_popup {
     width: 100% !important;
     max-width: 335px !important;
     height: 65px !important;
-     background: linear-gradient(180deg, #E58D82, #CB6171)  !important;
+    background: linear-gradient(180deg, #E58D82, #CB6171) !important;
     border-radius: 36px !important;
     margin: 0 auto;
     display: flex !important;
@@ -1565,6 +1599,7 @@
     text-align: center !important;
     line-height: 1 !important;
     padding: 0 !important;
+
   }
 
   .div_subscriptionnew h6,
@@ -2051,7 +2086,7 @@
     border-radius: 16px !important;
     font-size: 12px !important;
     font-weight: 600 !important;
-    background: linear-gradient(180deg, #E58D82, #CB6171) !important ;
+    background: linear-gradient(180deg, #E58D82, #CB6171) !important;
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;
@@ -2136,5 +2171,40 @@
   #accordion_footer .bi-chevron-down,
   #accordion_footer .bi-chevron-up {
     color: #ffffff !important;
+  }
+}
+
+/* FIX for Mobile Accordion Icons - Force White Plus/Minus */
+@media screen and (max-width: 768px) {
+  #accordion_footer .panel-title>a::after {
+    content: "+" !important;
+    font-family: inherit !important;
+    /* Ensure a standard font */
+    color: #ffffff !important;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    background: none !important;
+    /* Remove background image if any */
+    background-image: none !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    transform: none !important;
+    /* Remove any rotation */
+    text-decoration: none !important;
+    float: right !important;
+  }
+
+  #accordion_footer .panel-title>a[aria-expanded="true"]::after {
+    content: "-" !important;
+    font-family: inherit !important;
+    color: #ffffff !important;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    background: none !important;
+    background-image: none !important;
   }
 }

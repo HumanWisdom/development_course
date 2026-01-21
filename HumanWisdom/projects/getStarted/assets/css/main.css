@@ -52,14 +52,17 @@ a {
   color: var(--color-primary);
   text-decoration: none;
 }
-.faqqq{
+
+.faqqq {
   margin-top: 30px;
 }
+
 .active_nav {
   color: #834B66 !important;
 }
-p:hover{
-  color:green;
+
+p:hover {
+  color: green;
   text-decoration: underline;
 }
 
@@ -736,11 +739,12 @@ label>input[type="checkbox"]+*::before {
     transition: 0.3s;
     z-index: 9997;
     display: block;
+    background: #fff;
   }
 
   .navbar ul {
     position: absolute;
-    /* inset: 0; */
+    inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
     background: #fff;
@@ -748,7 +752,8 @@ label>input[type="checkbox"]+*::before {
     transition: 0.3s;
     z-index: 9998;
     display: block;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
   }
 
   .navbar a,
@@ -1623,12 +1628,26 @@ div.scroll-container img {
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: lightgray;
-  border-radius: 5px;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E58D82;
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f1f1f1;
 }
 
 /* p {
@@ -2181,14 +2200,17 @@ div.scroll-container img {
   transition: 0.3s;
 }
 
-.web_home_divcircleolly{
+.web_home_divcircleolly {
   background: #FFF9EE;
-    padding: 80px 0;
+  padding: 80px 0;
 }
-.section-headernew.a,h6:hover{
-  color:#cb6171;
+
+.section-headernew.a,
+h6:hover {
+  color: #cb6171;
   text-decoration: underline;
 }
+
 .footer .social-links a:hover {
   color: #fff;
   border-color: #fff;
@@ -2850,17 +2872,18 @@ animation-name: slideInRight;
 
 }
 
-.btn_tff_widthnew 
-{
+.btn_tff_widthnew {
   width: 307px !important;
   border-radius: 36px;
-    height: 65px;
+  height: 65px;
 }
+
 .btn_tff_width {
-    width: 314px !important;
-    border-radius: 35px;
-    height: 65px;
+  width: 314px !important;
+  border-radius: 35px;
+  height: 65px;
 }
+
 .btn_pricing {
   margin: 3px;
   border: 0;
@@ -3216,7 +3239,8 @@ animation-name: slideInRight;
 .div_subscriptionvideo {
   padding: 20px;
 }
-  /* .yt-embed {
+
+/* .yt-embed {
   aspect-ratio: 16 / 9;
   width: 100%;
   padding:30px 40px 40px 0px
@@ -3228,7 +3252,7 @@ animation-name: slideInRight;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-   padding: 90px 20px; 
+  padding: 90px 20px;
 }
 
 .row {
@@ -4716,8 +4740,7 @@ button {
   border: 0;
 }
 
-.cvideo_b
-{
+.cvideo_b {
   width: 810px;
   /* border-radius: 12px; */
   position: relative;
