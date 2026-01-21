@@ -152,7 +152,7 @@ export class AppComponent implements OnDestroy {
       return true;
     }
     if ((this.router.url == "/teenagers/journal") ||
-      this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
+      (this.router.url.includes('/journal') && !this.router.url.includes('/journal/')) ||
       (this.router.url.indexOf('/teenagers/note') > -1)) {
       this.dash = false
       this.journal = true;

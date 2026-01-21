@@ -89,7 +89,7 @@ require_once('./includes/security_config.php');
 
 
 
-  <section class="hpt120px ">
+  <section class="">
     <!-- header -->
 
     <div class="row center_flex web_home_divlanding">
@@ -662,12 +662,12 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
-                  <a href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick">
+                <div  id="OllyChatBtn" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
+                  <!-- <a  href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick"> -->
                     <button class="fs_21px fw_600 lh_140p fc_ffffff btn_tff btn_tff_widthnew h_48px btn_popup">
                       Chat with Olly now
                     </button>
-                  </a>
+                  <!-- </a> -->
                 </div>
               </div>
             <!-- </div> -->
@@ -2296,7 +2296,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
 
                     <video controls playinline
-                      poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_fbn.webp"
+                      poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/tools.png"
                       controlsList="nodownload" class="cvideo tool_video m-cvideo">
                       <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                     </video>
@@ -2335,13 +2335,13 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <!-- pathway -->
             <div id="pathway" class="tab-pane fade" role="tabpanel" aria-labelledby="pathWay-tab">
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  mtb20px flex_fd_cr mt-56px card_gap">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr card_center pt-20px card_gap">
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 " data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp"
                       class="img-responsive w-90per guided_pgm_img" alt="tools_pathway" loading=lazy>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pt-142px ta_lc w-336px" data-aos="fade-up"
                     data-aos-delay="200">
                     <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                       PATHWAY - Guided program
@@ -2353,7 +2353,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     </h4>
 
                     <div class="row">
-                      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0 mtb20px">
+                      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0 mtb15px">
                         <!-- <audio controls>
                           <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
                         </audio> -->
@@ -2393,7 +2393,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px flex_fd_cr mtb20px card_gap">
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_journal.webp"
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/questions.svg"
                       class="img-responsive h-335px" alt="Journal" loading=lazy>
                   </div>
 
@@ -2435,7 +2435,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       class="img-responsive w-90per" alt="Podcast" loading=lazy>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc pt-142px" data-aos="fade-up"
                     data-aos-delay="200">
                     <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                       HappierMe Podcast
@@ -2448,7 +2448,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     </h4>
 
                     <div class="row">
-                      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0 mtb20px">
+                      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0 mtb15px">
                         <audio id="aud1" controls controlsList="nodownload">
                           <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
                         </audio>
@@ -2518,11 +2518,11 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr">
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_survey.webp"
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/track.svg"
                       class="img-responsive w-90per" alt="Survey" loading=lazy>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc  pt-142px mb50px" data-aos="fade-up"
                     data-aos-delay="200">
                     <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                       Track your wellness score
