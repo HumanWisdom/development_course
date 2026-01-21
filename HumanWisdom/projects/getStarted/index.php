@@ -2335,13 +2335,13 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <!-- pathway -->
             <div id="pathway" class="tab-pane fade" role="tabpanel" aria-labelledby="pathWay-tab">
               <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  mtb20px flex_fd_cr mt-56px card_gap">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0   mtb20px flex_fd_cr mt-56px card_gap">
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 " data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp"
                       class="img-responsive w-90per guided_pgm_img" alt="tools_pathway" loading=lazy>
                   </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 ta_lc w-336px" data-aos="fade-up"
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pt-142px ta_lc w-336px" data-aos="fade-up"
                     data-aos-delay="200">
                     <h3 class="mtb0px fs_21px fw_500 lh_150p fc_000000">
                       PATHWAY - Guided program
@@ -2393,7 +2393,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px flex_fd_cr mtb20px card_gap">
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_journal.webp"
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/questions.svg"
                       class="img-responsive h-335px" alt="Journal" loading=lazy>
                   </div>
 
@@ -2518,7 +2518,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr">
                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_survey.webp"
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/track.svg"
                       class="img-responsive w-90per" alt="Survey" loading=lazy>
                   </div>
 
