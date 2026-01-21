@@ -5,10 +5,11 @@ import {
   supportsScrollBehavior
 } from '@angular/cdk/platform';
 import { Component, EventEmitter, Inject, Input, OnChanges, OnDestroy, OnInit, Output, PLATFORM_ID, SimpleChange, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService, UrlConstant } from '../../../shared/services/shared.service';
 import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
 import { LogEventService } from '../../services/log-event.service';
 import { isPlatformBrowser } from '@angular/common';
@@ -46,6 +47,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   subscription: Subscription;
   @Input() isLoginPage: boolean = false;
   toursubscription: Subscription;
+  routerSubscription: Subscription;
   disableClick = false;
   isAdults = false;
 
@@ -74,6 +76,43 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
       this.isloggedIn = false;
     }
     return this.isloggedIn;
+  }
+
+  /**
+   * Refresh all data from localStorage
+   * Called on init and when data changes
+   */
+  refreshData() {
+    // Refresh login response to get latest notification count and user data
+    this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    
+    // Update subscriber status
+    let sub: any = localStorage.getItem("Subscriber");
+    if (sub == '1') {
+      this.subscriber = true;
+      this.isShowbookMark = true;
+    } else {
+      this.subscriber = false;
+      this.isShowbookMark = false;
+    }
+    
+    // Update user details and profile image
+    let userId = JSON.parse(localStorage.getItem("userId"));
+    let userdetail = localStorage.getItem("userDetails");
+    if(userdetail){
+      let detail = JSON.parse(userdetail);
+      if (detail && detail['UserImagePath'] != '') {
+        this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+      }
+    }
+
+    // Update logged-in state
+    let userid = localStorage.getItem('isloggedin');
+    if (userid === 'T') {
+      this.isloggedIn = true
+    } else {
+      this.isloggedIn = false;
+    }
   }
 
   getIsSubscriber() {
@@ -114,31 +153,25 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
 
 
   ngOnInit() {
+    // Refresh data on component init (catches login/logout changes)
+    this.refreshData();
+
     this.toursubscription = this.Onboardingservice.getEnableTour().subscribe((value) => {
       this.disableClick = value;
     });
 
-    this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
-      if (value) {
-        let sub: any = localStorage.getItem("Subscriber");
-        if (sub == '1') {
-          this.subscriber = true;
-          this.isShowbookMark = true;
-        } else {
-          this.subscriber = false;
-          this.isShowbookMark = false;
-        }
-        let userId = JSON.parse(localStorage.getItem("userId"))
-        let userdetail = localStorage.getItem("userDetails");
-        if(userdetail){
-          let detail = JSON.parse(userdetail);
-          if (detail && detail['UserImagePath'] != '') {
-            this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
-          }
-        }
-      
-      }
-    });
+    // this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
+    //   if (value) {
+    //     this.refreshData();
+    //   }
+    // });
+
+    // Listen to route changes to refresh data (additional safety mechanism)
+    this.routerSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.refreshData();
+      });
 
 
 
@@ -164,6 +197,9 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
     this.toursubscription.unsubscribe();
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
   }
 
   iOS() {
