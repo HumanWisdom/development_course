@@ -37,13 +37,14 @@
             
             <!-- Suggestions -->
             <div *ngIf="!message.isTyping && message.suggestions && message.suggestions.length > 0" class="suggestions-container">
-              <div class="suggestions-label">Click on a suggestion or type the number:</div>
+              <div class="suggestions-instruction">Click on a suggestion or type the number:</div>
               <div class="suggestions-list">
                 <button 
                   *ngFor="let suggestion of message.suggestions; let i = index" 
                   class="suggestion-button"
                   (click)="onSuggestionClick(suggestion)">
-                  {{ i + 1 }}. {{ suggestion }}
+                  <span class="suggestion-number">{{ i + 1 }}.</span>
+                  <span class="suggestion-text">{{ suggestion }}</span>
                 </button>
               </div>
             </div>
