@@ -364,9 +364,12 @@
        left: 0px;
        top: 0px;
      }
+     .btn-h{
+      height:45px
 
+     }
      .h-500px {
-       height: 600px !important
+       height: 630px !important
      }
 
      .p-50px {

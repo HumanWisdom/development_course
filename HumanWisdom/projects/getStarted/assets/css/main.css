@@ -5495,6 +5495,12 @@ input[type="password" i]::-ms-reveal {
 
     width: 104%;
   }
+  .web_home_divcircleolly {
+    padding-top: 34px !important;
+  }
+  .land-happierMe-section {
+    padding-bottom: 12px !important;
+  }
 
   .tab_faqs.nav-tabs>li>a {
     font-size: 14px;
