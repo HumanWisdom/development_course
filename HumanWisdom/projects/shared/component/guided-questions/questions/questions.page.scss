@@ -7,3 +7,15 @@ bottom: 0;
 background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
 
 }
+#cgqtns .carousel-indicators{
+    bottom: 3% !important;
+}
+
+.ph_ffffff_0_5::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1; 
+}
+
+.ph_ffffff_0_5 {
+  color: #ffffff !important;
+}

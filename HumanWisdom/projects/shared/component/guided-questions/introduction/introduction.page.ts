@@ -48,18 +48,7 @@ export class IntroductionPage implements OnInit {
   }
 
   goBack() {
-  if(this.isByPass==true){
     this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
-  }else{
-    var url = this.navigationService.navigateToBackLink();
-    if(url == `/${SharedService.getprogramName()}/search`){
-     this.location.back();
-    }
-    if(url == 'DONOROUTE'){
-      this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
-    }
-    this.router.navigate([url]);
-  }
   }
 
   
