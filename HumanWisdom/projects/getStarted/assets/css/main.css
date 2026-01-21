@@ -52,9 +52,11 @@ a {
   color: var(--color-primary);
   text-decoration: none;
 }
-.faqqq{
+
+.faqqq {
   margin-top: 30px;
 }
+
 .active_nav {
   color: #834B66 !important;
 }
@@ -1626,12 +1628,26 @@ div.scroll-container img {
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: lightgray;
-  border-radius: 5px;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E58D82;
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f1f1f1;
 }
 
 /* p {
@@ -3223,7 +3239,8 @@ animation-name: slideInRight;
 .div_subscriptionvideo {
   padding: 20px;
 }
-  /* .yt-embed {
+
+/* .yt-embed {
   aspect-ratio: 16 / 9;
   width: 100%;
   padding:30px 40px 40px 0px
@@ -3235,7 +3252,7 @@ animation-name: slideInRight;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-   padding: 90px 20px; 
+  padding: 90px 20px;
 }
 
 .row {
@@ -4723,8 +4740,7 @@ button {
   border: 0;
 }
 
-.cvideo_b
-{
+.cvideo_b {
   width: 810px;
   /* border-radius: 12px; */
   position: relative;

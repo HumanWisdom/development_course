@@ -1817,7 +1817,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="row center_flex">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
-          <div class="owl_coach" style="width: auto;margin-right: 20px !important;">
+          <div class="owl_coach" style="width: auto;">
             <div class="owl-carousel owl-theme">
               <a class="item" data-aos="fade-up" data-aos-delay="200"
                 href="https://happierme.app/adults/coach/profile/692">

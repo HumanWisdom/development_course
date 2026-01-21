@@ -648,7 +648,8 @@
   }
 
   .flex_block {
-    display: block;
+    display: flex !important;
+    flex-direction: column-reverse !important;
   }
 
   .desktop,
@@ -661,7 +662,7 @@
   }
 
   .flex_fd_cr {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
   }
 
   .tab-content {
@@ -760,6 +761,7 @@
   }
 
   .tab-content .flex_fd_cr {
+    flex-direction: column-reverse !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
