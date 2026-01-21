@@ -662,12 +662,12 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
-                  <a href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick">
+                <div  id="OllyChatBtn" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
+                  <!-- <a  href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick"> -->
                     <button class="fs_21px fw_600 lh_140p fc_ffffff btn_tff btn_tff_widthnew h_48px btn_popup">
                       Chat with Olly now
                     </button>
-                  </a>
+                  <!-- </a> -->
                 </div>
               </div>
             <!-- </div> -->
