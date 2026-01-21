@@ -11,6 +11,20 @@
 }
 
 @media (max-width: 767px) {
+  /* Fix button text vertical alignment for mobile */
+  /* .btn_popup,
+  .btn_landing,
+  .mbtn_landing,
+  .btn_tff,
+  .btn_tff_width,
+  .btn_tff_widthnew {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 40px !important;
+    line-height: 1 !important;
+  } */
+
   .tool_tabs {
     display: flex !important;
     flex-direction: row !important;
@@ -648,8 +662,7 @@
   }
 
   .flex_block {
-    display: flex !important;
-    flex-direction: column-reverse !important;
+    display: block;
   }
 
   .desktop,
@@ -662,7 +675,7 @@
   }
 
   .flex_fd_cr {
-    flex-direction: column-reverse !important;
+    flex-direction: column-reverse;
   }
 
   .tab-content {
@@ -761,7 +774,6 @@
   }
 
   .tab-content .flex_fd_cr {
-    flex-direction: column-reverse !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
@@ -1050,7 +1062,8 @@
     font-size: 27px !important;
   }
 
-  .fs_section_title {
+  .fs_section_title,
+  h2.fs_section_title {
     font-size: 18px !important;
   }
 
@@ -1068,7 +1081,7 @@
   }
 
   .fs_18px {
-    font-size: 12px !important;
+    font-size: 18px !important;
   }
 
   .fs_15px {
@@ -1208,6 +1221,16 @@
   .input_parent {
     display: block;
   }
+
+  /* Override column-reverse for Olly AI section - image should be above text */
+  .web_home_divcircleolly .flex_block {
+    flex-direction: column !important;
+  }
+
+  /* Override column-reverse for HappierMe circles section - button should appear after image */
+  .web_home_divcircle .flex_block {
+    flex-direction: column !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1223,6 +1246,20 @@
 }
 
 @media (max-width: 768px) {
+  /* Fix button text vertical alignment for mobile */
+  .btn_popup,
+  .btn_landing,
+  .mbtn_landing,
+  .btn_tff,
+  .btn_tff_width,
+  .btn_tff_widthnew {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 40px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
 
   .owl-nav .owl-prev,
   .owl-nav .owl-next {
@@ -1237,6 +1274,85 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Center the Chat with Olly button on mobile */
+  #OllyChatBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* FAQ Accordion Icons on Mobile - Bootstrap Icons Chevron */
+  
+  /* Bootstrap 3 Panel - Make link flexbox to push icon to end */
+  #accordion_faq .panel-title>a {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Bootstrap 3 Panel - Collapsed state - chevron down */
+  #accordion_faq .panel-title>a:after {
+    content: "\f282";
+    font-family: "bootstrap-icons";
+    color: #834B66;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* Bootstrap 3 Panel - Expanded state - chevron up */
+  #accordion_faq .panel-title>a[aria-expanded="true"]:after {
+    content: "\f286";
+    font-family: "bootstrap-icons";
+    color: #834B66;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* Bootstrap 5 Accordion - Make button flexbox to push icon to end */
+  #accordion_faq_about .accordion-button,
+  .tc_faqs .accordion-button,
+  #accordion_faq .accordion-button {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Bootstrap 5 Accordion - Collapsed state - chevron down */
+  #accordion_faq_about .accordion-button.collapsed::after,
+  .tc_faqs .accordion-button.collapsed::after,
+  #accordion_faq .accordion-button.collapsed::after {
+    content: "\f282" !important;
+    font-family: "bootstrap-icons" !important;
+    color: #834B66 !important;
+    background-image: none !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+
+  /* Bootstrap 5 Accordion - Expanded state - chevron up */
+  #accordion_faq_about .accordion-button:not(.collapsed)::after,
+  .tc_faqs .accordion-button:not(.collapsed)::after,
+  #accordion_faq .accordion-button:not(.collapsed)::after {
+    content: "\f286" !important;
+    font-family: "bootstrap-icons" !important;
+    color: #834B66 !important;
+    background-image: none !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
   }
 }
 
@@ -1319,10 +1435,6 @@
 }
 
 @media (max-width: 768px) {
-  .btn_popup {
-    padding: 0 !important;
-  }
-
   .section-header {
     margin-bottom: 20px !important;
     padding-bottom: 0 !important;
@@ -1574,32 +1686,28 @@
     padding: 0 !important;
   }
 
-  .btn_popup_w {
+  #PricingSelectBtn {
     width: 335px !important;
-    margin-right: -6px;
-    margin-left: -4px;
-    background: linear-gradient(180deg, #DA7D71, #BF5061) !important;
-
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 
-  .btn_download {
-    margin-left: -10px !important;
-  }
-
-  #PricingSelectBtn .btn_popup {
-    width: 100% !important;
+  #PricingSelectBtn .btn_popup,
+  #startyourfreetrial {
+    width: 335px !important;
     max-width: 335px !important;
     height: 65px !important;
     background: linear-gradient(180deg, #E58D82, #CB6171) !important;
     border-radius: 36px !important;
-    margin: 0 auto;
+    margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     line-height: 1 !important;
     padding: 0 !important;
-
   }
 
   .div_subscriptionnew h6,
@@ -2090,7 +2198,7 @@
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;
-    margin-left: 10px;
+    margin-left: -10px;
   }
 
   /* Mobile footer accordion icons - white - OVERRIDE ALL BASE STYLES */
@@ -2171,40 +2279,5 @@
   #accordion_footer .bi-chevron-down,
   #accordion_footer .bi-chevron-up {
     color: #ffffff !important;
-  }
-}
-
-/* FIX for Mobile Accordion Icons - Force White Plus/Minus */
-@media screen and (max-width: 768px) {
-  #accordion_footer .panel-title>a::after {
-    content: "+" !important;
-    font-family: inherit !important;
-    /* Ensure a standard font */
-    color: #ffffff !important;
-    font-size: 24px !important;
-    font-weight: 400 !important;
-    background: none !important;
-    /* Remove background image if any */
-    background-image: none !important;
-    border: none !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 24px !important;
-    height: 24px !important;
-    transform: none !important;
-    /* Remove any rotation */
-    text-decoration: none !important;
-    float: right !important;
-  }
-
-  #accordion_footer .panel-title>a[aria-expanded="true"]::after {
-    content: "-" !important;
-    font-family: inherit !important;
-    color: #ffffff !important;
-    font-size: 24px !important;
-    font-weight: 400 !important;
-    background: none !important;
-    background-image: none !important;
   }
 }
