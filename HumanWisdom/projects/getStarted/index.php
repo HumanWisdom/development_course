@@ -694,7 +694,7 @@ Introducing Olly AI, <br/>your personal guide inside HappierMe.             </
                 <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
               </h3>
 
-              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_000000">
+              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_000000 pl_pr9px">
 Talk to Olly about what’s on your mind — stress, anxiety, relationships, tricky habits, parenting, or work. Olly offers practical support and guides you to trusted, expert-backed resources.              </h4>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px">
@@ -2584,7 +2584,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <div class="row mtb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb15px">
                         <a href="https://happierme.app/adults/wisdom-survey">
-                          <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup">
+                          <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup btn-h">
                             Check your wellness score
                           </button>
                         </a>

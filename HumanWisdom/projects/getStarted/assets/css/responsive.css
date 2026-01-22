@@ -1282,6 +1282,10 @@
     justify-content: center;
     align-items: center;
   }
+  .pl_pr9px {
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+  }
 
   /* FAQ Accordion Icons on Mobile - Bootstrap Icons Chevron */
   
@@ -1353,6 +1357,18 @@
     transform: none !important;
     flex-shrink: 0 !important;
     margin-left: auto !important;
+  }
+
+  /* Prevent text wrapping on "View all Success stories" and "Explore on app" links */
+  .sap h5,
+  a h5.td_underline,
+  h5.td_underline {
+    white-space: nowrap !important;
+  }
+  /* Olly AI section - mobile padding */
+  .land-happierMe-gap1 {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
   }
 }
 
