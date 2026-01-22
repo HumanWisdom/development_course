@@ -67,6 +67,54 @@ require_once('./includes/security_config.php');
   <!-- End Google Tag Manager -->
 
 
+  <style>
+    @media (max-width: 767px) {
+      .mobile-fs-18px {
+        font-size: 18px !important;
+      }
+      .mobile-fc-black {
+        color: #000000 !important;
+      }
+
+      /* Force White Plus/Minus Icons on Mobile Accordion */
+      #accordion_footer .panel-title > a::after {
+        content: "+" !important;
+        color: #ffffff !important;
+        font-family: inherit !important;
+        font-size: 24px !important;
+        line-height: 24px !important;
+        background: none !important;
+        width: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      #accordion_footer .panel-title > a[aria-expanded="true"]::after {
+        content: "-" !important;
+      }
+      
+      /* New override for Bootstrap 5 .accordion-button if present */
+      .accordion-button::after {
+        background-image: none !important;
+        content: "+" !important;
+        color: #ffffff !important;
+        font-size: 16px !important;
+        font-weight: 300 !important;
+        width: auto !important;
+        height: auto !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      
+      .accordion-button:not(.collapsed)::after {
+        background-image: none !important;
+        content: "-" !important;
+        transform: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body id="body" style="padding:0px !important">
@@ -646,7 +694,7 @@ Introducing Olly AI, <br/>your personal guide inside HappierMe.             </
                 <!-- Our happiness depends on many factors. HappierMe addresses them all. -->
               </h3>
 
-              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_000000">
+              <h4 class="mtb0px fs_18px fw_400 lh_150p fc_000000 pl_pr9px">
 Talk to Olly about what’s on your mind — stress, anxiety, relationships, tricky habits, parenting, or work. Olly offers practical support and guides you to trusted, expert-backed resources.              </h4>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px">
@@ -1769,7 +1817,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="row center_flex">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
-          <div class="owl_coach" style="width: auto;margin-right: 20px !important;">
+          <div class="owl_coach" style="width: auto;">
             <div class="owl-carousel owl-theme">
               <a class="item" data-aos="fade-up" data-aos-delay="200"
                 href="https://happierme.app/adults/coach/profile/692">
@@ -2214,7 +2262,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
         <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
           <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-            <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width btn_popup" id="startyourfreetrial">
+            <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width btn_popup btn_popup_w" id="startyourfreetrial">
               Start your free trial
             </button>
           </div>
@@ -2230,7 +2278,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p mobile-fc-black">
               Tools for a happier life
             </h2>
           </div>
@@ -2536,7 +2584,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     <div class="row mtb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb15px">
                         <a href="https://happierme.app/adults/wisdom-survey">
-                          <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup">
+                          <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup btn-h">
                             Check your wellness score
                           </button>
                         </a>

@@ -11,6 +11,20 @@
 }
 
 @media (max-width: 767px) {
+  /* Fix button text vertical alignment for mobile */
+  /* .btn_popup,
+  .btn_landing,
+  .mbtn_landing,
+  .btn_tff,
+  .btn_tff_width,
+  .btn_tff_widthnew {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 40px !important;
+    line-height: 1 !important;
+  } */
+
   .tool_tabs {
     display: flex !important;
     flex-direction: row !important;
@@ -671,8 +685,8 @@
   }
 
   .dfooter {
-  width: 104%;
-    }
+    width: 104%;
+  }
 
   .tab-content .row.center_flex {
     justify-content: center !important;
@@ -1039,8 +1053,26 @@
   .fs_24px {
     font-size: 18px !important;
   }
+
   .fs_42px {
     font-size: 24px !important;
+  }
+
+  .fs_hero_title {
+    font-size: 27px !important;
+  }
+
+  .fs_section_title,
+  h2.fs_section_title {
+    font-size: 18px !important;
+  }
+
+  .btn-primarypop {
+    font-size: 15px !important;
+  }
+
+  .fs_root_title {
+    font-size: 21px !important;
   }
 
 
@@ -1049,7 +1081,7 @@
   }
 
   .fs_18px {
-    font-size: 12px !important;
+    font-size: 18px !important;
   }
 
   .fs_15px {
@@ -1189,6 +1221,16 @@
   .input_parent {
     display: block;
   }
+
+  /* Override column-reverse for Olly AI section - image should be above text */
+  .web_home_divcircleolly .flex_block {
+    flex-direction: column !important;
+  }
+
+  /* Override column-reverse for HappierMe circles section - button should appear after image */
+  .web_home_divcircle .flex_block {
+    flex-direction: column !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1204,6 +1246,20 @@
 }
 
 @media (max-width: 768px) {
+  /* Fix button text vertical alignment for mobile */
+  .btn_popup,
+  .btn_landing,
+  .mbtn_landing,
+  .btn_tff,
+  .btn_tff_width,
+  .btn_tff_widthnew {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 40px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
 
   .owl-nav .owl-prev,
   .owl-nav .owl-next {
@@ -1218,6 +1274,128 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Center the Chat with Olly button on mobile */
+  #OllyChatBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pl_pr9px {
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+  }
+
+  /* FAQ Accordion Icons on Mobile - Bootstrap Icons Chevron */
+  
+  /* Bootstrap 3 Panel - Make link flexbox to push icon to end */
+  #accordion_faq .panel-title>a {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Bootstrap 3 Panel - Collapsed state - chevron down */
+  #accordion_faq .panel-title>a:after {
+    content: "\f282";
+    font-family: "bootstrap-icons";
+    color: #834B66;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* Bootstrap 3 Panel - Expanded state - chevron up */
+  #accordion_faq .panel-title>a[aria-expanded="true"]:after {
+    content: "\f286";
+    font-family: "bootstrap-icons";
+    color: #834B66;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* Bootstrap 5 Accordion - Make button flexbox to push icon to end */
+  #accordion_faq_about .accordion-button,
+  .tc_faqs .accordion-button,
+  #accordion_faq .accordion-button {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Bootstrap 5 Accordion - Collapsed state - chevron down */
+  #accordion_faq_about .accordion-button.collapsed::after,
+  .tc_faqs .accordion-button.collapsed::after,
+  #accordion_faq .accordion-button.collapsed::after {
+    content: "\f282" !important;
+    font-family: "bootstrap-icons" !important;
+    color: #834B66 !important;
+    background-image: none !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+
+  /* Bootstrap 5 Accordion - Expanded state - chevron up */
+  #accordion_faq_about .accordion-button:not(.collapsed)::after,
+  .tc_faqs .accordion-button:not(.collapsed)::after,
+  #accordion_faq .accordion-button:not(.collapsed)::after {
+    content: "\f286" !important;
+    font-family: "bootstrap-icons" !important;
+    color: #834B66 !important;
+    background-image: none !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+
+  /* Prevent text wrapping on "View all Success stories" and "Explore on app" links */
+  .sap h5,
+  a h5.td_underline,
+  h5.td_underline {
+    white-space: nowrap !important;
+  }
+  /* Olly AI section - mobile padding */
+  .land-happierMe-gap1 {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  /* About Us - Founder section - image should come ABOVE text on mobile (normal order, not reversed) */
+  .section-header .flex_block,
+  .section-header .row .flex_block {
+    flex-direction: column !important;
+  }
+
+  /* About Us - Content Experts section - center align names on mobile */
+  .div_inspire .tleft {
+    text-align: center !important;
+  }
+
+  /* About Us - Founder image - 150px x 150px and centered on mobile */
+  .founder-image-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  .founder-image {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
   }
 }
 
@@ -1309,9 +1487,9 @@
     margin-bottom: 20px !important;
   }
 
-  .section-header h2.fs_24px {
+  /* .section-header h2.fs_24px {
     color: rgba(131, 75, 102, 1) !important;
-  }
+  } */
 
   .cvideo_b,
   .yt-embed,
@@ -1551,14 +1729,22 @@
     padding: 0 !important;
   }
 
+  #PricingSelectBtn {
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
   #PricingSelectBtn .btn_popup,
   #startyourfreetrial {
-    width: 100% !important;
+    width: 335px !important;
     max-width: 335px !important;
     height: 65px !important;
-     background: linear-gradient(180deg, #E58D82, #CB6171)  !important;
+    background: linear-gradient(180deg, #E58D82, #CB6171) !important;
     border-radius: 36px !important;
-    margin: 0 auto;
+    margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -2051,11 +2237,11 @@
     border-radius: 16px !important;
     font-size: 12px !important;
     font-weight: 600 !important;
-    background: linear-gradient(180deg, #E58D82, #CB6171) !important ;
+    background: linear-gradient(180deg, #E58D82, #CB6171) !important;
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;
-    margin-left: 10px;
+    margin-left: -10px;
   }
 
   /* Mobile footer accordion icons - white - OVERRIDE ALL BASE STYLES */

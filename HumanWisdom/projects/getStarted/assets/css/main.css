@@ -52,14 +52,17 @@ a {
   color: var(--color-primary);
   text-decoration: none;
 }
-.faqqq{
+
+.faqqq {
   margin-top: 30px;
 }
+
 .active_nav {
   color: #834B66 !important;
 }
-p:hover{
-  color:green;
+
+p:hover {
+  color: green;
   text-decoration: underline;
 }
 
@@ -736,11 +739,12 @@ label>input[type="checkbox"]+*::before {
     transition: 0.3s;
     z-index: 9997;
     display: block;
+    background: #fff;
   }
 
   .navbar ul {
     position: absolute;
-    /* inset: 0; */
+    inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
     background: #fff;
@@ -748,22 +752,42 @@ label>input[type="checkbox"]+*::before {
     transition: 0.3s;
     z-index: 9998;
     display: block;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    text-align: left !important;
   }
 
   .navbar a,
   .navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
     padding: 10px 20px;
     font-family: var(--font-secondary);
     border-bottom: 0;
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color: #D7586B;
     white-space: nowrap;
     transition: 0.3s;
+    text-align: left !important;
+  }
+
+  .navbar li {
+    text-align: left !important;
+    display: block !important;
+  }
+
+  /* Override Bootstrap .nav class */
+  .navbar a.nav,
+  .navbar a.nav:focus {
+    display: flex !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  .navbar a span {
+    text-align: left !important;
   }
 
   .navbar a i,
@@ -775,12 +799,12 @@ label>input[type="checkbox"]+*::before {
 
   .navbar a:hover,
   .navbar li:hover>a {
-    color: #000;
+    color: #803358;
   }
 
   .navbar .active,
   .navbar .active:focus {
-    color: #000;
+    color: #803358;
     border-color: var(--color-primary);
   }
 
@@ -792,6 +816,7 @@ label>input[type="checkbox"]+*::before {
     margin: 10px 20px;
     transition: all 0.5s ease-in-out;
     border: 1px solid #eee;
+    text-align: left !important;
   }
 
   .navbar .dropdown>.dropdown-active,
@@ -1623,12 +1648,26 @@ div.scroll-container img {
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: lightgray;
-  border-radius: 5px;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E58D82;
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f1f1f1;
 }
 
 /* p {
@@ -2181,14 +2220,17 @@ div.scroll-container img {
   transition: 0.3s;
 }
 
-.web_home_divcircleolly{
+.web_home_divcircleolly {
   background: #FFF9EE;
-    padding: 80px 0;
+  padding: 80px 0;
 }
-.section-headernew.a,h6:hover{
-  color:#cb6171;
+
+.section-headernew.a,
+h6:hover {
+  color: #cb6171;
   text-decoration: underline;
 }
+
 .footer .social-links a:hover {
   color: #fff;
   border-color: #fff;
@@ -2850,17 +2892,18 @@ animation-name: slideInRight;
 
 }
 
-.btn_tff_widthnew 
-{
+.btn_tff_widthnew {
   width: 307px !important;
   border-radius: 36px;
-    height: 65px;
+  height: 65px;
 }
+
 .btn_tff_width {
-    width: 314px !important;
-    border-radius: 35px;
-    height: 65px;
+  width: 314px !important;
+  border-radius: 35px;
+  height: 65px;
 }
+
 .btn_pricing {
   margin: 3px;
   border: 0;
@@ -3216,7 +3259,8 @@ animation-name: slideInRight;
 .div_subscriptionvideo {
   padding: 20px;
 }
-  /* .yt-embed {
+
+/* .yt-embed {
   aspect-ratio: 16 / 9;
   width: 100%;
   padding:30px 40px 40px 0px
@@ -3228,7 +3272,7 @@ animation-name: slideInRight;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-   padding: 90px 20px; 
+  padding: 90px 20px;
 }
 
 .row {
@@ -3414,13 +3458,76 @@ animation-name: slideInRight;
   content: none !important;
 }
 
-#accordion_faq .panel-title>a[aria-expanded=true]:after {
-  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_up_web.svg);
+/* FAQ Accordion Icons - Bootstrap Icons Chevron */
+
+/* Bootstrap 3 Panel structure - Make link flexbox to push icon to end */
+#accordion_faq .panel-title>a {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
+/* Bootstrap 3 Panel structure - Collapsed state - chevron down */
 #accordion_faq .panel-title>a:after {
-  content: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/accordion_down_web.svg);
-  float: right;
+  content: "\f282";
+  font-family: "bootstrap-icons";
+  color: #834B66;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Bootstrap 3 Panel structure - Expanded state - chevron up */
+#accordion_faq .panel-title>a[aria-expanded="true"]:after {
+  content: "\f286";
+  font-family: "bootstrap-icons";
+  color: #834B66;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Bootstrap 5 Accordion structure - Make button flexbox to push icon to end */
+#accordion_faq_about .accordion-button,
+.tc_faqs .accordion-button,
+#accordion_faq .accordion-button {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Bootstrap 5 Accordion structure - Collapsed state - chevron down */
+#accordion_faq_about .accordion-button.collapsed::after,
+.tc_faqs .accordion-button.collapsed::after,
+#accordion_faq .accordion-button.collapsed::after {
+  content: "\f282" !important;
+  font-family: "bootstrap-icons" !important;
+  color: #834B66 !important;
+  background-image: none !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+}
+
+/* Bootstrap 5 Accordion structure - Expanded state - chevron up */
+#accordion_faq_about .accordion-button:not(.collapsed)::after,
+.tc_faqs .accordion-button:not(.collapsed)::after,
+#accordion_faq .accordion-button:not(.collapsed)::after {
+  content: "\f286" !important;
+  font-family: "bootstrap-icons" !important;
+  color: #834B66 !important;
+  background-image: none !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
 }
 
 #accordion_faq .panel-title>a {
@@ -4716,8 +4823,7 @@ button {
   border: 0;
 }
 
-.cvideo_b
-{
+.cvideo_b {
   width: 810px;
   /* border-radius: 12px; */
   position: relative;
@@ -5388,6 +5494,12 @@ input[type="password" i]::-ms-reveal {
   .web_home_divcircle {
 
     width: 104%;
+  }
+  .web_home_divcircleolly {
+    padding-top: 34px !important;
+  }
+  .land-happierMe-section {
+    padding-bottom: 12px !important;
   }
 
   .tab_faqs.nav-tabs>li>a {

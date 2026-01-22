@@ -145,4 +145,47 @@ body.modal-open {
     padding-right: 0px !important;
     overflow: hidden;
 }
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E58D82;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f1f1f1;
+}
+
+/* Mobile Layout Overrides - Text above Image */
+@media (max-width: 767px) {
+    .flex_block, 
+    .flex_fd_cr,
+    .flex_fd_cr.flex_fd_cr,
+    .tab-content .flex_fd_cr,
+    .tab-content .row.center_flex > [class^="col-"].flex_fd_cr {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+    
+    /* Ensure the inner columns also don't force a standard column order */
+    .flex_block > div, 
+    .flex_fd_cr > div {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
 </style>
