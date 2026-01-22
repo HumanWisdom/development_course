@@ -1,13 +1,78 @@
+// Suggestions container and buttons
+.suggestions-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  gap: 0;
+  
+  .suggestions-instruction {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
 .suggestion-button{
-    background: white;
-    border-radius: 10px;
-    padding: 10px;
+    background: transparent;
+    border-radius: 0;
+    padding: 10px 0;
     border: none;
-    border-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     text-align: left;
-    font-weight: 600;
-    box-shadow: 1px 1px 2px 0px #0000001A;
-    margin:5px;
+    font-weight: 400;
+    box-shadow: none;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #000000;
+    pointer-events: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+    width: 100%;
+    
+    &:first-child {
+      padding-top: 4px;
+    }
+    
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 4px;
+    }
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.03);
+      transform: none;
+      box-shadow: none;
+    }
+    
+    &:active {
+      transform: none;
+      background: rgba(0, 0, 0, 0.05);
+    }
+    
+    .suggestion-number {
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.6);
+      flex-shrink: 0;
+      min-width: 20px;
+    }
+    
+    .suggestion-text {
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.6);
+      flex: 1;
+    }
 }
 
 .chat-bot-container {
@@ -589,6 +654,175 @@
   &:link {
     color: inherit !important;
     text-decoration: underline !important;
+  }
+}
+
+// Feedback buttons (Thumbs up/down)
+.feedback-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 4px 0;
+  
+  .feedback-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      color: rgba(0, 0, 0, 0.5);
+      transition: all 0.2s ease;
+    }
+    
+    &:hover:not(:disabled) {
+      background: rgba(0, 0, 0, 0.05);
+      
+      &.thumbs-up svg {
+        color: #4caf50;
+      }
+      
+      &.thumbs-down svg {
+        color: #f44336;
+      }
+    }
+    
+    &.active {
+      background: rgba(0, 0, 0, 0.05);
+      
+      &.thumbs-up svg {
+        color: #4caf50;
+      }
+      
+      &.thumbs-down svg {
+        color: #f44336;
+      }
+    }
+    
+    &:disabled {
+      cursor: default;
+      opacity: 0.7;
+    }
+  }
+}
+
+// Yes/No action buttons
+.yes-no-container {
+  margin: 0 20px 12px 20px;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  
+  .yes-no-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+  }
+  
+  .yes-no-buttons {
+    display: flex;
+    gap: 8px;
+    
+    .action-button {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      pointer-events: auto;
+      
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+      
+      &.yes-button {
+        background: #4caf50;
+        color: white;
+        
+        &:hover {
+          background: #45a049;
+          transform: translateY(-1px);
+          box-shadow: 0px 2px 6px rgba(76, 175, 80, 0.3);
+        }
+        
+        &:active {
+          transform: translateY(0);
+        }
+      }
+      
+      &.no-button {
+        background: #f44336;
+        color: white;
+        
+        &:hover {
+          background: #e53935;
+          transform: translateY(-1px);
+          box-shadow: 0px 2px 6px rgba(244, 67, 54, 0.3);
+        }
+        
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Give More Options button
+.more-options-container {
+  margin: 8px 68px 12px 68px; // Align with bot messages (20px margin + 48px avatar space)
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  width: calc(100% - 68px); // Full width minus left margin
+  
+  .action-button.more-options-button {
+    width: 100%;
+    max-width: 285px; // Match bot message width
+    display: block;
+    padding: 10px 16px;
+    border: 2px solid #05BBBF;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    background: white;
+    color: #05BBBF;
+    box-shadow: none;
+    text-align: center;
+    
+    &:hover {
+      background: rgba(5, 187, 191, 0.05);
+      border-color: #04a8ac;
+      color: #04a8ac;
+      transform: none;
+      box-shadow: none;
+    }
+    
+    &:active {
+      transform: none;
+      background: rgba(5, 187, 191, 0.1);
+    }
   }
 }
 

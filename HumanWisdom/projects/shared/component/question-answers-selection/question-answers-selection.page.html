@@ -15,7 +15,7 @@
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
       <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-        Wellness Survey
+        Wellness survey
       </h1>
     </div>
 
@@ -57,7 +57,7 @@
     <div class="row flex_jc_center slide" id="mdp_sections">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
-          <div class="x_content p0 tcenter">
+          <div class="x_content p0 text-center">
             <form>
               <div class="container">
                 
@@ -67,9 +67,9 @@
                       <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 " > -->
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft">
                           <a class="skip" (click)="back('click_Breathingexercise_Previous')"  *ngIf="prevBtnDisabled" >
-                            <button  type="button" class="btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
+                            <button  type="button" class="btn_prev_v3 fs_15px fw_400 lh_160p fc_ffffff">
                               <!-- Skip -->
-                                <i class="fa fa-angle-left fs_16px  mr10px" [ngClass]="isAdults? 'fc_000000':'fc_ffffff'"></i>
+                                <i class="fa fa-angle-left fs_16px  mr5px" [ngClass]="isAdults? 'fc_000000':'fc_ffffff'"></i>
 
                               Previous
                             </button>
@@ -78,11 +78,11 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
                           <span class="mtb0px fs_12px fw_400 lh_18px  tcenter cgqtns_sc">{{ currentSection + 1 }} / 10</span>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright ">
                           <!-- <a data-bs-slide="next" [ngClass]="btnDisabled? 'disabled':''" class="next" > -->
                             <button type="button" [disabled]="btnDisabled" class="btn shadow-none btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff" (click)="this.currentSection === 9 ? this.submitProgress() : next('click_Daily_Practice_Next')">
                               {{ this.currentSection === 9 ? 'Submit' : 'Next' }}
-                              <i class="fa fa-angle-right fs_16px ml10px"></i>
+                              <i class="fa fa-angle-right fs_16px ml5px"></i>
 
                             </button>
                           <!-- </a> -->

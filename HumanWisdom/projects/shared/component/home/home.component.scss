@@ -3,6 +3,11 @@
 background: #FFF7E6;/* Ensure proper stacking context */
 }
 
+.pointer-events-auto {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
+
 .stk-icon {
     margin-right: 5px;
     width: 8px;
@@ -85,6 +90,14 @@ background: #FFF7E6;/* Ensure proper stacking context */
   /* Prevent text wrapping */
 }
 
+.nav-item>span {
+  vertical-align: super;
+}
+
+.nav-scroll-btn>i {
+  vertical-align: middle;
+}
+
 /* Selected/Active state */
 .nav-item.selected,
 .nav-item.active {
@@ -93,6 +106,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
   text-decoration-color: rgba(203, 97, 113, 1);
   text-decoration-thickness: 6px;
   text-underline-offset: 8px;
+ 
   /* Adjust distance from text */
 }
 
@@ -132,7 +146,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 /* Navigation scroll buttons */
 .nav-scroll-btn {
   position: absolute;
-  top: 50%;
+  top: 42%;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -252,7 +266,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .card-container::-webkit-scrollbar-track {
-  background-color: #f6d1b7;
+  background-color: #eea170;
   border-radius: 10px;
 }
 
@@ -357,13 +371,13 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .section-arrow.arrow-expanded {
-  transform: rotate(180deg);
-  /* Arrow points down when expanded */
+  transform: rotate(0deg);
+  /* Arrow points up when expanded */
 }
 
 .section-arrow.arrow-collapsed {
-  transform: rotate(0deg);
-  /* Arrow points up when collapsed */
+  transform: rotate(180deg);
+  /* Arrow points down when collapsed */
 }
 
 .section-arrow.arrow-teenagers {
@@ -371,42 +385,50 @@ background: #FFF7E6;/* Ensure proper stacking context */
   /* Makes the arrow white for teenagers */
 }
 
+.mttopbot20 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
 .section-header {
-  height: 100px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  height: 60px;
+  // padding-top: 40px;
+  // padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;  
   width: auto;
 }
 
-.section-header[aria-expanded="true"] {
-  padding-bottom: 16px;
-  height: 75px;
-}
 
-.section-header:hover {
-  // padding-top: 40px;
-  // padding-bottom: 40px;
-  // padding-left: 20px;
-  // padding-right: 20px;
-}
-
-.section-header[aria-expanded="true"]:hover {
-  // padding-bottom: 10px;
-  // padding-top: 30px;
-  // padding-left: 20px;
-  // padding-right: 20px;
-}
 
 /* Search box container with show/hide animation */
 .search-box-container {
   transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
   overflow: visible;
-  /* Changed from hidden to allow sticky to work */
-  max-height: 200px;
+  /* Removed max-height to prevent clipping of absolute children in complex fixed layouts */
   opacity: 1;
   margin-top: 10px;
+}
+
+.home-container.search-active {
+  .sticky-nav-container {
+    display: none !important;
+  }
+  .header-blk {
+    display: none !important;
+  }
+  .col-12{
+    width: 100vw;
+  }
+  .bg_nonei{
+    display: none !important;
+  }
+  .home-content{
+    padding-top: 40px !important;
+  }
+  .search-box-container{
+    margin-top: 40px !important;
+  }
 }
 
 .search-box-container.search-box-hidden {
@@ -638,41 +660,87 @@ background: #FFF7E6;/* Ensure proper stacking context */
 .adsearch {
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 1001;
-  /* Higher than sticky nav to appear above it */
+  left: -20px; /* Counteract parent padding to cover full width */
+  right: -20px;
+  z-index: 2005; /* Ensure it stays on top */
   margin-top: 0;
+  padding-top: 20px;
+  height: 100vh;
+  background-color: #FFF7E6;
 }
 
 .autocomplete-list {
-  max-height: 300px;
-  overflow-y: auto;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 262px) !important;
+  height: 100vh !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  border-radius: 0;
+  box-shadow: none !important;
   margin: 0;
   padding: 0;
-  background-color: #ffffff !important;
+  padding-bottom: 150px;
+  background-color: #FFF7E6 !important;
+  border: none !important;
+
+  /* Scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #eea170 #FFF7E6;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #FFF7E6;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #778899;
+    border-radius: 20px;
+  }
 }
 
 .adsearch_ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  border: none !important;
 }
 
 .is-search {
+  position: relative;
   cursor: pointer;
-  padding: 12px 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border: none !important;
+  margin-bottom: 0 !important;
   transition: background-color 0.2s ease;
-  background-color: #ffffff !important;
+  background-color: #FFF7E6 !important;
+  color: rgba(0, 0, 0, 0.75);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    z-index: 2;
+    display: block;
+  }
 }
 
 .is-search:hover {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: #FFD889 !important;
 }
 
 .is-search:last-child {
-  border-bottom: none;
+  margin-bottom: 20px !important;
+
+  &::after {
+    display: block !important;
+  }
+}
+.adsearch_ul .list-group-item:last-child{
+  border-radius: 0 !important;
 }

@@ -23,23 +23,24 @@ export class DevelopACalmMindPage implements OnInit {
   public ntP: any
   public gamP: any
   mediaUrl: any;
-  isAdults:boolean=false;
+  isAdults: boolean = false;
+  isIos = false;
 
   constructor(public router: Router, public service: AdultsService,
     public logeventservice: LogEventService,
-    private location: Location, private navigationService: NavigationService)
-    {
-      this.mediaUrl = {
-        url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.22.mp3',
-        youtubeUrl: 'b5PZ6fFCL3g'
-      }
+    private location: Location, private navigationService: NavigationService) {
+    this.mediaUrl = {
+      url: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/guided-meditation/audios/guided-meditation+1.22.mp3',
+      youtubeUrl: 'b5PZ6fFCL3g'
     }
+  }
 
   ngOnInit() {
-    this.isAdults=SharedService.ProgramId==ProgramType.Adults;
+    this.isIos = SharedService.isIOSApp();
+    this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     let userId = JSON.parse(localStorage.getItem("userId")) ? JSON.parse(localStorage.getItem("userId")) : 100;
     this.service.getPoints(userId).subscribe((d) => {
-      this.natureP = d['ModUserScrPc'].find(e => e.ModuleId  == 28)?.Percentage;
+      this.natureP = d['ModUserScrPc'].find(e => e.ModuleId == 28)?.Percentage;
       this.breathingP = d['ModUserScrPc'].find(e => e.ModuleId == 29)?.Percentage;
       this.meditationP = d['ModUserScrPc'].find(e => e.ModuleId == 22)?.Percentage;
       this.ntP = d['ModUserScrPc'].find(e => e.ModuleId == 30)?.Percentage;
@@ -69,14 +70,14 @@ export class DevelopACalmMindPage implements OnInit {
   }
 
   routeVideoaudio(type, url, title = '') {
-    if(type === 'video') {
-     this.router.navigate([url, 'F', title])
-    }else{
-      let concat = encodeURIComponent(url.replaceAll('/','~'));
-      if ( SharedService.ProgramId == ProgramType.Teenagers) {
+    if (type === 'video') {
+      this.router.navigate([url, 'F', title])
+    } else {
+      let concat = encodeURIComponent(url.replaceAll('/', '~'));
+      if (SharedService.ProgramId == ProgramType.Teenagers) {
         this.router.navigate(['/teenagers/audiopage/', concat, '1', 'F', title])
       }
-      else{
+      else {
         this.router.navigate(['adults/audiopage/', concat, '1', 'F', title])
       }
     }

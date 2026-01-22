@@ -1076,6 +1076,17 @@ if (pricingSelectBtn) {
     });
 }
 
+const OllyChatBtn = document.getElementById('OllyChatBtn');
+if (OllyChatBtn) {
+    OllyChatBtn.addEventListener('click', function () {
+        localStorage.setItem('chat-bot',true);
+         localStorage.setItem('pricing',false);
+        localStorage.setItem('login',false);
+        logevent("start_your_free_trial_button_click", "index.php");
+        window.location.href = "../pages/splash_options.php";
+    });
+}
+
 const PricingSelectBtnHomePage = document.getElementById('PricingSelectBtnHomePage');
 if (PricingSelectBtnHomePage) {
     PricingSelectBtnHomePage.addEventListener('click', function () {
@@ -1117,6 +1128,9 @@ if (teenagersClick) {
         if(localStorage.getItem('pricing')=='true'){
            window.location.href = url+"/teenagers/subscription/start-your-free-trial";
         }
+         else if(localStorage.getItem('chat-bot')=='true'){
+           window.location.href = url+"/teenagers/chat-bot";
+        }
         else if(localStorage.getItem('login')=='true'){
         //    window.location.href = url+"/teenagers/onboarding/login";
               window.location.href = url+"/teenagers/intro-carousel";           
@@ -1143,6 +1157,9 @@ if (adultsClick) {
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
            window.location.href = url+"/adults/subscription/start-your-free-trial";
+        }
+        else if(localStorage.getItem('chat-bot')=='true'){
+           window.location.href = url+"/adults/chat-bot";
         }
         else if(localStorage.getItem('login')=='true'){
             localStorage.setItem('login',false);

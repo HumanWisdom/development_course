@@ -84,6 +84,8 @@ export class QuestionAnswersSelection implements OnInit {
   public content = '';
   btnDisabled = true;
   prevBtnDisabled = false;
+  loginResponse: any;
+
 
   constructor
     (
@@ -292,6 +294,16 @@ export class QuestionAnswersSelection implements OnInit {
       const optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10];
       this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2;
       localStorage.setItem("wisdomScore", this.wisdomScore);
+
+       const savedLogin = localStorage.getItem("loginResponse") || sessionStorage.getItem("loginResponse");
+      if (savedLogin) {
+      this.loginResponse = JSON.parse(savedLogin);
+      }
+      this.loginResponse.hwScore = this.wisdomScore;
+       localStorage.setItem(
+        "loginResponse",
+        JSON.stringify(this.loginResponse)
+      );
 
       this.option = optionT.join();
 

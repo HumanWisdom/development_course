@@ -9,6 +9,7 @@ import { ShareService } from 'ngx-sharebuttons';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
 import { Platform } from '@angular/cdk/platform';
+import { ProgramType } from '../../../../../shared/models/program-model';
 
 import {
   trigger,
@@ -113,6 +114,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your\u00a0best\u00a0life';
+  showSearchBox: boolean = true;
+  isAdults: boolean = false;
 
 
   //static progress mapping
@@ -187,6 +190,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     this.getUserPreference();
     this.isSubscribe = SharedService.isSubscriber();
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
     let closetour = localStorage.getItem('closeTour');
 
     // if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
@@ -304,7 +312,12 @@ toggleAccordion() {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).startsWith(value?.toLocaleLowerCase()));
+        this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
+      }
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
       }
     }
   }
@@ -318,48 +331,10 @@ toggleAccordion() {
         this.personalisedforyou.push(r);
       }
     })
-
-
-
-    /*  this.aservice.getUserpreference().subscribe((res) => {
-       let perd = this.aservice.getperList();
-      // let perd = []
-       this.personalisedforyou = []
-       this.indList = []
-       if (res && res !== "") {
-         let arr = res.split('').filter((d) => d !== ',');
-         arr.forEach((d) => {
-           perd.forEach((r) => {
-             if (d === r['id']) {
-               r['active'] = true;
-               this.personalisedforyou.push(r);
-             }
-           })
-         })
-         perd.forEach((r) => {
-           let find = this.personalisedforyou.some((d) => d['name'] === r['name']);
-           if (!find) {
-             r['active'] = false;
-             this.personalisedforyou.push(r);
-           }
-         })
-         this.personalisedforyou.forEach((d) => {
-           if (d['active']) {
-             this.indList.push(d['id'])
-           }
-         })
-       } else {
-         perd.forEach((r) => {
-           r['active'] = false;
-           this.personalisedforyou.push(r);
-         })
-       }
-     }) */
   }
 
   getinp(event) {
     this.logeventservice.logEvent("search_"+ event)
-    
     let url=""
     switch(event.toLowerCase())
     {
@@ -397,8 +372,8 @@ toggleAccordion() {
       case "exercises":
       case "awareness exercises":
         {
-        url = `/adults/wisdom-exercise`
-        break;
+        this.route.navigate(['/adults/home'], { fragment: 'self-awareness' });
+        return;
       }
       case "forum":{
         url = `/adults/forum`
@@ -428,12 +403,7 @@ toggleAccordion() {
         url = `/adults/curated/overcome-stress-anxiety`
         break;
       }
-      default: {
-      //  if(this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase()).length > 0) {
-      //  let m = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase())== this.searchinp.toLocaleLowerCase())[0];
-      //   url = `${m.ModuleUrl}`;
-      //    break;
-      // }
+     default: {
       let searchInpt = (' ' + this.searchinp).slice(1);
       searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
        url = `/adults/site-search/${searchInpt}`
@@ -441,7 +411,6 @@ toggleAccordion() {
       }
 
     }
-
     this.route.navigate([url])
   }
 
@@ -450,6 +419,7 @@ toggleAccordion() {
 
     this.searchinp = module;
     this.searchResult = [];
+    this.toggleBodyScroll(false);
     this.getinp(module);
   }
 
@@ -715,12 +685,13 @@ toggleAccordion() {
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
     }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
+    }
   }
 
   onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
+    // Removed auto-close to keep screen open until explicit close
   }
 
   signInWithApple() {
@@ -738,6 +709,15 @@ toggleAccordion() {
   clearSearch() {
     this.searchinp = "";
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
 

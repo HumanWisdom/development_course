@@ -17,6 +17,9 @@ export interface ChatbotResponse {
   response: string;
   is_followup: boolean;
   session_id: string;
+  allow_feedback?: boolean; // Whether to show thumbs up/down
+  offer_related?: boolean; // Whether to offer related content
+  has_more?: boolean; // Whether there are more options available
 }
 
 export interface HistoryMessage {
@@ -42,6 +45,12 @@ export class ChatbotService {
   private readonly HEALTH_CHECK_URL_TEEN = environment.HEALTH_CHECK_URL_TEEN
   private readonly HISTORY_URL_ADULT = environment.HISTORY_URL_ADULT
   private readonly HISTORY_URL_TEEN = environment.HISTORY_URL_TEEN
+  private readonly RELATED_CONTENT_URL_ADULT = environment.RELATED_CONTENT_URL_ADULT
+  private readonly RELATED_CONTENT_URL_TEEN = environment.RELATED_CONTENT_URL_TEEN
+  private readonly FEEDBACK_URL_ADULT = environment.FEEDBACK_URL_ADULT
+  private readonly FEEDBACK_URL_TEEN = environment.FEEDBACK_URL_TEEN
+  private readonly TRACK_CLICK_URL_ADULT = environment.TRACK_CLICK_URL_ADULT
+  private readonly TRACK_CLICK_URL_TEEN = environment.TRACK_CLICK_URL_TEEN
 
   // Expose store observables
   public messages$: Observable<ChatMessage[]>;
@@ -131,6 +140,24 @@ export class ChatbotService {
       : this.HISTORY_URL_TEEN;
   }
 
+  private getRelatedContentUrl(): string {
+    return SharedService.ProgramId === ProgramType.Adults
+      ? this.RELATED_CONTENT_URL_ADULT
+      : this.RELATED_CONTENT_URL_TEEN;
+  }
+
+  private getFeedbackUrl(): string {
+    return SharedService.ProgramId === ProgramType.Adults
+      ? this.FEEDBACK_URL_ADULT
+      : this.FEEDBACK_URL_TEEN;
+  }
+
+  private getTrackClickUrl(): string {
+    return SharedService.ProgramId === ProgramType.Adults
+      ? this.TRACK_CLICK_URL_ADULT
+      : this.TRACK_CLICK_URL_TEEN;
+  }
+
   checkHealth(): Observable<any> {
     return this.http.get(this.getHealthCheckUrl(), {
       headers: this.getAuthHeaders(),
@@ -154,12 +181,76 @@ export class ChatbotService {
     );
   }
 
+  /**
+   * Send thumbs up/down feedback for a bot message
+   */
+  sendFeedback(
+    messageId: string, 
+    feedbackValue: 'thumbs_up' | 'thumbs_down',
+    userMessage: string,
+    botResponse: string
+  ): Observable<any> {
+    const request = {
+      message_id: messageId,
+      feedback_type: 'main_response',
+      feedback_value: feedbackValue,
+      user_message: userMessage,
+      bot_response: botResponse
+    };
+
+    return this.http.post(
+      this.getFeedbackUrl(),
+      request,
+      {
+        headers: this.getAuthHeaders(),
+        withCredentials: true
+      }
+    );
+  }
+
+  /**
+   * Send yes/no response to a bot question for related content
+   */
+  sendYesNoResponse(response: 'yes' | 'no'): Observable<ChatbotResponse> {
+    const request = {
+      action: response,
+      session_id: this.chatStore.getCurrentSessionId() || undefined
+    };
+
+    return this.http.post<ChatbotResponse>(
+      this.getRelatedContentUrl(),
+      request,
+      {
+        headers: this.getAuthHeaders(),
+        withCredentials: true
+      }
+    );
+  }
+
+  /**
+   * Track user clicks on external links shared by chatbot
+   */
+  trackLinkClick(url: string): Observable<any> {
+    const request = {
+      url: url
+    };
+
+    return this.http.post(
+      this.getTrackClickUrl(),
+      request,
+      {
+        headers: this.getAuthHeaders(),
+        withCredentials: true
+      }
+    );
+  }
+
   addUserMessage(content: string): void {
     this.chatStore.addUserMessage(content);
   }
 
-  addBotMessage(content: string, sessionId?: string): void {
-    this.chatStore.addBotMessage({ content, sessionId });
+  addBotMessage(content: string, sessionId?: string, allow_feedback?: boolean, offer_related?: boolean, is_followup?: boolean, has_more?: boolean): void {
+    this.chatStore.addBotMessage({ content, sessionId, allow_feedback, offer_related, is_followup, has_more });
   }
 
   addTypingIndicator(): void {

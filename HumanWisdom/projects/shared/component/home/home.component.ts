@@ -56,6 +56,7 @@ export interface ContentCard {
   moduleType?: string;
   isFree?: string | number; // "0" means locked, "1" means free
   isRead?: string | number; // "0" means not read, "1" means read/completed
+  isTeenTalk?: boolean;
 }
 
 export interface ContentSection {
@@ -107,7 +108,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostBinding('class.adults-theme') get isAdultsTheme() {
     return SharedService.ProgramId == ProgramType.Adults;
   }
-
+  enableBanner: boolean = false;
   navigationItems = [];
   description: string = 'Deal with stress and anxiety. Go deeper to understand the root cause for long-term benefit.';
   isloggedIn: boolean;
@@ -147,6 +148,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private homeStateService: HomeStateService,
     private onboardingService: OnboardingService
   ) {
+ 
     this.navigationItems = SharedService.getPreferenceDataForHome();
     // Listen to hash changes dynamically
     this.hashChangeHandler = () => {
@@ -458,7 +460,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const rawType = typeof section.sectionType === 'string' ? Number(section.sectionType) : section.sectionType;
     const isVertical = rawType === 2 || rawType === 3;
 
-    const transformedCards = this.transformCards(cardsArray, sectionType);
+    const transformedCards = this.transformCards(cardsArray, sectionType, section.title);
 
     // Get viewall_Url - preserve null if explicitly set, otherwise try alternatives
     const viewallUrl = section['viewall_Url'] !== undefined
@@ -625,30 +627,44 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Transform cards based on section type
    */
-  transformCards(cards: any[], sectionType: string): ContentCard[] {
+  transformCards(cards: any[], sectionType: string, sectionTitle: string = ''): ContentCard[] {
     if (!Array.isArray(cards)) {
       return [];
     }
 
     return cards.map((card, index) => {
+      let transformedCard: ContentCard;
       switch (sectionType) {
         case 'introduction':
-          return this.transformIntroductionCard(card);
+          transformedCard = this.transformIntroductionCard(card);
+          break;
         case 'modules1':
         case 'modules2':
         case 'modules3':
-          return this.transformModuleCard(card);
+          transformedCard = this.transformModuleCard(card);
+          break;
         case 'blogs':
-          return this.transformBlogCard(card);
+          transformedCard = this.transformBlogCard(card);
+          break;
         case 'stories':
-          return this.transformStoryCard(card);
+          transformedCard = this.transformStoryCard(card);
+          break;
         case 'podcast':
-          return this.transformPodcastCard(card);
+          transformedCard = this.transformPodcastCard(card);
+          break;
         case 'shorts':
-          return this.transformShortCard(card);
+          transformedCard = this.transformShortCard(card);
+          break;
         default:
-          return this.transformGenericCard(card);
+          transformedCard = this.transformGenericCard(card);
+          break;
       }
+
+      if (sectionTitle && sectionTitle.trim().toLowerCase().includes('teen talk')) {
+        transformedCard.isTeenTalk = true;
+      }
+
+      return transformedCard;
     });
   }
 
@@ -750,7 +766,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   transformGenericCard(card: any): ContentCard {
     return {
-      id: card.id || card.title || `card-${Date.now()}`,
+      id: card.RowID?.toString() || card.id?.toString() || card.title || `card-${Date.now()}`,
       imageUrl: card.imgUrl || card.image_path || card.imageUrl || card.ImagePath || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || card.subtitle || '',
@@ -918,6 +934,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private trackCardClick(card: ContentCard): void {
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
+
+    if (card.isTeenTalk || (card.path && (card.path.includes('teen_talk') || card.path.includes('teen-talk')))) {
+      const id = this.extractNumericId(card.id) ?? this.extractShortIdFromUrl(card.path) ?? this.extractIdFromPath(card.path);
+      if (id != null) {
+        this.commonService.clickTeenTalk(id).subscribe({ next: () => { }, error: () => { } });
+      }
+      return;
+    }
+
     if (!type) return;
     if (type.includes('PODCAST')) {
       const id = this.extractNumericId(card.id) ?? this.extractIdFromPath(card.path);
@@ -1016,7 +1041,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       const n = Number(extMatch[1]);
       return Number.isFinite(n) ? n : null;
     }
-    const parts = filename.split('.').reverse();
+    const parts = filename.split(/[\.\-_]/).reverse();
     for (const part of parts) {
       const n = Number(part);
       if (!Number.isNaN(n) && Number.isFinite(n)) {
@@ -1476,6 +1501,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
       }
+      // Toggle body scroll based on search result visibility
+      if (this.searchResult.length > 0) {
+        this.toggleBodyScroll(true);
+      } else {
+        this.toggleBodyScroll(false);
+      }
     }
   }
 
@@ -1493,15 +1524,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
       );
     }
+    if (this.searchResult.length > 0) {
+      this.toggleBodyScroll(true);
+    }
   }
 
   /**
    * Handle focus out event - hide dropdown after delay
    */
   onFocusOutEvent(): void {
-    setTimeout(() => {
-      this.searchResult = [];
-    }, 400);
+    // Removed auto-close to keep screen open until explicit close functionality is used
   }
 
   /**
@@ -1521,6 +1553,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   searchEvent(moduleName: string): void {
     this.searchinp = moduleName;
     this.searchResult = [];
+    this.toggleBodyScroll(false);
     this.getinp(moduleName);
   }
 
@@ -1530,6 +1563,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   clearSearch(): void {
     this.searchinp = '';
     this.searchResult = [];
+    this.toggleBodyScroll(false);
+  }
+
+  toggleBodyScroll(lock: boolean): void {
+    if (lock) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   /**

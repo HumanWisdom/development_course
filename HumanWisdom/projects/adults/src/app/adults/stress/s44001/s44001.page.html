@@ -7,28 +7,43 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="txt_comparison">
-          70-80% of us report being stressed in most surveys, and long-term stress has been shown to damage our health in many ways. We would not put up with a toothache, so why do we accept stress as a part of life? In this module we explore the root causes of stress, so we can avoid it and more easily overcome it, and discover a way of living without it.
+          70-80% of us report being stressed in most surveys, and long-term stress has been shown to damage our health
+          in many ways. We would not put up with a toothache, so why do we accept stress as a part of life? In this
+          module we explore the root causes of stress, so we can avoid it and more easily overcome it, and discover a
+          way of living without it.
         </h4>
       </div>
     </div>
 
-    <div class="row center_flex">
+    <div class="row center_flex mt40px">
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-        <a  (click)="Resume('/adults/stress/');"  *ngIf="lastvisited">
+        <a routerLink="/adults/stress/s44002">
+          <button type="button" class="btn mb10pxi btn_begin_here w100" data-dismiss="modal">Begin here</button>
+        </a>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a (click)="Resume('/adults/stress/');" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-        <h4 class="title_content">
-          CONTENTS
-        </h4>
+    <!-- accordion header -->
+    <div class="row mt40px clickable" (click)="toggleContents()">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+        <div class="col-md-11 col-sm-11 col-xs-11 p0">
+          <h4 class="title_content mtb0px">
+            Contents
+          </h4>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
+          <i class="fa" [ngClass]="isContentsOpen ? 'fa-angle-up' : 'fa-angle-down'"></i>
+        </div>
       </div>
     </div>
 
-    <div class="toc_adiv">
+    <!-- accordion body -->
+    <div class="toc_adiv" *ngIf="isContentsOpen">
       <a routerLink="/adults/stress/s44002">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -75,7 +90,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -105,7 +121,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -135,7 +152,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -166,7 +184,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -196,7 +215,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -226,7 +246,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -240,8 +261,10 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
               <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/01.webp" alt="" class="p0 session_img">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt="" class="p0 session_img_play">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/01.webp" alt=""
+                  class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt=""
+                  class="p0 session_img_play">
               </div>
 
               <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
@@ -264,7 +287,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -279,8 +303,10 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
               <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/22.webp" alt="" class="p0 session_img">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt="" class="p0 session_img_play">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/22.webp" alt=""
+                  class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt=""
+                  class="p0 session_img_play">
               </div>
 
               <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
@@ -297,13 +323,14 @@
 
             </div>
 
-             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_000000 fs_20px"></i>
             </div>
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -315,61 +342,59 @@
                   MediaUrl: 'https://d1tenzemoxuh75.cloudfront.net/soundscapes/1.mp3',
                   SoundscapeID: 1,
                   Title: 'Morning Chime' })">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
-        
-        <!-- session image -->
-        <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/soundscapes/01.webp" 
-               alt="Morning Chime" 
-               class="p0 session_img">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" 
-               alt="Play" 
-               class="p0 session_img_play">
-        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
 
-        <!-- session content -->
-        <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
-          <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
-            Session #10
-          </h4>
-          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
-            Morning Chime
-          </h4>
-          <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
-            30:00
-          </h4>
-        </div>
+              <!-- session image -->
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/soundscapes/01.webp" alt="Morning Chime"
+                  class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt="Play"
+                  class="p0 session_img_play">
+              </div>
 
-      </div>
+              <!-- session content -->
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                  Session #10
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+                  Morning Chime
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                  30:00
+                </h4>
+              </div>
 
-      <!-- right side arrow / lock -->
-      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
-        <i class="fa fa-angle-right fc_000000 fs_20px"></i>
-      </div>
+            </div>
 
-      <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+            <!-- right side arrow / lock -->
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
       
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" 
              class="img-responsive">
         
       </div> -->
-    </div>
-  </div>
+          </div>
+        </div>
       </a>
 
-    </div>
-
-    <!-- hr -->
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-        <hr class="hr_style_v3_01">
+      <!-- hr -->
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <hr class="hr_style_v3_01">
+        </div>
       </div>
-    </div>
-    <!-- /hr -->
+      <!-- /hr -->
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories" *ngIf="stories.length !== 0"  ></app-related-wisdom-stories-tiles>
+      <app-related-wisdom-stories-tiles [wisdomstories]="stories"
+        *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
+    </div>
 
   </form>
 
