@@ -13,6 +13,11 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
   @Input()
   wisdomstories = [];
 
+  @Input()
+  isAccordion = false;
+
+  isOpen = false;
+
   wisdomstoriesbottom = [];
 
   enablewisdomstory = false;
@@ -82,6 +87,10 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
       this.enable_view_more_less = false;
       this.view_more_less = "View More";
     }
+  }
+
+  toggleAccordion() {
+    this.isOpen = !this.isOpen;
   }
 
   ngOnDestroy() {
