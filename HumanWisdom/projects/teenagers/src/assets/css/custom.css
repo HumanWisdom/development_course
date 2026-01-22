@@ -29037,7 +29037,7 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
   font-weight: 600;
   line-height: 150%;
   text-align: center;
-  color: #EE9596;
+  color: #EE9596 !important;
 }
 
 .cfa_a1_01 {
@@ -32998,7 +32998,7 @@ body * {
   align-items: center;
   justify-content: center;
   margin: 0;
-  color: #EE9596;
+  color: #EE9596 !important;
 }
 
 .btn_prev_v3:hover {
@@ -34762,7 +34762,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   z-index: 999;
   background: #183c79 !important;
   height: 70px;
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }

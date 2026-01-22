@@ -8,9 +8,11 @@ background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
 
 }
 #cgqtns .carousel-indicators{
-    bottom: 3% !important;
+    bottom: 0% !important;
 }
-
+.fctray_gqtns {
+  padding: 20px !important;
+}
 .ph_ffffff_0_5::placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
   opacity: 1; 
@@ -18,4 +20,8 @@ background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
 
 .ph_ffffff_0_5 {
   color: #ffffff !important;
+}
+
+.fctray_gqtns {
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
