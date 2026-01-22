@@ -110,12 +110,12 @@ require_once('./includes/security_config.php');
           <!-- <iframe src="https://youtube.com/embed/Zv5SN0TfnXQ?si=mP01jfutmc0ue80h?rel=0&loop=1&autoplay=1&mute=1&playlist=Zv5SN0TfnXQ&loop=1" class="cvideo_a" allow="autoplay"></iframe>  -->
           <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Main+app+1.webp" class="img-responsive desktop" alt="Teenagers" loading=lazy>  -->
           <img style="width:415px;height:525px;"
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannerind.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/website/bannerind.svg"
             class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
 
 
            <img style="width:237px;height:300px"
-            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannermobile11.svg"
+            src="https://d1tenzemoxuh75.cloudfront.net/website/bannermobile11.svg"
             class="img-responsive w100p display_d_none m-popup m-auto" loading="lazy" alt="performance">
         </div>
         <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-12 p0 cml40px " data-aos="fade-up"
@@ -1692,14 +1692,14 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 NEW!
               </h2> -->
 
-              <h2 class="mb0px fs_24px fw_600 lh_120p">
+              <h2 class="mb0px fs_24px fw_600 lh_120p fc_803358">
                 HappierMe for Teenagers
               </h2>
 
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg"
                 class="img-responsive mobile" alt="app screen" loading=lazy>
 
-              <h3 class="mt15px mb10px fs_36px fw_600 lh_150p fc_000000 f_30px">
+              <h3 class="mt15px mb10px fs_36px fw_600 lh_130p fc_000000 f_30px">
                 Help teenagers feel happier and succeed in life
               </h3>
 
@@ -2296,7 +2296,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
 
                     <video controls playinline
-                      poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/tools.png"
+                      poster="https://d1tenzemoxuh75.cloudfront.net/website/svgs/tools.svg"
                       controlsList="nodownload" class="cvideo tool_video m-cvideo">
                       <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                     </video>
