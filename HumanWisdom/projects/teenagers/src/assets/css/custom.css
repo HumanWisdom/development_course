@@ -29201,7 +29201,8 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 .main_container {
   /* background: black !important; */
   padding: 0 !important;
-  background: #f9e9df !important;
+  /* background: #f9e9df !important; */
+  background: #4267A5 !important;
 }
 
 .sub_container {

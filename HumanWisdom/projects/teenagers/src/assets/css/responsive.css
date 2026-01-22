@@ -94,7 +94,8 @@
     .body,
     .main_container
     {
-        background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important;
+        /* background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important; */
+        background: linear-gradient(180deg, #183C79 0%, #4267A5 100%) !important;
     }
 }
 
