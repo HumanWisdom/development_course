@@ -600,8 +600,8 @@ The Founder              </h1>
                 <!-- <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66 tcenter">
               The Founder
             </h1> -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4 plr20px cpr_a" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp" class="img-responsive" alt="Dr Manoj Krishna" style="width:300px;">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4 plr20px cpr_a founder-image-container" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp" class="img-responsive founder-image" alt="Dr Manoj Krishna" style="width:300px;">
                 </div>
 
         <!-- <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
