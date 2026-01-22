@@ -1370,6 +1370,33 @@
     padding-left: 4px !important;
     padding-right: 4px !important;
   }
+
+  /* About Us - Founder section - image should come ABOVE text on mobile (normal order, not reversed) */
+  .section-header .flex_block,
+  .section-header .row .flex_block {
+    flex-direction: column !important;
+  }
+
+  /* About Us - Content Experts section - center align names on mobile */
+  .div_inspire .tleft {
+    text-align: center !important;
+  }
+
+  /* About Us - Founder image - 150px x 150px and centered on mobile */
+  .founder-image-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  .founder-image {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 820px) {
