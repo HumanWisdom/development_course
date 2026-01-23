@@ -3,75 +3,43 @@
   display: flex;
   flex-direction: column;
   margin-top: 12px;
-  gap: 0;
+  gap: 8px;
   
   .suggestions-instruction {
-    font-size: 13px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.6);
     margin-bottom: 10px;
-    line-height: 1.4;
   }
   
   .suggestions-list {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 8px;
   }
 }
 
 .suggestion-button{
-    background: transparent;
-    border-radius: 0;
-    padding: 10px 0;
+    background: white;
+    border-radius: 10px;
+    padding: 10px 15px;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-color: white;
     text-align: left;
-    font-weight: 400;
-    box-shadow: none;
+    font-weight: 600;
+    box-shadow: 1px 1px 2px 0px #0000001A;
     margin: 0;
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 14px;
     color: #000000;
     pointer-events: auto;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    line-height: 1.5;
-    width: 100%;
-    
-    &:first-child {
-      padding-top: 4px;
-    }
-    
-    &:last-child {
-      border-bottom: none;
-      padding-bottom: 4px;
-    }
-    
+
     &:hover {
-      background: rgba(0, 0, 0, 0.03);
-      transform: none;
-      box-shadow: none;
+      background: #f0f0f0;
+      transform: translateY(-1px);
+      box-shadow: 2px 2px 4px 0px #0000001A;
     }
-    
+
     &:active {
-      transform: none;
-      background: rgba(0, 0, 0, 0.05);
-    }
-    
-    .suggestion-number {
-      font-weight: 400;
-      color: rgba(0, 0, 0, 0.6);
-      flex-shrink: 0;
-      min-width: 20px;
-    }
-    
-    .suggestion-text {
-      font-weight: 400;
-      color: rgba(0, 0, 0, 0.6);
-      flex: 1;
+      transform: translateY(0);
     }
 }
 
@@ -799,29 +767,24 @@
     max-width: 285px; // Match bot message width
     display: block;
     padding: 10px 16px;
-    border: 2px solid #05BBBF;
+    border: 0px solid white;
     border-radius: 8px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
     pointer-events: auto;
     background: white;
-    color: #05BBBF;
     box-shadow: none;
     text-align: center;
-    
-    &:hover {
-      background: rgba(5, 187, 191, 0.05);
-      border-color: #04a8ac;
-      color: #04a8ac;
-      transform: none;
-      box-shadow: none;
+        box-shadow: 1px 1px 2px 0px #0000001A;
+      &:hover {
+      background: #f0f0f0;
+      transform: translateY(-1px);
     }
     
     &:active {
       transform: none;
-      background: rgba(5, 187, 191, 0.1);
     }
   }
 }
