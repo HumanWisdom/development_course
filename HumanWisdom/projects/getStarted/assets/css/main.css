@@ -86,7 +86,7 @@ h6 {
 }
 
 .land-happierMe-gap {
-  column-gap: 4.8rem;
+  column-gap: 3.8rem;
 }
 
 .land-iframe-sec {
@@ -3558,7 +3558,7 @@ animation-name: slideInRight;
 }
 
 .dfooter {
-  background: #CB6171;
+  background: #D7586B;
   padding: 60px 0;
   margin: 100px 0 0 0;
 }
@@ -5734,4 +5734,7 @@ button {
     filter: none !important;
     -webkit-filter: none !important;
   }
+}
+.fc_clr{
+  color:#803358 !important;
 }
