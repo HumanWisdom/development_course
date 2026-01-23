@@ -1740,14 +1740,14 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 NEW!
               </h2> -->
 
-              <h2 class="mb0px fs_24px fw_600 lh_120p fc_803358">
+              <h2 class="mb0px fs_24px fw_600 lh_120p">
                 HappierMe for Teenagers
               </h2>
 
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg"
                 class="img-responsive mobile" alt="app screen" loading=lazy>
 
-              <h3 class="mt15px mb10px fs_36px fw_600 lh_130p fc_000000 f_30px">
+              <h3 class="mt15px mb10px fs_36px fw_600 lh_150p fc_000000 f_30px mobile-fs-18px">
                 Help teenagers feel happier and succeed in life
               </h3>
 
@@ -2344,7 +2344,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
 
                     <video controls playinline
-                      poster="https://d1tenzemoxuh75.cloudfront.net/website/svgs/tools.svg"
+                      poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/tools.png"
                       controlsList="nodownload" class="cvideo tool_video m-cvideo">
                       <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                     </video>

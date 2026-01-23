@@ -130,14 +130,14 @@
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                         <a>
                           <button (click)="forward()" *ngIf="counter!=numSlides;else savetoDiary" type="button"
-                            class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff">
+                            class="btn btn_next_v3 fs_15px fw_600 lh_22px" [ngClass]="isAdults ? 'fc_ffffff' : ''">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
                             <!-- Save to diary -->
                           </button>
                           <ng-template #savetoDiary>
-                            <button type="button" (click)="SaveBtn()"
-                              class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff">
+                            <button type="button" (click)="SaveBtn()" class="btn btn_next_v3 fs_15px fw_600 lh_22px"
+                              [ngClass]="isAdults ? 'fc_ffffff' : ''">
                               Save to Diary
                               <!-- <i class="fs_16px ml10px"></i> -->
                               <!-- Save to diary -->
