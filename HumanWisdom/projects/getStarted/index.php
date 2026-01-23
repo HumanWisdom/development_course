@@ -1747,7 +1747,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg"
                 class="img-responsive mobile" alt="app screen" loading=lazy>
 
-              <h3 class="mt15px mb10px fs_36px fw_600 lh_150p fc_000000 f_30px mobile-fs-18px">
+              <h3 class="mt15px mb10px fs_36px fw_600 fc_clr f_30px mobile-fs-18px lh_130p">
                 Help teenagers feel happier and succeed in life
               </h3>
 
@@ -2344,7 +2344,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
 
                     <video controls playinline
-                      poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/tools.png"
+                      poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/tools.svg"
                       controlsList="nodownload" class="cvideo tool_video m-cvideo">
                       <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                     </video>
