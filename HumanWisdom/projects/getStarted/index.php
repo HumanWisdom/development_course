@@ -1740,14 +1740,14 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 NEW!
               </h2> -->
 
-              <h2 class="mb0px fs_24px fw_600 lh_120p">
+              <h2 class="mb0px fs_24px fw_600 lh_120p fc_clr">
                 HappierMe for Teenagers
               </h2>
 
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg"
                 class="img-responsive mobile" alt="app screen" loading=lazy>
 
-              <h3 class="mt15px mb10px fs_36px fw_600 fc_clr f_30px mobile-fs-18px lh_130p">
+              <h3 class="mt15px mb10px fs_36px fw_600 f_30px fc_000000 mobile-fs-18px lh_130p">
                 Help teenagers feel happier and succeed in life
               </h3>
 
