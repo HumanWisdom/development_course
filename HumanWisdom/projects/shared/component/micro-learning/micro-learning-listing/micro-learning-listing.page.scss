@@ -1,3 +1,88 @@
+
+
+
+.btn_podcast .btn {
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0 10px 0 0;
+  padding: 9px 10px;
+  height: 36px;
+  box-shadow: unset;
+  transition: all 0.3s ease;
+}
+.btndef{
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0 10px 0 0;
+    padding: 9px 10px;
+    height: 36px;
+    box-shadow: unset;
+    transition: all 0.3s ease;
+    border: 1px solid #FFD889;
+    
+}
+// .session_img_play{
+//   right: 18px !important;
+// }
+.btn_podcast .btn.active,
+.btn_podcast .btn:focus {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #000 !important;
+  filter: unset !important;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  border-color: transparent !important;
+}
+.btn_podcast_t .btn.active,
+.btn_podcast_t .btn.focus {
+  background: #ffffff !important;
+  color: #000 !important;
+}
+.btn_podcast .btn:not(.active):not(#voices) {
+  background: #ffd889;
+  color: #000;
+}
+
+#voices {
+  background-color: #ed7d6f;
+  color: #fff;
+}
+/* Adults only scrollbar styling */
+.adults-scroll .odiv,
+.adults-scroll .odiv_pathway,
+.adults-scroll .odiv_wfgi,
+.adults-scroll .ae_days {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #eea170 #f6d1b7;
+}
+
+.adults-scroll .odiv:not(:hover),
+.adults-scroll .odiv_pathway:not(:hover),
+.adults-scroll .odiv_wfgi:not(:hover),
+.adults-scroll .ae_days:not(:hover) {
+  scrollbar-color: transparent transparent;
+}
+
+.adults-scroll .odiv::-webkit-scrollbar,
+.adults-scroll .odiv_pathway::-webkit-scrollbar,
+.adults-scroll .odiv_wfgi::-webkit-scrollbar,
+.adults-scroll .ae_days::-webkit-scrollbar {
+  height: 2px;
+  border-radius: 6px;
+}
+
+.adults-scroll .odiv::-webkit-scrollbar-thumb,
+.adults-scroll .odiv_pathway::-webkit-scrollbar-thumb,
+.adults-scroll .odiv_wfgi::-webkit-scrollbar-thumb,
+.adults-scroll .ae_days::-webkit-scrollbar-thumb {
+  background-color: #eea170;
+  border-radius: 6px;
+}
+
 // Minimal SCSS based on wisdom-shorts
 .mc_01_v3_ext {
     padding-top: 0px !important;
@@ -29,4 +114,5 @@
         margin-bottom: 20px;
         cursor: pointer;
     }
+    
 }

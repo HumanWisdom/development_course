@@ -35,6 +35,7 @@ export class S44001Page implements OnInit,OnDestroy {
   isSubscriber = false;
   config: any;
   isContentsOpen = false;
+  isRelatedOpen = false;
 
   constructor(
     private router: Router,
@@ -210,6 +211,10 @@ export class S44001Page implements OnInit,OnDestroy {
 
   toggleContents() {
     this.isContentsOpen = !this.isContentsOpen;
+  }
+
+  toggleRelated() {
+    this.isRelatedOpen = !this.isRelatedOpen;
   }
 
   routeResume() {

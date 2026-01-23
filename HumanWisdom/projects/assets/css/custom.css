@@ -35464,7 +35464,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background: #FFE8BB;
   min-height: 130px;
   /* margin-bottom: 10px; */
-  padding: 3px 4px;
+  padding: 3px 15px;
   /* margin: 0 10px 10px 10px; */
 }
 
