@@ -1,9 +1,10 @@
 <app-course-header [bg_tn]="'bg_stake'" [bg]="'bg_FFF7E6'"></app-course-header>
 
-<div class="right_col mc_01_v3" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+<div class="right_col mc_01_v3">
+    
     <div class="cw100p">
         <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw learning">
 
                 <div [ngSwitch]="contentData.layout">
 
@@ -16,10 +17,10 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h3 class="mt0px fs_24px fw_600 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                <h3 class="mt0px fs_36px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                                     {{contentData.title}}
                                 </h3>
-                                <p class="fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
+                                <p class="fs_18px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
                                     {{contentData.description}}
                                 </p>
                             </div>
@@ -30,7 +31,7 @@
                     <div *ngSwitchCase="2">
                         <div class="row mb10px">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h3 class="mt0px fs_24px fw_600 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                <h3 class="mt0px fs_36px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                                     {{contentData.title}}
                                 </h3>
                             </div>
@@ -42,7 +43,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <p class="fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
+                                <p class="fs_18px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
                                     {{contentData.description}}
                                 </p>
                             </div>
@@ -53,10 +54,10 @@
                     <div *ngSwitchCase="3">
                         <div class="row mb10px">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h3 class="mt0px fs_24px fw_600 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                <h3 class="mt0px fs_36px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                                     {{contentData.title}}
                                 </h3>
-                                <p class="fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
+                                <p class="fs_18px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
                                     {{contentData.description}}
                                 </p>
                             </div>

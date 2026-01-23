@@ -3,6 +3,18 @@
     padding-top: 80px;
     padding-bottom: 80px;
 }
+.learning {
+    /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png); */
+    background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/micro.png');
+     /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* text-align: center; */
+     padding: 40px 30px;
+     background-attachment: fixed;
+  background-size: 100% 100%;
+    //   padding-top: 13rem !important;
+}
 
 .bg_stake {
     background: #254170 !important;
@@ -20,6 +32,8 @@
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    height: 180px;
+    object-fit: cover;
 }
 
 h3 {
@@ -30,3 +44,5 @@ p {
     margin-top: 15px;
     line-height: 1.6;
 }
+
+
