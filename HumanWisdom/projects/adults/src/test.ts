@@ -14,3 +14,11 @@ getTestBed().initTestEnvironment(
     teardown: { destroyAfterEach: false }
 }
 );
+
+// Then we find all the tests from src and shared folders
+const contextSrc = require.context('./', true, /\.spec\.ts$/);
+const contextShared = require.context('../../shared/', true, /\.spec\.ts$/);
+
+// And load the modules.
+contextSrc.keys().map(contextSrc);
+contextShared.keys().map(contextShared);
