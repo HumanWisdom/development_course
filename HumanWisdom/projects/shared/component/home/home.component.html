@@ -47,12 +47,12 @@
                       [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
                       (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(searchinp)"
                       style="border-radius: 100px !important;">
-                    <span *ngIf="searchResult.length === 0"
+                    <span *ngIf="searchResult.length == 0"
                       class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
                     <span *ngIf="searchResult.length > 0" (click)="clearSearch()"
                       class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
                       aria-hidden="true"></span>
-                    <span *ngIf="searchinp !== ''" (click)="clearSearch()"
+                    <span *ngIf="searchinp!=''" (click)="clearSearch()"
                       class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
                       aria-hidden="true"></span>
                   </div>
@@ -80,7 +80,7 @@
                     </button>
                     <div class="nav-menu" #navMenu>
                       <ng-container *ngFor="let item of personalisedList">
-                        <a *ngIf="item.id !== '999'" class="nav-item" [class.nav-item--selected]="item.active"
+                        <a *ngIf="item.id!='999'" class="nav-item" [class.nav-item--selected]="item.active"
                           [class.nav-item--unselected]="!item.active" (click)="onNavigationClick(item)">
                           <span [style.font-weight]="item.active ? 'bold' : 'normal'">{{ item.displayName }}</span>
                         </a>
@@ -100,8 +100,8 @@
               <!-- Wisdom Exercise Component Embedding -->
               <div class="row" *ngIf="showWisdomExercise">
                 <div class="col-12 p-0">
-                  <app-wisdom-exercise-s75001 *ngIf="preference === '19'"></app-wisdom-exercise-s75001>
-                  <HumanWisdom-s157001 [isHome]="true" *ngIf="preference === '20'"></HumanWisdom-s157001>
+                  <app-wisdom-exercise-s75001 *ngIf="preference == '19'"></app-wisdom-exercise-s75001>
+                  <HumanWisdom-s157001 [isHome]="true" *ngIf="preference == '20'"></HumanWisdom-s157001>
                 </div>
 
               </div>
@@ -272,7 +272,7 @@
                         <div class="d-flex justify-content-between align-items-center section-header rounded-top  "
                           [class.long-term-solutions-header]="section.title === 'Long term solutions'"
                           [style.margin-bottom.px]="section.isExpanded ? 0 : 20"
-                          [style.margin-top.px]="section.isExpanded ? (section.id === '3' || section.id === '4') ? 0: 10 : (section.id === '3' || section.id === '4') ? 20 :20"
+                          [style.margin-top.px]="section.isExpanded ? (section.id == 3 || section.id == 4) ? 0: 10 : (section.id == 3 || section.id == 4) ? 20 :20"
                           (click)="onSectionToggle(section)" (keydown.enter)="onSectionToggle(section)"
                           (keydown.space)="onSectionToggle(section)" tabindex="0" role="button"
                           [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id">
