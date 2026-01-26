@@ -244,8 +244,8 @@
           "options": {
             "main": "projects/adults/src/test.ts",
             "polyfills": "projects/adults/src/polyfills.ts",
-            "tsConfig": "projects/adults/src/tsconfig.spec.json",
-            "karmaConfig": "projects/adults/src/karma.conf.js",
+            "tsConfig": "projects/adults/tsconfig.spec.json",
+            "karmaConfig": "projects/adults/karma.conf.js",
             "styles": [],
             "scripts": [],
             "assets": [
