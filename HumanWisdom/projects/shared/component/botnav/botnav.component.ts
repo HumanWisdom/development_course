@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 
@@ -6,11 +6,9 @@ import {Location } from '@angular/common'
   selector: 'app-botnav',
   templateUrl: './botnav.component.html',
 })
-export class BotnavComponent implements OnInit {
+export class BotnavComponent {
 
-  constructor(private router: Router, private location:Location) { }
-
-  ngOnInit() {}
+  constructor(private readonly router: Router, private readonly location:Location) { }
 
   routeJournal(){
     this.router.navigate(['/adults/journal'])
