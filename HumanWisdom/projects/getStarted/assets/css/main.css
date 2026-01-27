@@ -332,11 +332,17 @@ label>input[type="checkbox"] {
   display: none;
 }
 
-label.chkb_post_anonymously>input[type="checkbox"]:checked+*::before {
+/* label.chkb_post_anonymously>input[type="checkbox"]:checked+*::before {
   background: #E58D82 url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_white.svg) 50% no-repeat;
   border-color: unset;
   border-radius: 4px;
   border: 0;
+} */
+
+label.chkb_post_anonymously > input[type="checkbox"]:checked + *::before {
+  background: #E58D82 url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_white.svg) 50% no-repeat;
+  border: 0;
+  border-radius: 4px;
 }
 
 label.chkb_post_anonymously>input[type="checkbox"]+*::before {
@@ -939,11 +945,10 @@ label>input[type="checkbox"]+*::before {
   position: absolute;
   width: 120px;
   height: 120px;
+  animation: pulsate-btn 2s infinite;
   animation-delay: 0s;
-  animation: pulsate-btn 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
+  animation-fill-mode: forwards;
+  animation-timing-function: steps(10);
   opacity: 1;
   border-radius: 50%;
   border: 5px solid rgba(206, 18, 18, 0.7);
@@ -1709,7 +1714,7 @@ div.scroll-container img {
   margin: auto;
   position: fixed;
   top: 0;
-  boxshadow: 10px 10px 10px 10px black;
+  box-shadow: 10px 10px 10px 10px black;
 }
 
 .popup-bg {
@@ -5495,9 +5500,11 @@ input[type="password" i]::-ms-reveal {
 
     width: 104%;
   }
+
   .web_home_divcircleolly {
     padding-top: 34px !important;
   }
+
   .land-happierMe-section {
     padding-bottom: 12px !important;
   }
@@ -5735,6 +5742,7 @@ button {
     -webkit-filter: none !important;
   }
 }
-.fc_clr{
-  color:#803358 !important;
+
+.fc_clr {
+  color: #803358 !important;
 }

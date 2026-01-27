@@ -9,7 +9,7 @@ import { ProgramType } from '../../models/program-model';
   templateUrl: './content-card.component.html',
   styleUrls: ['./content-card.component.scss', './content-card-teenagers.component.scss']
 })
-export class ContentCardComponent {
+export class ContentCardComponent implements OnInit {
   @Input() card: ContentCard;
   @Output() cardClick = new EventEmitter<ContentCard>();
   isAdults = false;

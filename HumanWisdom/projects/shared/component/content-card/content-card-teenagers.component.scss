@@ -11,7 +11,6 @@
 .custom-box-text-container {
   width: 150;
   height: 55;
-  angle: 0 deg;
   opacity: 1;
   gap: 2px;
 }
@@ -38,14 +37,13 @@
 
 .custom-box-text-container-title {
   font-family: Poppins;
-font-weight: 500;
-font-size: 15px;
-leading-trim: NONE;
-line-height: 130%;
-letter-spacing: 0px;
-color: #ffffff;
-width: 150px;
-height:auto;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 130%;
+  letter-spacing: 0px;
+  color: #ffffff;
+  width: 150px;
+  height:auto;
 }
 
 
@@ -58,9 +56,8 @@ height:auto;
 .custom-box-text-container-mediaType {
   font-family: Poppins;
   font-weight: 400;
-  font-style: Regular;
+  font-style: normal;
   font-size: 10px;
-  leading-trim: NONE;
   line-height: 100%;
   letter-spacing: 0px;
   text-transform: uppercase;
