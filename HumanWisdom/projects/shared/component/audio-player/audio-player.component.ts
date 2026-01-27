@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 
@@ -11,6 +11,7 @@ export class AudioPlayerComponent implements OnInit  {
 
   yellow="#FFC455"
   @Input() audioLink: string;
+  @ViewChild('audio') audio: ElementRef;
   isAdults = true;
   constructor() {}
 
