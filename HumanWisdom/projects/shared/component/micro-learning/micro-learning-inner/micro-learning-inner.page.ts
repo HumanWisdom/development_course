@@ -53,6 +53,52 @@ export class MicroLearningInnerPage implements OnInit {
         layout: 2 // Image Center
       };
     }
+
+    if(this.contentId == '1') {
+      this.contentData = {
+        title: 'Wisdom for Everyday Life',
+        description: 'Micro-learning is about taking small steps every day towards a bigger understanding of yourself. It is not about speed, but about depth of reflection.',
+        imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp',
+        layout: 1 // Image Top
+      };
+    } else {
+      this.contentData = {
+        title: 'The Art of Noticing',
+        description: 'Notice your thoughts as they arise. Don\'t judge them, just observe. This simple practice can change your relationship with your mind.',
+        imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp',
+        layout: 2 // Image Center
+      };
+    }
+    if(this.contentId == '1') {
+      this.contentData = {
+        title: 'Wisdom for Everyday Life',
+        description: 'Micro-learning is about taking small steps every day towards a bigger understanding of yourself. It is not about speed, but about depth of reflection.',
+        imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp',
+        layout: 1 // Image Top
+      };
+    } else {
+      this.contentData = {
+        title: 'The Art of Noticing',
+        description: 'Notice your thoughts as they arise. Don\'t judge them, just observe. This simple practice can change your relationship with your mind.',
+        imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp',
+        layout: 2 // Image Center
+      };
+    }
+    if(this.contentId == '1') {
+      this.contentData = {
+        title: 'Wisdom for Everyday Life',
+        description: 'Micro-learning is about taking small steps every day towards a bigger understanding of yourself. It is not about speed, but about depth of reflection.',
+        imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp',
+        layout: 1 // Image Top
+      };
+    } else {
+      this.contentData = {
+        title: 'The Art of Noticing',
+        description: 'Notice your thoughts as they arise. Don\'t judge them, just observe. This simple practice can change your relationship with your mind.',
+        imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp',
+        layout: 2 // Image Center
+      };
+    }
   }
 
   goBack() {

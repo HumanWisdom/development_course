@@ -686,7 +686,8 @@ Now with Olly AI              </h2>
               </h2> -->
 
               <h2 class="mb0px fs_42px fw_600 lh_140p fc_000000">
-Introducing Olly AI, <br/>your personal guide inside HappierMe.             </h2>
+Introducing Olly AI,
+<br/>your personal guide inside HappierMe.             </h2>
 
               <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg" class="img-responsive mobile" alt="app screen" loading=lazy> -->
 

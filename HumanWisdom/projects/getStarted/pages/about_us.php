@@ -1130,9 +1130,189 @@ Executive and leadership coach, based in Boston, USA               </h4>
              
             </div>
             
+            
+            
              
           </div>
         </div>
+
+         <div class="row center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_inspire">
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1000">
+             
+            <a href="https://www.linkedin.com/in/jo-thackwray-520b3279/">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+Jo Thackwray                 </h6>
+                </div>
+              </div>
+</a>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+coach and wellbeing advocate, based in North Yorkshire, England            </h4>
+                </div>
+              </div>
+             
+            </div>
+             
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1100">
+                          <a href="https://www.linkedin.com/in/stevetwynham">
+
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+                  Steve Twynham
+                  </h6>
+                </div>
+              </div>
+</a>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+radio broadcaster and empowerment coach, based in England                 </h4>
+                </div>
+              </div>
+             
+            </div>
+             
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1200">
+                         <a href="https://www.linkedin.com/in/mike-butterwick-cbe/">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+                    Mike Butterick CBE
+                  </h6>
+                </div>
+              </div>
+</a>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+Strategic leader, Changemaker, Former British Army, England               </h4>
+                </div>
+              </div>
+             
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1300">
+             
+  <a href="https://www.linkedin.com/in/mala-hemnani/">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+Mala Hemnani               </h6>
+                </div>
+              </div>
+              </a>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+life and relationship coach based in Mumbai, India                 </h4>
+                </div>
+              </div>
+             
+            </div>
+            
+
+          </div>
+        </div>
+             </a>
+              <div class="row center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_inspire">
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1000">
+             
+            <a href="https://www.linkedin.com/in/johnykjoseph-coach/">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+Johny Joseph                </h6>
+                </div>
+              </div>
+</a>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+executive life coach, based in Bengaluru, India
+              </h4>
+                </div>
+              </div>
+             
+            </div>
+             
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1100">
+                          <a href="https://www.linkedin.com/in/lynne-staley-a0b7aba/">
+
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+                  Lynne Staley
+                  </h6>
+                </div>
+              </div>
+</a>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+grief, loss and life coach based in Illinois, USA.                 </h4>
+                </div>
+              </div>
+             
+            </div>
+             
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1200">
+                         <a href="https://voiceyoga.co.uk">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+                   Olivia Preye
+                  </h6>
+                </div>
+              </div>
+</a>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+meditation and yoga teacher, based in England               </h4>
+                </div>
+              </div>
+             
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1300">
+             
+  <a href="https://www.linkedin.com/in/kate-o-sullivan-bem-1241081/">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+Kate O’Sullivan               </h6>
+                </div>
+              </div>
+              </a>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+executive and sports coach, based in the North of England                </h4>
+                </div>
+              </div>
+             
+            </div>
+            
+
+          </div>
+        </div>
+             </a>
       </section>
       <!-- /content -->
       <!-- /founder -->

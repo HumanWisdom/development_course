@@ -29201,8 +29201,8 @@ input[type="search"].gqtns_search::-webkit-search-cancel-button {
 .main_container {
   /* background: black !important; */
   padding: 0 !important;
-  /* background: #f9e9df !important; */
-  background: #4267A5 !important;
+   background: #f9e9df !important;
+
 }
 
 .sub_container {
@@ -37029,7 +37029,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   border-radius: 12px;
   border: 0;
   background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%);
-  padding: 20px;
+  padding: 12px;
 }
 
 .arrow-teenagers {

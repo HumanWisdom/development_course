@@ -1,4 +1,4 @@
-import { Component, OnInit,OnDestroy,Input,ViewChild,  ElementRef,AfterViewInit,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewChild, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './audio-image-overlay.component.html',
   styleUrls: ['./audio-image-overlay.component.scss'],
 })
-export class AudioImageOverlayComponent implements OnInit,AfterViewInit {
+export class AudioImageOverlayComponent implements OnInit, AfterViewInit, OnDestroy {
 
   yellow="#FFC455"
   @Input() bg: string;
@@ -34,10 +34,10 @@ enableAlert = false;
   @ViewChild('screen', { static: true }) screen: any;
 
   constructor(
-    private captureService:NgxCaptureService,
-    private service: AdultsService,
-    private router: Router,
-    private url: ActivatedRoute
+    private readonly captureService: NgxCaptureService,
+    private readonly service: AdultsService,
+    private readonly router: Router,
+    private readonly url: ActivatedRoute
   ) {
     this.url.queryParams.subscribe(params => {
       this.t = params['t'];
@@ -46,17 +46,17 @@ enableAlert = false;
 
   ngOnInit() {
     
-    var str=this.router.url
-      var lastSlash = str.lastIndexOf("/");
-       str=str.substring(lastSlash+2);
-       this.scrId=str
-       console.log("str",str,"id",this.scrId)
+    let str = this.router.url;
+    const lastSlash = str.lastIndexOf("/");
+    str = str.substring(lastSlash + 2);
+    this.scrId = str;
+    console.log("str", str, "id", this.scrId);
 
-       if ((this.loginResponse.Subscriber != 1)) {
-        if (!this.freeScreens.includes(parseInt(this.scrId))) {
-          this.interval = setInterval(() => this.reachedLimit ? null : this.checkPauseTime(), 1000);
-        }
+    if ((this.loginResponse.Subscriber != 1)) {
+      if (!this.freeScreens.includes(Number.parseInt(this.scrId))) {
+        this.interval = setInterval(() => this.reachedLimit ? null : this.checkPauseTime(), 1000);
       }
+    }
   }
 
   getTime(){

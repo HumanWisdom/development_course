@@ -1,29 +1,22 @@
-import { Component, OnInit,Input,AfterViewInit,ViewChild, } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NgxCaptureService } from 'ngx-capture';
-import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { Component, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-begin-survey',
   templateUrl: './begin-survey.component.html',
 })
-export class BeginSurveyComponent implements OnInit,AfterViewInit {
+export class BeginSurveyComponent {
   @Input() bg:string
   @Input() toc: string;
   scrId:any
   @ViewChild('screen', { static: true }) screen: any;
   pageaction = localStorage.getItem("pageaction");
   constructor(
-    private captureService:NgxCaptureService,
-    private service: AdultsService,
-    private next: ActivatedRoute,
-    private router: Router
+    private readonly router: Router
   ) { }
 
-  ngOnInit() {}
 
-  ngAfterViewInit(){
-  }
   
   goToToc(){
    this.router.navigate([this.toc])

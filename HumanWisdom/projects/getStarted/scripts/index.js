@@ -857,12 +857,12 @@ function initializeNewsletterPopup() {
         }
         sessionStorage.setItem('newsLetterOpened','true');
         
-        // Set up newsletter form handler
-        const newsLetterForm = document.getElementById("news-contact-form");
-        if (newsLetterForm) {
-            newsLetterForm.addEventListener("click", () => {
-                const email = document.getElementById("news-email").value;
-                const name = document.getElementById("news-name").value;
+        // Set up newsletter form handler for modal
+        const modalNewsLetterForm = document.getElementById("modal-news-contact-form");
+        if (modalNewsLetterForm) {
+            modalNewsLetterForm.addEventListener("click", () => {
+                const email = document.getElementById("modal-news-email").value;
+                const name = document.getElementById("modal-news-name").value;
                 const o = { Name: name, EmailID: email };
               
                 if (!(email && name && "" != email && "" != name)) {
@@ -881,8 +881,8 @@ function initializeNewsletterPopup() {
                 })
                 .then((e) => e.json())
                 .then((e) => {
-                    document.getElementById("news-email").value = "";
-                    document.getElementById("news-name").value = "";
+                    document.getElementById("modal-news-email").value = "";
+                    document.getElementById("modal-news-name").value = "";
                     alert(e?.Message ? e.Message : e);
                     
                     // Close modal after successful submission using ModalManager
@@ -1496,13 +1496,11 @@ function getIsoCode() {
     return "$" == this.pricingModel.CurSymbol ? ` (${this.pricingModel.ISOCode})` : "";
 }
 
-const newsLetterForm = document.getElementById("news-contact-form");
-newsLetterForm && newsLetterForm.addEventListener("click", () => {
-          if(document.getElementById('closebtn')){
-            document.getElementById('closebtn').click();
-          }
-          const  email = document.getElementById("news-email").value;
-          const  name = document.getElementById("news-name").value;
+// Newsletter form handler for page section
+const pageNewsLetterForm = document.getElementById("page-news-contact-form");
+pageNewsLetterForm && pageNewsLetterForm.addEventListener("click", () => {
+          const  email = document.getElementById("page-news-email").value;
+          const  name = document.getElementById("page-news-name").value;
             const o = { Name: name, EmailID: email };
           
             if (!(email && name && "" != email && "" != name)) return alert("All fields must be filled out"), !1;
@@ -1512,13 +1510,10 @@ newsLetterForm && newsLetterForm.addEventListener("click", () => {
             fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
                 .then((e) => e.json())
                 .then((e) => {
-                    (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );
-                    
-                    // Close modal using ModalManager
-                    modalManager.closeModal('product_view');
+                    (document.getElementById("page-news-email").value = ""), (document.getElementById("page-news-name").value = ""),alert( e?.Message ? e.Message : e );
                 })
                 .catch((e) => {
-                    let content = e['error']['Message'];
+                    let content = e['error'] ? e['error']['Message'] : 'An error occurred';
                     console.error("Error:", e), alert(content);
                 });
     })

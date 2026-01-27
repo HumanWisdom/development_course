@@ -99,11 +99,22 @@
     }
 }
 
+
+
+
 @media (min-width: 413px) and (max-width: 767px)
 {
     .navbar_01 
     {
         margin-top: 15.8%;
+    }
+
+    body,    
+    .body,
+    .main_container
+    {
+        /* background: linear-gradient(180deg, #834B66 0%, #120F40 100%) !important; */
+        background: linear-gradient(180deg, #183C79 0%, #4267A5 100%) !important;
     }
 }
 
