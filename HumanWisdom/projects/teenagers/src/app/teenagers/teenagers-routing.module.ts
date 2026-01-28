@@ -297,10 +297,10 @@ const routes: Routes = [
     loadChildren: () => import('../teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
   },
 
-  {
-    path: 'wisdom-exercise',
-    loadChildren: () => import('../teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
-  },
+  // {
+  //   path: 'wisdom-exercise',
+  //   loadChildren: () => import('../teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  // },
   {
     path: 'find-answers/:url',
     loadChildren: () => import('./find-answers/find-answers.module').then(m => m.FindAnswersModule)

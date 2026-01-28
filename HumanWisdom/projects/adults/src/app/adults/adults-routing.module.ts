@@ -421,10 +421,10 @@ const routes: Routes = [
     path: 'adverts',
     loadChildren: () => import('./adverts/adverts.module').then(m => m.AdvertsPageModule)
   },
-  {
-    path: 'wisdom-exercise',
-    loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
-  },
+  // {
+  //   path: 'wisdom-exercise',
+  //   loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  // },
   {
     path: 'adverts-hwp',
     loadChildren: () => import('./adverts-hwp/adverts-hwp.module').then(m => m.AdvertsHwpPageModule)
