@@ -734,6 +734,10 @@ const routes: Routes = [
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
   },
+  {
+    path: 'wisdom-exercise',
+    redirectTo:'curated/self-awareness'
+  },
 ];
 
  @NgModule({

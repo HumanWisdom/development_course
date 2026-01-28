@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'wisdom-for-workplace',
     component: CuratedRedirectComponent
   },
+   {
+    path: 'self-awareness',
+    component: CuratedRedirectComponent
+  },
   {
     path: 'wisdom-for-workplace-transcript',
     loadChildren: () => import('./wisdom-for-workplace-transcript/wisdom-for-workplace-transcript.module').then(m => m.WisdomForWorkplaceTranscriptPageModule)
