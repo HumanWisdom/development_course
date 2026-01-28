@@ -1,12 +1,10 @@
 import { Platform } from '@angular/cdk/platform';
 import { Location } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { NgNavigatorShareService } from 'ng-navigator-share';
-import { Meta, Title } from '@angular/platform-browser';
-import {  Renderer2 } from '@angular/core';
 import { ProgramType } from '../../../models/program-model';
 import { SharedService } from '../../../services/shared.service';
 import { OnboardingService } from '../../../services/onboarding.service';
@@ -15,7 +13,7 @@ import { NavigationService } from "../../../services/navigation.service";
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
 })
-export class BlogArticlePage implements OnInit {
+export class BlogArticlePage {
   list: any;
   blogList;
   likecount = 0
@@ -33,129 +31,103 @@ export class BlogArticlePage implements OnInit {
   token = localStorage.getItem("shareToken")
   isAdults =  true;
   sanitizedBlogHtml: any;
-  constructor(private sanitizer: DomSanitizer, private service: OnboardingService, private location: Location,private renderer: Renderer2,
-    private router: Router, private ngNavigatorShareService: NgNavigatorShareService,private elRef: ElementRef,
-    private route: ActivatedRoute,private meta: Meta, private title: Title, public platform: Platform,
-    private navigationService:NavigationService ) {
-      let login: any = localStorage.getItem("isloggedin");
+  showAllComments = false;
+  constructor(private readonly sanitizer: DomSanitizer, private readonly service: OnboardingService, private readonly location: Location, private readonly renderer: Renderer2,
+    private readonly router: Router, private readonly ngNavigatorShareService: NgNavigatorShareService, private readonly elRef: ElementRef,
+    private readonly route: ActivatedRoute, private readonly meta: Meta, private readonly title: Title, public platform: Platform,
+    private readonly navigationService: NavigationService) {
+      const login: any = localStorage.getItem("isloggedin");
       if (login && login === 'T') {
         this.isLoggedIn = true;
       } else {
         this.isLoggedIn = false;
       }
-      this.address =  this.router.url;
+      this.address = this.router.url;
       this.route.queryParams.subscribe(params => {
-      this.blogid = this.extractUntilQuestionMark(params?.sId)
-      if(isNaN(+this.blogid)){
-        var blogid=this.getBlogList(this.blogid);
-
-      }else{
-        this.getblog();
-      }
-    });
-
-    if (SharedService.ProgramId == ProgramType.Adults) {
-      this.isAdults = true;
+        this.showAllComments = false;
+        this.blogid = this.extractUntilQuestionMark(params?.sId)
+        if (Number.isNaN(+this.blogid)) {
+          this.getBlogList(this.blogid);
         } else {
-         this.isAdults = false;
+          this.getblog();
         }
-    // this.blogid=JSON.parse(localStorage.getItem("blogId"))
-  }
+      });
 
-  ngOnInit() {
-
-
-
-  }
-   extractUntilQuestionMark(inputString) {
-    var index = inputString.indexOf('?');
-    if (index !== -1) {
-        var result = inputString.substring(0, index);
-        return result;
-    } else {
-        return inputString;
+      if (SharedService.ProgramId == ProgramType.Adults) {
+        this.isAdults = true;
+      } else {
+        this.isAdults = false;
+      }
     }
-}
+
+
+  extractUntilQuestionMark(inputString) {
+    const index = inputString.indexOf('?');
+    if (index !== -1) {
+      return inputString.substring(0, index);
+    } 
+    return inputString;
+  }
 
   getblog() {
-    localStorage.setItem('blogId',this.blogid);
+    localStorage.setItem('blogId', this.blogid);
     this.service.getBlogId(this.blogid).subscribe(res => {
       if (res) {
-     this.blogList = res
-     var tempEl = document.createElement('div');
-     if(SharedService.ProgramId==9){
-        tempEl.innerHTML = res.Blog; }
-     else if(SharedService.ProgramId==11)
-      {
-         tempEl.innerHTML = res.Blog.replaceAll("/adults/","/teenagers/").replaceAll("/pathway/live-your-best-life","/pathway/succeed-in-life");
-      }
-
-     for (let i = 0; i < tempEl.querySelectorAll('img').length; i++) {
-     tempEl.querySelectorAll('img')[i].style.width='100%';
-     }
-     res.Blog=tempEl.innerHTML;
-     // Sanitize HTML once and store it to prevent re-renders
-     this.sanitizedBlogHtml = this.sanitizer.bypassSecurityTrustHtml(res.Blog);
-        this.BlogCommentsLen = this.blogList['BlogComments'].length
-        if (this.BlogCommentsLen !== 0) {
-          this.BlogCommentsList = this.blogList['BlogComments'].slice(0, 3)
-        }
-        if (this.BlogCommentsLen > 3) {
-          this.BlogCommentsListabove = this.blogList['BlogComments'].slice(3)
-        }
-        this.likecount = parseInt(this.blogList['LikeCnt'])
-        var url=this.blogList['Title'].replaceAll(" ","-");
-         // window.history.pushState('', '', '/blog-article?sId='+url);
-        this.title.setTitle(this.blogList['Title'])
-
-       if(this.meta.getTag("property='title'"))
-         this.meta.updateTag({ property: 'title', content: this.blogList['MetaTitle']})
-       else
-        this.meta.addTag({ property: 'title', content: this.blogList['MetaTitle']})
-
-        if(this.meta.getTag("property='description'"))
-        this.meta.updateTag({ property: 'description', content: this.blogList['MetaDesc']})
-      else
-       this.meta.addTag({ property: 'description', content: this.blogList['MetaDesc']})
-
-        if(this.meta.getTag("property='og:type'"))
-          this.meta.updateTag({ property: 'og:type', content: 'article'})
-        else
-         this.meta.addTag({ property: 'og:type', content: 'article'})
-
-          //this.meta.updateTag({ property: 'og:url', content: "https://staging.humanwisdom.me/course/"+ this.path})
-          
-
-        if(this.meta.getTag("property='og:description'"))
-          this.meta.updateTag({ property: 'og:description', content: this.blogList['MetaDesc']})
-        else
-         this.meta.addTag({ property: 'og:description', content: this.blogList['MetaDesc']})
-
-        if(this.meta.getTag("property='og:image'"))
-         this.meta.updateTag({ property: 'og:image', content: this.blogList['ImgPath']})
-        else
-         this.meta.addTag({ property: 'og:image', content: this.blogList['ImgPath']})
-
-        if(this.meta.getTag("property='twitter:description'"))
-           this.meta.updateTag({ property: 'twitter:description',content: this.blogList['MetaDesc']})
-        else
-          this.meta.addTag({ property: 'twitter:description',content: this.blogList['MetaDesc']})
-
-    if(this.meta.getTag("property='keywords'"))
-          this.meta.updateTag({ property: 'keywords',content: this.blogList['MetaKeywords']})
-       else
-         this.meta.addTag({ property: 'keywords',content: this.blogList['MetaKeywords']})
-
-
-          // this.meta.updateTag({ property: 'og:image', content:"https://miro.medium.com/max/720/1*-MExOq023Stbuk0cngfDOQ.jpeg"})
-
-
+        this.handleBlogResponse(res);
       }
     },
-      error => console.log(error),
-      () => {
+      error => console.log(error)
+    );
+  }
+
+  handleBlogResponse(res) {
+    this.blogList = res;
+    const tempEl = document.createElement('div');
+    if (SharedService.ProgramId == 9) {
+      tempEl.innerHTML = res.Blog;
+    } else if (SharedService.ProgramId == 11) {
+      tempEl.innerHTML = res.Blog.replaceAll("/adults/", "/teenagers/").replaceAll("/pathway/live-your-best-life", "/pathway/succeed-in-life");
+    }
+
+    const images = tempEl.querySelectorAll('img');
+    for (const img of Array.from(images)) {
+      (img as HTMLElement).style.width = '100%';
+    }
+
+    res.Blog = tempEl.innerHTML;
+    // Sanitize HTML once and store it to prevent re-renders
+    this.sanitizedBlogHtml = this.sanitizer.bypassSecurityTrustHtml(res.Blog);
+    this.BlogCommentsLen = this.blogList['BlogComments'].length;
+    if (this.BlogCommentsLen !== 0) {
+      this.BlogCommentsList = this.blogList['BlogComments'].slice(0, 3);
+    }
+    if (this.BlogCommentsLen > 3) {
+      this.BlogCommentsListabove = this.blogList['BlogComments'].slice(3);
+    }
+    this.likecount = Number.parseInt(this.blogList['LikeCnt']);
+    
+    this.title.setTitle(this.blogList['Title']);
+    this.updateMetaTags();
+  }
+
+  updateMetaTags() {
+    const tags = [
+      { property: 'title', content: this.blogList['MetaTitle'] },
+      { property: 'description', content: this.blogList['MetaDesc'] },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:description', content: this.blogList['MetaDesc'] },
+      { property: 'og:image', content: this.blogList['ImgPath'] },
+      { property: 'twitter:description', content: this.blogList['MetaDesc'] },
+      { property: 'keywords', content: this.blogList['MetaKeywords'] }
+    ];
+
+    for (const tag of tags) {
+      if (this.meta.getTag(`property='${tag.property}'`)) {
+        this.meta.updateTag(tag);
+      } else {
+        this.meta.addTag(tag);
       }
-    )
+    }
   }
   getHtml(html) {
     return this.sanitizer.bypassSecurityTrustHtml(html);
@@ -165,11 +137,7 @@ export class BlogArticlePage implements OnInit {
   }
 
   likebtn() {
-    if(!this.isLoggedIn) {
-      this.enablecancel = true;
-      this.content = "Please Register to activate this feature";
-      this.enableAlert = true;
-    } else {
+    if (this.isLoggedIn) {
       this.service.likeblog(this.blogList['BlogID']).subscribe((res) => {
         if (res) {
           this.getblog()
@@ -177,18 +145,17 @@ export class BlogArticlePage implements OnInit {
       }, error => {
         this.content = error['error']['Message'];
         this.enableAlert = true;
-      },
-      )
+      });
+    } else {
+      this.enablecancel = true;
+      this.content = "Please Register to activate this feature";
+      this.enableAlert = true;
     }
   }
 
   postcomment() {
-    if(!this.isLoggedIn) {
-      this.enablecancel = true;
-      this.content = "Please Register to activate this feature";
-      this.enableAlert = true;
-    } else {
-      let obj = {
+    if (this.isLoggedIn) {
+      const obj = {
         "BlogId": this.blogList['BlogID'],
         "Comment": this.comment
       }
@@ -198,6 +165,10 @@ export class BlogArticlePage implements OnInit {
           this.getblog()
         }
       })
+    } else {
+      this.enablecancel = true;
+      this.content = "Please Register to activate this feature";
+      this.enableAlert = true;
     }
   }
 
@@ -209,14 +180,14 @@ export class BlogArticlePage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
+    const url = this.navigationService.navigateToBackLink();
     console.log("url=" + url)
     if (url == null) {
-     this.location.back();
-    }else{
+      this.location.back();
+    } else {
       this.router.navigate([url]);
     }
-   }
+  }
 
 
   share() {
@@ -248,12 +219,12 @@ export class BlogArticlePage implements OnInit {
 
 
   commentbottom() {
-    if(!this.isLoggedIn) {
+    if (this.isLoggedIn) {
+      window.scrollTo(0, document.body.scrollHeight);
+    } else {
       this.enablecancel = true;
       this.content = "Please Register to activate this feature";
       this.enableAlert = true;
-    } else {
-      window.scrollTo(0, document.body.scrollHeight);
     }
   }
 
@@ -269,19 +240,18 @@ export class BlogArticlePage implements OnInit {
     }
   }
 
-  getBlogList(title){
-    this.service.getBlog().subscribe(res=>
-      {
-        if(res) {
-          this.list=res
-          let data =this.list.filter(resp=>resp.Title.toLocaleLowerCase().includes(title.toLocaleLowerCase().replaceAll("-"," ")))
-          this.blogid= data[0]['BlogID'];
+  getBlogList(title) {
+    this.service.getBlog().subscribe(res => {
+      if (res) {
+        this.list = res
+        const data = this.list.find(resp => resp.Title.toLocaleLowerCase().includes(title.toLocaleLowerCase().replaceAll("-", " ")))
+        if (data) {
+          this.blogid = data['BlogID'];
           this.getblog();
         }
-      },
-      error=>console.log(error),
-      ()=>{
       }
+    },
+      error => console.log(error)
     )
   }
 
@@ -298,6 +268,10 @@ export class BlogArticlePage implements OnInit {
           this.router.navigate(["/onboarding/login"]);
         }
     }
+  }
+
+  toggleAllComments() {
+    this.showAllComments = true;
   }
 
 }

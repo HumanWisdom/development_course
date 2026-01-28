@@ -241,7 +241,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     // Initialize wisdom exercise as hidden
-    this.showWisdomExercise = false;
+   // this.showWisdomExercise = false;
   }
 
 
@@ -622,6 +622,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           });
 
           if (storedActivePreference === "19") {
+            this.preference = storedActivePreference;
             this.showWisdomExercise = true;
             this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
           } else {
@@ -1437,8 +1438,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Find matching navigation item by displayName (case-insensitive, space/hyphen agnostic)
     const matchingItem = allNavItems.find(item => {
-      const normalizedDisplayName = this.normalizeHash(item.displayName.replace(/\s+/g, "").toLocaleLowerCase());
-      return normalizedDisplayName === normalizedHash.toLocaleLowerCase();
+      const normalizedDisplayName = this.normalizeHash(item.displayName);
+      return normalizedDisplayName === normalizedHash;
     });
 
     if (matchingItem) {
@@ -1452,12 +1453,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   /**
    * Normalize hash value for comparison
-   * Converts to lowercase, replaces hyphens with spaces, trims whitespace
+   * Converts to lowercase, removes all spaces and hyphens for consistent matching
    */
   private normalizeHash(hash: string): string {
     return hash.toLowerCase()
-      .replace(/-/g, ' ')
-      .replace(/\s+/g, ' ')
+      .replace(/-/g, '')
+      .replace(/\s+/g, '')
       .trim();
   }
 
@@ -1534,6 +1535,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Handle Self Awareness (id: 19) specially
     if (item.id === "19" || item.id === "20") {
+      this.preference = item.id;
       this.showWisdomExercise = true;
       this.YourTopicofChoice = [item];
       // Save user preference for Self Awareness
