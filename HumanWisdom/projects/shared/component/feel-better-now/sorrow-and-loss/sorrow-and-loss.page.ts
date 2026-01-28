@@ -18,6 +18,7 @@ export class SorrowAndLossPage implements OnInit {
   audioData:any;
   isSubscribed = false;
   config: any;
+  isIOS = false;
 
   constructor(private router: Router, private location: Location,private navigationService:NavigationService){
     this.config = SharedService.getScreenConfiguration("SoundCapes");
@@ -34,6 +35,7 @@ export class SorrowAndLossPage implements OnInit {
         }
     const subValue = localStorage.getItem('Subscriber');
     this.isSubscribed = subValue === '1' || subValue === 'T';
+    this.isIOS = SharedService.isIos;
   }
 
 
