@@ -569,7 +569,11 @@ const routes: Routes = [
   {
     path: 'chat-bot',
     component: ChatBotComponent
-  }
+  },
+  {
+    path: 'wisdom-exercise',
+    redirectTo:'curated/self-awareness'
+  },
 ];
 
 
