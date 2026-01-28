@@ -1,7 +1,6 @@
-import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {Location } from '@angular/common'
-import {AdultsService} from "../../../adults/src/app/adults/adults.service";
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
@@ -16,7 +15,7 @@ import { SectionCard } from '../section-card/section-card.page';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   @Input() title: string;
   @Input() sharedPath: string;
   isAdults:boolean = true;
@@ -34,10 +33,15 @@ export class DashboardComponent implements OnInit {
     { section_name: "Skills", priority: 2,data: new Array<any>() },
     { section_name: "Community", priority: 3,data: new Array<any>()  }
   ];
-  constructor(private router: Router, private location:Location,
-    private service:CommonService,private ngNavigatorShareService: NgNavigatorShareService,
-    private navigationService: NavigationService,private route: ActivatedRoute) {
-      SharedService.ProgramId == ProgramType.Adults ? this.isAdults = true : this.isAdults = false;
+  constructor(
+    private readonly router: Router,
+    private readonly location: Location,
+    private readonly service: CommonService,
+    private readonly ngNavigatorShareService: NgNavigatorShareService,
+    private readonly navigationService: NavigationService,
+    private readonly route: ActivatedRoute
+  ) {
+    this.isAdults = SharedService.ProgramId === ProgramType.Adults;
         this.dashboardType = this.route.snapshot.paramMap.get('type');
         this.dashboardData = SharedService.contentIdData(this.dashboardType);
         this.service.GetIntroContents(this.dashboardData.id).subscribe(res=>{
@@ -45,26 +49,22 @@ export class DashboardComponent implements OnInit {
             this.cardList = res.content;
             this.introData =  res;
             this.introTitle = res.introPara;
-            for(var item of this.metadata){
+            for(let item of this.metadata){
               item.data = this.cardList.filter(x=>x.section_name == item.section_name)
             }
           }
       });
      }
 
-  ngOnInit() {
-   
 
-  }
 
   explore(url:any){
     this.router.navigate([url]);
   }
 
     goBack(){
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      // this.router.navigate([SharedService.getDashboardUrls()]);
+    const url = this.navigationService.navigateToBackLink();
+    if (url === null) {
       this.location.back();
     }else{
       this.router.navigate([url]);
