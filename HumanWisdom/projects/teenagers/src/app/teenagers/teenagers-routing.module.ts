@@ -421,8 +421,8 @@ const routes: Routes = [
   },
   {
 
+
     path: 'blog-article',
-    // canActivate:[ActiveGuard],
     component: BlogArticlePage
   },
   {
