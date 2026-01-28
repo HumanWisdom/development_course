@@ -31,6 +31,7 @@ export class BlogArticlePage {
   token = localStorage.getItem("shareToken")
   isAdults =  true;
   sanitizedBlogHtml: any;
+  showAllComments = false;
   constructor(private readonly sanitizer: DomSanitizer, private readonly service: OnboardingService, private readonly location: Location, private readonly renderer: Renderer2,
     private readonly router: Router, private readonly ngNavigatorShareService: NgNavigatorShareService, private readonly elRef: ElementRef,
     private readonly route: ActivatedRoute, private readonly meta: Meta, private readonly title: Title, public platform: Platform,
@@ -43,6 +44,7 @@ export class BlogArticlePage {
       }
       this.address = this.router.url;
       this.route.queryParams.subscribe(params => {
+        this.showAllComments = false;
         this.blogid = this.extractUntilQuestionMark(params?.sId)
         if (Number.isNaN(+this.blogid)) {
           this.getBlogList(this.blogid);
@@ -266,6 +268,10 @@ export class BlogArticlePage {
           this.router.navigate(["/onboarding/login"]);
         }
     }
+  }
+
+  toggleAllComments() {
+    this.showAllComments = true;
   }
 
 }
