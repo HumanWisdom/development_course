@@ -56,7 +56,10 @@
                   <div class="carousel-inner">
                     <!-- <app-splash *ngIf="!loading"></app-splash> -->
 
-                    <div class="carousel-item 0 active" [ngStyle]="{'display': currentSection==1 ? 'none' : ''}"
+                    <div class="carousel-item 0 active" [ngStyle]="isIos ? 
+                        {'opacity': currentSection==1 ? '0' : '1', 'visibility': currentSection==1 ? 'hidden' : 'visible'} : 
+                        {'display': currentSection==1 ? 'none' : 'block'}"
+                      [style.minHeight]="isIos ? (currentSection==0 ? '80vh' : '') : ''"
                       [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null"
                       [hidden]="loading">
                       <!-- slide 1 -->
@@ -107,18 +110,21 @@
                       <!-- /slide 1 -->
                     </div>
 
-                    <div class="carousel-item  1 active" [ngStyle]="{'display': currentSection==0 ? 'none' : ''}"
+                    <div class="carousel-item  1 active" [ngStyle]="isIos ? 
+                        {'opacity': currentSection==0 ? '0' : '1', 'visibility': currentSection==0 ? 'hidden' : 'visible'} : 
+                        {'display': currentSection==0 ? 'none' : 'block'}"
+                      [style.minHeight]="isIos ? (currentSection==1 ? '80vh' : '') : ''"
                       [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
-                      <!-- slide 2 -->
                       <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" [style.height]="isIos ? '245px' : ''">
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100"> -->
                           <!-- Safari-specific video structure -->
                           <ng-container *ngIf="isIos">
                             <video *ngIf="isAdults" controls (play)="LogEvent('click_play_video_intro_carousel')"
                               playsinline class="cvideo_03 br_0px"
                               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
-                              controlsList="nodownload" style="height:245px;">
+                              controlsList="nodownload"
+                              style="height:245px; width:100%; object-fit: contain; background: #000;">
                               <source
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction.mp4"
                                 type="video/mp4">
@@ -127,7 +133,8 @@
                             <video *ngIf="!isAdults" controls (play)="LogEvent('click_play_video_intro_carousel')"
                               playsinline class="cvideo_03 br_0px"
                               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
-                              controlsList="nodownload" style="height:245px;">
+                              controlsList="nodownload"
+                              style="height:245px; width:100%; object-fit: contain; background: #000;">
                               <source
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction_teens.mp4"
                                 type="video/mp4">
@@ -152,7 +159,7 @@
                         </div>
                       </div>
 
-                      <div class="row  mb15px">
+                      <div class="row mb15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                             <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="isAdults">

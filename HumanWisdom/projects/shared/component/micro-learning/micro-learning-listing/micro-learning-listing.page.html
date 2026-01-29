@@ -7,7 +7,7 @@
 
 
 <!-- top navigation -->
-<div class="tn_bv" *ngIf="!isdefaultShow">
+<div class="tn_bv">
 
   <div class="row center_flex bg_bv">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw img_podcast"
@@ -31,7 +31,7 @@
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
         <a class="">
           <h4 class="mtb0px fs_18px fw_600 lh_130p tcenter" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-           Micro learnings
+            Micro learnings
           </h4>
         </a>
       </div>
@@ -49,7 +49,7 @@
 </div>
 
 
-<app-bg-video *ngIf="!isdefaultShow"></app-bg-video>
+<app-bg-video></app-bg-video>
 <!-- page content -->
 <div class="right_col mc_01_v3 mc_01_v3_ext" [ngClass]="{'adults-scroll': isAdults}">
   <div class="cw100p">
@@ -86,11 +86,12 @@
 
 
 
-               <!-- overflow buttons -->
+              <!-- overflow buttons -->
               <div class="row mr-20pxi mtb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 odiv d-flex text-center" [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                       <!-- <button id="MiniPodcast" type="button" class="btn" style="background-color:#ED7D6F;color:#fff;"
+                <div class="col-md-12 col-sm-12 col-xs-12 odiv d-flex text-center"
+                  [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <!-- <button id="MiniPodcast" type="button" class="btn" style="background-color:#ED7D6F;color:#fff;"
                       (click)="getUserPref('MiniPodcast')">
                       Mini podcasts
                     </button> -->
@@ -101,10 +102,10 @@
 
                     <button type="button" class="btn ng-star-inserted" id="1"> All </button>
                     <button type="button" class="btndef" id="1"> Work </button>
-                      <button type="button" class="btndef" id="1"> Mental health </button>
-                      <button type="button" class="btndef" id="1"> Relationships </button> 
+                    <button type="button" class="btndef" id="1"> Mental health </button>
+                    <button type="button" class="btndef" id="1"> Relationships </button>
 
-                      <button type="button" class="btndef" id="1"> Relationships </button>  
+                    <button type="button" class="btndef" id="1"> Relationships </button>
 
 
                     <!-- <button class="v1">
@@ -122,7 +123,7 @@
                   </div>
                   <!-- <div class="col-md-7 col-sm-7 col-xs-7"> -->
 
-                    <!-- <ng-container *ngFor="let data of prefData">
+                  <!-- <ng-container *ngFor="let data of prefData">
 
                       <button type="button" class="btn" id="all" *ngIf="data['active'] && data['displayName'] === 'All'"
                         (click)="getUserPref('all')" [ngClass]="isAdults ? '' : 'bg-clr'">
@@ -141,12 +142,12 @@
               <!-- /overflow buttons -->
 
               <!-- hr -->
-            <!-- <div class="row">
+              <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
             </div> -->
-            <!-- /hr -->
+              <!-- /hr -->
               <!-- <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="title_content" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
@@ -173,8 +174,8 @@
                           </h4> -->
                         </div>
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                    <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
-                  </div>
+                          <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
+                        </div>
 
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                           <img *ngIf="data?.isRead === '1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" class="img-responsive ws-read-icon" />

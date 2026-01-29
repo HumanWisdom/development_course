@@ -42,5 +42,23 @@
       transform: translate3d(0, 0, 0);
       -webkit-perspective: 1000px;
       perspective: 1000px;
+
+      // Fix for the "blank content below video" issue in Safari
+      .row {
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+         position: relative;
+         z-index: 10 !important;
+         -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+         visibility: visible !important;
+         opacity: 0.99; // Forcing paint in Safari
+      }
+   }
+
+   .carousel-inner {
+      overflow: visible !important;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
    }
 }
