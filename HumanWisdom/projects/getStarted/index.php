@@ -5360,7 +5360,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
-                                <input type="text" class="form-control fc_01" id="news-name" name="newsname"
+                                <input type="text" class="form-control fc_01" id="modal-news-name" name="newsname"
                                   placeholder="Your Name">
                                 <div class="fc_icons">
                                   <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_user.svg"
@@ -5372,7 +5372,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                           <!-- <div class="row mt15px"> -->
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
-                              <input type="text" class="form-control fc_01" id="news-email" name="news-email"
+                              <input type="text" class="form-control fc_01" id="modal-news-email" name="news-email"
                                 placeholder="Your email">
                               <div class="fc_icons">
                                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/web_form_mail.svg"
@@ -5384,7 +5384,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
                               <div class="row mt20px">
-                                <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"
+                                <button id="modal-news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"
                                   href="../pages/splash_options.php"> Subscribe </button>
                               </div>
                             </div>
