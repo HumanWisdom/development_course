@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
 })
-export class MultiSelectComponent implements OnInit,AfterViewInit {
+export class MultiSelectComponent {
   @Input() bg:string
 
   scrId:any
@@ -19,13 +19,5 @@ export class MultiSelectComponent implements OnInit,AfterViewInit {
     private service: AdultsService,
     private next: ActivatedRoute
   ) { }
-
-  ngOnInit() {}
-
-  ngAfterViewInit(){
-    
-  
-  
-  }
 
 }

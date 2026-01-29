@@ -10,7 +10,7 @@ import { Constant } from "../../services/constant";
   selector: 'app-section-card',
   templateUrl: './section-card.page.html'
 })
-export class SectionCard implements OnInit {
+export class SectionCard {
   @HostListener('window:resize', ['$event'])
   // onResize(event: Event) {
   //    this.updateStyles();

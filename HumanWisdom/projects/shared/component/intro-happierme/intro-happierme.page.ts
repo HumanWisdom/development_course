@@ -16,7 +16,7 @@ import { Constant } from '../../services/constant';
   templateUrl: './intro-happierme.page.html',
   styleUrls: ['./intro-happierme.page.scss'],
 })
-export class IntroHappiermePage implements OnInit {
+export class IntroHappiermePage {
   isAdults = true;
   enablekeyideasViewMore = true;
 
@@ -32,12 +32,8 @@ export class IntroHappiermePage implements OnInit {
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
 
-  ngOnInit() {
-  }
-
   goBack()
   {
-    // this.location.back();
 
      var url = this.navigation.navigateToBackLink();
         if(url==null){

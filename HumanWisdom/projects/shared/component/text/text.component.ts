@@ -5,14 +5,12 @@ import { Component, OnInit,Input } from '@angular/core';
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss'],
 })
-export class TextComponent implements OnInit {
+export class TextComponent {
   @Input() quote: string;
   @Input() author: string;
 
   constructor() { }
 
-  ngOnInit() {
-    
-  }
+
 
 }

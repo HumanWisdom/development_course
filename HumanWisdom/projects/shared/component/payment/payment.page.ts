@@ -37,7 +37,7 @@ import { SharedService } from '../../services/shared.service';
   selector: 'app-payment',
   templateUrl: './payment.page.html',
 })
-export class PaymentPage implements AfterViewInit, OnDestroy {
+export class PaymentPage implements AfterViewInit {
   //stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
   // stripeKey = 'pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl';
   stripeKey = environment.stripeKey;
@@ -71,6 +71,8 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
         } else {
           this.isAdults = false;
         }
+
+
 
 
     
@@ -216,14 +218,6 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
     // });
   }
 
-  ngOnDestroy() {
-    // this.card.removeEventListener('change', this.cardHandler);
-    // this.card.destroy();
-  }
-
-  ngOnInit() {
-
-  }
   
    displayError(event) {
 
