@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
 
 @Component({
@@ -8,28 +7,28 @@ import { OnboardingService } from "../../services/onboarding.service";
   templateUrl: './ft-advert.component.html',
   styleUrls: ['./ft-advert.component.scss'],
 })
-export class FtAdvertComponent implements OnInit {
+export class FtAdvertComponent {
    isLoggedIn:boolean=false;
    isSubscribe:boolean=false;
    enablepopup:boolean=false;
-  constructor(public router: Router,public service:OnboardingService) { 
-    let res = localStorage.getItem("isloggedin")
+  constructor(public readonly router: Router, public readonly service: OnboardingService) { 
+    const res = localStorage.getItem("isloggedin");
     if(res=='T'){
      this.isLoggedIn=true;
     }
-    let popup = JSON.parse(localStorage.getItem("Subscriber"))
+    const popup = JSON.parse(localStorage.getItem("Subscriber"));
     if(popup === 1) this.enablepopup = true
     this.isSubscribe = popup === 0 ? false : true;
   }
 
-  ngOnInit( ) {}
+
   RedeemCode(){
     this.service.isActivationFlow=true;
     this.service.isAdvert_hwp=true;
     this.router.navigate(['/onboarding/add-to-cart']);
   }
 
-  navigate(url){
+  navigate(url: string) {
     this.router.navigate([url],{replaceUrl:true,skipLocationChange:true});
   }
 

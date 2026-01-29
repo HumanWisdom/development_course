@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 @Component({
   selector: 'app-ft-prev',
   templateUrl: './ft-prev.component.html',
   styleUrls: ['./ft-prev.component.scss'],
 })
-export class FtPrevComponent implements OnInit {
+export class FtPrevComponent {
 
   constructor(
-    private location:Location
+    private readonly location: Location
   ) { }
 
-  ngOnInit() {}
+
 
   goBack()
   {
