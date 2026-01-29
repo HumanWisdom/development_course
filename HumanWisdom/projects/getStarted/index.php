@@ -2261,9 +2261,9 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
           </div>
         </div>
 
-        <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
-          <div id="PricingSelectBtn" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-            <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width btn_popup btn_popup_w" id="startyourfreetrial">
+        <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="AnnualTypebtn">
+          <div id="PricingSelectBtn1" class="col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+            <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width btn_popup btn_popup_w" id="startyourfreetrial1">
               Start your free trial
             </button>
           </div>
@@ -2498,7 +2498,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
                     <div class="row">
                       <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0 mtb15px">
-                        <audio id="aud1" controls controlsList="nodownload">
+                        <audio id="aud2" controls controlsList="nodownload">
                           <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
                         </audio>
                       </div>
@@ -3072,7 +3072,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </div>
 
-              <div id="app_features" class="tab-pane fade in">
+              <div id="app_features2" class="tab-pane fade in">
                 <div class="panel-group" id="accordion_faq">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -3554,7 +3554,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
             </div>
 
-            <div id="app_features" class="tab-pane fade in active">
+            <div id="app_features1" class="tab-pane fade in active">
               <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 App features
               </h5>
