@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../../services/onboarding.service';
 
@@ -8,7 +8,7 @@ import { OnboardingService } from '../../../services/onboarding.service';
   templateUrl: './wisdom-survey-insight.component.html',
   styleUrls: ['./wisdom-survey-insight.component.scss'],
 })
-export class WisdomSurveyInsightComponent implements OnInit {
+export class WisdomSurveyInsightComponent {
   multi: any[] = [];
   view: any[] = [700, 300];
 
@@ -159,7 +159,7 @@ export class WisdomSurveyInsightComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+
 
   onSelect(event) {
 

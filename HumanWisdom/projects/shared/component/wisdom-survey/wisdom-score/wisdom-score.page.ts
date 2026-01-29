@@ -84,11 +84,8 @@ export class WisdomScorePage implements OnInit {
 
     const visits = Number(localStorage.getItem('NoOfVisits') || '0');
     const token = SharedService.getDataFromLocalStorage('token');
-    if ((SharedService.isIOSApp() || SharedService.isMobileDevice()) && token) {
-      this.justSignedUp = visits < 2;
-    } else {
-      this.justSignedUp = visits < 2;
-    }
+    const isGuest = localStorage.getItem('guest') === 'T';
+    this.justSignedUp = !!token && !isGuest && visits < 2;
   }
 
   navigateToRecommendation(item: any) {

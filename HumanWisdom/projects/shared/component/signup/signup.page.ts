@@ -8,7 +8,7 @@ import { OnboardingService } from '../../services/onboarding.service';
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
 })
-export class SignupPage implements OnInit {
+export class SignupPage {
   value: number = 100;
   showWarning=false
   showMessage=false
@@ -52,8 +52,7 @@ export class SignupPage implements OnInit {
     private service:OnboardingService,
     private location:Location) { }
 
-  ngOnInit() {
-  }
+
   forbiddenNameValidator(control: AbstractControl):{[key: string]:any} | null
    {
      const forbidden= /admin/.test(control.value)

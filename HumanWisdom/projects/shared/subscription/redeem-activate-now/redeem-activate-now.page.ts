@@ -1,16 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Constant } from '../../services/constant';
-import { OnboardingService } from '../../services/onboarding.service';
-import { SharedService } from '../../services/shared.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-redeem-activate-now',
   templateUrl: './redeem-activate-now.page.html',
 })
-export class RedeemActivateNowPage implements OnInit {
+export class RedeemActivateNowPage {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+
 }

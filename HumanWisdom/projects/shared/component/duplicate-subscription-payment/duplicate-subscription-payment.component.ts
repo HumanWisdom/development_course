@@ -1,5 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { SharedService } from '../../services/shared.service';
@@ -12,10 +11,8 @@ import { Location } from '@angular/common';
   templateUrl: './duplicate-subscription-payment.component.html',
   styleUrls: ['./duplicate-subscription-payment.component.scss'],
 })
-export class DuplicateSubscriptionPaymentComponent implements OnInit {
-  // stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
-//  stripeKey = 'pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl';
-stripeKey= environment.stripeKey;
+export class DuplicateSubscriptionPaymentComponent implements OnInit, AfterViewInit {
+  stripeKey= environment.stripeKey;
 cardCaptureReady = false
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
 
@@ -31,8 +28,8 @@ cardCaptureReady = false
   enableAlert = false;
   content = '';
   isAdults = false;
-  constructor(private service: OnboardingService,
-    private router: Router, private location :Location) {
+  constructor(private readonly service: OnboardingService,
+    private readonly router: Router, private readonly location: Location) {
       this.amount = localStorage.getItem('totalAmount')
     this.uID = JSON.parse(localStorage.getItem("userId"));
     this.isAdults = SharedService.isAdultProgram();
@@ -40,94 +37,105 @@ cardCaptureReady = false
 
   ngAfterViewInit() {
     setTimeout(() => {
-      var style = {
-        base: {
-          iconColor: '#c4f0ff',
-           color:  this.isAdults? '#000':'#fff',
-          '::placeholder': {
-              color: this.isAdults? 'rgba(0, 0, 0, 0.5)':'rgba(255, 255, 255, 0.5)',
-          },
-          ':-webkit-autofill': {
-              color:  this.isAdults? '#000':'#fff',
-          },
-          ':focus': {
-            color: this.isAdults? '#000':'#fff',
-          },
+      this.initStripe();
+    }, 9000);
+  }
+
+  private initStripe() {
+    const style = {
+      base: {
+        iconColor: '#c4f0ff',
+        color: this.isAdults ? '#000' : '#fff',
+        '::placeholder': {
+          color: this.isAdults ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)',
         },
-        invalid: {
-          iconColor: '#FFC7EE',
-          color: this.isAdults? '#000':'#fff',
+        ':-webkit-autofill': {
+          color: this.isAdults ? '#000' : '#fff',
         },
-      };
-        let stripe = Stripe(this.stripeKey);
-        let elements = stripe.elements();
-        var cardNumberElement = elements.create('cardNumber', {
-          style: style,
-          classes: {
-            base: 'form-control w-full',
-            complete: 'is-valid',
-            empty: 'is-empty',
-            invalid: 'is-invalid',
-          },
-        });
-        var cardExpiryElement = elements.create('cardExpiry', {
-          style: style,
-          classes: {
-            base: 'form-control w-full',
-            complete: 'is-valid',
-            empty: 'is-empty',
-            invalid: 'is-invalid',
-          },
-        });
-        var cardCvcElement = elements.create('cardCvc',{
-          style: style,
-          classes: {
-            base: 'form-control w-full',
-            complete: 'is-valid',
-            empty: 'is-empty',
-            invalid: 'is-invalid',
-          },
-        });
+        ':focus': {
+          color: this.isAdults ? '#000' : '#fff',
+        },
+      },
+      invalid: {
+        iconColor: '#FFC7EE',
+        color: this.isAdults ? '#000' : '#fff',
+      },
+    };
+    const stripe = Stripe(this.stripeKey);
+    const elements = stripe.elements();
+    const cardNumberElement = elements.create('cardNumber', {
+      style: style,
+      classes: {
+        base: 'form-control w-full',
+        complete: 'is-valid',
+        empty: 'is-empty',
+        invalid: 'is-invalid',
+      },
+    });
+    const cardExpiryElement = elements.create('cardExpiry', {
+      style: style,
+      classes: {
+        base: 'form-control w-full',
+        complete: 'is-valid',
+        empty: 'is-empty',
+        invalid: 'is-invalid',
+      },
+    });
+    const cardCvcElement = elements.create('cardCvc', {
+      style: style,
+      classes: {
+        base: 'form-control w-full',
+        complete: 'is-valid',
+        empty: 'is-empty',
+        invalid: 'is-invalid',
+      },
+    });
 
-        cardNumberElement.mount('#card-number');
-        cardExpiryElement.mount('#card-expiry');
-        cardCvcElement.mount('#card-cvc');
+    cardNumberElement.mount('#card-number');
+    cardExpiryElement.mount('#card-expiry');
+    cardCvcElement.mount('#card-cvc');
 
-        const btn = document.querySelector('#btnsubmit');
-        btn.addEventListener('click', async (e) => {
-          e.preventDefault();
-          // Create payment method and confirm payment intent.
-          stripe.createPaymentMethod({
-            type: 'card',
-            card: cardNumberElement,
-            billing_details: {
-              name:  (<HTMLInputElement>document.getElementById('name')).value,
-            },
-          }).then((result) => {
-            if(result.error)
-            {
-              this.content = result.error.message;
-              this.enableAlert = true;
-              // alert(result.error.message);
-            }
-            else
-            {
-              this.service.attachPaymentMethod(this.uID, result.paymentMethod.id)
-                    .subscribe(res => {
-                      localStorage.setItem('personalised', 'F');
-                      this.content = 'Your Card Details Have Been Updated';
-                      this.enableAlert = true;
-                      // alert('Your Card Details Have Been Updated');
-                      this.router.navigate(['/onboarding/user-profile'])
-                    })
-            }
-          });
-        });
-    }, 9000)
+    const btn = document.querySelector('#btnsubmit');
+    if (btn) {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        this.handlePayment(stripe, cardNumberElement);
+      });
+    }
+  }
 
+  private handlePayment(stripe: any, cardNumberElement: any) {
+    const nameInput = <HTMLInputElement>document.getElementById('name');
+    const name = nameInput ? nameInput.value : '';
+
+    stripe.createPaymentMethod({
+      type: 'card',
+      card: cardNumberElement,
+      billing_details: {
+        name: name,
+      },
+    }).then((result) => {
+      if (result.error) {
+        this.content = result.error.message;
+        this.enableAlert = true;
+      } else {
+        this.attachPayment(result.paymentMethod.id);
+      }
+    });
+  }
+
+  private attachPayment(paymentMethodId: string) {
+    this.service.attachPaymentMethod(this.uID, paymentMethodId)
+      .subscribe(res => {
+        localStorage.setItem('personalised', 'F');
+        this.content = 'Your Card Details Have Been Updated';
+        this.enableAlert = true;
+        this.router.navigate(['/onboarding/user-profile']);
+      });
   }
 
   ngOnInit() {
+    // ngOnInit is intentionally empty as no initialization logic is required here.
   }
 
 

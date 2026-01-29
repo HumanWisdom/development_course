@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './simple-text.component.html',
   styleUrls: ['./simple-text.component.scss'],
 })
-export class SimpleTextComponent implements OnInit, AfterViewInit {
+export class SimpleTextComponent {
   @Input() bg: string;
 
   scrId: any
@@ -21,13 +21,5 @@ export class SimpleTextComponent implements OnInit, AfterViewInit {
     private service: AdultsService,
     private next: ActivatedRoute
   ) { }
-
-  ngOnInit() { }
-
-  ngAfterViewInit() {
-
-
-
-  }
 
 }

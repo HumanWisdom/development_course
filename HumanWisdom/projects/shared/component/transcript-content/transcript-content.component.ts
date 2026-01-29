@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,AfterViewInit,ViewChild } from '@angular/core';
+import { Component, OnInit,Input,ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
@@ -10,7 +10,7 @@ import { SharedService } from '../../services/shared.service';
   templateUrl: './transcript-content.component.html',
   styleUrls: ['./transcript-content.component.scss'],
 })
-export class TranscriptContentComponent implements OnInit,AfterViewInit {
+export class TranscriptContentComponent implements OnInit {
   @Input() bg: string;
   @Input() title: string;
 
@@ -35,10 +35,6 @@ export class TranscriptContentComponent implements OnInit,AfterViewInit {
         }
   }
 
-  ngAfterViewInit(){
-    
-  
-  
-  }
+
 
 }

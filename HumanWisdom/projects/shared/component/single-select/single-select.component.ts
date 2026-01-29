@@ -1,4 +1,4 @@
-import { Component,OnInit,Input,AfterViewInit,ViewChild} from '@angular/core';
+import { Component,Input,ViewChild} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
@@ -9,7 +9,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   styleUrls: ['./single-select.component.scss'],
 })
 
-export class SingleSelectComponent implements OnInit,AfterViewInit  {
+export class SingleSelectComponent  {
   @Input() bg:string;
 
   scrId:any
@@ -21,12 +21,5 @@ export class SingleSelectComponent implements OnInit,AfterViewInit  {
     private service: AdultsService,
     private next: ActivatedRoute
   ) { }
-
-  ngOnInit() {}
-
-  ngAfterViewInit(){
-    
-  
-  }
 
 }

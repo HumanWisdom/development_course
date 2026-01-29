@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './refer-friend.page.html',
   styleUrls: ['./refer-friend.page.scss'],
 })
-export class ReferFriendPage implements OnInit {
+export class ReferFriendPage {
   email = '';
   name = '';
   content = '';
@@ -27,8 +27,6 @@ export class ReferFriendPage implements OnInit {
     }
   }
 
-  ngOnInit() {
-  }
   sharewhatsapp(){
     
     var url ='https://api.whatsapp.com/send'

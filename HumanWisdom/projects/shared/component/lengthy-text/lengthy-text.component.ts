@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './lengthy-text.component.html',
   styleUrls: ['./lengthy-text.component.scss'],
 })
-export class LengthyTextComponent implements OnInit,AfterViewInit {
+export class LengthyTextComponent {
   @Input() bg: string;
 
   scrId:any
@@ -19,13 +19,5 @@ export class LengthyTextComponent implements OnInit,AfterViewInit {
     private service: AdultsService,
     private next: ActivatedRoute
   ) { }
-
-  ngOnInit() {}
-
-  ngAfterViewInit(){    
-  
-  
-  
-  }
 
 }

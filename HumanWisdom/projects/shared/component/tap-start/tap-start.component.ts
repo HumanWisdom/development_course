@@ -9,7 +9,7 @@ import { LogEventService } from '../../services/log-event.service';
   templateUrl: './tap-start.component.html',
   styleUrls: ['./tap-start.component.scss'],
 })
-export class TapStartComponent implements OnInit,AfterViewInit {
+export class TapStartComponent implements OnInit {
 
   @Input() bg: string
   @Input() bg_tts: string;
@@ -56,21 +56,6 @@ export class TapStartComponent implements OnInit,AfterViewInit {
     this.logeventservice.logEvent('Click_TapToStart', true, this.screenName);
     this.nextEmitter.emit()
   }
-  ngAfterViewInit(){
-    // this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img=>{
 
-    //   img = img.substring(img.indexOf(",") + 1);
-    //  // img.replace('data:image/png;base64,',' ')
-    //   console.log(img)
-    //  this.aservice.UploadThumbnail({"ScrNo":this.scrId,"byteArray":img}).subscribe(
-    //     r=>{
-    //       console.log(r)
-    //     }
-    //   )
-
-    // })
-
-
-  }
 
 }

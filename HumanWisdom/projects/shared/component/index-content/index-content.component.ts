@@ -9,7 +9,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './index-content.component.html',
   styleUrls: ['./index-content.component.scss'],
 })
-export class IndexContentComponent implements OnInit,AfterViewInit {
+export class IndexContentComponent {
 
   scrId:any
   @ViewChild('screen', { static: true }) screen: any;
@@ -21,16 +21,8 @@ export class IndexContentComponent implements OnInit,AfterViewInit {
     private router:Router
   ) { }
 
-  ngOnInit() {}
-
-  ngAfterViewInit(){
-   
-  
-  
-  }
   Resume(url)
   {
-    //url='/adults/breathing/'
     this.router.navigate([url+sessionStorage.getItem("pgResume")])
 
   }
