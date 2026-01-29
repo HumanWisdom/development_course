@@ -10,10 +10,12 @@
     background-repeat: no-repeat;
     background-position: center;
     /* text-align: center; */
-     padding: 40px 30px;
+     padding:  30px;
      background-attachment: fixed;
   background-size: 100% 100%;
     //   padding-top: 13rem !important;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .bg_stake {
@@ -30,7 +32,7 @@
 
 .w100 {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     height: 180px;
     object-fit: cover;
