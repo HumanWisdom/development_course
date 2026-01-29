@@ -28,35 +28,35 @@ export class MicroLearningListingPage implements OnInit {
       id: 2,
       title: 'The Art of Noticing',
       timing: '3',
-      imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_14.webp',
+      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/2.webp',
       isRead: '1'
     },
     {
       id: 1,
       title: 'Introduction to Micro-learning',
       timing: '2',
-      imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp',
+      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/3.webp',
       isRead: '0'
     },
     {
       id: 2,
       title: 'The Art of Noticing',
       timing: '3',
-      imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_14.webp',
+      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/4.webp',
       isRead: '1'
     },
     {
       id: 1,
       title: 'Introduction to Micro-learning',
       timing: '2',
-      imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp',
+      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/5.webp',
       isRead: '0'
     },
     {
       id: 2,
       title: 'The Art of Noticing',
       timing: '3',
-      imgUrl: 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_14.webp',
+      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/8.webp',
       isRead: '1'
     }
   ];

@@ -3,7 +3,8 @@
 <div class="right_col mc_01_v3">
     <div class="cw100p">
         <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw learning">
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+            <div class="learning">
 
                 <!-- Yellow Background Card Container -->
                 <div class="mc_end_container">
@@ -116,7 +117,7 @@
                     <a class="nav_btn active" (click)="goBack()">Prev.</a>
                     <a class="nav_btn" (click)="navigateToListing()">Next</a>
                 </div>
-
+            </div>
             </div>
         </div>
     </div>
