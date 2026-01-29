@@ -1,6 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { SharedService } from '../../../shared/services/shared.service';
 import { LogEventService } from '../../services/log-event.service';
 import { ProgramType } from '../../models/program-model';
@@ -11,13 +10,13 @@ import { ProgramType } from '../../models/program-model';
   templateUrl: './find-inspiration.component.html',
   styleUrls: ['./find-inspiration.component.scss'],
 })
-export class FindInspiration implements OnInit  {
+export class FindInspiration {
     isAdults: boolean = true; 
     inspirationItems=[];
 
 
 
-  constructor(private router: Router, private location: Location,public logeventservice: LogEventService) {
+  constructor(private readonly router: Router, public readonly logeventservice: LogEventService) {
  if (SharedService.ProgramId == ProgramType.Adults) {
         this.isAdults = true;
       } else {
@@ -138,7 +137,7 @@ export class FindInspiration implements OnInit  {
 
   }
   
-   ngOnInit(): void {
+
    
      
 
@@ -146,7 +145,7 @@ export class FindInspiration implements OnInit  {
 
 
       
-  }
+
 
 
   routeTo(item: any) {

@@ -29,6 +29,18 @@ declare var FB: any;
         style({ transform: 'translateX(-100%)' }), // start from left
         animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
       ])
+    ]),
+    trigger('slideAnimationSafari', [
+      // Wildcard transition for swipe left (next)
+      transition('* => left', [
+        style({ transform: 'translate3d(100%, 0, 0)' }), // start from right
+        animate('0.7s ease-in-out', style({ transform: 'translate3d(0, 0, 0)' }))
+      ]),
+      // Wildcard transition for swipe right (previous)
+      transition('* => right', [
+        style({ transform: 'translate3d(-100%, 0, 0)' }), // start from left
+        animate('0.7s ease-in-out', style({ transform: 'translate3d(0, 0, 0)' }))
+      ])
     ])
   ]
 })
@@ -81,6 +93,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   methodEndTime: any;
   delay = 20;
   lastClick = 0;
+  isIos = false;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -109,8 +122,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
 
     $('.carousel').bcSwipe({ threshold: 50 });
-   
+
     this.isAdults = SharedService.ProgramId === 9;
+    this.isIos = SharedService.isIos;
     this.loadFacebookSDK();
   }
 
@@ -120,7 +134,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
 
     $('.carousel').bcSwipe({ threshold: 50 });
-    
+
     // Initialize Google Sign-In callback
     this.loadGoogleSignInScript().then(() => {
       if (typeof google !== 'undefined' && google.accounts) {
@@ -160,9 +174,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       }
 
       // Check if script already exists
-      const existingScript = document.getElementById('google-signin-script') || 
-                             document.querySelector('script[src*="accounts.google.com/gsi/client"]');
-      
+      const existingScript = document.getElementById('google-signin-script') ||
+        document.querySelector('script[src*="accounts.google.com/gsi/client"]');
+
       if (existingScript) {
         // Wait for script to load - but don't fail if it takes time
         let attempts = 0;
@@ -189,7 +203,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       script.id = 'google-signin-script';
       script.async = true;
       script.defer = true;
-      
+
       script.onload = () => {
         // Wait for google object
         setTimeout(() => {
@@ -213,11 +227,11 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
           }
         }, 500); // Increased initial delay
       };
-      
+
       script.onerror = () => {
         reject(new Error('Failed to load Google Sign-In script'));
       };
-      
+
       document.head.appendChild(script);
     });
   }
@@ -225,10 +239,10 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   handleCredentialResponse(response: any) {
     console.log('=== handleCredentialResponse CALLBACK TRIGGERED ===');
     console.log('Response received:', response);
-    
+
     // Close the overlay immediately when credential is received
     this.closeGoogleSignInOverlay();
-    
+
     // JWT token from Google
     const idToken = response.credential;
     console.log('Google ID Token:', idToken ? 'Token present (' + idToken.substring(0, 20) + '...)' : 'No token');
@@ -259,70 +273,38 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
 
       // Verify with backend (same logic as before)
       this.onservice
-      .verifyGoogle({
-        TokenID: this.idToken,
-        FName: this.socialFirstName,
-        LName: this.socialLastName,
-        Email: this.socialEmail,
-        VCode: "",
-        Pwd: "",
-      })
-      .subscribe((res) => {
-        if (res) {
-          this.loginResponse = res;
-          this.onservice.getuser(res.UserId).subscribe(userInfo => {
-            if (userInfo) {
-              localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-              // Trigger update to refresh hamburger menu and other components
-          //    this.onservice.updateUserDetails.next(true);
-            }
-          })
-          localStorage.setItem("guest", "F");
-          localStorage.setItem("remember", "T");
-          localStorage.setItem("socialLogin", "T");
-          localStorage.setItem(
-            "mediaAudio",
-            JSON.stringify(this.mediaAudio)
-          );
-          localStorage.setItem(
-            "mediaVideo",
-            JSON.stringify(this.mediaVideo)
-          );
-          localStorage.setItem("video", JSON.stringify(this.video));
-          localStorage.setItem("audio", JSON.stringify(this.audio));
-          localStorage.setItem("btnclick", "F");
-          localStorage.setItem(
-            "loginResponse",
-            JSON.stringify(this.loginResponse)
-          );
-          sessionStorage.setItem(
-            "loginResponse",
-            JSON.stringify(this.loginResponse)
-          );
-          localStorage.setItem(
-            "token",
-            JSON.stringify(this.loginResponse.access_token)
-          );
-          localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-          localStorage.setItem("userId", JSON.stringify(this.userId));
-          localStorage.setItem("email", this.socialEmail);
-          localStorage.setItem("FnName", this.socialFirstName);
-          localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-          localStorage.setItem("LName", this.socialLastName);
-          localStorage.setItem("pswd", "");
-          localStorage.setItem("name", this.loginResponse.Name);
-          localStorage.setItem("first", "T");
-          if (parseInt(this.loginResponse.UserId) == 0) {
-            this.showAlert = true;
-            this.content = "You have entered wrong credentials. Please try again.";
-            this.enableAlert = true;
-            this.email = "";
-            this.password = "";
-          }
-          else {
-            this.showAlert = false;
-            this.userId = this.loginResponse.UserId;
-            this.userName = this.loginResponse.Name;
+        .verifyGoogle({
+          TokenID: this.idToken,
+          FName: this.socialFirstName,
+          LName: this.socialLastName,
+          Email: this.socialEmail,
+          VCode: "",
+          Pwd: "",
+        })
+        .subscribe((res) => {
+          if (res) {
+            this.loginResponse = res;
+            this.onservice.getuser(res.UserId).subscribe(userInfo => {
+              if (userInfo) {
+                localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+                // Trigger update to refresh hamburger menu and other components
+                //    this.onservice.updateUserDetails.next(true);
+              }
+            })
+            localStorage.setItem("guest", "F");
+            localStorage.setItem("remember", "T");
+            localStorage.setItem("socialLogin", "T");
+            localStorage.setItem(
+              "mediaAudio",
+              JSON.stringify(this.mediaAudio)
+            );
+            localStorage.setItem(
+              "mediaVideo",
+              JSON.stringify(this.mediaVideo)
+            );
+            localStorage.setItem("video", JSON.stringify(this.video));
+            localStorage.setItem("audio", JSON.stringify(this.audio));
+            localStorage.setItem("btnclick", "F");
             localStorage.setItem(
               "loginResponse",
               JSON.stringify(this.loginResponse)
@@ -331,133 +313,165 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
               "loginResponse",
               JSON.stringify(this.loginResponse)
             );
-            localStorage.setItem("userId", JSON.stringify(this.userId));
             localStorage.setItem(
               "token",
               JSON.stringify(this.loginResponse.access_token)
             );
-            if (this.saveUsername == true) {
-              localStorage.setItem("userId", JSON.stringify(this.userId));
-              localStorage.setItem(
-                "userEmail",
-                JSON.stringify(this.socialEmail)
-              );
-              localStorage.setItem(
-                "userName",
-                JSON.stringify(this.userName)
-              );
-            } else {
-              sessionStorage.setItem("userId", JSON.stringify(this.userId));
-              sessionStorage.setItem(
-                "userEmail",
-                JSON.stringify(this.socialEmail)
-              );
-              sessionStorage.setItem(
-                "userName",
-                JSON.stringify(this.userName)
-              );
-            }
-            this.onservice.getuser(res.UserId).subscribe(userInfo => {
-              if (userInfo) {
-                localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-              }
-            })
-            let pers = localStorage.getItem("personalised");
-            let persub = localStorage.getItem("personalised subscription");
-            let acceptCookie = localStorage.getItem("activeCode");
-            let subscribePage = localStorage.getItem("subscribepage");
-            let option = localStorage.getItem("introoption");
-            let giftwisdom = localStorage.getItem("giftwisdom");
-            const url = SharedService.UrlToRedirect;
-            if (url != null) {
-              SharedService.UrlToRedirect = null;
-              this.router.navigate([url]);
-            }
-            else if (option === "T") {
-              localStorage.setItem("introoption", "F");
-              localStorage.setItem("isloggedin", "T");
-              this.router.navigate(["/intro/personalised-for-you"]);
+            localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+            localStorage.setItem("userId", JSON.stringify(this.userId));
+            localStorage.setItem("email", this.socialEmail);
+            localStorage.setItem("FnName", this.socialFirstName);
+            localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+            localStorage.setItem("LName", this.socialLastName);
+            localStorage.setItem("pswd", "");
+            localStorage.setItem("name", this.loginResponse.Name);
+            localStorage.setItem("first", "T");
+            if (parseInt(this.loginResponse.UserId) == 0) {
+              this.showAlert = true;
+              this.content = "You have entered wrong credentials. Please try again.";
+              this.enableAlert = true;
+              this.email = "";
+              this.password = "";
             }
             else {
-              if (acceptCookie === "T" || subscribePage === "T") {
+              this.showAlert = false;
+              this.userId = this.loginResponse.UserId;
+              this.userName = this.loginResponse.Name;
+              localStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              sessionStorage.setItem(
+                "loginResponse",
+                JSON.stringify(this.loginResponse)
+              );
+              localStorage.setItem("userId", JSON.stringify(this.userId));
+              localStorage.setItem(
+                "token",
+                JSON.stringify(this.loginResponse.access_token)
+              );
+              if (this.saveUsername == true) {
+                localStorage.setItem("userId", JSON.stringify(this.userId));
+                localStorage.setItem(
+                  "userEmail",
+                  JSON.stringify(this.socialEmail)
+                );
+                localStorage.setItem(
+                  "userName",
+                  JSON.stringify(this.userName)
+                );
+              } else {
+                sessionStorage.setItem("userId", JSON.stringify(this.userId));
+                sessionStorage.setItem(
+                  "userEmail",
+                  JSON.stringify(this.socialEmail)
+                );
+                sessionStorage.setItem(
+                  "userName",
+                  JSON.stringify(this.userName)
+                );
+              }
+              this.onservice.getuser(res.UserId).subscribe(userInfo => {
+                if (userInfo) {
+                  localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+                }
+              })
+              let pers = localStorage.getItem("personalised");
+              let persub = localStorage.getItem("personalised subscription");
+              let acceptCookie = localStorage.getItem("activeCode");
+              let subscribePage = localStorage.getItem("subscribepage");
+              let option = localStorage.getItem("introoption");
+              let giftwisdom = localStorage.getItem("giftwisdom");
+              const url = SharedService.UrlToRedirect;
+              if (url != null) {
+                SharedService.UrlToRedirect = null;
+                this.router.navigate([url]);
+              }
+              else if (option === "T") {
+                localStorage.setItem("introoption", "F");
                 localStorage.setItem("isloggedin", "T");
-                if (acceptCookie === "T") {
-                  localStorage.setItem("activeCode", "F");
-                }
-                if (subscribePage === "T") {
-                  localStorage.setItem("subscribepage", "F");
-                }
-                if (giftwisdom === 'T') {
-                  this.router.navigate(["/onboarding/add-to-cart"]);
-                } else if (this.loginResponse.Subscriber === 0) {
-                  this.router.navigate(["/onboarding/add-to-cart"]);
-                } else {
-                  this.router.navigate(["/onboarding/viewcart"])
-                }
+                this.router.navigate(["/intro/personalised-for-you"]);
               }
               else {
-                localStorage.setItem("isloggedin", "T");
-                if (pers && persub && pers === "T") {
-                  this.router.navigate(["/onboarding/viewcart"], {
-                    state: { quan: "1", plan: persub },
-                  });
+                if (acceptCookie === "T" || subscribePage === "T") {
+                  localStorage.setItem("isloggedin", "T");
+                  if (acceptCookie === "T") {
+                    localStorage.setItem("activeCode", "F");
+                  }
+                  if (subscribePage === "T") {
+                    localStorage.setItem("subscribepage", "F");
+                  }
+                  if (giftwisdom === 'T') {
+                    this.router.navigate(["/onboarding/add-to-cart"]);
+                  } else if (this.loginResponse.Subscriber === 0) {
+                    this.router.navigate(["/onboarding/add-to-cart"]);
+                  } else {
+                    this.router.navigate(["/onboarding/viewcart"])
+                  }
                 }
                 else {
-                  localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                  if (this.loginResponse?.NoOfVisits === 1) {
-                    localStorage.setItem(
-                      "signupfirst", 'F'
-                    );
-                    /* if(SharedService.ProgramId === 9) {
-                      this.router.navigate(["/adults/change-topic"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
-                    }else if(SharedService.ProgramId === 11) {
-                      // window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                      this.router.navigate(["/teenagers/change-topic"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
-                    } */
-                    this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
-                      state: {
-                        routedFromLogin: true,
-                      }
+                  localStorage.setItem("isloggedin", "T");
+                  if (pers && persub && pers === "T") {
+                    this.router.navigate(["/onboarding/viewcart"], {
+                      state: { quan: "1", plan: persub },
                     });
-
                   }
                   else {
-                    /* if(SharedService.ProgramId === 9) {
-                      this.router.navigate(["/adults/repeat-user"]);
-                    }else if(SharedService.ProgramId === 11) {
-                   //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                      this.router.navigate(["/teenagers/change-topic"], {
+                    localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                    if (this.loginResponse?.NoOfVisits === 1) {
+                      localStorage.setItem(
+                        "signupfirst", 'F'
+                      );
+                      /* if(SharedService.ProgramId === 9) {
+                        this.router.navigate(["/adults/change-topic"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      }else if(SharedService.ProgramId === 11) {
+                        // window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                        this.router.navigate(["/teenagers/change-topic"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      } */
+                      this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
                         state: {
                           routedFromLogin: true,
                         }
                       });
-                    }
-                    } */
 
-                    this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                    }
+                    else {
+                      /* if(SharedService.ProgramId === 9) {
+                        this.router.navigate(["/adults/repeat-user"]);
+                      }else if(SharedService.ProgramId === 11) {
+                     //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                        this.router.navigate(["/teenagers/change-topic"], {
+                          state: {
+                            routedFromLogin: true,
+                          }
+                        });
+                      }
+                      } */
+
+                      this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                    }
                   }
                 }
+
+                /* if(this.urlEmail)
+                {
+                  this.service.verifyUser(this.userId)
+                  .subscribe(res=>{
+  
+                  })
+                }*/
               }
-
-              /* if(this.urlEmail)
-              {
-                this.service.verifyUser(this.userId)
-                .subscribe(res=>{
-
-                })
-              }*/
             }
           }
-        }
-      });
+        });
     } catch (error) {
       console.error('Error processing Google credential:', error);
       this.closeGoogleSignInOverlay();
@@ -484,44 +498,55 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
   onSwipe($event) {
-    if (this.lastClick >= (Date.now() - this.delay))
-  {
-    return;
-  }
+    if (this.lastClick >= (Date.now() - this.delay)) {
+      return;
+    }
     this.lastClick = Date.now();
     $event.srcEvent.stopPropagation()
-    $event.srcEvent.cancelBubble=true;
-    this.methodSTartTime=Date.now();
-    let eventText="";
-    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
+    $event.srcEvent.cancelBubble = true;
+    this.methodSTartTime = Date.now();
+    let eventText = "";
+    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left') : '';
     const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
 
     eventText += `${x} ${y}<br/>`;
-    if(eventText.includes("right")){
-      $('#mdp_carousel').carousel('prev');
-    this.back();
-    }else if(eventText.includes("left")){
-      $('#mdp_carousel').carousel('next');
+    if (eventText.includes("right")) {
+      if (this.isIos) {
+        $('#ic_carousel').carousel('prev');
+      } else {
+        $('#mdp_carousel').carousel('prev');
+      }
+      this.back();
+    } else if (eventText.includes("left")) {
+      if (this.isIos) {
+        $('#ic_carousel').carousel('next');
+      } else {
+        $('#mdp_carousel').carousel('next');
+      }
       this.next();
     }
-    else if(eventText.includes('down')){
+    else if (eventText.includes('down')) {
       window.scrollTo({
-        behavior:'smooth',
-        top:0
+        behavior: 'smooth',
+        top: 0
       });
       return;
     }
-    else if(eventText.includes('up')){
+    else if (eventText.includes('up')) {
       window.scrollTo({
-        behavior:'smooth',
-        top:800
+        behavior: 'smooth',
+        top: 800
       });
     }
-    else{
+    else {
       this.next();
-      $('#mdp_carousel').carousel('next');
+      if (this.isIos) {
+        $('#ic_carousel').carousel('next');
+      } else {
+        $('#mdp_carousel').carousel('next');
+      }
     }
- }
+  }
 
   LogEvent(event) {
     this.logeventservice.logEvent(event);
@@ -529,10 +554,10 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
 
   next() {
     this.currentSection++;
-      if (this.currentSection >= 2) {
-        this.currentSection = 0;
-      }
-      this.direction = 'left';
+    if (this.currentSection >= 2) {
+      this.currentSection = 0;
+    }
+    this.direction = 'left';
   }
 
 
@@ -546,48 +571,80 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
   }
 
   //private VerifyGoogle() {
-    // Method removed - no longer using angularx-social-login
-    // All code below commented out as it depends on angularx-social-login
-    /*
-    this.authService.authState.subscribe(
-      (user) => {
-        this.user = user;
-        this.idToken = user.idToken;
-        this.socialFirstName = user.firstName;
-        this.socialLastName = user.lastName;
-        this.socialEmail = user.email;
+  // Method removed - no longer using angularx-social-login
+  // All code below commented out as it depends on angularx-social-login
+  /*
+  this.authService.authState.subscribe(
+    (user) => {
+      this.user = user;
+      this.idToken = user.idToken;
+      this.socialFirstName = user.firstName;
+      this.socialLastName = user.lastName;
+      this.socialEmail = user.email;
 
-        this.onservice
-          .verifyGoogle({
-            TokenID: this.idToken,
-            FName: this.socialFirstName,
-            LName: this.socialLastName,
-            Email: this.socialEmail,
-            VCode: "",
-            Pwd: "",
-          })
-          .subscribe((res) => {
-            if (res) {
-              this.loginResponse = res;
-              this.onservice.getuser(res.UserId).subscribe(userInfo => {
-                if (userInfo) {
-                  localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-                }
-              })
-              localStorage.setItem("guest", "F");
-              localStorage.setItem("remember", "T");
-              localStorage.setItem("socialLogin", "T");
-              localStorage.setItem(
-                "mediaAudio",
-                JSON.stringify(this.mediaAudio)
-              );
-              localStorage.setItem(
-                "mediaVideo",
-                JSON.stringify(this.mediaVideo)
-              );
-              localStorage.setItem("video", JSON.stringify(this.video));
-              localStorage.setItem("audio", JSON.stringify(this.audio));
-              localStorage.setItem("btnclick", "F");
+      this.onservice
+        .verifyGoogle({
+          TokenID: this.idToken,
+          FName: this.socialFirstName,
+          LName: this.socialLastName,
+          Email: this.socialEmail,
+          VCode: "",
+          Pwd: "",
+        })
+        .subscribe((res) => {
+          if (res) {
+            this.loginResponse = res;
+            this.onservice.getuser(res.UserId).subscribe(userInfo => {
+              if (userInfo) {
+                localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
+              }
+            })
+            localStorage.setItem("guest", "F");
+            localStorage.setItem("remember", "T");
+            localStorage.setItem("socialLogin", "T");
+            localStorage.setItem(
+              "mediaAudio",
+              JSON.stringify(this.mediaAudio)
+            );
+            localStorage.setItem(
+              "mediaVideo",
+              JSON.stringify(this.mediaVideo)
+            );
+            localStorage.setItem("video", JSON.stringify(this.video));
+            localStorage.setItem("audio", JSON.stringify(this.audio));
+            localStorage.setItem("btnclick", "F");
+            localStorage.setItem(
+              "loginResponse",
+              JSON.stringify(this.loginResponse)
+            );
+            sessionStorage.setItem(
+              "loginResponse",
+              JSON.stringify(this.loginResponse)
+            );
+            localStorage.setItem(
+              "token",
+              JSON.stringify(this.loginResponse.access_token)
+            );
+            localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
+            localStorage.setItem("userId", JSON.stringify(this.userId));
+            localStorage.setItem("email", this.socialEmail);
+            localStorage.setItem("FnName", this.socialFirstName);
+            localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
+            localStorage.setItem("LName", this.socialLastName);
+            localStorage.setItem("pswd", "");
+            localStorage.setItem("name", this.loginResponse.Name);
+            localStorage.setItem("first", "T");
+            if (parseInt(this.loginResponse.UserId) == 0) {
+              this.showAlert = true;
+              this.content = "You have entered wrong credentials. Please try again.";
+              this.enableAlert = true;
+              this.email = "";
+              this.password = "";
+            }
+            else {
+              this.showAlert = false;
+              this.userId = this.loginResponse.UserId;
+              this.userName = this.loginResponse.Name;
               localStorage.setItem(
                 "loginResponse",
                 JSON.stringify(this.loginResponse)
@@ -596,173 +653,141 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
                 "loginResponse",
                 JSON.stringify(this.loginResponse)
               );
+              localStorage.setItem("userId", JSON.stringify(this.userId));
               localStorage.setItem(
                 "token",
                 JSON.stringify(this.loginResponse.access_token)
               );
-              localStorage.setItem("Subscriber", this.loginResponse.Subscriber);
-              localStorage.setItem("userId", JSON.stringify(this.userId));
-              localStorage.setItem("email", this.socialEmail);
-              localStorage.setItem("FnName", this.socialFirstName);
-              localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-              localStorage.setItem("LName", this.socialLastName);
-              localStorage.setItem("pswd", "");
-              localStorage.setItem("name", this.loginResponse.Name);
-              localStorage.setItem("first", "T");
-              if (parseInt(this.loginResponse.UserId) == 0) {
-                this.showAlert = true;
-                this.content = "You have entered wrong credentials. Please try again.";
-                this.enableAlert = true;
-                this.email = "";
-                this.password = "";
-              }
-              else {
-                this.showAlert = false;
-                this.userId = this.loginResponse.UserId;
-                this.userName = this.loginResponse.Name;
-                localStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
-                sessionStorage.setItem(
-                  "loginResponse",
-                  JSON.stringify(this.loginResponse)
-                );
+              if (this.saveUsername == true) {
                 localStorage.setItem("userId", JSON.stringify(this.userId));
                 localStorage.setItem(
-                  "token",
-                  JSON.stringify(this.loginResponse.access_token)
+                  "userEmail",
+                  JSON.stringify(this.socialEmail)
                 );
-                if (this.saveUsername == true) {
-                  localStorage.setItem("userId", JSON.stringify(this.userId));
-                  localStorage.setItem(
-                    "userEmail",
-                    JSON.stringify(this.socialEmail)
-                  );
-                  localStorage.setItem(
-                    "userName",
-                    JSON.stringify(this.userName)
-                  );
-                } else {
-                  sessionStorage.setItem("userId", JSON.stringify(this.userId));
-                  sessionStorage.setItem(
-                    "userEmail",
-                    JSON.stringify(this.socialEmail)
-                  );
-                  sessionStorage.setItem(
-                    "userName",
-                    JSON.stringify(this.userName)
-                  );
+                localStorage.setItem(
+                  "userName",
+                  JSON.stringify(this.userName)
+                );
+              } else {
+                sessionStorage.setItem("userId", JSON.stringify(this.userId));
+                sessionStorage.setItem(
+                  "userEmail",
+                  JSON.stringify(this.socialEmail)
+                );
+                sessionStorage.setItem(
+                  "userName",
+                  JSON.stringify(this.userName)
+                );
+              }
+              this.onservice.getuser(res.UserId).subscribe(userInfo => {
+                if (userInfo) {
+                  localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
                 }
-                this.onservice.getuser(res.UserId).subscribe(userInfo => {
-                  if (userInfo) {
-                    localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
-                  }
-                })
-                let pers = localStorage.getItem("personalised");
-                let persub = localStorage.getItem("personalised subscription");
-                let acceptCookie = localStorage.getItem("activeCode");
-                let subscribePage = localStorage.getItem("subscribepage");
-                let option = localStorage.getItem("introoption");
-                let giftwisdom = localStorage.getItem("giftwisdom");
-                const url = SharedService.UrlToRedirect;
-                if (url != null) {
-                  SharedService.UrlToRedirect = null;
-                  this.router.navigate([url]);
-                }
-                else if (option === "T") {
-                  localStorage.setItem("introoption", "F");
+              })
+              let pers = localStorage.getItem("personalised");
+              let persub = localStorage.getItem("personalised subscription");
+              let acceptCookie = localStorage.getItem("activeCode");
+              let subscribePage = localStorage.getItem("subscribepage");
+              let option = localStorage.getItem("introoption");
+              let giftwisdom = localStorage.getItem("giftwisdom");
+              const url = SharedService.UrlToRedirect;
+              if (url != null) {
+                SharedService.UrlToRedirect = null;
+                this.router.navigate([url]);
+              }
+              else if (option === "T") {
+                localStorage.setItem("introoption", "F");
+                localStorage.setItem("isloggedin", "T");
+                this.router.navigate(["/intro/personalised-for-you"]);
+              }
+              else {
+                if (acceptCookie === "T" || subscribePage === "T") {
                   localStorage.setItem("isloggedin", "T");
-                  this.router.navigate(["/intro/personalised-for-you"]);
+                  if (acceptCookie === "T") {
+                    localStorage.setItem("activeCode", "F");
+                  }
+                  if (subscribePage === "T") {
+                    localStorage.setItem("subscribepage", "F");
+                  }
+                  if (giftwisdom === 'T') {
+                    this.router.navigate(["/onboarding/add-to-cart"]);
+                  } else if (this.loginResponse.Subscriber === 0) {
+                    this.router.navigate(["/onboarding/add-to-cart"]);
+                  } else {
+                    this.router.navigate(["/onboarding/viewcart"])
+                  }
                 }
                 else {
-                  if (acceptCookie === "T" || subscribePage === "T") {
-                    localStorage.setItem("isloggedin", "T");
-                    if (acceptCookie === "T") {
-                      localStorage.setItem("activeCode", "F");
-                    }
-                    if (subscribePage === "T") {
-                      localStorage.setItem("subscribepage", "F");
-                    }
-                    if (giftwisdom === 'T') {
-                      this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else if (this.loginResponse.Subscriber === 0) {
-                      this.router.navigate(["/onboarding/add-to-cart"]);
-                    } else {
-                      this.router.navigate(["/onboarding/viewcart"])
-                    }
+                  localStorage.setItem("isloggedin", "T");
+                  if (pers && persub && pers === "T") {
+                    this.router.navigate(["/onboarding/viewcart"], {
+                      state: { quan: "1", plan: persub },
+                    });
                   }
                   else {
-                    localStorage.setItem("isloggedin", "T");
-                    if (pers && persub && pers === "T") {
-                      this.router.navigate(["/onboarding/viewcart"], {
-                        state: { quan: "1", plan: persub },
+                    localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
+                    if (this.loginResponse?.NoOfVisits === 1) {
+                      localStorage.setItem(
+                        "signupfirst", 'F'
+                      );
+                      // if(SharedService.ProgramId === 9) {
+                      //   this.router.navigate(["/adults/change-topic"], {
+                      //     state: {
+                      //       routedFromLogin: true,
+                      //     }
+                      //   });
+                      // }else if(SharedService.ProgramId === 11) {
+                      //   // window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                      //   this.router.navigate(["/teenagers/change-topic"], {
+                      //     state: {
+                      //       routedFromLogin: true,
+                      //     }
+                      //   });
+                      // }
+                      this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
+                        state: {
+                          routedFromLogin: true,
+                        }
                       });
+
                     }
                     else {
-                      localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                      if (this.loginResponse?.NoOfVisits === 1) {
-                        localStorage.setItem(
-                          "signupfirst", 'F'
-                        );
-                        // if(SharedService.ProgramId === 9) {
-                        //   this.router.navigate(["/adults/change-topic"], {
-                        //     state: {
-                        //       routedFromLogin: true,
-                        //     }
-                        //   });
-                        // }else if(SharedService.ProgramId === 11) {
-                        //   // window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                        //   this.router.navigate(["/teenagers/change-topic"], {
-                        //     state: {
-                        //       routedFromLogin: true,
-                        //     }
-                        //   });
-                        // }
-                        this.router.navigate(["/" + SharedService.getprogramName() + "/change-topic"], {
-                          state: {
-                            routedFromLogin: true,
-                          }
-                        });
+                      // if(SharedService.ProgramId === 9) {
+                      //   this.router.navigate(["/adults/repeat-user"]);
+                      // }else if(SharedService.ProgramId === 11) {
+                      //   //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
+                      //   this.router.navigate(["/teenagers/change-topic"], {
+                      //     state: {
+                      //       routedFromLogin: true,
+                      //     }
+                      //   });
+                      // }
+                      // }
 
-                      }
-                      else {
-                        // if(SharedService.ProgramId === 9) {
-                        //   this.router.navigate(["/adults/repeat-user"]);
-                        // }else if(SharedService.ProgramId === 11) {
-                        //   //   window.location.href = environment.clientUrl+"/teenagers/change-topic";
-                        //   this.router.navigate(["/teenagers/change-topic"], {
-                        //     state: {
-                        //       routedFromLogin: true,
-                        //     }
-                        //   });
-                        // }
-                        // }
-
-                        this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
-                      }
+                      this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
                     }
                   }
-
-                  // if(this.urlEmail)
-                  // {
-                  //   this.service.verifyUser(this.userId)
-                  //   .subscribe(res=>{
-                  //
-                  //   })
-                  // }
                 }
+
+                // if(this.urlEmail)
+                // {
+                //   this.service.verifyUser(this.userId)
+                //   .subscribe(res=>{
+                //
+                //   })
+                // }
               }
             }
-          });
-      },
-      (error) => console.log(error),
-      () => {
-        //this.router.navigate[('/onboarding/addcart')]
-        // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
-      }
-    );
-    */
+          }
+        });
+    },
+    (error) => console.log(error),
+    () => {
+      //this.router.navigate[('/onboarding/addcart')]
+      // window.location.href="https://humanwisdom.me/hwp/webpages/index.php"
+    }
+  );
+  */
   //}
 
   Logevent(route, params, evtName) {
@@ -815,7 +840,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       this.logeventservice.logEvent('google_signup');
     else
       this.logeventservice.logEvent('google_login');
-    
+
     this.handleGoogleSignIn();
   }
 
@@ -871,7 +896,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       // Always show button overlay - don't rely on prompt
       // The prompt is unreliable and may not show, so we'll show the button directly
       this.showGoogleSignInButton();
-      
+
       // Optionally try prompt as well (but button is already shown)
       try {
         google.accounts.id.prompt((notification: any) => {
@@ -920,7 +945,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
 
   private showGoogleSignInButton(): void {
     console.log('=== showGoogleSignInButton called ===');
-    
+
     // Remove existing overlay if any
     this.closeGoogleSignInOverlay();
 
@@ -946,7 +971,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       justify-content: center;
       align-items: center;
     `;
-    
+
     const container = document.createElement('div');
     container.id = 'google-signin-container';
     container.style.cssText = `
@@ -958,7 +983,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       text-align: center;
       position: relative;
     `;
-    
+
     // Close button
     const closeBtn = document.createElement('button');
     closeBtn.innerHTML = '×';
@@ -980,7 +1005,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       this.closeGoogleSignInOverlay();
     };
     container.appendChild(closeBtn);
-    
+
     overlay.appendChild(container);
     document.body.appendChild(overlay);
     console.log('Overlay created and added to DOM');
@@ -1018,7 +1043,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       this.logeventservice.logEvent('facebook_signup');
     else
       this.logeventservice.logEvent('facebook_login');
-    
+
     this.handleFacebookLogin();
   }
 
@@ -1128,7 +1153,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
         }
       });
-      
+
       localStorage.setItem("guest", "F");
       localStorage.setItem("remember", "T");
       localStorage.setItem("socialLogin", "T");
@@ -1149,7 +1174,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       localStorage.setItem("pswd", "");
       localStorage.setItem("name", this.loginResponse.Name);
       localStorage.setItem("first", "T");
-      
+
       this.showAlert = false;
       this.userId = this.loginResponse.UserId;
       this.userName = this.loginResponse.Name;
@@ -1157,7 +1182,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse));
       localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("token", JSON.stringify(this.loginResponse.access_token));
-      
+
       if (this.saveUsername == true) {
         localStorage.setItem("userId", JSON.stringify(this.userId));
         localStorage.setItem("userEmail", JSON.stringify(this.socialEmail));
@@ -1167,13 +1192,13 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
         sessionStorage.setItem("userEmail", JSON.stringify(this.socialEmail));
         sessionStorage.setItem("userName", JSON.stringify(this.userName));
       }
-      
+
       this.onservice.getuser(res.UserId).subscribe(userInfo => {
         if (userInfo) {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
         }
       });
-      
+
       let pers = localStorage.getItem("personalised");
       let persub = localStorage.getItem("personalised subscription");
       let acceptCookie = localStorage.getItem("activeCode");
@@ -1181,7 +1206,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
       let option = localStorage.getItem("introoption");
       let giftwisdom = localStorage.getItem("giftwisdom");
       const url = SharedService.UrlToRedirect;
-      
+
       if (url != null) {
         SharedService.UrlToRedirect = null;
         this.router.navigate([url]);
@@ -1229,30 +1254,30 @@ export class IntroCarouselPage implements OnInit, AfterViewInit {
     }
   }
 
-  routetoUrl(url){
-  
-      // this.router.navigate(["/" + SharedService.getprogramName() + url]);
-      window.open("/" + SharedService.getprogramName() + url,"_blank");
-    }
+  routetoUrl(url) {
+
+    // this.router.navigate(["/" + SharedService.getprogramName() + url]);
+    window.open("/" + SharedService.getprogramName() + url, "_blank");
+  }
 
   signInWithApple(reqtype) {
-     if (reqtype == "signup")
-       this.logeventservice.logEvent('apple_signup');
-     else
-       this.logeventservice.logEvent('apple_login');
-     const CLIENT_ID = "humanwisdom.web.service";
-     localStorage.setItem('appleLogin','T');
-     let REDIRECT_API_URL = environment.appleSignInAPIAdults;
-     if(!SharedService.isAdultProgram()){
-       REDIRECT_API_URL = environment.appleSignInAPITeenagers;
-     }
-      window.open(
-       `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
-         REDIRECT_API_URL
-       )}&response_type=code id_token&scope=name email&response_mode=form_post`,"_self"
-     );
+    if (reqtype == "signup")
+      this.logeventservice.logEvent('apple_signup');
+    else
+      this.logeventservice.logEvent('apple_login');
+    const CLIENT_ID = "humanwisdom.web.service";
+    localStorage.setItem('appleLogin', 'T');
+    let REDIRECT_API_URL = environment.appleSignInAPIAdults;
+    if (!SharedService.isAdultProgram()) {
+      REDIRECT_API_URL = environment.appleSignInAPITeenagers;
+    }
+    window.open(
+      `https://appleid.apple.com/auth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+        REDIRECT_API_URL
+      )}&response_type=code id_token&scope=name email&response_mode=form_post`, "_self"
+    );
     // this.pollPopup(popup);
-   }
+  }
 
 }
 

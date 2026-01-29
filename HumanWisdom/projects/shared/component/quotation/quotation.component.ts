@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './quotation.component.html',
   styleUrls: ['./quotation.component.scss'],
 })
-export class QuotationComponent implements OnInit, AfterViewInit {
+export class QuotationComponent {
   @Input() bg: string
 
   scrId: any
@@ -20,15 +20,5 @@ export class QuotationComponent implements OnInit, AfterViewInit {
     private service: AdultsService,
     private next: ActivatedRoute
   ) { }
-
-  ngOnInit() {
-
-  }
-
-  ngAfterViewInit() {
-
-
-
-  }
 
 }

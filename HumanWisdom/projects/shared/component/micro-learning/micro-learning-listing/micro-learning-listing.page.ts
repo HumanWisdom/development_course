@@ -9,7 +9,7 @@ import { ProgramType } from "../../../models/program-model";
   templateUrl: './micro-learning-listing.page.html',
   styleUrls: ['./micro-learning-listing.page.scss'],
 })
-export class MicroLearningListingPage implements OnInit {
+export class MicroLearningListingPage {
   isAdults = true;
   searchedText = '';
    tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/micro_learning.webp"; // placeholder
@@ -69,8 +69,6 @@ export class MicroLearningListingPage implements OnInit {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     this.filteredList = this.microLearningList;
   }
-
-  ngOnInit() {}
 
   goBack() {
     this.location.back();

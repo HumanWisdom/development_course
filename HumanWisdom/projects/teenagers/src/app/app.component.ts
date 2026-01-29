@@ -1,4 +1,5 @@
 import { Component, OnDestroy, Renderer2 } from '@angular/core';
+import { Platform } from '@angular/cdk/platform';
 import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { NavigationService } from '../../../shared/services/navigation.service';
@@ -39,8 +40,10 @@ export class AppComponent implements OnDestroy {
   constructor(private navigationService: NavigationService,
     private router: Router,
     private renderer: Renderer2,
+    private platform: Platform,
     private services: TeenagersService, private commonService: CommonService, private onboardingService: OnboardingService) {
     SharedService.ProgramId = 11;
+    SharedService.isIos = SharedService.initializeIosCheck(this.platform);
     moengage.initialize({
       app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
       swPath: '/teenagers/serviceworker.js'
@@ -134,7 +137,7 @@ export class AppComponent implements OnDestroy {
       return true;
     }
     if ((this.router.url == "/teenagers" || this.router.url == "/teenagers/teenager-dashboard") || (this.router.url == "/teenager-dashboard")
-      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard") || this.router.url == "/teenagers/home" || this.router.url == "/home" || this.router.url.includes("home") ) {
+      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard") || this.router.url == "/teenagers/home" || this.router.url == "/home" || this.router.url.includes("home")) {
       this.dash = true;
       this.journal = false;
       this.search = false;

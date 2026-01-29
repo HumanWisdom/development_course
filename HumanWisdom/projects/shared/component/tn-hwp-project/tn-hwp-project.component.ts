@@ -6,7 +6,7 @@ import { OnboardingService } from '../../services/onboarding.service';
   templateUrl: './tn-hwp-project.component.html',
   styleUrls: ['./tn-hwp-project.component.scss'],
 })
-export class TnHwpProjectComponent implements OnInit {
+export class TnHwpProjectComponent {
   isloggedIn = false;
   name = ''
   roleid = 0
@@ -34,8 +34,7 @@ export class TnHwpProjectComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
-  }
+
 
   routeGuide(value: any) {
 

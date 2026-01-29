@@ -9,7 +9,7 @@ import {OnboardingService} from '../../services/onboarding.service'
   templateUrl: './password-link.page.html',
   styleUrls: ['./password-link.page.scss'],
 })
-export class PasswordLinkPage implements OnInit {
+export class PasswordLinkPage {
   email:any
   showMessage=false
 
@@ -18,8 +18,6 @@ export class PasswordLinkPage implements OnInit {
     private service:OnboardingService,
     private location:Location) { }
 
-  ngOnInit() {
-  }
   recoverPassword(){
     this.service.sendPasswordLink(this.email)
     .subscribe(
