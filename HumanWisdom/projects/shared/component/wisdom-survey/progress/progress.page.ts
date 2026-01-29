@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Color } from 'ng2-charts';
@@ -15,7 +15,7 @@ import { ProgramType } from "../../../models/program-model";
   templateUrl: './progress.page.html',
   styleUrls: ['./progress.page.scss'],
 })
-export class ProgressPage implements OnInit {
+export class ProgressPage {
     isAdults = true;
   public enableChart = false;  
   public lineChartOptions: ChartOptions = {
@@ -403,8 +403,7 @@ export class ProgressPage implements OnInit {
 
   }
 
-  ngOnInit() {
-  }
+
 
   goBack(){
     var url = this.navigationService.navigateToBackLink();

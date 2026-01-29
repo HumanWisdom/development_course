@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input,Output, EventEmitter,AfterViewInit,ViewChild} from '@angular/core';
+import { Component,Input,Output, EventEmitter,ViewChild} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './program-content.component.html',
   styleUrls: ['./program-content.component.scss'],
 })
-export class ProgramContentComponent implements OnInit,AfterViewInit {
+export class ProgramContentComponent {
   @Input() title: string;
   @Input() content: string;
   @Input() bg: string;
@@ -21,15 +21,5 @@ export class ProgramContentComponent implements OnInit,AfterViewInit {
     private service: AdultsService,
     private next: ActivatedRoute
   ) { }
-
-  ngOnInit() {
-    
-  }
-
-  ngAfterViewInit(){
-   
-  
-  
-  }
 
 }

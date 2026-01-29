@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 import {Options} from '@angular-slider/ngx-slider'
 
 @Component({
@@ -6,7 +6,7 @@ import {Options} from '@angular-slider/ngx-slider'
   templateUrl: './only-slider.component.html',
   styleUrls: ['./only-slider.component.scss'],
 })
-export class OnlySliderComponent implements OnInit {
+export class OnlySliderComponent {
 
   @Input() r:number
   @Input() pFilter:string
@@ -20,10 +20,6 @@ export class OnlySliderComponent implements OnInit {
   value=100
   
   constructor() { }
-
-  ngOnInit() {
-    
-  }
 
   selectRating(r)
   {

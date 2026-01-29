@@ -18,7 +18,7 @@ import { Constant } from "../../services/constant";
   templateUrl: './my-dashboard.component.html',
   styleUrls: ['./my-dashboard.component.scss'],
 })
-export class MyDashboardComponent implements OnInit {
+export class MyDashboardComponent {
   @Input() title: string;
   @Input() sharedPath: string;
   isAdults:boolean = true;
@@ -57,10 +57,6 @@ export class MyDashboardComponent implements OnInit {
       });
      }
 
-  ngOnInit() {
-          //  SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
-
-  }
 
     goBack(){
     var url = this.navigationService.navigateToBackLink();

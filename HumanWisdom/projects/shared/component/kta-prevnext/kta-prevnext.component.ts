@@ -10,7 +10,7 @@ import { SharedService } from '../../services/shared.service';
   templateUrl: './kta-prevnext.component.html',
   styleUrls: ['./kta-prevnext.component.scss'],
 })
-export class KtaPrevnextComponent implements OnInit,AfterViewInit {
+export class KtaPrevnextComponent implements OnInit {
 
   @Input() bg: string;
   scrId:any
@@ -28,12 +28,6 @@ export class KtaPrevnextComponent implements OnInit,AfterViewInit {
 
         this.isAdults = SharedService.ProgramId === 9;
     
-  }
-
-  ngAfterViewInit(){
-  
-  
-  
   }
 
 }

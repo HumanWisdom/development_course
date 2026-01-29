@@ -4,7 +4,7 @@ import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
   templateUrl: './kta-footer.component.html',
   styleUrls: ['./kta-footer.component.scss'],
 })
-export class KtaFooterComponent implements OnInit {
+export class KtaFooterComponent {
   @Output() previousEmitter = new EventEmitter<string>();
   @Input() fbg: string;
   @Input() bg_cft: string;
@@ -12,7 +12,6 @@ export class KtaFooterComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
   prev(){
     this.previousEmitter.emit()
 

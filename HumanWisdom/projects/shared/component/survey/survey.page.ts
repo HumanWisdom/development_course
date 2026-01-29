@@ -11,7 +11,7 @@ import { SharedService } from '../../services/shared.service';
   templateUrl: './survey.page.html',
   styleUrls: ['./survey.page.scss'],
 })
-export class SurveyPage implements OnInit, OnDestroy {
+export class SurveyPage implements OnDestroy {
   userName: string;
   feedbackList = [];
   selectedText: string = '';
@@ -48,10 +48,6 @@ export class SurveyPage implements OnInit, OnDestroy {
 
   }
 
-  ngOnInit() {
-  
-    //document.getElementById('test1').click();
-  }
 
   closeModalevent() {
 

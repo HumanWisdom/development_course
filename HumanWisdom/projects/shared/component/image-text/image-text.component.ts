@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './image-text.component.html',
   styleUrls: ['./image-text.component.scss'],
 })
-export class ImageTextComponent implements OnInit, AfterViewInit {
+export class ImageTextComponent {
   @Input() base: string;
   @Input() overlay: string;
   scrId: any
@@ -21,16 +21,6 @@ export class ImageTextComponent implements OnInit, AfterViewInit {
     private next: ActivatedRoute,
     private router: Router
   ) { }
-
-  ngOnInit() {
-    
-  }
-
-  ngAfterViewInit() {
-
-
-
-  }
 
   gotoTranscript() {
     const url = this.router.url + "t";

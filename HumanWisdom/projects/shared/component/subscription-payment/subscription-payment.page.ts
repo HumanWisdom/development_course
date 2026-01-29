@@ -24,7 +24,7 @@ import { Location } from '@angular/common';
   templateUrl: './subscription-payment.page.html',
   styleUrls: ['./subscription-payment.page.scss'],
 })
-export class SubscriptionPaymentPage implements OnInit {
+export class SubscriptionPaymentPage {
   //stripeKey = 'pk_live_51IDyEyLodCYBgHN8HSs0IYpVvumprrRytuEiat1sCrqELs9wj4L7J3GMMB8hk0H3uHl6wQePj4aKeatJNuOM56IJ005Bp6Cx0a';
   // stripeKey = 'pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl';
   stripeKey = environment.stripeKey;
@@ -403,8 +403,7 @@ export class SubscriptionPaymentPage implements OnInit {
     this.router.navigate([`/${SharedService.getprogramName()}/onboarding/viewcart`]);
   }
 
-  ngOnInit() {
-  }
+
 
   getAlertcloseEvent(event) {
     let isSuccess = this.content === 'Payment Successful';

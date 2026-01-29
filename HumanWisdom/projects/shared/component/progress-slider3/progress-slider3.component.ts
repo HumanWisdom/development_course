@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 import {Options} from '@angular-slider/ngx-slider'
 
 
@@ -7,7 +7,7 @@ import {Options} from '@angular-slider/ngx-slider'
   templateUrl: './progress-slider3.component.html',
   styleUrls: ['./progress-slider3.component.scss'],
 })
-export class ProgressSlider3Component implements OnInit {
+export class ProgressSlider3Component {
   @Input() q:string
   @Input() r:number
   @Input() pFilter:string
@@ -22,7 +22,6 @@ export class ProgressSlider3Component implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
   selectRating(r)
   {
     
