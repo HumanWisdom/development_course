@@ -13,9 +13,10 @@ export class AngerAtPage implements OnInit {
   isShowTranscript = false;
   isShowAudio = true;
 
-  constructor(private location: Location,private router :Router,private navigationService:  NavigationService) { }
+  constructor(private readonly location: Location, private readonly router: Router, private readonly navigationService: NavigationService) { }
 
   ngOnInit() {
+    // ngOnInit is intentionally left empty as no initialization logic is required.
   }
 
   changeType() {
@@ -29,20 +30,20 @@ export class AngerAtPage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
+    const url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.defaultGoBack();
-    }else{
+    } else {
       this.router.navigate([url]);
     }
   }
 
   defaultGoBack() {
     // this.location.back()
-    if (window.location.href.includes('teenagers')) {
+    if (globalThis.location.href.includes('teenagers')) {
       this.router.navigate(['/teenagers/feel-better-now']);
     } else {
       this.router.navigate(['/adults/feel-better-now']);
     }
-}
+  }
 }

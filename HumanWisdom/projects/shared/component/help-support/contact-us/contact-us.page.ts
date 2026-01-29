@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { ProgramType } from '../../../models/program-model';
 import { SharedService } from '../../../services/shared.service';
@@ -8,10 +8,10 @@ import { SharedService } from '../../../services/shared.service';
   templateUrl: './contact-us.page.html',
   styleUrls: ['./contact-us.page.scss'],
 })
-export class ContactUsPage implements OnInit {
+export class ContactUsPage {
   isAdults: boolean = true; 
 
-  constructor(private location: Location) { 
+  constructor(private readonly location: Location) { 
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -19,8 +19,7 @@ export class ContactUsPage implements OnInit {
     }
    }
 
-  ngOnInit() {
-  }
+
 
   goBack() {
     this.location.back()
