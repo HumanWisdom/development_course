@@ -1076,6 +1076,18 @@ if (pricingSelectBtn) {
     });
 }
 
+const PricingSelectBtn1 = document.getElementById('PricingSelectBtn1');
+if (PricingSelectBtn1) {
+    PricingSelectBtn1.addEventListener('click', function () {
+        localStorage.setItem('pricing',true);
+        localStorage.setItem('login',false);
+        logevent("start_your_free_trial_button_click", "index.php");
+        window.location.href = "../pages/splash_options.php";
+    });
+}
+
+
+
 const OllyChatBtn = document.getElementById('OllyChatBtn');
 if (OllyChatBtn) {
     OllyChatBtn.addEventListener('click', function () {
