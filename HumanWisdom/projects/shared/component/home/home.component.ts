@@ -57,6 +57,7 @@ export interface ContentCard {
   isFree?: string | number; // "0" means locked, "1" means free
   isRead?: string | number; // "0" means not read, "1" means read/completed
   isTeenTalk?: boolean;
+  dailyPractiseID?: string | number;
 }
 
 export interface ContentSection {
@@ -134,6 +135,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   searchinp: string = '';
   searchResult: any[] = [];
   moduleList: any[] = [];
+  eventList: any[] = [];
+  audioMeditationList: any[] = [];
   showSearchBox: boolean = true;
   showModal = false;
   modalTitle = 'The best is yet to come';
@@ -201,6 +204,23 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Load module list for search dropdown
     this.getModuleList();
+    
+    // Fetch audio meditation list for ID lookup
+    this.commonService.GetAudioMeditation().subscribe(res => {
+      if (res) {
+        this.audioMeditationList = res;
+      }
+    });
+
+    // Fetch all events for ID lookup fallback
+    this.commonService.getAllEvents().subscribe(x => {
+      if (x) {
+        const future = x.FutureEvents || [];
+        const past = x.PastEvents || [];
+        this.eventList = [...future, ...past];
+        console.log('DEBUG: Event list loaded for fallback lookup:', this.eventList.length);
+      }
+    });
 
     // Check for hash-based navigation before loading user preference
     const hashNavigationItem = this.getNavigationItemFromHash();
@@ -221,7 +241,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     // Initialize wisdom exercise as hidden
-    this.showWisdomExercise = false;
+   // this.showWisdomExercise = false;
   }
 
 
@@ -602,6 +622,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           });
 
           if (storedActivePreference === "19") {
+            this.preference = storedActivePreference;
             this.showWisdomExercise = true;
             this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
           } else {
@@ -680,7 +701,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       path: card.URL || card.path || '',
       moduleType: card.cardtype || card.module || '',
       isFree: card.isFree,
-      isRead: card.isRead
+      isRead: card.isRead,
+      dailyPractiseID: card.dailyPractiseID || card.DailyPractiseID || card.dailyPracticeID || card.DailyPracticeID
     };
   }
 
@@ -696,7 +718,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       path: card.URL || card.path || card.modulePath || '',
       moduleType: card.cardtype || 'MODULE',
       isFree: card.isFree,
-      isRead: card.isRead
+      isRead: card.isRead,
+      dailyPractiseID: card.dailyPractiseID || card.DailyPractiseID || card.dailyPracticeID || card.DailyPracticeID
     };
   }
 
@@ -766,7 +789,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   transformGenericCard(card: any): ContentCard {
     return {
-      id: card.RowID?.toString() || card.id?.toString() || card.title || `card-${Date.now()}`,
+      id: card.RowID?.toString() || card.rowID?.toString() || card.EventID?.toString() || card.eventID?.toString() || card.id?.toString() || card.title || `card-${Date.now()}`,
       imageUrl: card.imgUrl || card.image_path || card.imageUrl || card.ImagePath || '',
       title: card.title || card.Title || '',
       subtitle: card.Subtitle || card.subtitle || '',
@@ -776,7 +799,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       path: card.URL || card.path || '',
       moduleType: card.cardtype || card.module || card.moduleType || '',
       isFree: card.isFree,
-      isRead: card.isRead
+      isRead: card.isRead,
+      dailyPractiseID: card.dailyPractiseID || card.DailyPractiseID || card.dailyPracticeID || card.DailyPracticeID
     };
   }
 
@@ -823,10 +847,26 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   };
 
   onCardClick(card: ContentCard): void {
+    console.log('DEBUG: Card clicked:', card);
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
-    const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/');
+    const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/') || (card.path || '').includes('youtubelink');
+    console.log('DEBUG: Is Event:', isEvent);
+
     if (isEvent) {
-      const id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'eid') ?? this.extractIdFromPath(card.path);
+      let id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'eid') ?? this.extractIdFromPath(card.path);
+      
+      // Fallback: look up in eventList by title if ID not found
+      if (!id && this.eventList.length > 0 && card.title) {
+        const title = card.title.trim().toLowerCase();
+        const match = this.eventList.find(e => e.Title && e.Title.trim().toLowerCase() === title);
+        if (match && match.RowID) {
+           id = Number(match.RowID);
+           console.log('DEBUG: Found Event ID from fallback list:', id);
+        }
+      }
+
+      console.log('DEBUG: Extracted Event ID:', id);
+
       if (id != null) {
         this.commonService.clickEvents(id).subscribe({ next: () => { }, error: () => { } });
       }
@@ -841,6 +881,19 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       if (link) {
         const code = id != null && id <= 1 ? 'rdtfghjhfdg' : 'vncbxdfchgvxd';
         this.router.navigate([`${prog}/curated/youtubelink`, `${link}=${code}`], { state: { title: card.title } });
+
+        // Optimistic update for Events before returning
+        const isUnseen = card && card.id && (
+          card.isRead === undefined ||
+          card.isRead === null ||
+          card.isRead === '0' ||
+          card.isRead === 0
+        );
+        if (isUnseen) {
+          this.homeStateService.markCardAsSeen(card.id);
+          card.isRead = '1';
+        }
+
         this.cardClick.emit(card);
         return;
       }
@@ -965,7 +1018,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       }
       return;
     }
-    if (type.includes('EVENT') || (card.path || '').includes('/events/')) {
+    if (type.includes('EVENT') || (card.path || '').includes('/events/') || (card.path || '').includes('youtubelink')) {
       const id = this.extractNumericId(card.id) ?? this.extractQueryIdFromPath(card.path, 'eid') ?? this.extractIdFromPath(card.path);
       if (id != null) {
         this.commonService.clickEvents(id).subscribe({ next: () => { }, error: () => { } });
@@ -983,7 +1036,36 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
     if (type.includes('AUDIO') || type.includes('BREATHING')) {
-      const id = this.extractIdFromPath(card.path);
+      let id = card.dailyPractiseID ? Number(card.dailyPractiseID) : null;
+      
+      // Fallback: look up dailyPractiseID
+      if (!id && this.audioMeditationList.length > 0) {
+        
+        // 1. Try matching by Title (most reliable)
+        if (card.title) {
+           const title = card.title.trim().toLowerCase();
+           const match = this.audioMeditationList.find(m => m.Title && m.Title.trim().toLowerCase() === title);
+           if (match) {
+             const matchedId = match.dailyPractiseID || match.DailyPractiseID || match.dailyPracticeID || match.DailyPracticeID;
+             if (matchedId) id = Number(matchedId);
+           }
+        }
+
+        // 2. If no title match, try RowID
+        if (!id) {
+           let rowId = this.extractNumericId(card.id);
+           if (!rowId) rowId = this.extractIdFromPath(card.path);
+           
+           if (rowId !== null) {
+              const match = this.audioMeditationList.find(m => m.RowID == rowId);
+              if (match) {
+                 const matchedId = match.dailyPractiseID || match.DailyPractiseID || match.dailyPracticeID || match.DailyPracticeID;
+                 if (matchedId) id = Number(matchedId);
+              }
+           } 
+        }
+      }
+
       if (id != null) {
         this.commonService.clickMeditations(id).subscribe({ next: () => { }, error: () => { } });
       }
@@ -1356,8 +1438,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Find matching navigation item by displayName (case-insensitive, space/hyphen agnostic)
     const matchingItem = allNavItems.find(item => {
-      const normalizedDisplayName = this.normalizeHash(item.displayName.replace(/\s+/g, "").toLocaleLowerCase());
-      return normalizedDisplayName === normalizedHash.toLocaleLowerCase();
+      const normalizedDisplayName = this.normalizeHash(item.displayName);
+      return normalizedDisplayName === normalizedHash;
     });
 
     if (matchingItem) {
@@ -1371,12 +1453,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   /**
    * Normalize hash value for comparison
-   * Converts to lowercase, replaces hyphens with spaces, trims whitespace
+   * Converts to lowercase, removes all spaces and hyphens for consistent matching
    */
   private normalizeHash(hash: string): string {
     return hash.toLowerCase()
-      .replace(/-/g, ' ')
-      .replace(/\s+/g, ' ')
+      .replace(/-/g, '')
+      .replace(/\s+/g, '')
       .trim();
   }
 
@@ -1453,6 +1535,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Handle Self Awareness (id: 19) specially
     if (item.id === "19" || item.id === "20") {
+      this.preference = item.id;
       this.showWisdomExercise = true;
       this.YourTopicofChoice = [item];
       // Save user preference for Self Awareness

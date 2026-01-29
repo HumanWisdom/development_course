@@ -16,6 +16,7 @@ export class AnxietyPage implements OnInit {
   isAdults = true;
   isSubscribed = false;
   config: any;
+  isIOS = false;
 
   constructor(private location: Location, private router: Router,private navigationService:NavigationService){ 
     this.config = SharedService.getScreenConfiguration("SoundCapes");
@@ -29,6 +30,7 @@ export class AnxietyPage implements OnInit {
         }
     const subValue = localStorage.getItem('Subscriber');
     this.isSubscribed = subValue === '1' || subValue === 'T';
+    this.isIOS = SharedService.isIos;
   }
 
   getclcickevent(event) {

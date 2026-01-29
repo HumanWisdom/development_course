@@ -72,7 +72,23 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          03:00
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           03:00
@@ -134,7 +150,23 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          30:00
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           30:00
@@ -194,7 +226,23 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          04:00
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           04:00
@@ -253,7 +301,23 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          00:20
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           00:20
@@ -312,7 +376,23 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          10:56
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           10:56
@@ -372,7 +452,23 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          02:37
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           02:37

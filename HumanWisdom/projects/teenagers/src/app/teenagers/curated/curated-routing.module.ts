@@ -70,6 +70,10 @@ const routes: Routes = [
     component: CuratedRedirectComponent
   },
   {
+    path: 'self-awareness',
+    component: CuratedRedirectComponent
+  },
+  {
     path: 'understand-yourself-transcript',
     loadChildren: () => import('./understand-yourself-transcript/understand-yourself-transcript.module').then( m => m.UnderstandYourselfTranscriptPageModule)
   },

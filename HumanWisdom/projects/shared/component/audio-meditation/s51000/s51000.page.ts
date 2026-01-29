@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { SharedService } from '../../../services/shared.service';
@@ -13,7 +13,7 @@ import { NavigationService } from '../../../services/navigation.service';
   templateUrl: './s51000.page.html',
   styleUrls: ['./s51000.page.scss'],
 })
-export class S51000Page implements OnInit, OnDestroy {
+export class S51000Page implements OnInit {
 
   bg_tn = "bg_dark_blue"
   bg_cft = "bg_dark_blue"
@@ -47,16 +47,15 @@ export class S51000Page implements OnInit, OnDestroy {
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
   constructor(
-    private router: Router,
-    private service: CommonService,
-    private location: Location,
-    private meta: Meta, private title: Title, private ngNavigatorShareService: NgNavigatorShareService,
-    private navigationService:NavigationService
+    private readonly router: Router,
+    private readonly service: CommonService,
+    private readonly location: Location,
+    private readonly meta: Meta, private readonly title: Title, private readonly ngNavigatorShareService: NgNavigatorShareService,
+    private readonly navigationService:NavigationService
   ) {
     this.service.setmoduleID(51);
     this.getaudiomeditation()
-    let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    story = JSON.parse(story)
+    let story = JSON.parse(localStorage.getItem('wisdomstories'));
     let splitarr = []
     let arraythree = []
     if (story?.length <= 2) {
@@ -79,8 +78,7 @@ export class S51000Page implements OnInit, OnDestroy {
     }
     this.path = this.router.url;
     this.stories = splitarr
-    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    // this.stories = JSON.parse(this.stories)
+
 
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
@@ -122,7 +120,7 @@ export class S51000Page implements OnInit, OnDestroy {
     // /continue where you left
     localStorage.setItem("moduleId", JSON.stringify(51))
     this.moduleId = localStorage.getItem("moduleId")
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    if (!this.saveUsername) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
     else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
 
@@ -133,7 +131,7 @@ export class S51000Page implements OnInit, OnDestroy {
   getaudiomeditation() {
     this.service.GetAudioMeditation().subscribe((res) => {
       if (res) {
-        var filteredData = res.filter(x=>x.ProgIDs.includes(SharedService.ProgramId.toString()));
+        const filteredData = res.filter(x=>x.ProgIDs.includes(SharedService.ProgramId.toString()));
         this.audiomeditation = filteredData;
         this.allaudiomeditation = filteredData;
       }
@@ -171,14 +169,9 @@ export class S51000Page implements OnInit, OnDestroy {
       "timeSpent": this.totalTime
     }).subscribe(res => {
 
-      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
+      this.bookmarkList = res.GetBkMrkScr.map(a => Number.parseInt(a.ScrNo))
       localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
     })
-
-
-  }
-  ngOnDestroy() {
-
 
 
   }
@@ -188,8 +181,8 @@ export class S51000Page implements OnInit, OnDestroy {
   }
 
   goBack() {
-    // this.router.navigate(["/adults/adult-dashboard"]);
-    var url = this.navigationService.navigateToBackLink();
+
+    const url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
     }else{
@@ -211,7 +204,7 @@ audioevent(data: any) {
     });
     const sub = localStorage.getItem('Subscriber');
     if (sub === '0' && data.RowID >= 2) {
-      // this.router.navigate([SharedService.getprogramName() + '/subscription/start-your-free-trial']);
+
       this.showModal = true;
       return;
     }
@@ -267,12 +260,7 @@ audioevent(data: any) {
     }
   }
 
-  /*
-  searchAudio() {
-    let filterlist = this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
-    this.audiomeditation = filterlist;
-  }
-  */
+
 
   getimage(id) {
     let Id = id <= 9 ? '0' + id : id;

@@ -17,6 +17,7 @@ export class BoredomPage implements OnInit {
   isAdults = true;
   isSubscribed = false;
   config: any;
+  isIOS = false;
 
 
   constructor(private router: Router, private sanitizer: DomSanitizer, private location: Location,private navigationService:NavigationService){
@@ -31,6 +32,7 @@ export class BoredomPage implements OnInit {
         }
     const subValue = localStorage.getItem('Subscriber');
     this.isSubscribed = subValue === '1' || subValue === 'T';
+    this.isIOS = SharedService.isIos;
   }
 
 

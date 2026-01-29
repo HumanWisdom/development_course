@@ -41,15 +41,16 @@ export class S51000Page implements OnInit, OnDestroy {
   baseUrl: string;
   path: any;
 
-  searchedText:'';
+  searchedText: '';
 
   isSubscriber = false;
+  isIos = false;
 
   constructor(
     private router: Router,
     private location: Location,
     private meta: Meta, private title: Title, private ngNavigatorShareService: NgNavigatorShareService,
-    public service:CommonService
+    public service: CommonService
   ) {
     this.service.setmoduleID(51);
     this.getaudiomeditation()
@@ -90,7 +91,7 @@ export class S51000Page implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
+    this.isIos = SharedService.isIOSApp();
     this.title.setTitle('Relaxation Meditations for Sleep and Calmness')
     this.meta.updateTag({ property: 'title', content: 'Relaxation Meditations for Sleep and Calmness' })
     this.meta.updateTag({ property: 'description', content: 'Enhance your sleep and find inner peace with our relaxation meditation sessions. Guided audio meditations for a calm mind and body.' })
@@ -189,16 +190,16 @@ export class S51000Page implements OnInit, OnDestroy {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
       let url = data['Text_URL'].replaceAll(':', '_');
-       url = encodeURIComponent(url.replaceAll('/', '~'));
+      url = encodeURIComponent(url.replaceAll('/', '~'));
       let title = encodeURIComponent(data['Title'].replaceAll(' ', '-'));
-      const prgType=SharedService.ProgramId;
-      if(prgType == 9){
+      const prgType = SharedService.ProgramId;
+      if (prgType == 9) {
         this.router.navigate(['adults/guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
-      }else{
+      } else {
         this.router.navigate(['teenagers  /guided-meditation/audiopage/', url, title, data['RowID'], 'Audio'])
       }
       // this.router.navigate(['/adults/curated/audiopage', data['Text_URL'], data['Title'], data['RowID']])
-     
+
     }
   }
 
@@ -209,7 +210,7 @@ export class S51000Page implements OnInit, OnDestroy {
       text: 'Hey, check out the HappierMe Program',
       url: this.baseUrl + this.path
     }).then((response) => {
-      
+
     })
       .catch((error) => {
         console.log(error);
@@ -229,17 +230,14 @@ export class S51000Page implements OnInit, OnDestroy {
     }
   }
 
-  searchAudio($event) 
-  {
-    if($event=='')
-    {
-      this.audiomeditation= this.allaudiomeditation;
+  searchAudio($event) {
+    if ($event == '') {
+      this.audiomeditation = this.allaudiomeditation;
     }
-    else
-    {
-      this.searchedText=$event;
-      let filterlist =this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
-      this.audiomeditation=filterlist;
+    else {
+      this.searchedText = $event;
+      let filterlist = this.allaudiomeditation.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()));
+      this.audiomeditation = filterlist;
       //this.secondstoryList=filterlist.slice(10);
     }
   }

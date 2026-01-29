@@ -421,10 +421,10 @@ const routes: Routes = [
     path: 'adverts',
     loadChildren: () => import('./adverts/adverts.module').then(m => m.AdvertsPageModule)
   },
-  {
-    path: 'wisdom-exercise',
-    loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
-  },
+  // {
+  //   path: 'wisdom-exercise',
+  //   loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  // },
   {
     path: 'adverts-hwp',
     loadChildren: () => import('./adverts-hwp/adverts-hwp.module').then(m => m.AdvertsHwpPageModule)
@@ -694,7 +694,6 @@ const routes: Routes = [
   },
   {
     path: 'blog-article',
-    canActivate:[ActiveGuard],
     component:BlogArticlePage
   },
   {
@@ -733,6 +732,10 @@ const routes: Routes = [
     path: 'audiopage/:audiolink/:RowId/:enable/:title/:moduleName',
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
+  },
+  {
+    path: 'wisdom-exercise',
+    redirectTo:'curated/self-awareness'
   },
 ];
 
