@@ -4,8 +4,8 @@
     
     <div class="cw100p">
         <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw learning">
-
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+            <div class="learning">
                 <div [ngSwitch]="contentData.layout">
 
                     <!-- Layout 1: Image Top -->
@@ -70,7 +70,7 @@
                     </div>
 
                 </div>
-
+            </div>
             </div>
         </div>
     </div>
