@@ -1,5 +1,41 @@
-<app-course-header [bg_tn]="'bg_stake'" [bg]="'bg_FFF7E6'"></app-course-header>
+<!-- <app-course-header [bg_tn]="'bg_stake'" [bg]="'bg_FFF7E6'"></app-course-header> -->
+<!-- <app-tn-dashboard-v03 [enableplaystore]="false" [enableHamburger]="true" [routeid]="'search'"></app-tn-dashboard-v03> -->
+<!-- top navigation -->
+<div class="tn_bv">
 
+  <!-- <div class="row center_flex bg_bv">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw " [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp" alt="" class="img-responsive w100 adults_index_img">
+    </div>
+  </div> -->
+
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 toc_nvmenu_v3 col_cw" [ngClass]="isAdults ? 'bg_FFFFFF' : 'bg_stake'">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
+        <a (click)="goBack()" class="">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg" alt="" class="p0" *ngIf="!isAdults">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+        </a>
+      </div>
+
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+        <a class="">
+          <!-- <h4 class="mtb0px fs_18px fw_600 lh_130p tcenter" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+            Audio meditation
+          </h4> -->
+        </a>
+      </div> 
+
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+        <a id="btnShare" (click)="share()"  data-toggle="dropdown" aria-expanded="false">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share_round.svg" alt="" class="p0" *ngIf="!isAdults">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg" alt="" class="p0" *ngIf="isAdults">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
 <div class="right_col mc_01_v3">
     
     <div class="cw100p">
