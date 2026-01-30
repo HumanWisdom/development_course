@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { Location } from '@angular/common'
@@ -13,7 +13,7 @@ import { Platform } from '@angular/cdk/platform';
   templateUrl: './subscription-s01-v04.page.html',
   styleUrls: ['./subscription-s01-v04.page.scss'],
 })
-export class SubscriptionS01V04Page implements OnInit {
+export class SubscriptionS01V04Page implements OnInit, OnDestroy {
   @ViewChild('closemodal') closemodal: ElementRef;
   isAdults = false;
   selectedCountryId: any
@@ -77,13 +77,13 @@ export class SubscriptionS01V04Page implements OnInit {
   isAndroid = false;
 
   constructor(
-    private router: Router,
+    private readonly router: Router,
     public service: OnboardingService,
     public services: CommonService,
-    private location: Location,
+    private readonly location: Location,
     public logeventservice: LogEventService,
-    private cd: ChangeDetectorRef,
-    private forumservice: ForumService,
+    private readonly cd: ChangeDetectorRef,
+    private readonly forumservice: ForumService,
     public platform: Platform,
   ) {
     this.isAndroidDevice();
@@ -107,11 +107,11 @@ export class SubscriptionS01V04Page implements OnInit {
         this.ActivationFlow();
       }, 300);
     }
-    var data = SharedService.getDataFromLocalStorage('BuyAgain');
+    const data = SharedService.getDataFromLocalStorage('BuyAgain');
     if (data && data != null) {
-      var cart = JSON.parse(data);
+      const cart = JSON.parse(data);
       setTimeout(() => {
-        this.cartListResult[0].planId = parseInt(cart.PlanID);
+        this.cartListResult[0].planId = Number.parseInt(cart.PlanID);
         this.cartListResult[0].RateId = cart.RateID;
         this.learnermail = cart.ConsumerEmail
         this.addToCart('Adults', 'Annual');
@@ -129,11 +129,11 @@ export class SubscriptionS01V04Page implements OnInit {
     if (localStorage.getItem('giftwisdom') === 'F') {
       this.enableGift = true;
     }
-    let popup = JSON.parse(localStorage.getItem("Subscriber"))
+    const popup = JSON.parse(localStorage.getItem("Subscriber"))
     if (popup === 1) this.enablepopup = true
-    this.isSubscribe = popup === 0 ? false : true;
+    this.isSubscribe = popup !== 0;
     console.log("save username", this.saveUsername)
-    if (this.saveUsername == false)
+    if (!this.saveUsername)
       this.userId = JSON.parse(sessionStorage.getItem("userId"))
     else
       this.userId = JSON.parse(localStorage.getItem("userId"))
@@ -162,66 +162,40 @@ export class SubscriptionS01V04Page implements OnInit {
     if (enable) {
       this.loggedUser()
       this.planWarning = false;
-      let id = [];
-      console.log(plan, id)
-      id = this.cartList.filter((d) => d['Program'] === type)
+      const id = this.cartList.filter((d) => d['Program'] === type)
 
-      for (var i = 0; i < this.cartList.length; i++) {
-        if (this.cartList[i].ProgID === id[0].ProgID) {
-          if (plan == "Monthly") {
-            this.cartList[i].planId = 1
-          } else {
-            this.cartList[i].planId = 2
-          }
-          this.cartList[i].selectedSubscription = plan
-          if (plan == "Annual")
-            this.cartList[i].price = this.cartList[i].Annual
-          else
-            this.cartList[i].price = this.cartList[i].Monthly
+      for (const cartItem of this.cartList) {
+        if (cartItem.ProgID === id[0].ProgID) {
+          cartItem.planId = plan === "Monthly" ? 1 : 2;
+          cartItem.selectedSubscription = plan
+          cartItem.price = plan === "Annual" ? cartItem.Annual : cartItem.Monthly;
         }
       }
-
     }
     this.learnermail = '';
     if (enable) {
       if (type === 'Adults') {
-        if (plan === 'Annual') {
-          this.aaenableEmailbox = enable;
-          this.aenableMonthEmailbox = false;
-          this.teenageraenableEmailbox = false;
-          this.teenagerenableMonthEmailbox = false;
-        } else {
-          this.aenableMonthEmailbox = enable
-          this.aaenableEmailbox = false;
-          this.teenageraenableEmailbox = false;
-          this.teenagerenableMonthEmailbox = false;
-        }
+        this.aaenableEmailbox = plan === 'Annual';
+        this.aenableMonthEmailbox = plan !== 'Annual';
+        this.teenageraenableEmailbox = false;
+        this.teenagerenableMonthEmailbox = false;
       } else if (type === 'Teenagers') {
-        if (plan === 'Annual') {
-          this.aaenableEmailbox = false;
-          this.aenableMonthEmailbox = false;
-          this.teenagerenableMonthEmailbox = false;
-          this.teenageraenableEmailbox = enable
-        } else {
-          this.aaenableEmailbox = false;
-          this.aenableMonthEmailbox = false;
-          this.teenageraenableEmailbox = false;
-          this.teenagerenableMonthEmailbox = enable
-        }
+        this.teenageraenableEmailbox = plan === 'Annual';
+        this.teenagerenableMonthEmailbox = plan !== 'Annual';
+        this.aaenableEmailbox = false;
+        this.aenableMonthEmailbox = false;
       }
-    } else {
-      if (type === 'Adults') {
-        if (plan === 'Annual') {
-          this.aaenableEmailbox = enable;
-        } else {
-          this.aenableMonthEmailbox = enable
-        }
-      } else if (type === 'Teenagers') {
-        if (plan === 'Annual') {
-          this.teenageraenableEmailbox = enable
-        } else {
-          this.teenagerenableMonthEmailbox = enable
-        }
+    } else if (type === 'Adults') {
+      if (plan === 'Annual') {
+        this.aaenableEmailbox = enable;
+      } else {
+        this.aenableMonthEmailbox = enable
+      }
+    } else if (type === 'Teenagers') {
+      if (plan === 'Annual') {
+        this.teenageraenableEmailbox = enable
+      } else {
+        this.teenagerenableMonthEmailbox = enable
       }
     }
   }
@@ -290,15 +264,9 @@ export class SubscriptionS01V04Page implements OnInit {
             this.secondpage = false;
             this.thirdpage = true
           }
-          // this.enableActivate = true;
-          // this.closemodal.nativeElement.click()
-
-          // this.router.navigate(['/adults/adult-dashboard'])
         },
         error => {
           console.log(error);
-
-          // window.alert(error.error['Message'])
         },
         () => {
         });
@@ -320,46 +288,45 @@ export class SubscriptionS01V04Page implements OnInit {
       .subscribe(
         res => {
 
-          for (var i = 0; i < this.cartitemList.length; i++) {
-            if (this.cartitemList[i].MySelf == "True") {
-              console.log('delete cart')
-              var id = this.cartitemList[i].CartId;
-              console.log(id)
-              this.cartitemList[i].Qty == 1
-              this.cartitemList.splice(i, 1)
-              this.service.deleteItem({ "Id": parseFloat(id) })
-                .subscribe(res => {
-                  if (res) {
-                    let code: any = 1
-                    localStorage.setItem('Subscriber', code)
-                    this.thirdpage = false
-                    this.firstpage = false
-                    this.secondpage = false;
-                    this.fourthpage = true;
-                    if (this.yearormonth == 'Year' && this.service.isActivationFlow) {
-                      this.router.navigate([`/${SharedService.getprogramName()}/hwp-premium-congratulations`]);
-                    }
-                  } else {
-                    this.secondpage = false;
-                    this.thirdpage = false
-                    this.fourthpage = true
-                  }
-                },
-                  error => {
-                    this.secondpage = false;
-                    this.thirdpage = true
-                  },
+      for (const item of this.cartitemList) {
+        if (item.MySelf == "True") {
+          console.log('delete cart')
+          const id = item.CartId;
+          console.log(id)
+          this.cartitemList.splice(this.cartitemList.indexOf(item), 1)
+          this.service.deleteItem({ "Id": Number.parseFloat(id) })
+            .subscribe(res => {
+              if (res) {
+                let code: any = 1
+                localStorage.setItem('Subscriber', code)
+                this.thirdpage = false
+                this.firstpage = false
+                this.secondpage = false;
+                this.fourthpage = true;
+                if (this.yearormonth == 'Year' && this.service.isActivationFlow) {
+                  this.router.navigate([`/${SharedService.getprogramName()}/hwp-premium-congratulations`]);
+                }
+              } else {
+                this.secondpage = false;
+                this.thirdpage = false
+                this.fourthpage = true
+              }
+            },
+              error => {
+                this.secondpage = false;
+                this.thirdpage = true
+              },
 
-                  () => {
+              () => {
 
 
-                  }
-                )
-              this.service.isActivationFlow = true;
-            } else {
-              this.service.isActivationFlow = true;
-            }
-          }
+              }
+            )
+          this.service.isActivationFlow = true;
+        } else {
+          this.service.isActivationFlow = true;
+        }
+      }
         });
     this.secondpage = false;
     this.thirdpage = false
@@ -441,11 +408,7 @@ export class SubscriptionS01V04Page implements OnInit {
 
 
   selectCountry(countryId) {
-    // console.log(country)
-    // this.selectedCountryId=this.countryList.filter(r=>{return r.Country==country})[0].CID
     this.selectedCountryId = countryId
-
-
     this.getPricing()
   }
 
@@ -524,73 +487,37 @@ export class SubscriptionS01V04Page implements OnInit {
 
       res.forEach((d) => {
         if (d['Program'] === 'Adults') {
-          // if (d['Plan'] === 'Annual') {
             obj[0]['RateId'] = d['RateID']
             obj[0]['Symbol'] = d['CurSymbol']
             obj[0]['Amt'] = (Number(d['Annual']) / 12).toString()
             obj[0]['Program'] = d['Program']
             obj[0]['ISOCode'] = d['ISOCode']
-            // obj[0]['LearnerEmail'].push({ 'CartId': d['CartId'], 'LearnerEmail': d['LearnerEmail'] })
-            // obj[0]['Qty'] += 1
-          // } else {
             obj[1]['RateId'] = d['RateID']
             obj[1]['Symbol'] = d['CurSymbol']
             obj[1]['Amt'] = d['Monthly']
             obj[1]['Program'] = d['Program']
             obj[1]['ISOCode'] = d['ISOCode']
-          // }
         } else if (d['Program'] === 'Teenagers') {
-          // if (d['Plan'] === 'Annual') {
             obj[2]['RateId'] = d['RateID']
             obj[2]['Symbol'] = d['CurSymbol']
             obj[2]['Amt'] = (Number(d['Annual']) / 12).toString()
             obj[2]['Program'] = d['Program']
             obj[2]['ISOCode'] = d['ISOCode']
-          // } else {
             obj[3]['RateId'] = d['RateID']
             obj[3]['Symbol'] = d['CurSymbol']
             obj[3]['Amt'] = d['Monthly']
             obj[3]['Program'] = d['Program']
             obj[3]['ISOCode'] = d['ISOCode']
-          // }
         }
       });
 
       this.cartList = obj;
-
       localStorage.setItem('ISOCode', obj[0]['ISOCode']);
 
-      // this.cartList.forEach((element, i) => {
-      //   element.Monthly = parseInt(element.Monthly)
-      //   element.Annual = parseInt(element.Annual)
-      //   element.selectedSubscription = "null"
-      //   element.price = 0
-      //   element.planId = 0
-      //   element.cartId = 0
-      //   element.later = 0
-      //   if (element['Program'] === 'Adults' && element['ActiveProgram'] === '1') {
-      //     this.isAdultsEnable = true;
-      //   }
-      //   if (element['Program'] === 'Teenagers' && element['ActiveProgram'] === '1') {
-      //     this.isTeenagerEnable = true;
-      //   }
-
-      // });
       this.defaultCurrencySymbol = res[0]['ISOCode'];
-      let symbol = res[0]['CurSymbol'];
       this.getAmount();
-      // if (this.cartListResult && this.cartListResult.length !== 0) {
-      //   this.cartListResult.forEach((d) => {
-      //     if (d['Symbol'] !== symbol) {
-      //       d['LearnerEmail'].forEach((m) => {
-      //         this.removeFromCart(m['CartId'], d['Program'], d['Plan'])
-      //       });
-      //     }
-      //   })
-      // }
-
     }, (err) => {
-      window.alert(err.error['Message'])
+      globalThis.alert(err.error['Message'])
     }
     )
   }
@@ -607,50 +534,32 @@ export class SubscriptionS01V04Page implements OnInit {
   }
 
   addToCartForm() {
-    if (!this.ValidateEmail() && this.selectedProgram) {
+    if (this.ValidateEmail()) {
+      this.forumservice.toastrService.success('', 'Email address is invalid');
+    } else if (this.selectedProgram) {
       this.logeventservice.logEvent('click_done');
       this.loggedUser()
-      let pid = this.cartList.filter((d) => d['Program'] === this.selectedProgram);
-      // let activeId = null;
-      // for (var i = 0; i < this.cartList.length; i++) {
-      // if (this.cartList[i].ProgID === pid[0]['ProgID']) {
-      // if (!activeId) {
-      //   activeId = i
-      // }
-      // this.checkPopup(this.cartList[i])
-      // this.showCart = true
-      // this.planWarning = false
-      // this.totalItemCount += 1
-      // this.cartList[i].qty += 1;
+      const pid = this.cartList.find((d) => d['Program'] === this.selectedProgram);
       if (this.selectedMonth == "Monthly") {
-        pid[0].planId = 1
+        pid.planId = 1
       } else {
-        pid[0].planId = 2
+        pid.planId = 2
       }
       this.service.addItem({
         "UserId": this.userId,
-        "RateId": pid[0].RateId,
+        "RateId": pid.RateId,
         "Qty": 1,
-        "PlanId": pid[0].planId,
+        "PlanId": pid.planId,
         "MySelf": 0,
         "LearnerEmail": this.learnermail,
         "LearnerMsg": this.learnermsg,
       })
         .subscribe(res => {
           localStorage.removeItem('BuyAgain');
-          // this.cartId = res
-          // for (var i = 0; i < this.cartList.length; i++) {
-          //   if (this.cartList[i].ProgID === pid[0]['ProgID']) {
-          //     this.cartList[i].cartId = res
-          //   }
-
-          // }
-          // if (this.enableMySelf) this.enableMySelf = false;
-          // this.enableadd = true;
-          this.myself = 0,
-            this.learnermail = '',
-            this.learnermsg = '',
-            this.enableemail = false
+          this.myself = 0;
+          this.learnermail = '';
+          this.learnermsg = '';
+          this.enableemail = false;
           this.enableAddMemForm = false;
           this.selectedProgram = '';
           this.selectedMonth = '';
@@ -666,46 +575,43 @@ export class SubscriptionS01V04Page implements OnInit {
           () => {
             this.totalPrice()
           })
-      // }
-
-      // }
-    } else {
-      this.forumservice.toastrService.success('', 'Email address is invalid');
     }
   }
 
   addToCart(program, plan) {
-    if (!this.ValidateEmail()) {
+    if (this.ValidateEmail()) {
+      this.forumservice.toastrService.success('', 'Email address is invalid');
+    } else {
       this.logeventservice.logEvent('click_done');
       this.loggedUser()
-      let pid = this.cartList.filter((d) => d['Program'] === program)
-      let activeId = null;
-      for (var i = 0; i < this.cartList.length; i++) {
-        if (this.cartList[i].ProgID === pid[0]['ProgID']) {
-          if (!activeId) {
-            activeId = i
+      const pid = this.cartList.find((d) => d['Program'] === program)
+      let activeItem = null;
+      for (const cartItem of this.cartList) {
+        if (cartItem.ProgID === pid.ProgID) {
+          if (!activeItem) {
+            activeItem = cartItem;
           }
-          this.checkPopup(this.cartList[i])
+          this.checkPopup(cartItem)
           this.showCart = true
           this.planWarning = false
           this.totalItemCount += 1
-          this.cartList[i].qty += 1;
-          if (this.cartList[i].selectedSubscription == "Monthly") {
-            this.cartList[i].selectedSubscription = "Monthly"
-            this.cartList[i].price = this.cartList[i].Monthly * this.cartList[i].qty
-            this.cartList[i].planId = 1
+          cartItem.qty += 1;
+          if (cartItem.selectedSubscription == "Monthly") {
+            cartItem.selectedSubscription = "Monthly"
+            cartItem.price = cartItem.Monthly * cartItem.qty
+            cartItem.planId = 1
           }
           else {
-            this.cartList[i].selectedSubscription = "Annual"
-            this.cartList[i].price = this.cartList[i].Annual * this.cartList[i].qty
-            this.cartList[i].planId = 2
+            cartItem.selectedSubscription = "Annual"
+            cartItem.price = cartItem.Annual * cartItem.qty
+            cartItem.planId = 2
 
           }
           this.service.addItem({
             "UserId": this.userId,
-            "RateId": pid[0].RateID,
+            "RateId": pid.RateID,
             "Qty": 1,
-            "PlanId": pid[0].planId,
+            "PlanId": cartItem.planId,
             "MySelf": 0,
             "LearnerEmail": this.learnermail,
             "LearnerMsg": this.learnermsg,
@@ -713,28 +619,27 @@ export class SubscriptionS01V04Page implements OnInit {
             .subscribe(res => {
               localStorage.removeItem('BuyAgain');
               this.cartId = res
-              for (var i = 0; i < this.cartList.length; i++) {
-                if (this.cartList[i].ProgID === pid[0]['ProgID']) {
-                  this.cartList[i].cartId = res
+              for (const item of this.cartList) {
+                if (item.ProgID === pid.ProgID) {
+                  item.cartId = res
                 }
-
               }
               if (this.enableMySelf) this.enableMySelf = false;
               this.enableadd = true;
-              this.myself = 0,
-                this.learnermail = '',
-                this.learnermsg = '',
-                this.enableemail = false
+              this.myself = 0;
+              this.learnermail = '';
+              this.learnermsg = '';
+              this.enableemail = false;
               this.forumservice.toastrService.success('', 'Updated Successfully !');
 
               if (program === 'Adults') {
-                if (this.cartList[activeId]?.selectedSubscription === 'Annual') {
+                if (activeItem?.selectedSubscription === 'Annual') {
                   this.aaenableEmailbox = false
                 } else {
                   this.aenableMonthEmailbox = false
                 }
               } else if (program === 'Teenagers') {
-                if (this.cartList[activeId]?.selectedSubscription === 'Annual') {
+                if (activeItem?.selectedSubscription === 'Annual') {
                   this.teenageraenableEmailbox = false
                 } else {
                   this.teenagerenableMonthEmailbox = false
@@ -755,8 +660,6 @@ export class SubscriptionS01V04Page implements OnInit {
         }
 
       }
-    } else {
-      this.forumservice.toastrService.success('', 'Email address is invalid');
     }
   }
 
@@ -773,29 +676,22 @@ export class SubscriptionS01V04Page implements OnInit {
   }
 
   removeFromCart(cid) {
-    
-    this.service.deleteItem({ "Id": parseFloat(cid) })
+    this.service.deleteItem({ "Id": Number.parseFloat(cid) })
       .subscribe((res) => {
         this.viewCart();
       });
   }
 
   ValidateEmail() {
-    var validRegex = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
-    if (this.learnermail.match(validRegex)) {
-      return false;
-    } else {
-      return true;
-    }
+    const validRegex = String.raw`^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$`;
+    return !this.learnermail.match(validRegex);
   }
 
   totalPrice() {
-    //this.selectedSubscription="annual"
     this.totalCartValue = 0;
-    for (var i = 0; i < this.cartitemList.length; i++) {
-      this.totalCartValue += Number(this.cartitemList[i].Amt);
+    for (const item of this.cartitemList) {
+      this.totalCartValue += Number(item.Amt);
     }
-
   }
 
   getAmount() {
@@ -859,7 +755,7 @@ export class SubscriptionS01V04Page implements OnInit {
       if (this.isSubscribe) {
         this.enableMySelf = false;
       }
-      if (this.enableMySelf == false) {
+      if (!this.enableMySelf) {
         if (this.isSubscribe) {
           this.enableMySelf = false;
         }
@@ -884,6 +780,7 @@ export class SubscriptionS01V04Page implements OnInit {
   }
   
   iOS() {
+    const platform = (navigator as any).userAgentData?.platform || navigator.platform;
     return [
       'iPad Simulator',
       'iPhone Simulator',
@@ -891,7 +788,7 @@ export class SubscriptionS01V04Page implements OnInit {
       'iPad',
       'iPhone',
       'iPod'
-    ].includes(navigator.platform)
+    ].includes(platform)
       // iPad on iOS 13 detection
       || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }

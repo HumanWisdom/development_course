@@ -897,16 +897,16 @@ function initializeNewsletterPopup() {
         }
         
         // Add event listener for close button - handle multiple close buttons
-        const closeBtns = document.querySelectorAll('#closebtn');
+      const closeBtns = document.querySelectorAll('[id^="closebtn"]');
+
         closeBtns.forEach(closeBtn => {
-            closeBtn.addEventListener('click', function(e) {
+            closeBtn.addEventListener('click', function (e) {
                 e.preventDefault();
+
                 const modal = this.closest('.modal');
                 if (modal) {
-                    console.log('Close button clicked for modal:', modal.id);
                     modalManager.closeModal(modal);
                 } else {
-                    // Fallback to product_view modal
                     modalManager.closeModal('product_view');
                 }
             });
