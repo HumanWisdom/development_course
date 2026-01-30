@@ -208,7 +208,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
-                      <button type="button" class="btn fs_12px fw_400 lh_140p " (click)="like(posttread.PostID,null,0)">
+                      <button type="button" class="btn fs_12px fw_400 lh_140p " (click)="like(posttread.PostID,0)">
                         <img alt="like" *ngIf="posttread.Liked=='0'"
                           src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                           class="img-responsive mr5px">
@@ -220,7 +220,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isAdults">
                       <button type="button" class="btn fs_12px fw_400 lh_140p fc_000000_i"
-                        (click)="like(posttread.PostID,null,0)">
+                        (click)="like(posttread.PostID,0)">
                         <img alt="heart" *ngIf="posttread.Liked=='0'"
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_heart.svg"
                           class="img-responsive mr5px">
@@ -343,7 +343,7 @@
 
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft" *ngIf="!isAdults">
-                      <button type="button" (click)="like(item.ReplyPostID,posttread.PostID,index)"
+                      <button type="button" (click)="like(item.ReplyPostID,index,posttread.PostID)"
                         class="btn fs_12px fw_400 lh_140p ">
 
                         <img alt="heart" *ngIf="item.Liked=='0'"
@@ -357,7 +357,7 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tleft" *ngIf="isAdults">
-                      <button type="button" (click)="like(item.ReplyPostID,posttread.PostID,index)"
+                      <button type="button" (click)="like(item.ReplyPostID,index,posttread.PostID)"
                         class="btn fs_12px fw_400 lh_140p fc_000000">
 
                         <img alt="heart" *ngIf="item.Liked=='0'"

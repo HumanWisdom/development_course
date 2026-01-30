@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
-import { Constant } from '../../services/constant';
 import { NavigationService } from '../../services/navigation.service';
 @Component({
   selector: 'app-submit-story',
   templateUrl: './submit-story.page.html',
   styleUrls: ['./submit-story.page.scss'],
 })
-export class SubmitStoryPage implements OnInit {
+export class SubmitStoryPage {
   isAdults = true;
-  constructor(private router: Router,
-    private location:Location,private navigationService:NavigationService) { 
+  constructor(private readonly router: Router,
+    private readonly location:Location,private readonly navigationService:NavigationService) { 
 
       if (SharedService.ProgramId == ProgramType.Adults) {
         this.isAdults = true;
@@ -22,11 +21,10 @@ export class SubmitStoryPage implements OnInit {
           }
     }
 
-  ngOnInit() {
-  }
+
   
   goBack(){
-    var url = this.navigationService.navigateToBackLink();
+    const url = this.navigationService.navigateToBackLink();
    
     if (url == null) {
      this.location.back();

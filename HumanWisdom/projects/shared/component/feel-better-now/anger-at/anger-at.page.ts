@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../../../shared/services/navigation.service';
 import { Router } from '@angular/router';
@@ -7,17 +7,13 @@ import { Router } from '@angular/router';
   templateUrl: './anger-at.page.html',
   styleUrls: ['./anger-at.page.scss'],
 })
-export class AngerAtPage implements OnInit {
+export class AngerAtPage {
 
   isAdults = false;
   isShowTranscript = false;
   isShowAudio = true;
 
   constructor(private readonly location: Location, private readonly router: Router, private readonly navigationService: NavigationService) { }
-
-  ngOnInit() {
-    // ngOnInit is intentionally left empty as no initialization logic is required.
-  }
 
   changeType() {
     if (this.isShowTranscript) {
