@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { SharedService } from '../../services/shared.service';
@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
   templateUrl: './duplicate-subscription-payment.component.html',
   styleUrls: ['./duplicate-subscription-payment.component.scss'],
 })
-export class DuplicateSubscriptionPaymentComponent implements OnInit, AfterViewInit {
+export class DuplicateSubscriptionPaymentComponent implements AfterViewInit {
   stripeKey= environment.stripeKey;
 cardCaptureReady = false
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
@@ -133,11 +133,6 @@ cardCaptureReady = false
         this.router.navigate(['/onboarding/user-profile']);
       });
   }
-
-  ngOnInit() {
-    // ngOnInit is intentionally empty as no initialization logic is required here.
-  }
-
 
 
   getAlertcloseEvent(event) {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, HostListener, OnDestroy } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ForumService } from '../forum.service';
@@ -12,7 +12,6 @@ import { NavigationService } from "../../../shared/services/navigation.service";
 import { Location } from '@angular/common';
 import { LogEventService } from "./../../services/log-event.service";
 import { ModalService } from '../../services/modal.service';
-import { HostListener } from '@angular/core';
 
 
 
@@ -21,7 +20,7 @@ import { HostListener } from '@angular/core';
   templateUrl: './forum-thread.page.html',
   styleUrls: ['./forum-thread.page.scss'],
 })
-export class ForumThreadPage implements OnInit {
+export class ForumThreadPage implements OnInit, OnDestroy {
   @ViewChild(ToastContainerDirective, { static: true }) toastContainer!: ToastContainerDirective;
   @ViewChild('toastContainerRef', { static: true }) toastContainerRef!: ElementRef;
   @ViewChild('postModal') postModal: any;
@@ -124,9 +123,7 @@ export class ForumThreadPage implements OnInit {
         if (res) {
           this.list = [];
           this.list = res;
-          if (this.list.ReplyPost == null) {
-            this.list.ReplyPost = [];
-          }
+          this.list.ReplyPost ??= [];
           this.setValueForParentPost(res.ParentPost[0])
           this.service.postdataSource.next(this.posttread);
         }
@@ -191,7 +188,7 @@ export class ForumThreadPage implements OnInit {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
     const target = event.target as HTMLElement;
-    if (target && (target as any).closest && (target as any).closest('.dropdown')) {
+    if (target?.closest?.('.dropdown')) {
       return;
     }
     this.openDropdownIndex = null;
@@ -241,14 +238,14 @@ export class ForumThreadPage implements OnInit {
   }
   routeToLanding(){
     // this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
-    var url = this.navigationService.goBack();
+    const url = this.navigationService.goBack();
     if (url == null) {
       this.location.back();
     }else{
       this.router.navigate([url]);
     }
   }
-  like(PostID, ParentPOstID = null, index: number) {
+  like(PostID, index: number, ParentPOstID: any = null) {
     if (this.isLoggedIn) {
       this.service.likePost({ PostID: PostID, UserID: this.userID }).subscribe(res => {
         if (res) {
@@ -272,7 +269,7 @@ export class ForumThreadPage implements OnInit {
 
   onChange($event) {
     this.isEditPost = false;
-    var model = {
+    const model = {
       "PostId": this.posttread.PostID,
       "Post": this.posttread.POST,
       "UserId": this.posttread.UserId,
@@ -303,7 +300,7 @@ export class ForumThreadPage implements OnInit {
 
   onChangeComment(item) {
     this.editCommentId = "";
-    var model = {
+    const model = {
       "PostId": item.ReplyPostID,
       "Post": item.ReplyPost,
       "UserId": item.ReplyPostUserID,
@@ -319,7 +316,7 @@ export class ForumThreadPage implements OnInit {
   }
 
   editPost() {
-    var model = {
+    const model = {
       "PostId": this.posttread.PostID,
       "Post": this.posttread.POST,
       "UserId":this.posttread.UserId,
@@ -345,9 +342,7 @@ export class ForumThreadPage implements OnInit {
           if (res) {
             this.list = [];
             this.list = res;
-            if (this.list.ReplyPost == null) {
-              this.list.ReplyPost = [];
-            }
+            this.list.ReplyPost ??= [];
             if (this.list.ReplyPost != null && this.list.ReplyPost.length > 0) {
               this.isPostEditable = false;
             } else {
@@ -574,7 +569,7 @@ export class ForumThreadPage implements OnInit {
   submitComment() {
     if (this.isLoggedIn) {
       let parentPostId = 0;
-      if (this.list.ParentPost[0] && this.list.ParentPost[0].ParentPostID) {
+      if (this.list.ParentPost[0]?.ParentPostID) {
         parentPostId = +this.list.ParentPost[0].ParentPostID;
       } else {
         parentPostId = +this.posttread.PostID;
