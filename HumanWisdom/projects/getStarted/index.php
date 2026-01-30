@@ -2918,11 +2918,11 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
 
               <div id="how_can_the_app_help" class="tab-pane fade in">
-                <div class="panel-group" id="accordion_faq">
+                <div class="panel-group" id="accordion_faq1">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c21">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c21">
                           What is self-awareness?
                         </a>
                       </h4>
@@ -2945,7 +2945,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c22">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c22">
                           How can the app help me manage my own mental health?
                         </a>
                       </h4>
@@ -2970,7 +2970,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c23">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c23">
                           How can the app help me to have happier relationships?
                         </a>
                       </h4>
@@ -2998,7 +2998,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c24">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c24">
                           How can the app help me to avoid addiction and build better habits?
                         </a>
                       </h4>
@@ -3026,7 +3026,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c25">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c25">
                           How can the app help me succeed at work?
                         </a>
                       </h4>
@@ -3054,7 +3054,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c26">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c26">
                           Does HappierMe offer meditations?
                         </a>
                       </h4>
@@ -3073,11 +3073,11 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
 
               <div id="app_features2" class="tab-pane fade in">
-                <div class="panel-group" id="accordion_faq">
+                <div class="panel-group" id="accordion_faq2">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c31">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c31">
                           I want to know more about your live events
                         </a>
                       </h4>
@@ -3103,7 +3103,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c32">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c32">
                           What is your partnership program?
                         </a>
                       </h4>
@@ -3130,7 +3130,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c33">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c33">
                           How can I contact a coach through the app?
                         </a>
                       </h4>
@@ -3157,7 +3157,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c34">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c34">
                           Is there a community forum?
                         </a>
                       </h4>
@@ -3179,7 +3179,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c35">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c35">
                           How can I track my progress?
                         </a>
                       </h4>
@@ -3882,7 +3882,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn1" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
@@ -4066,7 +4066,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn2" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading="lazy">
             </a>
@@ -4244,7 +4244,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn3" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
@@ -4349,7 +4349,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn4" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading="lazy">
             </a>
@@ -4514,7 +4514,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn5" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
@@ -4670,7 +4670,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn6" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
@@ -4830,7 +4830,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn7" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
@@ -4989,7 +4989,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn8" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
@@ -5150,7 +5150,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="modal-header d-block">
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="class pull-right">
+            <a href="#" id="closebtn9" data-bs-dismiss="modal" class="class pull-right">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
@@ -5320,7 +5320,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
 
-            <a href="#" id="closebtn" data-bs-dismiss="modal" class="pull-right">
+            <a href="#" id="closebtn10" data-bs-dismiss="modal" class="pull-right">
               <h2 class="bi bi-x" style="color: black;"></h2>
             </a>
           </div>

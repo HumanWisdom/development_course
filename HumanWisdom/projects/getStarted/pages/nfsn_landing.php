@@ -2255,11 +2255,11 @@
                 </div>
 
                 <div id="how_can_the_app_help" class="tab-pane fade in">
-                  <div class="panel-group" id="accordion_faq">
+                  <div class="panel-group" id="accordion_faq1">
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c21">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c21">
                             What is self-awareness? 
                           </a>
                         </h4>
@@ -2280,7 +2280,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c22">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c22">
                             How can the app help me manage my own mental health?
                           </a>
                         </h4>
@@ -2301,7 +2301,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c23">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c23">
                             How can the app help me to have happier relationships?
                           </a>
                         </h4>
@@ -2322,7 +2322,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c24">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c24">
                             How can the app help me to avoid addiction and build better habits?
                           </a>
                         </h4>
@@ -2343,7 +2343,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c25">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c25">
                             How can the app help me succeed at work?
                           </a>
                         </h4>
@@ -2364,7 +2364,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c26">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq1" href="#c26">
                             Does HappierMe offer meditations?
                           </a>
                         </h4>
@@ -2379,11 +2379,11 @@
                 </div>
 
                 <div id="app_features" class="tab-pane fade in">
-                  <div class="panel-group" id="accordion_faq">
+                  <div class="panel-group" id="accordion_faq2">
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c31">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c31">
                             I want to know more about your live events
                           </a>
                         </h4>
@@ -2404,7 +2404,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c32">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c32">
                             What is your partnership program?
                           </a>
                         </h4>
@@ -2425,7 +2425,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c33">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c33">
                             How can I contact a coach through the app?
                           </a>
                         </h4>
@@ -2446,7 +2446,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c34">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c34">
                             Is there a community forum?
                           </a>
                         </h4>
@@ -2467,7 +2467,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c35">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq2" href="#c35">
                             How can I track my progress?
                           </a>
                         </h4>
@@ -2482,11 +2482,11 @@
                 </div>
 
                 <div id="teenage_program" class="tab-pane fade in">
-                  <div class="panel-group" id="accordion_faq">
+                  <div class="panel-group" id="accordion_faq3">
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c41">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq3" href="#c41">
                             I want to know more about your teenage program
                           </a>
                         </h4>
@@ -2501,11 +2501,11 @@
                 </div>
 
                 <div id="support" class="tab-pane fade in">
-                  <div class="panel-group" id="accordion_faq">
+                  <div class="panel-group" id="accordion_faq4">
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c51">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq4" href="#c51">
                             How can I contact the support team?
                           </a>
                         </h4>
@@ -2526,7 +2526,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c52">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq4" href="#c52">
                             How can I cancel a subscription?
                           </a>
                         </h4>
@@ -2547,7 +2547,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c53">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq4" href="#c53">
                             How can I share this with others?
                           </a>
                         </h4>
@@ -2568,7 +2568,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#c54">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq4" href="#c54">
                             What is the HappierMe Mission?
                           </a>
                         </h4>
@@ -2597,11 +2597,11 @@
                   About HappierMe
                 </h5>
 
-                <div class="panel-group" id="accordion_faq">
+                <div class="panel-group" id="accordion_faq5">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm11">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq5" href="#cm11">
                           What is HappierMe?
                         </a>
                       </h4>
@@ -2622,7 +2622,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm12">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq5" href="#cm12">
                           How do I start my free trial?
                         </a>
                       </h4>
@@ -2644,7 +2644,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm13">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq5" href="#cm13">
                           How do I get started with HappierMe?
                         </a>
                       </h4>
@@ -2666,7 +2666,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm14">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq5" href="#cm14">
                           How much time do I need to spend every day on the app?
                         </a>
                       </h4>
@@ -2685,11 +2685,11 @@
                   How can the app help?
                 </h5>
 
-                <div class="panel-group" id="accordion_faq">
+                <div class="panel-group" id="accordion_faq6">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm21">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq6" href="#cm21">
                           What is self-awareness?
                         </a>
                       </h4>
@@ -2710,7 +2710,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm22">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq6" href="#cm22">
                           How can the app help me manage my own mental health?
                         </a>
                       </h4>
@@ -2731,7 +2731,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm23">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq6" href="#cm23">
                           How can the app help me to have happier relationships?
                         </a>
                       </h4>
@@ -2752,7 +2752,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm24">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq6" href="#cm24">
                           How can the app help me to avoid addiction and build better habits?
                         </a>
                       </h4>
@@ -2773,7 +2773,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm25">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq6" href="#cm25">
                           How can the app help me succeed at work?
                         </a>
                       </h4>
@@ -2794,7 +2794,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm26">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq6" href="#cm26">
                           Does HappierMe offer meditations?
                         </a>
                       </h4>
@@ -2813,11 +2813,11 @@
                   App features
                 </h5>
 
-                <div class="panel-group" id="accordion_faq">
+                <div class="panel-group" id="accordion_faq7">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm31">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq7" href="#cm31">
                           I want to know more about your live events
                         </a>
                       </h4>
@@ -2838,7 +2838,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm32">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq7" href="#cm32">
                           What is your partnership program?
                         </a>
                       </h4>
@@ -2859,7 +2859,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm33">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq7" href="#cm33">
                           How can I contact a coach through the app?
                         </a>
                       </h4>
@@ -2880,7 +2880,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm34">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq7" href="#cm34">
                           Is there a community forum?
                         </a>
                       </h4>
@@ -2901,7 +2901,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm35">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq7" href="#cm35">
                           How can I track my progress?
                         </a>
                       </h4>
@@ -2920,11 +2920,11 @@
                   Teenage program
                 </h5>
 
-                <div class="panel-group" id="accordion_faq">
+                <div class="panel-group" id="accordion_faq8">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm41">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq8" href="#cm41">
                           I want to know more about your teenage program
                         </a>
                       </h4>
@@ -2943,11 +2943,11 @@
                   Support
                 </h5>
 
-                <div class="panel-group" id="accordion_faq">
+                <div class="panel-group" id="accordion_faq9">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm51">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq9" href="#cm51">
                           How can I contact the support team?
                         </a>
                       </h4>
@@ -2968,7 +2968,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm52">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq9" href="#cm52">
                           How can I cancel a subscription?
                         </a>
                       </h4>
@@ -2989,7 +2989,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm53">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq9" href="#cm53">
                           How can I share this with others?
                         </a>
                       </h4>
@@ -3010,7 +3010,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq" href="#cm54">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq9" href="#cm54">
                           What is the HappierMe Mission?
                         </a>
                       </h4>
