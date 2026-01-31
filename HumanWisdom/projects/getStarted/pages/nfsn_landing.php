@@ -1827,7 +1827,7 @@
 
                       <div class="row">
                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
-                          <audio id="aud1" controls controlsList="nodownload">
+                          <audio id="aud" controls controlsList="nodownload">
                             <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
                           </audio>
                         </div>
@@ -2254,7 +2254,7 @@
                   </div>
                 </div>
 
-                <div id="how_can_the_app_help" class="tab-pane fade in">
+                <div id="how_can_the_app_help_1" class="tab-pane fade in">
                   <div class="panel-group" id="accordion_faq1">
                     <div class="panel panel-default">
                       <div class="panel-heading">
@@ -2378,7 +2378,7 @@
                   </div>
                 </div>
 
-                <div id="app_features" class="tab-pane fade in">
+                <div id="app_features_1" class="tab-pane fade in">
                   <div class="panel-group" id="accordion_faq2">
                     <div class="panel panel-default">
                       <div class="panel-heading">
@@ -2481,7 +2481,7 @@
                   </div>
                 </div>
 
-                <div id="teenage_program" class="tab-pane fade in">
+                <div id="teenage_program_1" class="tab-pane fade in">
                   <div class="panel-group" id="accordion_faq3">
                     <div class="panel panel-default">
                       <div class="panel-heading">
@@ -2500,7 +2500,7 @@
                   </div>
                 </div>
 
-                <div id="support" class="tab-pane fade in">
+                <div id="support_1" class="tab-pane fade in">
                   <div class="panel-group" id="accordion_faq4">
                     <div class="panel panel-default">
                       <div class="panel-heading">
@@ -2592,7 +2592,7 @@
         <div class="row center_flex prelative display_df_none">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             <div class="tab-content tc_faqs mobile">
-              <div id="about_happierme" class="tab-pane fade in active">
+              <div id="about_happierme_1" class="tab-pane fade in active">
                 <h5 class="mt0px mb20px fs_15px fw_600 lh_150p fc_cb6171 tt_uppercase mobile">
                   About HappierMe
                 </h5>

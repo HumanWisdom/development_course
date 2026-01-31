@@ -102,7 +102,7 @@
           <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
             <div class="row center_flex">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 header" id="header-2">
-                <ul class="portfolio-filters isotope-filters ul_cp menu_search" data-aos="fade-up" data-aos-delay="100" id="header-2">
+                <ul class="portfolio-filters isotope-filters ul_cp menu_search" data-aos="fade-up" data-aos-delay="100" id="header-3">
                   <li data-filter="*" class="filter-active">
                     All
                   </li>
