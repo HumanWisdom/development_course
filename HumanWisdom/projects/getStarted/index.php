@@ -2827,7 +2827,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
             <div class="tab-content tc_faqs desktop">
-              <div id="about_happierme" class="tab-pane fade in active">
+              <div id="about_happierme_4" class="tab-pane fade in active">
                 <div class="accordion" id="accordion_faq_about">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading_c11">
@@ -2917,7 +2917,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </div>
 
-              <div id="how_can_the_app_help" class="tab-pane fade in">
+              <div id="how_can_the_app_help_1" class="tab-pane fade in">
                 <div class="panel-group" id="accordion_faq1">
                   <div class="panel panel-default">
                     <div class="panel-heading">
