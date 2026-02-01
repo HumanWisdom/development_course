@@ -1775,7 +1775,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     Try HappierMe for free
                   </a> -->
 
-              <a id="happiermeTryForFree" href="https://happierme.app/teenagers/intro-carousel"
+              <a id="happiermeTryForFree_teens" href="https://happierme.app/teenagers/intro-carousel"
                 class="tryhappiermeClick">
                 <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width h_48px btn_popup ">
                   Try HappierMe for free
@@ -2827,7 +2827,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
             <div class="tab-content tc_faqs desktop">
-              <div id="about_happierme_4" class="tab-pane fade in active">
+              <div id="about_happierme" class="tab-pane fade in active">
                 <div class="accordion" id="accordion_faq_about">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading_c11">
@@ -2917,7 +2917,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </div>
 
-              <div id="how_can_the_app_help_1" class="tab-pane fade in">
+              <div id="how_can_the_app_help" class="tab-pane fade in">
                 <div class="panel-group" id="accordion_faq1">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -3072,7 +3072,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </div>
 
-              <div id="app_features2" class="tab-pane fade in">
+              <div id="app_features" class="tab-pane fade in">
                 <div class="panel-group" id="accordion_faq2">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -3194,7 +3194,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </div>
 
-              <div id="teenager_program_1" class="tab-pane fade in">
+              <div id="teenage_program" class="tab-pane fade in">
                 <div class="panel-group" id="accordion_faq-teen">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -3217,7 +3217,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </div>
 
-              <div id="support_1" class="tab-pane fade in">
+              <div id="support" class="tab-pane fade in">
                 <div class="panel-group" id="accordion_faq_1">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -3313,7 +3313,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div class="row center_flex prelative display_df_none">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
           <div class="tab-content tc_faqs mobile">
-            <div id="about_happierme" class="tab-pane fade in active">
+            <div id="about_happierme_mobile" class="tab-pane fade in active">
               <h5 class="mt0px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 About HappierMe
               </h5>
@@ -3322,7 +3322,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq_2" href="#cm12">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_faq_2" href="#cm11">
                         What is HappierMe?
                       </a>
                     </h4>
@@ -3406,7 +3406,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
             </div>
 
-            <div id="how_can_the_app_help" class="tab-pane fade in active">
+            <div id="how_can_the_app_help_mobile" class="tab-pane fade in active">
               <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 How can the app help?
               </h5>
@@ -3671,7 +3671,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
             </div>
 
-            <div id="teenage_program" class="tab-pane fade in active">
+            <div id="teenage_program_mobile" class="tab-pane fade in active">
               <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 Teenage program
               </h5>
@@ -3696,7 +3696,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
             </div>
 
-            <div id="support" class="tab-pane fade in active">
+            <div id="support_mobile" class="tab-pane fade in active">
               <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">
                 Support
               </h5>
