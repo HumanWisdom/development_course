@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../../../shared/services/navigation.service';
 import { Router } from '@angular/router';
+import { SharedService } from '../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../shared/models/program-model';
 @Component({
   selector: 'app-coping-with-illness-at',
   templateUrl: './coping-with-illness-at.page.html',
   styleUrls: ['./coping-with-illness-at.page.scss'],
 })
-export class CopingWithIllnessAtPage {
+export class CopingWithIllnessAtPage implements OnInit {
 
   isAdults = false;
   isShowTranscript = false;
@@ -17,6 +19,14 @@ export class CopingWithIllnessAtPage {
     private readonly router: Router,
     private readonly navigationService: NavigationService
   ) { }
+
+  ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
 
   changeType() {

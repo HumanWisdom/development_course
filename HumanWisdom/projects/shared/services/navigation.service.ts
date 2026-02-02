@@ -14,8 +14,8 @@ export class NavigationService {
   if (url.includes('/onboarding/add-to-cart')) {
     return;
   }
-    var urls = url.split('/');
-    var urltoCheck: any;
+    const urls = url.split('/');
+    let urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
     if(!this.backClicked) {
       if (urltoCheck) {
@@ -62,8 +62,8 @@ export class NavigationService {
   const wholeUrlCheckKeywords = [
      'mp3','coach/profile/','coach/contact/','videopage',',mp4','blog-article','curated/youtubelink','forum-thread','profile'
   ]
-  var isValid = false;
-  for(var item of wholeUrlCheckKeywords){
+  let isValid = false;
+  for(const item of wholeUrlCheckKeywords){
      if(url.includes(item)){
       isValid = true;
      }

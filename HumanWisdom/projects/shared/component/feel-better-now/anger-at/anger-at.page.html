@@ -3,7 +3,10 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="back" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="back" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
@@ -17,13 +20,14 @@
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tright">
       <a (click)="changeType()" class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt=""
-          *ngIf="isShowAudio" class="p0" />
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
           Read text
         </h4>
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt=""
-          *ngIf="isShowTranscript" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" alt=""
+          *ngIf="isShowTranscript && !isAdults" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" alt=""
+          *ngIf="isShowTranscript && isAdults" class="p0" />
       </a>
     </div>
   </div>
@@ -49,7 +53,7 @@
 
                     <div class="row center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Manage your own anger
                         </h4>
                       </div>
@@ -67,8 +71,8 @@
 
                 <!-- transcript -->
                 <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
-                  <div
-                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p txt_justify"
+                    [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
 
                     <p>
                       About 1 in 10 people have an anger management problem that significantly impacts their lives and 1

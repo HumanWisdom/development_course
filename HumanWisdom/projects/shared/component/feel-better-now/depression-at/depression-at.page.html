@@ -3,7 +3,10 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="back" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="back" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
@@ -21,7 +24,10 @@
         <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
           Read text
         </h4>
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" alt=""
+          *ngIf="isShowTranscript && !isAdults" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" alt=""
+          *ngIf="isShowTranscript && isAdults" class="p0" />
       </a>
     </div>
   </div>
@@ -34,7 +40,8 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_183c79'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 sc_01 col_cw"
+        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_183c79'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -46,7 +53,7 @@
 
                     <div class="row center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           A toolkit to deal with depression
                         </h4>
                       </div>
@@ -54,7 +61,8 @@
 
                     <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <app-audio-player class="audio-test" audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/depression.mp3"></app-audio-player>
+                        <app-audio-player class="audio-test"
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/depression.mp3"></app-audio-player>
                       </div>
                     </div>
 
@@ -63,10 +71,13 @@
 
                 <!-- transcript -->
                 <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p txt_justify"
+                    [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
 
                     <p>
-                      10% of the world population suffers from depression so you are not alone. 1 in 4 women will suffer depressive symptoms in their lifetime. Many times we are not aware we are depressed - just like we may not be aware we are stressed.
+                      10% of the world population suffers from depression so you are not alone. 1 in 4 women will suffer
+                      depressive symptoms in their lifetime. Many times we are not aware we are depressed - just like we
+                      may not be aware we are stressed.
                     </p>
 
                     <p>
@@ -74,23 +85,33 @@
                     </p>
 
                     <p>
-                      If you feel persistently sad, are not sleeping well, have lost the normal enjoyment you got from things you did, have thoughts of self-harm and your appetite is affected you may have depression. Each of these can be caused by other factors, but put together they are signs of depression. The module on depression that follows has the details.
+                      If you feel persistently sad, are not sleeping well, have lost the normal enjoyment you got from
+                      things you did, have thoughts of self-harm and your appetite is affected you may have depression.
+                      Each of these can be caused by other factors, but put together they are signs of depression. The
+                      module on depression that follows has the details.
                     </p>
 
                     <p>
-                      Depression can vary in severity from mild feelings of being sad, to severe depression where we withdraw from others and it can feel like a really dark place.
+                      Depression can vary in severity from mild feelings of being sad, to severe depression where we
+                      withdraw from others and it can feel like a really dark place.
                     </p>
 
                     <p>
-                      There are things you can do to feel better now, including journaling, breathing exercises, meditation or tapping, but that will not last long unless you go deeper and uncover the root causes of it and learn to shift your mindset in relation to what has happened.
+                      There are things you can do to feel better now, including journaling, breathing exercises,
+                      meditation or tapping, but that will not last long unless you go deeper and uncover the root
+                      causes of it and learn to shift your mindset in relation to what has happened.
                     </p>
 
                     <p>
-                      The module on depression that follows is detailed and created with several psychologists. It helps you diagnose the problem, and then go on a step by step journey to recovery, by setting small goals, and by changing how you think about what has happened in your life to make you feel this way.
+                      The module on depression that follows is detailed and created with several psychologists. It helps
+                      you diagnose the problem, and then go on a step by step journey to recovery, by setting small
+                      goals, and by changing how you think about what has happened in your life to make you feel this
+                      way.
                     </p>
 
                     <p>
-                      It is possible to find joy in your life again, but you have to want to be better and  be willing to make an effort. Lets get started.
+                      It is possible to find joy in your life again, but you have to want to be better and be willing to
+                      make an effort. Lets get started.
                     </p>
 
                   </div>
