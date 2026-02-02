@@ -1,0 +1,432 @@
+# CI/CD Configuration Examples for Testing Shared Components
+
+# ========================================
+# GitHub Actions Example
+# ========================================
+# File: .github/workflows/test.yml
+
+name: Run Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: HumanWisdom/projects/adults/package-lock.json
+      
+      - name: Install Dependencies
+        working-directory: HumanWisdom/projects/adults
+        run: npm ci
+      
+      - name: Run All Tests
+        working-directory: HumanWisdom/projects/adults
+        run: npm run test:ci
+      
+      - name: Run Shared Tests Only
+        working-directory: HumanWisdom/projects/adults
+        run: npm run test:ci:shared
+      
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./HumanWisdom/projects/adults/coverage/adults/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+      
+      - name: Archive Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: HumanWisdom/projects/adults/test-results/
+      
+      - name: Archive Coverage Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: HumanWisdom/projects/adults/coverage/
+
+# ========================================
+# GitLab CI Example
+# ========================================
+# File: .gitlab-ci.yml
+
+stages:
+  - test
+  - coverage
+
+variables:
+  CHROME_BIN: /usr/bin/google-chrome
+  NODE_VERSION: "18"
+
+.test_template: &test_definition
+  image: node:${NODE_VERSION}
+  before_script:
+    - cd HumanWisdom/projects/adults
+    - npm ci
+    - apt-get update
+    - apt-get install -y chromium
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - HumanWisdom/projects/adults/node_modules/
+
+test:all:
+  <<: *test_definition
+  stage: test
+  script:
+    - npm run test:ci
+  artifacts:
+    reports:
+      junit: HumanWisdom/projects/adults/test-results/junit-results.xml
+    paths:
+      - HumanWisdom/projects/adults/coverage/
+    expire_in: 1 week
+
+test:shared:
+  <<: *test_definition
+  stage: test
+  script:
+    - npm run test:ci:shared
+  artifacts:
+    paths:
+      - HumanWisdom/projects/adults/coverage/
+    expire_in: 1 week
+
+coverage:
+  stage: coverage
+  image: node:${NODE_VERSION}
+  dependencies:
+    - test:all
+  script:
+    - cd HumanWisdom/projects/adults
+    - echo "Coverage Report"
+    - cat coverage/adults/coverage-summary.json
+  coverage: '/Lines\s*:\s*(\d+\.\d+)%/'
+
+# ========================================
+# Azure Pipelines Example
+# ========================================
+# File: azure-pipelines.yml
+
+trigger:
+  - main
+  - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  nodeVersion: '18.x'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: $(nodeVersion)
+    displayName: 'Install Node.js'
+
+  - script: |
+      cd HumanWisdom/projects/adults
+      npm ci
+    displayName: 'Install Dependencies'
+
+  - script: |
+      cd HumanWisdom/projects/adults
+      npm run test:ci
+    displayName: 'Run All Tests'
+
+  - script: |
+      cd HumanWisdom/projects/adults
+      npm run test:ci:shared
+    displayName: 'Run Shared Tests'
+
+  - task: PublishTestResults@2
+    condition: always()
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/junit-results.xml'
+      searchFolder: '$(System.DefaultWorkingDirectory)/HumanWisdom/projects/adults/test-results'
+      mergeTestResults: true
+      testRunTitle: 'Unit Tests'
+    displayName: 'Publish Test Results'
+
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: 'Cobertura'
+      summaryFileLocation: '$(System.DefaultWorkingDirectory)/HumanWisdom/projects/adults/coverage/adults/cobertura-coverage.xml'
+      reportDirectory: '$(System.DefaultWorkingDirectory)/HumanWisdom/projects/adults/coverage/adults'
+    displayName: 'Publish Coverage Results'
+
+# ========================================
+# Jenkins Pipeline Example
+# ========================================
+# File: Jenkinsfile
+
+pipeline {
+    agent any
+    
+    tools {
+        nodejs 'NodeJS-18'
+    }
+    
+    environment {
+        CHROME_BIN = '/usr/bin/google-chrome'
+        CI = 'true'
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Install Dependencies') {
+            steps {
+                dir('HumanWisdom/projects/adults') {
+                    sh 'npm ci'
+                }
+            }
+        }
+        
+        stage('Run Tests') {
+            parallel {
+                stage('All Tests') {
+                    steps {
+                        dir('HumanWisdom/projects/adults') {
+                            sh 'npm run test:ci'
+                        }
+                    }
+                }
+                stage('Shared Tests') {
+                    steps {
+                        dir('HumanWisdom/projects/adults') {
+                            sh 'npm run test:ci:shared'
+                        }
+                    }
+                }
+            }
+        }
+        
+        stage('Coverage Report') {
+            steps {
+                dir('HumanWisdom/projects/adults') {
+                    publishHTML([
+                        reportDir: 'coverage/adults',
+                        reportFiles: 'index.html',
+                        reportName: 'Coverage Report',
+                        keepAll: true
+                    ])
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            junit 'HumanWisdom/projects/adults/test-results/junit-results.xml'
+        }
+        success {
+            echo 'All tests passed!'
+        }
+        failure {
+            echo 'Tests failed!'
+        }
+    }
+}
+
+# ========================================
+# CircleCI Example
+# ========================================
+# File: .circleci/config.yml
+
+version: 2.1
+
+executors:
+  node-executor:
+    docker:
+      - image: cimg/node:18.16-browsers
+    working_directory: ~/project
+
+jobs:
+  test:
+    executor: node-executor
+    steps:
+      - checkout
+      
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "HumanWisdom/projects/adults/package-lock.json" }}
+            - v1-dependencies-
+      
+      - run:
+          name: Install Dependencies
+          command: |
+            cd HumanWisdom/projects/adults
+            npm ci
+      
+      - save_cache:
+          paths:
+            - HumanWisdom/projects/adults/node_modules
+          key: v1-dependencies-{{ checksum "HumanWisdom/projects/adults/package-lock.json" }}
+      
+      - run:
+          name: Run All Tests
+          command: |
+            cd HumanWisdom/projects/adults
+            npm run test:ci
+      
+      - run:
+          name: Run Shared Tests
+          command: |
+            cd HumanWisdom/projects/adults
+            npm run test:ci:shared
+      
+      - store_test_results:
+          path: HumanWisdom/projects/adults/test-results
+      
+      - store_artifacts:
+          path: HumanWisdom/projects/adults/coverage
+          destination: coverage
+
+workflows:
+  version: 2
+  test_workflow:
+    jobs:
+      - test
+
+# ========================================
+# Travis CI Example
+# ========================================
+# File: .travis.yml
+
+language: node_js
+node_js:
+  - "18"
+
+cache:
+  directories:
+    - HumanWisdom/projects/adults/node_modules
+
+before_script:
+  - cd HumanWisdom/projects/adults
+  - npm ci
+
+script:
+  - npm run test:ci
+  - npm run test:ci:shared
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+addons:
+  chrome: stable
+
+# ========================================
+# Docker Example for Testing
+# ========================================
+# File: Dockerfile.test
+
+FROM node:18-alpine
+
+# Install Chromium
+RUN apk add --no-cache \
+    chromium \
+    nss \
+    freetype \
+    freetype-dev \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont
+
+# Set Chrome path
+ENV CHROME_BIN=/usr/bin/chromium-browser
+ENV CHROME_PATH=/usr/lib/chromium/
+
+WORKDIR /app
+
+# Copy package files
+COPY HumanWisdom/projects/adults/package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source code
+COPY HumanWisdom/projects/adults ./
+
+# Run tests
+CMD ["npm", "run", "test:ci"]
+
+# ========================================
+# Docker Compose Example
+# ========================================
+# File: docker-compose.test.yml
+
+version: '3.8'
+
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - ./HumanWisdom/projects/adults:/app
+      - /app/node_modules
+    environment:
+      - CI=true
+      - CHROME_BIN=/usr/bin/chromium-browser
+    command: npm run test:ci
+
+  test-shared:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - ./HumanWisdom/projects/adults:/app
+      - /app/node_modules
+    environment:
+      - CI=true
+      - CHROME_BIN=/usr/bin/chromium-browser
+    command: npm run test:ci:shared
+
+# Run with: docker-compose -f docker-compose.test.yml up
+
+---
+
+# Usage Instructions:
+
+# 1. Choose the CI/CD platform you're using
+# 2. Copy the relevant configuration to your project root
+# 3. Adjust paths and settings as needed
+# 4. Commit and push to trigger the pipeline
+
+# Notes:
+# - All examples use headless Chrome for testing
+# - Coverage reports are generated and archived
+# - Test results are published in JUnit format
+# - Artifacts are stored for later review
+# - Multiple Node versions can be tested in parallel
+
+Last Updated: 2026-02-01
+
