@@ -44,7 +44,7 @@ export class LogEventService {
     setTimeout(() => {
       const accessObj: any = window;
       if (localStorage.getItem('isloggedin') == 'T') {
-        var userId = JSON.parse(localStorage.getItem("userId"));
+        const userId = JSON.parse(localStorage.getItem("userId"));
         if (userId != null) {
           accessObj?.Moengage.update_unique_user_id(userId.toString());
         }

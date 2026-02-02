@@ -3,7 +3,10 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="back" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="back" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
@@ -21,7 +24,10 @@
         <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
           Read text
         </h4>
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" alt=""
+          *ngIf="isShowTranscript && !isAdults" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" alt=""
+          *ngIf="isShowTranscript && isAdults" class="p0" />
       </a>
     </div>
   </div>
@@ -34,7 +40,8 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_183c79'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 sc_01 col_cw"
+        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_183c79'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -46,7 +53,7 @@
 
                     <div class="row center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Tips to overcome emotional distress
                         </h4>
                       </div>
@@ -54,7 +61,8 @@
 
                     <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <app-audio-player class="audio-test" audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/feeling_upset.mp3"></app-audio-player>
+                        <app-audio-player class="audio-test"
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/feeling_upset.mp3"></app-audio-player>
                       </div>
                     </div>
 
@@ -63,14 +71,19 @@
 
                 <!-- transcript -->
                 <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p txt_justify"
+                    [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
 
                     <p>
-                      Sometimes, we feel blue, or upset without a reason - or rather we can’t think of a single cause for how we feel.
+                      Sometimes, we feel blue, or upset without a reason - or rather we can’t think of a single cause
+                      for how we feel.
                     </p>
 
                     <p>
-                      Maybe we feel a jumble of different things all at once - perhaps we feel lonely, stressed and anxious at the same time? Or feel an ache with ourselves that does not have a name. Or we may feel restless and not know what to do with ourselves. All these feelings are part of being human, so you are not alone.
+                      Maybe we feel a jumble of different things all at once - perhaps we feel lonely, stressed and
+                      anxious at the same time? Or feel an ache with ourselves that does not have a name. Or we may feel
+                      restless and not know what to do with ourselves. All these feelings are part of being human, so
+                      you are not alone.
                     </p>
 
                     <p>
@@ -78,19 +91,27 @@
                     </p>
 
                     <p>
-                      We need to find ways to feel better now - and the app offers many options - pick one depending on what works for you - it could be breathing exercise, journaling, an audio meditation or doing some tapping.
+                      We need to find ways to feel better now - and the app offers many options - pick one depending on
+                      what works for you - it could be breathing exercise, journaling, an audio meditation or doing some
+                      tapping.
                     </p>
 
                     <p>
-                      Once you start to feel better it is perhaps worth asking what you can do for the long term to keep the blues away.
+                      Once you start to feel better it is perhaps worth asking what you can do for the long term to keep
+                      the blues away.
                     </p>
 
                     <p>
-                      Beginning a meditation practice is a good way of bringing some order to your emotions, and calming your mind, so it is ready to deal with the challenges of the day.
+                      Beginning a meditation practice is a good way of bringing some order to your emotions, and calming
+                      your mind, so it is ready to deal with the challenges of the day.
                     </p>
 
                     <p>
-                      The meditation module takes you through the basics of meditation, explores what the pitfalls may be and gets you started on your own practice. Meditation at its core is just sitting quietly, noticing your body, your thoughts and feelings and also noticing the observer who is recording everything. There is no pressure, no goal to achieve and no right and wrong way to meditate. Lets get started.
+                      The meditation module takes you through the basics of meditation, explores what the pitfalls may
+                      be and gets you started on your own practice. Meditation at its core is just sitting quietly,
+                      noticing your body, your thoughts and feelings and also noticing the observer who is recording
+                      everything. There is no pressure, no goal to achieve and no right and wrong way to meditate. Lets
+                      get started.
                     </p>
 
                   </div>

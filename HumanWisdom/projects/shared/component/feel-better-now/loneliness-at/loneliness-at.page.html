@@ -3,7 +3,10 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="back" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="back" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
@@ -21,7 +24,10 @@
         <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
           Read text
         </h4>
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" alt=""
+          *ngIf="isShowTranscript && !isAdults" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" alt=""
+          *ngIf="isShowTranscript && isAdults" class="p0" />
       </a>
     </div>
   </div>
@@ -34,7 +40,8 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_183c79'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 sc_01 col_cw"
+        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_183c79'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -46,7 +53,7 @@
 
                     <div class="row center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Tips to overcome loneliness
                         </h4>
                       </div>
@@ -54,7 +61,8 @@
 
                     <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <app-audio-player class="audio-test" audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/loneliness.mp3"></app-audio-player>
+                        <app-audio-player class="audio-test"
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/loneliness.mp3"></app-audio-player>
                       </div>
                     </div>
 
@@ -63,18 +71,25 @@
 
                 <!-- transcript -->
                 <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p txt_justify"
+                    [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
 
                     <p>
-                      Upto 60% of people feel lonely, even when they are in a relationship so you are not alone. It's part of being human. 46% of adults in the US are single for example. Long term loneliness impacts our mental and physical health and it's worth exploring what lies behind that feeling and what can be done about it.
+                      Upto 60% of people feel lonely, even when they are in a relationship so you are not alone. It's
+                      part of being human. 46% of adults in the US are single for example. Long term loneliness impacts
+                      our mental and physical health and it's worth exploring what lies behind that feeling and what can
+                      be done about it.
                     </p>
 
                     <p>
-                      The feeling of loneliness itself feels like an ache inside us that does not go away and we try and escape from that feeling in a number of ways - most of which involve stimulation of some kind.
+                      The feeling of loneliness itself feels like an ache inside us that does not go away and we try and
+                      escape from that feeling in a number of ways - most of which involve stimulation of some kind.
                     </p>
 
                     <p>
-                      When we feel lonely we can’t reason our way out of it - so breathing exercises, an audio meditation, journaling or a tapping exercise can help us feel better for the short term and help us make our peace with that feeling. 
+                      When we feel lonely we can’t reason our way out of it - so breathing exercises, an audio
+                      meditation, journaling or a tapping exercise can help us feel better for the short term and help
+                      us make our peace with that feeling.
                     </p>
 
                     <p>
@@ -82,11 +97,22 @@
                     </p>
 
                     <p>
-                      The module on loneliness helps you to understand the root cause of it - which is a feeling of not being deeply connected with others or ourselves. We may not feel understood or loved, or not be at peace with ourselves. It explores how you can deepen your connection with the people in your life - your friends, family or partners, and with yourself. It is not just being with people, but having this depth of connection with them which helps us feel less lonely. We may not know how to build this deeper connection with the people in our lives.  There may be factors which are holding us back from reaching out and making new friends - for example our social anxiety about what others may think of us.
+                      The module on loneliness helps you to understand the root cause of it - which is a feeling of not
+                      being deeply connected with others or ourselves. We may not feel understood or loved, or not be at
+                      peace with ourselves. It explores how you can deepen your connection with the people in your life
+                      - your friends, family or partners, and with yourself. It is not just being with people, but
+                      having this depth of connection with them which helps us feel less lonely. We may not know how to
+                      build this deeper connection with the people in our lives. There may be factors which are holding
+                      us back from reaching out and making new friends - for example our social anxiety about what
+                      others may think of us.
                     </p>
 
                     <p>
-                      The module also explores a way of staying with the feeling till it transforms to a peaceful solitude and shows you how you can do that. There is so much to explore and learn. Imagine being able to feel at peace within yourself and build deeper connections with others. Once you’ve gone through the module you can listen to a podcast, read a story or explore the Guided journaling on the subject.
+                      The module also explores a way of staying with the feeling till it transforms to a peaceful
+                      solitude and shows you how you can do that. There is so much to explore and learn. Imagine being
+                      able to feel at peace within yourself and build deeper connections with others. Once you’ve gone
+                      through the module you can listen to a podcast, read a story or explore the Guided journaling on
+                      the subject.
                       Lets get started.
                     </p>
 
