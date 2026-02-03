@@ -337,7 +337,7 @@ Now with Olly AI              </h2>
         <div
           class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px pl10px mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -349,7 +349,7 @@ Now with Olly AI              </h2>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pl10px pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -360,7 +360,7 @@ Now with Olly AI              </h2>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pl10px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -384,7 +384,7 @@ Now with Olly AI              </h2>
         <div
           class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pl10px  pr15px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -396,7 +396,7 @@ Now with Olly AI              </h2>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px pl10px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -407,7 +407,7 @@ Now with Olly AI              </h2>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px pl10px mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -432,7 +432,7 @@ Now with Olly AI              </h2>
         <div
           class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-md-flex d-lg-flex d-sm-flex  d-block mobile_view_topic">
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px pl10px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -444,7 +444,7 @@ Now with Olly AI              </h2>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px pl10px mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  p0">
@@ -455,7 +455,7 @@ Now with Olly AI              </h2>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px  mobile_view_topic_tile" data-aos="fade-up"
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12 p0 pr20px pr15px pl10px  mobile_view_topic_tile" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -839,7 +839,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
       <div
         class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 d-lg-flex d-md-flex d-sm-flex d-block mobile_view_testimonial fixed_w1340">
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px mb10px" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px pl20px mb10px" data-aos="fade-up" data-aos-delay="200">
           <div class="testimonial-cardnew">
             <div class="testimonial-card-section">
               <!-- <div class="quotation-comma">
@@ -869,7 +869,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
 
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px mb10px" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px pl20px mb10px" data-aos="fade-up" data-aos-delay="200">
           <div class="testimonial-cardnew">
             <div class="testimonial-card-section">
 
@@ -896,7 +896,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
 
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p0 pr20px pl20px" data-aos="fade-up" data-aos-delay="200">
           <div class="testimonial-cardnew">
             <div class="testimonial-card-section">
               <!-- <div class="quotation-comma">
@@ -978,7 +978,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
     <!-- teenagers -->
     <section>
       <div class="row center_flex web_home_divcircle">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element w-335px fixed_w">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 col-8 p0 flex_block land-happierMe-gap element">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0 land-happierMe-section" data-aos="fade-up"
             data-aos-delay="100">
 
@@ -2512,7 +2512,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                     </a> -->
 
                     <a href="https://happierme.app/adults/podcast" iaria-label="Explore the teenagers app" class="">
-                    <h5 class=" mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B  flex_ai dflex_jc_lc td_underline mb40px">
+                    <h5 class=" mt0px mb20px fs_18px fw_500 lh_150p fc_D7586B  flex_ai dflex_jc_lc td_underline mb40px pb_15px">
                        Explore on app 
                        <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                     </h5>
@@ -4038,7 +4038,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mb-4" style="/* min-height: 150px; */">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
             </a>
@@ -4205,7 +4205,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mb-4" style="/* min-height: 150px; */">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
             </a>
@@ -4326,7 +4326,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mt20px mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
             </a>
@@ -4477,7 +4477,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
             </a>
@@ -4634,7 +4634,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
             </a>
@@ -4791,7 +4791,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
             </a>
@@ -4949,7 +4949,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
             </a>
@@ -5110,7 +5110,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
             </a>
@@ -5274,7 +5274,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
             <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
-              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width">
+              <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width ">
                 Try HappierMe for free
               </button>
             </a>
