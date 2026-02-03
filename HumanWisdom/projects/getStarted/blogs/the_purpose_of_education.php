@@ -42,11 +42,7 @@
                   </button>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5 tright">
-                    <!-- 2 years ago  -->
-                  </h4>
-                </div>
+                
               </div>
             </div>
 

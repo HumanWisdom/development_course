@@ -151,9 +151,9 @@ That’s 76% of people saying leadership failure has more to do with emotional r
   >
 </iframe>
 
-<h4 class="mtb0px blog_desc">
+<!-- <h4 class="mtb0px blog_desc">
 
-</h4>
+</h4> -->
  <h4 class="mtb0px blog_title">
                   
 Why Emotional Intelligence Matters More Than Ever
