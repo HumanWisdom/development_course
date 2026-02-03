@@ -163,13 +163,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 8 months ago  -->
-                  </h6>
-                </div>
-              </div>
+             
             </a>
           </div>
           <div class="clearfix"></div>
@@ -228,13 +222,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 2 years ago  -->
-                  </h6>
-                </div>
-              </div>
+             
             </a>
           </div>
 
@@ -263,13 +251,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- a year ago  -->
-                  </h6>
-                </div>
-              </div>
+            
             </a>
           </div>
           <div class="clearfix"></div>
@@ -304,13 +286,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+             
               </a>
             </div>
 
@@ -343,13 +319,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -382,13 +352,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="clearfix"></div>
@@ -419,13 +383,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -458,13 +416,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -493,13 +445,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
 
@@ -532,13 +478,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -569,13 +509,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
 
@@ -605,13 +539,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
             <div class="clearfix"></div>
@@ -643,13 +571,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -678,13 +600,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -713,13 +629,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="clearfix"></div>
@@ -752,13 +662,7 @@
 
 
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -786,13 +690,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
 
@@ -821,13 +719,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="clearfix"></div>
@@ -859,13 +751,7 @@
 
 
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -893,13 +779,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -928,13 +808,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
             <div class="clearfix"></div>
@@ -963,13 +837,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+             
               </a>
             </div>
 
@@ -998,13 +866,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+            
               </a>
             </div>
 
@@ -1033,13 +895,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="clearfix"></div>
@@ -1068,13 +924,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+                
               </a>
             </div>
 
@@ -1107,15 +957,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -1141,15 +983,7 @@
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">12 questions to deepen your relationships   </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
 
@@ -1176,15 +1010,7 @@
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">10 Ways to Thrive as a Parent</h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
