@@ -41,7 +41,7 @@ export class MicroLearningInnerPage implements OnInit {
     if(this.contentId == '1') {
       this.contentData = {
         title: '5 questions to ask yourself when you feel anxious',
-        description: 'Micro-learning is about taking small steps every day towards a bigger understanding of yourself. It is not about speed, but about depth of reflection.',
+        description: 'Micro-learning is about taking small steps every day towards a bigger understanding of yourself. It is not about speed, but about depth of reflection. It is not about speed, but about depth of reflection It is not about speed, but about depth of reflection',
         imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/1.webp',
         layout: 1 // Image Top
       };
