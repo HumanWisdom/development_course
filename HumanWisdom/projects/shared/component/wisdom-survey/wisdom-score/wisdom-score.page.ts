@@ -63,8 +63,13 @@ export class WisdomScorePage implements OnInit {
     const baseUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
 
     this.wisdomRecomm = this.wisdomRecomm.map(item => {
-      const pathParts = item.path.split('/');
-      const cleanPath = pathParts.slice(0, -1).join('/');
+      let cleanPath = '';
+      if (item.module === 'BLOG') {
+        cleanPath = item.path;
+      } else {
+        const pathParts = item.path.split('/');
+        cleanPath = pathParts.slice(0, -1).join('/');
+      }
 
       const prefix = this.router.url.includes('/teenagers/')
         ? '/teenagers'
@@ -89,7 +94,7 @@ export class WisdomScorePage implements OnInit {
   }
 
   navigateToRecommendation(item: any) {
-    if (!this.isSubscriber) {
+    if (!this.isSubscriber && item.module !== 'BLOG') {
       const isTeenagerRoute = this.router.url.includes('/teenagers/');
       const trialRedirectPath = isTeenagerRoute
         ? '/teenagers/subscription/start-your-free-trial'
@@ -98,9 +103,15 @@ export class WisdomScorePage implements OnInit {
       return;
     }
 
-    this.router.navigate([item.cleanPath], {
-      state: { title: item.title }
-    });
+    if (item.module === 'BLOG') {
+      this.router.navigateByUrl(item.cleanPath, {
+        state: { title: item.title }
+      });
+    } else {
+      this.router.navigate([item.cleanPath], {
+        state: { title: item.title }
+      });
+    }
   }
 
   receiveBookmark(e) {

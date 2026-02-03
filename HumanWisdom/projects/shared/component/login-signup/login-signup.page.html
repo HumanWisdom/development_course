@@ -187,6 +187,9 @@
                           <small *ngIf="passwordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p"
                             [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">password must be at least 6
                             characters</small>
+                          <small *ngIf="passwordvalid.errors?.passwordStrength" class="fs_12px fw_400 lh_150p"
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">Password must contain one letter
+                            and one digit</small>
                         </div>
                       </div>
 
@@ -221,6 +224,9 @@
                           <small *ngIf="confirmpasswordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p "
                             [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Repeat password must be at least 6
                             characters</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.passwordStrength" class="fs_12px fw_400 lh_150p"
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">Password must contain one letter
+                            and one digit</small>
                         </div>
                         <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
                           <small *ngIf="passwordvalidation" class="fs_12px fw_400 lh_150p "

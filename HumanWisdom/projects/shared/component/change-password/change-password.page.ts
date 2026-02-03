@@ -62,6 +62,12 @@ export class ChangePasswordPage implements OnInit {
   forgotPassword() {
     this.logeventservice.logEvent('click_submit_change_password');
     this.showWarning = false
+    // Ideally we want to just check for at least one letter and one digit, length is already checked separately or we can combine.
+    // The requirement is "Password must contain one letter and one digit".
+    // I will use a simple check that is independent of other characters to be safe with existing length checks.
+    const hasLetter = /[a-zA-Z]/.test(this.password);
+    const hasDigit = /\d/.test(this.password);
+
     if (!this.password && !this.confirmPassword && !this.oldpassword) {
       this.content = 'Please enter all the password fields';
       this.enableAlert = true;
@@ -73,6 +79,9 @@ export class ChangePasswordPage implements OnInit {
         this.content = 'Confirm & New Password do not match';
         this.enableAlert = true;
       }
+    } else if(!hasLetter || !hasDigit) {
+        this.content = 'Password must contain one letter and one digit';
+        this.enableAlert = true;
     } else {
       let userId = JSON.parse(localStorage.getItem("userId"))
       let email = localStorage.getItem("email")
@@ -84,29 +93,14 @@ export class ChangePasswordPage implements OnInit {
         .subscribe(
           resp => {
             
-            let roleid = JSON.parse(localStorage.getItem('RoleID'));
-            let emailcode = localStorage.getItem("emailCode");
             if (resp.toLocaleLowerCase().match('your password has been reset.')) {
               localStorage.setItem('pswd', this.password)
-              if (roleid === 8 && emailcode === 'T') {
-                localStorage.setItem("emailCode", 'F');
-                window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
-              } else {
-                this.successPassword = 1
-                localStorage.setItem("emailCode", 'F');
-                sessionStorage.setItem("successPassword", JSON.stringify(this.successPassword))
-                this.router.navigate(['/' + SharedService.getprogramName() + "/onboarding/login"]);
-              }
+              this.successPassword = 1
               this.content = 'Your password has been reset.';
               this.enableAlert = true;
             }
-
-
           })
-
     }
-
-
   }
 
 
@@ -370,6 +364,26 @@ export class ChangePasswordPage implements OnInit {
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+    if (this.successPassword === 1) {
+        let roleid = JSON.parse(localStorage.getItem('RoleID'));
+        let emailcode = localStorage.getItem("emailCode");
+        let userId = JSON.parse(localStorage.getItem("userId"))
+        if (roleid === 8 && emailcode === 'T') {
+            localStorage.setItem("emailCode", 'F');
+            window.location.href = `https://humanwisdom.me/Admin/#/frameworks/affiliate-s01-a/${userId}`;
+        } else {
+            localStorage.setItem("emailCode", 'F');
+            sessionStorage.setItem("successPassword", JSON.stringify(this.successPassword))
+            this.router.navigate(['/' + SharedService.getprogramName() + "/onboarding/login"]);
+        }
+    }
+  }
+
+  checkPasswordValidation(password) {
+    if(!password) return false;
+    const hasLetter = /[a-zA-Z]/.test(password);
+    const hasDigit = /\d/.test(password);
+    return hasLetter && hasDigit;
   }
 
   Logevent(route) {
