@@ -225,13 +225,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   getName() {
-    var name = this.safeJsonParse(localStorage.getItem("name"));
-    if(name==null || name==undefined || name ==''){
-       return this.name === "" ?   'guest'  : this.name
+    const name = this.safeJsonParse(localStorage.getItem("name"));
+    if (name == null || name == undefined || name == '') {
+       return this.name === "" ? "guest" : this.name;
     }
     return name;
-   
-
   }
 
    private safeJsonParse(value: string | null): any {
@@ -365,58 +363,44 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
 
-    if (this.isAdults) {
-      if (params != '' && route != '') {
-        this.router.navigate([route, params]);
-      } else if (route != '') {
-        if (route == '/adults/testimonials' ||
-          route == '/adults/adverts-work' ||
-          route == '/adults/adverts-student' ||
-          route == '/adults/adverts-about' ||
-          route == '/adults/help-support/faq' ||
-          route == '/adults/help-support/terms-conditions' ||
-          route == '/adults/help-support/support' ||
-          route == '/adults/help-support/accessibility-policy' ||
-          route == '/adults/partnership-webpage/partnership-index/') {
-          this.navigate(route);
-          return;
-        }
-        if (!this.ios) {
-          // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
-          this.router.navigate(['/' + SharedService.getprogramName() + route])
-        } else {
-          this.router.navigate(['/' + SharedService.getprogramName() + route])
-        }
+    let currentRoute = route;
+    if (!this.isAdults && route) {
+      currentRoute = route.toString().replace('adults', 'teenagers');
+    }
+
+    if (!currentRoute || currentRoute === '') {
+      this.closemodal?.nativeElement?.click();
+      return;
+    }
+
+    if (params !== '' && currentRoute !== '') {
+      this.router.navigate([currentRoute, params]);
+    } else if (currentRoute !== '') {
+      if (this.isDirectNavigationRoute(currentRoute)) {
+        this.navigate(currentRoute);
+        return;
       }
-    } else {
-      route = route.toString().replace('adults', 'teenagers');
-      if (params != '' && route != '') {
-        this.router.navigate([route, params]);
-      } else if (route != '') {
-        if (route == '/teenagers/testimonials' ||
-          route == '/teenagers/adverts-work' ||
-          route == '/teenagers/adverts-student' ||
-          route == '/teenagers/adverts-about' ||
-          route == '/teenagers/help-support/faq' ||
-          route == '/teenagers/help-support/terms-conditions' ||
-          route == '/teenagers/help-support/privacy-policy' ||
-          route == '/teenagers/help-support/cookie-policy' ||
-          route == '/teenagers/help-support/accessibility-policy' ||
-          route == '/teenagers/help-support/support' ||
-          route == '/teenagers/partnership-webpage/partnership-index/') {
-          this.navigate(route);
-          return;
-        }
-        if (!this.ios) {
-          // route == '/' + SharedService.getprogramName() + '/subscription/start-your-free-trial'
-          this.router.navigate(['/' + SharedService.getprogramName() + route])
-        } else {
-          this.router.navigate(['/' + SharedService.getprogramName() + route])
-        }
-      }
+      this.router.navigate(['/' + SharedService.getprogramName() + currentRoute]);
     }
 
     this.closemodal?.nativeElement?.click();
+  }
+
+  private isDirectNavigationRoute(route: string): boolean {
+    const directSuffixes = [
+      '/testimonials',
+      '/adverts-work',
+      '/adverts-student',
+      '/adverts-about',
+      '/help-support/faq',
+      '/help-support/terms-conditions',
+      '/help-support/support',
+      '/help-support/accessibility-policy',
+      '/partnership-webpage/partnership-index/',
+      '/help-support/privacy-policy',
+      '/help-support/cookie-policy'
+    ];
+    return directSuffixes.some(suffix => route.endsWith(suffix));
   }
 
   routeManageSubscriptiont(route, params, evtName) {
@@ -440,65 +424,72 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.enableAlert = false;
       this.content = '';
       if (event === 'ok') {
-        const accessObj: any = window;
-        (accessObj)?.Moengage?.destroy_session();
-        if (this.enablebecomepartner) {
-          let res = localStorage.getItem("isloggedin");
-          if (!res || res === 'F') {
-            this.closeLogoutmodal.nativeElement.click();
-            localStorage.setItem("isloggedin", "F");
-            localStorage.setItem("guest", "T");
-            localStorage.setItem("navigateToUpgradeToPremium", "true");
-            localStorage.setItem("btnClickBecomePartner", "true");
-
-            // this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
-          } else {
-            this.Onboardingservice.navigateToUpgradeToPremium = true;
-            this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
-          }
-        } else {
-          this.logeventservice.logEvent('click_logout_Hamburger');
-          this.chatbotService.clearMessages(); // reset chat history on logout
-          if (this.platform.isBrowser) {
-            this.closemenuevent();
-            // this.closeLogoutmodal.nativeElement.click();
-            this.isloggedIn = false;
-            this.isPartner = false;
-            this.initialize();
-            let acceptCookie = localStorage.getItem("acceptcookie");
-            let firstTimeTour = localStorage.getItem("firstTimeTour");
-            let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
-            ;
-            localStorage.clear();
-            sessionStorage.clear(); 
-            if (firstTimeTour === 'T') {
-              localStorage.setItem('firstTimeTour', 'T');
-            }
-            if (firstTimeSearchTour === 'T') {
-              localStorage.setItem('firstTimeSearchTour', 'T');
-            }
-            localStorage.setItem("isloggedin", "F");
-            localStorage.setItem("guest", "T");
-            localStorage.setItem("acceptcookie", acceptCookie);
-            localStorage.setItem("navigateToUpgradeToPremium", "false");
-            localStorage.setItem("btnClickBecomePartner", "false");
-            
-            // Reset Google Identity Services state
-            this.resetGoogleSignIn();
-            this.Onboardingservice.guestEmailLogin();
-            const auth2 = (window as any).gapi?.auth2?.getAuthInstance();
-            if (auth2) {
-              auth2.signOut().then(() => {
-                this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
-              });
-            } else {
-              this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
-            }
-          }
-        }
+        this.performAlertAction();
       }
     }
+  }
 
+  private performAlertAction() {
+    const accessObj: any = window;
+    (accessObj)?.Moengage?.destroy_session();
+    if (this.enablebecomepartner) {
+      this.handleBecomePartnerAlert();
+    } else {
+      this.handleLogoutAlert();
+    }
+  }
+
+  private handleBecomePartnerAlert() {
+    const res = localStorage.getItem("isloggedin");
+    if (!res || res === 'F') {
+      this.closeLogoutmodal.nativeElement.click();
+      localStorage.setItem("isloggedin", "F");
+      localStorage.setItem("guest", "T");
+      localStorage.setItem("navigateToUpgradeToPremium", "true");
+      localStorage.setItem("btnClickBecomePartner", "true");
+    } else {
+      this.Onboardingservice.navigateToUpgradeToPremium = true;
+      this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
+    }
+  }
+
+  private handleLogoutAlert() {
+    this.logeventservice.logEvent('click_logout_Hamburger');
+    this.chatbotService.clearMessages(); // reset chat history on logout
+    if (this.platform.isBrowser) {
+      this.closemenuevent();
+      this.isloggedIn = false;
+      this.isPartner = false;
+      this.initialize();
+      const acceptCookie = localStorage.getItem("acceptcookie");
+      const firstTimeTour = localStorage.getItem("firstTimeTour");
+      const firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
+      localStorage.clear();
+      sessionStorage.clear();
+      if (firstTimeTour === 'T') {
+        localStorage.setItem('firstTimeTour', 'T');
+      }
+      if (firstTimeSearchTour === 'T') {
+        localStorage.setItem('firstTimeSearchTour', 'T');
+      }
+      localStorage.setItem("isloggedin", "F");
+      localStorage.setItem("guest", "T");
+      localStorage.setItem("acceptcookie", acceptCookie);
+      localStorage.setItem("navigateToUpgradeToPremium", "false");
+      localStorage.setItem("btnClickBecomePartner", "false");
+
+      // Reset Google Identity Services state
+      this.resetGoogleSignIn();
+      this.Onboardingservice.guestEmailLogin();
+      const auth2 = (window as any).gapi?.auth2?.getAuthInstance();
+      if (auth2) {
+        auth2.signOut().then(() => {
+          this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
+        });
+      } else {
+        this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
+      }
+    }
   }
 
   iOS() {
@@ -594,14 +585,14 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         partnershipCheckbox.addEventListener('change', () => {
           if (partnershipCheckbox.checked) {
             parentMenu.classList.add('submenu-open');
-            parentMenu.setAttribute('data-open-submenu', 'partnership');
+            parentMenu.dataset.openSubmenu = 'partnership';
             menuParent.classList.add('has-submenu-open');
             if (partnershipLi) {
               partnershipLi.classList.add('submenu-active');
             }
           } else {
             parentMenu.classList.remove('submenu-open');
-            parentMenu.removeAttribute('data-open-submenu');
+            delete parentMenu.dataset.openSubmenu;
             menuParent.classList.remove('has-submenu-open');
             if (partnershipLi) {
               partnershipLi.classList.remove('submenu-active');
@@ -615,14 +606,14 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         helpSupportCheckbox.addEventListener('change', () => {
           if (helpSupportCheckbox.checked) {
             parentMenu.classList.add('submenu-open');
-            parentMenu.setAttribute('data-open-submenu', 'help-support');
+            parentMenu.dataset.openSubmenu = 'help-support';
             menuParent.classList.add('has-submenu-open');
             if (helpSupportLi) {
               helpSupportLi.classList.add('submenu-active');
             }
           } else {
             parentMenu.classList.remove('submenu-open');
-            parentMenu.removeAttribute('data-open-submenu');
+            delete parentMenu.dataset.openSubmenu;
             menuParent.classList.remove('has-submenu-open');
             if (helpSupportLi) {
               helpSupportLi.classList.remove('submenu-active');

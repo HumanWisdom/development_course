@@ -89,9 +89,9 @@
 
             </form>
           </div>
-          <!-- <hr *ngIf="!justSignedUp && wisdomRecomm?.length" class="hr_style_v3_01"> -->
+          <hr *ngIf="!justSignedUp && wisdomRecomm?.length" class="hr_style_v3_01">
           <!-- recommendations -->
-          <div *ngIf="wisdomRecomm?.length">
+          <div *ngIf="!justSignedUp && wisdomRecomm?.length">
             <h2 class="fw_500 mt50px mb20px fs_12px lh_150p  tcenter">
               Here are some recommendations for you to explore
             </h2>
@@ -115,7 +115,7 @@
                     <div
                       class="h-100 col-lg-7 col-md-7 col-sm-7 col-xs-7 pl5px pr10px d-flex flex-column justify-content-center">
                       <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"
-                        [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                         {{item.title}}
                       </h4>
                       <!-- <h4 class="mtb0px fs_12px fw_400 lh_100p "[ngClass]="isAdults? 'fc_000000_0_5':'fc_ffffff_0_5'" >
@@ -136,7 +136,8 @@
                     <!-- right icon (arrow / lock) -->
                     <div
                       class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright d-flex flex-column justify-content-center">
-                      <!-- <i class="fa fa-angle-right  fs_20px"  *ngIf="isSubscriber"></i> -->
+                      <i class="fa fa-angle-right fs_20px" *ngIf="isSubscriber"
+                        [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg"
                         class="img-responsive " *ngIf="!isSubscriber && isAdults">
 

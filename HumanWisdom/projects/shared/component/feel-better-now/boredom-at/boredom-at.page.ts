@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../../../shared/services/navigation.service';
 import { Router } from '@angular/router';
+import { SharedService } from '../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../shared/models/program-model';
 @Component({
   selector: 'app-boredom-at',
   templateUrl: './boredom-at.page.html',
   styleUrls: ['./boredom-at.page.scss'],
 })
-export class BoredomAtPage {
+export class BoredomAtPage implements OnInit {
 
   isAdults = false;
   isShowTranscript = false;
@@ -15,6 +17,14 @@ export class BoredomAtPage {
 
  
   constructor(private readonly location: Location, private readonly router: Router, private readonly navigationService: NavigationService) { }
+  
+  ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
 
 
   changeType() {

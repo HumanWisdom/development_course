@@ -40,17 +40,17 @@ export class MicroLearningInnerPage implements OnInit {
     // Simulating API response based on ID
     if(this.contentId == '1') {
       this.contentData = {
-        title: 'Wisdom for Everyday Life',
-        description: 'Micro-learning is about taking small steps every day towards a bigger understanding of yourself. It is not about speed, but about depth of reflection.',
+        title: '5 questions to ask yourself when you feel anxious',
+        description: 'Micro-learning is about taking small steps every day towards a bigger understanding of yourself. It is not about speed, but about depth of reflection. It is not about speed, but about depth of reflection It is not about speed, but about depth of reflection',
         imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/1.webp',
         layout: 1 // Image Top
       };
     } else {
       this.contentData = {
-        title: 'The Art of Noticing',
+        title: '5 questions to ask yourself when you feel anxious',
         description: 'Notice your thoughts as they arise. Don\'t judge them, just observe. This simple practice can change your relationship with your mind.',
         imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/1.webp',
-        layout: 2 // Image Center
+        layout: 1 // Image Center
       };
     }
 

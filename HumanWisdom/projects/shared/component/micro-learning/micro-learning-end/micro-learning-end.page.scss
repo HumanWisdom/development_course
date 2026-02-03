@@ -6,7 +6,7 @@
 }
 
 .mc_end_container {
-    padding: 20px 10px;
+    // padding: 20px 10px;
     border-radius: 15px;
     // background: linear-gradient(180deg, #FFEAB5 0%, #FFF7E6 100%);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
@@ -33,12 +33,12 @@
 }
 .learning {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png); */
-    background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/micro.png');
+    background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/background.webp');
      /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
     background-repeat: no-repeat;
     background-position: center;
     /* text-align: center; */
-     padding: 40px 10px;
+     padding: 20px 10px;
      background-attachment: fixed;
   background-size: 100% 100%;
     //   padding-top: 13rem !important;
@@ -53,15 +53,21 @@
     margin-bottom: 20px;
     z-index: 1;
 }
+.mc_end_textarea:focus{
+        border:1px solid rgba(0,0,0,.25);
+        outline: none;
+
+}
 
 .mc_end_textarea {
-    width: 100%;
+    width: 90%;
     height: 100px;
     border: none;
     border-radius: 12px;
     padding: 15px;
     font-size: 14px;
     resize: none;
+    border:1px solid rgba(0,0,0,.25);
     background: #FFFFFF;
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
@@ -73,9 +79,11 @@
 }
 
 .mc_end_btn_journal {
-    width: 100%;
+    width: 90%;
     // max-width: 250px;
-    background: #E58D82;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+
+    // background: #E58D82;
     color: #FFFFFF;
     border: none;
     border-radius: 25px;
@@ -123,7 +131,7 @@
     background: #FFFFFF;
     border-radius: 12px;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     height: 120px;
     display: flex;
     align-items: center;

@@ -414,7 +414,7 @@
                       <div class="col-md-12 col-sm-12 col-xs-12"> -->
 
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 " *ngIf="actionType=='report'">
-                      <input type="text" name="commenttext" id="commenttext" [(ngModel)]="commenttext"
+                      <input type="text" name="commenttext1" id="commenttext1" [(ngModel)]="commenttext"
                         required="required" class="form-control fc_comment" placeholder="Let us know what’s wrong">
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isLoggedIn && actionType=='comment'">
@@ -660,7 +660,7 @@
         <h4 (click)="postnavigate(item)" *ngIf="!item.isEditPost" class="mtb0px fs_15px fw_400 lh_150p fc_000000">
           {{item.POST}}
         </h4>
-        <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text" name="Post" id="Post"
+        <textarea *ngIf="item.isEditPost" (focusout)="editPost(item,index)" type="text" name="Post1" id="Post1"
           [(ngModel)]="item.POST" required="required" class="mtb0px ta_new_thread " maxlength="256"
           placeholder="Edit Post" rows="5"></textarea>
       </div>
@@ -722,7 +722,7 @@
           class="form-control fc_comment" placeholder="Let us know what’s wrong">
       </div>
       <div class="col-md-12 col-sm-12 col-xs-12 " *ngIf="isLoggedIn && actionType=='comment'">
-        <textarea type="text" name="PostComment" id="PostComment" [(ngModel)]="PostComment" required="required"
+        <textarea type="text" name="PostComment1" id="PostComment1" [(ngModel)]="PostComment1" required="required"
           class="mtb0px ta_new_thread " maxlength="256" placeholder="Comment Here" rows="5"></textarea>
       </div>
 

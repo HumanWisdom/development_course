@@ -3,7 +3,10 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="back" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="back" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
@@ -21,7 +24,10 @@
         <h4 class="fs_15px fw_400 lh_140p fc_e58d82 underline" *ngIf="isShowAudio">
           Read text
         </h4>
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" alt=""
+          *ngIf="isShowTranscript && !isAdults" class="p0" />
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" alt=""
+          *ngIf="isShowTranscript && isAdults" class="p0" />
       </a>
     </div>
   </div>
@@ -34,7 +40,8 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row flex_jc_center">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_183c79'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 bg_FFF7E6 sc_01 col_cw"
+        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_183c79'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -46,7 +53,7 @@
 
                     <div class="row center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_24px fw_400 lh_130p fc_ffffff">
+                        <h4 class="mtb0px fs_24px fw_400 lh_130p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           How to deal with an illness
                         </h4>
                       </div>
@@ -54,7 +61,8 @@
 
                     <div class="row tcenter" *ngIf="isShowAudio" [ngClass]="{'transcript-display':!isShowAudio}">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <app-audio-player class="audio-test" audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/coping_with_illness.mp3"></app-audio-player>
+                        <app-audio-player class="audio-test"
+                          audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/feel_better_now/audios/coping_with_illness.mp3"></app-audio-player>
                       </div>
                     </div>
 
@@ -63,14 +71,19 @@
 
                 <!-- transcript -->
                 <div class="row center_flex tleft" [ngClass]="{'transcript-display':!isShowTranscript}">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p fc_ffffff  txt_justify">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pt0px p20px fs_18px fw_400 lh_150p txt_justify"
+                    [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
 
                     <p>
-                      The distress caused to a patient by an illness, no matter whether it is severe back pain, cancer, or by a heart attack is a combination of two things - the illness itself and the pain and disability it causes, and our emotional reaction to it.
+                      The distress caused to a patient by an illness, no matter whether it is severe back pain, cancer,
+                      or by a heart attack is a combination of two things - the illness itself and the pain and
+                      disability it causes, and our emotional reaction to it.
                     </p>
 
                     <p>
-                      Sometimes the emotional reaction to the illness can be far more than the actual suffering it causes - e.g a diagnosis of breast cancer. Modern medicine is great at treating the cause of illness itself, but not so good at treating the emotional distress it causes.
+                      Sometimes the emotional reaction to the illness can be far more than the actual suffering it
+                      causes - e.g a diagnosis of breast cancer. Modern medicine is great at treating the cause of
+                      illness itself, but not so good at treating the emotional distress it causes.
                     </p>
 
                     <p>
@@ -78,7 +91,9 @@
                     </p>
 
                     <p>
-                      As a result of a diagnosis of cancer for example, we can experience a shower of thoughts and emotions and struggle to deal with them all. There could be anger at what has happened, regret at perhaps not looking after our health, many fears for the future and for our loved ones, and so on.
+                      As a result of a diagnosis of cancer for example, we can experience a shower of thoughts and
+                      emotions and struggle to deal with them all. There could be anger at what has happened, regret at
+                      perhaps not looking after our health, many fears for the future and for our loved ones, and so on.
                     </p>
 
                     <p>
@@ -86,15 +101,20 @@
                     </p>
 
                     <p>
-                      The main thing is to try and calm the mind down so you can think rationally - do a breathing exercise, journal your thoughts down, start meditating, or do some tapping. All of these will help. Speak to your friends. Create a support group for yourself. 
+                      The main thing is to try and calm the mind down so you can think rationally - do a breathing
+                      exercise, journal your thoughts down, start meditating, or do some tapping. All of these will
+                      help. Speak to your friends. Create a support group for yourself.
                     </p>
 
                     <p>
-                      There is a journey to acceptance of what has happened and that acceptance will bring you peace - but it is a journey and can take time.
+                      There is a journey to acceptance of what has happened and that acceptance will bring you peace -
+                      but it is a journey and can take time.
                     </p>
 
                     <p>
-                      There are many resources in the app to help you go deeper - explore the modules on stress, and anxiety, and continue to watch this discussion with Martha Van Dam,a psychologist from Florida - she talks about her own illness and how she emerged from it stronger than ever. Lets get started.
+                      There are many resources in the app to help you go deeper - explore the modules on stress, and
+                      anxiety, and continue to watch this discussion with Martha Van Dam,a psychologist from Florida -
+                      she talks about her own illness and how she emerged from it stronger than ever. Lets get started.
                     </p>
 
                   </div>

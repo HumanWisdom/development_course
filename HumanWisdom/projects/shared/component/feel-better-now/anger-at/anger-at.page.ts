@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../../../shared/services/navigation.service';
 import { Router } from '@angular/router';
+import { SharedService } from '../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../shared/models/program-model';
 @Component({
   selector: 'app-anger-at',
   templateUrl: './anger-at.page.html',
@@ -14,9 +16,13 @@ export class AngerAtPage implements OnInit {
   isShowAudio = true;
 
   constructor(private readonly location: Location, private readonly router: Router, private readonly navigationService: NavigationService) { }
-
+  
   ngOnInit() {
-    // ngOnInit is intentionally left empty as no initialization logic is required.
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   changeType() {

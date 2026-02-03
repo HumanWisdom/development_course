@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild,AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { ForumService } from '../forum.service';
 import { filter } from 'rxjs/operators';
@@ -16,7 +16,7 @@ import { ModalService } from '../../services/modal.service';
   templateUrl: './forum-thread-start-new.page.html',
   styleUrls: ['./forum-thread-start-new.page.scss'],
 })
-export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
+export class ForumThreadStartNewPage implements OnInit,AfterViewInit, OnDestroy {
   thread = '';
   userID = "107";
   postID = '0';
@@ -39,10 +39,10 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   PostImgAndroid='';
   isAdults: boolean = true; 
 
-  constructor(private service: ForumService, private router: Router, private route: ActivatedRoute, 
-    private logeventservice: LogEventService,
-    private location: Location,  private navigationService:NavigationService,
-    private modalService: ModalService) {
+  constructor(private readonly service: ForumService, private readonly router: Router, private readonly route: ActivatedRoute, 
+    private readonly logeventservice: LogEventService,
+    private readonly location: Location,  private readonly navigationService: NavigationService,
+    private readonly modalService: ModalService) {
     this.userID = localStorage.getItem('userId');
     this.router.events
       .pipe(filter(e => e instanceof NavigationStart))
@@ -58,7 +58,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
       this.postID = p;
     }
     this.isSubscriber = SharedService.isSubscriber(); 
-    this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? parseInt(localStorage.getItem('tagId')) : 0;
+    this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? Number.parseInt(localStorage.getItem('tagId')) : 0;
 
    
 
@@ -100,7 +100,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   routeToLanding(){
     // this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
-    var url = this.navigationService.navigateToBackLink();
+    const url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
     }else{
@@ -144,7 +144,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
         localStorage.setItem('postid', null);
         this.openPostedSuccessfullyModal();
         this.thread = "";
-        this.postID = "",
+        this.postID = "";
         this.selectedOption = 0;
       }
     })
@@ -156,7 +156,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   handleEvent(payload: any) {
     console.log('Received event in Angular:', payload);
-    //  this.objString = payload;
+
     const jsonObject = JSON.parse(payload);
     // Assume base64Image is the URL-encoded and Base64-encoded string
     this.imageUrl= 'data:;base64,'+jsonObject.base64String;
@@ -169,12 +169,12 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
 
   // Expose function to global window object
   exposeFunction() {
-    window['handleAngularEvent'] = this.handleEvent.bind(this);
+    globalThis['handleAngularEvent'] = this.handleEvent.bind(this);
   }
 
   clickEventForProfile() {
     const customEvent = new CustomEvent('ImageEditClicked');
-    window.dispatchEvent(customEvent);
+    globalThis.dispatchEvent(customEvent);
   }
 
   getFileUpload(event) {
@@ -188,7 +188,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
       return;
     }
     const reader = new FileReader();
-    // this.fileToUpload = files;
+
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       let byte: any = reader.result;
@@ -205,12 +205,8 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit {
   }
   filterBasedOnTags(value, name){
     this.logeventservice.logEvent("chooseCategory")
-    this.selectedOption = parseInt(value);
-    const data = this.categoryList.filter(x=>x.value== this.selectedOption);
-    /* if(data!=null && data.length>0){
-      this.buttonText =  data[0].label;
-    } */
-      this.buttonText =name;
+    this.selectedOption = Number.parseInt(value);
+    this.buttonText =name;
 
     setTimeout(() => {
       this.closeCategoryModal();

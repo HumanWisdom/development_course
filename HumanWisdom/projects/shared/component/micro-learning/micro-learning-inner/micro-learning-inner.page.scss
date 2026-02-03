@@ -1,19 +1,19 @@
 .mc_01_v3 {
-    min-height: 100vh;
+    min-height: 120vh;
     padding-top: 80px;
     padding-bottom: 80px;
 }
 .learning {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png); */
-    background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/micro.png');
+    background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/background.webp');
      /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
-    background-repeat: no-repeat;
-    background-position: center;
+     background-repeat: no-repeat;
+     background-position: center;
     /* text-align: center; */
      padding:  30px;
-     background-attachment: fixed;
+ background-attachment: fixed;
   background-size: 100% 100%;
-    //   padding-top: 13rem !important;
+    //    padding-top: 13rem !important;
     object-fit: cover;
     border-radius: 12px;
 }

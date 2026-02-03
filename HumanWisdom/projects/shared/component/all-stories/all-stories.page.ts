@@ -25,10 +25,10 @@ export class AllStoriesPage implements OnInit {
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
-  constructor(private router: Router,
-    private service:OnboardingService,
-    private location:Location,
-    private meta: Meta, private title: Title,private navigationService:NavigationService) { }
+  constructor(private readonly router: Router,
+    private readonly service:OnboardingService,
+    private readonly location:Location,
+    private readonly meta: Meta, private readonly title: Title, private readonly navigationService:NavigationService) { }
 
   ngOnInit() {
     this.getStories()
@@ -51,7 +51,7 @@ export class AllStoriesPage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
+    const url = this.navigationService.navigateToBackLink();
     console.log("url=" + url)
     if (url == null) {
      this.location.back();
@@ -70,20 +70,8 @@ export class AllStoriesPage implements OnInit {
           let dateres = res.sort((a, b) => b['PublishedOn'] - a['PublishedOn'])
           dateres = dateres.filter(x=>x.ProgIDs.includes(SharedService.ProgramId));
 
-          // if (localStorage.getItem("isloggedin") == null || localStorage.getItem("isloggedin") == 'F' || localStorage.getItem("Subscriber")=='0' ) {
 
-          //   res = new Array()
-          //   res = dateres.filter(p => p.ExclFromChild === "1")
-          //   res.forEach(element => {
-          //     dateres.splice(dateres.indexOf(element),1)
-          //     dateres.unshift(element)
-          //   });
-
-
-
-          // }
-
-         this.storyList=dateres.slice(0, 10)
+          this.storyList=dateres.slice(0, 10)
           this.secondstoryList=dateres.slice(10)
           this.searchstoryList = dateres;
           localStorage.setItem("storyList",JSON.stringify(this.storyList))
@@ -95,7 +83,6 @@ export class AllStoriesPage implements OnInit {
         if(res && res === 'T') {
           this.service.readStories().subscribe(r=>{
             this.readStories= r.map(a => a.ScenarioID)
-            //this.readStories=r.ScenarioID
           })
         }
       }
@@ -122,12 +109,8 @@ export class AllStoriesPage implements OnInit {
       } else {
         this.routeToViewStories();
       }
-    }else{
-      if(!this.isSubscriber) {
-        // this.router.navigateByUrl(SharedService.getprogramName()+'/subscription/start-your-free-trial')
-        // this.router.navigate(['/subscription/start-your-free-trial']);
-        this.showModal = true;
-      }
+    } else if (!this.isSubscriber) {
+      this.showModal = true;
     }
   }
   
@@ -155,13 +138,6 @@ export class AllStoriesPage implements OnInit {
     }
   }
 
-  /*
-  searchStory(event){
-      let filterlist =this.searchstoryList.filter(it => it.Title.toLowerCase().includes(e.toLowerCase()));
-      this.storyList=filterlist.slice(0, 10)
-      this.secondstoryList=filterlist.slice(10);
-  }
-  */
 
   toggle_view_more_less()
   {
