@@ -105,13 +105,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 25 days ago  -->
-                  </h6>
-                </div>
-              </div>
+             
             </a>
           </div>
 
@@ -140,13 +134,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 25 days ago  -->
-                  </h6>
-                </div>
-              </div>
+           
             </a>
           </div>
 
@@ -211,13 +199,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 2 years ago  -->
-                  </h6>
-                </div>
-              </div>
+            
             </a>
           </div>
 
