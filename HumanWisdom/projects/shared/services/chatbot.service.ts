@@ -352,7 +352,7 @@ export class ChatbotService {
       map((response: HistoryResponse) => {
         // Additional frontend filtering: ensure response user_id matches current user
         if (currentUserId && currentUserId > 0 && response.user_id) {
-          const responseUserId = parseInt(response.user_id, 10);
+          const responseUserId = Number.parseInt(response.user_id, 10);
           if (responseUserId !== currentUserId) {
             // If user_id doesn't match, return empty history
             console.warn('History response user_id does not match current user. Filtering out history.');

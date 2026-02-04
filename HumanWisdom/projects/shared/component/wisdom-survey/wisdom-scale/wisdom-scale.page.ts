@@ -109,7 +109,7 @@ export class WisdomScalePage implements OnInit {
   public lineChartColors: Color[] = [
     {
       borderColor: (this.isAdults? '#ED7D6F' : '#E58D82'),
-      backgroundColor:(this.isAdults? 'rgba(229, 141, 130, 0.2)' : 'rgba(229, 141, 130, 0.2)') ,
+      backgroundColor: 'rgba(229, 141, 130, 0.2)' ,
     },
   ];
   public lineChartLegend = false;
@@ -258,8 +258,9 @@ export class WisdomScalePage implements OnInit {
 
 
     this.createScreen()
-    if (this.saveUsername == false) { this.userId = JSON.parse(localStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    // if (this.saveUsername == false) { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    // else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+    JSON.parse(localStorage.getItem("userId"))
 
     if (this.userId) {
       this.apiCall();
@@ -350,20 +351,20 @@ export class WisdomScalePage implements OnInit {
       // r = r.sort((a,b) => new Date(a['wsDate']).getFullYear() - new Date(b['wsDate']).getFullYear());
      
       r.forEach((d) => {
-        let dateStr = parseInt(d['wsDate'].split('-').join());
-        if(this.acheiviedScore < parseInt(d['Score']))
-          this.acheiviedScore = parseInt(d['Score']);
+        let dateStr = Number.parseInt(d['wsDate'].split('-').join());
+        if(this.acheiviedScore <  Number.parseInt(d['Score']))
+          this.acheiviedScore = Number.parseInt(d['Score']);
 
-         if(this.minScore > parseInt(d['Score']))
-          this.minScore = parseInt(d['Score']);
+         if(this.minScore > Number.parseInt(d['Score']))
+          this.minScore = Number.parseInt(d['Score']);
 
         if(dateStr > dataScore) {
-          dateStr = parseInt(d['wsDate'].split('-').join());
+          dateStr = Number.parseInt(d['wsDate'].split('-').join());
          
         }
         if (this.lineChartData[0]['data'].length < 6) {
           let name = monthNames[d['month'] - 1];
-          this.lineChartData[0]['data'].push(parseInt(d['Score']));
+          this.lineChartData[0]['data'].push(Number.parseInt(d['Score']));
           if (!(this.lineChartLabels.find(a => a.includes(d['year'].slice(-2))))) {
             this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3) + "'" + d['year'].slice(-2));
           } else {
