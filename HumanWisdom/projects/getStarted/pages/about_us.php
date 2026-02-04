@@ -245,10 +245,10 @@ Here you will find easy to use tools to manage your emotions and mental health, 
               </h4>
             </div>
   
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 center_flex">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 center_flex" style="margin-top: 30px !important;">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0">
                 <a id="happiermeTryForFree">
-                  <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                  <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" style="width: 295px !important;">
                     Try HappierMe for free
                   </button>
                 </a>
