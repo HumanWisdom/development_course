@@ -1094,7 +1094,7 @@ body { overflow-x: hidden !important; }
      .cvideo_b,
      .yt-embed,
      #youtubeIntro {
-       width: 100% !important; max-width: 335px !important;
+       width: 100% !important; 
        height: 214.03px !important;
        max-width: 335px !important;
        max-height: 214.03px !important;
@@ -2150,7 +2150,7 @@ body { overflow-x: hidden !important; }
      .section-header .row.center_flex .col-sm-10.w-335px,
      .section-header .row.center_flex .col-xs-10.w-335px,
      .section-header .row.center_flex .col-10.w-335px {
-       width: 100% !important; max-width: 335px !important;
+       width: 100% !important; 
        max-width: 335px !important;
        margin-left: auto !important;
        margin-right: auto !important;
@@ -2209,7 +2209,7 @@ body { overflow-x: hidden !important; }
      }
 
      .work_edu_health_outer .w-335px {
-       width: 100% !important; max-width: 335px !important;
+       width: 100% !important;  
        max-width: 335px !important;
        margin-left: auto !important;
        margin-right: auto !important;
