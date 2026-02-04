@@ -344,7 +344,7 @@ export class WisdomScalePage implements OnInit {
 
     this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
       
-      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       r = r.sort((a, b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
       // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
       // r = r.sort((a,b) => new Date(a['wsDate']).getFullYear() - new Date(b['wsDate']).getFullYear());
@@ -384,77 +384,15 @@ export class WisdomScalePage implements OnInit {
   }
 
   receiveRating(e) {
-    e = JSON.parse(e)
-    switch (e.Id) {
-      case "1": {
-        this.rating1 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        // this.s1 = this.optionList1.find(x => x.Points == this.rating1).OptId
-        this.s1 = e.s
-        break;
-      }
-      case "2": {
-        this.rating2 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        // this.optionList2.forEach((x)=>{ x.OptId=parseInt(x.OptId) });
-        // this.optionList2.sort((a, b) => a.OptId - b.OptId);
-        // this.s2=this.optionList2.find(x=>this.optionList2.indexOf(x)+1==e.Rating).OptId
-        this.s2 = e.s
-        // this.s2 = this.optionList2.find(x => x.Points == this.rating2).OptId
-        break;
-      }
-      case "3": {
-        this.rating3 = (e.Rating == 0) ? (1) : e.Rating
-        this.s3 = e.s
-        // this.s3 = this.optionList3.find(x => x.Points == this.rating3).OptId
-        break;
-      } case "4": {
-        this.rating4 = (e.Rating == 0) ? (1) : e.Rating
-        // this.s4 = this.optionList4.find(x => x.Points == this.rating4).OptId
-        this.s4 = e.s
-        break;
-      } case "5": {
-        this.rating5 = (e.Rating == 0) ? (1) : e.Rating
-        this.s5 = e.s
-        // this.s5 = this.optionList5.find(x => x.Points == this.rating5).OptId
-        break;
-      } case "6": {
-        this.rating6 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        this.s6 = e.s
-        // this.s6 = this.optionList6.find(x => x.Points == this.rating6).OptId
-        break;
+    const data = JSON.parse(e);
+    const { Id, Rating, s } = data;
+    const reverseRatingIds = ['1', '2', '6', '7'];
+    const ratingValue = reverseRatingIds.includes(Id)
+      ? (Rating == 5 ? 1 : 5 - Rating)
+      : (Rating == 0 ? 1 : Rating);
 
-      }
-      case "7": {
-        this.rating7 = (e.Rating == 5) ? 1 : (5 - e.Rating)
-        // this.s7 = this.optionList7.find(x => x.Points == this.rating7).OptId
-        this.s7 = e.s
-        break;
-
-      }
-      case "8": {
-        this.rating8 = (e.Rating == 0) ? (1) : e.Rating
-        this.s8 = e.s
-        // this.s8 = this.optionList8.find(x => x.Points == this.rating8).OptId
-        break;
-
-      }
-      case "9": {
-        this.rating9 = (e.Rating == 0) ? (1) : e.Rating
-        // this.s9 = this.optionList9.find(x => x.Points == this.rating9).OptId
-        this.s9 = e.s
-        break;
-
-      }
-      case "10": {
-        this.rating10 = (e.Rating == 0) ? (1) : e.Rating
-        // this.s10 = this.optionList10.find(x => x.Points == this.rating10).OptId
-        this.s10 = e.s
-        break;
-
-      }
-      default: {
-        break;
-      }
-    }
+    this[`rating${Id}`] = ratingValue;
+    this[`s${Id}`] = s;
   }
 
   createScreen() {
@@ -468,14 +406,15 @@ export class WisdomScalePage implements OnInit {
   }
 
   findQuestion(q) {
-    var optionList = []
-    for (var i = 0; i < this.questionA.length; i++) {
+    const optionList = []
+    let question;
+    for (let i = 0; i < this.questionA.length; i++) {
       if (this.questionA[i].CorrectAns == "0")
         this.questionA[i].CorrectAns = false
       else
         this.questionA[i].CorrectAns = true
       if (q == this.questionA[i].QueId) {
-        var question = this.questionA[i].Que
+        question = this.questionA[i].Que
         optionList.push(this.questionA[i])
       }
     }
@@ -487,7 +426,7 @@ export class WisdomScalePage implements OnInit {
       this.logeventservice.logEvent('click_survey_submit');
       this.endTime = Date.now();
       this.totalTime = this.endTime - this.startTime;
-      var optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10]
+      const optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10]
       this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2
       localStorage.setItem("wisdomScore", this.wisdomScore)
 
@@ -522,7 +461,7 @@ export class WisdomScalePage implements OnInit {
   }
 
   goBack() {
-   /*  var url = this.navigationService.navigateToBackLink();
+   /*    let url = this.navigationService.navigateToBackLink();
     if (url == null) {
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
       if (url && url != null && url != 'null') {
@@ -539,7 +478,7 @@ export class WisdomScalePage implements OnInit {
     //   else 
     //      this.router.navigate([SharedService.getDashboardUrls()])
 
- var url = this.navigationService.navigateToBackLink();
+    let url = this.navigationService.navigateToBackLink();
     if(url==null){
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
       if(url && url!=null && url != 'null'){

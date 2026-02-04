@@ -124,10 +124,8 @@ a:hover {
 .h5 {
     margin-top: -5px;
 }
-
-.btn-primarypop {
-    margin: 0;
-    border: 0;
+.btn-primarypop{
+    margin: 0;   
     /* width: 314px; */
     width: 100%;
     height: 70px;
