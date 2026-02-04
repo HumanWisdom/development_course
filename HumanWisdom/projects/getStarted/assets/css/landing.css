@@ -1,33 +1,36 @@
 .web_home_divlanding {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png); */
     background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png');
-     /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
+    /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
     background-repeat: no-repeat;
     background-position: center;
     /* text-align: center; */
     padding: 40px 10px;
-     background-attachment: fixed;
-  background-size: 100% 100%;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
-.btn_subscription_trialindex 
-{
-  /* width: 114px; */
-  width: auto;
-  height: 26px;
-  border-radius: 10px;
-  background: #fff;
-  padding: 4px 10px;
-  position: absolute;
-  top: -14px;
-  right: 20px;
+
+.btn_subscription_trialindex {
+    /* width: 114px; */
+    width: auto;
+    height: 26px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 4px 10px;
+    position: absolute;
+    top: -14px;
+    right: 20px;
 }
- /* .a,h3:hover{
+
+/* .a,h3:hover{
   color:#834B66;
 }  */
 
-.a,h5:hover{
-  color:#834B66;
-} 
+.a,
+h5:hover {
+    color: #834B66;
+}
+
 /* .a,img:hover{
     color:red
     
@@ -37,9 +40,11 @@
     border-radius: 35px;
     height: 65px;
 }
-a:hover{
+
+a:hover {
     color: #fff;
 }
+
 /* .btn_subscription:hover{
     
     border: 1px solid #fff;
@@ -49,22 +54,25 @@ a:hover{
     margin: 0;
     border: 0;
     /* width: 314px; */
-    width: 345px;
+    width: 100%;
+    max-width: 345px;
     height: 65px;
     border-radius: 36px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-     background: linear-gradient(180deg, #4267A5, #183C79); 
+    background: linear-gradient(180deg, #4267A5, #183C79);
     /* background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%); */
 
 }
-.btn_landing:hover{
-      background: linear-gradient(180deg, #2D5392, #0E2E64);
+
+.btn_landing:hover {
+    background: linear-gradient(180deg, #2D5392, #0E2E64);
 
 }
+
 .btn_popup {
     margin: 0;
     border: 0;
-    padding:18px 40px;
+    padding: 18px 40px;
     /* right:40px;
     bottom:18px;
     left:18px; */
@@ -78,10 +86,12 @@ a:hover{
     background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
 }
-.btn_popup:hover{
-  background: linear-gradient(180deg,  #DA7D71, #BF5061)!important;
+
+.btn_popup:hover {
+    background: linear-gradient(180deg, #DA7D71, #BF5061) !important;
 }
-.popuptitle{
+
+.popuptitle {
     font-weight: 600;
     font-size: 27px;
     line-height: 120%;
@@ -89,26 +99,29 @@ a:hover{
     color: #000000;
     margin: 8px;
 }
-.para{
-  font-weight: 400;
+
+.para {
+    font-weight: 400;
     font-size: 12px;
     line-height: 150%;
     opacity: 75%;
     color: #000000 !important;
-  margin-top: -4px;
-  text-decoration: none !important;
+    margin-top: -4px;
+    text-decoration: none !important;
 }
-.review{
-  font-weight: 400;
+
+.review {
+    font-weight: 400;
     font-size: 12px;
     line-height: 140%;
     opacity: 75%;
     color: #000000 !important;
-  margin-top: -3px;  
-  padding-right: 15px;
-  text-decoration: none !important;
+    margin-top: -3px;
+    padding-right: 15px;
+    text-decoration: none !important;
 }
-.h5{
+
+.h5 {
     margin-top: -5px;
 }
 .btn-primarypop{
@@ -120,20 +133,23 @@ a:hover{
     text-align: left;
     border-radius: 12px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
-    background: #FFFAF4;  
-    border: 0.5px solid #CB6171; 
-}
-.sap:hover{
- color:greenyellow;   
+    background: #FFFAF4;
+    border: 0.5px solid #CB6171;
 }
 
-.btn-primarypop:hover{
-  background-color: #FFEACF;
+.sap:hover {
+    color: greenyellow;
 }
-.fa-angle-right{
+
+.btn-primarypop:hover {
+    background-color: #FFEACF;
+}
+
+.fa-angle-right {
     float: right;
     font-size: 25px;
 }
+
 /* .modal-content1 {
     position: relative;
     background: linear-gradient(180deg, #FFFAF4, #FFF4E6);
@@ -155,11 +171,10 @@ a:hover{
 
 .testimonial-cardnew {
     /* width: 490px; */
-     height: 305px; 
+    height: 305px;
     padding: 36px;
     position: relative;
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     background: #FFF4E6;
     border-radius: 20px;
@@ -176,21 +191,23 @@ a:hover{
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
     background: linear-gradient(180deg, #E58D82, #CB6171);
 }
-.sap:hover{
-    color:#834B66;
+
+.sap:hover {
+    color: #834B66;
 }
 
 
 .div_subscriptionnew {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
-    background: 
-    -webkit-linear-gradient(#4267A5 , #183C79 );
-    
+    background:
+        -webkit-linear-gradient(#4267A5, #183C79);
+
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
-    padding:  40px;
+    padding: 40px;
 }
+
 .testnew-info1 h5 {
     font-size: 18px;
     font-weight: 600;
@@ -207,14 +224,14 @@ a:hover{
     line-height: 150%;
     opacity: 75%;
 }
+
 h3 {
     font-size: 24px;
 }
 
 .modal-content1 {
     position: relative;
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     width: 980px;
     color: var(--bs-modal-color);
@@ -227,18 +244,31 @@ h3 {
 
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
     box-sizing: border-box;
 }
- .exampleModal .modal-dialog{max-width: 800px; width: 100%;}
-        .pre-cost{text-decoration: line-through; color: #a5a5a5;}
-        .space-ten{padding: 10px 0;}
-        
 
-  @media (min-width: 576px) {
+.exampleModal .modal-dialog {
+    max-width: 800px;
+    width: 100%;
+}
+
+.pre-cost {
+    text-decoration: line-through;
+    color: #a5a5a5;
+}
+
+.space-ten {
+    padding: 10px 0;
+}
+
+
+@media (min-width: 576px) {
     .modal-dialog {
         max-width: 980px;
         /* margin-right: 84px;
         margin-left: 207px; */
-    }   
-  }   
+    }
+}
