@@ -405,8 +405,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Sort sections by ID in ascending order (1, 2, 3, etc.)
     sections.sort((a, b) => {
-      const idA = parseInt(a.id) || 0;
-      const idB = parseInt(b.id) || 0;
+      const idA = Number.parseInt(a.id) || 0;
+      const idB = Number.parseInt(b.id) || 0;
       return idA - idB;
     });
 
@@ -1101,7 +1101,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const qs = path.split('?')[1] || '';
     const params = new URLSearchParams(qs);
     const v = params.get('sId');
-    const n = v ? Number(v) : NaN;
+    const n = v ? Number(v) : Number.NaN;
     return Number.isFinite(n) ? n : null;
   }
 
@@ -1110,7 +1110,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const qs = path.split('?')[1] || '';
     const params = new URLSearchParams(qs);
     const v = params.get(key || '');
-    const n = v ? Number(v) : NaN;
+    const n = v ? Number(v) : Number.NaN;
     return Number.isFinite(n) ? n : null;
   }
 
@@ -1377,8 +1377,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private restoreExpandedState(): void {
     // Ensure sections are sorted by ID before restoring state
     this.contentSections.sort((a, b) => {
-      const idA = parseInt(a.id) || 0;
-      const idB = parseInt(b.id) || 0;
+      const idA = Number.parseInt(a.id) || 0;
+      const idB = Number.parseInt(b.id) || 0;
       return idA - idB;
     });
 

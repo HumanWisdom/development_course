@@ -91,7 +91,7 @@ export class SharedService {
   }
 
   public static DisabledComment(item) {
-    return (parseInt(item.TagIds) == 5 || item.TagName == 'Ask a coach') && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
+    return (Number.parseInt(item.TagIds) == 5 || item.TagName == 'Ask a coach') && SharedService.getDataFromLocalStorage('RoleID')?.toString() != '1';
   }
 
   public static initializeIosCheck(platform: Platform) {
@@ -534,7 +534,7 @@ return [
   public static getUserId() {
     let userId = this.getDataFromLocalStorage(Constant.userId);
     if (userId && userId != null) {
-      return parseInt(userId);
+      return Number.parseInt(userId);
     }
     return 0
   }

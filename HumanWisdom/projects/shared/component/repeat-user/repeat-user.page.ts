@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { SharedService } from "../../services/shared.service";
 import { LogEventService } from '../../services/log-event.service';
 import { ProgramType } from "../../models/program-model";
+import { NumberCardComponent } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-repeat-user',
@@ -106,11 +107,12 @@ export class RepeatUserPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      if(SharedService.FirstLoginOfTheDay){
-        this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
-      }else{
-         this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
-      }
+      // if(SharedService.FirstLoginOfTheDay){
+      //   this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
+      // }else{
+      //    this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
+      // }
+      this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
     }, 3000);
 
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -157,13 +159,15 @@ export class RepeatUserPage implements OnInit {
      SharedService.setEmail(res.Email);
      this.freescreens();
     }
-    if (localStorage.getItem("token") && (this.saveUsername == true)) {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-      this.userName = JSON.parse(localStorage.getItem("userName"))
-    } else {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-      this.userName = JSON.parse(localStorage.getItem("userName"))
-    }
+    // if (localStorage.getItem("token") && (this.saveUsername == true)) {
+    //   this.userId = JSON.parse(localStorage.getItem("userId"))
+    //   this.userName = JSON.parse(localStorage.getItem("userName"))
+    // } else {
+    //   this.userId = JSON.parse(localStorage.getItem("userId"))
+    //   this.userName = JSON.parse(localStorage.getItem("userName"))
+    // }
+    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userName = JSON.parse(localStorage.getItem("userName"))
     this.getBookmarks()
     this.getProgress()
    
@@ -193,7 +197,7 @@ export class RepeatUserPage implements OnInit {
     this.service.getBookmarks(this.userId)
       .subscribe(res => {
         this.bookmarks = res
-        this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
+        this.bookmarks = this.bookmarks.map(a => Number.parseInt(a.ScrNo));
         localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
       })
   }
@@ -459,7 +463,7 @@ export class RepeatUserPage implements OnInit {
           localStorage.setItem("lastvisited", 'T')
         }
         sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
@@ -793,7 +797,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("resumeBenefitsEnquiry", resumeBenefitsEnquiry)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -1118,7 +1122,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("comparisonR", comparisonR)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         // this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -1187,7 +1191,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("siR", siR)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -1481,7 +1485,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("pleasureResume", pleasureResume)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent =Number.parseInt(res.MediaPercent)
         // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -2235,7 +2239,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("hcwhR", hcwhR)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         // this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -2351,7 +2355,7 @@ export class RepeatUserPage implements OnInit {
       let arr;
       result = result.forEach((element) => {
         if (element && element.length !== 0) {
-          this.x.push(element.map((a) => parseInt(a.ScrNo)));
+          this.x.push(element.map((a) => Number.parseInt(a.ScrNo)));
           arr = Array.prototype.concat.apply([], this.x);
         }
       });

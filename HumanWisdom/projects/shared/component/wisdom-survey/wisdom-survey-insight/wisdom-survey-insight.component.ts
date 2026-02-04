@@ -57,7 +57,7 @@ export class WisdomSurveyInsightComponent {
           result.push(
             {
               name: name + ' ' + dd.getDate(),
-              value: parseInt(d['Score'])
+              value: Number.parseInt(d['Score'])
             })
         }
       })
@@ -85,62 +85,62 @@ export class WisdomSurveyInsightComponent {
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
 
         if (d['QuestionID'] === 123) this.Stress.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         if (d['QuestionID'] === 124) this.Emotion.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         if (d['QuestionID'] === 125) this.Calmness.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         if (d['QuestionID'] === 126) this.confidence.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         if (d['QuestionID'] === 127) this.relationships.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         if (d['QuestionID'] === 128) this.addictions.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         if (d['QuestionID'] === 129) this.criticism.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         if (d['QuestionID'] === 130) this.Campassion.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         if (d['QuestionID'] === 131) this.Happiness.push({
           year: Number(d['year'].toString() + String(d['month']).padStart(2, '0')),
           date: name + ' ' + d['year'],
           last: r.length === i + 1,
-          r: parseInt(d['Score']) * 10
+          r: Number.parseInt(d['Score']) * 10
         })
         // }
       })

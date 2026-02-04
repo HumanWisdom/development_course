@@ -643,7 +643,7 @@ export class OnboardingService {
     this.getBookmarks(userid)
       .subscribe(res => {
         let bookmarks = res
-        bookmarks = bookmarks.map(a => parseInt(a.ScrNo));
+        bookmarks = bookmarks.map(a => Number.parseInt(a.ScrNo));
         localStorage.setItem("bookmarkList", JSON.stringify(bookmarks))
       })
   }
@@ -668,7 +668,7 @@ export class OnboardingService {
           localStorage.setItem("lastvisited", 'T')
         }
         sessionStorage.setItem("pgResume", pgResume)
-        mediaPercent = parseInt(res.MediaPercent);
+        mediaPercent =Number.parseInt(res.MediaPercent);
         localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(qrList))
         console.log(qrList)

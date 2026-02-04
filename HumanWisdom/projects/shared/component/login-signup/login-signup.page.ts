@@ -1354,7 +1354,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       let arr;
       result = result.forEach((element) => {
         if (element && element.length !== 0) {
-          this.x.push(element.map((a) => parseInt(a.ScrNo)));
+          this.x.push(element.map((a) => Number.parseInt(a.ScrNo)));
           arr = Array.prototype.concat.apply([], this.x);
         }
       });

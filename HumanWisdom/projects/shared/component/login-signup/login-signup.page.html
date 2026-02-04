@@ -160,7 +160,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                           <input [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password"
                             id="password" formControlName="ogpassword" (keydown.space)="$event.preventDefault()"
-                            (keypress)="onKeyPress($event)" autocomplete="new-password" maxlength="15" required>
+                            (keypress)="onKeyPress($event)"  autocomplete="current-password" maxlength="15" required>
 
                           <div class="fc_img" (click)="hideFunction('password')">
 
@@ -196,7 +196,7 @@
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                           <input maxlength="50" (keydown.space)="$event.preventDefault()"
-                            [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc"
+                            [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc" autocomplete="current-password"
                             placeholder="Confirm Password" id="repeatpassowrd" formControlName="confirmPassword"
                             maxlength="15" (keydown.space)="$event.preventDefault();">
 
@@ -247,8 +247,8 @@
                       <div class="col-1 text-center ">
                         <label for="privacy_checkbox" class="chkb_post_anonymously ">
                           <input id="privacy_checkbox" formControlName="privacychk" type="checkbox">
-                          <h4 class=" fs_12px fw_500 lh_130p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
-                          </h4>
+                          <span class=" fs_12px fw_500 lh_130p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
+                          </span>
                         </label>
                       </div>
                       <div class="col-11 p0">
@@ -267,8 +267,8 @@
                       <div class="col-1  text-center ">
                         <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
                           <input id="marketing_checkbox" type="checkbox">
-                          <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
-                          </h4>
+                          <span class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
+                          </span>
                         </label>
                       </div>
                       <div class="col-11 p0 ">
