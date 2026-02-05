@@ -614,6 +614,22 @@ export class CommonService {
       })
   }
  
+  GetMicrolearningList(programId: any): Observable<any> {
+    return this.http.get(this.path + `/GetMicrolearningListing/${programId}`);
+  }
+
+  clickMicrolearning(id: any): Observable<any> {
+    return this.http.post(this.path + `/clickMicrolearning/${id}`, null);
+  }
+
+  GetMicrolearningScreens(id: any): Observable<any> {
+    return this.http.get(this.path + `/GetMicrolearningScreens/${id}`);
+  }
+  
+  getMicrolearningsEndScreens(id: any): Observable<any> {
+    return this.http.get(this.path + `/getMicrolearningsEndScreens/${id}`);
+  }
+
   GetLastVisitedScreen(data: any,programId:any): Observable<any> {
     return this.http.get(this.path + `/GetLastVisitedScreen/${data}/${programId}`)
   }

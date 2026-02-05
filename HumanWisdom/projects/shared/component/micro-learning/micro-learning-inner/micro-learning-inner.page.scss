@@ -1,25 +1,135 @@
 .mc_01_v3 {
-    min-height: 120vh;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    min-height: 100vh;
+    padding-top: 60px; // Reduced padding since navigation is now less bulky
+    padding-bottom: 0;
 }
+
 .learning {
-    /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png); */
     background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/background.webp');
-     /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
-     background-repeat: no-repeat;
-     background-position: center;
-    /* text-align: center; */
-     padding:  30px;
- background-attachment: fixed;
-  background-size: 100% 100%;
-    //    padding-top: 13rem !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     object-fit: cover;
     border-radius: 12px;
+    margin-bottom: 70px; // Footer height (90px) + 20px gap
+    position: relative;
+}
+// Header clipping fix
+.tn_bv {
+    height: auto !important;
+    overflow: visible !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.toc_nvmenu_v3 {
+    display: block !important;
+    padding: 10px 0;
+}
+
+// Progress bar at the top of content
+.mc_progress_container {
+    height: 4px;
+    background: #DDD5C7;
+    border-radius: 0;
+    overflow: hidden;
+    margin: -20px -20px 20px -20px;}
+
+.mc_progress_bar {
+    height: 100%;
+    background: #E07575;
+    transition: width 0.3s ease;
+}
+
+// Footer container (fixed at bottom)
+.mc_footer_container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+// Footer section (inside the restricted container)
+.mc_footer_section {
+    pointer-events: auto;
+    padding: 15px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+// Pagination dots at the bottom
+.mc_inner_pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 8px;
+    flex: 1;
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        background: #D9D9D9;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+
+        &.active {
+            width: 24px;
+            border-radius: 10px;
+            background: #6B6B6B;
+        }
+    }
+}
+
+.mc_page_indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+}
+
+// Navigation buttons at the bottom
+.mc_inner_footer_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; // Limit width for centered footer
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .nav_btn {
+        font-size: 15px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &.active {
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
 }
 
 .bg_stake {
     background: #254170 !important;
+    
+    .mc_footer_section {
+        background: #254170 !important;
+    }
 }
 
 .bg_FFF7E6 {
@@ -46,5 +156,4 @@ p {
     margin-top: 15px;
     line-height: 1.6;
 }
-
 

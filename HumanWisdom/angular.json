@@ -567,6 +567,8 @@
             "polyfills": "projects/shared/polyfills.ts",
             "tsConfig": "projects/shared/tsconfig.spec.json",
             "karmaConfig": "projects/shared/karma.conf.js",
+            "codeCoverage": false,
+            "sourceMap": true,
             "styles": [],
             "scripts": [],
             "assets": []

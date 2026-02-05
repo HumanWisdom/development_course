@@ -54,40 +54,49 @@
 <div class="right_col mc_01_v3 mc_01_v3_ext" [ngClass]="{'adults-scroll': isAdults}">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
+        [class.search-active]="searchResult.length > 0">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-              <div class="row mt20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                    Micro-learning
-                  </h4> -->
+              <!-- search -->
+              <div class="row mt10px">
+                <div class="col-12 plr0px prelative search-box-container" [class.search-box-hidden]="!showSearchBox">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                    <input type="search" placeholder="Search for a topic"
+                      class="form-control has-feedback-left pfy_search hide_search" name="search-list"
+                      [(ngModel)]="searchedText" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
+                      (focus)="onFocus()" (focusout)="onFocusOutEvent()"
+                      (keyup.enter)="searchMicroLearning(searchedText)" style="border-radius: 100px !important;">
+                    <span *ngIf="searchResult.length == 0"
+                      class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                    <span *ngIf="searchResult.length > 0" (click)="clearSearch()"
+                      class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
+                      aria-hidden="true" style="pointer-events: all !important; cursor: pointer !important;"></span>
+                    <span *ngIf="searchedText!=''" (click)="clearSearch()"
+                      class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                      aria-hidden="true"></span>
+                  </div>
+
+                  <!-- Search Dropdown -->
+                  <div class="row adsearch" *ngIf="searchResult.length > 0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tsp">
+                      <ul class="list-group autocomplete-list adsearch_ul">
+                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.title)" name="list"
+                          class="is-search list-group-item">
+                          {{item.title}}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <!-- <div class="row mt10px mb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                    Explore these concentrated nuggets of wisdom designed to fit into your busy schedule.
-                  </h4>
-                </div>
-                
-              </div> -->
-
-              <!-- search -->
-               <div class="row prelative">
-                <app-hwp-search-bar
-                  [searchinp]="searchedText"
-                  (textBoxEvent)="searchMicroLearning($event)"
-                ></app-hwp-search-bar>
-              </div> 
               <!-- /search -->
 
 
 
               <!-- overflow buttons -->
-              <div class="row mr-20pxi mtb20px">
+              <div class="row mr-20pxi mtb20px" *ngIf="searchResult.length === 0">
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv d-flex text-center"
                   [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -102,10 +111,10 @@
 
                     <button type="button" class="btn ng-star-inserted" id="1_btn"> All </button>
                     <button type="button" class="btn"> Work </button>
-                      <button type="button" class="btn" > Mental health </button>
-                      <button type="button" class="btn"> Relationships </button> 
+                    <button type="button" class="btn"> Mental health </button>
+                    <button type="button" class="btn"> Relationships </button>
 
-                      <button type="button" class="btn"> Relationships </button>  
+                    <button type="button" class="btn"> Relationships </button>
 
 
                     <!-- <button class="v1">
@@ -140,13 +149,13 @@
                 </div>
               </div>
               <!-- /overflow buttons -->
- <!-- hr -->
-            <!-- <div class="row ">
+              <!-- hr -->
+              <!-- <div class="row ">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_new">
               </div>
             </div> -->
-            <!-- /hr -->
+              <!-- /hr -->
               <!-- hr -->
               <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -162,7 +171,7 @@
                 </div>
               </div> -->
 
-              <div class="toc_adiv_03">
+              <div class="toc_adiv_03" *ngIf="searchResult.length === 0">
                 <ng-container *ngFor="let data of filteredList; let i=index">
                   <a (click)="navigateToInner(data)">
                     <div class="row">
@@ -190,7 +199,7 @@
                     </div>
                   </a>
                 </ng-container>
-                
+
               </div>
 
               <div class="pagebreak"></div>
