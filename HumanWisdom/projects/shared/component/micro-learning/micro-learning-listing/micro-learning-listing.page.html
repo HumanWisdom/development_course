@@ -54,86 +54,26 @@
 <div class="right_col mc_01_v3 mc_01_v3_ext" [ngClass]="{'adults-scroll': isAdults}">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
-        [class.search-active]="searchResult.length > 0">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
               <!-- search -->
-              <div class="row mt10px">
-                <div class="col-12 plr0px prelative search-box-container" [class.search-box-hidden]="!showSearchBox">
-                  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
-                    <input type="search" placeholder="Search for a topic"
-                      class="form-control has-feedback-left pfy_search hide_search" name="search-list"
-                      [(ngModel)]="searchedText" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
-                      (focus)="onFocus()" (focusout)="onFocusOutEvent()"
-                      (keyup.enter)="searchMicroLearning(searchedText)" style="border-radius: 100px !important;">
-                    <span *ngIf="searchResult.length == 0"
-                      class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                    <span *ngIf="searchResult.length > 0" (click)="clearSearch()"
-                      class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
-                      aria-hidden="true" style="pointer-events: all !important; cursor: pointer !important;"></span>
-                    <span *ngIf="searchedText!=''" (click)="clearSearch()"
-                      class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
-                      aria-hidden="true"></span>
-                  </div>
-
-                  <!-- Search Dropdown -->
-                  <div class="row adsearch" *ngIf="searchResult.length > 0">
-                    <div class="col-md-12 col-sm-12 col-xs-12 tsp">
-                      <ul class="list-group autocomplete-list adsearch_ul">
-                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.title)" name="list"
-                          class="is-search list-group-item">
-                          {{item.title}}
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <div class="row prelative mt10px">
+                <app-hwp-search-bar [searchinp]="searchedText" [placeholder]="'Search for a topic'"
+                  (textBoxEvent)="searchMicroLearning($event)"></app-hwp-search-bar>
+                <div class="col-md-12 col-sm-12 col-xs-12 p0"></div>
               </div>
               <!-- /search -->
 
 
 
               <!-- overflow buttons -->
-              <div class="row mr-20pxi mtb20px" *ngIf="searchResult.length === 0">
+              <div class="row mr-20pxi mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv d-flex text-center"
                   [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <!-- <button id="MiniPodcast" type="button" class="btn" style="background-color:#ED7D6F;color:#fff;"
-                      (click)="getUserPref('MiniPodcast')">
-                      Mini podcasts
-                    </button> -->
-                    <!-- <button id="MiniPodcast" type="button" class="btn" style="background-color:#ED7D6F;color:#fff;">
-                      Mini podcasts
-                    </button>
-                     -->
-
-                    <button type="button" class="btn ng-star-inserted" id="1_btn"> All </button>
-                    <button type="button" class="btn"> Work </button>
-                    <button type="button" class="btn"> Mental health </button>
-                    <button type="button" class="btn"> Relationships </button>
-
-                    <button type="button" class="btn"> Relationships </button>
-
-
-                    <!-- <button class="v1">
-                   
-                  </button> -->
-                    <!-- <div class="v1"></div>  -->
-                    <!-- <span style="border-left: 1px solid #fff; height:20px; margin:10px" >  </span>   -->
-                    <!--    <span style="border-left: 2px solid rgb(255 255 255 / 25%); height: 35px;
-                    margin: 10px;
-                    margin-top: 0px;
-                    margin-left: 0px;" >  </span>   -->
-
-                    <!-- <div class="ms-2" style="border-left: 2px solid #80808066; height: 35px;  width: 20px;"></div> -->
-
-                  </div>
-                  <!-- <div class="col-md-7 col-sm-7 col-xs-7"> -->
-
-                  <!-- <ng-container *ngFor="let data of prefData">
-
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 d-flex">
+                    <ng-container *ngFor="let data of prefData">
                       <button type="button" class="btn" id="all" *ngIf="data['active'] && data['displayName'] === 'All'"
                         (click)="getUserPref('all')" [ngClass]="isAdults ? '' : 'bg-clr'">
                         {{data['displayName']}}
@@ -144,8 +84,8 @@
                         [ngClass]="isAdults ? '' : 'bg-clr'">
                         {{data['displayName']}}
                       </button>
-                    </ng-container> -->
-                  <!-- </div> -->
+                    </ng-container>
+                  </div>
                 </div>
               </div>
               <!-- /overflow buttons -->
@@ -171,35 +111,47 @@
                 </div>
               </div> -->
 
-              <div class="toc_adiv_03" *ngIf="searchResult.length === 0">
-                <ng-container *ngFor="let data of filteredList; let i=index">
-                  <a (click)="navigateToInner(data)">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
-                          <img src="{{data.imgUrl}}" alt="" class="p0 session_img session_imgnew" />
-                        </div>
+              <div class="toc_adiv_03">
+                <ng-container *ngIf="filteredList.length > 0; else noResult">
+                  <ng-container *ngFor="let data of filteredList; let i=index">
+                    <a (click)="navigateToInner(data)">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                            <img src="{{data.imgUrl}}" alt="" class="p0 session_img session_imgnew" />
+                          </div>
 
-                        <div class="col-md-7 col-sm-7 col-xs-7 p0">
-                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
-                            {{data['title']}}
-                          </h4>
-                          <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
-                            {{data['timing']}} min
-                          </h4> -->
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                          <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
-                        </div>
+                          <div class="col-md-7 col-sm-7 col-xs-7 p0">
+                            <h4 class="mt0px mb5px fs_15px fw_500 lh_130p"
+                              [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
+                              {{data['title']}}
+                            </h4>
+                            <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
+                              {{data['timing']}} min
+                            </h4> -->
+                          </div>
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
+                          </div>
 
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                          <img *ngIf="data?.isRead === '1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" class="img-responsive ws-read-icon" />
-                        </div> -->
+                          <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <img *ngIf="data?.isRead === '1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" class="img-responsive ws-read-icon" />
+                          </div> -->
+                        </div>
                       </div>
-                    </div>
-                  </a>
+                    </a>
+                  </ng-container>
                 </ng-container>
 
+                <ng-template #noResult>
+                  <div class="row mt20px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                      <h4 class="fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                        No micro-learning found for "{{searchedText}}"
+                      </h4>
+                    </div>
+                  </div>
+                </ng-template>
               </div>
 
               <div class="pagebreak"></div>

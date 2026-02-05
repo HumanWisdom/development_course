@@ -82,7 +82,10 @@ export class MicroLearningEndPage implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/micro-learning/inner/${this.contentId}`], {
+      state: { fromEnd: true }
+    });
   }
 
   addJournal() {
@@ -94,6 +97,10 @@ export class MicroLearningEndPage implements OnInit {
   navigateToListing() {
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/micro-learning`]);
+  }
+
+  goToHome() {
+    this.router.navigate([SharedService.getDashboardUrls()]);
   }
 
   handleResourceClick(resource) {
