@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
+import { CommonService } from "../../../services/common.service";
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-micro-learning-inner',
@@ -13,6 +15,9 @@ export class MicroLearningInnerPage implements OnInit {
   isAdults = true;
   contentId: any;
   
+  screensList = [];
+  currentScreenIndex = 0;
+
   // Data structure for dynamic inner page
   // Layout values: 1 (Image Top), 2 (Image Center), 3 (Image Bottom)
   contentData = {
@@ -25,48 +30,81 @@ export class MicroLearningInnerPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private commonService: CommonService,
+    private ngNavigatorShareService: NgNavigatorShareService
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
   }
 
   ngOnInit() {
     this.contentId = this.route.snapshot.paramMap.get('id');
-    this.fetchContent();
+    this.getMicroLearningScreens();
+  }
+
+  getMicroLearningScreens() {
+    this.commonService.GetMicrolearningScreens(this.contentId).subscribe((res: any) => {
+      if (res && res.length > 0) {
+        this.screensList = res;
+        this.currentScreenIndex = 0;
+        this.updateContent();
+      }
+    }); 
+  }
+  
+  updateContent() {
+    const currentScreen = this.screensList[this.currentScreenIndex];
+    this.contentData = {
+      title: currentScreen.title,
+      description: currentScreen.content,
+      imgUrl: currentScreen.ImageUrl,
+      layout: 1 // We can randomize or determine this if data supports it, currently defaulting to 1
+    };
   }
 
   fetchContent() {
-    // This would typically be an API call
-    // Simulating API response based on ID
-    if(this.contentId == '1') {
-      this.contentData = {
-        title: '5 questions to ask yourself when you feel anxious',
-        description: 'Micro-learning is about taking small steps every day towards a bigger understanding of yourself. It is not about speed, but about depth of reflection. It is not about speed, but about depth of reflection It is not about speed, but about depth of reflection',
-        imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/1.webp',
-        layout: 1 // Image Top
-      };
-    } else {
-      this.contentData = {
-        title: '5 questions to ask yourself when you feel anxious',
-        description: 'Notice your thoughts as they arise. Don\'t judge them, just observe. This simple practice can change your relationship with your mind.',
-        imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/1.webp',
-        layout: 1 // Image Center
-      };
-    }
-
-    
- 
+     // method kept for structure but mostly handled by route state now
   }
 
   goBack() {
-    this.location.back();
+    if (this.currentScreenIndex > 0) {
+      this.currentScreenIndex--;
+      this.updateContent();
+    } else {
+      this.location.back();
+    }
   }
 
   next() {
-    if(this.contentId == '1') {
-      this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/inner`, '2']);
+    if (this.currentScreenIndex < this.screensList.length - 1) {
+      this.currentScreenIndex++;
+      this.updateContent();
     } else {
-      this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/end`]);
+      // End of micro-learning module
+      this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/end`], {
+        state: { contentId: this.contentId }
+      });
     }
+  }
+
+  getProgressPercentage() {
+    if (this.screensList.length === 0) return 0;
+    return ((this.currentScreenIndex + 1) / this.screensList.length) * 100;
+  }
+
+  share() {
+    const token = localStorage.getItem("shareToken");
+    const baseUrl = SharedService.ProgramId == ProgramType.Adults ? SharedService.AdultsBaseUrl : SharedService.TeenagerBaseUrl;
+    const url = baseUrl + this.router.url + (token ? `?t=${token}` : '');
+
+    this.ngNavigatorShareService.share({
+      title: 'HappierMe Program',
+      text: "Hi! I've been using the HappierMe app and wanted to share something you may find interesting. Let me know what you think",
+      url: url
+    }).then((response) => {
+      console.log(response);
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 }
