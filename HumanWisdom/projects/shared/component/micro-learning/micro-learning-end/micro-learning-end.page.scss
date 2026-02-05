@@ -2,7 +2,32 @@
 .mc_01_v3 {
     min-height: 100vh;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 0; // Remove padding, handle spacing differently
+}
+
+// Progress bar at the top of content
+.mc_progress_container {
+    height: 4px;
+    background: #DDD5C7;
+    border-radius: 0;
+    overflow: hidden;
+    margin: -20px -20px 20px -20px;
+}
+
+.mc_progress_bar {
+    height: 100%;
+    background: #E07575;
+    transition: width 0.3s ease;
+}
+
+// Footer container (fixed at bottom)
+.mc_footer_container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    pointer-events: none;
 }
 
 .mc_end_container {
@@ -31,19 +56,28 @@
         pointer-events: none;
     }
 }
+
+// Footer section (inside the restricted container)
+.mc_footer_section {
+    pointer-events: auto;
+    padding: 15px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
 .learning {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png); */
     background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/background.webp');
-     /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
+    /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
     background-repeat: no-repeat;
     background-position: center;
     /* text-align: center; */
-     padding: 20px 10px;
-     background-attachment: fixed;
-  background-size: 100% 100%;
+    padding: 20px 10px;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     //   padding-top: 13rem !important;
     object-fit: cover;
     border-radius: 12px;
+    margin-bottom: 70px; // Footer height (90px) + 20px gap
 }
 .mc_end_title {
     font-size: 18px;
@@ -185,19 +219,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px 0;
+    margin: 0;
     gap: 8px;
+    flex: 1;
 
     .dot {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         background: #D9D9D9;
         border-radius: 50%;
+        transition: all 0.3s ease;
 
         &.active {
-            width: 20px;
+            width: 24px;
             border-radius: 10px;
-            background: #8C8C8C;
+            background: #6B6B6B;
         }
     }
 }
@@ -206,16 +242,39 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0;
+    max-width: 400px; // Limit width for centered footer
+    margin: 0 auto;
+    padding: 0 20px;
 
     .nav_btn {
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 500;
-        color: #B0B0B0;
+        color: rgba(0, 0, 0, 0.3);
         text-decoration: none;
+        cursor: default;
+        transition: color 0.2s ease;
 
         &.active {
-            color: #333333;
+            color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+
+        &:hover.active {
+            opacity: 0.7;
+        }
+    }
+}
+
+.bg_stake {
+    .mc_footer_section {
+        background: #254170 !important;
+    }
+
+    .nav_btn {
+        color: rgba(255, 255, 255, 0.3);
+
+        &.active {
+            color: rgba(255, 255, 255, 0.8);
         }
     }
 }
