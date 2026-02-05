@@ -13,14 +13,10 @@ import { ProgramType } from "../../../models/program-model";
 export class MicroLearningListingPage implements OnInit {
   isAdults = true;
   searchedText = '';
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/micro_learning.webp"; // placeholder
-  tocColor = "white";
-  
-  // Dummy data for now - this would come from API
   microLearningList = [];
   filteredList = [];
-  searchResult = [];
-  showSearchBox = true;
+  prefData = [];
+  selectedPref = 'All';
 
   constructor(
     private router: Router,
@@ -28,10 +24,21 @@ export class MicroLearningListingPage implements OnInit {
     private commonService: CommonService
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
+    const excludeList = ['Work', 'Sorrow and loss', 'Addiction', 'For parents', 'Key ideas'];
+    this.prefData = SharedService.getPreferenceData().filter(pref => !excludeList.includes(pref.displayName));
   }
 
   ngOnInit() {
     this.getMicroLearningList();
+    this.getUserPref("all");
+    
+    // Make the "All" button active by default
+    setTimeout(() => {
+      const allBtn = document.getElementById('all');
+      if (allBtn) {
+        allBtn.classList.add('active');
+      }
+    }, 100);
   }
 
   getMicroLearningList() {
@@ -42,9 +49,21 @@ export class MicroLearningListingPage implements OnInit {
           title: item.Title,
           imgUrl: item.ImageUrl,
           isRead: item.isRead,
+          preferenceIDs: item.PreferenceIDs,
           timing: '2' // Default or calculated if available
         }));
         this.filteredList = this.microLearningList;
+                
+        // Map available preferences based on the data
+        this.microLearningList.forEach((d) => {
+          this.prefData.forEach((h) => {
+            if (d['preferenceIDs'] && d['preferenceIDs'].split(",").includes(h.id)) {
+              h.active = true;
+            } else if (!d['preferenceIDs']) {
+              h.active = true;
+            }
+          })
+        });
       }
     });
   }
@@ -56,80 +75,42 @@ export class MicroLearningListingPage implements OnInit {
   searchMicroLearning($event) {
     if ($event == '') {
       this.filteredList = this.microLearningList;
-      this.searchResult = [];
     } else {
       this.searchedText = $event;
       this.filteredList = this.microLearningList.filter(it => 
         it.title.toLowerCase().includes(this.searchedText.toLowerCase())
       );
-      this.searchResult = [];
-    }
-    this.toggleBodyScroll(false);
-  }
-
-  getAutoCompleteList(value) {
-    this.searchedText = value;
-    if (value == null || value == "") {
-      this.searchResult = [];
-      this.filteredList = this.microLearningList;
-      this.toggleBodyScroll(false);
-    } else {
-      this.searchResult = this.microLearningList.filter(it => 
-        it.title.toLowerCase().includes(value.toLowerCase())
-      );
-      this.filteredList = this.searchResult;
-      if (this.searchResult.length > 0) {
-        this.toggleBodyScroll(true);
-      } else {
-        this.toggleBodyScroll(false);
-      }
     }
   }
 
-  onFocus() {
-    if (this.searchedText == '') {
-       // this.searchResult = this.microLearningList;
-    } else {
-      this.searchResult = this.microLearningList.filter(it => 
-        it.title.toLowerCase().includes(this.searchedText.toLowerCase())
-      );
-    }
-    if (this.searchResult.length > 0) {
-      this.toggleBodyScroll(true);
-    }
-  }
+  getUserPref(type) {
+    this.selectedPref = '';
 
-  clearSearch() {
-    this.searchedText = "";
-    this.searchResult = [];
+    const btns = Array.from(document.getElementsByClassName('btn'));
+    for (const b of btns) {
+      const btn = b as HTMLElement;
+      btn.classList.remove('active');
+    }
+
+    const selectedBtn = document.getElementById(type);
+    if (selectedBtn) {
+      selectedBtn.classList.add('active');
+    }
+
+    this.selectedPref = type;
     this.filteredList = this.microLearningList;
-    this.toggleBodyScroll(false);
-  }
 
-  toggleBodyScroll(lock: boolean): void {
-    if (lock) {
-      document.body.style.overflow = 'hidden';
+    if (type === 'all') {
+      this.filteredList = this.microLearningList;
     } else {
-      document.body.style.overflow = '';
+      this.filteredList = this.microLearningList.filter((d) =>
+        d['preferenceIDs'] && d['preferenceIDs'].split(',').includes(type)
+      );
     }
-  }
-
-  searchEvent(title) {
-    this.searchedText = title;
-    this.searchResult = [];
-    this.toggleBodyScroll(false);
-    this.filteredList = this.microLearningList.filter(it => 
-      it.title.toLowerCase().includes(title.toLowerCase())
-    );
-  }
-
-  onFocusOutEvent() {
-    // Keep it open for now as in daily practice
   }
 
   navigateToInner(item) {
     // Logic to navigate to dynamic inner page
-    this.toggleBodyScroll(false);
     this.commonService.clickMicrolearning(item.id).subscribe(res => {
       const prefix = SharedService.getprogramName();
       this.router.navigate([`/${prefix}/micro-learning/inner`, item.id], { 

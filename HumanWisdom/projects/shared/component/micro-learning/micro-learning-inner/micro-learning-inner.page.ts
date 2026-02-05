@@ -27,6 +27,8 @@ export class MicroLearningInnerPage implements OnInit {
     layout: 1 
   };
 
+  isFromEnd = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -35,6 +37,10 @@ export class MicroLearningInnerPage implements OnInit {
     private ngNavigatorShareService: NgNavigatorShareService
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation && navigation.extras.state && navigation.extras.state.fromEnd) {
+      this.isFromEnd = true;
+    }
   }
 
   ngOnInit() {
@@ -46,7 +52,7 @@ export class MicroLearningInnerPage implements OnInit {
     this.commonService.GetMicrolearningScreens(this.contentId).subscribe((res: any) => {
       if (res && res.length > 0) {
         this.screensList = res;
-        this.currentScreenIndex = 0;
+        this.currentScreenIndex = this.isFromEnd ? res.length - 1 : 0;
         this.updateContent();
       }
     }); 
@@ -58,7 +64,7 @@ export class MicroLearningInnerPage implements OnInit {
       title: currentScreen.title,
       description: currentScreen.content,
       imgUrl: currentScreen.ImageUrl,
-      layout: 1 // We can randomize or determine this if data supports it, currently defaulting to 1
+      layout: this.currentScreenIndex === 0 ? 1 : 2
     };
   }
 

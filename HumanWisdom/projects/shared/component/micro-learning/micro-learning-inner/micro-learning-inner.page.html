@@ -44,7 +44,7 @@
 
                         <!-- Layout 1: Image Top -->
                         <div *ngSwitchCase="1">
-                            <div class="row mb20px">
+                            <div class="row mb20px" *ngIf="contentData.imgUrl">
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                     <img [src]="contentData.imgUrl" class="img-responsive w100" />
                                 </div>
@@ -72,7 +72,7 @@
                                     </h3>
                                 </div>
                             </div>
-                            <div class="row mb20px">
+                            <div class="row mb20px" *ngIf="contentData.imgUrl">
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                     <img [src]="contentData.imgUrl" class="img-responsive w100" />
                                 </div>
@@ -99,7 +99,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" *ngIf="contentData.imgUrl">
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                     <img [src]="contentData.imgUrl" class="img-responsive w100" />
                                 </div>
