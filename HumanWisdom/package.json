@@ -13,8 +13,8 @@
     "test:coverage": "ng test --no-watch --code-coverage --project=adults",
     "test:watch": "ng test --project=adults",
     "test:single": "ng test --include",
-    "test:shared": "ng test --include='**/shared/**/.spec.ts' --project=adults",
-    "test:shared:coverage": "ng test --include='**/shared/**/.spec.ts' --no-watch --code-coverage --project=adults",
+    "test:shared": "ng test shared",
+    "test:shared:coverage": "ng test --include=\"projects/shared/**/*.spec.ts\" --no-watch --code-coverage --project=adults",
     "coverage:report": "start coverage/adults/index.html",
     "lint": "ng lint",
     "e2e": "ng e2e"

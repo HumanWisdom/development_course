@@ -559,6 +559,18 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shared/test.ts",
+            "polyfills": "projects/shared/polyfills.ts",
+            "tsConfig": "projects/shared/tsconfig.spec.json",
+            "karmaConfig": "projects/shared/karma.conf.js",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
         }
       }
     }
