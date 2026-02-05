@@ -235,6 +235,7 @@ describe('HomeComponent', () => {
       tick();
 
       expect(component.showAllCards['1']).toBe(true);
+      flush(); // Clear any pending timers
     }));
   });
 
