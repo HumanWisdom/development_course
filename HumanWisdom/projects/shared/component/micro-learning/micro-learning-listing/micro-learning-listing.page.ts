@@ -17,6 +17,10 @@ export class MicroLearningListingPage implements OnInit {
   filteredList = [];
   prefData = [];
   selectedPref = 'All';
+  isSubscriber = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
 
   constructor(
     private router: Router,
@@ -29,6 +33,14 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   ngOnInit() {
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
+    }
+
     this.getMicroLearningList();
     this.getUserPref("all");
     
@@ -49,6 +61,7 @@ export class MicroLearningListingPage implements OnInit {
           title: item.Title,
           imgUrl: item.ImageUrl,
           isRead: item.isRead,
+          isFree: item.isFree,
           preferenceIDs: item.PreferenceIDs,
           timing: '2' // Default or calculated if available
         }));
@@ -110,6 +123,10 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   navigateToInner(item) {
+    if (!this.isSubscriber && item.isFree === '0') {
+      this.showModal = true;
+      return;
+    }
     // Logic to navigate to dynamic inner page
     this.commonService.clickMicrolearning(item.id).subscribe(res => {
       const prefix = SharedService.getprogramName();
@@ -117,5 +134,13 @@ export class MicroLearningListingPage implements OnInit {
         state: { microLearningData: res }
       });
     });
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      // Navigate to free trial when user clicks "Start your free trial"
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 }

@@ -131,12 +131,14 @@
                             </h4> -->
                           </div>
                           <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                            <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
-                          </div>
+                            <img *ngIf="data.isRead === '1'"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
+                              class="ws-read-icon" alt="read">
 
-                          <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                            <img *ngIf="data?.isRead === '1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" class="img-responsive ws-read-icon" />
-                          </div> -->
+                            <img *ngIf="!isSubscriber && data.isFree === '0'"
+                              [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                              class="img-responsive ws-lock-icon" />
+                          </div>
                         </div>
                       </div>
                     </a>
@@ -162,5 +164,10 @@
     </div>
   </div>
 </div>
+
+
+<app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
+  [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)">
+</app-modal>
 
 <app-index-footer></app-index-footer>
