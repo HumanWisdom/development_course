@@ -199,7 +199,9 @@ require_once('./includes/security_config.php');
                  <!-- Understand your emotions. Gain clarity. Be happier. -->
                   <!-- Everything you need for a happier life -->
                    <!-- Strengthen your relationships. Manage emotions. Feel happier. -->
-Understand your mind. Change how you feel.          </h1>
+<!-- Understand your mind. Change how you feel.       --> 
+            Understand your mind. <br> Feel at ease. Be happier. 
+              </h1>
             </div>
           </div>
 
@@ -245,7 +247,8 @@ Now with Olly AI              </h2>
                 <!-- Transform your emotional well-being, strengthen your relationships and succeed in life.
                -->
                 <!-- AI-enabled practical tools to deepen self-awareness, improve communication, and excel in work and life. -->
-                 We support you to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within.
+                 <!-- We support you to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within. -->
+                  Personalised support to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within - in just minutes a day.
               </h2>
 
             </div>
