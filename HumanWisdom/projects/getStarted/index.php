@@ -248,7 +248,7 @@ Now with Olly AI              </h2>
                -->
                 <!-- AI-enabled practical tools to deepen self-awareness, improve communication, and excel in work and life. -->
                  <!-- We support you to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within. -->
-                  Personalised support to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within - in just minutes a day.
+                  Personalised support to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within.
               </h2>
 
             </div>
