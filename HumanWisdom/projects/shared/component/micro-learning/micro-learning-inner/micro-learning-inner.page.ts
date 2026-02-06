@@ -28,6 +28,7 @@ export class MicroLearningInnerPage implements OnInit {
   };
 
   isFromEnd = false;
+  isAnimating = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -59,13 +60,21 @@ export class MicroLearningInnerPage implements OnInit {
   }
   
   updateContent() {
+    this.isAnimating = true;
     const currentScreen = this.screensList[this.currentScreenIndex];
+    
+    // Set content data
     this.contentData = {
       title: currentScreen.title,
       description: currentScreen.content,
       imgUrl: currentScreen.ImageUrl,
       layout: this.currentScreenIndex === 0 ? 1 : 2
     };
+
+    // Reset animation state after a short delay
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 400); // Matches CSS transition duration
   }
 
   fetchContent() {
