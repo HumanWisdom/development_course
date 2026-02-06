@@ -33,6 +33,8 @@ export class WisdomScorePage implements OnInit {
   wisdomRecomm: any[] = [];
   isSubscriber: boolean = false;
   justSignedUp = false;
+  loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
+  
 
   constructor(private router: Router,
     private service: TeenagersService,
@@ -87,7 +89,8 @@ export class WisdomScorePage implements OnInit {
 
     this.enableDash = true;
 
-    const visits = Number(localStorage.getItem('NoOfVisits') || '0');
+    // const visits = Number(localStorage.getItem('NoOfVisits') || '0');
+      const visits = Number(this.loginResponse?.NoOfVisits || '0');
     const token = SharedService.getDataFromLocalStorage('token');
     const isGuest = localStorage.getItem('guest') === 'T';
     this.justSignedUp = !!token && !isGuest && visits < 2;
