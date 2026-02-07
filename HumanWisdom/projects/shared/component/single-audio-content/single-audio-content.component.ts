@@ -40,7 +40,7 @@ export class SingleAudioContentComponent implements OnInit {
     this.audioTitle = this.route.snapshot.paramMap.get('title');
     this.callText();
     if (this.audioTitle) {
-      this.audioTitle = this.audioTitle.replace('-', ' ');
+      this.audioTitle = decodeURIComponent(this.audioTitle).replace(/-/g, ' ');
     }
     let rowid: any = this.route.snapshot.paramMap.get('RowId');
      rowid = parseInt(rowid);

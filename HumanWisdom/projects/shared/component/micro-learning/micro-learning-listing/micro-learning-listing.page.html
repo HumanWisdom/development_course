@@ -58,30 +58,12 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-              <div class="row mt20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                    Micro-learning
-                  </h4> -->
-                </div>
-              </div>
-
-              <!-- <div class="row mt10px mb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                    Explore these concentrated nuggets of wisdom designed to fit into your busy schedule.
-                  </h4>
-                </div>
-                
-              </div> -->
-
               <!-- search -->
-               <div class="row prelative">
-                <app-hwp-search-bar
-                  [searchinp]="searchedText"
-                  (textBoxEvent)="searchMicroLearning($event)"
-                ></app-hwp-search-bar>
-              </div> 
+              <div class="row prelative mt10px">
+                <app-hwp-search-bar [searchinp]="searchedText" [placeholder]="'Search for a topic'"
+                  (textBoxEvent)="searchMicroLearning($event)"></app-hwp-search-bar>
+                <div class="col-md-12 col-sm-12 col-xs-12 p0"></div>
+              </div>
               <!-- /search -->
 
 
@@ -90,41 +72,8 @@
               <div class="row mr-20pxi mtb20px">
                 <div class="col-md-12 col-sm-12 col-xs-12 odiv d-flex text-center"
                   [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <!-- <button id="MiniPodcast" type="button" class="btn" style="background-color:#ED7D6F;color:#fff;"
-                      (click)="getUserPref('MiniPodcast')">
-                      Mini podcasts
-                    </button> -->
-                    <!-- <button id="MiniPodcast" type="button" class="btn" style="background-color:#ED7D6F;color:#fff;">
-                      Mini podcasts
-                    </button>
-                     -->
-
-                    <button type="button" class="btn ng-star-inserted" id="1_btn"> All </button>
-                    <button type="button" class="btn"> Work </button>
-                      <button type="button" class="btn" > Mental health </button>
-                      <button type="button" class="btn"> Relationships </button> 
-
-                      <button type="button" class="btn"> Relationships </button>  
-
-
-                    <!-- <button class="v1">
-                   
-                  </button> -->
-                    <!-- <div class="v1"></div>  -->
-                    <!-- <span style="border-left: 1px solid #fff; height:20px; margin:10px" >  </span>   -->
-                    <!--    <span style="border-left: 2px solid rgb(255 255 255 / 25%); height: 35px;
-                    margin: 10px;
-                    margin-top: 0px;
-                    margin-left: 0px;" >  </span>   -->
-
-                    <!-- <div class="ms-2" style="border-left: 2px solid #80808066; height: 35px;  width: 20px;"></div> -->
-
-                  </div>
-                  <!-- <div class="col-md-7 col-sm-7 col-xs-7"> -->
-
-                  <!-- <ng-container *ngFor="let data of prefData">
-
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 d-flex">
+                    <ng-container *ngFor="let data of prefData">
                       <button type="button" class="btn" id="all" *ngIf="data['active'] && data['displayName'] === 'All'"
                         (click)="getUserPref('all')" [ngClass]="isAdults ? '' : 'bg-clr'">
                         {{data['displayName']}}
@@ -135,18 +84,18 @@
                         [ngClass]="isAdults ? '' : 'bg-clr'">
                         {{data['displayName']}}
                       </button>
-                    </ng-container> -->
-                  <!-- </div> -->
+                    </ng-container>
+                  </div>
                 </div>
               </div>
               <!-- /overflow buttons -->
- <!-- hr -->
-            <!-- <div class="row ">
+              <!-- hr -->
+              <!-- <div class="row ">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_new">
               </div>
             </div> -->
-            <!-- /hr -->
+              <!-- /hr -->
               <!-- hr -->
               <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -163,34 +112,48 @@
               </div> -->
 
               <div class="toc_adiv_03">
-                <ng-container *ngFor="let data of filteredList; let i=index">
-                  <a (click)="navigateToInner(data)">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
-                          <img src="{{data.imgUrl}}" alt="" class="p0 session_img session_imgnew" />
-                        </div>
+                <ng-container *ngIf="filteredList.length > 0; else noResult">
+                  <ng-container *ngFor="let data of filteredList; let i=index">
+                    <a (click)="navigateToInner(data)">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                          <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                            <img src="{{data.imgUrl}}" alt="" class="p0 session_img session_imgnew" />
+                          </div>
 
-                        <div class="col-md-7 col-sm-7 col-xs-7 p0">
-                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
-                            {{data['title']}}
-                          </h4>
-                          <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
-                            {{data['timing']}} min
-                          </h4> -->
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                          <i class="fa fa-angle-right  fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
-                        </div>
+                          <div class="col-md-7 col-sm-7 col-xs-7 p0">
+                            <h4 class="mt0px mb5px fs_15px fw_500 lh_130p"
+                              [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
+                              {{data['title']}}
+                            </h4>
+                            <!-- <h4 class="mtb0px fs_12px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
+                              {{data['timing']}} min
+                            </h4> -->
+                          </div>
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                            <img *ngIf="data.isRead === '1'"
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
+                              class="ws-read-icon" alt="read">
 
-                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                          <img *ngIf="data?.isRead === '1'" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" class="img-responsive ws-read-icon" />
-                        </div> -->
+                            <img *ngIf="!isSubscriber && data.isFree === '0'"
+                              [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                              class="img-responsive ws-lock-icon" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </a>
+                    </a>
+                  </ng-container>
                 </ng-container>
-                
+
+                <ng-template #noResult>
+                  <div class="row mt20px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                      <h4 class="fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                        No micro-learning found for "{{searchedText}}"
+                      </h4>
+                    </div>
+                  </div>
+                </ng-template>
               </div>
 
               <div class="pagebreak"></div>
@@ -201,5 +164,10 @@
     </div>
   </div>
 </div>
+
+
+<app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
+  [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)">
+</app-modal>
 
 <app-index-footer></app-index-footer>

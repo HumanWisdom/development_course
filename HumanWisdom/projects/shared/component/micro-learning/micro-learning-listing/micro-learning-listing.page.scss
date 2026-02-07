@@ -1,3 +1,7 @@
+.sc_01 {
+    min-height: 100vh !important;
+    padding: 20px 20px;
+  }
 
 .hr_style_v3_01mic {
     border: 1px solid #000000;
@@ -45,12 +49,12 @@
   background: #ffffff !important;
   color: #000 !important;
 }
-.btn_podcast .btn:not(.active):not(#voices) {
+.btn_podcast .btn:not(.active):not(#MiniPodcast) {
   background: #ffd889;
   color: #000;
 }
 
-#voices {
+#MiniPodcast {
   background-color: #ed7d6f;
   color: #fff;
 }
@@ -100,9 +104,8 @@
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
-.wsread-icon {
-    width: 20px;
-    height: 20px;
+.ws-read-icon {
+bottom: 40px;
 }
 
 .title_content {
@@ -120,3 +123,8 @@
     }
     
 }
+
+  .pointer-events-auto {
+    pointer-events: all !important;
+    cursor: pointer !important;
+  }

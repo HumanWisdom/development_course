@@ -260,7 +260,7 @@ export class WisdomScalePage implements OnInit {
     this.createScreen()
     // if (this.saveUsername == false) { this.userId = JSON.parse(localStorage.getItem("userId")) }
     // else { this.userId = JSON.parse(localStorage.getItem("userId")) }
-    JSON.parse(localStorage.getItem("userId"))
+    this.userId =JSON.parse(localStorage.getItem("userId"))
 
     if (this.userId) {
       this.apiCall();

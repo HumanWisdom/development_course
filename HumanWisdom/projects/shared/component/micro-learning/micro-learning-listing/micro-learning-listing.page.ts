@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
+import { CommonService } from "../../../services/common.service";
 import { ProgramType } from "../../../models/program-model";
 
 @Component({
@@ -9,65 +10,75 @@ import { ProgramType } from "../../../models/program-model";
   templateUrl: './micro-learning-listing.page.html',
   styleUrls: ['./micro-learning-listing.page.scss'],
 })
-export class MicroLearningListingPage {
+export class MicroLearningListingPage implements OnInit {
   isAdults = true;
   searchedText = '';
-   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/micro_learning.webp"; // placeholder
-  tocColor = "white";
-  
-  // Dummy data for now - this would come from API
-  microLearningList = [
-    {
-      id: 1,
-      title: 'Introduction to Micro-learning',
-      timing: '2',
-      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/1.webp',
-      isRead: '0'
-    },
-    {
-      id: 2,
-      title: 'The Art of Noticing',
-      timing: '3',
-      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/2.webp',
-      isRead: '1'
-    },
-    {
-      id: 1,
-      title: 'Introduction to Micro-learning',
-      timing: '2',
-      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/3.webp',
-      isRead: '0'
-    },
-    {
-      id: 2,
-      title: 'The Art of Noticing',
-      timing: '3',
-      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/4.webp',
-      isRead: '1'
-    },
-    {
-      id: 1,
-      title: 'Introduction to Micro-learning',
-      timing: '2',
-      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/5.webp',
-      isRead: '0'
-    },
-    {
-      id: 2,
-      title: 'The Art of Noticing',
-      timing: '3',
-      imgUrl: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/8.webp',
-      isRead: '1'
-    }
-  ];
+  microLearningList = [];
   filteredList = [];
+  prefData = [];
+  selectedPref = 'All';
+  isSubscriber = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
 
   constructor(
     private router: Router,
-    private location: Location
+    private location: Location,
+    private commonService: CommonService
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
-    this.filteredList = this.microLearningList;
+    const excludeList = ['Work', 'Sorrow and loss', 'Addiction', 'For parents', 'Key ideas'];
+    this.prefData = SharedService.getPreferenceData().filter(pref => !excludeList.includes(pref.displayName));
+  }
+
+  ngOnInit() {
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    if (userid === 'T' && sub === '1') {
+      this.isSubscriber = true;
+    } else {
+      this.isSubscriber = false;
+    }
+
+    this.getMicroLearningList();
+    this.getUserPref("all");
+    
+    // Make the "All" button active by default
+    setTimeout(() => {
+      const allBtn = document.getElementById('all');
+      if (allBtn) {
+        allBtn.classList.add('active');
+      }
+    }, 100);
+  }
+
+  getMicroLearningList() {
+    this.commonService.GetMicrolearningList(9).subscribe((res: any) => {
+      if (res) {
+        this.microLearningList = res.map(item => ({
+          id: item.microlearningID,
+          title: item.Title,
+          imgUrl: item.ImageUrl,
+          isRead: item.isRead,
+          isFree: item.isFree,
+          preferenceIDs: item.PreferenceIDs,
+          timing: '2' // Default or calculated if available
+        }));
+        this.filteredList = this.microLearningList;
+                
+        // Map available preferences based on the data
+        this.microLearningList.forEach((d) => {
+          this.prefData.forEach((h) => {
+            if (d['preferenceIDs'] && d['preferenceIDs'].split(",").includes(h.id)) {
+              h.active = true;
+            } else if (!d['preferenceIDs']) {
+              h.active = true;
+            }
+          })
+        });
+      }
+    });
   }
 
   goBack() {
@@ -85,9 +96,51 @@ export class MicroLearningListingPage {
     }
   }
 
+  getUserPref(type) {
+    this.selectedPref = '';
+
+    const btns = Array.from(document.getElementsByClassName('btn'));
+    for (const b of btns) {
+      const btn = b as HTMLElement;
+      btn.classList.remove('active');
+    }
+
+    const selectedBtn = document.getElementById(type);
+    if (selectedBtn) {
+      selectedBtn.classList.add('active');
+    }
+
+    this.selectedPref = type;
+    this.filteredList = this.microLearningList;
+
+    if (type === 'all') {
+      this.filteredList = this.microLearningList;
+    } else {
+      this.filteredList = this.microLearningList.filter((d) =>
+        d['preferenceIDs'] && d['preferenceIDs'].split(',').includes(type)
+      );
+    }
+  }
+
   navigateToInner(item) {
+    if (!this.isSubscriber && item.isFree === '0') {
+      this.showModal = true;
+      return;
+    }
     // Logic to navigate to dynamic inner page
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/micro-learning/inner`, item.id]);
+    this.commonService.clickMicrolearning(item.id).subscribe(res => {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`/${prefix}/micro-learning/inner`, item.id], { 
+        state: { microLearningData: res }
+      });
+    });
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      // Navigate to free trial when user clicks "Start your free trial"
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 }
