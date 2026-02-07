@@ -44,6 +44,59 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
       <!-- End Google Tag Manager -->
+
+
+        <style>
+    @media (max-width: 767px) {
+
+      /* Force White Plus/Minus Icons on Mobile Accordion */
+      #accordion_footer .panel-title > a::after {
+        content: "+" !important;
+        color: #ffffff !important;
+        font-family: inherit !important;
+        font-size: 24px !important;
+        line-height: 24px !important;
+        background: none !important;
+        width: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      #accordion_footer .panel-title > a[aria-expanded="true"]::after {
+        content: "-" !important;
+      }
+      
+      /* New override for Bootstrap 5 .accordion-button if present */
+      .accordion-button::after {
+        background-image: none !important;
+        content: "+" !important;
+        color: #ffffff !important;
+        font-size: 16px !important;
+        font-weight: 300 !important;
+        width: auto !important;
+        height: auto !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      
+      .accordion-button:not(.collapsed)::after {
+        background-image: none !important;
+        content: "-" !important;
+        transform: none !important;
+      }
+
+     .accordion{
+      padding:10px;
+     }
+
+
+
+
+    }
+  </style>
+
   </head>
 
   <body>

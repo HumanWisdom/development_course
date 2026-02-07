@@ -143,6 +143,9 @@ require_once('./includes/security_config.php');
         height: auto !important;
         overflow: visible !important;
       }
+      .accordion{
+      padding:10px;
+     }
     }
   </style>
 </head>
@@ -2382,7 +2385,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr card_center pt-20px card_gap">
 
 
-                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr_14px" data-aos="fade-up" data-aos-delay="100">
                   
 
 
@@ -2427,7 +2430,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <div id="pathway" class="tab-pane fade" role="tabpanel" aria-labelledby="pathWay-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr card_center pt-20px card_gap">
-                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 " data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr_14px " data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp"
                       class="img-responsive w-90per guided_pgm_img" alt="tools_pathway" loading=lazy>
                   </div>
@@ -2483,7 +2486,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <div id="journal_tab" class="tab-pane fade" role="tabpanel" aria-labelledby="journal-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mtb20px flex_fd_cr mtb20px card_gap">
-                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr_14px" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/questions.svg"
                       class="img-responsive h-335px" alt="Journal" loading=lazy>
                   </div>
@@ -2521,7 +2524,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <div id="podcast_tab" class="tab-pane fade" role="tabpanel" aria-labelledby="podcast-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr mtb20px">
-                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr_14px" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp"
                       class="img-responsive w-90per" alt="Podcast" loading=lazy>
                   </div>
@@ -2569,7 +2572,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <div id="forum" class="tab-pane fade" role="tabpanel" aria-labelledby="community-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr mtb20px">
-                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr_14px" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp"
                       class="img-responsive w-90per community_img" alt="Forum" loading=lazy>
                   </div>
@@ -2608,7 +2611,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <div id="survey" class="tab-pane fade" role="tabpanel" aria-labelledby="HapinessScore-tab">
               <div class="row center_flex">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 flex_fd_cr">
-                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr_14px" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/track.svg"
                       class="img-responsive w-90per" alt="Survey" loading=lazy>
                   </div>
@@ -3925,7 +3928,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn1" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4109,7 +4112,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn2" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading="lazy">
             </a>
           </div>
@@ -4287,7 +4290,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn3" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4392,7 +4395,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn4" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading="lazy">
             </a>
           </div>
@@ -4557,7 +4560,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn5" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4713,7 +4716,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn6" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -4873,7 +4876,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn7" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -5032,7 +5035,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn8" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>
@@ -5193,7 +5196,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         <div class="row center_flex cross_btn_row">
           <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
             <a href="#" id="closebtn9" data-bs-dismiss="modal" class="class pull-right">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;" class="img-responsive cross_btn"
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" style="min-height: 30px !important;height: 30px !important;padding-left:60px !important;" class="img-responsive cross_btn"
                 alt="Mental Health" loading=lazy>
             </a>
           </div>

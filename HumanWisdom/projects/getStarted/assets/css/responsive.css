@@ -2158,11 +2158,14 @@
   }
 
   .banner_close {
-    flex-shrink: 0 !important;
+    /* flex-shrink: 0 !important;
     width: 16px !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: center !important; */
+    padding-top: 11px;
+    max-width: 21px;
+    padding-right: 0px !important;
   }
 
   .banner_close img {
@@ -2241,7 +2244,7 @@
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;
-    margin-left: -10px;
+    margin-left: -22px;
   }
 
   /* Mobile footer accordion icons - white - OVERRIDE ALL BASE STYLES */
