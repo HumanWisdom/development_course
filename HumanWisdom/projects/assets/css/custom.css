@@ -32965,7 +32965,7 @@ body * {
 
 .box_v3_04,
 .box_v3_04b {
-   height: 195px; 
+  height: 195px;
   width: 100%;
   background: #FFE8BB;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
@@ -33017,7 +33017,7 @@ body * {
 
 .msrow>[class^="col-"]:nth-child(even) {
   padding-right: 0;
-   padding-left: 5px; 
+  padding-left: 5px;
 }
 
 .box_v3_05 {
@@ -34811,8 +34811,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .profile_pe_div {
   text-align: center;
   padding: 20px;
-   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_profile_box.svg);  */
-   background-repeat: no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_profile_box.svg);  */
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: unset;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
@@ -35984,10 +35984,11 @@ li ol > li:before {
 
 .btn_podcast .btn.active,
 .btn_podcast .btn:focus {
-  background: rgba(0, 0, 0, .05);
-  color: #000;
+  background: white !important;
+  color: #000 !important;
   filter: unset !important;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  /* box-shadow: inset 0 3px 5px #00000020; */
+  border-color: #ffd889 !important;
 }
 
 /* cafe */
