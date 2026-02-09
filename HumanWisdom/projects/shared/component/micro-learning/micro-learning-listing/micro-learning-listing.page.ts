@@ -128,12 +128,8 @@ export class MicroLearningListingPage implements OnInit {
       return;
     }
     // Logic to navigate to dynamic inner page
-    this.commonService.clickMicrolearning(item.id).subscribe(res => {
-      const prefix = SharedService.getprogramName();
-      this.router.navigate([`/${prefix}/micro-learning/inner`, item.id], { 
-        state: { microLearningData: res }
-      });
-    });
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/micro-learning/inner`, item.id]);
   }
 
   onModalClose(event: string) {
