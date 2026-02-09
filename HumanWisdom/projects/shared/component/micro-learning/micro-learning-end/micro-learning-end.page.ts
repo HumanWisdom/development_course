@@ -38,6 +38,9 @@ export class MicroLearningEndPage implements OnInit {
   ngOnInit() {
     localStorage.setItem("progressbarvalue", "100");
     if(this.contentId) {
+      this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{
+        
+      })
       this.getEndScreens();
     }
   }
@@ -67,7 +70,7 @@ export class MicroLearningEndPage implements OnInit {
     let cleanTitle = decodedTitle;
 
     // Extract text inside brackets for type, e.g. "Title (1 min.)" -> type="1 min."
-    const match = decodedTitle.match(/\((.*?)\)/);
+    const match = decodedTitle.match(/\(([^)]*)\)/);
     if(match) {
       type = match[1];
       cleanTitle = decodedTitle.replace(match[0], '').trim();
