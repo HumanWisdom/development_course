@@ -16822,7 +16822,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   right: 0;
   top: 0;
   /* background: #ED7D6F !important; */
-  background: #803358 !important;
+  /* background: #803358 !important; */
   border-radius: 0px 10px;
   /* font-family: Roboto; */
   font-style: normal;
@@ -16833,7 +16833,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   color: #ffffff;
   border: 0;
   padding: 5px;
-  width: 130px;
+  /* width: 130px; */
   text-align: center;
 
 }
@@ -37657,4 +37657,22 @@ a:hover .div_like_cnt1 span {
 
   color: inherit !important;
   text-decoration: none !important;
+}
+
+.bgGuided_Journal
+{
+background-color: #D7586B;
+
+}
+
+.bgReflections_Journal
+{
+background-color: #803358;
+
+}
+
+.bgmicrolearning_Journal
+{
+background-color: #EEA170;
+
 }
