@@ -77,7 +77,7 @@ export class NotePage implements OnInit {
 
   submitProgress() {
     if (this.urlType === 'dq') this.editDq();
-    else if (this.urlType === 'Diary') this.editJournal();
+    else if (this.urlType === 'Diary' || this.urlType === 'Microlearning notes') this.editJournal();
     else if (this.urlType === 'Reflections') this.editReflection();
     else if (this.urlId == 0) this.addNote();
 

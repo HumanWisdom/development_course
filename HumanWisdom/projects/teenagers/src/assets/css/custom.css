@@ -16823,7 +16823,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   right: 0;
   top: 0;
   /* background: #EE9596 !important; */
-  background: #834B66 !important;
+  /* background: #834B66 !important; */
   border-radius: 0px 10px;
   /* font-family: Roboto; */
   font-style: normal;
@@ -16834,7 +16834,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   color: #ffffff;
   border: 0;
   padding: 5px;
-  width: 130px;
+  min-width: 130px;
   text-align: center;
 }
 
@@ -37135,4 +37135,32 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
   color: inherit !important;
   text-decoration: none !important;
+}
+
+.bgGuided_Journal
+{
+background-color: #CB6171;
+
+}
+
+.bgReflections_Journal
+{
+background-color: #834B66;
+
+}
+
+.bgmicrolearning_Journal
+{
+background-color: #EEA170;
+
+}
+
+ul.symptom-list li {
+  margin-bottom: 12px;
+  line-height: 140%;
+}
+
+.microcontent br
+{
+  margin-bottom: 10px;
 }

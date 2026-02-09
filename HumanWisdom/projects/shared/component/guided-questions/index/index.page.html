@@ -44,7 +44,7 @@
                         <a>
                           <div (click)="GoToQuestions(j)" class="panel panel-default pdefault_01 prelative">
                             <div class="panel-heading absolute_ptitle"
-                              [ngClass]="{'cyan_light': j.JrType=='Guided journaling','gray_light':j.JrType=='Diary'}">
+                              [ngClass]="{'bgGuided_Journal': j.JrType=='Guided journaling','gray_light':j.JrType=='Diary','bgmicrolearning_Journal':j.JrType=='Microlearning notes', 'bgReflections_Journal':j.JrType=='Reflections'}">
                               <h4 class="panel-title">{{j.JrType}}</h4>
                             </div>
                             <div class="panel-body">
@@ -284,8 +284,8 @@ All journal entries are encrypted and can only be seen by you, unless shared by 
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <a>
                             <div (click)="GoToQuestions(j)" class="panel panel-default pdefault_01 prelative">
-                              <div class="panel-heading absolute_ptitle"
-                                [ngClass]="{'cyan_light': j.JrType=='Guided journaling','gray_light':j.JrType=='Diary'}">
+                              <div class=" absolute_ptitle"
+                                [ngClass]="{'bgGuided_Journal': j.JrType=='Guided Journaling','gray_light':j.JrType=='Diary','bgmicrolearning_Journal':j.JrType=='Microlearning notes',  'bgReflections_Journal': j.JrType=='Reflections'}">
                                 <h4 class="panel-title">{{j.JrType}}</h4>
                               </div>
                               <div class="panel-body">
