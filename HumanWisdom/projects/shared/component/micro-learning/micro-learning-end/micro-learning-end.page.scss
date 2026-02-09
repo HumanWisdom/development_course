@@ -73,9 +73,10 @@
     /* text-align: center; */
     padding: 20px 10px;
     background-attachment: fixed;
-    background-size: 100% 100%;
+    // background-size: 100% 100%;
     //   padding-top: 13rem !important;
-    object-fit: cover;
+    // object-fit: cover;
+    background-size: contain;
     border-radius: 12px;
     margin-bottom: 70px; // Footer height (90px) + 20px gap
 }
