@@ -44,6 +44,59 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NHPHHF97');</script>
       <!-- End Google Tag Manager -->
+
+
+        <style>
+    @media (max-width: 767px) {
+
+      /* Force White Plus/Minus Icons on Mobile Accordion */
+      #accordion_footer .panel-title > a::after {
+        content: "+" !important;
+        color: #ffffff !important;
+        font-family: inherit !important;
+        font-size: 24px !important;
+        line-height: 24px !important;
+        background: none !important;
+        width: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      #accordion_footer .panel-title > a[aria-expanded="true"]::after {
+        content: "-" !important;
+      }
+      
+      /* New override for Bootstrap 5 .accordion-button if present */
+      .accordion-button::after {
+        background-image: none !important;
+        content: "+" !important;
+        color: #ffffff !important;
+        font-size: 16px !important;
+        font-weight: 300 !important;
+        width: auto !important;
+        height: auto !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      
+      .accordion-button:not(.collapsed)::after {
+        background-image: none !important;
+        content: "-" !important;
+        transform: none !important;
+      }
+
+     .accordion{
+      padding:10px;
+     }
+
+
+
+
+    }
+  </style>
+
   </head>
 
   <body>
@@ -245,10 +298,10 @@ Here you will find easy to use tools to manage your emotions and mental health, 
               </h4>
             </div>
   
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 center_flex">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 center_flex" style="margin-top: 30px !important;">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0">
                 <a id="happiermeTryForFree">
-                  <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                  <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" style="width: 295px !important;">
                     Try HappierMe for free
                   </button>
                 </a>

@@ -1018,7 +1018,7 @@
             <div class="clearfix"></div>
 
           <div class="btn-container">
-            <button id="toggle" style="text-decoration:underline;">View More</button>
+            <button type="button" id="toggle" style="text-decoration:underline;">View More</button>
           </div>
           <!-- <view less> -->
         </div>
@@ -1038,16 +1038,22 @@
 
   <script>
  $(document).ready(function () {
+  let isExpanded = false;
+  
   // Toggle button click handler
   $('#toggle').on('click', function(e) {
     e.preventDefault();
-    $('#text').toggle(0, function () {
-      if ($(this).is(':visible')) {
-        $('#toggle').text('View Less');
-      } else {
-        $('#toggle').text('View More');
-      }
-    });
+    e.stopPropagation();
+    
+    isExpanded = !isExpanded;
+    
+    if (isExpanded) {
+      $('#text').slideDown(300);
+      $('#toggle').text('View Less');
+    } else {
+      $('#text').slideUp(300);
+      $('#toggle').text('View More');
+    }
   });
 });
   </script>
