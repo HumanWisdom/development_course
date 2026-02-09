@@ -100,11 +100,11 @@
 
               <!-- overflow buttons -->
               <div class="row mr-20pxi mtb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 odiv d-flex text-center" [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
+                <div class="col-md-12 col-sm-12 col-xs-12 odiv d-flex text-center"
+                  [ngClass]="isAdults ? 'btn_podcast' : 'btn_podcast_t'">
                   <div class="col-5 p0 d-flex justify-content-center">
 
-                    <button id="MiniPodcast" type="button" class="btn" style="background-color:#ED7D6F;color:#fff;"
-                      (click)="getUserPref('MiniPodcast')">
+                    <button id="MiniPodcast" type="button" class="btn" (click)="getUserPref('MiniPodcast')">
                       Mini podcasts
                     </button>
                     <!-- <button class="v1">
