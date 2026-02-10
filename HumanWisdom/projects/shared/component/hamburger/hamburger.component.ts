@@ -150,7 +150,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
 
  isBrowser() {
-    return typeof window !== 'undefined' && typeof window.document !== 'undefined';
+    return typeof window !== 'undefined' && typeof window.document !== 'undefined' && !this.isWebView();
 }
 
 
@@ -456,7 +456,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   private handleLogoutAlert() {
     this.logeventservice.logEvent('click_logout_Hamburger');
     this.chatbotService.clearMessages(); // reset chat history on logout
-    if (this.platform.isBrowser) {
+    // if (this.platform.isBrowser) {
+    if (this.isWeb) {
       this.closemenuevent();
       this.isloggedIn = false;
       this.isPartner = false;
@@ -522,6 +523,13 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     this.partnerOption = "";
     this.enableplaystore = true;
   }
+
+  private isWebView() {
+  const ua = navigator.userAgent || '';
+  const isAndroidWebView = /\bwv\b/.test(ua);
+  const isIOSWebView = /iPhone|iPod|iPad/.test(ua) && !/Safari/.test(ua);
+  return isAndroidWebView || isIOSWebView;
+}
 
   private resetGoogleSignIn(): void {
     try {

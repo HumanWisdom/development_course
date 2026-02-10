@@ -27,8 +27,11 @@ export class MicroLearningInnerPage implements OnInit {
     layout: 1 
   };
 
+  oldContentData: any = null;
+
   isFromEnd = false;
   isAnimating = false;
+  direction = 'forward';
 
   constructor(
     private route: ActivatedRoute,
@@ -60,10 +63,13 @@ export class MicroLearningInnerPage implements OnInit {
   }
   
   updateContent() {
+    // Save current content as old content
+    this.oldContentData = { ...this.contentData };
+    
     this.isAnimating = true;
     const currentScreen = this.screensList[this.currentScreenIndex];
     
-    // Set content data
+    // Set new content data
     this.contentData = {
       title: currentScreen.title,
       description: currentScreen.content,
@@ -71,18 +77,20 @@ export class MicroLearningInnerPage implements OnInit {
       layout: this.currentScreenIndex === 0 ? 1 : 2
     };
 
-    // Reset animation state after a short delay
+    // Reset animation state and clear old content after animation completes
     setTimeout(() => {
       this.isAnimating = false;
-    }, 400); // Matches CSS transition duration
+      this.oldContentData = null;
+    }, 600); // Matches CSS transition duration
   }
 
   fetchContent() {
      // method kept for structure but mostly handled by route state now
   }
 
-  goBack() {
+    goBack() {
     if (this.currentScreenIndex > 0) {
+      this.direction = 'backward';
       this.currentScreenIndex--;
       this.updateContent();
     } else {
@@ -90,8 +98,13 @@ export class MicroLearningInnerPage implements OnInit {
     }
   }
 
+  backToDashboard() {
+    this.router.navigate([`/${SharedService.getprogramName()}/micro-learning`]);
+  }
+
   next() {
     if (this.currentScreenIndex < this.screensList.length - 1) {
+      this.direction = 'forward';
       this.currentScreenIndex++;
       this.updateContent();
     } else {

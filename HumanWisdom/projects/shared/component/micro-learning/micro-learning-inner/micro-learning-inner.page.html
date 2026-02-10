@@ -3,7 +3,7 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"
         [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-            <a (click)="goBack()">
+            <a (click)="backToDashboard()">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0"
                     *ngIf="!isAdults" />
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0"
@@ -27,7 +27,7 @@
 <!-- /top navigation -->
 
 
-<div class="right_col mc_01_v3" (swipeleft)="next()" (swiperight)="goBack()">
+<div class="right_col mc_01_v3">
     <div class="cw100p">
         <div class="row center_flex">
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"
@@ -38,74 +38,152 @@
                     <div class="mc_progress_bar" [style.width.%]="getProgressPercentage()"></div>
                 </div>
 
+
                 <!-- Yellow/Cream Card with Content -->
-                <div class="learning">
-                    <div class="mc_scroll_content" [class.slide-in]="isAnimating">
-                        <div [ngSwitch]="contentData.layout">
-
-                            <!-- Layout 1: Image Top -->
-                            <div *ngSwitchCase="1">
-                                <div class="row mb20px" *ngIf="contentData.imgUrl">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img [src]="contentData.imgUrl" class="img-responsive w100" />
+                <div class="learning" (swipeleft)="next()" (swiperight)="goBack()">
+                    <div class="mc_content_wrapper">
+                        <!-- Old content (sliding out) -->
+                        <div class="mc_scroll_content" [class.slide-out-left]="isAnimating && direction === 'forward'"
+                            [class.slide-out-right]="isAnimating && direction === 'backward'" *ngIf="oldContentData">
+                            <div [ngSwitch]="oldContentData.layout">
+                                <!-- Layout 1: Image Top -->
+                                <div *ngSwitchCase="1">
+                                    <div class="row mb20px" *ngIf="oldContentData.imgUrl">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="oldContentData.imgUrl" class="img-responsive w100" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <h3 class="mt0px fs_36px fw_400 lh_130p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                                {{oldContentData.title}}
+                                            </h3>
+                                            <p class="fs_18px fw_400 lh_140p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
+                                                [innerHTML]="oldContentData.description">
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h3 class="mt0px fs_36px fw_400 lh_130p"
-                                            [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                            {{contentData.title}}
-                                        </h3>
-                                        <p class="fs_18px fw_400 lh_140p"
-                                            [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
-                                            [innerHTML]="contentData.description">
-                                        </p>
+
+                                <!-- Layout 2: Image Center -->
+                                <div *ngSwitchCase="2">
+                                    <div class="row mb10px">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <h3 class="mt0px fs_36px fw_400 lh_130p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                                {{oldContentData.title}}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="row mb20px" *ngIf="oldContentData.imgUrl">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="oldContentData.imgUrl" class="img-responsive w100" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <p class="fs_18px fw_400 lh_140p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
+                                                [innerHTML]="oldContentData.description">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Layout 3: Image Bottom -->
+                                <div *ngSwitchCase="3">
+                                    <div class="row mb10px">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <h3 class="mt0px fs_36px fw_400 lh_130p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                                {{oldContentData.title}}
+                                            </h3>
+                                            <p class="fs_18px fw_400 lh_140p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
+                                                [innerHTML]="oldContentData.description">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="oldContentData.imgUrl">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="oldContentData.imgUrl" class="img-responsive w100" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Layout 2: Image Center -->
-                            <div *ngSwitchCase="2">
-                                <div class="row mb10px">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h3 class="mt0px fs_36px fw_400 lh_130p"
-                                            [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                            {{contentData.title}}
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="row mb20px" *ngIf="contentData.imgUrl">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img [src]="contentData.imgUrl" class="img-responsive w100" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <p class="fs_18px fw_400 lh_140p"
-                                            [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
-                                            [innerHTML]="contentData.description">
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- New content (sliding in) -->
+                        <div class="mc_scroll_content" [class.slide-in-right]="isAnimating && direction === 'forward'"
+                            [class.slide-in-left]="isAnimating && direction === 'backward'">
+                            <div [ngSwitch]="contentData.layout">
 
-                            <!-- Layout 3: Image Bottom -->
-                            <div *ngSwitchCase="3">
-                                <div class="row mb10px">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h3 class="mt0px fs_36px fw_400 lh_130p"
-                                            [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                            {{contentData.title}}
-                                        </h3>
-                                        <p class="fs_18px fw_400 lh_140p"
-                                            [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
-                                            [innerHTML]="contentData.description">
-                                        </p>
+                                <!-- Layout 1: Image Top -->
+                                <div *ngSwitchCase="1">
+                                    <div class="row mb20px" *ngIf="contentData.imgUrl">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="contentData.imgUrl" class="img-responsive w100" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <h3 class="mt0px fs_36px fw_400 lh_130p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                                {{contentData.title}}
+                                            </h3>
+                                            <p class="fs_18px fw_400 lh_140p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
+                                                [innerHTML]="contentData.description">
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row" *ngIf="contentData.imgUrl">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img [src]="contentData.imgUrl" class="img-responsive w100" />
+
+                                <!-- Layout 2: Image Center -->
+                                <div *ngSwitchCase="2">
+                                    <div class="row mb10px">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <h3 class="mt0px fs_36px fw_400 lh_130p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                                {{contentData.title}}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="row mb20px" *ngIf="contentData.imgUrl">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="contentData.imgUrl" class="img-responsive w100" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <p class="fs_18px fw_400 lh_140p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
+                                                [innerHTML]="contentData.description">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Layout 3: Image Bottom -->
+                                <div *ngSwitchCase="3">
+                                    <div class="row mb10px">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <h3 class="mt0px fs_36px fw_400 lh_130p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                                {{contentData.title}}
+                                            </h3>
+                                            <p class="fs_18px fw_400 lh_140p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
+                                                [innerHTML]="contentData.description">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="contentData.imgUrl">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="contentData.imgUrl" class="img-responsive w100" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

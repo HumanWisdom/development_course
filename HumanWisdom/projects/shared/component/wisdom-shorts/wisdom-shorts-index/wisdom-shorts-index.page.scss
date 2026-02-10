@@ -21,11 +21,11 @@
 // }
 .btn_podcast .btn.active,
 .btn_podcast .btn:focus {
-  background: rgba(0, 0, 0, 0.05) !important;
+  background: white !important;
   color: #000 !important;
   filter: unset !important;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  border-color: transparent !important;
+  /* box-shadow: inset 0 3px 5px #00000020; */
+  border-color: #ffd889 !important;
 }
 .btn_podcast_t .btn.active,
 .btn_podcast_t .btn.focus {
@@ -37,10 +37,10 @@
   color: #000;
 }
 
-#voices {
-  background-color: #ed7d6f;
-  color: #fff;
-}
+// #voices {
+//   background-color: #ed7d6f;
+//   color: #fff;
+// }
 /* Adults only scrollbar styling */
 .adults-scroll .odiv,
 .adults-scroll .odiv_pathway,

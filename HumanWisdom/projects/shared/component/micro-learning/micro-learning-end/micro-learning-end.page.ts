@@ -38,6 +38,9 @@ export class MicroLearningEndPage implements OnInit {
   ngOnInit() {
     localStorage.setItem("progressbarvalue", "100");
     if(this.contentId) {
+      this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{
+        
+      })
       this.getEndScreens();
     }
   }
@@ -67,10 +70,11 @@ export class MicroLearningEndPage implements OnInit {
     let cleanTitle = decodedTitle;
 
     // Extract text inside brackets for type, e.g. "Title (1 min.)" -> type="1 min."
-    const match = decodedTitle.match(/\((.*?)\)/);
-    if(match) {
-      type = match[1];
-      cleanTitle = decodedTitle.replace(match[0], '').trim();
+    const start = decodedTitle.indexOf('(');
+    const end = decodedTitle.indexOf(')', start);
+    if (start !== -1 && end !== -1) {
+      type = decodedTitle.substring(start + 1, end);
+      cleanTitle = (decodedTitle.substring(0, start) + decodedTitle.substring(end + 1)).trim();
     }
 
     return {
@@ -89,9 +93,31 @@ export class MicroLearningEndPage implements OnInit {
   }
 
   addJournal() {
-    // Logic to add to journal
-    console.log("Journal added:", this.journalText);
-    // You might call a service here
+    if (!this.journalText) return;
+
+    let userId = JSON.parse(localStorage.getItem("userId"));
+    
+    // Format date as YYYY-MM-DD
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+
+    let data = {
+      "JournalId": 0,
+      "JDate": formattedDate,
+      "Title": "Microlearning",
+      "Notes": this.journalText,
+      "UserId": userId,
+      "MicrolearningID": this.contentId
+    }
+
+    this.commonService.submitJournal(data).subscribe(res => {
+      this.journalText = '';
+    }, error => {
+      console.log(error);
+    })
   }
 
   navigateToListing() {
