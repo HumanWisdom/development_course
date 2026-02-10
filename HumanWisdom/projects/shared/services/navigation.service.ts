@@ -19,7 +19,7 @@ export class NavigationService {
     urltoCheck = urls[urls.length - 1];
     if(!this.backClicked) {
       if (urltoCheck) {
-        let isNan = Number.isNaN(urltoCheck[urltoCheck.length - 1]);
+        let isNan = isNaN(Number(urltoCheck[urltoCheck.length - 1]));
         if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
           if (this.history.length>0 && this.history[this.history.length-1] != url) {
             this.history.push(url);
