@@ -3,8 +3,10 @@
 <html lang="en">
 
   <head>
-    <title>Difficult emotions: a guide to freedom</title>
-    <meta property="title" content="Difficult emotions: a guide to freedom">
+    <title>Three Steps to a Deeper Meditation Practice
+</title>
+    <meta property="title" content="Three Steps to a Deeper Meditation Practice
+">
     <meta property="description" content="Feelings are an essential part of being human and enrich our lives — like falling in love or enjoying the beauty of a spring morning. They can also protect us from harm — like expressing anger when it’s appropriate. Quite often though these feeling...">
     <meta property="keyword" content="stress, emotions">
 
@@ -48,7 +50,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52_new.webp" class="img-responsive" alt="Difficult emotions: a guide to freedom">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/74.webp" class="img-responsive" alt="Difficult emotions: a guide to freedom">
               </div>
             </div>
 
@@ -205,7 +207,7 @@ In step two, meditation becomes a tool for understanding the mind, not just calm
 
                 
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc">
 Here, we begin to observe our thoughts, feelings, and behaviours with curiosity rather than judgment.
 
                 </h4>
@@ -387,34 +389,74 @@ We can ask ourselves: Who am ‘I’? What is this ‘I that is feeling hurt?
 
 </h4>
 
-<h4 class="mtb0px blog_desc blog_highlight_black">
+<h4 class="mtb0px blog_desc">
 When we ask this question with curiosity, without judgment, and without looking for an answer, something begins to soften.
 
 
 </h4>
-<h4 class="mtb0px blog_desc blog_highlight_black">
+<h4 class="mtb0px blog_desc">
 We may gradually begin to realise that the ‘I’ is a creation of our own thinking, because its not there in deep sleep, when our thoughts are quiet.
 
 
 </h4>
-<h4 class="mtb0px blog_desc blog_highlight_black">
-What begins to shift
+<h4 class="mtb0px blog_desc">
+As a result of this insight, we may feel less attached, less reactive, and more at ease. Relationships often feel closer and more authentic.
 
 </h4>
-<h4 class="mtb0px blog_desc blog_highlight_black">
-What begins to shift
+<h4 class="mtb0px blog_desc">
+There will be moments when the mind becomes completely quiet. Moments of deep peace, connection, and freedom from suffering.
+</h4>
+
+<h4 class="mtb0px blog_sub_title">
+A Few Things to Keep in Mind
+
+
+                </h4>
+<h4 class="mtb0px blog_desc">
+If this sounds challenging, remember a few simple points:
+
+<ul>
+<li>
+  Be curious, not goal-driven. There is nothing to achieve
+
+</li>
+<li>
+Don’t judge what you notice as good or bad
+
+</li>
+<li>
+Ask gentle, open questions — what can I learn?
+
+</li>
+<li>
+Be patient, and consistent
+
+</li>
+<li>
+Take the most important step, and begin today
+
+</li>
+<li>
+Remember, this inner journey can be life changing
+
+</li>
+
+</ul>
 
 </h4>
-<h4 class="mtb0px blog_desc blog_highlight_black">
-What begins to shift
+<h4 class="mtb0px blog_desc ">
+These three steps are just a framework, a way of understanding different aspects of meditation. In reality, it is one unified journey
+</h4>
+<h4 class="mtb0px blog_desc">
+And as your practice deepens, you may discover something important:
+
+
 
 </h4>
-<h4 class="mtb0px blog_desc blog_highlight_black">
-What begins to shift
+<h4 class="mtb0px blog_desc">
+The peace you are looking for ‘out there’ is already within you, waiting to be discovered.
 
-</h4>
-<h4 class="mtb0px blog_desc blog_highlight_black">
-What begins to shift
+
 
 </h4>
 
