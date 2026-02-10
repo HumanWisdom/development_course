@@ -1796,7 +1796,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_app_screen.svg"
                 class="img-responsive mobile" alt="app screen" loading=lazy>
 
-              <h3 class="mt15px mb10px fs_36px fw_600 f_30px fc_000000 mobile-fs-18px lh_130p">
+              <h3 class="mt15px mb10px fs_36px fw_600 f_30px fc_000000 mobile-fs-18px lh_130p pt-20px">
                 Help teenagers feel happier and succeed in life
               </h3>
 
@@ -1809,7 +1809,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                     <a id="findoutMore" aria-label="Explore the teenagers app" class="">
                       <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
-                      <h5 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline pt_pb">
+                      <h5 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline pt_pb pt-10px">
                         Find out more <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                         <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
               </h5>

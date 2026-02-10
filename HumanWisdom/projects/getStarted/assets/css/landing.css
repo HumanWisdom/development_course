@@ -54,8 +54,8 @@ a:hover {
     margin: 0;
     border: 0;
     /* width: 314px; */
-    width: 100%;
-    max-width: 345px;
+    width: 345px;
+    /* max-width: 345px; */
     height: 65px;
     border-radius: 36px;
     /* background: var(--Linear, linear-gradient(180deg, #CB6171 100%, #E58D82 0%)); */
