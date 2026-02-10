@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HammerModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '../../shared.module';
@@ -19,7 +20,8 @@ import { MicroLearningEndPage } from './micro-learning-end/micro-learning-end.pa
     FormsModule,
     IonicModule,
     SharedModule,
-    MicroLearningRoutingModule
+    MicroLearningRoutingModule,
+    HammerModule
   ],
   exports: [
     MicroLearningListingPage,

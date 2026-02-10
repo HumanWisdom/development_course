@@ -31,6 +31,7 @@ export class MicroLearningInnerPage implements OnInit {
 
   isFromEnd = false;
   isAnimating = false;
+  direction = 'forward';
 
   constructor(
     private route: ActivatedRoute,
@@ -87,8 +88,9 @@ export class MicroLearningInnerPage implements OnInit {
      // method kept for structure but mostly handled by route state now
   }
 
-  goBack() {
+    goBack() {
     if (this.currentScreenIndex > 0) {
+      this.direction = 'backward';
       this.currentScreenIndex--;
       this.updateContent();
     } else {
@@ -96,8 +98,13 @@ export class MicroLearningInnerPage implements OnInit {
     }
   }
 
+  backToDashboard() {
+    this.router.navigate([`/${SharedService.getprogramName()}/micro-learning`]);
+  }
+
   next() {
     if (this.currentScreenIndex < this.screensList.length - 1) {
+      this.direction = 'forward';
       this.currentScreenIndex++;
       this.updateContent();
     } else {
