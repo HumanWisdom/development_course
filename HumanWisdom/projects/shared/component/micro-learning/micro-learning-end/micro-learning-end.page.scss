@@ -143,9 +143,10 @@
     transition:  0.3s;
     z-index: 1;
 
-    // &:hover {
-    //     background: #d47c71;
-    // }
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 }
 
 .mc_end_secure_text {

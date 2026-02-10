@@ -92,9 +92,31 @@ export class MicroLearningEndPage implements OnInit {
   }
 
   addJournal() {
-    // Logic to add to journal
-    console.log("Journal added:", this.journalText);
-    // You might call a service here
+    if (!this.journalText) return;
+
+    let userId = JSON.parse(localStorage.getItem("userId"));
+    
+    // Format date as YYYY-MM-DD
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+
+    let data = {
+      "JournalId": 0,
+      "JDate": formattedDate,
+      "Title": "Microlearning",
+      "Notes": this.journalText,
+      "UserId": userId,
+      "MicrolearningID": this.contentId
+    }
+
+    this.commonService.submitJournal(data).subscribe(res => {
+      this.journalText = '';
+    }, error => {
+      console.log(error);
+    })
   }
 
   navigateToListing() {
