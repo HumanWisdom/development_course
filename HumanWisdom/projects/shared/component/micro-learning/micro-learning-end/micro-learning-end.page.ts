@@ -70,10 +70,11 @@ export class MicroLearningEndPage implements OnInit {
     let cleanTitle = decodedTitle;
 
     // Extract text inside brackets for type, e.g. "Title (1 min.)" -> type="1 min."
-    const match = decodedTitle.match(/\(([^)]*)\)/);
-    if(match) {
-      type = match[1];
-      cleanTitle = decodedTitle.replace(match[0], '').trim();
+    const start = decodedTitle.indexOf('(');
+    const end = decodedTitle.indexOf(')', start);
+    if (start !== -1 && end !== -1) {
+      type = decodedTitle.substring(start + 1, end);
+      cleanTitle = (decodedTitle.substring(0, start) + decodedTitle.substring(end + 1)).trim();
     }
 
     return {
