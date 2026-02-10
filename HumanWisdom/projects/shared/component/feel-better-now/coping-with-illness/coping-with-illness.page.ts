@@ -40,14 +40,6 @@ export class CopingWithIllnessPage implements OnInit {
   }
 
 
-  audioevent(url) {
-    if (SharedService.ProgramId == ProgramType.Teenagers){
-      this.router.navigate(['/teenagers/feel-better-now/coping-with-illness/audiopage/', url ,"Dealing with an illness",Math.random() ])
-    }
-    else{
-      this.router.navigate(['/adults/feel-better-now/coping-with-illness/audiopage/', url ,"Dealing with an illness",Math.random() ])
-    }
-  }
 
   routeToYoutube(url) {
     if (SharedService.ProgramId == ProgramType.Teenagers){
