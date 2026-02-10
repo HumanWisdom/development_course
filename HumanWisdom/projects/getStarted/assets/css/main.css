@@ -3293,7 +3293,9 @@ audio::-webkit-media-controls-enclosure {
   font-weight: 500;
   line-height: 180%;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+
 }
 
 .blog_sub_title {
@@ -3301,7 +3303,11 @@ audio::-webkit-media-controls-enclosure {
   font-weight: 500;
   line-height: 180%;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  
+    padding-top: 20px;
+
+
 }
 
 .blog_desc {
@@ -3317,6 +3323,8 @@ audio::-webkit-media-controls-enclosure {
   font-weight: 600;
   line-height: 180%;
   color: #000;
+    margin-bottom: 10px;
+
 }
 
 .blog_highlight_peach {
