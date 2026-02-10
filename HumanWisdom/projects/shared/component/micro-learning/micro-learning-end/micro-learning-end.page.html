@@ -51,7 +51,7 @@
             <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText">
                     </textarea>
 
-            <button class="mc_end_btn_journal" (click)="addJournal()">
+            <button class="mc_end_btn_journal" (click)="addJournal()" [disabled]="!journalText">
               Add to journal
             </button>
 
