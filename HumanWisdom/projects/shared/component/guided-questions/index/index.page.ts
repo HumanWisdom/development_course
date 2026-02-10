@@ -129,6 +129,27 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     }
   }
 
+  showMicrolearning() {
+    this.logeventservice.logEvent("click_MicrolearningTab")
+
+    this.enableTab = 'Micro';
+    if (this.searchedText) {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          (it?.Response?.toLowerCase().includes(
+            this.searchedText.toLowerCase()
+          ) ||
+            it?.TitleQue?.toLowerCase().includes(
+              this.searchedText.toLowerCase())
+          ) &&
+          it?.JrType == "Microlearning notes"
+      );
+    } else {
+      this.jrList = this.jrListC.filter((p) => p.JrType == "Microlearning notes");
+    }
+  }
+
+
   goToNote(jId, jTitle, jNotes, type) {
     if(jId==0)
          this.logeventservice.logEvent("click_new_note")
