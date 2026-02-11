@@ -178,3 +178,8 @@
     </div>
   </div>
 </div>
+
+<!-- Success Popup Modal -->
+<app-modal *ngIf="showSuccessPopup" (closeEvent)="closeSuccessPopup($event)" [okText]="'Continue'"
+  [content]="'Successfully added'" [enableCancel]="false">
+</app-modal>
