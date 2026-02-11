@@ -10,15 +10,15 @@
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    // background-size: 100% 100%;
-    // object-fit: cover;
     background-size: contain;
     border-radius: 12px;
     margin-bottom: 30px;
     position: relative;
-    height: 450px;
+    height: calc(100vh - 174px);
+    min-height: 400px;
+    max-height: 700px;
     overflow: hidden;
-    padding: 40px 0 0 0; // Fixed spacing top only
+    padding: 40px 0 0 0;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -43,26 +43,26 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    padding: 0 30px 40px 30px; // Left/right padding and bottom padding for scroll
+    padding: 0 30px 40px 30px;
     touch-action: pan-y !important;
-    scrollbar-width: none; // Hide scrollbar for Firefox
+    scrollbar-width: none;
     &::-webkit-scrollbar {
-        display: none; // Hide scrollbar for Chrome/Safari
+        display: none;
     }
 
-    &.slide-in-right { // Next: New content enters from right
+    &.slide-in-right {
         animation: slideInRight 0.6s ease-out;
     }
 
-    &.slide-out-left { // Next: Old content leaves to left
+    &.slide-out-left {
         animation: slideOutLeft 0.6s ease-out;
     }
 
-    &.slide-in-left { // Prev: New content enters from left
+    &.slide-in-left {
         animation: slideInLeft 0.6s ease-out;
     }
 
-    &.slide-out-right { // Prev: Old content leaves to right
+    &.slide-out-right {
         animation: slideOutRight 0.6s ease-out;
     }
 }
@@ -110,7 +110,7 @@
         opacity: 0.7;
     }
 }
-// Header clipping fix
+
 .tn_bv {
     height: auto !important;
     overflow: visible !important;
@@ -126,7 +126,6 @@
     padding: 10px 0;
 }
 
-// Progress bar at the top of content
 .mc_progress_container {
     height: 4px;
     background: #DDD5C7;
@@ -140,7 +139,6 @@
     transition: width 0.3s ease;
 }
 
-// Footer container (fixed at bottom)
 .mc_footer_container {
     position: fixed;
     bottom: 0;
@@ -150,11 +148,9 @@
     pointer-events: none;
 }
 
-// Footer section (inside the restricted container)
 .mc_footer_section {
     pointer-events: auto;
     padding: 15px 0;
-    // box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 // Pagination dots at the bottom
@@ -190,13 +186,12 @@
     font-weight: 500;
 }
 
-// Navigation buttons at the bottom
 .mc_inner_footer_nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 400px; // Limit width for centered footer
+    max-width: 400px;
     margin: 0 auto;
     padding: 0 20px;
 
