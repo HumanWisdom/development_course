@@ -17,6 +17,7 @@ export class MicroLearningEndPage implements OnInit {
   resourcesList = [];
   contentId: any;
   journalText: string = '';
+  showSuccessPopup = false;
 
   constructor(
     private router: Router,
@@ -87,9 +88,7 @@ export class MicroLearningEndPage implements OnInit {
 
   goBack() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/micro-learning/inner/${this.contentId}`], {
-      state: { fromEnd: true }
-    });
+    this.router.navigate([`/${prefix}/micro-learning`]);
   }
 
   addJournal() {
@@ -115,9 +114,14 @@ export class MicroLearningEndPage implements OnInit {
 
     this.commonService.submitJournal(data).subscribe(res => {
       this.journalText = '';
+      this.showSuccessPopup = true;
     }, error => {
       console.log(error);
     })
+  }
+
+  closeSuccessPopup(event: string) {
+    this.showSuccessPopup = false;
   }
 
   navigateToListing() {

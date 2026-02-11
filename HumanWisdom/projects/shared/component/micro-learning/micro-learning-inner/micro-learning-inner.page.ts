@@ -73,6 +73,16 @@ export class MicroLearningInnerPage implements OnInit {
       layout: this.currentScreenIndex === 0 ? 1 : 2
     };
 
+    // Reset scroll position to top for new content
+    setTimeout(() => {
+      const scrollElements = document.querySelectorAll('.mc_scroll_content');
+      scrollElements.forEach((el: any) => {
+        if (el && !el.classList.contains('slide-out-left') && !el.classList.contains('slide-out-right')) {
+          el.scrollTop = 0;
+        }
+      });
+    }, 50);
+
     setTimeout(() => {
       this.isAnimating = false;
       this.oldContentData = null;

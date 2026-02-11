@@ -46,12 +46,14 @@
     padding: 0 30px 40px 30px;
     touch-action: pan-y !important;
     scrollbar-width: none;
+    scroll-behavior: auto;
     &::-webkit-scrollbar {
         display: none;
     }
 
     &.slide-in-right {
         animation: slideInRight 0.6s ease-out;
+        scroll-behavior: auto;
     }
 
     &.slide-out-left {
@@ -60,6 +62,7 @@
 
     &.slide-in-left {
         animation: slideInLeft 0.6s ease-out;
+        scroll-behavior: auto;
     }
 
     &.slide-out-right {
@@ -201,14 +204,10 @@
         color: rgba(0, 0, 0, 0.3);
         text-decoration: none;
         cursor: pointer;
-        transition: color 0.2s ease;
+        pointer-events: auto;
 
         &.active {
             color: rgba(0, 0, 0, 0.8);
-        }
-
-        &:hover {
-            opacity: 0.7;
         }
     }
 }
