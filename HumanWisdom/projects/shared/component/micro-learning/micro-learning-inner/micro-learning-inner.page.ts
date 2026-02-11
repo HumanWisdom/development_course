@@ -18,8 +18,6 @@ export class MicroLearningInnerPage implements OnInit {
   screensList = [];
   currentScreenIndex = 0;
 
-  // Data structure for dynamic inner page
-  // Layout values: 1 (Image Top), 2 (Image Center), 3 (Image Bottom)
   contentData = {
     title: '',
     description: '',
@@ -63,13 +61,11 @@ export class MicroLearningInnerPage implements OnInit {
   }
   
   updateContent() {
-    // Save current content as old content
     this.oldContentData = { ...this.contentData };
     
     this.isAnimating = true;
     const currentScreen = this.screensList[this.currentScreenIndex];
     
-    // Set new content data
     this.contentData = {
       title: currentScreen.title,
       description: currentScreen.content,
@@ -77,15 +73,13 @@ export class MicroLearningInnerPage implements OnInit {
       layout: this.currentScreenIndex === 0 ? 1 : 2
     };
 
-    // Reset animation state and clear old content after animation completes
     setTimeout(() => {
       this.isAnimating = false;
       this.oldContentData = null;
-    }, 600); // Matches CSS transition duration
+    }, 600);
   }
 
   fetchContent() {
-     // method kept for structure but mostly handled by route state now
   }
 
     goBack() {
@@ -108,7 +102,6 @@ export class MicroLearningInnerPage implements OnInit {
       this.currentScreenIndex++;
       this.updateContent();
     } else {
-      // End of micro-learning module
       this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/end`], {
         state: { contentId: this.contentId }
       });
