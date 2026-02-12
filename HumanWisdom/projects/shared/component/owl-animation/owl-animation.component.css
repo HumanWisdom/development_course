@@ -41,7 +41,7 @@
   max-width: 1080px;
   /* match video source resolution */
   height: auto;
-  transform: scale(0.4);
+  /* transform: scale(0.4); */
   /* shrink to 40% size */
   transform-origin: center center;
 
