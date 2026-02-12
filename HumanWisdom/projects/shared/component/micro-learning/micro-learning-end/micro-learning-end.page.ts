@@ -15,9 +15,12 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class MicroLearningEndPage implements OnInit {
   isAdults = true;
   resourcesList = [];
+  screensList = [];
   contentId: any;
   journalText: string = '';
   showSuccessPopup = false;
+  isAnimating = false;
+  direction = 'forward';
 
   constructor(
     private router: Router,
@@ -37,13 +40,27 @@ export class MicroLearningEndPage implements OnInit {
   }
 
   ngOnInit() {
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 600);
+
     localStorage.setItem("progressbarvalue", "100");
     if(this.contentId) {
       this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{
         
       })
       this.getEndScreens();
+      this.getMicroLearningScreens();
     }
+  }
+
+  getMicroLearningScreens() {
+    this.commonService.GetMicrolearningScreens(this.contentId).subscribe((res: any) => {
+      if (res && res.length > 0) {
+        this.screensList = res;
+      }
+    });
   }
 
   getEndScreens() {
@@ -88,9 +105,15 @@ export class MicroLearningEndPage implements OnInit {
 
   goBack() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/micro-learning`]);
+    this.router.navigate([`/${prefix}/micro-learning/inner`, this.contentId], {
+      state: { fromEnd: true }
+    });
   }
 
+  goToInnerScreen(){
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/micro-learning`]);
+  }
   addJournal() {
     if (!this.journalText) return;
 
@@ -142,7 +165,8 @@ export class MicroLearningEndPage implements OnInit {
   share() {
     const token = localStorage.getItem("shareToken");
     const baseUrl = SharedService.ProgramId == ProgramType.Adults ? SharedService.AdultsBaseUrl : SharedService.TeenagerBaseUrl;
-    const url = baseUrl + this.router.url + (token ? `?t=${token}` : '');
+    const programName = SharedService.getprogramName();
+    const url = baseUrl + `/${programName}/micro-learning/inner/${this.contentId}` + (token ? `?t=${token}` : '');
 
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
