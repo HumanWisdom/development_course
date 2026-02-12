@@ -179,7 +179,7 @@
                     </div>
 
                     <div class="mc_page_indicator">
-                        {{currentScreenIndex + 1}}/{{screensList.length}}
+                        {{currentScreenIndex + 1}}/{{screensList.length + 1}}
                     </div>
                 </div>
 
@@ -194,6 +194,7 @@
                                     <div class="mc_inner_pagination">
                                         <span class="dot" *ngFor="let screen of screensList; let i = index"
                                             [class.active]="i === currentScreenIndex"></span>
+                                        <span class="dot"></span>
                                     </div>
 
                                     <a class="nav_btn active" (click)="next()">Next</a>
