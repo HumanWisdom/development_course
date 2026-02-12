@@ -4,7 +4,7 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 toc_nvmenu_v3 col_cw"
       [ngClass]="isAdults ? 'bg_FFFFFF' : 'bg_stake'">
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
-        <a (click)="goBack()" class="">
+        <a (click)="goToInnerScreen()" class="">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg" alt="" class="p0"
             *ngIf="!isAdults">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0"
@@ -39,114 +39,68 @@
         </div>
 
         <div class="learning">
+          <div class="mc_page_indicator" *ngIf="screensList.length > 0">
+            {{screensList.length + 1}}/{{screensList.length + 1}}
+          </div>
 
-          <!-- Yellow Background Card Container -->
-          <div class="mc_end_container">
+          <div class="mc_content_wrapper">
+            <div class="mc_scroll_content" [class.slide-in-right]="isAnimating && direction === 'forward'">
+              <!-- Yellow Background Card Container -->
+              <div class="mc_end_container">
 
-            <h2 class="mc_end_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-              What's your takeaway?<br>
-              How can you apply it today?
-            </h2>
+                <h2 class="mc_end_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                  What's your takeaway?<br>
+                  How can you apply it today?
+                </h2>
 
-            <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText">
-                    </textarea>
+                <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText">
+                </textarea>
 
-            <button class="mc_end_btn_journal" (click)="addJournal()" [disabled]="!journalText">
-              Add to journal
-            </button>
+                <button class="mc_end_btn_journal" (click)="addJournal()" [disabled]="!journalText">
+                  Add to journal
+                </button>
 
-            <p class="mc_end_secure_text">
-              Your online journal is secure and private to you
-            </p>
+                <p class="mc_end_secure_text">
+                  Your online journal is secure and private to you
+                </p>
 
-            <div class="mc_end_divider"></div>
+                <div class="mc_end_divider"></div>
 
-            <h3 class="mc_end_explore_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-              Explore the resources below to go deeper
-            </h3>
+                <h3 class="mc_end_explore_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                  Explore the resources below to go deeper
+                </h3>
 
-            <!-- Resource Cards -->
-            <ng-container *ngFor="let resource of resourcesList">
-              <div class="mc_end_resource_card" (click)="handleResourceClick(resource)">
-                <img [src]="resource.imgUrl" class="resource_img" [alt]="resource.title">
-                <div class="resource_info">
-                  <h4>{{ resource.title }}</h4>
-                  <p>{{ resource.type }}</p>
-                </div>
-              </div>
-            </ng-container>
-            <!-- <div class="row center_flex pb_8rem">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                  </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"  (click)="share()">
-
-                    <a class="mtb10px fs_12px fw_400 lh_140p  tcenter td_underline dflex_start1"  [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'" ><img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_preimum.svg"
-                        class="img-responsive mr10px"> Share with a friend </a>
-                  </div>
-                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  </div>
-
-                </div>
-              </div> -->
-
-            <!-- Page Number / Progress -->
-            <!-- <div class="mt20px text-center">
-                        <span class="fs_12px fw_500" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">7/7</span>
+                <!-- Resource Cards -->
+                <ng-container *ngFor="let resource of resourcesList">
+                  <div class="mc_end_resource_card" (click)="handleResourceClick(resource)">
+                    <img [src]="resource.imgUrl" class="resource_img" [alt]="resource.title">
+                    <div class="resource_info">
+                      <h4>{{ resource.title }}</h4>
+                      <p>{{ resource.type }}</p>
                     </div>
-
-                </div> -->
-            <!-- <div class="row center_flex">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"  (click)="share()">
+                </ng-container>
 
-                    <a class="mtb10px fs_12px fw_400 lh_140p  tcenter td_underline dflex_start1"  [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'" ><img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_preimum.svg"
-                        class="img-responsive mr10px"> Share with a friend </a>
+                <div class="row center_flex pb_8rem">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a class="mtb10px fs_15px fw_500 lh_140p  tcenter td_underline dflex_start1"
+                        [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="navigateToListing()">
+                        Back to Micro learnings </a>
+                    </div>
                   </div>
-                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  </div>
-
                 </div>
-              </div> -->
 
-
-            <div class="row center_flex pb_8rem">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
-                <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                  </div> -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                  <a class="mtb10px fs_15px fw_500 lh_140p  tcenter td_underline dflex_start1"
-                    [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="navigateToListing()">
-
-                    Back to Micro learnings </a>
+                <div class="row center_flex pb_8rem">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a class="mtb10px fs_15px fw_500 lh_140p  tcenter td_underline dflex_start1"
+                        [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="goToHome()">
+                        Go to Home </a>
+                    </div>
+                  </div>
                 </div>
-                <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  </div> -->
-
               </div>
-            </div>
-
-            <div class="row center_flex pb_8rem">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
-                <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                  </div> -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                  <a class="mtb10px fs_15px fw_500 lh_140p  tcenter td_underline dflex_start1"
-                    [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="goToHome()">
-
-                    Go to Home </a>
-                </div>
-                <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                  </div> -->
-
-              </div>
-
             </div>
           </div>
         </div>
@@ -159,16 +113,12 @@
                 <div class="mc_end_footer_nav">
                   <a class="nav_btn active" (click)="goBack()">Prev.</a>
 
-                  <div class="mc_end_pagination">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                  <div class="mc_end_pagination" *ngIf="screensList.length > 0">
+                    <span class="dot" *ngFor="let screen of screensList"></span>
                     <span class="dot active"></span>
                   </div>
 
-                  <a class="nav_btn">Next</a>
+                  <a class="nav_btn" style="opacity: 0.5;">Next</a>
                 </div>
               </div>
             </div>

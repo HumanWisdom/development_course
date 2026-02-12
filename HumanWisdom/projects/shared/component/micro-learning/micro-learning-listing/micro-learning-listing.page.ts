@@ -19,6 +19,7 @@ export class MicroLearningListingPage implements OnInit {
   selectedPref = 'All';
   isSubscriber = false;
   showModal = false;
+  isLoading = true;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
 
@@ -54,6 +55,7 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   getMicroLearningList() {
+    this.isLoading = true;
     this.commonService.GetMicrolearningList(9).subscribe((res: any) => {
       if (res) {
         this.microLearningList = res.map(item => ({
@@ -78,6 +80,9 @@ export class MicroLearningListingPage implements OnInit {
           })
         });
       }
+      this.isLoading = false;
+    }, error => {
+      this.isLoading = false;
     });
   }
 

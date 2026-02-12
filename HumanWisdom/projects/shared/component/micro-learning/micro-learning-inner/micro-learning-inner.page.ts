@@ -120,7 +120,7 @@ export class MicroLearningInnerPage implements OnInit {
 
   getProgressPercentage() {
     if (this.screensList.length === 0) return 0;
-    return ((this.currentScreenIndex + 1) / this.screensList.length) * 100;
+    return ((this.currentScreenIndex + 1) / (this.screensList.length + 1)) * 100;
   }
 
   share() {
