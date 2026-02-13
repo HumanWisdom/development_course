@@ -1366,6 +1366,29 @@ executive and sports coach, based in the North of England                </h4>
           </div>
         </div>
              </a>
+             <div class="row center_flex">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_inspire">
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1000">
+             
+            <a href="https://www.linkedin.com/in/nicolerunyonlmsw">
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                  <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
+Nicole Runyon               </h6>
+                </div>
+              </div>
+</a>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
+                     psychotherapist and parent coach based in Detroit, USA.
+              </h4>
+                </div>
+              </div>
+             
+            </div>
       </section>
       <!-- /content -->
       <!-- /founder -->
