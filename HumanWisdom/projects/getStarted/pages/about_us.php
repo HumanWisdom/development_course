@@ -675,7 +675,7 @@ The Founder              </h1>
                  <h3 class="mtb10px fs_24px fw_500 lh_160p fc_000000">
                 Dr Manoj Krishna
               </h3>
-                <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
+                <h4 class="mtb0px fs_18px f_12px fw_400 lh_160p fc_000000">
                 Dr Manoj Krishna, previously a spine surgeon in the UK, left his medical career and, along with other professionals, started the HappierMe Project to help reduce suffering and help people lead happier lives. He has authored two books - 
                <a href=" https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301">
                 <span class="fw_500 fc_cb6171 td_underline">Understanding Me Understanding You,</span></a>

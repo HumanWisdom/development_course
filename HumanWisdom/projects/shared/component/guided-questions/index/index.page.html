@@ -276,6 +276,12 @@ All journal entries are encrypted and can only be seen by you, unless shared by 
                           [ngClass]="{'active': enableTab === 'Guided'}" class="btn btn_recent">
                           Guided journaling
                         </button>
+
+                        <button (click)="showMicrolearning()"
+                          [ngStyle]="{'background-color': enableTab === 'Micro' ? '' : (isAdults ? '#FFD889' : '#4267A5')}"
+                          [ngClass]="{'active': enableTab === 'Micro'}" class="btn btn_recent">
+                          Microlearning notes
+                        </button>
                       </div>
                     </div>
 

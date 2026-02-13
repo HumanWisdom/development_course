@@ -1522,7 +1522,11 @@ pageNewsLetterForm && pageNewsLetterForm.addEventListener("click", () => {
             fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
                 .then((e) => e.json())
                 .then((e) => {
-                    (document.getElementById("page-news-email").value = ""), (document.getElementById("page-news-name").value = ""),alert( e?.Message ? e.Message : e );
+                    // (document.getElementById("page-news-email").value = ""), (document.getElementById("page-news-name").value = ""),alert( e?.Message ? e.Message : e );
+                    document.getElementById("page-news-email").value = "";
+                    document.getElementById("page-news-name").value = "";
+                    alert(e?.Message ? e.Message : e);
+
                 })
                 .catch((e) => {
                     let content = e['error'] ? e['error']['Message'] : 'An error occurred';

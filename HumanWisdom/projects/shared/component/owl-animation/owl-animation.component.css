@@ -41,7 +41,7 @@
   max-width: 1080px;
   /* match video source resolution */
   height: auto;
-  transform: scale(0.4);
+  /* transform: scale(0.4); */
   /* shrink to 40% size */
   transform-origin: center center;
 
@@ -115,10 +115,6 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
-  /* margin-right: -33px; */
-  /* Prevent GIF from looping - will be controlled by JavaScript */
-  animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
   margin-right: -40px;
 }
 
@@ -253,6 +249,7 @@
 
 /* iPad specific positioning (600px width) */
 @media (min-width: 600px) and (max-width: 911px) {
+
   .owl-animation-wrapper,
   .owl-animation-wrapper.corner {
     right: 140px;
@@ -261,6 +258,7 @@
 
 /* Surface Pro specific positioning (912px width) */
 @media (min-width: 912px) and (max-width: 1024px) {
+
   .owl-animation-wrapper,
   .owl-animation-wrapper.corner {
     right: 210px;
@@ -332,8 +330,8 @@ body:has(#menu:checked) .owl-animation-wrapper {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Animation starts from owl's top - multi-stage growth */
-  animation: cloud-grow 1.2s ease-out forwards;
+  /* Animation starts from owl's top - faster appearance */
+  animation: cloud-grow 1.1s ease-out forwards;
   transform-origin: bottom center;
 }
 
@@ -370,9 +368,9 @@ body:has(#menu:checked) .owl-animation-wrapper {
 /* Bubble speaking animation - cloud growth first, then speaking */
 .owl-cloud-container.speaking:not(.disappearing) {
   transform-origin: bottom center;
-  /* Cloud growth animation, then speaking animation starts after cloud is fully grown */
-  animation: cloud-grow 1.2s ease-out forwards,
-    bubble-pop 1.8s ease-in-out 1.8s infinite;
+  /* Cloud growth animation (faster), then speaking animation starts after cloud is fully grown */
+  animation: cloud-grow 0.6s ease-out forwards,
+    bubble-pop 1.8s ease-in-out 0.8s infinite;
 }
 
 /* Update bubble-pop to maintain position from entrance */
@@ -412,12 +410,12 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 /* Ensure dialogue without speaking class still has cloud growth animation */
 .owl-cloud-container:not(.speaking):not(.disappearing) {
-  animation: cloud-grow 1.2s ease-out forwards;
+  animation: cloud-grow 0.6s ease-out forwards;
 }
 
-/* Cloud disappearing animation - reverse of cloud-grow */
+/* Cloud disappearing animation - reverse of cloud-grow (faster) */
 .owl-cloud-container.disappearing {
-  animation: cloud-shrink 1.2s ease-in 0.6s forwards;
+  animation: cloud-shrink 0.6s ease-in forwards;
   transform-origin: bottom center;
 }
 
@@ -450,27 +448,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 }
 
-/* Text disappearing animation - reverse of text-fill-in (happens first) */
-.owl-cloud-container.disappearing .cloud-text {
-  animation: text-fade-out 0.6s ease-out forwards;
-}
 
-@keyframes text-fade-out {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  50% {
-    opacity: 0.4;
-    transform: translate(-50%, -50%) scale(0.9);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.7);
-  }
-}
 
 .cloud-image {
   width: 179px;
@@ -482,51 +460,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
   pointer-events: none;
 }
 
-.cloud-text {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  font-style: italic;
-  line-height: 1.3;
-  text-align: center;
-  white-space: pre-line;
-  /* respect \n and wrap */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 120px;
-  z-index: 1002;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  min-height: 60px;
-  /* Text appears after cloud reaches full size */
-  opacity: 0;
-  animation: text-fill-in 0.6s ease-in 1.2s forwards;
-}
 
-/* Text fill-in animation - appears after cloud is fully grown */
-@keyframes text-fill-in {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-
-  50% {
-    opacity: 0.6;
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
 
 /* Mobile-specific performance optimizations */
 @media (max-width: 768px) {
@@ -554,22 +488,9 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 
   .cloud-image {
-    width: 110px;
-    /* Give copy enough room inside the bubble */
-    max-width: 110px;
+    width: 140px;
+    /* Smaller size for mobile */
+    max-width: 140px;
     height: auto;
-  }
-
-  .cloud-text {
-    font-size: 9px;
-    line-height: 1.25;
-    max-width: 80px;
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    /* Text animation on mobile too */
-    animation: text-fill-in 0.6s ease-in 1.2s forwards;
   }
 }

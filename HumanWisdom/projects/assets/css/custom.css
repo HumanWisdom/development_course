@@ -16832,8 +16832,8 @@ input[type="search"].dark::-webkit-search-cancel-button {
   text-align: right;
   color: #ffffff;
   border: 0;
-  padding: 5px;
-  /* width: 130px; */
+  padding: 5px 10px;
+  min-width: 130px;
   text-align: center;
 
 }
@@ -35516,9 +35516,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .btn_recent.active {
   /* background: #ED7D6F;
   color: #ffffff; */
-  background: rgba(0, 0, 0, 0.05);
+  background: white !important;
   color: #000000;
   filter: unset !important;
+  border: 1px solid rgb(255, 216, 137) !important;
+  box-shadow: none !important;
 }
 
 .pt20pxi {
@@ -37677,7 +37679,7 @@ background-color: #EEA170;
 
 }
 
-ul.symptom-list li {
+.symptom-list li {
   margin-bottom: 12px;
   line-height: 140%;
 }

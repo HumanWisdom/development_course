@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MicroLearningListingPage } from './micro-learning-listing/micro-learning-listing.page';
 import { MicroLearningInnerPage } from './micro-learning-inner/micro-learning-inner.page';
 import { MicroLearningEndPage } from './micro-learning-end/micro-learning-end.page';
+import { MicroLearningGuard } from '../../guard/micro-learning.guard';
 
 const routes: Routes = [
   {
@@ -15,11 +16,13 @@ const routes: Routes = [
   },
   {
     path: 'inner/:id',
-    component: MicroLearningInnerPage
+    component: MicroLearningInnerPage,
+    canActivate: [MicroLearningGuard]
   },
   {
     path: 'end',
-    component: MicroLearningEndPage
+    component: MicroLearningEndPage,
+    canActivate: [MicroLearningGuard]
   }
 ];
 
