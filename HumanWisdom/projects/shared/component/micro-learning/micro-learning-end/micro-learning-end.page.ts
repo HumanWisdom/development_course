@@ -104,10 +104,15 @@ export class MicroLearningEndPage implements OnInit {
   }
 
   goBack() {
+    this.direction = 'backward';
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/micro-learning/inner`, this.contentId], {
       state: { fromEnd: true }
     });
+  }
+
+  next() {
+    // No next page from the end screen
   }
 
   goToInnerScreen(){

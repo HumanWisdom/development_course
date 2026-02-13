@@ -38,13 +38,16 @@
           <div class="mc_progress_bar" [style.width.%]="100"></div>
         </div>
 
-        <div class="learning">
+        <div class="learning" (swipeleft)="next()" (swiperight)="goBack()">
           <div class="mc_page_indicator" *ngIf="screensList.length > 0">
             {{screensList.length + 1}}/{{screensList.length + 1}}
           </div>
 
           <div class="mc_content_wrapper">
-            <div class="mc_scroll_content" [class.slide-in-right]="isAnimating && direction === 'forward'">
+            <div class="mc_scroll_content" [class.slide-in-right]="isAnimating && direction === 'forward'"
+              [class.slide-out-left]="isAnimating && direction === 'forward'"
+              [class.slide-out-right]="isAnimating && direction === 'backward'"
+              [class.slide-in-left]="isAnimating && direction === 'backward'">
               <!-- Yellow Background Card Container -->
               <div class="mc_end_container">
 

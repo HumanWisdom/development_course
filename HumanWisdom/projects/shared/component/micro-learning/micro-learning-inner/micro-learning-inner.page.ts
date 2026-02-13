@@ -42,6 +42,7 @@ export class MicroLearningInnerPage implements OnInit {
     const navigation = this.router.getCurrentNavigation();
     if (navigation && navigation.extras.state && navigation.extras.state.fromEnd) {
       this.isFromEnd = true;
+      this.direction = 'backward';
     }
   }
 

@@ -62,9 +62,11 @@
     pointer-events: auto;
     padding: 15px 0;
     }
-
+.sc_01{
+    min-height: 90vh;
+}
 .learning {
-    background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/microlearning/background.webp');
+    background-image: url('https://d1tenzemoxuh75.cloudfront.net/microlearning/background.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -72,7 +74,7 @@
     border-radius: 12px;
     margin-bottom: 30px;
     position: relative;
-    height: calc(100vh - 174px);
+    height: calc(100vh - 157px);
     min-height: 400px;
     max-height: 700px;
     overflow: hidden;
@@ -97,14 +99,13 @@
 }
 
 .mc_end_textarea {
-    width: 90%;
+    width: 100%;
     height: 100px;
-    // border: none;
     border-radius: 12px;
     padding: 15px;
     font-size: 14px;
     resize: none;
-    border:1px solid rgba(0,0,0,.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
     background: #FFFFFF;
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
     margin-bottom: 15px;
@@ -130,11 +131,8 @@
 }
 
 .mc_end_btn_journal {
-    width: 90%;
-    // max-width: 250px;
+    width: 100%;
     background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
-
-    // background: #E58D82;
     color: #FFFFFF;
     border: none;
     border-radius: 25px;
@@ -142,8 +140,9 @@
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 15px;
-    transition:  0.3s;
+    transition: 0.3s;
     z-index: 1;
+    margin-right: 0px;
 
     &:disabled {
         opacity: 0.5;
@@ -306,7 +305,7 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    padding: 0 30px 40px 30px;
+    padding: 0 20px 20px 20px;
     touch-action: pan-y !important;
     scrollbar-width: none;
     scroll-behavior: auto;
