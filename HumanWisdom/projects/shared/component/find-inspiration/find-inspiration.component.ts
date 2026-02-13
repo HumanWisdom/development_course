@@ -42,7 +42,7 @@ export class FindInspiration {
       img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/blog.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg' ),
       url:'blogs'
     },   
-     
+
     { 
       title: 'Guided journaling', 
       icon: 'map', 
@@ -76,6 +76,14 @@ export class FindInspiration {
       url:'wisdom-shorts'
     },  
     { 
+      title: 'Microlearning', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
+      url:'micro-learning' 
+    },
+    { 
       title: 'Audio meditation', 
       icon: 'volume-2', 
       color: '#191d3a',
@@ -108,15 +116,6 @@ export class FindInspiration {
       img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/soundscape1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg' ),
       url:'soundscapes'
     },   
-     
-    { 
-      title: 'Microlearning', 
-      icon: 'volume-2', 
-      color: '#191d3a',
-      height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
-      url:'micro-learning' 
-    },
     { 
       title: 'Events', 
       icon: 'volume-2', 

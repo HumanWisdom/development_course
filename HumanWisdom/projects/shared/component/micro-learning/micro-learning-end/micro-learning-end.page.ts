@@ -22,6 +22,15 @@ export class MicroLearningEndPage implements OnInit {
   isAnimating = false;
   direction = 'forward';
 
+  // Touch handling
+  private touchStartX = 0;
+  private touchStartY = 0;
+  private touchCurrentX = 0;
+  isDragging = false;
+  dragOffset = 0;
+  private containerWidth = 0;
+  private isHorizontalSwipe = false;
+
   constructor(
     private router: Router,
     private location: Location,
@@ -61,6 +70,51 @@ export class MicroLearningEndPage implements OnInit {
         this.screensList = res;
       }
     });
+  }
+
+  handleTouchStart(event: any) {
+    this.touchStartX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
+    this.touchStartY = event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY;
+    this.touchCurrentX = this.touchStartX;
+    this.isDragging = true;
+    this.dragOffset = 0;
+    this.isHorizontalSwipe = false;
+    this.containerWidth = document.querySelector('.mc_content_wrapper')?.clientWidth || window.innerWidth;
+  }
+
+  handleTouchMove(event: any) {
+    if (!this.isDragging) return;
+    this.touchCurrentX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
+    const deltaX = this.touchCurrentX - this.touchStartX;
+    const deltaY = (event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY) - this.touchStartY;
+
+    if (!this.isHorizontalSwipe) {
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+        this.isHorizontalSwipe = true;
+      }
+    }
+
+    if (this.isHorizontalSwipe) {
+      this.dragOffset = deltaX;
+      if (this.dragOffset < 0) this.dragOffset /= 3; // Resistance for swiping left at end
+      if (event.cancelable) event.preventDefault();
+    }
+  }
+
+  handleTouchEnd() {
+    if (!this.isDragging) return;
+    const threshold = this.containerWidth * 0.2;
+    if (this.isHorizontalSwipe && this.dragOffset > threshold) {
+      this.goBack();
+    }
+    this.isDragging = false;
+    this.dragOffset = 0;
+    this.isHorizontalSwipe = false;
+  }
+
+  getTransform() {
+    const dragTranslate = this.containerWidth ? (this.dragOffset / this.containerWidth) * 100 : 0;
+    return `translateX(${dragTranslate}%)`;
   }
 
   getEndScreens() {
@@ -104,10 +158,15 @@ export class MicroLearningEndPage implements OnInit {
   }
 
   goBack() {
+    this.direction = 'backward';
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/micro-learning/inner`, this.contentId], {
       state: { fromEnd: true }
     });
+  }
+
+  next() {
+    // No next page from the end screen
   }
 
   goToInnerScreen(){
