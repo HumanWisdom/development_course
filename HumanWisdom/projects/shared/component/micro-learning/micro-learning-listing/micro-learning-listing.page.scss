@@ -128,3 +128,29 @@ bottom: 40px;
     pointer-events: all !important;
     cursor: pointer !important;
   }
+
+.mtb20px {
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+}
+
+.odiv {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    display: flex !important;
+    -webkit-overflow-scrolling: touch;
+    
+    & > .col-lg-12 {
+        display: flex !important;
+        flex: 0 0 auto !important;
+        max-width: none !important;
+        width: auto !important;
+        padding: 0 !important;
+    }
+
+    button {
+        flex-shrink: 0 !important;
+    }
+}
