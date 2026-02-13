@@ -101,7 +101,7 @@ export class MicroLearningEndPage implements OnInit {
     }
   }
 
-    handleTouchEnd(event?: any) {
+  handleTouchEnd(event?: any) {
     if (!this.isDragging) return;
     const threshold = this.containerWidth * 0.2;
     if (this.isHorizontalSwipe && this.dragOffset > threshold) {
