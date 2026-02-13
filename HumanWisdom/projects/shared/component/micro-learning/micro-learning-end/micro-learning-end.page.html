@@ -38,16 +38,16 @@
           <div class="mc_progress_bar" [style.width.%]="100"></div>
         </div>
 
-        <div class="learning" (swipeleft)="next()" (swiperight)="goBack()">
+        <div class="learning" (touchstart)="handleTouchStart($event)" (touchmove)="handleTouchMove($event)"
+          (touchend)="handleTouchEnd($event)" (mousedown)="handleTouchStart($event)"
+          (mousemove)="handleTouchMove($event)" (mouseup)="handleTouchEnd($event)"
+          (mouseleave)="handleTouchEnd($event)">
           <div class="mc_page_indicator" *ngIf="screensList.length > 0">
             {{screensList.length + 1}}/{{screensList.length + 1}}
           </div>
 
-          <div class="mc_content_wrapper">
-            <div class="mc_scroll_content" [class.slide-in-right]="isAnimating && direction === 'forward'"
-              [class.slide-out-left]="isAnimating && direction === 'forward'"
-              [class.slide-out-right]="isAnimating && direction === 'backward'"
-              [class.slide-in-left]="isAnimating && direction === 'backward'">
+          <div class="mc_content_wrapper" [style.transform]="getTransform()" [class.is-dragging]="isDragging">
+            <div class="mc_scroll_content">
               <!-- Yellow Background Card Container -->
               <div class="mc_end_container">
 

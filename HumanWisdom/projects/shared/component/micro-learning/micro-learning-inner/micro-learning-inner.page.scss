@@ -33,13 +33,17 @@
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    display: flex;
+    transition: none;
+    will-change: transform;
+
+    &.is-animating {
+        transition: transform 0.4s ease-out;
+    }
 }
 
 .mc_scroll_content {
-    position: absolute;
-    top: 0;
-    left: 0;
+    flex: 0 0 100%;
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -47,26 +51,10 @@
     touch-action: pan-y !important;
     scrollbar-width: none;
     scroll-behavior: auto;
+    position: relative;
+    
     &::-webkit-scrollbar {
         display: none;
-    }
-
-    &.slide-in-right {
-        animation: slideInRight 0.6s ease-out;
-        scroll-behavior: auto;
-    }
-
-    &.slide-out-left {
-        animation: slideOutLeft 0.6s ease-out;
-    }
-
-    &.slide-in-left {
-        animation: slideInLeft 0.6s ease-out;
-        scroll-behavior: auto;
-    }
-
-    &.slide-out-right {
-        animation: slideOutRight 0.6s ease-out;
     }
 }
 
@@ -243,4 +231,172 @@ h3 {
 p {
     margin-top: 15px;
     line-height: 1.6;
+}
+
+// End Screen specific styles merged from end.page.scss
+.mc_end_container {
+    border-radius: 15px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/patter_bg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.1;
+        pointer-events: none;
+    }
+}
+
+.mc_end_title {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.mc_end_textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 14px;
+    resize: none;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: #FFFFFF;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    z-index: 1;
+
+    &:focus {
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        outline: none;
+        color: #000;
+    }
+
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.25);
+    }
+}
+
+.mc_end_btn_journal {
+    width: 100%;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    transition: 0.3s;
+    z-index: 1;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.mc_end_secure_text {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    z-index: 1;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.mc_end_divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.mc_end_explore_title {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 15px;
+    z-index: 1;
+    line-height: 1.4;
+}
+
+.mc_end_resource_card {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 15px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+    cursor: pointer;
+
+    .resource_img {
+        width: 100px;
+        height: 100px;
+        border-radius: 6px;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+
+    .resource_info {
+        flex: 1;
+
+        h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #000000;
+        }
+
+        p {
+            font-size: 10px;
+            font-weight: 500;
+            color: #8C8C8C;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+.pb_8rem {
+    padding-bottom: 20px;
+}
+
+.dflex_start1 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.td_underline {
+    text-decoration: underline;
+}
+
+.fc_803358 {
+    color: #803358 !important;
+}
+
+.fc_e58d82 {
+    color: #e58d82 !important;
 }
