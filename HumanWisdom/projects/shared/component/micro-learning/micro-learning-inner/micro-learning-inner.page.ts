@@ -35,6 +35,7 @@ export class MicroLearningInnerPage implements OnInit {
   isFromEnd = false;
   isAnimating = false;
   direction = 'forward';
+  isReadMarked = false;
 
   // Touch handling properties
   private touchStartX = 0;
@@ -64,7 +65,6 @@ export class MicroLearningInnerPage implements OnInit {
     this.contentId = this.route.snapshot.paramMap.get('id');
     this.getMicroLearningScreens();
     this.getEndScreens();
-    this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{});
   }
 
   getMicroLearningScreens() {
@@ -111,6 +111,11 @@ export class MicroLearningInnerPage implements OnInit {
   updateContent() {
     this.isAnimating = true;
     
+    if (this.currentScreenIndex === this.screensList.length && !this.isReadMarked) {
+      this.isReadMarked = true;
+      this.commonService.clickMicrolearning(this.contentId).subscribe(res => { });
+    }
+
     // Reset scroll position to top for new content
     setTimeout(() => {
       const scrollElements = document.querySelectorAll('.mc_scroll_content');
