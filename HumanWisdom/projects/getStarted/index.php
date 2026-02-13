@@ -233,7 +233,7 @@ require_once('./includes/security_config.php');
                   <!-- Everything you need for a happier life -->
                    <!-- Strengthen your relationships. Manage emotions. Feel happier. -->
 <!-- Understand your mind. Change how you feel.       --> 
-           Build a healthier mind with HappierMe
+           Build a healthier mind <br> with HappierMe
               </h1>
             </div>
           </div>
