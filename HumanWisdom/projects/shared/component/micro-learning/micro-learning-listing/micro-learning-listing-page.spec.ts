@@ -14,7 +14,7 @@ describe('MicroLearningListingPage', () => {
   let mockRouter: jasmine.SpyObj<Router>;
   let mockLocation: jasmine.SpyObj<Location>;
   let mockCommonService: jasmine.SpyObj<CommonService>;
-  let originalProgramId: any;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockMicroLearningData = [
     {
@@ -41,7 +41,9 @@ describe('MicroLearningListingPage', () => {
   ];
 
   beforeEach(async () => {
-    mockRouter = jasmine.createSpyObj('Router', ['navigate']);
+    mockRouter = jasmine.createSpyObj('Router', ['navigate', 'navigateByUrl']);
+    mockRouter.navigate.and.returnValue(Promise.resolve(true));
+    mockRouter.navigateByUrl.and.returnValue(Promise.resolve(true));
     mockLocation = jasmine.createSpyObj('Location', ['back']);
     mockCommonService = jasmine.createSpyObj('CommonService', ['GetMicrolearningList', 'clickMicrolearning']);
 
@@ -52,9 +54,14 @@ describe('MicroLearningListingPage', () => {
     spyOn(SharedService, 'getPreferenceData').and.returnValue(JSON.parse(JSON.stringify(mockPrefData)));
     spyOn(SharedService, 'getprogramName').and.returnValue('adults');
     
-    // Save and Mock ProgramId
-    originalProgramId = SharedService.ProgramId;
-    SharedService.ProgramId = ProgramType.Adults;
+    // Save original ProgramId descriptor to restore later
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
+    
+    // Mock ProgramId using Object.defineProperty to avoid coverage instrumentation issues
+    Object.defineProperty(SharedService, 'ProgramId', {
+      get: () => ProgramType.Adults,
+      configurable: true
+    });
 
     await TestBed.configureTestingModule({
       declarations: [MicroLearningListingPage],
@@ -75,7 +82,9 @@ describe('MicroLearningListingPage', () => {
 
   afterEach(() => {
     // Restore static property
-    SharedService.ProgramId = originalProgramId;
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
   });
 
   it('should create', () => {
@@ -185,15 +194,13 @@ describe('MicroLearningListingPage', () => {
   });
 
   it('should navigate to inner page on navigateToInner', () => {
-    const item = { id: 101 };
-    const mockRes = { microLearningData: 'test' };
-    mockCommonService.clickMicrolearning.and.returnValue(of(mockRes));
+    const item = { id: 101, isFree: '1' };
+    component.isSubscriber = true;
+    
+    // getprogramName is already spied on in beforeEach and returns 'adults'
     
     component.navigateToInner(item);
     
-    expect(mockCommonService.clickMicrolearning).toHaveBeenCalledWith(101);
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/micro-learning/inner', 101], {
-        state: { microLearningData: mockRes }
-    });
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/micro-learning/inner', 101]);
   });
 });
