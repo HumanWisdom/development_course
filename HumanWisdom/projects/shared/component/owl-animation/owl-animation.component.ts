@@ -325,13 +325,16 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     // Find the owl wrapper element
     const owlWrapper = document.querySelector('.owl-animation-wrapper') as HTMLElement;
     if (owlWrapper) {
-      if (menuOpen) {
+     /*  if (menuOpen) {
         owlWrapper.style.zIndex = '10';
         owlWrapper.style.setProperty('z-index', '10', 'important');
       } else {
         owlWrapper.style.zIndex = '10';
         owlWrapper.style.setProperty('z-index', '10', 'important');
-      }
+      } */
+        owlWrapper.style.zIndex = '10';
+        owlWrapper.style.setProperty('z-index', '10', 'important');
+        
     }
   }
 

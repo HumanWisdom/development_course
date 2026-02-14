@@ -18,8 +18,11 @@ export class MicroLearningInnerPage implements OnInit {
   screensList = [];
   currentScreenIndex = 0;
 
-  // Data structure for dynamic inner page
-  // Layout values: 1 (Image Top), 2 (Image Center), 3 (Image Bottom)
+  // End screen properties
+  resourcesList = [];
+  journalText: string = '';
+  showSuccessPopup = false;
+
   contentData = {
     title: '',
     description: '',
@@ -32,6 +35,16 @@ export class MicroLearningInnerPage implements OnInit {
   isFromEnd = false;
   isAnimating = false;
   direction = 'forward';
+  isReadMarked = false;
+
+  // Touch handling properties
+  private touchStartX = 0;
+  private touchStartY = 0;
+  private touchCurrentX = 0;
+  isDragging = false;
+  dragOffset = 0;
+  private containerWidth = 0;
+  private isHorizontalSwipe = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,48 +57,150 @@ export class MicroLearningInnerPage implements OnInit {
     const navigation = this.router.getCurrentNavigation();
     if (navigation && navigation.extras.state && navigation.extras.state.fromEnd) {
       this.isFromEnd = true;
+      this.direction = 'backward';
     }
   }
 
   ngOnInit() {
     this.contentId = this.route.snapshot.paramMap.get('id');
     this.getMicroLearningScreens();
+    this.getEndScreens();
   }
 
   getMicroLearningScreens() {
     this.commonService.GetMicrolearningScreens(this.contentId).subscribe((res: any) => {
       if (res && res.length > 0) {
         this.screensList = res;
-        this.currentScreenIndex = this.isFromEnd ? res.length - 1 : 0;
+        this.currentScreenIndex = this.isFromEnd ? res.length : 0;
         this.updateContent();
       }
     }); 
   }
+
+  getEndScreens() {
+    this.commonService.getMicrolearningsEndScreens(this.contentId).subscribe((res: any) => {
+      if(res && res.length > 0) {
+        const data = res[0];
+        this.resourcesList = [
+          this.processLink(data.Link1Title, data.Link1Url, data.Link1imgpath),
+          this.processLink(data.Link2Title, data.Link2Url, data.Link2imgpath),
+          this.processLink(data.Link3Title, data.Link3Url, data.Link3imgpath)
+        ];
+      }
+    });
+  }
+
+  processLink(title: string, url: string, imgUrl: string) {
+    let decodedTitle = title ? title : '';
+    try {
+      decodedTitle = decodeURIComponent(decodedTitle);
+    } catch (e) {
+      console.log('Error decoding title', title);
+    }
+    let type = 'Resource';
+    let cleanTitle = decodedTitle;
+    const start = decodedTitle.indexOf('(');
+    const end = decodedTitle.indexOf(')', start);
+    if (start !== -1 && end !== -1) {
+      type = decodedTitle.substring(start + 1, end);
+      cleanTitle = (decodedTitle.substring(0, start) + decodedTitle.substring(end + 1)).trim();
+    }
+    return { title: cleanTitle, url: url, imgUrl: imgUrl, type: type };
+  }
   
   updateContent() {
-    // Save current content as old content
-    this.oldContentData = { ...this.contentData };
-    
     this.isAnimating = true;
-    const currentScreen = this.screensList[this.currentScreenIndex];
     
-    // Set new content data
-    this.contentData = {
-      title: currentScreen.title,
-      description: currentScreen.content,
-      imgUrl: currentScreen.ImageUrl,
-      layout: this.currentScreenIndex === 0 ? 1 : 2
-    };
+    if (this.currentScreenIndex === this.screensList.length && !this.isReadMarked) {
+      this.isReadMarked = true;
+      this.commonService.clickMicrolearning(this.contentId).subscribe(res => { });
+    }
 
-    // Reset animation state and clear old content after animation completes
+    // Reset scroll position to top for new content
+    setTimeout(() => {
+      const scrollElements = document.querySelectorAll('.mc_scroll_content');
+      if (scrollElements[this.currentScreenIndex]) {
+        scrollElements[this.currentScreenIndex].scrollTop = 0;
+      }
+    }, 50);
+
     setTimeout(() => {
       this.isAnimating = false;
-      this.oldContentData = null;
-    }, 600); // Matches CSS transition duration
+    }, 400);
+  }
+
+  handleTouchStart(event: any) {
+    if (this.isAnimating) return;
+    this.touchStartX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
+    this.touchStartY = event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY;
+    this.touchCurrentX = this.touchStartX;
+    this.isDragging = true; // Use true for both to facilitate immediate tracking
+    this.dragOffset = 0;
+    this.isHorizontalSwipe = false;
+    
+    const container = document.querySelector('.mc_content_wrapper');
+    if (container) {
+      this.containerWidth = container.clientWidth;
+    }
+  }
+
+  handleTouchMove(event: any) {
+    if (!this.isDragging || this.isAnimating) return;
+    this.touchCurrentX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
+    const deltaX = this.touchCurrentX - this.touchStartX;
+    const deltaY = (event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY) - this.touchStartY;
+
+    if (!this.isHorizontalSwipe) {
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+        this.isHorizontalSwipe = true;
+      } else if (Math.abs(deltaY) > 10) {
+        return;
+      }
+    }
+
+    if (this.isHorizontalSwipe) {
+      this.dragOffset = deltaX;
+      
+      // Resistance at boundaries
+      if ((this.currentScreenIndex === 0 && this.dragOffset > 0) ||
+          (this.currentScreenIndex === this.screensList.length && this.dragOffset < 0)) {
+        this.dragOffset /= 3;
+      }
+
+      if (event.cancelable) {
+        event.preventDefault();
+      }
+    }
+  }
+
+  handleTouchEnd(event: any) {
+    if (!this.isDragging) return;
+    
+    const threshold = this.containerWidth * 0.2;
+    const totalItems = this.screensList.length + 1;
+    
+    if (this.isHorizontalSwipe) {
+      if (this.dragOffset < -threshold && this.currentScreenIndex < totalItems - 1) {
+        this.next();
+      } else if (this.dragOffset > threshold && this.currentScreenIndex > 0) {
+        this.goBack();
+      } else if (this.dragOffset > threshold && this.currentScreenIndex === 0) {
+        this.backToDashboard();
+      }
+    }
+    
+    this.isDragging = false;
+    this.dragOffset = 0;
+    this.isHorizontalSwipe = false;
+  }
+
+  getTransform() {
+    const baseTranslate = -(this.currentScreenIndex * 100);
+    const dragTranslate = this.containerWidth ? (this.dragOffset / this.containerWidth) * 100 : 0;
+    return `translateX(${baseTranslate + dragTranslate}%)`;
   }
 
   fetchContent() {
-     // method kept for structure but mostly handled by route state now
   }
 
     goBack() {
@@ -94,7 +209,7 @@ export class MicroLearningInnerPage implements OnInit {
       this.currentScreenIndex--;
       this.updateContent();
     } else {
-      this.location.back();
+      this.backToDashboard();
     }
   }
 
@@ -103,21 +218,52 @@ export class MicroLearningInnerPage implements OnInit {
   }
 
   next() {
-    if (this.currentScreenIndex < this.screensList.length - 1) {
+    if (this.currentScreenIndex < this.screensList.length) {
       this.direction = 'forward';
       this.currentScreenIndex++;
       this.updateContent();
-    } else {
-      // End of micro-learning module
-      this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/end`], {
-        state: { contentId: this.contentId }
-      });
+    }
+  }
+
+  addJournal() {
+    if (!this.journalText) return;
+    let userId = JSON.parse(localStorage.getItem("userId"));
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+    let data = {
+      "JournalId": 0, "JDate": formattedDate, "Title": "Microlearning",
+      "Notes": this.journalText, "UserId": userId, "MicrolearningID": this.contentId
+    }
+    this.commonService.submitJournal(data).subscribe(res => {
+      this.journalText = '';
+      this.showSuccessPopup = true;
+    }, error => { console.log(error); })
+  }
+
+  closeSuccessPopup(event: string) {
+    this.showSuccessPopup = false;
+  }
+
+  navigateToListing() {
+    this.backToDashboard();
+  }
+
+  goToHome() {
+    this.router.navigate([SharedService.getDashboardUrls()]);
+  }
+
+  handleResourceClick(resource) {
+    if (resource.url) {
+      this.router.navigate([decodeURIComponent(resource.url)]);
     }
   }
 
   getProgressPercentage() {
     if (this.screensList.length === 0) return 0;
-    return ((this.currentScreenIndex + 1) / this.screensList.length) * 100;
+    return ((this.currentScreenIndex + 1) / (this.screensList.length + 1)) * 100;
   }
 
   share() {

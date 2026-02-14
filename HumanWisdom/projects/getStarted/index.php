@@ -233,7 +233,7 @@ require_once('./includes/security_config.php');
                   <!-- Everything you need for a happier life -->
                    <!-- Strengthen your relationships. Manage emotions. Feel happier. -->
 <!-- Understand your mind. Change how you feel.       --> 
-            Understand your mind. <br> Feel at ease. Be happier. 
+           Build a healthier mind <br> with HappierMe
               </h1>
             </div>
           </div>
@@ -281,7 +281,7 @@ Now with Olly AI              </h2>
                -->
                 <!-- AI-enabled practical tools to deepen self-awareness, improve communication, and excel in work and life. -->
                  <!-- We support you to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within. -->
-                  Personalised support to reduce stress and anxiety, manage your emotions, deepen relationships and build a happier life from within.
+                  Personalized support to reduce stress and anxiety, deepen your relationships and build a happier life from within.
               </h2>
 
             </div>

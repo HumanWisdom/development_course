@@ -37011,6 +37011,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   height: auto;
   background: black;
   object-fit: cover;
+  object-position: center;
 }
 
 .v3_ta_coach {
@@ -37679,7 +37680,12 @@ background-color: #EEA170;
 
 }
 
-ul.symptom-list li {
+.symptom-list li {
   margin-bottom: 12px;
   line-height: 140%;
+}
+
+div.contentdiv p {
+   
+    line-height: 140% !important;
 }
