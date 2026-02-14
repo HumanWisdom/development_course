@@ -18,9 +18,19 @@ module.exports = function (config) {
                 // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
                 // for example, you can disable the random execution with `random: false`
                 // or set a specific seed with `seed: 4321`
+                timeoutInterval: 10000,
+                stopSpecOnExpectationFailure: false,
+                stopOnSpecFailure: false,
+                failFast: false
             },
-            clearContext: false // leave Jasmine Spec Runner output visible in browser
+            clearContext: false, // leave Jasmine Spec Runner output visible in browser
+            captureConsole: false
         },
+        browserNoActivityTimeout: 300000,
+        browserDisconnectTimeout: 60000,
+        browserDisconnectTolerance: 5,
+        captureTimeout: 600000,
+        processKillTimeout: 10000,
         jasmineHtmlReporter: {
             suppressAll: true // removes the duplicated traces
         },

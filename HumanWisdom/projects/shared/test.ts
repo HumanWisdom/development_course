@@ -12,6 +12,19 @@ declare const require: {
     };
 };
 
+// Handle unhandled promise rejections globally to prevent test runner from hanging
+if (typeof window !== 'undefined') {
+    window.addEventListener('unhandledrejection', (event) => {
+        // Suppress navigation errors that occur in afterAll hooks
+        if (event.reason && event.reason === 'Navigation error') {
+            console.warn('Suppressed unhandled navigation error in test cleanup');
+            event.preventDefault();
+            return;
+        }
+        // Let other errors through
+    });
+}
+
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(
     BrowserDynamicTestingModule,

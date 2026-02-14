@@ -54,13 +54,13 @@ export class NavigationService {
       'guidedquestions', 'why-do-i', 'how-can-i',
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
-     , 's162p0','s51000','s39000','s47000','s324','s47000', 'mp4','s42000','s39000',
+     's162p0','s51000','s39000','s47000','s324','s47000', 'mp4','s42000','s39000',
      's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid',
      '/curated/youtubelink/','why-do-i','how-can-i','blog-article',
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3','coach/profile/','coach/contact/','videopage',',mp4','blog-article','curated/youtubelink','forum-thread','profile'
+     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile'
   ]
   let isValid = false;
   for(const item of wholeUrlCheckKeywords){

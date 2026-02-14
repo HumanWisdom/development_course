@@ -113,6 +113,8 @@ describe('HomeComponent', () => {
     mockRouter = jasmine.createSpyObj('Router', ['navigate', 'navigateByUrl'], {
       events: routerEventsSubject.asObservable()
     });
+    mockRouter.navigate.and.returnValue(Promise.resolve(true));
+    mockRouter.navigateByUrl.and.returnValue(Promise.resolve(true));
 
     // Set up default mock return values
     mockCommonService.GetHomeContents.and.returnValue(of(mockHomeContentResponse));
@@ -145,7 +147,7 @@ describe('HomeComponent', () => {
     spyOn(SharedService, 'getPreferenceDataForHome').and.returnValue(mockNavigationItems);
     spyOn(SharedService, 'isSubscriber').and.returnValue(false);
     spyOn(SharedService, 'isLoggedIn').and.returnValue(true);
-    spyOn(SharedService, 'FnName').and.returnValue('TestUser');
+    spyOn(SharedService, 'FnName').and.returnValue('"TestUser"');
     spyOn(SharedService, 'getprogramName').and.returnValue('adults');
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
@@ -155,7 +157,6 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
       imports: [
-        RouterTestingModule,
         FormsModule,
         NoopAnimationsModule
       ],
@@ -196,32 +197,40 @@ describe('HomeComponent', () => {
       expect(component.showModal).toBe(false);
     });
 
-    it('should set isSubscriber from SharedService', () => {
+    it('should set isSubscriber from SharedService', fakeAsync(() => {
       (SharedService.isSubscriber as jasmine.Spy).and.returnValue(true);
       component.ngOnInit();
+      tick();
       expect(component.isSubscriber).toBe(true);
-    });
+      flush(); // Clear any pending timers
+    }));
 
-    it('should set isAdults based on ProgramId', () => {
+    it('should set isAdults based on ProgramId', fakeAsync(() => {
       Object.defineProperty(SharedService, 'ProgramId', {
         get: () => ProgramType.Adults,
         configurable: true
       });
       component.ngOnInit();
+      tick();
       expect(component.isAdults).toBe(true);
-    });
+      flush(); // Clear any pending timers
+    }));
 
-    it('should call getUserPreference on init', () => {
+    it('should call getUserPreference on init', fakeAsync(() => {
       spyOn(component, 'getUserPreference');
       component.ngOnInit();
+      tick();
       expect(component.getUserPreference).toHaveBeenCalled();
-    });
+      flush(); // Clear any pending timers
+    }));
 
-    it('should call getModuleList on init', () => {
+    it('should call getModuleList on init', fakeAsync(() => {
       spyOn(component, 'getModuleList');
       component.ngOnInit();
+      tick();
       expect(component.getModuleList).toHaveBeenCalled();
-    });
+      flush(); // Clear any pending timers
+    }));
 
     it('should restore state from store on init', fakeAsync(() => {
       mockHomeStateService.getCurrentState.and.returnValue({
@@ -240,31 +249,39 @@ describe('HomeComponent', () => {
   });
 
   describe('Username Initialization', () => {
-    it('should parse username correctly', () => {
+    it('should parse username correctly', fakeAsync(() => {
       (SharedService.FnName as jasmine.Spy).and.returnValue('"TestUser"');
       component.ngOnInit();
+      tick();
       expect(component.username).toBe('TestUser');
-    });
+      flush(); // Clear any pending timers
+    }));
 
-    it('should handle null username', () => {
+    it('should handle null username', fakeAsync(() => {
       (SharedService.FnName as jasmine.Spy).and.returnValue('null');
       (localStorage.getItem as jasmine.Spy).and.returnValue('GuestUser');
       component.ngOnInit();
+      tick();
       // When FnName returns "null", JSON.parse("null") returns actual null value
       expect(component.username).toBe(null);
-    });
+      flush(); // Clear any pending timers
+    }));
 
-    it('should handle empty username', () => {
+    it('should handle empty username', fakeAsync(() => {
       (SharedService.FnName as jasmine.Spy).and.returnValue('');
       component.ngOnInit();
+      tick();
       expect(component.username).toBe('');
-    });
+      flush(); // Clear any pending timers
+    }));
 
-    it('should handle JSON parse error', () => {
+    it('should handle JSON parse error', fakeAsync(() => {
       (SharedService.FnName as jasmine.Spy).and.returnValue('invalid{json');
       component.ngOnInit();
+      tick();
       expect(component.username).toBeTruthy();
-    });
+      flush(); // Clear any pending timers
+    }));
   });
 
   describe('User Preference Loading', () => {
@@ -272,18 +289,20 @@ describe('HomeComponent', () => {
       mockCommonService.getUserpreference.and.returnValue(of('2'));
       component.getUserPreference();
       tick();
+      tick(400); // Wait for setTimeout(400) in getUserPreference
 
       expect(component.personalisedList.length).toBeGreaterThan(0);
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
 
     it('should handle error loading preference', fakeAsync(() => {
       mockCommonService.getUserpreference.and.returnValue(throwError(() => new Error('API Error')));
       component.getUserPreference();
       tick();
+      tick(400); // Wait for setTimeout(400) in error handler
 
       expect(component.personalisedList.length).toBeGreaterThan(0);
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
 
     it('should validate preference ID', () => {
@@ -302,18 +321,20 @@ describe('HomeComponent', () => {
 
       component.getUserPreference();
       tick();
+      tick(400); // Wait for setTimeout(400) in getUserPreference
 
       expect(mockHomeStateService.setActivePreference).toHaveBeenCalledWith('2');
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
 
     it('should show wisdom exercise for Self Awareness preference', fakeAsync(() => {
       mockCommonService.getUserpreference.and.returnValue(of('19'));
       component.getUserPreference();
       tick();
+      tick(400); // Wait for setTimeout(400) in getUserPreference
 
       expect(component.showWisdomExercise).toBe(true);
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
 
     it('should load home contents for non-self-awareness preference', fakeAsync(() => {
@@ -322,9 +343,10 @@ describe('HomeComponent', () => {
 
       component.getUserPreference();
       tick();
+      tick(400); // Wait for setTimeout(400) in getUserPreference
 
       expect(component.loadHomeContents).toHaveBeenCalledWith(2);
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
   });
 
@@ -332,35 +354,39 @@ describe('HomeComponent', () => {
     it('should load home contents successfully', fakeAsync(() => {
       component.loadHomeContents(2);
       tick();
+      tick(300); // Wait for setTimeout(300) in loadHomeContents
 
       expect(mockCommonService.GetHomeContents).toHaveBeenCalled();
       expect(component.contentSections.length).toBeGreaterThan(0);
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
 
     it('should cache content response', fakeAsync(() => {
       component.loadHomeContents(2);
       tick();
+      tick(300); // Wait for setTimeout(300) in loadHomeContents
 
       expect(mockHomeStateService.setCachedContent).toHaveBeenCalled();
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
 
     it('should clear other program data before loading', fakeAsync(() => {
       component.loadHomeContents(2);
       tick();
+      tick(300); // Wait for setTimeout(300) in loadHomeContents
 
       expect(mockHomeStateService.clearOtherProgramData).toHaveBeenCalled();
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
 
     it('should transform API response to content sections', fakeAsync(() => {
       component.loadHomeContents(2);
       tick();
+      tick(300); // Wait for setTimeout(300) in loadHomeContents
 
       expect(component.contentSections).toBeDefined();
       expect(Array.isArray(component.contentSections)).toBe(true);
-      flush(); // Clear any pending timers
+      flush(); // Clear any remaining timers
     }));
   });
 
