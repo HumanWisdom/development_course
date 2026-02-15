@@ -39,6 +39,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private menuCheckInterval: any = null;
   private menuObserver: MutationObserver | null = null;
   private routerSubscription: Subscription | null = null;
+  private loginCheckInterval: any = null; // Interval to check login status
+  private lastLoginStatus: string | null = null; // Track last login status
   private readonly GIF_SHOWN_KEY = 'owl_gif_shown'; // localStorage key to track if GIF has been shown
   private readonly DIALOGUE_SHOWN_KEY = 'owl_dialogue_shown'; // localStorage key to track if dialogue has been shown
   private dialogueAlreadyShown: boolean = false; // Track if dialogue has been shown in this session
@@ -137,15 +139,44 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       .subscribe(() => {
         this.checkRouteAndSetOwlDisplay();
       });
+
+    // Monitor login status changes to trigger GIF on login
+    this.lastLoginStatus = localStorage.getItem("isloggedin");
+    this.monitorLoginStatus();
+  }
+
+  /**
+   * Monitor login status to trigger GIF animation when user logs in
+   */
+  private monitorLoginStatus(): void {
+    // Check login status every 500ms to detect login changes
+    this.loginCheckInterval = setInterval(() => {
+      const currentLoginStatus = localStorage.getItem("isloggedin");
+      
+      // If login status changed from not logged in to logged in, trigger GIF
+      if (this.lastLoginStatus !== 'T' && currentLoginStatus === 'T') {
+        // User just logged in - check if we should show GIF
+        const hasGifBeenShown = localStorage.getItem(this.GIF_SHOWN_KEY) === 'true';
+        if (!hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
+          // Trigger GIF display
+          this.checkRouteAndSetOwlDisplay();
+        }
+      }
+      
+      this.lastLoginStatus = currentLoginStatus;
+    }, 500);
   }
 
   /**
    * Check current route and set owl display accordingly
-   * GIF only shows on home page and only once
+   * GIF shows on login (when user is logged in) and only once
    */
   private checkRouteAndSetOwlDisplay(): void {
     const currentUrl = this.router.url;
     const hasGifBeenShown = localStorage.getItem(this.GIF_SHOWN_KEY) === 'true';
+    
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
 
     // Check if home component exists in DOM (most reliable method)
     // Try multiple selectors to be sure
@@ -163,9 +194,9 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     // Use either DOM detection OR route detection
     const isHomePage = isHomeComponentPresent || isHomeRoute;
 
-    // Show GIF if home page is detected AND GIF hasn't been shown
+    // Show GIF if user is logged in AND GIF hasn't been shown (removed home page restriction)
     // CRITICAL: Check gifAlreadyStarting to prevent multiple starts during async load
-    if (isHomePage && !hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
+    if (isLoggedIn && !hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
       // Set flag immediately to prevent re-triggering from multiple checkRouteAndSetOwlDisplay() calls
       this.gifAlreadyStarting = true;
 
@@ -175,7 +206,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
         this.gifAnimationTimeout = null;
       }
 
-      // Show GIF on home page if it hasn't been shown before
+      // Show GIF on login if it hasn't been shown before
       this.showGif = true;
       this.showStaticOwl = false;
       this.isPlaying = true;
@@ -199,34 +230,40 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       return; // Exit early to prevent setting static owl
     }
 
-    // Only show static owl if we're NOT on home page OR if GIF has already been shown
+    // Only show static owl if GIF has already been shown or user is not logged in
     // BUT ONLY if showGif is not already true (to prevent overriding)
     // Also check if GIF has already been played to prevent re-showing
     if (!this.showGif && !this.hasCheckedHomePage && !this.gifPlayedOnce) {
-      if (!isHomePage) {
-        // Non-home page - show static owl
+      if (!isLoggedIn) {
+        // User not logged in - show static owl
+        this.showGif = false;
+        this.showStaticOwl = true;
+        this.isPlaying = false;
+        this.owlMessage = '';
+        this.isSpeaking = false;
+        this.cdr.detectChanges();
+        return;
       } else if (hasGifBeenShown) {
-        // Home page but GIF already shown - show static owl
+        // User logged in but GIF already shown - show static owl
+        this.showGif = false;
+        this.showStaticOwl = true;
+        this.isPlaying = false;
+        // Clear message if dialogue was already shown
+        if (this.dialogueAlreadyShown) {
+          this.owlMessage = '';
+          this.isSpeaking = false;
+        }
+        this.cdr.detectChanges();
+        return;
       } else {
-        // Home page detected but showGif is still false - force it as a last resort
+        // User logged in but showGif is still false - force it as a last resort
         // BUT only if GIF hasn't been played yet
-        if (!this.gifPlayedOnce) {
+        if (!this.gifPlayedOnce && isLoggedIn) {
           this.showGif = true;
           this.showStaticOwl = false;
           this.cdr.detectChanges();
           return;
         }
-      }
-      this.showGif = false;
-      this.showStaticOwl = true;
-      this.isPlaying = false;
-      // Only show dialogue if it hasn't been shown before
-      if (!isHomePage && !this.dialogueAlreadyShown) {
-        this.startSpeakingSequence();
-      } else {
-        // Clear message if dialogue was already shown
-        this.owlMessage = '';
-        this.isSpeaking = false;
       }
     } else if (hasGifBeenShown || this.gifPlayedOnce) {
       // If GIF has been shown, always show static owl without dialogue
@@ -371,6 +408,12 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       this.menuObserver.disconnect();
       this.menuObserver = null;
     }
+
+    // Clear login status monitoring
+    if (this.loginCheckInterval) {
+      clearInterval(this.loginCheckInterval);
+      this.loginCheckInterval = null;
+    }
   }
 
 
@@ -426,11 +469,16 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       // Clear the timeout reference
       this.gifAnimationTimeout = null;
 
-      // Force change detection
+      // Force change detection to show static owl immediately
       this.cdr.detectChanges();
 
-      // Start speaking sequence
-      this.startSpeakingSequence();
+      // Start speaking sequence immediately (shows cloud with owl)
+      // This ensures owl and cloud appear together right after GIF
+      // Use requestAnimationFrame to ensure DOM is updated before showing cloud
+      requestAnimationFrame(() => {
+        this.startSpeakingSequence();
+        this.cdr.detectChanges();
+      });
     }, this.gifAnimationDuration);
   }
 
@@ -530,11 +578,14 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.dialogueAlreadyShown = true;
     localStorage.setItem(this.DIALOGUE_SHOWN_KEY, 'true');
 
-    // Show first cloud message: "Hi I'm Olly"
+    // Show first cloud message immediately: "Hi I'm Olly"
+    // This ensures cloud appears right after GIF finishes
     this.showCloudMessage = true;
     this.currentCloudIndex = 0;
     this.currentCloudImage = this.cloudImages[0]; // Olly_Hi.svg
     this.isSpeaking = true;
+    
+    // Force immediate change detection to show cloud right away
     this.cdr.detectChanges();
 
     // After 3 seconds, switch to second image: "Ask me a question"
