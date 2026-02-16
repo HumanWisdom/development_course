@@ -331,7 +331,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
   align-items: center;
   justify-content: center;
   /* Animation starts from owl's top - faster appearance */
-  animation: cloud-grow 1.1s ease-out forwards;
+  animation: cloud-grow 0.4s ease-out forwards;
   transform-origin: bottom center;
 }
 
@@ -369,8 +369,8 @@ body:has(#menu:checked) .owl-animation-wrapper {
 .owl-cloud-container.speaking:not(.disappearing) {
   transform-origin: bottom center;
   /* Cloud growth animation (faster), then speaking animation starts after cloud is fully grown */
-  animation: cloud-grow 0.6s ease-out forwards,
-    bubble-pop 1.8s ease-in-out 0.8s infinite;
+  animation: cloud-grow 0.4s ease-out forwards,
+    bubble-pop 1.8s ease-in-out 0.5s infinite;
 }
 
 /* Update bubble-pop to maintain position from entrance */
@@ -410,7 +410,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 /* Ensure dialogue without speaking class still has cloud growth animation */
 .owl-cloud-container:not(.speaking):not(.disappearing) {
-  animation: cloud-grow 0.6s ease-out forwards;
+  animation: cloud-grow 0.4s ease-out forwards;
 }
 
 /* Cloud disappearing animation - reverse of cloud-grow (faster) */

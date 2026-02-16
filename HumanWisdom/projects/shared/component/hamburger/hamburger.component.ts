@@ -478,6 +478,10 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       localStorage.setItem("acceptcookie", acceptCookie);
       localStorage.setItem("navigateToUpgradeToPremium", "false");
       localStorage.setItem("btnClickBecomePartner", "false");
+      
+      // Clear owl animation keys to show animation on next login
+      localStorage.removeItem("owl_gif_shown");
+      localStorage.removeItem("owl_dialogue_shown");
 
       // Reset Google Identity Services state
       this.resetGoogleSignIn();
