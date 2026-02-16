@@ -62,14 +62,16 @@
                   How can you apply it today?
                 </h2>
 
-                <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText">
+                <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText"
+                  (touchstart)="$event.stopPropagation()" (touchmove)="$event.stopPropagation()"
+                  (mousedown)="$event.stopPropagation()">
                 </textarea>
 
                 <button class="mc_end_btn_journal" (click)="addJournal()" [disabled]="!journalText">
                   Add to journal
                 </button>
 
-                <p class="mc_end_secure_text" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">
+                <p class="mc_end_secure_text" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                   Your online journal is secure and private to you
                 </p>
 

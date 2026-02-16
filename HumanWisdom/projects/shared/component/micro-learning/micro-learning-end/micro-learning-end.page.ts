@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
@@ -15,6 +15,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 export class MicroLearningEndPage implements OnInit {
   @Input() isSubComponent = false;
   @Input() contentId: any;
+  @Output() journalStatus = new EventEmitter<string>();
   isAdults = true;
   resourcesList = [];
   screensList = [];
@@ -203,7 +204,11 @@ export class MicroLearningEndPage implements OnInit {
 
     this.commonService.submitJournal(data).subscribe(res => {
       this.journalText = '';
-      this.showSuccessPopup = true;
+      if(this.isSubComponent) {
+        this.journalStatus.emit('added');
+      } else {
+        this.showSuccessPopup = true;
+      }
     }, error => {
       console.log(error);
     })
