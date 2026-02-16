@@ -36,10 +36,16 @@
                 </div>
 
 
-                <div class="learning" (touchstart)="handleTouchStart($event)" (touchmove)="handleTouchMove($event)"
-                    (touchend)="handleTouchEnd($event)" (mousedown)="handleTouchStart($event)"
-                    (mousemove)="handleTouchMove($event)" (mouseup)="handleTouchEnd($event)"
-                    (mouseleave)="handleTouchEnd($event)">
+                <div class="row" *ngIf="isLoading">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter mt20px">
+                        <h4 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Loading...</h4>
+                    </div>
+                </div>
+
+                <div class="learning" *ngIf="!isLoading" (touchstart)="handleTouchStart($event)"
+                    (touchmove)="handleTouchMove($event)" (touchend)="handleTouchEnd($event)"
+                    (mousedown)="handleTouchStart($event)" (mousemove)="handleTouchMove($event)"
+                    (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
 
                     <div class="mc_content_wrapper" [style.transform]="getTransform()"
                         [class.is-animating]="!isDragging && isAnimating">
@@ -94,8 +100,8 @@
 
                         <!-- Takeaway / Resource Screen as the last slide -->
                         <div class="mc_scroll_content">
-                            <app-micro-learning-end [isSubComponent]="true"
-                                [contentId]="contentId"></app-micro-learning-end>
+                            <app-micro-learning-end [isSubComponent]="true" [contentId]="contentId"
+                                (journalStatus)="handleJournalStatus($event)"></app-micro-learning-end>
                         </div>
                     </div>
 
@@ -104,7 +110,7 @@
                     </div>
                 </div>
 
-                <div class="mc_footer_container">
+                <div class="mc_footer_container" *ngIf="!isLoading">
                     <div class="row center_flex">
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw p0">
                             <div class="mc_footer_section" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
@@ -131,3 +137,6 @@
         </div>
     </div>
 </div>
+<app-modal *ngIf="showSuccessPopup" (closeEvent)="closeSuccessPopup($event)" [okText]="'Continue'"
+    [content]="'Successfully added'" [enableCancel]="false">
+</app-modal>
