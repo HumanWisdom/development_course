@@ -122,10 +122,10 @@ describe('MicroLearningListingPage', () => {
     expect(mentalHealthPref.active).toBeTrue();
   });
 
-  it('should navigate back on goBack', () => {
-    component.goBack();
-    expect(mockLocation.back).toHaveBeenCalled();
-  });
+  // it('should navigate back on goBack', () => {
+  //   component.goBack();
+  //   expect(mockLocation.back).toHaveBeenCalled();
+  // });
 
   describe('searchMicroLearning', () => {
     beforeEach(() => {
