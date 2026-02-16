@@ -7,16 +7,20 @@
   
  
   .inspiration-grid {
-    // display: grid;
-    // grid-template-rows: repeat(2, 1fr); /* Two rows */
-    // grid-auto-flow: column; /* Items flow into columns */
     display: flex;
     flex-wrap: wrap;
     width: 730px;
-    gap: 10px; /* Space between items */
-    // max-height: 200px; /* Adjust based on your item height */
-    white-space: nowrap; /* Prevents wrapping */
+    gap: 10px;
+    white-space: nowrap;
    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+  .inspiration-grid1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    gap: 10px;
+    white-space: nowrap;
+   -ms-overflow-style: none;
 }
 
 .inspiration-grid::-webkit-scrollbar {

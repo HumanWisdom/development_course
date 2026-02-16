@@ -175,6 +175,7 @@
     margin-bottom: 15px;
     z-index: 1;
     line-height: 1.4;
+    margin-top: 0px;
 }
 
 .mc_end_resource_card {
@@ -286,15 +287,27 @@
     }
 
     .mc_page_indicator {
-        color: rgba(255, 255, 255, 0.4);
+        color: rgba(255, 255, 255, 0.4) !important;
     }
 
     .nav_btn {
-        color: rgba(255, 255, 255, 0.3);
-
+        color: rgba(255, 255, 255, 0.25) !important;
+        
         &.active {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 1) !important;
         }
+    }
+
+    .mc_end_secure_text {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    .mc_end_divider {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    .mc_end_explore_title {
+        color: rgba(255, 255, 255, 1) !important;
     }
 }
 

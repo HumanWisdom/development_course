@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
@@ -13,10 +13,11 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
   styleUrls: ['./micro-learning-end.page.scss'],
 })
 export class MicroLearningEndPage implements OnInit {
+  @Input() isSubComponent = false;
+  @Input() contentId: any;
   isAdults = true;
   resourcesList = [];
   screensList = [];
-  contentId: any;
   journalText: string = '';
   showSuccessPopup = false;
   isAnimating = false;
@@ -40,25 +41,31 @@ export class MicroLearningEndPage implements OnInit {
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     const state = this.router.getCurrentNavigation()?.extras.state;
-    if (state && state.contentId) {
-      this.contentId = state.contentId;
-      localStorage.setItem("m_learningId", this.contentId);
-    } else {
-      this.contentId = localStorage.getItem("m_learningId");
+    if (!this.isSubComponent) {
+      if (state && state.contentId) {
+        this.contentId = state.contentId;
+        localStorage.setItem("m_learningId", this.contentId);
+      } else {
+        this.contentId = localStorage.getItem("m_learningId");
+      }
     }
   }
 
   ngOnInit() {
-    this.isAnimating = true;
-    setTimeout(() => {
-      this.isAnimating = false;
-    }, 600);
+    if(!this.isSubComponent) {
+      this.isAnimating = true;
+      setTimeout(() => {
+        this.isAnimating = false;
+      }, 600);
+      localStorage.setItem("progressbarvalue", "100");
+    }
 
-    localStorage.setItem("progressbarvalue", "100");
     if(this.contentId) {
-      this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{
-        
-      })
+      if(!this.isSubComponent) {
+        this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{
+          
+        })
+      }
       this.getEndScreens();
       this.getMicroLearningScreens();
     }
@@ -217,7 +224,18 @@ export class MicroLearningEndPage implements OnInit {
 
   handleResourceClick(resource) {
     if (resource.url) {
-      this.router.navigate([decodeURIComponent(resource.url)]);
+      let url = decodeURIComponent(resource.url);
+      if (url && !url.startsWith('http') && !url.startsWith('https')) {
+        const programName = SharedService.getprogramName();
+        let tempUrl = url.startsWith('/') ? url.substring(1) : url;
+        if (!tempUrl.startsWith(programName)) {
+          url = `/${programName}/${tempUrl}`;
+        } else if (!url.startsWith('/')) {
+          url = `/${url}`;
+        }
+      }
+      localStorage.setItem('fromMicroLearningEnd', 'true');
+      this.router.navigateByUrl(url);
     }
   }
 

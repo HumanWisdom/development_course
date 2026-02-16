@@ -94,48 +94,8 @@
 
                         <!-- Takeaway / Resource Screen as the last slide -->
                         <div class="mc_scroll_content">
-                            <div class="mc_end_container">
-                                <h2 class="mc_end_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                    What's your takeaway?<br>
-                                    How can you apply it today?
-                                </h2>
-                                <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText">
-                                </textarea>
-                                <button class="mc_end_btn_journal" (click)="addJournal()" [disabled]="!journalText">
-                                    Add to journal
-                                </button>
-                                <p class="mc_end_secure_text">
-                                    Your online journal is secure and private to you
-                                </p>
-                                <div class="mc_end_divider"></div>
-                                <h3 class="mc_end_explore_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                    Explore the resources below to go deeper
-                                </h3>
-                                <ng-container *ngFor="let resource of resourcesList">
-                                    <div class="mc_end_resource_card" (click)="handleResourceClick(resource)">
-                                        <img [src]="resource.imgUrl" class="resource_img" [alt]="resource.title">
-                                        <div class="resource_info">
-                                            <h4>{{ resource.title }}</h4>
-                                            <p>{{ resource.type }}</p>
-                                        </div>
-                                    </div>
-                                </ng-container>
-                                <div class="row center_flex pb_8rem mt20px">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <a class="mtb10px fs_15px fw_500 lh_140p tcenter td_underline dflex_start1"
-                                            [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'"
-                                            (click)="navigateToListing()">
-                                            Back to Micro learnings </a>
-                                    </div>
-                                </div>
-                                <div class="row center_flex pb_8rem">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <a class="mtb10px fs_15px fw_500 lh_140p tcenter td_underline dflex_start1"
-                                            [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="goToHome()">
-                                            Go to Home </a>
-                                    </div>
-                                </div>
-                            </div>
+                            <app-micro-learning-end [isSubComponent]="true"
+                                [contentId]="contentId"></app-micro-learning-end>
                         </div>
                     </div>
 
@@ -171,7 +131,3 @@
         </div>
     </div>
 </div>
-
-<app-modal *ngIf="showSuccessPopup" (closeEvent)="closeSuccessPopup($event)" [okText]="'Continue'"
-    [content]="'Successfully added'" [enableCancel]="false">
-</app-modal>
