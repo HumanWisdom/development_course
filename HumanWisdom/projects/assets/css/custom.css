@@ -24373,8 +24373,9 @@ a {
   font-weight: 500;
   line-height: 130%;
   color: #000;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  /* margin-top: 30px; */
 }
 
 

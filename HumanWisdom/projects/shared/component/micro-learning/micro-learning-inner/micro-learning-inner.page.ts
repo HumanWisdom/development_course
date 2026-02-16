@@ -17,11 +17,19 @@ export class MicroLearningInnerPage implements OnInit {
   
   screensList = [];
   currentScreenIndex = 0;
-
-  // End screen properties
-  resourcesList = [];
-  journalText: string = '';
+  isLoading = true;
   showSuccessPopup = false;
+
+  handleJournalStatus(event: any) {
+    this.showSuccessPopup = true;
+  }
+
+  closeSuccessPopup(event: any) {
+    this.showSuccessPopup = false;
+  }
+
+  // End screen properties (now handled by app-micro-learning-end)
+
 
   contentData = {
     title: '',
@@ -59,54 +67,33 @@ export class MicroLearningInnerPage implements OnInit {
       this.isFromEnd = true;
       this.direction = 'backward';
     }
+    
+    if (localStorage.getItem('fromMicroLearningEnd') === 'true') {
+      this.isFromEnd = true;
+      localStorage.removeItem('fromMicroLearningEnd');
+    }
   }
 
   ngOnInit() {
     this.contentId = this.route.snapshot.paramMap.get('id');
     this.getMicroLearningScreens();
-    this.getEndScreens();
   }
 
   getMicroLearningScreens() {
+    this.isLoading = true;
     this.commonService.GetMicrolearningScreens(this.contentId).subscribe((res: any) => {
+      this.isLoading = false;
       if (res && res.length > 0) {
         this.screensList = res;
         this.currentScreenIndex = this.isFromEnd ? res.length : 0;
         this.updateContent();
       }
+    }, error => {
+      this.isLoading = false;
     }); 
   }
 
-  getEndScreens() {
-    this.commonService.getMicrolearningsEndScreens(this.contentId).subscribe((res: any) => {
-      if(res && res.length > 0) {
-        const data = res[0];
-        this.resourcesList = [
-          this.processLink(data.Link1Title, data.Link1Url, data.Link1imgpath),
-          this.processLink(data.Link2Title, data.Link2Url, data.Link2imgpath),
-          this.processLink(data.Link3Title, data.Link3Url, data.Link3imgpath)
-        ];
-      }
-    });
-  }
-
-  processLink(title: string, url: string, imgUrl: string) {
-    let decodedTitle = title ? title : '';
-    try {
-      decodedTitle = decodeURIComponent(decodedTitle);
-    } catch (e) {
-      console.log('Error decoding title', title);
-    }
-    let type = 'Resource';
-    let cleanTitle = decodedTitle;
-    const start = decodedTitle.indexOf('(');
-    const end = decodedTitle.indexOf(')', start);
-    if (start !== -1 && end !== -1) {
-      type = decodedTitle.substring(start + 1, end);
-      cleanTitle = (decodedTitle.substring(0, start) + decodedTitle.substring(end + 1)).trim();
-    }
-    return { title: cleanTitle, url: url, imgUrl: imgUrl, type: type };
-  }
+  
   
   updateContent() {
     this.isAnimating = true;
@@ -225,41 +212,7 @@ export class MicroLearningInnerPage implements OnInit {
     }
   }
 
-  addJournal() {
-    if (!this.journalText) return;
-    let userId = JSON.parse(localStorage.getItem("userId"));
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    const formattedDate = `${year}-${month}-${day}`;
-    let data = {
-      "JournalId": 0, "JDate": formattedDate, "Title": "Microlearning",
-      "Notes": this.journalText, "UserId": userId, "MicrolearningID": this.contentId
-    }
-    this.commonService.submitJournal(data).subscribe(res => {
-      this.journalText = '';
-      this.showSuccessPopup = true;
-    }, error => { console.log(error); })
-  }
-
-  closeSuccessPopup(event: string) {
-    this.showSuccessPopup = false;
-  }
-
-  navigateToListing() {
-    this.backToDashboard();
-  }
-
-  goToHome() {
-    this.router.navigate([SharedService.getDashboardUrls()]);
-  }
-
-  handleResourceClick(resource) {
-    if (resource.url) {
-      this.router.navigate([decodeURIComponent(resource.url)]);
-    }
-  }
+  
 
   getProgressPercentage() {
     if (this.screensList.length === 0) return 0;

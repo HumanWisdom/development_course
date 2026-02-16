@@ -111,7 +111,7 @@
                 </div>
               </div> -->
 
-              <div class="toc_adiv_03">
+              <div [ngClass]="isAdults ? 'toc_adiv_03' : 'toc_adiv_02'">
                 <ng-container *ngIf="!isLoading">
                   <ng-container *ngIf="filteredList.length > 0; else noResult">
                     <ng-container *ngFor="let data of filteredList; let i=index">
