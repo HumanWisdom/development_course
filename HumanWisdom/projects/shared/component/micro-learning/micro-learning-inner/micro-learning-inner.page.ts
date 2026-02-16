@@ -17,6 +17,16 @@ export class MicroLearningInnerPage implements OnInit {
   
   screensList = [];
   currentScreenIndex = 0;
+  isLoading = true;
+  showSuccessPopup = false;
+
+  handleJournalStatus(event: any) {
+    this.showSuccessPopup = true;
+  }
+
+  closeSuccessPopup(event: any) {
+    this.showSuccessPopup = false;
+  }
 
   // End screen properties (now handled by app-micro-learning-end)
 
@@ -70,12 +80,16 @@ export class MicroLearningInnerPage implements OnInit {
   }
 
   getMicroLearningScreens() {
+    this.isLoading = true;
     this.commonService.GetMicrolearningScreens(this.contentId).subscribe((res: any) => {
+      this.isLoading = false;
       if (res && res.length > 0) {
         this.screensList = res;
         this.currentScreenIndex = this.isFromEnd ? res.length : 0;
         this.updateContent();
       }
+    }, error => {
+      this.isLoading = false;
     }); 
   }
 

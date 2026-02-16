@@ -87,7 +87,8 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/search`]);
   }
 
   searchMicroLearning($event) {
@@ -133,6 +134,7 @@ export class MicroLearningListingPage implements OnInit {
       return;
     }
     // Logic to navigate to dynamic inner page
+    localStorage.removeItem('fromMicroLearningEnd');
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/micro-learning/inner`, item.id]);
   }
