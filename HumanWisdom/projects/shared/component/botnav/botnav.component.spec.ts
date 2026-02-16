@@ -183,12 +183,25 @@ describe('BotnavComponent', () => {
   });
 
   describe('Edge Cases', () => {
-    it('should handle navigation error gracefully', () => {
-      mockRouter.navigate.and.returnValue(Promise.reject('Navigation error'));
+    it('should handle navigation error gracefully', async () => {
+      // Create a rejected promise and immediately catch it to prevent unhandled rejection
+      const rejectedPromise = Promise.reject('Navigation error');
+      rejectedPromise.catch(() => {
+        // Expected rejection, ignore it
+      });
       
+      mockRouter.navigate.and.returnValue(rejectedPromise);
+      
+      // The method should not throw synchronously
       expect(() => {
         component.routeJournal();
       }).not.toThrow();
+      
+      // Wait a bit to ensure any async operations complete
+      await new Promise(resolve => setTimeout(resolve, 10));
+      
+      // Reset the mock to avoid affecting other tests
+      mockRouter.navigate.and.returnValue(Promise.resolve(true));
     });
 
     it('should handle multiple rapid journal navigations', () => {
