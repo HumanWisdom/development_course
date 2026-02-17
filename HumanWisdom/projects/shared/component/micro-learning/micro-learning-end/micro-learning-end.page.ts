@@ -233,6 +233,15 @@ export class MicroLearningEndPage implements OnInit {
       if (url && !url.startsWith('http') && !url.startsWith('https')) {
         const programName = SharedService.getprogramName();
         let tempUrl = url.startsWith('/') ? url.substring(1) : url;
+
+        if (!this.isAdults) {
+          if (tempUrl.includes('breathing/s29')) {
+             tempUrl = tempUrl.replace('breathing/s29', 'breathing/s107');
+          } else if (tempUrl.includes('wisdom-exercise/s75')) {
+             tempUrl = tempUrl.replace('wisdom-exercise/s75', 'wisdom-exercise/s157');
+          }
+        }
+
         if (!tempUrl.startsWith(programName)) {
           url = `/${programName}/${tempUrl}`;
         } else if (!url.startsWith('/')) {
@@ -240,6 +249,9 @@ export class MicroLearningEndPage implements OnInit {
         }
       }
       localStorage.setItem('fromMicroLearningEnd', 'true');
+      // Store the current micro-learning end page URL so wisdom exercises can navigate back here
+      const currentUrl = this.router.url;
+      localStorage.setItem('microLearningEndUrl', currentUrl);
       this.router.navigateByUrl(url);
     }
   }

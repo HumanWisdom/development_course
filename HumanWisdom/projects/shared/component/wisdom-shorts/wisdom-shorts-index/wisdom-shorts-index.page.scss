@@ -41,45 +41,88 @@
 //   background-color: #ed7d6f;
 //   color: #fff;
 // }
-/* Adults only scrollbar styling */
-.adults-scroll .odiv,
-.adults-scroll .odiv_pathway,
-.adults-scroll .odiv_wfgi,
-.adults-scroll .ae_days {
-  overflow: auto;
+.mtb20px {
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+}
+
+.odiv {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  display: flex !important;
+  -webkit-overflow-scrolling: touch;
+  width: 100% !important;
+
+  &::-webkit-scrollbar {
+    height: 2px;
+    border-radius: 6px;
+  }
+
+  & > div {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    align-items: center;
+  }
+}
+
+/* Shared scrollbar base for hover effect */
+.odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
   scrollbar-width: thin;
-  scrollbar-color: #eea170 #f6d1b7;
 }
 
-.adults-scroll .odiv:not(:hover),
-.adults-scroll .odiv_pathway:not(:hover),
-.adults-scroll .odiv_wfgi:not(:hover),
-.adults-scroll .ae_days:not(:hover) {
-  scrollbar-color: transparent transparent;
+/* Adults scrollbar style */
+.adults-scroll {
+  .odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
+    scrollbar-color: #eea170 #f6d1b7;
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #eea170;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #f6d1b7;
+      border-radius: 10px;
+    }
+    
+    /* Only show on hover for Adults */
+    &:not(:hover) {
+      scrollbar-color: transparent transparent;
+      
+      &::-webkit-scrollbar-thumb,
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    }
+  }
 }
 
-.adults-scroll .odiv::-webkit-scrollbar,
-.adults-scroll .odiv_pathway::-webkit-scrollbar,
-.adults-scroll .odiv_wfgi::-webkit-scrollbar,
-.adults-scroll .ae_days::-webkit-scrollbar {
-  height: 2px;
-  border-radius: 6px;
-}
-
-.adults-scroll .odiv::-webkit-scrollbar-thumb,
-.adults-scroll .odiv_pathway::-webkit-scrollbar-thumb,
-.adults-scroll .odiv_wfgi::-webkit-scrollbar-thumb,
-.adults-scroll .ae_days::-webkit-scrollbar-thumb {
-  background-color: #eea170;
-  border-radius: 6px;
-}
-
-.adults-scroll .odiv::-webkit-scrollbar-track,
-.adults-scroll .odiv_pathway::-webkit-scrollbar-track,
-.adults-scroll .odiv_wfgi::-webkit-scrollbar-track,
-.adults-scroll .ae_days::-webkit-scrollbar-track {
-  background-color: #f6d1b7;
-  border-radius: 10px;
+/* Teens scrollbar style (when .adults-scroll is not present) */
+.mc_01_v3:not(.adults-scroll) {
+  .odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
+    scrollbar-color: #16366D #778899;
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #16366D;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #778899;
+      border-radius: 10px;
+    }
+    
+    /* Only show on hover for Teens */
+    &:not(:hover) {
+      scrollbar-color: transparent transparent;
+      
+      &::-webkit-scrollbar-thumb,
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    }
+  }
 }
 
 .toc_adiv_02 a > .row {

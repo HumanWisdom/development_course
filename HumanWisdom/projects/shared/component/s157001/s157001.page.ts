@@ -106,7 +106,7 @@ export class S157001Page implements OnInit {
     var url = this.navigationService.navigateToBackLink()
     if (url == null) {
       this.location.back();
-    }else{
+    } else {
       this.router.navigate([url]);
     }
   }

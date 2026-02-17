@@ -179,13 +179,6 @@ export class WisdomExerciseS75001Component implements OnInit {
   }
 
   goBack() {
-    // if(this.service.previousUrl.includes('wisdom-exercise'))
-    // {
-    //   this.router.navigateByUrl("/adults/adult-dashboard");
-
-    // }
-    // else
-    //  this.location.back()
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);

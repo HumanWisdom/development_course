@@ -89,7 +89,27 @@ export class NavigationService {
 
 
   navigateToBackLink() {
-        this.history.splice(this.history.indexOf(this.router.url)+1)
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+
+    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+      localStorage.removeItem('microLearningEndUrl');
+      let returnUrl = microLearningEndUrl;
+      if (returnUrl.includes('micro-learning/inner')) {
+        if (!returnUrl.includes('?')) {
+          returnUrl += '?isEnd=true';
+        } else if (!returnUrl.includes('isEnd=true')) {
+          returnUrl += '&isEnd=true';
+        }
+      } else {
+        localStorage.removeItem('fromMicroLearningEnd');
+      }
+      this.history.pop();
+      this.backClicked = true;
+      return returnUrl;
+    }
+
+    this.history.splice(this.history.indexOf(this.router.url) + 1);
 
     const url = this.goBack();
     if (url != null) {
