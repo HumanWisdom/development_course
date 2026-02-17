@@ -173,6 +173,24 @@ export class CourseHeaderComponent implements OnInit {
     this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
   goToToc() {
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    if (fromMicroLearningEnd === 'true') {
+      let endUrl = localStorage.getItem('microLearningEndUrl');
+      if (endUrl) {
+        localStorage.removeItem('microLearningEndUrl');
+        if (endUrl.includes('micro-learning/inner')) {
+          if (!endUrl.includes('?')) {
+            endUrl += '?isEnd=true';
+          } else if (!endUrl.includes('isEnd=true')) {
+            endUrl += '&isEnd=true';
+          }
+        } else {
+          localStorage.removeItem('fromMicroLearningEnd');
+        }
+        this.router.navigateByUrl(endUrl);
+        return;
+      }
+    }
     // this.naviagtorService.getBackLink();
     // if(this.toc==""){
     if(this.router.url.includes('wellness-survey')) {

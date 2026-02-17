@@ -45,28 +45,18 @@ export class S75001Page implements OnInit {
     });
   }
 
-  goBack(){
-    // if(this.service.previousUrl.includes('wisdom-exercise'))
-    // {
-    //   this.router.navigateByUrl("/adults/adult-dashboard");
-
-    // }
-    // else
-    //  this.location.back()
-       var url = this.navigationService.navigateToBackLink();
-        if(url==null){
-          url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
-          if(url && url!=null && url != 'null'){
-            this.router.navigate([url]);
-          }else{
-            this.location.back();
-          }
-        }
-        else
-        {
-          this.router.navigate([url]);
-        }
-
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
+      if (url && url != null && url != 'null') {
+        this.router.navigate([url]);
+      } else {
+        this.location.back();
+      }
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
     routeTointroDash() {

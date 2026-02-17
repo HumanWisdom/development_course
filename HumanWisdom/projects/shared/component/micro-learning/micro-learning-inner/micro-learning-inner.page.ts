@@ -68,15 +68,25 @@ export class MicroLearningInnerPage implements OnInit {
       this.direction = 'backward';
     }
     
-    if (localStorage.getItem('fromMicroLearningEnd') === 'true') {
-      this.isFromEnd = true;
-      localStorage.removeItem('fromMicroLearningEnd');
-    }
+    this.checkIfComingFromEnd();
   }
 
   ngOnInit() {
-    this.contentId = this.route.snapshot.paramMap.get('id');
-    this.getMicroLearningScreens();
+    this.route.paramMap.subscribe(params => {
+      this.contentId = params.get('id');
+      this.checkIfComingFromEnd();
+      this.getMicroLearningScreens();
+    });
+  }
+
+  private checkIfComingFromEnd() {
+    const fromLocalStorage = localStorage.getItem('fromMicroLearningEnd') === 'true';
+    const fromQueryParam = this.route.snapshot.queryParamMap.get('isEnd') === 'true';
+    
+    if (fromLocalStorage || fromQueryParam) {
+      this.isFromEnd = true;
+      localStorage.removeItem('fromMicroLearningEnd');
+    }
   }
 
   getMicroLearningScreens() {

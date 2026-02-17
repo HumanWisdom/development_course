@@ -43,15 +43,7 @@ export class MicroLearningListingPage implements OnInit {
     }
 
     this.getMicroLearningList();
-    this.getUserPref("all");
-    
-    // Make the "All" button active by default
-    setTimeout(() => {
-      const allBtn = document.getElementById('all');
-      if (allBtn) {
-        allBtn.classList.add('active');
-      }
-    }, 100);
+    this.selectedPref = 'all';
   }
 
   getMicroLearningList() {
@@ -103,21 +95,7 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   getUserPref(type) {
-    this.selectedPref = '';
-
-    const btns = Array.from(document.getElementsByClassName('btn'));
-    for (const b of btns) {
-      const btn = b as HTMLElement;
-      btn.classList.remove('active');
-    }
-
-    const selectedBtn = document.getElementById(type);
-    if (selectedBtn) {
-      selectedBtn.classList.add('active');
-    }
-
     this.selectedPref = type;
-    this.filteredList = this.microLearningList;
 
     if (type === 'all') {
       this.filteredList = this.microLearningList;

@@ -230,6 +230,11 @@
     .mc_end_explore_title {
         color: rgba(255, 255, 255, 1) !important;
     }
+
+    ::ng-deep li, 
+    ::ng-deep li a {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
 }
 
 .bg_FFF7E6 {
