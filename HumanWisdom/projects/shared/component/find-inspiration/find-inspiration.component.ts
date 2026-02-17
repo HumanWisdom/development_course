@@ -80,7 +80,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
+      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/micro_learning.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
       url:'micro-learning' 
     },
     { 
