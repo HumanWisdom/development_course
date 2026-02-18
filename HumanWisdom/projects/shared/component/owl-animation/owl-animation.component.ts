@@ -662,7 +662,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       this.gifAnimationTimeout = null;
     }
 
-    localStorage.removeItem(this.GIF_SHOWN_KEY);
+    sessionStorage.removeItem(this.GIF_SHOWN_KEY);
     localStorage.removeItem(this.DIALOGUE_SHOWN_KEY); // Also reset dialogue for testing
     this.showGif = true;
     this.showStaticOwl = false;
