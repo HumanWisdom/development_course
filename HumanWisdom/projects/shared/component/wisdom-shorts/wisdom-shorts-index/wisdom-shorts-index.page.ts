@@ -2,7 +2,7 @@ import { Platform } from "@angular/cdk/platform";
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { CommonService } from  '../../../services/common.service';
 import { SharedService } from "../../../services/shared.service";
@@ -40,7 +40,8 @@ export class WisdomShortsIndexPage implements OnInit {
     private readonly service: CommonService,
     private readonly meta: Meta,
     private readonly title: Title,
-    private readonly navigationService: NavigationService
+    private readonly navigationService: NavigationService,
+    private readonly activatedRoute: ActivatedRoute
   ) {
     this.address = this.router.url;
     this.prefData = SharedService.getPreferenceData();
@@ -138,6 +139,16 @@ export class WisdomShortsIndexPage implements OnInit {
         }
 
         localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
+
+        const fragment = this.activatedRoute.snapshot.fragment;
+        if(fragment) {
+           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
+           if(match) {
+             setTimeout(() => {
+               this.getUserPref(match.id);
+             }, 200);
+           }
+        }
       }
     })
   }

@@ -371,8 +371,8 @@ return [
         {
           id: "0",
           active: false,
-          displayName: "Key Ideas",
-          name: 'Key Ideas',
+          displayName: "Other",
+          name: 'Other',
         }
       ]
     } else {
@@ -440,8 +440,8 @@ return [
         {
           id: "0",
           active: false,
-          displayName: "Wisdom",
-          name: 'Wisdom',
+          displayName: "Other",
+          name: 'Other',
         }
       ]
     }

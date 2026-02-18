@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { CommonService } from "../../../services/common.service";
@@ -26,10 +26,11 @@ export class MicroLearningListingPage implements OnInit {
   constructor(
     private router: Router,
     private location: Location,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private activatedRoute: ActivatedRoute
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
-    const excludeList = ['Work', 'Sorrow and loss', 'Addiction', 'For parents', 'Key ideas'];
+    const excludeList = ['Work', 'Sorrow and loss', 'Addiction', 'For parents'];
     this.prefData = SharedService.getPreferenceData().filter(pref => !excludeList.includes(pref.displayName));
   }
 
@@ -71,6 +72,14 @@ export class MicroLearningListingPage implements OnInit {
             }
           })
         });
+
+        const fragment = this.activatedRoute.snapshot.fragment;
+        if(fragment) {
+           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
+           if(match) {
+             this.getUserPref(match.id);
+           }
+        }
       }
       this.isLoading = false;
     }, error => {
