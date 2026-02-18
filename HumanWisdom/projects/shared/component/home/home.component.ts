@@ -1356,17 +1356,20 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     const title = (section.title || '').toLowerCase();
-    let url = section.viewall_Url;
+    const url = (section.viewall_Url || '').toLowerCase();
+    let targetUrl = section.viewall_Url;
 
-    if (title.includes('podcast') && this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
+    if ((title.includes('podcast') || title.includes('short') || title.includes('micro-learning') || title.includes('microlearning') || 
+         url.includes('podcast') || url.includes('short') || url.includes('micro-learning')) 
+        && this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
       const activeTopic = this.YourTopicofChoice[0];
       if (activeTopic && activeTopic.displayName && activeTopic.displayName !== 'All') {
         // Append fragment to URL manually to ensure it appears
-        url += '#' + activeTopic.displayName;
+        targetUrl += '#' + activeTopic.displayName;
       }
     }
 
-    this.router.navigateByUrl(url);
+    this.router.navigateByUrl(targetUrl);
   }
 
   goToSubscribe(): void {
