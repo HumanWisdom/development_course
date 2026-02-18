@@ -16,6 +16,7 @@ import { CommonScreenPage } from '../../../../shared/component/common-screen/com
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 import { HomeComponent } from '../../../../shared/component/home/home.component';
 import { SocialLoginPage } from '../../../../shared/component/social-login/social-login.component';
+import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-survey-intro/wellness-survey-intro.page';
 const routes: Routes = [
   {
     path: '',
@@ -561,6 +562,10 @@ const routes: Routes = [
   {
     path: 'wellness-survey',
     component: QuestionAnswersSelection
+  },
+  {
+    path: 'wellness-survey-intro',
+    component: WellnessSurveyIntroPage
   },
   {
     path: 'soundscapes',

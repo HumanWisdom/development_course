@@ -114,6 +114,7 @@ import { ChatBotComponent } from './component/chat-bot/chat-bot.component';
 import { ChatbotService } from './services/chatbot.service';
 import { S157001Page } from './component/s157001/s157001.page';
 import {SocialLoginPage} from './component/social-login/social-login.component';
+import { WellnessSurveyIntroPage } from './component/wellness-survey-intro/wellness-survey-intro.page';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -221,7 +222,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     ChatBotComponent,
     WisdomExerciseS75001Component,
     S157001Page,
-    SocialLoginPage 
+    SocialLoginPage,
+    WellnessSurveyIntroPage
   ],
   imports: [
     CommonModule,
@@ -348,7 +350,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     ChatBotComponent,
     WisdomExerciseS75001Component,
     S157001Page,
-    SocialLoginPage
+    SocialLoginPage,
+    WellnessSurveyIntroPage
   ],
   providers:[
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
