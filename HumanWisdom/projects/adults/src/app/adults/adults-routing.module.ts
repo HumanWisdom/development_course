@@ -422,7 +422,7 @@ const routes: Routes = [
     loadChildren: () => import('./adverts/adverts.module').then(m => m.AdvertsPageModule)
   },
   {
-    path: 'wisdom-exercise',
+    path: 'self-awareness',
     loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
   },
   {
@@ -733,6 +733,13 @@ const routes: Routes = [
     path: 'wisdom-exercise',
     redirectTo:'curated/self-awareness'
   },
+  {
+  path: 'wisdom-exercise/:subpath',
+  redirectTo: 'curated/self-awareness',
+  pathMatch: 'full'
+}
+
+
 ];
 
  @NgModule({

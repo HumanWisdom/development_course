@@ -5,6 +5,7 @@ import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
 import { CommonService } from "../../../services/common.service";
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-micro-learning-inner',
@@ -59,7 +60,8 @@ export class MicroLearningInnerPage implements OnInit {
     private router: Router,
     private location: Location,
     private commonService: CommonService,
-    private ngNavigatorShareService: NgNavigatorShareService
+    private ngNavigatorShareService: NgNavigatorShareService,
+    private sanitizer: DomSanitizer
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     const navigation = this.router.getCurrentNavigation();
@@ -244,4 +246,13 @@ export class MicroLearningInnerPage implements OnInit {
       console.log(error);
     });
   }
+
+  sanitizeContent(content: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(content);
+  }
+
+  routeUrl(url:string){
+            this.router.navigate(['/' + SharedService.getprogramName() +  '/' + url]);
+  }
+
 }

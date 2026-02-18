@@ -66,7 +66,7 @@
                                             </h3>
                                             <div class="fs_18px fw_400 lh_140p contentdiv"
                                                 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
-                                                [innerHTML]="screen.content">
+                                                [innerHTML]="sanitizeContent(screen.content)">
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                             <div class="fs_18px fw_400 lh_140p contentdiv"
                                                 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
-                                                [innerHTML]="screen.content">
+                                                [innerHTML]="sanitizeContent(screen.content)">
                                             </div>
                                         </div>
                                     </div>
