@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
@@ -13,10 +13,12 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
   styleUrls: ['./micro-learning-end.page.scss'],
 })
 export class MicroLearningEndPage implements OnInit {
+  @Input() isSubComponent = false;
+  @Input() contentId: any;
+  @Output() journalStatus = new EventEmitter<string>();
   isAdults = true;
   resourcesList = [];
   screensList = [];
-  contentId: any;
   journalText: string = '';
   showSuccessPopup = false;
   isAnimating = false;
@@ -40,25 +42,31 @@ export class MicroLearningEndPage implements OnInit {
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     const state = this.router.getCurrentNavigation()?.extras.state;
-    if (state && state.contentId) {
-      this.contentId = state.contentId;
-      localStorage.setItem("m_learningId", this.contentId);
-    } else {
-      this.contentId = localStorage.getItem("m_learningId");
+    if (!this.isSubComponent) {
+      if (state && state.contentId) {
+        this.contentId = state.contentId;
+        localStorage.setItem("m_learningId", this.contentId);
+      } else {
+        this.contentId = localStorage.getItem("m_learningId");
+      }
     }
   }
 
   ngOnInit() {
-    this.isAnimating = true;
-    setTimeout(() => {
-      this.isAnimating = false;
-    }, 600);
+    if(!this.isSubComponent) {
+      this.isAnimating = true;
+      setTimeout(() => {
+        this.isAnimating = false;
+      }, 600);
+      localStorage.setItem("progressbarvalue", "100");
+    }
 
-    localStorage.setItem("progressbarvalue", "100");
     if(this.contentId) {
-      this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{
-        
-      })
+      if(!this.isSubComponent) {
+        this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{
+          
+        })
+      }
       this.getEndScreens();
       this.getMicroLearningScreens();
     }
@@ -196,7 +204,11 @@ export class MicroLearningEndPage implements OnInit {
 
     this.commonService.submitJournal(data).subscribe(res => {
       this.journalText = '';
-      this.showSuccessPopup = true;
+      if(this.isSubComponent) {
+        this.journalStatus.emit('added');
+      } else {
+        this.showSuccessPopup = true;
+      }
     }, error => {
       console.log(error);
     })
@@ -217,7 +229,30 @@ export class MicroLearningEndPage implements OnInit {
 
   handleResourceClick(resource) {
     if (resource.url) {
-      this.router.navigate([decodeURIComponent(resource.url)]);
+      let url = decodeURIComponent(resource.url);
+      if (url && !url.startsWith('http') && !url.startsWith('https')) {
+        const programName = SharedService.getprogramName();
+        let tempUrl = url.startsWith('/') ? url.substring(1) : url;
+
+        if (!this.isAdults) {
+          if (tempUrl.includes('breathing/s29')) {
+             tempUrl = tempUrl.replace('breathing/s29', 'breathing/s107');
+          } else if (tempUrl.includes('wisdom-exercise/s75')) {
+             tempUrl = tempUrl.replace('wisdom-exercise/s75', 'wisdom-exercise/s157');
+          }
+        }
+
+        if (!tempUrl.startsWith(programName)) {
+          url = `/${programName}/${tempUrl}`;
+        } else if (!url.startsWith('/')) {
+          url = `/${url}`;
+        }
+      }
+      localStorage.setItem('fromMicroLearningEnd', 'true');
+      // Store the current micro-learning end page URL so wisdom exercises can navigate back here
+      const currentUrl = this.router.url;
+      localStorage.setItem('microLearningEndUrl', currentUrl);
+      this.router.navigateByUrl(url);
     }
   }
 

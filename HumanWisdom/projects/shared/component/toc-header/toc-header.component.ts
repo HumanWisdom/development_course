@@ -47,6 +47,14 @@ export class TocHeaderComponent implements OnInit {
   }
 
   goBack(){
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    if (fromMicroLearningEnd === 'true') {
+      const endUrl = localStorage.getItem('microLearningEndUrl');
+      if (endUrl) {
+        this.router.navigateByUrl(endUrl);
+        return;
+      }
+    }
     var url = this.navigationService.navigateToBackLink();
     if(url==null){
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);

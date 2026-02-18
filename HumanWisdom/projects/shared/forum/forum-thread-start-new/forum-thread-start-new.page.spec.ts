@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angul
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { of, throwError, Subject } from 'rxjs';
 import { ForumThreadStartNewPage } from './forum-thread-start-new.page';
 import { ForumService } from '../forum.service';
@@ -61,6 +63,9 @@ describe('ForumThreadStartNewPage', () => {
     mockRouter.getCurrentNavigation = jasmine.createSpy('getCurrentNavigation').and.returnValue({
       extras: { state: { programType: ProgramType.Adults } }
     });
+    
+    // Emit a NavigationStart event to satisfy the constructor subscription
+    routerEventsSubject.next(new NavigationStart(1, '/forum/forum-thread-start-new'));
 
     mockActivatedRoute = {
       snapshot: {
@@ -105,6 +110,10 @@ describe('ForumThreadStartNewPage', () => {
 
     TestBed.configureTestingModule({
       declarations: [ForumThreadStartNewPage],
+      imports: [
+        CommonModule,
+        FormsModule
+      ],
       providers: [
         { provide: ForumService, useValue: mockForumService },
         { provide: Router, useValue: mockRouter },
@@ -121,6 +130,31 @@ describe('ForumThreadStartNewPage', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ForumThreadStartNewPage);
     component = fixture.componentInstance;
+    
+    // Mock ViewChild elements before any change detection or ngOnInit calls
+    component.myTextarea = {
+      nativeElement: {
+        focus: jasmine.createSpy('focus')
+      }
+    } as any;
+    component.postModal = {
+      nativeElement: {
+        click: jasmine.createSpy('click')
+      }
+    } as any;
+    component.checkboxSelect = {
+      nativeElement: {
+        click: jasmine.createSpy('click')
+      }
+    } as any;
+    component.closeCategory = {
+      nativeElement: {
+        click: jasmine.createSpy('click')
+      }
+    } as any;
+    
+    // Don't call detectChanges here - let individual tests control when change detection runs
+    // This prevents ngOnInit from being called automatically, which would trigger the setTimeout
   });
 
   afterEach(() => {

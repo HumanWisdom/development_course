@@ -75,13 +75,14 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 d-flex">
                     <ng-container *ngFor="let data of prefData">
                       <button type="button" class="btn" id="all" *ngIf="data['active'] && data['displayName'] === 'All'"
-                        (click)="getUserPref('all')" [ngClass]="isAdults ? '' : 'bg-clr'">
+                        (click)="getUserPref('all')"
+                        [ngClass]="{'active': selectedPref === 'all', 'bg-clr': !isAdults}">
                         {{data['displayName']}}
                       </button>
 
                       <button type="button" class="btn" id="{{data['id'] | lowercase }}"
                         *ngIf="data['active'] && data['displayName'] !== 'All'" (click)="getUserPref(data['id'])"
-                        [ngClass]="isAdults ? '' : 'bg-clr'">
+                        [ngClass]="{'active': selectedPref === data['id'], 'bg-clr': !isAdults}">
                         {{data['displayName']}}
                       </button>
                     </ng-container>
@@ -111,7 +112,7 @@
                 </div>
               </div> -->
 
-              <div class="toc_adiv_03">
+              <div [ngClass]="isAdults ? 'toc_adiv_03' : 'toc_adiv_02'">
                 <ng-container *ngIf="!isLoading">
                   <ng-container *ngIf="filteredList.length > 0; else noResult">
                     <ng-container *ngFor="let data of filteredList; let i=index">

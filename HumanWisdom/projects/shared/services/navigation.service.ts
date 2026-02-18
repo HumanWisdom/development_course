@@ -56,11 +56,11 @@ export class NavigationService {
       's54001', 's92001', 'view-stories', 's42000',
      's162p0','s51000','s39000','s47000','s324','s47000', 'mp4','s42000','s39000',
      's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid',
-     '/curated/youtubelink/','why-do-i','how-can-i','blog-article',
+     '/curated/youtubelink/','why-do-i','how-can-i','blog-article', 'micro-learning',
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile'
+     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile','micro-learning'
   ]
   let isValid = false;
   for(const item of wholeUrlCheckKeywords){
@@ -89,7 +89,27 @@ export class NavigationService {
 
 
   navigateToBackLink() {
-        this.history.splice(this.history.indexOf(this.router.url)+1)
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+
+    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+      localStorage.removeItem('microLearningEndUrl');
+      let returnUrl = microLearningEndUrl;
+      if (returnUrl.includes('micro-learning/inner')) {
+        if (!returnUrl.includes('?')) {
+          returnUrl += '?isEnd=true';
+        } else if (!returnUrl.includes('isEnd=true')) {
+          returnUrl += '&isEnd=true';
+        }
+      } else {
+        localStorage.removeItem('fromMicroLearningEnd');
+      }
+      this.history.pop();
+      this.backClicked = true;
+      return returnUrl;
+    }
+
+    this.history.splice(this.history.indexOf(this.router.url) + 1);
 
     const url = this.goBack();
     if (url != null) {

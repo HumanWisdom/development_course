@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { CommonService } from "../../../services/common.service";
@@ -26,10 +26,11 @@ export class MicroLearningListingPage implements OnInit {
   constructor(
     private router: Router,
     private location: Location,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private activatedRoute: ActivatedRoute
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
-    const excludeList = ['Work', 'Sorrow and loss', 'Addiction', 'For parents', 'Key ideas'];
+    const excludeList = ['Work', 'Sorrow and loss', 'Addiction', 'For parents'];
     this.prefData = SharedService.getPreferenceData().filter(pref => !excludeList.includes(pref.displayName));
   }
 
@@ -43,15 +44,7 @@ export class MicroLearningListingPage implements OnInit {
     }
 
     this.getMicroLearningList();
-    this.getUserPref("all");
-    
-    // Make the "All" button active by default
-    setTimeout(() => {
-      const allBtn = document.getElementById('all');
-      if (allBtn) {
-        allBtn.classList.add('active');
-      }
-    }, 100);
+    this.selectedPref = 'all';
   }
 
   getMicroLearningList() {
@@ -79,6 +72,14 @@ export class MicroLearningListingPage implements OnInit {
             }
           })
         });
+
+        const fragment = this.activatedRoute.snapshot.fragment;
+        if(fragment) {
+           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
+           if(match) {
+             this.getUserPref(match.id);
+           }
+        }
       }
       this.isLoading = false;
     }, error => {
@@ -87,7 +88,8 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/search`]);
   }
 
   searchMicroLearning($event) {
@@ -102,21 +104,7 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   getUserPref(type) {
-    this.selectedPref = '';
-
-    const btns = Array.from(document.getElementsByClassName('btn'));
-    for (const b of btns) {
-      const btn = b as HTMLElement;
-      btn.classList.remove('active');
-    }
-
-    const selectedBtn = document.getElementById(type);
-    if (selectedBtn) {
-      selectedBtn.classList.add('active');
-    }
-
     this.selectedPref = type;
-    this.filteredList = this.microLearningList;
 
     if (type === 'all') {
       this.filteredList = this.microLearningList;
@@ -133,6 +121,7 @@ export class MicroLearningListingPage implements OnInit {
       return;
     }
     // Logic to navigate to dynamic inner page
+    localStorage.removeItem('fromMicroLearningEnd');
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/micro-learning/inner`, item.id]);
   }

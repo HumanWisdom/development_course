@@ -20,6 +20,7 @@ import { CommonScreenPage } from '../../../../shared/component/common-screen/com
 import { HomeComponent } from '../../../../shared/component/home/home.component';
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 import { SocialLoginPage } from '../../../../shared/component/social-login/social-login.component';
+import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-survey-intro/wellness-survey-intro.page';
 
 const routes: Routes = [
   {
@@ -421,10 +422,10 @@ const routes: Routes = [
     path: 'adverts',
     loadChildren: () => import('./adverts/adverts.module').then(m => m.AdvertsPageModule)
   },
-  // {
-  //   path: 'wisdom-exercise',
-  //   loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
-  // },
+  {
+    path: 'self-awareness',
+    loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  },
   {
     path: 'adverts-hwp',
     loadChildren: () => import('./adverts-hwp/adverts-hwp.module').then(m => m.AdvertsHwpPageModule)
@@ -717,6 +718,10 @@ const routes: Routes = [
     component: QuestionAnswersSelection
   },
   {
+    path: 'wellness-survey-intro',
+    component: WellnessSurveyIntroPage
+  },
+  {
     path: 'soundscapes',
     component: CommonScreenPage
   },
@@ -733,6 +738,13 @@ const routes: Routes = [
     path: 'wisdom-exercise',
     redirectTo:'curated/self-awareness'
   },
+  {
+  path: 'wisdom-exercise/:subpath',
+  redirectTo: 'curated/self-awareness',
+  pathMatch: 'full'
+}
+
+
 ];
 
  @NgModule({

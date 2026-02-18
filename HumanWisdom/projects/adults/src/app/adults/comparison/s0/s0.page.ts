@@ -34,6 +34,7 @@ export class S0Page implements OnInit, OnDestroy {
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+  isContentsOpen = false;
   isSubscriber = false;
 
 
@@ -128,6 +129,10 @@ export class S0Page implements OnInit, OnDestroy {
   addToken() {
     history.replaceState(null, null, this.path + `?t=${this.token}`);
     this.socialShare = true
+  }
+  
+ toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
 
   toggleBookmark() {

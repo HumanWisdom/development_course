@@ -21,9 +21,8 @@
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio> -->
 
-                   <app-audio-player  id="aud1"   class="pb10px"                        
-                                [audioLink]="audioLink">
-                              </app-audio-player >  
+                   <app-audio-player id="aud1" class="pb10px" [audioLink]="audioLink" #audio>
+                              </app-audio-player>  
                   <!-- <ngx-circular-player id="aud2" radius="90" [strokeColor]="yellow" [source]="audioLink" #audio ></ngx-circular-player>                   -->
                 </div>
               </div>

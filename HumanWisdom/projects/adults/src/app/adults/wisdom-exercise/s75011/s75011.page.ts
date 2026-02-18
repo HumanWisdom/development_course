@@ -489,4 +489,21 @@ closeHintModal() {
     console.error('Error closing modal:', error);
   }
 }
+
+  goBack() {
+    // Check if we came from micro-learning end screen
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+    
+    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+      // Clear the flags and navigate back to micro-learning end screen
+      localStorage.removeItem('fromMicroLearningEnd');
+      localStorage.removeItem('microLearningEndUrl');
+      this.router.navigateByUrl(microLearningEndUrl);
+    } else {
+      // Default: go to home
+      this.router.navigate(['/adults/home']);
+    }
+  }
+
 }

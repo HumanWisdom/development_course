@@ -36,10 +36,16 @@
                 </div>
 
 
-                <div class="learning" (touchstart)="handleTouchStart($event)" (touchmove)="handleTouchMove($event)"
-                    (touchend)="handleTouchEnd($event)" (mousedown)="handleTouchStart($event)"
-                    (mousemove)="handleTouchMove($event)" (mouseup)="handleTouchEnd($event)"
-                    (mouseleave)="handleTouchEnd($event)">
+                <div class="row" *ngIf="isLoading">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter mt20px">
+                        <h4 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Loading...</h4>
+                    </div>
+                </div>
+
+                <div class="learning" *ngIf="!isLoading" (touchstart)="handleTouchStart($event)"
+                    (touchmove)="handleTouchMove($event)" (touchend)="handleTouchEnd($event)"
+                    (mousedown)="handleTouchStart($event)" (mousemove)="handleTouchMove($event)"
+                    (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
 
                     <div class="mc_content_wrapper" [style.transform]="getTransform()"
                         [class.is-animating]="!isDragging && isAnimating">
@@ -60,7 +66,8 @@
                                             </h3>
                                             <div class="fs_18px fw_400 lh_140p contentdiv"
                                                 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
-                                                [innerHTML]="screen.content">
+                                                (click)="handleContentClick($event)"
+                                                [innerHTML]="sanitizeContent(screen.content)">
                                             </div>
                                         </div>
                                     </div>
@@ -84,7 +91,8 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                             <div class="fs_18px fw_400 lh_140p contentdiv"
                                                 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
-                                                [innerHTML]="screen.content">
+                                                (click)="handleContentClick($event)"
+                                                [innerHTML]="sanitizeContent(screen.content)">
                                             </div>
                                         </div>
                                     </div>
@@ -94,48 +102,8 @@
 
                         <!-- Takeaway / Resource Screen as the last slide -->
                         <div class="mc_scroll_content">
-                            <div class="mc_end_container">
-                                <h2 class="mc_end_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                    What's your takeaway?<br>
-                                    How can you apply it today?
-                                </h2>
-                                <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText">
-                                </textarea>
-                                <button class="mc_end_btn_journal" (click)="addJournal()" [disabled]="!journalText">
-                                    Add to journal
-                                </button>
-                                <p class="mc_end_secure_text">
-                                    Your online journal is secure and private to you
-                                </p>
-                                <div class="mc_end_divider"></div>
-                                <h3 class="mc_end_explore_title" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                    Explore the resources below to go deeper
-                                </h3>
-                                <ng-container *ngFor="let resource of resourcesList">
-                                    <div class="mc_end_resource_card" (click)="handleResourceClick(resource)">
-                                        <img [src]="resource.imgUrl" class="resource_img" [alt]="resource.title">
-                                        <div class="resource_info">
-                                            <h4>{{ resource.title }}</h4>
-                                            <p>{{ resource.type }}</p>
-                                        </div>
-                                    </div>
-                                </ng-container>
-                                <div class="row center_flex pb_8rem mt20px">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <a class="mtb10px fs_15px fw_500 lh_140p tcenter td_underline dflex_start1"
-                                            [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'"
-                                            (click)="navigateToListing()">
-                                            Back to Micro learnings </a>
-                                    </div>
-                                </div>
-                                <div class="row center_flex pb_8rem">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <a class="mtb10px fs_15px fw_500 lh_140p tcenter td_underline dflex_start1"
-                                            [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="goToHome()">
-                                            Go to Home </a>
-                                    </div>
-                                </div>
-                            </div>
+                            <app-micro-learning-end [isSubComponent]="true" [contentId]="contentId"
+                                (journalStatus)="handleJournalStatus($event)"></app-micro-learning-end>
                         </div>
                     </div>
 
@@ -144,7 +112,7 @@
                     </div>
                 </div>
 
-                <div class="mc_footer_container">
+                <div class="mc_footer_container" *ngIf="!isLoading">
                     <div class="row center_flex">
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw p0">
                             <div class="mc_footer_section" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
@@ -171,7 +139,6 @@
         </div>
     </div>
 </div>
-
 <app-modal *ngIf="showSuccessPopup" (closeEvent)="closeSuccessPopup($event)" [okText]="'Continue'"
     [content]="'Successfully added'" [enableCancel]="false">
 </app-modal>
