@@ -320,7 +320,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
 /* Cloud Container Styles - positioned above owl */
 .owl-cloud-container {
   position: absolute;
-  top: -80px;
+  top: -90px;
   /* Positioned above owl */
   left: -50%;
   /* Closer horizontally to owl (was -65%) */
@@ -342,19 +342,19 @@ body:has(#menu:checked) .owl-animation-wrapper {
 @keyframes cloud-grow {
   0% {
     opacity: 0;
-    transform: translateX(20%) translateY(20px) scale(0.05);
-    /* Start very small at bottom-right area (around 20px from top, matching shrink end) */
+    transform: translateX(20%) translateY(-25px) scale(0.05);
+    /* Start very small at mouth area (shifted up from stomach) */
   }
 
   30% {
     opacity: 0.7;
-    transform: translateX(-10%) translateY(15px) scale(0.3);
+    transform: translateX(-10%) translateY(-15px) scale(0.3);
     /* Grow and move upward and toward center */
   }
 
   60% {
     opacity: 0.9;
-    transform: translateX(-30%) translateY(8px) scale(0.7);
+    transform: translateX(-30%) translateY(-8px) scale(0.7);
     /* Continue growing and moving up toward final position */
   }
 
@@ -431,20 +431,20 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
   40% {
     opacity: 0.9;
-    transform: translateX(-30%) translateY(10px) scale(0.7);
+    transform: translateX(-30%) translateY(-8px) scale(0.7);
     /* Shrink and move down and to the right */
   }
 
   70% {
     opacity: 0.7;
-    transform: translateX(-10%) translateY(15px) scale(0.3);
+    transform: translateX(-10%) translateY(-15px) scale(0.3);
     /* Continue shrinking and moving down-right */
   }
 
   100% {
     opacity: 0;
-    transform: translateX(20%) translateY(20px) scale(0.05);
-    /* Shrink to very small and disappear at around 20px from top (moved up more) */
+    transform: translateX(20%) translateY(-25px) scale(0.05);
+    /* Shrink to very small and disappear towards mouth area (shifted up) */
   }
 }
 

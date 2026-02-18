@@ -116,14 +116,26 @@
           height: 100% !important;
           display: flex !important;
           flex-direction: column !important;
-          min-height: 350px !important;
         }
 
         .owl_testimonials .div_testimonials .row:last-child {
           margin-top: auto !important;
         }
 
+        .owl-carousel .owl-stage {
+          width: auto !important;
+        }
+
+      /* Reduce section padding on mobile to fix large gaps */
+      section {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
       }
+      
+      .section-header {
+        padding-bottom: 20px !important;
+      }
+    }
     </style>
   </head>
 

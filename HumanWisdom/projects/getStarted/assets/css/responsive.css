@@ -2706,8 +2706,7 @@
   .blog_links a > .row:first-child img.img-responsive.img_blogs {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
-    max-height: 200px !important;
+    height: 335px !important;
     object-fit: cover !important;
     border-radius: 10px !important;
     display: block !important;
