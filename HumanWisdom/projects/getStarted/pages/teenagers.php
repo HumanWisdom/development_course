@@ -38,6 +38,14 @@
         flex-wrap: nowrap !important;
         align-items: center !important;
         white-space: nowrap !important;
+        gap: 5px !important;
+        justify-content: center !important;
+      }
+      .btn_tff1{
+        width:335px !important;
+      }
+      .mt12px{
+        margin-top: 12px !important;
       }
       
       /* Ensure spans and links stay inline */
@@ -81,6 +89,10 @@
 
       .owl_testimonials .div_testimonialst .row:last-child {
         margin-top: auto !important;
+      }
+
+      .owl-carousel .owl-stage {
+        width: auto !important;
       }
       
       /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
@@ -167,6 +179,15 @@
       .flex_block > .col-sm-12.pr0px,
       .flex_block > .col-xs-12.pr0px {
         order: 2 !important;
+      }
+      /* Reduce section padding on mobile to fix large gaps */
+      section {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+      }
+      
+      .section-header {
+        padding-bottom: 20px !important;
       }
     }
   </style>
@@ -277,7 +298,7 @@
             </div>
 
 
-            <div class="row mt20px">
+            <div class="row mt12px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <h3 class="mtb0px fs_12px fw_400 lh_140p fc_000000 dinline_block">
                   Available for
