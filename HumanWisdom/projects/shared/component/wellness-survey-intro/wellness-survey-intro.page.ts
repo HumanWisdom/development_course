@@ -22,6 +22,10 @@ export class WellnessSurveyIntroPage implements OnInit {
     private navigation: NavigationService
   ) { }
 
+  startSurvey() {
+      this.router.navigate(["/" + SharedService.getprogramName() + '/wellness-survey']);
+    }
+
   ngOnInit() {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
