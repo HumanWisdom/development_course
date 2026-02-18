@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 import { JournalWeComponent } from '../../../../../../shared/component/journal-we/journal-we.component';
 import { SharedService } from '../../../../../../shared/services/shared.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { Location } from '@angular/common';
 
 declare var $: any;
 @Component({
@@ -56,7 +58,8 @@ export class S157004Page implements OnInit {
   showModel =  false;
 
   constructor(private elementRef: ElementRef,
-    public service: TeenagersService, private teenagers: TeenagersService,public router:Router) {
+    public service: TeenagersService, private teenagers: TeenagersService,public router:Router,
+    public navigationService: NavigationService, private location: Location) {
     this.startTime = Date.now()
   }
 
@@ -452,6 +455,15 @@ export class S157004Page implements OnInit {
         }
         this.setHint();
     }, 700);
+  }
+
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
   submitProgress() {

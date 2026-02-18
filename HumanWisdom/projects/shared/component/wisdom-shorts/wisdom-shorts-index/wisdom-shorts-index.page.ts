@@ -7,6 +7,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { CommonService } from  '../../../services/common.service';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
+import { NavigationService } from "../../../services/navigation.service";
 
 
 @Component({
@@ -38,7 +39,8 @@ export class WisdomShortsIndexPage implements OnInit {
     private readonly location: Location,
     private readonly service: CommonService,
     private readonly meta: Meta,
-    private readonly title: Title
+    private readonly title: Title,
+    private readonly navigationService: NavigationService
   ) {
     this.address = this.router.url;
     this.prefData = SharedService.getPreferenceData();
@@ -141,7 +143,12 @@ export class WisdomShortsIndexPage implements OnInit {
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    } else {
+      this.router.navigate([url]);
+    }
   }
   share() {
     console.log("url")

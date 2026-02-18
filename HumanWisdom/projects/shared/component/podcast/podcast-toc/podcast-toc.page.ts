@@ -29,7 +29,7 @@ export class PodcastTocPage implements OnInit {
   address: any;
   searchedText= '';
   prefData = [];
-  selectedPref = 'All'
+  selectedPref = 'all'
   isAdults = true;
   showModal = false;
   modalTitle = 'The best is yet to come';
@@ -85,13 +85,7 @@ export class PodcastTocPage implements OnInit {
 
     this.getUserPref("all");
     
-    // Make the "All" button active by default
-    setTimeout(() => {
-      const allBtn = document.getElementById('all');
-      if (allBtn) {
-        allBtn.classList.add('active');
-      }
-    }, 100);
+
   }
 
   getSourceForPodBin() {
@@ -137,6 +131,18 @@ export class PodcastTocPage implements OnInit {
             }
           })
         });
+
+        const fragment = this.activatedRoute.snapshot.fragment;
+        console.log('PodcastTOC Fragment:', fragment, 'PrefData:', this.prefData);
+        if(fragment) {
+           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
+           if(match) {
+             console.log('Matching fragment found:', match, 'ID:', match.id);
+             this.getUserPref(match.id);
+           } else {
+             console.log('No matching fragment found for:', fragment);
+           }
+        }
       }
     })
   }
@@ -199,19 +205,6 @@ audioevent(data: any) {
   }
 
 getUserPref(type) {
-  this.selectedPref = '';
-
-  const btns = Array.from(document.getElementsByClassName('btn'));
-  for (const b of btns) {
-    const btn = b as HTMLElement;
-    btn.classList.remove('active');
-  }
-
-  const selectedBtn = document.getElementById(type);
-  if (selectedBtn) {
-    selectedBtn.classList.add('active');
-  }
-
   this.selectedPref = type;
   this.podcastList = this.allpodcastList;
 
@@ -223,7 +216,7 @@ getUserPref(type) {
     this.podcastList = this.podcastList.filter((d) => d['IsMiniPodcast'] === '1');
   } else {
     this.podcastList = this.podcastList.filter((d) =>
-      d['PreferenceIDs'].split(',').includes(type)
+      d['PreferenceIDs'] && d['PreferenceIDs'].split(',').includes(type)
     );
   }
 }

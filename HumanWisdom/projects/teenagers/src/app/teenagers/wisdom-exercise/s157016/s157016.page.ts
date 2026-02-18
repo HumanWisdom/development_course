@@ -243,6 +243,18 @@ export class S157016Page implements OnInit {
       })
   }
 
+  goBack() {
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    if (fromMicroLearningEnd === 'true') {
+      const endUrl = localStorage.getItem('microLearningEndUrl');
+      if (endUrl) {
+        this.router.navigateByUrl(endUrl);
+        return;
+      }
+    }
+    this.router.navigate(['/teenagers/home'])
+  }
+
   changeType() {
     if (this.isShowTranscript) {
       this.isShowTranscript = false;
