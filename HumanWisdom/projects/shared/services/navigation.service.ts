@@ -96,10 +96,10 @@ export class NavigationService {
       localStorage.removeItem('microLearningEndUrl');
       let returnUrl = microLearningEndUrl;
       if (returnUrl.includes('micro-learning/inner')) {
-        if (!returnUrl.includes('?')) {
+        if (!returnUrl.includes('?') && !returnUrl.includes('%3F')) {
           returnUrl += '?isEnd=true';
-        } else if (!returnUrl.includes('isEnd=true')) {
-          returnUrl += '&isEnd=true';
+        } else if (!returnUrl.includes('isEnd=true') && !returnUrl.includes('isEnd%3Dtrue')) {
+          returnUrl += (returnUrl.includes('?') ? '&' : '?') + 'isEnd=true';
         }
       } else {
         localStorage.removeItem('fromMicroLearningEnd');
