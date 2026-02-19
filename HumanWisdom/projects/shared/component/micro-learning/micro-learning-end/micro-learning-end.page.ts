@@ -6,6 +6,7 @@ import { ProgramType } from "../../../models/program-model";
 import { CommonService } from "../../../services/common.service";
 import { ActivatedRoute } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { HomeStateService } from '../../../services/home-state.service';
 
 @Component({
   selector: 'app-micro-learning-end',
@@ -38,17 +39,22 @@ export class MicroLearningEndPage implements OnInit {
     private location: Location,
     private commonService: CommonService,
     private route: ActivatedRoute,
-    private ngNavigatorShareService: NgNavigatorShareService
+    private ngNavigatorShareService: NgNavigatorShareService,
+    private homeStateService: HomeStateService
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     const state = this.router.getCurrentNavigation()?.extras.state;
     if (!this.isSubComponent) {
       if (state && state.contentId) {
         this.contentId = state.contentId;
-        localStorage.setItem("m_learningId", this.contentId);
       } else {
         this.contentId = localStorage.getItem("m_learningId");
       }
+
+      if (this.contentId && String(this.contentId).includes('?')) {
+        this.contentId = String(this.contentId).split('?')[0];
+      }
+      localStorage.setItem("m_learningId", this.contentId);
     }
   }
 
@@ -66,6 +72,7 @@ export class MicroLearningEndPage implements OnInit {
         this.commonService.clickMicrolearning(this.contentId).subscribe(res=>{
           
         })
+        this.homeStateService.markCardAsSeen(this.contentId.toString());
       }
       this.getEndScreens();
       this.getMicroLearningScreens();

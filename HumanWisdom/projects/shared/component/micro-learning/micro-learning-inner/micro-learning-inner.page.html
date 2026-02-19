@@ -67,6 +67,7 @@
                                             <div class="fs_18px fw_400 lh_140p contentdiv"
                                                 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
                                                 (click)="handleContentClick($event)"
+                                                (keydown)="handleContentClick($event)"
                                                 [innerHTML]="sanitizeContent(screen.content)">
                                             </div>
                                         </div>
@@ -92,6 +93,7 @@
                                             <div class="fs_18px fw_400 lh_140p contentdiv"
                                                 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
                                                 (click)="handleContentClick($event)"
+                                                (keydown)="handleContentClick($event)"
                                                 [innerHTML]="sanitizeContent(screen.content)">
                                             </div>
                                         </div>

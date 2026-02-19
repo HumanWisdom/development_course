@@ -30,8 +30,7 @@ export class MicroLearningListingPage implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
-    const excludeList = ['Work', 'Sorrow and loss', 'Addiction', 'For parents'];
-    this.prefData = SharedService.getPreferenceData().filter(pref => !excludeList.includes(pref.displayName));
+    this.prefData = SharedService.getPreferenceData();
   }
 
   ngOnInit() {
@@ -63,22 +62,32 @@ export class MicroLearningListingPage implements OnInit {
         this.filteredList = this.microLearningList;
                 
         // Map available preferences based on the data
-        this.microLearningList.forEach((d) => {
-          this.prefData.forEach((h) => {
-            if (d['preferenceIDs'] && d['preferenceIDs'].split(",").includes(h.id)) {
-              h.active = true;
-            } else if (!d['preferenceIDs']) {
-              h.active = true;
-            }
-          })
+        this.prefData.forEach(p => {
+          if (p.displayName === 'All' || p.id === '999') p.active = true;
+          else p.active = false;
+        });
+
+        this.microLearningList.forEach((item) => {
+          if (item.preferenceIDs && item.preferenceIDs.toString().trim() !== "") {
+            const ids = item.preferenceIDs.toString().split(/,\s*/);
+            this.prefData.forEach((pref) => {
+              if (ids.includes(pref.id)) {
+                pref.active = true;
+              }
+            });
+          } else {
+            // If item has no preference IDs, it belongs to 'Other'
+            const otherPref = this.prefData.find(p => p.id === '0');
+            if (otherPref) otherPref.active = true;
+          }
         });
 
         const fragment = this.activatedRoute.snapshot.fragment;
-        if(fragment) {
-           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
-           if(match) {
-             this.getUserPref(match.id);
-           }
+        if (fragment) {
+          const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
+          if (match) {
+            this.getUserPref(match.id);
+          }
         }
       }
       this.isLoading = false;
@@ -106,12 +115,18 @@ export class MicroLearningListingPage implements OnInit {
   getUserPref(type) {
     this.selectedPref = type;
 
-    if (type === 'all') {
+    if (type === 'all' || type === '999') {
       this.filteredList = this.microLearningList;
     } else {
-      this.filteredList = this.microLearningList.filter((d) =>
-        d['preferenceIDs'] && d['preferenceIDs'].split(',').includes(type)
-      );
+      this.filteredList = this.microLearningList.filter((item) => {
+        if (item.preferenceIDs && item.preferenceIDs.toString().trim() !== "") {
+          const ids = item.preferenceIDs.toString().split(/,\s*/);
+          return ids.includes(type);
+        } else if (type === '0') {
+          return true;
+        }
+        return false;
+      });
     }
   }
 

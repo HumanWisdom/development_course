@@ -6,6 +6,7 @@ import { ProgramType } from "../../../models/program-model";
 import { CommonService } from "../../../services/common.service";
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { HomeStateService } from '../../../services/home-state.service';
 
 @Component({
   selector: 'app-micro-learning-inner',
@@ -39,7 +40,8 @@ export class MicroLearningInnerPage implements OnInit {
     private commonService: CommonService,
     private ngNavigatorShareService: NgNavigatorShareService,
     private sanitizer: DomSanitizer,
-    private el: ElementRef
+    private el: ElementRef,
+    private homeStateService: HomeStateService
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     const navigation = this.router.getCurrentNavigation();
@@ -53,6 +55,9 @@ export class MicroLearningInnerPage implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.contentId = params.get('id');
+      if (this.contentId && this.contentId.includes('?')) {
+        this.contentId = this.contentId.split('?')[0];
+      }
       this.checkIfComingFromEnd();
       this.getMicroLearningScreens();
     });
@@ -103,6 +108,7 @@ export class MicroLearningInnerPage implements OnInit {
     if (this.currentScreenIndex === this.screensList.length && !this.isReadMarked) {
       this.isReadMarked = true;
       this.commonService.clickMicrolearning(this.contentId).subscribe(res => { });
+      this.homeStateService.markCardAsSeen(this.contentId.toString());
     }
 
     setTimeout(() => {
@@ -224,10 +230,15 @@ export class MicroLearningInnerPage implements OnInit {
 
   routeUrl(url: string) {
     if (!url) return;
+    const prefix = SharedService.getprogramName();
     if (url.startsWith('/')) {
-      this.router.navigateByUrl(url);
+      // Check if it already starts with a program prefix
+      if (url.startsWith('/adults') || url.startsWith('/teenagers') || url.startsWith('/youngadults')) {
+        this.router.navigateByUrl(url);
+      } else {
+        this.router.navigateByUrl(`/${prefix}${url}`);
+      }
     } else {
-      const prefix = SharedService.getprogramName();
       this.router.navigate([`/${prefix}/${url}`]);
     }
   }
@@ -259,7 +270,7 @@ export class MicroLearningInnerPage implements OnInit {
   }
 
   // Still keeping this just in case, but forceRoute above is more aggressive
-  handleContentClick(event: MouseEvent) {
+  handleContentClick(event: any) {
     const target = event.target as HTMLElement;
     const anchor = target.closest('a');
     if (anchor) {

@@ -179,10 +179,10 @@ export class CourseHeaderComponent implements OnInit {
       if (endUrl) {
         localStorage.removeItem('microLearningEndUrl');
         if (endUrl.includes('micro-learning/inner')) {
-          if (!endUrl.includes('?')) {
+          if (!endUrl.includes('?') && !endUrl.includes('%3F')) {
             endUrl += '?isEnd=true';
-          } else if (!endUrl.includes('isEnd=true')) {
-            endUrl += '&isEnd=true';
+          } else if (!endUrl.includes('isEnd=true') && !endUrl.includes('isEnd%3Dtrue')) {
+            endUrl += (endUrl.includes('?') ? '&' : '?') + 'isEnd=true';
           }
         } else {
           localStorage.removeItem('fromMicroLearningEnd');

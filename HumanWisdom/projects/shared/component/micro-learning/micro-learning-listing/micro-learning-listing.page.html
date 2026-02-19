@@ -31,7 +31,7 @@
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
         <a class="">
           <h4 class="mtb0px fs_18px fw_600 lh_130p tcenter" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-            Micro learnings
+            Microlearning
           </h4>
         </a>
       </div>
@@ -60,13 +60,20 @@
             <form>
               <!-- search -->
               <div class="row prelative mt10px">
-                <app-hwp-search-bar [searchinp]="searchedText" [placeholder]="'Search for a topic'"
+                <app-hwp-search-bar [searchinp]="searchedText" [placeholder]="'Search microlearning'"
                   (textBoxEvent)="searchMicroLearning($event)"></app-hwp-search-bar>
                 <div class="col-md-12 col-sm-12 col-xs-12 p0"></div>
               </div>
               <!-- /search -->
 
-
+              <div class="row mt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h4 class="mtb0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                    Quick, thoughtful takeaways that take just a few minutes, and leave you with something useful you
+                    can apply straight away.
+                  </h4>
+                </div>
+              </div>
 
               <!-- overflow buttons -->
               <div class="row mtb20px">
