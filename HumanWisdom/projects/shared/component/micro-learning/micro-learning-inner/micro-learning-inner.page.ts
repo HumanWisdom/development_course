@@ -259,7 +259,7 @@ export class MicroLearningInnerPage implements OnInit {
   }
 
   // Still keeping this just in case, but forceRoute above is more aggressive
-  handleContentClick(event: MouseEvent) {
+  handleContentClick(event: any) {
     const target = event.target as HTMLElement;
     const anchor = target.closest('a');
     if (anchor) {
