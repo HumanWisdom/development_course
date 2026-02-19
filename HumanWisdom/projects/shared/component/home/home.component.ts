@@ -920,7 +920,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       card.isRead === 0
     );
 
-    if (isUnseen) {
+    const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
+
+    if (isUnseen && !isMicroLearning) {
       console.log('Marking card as seen in state:', card.id);
       this.homeStateService.markCardAsSeen(card.id);
       // Update the card immediately for UI feedback
