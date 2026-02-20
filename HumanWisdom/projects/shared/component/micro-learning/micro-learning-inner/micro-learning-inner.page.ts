@@ -55,8 +55,14 @@ export class MicroLearningInnerPage implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.contentId = params.get('id');
+      if (!this.contentId) {
+        this.contentId = localStorage.getItem("m_learningId");
+      }
       if (this.contentId && this.contentId.includes('?')) {
         this.contentId = this.contentId.split('?')[0];
+      }
+      if (this.contentId) {
+        localStorage.setItem("m_learningId", this.contentId);
       }
       this.checkIfComingFromEnd();
       this.getMicroLearningScreens();
