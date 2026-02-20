@@ -98,7 +98,7 @@ export class WisdomScorePage implements OnInit {
   }
 
   navigateToRecommendation(item: any) {
-    if (!this.isSubscriber && item.module !== 'BLOG') {
+    if (!this.isSubscriber && item.module !== 'BLOG' && item.isFree != 1) {
       const isTeenagerRoute = this.router.url.includes('/teenagers/');
       const trialRedirectPath = isTeenagerRoute
         ? '/teenagers/subscription/start-your-free-trial'
