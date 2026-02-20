@@ -85,7 +85,7 @@ export class MicroLearningInnerPage implements OnInit {
         } else if (savedIndex !== null) {
           this.currentScreenIndex = parseInt(savedIndex);
           // Safety check
-          if (this.currentScreenIndex > res.length) {
+          if (this.currentScreenIndex >= res.length) {
             this.currentScreenIndex = 0;
           }
         } else {
