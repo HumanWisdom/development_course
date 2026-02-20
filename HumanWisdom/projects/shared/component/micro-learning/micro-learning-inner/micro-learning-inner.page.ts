@@ -55,8 +55,14 @@ export class MicroLearningInnerPage implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.contentId = params.get('id');
+      if (!this.contentId) {
+        this.contentId = localStorage.getItem("m_learningId");
+      }
       if (this.contentId && this.contentId.includes('?')) {
         this.contentId = this.contentId.split('?')[0];
+      }
+      if (this.contentId) {
+        localStorage.setItem("m_learningId", this.contentId);
       }
       this.checkIfComingFromEnd();
       this.getMicroLearningScreens();
@@ -80,9 +86,11 @@ export class MicroLearningInnerPage implements OnInit {
         this.screensList = res;
         
         const savedIndex = localStorage.getItem('ml_index_' + this.contentId);
+        const persist = localStorage.getItem('persist_ml_index') === 'true';
+
         if (this.isFromEnd) {
           this.currentScreenIndex = res.length;
-        } else if (savedIndex !== null) {
+        } else if (persist && savedIndex !== null) {
           this.currentScreenIndex = parseInt(savedIndex);
           // Safety check
           if (this.currentScreenIndex >= res.length) {
@@ -91,6 +99,9 @@ export class MicroLearningInnerPage implements OnInit {
         } else {
           this.currentScreenIndex = 0;
         }
+
+        // Always clear internal persist flag after check
+        localStorage.removeItem('persist_ml_index');
 
         this.updateContent();
       }
@@ -201,6 +212,8 @@ export class MicroLearningInnerPage implements OnInit {
   }
 
   backToDashboard() {
+    localStorage.removeItem('ml_index_' + this.contentId);
+    localStorage.removeItem('persist_ml_index');
     this.router.navigate([`/${SharedService.getprogramName()}/micro-learning`]);
   }
 
@@ -230,6 +243,8 @@ export class MicroLearningInnerPage implements OnInit {
 
   routeUrl(url: string) {
     if (!url) return;
+    // Mark as internal link navigation to persist screen index
+    localStorage.setItem('persist_ml_index', 'true');
     const prefix = SharedService.getprogramName();
     if (url.startsWith('/')) {
       // Check if it already starts with a program prefix
