@@ -39,7 +39,7 @@ export class QuestionAnswersSelection implements OnInit {
   progress = 0;
 
   @Input()
-  questionAndAns = JSON.parse(localStorage.getItem("questionAns"));
+  questionAndAns: any;
 
   @Input()
   question: any;
@@ -84,6 +84,7 @@ export class QuestionAnswersSelection implements OnInit {
   public content = '';
   btnDisabled = true;
   prevBtnDisabled = false;
+  loading = false;
   loginResponse: any;
 
 
@@ -103,6 +104,62 @@ export class QuestionAnswersSelection implements OnInit {
 
   ngOnInit() {
     this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.questionAndAns = JSON.parse(localStorage.getItem("questionAns"));
+    if (!this.questionAndAns || this.questionAndAns.length === 0) {
+      this.getQuestions();
+    }
+  }
+
+  getQuestions() {
+    this.loading = true;
+    this.service.clickModule(this.moduleId, this.userId)
+      .subscribe(res => {
+        let qrList = res
+        let questionA = qrList.ListOfQueOpts;
+        let obj = {};
+        let result = [];
+        questionA.forEach((d) => {
+          let dataObj = {};
+
+          if (obj[d['Que']]?.OptId) {
+            dataObj['OptId'] = obj[d['Que']]['OptId'].concat(d['OptId'])
+          } else {
+            dataObj['OptId'] = [d['OptId']]
+          }
+
+          if (obj[d['Que']]?.OptStr) {
+            dataObj['OptStr'] = obj[d['Que']]['OptStr'].concat(d['OptStr'])
+          } else {
+            dataObj['OptStr'] = [d['OptStr']]
+          }
+
+          if (obj[d['Que']]?.Points) {
+            dataObj['Points'] = obj[d['Que']]['Points'].concat(d['Points'])
+          } else {
+            dataObj['Points'] = [d['Points']]
+          }
+          obj[d['Que']] = dataObj;
+        });
+
+        for (const property in obj) {
+          let objRes = {
+            "Que": property,
+            "OptStr": obj[property]['OptStr'],
+            "Points": obj[property]['Points'],
+            "OptId": obj[property]['OptId'],
+          };
+          result.push(objRes);
+        }
+
+        this.questionAndAns = result;
+        localStorage.setItem("questionAns", JSON.stringify(this.questionAndAns))
+        this.loading = false;
+      },
+        e => {
+          console.log(e);
+          this.loading = false;
+        }
+      )
   }
 
   checkOption(index, OptId, i, strSelected) {
