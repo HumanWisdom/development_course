@@ -37183,5 +37183,10 @@ background-color: #EEA170;
 ul.symptom-list li {
   margin-bottom: 12px;
   line-height: 140%;
+  margin-left: 18px;
 }
 
+div.contentdiv p {
+   
+    line-height: 140% !important;
+}
