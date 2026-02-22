@@ -1,266 +1,392 @@
-// import { ComponentFixture, TestBed, waitForAsync, fakeAsync, tick } from '@angular/core/testing';
-// import { PodcastTocPage } from './podcast-toc.page';
-// import { Router, ActivatedRoute } from '@angular/router';
-// import { Location } from '@angular/common';
-// import { NgNavigatorShareService } from 'ng-navigator-share';
-// import { DomSanitizer } from '@angular/platform-browser';
-// import { Platform } from '@angular/cdk/platform';
-// import { Meta, Title } from '@angular/platform-browser';
-// import { LogEventService } from '../../../services/log-event.service';
-// import { CommonService } from '../../../services/common.service';
-// import { SharedService } from '../../../services/shared.service';
-// import { NavigationService } from '../../../services/navigation.service';
-// import { of, throwError } from 'rxjs';
-// import { ProgramType } from '../../../models/program-model';
-// import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { PodcastTocPage } from './podcast-toc.page';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { NgNavigatorShareService } from 'ng-navigator-share';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Platform } from '@angular/cdk/platform';
+import { Meta, Title } from '@angular/platform-browser';
+import { LogEventService } from '../../../services/log-event.service';
+import { CommonService } from '../../../services/common.service';
+import { SharedService } from '../../../services/shared.service';
+import { NavigationService } from '../../../services/navigation.service';
+import { of } from 'rxjs';
+import { ProgramType } from '../../../models/program-model';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-// describe('PodcastTocPage', () => {
-//     let component: PodcastTocPage;
-//     let fixture: ComponentFixture<PodcastTocPage>;
-//     let mockRouter: jasmine.SpyObj<Router>;
-//     let mockActivatedRoute: any;
-//     let mockLocation: jasmine.SpyObj<Location>;
-//     let mockNgNavigatorShareService: jasmine.SpyObj<NgNavigatorShareService>;
-//     let mockSanitizer: jasmine.SpyObj<DomSanitizer>;
-//     let mockPlatform: any;
-//     let mockMeta: jasmine.SpyObj<Meta>;
-//     let mockTitle: jasmine.SpyObj<Title>;
-//     let mockLogEventService: jasmine.SpyObj<LogEventService>;
-//     let mockCommonService: jasmine.SpyObj<CommonService>;
-//     let mockNavigationService: jasmine.SpyObj<NavigationService>;
-//     let programIdSpy: jasmine.Spy;
+describe('PodcastTocPage', () => {
+  let component: PodcastTocPage;
+  let fixture: ComponentFixture<PodcastTocPage>;
+  let mockRouter: jasmine.SpyObj<Router>;
+  let mockActivatedRoute: { snapshot: { paramMap: { get: jasmine.Spy }; fragment: string | null } };
+  let mockLocation: jasmine.SpyObj<Location>;
+  let mockNgNavigatorShareService: jasmine.SpyObj<NgNavigatorShareService>;
+  let mockSanitizer: jasmine.SpyObj<DomSanitizer>;
+  let mockCommonService: jasmine.SpyObj<CommonService>;
+  let mockNavigationService: jasmine.SpyObj<NavigationService>;
+  let mockProgramId: number;
 
-//     const mockPodcastList = [
-//         {
-//             PodcastID: 1,
-//             Title: 'Podcast 1',
-//             MediaUrl: 'https://test.com/audio1.mp3',
-//             ProgIDs: ['9'],
-//             PreferenceIDs: '1,2',
-//             searchtags: 'tag1',
-//             isFree: '1'
-//         },
-//         {
-//             PodcastID: 2,
-//             Title: 'Podcast 2',
-//             MediaUrl: 'https://test.com/audio2.mp3',
-//             ProgIDs: ['9'],
-//             PreferenceIDs: '3',
-//             searchtags: 'tag2',
-//             isFree: '0'
-//         }
-//     ];
+  const mockPodcastList = [
+    {
+      PodcastID: 1,
+      Title: 'Podcast 1',
+      MediaUrl: 'https://test.com/audio1.mp3',
+      ProgIDs: ['9'],
+      PreferenceIDs: '1,2',
+      searchtags: 'tag1',
+      isFree: '1',
+      IsMiniPodcast: '0'
+    },
+    {
+      PodcastID: 2,
+      Title: 'Podcast 2',
+      MediaUrl: 'https://d1tenzemoxuh75.cloudfront.net/path/audio2.mp3',
+      ProgIDs: ['9'],
+      PreferenceIDs: '3',
+      searchtags: 'tag2',
+      isFree: '0',
+      IsMiniPodcast: '0'
+    }
+  ];
 
-//     beforeEach(waitForAsync(() => {
-//         mockRouter = jasmine.createSpyObj('Router', ['navigate', 'url']);
-//         // Mock router.url as valid string
-//         (mockRouter as any).url = '/adults/podcast';
+  beforeEach(async () => {
+    mockRouter = jasmine.createSpyObj('Router', ['navigate']);
+    mockRouter.navigate.and.returnValue(Promise.resolve(true));
+    Object.defineProperty(mockRouter, 'url', {
+      get: () => '/adults/podcast',
+      configurable: true
+    });
 
-//         mockLocation = jasmine.createSpyObj('Location', ['back']);
-//         mockNgNavigatorShareService = jasmine.createSpyObj('NgNavigatorShareService', ['share', 'canShare']);
-//         mockSanitizer = jasmine.createSpyObj('DomSanitizer', ['bypassSecurityTrustResourceUrl']);
-//         mockPlatform = { isBrowser: true };
-//         mockMeta = jasmine.createSpyObj('Meta', ['updateTag']);
-//         mockTitle = jasmine.createSpyObj('Title', ['setTitle']);
-//         mockLogEventService = jasmine.createSpyObj('LogEventService', ['logEvent']);
-//         mockCommonService = jasmine.createSpyObj('CommonService', ['GetPodcastList', 'clickPodcast']);
-//         mockNavigationService = jasmine.createSpyObj('NavigationService', ['navigateToBackLink']);
+    const paramMapGet = jasmine.createSpy('get').and.returnValue('all');
+    mockActivatedRoute = {
+      snapshot: {
+        paramMap: { get: paramMapGet },
+        fragment: null
+      }
+    };
 
-//         mockActivatedRoute = {
-//             snapshot: {
-//                 paramMap: {
-//                     get: jasmine.createSpy('get').and.returnValue('all')
-//                 }
-//             }
-//         };
+    mockLocation = jasmine.createSpyObj('Location', ['back']);
+    mockNgNavigatorShareService = jasmine.createSpyObj('NgNavigatorShareService', ['share']);
+    mockNgNavigatorShareService.share.and.returnValue(Promise.resolve());
 
-//         mockCommonService.GetPodcastList.and.returnValue(of(mockPodcastList));
-//         mockCommonService.clickPodcast.and.returnValue(of(true));
-//         mockSanitizer.bypassSecurityTrustResourceUrl.and.callFake((url) => url as any);
+    mockSanitizer = jasmine.createSpyObj('DomSanitizer', ['bypassSecurityTrustResourceUrl']);
+    mockSanitizer.bypassSecurityTrustResourceUrl.and.callFake((url: string) => url as any);
 
-//         // Default ProgramId spy
-//         programIdSpy = spyOnProperty(SharedService, 'ProgramId', 'get').and.returnValue(ProgramType.Adults);
-//         spyOn(SharedService, 'getPreferenceData').and.returnValue([]);
-//         spyOn(SharedService, 'getprogramName').and.returnValue('adults');
+    mockCommonService = jasmine.createSpyObj('CommonService', ['GetPodcastList', 'clickPodcast']);
+    mockCommonService.GetPodcastList.and.returnValue(of(mockPodcastList));
+    mockCommonService.clickPodcast.and.returnValue(of(null));
 
-//         TestBed.configureTestingModule({
-//             declarations: [PodcastTocPage],
-//             providers: [
-//                 { provide: Router, useValue: mockRouter },
-//                 { provide: ActivatedRoute, useValue: mockActivatedRoute },
-//                 { provide: Location, useValue: mockLocation },
-//                 { provide: NgNavigatorShareService, useValue: mockNgNavigatorShareService },
-//                 { provide: DomSanitizer, useValue: mockSanitizer },
-//                 { provide: Platform, useValue: mockPlatform },
-//                 { provide: Meta, useValue: mockMeta },
-//                 { provide: Title, useValue: mockTitle },
-//                 { provide: LogEventService, useValue: mockLogEventService },
-//                 { provide: CommonService, useValue: mockCommonService },
-//                 { provide: NavigationService, useValue: mockNavigationService }
-//             ],
-//             schemas: [NO_ERRORS_SCHEMA]
-//         }).compileComponents();
-//     }));
+    mockNavigationService = jasmine.createSpyObj('NavigationService', ['navigateToBackLink']);
+    mockNavigationService.navigateToBackLink.and.returnValue(null);
 
-//     beforeEach(() => {
-//         localStorage.clear();
-//         fixture = TestBed.createComponent(PodcastTocPage);
-//         component = fixture.componentInstance;
-//         fixture.detectChanges();
-//     });
+    mockProgramId = ProgramType.Adults;
+    Object.defineProperty(SharedService, 'ProgramId', {
+      get: () => mockProgramId,
+      configurable: true
+    });
+    spyOn(SharedService, 'getPreferenceData').and.returnValue([
+      { id: '1', displayName: 'Category1', active: false, name: 'cat1' },
+      { id: '2', displayName: 'Category2', active: false, name: 'cat2' }
+    ]);
+    spyOn(SharedService, 'getprogramName').and.returnValue('adults');
 
-//     afterEach(() => {
-//         localStorage.clear();
-//     });
+    await TestBed.configureTestingModule({
+      declarations: [PodcastTocPage],
+      providers: [
+        { provide: Router, useValue: mockRouter },
+        { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        { provide: Location, useValue: mockLocation },
+        { provide: NgNavigatorShareService, useValue: mockNgNavigatorShareService },
+        { provide: DomSanitizer, useValue: mockSanitizer },
+        { provide: Platform, useValue: { IOS: false, SAFARI: false } },
+        { provide: Meta, useValue: jasmine.createSpyObj('Meta', ['updateTag']) },
+        { provide: Title, useValue: jasmine.createSpyObj('Title', ['setTitle']) },
+        { provide: LogEventService, useValue: jasmine.createSpyObj('LogEventService', ['logEvent']) },
+        { provide: CommonService, useValue: mockCommonService },
+        { provide: NavigationService, useValue: mockNavigationService }
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
 
-//     it('should create', () => {
-//         expect(component).toBeTruthy();
-//     });
+    fixture = TestBed.createComponent(PodcastTocPage);
+    component = fixture.componentInstance;
+  });
 
-//     describe('ngOnInit', () => {
-//         it('should set isAdults to true if ProgramId is Adults', () => {
-//             // Re-create component to trigger constructor logic
-//             programIdSpy.and.returnValue(ProgramType.Adults);
-//             fixture = TestBed.createComponent(PodcastTocPage);
-//             component = fixture.componentInstance;
-//             expect(component.isAdults).toBeTrue();
-//         });
+  beforeEach(() => {
+    localStorage.clear();
+    localStorage.setItem('isloggedin', 'T');
+    localStorage.setItem('Subscriber', '1');
+    localStorage.setItem('token', JSON.stringify('token'));
+  });
 
-//         it('should set isAdults to false if ProgramId is not Adults', () => {
-//             programIdSpy.and.returnValue(ProgramType.Teenagers);
-//             fixture = TestBed.createComponent(PodcastTocPage);
-//             component = fixture.componentInstance;
-//             expect(component.isAdults).toBeFalse();
-//         });
+  afterEach(() => {
+    localStorage.clear();
+  });
 
-//         it('should call getPodcast and set address if isdefaultShow is false', fakeAsync(() => {
-//             component.isdefaultShow = false;
-//             component.ngOnInit();
-//             tick(100);
-//             expect(mockCommonService.GetPodcastList).toHaveBeenCalled();
-//             expect(component.address).toBe('/adults/podcast');
-//         }));
+  describe('Component Initialization', () => {
+    it('should create the component', () => {
+      expect(component).toBeTruthy();
+    });
 
-      
-//         it('should log event', fakeAsync(() => {
-//             component.ngOnInit();
-//             tick(100);
-//             expect(mockLogEventService.logEvent).toHaveBeenCalledWith('view_humanwisdom_podcast');
-//         }));
+    it('should set isAdults to true when ProgramId is Adults', () => {
+      mockProgramId = ProgramType.Adults;
+      Object.defineProperty(SharedService, 'ProgramId', {
+        get: () => mockProgramId,
+        configurable: true
+      });
+      fixture = TestBed.createComponent(PodcastTocPage);
+      component = fixture.componentInstance;
+      expect(component.isAdults).toBe(true);
+    });
 
-//         it('should set isSubscriber based on localStorage', fakeAsync(() => {
-//             localStorage.setItem('isloggedin', 'T');
-//             localStorage.setItem('Subscriber', '1');
-//             component.ngOnInit();
-//             tick(100);
-//             expect(component.isSubscriber).toBeTrue();
+    it('should set isAdults to false when ProgramId is Teenagers', () => {
+      mockProgramId = ProgramType.Teenagers;
+      Object.defineProperty(SharedService, 'ProgramId', {
+        get: () => mockProgramId,
+        configurable: true
+      });
+      fixture = TestBed.createComponent(PodcastTocPage);
+      component = fixture.componentInstance;
+      expect(component.isAdults).toBe(false);
+    });
 
-//             localStorage.setItem('Subscriber', '0');
-//             component.ngOnInit();
-//             tick(100);
-//             expect(component.isSubscriber).toBeFalse();
-//         }));
-//     });
+    it('should set prefData from SharedService.getPreferenceData', () => {
+      expect(component.prefData).toBeDefined();
+      expect(SharedService.getPreferenceData).toHaveBeenCalled();
+    });
+  });
 
-//     describe('goBack', () => {
-//         it('should navigate to back link if available', () => {
-//             mockNavigationService.navigateToBackLink.and.returnValue('/home');
-//             component.goBack();
-//             expect(mockRouter.navigate).toHaveBeenCalledWith(['/home']);
-//         });
+  describe('ngOnInit', () => {
+    it('should call getPodcast and set address when isdefaultShow is false', fakeAsync(() => {
+      component.isdefaultShow = false;
+      component.ngOnInit();
+      tick();
+      expect(mockCommonService.GetPodcastList).toHaveBeenCalled();
+      expect(component.address).toBe('/adults/podcast');
+    }));
 
-//         it('should interact with location back if no back link', () => {
-//             mockNavigationService.navigateToBackLink.and.returnValue(null);
-//             component.goBack();
-//             expect(mockLocation.back).toHaveBeenCalled();
-//         });
-//     });
+    it('should not call getPodcast when isdefaultShow is true', () => {
+      component.isdefaultShow = true;
+      component.ngOnInit();
+      expect(mockCommonService.GetPodcastList).not.toHaveBeenCalled();
+    });
 
-//     describe('getPodcast', () => {
-//         it('should filter podcast list based on ProgramId', () => {
-//             programIdSpy.and.returnValue(ProgramType.Adults); // ID 9
-//             // In mockPodcastList both have ProgIDs: ['9']
-//             // SharedService.ProgramId.toString() is '9' if ProgramType.Adults=9 (assuming)
-//             // Actually ProgramType is enum.
-//             // SharedService.ProgramId is usually number.
-//             // We need to check ProgramType definition or assume.
-//             // In component: x.ProgIDs.includes(SharedService.ProgramId.toString())
-//             // If ProgramType.Adults is 9.
+    it('should set meta tags and log event', () => {
+      const mockLogEventService = TestBed.inject(LogEventService) as jasmine.SpyObj<LogEventService>;
+      component.isdefaultShow = true;
+      component.ngOnInit();
+      expect(mockLogEventService.logEvent).toHaveBeenCalledWith('view_humanwisdom_podcast');
+    });
 
-//             component.getPodcast();
-//             expect(component.podcastList.length).toBe(2);
-//         });
-//     });
+    it('should set tag from route param when tag is sorrow', () => {
+      mockActivatedRoute.snapshot.paramMap.get.and.returnValue('sorrow');
+      component.isdefaultShow = true;
+      component.ngOnInit();
+      expect(component.tag).toBe('sorrow');
+    });
 
-//     describe('audioevent', () => {
-//         it('should show modal if not subscriber and podcast is paid', () => {
-//             localStorage.setItem('Subscriber', '0');
-//             const data = { PodcastID: 2, MediaUrl: 'url', Title: 'Title', isFree: '0' };
-//             component.audioevent(data);
-//             expect(component.showModal).toBeTrue();
-//         });
+    it('should set isSubscriber from localStorage', () => {
+      localStorage.setItem('Subscriber', '1');
+      component.ngOnInit();
+      expect(component.isSubscriber).toBe(true);
+    });
 
-//         it('should navigate if subscriber', () => {
-//             localStorage.setItem('Subscriber', '1');
-//             const data = { PodcastID: 2, MediaUrl: 'url', Title: 'Title', isFree: '0' };
-//             component.audioevent(data);
-//             expect(mockRouter.navigate).toHaveBeenCalled();
-//             expect(mockCommonService.clickPodcast).toHaveBeenCalled();
-//         });
+    it('should set isSubscriber to false when not subscriber', () => {
+      localStorage.setItem('Subscriber', '0');
+      component.ngOnInit();
+      expect(component.isSubscriber).toBe(false);
+    });
+  });
 
-//         it('should navigate if free podcast even if not subscriber', () => {
-//             localStorage.setItem('Subscriber', '0');
-//             // Logic in component says: if (sub === '0' && data.PodcastID >= 2) -> show modal.
-//             // Wait, PodcastID >= 2 is the check?
-//             // Yes: if (sub === '0' && data.PodcastID >= 2)
+  describe('goBack', () => {
+    it('should navigate to back link when available', () => {
+      mockNavigationService.navigateToBackLink.and.returnValue('/home');
+      component.goBack();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/home']);
+    });
 
-//             // Case 1: PodcastID 1 (assumed free based on ID?? logic is weird but let's follow code)
-//             const data = { PodcastID: 1, MediaUrl: 'url', Title: 'Title', isFree: '1' };
-//             component.audioevent(data);
-//             expect(mockRouter.navigate).toHaveBeenCalled();
-//         });
-//     });
+    it('should call location.back when no back link', () => {
+      mockNavigationService.navigateToBackLink.and.returnValue(null);
+      component.goBack();
+      expect(mockLocation.back).toHaveBeenCalled();
+    });
+  });
 
-//     describe('searchPodcast', () => {
-//         it('should filter list by search text', () => {
-//             component.allpodcastList = mockPodcastList;
-//             component.searchPodcast('Podcast 1');
-//             expect(component.podcastList.length).toBe(1);
-//             expect(component.podcastList[0].Title).toBe('Podcast 1');
-//         });
+  describe('getPodcast', () => {
+    it('should filter podcast list by ProgramId and set podcastList', fakeAsync(() => {
+      mockProgramId = ProgramType.Adults;
+      Object.defineProperty(SharedService, 'ProgramId', {
+        get: () => mockProgramId,
+        configurable: true
+      });
+      fixture = TestBed.createComponent(PodcastTocPage);
+      component = fixture.componentInstance;
+      component.getPodcast();
+      tick();
+      expect(component.podcastList.length).toBe(2);
+      expect(component.allpodcastList.length).toBe(2);
+    }));
 
-//         it('should reset list if search is empty', () => {
-//             component.allpodcastList = mockPodcastList;
-//             component.searchPodcast('');
-//             expect(component.podcastList.length).toBe(2);
-//         });
-//     });
+    it('should call getUserPref with fragment when fragment matches', fakeAsync(() => {
+      mockActivatedRoute.snapshot.fragment = 'category1';
+      (SharedService.getPreferenceData as jasmine.Spy).and.returnValue([
+        { id: '1', displayName: 'Category1', active: false, name: 'cat1' }
+      ]);
+      fixture = TestBed.createComponent(PodcastTocPage);
+      component = fixture.componentInstance;
+      spyOn(component, 'getUserPref');
+      component.getPodcast();
+      tick();
+      expect(component.getUserPref).toHaveBeenCalledWith('1');
+    }));
+  });
 
-//     describe('getUserPref', () => {
-//         it('should filter by preference', () => {
-//             component.allpodcastList = mockPodcastList;
-//             component.getUserPref('1'); // PreferenceIDs: '1,2' matches
-//             expect(component.podcastList.length).toBe(1);
-//             expect(component.podcastList[0].PodcastID).toBe(1);
-//         });
+  describe('audioevent', () => {
+    it('should show modal when not subscriber and PodcastID >= 2', () => {
+      localStorage.setItem('Subscriber', '0');
+      const data = { PodcastID: 2, MediaUrl: 'url', Title: 'Title', isFree: '0' };
+      component.audioevent(data);
+      expect(component.showModal).toBe(true);
+      expect(mockRouter.navigate).not.toHaveBeenCalled();
+    });
 
-//         it('should show all if type is all', () => {
-//             component.allpodcastList = mockPodcastList;
-//             component.getUserPref('all');
-//             expect(component.podcastList.length).toBe(2);
-//         });
-//     });
+    it('should navigate when subscriber', fakeAsync(() => {
+      localStorage.setItem('Subscriber', '1');
+      const data = {
+        PodcastID: 1,
+        MediaUrl: '/path/audio.mp3',
+        Title: 'My Podcast',
+        isFree: '1'
+      };
+      component.audioevent(data);
+      tick();
+      expect(mockCommonService.clickPodcast).toHaveBeenCalledWith(1);
+      expect(mockRouter.navigate).toHaveBeenCalled();
+    }));
 
-//     describe('onModalClose', () => {
-//         it('should close modal', () => {
-//             component.showModal = true;
-//             component.onModalClose('close');
-//             expect(component.showModal).toBeFalse();
-//         });
+    it('should navigate when free podcast (PodcastID 1) and not subscriber', fakeAsync(() => {
+      localStorage.setItem('Subscriber', '0');
+      const data = {
+        PodcastID: 1,
+        MediaUrl: '/audio.mp3',
+        Title: 'Free',
+        isFree: '1'
+      };
+      component.audioevent(data);
+      tick();
+      expect(component.showModal).toBe(false);
+      expect(mockRouter.navigate).toHaveBeenCalled();
+    }));
+  });
 
-//         it('should navigate to free trial if ok', () => {
-//             component.onModalClose('ok');
-//             expect(mockRouter.navigate).toHaveBeenCalledWith(['adults', 'subscription', 'start-your-free-trial']);
-//         });
-//     });
-// });
+  describe('searchPodcast', () => {
+    it('should filter list by search text', () => {
+      component.allpodcastList = mockPodcastList as any;
+      component.searchPodcast('Podcast 1');
+      expect(component.podcastList.length).toBe(1);
+      expect(component.podcastList[0].Title).toBe('Podcast 1');
+    });
+
+    it('should filter by searchtags', () => {
+      component.allpodcastList = mockPodcastList as any;
+      component.searchPodcast('tag2');
+      expect(component.podcastList.length).toBe(1);
+      expect(component.podcastList[0].Title).toBe('Podcast 2');
+    });
+
+    it('should reset to all when search is empty', () => {
+      component.allpodcastList = mockPodcastList as any;
+      component.searchPodcast('Podcast 1');
+      component.searchPodcast('');
+      expect(component.podcastList).toEqual(component.allpodcastList);
+    });
+  });
+
+  describe('getimage', () => {
+    it('should return url with padded id for id <= 9', () => {
+      expect(component.getimage(5)).toContain('05.webp');
+    });
+
+    it('should return url with id as-is for id > 9', () => {
+      expect(component.getimage(12)).toContain('12.webp');
+    });
+  });
+
+  describe('getUserPref', () => {
+    beforeEach(() => {
+      component.allpodcastList = [...mockPodcastList] as any;
+    });
+
+    it('should show all when type is all', () => {
+      component.getUserPref('all');
+      expect(component.podcastList).toEqual(component.allpodcastList);
+      expect(component.selectedPref).toBe('all');
+    });
+
+    it('should filter by PreferenceIDs when type matches', () => {
+      component.getUserPref('1');
+      expect(component.podcastList.length).toBe(1);
+      expect(component.podcastList[0].PreferenceIDs).toContain('1');
+    });
+
+    it('should filter items without PreferenceIDs when type is 0', () => {
+      component.allpodcastList = [
+        ...mockPodcastList,
+        { PodcastID: 3, PreferenceIDs: undefined, Title: 'No Pref' }
+      ] as any;
+      component.getUserPref('0');
+      expect(component.podcastList.some((p: any) => !p.PreferenceIDs)).toBe(true);
+    });
+
+    it('should filter MiniPodcast when type is MiniPodcast', () => {
+      component.allpodcastList = [
+        ...mockPodcastList,
+        { PodcastID: 3, IsMiniPodcast: '1', Title: 'Mini' }
+      ] as any;
+      component.getUserPref('MiniPodcast');
+      expect(component.podcastList.every((p: any) => p.IsMiniPodcast === '1')).toBe(true);
+    });
+  });
+
+  describe('share', () => {
+    it('should call ngNavigatorShareService.share', async () => {
+      component.address = '/adults/podcast';
+      await component.share();
+      expect(mockNgNavigatorShareService.share).toHaveBeenCalled();
+      const args = mockNgNavigatorShareService.share.calls.mostRecent().args[0];
+      expect(args.title).toBe('HappierMe Program');
+      expect(args.text).toBe('Hey, check out the HappierMe Program');
+      expect(typeof args.url).toBe('string');
+    });
+  });
+
+  describe('onModalClose', () => {
+    it('should close modal on any event', () => {
+      component.showModal = true;
+      component.onModalClose('close');
+      expect(component.showModal).toBe(false);
+    });
+
+    it('should navigate to free trial when event is ok', () => {
+      component.showModal = true;
+      component.onModalClose('ok');
+      expect(component.showModal).toBe(false);
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['adults', 'subscription', 'start-your-free-trial']);
+    });
+  });
+
+  describe('getSourceForPodBin', () => {
+    it('should return all playlist url when tag is all', () => {
+      component.tag = 'all';
+      const result = component.getSourceForPodBin();
+      expect(mockSanitizer.bypassSecurityTrustResourceUrl).toHaveBeenCalled();
+      expect(mockSanitizer.bypassSecurityTrustResourceUrl.calls.mostRecent().args[0]).toContain('limit=100');
+    });
+
+    it('should return filtered url when tag is not all', () => {
+      component.tag = 'sorrow';
+      component.getSourceForPodBin();
+      expect(mockSanitizer.bypassSecurityTrustResourceUrl.calls.mostRecent().args[0]).toContain('filter=tags');
+    });
+  });
+});
