@@ -136,14 +136,41 @@ describe('HomeStateService', () => {
 
   describe('clearProgramData', () => {
     it('should remove program data from localStorage', () => {
-      // Set some state (stored under Adults = 9)
       service.setSectionExpanded('s1', true);
 
       service.clearProgramData(ProgramType.Adults);
 
-      // State in memory may still exist; verify localStorage was cleared
       const key = `homeState_${ProgramType.Adults}`;
       expect(localStorage.getItem(key)).toBeNull();
+    });
+  });
+
+  describe('clearOtherProgramData', () => {
+    it('should clear Teenagers data when current is Adults', () => {
+      Object.defineProperty(SharedService, 'ProgramId', {
+        get: () => ProgramType.Adults,
+        configurable: true
+      });
+      const teenKey = `homeState_${ProgramType.Teenagers}`;
+      localStorage.setItem(teenKey, JSON.stringify({ expandedSections: { s1: true } }));
+
+      service.clearOtherProgramData();
+
+      expect(localStorage.getItem(teenKey)).toBeNull();
+    });
+
+    it('should clear Adults data when current is Teenagers', () => {
+      Object.defineProperty(SharedService, 'ProgramId', {
+        get: () => ProgramType.Teenagers,
+        configurable: true
+      });
+      const newService = new HomeStateService();
+      const adultKey = `homeState_${ProgramType.Adults}`;
+      localStorage.setItem(adultKey, JSON.stringify({ expandedSections: { s1: true } }));
+
+      newService.clearOtherProgramData();
+
+      expect(localStorage.getItem(adultKey)).toBeNull();
     });
   });
 
