@@ -1464,6 +1464,12 @@ body {
     text-align: center !important;
   }
 
+  /* Ensure owl containers create stacking context for sap links */
+  .owl_blog,
+  .owl_coach {
+    position: relative;
+  }
+
   /* Center align "Find out more" and similar links */
   a[href*="teenagers"],
   a[href*="blog"],

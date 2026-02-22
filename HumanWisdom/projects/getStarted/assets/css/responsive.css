@@ -6,7 +6,50 @@
 @media (max-width: 412px) {
   .div_blog {
     width: 300px !important;
-    height: auto !important;
+    height: 310px !important;
+    overflow: hidden;
+  }
+  .div_blog img {
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+  }
+  .div_blog .row:last-child,
+  .div_blog .row:last-child [class^="col-"] {
+    height: 130px !important;
+    min-height: 130px !important;
+  }
+  .div_blog h4 {
+    margin: 20px 16px !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Consistent blog card height on mobile */
+@media (min-width: 413px) and (max-width: 767px) {
+  .owl_blog .div_blog {
+    height: 380px !important;
+    overflow: hidden;
+  }
+  .owl_blog .div_blog img {
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+  }
+  .owl_blog .div_blog .row:last-child,
+  .owl_blog .div_blog .row:last-child [class^="col-"] {
+    height: 130px !important;
+    min-height: 130px !important;
+  }
+  .owl_blog .div_blog h4 {
+    margin: 20px 16px !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    box-sizing: border-box;
   }
 }
 
