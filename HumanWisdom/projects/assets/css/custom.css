@@ -37684,6 +37684,7 @@ background-color: #EEA170;
 .symptom-list li {
   margin-bottom: 12px;
   line-height: 140%;
+  margin-left: 18px;
 }
 
 div.contentdiv p {

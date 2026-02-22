@@ -920,7 +920,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       card.isRead === 0
     );
 
-    if (isUnseen) {
+    const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
+
+    if (isUnseen && !isMicroLearning) {
       console.log('Marking card as seen in state:', card.id);
       this.homeStateService.markCardAsSeen(card.id);
       // Update the card immediately for UI feedback
@@ -954,6 +956,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       console.warn('Failed to persist short video data', e);
     }
     if (card.path && card.path.includes('?')) {
+      const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
+      if (isMicroLearning) {
+        const parts = card.path.split('/');
+        const id = parts[parts.length - 1]?.split('?')[0];
+        if (id) {
+          localStorage.removeItem('ml_index_' + id);
+          localStorage.removeItem('persist_ml_index');
+        }
+      }
       const [basePath, queryString] = card.path.split('?');
       const queryParams = new URLSearchParams(queryString);
       const queryObj: any = {};
@@ -972,6 +983,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
     if (card.path) {
+      const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
+      if (isMicroLearning) {
+        const parts = card.path.split('/');
+        const id = parts[parts.length - 1];
+        if (id) {
+          localStorage.removeItem('ml_index_' + id);
+          localStorage.removeItem('persist_ml_index');
+        }
+      }
       try {
         if (card.path.includes('youtubelink')) {
           this.router.navigate([card.path], { state: { title: card.title } });

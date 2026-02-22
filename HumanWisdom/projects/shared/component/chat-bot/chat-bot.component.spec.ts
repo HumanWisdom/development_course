@@ -27,6 +27,7 @@ describe('ChatBotComponent', () => {
   let isTypingSubject: Subject<boolean>;
   let sessionIdSubject: Subject<string | null>;
   let activeSuggestionsSubject: Subject<string[]>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockChatbotResponse = {
     status: 'success' as const,
@@ -93,7 +94,7 @@ describe('ChatBotComponent', () => {
       sessionId$: sessionIdSubject.asObservable(),
       activeSuggestions$: activeSuggestionsSubject.asObservable()
     });
-    
+
     // Setup default return values for updateMessage
     mockChatStore.updateMessage.and.returnValue(undefined);
 
@@ -110,9 +111,9 @@ describe('ChatBotComponent', () => {
     // Spy on SharedService static methods
     spyOn(SharedService, 'getUserId').and.returnValue(123);
     spyOn(SharedService, 'getprogramName').and.returnValue('adults');
-    
+
     // Mock ProgramId
-    const originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
       configurable: true
@@ -133,17 +134,12 @@ describe('ChatBotComponent', () => {
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
-
-    // Restore ProgramId if needed
-    if (originalProgramId) {
-      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
-    }
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ChatBotComponent);
     component = fixture.componentInstance;
-    
+
     // Setup ViewChild mocks before detectChanges
     component.messageContainer = {
       nativeElement: {
@@ -185,6 +181,10 @@ describe('ChatBotComponent', () => {
         }
       });
     }
+
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
   });
 
   describe('Component Initialization', () => {
@@ -199,16 +199,16 @@ describe('ChatBotComponent', () => {
         history: [],
         user_id: '123'
       }));
-      
+
       // Reset component state
       component.isLoading = false;
       component.hasHistoryAvailable = false;
-      
+
       // Trigger ngOnInit if not already called
       if (!component.messages) {
         component.ngOnInit();
       }
-      
+
       tick(); // Allow any async initialization
       expect(component.messages).toEqual([]);
       expect(component.currentMessage).toBe('');
@@ -228,7 +228,7 @@ describe('ChatBotComponent', () => {
       // Flush any pending timers from component initialization
       tick(300); // Flush all pending timers
       flush(); // Ensure all pending timers are flushed
-      
+
       const testMessages: ChatMessage[] = [
         {
           id: '1',
@@ -237,18 +237,18 @@ describe('ChatBotComponent', () => {
           timestamp: new Date()
         }
       ];
-      
+
       messagesSubject.next(testMessages);
       tick(200); // Flush all timers including setTimeout(50) and setTimeout(100) in subscription
       flush(); // Ensure all pending timers are flushed
-      
+
       expect(component.messages).toEqual(testMessages);
     }));
 
     it('should subscribe to typing indicator from store', fakeAsync(() => {
       isTypingSubject.next(true);
       tick();
-      
+
       expect(component.isTyping).toBe(true);
     }));
 
@@ -256,7 +256,7 @@ describe('ChatBotComponent', () => {
       const suggestions = ['Suggestion 1', 'Suggestion 2'];
       activeSuggestionsSubject.next(suggestions);
       tick();
-      
+
       expect(component.activeSuggestions).toEqual(suggestions);
     }));
 
@@ -269,7 +269,7 @@ describe('ChatBotComponent', () => {
       // Verify that checkHistoryAvailability logic was executed by checking loadHistory was called
       // (assuming user is not a guest and has valid userId)
       tick();
-      
+
       // Verify that loadHistory was called during initialization (via checkHistoryAvailability)
       expect(mockChatbotService.loadHistory).toHaveBeenCalled();
     }));
@@ -281,7 +281,7 @@ describe('ChatBotComponent', () => {
       component.ngAfterViewInit();
       tick(200); // Flush setTimeout(100) and any other timers
       flush(); // Ensure all pending timers are flushed
-      
+
       expect(mockChatbotService.ensureWelcomeMessages).toHaveBeenCalled();
     }));
 
@@ -289,7 +289,7 @@ describe('ChatBotComponent', () => {
       spyOn(component, 'scrollToBottom');
       component.ngAfterViewInit();
       tick(300); // Flush all timers (ensureWelcomeMessages setTimeout(100) + scrollToBottom setTimeout(100))
-      
+
       expect(component.scrollToBottom).toHaveBeenCalled();
     }));
 
@@ -300,10 +300,10 @@ describe('ChatBotComponent', () => {
           focus: focusSpy
         }
       } as any;
-      
+
       component.ngAfterViewInit();
       tick(300); // Flush all timers (ensureWelcomeMessages + scrollToBottom + focus setTimeout)
-      
+
       expect(focusSpy).toHaveBeenCalled();
     }));
 
@@ -313,7 +313,7 @@ describe('ChatBotComponent', () => {
       tick(100); // Flush ensureWelcomeMessages setTimeout(100)
       tick(300); // Flush styleAnchorTags setTimeout(300)
       flush(); // Ensure all pending timers are flushed
-      
+
       expect(component.styleAnchorTags).toHaveBeenCalled();
     }));
   });
@@ -324,9 +324,9 @@ describe('ChatBotComponent', () => {
       spyOn(component['typingSubscription'], 'unsubscribe');
       spyOn(component['sessionSubscription'], 'unsubscribe');
       spyOn(component['suggestionsSubscription'], 'unsubscribe');
-      
+
       component.ngOnDestroy();
-      
+
       expect(component['messagesSubscription'].unsubscribe).toHaveBeenCalled();
       expect(component['typingSubscription'].unsubscribe).toHaveBeenCalled();
       expect(component['sessionSubscription'].unsubscribe).toHaveBeenCalled();
@@ -338,14 +338,14 @@ describe('ChatBotComponent', () => {
     it('should not send message if currentMessage is empty', () => {
       component.currentMessage = '';
       component.onSendMessage();
-      
+
       expect(mockChatbotService.sendMessage).not.toHaveBeenCalled();
     });
 
     it('should not send message if currentMessage is only whitespace', () => {
       component.currentMessage = '   ';
       component.onSendMessage();
-      
+
       expect(mockChatbotService.sendMessage).not.toHaveBeenCalled();
     });
 
@@ -353,16 +353,16 @@ describe('ChatBotComponent', () => {
       component.currentMessage = 'Test message';
       component.isLoading = true;
       component.onSendMessage();
-      
+
       expect(mockChatbotService.sendMessage).not.toHaveBeenCalled();
     });
 
     it('should send message with trimmed content', () => {
       component.currentMessage = '  Test message  ';
       component.isLoading = false;
-      
+
       component.onSendMessage();
-      
+
       expect(mockChatbotService.getFullQuestionForNumber).toHaveBeenCalledWith('Test message');
       expect(mockChatbotService.addUserMessage).toHaveBeenCalled();
       expect(mockChatbotService.sendMessage).toHaveBeenCalledWith('Test message');
@@ -371,7 +371,7 @@ describe('ChatBotComponent', () => {
     it('should clear currentMessage after sending', () => {
       component.currentMessage = 'Test message';
       component.onSendMessage();
-      
+
       expect(component.currentMessage).toBe('');
     });
 
@@ -379,7 +379,7 @@ describe('ChatBotComponent', () => {
       component.errorMessage = 'Previous error';
       component.currentMessage = 'Test message';
       component.onSendMessage();
-      
+
       expect(component.errorMessage).toBe('');
     });
 
@@ -387,20 +387,20 @@ describe('ChatBotComponent', () => {
       // Use a Subject to control when the observable completes
       const sendMessageSubject = new Subject<any>();
       mockChatbotService.sendMessage.and.returnValue(sendMessageSubject.asObservable());
-      
+
       component.currentMessage = 'Test message';
       component.isLoading = false;
       component.onSendMessage();
-      
+
       // isLoading should be set to true immediately (synchronously) before observable completes
       expect(component.isLoading).toBe(true);
-      
+
       // Now complete the observable
       sendMessageSubject.next(mockChatbotResponse);
       sendMessageSubject.complete();
       tick(150); // Flush all timers including setTimeout(100) in scrollSlightlyDown
       flush(); // Ensure all pending timers are flushed
-      
+
       // After completion, isLoading should be false
       expect(component.isLoading).toBe(false);
     }));
@@ -408,7 +408,7 @@ describe('ChatBotComponent', () => {
     it('should add typing indicator when sending', () => {
       component.currentMessage = 'Test message';
       component.onSendMessage();
-      
+
       expect(mockChatbotService.addTypingIndicator).toHaveBeenCalled();
       expect(mockChatbotService.setTyping).toHaveBeenCalledWith(true);
     });
@@ -417,7 +417,7 @@ describe('ChatBotComponent', () => {
       component.currentMessage = 'Test message';
       component.onSendMessage();
       tick(150); // Flush all timers including setTimeout
-      
+
       expect(mockChatbotService.removeTypingIndicator).toHaveBeenCalled();
       expect(mockChatbotService.setTyping).toHaveBeenCalledWith(false);
       expect(mockChatbotService.addBotMessage).toHaveBeenCalled();
@@ -429,7 +429,7 @@ describe('ChatBotComponent', () => {
       component.currentMessage = 'Test message';
       component.onSendMessage();
       tick(150); // Flush all timers
-      
+
       expect(mockChatbotService.removeTypingIndicator).toHaveBeenCalled();
       expect(mockChatbotService.setTyping).toHaveBeenCalledWith(false);
       expect(component.errorMessage).toContain('trouble connecting');
@@ -442,7 +442,7 @@ describe('ChatBotComponent', () => {
       component.currentMessage = 'Test message';
       component.onSendMessage();
       tick(150); // Flush all timers
-      
+
       expect(component.errorMessage).toContain('encountered an error');
       expect(component.isLoading).toBe(false);
     }));
@@ -452,7 +452,7 @@ describe('ChatBotComponent', () => {
       component.currentMessage = 'Test message';
       component.onSendMessage();
       tick(150);
-      
+
       expect((component as any).scrollSlightlyDown).toHaveBeenCalled();
     }));
   });
@@ -462,9 +462,9 @@ describe('ChatBotComponent', () => {
       spyOn(component, 'onSendMessage');
       const event = new KeyboardEvent('keypress', { key: 'Enter' });
       spyOn(event, 'preventDefault');
-      
+
       component.onKeyPress(event);
-      
+
       expect(event.preventDefault).toHaveBeenCalled();
       expect(component.onSendMessage).toHaveBeenCalled();
     });
@@ -472,18 +472,18 @@ describe('ChatBotComponent', () => {
     it('should not send message on Shift+Enter', () => {
       spyOn(component, 'onSendMessage');
       const event = new KeyboardEvent('keypress', { key: 'Enter', shiftKey: true });
-      
+
       component.onKeyPress(event);
-      
+
       expect(component.onSendMessage).not.toHaveBeenCalled();
     });
 
     it('should not send message on other keys', () => {
       spyOn(component, 'onSendMessage');
       const event = new KeyboardEvent('keypress', { key: 'a' });
-      
+
       component.onKeyPress(event);
-      
+
       expect(component.onSendMessage).not.toHaveBeenCalled();
     });
   });
@@ -494,9 +494,9 @@ describe('ChatBotComponent', () => {
         get: () => ProgramType.Adults,
         configurable: true
       });
-      
+
       component.onCloseChat();
-      
+
       expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/home']);
     });
 
@@ -505,9 +505,9 @@ describe('ChatBotComponent', () => {
         get: () => ProgramType.Teenagers,
         configurable: true
       });
-      
+
       component.onCloseChat();
-      
+
       expect(mockRouter.navigate).toHaveBeenCalledWith(['/teenagers/teenager-dashboard']);
     });
   });
@@ -526,7 +526,7 @@ describe('ChatBotComponent', () => {
       mockChatbotService.loadHistory.calls.reset();
       component.isLoadingHistory = true;
       component.onLoadHistory();
-      
+
       expect(mockChatbotService.loadHistory).not.toHaveBeenCalled();
     });
 
@@ -540,14 +540,14 @@ describe('ChatBotComponent', () => {
       }
       component.isLoadingHistory = false;
       component.onLoadHistory();
-      
+
       expect(mockChatbotService.loadHistory).not.toHaveBeenCalled();
     });
 
     it('should prevent default event behavior', () => {
       const event = jasmine.createSpyObj('Event', ['preventDefault']);
       component.onLoadHistory(event);
-      
+
       expect(event.preventDefault).toHaveBeenCalled();
     });
 
@@ -555,7 +555,7 @@ describe('ChatBotComponent', () => {
       component.isLoadingHistory = false;
       component.onLoadHistory();
       tick();
-      
+
       expect(mockChatbotService.loadHistory).toHaveBeenCalled();
       expect(component.isLoadingHistory).toBe(false);
     }));
@@ -580,10 +580,10 @@ describe('ChatBotComponent', () => {
         spyOn(component, 'isGuestUser').and.returnValue(false);
       }
       spyOn(component as any, 'applyHistoryMessages');
-      
+
       component.onLoadHistory();
       tick();
-      
+
       expect((component as any).applyHistoryMessages).toHaveBeenCalledWith(cachedHistory);
       expect(mockChatbotService.loadHistory).not.toHaveBeenCalled();
       expect(component.isLoadingHistory).toBe(false);
@@ -593,7 +593,7 @@ describe('ChatBotComponent', () => {
       spyOn(component as any, 'applyHistoryMessages');
       component.onLoadHistory();
       tick();
-      
+
       expect((component as any).applyHistoryMessages).toHaveBeenCalledWith(mockHistoryResponse.history);
       expect(component.isLoadingHistory).toBe(false);
     }));
@@ -609,10 +609,10 @@ describe('ChatBotComponent', () => {
       } else {
         spyOn(component, 'isGuestUser').and.returnValue(false);
       }
-      
+
       component.onLoadHistory();
       tick();
-      
+
       expect(component.errorMessage).toContain('No previous conversations');
       expect(component.hasHistoryAvailable).toBe(false);
       expect(component.isLoadingHistory).toBe(false);
@@ -628,10 +628,10 @@ describe('ChatBotComponent', () => {
       } else {
         spyOn(component, 'isGuestUser').and.returnValue(false);
       }
-      
+
       component.onLoadHistory();
       tick();
-      
+
       expect(component.errorMessage).toContain('Failed to load');
       expect(component.isLoadingHistory).toBe(false);
     }));
@@ -642,14 +642,14 @@ describe('ChatBotComponent', () => {
       spyOn(window, 'scrollTo');
       component.scrollToBottom();
       tick(150);
-      
+
       expect(window.scrollTo).toHaveBeenCalled();
     }));
 
     it('should handle scroll errors gracefully', () => {
       spyOn(window, 'scrollTo').and.throwError('Scroll error');
       spyOn(console, 'error');
-      
+
       expect(() => component.scrollToBottom()).not.toThrow();
     });
   });
@@ -658,7 +658,7 @@ describe('ChatBotComponent', () => {
     it('should scroll window slightly down', () => {
       const scrollBySpy = spyOn(window, 'scrollBy').and.callThrough();
       component['scrollSlightlyDown']();
-      
+
       expect(scrollBySpy).toHaveBeenCalled();
       const callArgs = (scrollBySpy as jasmine.Spy).calls.mostRecent().args[0];
       expect(callArgs).toEqual(jasmine.objectContaining({
@@ -670,7 +670,7 @@ describe('ChatBotComponent', () => {
     it('should handle scroll errors gracefully', () => {
       spyOn(window, 'scrollBy').and.throwError('Scroll error');
       spyOn(console, 'error');
-      
+
       expect(() => component['scrollSlightlyDown']()).not.toThrow();
     });
   });
@@ -679,7 +679,7 @@ describe('ChatBotComponent', () => {
     it('should format timestamp using service', () => {
       const date = new Date();
       component.formatTimestamp(date);
-      
+
       expect(mockChatbotService.formatTimestamp).toHaveBeenCalledWith(date);
     });
   });
@@ -702,9 +702,9 @@ describe('ChatBotComponent', () => {
       ];
       component.messages = testMessages;
       spyOn(component, 'onSendMessage');
-      
+
       component.retryLastMessage();
-      
+
       expect(component.currentMessage).toBe('Last message');
       expect(component.onSendMessage).toHaveBeenCalled();
     });
@@ -712,9 +712,9 @@ describe('ChatBotComponent', () => {
     it('should not retry if no user messages exist', () => {
       component.messages = [];
       spyOn(component, 'onSendMessage');
-      
+
       component.retryLastMessage();
-      
+
       expect(component.onSendMessage).not.toHaveBeenCalled();
     });
 
@@ -728,9 +728,9 @@ describe('ChatBotComponent', () => {
         }
       ];
       spyOn(component, 'onSendMessage');
-      
+
       component.retryLastMessage();
-      
+
       expect(component.onSendMessage).not.toHaveBeenCalled();
     });
   });
@@ -739,7 +739,7 @@ describe('ChatBotComponent', () => {
     it('should clear error message', () => {
       component.errorMessage = 'Test error';
       component.clearError();
-      
+
       expect(component.errorMessage).toBe('');
     });
   });
@@ -748,9 +748,9 @@ describe('ChatBotComponent', () => {
     it('should send message with suggestion', () => {
       component.isLoading = false;
       spyOn(component, 'onSendMessage');
-      
+
       component.onSuggestionClick('Test suggestion');
-      
+
       expect(component.currentMessage).toBe('Test suggestion');
       expect(component.onSendMessage).toHaveBeenCalled();
     });
@@ -758,9 +758,9 @@ describe('ChatBotComponent', () => {
     it('should not send if loading', () => {
       component.isLoading = true;
       spyOn(component, 'onSendMessage');
-      
+
       component.onSuggestionClick('Test suggestion');
-      
+
       expect(component.onSendMessage).not.toHaveBeenCalled();
     });
   });
@@ -768,6 +768,7 @@ describe('ChatBotComponent', () => {
   describe('onMessageContentClick', () => {
     let locationMock: any;
     let hrefValue: string = '';
+    let originalLocation: PropertyDescriptor | undefined;
 
     beforeAll(() => {
       // Create a mock location object
@@ -775,7 +776,7 @@ describe('ChatBotComponent', () => {
         assign: jasmine.createSpy('assign'),
         replace: jasmine.createSpy('replace')
       };
-      
+
       // Define href as a property with getter/setter on the mock
       Object.defineProperty(locationMock, 'href', {
         get: () => hrefValue,
@@ -784,16 +785,17 @@ describe('ChatBotComponent', () => {
         },
         configurable: true
       });
-      
+
       // Try to mock window.location
       try {
+        originalLocation = Object.getOwnPropertyDescriptor(window, 'location');
         const existingDescriptor = Object.getOwnPropertyDescriptor(window, 'location');
-        
+
         // Delete the existing location property if possible
         if (existingDescriptor && existingDescriptor.configurable) {
           delete (window as any).location;
         }
-        
+
         // Define our mock location
         Object.defineProperty(window, 'location', {
           get: () => locationMock,
@@ -805,6 +807,12 @@ describe('ChatBotComponent', () => {
       }
     });
 
+    afterAll(() => {
+      if (originalLocation) {
+        Object.defineProperty(window, 'location', originalLocation);
+      }
+    });
+
     beforeEach(() => {
       // Reset href for each test
       hrefValue = '';
@@ -813,17 +821,17 @@ describe('ChatBotComponent', () => {
     it('should not track if not an anchor tag', () => {
       // Reset href for this test
       hrefValue = '';
-      
+
       const div = document.createElement('div');
       const event = {
         target: div,
         preventDefault: jasmine.createSpy('preventDefault')
       } as any;
-      
+
       spyOn(div, 'closest').and.returnValue(null);
-      
+
       component.onMessageContentClick(event);
-      
+
       expect(mockChatbotService.trackLinkClick).not.toHaveBeenCalled();
       expect(event.preventDefault).not.toHaveBeenCalled();
     });
@@ -836,7 +844,7 @@ describe('ChatBotComponent', () => {
       // Reset spies before each test
       mockChatStore.updateMessage.calls.reset();
       mockChatbotService.sendFeedback.calls.reset();
-      
+
       // Create fresh mockMessage for each test to avoid state pollution
       mockMessage = {
         id: '1',
@@ -862,11 +870,11 @@ describe('ChatBotComponent', () => {
       // Ensure isLoading is false and message doesn't have feedback
       component.isLoading = false;
       mockMessage.feedback_given = undefined;
-      
+
       component.onThumbsUp(mockMessage);
       // Flush the observable subscription - of() emits synchronously but we need to flush
       tick();
-      
+
       expect(mockChatStore.updateMessage).toHaveBeenCalled();
       expect(mockChatbotService.sendFeedback).toHaveBeenCalledWith(
         '1',
@@ -879,17 +887,17 @@ describe('ChatBotComponent', () => {
     it('should not send feedback if already given', () => {
       mockMessage.feedback_given = 'positive';
       component.isLoading = false;
-      
+
       component.onThumbsUp(mockMessage);
-      
+
       expect(mockChatbotService.sendFeedback).not.toHaveBeenCalled();
     });
 
     it('should not send feedback if loading', () => {
       component.isLoading = true;
-      
+
       component.onThumbsUp(mockMessage);
-      
+
       expect(mockChatbotService.sendFeedback).not.toHaveBeenCalled();
     });
 
@@ -898,11 +906,11 @@ describe('ChatBotComponent', () => {
       component.isLoading = false;
       mockMessage.feedback_given = undefined;
       mockChatStore.updateMessage.calls.reset();
-      
+
       component.onThumbsUp(mockMessage);
       // Flush the observable error handler - throwError emits synchronously
       tick();
-      
+
       expect(mockChatStore.updateMessage).toHaveBeenCalledTimes(2); // Once to set, once to revert
     }));
   });
@@ -914,7 +922,7 @@ describe('ChatBotComponent', () => {
       // Reset spies before each test
       mockChatStore.updateMessage.calls.reset();
       mockChatbotService.sendFeedback.calls.reset();
-      
+
       // Create fresh mockMessage for each test to avoid state pollution
       mockMessage = {
         id: '1',
@@ -940,11 +948,11 @@ describe('ChatBotComponent', () => {
       // Ensure isLoading is false and message doesn't have feedback
       component.isLoading = false;
       mockMessage.feedback_given = undefined;
-      
+
       component.onThumbsDown(mockMessage);
       // Flush the observable subscription - of() emits synchronously but we need to flush
       tick();
-      
+
       expect(mockChatStore.updateMessage).toHaveBeenCalled();
       expect(mockChatbotService.sendFeedback).toHaveBeenCalledWith(
         '1',
@@ -957,9 +965,9 @@ describe('ChatBotComponent', () => {
     it('should not send feedback if already given', () => {
       mockMessage.feedback_given = 'negative';
       component.isLoading = false;
-      
+
       component.onThumbsDown(mockMessage);
-      
+
       expect(mockChatbotService.sendFeedback).not.toHaveBeenCalled();
     });
 
@@ -968,11 +976,11 @@ describe('ChatBotComponent', () => {
       component.isLoading = false;
       mockMessage.feedback_given = undefined;
       mockChatStore.updateMessage.calls.reset();
-      
+
       component.onThumbsDown(mockMessage);
       // Flush the observable error handler - throwError emits synchronously
       tick();
-      
+
       expect(mockChatStore.updateMessage).toHaveBeenCalledTimes(2);
     }));
   });
@@ -982,7 +990,7 @@ describe('ChatBotComponent', () => {
       component.isLoading = false;
       component.onYesClick();
       tick(150); // Flush all timers
-      
+
       expect(component.currentMessage).toBe('Yes');
       expect(mockChatbotService.addUserMessage).toHaveBeenCalledWith('Yes');
       expect(mockChatbotService.sendYesNoResponse).toHaveBeenCalledWith('yes');
@@ -992,7 +1000,7 @@ describe('ChatBotComponent', () => {
     it('should not send if loading', () => {
       component.isLoading = true;
       component.onYesClick();
-      
+
       expect(mockChatbotService.sendYesNoResponse).not.toHaveBeenCalled();
     });
 
@@ -1001,7 +1009,7 @@ describe('ChatBotComponent', () => {
       component.isLoading = false;
       component.onYesClick();
       tick(150); // Flush all timers
-      
+
       expect(component.errorMessage).toContain('trouble connecting');
       expect(component.isLoading).toBe(false);
     }));
@@ -1012,7 +1020,7 @@ describe('ChatBotComponent', () => {
       component.isLoading = false;
       component.onNoClick();
       tick(150); // Flush all timers
-      
+
       expect(component.currentMessage).toBe('No');
       expect(mockChatbotService.addUserMessage).toHaveBeenCalledWith('No');
       expect(mockChatbotService.sendYesNoResponse).toHaveBeenCalledWith('no');
@@ -1022,7 +1030,7 @@ describe('ChatBotComponent', () => {
     it('should not send if loading', () => {
       component.isLoading = true;
       component.onNoClick();
-      
+
       expect(mockChatbotService.sendYesNoResponse).not.toHaveBeenCalled();
     });
   });
@@ -1032,7 +1040,7 @@ describe('ChatBotComponent', () => {
       component.isLoading = false;
       component.onGiveMoreOptions();
       tick(150); // Flush all timers
-      
+
       expect(mockChatbotService.addUserMessage).toHaveBeenCalledWith('Give me more options');
       expect(mockChatbotService.sendYesNoResponse).toHaveBeenCalledWith('yes');
       expect(component.isLoading).toBe(false);
@@ -1041,7 +1049,7 @@ describe('ChatBotComponent', () => {
     it('should not send if loading', () => {
       component.isLoading = true;
       component.onGiveMoreOptions();
-      
+
       expect(mockChatbotService.sendYesNoResponse).not.toHaveBeenCalled();
     });
   });
@@ -1050,7 +1058,7 @@ describe('ChatBotComponent', () => {
     it('should sanitize HTML content', () => {
       const html = '<p>Test content</p>';
       const result = component.sanitizeHtml(html);
-      
+
       expect(mockSanitizer.bypassSecurityTrustHtml).toHaveBeenCalled();
       expect(result).toBe(mockSafeHtml);
     });
@@ -1058,7 +1066,7 @@ describe('ChatBotComponent', () => {
     it('should add styles to anchor tags', () => {
       const html = '<a href="test.html">Link</a>';
       component.sanitizeHtml(html);
-      
+
       const callArgs = mockSanitizer.bypassSecurityTrustHtml.calls.mostRecent().args[0];
       expect(callArgs).toContain('style=');
       expect(callArgs).toContain('font-weight:500');
@@ -1073,7 +1081,7 @@ describe('ChatBotComponent', () => {
         sender: 'bot',
         timestamp: new Date()
       };
-      
+
       expect(component.shouldShowTimestamp(message, false)).toBe(false);
     });
 
@@ -1084,7 +1092,7 @@ describe('ChatBotComponent', () => {
         sender: 'bot',
         timestamp: new Date()
       };
-      
+
       expect(component.shouldShowTimestamp(message, true)).toBe(false);
     });
 
@@ -1095,7 +1103,7 @@ describe('ChatBotComponent', () => {
         sender: 'user',
         timestamp: new Date()
       };
-      
+
       expect(component.shouldShowTimestamp(message, false)).toBe(true);
     });
 
@@ -1107,13 +1115,13 @@ describe('ChatBotComponent', () => {
   describe('isGuestUser', () => {
     it('should return true for guest user (ID 563)', () => {
       (SharedService.getUserId as jasmine.Spy).and.returnValue(563);
-      
+
       expect(component.isGuestUser()).toBe(true);
     });
 
     it('should return false for regular user', () => {
       (SharedService.getUserId as jasmine.Spy).and.returnValue(123);
-      
+
       expect(component.isGuestUser()).toBe(false);
     });
   });
@@ -1122,7 +1130,7 @@ describe('ChatBotComponent', () => {
     it('should use default avatar when no userDetails in localStorage', () => {
       (localStorage.getItem as jasmine.Spy).and.returnValue(null);
       component['setUserAvatar']();
-      
+
       expect(component.userAvatarUrl).toContain('profile_default.svg');
     });
 
@@ -1131,9 +1139,9 @@ describe('ChatBotComponent', () => {
         UserImagePath: 'https://example.com/image.jpg'
       };
       (localStorage.getItem as jasmine.Spy).and.returnValue(JSON.stringify(userDetails));
-      
+
       component['setUserAvatar']();
-      
+
       expect(component.userAvatarUrl).toContain('example.com/image.jpg');
     });
 
@@ -1142,18 +1150,18 @@ describe('ChatBotComponent', () => {
         UserImagePath: 'user/image.jpg'
       };
       (localStorage.getItem as jasmine.Spy).and.returnValue(JSON.stringify(userDetails));
-      
+
       component['setUserAvatar']();
-      
+
       expect(component.userAvatarUrl).toContain('humanwisdoms3.s3.eu-west-2.amazonaws.com');
     });
 
     it('should use default avatar on parse error', () => {
       (localStorage.getItem as jasmine.Spy).and.returnValue('invalid json');
       spyOn(console, 'warn');
-      
+
       component['setUserAvatar']();
-      
+
       expect(component.userAvatarUrl).toContain('profile_default.svg');
     });
 
@@ -1162,9 +1170,9 @@ describe('ChatBotComponent', () => {
         UserImagePath: 'undefined/image.jpg'
       };
       (localStorage.getItem as jasmine.Spy).and.returnValue(JSON.stringify(userDetails));
-      
+
       component['setUserAvatar']();
-      
+
       expect(component.userAvatarUrl).toContain('profile_default.svg');
     });
   });
@@ -1176,9 +1184,9 @@ describe('ChatBotComponent', () => {
         get: () => ProgramType.Adults,
         configurable: true
       });
-      
+
       component['checkAndHandleProgramTypeChange']();
-      
+
       expect(mockChatbotService.clearMessages).toHaveBeenCalled();
       expect(component['cachedHistoryMessages']).toBeNull();
       expect(component.hasHistoryAvailable).toBe(false);
@@ -1190,17 +1198,17 @@ describe('ChatBotComponent', () => {
         get: () => ProgramType.Adults,
         configurable: true
       });
-      
+
       component['checkAndHandleProgramTypeChange']();
-      
+
       expect(mockChatbotService.clearMessages).not.toHaveBeenCalled();
     });
 
     it('should not clear chat when stored program type is null', () => {
       mockChatStore.getCurrentProgramType.and.returnValue(null);
-      
+
       component['checkAndHandleProgramTypeChange']();
-      
+
       expect(mockChatbotService.clearMessages).not.toHaveBeenCalled();
     });
   });
@@ -1209,7 +1217,7 @@ describe('ChatBotComponent', () => {
     beforeEach(() => {
       // Reset spy calls before each test
       mockChatbotService.loadHistory.calls.reset();
-      
+
       // Reset spy if it exists
       if ((component.isGuestUser as jasmine.Spy).and) {
         (component.isGuestUser as jasmine.Spy).and.returnValue(false);
@@ -1217,7 +1225,7 @@ describe('ChatBotComponent', () => {
         spyOn(component, 'isGuestUser').and.returnValue(false);
       }
       (SharedService.getUserId as jasmine.Spy).and.returnValue(123);
-      
+
       // Reset component state
       component['historyCheckInProgress'] = false;
       component['cachedHistoryMessages'] = null;
@@ -1232,50 +1240,50 @@ describe('ChatBotComponent', () => {
       } else {
         spyOn(component, 'isGuestUser').and.returnValue(true);
       }
-      
+
       // Reset spy calls to ignore any previous calls
       mockChatbotService.loadHistory.calls.reset();
-      
+
       component['checkHistoryAvailability']();
-      
+
       expect(mockChatbotService.loadHistory).not.toHaveBeenCalled();
     });
 
     it('should not check history if check in progress', () => {
       component['historyCheckInProgress'] = true;
       component['cachedHistoryMessages'] = null;
-      
+
       // Reset spy calls to ignore any previous calls
       mockChatbotService.loadHistory.calls.reset();
-      
+
       component['checkHistoryAvailability']();
-      
+
       expect(mockChatbotService.loadHistory).not.toHaveBeenCalled();
     });
 
     it('should not check history if no user ID', () => {
       (SharedService.getUserId as jasmine.Spy).and.returnValue(0);
       component['historyCheckInProgress'] = false;
-      
+
       // Reset spy calls to ignore any previous calls
       mockChatbotService.loadHistory.calls.reset();
-      
+
       component['checkHistoryAvailability']();
-      
+
       expect(mockChatbotService.loadHistory).not.toHaveBeenCalled();
     });
 
     it('should check history availability', fakeAsync(() => {
       component['checkHistoryAvailability']();
       tick();
-      
+
       expect(mockChatbotService.loadHistory).toHaveBeenCalled();
     }));
 
     it('should set hasHistoryAvailable to true when history exists', fakeAsync(() => {
       component['checkHistoryAvailability']();
       tick();
-      
+
       expect(component.hasHistoryAvailable).toBe(true);
       expect(component['cachedHistoryMessages']).toEqual(mockHistoryResponse.history);
       expect(component['cachedHistoryUserId']).toBe(123);
@@ -1287,20 +1295,20 @@ describe('ChatBotComponent', () => {
       component.hasHistoryAvailable = true;
       component['historyCheckInProgress'] = false;
       (SharedService.getUserId as jasmine.Spy).and.returnValue(123); // Different user ID
-      
+
       // Mock empty history response so it stays cleared after the async call
       mockChatbotService.loadHistory.and.returnValue(of({
         status: 'success' as const,
         history: [],
         user_id: '123'
       }));
-      
+
       component['checkHistoryAvailability']();
-      
+
       // Immediately after calling (synchronously), the cache should be cleared
       expect(component['cachedHistoryMessages']).toBeNull();
       expect(component.hasHistoryAvailable).toBe(false);
-      
+
       // After async call completes, it should still be cleared (empty history)
       tick();
       expect(component['cachedHistoryMessages']).toBeNull();
@@ -1309,10 +1317,10 @@ describe('ChatBotComponent', () => {
 
     it('should handle history check error', fakeAsync(() => {
       mockChatbotService.loadHistory.and.returnValue(throwError(() => new Error('Error')));
-      
+
       component['checkHistoryAvailability']();
       tick();
-      
+
       expect(component.hasHistoryAvailable).toBe(false);
       expect(component['cachedHistoryMessages']).toBeNull();
       expect(component['historyCheckInProgress']).toBe(false);
@@ -1332,9 +1340,9 @@ describe('ChatBotComponent', () => {
       component['cachedHistoryMessages'] = history;
       component['cachedHistoryUserId'] = 123;
       component.hasHistoryAvailable = true;
-      
+
       component['applyHistoryMessages'](history);
-      
+
       expect(mockChatbotService.prependHistoryMessages).toHaveBeenCalledWith(history);
       expect(component['cachedHistoryMessages']).toBeNull();
       expect(component.hasHistoryAvailable).toBe(false);

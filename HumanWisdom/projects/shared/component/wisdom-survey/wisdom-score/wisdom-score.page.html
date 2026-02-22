@@ -136,13 +136,16 @@
                     <!-- right icon (arrow / lock) -->
                     <div
                       class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright d-flex flex-column justify-content-center">
-                      <i class="fa fa-angle-right fs_20px" *ngIf="isSubscriber || item.module === 'BLOG'"
+                      <i class="fa fa-angle-right fs_20px"
+                        *ngIf="isSubscriber || item.module === 'BLOG' || item.isFree == 1"
                         [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg"
-                        class="img-responsive " *ngIf="!isSubscriber && isAdults && item.module !== 'BLOG'">
+                        class="img-responsive "
+                        *ngIf="!isSubscriber && isAdults && item.module !== 'BLOG' && item.isFree != 1">
 
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                        class="img-responsive w-50" *ngIf="!isSubscriber && !isAdults && item.module !== 'BLOG'">
+                        class="img-responsive w-50"
+                        *ngIf="!isSubscriber && !isAdults && item.module !== 'BLOG' && item.isFree != 1">
 
 
 

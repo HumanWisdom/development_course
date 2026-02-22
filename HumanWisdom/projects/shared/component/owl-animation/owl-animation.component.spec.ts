@@ -14,6 +14,9 @@ describe('OwlAnimationComponent', () => {
     let mockChangeDetectorRef: jasmine.SpyObj<ChangeDetectorRef>;
     let routerEventsSubject: Subject<any>;
 
+    let originalUserAgent: PropertyDescriptor | undefined;
+    let originalInnerWidth: PropertyDescriptor | undefined;
+
     beforeEach(waitForAsync(() => {
         // Create spy objects
         routerEventsSubject = new Subject();
@@ -38,8 +41,13 @@ describe('OwlAnimationComponent', () => {
     }));
 
     beforeEach(() => {
-        // Clear localStorage before each test
+        // Clear localStorage and sessionStorage before each test
         localStorage.clear();
+        sessionStorage.clear();
+
+        // Store original descriptors
+        originalUserAgent = Object.getOwnPropertyDescriptor(window.navigator, 'userAgent');
+        originalInnerWidth = Object.getOwnPropertyDescriptor(window, 'innerWidth');
 
         // Mock navigator.userAgent for mobile detection
         Object.defineProperty(window.navigator, 'userAgent', {
@@ -70,6 +78,15 @@ describe('OwlAnimationComponent', () => {
 
         fixture.destroy();
         localStorage.clear();
+        sessionStorage.clear();
+
+        // Restore original descriptors
+        if (originalUserAgent) {
+            Object.defineProperty(window.navigator, 'userAgent', originalUserAgent);
+        }
+        if (originalInnerWidth) {
+            Object.defineProperty(window, 'innerWidth', originalInnerWidth);
+        }
     });
 
     describe('Component Initialization', () => {
@@ -107,6 +124,7 @@ describe('OwlAnimationComponent', () => {
     describe('ngOnInit', () => {
         it('should check dialogue shown status from localStorage', () => {
             localStorage.setItem('owl_dialogue_shown', 'true');
+            sessionStorage.setItem('owl_gif_shown', 'true');
 
             component.ngOnInit();
 
@@ -215,7 +233,7 @@ describe('OwlAnimationComponent', () => {
         }));
 
         it('should not trigger GIF if already shown', fakeAsync(() => {
-            localStorage.setItem('owl_gif_shown', 'true');
+            sessionStorage.setItem('owl_gif_shown', 'true');
             localStorage.setItem('isloggedin', 'F');
             component['lastLoginStatus'] = 'F';
 
@@ -293,7 +311,7 @@ describe('OwlAnimationComponent', () => {
     describe('GIF Display Logic', () => {
         it('should show GIF when user is logged in and GIF not shown', () => {
             localStorage.setItem('isloggedin', 'T');
-            localStorage.removeItem('owl_gif_shown');
+            sessionStorage.removeItem('owl_gif_shown');
 
             component['checkRouteAndSetOwlDisplay']();
 
@@ -301,17 +319,18 @@ describe('OwlAnimationComponent', () => {
             expect(component.showStaticOwl).toBe(false);
         });
 
-        it('should not show GIF when user is not logged in', () => {
+        it('should show GIF even when user is not logged in', () => {
             localStorage.setItem('isloggedin', 'F');
+            sessionStorage.removeItem('owl_gif_shown');
 
             component['checkRouteAndSetOwlDisplay']();
 
-            expect(component.showGif).toBe(false);
+            expect(component.showGif).toBe(true);
         });
 
         it('should not show GIF if already shown', () => {
             localStorage.setItem('isloggedin', 'T');
-            localStorage.setItem('owl_gif_shown', 'true');
+            sessionStorage.setItem('owl_gif_shown', 'true');
 
             component['checkRouteAndSetOwlDisplay']();
 
@@ -320,7 +339,7 @@ describe('OwlAnimationComponent', () => {
 
         it('should set gifAlreadyStarting flag when showing GIF', () => {
             localStorage.setItem('isloggedin', 'T');
-            localStorage.removeItem('owl_gif_shown');
+            sessionStorage.removeItem('owl_gif_shown');
 
             component['checkRouteAndSetOwlDisplay']();
 
@@ -329,7 +348,7 @@ describe('OwlAnimationComponent', () => {
 
         it('should reset GIF URL with timestamp', () => {
             localStorage.setItem('isloggedin', 'T');
-            localStorage.removeItem('owl_gif_shown');
+            sessionStorage.removeItem('owl_gif_shown');
 
             component['checkRouteAndSetOwlDisplay']();
 
@@ -338,7 +357,7 @@ describe('OwlAnimationComponent', () => {
 
         it('should trigger GIF display when logged in', () => {
             localStorage.setItem('isloggedin', 'T');
-            localStorage.removeItem('owl_gif_shown');
+            sessionStorage.removeItem('owl_gif_shown');
 
             component['checkRouteAndSetOwlDisplay']();
 
@@ -348,8 +367,9 @@ describe('OwlAnimationComponent', () => {
     });
 
     describe('Static Owl Display', () => {
-        it('should show static owl when user is not logged in', () => {
+        it('should show static owl when GIF already shown', () => {
             localStorage.setItem('isloggedin', 'F');
+            sessionStorage.setItem('owl_gif_shown', 'true');
             component['hasCheckedHomePage'] = false;
 
             component['checkRouteAndSetOwlDisplay']();
@@ -360,7 +380,7 @@ describe('OwlAnimationComponent', () => {
 
         it('should show static owl when GIF already shown', () => {
             localStorage.setItem('isloggedin', 'T');
-            localStorage.setItem('owl_gif_shown', 'true');
+            sessionStorage.setItem('owl_gif_shown', 'true');
             component['hasCheckedHomePage'] = false;
 
             component['checkRouteAndSetOwlDisplay']();
@@ -370,6 +390,7 @@ describe('OwlAnimationComponent', () => {
 
         it('should clear message when dialogue already shown', () => {
             localStorage.setItem('isloggedin', 'F');
+            sessionStorage.setItem('owl_gif_shown', 'true');
             component['dialogueAlreadyShown'] = true;
             component['hasCheckedHomePage'] = false;
 
@@ -387,10 +408,10 @@ describe('OwlAnimationComponent', () => {
             expect(component.gifLoaded).toBe(true);
         });
 
-        it('should save GIF shown status to localStorage', () => {
+        it('should save GIF shown status to sessionStorage', () => {
             component.onGifLoaded();
 
-            expect(localStorage.getItem('owl_gif_shown')).toBe('true');
+            expect(sessionStorage.getItem('owl_gif_shown')).toBe('true');
         });
 
         it('should not process if GIF already played', () => {
@@ -409,6 +430,7 @@ describe('OwlAnimationComponent', () => {
             expect(component.showGif).toBe(false);
             expect(component.showStaticOwl).toBe(true);
             expect(component['gifPlayedOnce']).toBe(true);
+            flush();
         }));
 
         it('should transition to static owl and trigger cleanup after animation', fakeAsync(() => {
@@ -669,13 +691,13 @@ describe('OwlAnimationComponent', () => {
     });
 
     describe('Force Show GIF (Debug)', () => {
-        it('should clear localStorage flags', () => {
-            localStorage.setItem('owl_gif_shown', 'true');
+        it('should clear storage flags', () => {
+            sessionStorage.setItem('owl_gif_shown', 'true');
             localStorage.setItem('owl_dialogue_shown', 'true');
 
             component.forceShowGif();
 
-            expect(localStorage.getItem('owl_gif_shown')).toBeNull();
+            expect(sessionStorage.getItem('owl_gif_shown')).toBeNull();
             expect(localStorage.getItem('owl_dialogue_shown')).toBeNull();
         });
 
@@ -780,6 +802,7 @@ describe('OwlAnimationComponent', () => {
             expect(() => {
                 component.onGifLoaded();
                 tick(12000);
+                flush();
             }).not.toThrow();
         }));
 

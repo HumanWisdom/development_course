@@ -16,14 +16,16 @@ export class AudioVideoGuard implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> | boolean {
-    let enabled = route.paramMap.get('enable');
-    let isloggedin = localStorage.getItem('isloggedin');
-    let moduleName = route.paramMap.get('moduleName');
-    let isSubscriber = localStorage.getItem('isloggedin') === 'T' && localStorage.getItem('Subscriber') === '1';
+    const enabled = route.paramMap.get('enable');
+    const isloggedin = localStorage.getItem('isloggedin');
+    const moduleName = route.paramMap.get('moduleName');
+    const isSubscriber = localStorage.getItem('isloggedin') === 'T' && localStorage.getItem('Subscriber') === '1';
     
     const trialRedirectPath = '/subscription/start-your-free-trial';
 
-    // For podcasts, verify with API to prevent URL manipulation
+    if (enabled === 'T') {
+      return true;
+    }
     if (moduleName === 'podcast') {
       if (isSubscriber) {
         return of(true);
@@ -53,16 +55,11 @@ export class AudioVideoGuard implements CanActivate {
       );
     }
 
-    // Original logic for non-podcast content
-    if(enabled === 'T') {
-      return true
+    if (isloggedin === 'T') {
+      return true;
     } else {
-      if(isloggedin === 'T') {
-        return true
-      }else {
-        this.router.navigate([trialRedirectPath]);
-        return false
-      }
+      this.router.navigate([trialRedirectPath]);
+      return false;
     }
   }
 }

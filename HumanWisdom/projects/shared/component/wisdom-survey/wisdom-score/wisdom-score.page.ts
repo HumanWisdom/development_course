@@ -65,14 +65,6 @@ export class WisdomScorePage implements OnInit {
     const baseUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
 
     this.wisdomRecomm = this.wisdomRecomm.map(item => {
-      let cleanPath = '';
-      if (item.module === 'BLOG') {
-        cleanPath = item.path;
-      } else {
-        const pathParts = item.path.split('/');
-        cleanPath = pathParts.slice(0, -1).join('/');
-      }
-
       const prefix = this.router.url.includes('/teenagers/')
         ? '/teenagers'
         : '/adults';
@@ -83,14 +75,13 @@ export class WisdomScorePage implements OnInit {
           ? item.image_path
           : baseUrl + item.image_path,
         title: item.title,
-        cleanPath: prefix + cleanPath   
+        cleanPath: prefix + item.path
       };
     });
 
     this.enableDash = true;
 
-    // const visits = Number(localStorage.getItem('NoOfVisits') || '0');
-      const visits = Number(this.loginResponse?.NoOfVisits || '0');
+    const visits = Number(this.loginResponse?.NoOfVisits || '0');
     const token = SharedService.getDataFromLocalStorage('token');
     const isGuest = localStorage.getItem('guest') === 'T';
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
@@ -98,24 +89,19 @@ export class WisdomScorePage implements OnInit {
   }
 
   navigateToRecommendation(item: any) {
-    if (!this.isSubscriber && item.module !== 'BLOG') {
+    const isFree = item.isFree == 1 || item.isFree == '1' || item.isFree === true || item.isFree === 'true';
+    if (!this.isSubscriber && item.module !== 'BLOG' && !isFree) {
       const isTeenagerRoute = this.router.url.includes('/teenagers/');
       const trialRedirectPath = isTeenagerRoute
         ? '/teenagers/subscription/start-your-free-trial'
         : '/subscription/start-your-free-trial';
-      this.router.navigate([trialRedirectPath]);
+      this.router.navigateByUrl(trialRedirectPath);
       return;
     }
 
-    if (item.module === 'BLOG') {
-      this.router.navigateByUrl(item.cleanPath, {
-        state: { title: item.title }
-      });
-    } else {
-      this.router.navigate([item.cleanPath], {
-        state: { title: item.title }
-      });
-    }
+    this.router.navigateByUrl(item.cleanPath, {
+      state: { title: item.title }
+    });
   }
 
   receiveBookmark(e) {

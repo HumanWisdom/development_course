@@ -14,8 +14,10 @@
     "test:watch": "ng test --project=adults",
     "test:single": "ng test --include",
     "test:shared": "ng test shared",
-    "test:shared:coverage": "ng test --include=\"projects/shared/**/*.spec.ts\" --no-watch --code-coverage --project=shared",
-    "coverage:report": "start coverage/adults/index.html",
+    "test:shared:coverage": "ng test --no-watch --code-coverage --project=shared",
+    "test:home:coverage": "ng test --no-watch --code-coverage --project=shared --include=\"**/home.component.spec.ts\"",
+    "coverage:report": "start coverage/shared/index.html",
+    "coverage:open": "start coverage/shared/index.html",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

@@ -173,26 +173,12 @@ export class CourseHeaderComponent implements OnInit {
     this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
   goToToc() {
-    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
-    if (fromMicroLearningEnd === 'true') {
-      let endUrl = localStorage.getItem('microLearningEndUrl');
-      if (endUrl) {
-        localStorage.removeItem('microLearningEndUrl');
-        if (endUrl.includes('micro-learning/inner')) {
-          if (!endUrl.includes('?')) {
-            endUrl += '?isEnd=true';
-          } else if (!endUrl.includes('isEnd=true')) {
-            endUrl += '&isEnd=true';
-          }
-        } else {
-          localStorage.removeItem('fromMicroLearningEnd');
-        }
-        this.router.navigateByUrl(endUrl);
-        return;
-      }
+    var url = this.naviagtorService.navigateToBackLink();
+    if (url != null) {
+      this.router.navigateByUrl(url);
+      return;
     }
-    // this.naviagtorService.getBackLink();
-    // if(this.toc==""){
+
     if(this.router.url.includes('wellness-survey')) {
       this.location.back();
     }else{ 
@@ -200,12 +186,6 @@ export class CourseHeaderComponent implements OnInit {
       let modifiedUrl = this.router.url.substring(0, lastSlashIndex);
       this.router.navigate(['/' + modifiedUrl])
     }
-    // }else{
-    //   if(this.toc.includes(this.programName))
-    //     this .router.navigate(['/' + this.toc])
-    //    else
-    //      this.router.navigate(['/' + this.programName + '/' + this.toc])
-    // }
   }
 
   goToDash() {

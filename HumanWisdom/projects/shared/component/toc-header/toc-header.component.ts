@@ -47,24 +47,16 @@ export class TocHeaderComponent implements OnInit {
   }
 
   goBack(){
-    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
-    if (fromMicroLearningEnd === 'true') {
-      const endUrl = localStorage.getItem('microLearningEndUrl');
-      if (endUrl) {
-        this.router.navigateByUrl(endUrl);
-        return;
-      }
-    }
     var url = this.navigationService.navigateToBackLink();
     if(url==null){
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
       if(url && url!=null && url != 'null'){
-        this.router.navigate([url]);
+        this.router.navigateByUrl(url);
       }else{
         this.location.back();
       }
      }else{
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
      }
       
   }
