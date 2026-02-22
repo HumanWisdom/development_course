@@ -171,8 +171,8 @@ a:hover {
 
 .testimonial-cardnew {
     /* width: 490px; */
-    height: 305px;
-    padding: 36px;
+    height: 325px;
+    padding: 32px;
     position: relative;
     display: flex;
     flex-direction: column;

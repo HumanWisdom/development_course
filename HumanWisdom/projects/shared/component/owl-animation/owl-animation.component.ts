@@ -437,18 +437,19 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
     // Mark GIF as shown in sessionStorage (only once per session)
     sessionStorage.setItem(this.GIF_SHOWN_KEY, 'true');
-
+     this.startSpeakingSequence();
+      this.cdr.detectChanges();
     // Stop GIF after one play cycle - hide immediately to prevent looping
     // This ensures the GIF plays only once - concrete solution
     this.gifAnimationTimeout = setTimeout(() => {
       // Mark as played immediately
       this.gifPlayedOnce = true;
-
+     
       // IMMEDIATELY hide GIF and show static owl - this stops the looping
       this.showGif = false;
       this.showStaticOwl = true;
       this.isPlaying = false;
-
+      
       // Force stop the GIF by removing its source to prevent any further looping
       // This ensures the GIF cannot restart even if the element remains in DOM briefly
       if (this.gifElement && this.gifElement.nativeElement) {
@@ -468,8 +469,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       // This ensures owl and cloud appear together right after GIF
       // Use requestAnimationFrame to ensure DOM is updated before showing cloud
       requestAnimationFrame(() => {
-        this.startSpeakingSequence();
-        this.cdr.detectChanges();
+        // this.startSpeakingSequence();
+        // this.cdr.detectChanges();
       });
     }, this.gifAnimationDuration);
   }
