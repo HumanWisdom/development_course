@@ -19,13 +19,16 @@
   .suggestions-instruction {
     margin-bottom: 10px;
   }
-  
+  .suggestion-number{
+    margin-right: 5px;
+  }
   .suggestions-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
 }
+
 
 .suggestion-button{
     background: #A54265;

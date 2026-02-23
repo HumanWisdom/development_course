@@ -1,4 +1,4 @@
-<div class="chat-bot-container" (keydown.enter)="onCloseChat()" tabindex="0">
+<div class="chat-bot-container">
   <!-- Header -->
   <div class="chat-header">
     <div class="header-content" *ngIf="isAdults">
@@ -60,16 +60,17 @@
                 </button>
               </div>
             </div>
-          </div>
-          <!-- Feedback Buttons (Thumbs Up/Down) -->
-          <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot'"
-            class="feedback-container">
-            <button class="feedback-button thumbs-up" [class.active]="message.feedback_given === 'positive'"
-              [disabled]="message.feedback_given !== null" (click)="onThumbsUp(message)" title="Helpful">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upadults.svg"
-                alt="Chat Bot Icon" *ngIf="isAdults" />
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thump_upteens.svg"
-                alt="Chat Bot Icon" *ngIf="!isAdults" />
+            
+            <!-- Feedback Buttons (Thumbs Up/Down) -->
+            <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot'" class="feedback-container">
+              <button 
+                class="feedback-button thumbs-up" 
+                [class.active]="message.feedback_given === 'positive'"
+                [disabled]="message.feedback_given !== null"
+                (click)="onThumbsUp(message)"
+                title="Helpful">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upadults.svg" alt="Chat Bot Icon"  *ngIf="isAdults" />
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thump_upteens.svg" alt="Chat Bot Icon"  *ngIf="!isAdults" />
 
               <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 22V11M2 13V20C2 21.1046 2.89543 22 4 22H16.4262C17.907 22 19.1662 20.9197 19.3914 19.4562L20.4683 12.4562C20.7479 10.6389 19.3418 9 17.5031 9H14C13.4477 9 13 8.55228 13 8V4.46584C13 3.10399 11.896 2 10.5342 2C10.2093 2 9.91498 2.1913 9.78306 2.48812L7.26394 8.40614C7.10344 8.76727 6.74532 9 6.35013 9H4C2.89543 9 2 9.89543 2 11V13Z" 
@@ -95,7 +96,7 @@
                 </svg> -->
               </button>
             </div>
-                      <div class="" [ngClass]="{'typing-indicator': message.isTyping}">
+            
 
             <!-- Typing indicator -->
             <div *ngIf="message.isTyping" class="typing-dots">
@@ -103,10 +104,9 @@
               <span></span>
               <span></span>
             </div>
-          </div>
-
-          <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp)
-            }}</span>
+          
+          
+          <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp) }}</span>
         </div>
       </div>
 
