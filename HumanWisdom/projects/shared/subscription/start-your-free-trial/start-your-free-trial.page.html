@@ -3,15 +3,15 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" (click)="back()" alt=""
-          class="p0" *ngIf="!isAdults">
-           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/close.svg" (click)="back()" alt=""
-          class="p0" *ngIf="isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/close.svg" (click)="back()"
+          (keydown.enter)="back()" tabindex="0" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/close.svg" (click)="back()"
+          (keydown.enter)="back()" tabindex="0" alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter"  [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff'">
+      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff'">
         HappierMe Premium
       </h1>
     </div>
@@ -67,21 +67,21 @@
 
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px  fw_600 fs_24px lh_140p  tcenter"  [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
+                  <h4 class="mtb0px  fw_600 fs_24px lh_140p  tcenter" [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
                     Ready to go deeper on your journey?
                   </h4>
-                  <h4 class="mtb10px fs_15px fw_400 lh_140p  tcenter"   [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                  <h4 class="mtb10px fs_15px fw_400 lh_140p  tcenter" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     Start your free trial today! </h4>
                 </div>
               </div>
 
-              <svg width="100%" height="10" *ngIf="isAdults" >
-                <line x1="0" y1="5" x2="100%" y2="5" stroke="#000"   opacity="50%" stroke-width="1"
+              <svg width="100%" height="10" *ngIf="isAdults">
+                <line x1="0" y1="5" x2="100%" y2="5" stroke="#000" opacity="50%" stroke-width="1"
                   stroke-dasharray="1,4" />
               </svg>
 
-               <svg width="100%" height="10"  *ngIf="!isAdults" >
-                <line x1="0" y1="5" x2="100%" y2="5" stroke="#fff"   opacity="50%" stroke-width="1"
+              <svg width="100%" height="10" *ngIf="!isAdults">
+                <line x1="0" y1="5" x2="100%" y2="5" stroke="#fff" opacity="50%" stroke-width="1"
                   stroke-dasharray="1,4" />
               </svg>
               <div class="row ">
@@ -94,10 +94,12 @@
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
 
-                      <h4 class="mtb0px fs_18px fw_600 lh_130p  dflex_start"   [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      <h4 class="mtb0px fs_18px fw_600 lh_130p  dflex_start"
+                        [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
 
                         Expert guidance </h4>
-                      <h4 class="mt10px fs_12px fw_400 lh_140p  dflex_start"  [ngClass]="isAdults? 'fc_000000_0_7': 'fc_ffffff_0_7'">
+                      <h4 class="mt10px fs_12px fw_400 lh_140p  dflex_start"
+                        [ngClass]="isAdults? 'fc_000000_0_7': 'fc_ffffff_0_7'">
                         Move beyond the basics with structured programs, expert-led content, and personalised support
                         that helps you grow emotionally and mentally.</h4>
 
@@ -106,11 +108,11 @@
                   </div>
                 </div>
 
-                 <svg width="100%" height="10" *ngIf="isAdults" >
-                <line x1="0" y1="5" x2="100%" y2="5" stroke="#000"   opacity="50%" stroke-width="1"
-                  stroke-dasharray="1,4" />
-              </svg>
-                <svg width="100%" height="10"  *ngIf="!isAdults">
+                <svg width="100%" height="10" *ngIf="isAdults">
+                  <line x1="0" y1="5" x2="100%" y2="5" stroke="#000" opacity="50%" stroke-width="1"
+                    stroke-dasharray="1,4" />
+                </svg>
+                <svg width="100%" height="10" *ngIf="!isAdults">
                   <line x1="0" y1="5" x2="100%" y2="5" stroke="#fff" opacity="50%" stroke-width="1"
                     stroke-dasharray="1,4" />
                 </svg>
@@ -123,21 +125,22 @@
 
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="mtb0px fs_18px fw_600 lh_130p "   [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      <h4 class="mtb0px fs_18px fw_600 lh_130p " [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
 
                         Personalised tools that work for you </h4>
-                      <h4 class="mt10px fs_12px fw_400 lh_140p  dflex_start"   [ngClass]="isAdults? 'fc_000000_0_7': 'fc_ffffff_0_7'">
+                      <h4 class="mt10px fs_12px fw_400 lh_140p  dflex_start"
+                        [ngClass]="isAdults? 'fc_000000_0_7': 'fc_ffffff_0_7'">
                         From mood-based recommendations to journaling prompts and targeted exercises, everything is
                         tailored to help you feel better, gain clarity, and build lasting habits.</h4>
                     </div>
                   </div>
                 </div>
 
-                 <svg width="100%" height="10" *ngIf="isAdults" >
-                <line x1="0" y1="5" x2="100%" y2="5" stroke="#000"   opacity="50%" stroke-width="1"
-                  stroke-dasharray="1,4" />
-              </svg>
-                <svg width="100%" height="10" *ngIf="!isAdults" >
+                <svg width="100%" height="10" *ngIf="isAdults">
+                  <line x1="0" y1="5" x2="100%" y2="5" stroke="#000" opacity="50%" stroke-width="1"
+                    stroke-dasharray="1,4" />
+                </svg>
+                <svg width="100%" height="10" *ngIf="!isAdults">
                   <line x1="0" y1="5" x2="100%" y2="5" stroke="#fff" opacity="50%" stroke-width="1"
                     stroke-dasharray="1,4" />
                 </svg>
@@ -151,11 +154,12 @@
 
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                      <h4 class="mtb0px fs_18px fw_600 lh_130p  "   [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      <h4 class="mtb0px fs_18px fw_600 lh_130p  " [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
 
                         Daily practices that fit your life
                       </h4>
-                      <h4 class="mt10px fs_12px fw_400 lh_140p  dflex_start"   [ngClass]="isAdults? 'fc_000000_0_7': 'fc_ffffff_0_7'">
+                      <h4 class="mt10px fs_12px fw_400 lh_140p  dflex_start"
+                        [ngClass]="isAdults? 'fc_000000_0_7': 'fc_ffffff_0_7'">
                         Access inspiring videos, meditations, podcasts and more - anytime, anywhere - so you can take
                         care of your mental wellbeing in a way that feels natural and sustainable.
                       </h4>
@@ -163,12 +167,12 @@
                   </div>
                 </div>
               </div>
-  <svg width="100%" height="10" *ngIf="isAdults" >
-                <line x1="0" y1="5" x2="100%" y2="5" stroke="#000"   opacity="50%" stroke-width="1"
+              <svg width="100%" height="10" *ngIf="isAdults">
+                <line x1="0" y1="5" x2="100%" y2="5" stroke="#000" opacity="50%" stroke-width="1"
                   stroke-dasharray="1,4" />
               </svg>
 
-              <svg width="100%" height="10"  *ngIf="!isAdults">
+              <svg width="100%" height="10" *ngIf="!isAdults">
                 <line x1="0" y1="5" x2="100%" y2="5" stroke="#fff" opacity="50%" stroke-width="1"
                   stroke-dasharray="1,4" />
               </svg>
@@ -189,7 +193,9 @@
                   <!-- </div> -->
                   <!-- <div class="col-lg-6 col-md-6 col-sm-2 col-xs-2 p0"> -->
 
-                  <h4 style="cursor: pointer;" class="mtb10px fs_12px fw_400 lh_140p  tcenter td_underline"  [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'" (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness'); giftwisdom()">
+                  <h4 style="cursor: pointer;" class="mtb10px fs_12px fw_400 lh_140p  tcenter td_underline"
+                    [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'"
+                    (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness'); giftwisdom()">
                     Subscribe for family & friends </h4>
 
 
@@ -206,9 +212,10 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"  (click)="share()">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" (click)="share()">
 
-                    <a class="mtb10px fs_12px fw_400 lh_140p  tcenter td_underline dflex_start1"  [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'" ><img
+                    <a class="mtb10px fs_12px fw_400 lh_140p  tcenter td_underline dflex_start1"
+                      [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'"><img
                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/share_preimum.svg"
                         class="img-responsive mr10px"> Share with a friend </a>
                   </div>

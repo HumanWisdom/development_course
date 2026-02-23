@@ -152,7 +152,10 @@
         cursor: not-allowed;
     }
 }
-
+.mdp_add_to_journal:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
 .mc_end_secure_text {
     font-size: 12px;
     // color: rgba(0, 0, 0, 0.5);

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -11,9 +11,15 @@ import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-chat-bot',
   templateUrl: './chat-bot.component.html',
-  styleUrls: ['./chat-bot.component.scss']
+  styleUrls: ['./chat-bot.component.scss','./chat-bot.teenager.component.scss']
 })
 export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
+  @HostBinding('class.teenager-theme') get isTeenagerTheme() {
+      return SharedService.ProgramId == ProgramType.Teenagers;
+    }
+    @HostBinding('class.adults-theme') get isAdultsTheme() {
+      return SharedService.ProgramId == ProgramType.Adults;
+    }
   @ViewChild('messageContainer', { static: false }) messageContainer!: ElementRef;
   @ViewChild('messageInput', { static: false }) messageInput!: ElementRef;
 
@@ -28,7 +34,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   private cachedHistoryMessages: HistoryMessage[] | null = null;
   private cachedHistoryUserId: number | null = null;
   private historyCheckInProgress: boolean = false;
-
+ isAdults = false;
+ 
   private messagesSubscription: Subscription = new Subscription();
   private typingSubscription: Subscription = new Subscription();
   private sessionSubscription: Subscription = new Subscription();
@@ -63,6 +70,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             console.log(`Message ${index} has ${msg.suggestions.length} suggestions:`, msg.suggestions);
           }
         });
+         if (SharedService.ProgramId == ProgramType.Adults) {
+              this.isAdults = true;
+            } else {
+              this.isAdults = false;
+            }
 
         // Ensure welcome messages if store becomes empty (e.g., after logout)
         if (messages.length === 0) {
@@ -118,6 +130,14 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.styleAnchorTags();
   }
 
+  @HostListener('window:scroll')
+    handleScroll(): void {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const threshold = viewportHeight * 0.2; // 20% of viewport height
+  
+     
+    }
   ngOnDestroy(): void {
     this.messagesSubscription.unsubscribe();
     this.typingSubscription.unsubscribe();

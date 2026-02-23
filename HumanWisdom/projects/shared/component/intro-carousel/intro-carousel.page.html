@@ -20,7 +20,9 @@
                         <div
                           class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex oli_tray ic_tray_ext col_cw">
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
-                            <a (click)="Logevent('', '', 'click_prev_onboarding')" *ngIf="currentSection === 1">
+                            <a (click)="Logevent('', '', 'click_prev_onboarding')"
+                              (keydown.enter)="Logevent('', '', 'click_prev_onboarding')" tabindex="0"
+                              *ngIf="currentSection === 1">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Previous
                               </button>
@@ -42,6 +44,7 @@
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
                             <a class="next" (click)="Logevent('', '', 'click_next_onboarding')"
+                              (keydown.enter)="Logevent('', '', 'click_next_onboarding')" tabindex="0"
                               *ngIf="currentSection === 0">
                               <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
                                 Next
@@ -123,8 +126,7 @@
                             <video *ngIf="isAdults" controls (play)="LogEvent('click_play_video_intro_carousel')"
                               playsinline class="cvideo_03 br_0px"
                               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
-                              controlsList="nodownload"
-                              style="height:245px; width:100%;">
+                              controlsList="nodownload" style="height:245px; width:100%;">
                               <source
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction.mp4"
                                 type="video/mp4">
@@ -133,8 +135,7 @@
                             <video *ngIf="!isAdults" controls (play)="LogEvent('click_play_video_intro_carousel')"
                               playsinline class="cvideo_03 br_0px"
                               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
-                              controlsList="nodownload"
-                              style="height:245px; width:100%;">
+                              controlsList="nodownload" style="height:245px; width:100%;">
                               <source
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/videos/introduction_teens.mp4"
                                 type="video/mp4">
@@ -258,14 +259,16 @@
                             <button type="submit" class="btn btn_login_signup tcenter">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg"
-                                (click)="fbLogin('login')" alt="" class="img-responsive">
+                                (click)="fbLogin('login')" (keydown.enter)="fbLogin('login')" tabindex="0" alt=""
+                                class="img-responsive">
                             </button>
                           </div>
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  tcenter">
                             <button type="submit" class="btn btn_login_signup tcenter">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google_01.svg"
-                                (click)="googleLogin('login')" alt="" class="img-responsive">
+                                (click)="googleLogin('login')" (keydown.enter)="googleLogin('login')" tabindex="0"
+                                alt="" class="img-responsive">
                             </button>
                             <!-- <div id="my-signin2" class="btn btn_login_signup tcenter"></div> -->
                           </div>
@@ -273,11 +276,13 @@
                             <button type="submit" class="btn btn_login_signup tcenter">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg"
-                                (click)="signInWithApple('login')" alt="" class="img-responsive" *ngIf="!isAdults">
+                                (click)="signInWithApple('login')" (keydown.enter)="signInWithApple('login')"
+                                tabindex="0" alt="" class="img-responsive" *ngIf="!isAdults">
 
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/apple-black+1.svg"
-                                (click)="signInWithApple('login')" alt="" class="img-responsive" *ngIf="isAdults ">
+                                (click)="signInWithApple('login')" (keydown.enter)="signInWithApple('login')"
+                                tabindex="0" alt="" class="img-responsive" *ngIf="isAdults ">
                             </button>
                           </div>
                         </div>
@@ -323,7 +328,7 @@
 
                       <div class="row mt20px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px tcenter">
-                          <a class="" (click)="routedashboard()">
+                          <a class="" (click)="routedashboard()" (keydown.enter)="routedashboard()" tabindex="0">
                             <span class="mtb0px fs_12px fw_400 lh_150p  underline"
                               [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               Continue as a guest
@@ -338,12 +343,14 @@
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_7'">
                             By continuing you agree to our
                             <a class="fw_500 " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
-                              (click)="routetoUrl('/help-support/terms-conditions')">
+                              (click)="routetoUrl('/help-support/terms-conditions')"
+                              (keydown.enter)="routetoUrl('/help-support/terms-conditions')" tabindex="0">
                               User agreement
                             </a>
                             and
                             <a class="fw_500 " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
-                              (click)="routetoUrl('/help-support/privacy-policy')">
+                              (click)="routetoUrl('/help-support/privacy-policy')"
+                              (keydown.enter)="routetoUrl('/help-support/privacy-policy')" tabindex="0">
                               Privacy policy
                             </a> and to receive our updates.
                             <br />

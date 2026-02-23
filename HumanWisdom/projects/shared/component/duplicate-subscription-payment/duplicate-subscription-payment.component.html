@@ -7,14 +7,16 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"  (click)="goBack()"  alt="" class="p0" *ngIf="!isAdults">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg"  (click)="goBack()"  alt="" class="p0" *ngIf="isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" (click)="goBack()"
+          (keydown.enter)="goBack()" tabindex="0" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" (click)="goBack()"
+          (keydown.enter)="goBack()" tabindex="0" alt="" class="p0" *ngIf="isAdults">
 
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+      <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         Update payment details
       </h1>
     </div>
@@ -34,32 +36,34 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <form id="payment-form">
-              <div id="card-element" class="mtb30px" >
+              <div id="card-element" class="mtb30px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="text"  autocomplete="off" id="name" class="sp_fc mb10px" placeholder="Cardholder’s Name">
+                    <input type="text" autocomplete="off" id="name" class="sp_fc mb10px"
+                      placeholder="Cardholder’s Name">
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                    <input type="text"  autocomplete="off"  id="postal-code" class="sp_fc mb10px" placeholder="Postal code">
+                    <input type="text" autocomplete="off" id="postal-code" class="sp_fc mb10px"
+                      placeholder="Postal code">
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col-md-12 col-sm-12 col-xs-12 p0" >
-                    <div id="card-number" class="sp_fc mb10px"  ></div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                    <div id="card-number" class="sp_fc mb10px"></div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6 pl0px pr5px" >
+                  <div class="col-md-6 col-sm-6 col-xs-6 pl0px pr5px">
                     <div id="card-expiry" class="sp_fc mb10px"></div>
                   </div>
 
-                  <div class="col-md-6 col-sm-6 col-xs-6 pr0px pl5px" >
-                    <div type="text" id="card-cvc" class="sp_fc mb10px" ></div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 pr0px pl5px">
+                    <div type="text" id="card-cvc" class="sp_fc mb10px"></div>
                   </div>
                 </div>
               </div>
@@ -69,7 +73,7 @@
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <button type="button"   data-dismiss="modal"  type="button" id="btnsubmit" class="btn profile_dmd" >
+                  <button type="button" data-dismiss="modal" type="button" id="btnsubmit" class="btn profile_dmd">
                     Update
                   </button>
                 </div>

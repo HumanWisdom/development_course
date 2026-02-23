@@ -4,9 +4,9 @@
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="back()"
-          alt="" class="p0" *ngIf="!isAdults">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" (click)="back()" alt="" class="p0"
-          *ngIf="isAdults">
+          (keydown.enter)="back()" tabindex="0" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" (click)="back()"
+          (keydown.enter)="back()" tabindex="0" alt="" class="p0" *ngIf="isAdults">
 
       </a>
     </div>
@@ -20,9 +20,11 @@
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
-          (click)="routeToDashboard()" alt="" class="p0" *ngIf="!isAdults">
+          (click)="routeToDashboard()" (keydown.enter)="routeToDashboard()" tabindex="0" alt="" class="p0"
+          *ngIf="!isAdults">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg"
-          (click)="routeToDashboard()" alt="" class="p0" *ngIf="isAdults">
+          (click)="routeToDashboard()" (keydown.enter)="routeToDashboard()" tabindex="0" alt="" class="p0"
+          *ngIf="isAdults">
 
       </a>
     </div>

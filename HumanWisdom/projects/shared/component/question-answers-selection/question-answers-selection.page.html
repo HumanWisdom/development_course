@@ -120,7 +120,9 @@
 
                         <div *ngFor="let m of o['OptStr']; let i=index">
                           <div class="row m-b-20 m-t-20"
-                            (click)="checkOption(ind, o['OptId'][i],  o['Points'][i], o['OptStr'][i])">
+                            (click)="checkOption(ind, o['OptId'][i],  o['Points'][i], o['OptStr'][i])"
+                            (keydown.enter)="checkOption(ind, o['OptId'][i],  o['Points'][i], o['OptStr'][i])"
+                            tabindex="0">
                             <div class="col-md-12 col-sm-12 col-xs-12  p0">
 
                               <div>
