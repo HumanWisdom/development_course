@@ -42,7 +42,7 @@
                     <button type="button"  class="btn btn_all_threads btn-thread" (click)="openChooseCategoryModal()" [innerText]="buttonText" >   
                                                      
                     </button>
-                    <i (click)="openChooseCategoryModal()" class="fa fa-angle-down btn-down"></i>   
+                    <i (click)="openChooseCategoryModal()" (keydown.enter)="openChooseCategoryModal()" class="fa fa-angle-down btn-down"></i>   
                   </div>
 
                 </div>

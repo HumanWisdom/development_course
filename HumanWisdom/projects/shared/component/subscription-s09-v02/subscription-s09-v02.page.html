@@ -3,9 +3,9 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" (click)="goBack()"
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back.svg" (click)="goBack()" (keydown.enter)="goBack()"
           alt="" class="p0" *ngIf="!isAdults">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" (click)="goBack()"
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" (click)="goBack()" (keydown.enter)="goBack()"
           alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
@@ -98,7 +98,7 @@
 
                               
                                     <div style="cursor: pointer ;" *ngIf="item.canceled == 0 && item['AutoRenew'] == 1 && item.isTrial==0">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'"   (click)="autorenew(item)">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'"   (click)="autorenew(item)" >
                                         Auto-renew
                                       </h4>
 
@@ -107,7 +107,7 @@
                                       </h4>
                                     </div>
                                     <div *ngIf="item.canceled == 0 && item['AutoRenew'] == 0 && item.isTrial==0">
-                                      <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'"   (click)="autorenew(it0em)">
+                                      <h4 class="mtb0px fs_12px fw_400 lh_150p "   [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e58d82'"   (click)="autorenew(item)" (keydown.enter)="autorenew(item)">
                                         Expiry
                                       </h4>
 
