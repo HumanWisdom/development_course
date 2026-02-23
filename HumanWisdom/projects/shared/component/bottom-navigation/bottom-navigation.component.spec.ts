@@ -206,4 +206,128 @@ describe('BottomNavigationComponent', () => {
       expect(() => component.ngOnDestroy()).not.toThrow();
     });
   });
+
+  describe('ngOnChanges', () => {
+    it('should set userdetail and url from localStorage when userDetails has UserImagePath', () => {
+      const userDetails = { UserImagePath: 'path/to/image.png' };
+      localStorage.setItem('userDetails', JSON.stringify(userDetails));
+      component.ngOnChanges({ userdetail: { currentValue: {}, firstChange: true } } as any);
+      expect(component.userdetail).toBeDefined();
+      expect(component.userdetail.UserImagePath).toBe('path/to/image.png');
+      expect(component.url).toContain('path/to/image.png');
+      expect(component.url).toMatch(/\?\d+$/);
+    });
+
+    it('should not set url when userdetail has empty UserImagePath', () => {
+      localStorage.setItem('userDetails', JSON.stringify({ UserImagePath: '' }));
+      component.url = '';
+      component.ngOnChanges({ userdetail: { currentValue: {}, firstChange: true } } as any);
+      expect(component.url).toBe('');
+    });
+
+    it('should not throw when no userDetails in localStorage', () => {
+      localStorage.removeItem('userDetails');
+      expect(() =>
+        component.ngOnChanges({ userdetail: { currentValue: null, firstChange: true } } as any)
+      ).not.toThrow();
+    });
+  });
+
+  describe('ngOnInit', () => {
+    it('should call updateUserDetails.next', () => {
+      component.ngOnInit();
+      expect(mockOnboardingService.updateUserDetails.next).toHaveBeenCalledWith(true);
+    });
+
+    it('should set isloggedIn, Subscriber and guest when isloggedin is T', () => {
+      localStorage.setItem('isloggedin', 'T');
+      localStorage.setItem('Subscriber', '1');
+      localStorage.setItem('guest', '0');
+      fixture = TestBed.createComponent(BottomNavigationComponent);
+      component = fixture.componentInstance;
+      component.ngOnInit();
+      expect(component.isloggedIn).toBe(true);
+      expect(component.Subscriber).toBe('1');
+      expect(component.guest).toBe('0');
+    });
+
+    it('should set disableClick when getEnableTour emits true', () => {
+      mockOnboardingService.getEnableTour.and.returnValue(of(true));
+      fixture = TestBed.createComponent(BottomNavigationComponent);
+      component = fixture.componentInstance;
+      component.ngOnInit();
+      expect(component.disableClick).toBe(true);
+    });
+
+    it('should set search true when router url is search', () => {
+      Object.defineProperty(mockRouter, 'url', {
+        get: () => '/adults/search',
+        configurable: true
+      });
+      fixture = TestBed.createComponent(BottomNavigationComponent);
+      component = fixture.componentInstance;
+      component.ngOnInit();
+      expect(component.search).toBe(true);
+      expect(component.dash).toBe(false);
+      expect(component.journal).toBe(false);
+      expect(component.fourm).toBe(false);
+    });
+
+    it('should set dash true when router url is dashboard or home', () => {
+      Object.defineProperty(mockRouter, 'url', { get: () => '/adults/home', configurable: true });
+      fixture = TestBed.createComponent(BottomNavigationComponent);
+      component = fixture.componentInstance;
+      component.ngOnInit();
+      expect(component.dash).toBe(true);
+      expect(component.journal).toBe(false);
+      expect(component.search).toBe(false);
+      expect(component.fourm).toBe(false);
+    });
+
+    it('should set journal true when router url includes journal', () => {
+      Object.defineProperty(mockRouter, 'url', {
+        get: () => '/adults/journal',
+        configurable: true
+      });
+      fixture = TestBed.createComponent(BottomNavigationComponent);
+      component = fixture.componentInstance;
+      component.ngOnInit();
+      expect(component.journal).toBe(true);
+      expect(component.dash).toBe(false);
+    });
+
+    it('should set fourm true when router url includes forum', () => {
+      Object.defineProperty(mockRouter, 'url', {
+        get: () => '/adults/forum',
+        configurable: true
+      });
+      fixture = TestBed.createComponent(BottomNavigationComponent);
+      component = fixture.componentInstance;
+      component.ngOnInit();
+      expect(component.fourm).toBe(true);
+      expect(component.dash).toBe(false);
+    });
+
+    it('should set enableprofile true when router url is user-profile', () => {
+      Object.defineProperty(mockRouter, 'url', {
+        get: () => '/adults/onboarding/user-profile',
+        configurable: true
+      });
+      fixture = TestBed.createComponent(BottomNavigationComponent);
+      component = fixture.componentInstance;
+      component.ngOnInit();
+      expect(component.enableprofile).toBe(true);
+      expect(component.dash).toBe(false);
+    });
+  });
+
+  describe('inputs and defaults', () => {
+    it('should have default programType Adults', () => {
+      expect(component.programType).toBe(ProgramType.Adults);
+    });
+
+    it('should have profile true by default', () => {
+      expect(component.profile).toBe(true);
+    });
+  });
 });
