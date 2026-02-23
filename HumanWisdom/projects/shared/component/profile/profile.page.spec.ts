@@ -72,6 +72,8 @@ describe('ProfilePage', () => {
     spyOn(SharedService, 'getprogramName').and.returnValue('adults');
     spyOn(SharedService, 'getDashboardUrls').and.returnValue('/adults/home');
 
+    (window as any).Moengage = { destroy_session: jasmine.createSpy('destroy_session') };
+
     localStorage.setItem('loginResponse', JSON.stringify(mockLoginResponse));
     localStorage.setItem('userID', '123');
     localStorage.setItem('userId', '123');

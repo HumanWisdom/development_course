@@ -12,8 +12,14 @@ describe('TnCloseComponent', () => {
   let mockLocation: jasmine.SpyObj<Location>;
   let mockRouter: jasmine.SpyObj<Router>;
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
+  let mockProgramId: number;
 
   beforeEach(async () => {
+    mockProgramId = ProgramType.Adults;
+    Object.defineProperty(SharedService, 'ProgramId', {
+      get: () => mockProgramId,
+      configurable: true
+    });
     mockLocation = jasmine.createSpyObj('Location', ['back']);
     mockLocation.back.and.stub();
 
@@ -44,13 +50,13 @@ describe('TnCloseComponent', () => {
 
   describe('ngOnInit', () => {
     it('should set isAdults true when ProgramId is Adults', () => {
-      SharedService.ProgramId = ProgramType.Adults;
+      mockProgramId = ProgramType.Adults;
       component.ngOnInit();
       expect(component.isAdults).toBe(true);
     });
 
     it('should set isAdults false when ProgramId is Teenagers', () => {
-      SharedService.ProgramId = ProgramType.Teenagers;
+      mockProgramId = ProgramType.Teenagers;
       component.ngOnInit();
       expect(component.isAdults).toBe(false);
     });

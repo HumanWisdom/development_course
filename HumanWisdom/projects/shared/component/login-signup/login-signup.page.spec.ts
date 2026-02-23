@@ -376,4 +376,257 @@ describe('LoginSignupPage', () => {
       expect(mockRouter.navigate).toHaveBeenCalledWith(['/onboarding/add-to-cart']);
     }));
   });
+
+  describe('additional coverage', () => {
+    it('verifyCode success', fakeAsync(() => {
+      component.verificationCode = '1234';
+      component.registrationForm.patchValue({ email: 'a@b.com', ogpassword: 'pass123' });
+      component.closeotpmodal = { nativeElement: { click: jasmine.createSpy() } } as any;
+      component.closemodal = { nativeElement: { click: jasmine.createSpy() } } as any;
+      mockOnboardingService.verifyCode.and.returnValue(of(true));
+      component.verifyCode();
+      tick(1500);
+      expect(component.codeVerified).toBe(true);
+      expect(component.isSignUp).toBe(false);
+    }));
+
+    it('PasswordValidator returns null when pristine', () => {
+      const ctrl = { get: (k: string) => ({ value: 'a', pristine: true }) };
+      expect(component.PasswordValidator(ctrl as any)).toBeNull();
+    });
+
+    it('PasswordValidator returns misMatch when passwords differ', () => {
+      const ctrl = { get: (k: string) => k === 'ogpassword' ? { value: 'pass1', pristine: false } : { value: 'pass2', pristine: false } };
+      expect(component.PasswordValidator(ctrl as any)).toEqual({ misMatch: true });
+    });
+
+    it('signup with single word fullname sets Lname empty', () => {
+      component.registrationForm.patchValue({ fullname: 'John', email: 'j@j.com', ogpassword: 'pass123', confirmPassword: 'pass123' });
+      component.signup();
+      expect(mockOnboardingService.addUser).toHaveBeenCalledWith(jasmine.objectContaining({ FName: 'John', Lname: '' }));
+    });
+
+    it('setUpLoginConfiguration option T navigates to personalised', fakeAsync(() => {
+      localStorage.setItem('introoption', 'T');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/intro/personalised-for-you']);
+    }));
+
+    it('setUpLoginConfiguration acceptCookie navigates to change-password when roleid 8', fakeAsync(() => {
+      localStorage.setItem('activeCode', 'T');
+      localStorage.setItem('subscribepage', 'T');
+      localStorage.setItem('emailCode', 'T');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 8, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/onboarding/change-password']);
+    }));
+
+    it('setUpLoginConfiguration giftwisdom navigates to add-to-cart', fakeAsync(() => {
+      localStorage.setItem('activeCode', 'T');
+      localStorage.setItem('subscribepage', 'T');
+      localStorage.setItem('giftwisdom', 'T');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/onboarding/add-to-cart']);
+    }));
+
+    it('setUpLoginConfiguration Subscriber 0 navigates to add-to-cart', fakeAsync(() => {
+      localStorage.setItem('activeCode', 'T');
+      localStorage.setItem('subscribepage', 'T');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 0, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/onboarding/add-to-cart']);
+    }));
+
+    it('setUpLoginConfiguration Subscriber 1 navigates to viewcart', fakeAsync(() => {
+      localStorage.setItem('activeCode', 'T');
+      localStorage.setItem('subscribepage', 'T');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/onboarding/viewcart']);
+    }));
+
+    it('setUpLoginConfiguration NoOfVisits 1 Adults navigates to change-topic', fakeAsync(() => {
+      Object.defineProperty(SharedService, 'ProgramId', { get: () => ProgramType.Adults, configurable: true });
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 1
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/change-topic'], jasmine.any(Object));
+    }));
+
+    it('setUpLoginConfiguration NoOfVisits 1 Teenagers navigates to change-topic', fakeAsync(() => {
+      Object.defineProperty(SharedService, 'ProgramId', { get: () => ProgramType.Teenagers, configurable: true });
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 1
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/teenagers/change-topic'], jasmine.any(Object));
+    }));
+
+    it('setUpLoginConfiguration NoOfVisits > 1 navigates to repeat-user', fakeAsync(() => {
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['adults/repeat-user']);
+    }));
+
+    it('setUpLoginConfiguration navigateToUpgradeToPremium IsPartner ReceiveIncome', fakeAsync(() => {
+      (mockOnboardingService as any).navigateToUpgradeToPremium = true;
+      localStorage.setItem('IsPartner', '1');
+      localStorage.setItem('PartnerOption', 'ReceiveIncome');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '1', PartnerOption: 'ReceiveIncome', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/partnership-report/income-activity']);
+    }));
+
+    it('setUpLoginConfiguration navigateToUpgradeToPremium IsPartner tree', fakeAsync(() => {
+      (mockOnboardingService as any).navigateToUpgradeToPremium = true;
+      localStorage.setItem('IsPartner', '1');
+      localStorage.setItem('PartnerOption', 'Tree');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '1', PartnerOption: 'Tree', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/partnership-report/tree-plantation-report']);
+    }));
+
+    it('setUpLoginConfiguration navigateToUpgradeToPremium partnership-app', fakeAsync(() => {
+      (mockOnboardingService as any).navigateToUpgradeToPremium = true;
+      localStorage.setItem('IsPartner', '0');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['adults/partnership-app']);
+    }));
+
+    it('setUpLoginConfiguration pers persub navigates to payment', fakeAsync(() => {
+      localStorage.setItem('personalised', 'T');
+      localStorage.setItem('personalised subscription', 'plan1');
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/onboarding/payment'], jasmine.objectContaining({ state: jasmine.any(Object) }));
+    }));
+
+    it('setUpLoginConfiguration UrlToRedirect subscription isSubscriber adults', fakeAsync(() => {
+      (SharedService as any).UrlToRedirect = '/adults/subscription/try-free-and-subscribe';
+      (SharedService.isSubscriber as jasmine.Spy).and.returnValue(true);
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['adults/adult-dashboard']);
+    }));
+
+    it('setUpLoginConfiguration UrlToRedirect subscription isSubscriber teenagers', fakeAsync(() => {
+      (SharedService as any).UrlToRedirect = '/teenagers/subscription/try-free-and-subscribe';
+      (SharedService.isSubscriber as jasmine.Spy).and.returnValue(true);
+      Object.defineProperty(SharedService, 'ProgramId', { get: () => ProgramType.Teenagers, configurable: true });
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'T', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5
+      } as any);
+      tick();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/teenagers/teenager-dashboard']);
+    }));
+
+    it('setUpLoginConfiguration saveUsername true uses localStorage', fakeAsync(() => {
+      component.saveUsername = true;
+      component.email = 'e@e.com';
+      component.setUpLoginConfiguration({
+        UserId: 123, Name: 'Test', access_token: 't', Subscriber: 1, RoleID: 1, SubscriberType: 'A', IsPartner: '0', PartnerOption: '', NoOfVisits: 5, Email: 'e@e.com'
+      } as any);
+      tick();
+      expect(localStorage.getItem('userEmail')).toBeTruthy();
+    }));
+
+    it('handleCredentialResponse runs in zone', () => {
+      spyOn(component['zone'], 'run').and.callFake((fn: any) => fn());
+      spyOn(component as any, 'handleCredential');
+      component.handleCredentialResponse({ credential: 'tok' });
+      expect(component['zone'].run).toHaveBeenCalled();
+      expect((component as any).handleCredential).toHaveBeenCalledWith({ credential: 'tok' });
+    });
+
+    it('signInWithApple logs and opens url', () => {
+      spyOn(window, 'open');
+      component.signInWithApple('signup');
+      expect(mockLogEventService.logEvent).toHaveBeenCalledWith('apple_signup');
+      expect(window.open).toHaveBeenCalled();
+    });
+
+    it('handleAppleLoginResponse navigates when token exists', () => {
+      localStorage.setItem('token', 'abc');
+      component.handleAppleLoginResponse();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/adult-dashboard']);
+    });
+
+    it('resolved sets isValidCaptach', () => {
+      mockOnboardingService.verifyCaptcha.and.returnValue(of({ valid: true }));
+      component.resolved('captcha-token');
+      expect(component.isValidCaptach).toBe(true);
+    });
+
+    it('onKeyPress hides password-reveal when element exists', () => {
+      const host = fixture.debugElement.nativeElement;
+      const div = document.createElement('div');
+      div.id = 'password-reveal';
+      host.appendChild(div);
+      component.onKeyPress(null);
+      expect(div.style.display).toBe('none');
+      host.removeChild(div);
+    });
+
+    it('getfreeuser calls freescreens', () => {
+      component.getfreeuser();
+      expect(mockOnboardingService.freeScreens).toHaveBeenCalled();
+    });
+
+    it('emailLogin calls verifyUser when urlEmail set', () => {
+      component.urlEmail = 'url@email.com';
+      component.email = 'e@e.com';
+      component.password = 'p';
+      component.emailLogin();
+      expect(mockOnboardingService.verifyUser).toHaveBeenCalledWith('url@email.com');
+    });
+
+    it('getters return form controls', () => {
+      fixture.detectChanges();
+      expect(component.fullname).toBeDefined();
+      expect(component.emailvalid).toBeDefined();
+      expect(component.passwordvalid).toBeDefined();
+      expect(component.confirmpasswordvalid).toBeDefined();
+    });
+
+    it('ngOnInit clears forceGoogleReinit containers', () => {
+      sessionStorage.setItem('forceGoogleReinit', 'true');
+      const div1 = document.createElement('div');
+      div1.id = 'googleBtnSignup';
+      document.body.appendChild(div1);
+      const div2 = document.createElement('div');
+      div2.id = 'googleBtnLogin';
+      document.body.appendChild(div2);
+      component.ngOnInit();
+      expect(div1.innerHTML).toBe('');
+      expect(div2.innerHTML).toBe('');
+      document.body.removeChild(div1);
+      document.body.removeChild(div2);
+    });
+  });
 });

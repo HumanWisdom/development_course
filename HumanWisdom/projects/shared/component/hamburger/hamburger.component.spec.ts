@@ -99,6 +99,8 @@ describe('HamburgerComponent', () => {
     spyOn(SharedService, 'getprogramName').and.returnValue('adults');
     spyOn(SharedService, 'getPartnerInfo').and.returnValue('0');
 
+    (window as any).Moengage = { destroy_session: jasmine.createSpy('destroy_session') };
+
     // Setup localStorage
     localStorage.clear();
     localStorage.setItem('isloggedin', 'T');
