@@ -32,6 +32,7 @@ describe('ForumLandingPage', () => {
   let mockModalService: jasmine.SpyObj<ModalService>;
   let routerEventsSubject: Subject<any>;
   let postdataSource: BehaviorSubject<any>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockPosts = [
     {
@@ -130,6 +131,7 @@ describe('ForumLandingPage', () => {
     spyOn(SharedService, 'DisabledComment').and.returnValue(false);
     
     // Mock ProgramId
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
       configurable: true
@@ -180,6 +182,9 @@ describe('ForumLandingPage', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     fixture.destroy();
   });
 

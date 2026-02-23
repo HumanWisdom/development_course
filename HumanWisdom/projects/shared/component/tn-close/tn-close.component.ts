@@ -44,10 +44,10 @@ export class TnCloseComponent implements OnInit {
 
   goBack() {
     var url = this.navigationService.navigateToBackLink();
-    if (url.includes("daily-checkin-save")) {
-      this.router.navigate([SharedService.getDashboardUrls()]);
-    } else if (url == null) {
+    if (url == null) {
       this.location.back();
+    } else if (url.includes("daily-checkin-save")) {
+      this.router.navigate([SharedService.getDashboardUrls()]);
     } else {
       this.router.navigate([url]);
     }

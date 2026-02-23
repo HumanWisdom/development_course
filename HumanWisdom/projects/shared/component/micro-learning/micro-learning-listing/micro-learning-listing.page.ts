@@ -137,6 +137,8 @@ export class MicroLearningListingPage implements OnInit {
     }
     // Logic to navigate to dynamic inner page
     localStorage.removeItem('fromMicroLearningEnd');
+    localStorage.removeItem('ml_index_' + item.id);
+    localStorage.removeItem('persist_ml_index');
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/micro-learning/inner`, item.id]);
   }

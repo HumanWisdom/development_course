@@ -36,6 +36,8 @@ export class S232Page implements OnInit, OnDestroy {
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+    isContentsOpen = false;
+
   isSubscriber = false;
 
   constructor(
@@ -135,6 +137,11 @@ export class S232Page implements OnInit, OnDestroy {
     history.replaceState(null, null, this.path + `?t=${this.token}`);
     this.socialShare = true
   }
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
+
   toggleBookmark() {
     if (this.bookmark == 0)
       this.bookmark = 1

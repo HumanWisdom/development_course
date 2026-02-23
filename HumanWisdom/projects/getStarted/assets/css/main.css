@@ -2658,6 +2658,9 @@ a {
   justify-content: center;
   width: 100%;
   margin: 0 auto;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10;
 }
 
 .owl_blog .owl-nav .owl-prev .owl_coach .owl-nav .owl-prev {

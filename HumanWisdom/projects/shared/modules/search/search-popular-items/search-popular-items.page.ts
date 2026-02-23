@@ -619,6 +619,16 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   routemodule(res) {
+    const url = res['ModuleUrl'];
+    const isMicroLearning = url && (url.includes('micro-learning') || url.includes('microlearning'));
+    if (isMicroLearning) {
+      const parts = url.split('/');
+      const id = parts[parts.length - 1];
+      if (id) {
+        localStorage.removeItem('ml_index_' + id);
+        localStorage.removeItem('persist_ml_index');
+      }
+    }
     localStorage.setItem("moduleId", JSON.stringify(res['ModuleId']))
     this.commonService.clickModule(res['ModuleId'], this.userId)
       .subscribe(res => {
@@ -631,7 +641,7 @@ export class SearchPopularItemsPage implements OnInit {
         }
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       })
-    this.router.navigate([res['ModuleUrl']]);
+    this.router.navigate([url]);
   }
 
   timeSince(date) {
@@ -647,7 +657,17 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   routeToFeelBetterNow(url) {
-    this.router.navigate([SharedService.getUrlfromFeatureName(url)]);
+    const targetUrl = SharedService.getUrlfromFeatureName(url);
+    const isMicroLearning = targetUrl && (targetUrl.includes('micro-learning') || targetUrl.includes('microlearning'));
+    if (isMicroLearning) {
+      const parts = targetUrl.split('/');
+      const id = parts[parts.length - 1];
+      if (id) {
+        localStorage.removeItem('ml_index_' + id);
+        localStorage.removeItem('persist_ml_index');
+      }
+    }
+    this.router.navigate([targetUrl]);
   }
 
   onModalClose(event: string) {

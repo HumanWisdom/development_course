@@ -68,6 +68,17 @@ require_once('./includes/security_config.php');
 
 
   <style>
+    .mt15px{
+      margin-top: 15px;
+    }
+    .bi-chevron-left::before{
+        padding-top: 6px;
+        padding-right: 2px;
+      }
+        .bi-chevron-right::before{
+          padding-top: 6px;
+          padding-left: 2px;
+        }
     @media (max-width: 767px) {
       .mobile-fs-18px {
         font-size: 18px !important;
@@ -75,6 +86,7 @@ require_once('./includes/security_config.php');
       .mobile-fc-black {
         color: #000000 !important;
       }
+      
 
       /* Force White Plus/Minus Icons on Mobile Accordion */
       #accordion_footer .panel-title > a::after {
@@ -121,6 +133,10 @@ require_once('./includes/security_config.php');
         -webkit-overflow-scrolling: touch; 
         overscroll-behavior: contain; /* Prevent scroll chaining to body */
       }
+       .owl-carousel .owl-stage {
+          width: auto !important;
+        }
+
 
       /* Lock body scroll when modal is open */
       body.modal-open {
@@ -891,7 +907,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h4 class="mt20px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%;">
+                  <h4 class="mt15px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%;">
                     <i>"HappierMe is the best app I have found to assist entire families, and the root cause of their
                       struggles, rather than just the symptoms."
                     </i>
@@ -918,7 +934,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h4 class="mt20px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%;">
+                  <h4 class="mt15px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%;">
                     <i>
                       "HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful.
                       The app has transformed my way of thinking and relieved me of my anxiety."
@@ -948,7 +964,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h4 class="mt20px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%" ;>
+                  <h4 class="mt15px mb12px fs_15px fw_400 lh_150p fc_000000" style="opacity:75%" ;>
                     <i>
 
                       "HappierMe is a well-designed app that provides many useful tools and resources
@@ -1807,8 +1823,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt15px mb30px" style="margin-bottom: 30px !important;">
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
-                    <a id="findoutMore" aria-label="Explore the teenagers app" class="">
-                      <!-- <a href="https://happierme.app/teenagers/intro-carousel" class=""> -->
+                    <a id="findoutMore" href="../pages/teenagers.php" aria-label="Explore the teenagers app" class="">
                       <h5 class="mtb0px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline pt_pb pt-10px">
                         Find out more <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                         <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->
@@ -2177,9 +2192,10 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </a>
             </div>
-
+          
             <!-- Navigation arrows and Find out more on same line -->
             <div class="owl-theme">
+              
               <div class="owl-controls">
                 <div class="fixed_w1340 d-flex justify-content-between align-items-center">
                
@@ -2195,7 +2211,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy></a> -->
                     </h5>
                   </a>
-          
+            
           </div>
 
         </div>
@@ -2800,6 +2816,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </a>
             </div>
 
+  
             <div class="owl-theme">
               <div class="owl-controls">
                 <div class="d-flex justify-content-between align-items-center">
@@ -2809,8 +2826,8 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
             </div>
 
-             <a class="sap" mb id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
-                    <h5 class="mt20px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
+                       <a class="sap" mb id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
+                    <h5 class="mt10px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                       See all posts
                       <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
                       <!-- <img  style="width:13px; height:13px;"src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/angle_right_peach.svg" class="img-responsive ml6px" alt="angle_right_peach" loading=lazy> -->

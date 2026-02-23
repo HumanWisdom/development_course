@@ -15,7 +15,7 @@
 }
 
 .owl-animation-wrapper.corner {
-  bottom: 55px;
+  bottom: 53px;
   right: calc((100vw - 30vw) / 2 + 10px);
   transform: none;
   -webkit-transform: none;
@@ -330,47 +330,70 @@ body:has(#menu:checked) .owl-animation-wrapper {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Animation starts from owl's top - faster appearance */
-  animation: cloud-grow 0.4s ease-out forwards;
+  /* Animation: dialogue emerges slowly from owl's mouth */
+  animation: cloud-grow 1.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   transform-origin: bottom center;
 }
 
-/* Multi-stage cloud growth animation: starts from bottom-right (around 20px from top), expands upward to top */
-/* Owl image: height 100px * scale(0.7) = 70px actual height, centered in container */
-/* Cloud container at top: -80px relative to static-owl-container */
-/* Start from bottom-right area (around 20px from top, matching shrink end position), grow upward to final position */
+/* Multi-stage cloud growth: dialogue emerges slowly from mouth, then floats into position */
+/* Owl image: height 100px * scale(0.7) = 70px actual height */
+/* Starts tiny at mouth, emerges gradually, settles above owl */
 @keyframes cloud-grow {
   0% {
     opacity: 0;
-    transform: translateX(20%) translateY(-25px) scale(0.05);
-    /* Start very small at mouth area (shifted up from stomach) */
+    transform: translateX(25%) translateY(-20px) scale(0.03);
+    /* Start very small at mouth – barely visible */
+  }
+
+  15% {
+    opacity: 0.2;
+    transform: translateX(22%) translateY(-22px) scale(0.06);
+    /* Slow emergence from mouth */
   }
 
   30% {
+    opacity: 0.5;
+    transform: translateX(15%) translateY(-20px) scale(0.12);
+    /* Gradually emerging */
+  }
+
+  45% {
     opacity: 0.7;
-    transform: translateX(-10%) translateY(-15px) scale(0.3);
-    /* Grow and move upward and toward center */
+    transform: translateX(5%) translateY(-15px) scale(0.25);
+    /* Continuing to grow from mouth */
   }
 
   60% {
-    opacity: 0.9;
-    transform: translateX(-30%) translateY(-8px) scale(0.7);
-    /* Continue growing and moving up toward final position */
+    opacity: 0.85;
+    transform: translateX(-15%) translateY(-8px) scale(0.5);
+    /* Rising and expanding */
+  }
+
+  75% {
+    opacity: 0.95;
+    transform: translateX(-35%) translateY(-3px) scale(0.8);
+    /* Almost at final position */
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(1px) scale(1.02);
+    /* Gentle overshoot */
   }
 
   100% {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
-    /* Reach complete/full size at final position above owl (centered at top) */
+    /* Final position above owl */
   }
 }
 
-/* Bubble speaking animation - cloud growth first, then speaking */
+/* Bubble speaking animation - dialogue emerges slowly from mouth, then speaking */
 .owl-cloud-container.speaking:not(.disappearing) {
   transform-origin: bottom center;
-  /* Cloud growth animation (faster), then speaking animation starts after cloud is fully grown */
-  animation: cloud-grow 0.4s ease-out forwards,
-    bubble-pop 1.8s ease-in-out 0.5s infinite;
+  /* Dialogue emerges slowly from mouth (1.4s), then speaking animation starts */
+  animation: cloud-grow 1.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards,
+    bubble-pop 1.8s ease-in-out 1.5s infinite;
 }
 
 /* Update bubble-pop to maintain position from entrance */
@@ -410,7 +433,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 /* Ensure dialogue without speaking class still has cloud growth animation */
 .owl-cloud-container:not(.speaking):not(.disappearing) {
-  animation: cloud-grow 0.4s ease-out forwards;
+  animation: cloud-grow 1.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 /* Cloud disappearing animation - reverse of cloud-grow (faster) */

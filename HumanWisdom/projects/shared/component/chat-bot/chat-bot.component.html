@@ -1,12 +1,19 @@
 <div class="chat-bot-container">
   <!-- Header -->
   <div class="chat-header">
-    <div class="header-content">
+    <div class="header-content" *ngIf="isAdults">
       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-icon.png" alt="Chat Bot Icon" class="bot-icon" />
       <h2 class="bot-title">Olly AI</h2>
     </div>
-    <button class="close-button" (click)="onCloseChat()">
+     <div class="header-content" *ngIf="!isAdults">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/olly-teens.svg" alt="Chat Bot Icon" class="bot-icon" />
+      <h2 class="bot-title">Olly AI</h2>
+    </div>
+    <button class="close-button" (click)="onCloseChat()" *ngIf="isAdults">
       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/images/close.png" alt="Close" class="close-icon" />
+    </button>
+     <button class="close-button" (click)="onCloseChat()"*ngIf="!isAdults">
+      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/close_olynew.png" alt="Close" class="close-icon" />
     </button>
   </div>
 
@@ -48,7 +55,7 @@
                 </button>
               </div>
             </div>
-            
+            </div>
             <!-- Feedback Buttons (Thumbs Up/Down) -->
             <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot'" class="feedback-container">
               <button 
@@ -57,12 +64,15 @@
                 [disabled]="message.feedback_given !== null"
                 (click)="onThumbsUp(message)"
                 title="Helpful">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upadults.svg" alt="Chat Bot Icon"  *ngIf="isAdults" />
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thump_upteens.svg" alt="Chat Bot Icon"  *ngIf="!isAdults" />
+
+                <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 22V11M2 13V20C2 21.1046 2.89543 22 4 22H16.4262C17.907 22 19.1662 20.9197 19.3914 19.4562L20.4683 12.4562C20.7479 10.6389 19.3418 9 17.5031 9H14C13.4477 9 13 8.55228 13 8V4.46584C13 3.10399 11.896 2 10.5342 2C10.2093 2 9.91498 2.1913 9.78306 2.48812L7.26394 8.40614C7.10344 8.76727 6.74532 9 6.35013 9H4C2.89543 9 2 9.89543 2 11V13Z" 
                     [attr.stroke]="message.feedback_given === 'positive' ? '#4caf50' : 'currentColor'" 
                     [attr.fill]="message.feedback_given === 'positive' ? '#4caf50' : 'none'"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> -->
+                <!-- </svg> -->
               </button>
               <button 
                 class="feedback-button thumbs-down" 
@@ -70,12 +80,15 @@
                 [disabled]="message.feedback_given !== null"
                 (click)="onThumbsDown(message)"
                 title="Not helpful">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upadults.svg" alt="Chat Bot Icon"  *ngIf="isAdults" />
+             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downadults.svg" alt="Chat Bot Icon"  *ngIf="!isAdults" />
+
+                <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17 2V13M22 11V4C22 2.89543 21.1046 2 20 2H7.57377C6.09298 2 4.83383 3.08025 4.60859 4.54377L3.53166 11.5438C3.25213 13.3611 4.65823 15 6.49694 15H10C10.5523 15 11 15.4477 11 16V19.5342C11 20.896 12.104 22 13.4658 22C13.7907 22 14.085 21.8087 14.2169 21.5119L16.7361 15.5939C16.8966 15.2327 17.2547 15 17.6499 15H20C21.1046 15 22 14.1046 22 13V11Z" 
                     [attr.stroke]="message.feedback_given === 'negative' ? '#f44336' : 'currentColor'" 
                     [attr.fill]="message.feedback_given === 'negative' ? '#f44336' : 'none'"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                </svg> -->
               </button>
             </div>
             
@@ -84,7 +97,7 @@
               <span></span>
               <span></span>
               <span></span>
-            </div>
+            
           </div>
           
           <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp) }}</span>

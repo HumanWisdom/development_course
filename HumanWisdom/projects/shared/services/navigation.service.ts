@@ -91,11 +91,18 @@ export class NavigationService {
   navigateToBackLink() {
     const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
     const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+    let returnUrl = microLearningEndUrl;
+    const m_learningId = localStorage.getItem('m_learningId');
 
-    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+    if (fromMicroLearningEnd === 'true' && (returnUrl || m_learningId)) {
+      if (!returnUrl && m_learningId) {
+        const prefix = SharedService.getprogramName();
+        returnUrl = `/${prefix}/micro-learning/inner/${m_learningId}?isEnd=true`;
+      }
+
       localStorage.removeItem('microLearningEndUrl');
-      let returnUrl = microLearningEndUrl;
-      if (returnUrl.includes('micro-learning/inner')) {
+      
+      if (returnUrl && returnUrl.includes('micro-learning/inner')) {
         if (!returnUrl.includes('?') && !returnUrl.includes('%3F')) {
           returnUrl += '?isEnd=true';
         } else if (!returnUrl.includes('isEnd=true') && !returnUrl.includes('isEnd%3Dtrue')) {

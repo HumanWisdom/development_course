@@ -47,6 +47,12 @@
       .mt12px{
         margin-top: 12px !important;
       }
+      .div_dykt{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 50px !important
+        padding-bottom: 50px !important;
+      }
       
       /* Ensure spans and links stay inline */
       .hpt120px h3.fs_12px span,
