@@ -4,20 +4,35 @@ import { Constant } from './constant';
 import { Platform } from '@angular/cdk/platform';
 
 describe('SharedService', () => {
-  let originalProgramId: any;
+  let originalProgramIdValue: any;
 
   beforeEach(() => {
-    originalProgramId = SharedService.ProgramId;
+    originalProgramIdValue = SharedService.ProgramId;
+    // Force ProgramId to be writable (another spec may have left it getter-only)
+    Object.defineProperty(SharedService, 'ProgramId', {
+      value: originalProgramIdValue,
+      writable: true,
+      configurable: true
+    });
+    // Spy setProgramId to use defineProperty so it works even if another spec runs between our beforeEach and test
+    spyOn(SharedService, 'setProgramId').and.callFake((value: any) => {
+      Object.defineProperty(SharedService, 'ProgramId', {
+        value,
+        writable: true,
+        configurable: true
+      });
+    });
     localStorage.clear();
     sessionStorage.clear();
   });
 
   afterEach(() => {
-
-
-
-
-    SharedService.setProgramId(originalProgramId as any);
+    // Restore writable so next spec can use setProgramId
+    Object.defineProperty(SharedService, 'ProgramId', {
+      value: originalProgramIdValue,
+      writable: true,
+      configurable: true
+    });
   });
 
   describe('isAdultProgram', () => {
