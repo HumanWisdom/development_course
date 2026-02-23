@@ -1,4 +1,15 @@
-// Suggestions container and buttons
+/* Home Component - Teenager Theme Styles */
+/* These styles only apply when SharedService.ProgramId is Teenagers */
+
+:host(.teenager-theme) {
+    .home-content {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 9rem;
+        padding-bottom: 9rem;
+    }
+
+    // Suggestions container and buttons
 .suggestions-container {
   display: flex;
   flex-direction: column;
@@ -24,18 +35,18 @@
     border-color: white;
     text-align: left;
     font-weight: 600;
-    box-shadow: 1px 1px 2px 0px #0000001A;
+    box-shadow: 1px 1px 2px 0px #ffffff1A;
     margin: 0;
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
     pointer-events: auto;
 
     &:hover {
       background: #f0f0f0;
       transform: translateY(-1px);
-      box-shadow: 2px 2px 4px 0px #0000001A;
+      box-shadow: 2px 2px 4px 0px #ffffff1A;
     }
 
     &:active {
@@ -71,7 +82,7 @@
 }
 
 .timestamp {
-  color: #00000066 !important;
+  color: #ffffff66 !important;
   font-size: 12px;
   margin-top: 2px;
   text-align: left;
@@ -79,7 +90,17 @@
 
 .chat-header {
   height: 100px;
-  background: linear-gradient(90deg, #05BBBF 0%, #E58D82 100%);
+//   background: linear-gradient(0deg, #D9D9D9, #D9D9D9),
+// conic-gradient(from 202.48deg at 81.78% 23.22%, #A54265 0deg, #EE9596 125.63deg, #FADC68 215.62deg, #F1AC5E 294.38deg, #F1AC5E 360deg);
+
+//   background: linear-gradient(0deg, #D9D9D9, #D9D9D9),
+// conic-gradient(from 202.48deg at 81.78% 23.22%, #A54265 0deg, #EE9596 125.63deg, #FADC68 215.62deg, #F1AC5E 294.38deg, #F1AC5E 360deg);
+// background: linear-gradient(202.48deg at 81.78% 23.22%, #A54265 0deg, #EE9596 125.63deg, #FADC68 215.62deg, #F1AC5E 294.38deg, #F1AC5E 360deg);
+// conic-gradient(from 202.48deg at 81.78% 23.22%, #A54265 0deg, #EE9596 125.63deg, #FADC68 215.62deg, #F1AC5E 294.38deg, #F1AC5E 360deg);
+
+//   background: red;
+  background: linear-gradient(90deg, #A54265 0%, #F1AC5E 100%);
+
   box-shadow: 0px 2px 8px 0px #AFAFAF40;
   display: flex;
   align-items: center;
@@ -183,7 +204,7 @@
 }
 
 .chat-area {
-  background: #FFF7E6;
+  background: #183C79;
   height: auto;
   min-height: 100vh;
   padding-top: 120px;
@@ -225,13 +246,13 @@
   &.bot-message {
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 8px;
+    // gap: 8px;
 
     .message-avatar {
       flex-shrink: 0;
       width: 40px;
       height: 40px;
-      background-color: #FFE8BB;
+      background-color: #0C2B5F;
       border-radius: 100px;
       display: flex;
       align-items: center;
@@ -261,12 +282,12 @@
       .message-sender {
         font-weight: bold;
         font-size: 15px;
-        color: #000000;
+        color: #ffffff;
         margin-bottom: 4px;
       }
 
       .message-content {
-        background: #FFE8BB;
+        background: #0C2B5F;
       width: fit-content;
       max-width: 285px;
         height: auto;
@@ -288,7 +309,7 @@
       font-size: 15px;
       line-height: 22px;
       letter-spacing: 0;
-        color: #000000;
+        color: #ffffff;
         // Create upward pointing tail
         &::before {
           //content: '';
@@ -299,7 +320,7 @@
           height: 0;
           border-left: 8px solid transparent;
           border-right: 8px solid transparent;
-          border-bottom: 8px solid #FFE8BB;
+          border-bottom: 8px solid #0C2B5F;
         }
       }
     }
@@ -326,7 +347,7 @@
     }
 
     .message-content {
-      background: #FFACA2;
+      background: #60BEC2;
       // color: #333333;
       max-width: 319px;
       width: fit-content;
@@ -341,7 +362,7 @@
       padding-bottom: 10px;
       padding-left: 15px;
       text-align: left;
-      color: #000000;
+      color: #ffffff;
       line-height: 22px;
       font-size: 15px;
     }
@@ -777,7 +798,7 @@
     background: white;
     // box-shadow: none;
     text-align: center;
-    box-shadow: 1px 1px 2px 0px #0000001A;
+    box-shadow: 1px 1px 2px 0px #ffffff1A;
       &:hover {
       background: #f0f0f0;
       transform: translateY(-1px);
@@ -815,4 +836,6 @@
       }
     }
   }
+}
+
 }
