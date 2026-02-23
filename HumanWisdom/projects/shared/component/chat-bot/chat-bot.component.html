@@ -57,7 +57,7 @@
                 </button>
               </div>
             </div>
-            </div>
+            
             <!-- Feedback Buttons (Thumbs Up/Down) -->
             <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot'" class="feedback-container">
               <button 
@@ -93,7 +93,7 @@
                 </svg> -->
               </button>
             </div>
-                      <div class="" [ngClass]="{'typing-indicator': message.isTyping}">
+            
 
             <!-- Typing indicator -->
             <div *ngIf="message.isTyping" class="typing-dots">
@@ -101,7 +101,7 @@
               <span></span>
               <span></span>
             </div>
-          </div>
+          
           
           <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp) }}</span>
         </div>
