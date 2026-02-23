@@ -78,11 +78,11 @@ export class ChatbotService {
     const communityForumUrl = `/${programName}/forum`;
 
     const introMessages = [
-      `Hi 👋 I’m Olly — how are you today? Can I help?`,
-      `Welcome! 🦉 I’m Olly, here to help you find what you need.`,
-      `Hi 👋 I’m Olly — your friendly guide to HappierMe.`,
-      `Hi 👋 I’m Olly — here to make your journey easier. What do you need today?`,
-      `Welcome! 🦉 I’m Olly, here to help you find clarity and calm`
+      `Hi  I’m Olly — how are you today? Can I help?`,
+      `Welcome!  I’m Olly, here to help you find what you need.`,
+      `Hi  I’m Olly — your friendly guide to HappierMe.`,
+      `Hi  I’m Olly — here to make your journey easier. What do you need today?`,
+      `Welcome!  I’m Olly, here to help you find clarity and calm`
     ];
 
     const randomIntro = introMessages[Math.floor(Math.random() * introMessages.length)];

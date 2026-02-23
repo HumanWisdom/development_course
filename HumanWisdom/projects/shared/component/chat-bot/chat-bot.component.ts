@@ -130,7 +130,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.styleAnchorTags();
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
     handleScroll(): void {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
