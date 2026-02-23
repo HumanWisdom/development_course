@@ -45,14 +45,14 @@
                     <input type="search" placeholder="Search for a topic"
                       class="form-control has-feedback-left pfy_search hide_search" name="search-list"
                       [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
-                      (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(searchinp)"
+                      (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keydown.enter)="getinp(searchinp)"
                       style="border-radius: 100px !important;">
                     <span *ngIf="searchResult.length == 0"
                       class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
-                    <span *ngIf="searchResult.length > 0" (click)="clearSearch()"
+                    <span *ngIf="searchResult.length > 0" (click)="clearSearch()" (keydown.enter)="clearSearch()"
                       class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
                       aria-hidden="true"></span>
-                    <span *ngIf="searchinp!=''" (click)="clearSearch()"
+                    <span *ngIf="searchinp!=''" (click)="clearSearch()" (keydown.enter)="clearSearch()"
                       class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
                       aria-hidden="true"></span>
                   </div>
@@ -61,7 +61,7 @@
                   <div class="row adsearch" *ngIf="searchResult.length > 0">
                     <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                       <ul class="list-group autocomplete-list adsearch_ul">
-                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
+                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" (keydown.enter)="searchEvent(item.ModuleName)" name="list"
                           class="is-search list-group-item">
                           {{item.ModuleName}}
                         </li>
@@ -143,7 +143,7 @@
                               <div *ngIf="shouldShowViewMore(section)"
                                 class="d-flex align-items-center justify-content-center view-more-container"
                                 style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
-                                (click)="onViewMoreClick(section)">
+                                (click)="onViewMoreClick(section)" (keydown.enter)="onViewMoreClick(section)">
                                 <a class="btn btn-link text-decoration-underline view-more-btn" style="text-decoration: underline !important; 
                                 font-size: 1.5rem !important;">
                                   View more<img
@@ -154,7 +154,7 @@
                               <!-- View All link for horizontal sections - only show when reached end -->
                               <div *ngIf="hasReachedEnd(section)"
                                 class="d-flex align-items-center justify-content-center view-more-container"
-                                style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)">
+                                style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)" (keydown.enter)="onViewAll(section)">
                                 <a class="btn btn-link text-decoration-underline view-more-btn"
                                   style="text-decoration: underline !important;  font-size: 1.5rem !important;">
                                   View all<img
@@ -310,7 +310,7 @@
                                 <div *ngIf="shouldShowViewMore(section)"
                                   class="d-flex align-items-center justify-content-center view-more-container"
                                   style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
-                                  (click)="onViewMoreClick(section)">
+                                  (click)="onViewMoreClick(section)" (keydown.enter)="onViewMoreClick(section)">
                                   <a class="btn btn-link text-decoration-underline view-more-btn"
                                     style="text-decoration: underline !important;  font-size: 1.5rem !important;">
                                     View more<img
@@ -322,7 +322,7 @@
                                 <div *ngIf="hasReachedEnd(section)"
                                   class="d-flex align-items-center justify-content-center view-more-container"
                                   style="min-width: 160px; flex-shrink: 0; cursor: pointer;"
-                                  (click)="onViewAll(section)">
+                                  (click)="onViewAll(section)" (keydown.enter)="onViewAll(section)">
                                   <a class="btn btn-link text-decoration-underline view-more-btn"
                                     style="text-decoration: underline !important;  font-size: 1.5rem !important;">
                                     View all<img
@@ -487,7 +487,7 @@
                             </div>
 
                             <!-- copy column -->
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()" (keydown.enter)="goToSubscribe()" >
                               <h4 class="mtb0px fs_21px lh_130p"
                                 [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
                                 Start your free trial today!

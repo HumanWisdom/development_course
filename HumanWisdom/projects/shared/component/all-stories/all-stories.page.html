@@ -71,7 +71,7 @@
 
               <!-- stories -->
               <a *ngFor="let s of storyList">
-                <div (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))" class="row div_is_01">
+                <div (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))"  (keydown.enter)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))" class="row div_is_01">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <div class="col-md-4 col-sm-4 col-xs-4 p0">
                       <img src="{{s.Img}}" alt="" class="w100 c120px" />
@@ -139,7 +139,7 @@
                   <!-- stories container (shown/hidden by Angular only) -->
                   <div class="panel-body" *ngIf="enable_view_more_less">
                     <a *ngFor="let s of secondstoryList">
-                      <div (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))" class="row div_is_01">
+                      <div (click)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))"  (keydown.enter)="toRead(s, (isSubscriber || s.ExclFromChild === '1'))" class="row div_is_01">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <!-- left thumbnail -->
                           <div class="col-md-4 col-sm-4 col-xs-4 p0">
