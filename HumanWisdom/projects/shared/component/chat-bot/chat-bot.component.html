@@ -93,13 +93,14 @@
                 </svg> -->
               </button>
             </div>
-            
+                      <div class="" [ngClass]="{'typing-indicator': message.isTyping}">
+
             <!-- Typing indicator -->
             <div *ngIf="message.isTyping" class="typing-dots">
               <span></span>
               <span></span>
               <span></span>
-            
+            </div>
           </div>
           
           <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp) }}</span>

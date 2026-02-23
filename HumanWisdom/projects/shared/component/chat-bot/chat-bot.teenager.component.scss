@@ -790,12 +790,13 @@
     padding: 10px 16px;
     border: 0px solid white;
     border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
     pointer-events: auto;
-    background: #A54265;
+    color:#ffffff;
+    background: #A54265 !important;
     // box-shadow: none;
     text-align: center;
     box-shadow: 1px 1px 2px 0px #ffffff1A;
