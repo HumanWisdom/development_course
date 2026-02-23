@@ -3,30 +3,22 @@
 <app-bg-video></app-bg-video> -->
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"
-    [ngClass]="isAdults ?'bg_FFF7E6':'bg_183c79'">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw" [ngClass]="isAdults ?'bg_FFF7E6':'bg_183c79'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a (click)="goBack()">
         <!-- adult version -->
-        <img
-          *ngIf="isAdults"
-          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg"
-          alt=""
-          class="p0"
-        />
+        <img *ngIf="isAdults" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt=""
+          class="p0" />
 
         <!-- teen version -->
-        <img
-          *ngIf="!isAdults"
-          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg"
-          alt=""
-          class="p0"
-        />
+        <img *ngIf="!isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg"
+          alt="" class="p0" />
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ headerTitle }}
+      <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ headerTitle
+        }}
       </h1>
     </div>
 
@@ -52,17 +44,20 @@
                 </div>
               </div> -->
 
-              <div class="row tcenter" (click)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')" *ngIf="audioLink !== '' && textContent !== ''">
+              <div class="row tcenter" (click)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')"
+                (keydown.enter)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')" tabindex="0"
+                *ngIf="audioLink !== '' && textContent !== ''">
                 <!-- <p class="txt1 mt40px mb30px"> -->
-                  <a class="">
+                <a class="">
                   <h6 class="fs_15px fw_400 lh_140p fc_e58d82 underline">
-                  {{!enableTextContent ? 'Read text' : 'Back To Audio' }} </h6> </a>
+                    {{!enableTextContent ? 'Read text' : 'Back To Audio' }} </h6>
+                </a>
                 <!-- </p> -->
               </div>
 
               <div class="row" (click)="readText()" *ngIf="enableTextContent">
                 <!-- <p class="txt1 mt40px mb30px"> -->
-                  <h3 class="transcript_txt">
+                <h3 class="transcript_txt">
                   {{textContent }} </h3>
                 <!-- </p> -->
               </div>
@@ -79,14 +74,12 @@
 
               <div class="row tcenter" *ngIf="!enableTextContent">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0" *ngIf="audioLink !== ''">
-                 <!--  <audio autoplay id="aud1" controls controlsList="nodownload" #audio
+                  <!--  <audio autoplay id="aud1" controls controlsList="nodownload" #audio
                    [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio> -->
-                      <app-audio-player  id="aud1"  
-                        [ngClass]="[isAdults ? 'invert-controls' : '']"
-                                [audioLink]="audioLink">
-                              </app-audio-player>  
+                  <app-audio-player id="aud1" [ngClass]="[isAdults ? 'invert-controls' : '']" [audioLink]="audioLink">
+                  </app-audio-player>
                 </div>
               </div>
 

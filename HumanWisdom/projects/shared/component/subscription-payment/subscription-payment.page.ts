@@ -9,8 +9,7 @@ import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
 import { Location } from '@angular/common';
 
-
-
+declare var Stripe: any;
 @Component({
   selector: 'app-subscription-payment',
   templateUrl: './subscription-payment.page.html',
@@ -96,7 +95,7 @@ export class SubscriptionPaymentPage implements AfterViewInit {
       },
         (error: HttpErrorResponse) => {
           this.enable = true
-          this.stripeId = error.error['Message']
+          this.stripeId = error?.error?.['Message'] ?? ''
         },
         () => {
         })
@@ -138,8 +137,8 @@ export class SubscriptionPaymentPage implements AfterViewInit {
   getPricing() {
     this.service.getPricing(this.countryCode).subscribe(res => {
       this.defaultCurrencySymbol = res[0]['ISOCode'];
-    }, (err) => {
-      this.content = err.error['Message'];
+    },     (err) => {
+      this.content = err?.error?.['Message'] ?? '';
       this.enableAlert = true;
     }
     )
