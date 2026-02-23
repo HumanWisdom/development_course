@@ -1,6 +1,6 @@
 <!-- footer  -->
 <!-- <div class="sidebar-footer prelative"> -->
-  <app-owl-animation (click)="openChat()" *ngIf="owlEnable$ | async"></app-owl-animation>
+  <app-owl-animation (click)="openChat()" (keydown.enter)="openChat()" *ngIf="owlEnable$ | async"></app-owl-animation>
 <div class="mfooter p0">
   <!-- guided question - save to diary button -->
   <!-- <div class="row center_flex" *ngIf="isGuidedQuestion">
