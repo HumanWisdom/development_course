@@ -16,8 +16,10 @@ describe('ChangePasswordPage', () => {
   let mockLogEventService: jasmine.SpyObj<LogEventService>;
   let mockActivatedRoute: any;
   let mockProgramId: any;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockRouter.navigate.and.returnValue(Promise.resolve(true));
 
@@ -51,6 +53,9 @@ describe('ChangePasswordPage', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

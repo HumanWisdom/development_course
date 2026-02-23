@@ -21,8 +21,10 @@ describe('IntroCarouselPage', () => {
   let mockOnboardingService: jasmine.SpyObj<OnboardingService>;
   let mockProgramId: number;
   let mock$: jasmine.Spy;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockRouter.navigate.and.returnValue(Promise.resolve(true));
 
@@ -74,6 +76,9 @@ describe('IntroCarouselPage', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
     sessionStorage.clear();
   });

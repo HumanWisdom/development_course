@@ -18,6 +18,7 @@ describe('MicroLearningEndPage', () => {
   let mockCommonService: jasmine.SpyObj<CommonService>;
   let mockNgNavigatorShareService: jasmine.SpyObj<NgNavigatorShareService>;
   let mockHomeStateService: jasmine.SpyObj<HomeStateService>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockScreens = [
     { title: 'Screen 1', content: '<p>Content 1</p>', ImageUrl: 'https://example.com/img1.jpg' }
@@ -95,6 +96,12 @@ describe('MicroLearningEndPage', () => {
     fixture = TestBed.createComponent(MicroLearningEndPage);
     component = fixture.componentInstance;
     component.contentId = '123';
+  });
+
+  afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
   });
 
   it('should create', () => {

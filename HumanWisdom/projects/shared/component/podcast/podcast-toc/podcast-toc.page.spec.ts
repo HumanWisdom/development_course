@@ -25,6 +25,7 @@ describe('PodcastTocPage', () => {
   let mockCommonService: jasmine.SpyObj<CommonService>;
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
   let mockProgramId: number;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockPodcastList = [
     {
@@ -120,6 +121,9 @@ describe('PodcastTocPage', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

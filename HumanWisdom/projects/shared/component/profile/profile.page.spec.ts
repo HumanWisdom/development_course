@@ -21,6 +21,7 @@ describe('ProfilePage', () => {
   let mockLogEventService: jasmine.SpyObj<LogEventService>;
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
   let mockPlatform: jasmine.SpyObj<Platform>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockLoginResponse = {
     ActKeys: [{ MySelf: '1', Prog: 'Adults', ActKey: 'Premium' }],
@@ -43,6 +44,7 @@ describe('ProfilePage', () => {
   };
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockRouter.navigate.and.returnValue(Promise.resolve(true));
 
@@ -102,6 +104,9 @@ describe('ProfilePage', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

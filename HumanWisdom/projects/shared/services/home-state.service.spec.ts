@@ -5,10 +5,10 @@ import { ProgramType } from '../models/program-model';
 
 describe('HomeStateService', () => {
   let service: HomeStateService;
-  let originalProgramId: any;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(() => {
-    originalProgramId = SharedService.ProgramId;
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
       configurable: true
@@ -22,11 +22,9 @@ describe('HomeStateService', () => {
   });
 
   afterEach(() => {
-    Object.defineProperty(SharedService, 'ProgramId', {
-      value: originalProgramId,
-      writable: true,
-      configurable: true
-    });
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

@@ -19,6 +19,7 @@ describe('MicroLearningInnerPage', () => {
   let mockCommonService: jasmine.SpyObj<CommonService>;
   let mockNgNavigatorShareService: jasmine.SpyObj<NgNavigatorShareService>;
   let mockHomeStateService: jasmine.SpyObj<HomeStateService>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockScreens = [
     { title: 'Screen 1', content: '<p>Content 1</p>', ImageUrl: 'https://example.com/img1.jpg' },
@@ -56,6 +57,7 @@ describe('MicroLearningInnerPage', () => {
 
     mockHomeStateService = jasmine.createSpyObj('HomeStateService', ['markCardAsSeen']);
 
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
       configurable: true
@@ -96,6 +98,9 @@ describe('MicroLearningInnerPage', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     (localStorage.removeItem as jasmine.Spy).calls.reset();
     (localStorage.setItem as jasmine.Spy).calls.reset();
   });

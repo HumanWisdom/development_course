@@ -12,6 +12,7 @@ describe('ChatbotService', () => {
   let httpMock: HttpTestingController;
   let mockChatStore: jasmine.SpyObj<ChatStore>;
   let mockRouter: jasmine.SpyObj<Router>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockChatMessage: ChatMessage = {
     id: '1',
@@ -49,6 +50,7 @@ describe('ChatbotService', () => {
 
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
 
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
       configurable: true
@@ -70,6 +72,9 @@ describe('ChatbotService', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     httpMock.verify();
     localStorage.clear();
   });

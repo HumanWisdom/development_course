@@ -13,6 +13,7 @@ describe('MicroLearningGuard', () => {
   let mockCommonService: jasmine.SpyObj<CommonService>;
   let mockRoute: ActivatedRouteSnapshot;
   let mockState: RouterStateSnapshot;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const createParamMap = (id: string | null) => ({
     get: (key: string) => (key === 'id' ? id : null)
@@ -38,6 +39,9 @@ describe('MicroLearningGuard', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

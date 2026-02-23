@@ -20,8 +20,10 @@ describe('AudioHeaderComponent', () => {
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
   let mockModalService: jasmine.SpyObj<ModalService>;
   let mockProgramId: any;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     localStorage.setItem('saveUsername', 'true');
     localStorage.setItem('guest', 'F');
     localStorage.setItem('Subscriber', '1');
@@ -74,6 +76,9 @@ describe('AudioHeaderComponent', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
     sessionStorage.clear();
   });

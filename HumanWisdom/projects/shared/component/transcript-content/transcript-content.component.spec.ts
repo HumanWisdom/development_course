@@ -13,8 +13,11 @@ describe('TranscriptContentComponent', () => {
   let mockCaptureService: jasmine.SpyObj<NgxCaptureService>;
   let mockAdultsService: jasmine.SpyObj<AdultsService>;
   let mockActivatedRoute: jasmine.SpyObj<ActivatedRoute>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
+    Object.defineProperty(SharedService, 'ProgramId', { value: ProgramType.Adults, writable: true, configurable: true });
     mockCaptureService = jasmine.createSpyObj('NgxCaptureService', ['getImage']);
     mockAdultsService = jasmine.createSpyObj('AdultsService', ['screenProgress']);
     mockActivatedRoute = jasmine.createSpyObj('ActivatedRoute', ['params'], { snapshot: { params: {} } });
@@ -31,6 +34,12 @@ describe('TranscriptContentComponent', () => {
 
     fixture = TestBed.createComponent(TranscriptContentComponent);
     component = fixture.componentInstance;
+  });
+
+  afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
   });
 
   it('should create', () => {
@@ -53,7 +62,7 @@ describe('TranscriptContentComponent', () => {
     });
 
     it('should set isAdults false when ProgramId is Teenagers', () => {
-      SharedService.ProgramId = ProgramType.Teenagers;
+      Object.defineProperty(SharedService, 'ProgramId', { value: ProgramType.Teenagers, writable: true, configurable: true });
       component.ngOnInit();
       expect(component.isAdults).toBe(false);
     });

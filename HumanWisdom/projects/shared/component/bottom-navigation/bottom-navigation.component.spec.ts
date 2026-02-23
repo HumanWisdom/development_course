@@ -17,8 +17,10 @@ describe('BottomNavigationComponent', () => {
   let mockLogEventService: jasmine.SpyObj<LogEventService>;
   let mockOwlStore: jasmine.SpyObj<OwlStore>;
   let mockProgramId: any;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     localStorage.setItem('isloggedin', 'F');
     localStorage.removeItem('userDetails');
 
@@ -72,6 +74,9 @@ describe('BottomNavigationComponent', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

@@ -11,8 +11,11 @@ describe('FindInspiration', () => {
   let fixture: ComponentFixture<FindInspiration>;
   let mockRouter: jasmine.SpyObj<Router>;
   let mockLogEventService: jasmine.SpyObj<LogEventService>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
+    Object.defineProperty(SharedService, 'ProgramId', { value: ProgramType.Adults, writable: true, configurable: true });
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockRouter.navigate.and.returnValue(Promise.resolve(true));
 
@@ -34,19 +37,25 @@ describe('FindInspiration', () => {
     component = fixture.componentInstance;
   });
 
+  afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
   it('should set isAdults true when ProgramId is Adults', () => {
-    SharedService.ProgramId = ProgramType.Adults;
+    Object.defineProperty(SharedService, 'ProgramId', { value: ProgramType.Adults, writable: true, configurable: true });
     fixture = TestBed.createComponent(FindInspiration);
     component = fixture.componentInstance;
     expect(component.isAdults).toBe(true);
   });
 
   it('should set isAdults false when ProgramId is Teenagers', () => {
-    SharedService.ProgramId = ProgramType.Teenagers;
+    Object.defineProperty(SharedService, 'ProgramId', { value: ProgramType.Teenagers, writable: true, configurable: true });
     fixture = TestBed.createComponent(FindInspiration);
     component = fixture.componentInstance;
     expect(component.isAdults).toBe(false);

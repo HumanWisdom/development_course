@@ -13,6 +13,7 @@ describe('PodcastGuard', () => {
   let mockCommonService: jasmine.SpyObj<CommonService>;
   let mockRoute: ActivatedRouteSnapshot;
   let mockState: RouterStateSnapshot;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const createParamMap = (id: string | null) => ({
     get: (key: string) => (key === 'id' ? id : null)
@@ -30,6 +31,7 @@ describe('PodcastGuard', () => {
 
     mockState = {} as RouterStateSnapshot;
 
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
       configurable: true

@@ -24,8 +24,10 @@ describe('CourseHeaderComponent', () => {
   let mockLocation: jasmine.SpyObj<Location>;
   let mockModalService: jasmine.SpyObj<ModalService>;
   let mockProgramId: any;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     localStorage.setItem('saveUsername', 'true');
     localStorage.setItem('guest', 'F');
     localStorage.setItem('Subscriber', '1');
@@ -85,6 +87,9 @@ describe('CourseHeaderComponent', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
     sessionStorage.clear();
   });

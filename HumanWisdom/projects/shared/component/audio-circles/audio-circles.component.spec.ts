@@ -11,8 +11,10 @@ describe('AudioCirclesComponent', () => {
   let mockRouter: jasmine.SpyObj<Router>;
   let mockProgramId: any;
   let mockAudioElement: any;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockAudioElement = {
       duration: 100,
       currentTime: 0,
@@ -55,6 +57,9 @@ describe('AudioCirclesComponent', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

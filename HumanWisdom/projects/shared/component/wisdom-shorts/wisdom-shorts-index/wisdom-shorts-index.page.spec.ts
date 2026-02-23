@@ -25,6 +25,7 @@ describe('WisdomShortsIndexPage', () => {
   let mockPlatform: jasmine.SpyObj<Platform>;
   let mockNgNavigatorShareService: jasmine.SpyObj<NgNavigatorShareService>;
   let mockProgramId: number;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockRouterUrl = '/adults/wisdom-shorts';
 
@@ -95,6 +96,9 @@ describe('WisdomShortsIndexPage', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

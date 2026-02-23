@@ -25,8 +25,10 @@ describe('SubscriptionS01V04Page', () => {
   let mockProgramId: number;
   let mockPlatform: { IOS: boolean; SAFARI: boolean };
   let toastrSuccessSpy: jasmine.Spy;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockPlatform = { IOS: false, SAFARI: false };
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockRouter.navigate.and.returnValue(Promise.resolve(true));
@@ -100,6 +102,9 @@ describe('SubscriptionS01V04Page', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
     sessionStorage.clear();
   });

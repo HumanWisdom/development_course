@@ -23,8 +23,10 @@ describe('LoginSignupPage', () => {
   let mockCommonService: jasmine.SpyObj<CommonService>;
   let mockHomeStateService: jasmine.SpyObj<HomeStateService>;
   let queryParamsSubject: BehaviorSubject<any>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     queryParamsSubject = new BehaviorSubject({ email: null, pwd: null, key: null });
     mockRouter = jasmine.createSpyObj('Router', ['navigate', 'navigateByUrl']);
     mockRouter.navigate.and.returnValue(Promise.resolve(true));
@@ -106,6 +108,9 @@ describe('LoginSignupPage', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
     sessionStorage.clear();
   });

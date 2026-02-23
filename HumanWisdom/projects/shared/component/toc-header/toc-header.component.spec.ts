@@ -20,8 +20,10 @@ describe('TocHeaderComponent', () => {
   let mockNgNavigatorShareService: jasmine.SpyObj<NgNavigatorShareService>;
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
   let mockProgramId: number;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockRouter = jasmine.createSpyObj('Router', ['navigate', 'navigateByUrl']);
     mockRouter.navigate.and.returnValue(Promise.resolve(true));
     mockRouter.navigateByUrl.and.returnValue(Promise.resolve(true));
@@ -67,6 +69,12 @@ describe('TocHeaderComponent', () => {
     fixture = TestBed.createComponent(TocHeaderComponent);
     component = fixture.componentInstance;
     component.moduleName = 'Stress';
+  });
+
+  afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
   });
 
   it('should create', () => {

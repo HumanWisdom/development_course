@@ -13,8 +13,10 @@ describe('TnCloseComponent', () => {
   let mockRouter: jasmine.SpyObj<Router>;
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
   let mockProgramId: number;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockProgramId = ProgramType.Adults;
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => mockProgramId,
@@ -42,6 +44,12 @@ describe('TnCloseComponent', () => {
 
     fixture = TestBed.createComponent(TnCloseComponent);
     component = fixture.componentInstance;
+  });
+
+  afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
   });
 
   it('should create', () => {

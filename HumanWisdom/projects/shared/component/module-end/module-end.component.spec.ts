@@ -16,6 +16,7 @@ describe('ModuleEndComponent', () => {
   let mockAdultsService: jasmine.SpyObj<AdultsService>;
   let mockNgNavigatorShareService: jasmine.SpyObj<NgNavigatorShareService>;
   let mockPlatform: jasmine.SpyObj<Platform>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockModuleData = [
     { moduleId: '29', path: '/adults/breathing', moduleName: 'Breathing', lastScreen: 's29000', firstScreen: 's29001' }
@@ -81,6 +82,9 @@ describe('ModuleEndComponent', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
     const myDiv = document.getElementById('myDiv');
     myDiv?.remove();

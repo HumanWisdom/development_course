@@ -8,8 +8,10 @@ describe('EnableRouteGuard', () => {
   let guard: EnableRouteGuard;
   let mockRouter: jasmine.SpyObj<Router>;
   let mockProgramId: number;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(() => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockRouter.navigate.and.returnValue(Promise.resolve(true));
 
@@ -30,6 +32,9 @@ describe('EnableRouteGuard', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

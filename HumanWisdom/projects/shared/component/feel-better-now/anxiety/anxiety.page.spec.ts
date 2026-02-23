@@ -14,8 +14,10 @@ describe('AnxietyPage', () => {
   let mockRouter: jasmine.SpyObj<Router>;
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
   let mockProgramId: any;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(async () => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     localStorage.setItem('mediaAudio', JSON.stringify('https://example.com/audio'));
     localStorage.setItem('Subscriber', '0');
     localStorage.setItem('isloggedin', 'F');

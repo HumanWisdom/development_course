@@ -14,6 +14,7 @@ describe('ReflectionComponent', () => {
   let mockRouter: jasmine.SpyObj<Router>;
   let mockAdultsService: jasmine.SpyObj<AdultsService>;
   let mockProgramId: number;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   const mockReflectionList = {
     ListOfReflection: [
@@ -35,6 +36,7 @@ describe('ReflectionComponent', () => {
     mockAdultsService.screenProgress.and.returnValue(of('75'));
     mockAdultsService.addUserRefPost.and.returnValue(of(true));
 
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockProgramId = ProgramType.Adults;
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => mockProgramId,
@@ -72,6 +74,9 @@ describe('ReflectionComponent', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     localStorage.clear();
   });
 

@@ -10,8 +10,10 @@ describe('ForumService', () => {
   let service: ForumService;
   let httpMock: HttpTestingController;
   let mockProgramId: number;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   beforeEach(() => {
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     mockProgramId = ProgramType.Adults;
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => mockProgramId,
@@ -31,6 +33,9 @@ describe('ForumService', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     httpMock.verify();
   });
 
