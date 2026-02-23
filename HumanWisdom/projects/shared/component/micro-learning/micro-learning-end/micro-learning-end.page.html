@@ -98,7 +98,8 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a class="mtb10px fs_15px fw_500 lh_140p  tcenter td_underline dflex_start1"
-                        [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="navigateToListing()">
+                        [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="navigateToListing()"
+                        (keydown.enter)="navigateToListing()" tabindex="0">
                         Back to Micro learnings </a>
                     </div>
                   </div>
@@ -108,7 +109,8 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a class="mtb10px fs_15px fw_500 lh_140p  tcenter td_underline dflex_start1"
-                        [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="goToHome()">
+                        [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="goToHome()" (keydown.enter)="goToHome()"
+                        tabindex="0">
                         Go to Home </a>
                     </div>
                   </div>

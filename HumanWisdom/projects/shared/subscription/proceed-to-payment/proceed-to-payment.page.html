@@ -3,14 +3,15 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="back()">
- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="back()"
-          alt="" class="p0" *ngIf="!isAdults">                    
-          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" (click)="back()" alt="" class="p0" *ngIf="isAdults"> 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="back()"
+          (keydown.enter)="back()" tabindex="0" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" (click)="back()"
+          (keydown.enter)="back()" tabindex="0" alt="" class="p0" *ngIf="isAdults">
 
       </a>
     </div>
 
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0" >
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
         HappierMe Premium
       </h1>
@@ -26,7 +27,8 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_FFF7E6 col_cw"  [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_FFF7E6 col_cw"
+        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
@@ -36,7 +38,8 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                    <div class="row div_best_value"  [ngClass]="{'adult-best-value-annual': selectedSubscription === Annual}" >
+                    <div class="row div_best_value"
+                      [ngClass]="{'adult-best-value-annual': selectedSubscription === Annual}">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_500  fc_ffffff lh_140p ">
                           Best value
@@ -47,7 +50,7 @@
                     <div class="div_annual" [ngClass]="{'adult-selected-plan-border': selectedSubscription === Annual}">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Annual
                           </h4>
                         </div>
@@ -55,9 +58,10 @@
 
                       <div class="row mtb5px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_24px fw_600 lh_170p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_24px fw_600 lh_170p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{pricingModel.CurSymbol}}{{pricingModel.Annual}}{{getIsoCode()}}
-                            <span class="fs_15px fw_400 lh_170p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                            <span class="fs_15px fw_400 lh_170p "
+                              [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                               ( {{pricingModel.CurSymbol}}{{this.pricingModel.PerMonthAmountOnAnnual }}/month)
                             </span>
                           </h4>
@@ -66,7 +70,8 @@
 
                       <div class="row" *ngIf="trialStatus != 'ended'">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_170p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_170p "
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                             after 14-day trial
                           </h4>
                         </div>
@@ -85,7 +90,7 @@
 
                     <div class="row mb5px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <h4 class="mtb0px fs_15px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Monthly
                         </h4>
                       </div>
@@ -93,10 +98,11 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_24px fw_600 lh_170p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <h4 class="mtb0px fs_24px fw_600 lh_170p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{pricingModel.CurSymbol}}{{pricingModel.Monthly}}/month
-                          <span class="fs_15px fw_400 lh_170p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" *ngIf="trialStatus != 'ended'" >
-                             after 7-day trial
+                          <span class="fs_15px fw_400 lh_170p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'"
+                            *ngIf="trialStatus != 'ended'">
+                            after 7-day trial
                           </span>
                         </h4>
                       </div>
@@ -111,43 +117,44 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0" *ngIf="trialStatus != 'ended'">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svertical_dots.svg" class="img-responsive">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svertical_dots.svg"
+                      class="img-responsive">
                   </div>
 
                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
                     <div class="row mb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Starting today
                           </h4>
                         </div>
-      
+
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright" *ngIf="trialStatus != 'ended'">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             14-day free trial
                           </h4>
                         </div>
-                       
+
                         <div *ngIf="trialStatus == 'ended'" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{pricingModel.CurSymbol}}{{pricingModel.Annual}}/year
                           </h4>
-                        </div> 
+                        </div>
 
                       </div>
                     </div>
 
-                    <div class="row" *ngIf="trialStatus != 'ended'" >
+                    <div class="row" *ngIf="trialStatus != 'ended'">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Starting {{ SelectedPlanModel.startingDate }}
                           </h4>
                         </div>
-      
+
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{pricingModel.CurSymbol}}{{pricingModel.Annual}}/year
                           </h4>
                         </div>
@@ -162,43 +169,44 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0" *ngIf="trialStatus != 'ended'">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svertical_dots.svg" class="img-responsive">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/svertical_dots.svg"
+                      class="img-responsive">
                   </div>
 
                   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                    <div class="row mb15px" >
+                    <div class="row mb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Starting today
                           </h4>
                         </div>
-      
-                        <div  *ngIf="trialStatus != 'ended'" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+
+                        <div *ngIf="trialStatus != 'ended'" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             7-day free trial
                           </h4>
                         </div>
 
-                        <div  *ngIf="trialStatus == 'ended'" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          {{pricingModel.CurSymbol}}{{pricingModel.Monthly}}/month
+                        <div *ngIf="trialStatus == 'ended'" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                            {{pricingModel.CurSymbol}}{{pricingModel.Monthly}}/month
                           </h4>
                         </div>
                       </div>
                     </div>
 
-                    <div class="row" *ngIf="trialStatus != 'ended'" >
+                    <div class="row" *ngIf="trialStatus != 'ended'">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <div  *ngIf="trialStatus != 'ended'" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                        <div *ngIf="trialStatus != 'ended'" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Starting {{ SelectedPlanModel.startingDate }}
                           </h4>
                         </div>
-      
+
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          {{pricingModel.CurSymbol}}{{pricingModel.Monthly}}/month
+                          <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                            {{pricingModel.CurSymbol}}{{pricingModel.Monthly}}/month
                           </h4>
                         </div>
                       </div>
@@ -209,7 +217,7 @@
               </div>
 
 
-              
+
               <div class="row" *ngIf="trialStatus != 'ended'">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <ul class="fs_10px fw_400 lh_150p  pl10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -234,7 +242,7 @@
 
 
 
-          <!--     <div class="row">
+              <!--     <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="buyGift()">
                   <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Buying this for someone else?
@@ -247,7 +255,7 @@
 
               <div class="row mb10px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_15px fw_600 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Enter a Discount code (optional)
                   </h4>
                 </div>
@@ -265,7 +273,8 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pl0px">
-                    <input type="text" id="coupan" name="coupan" class="sr_fc_01 voucher_code" placeholder="Discount code" [(ngModel)]="discountCode">
+                    <input type="text" id="coupan" name="coupan" class="sr_fc_01 voucher_code"
+                      placeholder="Discount code" [(ngModel)]="discountCode">
                   </div>
 
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pr0px tright">
@@ -285,25 +294,33 @@
               <div class="row mt10 mb20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                   <div *ngIf="percentage" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_discount_cart.svg" class="img-responsive " style="height:20px;" *ngIf="!isAdults">
-                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/payment_adult.svg" class="img-responsive" style="height:20px;" *ngIf="isAdults">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_discount_cart.svg"
+                      class="img-responsive " style="height:20px;" *ngIf="!isAdults">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/payment_adult.svg"
+                      class="img-responsive" style="height:20px;" *ngIf="isAdults">
 
                   </div>
 
                   <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-                    <h4 class="mtb0px fs_15px fw_600 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{this.couponCode}}
                     </h4>
 
-                    <h4 *ngIf="percentage" class="mtb0px fs_12px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <h4 *ngIf="percentage" class="mtb0px fs_12px fw_400 lh_150p "
+                      [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{percentage}}% discount applied
                     </h4>
                   </div>
 
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                    <button *ngIf="percentage"  type="button" class="btn subscription_btn_mp" (click)="closeApplycoupon()">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_cross.svg" class="img-responsive" *ngIf="!isAdults">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" class="img-responsive" *ngIf="isAdults">
+                    <button *ngIf="percentage" type="button" class="btn subscription_btn_mp"
+                      (click)="closeApplycoupon()">
+                      <img
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/subscription_btn_cross.svg"
+                        class="img-responsive" *ngIf="!isAdults">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg"
+                        class="img-responsive" *ngIf="isAdults">
 
                     </button>
                   </div>
@@ -313,7 +330,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       Item Total
                     </h4>
                   </div>
@@ -323,17 +340,17 @@
                   </div>
 
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{pricingModel.CurSymbol + totalCartValue}}{{getIsoCode()}}
                     </h4>
                   </div>
                 </div>
               </div>
 
-              <div class="row mtb15px" >
+              <div class="row mtb15px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       Discount
                     </h4>
                   </div>
@@ -343,17 +360,17 @@
                   </div>
 
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{pricingModel.CurSymbol+ this.discount}}
                     </h4>
                   </div>
                 </div>
               </div>
 
-              <div class="row" >
+              <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai_end">
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       Subtotal
                     </h4>
                   </div>
@@ -363,14 +380,14 @@
                   </div>
 
                   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-                    <h4 class="mtb0px fs_15px fw_700 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                       {{pricingModel.CurSymbol + totalCartValueDiscount}}
                     </h4>
                   </div>
                 </div>
               </div>
 
-     
+
 
               <div class="pagebreak"></div>
 
@@ -386,38 +403,39 @@
 <!-- footer  -->
 <div class="mfooter">
   <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter col_cw"  [ngClass]="isAdults ? '' : 'we_ft_cl'">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter col_cw" [ngClass]="isAdults ? '' : 'we_ft_cl'">
       <a>
         <button type="button" (click)="proceedToPayment()" class="btn btn_tfas">
-          Proceed 
+          Proceed
         </button>
       </a>
     </div>
   </div>
 </div>
-<div class="row" style="display: none;">                  
+<div class="row" style="display: none;">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 btn_post_anonymously">
-<button type="button" class="btn btn_ctd center_flex" #modalClick d  data-toggle="modal" data-target="#modal_coupan_validation" >                      
-    </button>  
+    <button type="button" class="btn btn_ctd center_flex" #modalClick d data-toggle="modal"
+      data-target="#modal_coupan_validation">
+    </button>
   </div>
 </div>
 <!-- /footer -->
 
-<div  class="modal fade in" id="modal_coupan_validation" data-keyboard="false" data-backdrop="false">
+<div class="modal fade in" id="modal_coupan_validation" data-keyboard="false" data-backdrop="false">
   <div class="row center_flex">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 lab-modal-body col_cw">
 
       <div class="row mtb30px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-          <h4 class="mtb0px fs_18px fw_600 lh_150p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-            This Code can be used for only Annual Subscription  
+          <h4 class="mtb0px fs_18px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+            This Code can be used for only Annual Subscription
           </h4>
         </div>
       </div>
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <a data-dismiss="modal"  class="mtb0px fs_15px fw_400 lh_21px fc_e58d82 hcancel">
+          <a data-dismiss="modal" class="mtb0px fs_15px fw_400 lh_21px fc_e58d82 hcancel">
             Close
           </a>
         </div>
