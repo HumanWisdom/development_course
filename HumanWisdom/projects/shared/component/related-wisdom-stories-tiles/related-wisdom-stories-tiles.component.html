@@ -1,7 +1,7 @@
 <div *ngIf="enablewisdomstory" [class.adults_view]="isAdults">
 
   <div class="row index_rwst_title clickable" *ngIf="wisdomstories[0].length !== 0 && isAccordion"
-    (click)="toggleAccordion()">
+    (click)="toggleAccordion()" (keydown.enter)="toggleAccordion()" tabindex="0">
     <div class="col-md-12 col-sm-12 col-xs-12 center_flex">
       <div class="col-md-11 col-sm-11 col-xs-11 p0">
         <h4 class="fs_18px fw_600 lh_140p  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
