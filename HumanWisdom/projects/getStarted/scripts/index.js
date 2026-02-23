@@ -1018,6 +1018,21 @@ function setupNewsletterTiming() {
 // Initialize newsletter timing system
 setupNewsletterTiming();
 
+// Event delegation for "See all posts" and "Find out more" - ensures navigation works even if direct handlers fail
+document.addEventListener("click", function (evt) {
+    const link = evt.target.closest("a#viewAllBlogs, a#view-all-coaches");
+    if (link && link.href) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        if (link.id === "viewAllBlogs") {
+            logevent("click_View_All_Blogs_web", "index.php");
+        } else if (link.id === "view-all-coaches") {
+            logevent("click_view_all_coaches", "index.php");
+        }
+        window.location.href = link.getAttribute("href") || link.href;
+    }
+}, true);
+
 // Function to manually trigger newsletter popup (for testing)
 function forceNewsletterPopup() {
     if (NEWSLETTER_CONFIG.debug) {
@@ -1429,7 +1444,9 @@ nfsnContactForm &&
             o.addEventListener(
                 "click",
                 function (e) {
-                    logevent("click_View_All_Blogs_web", "index.php"), (window.location.href = url+"/adults/blogs");
+                    e.preventDefault();
+                    logevent("click_View_All_Blogs_web", "index.php");
+                    window.location.href = this.getAttribute("href") || url + "/adults/blogs";
                 },
                 !1
             );
@@ -1440,7 +1457,11 @@ nfsnContactForm &&
             ].forEach((e) => {
             const t = document.getElementById(e);
             t &&
-                t.addEventListener("click", function (t) {
+                t.addEventListener("click", function (evt) {
+                         if (["findoutMore","view-all-coaches","partnership","partnershipfooter","ourStory","testimonialFooter","contactUsFooter","adultsWeb","teensWeb","appleStore","googlePlayStore","exploreAppWeb"].indexOf(e) >= 0 ||
+                             e.startsWith("openInApp")) {
+                             evt.preventDefault();
+                         }
                          "feelbetterNow" == e? logevent("click_Feel_Better_Now_web", "index.php")
                         : "pathWay" == e ? logevent("click_Pathway_web", "index.php")
                         : "journal" == e ? logevent("click_Journal_web", "index.php")

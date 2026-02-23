@@ -411,6 +411,15 @@ toggleAccordion() {
       }
 
     }
+    const isMicroLearning = url && (url.includes('micro-learning') || url.includes('microlearning'));
+    if (isMicroLearning) {
+      const parts = url.split('/');
+      const id = parts[parts.length - 1];
+      if (id) {
+        localStorage.removeItem('ml_index_' + id);
+        localStorage.removeItem('persist_ml_index');
+      }
+    }
     this.route.navigate([url])
   }
 

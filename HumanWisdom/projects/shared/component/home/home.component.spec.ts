@@ -21,6 +21,7 @@ describe('HomeComponent', () => {
   let mockOnboardingService: jasmine.SpyObj<OnboardingService>;
   let mockRouter: jasmine.SpyObj<Router>;
   let routerEventsSubject: Subject<any>;
+  let originalProgramId: PropertyDescriptor | undefined;
 
   // Mock data
   const mockNavigationItems: NavigationItem[] = [
@@ -149,6 +150,7 @@ describe('HomeComponent', () => {
     spyOn(SharedService, 'isLoggedIn').and.returnValue(true);
     spyOn(SharedService, 'FnName').and.returnValue('"TestUser"');
     spyOn(SharedService, 'getprogramName').and.returnValue('adults');
+    originalProgramId = Object.getOwnPropertyDescriptor(SharedService, 'ProgramId');
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
       configurable: true
@@ -181,6 +183,9 @@ describe('HomeComponent', () => {
   });
 
   afterEach(() => {
+    if (originalProgramId) {
+      Object.defineProperty(SharedService, 'ProgramId', originalProgramId);
+    }
     fixture.destroy();
   });
 

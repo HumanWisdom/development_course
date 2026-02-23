@@ -511,6 +511,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    // Clear owl animation session so GIF and dialogue play again after login
+    sessionStorage.removeItem('owl_gif_shown');
+    localStorage.removeItem('owl_gif_shown');
+    localStorage.removeItem('owl_dialogue_shown');
+
     if (document.getElementById('password-reveal')) {
       document.getElementById('password-reveal').style.display = 'none';
     }

@@ -5,9 +5,12 @@ import { Router } from '@angular/router';
 import { LogEventService } from '../../services/log-event.service';
 import { NavigationService } from '../../services/navigation.service';
 import { SharedService } from '../../services/shared.service';
+import { OnboardingService } from '../../services/onboarding.service';
 import { ProgramType } from '../../models/program-model';
 import { Constant } from '../../services/constant';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { of } from 'rxjs';
 
 describe('WellnessSurveyIntroPage', () => {
   let component: WellnessSurveyIntroPage;
@@ -16,6 +19,7 @@ describe('WellnessSurveyIntroPage', () => {
   let mockRouter: jasmine.SpyObj<Router>;
   let mockLogEventService: jasmine.SpyObj<LogEventService>;
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
+  let mockOnboardingService: jasmine.SpyObj<OnboardingService>;
   let mockProgramId: any;
 
   beforeEach(async () => {
@@ -25,6 +29,8 @@ describe('WellnessSurveyIntroPage', () => {
     mockLogEventService = jasmine.createSpyObj('LogEventService', ['logEvent']);
     mockNavigationService = jasmine.createSpyObj('NavigationService', ['navigateToBackLink']);
     mockNavigationService.navigateToBackLink.and.returnValue(null);
+    mockOnboardingService = jasmine.createSpyObj('OnboardingService', ['clickModule']);
+    mockOnboardingService.clickModule.and.returnValue(of({ ListOfQueOpts: [] }));
 
     mockProgramId = ProgramType.Adults;
     Object.defineProperty(SharedService, 'ProgramId', {
@@ -35,13 +41,15 @@ describe('WellnessSurveyIntroPage', () => {
     spyOn(SharedService, 'getDataFromLocalStorage').and.returnValue(null);
 
     await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [WellnessSurveyIntroPage],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         { provide: Location, useValue: mockLocation },
         { provide: Router, useValue: mockRouter },
         { provide: LogEventService, useValue: mockLogEventService },
-        { provide: NavigationService, useValue: mockNavigationService }
+        { provide: NavigationService, useValue: mockNavigationService },
+        { provide: OnboardingService, useValue: mockOnboardingService }
       ]
     }).compileComponents();
 

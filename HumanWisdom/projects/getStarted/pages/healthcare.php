@@ -76,7 +76,10 @@
           background: none !important;
           background-image: none !important;
         }
-        
+               .owl-carousel .owl-stage {
+          width: auto !important;
+        }
+
         /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
         .accordion-button::after {
           background-image: none !important;
