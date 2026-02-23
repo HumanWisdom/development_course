@@ -7,7 +7,7 @@
     </div>
      <div class="header-content" *ngIf="!isAdults">
       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/olly-teens.svg" alt="Chat Bot Icon" class="bot-icon" />
-      <h2 class="bot-title">Olly AI</h2>
+      <h2 class="bot-title">Olly AI for teens</h2>
     </div>
     <button class="close-button" (click)="onCloseChat()" *ngIf="isAdults">
       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/images/close.png" alt="Close" class="close-icon" />
@@ -32,7 +32,9 @@
       <div *ngFor="let message of messages; let isFirst = first" class="message" [ngClass]="[message.sender + '-message', message.hideAvatar ? 'bot-followup' : '']">
         <!-- Bot Message -->
         <div *ngIf="message.sender === 'bot' && !message.hideAvatar" class="message-avatar">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.png"  />
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.png" *ngIf="isAdults" />
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/owl_teens.svg" *ngIf="!isAdults" />
+
         </div>
         
         <div class="message-content-wrapper">
@@ -80,8 +82,8 @@
                 [disabled]="message.feedback_given !== null"
                 (click)="onThumbsDown(message)"
                 title="Not helpful">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upadults.svg" alt="Chat Bot Icon"  *ngIf="isAdults" />
-             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downadults.svg" alt="Chat Bot Icon"  *ngIf="!isAdults" />
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downadults.svg" alt="Chat Bot Icon"  *ngIf="isAdults" />
+             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thump_downteens.svg" alt="Chat Bot Icon"  *ngIf="!isAdults" />
 
                 <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17 2V13M22 11V4C22 2.89543 21.1046 2 20 2H7.57377C6.09298 2 4.83383 3.08025 4.60859 4.54377L3.53166 11.5438C3.25213 13.3611 4.65823 15 6.49694 15H10C10.5523 15 11 15.4477 11 16V19.5342C11 20.896 12.104 22 13.4658 22C13.7907 22 14.085 21.8087 14.2169 21.5119L16.7361 15.5939C16.8966 15.2327 17.2547 15 17.6499 15H20C21.1046 15 22 14.1046 22 13V11Z" 
@@ -91,13 +93,14 @@
                 </svg> -->
               </button>
             </div>
-            
+                      <div class="" [ngClass]="{'typing-indicator': message.isTyping}">
+
             <!-- Typing indicator -->
             <div *ngIf="message.isTyping" class="typing-dots">
               <span></span>
               <span></span>
               <span></span>
-            
+            </div>
           </div>
           
           <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp) }}</span>
