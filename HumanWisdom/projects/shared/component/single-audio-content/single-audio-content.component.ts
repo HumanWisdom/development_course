@@ -104,16 +104,16 @@ export class SingleAudioContentComponent implements OnInit {
 
 
   redirectIfGuest() {
-    const guest = localStorage.getItem('guest') === 'T'
-    const hasModule = this.moduleName && this.moduleName != 'undefined'
-    const lowerModule = hasModule ? this.moduleName.toLowerCase() : ''
-    const isPodcast = hasModule ? lowerModule === 'podcast' : false
-    const isSoundscapes = hasModule ? lowerModule === 'soundscapes' : false
-    const allow = (isPodcast && (this.isFree =='T')) || (isSoundscapes && this.rowId === 1)
+    const guest = localStorage.getItem('guest') === 'T';
+    const hasModule = this.moduleName && this.moduleName != 'undefined';
+    const lowerModule = hasModule ? this.moduleName.toLowerCase() : '';
+    const isPodcast = hasModule ? lowerModule === 'podcast' : false;
+    const isSoundscapes = hasModule ? lowerModule === 'soundscapes' : false;
+    const allow = (this.isFree == 'T') || (isSoundscapes && this.rowId === 1);
     if (guest && !allow) {
-      const isAdultsProgram = SharedService.ProgramId == ProgramType.Adults
-      const url = isAdultsProgram ? '/subscription/start-your-free-trial' : '/teenagers/subscription/start-your-free-trial'
-      this.router.navigateByUrl(url)
+      const isAdultsProgram = SharedService.ProgramId == ProgramType.Adults;
+      const url = isAdultsProgram ? '/subscription/start-your-free-trial' : '/teenagers/subscription/start-your-free-trial';
+      this.router.navigateByUrl(url);
     }
   }
 
