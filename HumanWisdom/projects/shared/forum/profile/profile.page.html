@@ -126,7 +126,7 @@
                       </div>
 
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright" *ngIf="item.UserName != userName"
-                        (click)="follow(item,index)">
+                        (click)="follow(item,index)" (keydown.enter)="follow(item,index)">
                         <button type="button" class="btn fs_12px fw_600 lh_140p " *ngIf="item.Followed=='0'"
                           [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                           <i class="fa fa-plus fa-xs mr3px"></i>
@@ -204,10 +204,10 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isAdults">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_000000">
-                            <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
+                            <img *ngIf="item.Liked=='0'" (click)="like(item,index)" (keydown.enter)="like(item,index)"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_heart.svg"
                               class="img-responsive mr5px">
-                            <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
+                            <img *ngIf="item.Liked=='1'" (click)="like(item,index)" (keydown.enter)="like(item,index)"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_like_filled.svg"
                               class="img-responsive mr5px">
                             {{item.PostLikeCount}}
