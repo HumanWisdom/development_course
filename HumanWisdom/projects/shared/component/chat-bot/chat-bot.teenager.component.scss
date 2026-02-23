@@ -28,7 +28,7 @@
 }
 
 .suggestion-button{
-    background: white;
+    background: #A54265;
     border-radius: 10px;
     padding: 10px 15px;
     border: none;
@@ -44,7 +44,7 @@
     pointer-events: auto;
 
     &:hover {
-      background: #f0f0f0;
+      background: #A54265;
       transform: translateY(-1px);
       box-shadow: 2px 2px 4px 0px #ffffff1A;
     }
@@ -129,8 +129,8 @@
   }
 
   .bot-title {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 21px;
+    font-weight: 600;
     color: #ffffff;
     margin: 0;
   }
@@ -566,7 +566,7 @@
 }
 
 .send-button:disabled {
-  background: #ccc !important;
+  background: #EE9596 !important;
   cursor: not-allowed;
   transform: none !important;
   
@@ -795,7 +795,7 @@
     cursor: pointer;
     transition: all 0.2s ease;
     pointer-events: auto;
-    background: white;
+    background: #A54265;
     // box-shadow: none;
     text-align: center;
     box-shadow: 1px 1px 2px 0px #ffffff1A;
