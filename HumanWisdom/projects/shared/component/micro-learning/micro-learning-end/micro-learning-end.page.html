@@ -67,7 +67,8 @@
                   (mousedown)="$event.stopPropagation()">
                 </textarea>
 
-                <button class="mc_end_btn_journal" (click)="addJournal()" [disabled]="!journalText">
+                <button [ngClass]="isAdults ? 'mc_end_btn_journal' : 'mdp_add_to_journal'" (click)="addJournal()"
+                  [disabled]="!journalText">
                   Add to journal
                 </button>
 

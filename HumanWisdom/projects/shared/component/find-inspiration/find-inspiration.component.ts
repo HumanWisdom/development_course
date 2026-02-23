@@ -28,7 +28,7 @@ export class FindInspiration {
   this.inspirationItems = [
     { 
       title: 'Podcasts', 
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/podcast.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/podcast_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/podcast.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/podcast_without_bg.svg' ),
       icon: 'headphones', 
       height:'',
       color: '#191d3a',
@@ -39,7 +39,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/blog.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/blog.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg' ),
       url:'blogs'
     },   
 
@@ -48,7 +48,7 @@ export class FindInspiration {
       icon: 'map', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/guided.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/guided.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg' ),
       url:'journal'
     }, 
     { 
@@ -56,7 +56,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wellness.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/wellness.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg' ),
       url:'wisdom-survey'
     },  
     { 
@@ -64,7 +64,7 @@ export class FindInspiration {
       icon: 'message-circle', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach_1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg' ),
       url:'coach'
     },    
     { 
@@ -72,7 +72,7 @@ export class FindInspiration {
       icon: 'play-circle', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/video.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/video.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg' ),
       url:'wisdom-shorts'
     },  
     { 
@@ -80,7 +80,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/micro_learning.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/micro_learning.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/microlearn_without_bg.svg' ),
       url:'micro-learning' 
     },
     { 
@@ -88,7 +88,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audio_new.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_new.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg' ),
       url:'audio-meditation'
     },
     { 
@@ -96,7 +96,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/life.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/life.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg' ),
       url:'wisdom-stories'
     },
      
@@ -105,7 +105,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/answer1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/find_ans_wihout_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/answer1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/find_ans_wihout_bg.svg' ),
       url:'find-answers/why-do-i'
     }, 
     { 
@@ -113,7 +113,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/soundscape1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/soundscape1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg' ),
       url:'soundscapes'
     },   
     { 
@@ -121,7 +121,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
       url:'events'
     },   
    

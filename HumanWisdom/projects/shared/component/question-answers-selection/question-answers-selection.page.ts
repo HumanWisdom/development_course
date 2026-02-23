@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LogEventService } from '../../services/log-event.service';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from '../../services/shared.service';
+import { NavigationService } from '../../services/navigation.service';
 import { ProgramType } from '../../models/program-model';
 
 
@@ -93,6 +94,7 @@ export class QuestionAnswersSelection implements OnInit {
       private router: Router,
       private service: OnboardingService,
       public logeventservice: LogEventService,
+      private navigation: NavigationService
     ) { 
      if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -398,9 +400,12 @@ export class QuestionAnswersSelection implements OnInit {
 
 
   goBack() {
-    // this.location.back()
-    this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey"]);
-
+    var url = this.navigation.navigateToBackLink();
+    if (url == null) {
+      this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey"]);
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
 }
