@@ -22,6 +22,8 @@ export class S57001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+    isContentsOpen = false;
+
   bookmark:any
   bookmarkList=[]
   niR=sessionStorage.getItem("pgResume")
@@ -114,6 +116,9 @@ export class S57001Page implements OnInit,OnDestroy {
 
 
 
+  }
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   toggleBookmark(){
     if(this.bookmark==0)
