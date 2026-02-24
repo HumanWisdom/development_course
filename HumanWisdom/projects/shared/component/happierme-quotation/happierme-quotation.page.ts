@@ -5,13 +5,15 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService, UrlConstant } from "../../services/shared.service";
 import { NavigationService } from "../../services/navigation.service";
 import { Location } from '@angular/common';
+import { ProgramType } from "../../models/program-model";
 @Component({
   selector: 'app-happierme-quotation',
   templateUrl: './happierme-quotation.page.html',
   styleUrls: ['./happierme-quotation.page.scss'],
 })
-export class HappierMeQuotationPage {
+export class HappierMeQuotationPage implements OnInit {
   quotationAuthor: string = '';
+  isAdults = true;
   quoationtext: string = ''
   bg_tn = "bg_blue"
   bg_cft = "bg_blue"
@@ -42,6 +44,14 @@ export class HappierMeQuotationPage {
       this.quotationAuthor = res[0].author
     });
 
+  }
+
+  ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
 
   back() {
