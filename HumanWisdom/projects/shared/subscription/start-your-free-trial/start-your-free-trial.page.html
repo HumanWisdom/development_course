@@ -195,7 +195,9 @@
 
                   <h4 style="cursor: pointer;" class="mtb10px fs_12px fw_400 lh_140p  tcenter td_underline"
                     [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'"
-                    (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness'); giftwisdom()">
+                    (click)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness'); giftwisdom()"
+                    (keydown.enter)="Logevent('/onboarding/add-to-cart', '', 'click_give_the_gift_happiness'); giftwisdom()"
+                    tabindex="0">
                     Subscribe for family & friends </h4>
 
 

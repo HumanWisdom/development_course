@@ -99,7 +99,7 @@
 /* Teens scrollbar style (when .adults-scroll is not present) */
 .mc_01_v3:not(.adults-scroll) {
   .odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
-    scrollbar-color: #16366D #778899;
+    scrollbar-color: #778899 #16366D;
     
     &::-webkit-scrollbar-thumb {
       background-color: #16366D;
