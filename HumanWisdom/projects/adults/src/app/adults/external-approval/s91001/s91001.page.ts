@@ -24,6 +24,8 @@ export class S91001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+      isContentsOpen = false;
+
   bookmarkList=[]
   pgResume=sessionStorage.getItem("pgResume")
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/91.webp"
@@ -115,7 +117,9 @@ export class S91001Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
     this.createScreen()
   }
-
+toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
