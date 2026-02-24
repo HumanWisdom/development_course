@@ -859,6 +859,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.userAvatarUrl = this.getDefaultAvatar();
   }
 
+  onAvatarError(event: Event): void {
+    const imgElement = event.target as HTMLImageElement;
+    if (imgElement) {
+      imgElement.src = this.getDefaultAvatar();
+    }
+  }
+
   /**
    * Check if program type has changed and clear chat store if needed
    */
