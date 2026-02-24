@@ -34,13 +34,17 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   private cachedHistoryMessages: HistoryMessage[] | null = null;
   private cachedHistoryUserId: number | null = null;
   private historyCheckInProgress: boolean = false;
- isAdults = false;
+  isAdults = false;
+
+  // Dislike popup state
+  showDislikePopup: boolean = false;
+  pendingDislikeMessage: ChatMessage | null = null;
  
   private messagesSubscription: Subscription = new Subscription();
   private typingSubscription: Subscription = new Subscription();
   private sessionSubscription: Subscription = new Subscription();
   private suggestionsSubscription: Subscription = new Subscription();
-  userAvatarUrl: string = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
+  userAvatarUrl: string = '';
 
   constructor(
     private chatbotService: ChatbotService,
@@ -415,9 +419,56 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
+   * Handle thumbs down button click - immediately submit feedback and show confirmation popup
+   */
+  onThumbsDownClick(message: ChatMessage): void {
+    if (message.feedback_given || this.isLoading) {
+      return;
+    }
+    // Submit the dislike feedback immediately
+    this.onThumbsDown(message);
+    // Show confirmation popup
+    this.showDislikePopup = true;
+    this.pendingDislikeMessage = message;
+  }
+
+  /**
+   * Close the dislike popup
+   */
+  onCloseDislikePopup(): void {
+    this.showDislikePopup = false;
+    this.pendingDislikeMessage = null;
+  }
+
+  /**
+   * Navigate to the community forum
+   */
+  onGoToForum(): void {
+    this.showDislikePopup = false;
+    this.pendingDislikeMessage = null;
+    if (SharedService.ProgramId === ProgramType.Adults) {
+      this.router.navigate(['/adults/forum']);
+    } else {
+      this.router.navigate(['/teenagers/forum']);
+    }
+  }
+
+  /**
+   * Select a dislike reason (kept for compatibility)
+   */
+  onSelectDislikeReason(reason: string): void {}
+
+  /**
+   * Submit dislike (kept for compatibility)
+   */
+  onSubmitDislike(): void {
+    this.onCloseDislikePopup();
+  }
+
+  /**
    * Handle thumbs down click - send negative feedback
    */
-  onThumbsDown(message: ChatMessage): void {
+  onThumbsDown(message: ChatMessage, reason?: string): void {
     if (message.feedback_given || this.isLoading) {
       return;
     }
@@ -776,8 +827,10 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log('Loaded history messages:', history);
   }
   private getDefaultAvatar(): string {
-    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
-
+    if (SharedService.ProgramId === ProgramType.Teenagers) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
+    }
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/profile_default.svg';
   }
 
   private setUserAvatar(): void {
@@ -804,6 +857,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.userAvatarUrl = this.getDefaultAvatar();
+  }
+
+  onAvatarError(event: Event): void {
+    const imgElement = event.target as HTMLImageElement;
+    if (imgElement) {
+      imgElement.src = this.getDefaultAvatar();
+    }
   }
 
   /**
