@@ -85,7 +85,8 @@
 
                 <!-- Resource Cards -->
                 <ng-container *ngFor="let resource of resourcesList">
-                  <div class="mc_end_resource_card" (click)="handleResourceClick(resource)">
+                  <div class="mc_end_resource_card" (click)="handleResourceClick(resource)"
+                    (keydown.enter)="handleResourceClick(resource)" tabindex="0">
                     <img [src]="resource.imgUrl" class="resource_img" [alt]="resource.title">
                     <div class="resource_info">
                       <h4>{{ resource.title }}</h4>
