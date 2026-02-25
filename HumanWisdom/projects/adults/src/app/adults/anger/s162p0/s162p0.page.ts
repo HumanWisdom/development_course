@@ -25,6 +25,8 @@ export class S162p0Page implements OnInit, OnDestroy
   endTime: any
   totalTime: any
   bookmark: any
+      isContentsOpen = false;
+
   bookmarkList = []
   angerResume = sessionStorage.getItem("pgResume")
   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/14.png"
@@ -99,6 +101,10 @@ export class S162p0Page implements OnInit, OnDestroy
     this.createScreen()
   }
 
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark() 
   {
     if (this.bookmark == 0)

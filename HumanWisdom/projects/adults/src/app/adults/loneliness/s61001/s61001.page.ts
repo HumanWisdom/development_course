@@ -23,6 +23,8 @@ export class S61001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+    isContentsOpen = false;
+
   bookmark:any
   bookmarkList=[]
   lonelinessResume=sessionStorage.getItem("pgResume")
@@ -114,6 +116,10 @@ export class S61001Page implements OnInit,OnDestroy {
 
 
     
+  }
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   toggleBookmark(){
     if(this.bookmark==0)
