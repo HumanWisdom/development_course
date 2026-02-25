@@ -18,6 +18,7 @@ export class S486Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+  isContentsOpen = false;
   bookmark:any
   bookmarkList=[]
   path = setTimeout(() => {
@@ -147,6 +148,10 @@ export class S486Page implements OnInit,OnDestroy {
   addToken(){
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  }
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   toggleBookmark(){
     if(this.bookmark==0)
