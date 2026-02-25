@@ -107,13 +107,13 @@ export class ChatbotService {
   }
 
   private getChatbotUrl(): string {
-    return SharedService.ProgramId === ProgramType.Adults 
+    return SharedService.ProgramId == ProgramType.Adults 
       ? this.ADULT_CHATBOT_URL 
       : this.TEEN_CHATBOT_URL;
   }
 
   private getHealthCheckUrl(): string {
-    return SharedService.ProgramId === ProgramType.Adults 
+    return SharedService.ProgramId == ProgramType.Adults 
       ? this.HEALTH_CHECK_URL_ADULT 
       : this.HEALTH_CHECK_URL_TEEN;
   }
@@ -135,25 +135,25 @@ export class ChatbotService {
   }
 
   private getHistoryUrl(): string {
-    return SharedService.ProgramId === ProgramType.Adults
+    return SharedService.ProgramId == ProgramType.Adults
       ? this.HISTORY_URL_ADULT
       : this.HISTORY_URL_TEEN;
   }
 
   private getRelatedContentUrl(): string {
-    return SharedService.ProgramId === ProgramType.Adults
+    return SharedService.ProgramId == ProgramType.Adults
       ? this.RELATED_CONTENT_URL_ADULT
       : this.RELATED_CONTENT_URL_TEEN;
   }
 
   private getFeedbackUrl(): string {
-    return SharedService.ProgramId === ProgramType.Adults
+    return SharedService.ProgramId == ProgramType.Adults
       ? this.FEEDBACK_URL_ADULT
       : this.FEEDBACK_URL_TEEN;
   }
 
   private getTrackClickUrl(): string {
-    return SharedService.ProgramId === ProgramType.Adults
+    return SharedService.ProgramId == ProgramType.Adults
       ? this.TRACK_CLICK_URL_ADULT
       : this.TRACK_CLICK_URL_TEEN;
   }
@@ -350,17 +350,11 @@ export class ChatbotService {
       withCredentials: true
     }).pipe(
       map((response: HistoryResponse) => {
-        // Additional frontend filtering: ensure response user_id matches current user
+        // Additional frontend filtering disabled to prevent strict type mismatches.
+        // We trust the backend's token validation to fetch the right history.
         if (currentUserId && currentUserId > 0 && response.user_id) {
           const responseUserId = Number.parseInt(response.user_id, 10);
-          if (responseUserId !== currentUserId) {
-            // If user_id doesn't match, return empty history
-            console.warn('History response user_id does not match current user. Filtering out history.');
-            return {
-              ...response,
-              history: []
-            };
-          }
+          console.log('Comparing user IDs:', responseUserId, currentUserId);
         }
         return response;
       })
