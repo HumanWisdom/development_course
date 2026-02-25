@@ -68,7 +68,7 @@
   
   // Global anchor styles for the entire chat container
   a {
-    color: inherit !important;
+    color: inherit;
     text-decoration: underline !important;
     cursor: pointer !important;
     
@@ -187,16 +187,7 @@
     transition: color 0.2s ease;
     cursor: pointer;
     pointer-events: auto;
-    color: #1f5bd6 !important;
-    
-    &:hover:not(.loading) {
-      color: #1f5bd6 !important;
-      transform: none;
-    }
 
-    &:visited {
-      color: #1f5bd6 !important;
-    }
     
     &.loading {
       opacity: 0.7;
@@ -219,7 +210,7 @@
   flex-direction: column;
   gap: 24px;
   margin: 0 20px;
-  padding-top: 24px;
+  padding: 24px 0;
   // padding-bottom: 24px; // Space for input area
   scroll-behavior: smooth; // Smooth scrolling
   
@@ -241,10 +232,16 @@
     }
   }
 }
-
+.load-history-link{
+  color: #EE9596 !important;
+}
 .message {
   display: flex;
   margin-bottom: 0;
+
+  &.welcome-followup {
+    margin-top: -19px;
+  }
 
   &.bot-message {
     justify-content: flex-start;
