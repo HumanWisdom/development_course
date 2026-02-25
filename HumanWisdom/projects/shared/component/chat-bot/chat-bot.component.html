@@ -33,7 +33,7 @@
     <div class="chat-messages" #messageContainer>
       <!-- Dynamic Messages -->
       <div *ngFor="let message of messages; let isFirst = first" class="message"
-        [ngClass]="[message.sender + '-message', message.hideAvatar ? 'bot-followup' : '']">
+        [ngClass]="[message.sender + '-message', message.hideAvatar ? 'bot-followup' : '', message.id === 'welcome-intro-2' ? 'welcome-followup' : '']">
         <!-- Bot Message -->
         <div *ngIf="message.sender === 'bot' && !message.hideAvatar" class="message-avatar">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.png"
