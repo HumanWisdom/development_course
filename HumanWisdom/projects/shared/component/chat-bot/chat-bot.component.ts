@@ -798,7 +798,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.chatbotService.loadHistory().subscribe({
       next: (response) => {
-        if (response.status === 'success' && response.history.length > 0) {
+        if (response && response.status && response.status.toLowerCase() === 'success' && response.history && response.history.length > 0) {
           this.hasHistoryAvailable = true;
           this.cachedHistoryMessages = response.history;
           this.cachedHistoryUserId = currentUserId;
