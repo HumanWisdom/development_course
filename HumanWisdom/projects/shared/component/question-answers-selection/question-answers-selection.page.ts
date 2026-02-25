@@ -87,7 +87,7 @@ export class QuestionAnswersSelection implements OnInit {
   prevBtnDisabled = false;
   loading = false;
   loginResponse: any;
-
+  timeoutId: any;
 
   constructor
     (
@@ -165,6 +165,9 @@ export class QuestionAnswersSelection implements OnInit {
   }
 
   checkOption(index, OptId, i, strSelected) {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
     let obj = {
       "Id": (index + 1).toString(),
       "Rating": i,
@@ -173,14 +176,14 @@ export class QuestionAnswersSelection implements OnInit {
     this.selectedObj[index] = strSelected;
     this.receiveRating(JSON.stringify(obj));
     this.btnDisabled = false;
-    setTimeout(() => {
+    this.timeoutId = setTimeout(() => {
 
       if (index == 9)
         this.submitProgress();
       else
         this.next('click_Daily_Practice_Next');
 
-    }, 500);
+    }, 400);
 
   }
 
@@ -195,6 +198,9 @@ export class QuestionAnswersSelection implements OnInit {
 
 
   next(event) {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
     window.scrollTo(0, 0);
     this.currentSection++;
     if (this.currentSection >= 10) {
@@ -235,6 +241,9 @@ export class QuestionAnswersSelection implements OnInit {
   }
 
   back(event) {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
     window.scrollTo(0, 0);
     if (this.currentSection == 0) {
       this.currentSection = 10;
