@@ -294,4 +294,14 @@ export class MicroLearningInnerPage implements OnInit {
       this.forceRoute(anchor);
     }
   }
+
+  handleJournalStatus(event) {
+    if (event === 'added') {
+      this.showSuccessPopup = true;
+    }
+  }
+
+  closeSuccessPopup(event) {
+    this.showSuccessPopup = false;
+  }
 }
