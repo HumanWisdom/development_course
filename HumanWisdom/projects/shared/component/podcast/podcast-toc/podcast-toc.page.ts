@@ -214,6 +214,8 @@ getUserPref(type) {
     this.podcastList = this.podcastList.filter((d) => !d['PreferenceIDs']);
   } else if (type === 'MiniPodcast') {
     this.podcastList = this.podcastList.filter((d) => d['IsMiniPodcast'] === '1');
+  } else if (type === 'Sports') {
+    this.podcastList = this.podcastList.filter((d) => d['isSports'] === '1');
   } else {
     this.podcastList = this.podcastList.filter((d) =>
       d['PreferenceIDs'] && d['PreferenceIDs'].split(',').includes(type)
