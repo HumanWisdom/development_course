@@ -57,8 +57,8 @@
 
               <div class="row" (click)="readText()" *ngIf="enableTextContent">
                 <!-- <p class="txt1 mt40px mb30px"> -->
-                <h3 class="transcript_txt">
-                  {{textContent }} </h3>
+                <h3 class="transcript_txt" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" [innerHTML]="textContent">
+                </h3>
                 <!-- </p> -->
               </div>
 
