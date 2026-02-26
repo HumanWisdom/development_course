@@ -250,7 +250,7 @@ require_once('./includes/security_config.php');
                    <!-- Strengthen your relationships. Manage emotions. Feel happier. -->
 <!-- Understand your mind. Change how you feel.       --> 
            <!-- Build a healthier mind <br> with HappierMe -->
-            Understand your mind.<br> Live a happier, more fulfilling life.
+            Understand your mind.<br> Live a happier life.
               </h1>
             </div>
           </div>
