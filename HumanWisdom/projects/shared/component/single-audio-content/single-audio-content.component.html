@@ -49,7 +49,7 @@
                 *ngIf="audioLink !== '' && textContent !== ''">
                 <!-- <p class="txt1 mt40px mb30px"> -->
                 <a class="">
-                  <h6 class="fs_15px fw_400 lh_140p fc_e58d82 underline">
+                  <h6 class="fs_15px fw_400 lh_140p fc_e58d82 underline mb10px">
                     {{!enableTextContent ? 'Read text' : 'Back To Audio' }} </h6>
                 </a>
                 <!-- </p> -->
@@ -62,7 +62,7 @@
                 <!-- </p> -->
               </div>
 
-              <div class="row" *ngIf="enableImage">
+              <div class="row" *ngIf="enableImage && !enableTextContent">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <img [src]="imageUrl" class="img-responsive img_podcast_02">
                 </div>
