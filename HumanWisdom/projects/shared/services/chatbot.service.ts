@@ -33,6 +33,7 @@ export interface HistoryResponse {
   status: 'success' | 'error';
   history: HistoryMessage[];
   user_id: string;
+  response?: string;
 }
 
 @Injectable({

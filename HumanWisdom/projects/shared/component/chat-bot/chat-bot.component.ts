@@ -29,6 +29,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   isLoading: boolean = false;
   isLoadingHistory: boolean = false;
   errorMessage: string = '';
+  isTokenExpired: boolean = false;
   activeSuggestions: string[] = [];
   hasHistoryAvailable: boolean = false;
   private cachedHistoryMessages: HistoryMessage[] | null = null;
@@ -117,6 +118,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     );
 
     this.checkHistoryAvailability();
+    if (this.isGuestUser()) {
+      this.checkTokenExpiry();
+    }
   }
 
   ngAfterViewInit(): void {
@@ -188,6 +192,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.has_more
           );
           // Note: Scrolling is handled automatically by messages$ subscription
+        } else if (response.response === 'Unauthorized') {
+          this.handleUnauthorizedError();
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
         }
@@ -197,7 +203,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         console.error('Chatbot API Error:', error);
         this.chatbotService.removeTypingIndicator();
         this.chatbotService.setTyping(false);
-        this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
+        if (error.status === 401 || (error.error && error.error.response === 'Unauthorized')) {
+          this.handleUnauthorizedError();
+        } else {
+          this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
+        }
         this.isLoading = false;
         // Note: Scrolling is handled automatically by messages$ subscription
       }
@@ -259,6 +269,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       next: (response) => {
         if (response.status === 'success' && response.history.length > 0) {
           this.applyHistoryMessages(response.history);
+        } else if (response.response === 'Unauthorized') {
+          this.handleUnauthorizedError();
         } else {
           this.errorMessage = 'No previous conversations found.';
           this.hasHistoryAvailable = false;
@@ -269,7 +281,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error loading history:', error);
-        this.errorMessage = 'Failed to load previous conversations. Please try again.';
+        if (error.status === 401 || (error.error && error.error.response === 'Unauthorized')) {
+          this.handleUnauthorizedError();
+        } else {
+          this.errorMessage = 'Failed to load previous conversations. Please try again.';
+        }
         this.isLoadingHistory = false;
       }
     });
@@ -325,6 +341,37 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   clearError(): void {
     this.errorMessage = '';
+    this.isTokenExpired = false;
+  }
+
+  private handleUnauthorizedError(): void {
+    if (this.isGuestUser()) {
+      localStorage.setItem('btnclick', 'F');
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    } else {
+      this.isTokenExpired = true;
+      this.errorMessage = 'Your session has been timed out, please logout and login again';
+    }
+  }
+
+  redirectToLogin(): void {
+    const programName = SharedService.getprogramName();
+    this.router.navigate([`/${programName}/onboarding/login`]);
+  }
+
+  private checkTokenExpiry(): void {
+    this.chatbotService.checkHealth().subscribe({
+      next: (response) => {
+        if (response && response.status === 'error' && response.response === 'Unauthorized') {
+          this.handleUnauthorizedError();
+        }
+      },
+      error: (error) => {
+        if (error.status === 401 || (error.error && error.error.response === 'Unauthorized')) {
+          this.handleUnauthorizedError();
+        }
+      }
+    });
   }
 
   /**
@@ -802,6 +849,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
           this.hasHistoryAvailable = true;
           this.cachedHistoryMessages = response.history;
           this.cachedHistoryUserId = currentUserId;
+        } else if (response && response.response === 'Unauthorized') {
+          this.handleUnauthorizedError();
         } else {
           this.hasHistoryAvailable = false;
           this.cachedHistoryMessages = null;
@@ -811,9 +860,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error checking history availability:', error);
-        this.hasHistoryAvailable = false;
-        this.cachedHistoryMessages = null;
-        this.cachedHistoryUserId = null;
+        if (error.status === 401 || (error.error && error.error.response === 'Unauthorized')) {
+          this.handleUnauthorizedError();
+        } else {
+          this.hasHistoryAvailable = false;
+          this.cachedHistoryMessages = null;
+          this.cachedHistoryUserId = null;
+        }
         this.historyCheckInProgress = false;
       }
     });
