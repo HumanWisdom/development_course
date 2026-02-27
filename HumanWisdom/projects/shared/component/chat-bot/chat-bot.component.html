@@ -133,12 +133,19 @@
       <div class="error-content">
         <p>{{ errorMessage }}</p>
         <div class="error-actions">
-          <button class="retry-button" (click)="retryLastMessage()" [disabled]="isLoading">
-            Retry
-          </button>
-          <button class="clear-error-button" (click)="clearError()">
-            Dismiss
-          </button>
+          <ng-container *ngIf="isTokenExpired">
+            <button class="retry-button" (click)="redirectToLogin()">
+              Login
+            </button>
+          </ng-container>
+          <ng-container *ngIf="!isTokenExpired">
+            <button class="retry-button" (click)="retryLastMessage()" [disabled]="isLoading">
+              Retry
+            </button>
+            <button class="clear-error-button" (click)="clearError()">
+              Dismiss
+            </button>
+          </ng-container>
         </div>
       </div>
     </div>
