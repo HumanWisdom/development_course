@@ -98,7 +98,7 @@ export class ProfilePage implements OnInit {
        this.profileImageUrl  = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg';
 
     } else {
-        this.profileImageUrl  = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+        this.profileImageUrl  = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default_teens.svg';
 
     } 
 
@@ -333,7 +333,7 @@ export class ProfilePage implements OnInit {
         return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg';
       }
       else{
-        return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+        return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default_teens.svg';
 
       }
     }
@@ -343,7 +343,7 @@ export class ProfilePage implements OnInit {
         return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg';
       }
       else{
-        return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg';
+        return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default_teens.svg';
       }
     }
     return `https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/${normalized}?${ts}`;

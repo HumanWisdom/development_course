@@ -50,12 +50,22 @@ export class PodcastTocPage implements OnInit {
       this.isAdults = false;
     }
     this.prefData = SharedService.getPreferenceData();
-    // this.prefData.push({
-    //   id: "01",
-    //   active: false,
-    //   displayName: "Mini Podcast",
-    //   name: 'Mini Podcast',
-    // })
+    const parentsIndex = this.prefData.findIndex(p => p.id === '18');
+    if (parentsIndex !== -1) {
+      this.prefData.splice(parentsIndex + 1, 0, {
+        id: 'Sports',
+        displayName: 'Sports',
+        active: false,
+        name: 'Sports'
+      });
+    } else {
+      this.prefData.push({
+        id: 'Sports',
+        displayName: 'Sports',
+        active: false,
+        name: 'Sports'
+      });
+    }
   }
 
   ngOnInit() {
@@ -123,10 +133,14 @@ export class PodcastTocPage implements OnInit {
         this.podcastList = filteredData;
         this.allpodcastList = filteredData;
         this.allpodcastList.forEach((d) => {
+          if (d['isSports'] === '1') {
+            const s = this.prefData.find(p => p.id === 'Sports');
+            if (s) s.active = true;
+          }
           this.prefData.forEach((h) => {
-            if (d['PreferenceIDs'] && d['PreferenceIDs'].split(",").includes( h.id)) {
+            if (d['PreferenceIDs'] && d['PreferenceIDs'].split(",").includes(h.id)) {
               h.active = true;
-            } else if (!d['PreferenceIDs']) {
+            } else if (!d['PreferenceIDs'] && h.id !== 'Sports') {
               h.active = true;
             }
           })
