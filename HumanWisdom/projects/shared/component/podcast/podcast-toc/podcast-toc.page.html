@@ -90,7 +90,7 @@
                 </div>
               </div> -->
 
-              <div class="row prelative mt40px">
+              <div class="row prelative mt20px">
                 <app-hwp-search-bar [searchinp]="searchedText" [placeholder]="'Search for a podcast'"
                   (textBoxEvent)="searchPodcast($event)"></app-hwp-search-bar>
 
@@ -106,11 +106,6 @@
                     <button id="MiniPodcast" type="button" class="btn" (click)="getUserPref('MiniPodcast')"
                       [class.active]="selectedPref === 'MiniPodcast'">
                       Mini podcasts
-                    </button>
-
-                    <button id="Sports" type="button" class="btn" (click)="getUserPref('Sports')"
-                      [class.active]="selectedPref === 'Sports'">
-                      Sports
                     </button>
 
                     <div class="ms-2" style="border-left: 2px solid #80808066; height: 35px;  width: 20px;"></div>
@@ -137,7 +132,7 @@
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="title_content" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                  <h4 class="title_content mt0px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                     CONTENTS
                   </h4>
                 </div>
