@@ -34568,7 +34568,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 
 .border_profile_img {
-  border: 10px solid #183C79 !important;
+  border: 0px solid #183C79 !important;
   border-radius: 50%;
   width: 82px;
   height: 82px;
