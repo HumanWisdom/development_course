@@ -18,6 +18,8 @@ export class S433Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+        isContentsOpen = false;
+
   bookmarkList=[]
   path = setTimeout(() => {
     return this.router.url;
@@ -144,6 +146,10 @@ export class S433Page implements OnInit,OnDestroy {
   addToken(){
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  }
+
+   toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   toggleBookmark(){
     if(this.bookmark==0)
