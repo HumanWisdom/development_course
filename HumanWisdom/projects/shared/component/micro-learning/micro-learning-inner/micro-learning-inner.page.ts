@@ -7,6 +7,7 @@ import { CommonService } from "../../../services/common.service";
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HomeStateService } from '../../../services/home-state.service';
+import { NavigationService } from '../../../services/navigation.service';
 
 @Component({
   selector: 'app-micro-learning-inner',
@@ -41,7 +42,8 @@ export class MicroLearningInnerPage implements OnInit {
     private ngNavigatorShareService: NgNavigatorShareService,
     private sanitizer: DomSanitizer,
     private el: ElementRef,
-    private homeStateService: HomeStateService
+    private homeStateService: HomeStateService,
+    private navigationService: NavigationService
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     const navigation = this.router.getCurrentNavigation();
@@ -214,7 +216,13 @@ export class MicroLearningInnerPage implements OnInit {
   backToDashboard() {
     localStorage.removeItem('ml_index_' + this.contentId);
     localStorage.removeItem('persist_ml_index');
-    this.router.navigate([`/${SharedService.getprogramName()}/micro-learning`]);
+   // this.router.navigate([`/${SharedService.getprogramName()}/micro-learning`]);
+     var url = this.navigationService.navigateToBackLink();
+        if (url == null) {
+          this.location.back();
+        } else {
+          this.router.navigate([url]);
+        }
   }
 
   next() {
