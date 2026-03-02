@@ -27,7 +27,7 @@ export class S28001Page implements OnInit,OnDestroy {
   isLoggedIn = false;
   isSubscriber = false;
 
-  natureR=sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/28.webp"
   tocColor="white"
   lastvisited = false;
@@ -84,26 +84,32 @@ export class S28001Page implements OnInit,OnDestroy {
       this.isSubscriber = true;
     }
     
-    // continue where you left
-    if(!localStorage.getItem("NaviagtedFrom"))     
-    localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
 
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T')
-    {
-      this.lastvisited = true;
-    }
-    else
-    {
-      this.lastvisited = false;
-    }
+    this.service.clickModule(28, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
+    // continue where you left
+    // if(!localStorage.getItem("NaviagtedFrom"))     
+    // localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
+
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T')
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else
+    // {
+    //   this.lastvisited = false;
+    // }
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(28))
-    this.moduleId=localStorage.getItem("moduleId")
-    if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
 
     this.startTime = Date.now();
@@ -169,9 +175,8 @@ export class S28001Page implements OnInit,OnDestroy {
 
   } */
 
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 
 }

@@ -158,8 +158,29 @@ export class AudioHeaderComponent implements OnInit {
   }
 
   goToToc() {
-    this.navigationService.getBackLink();
-    this.router.navigate(['/' + this.programName + '/' + this.toc])
+    var url = this.navigationService.navigateToBackLink();
+    if (url != null && !url.includes('home') && !url.includes('dashboard')) {
+      this.router.navigateByUrl(url);
+      return;
+    }
+
+    if (this.toc) {
+      let tocUrl = this.toc;
+      let prefix = this.isAdult ? '/adults' : '/teenagers';
+      if (!tocUrl.startsWith('/')) {
+        tocUrl = prefix + '/' + tocUrl;
+      } else if (!tocUrl.startsWith(prefix)) {
+        tocUrl = prefix + tocUrl;
+      }
+      this.router.navigate([tocUrl]);
+      return;
+    }
+
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      this.router.navigate([SharedService.getDashboardUrls()]);
+    }
   }
 
   goToDash() {

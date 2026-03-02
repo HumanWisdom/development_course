@@ -28,7 +28,7 @@ export class S51000Page implements OnInit, OnDestroy {
   bookmark: any
   bookmarkList = []
 
-  gamR = sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
   tocColor = "white"
   lastvisited = false;
@@ -110,19 +110,27 @@ export class S51000Page implements OnInit, OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
 
-    // continue where you left
-    let last = localStorage.getItem('lastvisited');
-    if (last === 'T') {
-      this.lastvisited = true;
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
     else {
-      this.lastvisited = false;
+      this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+
+    this.service.clickModule(51, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
+    // continue where you left
+    // let last = localStorage.getItem('lastvisited');
+    // if (last === 'T') {
+    //   this.lastvisited = true;
+    // }
+    // else {
+    //   this.lastvisited = false;
+    // }
     // /continue where you left
-    localStorage.setItem("moduleId", JSON.stringify(51))
-    this.moduleId = localStorage.getItem("moduleId")
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
 
     this.startTime = Date.now();
@@ -228,9 +236,8 @@ export class S51000Page implements OnInit, OnDestroy {
   }
 
   
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 
 

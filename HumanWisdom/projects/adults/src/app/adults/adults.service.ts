@@ -424,12 +424,12 @@ export class AdultsService {
         let qrList = res
         pgResume = "s" + res.lastVisitedScreen
         if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited", 'F')
+          localStorage.setItem("lastvisited" + id, 'F')
         }
         else {
-          localStorage.setItem("lastvisited", 'T')
+          localStorage.setItem("lastvisited" + id, 'T')
         }
-        sessionStorage.setItem("pgResume", pgResume)
+        sessionStorage.setItem("pgResume" + id, pgResume)
         mediaPercent = parseInt(res.MediaPercent);
         // let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(freeScreens))

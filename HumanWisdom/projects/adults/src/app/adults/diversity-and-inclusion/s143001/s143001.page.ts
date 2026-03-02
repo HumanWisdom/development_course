@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./s143001.page.scss'],
 })
 export class S143001Page implements OnInit,OnDestroy {
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume: any;
   userId:any
   saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
   screenType=localStorage.getItem("text")
@@ -29,7 +29,7 @@ export class S143001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  diversityinclusionR=sessionStorage.getItem("diversityinclusionR")
+  // diversityinclusionR=sessionStorage.getItem("diversityinclusionR")
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/143.webp"
   tocColor="grey"
   lastvisited = false;
@@ -55,9 +55,6 @@ export class S143001Page implements OnInit,OnDestroy {
   }
 
 continue(){
-  if(sessionStorage.getItem('pgResume')!= null){
-    this.pgResume=sessionStorage.getItem("pgResume")
-  }
   this.router.navigate(['/adults/diversity-and-inclusion/'+this.pgResume]);
 }
 
@@ -104,29 +101,29 @@ continue(){
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
   
-    this.pgResume=sessionStorage.getItem("pgResume");
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    {
-      this.lastvisited = false;
-    }    
-    // /continue where you left
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
 
-    
-    
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
+    this.service.clickModule(143, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
+    // continue where you left    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
+    // /continue where you left
 
     if(!this.t) //if no token in url- not shared
     {
@@ -193,6 +190,7 @@ continue(){
     this.router.navigate(['/adults/journal'])
   }
 
-
-
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
+  }
 }
