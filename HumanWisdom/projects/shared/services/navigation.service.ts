@@ -119,6 +119,15 @@ export class NavigationService {
     this.history.splice(this.history.indexOf(this.router.url) + 1);
 
     const url = this.goBack();
+    if (url != null && !url.includes('home') && !url.includes('dashboard')) {
+      return url;
+    }
+
+    let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+    if (navFrom && navFrom != null && navFrom != 'null') {
+      return navFrom;
+    }
+
     if (url != null) {
       return url;
     }

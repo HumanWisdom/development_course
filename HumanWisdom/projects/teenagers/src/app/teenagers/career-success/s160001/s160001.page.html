@@ -7,18 +7,19 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="txt_comparison">
-          It can be confusing to know what career you want to pursue. We help you understand the many factors that influence that decision, and help you find the right path for yourself.
+          It can be confusing to know what career you want to pursue. We help you understand the many factors that
+          influence that decision, and help you find the right path for yourself.
         </h4>
       </div>
     </div>
 
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
-        <a [routerLink]="['/teenagers/career-success', pgResume]" *ngIf="lastvisited">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a (click)="Resume('/teenagers/career-success/');" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
-    </div> 
+    </div>
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 p0">
@@ -32,7 +33,7 @@
       <a routerLink="/teenagers/career-success/s160002">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #1
@@ -41,7 +42,7 @@
                 Choosing your future
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                
+
               </h4>
             </div>
 
@@ -51,7 +52,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -62,7 +64,7 @@
       <a routerLink="/teenagers/career-success/s160042">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #2
@@ -72,7 +74,7 @@
 
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-             
+
               </h4>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
@@ -81,7 +83,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -92,7 +95,7 @@
       <a routerLink="/teenagers/career-success/s160078">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #3
@@ -111,7 +114,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -122,7 +126,7 @@
       <a routerLink="/teenagers/career-success/s160115">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #4
@@ -142,7 +146,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -156,10 +161,12 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
               <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_1.webp" alt="" class="p0 session_img">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_1.webp" alt=""
+                  class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt=""
+                  class="p0 session_img_play">
               </div>
-  
+
               <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
                 <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                   Session #5
@@ -168,19 +175,20 @@
                   Choosing a career
                 </h4>
                 <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                 
+
                 </h4>
               </div>
-              
+
             </div>
-  
+
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
           </div>
@@ -194,10 +202,12 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
               <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_2.webp" alt="" class="p0 session_img">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_2.webp" alt=""
+                  class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt=""
+                  class="p0 session_img_play">
               </div>
-  
+
               <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
                 <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                   Session #6
@@ -207,19 +217,20 @@
 
                 </h4>
                 <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                 
+
                 </h4>
               </div>
-              
+
             </div>
-  
+
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
           </div>
@@ -227,55 +238,60 @@
       </a>
       <!-- /video row -->
 
-            <!-- video row -->
-            <a routerLink="/teenagers/career-success/s160158">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
-                    <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_3.webp" alt="" class="p0 session_img">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
-                    </div>
-        
-                    <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
-                      <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                        Session #7
-                      </h4>
-                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
-                        What gets in the way of thinking clearly
-     
-                      </h4>
-                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                       
-                      </h4>
-                    </div>
-                    
-                  </div>
-        
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
-                    <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                  </div>
-      
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
-                    <!-- lock -->
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
-                    <!-- /lock -->
-                  </div>
-                </div>
+      <!-- video row -->
+      <a routerLink="/teenagers/career-success/s160158">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_3.webp" alt=""
+                  class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt=""
+                  class="p0 session_img_play">
               </div>
-            </a>
-            <!-- /video row -->
 
-       <!-- video row -->
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Session #7
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  What gets in the way of thinking clearly
+
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+
+                </h4>
+              </div>
+
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
+              <!-- /lock -->
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
       <a routerLink="/teenagers/career-success/s160162">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
               <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_4.webp" alt="" class="p0 session_img">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_4.webp" alt=""
+                  class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt=""
+                  class="p0 session_img_play">
               </div>
-  
+
               <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
                 <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                   Session #8
@@ -284,20 +300,21 @@
                   Life skills you need for work
                 </h4>
                 <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                 
+
                 </h4>
               </div>
-              
+
             </div>
-  
-         
+
+
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -306,43 +323,46 @@
       </a>
       <!-- /video row -->
 
-             <!-- video row -->
-             <a routerLink="/teenagers/career-success/s160166">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
-                    <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_5.webp" alt="" class="p0 session_img">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
-                    </div>
-        
-                    <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
-                      <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                        Session #9
-                      </h4>
-                      <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
-                        Having multiple careers
-                      </h4>
-                      <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                       
-                      </h4>
-                    </div>
-                    
-                  </div>
-        
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
-                    <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                  </div>
-      
-                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
-                    <!-- lock -->
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
-                    <!-- /lock -->
-                  </div>
-                </div>
+      <!-- video row -->
+      <a routerLink="/teenagers/career-success/s160166">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/160_5.webp" alt=""
+                  class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt=""
+                  class="p0 session_img_play">
               </div>
-            </a>
-            <!-- /video row -->
+
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
+                  Session #9
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis">
+                  Having multiple careers
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+
+                </h4>
+              </div>
+
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
+              <!-- /lock -->
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
 
     </div>
 
@@ -354,10 +374,11 @@
     </div>
     <!-- /hr -->
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories" *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"
+      *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
 
-  </form>    
+  </form>
 
-</app-index-content> 
+</app-index-content>
 
 <app-index-footer></app-index-footer>

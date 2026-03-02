@@ -27,7 +27,7 @@ export class S27001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
 
-  discoveringWisdomResume=sessionStorage.getItem("pgResume")  
+  pgResume: any;  
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/27.webp"
   tocColor="white"
   lastvisited = false;
@@ -74,23 +74,29 @@ export class S27001Page implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+
+    this.service.clickModule(27, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(27))
-    this.moduleId=localStorage.getItem("moduleId")
-    if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
   
     this.startTime = Date.now();
@@ -152,9 +158,8 @@ export class S27001Page implements OnInit,OnDestroy {
     this.location.back()
   }
 
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 
 }
