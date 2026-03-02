@@ -168,7 +168,7 @@
     color: #1f5bd6;
     
     &:hover:not(.loading) {
-      color: #1f5bd6;
+      color: #1f5bd6 !important;
       transform: none;
     }
 
@@ -420,7 +420,6 @@
         height: 24px;
         width: 24px;
         border-radius: 50%;
-        border: 3px solid #FF6B6B;
         object-fit: cover;
       }
     }
