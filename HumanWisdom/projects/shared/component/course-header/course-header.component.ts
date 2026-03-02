@@ -174,7 +174,7 @@ export class CourseHeaderComponent implements OnInit {
   }
   goToToc() {
     var url = this.naviagtorService.navigateToBackLink();
-    if (url != null && !url.includes('home') && !url.includes('dashboard')) {
+    if (url != null && !url.includes('home') && !url.includes('dashboard') && !url.includes('pathway')) {
       this.router.navigateByUrl(url);
       return;
     }
