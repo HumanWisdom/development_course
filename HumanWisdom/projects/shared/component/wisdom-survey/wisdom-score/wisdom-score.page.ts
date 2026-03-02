@@ -33,6 +33,7 @@ export class WisdomScorePage implements OnInit {
   wisdomRecomm: any[] = [];
   isSubscriber: boolean = false;
   justSignedUp = false;
+  isGuest = false;
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   
 
@@ -83,9 +84,9 @@ export class WisdomScorePage implements OnInit {
 
     const visits = Number(this.loginResponse?.NoOfVisits || '0');
     const token = SharedService.getDataFromLocalStorage('token');
-    const isGuest = localStorage.getItem('guest') === 'T';
+    this.isGuest = localStorage.getItem('guest') === 'T';
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
-    this.justSignedUp = !!token && !isGuest && (visits < 2 || isFromSignupFlow);
+    this.justSignedUp = !!token && !this.isGuest && (visits < 2 || isFromSignupFlow);
   }
 
   navigateToRecommendation(item: any) {
@@ -130,6 +131,14 @@ export class WisdomScorePage implements OnInit {
   routeToDashboard() {
     localStorage.setItem('isFromSignupFlow', 'F');
     this.router.navigateByUrl(SharedService.getDashboardUrls());
+  }
+
+  goToSubscribe() {
+    if (this.isAdults) {
+      this.router.navigate(['/subscription/start-your-free-trial']);
+    } else {
+      this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
+    }
   }
 }
 
