@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tn-edit-bookmark-share.component.html',
   styleUrls: ['./tn-edit-bookmark-share.component.scss'],
 })
-export class TnEditBookmarkShareComponent implements OnInit {
+export class TnEditBookmarkShareComponent {
 
   constructor() { }
 
-  ngOnInit() {}
+
 
 }

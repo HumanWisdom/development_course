@@ -130,7 +130,7 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.6);
         border: none;
         color: rgba(255, 255, 255, 0.9);
         cursor: pointer;
@@ -173,7 +173,7 @@
         padding: 0 10px;
     }
 .btn-link{
-  color:#fff;
+  color:#fff !important;
 }
     @media only screen and (max-width: 768px) {
         .nav-scroll-btn {

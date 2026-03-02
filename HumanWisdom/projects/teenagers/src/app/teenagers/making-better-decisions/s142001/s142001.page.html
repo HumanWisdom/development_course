@@ -8,14 +8,17 @@
       <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="txt_comparison">
           How can we use our wisdom to ensure that we make better decisions?
-          We make so many decisions that impact our lives - about our careers, our friends, our habits, our choice of spouse or partner, where we live, and how we react to others. In this module we explore all the factors which go into making decisions, including the hidden drivers in our thinking, and how we can make better decisions in our lives. 
+          We make so many decisions that impact our lives - about our careers, our friends, our habits, our choice of
+          spouse or partner, where we live, and how we react to others. In this module we explore all the factors which
+          go into making decisions, including the hidden drivers in our thinking, and how we can make better decisions
+          in our lives.
         </h4>
       </div>
     </div>
 
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
-        <a [routerLink]="['/teenagers/making-better-decisions', pgResume]" *ngIf="lastvisited">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a (click)="Resume('/teenagers/making-better-decisions/');" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
@@ -33,7 +36,7 @@
       <a routerLink="/teenagers/making-better-decisions/s142002">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #1
@@ -52,7 +55,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -63,7 +67,7 @@
       <a routerLink="/teenagers/making-better-decisions/s142046">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #2
@@ -82,7 +86,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
           </div>
@@ -92,7 +97,7 @@
       <a routerLink="/teenagers/making-better-decisions/s142077">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #3
@@ -111,7 +116,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -131,47 +137,50 @@
     <div class="toc_adiv_mp">
       <!-- audio row -->
       <!-- <a routerLink="isSubscriber ? ['/teenagers/audiopage/~podcasts~75.mp3/75/T/Making-better-decisions'] : ['/teenagers/subscription/start-your-free-trial']" > -->
-  <a [routerLink]="isSubscriber ? ['/teenagers/audiopage/~podcasts~75.mp3/75/T/Making-better-decisions'] : ['/teenagers/subscription/start-your-free-trial']">
-         <div class="row">
+      <a
+        [routerLink]="isSubscriber ? ['/teenagers/audiopage/~podcasts~75.mp3/75/T/Making-better-decisions'] : ['/teenagers/subscription/start-your-free-trial']">
+        <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
-              <div class="prelative">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/75.webp" class="img-responsive w100 img_podcast_01">
+              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
+                <div class="prelative">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/75.webp"
+                        class="img-responsive w100 img_podcast_01">
+                    </div>
                   </div>
-                </div>
 
-                <!-- <div class="row">
+                  <!-- <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
                   </div>
                 </div> -->
+                </div>
+              </div>
+
+              <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_e58d82">
+                  Podcast
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff ellipsis_02">
+                  Making better decisions
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
+                  01:04 mins
+                </h4>
               </div>
             </div>
 
-            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_e58d82">
-                Podcast
-              </h4>
-              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff ellipsis_02">
-                Making better decisions 
-              </h4>
-              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
-                01:04 mins
-              </h4>
-            </div>
-            </div>
-
-              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -181,10 +190,11 @@
       <!-- /audio row -->
     </div>
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories" *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"
+      *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
 
-  </form>    
+  </form>
 
-</app-index-content> 
+</app-index-content>
 
 <app-index-footer></app-index-footer>

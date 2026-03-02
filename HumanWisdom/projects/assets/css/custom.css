@@ -16822,7 +16822,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
   right: 0;
   top: 0;
   /* background: #ED7D6F !important; */
-  background: #803358 !important;
+  /* background: #803358 !important; */
   border-radius: 0px 10px;
   /* font-family: Roboto; */
   font-style: normal;
@@ -16832,8 +16832,8 @@ input[type="search"].dark::-webkit-search-cancel-button {
   text-align: right;
   color: #ffffff;
   border: 0;
-  padding: 5px;
-  width: 130px;
+  padding: 5px 10px;
+  min-width: 130px;
   text-align: center;
 
 }
@@ -24373,8 +24373,9 @@ a {
   font-weight: 500;
   line-height: 130%;
   color: #000;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  /* margin-top: 30px; */
 }
 
 
@@ -26465,6 +26466,28 @@ h1 {
   background: #F5F5F5 !important;
   /* height: 100vh; */
 }
+.chat-header {
+  height: 100px;
+  background: linear-gradient(90deg, #05BBBF 0%, #E58D82 100%);
+  box-shadow: 0px 2px 8px 0px #AFAFAF40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1001; 
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 375px;
+  pointer-events: auto; 
+}
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
 
 .mdp_icon {
   margin: 36px 0 19px 0;
@@ -32965,8 +32988,19 @@ body * {
 
 .box_v3_04,
 .box_v3_04b {
-  height: 220px;
-  width: 162px;
+  height: 195px;
+  width: 100%;
+  background: #FFE8BB;
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
+  border-radius: 12px;
+  padding: 15px !important;
+  margin-bottom: 20px;
+  white-space: normal;
+}
+
+.box_v3_04bevent {
+   height: 220px; 
+  width: 100%;
   background: #FFE8BB;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 12px;
@@ -32977,7 +33011,7 @@ body * {
 
 .box_v3_04 img,
 .box_v3_04a img {
-  width: 132px;
+  width: 100%;
   height: 100px;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 6px;
@@ -32985,6 +33019,13 @@ body * {
 }
 
 .box_v3_04b img {
+  width: 100%;
+  height: 100px;
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
+  border-radius: 6px;
+  object-fit: cover;
+}
+.box_v3_04bevent img {
   width: 100%;
   height: 100px;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
@@ -33300,6 +33341,7 @@ body * {
   left: 0;
   margin: auto;
   width: auto;
+  height: 24px;
 }
 
 /* v3 - five dots */
@@ -34793,8 +34835,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .profile_pe_div {
   text-align: center;
   padding: 20px;
-   /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_profile_box.svg);  */
-   background-repeat: no-repeat;
+  /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_profile_box.svg);  */
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: unset;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
@@ -35498,9 +35540,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .btn_recent.active {
   /* background: #ED7D6F;
   color: #ffffff; */
-  background: rgba(0, 0, 0, 0.05);
+  background: white !important;
   color: #000000;
   filter: unset !important;
+  border: 1px solid rgb(255, 216, 137) !important;
+  box-shadow: none !important;
 }
 
 .pt20pxi {
@@ -35909,6 +35953,15 @@ li ol > li:before {
   /* margin: 0 10px 10px 10px; */
 }
 
+.toc_adiv_03 a>.row {
+  border-radius: 12px;
+  background: #FFE8BB;
+  min-height: 110px;
+  margin-bottom: 10px;
+  padding: 20px;
+  /* margin: 0 10px 10px 10px; */
+}
+
 .toc_adiv_02 a:last-child>.row {
   margin-bottom: 0;
 }
@@ -35957,10 +36010,11 @@ li ol > li:before {
 
 .btn_podcast .btn.active,
 .btn_podcast .btn:focus {
-  background: rgba(0, 0, 0, .05);
-  color: #000;
+  background: white !important;
+  color: #000 !important;
   filter: unset !important;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  /* box-shadow: inset 0 3px 5px #00000020; */
+  border-color: #ffd889 !important;
 }
 
 /* cafe */
@@ -36981,6 +37035,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   height: auto;
   background: black;
   object-fit: cover;
+  object-position: center;
 }
 
 .v3_ta_coach {
@@ -37629,4 +37684,33 @@ a:hover .div_like_cnt1 span {
 
   color: inherit !important;
   text-decoration: none !important;
+}
+
+.bgGuided_Journal
+{
+background-color: #D7586B;
+
+}
+
+.bgReflections_Journal
+{
+background-color: #803358;
+
+}
+
+.bgmicrolearning_Journal
+{
+background-color: #EEA170;
+
+}
+
+.symptom-list li {
+  margin-bottom: 12px;
+  line-height: 140%;
+  margin-left: 18px;
+}
+
+div.contentdiv p {
+   
+    line-height: 140% !important;
 }

@@ -14,19 +14,19 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   // Configuration: Time to wait (in milliseconds) before marking as initialized
   // Increase this value to keep the owl visible longer
   private readonly WAIT_TIME_BEFORE_INITIALIZATION = 5000; // 5 seconds
-  
+
   @ViewChild('gifElement', { static: false }) gifElement!: ElementRef<HTMLImageElement>;
   gifError = false;
   gifLoaded = false;
   private _isPlaying: boolean = true;
   private _isTransitioning: boolean = false;
   private _isAtCorner: boolean = true; // GIF plays in corner position from the start
-  private gifAnimationDuration = 8000; // Duration of GIF animation in milliseconds (8 seconds)
+  private gifAnimationDuration = 4000; // Duration of GIF animation in milliseconds (4 seconds) - reduced for quicker dialogue
   public gifUrl: string = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif'; // Dynamic GIF URL
   private gifPlayedOnce: boolean = false; // Track if GIF has played once
   private gifAnimationTimeout: any = null; // Track GIF animation timeout to prevent multiple calls
   private gifAlreadyStarting: boolean = false; // Prevent multiple GIF starts before localStorage is set
-  
+
   // Static owl properties
   public showStaticOwl: boolean = false; // Start with video, show static owl after video ends
   public owlMessage: string = "Hi! I'm Olly.\nAsk me a question."; // Customizable message
@@ -39,10 +39,23 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private menuCheckInterval: any = null;
   private menuObserver: MutationObserver | null = null;
   private routerSubscription: Subscription | null = null;
+  private loginCheckInterval: any = null; // Interval to check login status
+  private lastLoginStatus: string | null = null; // Track last login status
   private readonly GIF_SHOWN_KEY = 'owl_gif_shown'; // localStorage key to track if GIF has been shown
   private readonly DIALOGUE_SHOWN_KEY = 'owl_dialogue_shown'; // localStorage key to track if dialogue has been shown
   private dialogueAlreadyShown: boolean = false; // Track if dialogue has been shown in this session
-  
+
+  // Cloud image properties
+  public showCloudMessage: boolean = false; // Controls visibility of cloud message
+  public currentCloudImage: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg'; // Current cloud image
+  private cloudImages: string[] = [
+    'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg',
+    'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Ask+me+a+question.svg'
+  ];
+  private currentCloudIndex: number = 0;
+  private cloudImageInterval: any = null;
+  private readonly CLOUD_SWITCH_INTERVAL = 3000; // Switch images every 3 seconds
+
   // Debug flag - set to true to test static owl immediately
   private debugMode: boolean = false;
 
@@ -67,14 +80,14 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   set isAtCorner(value: boolean) {
     this._isAtCorner = value;
   }
-  
+
   private isMobile = this.detectMobile();
 
   constructor(
     private cdr: ChangeDetectorRef,
     private router: Router,
     private owlStore: OwlStore
-  ) {}
+  ) { }
 
   ngOnInit() {
     // Check if dialogue has been shown before
@@ -87,7 +100,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       this.cdr.detectChanges();
       return;
     }
-    
+
     // Show owl on all pages
     this.showOwl = true;
 
@@ -126,15 +139,44 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       .subscribe(() => {
         this.checkRouteAndSetOwlDisplay();
       });
+
+    // Monitor login status changes to trigger GIF on login
+    this.lastLoginStatus = localStorage.getItem("isloggedin");
+    this.monitorLoginStatus();
+  }
+
+  /**
+   * Monitor login status to trigger GIF animation when user logs in
+   */
+  private monitorLoginStatus(): void {
+    // Check login status every 500ms to detect login changes
+    this.loginCheckInterval = setInterval(() => {
+      const currentLoginStatus = localStorage.getItem("isloggedin");
+
+      // If login status changed from not logged in to logged in, trigger GIF
+      if (this.lastLoginStatus !== 'T' && currentLoginStatus === 'T') {
+        // User just logged in - check if we should show GIF
+        const hasGifBeenShown = sessionStorage.getItem(this.GIF_SHOWN_KEY) === 'true';
+        if (!hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
+          // Trigger GIF display
+          this.checkRouteAndSetOwlDisplay();
+        }
+      }
+
+      this.lastLoginStatus = currentLoginStatus;
+    }, 500);
   }
 
   /**
    * Check current route and set owl display accordingly
-   * GIF only shows on home page and only once
+   * GIF shows on login (when user is logged in) and only once
    */
   private checkRouteAndSetOwlDisplay(): void {
     const currentUrl = this.router.url;
-    const hasGifBeenShown = localStorage.getItem(this.GIF_SHOWN_KEY) === 'true';
+    const hasGifBeenShown = sessionStorage.getItem(this.GIF_SHOWN_KEY) === 'true';
+
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
 
     // Check if home component exists in DOM (most reliable method)
     // Try multiple selectors to be sure
@@ -143,38 +185,41 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     const homeContent = document.querySelector('.home-content');
     const stickyTopSection = document.querySelector('.sticky-top-section');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     // Also check route-based detection as fallback
     const isHomeRoute = this.isHomePage(currentUrl);
-    
+
     const isHomeComponentPresent = !!(homeComponent || homeContainer || homeContent || stickyTopSection || navMenu);
-    
+
     // Use either DOM detection OR route detection
     const isHomePage = isHomeComponentPresent || isHomeRoute;
 
-    // Show GIF if home page is detected AND GIF hasn't been shown
+    // Show GIF if GIF hasn't been shown (removed home page restriction and ALL login checks)
     // CRITICAL: Check gifAlreadyStarting to prevent multiple starts during async load
-    if (isHomePage && !hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
+    if (!hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
       // Set flag immediately to prevent re-triggering from multiple checkRouteAndSetOwlDisplay() calls
       this.gifAlreadyStarting = true;
-      
+
       // Clear any existing timeout first
       if (this.gifAnimationTimeout) {
         clearTimeout(this.gifAnimationTimeout);
         this.gifAnimationTimeout = null;
       }
-      
-      // Show GIF on home page if it hasn't been shown before
+
+      // Show GIF on login if it hasn't been shown before
       this.showGif = true;
       this.showStaticOwl = false;
       this.isPlaying = true;
       this.gifLoaded = false;
       this.gifError = false;
       this.gifPlayedOnce = false;
+      // Reset dialogue state so it appears after GIF
+      this.dialogueAlreadyShown = false;
+      localStorage.removeItem(this.DIALOGUE_SHOWN_KEY);
       // Reset GIF URL to ensure fresh load
       this.gifUrl = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif?t=' + Date.now();
       this.hasCheckedHomePage = true;
-      
+
       // Force change detection to ensure it sticks
       this.cdr.detectChanges();
       setTimeout(() => {
@@ -183,40 +228,35 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       setTimeout(() => {
         this.cdr.detectChanges();
       }, 100);
-      
+
       // Don't start speaking sequence yet - wait for GIF to complete
       return; // Exit early to prevent setting static owl
-    } 
-    
-    // Only show static owl if we're NOT on home page OR if GIF has already been shown
+    }
+
+    // Only show static owl if GIF has already been shown or user is not logged in
     // BUT ONLY if showGif is not already true (to prevent overriding)
     // Also check if GIF has already been played to prevent re-showing
+    // Only show static owl if GIF has already been shown
     if (!this.showGif && !this.hasCheckedHomePage && !this.gifPlayedOnce) {
-      if (!isHomePage) {
-        // Non-home page - show static owl
-      } else if (hasGifBeenShown) {
-        // Home page but GIF already shown - show static owl
-      } else {
-        // Home page detected but showGif is still false - force it as a last resort
-        // BUT only if GIF hasn't been played yet
-        if (!this.gifPlayedOnce) {
-          this.showGif = true;
-          this.showStaticOwl = false;
-          this.cdr.detectChanges();
-          return;
-        }
-      }
-      this.showGif = false;
-      this.showStaticOwl = true;
-      this.isPlaying = false;
-      // Only show dialogue if it hasn't been shown before
-      if (!isHomePage && !this.dialogueAlreadyShown) {
-        this.startSpeakingSequence();
-      } else {
+      if (hasGifBeenShown) {
+        // GIF already shown - show static owl
+        this.showGif = false;
+        this.showStaticOwl = true;
+        this.isPlaying = false;
         // Clear message if dialogue was already shown
-        this.owlMessage = '';
-        this.isSpeaking = false;
+        if (this.dialogueAlreadyShown) {
+          this.owlMessage = '';
+          this.isSpeaking = false;
+        }
+        this.cdr.detectChanges();
+        return;
       }
+    } else if (!hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
+      // Force show GIF if it hasn't been shown and we missed the first block
+      this.showGif = true;
+      this.showStaticOwl = false;
+      this.cdr.detectChanges();
+      return;
     } else if (hasGifBeenShown || this.gifPlayedOnce) {
       // If GIF has been shown, always show static owl without dialogue
       this.showGif = false;
@@ -248,29 +288,29 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     if (!url) {
       return false;
     }
-    
+
     // Remove query params and hash for comparison
     const baseUrl = url.split('?')[0].split('#')[0];
-    
+
     // Check for various home page route patterns
-    const isHome = baseUrl === '/' || 
-                   baseUrl === '/adults' || 
-                   baseUrl === '/adults/' ||
-                   baseUrl.endsWith('/adults') ||
-                   baseUrl.includes('/adults/home') ||
-                   baseUrl.includes('/home') ||
-                   (baseUrl.split('/').length <= 2 && baseUrl.includes('adults')) ||
-                   (baseUrl === '' || baseUrl === '/');
-    
+    const isHome = baseUrl === '/' ||
+      baseUrl === '/adults' ||
+      baseUrl === '/adults/' ||
+      baseUrl.endsWith('/adults') ||
+      baseUrl.includes('/adults/home') ||
+      baseUrl.includes('/home') ||
+      (baseUrl.split('/').length <= 2 && baseUrl.includes('adults')) ||
+      (baseUrl === '' || baseUrl === '/');
+
     return isHome;
   }
-  
+
   ngAfterViewInit() {
     // Wait a bit for the DOM to be fully ready, then monitor menu state
     setTimeout(() => {
       this.monitorMenuState();
     }, 500);
-    
+
     // Also check for home component after view init (in case it loads late)
     setTimeout(() => {
       this.checkRouteAndSetOwlDisplay();
@@ -279,25 +319,25 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       this.checkRouteAndSetOwlDisplay();
     }, 800);
   }
-  
+
   private monitorMenuState() {
     // Check for menu checkbox and monitor its state
     const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
     if (menuCheckbox) {
       // Initial check
       this.adjustOwlZIndex(menuCheckbox.checked);
-      
+
       // Monitor changes
       menuCheckbox.addEventListener('change', () => {
         this.adjustOwlZIndex(menuCheckbox.checked);
       });
-      
+
       // Also monitor with MutationObserver for cases where checkbox is toggled programmatically
       this.menuObserver = new MutationObserver(() => {
         this.adjustOwlZIndex(menuCheckbox.checked);
       });
       this.menuObserver.observe(menuCheckbox, { attributes: true, attributeFilter: ['checked'] });
-      
+
       // Also use a polling approach as a fallback (check every 100ms)
       this.menuCheckInterval = setInterval(() => {
         this.adjustOwlZIndex(menuCheckbox.checked);
@@ -309,39 +349,48 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       }, 500);
     }
   }
-  
+
   private adjustOwlZIndex(menuOpen: boolean) {
     // Find the owl wrapper element
     const owlWrapper = document.querySelector('.owl-animation-wrapper') as HTMLElement;
     if (owlWrapper) {
-      if (menuOpen) {
-        owlWrapper.style.zIndex = '10';
-        owlWrapper.style.setProperty('z-index', '10', 'important');
-      } else {
-        owlWrapper.style.zIndex = '10';
-        owlWrapper.style.setProperty('z-index', '10', 'important');
-      }
+      /*  if (menuOpen) {
+         owlWrapper.style.zIndex = '10';
+         owlWrapper.style.setProperty('z-index', '10', 'important');
+       } else {
+         owlWrapper.style.zIndex = '10';
+         owlWrapper.style.setProperty('z-index', '10', 'important');
+       } */
+      owlWrapper.style.zIndex = '10';
+      owlWrapper.style.setProperty('z-index', '10', 'important');
+
     }
   }
-  
+
 
   ngOnDestroy() {
     // Clear any pending timers
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
-    
+
     // Clear GIF animation timeout
     if (this.gifAnimationTimeout) {
       clearTimeout(this.gifAnimationTimeout);
       this.gifAnimationTimeout = null;
     }
-    
+
+    // Clear cloud image interval
+    if (this.cloudImageInterval) {
+      clearInterval(this.cloudImageInterval);
+      this.cloudImageInterval = null;
+    }
+
     // Clear router subscription
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
       this.routerSubscription = null;
     }
-    
+
     // Clear menu monitoring
     if (this.menuCheckInterval) {
       clearInterval(this.menuCheckInterval);
@@ -351,16 +400,22 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       this.menuObserver.disconnect();
       this.menuObserver = null;
     }
+
+    // Clear login status monitoring
+    if (this.loginCheckInterval) {
+      clearInterval(this.loginCheckInterval);
+      this.loginCheckInterval = null;
+    }
   }
 
-  
- openChat(){
-  this.router.navigate(['/adults/chat-bot']);
- }
+
+  openChat() {
+    this.router.navigate(['/adults/chat-bot']);
+  }
 
   private detectMobile(): boolean {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
-           window.innerWidth <= 768;
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+      window.innerWidth <= 768;
   }
 
   private isSmallScreen(): boolean {
@@ -373,22 +428,23 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.gifPlayedOnce || this.gifAnimationTimeout !== null) {
       return;
     }
-    
+
     // Extra safety: ensure flag is set to prevent any restart attempts
     this.gifAlreadyStarting = true;
-    
+
     this.gifLoaded = true;
     this.cdr.detectChanges();
-    
-    // Mark GIF as shown in localStorage (only once)
-    localStorage.setItem(this.GIF_SHOWN_KEY, 'true');
-    
+
+    // Mark GIF as shown in sessionStorage (only once per session)
+    sessionStorage.setItem(this.GIF_SHOWN_KEY, 'true');
+     this.startSpeakingSequence();
+      this.cdr.detectChanges();
     // Stop GIF after one play cycle - hide immediately to prevent looping
     // This ensures the GIF plays only once - concrete solution
     this.gifAnimationTimeout = setTimeout(() => {
       // Mark as played immediately
       this.gifPlayedOnce = true;
-      
+     
       // IMMEDIATELY hide GIF and show static owl - this stops the looping
       this.showGif = false;
       this.showStaticOwl = true;
@@ -402,15 +458,20 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
         gifEl.src = '';
         gifEl.style.display = 'none';
       }
-      
+
       // Clear the timeout reference
       this.gifAnimationTimeout = null;
-      
-      // Force change detection
+
+      // Force change detection to show static owl immediately
       this.cdr.detectChanges();
-      
-      // Start speaking sequence
-      this.startSpeakingSequence();
+
+      // Start speaking sequence immediately (shows cloud with owl)
+      // This ensures owl and cloud appear together right after GIF
+      // Use requestAnimationFrame to ensure DOM is updated before showing cloud
+      requestAnimationFrame(() => {
+        // this.startSpeakingSequence();
+        // this.cdr.detectChanges();
+      });
     }, this.gifAnimationDuration);
   }
 
@@ -420,26 +481,26 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     // Ensure flag is set to prevent restart attempts
     this.gifAlreadyStarting = true;
     this.gifPlayedOnce = true; // Mark as played to prevent retrying
-    
+
     this.gifError = true;
     this.cdr.detectChanges();
-    
+
     // Mark GIF as shown even on error to prevent retrying
     localStorage.setItem(this.GIF_SHOWN_KEY, 'true');
-    
+
     // Show static owl after error
     setTimeout(() => {
       this.isPlaying = false;
       this.showStaticOwl = true;
       this.showGif = false;
-      
+
       // Force stop the GIF element if it exists
       if (this.gifElement && this.gifElement.nativeElement) {
         const gifEl = this.gifElement.nativeElement;
         gifEl.src = '';
         gifEl.style.display = 'none';
       }
-      
+
       // Only show dialogue if it hasn't been shown before (first time only)
       if (!this.dialogueAlreadyShown) {
         this.startSpeakingSequence();
@@ -475,7 +536,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       clearTimeout(this.gifAnimationTimeout);
       this.gifAnimationTimeout = null;
     }
-    
+
     // Reset component state - start with GIF again
     this.isPlaying = true;
     this.isTransitioning = false;
@@ -489,7 +550,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
     this.cdr.detectChanges();
-    
+
     // Restart the timer for showing static owl
     setTimeout(() => {
       this.onGifAnimationComplete();
@@ -500,36 +561,42 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     // Only show dialogue if it hasn't been shown before (first time only)
     if (this.dialogueAlreadyShown) {
       // Dialogue already shown - just show static owl without message
-      this.owlMessage = '';
+      this.showCloudMessage = false;
       this.isSpeaking = false;
       this.cdr.detectChanges();
       return;
     }
-    
+
     // Mark dialogue as shown immediately to prevent multiple calls
     this.dialogueAlreadyShown = true;
     localStorage.setItem(this.DIALOGUE_SHOWN_KEY, 'true');
-    
-    // Begin with the intro message and speaking animation
-    this.owlMessage = "Hi! I'm Olly.\nAsk me a question.";
+
+    // Show first cloud message immediately: "Hi I'm Olly"
+    // This ensures cloud appears right after GIF finishes
+    this.showCloudMessage = true;
+    this.currentCloudIndex = 0;
+    this.currentCloudImage = this.cloudImages[0]; // Olly_Hi.svg
     this.isSpeaking = true;
+
+    // Force immediate change detection to show cloud right away
     this.cdr.detectChanges();
 
-    // After a few seconds, switch to the next prompt
-    // const toNext = setTimeout(() => {
-    //   this.owlMessage = 'Ask me a\n question.';
-    //   this.cdr.detectChanges();
-    // }, 3000);
-    // this.messageTimers.push(toNext);
+    // After 3 seconds, switch to second image: "Ask me a question"
+    const switchToSecond = setTimeout(() => {
+      this.currentCloudIndex = 1;
+      this.currentCloudImage = this.cloudImages[1]; // Olly_Ask+me+a+question.svg
+      this.cdr.detectChanges();
+    }, 3000);
+    this.messageTimers.push(switchToSecond);
 
-    // Stop the speaking animation after a short while
+    // Stop the speaking animation after showing both messages
     const stopSpeaking = setTimeout(() => {
       this.isSpeaking = false;
       this.cdr.detectChanges();
     }, 6000);
     this.messageTimers.push(stopSpeaking);
 
-    // After showing the question for a bit, remove the cloud entirely with reverse animation
+    // After showing both messages, remove the cloud entirely with reverse animation
     const hideCloud = setTimeout(() => {
       this.hideCloudWithAnimation();
     }, 9000);
@@ -538,31 +605,34 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // Method to hide cloud with reverse animation (same as appearance but in reverse)
   hideCloudWithAnimation() {
-    if (!this.owlMessage || this.isDisappearing) {
+    if (!this.showCloudMessage || this.isDisappearing) {
       return; // Already disappearing or no message
     }
-    
+
+    // Stop the cloud image interval
+    if (this.cloudImageInterval) {
+      clearInterval(this.cloudImageInterval);
+      this.cloudImageInterval = null;
+    }
+
     // Start disappearing animation
     this.isDisappearing = true;
     this.isSpeaking = false; // Stop speaking animation
     this.cdr.detectChanges();
-    
-    // Wait for animation to complete (0.6s for text fade + 1.2s for cloud shrink = 1.8s total)
+
+    // Wait for animation to complete (0.6s for cloud shrink)
     setTimeout(() => {
-      this.owlMessage = '';
+      this.showCloudMessage = false;
       this.isDisappearing = false;
       this.cdr.detectChanges();
-    }, 1800);
+    }, 600);
   }
 
-  // Method to set custom owl message
+  // Method to set custom owl message (deprecated - now using images)
   setOwlMessage(message: string) {
-    // Reset disappearing state if setting a new message
-    if (this.isDisappearing) {
-      this.isDisappearing = false;
-    }
-    this.owlMessage = message;
-    this.cdr.detectChanges();
+    // This method is kept for backward compatibility but is no longer used
+    // The cloud now shows images instead of text
+    console.warn('setOwlMessage is deprecated. Cloud now uses images.');
   }
 
   // Method to toggle between static owl and video
@@ -592,8 +662,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       clearTimeout(this.gifAnimationTimeout);
       this.gifAnimationTimeout = null;
     }
-    
-    localStorage.removeItem(this.GIF_SHOWN_KEY);
+
+    sessionStorage.removeItem(this.GIF_SHOWN_KEY);
     localStorage.removeItem(this.DIALOGUE_SHOWN_KEY); // Also reset dialogue for testing
     this.showGif = true;
     this.showStaticOwl = false;

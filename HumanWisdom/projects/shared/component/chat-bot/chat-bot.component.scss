@@ -8,7 +8,9 @@
   .suggestions-instruction {
     margin-bottom: 10px;
   }
-  
+  .suggestion-number{
+    margin-right: 4px;
+  }
   .suggestions-list {
     display: flex;
     flex-direction: column;
@@ -23,12 +25,12 @@
     border: none;
     border-color: white;
     text-align: left;
-    font-weight: 600;
+    font-weight: 500;
     box-shadow: 1px 1px 2px 0px #0000001A;
     margin: 0;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 14px;
+    font-size: 15px;
     color: #000000;
     pointer-events: auto;
 
@@ -54,7 +56,7 @@
   
   // Global anchor styles for the entire chat container
   a {
-    color: inherit !important;
+    color: inherit;
     text-decoration: underline !important;
     cursor: pointer !important;
     
@@ -154,7 +156,7 @@
     display: inline-block;
     padding: 0;
     background: transparent;
-    color: inherit;
+    // color: inherit;
     border: none;
     border-radius: 0;
     font-size: 14px;
@@ -163,7 +165,7 @@
     transition: color 0.2s ease;
     cursor: pointer;
     pointer-events: auto;
-    color: #1f5bd6 !important;
+    color: #1f5bd6;
     
     &:hover:not(.loading) {
       color: #1f5bd6 !important;
@@ -193,9 +195,9 @@
 .chat-messages {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 24px;
   margin: 0 20px;
-  padding-top: 24px;
+  padding: 24px 0;
   // padding-bottom: 24px; // Space for input area
   scroll-behavior: smooth; // Smooth scrolling
   
@@ -221,6 +223,10 @@
 .message {
   display: flex;
   margin-bottom: 0;
+
+  &.welcome-followup {
+    margin-top: -19px;
+  }
 
   &.bot-message {
     justify-content: flex-start;
@@ -283,7 +289,7 @@
         position: relative;
         text-align: left;
         display: inline-block;
-        line-height: 1.4;
+        // line-height: 1.4;
       font-weight: 400;
       font-size: 15px;
       line-height: 22px;
@@ -310,7 +316,7 @@
       }
 
       .message-content-wrapper {
-        margin-left: 48px;
+        margin-left: 58px;
       }
     }
   }
@@ -327,7 +333,7 @@
 
     .message-content {
       background: #FFACA2;
-      color: #333333;
+      // color: #333333;
       max-width: 319px;
       width: fit-content;
       // height: 44px;
@@ -414,7 +420,6 @@
         height: 24px;
         width: 24px;
         border-radius: 50%;
-        border: 3px solid #FF6B6B;
         object-fit: cover;
       }
     }
@@ -625,18 +630,19 @@
   }
 }
 
-// Feedback buttons (Thumbs up/down)
+// Feedback buttons (Thumbs up/down) - placed OUTSIDE the chat bubble
 .feedback-container {
   display: flex;
-  gap: 8px;
-  margin-top: 8px;
-  padding: 4px 0;
+  gap: 0;
+  margin-top: 6px;
+  padding: 0;
+  align-items: center;
   
   .feedback-button {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 4px 8px;
+    padding: 4px;
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -644,6 +650,13 @@
     transition: all 0.2s ease;
     pointer-events: auto;
     
+    img {
+      width: 20px;
+      height: 17px;
+      object-fit: contain;
+      transition: all 0.2s ease;
+    }
+
     svg {
       width: 20px;
       height: 20px;
@@ -653,26 +666,10 @@
     
     &:hover:not(:disabled) {
       background: rgba(0, 0, 0, 0.05);
-      
-      &.thumbs-up svg {
-        color: #4caf50;
-      }
-      
-      &.thumbs-down svg {
-        color: #f44336;
-      }
     }
     
     &.active {
       background: rgba(0, 0, 0, 0.05);
-      
-      &.thumbs-up svg {
-        color: #4caf50;
-      }
-      
-      &.thumbs-down svg {
-        color: #f44336;
-      }
     }
     
     &:disabled {
@@ -681,6 +678,145 @@
     }
   }
 }
+
+// Dislike Popup Overlay
+.dislike-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: -8px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dislike-popup {
+  // Adults: cream background matching the app's chat area
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 335px;
+  max-width: calc(100vw - 40px);
+  animation: slideUp 0.25s ease;
+  overflow: hidden;
+
+    // Teens: use the dark blue from the chat page
+    &.teens-popup {
+      background: #183C79;
+
+      .dislike-popup-title,
+      .dislike-popup-text,
+      .dislike-popup-footnote {
+        color: #ffffff !important;
+      }
+
+
+      .dislike-go-forum-btn {
+        background: #EE9596 !important;
+        color: #ffffff;
+        border-color: transparent;
+      }
+
+      .dislike-close-btn {
+        background: #EE9596 !important;
+        color: #ffffff;
+        border-color: transparent;
+      }
+    }
+
+  .dislike-popup-body {
+    padding: 30px 30px 20px 30px;
+
+    .dislike-popup-title {
+      font-size: 21px;
+      font-weight: 600;
+      color: #000000;
+      margin: 0 0 14px 0;
+      line-height: 1.3;
+    }
+
+    .dislike-popup-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.75);
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+
+      .dislike-forum-link {
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: underline;
+        transition: color 0.2s ease;
+      }
+    }
+
+    .dislike-popup-footnote {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.5);
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  .dislike-popup-footer {
+    display: flex;
+    gap: 10px;
+    padding: 4px 26px 30px 26px;
+
+    .dislike-go-forum-btn {
+      flex: 4;
+      padding: 12px 16px;
+      background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+      color: #ffffff;
+      border: 1.5px solid transparent;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+
+    .dislike-close-btn {
+      flex: 1;
+      padding: 12px 16px;
+      background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+      color: #ffffff;
+      border: 1.5px solid transparent;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
 
 // Yes/No action buttons
 .yes-no-container {
@@ -775,9 +911,9 @@
     transition: all 0.2s ease;
     pointer-events: auto;
     background: white;
-    box-shadow: none;
+    // box-shadow: none;
     text-align: center;
-        box-shadow: 1px 1px 2px 0px #0000001A;
+    box-shadow: 1px 1px 2px 0px #0000001A;
       &:hover {
       background: #f0f0f0;
       transform: translateY(-1px);

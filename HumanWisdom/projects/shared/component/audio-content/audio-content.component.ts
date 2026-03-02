@@ -102,7 +102,7 @@ export class AudioContentComponent implements OnInit, OnDestroy, AfterViewInit {
 
   getTime() {
     const aud: any = document.getElementById("aud1");
-    this.sendAvDuration.emit(JSON.parse(aud.currentTime));
+    this.sendAvDuration.emit(aud.currentTime);
   }
 
   checkPauseTime() {

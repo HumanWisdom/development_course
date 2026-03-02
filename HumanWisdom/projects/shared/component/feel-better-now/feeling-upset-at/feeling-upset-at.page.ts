@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../../../shared/services/navigation.service';
 import { Router } from '@angular/router';
+import { SharedService } from '../../../../shared/services/shared.service';
+import { ProgramType } from '../../../../shared/models/program-model';
 @Component({
   selector: 'app-feeling-upset-at',
   templateUrl: './feeling-upset-at.page.html',
@@ -14,10 +16,17 @@ export class FeelingUpsetAtPage implements OnInit {
   isShowAudio = true;
 
 
-  constructor(private location: Location,private router :Router,private navigationService:  NavigationService) { }
+  constructor(private readonly location: Location, private readonly router: Router, private readonly navigationService: NavigationService) { }
 
   ngOnInit() {
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
   }
+
+
 
   changeType() {
     if (this.isShowTranscript) {
@@ -30,7 +39,7 @@ export class FeelingUpsetAtPage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
+    const url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.defaultGoBack();
     }else{

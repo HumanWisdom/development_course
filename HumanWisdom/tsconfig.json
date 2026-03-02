@@ -12,7 +12,7 @@
       "importHelpers": true,
       "target": "ES5",
       "lib": [
-        "es2018",
+        "es2021",
         "dom"
       ],
       "downlevelIteration": true,

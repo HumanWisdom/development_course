@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit  } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
@@ -14,17 +14,18 @@ declare var bootstrap: any;
   templateUrl: './events-index.page.html',
   styleUrls: ['./events-index.page.scss'],
 })
-export class EventsIndexPage implements OnInit, AfterViewInit  {
+export class EventsIndexPage implements OnInit, AfterViewInit {
   path: string;
   address: string;
   futureeventList: any = [];
   eventList: any = [];
-  searchinp="";
-  backupList:any=[];
+  searchinp = "";
+  backupList: any = [];
   isSubscriber = false;
-  isAdults =  true;
+  isAdults = true;
   isEventsOpen = true;
   showModal = false;
+  isIos = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
   constructor(private location: Location, private router: Router,
@@ -35,44 +36,45 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
     this.address = this.router.url
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
+    this.isIos = SharedService.initializeIosCheck(this.platform);
   }
 
-  getSearchResult(value){
-    this.searchinp=value;
+  getSearchResult(value) {
+    this.searchinp = value;
     setTimeout(() => {
-      this.eventList=this.backupList.filter
-      (x=>x.Title.toLocaleLowerCase().includes
-        (this.searchinp.toLocaleLowerCase()) || x.searchtags.toLocaleLowerCase().includes
-        (this.searchinp.toLocaleLowerCase()));
+      this.eventList = this.backupList.filter
+        (x => x.Title.toLocaleLowerCase().includes
+          (this.searchinp.toLocaleLowerCase()) || x.searchtags.toLocaleLowerCase().includes
+            (this.searchinp.toLocaleLowerCase()));
     }, 30);
   }
 
-  routeFutureEvents(item){
-    this.router.navigateByUrl(SharedService.getprogramName()+"/events/event?eid="+item.RowID);
+  routeFutureEvents(item) {
+    this.router.navigateByUrl(SharedService.getprogramName() + "/events/event?eid=" + item.RowID);
   }
 
-  clearSearch(){
+  clearSearch() {
     setTimeout(() => {
-    this.searchinp='';
-    this.eventList=JSON.parse(JSON.stringify(this.backupList));
+      this.searchinp = '';
+      this.eventList = JSON.parse(JSON.stringify(this.backupList));
     }, 40);
   }
 
   ngOnInit() {
 
     this.title.setTitle('Mindfulness Events - Learn to Live in the Present')
-    this.meta.updateTag({ property: 'title', content: 'Mindfulness Events - Learn to Live in the Present'})
+    this.meta.updateTag({ property: 'title', content: 'Mindfulness Events - Learn to Live in the Present' })
     this.meta.updateTag({ property: 'description', content: 'Experience the benefits of mindfulness and learn to live in the present. Join our mindfulness events for a chance to gain clarity and peace of mind.' })
     this.meta.updateTag({ property: 'keywords', content: 'Personal development events,Self-improvement events,Mindfulness events,Wisdom-based events,Inspirational events,Adult learning events,Life lessons events,Meditation events,Mental health events,Mindful events' })
 
 
     this.service.getAllEvents().subscribe(x => {
-      this.futureeventList= x.FutureEvents.filter(y=>y.ProgIDs.includes(SharedService.ProgramId.toString()));
-      this.eventList=x.PastEvents.filter(y=>y.ProgIDs.includes(SharedService.ProgramId.toString()));
-       this.backupList=JSON.parse(JSON.stringify(this.eventList));
+      this.futureeventList = x.FutureEvents.filter(y => y.ProgIDs.includes(SharedService.ProgramId.toString()));
+      this.eventList = x.PastEvents.filter(y => y.ProgIDs.includes(SharedService.ProgramId.toString()));
+      this.backupList = JSON.parse(JSON.stringify(this.eventList));
     });
 
     let userid = localStorage.getItem('isloggedin');
@@ -84,7 +86,7 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
     }
   }
 
-    ngAfterViewInit() {
+  ngAfterViewInit() {
     // initialize Bootstrap collapse after view is rendered
     const collapseElements = document.querySelectorAll('.accordion-collapse');
     collapseElements.forEach((el: any) => {
@@ -94,8 +96,8 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
     });
   }
 
-  getStyle(url){
-    return "background-image: url("+url+")";
+  getStyle(url) {
+    return "background-image: url(" + url + ")";
   }
 
   goBack() {
@@ -143,12 +145,12 @@ export class EventsIndexPage implements OnInit, AfterViewInit  {
   }
 
   onModalClose(event: string) {
-this.showModal = false;
-if (event === 'ok') {
-  // Navigate to free trial when user clicks "Start your free trial"
-  this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
-    }
-  }
+    this.showModal = false;
+    if (event === 'ok') {
+      // Navigate to free trial when user clicks "Start your free trial"
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
+  }
 
   toggleEventsAccordion() {
     this.isEventsOpen = !this.isEventsOpen;

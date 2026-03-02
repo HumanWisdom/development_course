@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SearchDataModel } from '../../../models/search-data-model';
 
 @Component({
@@ -6,15 +6,13 @@ import { SearchDataModel } from '../../../models/search-data-model';
   templateUrl: './search-learning-forum-journal.page.html',
   styleUrls: ['./search-learning-forum-journal.page.scss'],
 })
-export class SearchLearningForumJournalPage implements OnInit {
+export class SearchLearningForumJournalPage {
 
   searchData:SearchDataModel;
 
   constructor() { }
 
-  ngOnInit() {
 
-  }
 
     initializeSearchObject(){
       this.searchData={

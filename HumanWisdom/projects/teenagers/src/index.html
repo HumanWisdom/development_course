@@ -424,7 +424,7 @@ if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != ""){
 
       $(document).on('click', '#liLogout', function () {
 
-        if ((localStorage.getItem('isloggedin') == 'T') == false) {
+        // if ((localStorage.getItem('isloggedin') == 'T') == false) {
 
           if (window.AndroidHandler) {
             window.AndroidHandler.logout();
@@ -432,7 +432,7 @@ if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != ""){
           if (window.webkit) {
             window.webkit.messageHandlers.nativeActionHandler.postMessage("Logout");
           }
-        }
+        // }
 
 
 

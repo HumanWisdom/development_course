@@ -8,12 +8,12 @@ import {Location } from '@angular/common'
   templateUrl: './sessionover-s2.component.html',
   styleUrls: ['./sessionover-s2.component.scss'],
 })
-export class SessionoverS2Component implements OnInit {
+export class SessionoverS2Component {
   @Input() bg: string;
 
   constructor(private router: Router) { }
 
-  ngOnInit() {}
+
   routeJournal(){
     this.router.navigate(['/adults/journal'])
 

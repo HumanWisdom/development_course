@@ -252,7 +252,7 @@
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
+                                <input type="text" class="form-control fc_01" id="page-news-name" name="newsname" placeholder="Your Name">
                                 <div class="fc_icons">
                                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
                                 </div>
@@ -262,7 +262,7 @@
                           <!-- <div class="row mt15px"> -->
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                              <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
+                              <input type="text" class="form-control fc_01" id="page-news-email" name="news-email" placeholder="Your email">
                               <div class="fc_icons">
                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
                               </div>
@@ -272,7 +272,7 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                               <div class="row mt15px">
-                                <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Subscribe </button>
+                                <button id="page-news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Subscribe </button>
                               </div>
                             </div>
                           </div>
@@ -347,7 +347,7 @@
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                      <input type="text" class="form-control fc_01" id="news-name" name="newsname" placeholder="Your Name">
+                                      <input type="text" class="form-control fc_01" id="modal-news-name" name="newsname" placeholder="Your Name">
                                       <div class="fc_icons">
                                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive ">
                                       </div>
@@ -357,7 +357,7 @@
                                 <!-- <div class="row mt15px"> -->
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
-                                    <input type="text" class="form-control fc_01" id="news-email" name="news-email" placeholder="Your email">
+                                    <input type="text" class="form-control fc_01" id="modal-news-email" name="news-email" placeholder="Your email">
                                     <div class="fc_icons">
                                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_mail.svg" class="img-responsive ">
                                     </div>
@@ -367,7 +367,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                                     <div class="row mt15px">
-                                      <button id="news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Subscribe </button>
+                                      <button id="modal-news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Subscribe </button>
                                     </div>
                                   </div>
                                 </div>

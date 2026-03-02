@@ -83,7 +83,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   getDataForCertificate() {
-    var currentModuleName: any;
+    let currentModuleName: any;
     this.userId = JSON.parse(localStorage.getItem("userId"))
     let path = this.router.url.split("/");
     currentModuleName = path[path.length - 2];
@@ -110,7 +110,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   private checkforExceptionCases(res, currentModuleName) {
     if (currentModuleName == 'five-circles') {
-      var data = res?.ModUserScrPc?.find(e => e.Module == "5 Circles of Wisdom");
+      const data = res?.ModUserScrPc?.find(e => e.Module == "5 Circles of Wisdom");
       this.currentModuleName = data.Module;
       this.percentage = data.Percentage;
       if (this.percentage == "100.00") {
@@ -397,7 +397,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   // introduction
   routeDiscoveringWisdom(cont: any = 1) {
-    var discoveringWisdomResume
+    let discoveringWisdomResume
     localStorage.setItem("moduleId", JSON.stringify(27))
     this.service.clickModule(27, this.userId)
       .subscribe(res => {
@@ -446,7 +446,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
 
   routeHowCanWisdomHelp(cont: any = 1) {
-    var hcwhR
+    let hcwhR
     localStorage.setItem("moduleId", JSON.stringify(74))
     this.service.clickModule(74, this.userId)
       .subscribe(res => {
@@ -480,7 +480,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
 
   routeBenefits(cont: any = 1) {
-    var benefitsWisdomResume
+    let benefitsWisdomResume
     localStorage.setItem("moduleId", JSON.stringify(32))
     this.service.clickModule(32, this.userId)
       .subscribe(res => {
@@ -508,7 +508,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeCircles(cont: any = 1) {
-    var fiveCirclesResume
+    let fiveCirclesResume
     localStorage.setItem("moduleId", JSON.stringify(33))
     this.service.clickModule(33, this.userId)
       .subscribe(res => {
@@ -551,7 +551,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeIdeas(cont: any = 1) {
-    var keyIdeasResume
+    let keyIdeasResume
     localStorage.setItem("moduleId", JSON.stringify(34))
     this.service.clickModule(34, this.userId)
       .subscribe(res => {
@@ -593,7 +593,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeGuide(cont: any = 1) {
-    var pgResume
+    let pgResume
     localStorage.setItem("moduleId", JSON.stringify(35))
     this.service.clickModule(35, this.userId)
       .subscribe(res => {
@@ -639,7 +639,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   // nuture a quiet mind
   routeNature(cont: any = 1) {
-    var natureR
+    let natureR
     localStorage.setItem("moduleId", JSON.stringify(28))
     this.service.clickModule(28, this.userId)
       .subscribe(res => {
@@ -686,7 +686,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   routeBreathing(cont: any = 1) {
 
-    var breathingR
+    let breathingR
 
     localStorage.setItem("moduleId", JSON.stringify(29))
     this.service.clickModule(29, this.userId)
@@ -731,7 +731,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeNoticingThoughts(cont: any = 1) {
-    var ntR
+    let ntR
 
     localStorage.setItem("moduleId", JSON.stringify(30))
     this.service.clickModule(30, this.userId)
@@ -775,7 +775,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeGuidedMeditation(cont: any = 1) {
-    var gamR
+    let gamR
     localStorage.setItem("moduleId", JSON.stringify(51))
     this.service.clickModule(51, this.userId)
       .subscribe(res => {
@@ -819,7 +819,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeMeditation(cont: any = 1) {
-    var meditationResume
+    let meditationResume
     localStorage.setItem("moduleId", JSON.stringify(22))
     this.service.clickModule(22, this.userId)
       .subscribe(res => {
@@ -864,7 +864,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   // art of enquiry
   routeBenefitsEnquiry(cont: any = 1) {
-    var resumeBenefitsEnquiry
+    let resumeBenefitsEnquiry
     localStorage.setItem("moduleId", JSON.stringify(26))
     this.service.clickModule(26, this.userId)
       .subscribe(res => {
@@ -911,7 +911,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeHowToBegin(cont: any = 1) {
-    var beginResume
+    let beginResume
     localStorage.setItem("moduleId", JSON.stringify(36))
     this.service.clickModule(36, this.userId)
       .subscribe(res => {
@@ -953,7 +953,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeThreeSteps(cont: any = 1) {
-    var threeStepsResume
+    let threeStepsResume
     localStorage.setItem("moduleId", JSON.stringify(37))
     this.service.clickModule(37, this.userId)
       .subscribe(res => {
@@ -996,7 +996,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeInsights(cont: any = 1) {
-    var insightResume
+    let insightResume
     localStorage.setItem("moduleId", JSON.stringify(38))
     this.service.clickModule(38, this.userId)
       .subscribe(res => {
@@ -1037,7 +1037,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeAwareness(cont: any = 1) {
-    var awarenessResume
+    let awarenessResume
     localStorage.setItem("moduleId", JSON.stringify(39))
     this.service.clickModule(39, this.userId)
       .subscribe(res => {
@@ -1080,7 +1080,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeNoJudgement(cont: any = 1) {
-    var njResume
+    let njResume
     localStorage.setItem("moduleId", JSON.stringify(40))
     this.service.clickModule(40, this.userId)
       .subscribe(res => {
@@ -1122,7 +1122,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeQuestionsAreKey(cont: any = 1) {
-    var qakResume
+    let qakResume
     localStorage.setItem("moduleId", JSON.stringify(41))
     this.service.clickModule(41, this.userId)
       .subscribe(res => {
@@ -1165,7 +1165,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeLookWithoutLanguage(cont: any = 1) {
-    var lwlResume
+    let lwlResume
     localStorage.setItem("moduleId", JSON.stringify(42))
     this.service.clickModule(42, this.userId)
       .subscribe(res => {
@@ -1207,7 +1207,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeObstacles(cont: any = 1) {
-    var obstaclesResume
+    let obstaclesResume
     localStorage.setItem("moduleId", JSON.stringify(43))
     this.service.clickModule(43, this.userId)
       .subscribe(res => {
@@ -1253,7 +1253,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   // how the mind works
   routeConditioning(cont: any = 1) {
-    var conditioningResume
+    let conditioningResume
     localStorage.setItem("moduleId", JSON.stringify(15))
     this.service.clickModule(15, this.userId)
       .subscribe(res => {
@@ -1295,7 +1295,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeComparison(cont: any = 1) {
-    var comparisonR
+    let comparisonR
     localStorage.setItem("moduleId", JSON.stringify(7))
     this.service.clickModule(7, this.userId)
       .subscribe(res => {
@@ -1334,7 +1334,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeReactiveMind(cont: any = 1) {
-    var rmR
+    let rmR
     localStorage.setItem("moduleId", JSON.stringify(54))
     this.service.clickModule(54, this.userId)
       .subscribe(res => {
@@ -1376,7 +1376,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeSelfImage(cont: any = 1) {
-    var siR
+    let siR
 
     localStorage.setItem("moduleId", JSON.stringify(25))
     this.service.clickModule(25, this.userId)
@@ -1427,7 +1427,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeSelfInterest(cont: any = 1) {
-    var sinR
+    let sinR
     localStorage.setItem("moduleId", JSON.stringify(55))
     this.service.clickModule(55, this.userId)
       .subscribe(res => {
@@ -1470,7 +1470,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeIdentity(cont: any = 1) {
-    var identityResume
+    let identityResume
     localStorage.setItem("moduleId", JSON.stringify(21))
     this.service.clickModule(21, this.userId)
       .subscribe(res => {
@@ -1513,7 +1513,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeEmotionalNeeds(cont: any = 1) {
-    var enR
+    let enR
     localStorage.setItem("moduleId", JSON.stringify(18))
     this.service.clickModule(18, this.userId)
       .subscribe(res => {
@@ -1555,7 +1555,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeInnerBoredom(cont: any = 1) {
-    var ibR
+    let ibR
     localStorage.setItem("moduleId", JSON.stringify(56))
     this.service.clickModule(56, this.userId)
       .subscribe(res => {
@@ -1598,7 +1598,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeNatureOfI(cont: any = 1) {
-    var niR
+    let niR
     localStorage.setItem("moduleId", JSON.stringify(57))
     this.service.clickModule(57, this.userId)
       .subscribe(res => {
@@ -1637,7 +1637,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   // understand emotions
   routeFearAnxiety(cont: any = 1) {
-    var fearResume
+    let fearResume
     localStorage.setItem("moduleId", JSON.stringify(19))
     this.service.clickModule(19, this.userId)
       .subscribe(res => {
@@ -1682,7 +1682,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routePleasure(cont: any = 1) {
-    var pleasureResume
+    let pleasureResume
     localStorage.setItem("moduleId", JSON.stringify(20))
     this.service.clickModule(20, this.userId)
       .subscribe(res => {
@@ -1720,7 +1720,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeSorrowandLoss(cont: any = 1) {
-    var sorrowandlossResume
+    let sorrowandlossResume
     localStorage.setItem("moduleId", JSON.stringify(60))
     this.service.clickModule(60, this.userId)
       .subscribe(res => {
@@ -1754,7 +1754,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeLoneliness(cont: any = 1) {
-    var lonelinessResume
+    let lonelinessResume
     localStorage.setItem("moduleId", JSON.stringify(61))
     this.service.clickModule(61, this.userId)
       .subscribe(res => {
@@ -1799,7 +1799,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeAnger(cont: any = 1) {
-    var angerResume
+    let angerResume
     localStorage.setItem("moduleId", JSON.stringify(14))
     this.service.clickModule(14, this.userId)
       .subscribe(res => {
@@ -1846,7 +1846,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   // transform your life 1
   routeStress(cont: any = 1) {
-    var stressResume
+    let stressResume
     localStorage.setItem("moduleId", JSON.stringify(44))
     this.service.clickModule(44, this.userId)
       .subscribe(res => {
@@ -1891,7 +1891,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
 
   routeRelationships(cont: any = 1) {
-    var relationshipResume
+    let relationshipResume
     localStorage.setItem("moduleId", JSON.stringify(47))
     this.service.clickModule(47, this.userId)
       .subscribe(res => {
@@ -1933,7 +1933,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeLove(cont: any = 1) {
-    var loveResume
+    let loveResume
     localStorage.setItem("moduleId", JSON.stringify(62))
     this.service.clickModule(62, this.userId)
       .subscribe(res => {
@@ -1978,7 +1978,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeCriticism(cont: any = 1) {
-    var criticismResume
+    let criticismResume
     localStorage.setItem("moduleId", JSON.stringify(16))
     this.service.clickModule(16, this.userId)
       .subscribe(res => {
@@ -2022,7 +2022,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeSelfEsteem(cont: any = 1) {
-    var sR
+    let sR
     localStorage.setItem("moduleId", JSON.stringify(17))
     this.service.clickModule(17, this.userId)
       .subscribe(res => {
@@ -2067,7 +2067,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeLivingWithPeace(cont: any = 1) {
-    var livingwithpeaceResume
+    let livingwithpeaceResume
     localStorage.setItem("moduleId", JSON.stringify(63))
     this.service.clickModule(63, this.userId)
       .subscribe(res => {
@@ -2112,7 +2112,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeDealingWithDeath(cont: any = 1) {
-    var dealingwithdeathResume
+    let dealingwithdeathResume
     localStorage.setItem("moduleId", JSON.stringify(64))
     this.service.clickModule(64, this.userId)
       .subscribe(res => {
@@ -2149,7 +2149,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   // transform your life 2
   routeHappiness(cont: any = 1) {
-    var hR
+    let hR
     localStorage.setItem("moduleId", JSON.stringify(23))
     this.service.clickModule(23, this.userId)
       .subscribe(res => {
@@ -2193,7 +2193,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeCommunication(cont: any = 1) {
-    var communicationR
+    let communicationR
     localStorage.setItem("moduleId", JSON.stringify(53))
     this.service.clickModule(53, this.userId)
       .subscribe(res => {
@@ -2239,7 +2239,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeOpinionsAndBeliefs(cont: any = 1) {
-    var opinionsandbeliefsResume
+    let opinionsandbeliefsResume
     localStorage.setItem("moduleId", JSON.stringify(49))
     this.service.clickModule(49, this.userId)
       .subscribe(res => {
@@ -2273,7 +2273,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeSuccessAndFailure(cont: any = 1) {
-    var successandfailureResume
+    let successandfailureResume
     localStorage.setItem("moduleId", JSON.stringify(48))
     this.service.clickModule(48, this.userId)
       .subscribe(res => {
@@ -2307,7 +2307,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeAddiction(cont: any = 1) {
-    var addictionResume
+    let addictionResume
     localStorage.setItem("moduleId", JSON.stringify(45))
     this.service.clickModule(45, this.userId)
       .subscribe(res => {
@@ -2341,7 +2341,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeFood(cont: any = 1) {
-    var foodResume
+    let foodResume
     localStorage.setItem("moduleId", JSON.stringify(46))
     this.service.clickModule(46, this.userId)
       .subscribe(res => {
@@ -2375,7 +2375,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeMoney(cont: any = 1) {
-    var moneyResume
+    let moneyResume
     localStorage.setItem("moduleId", JSON.stringify(73))
     this.service.clickModule(73, this.userId)
       .subscribe(res => {
@@ -2409,7 +2409,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeWork(cont: any = 1) {
-    var wR
+    let wR
     localStorage.setItem("moduleId", JSON.stringify(58))
     this.service.clickModule(58, this.userId)
       .subscribe(res => {
@@ -2444,7 +2444,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeMakingBetterDecision(cont: any = 1) {
-    var making_better_decisionsResume
+    let making_better_decisionsResume
     localStorage.setItem("moduleId", JSON.stringify(77))
     this.service.clickModule(77, this.userId)
       .subscribe(res => {
@@ -2481,7 +2481,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeBullying(cont: any = 1) {
-    var bullyingResume
+    let bullyingResume
     localStorage.setItem("moduleId", JSON.stringify(76))
     this.service.clickModule(76, this.userId)
       .subscribe(res => {
@@ -2517,7 +2517,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
   }
   routeLeadership(cont: any = 1) {
-    var lR
+    let lR
     localStorage.setItem("moduleId", JSON.stringify(59))
     this.service.clickModule(59, this.userId)
       .subscribe(res => {
@@ -2555,7 +2555,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
 
   routeExternalApproval(cont: any = 1) {
-    var externalapprovalR
+    let externalapprovalR
     localStorage.setItem("moduleId", JSON.stringify(91))
     this.service.clickModule(91, this.userId)
       .subscribe(res => {
@@ -2584,7 +2584,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeDealingWithDepression(cont: any = 1) {
-    var dealingwithdepressionResume
+    let dealingwithdepressionResume
     localStorage.setItem("moduleId", JSON.stringify(92))
     this.service.clickModule(92, this.userId)
       .subscribe(res => {
@@ -2615,7 +2615,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   routeDiversityandInclusion(cont: any = 1) {
-    var pgResume
+    let pgResume
     localStorage.setItem("moduleId", JSON.stringify(143))
     this.service.clickModule(143, this.userId)
       .subscribe(res => {
@@ -2644,44 +2644,25 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   // /transform your life 2
 
   goDashboard() {
-    let cur = localStorage.getItem('curated');
-    if (cur && cur === 'emotions') {
-      localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
-      this.router.navigate(['/adults/curated/manage-your-emotions'])
-    }
-    else if (cur && cur === 'stress') {
-      localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
-      this.router.navigate(['/adults/curated/overcome-stress-anxiety'])
-    }
-    else if (cur && cur === 'happier') {
-      localStorage.setItem('curatedurl', '/adults/curated/be-happier');
-      this.router.navigate(['/adults/curated/be-happier'])
-    }
-    else if (cur && cur === 'habits') {
-      localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
-      this.router.navigate(['/adults/curated/change-unhelpful-habits'])
-    }
-    else if (cur && cur === 'workplace') {
-      localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
-      this.router.navigate(['/adults/curated/wisdom-for-workplace'])
-    }
-    else if (cur && cur === 'relationships') {
-      localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
-      this.router.navigate(['/adults/curated/have-fulfilling-relationships'])
-    }
-    else if (cur && cur === 'sorrow') {
-      localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
-      this.router.navigate(['/adults/curated/deal-with-sorrow-loss'])
-    }
-    else if (cur && cur === 'mind') {
-      localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
-      this.router.navigate(['/adults/curated/have-calm-mind'])
-    }
-    else {
-      this.router.navigate(['/adults/adult-dashboard'])
-    }
+    const cur = localStorage.getItem('curated');
+    const curatedUrls: { [key: string]: string } = {
+      'emotions': '/adults/curated/manage-your-emotions',
+      'stress': '/adults/curated/overcome-stress-anxiety',
+      'happier': '/adults/curated/be-happier',
+      'habits': '/adults/curated/change-unhelpful-habits',
+      'workplace': '/adults/curated/wisdom-for-workplace',
+      'relationships': '/adults/curated/have-fulfilling-relationships',
+      'sorrow': '/adults/curated/deal-with-sorrow-loss',
+      'mind': '/adults/curated/have-calm-mind'
+    };
 
-
+    if (cur && curatedUrls[cur]) {
+      const url = curatedUrls[cur];
+      localStorage.setItem('curatedurl', url);
+      this.router.navigate([url]);
+    } else {
+      this.router.navigate(['/adults/adult-dashboard']);
+    }
   }
   routeJournal() {
 
@@ -2811,7 +2792,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
   }
 
   RouteToModule(moduleData: ProgramModel) {
-    var addictionResume
+    let addictionResume
     localStorage.setItem("moduleId", moduleData.moduleId)
     this.service.clickModule(+moduleData.moduleId, this.userId)
       .subscribe(res => {

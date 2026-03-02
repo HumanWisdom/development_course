@@ -9,15 +9,15 @@
 //    border: 0;
 //    margin: 0;
 //    height: 50px;
-   /* // background:transparent;
+/* // background:transparent;
 //   background: #FFFFFF80;; */
 // background: rgba(255,255,255,.1019607843);
-   
+
 //    box-shadow: 1px 1px 2px #00000040;
 //    border-radius: 12px;
 //    width: 101px;
 //    height: 52px;
-  
+
 
 // }
 .btn_login_signup_tnew {
@@ -27,9 +27,40 @@
    background: transparent;
 
 
-   
+
    box-shadow: 1px 1px 2px #00000040;
    border-radius: 12px;
    width: 101px;
    height: 52px;
+}
+
+.safari-browser {
+   .carousel-item {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+      display: block !important;
+
+      // Fix for the "blank content below video" issue in Safari
+      .row {
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+         position: relative;
+         z-index: 10 !important;
+         -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+         visibility: visible !important;
+         opacity: 0.99; // Forcing paint in Safari
+         display: block !important;
+      }
+   }
+
+   .carousel-inner {
+      overflow: visible !important;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+   }
 }

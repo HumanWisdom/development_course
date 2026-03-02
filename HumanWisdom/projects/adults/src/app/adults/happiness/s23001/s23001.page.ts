@@ -18,6 +18,8 @@ export class S23001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+          isContentsOpen = false;
+
   bookmarkList=[]
   path = setTimeout(() => {
     return this.router.url;
@@ -30,7 +32,7 @@ export class S23001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  hR=sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/23.png"
   tocColor="white"
   lastvisited = false;
@@ -97,24 +99,20 @@ export class S23001Page implements OnInit,OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    {
-      this.lastvisited = false;
-    }    
-    // /continue where you left
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
 
-    
-    
-    if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    this.service.clickModule(23, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
+    localStorage.setItem("moduleId", JSON.stringify(23))
+    this.moduleId = localStorage.getItem("moduleId")
 
     if(!this.t) //if no token in url- not shared
     {
@@ -143,6 +141,11 @@ export class S23001Page implements OnInit,OnDestroy {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
   }
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
+  
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
@@ -196,9 +199,8 @@ export class S23001Page implements OnInit,OnDestroy {
     this.router.navigate(['/adults/journal'])
   }
   
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 
 }

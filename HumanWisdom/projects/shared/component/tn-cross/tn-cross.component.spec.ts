@@ -1,22 +1,19 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TnCrossComponent } from './tn-cross.component';
 
 describe('TnCrossComponent', () => {
   let component: TnCrossComponent;
   let fixture: ComponentFixture<TnCrossComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TnCrossComponent ],
-      imports: [IonicModule.forRoot()]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [TnCrossComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TnCrossComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

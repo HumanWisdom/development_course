@@ -160,7 +160,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                           <input [type]="passwordhide ? 'password' : 'text'" class="sp_fc" placeholder="Password"
                             id="password" formControlName="ogpassword" (keydown.space)="$event.preventDefault()"
-                            (keypress)="onKeyPress($event)" autocomplete="new-password" maxlength="15" required>
+                            (keypress)="onKeyPress($event)" autocomplete="current-password" maxlength="15" required>
 
                           <div class="fc_img" (click)="hideFunction('password')">
 
@@ -187,6 +187,9 @@
                           <small *ngIf="passwordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p"
                             [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">password must be at least 6
                             characters</small>
+                          <small *ngIf="passwordvalid.errors?.passwordStrength" class="fs_12px fw_400 lh_150p"
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">Password must contain one letter
+                            and one digit</small>
                         </div>
                       </div>
 
@@ -194,8 +197,8 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                           <input maxlength="50" (keydown.space)="$event.preventDefault()"
                             [type]="confirmpasswordhide ? 'password' : 'text'" class="sp_fc"
-                            placeholder="Confirm Password" id="repeatpassowrd" formControlName="confirmPassword"
-                            maxlength="15" (keydown.space)="$event.preventDefault();">
+                            autocomplete="current-password" placeholder="Confirm Password" id="repeatpassowrd"
+                            formControlName="confirmPassword" maxlength="15" (keydown.space)="$event.preventDefault();">
 
                           <div class="fc_img" (click)="hideFunction('')">
                             <img *ngIf="confirmpasswordhide && isAdults"
@@ -221,6 +224,9 @@
                           <small *ngIf="confirmpasswordvalid.errors?.minlength" class="fs_12px fw_400 lh_150p "
                             [ngClass]="isAdults?'fc_000000_0_5':'fc_ffffff_0_5'">Repeat password must be at least 6
                             characters</small>
+                          <small *ngIf="confirmpasswordvalid.errors?.passwordStrength" class="fs_12px fw_400 lh_150p"
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">Password must contain one letter
+                            and one digit</small>
                         </div>
                         <div *ngIf="confirmpasswordvalid.valid && confirmpasswordvalid.touched">
                           <small *ngIf="passwordvalidation" class="fs_12px fw_400 lh_150p "
@@ -242,6 +248,7 @@
                         <label for="privacy_checkbox" class="chkb_post_anonymously ">
                           <input id="privacy_checkbox" formControlName="privacychk" type="checkbox">
                           <h4 class=" fs_12px fw_500 lh_130p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
+                            &nbsp;
                           </h4>
                         </label>
                       </div>
@@ -262,6 +269,7 @@
                         <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
                           <input id="marketing_checkbox" type="checkbox">
                           <h4 class=" fs_12px fw_500 lh_150p " [ngClass]="isAdults?'fc_000000':'fc_ffffff'">
+                            &nbsp;
                           </h4>
                         </label>
                       </div>
@@ -285,6 +293,7 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0 tleft">
                           <h4 class="mtb0px fs_15px fw_400 lh_21px " (click)="getLoginTab()"
+                            (keydown.enter)="getLoginTab()" tabindex="0"
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                             <span class="">
                               Already a user?
@@ -297,7 +306,7 @@
 
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 tright">
                           <a class="mtb0px fs_15px fw_400 lh_21px " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-                            (click)="routedashboard()">
+                            (click)="routedashboard()" (keydown.enter)="routedashboard()" tabindex="0">
                             Continue as Guest
                           </a>
                         </div>

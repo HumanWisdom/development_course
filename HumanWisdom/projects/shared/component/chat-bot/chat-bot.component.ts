@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -11,9 +11,15 @@ import { ProgramType } from '../../models/program-model';
 @Component({
   selector: 'app-chat-bot',
   templateUrl: './chat-bot.component.html',
-  styleUrls: ['./chat-bot.component.scss']
+  styleUrls: ['./chat-bot.component.scss','./chat-bot.teenager.component.scss']
 })
 export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
+  @HostBinding('class.teenager-theme') get isTeenagerTheme() {
+      return SharedService.ProgramId == ProgramType.Teenagers;
+    }
+    @HostBinding('class.adults-theme') get isAdultsTheme() {
+      return SharedService.ProgramId == ProgramType.Adults;
+    }
   @ViewChild('messageContainer', { static: false }) messageContainer!: ElementRef;
   @ViewChild('messageInput', { static: false }) messageInput!: ElementRef;
 
@@ -23,17 +29,23 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   isLoading: boolean = false;
   isLoadingHistory: boolean = false;
   errorMessage: string = '';
+  isTokenExpired: boolean = false;
   activeSuggestions: string[] = [];
   hasHistoryAvailable: boolean = false;
   private cachedHistoryMessages: HistoryMessage[] | null = null;
   private cachedHistoryUserId: number | null = null;
   private historyCheckInProgress: boolean = false;
+  isAdults = false;
 
+  // Dislike popup state
+  showDislikePopup: boolean = false;
+  pendingDislikeMessage: ChatMessage | null = null;
+ 
   private messagesSubscription: Subscription = new Subscription();
   private typingSubscription: Subscription = new Subscription();
   private sessionSubscription: Subscription = new Subscription();
   private suggestionsSubscription: Subscription = new Subscription();
-  userAvatarUrl: string = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
+  userAvatarUrl: string = '';
 
   constructor(
     private chatbotService: ChatbotService,
@@ -63,6 +75,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             console.log(`Message ${index} has ${msg.suggestions.length} suggestions:`, msg.suggestions);
           }
         });
+         if (SharedService.ProgramId == ProgramType.Adults) {
+              this.isAdults = true;
+            } else {
+              this.isAdults = false;
+            }
 
         // Ensure welcome messages if store becomes empty (e.g., after logout)
         if (messages.length === 0) {
@@ -101,6 +118,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     );
 
     this.checkHistoryAvailability();
+    if (this.isGuestUser()) {
+      this.checkTokenExpiry();
+    }
   }
 
   ngAfterViewInit(): void {
@@ -118,6 +138,14 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.styleAnchorTags();
   }
 
+  @HostListener('window:scroll')
+    handleScroll(): void {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const threshold = viewportHeight * 0.2; // 20% of viewport height
+  
+     
+    }
   ngOnDestroy(): void {
     this.messagesSubscription.unsubscribe();
     this.typingSubscription.unsubscribe();
@@ -164,6 +192,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.has_more
           );
           // Note: Scrolling is handled automatically by messages$ subscription
+        } else if (response.response === 'Unauthorized') {
+          this.handleUnauthorizedError();
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
         }
@@ -173,7 +203,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         console.error('Chatbot API Error:', error);
         this.chatbotService.removeTypingIndicator();
         this.chatbotService.setTyping(false);
-        this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
+        if (error.status === 401 || (error.error && error.error.response === 'Unauthorized')) {
+          this.handleUnauthorizedError();
+        } else {
+          this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
+        }
         this.isLoading = false;
         // Note: Scrolling is handled automatically by messages$ subscription
       }
@@ -235,6 +269,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       next: (response) => {
         if (response.status === 'success' && response.history.length > 0) {
           this.applyHistoryMessages(response.history);
+        } else if (response.response === 'Unauthorized') {
+          this.handleUnauthorizedError();
         } else {
           this.errorMessage = 'No previous conversations found.';
           this.hasHistoryAvailable = false;
@@ -245,7 +281,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error loading history:', error);
-        this.errorMessage = 'Failed to load previous conversations. Please try again.';
+        if (error.status === 401 || (error.error && error.error.response === 'Unauthorized')) {
+          this.handleUnauthorizedError();
+        } else {
+          this.errorMessage = 'Failed to load previous conversations. Please try again.';
+        }
         this.isLoadingHistory = false;
       }
     });
@@ -301,6 +341,37 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   clearError(): void {
     this.errorMessage = '';
+    this.isTokenExpired = false;
+  }
+
+  private handleUnauthorizedError(): void {
+    if (this.isGuestUser()) {
+      localStorage.setItem('btnclick', 'F');
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    } else {
+      this.isTokenExpired = true;
+      this.errorMessage = 'Your session has been timed out, please logout and login again';
+    }
+  }
+
+  redirectToLogin(): void {
+    const programName = SharedService.getprogramName();
+    this.router.navigate([`/${programName}/onboarding/login`]);
+  }
+
+  private checkTokenExpiry(): void {
+    this.chatbotService.checkHealth().subscribe({
+      next: (response) => {
+        if (response && response.status === 'error' && response.response === 'Unauthorized') {
+          this.handleUnauthorizedError();
+        }
+      },
+      error: (error) => {
+        if (error.status === 401 || (error.error && error.error.response === 'Unauthorized')) {
+          this.handleUnauthorizedError();
+        }
+      }
+    });
   }
 
   /**
@@ -395,9 +466,56 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
+   * Handle thumbs down button click - immediately submit feedback and show confirmation popup
+   */
+  onThumbsDownClick(message: ChatMessage): void {
+    if (message.feedback_given || this.isLoading) {
+      return;
+    }
+    // Submit the dislike feedback immediately
+    this.onThumbsDown(message);
+    // Show confirmation popup
+    this.showDislikePopup = true;
+    this.pendingDislikeMessage = message;
+  }
+
+  /**
+   * Close the dislike popup
+   */
+  onCloseDislikePopup(): void {
+    this.showDislikePopup = false;
+    this.pendingDislikeMessage = null;
+  }
+
+  /**
+   * Navigate to the community forum
+   */
+  onGoToForum(): void {
+    this.showDislikePopup = false;
+    this.pendingDislikeMessage = null;
+    if (SharedService.ProgramId === ProgramType.Adults) {
+      this.router.navigate(['/adults/forum']);
+    } else {
+      this.router.navigate(['/teenagers/forum']);
+    }
+  }
+
+  /**
+   * Select a dislike reason (kept for compatibility)
+   */
+  onSelectDislikeReason(reason: string): void {}
+
+  /**
+   * Submit dislike (kept for compatibility)
+   */
+  onSubmitDislike(): void {
+    this.onCloseDislikePopup();
+  }
+
+  /**
    * Handle thumbs down click - send negative feedback
    */
-  onThumbsDown(message: ChatMessage): void {
+  onThumbsDown(message: ChatMessage, reason?: string): void {
     if (message.feedback_given || this.isLoading) {
       return;
     }
@@ -727,10 +845,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.chatbotService.loadHistory().subscribe({
       next: (response) => {
-        if (response.status === 'success' && response.history.length > 0) {
+        if (response && response.status && response.status.toLowerCase() === 'success' && response.history && response.history.length > 0) {
           this.hasHistoryAvailable = true;
           this.cachedHistoryMessages = response.history;
           this.cachedHistoryUserId = currentUserId;
+        } else if (response && response.response === 'Unauthorized') {
+          this.handleUnauthorizedError();
         } else {
           this.hasHistoryAvailable = false;
           this.cachedHistoryMessages = null;
@@ -740,9 +860,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error checking history availability:', error);
-        this.hasHistoryAvailable = false;
-        this.cachedHistoryMessages = null;
-        this.cachedHistoryUserId = null;
+        if (error.status === 401 || (error.error && error.error.response === 'Unauthorized')) {
+          this.handleUnauthorizedError();
+        } else {
+          this.hasHistoryAvailable = false;
+          this.cachedHistoryMessages = null;
+          this.cachedHistoryUserId = null;
+        }
         this.historyCheckInProgress = false;
       }
     });
@@ -756,8 +880,10 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log('Loaded history messages:', history);
   }
   private getDefaultAvatar(): string {
-    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
-
+    if (SharedService.ProgramId === ProgramType.Teenagers) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/chatbotProfile_teens.svg';
+    }
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/chatbotProfile+adults.svg';
   }
 
   private setUserAvatar(): void {
@@ -784,6 +910,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.userAvatarUrl = this.getDefaultAvatar();
+  }
+
+  onAvatarError(event: Event): void {
+    const imgElement = event.target as HTMLImageElement;
+    if (imgElement) {
+      imgElement.src = this.getDefaultAvatar();
+    }
   }
 
   /**

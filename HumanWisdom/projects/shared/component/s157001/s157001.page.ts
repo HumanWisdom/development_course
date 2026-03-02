@@ -103,11 +103,16 @@ export class S157001Page implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink()
-    if (url == null) {
-      this.location.back();
-    }else{
-      this.router.navigate([url]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null || url.includes('home') || url.includes('dashboard')) {
+      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null') {
+        this.router.navigateByUrl(navFrom);
+      } else {
+        this.location.back();
+      }
+    } else {
+      this.router.navigateByUrl(url);
     }
   }
 

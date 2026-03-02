@@ -173,21 +173,36 @@ export class CourseHeaderComponent implements OnInit {
     this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
   goToToc() {
-    // this.naviagtorService.getBackLink();
-    // if(this.toc==""){
-    if(this.router.url.includes('wellness-survey')) {
+    var url = this.naviagtorService.navigateToBackLink();
+    if (url != null && !url.includes('home') && !url.includes('dashboard') && !url.includes('pathway')) {
+      this.router.navigateByUrl(url);
+      return;
+    }
+
+    if (this.toc) {
+      let tocUrl = this.toc;
+      let prefix = this.isAdults ? '/adults' : '/teenagers';
+      if (!tocUrl.startsWith('/')) {
+        tocUrl = prefix + '/' + tocUrl;
+      } else if (!tocUrl.startsWith(prefix)) {
+        tocUrl = prefix + tocUrl;
+      }
+      this.router.navigate([tocUrl]);
+      return;
+    }
+
+    if (url != null) {
+      this.router.navigateByUrl(url);
+      return;
+    }
+
+    if (this.router.url.includes('wellness-survey')) {
       this.location.back();
-    }else{ 
+    } else {
       let lastSlashIndex = this.router.url.lastIndexOf('/');
       let modifiedUrl = this.router.url.substring(0, lastSlashIndex);
       this.router.navigate(['/' + modifiedUrl])
     }
-    // }else{
-    //   if(this.toc.includes(this.programName))
-    //     this .router.navigate(['/' + this.toc])
-    //    else
-    //      this.router.navigate(['/' + this.programName + '/' + this.toc])
-    // }
   }
 
   goToDash() {

@@ -857,12 +857,12 @@ function initializeNewsletterPopup() {
         }
         sessionStorage.setItem('newsLetterOpened','true');
         
-        // Set up newsletter form handler
-        const newsLetterForm = document.getElementById("news-contact-form");
-        if (newsLetterForm) {
-            newsLetterForm.addEventListener("click", () => {
-                const email = document.getElementById("news-email").value;
-                const name = document.getElementById("news-name").value;
+        // Set up newsletter form handler for modal
+        const modalNewsLetterForm = document.getElementById("modal-news-contact-form");
+        if (modalNewsLetterForm) {
+            modalNewsLetterForm.addEventListener("click", () => {
+                const email = document.getElementById("modal-news-email").value;
+                const name = document.getElementById("modal-news-name").value;
                 const o = { Name: name, EmailID: email };
               
                 if (!(email && name && "" != email && "" != name)) {
@@ -881,8 +881,8 @@ function initializeNewsletterPopup() {
                 })
                 .then((e) => e.json())
                 .then((e) => {
-                    document.getElementById("news-email").value = "";
-                    document.getElementById("news-name").value = "";
+                    document.getElementById("modal-news-email").value = "";
+                    document.getElementById("modal-news-name").value = "";
                     alert(e?.Message ? e.Message : e);
                     
                     // Close modal after successful submission using ModalManager
@@ -897,16 +897,16 @@ function initializeNewsletterPopup() {
         }
         
         // Add event listener for close button - handle multiple close buttons
-        const closeBtns = document.querySelectorAll('#closebtn');
+      const closeBtns = document.querySelectorAll('[id^="closebtn"]');
+
         closeBtns.forEach(closeBtn => {
-            closeBtn.addEventListener('click', function(e) {
+            closeBtn.addEventListener('click', function (e) {
                 e.preventDefault();
+
                 const modal = this.closest('.modal');
                 if (modal) {
-                    console.log('Close button clicked for modal:', modal.id);
                     modalManager.closeModal(modal);
                 } else {
-                    // Fallback to product_view modal
                     modalManager.closeModal('product_view');
                 }
             });
@@ -1018,6 +1018,21 @@ function setupNewsletterTiming() {
 // Initialize newsletter timing system
 setupNewsletterTiming();
 
+// Event delegation for "See all posts" and "Find out more" - ensures navigation works even if direct handlers fail
+document.addEventListener("click", function (evt) {
+    const link = evt.target.closest("a#viewAllBlogs, a#view-all-coaches");
+    if (link && link.href) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        if (link.id === "viewAllBlogs") {
+            logevent("click_View_All_Blogs_web", "index.php");
+        } else if (link.id === "view-all-coaches") {
+            logevent("click_view_all_coaches", "index.php");
+        }
+        window.location.href = link.getAttribute("href") || link.href;
+    }
+}, true);
+
 // Function to manually trigger newsletter popup (for testing)
 function forceNewsletterPopup() {
     if (NEWSLETTER_CONFIG.debug) {
@@ -1075,6 +1090,18 @@ if (pricingSelectBtn) {
         window.location.href = "../pages/splash_options.php";
     });
 }
+
+const PricingSelectBtn1 = document.getElementById('PricingSelectBtn1');
+if (PricingSelectBtn1) {
+    PricingSelectBtn1.addEventListener('click', function () {
+        localStorage.setItem('pricing',true);
+        localStorage.setItem('login',false);
+        logevent("start_your_free_trial_button_click", "index.php");
+        window.location.href = "../pages/splash_options.php";
+    });
+}
+
+
 
 const OllyChatBtn = document.getElementById('OllyChatBtn');
 if (OllyChatBtn) {
@@ -1417,7 +1444,9 @@ nfsnContactForm &&
             o.addEventListener(
                 "click",
                 function (e) {
-                    logevent("click_View_All_Blogs_web", "index.php"), (window.location.href = url+"/adults/blogs");
+                    e.preventDefault();
+                    logevent("click_View_All_Blogs_web", "index.php");
+                    window.location.href = this.getAttribute("href") || url + "/adults/blogs";
                 },
                 !1
             );
@@ -1428,7 +1457,11 @@ nfsnContactForm &&
             ].forEach((e) => {
             const t = document.getElementById(e);
             t &&
-                t.addEventListener("click", function (t) {
+                t.addEventListener("click", function (evt) {
+                         if (["findoutMore","view-all-coaches","partnership","partnershipfooter","ourStory","testimonialFooter","contactUsFooter","adultsWeb","teensWeb","appleStore","googlePlayStore","exploreAppWeb"].indexOf(e) >= 0 ||
+                             e.startsWith("openInApp")) {
+                             evt.preventDefault();
+                         }
                          "feelbetterNow" == e? logevent("click_Feel_Better_Now_web", "index.php")
                         : "pathWay" == e ? logevent("click_Pathway_web", "index.php")
                         : "journal" == e ? logevent("click_Journal_web", "index.php")
@@ -1496,13 +1529,11 @@ function getIsoCode() {
     return "$" == this.pricingModel.CurSymbol ? ` (${this.pricingModel.ISOCode})` : "";
 }
 
-const newsLetterForm = document.getElementById("news-contact-form");
-newsLetterForm && newsLetterForm.addEventListener("click", () => {
-          if(document.getElementById('closebtn')){
-            document.getElementById('closebtn').click();
-          }
-          const  email = document.getElementById("news-email").value;
-          const  name = document.getElementById("news-name").value;
+// Newsletter form handler for page section
+const pageNewsLetterForm = document.getElementById("page-news-contact-form");
+pageNewsLetterForm && pageNewsLetterForm.addEventListener("click", () => {
+          const  email = document.getElementById("page-news-email").value;
+          const  name = document.getElementById("page-news-name").value;
             const o = { Name: name, EmailID: email };
           
             if (!(email && name && "" != email && "" != name)) return alert("All fields must be filled out"), !1;
@@ -1512,16 +1543,18 @@ newsLetterForm && newsLetterForm.addEventListener("click", () => {
             fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
                 .then((e) => e.json())
                 .then((e) => {
-                    (document.getElementById("news-email").value = ""), (document.getElementById("news-name").value = ""),alert( e?.Message ? e.Message : e );
-                    
-                    // Close modal using ModalManager
-                    modalManager.closeModal('product_view');
+                    // (document.getElementById("page-news-email").value = ""), (document.getElementById("page-news-name").value = ""),alert( e?.Message ? e.Message : e );
+                    document.getElementById("page-news-email").value = "";
+                    document.getElementById("page-news-name").value = "";
+                    alert(e?.Message ? e.Message : e);
+
                 })
                 .catch((e) => {
-                    let content = e['error']['Message'];
+                    let content = e['error'] ? e['error']['Message'] : 'An error occurred';
                     console.error("Error:", e), alert(content);
                 });
     })
+
 
 function validateEmail(email) {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

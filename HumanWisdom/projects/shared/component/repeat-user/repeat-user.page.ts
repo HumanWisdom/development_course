@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { SharedService } from "../../services/shared.service";
 import { LogEventService } from '../../services/log-event.service';
 import { ProgramType } from "../../models/program-model";
+import { NumberCardComponent } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-repeat-user',
@@ -106,11 +107,12 @@ export class RepeatUserPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      if(SharedService.FirstLoginOfTheDay){
-        this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
-      }else{
-         this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
-      }
+      // if(SharedService.FirstLoginOfTheDay){
+      //   this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
+      // }else{
+      //    this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
+      // }
+      this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
     }, 3000);
 
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -157,13 +159,15 @@ export class RepeatUserPage implements OnInit {
      SharedService.setEmail(res.Email);
      this.freescreens();
     }
-    if (localStorage.getItem("token") && (this.saveUsername == true)) {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-      this.userName = JSON.parse(localStorage.getItem("userName"))
-    } else {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-      this.userName = JSON.parse(localStorage.getItem("userName"))
-    }
+    // if (localStorage.getItem("token") && (this.saveUsername == true)) {
+    //   this.userId = JSON.parse(localStorage.getItem("userId"))
+    //   this.userName = JSON.parse(localStorage.getItem("userName"))
+    // } else {
+    //   this.userId = JSON.parse(localStorage.getItem("userId"))
+    //   this.userName = JSON.parse(localStorage.getItem("userName"))
+    // }
+    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userName = JSON.parse(localStorage.getItem("userName"))
     this.getBookmarks()
     this.getProgress()
    
@@ -193,7 +197,7 @@ export class RepeatUserPage implements OnInit {
     this.service.getBookmarks(this.userId)
       .subscribe(res => {
         this.bookmarks = res
-        this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
+        this.bookmarks = this.bookmarks.map(a => Number.parseInt(a.ScrNo));
         localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
       })
   }
@@ -443,7 +447,7 @@ export class RepeatUserPage implements OnInit {
 
   // introduction
   routeDiscoveringWisdom(cont: any = 1) {
-    var discoveringWisdomResume
+    let discoveringWisdomResume
     localStorage.setItem("moduleId", JSON.stringify(27))
     this.service.clickModule(27, this.userId)
       .subscribe(res => {
@@ -459,7 +463,7 @@ export class RepeatUserPage implements OnInit {
           localStorage.setItem("lastvisited", 'T')
         }
         sessionStorage.setItem("discoveringWisdomResume", discoveringWisdomResume)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
@@ -477,7 +481,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeBenefits(cont: any = 1) {
-    var benefitsWisdomResume
+    let benefitsWisdomResume
     localStorage.setItem("moduleId", JSON.stringify(32))
     this.service.clickModule(32, this.userId)
       .subscribe(res => {
@@ -509,7 +513,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeCircles(cont: any = 1) {
-    var fiveCirclesResume
+    let fiveCirclesResume
     localStorage.setItem("moduleId", JSON.stringify(33))
     this.service.clickModule(33, this.userId)
       .subscribe(res => {
@@ -543,7 +547,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeIdeas(cont: any = 1) {
-    var keyIdeasResume
+    let keyIdeasResume
     localStorage.setItem("moduleId", JSON.stringify(34))
     this.service.clickModule(34, this.userId)
       .subscribe(res => {
@@ -584,7 +588,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeGuide(cont: any = 1) {
-    var pgResume
+    let pgResume
     localStorage.setItem("moduleId", JSON.stringify(35))
     this.service.clickModule(35, this.userId)
       .subscribe(res => {
@@ -619,7 +623,7 @@ export class RepeatUserPage implements OnInit {
 
   // nuture a quiet mind
   routeNature(cont: any = 1) {
-    var natureR
+    let natureR
     localStorage.setItem("moduleId", JSON.stringify(28))
     this.service.clickModule(28, this.userId)
       .subscribe(res => {
@@ -653,7 +657,7 @@ export class RepeatUserPage implements OnInit {
 
   routeBreathing(cont: any = 1) {
 
-    var breathingR
+    let breathingR
 
     localStorage.setItem("moduleId", JSON.stringify(29))
     this.service.clickModule(29, this.userId)
@@ -686,7 +690,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeNoticingThoughts(cont: any = 1) {
-    var ntR
+    let ntR
 
     localStorage.setItem("moduleId", JSON.stringify(30))
     this.service.clickModule(30, this.userId)
@@ -710,7 +714,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeGuidedMeditation(cont: any = 1) {
-    var gamR
+    let gamR
     localStorage.setItem("moduleId", JSON.stringify(51))
     this.service.clickModule(51, this.userId)
       .subscribe(res => {
@@ -742,7 +746,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeMeditation(cont: any = 1) {
-    var meditationResume
+    let meditationResume
     localStorage.setItem("moduleId", JSON.stringify(22))
     this.service.clickModule(22, this.userId)
       .subscribe(res => {
@@ -776,7 +780,7 @@ export class RepeatUserPage implements OnInit {
 
   // art of enquiry
   routeBenefitsEnquiry(cont: any = 1) {
-    var resumeBenefitsEnquiry
+    let resumeBenefitsEnquiry
     localStorage.setItem("moduleId", JSON.stringify(26))
     this.service.clickModule(26, this.userId)
       .subscribe(res => {
@@ -793,7 +797,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("resumeBenefitsEnquiry", resumeBenefitsEnquiry)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -812,7 +816,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeHowToBegin(cont: any = 1) {
-    var beginResume
+    let beginResume
     localStorage.setItem("moduleId", JSON.stringify(36))
     this.service.clickModule(36, this.userId)
       .subscribe(res => {
@@ -844,7 +848,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeThreeSteps(cont: any = 1) {
-    var threeStepsResume
+    let threeStepsResume
     localStorage.setItem("moduleId", JSON.stringify(37))
     this.service.clickModule(37, this.userId)
       .subscribe(res => {
@@ -876,7 +880,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeInsights(cont: any = 1) {
-    var insightResume
+    let insightResume
     localStorage.setItem("moduleId", JSON.stringify(38))
     this.service.clickModule(38, this.userId)
       .subscribe(res => {
@@ -908,7 +912,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeAwareness(cont: any = 1) {
-    var awarenessResume
+    let awarenessResume
     localStorage.setItem("moduleId", JSON.stringify(39))
     this.service.clickModule(39, this.userId)
       .subscribe(res => {
@@ -940,7 +944,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeNoJudgement(cont: any = 1) {
-    var njResume
+    let njResume
     localStorage.setItem("moduleId", JSON.stringify(40))
     this.service.clickModule(40, this.userId)
       .subscribe(res => {
@@ -972,7 +976,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeQuestionsAreKey(cont: any = 1) {
-    var qakResume
+    let qakResume
     localStorage.setItem("moduleId", JSON.stringify(41))
     this.service.clickModule(41, this.userId)
       .subscribe(res => {
@@ -1004,7 +1008,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeLookWithoutLanguage(cont: any = 1) {
-    var lwlResume
+    let lwlResume
     localStorage.setItem("moduleId", JSON.stringify(42))
     this.service.clickModule(42, this.userId)
       .subscribe(res => {
@@ -1036,7 +1040,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeObstacles(cont: any = 1) {
-    var obstaclesResume
+    let obstaclesResume
     localStorage.setItem("moduleId", JSON.stringify(43))
     this.service.clickModule(43, this.userId)
       .subscribe(res => {
@@ -1070,7 +1074,7 @@ export class RepeatUserPage implements OnInit {
 
   // how the mind works
   routeConditioning(cont: any = 1) {
-    var conditioningResume
+    let conditioningResume
     localStorage.setItem("moduleId", JSON.stringify(15))
     this.service.clickModule(15, this.userId)
       .subscribe(res => {
@@ -1102,7 +1106,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeComparison(cont: any = 1) {
-    var comparisonR
+    let comparisonR
     localStorage.setItem("moduleId", JSON.stringify(7))
     this.service.clickModule(7, this.userId)
       .subscribe(res => {
@@ -1118,7 +1122,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("comparisonR", comparisonR)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         // this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -1137,7 +1141,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeReactiveMind(cont: any = 1) {
-    var rmR
+    let rmR
     localStorage.setItem("moduleId", JSON.stringify(54))
     this.service.clickModule(54, this.userId)
       .subscribe(res => {
@@ -1169,7 +1173,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeSelfImage(cont: any = 1) {
-    var siR
+    let siR
 
     localStorage.setItem("moduleId", JSON.stringify(25))
     this.service.clickModule(25, this.userId)
@@ -1187,7 +1191,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("siR", siR)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         //this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -1206,7 +1210,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeSelfInterest(cont: any = 1) {
-    var sinR
+    let sinR
     localStorage.setItem("moduleId", JSON.stringify(55))
     this.service.clickModule(55, this.userId)
       .subscribe(res => {
@@ -1238,7 +1242,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeIdentity(cont: any = 1) {
-    var identityResume
+    let identityResume
     localStorage.setItem("moduleId", JSON.stringify(21))
     this.service.clickModule(21, this.userId)
       .subscribe(res => {
@@ -1270,7 +1274,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeEmotionalNeeds(cont: any = 1) {
-    var enR
+    let enR
     localStorage.setItem("moduleId", JSON.stringify(18))
     this.service.clickModule(18, this.userId)
       .subscribe(res => {
@@ -1302,7 +1306,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeInnerBoredom(cont: any = 1) {
-    var ibR
+    let ibR
     localStorage.setItem("moduleId", JSON.stringify(56))
     this.service.clickModule(56, this.userId)
       .subscribe(res => {
@@ -1334,7 +1338,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeNatureOfI(cont: any = 1) {
-    var niR
+    let niR
     localStorage.setItem("moduleId", JSON.stringify(57))
     this.service.clickModule(57, this.userId)
       .subscribe(res => {
@@ -1366,7 +1370,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeExternalApproval(cont: any = 1) {
-    var externalapprovalR
+    let externalapprovalR
     localStorage.setItem("moduleId", JSON.stringify(91))
     this.service.clickModule(91, this.userId)
       .subscribe(res => {
@@ -1400,7 +1404,7 @@ export class RepeatUserPage implements OnInit {
 
   // understand emotions
   routeFearAnxiety(cont: any = 1) {
-    var fearResume
+    let fearResume
     localStorage.setItem("moduleId", JSON.stringify(19))
     this.service.clickModule(19, this.userId)
       .subscribe(res => {
@@ -1432,7 +1436,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeDealingWithDepression(cont: any = 1) {
-    var dealingwithdepressionResume
+    let dealingwithdepressionResume
     localStorage.setItem("moduleId", JSON.stringify(92))
     this.service.clickModule(92, this.userId)
       .subscribe(res => {
@@ -1464,7 +1468,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routePleasure(cont: any = 1) {
-    var pleasureResume
+    let pleasureResume
     localStorage.setItem("moduleId", JSON.stringify(20))
     this.service.clickModule(20, this.userId)
       .subscribe(res => {
@@ -1481,7 +1485,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("pleasureResume", pleasureResume)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent =Number.parseInt(res.MediaPercent)
         // this.freeScreens=res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -1501,7 +1505,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeSorrowandLoss(cont: any = 1) {
-    var sorrowandlossResume
+    let sorrowandlossResume
     localStorage.setItem("moduleId", JSON.stringify(60))
     this.service.clickModule(60, this.userId)
       .subscribe(res => {
@@ -1534,7 +1538,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeLoneliness(cont: any = 1) {
-    var lonelinessResume
+    let lonelinessResume
     localStorage.setItem("moduleId", JSON.stringify(61))
     this.service.clickModule(61, this.userId)
       .subscribe(res => {
@@ -1566,7 +1570,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeAnger(cont: any = 1) {
-    var angerResume
+    let angerResume
     localStorage.setItem("moduleId", JSON.stringify(14))
     this.service.clickModule(14, this.userId)
       .subscribe(res => {
@@ -1600,7 +1604,7 @@ export class RepeatUserPage implements OnInit {
 
   // transform your life 1
   routeStress(cont: any = 1) {
-    var stressResume
+    let stressResume
     localStorage.setItem("moduleId", JSON.stringify(44))
     this.service.clickModule(44, this.userId)
       .subscribe(res => {
@@ -1636,7 +1640,7 @@ export class RepeatUserPage implements OnInit {
 
 
   routeRelationships(cont: any = 1) {
-    var relationshipResume
+    let relationshipResume
     localStorage.setItem("moduleId", JSON.stringify(47))
     this.service.clickModule(47, this.userId)
       .subscribe(res => {
@@ -1668,7 +1672,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeLove(cont: any = 1) {
-    var loveResume
+    let loveResume
     localStorage.setItem("moduleId", JSON.stringify(62))
     this.service.clickModule(62, this.userId)
       .subscribe(res => {
@@ -1700,7 +1704,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeCriticism(cont: any = 1) {
-    var criticismResume
+    let criticismResume
     localStorage.setItem("moduleId", JSON.stringify(16))
     this.service.clickModule(16, this.userId)
       .subscribe(res => {
@@ -1732,7 +1736,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeSelfEsteem(cont: any = 1) {
-    var sR
+    let sR
     localStorage.setItem("moduleId", JSON.stringify(17))
     this.service.clickModule(17, this.userId)
       .subscribe(res => {
@@ -1764,7 +1768,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeLivingWithPeace(cont: any = 1) {
-    var livingwithpeaceResume
+    let livingwithpeaceResume
     localStorage.setItem("moduleId", JSON.stringify(63))
     this.service.clickModule(63, this.userId)
       .subscribe(res => {
@@ -1796,7 +1800,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeDealingWithDeath(cont: any = 1) {
-    var dealingwithdeathResume
+    let dealingwithdeathResume
     localStorage.setItem("moduleId", JSON.stringify(64))
     this.service.clickModule(64, this.userId)
       .subscribe(res => {
@@ -1829,7 +1833,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeBullying(cont: any = 1) {
-    var bullyingResume
+    let bullyingResume
     localStorage.setItem("moduleId", JSON.stringify(76))
     this.service.clickModule(76, this.userId)
       .subscribe(res => {
@@ -1862,7 +1866,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeMakingBetterDecisions(cont: any = 1) {
-    var making_better_decisionsResume
+    let making_better_decisionsResume
     localStorage.setItem("moduleId", JSON.stringify(77))
     this.service.clickModule(77, this.userId)
       .subscribe(res => {
@@ -1895,7 +1899,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeDiversityandInclusion(cont: any = 1) {
-    var diversity_and_inclusionResume
+    let diversity_and_inclusionResume
     localStorage.setItem("moduleId", JSON.stringify(143))
     this.service.clickModule(143, this.userId)
       .subscribe(res => {
@@ -1931,7 +1935,7 @@ export class RepeatUserPage implements OnInit {
 
   // transform your life 2
   routeHappiness(cont: any = 1) {
-    var hR
+    let hR
     localStorage.setItem("moduleId", JSON.stringify(23))
     this.service.clickModule(23, this.userId)
       .subscribe(res => {
@@ -1963,7 +1967,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeCommunication(cont: any = 1) {
-    var communicationR
+    let communicationR
     localStorage.setItem("moduleId", JSON.stringify(53))
     this.service.clickModule(53, this.userId)
       .subscribe(res => {
@@ -1995,7 +1999,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeOpinionsAndBeliefs(cont: any = 1) {
-    var opinionsandbeliefsResume
+    let opinionsandbeliefsResume
     localStorage.setItem("moduleId", JSON.stringify(49))
     this.service.clickModule(49, this.userId)
       .subscribe(res => {
@@ -2027,7 +2031,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeSuccessAndFailure(cont: any = 1) {
-    var successandfailureResume
+    let successandfailureResume
     localStorage.setItem("moduleId", JSON.stringify(48))
     this.service.clickModule(48, this.userId)
       .subscribe(res => {
@@ -2059,7 +2063,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeAddiction(cont: any = 1) {
-    var addictionResume
+    let addictionResume
     localStorage.setItem("moduleId", JSON.stringify(45))
     this.service.clickModule(45, this.userId)
       .subscribe(res => {
@@ -2091,7 +2095,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeFood(cont: any = 1) {
-    var foodResume
+    let foodResume
     localStorage.setItem("moduleId", JSON.stringify(46))
     this.service.clickModule(46, this.userId)
       .subscribe(res => {
@@ -2123,7 +2127,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeMoney(cont: any = 1) {
-    var moneyResume
+    let moneyResume
     localStorage.setItem("moduleId", JSON.stringify(73))
     this.service.clickModule(73, this.userId)
       .subscribe(res => {
@@ -2155,7 +2159,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeWork(cont: any = 1) {
-    var wR
+    let wR
     localStorage.setItem("moduleId", JSON.stringify(58))
     this.service.clickModule(58, this.userId)
       .subscribe(res => {
@@ -2187,7 +2191,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routeLeadership(cont: any = 1) {
-    var lR
+    let lR
     localStorage.setItem("moduleId", JSON.stringify(59))
     this.service.clickModule(59, this.userId)
       .subscribe(res => {
@@ -2219,7 +2223,7 @@ export class RepeatUserPage implements OnInit {
   }
 
   routehowcanwisdomhelp(cont: any = 1) {
-    var hcwhR
+    let hcwhR
     localStorage.setItem("moduleId", JSON.stringify(74))
     this.service.clickModule(74, this.userId)
       .subscribe(res => {
@@ -2235,7 +2239,7 @@ export class RepeatUserPage implements OnInit {
         }
         // /continue where you left
         sessionStorage.setItem("hcwhR", hcwhR)
-        this.mediaPercent = parseInt(res.MediaPercent)
+        this.mediaPercent = Number.parseInt(res.MediaPercent)
         // this.freeScreens = res.FreeScrs.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(this.freeScreens))
         localStorage.setItem("mediaPercent", JSON.parse(this.mediaPercent))
@@ -2351,7 +2355,7 @@ export class RepeatUserPage implements OnInit {
       let arr;
       result = result.forEach((element) => {
         if (element && element.length !== 0) {
-          this.x.push(element.map((a) => parseInt(a.ScrNo)));
+          this.x.push(element.map((a) => Number.parseInt(a.ScrNo)));
           arr = Array.prototype.concat.apply([], this.x);
         }
       });

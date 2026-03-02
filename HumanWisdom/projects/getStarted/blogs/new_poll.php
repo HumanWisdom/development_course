@@ -43,11 +43,7 @@
                   </button>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000_0_5 tright">
-                    <!-- 8 months ago  -->
-                  </h4>
-                </div>
+               
               </div>
             </div>
 
@@ -155,9 +151,9 @@ That’s 76% of people saying leadership failure has more to do with emotional r
   >
 </iframe>
 
-<h4 class="mtb0px blog_desc">
+<!-- <h4 class="mtb0px blog_desc">
 
-</h4>
+</h4> -->
  <h4 class="mtb0px blog_title">
                   
 Why Emotional Intelligence Matters More Than Ever

@@ -6,7 +6,50 @@
 @media (max-width: 412px) {
   .div_blog {
     width: 300px !important;
-    height: auto !important;
+    height: 310px !important;
+    overflow: hidden;
+  }
+  .div_blog img {
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+  }
+  .div_blog .row:last-child,
+  .div_blog .row:last-child [class^="col-"] {
+    height: 130px !important;
+    min-height: 130px !important;
+  }
+  .div_blog h4 {
+    margin: 20px 16px !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Consistent blog card height on mobile */
+@media (min-width: 413px) and (max-width: 767px) {
+  .owl_blog .div_blog {
+    height: 380px !important;
+    overflow: hidden;
+  }
+  .owl_blog .div_blog img {
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+  }
+  .owl_blog .div_blog .row:last-child,
+  .owl_blog .div_blog .row:last-child [class^="col-"] {
+    height: 130px !important;
+    min-height: 130px !important;
+  }
+  .owl_blog .div_blog h4 {
+    margin: 20px 16px !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    box-sizing: border-box;
   }
 }
 
@@ -1042,6 +1085,13 @@
     font-size: 27px !important;
   }
 
+  /* About Us page headings - ensure 27px on mobile */
+  section.hpt120px h1.fs_36px,
+  section.hpt120px ~ main#main section h1.fs_36px,
+  .div_subscription h1.fs_36px {
+    font-size: 27px !important;
+  }
+
   .fs_48px {
     font-size: 27px !important;
   }
@@ -1085,7 +1135,7 @@
   }
 
   .fs_15px {
-    font-size: 12px !important;
+    font-size: 15px !important;
   }
 
   .w-75 h1.fs_45px {
@@ -1299,7 +1349,7 @@
   /* Bootstrap 3 Panel - Collapsed state - chevron down */
   #accordion_faq .panel-title>a:after {
     content: "\f282";
-    font-family: "bootstrap-icons";
+    font-family: "bootstrap-icons", sans-serif;
     color: #834B66;
     font-size: 16px;
     line-height: 1;
@@ -1309,7 +1359,7 @@
   /* Bootstrap 3 Panel - Expanded state - chevron up */
   #accordion_faq .panel-title>a[aria-expanded="true"]:after {
     content: "\f286";
-    font-family: "bootstrap-icons";
+    font-family: "bootstrap-icons", sans-serif;
     color: #834B66;
     font-size: 16px;
     line-height: 1;
@@ -1330,7 +1380,7 @@
   .tc_faqs .accordion-button.collapsed::after,
   #accordion_faq .accordion-button.collapsed::after {
     content: "\f282" !important;
-    font-family: "bootstrap-icons" !important;
+    font-family: "bootstrap-icons", sans-serif !important;
     color: #834B66 !important;
     background-image: none !important;
     font-size: 16px !important;
@@ -1347,7 +1397,7 @@
   .tc_faqs .accordion-button:not(.collapsed)::after,
   #accordion_faq .accordion-button:not(.collapsed)::after {
     content: "\f286" !important;
-    font-family: "bootstrap-icons" !important;
+    font-family: "bootstrap-icons", sans-serif !important;
     color: #834B66 !important;
     background-image: none !important;
     font-size: 16px !important;
@@ -1375,6 +1425,21 @@
   .section-header .flex_block,
   .section-header .row .flex_block {
     flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* About Us - Founder parent container - remove Bootstrap column padding */
+  .section-header .col-xs-11.flex_block,
+  .section-header .col-sm-11.flex_block,
+  .section-header .col-md-11.flex_block,
+  .section-header .col-lg-11.flex_block {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   /* About Us - Content Experts section - center align names on mobile */
@@ -1396,6 +1461,293 @@
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto;
+  }
+
+  /* About Us - Founder text section - override all margin/padding classes and center align on mobile */
+  .section-header .flex_block .col-xs-9.pr0px.tleft.ta_lc.mt_m24px.ml10px,
+  .section-header .flex_block .col-sm-9.pr0px.tleft.ta_lc.mt_m24px.ml10px,
+  .section-header .flex_block .col-md-9.pr0px.tleft.ta_lc.mt_m24px.ml10px,
+  .section-header .flex_block .col-lg-9.pr0px.tleft.ta_lc.mt_m24px.ml10px,
+  .section-header .flex_block .col-9.pr0px.tleft.ta_lc.mt_m24px.ml10px,
+  .section-header .flex_block .col-xs-9,
+  .section-header .flex_block .col-sm-9,
+  .section-header .flex_block .col-md-9,
+  .section-header .flex_block .col-lg-9,
+  .section-header .flex_block .col-9 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center !important;
+  }
+
+  /* About Us - Founder name and text - center align on mobile */
+  .section-header .flex_block .col-xs-9 h3,
+  .section-header .flex_block .col-xs-9 h4,
+  .section-header .flex_block h3,
+  .section-header .flex_block h4 {
+    text-align: center !important;
+  }
+
+  /* About Us - Founder biography text - 12px font size on mobile */
+  .section-header .flex_block .col-xs-9 h4.f_12px,
+  .section-header .flex_block .col-xs-9 h4.fs_18px,
+  .section-header .flex_block h4.f_12px,
+  .section-header .flex_block h4.fs_18px {
+    font-size: 12px !important;
+    text-align: center !important;
+  }
+
+  /* About Us page ONLY - All text except headings (h1, h2, h3) to 12px on mobile */
+  /* Scope to about_us.php page using unique classes: hpt120px, section-headernew, div_inspire, div_subscription */
+  /* Target sections outside main#main (like Welcome section) - only on about_us page */
+  section.hpt120px h4,
+  section.hpt120px h5,
+  section.hpt120px h6,
+  section.hpt120px p,
+  section.hpt120px span,
+  section.hpt120px a,
+  section.hpt120px li,
+  /* Target sections inside main#main - only when combined with about_us unique classes */
+  section.hpt120px ~ main#main section h4,
+  section.hpt120px ~ main#main section h5,
+  section.hpt120px ~ main#main section h6,
+  section.hpt120px ~ main#main section p,
+  section.hpt120px ~ main#main section span,
+  section.hpt120px ~ main#main section a,
+  section.hpt120px ~ main#main section li,
+  section.hpt120px ~ main#main section td,
+  section.hpt120px ~ main#main section th,
+  section.hpt120px ~ main#main section label,
+  /* About Us specific sections */
+  /* Note: .section-headernew h2 should be 12px (not 27px) - it's descriptive text, not a heading */
+  .section-headernew h2.fs_18px,
+  .section-headernew h2,
+  .section-headernew h4,
+  .section-headernew h5,
+  .section-headernew h6,
+  .section-headernew p,
+  .section-headernew span,
+  .section-headernew a,
+  .section-headernew li,
+  .div_inspire h4,
+  .div_inspire h5,
+  .div_inspire h6,
+  .div_inspire p,
+  .div_inspire span,
+  .div_inspire a,
+  .div_inspire li,
+  .div_subscription h4,
+  .div_subscription h5,
+  .div_subscription h6,
+  .div_subscription p,
+  .div_subscription span,
+  .div_subscription a,
+  .div_subscription li {
+    font-size: 12px !important;
+  }
+
+  /* Set h1, h2, h3 to 27px font size on mobile - About Us page only */
+  /* Override fs_36px, fs_30px, fs_24px classes with higher specificity */
+  /* Target Welcome section headings */
+  section.hpt120px h1.fs_36px,
+  section.hpt120px h1.fs_30px,
+  section.hpt120px h1.fs_24px,
+  section.hpt120px h1,
+  section.hpt120px h2.fs_36px,
+  section.hpt120px h2.fs_30px,
+  section.hpt120px h2.fs_24px,
+  section.hpt120px h2,
+  section.hpt120px h3.fs_36px,
+  section.hpt120px h3.fs_30px,
+  section.hpt120px h3.fs_24px,
+  section.hpt120px h3,
+  /* Target main content headings (Our WHY, Our HOW, etc.) */
+  section.hpt120px ~ main#main section h1.fs_36px,
+  section.hpt120px ~ main#main section h1.fs_30px,
+  section.hpt120px ~ main#main section h1.fs_24px,
+  section.hpt120px ~ main#main section h1,
+  section.hpt120px ~ main#main section h2.fs_36px,
+  section.hpt120px ~ main#main section h2.fs_30px,
+  section.hpt120px ~ main#main section h2.fs_24px,
+  section.hpt120px ~ main#main section h2,
+  section.hpt120px ~ main#main section h3.fs_36px,
+  section.hpt120px ~ main#main section h3.fs_30px,
+  section.hpt120px ~ main#main section h3.fs_24px,
+  section.hpt120px ~ main#main section h3,
+  /* Target other About Us specific sections - SCOPED TO ABOUT US PAGE ONLY */
+  /* Note: .section-headernew h2 is descriptive text, should stay 12px, not 27px */
+  section.hpt120px ~ main#main .section-headernew h1.fs_36px,
+  section.hpt120px ~ main#main .section-headernew h1.fs_30px,
+  section.hpt120px ~ main#main .section-headernew h1.fs_24px,
+  section.hpt120px ~ main#main .section-headernew h1,
+  /* Exclude h2 from 27px rule - it's descriptive text, should be 12px */
+  section.hpt120px ~ main#main .section-headernew h3.fs_36px,
+  section.hpt120px ~ main#main .section-headernew h3.fs_30px,
+  section.hpt120px ~ main#main .section-headernew h3.fs_24px,
+  section.hpt120px ~ main#main .section-headernew h3,
+  section.hpt120px ~ main#main .div_inspire h1.fs_36px,
+  section.hpt120px ~ main#main .div_inspire h1.fs_30px,
+  section.hpt120px ~ main#main .div_inspire h1.fs_24px,
+  section.hpt120px ~ main#main .div_inspire h1,
+  section.hpt120px ~ main#main .div_inspire h2.fs_36px,
+  section.hpt120px ~ main#main .div_inspire h2.fs_30px,
+  section.hpt120px ~ main#main .div_inspire h2.fs_24px,
+  section.hpt120px ~ main#main .div_inspire h2,
+  section.hpt120px ~ main#main .div_inspire h3.fs_36px,
+  section.hpt120px ~ main#main .div_inspire h3.fs_30px,
+  section.hpt120px ~ main#main .div_inspire h3.fs_24px,
+  section.hpt120px ~ main#main .div_inspire h3,
+  section.hpt120px ~ main#main .div_subscription h1.fs_36px,
+  section.hpt120px ~ main#main .div_subscription h1.fs_30px,
+  section.hpt120px ~ main#main .div_subscription h1.fs_24px,
+  section.hpt120px ~ main#main .div_subscription h1,
+  section.hpt120px ~ main#main .div_subscription h2.fs_36px,
+  section.hpt120px ~ main#main .div_subscription h2.fs_30px,
+  section.hpt120px ~ main#main .div_subscription h2.fs_24px,
+  section.hpt120px ~ main#main .div_subscription h2,
+  section.hpt120px ~ main#main .div_subscription h3.fs_36px,
+  section.hpt120px ~ main#main .div_subscription h3.fs_30px,
+  section.hpt120px ~ main#main .div_subscription h3.fs_24px,
+  section.hpt120px ~ main#main .div_subscription h3 {
+    font-size: 27px !important;
+  }
+
+  /* Override: .section-headernew h2 should be 12px (descriptive text, not heading) - ABOUT US PAGE ONLY */
+  /* "We gratefully acknowledge..." text should be 12px on mobile */
+  section.hpt120px ~ main#main .section-headernew h2.fs_18px,
+  section.hpt120px ~ main#main .section-headernew h2,
+  section.hpt120px ~ main#main .section-headernew h4,
+  section.hpt120px ~ main#main .section-headernew h5,
+  section.hpt120px ~ main#main .section-headernew h6,
+  section.hpt120px ~ main#main .section-headernew p {
+    font-size: 12px !important;
+  }
+
+  /* Pathway, Daily practice, Trained coaches, Podcasts, Mindfulness, Awareness exercises, Online forum, Life stories - 15px font size on mobile - ABOUT US PAGE ONLY */
+  /* Target all h3 titles within .div_inspire and .div_au sections on About Us page */
+  section.hpt120px ~ main#main .div_inspire h3.fs_21px,
+  section.hpt120px ~ main#main .div_inspire h3,
+  section.hpt120px ~ main#main .div_au h3.fs_21px,
+  section.hpt120px ~ main#main .div_au h3 {
+    font-size: 15px !important;
+  }
+
+  /* "Watch. Read. Listen. Interact. Or just be." title - 15px font size on mobile */
+  /* Target h1 inside .section-header that comes before .div_inspire */
+  section.hpt120px ~ main#main section .section-header h1.fs_36px,
+  section.hpt120px ~ main#main section .section-header h1 {
+    font-size: 15px !important;
+  }
+  
+  /* Also target the section that contains "Watch. Read. Listen..." - it's before div_inspire */
+  section.hpt120px ~ main#main > section:not(.div_inspire):not(.div_subscription) .section-header h1.fs_36px,
+  section.hpt120px ~ main#main > section:not(.div_inspire):not(.div_subscription) .section-header h1 {
+    font-size: 15px !important;
+  }
+
+  /* Add 10px padding to Welcome to HappierMe section on mobile - About Us page only */
+  section.hpt120px .row.center_flex .col-lg-10,
+  section.hpt120px .row.center_flex .col-md-10,
+  section.hpt120px .row.center_flex .col-sm-10,
+  section.hpt120px .row.center_flex .col-xs-10,
+  section.hpt120px .row.center_flex .col-10 {
+    padding: 10px !important;
+  }
+
+  /* Add 10px padding to Our HOW section on mobile - About Us page only */
+  section.hpt120px ~ main#main section .row.center_flex .col-lg-10.col-md-10.col-sm-10.col-xs-10.col-10.p0.tcenter {
+    padding: 10px !important;
+  }
+
+  /* Specifically target the Our HOW text container - About Us page only */
+  section.hpt120px ~ main#main section .col-lg-12.col-md-12.col-sm-12.col-xs-12.col-12.p0.mt30px.mb60px {
+    padding: 10px !important;
+  }
+
+  /* Footer accordion buttons - 12px font size on mobile */
+  /* Footer - All text should be 12px on mobile */
+  /* Accordion headers: About us, Get HappierMe, Support */
+  /* Override .accordion-button font-size: 15px from main.css */
+  #accordion_footer .panel-title > a.accordion-toggle,
+  #accordion_footer .panel-title a,
+  #accordion_footer .panel-title h4,
+  #accordion_footer .accordion-button,
+  #accordion_footer .accordion-button.collapsed,
+  #accordion_footer .accordion-button:not(.collapsed),
+  #accordion_footer button.accordion-button,
+  #accordion_footer button.accordion-button.collapsed,
+  #accordion_footer button.accordion-button:not(.collapsed),
+  #accordion_footer .accordion-item .accordion-button,
+  #accordion_footer .accordion-item button.accordion-button,
+  .dfooter #accordion_footer .panel-title > a.accordion-toggle,
+  .dfooter #accordion_footer .panel-title a,
+  .dfooter #accordion_footer .panel-title h4,
+  .dfooter #accordion_footer .accordion-button,
+  .dfooter #accordion_footer .accordion-button.collapsed,
+  .dfooter #accordion_footer .accordion-button:not(.collapsed),
+  .dfooter #accordion_footer button.accordion-button,
+  .dfooter #accordion_footer button.accordion-button.collapsed,
+  .dfooter #accordion_footer button.accordion-button:not(.collapsed),
+  /* Subheadings: Our story, Blog, Testimonials, Partnership Program, Careers, etc. */
+  #accordion_footer .dfooter_links h4,
+  #accordion_footer .dfooter_links a h4,
+  #accordion_footer .panel-body h4,
+  #accordion_footer .panel-body a h4,
+  .dfooter #accordion_footer .dfooter_links h4,
+  .dfooter #accordion_footer .dfooter_links a h4,
+  .dfooter #accordion_footer .panel-body h4,
+  .dfooter #accordion_footer .panel-body a h4,
+  /* All other footer text elements */
+  #accordion_footer h1,
+  #accordion_footer h2,
+  #accordion_footer h3,
+  #accordion_footer h4,
+  #accordion_footer h5,
+  #accordion_footer h6,
+  #accordion_footer p,
+  #accordion_footer span,
+  #accordion_footer a,
+  .dfooter #accordion_footer h1,
+  .dfooter #accordion_footer h2,
+  .dfooter #accordion_footer h3,
+  .dfooter #accordion_footer h4,
+  .dfooter #accordion_footer h5,
+  .dfooter #accordion_footer h6,
+  .dfooter #accordion_footer p,
+  .dfooter #accordion_footer span,
+  .dfooter #accordion_footer a {
+    font-size: 12px !important;
+  }
+
+  /* Force override for accordion-button - must be after all other rules */
+  /* Target button element directly with maximum specificity */
+  /* This overrides .accordion-button { font-size: 15px; } from main.css */
+  button#accordion_footer.accordion-button,
+  #accordion_footer button.accordion-button.collapsed,
+  #accordion_footer button.accordion-button:not(.collapsed),
+  #accordion_footer .accordion-item button.accordion-button.collapsed,
+  #accordion_footer .accordion-item button.accordion-button:not(.collapsed),
+  .dfooter button#accordion_footer.accordion-button,
+  .dfooter #accordion_footer button.accordion-button.collapsed,
+  .dfooter #accordion_footer button.accordion-button:not(.collapsed),
+  .dfooter #accordion_footer .accordion-item button.accordion-button.collapsed,
+  .dfooter #accordion_footer .accordion-item button.accordion-button:not(.collapsed),
+  /* Also target any accordion-button within footer - maximum specificity */
+  .dfooter .accordion-button,
+  .dfooter button.accordion-button,
+  #accordion_footer .accordion-button,
+  #accordion_footer button.accordion-button,
+  /* Target the actual button element with class accordion-button inside footer */
+  footer .accordion-button,
+  footer button.accordion-button,
+  .dfooter footer .accordion-button,
+  .dfooter footer button.accordion-button {
+    font-size: 12px !important;
   }
 }
 
@@ -2158,11 +2510,14 @@
   }
 
   .banner_close {
-    flex-shrink: 0 !important;
+    /* flex-shrink: 0 !important;
     width: 16px !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: center !important; */
+    padding-top: 11px;
+    max-width: 21px;
+    padding-right: 0px !important;
   }
 
   .banner_close img {
@@ -2241,7 +2596,7 @@
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;
-    margin-left: -10px;
+    margin-left: -22px;
   }
 
   /* Mobile footer accordion icons - white - OVERRIDE ALL BASE STYLES */
@@ -2323,4 +2678,240 @@
   #accordion_footer .bi-chevron-up {
     color: #ffffff !important;
   }
-}
+
+  /* CRITICAL: Force 12px font size for footer accordion buttons - must be last rule */
+  /* This overrides .accordion-button { font-size: 15px; } from main.css */
+  /* Target all states: normal, collapsed, not-collapsed */
+  .dfooter .accordion-button,
+  .dfooter button.accordion-button,
+  .dfooter button.accordion-button.collapsed,
+  .dfooter button.accordion-button:not(.collapsed),
+  #accordion_footer .accordion-button,
+  #accordion_footer button.accordion-button,
+  #accordion_footer button.accordion-button.collapsed,
+  #accordion_footer button.accordion-button:not(.collapsed),
+  #accordion_footer .accordion-item .accordion-button,
+  #accordion_footer .accordion-item button.accordion-button,
+  #accordion_footer .accordion-item button.accordion-button.collapsed,
+  #accordion_footer .accordion-item button.accordion-button:not(.collapsed),
+  .dfooter #accordion_footer .accordion-button,
+  .dfooter #accordion_footer button.accordion-button,
+  .dfooter #accordion_footer button.accordion-button.collapsed,
+  .dfooter #accordion_footer button.accordion-button:not(.collapsed),
+  .dfooter #accordion_footer .accordion-item .accordion-button,
+  .dfooter #accordion_footer .accordion-item button.accordion-button,
+  .dfooter #accordion_footer .accordion-item button.accordion-button.collapsed,
+  .dfooter #accordion_footer .accordion-item button.accordion-button:not(.collapsed) {
+    font-size: 12px !important;
+  }
+
+  /* Blog page - Mobile layout: Vertical stacking - Image row, Button row, Text row */
+  /* Target blog cards container */
+  .blog_links .col-lg-4,
+  .blog_links .col-md-4,
+  .blog_links .col-sm-12,
+  .blog_links .col-xs-12,
+  .blog_links .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 30px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Make the link a block element for proper stacking */
+  .blog_links a {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Image row - full width, first row */
+  .blog_links a > .row:first-child {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .blog_links a > .row:first-child > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 15px !important;
+  }
+
+  .blog_links a > .row:first-child img.img_blogs,
+  .blog_links a > .row:first-child img.img-responsive.img_blogs {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 335px !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+    display: block !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    vertical-align: top !important;
+  }
+
+  /* Button/tag row - second row - override mt20px class completely */
+  .blog_links a > .row.mt20px,
+  .blog_links .col-lg-4 a > .row.mt20px,
+  .blog_links .col-md-4 a > .row.mt20px,
+  .blog_links .col-sm-12 a > .row.mt20px,
+  .blog_links .col-xs-12 a > .row.mt20px,
+  .blog_links .col-12 a > .row.mt20px {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    text-align: left !important;
+  }
+
+  .blog_links a > .row.mt20px > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    text-align: left !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Left align the button itself and remove all margins - override margin: 4px from main.css */
+  .blog_links a > .row.mt20px button.btn_blogp,
+  .blog_links .col-lg-4 a > .row.mt20px button.btn_blogp,
+  .blog_links .col-md-4 a > .row.mt20px button.btn_blogp,
+  .blog_links .col-sm-12 a > .row.mt20px button.btn_blogp,
+  .blog_links .col-xs-12 a > .row.mt20px button.btn_blogp,
+  .blog_links .col-12 a > .row.mt20px button.btn_blogp {
+    text-align: left !important;
+    margin: 0 !important;
+    margin-right: auto !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+
+  /* Title row - third row (row without mt20px class and not first) */
+  .blog_links a > .row:not(:first-child):not(.mt20px) {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Reduce spacing in title h4 element - override mt20px and mb10px classes and left align */
+  .blog_links a > .row:not(:first-child):not(.mt20px) h4,
+  .blog_links a > .row:not(:first-child):not(.mt20px) h4.mt20px,
+  .blog_links a > .row:not(:first-child):not(.mt20px) h4.mb10px,
+  .blog_links .col-lg-4 a > .row:not(:first-child):not(.mt20px) h4.mt20px.mb10px,
+  .blog_links .col-md-4 a > .row:not(:first-child):not(.mt20px) h4.mt20px.mb10px,
+  .blog_links .col-sm-12 a > .row:not(:first-child):not(.mt20px) h4.mt20px.mb10px,
+  .blog_links .col-xs-12 a > .row:not(:first-child):not(.mt20px) h4.mt20px.mb10px,
+  .blog_links .col-12 a > .row:not(:first-child):not(.mt20px) h4.mt20px.mb10px {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Ensure title div is also left-aligned */
+  .blog_links a > .row:not(:first-child):not(.mt20px) > div {
+    text-align: left !important;
+  }
+
+  /* Also override any padding that might add spacing */
+  .blog_links a > .row:first-child > div,
+  .blog_links a > .row.mt20px > div,
+  .blog_links a > .row:not(:first-child):not(.mt20px) > div {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .blog_links a > .row:not(:first-child):not(.mt20px) > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  /* Force White Plus/Minus Icons on Mobile Accordion Footer - Exact match from about_us.php */
+  /* CRITICAL: Override ALL SVG image rules from main.css with highest specificity */
+  /* This must override: #accordion_footer .panel-title>a:after { content: url(...svg...) } */
+  #accordion_footer .panel-title > a::after,
+  #accordion_footer .panel-title > a.accordion-toggle::after,
+  .dfooter #accordion_footer .panel-title > a::after,
+  .dfooter #accordion_footer .panel-title a::after,
+  .panel-group#accordion_footer .panel-title > a::after {
+    content: "+" !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: 24px !important;
+    line-height: 24px !important;
+    background: none !important;
+    background-image: none !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    float: right !important;
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: none !important;
+  }
+
+  #accordion_footer .panel-title > a[aria-expanded="true"]::after,
+  #accordion_footer .panel-title > a.accordion-toggle[aria-expanded="true"]::after,
+  .dfooter #accordion_footer .panel-title > a[aria-expanded="true"]::after,
+  .dfooter #accordion_footer .panel-title a[aria-expanded="true"]::after,
+  .panel-group#accordion_footer .panel-title > a[aria-expanded="true"]::after {
+    content: "-" !important;
+    color: #ffffff !important;
+    background: none !important;
+    background-image: none !important;
+  }
+
+  /* New override for Bootstrap 5 .accordion-button if present - from about_us.php */
+  #accordion_footer .accordion-button::after,
+  #accordion_footer button.accordion-button::after,
+  .dfooter #accordion_footer .accordion-button::after,
+  .dfooter #accordion_footer button.accordion-button::after {
+    background-image: none !important;
+    content: "+" !important;
+    color: #ffffff !important;
+    font-size: 24px !important;
+    font-weight: 300 !important;
+    line-height: 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #accordion_footer .accordion-button[aria-expanded="true"]::after,
+  #accordion_footer .accordion-button:not(.collapsed)::after,
+  #accordion_footer button.accordion-button[aria-expanded="true"]::after,
+  #accordion_footer button.accordion-button:not(.collapsed)::after,
+  .dfooter #accordion_footer .accordion-button[aria-expanded="true"]::after,
+  .dfooter #accordion_footer .accordion-button:not(.collapsed)::after,
+  .dfooter #accordion_footer button.accordion-button[aria-expanded="true"]::after,
+  .dfooter #accordion_footer button.accordion-button:not(.collapsed)::after {
+    content: "-" !important;
+    color: #ffffff !important;
+    background-image: none !important;
+  }

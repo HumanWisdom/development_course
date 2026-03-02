@@ -121,7 +121,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     const titleParam = routeParams.get('title') || queryParams.get('title') || localStorage.getItem('wisdomvideotitle');
 
     this.linkcode = videolinkParam ?? '';
-    this.videoTitle = titleParam ?? localStorage.getItem('wisdomvideotitle') ?? '';
+    this.videoTitle = titleParam ? decodeURIComponent(titleParam) : (localStorage.getItem('wisdomvideotitle') ?? '');
 
     if (url.includes('videopage')) {
       this.wisdomshort = false;
@@ -201,7 +201,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     const videolinkParam = routeParams.get('videolink') || queryParams.get('videolink') || localStorage.getItem('wisdomvideolink');
     const titleParam = routeParams.get('title') || queryParams.get('title') || localStorage.getItem('wisdomvideotitle');
     this.linkcode = videolinkParam ?? '';
-    this.videoTitle = titleParam ?? localStorage.getItem('wisdomvideotitle') ?? '';
+    this.videoTitle = titleParam ? decodeURIComponent(titleParam) : (localStorage.getItem('wisdomvideotitle') ?? '');
 
     const fromIndex = localStorage.getItem('fromIndex') === 'true';
     this.fromIndex = fromIndex;
@@ -395,7 +395,16 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   goBack(): void {
     const url = this.navigationService.navigateToBackLink();
-    url ? this.router.navigate([url]) : this.location.back();
+    if (url == null || url.includes('home') || url.includes('dashboard')) {
+      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null') {
+        this.router.navigateByUrl(navFrom);
+      } else {
+        this.location.back();
+      }
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
   onSwipeUp(): void {

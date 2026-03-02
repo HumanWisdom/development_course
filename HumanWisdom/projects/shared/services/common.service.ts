@@ -205,7 +205,7 @@ export class CommonService {
           localStorage.setItem("lastvisited", 'T')
         }
         sessionStorage.setItem("pgResume", pgResume)
-        mediaPercent = parseInt(res.MediaPercent);
+        mediaPercent =Number.parseInt(res.MediaPercent);
         // let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
         // localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
 
@@ -386,7 +386,7 @@ export class CommonService {
     this.getBookmarks(userid)
       .subscribe(res => {
         let bookmarks = res
-        bookmarks = bookmarks.map(a => parseInt(a.ScrNo));
+        bookmarks = bookmarks.map(a => Number.parseInt(a.ScrNo));
         localStorage.setItem("bookmarkList", JSON.stringify(bookmarks))
       })
 
@@ -609,11 +609,27 @@ export class CommonService {
     this.getBookmarks(this.userId)
       .subscribe(res => {
         this.bookmarks = res
-        this.bookmarks = this.bookmarks.map(a => parseInt(a.ScrNo));
+        this.bookmarks = this.bookmarks.map(a => Number.parseInt(a.ScrNo));
         localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarks))
       })
   }
  
+  GetMicrolearningList(programId: any): Observable<any> {
+    return this.http.get(this.path + `/GetMicrolearningListing/${programId}`);
+  }
+
+  clickMicrolearning(id: any): Observable<any> {
+    return this.http.post(this.path + `/clickMicrolearning/${id}`, null);
+  }
+
+  GetMicrolearningScreens(id: any): Observable<any> {
+    return this.http.get(this.path + `/GetMicrolearningScreens/${id}`);
+  }
+  
+  getMicrolearningsEndScreens(id: any): Observable<any> {
+    return this.http.get(this.path + `/getMicrolearningsEndScreens/${id}`);
+  }
+
   GetLastVisitedScreen(data: any,programId:any): Observable<any> {
     return this.http.get(this.path + `/GetLastVisitedScreen/${data}/${programId}`)
   }

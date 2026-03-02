@@ -1,79 +1,146 @@
-<app-course-header [bg_tn]="'bg_stake'" [bg]="'bg_FFF7E6'"></app-course-header>
+<div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"
+        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+            <a (click)="backToDashboard()">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0"
+                    *ngIf="!isAdults" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0"
+                    *ngIf="isAdults" />
+            </a>
+        </div>
 
-<div class="right_col mc_01_v3">
-    
-    <div class="cw100p">
-        <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw learning">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+        </div>
 
-                <div [ngSwitch]="contentData.layout">
-
-                    <!-- Layout 1: Image Top -->
-                    <div *ngSwitchCase="1">
-                        <div class="row mb20px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <img [src]="contentData.imgUrl" class="img-responsive w100" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h3 class="mt0px fs_36px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                    {{contentData.title}}
-                                </h3>
-                                <p class="fs_18px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
-                                    {{contentData.description}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Layout 2: Image Center -->
-                    <div *ngSwitchCase="2">
-                        <div class="row mb10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h3 class="mt0px fs_36px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                    {{contentData.title}}
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="row mb20px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <img [src]="contentData.imgUrl" class="img-responsive w100" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <p class="fs_18px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
-                                    {{contentData.description}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Layout 3: Image Bottom -->
-                    <div *ngSwitchCase="3">
-                        <div class="row mb10px">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <h3 class="mt0px fs_36px fw_400 lh_130p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                                    {{contentData.title}}
-                                </h3>
-                                <p class="fs_18px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'">
-                                    {{contentData.description}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                <img [src]="contentData.imgUrl" class="img-responsive w100" />
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+            <a id="btnShare" (click)="share()">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share_round.svg" alt="" class="p0"
+                    *ngIf="!isAdults" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg" alt="" class="p0"
+                    *ngIf="isAdults" />
+            </a>
         </div>
     </div>
 </div>
 
-<app-course-footer (nextEmitter)="next()" (previousEmitter)="goBack()"></app-course-footer>
+
+<div class="right_col mc_01_v3">
+    <div class="cw100p">
+        <div class="row center_flex">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw"
+                [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+
+                <div class="mc_progress_container">
+                    <div class="mc_progress_bar" [style.width.%]="getProgressPercentage()"></div>
+                </div>
+
+
+                <div class="row" *ngIf="isLoading">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tcenter mt20px">
+                        <h4 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Loading...</h4>
+                    </div>
+                </div>
+
+                <div class="learning" *ngIf="!isLoading" (touchstart)="handleTouchStart($event)"
+                    (touchmove)="handleTouchMove($event)" (touchend)="handleTouchEnd($event)"
+                    (mousedown)="handleTouchStart($event)" (mousemove)="handleTouchMove($event)"
+                    (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
+
+                    <div class="mc_content_wrapper" [style.transform]="getTransform()"
+                        [class.is-animating]="!isDragging && isAnimating">
+
+                        <div class="mc_scroll_content" *ngFor="let screen of screensList; let i = index">
+                            <div [ngSwitch]="i === 0 ? 1 : 2">
+                                <div *ngSwitchCase="1">
+                                    <div class="row mb20px" *ngIf="screen.ImageUrl">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="screen.ImageUrl" class="img-responsive w100" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <h3 class="mt0px fs_36px fw_400 lh_130p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                                {{screen.title}}
+                                            </h3>
+                                            <div class="fs_15px fw_400 lh_140p contentdiv"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
+                                                (click)="handleContentClick($event)"
+                                                (keydown)="handleContentClick($event)"
+                                                [innerHTML]="sanitizeContent(screen.content)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div *ngSwitchCase="2">
+                                    <div class="row mb10px">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <h3 class="mt0px fs_36px fw_400 lh_130p"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                                                {{screen.title}}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="row mb20px" *ngIf="screen.ImageUrl">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <img [src]="screen.ImageUrl" class="img-responsive w100" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                            <div class="fs_15px fw_400 lh_140p contentdiv"
+                                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_7'"
+                                                (click)="handleContentClick($event)"
+                                                (keydown)="handleContentClick($event)"
+                                                [innerHTML]="sanitizeContent(screen.content)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Takeaway / Resource Screen as the last slide -->
+                        <div class="mc_scroll_content">
+                            <app-micro-learning-end [isSubComponent]="true" [contentId]="contentId"
+                                (journalStatus)="handleJournalStatus($event)"></app-micro-learning-end>
+                        </div>
+                    </div>
+
+                    <div class="mc_page_indicator">
+                        {{currentScreenIndex + 1}}/{{screensList.length + 1}}
+                    </div>
+                </div>
+
+                <div class="mc_footer_container" *ngIf="!isLoading">
+                    <div class="row center_flex">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw p0">
+                            <div class="mc_footer_section" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+                                <div class="mc_inner_footer_nav">
+                                    <a class="nav_btn" [class.active]="currentScreenIndex > 0"
+                                        (click)="goBack()">Prev.</a>
+
+                                    <div class="mc_inner_pagination">
+                                        <span class="dot" *ngFor="let screen of screensList; let i = index"
+                                            [class.active]="i === currentScreenIndex"></span>
+                                        <span class="dot"
+                                            [class.active]="currentScreenIndex === screensList.length"></span>
+                                    </div>
+
+                                    <a class="nav_btn" [class.active]="currentScreenIndex < screensList.length"
+                                        (click)="next()"
+                                        [style.opacity]="currentScreenIndex === screensList.length ? '0.5' : '1'">Next</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-modal *ngIf="showSuccessPopup" (closeEvent)="closeSuccessPopup($event)" [okText]="'Continue'"
+    [content]="'Successfully added'" [enableCancel]="false">
+</app-modal>

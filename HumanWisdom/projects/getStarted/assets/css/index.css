@@ -1,2385 +1,2480 @@
-   .h5 {
-     margin-top: -8px;
-   }
+body {
+  overflow-x: hidden !important;
+}
 
-   .color_beige {
-     background: #FFF4E6;
-   }
+.h5 {
+  margin-top: -8px;
+}
 
-   .card_gap {
-     gap: 45px;
-   }
+.color_beige {
+  background: #FFF4E6;
+}
 
-   .w-40p {
-     width: 40%
-   }
+.card_gap {
+  gap: 45px;
+}
 
-   .w-45p {
-     width: 45%
-   }
+.w-40p {
+  width: 40%
+}
 
-   .hr-darker {
-     border-width: 1px;
-     border-color: rgba(0, 0, 0, 0.25);
-     opacity: 1;
-   }
+.w-45p {
+  width: 45%
+}
 
-   .owl-nav-w {
-     width: 84% !important;
-   }
+.hr-darker {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
 
-   .sap-mt {
-     margin-top: -20px;
-   }
+.owl-nav-w {
+  width: 84% !important;
+}
 
-   @media screen and (max-width: 768px) {
-     .txt-left {
-       text-align: left !important;
-     }
+.sap-mt {
+  margin-top: -20px;
+}
 
-     .subs_mobile_view {
-       margin-right: 48%;
-       padding: 8px;
+@media screen and (max-width: 768px) {
+  .txt-left {
+    text-align: left !important;
+  }
 
-     }
+  .subs_mobile_view {
+    margin-right: 48%;
+    padding: 8px;
 
-     .mobile_view_topic_tile {
-       margin-bottom: 10px !important;
-     }
+  }
 
-     .web_home_divlanding {
-       width: 104% !important;
-       padding: 40px 10px 5px 10px !important;
-     }
+  .pl10px {
+    padding-left: 10px !important;
+  }
 
-     /* Left align text on tiles - vertically centered, horizontally left-aligned */
-     .btn-primarypop {
-       text-align: left !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: space-between !important;
-       flex-direction: row;
-       padding-left: 14px;
-       padding-right: 14px;
-     }
+  .pl20px {
+    padding-left: 20px !important;
+  }
 
-     .btn-primarypop .fa-angle-right {
-       float: none !important;
-       display: inline-block;
-       margin-left: auto;
-       vertical-align: middle;
-       align-self: center;
-     }
+  .btn_wh {
+    width: 295px !important;
+    height: 48px !important;
+  }
 
-     .mobile_view_topic_parent {
-       margin-top: 0px !important;
-     }
+  .mobile_view_topic_tile {
+    margin-bottom: 10px !important;
+  }
 
-     .mobile_view_topic {
-       margin-left: 32px !important
-     }
+  .web_home_divlanding {
+    width: 100% !important;
+    padding: 40px 10px 5px 10px !important;
+  }
 
-     .mobile_view_testimonial {
-       margin-left: 30px !important
-     }
+  /* Left align text on tiles - vertically centered, horizontally left-aligned */
+  .btn-primarypop {
+    text-align: left !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-direction: row;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 
-     .sap {
-       width: 60% !important;
-     }
+  .btn-primarypop .fa-angle-right {
+    float: none !important;
+    display: inline-block;
+    margin-left: auto;
+    vertical-align: middle;
+    align-self: center;
+  }
 
-     .btn_tff_width {
-       margin: 0;
-       border: 0;
-       width: 345px;
-       height: 65px;
-       border-radius: 36px;
-     }
+  .mobile_view_topic_parent {
+    margin-top: 0px !important;
+  }
 
-     .btn_subscription {
-       width: 300px !important;
+  .mobile_view_topic {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
-       gap: 24px;
-     }
+  .mobile_view_testimonial {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
-     .fs27px {
-       font-size: 27px !important;
-     }
+  .sap {
+    width: 60% !important;
+  }
 
-     .w-335px {
-       width: 335px !important;
-     }
+  .btn_tff_width {
+    margin: 0;
+    border: 0;
+    width: 100%;
+    max-width: 345px;
+    height: 65px;
+    border-radius: 36px;
+  }
 
-     .mbtn_landing {
-       width: 335px;
-       height: 48px;
-     }
+  .btn_subscription {
+    width: 300px !important;
 
-     .fs_18px {
-       font-size: 18px !important;
+    gap: 24px;
+  }
 
-     }
+  .fs27px {
+    font-size: 27px !important;
+  }
 
-     .w-335px {
-       width: 335px
-     }
+  .w-335px {
+    width: 100% !important;
+    max-width: 335px !important;
+  }
 
-     .f_15px {
-       font-size: 15px !important;
-     }
+  .mbtn_landing {
+    width: 100%;
+    max-width: 335px;
+    height: 48px;
+  }
 
-     .pr15px {
-       padding-right: 13px !important;
-     }
+  .fs_18px {
+    font-size: 18px !important;
 
-     .f_21px {
-       font-size: 21px !important;
-     }
+  }
 
-     .h_48px {
-       height: 48px !important;
-     }
+  .w-335px {
+    width: 335px
+  }
 
-     /* .msection_header {
+  .f_15px {
+    font-size: 15px !important;
+  }
+
+  .pr15px {
+    padding-right: 13px !important;
+  }
+
+  .f_21px {
+    font-size: 21px !important;
+  }
+
+  .h_48px {
+    height: 48px !important;
+  }
+
+  /* .msection_header {
         color: rgba(131, 75, 102, 1) !important;
       } */
 
-     .f_24px {
-       font-size: 24px !important;
-     }
-
-     .d_none {
-       display: none !important
-     }
-
-     .img_health {
-       width: 370px !important;
-       max-width: 348px !important;
-       border-radius: 10px !important;
-     }
-
-     .mt_mb {
-       margin-top: 20px;
-       margin-bottom: 15px;
-     }
-
-     .card_center {
-       text-align: center !important;
-       padding: 0px !important;
-     }
-
-     .f_18px {
-       font-size: 18px !important;
-     }
-
-     .mdiv_coaches {
-       width: 190px !important;
-       height: 245px !important;
-
-       padding-left: 15px;
-     }
-
-     .wh_160px {
-       width: 160px;
-       height: 160px;
-     }
-
-     .h_160px {
-       height: 160px !important;
-     }
-
-     .contact_coaches {
-       font-size: 15px !important;
-       font-weight: 600;
-     }
-
-     .tool_tabs::-webkit-scrollbar {
-       display: none;
-     }
-
-     .f_12px {
-       font-size: 12px !important;
-     }
-
-     .owl-stage-outer {
-       overflow: scroll !important
-     }
-
-     .owl-stage-outer::-webkit-scrollbar {
-       display: none;
-     }
-
-     .w-382px {
-       width: 356px !important;
-     }
-
-     .p-18px {
-       padding-left: 18px !important;
-     }
-
-   }
-
-   .h5 {
-     margin-top: -8px;
-   }
-
-   .w-980px {
-     width: 980px
-   }
-
-   .j-center {
-     justify-content: center
-   }
-
-   .capsule {
-     position: absolute;
-   }
-
-   .capsule-content {
-     width: 137px;
-     height: 39px;
-   }
-
-   .w-420px {
-     width: 420px
-   }
-
-   .bg-white {
-     background: #FFF
-   }
-
-   .br-10px {
-     border-radius: 10px
-   }
-
-   .icon-subcription {
-     width: 26px;
-     height: 24px;
-   }
-
-   .btn_subscription {
-     position: relative;
-     /* ensures capsule is placed inside */
-   }
-
-   .capsule {
-     position: absolute;
-     top: 0;
-     /* stick to top */
-     right: 0;
-     /* stick to right */
-     transform: translateY(-50%);
-     /* lift it up by half its own height */
-   }
-
-   .capsule h6 {
-     border-radius: 10px;
-     font-size: 12px;
-     font-weight: 600;
-     background: #fff;
-     color: #325795;
-     padding: 4px 20px 4px 20px !important;
-     white-space: nowrap;
-   }
-
-   .nav-tabs .nav-link {
-     width: 127px;
-     height: 26px;
-     background: #EEA170 !important;
-     /* default */
-     color: #fff !important;
-     border: none !important;
-     /* removes default bootstrap border */
-     border-radius: 4px;
-     /* optional rounded corners */
-     text-align: center;
-     line-height: 26px;
-     /* vertically center text */
-     padding: 0;
-     /* ensures fixed height works */
-   }
-
-   .nav-tabs .nav-link.active {
-     background: #ED7D6F !important;
-     /* active state */
-     color: #fff !important;
-   }
-
-   .pt-142px {
-     padding-top: 50px
-   }
-
-   .tool_video {
-     width: 330px;
-     /* height: 47px; */
-     /* left: 20px; */
-     top: 12px;
-   }
-
-   .community_img {
-     width: 318px !important;
-     height: 444px !important;
-     padding-bottom: 15px;
-   }
-
-   .guided_pgm_img {
-     width: 335px !important;
-     height: 366px;
-   }
-
-   .mt-56px {
-     margin-top: 20px
-   }
-
-   .h-500px {
-     height: 500px;
-
-   }
-
-   .p-50px {
-     padding: 50px !important
-   }
-
-   .pt-20px {
-     padding-top: 20px;
-   }
-
-   .h-335px {
-     height: 335px;
-   }
-
-   @media screen and (max-width: 768px) {
-     .subs_mobile_view {
-       margin-right: 48%;
-       padding: 8px;
-
-     }
-
-     .mobile_view_topic_tile {
-       margin-bottom: 10px !important;
-     }
-
-     .tool_video {
-       width: 313px;
-       height: 47px;
-       left: 0px;
-       top: 0px;
-     }
-     .btn-h{
-      height:45px
-
-     }
-     .cml40px{
-      margin-top: 20px!important;
-     }
-     .h-500px {
-       height: 630px !important
-     }
-
-     .p-50px {
-       padding: 20px !important
-     }
-
-     .pt-142px {
-       padding-top: 0px !important
-     }
-
-     .pt-20px {
-       padding-top: 0px !important
-     }
-
-     .mobile_view_topic_parent {
-       margin-top: 0px !important;
-     }
-
-     .m-cvideo {
-       width: 90% !important;
-     }
-
-     .mobile_view_topic {
-       margin-left: 28px !important
-     }
-
-     .mobile_view_testimonial {
-       margin-left: 30px !important
-     }
-
-     .sap {
-       width: 60% !important;
-     }
-
-     .btn_tff_width {
-       margin: 0;
-       border: 0;
-       width: 345px;
-       height: 65px;
-       border-radius: 36px;
-     }
-
-     .pb_4px {
-       padding-bottom: 4px !important;
-     }
-
-     .btn_subscription {
-       width: 250px !important;
-
-       gap: 24px;
-     }
-
-     .pl-0 {
-       padding-left: 0px !important
-     }
-
-     .fs27px {
-       font-size: 27px !important;
-     }
-
-     .w-335px {
-       width: 335px !important;
-     }
-
-     .mbtn_landing {
-       width: 335px;
-       height: 48px;
-     }
-
-     .fs_18px {
-       font-size: 18px !important;
-
-     }
-
-     .w-335px {
-       width: 335px
-     }
-
-     .f_15px {
-       font-size: 15px !important;
-     }
-
-     .f_21px {
-       font-size: 21px !important;
-     }
-
-     .h_48px {
-       height: 48px !important;
-     }
-
-     .msection_header {
-       color: rgba(131, 75, 102, 1) !important;
-     }
-
-     .f_24px {
-       font-size: 24px !important;
-     }
-
-     .d_none {
-       display: none !important
-     }
-
-     .img_health {
-       width: 370px !important;
-       max-width: 348px !important;
-       border-radius: 10px !important;
-     }
-
-     .mt_mb {
-       margin-top: 20px;
-       margin-bottom: 15px;
-     }
-
-     .card_center {
-       text-align: center !important;
-       padding: 0px !important;
-     }
-
-     .f_18px {
-       font-size: 18px !important;
-     }
-
-     .mdiv_coaches {
-       width: 190px !important;
-       height: 245px !important;
-       padding-left: 15px;
-     }
-
-     .wh_160px {
-       width: 160px;
-       height: 160px;
-     }
-
-     .h_160px {
-       height: 160px !important;
-     }
-
-     .contact_coaches {
-       font-size: 15px !important;
-       font-weight: 600;
-     }
-
-     .tool_tabs::-webkit-scrollbar {
-       display: none;
-     }
-
-     .f_12px {
-       font-size: 12px !important;
-     }
-
-     .owl-stage-outer {
-       overflow: scroll !important
-     }
-
-     .owl-stage-outer::-webkit-scrollbar {
-       display: none;
-     }
-
-     .w-382px {
-       width: 356px !important;
-     }
-
-     .p-18px {
-       padding-left: 0px !important;
-       padding-right: 0px !important;
-       text-align: center;
-     }
-
-     .m-popup {
-       max-width: 100%;
-       width: 100%;
-       height: auto;
-       display: block;
-     }
-
-     .f_24px {
-       font-size: 24px;
-     }
-
-     .m_auto {
-       margin: 0 auto;
-     }
-
-     /* Fix alignment for title, subtitle and button on mobile */
-     .w-75 {
-       width: 100% !important;
-       margin: 0 auto;
-       text-align: center;
-     }
-
-     .land-video-sec {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       margin: 0 auto;
-       padding: 0 20px;
-     }
-
-     .cml40px {
-       text-align: center;
-       padding: 0 20px;
-     }
-
-     .ddflex_mblock_a {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-     }
-
-     .fw_600p {
-       font-Weight: 600 !important
-     }
-
-     .icon-subcription {
-       max-width: 20px;
-       height: auto;
-     }
-
-     .fs_18px {
-       font-size: 14px;
-       line-height: 1.4;
-     }
-
-     .d-flex {
-       flex-direction: row !important;
-       text-align: center;
-     }
-
-     .d-flex span {
-       white-space: normal;
-       word-wrap: break-word;
-     }
-
-     h2.fs_30px {
-       font-size: 22px !important;
-       line-height: 1.3 !important;
-       margin-bottom: 15px;
-       text-align: center;
-     }
-
-     /* Change layout of features to vertical - center aligned for subscription */
-     .div_subscriptionnew .d-flex.flex-md-row {
-       flex-direction: column !important;
-       align-items: center !important;
-       text-align: center !important;
-       gap: 12px !important;
-       justify-content: center !important;
-     }
-
-     /* General flex-md-row rule (keep for other sections) */
-     .d-flex.flex-md-row {
-       flex-direction: column !important;
-       align-items: center !important;
-       text-align: center;
-       gap: 10px !important;
-     }
-
-     /* Feature icons */
-     .icon-subcription {
-       max-width: 20px;
-       height: auto;
-       margin-right: 8px;
-     }
-
-     /* Feature text */
-     .fs_18px {
-       font-size: 14px !important;
-       line-height: 1.4 !important;
-       white-space: normal;
-       text-align: center;
-     }
-
-     /* Newsletter popup alignment fixes */
-     .product_view .modal-dialog {
-       margin: 0 auto !important;
-       padding: 0 !important;
-       left: 0 !important;
-       right: 0 !important;
-       transform: none !important;
-       width: 90% !important;
-       max-width: 90% !important;
-       position: fixed;
-       top: 2% !important;
-     }
-
-     .product_view .modal-content {
-       margin: 0 auto;
-       text-align: center;
-       width: 100% !important;
-       padding: 15px;
-     }
-
-     .product_view .modal.show .modal-dialog {
-       transform: none !important;
-     }
-
-     .product_view .modal-header {
-       text-align: center;
-       padding: 20px 15px;
-     }
-
-     .product_view .back1 {
-       text-align: center;
-     }
-
-     .product_view .box {
-       text-align: center;
-     }
-
-     .product_view .p10 {
-       padding: 10px !important;
-       text-align: center;
-     }
-
-     .product_view .ta_lc {
-       text-align: center !important;
-     }
-
-     .product_view .center_flex {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       text-align: center;
-     }
-
-     .product_view .input_parent {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       margin: 0 auto;
-     }
-
-     .product_view .div_input {
-       width: 100%;
-       max-width: 100%;
-     }
-
-     .product_view .div_input .form-control {
-       width: 100%;
-       text-align: left;
-     }
-
-     .product_view .btn_tff {
-       width: 100%;
-       max-width: 100%;
-       margin: 0 auto;
-     }
-
-     .product_view .col-lg-5,
-     .product_view .col-md-5,
-     .product_view .col-12 {
-       text-align: center;
-     }
-
-     .product_view .col-lg-7,
-     .product_view .col-md-7 {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       margin: 0 auto 20px;
-     }
-
-     /* Reduce newsletter popup image height to prevent stretching */
-     .product_view .col-lg-7 img,
-     .product_view .col-md-7 img,
-     .product_view .col-12 img {
-       max-height: 200px !important;
-       height: auto !important;
-       width: auto !important;
-       max-width: 100%;
-       object-fit: contain;
-     }
-
-     /* Fix alignment for all modals (exampleModal, exampleModalbuild, etc.) */
-     .modal-dialog {
-       margin: 0 auto !important;
-       padding: 0 !important;
-       width: 90% !important;
-       max-width: 90% !important;
-     }
-
-     .modal-content1 {
-       width: 100% !important;
-       margin: 0 auto;
-       text-align: center;
-       padding: 15px;
-     }
-
-     .modal-content1 .popuptitle {
-       text-align: center !important;
-       margin: 8px auto !important;
-     }
-
-     .modal-content1 .para {
-       text-align: center !important;
-       margin: 8px auto !important;
-     }
-
-     .modal-content1 .review {
-       text-align: left !important;
-       padding-right: 0 !important;
-       margin: 8px 0 !important;
-     }
-
-     .modal-content1 .section-header1 {
-       text-align: center;
-     }
-
-     .modal-content1 .modal-body {
-       text-align: center;
-     }
-
-     .modal-content1 .modal-body .row {
-       justify-content: center;
-       text-align: center;
-     }
-
-     /* Center align feature tiles containers in modals, but left-align content */
-     .modal-content1 .col-lg-4,
-     .modal-content1 .col-md-4,
-     .modal-content1 .col-sm-12,
-     .modal-content1 .col-xs-12 {
-       text-align: left !important;
-       margin: 0 auto;
-       display: block;
-       width: 100%;
-       max-width: 100%;
-     }
-
-     .modal-content1 .col-lg-10,
-     .modal-content1 .col-md-10,
-     .modal-content1 .col-sm-10,
-     .modal-content1 .col-xs-10 {
-       text-align: left !important;
-       padding-left: 0 !important;
-     }
-
-     /* Ensure feature titles and descriptions are left-aligned */
-     .modal-content1 .modal-body h3,
-     .modal-content1 .modal-body .fs_18px,
-     .modal-content1 .modal-body h6.review {
-       text-align: left !important;
-       margin-left: 0 !important;
-       padding-left: 0 !important;
-     }
-
-     .modal-content1 .col-lg-2,
-     .modal-content1 .col-md-2,
-     .modal-content1 .col-sm-2,
-     .modal-content1 .col-xs-2 {
-       display: flex;
-       justify-content: flex-start;
-       align-items: flex-start;
-       margin: 0;
-       flex-shrink: 0;
-       width: auto !important;
-       min-width: 24px;
-       padding-right: 8px !important;
-     }
-
-     /* Set feature icon dimensions (small icons like headphones, play button, etc.) */
-     .modal-content1 .img_aspects,
-     .modal-content1 .col-lg-2 img,
-     .modal-content1 .col-md-2 img,
-     .modal-content1 .col-sm-2 img,
-     .modal-content1 .col-xs-2 img,
-     .modal-content1 .modal-body .img_aspects,
-     .modal-content1 .modal-body .col-lg-2 img,
-     .modal-content1 .modal-body .col-md-2 img,
-     .modal-content1 .modal-body .col-sm-2 img,
-     .modal-content1 .modal-body .col-xs-2 img {
-       width: 20px !important;
-       height: 20px !important;
-       max-width: 24px !important;
-       max-height: 24px !important;
-       min-width: 24px !important;
-       min-height: 24px !important;
-       object-fit: contain;
-       flex-shrink: 0;
-     }
-
-     /* Set main illustration image dimensions (the two people jumping) */
-     .modal-content1 .modal-header img,
-     .modal-content1 .tcenter img,
-     .modal-content1 .modal-header .tcenter img {
-       width: 90.67px !important;
-       height: 86.54px !important;
-       max-width: 90.67px !important;
-       max-height: 86.54px !important;
-       min-width: 90.67px !important;
-       min-height: 86.54px !important;
-       object-fit: contain;
-     }
-
-     /* Ensure feature rows keep icon and text on same line */
-     .modal-content1 .modal-body .row>.row {
-       justify-content: flex-start !important;
-       text-align: left !important;
-       display: flex !important;
-       flex-direction: row !important;
-       align-items: flex-start !important;
-       flex-wrap: nowrap !important;
-     }
-
-     .modal-content1 .modal-body .col-lg-4 .row,
-     .modal-content1 .modal-body .col-md-4 .row,
-     .modal-content1 .modal-body .col-sm-12 .row {
-       justify-content: flex-start !important;
-       text-align: left !important;
-       display: flex !important;
-       flex-direction: row !important;
-       align-items: flex-start !important;
-       flex-wrap: nowrap !important;
-     }
-
-     /* Ensure text columns don't wrap and stay on same line */
-     .modal-content1 .col-lg-10,
-     .modal-content1 .col-md-10,
-     .modal-content1 .col-sm-10,
-     .modal-content1 .col-xs-10 {
-       flex: 1;
-       min-width: 0;
-       padding-left: 0 !important;
-       margin-left: 0 !important;
-     }
-
-     /* Reduce gap between icon and text - remove padding from feature rows */
-     .modal-content1 .modal-body .row>.row .col-lg-2,
-     .modal-content1 .modal-body .row>.row .col-md-2,
-     .modal-content1 .modal-body .row>.row .col-sm-2,
-     .modal-content1 .modal-body .row>.row .col-xs-2 {
-       padding-right: 8px !important;
-       padding-left: 0 !important;
-     }
-
-     .modal-content1 .modal-body .row>.row .col-lg-10,
-     .modal-content1 .modal-body .row>.row .col-md-10,
-     .modal-content1 .modal-body .row>.row .col-sm-10,
-     .modal-content1 .modal-body .row>.row .col-xs-10 {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-     }
-
-     /* Center align button in modals */
-     .modal-content1 .btn_popup {
-       margin: 0 auto !important;
-       display: block !important;
-       width: 100%;
-       max-width: 335px;
-       text-align: center;
-     }
-
-     .modal-content1 .justify-content-center {
-       justify-content: center !important;
-     }
-
-     .modal-content1 .d-flex {
-       justify-content: center !important;
-     }
-
-     /* Center modal header image */
-     .modal-content1 .modal-header img {
-       margin: 0 auto;
-       display: block;
-     }
-
-     /* Modal header positioning for close button */
-     .modal-content1 .modal-header,
-     .product_view .modal-header {
-       position: relative !important;
-       padding-top: 10px !important;
-     }
-
-     .modal-content1 .modal-header .row,
-     .product_view .modal-header .row {
-       position: relative !important;
-     }
-
-     .modal-content1 .modal-content,
-     .product_view .modal-content {
-       position: relative !important;
-     }
-
-     /* Close button size for mobile */
-     .modal-content1 #closebtn,
-     .product_view #closebtn {
-       width: 48px !important;
-       height: 48px !important;
-       padding: 0 !important;
-       border-radius: 24px !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: center !important;
-       box-sizing: border-box;
-       min-width: 48px !important;
-       min-height: 48px !important;
-       position: absolute !important;
-       top: 0px !important;
-       right: 0px !important;
-       z-index: 1000 !important;
-       background-color: transparent !important;
-       cursor: pointer !important;
-       visibility: visible !important;
-       opacity: 1 !important;
-     }
-
-     .modal-content1 #closebtn.pull-right,
-     .product_view #closebtn.pull-right {
-       float: none !important;
-       position: absolute !important;
-       top: 0px !important;
-       right: 0px !important;
-       margin: 0 !important;
-     }
-
-     .modal-content1 #closebtn img,
-     .product_view #closebtn img {
-       width: 32px !important;
-       height: 32px !important;
-       object-fit: contain;
-       margin: 0;
-       max-width: 32px !important;
-       max-height: 32px !important;
-       display: block !important;
-     }
-
-     .modal-content1 #closebtn .bi-x,
-     .product_view #closebtn .bi-x,
-     .modal-content1 #closebtn h2,
-     .product_view #closebtn h2 {
-       width: 32px !important;
-       height: 32px !important;
-       font-size: 32px !important;
-       line-height: 1 !important;
-       margin: 0 !important;
-       padding: 0 !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: center !important;
-       min-width: 32px !important;
-       min-height: 32px !important;
-       max-width: 32px !important;
-       max-height: 32px !important;
-       color: #000000 !important;
-       font-weight: bold !important;
-       visibility: visible !important;
-       opacity: 1 !important;
-     }
-
-     .modal-content1 #closebtn h2.bi-x,
-     .product_view #closebtn h2.bi-x {
-       font-size: 32px !important;
-       width: 32px !important;
-       height: 32px !important;
-       min-width: 32px !important;
-       min-height: 32px !important;
-       max-width: 32px !important;
-       max-height: 32px !important;
-       color: #000000 !important;
-       font-weight: bold !important;
-       visibility: visible !important;
-       opacity: 1 !important;
-     }
-
-     .modal-content1 .tcenter {
-       text-align: center !important;
-       margin: 0 auto;
-     }
-
-     /* Fix video section spacing and size for mobile */
-     .section-header {
-       margin-bottom: 20px !important;
-       padding-bottom: 0 !important;
-     }
-
-     .section-header h2 {
-       margin-bottom: 20px !important;
-     }
-
-     /* Frequently asked questions title text color */
-     /* .section-header h2.fs_24px {
+  .f_24px {
+    font-size: 24px !important;
+  }
+
+  .d_none {
+    display: none !important
+  }
+
+  .img_health {
+    width: 370px !important;
+    max-width: 348px !important;
+    border-radius: 10px !important;
+  }
+
+  .mt_mb {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .card_center {
+    text-align: center !important;
+    padding: 0px !important;
+  }
+
+  .f_18px {
+    font-size: 18px !important;
+  }
+
+  .mdiv_coaches {
+    width: 190px !important;
+    height: 245px !important;
+
+    padding-left: 15px;
+  }
+
+  .wh_160px {
+    width: 160px;
+    height: 160px;
+  }
+
+  .h_160px {
+    height: 160px !important;
+  }
+
+  .contact_coaches {
+    font-size: 15px !important;
+    font-weight: 600;
+  }
+
+  .tool_tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .f_12px {
+    font-size: 12px !important;
+  }
+
+  .owl-stage-outer {
+    overflow: scroll !important
+  }
+
+  .owl-stage-outer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .w-382px {
+    width: 356px !important;
+  }
+
+  .p-18px {
+    padding-left: 18px !important;
+  }
+
+}
+
+.h5 {
+  margin-top: -8px;
+}
+
+.w-980px {
+  width: 980px
+}
+
+.j-center {
+  justify-content: center
+}
+
+.capsule {
+  position: absolute;
+}
+
+.capsule-content {
+  width: 137px;
+  height: 39px;
+}
+
+.w-420px {
+  width: 420px
+}
+
+.bg-white {
+  background: #FFF
+}
+
+.br-10px {
+  border-radius: 10px
+}
+
+.icon-subcription {
+  width: 26px;
+  height: 24px;
+}
+
+.btn_subscription {
+  position: relative;
+  /* ensures capsule is placed inside */
+}
+
+.capsule {
+  position: absolute;
+  top: 0;
+  /* stick to top */
+  right: 0;
+  /* stick to right */
+  transform: translateY(-50%);
+  /* lift it up by half its own height */
+}
+
+.capsule h6 {
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #fff;
+  color: #325795;
+  padding: 4px 20px 4px 20px !important;
+  white-space: nowrap;
+}
+
+.nav-tabs .nav-link {
+  width: 127px;
+  height: 26px;
+  background: #EEA170 !important;
+  /* default */
+  color: #fff !important;
+  border: none !important;
+  /* removes default bootstrap border */
+  border-radius: 4px;
+  /* optional rounded corners */
+  text-align: center;
+  line-height: 26px;
+  /* vertically center text */
+  padding: 0;
+  /* ensures fixed height works */
+}
+
+.nav-tabs .nav-link.active {
+  background: #ED7D6F !important;
+  /* active state */
+  color: #fff !important;
+}
+
+.pt-142px {
+  padding-top: 50px
+}
+
+.tool_video {
+  width: 330px;
+  /* height: 47px; */
+  /* left: 20px; */
+  top: 12px;
+}
+
+.community_img {
+  width: 318px !important;
+  height: 444px !important;
+  padding-bottom: 15px;
+}
+
+.guided_pgm_img {
+  width: 100% !important;
+  max-width: 335px !important;
+  height: 366px;
+}
+
+.mt-56px {
+  margin-top: 20px
+}
+
+.h-500px {
+  height: 500px;
+
+}
+
+.p-50px {
+  padding: 50px !important
+}
+
+.pt-20px {
+  padding-top: 20px;
+}
+.pt-10px {
+  padding-top: 10px;
+}
+
+.h-335px {
+  height: 335px;
+}
+
+@media screen and (max-width: 768px) {
+  .subs_mobile_view {
+    margin-right: 48%;
+    padding: 8px;
+
+  }
+
+  .mobile_view_topic_tile {
+    margin-bottom: 10px !important;
+  }
+
+  .tool_video {
+    width: 313px;
+    height: 47px;
+    left: 0px;
+    top: 0px;
+  }
+
+  .btn-h {
+    height: 45px
+  }
+
+  .cml40px {
+    margin-top: 20px !important;
+  }
+
+  .h-500px {
+    height: 630px !important
+  }
+
+  .p-50px {
+    padding: 20px !important
+  }
+
+  .pt-142px {
+    padding-top: 0px !important
+  }
+
+  .pt-20px {
+    padding-top: 0px !important
+  }
+
+  .mobile_view_topic_parent {
+    margin-top: 0px !important;
+  }
+
+  .m-cvideo {
+    width: 90% !important;
+  }
+
+  .mobile_view_topic {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .mobile_view_testimonial {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .sap {
+    width: 60% !important;
+  }
+
+  .btn_tff_width {
+    margin: 0;
+    border: 0;
+    width: 100%;
+    max-width: 345px;
+    height: 65px;
+    border-radius: 36px;
+  }
+
+  .pb_4px {
+    padding-bottom: 4px !important;
+  }
+
+  .btn_subscription {
+    width: 250px !important;
+
+    gap: 24px;
+  }
+
+  .pl-0 {
+    padding-left: 0px !important
+  }
+
+  .fs27px {
+    font-size: 27px !important;
+  }
+
+  .w-335px {
+    width: 100% !important;
+    max-width: 335px !important;
+  }
+
+  .mbtn_landing {
+    width: 100%;
+    max-width: 335px;
+    height: 48px;
+  }
+
+  .fs_18px {
+    font-size: 18px !important;
+
+  }
+
+  .w-335px {
+    width: 335px
+  }
+
+  .f_15px {
+    font-size: 15px !important;
+  }
+
+  .f_21px {
+    font-size: 21px !important;
+  }
+
+  .h_48px {
+    height: 48px !important;
+  }
+
+  .msection_header {
+    color: rgba(131, 75, 102, 1) !important;
+  }
+
+  .f_24px {
+    font-size: 24px !important;
+  }
+
+  .d_none {
+    display: none !important
+  }
+
+  .img_health {
+    width: 370px !important;
+    max-width: 348px !important;
+    border-radius: 10px !important;
+  }
+
+  .mt_mb {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .card_center {
+    text-align: center !important;
+    padding: 0px !important;
+  }
+
+  .f_18px {
+    font-size: 18px !important;
+  }
+
+  .mdiv_coaches {
+    width: 190px !important;
+    height: 245px !important;
+    padding-left: 15px;
+  }
+
+  .wh_160px {
+    width: 160px;
+    height: 160px;
+  }
+
+  .h_160px {
+    height: 160px !important;
+  }
+
+  .contact_coaches {
+    font-size: 15px !important;
+    font-weight: 600;
+  }
+
+  .tool_tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .f_12px {
+    font-size: 12px !important;
+  }
+
+  .owl-stage-outer {
+    overflow: scroll !important
+  }
+
+  .owl-stage-outer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .w-382px {
+    width: 356px !important;
+  }
+
+  .p-18px {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    text-align: center;
+  }
+
+  .m-popup {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .f_24px {
+    font-size: 24px;
+  }
+
+  .m_auto {
+    margin: 0 auto;
+  }
+
+  /* Fix alignment for title, subtitle and button on mobile */
+  .w-75 {
+    width: 100% !important;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .land-video-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .cml40px {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .ddflex_mblock_a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fw_600p {
+    font-Weight: 600 !important
+  }
+
+  .icon-subcription {
+    max-width: 20px;
+    height: auto;
+  }
+
+  .fs_18px {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .d-flex {
+    flex-direction: row !important;
+    text-align: center;
+  }
+
+  .d-flex span {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  h2.fs_30px {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* Change layout of features to vertical - center aligned for subscription */
+  .div_subscriptionnew .d-flex.flex-md-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+    justify-content: center !important;
+  }
+
+  /* General flex-md-row rule (keep for other sections) */
+  .d-flex.flex-md-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 10px !important;
+  }
+
+  /* Feature icons */
+  .icon-subcription {
+    max-width: 20px;
+    height: auto;
+    margin-right: 8px;
+  }
+
+  /* Feature text */
+  .fs_18px {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Newsletter popup alignment fixes */
+  .product_view.show {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    height: 100% !important;
+    display: block !important;
+  }
+
+  .product_view:not(.show) {
+    display: none !important;
+  }
+
+  .product_view .modal-dialog {
+    display: block !important;
+    /* Disable flex centering */
+    margin: 30px auto 50px auto !important;
+    /* Add bottom margin for scroll space */
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 90% !important;
+    max-width: 90% !important;
+    height: auto !important;
+    min-height: auto !important;
+    transform: none !important;
+  }
+
+  .product_view .modal-content {
+    margin: 0 auto;
+    text-align: center;
+    width: 100% !important;
+    padding: 15px;
+    height: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    /* Optional: cleaner look */
+  }
+
+  .product_view .modal.show .modal-dialog {
+    transform: none !important;
+  }
+
+  .product_view .modal-header {
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .product_view .back1 {
+    text-align: center;
+  }
+
+  .product_view .box {
+    text-align: center;
+  }
+
+  .product_view .p10 {
+    padding: 10px !important;
+    text-align: center;
+  }
+
+  .product_view .ta_lc {
+    text-align: center !important;
+  }
+
+  .product_view .center_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product_view .input_parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .product_view .div_input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .product_view .div_input .form-control {
+    width: 100%;
+    text-align: left;
+  }
+
+  .product_view .btn_tff {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .product_view .col-lg-5,
+  .product_view .col-md-5,
+  .product_view .col-12 {
+    text-align: center;
+  }
+
+  .product_view .col-lg-7,
+  .product_view .col-md-7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+  }
+
+  /* Reduce newsletter popup image height to prevent stretching */
+  .product_view .col-lg-7 img,
+  .product_view .col-md-7 img,
+  .product_view .col-12 img {
+    max-height: 200px !important;
+    height: auto !important;
+    width: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Fix alignment for all modals (exampleModal, exampleModalbuild, etc.) */
+  .modal-dialog {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 90% !important;
+    max-width: 90% !important;
+  }
+
+  .modal-content1 {
+    width: 100% !important;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .modal-content1 .popuptitle {
+    text-align: center !important;
+    margin: 8px auto !important;
+  }
+
+  .modal-content1 .para {
+    text-align: center !important;
+    margin: 8px auto !important;
+  }
+
+  .modal-content1 .review {
+    text-align: left !important;
+    padding-right: 0 !important;
+    margin: 8px 0 !important;
+  }
+
+  .modal-content1 .section-header1 {
+    text-align: center;
+  }
+
+  .modal-content1 .modal-body {
+    text-align: center;
+  }
+
+  .modal-content1 .modal-body .row {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Center align feature tiles containers in modals, but left-align content */
+  .modal-content1 .col-lg-4,
+  .modal-content1 .col-md-4,
+  .modal-content1 .col-sm-12,
+  .modal-content1 .col-xs-12 {
+    text-align: left !important;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .modal-content1 .col-lg-10,
+  .modal-content1 .col-md-10,
+  .modal-content1 .col-sm-10,
+  .modal-content1 .col-xs-10 {
+    text-align: left !important;
+    padding-left: 0 !important;
+  }
+
+  /* Ensure feature titles and descriptions are left-aligned */
+  .modal-content1 .modal-body h3,
+  .modal-content1 .modal-body .fs_18px,
+  .modal-content1 .modal-body h6.review {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .modal-content1 .col-lg-2,
+  .modal-content1 .col-md-2,
+  .modal-content1 .col-sm-2,
+  .modal-content1 .col-xs-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    flex-shrink: 0;
+    width: auto !important;
+    min-width: 24px;
+    padding-right: 8px !important;
+  }
+
+  /* Set feature icon dimensions (small icons like headphones, play button, etc.) */
+  .modal-content1 .img_aspects,
+  .modal-content1 .col-lg-2 img,
+  .modal-content1 .col-md-2 img,
+  .modal-content1 .col-sm-2 img,
+  .modal-content1 .col-xs-2 img,
+  .modal-content1 .modal-body .img_aspects,
+  .modal-content1 .modal-body .col-lg-2 img,
+  .modal-content1 .modal-body .col-md-2 img,
+  .modal-content1 .modal-body .col-sm-2 img,
+  .modal-content1 .modal-body .col-xs-2 img {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Set main illustration image dimensions (the two people jumping) */
+  .modal-content1 .modal-header img,
+  .modal-content1 .tcenter img,
+  .modal-content1 .modal-header .tcenter img {
+    width: 90.67px !important;
+    height: 86.54px !important;
+    max-width: 90.67px !important;
+    max-height: 86.54px !important;
+    min-width: 90.67px !important;
+    min-height: 86.54px !important;
+    object-fit: contain;
+  }
+
+  /* Ensure feature rows keep icon and text on same line */
+  .modal-content1 .modal-body .row>.row {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .modal-content1 .modal-body .col-lg-4 .row,
+  .modal-content1 .modal-body .col-md-4 .row,
+  .modal-content1 .modal-body .col-sm-12 .row {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Ensure text columns don't wrap and stay on same line */
+  .modal-content1 .col-lg-10,
+  .modal-content1 .col-md-10,
+  .modal-content1 .col-sm-10,
+  .modal-content1 .col-xs-10 {
+    flex: 1;
+    min-width: 0;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* Reduce gap between icon and text - remove padding from feature rows */
+  .modal-content1 .modal-body .row>.row .col-lg-2,
+  .modal-content1 .modal-body .row>.row .col-md-2,
+  .modal-content1 .modal-body .row>.row .col-sm-2,
+  .modal-content1 .modal-body .row>.row .col-xs-2 {
+    padding-right: 8px !important;
+    padding-left: 0 !important;
+  }
+
+  .modal-content1 .modal-body .row>.row .col-lg-10,
+  .modal-content1 .modal-body .row>.row .col-md-10,
+  .modal-content1 .modal-body .row>.row .col-sm-10,
+  .modal-content1 .modal-body .row>.row .col-xs-10 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Center align button in modals */
+  .modal-content1 .btn_popup {
+    margin: 0 auto !important;
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    max-width: 335px;
+    text-align: center;
+  }
+
+  .modal-content1 .justify-content-center {
+    justify-content: center !important;
+  }
+
+  .modal-content1 .d-flex {
+    justify-content: center !important;
+  }
+
+  /* Center modal header image */
+  .modal-content1 .modal-header img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Modal header positioning for close button */
+  .modal-content1 .modal-header,
+  .product_view .modal-header {
+    position: relative !important;
+    padding-top: 10px !important;
+  }
+
+  .modal-content1 .modal-header .row,
+  .product_view .modal-header .row {
+    position: relative !important;
+  }
+
+  .modal-content1 .modal-content,
+  .product_view .modal-content {
+    position: relative !important;
+  }
+
+  /* Close button size for mobile */
+  .modal-content1 #closebtn,
+  .product_view #closebtn {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    border-radius: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    position: absolute !important;
+    top: 0px !important;
+    right: 0px !important;
+    z-index: 1000 !important;
+    background-color: transparent !important;
+    cursor: pointer !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .modal-content1 #closebtn.pull-right,
+  .product_view #closebtn.pull-right {
+    float: none !important;
+    position: absolute !important;
+    top: 0px !important;
+    right: 0px !important;
+    margin: 0 !important;
+  }
+
+  .modal-content1 #closebtn img,
+  .product_view #closebtn img {
+    width: 32px !important;
+    height: 32px !important;
+    object-fit: contain;
+    margin: 0;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    display: block !important;
+  }
+
+  .modal-content1 #closebtn .bi-x,
+  .product_view #closebtn .bi-x,
+  .modal-content1 #closebtn h2,
+  .product_view #closebtn h2 {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 32px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .modal-content1 #closebtn h2.bi-x,
+  .product_view #closebtn h2.bi-x {
+    font-size: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .modal-content1 .tcenter {
+    text-align: center !important;
+    margin: 0 auto;
+  }
+
+  /* Fix video section spacing and size for mobile */
+  .section-header {
+    margin-bottom: 20px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .section-header h2 {
+    margin-bottom: 20px !important;
+  }
+
+  /* Frequently asked questions title text color */
+  /* .section-header h2.fs_24px {
         color: rgba(131, 75, 102, 1) !important;
       } */
 
-     .cross_btn_row {
-       bottom: 12px;
-       left: 12px;
-     }
-
-     .popup_w {
-       width: 295px !important;
-       padding-top: 15px;
-     }
-
-     .popuptitle {
-       font-size: 21px !important;
-     }
-
-     .align_n {
-       align-items: normal !important;
-     }
-
-     /* Set video iframe size for mobile */
-     .cvideo_b,
-     .yt-embed,
-     #youtubeIntro {
-       width: 335px !important;
-       height: 214.03px !important;
-       max-width: 335px !important;
-       max-height: 214.03px !important;
-       aspect-ratio: auto !important;
-       padding: 0 !important;
-       margin: 0 auto;
-       display: block;
-     }
-
-     /* Fix pricing section alignment and button */
-     .div_subscriptionnew {
-       text-align: center;
-     }
-
-     /* Title: Subscribe to HappierMe Premium - 18px, single line */
-     .div_subscriptionnew .container-fluid {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       max-width: 100% !important;
-     }
-
-     .div_subscriptionnew .row.justify-content-center {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       margin-left: 0 !important;
-       margin-right: 0 !important;
-     }
-
-     .div_subscriptionnew .row.justify-content-center .col-12 {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-     }
-
-     .div_subscriptionnew h2.fs_30px {
-       font-size: 18px !important;
-       line-height: 1.2 !important;
-       white-space: nowrap !important;
-       overflow: visible !important;
-       text-overflow: clip !important;
-       margin-bottom: 20px !important;
-       margin-top: 0 !important;
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       padding-top: 0 !important;
-       padding-bottom: 0 !important;
-       text-align: center !important;
-       width: 100% !important;
-       max-width: 100% !important;
-     }
-
-     /* Override mtb10px class */
-     .div_subscriptionnew h2.mtb10px {
-       margin-top: 0 !important;
-       margin-bottom: 20px !important;
-     }
-
-     /* Features section container - 335px width */
-     .div_subscriptionnew .fixed_w {
-       max-width: 335px !important;
-       width: 100% !important;
-       margin: 0 auto !important;
-       padding: 0 !important;
-     }
-
-     /* Override mt20px margin for features section */
-     .div_subscriptionnew .mt20px {
-       margin-top: 20px !important;
-     }
-
-     /* Features list alignment - center aligned */
-     .div_subscriptionnew .d-flex.flex-column,
-     .div_subscriptionnew .d-flex.flex-column.flex-md-row {
-       flex-direction: column !important;
-       align-items: center !important;
-       gap: 12px !important;
-       text-align: center !important;
-       width: 100% !important;
-       max-width: 335px !important;
-       margin: 0 auto !important;
-       margin-bottom: 24px !important;
-       justify-content: center !important;
-     }
-
-     /* Add padding after last feature item */
-     .div_subscriptionnew .d-flex.flex-column .d-flex:last-child,
-     .div_subscriptionnew .d-flex.flex-md-row .d-flex:last-child {
-       margin-bottom: 0 !important;
-     }
-
-     /* Individual feature item alignment - center aligned */
-     .div_subscriptionnew .d-flex.flex-column .d-flex,
-     .div_subscriptionnew .d-flex.flex-md-row .d-flex {
-       justify-content: center !important;
-       align-items: center !important;
-       text-align: center !important;
-       width: auto !important;
-       max-width: 100% !important;
-       gap: 10px !important;
-       margin: 0 auto !important;
-     }
-
-     /* Feature icons - proper size and spacing */
-     .div_subscriptionnew .icon-subcription {
-       width: 20px !important;
-       height: 20px !important;
-       max-width: 24px !important;
-       max-height: 24px !important;
-       min-width: 24px !important;
-       min-height: 24px !important;
-       flex-shrink: 0 !important;
-       margin-right: 0 !important;
-     }
-
-     /* Feature text alignment - center aligned, single line, 15px */
-     .div_subscriptionnew .d-flex span.fs_18px,
-     .div_subscriptionnew .d-flex .f_15px {
-       text-align: center !important;
-       font-size: 15px !important;
-       line-height: 1.4 !important;
-       white-space: nowrap !important;
-       display: inline-block !important;
-     }
-
-     /* Allow text to wrap if container is too narrow, but prefer single line */
-     .div_subscriptionnew .fixed_w {
-       min-width: fit-content !important;
-     }
-
-     /* Subscription cards container */
-     .div_subscriptionnew .plr20px.fixed_w {
-       max-width: 335px !important;
-       width: 100% !important;
-       margin: 0 auto !important;
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-     }
-
-     .div_subscriptionnew .row.g-3 {
-       max-width: 335px !important;
-       width: 100% !important;
-       margin: 0 auto !important;
-       gap: 16px !important;
-     }
-
-     /* Fix subscription card text alignment */
-     .btn_subscription {
-       width: 100% !important;
-       max-width: 335px !important;
-       text-align: left !important;
-       padding: 20px !important;
-       margin: 0 auto !important;
-     }
-
-     .btn_subscription .row {
-       margin: 0 !important;
-     }
-
-     .btn_subscription .text-start {
-       text-align: left !important;
-     }
-
-     .btn_subscription .text-end {
-       text-align: right !important;
-     }
-
-     .web_home_divcircleolly {
-       width: 104%
-     }
-
-     .btn_subscription h4,
-     .btn_subscription h6 {
-       text-align: inherit !important;
-     }
-
-     /* Subscription card columns */
-     .div_subscriptionnew .col-lg-6,
-     .div_subscriptionnew .col-md-6,
-     .div_subscriptionnew .col-sm-12 {
-       width: 100% !important;
-       max-width: 335px !important;
-       margin: 0 auto !important;
-       padding: 0 !important;
-     }
-
-     /* Fix "Start your free trial" button size and gradient */
-     #PricingSelectBtn .btn_popup {
-       width: 100% !important;
-       max-width: 335px !important;
-       height: 65px !important;
-       background: linear-gradient(180deg, #CB6171 100%, #E58D82 0%) !important;
-       border-radius: 36px !important;
-       margin: 0 auto;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: center !important;
-       text-align: center !important;
-       line-height: 1 !important;
-       padding: 0 !important;
-     }
-
-     /* Disclaimer text - 12px font size, 3 lines - all inline */
-     .div_subscriptionnew .row.center_flex {
-       text-align: center !important;
-       max-width: 335px !important;
-       margin: 0 auto !important;
-       margin-top: 24px !important;
-     }
-
-     .div_subscriptionnew .row.center_flex .col-12 {
-       max-width: 90% !important;
-       width: 90% !important;
-       margin: 0 auto !important;
-       padding: 0 !important;
-       font-size: 12px !important;
-       line-height: 1.4 !important;
-       text-align: center !important;
-       display: flex !important;
-       flex-direction: column !important;
-       align-items: center !important;
-     }
-
-     /* Make h6 wrap into 1 line by making container wider */
-     .div_subscriptionnew #totalAnnualPricingModelHeading,
-     .div_subscriptionnew h6.fs_15px {
-       font-size: 12px !important;
-       line-height: 1.4 !important;
-       text-align: center !important;
-       margin-bottom: 0 !important;
-       margin-top: 0 !important;
-       display: block !important;
-       width: 100% !important;
-       max-width: 100% !important;
-       word-wrap: break-word !important;
-       word-break: break-word !important;
-       hyphens: auto !important;
-       padding-right: 0 !important;
-       color: rgba(255, 255, 255, 1) !important;
-       white-space: normal !important;
-       overflow-wrap: break-word !important;
-     }
-
-     /* Span on line 2 */
-     .div_subscriptionnew .row.center_flex span.fs_15px {
-       font-size: 12px !important;
-       line-height: 1.4 !important;
-       text-align: center !important;
-       display: block !important;
-       margin-bottom: 0 !important;
-       margin-top: 0 !important;
-       width: 100% !important;
-       padding-right: 0 !important;
-       color: rgba(255, 255, 255, 1) !important;
-     }
-
-     /* Anchor on line 3 */
-     .div_subscriptionnew .row.center_flex a {
-       display: block !important;
-       text-align: center !important;
-       width: 100% !important;
-       font-size: 12px !important;
-       line-height: 1.4 !important;
-       color: rgba(255, 255, 255, 1) !important;
-       margin-top: 0 !important;
-     }
-
-     .div_subscriptionnew .row.center_flex a span.td_underline {
-       font-size: 12px !important;
-       line-height: 1.4 !important;
-       text-align: center !important;
-       display: inline !important;
-       color: rgba(255, 255, 255, 1) !important;
-     }
-
-     /* Center align subscription terms text */
-     .div_subscriptionnew h6,
-     .div_subscriptionnew span {
-       text-align: center !important;
-     }
-
-     /* Ensure white color for all text in disclaimer section */
-     .div_subscriptionnew .row.center_flex .col-12 .fc_ffffff,
-     .div_subscriptionnew .row.center_flex .col-12 h6.fc_ffffff,
-     .div_subscriptionnew .row.center_flex .col-12 span.fc_ffffff,
-     .div_subscriptionnew .row.center_flex .col-12 a .fc_ffffff {
-       color: rgba(255, 255, 255, 1) !important;
-     }
-
-     /* Center align all links in mobile */
-     a.sap,
-     .sap a,
-     .sap h6,
-     .sap h4,
-     .sap h5,
-     a .td_underline,
-     .td_underline,
-     a.fc_cb6171,
-     .fc_cb6171,
-     .dflex_jc_lc,
-     .flex_ai {
-       text-align: center !important;
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-       margin: 0 auto !important;
-     }
-
-     /* Center align link containers */
-     .owl-nav,
-     .owl-controls,
-     .owl-controls .owl-nav {
-       text-align: center !important;
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-     }
-
-     /* Center align links with chevron icons */
-     a.sap h6,
-     a.sap h4,
-     a.sap h5 {
-       justify-content: center !important;
-       text-align: center !important;
-     }
-
-     /* Center align "Find out more" and similar links */
-     a[href*="teenagers"],
-     a[href*="blog"],
-     a[href*="testimonials"] {
-       text-align: center !important;
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-       margin: 0 auto !important;
-     }
-
-     /* Center align link text within containers */
-     .col-lg-12 a,
-     .col-md-12 a,
-     .col-sm-12 a,
-     .col-xs-12 a,
-     .col-12 a {
-       text-align: center !important;
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-     }
-   }
-
-   @media screen and (min-width: 1600px) {
-
-     .fixed_w {
-       width: 980px !important;
-       margin: 0 auto !important;
-     }
-
-     .fixed_w1340 {
-       width: 1340px !important;
-       margin: 0 auto !important;
-     }
-
-     .land-happierme-margin {
-       margin-left: 11rem !important;
-     }
-
-     .f_18px {
-       font-size: 18px !important;
-     }
-
-     .f_30px {
-       font-size: 30px !important;
-     }
-
-     .t_align {
-       text-align: center !important;
-     }
-
-     .f_14px {
-       font-size: 14px !important
-     }
-
-     .f_12px {
-       font-size: 12px !important
-     }
-
-     .tab_faqs {
-       padding-left: 0px !important;
-     }
-
-     /* Add padding to FAQ section on mobile */
-     section .section-header {
-       padding-left: 20px !important;
-       padding-right: 20px !important;
-     }
-
-     /* FAQ tabs and content padding */
-     .tab_faqs {
-       padding-left: 20px !important;
-       padding-right: 20px !important;
-     }
-
-     .tc_faqs.mobile,
-     .tc_faqs {
-       padding-left: 20px !important;
-       padding-right: 20px !important;
-     }
-
-     .panel-group,
-     .panel-group#accordion_faq {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-     }
-
-     .panel-body {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       padding-top: 15px !important;
-       padding-bottom: 15px !important;
-     }
-
-     .tc_faqs.mobile,
-     .tc_faqs {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-     }
-
-     /* Left align FAQ section headings with spacing */
-     .tc_faqs.mobile h5,
-     .tc_faqs h5,
-     .tc_faqs .mobile,
-     .tc_faqs .tt_uppercase,
-     .tc_faqs h5.mobile,
-     .tc_faqs h5.tt_uppercase,
-     .tc_faqs .tab-pane h5,
-     .tc_faqs.mobile .tab-pane h5 {
-       text-align: left !important;
-       margin-left: 0 !important;
-       padding-left: 0 !important;
-       display: block !important;
-       width: 100% !important;
-       font-size: 15px !important;
-       /* Override fs_15px mobile override */
-     }
-
-     /* Add bottom spacing to "About HappierMe" heading (first heading) */
-     #about_happierme h5,
-     .tc_faqs.mobile #about_happierme h5,
-     .tc_faqs #about_happierme h5 {
-       margin-bottom: 32px !important;
-       margin-top: 0 !important;
-       font-size: 15px !important;
-       /* Override fs_15px mobile override */
-     }
-
-     /* Add top and bottom spacing to other section headings */
-     #how_can_the_app_help h5,
-     #app_features h5,
-     .tc_faqs.mobile #how_can_the_app_help h5,
-     .tc_faqs #how_can_the_app_help h5,
-     .tc_faqs.mobile #app_features h5,
-     .tc_faqs #app_features h5 {
-       margin-top: 40px !important;
-       margin-bottom: 24px !important;
-       font-size: 15px !important;
-       /* Override fs_15px mobile override */
-     }
-
-     /* Override existing margin classes for FAQ headings */
-     .tc_faqs.mobile h5.mt0px,
-     .tc_faqs h5.mt0px {
-       margin-top: 0 !important;
-       margin-bottom: 32px !important;
-       font-size: 15px !important;
-       /* Override fs_15px mobile override */
-     }
-
-     .tc_faqs.mobile h5.mt40px,
-     .tc_faqs h5.mt40px {
-       margin-top: 40px !important;
-       margin-bottom: 24px !important;
-       font-size: 15px !important;
-       /* Override fs_15px mobile override */
-     }
-
-     /* Sticky Rating Banner - Mobile Alignment */
-     .sticky_rating_banner {
-       padding: 12px 16px !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: space-between !important;
-       gap: 8px !important;
-       background: #FFFFFF !important;
-     }
-
-     .sticky_rating_banner .row.center_flex {
-       width: 100% !important;
-       margin: 0 !important;
-       padding: 0 !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: space-between !important;
-       gap: 8px !important;
-     }
-
-     .sticky_rating_banner .col-lg-4,
-     .sticky_rating_banner .col-md-4,
-     .sticky_rating_banner .col-sm-8,
-     .sticky_rating_banner .col-xs-12,
-     .sticky_rating_banner .col-12 {
-       width: 100% !important;
-       max-width: 100% !important;
-       margin: 0 !important;
-       padding: 0 !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: space-between !important;
-       gap: 8px !important;
-       flex-wrap: nowrap !important;
-     }
-
-     /* Close button - far left */
-     .sticky_rating_banner .col-lg-1,
-     .sticky_rating_banner .col-md-1,
-     .sticky_rating_banner .col-sm-1,
-     .sticky_rating_banner .col-xs-1 {
-       width: auto !important;
-       min-width: 20px !important;
-       max-width: 20px !important;
-       padding: 0 !important;
-       margin: 0 !important;
-       margin-right: 8px !important;
-       flex-shrink: 0 !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: flex-start !important;
-       order: 1 !important;
-     }
-
-     .sticky_rating_banner .col-lg-1 img,
-     .sticky_rating_banner .col-md-1 img,
-     .sticky_rating_banner .col-sm-1 img,
-     .sticky_rating_banner .col-xs-1 img {
-       width: 14px !important;
-       height: 14px !important;
-       max-width: 14px !important;
-       max-height: 14px !important;
-     }
-
-     /* App icon - after cross */
-     .sticky_rating_banner .col-lg-2,
-     .sticky_rating_banner .col-md-2,
-     .sticky_rating_banner .col-sm-2,
-     .sticky_rating_banner .col-xs-2 {
-       width: auto !important;
-       min-width: 40px !important;
-       max-width: 40px !important;
-       padding: 0 !important;
-       margin: 0 !important;
-       margin-right: 8px !important;
-       flex-shrink: 0 !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: center !important;
-       order: 2 !important;
-     }
-
-     .sticky_rating_banner .col-lg-2 img,
-     .sticky_rating_banner .col-md-2 img,
-     .sticky_rating_banner .col-sm-2 img,
-     .sticky_rating_banner .col-xs-2 img {
-       width: 40px !important;
-       height: 40px !important;
-       max-width: 40px !important;
-       max-height: 40px !important;
-       object-fit: contain !important;
-     }
-
-     /* App Store and Google Play info - horizontal layout */
-     .sticky_rating_banner .col-lg-5,
-     .sticky_rating_banner .col-md-5,
-     .sticky_rating_banner .col-sm-5,
-     .sticky_rating_banner .col-xs-5 {
-       flex: 1 !important;
-       min-width: 0 !important;
-       padding: 0 !important;
-       margin: 0 !important;
-       margin-right: 8px !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: flex-start !important;
-       order: 3 !important;
-     }
-
-     .sticky_rating_banner .col-lg-5 .d-flex.flex-column,
-     .sticky_rating_banner .col-md-5 .d-flex.flex-column,
-     .sticky_rating_banner .col-sm-5 .d-flex.flex-column,
-     .sticky_rating_banner .col-xs-5 .d-flex.flex-column {
-       display: flex !important;
-       flex-direction: row !important;
-       gap: 12px !important;
-       align-items: center !important;
-       justify-content: flex-start !important;
-       width: auto !important;
-       min-height: auto !important;
-       height: auto !important;
-       max-height: none !important;
-       overflow: visible !important;
-     }
-
-     /* Ensure the parent column container allows both children */
-     .sticky_rating_banner .col-lg-5,
-     .sticky_rating_banner .col-md-5,
-     .sticky_rating_banner .col-sm-5,
-     .sticky_rating_banner .col-xs-5 {
-       overflow: visible !important;
-       max-height: none !important;
-       height: auto !important;
-     }
-
-     /* Force both h6 children to be visible - horizontal layout */
-     .sticky_rating_banner .col-lg-5 .d-flex.flex-column>h6,
-     .sticky_rating_banner .col-md-5 .d-flex.flex-column>h6,
-     .sticky_rating_banner .col-sm-5 .d-flex.flex-column>h6,
-     .sticky_rating_banner .col-xs-5 .d-flex.flex-column>h6 {
-       display: flex !important;
-       flex-shrink: 0 !important;
-       flex-grow: 0 !important;
-       order: 0 !important;
-       margin: 0 !important;
-     }
-
-     /* Specifically target the second h6 (Google Play) */
-     .sticky_rating_banner .col-lg-5 .d-flex.flex-column>h6:nth-child(2),
-     .sticky_rating_banner .col-md-5 .d-flex.flex-column>h6:nth-child(2),
-     .sticky_rating_banner .col-sm-5 .d-flex.flex-column>h6:nth-child(2),
-     .sticky_rating_banner .col-xs-5 .d-flex.flex-column>h6:nth-child(2) {
-       display: flex !important;
-       visibility: visible !important;
-       opacity: 1 !important;
-       height: auto !important;
-       min-height: auto !important;
-       margin-top: 0 !important;
-       margin-left: 12px !important;
-       order: 0 !important;
-     }
-
-     .sticky_rating_banner .col-lg-5 h6,
-     .sticky_rating_banner .col-md-5 h6,
-     .sticky_rating_banner .col-sm-5 h6,
-     .sticky_rating_banner .col-xs-5 h6 {
-       display: flex !important;
-       align-items: center !important;
-       justify-content: flex-start !important;
-       gap: 4px !important;
-       margin: 0 !important;
-       padding: 0 !important;
-       width: auto !important;
-       visibility: visible !important;
-       opacity: 1 !important;
-       color: #000000 !important;
-     }
-
-     /* Ensure both h6 elements are visible */
-     .sticky_rating_banner .col-lg-5 .d-flex.flex-column h6,
-     .sticky_rating_banner .col-md-5 .d-flex.flex-column h6,
-     .sticky_rating_banner .col-sm-5 .d-flex.flex-column h6,
-     .sticky_rating_banner .col-xs-5 .d-flex.flex-column h6 {
-       display: flex !important;
-       visibility: visible !important;
-       opacity: 1 !important;
-       height: auto !important;
-       min-height: auto !important;
-       max-height: none !important;
-       overflow: visible !important;
-     }
-
-     /* Ensure the second h6 (Google Play) is visible */
-     .sticky_rating_banner .col-lg-5 .d-flex.flex-column h6:last-child,
-     .sticky_rating_banner .col-md-5 .d-flex.flex-column h6:last-child,
-     .sticky_rating_banner .col-sm-5 .d-flex.flex-column h6:last-child,
-     .sticky_rating_banner .col-xs-5 .d-flex.flex-column h6:last-child {
-       display: flex !important;
-       visibility: visible !important;
-       opacity: 1 !important;
-       margin-top: 0 !important;
-       margin-left: 12px !important;
-       height: auto !important;
-       min-height: auto !important;
-     }
-
-     /* Override any flex_ai class that might be hiding content */
-     .sticky_rating_banner .col-lg-5 .d-flex.flex-column .flex_ai,
-     .sticky_rating_banner .col-md-5 .d-flex.flex-column .flex_ai,
-     .sticky_rating_banner .col-sm-5 .d-flex.flex-column .flex_ai,
-     .sticky_rating_banner .col-xs-5 .d-flex.flex-column .flex_ai {
-       display: flex !important;
-       align-items: center !important;
-       justify-content: flex-start !important;
-       width: auto !important;
-     }
-
-     .sticky_rating_banner .col-lg-5 h6.mb2px,
-     .sticky_rating_banner .col-md-5 h6.mb2px,
-     .sticky_rating_banner .col-sm-5 h6.mb2px,
-     .sticky_rating_banner .col-xs-5 h6.mb2px {
-       margin-bottom: 0 !important;
-     }
-
-     .sticky_rating_banner .col-lg-5 h6 img,
-     .sticky_rating_banner .col-md-5 h6 img,
-     .sticky_rating_banner .col-sm-5 h6 img,
-     .sticky_rating_banner .col-xs-5 h6 img {
-       width: 14px !important;
-       height: 14px !important;
-       max-width: 14px !important;
-       max-height: 14px !important;
-       flex-shrink: 0 !important;
-     }
-
-     .sticky_rating_banner .col-lg-5 h6 span,
-     .sticky_rating_banner .col-md-5 h6 span,
-     .sticky_rating_banner .col-sm-5 h6 span,
-     .sticky_rating_banner .col-xs-5 h6 span {
-       white-space: nowrap !important;
-       flex-shrink: 0 !important;
-       font-size: 9px !important;
-       line-height: 1.4 !important;
-       color: #000000 !important;
-     }
-
-     .sticky_rating_banner .col-lg-5 h6 .rating_a,
-     .sticky_rating_banner .col-md-5 h6 .rating_a,
-     .sticky_rating_banner .col-sm-5 h6 .rating_a,
-     .sticky_rating_banner .col-xs-5 h6 .rating_a {
-       flex-shrink: 0 !important;
-     }
-
-     .sticky_rating_banner .col-lg-5 h6 .rating_a i,
-     .sticky_rating_banner .col-md-5 h6 .rating_a i,
-     .sticky_rating_banner .col-sm-5 h6 .rating_a i,
-     .sticky_rating_banner .col-xs-5 h6 .rating_a i {
-       font-size: 10px !important;
-       color: #FF0000 !important;
-     }
-
-     /* Download button - far right */
-     .sticky_rating_banner .col-lg-4,
-     .sticky_rating_banner .col-md-4,
-     .sticky_rating_banner .col-sm-4,
-     .sticky_rating_banner .col-xs-4 {
-       width: auto !important;
-       min-width: 110px !important;
-       max-width: 130px !important;
-       padding: 0 !important;
-       margin: 0 !important;
-       margin-left: auto !important;
-       flex-shrink: 0 !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: flex-end !important;
-       order: 4 !important;
-     }
-
-     .sticky_rating_banner .btn_download {
-       width: 100% !important;
-       min-width: 110px !important;
-       max-width: 130px !important;
-       height: 32px !important;
-       padding: 0 12px !important;
-       display: flex !important;
-       align-items: center !important;
-       justify-content: center !important;
-       text-align: center !important;
-       border-radius: 16px !important;
-       font-size: 11px !important;
-       font-weight: 600 !important;
-       line-height: 1.4 !important;
-       background: linear-gradient(90deg, #E58D82, #CB6171) !important;
-       white-space: nowrap !important;
-       color: #FFFFFF !important;
-       border: none !important;
-     }
-
-     /* Ensure tab-pane doesn't center align headings */
-     .tc_faqs .tab-pane,
-     .tc_faqs.mobile .tab-pane {
-       text-align: left !important;
-     }
-
-     /* Hero section h1 - "Understand your mind. Change your life." - 27px on mobile */
-     .w-75 h1.fs_45px {
-       font-size: 27px !important;
-       line-height: 1.3 !important;
-       white-space: normal !important;
-       word-wrap: break-word !important;
-     }
-
-     .tc_faqs .tab-pane>h5 {
-       text-align: left !important;
-     }
-
-     .panel-group,
-     .panel-group#accordion_faq {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-     }
-
-     .panel-body {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       padding-top: 15px !important;
-       padding-bottom: 15px !important;
-     }
-
-     /* Add padding to footer on mobile */
-     .dfooter {
-       padding-left: 20px !important;
-       padding-right: 20px !important;
-       padding-top: 40px !important;
-       padding-bottom: 40px !important;
-     }
-
-     .dfooter .display_df_none {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-     }
-
-     .dfooter .panel-group#accordion_footer {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-     }
-
-     .dfooter .panel-body {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       padding-top: 15px !important;
-       padding-bottom: 15px !important;
-     }
-
-     /* Ensure ALL footer text is white on mobile */
-     .dfooter,
-     .dfooter *,
-     .dfooter h4,
-     .dfooter .fc_ffffff,
-     .dfooter a,
-     .dfooter a h4,
-     .dfooter .dfooter_links,
-     .dfooter .dfooter_links a,
-     .dfooter .dfooter_links a h4,
-     .dfooter .color_wh,
-     .dfooter .panel-title,
-     .dfooter .panel-title a,
-     .dfooter .panel-title h4,
-     .dfooter .panel-heading,
-     .dfooter .panel-heading h4,
-     .dfooter .accordion-toggle,
-     .dfooter .accordion-toggle *,
-     #accordion_footer .panel-title a,
-     #accordion_footer .panel-title h4,
-     #accordion_footer .accordion-toggle {
-       color: rgba(255, 255, 255, 1) !important;
-     }
-
-     /* Override any other color classes in footer */
-     .dfooter .fc_000000,
-     .dfooter .fc_cb6171,
-     .dfooter .fc_000000 * {
-       color: #ffffff !important;
-     }
-
-     /* Left align all footer links and headings on mobile */
-     .dfooter .panel-body,
-     .dfooter .panel-body .row,
-     .dfooter .panel-body .col-lg-12,
-     .dfooter .panel-body .col-md-12,
-     .dfooter .panel-body .col-sm-12,
-     .dfooter .panel-body .col-xs-12,
-     .dfooter .panel-body .col-12,
-     .dfooter .dfooter_links,
-     .dfooter .dfooter_links a,
-     .dfooter .dfooter_links a h4,
-     .dfooter .panel-body a,
-     .dfooter .panel-body a h4 {
-       text-align: left !important;
-       display: block !important;
-       justify-content: flex-start !important;
-       align-items: flex-start !important;
-     }
-
-     .dfooter .panel-title,
-     .dfooter .panel-title a,
-     .dfooter .panel-title h4,
-     .dfooter .panel-heading,
-     .dfooter .panel-heading h4,
-     .dfooter .accordion-toggle {
-       text-align: left !important;
-       display: flex !important;
-       justify-content: flex-start !important;
-       align-items: center !important;
-     }
-
-     /* Make accordion icons white plus/minus on mobile - OVERRIDE ALL BASE STYLES */
-     /* Force override main.css base styles - Collapsed state - show PLUS icon */
-     .dfooter #accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
-     .dfooter #accordion_footer .panel-title a:not([aria-expanded="true"]):after,
-     #accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
-     #accordion_footer .panel-title a:not([aria-expanded="true"]):after,
-     .dfooter .accordion-toggle:not([aria-expanded="true"]):after,
-     .dfooter .panel-title a:not([aria-expanded="true"]):after,
-     .dfooter .panel-heading .panel-title a:not([aria-expanded="true"]):after,
-     .dfooter .panel-heading h4 a:not([aria-expanded="true"]):after,
-     .dfooter .panel-group#accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
-     .dfooter .panel-group#accordion_footer .panel-title a:not([aria-expanded="true"]):after {
-       content: "+" !important;
-       color: rgba(255, 255, 255, 1) !important;
-       font-size: 18px !important;
-       font-weight: 300 !important;
-       line-height: 1 !important;
-       opacity: 1 !important;
-       float: right !important;
-       display: block !important;
-       width: 20px !important;
-       height: 20px !important;
-       text-align: center !important;
-       background-color: transparent !important;
-       background-image: none !important;
-       filter: none !important;
-       -webkit-filter: none !important;
-     }
-
-     /* Force override main.css base styles - Expanded state - show MINUS icon */
-     .dfooter #accordion_footer .panel-title>a[aria-expanded="true"]:after,
-     .dfooter #accordion_footer .panel-title a[aria-expanded="true"]:after,
-     #accordion_footer .panel-title>a[aria-expanded="true"]:after,
-     #accordion_footer .panel-title a[aria-expanded="true"]:after,
-     .dfooter .accordion-toggle[aria-expanded="true"]:after,
-     .dfooter .panel-title a[aria-expanded="true"]:after,
-     .dfooter .panel-heading .panel-title a[aria-expanded="true"]:after,
-     .dfooter .panel-heading h4 a[aria-expanded="true"]:after,
-     .dfooter .panel-group#accordion_footer .panel-title>a[aria-expanded="true"]:after,
-     .dfooter .panel-group#accordion_footer .panel-title a[aria-expanded="true"]:after {
-       content: "-" !important;
-       color: rgba(255, 255, 255, 1) !important;
-       font-size: 20px !important;
-       font-weight: 300 !important;
-       line-height: 1 !important;
-       opacity: 1 !important;
-       float: right !important;
-       display: block !important;
-       width: 20px !important;
-       height: 20px !important;
-       text-align: center !important;
-       background-color: transparent !important;
-       background-image: none !important;
-       filter: none !important;
-       -webkit-filter: none !important;
-     }
-
-     /* Ensure any icon fonts inside accordion are white */
-     .dfooter .accordion-toggle i,
-     .dfooter .accordion-toggle .bi,
-     .dfooter .accordion-toggle .fa,
-     #accordion_footer .accordion-toggle i,
-     #accordion_footer .accordion-toggle .bi,
-     #accordion_footer .accordion-toggle .fa,
-     .dfooter .panel-title a i,
-     .dfooter .panel-title a .bi,
-     .dfooter .panel-title a .fa,
-     #accordion_footer .panel-title a i,
-     #accordion_footer .panel-title a .bi,
-     #accordion_footer .panel-title a .fa {
-       color: #ffffff !important;
-     }
-
-     /* Ensure chevron icons are white */
-     .dfooter .bi-chevron-down,
-     .dfooter .bi-chevron-up,
-     .dfooter .fa-chevron-down,
-     .dfooter .fa-chevron-up,
-     .dfooter .fa-angle-down,
-     .dfooter .fa-angle-up,
-     .dfooter .fa-plus,
-     .dfooter .fa-minus,
-     #accordion_footer .bi-chevron-down,
-     #accordion_footer .bi-chevron-up,
-     #accordion_footer .fa-chevron-down,
-     #accordion_footer .fa-chevron-up,
-     #accordion_footer .fa-angle-down,
-     #accordion_footer .fa-angle-up,
-     #accordion_footer .fa-plus,
-     #accordion_footer .fa-minus {
-       color: #ffffff !important;
-     }
-
-     /* Fix tabs horizontal scroll - no white space - single row */
-     .tool_tabs {
-       padding: 0 !important;
-       margin: 0 !important;
-       width: 100% !important;
-       display: flex !important;
-       flex-direction: row !important;
-       flex-wrap: nowrap !important;
-       overflow-x: auto !important;
-       overflow-y: hidden !important;
-       -webkit-overflow-scrolling: touch;
-       scrollbar-width: none;
-       -ms-overflow-style: none;
-       justify-content: flex-start !important;
-       align-items: center !important;
-       scroll-padding-left: 0 !important;
-       scroll-snap-type: none !important;
-     }
-
-     /* Ensure first tab is visible - scroll to start */
-     .tool_tabs:first-child,
-     .tool_tabs .nav-item:first-child {
-       margin-left: 0 !important;
-       padding-left: 0 !important;
-     }
-
-     .tool_tabs .nav-item {
-       display: inline-block !important;
-       float: none !important;
-       white-space: nowrap !important;
-       margin-right: 8px !important;
-       flex-shrink: 0 !important;
-       flex-grow: 0 !important;
-     }
-
-     .tool_tabs .nav-link {
-       white-space: nowrap !important;
-       flex-shrink: 0 !important;
-       display: inline-block !important;
-     }
-
-     /* Remove container padding for tabs */
-     .row.center_flex .col-sm-10,
-     .row.center_flex .col-xs-10,
-     .row.center_flex .col-10 {
-       width: 100% !important;
-       max-width: 100% !important;
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       margin-left: 0 !important;
-       margin-right: 0 !important;
-     }
-
-     /* Center align "Find out how HappierMe can help your organisation" section on mobile */
-     .section-header .row.center_flex .col-sm-10.w-335px,
-     .section-header .row.center_flex .col-xs-10.w-335px,
-     .section-header .row.center_flex .col-10.w-335px {
-       width: 335px !important;
-       max-width: 335px !important;
-       margin-left: auto !important;
-       margin-right: auto !important;
-       text-align: center !important;
-     }
-
-     /* Center align work/education/healthcare cards on mobile */
-     .work_edu_health_outer {
-       display: flex !important;
-       flex-direction: column !important;
-       align-items: center !important;
-       justify-content: center !important;
-       margin: 0 auto !important;
-     }
-
-     .work_edu_health_outer>[class^="col-"] {
-       width: 100% !important;
-       max-width: 335px !important;
-       margin-left: auto !important;
-       margin-right: auto !important;
-       margin-bottom: 20px !important;
-       padding: 0 !important;
-     }
-
-     .work_edu_health_outer>[class^="col-"]:last-child {
-       margin-bottom: 0 !important;
-     }
-
-     /* Hide description and CTA in organisation cards on mobile - only show title */
-     .work_edu_health_outer .div_work_edu_health .row.d_none {
-       display: none !important;
-     }
-
-     /* Center align images and content within cards */
-     .work_edu_health_outer .div_work_edu_health .row {
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-       margin: 0 auto !important;
-       text-align: center !important;
-     }
-
-     /* Ensure title row is visible and centered */
-     .work_edu_health_outer .div_work_edu_health .row:not(.d_none) {
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-     }
-
-     .work_edu_health_outer .div_work_edu_health .row>[class^="col-"] {
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-       margin: 0 auto !important;
-       padding: 0 !important;
-     }
-
-     .work_edu_health_outer .w-335px {
-       width: 335px !important;
-       max-width: 335px !important;
-       margin-left: auto !important;
-       margin-right: auto !important;
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-       padding: 0 !important;
-     }
-
-     .work_edu_health_outer .img_health,
-     .work_edu_health_outer .img-responsive.img_health,
-     .work_edu_health_outer img.img_health {
-       width: 100% !important;
-       max-width: 335px !important;
-       min-width: auto !important;
-       height: auto !important;
-       margin: 0 auto !important;
-       display: block !important;
-       object-fit: contain !important;
-     }
-
-     /* Override conflicting img_health styles */
-     .work_edu_health_outer .div_work_edu_health .img_health {
-       width: 100% !important;
-       max-width: 335px !important;
-       min-width: auto !important;
-     }
-
-     .row.center_flex .fixed_w {
-       width: 100% !important;
-       max-width: 100% !important;
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       overflow: visible !important;
-     }
-
-     /* Override main.css tool_tabs styles for mobile */
-     .tool_tabs {
-       position: relative !important;
-       top: auto !important;
-       right: auto !important;
-       left: 0 !important;
-       width: 100% !important;
-       overflow-x: auto !important;
-       overflow-y: hidden !important;
-       text-align: left !important;
-     }
-
-     /* Ensure container doesn't add padding */
-     .row.center_flex .col-sm-10 .tool_tabs,
-     .row.center_flex .col-xs-10 .tool_tabs,
-     .row.center_flex .col-10 .tool_tabs {
-       margin-left: 0 !important;
-       padding-left: 0 !important;
-     }
-
-     /* Remove any padding from parent containers */
-     .row.center_flex.prelative {
-       padding-left: 0 !important;
-       padding-right: 0 !important;
-       margin-left: 0 !important;
-       margin-right: 0 !important;
-     }
-
-     /* Ensure first tab starts from left edge */
-     .tool_tabs .nav-item:first-child {
-       margin-left: 0 !important;
-       padding-left: 0 !important;
-     }
-
-     /* Override flex_ai class for tabs to prevent centering */
-     .tool_tabs.flex_ai {
-       justify-content: flex-start !important;
-       align-items: center !important;
-     }
-
-     /* Center align all tab content sections on mobile */
-     .tab-content {
-       padding: 20px 0 !important;
-       text-align: center !important;
-     }
-
-     .tab-content .row.center_flex {
-       justify-content: center !important;
-       align-items: center !important;
-       text-align: center !important;
-       margin: 0 auto !important;
-     }
-
-     .tab-content .row.center_flex>[class^="col-"] {
-       display: flex !important;
-       flex-direction: column !important;
-       align-items: center !important;
-       justify-content: center !important;
-       text-align: center !important;
-       margin: 0 auto !important;
-       padding: 0 !important;
-     }
-
-     /* Center align images and videos in tabs */
-     .tab-content .cvideo,
-     .tab-content .tool_video,
-     .tab-content .m-cvideo {
-       width: 100% !important;
-       max-width: 335px !important;
-       height: auto !important;
-       margin: 0 auto !important;
-       display: block !important;
-     }
-
-     .tab-content img.img-responsive,
-     .tab-content .guided_pgm_img,
-     .tab-content .community_img,
-     .tab-content .h-335px,
-     .tab-content .w-90per {
-       width: 100% !important;
-       max-width: 335px !important;
-       height: auto !important;
-       margin: 0 auto !important;
-       display: block !important;
-     }
-
-     /* Center align text content in tabs */
-     .tab-content .ta_lc,
-     .tab-content .w-336px {
-       width: 100% !important;
-       max-width: 335px !important;
-       margin: 0 auto !important;
-       text-align: center !important;
-       padding: 0 !important;
-     }
-
-     .tab-content h3,
-     .tab-content h4,
-     .tab-content h5 {
-       text-align: center !important;
-       margin-left: auto !important;
-       margin-right: auto !important;
-     }
-
-     /* Center align audio players */
-     .tab-content audio {
-       width: 100% !important;
-       max-width: 335px !important;
-       margin: 0 auto !important;
-       display: block !important;
-     }
-
-     .tab-content .row>[class^="col-"] audio {
-       width: 100% !important;
-       max-width: 335px !important;
-       margin: 0 auto !important;
-     }
-
-     /* Center align links and buttons */
-     .tab-content a,
-     .tab-content .td_underline {
-       text-align: center !important;
-       display: flex !important;
-       justify-content: center !important;
-       align-items: center !important;
-       margin: 0 auto !important;
-     }
-
-     .tab-content .w-45p,
-     .tab-content .w-50 {
-       width: auto !important;
-       max-width: 100% !important;
-       margin: 0 auto !important;
-     }
-
-     /* Center align flex containers */
-     .tab-content .flex_fd_cr {
-       flex-direction: column-reverse !important;
-       align-items: center !important;
-       justify-content: center !important;
-       text-align: center !important;
-     }
-
-     /* Center align card_gap containers */
-     .tab-content .card_gap {
-       align-items: center !important;
-       justify-content: center !important;
-       gap: 20px !important;
-     }
-
-   }
-
-   @media (min-width: 1400px) {
-     .card_gap {
-       gap: 10px !important;
-     }
-   }
+  .cross_btn_row {
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .popup_w {
+    width: 295px !important;
+    padding-top: 15px;
+  }
+
+  .popuptitle {
+    font-size: 21px !important;
+  }
+
+  .align_n {
+    align-items: normal !important;
+  }
+
+  /* Set video iframe size for mobile */
+  .cvideo_b,
+  .yt-embed,
+  #youtubeIntro {
+    width: 100% !important;
+    height: 214.03px !important;
+    max-width: 335px !important;
+    max-height: 214.03px !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Fix pricing section alignment and button */
+  .div_subscriptionnew {
+    text-align: center;
+  }
+
+  /* Title: Subscribe to HappierMe Premium - 18px, single line */
+  .div_subscriptionnew .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .div_subscriptionnew .row.justify-content-center {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .div_subscriptionnew .row.justify-content-center .col-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .div_subscriptionnew h2.fs_30px {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    margin-bottom: 20px !important;
+    margin-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Override mtb10px class */
+  .div_subscriptionnew h2.mtb10px {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Features section container - 335px width */
+  .div_subscriptionnew .fixed_w {
+    max-width: 335px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* Override mt20px margin for features section */
+  .div_subscriptionnew .mt20px {
+    margin-top: 20px !important;
+  }
+
+  /* Features list alignment - center aligned */
+  .div_subscriptionnew .d-flex.flex-column,
+  .div_subscriptionnew .d-flex.flex-column.flex-md-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    margin-bottom: 24px !important;
+    justify-content: center !important;
+  }
+
+  /* Add padding after last feature item */
+  .div_subscriptionnew .d-flex.flex-column .d-flex:last-child,
+  .div_subscriptionnew .d-flex.flex-md-row .d-flex:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Individual feature item alignment - center aligned */
+  .div_subscriptionnew .d-flex.flex-column .d-flex,
+  .div_subscriptionnew .d-flex.flex-md-row .d-flex {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: auto !important;
+    max-width: 100% !important;
+    gap: 10px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Feature icons - proper size and spacing */
+  .div_subscriptionnew .icon-subcription {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    flex-shrink: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Feature text alignment - center aligned, single line, 15px */
+  .div_subscriptionnew .d-flex span.fs_18px,
+  .div_subscriptionnew .d-flex .f_15px {
+    text-align: center !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+
+  /* Allow text to wrap if container is too narrow, but prefer single line */
+  .div_subscriptionnew .fixed_w {
+    min-width: fit-content !important;
+  }
+
+  /* Subscription cards container */
+  .div_subscriptionnew .plr20px.fixed_w {
+    max-width: 335px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .div_subscriptionnew .row.g-3 {
+    max-width: 335px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    gap: 16px !important;
+  }
+
+  /* Fix subscription card text alignment */
+  .btn_subscription {
+    width: 100% !important;
+    max-width: 335px !important;
+    text-align: left !important;
+    padding: 20px !important;
+    margin: 0 auto !important;
+  }
+
+  .btn_subscription .row {
+    margin: 0 !important;
+  }
+
+  .btn_subscription .text-start {
+    text-align: left !important;
+  }
+
+  .btn_subscription .text-end {
+    text-align: right !important;
+  }
+
+  .web_home_divcircleolly {
+    width: 100%
+  }
+
+  .btn_subscription h4,
+  .btn_subscription h6 {
+    text-align: inherit !important;
+  }
+
+  /* Subscription card columns */
+  .div_subscriptionnew .col-lg-6,
+  .div_subscriptionnew .col-md-6,
+  .div_subscriptionnew .col-sm-12 {
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* Fix "Start your free trial" button size and gradient */
+  #PricingSelectBtn .btn_popup {
+    width: 100% !important;
+    max-width: 335px !important;
+    height: 65px !important;
+    background: linear-gradient(180deg, #CB6171 100%, #E58D82 0%) !important;
+    border-radius: 36px !important;
+    margin: 0 auto;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+  }
+
+  /* Disclaimer text - 12px font size, 3 lines - all inline */
+  .div_subscriptionnew .row.center_flex {
+    text-align: center !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    margin-top: 24px !important;
+  }
+
+  .div_subscriptionnew .row.center_flex .col-12 {
+    max-width: 90% !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Make h6 wrap into 1 line by making container wider */
+  .div_subscriptionnew #totalAnnualPricingModelHeading,
+  .div_subscriptionnew h6.fs_15px {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    padding-right: 0 !important;
+    color: rgba(255, 255, 255, 1) !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Span on line 2 */
+  .div_subscriptionnew .row.center_flex span.fs_15px {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    display: block !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+    padding-right: 0 !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Anchor on line 3 */
+  .div_subscriptionnew .row.center_flex a {
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 1) !important;
+    margin-top: 0 !important;
+  }
+
+  .div_subscriptionnew .row.center_flex a span.td_underline {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    display: inline !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Center align subscription terms text */
+  .div_subscriptionnew h6,
+  .div_subscriptionnew span {
+    text-align: center !important;
+  }
+
+  /* Ensure white color for all text in disclaimer section */
+  .div_subscriptionnew .row.center_flex .col-12 .fc_ffffff,
+  .div_subscriptionnew .row.center_flex .col-12 h6.fc_ffffff,
+  .div_subscriptionnew .row.center_flex .col-12 span.fc_ffffff,
+  .div_subscriptionnew .row.center_flex .col-12 a .fc_ffffff {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Center align all links in mobile */
+  a.sap,
+  .sap a,
+  .sap h6,
+  .sap h4,
+  .sap h5,
+  a .td_underline,
+  .td_underline,
+  a.fc_cb6171,
+  .fc_cb6171,
+  .dflex_jc_lc,
+  .flex_ai {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+  }
+
+  .pt_pb {
+    padding-bottom: 8px;
+    padding-top: 10px;
+  }
+
+  /* Center align link containers */
+  .owl-nav,
+  .owl-controls,
+  .owl-controls .owl-nav {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Center align links with chevron icons */
+  a.sap h6,
+  a.sap h4,
+  a.sap h5 {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Ensure owl containers create stacking context for sap links */
+  .owl_blog,
+  .owl_coach {
+    position: relative;
+  }
+
+  /* Center align "Find out more" and similar links */
+  a[href*="teenagers"],
+  a[href*="blog"],
+  a[href*="testimonials"] {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+  }
+
+  .pb_15px {
+    padding-bottom: 15px !important;
+  }
+  .pr_14px {
+    padding-right: 14px !important;
+  }
+
+
+
+  /* Center align link text within containers */
+  .col-lg-12 a,
+  .col-md-12 a,
+  .col-sm-12 a,
+  .col-xs-12 a,
+  .col-12 a {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+
+  .fixed_w {
+    width: 980px !important;
+    margin: 0 auto !important;
+  }
+
+  .fixed_w1340 {
+    width: 1340px !important;
+    margin: 0 auto !important;
+  }
+
+  .land-happierme-margin {
+    margin-left: 11rem !important;
+  }
+
+  .f_18px {
+    font-size: 18px !important;
+  }
+
+  .f_30px {
+    font-size: 30px !important;
+  }
+
+  .t_align {
+    text-align: center !important;
+  }
+
+  .f_14px {
+    font-size: 14px !important
+  }
+
+  .f_12px {
+    font-size: 12px !important
+  }
+
+  .tab_faqs {
+    padding-left: 0px !important;
+  }
+
+  /* Add padding to FAQ section on mobile */
+  section .section-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* FAQ tabs and content padding */
+  .tab_faqs {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .tc_faqs.mobile,
+  .tc_faqs {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .panel-group,
+  .panel-group#accordion_faq {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .panel-body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  .tc_faqs.mobile,
+  .tc_faqs {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Left align FAQ section headings with spacing */
+  .tc_faqs.mobile h5,
+  .tc_faqs h5,
+  .tc_faqs .mobile,
+  .tc_faqs .tt_uppercase,
+  .tc_faqs h5.mobile,
+  .tc_faqs h5.tt_uppercase,
+  .tc_faqs .tab-pane h5,
+  .tc_faqs.mobile .tab-pane h5 {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    font-size: 15px !important;
+    /* Override fs_15px mobile override */
+  }
+
+  /* Add bottom spacing to "About HappierMe" heading (first heading) */
+  #about_happierme h5,
+  .tc_faqs.mobile #about_happierme h5,
+  .tc_faqs #about_happierme h5 {
+    margin-bottom: 32px !important;
+    margin-top: 0 !important;
+    font-size: 15px !important;
+    /* Override fs_15px mobile override */
+  }
+
+  /* Add top and bottom spacing to other section headings */
+  #how_can_the_app_help h5,
+  #app_features h5,
+  .tc_faqs.mobile #how_can_the_app_help h5,
+  .tc_faqs #how_can_the_app_help h5,
+  .tc_faqs.mobile #app_features h5,
+  .tc_faqs #app_features h5 {
+    margin-top: 40px !important;
+    margin-bottom: 24px !important;
+    font-size: 15px !important;
+    /* Override fs_15px mobile override */
+  }
+
+  /* Override existing margin classes for FAQ headings */
+  .tc_faqs.mobile h5.mt0px,
+  .tc_faqs h5.mt0px {
+    margin-top: 0 !important;
+    margin-bottom: 32px !important;
+    font-size: 15px !important;
+    /* Override fs_15px mobile override */
+  }
+
+  .tc_faqs.mobile h5.mt40px,
+  .tc_faqs h5.mt40px {
+    margin-top: 40px !important;
+    margin-bottom: 24px !important;
+    font-size: 15px !important;
+    /* Override fs_15px mobile override */
+  }
+
+  /* Sticky Rating Banner - Mobile Alignment */
+  .sticky_rating_banner {
+    padding: 12px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    background: #FFFFFF !important;
+  }
+
+  .sticky_rating_banner .row.center_flex {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+
+  .sticky_rating_banner .col-lg-4,
+  .sticky_rating_banner .col-md-4,
+  .sticky_rating_banner .col-sm-8,
+  .sticky_rating_banner .col-xs-12,
+  .sticky_rating_banner .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Close button - far left */
+  .sticky_rating_banner .col-lg-1,
+  .sticky_rating_banner .col-md-1,
+  .sticky_rating_banner .col-sm-1,
+  .sticky_rating_banner .col-xs-1 {
+    width: auto !important;
+    min-width: 20px !important;
+    max-width: 20px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right: 8px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    order: 1 !important;
+  }
+
+  .sticky_rating_banner .col-lg-1 img,
+  .sticky_rating_banner .col-md-1 img,
+  .sticky_rating_banner .col-sm-1 img,
+  .sticky_rating_banner .col-xs-1 img {
+    width: 14px !important;
+    height: 14px !important;
+    max-width: 14px !important;
+    max-height: 14px !important;
+  }
+
+  /* App icon - after cross */
+  .sticky_rating_banner .col-lg-2,
+  .sticky_rating_banner .col-md-2,
+  .sticky_rating_banner .col-sm-2,
+  .sticky_rating_banner .col-xs-2 {
+    width: auto !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right: 8px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    order: 2 !important;
+  }
+
+  .sticky_rating_banner .col-lg-2 img,
+  .sticky_rating_banner .col-md-2 img,
+  .sticky_rating_banner .col-sm-2 img,
+  .sticky_rating_banner .col-xs-2 img {
+    width: 40px !important;
+    height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    object-fit: contain !important;
+  }
+
+  /* App Store and Google Play info - horizontal layout */
+  .sticky_rating_banner .col-lg-5,
+  .sticky_rating_banner .col-md-5,
+  .sticky_rating_banner .col-sm-5,
+  .sticky_rating_banner .col-xs-5 {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    order: 3 !important;
+  }
+
+  .sticky_rating_banner .col-lg-5 .d-flex.flex-column,
+  .sticky_rating_banner .col-md-5 .d-flex.flex-column,
+  .sticky_rating_banner .col-sm-5 .d-flex.flex-column,
+  .sticky_rating_banner .col-xs-5 .d-flex.flex-column {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure the parent column container allows both children */
+  .sticky_rating_banner .col-lg-5,
+  .sticky_rating_banner .col-md-5,
+  .sticky_rating_banner .col-sm-5,
+  .sticky_rating_banner .col-xs-5 {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  /* Force both h6 children to be visible - horizontal layout */
+  .sticky_rating_banner .col-lg-5 .d-flex.flex-column>h6,
+  .sticky_rating_banner .col-md-5 .d-flex.flex-column>h6,
+  .sticky_rating_banner .col-sm-5 .d-flex.flex-column>h6,
+  .sticky_rating_banner .col-xs-5 .d-flex.flex-column>h6 {
+    display: flex !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    order: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Specifically target the second h6 (Google Play) */
+  .sticky_rating_banner .col-lg-5 .d-flex.flex-column>h6:nth-child(2),
+  .sticky_rating_banner .col-md-5 .d-flex.flex-column>h6:nth-child(2),
+  .sticky_rating_banner .col-sm-5 .d-flex.flex-column>h6:nth-child(2),
+  .sticky_rating_banner .col-xs-5 .d-flex.flex-column>h6:nth-child(2) {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin-top: 0 !important;
+    margin-left: 12px !important;
+    order: 0 !important;
+  }
+
+  .sticky_rating_banner .col-lg-5 h6,
+  .sticky_rating_banner .col-md-5 h6,
+  .sticky_rating_banner .col-sm-5 h6,
+  .sticky_rating_banner .col-xs-5 h6 {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #000000 !important;
+  }
+
+  /* Ensure both h6 elements are visible */
+  .sticky_rating_banner .col-lg-5 .d-flex.flex-column h6,
+  .sticky_rating_banner .col-md-5 .d-flex.flex-column h6,
+  .sticky_rating_banner .col-sm-5 .d-flex.flex-column h6,
+  .sticky_rating_banner .col-xs-5 .d-flex.flex-column h6 {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure the second h6 (Google Play) is visible */
+  .sticky_rating_banner .col-lg-5 .d-flex.flex-column h6:last-child,
+  .sticky_rating_banner .col-md-5 .d-flex.flex-column h6:last-child,
+  .sticky_rating_banner .col-sm-5 .d-flex.flex-column h6:last-child,
+  .sticky_rating_banner .col-xs-5 .d-flex.flex-column h6:last-child {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-top: 0 !important;
+    margin-left: 12px !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Override any flex_ai class that might be hiding content */
+  .sticky_rating_banner .col-lg-5 .d-flex.flex-column .flex_ai,
+  .sticky_rating_banner .col-md-5 .d-flex.flex-column .flex_ai,
+  .sticky_rating_banner .col-sm-5 .d-flex.flex-column .flex_ai,
+  .sticky_rating_banner .col-xs-5 .d-flex.flex-column .flex_ai {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+  }
+
+  .sticky_rating_banner .col-lg-5 h6.mb2px,
+  .sticky_rating_banner .col-md-5 h6.mb2px,
+  .sticky_rating_banner .col-sm-5 h6.mb2px,
+  .sticky_rating_banner .col-xs-5 h6.mb2px {
+    margin-bottom: 0 !important;
+  }
+
+  .sticky_rating_banner .col-lg-5 h6 img,
+  .sticky_rating_banner .col-md-5 h6 img,
+  .sticky_rating_banner .col-sm-5 h6 img,
+  .sticky_rating_banner .col-xs-5 h6 img {
+    width: 14px !important;
+    height: 14px !important;
+    max-width: 14px !important;
+    max-height: 14px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sticky_rating_banner .col-lg-5 h6 span,
+  .sticky_rating_banner .col-md-5 h6 span,
+  .sticky_rating_banner .col-sm-5 h6 span,
+  .sticky_rating_banner .col-xs-5 h6 span {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+    color: #000000 !important;
+  }
+
+  .sticky_rating_banner .col-lg-5 h6 .rating_a,
+  .sticky_rating_banner .col-md-5 h6 .rating_a,
+  .sticky_rating_banner .col-sm-5 h6 .rating_a,
+  .sticky_rating_banner .col-xs-5 h6 .rating_a {
+    flex-shrink: 0 !important;
+  }
+
+  .sticky_rating_banner .col-lg-5 h6 .rating_a i,
+  .sticky_rating_banner .col-md-5 h6 .rating_a i,
+  .sticky_rating_banner .col-sm-5 h6 .rating_a i,
+  .sticky_rating_banner .col-xs-5 h6 .rating_a i {
+    font-size: 10px !important;
+    color: #FF0000 !important;
+  }
+
+  /* Download button - far right */
+  .sticky_rating_banner .col-lg-4,
+  .sticky_rating_banner .col-md-4,
+  .sticky_rating_banner .col-sm-4,
+  .sticky_rating_banner .col-xs-4 {
+    width: auto !important;
+    min-width: 110px !important;
+    max-width: 130px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    order: 4 !important;
+  }
+
+  .sticky_rating_banner .btn_download {
+    width: 100% !important;
+    min-width: 110px !important;
+    max-width: 130px !important;
+    height: 32px !important;
+    padding: 0 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: 16px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    background: linear-gradient(90deg, #E58D82, #CB6171) !important;
+    white-space: nowrap !important;
+    color: #FFFFFF !important;
+    border: none !important;
+  }
+
+  /* Ensure tab-pane doesn't center align headings */
+  .tc_faqs .tab-pane,
+  .tc_faqs.mobile .tab-pane {
+    text-align: left !important;
+  }
+
+  /* Hero section h1 - "Understand your mind. Change your life." - 27px on mobile */
+  .w-75 h1.fs_45px {
+    font-size: 27px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+  }
+
+  .tc_faqs .tab-pane>h5 {
+    text-align: left !important;
+  }
+
+  .panel-group,
+  .panel-group#accordion_faq {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .panel-body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  /* Add padding to footer on mobile */
+  .dfooter {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .dfooter .display_df_none {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .dfooter .panel-group#accordion_footer {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .dfooter .panel-body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  /* Ensure ALL footer text is white on mobile */
+  .dfooter,
+  .dfooter *,
+  .dfooter h4,
+  .dfooter .fc_ffffff,
+  .dfooter a,
+  .dfooter a h4,
+  .dfooter .dfooter_links,
+  .dfooter .dfooter_links a,
+  .dfooter .dfooter_links a h4,
+  .dfooter .color_wh,
+  .dfooter .panel-title,
+  .dfooter .panel-title a,
+  .dfooter .panel-title h4,
+  .dfooter .panel-heading,
+  .dfooter .panel-heading h4,
+  .dfooter .accordion-toggle,
+  .dfooter .accordion-toggle *,
+  #accordion_footer .panel-title a,
+  #accordion_footer .panel-title h4,
+  #accordion_footer .accordion-toggle {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Override any other color classes in footer */
+  .dfooter .fc_000000,
+  .dfooter .fc_cb6171,
+  .dfooter .fc_000000 * {
+    color: #ffffff !important;
+  }
+
+  /* Left align all footer links and headings on mobile */
+  .dfooter .panel-body,
+  .dfooter .panel-body .row,
+  .dfooter .panel-body .col-lg-12,
+  .dfooter .panel-body .col-md-12,
+  .dfooter .panel-body .col-sm-12,
+  .dfooter .panel-body .col-xs-12,
+  .dfooter .panel-body .col-12,
+  .dfooter .dfooter_links,
+  .dfooter .dfooter_links a,
+  .dfooter .dfooter_links a h4,
+  .dfooter .panel-body a,
+  .dfooter .panel-body a h4 {
+    text-align: left !important;
+    display: block !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .dfooter .panel-title,
+  .dfooter .panel-title a,
+  .dfooter .panel-title h4,
+  .dfooter .panel-heading,
+  .dfooter .panel-heading h4,
+  .dfooter .accordion-toggle {
+    text-align: left !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  /* Make accordion icons white plus/minus on mobile - OVERRIDE ALL BASE STYLES TO MATCH INDEX PAGE */
+  /* Collapsed state - show PLUS icon */
+  .dfooter #accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
+  .dfooter #accordion_footer .panel-title a:not([aria-expanded="true"]):after,
+  #accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
+  #accordion_footer .panel-title a:not([aria-expanded="true"]):after,
+  .dfooter .accordion-toggle:not([aria-expanded="true"]):after,
+  .dfooter .panel-title a:not([aria-expanded="true"]):after,
+  .dfooter .panel-heading .panel-title a:not([aria-expanded="true"]):after,
+  .dfooter .panel-heading h4 a:not([aria-expanded="true"]):after,
+  .dfooter .panel-group#accordion_footer .panel-title>a:not([aria-expanded="true"]):after,
+  .dfooter .panel-group#accordion_footer .panel-title a:not([aria-expanded="true"]):after {
+    content: "+" !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: 24px !important;
+    font-weight: 300 !important;
+    line-height: 24px !important;
+    background: none !important;
+    background-image: none !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    float: right !important;
+    filter: none !important;
+  }
+
+  /* Expanded state - show MINUS icon */
+  .dfooter #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  .dfooter #accordion_footer .panel-title a[aria-expanded="true"]:after,
+  #accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  #accordion_footer .panel-title a[aria-expanded="true"]:after,
+  .dfooter .accordion-toggle[aria-expanded="true"]:after,
+  .dfooter .panel-title a[aria-expanded="true"]:after,
+  .dfooter .panel-heading .panel-title a[aria-expanded="true"]:after,
+  .dfooter .panel-heading h4 a[aria-expanded="true"]:after,
+  .dfooter .panel-group#accordion_footer .panel-title>a[aria-expanded="true"]:after,
+  .dfooter .panel-group#accordion_footer .panel-title a[aria-expanded="true"]:after {
+    content: "-" !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: 24px !important;
+    font-weight: 300 !important;
+    line-height: 24px !important;
+    background: none !important;
+    background-image: none !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    float: right !important;
+    filter: none !important;
+  }
+
+  /* Ensure any icon fonts inside accordion are white */
+  .dfooter .accordion-toggle i,
+  .dfooter .accordion-toggle .bi,
+  .dfooter .accordion-toggle .fa,
+  #accordion_footer .accordion-toggle i,
+  #accordion_footer .accordion-toggle .bi,
+  #accordion_footer .accordion-toggle .fa,
+  .dfooter .panel-title a i,
+  .dfooter .panel-title a .bi,
+  .dfooter .panel-title a .fa,
+  #accordion_footer .panel-title a i,
+  #accordion_footer .panel-title a .bi,
+  #accordion_footer .panel-title a .fa {
+    color: #ffffff !important;
+  }
+
+  /* Ensure chevron icons are white */
+  .dfooter .bi-chevron-down,
+  .dfooter .bi-chevron-up,
+  .dfooter .fa-chevron-down,
+  .dfooter .fa-chevron-up,
+  .dfooter .fa-angle-down,
+  .dfooter .fa-angle-up,
+  .dfooter .fa-plus,
+  .dfooter .fa-minus,
+  #accordion_footer .bi-chevron-down,
+  #accordion_footer .bi-chevron-up,
+  #accordion_footer .fa-chevron-down,
+  #accordion_footer .fa-chevron-up,
+  #accordion_footer .fa-angle-down,
+  #accordion_footer .fa-angle-up,
+  #accordion_footer .fa-plus,
+  #accordion_footer .fa-minus {
+    color: #ffffff !important;
+  }
+
+  /* Fix tabs horizontal scroll - no white space - single row */
+  .tool_tabs {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    scroll-padding-left: 0 !important;
+    scroll-snap-type: none !important;
+  }
+
+  /* Ensure first tab is visible - scroll to start */
+  .tool_tabs:first-child,
+  .tool_tabs .nav-item:first-child {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .tool_tabs .nav-item {
+    display: inline-block !important;
+    float: none !important;
+    white-space: nowrap !important;
+    margin-right: 8px !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+  }
+
+  .tool_tabs .nav-link {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+  }
+
+  /* Remove container padding for tabs */
+  .row.center_flex .col-sm-10,
+  .row.center_flex .col-xs-10,
+  .row.center_flex .col-10 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Center align "Find out how HappierMe can help your organisation" section on mobile */
+  .section-header .row.center_flex .col-sm-10.w-335px,
+  .section-header .row.center_flex .col-xs-10.w-335px,
+  .section-header .row.center_flex .col-10.w-335px {
+    width: 100% !important;
+    max-width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  /* Center align work/education/healthcare cards on mobile */
+  .work_edu_health_outer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
+
+  .work_edu_health_outer>[class^="col-"] {
+    width: 100% !important;
+    max-width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 20px !important;
+    padding: 0 !important;
+  }
+
+  .work_edu_health_outer>[class^="col-"]:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Hide description and CTA in organisation cards on mobile - only show title */
+  .work_edu_health_outer .div_work_edu_health .row.d_none {
+    display: none !important;
+  }
+
+  /* Center align images and content within cards */
+  .work_edu_health_outer .div_work_edu_health .row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  /* Ensure title row is visible and centered */
+  .work_edu_health_outer .div_work_edu_health .row:not(.d_none) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .work_edu_health_outer .div_work_edu_health .row>[class^="col-"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .work_edu_health_outer .w-335px {
+    width: 100% !important;
+    max-width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+
+  .work_edu_health_outer .img_health,
+  .work_edu_health_outer .img-responsive.img_health,
+  .work_edu_health_outer img.img_health {
+    width: 100% !important;
+    max-width: 335px !important;
+    min-width: auto !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  /* Override conflicting img_health styles */
+  .work_edu_health_outer .div_work_edu_health .img_health {
+    width: 100% !important;
+    max-width: 335px !important;
+    min-width: auto !important;
+  }
+
+  .row.center_flex .fixed_w {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Override main.css tool_tabs styles for mobile */
+  .tool_tabs {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: 0 !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    text-align: left !important;
+  }
+
+  /* Ensure container doesn't add padding */
+  .row.center_flex .col-sm-10 .tool_tabs,
+  .row.center_flex .col-xs-10 .tool_tabs,
+  .row.center_flex .col-10 .tool_tabs {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Remove any padding from parent containers */
+  .row.center_flex.prelative {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Ensure first tab starts from left edge */
+  .tool_tabs .nav-item:first-child {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Override flex_ai class for tabs to prevent centering */
+  .tool_tabs.flex_ai {
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  /* Center align all tab content sections on mobile */
+  .tab-content {
+    padding: 20px 0 !important;
+    text-align: center !important;
+  }
+
+  .tab-content .row.center_flex {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .tab-content .row.center_flex>[class^="col-"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* Center align images and videos in tabs */
+  .tab-content .cvideo,
+  .tab-content .tool_video,
+  .tab-content .m-cvideo {
+    width: 100% !important;
+    max-width: 335px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  .tab-content img.img-responsive,
+  .tab-content .guided_pgm_img,
+  .tab-content .community_img,
+  .tab-content .h-335px,
+  .tab-content .w-90per {
+    width: 100% !important;
+    max-width: 335px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* Center align text content in tabs */
+  .tab-content .ta_lc,
+  .tab-content .w-336px {
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  .tab-content h3,
+  .tab-content h4,
+  .tab-content h5 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Center align audio players */
+  .tab-content audio {
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  .tab-content .row>[class^="col-"] audio {
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Center align links and buttons */
+  .tab-content a,
+  .tab-content .td_underline {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+  }
+
+  .tab-content .w-45p,
+  .tab-content .w-50 {
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Center align flex containers */
+  .tab-content .flex_fd_cr {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Center align card_gap containers */
+  .tab-content .card_gap {
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+}
+
+@media (min-width: 1400px) {
+  .card_gap {
+    gap: 10px !important;
+  }
+}
+
+
+.cross_btn {
+  min-height: 30px !important;
+  min-width: 30px !important;
+  width: 30px !important;
+}
+
+/* Override responsive/default styles for modal header illustration */
+.modal-content1 .modal-header img:not(.cross_btn) {
+  width: 90.67px !important;
+  height: 86.54px !important;
+  object-fit: contain;
+}
+
+.accordion-button::after {
+  width: 13.21px !important;
+  height: 8px !important;
+  background-size: 13.21px 8px !important;
+}

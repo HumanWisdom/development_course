@@ -43,6 +43,70 @@
     #toggle:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 767px) {
+
+      /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
+      /* Override: #accordion_footer .panel-title>a:after { content: url(...svg...) } */
+      #accordion_footer .panel-title > a::after,
+      #accordion_footer .panel-title > a.accordion-toggle::after,
+      .dfooter #accordion_footer .panel-title > a::after,
+      .panel-group#accordion_footer .panel-title > a::after {
+        content: "+" !important;
+        color: #ffffff !important;
+        font-family: inherit !important;
+        font-size: 24px !important;
+        line-height: 24px !important;
+        background: none !important;
+        background-image: none !important;
+        width: 24px !important;
+        height: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        float: right !important;
+        opacity: 1 !important;
+        filter: none !important;
+        -webkit-filter: none !important;
+        transform: none !important;
+      }
+      
+      #accordion_footer .panel-title > a[aria-expanded="true"]::after,
+      #accordion_footer .panel-title > a.accordion-toggle[aria-expanded="true"]::after,
+      .dfooter #accordion_footer .panel-title > a[aria-expanded="true"]::after,
+      .panel-group#accordion_footer .panel-title > a[aria-expanded="true"]::after {
+        content: "-" !important;
+        color: #ffffff !important;
+        background: none !important;
+        background-image: none !important;
+      }
+      
+      /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
+      .accordion-button::after {
+        background-image: none !important;
+        content: "+" !important;
+        color: #ffffff !important;
+        font-size: 16px !important;
+        font-weight: 300 !important;
+        width: auto !important;
+        height: auto !important;
+        transform: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      
+      .accordion-button:not(.collapsed)::after {
+        background-image: none !important;
+        content: "-" !important;
+        transform: none !important;
+      }
+      
+    .accordion {
+        padding: 10px;
+    }
+
+    }
   </style>
 </head>
 
@@ -105,13 +169,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 25 days ago  -->
-                  </h6>
-                </div>
-              </div>
+             
             </a>
           </div>
 
@@ -140,13 +198,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 25 days ago  -->
-                  </h6>
-                </div>
-              </div>
+           
             </a>
           </div>
 
@@ -175,13 +227,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 8 months ago  -->
-                  </h6>
-                </div>
-              </div>
+             
             </a>
           </div>
           <div class="clearfix"></div>
@@ -211,13 +257,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 2 years ago  -->
-                  </h6>
-                </div>
-              </div>
+            
             </a>
           </div>
 
@@ -246,13 +286,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- 2 years ago  -->
-                  </h6>
-                </div>
-              </div>
+             
             </a>
           </div>
 
@@ -281,13 +315,7 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                  <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-                    <!-- a year ago  -->
-                  </h6>
-                </div>
-              </div>
+            
             </a>
           </div>
           <div class="clearfix"></div>
@@ -322,13 +350,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+             
               </a>
             </div>
 
@@ -361,13 +383,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -400,13 +416,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="clearfix"></div>
@@ -437,13 +447,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -476,13 +480,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -511,13 +509,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
 
@@ -550,13 +542,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -587,13 +573,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
 
@@ -623,13 +603,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
             <div class="clearfix"></div>
@@ -661,13 +635,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -696,13 +664,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -731,13 +693,7 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="clearfix"></div>
@@ -770,13 +726,7 @@
 
 
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -804,13 +754,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
 
@@ -839,13 +783,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="clearfix"></div>
@@ -877,13 +815,7 @@
 
 
 
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
@@ -911,13 +843,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -946,13 +872,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
             <div class="clearfix"></div>
@@ -981,13 +901,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+             
               </a>
             </div>
 
@@ -1016,13 +930,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+            
               </a>
             </div>
 
@@ -1051,13 +959,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
             <div class="clearfix"></div>
@@ -1086,13 +988,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-                    </h6>
-                  </div>
-                </div>
+                
               </a>
             </div>
 
@@ -1125,15 +1021,7 @@
                     </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-
-
-                    </h6>
-                  </div>
-                </div>
+               
               </a>
             </div>
 
@@ -1159,15 +1047,7 @@
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">12 questions to deepen your relationships   </h4>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-
-
-                    </h6>
-                  </div>
-                </div>
+              
               </a>
             </div>
 
@@ -1194,15 +1074,35 @@
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">10 Ways to Thrive as a Parent</h4>
                   </div>
                 </div>
+               
+              </a>
+            </div>
+
+
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+              <a class="" href="3_steps_to_deeper_meditation.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <h6 class="mtb12px fs_12px fw_400 lh_150p fc_000000_0_5">
-
-
-
-                    </h6>
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/74.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Manage your emotions</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Three Steps to a Deeper Meditation Practice
+</h4>
+                  </div>
+                </div>
+               
               </a>
             </div>
 
@@ -1210,7 +1110,7 @@
             <div class="clearfix"></div>
 
           <div class="btn-container">
-            <button id="toggle" style="text-decoration:underline;">View More</button>
+            <button type="button" id="toggle" style="text-decoration:underline;">View More</button>
           </div>
           <!-- <view less> -->
         </div>
@@ -1230,16 +1130,22 @@
 
   <script>
  $(document).ready(function () {
+  let isExpanded = false;
+  
   // Toggle button click handler
   $('#toggle').on('click', function(e) {
     e.preventDefault();
-    $('#text').toggle(0, function () {
-      if ($(this).is(':visible')) {
-        $('#toggle').text('View Less');
-      } else {
-        $('#toggle').text('View More');
-      }
-    });
+    e.stopPropagation();
+    
+    isExpanded = !isExpanded;
+    
+    if (isExpanded) {
+      $('#text').slideDown(300);
+      $('#toggle').text('View Less');
+    } else {
+      $('#text').slideUp(300);
+      $('#toggle').text('View More');
+    }
   });
 });
   </script>

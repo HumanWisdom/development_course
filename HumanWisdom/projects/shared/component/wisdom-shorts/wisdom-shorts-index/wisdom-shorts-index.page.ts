@@ -2,11 +2,12 @@ import { Platform } from "@angular/cdk/platform";
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { CommonService } from  '../../../services/common.service';
 import { SharedService } from "../../../services/shared.service";
 import { ProgramType } from "../../../models/program-model";
+import { NavigationService } from "../../../services/navigation.service";
 
 
 @Component({
@@ -38,7 +39,9 @@ export class WisdomShortsIndexPage implements OnInit {
     private readonly location: Location,
     private readonly service: CommonService,
     private readonly meta: Meta,
-    private readonly title: Title
+    private readonly title: Title,
+    private readonly navigationService: NavigationService,
+    private readonly activatedRoute: ActivatedRoute
   ) {
     this.address = this.router.url;
     this.prefData = SharedService.getPreferenceData();
@@ -136,12 +139,32 @@ export class WisdomShortsIndexPage implements OnInit {
         }
 
         localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
+
+        const fragment = this.activatedRoute.snapshot.fragment;
+        if(fragment) {
+           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
+           if(match) {
+             setTimeout(() => {
+               this.getUserPref(match.id);
+             }, 200);
+           }
+        }
       }
     })
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null || url.includes('home') || url.includes('dashboard')) {
+      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null') {
+        this.router.navigateByUrl(navFrom);
+      } else {
+        this.location.back();
+      }
+    } else {
+      this.router.navigate([url]);
+    }
   }
   share() {
     console.log("url")

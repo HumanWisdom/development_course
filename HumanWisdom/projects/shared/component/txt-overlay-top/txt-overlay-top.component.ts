@@ -1,6 +1,6 @@
 
-import { Component, OnInit,Input,Output,ViewChild, EventEmitter,AfterViewInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component,Input,ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
@@ -9,7 +9,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './txt-overlay-top.component.html',
   styleUrls: ['./txt-overlay-top.component.scss'],
 })
-export class TxtOverlayTopComponent implements OnInit,AfterViewInit {
+export class TxtOverlayTopComponent {
   @Input() base: string;
   @Input() overlay: any;
 
@@ -22,12 +22,6 @@ export class TxtOverlayTopComponent implements OnInit,AfterViewInit {
     private next: ActivatedRoute
   ) { }
 
-  ngOnInit() {}
 
-  ngAfterViewInit(){
-    
-  
-  
-  }
 
 }

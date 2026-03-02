@@ -20,6 +20,7 @@ import { CommonScreenPage } from '../../../../shared/component/common-screen/com
 import { HomeComponent } from '../../../../shared/component/home/home.component';
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 import { SocialLoginPage } from '../../../../shared/component/social-login/social-login.component';
+import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-survey-intro/wellness-survey-intro.page';
 
 const routes: Routes = [
   {
@@ -422,7 +423,7 @@ const routes: Routes = [
     loadChildren: () => import('./adverts/adverts.module').then(m => m.AdvertsPageModule)
   },
   {
-    path: 'wisdom-exercise',
+    path: 'self-awareness',
     loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
   },
   {
@@ -576,11 +577,7 @@ const routes: Routes = [
   {
     path: 'redeem-gift-card',
     loadChildren: () => import('../../../../shared/component/redeem-subscription/redeem-subscription-landing/redeem-subscription-landing.module').then( m => m.RedeemSubscriptionLandingPageModule)
-  },
-  {
-    path: 'blog-static',
-    loadChildren: () => import('./blog-static/blog-static.module').then( m => m.BlogStaticPageModule)
-  },
+  },  
   {
     path: 'splash-options',
     loadChildren: () => import('./splash-options/splash-options.module').then( m => m.SplashOptionsPageModule)
@@ -694,7 +691,6 @@ const routes: Routes = [
   },
   {
     path: 'blog-article',
-    canActivate:[ActiveGuard],
     component:BlogArticlePage
   },
   {
@@ -722,6 +718,10 @@ const routes: Routes = [
     component: QuestionAnswersSelection
   },
   {
+    path: 'wellness-survey-intro',
+    component: WellnessSurveyIntroPage
+  },
+  {
     path: 'soundscapes',
     component: CommonScreenPage
   },
@@ -734,6 +734,17 @@ const routes: Routes = [
     canActivate: [AudioVideoGuard],
     component: SingleAudioContentComponent
   },
+  {
+    path: 'wisdom-exercise',
+    redirectTo:'curated/self-awareness'
+  },
+  {
+  path: 'wisdom-exercise/:subpath',
+  redirectTo: 'curated/self-awareness',
+  pathMatch: 'full'
+}
+
+
 ];
 
  @NgModule({

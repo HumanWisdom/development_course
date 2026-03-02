@@ -25,8 +25,10 @@ export class S92001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+    isContentsOpen = false;
+
   bookmarkList=[]
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/92.webp"
   tocColor="white"
   tocAlt=""
@@ -92,29 +94,39 @@ export class S92001Page implements OnInit,OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/manage-your-emotions');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+
+    this.service.clickModule(92, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
+    // continue where you left    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(35))
-    this.moduleId=localStorage.getItem("moduleId")
-    if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
   
     this.startTime = Date.now();
     this.createScreen()
   }
 
+
+   toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
@@ -167,9 +179,8 @@ export class S92001Page implements OnInit,OnDestroy {
     }})
   }
 
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 
   getClickEvent(data) {

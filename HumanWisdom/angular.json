@@ -41,7 +41,6 @@
               "projects/adults/src/.htaccess"
             ],
             "styles": [
-
               {
                 "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "inject": true
@@ -244,8 +243,9 @@
           "options": {
             "main": "projects/adults/src/test.ts",
             "polyfills": "projects/adults/src/polyfills.ts",
-            "tsConfig": "projects/adults/src/tsconfig.spec.json",
-            "karmaConfig": "projects/adults/src/karma.conf.js",
+            "tsConfig": "projects/adults/tsconfig.spec.json",
+            "karmaConfig": "projects/adults/karma.conf.js",
+            "codeCoverage": false,
             "styles": [],
             "scripts": [],
             "assets": [
@@ -335,7 +335,6 @@
                 "input": "projects/teenagers/src/assets",
                 "output": "assets"
               },
-
               "projects/teenagers/src/web.config",
               "projects/teenagers/src/serviceworker.js",
               {
@@ -348,7 +347,6 @@
               "projects/teenagers/src/.htaccess"
             ],
             "styles": [
-
               {
                 "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "inject": true
@@ -476,7 +474,7 @@
                 "styles": {
                   "minify": true,
                   "inlineCritical": false
-                  },
+                },
                 "fonts": true
               },
               "outputHashing": "all",
@@ -509,9 +507,7 @@
             "production": {
               "browserTarget": "teenagers:build:production"
             },
-            
-            "ci": {
-            }
+            "ci": {}
           }
         },
         "extract-i18n": {
@@ -563,6 +559,20 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shared/test.ts",
+            "polyfills": "projects/shared/polyfills.ts",
+            "tsConfig": "projects/shared/tsconfig.spec.json",
+            "karmaConfig": "projects/shared/karma.conf.js",
+            "codeCoverage": true,
+            "sourceMap": true,
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
         }
       }
     }

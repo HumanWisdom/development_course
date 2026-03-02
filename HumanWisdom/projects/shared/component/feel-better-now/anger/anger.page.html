@@ -40,14 +40,14 @@
                     <div class="prelative">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_be_anger.webp" class="img-responsive w100stress">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_be_anger.webp" alt="Breathing exercise" class="img-responsive w100stress">
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive"  *ngIf="isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" alt="Play" class="img-responsive" *ngIf="!isAdults">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" alt="Play" class="img-responsive"  *ngIf="isAdults">
                         </div>
                       </div>
                     </div>
@@ -73,7 +73,23 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
+                          02:54
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive" style="max-height: 16px;" alt="locked" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           02:54
@@ -81,9 +97,9 @@
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
-                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                          class="img-responsive" style="max-height: 16px;" alt="locked" *ngIf="!isAdults">
                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
-                          class="img-responsive"  *ngIf="isAdults">
+                          class="img-responsive" alt="locked" *ngIf="isAdults">
                       </div>
                     </div>
 
@@ -103,14 +119,14 @@
                     <div class="prelative">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/soundscapes/02.webp" class="img-responsive w100stress">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/soundscapes/02.webp" alt="Soft Horizon" class="img-responsive w100stress">
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive"  *ngIf="isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" alt="Play" class="img-responsive" *ngIf="!isAdults">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" alt="Play" class="img-responsive"  *ngIf="isAdults">
                         </div>
                       </div>
                     </div>
@@ -136,16 +152,32 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
+                          30:00
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive" style="max-height: 16px;" alt="locked" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           30:00
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
                           class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
-                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
                           class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
@@ -163,14 +195,14 @@
                     <div class="prelative">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_am_anger.webp" class="img-responsive w100stress">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_am_anger.webp" alt="Audio meditation" class="img-responsive w100stress">
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio.svg" class="img-responsive" *ngIf="!isAdults">
-                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive"  *ngIf="isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio.svg" alt="Audio" class="img-responsive" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" alt="Play" class="img-responsive"  *ngIf="isAdults">
 
                         </div>
                       </div>
@@ -197,16 +229,32 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
+                          09:59
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           09:59
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
                           class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
-                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
                           class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
@@ -224,14 +272,14 @@
                     <div class="prelative">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_sv_anger.webp" class="img-responsive w100stress">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_sv_anger.webp" alt="Short video" class="img-responsive w100stress">
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive"  *ngIf="isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" alt="Play" class="img-responsive" *ngIf="!isAdults">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" alt="Play" class="img-responsive"  *ngIf="isAdults">
 
                         </div>
                       </div>
@@ -243,7 +291,7 @@
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/short_video.svg" class="img-responsive w100stress">
                         </div> -->
                            <div class="col-md-12 col-sm-12 col-xs-12 p0"> 
-                            <h4 class="mtb0px fw_400 fs_12px lh_140p ttuppercase ls_1_2px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                            <h4 class="mtb0px fw_400 fs_12px lh_140p ttuppercase ls_1_2px" alt="short_video" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             SHORT VIDEO
                           </h4>
                         </div>
@@ -258,16 +306,32 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
+                          00:33
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           00:33
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
                           class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
-                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
                           class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
@@ -285,14 +349,14 @@
                     <div class="prelative">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_lv_anger.webp" class="img-responsive w100stress">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_lv_anger.webp" class="img-responsive w100stress" alt="Long video">
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive"  *ngIf="isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play.svg" class="img-responsive" *ngIf="!isAdults" alt="play">
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive"  *ngIf="isAdults"  alt="play">
                         </div>
                       </div>
                     </div>
@@ -318,16 +382,32 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
+                          10:12
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           10:12
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
                           class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
-                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
                           class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
@@ -345,14 +425,14 @@
                     <div class="prelative">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/fbn_mp_anger.webp" class="img-responsive w100stress">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/fbn_mp_anger.webp" class="img-responsive w100stress" alt="Mini podcast">
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio.svg" class="img-responsive" *ngIf="!isAdults">
-                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive"  *ngIf="isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio.svg" class="img-responsive" *ngIf="!isAdults" alt="audio">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg" class="img-responsive"  *ngIf="isAdults" alt="play">
 
                         </div>
                       </div>
@@ -379,16 +459,32 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!-- Safari/iOS browser layout -->
+                    <div class="row align-items-center" *ngIf="isIOS">
+                      <div class="col-11 p0">
+                        <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
+                          02:23
+                        </h4>
+                      </div>
+                      <div class="col-1 p0 tright" *ngIf="!isSubscribed">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
+                          class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
+                          class="img-responsive"  *ngIf="isAdults">
+                      </div>
+                    </div>
+                    
+                    <!-- Other browsers layout -->
+                    <div class="row" *ngIf="!isIOS">
                       <div class="col-md-11 col-sm-11 col-xs-11 p0 ws_normal">
                         <h4 class="mtb0px fw_400 fs_12px lh_130p "[ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" >
                           02:23
                         </h4>
                       </div>
                       <div class="col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isSubscribed">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" alt="locked"
                           class="img-responsive" style="max-height: 16px;" *ngIf="!isAdults">
-                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="locked"
                           class="img-responsive"  *ngIf="isAdults">
                       </div>
                     </div>
@@ -440,16 +536,16 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="isAdults">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/14.webp" class="img-responsive">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/14.webp"  class="img-responsive" alt="Anger">
                           </div>
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"  *ngIf="!isAdults">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/118.webp" class="img-responsive">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/118.webp" class="img-responsive" alt="Anger">
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
+                            <h4 class="mt10px mb0px fw_500 fs_15px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                               Anger
                             </h4>
                           </div>
@@ -475,16 +571,16 @@
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/54.webp" class="img-responsive">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/54.webp"  class="img-responsive" alt="Reactive Mind">
                           </div>
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/113.webp" class="img-responsive">
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/113.webp" class="img-responsive" alt="Reactive Mind">
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                            <h4 class="mt10px mb10px fw_500 fs_15px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
+                            <h4 class="mt10px mb0px fw_500 fs_15px lh_130p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" >
                               Reactive Mind
                             </h4>
                           </div>

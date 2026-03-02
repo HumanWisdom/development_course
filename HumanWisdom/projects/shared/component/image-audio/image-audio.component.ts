@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './image-audio.component.html',
   styleUrls: ['./image-audio.component.scss'],
 })
-export class ImageAudioComponent implements OnInit,AfterViewInit {
+export class ImageAudioComponent {
   @Input() base: string;
   @Input() overlay: string;
   scrId:any
@@ -18,13 +18,5 @@ export class ImageAudioComponent implements OnInit,AfterViewInit {
     private captureService:NgxCaptureService,
     private next: ActivatedRoute,
     private service: AdultsService,) { }
-
-  ngOnInit() {}
-
-  ngAfterViewInit(){
-    
-  
-  
-  }
 
 }

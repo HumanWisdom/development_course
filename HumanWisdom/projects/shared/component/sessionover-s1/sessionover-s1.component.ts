@@ -7,7 +7,7 @@ import { ProgramType } from '../../models/program-model';
   templateUrl: './sessionover-s1.component.html',
   styleUrls: ['./sessionover-s1.component.scss'],
 })
-export class SessionoverS1Component implements OnInit {
+export class SessionoverS1Component {
   @Input() bg: string;
   @Input() points: string;
   @Input() progress: string;
@@ -25,6 +25,6 @@ export class SessionoverS1Component implements OnInit {
     
   }
 
-  ngOnInit() {}
+
 
 }

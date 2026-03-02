@@ -29,7 +29,7 @@ export class PodcastTocPage implements OnInit {
   address: any;
   searchedText= '';
   prefData = [];
-  selectedPref = 'All'
+  selectedPref = 'all'
   isAdults = true;
   showModal = false;
   modalTitle = 'The best is yet to come';
@@ -50,12 +50,22 @@ export class PodcastTocPage implements OnInit {
       this.isAdults = false;
     }
     this.prefData = SharedService.getPreferenceData();
-    // this.prefData.push({
-    //   id: "01",
-    //   active: false,
-    //   displayName: "Mini Podcast",
-    //   name: 'Mini Podcast',
-    // })
+    const otherIndex = this.prefData.findIndex(p => p.id === '0');
+    if (otherIndex !== -1) {
+      this.prefData.splice(otherIndex, 0, {
+        id: 'Sports',
+        displayName: 'Sports',
+        active: false,
+        name: 'Sports'
+      });
+    } else {
+      this.prefData.push({
+        id: 'Sports',
+        displayName: 'Sports',
+        active: false,
+        name: 'Sports'
+      });
+    }
   }
 
   ngOnInit() {
@@ -85,13 +95,7 @@ export class PodcastTocPage implements OnInit {
 
     this.getUserPref("all");
     
-    // Make the "All" button active by default
-    setTimeout(() => {
-      const allBtn = document.getElementById('all');
-      if (allBtn) {
-        allBtn.classList.add('active');
-      }
-    }, 100);
+
   }
 
   getSourceForPodBin() {
@@ -102,8 +106,13 @@ export class PodcastTocPage implements OnInit {
   }
   goBack() {
     var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
+    if (url == null || url.includes('home') || url.includes('dashboard')) {
+      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null') {
+        this.router.navigateByUrl(navFrom);
+      } else {
+        this.location.back();
+      }
     } else {
       this.router.navigate([url]);
     }
@@ -129,14 +138,30 @@ export class PodcastTocPage implements OnInit {
         this.podcastList = filteredData;
         this.allpodcastList = filteredData;
         this.allpodcastList.forEach((d) => {
+          if (d['isSports'] === '1') {
+            const s = this.prefData.find(p => p.id === 'Sports');
+            if (s) s.active = true;
+          }
           this.prefData.forEach((h) => {
-            if (d['PreferenceIDs'] && d['PreferenceIDs'].split(",").includes( h.id)) {
+            if (d['PreferenceIDs'] && d['PreferenceIDs'].split(",").includes(h.id)) {
               h.active = true;
-            } else if (!d['PreferenceIDs']) {
+            } else if (!d['PreferenceIDs'] && h.id !== 'Sports') {
               h.active = true;
             }
           })
         });
+
+        const fragment = this.activatedRoute.snapshot.fragment;
+        console.log('PodcastTOC Fragment:', fragment, 'PrefData:', this.prefData);
+        if(fragment) {
+           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
+           if(match) {
+             console.log('Matching fragment found:', match, 'ID:', match.id);
+             this.getUserPref(match.id);
+           } else {
+             console.log('No matching fragment found for:', fragment);
+           }
+        }
       }
     })
   }
@@ -199,19 +224,6 @@ audioevent(data: any) {
   }
 
 getUserPref(type) {
-  this.selectedPref = '';
-
-  const btns = Array.from(document.getElementsByClassName('btn'));
-  for (const b of btns) {
-    const btn = b as HTMLElement;
-    btn.classList.remove('active');
-  }
-
-  const selectedBtn = document.getElementById(type);
-  if (selectedBtn) {
-    selectedBtn.classList.add('active');
-  }
-
   this.selectedPref = type;
   this.podcastList = this.allpodcastList;
 
@@ -221,9 +233,11 @@ getUserPref(type) {
     this.podcastList = this.podcastList.filter((d) => !d['PreferenceIDs']);
   } else if (type === 'MiniPodcast') {
     this.podcastList = this.podcastList.filter((d) => d['IsMiniPodcast'] === '1');
+  } else if (type === 'Sports') {
+    this.podcastList = this.podcastList.filter((d) => d['isSports'] === '1');
   } else {
     this.podcastList = this.podcastList.filter((d) =>
-      d['PreferenceIDs'].split(',').includes(type)
+      d['PreferenceIDs'] && d['PreferenceIDs'].split(',').includes(type)
     );
   }
 }

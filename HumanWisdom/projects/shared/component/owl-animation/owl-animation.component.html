@@ -8,15 +8,12 @@
     alt="Olly the Owl" 
     class="static-owl-image"
   />
-  <div class="owl-cloud-container" *ngIf="owlMessage || isDisappearing" [ngClass]="{'speaking': isSpeaking, 'disappearing': isDisappearing}">
+  <div class="owl-cloud-container" *ngIf="showCloudMessage" [ngClass]="{'speaking': isSpeaking, 'disappearing': isDisappearing}">
     <img 
-      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/animatedCloud.png" 
-      alt="Cloud" 
+      [src]="currentCloudImage" 
+      alt="Olly Message" 
       class="cloud-image"
     />
-    <div class="cloud-text">
-      {{ owlMessage }}
-    </div>
   </div>
 </div>
 

@@ -23,9 +23,9 @@ export class S58001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
-  bookmarkList=[]
-  wR=sessionStorage.getItem("pgResume") 
-  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/58.webp"
+  bookmarkList = []
+  pgResume: any;
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/58.webp"
   tocColor="white"
   lastvisited = false;
   stories: any = []
@@ -86,23 +86,20 @@ export class S58001Page implements OnInit,OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    {
-      this.lastvisited = false;
-    }    
-    // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(58))
-    this.moduleId=localStorage.getItem("moduleId")
-    if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+
+    this.service.clickModule(58, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
+    localStorage.setItem("moduleId", JSON.stringify(58))
+    this.moduleId = localStorage.getItem("moduleId")
     this.startTime = Date.now();
   
     this.startTime = Date.now();
@@ -163,9 +160,8 @@ export class S58001Page implements OnInit,OnDestroy {
  /*  goBack(){
     this.location.back()
   } */
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 
 }

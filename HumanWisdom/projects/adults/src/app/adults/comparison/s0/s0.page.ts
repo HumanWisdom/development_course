@@ -28,12 +28,13 @@ export class S0Page implements OnInit, OnDestroy {
   socialShare = false
   loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
   t: any
-  comparisonR = sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/07.webp"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+  isContentsOpen = false;
   isSubscriber = false;
 
 
@@ -53,7 +54,20 @@ export class S0Page implements OnInit, OnDestroy {
     // this.stories = JSON.parse(this.stories)
   }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+    this.service.setmoduleID(7);
+    this.service.clickModule(7,this.userId).subscribe(res=>
+      {
+        this.pgResume= (res.lastVisitedScreen !="")? "s"+ res.lastVisitedScreen:"";
+        this.lastvisited = res.lastVisitedScreen !=""? true:false;
+      })
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
     }
@@ -64,24 +78,9 @@ export class S0Page implements OnInit, OnDestroy {
     if (!localStorage.getItem("NaviagtedFrom"))
       localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-how-your-mind-works');
 
-    // continue where you left
-    let last = localStorage.getItem('lastvisited');
-    if (last === 'T') {
-      this.lastvisited = true;
-    }
-    else {
-      this.lastvisited = false;
-    }
-    // /continue where you left
-
     
 
-    if (this.saveUsername == false) {
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-    }
+
 
     if (!this.t) //if no token in url- not shared
     {
@@ -129,6 +128,10 @@ export class S0Page implements OnInit, OnDestroy {
     history.replaceState(null, null, this.path + `?t=${this.token}`);
     this.socialShare = true
   }
+  
+ toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
 
   toggleBookmark() {
     if (this.bookmark == 0)
@@ -169,7 +172,7 @@ export class S0Page implements OnInit, OnDestroy {
 
   Resume(url)
   {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+    this.router.navigate([url+this.pgResume])
   }
 
 

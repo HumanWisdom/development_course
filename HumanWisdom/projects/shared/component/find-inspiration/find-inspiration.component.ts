@@ -1,6 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { SharedService } from '../../../shared/services/shared.service';
 import { LogEventService } from '../../services/log-event.service';
 import { ProgramType } from '../../models/program-model';
@@ -11,13 +10,13 @@ import { ProgramType } from '../../models/program-model';
   templateUrl: './find-inspiration.component.html',
   styleUrls: ['./find-inspiration.component.scss'],
 })
-export class FindInspiration implements OnInit  {
+export class FindInspiration {
     isAdults: boolean = true; 
     inspirationItems=[];
 
 
 
-  constructor(private router: Router, private location: Location,public logeventservice: LogEventService) {
+  constructor(private readonly router: Router, public readonly logeventservice: LogEventService) {
  if (SharedService.ProgramId == ProgramType.Adults) {
         this.isAdults = true;
       } else {
@@ -29,7 +28,7 @@ export class FindInspiration implements OnInit  {
   this.inspirationItems = [
     { 
       title: 'Podcasts', 
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/podcast.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/podcast_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/podcast.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/podcast_without_bg.svg' ),
       icon: 'headphones', 
       height:'',
       color: '#191d3a',
@@ -40,16 +39,16 @@ export class FindInspiration implements OnInit  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/blog.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/blog.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg' ),
       url:'blogs'
     },   
-     
+
     { 
       title: 'Guided journaling', 
       icon: 'map', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/guided.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/guided.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg' ),
       url:'journal'
     }, 
     { 
@@ -57,7 +56,7 @@ export class FindInspiration implements OnInit  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wellness.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/wellness.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg' ),
       url:'wisdom-survey'
     },  
     { 
@@ -65,7 +64,7 @@ export class FindInspiration implements OnInit  {
       icon: 'message-circle', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach_1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/coach_without_bg.svg' ),
       url:'coach'
     },    
     { 
@@ -73,15 +72,23 @@ export class FindInspiration implements OnInit  {
       icon: 'play-circle', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/video.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/video.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg' ),
       url:'wisdom-shorts'
     },  
+    { 
+      title: 'Microlearning', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/micro_learning.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/microlearn_without_bg.svg' ),
+      url:'micro-learning' 
+    },
     { 
       title: 'Audio meditation', 
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audio_new.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_new.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/audioMeditation_without_bg.svg' ),
       url:'audio-meditation'
     },
     { 
@@ -89,7 +96,7 @@ export class FindInspiration implements OnInit  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/life.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/life.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg' ),
       url:'wisdom-stories'
     },
      
@@ -98,7 +105,7 @@ export class FindInspiration implements OnInit  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/answer1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/find_ans_wihout_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/answer1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/find_ans_wihout_bg.svg' ),
       url:'find-answers/why-do-i'
     }, 
     { 
@@ -106,16 +113,15 @@ export class FindInspiration implements OnInit  {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/soundscape1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/soundscape1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg' ),
       url:'soundscapes'
     },   
-     
     { 
       title: 'Events', 
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
       url:'events'
     },   
    
@@ -138,7 +144,7 @@ export class FindInspiration implements OnInit  {
 
   }
   
-   ngOnInit(): void {
+
    
      
 
@@ -146,7 +152,7 @@ export class FindInspiration implements OnInit  {
 
 
       
-  }
+
 
 
   routeTo(item: any) {

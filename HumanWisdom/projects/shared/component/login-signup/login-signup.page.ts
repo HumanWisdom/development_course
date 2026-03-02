@@ -511,6 +511,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    // Clear owl animation session so GIF and dialogue play again after login
+    sessionStorage.removeItem('owl_gif_shown');
+    localStorage.removeItem('owl_gif_shown');
+    localStorage.removeItem('owl_dialogue_shown');
+
     if (document.getElementById('password-reveal')) {
       document.getElementById('password-reveal').style.display = 'none';
     }
@@ -1354,7 +1359,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       let arr;
       result = result.forEach((element) => {
         if (element && element.length !== 0) {
-          this.x.push(element.map((a) => parseInt(a.ScrNo)));
+          this.x.push(element.map((a) => Number.parseInt(a.ScrNo)));
           arr = Array.prototype.concat.apply([], this.x);
         }
       });
@@ -1484,14 +1489,24 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       {
         fullname: ["", [Validators.required, Validators.minLength(6)]],
         email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-        ogpassword: ["", [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ["", [Validators.required, Validators.minLength(6)]],
+        ogpassword: ["", [Validators.required, Validators.minLength(6), this.passwordStrengthValidator]],
+        confirmPassword: ["", [Validators.required, Validators.minLength(6), this.passwordStrengthValidator]],
         privacychk: [false, [Validators.requiredTrue]],
       }
       ,
       { validator: this.PasswordValidator }
     );
     this.token = undefined;
+  }
+
+  passwordStrengthValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const value = control.value;
+    if (!value) {
+      return null;
+    }
+    const hasLetter = /[a-zA-Z]/.test(value);
+    const hasDigit = /\d/.test(value);
+    return !hasLetter || !hasDigit ? { passwordStrength: true } : null;
   }
 
   hideFunction(type) {

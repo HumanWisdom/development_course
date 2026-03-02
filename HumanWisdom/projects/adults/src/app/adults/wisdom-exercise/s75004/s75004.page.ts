@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../adults.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { Location } from '@angular/common';
 declare var $: any;
 declare var bootstrap: any;
 @Component({
@@ -52,7 +54,8 @@ export class S75004Page implements OnInit {
   methodSTartTime: any;
   methodEndTime: any;
   constructor(private elementRef: ElementRef,
-    public service: AdultsService, private adult: AdultsService,public router:Router) {
+    public service: AdultsService, private adult: AdultsService,public router:Router,
+    public navigationService: NavigationService, private location: Location) {
     this.startTime = Date.now()
   }
 
@@ -563,4 +566,14 @@ closeHintModal() {
     console.error('Error closing modal:', error);
   }
 }
+
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    } else {
+      this.router.navigate([url]);
+    }
+  }
+
 }

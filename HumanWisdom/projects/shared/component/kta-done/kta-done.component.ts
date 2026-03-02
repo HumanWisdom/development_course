@@ -8,7 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './kta-done.component.html',
   styleUrls: ['./kta-done.component.scss'],
 })
-export class KtaDoneComponent implements OnInit,AfterViewInit {
+export class KtaDoneComponent {
 
   scrId:any
   @ViewChild('screen', { static: true }) screen: any;
@@ -18,12 +18,5 @@ export class KtaDoneComponent implements OnInit,AfterViewInit {
     private service: AdultsService,
     private next: ActivatedRoute
   ) { }
-
-  ngOnInit() {}
-  
-  ngAfterViewInit(){
- 
-  
-  }
 
 }

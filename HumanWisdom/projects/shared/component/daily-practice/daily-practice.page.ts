@@ -273,11 +273,16 @@ export class DailyPracticePage implements OnInit {
       this.router.navigate(["/"+SharedService.getprogramName()+"/" + "wisdom-shorts"], { queryParams: { "pref": "voices" } })
   
   }
-  routeToDashboard(){
-    var url = this.navigationService.getBackLink();
-    if (url == null) {
-      this.location.back();
-    }else{
+  routeToDashboard() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null || url.includes('home') || url.includes('dashboard')) {
+      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null') {
+        this.router.navigateByUrl(navFrom);
+      } else {
+        this.location.back();
+      }
+    } else {
       this.router.navigate([url]);
     }
   }

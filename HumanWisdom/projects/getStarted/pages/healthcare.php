@@ -38,6 +38,105 @@
     <!-- vendor_header -->
     <?php include('../includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
+
+    <style>
+      @media (max-width: 767px) {
+
+        /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
+        /* Override: #accordion_footer .panel-title>a:after { content: url(...svg...) } */
+        #accordion_footer .panel-title > a::after,
+        #accordion_footer .panel-title > a.accordion-toggle::after,
+        .dfooter #accordion_footer .panel-title > a::after,
+        .panel-group#accordion_footer .panel-title > a::after {
+          content: "+" !important;
+          color: #ffffff !important;
+          font-family: inherit !important;
+          font-size: 24px !important;
+          line-height: 24px !important;
+          background: none !important;
+          background-image: none !important;
+          width: 24px !important;
+          height: 24px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          float: right !important;
+          opacity: 1 !important;
+          filter: none !important;
+          -webkit-filter: none !important;
+          transform: none !important;
+        }
+        
+        #accordion_footer .panel-title > a[aria-expanded="true"]::after,
+        #accordion_footer .panel-title > a.accordion-toggle[aria-expanded="true"]::after,
+        .dfooter #accordion_footer .panel-title > a[aria-expanded="true"]::after,
+        .panel-group#accordion_footer .panel-title > a[aria-expanded="true"]::after {
+          content: "-" !important;
+          color: #ffffff !important;
+          background: none !important;
+          background-image: none !important;
+        }
+               .owl-carousel .owl-stage {
+          width: auto !important;
+        }
+
+        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
+        .accordion-button::after {
+          background-image: none !important;
+          content: "+" !important;
+          color: #ffffff !important;
+          font-size: 16px !important;
+          font-weight: 300 !important;
+          width: auto !important;
+          height: auto !important;
+          transform: none !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        
+        .accordion-button:not(.collapsed)::after {
+          background-image: none !important;
+          content: "-" !important;
+          transform: none !important;
+        }
+        
+        .accordion {
+          padding: 10px;
+        }
+
+        /* Make testimonial cards same height on mobile */
+        .owl_testimonials .owl-carousel .owl-item {
+          display: flex !important;
+          height: auto !important;
+        }
+
+        .owl_testimonials .owl-carousel .owl-item .item {
+          display: flex !important;
+          height: 100% !important;
+        }
+
+        .owl_testimonials .div_testimonials {
+          height: 100% !important;
+          display: flex !important;
+          flex-direction: column !important;
+        }
+
+        .owl_testimonials .div_testimonials .row:last-child {
+          margin-top: auto !important;
+        }
+
+      /* Reduce section padding on mobile to fix large gaps */
+      section {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+      }
+      
+      .section-header {
+        padding-bottom: 20px !important;
+      }
+    }
+    </style>
   </head>
 
   <body>

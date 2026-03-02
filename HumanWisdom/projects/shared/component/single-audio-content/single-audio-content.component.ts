@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonService } from '../../services/common.service';
 import { NavigationService } from '../../services/navigation.service';
 import { Location } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ProgramType } from '../../models/program-model';
 
 
@@ -32,7 +33,7 @@ export class SingleAudioContentComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, 
      private location: Location, private navigationService: NavigationService, 
-    private service: CommonService) {
+    private service: CommonService, private sanitizer: DomSanitizer) {
     // ;
     const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
     this.audioLink = this.mediaAudio + audioUrl.replace(/\~/g, '/');
@@ -40,7 +41,7 @@ export class SingleAudioContentComponent implements OnInit {
     this.audioTitle = this.route.snapshot.paramMap.get('title');
     this.callText();
     if (this.audioTitle) {
-      this.audioTitle = this.audioTitle.replace('-', ' ');
+      this.audioTitle = decodeURIComponent(this.audioTitle).replace(/-/g, ' ');
     }
     let rowid: any = this.route.snapshot.paramMap.get('RowId');
      rowid = parseInt(rowid);
@@ -86,34 +87,64 @@ export class SingleAudioContentComponent implements OnInit {
 
   callText() {
     let spt = this.audioLinkUrl.lastIndexOf('/');
-    let txt = this.audioLinkUrl.slice(spt + 1, this.audioLinkUrl.length);
-    txt = txt.replace('mp3', 'txt');
+    let url = this.audioLinkUrl.slice(spt + 1, this.audioLinkUrl.length);
     let s3 = this.audioLinkUrl.slice(1, spt);
-    s3 = s3.replace('audios', 'transcripts')
-    let obj = {
-      "S3Directory": s3 + '/',
-      "FileName": txt
-    }
-    this.service.GetAudioTranscript(obj).subscribe((res) => {
-      if (res) {
-        this.textContent = res;
-        // this.enableTextContent = true;
+    let s3Trans = s3.replace('audios', 'transcripts');
+
+    const extensions = ['txt', 'md'];
+    let directories = [s3Trans];
+
+    if (this.moduleName === 'podcast' || this.audioLinkUrl.includes('podcasts')) {
+      if (!s3Trans.includes('transcripts')) {
+        directories.push(s3Trans + '/transcripts');
       }
-    })
+    }
+
+    if (s3 !== s3Trans && !directories.includes(s3)) {
+      directories.push(s3);
+    }
+
+    this.tryNextTranscript(directories, url, extensions, 0, 0);
+  }
+
+  tryNextTranscript(directories, url, extensions, dIdx, eIdx) {
+    if (dIdx >= directories.length) return;
+
+    let dir = directories[dIdx];
+    let ext = extensions[eIdx];
+    let fileName = url.replace('mp3', ext);
+
+    this.service.GetAudioTranscript({ "S3Directory": dir + '/', "FileName": fileName }).subscribe((res) => {
+      if (res && res !== "" && res.length > 10) {
+        this.textContent = this.parseMarkdown(res);
+      } else {
+        this.advanceDiscovery(directories, url, extensions, dIdx, eIdx);
+      }
+    }, () => {
+      this.advanceDiscovery(directories, url, extensions, dIdx, eIdx);
+    });
+  }
+
+  advanceDiscovery(directories, url, extensions, dIdx, eIdx) {
+    if (eIdx < extensions.length - 1) {
+      this.tryNextTranscript(directories, url, extensions, dIdx, eIdx + 1);
+    } else if (dIdx < directories.length - 1) {
+      this.tryNextTranscript(directories, url, extensions, dIdx + 1, 0);
+    }
   }
 
 
   redirectIfGuest() {
-    const guest = localStorage.getItem('guest') === 'T'
-    const hasModule = this.moduleName && this.moduleName != 'undefined'
-    const lowerModule = hasModule ? this.moduleName.toLowerCase() : ''
-    const isPodcast = hasModule ? lowerModule === 'podcast' : false
-    const isSoundscapes = hasModule ? lowerModule === 'soundscapes' : false
-    const allow = (isPodcast && (this.isFree =='T')) || (isSoundscapes && this.rowId === 1)
+    const guest = localStorage.getItem('guest') === 'T';
+    const hasModule = this.moduleName && this.moduleName != 'undefined';
+    const lowerModule = hasModule ? this.moduleName.toLowerCase() : '';
+    const isPodcast = hasModule ? lowerModule === 'podcast' : false;
+    const isSoundscapes = hasModule ? lowerModule === 'soundscapes' : false;
+    const allow = (this.isFree == 'T') || (isSoundscapes && this.rowId === 1);
     if (guest && !allow) {
-      const isAdultsProgram = SharedService.ProgramId == ProgramType.Adults
-      const url = isAdultsProgram ? '/subscription/start-your-free-trial' : '/teenagers/subscription/start-your-free-trial'
-      this.router.navigateByUrl(url)
+      const isAdultsProgram = SharedService.ProgramId == ProgramType.Adults;
+      const url = isAdultsProgram ? '/subscription/start-your-free-trial' : '/teenagers/subscription/start-your-free-trial';
+      this.router.navigateByUrl(url);
     }
   }
 
@@ -132,6 +163,42 @@ export class SingleAudioContentComponent implements OnInit {
     document.head.appendChild(style);
   }
 
+  parseMarkdown(text: string): any {
+    if (!text) return '';
+    
+    // Convert bullet points (- or *) to list items
+    let lines = text.split('\n');
+    let result = '';
+    let inList = false;
+
+    for (let line of lines) {
+      let trimmed = line.trim();
+      if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+        if (!inList) {
+          result += '<ul style="padding-left: 20px;">';
+          inList = true;
+        }
+        result += '<li style="margin-bottom: 5px;">' + trimmed.substring(2) + '</li>';
+      } else {
+        if (inList) {
+          result += '</ul>';
+          inList = false;
+        }
+        if (trimmed === '') {
+          result += '<br/>';
+        } else {
+          result += line + '<br/>';
+        }
+      }
+    }
+    if (inList) result += '</ul>';
+
+    // Bold text (**text**)
+    result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    
+    return this.sanitizer.bypassSecurityTrustHtml(result);
+  }
+
   titleCase(str) {
     if (!str) return '';
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -139,8 +206,13 @@ export class SingleAudioContentComponent implements OnInit {
 
   goBack() {
     var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
+    if (url == null || url.includes('home') || url.includes('dashboard')) {
+      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null') {
+        this.router.navigateByUrl(navFrom);
+      } else {
+        this.location.back();
+      }
     } else {
       this.router.navigate([url]);
     }

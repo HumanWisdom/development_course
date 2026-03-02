@@ -8,11 +8,11 @@
         <div [ngClass]="[pageaction === 'next' ? 'x_panel p0' : pageaction === 'prev' ? 'x_panel p0' : 'x_panel p0' ]">
           <div class="x_content p0">
             <ng-content></ng-content>
-          
+
             <form class="p0">
 
               <div class="row mt10px mb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter"  (click)="gotoTranscript()">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" (click)="gotoTranscript()">
                   <a class="">
                     <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt=""> -->
                     <h6 class="fs_15px fw_400 lh_140p  underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ED7D6F'">
@@ -38,15 +38,13 @@
               <!-- <ngx-circular-player></ngx-circular-player>   -->
               <div class="row tcenter">
                 <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0 mt10px mb30px">
-                 <!--  <audio id="aud1" controls controlsList="nodownload" #audio
+                  <!--  <audio id="aud1" controls controlsList="nodownload" #audio
                    [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio> -->
-               
-                      <app-audio-player  id="aud1"    
-                        [ngClass]="[isAdults ? 'invert-controls' : '']"
-                                [audioLink]="audioLink">
-                              </app-audio-player>  
+
+                  <app-audio-player id="aud1" [ngClass]="[isAdults ? 'invert-controls' : '']" [audioLink]="audioLink">
+                  </app-audio-player>
                 </div>
               </div>
               <!-- /angular audio player plugin -->

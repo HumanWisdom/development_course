@@ -14,12 +14,12 @@ export class NavigationService {
   if (url.includes('/onboarding/add-to-cart')) {
     return;
   }
-    var urls = url.split('/');
-    var urltoCheck: any;
+    const urls = url.split('/');
+    let urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
     if(!this.backClicked) {
       if (urltoCheck) {
-        let isNan = isNaN(urltoCheck[urltoCheck.length - 1]);
+        let isNan = isNaN(Number(urltoCheck[urltoCheck.length - 1]));
         if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
           if (this.history.length>0 && this.history[this.history.length-1] != url) {
             this.history.push(url);
@@ -54,16 +54,16 @@ export class NavigationService {
       'guidedquestions', 'why-do-i', 'how-can-i',
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
-     , 's162p0','s51000','s39000','s47000','s324','s47000', 'mp4','s42000','s39000',
+     's162p0','s51000','s39000','s47000','s324','s47000', 'mp4','s42000','s39000',
      's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid',
-     '/curated/youtubelink/','why-do-i','how-can-i','blog-article',
+     '/curated/youtubelink/','why-do-i','how-can-i','blog-article', 'micro-learning',
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3','coach/profile/','coach/contact/','videopage',',mp4','blog-article','curated/youtubelink','forum-thread','profile'
+     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile','micro-learning'
   ]
-  var isValid = false;
-  for(var item of wholeUrlCheckKeywords){
+  let isValid = false;
+  for(const item of wholeUrlCheckKeywords){
      if(url.includes(item)){
       isValid = true;
      }
@@ -89,9 +89,45 @@ export class NavigationService {
 
 
   navigateToBackLink() {
-        this.history.splice(this.history.indexOf(this.router.url)+1)
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+    let returnUrl = microLearningEndUrl;
+    const m_learningId = localStorage.getItem('m_learningId');
+
+    if (fromMicroLearningEnd === 'true' && (returnUrl || m_learningId)) {
+      if (!returnUrl && m_learningId) {
+        const prefix = SharedService.getprogramName();
+        returnUrl = `/${prefix}/micro-learning/inner/${m_learningId}?isEnd=true`;
+      }
+
+      localStorage.removeItem('microLearningEndUrl');
+      
+      if (returnUrl && returnUrl.includes('micro-learning/inner')) {
+        if (!returnUrl.includes('?') && !returnUrl.includes('%3F')) {
+          returnUrl += '?isEnd=true';
+        } else if (!returnUrl.includes('isEnd=true') && !returnUrl.includes('isEnd%3Dtrue')) {
+          returnUrl += (returnUrl.includes('?') ? '&' : '?') + 'isEnd=true';
+        }
+      } else {
+        localStorage.removeItem('fromMicroLearningEnd');
+      }
+      this.history.pop();
+      this.backClicked = true;
+      return returnUrl;
+    }
+
+    this.history.splice(this.history.indexOf(this.router.url) + 1);
 
     const url = this.goBack();
+    if (url != null && !url.includes('home') && !url.includes('dashboard')) {
+      return url;
+    }
+
+    let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+    if (navFrom && navFrom != null && navFrom != 'null') {
+      return navFrom;
+    }
+
     if (url != null) {
       return url;
     }

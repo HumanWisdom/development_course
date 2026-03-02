@@ -15,7 +15,8 @@ export class CuratedRedirectComponent implements OnInit {
         '/teenagers/curated/manage-your-emotions': 'emotions',
         '/teenagers/curated/overcome-stress-anxiety': 'mentalhealth',
         '/teenagers/curated/overcome-unhelpful-habits': 'habits',
-        '/teenagers/curated/succeed-in-life': 'success'
+        '/teenagers/curated/succeed-in-life': 'success',
+        '/teenagers/curated/self-awareness': 'self-awareness'
     };
 
     constructor(private router: Router) { }
