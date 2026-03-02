@@ -881,9 +881,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   private getDefaultAvatar(): string {
     if (SharedService.ProgramId === ProgramType.Teenagers) {
-      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg';
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/chatbotProfile_teens.svg';
     }
-    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/profile_default.svg';
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/chatbotProfile+adults.svg';
   }
 
   private setUserAvatar(): void {
