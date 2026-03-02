@@ -50,9 +50,9 @@ export class PodcastTocPage implements OnInit {
       this.isAdults = false;
     }
     this.prefData = SharedService.getPreferenceData();
-    const parentsIndex = this.prefData.findIndex(p => p.id === '18');
-    if (parentsIndex !== -1) {
-      this.prefData.splice(parentsIndex + 1, 0, {
+    const otherIndex = this.prefData.findIndex(p => p.id === '0');
+    if (otherIndex !== -1) {
+      this.prefData.splice(otherIndex, 0, {
         id: 'Sports',
         displayName: 'Sports',
         active: false,
