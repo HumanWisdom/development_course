@@ -39,7 +39,7 @@ export class S142001Page implements OnInit, OnDestroy {
   t:any
 
 
-  pgResume = sessionStorage.getItem("pgResume")
+  pgResume: any;
 
   tocImage = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/142.webp"
   tocColor = "white"
@@ -83,7 +83,20 @@ export class S142001Page implements OnInit, OnDestroy {
 
   ngOnInit() 
   {
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.service.setmoduleID(142);
+    this.service.clickModule(142,this.userId).subscribe(res=>
+      {
+        this.pgResume= (res.lastVisitedScreen !="")? "s"+ res.lastVisitedScreen:"";
+        this.lastvisited = res.lastVisitedScreen !=""? true:false;
+      })
     setTimeout(() => {
       let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
@@ -129,19 +142,8 @@ export class S142001Page implements OnInit, OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/live-your-best-life');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if (last === 'T') {
-      this.lastvisited = true;
-    }
-    else {
-      this.lastvisited = false;
-    }
-    // /continue where you left
     localStorage.setItem("moduleId", JSON.stringify(142))
     this.moduleId = localStorage.getItem("moduleId")
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
 
     this.startTime = Date.now();
@@ -204,13 +206,9 @@ export class S142001Page implements OnInit, OnDestroy {
     this.location.back()
   }
 
-  getSetModuleData(moduleId){
-    this.service.setmoduleID(moduleId);
-    this.service.getModulebyId(moduleId).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-      
-     });
+  Resume(url)
+  {
+    this.router.navigate([url+this.pgResume])
   }
 
 }

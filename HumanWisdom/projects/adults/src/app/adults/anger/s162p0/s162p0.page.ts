@@ -28,7 +28,7 @@ export class S162p0Page implements OnInit, OnDestroy
       isContentsOpen = false;
 
   bookmarkList = []
-  angerResume = sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/14.png"
   tocColor = "white"
   lastvisited = false;
@@ -75,27 +75,23 @@ export class S162p0Page implements OnInit, OnDestroy
 
   ngOnInit() 
   {
+    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
+    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
+
     if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
       this.isLoggedIn = true;
     }
     if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
       this.isSubscriber = true;
     }
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if (last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }
-    // /continue where you left
+    this.service.setmoduleID(14);
+    this.service.clickModule(14,this.userId).subscribe(res=>
+      {
+        this.pgResume= (res.lastVisitedScreen !="")? "s"+ res.lastVisitedScreen:"";
+        this.lastvisited = res.lastVisitedScreen !=""? true:false;
+      })
     localStorage.setItem("moduleId", JSON.stringify(14))
     this.moduleId = localStorage.getItem("moduleId")
-    if (this.saveUsername == false) { this.userId = JSON.parse(sessionStorage.getItem("userId")) }
-    else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -157,9 +153,7 @@ export class S162p0Page implements OnInit, OnDestroy
 
   Resume(url)
   {
-    //url='/adults/breathing/'
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
-
+    this.router.navigate([url+this.pgResume])
   }
 
     getClickEvent(data) {

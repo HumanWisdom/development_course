@@ -27,7 +27,7 @@ export class S91001Page implements OnInit,OnDestroy {
       isContentsOpen = false;
 
   bookmarkList=[]
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/91.webp"
   tocColor="white"
   tocAlt=""
@@ -37,7 +37,7 @@ export class S91001Page implements OnInit,OnDestroy {
   isSubscriber = false;
 
 
-  externalapprovalR=sessionStorage.getItem("externalapprovalR")
+  // externalapprovalR=sessionStorage.getItem("externalapprovalR")
 
   constructor(
     private router: Router,
@@ -95,23 +95,29 @@ export class S91001Page implements OnInit,OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/understand-how-your-mind-works');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+
+    this.service.clickModule(91, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
+    // continue where you left    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(35))
-    this.moduleId=localStorage.getItem("moduleId")
-    if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-    else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
     this.startTime = Date.now();
   
     this.startTime = Date.now();
@@ -172,8 +178,7 @@ toggleContents() {
     }})
   }
 
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 }
