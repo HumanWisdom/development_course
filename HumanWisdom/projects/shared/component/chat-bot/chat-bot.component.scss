@@ -756,6 +756,12 @@
         cursor: pointer;
         text-decoration: underline;
         transition: color 0.2s ease;
+
+        &:focus {
+          outline: 2px solid #ED7D6F;
+          outline-offset: 2px;
+          border-radius: 2px;
+        }
       }
     }
 
@@ -892,11 +898,11 @@
 
 // Give More Options button
 .more-options-container {
-  margin: 8px 68px 12px 68px; // Align with bot messages (20px margin + 48px avatar space)
+  margin: 12px 0 8px 0; 
   padding: 0;
   display: flex;
   justify-content: flex-start;
-  width: calc(100% - 68px); // Full width minus left margin
+  width: 100%;
   
   .action-button.more-options-button {
     width: 100%;
