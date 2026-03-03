@@ -23,6 +23,8 @@ export class S49001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+    isContentsOpen = false;
+  
   bookmarkList=[]
   opinionsandbeliefsResume=sessionStorage.getItem("pgResume")
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/49.webp"
@@ -113,6 +115,9 @@ export class S49001Page implements OnInit,OnDestroy {
 
     
   }
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
