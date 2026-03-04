@@ -154,10 +154,6 @@
     pointer-events: auto; // Ensure button is clickable
     z-index: 1002; // Higher than header
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-
     .close-icon {
       width: 24px;
       height: 24px;
@@ -165,7 +161,9 @@
     }
   }
 }
-
+.dislike-popup-overlay{
+      background: rgba(0, 0, 0, 0.75) !important;
+}
 // Load History Link Styles
 .load-history-container {
   display: flex;
@@ -689,14 +687,6 @@
       transition: all 0.2s ease;
     }
     
-    &:hover:not(:disabled) {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    
-    &.active {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    
     &:disabled {
       cursor: default;
       opacity: 0.7;
@@ -778,11 +768,11 @@
 
 // Give More Options button
 .more-options-container {
-  margin: 8px 68px 12px 68px; // Align with bot messages (20px margin + 48px avatar space)
+  margin: 12px 0 8px 0; 
   padding: 0;
   display: flex;
   justify-content: flex-start;
-  width: calc(100% - 68px); // Full width minus left margin
+  width: 100%;
   
   .action-button.more-options-button {
     width: 100%;

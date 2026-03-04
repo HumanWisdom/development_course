@@ -24329,7 +24329,7 @@ a {
   font-weight: 500;
   line-height: 130%;
   color: #000;
-   margin-bottom: 10px;
+  margin-bottom: 10px;
   padding-top: 20px;
 }
 
@@ -32808,6 +32808,7 @@ body * {
   margin-bottom: 10px;
   white-space: normal;
 }
+
 .box_v3_04bevent {
   height: 220px;
   width: 162px;
@@ -32818,6 +32819,7 @@ body * {
   margin-bottom: 10px;
   white-space: normal;
 }
+
 .box_v3_04 img,
 .box_v3_04a img {
   width: 100%;
@@ -33107,7 +33109,7 @@ body * {
   left: 0;
   margin: auto;
   width: auto;
-  height:24px;
+  height: 24px;
 }
 
 /* v3 - five dots */
@@ -34573,6 +34575,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   border-radius: 50%;
   width: 82px;
   height: 82px;
+  object-fit: cover;
 }
 
 .mt35px {
@@ -36168,7 +36171,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .profile_pe_div_01 {
   text-align: center;
   padding: 20px;
-  background: #120F40;
+  background: #0C2B5F !important;
   border: 0;
   border-radius: 12px;
   height: auto;
@@ -36179,7 +36182,9 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 }
 
 .bg_profile_t {
-  background: #0C2B5F !important;
+  /* background: #0C2B5F !important; */
+  background-image: url('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_profile_box_teens.svg') !important;
+  background-color: transparent !important;
 }
 
 .partnership_row a .box_02 {
@@ -36968,7 +36973,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
 .v1_3_sfooter_ext_01 {
   background: #120F40;
-  box-shadow: unset;
+  /* box-shadow: unset; */
 }
 
 .syft_ft_bg {
@@ -37163,21 +37168,18 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   text-decoration: none !important;
 }
 
-.bgGuided_Journal
-{
-background-color: #CB6171;
+.bgGuided_Journal {
+  background-color: #CB6171;
 
 }
 
-.bgReflections_Journal
-{
-background-color: #834B66;
+.bgReflections_Journal {
+  background-color: #834B66;
 
 }
 
-.bgmicrolearning_Journal
-{
-background-color: #EEA170;
+.bgmicrolearning_Journal {
+  background-color: #EEA170;
 
 }
 
@@ -37188,6 +37190,6 @@ ul.symptom-list li {
 }
 
 div.contentdiv p {
-   
-    line-height: 140% !important;
+
+  line-height: 140% !important;
 }
