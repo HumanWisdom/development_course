@@ -2,11 +2,13 @@
 
 <app-index-content>
 
-  <form>                                
+  <form>
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <h4 class="txt_comparison">
-          Kindness towards ourselves, others, and the earth is essential if we are to be happy and lead fulfilled lives. We explore why kindness is important, what gets in the way of being kind, and how we can be more kind in our lives. 
+          Kindness towards ourselves, others, and the earth is essential if we are to be happy and lead fulfilled lives.
+          We explore why kindness is important, what gets in the way of being kind, and how we can be more kind in our
+          lives.
         </h4>
       </div>
     </div>
@@ -14,15 +16,15 @@
 
 
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                        
-        <a [routerLink]="['/teenagers/kindness', pgResume]" *ngIf="lastvisited">
+      <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
+        <a (click)="Resume('/teenagers/kindness/');" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
         <!-- <a routerLink="/kindness/s1">
           <button type="button" class="btn btn_default mb0 txt_pink_orange" data-dismiss="modal">Start from the beginning</button>
         </a> -->
       </div>
-    </div>                    
+    </div>
 
 
     <div class="row">
@@ -37,7 +39,7 @@
       <a routerLink="/teenagers/kindness/s137002">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #1
@@ -53,7 +55,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -64,7 +67,7 @@
       <a routerLink="/teenagers/kindness/s137025">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #2
@@ -80,7 +83,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -91,7 +95,7 @@
       <a routerLink="/teenagers/kindness/s137045">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #3
@@ -107,7 +111,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -118,7 +123,7 @@
       <a routerLink="/teenagers/kindness/s137131p1">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #4
@@ -131,10 +136,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
               <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
             </div>
-            
+
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
           </div>
@@ -150,10 +156,11 @@
     </div>
     <!-- /hr -->
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories"  *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
-    
-  </form>    
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"
+      *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
 
-</app-index-content> 
+  </form>
+
+</app-index-content>
 
 <app-index-footer></app-index-footer>

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {AdultsService} from "../../adults.service"
+import { AdultsService } from "../../adults.service"
 import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+import { Location } from '@angular/common'
 import { SharedService } from "../../../../../../shared/services/shared.service";
 
 
@@ -10,25 +10,25 @@ import { SharedService } from "../../../../../../shared/services/shared.service"
   templateUrl: './s44001.page.html',
   styleUrls: ['./s44001.page.scss'],
 })
-export class S44001Page implements OnInit,OnDestroy {
+export class S44001Page implements OnInit, OnDestroy {
 
-  bg_tn="bg_dark_blue"
-  bg_cft="bg_dark_blue"
-  bg="anger_w1"
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("text")
-  moduleId:any
+  bg_tn = "bg_dark_blue"
+  bg_cft = "bg_dark_blue"
+  bg = "anger_w1"
+  userId: any
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
+  screenType = localStorage.getItem("text")
+  moduleId: any
   //moduleId=localStorage.getItem("moduleId")
-  screenNumber="44001"
-  startTime:any
-  endTime:any
-  totalTime:any
-  bookmark:any
-  bookmarkList=[]
-  stressResume=sessionStorage.getItem("pgResume")
-  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/44.webp"
-  tocColor="white"
+  screenNumber = "44001"
+  startTime: any
+  endTime: any
+  totalTime: any
+  bookmark: any
+  bookmarkList = []
+  pgResume: any;
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/44.webp"
+  tocColor = "white"
   lastvisited = false;
   stories: any = [];
   isLoggedIn = false;
@@ -39,13 +39,12 @@ export class S44001Page implements OnInit,OnDestroy {
 
   constructor(
     private router: Router,
-    private service:AdultsService,
-    private location:Location
-  )
-  {
+    private service: AdultsService,
+    private location: Location
+  ) {
     this.config = SharedService.getScreenConfiguration("SoundCapes");
     this.service.setmoduleID(44);
-   
+
     // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     // this.stories = JSON.parse(this.stories)
   }
@@ -58,24 +57,18 @@ export class S44001Page implements OnInit,OnDestroy {
       story = JSON.parse(story)
       let splitarr = []
       let arraythree = []
-      if(story?.length <= 2)
-      {
-        story.forEach((e) =>
-        {
+      if (story?.length <= 2) {
+        story.forEach((e) => {
           arraythree.push(e)
         })
         splitarr.push(arraythree)
       }
-      else
-      {
-        story?.forEach((e) =>
-        {
-          if(arraythree.length < 2)
-          {
+      else {
+        story?.forEach((e) => {
+          if (arraythree.length < 2) {
             arraythree.push(e)
           }
-          else
-          {
+          else {
             splitarr.push(arraythree)
             arraythree = []
             arraythree.push(e)
@@ -90,115 +83,82 @@ export class S44001Page implements OnInit,OnDestroy {
     if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
       this.isSubscriber = true;
     }
-    if(!localStorage.getItem("NaviagtedFrom"))
-    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+    if (!localStorage.getItem("NaviagtedFrom"))
+      localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
 
-    // continue where you left
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T')
-    {
-      this.lastvisited = true;
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
     }
-    else
-    {
-      this.lastvisited = false;
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
     }
-    // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(44))
-    this.moduleId=localStorage.getItem("moduleId")
-    if(this.saveUsername==false)
-      {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
-  else
-    {this.userId=JSON.parse(localStorage.getItem("userId"))}
+
+    this.service.clickModule(44, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
     this.startTime = Date.now();
 
     this.startTime = Date.now();
     this.createScreen()
 
     // get last visited
-    this.service.GetLastVisitedScreen(this.userId).subscribe(res=>
-      {
-        this.resumeLastvisited=res;
-      })
+    localStorage.setItem("moduleId", JSON.stringify(44))
+    this.moduleId = localStorage.getItem("moduleId")
   }
 
-  toggleBookmark(){
-    if(this.bookmark==0)
-      this.bookmark=1
+  toggleBookmark() {
+    if (this.bookmark == 0)
+      this.bookmark = 1
     else
-      this.bookmark=0
+      this.bookmark = 0
 
   }
-  createScreen(){
+  createScreen() {
     this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-
-      })
-
-
+      "ScrId": 0,
+      "ModuleId": this.moduleId,
+      "GSetID": this.screenType,
+      "ScreenNo": this.screenNumber
+    }).subscribe(res => {
+    })
   }
 
-
-  submitProgress(){
+  submitProgress() {
     this.service.submitProgressText({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime
-    }).subscribe(res=>
-      {
-
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      })
-
-
+      "ScrNumber": this.screenNumber,
+      "UserId": this.userId,
+      "BookMark": this.bookmark,
+      "ModuleId": this.moduleId,
+      "screenType": this.screenType,
+      "timeSpent": this.totalTime
+    }).subscribe(res => {
+      this.bookmarkList = res.GetBkMrkScr.map(a => parseInt(a.ScrNo))
+      localStorage.setItem("bookmarkList", JSON.stringify(this.bookmarkList))
+    })
   }
-  ngOnDestroy(){
-
-
-
+  ngOnDestroy() {
   }
 
-  routeJournal(){
+  routeJournal() {
     this.router.navigate(['/adults/journal'])
   }
-  /* goBack(){
-    this.location.back()
-  } */
 
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 
-    getClickEvent(data) {
-    // if (!this.isSubscriber) {
-    //   const isTeenagerRoute = this.router.url.includes('/teenagers/');
-    //   const trialRedirectPath = isTeenagerRoute
-    //     ? '/teenagers/subscription/start-your-free-trial'
-    //     : '/subscription/start-your-free-trial';
-    //   this.router.navigate([trialRedirectPath]);
-    //   return;
-    // }
-  
+  getClickEvent(data) {
     let mediaUrl = data['MediaUrl'];
     if (mediaUrl.startsWith('https://d1tenzemoxuh75.cloudfront.net/')) {
       mediaUrl = mediaUrl.replace('https://d1tenzemoxuh75.cloudfront.net/', '/');
     }
-  
+
     let concat = encodeURIComponent(mediaUrl.replaceAll('/', '~'));
-  
+
     const title = data['Title']?.replaceAll(' ', '-');
     const moduleName = this.config?.['moduleName'] || 'Soundscapes';
-  
+
     this.router.navigate([
       `${SharedService.getprogramName()}/audiopage/`,
       concat,
@@ -216,16 +176,4 @@ export class S44001Page implements OnInit,OnDestroy {
   toggleRelated() {
     this.isRelatedOpen = !this.isRelatedOpen;
   }
-
-  routeResume() {
-    let id = 44;
-    let url = '/adults/stress/s44002';
-    if (this.resumeLastvisited && this.resumeLastvisited.length > 0) {
-      const first = this.resumeLastvisited[0];
-      id = first.ModuleId;
-      url = first.ModuleUrl;
-    }
-    this.service.setmoduleID(id, url, url);
-  }
-
 }

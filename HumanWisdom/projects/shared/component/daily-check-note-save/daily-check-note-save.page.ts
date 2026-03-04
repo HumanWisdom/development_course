@@ -93,9 +93,14 @@ SaveJournal(){
       this.logeventservice.logEvent('click_daily_checkin_Save_back');
 
       var url = this.navigationService.navigateToBackLink();
-      if (url == null) {
-        this.location.back();
-      }else{
+      if (url == null || url.includes('home') || url.includes('dashboard')) {
+        let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+        if (navFrom && navFrom != null && navFrom != 'null') {
+          this.router.navigateByUrl(navFrom);
+        } else {
+          this.location.back();
+        }
+      } else {
         this.router.navigate([url]);
       }
     }

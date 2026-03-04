@@ -10,6 +10,7 @@ import {Location } from '@angular/common'
 
 export class S29000Page implements OnInit,OnDestroy
 {
+  pgResume: any;
   bg_tn="bg_teal"
   bg_cft="bg_teal"
   bg="anger_w1"
@@ -87,27 +88,29 @@ export class S29000Page implements OnInit,OnDestroy
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/develop-a-calm-mind');
 
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+
+    this.service.clickModule(29, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
     // continue where you left
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T')
-    {
-      this.lastvisited = true;
-    }
-    else
-    {
-      this.lastvisited = false;
-    }
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T')
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else
+    // {
+    //   this.lastvisited = false;
+    // }
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(29))
-    this.moduleId=localStorage.getItem("moduleId")
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -121,10 +124,8 @@ export class S29000Page implements OnInit,OnDestroy
       this.bookmark=0
   }
 
-  Resume(url)
-  {
-    
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
   createScreen()
   {

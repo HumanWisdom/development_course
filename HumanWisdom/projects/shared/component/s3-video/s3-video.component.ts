@@ -395,7 +395,16 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   goBack(): void {
     const url = this.navigationService.navigateToBackLink();
-    url ? this.router.navigate([url]) : this.location.back();
+    if (url == null || url.includes('home') || url.includes('dashboard')) {
+      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null') {
+        this.router.navigateByUrl(navFrom);
+      } else {
+        this.location.back();
+      }
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
   onSwipeUp(): void {

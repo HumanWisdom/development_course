@@ -34,7 +34,7 @@ export class S141001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/141.webp"
   tocColor="white"
   lastvisited = false;
@@ -62,7 +62,20 @@ export class S141001Page implements OnInit,OnDestroy {
 
   ngOnInit() 
   {
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.service.setmoduleID(141);
+    this.service.clickModule(141,this.userId).subscribe(res=>
+      {
+        this.pgResume= (res.lastVisitedScreen !="")? "s"+ res.lastVisitedScreen:"";
+        this.lastvisited = res.lastVisitedScreen !=""? true:false;
+      })
     setTimeout(() => {
       let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
@@ -108,17 +121,7 @@ export class S141001Page implements OnInit,OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/live-your-best-life');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
-    // /continue where you left
+
 
     
     

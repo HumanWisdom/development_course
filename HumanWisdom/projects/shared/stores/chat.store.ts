@@ -756,13 +756,18 @@ export class ChatStore extends ComponentStore<ChatState> {
     }
     
     // Method 2: If no <li> tags found, try plain numbered list format "1. Text"
+    // Use split instead of regex to avoid ReDoS from backtracking on long lines
     if (tempSuggestions.length === 0) {
       console.log('No <li> tags found, trying numbered list format');
       const lines = content.split(/[\n\r<]/);
       for (const line of lines) {
-        const match = line.match(/^(\d+)\.\s*(.+)$/);
-        if (match && match[2]) {
-          const suggestion = match[2].trim();
+        const parts = line.split('. ');
+        if (
+          parts.length >= 2 &&
+          /^\d+$/.test(parts[0]) &&
+          parts.slice(1).join('. ').trim().length <= 500
+        ) {
+          const suggestion = parts.slice(1).join('. ').trim();
           console.log('Found suggestion in numbered list:', suggestion);
           if (suggestion) {
             tempSuggestions.push(suggestion);

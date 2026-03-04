@@ -1,3 +1,63 @@
+/* Keep "View all Success stories" link below fixed header when scrolling */
+.success-stories-nav-wrap {
+  position: relative;
+  z-index: 1;
+}
+.success-stories-nav-wrap .sap {
+  z-index: 1;
+}
+
+/* ORCHA approved banner */
+.orcha-banner {
+  background: rgba(255, 249, 238, 1);
+  width: 100%;
+  min-height: 100px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 1;
+  box-sizing: border-box;
+}
+.orcha-banner-inner {
+ 
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.orcha-banner-icon {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  object-fit: contain;
+}
+.orcha-banner-text {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0;
+}
+.orcha-banner-text:hover {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+/* Remove hover underline on subscription card text (₹2400/yr, 7-day free trial) */
+.btn_subscription h4:hover,
+.btn_subscription h6:hover,
+.btn_subscription h4 span:hover,
+.btn_subscription h6 span:hover {
+  text-decoration: none !important;
+}
+
 .web_home_divlanding {
     /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png); */
     background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png');
@@ -73,22 +133,49 @@ a:hover {
     margin: 0;
     border: 0;
     padding: 18px 40px;
-    /* right:40px;
-    bottom:18px;
-    left:18px; */
-    /* width: 314px; */
-    /* width: 249px; */
-    /* width: 90%;
-    height: 51px; */
-    /* margin-left: 30px; */
     border-radius: 36px;
-    /* background: linear-gradient(180deg, #CB6171 100%, #E58D82 0%); */
     background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+}
 
+/* "Find out how HappierMe can help you" popup CTA button */
+.modal-content1 .btn_popup {
+    width: 249px !important;
+    max-width: 249px !important;
+    height: 51px !important;
+    border-radius: 35px;
+    padding: 18px 40px;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn_popup:hover {
     background: linear-gradient(180deg, #DA7D71, #BF5061) !important;
+}
+
+/* Popup close (cross) button */
+.modal-content1 .cross_btn_row a[data-bs-dismiss="modal"],
+.modal-content1 .popup-close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 14px;
+    border-radius: 20px;    
+    box-sizing: content-box;
+    text-decoration: none;
+}
+.modal-content1 .cross_btn_row a[data-bs-dismiss="modal"] .cross_btn,
+.modal-content1 .popup-close-btn .cross_btn {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    padding: 0 !important;
+    object-fit: contain;
 }
 
 .popuptitle {
