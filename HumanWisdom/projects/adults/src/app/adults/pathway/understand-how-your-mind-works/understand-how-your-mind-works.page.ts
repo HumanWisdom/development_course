@@ -59,10 +59,11 @@ isAdults:boolean=false;
 
   goBack() {
     var url = this.navigationService.navigateToBackLink();
-    if(url==null){
+    if (url == null) {
       this.location.back();
+    } else {
+      this.router.navigate([url]);
     }
-    this.router.navigate([url]);
   }
 
   getclcickevent(event) {
