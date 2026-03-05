@@ -151,7 +151,7 @@ export class SharedService {
   public static getDashboardUrls() {
     switch (this.ProgramId) {
       case ProgramType.Adults:
-        return '/adults/search';
+        return '/adults/home';
       case ProgramType.Teenagers:
         return '/teenagers/home';
       case ProgramType.Young_Adults:
