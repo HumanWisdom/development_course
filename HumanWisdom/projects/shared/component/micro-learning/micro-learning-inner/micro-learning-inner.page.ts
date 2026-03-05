@@ -216,13 +216,8 @@ export class MicroLearningInnerPage implements OnInit {
   backToDashboard() {
     localStorage.removeItem('ml_index_' + this.contentId);
     localStorage.removeItem('persist_ml_index');
-   // this.router.navigate([`/${SharedService.getprogramName()}/micro-learning`]);
-     var url = this.navigationService.navigateToBackLink();
-        if (url == null) {
-          this.location.back();
-        } else {
-          this.router.navigate([url]);
-        }
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/micro-learning`]);
   }
 
   next() {
