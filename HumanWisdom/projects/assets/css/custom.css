@@ -34829,7 +34829,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
-  color: #000 !important;
+  text-decoration: underline;
+  color: #D7586B !important;
 }
 
 .profile_pe_div {
@@ -34869,7 +34870,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 
 .border_profile_img {
-  border: 1px solid #ffe8bb !important;
+  /* border: 1px solid #ffe8bb !important; */
   border-radius: 50%;
   width: 82px;
   height: 82px;
@@ -34930,7 +34931,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .btn_profile_days.peach {
   /* background: #ED7D6F !important; */
-  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+  background: #D7586B !important;
 
 }
 
