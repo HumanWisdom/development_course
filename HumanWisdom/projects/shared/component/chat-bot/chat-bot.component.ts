@@ -823,7 +823,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   isGuestUser(): boolean {
     const currentUserId = SharedService.getUserId();
     const GUEST_USER_ID = 563;
-    return currentUserId === GUEST_USER_ID;
+    return currentUserId === GUEST_USER_ID || currentUserId <= 0;
   }
 
   private checkHistoryAvailability(): void {
