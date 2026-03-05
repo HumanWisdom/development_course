@@ -34515,7 +34515,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   line-height: 150%;
   color: #EE9596 !important;
 }
-
+.daily_profile_t {
+    background: #0C2B5F 
+}
 .btn_profile_cp {
   margin: 0;
   border: 0;
@@ -34527,7 +34529,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
-  color: #FFF;
+  color: #EE9596;
+  text-decoration: underline;
 }
 
 .btn_profile_cp:hover {
