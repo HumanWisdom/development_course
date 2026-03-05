@@ -113,6 +113,10 @@
     position: relative;
     pointer-events: auto;
     user-select: text;
+    /* Allow focus and typing on mobile – overrides parent touch-action: pan-y */
+    touch-action: manipulation;
+    -webkit-user-select: text;
+    -webkit-touch-callout: default;
 
     &::placeholder {
         color: #B0B0B0;

@@ -64,7 +64,7 @@
 
                 <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText"
                   (touchstart)="$event.stopPropagation()" (touchmove)="$event.stopPropagation()"
-                  (mousedown)="$event.stopPropagation()">
+                  (touchend)="$event.stopPropagation()" (mousedown)="$event.stopPropagation()">
                 </textarea>
 
                 <button [ngClass]="isAdults ? 'mc_end_btn_journal' : 'mdp_add_to_journal'" (click)="addJournal()"
