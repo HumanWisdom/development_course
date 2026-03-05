@@ -116,7 +116,10 @@ export class NavigationService {
       return returnUrl;
     }
 
-    this.history.splice(this.history.indexOf(this.router.url) + 1);
+    const index = this.history.lastIndexOf(this.router.url);
+    if (index !== -1) {
+      this.history.splice(index + 1);
+    }
 
     const url = this.goBack();
     if (url != null && !url.includes('home') && !url.includes('dashboard')) {
@@ -124,7 +127,7 @@ export class NavigationService {
     }
 
     let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-    if (navFrom && navFrom != null && navFrom != 'null') {
+    if (navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url) {
       return navFrom;
     }
 
