@@ -45,16 +45,13 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly DIALOGUE_SHOWN_KEY = 'owl_dialogue_shown'; // localStorage key to track if dialogue has been shown
   private dialogueAlreadyShown: boolean = false; // Track if dialogue has been shown in this session
 
-  // Cloud image properties
-  public showCloudMessage: boolean = false; // Controls visibility of cloud message
-  public currentCloudImage: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg'; // Current cloud image
-  private cloudImages: string[] = [
-    'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg',
-    'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Ask+me+a+question.svg'
-  ];
-  private currentCloudIndex: number = 0;
+  // Cloud image: only OLLY_HI – fade in on open, fade out on close
+  public showCloudMessage: boolean = false;
+  public cloudFadeIn: boolean = false; // Fade-in effect when cloud opens
+  private readonly OLLY_HI_URL = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
+  public currentCloudImage: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
   private cloudImageInterval: any = null;
-  private readonly CLOUD_SWITCH_INTERVAL = 3000; // Switch images every 3 seconds
+  private readonly CLOUD_FADE_IN_MS = 500;
 
   // Debug flag - set to true to test static owl immediately
   private debugMode: boolean = false;
@@ -571,35 +568,25 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.dialogueAlreadyShown = true;
     localStorage.setItem(this.DIALOGUE_SHOWN_KEY, 'true');
 
-    // Show first cloud message immediately: "Hi I'm Olly"
-    // This ensures cloud appears right after GIF finishes
+    // Show only OLLY_HI – fade in on open, fade out on close
+    this.currentCloudImage = this.OLLY_HI_URL;
     this.showCloudMessage = true;
-    this.currentCloudIndex = 0;
-    this.currentCloudImage = this.cloudImages[0]; // Olly_Hi.svg
+    this.cloudFadeIn = true;
     this.isSpeaking = true;
-
-    // Force immediate change detection to show cloud right away
+    this.isDisappearing = false;
     this.cdr.detectChanges();
 
-    // After 3 seconds, switch to second image: "Ask me a question"
-    const switchToSecond = setTimeout(() => {
-      this.currentCloudIndex = 1;
-      this.currentCloudImage = this.cloudImages[1]; // Olly_Ask+me+a+question.svg
+    // Clear fade-in class after animation so cloud stays visible
+    const clearFadeIn = setTimeout(() => {
+      this.cloudFadeIn = false;
       this.cdr.detectChanges();
-    }, 3000);
-    this.messageTimers.push(switchToSecond);
+    }, this.CLOUD_FADE_IN_MS);
+    this.messageTimers.push(clearFadeIn);
 
-    // Stop the speaking animation after showing both messages
-    const stopSpeaking = setTimeout(() => {
-      this.isSpeaking = false;
-      this.cdr.detectChanges();
-    }, 6000);
-    this.messageTimers.push(stopSpeaking);
-
-    // After showing both messages, remove the cloud entirely with reverse animation
+    // After display duration, close with fade out
     const hideCloud = setTimeout(() => {
       this.hideCloudWithAnimation();
-    }, 9000);
+    }, 5000);
     this.messageTimers.push(hideCloud);
   }
 

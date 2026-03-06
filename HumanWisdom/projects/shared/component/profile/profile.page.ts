@@ -46,6 +46,7 @@ export class ProfilePage implements OnInit {
   contentText = 'Are you sure you want to delete your data?';
   isCancel = true;
   isAdults: boolean = true;
+  isloggedIn = false;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
     private adultsService: AdultsService,
@@ -109,6 +110,9 @@ initialize(){
 
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId"))
+    if(userId!=undefined && userId!=null && userId!="563"){
+      this.isloggedIn = true;
+    }
     this.email = localStorage.getItem("email")
     this.myPrograms = this.actKeys?.filter(x => x.MySelf == "1")
     if (this.weekDays.includes("Sunday"))

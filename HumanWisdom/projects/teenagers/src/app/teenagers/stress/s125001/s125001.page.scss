@@ -1,0 +1,30 @@
+.title_content {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #fff;
+  margin-top: 0px;
+}
+.clickable {
+  cursor: pointer;
+
+  .fa {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+.btn_begin_here{
+  margin: 20px 0 0 0;
+}
+.btn_begin_here:hover {
+    width: 100%;
+    height: 32px;
+    background: #ffffff;
+    box-shadow: unset;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    color: #EE9596;
+}
