@@ -8,10 +8,10 @@
     alt="Olly the Owl" 
     class="static-owl-image"
   />
-  <div class="owl-cloud-container" *ngIf="showCloudMessage" [ngClass]="{'speaking': isSpeaking, 'disappearing': isDisappearing}">
+  <div class="owl-cloud-container" *ngIf="showCloudMessage" [ngClass]="{'speaking': isSpeaking, 'disappearing': isDisappearing, 'fade-in': cloudFadeIn}">
     <img 
       [src]="currentCloudImage" 
-      alt="Olly Message" 
+      alt="Olly Hi" 
       class="cloud-image"
     />
   </div>

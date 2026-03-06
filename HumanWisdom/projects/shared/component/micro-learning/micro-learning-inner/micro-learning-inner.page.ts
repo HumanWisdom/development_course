@@ -142,7 +142,13 @@ export class MicroLearningInnerPage implements OnInit {
     if (anchor) {
       this.isDragging = false;
       this.forceRoute(anchor);
-      return; 
+      return;
+    }
+
+    // Don't start drag when touching journal textarea or any input – let mobile focus and type
+    if (target.closest('textarea') || target.closest('input') || target.closest('[contenteditable="true"]')) {
+      this.isDragging = false;
+      return;
     }
 
     if (this.isAnimating) return;
@@ -160,6 +166,10 @@ export class MicroLearningInnerPage implements OnInit {
   }
 
   handleTouchMove(event: any) {
+    const target = event.target as HTMLElement;
+    if (target.closest('textarea') || target.closest('input') || target.closest('[contenteditable="true"]')) {
+      return; // Don't capture or preventDefault on form controls – allow typing/scrolling
+    }
     if (!this.isDragging || this.isAnimating) return;
     this.touchCurrentX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
     const deltaX = this.touchCurrentX - this.touchStartX;
