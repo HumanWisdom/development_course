@@ -182,8 +182,14 @@ export class CourseHeaderComponent implements OnInit {
     if (this.toc) {
       let tocUrl = this.toc;
       let prefix = this.isAdults ? '/adults' : '/teenagers';
+      let programName = this.isAdults ? 'adults' : 'teenagers';
+
       if (!tocUrl.startsWith('/')) {
-        tocUrl = prefix + '/' + tocUrl;
+        if (tocUrl.startsWith(programName)) {
+          tocUrl = '/' + tocUrl;
+        } else {
+          tocUrl = prefix + '/' + tocUrl;
+        }
       } else if (!tocUrl.startsWith(prefix)) {
         tocUrl = prefix + tocUrl;
       }
