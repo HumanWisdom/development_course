@@ -18,6 +18,8 @@ export class S159001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+        isContentsOpen
+
   bookmark:any
   bookmarkList=[]
   path = setTimeout(() => {
@@ -29,12 +31,13 @@ export class S159001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-
+   isLoggedIn = false;
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/159.webp"
   tocColor="grey"
   lastvisited = false;
   stories: any = []
-  isLoggedIn = false;
+  
+  
   isSubscriber = false;
   constructor
   (
@@ -145,6 +148,11 @@ export class S159001Page implements OnInit,OnDestroy {
   {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  }
+
+  
+toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
 
   toggleBookmark()
