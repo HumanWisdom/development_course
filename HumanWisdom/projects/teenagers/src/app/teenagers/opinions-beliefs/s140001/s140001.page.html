@@ -7,14 +7,16 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 p0">
         <h4 class="txt_comparison">
-          Our opinions and beliefs come to us from our various conditioning influences, and shape our thoughts and actions in ways we are not aware of. We explore how they form, why we get attached to them, how they meet our emotional needs, and how we can respond with wisdom.
+          Our opinions and beliefs come to us from our various conditioning influences, and shape our thoughts and
+          actions in ways we are not aware of. We explore how they form, why we get attached to them, how they meet our
+          emotional needs, and how we can respond with wisdom.
         </h4>
       </div>
     </div>
 
     <div class="row center_flex">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
-        <a [routerLink]="['/teenagers/opinions-beliefs', pgResume]" *ngIf="lastvisited">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a (click)="Resume('/teenagers/opinions-beliefs/');" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
@@ -32,7 +34,7 @@
       <a routerLink="/teenagers/opinions-beliefs/s140002">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #1
@@ -51,7 +53,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -63,7 +66,7 @@
       <a routerLink="/teenagers/opinions-beliefs/s140053">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            
+
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #2
@@ -82,7 +85,8 @@
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                class="img-responsive">
               <!-- /lock -->
             </div>
 
@@ -100,10 +104,11 @@
     </div>
     <!-- /hr -->
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories" *ngIf="stories.length !== 0" > </app-related-wisdom-stories-tiles>
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories" *ngIf="stories.length !== 0">
+    </app-related-wisdom-stories-tiles>
 
-  </form>    
+  </form>
 
-</app-index-content> 
+</app-index-content>
 
 <app-index-footer></app-index-footer>

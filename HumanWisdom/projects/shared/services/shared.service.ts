@@ -520,7 +520,10 @@ return [
 
 
   public static setUserId(userId: string) {
-    localStorage.setItem('userID', userId)
+    if (userId && userId !== 'null' && userId !== 'undefined') {
+      localStorage.setItem('userId', userId);
+      localStorage.setItem('userID', userId);
+    }
   }
 
   public static setUsername(username: string) {
@@ -532,11 +535,21 @@ return [
   }
 
   public static getUserId() {
-    let userId = this.getDataFromLocalStorage(Constant.userId);
-    if (userId && userId != null) {
-      return Number.parseInt(userId);
+    let userId = this.getDataFromLocalStorage('userId');
+    if (!userId || userId === 'null') {
+      userId = this.getDataFromLocalStorage('userID');
     }
-    return 0
+    
+    if (userId && userId !== 'null' && userId !== 'undefined') {
+      try {
+        // Handle cases where ID might be stored as a JSON string (e.g., "563")
+        const parsed = JSON.parse(userId);
+        return typeof parsed === 'number' ? parsed : Number.parseInt(parsed.toString());
+      } catch (e) {
+        return Number.parseInt(userId);
+      }
+    }
+    return 0;
   }
 
   public static getUserName() {

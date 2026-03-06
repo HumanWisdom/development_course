@@ -226,13 +226,8 @@ export class MicroLearningInnerPage implements OnInit {
   backToDashboard() {
     localStorage.removeItem('ml_index_' + this.contentId);
     localStorage.removeItem('persist_ml_index');
-   // this.router.navigate([`/${SharedService.getprogramName()}/micro-learning`]);
-     var url = this.navigationService.navigateToBackLink();
-        if (url == null) {
-          this.location.back();
-        } else {
-          this.router.navigate([url]);
-        }
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/micro-learning`]);
   }
 
   next() {
@@ -296,9 +291,19 @@ export class MicroLearningInnerPage implements OnInit {
       path = rlAttr.replace(/['"\[\]]/g, '');
     }
 
-    if (path && path !== "javascript:void(0)") {
-      console.log("Manually routing to:", path);
-      this.routeUrl(path);
+    if (path) {
+      try {
+        const url = new URL(path, window.location.origin);
+        const allowedProtocols = ['http:', 'https:'];
+        if (!allowedProtocols.includes(url.protocol)) {
+          console.warn("Blocked unsafe protocol:", url.protocol);
+          return;
+        }
+        console.log("Manually routing to:", path);
+        this.routeUrl(url.pathname + url.search + url.hash);
+      } catch (err) {
+        console.warn("Invalid URL blocked:", path);
+      }
     }
   }
 

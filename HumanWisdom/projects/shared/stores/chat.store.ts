@@ -590,23 +590,15 @@ export class ChatStore extends ComponentStore<ChatState> {
       const currentProgramType = SharedService.ProgramId;
 
       // Check if user has changed (guest vs logged-in)
-      const storedUserId: number | null =
+      const storedUserId: number | null = 
         typeof parsed.userId === 'number' ? parsed.userId : null;
       const currentUserId = SharedService.getUserId();
 
-      // If we now have a logged-in user and the stored session either belongs to a different
-      // user or has no user information (legacy/guest), clear the chat so guest history
-      // is not shown to the logged-in user
-      if (currentUserId && currentUserId > 0) {
-        if (storedUserId === null || storedUserId !== currentUserId) {
-          console.log(
-            'User changed or missing in stored chat session. Clearing chat for userId:',
-            currentUserId
-          );
-          this.clearStorage();
-          // Welcome messages will be initialized by ChatbotService
-          return;
-        }
+      // Clear session if user has changed (e.g., new user logged in or user logged out)
+      if (storedUserId !== null && storedUserId !== currentUserId) {
+        console.log('User change detected. Clearing session.');
+        this.clearStorage();
+        return;
       }
 
       // If program type changed, clear the chat
@@ -756,13 +748,18 @@ export class ChatStore extends ComponentStore<ChatState> {
     }
     
     // Method 2: If no <li> tags found, try plain numbered list format "1. Text"
+    // Use split instead of regex to avoid ReDoS from backtracking on long lines
     if (tempSuggestions.length === 0) {
       console.log('No <li> tags found, trying numbered list format');
       const lines = content.split(/[\n\r<]/);
       for (const line of lines) {
-        const match = line.match(/^(\d+)\.\s*(.+)$/);
-        if (match && match[2]) {
-          const suggestion = match[2].trim();
+        const parts = line.split('. ');
+        if (
+          parts.length >= 2 &&
+          /^\d+$/.test(parts[0]) &&
+          parts.slice(1).join('. ').trim().length <= 500
+        ) {
+          const suggestion = parts.slice(1).join('. ').trim();
           console.log('Found suggestion in numbered list:', suggestion);
           if (suggestion) {
             tempSuggestions.push(suggestion);

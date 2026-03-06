@@ -26,7 +26,7 @@ export class S45001Page implements OnInit,OnDestroy
     isContentsOpen = false;
 
   bookmarkList=[]
-  addictionResume=sessionStorage.getItem("pgResume")
+  pgResume: any;
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/45.webp"
   tocColor="white"
   lastvisited = false;
@@ -90,27 +90,29 @@ export class S45001Page implements OnInit,OnDestroy
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
 
+    if (this.saveUsername == false) {
+      this.userId = JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else {
+      this.userId = JSON.parse(localStorage.getItem("userId"))
+    }
+
+    this.service.clickModule(45, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
-    localStorage.setItem("moduleId",JSON.stringify(45))
-    this.moduleId=localStorage.getItem("moduleId")
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -168,8 +170,7 @@ export class S45001Page implements OnInit,OnDestroy
   }
  */
 
-  Resume(url)
-  {  
-    this.router.navigate([url+sessionStorage.getItem("pgResume")])
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
   }
 }

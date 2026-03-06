@@ -36,14 +36,13 @@ export class S137001Page implements OnInit,OnDestroy {
   socialShare=false
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
-  kindnessResume=sessionStorage.getItem("kindnessResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/137.webp"
   tocColor="white"
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
-  pgResume=sessionStorage.getItem("pgResume")
+  pgResume: any;
   moduleData:ProgramModel;
 
   constructor
@@ -64,8 +63,20 @@ export class S137001Page implements OnInit,OnDestroy {
 
   ngOnInit() 
   {
-
+    if(this.saveUsername==false)
+    {
+      this.userId=JSON.parse(sessionStorage.getItem("userId"))
+    }
+    else
+    {
+      this.userId=JSON.parse(localStorage.getItem("userId"))
+    }
     this.service.setmoduleID(137);
+    this.service.clickModule(137,this.userId).subscribe(res=>
+      {
+        this.pgResume= (res.lastVisitedScreen !="")? "s"+ res.lastVisitedScreen:"";
+        this.lastvisited = res.lastVisitedScreen !=""? true:false;
+      })
     setTimeout(() => {
       let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
     story = JSON.parse(story)
@@ -111,28 +122,11 @@ export class S137001Page implements OnInit,OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/live-your-best-life');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
-    // /continue where you left
+
 
     
     
-    if(this.saveUsername==false)
-    {
-      this.userId=JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else
-    {
-      this.userId=JSON.parse(localStorage.getItem("userId"))
-    }
+
 
     if(!this.t) //if no token in url- not shared
     {
@@ -199,13 +193,9 @@ export class S137001Page implements OnInit,OnDestroy {
     this.router.navigate(['/teenagers/journal'])
   }
 
-  getSetModuleData(moduleId){
-    this.service.setmoduleID(moduleId);
-    this.service.getModulebyId(moduleId).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-      
-     });
+  Resume(url)
+  {
+    this.router.navigate([url+this.pgResume])
   }
    youtube(link) 
   {
