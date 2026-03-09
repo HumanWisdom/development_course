@@ -58,7 +58,7 @@
 }
 
 .chat-bot-container {
-  width: 375px;
+  width: 374px;
   background: #ffffff;
   margin: 0 auto;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -114,7 +114,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 375px;
+  width: 374px;
   pointer-events: auto; // Enable clicks on header
 
   .header-content {
@@ -418,7 +418,7 @@
   transform: translateX(-50%);
   background: #FFF7E6;
   z-index: 1001; // Same as header
-  width: 375px;
+  width: 374px;
   pointer-events: auto; // Enable clicks on input area
 
 
@@ -804,13 +804,13 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) {.chat-bot-container
   .chat-bot-container,
   .chat-header,
   .chat-area,
   .chat-input-area {
     width: 100%;
-    max-width: 375px;
+    max-width: 374px;
   }
   
   .error-message {
