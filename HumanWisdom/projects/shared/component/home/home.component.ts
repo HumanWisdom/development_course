@@ -8,6 +8,7 @@ import { ProgramType } from '../../models/program-model';
 import { HomeStateService } from '../../services/home-state.service';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { LogEventService } from '../../services/log-event.service';
 
 export interface NavigationItem {
   id: string;
@@ -149,7 +150,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private router: Router,
     private commonService: CommonService,
     private homeStateService: HomeStateService,
-    private onboardingService: OnboardingService
+    private onboardingService: OnboardingService,
+    public logeventservice: LogEventService
   ) {
  
     this.navigationItems = SharedService.getPreferenceDataForHome();
@@ -172,6 +174,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.logeventservice.logEvent('view_homepage');
     this.isSubscriber = SharedService.isSubscriber();
     console.log('Is Subscriber:', this.isSubscriber);
 
@@ -806,6 +809,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onNavigationClick(item): void {
     console.log(item);
+    if(item && item.displayName){
+      this.logeventservice.logEvent('select_category_' + item.displayName.replace(/\s+/g, '').toLowerCase());
+    }
 
     // Save active preference to store
     this.homeStateService.setActivePreference(item.id);
@@ -846,8 +852,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     })
   };
 
-  onCardClick(card: ContentCard): void {
+  onCardClick(card: ContentCard, section?: ContentSection): void {
     console.log('DEBUG: Card clicked:', card);
+
+    if (section && section.title && card && card.id) {
+      const sectionName = section.title.replace(/\s+/g, '').toLowerCase();
+      const eventName = `click_${sectionName}_${card.id}`;
+      console.log(`%c [ANALYTICS EVENT] Triggering Card Click: ${eventName}`, 'color: #bada55; font-size: 14px');
+      this.logeventservice.logEvent(eventName);
+    }
+
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
     const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/') || (card.path || '').includes('youtubelink');
     console.log('DEBUG: Is Event:', isEvent);
@@ -905,6 +919,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     // Only mark as seen if user can actually access the content
     const isLocked = card && (card.isFree === '0' || card.isFree === 0);
     if (!this.isSubscriber && isLocked) {
+      this.logeventservice.logEvent('click_locked_content');
       // Card is locked and user is not subscriber - don't mark as seen
       this.showModal = true;
       this.cardClick.emit(card);
@@ -1046,6 +1061,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
     if (type.includes('VIDEO') || type.includes('SHORT')) {
+      this.logeventservice.logEvent('play_video');
       const url = card.path || '';
       if (url.includes('/wisdom_shorts/videos/')) {
         const shortId = this.extractShortIdFromUrl(url);
@@ -1179,6 +1195,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (section.isInlineSection) {
       return;
     }
+
+    if (!section.isExpanded) {
+        if (section.title) {
+            const sectionName = section.title.replace(/\s+/g, '').toLowerCase();
+            const eventName = `click_${sectionName}`;
+            console.log(`%c [ANALYTICS EVENT] Triggering Accordion Expand: ${eventName}`, 'color: #bada55; font-size: 14px');
+            this.logeventservice.logEvent(eventName);
+        }
+    }
+
     section.isExpanded = !section.isExpanded;
 
     // Save state to store
@@ -1635,6 +1661,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle focus event - show all modules or filtered results
    */
   onFocus(): void {
+    this.logeventservice.logEvent('click_search');
     if (this.moduleList.length === 0) {
       this.getModuleList();
     }
