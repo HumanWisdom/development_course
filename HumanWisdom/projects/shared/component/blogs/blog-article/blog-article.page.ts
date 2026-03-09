@@ -9,6 +9,7 @@ import { ProgramType } from '../../../models/program-model';
 import { SharedService } from '../../../services/shared.service';
 import { OnboardingService } from '../../../services/onboarding.service';
 import { NavigationService } from "../../../services/navigation.service";
+import { LogEventService } from '../../../services/log-event.service';
 @Component({
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
@@ -35,7 +36,8 @@ export class BlogArticlePage {
   constructor(private readonly sanitizer: DomSanitizer, private readonly service: OnboardingService, private readonly location: Location, private readonly renderer: Renderer2,
     private readonly router: Router, private readonly ngNavigatorShareService: NgNavigatorShareService, private readonly elRef: ElementRef,
     private readonly route: ActivatedRoute, private readonly meta: Meta, private readonly title: Title, public platform: Platform,
-    private readonly navigationService: NavigationService) {
+    private readonly navigationService: NavigationService,
+    public readonly logeventservice: LogEventService) {
       const login: any = localStorage.getItem("isloggedin");
       if (login && login === 'T') {
         this.isLoggedIn = true;
@@ -137,6 +139,7 @@ export class BlogArticlePage {
   }
 
   likebtn() {
+    this.logeventservice.logEvent('click_heart_icon');
     if (this.isLoggedIn) {
       this.service.likeblog(this.blogList['BlogID']).subscribe((res) => {
         if (res) {
@@ -154,6 +157,7 @@ export class BlogArticlePage {
   }
 
   postcomment() {
+    this.logeventservice.logEvent('click_comment_post');
     if (this.isLoggedIn) {
       const obj = {
         "BlogId": this.blogList['BlogID'],
@@ -191,6 +195,7 @@ export class BlogArticlePage {
 
 
   share() {
+    this.logeventservice.logEvent('click_share_icon');
     this.shareUrl(SharedService.ProgramId);
     this.ngNavigatorShareService.share({
       title: 'HappierMe Program',
@@ -219,6 +224,7 @@ export class BlogArticlePage {
 
 
   commentbottom() {
+    this.logeventservice.logEvent('click_comment_icon');
     if (this.isLoggedIn) {
       window.scrollTo(0, document.body.scrollHeight);
     } else {
@@ -231,11 +237,18 @@ export class BlogArticlePage {
   clickbanner(url = '') {
     if (url === '') {
       if (this.platform.IOS || this.platform.SAFARI) {
+        this.logeventservice.logEvent('click_appstore_icon');
         window.open("https://apps.apple.com/in/app/humanwisdom/id1588535567");
       } else if (this.platform.ANDROID) {
+        this.logeventservice.logEvent('click_googleplay_icon');
         window.open("https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US");
       }
     } else {
+      if (url.includes("apple.com")) {
+        this.logeventservice.logEvent('click_appstore_icon');
+      } else {
+        this.logeventservice.logEvent('click_googleplay_icon');
+      }
       window.open(url)
     }
   }
