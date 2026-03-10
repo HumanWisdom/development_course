@@ -48,7 +48,7 @@ export class TocHeaderComponent implements OnInit {
 
   goBack(){
     var url = this.navigationService.navigateToBackLink();
-    if(url==null || url.includes('home') || url.includes('dashboard')){
+    if(url==null || url.includes('home') || url.includes('dashboard') || url.includes('search')){
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
       if(url && url!=null && url != 'null'){
         this.router.navigateByUrl(url);

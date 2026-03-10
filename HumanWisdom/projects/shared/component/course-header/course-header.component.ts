@@ -173,12 +173,6 @@ export class CourseHeaderComponent implements OnInit {
     this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
   goToToc() {
-    var url = this.naviagtorService.navigateToBackLink();
-    if (url != null && !url.includes('home') && !url.includes('dashboard') && !url.includes('pathway')) {
-      this.router.navigateByUrl(url);
-      return;
-    }
-
     if (this.toc) {
       let tocUrl = this.toc;
       let prefix = this.isAdults ? '/adults' : '/teenagers';
@@ -197,7 +191,8 @@ export class CourseHeaderComponent implements OnInit {
       return;
     }
 
-    if (url != null) {
+    var url = this.naviagtorService.navigateToBackLink();
+    if (url != null && !url.includes('home') && !url.includes('dashboard') && !url.includes('pathway')) {
       this.router.navigateByUrl(url);
       return;
     }
