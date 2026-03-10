@@ -108,7 +108,7 @@ export class S125001Page implements OnInit,OnDestroy {
     }
 
     if(!localStorage.getItem("NaviagtedFrom"))  
-    localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/live-your-best-life');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/explore');
 
     if(this.saveUsername==false)
     {
