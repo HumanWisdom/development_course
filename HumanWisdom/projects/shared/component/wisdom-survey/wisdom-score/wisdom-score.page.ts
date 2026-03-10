@@ -87,8 +87,11 @@ export class WisdomScorePage implements OnInit {
     const token = SharedService.getDataFromLocalStorage('token');
     this.isGuest = localStorage.getItem('guest') === 'T';
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
-        const { routedFromLogin } = window.history.state;
+    const { routedFromLogin } = window.history.state;
     this.justSignedUp = !!token && !this.isGuest && (visits < 2 || isFromSignupFlow || SharedService.isRoutedFromLogin || routedFromLogin);
+    if(!this.isAdults && !this.isGuest && !!token && isFromSignupFlow) {
+      this.justSignedUp = true;
+    }
   }
 
   navigateToRecommendation(item: any) {
