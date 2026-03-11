@@ -1,6 +1,9 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AdultsService } from '././adults/adults.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +14,7 @@ export class ActiveGuard implements CanActivate, OnInit {
   scrId: any
   public canGoBack: boolean;
   constructor(public router: Router, private url: ActivatedRoute, private service: AdultsService) {
-    this.t = this.router.getCurrentNavigation().extractedUrl.queryParams.t
+    this.t = this.router.getCurrentNavigation()?.extractedUrl.queryParams.t
     this.canGoBack = !!(this.router.getCurrentNavigation()?.previousNavigation);
   }
 
@@ -20,9 +23,9 @@ export class ActiveGuard implements CanActivate, OnInit {
   }
 
   canActivate(next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
+    state: RouterStateSnapshot): boolean | Observable<boolean> {
     let screens= localStorage.getItem("freeScreens");
-    let freeScreens = screens != 'undefined' ? JSON.parse(screens):null;
+    let freeScreens = screens !== 'undefined' && screens !== null ? JSON.parse(screens):null;
     let m: any = state.url;
     let loggedin = localStorage.getItem("isloggedin")
     let sub: any = localStorage.getItem("Subscriber")
@@ -40,14 +43,14 @@ export class ActiveGuard implements CanActivate, OnInit {
       return true;
     } else if (m[0].includes("view-stories") === true) {
       let id = m[1].split("=")[1]
-      this.service.CheckStoryIsFree(id).subscribe(res => {
+      return this.service.CheckStoryIsFree(id).pipe(map(res => {
         if (res === true) {
           return true;
         } else {
           this.router.navigate(['adults/subscription/start-your-free-trial']);
           return false;
         }
-      })
+      }))
     } else if (m[0].includes("wisdom-shorts") === true) {
       if(feelbetternow === 'T') {
           if(loggedin === 'T') {
@@ -58,7 +61,7 @@ export class ActiveGuard implements CanActivate, OnInit {
           }
       }else {
         let id = m[0].split("/")[3].split(".")[1]
-        this.service.CheckShortsIsFree(id).subscribe(res => {
+        return this.service.CheckShortsIsFree(id).pipe(map(res => {
           if (res === true) {
             return true;
           } else {
@@ -69,7 +72,7 @@ export class ActiveGuard implements CanActivate, OnInit {
               return false;
             }
           }
-        })
+        }))
       }
     } 
     // else if (freeScreens !== null && (!loggedin || loggedin !== 'T' ? freeScreens.includes(this.scrId.replace('t', '').toString()) : freeScreens.includes(parseInt(this.scrId.replace('t', ''))) )) {
@@ -78,6 +81,29 @@ export class ActiveGuard implements CanActivate, OnInit {
     } 
     else if (freeScreens !== null && freeScreens.includes(this.scrId.replace('t', ''))){
       return true;
+    }
+    else if (freeScreens === null || freeScreens.length === 0) {
+      return this.service.freeScreens().pipe(map(res => {
+        let x = [];
+        let result = res.map(a => a.FreeScrs);
+        let arr = [];
+        result.forEach(element => {
+          if (element && element !== null) {
+            x.push(element.map(a => a.ScrNo));
+          }
+        });
+        if (x.length > 0) {
+          arr = Array.prototype.concat.apply([], x);
+        }
+        localStorage.setItem("freeScreens", JSON.stringify(arr));
+        
+        if (arr.includes(parseInt(this.scrId.replace('t', ''))) || arr.includes(this.scrId.replace('t', ''))) {
+          return true;
+        } else {
+          this.router.navigate(['adults/subscription/start-your-free-trial']);
+          return false;
+        }
+      }));
     }
     else {
       this.router.navigate(['adults/subscription/start-your-free-trial']);
