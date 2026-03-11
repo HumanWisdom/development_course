@@ -335,10 +335,10 @@ body:has(#menu:checked) .owl-animation-wrapper {
   transform-origin: bottom center;
 }
 
-/* Opening: fade in effect */
+/* Opening: slow fade in effect for Olly_Hi.svg */
 .owl-cloud-container.fade-in {
   opacity: 0;
-  animation: cloud-fade-in 0.5s ease-out forwards;
+  animation: cloud-fade-in 4.4s ease-out forwards;
   transform-origin: bottom center;
 }
 
