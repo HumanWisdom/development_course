@@ -48,6 +48,7 @@ export class WisdomScorePage implements OnInit {
   }
 
   ngOnInit() {
+    this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
     if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
       this.isSubscriber = true;
     }
@@ -86,7 +87,11 @@ export class WisdomScorePage implements OnInit {
     const token = SharedService.getDataFromLocalStorage('token');
     this.isGuest = localStorage.getItem('guest') === 'T';
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
-    this.justSignedUp = !!token && !this.isGuest && (visits < 2 || isFromSignupFlow);
+    const { routedFromLogin } = window.history.state;
+    this.justSignedUp = !!token && !this.isGuest && (visits < 2 || isFromSignupFlow || SharedService.isRoutedFromLogin || routedFromLogin);
+    if(!this.isAdults && !this.isGuest && !!token && isFromSignupFlow) {
+      this.justSignedUp = true;
+    }
   }
 
   navigateToRecommendation(item: any) {
@@ -129,7 +134,8 @@ export class WisdomScorePage implements OnInit {
   }
 
   routeToDashboard() {
-    localStorage.setItem('isFromSignupFlow', 'F');
+        localStorage.setItem('isFromSignupFlow', 'F');
+    SharedService.isRoutedFromLogin = false;
     this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
 

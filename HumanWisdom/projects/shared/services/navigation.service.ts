@@ -11,9 +11,9 @@ export class NavigationService {
   constructor(private router: Router) { }
 
   addToHistory(url: string) {
-  if (url.includes('/onboarding/add-to-cart')) {
-    return;
-  }
+    if (url.includes('/onboarding/add-to-cart')) {
+      return;
+    }
     const urls = url.split('/');
     let urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
@@ -21,9 +21,36 @@ export class NavigationService {
       if (urltoCheck) {
         let isNan = isNaN(Number(urltoCheck[urltoCheck.length - 1]));
         if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
-          if (this.history.length>0 && this.history[this.history.length-1] != url) {
+          if (this.history.length > 0) {
+            const lastUrl = this.history[this.history.length - 1];
+            if (lastUrl === url) {
+              this.backClicked = false;
+              return;
+            }
+
+            // Check if we are moving between a module root and its first session (sXXXX01)
+            // Example: /teenagers/stress and /teenagers/stress/s125001 are identical pages
+            const currentSegments = url.split('/');
+            const lastSegments = lastUrl.split('/');
+
+            const isDuplicateToc = (
+              // Current is /path/module/sXXXX01 and Last is /path/module
+              (currentSegments.length === lastSegments.length + 1 &&
+               this.endsWith001ForModule(urltoCheck) &&
+               url.startsWith(lastUrl)) ||
+              // Current is /path/module and Last is /path/module/sXXXX01
+              (lastSegments.length === currentSegments.length + 1 &&
+               this.endsWith001ForModule(lastSegments[lastSegments.length - 1]) &&
+               lastUrl.startsWith(url))
+            );
+
+            if (isDuplicateToc) {
+              this.backClicked = false;
+              return;
+            }
+
             this.history.push(url);
-          } else if(this.history[this.history.length-1] != url) {
+          } else {
             this.history.push(url);
           }
         }

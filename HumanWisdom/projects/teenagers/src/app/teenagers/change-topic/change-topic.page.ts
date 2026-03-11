@@ -77,7 +77,8 @@ export class ChangeTopicPage implements OnInit {
     let NoOfVisits = loginResponse.NoOfVisits
     console.log("NoofVisits:" + NoOfVisits)
 
-    this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
+    const { routedFromLogin } = window.history.state;
+    this.isRoutedFromLogin = (NoOfVisits.toString() === '1' || routedFromLogin) ? true : false;
 
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
@@ -123,11 +124,8 @@ export class ChangeTopicPage implements OnInit {
         if (this.isRoutedFromLogin == true) {
           SharedService.isRoutedFromLogin = true;
           this.logeventservice.logEvent('click_pick_topic_' + this.selectedname);
-          // this.url="/subscription/start-your-free-trial"
-          // this.url = `${SharedService.getprogramName()}/daily-checkin`;
           localStorage.setItem('isFromSignupFlow', 'T');
-           this.url=`${SharedService.getprogramName()}/wisdom-survey`
-          this.router.navigate([this.url]);
+          this.url=`${SharedService.getprogramName()}/wisdom-survey`
         }
         else {
           let data = this.redirectToDashboard(this.selectedname);
@@ -143,45 +141,49 @@ export class ChangeTopicPage implements OnInit {
             if (id==14) {
               localStorage.setItem('curatedurl', '/teenagers/curated/manage-your-emotions');
               this.logeventservice.logEvent('click_emotions');
-              this.router.navigate(['/teenagers/curated/manage-your-emotions'])
+              this.url = '/teenagers/curated/manage-your-emotions';
             } else if (id==10) {
               localStorage.setItem('curatedurl', '/teenagers/curated/overcome-stress-anxiety');
               this.logeventservice.logEvent('click_stress_anxiety');
-              this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
+              this.url = '/teenagers/curated/overcome-stress-anxiety';
             } else if (id==17) {
               localStorage.setItem('curatedurl', '/teenagers/curated/succeed-in-life');
               this.logeventservice.logEvent('click_workplace');
-              this.router.navigate(['/teenagers/curated/succeed-in-life'])
+              this.url = '/teenagers/curated/succeed-in-life';
             } else if (id==11) {
               localStorage.setItem('curatedurl', '/teenagers/curated/have-fulfilling-relationships');
               this.logeventservice.logEvent('click_relationships');
-              this.router.navigate(['/teenagers/curated/have-fulfilling-relationships'])
+              this.url = '/teenagers/curated/have-fulfilling-relationships';
             } else if (id==13) {
               localStorage.setItem('curatedurl', '/teenagers/curated/be-happier');
               this.logeventservice.logEvent('click_be_happier');
-              this.router.navigate(['/teenagers/curated/be-happier'])
+              this.url = '/teenagers/curated/be-happier';
             } else if (id==16) {
               localStorage.setItem('curatedurl', '/teenagers/curated/understand-yourself');
-              this.logeventservice.logEvent('click_be_happier');
-              this.router.navigate(['/teenagers/curated/understand-yourself'])
+              this.logeventservice.logEvent('click_understand_yourself');
+              this.url = '/teenagers/curated/understand-yourself';
             } else if (id==12) {
               localStorage.setItem('curatedurl', '/teenagers/curated/feel-calm');
               this.logeventservice.logEvent('click_feel_calm');
-              this.router.navigate(['/teenagers/curated/feel-calm'])
+              this.url = '/teenagers/curated/feel-calm';
             } else if (id==15) {
               localStorage.setItem('curatedurl', '/teenagers/curated/overcome-unhelpful-habits');
               this.logeventservice.logEvent('click_overcome_unhelpful_habits');
-              this.router.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
+              this.url = '/teenagers/curated/overcome-unhelpful-habits';
             }
              else if (id==20) {
               localStorage.setItem('curatedurl', '/teenagers/wisdom-exercise');
               this.logeventservice.logEvent('click_self_awareness');
-              this.router.navigate(['/teenagers/wisdom-exercise'])
+              this.url = '/teenagers/wisdom-exercise';
             }
           }
         }
         localStorage.setItem('lastRoute', null);
-        this.router.navigate([this.url]);
+        this.router.navigate([this.url], {
+          state: {
+            routedFromLogin: this.isRoutedFromLogin
+          }
+        });
 
       }
     });

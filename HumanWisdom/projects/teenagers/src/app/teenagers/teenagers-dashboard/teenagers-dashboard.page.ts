@@ -411,6 +411,7 @@ export class TeenagersDashboardPage implements OnInit,AfterViewInit {
   }
 
   ngOnInit() {
+    this.logeventservice.logEvent('view_homepage');
     localStorage.setItem('callAddtraction', "N");
     SharedService.isRoutedFromLogin = false;
 
@@ -1878,8 +1879,19 @@ closeCookies() {
 
 
   DashboardLogevent(route, params, evtName) {
-    this.logeventservice.logEvent(evtName);
+    if (evtName === 'click_feel-better-now') {
+      this.logeventservice.logEvent('click_feelbetternow');
+    } else if (evtName === 'click_locked_content') {
+      this.logeventservice.logEvent('click_locked_content');
+    } else if (evtName === 'click_introduction-happierme') {
+      this.logeventservice.logEvent('expand_beginhere');
+    } else if (evtName === 'click_teenTalk') {
+      this.logeventservice.logEvent('click_teentalk');
+    } else {
+      this.logeventservice.logEvent(evtName);
+    }
     if (evtName === 'click_journal') {
+      this.logeventservice.logEvent('click_guidedJournaling');
       this.router.navigate(['/teenagers/journal'])
     } else if (params != '' && route != '') {
         if(route=="/teenagers/daily-practise"){
@@ -1925,11 +1937,11 @@ closeCookies() {
   routeForUser(res) {
     let sid = '';
     if (res['FeatureType'] === "BLOG") {
-      this.logeventservice.logEvent("click_blog");
+      this.logeventservice.logEvent("click_blog_card");
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['teenagers//blog-article'], { queryParams: { sId: `${sid}` } })
     } else if (res['FeatureType'] === "LIFE STORY") {
-      this.logeventservice.logEvent("click_life_stories");
+      this.logeventservice.logEvent("click_lifestory_card");
       sid = res['Url'].split('sId=')[1];
       this.router.navigate(['teenagers/wisdom-stories/view-stories'], { queryParams: { sId: `${sid}` } })
     }
@@ -1976,31 +1988,31 @@ closeCookies() {
 
   activeTopicRoute(name) {
     if (name === 'Manage your emotions') {
-      this.logeventservice.logEvent('click_emotions');
+      this.logeventservice.logEvent('select_category_manage_your_emotions');
       this.router.navigate(['/teenagers/curated/manage-your-emotions'])
     } else if (name === 'Manage your mental wellbeing') {
-      this.logeventservice.logEvent('click_mental_health');
+      this.logeventservice.logEvent('select_category_mental_health');
       this.router.navigate(['/teenagers/curated/overcome-stress-anxiety'])
     } else if (name === 'Overcome unhelpful habits') {
-      this.logeventservice.logEvent('click_overcome_unhelpful_habits');
+      this.logeventservice.logEvent('select_category_overcome_unhelpful_habits');
       this.router.navigate(['/teenagers/curated/overcome-unhelpful-habits'])
     } else if (name === 'Relationships') {
-      this.logeventservice.logEvent('click_relationships');
+      this.logeventservice.logEvent('select_category_relationships');
       this.router.navigate(['/teenagers/curated/have-fulfilling-relationships'])
     } else if (name === 'Be happier') {
-      this.logeventservice.logEvent('click_be_happier');
+      this.logeventservice.logEvent('select_category_be_happier');
       this.router.navigate(['/teenagers/curated/be-happier'])
     } else if (name === 'Understand yourself') {
-      this.logeventservice.logEvent('click_understand_yourself');
+      this.logeventservice.logEvent('select_category_understand_yourself');
       this.router.navigate(['/teenagers/curated/understand-yourself'])
     } else if (name === 'Feel calm') {
-      this.logeventservice.logEvent('click_feel_calm');
+      this.logeventservice.logEvent('select_category_feel_calm');
       this.router.navigate(['/teenagers/curated/feel-calm'])
     }  else if (name === 'Succeed in life') {
-      this.logeventservice.logEvent('click_succeed_in_life');
+      this.logeventservice.logEvent('select_category_succeed_in_life');
       this.router.navigate(['/teenagers/curated/succeed-in-life'])
     } else if (name === 'Develop your self awareness') {
-      this.logeventservice.logEvent('click_self_awareness');
+      this.logeventservice.logEvent('select_category_self_awareness');
       this.router.navigate(['/teenagers/wisdom-exercise'])
     }
   }
@@ -2119,7 +2131,8 @@ closeCookies() {
   }
 
   shortVideos(data) {
-    this.logeventservice.logEvent("click_"+data['Title'].substring(0,15));
+    this.logeventservice.logEvent('play_video');
+    this.logeventservice.logEvent("click_" + data['Title'].substring(0, 15));
 
     let id = data['VideoUrl'].split('/');
     id = id[id.length - 1]
@@ -2144,6 +2157,7 @@ closeCookies() {
   }
 
   onFocus() {
+    this.logeventservice.logEvent('click_search');
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;

@@ -156,8 +156,30 @@ export class FindInspiration {
 
 
   routeTo(item: any) {
-    this.logeventservice.logEvent("click_FI_"+item);
-    this.router.navigate([SharedService.getprogramName()+'/' +item]);
+    if (item === 'podcast') {
+      this.logeventservice.logEvent('click_podcasts');
+    } else if (item === 'blogs') {
+      this.logeventservice.logEvent('click_blogs');
+    } else if (item === 'journal') {
+      this.logeventservice.logEvent('click_guidedJournaling');
+    } else if (item === 'wisdom-shorts') {
+      this.logeventservice.logEvent('click_shortvideos');
+    } else if (item === 'audio-meditation') {
+      this.logeventservice.logEvent('click_guidedmeditation');
+    } else if (item === 'wisdom-stories') {
+      this.logeventservice.logEvent('click_lifestories');
+    } else if (item === 'find-answers/why-do-i') {
+      this.logeventservice.logEvent('click_understandyourmind');
+    } else if (item === 'soundscapes') {
+      this.logeventservice.logEvent('click_soundscapes');
+    } else if (item === 'events') {
+      this.logeventservice.logEvent('click_pastevents');
+    } else if (item === 'micro-learning') {
+      this.logeventservice.logEvent('click_interactivemodules');
+    } else {
+      this.logeventservice.logEvent("click_FI_" + item);
+    }
+    this.router.navigate([SharedService.getprogramName() + '/' + item]);
   }
 
 }

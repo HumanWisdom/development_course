@@ -117,7 +117,7 @@
                       </div>
                     </div>
 
-                    <div class="row mt20px">
+                    <div class="row mt30px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                           <h4 class="mtb0px fs_12px fw_400 lh_18px  tleft"
@@ -147,7 +147,7 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                          <h4 class="mtb0px fs_15px fw_700 lh_150p" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{loginResponse.Modules}}
                           </h4>
 
@@ -156,7 +156,7 @@
                         </div>
 
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                          <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{loginResponse.Notes}}
                           </h4>
 
@@ -165,7 +165,7 @@
                         </div>
 
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                          <h4 class="mtb0px fs_15px fw_700 lh_150p  " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                          <h4 class="mtb0px fs_15px fw_700 lh_150p  " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{loginResponse.Surveys}}
                           </h4>
 
@@ -264,13 +264,13 @@
                                   My progress
                                 </h2> -->
                               </div>
-                              <div class="col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isloggedIn" (click)="viewDetails()">
+                              <div class="col-md-3 col-sm-3 col-xs-3 p0" >
                                 <!-- <a (click)="viewDetails()">
                                       <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ee9596 tright underline">
                                         View details
                                       </h2>
                                     </a> -->
-                                <a (click)="viewDetails()" class="display_flex flex_ai justify-content-end">
+                                <!-- <a (click)="viewDetails()" class="display_flex flex_ai justify-content-end">
                                   <h2 class="mtb0px fs_12px fw_500 lh_150p fc_ee9596 td_underline">
                                     View details
                                   </h2>
@@ -279,7 +279,7 @@
                                       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_orange.svg"
                                       class="img-responsive">
                                   </span>
-                                </a>
+                                </a> -->
 
                               </div>
                             </div>
@@ -492,7 +492,8 @@
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                             <a (click)="Logevent('/onboarding/payment-details', '', 'click_payment_update')">
                               <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline"
-                                [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_D7586B'">
+                                [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
+
                                 Update
                                 <i class="fa fa-angle-right "></i>
                               </h4>
@@ -520,7 +521,7 @@
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                             <a (click)="Logevent('/onboarding/myprogram', '', 'click_subscription_details')">
                               <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline"
-                                [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_D7586B'">
+                                [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                                 Details
                                 <i class="fa fa-angle-right "></i>
                               </h4>
@@ -555,7 +556,7 @@
                           </div>
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline" [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_D7586B'">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                               Share
                               <i class="fa fa-angle-right "></i>
                             </h4>

@@ -29915,7 +29915,7 @@ svg path
   /* background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%); */
   background: #0C2B5F;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   height: 289px;
   text-align: center;
   margin-top: -12%;
@@ -34533,9 +34533,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   text-decoration: underline;
 }
 
-.btn_profile_cp:hover {
+/* .btn_profile_cp:hover {
   color: #fff
-}
+} */
 
 .profile_pe_div {
   text-align: center;
@@ -34544,7 +34544,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: unset;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   border-radius: 16px;
   height: auto;
 }
@@ -37148,7 +37148,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   transition: transform 0.2s ease;
 }
 
-.fc_ED7D6F {
+.fc_EE9596 {
   color: #EE9596;
 }
 

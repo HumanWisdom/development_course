@@ -46,7 +46,7 @@
 }
 
 .chat-bot-container {
-  width: 375px;
+  width: 374px;
   background: #ffffff;
   margin: 0 auto;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -92,7 +92,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 375px;
+  width: 374px;
   pointer-events: auto; // Enable clicks on header
 
   .header-content {
@@ -262,7 +262,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      max-width: 285px;
+      max-width: 315px;
 
       .message-sender {
         font-weight: bold;
@@ -398,7 +398,7 @@
   transform: translateX(-50%);
   background: #FFF7E6;
   z-index: 1001; // Same as header
-  width: 375px;
+  width: 374px;
   pointer-events: auto; // Enable clicks on input area
 
 
@@ -453,6 +453,7 @@
       transition: transform 0.2s ease;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
       pointer-events: auto; // Ensure send button is clickable
+      margin: 0;
 
       &:hover {
         transform: scale(1.05);
@@ -636,6 +637,7 @@
   gap: 0;
   // margin-top: 6px;
   padding: 0;
+  padding-top: 8px;
   align-items: center;
   
   .feedback-button {
@@ -662,14 +664,6 @@
       height: 20px;
       color: rgba(0, 0, 0, 0.5);
       transition: all 0.2s ease;
-    }
-    
-    &:hover:not(:disabled) {
-      background: rgba(0, 0, 0, 0.05);
-    }
-    
-    &.active {
-      background: rgba(0, 0, 0, 0.05);
     }
     
     &:disabled {
@@ -898,7 +892,7 @@
 
 // Give More Options button
 .more-options-container {
-  margin: 5px 0 5px 0; 
+  margin: 12px 0 0 0; 
   padding: 0;
   display: flex;
   justify-content: flex-start;
@@ -906,7 +900,7 @@
   
   .action-button.more-options-button {
     width: 100%;
-    max-width: 285px; // Match bot message width
+    max-width: 315px; // Match bot message width
     display: block;
     padding: 10px 16px;
     border: 0px solid white;
@@ -920,6 +914,8 @@
     // box-shadow: none;
     text-align: center;
     box-shadow: 1px 1px 2px 0px #0000001A;
+    margin-bottom: 0px;
+    margin-right: 0px;
       &:hover {
       background: #f0f0f0;
       transform: translateY(-1px);
@@ -937,7 +933,7 @@
   .chat-area,
   .chat-input-area {
     width: 100%;
-    max-width: 375px;
+    max-width: 374px;
   }
   
   .error-message {
