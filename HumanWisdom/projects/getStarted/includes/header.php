@@ -28,7 +28,7 @@
           <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
           </li> -->
           <li><a href="../blogs/blog_index.php" id="blogs" class="nav">Blog</a></li>
-          <li class="dropdown"><a id="organisation" class="nav"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a id="organisation" class="nav"><span>For organisations</span> <span class="dropdown-indicator bi-chevron-down"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l5 5 5-5"/></svg></span></a>
             <ul>
               <li><a  id="work" class="nav">HappierMe for Work</a></li>
               <li><a id="education" class="nav">HappierMe for Education</a></li>

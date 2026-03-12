@@ -459,6 +459,25 @@ label>input[type="checkbox"]+*::before {
   color: #CB6171;
 }
 
+/* For organisations dropdown: thin chevron to match Figma (inline SVG) */
+.navbar .dropdown .dropdown-indicator.bi-chevron-down::before,
+.navbar .dropdown .dropdown-indicator.bi-chevron-up::before {
+  content: none !important;
+}
+.navbar .dropdown .dropdown-indicator {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  line-height: 0;
+}
+.navbar .dropdown .dropdown-indicator svg {
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+.navbar .dropdown .dropdown-indicator.bi-chevron-up svg {
+  transform: rotate(180deg);
+}
+
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
@@ -503,7 +522,7 @@ label>input[type="checkbox"]+*::before {
 
   .navbar a i,
   .navbar a:focus i {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 0;
     margin-left: 5px;
   }
@@ -2301,7 +2320,13 @@ a {
 
 .cml40px {
   margin-left: 40px;
-  margin-top: 60px;
+  margin-top: 43px;
+}
+.mb_16px{
+  margin-bottom:16px;
+}
+.gap_16px{
+  margin-top: 16px;
 }
 
 .cmh40px {

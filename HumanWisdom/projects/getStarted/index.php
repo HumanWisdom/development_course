@@ -219,7 +219,7 @@ require_once('./includes/security_config.php');
           data-aos-delay="200">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 p-18px">
-              <h1 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
+              <h1 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc mb_16px">
                 <span class="rating_a">
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
@@ -256,7 +256,7 @@ require_once('./includes/security_config.php');
           </div>
 
 
-           <div class="row">
+           <div class="row gap_16px">
 
             <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 p0">
 
