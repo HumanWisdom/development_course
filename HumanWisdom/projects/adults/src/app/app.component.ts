@@ -103,7 +103,7 @@ export class AppComponent implements OnDestroy {
     let urls = this.router.url.split('authtoken=');
     if(!urls && urls[1] == undefined){
       if (localStorage.getItem("isloggedin") !== 'T') {
-        this.services.emaillogin();
+        this.services.emaillogin().subscribe();
         this.onboardingService.getCountry();
         setTimeout(() => {
           this.getUserInformationById(SharedService.getUserId());
@@ -135,11 +135,11 @@ export class AppComponent implements OnDestroy {
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
-      this.services.ensureModuleContextForUrl(event.url);
+      this.services.ensureModuleContextForUrl(event.url).subscribe();
     });
     this.initializeApp();
     this.getFreeScreens();
-    this.services.ensureModuleContextForUrl(window.location.pathname);
+    this.services.ensureModuleContextForUrl(window.location.pathname).subscribe();
   }
 
   prepareRoute(outlet: RouterOutlet) {
