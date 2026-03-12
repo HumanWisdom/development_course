@@ -1270,10 +1270,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
                   }
                 } else {
                   localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                  if (this.loginResponse?.NoOfVisits === 1) {
-                    localStorage.setItem(
-                      "signupfirst", 'F'
-                    );
+                  if (this.loginResponse?.NoOfVisits == 1 || localStorage.getItem("signupfirst") == 'T') {
                     if (SharedService.ProgramId === 9) {
                       this.router.navigate(["/adults/change-topic"], {
                         state: {
@@ -1702,7 +1699,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   //                 }
   //                 else {
   //                   localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-  //                   if (this.loginResponse?.NoOfVisits === 1) {
+  //                   if (this.loginResponse?.NoOfVisits == 1) {
   //                     localStorage.setItem(
   //                       "signupfirst", 'F'
   //                     );
