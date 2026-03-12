@@ -46,7 +46,6 @@ const routes: Routes = [
   },
   {
     path: 's95002',
-    
     component:S95002Page
   },
   {
