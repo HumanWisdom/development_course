@@ -34836,13 +34836,13 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .profile_pe_div {
   text-align: center;
   padding: 20px;
-   background: url(https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_profile_box.svg);  
+   background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/aduts_profilenew.svg);  
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: unset;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 16px;
-  background-color: #FFE8BB;
+  /* background-color: #FFE8BB; */
   height: auto;
 }
 
