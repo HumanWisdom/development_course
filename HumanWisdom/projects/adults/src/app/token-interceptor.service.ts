@@ -20,10 +20,12 @@ export class TokenInterceptorService implements HttpInterceptor {
     catch(e){ 
       this.token = localStorage.getItem("token");
     }
+    let headers = {};
+    if (this.token && this.token !== 'null') {
+      headers['Authorization'] = `Bearer ` + this.token;
+    }
     let tokenizedReq = req.clone({
-      setHeaders: {
-        Authorization: `Bearer ` + this.token
-      }
+      setHeaders: headers
     })
     return next.handle(tokenizedReq).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {

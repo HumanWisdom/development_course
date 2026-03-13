@@ -1,8 +1,9 @@
 import { AdultsService } from "../../adults/src/app/adults/adults.service";
 export function initDependency(adultsService: AdultsService): () => Promise<void> {
   return () => {
-    // Only call API if not logged in
-    if (!(localStorage.getItem("isloggedin")) || localStorage.getItem("isloggedin") !== 'T') {
+    const isLoggedIn = localStorage.getItem("isloggedin");
+    if (isLoggedIn === 'F') {
+      // Explicitly set to free/guest mode — do guest login
       return adultsService.initialLoginWithGuestUser()
         .toPromise()
         .then(() => {
@@ -13,7 +14,8 @@ export function initDependency(adultsService: AdultsService): () => Promise<void
           throw err;
         });
     }
-    // Already logged in, resolve immediately
+    // isLoggedIn === 'T' => real user, or null => fresh/incognito session.
+    // In both cases skip guest auto-login — show logged-out state in incognito.
     return Promise.resolve();
   };
 }
