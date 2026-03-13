@@ -86,10 +86,10 @@ export class WisdomScorePage implements OnInit {
     const visits = Number(this.loginResponse?.NoOfVisits || '0');
     const token = SharedService.getDataFromLocalStorage('token');
     this.isGuest = localStorage.getItem('guest') === 'T';
-    const isFromSignup = localStorage.getItem('isFromSignupFlow') === 'T' || localStorage.getItem('signupfirst') === 'T';
+    const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
     const { routedFromLogin } = window.history.state;
-    this.justSignedUp = !!token && !this.isGuest && (visits < 2 || isFromSignup || SharedService.isRoutedFromLogin || routedFromLogin);
-    if (!this.isAdults && !this.isGuest && !!token && isFromSignup) {
+    this.justSignedUp = !!token && !this.isGuest && (visits < 2 || isFromSignupFlow || SharedService.isRoutedFromLogin || routedFromLogin);
+    if(!this.isAdults && !this.isGuest && !!token && isFromSignupFlow) {
       this.justSignedUp = true;
     }
   }
@@ -134,8 +134,7 @@ export class WisdomScorePage implements OnInit {
   }
 
   routeToDashboard() {
-    localStorage.setItem('isFromSignupFlow', 'F');
-    localStorage.setItem('signupfirst', 'F');
+        localStorage.setItem('isFromSignupFlow', 'F');
     SharedService.isRoutedFromLogin = false;
     this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
