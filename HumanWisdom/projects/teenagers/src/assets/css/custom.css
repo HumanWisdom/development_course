@@ -34563,13 +34563,13 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .progress_profile {
   height: 6px;
-  background: #183C79;
+  background: #00000040;
   border-radius: 10px;
   margin: 0;
 }
 
 .progress_profile .progress-bar {
-  background: #CB6171;
+  background: #EE9596;
   border-radius: 10px;
 }
 
