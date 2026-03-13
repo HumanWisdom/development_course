@@ -21,23 +21,18 @@ export class autoLoginGuard implements CanActivate, OnInit {
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
+    debugger;
     let m: any = window.location.href;
-    const isLoggedIn = localStorage.getItem('isloggedin');
-    if (isLoggedIn === 'T') {
-      // Already logged in as a real user — redirect to dashboard
-      this.router.navigate([SharedService.getDashboardUrls()]);
-      return false;
-    } else if (isLoggedIn === 'F') {
-      // Explicitly in free/guest mode — do guest login
+    if (localStorage.getItem('isloggedin') == 'F' || localStorage.getItem('isloggedin') == null || localStorage.getItem('isloggedin') == undefined) {
       this.onboarding.guestEmailLogin('');
       setTimeout(() => {
         this.commonService.freescreens();
       }, 1000);
       return true;
     } else {
-      // null/undefined = fresh incognito or new session — show logged-out state, do NOT auto-login as guest
-      this.commonService.freescreens();
-      return true;
+      debugger;
+      this.router.navigate([SharedService.getDashboardUrls()])
+      return false;
     }
   }
 }
