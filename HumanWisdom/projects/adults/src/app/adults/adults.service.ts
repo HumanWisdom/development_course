@@ -475,14 +475,23 @@ export class AdultsService {
   ensureModuleContextForUrl(url: string): Observable<boolean> {
     const segments = url.split('/').filter(s => s && s.length > 0);
     
-    // Ensure we are logged in (at least as guest) before proceeding
-    if (localStorage.getItem("isloggedin") !== 'T') {
+    const isLoggedIn = localStorage.getItem("isloggedin");
+    if (isLoggedIn === 'T') {
+      // Fully logged in — proceed with module context
+      return this.continueEnsureModuleContext(url, segments);
+    } else if (isLoggedIn === 'F') {
+      // Explicit free/guest mode — do guest login ONLY if we don't have a userId/token yet
+      const userId = localStorage.getItem('userId');
+      if (userId && userId !== '0' && userId !== 'null') {
+        return this.continueEnsureModuleContext(url, segments);
+      }
       return this.emaillogin().pipe(
         switchMap(() => this.continueEnsureModuleContext(url, segments))
       );
+    } else {
+      // null = fresh/incognito session — do NOT auto-login; but STILL ensure module context if we have one
+      return this.continueEnsureModuleContext(url, segments);
     }
-
-    return this.continueEnsureModuleContext(url, segments);
   }
 
   private continueEnsureModuleContext(url: string, segments: string[]): Observable<boolean> {
