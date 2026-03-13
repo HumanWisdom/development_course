@@ -54,7 +54,7 @@ export class MicroLearningListingPage implements OnInit {
 
   getMicroLearningList() {
     this.isLoading = true;
-    this.commonService.GetMicrolearningList(9).subscribe((res: any) => {
+    this.commonService.GetMicrolearningList(SharedService.ProgramId).subscribe((res: any) => {
       if (res) {
         this.microLearningList = res.map(item => ({
           id: item.microlearningID,

@@ -102,18 +102,16 @@ export class AppComponent implements OnDestroy {
   
     let urls = this.router.url.split('authtoken=');
     if(!urls && urls[1] == undefined){
-      const isLoggedIn = localStorage.getItem("isloggedin");
-      if (isLoggedIn === 'T') {
-        this.getUserInformationById(SharedService.getUserId());
-      } else if (isLoggedIn === 'F') {
-        // Explicit free/guest mode — do guest login
-        this.services.emaillogin().subscribe();
+      if (localStorage.getItem("isloggedin") !== 'T') {
+        this.services.emaillogin();
         this.onboardingService.getCountry();
         setTimeout(() => {
           this.getUserInformationById(SharedService.getUserId());
         }, 1000);
       }
-      // null = fresh/incognito session — do NOT auto-login as guest
+      else{
+        this.getUserInformationById(SharedService.getUserId());
+      }
     }
     localStorage.setItem('curatedurl', 'F');
     SharedService.ProgramId = 9;
@@ -137,11 +135,11 @@ export class AppComponent implements OnDestroy {
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
-      this.services.ensureModuleContextForUrl(event.url).subscribe();
+      this.services.ensureModuleContextForUrl(event.url);
     });
     this.initializeApp();
     this.getFreeScreens();
-    this.services.ensureModuleContextForUrl(window.location.pathname).subscribe();
+    this.services.ensureModuleContextForUrl(window.location.pathname);
   }
 
   prepareRoute(outlet: RouterOutlet) {
