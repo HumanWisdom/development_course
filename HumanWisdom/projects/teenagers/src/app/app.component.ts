@@ -53,14 +53,9 @@ export class AppComponent implements OnDestroy {
     }
     let urls = this.router.url.split('authtoken=');
     if (!urls && urls[1] == undefined) {
-      const isLoggedIn = localStorage.getItem("isloggedin");
-      if (isLoggedIn === 'T') {
-        this.getUserInformationById(SharedService.getUserId())
-      } else if (isLoggedIn === 'F') {
-        // Explicit free/guest mode — do guest login
-        this.services.emaillogin().subscribe();
+      if (localStorage.getItem("isloggedin") !== 'T') {
+        this.services.emaillogin();
       }
-      // null = fresh/incognito session — do NOT auto-login as guest
     }
 
     this.navigationSubs = this.router.events.pipe(
