@@ -34860,7 +34860,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .progress_profile {
   height: 6px;
-  background: #D7586B40;
+  background: #FFF;
   border-radius: 10px;
   margin: 0;
 }
@@ -34920,7 +34920,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  /* color: #fff !important; */
+  color: #fff !important;
   text-transform: capitalize;
   margin-right: 10px;
   cursor: unset !important;
@@ -34933,14 +34933,12 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .btn_profile_days.peach {
   /* background: #ED7D6F !important; */
   background: #D7586B !important;
-  color:#fff !important;
 
 }
 
 .btn_profile_days.gray {
   /* background: rgba(0, 0, 0, 0.25); */
-  background: #FFE8BB !important;
-  color: #000000;
+  background: #FFD889 !important;
 }
 
 .div_middle.left {
