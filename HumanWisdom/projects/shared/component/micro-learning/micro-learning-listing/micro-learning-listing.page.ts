@@ -31,6 +31,12 @@ export class MicroLearningListingPage implements OnInit {
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     this.prefData = SharedService.getPreferenceData();
+    this.prefData.splice(1, 0, {
+      id: "UYM",
+      displayName: "Understand your mind",
+      active: false,
+      name: 'Understand your mind'
+    });
   }
 
   ngOnInit() {
@@ -48,7 +54,7 @@ export class MicroLearningListingPage implements OnInit {
 
   getMicroLearningList() {
     this.isLoading = true;
-    this.commonService.GetMicrolearningList(9).subscribe((res: any) => {
+    this.commonService.GetMicrolearningList(SharedService.ProgramId).subscribe((res: any) => {
       if (res) {
         this.microLearningList = res.map(item => ({
           id: item.microlearningID,
@@ -57,6 +63,7 @@ export class MicroLearningListingPage implements OnInit {
           isRead: item.isRead,
           isFree: item.isFree,
           preferenceIDs: item.PreferenceIDs,
+          isUYM: item.Is_UYM,
           timing: '2' // Default or calculated if available
         }));
         this.filteredList = this.microLearningList;
@@ -68,6 +75,10 @@ export class MicroLearningListingPage implements OnInit {
         });
 
         this.microLearningList.forEach((item) => {
+          if (item.isUYM === '1') {
+            const uymPref = this.prefData.find(p => p.id === 'UYM');
+            if (uymPref) uymPref.active = true;
+          }
           if (item.preferenceIDs && item.preferenceIDs.toString().trim() !== "") {
             const ids = item.preferenceIDs.toString().split(/,\s*/);
             this.prefData.forEach((pref) => {
@@ -119,6 +130,9 @@ export class MicroLearningListingPage implements OnInit {
       this.filteredList = this.microLearningList;
     } else {
       this.filteredList = this.microLearningList.filter((item) => {
+        if (type === 'UYM') {
+          return item.isUYM === '1';
+        }
         if (item.preferenceIDs && item.preferenceIDs.toString().trim() !== "") {
           const ids = item.preferenceIDs.toString().split(/,\s*/);
           return ids.includes(type);
