@@ -78,9 +78,7 @@ export class AppComponent implements OnDestroy {
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
-      this.services.ensureModuleContextForUrl(event.url).subscribe();
     });
-    this.services.ensureModuleContextForUrl(window.location.pathname).subscribe();
     //  this.setDynamicCSS();
   }
 

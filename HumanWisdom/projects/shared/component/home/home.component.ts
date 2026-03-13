@@ -1661,10 +1661,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle focus event - show all modules or filtered results
    */
   onFocus(): void {
-    const eventName = 'click_search';
-    console.log(`%c [ANALYTICS EVENT] Triggering Search Click: ${eventName}`, 'color: #bada55; font-size: 14px');
-    this.logeventservice.logEvent(eventName);
-    
+    this.logeventservice.logEvent('click_search');
     if (this.moduleList.length === 0) {
       this.getModuleList();
     }
@@ -1690,14 +1687,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Navigate to search page when Enter is pressed or search result is clicked
    */
-  getinp(searchTerm: string, fromDropdown: boolean = false): void {
+  getinp(searchTerm: string): void {
     if (searchTerm && searchTerm.trim() !== '') {
-      if (!fromDropdown) {
-        const eventName = `search_${searchTerm.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
-        console.log(`%c [ANALYTICS EVENT] Triggering Search Submit: ${eventName}`, 'color: #bada55; font-size: 14px');
-        this.logeventservice.logEvent(eventName);
-      }
-
       const prefix = SharedService.getprogramName();
       const url = `/${prefix}/site-search/${searchTerm}`;
       this.router.navigate([url]);
@@ -1708,24 +1699,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle search result click - navigate to search page
    */
   searchEvent(moduleName: string): void {
-    const eventName = `search_dropdown_${moduleName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
-    console.log(`%c [ANALYTICS EVENT] Triggering Search Dropdown: ${eventName}`, 'color: #bada55; font-size: 14px');
-    this.logeventservice.logEvent(eventName);
-
     this.searchinp = moduleName;
     this.searchResult = [];
     this.toggleBodyScroll(false);
-    this.getinp(moduleName, true);
+    this.getinp(moduleName);
   }
 
   /**
    * Clear search and hide dropdown
    */
   clearSearch(): void {
-    const eventName = 'click_search_clear';
-    console.log(`%c [ANALYTICS EVENT] Triggering Search Clear: ${eventName}`, 'color: #bada55; font-size: 14px');
-    this.logeventservice.logEvent(eventName);
-
     this.searchinp = '';
     this.searchResult = [];
     this.toggleBodyScroll(false);
