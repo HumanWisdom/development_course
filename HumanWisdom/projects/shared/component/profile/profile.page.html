@@ -378,31 +378,31 @@
 
                   <div class="row mtb15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_days ws_nowrap center_flex">
-                      <button type="button" class=" btn_profile_days  " [ngClass]="sun ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days  " [ngClass]="sun>0 ? 'peach' : ''" [disabled]="sun===2" >
                         S
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="mon ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="mon>0 ? 'peach' : ''" [disabled]="mon===2">
                         M
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="tue ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="tue>0 ? 'peach' : ''" [disabled]="tue===2">
                         T
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="wed ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="wed>0 ? 'peach' : ''" [disabled]="wed===2">
                         W
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="thu ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="thu>0 ? 'peach' : ''" [disabled]="thu===2">
                         T
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="fri ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="fri>0 ? 'peach' : ''" [disabled]="fri===2">
                         F
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="sat ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="sat>0 ? 'peach' : ''" [disabled]="sat===2">
                         S
                       </button>
                     </div>

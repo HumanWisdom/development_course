@@ -34936,11 +34936,17 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
     color: #000000;
 
 }
+.btn_profile_days.peach:disabled {
+  /* background: #ED7D6F !important; */
+  background: #D7586B40 !important;
+    color: #000000;
 
-.btn_profile_days.gray {
-  /* background: rgba(0, 0, 0, 0.25); */
-  background: #FFD889 !important;
 }
+
+/* .btn_profile_days.gray {
+ 
+  background: #FFD889 !important;
+} */
 
 .div_middle.left {
   border-left: 1px solid rgba(255, 255, 255, .1);
