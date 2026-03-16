@@ -38,6 +38,8 @@ export class S30001Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   pgResume: any;
+                isContentsOpen = false;
+
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/30.webp"
   tocColor="white"
   lastvisited = false;
@@ -157,6 +159,9 @@ export class S30001Page implements OnInit,OnDestroy {
     this.socialShare=true
   }
 
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark()
   {
     if(this.bookmark==0)

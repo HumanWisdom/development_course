@@ -7,6 +7,7 @@
     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owlwingsdown.png" 
     alt="Olly the Owl" 
     class="static-owl-image"
+    (load)="onStaticOwlImageLoaded()"
   />
   <div class="owl-cloud-container" *ngIf="showCloudMessage" [ngClass]="{'speaking': isSpeaking, 'disappearing': isDisappearing, 'fade-in': cloudFadeIn}">
     <img 

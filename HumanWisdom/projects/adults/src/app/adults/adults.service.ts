@@ -454,6 +454,64 @@ export class AdultsService {
   encryptUserId(id) {
     return this.http.get(this.path + `/encryptURL?URL=${id}`)
   }
+
+
+  private urlModuleMap: { [urlSegment: string]: number } = {};
+
+  ensureModuleContextForUrl(url: string): void {
+    const segments = url.split('/').filter(s => s && s.length > 0);
+    if (Object.keys(this.urlModuleMap).length > 0) {
+       this.checkAndActivateModule(url, segments, this.urlModuleMap);
+       return;
+    }
+    const cachedMapStr = sessionStorage.getItem('urlModuleMap');
+    if (cachedMapStr) {
+      try {
+        this.urlModuleMap = JSON.parse(cachedMapStr) || {};
+      } catch (e) { }
+    }
+    
+    if (Object.keys(this.urlModuleMap).length > 0) {
+      this.checkAndActivateModule(url, segments, this.urlModuleMap);
+      return;
+    }
+
+    this.getModuleList().subscribe(res => {
+        if (res && res.length) {
+          res.forEach(m => {
+              const segs = m.ModuleUrl ? m.ModuleUrl.split('/').filter(s => s && s.length > 0) : [];
+              if (segs.length > 0) {
+                const key = segs[segs.length - 1]; 
+                this.urlModuleMap[key] = m.ModuleID;
+              }
+          });
+          sessionStorage.setItem('urlModuleMap', JSON.stringify(this.urlModuleMap));
+          this.checkAndActivateModule(url, segments, this.urlModuleMap);
+        }
+    });
+  }
+
+  private checkAndActivateModule(url: string, segments: string[], map: any): void {
+    let expectedModuleId: number | null = null;
+    for (const segment of segments) {
+      if (map[segment] !== undefined) {
+        expectedModuleId = map[segment];
+        break;
+      }
+    }
+
+    if (expectedModuleId === null) {
+      return;
+    }
+
+    const storedModuleId = parseInt(localStorage.getItem('moduleId') || '0', 10);
+    if (!isNaN(storedModuleId) && storedModuleId === expectedModuleId) {
+      return;
+    }
+
+    console.log(`[ModuleContext] URL "${url}" expects moduleId=${expectedModuleId}, found="${storedModuleId}". Activating module context.`);
+    this.activateModule(expectedModuleId);
+  }
  
  
 

@@ -1812,9 +1812,7 @@
 }
 
 @media (min-width: 1200px) {
-  .owl-carousel.owl-drag .owl-item:last-child a.item {
-    margin-right: 450px;
-  }
+
 
   .w5p {
     width: 5%;
