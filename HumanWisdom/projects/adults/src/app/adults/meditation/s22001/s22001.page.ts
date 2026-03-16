@@ -28,6 +28,8 @@ export class S22001Page implements OnInit,OnDestroy {
   shareUrl=this.path+"?t="+this.token
   freeScreens=JSON.parse(localStorage.getItem("freeScreens"))
   socialShare=false
+                  isContentsOpen = false;
+
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   pgResume: any;
@@ -150,6 +152,10 @@ export class S22001Page implements OnInit,OnDestroy {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
   }
+
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
