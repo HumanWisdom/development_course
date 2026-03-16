@@ -34910,10 +34910,10 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 
 .btn_profile_days {
-  margin: 0;
+  margin: 1px;
   border: 0;
   box-shadow: 0;
-  width: 40px;
+  width: 42px;
   height: 40px;
   border-radius: 8px;
   background: #FFE8BB !important;
