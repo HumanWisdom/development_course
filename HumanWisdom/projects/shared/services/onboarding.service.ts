@@ -46,10 +46,11 @@ export class OnboardingService {
             localStorage.setItem("isPartner", res[0].IsPartner);
             localStorage.setItem('PartnerOption', res[0].PartnerOption);
             localStorage.setItem("SubscriberType", res[0].SubscriberType)
-            if (localStorage.getItem("SubscriberType") == "Monthly" ||
-              localStorage.getItem("SubscriberType") == "Annual") {
-              localStorage.setItem("Subscriber", "1")
+            let subscriber = res[0].Subscriber;
+            if (res[0].SubscriberType === 'Monthly' || res[0].SubscriberType === 'Annual') {
+              subscriber = 1;
             }
+            localStorage.setItem("Subscriber", subscriber);
             this.getUserDetails.next(res);
           });
         }
@@ -225,7 +226,12 @@ export class OnboardingService {
       this.getuser(userId).subscribe((res: any) => {
         localStorage.setItem("isPartner", res[0]?.IsPartner);
         localStorage.setItem('PartnerOption', res[0]?.PartnerOption);
-        localStorage.setItem("SubscriberType", res[0]?.SubscriberType)
+        localStorage.setItem("SubscriberType", res[0]?.SubscriberType);
+        let subscriber = res[0]?.Subscriber;
+        if (res[0]?.SubscriberType === 'Monthly' || res[0]?.SubscriberType === 'Annual') {
+          subscriber = 1;
+        }
+        localStorage.setItem("Subscriber", subscriber);
       });
     }
   }
