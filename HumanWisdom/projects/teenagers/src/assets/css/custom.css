@@ -34615,7 +34615,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   border: 0;
   box-shadow: 0;
   width: 42px;
-  height: 40px;
+  height: 42px;
   border-radius: 8px;
   background: #0C2B5F;
   font-size: 15px;
@@ -34634,6 +34634,12 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background: #EE9596;
 }
 
+.btn_profile_days.peach:disabled {
+  /* background: #ED7D6F !important; */
+  background: #FFFFFF40 !important;
+    color: #fff !important;
+
+}
 .btn_profile_days.gray {
   background: rgba(255, 255, 255, 0.25);
 }
