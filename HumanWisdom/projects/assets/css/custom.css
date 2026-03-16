@@ -34860,7 +34860,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .progress_profile {
   height: 6px;
-  background: #FFF;
+  background: D7586B40;
   border-radius: 10px;
   margin: 0;
 }
@@ -34933,6 +34933,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .btn_profile_days.peach {
   /* background: #ED7D6F !important; */
   background: #D7586B !important;
+    color: #000000;
 
 }
 
