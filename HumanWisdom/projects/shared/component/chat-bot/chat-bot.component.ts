@@ -406,13 +406,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       this.chatbotService.trackLinkClick(clickedUrl).subscribe({
         next: (response) => {
           console.log('Link click tracked successfully:', response);
-          // Navigate to the URL in the same tab after successful tracking
-          window.location.href = clickedUrl;
+          // Navigate to the URL using Angular Router
+          this.navigateToUrl(clickedUrl);
         },
         error: (error) => {
           console.error('Error tracking link click:', error);
           // Even if tracking fails, navigate to the URL so user isn't blocked
-          window.location.href = clickedUrl;
+          this.navigateToUrl(clickedUrl);
         }
       });
     }
@@ -778,13 +778,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             this.chatbotService.trackLinkClick(clickedUrl).subscribe({
               next: (response) => {
                 console.log('Link click tracked successfully:', response);
-                // Navigate to the URL in the same tab after successful tracking
-                window.location.href = clickedUrl;
+                // Navigate to the URL using Angular Router
+                this.navigateToUrl(clickedUrl);
               },
               error: (error) => {
                 console.error('Error tracking link click:', error);
                 // Even if tracking fails, navigate to the URL so user isn't blocked
-                window.location.href = clickedUrl;
+                this.navigateToUrl(clickedUrl);
               }
             });
           }
@@ -934,6 +934,57 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       this.cachedHistoryMessages = null;
       this.cachedHistoryUserId = null;
       this.hasHistoryAvailable = false;
+    }
+  }
+
+  /**
+   * Navigate to a URL - extracts path from full URL and uses Angular Router
+   * Since URLs are always full URLs like https://happierme.app/adults/blog-article?sId=54,
+   * we extract whatever comes after the origin (/adults/blog-article?sId=54) and use navigateByUrl
+   */
+  private navigateToUrl(url: string): void {
+    try {
+      // Parse the URL to extract the path
+      const urlObj = new URL(url);
+      // Extract whatever comes after the origin (pathname + search + hash)
+      const path = urlObj.pathname + urlObj.search + urlObj.hash;
+      console.log('Navigating via Angular Router:', path);
+      
+      // Use Angular Router - this will automatically trigger NavigationEnd event
+      // which will add the URL to history via the app component's router event subscription
+      this.router.navigateByUrl(path).catch((error) => {
+        console.error('Router navigation failed, falling back to window.location.href:', error);
+        // Fallback to window.location.href if router navigation fails
+        window.location.href = url;
+      });
+    } catch (error) {
+      // If URL parsing fails, try to extract path manually
+      console.log('URL parsing failed, attempting to extract path manually:', url);
+      
+      // Check if it's a full URL
+      if (url.startsWith('http://') || url.startsWith('https://')) {
+        // Try to extract path by finding the first '/' after the domain
+        const match = url.match(/https?:\/\/[^\/]+(\/.*)/);
+        if (match && match[1]) {
+          const path = match[1];
+          console.log('Extracted path from URL:', path);
+          this.router.navigateByUrl(path).catch((routerError) => {
+            console.error('Router navigation failed, using window.location.href:', routerError);
+            window.location.href = url;
+          });
+        } else {
+          // Couldn't extract path, use window.location.href as fallback
+          console.error('Failed to extract path from URL, using window.location.href');
+          window.location.href = url;
+        }
+      } else {
+        // Already a path, use it directly
+        const path = url.startsWith('/') ? url : '/' + url;
+        this.router.navigateByUrl(path).catch((routerError) => {
+          console.error('Router navigation failed, using window.location.href:', routerError);
+          window.location.href = url;
+        });
+      }
     }
   }
 }
