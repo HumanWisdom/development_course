@@ -101,7 +101,7 @@ export class AppComponent implements OnDestroy {
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
   
     let urls = this.router.url.split('authtoken=');
-    if (urls[1] == undefined) {
+    if(!urls && urls[1] == undefined){
       if (localStorage.getItem("isloggedin") !== 'T') {
         this.services.emaillogin();
         this.onboardingService.getCountry();
@@ -109,7 +109,7 @@ export class AppComponent implements OnDestroy {
           this.getUserInformationById(SharedService.getUserId());
         }, 1000);
       }
-      else {
+      else{
         this.getUserInformationById(SharedService.getUserId());
       }
     }
@@ -364,14 +364,10 @@ export class AppComponent implements OnDestroy {
   async getUserInformationById(loggedInUserId){
    this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
     if(res){
-      this.userdetail = res[0];
-      let subscriber = res[0].Subscriber;
-      if (res[0].SubscriberType === 'Monthly' || res[0].SubscriberType === 'Annual') {
-        subscriber = 1;
-      }
+      this.userdetail=res[0];
+      let subscriber = res[0].IsSubscribed;
       console.log('subscriber', subscriber);
       localStorage.setItem('Subscriber', subscriber);
-      localStorage.setItem('SubscriberType', res[0].SubscriberType);
       this.onboardingService.userDetails = this.userdetail;
       this.getFreeScreens();
       if(res[0]?.SurveyDone=='0'){

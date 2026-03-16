@@ -52,7 +52,7 @@ export class AppComponent implements OnDestroy {
       this.getUserInformationById(SharedService.getUserId())
     }
     let urls = this.router.url.split('authtoken=');
-    if (urls[1] == undefined) {
+    if (!urls && urls[1] == undefined) {
       if (localStorage.getItem("isloggedin") !== 'T') {
         this.services.emaillogin();
       }
@@ -92,13 +92,9 @@ export class AppComponent implements OnDestroy {
   getUserInformationById(loggedInUserId) {
     this.onboardingService.getuser(loggedInUserId).subscribe(res => {
       if (res) {
-        let subscriber = res[0].Subscriber;
-        if (res[0].SubscriberType === 'Monthly' || res[0].SubscriberType === 'Annual') {
-          subscriber = 1;
-        }
+        let subscriber = res[0].IsSubscribed;
         console.log('subscriber', subscriber);
         localStorage.setItem('Subscriber', subscriber);
-        localStorage.setItem('SubscriberType', res[0].SubscriberType);
         if (res[0]?.SurveyDone == '0') {
           setTimeout(() => {
             this.commonService.updateSurveyData(1);
