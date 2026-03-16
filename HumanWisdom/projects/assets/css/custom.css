@@ -34860,7 +34860,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .progress_profile {
   height: 6px;
-  background: D7586B40;
+  background: #D7586B40;
   border-radius: 10px;
   margin: 0;
 }
