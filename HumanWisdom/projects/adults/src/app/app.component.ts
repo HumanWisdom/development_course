@@ -101,16 +101,15 @@ export class AppComponent implements OnDestroy {
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
   
     let urls = this.router.url.split('authtoken=');
-    if (urls[1] == undefined) {
-      if (localStorage.getItem("isloggedin") !== 'T') {
+    if (urls && urls[1] == undefined) {
+      if (localStorage.getItem("isloggedin") === 'T') {
+        this.getUserInformationById(SharedService.getUserId());
+      } else {
         this.services.emaillogin();
         this.onboardingService.getCountry();
         setTimeout(() => {
           this.getUserInformationById(SharedService.getUserId());
         }, 1000);
-      }
-      else {
-        this.getUserInformationById(SharedService.getUserId());
       }
     }
     localStorage.setItem('curatedurl', 'F');
@@ -361,28 +360,27 @@ export class AppComponent implements OnDestroy {
         }
   }
   
-  async getUserInformationById(loggedInUserId){
-   this.onboardingService.getuser(loggedInUserId).subscribe(res=>{
-    if(res){
-      this.userdetail = res[0];
-      let subscriber = res[0].Subscriber;
-      if (res[0].SubscriberType === 'Monthly' || res[0].SubscriberType === 'Annual') {
-        subscriber = 1;
-      }
-      console.log('subscriber', subscriber);
-      localStorage.setItem('Subscriber', subscriber);
-      localStorage.setItem('SubscriberType', res[0].SubscriberType);
-      this.onboardingService.userDetails = this.userdetail;
-      this.getFreeScreens();
-      if(res[0]?.SurveyDone=='0'){
-        setTimeout(() => {
-         this.commonService.updateSurveyData(1); 
-        }, 180000);
-      }
+  async getUserInformationById(loggedInUserId) {
+    let authtoken = localStorage.getItem("token");
+    if (authtoken) {
+      if (authtoken.startsWith('"')) authtoken = JSON.parse(authtoken);
+      this.services.verifytoken(authtoken).subscribe(res => {
+        if (res) {
+          localStorage.setItem("Subscriber", res['Subscriber']);
+          localStorage.setItem("loginResponse", JSON.stringify(res));
+        }
+        this.onboardingService.getuser(loggedInUserId).subscribe(res => {
+          if (res) {
+            this.userdetail = res[0];
+            let subscriber = res[0].IsSubscribed;
+            localStorage.setItem('Subscriber', subscriber);
+            this.onboardingService.userDetails = this.userdetail;
+            this.getFreeScreens();
+          }
+        });
+      });
     }
-  });
- 
-}
+  }
 
   getclcickevent(event) {
     if (event === 'enablepopup') {
