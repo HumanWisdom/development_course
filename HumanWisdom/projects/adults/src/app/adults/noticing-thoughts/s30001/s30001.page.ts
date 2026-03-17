@@ -38,7 +38,7 @@ export class S30001Page implements OnInit,OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
   pgResume: any;
-                isContentsOpen = false;
+  isContentsOpen = false;
 
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/30.webp"
   tocColor="white"

@@ -21,6 +21,8 @@ export class S26001Page implements OnInit,OnDestroy {
   screenNumber="26001"
   startTime:any
   endTime:any
+  isContentsOpen = false;
+
   totalTime:any
   bookmark:any
   bookmarkList=[]  
@@ -110,6 +112,9 @@ export class S26001Page implements OnInit,OnDestroy {
 
     
   }
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
