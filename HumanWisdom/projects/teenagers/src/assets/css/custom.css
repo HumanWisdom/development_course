@@ -34563,13 +34563,13 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .progress_profile {
   height: 6px;
-  background: #183C79;
+  background: #00000040;
   border-radius: 10px;
   margin: 0;
 }
 
 .progress_profile .progress-bar {
-  background: #CB6171;
+  /* background: #CB6171; */
   border-radius: 10px;
 }
 
@@ -34611,11 +34611,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 
 .btn_profile_days {
-  margin: 0;
+  margin: 1px;
   border: 0;
   box-shadow: 0;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 8px;
   background: #0C2B5F;
   font-size: 15px;
@@ -34634,6 +34634,12 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background: #EE9596;
 }
 
+.btn_profile_days.peach:disabled {
+  /* background: #ED7D6F !important; */
+  background: #FFFFFF40 !important;
+    color: #fff !important;
+
+}
 .btn_profile_days.gray {
   background: rgba(255, 255, 255, 0.25);
 }
