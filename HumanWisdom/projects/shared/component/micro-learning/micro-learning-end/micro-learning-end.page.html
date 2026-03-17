@@ -40,8 +40,7 @@
           <div class="mc_progress_bar" [style.width.%]="100"></div>
         </div>
 
-        <div [class.learning]="!isSubComponent" (touchstart)="!isSubComponent && handleTouchStart($event)"
-          (touchmove)="!isSubComponent && handleTouchMove($event)"
+        <div #learningDiv [class.learning]="!isSubComponent" (touchstart)="!isSubComponent && handleTouchStart($event)"
           (touchend)="!isSubComponent && handleTouchEnd($event)"
           (mousedown)="!isSubComponent && handleTouchStart($event)"
           (mousemove)="!isSubComponent && handleTouchMove($event)" (mouseup)="!isSubComponent && handleTouchEnd($event)"
@@ -53,7 +52,11 @@
 
           <div [class.mc_content_wrapper]="!isSubComponent" [style.transform]="!isSubComponent ? getTransform() : ''"
             [class.is-dragging]="!isSubComponent && isDragging">
-            <div [class.mc_scroll_content]="!isSubComponent">
+            <div [class.mc_scroll_content]="!isSubComponent"
+              (touchstart)="$event.stopPropagation()"
+              (touchmove)="$event.stopPropagation()"
+              (touchend)="$event.stopPropagation()"
+              (mousedown)="$event.stopPropagation()">
               <!-- Yellow Background Card Container -->
               <div class="mc_end_container">
 
@@ -62,12 +65,14 @@
                   How can you apply it today?
                 </h2>
 
-                <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText"
+                <textarea id="journalText" name="journalText" class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText"
                   (touchstart)="$event.stopPropagation()" (touchmove)="$event.stopPropagation()"
                   (touchend)="$event.stopPropagation()" (mousedown)="$event.stopPropagation()">
                 </textarea>
 
                 <button [ngClass]="isAdults ? 'mc_end_btn_journal' : 'mdp_add_to_journal'" (click)="addJournal()"
+                  (touchstart)="$event.stopPropagation()" (touchmove)="$event.stopPropagation()"
+                  (touchend)="$event.stopPropagation()" (mousedown)="$event.stopPropagation()"
                   [disabled]="!journalText">
                   Add to journal
                 </button>
