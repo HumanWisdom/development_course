@@ -23,6 +23,8 @@ export class S36000Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+  isContentsOpen = false;
+
   bookmarkList=[]
   pgResume: any;
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/36.webp"
@@ -117,6 +119,10 @@ export class S36000Page implements OnInit,OnDestroy {
 
     
   }
+
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1
