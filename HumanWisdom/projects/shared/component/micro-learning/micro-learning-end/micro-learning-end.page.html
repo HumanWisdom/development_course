@@ -40,8 +40,7 @@
           <div class="mc_progress_bar" [style.width.%]="100"></div>
         </div>
 
-        <div [class.learning]="!isSubComponent" (touchstart)="!isSubComponent && handleTouchStart($event)"
-          (touchmove)="!isSubComponent && handleTouchMove($event)"
+        <div #learningDiv [class.learning]="!isSubComponent" (touchstart)="!isSubComponent && handleTouchStart($event)"
           (touchend)="!isSubComponent && handleTouchEnd($event)"
           (mousedown)="!isSubComponent && handleTouchStart($event)"
           (mousemove)="!isSubComponent && handleTouchMove($event)" (mouseup)="!isSubComponent && handleTouchEnd($event)"
@@ -53,7 +52,11 @@
 
           <div [class.mc_content_wrapper]="!isSubComponent" [style.transform]="!isSubComponent ? getTransform() : ''"
             [class.is-dragging]="!isSubComponent && isDragging">
-            <div [class.mc_scroll_content]="!isSubComponent">
+            <div [class.mc_scroll_content]="!isSubComponent"
+              (touchstart)="$event.stopPropagation()"
+              (touchmove)="$event.stopPropagation()"
+              (touchend)="$event.stopPropagation()"
+              (mousedown)="$event.stopPropagation()">
               <!-- Yellow Background Card Container -->
               <div class="mc_end_container">
 
