@@ -62,12 +62,14 @@
                   How can you apply it today?
                 </h2>
 
-                <textarea class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText"
+                <textarea id="journalText" name="journalText" class="mc_end_textarea" placeholder="Tap to answer" [(ngModel)]="journalText"
                   (touchstart)="$event.stopPropagation()" (touchmove)="$event.stopPropagation()"
                   (touchend)="$event.stopPropagation()" (mousedown)="$event.stopPropagation()">
                 </textarea>
 
                 <button [ngClass]="isAdults ? 'mc_end_btn_journal' : 'mdp_add_to_journal'" (click)="addJournal()"
+                  (touchstart)="$event.stopPropagation()" (touchmove)="$event.stopPropagation()"
+                  (touchend)="$event.stopPropagation()" (mousedown)="$event.stopPropagation()"
                   [disabled]="!journalText">
                   Add to journal
                 </button>
