@@ -31,7 +31,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                   <input type="search" placeholder="How can we help you today?"
                     class="form-control has-feedback-left pfy_search hide_search" name="search-list"
-                    [(ngModel)]="search" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
+                    [(ngModel)]="search" autocomplete="off" (input)="getAutoCompleteList($event.target.value)"
                     (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(search)"
                     style="border-radius: 100px !important;">
                   <span *ngIf="searchResult.length == 0" class="fa fa-search form-control-feedback left pfy_search_icon"

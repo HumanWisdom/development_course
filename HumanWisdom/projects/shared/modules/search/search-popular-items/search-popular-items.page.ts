@@ -68,6 +68,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   ngOnInit() {
+    this.toggleBodyScroll(false);
     this.isSubscriber = SharedService.isSubscriber();
 
     this.search =decodeURIComponent(this.route.snapshot.paramMap.get('word'))
@@ -195,13 +196,10 @@ export class SearchPopularItemsPage implements OnInit {
       }
     }
     
-    // Close dropdown after selection
     this.searchResult = [];
     this.toggleBodyScroll(false);
-    
-    if(this.router.url.includes('site-search')){
-      this.router.navigate([url], { fragment: fragment })
-    }
+    (document.activeElement as HTMLElement)?.blur();
+    this.router.navigate([url], { fragment: fragment })
   }
 
   getLearningRecords() {
@@ -327,6 +325,7 @@ export class SearchPopularItemsPage implements OnInit {
 
         this.feelBetterNowTopic = this.getFeelBetterNowTitle(this.searchData.FeelBetterNowRes);
       }
+      this.toggleBodyScroll(false);
     });
     // fetch story free/lock info
     if (this.searchData && this.searchData.WisdomStoriesRes && this.searchData.WisdomStoriesRes.length > 0) {
@@ -776,6 +775,10 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   onFocusOutEvent() {
+    setTimeout(() => {
+      this.searchResult = [];
+      this.toggleBodyScroll(false);
+    }, 200);
   }
 
   clearSearch() {
