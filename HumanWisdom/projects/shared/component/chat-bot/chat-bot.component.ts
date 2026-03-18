@@ -715,8 +715,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   sanitizeHtml(html: string): SafeHtml {
-    console.log('HTML Content:', html);
-    console.log('Contains anchor tags:', html.includes('<a'));
+    
 
     // Add inline styles to anchor tags as a workaround
     const styledHtml = html.replace(/<a\s+([^>]*?)>/gi, (match, attributes) => {
@@ -728,9 +727,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
-    console.log('Styled HTML:', styledHtml);
+    
     const sanitized = this.sanitizer.bypassSecurityTrustHtml(styledHtml);
-    console.log('Sanitized result:', sanitized);
+   
     return sanitized;
   }
 
@@ -943,48 +942,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
    * we extract whatever comes after the origin (/adults/blog-article?sId=54) and use navigateByUrl
    */
   private navigateToUrl(url: string): void {
-    try {
       // Parse the URL to extract the path
       const urlObj = new URL(url);
       // Extract whatever comes after the origin (pathname + search + hash)
       const path = urlObj.pathname + urlObj.search + urlObj.hash;
-      console.log('Navigating via Angular Router:', path);
-      
-      // Use Angular Router - this will automatically trigger NavigationEnd event
-      // which will add the URL to history via the app component's router event subscription
-      this.router.navigateByUrl(path).catch((error) => {
-        console.error('Router navigation failed, falling back to window.location.href:', error);
-        // Fallback to window.location.href if router navigation fails
-        window.location.href = url;
-      });
-    } catch (error) {
-      // If URL parsing fails, try to extract path manually
-      console.log('URL parsing failed, attempting to extract path manually:', url);
-      
-      // Check if it's a full URL
-      if (url.startsWith('http://') || url.startsWith('https://')) {
-        // Try to extract path by finding the first '/' after the domain
-        const match = url.match(/https?:\/\/[^\/]+(\/.*)/);
-        if (match && match[1]) {
-          const path = match[1];
-          console.log('Extracted path from URL:', path);
-          this.router.navigateByUrl(path).catch((routerError) => {
-            console.error('Router navigation failed, using window.location.href:', routerError);
-            window.location.href = url;
-          });
-        } else {
-          // Couldn't extract path, use window.location.href as fallback
-          console.error('Failed to extract path from URL, using window.location.href');
-          window.location.href = url;
-        }
-      } else {
-        // Already a path, use it directly
-        const path = url.startsWith('/') ? url : '/' + url;
-        this.router.navigateByUrl(path).catch((routerError) => {
-          console.error('Router navigation failed, using window.location.href:', routerError);
-          window.location.href = url;
-        });
-      }
-    }
-  }
+     
+          this.router.navigateByUrl(path);
+           
+}
 }

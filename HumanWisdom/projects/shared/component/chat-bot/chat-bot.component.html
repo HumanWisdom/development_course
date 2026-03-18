@@ -47,7 +47,7 @@
 
           <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
             <!-- Regular message content -->
-            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"
+            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="message.content"
               (click)="onMessageContentClick($event)" (keydown.enter)="onMessageContentClick($event)" tabindex="0">
             </div>
 
