@@ -24139,7 +24139,7 @@ a {
 .search_nav_tabs>li.active>a:hover {
   border: 0;
   border-bottom: 3px solid #EE9596;
-  color: #EE9596;
+  color: #EE9596 !important;
   background: transparent;
 }
 
@@ -34515,9 +34515,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   line-height: 150%;
   color: #EE9596 !important;
 }
+
 .daily_profile_t {
-    background: #0C2B5F 
+  background: #0C2B5F
 }
+
 .btn_profile_cp {
   margin: 0;
   border: 0;
@@ -34637,9 +34639,10 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .btn_profile_days.peach:disabled {
   /* background: #ED7D6F !important; */
   background: #FFFFFF40 !important;
-    color: #fff !important;
+  color: #fff !important;
 
 }
+
 .btn_profile_days.gray {
   background: rgba(255, 255, 255, 0.25);
 }
