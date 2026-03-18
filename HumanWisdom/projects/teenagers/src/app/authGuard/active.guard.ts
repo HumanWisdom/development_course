@@ -1,6 +1,8 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { TeenagersService } from '../teenagers/teenagers.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +24,7 @@ export class ActiveGuard implements CanActivate, OnInit {
   }
 
   canActivate(next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
+    state: RouterStateSnapshot): boolean | Observable<boolean> {
     // let m: any = window.location.href;
 
     let screens= localStorage.getItem("freeScreens");
@@ -39,7 +41,6 @@ export class ActiveGuard implements CanActivate, OnInit {
     m = m.split('?')
 
     let str = next.routeConfig.path;
-    //this.logeventservice.logEvent(str);
     this.scrId = str.substring(1, str.length + 1);
     if (this.scrId !== '29000') {
       let substrin = this.scrId.substring(0, 2)
@@ -102,8 +103,31 @@ export class ActiveGuard implements CanActivate, OnInit {
 
 
     }
-    else if (freeScreens !== null && (!loggedin || loggedin !== 'T' ? freeScreens.includes(this.scrId.replace('t', '').toString()) : freeScreens.includes(this.scrId.replace('t', '')) )) {
+    else if (freeScreens !== null && (freeScreens.includes(this.scrId.replace('t', '').toString()) || freeScreens.includes(parseInt(this.scrId.replace('t', ''))) )) {
       return true;
+    }
+    else if (freeScreens === null || freeScreens.length === 0) {
+      return this.service.freeScreens().pipe(map(res => {
+        let x = [];
+        let result = res.map(a => a.FreeScrs);
+        let arr = [];
+        result.forEach(element => {
+          if (element && element !== null) {
+            x.push(element.map(a => a.ScrNo));
+          }
+        });
+        if (x.length > 0) {
+          arr = Array.prototype.concat.apply([], x);
+        }
+        localStorage.setItem("freeScreens", JSON.stringify(arr));
+        
+        if (arr.includes(parseInt(this.scrId.replace('t', ''))) || arr.includes(this.scrId.replace('t', ''))) {
+          return true;
+        } else {
+          this.router.navigate(['teenagers/subscription/start-your-free-trial']);
+          return false;
+        }
+      }));
     }
     else {
       // window.alert('You Have Reached Free Limit')
