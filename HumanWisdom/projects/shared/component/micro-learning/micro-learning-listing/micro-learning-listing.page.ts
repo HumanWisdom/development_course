@@ -100,6 +100,9 @@ export class MicroLearningListingPage implements OnInit {
             this.getUserPref(match.id);
           }
         }
+        setTimeout(() => {
+          this.scrollToActiveTab();
+        }, 200);
       }
       this.isLoading = false;
     }, error => {
@@ -124,9 +127,10 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   getUserPref(type) {
+    if (type === '999') type = 'all';
     this.selectedPref = type;
 
-    if (type === 'all' || type === '999') {
+    if (type === 'all') {
       this.filteredList = this.microLearningList;
     } else {
       this.filteredList = this.microLearningList.filter((item) => {
@@ -141,6 +145,19 @@ export class MicroLearningListingPage implements OnInit {
         }
         return false;
       });
+    }
+
+    setTimeout(() => {
+      this.scrollToActiveTab();
+    }, 200);
+  }
+
+  scrollToActiveTab() {
+    if (!this.selectedPref) return;
+    const id = this.selectedPref.toString().toLowerCase();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
   }
 
