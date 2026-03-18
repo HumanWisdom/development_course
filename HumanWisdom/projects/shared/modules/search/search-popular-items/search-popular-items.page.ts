@@ -41,6 +41,7 @@ export class SearchPopularItemsPage implements OnInit {
   enableModuleViewMore: boolean = false;
   enablePodcastViewMore: boolean = false;
   enableAudioMedViewMore: boolean = false;
+  enableMLMViewMore: boolean = false;
   isSubscriber = false;
   storyFreeMap: { [key: number]: boolean } = {};
   showModal = false;
@@ -89,7 +90,8 @@ export class SearchPopularItemsPage implements OnInit {
       EventsRes: [],
       WisdomStoriesRes: [],
       AudioMeditationRes:[],
-      FeelBetterNowRes: null
+      FeelBetterNowRes: null,
+      MLMRes: []
     } as SearchDataModel;
   }
 
@@ -211,6 +213,7 @@ export class SearchPopularItemsPage implements OnInit {
         this.searchDataDup.EventsRes.length +
         this.searchDataDup.WisdomStoriesRes.length +
         this.searchDataDup.AudioMeditationRes.length +
+        this.searchDataDup.MLMRes.length +
         this.searchDataDup.BlogRes.length;
     }
     return 0;
@@ -249,6 +252,11 @@ export class SearchPopularItemsPage implements OnInit {
     searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
     this.commonService.getSearchDataForSearchSite(searchInpt).subscribe(res => {
       if (res) {
+        if (res.MLMRes) {
+          res.MLMRes.forEach(m => {
+            m.ImgUrl = m.ImageUrl;
+          });
+        }
         this.searchDataDup = JSON.parse(JSON.stringify(res));
 
         if (res.BlogRes && res.BlogRes.length > 2) {
@@ -309,6 +317,14 @@ export class SearchPopularItemsPage implements OnInit {
           this.searchData = res;
         }
 
+
+        if (res.MLMRes && res.MLMRes.length > 2) {
+          res.MLMRes = res.MLMRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
+
         this.feelBetterNowTopic = this.getFeelBetterNowTitle(this.searchData.FeelBetterNowRes);
       }
     });
@@ -335,6 +351,7 @@ export class SearchPopularItemsPage implements OnInit {
       this.searchDataDup.WisdomShortsRes.length +
       this.searchDataDup.EventsRes.length +
       this.searchDataDup.WisdomStoriesRes.length +
+      this.searchDataDup.MLMRes.length +
       this.searchDataDup.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
     }
     else return 0;
@@ -450,6 +467,18 @@ export class SearchPopularItemsPage implements OnInit {
         }
         this.enableAudioMedViewMore = false;
       }
+    }else if(section === 'mlm') {
+      if (type === 'more') {
+        if (this.searchDataDup.MLMRes && this.searchDataDup.MLMRes.length > 2) {
+          this.searchData.MLMRes = this.searchDataDup.MLMRes;
+        }
+        this.enableMLMViewMore = true;
+      }else {
+        if (this.searchDataDup.MLMRes && this.searchDataDup.MLMRes.length > 2) {
+          this.searchData.MLMRes = this.searchDataDup.MLMRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableMLMViewMore = false;
+      }
     }
 
 
@@ -516,6 +545,20 @@ export class SearchPopularItemsPage implements OnInit {
     }
   }
 
+  mlmEvent(item: any) {
+    const locked = !this.isSubscriber && (item?.isFree === '0');
+    if (locked) {
+      this.showModal = true;
+      return;
+    }
+    const id = item.MicrolearningID;
+    if (id) {
+      localStorage.removeItem('ml_index_' + id);
+      localStorage.removeItem('persist_ml_index');
+    }
+    const prefix = SharedService.getprogramName();
+    this.router.navigate(['/' + prefix + '/micro-learning/inner', id]);
+  }
  
   wisdoshortsevent(val, video, title) {
     const locked = !this.isSubscriber && (val?.isFree === '0');
