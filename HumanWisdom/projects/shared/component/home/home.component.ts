@@ -1407,6 +1407,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     if ((title.includes('podcast') || title.includes('short') || title.includes('micro-learning') || title.includes('microlearning') || 
          url.includes('podcast') || url.includes('short') || url.includes('micro-learning')) 
+        && !title.includes('understand your mind') && !url.includes('understand-your-mind') && !url.includes('understand your mind')
         && this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
       const activeTopic = this.YourTopicofChoice[0];
       if (activeTopic && activeTopic.displayName && activeTopic.displayName !== 'All') {

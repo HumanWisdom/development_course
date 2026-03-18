@@ -149,6 +149,9 @@ export class WisdomShortsIndexPage implements OnInit {
              }, 200);
            }
         }
+        setTimeout(() => {
+          this.scrollToActiveTab();
+        }, 200);
       }
     })
   }
@@ -245,46 +248,47 @@ export class WisdomShortsIndexPage implements OnInit {
   }
   
   getUserPref(type) {
+    if (type === '999') type = 'all';
+    type = type.toLowerCase()
 
-    type=type.toLowerCase()
-   
-  const btns = Array.from(document.getElementsByClassName('btn'));
-  for (const b of btns) {
-    const btn = b as HTMLElement;
-    btn.classList.remove('active');
-  }
+    const btns = Array.from(document.getElementsByClassName('btn'));
+    for (const b of btns) {
+      const btn = b as HTMLElement;
+      btn.classList.remove('active');
+    }
 
-  const selectedBtn = document.getElementById(type);
-  if (selectedBtn) {
-    selectedBtn.classList.add('active');
-  }
-    
+    const selectedBtn = document.getElementById(type);
+    if (selectedBtn) {
+      selectedBtn.classList.add('active');
+    }
+
     this.selectedPref = type;
     this.wisdomshorts = this.allwisdomshorts;
-    if(type === "all") {
+    if (type === "all") {
       this.wisdomshorts = this.allwisdomshorts;
-      // document.getElementById("all").style.backgroundColor = '#FFFFFF';
-      // document.getElementById("all").style.color = '#000000';
-    }else if(type === 'voices'){
-      this.wisdomshorts= this.allwisdomshorts.filter((d) => d['IsVoices'] === '1');
-      // document.getElementById("voices").style.backgroundColor = '#E58D82';
-      // document.getElementById("voices").style.color = '#FFFFFF';
-
+    } else if (type === 'voices') {
+      this.wisdomshorts = this.allwisdomshorts.filter((d) => d['IsVoices'] === '1');
     }
-    else{
-      // document.getElementById(type).style.backgroundColor = '#FFFFFF';
-      // document.getElementById(type).style.color = '#000000';
-
-      if(type === '0') {  //wisdom
-        this.wisdomshorts= this.allwisdomshorts.filter((d) => (!d['PreferenceIDs']));
-      }else {
-                //this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].includes(type.id + ',') || d['PreferenceIDs'].includes(','+ type.id + ',') || d['PreferenceIDs'].includes(','+type.id))));
-          //  this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['Preferences'] && d['Preferences'].toLowerCase().includes(type)));
-                this.wisdomshorts= this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes(type))));
+    else {
+      if (type === '0') {  //wisdom
+        this.wisdomshorts = this.allwisdomshorts.filter((d) => (!d['PreferenceIDs']));
+      } else {
+        this.wisdomshorts = this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes(type))));
       }
     }
-         
 
+    setTimeout(() => {
+      this.scrollToActiveTab();
+    }, 200);
+  }
+
+  scrollToActiveTab() {
+    if (!this.selectedPref) return;
+    const id = this.selectedPref.toString().toLowerCase();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
   }
 
 

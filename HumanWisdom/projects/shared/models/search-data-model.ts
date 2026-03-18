@@ -9,6 +9,14 @@ export interface SearchDataModel {
   EventsRes: EventsRe[];
   AudioMeditationRes: AudioMedRe[];
   FeelBetterNowRes:string;
+  MLMRes: MLMRe[];
+}
+
+interface MLMRe {
+  MicrolearningID: number;
+  Title: string;
+  ImgUrl: string;
+  ImageUrl?: string;
 }
 
 interface WisdomShortsRe {
