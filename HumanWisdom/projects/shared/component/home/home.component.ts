@@ -9,6 +9,7 @@ import { HomeStateService } from '../../services/home-state.service';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { LogEventService } from '../../services/log-event.service';
+import { NavigationService } from '../../services/navigation.service';
 
 export interface NavigationItem {
   id: string;
@@ -151,7 +152,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private commonService: CommonService,
     private homeStateService: HomeStateService,
     private onboardingService: OnboardingService,
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService,
+    private navigationService: NavigationService
   ) {
  
     this.navigationItems = SharedService.getPreferenceDataForHome();
@@ -815,9 +817,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     // Clear fragment from URL after manual tab switch to fix back navigation issues
-    if (window.location.hash) {
-      window.history.replaceState(null, '', window.location.pathname + window.location.search);
-    }
+    this.clearUrlFragment();
 
     // Save active preference to store
     this.homeStateService.setActivePreference(item.id);
@@ -1580,6 +1580,19 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
+   * Clear the URL fragment (hash) using window.history.replaceState for immediate browser-level history update
+   */
+  private clearUrlFragment(): void {
+    if (window.location.hash) {
+      const url = window.location.pathname + window.location.search;
+      window.history.replaceState(null, '', url);
+      // Sync internal app history with the cleaned URL to fix back navigation issues
+      this.navigationService.replaceLastHistory(url);
+      console.log('URL Fragment cleared immediately via replaceState and history synced');
+    }
+  }
+
+  /**
    * Activate navigation item based on hash
    * This method activates the navigation item and loads its content
    */
@@ -1625,6 +1638,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     setTimeout(() => {
       this.scrollToActiveList();
     }, 500);
+
+    // Clear hash immediately after use to fix back navigation issues
+    this.clearUrlFragment();
   }
 
   /**
