@@ -389,12 +389,13 @@ export class QuestionAnswersSelection implements OnInit {
 
         localStorage.setItem('wisdomRecomm', JSON.stringify(res.WisdomSurveyRecomm || []));
 
-        const { isUseCloseButton } = window.history.state;
+        const { isUseCloseButton, routedFromLogin } = window.history.state;
 
         this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey/wisdom-score"],
           {
             state: {
-              'isUseCloseButton': isUseCloseButton
+              'isUseCloseButton': isUseCloseButton,
+              'routedFromLogin': routedFromLogin
             }
           });
 

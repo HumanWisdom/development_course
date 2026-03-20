@@ -31,6 +31,7 @@
 }
 
 .mc_end_container {
+    pointer-events: none;
     // padding: 20px 10px;
     border-radius: 15px;
     // background: linear-gradient(180deg, #FFEAB5 0%, #FFF7E6 100%);
@@ -41,6 +42,17 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+
+
+    // Re-enable for everything interactive
+    .mc_end_textarea,
+    .mc_end_btn_journal,
+    .mc_end_resource_card,
+    .mdp_add_to_journal,
+    a,
+    button {
+        pointer-events: auto !important;
+    }
 
     &::before {
         content: "";
@@ -113,6 +125,10 @@
     position: relative;
     pointer-events: auto;
     user-select: text;
+    /* Allow focus and typing on mobile – overrides parent touch-action: pan-y */
+    touch-action: manipulation;
+    -webkit-user-select: text;
+    -webkit-touch-callout: default;
 
     &::placeholder {
         color: #B0B0B0;
@@ -184,6 +200,7 @@
     z-index: 1;
     line-height: 1.4;
     margin-top: 0px;
+    text-align: center;
 }
 
 .mc_end_resource_card {

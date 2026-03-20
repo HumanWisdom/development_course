@@ -1281,6 +1281,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
                         }
                       });
                     } else if (SharedService.ProgramId === 11) {
+                      localStorage.setItem('isFromSignupFlow', 'T');
                       this.router.navigate(["/teenagers/change-topic"], {
                         state: {
                           routedFromLogin: true,

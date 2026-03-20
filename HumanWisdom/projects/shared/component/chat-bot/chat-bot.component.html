@@ -32,7 +32,7 @@
 
     <div class="chat-messages" #messageContainer>
       <!-- Dynamic Messages -->
-      <div *ngFor="let message of messages; let isFirst = first" class="message"
+      <div *ngFor="let message of messages; let isFirst = first; let isLast = last" class="message"
         [ngClass]="[message.sender + '-message', message.hideAvatar ? 'bot-followup' : '', message.id === 'welcome-intro-2' ? 'welcome-followup' : '']">
         <!-- Bot Message -->
         <div *ngIf="message.sender === 'bot' && !message.hideAvatar" class="message-avatar">
@@ -47,7 +47,7 @@
 
           <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
             <!-- Regular message content -->
-            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"
+            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="message.content"
               (click)="onMessageContentClick($event)" (keydown.enter)="onMessageContentClick($event)" tabindex="0">
             </div>
 
@@ -70,6 +70,14 @@
               <span></span>
               <span></span>
             </div>
+          </div>
+
+          <!-- Give More Options Button (shown when bot offers related content or has more options) -->
+          <div *ngIf="isLast && message.sender === 'bot' && (message.offer_related || message.has_more) && !isLoading"
+            class="more-options-container">
+            <button class="action-button more-options-button" (click)="onGiveMoreOptions()">
+              Give me more options
+            </button>
           </div>
 
           <!-- Feedback Buttons (Thumbs Up/Down) - OUTSIDE the message bubble -->
@@ -150,15 +158,6 @@
       </div>
     </div>
 
-    <!-- Give More Options Button (shown when bot offers related content or has more options) -->
-    <div
-      *ngIf="messages.length > 0 && messages[messages.length - 1]?.sender === 'bot' && (messages[messages.length - 1]?.offer_related || messages[messages.length - 1]?.has_more) && !isLoading"
-      class="more-options-container">
-      <button class="action-button more-options-button" (click)="onGiveMoreOptions()">
-        Give me more options
-      </button>
-    </div>
-
     <!-- Input area -->
     <div class="chat-input-area">
       <div class="input-container">
@@ -184,13 +183,16 @@
 <!-- End chat-bot-container -->
 
 <!-- Dislike Popup Modal (outside main container so it overlays everything) -->
-<div class="dislike-popup-overlay" *ngIf="showDislikePopup" (click)="onCloseDislikePopup()">
-  <div class="dislike-popup" [class.teens-popup]="!isAdults" (click)="$event.stopPropagation()">
+<div class="dislike-popup-overlay" *ngIf="showDislikePopup" (click)="onCloseDislikePopup()"
+  (keydown.enter)="onCloseDislikePopup()" tabindex="0" role="button" aria-label="Close popup">
+  <div class="dislike-popup" [class.teens-popup]="!isAdults" (click)="$event.stopPropagation()"
+    (keydown)="$event.stopPropagation()" tabindex="0">
     <div class="dislike-popup-body">
       <h3 class="dislike-popup-title">We're sorry this wasn't helpful.</h3>
       <p class="dislike-popup-text">
         Thank you for your feedback. For more personalized support, please post your question on our
-        <span class="dislike-forum-link" (click)="onGoToForum()">Community Forum</span>
+        <span class="dislike-forum-link" (click)="onGoToForum()" (keydown.enter)="onGoToForum()" tabindex="0"
+          role="link">Community Forum</span>
         where one of our coaches will answer it.
       </p>
       <p class="dislike-popup-footnote">Your feedback helps us improve our responses.</p>

@@ -508,6 +508,10 @@ body {
     display: none !important
   }
 
+  .orcha-banner-text{
+    text-align: center !important;
+  }
+
   .img_health {
     width: 370px !important;
     max-width: 348px !important;

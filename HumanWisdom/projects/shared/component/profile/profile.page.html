@@ -64,7 +64,7 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h6 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
+                        <h6 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                           {{email}}
                         </h6>
                       </div>
@@ -78,7 +78,7 @@
                             Edit Profile
                           </button>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright td_underline">
                           <button type="button" class=" btn_profile_cp"
                             (click)="Logevent('/onboarding/change-password', '', 'click_change_password')">
                             Change password
@@ -88,13 +88,13 @@
                     </div>
                   </div>
 
-                  <div class="profile_pe_div_01 mt20px" [ngClass]="isAdults ? '' : 'bg_profile_t'">
+                  <div class="profile_pe_div_01 mt10px" >
                     <div class="row center_flex">
-                      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 p0 center_flex">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
                           <div class="prelative">
                             <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/profile_wisdom_points.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/points.svg"
                               class="img-responsive w100p">
                             <h4 class="mtb0px fs_12px fw_600 lh_100p fc_ffffff absolute_center_txt">
                               {{loginResponse?.Points}}
@@ -104,7 +104,7 @@
 
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
                           <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            Points
+                            Wellness points
                           </h4>
                         </div>
 
@@ -117,7 +117,7 @@
                       </div>
                     </div>
 
-                    <div class="row mt20px">
+                    <div class="row mt30px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                           <h4 class="mtb0px fs_12px fw_400 lh_18px  tleft"
@@ -151,7 +151,7 @@
                             {{loginResponse.Modules}}
                           </h4>
 
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                             {{loginResponse.Modules <= 1 ? 'Module' : 'Modules' }} </h4>
                         </div>
 
@@ -160,7 +160,7 @@
                             {{loginResponse.Notes}}
                           </h4>
 
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                             {{loginResponse.Notes <= 1 ? 'Note' : 'Notes' }} </h4>
                         </div>
 
@@ -169,7 +169,7 @@
                             {{loginResponse.Surveys}}
                           </h4>
 
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                             {{loginResponse.Surveys <= 1 ? 'Survey' : 'Surveys' }} </h4>
                         </div>
 
@@ -177,7 +177,7 @@
                     </div>
                   </div>
 
-                  <div class="div_wss mt20px">
+                  <!-- <div class="div_wss mt20px">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 tleft">
@@ -185,7 +185,7 @@
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             Wellness score
                           </h4>
-                        </div>
+                        </div> -->
                         <!--   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                           <a (click)="Logevent('/wisdom-survey/progress', '', 'click_progress')">
                             <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
@@ -194,7 +194,7 @@
                             </h4>
                           </a>
                         </div> -->
-                      </div>
+                      <!-- </div>
                     </div>
 
                     <div class="row">
@@ -240,14 +240,133 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_12px fw_400 lh_140p  tleft"
                           [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          <!-- Fill the happiness survey once a week and track your happiness progress -->
-                          Fill the wellness survey once a month and track your wellness progress
+                           Fill the happiness survey once a week and track your happiness progress -->
+                          <!-- Fill the wellness survey once a month and track your wellness progress
                         </h4>
                       </div>
                     </div>
-                  </div>
+                  </div>  -->
 
-                  <div class="row mt20px">
+
+                   <!-- my progress -->
+                     <!-- v1.1 -->
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group dpanelgroup" id="accordion">
+                  <div class="panel panel-default dpanel dpanel_01">
+                    <div class="mb10px">
+                      <h4 class="panel-title dpaneltitle">
+                        <div aria-expanded="true">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-9 col-sm-9 col-xs-9 p0">
+                                <!-- <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">
+                                  My progress
+                                </h2> -->
+                              </div>
+                              <div class="col-md-3 col-sm-3 col-xs-3 p0" >
+                                <!-- <a (click)="viewDetails()">
+                                      <h2 class="mtb0px fs_12px fw_500 lh_140p fc_ee9596 tright underline">
+                                        View details
+                                      </h2>
+                                    </a> -->
+                                <!-- <a (click)="viewDetails()" class="display_flex flex_ai justify-content-end">
+                                  <h2 class="mtb0px fs_12px fw_500 lh_150p fc_ee9596 td_underline">
+                                    View details
+                                  </h2>
+                                  <span class="ml5px">
+                                    <img
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/angle_right_orange.svg"
+                                      class="img-responsive">
+                                  </span>
+                                </a> -->
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h4>
+                    </div>
+                    <div>
+
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0">
+
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 td_points_box"
+                            style="margin-left:0px; width:31%;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px tcenter">
+                              <img
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wellness_daily.svg"
+                                class="img-responsive">
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter mt10px">
+                              <h4 class="mtb0px fs_15px fw_600 lh_120p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                           {{ loginResponse.Streak }} {{ loginResponse.Streak == 1 ? 'day' : 'days' }}
+                              </h4>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                              <!-- <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                                Points
+                              </h4> -->
+                              <h4 class="mtb0px fs_12px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                Streak
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 td_points_boxnew " style="float: right;">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ffffff">
+                                  <!-- 74% -->
+                                  {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
+                                </h4>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
+                                  My wellness score
+                                </h4>
+                              </div>
+
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  mt10px">
+                                <a class="" (click)="survey()">
+                                  <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff flex_ai td_underline">
+                                    Take the survey
+                                    <span class="ml5px">
+                                      <img
+                                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/right_icon.svg"
+                                        class="img-responsive">
+                                    </span>
+                                  </h4>
+                                </a>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teens_td_smiley.svg" class="img-responsive"> -->
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /v1.1 -->
+            <!-- /my progress -->
+
+            <!-- hr -->
+
+                  <div class="row mt40px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_15px fw_600 lh_150p tleft" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         This week
@@ -257,31 +376,31 @@
 
                   <div class="row mtb15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_days ws_nowrap center_flex">
-                      <button type="button" class=" btn_profile_days peach " [ngClass]="sun ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days  " [ngClass]="sun>0 ? 'peach' : ''" [disabled]="sun===2" >
                         S
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="mon ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="mon>0 ? 'peach' : ''" [disabled]="mon===2">
                         M
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="tue ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="tue>0 ? 'peach' : ''" [disabled]="tue===2">
                         T
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="wed ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="wed>0 ? 'peach' : ''" [disabled]="wed===2">
                         W
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="thu ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="thu>0 ? 'peach' : ''" [disabled]="thu===2">
                         T
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="fri ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="fri>0 ? 'peach' : ''" [disabled]="fri===2">
                         F
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="sat ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="sat>0 ? 'peach' : ''" [disabled]="sat===2">
                         S
                       </button>
                     </div>
@@ -349,15 +468,15 @@
                     </div>
                   </div>-->
 
-                  <div class="row mtb20px">
+                  <!-- <div class="row mtb20px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <hr class="hr_style_v3_02">
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="div_pi">
                     <a *ngIf="enablepayment">
-                      <div class="row">
+                      <div class="row mt40px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                             <h4 class="mt0px mb5px fs_15px fw_600 lh_150p "
@@ -374,10 +493,11 @@
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                             <a (click)="Logevent('/onboarding/payment-details', '', 'click_payment_update')">
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p "
-                                [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline"
+                                [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
+
                                 Update
-                                <i class="fa fa-angle-right ml10px"></i>
+                                <i class="fa fa-angle-right "></i>
                               </h4>
                             </a>
                           </div>
@@ -402,10 +522,10 @@
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
                             <a (click)="Logevent('/onboarding/myprogram', '', 'click_subscription_details')">
-                              <h4 class="mtb0px fs_12px fw_500 lh_150p "
-                                [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline"
+                                [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                                 Details
-                                <i class="fa fa-angle-right ml10px"></i>
+                                <i class="fa fa-angle-right "></i>
                               </h4>
                             </a>
                           </div>
@@ -438,9 +558,9 @@
                           </div>
 
                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
-                            <h4 class="mtb0px fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                               Share
-                              <i class="fa fa-angle-right ml10px"></i>
+                              <i class="fa fa-angle-right "></i>
                             </h4>
                           </div>
                         </div>

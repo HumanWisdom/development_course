@@ -162,6 +162,9 @@ export class PodcastTocPage implements OnInit {
              console.log('No matching fragment found for:', fragment);
            }
         }
+        setTimeout(() => {
+          this.scrollToActiveTab();
+        }, 200);
       }
     })
   }
@@ -224,6 +227,7 @@ audioevent(data: any) {
   }
 
 getUserPref(type) {
+  if (type === '999') type = 'all';
   this.selectedPref = type;
   this.podcastList = this.allpodcastList;
 
@@ -239,6 +243,19 @@ getUserPref(type) {
     this.podcastList = this.podcastList.filter((d) =>
       d['PreferenceIDs'] && d['PreferenceIDs'].split(',').includes(type)
     );
+  }
+
+  setTimeout(() => {
+    this.scrollToActiveTab();
+  }, 200);
+}
+
+scrollToActiveTab() {
+  if (!this.selectedPref) return;
+  const id = this.selectedPref.toString().toLowerCase();
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }
 }
 

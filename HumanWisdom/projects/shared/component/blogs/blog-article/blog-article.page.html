@@ -229,7 +229,7 @@
                   <div class="row mtb15px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <input type="text" class="sp_fc_01" placeholder="Leave a comment" [(ngModel)]="comment"
-                        [ngModelOptions]="{standalone: true}">
+                        [ngModelOptions]="{standalone: true}" (focus)="logeventservice.logEvent('enter_comment_text')">
                     </div>
                   </div>
 

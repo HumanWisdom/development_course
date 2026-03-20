@@ -111,9 +111,10 @@ describe('OwlAnimationComponent', () => {
             expect(component.isAtCorner).toBe(true);
         });
 
-        it('should initialize cloud images array', () => {
-            expect(component['cloudImages']).toBeDefined();
-            expect(component['cloudImages'].length).toBe(2);
+        it('should use only OLLY_HI_URL for cloud message', () => {
+            expect(component['OLLY_HI_URL']).toBeDefined();
+            expect(component['OLLY_HI_URL']).toContain('Olly_Hi.svg');
+            expect(component.currentCloudImage).toContain('Olly_Hi.svg');
         });
 
         it('should set default GIF URL', () => {
@@ -532,7 +533,7 @@ describe('OwlAnimationComponent', () => {
             expect(localStorage.getItem('owl_dialogue_shown')).toBe('true');
         });
 
-        it('should show first cloud image', () => {
+        it('should show only OLLY_HI cloud directly in place (no opening animation)', () => {
             component['dialogueAlreadyShown'] = false;
 
             component['startSpeakingSequence']();
@@ -542,34 +543,12 @@ describe('OwlAnimationComponent', () => {
             expect(component.isSpeaking).toBe(true);
         });
 
-        it('should switch to second cloud image after 3 seconds', fakeAsync(() => {
-            component['dialogueAlreadyShown'] = false;
-
-            component['startSpeakingSequence']();
-            tick(3000);
-
-            expect(component.currentCloudImage).toContain('Olly_Ask+me+a+question.svg');
-
-            flush(); // Clear remaining timers
-        }));
-
-        it('should stop speaking after 6 seconds', fakeAsync(() => {
-            component['dialogueAlreadyShown'] = false;
-
-            component['startSpeakingSequence']();
-            tick(6000);
-
-            expect(component.isSpeaking).toBe(false);
-
-            flush(); // Clear remaining timer
-        }));
-
-        it('should hide cloud after 9 seconds', fakeAsync(() => {
+        it('should hide cloud after display duration (5 seconds)', fakeAsync(() => {
             component['dialogueAlreadyShown'] = false;
             spyOn<any>(component, 'hideCloudWithAnimation');
 
             component['startSpeakingSequence']();
-            tick(9000);
+            tick(5000);
 
             expect(component['hideCloudWithAnimation']).toHaveBeenCalled();
         }));

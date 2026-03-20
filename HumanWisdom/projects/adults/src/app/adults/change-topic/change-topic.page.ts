@@ -90,7 +90,7 @@ export class ChangeTopicPage implements OnInit {
     }
     let NoOfVisits = loginResponse.NoOfVisits
     console.log("NoofVisits:" + NoOfVisits )
-    this.isRoutedFromLogin = NoOfVisits.toString() === '1' ? true : false;
+        this.isRoutedFromLogin = (NoOfVisits.toString() === '1' || window.history.state.routedFromLogin) ? true : false;
     this.getIntroDashboardStatus();
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;

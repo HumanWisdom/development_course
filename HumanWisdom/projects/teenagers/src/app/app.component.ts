@@ -48,12 +48,11 @@ export class AppComponent implements OnDestroy {
       app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
       swPath: '/teenagers/serviceworker.js'
     });
-    if (localStorage.getItem("isloggedin") == 'T') {
-      this.getUserInformationById(SharedService.getUserId())
-    }
     let urls = this.router.url.split('authtoken=');
-    if (!urls && urls[1] == undefined) {
-      if (localStorage.getItem("isloggedin") !== 'T') {
+    if (urls && urls[1] == undefined) {
+      if (localStorage.getItem("isloggedin") == 'T') {
+        this.getUserInformationById(SharedService.getUserId())
+      } else {
         this.services.emaillogin();
       }
     }
@@ -73,7 +72,9 @@ export class AppComponent implements OnDestroy {
       this.navigationService.addToHistory(event.url);
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
+      this.services.ensureModuleContextForUrl(event.url);
     });
+    this.services.ensureModuleContextForUrl(window.location.pathname);
     //  this.setDynamicCSS();
   }
 
@@ -89,20 +90,23 @@ export class AppComponent implements OnDestroy {
     }
   }
 
-  getUserInformationById(loggedInUserId) {
-    this.onboardingService.getuser(loggedInUserId).subscribe(res => {
-      if (res) {
-        let subscriber = res[0].IsSubscribed;
-        console.log('subscriber', subscriber);
-        localStorage.setItem('Subscriber', subscriber);
-        if (res[0]?.SurveyDone == '0') {
-          setTimeout(() => {
-            this.commonService.updateSurveyData(1);
-          }, 180000);
+  async getUserInformationById(loggedInUserId) {
+    let authtoken = localStorage.getItem("token");
+    if (authtoken) {
+      if (authtoken.startsWith('"')) authtoken = JSON.parse(authtoken);
+      this.services.verifytoken(authtoken).subscribe(res => {
+        if (res) {
+          localStorage.setItem("Subscriber", res['Subscriber']);
+          localStorage.setItem("loginResponse", JSON.stringify(res));
         }
-      }
-    });
-
+        this.onboardingService.getuser(loggedInUserId).subscribe(res => {
+          if (res) {
+            let subscriber = res[0].IsSubscribed;
+            localStorage.setItem('Subscriber', subscriber);
+          }
+        });
+      });
+    }
   }
 
 

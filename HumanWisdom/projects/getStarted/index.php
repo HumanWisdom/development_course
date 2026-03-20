@@ -219,7 +219,7 @@ require_once('./includes/security_config.php');
           data-aos-delay="200">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 p-18px">
-              <h1 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc">
+              <h1 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc mb_16px">
                 <span class="rating_a">
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
@@ -256,7 +256,7 @@ require_once('./includes/security_config.php');
           </div>
 
 
-           <div class="row">
+           <div class="row gap_16px">
 
             <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 col-1 p0">
 
@@ -404,7 +404,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal">Mental wellbeing <i
-                    class='fa fa-angle-right' style='font-size:25px'></i></button>
+                    class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -416,7 +416,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalbuild">Better
-                  relationships <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  relationships <i class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -427,7 +427,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop" type="button"
                   class="btn btn-primarypop f_15px " data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                  Succeed at work <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  Succeed at work <i class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -451,7 +451,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModal2">Learn meditation <i
-                    class='fa fa-angle-right' style='font-size:25px'></i></button>
+                    class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -463,7 +463,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalbreak">Overcome harmful
-                  habits <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  habits <i class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -474,7 +474,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <button class="fs_18px fw_500 lh_140p f_15px fc_D7586B btn-primarypop" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalemotions">Manage
-                  emotions <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  emotions <i class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -499,7 +499,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalself">Build
-                  self-awareness <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  self-awareness <i class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -511,7 +511,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  p0">
                 <button class="fs_18px fw_500 lh_140p fc_D7586B f_15px btn-primarypop" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalparent">Better
-                  parenting <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  parenting <i class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -522,7 +522,7 @@ Now with Olly AI              </h2>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <button class="fs_18px fw_500 lh_140p fc_D7586B btn-primarypop f_15px" type="button"
                   class="btn btn-primarypop" data-bs-toggle="modal" data-bs-target="#exampleModalteen">HappierMe for
-                  Teenagers <i class='fa fa-angle-right' style='font-size:25px'></i></button>
+                  Teenagers <i class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i></button>
 
               </div>
             </div>
@@ -561,7 +561,7 @@ Now with Olly AI              </h2>
               <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
                 We are here to support you to succeed in all aspects of life
               </h2>
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> Quick View</button>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class='fa fa-angle-right' style='font-size:20px; margin-top:2px'></i> Quick View</button>
 
             </div>
           </div>
@@ -3879,7 +3879,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
     </section>
     <button style="display:none" type="button" id="newsPopup" class="btn btn-primary" data-bs-toggle="modal"
-      data-bs-target="#product_view"><i class='fa fa-angle-right' style='font-size:25px'></i> News popup</button>
+      data-bs-target="#product_view"><i class='fa fa-angle-right' style='font-size:22.5px; margin-top:2px'></i> News popup</button>
 
     <!-- Test button to demonstrate ModalManager functionality -->
     <button style="display:none" type="button" id="testModalManager" class="btn btn-secondary"

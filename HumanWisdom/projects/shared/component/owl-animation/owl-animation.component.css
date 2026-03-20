@@ -317,83 +317,45 @@ body:has(#menu:checked) .owl-animation-wrapper {
   transition: all 0.3s ease;
 }
 
-/* Cloud Container Styles - positioned above owl */
+/* Cloud Container - OLLY_HI only: fade in on open, fade out on close */
 .owl-cloud-container {
   position: absolute;
-  top: -90px;
-  /* Positioned above owl */
-  left: -50%;
-  /* Closer horizontally to owl (was -65%) */
+  top: -102px;
+  left: -45%;
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Animation: dialogue emerges slowly from owl's mouth */
-  animation: cloud-grow 1.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  width: 179px;
+  height: 140px;
+  opacity: 1;
+  animation: none;
   transform-origin: bottom center;
 }
 
-/* Multi-stage cloud growth: dialogue emerges slowly from mouth, then floats into position */
-/* Owl image: height 100px * scale(0.7) = 70px actual height */
-/* Starts tiny at mouth, emerges gradually, settles above owl */
-@keyframes cloud-grow {
+/* Opening: slow fade in effect for Olly_Hi.svg */
+.owl-cloud-container.fade-in {
+  opacity: 0;
+  animation: cloud-fade-in 4.4s ease-out forwards;
+  transform-origin: bottom center;
+}
+
+@keyframes cloud-fade-in {
   0% {
     opacity: 0;
-    transform: translateX(25%) translateY(-20px) scale(0.03);
-    /* Start very small at mouth – barely visible */
   }
-
-  15% {
-    opacity: 0.2;
-    transform: translateX(22%) translateY(-22px) scale(0.06);
-    /* Slow emergence from mouth */
-  }
-
-  30% {
-    opacity: 0.5;
-    transform: translateX(15%) translateY(-20px) scale(0.12);
-    /* Gradually emerging */
-  }
-
-  45% {
-    opacity: 0.7;
-    transform: translateX(5%) translateY(-15px) scale(0.25);
-    /* Continuing to grow from mouth */
-  }
-
-  60% {
-    opacity: 0.85;
-    transform: translateX(-15%) translateY(-8px) scale(0.5);
-    /* Rising and expanding */
-  }
-
-  75% {
-    opacity: 0.95;
-    transform: translateX(-35%) translateY(-3px) scale(0.8);
-    /* Almost at final position */
-  }
-
-  90% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(1px) scale(1.02);
-    /* Gentle overshoot */
-  }
-
   100% {
     opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-    /* Final position above owl */
   }
 }
 
-/* Bubble speaking animation - dialogue emerges slowly from mouth, then speaking */
 .owl-cloud-container.speaking:not(.disappearing) {
   transform-origin: bottom center;
-  /* Dialogue emerges slowly from mouth (1.4s), then speaking animation starts */
-  animation: cloud-grow 1.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards,
-    bubble-pop 1.8s ease-in-out 1.5s infinite;
+  animation: none;
+  opacity: 1;
+  transform: translateX(-50%);
 }
 
 /* Update bubble-pop to maintain position from entrance */
@@ -431,43 +393,18 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 }
 
-/* Ensure dialogue without speaking class still has cloud growth animation */
-.owl-cloud-container:not(.speaking):not(.disappearing) {
-  animation: cloud-grow 1.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-}
-
-/* Cloud disappearing animation - reverse of cloud-grow (faster) */
+/* Cloud closing: fade out (no shrink) */
 .owl-cloud-container.disappearing {
-  animation: cloud-shrink 0.6s ease-in forwards;
+  animation: cloud-fade-out 0.6s ease-out forwards;
   transform-origin: bottom center;
 }
 
-/* Reverse animation: complete size -> larger -> small -> disappear at around 20px from top */
-/* Owl's top is at translateY(45px), animation completes at translateY(20px) - moved up more */
-/* Move horizontally from center (-50%) to right edge (positive translateX) */
-@keyframes cloud-shrink {
+@keyframes cloud-fade-out {
   0% {
     opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-    /* Start at complete/full size above owl */
   }
-
-  40% {
-    opacity: 0.9;
-    transform: translateX(-30%) translateY(-8px) scale(0.7);
-    /* Shrink and move down and to the right */
-  }
-
-  70% {
-    opacity: 0.7;
-    transform: translateX(-10%) translateY(-15px) scale(0.3);
-    /* Continue shrinking and moving down-right */
-  }
-
   100% {
     opacity: 0;
-    transform: translateX(20%) translateY(-25px) scale(0.05);
-    /* Shrink to very small and disappear towards mouth area (shifted up) */
   }
 }
 
@@ -481,6 +418,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
   user-select: none;
   pointer-events: none;
+  transition: width 0.4s ease, height 0.4s ease, max-width 0.4s ease;
 }
 
 
@@ -505,9 +443,10 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
   .owl-cloud-container {
     top: -55px;
-    /* Keep bubble above the owl */
     left: -35%;
-    /* Match desktop alignment horizontally */
+    transform: translateX(-50%);
+    width: 140px;
+    height: 110px;
   }
 
   .cloud-image {
@@ -516,4 +455,5 @@ body:has(#menu:checked) .owl-animation-wrapper {
     max-width: 140px;
     height: auto;
   }
+
 }

@@ -46,19 +46,19 @@ export class TocHeaderComponent implements OnInit {
    // 
   }
 
-  goBack(){
+  goBack() {
     var url = this.navigationService.navigateToBackLink();
-    if(url==null || url.includes('home') || url.includes('dashboard')){
-      url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
-      if(url && url!=null && url != 'null'){
-        this.router.navigateByUrl(url);
-      }else{
-        this.location.back();
-      }
-     }else{
+
+    // Skip duplicates of the current page in history
+    while (url != null && (url.split('?')[0].split('#')[0] === this.router.url.split('?')[0].split('#')[0])) {
+      url = this.navigationService.navigateToBackLink();
+    }
+
+    if (url != null) {
       this.router.navigateByUrl(url);
-     }
-      
+    } else {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
   }
 
   share(){

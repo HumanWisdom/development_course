@@ -326,9 +326,9 @@ export class ChatbotService {
     const currentUserId = SharedService.getUserId();
     const GUEST_USER_ID = 563;
     
-    // Don't load history for guest users
-    if (currentUserId === GUEST_USER_ID) {
-      console.log('Guest user detected. Skipping history load.');
+    // Don't load history for guest users (563) or unauthenticated users (<= 0)
+    if (currentUserId === GUEST_USER_ID || currentUserId <= 0) {
+      console.log('Guest or unauthenticated user detected. Skipping history load.');
       return new Observable<HistoryResponse>(observer => {
         observer.next({
           status: 'success',

@@ -25,6 +25,7 @@ export class S73001Page implements OnInit,OnDestroy {
   bookmark:any
   bookmarkList=[]
   pgResume: any;
+  isContentsOpen
   tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/73.webp"
   tocColor="white"
   lastvisited = false;
@@ -116,6 +117,10 @@ export class S73001Page implements OnInit,OnDestroy {
 
 
     
+  }
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   toggleBookmark(){
     if(this.bookmark==0)

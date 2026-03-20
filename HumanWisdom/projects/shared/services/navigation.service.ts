@@ -7,13 +7,36 @@ import { SharedService } from './shared.service';
 })
 export class NavigationService {
   private history: string[] = [];
-  backClicked: boolean = false;
-  constructor(private router: Router) { }
+  public backClicked: boolean = false;
+  private lastSource: string | null = null;
 
-  addToHistory(url: string) {
-  if (url.includes('/onboarding/add-to-cart')) {
-    return;
+  constructor(private router: Router) {
+    this.lastSource = localStorage.getItem('lastNavSource');
   }
+
+  addToHistory(url: string, source: string | null = null) {
+    const navigation = this.router.getCurrentNavigation();
+    const newSource = source || navigation?.extras?.state?.source;
+
+    if (newSource) {
+      this.lastSource = newSource;
+      localStorage.setItem('lastNavSource', this.lastSource);
+    } else {
+      // If no source in current navigation, check if we should keep the previous one
+      // (e.g., when moving between module TOC and sessions which are not in history)
+      const urls = url.split('/');
+      const urltoCheck = urls[urls.length - 1];
+      const isSession = !isNaN(Number(urltoCheck[urltoCheck.length - 1]));
+      
+      if (!isSession) {
+        this.lastSource = null;
+        localStorage.removeItem('lastNavSource');
+      }
+    }
+
+    if (url.includes('/onboarding/add-to-cart')) {
+      return;
+    }
     const urls = url.split('/');
     let urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
@@ -21,9 +44,36 @@ export class NavigationService {
       if (urltoCheck) {
         let isNan = isNaN(Number(urltoCheck[urltoCheck.length - 1]));
         if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
-          if (this.history.length>0 && this.history[this.history.length-1] != url) {
+          if (this.history.length > 0) {
+            const lastUrl = this.history[this.history.length - 1];
+            if (lastUrl === url) {
+              this.backClicked = false;
+              return;
+            }
+
+            // Check if we are moving between a module root and its first session (sXXXX01)
+            // Example: /teenagers/stress and /teenagers/stress/s125001 are identical pages
+            const currentSegments = url.split('/');
+            const lastSegments = lastUrl.split('/');
+
+            const isDuplicateToc = (
+              // Current is /path/module/sXXXX01 and Last is /path/module
+              (currentSegments.length === lastSegments.length + 1 &&
+               this.endsWith001ForModule(urltoCheck) &&
+               url.startsWith(lastUrl)) ||
+              // Current is /path/module and Last is /path/module/sXXXX01
+              (lastSegments.length === currentSegments.length + 1 &&
+               this.endsWith001ForModule(lastSegments[lastSegments.length - 1]) &&
+               lastUrl.startsWith(url))
+            );
+
+            if (isDuplicateToc) {
+              this.backClicked = false;
+              return;
+            }
+
             this.history.push(url);
-          } else if(this.history[this.history.length-1] != url) {
+          } else {
             this.history.push(url);
           }
         }
@@ -31,6 +81,17 @@ export class NavigationService {
     }
 
     this.backClicked = false;
+  }
+
+  /**
+   * Replace the last history entry with a new URL
+   * Used when clearing fragments from the URL bar to keep internal history in sync
+   */
+  replaceLastHistory(url: string) {
+    if (this.history.length > 0) {
+      console.log('Replacing last history entry from:', this.history[this.history.length - 1], 'to:', url);
+      this.history[this.history.length - 1] = url;
+    }
   }
 
 
@@ -116,21 +177,85 @@ export class NavigationService {
       return returnUrl;
     }
 
-    this.history.splice(this.history.indexOf(this.router.url) + 1);
+    const index = this.history.lastIndexOf(this.router.url);
+    if (index !== -1) {
+      this.history.splice(index + 1);
+    }
+
+    // Context-driven navigation priority
+    if (this.lastSource === 'pathway' || this.lastSource === 'search') {
+      const sourceIsPathway = this.lastSource === 'pathway';
+      const navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      
+      this.lastSource = null; // Reset after usage check
+      localStorage.removeItem('lastNavSource');
+
+      if (sourceIsPathway && navFrom && navFrom.includes('pathway')) {
+        this.history.pop();
+        this.backClicked = true;
+        return navFrom;
+      }
+      
+      const prefix = SharedService.getprogramName();
+      return `/${prefix}/search`;
+    }
 
     const url = this.goBack();
-    if (url != null && !url.includes('home') && !url.includes('dashboard')) {
-      return url;
-    }
-
-    let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-    if (navFrom && navFrom != null && navFrom != 'null') {
-      return navFrom;
-    }
-
+    
+    // If history provides a valid URL, trust it (including home/dashboard)
     if (url != null) {
       return url;
     }
+
+    // Fallback if history is empty
+    let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+    if (navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url) {
+      return navFrom;
+    }
+
+    // Default Fallback Rules (when no history or valid NavigatedFrom exists)
+    const prefix = SharedService.getprogramName();
+    const currentUrl = this.router.url;
+
+    // 1. Microlearning: Inner -> Listing -> Search
+    if (currentUrl.includes('/micro-learning/inner')) {
+      console.log("Fallback: ML Inner -> Listing");
+      return `/${prefix}/micro-learning`;
+    }
+    if (currentUrl.includes('/micro-learning')) {
+      console.log("Fallback: ML Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 2. Pathways: Pathway -> Search
+    if (currentUrl.includes('/pathway/')) {
+      console.log("Fallback: Pathway -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 3. Modules: Session -> Index (TOC) -> Pathway/Search
+    const segments = currentUrl.split('/');
+    const lastSeg = segments[segments.length - 1];
+    
+    // Sessions usually look like 's123001' or 's123p1'
+    const isSessionRegex = /^s[0-9]+/;
+    const isSession = isSessionRegex.test(lastSeg);
+    
+    if (isSession && segments.length > 2) {
+      console.log("Fallback: Session -> Index");
+      return segments.slice(0, -1).join('/');
+    }
+
+    // 4. Module TOC / Index -> Search (If no pathway context was found)
+    if (segments.length >= 3 && (segments[1] === 'adults' || segments[1] === 'teenagers' || segments[1] === 'youngadults')) {
+       const topLevelPages = ['adult-dashboard', 'dashboard', 'home', 'search', 'journal', 'profile', 'forum', 'notification'];
+       if (!topLevelPages.includes(segments[2])) {
+          console.log("Fallback: Module TOC -> Search");
+          return `/${prefix}/search`;
+       }
+    }
+
+    console.log("Fallback: Dashboard");
     return SharedService.getDashboardUrls();
   }
 

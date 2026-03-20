@@ -8,6 +8,8 @@ import { ProgramType } from '../../models/program-model';
 import { HomeStateService } from '../../services/home-state.service';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { LogEventService } from '../../services/log-event.service';
+import { NavigationService } from '../../services/navigation.service';
 
 export interface NavigationItem {
   id: string;
@@ -149,7 +151,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private router: Router,
     private commonService: CommonService,
     private homeStateService: HomeStateService,
-    private onboardingService: OnboardingService
+    private onboardingService: OnboardingService,
+    public logeventservice: LogEventService,
+    private navigationService: NavigationService
   ) {
  
     this.navigationItems = SharedService.getPreferenceDataForHome();
@@ -172,6 +176,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+    this.logeventservice.logEvent('view_homepage');
     this.isSubscriber = SharedService.isSubscriber();
     console.log('Is Subscriber:', this.isSubscriber);
 
@@ -806,6 +812,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onNavigationClick(item): void {
     console.log(item);
+    if(item && item.displayName){
+      this.logeventservice.logEvent('select_category_' + item.displayName.replace(/\s+/g, '').toLowerCase());
+    }
+
+    // Clear fragment from URL after manual tab switch to fix back navigation issues
+    this.clearUrlFragment();
 
     // Save active preference to store
     this.homeStateService.setActivePreference(item.id);
@@ -846,10 +858,23 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     })
   };
 
-  onCardClick(card: ContentCard): void {
+  onCardClick(card: ContentCard, section?: ContentSection): void {
     console.log('DEBUG: Card clicked:', card);
+
+    if (section && section.title && card && card.id) {
+      const sectionName = section.title.replace(/\s+/g, '').toLowerCase();
+      const tabPrefix = this.getTabNamePrefix();
+      const prefix = tabPrefix ? `${tabPrefix}_` : '';
+      const eventName = `click_${prefix}${sectionName}_${card.id}`;
+      console.log(`%c [ANALYTICS EVENT] Triggering Card Click: ${eventName}`, 'color: #bada55; font-size: 14px');
+      this.logeventservice.logEvent(eventName);
+    }
+
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
     const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/') || (card.path || '').includes('youtubelink');
+    const isMicroLearning = !!(card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning')));
+    const isShortVideo = type === 'VIDEO' || type === 'SHORT';
+
     console.log('DEBUG: Is Event:', isEvent);
 
     if (isEvent) {
@@ -889,7 +914,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           card.isRead === '0' ||
           card.isRead === 0
         );
-        if (isUnseen) {
+        if (isUnseen && !isShortVideo) {
           this.homeStateService.markCardAsSeen(card.id);
           card.isRead = '1';
         }
@@ -905,6 +930,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     // Only mark as seen if user can actually access the content
     const isLocked = card && (card.isFree === '0' || card.isFree === 0);
     if (!this.isSubscriber && isLocked) {
+      const tabPrefix = this.getTabNamePrefix();
+      const prefix = tabPrefix ? `${tabPrefix}_` : '';
+      this.logeventservice.logEvent(`click_${prefix}locked_content`);
       // Card is locked and user is not subscriber - don't mark as seen
       this.showModal = true;
       this.cardClick.emit(card);
@@ -920,9 +948,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       card.isRead === 0
     );
 
-    const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
-
-    if (isUnseen && !isMicroLearning) {
+    if (isUnseen && !isMicroLearning && !isShortVideo) {
       console.log('Marking card as seen in state:', card.id);
       this.homeStateService.markCardAsSeen(card.id);
       // Update the card immediately for UI feedback
@@ -930,7 +956,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     // Persist selected short video info so s3-video can play exact clicked item
     try {
-      const isShortVideo = (card.moduleType || '').toUpperCase() === 'VIDEO' || (card.mediaType || '').toUpperCase() === 'SHORT';
       if (isShortVideo && card.path) {
         let linkcode = '';
         if (card.path.includes('/wisdom_shorts/videos/')) {
@@ -956,7 +981,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       console.warn('Failed to persist short video data', e);
     }
     if (card.path && card.path.includes('?')) {
-      const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
       if (isMicroLearning) {
         const parts = card.path.split('/');
         const id = parts[parts.length - 1]?.split('?')[0];
@@ -983,7 +1007,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
     if (card.path) {
-      const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
       if (isMicroLearning) {
         const parts = card.path.split('/');
         const id = parts[parts.length - 1];
@@ -1046,6 +1069,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
     if (type.includes('VIDEO') || type.includes('SHORT')) {
+      this.logeventservice.logEvent('play_video');
       const url = card.path || '';
       if (url.includes('/wisdom_shorts/videos/')) {
         const shortId = this.extractShortIdFromUrl(url);
@@ -1174,11 +1198,39 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  getTabNamePrefix(): string {
+    if (this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
+      const activeTopic = this.YourTopicofChoice[0];
+      if (activeTopic && activeTopic.displayName && activeTopic.displayName !== 'All') {
+        const name = activeTopic.displayName.trim();
+        const words = name.split(/[\s-]+/);
+        if (words.length > 1) {
+          return words.map(w => w.charAt(0).toUpperCase()).join('');
+        } else {
+          return name.substring(0, 3).toLowerCase();
+        }
+      }
+    }
+    return '';
+  }
+
   onSectionToggle(section: ContentSection): void {
     // Only toggle for normal accordion sections (not inline)
     if (section.isInlineSection) {
       return;
     }
+
+    if (!section.isExpanded) {
+        if (section.title) {
+            const sectionName = section.title.replace(/\s+/g, '').toLowerCase();
+            const tabPrefix = this.getTabNamePrefix();
+            const prefix = tabPrefix ? `${tabPrefix}_` : '';
+            const eventName = `click_${prefix}${sectionName}`;
+            console.log(`%c [ANALYTICS EVENT] Triggering Accordion Expand: ${eventName}`, 'color: #bada55; font-size: 14px');
+            this.logeventservice.logEvent(eventName);
+        }
+    }
+
     section.isExpanded = !section.isExpanded;
 
     // Save state to store
@@ -1381,6 +1433,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     if ((title.includes('podcast') || title.includes('short') || title.includes('micro-learning') || title.includes('microlearning') || 
          url.includes('podcast') || url.includes('short') || url.includes('micro-learning')) 
+        && !title.includes('understand your mind') && !url.includes('understand-your-mind') && !url.includes('understand your mind')
         && this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
       const activeTopic = this.YourTopicofChoice[0];
       if (activeTopic && activeTopic.displayName && activeTopic.displayName !== 'All') {
@@ -1549,6 +1602,19 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
+   * Clear the URL fragment (hash) using window.history.replaceState for immediate browser-level history update
+   */
+  private clearUrlFragment(): void {
+    if (window.location.hash) {
+      const url = window.location.pathname + window.location.search;
+      window.history.replaceState(null, '', url);
+      // Sync internal app history with the cleaned URL to fix back navigation issues
+      this.navigationService.replaceLastHistory(url);
+      console.log('URL Fragment cleared immediately via replaceState and history synced');
+    }
+  }
+
+  /**
    * Activate navigation item based on hash
    * This method activates the navigation item and loads its content
    */
@@ -1594,6 +1660,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     setTimeout(() => {
       this.scrollToActiveList();
     }, 500);
+
+    // Clear hash immediately after use to fix back navigation issues
+    this.clearUrlFragment();
   }
 
   /**
@@ -1635,6 +1704,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle focus event - show all modules or filtered results
    */
   onFocus(): void {
+    const eventName = 'click_search';
+    console.log(`%c [ANALYTICS EVENT] Triggering Search Click: ${eventName}`, 'color: #bada55; font-size: 14px');
+    this.logeventservice.logEvent(eventName);
+    
     if (this.moduleList.length === 0) {
       this.getModuleList();
     }
@@ -1660,8 +1733,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Navigate to search page when Enter is pressed or search result is clicked
    */
-  getinp(searchTerm: string): void {
+  getinp(searchTerm: string, fromDropdown: boolean = false): void {
     if (searchTerm && searchTerm.trim() !== '') {
+      if (!fromDropdown) {
+        const eventName = `search_${searchTerm.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
+        console.log(`%c [ANALYTICS EVENT] Triggering Search Submit: ${eventName}`, 'color: #bada55; font-size: 14px');
+        this.logeventservice.logEvent(eventName);
+      }
+
       const prefix = SharedService.getprogramName();
       const url = `/${prefix}/site-search/${searchTerm}`;
       this.router.navigate([url]);
@@ -1672,16 +1751,24 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle search result click - navigate to search page
    */
   searchEvent(moduleName: string): void {
+    const eventName = `search_dropdown_${moduleName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
+    console.log(`%c [ANALYTICS EVENT] Triggering Search Dropdown: ${eventName}`, 'color: #bada55; font-size: 14px');
+    this.logeventservice.logEvent(eventName);
+
     this.searchinp = moduleName;
     this.searchResult = [];
     this.toggleBodyScroll(false);
-    this.getinp(moduleName);
+    this.getinp(moduleName, true);
   }
 
   /**
    * Clear search and hide dropdown
    */
   clearSearch(): void {
+    const eventName = 'click_search_clear';
+    console.log(`%c [ANALYTICS EVENT] Triggering Search Clear: ${eventName}`, 'color: #bada55; font-size: 14px');
+    this.logeventservice.logEvent(eventName);
+
     this.searchinp = '';
     this.searchResult = [];
     this.toggleBodyScroll(false);

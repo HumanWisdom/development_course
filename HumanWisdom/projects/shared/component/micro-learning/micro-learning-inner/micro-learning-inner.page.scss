@@ -263,6 +263,20 @@ p {
 }
 
 
+.contentdiv {
+    pointer-events: none;
+    user-select: none;
+    touch-action: pan-y !important;
+
+    // Re-enable for all interactive elements
+    a, 
+    button, 
+    ::ng-deep a, 
+    ::ng-deep button {
+        pointer-events: auto !important;
+    }
+}
+
 .pb_8rem {
     padding-bottom: 20px;
 }

@@ -41,6 +41,8 @@ export class S125001Page implements OnInit,OnDestroy {
   isLoggedIn = false;
   isSubscriber = false;
   config: any;
+  isContentsOpen = false;
+  isRelatedOpen = false;
  
   moduleData:ProgramModel;
 
@@ -53,7 +55,7 @@ export class S125001Page implements OnInit,OnDestroy {
   ) 
   { 
     this.config = SharedService.getScreenConfiguration("SoundCapes");
-    this.getSetModuleData(125);
+    this.service.setmoduleID(125);
     this.url.queryParams.subscribe(params => {      this.t = params['t'];
     })
      
@@ -106,22 +108,8 @@ export class S125001Page implements OnInit,OnDestroy {
     }
 
     if(!localStorage.getItem("NaviagtedFrom"))  
-    localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/live-your-best-life');
+    localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/succeed-in-life');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
-    // /continue where you left
-
-    
-    
     if(this.saveUsername==false)
     {
       this.userId=JSON.parse(sessionStorage.getItem("userId"))
@@ -130,6 +118,13 @@ export class S125001Page implements OnInit,OnDestroy {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
+
+    // continue where you left    
+    this.service.clickModule(125, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
 
     if(!this.t) //if no token in url- not shared
     {
@@ -141,7 +136,6 @@ export class S125001Page implements OnInit,OnDestroy {
       console.log("show")
     }
    
-    this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
   }
@@ -196,14 +190,6 @@ export class S125001Page implements OnInit,OnDestroy {
     this.router.navigate(['/teenagers/journal'])
   }
 
-  getSetModuleData(moduleId){
-    this.service.setmoduleID(moduleId);
-    this.service.getModulebyId(moduleId).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
-      
-     });
-  }
 
   getClickEvent(data) {
     // if (!this.isSubscriber) {
@@ -234,5 +220,15 @@ export class S125001Page implements OnInit,OnDestroy {
       moduleName
     ]);
   }
+  Resume(url) {
+    this.router.navigate([url + this.pgResume])
+  }
 
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
+
+  toggleRelated() {
+    this.isRelatedOpen = !this.isRelatedOpen;
+  }
 }

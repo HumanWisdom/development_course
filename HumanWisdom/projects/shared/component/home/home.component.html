@@ -61,8 +61,8 @@
                   <div class="row adsearch" *ngIf="searchResult.length > 0">
                     <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                       <ul class="list-group autocomplete-list adsearch_ul">
-                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" (keydown.enter)="searchEvent(item.ModuleName)" name="list"
-                          class="is-search list-group-item">
+                        <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)"
+                          (keydown.enter)="searchEvent(item.ModuleName)" name="list" class="is-search list-group-item">
                           {{item.ModuleName}}
                         </li>
                       </ul>
@@ -137,7 +137,8 @@
                             <div class="d-flex card-container " *ngIf="!section.isVerticalCards">
                               <div *ngFor="let card of getDisplayCards(section)" class="card-wrapper"
                                 style="min-width: 160px; flex-shrink: 0;">
-                                <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
+                                <app-content-card [card]="card"
+                                  (cardClick)="onCardClick($event, section)"></app-content-card>
                               </div>
                               <!-- View More link for horizontal sections -->
                               <div *ngIf="shouldShowViewMore(section)"
@@ -154,7 +155,8 @@
                               <!-- View All link for horizontal sections - only show when reached end -->
                               <div *ngIf="hasReachedEnd(section)"
                                 class="d-flex align-items-center justify-content-center view-more-container"
-                                style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)" (keydown.enter)="onViewAll(section)">
+                                style="min-width: 160px; flex-shrink: 0; cursor: pointer;" (click)="onViewAll(section)"
+                                (keydown.enter)="onViewAll(section)">
                                 <a class="btn btn-link text-decoration-underline view-more-btn"
                                   style="text-decoration: underline !important;  font-size: 1.5rem !important;">
                                   View all<img
@@ -172,7 +174,8 @@
                                   <!-- Special layout for Life stories and Blogs -->
                                   <div *ngIf="section.rawSectionType === 2"
                                     class="story-blog-card d-flex align-items-center position-relative"
-                                    style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
+                                    style="background-color: rgba(255, 232, 187, 1);"
+                                    (click)="onCardClick(card, section)">
                                     <!-- Tick Icon - Top Right Corner of Card -->
                                     <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
                                       <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
@@ -203,7 +206,8 @@
                                   <!-- Special layout for Quick Answers (sectionType 3) -->
                                   <div *ngIf="section.rawSectionType === 3"
                                     class="quick-answer-card d-flex align-items-center justify-content-between p-3 "
-                                    style="background-color: rgba(255, 232, 187, 1);" (click)="onCardClick(card)">
+                                    style="background-color: rgba(255, 232, 187, 1);"
+                                    (click)="onCardClick(card, section)">
                                     <div class="flex-grow-1">
                                       <span class="mb-0  fw-normal fs15">{{ card.title }}</span>
                                     </div>
@@ -226,7 +230,7 @@
                                   </div>
                                   <!-- Default card layout for other sections -->
                                   <app-content-card *ngIf="section.rawSectionType !== 2 && section.rawSectionType !== 3"
-                                    [card]="card" (cardClick)="onCardClick($event)">
+                                    [card]="card" (cardClick)="onCardClick($event, section)">
                                   </app-content-card>
                                 </div>
                               </div>
@@ -304,7 +308,8 @@
                                  [class.py-3]="section.title === 'Long term solutions'" -->
                                 <div *ngFor="let card of getDisplayCards(section)" class="card-wrapper"
                                   style="min-width: 160px; flex-shrink: 0;">
-                                  <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
+                                  <app-content-card [card]="card"
+                                    (cardClick)="onCardClick($event, section)"></app-content-card>
                                 </div>
                                 <!-- View More link for horizontal sections in accordion -->
                                 <div *ngIf="shouldShowViewMore(section)"
@@ -342,7 +347,7 @@
                                     <!-- Special layout for Life stories and Blogs -->
                                     <div *ngIf="section.rawSectionType === 2"
                                       class="story-blog-card d-flex align-items-center position-relative"
-                                      (click)="onCardClick(card)">
+                                      (click)="onCardClick(card, section)">
                                       <!-- Tick Icon - Top Right Corner of Card -->
                                       <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
                                         <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
@@ -381,7 +386,7 @@
                                     <!-- Special layout for Quick Answers (sectionType 3) -->
                                     <div *ngIf="section.rawSectionType === 3"
                                       class="quick-answer-card d-flex align-items-center justify-content-between  cursor-pointer p-3"
-                                      (click)="onCardClick(card)">
+                                      (click)="onCardClick(card, section)">
                                       <div class="flex-grow-1">
                                         <h6 class="mb-0 fw-normal">{{ card.title }}</h6>
                                       </div>
@@ -402,7 +407,7 @@
                                     <!-- Default card layout for other sections -->
                                     <app-content-card
                                       *ngIf="section.rawSectionType !== 2 && section.rawSectionType !== 3" [card]="card"
-                                      (cardClick)="onCardClick($event)">
+                                      (cardClick)="onCardClick($event, section)">
                                     </app-content-card>
                                   </div>
                                 </div>
@@ -487,7 +492,8 @@
                             </div>
 
                             <!-- copy column -->
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()" (keydown.enter)="goToSubscribe()" >
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()"
+                              (keydown.enter)="goToSubscribe()">
                               <h4 class="mtb0px fs_21px lh_130p"
                                 [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
                                 Start your free trial today!

@@ -21,7 +21,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private _isPlaying: boolean = true;
   private _isTransitioning: boolean = false;
   private _isAtCorner: boolean = true; // GIF plays in corner position from the start
-  private gifAnimationDuration = 4000; // Duration of GIF animation in milliseconds (4 seconds) - reduced for quicker dialogue
+  private gifAnimationDuration = 6000; // Duration of GIF animation in milliseconds (10 seconds)
   public gifUrl: string = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif'; // Dynamic GIF URL
   private gifPlayedOnce: boolean = false; // Track if GIF has played once
   private gifAnimationTimeout: any = null; // Track GIF animation timeout to prevent multiple calls
@@ -45,16 +45,13 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly DIALOGUE_SHOWN_KEY = 'owl_dialogue_shown'; // localStorage key to track if dialogue has been shown
   private dialogueAlreadyShown: boolean = false; // Track if dialogue has been shown in this session
 
-  // Cloud image properties
-  public showCloudMessage: boolean = false; // Controls visibility of cloud message
-  public currentCloudImage: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg'; // Current cloud image
-  private cloudImages: string[] = [
-    'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg',
-    'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Ask+me+a+question.svg'
-  ];
-  private currentCloudIndex: number = 0;
+  // Cloud image: only OLLY_HI – fade in on open, fade out on close
+  public showCloudMessage: boolean = false;
+  public cloudFadeIn: boolean = false; // Fade-in effect when cloud opens
+  private readonly OLLY_HI_URL = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
+  public currentCloudImage: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
   private cloudImageInterval: any = null;
-  private readonly CLOUD_SWITCH_INTERVAL = 3000; // Switch images every 3 seconds
+  private readonly CLOUD_FADE_IN_MS = 1800;
 
   // Debug flag - set to true to test static owl immediately
   private debugMode: boolean = false;
@@ -93,10 +90,9 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     // Check if dialogue has been shown before
     this.dialogueAlreadyShown = localStorage.getItem(this.DIALOGUE_SHOWN_KEY) === 'true';
 
-    // Debug mode - show static owl immediately for testing
+    // Debug mode - show static owl immediately for testing (cloud shows 200ms after image loads)
     if (this.debugMode) {
       this.showStaticOwl = true;
-      this.startSpeakingSequence();
       this.cdr.detectChanges();
       return;
     }
@@ -422,6 +418,16 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     return window.innerWidth <= 600;
   }
 
+  /**
+   * Called when the static owl image (owlwingsdown.png) has loaded.
+   * Triggers the speaking sequence so Olly_Hi.svg cloud appears 200ms later
+   * (via the delay inside startSpeakingSequence).
+   */
+  onStaticOwlImageLoaded(): void {
+    this.startSpeakingSequence();
+    this.cdr.detectChanges();
+  }
+
   // GIF load handler
   onGifLoaded() {
     // Prevent multiple calls - critical to stop GIF from playing multiple times
@@ -435,17 +441,19 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.gifLoaded = true;
     this.cdr.detectChanges();
 
-    // Mark GIF as shown in sessionStorage (only once per session)
-    sessionStorage.setItem(this.GIF_SHOWN_KEY, 'true');
-     this.startSpeakingSequence();
-      this.cdr.detectChanges();
-    // Stop GIF after one play cycle - hide immediately to prevent looping
-    // This ensures the GIF plays only once - concrete solution
+    // Do NOT set GIF_SHOWN_KEY here - that causes checkRouteAndSetOwlDisplay() to hide
+    // the GIF immediately on its next run (50ms, 150ms, etc.). Set it only in the
+    // timeout callback after gifAnimationDuration so the GIF stays visible for full duration.
+    // Cloud (Olly_Hi.svg) is shown by onStaticOwlImageLoaded() 200ms after static owl image loads.
+    this.cdr.detectChanges();
+
+    // Stop GIF after gifAnimationDuration - keeps GIF visible for full duration
     this.gifAnimationTimeout = setTimeout(() => {
-      // Mark as played immediately
+      // Mark as played and as shown only when we actually hide the GIF
       this.gifPlayedOnce = true;
-     
-      // IMMEDIATELY hide GIF and show static owl - this stops the looping
+      sessionStorage.setItem(this.GIF_SHOWN_KEY, 'true');
+
+      // Hide GIF and show static owl
       this.showGif = false;
       this.showStaticOwl = true;
       this.isPlaying = false;
@@ -501,16 +509,13 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
         gifEl.style.display = 'none';
       }
 
-      // Only show dialogue if it hasn't been shown before (first time only)
-      if (!this.dialogueAlreadyShown) {
-        this.startSpeakingSequence();
-      } else {
-        // Clear message if dialogue was already shown
+      // Cloud (Olly_Hi.svg) is shown by onStaticOwlImageLoaded() 200ms after static owl image loads
+      if (this.dialogueAlreadyShown) {
         this.owlMessage = '';
         this.isSpeaking = false;
       }
       this.cdr.detectChanges();
-    }, 2000);
+    }, 2500);
   }
 
   // Called when GIF animation completes
@@ -518,11 +523,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.isPlaying = false;
     this.showGif = false;
     this.showStaticOwl = true;
-    // Only show dialogue if it hasn't been shown before (first time only)
-    if (!this.dialogueAlreadyShown) {
-      this.startSpeakingSequence();
-    } else {
-      // Clear message if dialogue was already shown
+    // Cloud (Olly_Hi.svg) is shown by onStaticOwlImageLoaded() 200ms after static owl image loads
+    if (this.dialogueAlreadyShown) {
       this.owlMessage = '';
       this.isSpeaking = false;
     }
@@ -568,38 +570,32 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     // Mark dialogue as shown immediately to prevent multiple calls
-    this.dialogueAlreadyShown = true;
+
+    setTimeout(() => {
+       this.dialogueAlreadyShown = true;
     localStorage.setItem(this.DIALOGUE_SHOWN_KEY, 'true');
 
-    // Show first cloud message immediately: "Hi I'm Olly"
-    // This ensures cloud appears right after GIF finishes
+    // Show only OLLY_HI – fade in on open, fade out on close
+    this.currentCloudImage = this.OLLY_HI_URL;
     this.showCloudMessage = true;
-    this.currentCloudIndex = 0;
-    this.currentCloudImage = this.cloudImages[0]; // Olly_Hi.svg
+    this.cloudFadeIn = true;
     this.isSpeaking = true;
-
-    // Force immediate change detection to show cloud right away
+    this.isDisappearing = false;
     this.cdr.detectChanges();
+    }, 1000);
+   
 
-    // After 3 seconds, switch to second image: "Ask me a question"
-    const switchToSecond = setTimeout(() => {
-      this.currentCloudIndex = 1;
-      this.currentCloudImage = this.cloudImages[1]; // Olly_Ask+me+a+question.svg
+    // Clear fade-in class after animation so cloud stays visible
+    const clearFadeIn = setTimeout(() => {
+      this.cloudFadeIn = false;
       this.cdr.detectChanges();
-    }, 3000);
-    this.messageTimers.push(switchToSecond);
+    }, this.CLOUD_FADE_IN_MS);
+    this.messageTimers.push(clearFadeIn);
 
-    // Stop the speaking animation after showing both messages
-    const stopSpeaking = setTimeout(() => {
-      this.isSpeaking = false;
-      this.cdr.detectChanges();
-    }, 6000);
-    this.messageTimers.push(stopSpeaking);
-
-    // After showing both messages, remove the cloud entirely with reverse animation
+    // After display duration, close with fade out
     const hideCloud = setTimeout(() => {
       this.hideCloudWithAnimation();
-    }, 9000);
+    }, 5000);
     this.messageTimers.push(hideCloud);
   }
 

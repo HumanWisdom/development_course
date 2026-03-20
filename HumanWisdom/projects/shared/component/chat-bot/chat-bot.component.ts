@@ -406,13 +406,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       this.chatbotService.trackLinkClick(clickedUrl).subscribe({
         next: (response) => {
           console.log('Link click tracked successfully:', response);
-          // Navigate to the URL in the same tab after successful tracking
-          window.location.href = clickedUrl;
+          // Navigate to the URL using Angular Router
+          this.navigateToUrl(clickedUrl);
         },
         error: (error) => {
           console.error('Error tracking link click:', error);
           // Even if tracking fails, navigate to the URL so user isn't blocked
-          window.location.href = clickedUrl;
+          this.navigateToUrl(clickedUrl);
         }
       });
     }
@@ -715,8 +715,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   sanitizeHtml(html: string): SafeHtml {
-    console.log('HTML Content:', html);
-    console.log('Contains anchor tags:', html.includes('<a'));
+    
 
     // Add inline styles to anchor tags as a workaround
     const styledHtml = html.replace(/<a\s+([^>]*?)>/gi, (match, attributes) => {
@@ -728,9 +727,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
-    console.log('Styled HTML:', styledHtml);
+    
     const sanitized = this.sanitizer.bypassSecurityTrustHtml(styledHtml);
-    console.log('Sanitized result:', sanitized);
+   
     return sanitized;
   }
 
@@ -778,13 +777,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             this.chatbotService.trackLinkClick(clickedUrl).subscribe({
               next: (response) => {
                 console.log('Link click tracked successfully:', response);
-                // Navigate to the URL in the same tab after successful tracking
-                window.location.href = clickedUrl;
+                // Navigate to the URL using Angular Router
+                this.navigateToUrl(clickedUrl);
               },
               error: (error) => {
                 console.error('Error tracking link click:', error);
                 // Even if tracking fails, navigate to the URL so user isn't blocked
-                window.location.href = clickedUrl;
+                this.navigateToUrl(clickedUrl);
               }
             });
           }
@@ -823,7 +822,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   isGuestUser(): boolean {
     const currentUserId = SharedService.getUserId();
     const GUEST_USER_ID = 563;
-    return currentUserId === GUEST_USER_ID;
+    return currentUserId === GUEST_USER_ID || currentUserId <= 0;
   }
 
   private checkHistoryAvailability(): void {
@@ -936,4 +935,19 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       this.hasHistoryAvailable = false;
     }
   }
+
+  /**
+   * Navigate to a URL - extracts path from full URL and uses Angular Router
+   * Since URLs are always full URLs like https://happierme.app/adults/blog-article?sId=54,
+   * we extract whatever comes after the origin (/adults/blog-article?sId=54) and use navigateByUrl
+   */
+  private navigateToUrl(url: string): void {
+      // Parse the URL to extract the path
+      const urlObj = new URL(url);
+      // Extract whatever comes after the origin (pathname + search + hash)
+      const path = urlObj.pathname + urlObj.search + urlObj.hash;
+     
+          this.router.navigateByUrl(path);
+           
+}
 }

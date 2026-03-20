@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, Input, Output, EventEmitter, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
@@ -13,7 +13,7 @@ import { HomeStateService } from '../../../services/home-state.service';
   templateUrl: './micro-learning-end.page.html',
   styleUrls: ['./micro-learning-end.page.scss'],
 })
-export class MicroLearningEndPage implements OnInit {
+export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
   @Input() isSubComponent = false;
   @Input() contentId: any;
   @Output() journalStatus = new EventEmitter<string>();
@@ -34,13 +34,17 @@ export class MicroLearningEndPage implements OnInit {
   private containerWidth = 0;
   private isHorizontalSwipe = false;
 
+  @ViewChild('learningDiv') learningDivRef: ElementRef;
+  private boundTouchMove: ((e: Event) => void) | null = null;
+
   constructor(
     private router: Router,
     private location: Location,
     private commonService: CommonService,
     private route: ActivatedRoute,
     private ngNavigatorShareService: NgNavigatorShareService,
-    private homeStateService: HomeStateService
+    private homeStateService: HomeStateService,
+    private cdr: ChangeDetectorRef
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     const state = this.router.getCurrentNavigation()?.extras.state;
@@ -91,6 +95,31 @@ export class MicroLearningEndPage implements OnInit {
     }
   }
 
+  ngAfterViewInit() {
+    if (!this.isSubComponent && this.learningDivRef?.nativeElement) {
+      // Register as passive so the browser can start native vertical scroll
+      // immediately without waiting for JS — this is the key fix.
+      this.boundTouchMove = (event: Event) => {
+        this.handleTouchMove(event as TouchEvent);
+        // Manually trigger change detection since passive listeners run
+        // outside Angular's zone and dragOffset changes won't auto-detect.
+        this.cdr.detectChanges();
+      };
+      this.learningDivRef.nativeElement.addEventListener(
+        'touchmove',
+        this.boundTouchMove,
+        { passive: true }
+      );
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.boundTouchMove && this.learningDivRef?.nativeElement) {
+      this.learningDivRef.nativeElement.removeEventListener('touchmove', this.boundTouchMove);
+      this.boundTouchMove = null;
+    }
+  }
+
   getMicroLearningScreens() {
     this.commonService.GetMicrolearningScreens(this.contentId).subscribe((res: any) => {
       if (res && res.length > 0) {
@@ -116,15 +145,26 @@ export class MicroLearningEndPage implements OnInit {
     const deltaY = (event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY) - this.touchStartY;
 
     if (!this.isHorizontalSwipe) {
-      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
-        this.isHorizontalSwipe = true;
+      const movedEnough = Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10;
+      if (movedEnough) {
+        if (Math.abs(deltaY) >= Math.abs(deltaX)) {
+          // Vertical gesture — stop intercepting so native scroll works
+          this.isDragging = false;
+          this.dragOffset = 0;
+          return;
+        }
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          this.isHorizontalSwipe = true;
+        }
       }
     }
 
     if (this.isHorizontalSwipe) {
       this.dragOffset = deltaX;
       if (this.dragOffset < 0) this.dragOffset /= 3; // Resistance for swiping left at end
-      if (event.cancelable) event.preventDefault();
+      // No event.preventDefault() needed:
+      //  - passive: true listener cannot call it
+      //  - touch-action: pan-y on .learning already blocks browser horizontal interference
     }
   }
 

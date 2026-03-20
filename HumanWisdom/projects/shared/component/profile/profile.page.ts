@@ -22,13 +22,13 @@ export class ProfilePage implements OnInit {
   actKeys:any;
   myPrograms = []
   weekDays :any;
-  sun = false
-  mon = false
-  tue = false
-  wed = false
-  thu = false
-  fri = false
-  sat = false
+  sun = 0
+  mon = 0
+  tue = 0
+  wed = 0
+  thu = 0
+  fri = 0
+  sat = 0
   email;
   direction = "up";
   paymentDetail;
@@ -46,6 +46,7 @@ export class ProfilePage implements OnInit {
   contentText = 'Are you sure you want to delete your data?';
   isCancel = true;
   isAdults: boolean = true;
+  isloggedIn = false;
 
   constructor(private router: Router, private Onboardingservice: OnboardingService,
     private adultsService: AdultsService,
@@ -109,22 +110,46 @@ initialize(){
 
   ngOnInit() {
     let userId = JSON.parse(localStorage.getItem("userId"))
+    if(userId!=undefined && userId!=null && userId!="563"){
+      this.isloggedIn = true;
+    }
     this.email = localStorage.getItem("email")
     this.myPrograms = this.actKeys?.filter(x => x.MySelf == "1")
-    if (this.weekDays.includes("Sunday"))
-      this.sun = true
+    if (this.weekDays.includes("Sunday") )
+      this.sun = 1
+    else if (new Date().getDay() >0)
+        this.sun = 2
+      
+
     if (this.weekDays.includes("Monday"))
-      this.mon = true
+      this.mon = 1
+     else if (new Date().getDay() >1)
+        this.mon = 2
+
     if (this.weekDays.includes("Tuesday"))
-      this.tue = true
+      this.tue = 1
+     else if (new Date().getDay() >2)
+        this.tue = 2
+
     if (this.weekDays.includes("Wednesday"))
-      this.wed = true
+      this.wed = 1
+     else if (new Date().getDay() >3)
+        this.wed = 2
+      
     if (this.weekDays.includes("Thursday"))
-      this.thu = true
+      this.thu = 1
+     else if (new Date().getDay() >4)
+        this.thu = 2
+
     if (this.weekDays.includes("Friday"))
-      this.fri = true
+      this.fri = 1
+    else if (new Date().getDay() >5)
+        this.fri = 2
+
     if (this.weekDays.includes("Saturday"))
-      this.sat = true
+      this.sat = 1
+    else if (new Date().getDay() >6)
+        this.sat = 2
 
     setTimeout(() => {
       this.Onboardingservice.getuser(userId).subscribe((res) => {

@@ -97,6 +97,9 @@ export class AdultsService {
   clickModule(data: any, userId: any): Observable<any> {
     return this.http.get(this.path + `/clickModule/${data}/${userId}`)
   }
+  clickModuleWithProgram(moduleName: string, programId: number, userId: any): Observable<any> {
+    return this.http.get(this.path + `/clickModule/${moduleName}/${programId}/${userId}`)
+  }
   getPoints(data: any): Observable<any> {
     return this.http.get(this.path + `/UserScore/${data}/${this.programId}`)
   }
@@ -420,23 +423,7 @@ export class AdultsService {
     localStorage.setItem("moduleId", JSON.stringify(id))
     this.clickModule(id, userId)
       .subscribe(res => {
-        localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
-        let qrList = res
-        pgResume = "s" + res.lastVisitedScreen
-        if (res.lastVisitedScreen === '') {
-          localStorage.setItem("lastvisited" + id, 'F')
-        }
-        else {
-          localStorage.setItem("lastvisited" + id, 'T')
-        }
-        sessionStorage.setItem("pgResume" + id, pgResume)
-        mediaPercent = parseInt(res.MediaPercent);
-        // let freeScreens = res.FreeScrs?.map(a => a.ScrNo);
-        // localStorage.setItem("freeScreens", JSON.stringify(freeScreens))
-
-        localStorage.setItem("mediaPercent", JSON.parse(mediaPercent))
-        localStorage.setItem("qrList", JSON.stringify(qrList))
-        console.log(qrList)
+        this.setModuleState(id, res);
       }, error => {
         console.log(error)
       },
@@ -453,6 +440,106 @@ export class AdultsService {
 
   encryptUserId(id) {
     return this.http.get(this.path + `/encryptURL?URL=${id}`)
+  }
+
+
+  private urlModuleMap: { [urlSegment: string]: number } = {};
+
+  ensureModuleContextForUrl(url: string): void {
+    const segments = url.split('/').filter(s => s && s.length > 0);
+    this.detectAndHitClickModule(segments);
+    if (Object.keys(this.urlModuleMap).length > 0) {
+       this.checkAndActivateModule(url, segments, this.urlModuleMap);
+       return;
+    }
+    const cachedMapStr = sessionStorage.getItem('urlModuleMap');
+    if (cachedMapStr) {
+      try {
+        this.urlModuleMap = JSON.parse(cachedMapStr) || {};
+      } catch (e) { }
+    }
+    
+    if (Object.keys(this.urlModuleMap).length > 0) {
+      this.checkAndActivateModule(url, segments, this.urlModuleMap);
+      return;
+    }
+
+    this.getModuleList().subscribe(res => {
+        if (res && res.length) {
+          res.forEach(m => {
+              const segs = m.ModuleUrl ? m.ModuleUrl.split('/').filter(s => s && s.length > 0) : [];
+              if (segs.length > 0) {
+                const key = segs[segs.length - 1]; 
+                this.urlModuleMap[key] = m.ModuleID;
+              }
+          });
+          sessionStorage.setItem('urlModuleMap', JSON.stringify(this.urlModuleMap));
+          this.checkAndActivateModule(url, segments, this.urlModuleMap);
+        }
+    });
+  }
+
+  private detectAndHitClickModule(segments: string[]): void {
+    const innerScreenIndex = segments.findIndex(s => /^s\d+$/.test(s));
+    if (innerScreenIndex > 0) {
+      const moduleName = segments[innerScreenIndex - 1];
+      if (moduleName && !['adults', 'teenagers', 'youngadults', 'course', 'curated'].includes(moduleName)) {
+        const userId = localStorage.getItem("userId") ? localStorage.getItem("userId") : 100;
+        this.clickModuleWithProgram(moduleName, this.programId, userId).subscribe(res => {
+          if (res) {
+             let moduleId = this.urlModuleMap[moduleName];
+             if (!moduleId && res.ModuleID) moduleId = res.ModuleID;
+             if (!moduleId && res.ModuleId) moduleId = res.ModuleId;
+             this.setModuleState(moduleId, res);
+          }
+        });
+      }
+    }
+  }
+
+  private setModuleState(id: any, res: any): void {
+    if (!res) return;
+    if (!id && res.ModuleID) id = res.ModuleID;
+    if (!id && res.ModuleId) id = res.ModuleId;
+    localStorage.setItem("wisdomstories", JSON.stringify(res['scenarios']))
+    if (id) {
+      localStorage.setItem("moduleId", JSON.stringify(id))
+      const pgResume = "s" + (res.lastVisitedScreen || '');
+      if (res.lastVisitedScreen === '' || res.lastVisitedScreen === null || res.lastVisitedScreen === undefined) {
+          localStorage.setItem("lastvisited" + id, 'F')
+      } else {
+          localStorage.setItem("lastvisited" + id, 'T')
+      }
+      sessionStorage.setItem("pgResume" + id, pgResume)
+    }
+    const mediaPercent = parseInt(res.MediaPercent || '0');
+    localStorage.setItem("mediaPercent", JSON.stringify(mediaPercent))
+    localStorage.setItem("qrList", JSON.stringify(res))
+    console.log("[ModuleContext] State initialized for module:", id, res)
+  }
+
+  private checkAndActivateModule(url: string, segments: string[], map: any): void {
+    let expectedModuleId: number | null = null;
+    let expectedModuleName: string | null = null;
+    for (const segment of segments) {
+      if (map[segment] !== undefined) {
+        expectedModuleId = map[segment];
+        expectedModuleName = segment;
+        break;
+      }
+    }
+
+    if (expectedModuleId === null) {
+      return;
+    }
+
+    const storedModuleId = parseInt(localStorage.getItem('moduleId') || '0', 10);
+    if (!isNaN(storedModuleId) && storedModuleId === expectedModuleId) {
+      return;
+    }
+
+    console.log(`[ModuleContext] URL "${url}" expects moduleId=${expectedModuleId}, found="${storedModuleId}". Activating module context.`);
+    this.activateModule(expectedModuleId);
   }
  
  
