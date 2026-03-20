@@ -71,7 +71,7 @@ export class SearchPopularItemsPage implements OnInit {
     this.toggleBodyScroll(false);
     this.isSubscriber = SharedService.isSubscriber();
 
-    this.search =decodeURIComponent(this.route.snapshot.paramMap.get('word'))
+    this.search = decodeURIComponent(this.route.snapshot.paramMap.get('word'))
     this.UserID = localStorage.getItem('userId');
     this.initializeSearchObject();
     this.getSearchData();
@@ -79,6 +79,7 @@ export class SearchPopularItemsPage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
   }
   initializeSearchObject() {
     this.searchData = {
@@ -683,7 +684,7 @@ export class SearchPopularItemsPage implements OnInit {
         }
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       })
-    this.router.navigate([url]);
+    this.router.navigate([url], { state: { source: 'search' } });
   }
 
   timeSince(date) {

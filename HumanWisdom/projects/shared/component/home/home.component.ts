@@ -174,6 +174,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     this.logeventservice.logEvent('view_homepage');
     this.isSubscriber = SharedService.isSubscriber();
     console.log('Is Subscriber:', this.isSubscriber);
@@ -813,6 +814,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.logeventservice.logEvent('select_category_' + item.displayName.replace(/\s+/g, '').toLowerCase());
     }
 
+    // Clear fragment from URL after manual tab switch to fix back navigation issues
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
     // Save active preference to store
     this.homeStateService.setActivePreference(item.id);
 
@@ -864,6 +870,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
     const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/') || (card.path || '').includes('youtubelink');
+    const isMicroLearning = !!(card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning')));
+    const isShortVideo = type === 'VIDEO' || type === 'SHORT';
+
     console.log('DEBUG: Is Event:', isEvent);
 
     if (isEvent) {
@@ -903,7 +912,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           card.isRead === '0' ||
           card.isRead === 0
         );
-        if (isUnseen) {
+        if (isUnseen && !isShortVideo) {
           this.homeStateService.markCardAsSeen(card.id);
           card.isRead = '1';
         }
@@ -935,9 +944,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       card.isRead === 0
     );
 
-    const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
-
-    if (isUnseen && !isMicroLearning) {
+    if (isUnseen && !isMicroLearning && !isShortVideo) {
       console.log('Marking card as seen in state:', card.id);
       this.homeStateService.markCardAsSeen(card.id);
       // Update the card immediately for UI feedback
@@ -945,7 +952,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     // Persist selected short video info so s3-video can play exact clicked item
     try {
-      const isShortVideo = (card.moduleType || '').toUpperCase() === 'VIDEO' || (card.mediaType || '').toUpperCase() === 'SHORT';
       if (isShortVideo && card.path) {
         let linkcode = '';
         if (card.path.includes('/wisdom_shorts/videos/')) {
@@ -971,7 +977,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       console.warn('Failed to persist short video data', e);
     }
     if (card.path && card.path.includes('?')) {
-      const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
       if (isMicroLearning) {
         const parts = card.path.split('/');
         const id = parts[parts.length - 1]?.split('?')[0];
@@ -998,7 +1003,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
     if (card.path) {
-      const isMicroLearning = card.path && (card.path.includes('micro-learning') || card.path.includes('microlearning'));
       if (isMicroLearning) {
         const parts = card.path.split('/');
         const id = parts[parts.length - 1];
