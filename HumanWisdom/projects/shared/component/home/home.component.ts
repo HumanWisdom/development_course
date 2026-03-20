@@ -174,6 +174,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     this.logeventservice.logEvent('view_homepage');
     this.isSubscriber = SharedService.isSubscriber();
     console.log('Is Subscriber:', this.isSubscriber);

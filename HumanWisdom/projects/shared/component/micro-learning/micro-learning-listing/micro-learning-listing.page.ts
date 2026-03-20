@@ -42,6 +42,7 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
     if (userid === 'T' && sub === '1') {
@@ -114,25 +115,20 @@ export class MicroLearningListingPage implements OnInit {
 
   goBack() {
     var url = this.navigationService.navigateToBackLink();
-    
-    // Skip any internal micro-learning pages to find the real previous page (e.g., Search)
+
+    // Skip any internal micro-learning pages or duplicates to find the real previous page
     while (url != null && (
-      url.includes('micro-learning/inner') || 
-      url.includes('micro-learning/end') || 
+      url.includes('micro-learning/inner') ||
+      url.includes('micro-learning/end') ||
       url.split('?')[0].split('#')[0] === this.router.url.split('?')[0].split('#')[0]
     )) {
       url = this.navigationService.navigateToBackLink();
     }
 
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
-      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-      if (navFrom && navFrom != null && navFrom != 'null' && !navFrom.includes('micro-learning')) {
-        this.router.navigateByUrl(navFrom);
-      } else {
-        this.router.navigateByUrl(SharedService.getDashboardUrls());
-      }
-    } else {
+    if (url != null) {
       this.router.navigateByUrl(url);
+    } else {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
     }
   }
 
