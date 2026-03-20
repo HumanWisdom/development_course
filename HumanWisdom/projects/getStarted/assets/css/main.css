@@ -4956,6 +4956,42 @@ input[type="password" i]::-ms-reveal {
     filter: none !important;
     -webkit-filter: none !important;
   }
+
+  /* Also override Bootstrap accordion-button chevrons (accordion-button::after) */
+  #accordion_footer .accordion-button::after,
+  #accordion_footer button.accordion-button::after,
+  .dfooter #accordion_footer .accordion-button::after,
+  .dfooter #accordion_footer button.accordion-button::after {
+    content: "+" !important;
+    color: rgba(255, 255, 255, 1) !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #accordion_footer .accordion-button[aria-expanded="true"]::after,
+  #accordion_footer .accordion-button:not(.collapsed)::after,
+  #accordion_footer button.accordion-button[aria-expanded="true"]::after,
+  #accordion_footer button.accordion-button:not(.collapsed)::after,
+  .dfooter #accordion_footer .accordion-button[aria-expanded="true"]::after,
+  .dfooter #accordion_footer .accordion-button:not(.collapsed)::after,
+  .dfooter #accordion_footer button.accordion-button[aria-expanded="true"]::after,
+  .dfooter #accordion_footer button.accordion-button:not(.collapsed)::after {
+    content: "-" !important;
+    color: rgba(255, 255, 255, 1) !important;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
 }
 
 .fc_clr {

@@ -3,6 +3,33 @@
   display: none !important;
 }
 
+/* Footer accordion: force + / - outside the 768px media wrapper */
+@media screen and (max-width: 900px) {
+  #accordion_footer .accordion-button::after,
+  #accordion_footer button.accordion-button::after,
+  .dfooter #accordion_footer .accordion-button::after,
+  .dfooter #accordion_footer button.accordion-button::after {
+    content: "+" !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  #accordion_footer .accordion-button:not(.collapsed)::after,
+  #accordion_footer button.accordion-button:not(.collapsed)::after,
+  .dfooter #accordion_footer .accordion-button:not(.collapsed)::after,
+  .dfooter #accordion_footer button.accordion-button:not(.collapsed)::after {
+    content: "-" !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
 @media (max-width: 412px) {
   .div_blog {
     width: 300px !important;
@@ -841,7 +868,7 @@
   .tc_faqs.mobile,
   .tc_faqs {
     padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-right: 30px !important;
   }
 
   .tc_faqs.mobile h5,
@@ -2913,3 +2940,26 @@
     color: #ffffff !important;
     background-image: none !important;
   }
+
+  /* Footer accordion: extra safety override for any small-screen width */
+  @media screen and (max-width: 900px) {
+    #accordion_footer .accordion-button::after,
+    #accordion_footer button.accordion-button::after,
+    .dfooter #accordion_footer .accordion-button::after,
+    .dfooter #accordion_footer button.accordion-button::after {
+      content: "+" !important;
+      background-image: none !important;
+      color: #ffffff !important;
+    }
+
+    #accordion_footer .accordion-button:not(.collapsed)::after,
+    #accordion_footer button.accordion-button:not(.collapsed)::after,
+    .dfooter #accordion_footer .accordion-button:not(.collapsed)::after,
+    .dfooter #accordion_footer button.accordion-button:not(.collapsed)::after {
+      content: "-" !important;
+      background-image: none !important;
+      color: #ffffff !important;
+    }
+  }
+
+}

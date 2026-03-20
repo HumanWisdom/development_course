@@ -1,6 +1,28 @@
 <!-- header -->
-<div class="row header_fixed center_flex">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 center_flex header">
+<style>
+  @media (max-width: 767px) {
+    .header_fixed.header {
+      justify-content: flex-start !important;
+    }
+    /* Prevent the fixed 1360px wrapper pushing items off-screen on mobile */
+    .header_fixed.header > div {
+      width: 100% !important;
+      padding: 0 0px !important;
+      justify-content: space-between !important;
+    }
+  }
+  /* Header nav: keep the navbar hover bar, remove text underline */
+  @media (min-width: 768px) {
+    .header_fixed .navbar > ul > li > a:hover {
+      text-decoration: none !important;
+    }
+  }
+</style>
+<div class="header_fixed header" style="    justify-content: center;
+    display: flex;">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12  " style="justify-content: center;width:1360px;
+    text-align: center;
+    display: flex;    padding: 0px 40px;">
 
     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 col-4 p0">
       <a class="" href="../index.php">
@@ -28,7 +50,7 @@
           <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
           </li> -->
           <li><a href="../blogs/blog_index.php" id="blogs" class="nav">Blog</a></li>
-          <li class="dropdown"><a id="organisation" class="nav"><span>For organisations</span> <span class="dropdown-indicator bi-chevron-down"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l5 5 5-5"/></svg></span></a>
+          <li class="dropdown"><a id="organisation" class="nav"><span>For organisations</span> <img class="dropdown-indicator" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/header-arrow.svg" alt="" /></a>
             <ul>
               <li><a  id="work" class="nav">HappierMe for Work</a></li>
               <li><a id="education" class="nav">HappierMe for Education</a></li>
@@ -41,7 +63,12 @@
         </ul>
       </nav>
 
-      <a class="btn_tff btn_tff_tn btn_popup" href="https://onelink.to/qsptex">Try for free</a>
+      <style>
+        a.no-underline-hover:hover {
+          text-decoration: none !important;
+        }
+      </style>
+      <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" href="https://onelink.to/qsptex">Try for free</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     </div>
