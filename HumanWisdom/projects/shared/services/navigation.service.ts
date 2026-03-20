@@ -83,6 +83,17 @@ export class NavigationService {
     this.backClicked = false;
   }
 
+  /**
+   * Replace the last history entry with a new URL
+   * Used when clearing fragments from the URL bar to keep internal history in sync
+   */
+  replaceLastHistory(url: string) {
+    if (this.history.length > 0) {
+      console.log('Replacing last history entry from:', this.history[this.history.length - 1], 'to:', url);
+      this.history[this.history.length - 1] = url;
+    }
+  }
+
 
    dontPushToHistory(url: string) {
     if(url.includes('wisdom-survey') || url.includes('wisdom-score')) {
