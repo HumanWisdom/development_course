@@ -217,7 +217,7 @@ Understanding where fear comes from and learning to manage it can help athletes 
  </h4>
 
                 <h4 class="mtb0px blog_desc">
-Listen to this mini podcast on                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/subscription/start-your-free-trial">
+Listen to this mini podcast on                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~185.mp3/185/F/Performance%20anxiety%20in%20sports/podcast">
 Performance anxiety in sport.</a>
 
    </h4>
@@ -245,7 +245,7 @@ Mental toughness is a key factor in high performance.
 
                 
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                <h4 class="mtb0px blog_desc">
 Athletes with strong mental resilience are better able to handle setbacks, injuries, and losses.
 
                 </h4>
@@ -259,7 +259,7 @@ Developing mental toughness in sports helps athletes bounce back stronger and st
 
                 <h4 class="mtb0px blog_desc">
 Listen to this mini-podcast on
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/subscription/start-your-free-trial">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~200.mp3/200/F/Dealing%20with%20failure/podcast">
  Dealing with failure </a>in sport.
 
 
@@ -339,10 +339,10 @@ Listen to this podcast on                   <a class="blog_highlight_peach td_un
 Avoiding burnout.</a>
 
 </h4>
-<h4 class="mtb0px blog_desc">
+<h4 class="mtb0px blog_sub_title">
 #10 Reconnect with the Joy of Sport
 </h4>
-<h4 class="mtb0px blog_sub_title">
+<h4 class="mtb0px blog_desc">
 Many athletes start playing because they love the game. But pressure and expectations can sometimes take that joy away.
 
 
