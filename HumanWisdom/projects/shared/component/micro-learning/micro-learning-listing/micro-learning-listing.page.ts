@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { CommonService } from "../../../services/common.service";
 import { ProgramType } from "../../../models/program-model";
+import { NavigationService } from "../../../services/navigation.service";
 
 @Component({
   selector: 'app-micro-learning-listing',
@@ -27,7 +28,8 @@ export class MicroLearningListingPage implements OnInit {
     private router: Router,
     private location: Location,
     private commonService: CommonService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private navigationService: NavigationService,
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     this.prefData = SharedService.getPreferenceData();
@@ -40,6 +42,7 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
     if (userid === 'T' && sub === '1') {
@@ -111,8 +114,22 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   goBack() {
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/search`]);
+    var url = this.navigationService.navigateToBackLink();
+
+    // Skip any internal micro-learning pages or duplicates to find the real previous page
+    while (url != null && (
+      url.includes('micro-learning/inner') ||
+      url.includes('micro-learning/end') ||
+      url.split('?')[0].split('#')[0] === this.router.url.split('?')[0].split('#')[0]
+    )) {
+      url = this.navigationService.navigateToBackLink();
+    }
+
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
   }
 
   searchMicroLearning($event) {

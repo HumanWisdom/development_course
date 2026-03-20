@@ -220,6 +220,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
   display: flex;
   flex-direction: column;
   height: 100%;
+  cursor: pointer;
 }
 
 .card-wrapper app-content-card {
