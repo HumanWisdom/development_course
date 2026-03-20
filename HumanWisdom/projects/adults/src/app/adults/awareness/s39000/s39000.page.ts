@@ -22,6 +22,7 @@ export class S39000Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+  isContentsOpen = false;
   bookmark:any
   bookmarkList=[]
   pgResume: any;
@@ -109,6 +110,9 @@ export class S39000Page implements OnInit,OnDestroy {
 
     
   }
+   toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark(){
     if(this.bookmark==0)
       this.bookmark=1

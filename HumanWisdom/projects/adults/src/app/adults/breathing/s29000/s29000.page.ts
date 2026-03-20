@@ -30,6 +30,8 @@ export class S29000Page implements OnInit,OnDestroy
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+              isContentsOpen = false;
+
   isSubscriber = false;
 
 
@@ -115,7 +117,9 @@ export class S29000Page implements OnInit,OnDestroy
     this.startTime = Date.now();
     this.createScreen()
   }
-
+toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark()
   {
     if(this.bookmark==0)

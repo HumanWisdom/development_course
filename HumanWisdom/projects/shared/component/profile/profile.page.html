@@ -88,7 +88,7 @@
                     </div>
                   </div>
 
-                  <div class="profile_pe_div_01 mt20px" >
+                  <div class="profile_pe_div_01 mt10px" >
                     <div class="row center_flex">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
@@ -254,7 +254,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel dpanel_01">
-                    <div class="mb20px">
+                    <div class="mb10px">
                       <h4 class="panel-title dpaneltitle">
                         <div aria-expanded="true">
                           <div class="row">
@@ -301,35 +301,37 @@
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter mt10px">
-                              <h4 class="mtb0px fs_15px fw_600 lh_120p fc_ffffff">
-                                <!-- 5,499 -->
-                                {{loginResponse.Points}}
+                              <h4 class="mtb0px fs_15px fw_600 lh_120p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                           {{ loginResponse.Streak }} {{ loginResponse.Streak == 1 ? 'day' : 'days' }}
                               </h4>
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                              <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
+                              <!-- <h4 class="mtb0px fs_12px fw_400 lh_140p fc_ffffff">
                                 Points
+                              </h4> -->
+                              <h4 class="mtb0px fs_12px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                Streak
                               </h4>
                             </div>
                           </div>
 
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 td_points_boxnew " style="float: right;">
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                 <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ffffff">
                                   <!-- 74% -->
                                   {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
                                 </h4>
                               </div>
 
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                 <h4 class="mtb0px fs_15px fw_600 lh_150p fc_ffffff">
                                   My wellness score
                                 </h4>
                               </div>
 
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt10px">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  mt10px">
                                 <a class="" (click)="survey()">
                                   <h4 class="mtb0px fs_12px fw_500 lh_150p fc_ffffff flex_ai td_underline">
                                     Take the survey
@@ -364,7 +366,7 @@
 
             <!-- hr -->
 
-                  <div class="row mt20px">
+                  <div class="row mt40px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_15px fw_600 lh_150p tleft" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         This week
@@ -374,31 +376,31 @@
 
                   <div class="row mtb15px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 btn_days ws_nowrap center_flex">
-                      <button type="button" class=" btn_profile_days peach " [ngClass]="sun ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days  " [ngClass]="sun>0 ? 'peach' : ''" [disabled]="sun===2" >
                         S
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="mon ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="mon>0 ? 'peach' : ''" [disabled]="mon===2">
                         M
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="tue ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="tue>0 ? 'peach' : ''" [disabled]="tue===2">
                         T
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="wed ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="wed>0 ? 'peach' : ''" [disabled]="wed===2">
                         W
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="thu ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="thu>0 ? 'peach' : ''" [disabled]="thu===2">
                         T
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="fri ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="fri>0 ? 'peach' : ''" [disabled]="fri===2">
                         F
                       </button>
 
-                      <button type="button" class=" btn_profile_days" [ngClass]="sat ? 'peach' : 'gray'">
+                      <button type="button" class=" btn_profile_days" [ngClass]="sat>0 ? 'peach' : ''" [disabled]="sat===2">
                         S
                       </button>
                     </div>
@@ -474,7 +476,7 @@
 
                   <div class="div_pi">
                     <a *ngIf="enablepayment">
-                      <div class="row mt30px">
+                      <div class="row mt40px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
                             <h4 class="mt0px mb5px fs_15px fw_600 lh_150p "

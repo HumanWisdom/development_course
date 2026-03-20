@@ -31,6 +31,7 @@
 }
 
 .mc_end_container {
+    pointer-events: none;
     // padding: 20px 10px;
     border-radius: 15px;
     // background: linear-gradient(180deg, #FFEAB5 0%, #FFF7E6 100%);
@@ -41,6 +42,17 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+
+
+    // Re-enable for everything interactive
+    .mc_end_textarea,
+    .mc_end_btn_journal,
+    .mc_end_resource_card,
+    .mdp_add_to_journal,
+    a,
+    button {
+        pointer-events: auto !important;
+    }
 
     &::before {
         content: "";

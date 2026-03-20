@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { SharedService } from "../../../services/shared.service";
 import { CommonService } from "../../../services/common.service";
 import { ProgramType } from "../../../models/program-model";
+import { NavigationService } from "../../../services/navigation.service";
 
 @Component({
   selector: 'app-micro-learning-listing',
@@ -27,13 +28,21 @@ export class MicroLearningListingPage implements OnInit {
     private router: Router,
     private location: Location,
     private commonService: CommonService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private navigationService: NavigationService,
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     this.prefData = SharedService.getPreferenceData();
+    this.prefData.splice(1, 0, {
+      id: "UYM",
+      displayName: "Understand your mind",
+      active: false,
+      name: 'Understand your mind'
+    });
   }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
     if (userid === 'T' && sub === '1') {
@@ -48,7 +57,7 @@ export class MicroLearningListingPage implements OnInit {
 
   getMicroLearningList() {
     this.isLoading = true;
-    this.commonService.GetMicrolearningList(9).subscribe((res: any) => {
+    this.commonService.GetMicrolearningList(SharedService.ProgramId).subscribe((res: any) => {
       if (res) {
         this.microLearningList = res.map(item => ({
           id: item.microlearningID,
@@ -57,6 +66,7 @@ export class MicroLearningListingPage implements OnInit {
           isRead: item.isRead,
           isFree: item.isFree,
           preferenceIDs: item.PreferenceIDs,
+          isUYM: item.Is_UYM,
           timing: '2' // Default or calculated if available
         }));
         this.filteredList = this.microLearningList;
@@ -68,6 +78,10 @@ export class MicroLearningListingPage implements OnInit {
         });
 
         this.microLearningList.forEach((item) => {
+          if (item.isUYM === '1') {
+            const uymPref = this.prefData.find(p => p.id === 'UYM');
+            if (uymPref) uymPref.active = true;
+          }
           if (item.preferenceIDs && item.preferenceIDs.toString().trim() !== "") {
             const ids = item.preferenceIDs.toString().split(/,\s*/);
             this.prefData.forEach((pref) => {
@@ -89,6 +103,9 @@ export class MicroLearningListingPage implements OnInit {
             this.getUserPref(match.id);
           }
         }
+        setTimeout(() => {
+          this.scrollToActiveTab();
+        }, 200);
       }
       this.isLoading = false;
     }, error => {
@@ -97,8 +114,22 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   goBack() {
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/search`]);
+    var url = this.navigationService.navigateToBackLink();
+
+    // Skip any internal micro-learning pages or duplicates to find the real previous page
+    while (url != null && (
+      url.includes('micro-learning/inner') ||
+      url.includes('micro-learning/end') ||
+      url.split('?')[0].split('#')[0] === this.router.url.split('?')[0].split('#')[0]
+    )) {
+      url = this.navigationService.navigateToBackLink();
+    }
+
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
   }
 
   searchMicroLearning($event) {
@@ -113,12 +144,16 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   getUserPref(type) {
+    if (type === '999') type = 'all';
     this.selectedPref = type;
 
-    if (type === 'all' || type === '999') {
+    if (type === 'all') {
       this.filteredList = this.microLearningList;
     } else {
       this.filteredList = this.microLearningList.filter((item) => {
+        if (type === 'UYM') {
+          return item.isUYM === '1';
+        }
         if (item.preferenceIDs && item.preferenceIDs.toString().trim() !== "") {
           const ids = item.preferenceIDs.toString().split(/,\s*/);
           return ids.includes(type);
@@ -127,6 +162,19 @@ export class MicroLearningListingPage implements OnInit {
         }
         return false;
       });
+    }
+
+    setTimeout(() => {
+      this.scrollToActiveTab();
+    }, 200);
+  }
+
+  scrollToActiveTab() {
+    if (!this.selectedPref) return;
+    const id = this.selectedPref.toString().toLowerCase();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
   }
 

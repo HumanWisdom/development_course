@@ -362,6 +362,7 @@ getAlertcloseEvent($event) {
   }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     this.logeventservice.logEvent('view_homepage');
     localStorage.setItem('callAddtraction', "N");
     SharedService.isRoutedFromLogin = false;

@@ -24184,7 +24184,7 @@ a {
 .search_nav_tabs>li.active>a:hover {
   border: 0;
   border-bottom: 3px solid #ED7D6F;
-  color: #ED7D6F;
+  color: #ED7D6F !important;
   background: transparent;
 }
 
@@ -26466,6 +26466,7 @@ h1 {
   background: #F5F5F5 !important;
   /* height: 100vh; */
 }
+
 .chat-header {
   height: 100px;
   background: linear-gradient(90deg, #05BBBF 0%, #E58D82 100%);
@@ -26474,20 +26475,21 @@ h1 {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  z-index: 1001; 
+  z-index: 1001;
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 375px;
-  pointer-events: auto; 
+  pointer-events: auto;
 }
-  .header-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 
 .mdp_icon {
   margin: 36px 0 19px 0;
@@ -32999,7 +33001,7 @@ body * {
 }
 
 .box_v3_04bevent {
-   height: 220px; 
+  height: 220px;
   width: 100%;
   background: #FFE8BB;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
@@ -33025,6 +33027,7 @@ body * {
   border-radius: 6px;
   object-fit: cover;
 }
+
 .box_v3_04bevent img {
   width: 100%;
   height: 100px;
@@ -34836,12 +34839,13 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .profile_pe_div {
   text-align: center;
   padding: 20px;
-   background: url(https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_profile_box.svg);  
+  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/aduts_profilenew.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: unset;
   /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 16px;
+  /* background-color: #FFE8BB; */
   height: auto;
 }
 
@@ -34859,7 +34863,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .progress_profile {
   height: 6px;
-  background: #FFF;
+  background: #D7586B40;
   border-radius: 10px;
   margin: 0;
 }
@@ -34909,17 +34913,17 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 
 .btn_profile_days {
-  margin: 0;
+  margin: 1px;
   border: 0;
   box-shadow: 0;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 8px;
   background: #FFE8BB !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #fff !important;
+  color: #000 !important;
   text-transform: capitalize;
   margin-right: 10px;
   cursor: unset !important;
@@ -34932,13 +34936,21 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 .btn_profile_days.peach {
   /* background: #ED7D6F !important; */
   background: #D7586B !important;
+  color: #fff !important;
 
 }
 
-.btn_profile_days.gray {
-  /* background: rgba(0, 0, 0, 0.25); */
+.btn_profile_days.peach:disabled {
+  /* background: #ED7D6F !important; */
+  background: #D7586B40 !important;
+  color: #fff !important;
+
+}
+
+/* .btn_profile_days.gray {
+ 
   background: #FFD889 !important;
-}
+} */
 
 .div_middle.left {
   border-left: 1px solid rgba(255, 255, 255, .1);
@@ -37687,21 +37699,18 @@ a:hover .div_like_cnt1 span {
   text-decoration: none !important;
 }
 
-.bgGuided_Journal
-{
-background-color: #D7586B;
+.bgGuided_Journal {
+  background-color: #D7586B;
 
 }
 
-.bgReflections_Journal
-{
-background-color: #803358;
+.bgReflections_Journal {
+  background-color: #803358;
 
 }
 
-.bgmicrolearning_Journal
-{
-background-color: #EEA170;
+.bgmicrolearning_Journal {
+  background-color: #EEA170;
 
 }
 
@@ -37712,6 +37721,6 @@ background-color: #EEA170;
 }
 
 div.contentdiv p {
-   
-    line-height: 140% !important;
+
+  line-height: 140% !important;
 }
