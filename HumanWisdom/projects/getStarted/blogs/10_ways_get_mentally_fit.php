@@ -96,8 +96,12 @@ Just like muscles, the mind becomes stronger with practice. Training the mind ca
 
                 
 
-                <h4 class="mtb0px blog_desc">
-Explore the Self-Awareness and Decision making modules in the HappierMe app to begin building mental strength.
+                <h4 class="mtb0px blog_desc">Explore the 
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#self-awareness">
+
+Self-Awareness </a>and
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/making-better-decisions">
+ Decision making</a> modules in the HappierMe app to begin building mental strength.
 
                 </h4>
 
@@ -135,7 +139,9 @@ These practices are widely used in sports psychology training.
 
                 <h4 class="mtb0px blog_desc blog">
                  
-Explore the Breathing exercises in the HappierMe app to stay composed in high-pressure situations.
+Explore the 
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">
+Breathing exercises</a> in the HappierMe app to stay composed in high-pressure situations.
 
                 </h4>
 
@@ -161,7 +167,9 @@ Meditation and mindfulness exercises can strengthen concentration over time.
 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Explore the Meditation module in the HappierMe app to improve concentration and stay present.
+Explore the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#meditation">
+
+Meditation</a>   module in the HappierMe app to improve concentration and stay present.
 
           
   </h4>
@@ -185,7 +193,9 @@ Learning emotional regulation in sports allows athletes to channel emotions in a
                
 
                 <h4 class="mtb0px blog_desc blog">
-Explore the Managing emotions section in the HappierMe app to better understand and manage your reactions.
+Explore the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#emotions">
+ 
+Managing emotions</a> section in the HappierMe app to better understand and manage your reactions.
 
                 </h4>
 
@@ -207,7 +217,8 @@ Understanding where fear comes from and learning to manage it can help athletes 
  </h4>
 
                 <h4 class="mtb0px blog_desc">
-Listen to this mini podcast on Performance anxiety in sport.
+Listen to this mini podcast on                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/subscription/start-your-free-trial">
+Performance anxiety in sport.</a>
 
    </h4>
 
@@ -232,7 +243,7 @@ Mental toughness is a key factor in high performance.
 
                 
 
-                >
+                
 
                 <h4 class="mtb0px blog_desc blog_highlight_black">
 Athletes with strong mental resilience are better able to handle setbacks, injuries, and losses.
@@ -247,17 +258,21 @@ Developing mental toughness in sports helps athletes bounce back stronger and st
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-The first step is simply noticing: I feel angry.
+Listen to this mini-podcast on
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/subscription/start-your-free-trial">
+ Dealing with failure </a>in sport.
+
 
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb0px blog_sub_title">
                  
-The next step is taking ownership — recognising that this feeling is arising within you. This doesn’t mean others haven’t triggered it. It means that blame doesn’t help us learn.                </h4>
+#7 Manage Stress and Expectations
 
                 <h4 class="mtb0px blog_desc">
                  
-Instead of judging ourselves or others, we become curious.
+Athletes often face pressure from coaches, teammates, fans, and their own expectations.
+
 
                 </h4>
 
@@ -266,223 +281,156 @@ Instead of judging ourselves or others, we become curious.
                
 
                 <h4 class="mtb0px blog_desc">
-We might ask:
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-What’s really going on in my mind right now?
+Learning how athletes manage stress can improve both wellbeing and performance.
 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-With curiosity, we may notice that underneath the anger is an expectation that wasn’t met. We begin to see that it’s the expectation, not the event itself, that is creating the hurt.                </h4>
+Self-awareness helps athletes separate effort from results and focus on the process.
 
-                <h4 class="mtb0px blog_desc">
-This opens the door to deeper understanding:
-                </h4>
 
-                <h4 class="mtb0px blog_desc">
-Where do my expectations come from?
-                </h4>
-                <h4 class="mtb0px blog_desc">
-Are they realistic?
-
-                </h4>
-                <h4 class="mtb0px blog_desc">
-Can I let go of some of them? Can I communicate the rest with kindness, not with anger?                </h4>
-                <h4 class="mtb0px blog_desc">
-Expectations are not right or wrong — they are part of being human. Most of our expecations, of ourselves and others lie hidden from our own awareness. By being curious we can uncover them, examine them, and live more consciously.                </h4>
-                <h4 class="mtb0px blog_desc blog_highlight_black">
-One more example — picking up the phone
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Notice the next time you reach for your phone, without an obvious reason. It’s often an unconscious movement.
+Explore the
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
+ Stress</a> and                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/expectation">
+Expectations </a>modules in the HappierMe app to develop clarity and reduce pressure.
+
+
+                <h4 class="mtb0px blog_sub_title">
+#8 Build Stronger Relationships with Coaches and Teammates
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+Success in sports often depends on teamwork and communication.
+
+                </h4>
+                <h4 class="mtb0px blog_desc">
+Developing emotional intelligence helps athletes build healthy relationships with coaches and teammates, creating a positive performance environment.
+
+
+                </h4>
+                <h4 class="mtb0px blog_desc">
+
+Explore the                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">
+Communication</a> and                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#relationships">
+Relationships</a> modules in the HappierMe app to strengthen connection and teamwork.
+
+</h4>
+                <h4 class="mtb0px blog_sub_title">
+#9 Avoid Burnout in Sports
+                <h4 class="mtb0px blog_desc blog">
+High-level training and constant competition can lead to athlete burnout.
+
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+Mental fitness includes knowing when to rest, recover, and reconnect with the love of the sport.
+
 </h4>
 <h4 class="mtb0px blog_desc">
-Ask yourself — What’s going on in my mind to make me do this?
+Preventing burnout helps athletes sustain long and healthy careers.
+
 </h4>
 
 <h4 class="mtb0px blog_desc">
-You may notice in yourself a certain restlessness or uneasiness, and when you use the phone it goes away.</h4>
-<h4 class="mtb0px blog_desc">
-Be curious. What is this feeling of restlessness, where does it come from, and how does it show up in other areas of your life?
+Listen to this podcast on                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~63.mp3/63/T/Avoiding%20burnout">
+Avoiding burnout.</a>
+
 </h4>
 <h4 class="mtb0px blog_desc">
-You may notice it’s also behind your urge to go shopping, or on holiday and more. It is part of being human, and drives so many of our actions without our own awareness.</h4>
+#10 Reconnect with the Joy of Sport
+</h4>
+<h4 class="mtb0px blog_sub_title">
+Many athletes start playing because they love the game. But pressure and expectations can sometimes take that joy away.
+
 
   <h4 class="mtb0px blog_desc">
-If you go further, and stay with this feeling, not giving in to it, or escaping from it, it transforms to a feeling of peace. Test this, and find out if its true.</h4> 
+Mental fitness helps athletes rediscover their purpose, motivation, and enjoyment in sport.
+
+</h4> 
 <h4 class="mtb0px blog_desc">
-By being curious, you have learned something new about yourself. To find out more, explore the module on Inner Boredom in the app here.
+When athletes enjoy the journey, performance often improves naturally.
+
 </h4>
 
-      <h4 class="mtb0px blog_desc blog_highlight_black">
-What changes when we understand the mind
+      <h4 class="mtb0px blog_desc blog">
+Explore the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/happiness">
+Happiness</a> section in the HappierMe app to reconnect with your love for the sport.
+
 
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-A traffic jam may still be inconvenient, but it doesn’t have to create stress or anger.</h4>    
+                <h4 class="mtb0px blog_sub_title">
+How HappierMe Helps Athletes Build Mental Fitness
+</h4>    
 
 <h4 class="mtb0px blog_desc">
-As we understand ourselves more deeply, it also becomes easier to understand others. We begin to see that, at a fundamental level, we all struggle with similar patterns. That helps our relationships improve and we can have more compassion for others.</h4>
-<h4 class="mtb0px blog_desc">
-If we stop here, we may notice that we still feel hurt from time to time, and don’t feel at peace with ourselves, especially when we are alone.</h4>
-<h4 class="mtb0px blog_desc">
-To find that peace we need to go deeper, and understand the ‘I’ that feels hurt.</h4>
-<h4 class="mtb0px blog_sub_title">
-Step 3: Understanding the “Me”
-
-                </h4>
-
-<h4 class="mtb0px blog_desc">
-In the third step, meditation deepens even further.
+The HappierMe app offers tools designed to support mental training for athletes, including:
 
 </h4>
 <h4 class="mtb0px blog_desc">
-We begin to explore the “I” — the part of us that feels stressed, hurt, lonely, anxious, threatened, or restless.</h4>
-<h4 class="mtb0px blog_desc">
-This can be difficult to describe, because it’s not something we can easily point to. But simply asking the question can be transformative:</h4>
+  <ul>
+    <li>
+      Breathing exercises to stay calm under pressure
 
-<h4 class="mtb0px blog_desc">
-What is the part of me that feels hurt right now?
+    </li>
+     <li>
+      Breathing exercises to stay calm under pressure
 
+    </li>
+     <li>
+Meditation practices to improve focus and concentration
 
+    </li>
+     <li>
+Self-awareness exercises to understand emotions and reactions
+
+    </li>
+     <li>
+Modules on fear, conditioning, and the reactive mind
+
+    </li>
+    <li>                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/podcast#sports">
+
+      Podcasts for athletes and coaches</a>
+    </li>
+  </ul>
 </h4>
-<h4 class="mtb0px blog_desc blog_highlight_black">
-Looking deeper
-
-                </h4>
 <h4 class="mtb0px blog_desc">
-Returning to the earlier example:
-  
-
-<ul>
-<li>
-  Step one calms the mind
-
-</li>
-<li>
-Step two helps us see the role of expectations
-
-</li>
-<li>
-Step three explores who it is that feels hurt or angry
-
-</li>
-
-
-</ul>
-
+By training their mind to be mentally fit, athletes can develop clarity, resilience, and confidence.
 
 </h4>
 
 
-
 <h4 class="mtb0px blog_desc">
-As we explore this, we begin to notice something universal.
-
-
-</h4>
-<h4 class="mtb0px blog_desc">
-Deep down, the sense of “me” often feels restless and dissatisfied. The mind looks outside, for people, possessions, status, or beliefs, to feel better inside.
+Because peak performance comes from training both the body and the mind.
 
 
 </h4>
 <h4 class="mtb0px blog_desc">
-Whatever it finds, makes us feel better for a short time, and then we feel restless again. That why we need more and more, and are never satisfied.
-</h4>
-<h4 class="mtb0px blog_desc">
-We get attached to anyone or anything that meets that inner need.
-Then comes anxiety about losing what we’re attached to.
-And suffering when we do.
-</h4>
-<h4 class="mtb0px blog_desc">
-Often, all this happens without our awareness.
-
-
-</h4>
-<h4 class="mtb0px blog_desc blog_highlight_black">
-What begins to shift
+Start your mental fitness journey today. Explore the HappierMe app to train your mind, manage pressure, and perform at your best, both on and off the field.
 
 </h4>
 <h4 class="mtb0px blog_desc">
-We can ask ourselves: Who am ‘I’? What is this ‘I that is feeling hurt?
-
+To learn more visit                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+happierme.app </a>or download the HappierMe app to explore it for free.
 
 </h4>
 
 <h4 class="mtb0px blog_desc">
-When we ask this question with curiosity, without judgment, and without looking for an answer, something begins to soften.
-
-
-</h4>
-<h4 class="mtb0px blog_desc">
-We may gradually begin to realise that the ‘I’ is a creation of our own thinking, because its not there in deep sleep, when our thoughts are quiet.
-
-
-</h4>
-<h4 class="mtb0px blog_desc">
-As a result of this insight, we may feel less attached, less reactive, and more at ease. Relationships often feel closer and more authentic.
-
-</h4>
-<h4 class="mtb0px blog_desc">
-There will be moments when the mind becomes completely quiet. Moments of deep peace, connection, and freedom from suffering.
-</h4>
-
-<h4 class="mtb0px blog_sub_title">
-A Few Things to Keep in Mind
-
-
-                </h4>
-<h4 class="mtb0px blog_desc">
-If this sounds challenging, remember a few simple points:
-
-<ul>
-<li>
-  Be curious, not goal-driven. There is nothing to achieve
-
-</li>
-<li>
-Don’t judge what you notice as good or bad
-
-</li>
-<li>
-Ask gentle, open questions — what can I learn?
-
-</li>
-<li>
-Be patient, and consistent
-
-</li>
-<li>
-Take the most important step, and begin today
-
-</li>
-<li>
-Remember, this inner journey can be life changing
-
-</li>
-
-</ul>
-
-</h4>
-<h4 class="mtb0px blog_desc ">
-These three steps are just a framework, a way of understanding different aspects of meditation. In reality, it is one unified journey
-</h4>
-<h4 class="mtb0px blog_desc">
-And as your practice deepens, you may discover something important:
+Follow us on                   <a class="blog_highlight_peach td_underline" href="https://linktr.ee/happierme.app">
+social media</a> for daily insights. Subscribe to our                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">
+newsletter </a>for fresh stories and updates.
 
 
 
 </h4>
-<h4 class="mtb0px blog_desc">
-The peace you are looking for ‘out there’ is already within you, waiting to be discovered.
 
 
 
-</h4>
+
 
 
 
