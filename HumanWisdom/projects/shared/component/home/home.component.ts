@@ -9,6 +9,7 @@ import { HomeStateService } from '../../services/home-state.service';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { LogEventService } from '../../services/log-event.service';
+import { NavigationService } from '../../services/navigation.service';
 
 export interface NavigationItem {
   id: string;
@@ -151,7 +152,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private commonService: CommonService,
     private homeStateService: HomeStateService,
     private onboardingService: OnboardingService,
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService,
+    private navigationService: NavigationService
   ) {
  
     this.navigationItems = SharedService.getPreferenceDataForHome();
@@ -815,9 +817,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     // Clear fragment from URL after manual tab switch to fix back navigation issues
-    if (window.location.hash) {
-      window.history.replaceState(null, '', window.location.pathname + window.location.search);
-    }
+    this.clearUrlFragment();
 
     // Save active preference to store
     this.homeStateService.setActivePreference(item.id);
@@ -863,7 +863,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     if (section && section.title && card && card.id) {
       const sectionName = section.title.replace(/\s+/g, '').toLowerCase();
-      const eventName = `click_${sectionName}_${card.id}`;
+      const tabPrefix = this.getTabNamePrefix();
+      const prefix = tabPrefix ? `${tabPrefix}_` : '';
+      const eventName = `click_${prefix}${sectionName}_${card.id}`;
       console.log(`%c [ANALYTICS EVENT] Triggering Card Click: ${eventName}`, 'color: #bada55; font-size: 14px');
       this.logeventservice.logEvent(eventName);
     }
@@ -928,7 +930,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     // Only mark as seen if user can actually access the content
     const isLocked = card && (card.isFree === '0' || card.isFree === 0);
     if (!this.isSubscriber && isLocked) {
-      this.logeventservice.logEvent('click_locked_content');
+      const tabPrefix = this.getTabNamePrefix();
+      const prefix = tabPrefix ? `${tabPrefix}_` : '';
+      this.logeventservice.logEvent(`click_${prefix}locked_content`);
       // Card is locked and user is not subscriber - don't mark as seen
       this.showModal = true;
       this.cardClick.emit(card);
@@ -1194,6 +1198,22 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  getTabNamePrefix(): string {
+    if (this.YourTopicofChoice && this.YourTopicofChoice.length > 0) {
+      const activeTopic = this.YourTopicofChoice[0];
+      if (activeTopic && activeTopic.displayName && activeTopic.displayName !== 'All') {
+        const name = activeTopic.displayName.trim();
+        const words = name.split(/[\s-]+/);
+        if (words.length > 1) {
+          return words.map(w => w.charAt(0).toUpperCase()).join('');
+        } else {
+          return name.substring(0, 3).toLowerCase();
+        }
+      }
+    }
+    return '';
+  }
+
   onSectionToggle(section: ContentSection): void {
     // Only toggle for normal accordion sections (not inline)
     if (section.isInlineSection) {
@@ -1203,7 +1223,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!section.isExpanded) {
         if (section.title) {
             const sectionName = section.title.replace(/\s+/g, '').toLowerCase();
-            const eventName = `click_${sectionName}`;
+            const tabPrefix = this.getTabNamePrefix();
+            const prefix = tabPrefix ? `${tabPrefix}_` : '';
+            const eventName = `click_${prefix}${sectionName}`;
             console.log(`%c [ANALYTICS EVENT] Triggering Accordion Expand: ${eventName}`, 'color: #bada55; font-size: 14px');
             this.logeventservice.logEvent(eventName);
         }
@@ -1580,6 +1602,19 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
+   * Clear the URL fragment (hash) using window.history.replaceState for immediate browser-level history update
+   */
+  private clearUrlFragment(): void {
+    if (window.location.hash) {
+      const url = window.location.pathname + window.location.search;
+      window.history.replaceState(null, '', url);
+      // Sync internal app history with the cleaned URL to fix back navigation issues
+      this.navigationService.replaceLastHistory(url);
+      console.log('URL Fragment cleared immediately via replaceState and history synced');
+    }
+  }
+
+  /**
    * Activate navigation item based on hash
    * This method activates the navigation item and loads its content
    */
@@ -1625,6 +1660,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     setTimeout(() => {
       this.scrollToActiveList();
     }, 500);
+
+    // Clear hash immediately after use to fix back navigation issues
+    this.clearUrlFragment();
   }
 
   /**
