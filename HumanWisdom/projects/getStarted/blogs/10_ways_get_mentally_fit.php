@@ -137,7 +137,7 @@ These practices are widely used in sports psychology training.
 
                 
 
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
                  
 Explore the 
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">
@@ -192,7 +192,7 @@ Learning emotional regulation in sports allows athletes to channel emotions in a
                 
                
 
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
 Explore the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#emotions">
  
 Managing emotions</a> section in the HappierMe app to better understand and manage your reactions.
@@ -320,7 +320,7 @@ Relationships</a> modules in the HappierMe app to strengthen connection and team
 </h4>
                 <h4 class="mtb0px blog_sub_title">
 #9 Avoid Burnout in Sports
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
 High-level training and constant competition can lead to athlete burnout.
 
                 </h4>
@@ -355,7 +355,7 @@ When athletes enjoy the journey, performance often improves naturally.
 
 </h4>
 
-      <h4 class="mtb0px blog_desc blog">
+      <h4 class="mtb0px blog_desc">
 Explore the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/happiness">
 Happiness</a> section in the HappierMe app to reconnect with your love for the sport.
 
@@ -413,7 +413,7 @@ Because peak performance comes from training both the body and the mind.
 Start your mental fitness journey today. Explore the HappierMe app to train your mind, manage pressure, and perform at your best, both on and off the field.
 
 </h4>
-<h4 class="mtb0px blog_desc">
+<!-- <h4 class="mtb0px blog_desc">
 To learn more visit                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
 happierme.app </a>or download the HappierMe app to explore it for free.
 
@@ -426,7 +426,7 @@ newsletter </a>for fresh stories and updates.
 
 
 
-</h4>
+</h4> -->
 
 
 
