@@ -1,4 +1,4 @@
-import { Component, ElementRef, NgZone, OnInit, AfterViewInit, Renderer2, ViewChild } from "@angular/core";
+import { Component, ElementRef, NgZone, OnInit, AfterViewInit, Renderer2, ViewChild, OnDestroy } from "@angular/core";
 import { AbstractControl, NgForm, UntypedFormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { PlatformModule } from '@angular/cdk/platform';
@@ -42,7 +42,7 @@ declare var FB: any;
   templateUrl: "./login-signup.page.html",
   styleUrls: ["./login-signup.page.scss"],
 })
-export class LoginSignupPage implements OnInit, AfterViewInit {
+export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   //static progress mapping
   mediaAudio = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
   mediaVideo = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com";
@@ -133,6 +133,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   enableAlert = false;
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
+  loginStartTime: any;
 
 
   ngAfterViewInit(): void {
@@ -463,6 +464,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     this.loadRecaptchaScript();
     this.initializeRegistrationForm();
     this.loadFacebookSDK();
+    this.loginStartTime = Date.now();
     // let acceptCookie = localStorage.getItem('acceptcookie');
     // if(acceptCookie === null)
     //   this.router.navigate(['/adults/help-support/cookie-policy'])
@@ -526,6 +528,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
         //   this.service.verifyUser(userid).subscribe((res) => { });
       }
     }, 4000);
+    if (!this.isSignUp) {
+      this.logeventservice.logEvent('view_login');
+    }
     // if (!this.router.url.includes('/log-in')) {
     //   window.history.pushState('', '', '/log-in');
     // }
@@ -546,6 +551,13 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
           container.innerHTML = '';
         }
       });
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (!this.isSignUp) {
+      const timeSpent = Math.round((Date.now() - this.loginStartTime) / 1000);
+      this.logeventservice.logEvent('Login_time_spent', true, timeSpent);
     }
   }
 
@@ -605,6 +617,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
               "signupfirst",
               'T'
             );
+            this.logeventservice.logEvent('email_signup_complete');
           }
         },
         (error) => {
@@ -672,9 +685,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
 
   googleLogin(reqtype) {
     if (reqtype == "signup")
-      this.logeventservice.logEvent('google_signup');
-    else
-      this.logeventservice.logEvent('google_login');
+      this.logeventservice.logEvent('click_signup_google');
+    else {
+      this.logeventservice.logEvent('click_login_google');
+    }
 
     this.handleGoogleSignIn();
   }
@@ -843,19 +857,21 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       }).subscribe(
         (res) => {
           if (res) {
-            this.setUpLoginConfiguration(res);
+            this.setUpLoginConfiguration(res, 'google');
           } else {
             this.content = "Google login verification failed. Please try again.";
             this.enableAlert = true;
           }
         },
         (error) => {
+          this.logeventservice.logEvent('google_login_failure');
           console.error('Google verification error:', error);
           this.content = error.error?.Message || error.message || "Google login verification failed. Please try again.";
           this.enableAlert = true;
         }
       );
     } catch (error) {
+      this.logeventservice.logEvent('google_login_failure');
       console.error('Error processing Google response:', error);
       this.content = "Google login failed. Please try again.";
       this.enableAlert = true;
@@ -948,9 +964,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
 
   fbLogin(reqtype) {
     if (reqtype == "signup")
-      this.logeventservice.logEvent('facebook_signup');
+      this.logeventservice.logEvent('click_signup_facebook');
     else
-      this.logeventservice.logEvent('facebook_login');
+      this.logeventservice.logEvent('click_login_facebook');
 
     this.handleFacebookLogin();
   }
@@ -994,7 +1010,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
               })
               .subscribe((res) => {
                 if (res) {
-                  this.setUpLoginConfiguration(res);
+                  this.setUpLoginConfiguration(res, 'facebook');
                 } else {
                   this.content = "Facebook login verification failed. Please try again.";
                   this.enableAlert = true;
@@ -1045,6 +1061,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   }
 
   emailLogin() {
+    this.logeventservice.logEvent('click_login');
     localStorage.removeItem("token");
     if (this.urlEmail) {
       this.service.verifyUser(this.urlEmail).subscribe((res) => { });
@@ -1062,20 +1079,37 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
     );
   }
 
-  public setUpLoginConfiguration(res: any) {
+  public setUpLoginConfiguration(res: any, social = '') {
+    if (social === 'google') {
+      if (this.isSignUp) this.logeventservice.logEvent('google_signup_complete');
+      else this.logeventservice.logEvent('google_login_success');
+    } else if (social === 'facebook') {
+      if (this.isSignUp) this.logeventservice.logEvent('facebook_signup_complete');
+      else this.logeventservice.logEvent('facebook_login_success');
+    } else if (social === 'apple') {
+      if (this.isSignUp) this.logeventservice.logEvent('apple_signup_complete');
+      else this.logeventservice.logEvent('apple_login_success');
+    }
+
     if (res.UserId === 0) {
       this.showAlert = true;
       this.content = "You have entered wrong credentials. Please try again.";
       this.enableAlert = true;
       this.email = "";
       this.password = "";
+      this.logeventservice.logEvent('login_failure');
+      this.logeventservice.logEvent('retry_login');
     } else if (res.UserId === -1) {
       this.showAlert = true;
       this.content = "Email was Not Verified. Please signup again with the same Email ID to verify it.";
       this.enableAlert = true;
       this.email = "";
       this.password = "";
+      this.logeventservice.logEvent('login_error_view');
     } else {
+      this.logeventservice.logEvent('login_success');
+      const timeSpent = Math.round((Date.now() - this.loginStartTime) / 1000);
+      this.logeventservice.logEvent('Login_time_spent', true, timeSpent);
       // Clear home state on successful login so API's isExpanded values are used fresh
       this.homeStateService.resetState();
 
@@ -1375,9 +1409,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
 
   signInWithApple(reqtype) {
     if (reqtype == "signup")
-      this.logeventservice.logEvent('apple_signup');
+      this.logeventservice.logEvent('click_signup_apple');
     else
-      this.logeventservice.logEvent('apple_login');
+      this.logeventservice.logEvent('click_login_apple');
     const CLIENT_ID = "humanwisdom.web.service";
     localStorage.setItem('appleLogin', 'T');
     let REDIRECT_API_URL = environment.appleSignInAPIAdults;
@@ -1425,7 +1459,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
 
 
   routedashboard() {
-    this.logeventservice.logEvent('Guest_Login');
+    this.logeventservice.logEvent('continue_guest');
     localStorage.setItem('btnclick', 'F')
     this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
@@ -1443,6 +1477,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   }
 
   routeForgotPassword() {
+    this.logeventservice.logEvent('click_forgot_password');
     if (this.isAdults) {
       this.router.navigate(['/adults/onboarding/forgotpassword'])
     } else {
@@ -1451,6 +1486,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
   }
 
   getLoginTab() {
+    this.logeventservice.logEvent('view_login');
     this.isSignUp = false;
     this.passwordhide = true;
     this.confirmpasswordhide = true;
@@ -1532,6 +1568,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit {
       grecaptcha.execute('6Lfi18QqAAAAAIBaGMBh91M3we0ZnAdU_StbpwiR', { action: 'submit' }).then(function (token) {
         self.service.verifyCaptcha(token).subscribe(res => {
           if (res) {
+            self.logeventservice.logEvent('click_signup_email');
             self.signup();
           } else {
             alert("Unexpected error ocurred ,try again after refreshing the page.");
