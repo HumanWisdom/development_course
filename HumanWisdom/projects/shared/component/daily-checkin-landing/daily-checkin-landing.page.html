@@ -1,9 +1,10 @@
 <!-- top navigation - with hint -->
-<!-- <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_dailycheckin col_cw">
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_dailycheckin col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
 
@@ -13,7 +14,7 @@
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
     </div>
   </div>
-</div> -->
+</div>
 <!-- /top navigation -->
 
 <div class="right_col mc_03">
