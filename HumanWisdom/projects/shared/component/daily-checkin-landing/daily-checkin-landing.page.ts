@@ -190,19 +190,21 @@ export class DailyCheckInLandingPage implements OnInit {
 
   goToHome() {
     this.logeventservice.logEvent('click_emoji_skip');
-    this.router.navigate([`${SharedService.getprogramName()}/search`]);
+    this.goBack();
+  }
 
-/* 
-    if (this.isFirstLogin) {
-      this.continue();
-    } else {
-      var url = this.navigationService.goBack();
-      if (url == null) {
-        this.router.navigate([SharedService.getDashboardUrls()]);
+  goBack() {
+    var url = this.navigationService.goBack();
+    if (url == null || url.includes('daily-checkin')) {
+      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null' && !navFrom.includes('daily-checkin')) {
+        this.router.navigateByUrl(navFrom);
       } else {
-        this.router.navigate([url]);
+        this.router.navigate([`${SharedService.getprogramName()}/search`]);
       }
-    } */
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
   continue() {
