@@ -5,6 +5,8 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from "../../services/shared.service";
 import { ProgramType } from "../../models/program-model";
 
+import { LogEventService } from '../../services/log-event.service';
+
 @Component({
   selector: 'app-common-set-password',
   templateUrl: './set-password.page.html',
@@ -39,6 +41,7 @@ export class SetPasswordPage implements OnInit {
   constructor(private router:Router,
     private service: OnboardingService,
     // private authService: SocialAuthService,
+    private logeventservice: LogEventService,
     private activate:ActivatedRoute) {
     this.activate.queryParams.subscribe(params => {
       this.urlEmail= params['email'];
@@ -77,11 +80,16 @@ export class SetPasswordPage implements OnInit {
                this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/login"]);
                this.content = 'Password successfully Set';
               this.enableAlert = true;
+              this.logeventservice.logEvent('reset_password_success');
               //  window.alert('Password successfully Set')
 
             }
 
 
+          },
+          error => {
+            console.log(error);
+            this.logeventservice.logEvent('reset_password_failure');
           })
 
     }
