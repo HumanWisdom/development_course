@@ -173,6 +173,18 @@ export class SingleAudioContentComponent implements OnInit {
 
     for (let line of lines) {
       let trimmed = line.trim();
+
+      // Horizontal rule: lines that are exactly ---
+      if (trimmed === '---') {
+        if (inList) {
+          result += '</ul>';
+          inList = false;
+        }
+        const hrColor = this.isAdults ? '#000000' : '#ffffff';
+        result += `<hr style="border: none; margin: 0; border-top: 1px solid ${hrColor};"/>`;
+        continue;
+      }
+
       if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
         if (!inList) {
           result += '<ul style="padding-left: 20px;">';
@@ -193,8 +205,14 @@ export class SingleAudioContentComponent implements OnInit {
     }
     if (inList) result += '</ul>';
 
+    // Bold + italic (***text***) — must be replaced before bold and italic individually
+    result = result.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+
     // Bold text (**text**)
     result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // Italic text (*text*) — single asterisk, not part of ** or ***
+    result = result.replace(/\*([^*]+?)\*/g, '<em>$1</em>');
     
     return this.sanitizer.bypassSecurityTrustHtml(result);
   }
