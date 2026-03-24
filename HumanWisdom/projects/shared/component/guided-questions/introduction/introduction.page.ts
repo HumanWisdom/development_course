@@ -48,7 +48,12 @@ export class IntroductionPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
+    const url = this.navigationService.navigateToBackLink();
+    if (url) {
+      this.router.navigate([url]);
+    } else {
+      this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } });
+    }
   }
 
   

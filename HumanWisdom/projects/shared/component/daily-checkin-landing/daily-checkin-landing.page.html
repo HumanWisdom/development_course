@@ -1,5 +1,5 @@
 <!-- top navigation - with hint -->
-<div class="row center_flex">
+<!-- <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_dailycheckin col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a (click)="goBack()">
@@ -14,20 +14,21 @@
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
     </div>
   </div>
-</div>
+</div> -->
 <!-- /top navigation -->
 
 <div class="right_col mc_03">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 pt80pxi_dc col_cw"  [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 pt80pxi_dc col_cw"
+        [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <form>
-          
+
           <div class="row text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              
 
-              <h4 class="mb0px mt5px fs_18px fw_600 lh_140p "   [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+
+              <h4 class="mb0px mt5px fs_18px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 How are you feeling today?
               </h4>
               <h4 class="mb0px mt5px fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_7'">
@@ -36,7 +37,7 @@
             </div>
           </div>
 
-          <div class="row mt30px text-center" >
+          <div class="row mt30px text-center">
             <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 p0 div_smiley">
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" *ngFor="let item of dailyCheckInList; index as i">
                 <a class="" (click)="dailyCheckInRowClick(item)">
@@ -47,7 +48,9 @@
                     </div>
                     <div class="col-md-12 col-sm-12 col-sm-12 col-xs-12 text-center" *ngIf="!isAdults">
 
-                      <img src="{{item.ImgPath.replace('/assets/svgs/v_1_4/emojis/','/teenagers/assets/svgs/emojis/') }}" class="img-responsive">
+                      <img
+                        src="{{item.ImgPath.replace('/assets/svgs/v_1_4/emojis/','/teenagers/assets/svgs/emojis/') }}"
+                        class="img-responsive">
                     </div>
                   </div>
                   <div class="row mt5px">
@@ -61,22 +64,24 @@
               </div>
 
               <!-- <div *ngIf="i%5==0" class="clearfix"></div> -->
-              
+
             </div>
           </div>
-        
-        
 
-          
+
+
+
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-              <h4 class="mtb20px fs_12px fw_400 lh_140p  tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_7'">
-                Mood tracking has many benefits. 
-                <a  (click)="routetoBlog()" class="link" >
-                    Click here 
-                  </a>
-                <br/>
-               find out more.              </h4>
+              <h4 class="mtb20px fs_12px fw_400 lh_140p  tcenter"
+                [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_7'">
+                Mood tracking has many benefits.
+                <a (click)="routetoBlog()" class="link">
+                  Click here
+                </a>
+                <br />
+                find out more.
+              </h4>
             </div>
           </div>
 
@@ -90,26 +95,27 @@
                </a>
              </div>
            </div> -->
-           
-                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray col_cw">
-                        <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex"> -->
-           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw" (click)="goToHome()">
-             <!-- <a routerLink="/self-esteem/s126068">
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray col_cw">
+              <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex"> -->
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw" (click)="goToHome()">
+                <!-- <a routerLink="/self-esteem/s126068">
                <button type="button" class="btn mb0 w100 btn_skip tcenter" data-dismiss="modal">
                  Skip
                </button>
              </a> -->
-             
-             <a>
-               <h4 class="mtb10px fs_15px fw_400 lh_130p  td_underline tcenter" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
-                 Skip
-               </h4>
-             </a> 
-           </div>
-         </div>
-         </div>
+
+                <a>
+                  <h4 class="mtb10px fs_15px fw_400 lh_130p  td_underline tcenter"
+                    [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                    Skip
+                  </h4>
+                </a>
+              </div>
+            </div>
+          </div>
         </form>
-        
+
       </div>
     </div>
   </div>
@@ -117,5 +123,5 @@
 
 
 <div class="mfooter">
- 
+
 </div>
