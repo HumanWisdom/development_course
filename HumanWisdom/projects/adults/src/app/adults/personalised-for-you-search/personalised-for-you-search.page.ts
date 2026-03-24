@@ -127,7 +127,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     private platform: Platform
   ) {
 
-    // SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
     this.logeventservice.logEvent('View_search');
     let authtoken = JSON.parse(localStorage.getItem("token"))
     let app = localStorage.getItem("fromapp")
@@ -372,7 +372,7 @@ toggleAccordion() {
       case "exercises":
       case "awareness exercises":
         {
-        this.route.navigate(['/adults/home'], { fragment: 'self-awareness', state: { source: 'search' } });
+        this.route.navigate(['/adults/home'], { fragment: 'self-awareness' });
         return;
       }
       case "forum":{
@@ -420,8 +420,7 @@ toggleAccordion() {
         localStorage.removeItem('persist_ml_index');
       }
     }
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
-    this.route.navigate([url], { state: { source: 'search' } })
+    this.route.navigate([url])
   }
 
   searchEvent(module) {
@@ -434,41 +433,40 @@ toggleAccordion() {
   }
 
   clickbtn(name, val = '', event, ind, id) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     if (val === '') {
       localStorage.setItem('storyNumber', id);
       if (name === 'Manage your emotions') {
         localStorage.setItem('curatedurl', '/adults/curated/manage-your-emotions');
         this.logeventservice.logEvent('click_emotions');
-        this.route.navigate(['/adults/curated/manage-your-emotions'], { state: { source: 'search' } })
+        this.route.navigate(['/adults/curated/manage-your-emotions'])
       } else if (name === 'Mental Health') {
         localStorage.setItem('curatedurl', '/adults/curated/overcome-stress-anxiety');
         this.logeventservice.logEvent('click_stress_anxiety');
-        this.route.navigate(['/adults/curated/overcome-stress-anxiety'], { state: { source: 'search' } })
+        this.route.navigate(['/adults/curated/overcome-stress-anxiety'])
       } else if (name === 'Work and Leadership') {
         localStorage.setItem('curatedurl', '/adults/curated/wisdom-for-workplace');
         this.logeventservice.logEvent('click_workplace');
-        this.route.navigate(['/adults/curated/wisdom-for-workplace'], { state: { source: 'search' } })
+        this.route.navigate(['/adults/curated/wisdom-for-workplace'])
       } else if (name === 'Have fulfilling relationships') {
         localStorage.setItem('curatedurl', '/adults/curated/have-fulfilling-relationships');
         this.logeventservice.logEvent('click_relationships');
-        this.route.navigate(['/adults/curated/have-fulfilling-relationships'], { state: { source: 'search' } })
+        this.route.navigate(['/adults/curated/have-fulfilling-relationships'])
       } else if (name === 'Be happier') {
         localStorage.setItem('curatedurl', '/adults/curated/be-happier');
         this.logeventservice.logEvent('click_be_happier');
-        this.route.navigate(['/adults/curated/be-happier'], { state: { source: 'search' } })
+        this.route.navigate(['/adults/curated/be-happier'])
       } else if (name === 'Habits and Addiction') {
         localStorage.setItem('curatedurl', '/adults/curated/change-unhelpful-habits');
         this.logeventservice.logEvent('click_be_happier');
-        this.route.navigate(['/adults/curated/change-unhelpful-habits'], { state: { source: 'search' } })
+        this.route.navigate(['/adults/curated/change-unhelpful-habits'])
       } else if (name === 'Deal with sorrow and loss') {
         localStorage.setItem('curatedurl', '/adults/curated/deal-with-sorrow-loss');
         this.logeventservice.logEvent('click_sorrow_loss');
-        this.route.navigate(['/adults/curated/deal-with-sorrow-loss'], { state: { source: 'search' } })
+        this.route.navigate(['/adults/curated/deal-with-sorrow-loss'])
       } else if (name === 'Meditation') {
         localStorage.setItem('curatedurl', '/adults/curated/have-calm-mind');
         this.logeventservice.logEvent('click_calm_mind');
-        this.route.navigate(['/adults/curated/have-calm-mind'], { state: { source: 'search' } })
+        this.route.navigate(['/adults/curated/have-calm-mind'])
       }
     } else {
       if (this.isloggedIn) {
@@ -801,7 +799,6 @@ toggleAccordion() {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/adults/discovering-wisdom/${discoveringWisdomResume}`])
           }
@@ -834,7 +831,6 @@ toggleAccordion() {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/adults/benefits-of-wisdom/${benefitsWisdomResume}`])
           }
@@ -867,7 +863,6 @@ toggleAccordion() {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/adults/five-circles/${fiveCirclesResume}`])
           }
@@ -905,7 +900,6 @@ toggleAccordion() {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/adults/how-can-wisdom-help/${hcwhR}`])
           }
@@ -940,7 +934,6 @@ toggleAccordion() {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/adults/key-ideas/${keyIdeasResume}`])
           }
@@ -983,7 +976,6 @@ toggleAccordion() {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/adults/program-guide/${pgResume}`])
           }
@@ -1127,7 +1119,7 @@ toggleAccordion() {
 
   routeDailyCheckIn(){
     this.logeventservice.logEvent("Click_daily-checkin");
-    this.router.navigate(['/adults/daily-checkin'], { state: { source: 'search' } });
+    this.router.navigate(['/adults/daily-checkin']);
   }
 
   GetWisdomScreens() {
@@ -1258,14 +1250,12 @@ toggleAccordion() {
          });  */
 
     if (exercise != null) {
-      SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
       this.router.navigate(['adults/wisdom-exercise/s' + exercise.ScreenNo.substring(0, exercise.ScreenNo.length - 2)], {
         state: {
           day: exercise.day,
         }
       });
     } else {
-      SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
       this.router.navigate(['adults/wisdom-exercise/']);
     }
   }
@@ -1277,7 +1267,6 @@ toggleAccordion() {
   }
 
   rightToJournal(journal) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     if (journal) {
       this.router.navigate(["/adults/journal"]);
       this.logeventservice.logEvent("click_journal");
@@ -1289,21 +1278,17 @@ toggleAccordion() {
 
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
-    if(url!="") {
-      SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
-      this.router.navigate([url]);
-    }
+    if(url!="") this.router.navigate([url]);
   }
 
   DashboardLogevent(route, params, evtName) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.logeventservice.logEvent(evtName);
     if (params != '' && route != '') {
       if (route === '/adults/daily-practise' || route === '/adults/daily-checkin') {
         const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
         const isSubscribed = localStorage.getItem('Subscriber') === '1';
         if (isSubscribed) {
-          this.router.navigate([route, params], { state: { source: 'search' } });
+          this.router.navigate([route, params]);
           return;
         }
         if (!isLoggedIn) {
@@ -1324,7 +1309,7 @@ toggleAccordion() {
         }
         localStorage.setItem('dpClicks', (sc + 1).toString());
       }
-      this.router.navigate([route, params], { state: { source: 'search' } });
+      this.router.navigate([route, params]);
     } else if (route != '') {
       if (route === '/adults/daily-checkin') {
         const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
@@ -1349,7 +1334,7 @@ toggleAccordion() {
           localStorage.setItem('dpClicks', (sc + 1).toString());
         }
       }
-      this.router.navigate([route], { state: { source: 'search' } })
+      this.router.navigate([route])
     }
   }
 
@@ -1359,21 +1344,18 @@ getExpandClass(){
 
 
   routeToFindAnswer(param) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     localStorage.setItem('lastRoute', param);
     this.logeventservice.logEvent("click_find-answers-" + param);
     this.router.navigate(['/adults/find-answers/' + param]);
   }
 
     viewDetails() {
-      SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
       this.logeventservice.logEvent("click_view_details");
 
       this.router.navigate(["/adults/onboarding/user-profile"]);
     }
 
     survey() {
-      SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
       this.logeventservice.logEvent("click_take_survey");
 
         this.router.navigate(["/adults/wisdom-survey"], { state: { 'isUseCloseButton': true } });

@@ -316,7 +316,7 @@ li:hover:before {
 
 
 .odiv_pathway {
-    padding: 0 10px 10px 0px;
+    padding: 0 10px 10px 20px;
 }
 
 /* Search row for background toggle */
@@ -444,7 +444,4 @@ li:hover:before {
 }
 .dpanel .panel-body {
     padding: 0 !important;
-}
-:host ::ng-deep .box_v3_05 {
-  padding: 0 !important;
 }

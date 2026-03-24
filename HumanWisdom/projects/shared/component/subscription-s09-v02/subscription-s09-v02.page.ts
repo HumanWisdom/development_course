@@ -9,7 +9,6 @@ import {
   Platform,
 } from "@angular/cdk/platform";
 import { ProgramType } from "../../models/program-model";
-import { NavigationService } from "../../services/navigation.service";
 
 @Component({
   selector: 'app-subscription-s09-v02',
@@ -36,8 +35,7 @@ export class SubscriptionS09V02Page implements OnInit {
     private dc: ChangeDetectorRef,
     private router: Router,
     private location: Location,
-    public platform: Platform,
-    private navigationService: NavigationService) {
+    public platform: Platform) {
       if (SharedService.ProgramId == ProgramType.Adults) {
         this.isAdults = true;
       } else {
@@ -191,12 +189,9 @@ export class SubscriptionS09V02Page implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
-      this.location.back();
-    } else {
-      this.router.navigate([url]);
-    }
+    // this.location.back();
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
+
   }
 
   buyAgain(item) {

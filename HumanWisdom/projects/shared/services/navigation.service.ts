@@ -121,7 +121,7 @@ export class NavigationService {
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile','micro-learning','daily-practise','daily-checkin','wisdom-shorts','wisdom-stories','wisdom-exercise','audio-meditation'
+     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile','micro-learning'
   ]
   let isValid = false;
   for(const item of wholeUrlCheckKeywords){

@@ -4,7 +4,6 @@ import { OnboardingService } from '../../../services/onboarding.service';
 import { SharedService } from "../../../services/shared.service";
 import { Constant } from '../../../services/constant';
 import { Router } from '@angular/router';
-import { NavigationService } from '../../../services/navigation.service';
 
 import { ProgramType } from '../../../models/program-model';
 
@@ -15,7 +14,7 @@ import { ProgramType } from '../../../models/program-model';
 })
 export class CancelSubscriptionReasonPage implements OnInit {
 
-  constructor(private location:Location,private onboardingService:OnboardingService,private router :Router, private navigationService: NavigationService) { }
+  constructor(private location:Location,private onboardingService:OnboardingService,private router :Router) { }
    reasonList = [];
    selectedId = 1;
    isAdults: boolean = true;
@@ -57,12 +56,7 @@ export class CancelSubscriptionReasonPage implements OnInit {
   }
 
   back(){
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
-      this.location.back();
-    } else {
-      this.router.navigate([url]);
-    }
+    this.location.back();
   }
 
   closePopUp(){

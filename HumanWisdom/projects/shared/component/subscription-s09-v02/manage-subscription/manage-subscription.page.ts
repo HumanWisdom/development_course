@@ -5,7 +5,6 @@ import { Constant } from '../../../services/constant';
 import { DatePipe, Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ProgramType } from '../../../models/program-model';
-import { NavigationService } from '../../../services/navigation.service';
 
 
 @Component({
@@ -23,7 +22,7 @@ export class ManageSubscriptionPage implements OnInit {
   isAdults: boolean = true;
 
   constructor(public onboardingService: OnboardingService, private datePipe: DatePipe,
-    private router: Router, private location: Location, private navigationService: NavigationService) {
+    private router: Router, private location: Location) {
 
     this.pricingModel = {
       "RateID": '',
@@ -120,11 +119,6 @@ export class ManageSubscriptionPage implements OnInit {
 
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
-      this.location.back();
-    } else {
-      this.router.navigate([url]);
-    }
+    this.location.back();
   }
 }

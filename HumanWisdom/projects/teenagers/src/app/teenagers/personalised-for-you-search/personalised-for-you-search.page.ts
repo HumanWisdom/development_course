@@ -150,7 +150,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
       }
       this.getModuleList();
       this.getProgress()
-      this.getStreak()
     }
     this.GetWisdomScreens();
     this.getUserPreference();
@@ -428,7 +427,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       case "exercises":
       case "awareness exercises":
         {
-        this.route.navigate(['/teenagers/home'], { fragment: 'self-awareness', state: { source: 'search' } });
+        this.route.navigate(['/teenagers/home'], { fragment: 'self-awareness' });
         return;
       }
       case "forum":{
@@ -473,8 +472,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
     }
 
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
-    this.route.navigate([url], { state: { source: 'search' } })
+    this.route.navigate([url])
   }
 
   searchEvent(module) {
@@ -487,17 +485,16 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   clickbtn(name, val = '', event, ind, id) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     if (val === '') {
       if (name === 'Manage your emotions') {
         this.logeventservice.logEvent('click_emotions');
-        this.route.navigate(['/teenagers/curated/manage-your-emotions'], { state: { source: 'search' } })
+        this.route.navigate(['/teenagers/curated/manage-your-emotions'])
       } else if (name === 'Overcome stress and anxiety') {
         this.logeventservice.logEvent('click_stress_anxiety');
-        this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'], { state: { source: 'search' } })
+        this.route.navigate(['/teenagers/curated/overcome-stress-anxiety'])
       } else if (name === 'Wisdom for the workplace') {
         this.logeventservice.logEvent('click_workplace');
-        this.route.navigate(['/teenagers/curated/wisdom-for-workplace'], { state: { source: 'search' } })
+        this.route.navigate(['/teenagers/curated/wisdom-for-workplace'])
       } else if (name === 'Have fulfilling relationships') {
         this.logeventservice.logEvent('click_relationships');
         this.route.navigate(['/teenagers/curated/have-fulfilling-relationships'])
@@ -509,10 +506,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.route.navigate(['/teenagers/curated/change-unhelpful-habits'])
       } else if (name === 'Deal with sorrow and loss') {
         this.logeventservice.logEvent('click_sorrow_loss');
-        this.route.navigate(['/teenagers/curated/deal-with-sorrow-loss'], { state: { source: 'search' } })
+        this.route.navigate(['/teenagers/curated/deal-with-sorrow-loss'])
       } else if (name === 'Mindfulness') {
         this.logeventservice.logEvent('click_calm_mind');
-        this.route.navigate(['/teenagers/curated/have-calm-mind'], { state: { source: 'search' } })
+        this.route.navigate(['/teenagers/curated/have-calm-mind'])
       }
     } else {
       if (this.isloggedIn) {
@@ -811,15 +808,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   }
 
-  getStreak() {
-    let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
-    if (loginResponse != null && loginResponse.Streak) {
-      this.streak = loginResponse.Streak
-    } else {
-      this.streak = ''
-    }
-  }
-
 
 
 
@@ -850,7 +838,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/teenagers/discovering-wisdom/${discoveringWisdomResume}`])
           }
@@ -883,7 +870,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/teenagers/benefits-of-wisdom/${benefitsWisdomResume}`])
           }
@@ -916,7 +902,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/teenagers/five-circles/${fiveCirclesResume}`])
           }
@@ -954,7 +939,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/teenagers/how-can-wisdom-help/${hcwhR}`])
           }
@@ -989,7 +973,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/teenagers/key-ideas/${keyIdeasResume}`])
           }
@@ -1032,7 +1015,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
           console.log(error)
         },
         () => {
-          SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
           if (cont == "1") {
             this.route.navigate([`/teenagers/program-guide/${pgResume}`])
           }
@@ -1155,7 +1137,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   rightToJournal(journal) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     if (journal) {
       this.route.navigate(["/teenagers/journal"]);
       this.logeventservice.logEvent("click_journal");
@@ -1168,14 +1149,13 @@ export class PersonalisedForYouSearchPage implements OnInit {
   logEvent(event, url) {
     this.logeventservice.logEvent(event);
     if(url != ''){
-      SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
       this.route.navigate([url]);
     }
   }
 
 
   RouteToWisdomExercise(exercise) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+
     this.logeventservice.logEvent("click_Awareness_exercise");
 
     if (exercise != null) {
@@ -1191,17 +1171,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   
   survey() {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.route.navigate(["/teenagers/wisdom-survey"], { state: { 'isUseCloseButton': true } });
   }
 
   viewDetails() {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.route.navigate(["teenagers/onboarding/user-profile"]);
   }
 
   DashboardLogevent(route, params, evtName) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.logeventservice.logEvent(evtName);
     if (evtName === 'click_journal') {
       this.router.navigate(['/teenagers/journal'])
@@ -1214,7 +1191,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
           } else {
             let sub = localStorage.getItem('Subscriber');
             if (sub === '1') {
-              this.router.navigate([route, params], { state: { source: 'search' } });
+              this.router.navigate([route, params]);
             } else {
               const lr = this.loginResponse || JSON.parse(localStorage.getItem('loginResponse') || 'null');
               const base = lr && lr.NoOfDPVisits ? parseInt(lr.NoOfDPVisits as any, 10) : 0;
@@ -1229,21 +1206,20 @@ export class PersonalisedForYouSearchPage implements OnInit {
                   this.enableAlert = true;
                 } else {
                   localStorage.setItem('dpClicks', (sc + 1).toString());
-                  this.router.navigate([route, params], { state: { source: 'search' } });
+                  this.router.navigate([route, params]);
                 }
               }
             }
           }
         }
         else
-            this.router.navigate([route, params], { state: { source: 'search' } });
+            this.router.navigate([route, params]);
     } else if (route != '') {
-      this.router.navigate([route], { state: { source: 'search' } })
+      this.router.navigate([route])
     }
   }
 
   routeDailyCheckIn(){
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.logeventservice.logEvent("Click_daily-checkin");
     let guest = localStorage.getItem('guest');
     if(!this.isloggedIn || guest=='T'){
@@ -1252,7 +1228,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     } else {
       let sub = localStorage.getItem('Subscriber');
       if (sub === '1') {
-        this.router.navigate(['/teenagers/daily-checkin'], { state: { source: 'search' } });
+        this.router.navigate(['/teenagers/daily-checkin']);
       } else {
         const lr = this.loginResponse || JSON.parse(localStorage.getItem('loginResponse') || 'null');
         const base = lr && lr.NoOfDPVisits ? parseInt(lr.NoOfDPVisits as any, 10) : 0;
@@ -1267,7 +1243,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
             this.enableAlert = true;
           } else {
             localStorage.setItem('dpClicks', (sc + 1).toString());
-            this.router.navigate(['/teenagers/daily-checkin'], { state: { source: 'search' } });
+            this.router.navigate(['/teenagers/daily-checkin']);
           }
         }
       }
@@ -1275,7 +1251,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   routeToFindAnswer(param) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     localStorage.setItem('lastRoute', param);
     this.logeventservice.logEvent("click_find-answers-" + param);
     this.router.navigate(['/teenagers/find-answers/' + param]);
@@ -1283,7 +1258,6 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
 
   shortVideos(data) {
-    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.logeventservice.logEvent("click_"+data['Title'].substring(0,15));
 
     let id = data['VideoUrl'].split('/');
