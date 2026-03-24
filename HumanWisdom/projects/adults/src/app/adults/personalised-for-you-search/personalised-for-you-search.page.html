@@ -64,20 +64,17 @@
                                     Daily practice
                                   </h2>
                                 </div>
-                                <div *ngIf="streak && streak !== '' " class="streak-container"
-                                  [ngStyle]="{'background-color': !isAdults ? '#F1AC5E': '#FFE8BB'}"
-                                  style=" width: 128px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: space-around; padding: 0 10px;">
-                                  <img *ngIf="isAdults" class="stk-icon"
-                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak.svg">
-                                  <img *ngIf="!isAdults" class="stk-icon"
-                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg">
-                                  <span class="fw_500 fs_12px lh_140p" [ngClass]="isAdults ?'fc_000000':'fc_ffffff'">
-                                    Streak:
-                                    <span class="fw_600">
-                                      {{streak}}
-                                    </span>
-                                    days
-                                  </span>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                                  <a>
+
+                                    <h2 class="fw_500 fs_12px lh_140p fc_000000_0_5 mtb0px tright">
+                                      Streak:
+                                      <span class="fw_600">
+                                        {{streak}}
+                                      </span>
+                                      days
+                                    </h2>
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -354,10 +351,10 @@
                       </h4>
                     </div>
                   </div>
-                  <div class="row mb5px mt5px">
+                 <div class="row mb5px mt5px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fw_600 fs_15px lh_130p fc_000000">
-                        Personal growth, made simple.
+                       Personal growth, made simple.
                       </h4>
                     </div>
                   </div>

@@ -323,7 +323,7 @@ h3 {
     width: 980px;
     color: var(--bs-modal-color);
     pointer-events: auto;
-    background: linear-gradient(180deg, #FFF9EE 0%, #FFF4E1 100%);
+    background: linear-gradient(180deg, #FFFAF4, #FFF4E6);
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 24px;

@@ -12,7 +12,6 @@ import { SharedService } from '../../../shared/services/shared.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import moengage from "@moengage/web-sdk";
 import { OnboardingService } from '../../../shared/services/onboarding.service';
-import { LogEventService } from '../../../shared/services/log-event.service';
 
 
 // import { MoengageService } from './moengage.service';
@@ -76,12 +75,10 @@ export class AppComponent implements OnDestroy {
     private onboardingService:OnboardingService,
     private commonService:CommonService,
     private renderer: Renderer2,
-    private logeventservice: LogEventService,
     // private owlStore: OwlStore,
     // public moengageService: MoengageService,
     private navigationService:NavigationService
   ) {
-    this.logeventservice.logEvent('first_open');
     // IMPORTANT: Reset owl state to clear any previous localStorage data
     // Comment this line back after first successful run
     // this.owlStore.reset();

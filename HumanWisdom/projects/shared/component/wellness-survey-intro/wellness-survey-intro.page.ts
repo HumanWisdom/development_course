@@ -26,12 +26,7 @@ export class WellnessSurveyIntroPage implements OnInit {
   ) { }
 
   startSurvey() {
-    const { routedFromLogin } = window.history.state;
-    this.router.navigate(["/" + SharedService.getprogramName() + '/wellness-survey'], {
-      state: {
-        routedFromLogin: routedFromLogin
-      }
-    });
+    this.router.navigate(["/" + SharedService.getprogramName() + '/wellness-survey']);
   }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, NgZone, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnInit, NgZone } from '@angular/core';
 import 'bcswipe';
 import { UntypedFormBuilder } from '@angular/forms';
 import { LogEventService } from '../../services/log-event.service';
@@ -44,7 +44,7 @@ declare var FB: any;
     ])
   ]
 })
-export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
+export class IntroCarouselPage implements OnInit, AfterViewInit {
   public loading = false;
   nextBtnDis = false;
   //static progress mapping
@@ -94,7 +94,6 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
   delay = 20;
   lastClick = 0;
   isIos = false;
-  isOnboardingCompleted = false;
 
   constructor(private router: Router,
     private service: AdultsService,
@@ -126,14 +125,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
 
     this.isAdults = SharedService.ProgramId === 9;
     this.isIos = SharedService.isIos;
-    this.logeventservice.logEvent('view_onboarding_screen');
     this.loadFacebookSDK();
-  }
-
-  ngOnDestroy() {
-    if (!this.isOnboardingCompleted) {
-      this.logeventservice.logEvent('onboarding_dropped');
-    }
   }
 
   ngAfterViewInit() {
@@ -165,7 +157,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     }
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('fromlandingpage', 'F');
-    this.logeventservice.logEvent('onboarding_skip');
+    this.logeventservice.logEvent('click_skip_onboarding' + ' ' + this.carouselId);
   }
 
   onLoad() {
@@ -265,9 +257,6 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
 
   private processGoogleCredential(idToken: string): void {
     try {
-      this.logeventservice.logEvent('google_signup_complete');
-      this.logeventservice.logEvent('onboarding_complete');
-      this.isOnboardingCompleted = true;
       // Decode JWT to get user information
       const payload = this.decodeJwt(idToken);
       this.idToken = idToken;
@@ -569,7 +558,6 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
       this.currentSection = 0;
     }
     this.direction = 'left';
-    this.logeventservice.logEvent('onboarding_next');
   }
 
 
@@ -580,7 +568,6 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.currentSection--;
     }
-    this.logeventservice.logEvent('onboarding_previous');
   }
 
   //private VerifyGoogle() {
@@ -810,17 +797,16 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
         this.currentSection = 0;
       }
       this.direction = 'left';
-      this.logeventservice.logEvent('onboarding_next');
-    } else if (evtName === 'click_prev_onboarding') {
+    } else {
       this.direction = 'right';
       if (this.currentSection == 0) {
         this.currentSection = 1;
       } else {
         this.currentSection--;
       }
-      this.logeventservice.logEvent('onboarding_previous');
     }
 
+    this.logeventservice.logEvent(evtName + ' ' + this.currentSection);
     if (params != '' && route != '') {
       this.router.navigate([route, params]);
     } else if (route != '') {
@@ -836,28 +822,10 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     }
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('fromlandingpage', 'F');
-    this.logeventservice.logEvent('click_login');
-    this.logeventservice.logEvent('onboarding_complete');
-    this.isOnboardingCompleted = true;
-  }
-
-  signup_email() {
-    if (this.isAdults) {
-      this.router.navigate(['/adults/onboarding/login']);
-    } else {
-      this.router.navigate(['/teenagers/onboarding/login']);
-    }
-    localStorage.setItem('personalised', 'F');
-    localStorage.setItem('fromlandingpage', 'F');
-    this.logeventservice.logEvent('click_signup_email');
-    this.logeventservice.logEvent('onboarding_complete');
-    this.isOnboardingCompleted = true;
   }
 
   routedashboard() {
-    this.logeventservice.logEvent('continue_guest');
-    this.logeventservice.logEvent('onboarding_complete');
-    this.isOnboardingCompleted = true;
+    this.logeventservice.logEvent('Guest_Login');
     if (this.isAdults) {
       this.router.navigate(['/adults/adult-dashboard'])
     } else {
@@ -865,19 +833,11 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  pauseVideo() {
-    this.logeventservice.logEvent('pause_intro_video');
-  }
-
-  videoEnded() {
-    this.logeventservice.logEvent('complete_intro_video');
-  }
-
 
   googleLogin(reqtype) {
     console.log('=== googleLogin called ===', reqtype);
     if (reqtype == "signup")
-      this.logeventservice.logEvent('click_signup_google');
+      this.logeventservice.logEvent('google_signup');
     else
       this.logeventservice.logEvent('google_login');
 
@@ -1080,7 +1040,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
 
   fbLogin(reqtype) {
     if (reqtype == "signup")
-      this.logeventservice.logEvent('click_signup_facebook');
+      this.logeventservice.logEvent('facebook_signup');
     else
       this.logeventservice.logEvent('facebook_login');
 
@@ -1128,7 +1088,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
                 })
                 .subscribe((res) => {
                   if (res) {
-                    this.setUpLoginConfiguration(res, 'facebook');
+                    this.setUpLoginConfiguration(res);
                   } else {
                     this.content = "Facebook login verification failed. Please try again.";
                     this.enableAlert = true;
@@ -1179,22 +1139,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     document.head.appendChild(script);
   }
 
-  private setUpLoginConfiguration(res: any, social = ''): void {
-    if (social === 'facebook') {
-      this.logeventservice.logEvent('facebook_signup_complete');
-      this.logeventservice.logEvent('onboarding_complete');
-      this.isOnboardingCompleted = true;
-    }
-    if (social === 'google') {
-      this.logeventservice.logEvent('google_signup_complete');
-      this.logeventservice.logEvent('onboarding_complete');
-      this.isOnboardingCompleted = true;
-    }
-    if (social === 'apple') {
-      this.logeventservice.logEvent('apple_signup_complete');
-      this.logeventservice.logEvent('onboarding_complete');
-      this.isOnboardingCompleted = true;
-    }
+  private setUpLoginConfiguration(res: any): void {
     if (res.UserId === 0) {
       this.showAlert = true;
       this.content = "You have entered wrong credentials. Please try again.";
@@ -1317,7 +1262,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
 
   signInWithApple(reqtype) {
     if (reqtype == "signup")
-      this.logeventservice.logEvent('click_signup_apple');
+      this.logeventservice.logEvent('apple_signup');
     else
       this.logeventservice.logEvent('apple_login');
     const CLIENT_ID = "humanwisdom.web.service";
