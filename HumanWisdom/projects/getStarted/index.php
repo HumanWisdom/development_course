@@ -449,7 +449,6 @@ a:hover
   border: 1px solid rgba(128, 51, 88, 1);
   color: #fff;
 }
-
 /* Outer panel container — very light peach */
 .tools-panel-wrap {
   width: 900px;
