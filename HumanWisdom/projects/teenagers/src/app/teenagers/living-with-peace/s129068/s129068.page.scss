@@ -107,3 +107,14 @@
   {
   width: 100%;
   }
+
+.noi_left_right_txt {
+  overflow: auto !important;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  top: 15% !important;
+  align-items: center !important;
+}
+
