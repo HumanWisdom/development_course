@@ -64,6 +64,9 @@
       justify-content: center;
       display: flex;
     }
+    .m-wh{
+      width: 132px;
+    }
 
     .section-row {
       width: 978px;
@@ -71,6 +74,9 @@
 
     .w-300px {
       width: 300px;
+    }
+    .gap-40px{
+      gap: 40px;
     }
 
     .inspiring_img {
@@ -81,18 +87,60 @@
     .w-1240px {
       width: 1240px !important;
     }
+        .navbar a.nav:hover,
+    .navbar li:hover>a.nav {
+      color: #834B66 !important;
+    }
 
-    /* Our HOW CTA: desktop keeps 225px; mobile uses .btn-mw-335px (inline width would override that) */
+    .navbar .active,
+    .navbar .active:focus {
+      color: #834B66 !important;
+    }
+
+    /* Our HOW CTA: match required button widths (About Us only) */
     @media (min-width: 768px) {
-      #happiermeTryForFree .btn-mw-335px {
-        width: 225px !important;
+      #happiermeTryForFree .btn_tff.btn-mw-335px {
+        width: 314px !important;
+        max-width: 314px !important;
       }
+    }
+
+    /* Navbar hover colour should match index page (About Us only) */
+    .navbar a.nav:hover,
+    .navbar li:hover>a.nav {
+      color: #834B66 !important;
+    }
+
+    .navbar .active,
+    .navbar .active:focus {
+      color: #834B66 !important;
+    }
+
+    /* About Us: hover colour for the Amazon book links only */
+    #main a[href*="amazon"]:hover .fc_cb6171 {
+      color: #834B66 !important;
+    }
+
+    /* About Us: ensure inner coloured spans also change on hover */
+    #main a:hover .fc_cb6171,
+    #main .fc_cb6171:hover {
+      color: #834B66 !important;
+    }
+
+    /* About Us: prevent h5 text colour change on hover */
+    #main h5.fc_000000:hover {
+      color: #000000 !important;
     }
 
     @media (max-width: 767px) {
 
       .w-335px_m {
         width: 335px;
+      }
+
+      #happiermeTryForFree .btn-mw-335px {
+        width: 335px !important;
+        max-width: 335px !important;
       }
 
       /* Force White Plus/Minus Icons on Mobile Accordion */
@@ -256,9 +304,9 @@
     <section class="section-description">
       <div class="row center_flex mt40px section-row">
         <div
-          class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_au d-lg-flex d-md-flex d-sm-flex d-block ">
+          class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_au d-lg-flex d-md-flex d-sm-flex d-block gap-40px ">
 
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 pr20px cpr_a w-300px " data-aos="fade-up"
+          <div class=" w-300px " data-aos="fade-up"
             data-aos-delay="100">
             <div class="row ">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -284,7 +332,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 plr20px w-300px" data-aos="fade-up"
+          <div class=" w-300px" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -310,7 +358,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 pl20px w-300px" data-aos="fade-up"
+          <div class="w-300px" data-aos="fade-up"
             data-aos-delay="300">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
