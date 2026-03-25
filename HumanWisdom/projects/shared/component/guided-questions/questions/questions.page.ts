@@ -93,20 +93,17 @@ export class QuestionsPage implements OnInit {
   }
 
   goback() {
-   var url = this.navigationService.navigateToBackLink();
-   if(url == `/${SharedService.getprogramName()}/search`){
     this.route.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } })
-   }
   };
 
   Backward() {
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.goback();
-    }else{
+    } else {
       this.route.navigate([url]);
     }
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 
   getClass(questionNo) {
