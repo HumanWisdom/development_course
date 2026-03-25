@@ -14,12 +14,19 @@
             display:flex
           }
         }
+
+        /* Footer: prevent underline-on-hover from global link styles */
+        .dfooter a:hover,
+        .dfooter a:hover * {
+          text-decoration: none !important;
+        }
   </style>
 <!-- footer -->
 <div class="dfooter ">
 
   <!-- desktop -->
-  <div class="row center_flex display_m_none">
+  <div class=" display_m_none" style="justify-content: center;
+    display: flex;">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-8 d-flex fixed_w">
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12">
         <h4 class="mt0px mb15px fs_15px fw_600 lh_150p fc_ffffff color_wh">
@@ -532,14 +539,31 @@
       toggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
           var target = document.querySelector(toggle.getAttribute('href'));
+          if (!target) return;
+
+          // Keep icon state in sync with CSS by updating aria-expanded / collapsed
+          document.querySelectorAll('.accordion-toggle, .accordion-button').forEach(function(t) {
+            t.setAttribute('aria-expanded', 'false');
+            if (t.classList && t.classList.contains('accordion-button')) {
+              t.classList.add('collapsed');
+            }
+          });
+
           if (target.classList.contains('show')) {
             target.classList.remove('show');
+            toggle.setAttribute('aria-expanded', 'false');
           } else {
             // Hide all panels
             document.querySelectorAll('.panel-collapse').forEach(function(panel) {
               panel.classList.remove('show');
             });
             target.classList.add('show');
+            toggle.setAttribute('aria-expanded', 'true');
+
+            // If the clicked element is also a Bootstrap accordion-button, sync collapsed class
+            if (toggle.classList && toggle.classList.contains('accordion-button')) {
+              toggle.classList.remove('collapsed');
+            }
           }
           e.preventDefault();
         });
