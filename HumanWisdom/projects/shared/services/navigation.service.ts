@@ -121,7 +121,7 @@ export class NavigationService {
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile','micro-learning'
+     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile','micro-learning','daily-practise','daily-checkin','wisdom-shorts','wisdom-stories','wisdom-exercise','audio-meditation'
   ]
   let isValid = false;
   for(const item of wholeUrlCheckKeywords){
@@ -182,7 +182,17 @@ export class NavigationService {
       this.history.splice(index + 1);
     }
 
-    // Context-driven navigation priority
+    const url = this.goBack();
+    
+    // If history provides a valid URL, trust it (including home/dashboard)
+    if (url != null) {
+       // Reset context if we derived a valid URL from history
+       this.lastSource = null;
+       localStorage.removeItem('lastNavSource');
+       return url;
+    }
+
+    // Context-driven navigation priority fallback for empty history
     if (this.lastSource === 'pathway' || this.lastSource === 'search') {
       const sourceIsPathway = this.lastSource === 'pathway';
       const navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
@@ -191,7 +201,6 @@ export class NavigationService {
       localStorage.removeItem('lastNavSource');
 
       if (sourceIsPathway && navFrom && navFrom.includes('pathway')) {
-        this.history.pop();
         this.backClicked = true;
         return navFrom;
       }
@@ -200,12 +209,6 @@ export class NavigationService {
       return `/${prefix}/search`;
     }
 
-    const url = this.goBack();
-    
-    // If history provides a valid URL, trust it (including home/dashboard)
-    if (url != null) {
-      return url;
-    }
 
     // Fallback if history is empty
     let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
@@ -247,13 +250,14 @@ export class NavigationService {
     }
 
     // 4. Module TOC / Index -> Search (If no pathway context was found)
-    if (segments.length >= 3 && (segments[1] === 'adults' || segments[1] === 'teenagers' || segments[1] === 'youngadults')) {
-       const topLevelPages = ['adult-dashboard', 'dashboard', 'home', 'search', 'journal', 'profile', 'forum', 'notification'];
-       if (!topLevelPages.includes(segments[2])) {
+    if (segments.length >= 2 && (segments[0] === 'adults' || segments[0] === 'teenagers' || segments[0] === 'youngadults')) {
+       const topLevelPages = ['adult-dashboard', 'dashboard', 'home', 'search', 'journal', 'profile', 'forum', 'notification', 'teenager-dashboard'];
+       if (!topLevelPages.includes(segments[1])) {
           console.log("Fallback: Module TOC -> Search");
           return `/${prefix}/search`;
        }
     }
+
 
     console.log("Fallback: Dashboard");
     return SharedService.getDashboardUrls();
