@@ -8,7 +8,7 @@
 </title>
     <meta property="title" content="Three Steps to a Deeper Meditation Practice
 ">
-    <meta property="description" content="Feelings are an essential part of being human and enrich our lives — like falling in love or enjoying the beauty of a spring morning. They can also protect us from harm — like expressing anger when it’s appropriate. Quite often though these feeling...">
+    <meta property="description" content="Discover 10 powerful ways coaches can build mental fitness, stay calm under pressure, strengthen relationships, and lead with clarity and resilience. Learn how mindset, not just strategy, drives coaching success.">
     <meta property="keyword" content="stress, emotions">
 
     <!-- vendor_header -->
@@ -42,7 +42,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Manage your emotions
+                    Mental health
                   </button>
                 </div>
 
@@ -154,7 +154,7 @@ Breathing exercises and mindfulness can help regulate your response in these mom
 
                 
 
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
                  
 Explore the 
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">
@@ -217,7 +217,7 @@ This creates a more stable and supportive environment for athletes.
                 
                
 
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
 Listen to the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~191.mp3/191/F/Emotional%20resilience%20for%20coaches/podcast">
  
 Emotional Resilience for Coaches</a> podcast in the HappierMe app to better understand and manage your emotions.
@@ -243,7 +243,7 @@ Learning to understand and manage this pressure can improve both wellbeing and p
 
  </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb20px blog_desc">
 Listen to this mini podcast on                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~193.mp3/193/F/Coaching%20under%20pressure/podcast">
  Coaching under pressure.</a>to better cope with the pressures of being a coach.
 
@@ -350,7 +350,7 @@ Relationships</a> modules in the HappierMe app to strengthen connection and trus
 </h4>
                 <h4 class="mtb0px blog_sub_title">
 #9 Avoid Burnout
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
 Coaching can be demanding, with long hours and constant responsibility.
 
 
@@ -390,7 +390,7 @@ Mental fitness helps you stay connected to your purpose and enjoy the journey.
 
 </h4>
 
-      <h4 class="mtb0px blog_desc blog">
+      <h4 class="mtb0px blog_desc">
 Explore this micro-learning module on                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/micro-learning/inner/23">
 Finding your purpose.</a> 
 

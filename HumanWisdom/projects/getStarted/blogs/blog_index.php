@@ -1146,7 +1146,7 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Parenting</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Mental health</button>
 
 
                   </div>
