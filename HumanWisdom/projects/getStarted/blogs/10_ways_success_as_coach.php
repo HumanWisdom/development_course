@@ -8,7 +8,7 @@
 </title>
     <meta property="title" content="Three Steps to a Deeper Meditation Practice
 ">
-    <meta property="description" content="Feelings are an essential part of being human and enrich our lives — like falling in love or enjoying the beauty of a spring morning. They can also protect us from harm — like expressing anger when it’s appropriate. Quite often though these feeling...">
+    <meta property="description" content="Discover 10 powerful ways coaches can build mental fitness, stay calm under pressure, strengthen relationships, and lead with clarity and resilience. Learn how mindset, not just strategy, drives coaching success.">
     <meta property="keyword" content="stress, emotions">
 
     <!-- vendor_header -->
@@ -42,7 +42,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Manage your emotions
+                    Mental health
                   </button>
                 </div>
 
