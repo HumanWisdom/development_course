@@ -1,0 +1,28 @@
+:host ::ng-deep {
+    .box_v3_04,
+    .box_v3_04b {
+        min-height: 196px;
+        width: 162px;
+        background: #0C2B5F;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+        padding: 15px !important;
+        margin-bottom: 10px;
+        white-space: normal;
+        height: auto;
+    }
+
+    .box_v3_04bevent {
+        min-height: 220px;
+        width: 162px;
+        background: #0C2B5F;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+        padding: 15px !important;
+        margin-bottom: 10px;
+        white-space: normal;
+    }
+    .btn_so:hover {
+        background: #EE9596;
+    }
+}
