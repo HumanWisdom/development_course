@@ -22,10 +22,11 @@ export class S139055Page implements OnInit {
   moduleImg="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/115.webp"
   
   bg=""
-  moduleLink="/self-interest"
+  moduleLink="/teenagers/self-interest"
   moduleName="Self-interest"
   sectionName= "Transform your life - I";
   moduleId=115
+  programType=11
   moduleList: any = [
     {
       name: 'Stress',
@@ -42,7 +43,7 @@ export class S139055Page implements OnInit {
     {
       name: 'Need For External approval',
       image: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/123.webp',
-      link: '/external-approval',
+      link: '/teenagers/external-approval',
       id: 123
     }
   ]
