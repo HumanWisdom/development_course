@@ -1,181 +1,556 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import {AdultsService} from "../../adults.service"
-import { Router } from '@angular/router';
-import {Location } from '@angular/common'
+<app-toc-header [moduleName]="'Leadership'" [tocImage]="tocImage" [tocColor]="tocColor"></app-toc-header>
 
-@Component({
-  selector: 'app-s59001',
-  templateUrl: './s59001.page.html',
-  styleUrls: ['./s59001.page.scss'],
-})
-export class S59001Page implements OnInit,OnDestroy {
+<app-index-content>
 
-  bg_tn="bg_blue"
-  bg_cft="bg_blue"
-  bg="anger_w1"  
-  userId:any
-  saveUsername=JSON.parse(localStorage.getItem("saveUsername"))
-  screenType=localStorage.getItem("text")
-  moduleId:any
-  //moduleId=localStorage.getItem("moduleId")
-  screenNumber="59001"
-  startTime:any
-  endTime:any
-  totalTime:any
-  bookmark:any
-  bookmarkList=[]
-    isContentsOpen
+  <form> 
 
-  pgResume: any;
-  tocImage="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/59.webp"
-  tocColor="white"
-  lastvisited = false;
-  stories: any = []
-  isLoggedIn = false;
-  isSubscriber = false;
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="txt_comparison">
+          Great leaders are made, not born. Leadership skills can be developed, and are a byproduct of wisdom. The quality of leadership determines the success of countries and organisations. Great leaders can transform organisations, and poor leadership can destroy them. In this module we explore how to develop your leadership skills, how to meet common challenges, and how to be a great leader who leads with wisdom and compassion.
+        </h4>
+      </div>
+    </div>
 
-  constructor(
-    private router: Router,
-    private service:AdultsService,
-    private location:Location
-  )
-  { 
-    this.service.setmoduleID(59);
+    <!-- <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">                    
+        <a  (click)="Resume('/adults/leadership/');"     *ngIf="lastvisited">
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+        <h4 class="title_content">
+          CONTENTS
+        </h4>
+      </div>
+    </div>
+
+    <div class="toc_adiv"> -->
+
+        <div class="row center_flex mt40px">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a routerLink="/adults/leadership/s59002">
+          <button type="button" class="btn mb10pxi btn_begin_here w100" data-dismiss="modal">Begin here</button>
+        </a>
+      </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+
+        <a  (click)="Resume('/adults/leadership/');"     *ngIf="lastvisited">
+           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>
    
-    // this.stories = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-    // this.stories = JSON.parse(this.stories)
-  }
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
+    <!-- accordion header -->
+    <div class="row clickable" (click)="toggleContents()">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex plr10pxi ">
+        <div class="col-md-11 col-sm-11 col-xs-11 p0">
+          <h4 class="title_content mtb0px">
+            Contents
+          </h4>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
+          <i class="fa" [ngClass]="isContentsOpen ? 'fa-angle-up' : 'fa-angle-down'"></i>
+        </div>
+      </div>
+    </div>
 
-  ngOnInit() {
-    setTimeout(() => {
-      let story = JSON.parse(JSON.stringify(localStorage.getItem('wisdomstories')));
-      story = JSON.parse(story)
-      let splitarr = []
-      let arraythree = []
-      if(story?.length <= 2) 
-      {
-        story.forEach((e) => 
-        {
-          arraythree.push(e)
-        })
-        splitarr.push(arraythree)
-      }
-      else
-      {
-        story?.forEach((e) => 
-        {
-          if(arraythree.length < 2) 
-          {
-            arraythree.push(e)
-          }
-          else 
-          {
-            splitarr.push(arraythree)
-            arraythree = []
-            arraythree.push(e)
-          }
-        })
-      }
-      this.stories = splitarr
-    }, 2000)
-    if (localStorage.getItem("isloggedin") && localStorage.getItem("isloggedin") === 'T') {
-      this.isLoggedIn = true;
-    }
-    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
-      this.isSubscriber = true;
-    }
+    <div class="toc_adiv mt20px" *ngIf="isContentsOpen"> 
+      <a routerLink="/adults/leadership/s59002">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                Session #1
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis_01">
+                What is wisdom leadership?
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                13:00
+              </h4>
+            </div>
 
-    if(!localStorage.getItem("NaviagtedFrom"))  
-    localStorage.setItem("NaviagtedFrom", '/adults/pathway/live-your-best-life');
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
 
-    if (this.saveUsername == false) {
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-    }
-    else {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-    }
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
 
-    this.service.clickModule(59, this.userId).subscribe(res => {
-      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
-      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
-    })
 
-    // continue where you left    
-    // let last = localStorage.getItem('lastvisited');
-    // if(last === 'T') 
-    // {
-    //   this.lastvisited = true;
-    // }
-    // else 
-    // {
-    //   this.lastvisited = false;
-    // }    
-    // /continue where you left
-    this.startTime = Date.now();
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/leadership/s59037">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                Session #2
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis_01">
+                Developing leadership skills - Part 1
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                19:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/leadership/s59063">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                Session #3
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis_01">
+                Developing leadership skills - Part 2
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                14:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/leadership/s59087">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                Session #4
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis_01">
+                Common leadership challenges
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                18:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/adults/leadership/s59115">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                Session #5
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis_01">
+                Being a great leader
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                30:00
+              </h4>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+          </div>
+        </div>
+      </a>
+
+      <!-- video row -->
+      <a routerLink="/adults/leadership/s59170p1">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/09.webp" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt="" class="p0 session_img_play">
+              </div>
   
-    this.startTime = Date.now();
-    this.createScreen()
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                  Session #6
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+                  Leadership with wisdom
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                  35:25
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/leadership/s59170p2">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/36.webp" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                  Session #7
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+                  To be a better leader, understand your ego.
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                  55:15
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- video row -->
+      <a routerLink="/adults/leadership/s59170p3">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/curated_dbs/images/events/54.webp" alt="" class="p0 session_img">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt="" class="p0 session_img_play">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                  Session #8
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+                  Self-awareness: the key to leadership
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                  55:53
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
+
+      <!-- audio row -->
+      <a [routerLink]="isSubscriber ? ['/adults/audiopage/~podcasts~207.mp3/207/F/The%20loneliness%20of%20leadership/podcast'] : ['/adults/subscription/start-your-free-trial']">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+<!-- session image -->
+                  <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/207.webp" 
+                        alt="Soft Horizon" 
+                        class="p0 session_img">
+                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" 
+                        alt="Play" 
+                        class="p0 session_img_play"> -->
+                  </div>
+
+            
+            
+
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                Podcast
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis_02">
+                The loneliness of leadership
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+               05:13 mins
+              </h4>
+            </div>
+
+            </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
+
+          </div>
+        </div>
+      </a>
 
 
-    
-  }
-   toggleContents() {
-    this.isContentsOpen = !this.isContentsOpen;
-  }
-  toggleBookmark(){
-    if(this.bookmark==0)
-      this.bookmark=1
-    else
-      this.bookmark=0
+       <!-- video row -->
+      <a [routerLink]="isSubscriber ? ['/adults/audiopage/~podcasts~206.mp3/206/F/Emotional%20resilience%20for%20leaders/podcast'] : ['/adults/subscription/start-your-free-trial']">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/206.webp" alt="" class="p0 session_img">
+                <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" alt="" class="p0 session_img_play"> -->
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                  Podcast
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+                  Emotional resilience for leaders
+                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                  07:39
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
 
-  }
-  createScreen(){
-    this.service.createScreen({
-      "ScrId":0,
-      "ModuleId":this.moduleId,
-      "GSetID":this.screenType,
-      "ScreenNo":this.screenNumber
-    }).subscribe(res=>
-      {
-        
-      })
-    
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
 
-  }
+          </div>
+        </div>
+      </a>
+      <!-- /video row -->
 
+      <!-- audio row -->
+      <a [routerLink]="isSubscriber ? ['/adults/audiopage/~podcasts~208.mp3/208/F/Leadership%20burnout/podcast'] : ['/adults/subscription/start-your-free-trial']">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+<!-- session image -->
+                  <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/208.webp" 
+                        alt="Soft Horizon" 
+                        class="p0 session_img">
+                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/play_icon.svg" 
+                        alt="Play" 
+                        class="p0 session_img_play"> -->
+                  </div>
 
-  submitProgress(){
-    this.service.submitProgressText({
-      "ScrNumber":this.screenNumber,
-      "UserId":this.userId,
-      "BookMark":this.bookmark,
-      "ModuleId":this.moduleId,
-      "screenType":this.screenType,
-      "timeSpent":this.totalTime
-    }).subscribe(res=>
-      {
-        
-        this.bookmarkList=res.GetBkMrkScr.map(a=>parseInt(a.ScrNo))
-        localStorage.setItem("bookmarkList",JSON.stringify(this.bookmarkList))
-      })
-    
+            
+            
 
-  }
-  ngOnDestroy(){
- 
+                  <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                Podcast
+              </h4>
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis_02">
+                Leadership burnout
+              </h4>
+              <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+               06:59 mins
+              </h4>
+            </div>
 
+            </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
 
-  }
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+              <!-- lock -->
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              <!-- /lock -->
+            </div>
 
-  routeJournal(){
-    this.router.navigate(['/adults/journal'])
-  }
- /*  goBack(){
-    this.location.back()
-  } */
+          </div>
+        </div>
+      </a>
+        <!-- video row -->
+       <a [routerLink]="isSubscriber ? ['/adults/audiopage/~podcasts~211.mp3/211/F/Communication%20tips%20for%20leaders/podcast'] : ['/adults/subscription/start-your-free-trial']">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/211.webp" alt="" class="p0 session_img">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                  Podcast
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+Communication tips for leaders                </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                  07:18
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
 
-  Resume(url) {
-    this.router.navigate([url + this.pgResume])
-  }
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+            
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              
+            </div>
 
-}
+          </div>
+        </div>
+      </a> 
+      <!-- /video row -->
+
+       <a [routerLink]="isSubscriber ? ['/adults/audiopage/~podcasts~213.mp3/213/F/How%20leaders%20can%20handle%20conflict/podcast'] : ['/adults/subscription/start-your-free-trial']">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+              <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/213.webp" alt="" class="p0 session_img">
+              </div>
+  
+              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+                <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
+                  Podcast
+                </h4>
+                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000 ellipsis">
+How leaders can handle conflict               </h4>
+                <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                  07:13
+                </h4>
+              </div>
+              
+            </div>
+  
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+              <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+            
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+              
+            </div>
+
+          </div>
+        </div>
+      </a> 
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories" [isAccordion]="true" 
+    *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
+
+  </form>    
+
+</app-index-content> 
+
+<app-index-footer></app-index-footer>
