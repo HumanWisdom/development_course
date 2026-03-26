@@ -154,7 +154,7 @@ Breathing exercises and mindfulness can help regulate your response in these mom
 
                 
 
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
                  
 Explore the 
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">
@@ -217,7 +217,7 @@ This creates a more stable and supportive environment for athletes.
                 
                
 
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
 Listen to the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~191.mp3/191/F/Emotional%20resilience%20for%20coaches/podcast">
  
 Emotional Resilience for Coaches</a> podcast in the HappierMe app to better understand and manage your emotions.
@@ -350,7 +350,7 @@ Relationships</a> modules in the HappierMe app to strengthen connection and trus
 </h4>
                 <h4 class="mtb0px blog_sub_title">
 #9 Avoid Burnout
-                <h4 class="mtb0px blog_desc blog">
+                <h4 class="mtb0px blog_desc">
 Coaching can be demanding, with long hours and constant responsibility.
 
 
@@ -390,7 +390,7 @@ Mental fitness helps you stay connected to your purpose and enjoy the journey.
 
 </h4>
 
-      <h4 class="mtb0px blog_desc blog">
+      <h4 class="mtb0px blog_desc">
 Explore this micro-learning module on                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/micro-learning/inner/23">
 Finding your purpose.</a> 
 
