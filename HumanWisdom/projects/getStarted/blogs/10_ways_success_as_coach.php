@@ -243,7 +243,7 @@ Learning to understand and manage this pressure can improve both wellbeing and p
 
  </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb20px blog_desc">
 Listen to this mini podcast on                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~193.mp3/193/F/Coaching%20under%20pressure/podcast">
  Coaching under pressure.</a>to better cope with the pressures of being a coach.
 
