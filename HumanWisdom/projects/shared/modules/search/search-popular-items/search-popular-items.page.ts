@@ -136,6 +136,10 @@ export class SearchPopularItemsPage implements OnInit {
         url = `/${SharedService.getprogramName()}/audio-meditation`
         break;
       }
+      case "guided audio meditation":{
+        url = `/${SharedService.getprogramName()}/audio-meditation`
+        break;
+      }
       case ("short videos"):
       case ("videos"):
         {
