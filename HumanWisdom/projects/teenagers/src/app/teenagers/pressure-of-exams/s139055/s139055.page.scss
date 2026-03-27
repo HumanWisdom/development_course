@@ -22,7 +22,9 @@
         margin-bottom: 10px;
         white-space: normal;
     }
-    .btn_so:hover {
+    .btn_so:hover,
+    .btn_so:active,
+    .btn_so:focus {
         background: #EE9596;
     }
 }
