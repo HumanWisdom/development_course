@@ -100,7 +100,7 @@ img { max-width: 100%; display: block; }
 
 .new-app-adults-teen { width: 415px; height: 525px; object-fit: contain; flex-shrink: 0; }
 
-.div-3 { display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
+.div-3 {margin-top: -20px; display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
 
 /* rating */
 .p0        { padding: 0; }
@@ -146,7 +146,8 @@ p:hover {
   gap: 2px;
   line-height: 1;
 }
-.rating_a .fa-star { color: #000; font-size: 14px; line-height: 1; vertical-align: middle; }
+.rating_a .fa-star { color: #000; font-size: 16px; line-height: 1; vertical-align: middle;    height: 16px;
+    width: 16px; }
 .appstore_a {
   display: inline-flex;
   align-items: center;
@@ -220,9 +221,10 @@ p:hover {
 .div-7 { width: 100%; max-width: 1340px; padding: 60px 80px; display: flex; flex-direction: column; gap: 60px; }
 .div-wrapper-2 { display: flex; justify-content: center; }
 .text-wrapper-6 { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-bottom: 45px; }
+.text-wrapper-6-1{ font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; }
 .text-wrapper-a { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;    margin-top: 20px; }
 .text-wrapper-user { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-top: 60px; }
-.text-wrapper-blog { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-bottom: 10px; }
+.text-wrapper-blog { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;  }
 .div-8 { display: flex; flex-direction: column; gap: 20px; }
 .div-9 { display: flex; gap: 20px; flex-wrap: wrap; }
 .div-10 {
@@ -285,6 +287,23 @@ p:hover {
 .text-wrapper-12 { font-size: 15px; font-weight: 400; font-style: italic; color: #000; opacity: 0.75; line-height: 1.6; margin: 0; }
 .div-19 { display: flex; align-items: center; gap: 6px; justify-content: center; }
 .text-wrapper-13 { font-size: 18px; font-weight: 500; color: #d7586b; text-decoration: underline; }
+.text-wrapper-13:hover {
+  color: #834B66 !important;
+  text-decoration: underline !important;
+}
+.text-wrapper-13:hover + .chevron-pink,
+.text-wrapper-13:hover + .chevron-pink .bi {
+  color: #834B66 !important;
+}
+/* Same hover colour when moving over the chevron (whole row) */
+.div-19:hover .text-wrapper-13 {
+  color: #834B66 !important;
+  text-decoration: underline !important;
+}
+.div-19:hover .chevron-pink,
+.div-19:hover .chevron-pink .bi {
+  color: #834B66 !important;
+}
 a:hover
 {
   text-decoration: underline !important;
@@ -315,8 +334,19 @@ a:hover
   transition: box-shadow 0.2s; cursor: pointer;
 }
 /* .div-25:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.10); } */
-.div-25:hover,
-.div-25:hover * {
+/* Card is an <a>. Global `a:hover { text-decoration: underline !important; }` would underline ALL
+   text in the card — override it on the anchor, then re-apply underline only on "Find out more". */
+.div-25:hover {
+  text-decoration: none !important;
+}
+.div-25:hover .view-all-success {
+  text-decoration: underline !important;
+}
+/* Title + description must look the same on card hover (no colour/underline change). */
+.div-25:hover .text-wrapper-15,
+.div-25:hover .text-wrapper-17,
+.div-25:hover .text-wrapper-16 {
+  color: #000 !important;
   text-decoration: none !important;
 }
 .rectangle { width: 100%; height: 180px; object-fit: cover; }
@@ -325,9 +355,43 @@ a:hover
 .div-27, .div-30 { display: flex; flex-direction: column; gap: 6px; }
 .text-wrapper-15, .text-wrapper-17 { font-size: 20px; font-weight: 500; color: #000; line-height: 1.4; }
 .text-wrapper-16 { font-size: 14px; font-weight: 400; color: #000; line-height: 1.5; margin: 0; }
-.div-28 { display: flex; align-items: center; margin-top: auto; }
+.div-28 { display: flex; align-items: center; margin-top: auto; width: 40%;}
 .view-all-success { font-size: 15px; font-weight: 500; color: #d7586b; text-decoration: underline; }
-..view-all-success:hover { color: #803358; text-decoration: underline; }
+.view-all-success:hover { color: #834B66 !important; text-decoration: underline !important; }
+.view-all-success:hover + .chevron-pink { color: #834B66 !important; }
+.div-28:hover .view-all-success {
+  color: #834B66 !important;
+  text-decoration: underline !important;
+}
+.div-28:hover .chevron-pink,
+.div-28:hover .chevron-pink .bi {
+  color: #834B66 !important;
+}
+.view-all-success:active {
+  /* On click we keep the original (non-hover) pink to avoid "yellow flash". */
+  color: #d7586b !important;
+  text-decoration: underline !important;
+}
+.view-all-success:active + .chevron-pink {
+  color: #d7586b !important;
+}
+.div-25:active .view-all-success {
+  color: #d7586b !important;
+  text-decoration: underline !important;
+}
+.div-25:active .chevron-pink {
+  color: #d7586b !important;
+}
+
+/* If user clicks while still hovering the "Find out more" area, keep the hover color. */
+.div-25:active .div-28:hover .view-all-success {
+  color: #834B66 !important;
+  text-decoration: underline !important;
+}
+.div-25:active .div-28:hover .chevron-pink,
+.div-25:active .div-28:hover .chevron-pink .bi {
+  color: #834B66 !important;
+}
 .div-wrapper-5 { display: flex; align-items: center; }
 
 /* ========================================
@@ -460,9 +524,10 @@ a:hover
 .tools-panel {
   display: none;
   align-items: center;
-  gap: 64px;
-  padding: 60px 80px;
-  flex-wrap: wrap;
+  /* Keep app tile + description in one row (prevents large/odd gaps). */
+  gap: 40px;
+  padding: 60px 60px;
+  flex-wrap: nowrap;
   height: 500px;
 }
 .tools-panel.active { display: flex; }
@@ -492,6 +557,18 @@ a:hover
   object-fit: cover;
   display: block;
   border-radius: 10px;
+}
+/* Feel better now: real MP4 (same as indexolder.php tools section) */
+.tools-thumb-video {
+  width: 100%;
+  height: 206px;
+  display: block;
+  border-radius: 10px;
+  background: #120f40;
+  object-fit: cover;
+}
+.tools-thumb-video::-webkit-media-controls-panel {
+  background: #120f40;
 }
 .tools-thumb-img_sec{
    object-fit: cover;
@@ -525,6 +602,13 @@ a:hover
   color: #000;
   margin-left: 3px;
   line-height: 1;
+}
+.tools-video-play-btn {
+  border: 0;
+  z-index: 2;
+}
+.tools-video-play-btn[hidden] {
+  display: none !important;
 }
 
 /* Card meta area */
@@ -606,8 +690,23 @@ a:hover
   margin-top: 2px;
   text-decoration: underline;
 }
-.tools-explore-link:hover { color: #834B66;
-text-decoration: underline; }
+.tools-explore-link:hover { color: #834B66; text-decoration: underline; }
+.tools-explore-link:hover .chevron-pink { color: #834B66 !important; }
+.tools-explore-link:active {
+  color: #834B66 !important;
+  text-decoration: underline !important;
+}
+.tools-explore-link:active .chevron-pink {
+  color: #834B66 !important;
+}
+
+/* index-only: prevent global yellow click/active color */
+#body a:active {
+  color: inherit !important;
+}
+#body a:active .chevron-pink {
+  color: inherit !important;
+}
 
 /* Keep old selectors harmless */
 .group-wrapper, .group-9, .div-51, .div-wrapper-8, .div-wrapper-9, .div-wrapper-10,
@@ -629,7 +728,7 @@ text-decoration: underline; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 60px;
   box-sizing: border-box;
 }
 .coaches-outer {
@@ -751,7 +850,27 @@ text-decoration: underline; }
   align-items: center;
   justify-content: center;
 }
-.coaches-more:hover { opacity: 0.8; }
+.coaches-more:hover {
+  opacity: 0.8;
+  color: #834B66 !important;
+  text-decoration: underline !important;
+}
+.coaches-more:hover .bi-chevron-right {
+  color: #834B66 !important;
+}
+.coaches-more:active {
+  /* Prevent global "yellow on click" for this link */
+  color: #d7586b !important;
+}
+.coaches-more:active .bi-chevron-right {
+  color: #d7586b !important;
+}
+.coaches-more:hover:active {
+  color: #834B66 !important;
+}
+.coaches-more:hover:active .bi-chevron-right {
+  color: #834B66 !important;
+}
 .div_new1{
   justify-content: center;
     display: flex;
@@ -781,6 +900,7 @@ text-decoration: underline; }
   scrollbar-width: none;
   -ms-overflow-style: none;
   width: 120%;
+  height:370px;
 }
 .blog-scroll::-webkit-scrollbar { display: none; }
 .blog-card {
@@ -823,7 +943,7 @@ text-decoration: underline; }
 .circle-btn:active {
   transform: scale(0.95);
 }
-.blog-img { width: 100%; height: 240px; object-fit: cover; display: block; }
+.blog-img { width: 470px; height: 240px; object-fit: cover; display: block; }
 .blog-caption {
   width: 100%;
   height: 130px;
@@ -874,6 +994,10 @@ text-decoration: underline; }
   font-size: 16px; font-weight: 500; color: #d7586b;
   text-decoration: underline;
 }
+.blog-more:hover { color: #834B66 !important; }
+.blog-more:hover .chevron-pink { color: #834B66 !important; }
+.blog-more:active { color: #834B66 !important; }
+.blog-more:active .chevron-pink { color: #834B66 !important; }
 .blog-more img { width: 8px; height: auto; }
 
 /* Mobile blog card (matches Figma dimensions) */
@@ -1059,12 +1183,13 @@ text-decoration: underline; }
 
 /* Tools responsive */
 @media (max-width: 900px) {
-  .tools-panel { padding: 40px 40px; gap: 40px; }
+  .tools-panel { padding: 40px 40px; gap: 40px; flex-wrap: wrap; }
 }
 @media (max-width: 768px) {
   .tools-panel { padding: 32px 24px; gap: 28px; }
   .tools-card { width: 210px; }
   .tools-thumb-img { height: 155px; }
+  .tools-thumb-video { height: 155px; }
   .tools-info-heading { font-size: 22px; }
   .tools-info-body { max-width: 100%; }
 }
@@ -1502,7 +1627,7 @@ text-decoration: underline; }
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                      <p class="p" style="text-align: left;line-height: 1.3;">Understand your mind.<br>Find clarity. Be happier.</p>
+                     <p class="p" style="text-align: left;line-height: 1.3;">Understand your mind.<br>Change your life</p>
                       <div class="div-6">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
                         <div class="text-wrapper-3">Now with Olly AI</div>
@@ -1786,7 +1911,7 @@ text-decoration: underline; }
 
       <!-- ===== COACHES ===== -->
       <div class="coaches-section">
-        <p class="text-wrapper-6">Contact our experienced coaches for personalised support</p>
+        <p class="text-wrapper-6-1">Contact our experienced coaches for personalised support</p>
         <div class="coaches-outer">
           <div class="coaches-track-wrap">
             <div class="coaches-scroll" id="coaches-scroll">
@@ -1964,8 +2089,16 @@ text-decoration: underline; }
           <div id="tab-fbn" class="tools-panel active">
             <div class="tools-card">
               <div class="tools-thumb">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/rec-tool.svg" alt="Humming bee" class="tools-thumb-img" />
-                <div class="tools-play-btn"><span>&#9654;</span></div>
+                <video playinline
+                  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/rec-tool.svg"
+                  controlsList="nodownload"
+                  class="tools-thumb-video"
+                  id="fbn-video">
+                  <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
+                </video>
+                <button type="button" class="tools-play-btn tools-video-play-btn" aria-label="Play breathing exercise" id="fbn-play-btn">
+                  <span>&#9654;</span>
+                </button>
               </div>
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
@@ -1990,7 +2123,6 @@ text-decoration: underline; }
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" alt="Guided Programs" class="tools-thumb-img_sec" />
-                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
             </div>
@@ -2022,7 +2154,6 @@ text-decoration: underline; }
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="Podcast" class="tools-thumb-img_sec" />
-                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
               
             </div>
@@ -2054,7 +2185,6 @@ text-decoration: underline; }
             <div>
               <div class="tools-thumb">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
-                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
             </div>
@@ -2496,7 +2626,6 @@ text-decoration: underline; }
     </div>
 
     <script>
-      /* Tab switcher for Tools section */
       function switchTab(el, panelId) {
         document.querySelectorAll('.tool-tab').forEach(function(t){
           t.classList.remove('tool-tab-active');
@@ -2567,6 +2696,34 @@ text-decoration: underline; }
               this.classList.add('faq-open');
             }
           });
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById('fbn-video');
+        var playBtn = document.getElementById('fbn-play-btn');
+        if (!video || !playBtn) return;
+
+        playBtn.addEventListener('click', function() {
+          video.controls = true;
+          var playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function() {});
+          }
+        });
+
+        video.addEventListener('play', function() {
+          playBtn.hidden = true;
+        });
+
+        video.addEventListener('pause', function() {
+          if (video.currentTime < video.duration) {
+            playBtn.hidden = false;
+          }
+        });
+
+        video.addEventListener('ended', function() {
+          playBtn.hidden = false;
         });
       });
 
