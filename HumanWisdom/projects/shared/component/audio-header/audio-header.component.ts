@@ -1,5 +1,5 @@
 import { Platform } from "@angular/cdk/platform";
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { AdultsService } from "../../../adults/src/app/adults/adults.service";
@@ -12,6 +12,8 @@ import { ModalService } from "../../services/modal.service";
 @Component({
   selector: 'app-audio-header',
   templateUrl: './audio-header.component.html',
+  styleUrls: ['./audio-header.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AudioHeaderComponent implements OnInit {
   @Input() bookmark: boolean;
@@ -83,6 +85,32 @@ export class AudioHeaderComponent implements OnInit {
     if (this.urlT) {
       this.shared = true
       this.socialShare = true
+    }
+    this.setAudioControlsBackground();
+  }
+
+  setAudioControlsBackground() {
+    const backgroundColor = this.isAdult ? '#FFE8BB' : '#0C2B5F';
+  
+    // Create a new <style> element
+    const style = document.createElement('style');
+    style.textContent = `
+      audio::-webkit-media-controls-enclosure {
+        background: ${backgroundColor} !important;
+      }
+    `;
+  
+    // Append the <style> element to the document head
+    document.head.appendChild(style);
+
+    // Apply invert-controls class to the audio element on the page if it's the adult version
+    if (this.isAdult) {
+      setTimeout(() => {
+        const audioElement = document.getElementById('aud1');
+        if (audioElement && !audioElement.classList.contains('invert-controls')) {
+          audioElement.classList.add('invert-controls');
+        }
+      }, 500);
     }
   }
 

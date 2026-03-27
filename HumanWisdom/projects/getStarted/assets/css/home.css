@@ -473,6 +473,7 @@
       .scroller-container img {
         max-width: 100%;
         height: auto;
+        padding-left: 50px;
       }
 
       .circle-mobile {

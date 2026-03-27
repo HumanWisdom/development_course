@@ -123,7 +123,8 @@
                           <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100"> -->
                           <!-- Safari-specific video structure -->
                           <ng-container *ngIf="isIos">
-                            <video *ngIf="isAdults" controls (play)="LogEvent('click_play_video_intro_carousel')"
+                            <video *ngIf="isAdults" controls (play)="LogEvent('play_intro_video')"
+                              (pause)="pauseVideo()" (ended)="videoEnded()"
                               playsinline class="cvideo_03 br_0px"
                               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                               controlsList="nodownload" style="height:245px; width:100%;">
@@ -132,7 +133,8 @@
                                 type="video/mp4">
                             </video>
 
-                            <video *ngIf="!isAdults" controls (play)="LogEvent('click_play_video_intro_carousel')"
+                            <video *ngIf="!isAdults" controls (play)="LogEvent('play_intro_video')"
+                              (pause)="pauseVideo()" (ended)="videoEnded()"
                               playsinline class="cvideo_03 br_0px"
                               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                               controlsList="nodownload" style="height:245px; width:100%;">
@@ -144,7 +146,8 @@
 
                           <!-- Original video structure for other browsers -->
                           <ng-container *ngIf="!isIos">
-                            <video controls (play)="LogEvent('click_play_video_intro_carousel')" playsinline
+                            <video controls (play)="LogEvent('play_intro_video')" 
+                              (pause)="pauseVideo()" (ended)="videoEnded()" playsinline
                               class="cvideo_03 br_0px"
                               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png"
                               controlsList="nodownload" style="height:245px;">
@@ -259,7 +262,7 @@
                             <button type="submit" class="btn btn_login_signup tcenter">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_facebook_01.svg"
-                                (click)="fbLogin('login')" (keydown.enter)="fbLogin('login')" tabindex="0" alt=""
+                                (click)="fbLogin('signup')" (keydown.enter)="fbLogin('signup')" tabindex="0" alt=""
                                 class="img-responsive">
                             </button>
                           </div>
@@ -267,7 +270,7 @@
                             <button type="submit" class="btn btn_login_signup tcenter">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_google_01.svg"
-                                (click)="googleLogin('login')" (keydown.enter)="googleLogin('login')" tabindex="0"
+                                (click)="googleLogin('signup')" (keydown.enter)="googleLogin('signup')" tabindex="0"
                                 alt="" class="img-responsive">
                             </button>
                             <!-- <div id="my-signin2" class="btn btn_login_signup tcenter"></div> -->
@@ -276,12 +279,12 @@
                             <button type="submit" class="btn btn_login_signup tcenter">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/cw_apple_01.svg"
-                                (click)="signInWithApple('login')" (keydown.enter)="signInWithApple('login')"
+                                (click)="signInWithApple('signup')" (keydown.enter)="signInWithApple('signup')"
                                 tabindex="0" alt="" class="img-responsive" *ngIf="!isAdults">
 
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/apple-black+1.svg"
-                                (click)="signInWithApple('login')" (keydown.enter)="signInWithApple('login')"
+                                (click)="signInWithApple('signup')" (keydown.enter)="signInWithApple('signup')"
                                 tabindex="0" alt="" class="img-responsive" *ngIf="isAdults ">
                             </button>
                           </div>
@@ -308,7 +311,7 @@
                       <div class="row mt15px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 tcenter pl0px">
-                            <button type="submit" class="btn btn_login_signup_new tcenter w100pi" (click)="login()">
+                            <button type="submit" class="btn btn_login_signup_new tcenter w100pi" (click)="signup_email()">
                               <h4 class="mtb0px fs_15px fw_400 lh_150p "
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                 Sign up with email

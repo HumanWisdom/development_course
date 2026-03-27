@@ -88,6 +88,9 @@ export class WisdomScalePage implements OnInit {
   wisdomScore: any
   nextPath: any
     isAdults = true;
+  justSignedUp = false;
+  isGuest = false;
+
 
   public lineChartData: ChartDataSets[] = [
     { data: [], label: 'Happiness Survey' },
@@ -262,6 +265,21 @@ export class WisdomScalePage implements OnInit {
     // else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.userId =JSON.parse(localStorage.getItem("userId"))
 
+    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    const visits = Number(loginResponse?.NoOfVisits || '0');
+    const token = SharedService.getDataFromLocalStorage('token');
+    this.isGuest = localStorage.getItem('guest') === 'T';
+    const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
+    const { routedFromLogin } = window.history.state;
+
+    this.justSignedUp = !!token && !this.isGuest && (
+      visits < 5 || 
+      isFromSignupFlow || 
+      SharedService.isRoutedFromLogin || 
+      routedFromLogin === true || 
+      routedFromLogin === 'true'
+    );
+
     if (this.userId) {
       this.apiCall();
     }
@@ -344,7 +362,11 @@ export class WisdomScalePage implements OnInit {
     let dataScore = 0;
 
     this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
-      
+      if (this.justSignedUp) {
+        this.acheiviedScore = 0;
+        this.lineChartData[0]['data'] = [];
+        return;
+      }
       const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       r = r.sort((a, b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
       // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
@@ -512,7 +534,12 @@ export class WisdomScalePage implements OnInit {
   }
 
   startSurvey() {
-    this.router.navigate(["/" + SharedService.getprogramName() + '/wellness-survey']);
+    const { routedFromLogin } = window.history.state;
+    this.router.navigate(["/" + SharedService.getprogramName() + '/wellness-survey'], {
+      state: {
+        routedFromLogin: routedFromLogin
+      }
+    });
   }
 
   getAlertcloseEvent(event) {

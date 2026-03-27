@@ -78,8 +78,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
     
     this.GetModuleDataBasedOnProgramType();
     this.getDataForCertificate();
-
-
+    SharedService.isModuleEnd = true;
   }
 
   getDataForCertificate() {
@@ -2668,14 +2667,27 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
 
     if (ProgramType.Teenagers == this.programType ||
       SharedService.ProgramId == ProgramType.Teenagers) {
-      this.router.navigate(['/journal/']);
+      localStorage.setItem('NaviagtedFrom', this.router.url);
+      this.router.navigate(['/teenagers/journal']);
     } else {
+      localStorage.setItem('NaviagtedFrom', this.router.url);
       this.router.navigate(['/adults/journal']);
     }
 
   }
   routeForum() {
-    this.router.navigate(['/forum'])
+    if (ProgramType.Teenagers == this.programType ||
+      SharedService.ProgramId == ProgramType.Teenagers) {
+      localStorage.setItem('NaviagtedFrom', this.router.url);
+      this.router.navigate(['/teenagers/forum']);
+    } else {
+      localStorage.setItem('NaviagtedFrom', this.router.url);
+      this.router.navigate(['/adults/forum'])
+    }
+  }
+
+  ngOnDestroy() {
+    SharedService.isModuleEnd = false;
   }
 
   public saveAsPDF(isShare: boolean = false) {

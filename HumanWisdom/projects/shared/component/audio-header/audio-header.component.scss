@@ -1,3 +1,8 @@
+// .circular-player-container {
+//     transform: rotate(-360deg) scaleX(-1);
+//   }
+
+
 .circular-player-container {
   transform: rotate(-360deg) scaleX(-1);
 }
@@ -95,12 +100,14 @@ transform: rotate(-360deg) scaleX(-1);
 //   box-shadow: none !important;
 //   outline: none !important;
 //   filter: none !important;
+//   -webkit-filter: none !important;
 // }
 
 audio::-webkit-media-controls-play-button {
   background-color: #178da8 !important;
   border-radius: 15px;
 }
+
 audio::-webkit-media-controls-current-time-display {
 color: #000 !important;
 font-weight: bold;
@@ -185,18 +192,24 @@ font-size: 22px;
 color: white; /* Set the color of the pause icon */
 }
 
-.Adults::-webkit-media-controls-enclosure {
-background: rgb(18, 15, 64);
-}
+// audio::-webkit-media-controls-enclosure {
+// background: rgb(18, 15, 64);
+// }
 
-
-.isTeenagers::-webkit-media-controls-enclosure{
-  background: rgb(18, 15, 64);
-}
 #aud1
 {
 width: 100%;
+margin-top: 20px;
 }
+
+// .adults-true::-webkit-media-controls-enclosure {
+//   background: rgb(18, 15, 64);
+// }
+
+// .adults-false::-webkit-media-controls-enclosure {
+//   background: #0C2B5F; /* Change this to your desired color */
+// }
+
 // .invert-controls::-webkit-media-controls-play-button,
 // .invert-controls::-webkit-media-controls-mute-button,
 // .invert-controls::-webkit-media-controls-timeline,
@@ -218,19 +231,10 @@ width: 100%;
 //   background: #FFE8BB !important; 
 // }
 
-
-
 /* Keep everything normal — light bg, black controls */
 .invert-controls::-webkit-media-controls-panel {
   filter: none !important;
   background-color: #FFE8BB !important;
-}
-
-//  Keep everything normal — light bg, black controls */
-.invert-controls::-webkit-media-controls-panel {
-  filter: none !important;
-  background-color: #FFE8BB !important;
-  border: 1px solid #ffe8bb;
 }
 
 /* Force playback rate text black without inversion */
@@ -243,11 +247,12 @@ width: 100%;
 }
 /* Play–pause button background color */
 .invert-controls::-webkit-media-controls-play-button {
-  background-color: #EEA170 !important;
+  background-color: #ED7D6F !important;
   border-radius: 50% !important;
   box-shadow: none !important;
 }
-
-.fc_ED7D6F{
-  color: #ED7D6F;
+#aud1 {
+  width: 100% !important;  
+  max-width: 480px;         
+  border-radius: 40px;
 }

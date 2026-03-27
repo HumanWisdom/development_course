@@ -3,8 +3,10 @@
   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="closeprofileedit()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0" *ngIf="!isAdults">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" alt="" class="p0" *ngIf="isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" class="p0"
+          *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" alt="" class="p0"
+          *ngIf="isAdults">
       </a>
     </div>
 
@@ -27,15 +29,21 @@
   <div class="cw100p">
 
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 sc_01 col_cw"  [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                <img
-                  [src]="imageupload !== undefined ? imageupload : url ===undefined ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' :  (this.url.includes('undefined') ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url)"
-                  alt="" class="img-responsive border_profile_img" />
+                <img [src]="imageupload 
+    ? imageupload 
+    : (!url || url.includes('undefined')) 
+      ? (isAdults 
+          ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg'
+          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg'
+        )
+      : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + url" alt=""
+                  class="img-responsive border_profile_img" />
               </div>
             </div>
 
@@ -44,8 +52,10 @@
                 <!-- <h4 class="mtb0px fs_12px fw_600 lh_150p fc_e58d82">
                     Change Photo
                   </h4> -->
-                <label for="files"class="mt0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">Change Photo</label>
-                <input id="files"  (click)="clickEventForProfile()"  style="visibility:hidden;"  (change)="getFileUpload($event)" accept="image/*"  type="file">
+                <label for="files" class="mt0px fs_15px fw_600 lh_150p "
+                  [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">Change Photo</label>
+                <input id="files" (click)="clickEventForProfile()" style="visibility:hidden;"
+                  (change)="getFileUpload($event)" accept="image/*" type="file">
               </div>
             </div>
 
@@ -58,15 +68,15 @@
                     </select>
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
-                    <input type="text" id="name" class="sp_fc active" #myText placeholder="Full Name" [(ngModel)]="fullname">
+                    <input type="text" id="name" class="sp_fc active" #myText placeholder="Full Name"
+                      [(ngModel)]="fullname">
                   </div>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                  <input type="text" id="email" class="sp_fc active" placeholder="Email address"
-                    [(ngModel)]="email">
+                  <input type="text" id="email" class="sp_fc active" placeholder="Email address" [(ngModel)]="email">
                 </div>
               </div>
               <div class="row">
@@ -82,14 +92,16 @@
                     <input type="text" name="name" class="sp_fc" placeholder="+XX" [(ngModel)]="isdcode">
                   </div>
                   <div class="col-md-9 col-sm-9 col-xs-9 pr0px">
-                    <input type="text" name="name" class="sp_fc" maxlength="10" oninput="this.value = this.value.replace(/\D+/g, '')" placeholder="XXX-XXX-XXXX" [(ngModel)]="phoneno">
+                    <input type="text" name="name" class="sp_fc" maxlength="10"
+                      oninput="this.value = this.value.replace(/\D+/g, '')" placeholder="XXX-XXX-XXXX"
+                      [(ngModel)]="phoneno">
                   </div>
                 </div>
               </div>
 
 
 
-             <!--  <div class="row">
+              <!--  <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-3 p0">
                   <div class="dropdown dropdown_outer">
                     <button class="dropdown-toggle sp_fc" type="button" data-toggle="dropdown" data-toggle="dropdown" id="code">IN</button>
@@ -105,8 +117,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px div_pe">
                   <input type="search" class="form-control hide_search pe_search" name="search-list"
                     [(ngModel)]="country" (keyup)="getAutoCompleteList($event.target.value)" autocomplete="off"
-                    (focus)="onFocus()"
-                    [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}"
+                    (focus)="onFocus()" [ngStyle]="{'border-radius':searchResult.length>0?'20px 20px 0 0':'100px'}"
                     placeholder="Search for a country">
                   <span *ngIf=" country!=''" (click)="clearSearch()"
                     class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"

@@ -1672,6 +1672,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.commonService.getModuleList().subscribe(res => {
       if (res) {
         this.moduleList = res;
+        this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+                            {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
+                            {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
+                            {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
         console.log('Module list loaded for search:', this.moduleList.length);
       }
     }, error => {
@@ -1741,9 +1745,95 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.logeventservice.logEvent(eventName);
       }
 
-      const prefix = SharedService.getprogramName();
-      const url = `/${prefix}/site-search/${searchTerm}`;
-      this.router.navigate([url]);
+      let url = "";
+      let fragment: string | undefined = undefined;
+      this.searchinp = searchTerm;
+
+      switch(searchTerm.toLowerCase())
+      {
+        case "events":{
+            url = `/${SharedService.getprogramName()}/events`
+            break;
+        }
+        case "blogs":{
+          url =`/${SharedService.getprogramName()}/blogs`
+          break;
+        }
+        case "life stories":
+        case "stories":{
+          url = `/${SharedService.getprogramName()}/wisdom-stories`
+          break;
+        }
+        case "podcast":{
+          url = `/${SharedService.getprogramName()}/podcast`
+          break;
+        }
+        case "audio meditations":{
+          url = `/${SharedService.getprogramName()}/audio-meditation`
+          break;
+        }
+        case "guided audio meditation":{
+          url = `/${SharedService.getprogramName()}/audio-meditation`
+          break;
+        }
+        case ("short videos"):
+        case ("videos"):
+          {
+          url = `/${SharedService.getprogramName()}/wisdom-shorts`
+          break;
+        }
+        case "exercises":
+        case "awareness exercises":
+          {
+          url = `/${SharedService.getprogramName()}/home`
+          fragment = "self-awareness"
+          break;
+        }
+        case "journal":{
+          url = `/${SharedService.getprogramName()}/journal`
+          break;
+        }
+        case "forum":{
+          url = `/${SharedService.getprogramName()}/forum`
+          break;
+        }
+        case "develop a calm mind":{
+          url =`/${SharedService.getprogramName()}/pathway/develop-a-calm-mind`
+          break;
+        }
+        case "understand yourself":{
+          url = `/${SharedService.getprogramName()}/pathway/understand-yourself`
+          break;
+        }
+        case "understand how your mind works":{
+          url = `/${SharedService.getprogramName()}/pathway/understand-how-your-mind-works`
+          break;
+        }
+        case "manage your emotions":{
+          url = `/${SharedService.getprogramName()}/pathway/manage-your-emotions`
+          break;
+        }
+        case "succeed in life":{
+          url = `/${SharedService.getprogramName()}/pathway/live-your-best-life`
+          break;
+        }
+        case "mental health":{
+          url = `/${SharedService.getprogramName()}/curated/overcome-stress-anxiety`
+          break;
+        }
+       default: {
+        let regexp =  this.searchinp.repeat(1);
+        let searchInpt = regexp;
+        searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+         url=`/${SharedService.getprogramName()}/site-search/${searchInpt}`
+          break;
+        }
+      }
+      
+      this.searchResult = [];
+      this.toggleBodyScroll(false);
+      (document.activeElement as HTMLElement)?.blur();
+      this.router.navigate([url], { fragment: fragment })
     }
   }
 

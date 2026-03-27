@@ -6,6 +6,7 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService, UrlConstant } from "../../services/shared.service";
 import { NavigationService } from "../../services/navigation.service";
 import { Location } from '@angular/common';
+import { LogEventService } from '../../services/log-event.service';
 @Component({
   selector: 'app-common-forget-password',
   templateUrl: './forget-password.page.html',
@@ -33,6 +34,7 @@ export class ForgetPasswordPage implements OnInit {
     // private authService: SocialAuthService,
     private service:OnboardingService,
     private location:Location,
+    private logeventservice: LogEventService,
     private navigationService:NavigationService) {
       this.activate.queryParams.subscribe(params => {
         this.urlKey=params['key']
@@ -44,6 +46,7 @@ export class ForgetPasswordPage implements OnInit {
   }
 
   recoverPassword(){
+    this.logeventservice.logEvent('start_reset_password');
     this.service.sendPasswordLink(this.email)
     .subscribe(
       res=>{
