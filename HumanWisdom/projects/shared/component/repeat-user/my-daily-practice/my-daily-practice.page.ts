@@ -268,7 +268,10 @@ routeDailyPractice(id: number): void {
   }
 
   onFocusOutEvent() {
-    // Removed auto-close to keep screen open until explicit close
+    setTimeout(() => {
+      this.searchResult = [];
+      this.toggleBodyScroll(false);
+    }, 200);
   }
 
   
@@ -321,96 +324,90 @@ routeDailyPractice(id: number): void {
 
     
   getinp(searchTerm: string): void {
-    if (this.isAdults) {
-      if (searchTerm && searchTerm.trim() !== '') {
-        const prefix = SharedService.getprogramName();
-        const url = `/${prefix}/site-search/${searchTerm}`;
-        this.router.navigate([url]);
+    this.logeventservice.logEvent("search_" + searchTerm);
+    let url = "";
+    let fragment = "";
+    this.searchinp = searchTerm;
+
+    switch (searchTerm.toLowerCase()) {
+      case "events": {
+        url = `/${SharedService.getprogramName()}/events`;
+        break;
       }
-    } else {
-      this.logeventservice.logEvent("search_" + searchTerm)
-
-      let url = ""
-      switch (searchTerm.toLowerCase()) {
-        case "events": {
-          url = `/adults/events`
-          break;
-        }
-        case "blogs": {
-          url = `/adults/blogs`
-          break;
-        }
-        case "life stories":
-        case "stories": {
-          url = `/adults/wisdom-stories`
-          break;
-        }
-        case "podcast": {
-          url = `/adults/podcast`
-          break;
-        }
-        case "audio meditations": {
-          url = `/adults/audio-meditation`
-          break;
-        }
-        case ("short videos"):
-        case ("videos"):
-          {
-            url = `/adults/wisdom-shorts`
-            break;
-          }
-        case "journal": {
-          url = `/adults/journal`
-          break;
-        }
-        case "exercises":
-        case "awareness exercises":
-          {
-            url = `/adults/wisdom-exercise`
-            break;
-          }
-        case "forum": {
-          url = `/adults/forum`
-          break;
-        }
-        case "develop a calm mind": {
-          url = `/adults/pathway/develop-a-calm-mind`
-          break;
-        }
-        case "understand yourself": {
-          url = `/adults/pathway/understand-yourself`
-          break;
-        }
-        case "understand how your mind works": {
-          url = `/adults/pathway/understand-how-your-mind-works`
-          break;
-        }
-        case "manage your emotions": {
-          url = `/adults/pathway/manage-your-emotions`
-          break;
-        }
-        case "succeed in life": {
-          url = `/adults/pathway/live-your-best-life`
-          break;
-        }
-        case "mental health": {
-          url = `/adults/curated/overcome-stress-anxiety`
-          break;
-        }
-        default: {
-          let searchInpt = (' ' + searchTerm).slice(1);
-          searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
-          url = `/adults/site-search/${searchInpt}`
-          break;
-        }
-
+      case "blogs": {
+        url = `/${SharedService.getprogramName()}/blogs`;
+        break;
       }
-
-      if (!this.isAdults)
-        url = url.replace("/adults/", "/teenagers/")
-
-      this.router.navigate([url])
+      case "life stories":
+      case "stories": {
+        url = `/${SharedService.getprogramName()}/wisdom-stories`;
+        break;
+      }
+      case "podcast": {
+        url = `/${SharedService.getprogramName()}/podcast`;
+        break;
+      }
+      case "audio meditations":
+      case "guided audio meditation": {
+        url = `/${SharedService.getprogramName()}/audio-meditation`;
+        break;
+      }
+      case "short videos":
+      case "videos": {
+        url = `/${SharedService.getprogramName()}/wisdom-shorts`;
+        break;
+      }
+      case "exercises":
+      case "awareness exercises": {
+        url = `/${SharedService.getprogramName()}/home`;
+        fragment = "self-awareness";
+        break;
+      }
+      case "journal": {
+        url = `/${SharedService.getprogramName()}/journal`;
+        break;
+      }
+      case "forum": {
+        url = `/${SharedService.getprogramName()}/forum`;
+        break;
+      }
+      case "develop a calm mind": {
+        url = `/${SharedService.getprogramName()}/pathway/develop-a-calm-mind`;
+        break;
+      }
+      case "understand yourself": {
+        url = `/${SharedService.getprogramName()}/pathway/understand-yourself`;
+        break;
+      }
+      case "understand how your mind works": {
+        url = `/${SharedService.getprogramName()}/pathway/understand-how-your-mind-works`;
+        break;
+      }
+      case "manage your emotions": {
+        url = `/${SharedService.getprogramName()}/pathway/manage-your-emotions`;
+        break;
+      }
+      case "succeed in life": {
+        url = `/${SharedService.getprogramName()}/pathway/live-your-best-life`;
+        break;
+      }
+      case "mental health": {
+        url = `/${SharedService.getprogramName()}/curated/overcome-stress-anxiety`;
+        break;
+      }
+      default: {
+        let regexp = searchTerm.repeat(1);
+        let searchInpt = regexp;
+        searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+        url = `/${SharedService.getprogramName()}/site-search/${searchInpt}`;
+        break;
+      }
     }
+
+    this.searchResult = [];
+    this.toggleBodyScroll(false);
+    (document.activeElement as HTMLElement)?.blur();
+    this.router.navigate([url], { fragment: fragment });
   }
 
 
