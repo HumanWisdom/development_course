@@ -110,7 +110,7 @@ export class SearchPopularItemsPage implements OnInit {
   
   getinp(event) {
     let url=""
-    let fragment = ""
+    let fragment: string | undefined = undefined;
     this.search= event;
 
     switch(event.toLowerCase())
