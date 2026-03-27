@@ -43,7 +43,7 @@ export class NavigationService {
     if(!this.backClicked) {
       if (urltoCheck) {
         let isNan = isNaN(Number(urltoCheck[urltoCheck.length - 1]));
-        if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url)) {
+        if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url) || SharedService.isModuleEnd) {
           if (this.history.length > 0) {
             const lastUrl = this.history[this.history.length - 1];
             if (lastUrl === url) {

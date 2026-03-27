@@ -4,6 +4,7 @@ import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { CommonService } from '../../services/common.service';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.page.html',
@@ -38,7 +39,10 @@ export class ProfileEditPage implements OnInit {
   object:any;
   isupload = false;
   @ViewChild('myText') myTextarea: ElementRef;
-  constructor(private onboardingService: OnboardingService, private router: Router, private Service: CommonService
+  constructor(private onboardingService: OnboardingService, 
+    private router: Router, 
+    private Service: CommonService,
+    private location: Location
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
     //   console.log('Received custom event from index.html');
@@ -83,8 +87,27 @@ export class ProfileEditPage implements OnInit {
       this.onboardingService.getuser(this.userId).subscribe((res) => {
         this.userdetail = res[0];
         // this.url = 'data:image/jpg;base64,' + this.userdetail['UserImage']
-        let img = this.userdetail['UserImagePath'].split('\\');
-        this.url = img[0]+"/"+img[1];
+        let rawPath = this.userdetail['UserImagePath'] || '';
+        let cleanedPath = rawPath.replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/');
+        
+        // Fallback to localStorage if path is incomplete (missing filename)
+        if (cleanedPath && !cleanedPath.includes('.') && !cleanedPath.includes('http')) {
+          const localDetails = JSON.parse(localStorage.getItem('userDetails'));
+          if (localDetails && localDetails['UserImagePath'] && localDetails['UserImagePath'].includes('.')) {
+            cleanedPath = localDetails['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/');
+          } else {
+            cleanedPath = ''; // Clear it so default svg shows
+          }
+        } else if (!cleanedPath || (!cleanedPath.includes('.') && !cleanedPath.includes('http'))) {
+          cleanedPath = '';
+        }
+        
+        if (cleanedPath) {
+          this.url = cleanedPath + '?' + (new Date()).getTime();
+        } else {
+          this.url = '';
+        }
+
         this.email = this.userdetail['Email']
         this.age = this.userdetail['Age'] === '0' || this.userdetail['Age'] === '0' ? '' : this.userdetail['Age']
         this.country = this.userdetail['Country']
@@ -147,7 +170,7 @@ export class ProfileEditPage implements OnInit {
   }
 
   closeprofileedit() {
-    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/user-profile`]);
+    this.location.back();
   }
 
   updateUser() {

@@ -136,7 +136,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       //localStorage.setItem("isPartner", this.userDetails.IsPartner);
       localStorage.setItem("PartnerOption", this.userDetails.PartnerOption);
       if (this.userDetails['UserImagePath'] != "") {
-        this.url = this.userDetails['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        this.url = this.userDetails['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
       }
       this.isPartner = localStorage.getItem("isPartner");
       this.partnerOption = localStorage.getItem("PartnerOption");
@@ -641,7 +641,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   setProfileImage(detail) {
     if (detail) {
       if (detail && detail['UserImagePath'] != '') {
-        this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        this.url = detail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
       }
     }
 

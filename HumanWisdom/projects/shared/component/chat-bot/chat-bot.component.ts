@@ -896,7 +896,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       const detail = JSON.parse(storedDetails);
       const rawPath: string = detail?.UserImagePath || '';
       if (rawPath && !rawPath.includes('undefined')) {
-        const normalizedPath = rawPath.replace('\\', '/');
+        const normalizedPath = rawPath.replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/');
         if (normalizedPath.startsWith('http')) {
           this.userAvatarUrl = `${normalizedPath}?${Date.now()}`;
         } else {

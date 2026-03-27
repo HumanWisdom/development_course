@@ -154,11 +154,27 @@ initialize(){
     setTimeout(() => {
       this.Onboardingservice.getuser(userId).subscribe((res) => {
         let userdetail = res[0];
-        // this.url = userdetail['UserImagePath'].split('\\')[1] + '?' + (new Date()).getTime();
-        if(userdetail['UserImagePath']!="")
-        {
-          this.url = userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        let rawPath = userdetail['UserImagePath'] || '';
+        let cleanedPath = rawPath.replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/');
+        
+        // Fallback to localStorage if path is incomplete (missing filename)
+        if (cleanedPath && !cleanedPath.includes('.') && !cleanedPath.includes('http')) {
+          const localDetails = JSON.parse(localStorage.getItem('userDetails'));
+          if (localDetails && localDetails['UserImagePath'] && localDetails['UserImagePath'].includes('.')) {
+            cleanedPath = localDetails['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/');
+          } else {
+            cleanedPath = ''; // Clear it so default svg shows
+          }
+        } else if (!cleanedPath || (!cleanedPath.includes('.') && !cleanedPath.includes('http'))) {
+          cleanedPath = '';
         }
+        
+        if (cleanedPath) {
+          this.url = cleanedPath + '?' + (new Date()).getTime();
+        } else {
+          this.url = '';
+        }
+
         this.userData = res[0];
         // this.overallPercentage = this.userData?.OverallPercentage || this.userData?.overallPercentage || 0;
       })
@@ -217,22 +233,7 @@ initialize(){
   }
 
     back(){
-      let url =  this.navigationService.navigateToSkippedBackLink();
-      if(url){
-        this.router.navigate([url]);
-
-      }else{
-        url = SharedService.getDashboardUrls();
-        this.router.navigate([url]);
-      } 
-
-/* 
-      let url = SharedService.getDashboardUrls();
-      if(url){
-        this.router.navigate([url]);
-      }else{
-        this.location.back();
-      } */
+      this.location.back();
     }
 
 
