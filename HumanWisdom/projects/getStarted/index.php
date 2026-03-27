@@ -1666,10 +1666,19 @@ a:hover
             <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
             <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
           </div>
-          <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
+
+          <div class="row mt20px">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 ">
+              <h1 class="mtb0px fs_42px fw_600 lh_130p fc_000000 ta_lc  ">
+                <!-- Understand your mind. Transform your life. -->
+                 <!-- Understand your emotions. Gain clarity. Be happier. -->
+                  <!-- Everything you need for a happier life -->
+                   <!-- Strengthen your relationships. Manage emotions. Feel happier. -->
+<!-- Understand your mind. Change how you feel.       --> 
+           <!-- Build a healthier mind <br> with HappierMe -->
+            Understand your mind.<br> Change your life.
+              </h1>
+            </div>
           </div>
           <div class="div-9">
             <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
@@ -4127,103 +4136,5 @@ a:hover
       </div>
     </div>
 
-    <!-- vendor_footer -->
-    <?php include('./includes/vendor_footer.php'); ?>
-    <!-- /vendor_footer -->
-
-    <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true
-      });
-    </script>
-
-    <!-- Owl Carousel Initialization -->
-    <script>
-      $(document).ready(function() {
-        // Initialize Owl Carousel for coaches
-        if ($('.owl_coach .owl-carousel').length) {
-          $('.owl_coach .owl-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-            dots: false,
-            responsive: {
-              0: { items: 1 },
-              600: { items: 2 },
-              1000: { items: 3 },
-              1200: { items: 4 }
-            }
-          });
-        }
-
-        // Initialize Owl Carousel for blog
-        if ($('.owl_blog .owl-carousel').length) {
-          $('.owl_blog .owl-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-            dots: false,
-            responsive: {
-              0: { items: 1 },
-              600: { items: 2 },
-              1000: { items: 3 }
-            }
-          });
-        }
-
-        // Initialize Bootstrap tabs
-        var triggerTabList = [].slice.call(document.querySelectorAll('#toolTabs button'));
-        triggerTabList.forEach(function (triggerEl) {
-          var tabTrigger = new bootstrap.Tab(triggerEl);
-          triggerEl.addEventListener('click', function (event) {
-            event.preventDefault();
-            tabTrigger.show();
-          });
-        });
-      });
-    </script>
-
-    <!-- Fallback tab functionality -->
-    <script>
-      // Fallback tab functionality in case Bootstrap tabs don't work
-      document.addEventListener('DOMContentLoaded', function () {
-        // Get all tab links
-        var tabLinks = document.querySelectorAll('a[data-toggle="tab"]');
-
-        tabLinks.forEach(function (link) {
-          link.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // Get the target tab content
-            var targetId = this.getAttribute('href');
-            var targetContent = document.querySelector(targetId);
-
-            if (targetContent) {
-              // Hide all tab contents
-              var allTabContents = document.querySelectorAll('.tab-pane');
-              allTabContents.forEach(function (content) {
-                content.classList.remove('in', 'active');
-              });
-
-              // Remove active class from all tab links
-              var allTabLinks = document.querySelectorAll('.nav-tabs li');
-              allTabLinks.forEach(function (li) {
-                li.classList.remove('active');
-              });
-
-              // Show target content and activate tab
-              targetContent.classList.add('in', 'active');
-              this.parentElement.classList.add('active');
-            }
-          });
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>
