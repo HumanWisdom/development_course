@@ -1746,7 +1746,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       }
 
       let url = "";
-      let fragment = "";
+      let fragment: string | undefined = undefined;
       this.searchinp = searchTerm;
 
       switch(searchTerm.toLowerCase())

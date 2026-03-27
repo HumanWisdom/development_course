@@ -326,7 +326,7 @@ routeDailyPractice(id: number): void {
   getinp(searchTerm: string): void {
     this.logeventservice.logEvent("search_" + searchTerm);
     let url = "";
-    let fragment = "";
+    let fragment: string | undefined = undefined;
     this.searchinp = searchTerm;
 
     switch (searchTerm.toLowerCase()) {
