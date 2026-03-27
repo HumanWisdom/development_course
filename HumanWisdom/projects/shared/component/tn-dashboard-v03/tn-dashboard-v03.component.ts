@@ -102,7 +102,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     if(userdetail){
       let detail = JSON.parse(userdetail);
       if (detail && detail['UserImagePath'] != '') {
-        this.url = detail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+        this.url = detail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
       }
     }
 

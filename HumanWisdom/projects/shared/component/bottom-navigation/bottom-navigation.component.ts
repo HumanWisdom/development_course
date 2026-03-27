@@ -79,7 +79,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
       if(userdetail){
         this.userdetail = JSON.parse(userdetail);
         if (this.userdetail && this.userdetail['UserImagePath'] != '') {
-          this.url = this.userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+          this.url = this.userdetail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
         }
       }
     }
@@ -93,7 +93,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
           this.userdetail = res[0];
           this.isDataRecieved = true;
           if (this.userdetail && this.userdetail['UserImagePath'] != '') {
-            this.url = this.userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+            this.url = this.userdetail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
           }
           this.isDataRecieved = false;
         }
@@ -110,7 +110,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         var loggedInUserId = SharedService.getUserId();
         if (loggedInUserId > 0 && this.userdetail) {
           if (this.userdetail['UserImagePath'] != '') {
-            this.url = this.userdetail['UserImagePath'].replace('\\', '/') + '?' + (new Date()).getTime();
+            this.url = this.userdetail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
           }
           this.profile = true;
         } else {
