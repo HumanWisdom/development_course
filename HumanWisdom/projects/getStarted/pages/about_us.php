@@ -73,6 +73,10 @@
       width: 300px;
     }
 
+     .gap-40px{
+      gap: 40px;
+    }
+
     .inspiring_img {
       width: 46px;
       height: 46px;
@@ -81,11 +85,28 @@
     .w-1240px {
       width: 1240px !important;
     }
+    .w-810px{
+        width:810px !important
+      }
+
+       .m-wh{
+      width: 132px;
+    }
+         .navbar a.nav:hover,
+    .navbar li:hover>a.nav {
+      color: #834B66 !important;
+    }
+
+    .navbar .active,
+    .navbar .active:focus {
+      color: #834B66 !important;
+    }
 
     /* Our HOW CTA: desktop keeps 225px; mobile uses .btn-mw-335px (inline width would override that) */
     @media (min-width: 768px) {
       #happiermeTryForFree .btn-mw-335px {
-        width: 225px !important;
+        width: 314px !important;
+        max-width: 314px !important;
       }
     }
 
@@ -166,6 +187,7 @@
         padding-top: 5px !important;
 
       }
+      
 
       /* Beat responsive.css .section-header h1 15px rule (higher specificity via .m-txt); do not change global stylesheet */
       @media (max-width: 768px) {
@@ -194,6 +216,30 @@
           font-size: 21px !important;
         }
       }
+    }
+
+    /* About Us only: link hover colour like index page */
+    .navbar a.nav:hover,
+    .navbar li:hover > a.nav {
+      color: #834B66 !important;
+    }
+    .navbar .active,
+    .navbar .active:focus {
+      color: #834B66 !important;
+    }
+
+    /* Founder book links: keep hover in the same purple */
+    #main a[href*="amazon"]:hover .fc_cb6171,
+    #main a:hover .fc_cb6171,
+    #main .fc_cb6171:hover {
+      color: #834B66 !important;
+    }
+
+    /* Do not change colour on hover for the 3 descriptive lines */
+    #main section.section-description h5.fc_000000,
+    #main section.section-description h5.fc_000000:hover {
+      color: #000000 !important;
+    }
   </style>
 
 </head>
@@ -256,9 +302,9 @@
     <section class="section-description">
       <div class="row center_flex mt40px section-row">
         <div
-          class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_au d-lg-flex d-md-flex d-sm-flex d-block ">
+          class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_au d-lg-flex d-md-flex d-sm-flex d-block gap-40px">
 
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 pr20px cpr_a w-300px " data-aos="fade-up"
+          <div class="w-300px" data-aos="fade-up"
             data-aos-delay="100">
             <div class="row ">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -284,7 +330,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 plr20px w-300px" data-aos="fade-up"
+          <div class="w-300px" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -310,7 +356,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0 pl20px w-300px" data-aos="fade-up"
+          <div class="w-300px" data-aos="fade-up"
             data-aos-delay="300">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -373,7 +419,7 @@
             </div>
 
             <div class="row center_flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0 tcenter">
+              <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0 tcenter w-810px">
                 <!-- <video id="homeVideo" controls playinline class="w100p"
               poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
               controlsList="nodownload">
