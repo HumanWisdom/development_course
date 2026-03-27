@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChanges, OnDestroy, AfterViewInit, ChangeDetectorRef } from "@angular/core";
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild, OnChanges, SimpleChanges, OnDestroy, AfterViewInit, ChangeDetectorRef } from "@angular/core";
 import { Router, NavigationEnd, NavigationStart } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
@@ -54,7 +54,23 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   isDataRecieved = false;
   url = '';
   private closeEventSubject: Subject<void> = new Subject();
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+    if (!menuCheckbox || !menuCheckbox.checked) {
+      return; // Menu is already closed — nothing to do
+    }
+    // If the click is inside the hamburger component, ignore it
+    if (this.elRef.nativeElement.contains(event.target as Node)) {
+      return;
+    }
+    // Click was outside — close the menu
+    this.closemenuevent();
+  }
+
   constructor(
+    private elRef: ElementRef,
     private router: Router,
     private Onboardingservice: OnboardingService,
     public platform: Platform,
@@ -146,7 +162,10 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   closemenuevent() {
     sessionStorage.setItem('openHamburger', 'false');
     this.toggleScrollLock(false);
-    this.closeEventSubject.next();
+    const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+    if (menuCheckbox) {
+      menuCheckbox.checked = false;
+    }
   }
 
   handleReferFriendClick() {
