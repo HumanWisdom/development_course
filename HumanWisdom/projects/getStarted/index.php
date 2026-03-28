@@ -288,24 +288,27 @@ p:hover {
 .div-19 { display: flex; align-items: center; gap: 6px; justify-content: center; }
 .text-wrapper-13 { font-size: 18px; font-weight: 500; color: #d7586b; text-decoration: underline; }
 .text-wrapper-13:hover {
-  color: #834B66 !important;
+  color: #803358 !important;
   text-decoration: underline !important;
 }
 .text-wrapper-13:hover + .chevron-pink,
 .text-wrapper-13:hover + .chevron-pink .bi {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 /* Same hover colour when moving over the chevron (whole row) */
 .div-19:hover .text-wrapper-13 {
-  color: #834B66 !important;
+  color: #803358 !important;
   text-decoration: underline !important;
 }
 .div-19:hover .chevron-pink,
 .div-19:hover .chevron-pink .bi {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
-a:hover
+a:hover,
+header a:hover,
+nav a:hover
 {
+  color: #803358 !important;
   text-decoration: underline !important;
 }
 .text-wrapper-26:hover,
@@ -357,15 +360,15 @@ a:hover
 .text-wrapper-16 { font-size: 14px; font-weight: 400; color: #000; line-height: 1.5; margin: 0; }
 .div-28 { display: flex; align-items: center; margin-top: auto; width: 40%;}
 .view-all-success { font-size: 15px; font-weight: 500; color: #d7586b; text-decoration: underline; }
-.view-all-success:hover { color: #834B66 !important; text-decoration: underline !important; }
-.view-all-success:hover + .chevron-pink { color: #834B66 !important; }
+.view-all-success:hover { color: #803358 !important; text-decoration: underline !important; }
+.view-all-success:hover + .chevron-pink { color: #803358 !important; }
 .div-28:hover .view-all-success {
-  color: #834B66 !important;
+  color: #803358 !important;
   text-decoration: underline !important;
 }
 .div-28:hover .chevron-pink,
 .div-28:hover .chevron-pink .bi {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 .view-all-success:active {
   /* On click we keep the original (non-hover) pink to avoid "yellow flash". */
@@ -385,12 +388,12 @@ a:hover
 
 /* If user clicks while still hovering the "Find out more" area, keep the hover color. */
 .div-25:active .div-28:hover .view-all-success {
-  color: #834B66 !important;
+  color: #803358 !important;
   text-decoration: underline !important;
 }
 .div-25:active .div-28:hover .chevron-pink,
 .div-25:active .div-28:hover .chevron-pink .bi {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 .div-wrapper-5 { display: flex; align-items: center; }
 
@@ -690,14 +693,14 @@ a:hover
   margin-top: 2px;
   text-decoration: underline;
 }
-.tools-explore-link:hover { color: #834B66; text-decoration: underline; }
-.tools-explore-link:hover .chevron-pink { color: #834B66 !important; }
+.tools-explore-link:hover { color: #803358; text-decoration: underline; }
+.tools-explore-link:hover .chevron-pink { color: #803358 !important; }
 .tools-explore-link:active {
-  color: #834B66 !important;
+  color: #803358 !important;
   text-decoration: underline !important;
 }
 .tools-explore-link:active .chevron-pink {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 
 /* index-only: prevent global yellow click/active color */
@@ -852,11 +855,11 @@ a:hover
 }
 .coaches-more:hover {
   opacity: 0.8;
-  color: #834B66 !important;
+  color: #803358 !important;
   text-decoration: underline !important;
 }
 .coaches-more:hover .bi-chevron-right {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 .coaches-more:active {
   /* Prevent global "yellow on click" for this link */
@@ -866,10 +869,10 @@ a:hover
   color: #d7586b !important;
 }
 .coaches-more:hover:active {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 .coaches-more:hover:active .bi-chevron-right {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 .div_new1{
   justify-content: center;
@@ -994,10 +997,10 @@ a:hover
   font-size: 16px; font-weight: 500; color: #d7586b;
   text-decoration: underline;
 }
-.blog-more:hover { color: #834B66 !important; }
-.blog-more:hover .chevron-pink { color: #834B66 !important; }
-.blog-more:active { color: #834B66 !important; }
-.blog-more:active .chevron-pink { color: #834B66 !important; }
+.blog-more:hover { color: #803358 !important; }
+.blog-more:hover .chevron-pink { color: #803358 !important; }
+.blog-more:active { color: #803358 !important; }
+.blog-more:active .chevron-pink { color: #803358 !important; }
 .blog-more img { width: 8px; height: auto; }
 
 /* Mobile blog card (matches Figma dimensions) */
@@ -1100,7 +1103,7 @@ a:hover
 .div-56 { display: flex; flex-direction: column; gap: 20px; min-width: 200px; flex-shrink: 0; }
 .about-happierme { font-size: 15px; font-weight: 600; color: rgba(128, 51, 88, 1); cursor: pointer; }
 .text-wrapper-45 { font-size: 15px; font-weight: 500; color: rgba(203, 97, 113, 1);text-decoration: underline; cursor: pointer; }
-.faq-tab:hover { color: #834b66 !important;
+.faq-tab:hover { color: #803358 !important;
     text-decoration: none !important; }
 .faq-tab-active { opacity: 1 !important; font-weight: 600 !important; }
 .div-57 { flex: 1; min-width: 280px; }
@@ -2013,7 +2016,7 @@ a:hover
       </div>
 
       <!-- ===== SUBSCRIPTION ===== -->
-      <div class="frame-wrapper-9">
+      <div class="frame-wrapper-9" id="div_subscription">
         <div class="div-39">
           <div class="div-40">
             <div class="div-wrapper-6">
@@ -2821,7 +2824,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn1" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -2831,7 +2834,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/overcome.svg" class="img-responsive "
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/OvercomeStrength.svg" class="img-responsive "
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -2856,7 +2859,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row" >
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -2870,7 +2873,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -2884,7 +2887,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/feel.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/feelBetter.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -2905,7 +2908,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -2919,7 +2922,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
@@ -2931,7 +2934,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
@@ -2965,7 +2968,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn2" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading="lazy">
                 </a>
               </div>
@@ -2976,7 +2979,7 @@ a:hover
                   data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build_d.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/BuildDeeperRelationship.svg" class="img-responsive"
                     alt="Mental Health" loading="lazy">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3001,7 +3004,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3016,7 +3019,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3054,7 +3057,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3069,7 +3072,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3082,7 +3085,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3115,7 +3118,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn3" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3125,7 +3128,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/practice.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/meditationPractice.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3149,7 +3152,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3214,7 +3217,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn4" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading="lazy">
                 </a>
               </div>
@@ -3225,7 +3228,7 @@ a:hover
                   data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/soft_skill.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/Buildworksuccess.svg" class="img-responsive"
                     alt="Mental Health" loading="lazy">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3250,7 +3253,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3266,7 +3269,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3282,7 +3285,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3314,7 +3317,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching_soft.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/couching.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3327,7 +3330,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/self_build.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/selfawareness.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3360,7 +3363,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn5" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3370,7 +3373,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/break.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/harmfulhabit.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3394,7 +3397,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3408,7 +3411,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3439,7 +3442,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3453,7 +3456,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching_soft.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/couching.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3465,7 +3468,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3498,7 +3501,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn6" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3508,7 +3511,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Character.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/manageemotions.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3532,7 +3535,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3546,7 +3549,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3560,7 +3563,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3578,7 +3581,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3592,7 +3595,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3604,7 +3607,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3637,7 +3640,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn7" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3647,7 +3650,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/awarness.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/selfawareness.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3671,7 +3674,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3685,7 +3688,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3715,7 +3718,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3741,7 +3744,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3774,7 +3777,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn8" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3784,7 +3787,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/parents.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/supportingparents.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
@@ -3808,7 +3811,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3822,7 +3825,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3852,7 +3855,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3866,7 +3869,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3878,7 +3881,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3911,7 +3914,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn9" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3921,7 +3924,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/teebagers.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/teenagerapp.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
@@ -3945,7 +3948,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3960,7 +3963,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3974,7 +3977,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/feel.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/feelBetter.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3990,7 +3993,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4004,7 +4007,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/talk.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/teentalk.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4016,7 +4019,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">

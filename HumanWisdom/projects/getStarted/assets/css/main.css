@@ -3966,6 +3966,12 @@ audio::-webkit-media-controls-enclosure {
   bottom: 0;
   margin: 0 auto;
 }
+/* Keep NEW badge text unchanged even when h6:hover is global */
+.badge_new h6,
+.badge_new h6:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
 
 .sticky_rating_banner {
   background: #FFF;
