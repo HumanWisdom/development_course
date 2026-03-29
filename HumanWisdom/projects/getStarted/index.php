@@ -682,6 +682,14 @@ nav a:hover
   margin: 0;
   max-width: 360px;
 }
+/* HTML5 audio in tools tabs — same sources as indexolder.php; styling from main.css (webkit controls) */
+.tools-info audio#aud1,
+.tools-info audio#aud2 {
+  width: 100%;
+  max-width: 335px;
+  margin: 4px 0 0 0;
+  display: block;
+}
 .tools-explore-link {
   display: inline-flex;
   align-items: center;
@@ -2285,6 +2293,9 @@ nav a:hover
             <div class="tools-info">
               <h3 class="tools-info-heading">PATHWAY — Guided program</h3>
               <p class="tools-info-body">A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.</p>
+              <audio id="aud1" controls controlslist="nodownload">
+                <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+              </audio>
               <a href="https://happierme.app/adults/pathway/" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
@@ -2315,7 +2326,10 @@ nav a:hover
             </div>
             <div class="tools-info">
               <h3 class="tools-info-heading">HappierMe Podcast</h3>
-              <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, exploring subjects in depth with guests from around the world.</p>
+              <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, where we explore a subject in depth with guests from around the world. They offer fresh ways of dealing with the many challenges we face and living our best life.</p>
+              <audio id="aud2" controls controlslist="nodownload">
+                <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
+              </audio>
               <a href="https://happierme.app/adults/podcast" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>

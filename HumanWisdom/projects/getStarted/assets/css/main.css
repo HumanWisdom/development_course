@@ -3251,7 +3251,8 @@ audio::-webkit-media-controls-enclosure {
   background: rgb(18, 15, 64);
 }
 
-#aud1 {
+#aud1,
+#aud2 {
   width: 100%;
 }
 
