@@ -1260,6 +1260,7 @@ nav a:hover
     align-items: center;
     text-align: center;
     flex: 0 0 auto;
+    padding-bottom: 24px;
   }
   .tools-info-body { max-width: 100%; }
   .tools-info-heading { font-size: 20px; }
