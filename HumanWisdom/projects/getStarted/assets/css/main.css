@@ -3989,7 +3989,7 @@ audio::-webkit-media-controls-enclosure {
   width: 100%;
   height: 33px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #E58D82, #CB6171);
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 }
 
 .mb-8rem {
