@@ -24,6 +24,8 @@ export class S140001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+  isContentsOpen = false;
+
   bookmarkList=[]
   pgResume: any;
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/140.webp"
@@ -118,6 +120,9 @@ export class S140001Page implements OnInit,OnDestroy {
 
 
     
+  }
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   toggleBookmark(){
     if(this.bookmark==0)

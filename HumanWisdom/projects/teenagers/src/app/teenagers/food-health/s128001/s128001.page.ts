@@ -19,6 +19,8 @@ export class S128001Page implements OnInit, OnDestroy {
   endTime: any
   totalTime: any
   bookmark: any
+            isContentsOpen = false;
+
   bookmarkList = []
    path = setTimeout(() => {
     return this.router.url;
@@ -140,6 +142,10 @@ export class S128001Page implements OnInit, OnDestroy {
     this.socialShare = true
   }
 
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark() {
     if (this.bookmark == 0)
       this.bookmark = 1
