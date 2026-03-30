@@ -1,6 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 
 @Component({
@@ -15,8 +17,12 @@ export class SessionoverS2Component {
 
 
   routeJournal(){
-    this.router.navigate(['/adults/journal'])
-
+    localStorage.setItem('NaviagtedFrom', this.router.url);
+    if (SharedService.ProgramId == ProgramType.Teenagers) {
+      this.router.navigate(['/teenagers/journal'])
+    } else {
+      this.router.navigate(['/adults/journal'])
+    }
   }
 
 }

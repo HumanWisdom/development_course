@@ -155,8 +155,11 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
       if (moduleData && moduleData != null && moduleData.length > 0) {
         this.RouteToModule(moduleData[0]);
       }
-      else if(r.toString()=='0'){
-         this.router.navigate([link])
+      else if(r.toString()=='0' || (moduleData.length == 0 && link != '')){
+        if(!link.includes("/teenagers/") && !link.includes("/adults/") && link.startsWith("/")) {
+          link = "/teenagers" + link;
+        }
+        this.router.navigate([link])
       }  
     } else {
       switch (r.toString()) {
