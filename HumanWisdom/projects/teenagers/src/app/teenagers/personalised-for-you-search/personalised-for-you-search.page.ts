@@ -415,6 +415,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
         url = `/teenagers/audio-meditation`
         break;
       }
+      case "guided audio meditation":{
+        url = `/teenagers/audio-meditation`
+        break;
+      }
       case ("short videos"):
       case ("videos"):
         {

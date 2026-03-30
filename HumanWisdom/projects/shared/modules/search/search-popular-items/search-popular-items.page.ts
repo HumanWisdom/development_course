@@ -110,7 +110,7 @@ export class SearchPopularItemsPage implements OnInit {
   
   getinp(event) {
     let url=""
-    let fragment = ""
+    let fragment: string | undefined = undefined;
     this.search= event;
 
     switch(event.toLowerCase())
@@ -133,6 +133,10 @@ export class SearchPopularItemsPage implements OnInit {
         break;
       }
       case "audio meditations":{
+        url = `/${SharedService.getprogramName()}/audio-meditation`
+        break;
+      }
+      case "guided audio meditation":{
         url = `/${SharedService.getprogramName()}/audio-meditation`
         break;
       }

@@ -3251,7 +3251,8 @@ audio::-webkit-media-controls-enclosure {
   background: rgb(18, 15, 64);
 }
 
-#aud1 {
+#aud1,
+#aud2 {
   width: 100%;
 }
 
@@ -3966,6 +3967,12 @@ audio::-webkit-media-controls-enclosure {
   bottom: 0;
   margin: 0 auto;
 }
+/* Keep NEW badge text unchanged even when h6:hover is global */
+.badge_new h6,
+.badge_new h6:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
 
 .sticky_rating_banner {
   background: #FFF;
@@ -3983,7 +3990,7 @@ audio::-webkit-media-controls-enclosure {
   width: 100%;
   height: 33px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #E58D82, #CB6171);
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 }
 
 .mb-8rem {

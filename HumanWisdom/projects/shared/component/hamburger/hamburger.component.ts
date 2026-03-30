@@ -1,9 +1,10 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, OnChanges, SimpleChanges, OnDestroy, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild, OnChanges, SimpleChanges, OnDestroy, AfterViewInit, ChangeDetectorRef } from "@angular/core";
+import { Router, NavigationEnd, NavigationStart } from "@angular/router";
 import { LogEventService } from "./../../services/log-event.service";
 import { OnboardingService } from "../../services/onboarding.service";
 import { ProgramType } from '../../models/program-model';
 import { ChatbotService } from "../../services/chatbot.service";
+import { NavigationService } from "../../services/navigation.service";
 
 import {
   getSupportedInputTypes,
@@ -25,6 +26,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   @ViewChild('closemodal') closemodal: ElementRef;
   @ViewChild('closeLogoutmodal') closeLogoutmodal: ElementRef;
   isHamburgerClicked = false;
+  private wasBackClicked = false;
   supportedInputTypes = Array.from(getSupportedInputTypes()).join(", ");
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
@@ -52,13 +54,30 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   isDataRecieved = false;
   url = '';
   private closeEventSubject: Subject<void> = new Subject();
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+    if (!menuCheckbox || !menuCheckbox.checked) {
+      return; // Menu is already closed — nothing to do
+    }
+    // If the click is inside the hamburger component, ignore it
+    if (this.elRef.nativeElement.contains(event.target as Node)) {
+      return;
+    }
+    // Click was outside — close the menu
+    this.closemenuevent();
+  }
+
   constructor(
+    private elRef: ElementRef,
     private router: Router,
     private Onboardingservice: OnboardingService,
     public platform: Platform,
     public logeventservice: LogEventService,
     private cd: ChangeDetectorRef,
-    private chatbotService: ChatbotService
+    private chatbotService: ChatbotService,
+    private navigationService: NavigationService
   ) {
     this.isAndroidDevice();
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -84,6 +103,38 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         this.isDataRecieved = false;
       }
     });
+
+    this.router.events.subscribe((event) => {
+      if (this.router.url == "/onboarding/user-profile") {
+        this.enableprofile = false;
+      }
+      if (event instanceof NavigationStart) {
+        this.wasBackClicked = this.navigationService.backClicked || event.navigationTrigger === 'popstate';
+      }
+      if (event instanceof NavigationEnd) {
+        const isOpen = sessionStorage.getItem('openHamburger') === 'true';
+        const sourceUrl = sessionStorage.getItem('hamburgerSourceUrl');
+        const isSamePage = this.router.url === sourceUrl;
+
+        if (isOpen && (isSamePage || this.wasBackClicked)) {
+          setTimeout(() => {
+            const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+            if (menuCheckbox) {
+              menuCheckbox.checked = true;
+              this.toggleScrollLock(true);
+            }
+          }, 100);
+          
+          // Fallback lock for back-navigation racing issues
+          setTimeout(() => {
+            if (sessionStorage.getItem('openHamburger') === 'true') {
+              this.toggleScrollLock(true);
+            }
+          }, 300);
+        }
+        this.wasBackClicked = false;
+      }
+    });
   }
 
   onProgramChange() {
@@ -100,6 +151,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
     }
+    sessionStorage.setItem('openHamburger', 'true');
+    this.toggleScrollLock(true);
   }
 
   isAndroidDevice(){
@@ -107,7 +160,12 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   closemenuevent() {
-    this.closeEventSubject.next();
+    sessionStorage.setItem('openHamburger', 'false');
+    this.toggleScrollLock(false);
+    const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+    if (menuCheckbox) {
+      menuCheckbox.checked = false;
+    }
   }
 
   handleReferFriendClick() {
@@ -165,6 +223,17 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     }
     let userId = JSON.parse(localStorage.getItem("userId"));
     this.Onboardingservice.getuserDetail();
+    
+    if (sessionStorage.getItem('openHamburger') === 'true') {
+      setTimeout(() => {
+        const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+        if (menuCheckbox) {
+          menuCheckbox.checked = true;
+          this.toggleScrollLock(true);
+        }
+      }, 100);
+    }
+
     if (localStorage.getItem("isPartner") != null) {
       this.isPartner = localStorage.getItem("isPartner");
     }
@@ -299,6 +368,9 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   routeToPartnerScreen() {
     this.logeventservice.logEvent('click_My_Partnership_Hamburger')
     this.router.navigate(["adults/partnership-report/income-report"]);
+    this.closemodal?.nativeElement?.click();
+    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
+    sessionStorage.setItem('openHamburger', 'true');
   }
 
   RouteToFaq() {
@@ -309,6 +381,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       skipLocationChange: true
     });
     this.closemodal?.nativeElement?.click();
+    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
+    sessionStorage.setItem('openHamburger', 'true');
 
   }
 
@@ -360,6 +434,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
     }
     this.closemodal?.nativeElement?.click();
+    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
+    sessionStorage.setItem('openHamburger', 'true');
   }
 
   Logevent(route, params, evtName) {
@@ -372,6 +448,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
     if (!currentRoute || currentRoute === '') {
       this.closemodal?.nativeElement?.click();
+      sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
+      sessionStorage.setItem('openHamburger', 'true');
       return;
     }
 
@@ -386,6 +464,8 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     }
 
     this.closemodal?.nativeElement?.click();
+    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
+    sessionStorage.setItem('openHamburger', 'true');
   }
 
   private isDirectNavigationRoute(route: string): boolean {
@@ -414,10 +494,14 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.router.navigate(['/' + SharedService.getprogramName() + route]);
     }
     this.closemodal?.nativeElement?.click();
+    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
+    sessionStorage.setItem('openHamburger', 'true');
   }
 
   navigate(url) {
     this.closemodal?.nativeElement?.click();
+    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
+    sessionStorage.setItem('openHamburger', 'true');
     this.router.navigate([url]);
   }
 
@@ -568,7 +652,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   ngOnDestroy() {
-    // this.closemodal?.nativeElement?.click();
+    this.toggleScrollLock(false);
     this.toursubscription.unsubscribe();
   }
 
@@ -636,6 +720,16 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         });
       }
     }, 1500);
+  }
+
+  private toggleScrollLock(lock: boolean) {
+    if (lock) {
+      document.body.style.setProperty('overflow', 'hidden', 'important');
+      document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+    } else {
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
+    }
   }
 
   setProfileImage(detail) {
