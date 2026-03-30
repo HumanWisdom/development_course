@@ -245,7 +245,7 @@ textarea {
 }
 
 .scroll-top:hover {
-  background: #D7586B;
+  background: #803358;
   color: #fff;
 }
 
@@ -3137,7 +3137,8 @@ a {
   object-fit: cover;
 }
 
-video::-webkit-media-controls-panel {
+/* Only videos using .cvideo (e.g. nfsn tools block); do not style all <video> or homepage FBN loses custom bar colour */
+video.cvideo::-webkit-media-controls-panel {
   background: #120F40 !important;
   bottom: 0;
   position: absolute;

@@ -80,6 +80,7 @@ img { max-width: 100%; display: block; }
 /* ── SHARED HELPERS ── */
 .chevron        { font-size: 20px; color: #000; margin-left: 4px; }
 .chevron-pink   { font-size: 12px; color: rgba(215, 88, 107, 1);padding-top:3px }
+.pt-12px { padding:12px;}
 
 /* ========================================
    HERO
@@ -100,7 +101,7 @@ img { max-width: 100%; display: block; }
 
 .new-app-adults-teen { width: 415px; height: 525px; object-fit: contain; flex-shrink: 0; }
 
-.div-3 {margin-top: -20px; display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
+.div-3 {margin-top: -26px; display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
 
 /* rating */
 .p0        { padding: 0; }
@@ -304,12 +305,13 @@ p:hover {
 .div-19:hover .chevron-pink .bi {
   color: #803358 !important;
 }
-a:hover,
-header a:hover,
-nav a:hover
-{
+a:hover {
   color: #803358 !important;
   text-decoration: underline !important;
+}
+header a:hover,
+nav a:hover {
+  text-decoration: none !important;
 }
 .text-wrapper-26:hover,
 .text-wrapper-27:hover {
@@ -567,11 +569,81 @@ nav a:hover
   height: 206px;
   display: block;
   border-radius: 10px;
-  background: #120f40;
+  background: #FFE8BB;
   object-fit: cover;
+  /* Helps timeline scrub in some Chromium builds */
+  accent-color: #000;
 }
-.tools-thumb-video::-webkit-media-controls-panel {
-  background: #120f40;
+/* Homepage FBN: cream bar — scoped selectors + clear background-image (index.css sets video::-webkit-media-controls-panel) */
+.tools-thumb-video::-webkit-media-controls-panel,
+#fbn-video::-webkit-media-controls-panel,
+video#fbn-video.tools-thumb-video::-webkit-media-controls-panel {
+  background: #FFE8BB !important;
+  background-image: none !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+/* Time text — panel `color` does not apply; target shadow parts (Chromium/WebKit) */
+.tools-thumb-video::-webkit-media-controls-current-time-display,
+.tools-thumb-video::-webkit-media-controls-time-remaining-display,
+#fbn-video::-webkit-media-controls-current-time-display,
+#fbn-video::-webkit-media-controls-time-remaining-display,
+video#fbn-video.tools-thumb-video::-webkit-media-controls-current-time-display,
+video#fbn-video.tools-thumb-video::-webkit-media-controls-time-remaining-display {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+}
+/* Progress / scrub bar */
+.tools-thumb-video::-webkit-media-controls-timeline,
+#fbn-video::-webkit-media-controls-timeline,
+video#fbn-video.tools-thumb-video::-webkit-media-controls-timeline {
+  background-color: rgba(0, 0, 0, 0.22) !important;
+  border-radius: 4px;
+}
+.tools-thumb-video::-webkit-media-controls-timeline::-webkit-slider-thumb,
+#fbn-video::-webkit-media-controls-timeline::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #000 !important;
+}
+/* Built-in control icons are drawn light-on-dark; invert so they read on #FFE8BB */
+.tools-thumb-video::-webkit-media-controls-play-button,
+.tools-thumb-video::-webkit-media-controls-mute-button,
+.tools-thumb-video::-webkit-media-controls-fullscreen-button,
+.tools-thumb-video::-webkit-media-controls-overlay-play-button,
+#fbn-video::-webkit-media-controls-play-button,
+#fbn-video::-webkit-media-controls-mute-button,
+#fbn-video::-webkit-media-controls-fullscreen-button {
+  filter: invert(1);
+}
+/* Overflow ⋮ — invert() often does not affect inner SVG; brightness(0) maps light pixels to black */
+.tools-thumb-video::-webkit-media-controls-overflow-button,
+#fbn-video::-webkit-media-controls-overflow-button,
+video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  opacity: 1 !important;
+  filter: brightness(0) !important;
+  -webkit-filter: brightness(0) !important;
+}
+/* FBN: while playing, video fills card (353px) */
+#tab-fbn .tools-card.tools-card-fbn-playing {
+  height: 353px;
+  min-height: 353px;
+}
+#tab-fbn .tools-card.tools-card-fbn-playing .tools-thumb {
+  padding: 0;
+  height: 353px;
+}
+#tab-fbn .tools-card.tools-card-fbn-playing .tools-card-meta {
+  display: none !important;
+}
+#fbn-video.tools-thumb-video-playing {
+  height: 353px !important;
+  max-height: 353px;
+  border-radius: 16px;
+  object-fit: cover;
 }
 .tools-thumb-img_sec{
    object-fit: cover;
@@ -734,7 +806,7 @@ nav a:hover
 ======================================== */
 .coaches-section {
   width: 100%;
-  max-width: 1340px;
+  max-width: 100%;
   padding: 60px 20px;
   display: flex;
   flex-direction: column;
@@ -743,12 +815,15 @@ nav a:hover
   box-sizing: border-box;
 }
 .coaches-outer {
-  width: auto;
-  max-width: 1340px;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0;
   padding-left: 12rem;
+}
+.coaches-outer.is-scrolled {
+  padding-left: 0;
 }
 
 /* track wrap: arrows sit on left/right, scroll strip in between */
@@ -845,11 +920,11 @@ nav a:hover
 
 .coaches-more {
   display: inline-flex; align-items: center; gap: 4px;
-  font-size: 17px; font-weight: 500; color: #d7586b;
+  font-size: 17px; font-weight: 500; color: rgba(215, 88, 107, 1);
   text-decoration: underline;
 }
 .coaches-more .bi-chevron-right {
-  color: #d7586b;
+  color: rgba(215, 88, 107, 1);
   font-size: 14px;
   font-weight: 700;
 }
@@ -862,7 +937,6 @@ nav a:hover
   justify-content: center;
 }
 .coaches-more:hover {
-  opacity: 0.8;
   color: #803358 !important;
   text-decoration: underline !important;
 }
@@ -870,11 +944,10 @@ nav a:hover
   color: #803358 !important;
 }
 .coaches-more:active {
-  /* Prevent global "yellow on click" for this link */
-  color: #d7586b !important;
+  color: rgba(215, 88, 107, 1) !important;
 }
 .coaches-more:active .bi-chevron-right {
-  color: #d7586b !important;
+  color: rgba(215, 88, 107, 1) !important;
 }
 .coaches-more:hover:active {
   color: #803358 !important;
@@ -1117,8 +1190,8 @@ nav a:hover
 ======================================== */
 .div-54 { width: 100%; max-width: 980px; padding: 10px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
 .div-55 { display: flex; gap: 40px; width: 100%; flex-wrap: wrap; }
-.div-56 { display: flex; flex-direction: column; gap: 20px; min-width: 200px; flex-shrink: 0; }
-.about-happierme { font-size: 15px; font-weight: 600; color: rgba(128, 51, 88, 1); cursor: pointer; }
+.div-56 { display: flex; flex-direction: column; gap: 20px; min-width: 200px; flex-shrink: 0; padding-top: 12px}
+.about-happierme { font-size: 15px; font-weight: 600; color: background: rgba(131, 75, 102, 1); cursor: pointer; }
 .text-wrapper-45 { font-size: 15px; font-weight: 500; color: rgba(203, 97, 113, 1);text-decoration: underline; cursor: pointer; }
 .faq-tab:hover { color: #803358 !important;
     text-decoration: none !important; }
@@ -1127,7 +1200,7 @@ nav a:hover
 .faq-panel { display: none; }
 .faq-panel.active { display: block; }
 .div-58 { margin-bottom: 8px; }
-.div-59 { display: flex; flex-direction: column; gap: 8px; }
+.div-59 { display: flex; flex-direction: column; }
 .div-70 { width: 100%; display: flex;
     justify-content: center;}
 .div-71 { width: 100%;}
@@ -1210,6 +1283,16 @@ nav a:hover
   .tools-card { width: 210px; }
   .tools-thumb-img { height: 155px; }
   .tools-thumb-video { height: 178px; }
+  #tab-fbn .tools-card.tools-card-fbn-playing,
+  #tab-fbn .tools-card.tools-card-fbn-playing .tools-thumb {
+    height: auto;
+    min-height: min(353px, 85vw);
+    max-height: none;
+  }
+  #fbn-video.tools-thumb-video-playing {
+    height: min(353px, 85vw) !important;
+    max-height: min(353px, 85vw);
+  }
   .tools-info-heading { font-size: 22px; }
   .tools-info-body { max-width: 100%; }
 
@@ -2802,6 +2885,19 @@ nav a:hover
           t.classList.remove('tool-tab-active');
         });
         el.classList.add('tool-tab-active');
+        if (panelId !== 'tab-fbn') {
+          var fbnVideo = document.getElementById('fbn-video');
+          var fbnPlayBtn = document.getElementById('fbn-play-btn');
+          var fbnCard = document.querySelector('#tab-fbn .tools-card');
+          if (fbnVideo) {
+            fbnVideo.pause();
+            fbnVideo.currentTime = 0;
+            fbnVideo.controls = false;
+            fbnVideo.classList.remove('tools-thumb-video-playing');
+          }
+          if (fbnCard) fbnCard.classList.remove('tools-card-fbn-playing');
+          if (fbnPlayBtn) fbnPlayBtn.hidden = false;
+        }
         document.querySelectorAll('.tools-panel').forEach(function(p){
           p.classList.remove('active');
         });
@@ -2875,8 +2971,16 @@ nav a:hover
         var playBtn = document.getElementById('fbn-play-btn');
         if (!video || !playBtn) return;
 
+        var fbnCard = video.closest('.tools-card');
+
+        function setFbnPlayingLayout(on) {
+          video.classList.toggle('tools-thumb-video-playing', on);
+          if (fbnCard) fbnCard.classList.toggle('tools-card-fbn-playing', on);
+        }
+
         playBtn.addEventListener('click', function() {
           video.controls = true;
+          setFbnPlayingLayout(true);
           var playPromise = video.play();
           if (playPromise && typeof playPromise.catch === 'function') {
             playPromise.catch(function() {});
@@ -2885,16 +2989,19 @@ nav a:hover
 
         video.addEventListener('play', function() {
           playBtn.hidden = true;
+          setFbnPlayingLayout(true);
         });
 
         video.addEventListener('pause', function() {
           if (video.currentTime < video.duration) {
             playBtn.hidden = false;
           }
+          setFbnPlayingLayout(true);
         });
 
         video.addEventListener('ended', function() {
           playBtn.hidden = false;
+          setFbnPlayingLayout(false);
         });
       });
 
@@ -2906,6 +3013,10 @@ nav a:hover
         if (!el || !prevBtn || !nextBtn) return;
         var atStart = el.scrollLeft <= 1;
         var atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        var outer = el.closest('.coaches-outer');
+        if (outer) {
+          outer.classList.toggle('is-scrolled', !atStart);
+        }
         prevBtn.disabled = atStart;
         nextBtn.disabled = atEnd;
       }
@@ -3002,7 +3113,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/OvercomeStrength.svg" class="img-responsive "
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/overcomeanxiety.svg" class="img-responsive "
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3011,7 +3122,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex popup_w" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex popup_w pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Overcome stress and anxiety
@@ -3156,7 +3267,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex aos-init aos-animate pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Build deeper relationships
@@ -3305,7 +3416,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Build a meditation practice
@@ -3396,7 +3507,7 @@ nav a:hover
                   data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/Buildworksuccess.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/Buildsoftskill.svg" class="img-responsive"
                     alt="Mental Health" loading="lazy">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3405,7 +3516,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex aos-init aos-animate pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Build soft skills for work success
@@ -3550,7 +3661,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Break harmful habits
@@ -3688,7 +3799,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Manage your emotions
@@ -3818,7 +3929,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/selfawareness.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/meditationPractice.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3827,7 +3938,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100" >
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Develop your self-awareness
@@ -3964,7 +4075,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Supporting parents to flourish
@@ -4101,7 +4212,7 @@ nav a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   A separate app, just for teenagers
