@@ -100,7 +100,7 @@ img { max-width: 100%; display: block; }
 
 .new-app-adults-teen { width: 415px; height: 525px; object-fit: contain; flex-shrink: 0; }
 
-.div-3 {margin-top: -20px; display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
+.div-3 { display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
 
 /* rating */
 .p0        { padding: 0; }
@@ -146,8 +146,7 @@ p:hover {
   gap: 2px;
   line-height: 1;
 }
-.rating_a .fa-star { color: #000; font-size: 16px; line-height: 1; vertical-align: middle;    height: 16px;
-    width: 16px; }
+.rating_a .fa-star { color: #000; font-size: 14px; line-height: 1; vertical-align: middle; }
 .appstore_a {
   display: inline-flex;
   align-items: center;
@@ -221,10 +220,9 @@ p:hover {
 .div-7 { width: 100%; max-width: 1340px; padding: 60px 80px; display: flex; flex-direction: column; gap: 60px; }
 .div-wrapper-2 { display: flex; justify-content: center; }
 .text-wrapper-6 { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-bottom: 45px; }
-.text-wrapper-6-1{ font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; }
 .text-wrapper-a { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;    margin-top: 20px; }
 .text-wrapper-user { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-top: 60px; }
-.text-wrapper-blog { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;  }
+.text-wrapper-blog { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-bottom: 10px; }
 .div-8 { display: flex; flex-direction: column; gap: 20px; }
 .div-9 { display: flex; gap: 20px; flex-wrap: wrap; }
 .div-10 {
@@ -287,28 +285,8 @@ p:hover {
 .text-wrapper-12 { font-size: 15px; font-weight: 400; font-style: italic; color: #000; opacity: 0.75; line-height: 1.6; margin: 0; }
 .div-19 { display: flex; align-items: center; gap: 6px; justify-content: center; }
 .text-wrapper-13 { font-size: 18px; font-weight: 500; color: #d7586b; text-decoration: underline; }
-.text-wrapper-13:hover {
-  color: #803358 !important;
-  text-decoration: underline !important;
-}
-.text-wrapper-13:hover + .chevron-pink,
-.text-wrapper-13:hover + .chevron-pink .bi {
-  color: #803358 !important;
-}
-/* Same hover colour when moving over the chevron (whole row) */
-.div-19:hover .text-wrapper-13 {
-  color: #803358 !important;
-  text-decoration: underline !important;
-}
-.div-19:hover .chevron-pink,
-.div-19:hover .chevron-pink .bi {
-  color: #803358 !important;
-}
-a:hover,
-header a:hover,
-nav a:hover
+a:hover
 {
-  color: #803358 !important;
   text-decoration: underline !important;
 }
 .text-wrapper-26:hover,
@@ -337,19 +315,8 @@ nav a:hover
   transition: box-shadow 0.2s; cursor: pointer;
 }
 /* .div-25:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.10); } */
-/* Card is an <a>. Global `a:hover { text-decoration: underline !important; }` would underline ALL
-   text in the card — override it on the anchor, then re-apply underline only on "Find out more". */
-.div-25:hover {
-  text-decoration: none !important;
-}
-.div-25:hover .view-all-success {
-  text-decoration: underline !important;
-}
-/* Title + description must look the same on card hover (no colour/underline change). */
-.div-25:hover .text-wrapper-15,
-.div-25:hover .text-wrapper-17,
-.div-25:hover .text-wrapper-16 {
-  color: #000 !important;
+.div-25:hover,
+.div-25:hover * {
   text-decoration: none !important;
 }
 .rectangle { width: 100%; height: 180px; object-fit: cover; }
@@ -358,43 +325,9 @@ nav a:hover
 .div-27, .div-30 { display: flex; flex-direction: column; gap: 6px; }
 .text-wrapper-15, .text-wrapper-17 { font-size: 20px; font-weight: 500; color: #000; line-height: 1.4; }
 .text-wrapper-16 { font-size: 14px; font-weight: 400; color: #000; line-height: 1.5; margin: 0; }
-.div-28 { display: flex; align-items: center; margin-top: auto; width: 40%;}
+.div-28 { display: flex; align-items: center; margin-top: auto; }
 .view-all-success { font-size: 15px; font-weight: 500; color: #d7586b; text-decoration: underline; }
-.view-all-success:hover { color: #803358 !important; text-decoration: underline !important; }
-.view-all-success:hover + .chevron-pink { color: #803358 !important; }
-.div-28:hover .view-all-success {
-  color: #803358 !important;
-  text-decoration: underline !important;
-}
-.div-28:hover .chevron-pink,
-.div-28:hover .chevron-pink .bi {
-  color: #803358 !important;
-}
-.view-all-success:active {
-  /* On click we keep the original (non-hover) pink to avoid "yellow flash". */
-  color: #d7586b !important;
-  text-decoration: underline !important;
-}
-.view-all-success:active + .chevron-pink {
-  color: #d7586b !important;
-}
-.div-25:active .view-all-success {
-  color: #d7586b !important;
-  text-decoration: underline !important;
-}
-.div-25:active .chevron-pink {
-  color: #d7586b !important;
-}
-
-/* If user clicks while still hovering the "Find out more" area, keep the hover color. */
-.div-25:active .div-28:hover .view-all-success {
-  color: #803358 !important;
-  text-decoration: underline !important;
-}
-.div-25:active .div-28:hover .chevron-pink,
-.div-25:active .div-28:hover .chevron-pink .bi {
-  color: #803358 !important;
-}
+..view-all-success:hover { color: #803358; text-decoration: underline; }
 .div-wrapper-5 { display: flex; align-items: center; }
 
 /* ========================================
@@ -527,10 +460,9 @@ nav a:hover
 .tools-panel {
   display: none;
   align-items: center;
-  /* Keep app tile + description in one row (prevents large/odd gaps). */
-  gap: 40px;
-  padding: 60px 60px;
-  flex-wrap: nowrap;
+  gap: 64px;
+  padding: 60px 80px;
+  flex-wrap: wrap;
   height: 500px;
 }
 .tools-panel.active { display: flex; }
@@ -560,18 +492,6 @@ nav a:hover
   object-fit: cover;
   display: block;
   border-radius: 10px;
-}
-/* Feel better now: real MP4 (same as indexolder.php tools section) */
-.tools-thumb-video {
-  width: 100%;
-  height: 206px;
-  display: block;
-  border-radius: 10px;
-  background: #120f40;
-  object-fit: cover;
-}
-.tools-thumb-video::-webkit-media-controls-panel {
-  background: #120f40;
 }
 .tools-thumb-img_sec{
    object-fit: cover;
@@ -605,13 +525,6 @@ nav a:hover
   color: #000;
   margin-left: 3px;
   line-height: 1;
-}
-.tools-video-play-btn {
-  border: 0;
-  z-index: 2;
-}
-.tools-video-play-btn[hidden] {
-  display: none !important;
 }
 
 /* Card meta area */
@@ -682,14 +595,6 @@ nav a:hover
   margin: 0;
   max-width: 360px;
 }
-/* HTML5 audio in tools tabs — same sources as indexolder.php; styling from main.css (webkit controls) */
-.tools-info audio#aud1,
-.tools-info audio#aud2 {
-  width: 100%;
-  max-width: 335px;
-  margin: 4px 0 0 0;
-  display: block;
-}
 .tools-explore-link {
   display: inline-flex;
   align-items: center;
@@ -701,23 +606,8 @@ nav a:hover
   margin-top: 2px;
   text-decoration: underline;
 }
-.tools-explore-link:hover { color: #803358; text-decoration: underline; }
-.tools-explore-link:hover .chevron-pink { color: #803358 !important; }
-.tools-explore-link:active {
-  color: #803358 !important;
-  text-decoration: underline !important;
-}
-.tools-explore-link:active .chevron-pink {
-  color: #803358 !important;
-}
-
-/* index-only: prevent global yellow click/active color */
-#body a:active {
-  color: inherit !important;
-}
-#body a:active .chevron-pink {
-  color: inherit !important;
-}
+.tools-explore-link:hover { color: #834B66;
+text-decoration: underline; }
 
 /* Keep old selectors harmless */
 .group-wrapper, .group-9, .div-51, .div-wrapper-8, .div-wrapper-9, .div-wrapper-10,
@@ -739,7 +629,7 @@ nav a:hover
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
   box-sizing: border-box;
 }
 .coaches-outer {
@@ -861,27 +751,7 @@ nav a:hover
   align-items: center;
   justify-content: center;
 }
-.coaches-more:hover {
-  opacity: 0.8;
-  color: #803358 !important;
-  text-decoration: underline !important;
-}
-.coaches-more:hover .bi-chevron-right {
-  color: #803358 !important;
-}
-.coaches-more:active {
-  /* Prevent global "yellow on click" for this link */
-  color: #d7586b !important;
-}
-.coaches-more:active .bi-chevron-right {
-  color: #d7586b !important;
-}
-.coaches-more:hover:active {
-  color: #803358 !important;
-}
-.coaches-more:hover:active .bi-chevron-right {
-  color: #803358 !important;
-}
+.coaches-more:hover { opacity: 0.8; }
 .div_new1{
   justify-content: center;
     display: flex;
@@ -911,7 +781,6 @@ nav a:hover
   scrollbar-width: none;
   -ms-overflow-style: none;
   width: 120%;
-  height:370px;
 }
 .blog-scroll::-webkit-scrollbar { display: none; }
 .blog-card {
@@ -954,7 +823,7 @@ nav a:hover
 .circle-btn:active {
   transform: scale(0.95);
 }
-.blog-img { width: 470px; height: 240px; object-fit: cover; display: block; }
+.blog-img { width: 100%; height: 240px; object-fit: cover; display: block; }
 .blog-caption {
   width: 100%;
   height: 130px;
@@ -1005,10 +874,6 @@ nav a:hover
   font-size: 16px; font-weight: 500; color: #d7586b;
   text-decoration: underline;
 }
-.blog-more:hover { color: #803358 !important; }
-.blog-more:hover .chevron-pink { color: #803358 !important; }
-.blog-more:active { color: #803358 !important; }
-.blog-more:active .chevron-pink { color: #803358 !important; }
 .blog-more img { width: 8px; height: auto; }
 
 /* Mobile blog card (matches Figma dimensions) */
@@ -1020,19 +885,13 @@ nav a:hover
 
   .blog-scroll {
     width: 100%;
-    height: 289px;
     overflow-y: visible;
     align-items: center;
-    margin-top: -18px;
   }
 
   .blog-card {
-    width: 306px;
-    max-width: 100%;
-    height: 242.5372314453125px;
-    box-sizing: border-box;
-    overflow: hidden;
-    flex-shrink: 0;
+    width: 100%;
+    max-width: 306px;
     display: flex;
     flex-direction: column; /* blog-img on top, blog-caption below */
     align-items: stretch;
@@ -1041,7 +900,6 @@ nav a:hover
   .blog-img {
     width: 100%;
     height: 156.25531005859375px;
-    flex-shrink: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0;
@@ -1051,7 +909,6 @@ nav a:hover
 
   .blog-caption {
     height: 86.28196716308594px;
-    flex-shrink: 0;
     background: rgba(255, 249, 238, 1);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -1065,7 +922,6 @@ nav a:hover
   }
 
   .blog-footer {
-    margin-top: 0;
     margin-left: 0;
     justify-content: center;
   }
@@ -1120,7 +976,7 @@ nav a:hover
 .div-56 { display: flex; flex-direction: column; gap: 20px; min-width: 200px; flex-shrink: 0; }
 .about-happierme { font-size: 15px; font-weight: 600; color: rgba(128, 51, 88, 1); cursor: pointer; }
 .text-wrapper-45 { font-size: 15px; font-weight: 500; color: rgba(203, 97, 113, 1);text-decoration: underline; cursor: pointer; }
-.faq-tab:hover { color: #803358 !important;
+.faq-tab:hover { color: #834b66 !important;
     text-decoration: none !important; }
 .faq-tab-active { opacity: 1 !important; font-weight: 600 !important; }
 .div-57 { flex: 1; min-width: 280px; }
@@ -1203,97 +1059,29 @@ nav a:hover
 
 /* Tools responsive */
 @media (max-width: 900px) {
-  .tools-panel { padding: 40px 40px; gap: 40px; flex-wrap: wrap; }
+  .tools-panel { padding: 40px 40px; gap: 40px; }
 }
 @media (max-width: 768px) {
   .tools-panel { padding: 32px 24px; gap: 28px; }
   .tools-card { width: 210px; }
   .tools-thumb-img { height: 155px; }
-  .tools-thumb-video { height: 178px; }
   .tools-info-heading { font-size: 22px; }
   .tools-info-body { max-width: 100%; }
-
-  /* Tab pills: horizontal scroll (override desktop absolute positioning) */
-  .tools-section {
-    align-items: stretch;
-    max-width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  .tools-tabs {
-    position: relative !important;
-    inset: auto !important;
-    padding-top: 0 !important;
-    padding-left: 16px;
-    padding-right: 16px;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    justify-content: flex-start;
-    flex-wrap: nowrap !important;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
-    scrollbar-width: none;
-    gap: 10px;
-    box-sizing: border-box;
-  }
-  .tools-tabs::-webkit-scrollbar {
-    display: none;
-    height: 0;
-  }
-  .tool-tab {
-    flex-shrink: 0;
-  }
-  .tools-panel-wrap {
-    width: 100% !important;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
 }
 @media (max-width: 480px) {
-  .tools-panel { align-items: center; padding: 24px 18px; }
-  .tools-card { width: 100%; }
-  /* Don’t stretch the text block — avoids empty space between link and card */
-  .tools-info {
-    align-items: center;
-    text-align: center;
-    flex: 0 0 auto;
-    padding-bottom: 24px;
-  }
+  .tools-panel {  align-items: center; padding: 24px 18px; }
+  .tools-card { width: 100% }
+  .tools-info { align-items: center; text-align: center; }
   .tools-info-body { max-width: 100%; }
   .tools-info-heading { font-size: 20px; }
-  .tools-explore-link {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  /* Mobile layout: info + link above, card/video below — tighter space between link row and video */
-  .tools-panel {
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-    gap: 4px;
-  }
-  .tools-tabs {
-    padding-left: 12px;
-    padding-right: 12px;
-    gap: 8px;
-  }
+  /* Mobile layout: show tools-info above tools-card */
+  .tools-panel { flex-direction: column-reverse; flex-wrap: nowrap; gap: 20px; }
+  .tools-tabs { gap: 7px; flex-wrap: unset;padding-top: 40px;padding-left: 30rem;position: relative;}
   .tool-tab { font-size: 12px; padding: 4px 14px; }
-  .tools-section {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 24px;
-    padding-bottom: 60px;
-    gap: 0;
-  }
-  .tools-panel-wrap {
-    width: 100% !important;
-    max-width: 100%;
-  }
-  .tools-panel.active {
-    justify-content: center;
-  }
+  .tools-section{    padding-left: 0px;
+    padding-right: 0px;padding-top: 34px; gap:0px   }
+    .tools-panel-wrap {width: 375px;}
+    .tools-panel.active {justify-content: center;}
 }
 
 /* Subscription price cards — fluid by default */
@@ -1309,16 +1097,6 @@ nav a:hover
   width: min(420px, 100%);
   height: 84px;
   cursor: pointer;
-}
-
-/* When user picks Monthly: dim Yearly card + highlight Monthly (14-day badge stays visible on Yearly) */
-.group-7.sub-plan-off .rectangle-2 {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.25);
-}
-.group-8.sub-plan-on .rectangle-3 {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid #fff;
 }
 
 /* Coaches: smooth touch scroll */
@@ -1392,19 +1170,6 @@ nav a:hover
   .group { justify-content: center; }
   .start-your-free-wrapper { align-self: center; }
 
-  /* Anchor must define width: inner .start-your-free-wrapper uses max-width:100% and
-     would otherwise shrink-wrap wrong inside .div-3 (align-items:center). */
-  .web_home_divlanding .hero-try-free-link {
-    width: 335px;
-    max-width: 100%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    box-sizing: border-box;
-    text-decoration: none;
-  }
-
   .p { font-size: 27px; font-weight: 600; text-align: center !important; }
   .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 1.5; }
   .text-wrapper-5 { font-size: 16px; }
@@ -1412,12 +1177,11 @@ nav a:hover
   .start-your-free-wrapper-2,
   .div-wrapper-4 { padding: 14px 32px; }
 
-  /* CTA button size (hero: Try HappierMe for free) */
-  .web_home_divlanding .hero-try-free-link .start-your-free-wrapper {
-    width: 100%;
-    max-width: none;
+  /* CTA button size */
+  .start-your-free-wrapper {
+    width: 335px;
+    max-width: 100%;
     height: 48px;
-    border-radius: 24px;
     padding: 0 20px !important;
     gap: 12px;
   }
@@ -1438,7 +1202,7 @@ nav a:hover
   .div-10 { min-width: unset; width: 100%; height: auto; min-height: 60px; }
 
   /* Olly */
-  .div-11 { flex-direction: column; align-items: center; text-align: center; gap:18px}
+  .div-11 { flex-direction: column; align-items: center; text-align: center; }
   .group-3 { width: clamp(160px, 50vw, 260px); height: auto; }
   .introducing-olly-AI { font-size: 24px !important; font-weight: 600; }
   .div-12 { align-items: center; }
@@ -1452,29 +1216,6 @@ nav a:hover
     height: 48px;
     border-radius: 24px;
     padding: 0 20px !important;
-  }
-
-  /* Pink CTA pills (.div-wrapper-4): anchor must set width — same flex shrink issue as hero */
-  a:has(> .div-wrapper-4) {
-    display: flex;
-    width: 335px;
-    max-width: 100%;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: stretch;
-    text-decoration: none;
-  }
-
-  a:has(> .div-wrapper-4) .div-wrapper-4 {
-    width: 100%;
-    max-width: none;
-    height: 48px;
-    border-radius: 24px;
-    padding: 0 20px !important;
-    box-sizing: border-box;
   }
 
   /* Testimonials */
@@ -1560,41 +1301,11 @@ nav a:hover
   }
 
   /* Coaches (mobile): center footer + fix carousel start */
-  .coaches-section {
-    align-items: stretch;
-    max-width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    gap: 24px;
-  }
-  .text-wrapper-6-1 {
-    font-size: 18px;
-  }
-  .coaches-outer {
-    padding-left: 0 !important;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
+  .coaches-outer { padding-left: 0 !important; }
   .coaches-footer { flex-direction: column; justify-content: center; gap: 12px; margin-top: 20px; }
   .coaches-footer-spacer { display: none; }
   .coaches-nav-btns { margin-left: 0 !important; justify-content: center; }
   .coaches-more { justify-content: center; }
-
-  /* Coach strip: full-width scroll + room to see last cards */
-  .coaches-track-wrap {
-    padding-left: 0 !important;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-  #coaches-scroll.coaches-scroll {
-    padding-right: max(24px, env(safe-area-inset-right, 0px));
-    touch-action: pan-x;
-    overscroll-behavior-x: contain;
-  }
 
   /* Coach card sizing (mobile) */
   .coach-card { width: 190px !important; height: 245px !important; border-radius: 10px; }
@@ -1614,11 +1325,7 @@ nav a:hover
   .text-wrapper-4 { font-size: 16px; }
   .new-app-adults-teen { width: clamp(150px, 70vw, 240px); }
   .div-6 img { width: 28px !important; height: 32px !important; }
-  /* Let tools panel size to content — fixed 600px + flex:1 on .tools-info caused a large gap under "Explore on app" */
-  .tools-panel.active {
-    height: auto !important;
-    min-height: 0;
-  }
+  .tools-panel.active{height: 600px;}
 
   /* Orcha */
   .orcha-strip { padding: 12px 16px; }
@@ -1653,7 +1360,7 @@ nav a:hover
   }
 
   /* Video */
-  .div-13 {padding: 40px 16px;
+  .div-13 {padding: 40px 0px;
         gap: 24px;
         padding-left: 16px; }
 
@@ -1688,6 +1395,9 @@ nav a:hover
   .text-wrapper-32, .text-wrapper-34 { font-size: 18px; }
   .div-46 { top: 16px; left: 14px; }
   .div-47 { top: 12px; left: 14px; }
+  .coaches-track-wrap {
+    padding-left: 31rem;
+  }
   .coach-name {font-size: 15px;}
   .after-your-free {font-size: 12px}
 
@@ -1714,7 +1424,7 @@ nav a:hover
   .img-2 { display: none; }
 
   /* Section headings */
-  .text-wrapper-6 { font-size: 18px; padding-bottom: 30px; }
+  .text-wrapper-6 { font-size: 18px; padding-bottom: 8px; }
   .text-wrapper-21 { font-size: 18px; }
   .text-wrapper-user {
         font-size: 18px;
@@ -1792,7 +1502,7 @@ nav a:hover
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                     <p class="p" style="text-align: left;line-height: 1.3;">Understand your mind.<br>Change your life</p>
+                      <p class="p" style="text-align: left;line-height: 1.3;">Understand your mind.<br>Change your life</p>
                       <div class="div-6">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
                         <div class="text-wrapper-3">Now with Olly AI</div>
@@ -1998,7 +1708,7 @@ nav a:hover
             <div class="frame-wrapper-7">
               <div class="div-26">
                 <div class="div-27">
-                  <div class="text-wrapper-15">HappierMe for the <span class="fw_600">Workplace</span></div>
+                  <div class="text-wrapper-15">HappierMe for the Workplace</div>
                   <p class="text-wrapper-16">Upskill your staff to be happier, emotionally intelligent and make better decisions.</p>
                 </div>
                 <div class="div-28">
@@ -2014,7 +1724,7 @@ nav a:hover
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
-                  <div class="div-wrapper-5"><div class="text-wrapper-17">HappierMe for <span class="fw_600">Education</span></div></div>
+                  <div class="div-wrapper-5"><div class="text-wrapper-17">HappierMe for Education</div></div>
                   <p class="text-wrapper-16">Help students manage stress and anxiety, and to be happier and successful.</p>
                 </div>
                 <div class="div-28">
@@ -2030,7 +1740,7 @@ nav a:hover
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
-                  <div class="div-wrapper-5"><div class="text-wrapper-17">HappierMe for <span class="fw_600">Healthcare</span></div></div>
+                  <div class="div-wrapper-5"><div class="text-wrapper-17">HappierMe for Healthcare</div></div>
                   <p class="text-wrapper-16">Support your staff to be happier at work, and patients to lead healthier lives.</p>
                 </div>
                 <div class="div-28">
@@ -2077,7 +1787,7 @@ nav a:hover
 
       <!-- ===== COACHES ===== -->
       <div class="coaches-section">
-        <p class="text-wrapper-6-1">Contact our experienced coaches for personalised support</p>
+        <p class="text-wrapper-6">Contact our experienced coaches for personalised support</p>
         <div class="coaches-outer">
           <div class="coaches-track-wrap">
             <div class="coaches-scroll" id="coaches-scroll">
@@ -2179,7 +1889,7 @@ nav a:hover
       </div>
 
       <!-- ===== SUBSCRIPTION ===== -->
-      <div class="frame-wrapper-9" id="div_subscription">
+      <div class="frame-wrapper-9">
         <div class="div-39">
           <div class="div-40">
             <div class="div-wrapper-6">
@@ -2204,7 +1914,7 @@ nav a:hover
             <div class="div-44">
               <div class="div-45">
                 <!-- Yearly -->
-                <div class="group-7" id="sub-plan-yearly">
+                <div class="group-7">
                   <div class="rectangle-2"></div>
                   <div class="div-wrapper-7"><div class="text-wrapper-28">14-day free trial</div></div>
                   <div class="div-46">
@@ -2216,7 +1926,7 @@ nav a:hover
                   <div class="text-wrapper-32" id="spanAnnualLabel">₹200/mo.</div>
                 </div>
                 <!-- Monthly -->
-                <div class="group-8" id="sub-plan-monthly">
+                <div class="group-8">
                   <div class="rectangle-3"></div>
                   <div class="div-47">
                     <div class="text-wrapper-29">Monthly</div>
@@ -2226,7 +1936,7 @@ nav a:hover
                 </div>
               </div>
               <p class="after-your-free">
-                <span class="text-wrapper-35" id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
+                <span class="text-wrapper-35">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
               </p>
               <div id="AnnualTypebtn">
                 <div id="PricingSelectBtn1">
@@ -2259,16 +1969,8 @@ nav a:hover
           <div id="fbn" class="tools-panel active">
             <div class="tools-card">
               <div class="tools-thumb">
-                <video playinline
-                  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/rec-tool.svg"
-                  controlsList="nodownload"
-                  class="tools-thumb-video"
-                  id="fbn-video">
-                  <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
-                </video>
-                <button type="button" class="tools-play-btn tools-video-play-btn" aria-label="Play breathing exercise" id="fbn-play-btn">
-                  <span>&#9654;</span>
-                </button>
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/rec-tool.svg" alt="Humming bee" class="tools-thumb-img" />
+                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
@@ -2293,15 +1995,13 @@ nav a:hover
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" alt="Guided Programs" class="tools-thumb-img_sec" />
+                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
             </div>
             <div class="tools-info">
               <h3 class="tools-info-heading">PATHWAY — Guided program</h3>
               <p class="tools-info-body">A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.</p>
-              <audio id="aud1" controls controlslist="nodownload">
-                <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
-              </audio>
               <a href="https://happierme.app/adults/pathway/" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
@@ -2327,15 +2027,13 @@ nav a:hover
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="Podcast" class="tools-thumb-img_sec" />
+                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
               
             </div>
             <div class="tools-info">
               <h3 class="tools-info-heading">HappierMe Podcast</h3>
-              <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, where we explore a subject in depth with guests from around the world. They offer fresh ways of dealing with the many challenges we face and living our best life.</p>
-              <audio id="aud2" controls controlslist="nodownload">
-                <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
-              </audio>
+              <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, exploring subjects in depth with guests from around the world.</p>
               <a href="https://happierme.app/adults/podcast" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
@@ -2361,6 +2059,7 @@ nav a:hover
             <div>
               <div class="tools-thumb">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
+                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
             </div>
@@ -2806,6 +2505,7 @@ nav a:hover
     </div>
 
     <script>
+      /* Tab switcher for Tools section */
       function switchTab(el, panelId) {
         document.querySelectorAll('.tool-tab').forEach(function(t){
           t.classList.remove('tool-tab-active');
@@ -2876,34 +2576,6 @@ nav a:hover
               this.classList.add('faq-open');
             }
           });
-        });
-      });
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var video = document.getElementById('fbn-video');
-        var playBtn = document.getElementById('fbn-play-btn');
-        if (!video || !playBtn) return;
-
-        playBtn.addEventListener('click', function() {
-          video.controls = true;
-          var playPromise = video.play();
-          if (playPromise && typeof playPromise.catch === 'function') {
-            playPromise.catch(function() {});
-          }
-        });
-
-        video.addEventListener('play', function() {
-          playBtn.hidden = true;
-        });
-
-        video.addEventListener('pause', function() {
-          if (video.currentTime < video.duration) {
-            playBtn.hidden = false;
-          }
-        });
-
-        video.addEventListener('ended', function() {
-          playBtn.hidden = false;
         });
       });
 
@@ -3001,7 +2673,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn1" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3011,7 +2683,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/OvercomeStrength.svg" class="img-responsive "
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/overcome.svg" class="img-responsive "
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3036,7 +2708,7 @@ nav a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row" >
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3050,7 +2722,7 @@ nav a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3064,7 +2736,7 @@ nav a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/feelBetter.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/feel.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3085,7 +2757,7 @@ nav a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3099,7 +2771,7 @@ nav a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
@@ -3111,7 +2783,7 @@ nav a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
@@ -3145,7 +2817,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn2" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading="lazy">
                 </a>
               </div>
@@ -3156,7 +2828,7 @@ nav a:hover
                   data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/BuildDeeperRelationship.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build_d.svg" class="img-responsive"
                     alt="Mental Health" loading="lazy">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3181,7 +2853,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3196,7 +2868,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3234,7 +2906,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3249,7 +2921,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3262,7 +2934,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3295,7 +2967,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn3" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3305,7 +2977,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/meditationPractice.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/practice.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3329,7 +3001,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3394,7 +3066,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn4" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading="lazy">
                 </a>
               </div>
@@ -3405,7 +3077,7 @@ nav a:hover
                   data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/Buildworksuccess.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/soft_skill.svg" class="img-responsive"
                     alt="Mental Health" loading="lazy">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3430,7 +3102,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3446,7 +3118,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3462,7 +3134,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3494,7 +3166,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/couching.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching_soft.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3507,7 +3179,7 @@ nav a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/selfawareness.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/self_build.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3540,7 +3212,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn5" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3550,7 +3222,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/harmfulhabit.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/break.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3574,7 +3246,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3588,7 +3260,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3619,7 +3291,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3633,7 +3305,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/couching.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching_soft.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3645,7 +3317,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3678,7 +3350,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn6" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3688,7 +3360,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/manageemotions.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Character.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3712,7 +3384,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3726,7 +3398,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3740,7 +3412,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3758,7 +3430,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3772,7 +3444,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3784,7 +3456,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3817,7 +3489,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn7" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3827,7 +3499,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/selfawareness.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/awarness.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3851,7 +3523,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3865,7 +3537,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3895,7 +3567,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3921,7 +3593,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3954,7 +3626,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn8" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3964,7 +3636,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/supportingparents.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/parents.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
@@ -3988,7 +3660,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4002,7 +3674,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4032,7 +3704,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4046,7 +3718,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4058,7 +3730,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4091,7 +3763,7 @@ nav a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn9" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -4101,7 +3773,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/teenagerapp.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/teebagers.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
@@ -4125,7 +3797,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4140,7 +3812,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4154,7 +3826,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/feelBetter.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/feel.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4170,7 +3842,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4184,7 +3856,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/teentalk.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/talk.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4196,7 +3868,7 @@ nav a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4366,29 +4038,6 @@ nav a:hover
             tabTrigger.show();
           });
         });
-      });
-    </script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var y = document.getElementById('sub-plan-yearly');
-        var m = document.getElementById('sub-plan-monthly');
-        var d = document.getElementById('totalAnnualPricingModelHeading');
-        if (!y || !m || !d) return;
-        var tY = 'After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.';
-        var tM = 'After your free trial, the monthly subscription is ₹300/mo and automatically renews each month until cancelled.';
-        function pickMonthly() {
-          y.classList.add('sub-plan-off');
-          m.classList.add('sub-plan-on');
-          d.textContent = tM;
-        }
-        function pickYearly() {
-          y.classList.remove('sub-plan-off');
-          m.classList.remove('sub-plan-on');
-          d.textContent = tY;
-        }
-        y.addEventListener('click', pickYearly);
-        m.addEventListener('click', pickMonthly);
       });
     </script>
 
