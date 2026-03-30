@@ -1839,7 +1839,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
 
   <!-- /header --> 
 
-    <div class="frame">
+    <div class="frame" id="main">
 
       <!-- ===== HERO ===== -->
       <div class="frame-wrapper web_home_divlanding">
@@ -1886,7 +1886,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
                     </p>
                   </div>
                 </div>
-                <a class="hero-try-free-link" href="https://happierme.app/pages/splash_options.php">
+                <a class="hero-try-free-link" id="happiermeTryForFree" href="https://happierme.app/pages/splash_options.php">
                   <div class="start-your-free-wrapper">
                     <div class="text-wrapper-5">Try HappierMe for free</div>
                   </div>
@@ -1939,7 +1939,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
                 work. Olly offers practical support and guides you to trusted, expert-backed resources.
               </p>
             </div>
-            <a href="https://happierme.app/pages/splash_options.php">
+            <a href="https://happierme.app/pages/splash_options.php" id="OllyChatBtn">
               <div class="start-your-free-wrapper-2">
                 <div class="text-wrapper-5">Chat with Olly now</div>
               </div>
@@ -1953,6 +1953,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
         <p class="text-wrapper-a">Discover HappierMe in just 1 minute</p>
         <div class="youtube-player">
           <iframe
+            id="youtubeIntro"
             src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1"
             title="HappierMe intro"
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
@@ -2049,7 +2050,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
           </div>
         </div>
         <div class="div-19">
-          <a href="https://happierme.app/adults/testimonials" class="text-wrapper-13">View all success stories</a>
+          <a href="https://happierme.app/adults/testimonials" id="viewallsuccessstories" class="text-wrapper-13">View all success stories</a>
           <span class="chevron-pink">  <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
         </div>
       </div>
@@ -2147,11 +2148,11 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
               </div>
             </div>
             <div class="div-28">
-              <a href="/pages/teenagers.php" class="view-all-success">Find out more</a>
+              <a href="/pages/teenagers.php" id="findoutMore" class="view-all-success">Find out more</a>
               <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
             </div>
           </div>
-          <a href="https://happierme.app/teenagers/intro-carousel">
+          <a href="https://happierme.app/teenagers/intro-carousel" id="happiermeTryForFree_teens">
             <div class="div-wrapper-4"><div class="text-wrapper-5">Try HappierMe for free</div></div>
           </a>
         </div>
@@ -2292,10 +2293,10 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
                   <div class="div-46">
                     <div class="text-wrapper-29">Yearly</div>
                     <p class="INR-yr-INR">
-                      <span class="text-wrapper-31">₹2400/yr</span>
+                      <span class="text-wrapper-31" id="annualPricingModelHeading">₹2400/yr</span>
                     </p>
                   </div>
-                  <div class="text-wrapper-32">₹200/mo.</div>
+                  <div class="text-wrapper-32" id="spanAnnualLabel">₹200/mo.</div>
                 </div>
                 <!-- Monthly -->
                 <div class="group-8" id="sub-plan-monthly">
@@ -2304,15 +2305,19 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
                     <div class="text-wrapper-29">Monthly</div>
                     <div class="text-wrapper-33">7-day free trial</div>
                   </div>
-                  <div class="text-wrapper-34">₹300/mo.</div>
+                  <div class="text-wrapper-34" id="monthlyPricingModelHeading">₹300/mo.</div>
                 </div>
               </div>
               <p class="after-your-free">
-                <span class="text-wrapper-35" id="sub-plan-disclaimer">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
+                <span class="text-wrapper-35" id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
               </p>
-              <a href="https://happierme.app/pages/splash_options.php">
+              <div id="AnnualTypebtn">
+                <div id="PricingSelectBtn1">
+              <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
                 <div class="div-wrapper-4"><div class="text-wrapper-5">Start your free trial</div></div>
               </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2322,19 +2327,19 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
       <div class="tools-section">
         <p class="text-wrapper-6">Tools for a happier life</p>
         <!-- Tab pills -->
-        <div class="tools-tabs">
-          <button class="tool-tab tool-tab-active" onclick="switchTab(this,'tab-fbn')">Feel better now</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-pathway')">Guided Programs</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-journal')">Journal</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-podcast')">Podcast</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-community')">Community</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-wellness')">Happiness score</button>
+        <div class="tools-tabs" id="toolTabs">
+          <button class="tool-tab tool-tab-active" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
+          <button class="tool-tab" id="pathWay-tab" onclick="switchTab(this,'pathway')">Guided Programs</button>
+          <button class="tool-tab" id="journal-tab" onclick="switchTab(this,'journal_tab')">Journal</button>
+          <button class="tool-tab" id="podcast-tab" onclick="switchTab(this,'podcast_tab')">Podcast</button>
+          <button class="tool-tab" id="community-tab" onclick="switchTab(this,'forum')">Community</button>
+          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Happiness score</button>
         </div>
         <!-- Tab content area -->
         <div class="tools-panel-wrap">
 
           <!-- Feel better now -->
-          <div id="tab-fbn" class="tools-panel active">
+          <div id="fbn" class="tools-panel active">
             <div class="tools-card">
               <div class="tools-thumb">
                 <video playinline
@@ -2362,12 +2367,12 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
             <div class="tools-info">
               <h3 class="tools-info-heading">Feel better now</h3>
               <p class="tools-info-body">No matter what the challenge you face, we have breathing exercises, mediations and videos to help you feel better now.</p>
-              <a href="https://happierme.app/adults/feel-better-now" class="tools-explore-link">Explore on app <span class="chevron-pink">  <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
+              <a href="https://happierme.app/adults/feel-better-now" id="exploreAppWeb" class="tools-explore-link">Explore on app <span class="chevron-pink">  <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
 
           <!-- Guided Programs -->
-          <div id="tab-pathway" class="tools-panel">
+          <div id="pathway" class="tools-panel">
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" alt="Guided Programs" class="tools-thumb-img_sec" />
@@ -2385,7 +2390,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
           </div>
 
           <!-- Journal -->
-          <div id="tab-journal" class="tools-panel">
+          <div id="journal_tab" class="tools-panel">
             <div>
               <div class="tools-thumb">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/questions.svg" alt="Journal" class="tools-thumb-img_sec" />
@@ -2401,7 +2406,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
           </div>
 
           <!-- Podcast -->
-          <div id="tab-podcast" class="tools-panel">
+          <div id="podcast_tab" class="tools-panel">
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="Podcast" class="tools-thumb-img_sec" />
@@ -2419,7 +2424,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
           </div>
 
           <!-- Community -->
-          <div id="tab-community" class="tools-panel">
+          <div id="forum" class="tools-panel">
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" alt="Community" class="tools-thumb-img_sec" />
@@ -2435,7 +2440,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
           </div>
 
           <!-- Happiness score -->
-          <div id="tab-wellness" class="tools-panel">
+          <div id="survey" class="tools-panel">
             <div>
               <div class="tools-thumb">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
@@ -2453,12 +2458,16 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
       </div>
 
       <!-- CTA after tools -->
-      <a href="https://happierme.app/pages/splash_options.php">
+      <div id="AnnualType">
+        <div id="PricingSelectBtn">
+      <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial">
         <div class="div-wrapper-4" style="margin:0 auto;"><div class="text-wrapper-5">Try HappierMe for free</div></div>
       </a>
+        </div>
+      </div>
 
       <!-- ===== BLOG ===== -->
-      <div class="div-13" id="blog">
+      <div class="div-13">
         <div class="text-wrapper-blog">Explore our blog</div>
         <div class="blog-outer">
           <div class="blog-scroll" id="blog-scroll">
@@ -2495,7 +2504,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
           </div>
           <div class="blog-footer">
            
-            <a href="https://happierme.app/blogs/blog_index.php" class="blog-more">
+            <a href="https://happierme.app/blogs/blog_index.php" id="viewAllBlogs" class="blog-more">
               <span>See all posts</span>
               <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
             </a>
@@ -2517,15 +2526,15 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
         <div class="text-wrapper-21">Frequently asked questions</div>
         <div class="div-55">
           <div class="div-56">
-            <div class="about-happierme faq-tab faq-tab-active" onclick="switchFaq(this,'faq-about')">ABOUT HAPPIERME</div>
-            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'faq-help')">HOW CAN THE APP HELP?</div>
-            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'faq-features')">APP FEATURES</div>
-            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'faq-teen')">TEENAGE PROGRAM</div>
-            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'faq-support')">SUPPORT</div>
+            <div class="about-happierme faq-tab faq-tab-active" onclick="switchFaq(this,'about_happierme')">ABOUT HAPPIERME</div>
+            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'how_can_the_app_help')">HOW CAN THE APP HELP?</div>
+            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'app_features')">APP FEATURES</div>
+            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'teenage_program')">TEENAGE PROGRAM</div>
+            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'support')">SUPPORT</div>
           </div>
             <div class="div-57">
             <!-- About -->
-            <div id="faq-about" class="faq-panel active">
+            <div id="about_happierme" class="faq-panel active">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60 faq-open">
@@ -2561,7 +2570,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
               </div>
             </div>
             <!-- How can app help -->
-            <div id="faq-help" class="faq-panel">
+            <div id="how_can_the_app_help" class="faq-panel">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60">
@@ -2597,7 +2606,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
               </div>
             </div>
             <!-- App features -->
-            <div id="faq-features" class="faq-panel">
+            <div id="app_features" class="faq-panel">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60">
@@ -2633,7 +2642,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
               </div>
             </div>
             <!-- Teen -->
-            <div id="faq-teen" class="faq-panel">
+            <div id="teenage_program" class="faq-panel">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60">
@@ -2645,7 +2654,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
               </div>
             </div>
             <!-- Support -->
-            <div id="faq-support" class="faq-panel">
+            <div id="support" class="faq-panel">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60">
@@ -2680,7 +2689,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
       <div class="row center_flex prelative display_df_none" style="margin-bottom: 40px;">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
           <div class="text-wrapper-21" style="margin-bottom: 20px;">Frequently asked questions</div>
-          <div class="tab-content tc_faqs mobile" id="faq-mobile-wrap">
+          <div class="tab-content tc_faqs mobile">
             <div id="about_happierme_mobile" class="tab-pane fade in active">
               <h5 class="mt0px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">About HappierMe</h5>
               <div class="panel-group" id="accordion_faq_2">
@@ -2777,7 +2786,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
                 </div>
               </div>
             </div>
-            <div id="app_features_mobile" class="tab-pane fade in active">
+            <div id="app_features1" class="tab-pane fade in active">
               <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">App features</h5>
               <div class="panel-group" id="accordion_faq_4">
                 <div class="panel panel-default">
@@ -4459,8 +4468,8 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
           });
         }
 
-        // Initialize Bootstrap tabs
-        var triggerTabList = [].slice.call(document.querySelectorAll('#toolTabs button'));
+        // Initialize Bootstrap tabs (older layout: ul#toolTabs.nav-tabs; custom tools use #toolTabs.tools-tabs + switchTab)
+        var triggerTabList = [].slice.call(document.querySelectorAll('#toolTabs.nav-tabs button'));
         triggerTabList.forEach(function (triggerEl) {
           var tabTrigger = new bootstrap.Tab(triggerEl);
           triggerEl.addEventListener('click', function (event) {
@@ -4475,7 +4484,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
       document.addEventListener('DOMContentLoaded', function () {
         var y = document.getElementById('sub-plan-yearly');
         var m = document.getElementById('sub-plan-monthly');
-        var d = document.getElementById('sub-plan-disclaimer');
+        var d = document.getElementById('totalAnnualPricingModelHeading');
         if (!y || !m || !d) return;
         var tY = 'After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.';
         var tM = 'After your free trial, the monthly subscription is ₹300/mo and automatically renews each month until cancelled.';

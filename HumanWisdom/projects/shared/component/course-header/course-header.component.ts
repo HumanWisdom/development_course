@@ -173,6 +173,12 @@ export class CourseHeaderComponent implements OnInit {
     this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
   goToToc() {
+    let historyLength = this.naviagtorService.getHistoryLength ? this.naviagtorService.getHistoryLength() : 0;
+    if (historyLength <= 1) {
+      this.router.navigate([SharedService.getDashboardUrls()]);
+      return;
+    }
+
     if (this.toc) {
       let tocUrl = this.toc;
       let prefix = this.isAdults ? '/adults' : '/teenagers';

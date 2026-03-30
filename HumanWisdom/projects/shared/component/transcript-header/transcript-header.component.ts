@@ -127,6 +127,12 @@ export class TranscriptHeaderComponent implements OnInit {
   }
 
   goToToc() {
+    let historyLength = this.navigationService.getHistoryLength ? this.navigationService.getHistoryLength() : 0;
+    if (historyLength <= 1) {
+      this.router.navigate([SharedService.getDashboardUrls()]);
+      return;
+    }
+
     var url = this.navigationService.navigateToBackLink();
     if (url != null && !url.includes('home') && !url.includes('dashboard') && !url.includes('pathway')) {
       this.router.navigateByUrl(url);
