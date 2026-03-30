@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-module-end-videos',
@@ -82,6 +84,7 @@ else
   }
 
   proceed(){
+    localStorage.setItem('NaviagtedFrom', this.router.url);
     this.router.navigate([this.moduleLink])
     localStorage.setItem("moduleId",JSON.stringify(this.moduleId))
     this.service.clickModule(this.moduleId,this.userId)
@@ -94,10 +97,19 @@ else
   }
 
   goDashboard(){
-    this.router.navigate(['/adults/adult-dashboard'])
+    if (SharedService.ProgramId == ProgramType.Teenagers) {
+      this.router.navigate(['/teenagers/home'])
+    } else {
+      this.router.navigate(['/adults/adult-dashboard'])
+    }
   }
   routeJournal(){
-    this.router.navigate(['/adults/journal'])
+    localStorage.setItem('NaviagtedFrom', this.router.url);
+    if (SharedService.ProgramId == ProgramType.Teenagers) {
+      this.router.navigate(['/teenagers/journal'])
+    } else {
+      this.router.navigate(['/adults/journal'])
+    }
   }
 
 }

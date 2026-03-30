@@ -599,6 +599,9 @@ class ModalManager {
 // Create global modal manager instance
 const modalManager = new ModalManager();
 
+/** index.php tools section uses .tool-tab + inline switchTab(); no Bootstrap nav wiring needed. */
+function initializeToolTabs() {}
+
 // Accordion functionality with smooth transitions
 function initializeFAQAccordion() {
     // Initialize Bootstrap 5.3 accordion
@@ -1450,8 +1453,8 @@ nfsnContactForm &&
                 },
                 !1
             );
-        ["feelbetterNow", "pathWay", "journal", "podcast", "community","partnership",
-             "HapinessScore","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp1_1","openInApp1_2","openInApp2_1","openInApp2_2","openInApp3_1","openInApp3_2",
+        ["feelbetterNow", "feelbetterNow-tab", "pathWay", "pathWay-tab", "journal", "journal-tab", "podcast", "podcast-tab", "community", "community-tab","partnership",
+             "HapinessScore", "HapinessScore-tab","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp1_1","openInApp1_2","openInApp2_1","openInApp2_2","openInApp3_1","openInApp3_2",
              "continueWeb","exploreAppWeb","ourStory","testimonialFooter","contactUsFooter",
              "partnershipfooter" ,"view-all-coaches","whywecreatedvideo","findoutMore","youtubeIntro","appleStore","googlePlayStore"
             ].forEach((e) => {
@@ -1462,14 +1465,14 @@ nfsnContactForm &&
                              e.startsWith("openInApp")) {
                              evt.preventDefault();
                          }
-                         "feelbetterNow" == e? logevent("click_Feel_Better_Now_web", "index.php")
-                        : "pathWay" == e ? logevent("click_Pathway_web", "index.php")
-                        : "journal" == e ? logevent("click_Journal_web", "index.php")
-                        : "HapinessScore" == e ? logevent("click_Happiness_Score_web", "index.php")
-                        : "podcast" == e ? logevent("click_Podcast_web", "index.php")
+                         "feelbetterNow" == e || "feelbetterNow-tab" == e ? logevent("click_Feel_Better_Now_web", "index.php")
+                        : "pathWay" == e || "pathWay-tab" == e ? logevent("click_Pathway_web", "index.php")
+                        : "journal" == e || "journal-tab" == e ? logevent("click_Journal_web", "index.php")
+                        : "HapinessScore" == e || "HapinessScore-tab" == e ? logevent("click_Happiness_Score_web", "index.php")
+                        : "podcast" == e || "podcast-tab" == e ? logevent("click_Podcast_web", "index.php")
                         : "appleStore"== e ? (logevent("click_apple_store_web", "index.php") ,(window.location.href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567"))
                         : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php") ,(window.location.href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US"))
-                        : "community" == e ? logevent("click_Community_web", "index.php")
+                        : "community" == e || "community-tab" == e ? logevent("click_Community_web", "index.php")
                         : "youtubeIntro" == e ? logevent("click_youtube_intro_web", "index.php")
                         :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , (window.location.href="https://happierme.app/adults/intro/intro-carousel"))
                         : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,(window.location.href="https://happierme.app/teenagers/intro-carousel"))
@@ -1504,7 +1507,7 @@ async function fetchData() {
     {
         const e = await n.json();
         (this.pricingModel = e.filter((e) => e.ProgID == parseInt(localStorage.getItem("programType")))[0]),
-            (this.defaultCurrencySymbol = pricingModel.ISOCode),
+            (this.defaultCurrencySymbol = this.pricingModel.ISOCode),
             (this.pricingModel.PerMonthAmountOnAnnual = this.formatToDecimal(this.pricingModel.Annual / 12)),
             console.log(this.pricingModel.PerMonthAmountOnAnnual),
             console.log(this.pricingModel);
@@ -1513,12 +1516,12 @@ async function fetchData() {
             a = document.getElementById("totalAnnualPricingModelHeading"),
             i = document.getElementById("monthlyPricingModelHeading"),
             c = document.getElementById("spanAnnualLabel");
-        o && (o.textContent = `${pricingModel.CurSymbol + pricingModel.Annual_UpperRate + getIsoCode()}/yr`),
-            (t.textContent = `${pricingModel.CurSymbol + pricingModel.Annual + getIsoCode()}/yr`),
-            (function () {
-                c.textContent = `${this.pricingModel.CurSymbol}${this.pricingModel.PerMonthAmountOnAnnual}/mo`;
-            })(),
-            (i.textContent = pricingModel.CurSymbol + pricingModel.Monthly + getIsoCode() + "/mo"),
+        if (!t || !c || !i || !a) return;
+        const pm = this.pricingModel;
+        o && (o.textContent = `${pm.CurSymbol + pm.Annual_UpperRate + getIsoCode()}/yr`),
+            (t.textContent = `${pm.CurSymbol + pm.Annual + getIsoCode()}/yr`),
+            (c.textContent = `${pm.CurSymbol}${pm.PerMonthAmountOnAnnual}/mo`),
+            (i.textContent = pm.CurSymbol + pm.Monthly + getIsoCode() + "/mo"),
             (a.textContent = `After your free trial, the yearly subscription is ${t.textContent} and automatically renews each year until cancelled.`);
     }
 }

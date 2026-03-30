@@ -79,7 +79,7 @@ export class SearchPopularItemsPage implements OnInit {
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     }
-    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+
   }
   initializeSearchObject() {
     this.searchData = {
@@ -661,8 +661,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/adults/search']);
-
+    this.router.navigate([SharedService.getUrlfromFeatureName('search')]);
   }
 
   routemodule(res) {
