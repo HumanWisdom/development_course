@@ -141,6 +141,10 @@ export class NavigationService {
     return  SharedService.getDashboardUrls();
   }
   
+  getHistoryLength(): number {
+    return this.history.length;
+  }
+  
   getLastUrlVisited(): string | null {
     if (this.history.length > 0) {
       return this.history[this.history.length - 2];

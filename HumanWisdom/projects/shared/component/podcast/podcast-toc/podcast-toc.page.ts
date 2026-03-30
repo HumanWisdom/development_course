@@ -105,6 +105,12 @@ export class PodcastTocPage implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&logo_link=none&order=episodic&limit=5&filter=tags&tag=16106786&ss=55fe7c7156e4b9c14621bacb4c53cfa7&btn-skin=60a0c8&size=220");
   }
   goBack() {
+    let historyLength = this.navigationService.getHistoryLength ? this.navigationService.getHistoryLength() : 0;
+    if (historyLength <= 1) {
+      this.router.navigate([SharedService.getDashboardUrls()]);
+      return;
+    }
+
     var url = this.navigationService.navigateToBackLink();
     if (url == null || url.includes('home') || url.includes('dashboard')) {
       let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');

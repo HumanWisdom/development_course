@@ -79,6 +79,12 @@ export class YoutubeContentComponent implements OnInit {
   }
 
   goBack() {
+    let historyLength = this.navigationService.getHistoryLength ? this.navigationService.getHistoryLength() : 0;
+    if (historyLength <= 1) {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+      return;
+    }
+
     var url = this.navigationService.navigateToBackLink();
     if (url == null || url.includes('home') || url.includes('dashboard')) {
       let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
