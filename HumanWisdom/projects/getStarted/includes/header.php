@@ -11,11 +11,41 @@
       justify-content: space-between !important;
     }
   }
-  /* Header nav: keep the navbar hover bar, remove text underline */
+  /* Desktop nav: no text underline; line under titles comes from main.css :before, not text-decoration */
   @media (min-width: 768px) {
     .header_fixed .navbar > ul > li > a:hover {
       text-decoration: none !important;
     }
+    .header_fixed .navbar > ul > li > a:before,
+    .header_fixed .navbar > ul > li > a:hover:before,
+    .header_fixed .navbar > ul > li:hover > a:before {
+      width: 0 !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Same asset as before (intrinsic size); tint to #834B66 on hover / .active_nav only */
+  .header_fixed .navbar .dropdown > a img.dropdown-indicator {
+    transition: filter 0.2s ease;
+  }
+  .header_fixed .navbar > ul > li.dropdown:hover > a img.dropdown-indicator,
+  .header_fixed a#organisation.active_nav img.dropdown-indicator {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(18%) saturate(1400%) hue-rotate(255deg) brightness(0.92) contrast(1.05);
+  }
+  /* NEW badge: default #D7586B; hover / current page (.active_nav) #803358 */
+  #teenagersHeaderClick .badge_new {
+    background: #D7586B !important;
+    border: none;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+  }
+  #teenagersHeaderClick:hover .badge_new,
+  #teenagersHeaderClick.active_nav .badge_new {
+    background: #803358 !important;
+  }
+  #teenagersHeaderClick .badge_new h6,
+  #teenagersHeaderClick .badge_new h6:hover {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
   }
 </style>
 <div class="header_fixed header" style="    justify-content: center;

@@ -269,7 +269,7 @@
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter w-980px" style=" width: 980px !important;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt_d100px_m24px">
-          <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+          <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
             Welcome to HappierMe
           </h1>
         </div>
@@ -393,7 +393,7 @@
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0" style="width: 980px !important;">
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
-            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
               Our WHY
             </h1>
           </div>
@@ -451,7 +451,7 @@
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter w-980px" style="width: 980px !important;">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
-            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
               Our HOW
             </h1>
           </div>
@@ -485,11 +485,11 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h1 class="mtb0px fs_36px fw_600 lh_160p fc_834b66 m-txt">
+            <h1 class="mtb0px fs_36px fw_600 lh_160p fc_000000 m-txt">
               Watch. Read. Listen. Interact. Or just be.
             </h1>
 
-            <h2 class="mtb0px fs_24px fw_600 lh_160p fc_834b66 au-inspire-subtitle">
+            <h2 class="mtb0px fs_24px fw_600 lh_160p fc_000000 au-inspire-subtitle">
               Inspiring content to live your best life
             </h2>
           </div>
@@ -825,7 +825,7 @@
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
-              <h1 class="mtb60px fs_36px fw_600 lh_120p fc_834b66 au-founder-heading">
+              <h1 class="mtb60px fs_36px fw_600 lh_120p fc_000000 au-founder-heading">
                 The Founder </h1>
             </div>
             <div class="row center_flex">
@@ -900,7 +900,7 @@ We gratefully acknowledge the contributions of the following content experts, an
       <div class="section-headernew">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-9 p0 w-980px">
-            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
               Our Content Experts </h1>
 
             <h2 class="mtb20px fs_18px fw_400 lh_160p fc_000000">
@@ -1405,7 +1405,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  coach and wellbeing advocate, based in North Yorkshire, England </h4>
+                  Coach and wellbeing advocate, based in North Yorkshire, England </h4>
               </div>
             </div>
 
@@ -1426,7 +1426,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  radio broadcaster and empowerment coach, based in England </h4>
+                  Radio broadcaster and empowerment coach, based in England </h4>
               </div>
             </div>
 
@@ -1466,7 +1466,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  life and relationship coach based in Mumbai, India </h4>
+                  Life and relationship coach based in Mumbai, India </h4>
               </div>
             </div>
 
@@ -1494,7 +1494,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  executive life coach, based in Bengaluru, India
+                  Executive life coach, based in Bengaluru, India
                 </h4>
               </div>
             </div>
@@ -1516,7 +1516,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  grief, loss and life coach based in Illinois, USA. </h4>
+                  Grief, loss and life coach based in Illinois, USA. </h4>
               </div>
             </div>
 
@@ -1536,7 +1536,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  meditation and yoga teacher, based in England </h4>
+                  Meditation and yoga teacher, based in England </h4>
               </div>
             </div>
 
@@ -1556,7 +1556,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 ">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  executive and sports coach, based in the North of England </h4>
+                  Executive and sports coach, based in the North of England </h4>
               </div>
             </div>
 
@@ -1584,7 +1584,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  psychotherapist and parent coach based in Detroit, USA.
+                  Psychotherapist and parent coach based in Detroit, USA.
                 </h4>
               </div>
             </div>
