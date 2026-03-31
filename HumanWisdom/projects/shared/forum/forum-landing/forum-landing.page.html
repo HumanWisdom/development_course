@@ -619,7 +619,8 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px">
           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
-              <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+              <button type="button" class="btn fs_12px fw_400 lh_140p "
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
                   src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                   class="img-responsive mr5px">
@@ -630,7 +631,8 @@
               </button>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isAdults">
-              <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+              <button type="button" class="btn fs_12px fw_400 lh_140p "
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 <img *ngIf="item.Liked=='0'" (click)="like(item,index)" (keydown.enter)="like(item,index)"
                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_heart.svg"
                   class="img-responsive mr5px">
@@ -698,8 +700,8 @@
             Comment
           </button>
         </div>
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12  tright mtb20px" *ngIf="isLoggedIn && actionType=='report'">
+        <div class="row p0">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mtb20px" *ngIf="isLoggedIn && actionType=='report'">
             <button type="button" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
               style="color:#fff;" [disabled]="isProcessing" [class.loading]="isProcessing">
               Report
