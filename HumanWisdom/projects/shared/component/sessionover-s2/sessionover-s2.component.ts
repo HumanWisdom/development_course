@@ -13,7 +13,9 @@ import { SharedService } from '../../services/shared.service';
 export class SessionoverS2Component {
   @Input() bg: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    SharedService.isModuleEnd = true;
+  }
 
 
   routeJournal(){

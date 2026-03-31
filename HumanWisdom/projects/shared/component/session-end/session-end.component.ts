@@ -30,6 +30,7 @@ export class SessionEndComponent implements OnInit {
     private ngNavigatorShareService: NgNavigatorShareService) {
     localStorage.setItem("progressbarvalue", '0')
     this.ngNavigatorShareService = ngNavigatorShareService;
+    SharedService.isModuleEnd = true;
   }
 
   ngOnInit() {

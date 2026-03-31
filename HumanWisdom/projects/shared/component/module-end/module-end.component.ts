@@ -70,6 +70,7 @@ export class ModuleEndComponent implements OnInit, AfterViewInit {
         } else {
           this.isAdults = false;
         }
+    SharedService.isModuleEnd = true;
   }
 
   ngOnInit() {

@@ -238,7 +238,7 @@ export class ForumThreadPage implements OnInit, OnDestroy {
   }
   routeToLanding(){
     // this.router.navigate([SharedService.getUrlfromFeatureName("/forum/forum-landing/")])
-    const url = this.navigationService.goBack();
+    const url = this.navigationService.navigateToBackLink();
     if (url == null) {
       this.location.back();
     }else{
