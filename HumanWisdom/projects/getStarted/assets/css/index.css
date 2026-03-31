@@ -2472,8 +2472,8 @@ body {
 
 /* Override responsive/default styles for modal header illustration */
 .modal-content1 .modal-header img:not(.cross_btn) {
-  width: 90.67px !important;
-  height: 86.54px !important;
+  /* width: 90.67px !important;
+  height: 86.54px !important; */
   object-fit: contain;
 }
 
