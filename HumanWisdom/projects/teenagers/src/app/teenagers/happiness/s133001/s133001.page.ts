@@ -19,7 +19,10 @@ export class S133001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+    isContentsOpen = false;
+
   bookmark:any
+  
   bookmarkList=[]
   path = setTimeout(() => {
     return this.router.url;
@@ -132,6 +135,9 @@ export class S133001Page implements OnInit,OnDestroy {
     this.createScreen()
   }
 
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark()
   {
     if(this.bookmark==0)

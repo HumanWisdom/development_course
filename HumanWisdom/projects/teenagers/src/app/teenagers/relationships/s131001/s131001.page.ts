@@ -32,6 +32,7 @@ export class S131001Page implements OnInit,OnDestroy {
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+    isContentsOpen = false;
   isSubscriber = false;
 
   path = setTimeout(() => {
@@ -152,6 +153,9 @@ export class S131001Page implements OnInit,OnDestroy {
   {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  }
+toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
 
   toggleBookmark()

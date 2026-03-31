@@ -21,6 +21,8 @@ export class S138001Page implements OnInit,OnDestroy {
   screenNumber=138001
   startTime:any
   endTime:any
+              isContentsOpen = false;
+
   totalTime:any
   bookmark:any
   bookmarkList=[]
@@ -147,6 +149,9 @@ export class S138001Page implements OnInit,OnDestroy {
     this.socialShare=true
   }
 
+   toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark()
   {
     if(this.bookmark==0)
