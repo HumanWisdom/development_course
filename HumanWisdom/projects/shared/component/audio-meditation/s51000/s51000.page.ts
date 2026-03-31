@@ -177,6 +177,7 @@ export class S51000Page implements OnInit {
   }
 
   routeJournal() {
+    localStorage.setItem('NaviagtedFrom', this.router.url);
     this.router.navigate(['/adults/journal'])
   }
 

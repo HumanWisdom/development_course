@@ -523,7 +523,7 @@ export class ForumLandingPage implements OnInit {
   }
 
   goBack() {
-      var url = this.navigationService.goBack();
+      var url = this.navigationService.navigateToBackLink();
       if (url == null) {
         this.location.back();
       }else{
