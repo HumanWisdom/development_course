@@ -453,7 +453,7 @@
 
               </div>
               <h4 class="mt5px mb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'"
-                *ngIf="posts.length==0">
+                *ngIf="posts.length==0 && !isLoading">
                 No Record Found
               </h4>
 
@@ -473,6 +473,7 @@
 
 
 <div class="" *ngIf="!defaultShow">
+  <app-spinner [show]="isLoading"></app-spinner>
   <div class="div_forum_post" *ngFor="let item of posts;let index=index;">
     <a class="" [ngClass]="{'deleting': item.isDeleting}">
 
@@ -694,14 +695,14 @@
             class="mtb0px ta_new_thread " maxlength="256" placeholder="Comment Here" rows="5"></textarea>
         </div>
 
-        <div class="col-md-12 col-sm-12 col-xs-12  tright mtb20px" *ngIf="isLoggedIn && actionType=='comment'">
+        <div class="col-md-12 col-sm-12 col-xs-12  tright mt10px" *ngIf="isLoggedIn && actionType=='comment'">
           <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
             style="color:#fff;" [disabled]="isProcessing" [class.loading]="isProcessing">
             Comment
           </button>
         </div>
         <div class="row p0">
-          <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mtb20px" *ngIf="isLoggedIn && actionType=='report'">
+          <div class="col-md-12 col-sm-12 col-xs-12 p0 tright mt10px" *ngIf="isLoggedIn && actionType=='report'">
             <button type="button" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
               style="color:#fff;" [disabled]="isProcessing" [class.loading]="isProcessing">
               Report
@@ -717,7 +718,7 @@
 
   </div>
   <h4 class="mt5px mb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'"
-    *ngIf="posts.length==0">
+    *ngIf="posts.length==0 && !isLoading">
     No Record Found
   </h4>
 </div>

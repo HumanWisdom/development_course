@@ -41,7 +41,8 @@ export class IndexPage implements OnInit, AfterViewInit, OnChanges {
   isViewMore = true;
   isAdults: boolean = true;
   dailyCheckIn:any;
-  isFreeTrialEnable = false
+  isFreeTrialEnable = false;
+  isLoading: boolean = false;
 
   constructor(
     private router: Router,
@@ -67,6 +68,18 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       }
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.search && !changes.search.firstChange) {
+      if (!this.defaultShow) {
+        if (this.jrListC && this.jrListC.length > 0) {
+          this.searchjournal(this.search);
+        } else {
+          this.viewJournalAndReflections();
+        }
+      }
+    }
+  }
+
   ngOnInit() {
     if (this.saveUsername == false)
       this.userId = JSON.parse(sessionStorage.getItem("userId"));
@@ -83,15 +96,8 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     }
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.search && !changes.search.firstChange) {
-      if (this.jrListC && this.jrListC.length > 0) {
-        this.searchjournal(this.search);
-      }
-    }
-  }
-
   viewJournalAndReflections() {
+    this.isLoading = true;
     this.service.viewJournal(this.userId).subscribe((res) => {
       this.service.getDailyCheckins().subscribe(dailyCheckIn=>{
         if(dailyCheckIn){
@@ -105,8 +111,13 @@ if (SharedService.ProgramId == ProgramType.Adults) {
             this.searchjournal(this.search);
           }
         }
+        this.isLoading = false;
+      }, _ => {
+        this.isLoading = false;
       })
 
+    }, _ => {
+      this.isLoading = false;
     });
   }
   showGuidedQuestions() {
