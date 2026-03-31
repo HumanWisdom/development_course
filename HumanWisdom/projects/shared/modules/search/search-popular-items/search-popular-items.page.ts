@@ -27,6 +27,8 @@ export class SearchPopularItemsPage implements OnInit {
   post: any;
   iframe: any;
   UserID: any;
+  jrList: any = [];
+  jrListC: any = [];
   activereply;
   replyflag = false;
   PostComment: string = ''
@@ -53,6 +55,7 @@ export class SearchPopularItemsPage implements OnInit {
   searchResult = [];
   public moduleList = [];
   filterApplied =  true;
+  isLoading: boolean = false;
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -72,13 +75,18 @@ export class SearchPopularItemsPage implements OnInit {
     this.isSubscriber = SharedService.isSubscriber();
 
     this.search = decodeURIComponent(this.route.snapshot.paramMap.get('word'))
-    this.UserID = localStorage.getItem('userId');
-    this.initializeSearchObject();
-    this.getSearchData();
     let rem = localStorage.getItem('remember');
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.UserID = JSON.parse(localStorage.getItem("userId"))
+    } else {
+      this.UserID = JSON.parse(localStorage.getItem("userId"))
     }
+    if (this.UserID == null) {
+      this.UserID = JSON.parse(sessionStorage.getItem("userId"))
+    }
+    this.userId = this.UserID;
+    this.initializeSearchObject();
+    this.getSearchData();
 
   }
   initializeSearchObject() {
@@ -100,6 +108,7 @@ export class SearchPopularItemsPage implements OnInit {
   searchEvent(moduleName:string) {
     this.filterApplied = false;
     this.post = [];
+    this.jrList = [];
     this.initializeSearchObject();
     this.search = moduleName;
     setTimeout(() => {
@@ -208,6 +217,9 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   getLearningRecords() {
+    if(!this.search || this.search === ""){
+      return 0;
+    }
     if (this.searchDataDup) {
       return this.searchDataDup.ModuleRes.length +
         this.searchDataDup.SessionRes.length +
@@ -220,7 +232,6 @@ export class SearchPopularItemsPage implements OnInit {
         this.searchDataDup.BlogRes.length;
     }
     return 0;
-
   }
   view(item) {
     this.onboardingService.clickBlog(Number(item['BlogID'])).subscribe({
@@ -243,16 +254,14 @@ export class SearchPopularItemsPage implements OnInit {
     }
     this.router.navigateByUrl(SharedService.getprogramName() + item['url']);
   }
-
   getSourceForPodBin(url) {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?from=embed&i=" + url + "&square=0&share=0&download=0&fonts=Times%20New%20Roman&skin=1b1b1b&font-color=auto&rtl=0&logo_link=episode_page&btn-skin=60a0c8&size=300");
   }
   getSearchData() {
-    // let searchInpt = (' ' + this.search).slice(1);
     let regexp =  this.search.repeat(1);
     let searchInpt = regexp;
-
     searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+    this.isLoading = true;
     this.commonService.getSearchDataForSearchSite(searchInpt).subscribe(res => {
       if (res) {
         if (res.MLMRes) {
@@ -331,6 +340,9 @@ export class SearchPopularItemsPage implements OnInit {
         this.feelBetterNowTopic = this.getFeelBetterNowTitle(this.searchData.FeelBetterNowRes);
       }
       this.toggleBodyScroll(false);
+      this.isLoading = false;
+    }, _ => {
+      this.isLoading = false;
     });
     // fetch story free/lock info
     if (this.searchData && this.searchData.WisdomStoriesRes && this.searchData.WisdomStoriesRes.length > 0) {
@@ -345,21 +357,38 @@ export class SearchPopularItemsPage implements OnInit {
       });
     }
     this.getForumSearchData();
+    this.getJournalSearchData();
+  }
+
+  getJournalSearchData() {
+    if (this.UserID) {
+      if (this.jrListC.length === 0) {
+        this.commonService.viewJournal(this.UserID).subscribe((res) => {
+          if (res) {
+            this.jrListC = res;
+            this.searchjournal(this.search);
+          }
+        });
+      } else {
+        this.searchjournal(this.search);
+      }
+    }
+  }
+
+  searchjournal(text) {
+    if (text === "") {
+        this.jrList = this.jrListC; 
+    } else {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          it?.Response?.toLowerCase().includes(text.toLowerCase()) ||
+          it?.TitleQue?.toLowerCase().includes(text.toLowerCase()) ||
+          it?.ModuleName?.toLowerCase().includes(text.toLowerCase())
+      );
+    }
   }
   getTotalRecords() {
-    if(this.searchDataDup){
-    return this.searchDataDup.ModuleRes.length +
-      this.searchDataDup.SessionRes.length +
-      this.searchDataDup.PodCastRes.length +
-      this.searchDataDup.AudioMeditationRes.length +
-      this.searchDataDup.WisdomShortsRes.length +
-      this.searchDataDup.EventsRes.length +
-      this.searchDataDup.WisdomStoriesRes.length +
-      this.searchDataDup.MLMRes.length +
-      this.searchDataDup.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
-    }
-    else return 0;
-
+    return this.getLearningRecords() + this.getForumSearchRecords() + this.journalSearchRecords();
   }
   pageChangeEvent(tabName) {
     this.tabName = tabName;
@@ -654,8 +683,8 @@ export class SearchPopularItemsPage implements OnInit {
     console.log(item);
   }
   journalSearchRecords() {
-    if (this.searchData) {
-      return this.searchData.JournalRes;
+    if (this.jrList) {
+      return this.jrList.length;
     }
     return 0;
   }
@@ -779,16 +808,18 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-      this.toggleBodyScroll(false);
-    }, 200);
+    // setTimeout(() => {
+    //   this.searchResult = [];
+    //   this.toggleBodyScroll(false);
+    // }, 200);
   }
 
   clearSearch() {
     this.search = "";
-    this.searchResult = [];
-    this.toggleBodyScroll(false);
+    this.getAutoCompleteList('');
+    this.post = [];
+    this.jrList = [];
+    this.getSearchData();
   }
 
   toggleBodyScroll(lock: boolean): void {

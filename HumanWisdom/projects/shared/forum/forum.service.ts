@@ -162,6 +162,10 @@ export class ForumService {
   }
 
   getForumSearchDataSite(data): Observable<any> {
-    return this.http.get(this.path + `/GetAllPosts_Search/${data}/${SharedService.ProgramId}`);
+    if (data && data !== '') {
+      return this.http.get(this.path + `/GetAllPosts_Search/${data}/${SharedService.ProgramId}`);
+    } else {
+      return this.http.get(this.path + `/GetAllPosts_Prog/${SharedService.ProgramId}`);
+    }
   }
 }

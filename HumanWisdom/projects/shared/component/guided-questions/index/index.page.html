@@ -34,8 +34,9 @@
             <div class="tab-content">
               <!-- journal -->
               <div id="tab1" class="tab-pane fade in active" *ngIf="isDiary">
+                <app-spinner [show]="isLoading"></app-spinner>
                 <h4 class="mt5px mb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff_0_5'"
-                  *ngIf="jrList.length==0">
+                  *ngIf="jrList.length==0 && !isLoading">
                   No Record Found
                 </h4>
                 <form>
