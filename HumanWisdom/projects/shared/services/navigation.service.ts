@@ -81,6 +81,7 @@ export class NavigationService {
     }
 
     this.backClicked = false;
+    SharedService.isModuleEnd = false;
   }
 
   /**

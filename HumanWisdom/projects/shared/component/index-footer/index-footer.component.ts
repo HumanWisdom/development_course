@@ -99,7 +99,7 @@ export class IndexFooterComponent implements OnInit {
 
   }
   routeJournal(){
-    
+      localStorage.setItem('NaviagtedFrom', this.router.url);
       // this.router.navigate(['/adults/journal'])
       this.router.navigateByUrl(`/${SharedService.getprogramName()}/journal`);
   }
@@ -124,11 +124,9 @@ export class IndexFooterComponent implements OnInit {
   }
 
   routeForum(){
-    
+      localStorage.setItem('NaviagtedFrom', this.router.url);
       //  this.router.navigate(['/forum'])
       this.router.navigateByUrl(`/${SharedService.getprogramName()}/forum`);
-
-   
   }
 
 }

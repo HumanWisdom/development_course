@@ -14,7 +14,9 @@ export class EndHeaderComponent {
   shareUrl:any
   token=JSON.parse(localStorage.getItem("token"))
 
-  constructor(private readonly router:Router,private readonly ac:ActivatedRoute) { }
+  constructor(private readonly router:Router,private readonly ac:ActivatedRoute) { 
+    SharedService.isModuleEnd = true;
+  }
 
   sendIndex(){
    console.log("https://humanwisdom.me/adults/"+this.toc+`?t=${this.token}`)
