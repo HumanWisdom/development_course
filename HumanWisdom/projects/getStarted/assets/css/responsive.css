@@ -2501,7 +2501,7 @@
     font-size: 11px !important;
     font-weight: 600 !important;
     line-height: 1.4 !important;
-    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+    background: linear-gradient(90deg, #E58D82, #CB6171) !important;
     white-space: nowrap !important;
     color: #FFFFFF !important;
     border: none !important;
@@ -2617,7 +2617,7 @@
     border-radius: 16px !important;
     font-size: 12px !important;
     font-weight: 600 !important;
-    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+    background: linear-gradient(180deg, #E58D82, #CB6171) !important;
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;
