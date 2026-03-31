@@ -19,6 +19,8 @@ export class S136001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+        isContentsOpen = false;
+
   bookmark:any
   bookmarkList=[]
 
@@ -151,6 +153,9 @@ export class S136001Page implements OnInit,OnDestroy {
   addToken(){
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  }
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   toggleBookmark(){
     if(this.bookmark==0)

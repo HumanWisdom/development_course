@@ -23,6 +23,8 @@ export class S160001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+      isContentsOpen = false;
+
   bookmarkList=[]
   path = setTimeout(() => {
     return this.router.url;
@@ -137,6 +139,9 @@ export class S160001Page implements OnInit,OnDestroy {
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
+  }
+toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
 
   addToken()

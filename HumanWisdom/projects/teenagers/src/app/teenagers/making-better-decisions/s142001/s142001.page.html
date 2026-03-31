@@ -5,7 +5,7 @@
   <form>
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+      <div class="col-md-12 col-sm-12 col-xs-12 mb30px">
         <h4 class="txt_comparison">
           How can we use our wisdom to ensure that we make better decisions?
           We make so many decisions that impact our lives - about our careers, our friends, our habits, our choice of
@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="row center_flex">
+    <!-- <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
         <a (click)="Resume('/teenagers/making-better-decisions/');" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
@@ -32,7 +32,45 @@
       </div>
     </div>
 
-    <div class="toc_adiv">
+    <div class="toc_adiv"> -->
+
+      <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a routerLink="/teenagers/making-better-decisions/s142002">
+          <button type="button" class="btn mb10pxi btn_begin_here w100" data-dismiss="modal">Begin here</button>
+        </a>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a (click)="Resume('/teenagers/making-better-decisions/');" *ngIf="lastvisited">
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
+
+    <!-- accordion header -->
+    <div class="row clickable" (click)="toggleContents()">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex plr10pxi ">
+        <div class="col-md-11 col-sm-11 col-xs-11 p0">
+          <h4 class="title_content mtb0px">
+            Contents
+          </h4>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
+          <i class="fa" [ngClass]="isContentsOpen ? 'fa-angle-up' : 'fa-angle-down'"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- accordion body -->
+    <div class="toc_adiv mt20px" *ngIf="isContentsOpen">
       <a routerLink="/teenagers/making-better-decisions/s142002">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -124,36 +162,21 @@
           </div>
         </div>
       </a>
-    </div>
-
-    <!-- hr -->
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-        <hr class="hr_style_v3_01">
-      </div>
-    </div>
-    <!-- /hr -->
-
-    <div class="toc_adiv_mp">
-      <!-- audio row -->
-      <!-- <a routerLink="isSubscriber ? ['/teenagers/audiopage/~podcasts~75.mp3/75/T/Making-better-decisions'] : ['/teenagers/subscription/start-your-free-trial']" > -->
-      <a
+       <a
         [routerLink]="isSubscriber ? ['/teenagers/audiopage/~podcasts~75.mp3/75/T/Making-better-decisions'] : ['/teenagers/subscription/start-your-free-trial']">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
-              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
-                <div class="prelative">
-                  <div class="row">
+              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/75.webp"
-                        class="img-responsive w100 img_podcast_01">
+                        class="p0 session_img">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" 
                         alt="Play" 
                         class="p0 session_img_play">
-                    </div>
-                  </div>
+                    
 
                   <!-- <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
@@ -190,10 +213,20 @@
           </div>
         </div>
       </a>
-      <!-- /audio row -->
     </div>
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories"
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
+
+   
+
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories"    [isAccordion]="true"
+
       *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
 
   </form>

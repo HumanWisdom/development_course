@@ -31,6 +31,7 @@ export class S132001Page implements OnInit,OnDestroy {
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
+  isContentsOpen = false;
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -152,7 +153,9 @@ export class S132001Page implements OnInit,OnDestroy {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
   }
-
+toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark()
   {
     if(this.bookmark==0)
