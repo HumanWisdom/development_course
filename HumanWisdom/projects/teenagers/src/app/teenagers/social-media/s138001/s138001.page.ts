@@ -21,7 +21,7 @@ export class S138001Page implements OnInit,OnDestroy {
   screenNumber=138001
   startTime:any
   endTime:any
-              isContentsOpen = false;
+  isContentsOpen = false;
 
   totalTime:any
   bookmark:any

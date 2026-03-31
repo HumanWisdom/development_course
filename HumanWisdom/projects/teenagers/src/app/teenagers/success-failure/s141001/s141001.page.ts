@@ -38,6 +38,8 @@ export class S141001Page implements OnInit,OnDestroy {
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/141.webp"
   tocColor="white"
   lastvisited = false;
+      isContentsOpen = false;
+
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
@@ -155,6 +157,9 @@ export class S141001Page implements OnInit,OnDestroy {
     this.socialShare=true
   }
 
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark()
   {
     if(this.bookmark==0)
