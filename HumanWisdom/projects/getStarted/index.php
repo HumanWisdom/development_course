@@ -1502,7 +1502,7 @@ text-decoration: underline; }
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                      <p class="p" style="text-align: left;line-height: 1.3;">Understand your mind.<br>Change your life</p>
+                      <p class="p" style="text-align: left;line-height: 1.3;">Understand your mind.<br>Change your life.</p>
                       <div class="div-6">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
                         <div class="text-wrapper-3">Now with Olly AI</div>
