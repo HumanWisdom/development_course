@@ -26,7 +26,7 @@
 
 <div class="cw100p" *ngIf="!defaultShow">
   <div class="row center_flex">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01 " [ngClass]="isAdults ? 'bg_ffe8bb' : 'bg_stake'">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sc_01 " [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
       <div class="x_panel p0">
         <div class="x_content p0">
           <div class="container">
@@ -43,30 +43,46 @@
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <a>
                           <div (click)="GoToQuestions(j)" class="panel panel-default pdefault_01 prelative">
-                            <div class="panel-heading absolute_ptitle"
-                              [ngClass]="{'bgGuided_Journal': j.JrType=='Guided journaling','gray_light':j.JrType=='Diary','bgmicrolearning_Journal':j.JrType=='Microlearning notes', 'bgReflections_Journal':j.JrType=='Reflections'}">
+                            <div class="absolute_ptitle"
+                              [ngClass]="{'bgGuided_Journal': j.JrType=='Guided journaling' || j.JrType=='Guided Journaling','gray_light':j.JrType=='Diary','bgmicrolearning_Journal':j.JrType=='Microlearning notes', 'bgReflections_Journal':j.JrType=='Reflections'}">
                               <h4 class="panel-title">{{j.JrType}}</h4>
                             </div>
                             <div class="panel-body">
-                              <h4 class="fs_12px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff_0_7'" >{{j.Date| date}}</h4>
+                              <h4 class="fs_12px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff'" >{{j.Date| date}}</h4>
                               <h4 class="fs_18px fw_500 lh_150p" [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff'"
-                                *ngIf="j.JrType=='Reflections' || j.JrType=='Guided journaling'">
+                                *ngIf="j.JrType=='Reflections' || j.JrType=='Guided journaling' || j.JrType=='Guided Journaling'">
                                 {{j.ModuleName}}
                               </h4>
                               <h4 class="fs_18px fw_500 lh_150p" [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff'" >{{j.TitleQue}}</h4>
-                              <ng-container *ngIf="j.TitleQue == 'Daily Checkin'">
-                                <div class="row mtb10px" *ngFor="let item of getdailCheckInData(j.ModuleId)">
-                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tcenter">
-                                    <img src="{{item.ImgPath}}" alt="" class="img-responsive img_journal_emoji">
-                                  </div>
-                                  <div class="col-md-6 col-sm-6 col-xs-6 p0 tcenter">
-                                    <span class="fs_18px" [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff'" >{{item.Expression}}</span>
-                                  </div>
-                                </div>
-                              </ng-container>
+                              
                               <h4 class="fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000' : 'fc_ffffff'" >
                                 {{j.Response|slice:0:40}}...
                               </h4>
+
+                              <ng-container *ngIf="j.TitleQue == 'Daily Checkin' || j.TitleQue == 'Daily check-in'">
+                                <div class="row mtb10px tright" *ngFor="let item of getdailCheckInData(j.ModuleId)">
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  p0  fright">
+                                    <div class="row">
+                                      <div class="col-md-10 col-sm-10 col-xs-10 p0 ">
+                                      </div>
+                                      <div class="col-md-2 col-sm-2 col-xs-2 p0 tcenter">
+                                        <img src="{{item.ImgPath}}" alt="" class="img-responsive">
+                                      </div>
+                                    </div>
+                          
+                                    <div class="row mt5px ">
+                                      <div class="col-md-10 col-sm-10 col-xs-10 p0 ">
+                                      </div>
+                                      <div class="col-md-2 col-sm-2 col-xs-2 p0 tcenter">
+                                        <h4 class="mtb0px fs_9px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                          {{item.Expression}}
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </ng-container>
+
                             </div>
                           </div>
                         </a>
