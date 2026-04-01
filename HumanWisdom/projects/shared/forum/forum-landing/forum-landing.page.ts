@@ -855,7 +855,7 @@ export class ForumLandingPage implements OnInit, OnChanges {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
     // Check if the user has scrolled to the bottom of the page
-    if (this.isScrolledToBottom() && this.searchInput == '' && this.buttonText == "All threads") {
+    if (this.defaultShow && this.isScrolledToBottom() && this.searchInput == '' && this.buttonText == "All threads") {
       this.isLoading=true;
      this.startRecord = this.startRecord+20;
      this.endRecord = this.startRecord+ 20;
