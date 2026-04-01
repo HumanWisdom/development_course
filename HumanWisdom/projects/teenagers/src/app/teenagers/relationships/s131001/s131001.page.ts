@@ -111,19 +111,6 @@ export class S131001Page implements OnInit,OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/live-your-best-life');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
-    // /continue where you left
-
-    
     
     if(this.saveUsername==false)
     {
@@ -133,6 +120,13 @@ export class S131001Page implements OnInit,OnDestroy {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
+
+    // continue where you left    
+    this.service.clickModule(131, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
 
     if(!this.t) //if no token in url- not shared
     {
