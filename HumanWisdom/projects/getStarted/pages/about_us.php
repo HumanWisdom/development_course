@@ -94,12 +94,12 @@
     }
          .navbar a.nav:hover,
     .navbar li:hover>a.nav {
-      color: #834B66 !important;
+      color: #803358 !important;
     }
 
     .navbar .active,
     .navbar .active:focus {
-      color: #834B66 !important;
+      color: #803358 !important;
     }
 
     /* Our HOW CTA: desktop keeps 225px; mobile uses .btn-mw-335px (inline width would override that) */
@@ -221,24 +221,35 @@
     /* About Us only: link hover colour like index page */
     .navbar a.nav:hover,
     .navbar li:hover > a.nav {
-      color: #834B66 !important;
+      color: #803358 !important;
     }
     .navbar .active,
     .navbar .active:focus {
-      color: #834B66 !important;
+      color: #803358 !important;
     }
 
     /* Founder book links: keep hover in the same purple */
     #main a[href*="amazon"]:hover .fc_cb6171,
     #main a:hover .fc_cb6171,
     #main .fc_cb6171:hover {
-      color: #834B66 !important;
+      color: #803358 !important;
     }
 
     /* Do not change colour on hover for the 3 descriptive lines */
     #main section.section-description h5.fc_000000,
     #main section.section-description h5.fc_000000:hover {
       color: #000000 !important;
+    }
+
+    /* Inspiring content grid: do not change text colour on hover */
+    .div_inspire h3,
+    .div_inspire h3:hover,
+    .div_inspire h5,
+    .div_inspire h5:hover,
+    .div_inspire a:hover h3,
+    .div_inspire a:hover h5 {
+      color: #120f40 !important;
+      text-decoration: none !important;
     }
   </style>
 
@@ -308,14 +319,15 @@
             data-aos-delay="100">
             <div class="row ">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_01.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/70module.svg"
                   class="img-responsive img_aspects m-wh" alt="70+ modules">
               </div>
             </div>
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black">
+                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black"
+                  style="color: rgba(128, 51, 88, 1) !important;">
                   75+ modules
                 </h3>
               </div>
@@ -334,14 +346,15 @@
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_02.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/bandaid.svg"
                   class="img-responsive img_aspects m-wh" alt="Not just a band-aid">
               </div>
             </div>
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black">
+                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black"
+                  style="color: rgba(128, 51, 88, 1) !important;">
                   Not just a band-aid
                 </h3>
               </div>
@@ -360,14 +373,15 @@
             data-aos-delay="300">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_03.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/caters.svg"
                   class="img-responsive img_aspects m-wh" alt="Caters to all ages">
               </div>
             </div>
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black">
+                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black"
+                  style="color: rgba(128, 51, 88, 1) !important;">
                   Caters to all ages
                 </h3>
               </div>
@@ -407,42 +421,37 @@
             </h4>
           </div>
 
-          <section>
-            <div class="section-header">
-              <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-                  <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
-                    The inspiration behind HappierMe
-                  </h2>
-                </div>
-              </div>
-            </div>
-
-            <div class="row center_flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0 tcenter w-810px">
-                <!-- <video id="homeVideo" controls playinline class="w100p"
-              poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
-              controlsList="nodownload">
-              <source
-                src="https://d1tenzemoxuh75.cloudfront.net/website/videos/adults_intro.mp4"
-                type="video/mp4">
-            </video> -->
-
-                <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
-                  src="https://www.youtube.com/embed/qcOZnwQ3jxM?si=h1vq4zHtZwaPYq8E" class="cvideo_b yt-embed"
-                  allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
-                  onclick="return logevent('click_play_video_home', 'about_us.php')"></iframe>
-              </div>
-            </div>
-
-
-
-          </section>
-          <!-- /video -->
-
-
         </div>
       </div>
+      <section>
+        <div class="section-header">
+          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+              <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
+                The inspiration behind HappierMe
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row center_flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0 tcenter w-810px">
+            <!-- <video id="homeVideo" controls playinline class="w100p"
+          poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
+          controlsList="nodownload">
+          <source
+            src="https://d1tenzemoxuh75.cloudfront.net/website/videos/adults_intro.mp4"
+            type="video/mp4">
+        </video> -->
+
+            <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+              src="https://www.youtube.com/embed/qcOZnwQ3jxM?si=h1vq4zHtZwaPYq8E" class="cvideo_b yt-embed"
+              allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+              onclick="return logevent('click_play_video_home', 'about_us.php')"></iframe>
+          </div>
+        </div>
+      </section>
+      <!-- /video -->
     </section>
     <!-- /our_why -->
 
@@ -503,7 +512,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_pathway.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                   class="img-responsive img_aspects inspiring_img" alt="PATHWAY">
               </div>
             </div>
@@ -528,7 +537,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_daily_practice.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/dailyPrac.svg"
                   class="img-responsive img_aspects inspiring_img" alt="Daily practice">
               </div>
             </div>
@@ -553,7 +562,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="400">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_trained_coaches.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/couching.svg"
                   class="img-responsive img_aspects inspiring_img" alt="Trained coaches">
               </div>
             </div>
@@ -578,7 +587,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="500">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_podcasts.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                   class="img-responsive img_aspects inspiring_img" alt="Podcasts">
               </div>
             </div>
@@ -609,7 +618,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="600">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_mindfulness.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/feelBetter.svg"
                   class="img-responsive img_aspects inspiring_img" alt="Mindfulness">
               </div>
             </div>
@@ -634,7 +643,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="700">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_awareness_exercises.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/selfawareness.svg"
                   class="img-responsive img_aspects inspiring_img" alt="Awareness exercises">
               </div>
             </div>
@@ -659,7 +668,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="800">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_online_forum.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                   class="img-responsive img_aspects inspiring_img" alt="Online forum">
               </div>
             </div>
@@ -684,7 +693,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="900">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/au_life_stories.svg"
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/blog_b.svg"
                   class="img-responsive img_aspects inspiring_img" alt="Life stories">
               </div>
             </div>
@@ -863,7 +872,7 @@
                   <h3 class="mtb10px fs_24px fw_500 lh_160p fc_000000">
                     Dr Manoj Krishna
                   </h3>
-                  <h4 class="mtb0px fs_18px f_12px fw_400 lh_160p fc_000000">
+                  <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
                     Dr Manoj Krishna, previously a spine surgeon in the UK, left his medical career and, along with
                     other professionals, started the HappierMe Project to help reduce suffering and help people lead
                     happier lives. He has authored two books -

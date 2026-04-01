@@ -80,6 +80,11 @@ img { max-width: 100%; display: block; }
 /* ── SHARED HELPERS ── */
 .chevron        { font-size: 20px; color: #000; margin-left: 4px; }
 .chevron-pink   { font-size: 12px; color: rgba(215, 88, 107, 1);padding-top:3px }
+/* Scroll-to-top icon: add visible white outer circle on footer background */
+#scrollTopArrow {
+  border: 1px solid #fff !important;
+  box-sizing: border-box;
+}
 .pt-12px { padding:12px;}
 
 /* ========================================
@@ -311,6 +316,51 @@ a:hover {
 }
 header a:hover,
 nav a:hover {
+  text-decoration: none !important;
+}
+/* Keep header "Try for free" text white on hover/focus/active */
+header .btn_tff,
+header .btn_tff:hover,
+header .btn_tff:focus,
+header .btn_tff:active,
+header a.btn_tff,
+header a.btn_tff:hover,
+header a.btn_tff:focus,
+header a.btn_tff:active {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+header .btn_tff *,
+header a.btn_tff * {
+  color: #fff !important;
+}
+/* Header CTA may come from included markup without btn_tff class */
+header a[href*="splash_options.php"],
+header a[href*="splash_options.php"]:hover,
+header a[href*="splash_options.php"]:focus,
+header a[href*="splash_options.php"]:active,
+header a[href*="splash_options.php"]:visited {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-decoration: none !important;
+}
+header a[href*="splash_options.php"] * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+/* Actual top nav uses .header container (not <header> tag) */
+#body .header a.btn_tff,
+#body .header a.btn_tff:hover,
+#body .header a.btn_tff:focus,
+#body .header a.btn_tff:active,
+#body .header a.btn_tff:visited,
+#body .header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover,
+#body .header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:hover,
+#body .header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:focus,
+#body .header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:active,
+#body .header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:visited {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   text-decoration: none !important;
 }
 .text-wrapper-26:hover,
@@ -627,6 +677,27 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
   filter: brightness(0) !important;
   -webkit-filter: brightness(0) !important;
 }
+/* Chromium variant */
+.tools-thumb-video::-webkit-media-controls-overflow-menu-button,
+#fbn-video::-webkit-media-controls-overflow-menu-button,
+video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  opacity: 1 !important;
+  filter: brightness(0) !important;
+  -webkit-filter: brightness(0) !important;
+}
+/* Extra fallback selectors for Chromium variants */
+video::-webkit-media-controls-overflow-button,
+video::-webkit-media-controls-overflow-menu-button,
+video.tools-thumb-video::-webkit-media-controls-overflow-button,
+video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  opacity: 1 !important;
+  filter: brightness(0) !important;
+  -webkit-filter: brightness(0) !important;
+}
 /* FBN: while playing, video fills card (353px) */
 #tab-fbn .tools-card.tools-card-fbn-playing {
   height: 353px;
@@ -820,7 +891,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding-left: 12rem;
+  padding-left: 0;
 }
 .coaches-outer.is-scrolled {
   padding-left: 0;
@@ -832,6 +903,8 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
   display: flex;
   align-items: center;
   gap: 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 /* arrow buttons */
@@ -866,11 +939,15 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   flex: 1;
+  width: 100%;
   /* hide scrollbar on all browsers */
   scrollbar-width: none;        /* Firefox */
   -ms-overflow-style: none;     /* IE/Edge */
 }
 .coaches-scroll::-webkit-scrollbar { display: none; }
+.coaches-scroll .coach-card:first-child {
+  margin-left: 12rem;
+}
 
 .coach-card {
   display: flex;
@@ -904,6 +981,8 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
   justify-content: space-between;
   margin-top: 40px;
   width: 100%;
+  padding-left: 12rem;
+  box-sizing: border-box;
 }
 .coaches-footer-spacer {
   flex: 1;
@@ -983,10 +1062,14 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  width: 120%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   height:370px;
 }
 .blog-scroll::-webkit-scrollbar { display: none; }
+.blog-scroll .blog-card:first-child {
+  margin-left: max(20px, calc((100vw - 980px) / 2));
+}
 .blog-card {
   position: relative;
   width: 470px;
@@ -1093,10 +1176,14 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
 
   .blog-scroll {
     width: 100%;
+    margin-left: 0;
     height: 289px;
     overflow-y: visible;
     align-items: center;
     margin-top: -18px;
+  }
+  .blog-scroll .blog-card:first-child {
+    margin-left: 0;
   }
 
   .blog-card {
@@ -1191,10 +1278,13 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
 .div-54 { width: 100%; max-width: 980px; padding: 10px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
 .div-55 { display: flex; gap: 40px; width: 100%; flex-wrap: wrap; }
 .div-56 { display: flex; flex-direction: column; gap: 20px; min-width: 200px; flex-shrink: 0; padding-top: 12px}
-.about-happierme { font-size: 15px; font-weight: 600; color: background: rgba(131, 75, 102, 1); cursor: pointer; }
+.about-happierme { font-size: 15px; font-weight: 600; color: rgba(128, 51, 88, 1) !important; cursor: pointer; }
 .text-wrapper-45 { font-size: 15px; font-weight: 500; color: rgba(203, 97, 113, 1);text-decoration: underline; cursor: pointer; }
 .faq-tab:hover { color: #803358 !important;
     text-decoration: none !important; }
+.about-happierme:hover,
+.about-happierme.faq-tab:hover,
+.about-happierme.faq-tab.faq-tab-active:hover { color: #000000 !important; }
 .faq-tab-active { opacity: 1 !important; font-weight: 600 !important; }
 .div-57 { flex: 1; min-width: 280px; }
 .faq-panel { display: none; }
@@ -1660,7 +1750,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
     min-width: 0;
     box-sizing: border-box;
   }
-  .coaches-footer { flex-direction: column; justify-content: center; gap: 12px; margin-top: 20px; }
+  .coaches-footer { flex-direction: column; justify-content: center; gap: 12px; margin-top: 20px; padding-left: 0; }
   .coaches-footer-spacer { display: none; }
   .coaches-nav-btns { margin-left: 0 !important; justify-content: center; }
   .coaches-more { justify-content: center; }
@@ -1669,14 +1759,19 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
   .coaches-track-wrap {
     padding-left: 0 !important;
     width: 100%;
+    margin-left: 0;
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
   }
   #coaches-scroll.coaches-scroll {
+    width: 100%;
     padding-right: max(24px, env(safe-area-inset-right, 0px));
     touch-action: pan-x;
     overscroll-behavior-x: contain;
+  }
+  .coaches-scroll .coach-card:first-child {
+    margin-left: 0;
   }
 
   /* Coach card sizing (mobile) */
@@ -1809,7 +1904,7 @@ video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
 
   /* Coaches (mobile): center footer + fix carousel start */
   .coaches-outer { padding-left: 0 !important; }
-  .coaches-footer { flex-direction: column; justify-content: center; gap: 12px; margin-top: 20px; }
+  .coaches-footer { flex-direction: column; justify-content: center; gap: 12px; margin-top: 20px; padding-left: 0; }
   .coaches-footer-spacer { display: none; }
   .coaches-nav-btns { margin-left: 0 !important; justify-content: center; }
   .coaches-more { justify-content: center; }
