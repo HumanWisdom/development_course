@@ -47,7 +47,7 @@ a {
 }
 
 .active_nav {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 
 p:hover {
@@ -97,7 +97,7 @@ section {
 
 .section-header {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 }
 
 .section-headernew {
@@ -548,7 +548,7 @@ label>input[type="checkbox"]+*::before {
 
   .navbar .active .navbar .active:focus,
   .navbar li:hover>a {
-    color: #834B66 !important;
+    color: #803358 !important;
   }
 
   .navbar .dropdown ul {
@@ -4789,7 +4789,7 @@ input[type="password" i]::-ms-reveal {
 }
 
 .tab_faqs.nav-tabs>li>a:hover {
-  color: #834B66 !important;
+  color: #803358 !important;
   text-decoration: none !important;
 }
 
