@@ -134,7 +134,7 @@
 
 
                     <!-- microlearning -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.MLMRes.length>0">
+                    <div class="row mt30px mb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Microlearning
@@ -1219,12 +1219,14 @@
                   <!-- forum -->
                   <div id="tab2" *ngIf="tabName=='Forum'" class="tab-pane fade in active">
                     <app-forum-landing [defaultShow]="false" [search]="search"></app-forum-landing>
+                    <div class="pagebreak"></div>
                   </div>
                   <!-- /forum -->
 
                   <!-- journal -->
                   <div id="tab3" *ngIf="tabName=='Journal'" class="tab-pane fade in active">
                     <app-index [defaultShow]="false" [search]="search"></app-index>
+                    <div class="pagebreak"></div>
                   </div>
                   <!-- /journal -->
 
