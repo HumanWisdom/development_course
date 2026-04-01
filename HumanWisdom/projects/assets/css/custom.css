@@ -24358,10 +24358,12 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #803358 !important;
+  color: #cb6171 !important;
   text-decoration: underline !important;
 }
-
+.blog_highlight_peach:hover{
+  color:#803358 !important;
+}
 .yt-embed {
   width: 100%;
   padding: 20px 0px;
