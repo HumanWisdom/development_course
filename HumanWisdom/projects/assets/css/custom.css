@@ -24364,6 +24364,9 @@ a {
 .blog_highlight_peach:hover{
   color:#803358 !important;
 }
+.blog_highlight_peach:focus{
+  color:#803358 !important;
+}
 .yt-embed {
   width: 100%;
   padding: 20px 0px;
@@ -24371,9 +24374,9 @@ a {
 }
 
 .blog_sub_title {
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 130%;
+  line-height: 160%;
   color: #000;
   margin-bottom: 10px;
   padding-top: 20px;
