@@ -135,8 +135,8 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-md-2 col-sm-2 col-xs-2 p0">
                             <img
-                              src="{{!getimg(item['ProfilePic']) ||  getimg(item['ProfilePic']) === undefined
-                      ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/' + getimg(item['ProfilePic'])}}"
+                              src="{{!getimg(item['ProfilePic'])
+                      ? (isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default_teens.svg') : getimg(item['ProfilePic'])}}"
                               alt="" class="img-responsive img_comment">
                           </div>
                           <div class="col-md-10 col-sm-10 col-xs-10 p0">
@@ -189,8 +189,8 @@
 
 
                                         <img
-                                          src="{{!getimg(item['ProfilePic']) ||  getimg(item['ProfilePic']) === undefined
-                                    ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/' + getimg(item['ProfilePic'])}}"
+                                          src="{{!getimg(item['ProfilePic'])
+                                    ? (isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default_teens.svg') : getimg(item['ProfilePic'])}}"
                                           alt="" class="img-responsive img_comment">
                                       </div>
                                       <div class="col-md-10 col-sm-10 col-xs-10 p0">
