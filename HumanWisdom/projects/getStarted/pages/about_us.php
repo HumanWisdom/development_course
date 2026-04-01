@@ -109,6 +109,11 @@
         max-width: 314px !important;
       }
     }
+    /* About us CTA hover gradient override */
+    #happiermeTryForFree .btn_tff:hover,
+    #happiermeTryForFree .btn_tff:focus:hover {
+      background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+    }
 
     @media (max-width: 767px) {
 
@@ -406,7 +411,7 @@
       <div class="row center_flex div_subscription" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0" style="width: 980px !important;">
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ">
             <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
               Our WHY
             </h1>
