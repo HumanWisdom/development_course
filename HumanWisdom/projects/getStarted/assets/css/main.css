@@ -235,6 +235,10 @@ textarea {
   width: 44px;
   height: 44px;
   border-radius: 50px;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.4s;
 }
 

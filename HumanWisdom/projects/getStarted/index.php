@@ -854,12 +854,9 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
   color: #803358 !important;
 }
 
-/* index-only: prevent global yellow click/active color */
-#body a:active {
-  color: inherit !important;
-}
-#body a:active .chevron-pink {
-  color: inherit !important;
+/* index-only: remove mobile tap highlight without overriding link colors */
+#body a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Keep old selectors harmless */
@@ -1278,14 +1275,20 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
 .div-54 { width: 100%; max-width: 980px; padding: 10px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
 .div-55 { display: flex; gap: 40px; width: 100%; flex-wrap: wrap; }
 .div-56 { display: flex; flex-direction: column; gap: 20px; min-width: 200px; flex-shrink: 0; padding-top: 12px}
-.about-happierme { font-size: 15px; font-weight: 600; color: rgba(128, 51, 88, 1) !important; cursor: pointer; }
+.about-happierme { font-size: 15px; font-weight: 500; color: rgba(203, 97, 113, 1); text-decoration: underline; cursor: pointer; }
 .text-wrapper-45 { font-size: 15px; font-weight: 500; color: rgba(203, 97, 113, 1);text-decoration: underline; cursor: pointer; }
 .faq-tab:hover { color: #803358 !important;
     text-decoration: none !important; }
-.about-happierme:hover,
-.about-happierme.faq-tab:hover,
-.about-happierme.faq-tab.faq-tab-active:hover { color: #000000 !important; }
-.faq-tab-active { opacity: 1 !important; font-weight: 600 !important; }
+.faq-tab-active {
+  opacity: 1 !important;
+  font-weight: 600 !important;
+  color: rgba(128, 51, 88, 1) !important;
+  text-decoration: none !important;
+}
+.faq-tab-active:hover {
+  color: rgba(128, 51, 88, 1) !important;
+  text-decoration: none !important;
+}
 .div-57 { flex: 1; min-width: 280px; }
 .faq-panel { display: none; }
 .faq-panel.active { display: block; }
@@ -1769,6 +1772,15 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
     padding-right: max(24px, env(safe-area-inset-right, 0px));
     touch-action: pan-x;
     overscroll-behavior-x: contain;
+  }
+  /* Once user starts scrolling, make strip edge-to-edge on mobile */
+  .coaches-outer.is-scrolled .coaches-track-wrap {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    max-width: none;
+  }
+  .coaches-outer.is-scrolled #coaches-scroll.coaches-scroll {
+    padding-right: 0;
   }
   .coaches-scroll .coach-card:first-child {
     margin-left: 0;
@@ -3092,18 +3104,21 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         });
 
         video.addEventListener('play', function() {
+          video.controls = true;
           playBtn.hidden = true;
           setFbnPlayingLayout(true);
         });
 
         video.addEventListener('pause', function() {
+          video.controls = false;
           if (video.currentTime < video.duration) {
             playBtn.hidden = false;
           }
-          setFbnPlayingLayout(true);
+          setFbnPlayingLayout(false);
         });
 
         video.addEventListener('ended', function() {
+          video.controls = false;
           playBtn.hidden = false;
           setFbnPlayingLayout(false);
         });
