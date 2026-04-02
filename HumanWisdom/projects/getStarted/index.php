@@ -1735,13 +1735,15 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
     justify-content: center;
   }
 
-  /* Coaches (mobile): center footer + fix carousel start */
+  /* Coaches (mobile): center footer + fix carousel start; flush to right edge (left inset unchanged) */
   .coaches-section {
     align-items: stretch;
     max-width: 100%;
     overflow-x: hidden;
     box-sizing: border-box;
     gap: 24px;
+    padding-right: 0;
+    padding-left: 20px;
   }
   .text-wrapper-6-1 {
     font-size: 18px;
@@ -1769,7 +1771,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
   }
   #coaches-scroll.coaches-scroll {
     width: 100%;
-    padding-right: max(24px, env(safe-area-inset-right, 0px));
+    padding-right: 0;
     touch-action: pan-x;
     overscroll-behavior-x: contain;
   }
