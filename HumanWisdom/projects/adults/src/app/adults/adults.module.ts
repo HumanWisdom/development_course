@@ -7,8 +7,10 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons'
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../../../../shared/shared.module';
+import { SelfAwarenessRedirectComponent } from './self-awareness-redirect.component';
 @NgModule({
   declarations: [
+    SelfAwarenessRedirectComponent,
   ],
   imports: [
     CommonModule,
