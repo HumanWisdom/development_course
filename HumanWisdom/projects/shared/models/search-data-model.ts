@@ -10,6 +10,7 @@ export interface SearchDataModel {
   AudioMeditationRes: AudioMedRe[];
   FeelBetterNowRes:string;
   MLMRes: MLMRe[];
+  SoundscapesRes: any[];
 }
 
 interface MLMRe {

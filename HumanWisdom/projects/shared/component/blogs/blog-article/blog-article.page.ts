@@ -177,10 +177,11 @@ export class BlogArticlePage {
   }
 
   getimg(data) {
-   /*  console.log(data.split('UsersAvatar\\')[1])
-    return data.split('UsersAvatar\\')[1] */
-    console.log(data)
-    return data
+    if (!data || data === 'undefined' || data.includes('undefined')) {
+      return '';
+    }
+    const cleanedPath = data.replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/');
+    return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + cleanedPath;
   }
 
   goBack() {

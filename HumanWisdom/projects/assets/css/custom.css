@@ -24358,8 +24358,16 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #803358 !important;
+  color: #cb6171 !important;
   text-decoration: underline !important;
+}
+
+.blog_highlight_peach:hover {
+  color: #803358 !important;
+}
+
+.blog_highlight_peach:focus {
+  color: #803358 !important;
 }
 
 .yt-embed {
@@ -24369,9 +24377,9 @@ a {
 }
 
 .blog_sub_title {
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 130%;
+  line-height: 160%;
   color: #000;
   margin-bottom: 10px;
   padding-top: 20px;
@@ -35311,6 +35319,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   width: 40px;
   height: 40px;
   border-radius: 40px;
+  object-fit: cover;
 }
 
 .blog_vac .panel {

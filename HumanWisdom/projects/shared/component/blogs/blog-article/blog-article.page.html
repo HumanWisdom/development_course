@@ -59,13 +59,15 @@
                 </div>
               </div>
               <div class="row accordion_row bg_profile_blog  ">
-                <div class="row mt30px mb15px">
+
+
+                 <div class="row mt10px mb5px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-10 col-sm-10 col-xs-10 p0">
-                      <h6 class="mtb0px fs_18px fw_600 lh_150p  ellipsis blog_title">
+                      <!-- <h6 class="mtb0px fs_30px fw_500 lh_140p ">
                         {{blogList['Title']}}
-                      </h6>
-                    </div>
+                      </h6> -->
+                    </div> 
                     <div class="col-md-2 col-sm-2 col-xs-2 p0 tright center_flex">
                       <div class="div_like_cnt" (click)="likebtn()">
                         <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/ls_like_filled_b.svg" alt=""> -->
@@ -79,6 +81,28 @@
                         </span>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div class="row mt10px mb15px">
+                  <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                      <h6 class="mtb0px fs_30px fw_500 lh_140p ">
+                        {{blogList['Title']}}
+                      </h6>
+                    </div>
+                    <!-- <div class="col-md-2 col-sm-2 col-xs-2 p0 tright center_flex"> -->
+                      <!-- <div class="div_like_cnt" (click)="likebtn()"> -->
+                        <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/ls_like_filled_b.svg" alt=""> -->
+                        <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/ls_like_unfilled_b.svg"
+                          class="img-responsive" *ngIf="blogList['Liked']===0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/ls_like_filled_b.svg"
+                          class="img-responsive" *ngIf="blogList['Liked']!==0">
+
+                        <span class="mtb0px fs_15px fw_600 lh_150p  ml5px">
+                          {{blogList['LikeCnt']}}
+                        </span>
+                      </div> -->
+                    <!-- </div> -->
                   </div>
                 </div>
 
@@ -135,8 +159,8 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-md-2 col-sm-2 col-xs-2 p0">
                             <img
-                              src="{{!getimg(item['ProfilePic']) ||  getimg(item['ProfilePic']) === undefined
-                      ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/' + getimg(item['ProfilePic'])}}"
+                              src="{{!getimg(item['ProfilePic'])
+                      ? (isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default_teens.svg') : getimg(item['ProfilePic'])}}"
                               alt="" class="img-responsive img_comment">
                           </div>
                           <div class="col-md-10 col-sm-10 col-xs-10 p0">
@@ -189,8 +213,8 @@
 
 
                                         <img
-                                          src="{{!getimg(item['ProfilePic']) ||  getimg(item['ProfilePic']) === undefined
-                                    ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/user/profile_default.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/' + getimg(item['ProfilePic'])}}"
+                                          src="{{!getimg(item['ProfilePic'])
+                                    ? (isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/profile_default_teens.svg') : getimg(item['ProfilePic'])}}"
                                           alt="" class="img-responsive img_comment">
                                       </div>
                                       <div class="col-md-10 col-sm-10 col-xs-10 p0">
