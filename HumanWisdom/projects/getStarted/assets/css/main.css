@@ -3366,7 +3366,7 @@ audio::-webkit-media-controls-enclosure {
   font-weight: 600;
   line-height: 180%;
   color: #CB6171;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .owl-carousel.owl-drag .owl-item {
@@ -4033,9 +4033,9 @@ audio::-webkit-media-controls-enclosure {
 
 }
 
-a:active {
+/* a:active {
   color: #ffd323;
-}
+} */
 
 button {
   user-select: none;
