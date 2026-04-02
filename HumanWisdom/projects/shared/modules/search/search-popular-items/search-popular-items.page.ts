@@ -57,6 +57,7 @@ export class SearchPopularItemsPage implements OnInit {
   public moduleList = [];
   filterApplied =  true;
   isLoading: boolean = false;
+  previousSearch: string = '';
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -87,7 +88,9 @@ export class SearchPopularItemsPage implements OnInit {
     }
     this.userId = this.UserID;
     this.initializeSearchObject();
+    this.previousSearch = this.search;
     this.getSearchData();
+    this.getModuleList();
 
   }
   initializeSearchObject() {
@@ -120,9 +123,13 @@ export class SearchPopularItemsPage implements OnInit {
   }
   
   getinp(event) {
+    if(!event || event.toString().trim() === ""){
+       return;
+    }
     let url=""
     let fragment: string | undefined = undefined;
     this.search= event;
+    this.previousSearch = event;
 
     switch(event.toLowerCase())
     {
@@ -861,9 +868,18 @@ export class SearchPopularItemsPage implements OnInit {
 
   clearSearch() {
     this.search = "";
-    this.getAutoCompleteList('');
+    if (this.moduleList.length === 0) {
+      this.getModuleList(true);
+    } else {
+      this.getAutoCompleteList('');
+    }
     this.post = [];
     this.jrList = [];
+  }
+
+  backToPreviousSearch() {
+    this.search = this.previousSearch;
+    this.searchResult = [];
     this.getSearchData();
   }
 
