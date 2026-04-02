@@ -1773,6 +1773,15 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
     touch-action: pan-x;
     overscroll-behavior-x: contain;
   }
+  /* Once user starts scrolling, make strip edge-to-edge on mobile */
+  .coaches-outer.is-scrolled .coaches-track-wrap {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    max-width: none;
+  }
+  .coaches-outer.is-scrolled #coaches-scroll.coaches-scroll {
+    padding-right: 0;
+  }
   .coaches-scroll .coach-card:first-child {
     margin-left: 0;
   }

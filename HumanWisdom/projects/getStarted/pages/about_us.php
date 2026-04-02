@@ -221,6 +221,19 @@
           font-size: 21px !important;
         }
       }
+
+      /* About Us mobile video: keep true 16:9 to avoid black bars while playing */
+      section.hpt120px~main#main #youtubeIntro.cvideo_b.yt-embed {
+        width: 100% !important;
+        max-width: 335px !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
     }
 
     /* About Us only: link hover colour like index page */
