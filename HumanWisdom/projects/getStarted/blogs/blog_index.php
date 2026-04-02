@@ -149,7 +149,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs"
-                    alt="#10 ways understanding your mind could transform your life">
+                    alt="10 ways understanding your mind could transform your life">
                 </div>
               </div>
 
@@ -164,7 +164,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
-                    #10 ways understanding your mind could transform your life
+                    10 ways understanding your mind could transform your life
                   </h4>
                 </div>
               </div>
