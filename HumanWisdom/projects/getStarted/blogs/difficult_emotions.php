@@ -74,7 +74,11 @@
             src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1&enablejsapi=1"
             class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
             onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+
+
+            
+            
+                <h4 class="mtb20px blog_desc blog_highlight_black">
                   The HappierMe app supports you to put out the fire in your own mind, and then find out why the fire started in the first place so it does not occur again.
                 </h4>
 
@@ -274,8 +278,9 @@
                   You can look at what you wrote in your journal earlier and start asking questions about what you have written. ‘Is there a different, or more positive way to see things, and another way to respond?’
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Resources to explore in the HappierMe app:
+                <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/questions-are-key">
                     Questions are the key,
                   </a>
