@@ -29,7 +29,7 @@
             <div class="row rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
-                  #10 ways understanding your mind could transform your life
+                  10 ways understanding your mind could transform your life
                 </h1>
               </div>
             </div>
@@ -54,9 +54,9 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <h4 class="mtb0px blog_sub_title">
+                <!-- <h4 class="mtb0px blog_sub_title">
                     #10 ways understanding your mind could transform your life
-                </h4>
+                </h4> -->
                   
                 <h4 class="mtb0px blog_desc">
                     This article explores some of the benefits of understanding your own mind.
@@ -273,9 +273,9 @@
                     There are many other ways a better understanding of our own mind can help us - begin your own journey of self-discovery and you can find out for yourself. 
                 </h4>
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                <!-- <h4 class="mtb0px blog_desc blog_highlight_black">
                     For more information, download and explore the HappierMe app for free.
-                </h4>
+                </h4> -->
               </div>
             </div>
 
