@@ -44,6 +44,7 @@ export class SearchPopularItemsPage implements OnInit {
   enablePodcastViewMore: boolean = false;
   enableAudioMedViewMore: boolean = false;
   enableMLMViewMore: boolean = false;
+  enableSoundscapesViewMore: boolean = false;
   isSubscriber = false;
   storyFreeMap: { [key: number]: boolean } = {};
   showModal = false;
@@ -101,7 +102,8 @@ export class SearchPopularItemsPage implements OnInit {
       WisdomStoriesRes: [],
       AudioMeditationRes:[],
       FeelBetterNowRes: null,
-      MLMRes: []
+      MLMRes: [],
+      SoundscapesRes: []
     } as SearchDataModel;
   }
 
@@ -147,6 +149,10 @@ export class SearchPopularItemsPage implements OnInit {
       }
       case "guided audio meditation":{
         url = `/${SharedService.getprogramName()}/audio-meditation`
+        break;
+      }
+      case "soundscapes":{
+        url = `/${SharedService.getprogramName()}/soundscapes`
         break;
       }
       case ("short videos"):
@@ -229,6 +235,7 @@ export class SearchPopularItemsPage implements OnInit {
         this.searchDataDup.WisdomStoriesRes.length +
         this.searchDataDup.AudioMeditationRes.length +
         this.searchDataDup.MLMRes.length +
+        this.searchDataDup.SoundscapesRes.length +
         this.searchDataDup.BlogRes.length;
     }
     return 0;
@@ -299,6 +306,12 @@ export class SearchPopularItemsPage implements OnInit {
           this.searchData = res;
         }
 
+        if (res.SoundscapesRes && res.SoundscapesRes.length > 2) {
+          res.SoundscapesRes = res.SoundscapesRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
 
         if (res.WisdomStoriesRes && res.WisdomStoriesRes.length > 2) {
           res.WisdomStoriesRes = res.WisdomStoriesRes.filter((d, i) => (i === 0 || i === 1));
@@ -512,6 +525,18 @@ export class SearchPopularItemsPage implements OnInit {
         }
         this.enableMLMViewMore = false;
       }
+    }else if(section === 'soundscapes') {
+      if (type === 'more') {
+        if (this.searchDataDup.SoundscapesRes && this.searchDataDup.SoundscapesRes.length > 2) {
+          this.searchData.SoundscapesRes = this.searchDataDup.SoundscapesRes;
+        }
+        this.enableSoundscapesViewMore = true;
+      }else {
+        if (this.searchDataDup.SoundscapesRes && this.searchDataDup.SoundscapesRes.length > 2) {
+          this.searchData.SoundscapesRes = this.searchDataDup.SoundscapesRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableSoundscapesViewMore = false;
+      }
     }
 
 
@@ -532,6 +557,26 @@ export class SearchPopularItemsPage implements OnInit {
     } else {
       this.router.navigate(['teenagers/guided-meditation/audiopage/', url, data['RowID'], (data['isFree']==1)? "T":"F", title]);
     }
+  }
+
+  soundscapeEvent(data: any) {
+    this.commonService.clickSoundscapes(data.SoundscapeID).subscribe({
+      next: () => {},
+      error: () => {}
+    });
+    const locked = !this.isSubscriber && data['SoundscapeID'] > 1;
+    if (locked) {
+      this.showModal = true;
+      return;
+    }
+    let mediaUrl = data['MediaUrl'] || '';
+    if (mediaUrl.includes('https://d1tenzemoxuh75.cloudfront.net/')) {
+      mediaUrl = mediaUrl.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
+    }
+    let concat = encodeURIComponent(mediaUrl.replaceAll('/', '~'));
+    const title = (data['Title'] || '').replaceAll(' ', '-');
+    const moduleName = 'Soundscapes';
+    this.router.navigate([`${SharedService.getprogramName()}/audiopage/`, concat, data['SoundscapeID'], 'T', title, moduleName]);
   }
 
   podcastevent(data: any) {
@@ -792,7 +837,7 @@ export class SearchPopularItemsPage implements OnInit {
   getModuleList(isLoad?) {
     this.commonService.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                           {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
