@@ -505,7 +505,7 @@
     </div>
 
     <div class="banner_logo" style="width: 46px !important;">
-      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_footer_hwp.svg" alt="banner">
+      <img src="https://d1tenzemoxuh75.cloudfront.net/website/happiermeicon.svg" alt="banner">
     </div>
 
     <div style="width: 50%;padding-left:0px !important">
