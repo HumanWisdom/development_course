@@ -1,8 +1,10 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Injectable, Injector } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/internal/operators/catchError';
+import { catchError } from 'rxjs/operators';
+import { SessionService } from '../../../shared/services/session.service';
+import { AdultsService } from './adults/adults.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,32 +12,44 @@ import { catchError } from 'rxjs/internal/operators/catchError';
 export class TokenInterceptorService implements HttpInterceptor {
   token = '';
 
-  constructor() {
+  constructor(private injector: Injector) {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    try{
-       this.token=JSON.parse(localStorage.getItem("token"))
+    try {
+      this.token = JSON.parse(localStorage.getItem("token"))
     }
-    catch(e){ 
+    catch (e) {
       this.token = localStorage.getItem("token");
     }
+
+    if (req.url.includes('/login') || req.url.includes('/VerifyAuthToken')) {
+      return next.handle(req);
+    }
+
     let tokenizedReq = req.clone({
       setHeaders: {
         Authorization: `Bearer ` + this.token
       }
     })
-    return next.handle(tokenizedReq).pipe(catchError(err => {
-      if (err instanceof HttpErrorResponse) {
-        if (err.status === 401) {
-          // localStorage.clear()
-          localStorage.setItem('guest', 'T');
-          localStorage.setItem('personalised', 'T');
-          localStorage.setItem('acceptcookie', 'T');
-          // this.router.navigate(['/adults/adult-dashboard'])
+
+    return next.handle(tokenizedReq).pipe(
+      catchError((err: any) => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+            const sessionService = this.injector.get(SessionService);
+            const adultsService = this.injector.get(AdultsService);
+
+            if (localStorage.getItem("isloggedin") === 'T') {
+              sessionService.notifySessionExpired();
+            } else {
+              // Guest user - refresh session
+              adultsService.emaillogin();
+            }
+          }
         }
         return throwError(err);
-      }
-    }));
+      })
+    );
   }
 }
