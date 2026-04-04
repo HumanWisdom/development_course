@@ -102,7 +102,7 @@
             </li>
           </ul>
           <div id="PricingSelectBtnHomePage">
-            <a href="signup.php">
+            <a href="signup.php" id="mind-get-started-link">
               <button class="cta-button btn-gradient">
                 <span class="btn-txt">Let's get started!</span>
               </button>
@@ -232,6 +232,25 @@
 
   </div>
 
+  <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var uid = params.get('orcha_uid');
+        if (uid && String(uid).trim()) {
+          sessionStorage.setItem('orcha_uid', String(uid).trim());
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+          var link = document.getElementById('mind-get-started-link');
+          if (!link) return;
+          var v = (uid && String(uid).trim()) || sessionStorage.getItem('orcha_uid');
+          if (v) {
+            link.setAttribute('href', 'signup.php?orcha_uid=' + encodeURIComponent(v));
+          }
+        });
+      } catch (e) {}
+    })();
+  </script>
   <!-- vendor_footer -->
   <?php include('../includes/vendor_footer.php'); ?>
   <!-- /vendor_footer -->
