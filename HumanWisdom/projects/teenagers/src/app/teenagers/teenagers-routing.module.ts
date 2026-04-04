@@ -78,6 +78,10 @@ const routes: Routes = [
     component: SelfAwarenessRedirectComponent,
   },
   {
+    path: 'self-awareness',
+    loadChildren: () => import('../teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule),
+  },
+  {
     path: 'teenager-dashboard',
     component: HomeComponent,
     loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
@@ -302,11 +306,6 @@ const routes: Routes = [
   {
     path: 'dealing-with-depression',
     loadChildren: () => import('../teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
-  },
-
-  {
-    path: 'wisdom-exercise',
-    loadChildren: () => import('../teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
   },
   {
     path: 'find-answers/:url',
@@ -581,7 +580,15 @@ const routes: Routes = [
     path: 'chat-bot',
     component: ChatBotComponent
   },
-
+  {
+    path: 'wisdom-exercise',
+    redirectTo:'curated/self-awareness'
+  },
+  {
+  path: 'wisdom-exercise/:subpath',
+  redirectTo: 'curated/self-awareness',
+  pathMatch: 'full'
+}
 ];
 
 
