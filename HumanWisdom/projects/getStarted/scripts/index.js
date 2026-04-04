@@ -45,6 +45,10 @@ function removeActiveNavClass(tab) {
         if (element) {
             element.classList.remove("active_nav");
         }
+        const mobileEl = document.getElementById(id + "_mobile");
+        if (mobileEl) {
+            mobileEl.classList.remove("active_nav");
+        }
     });
 }
 
@@ -54,6 +58,10 @@ function setActiveNav(elementId) {
     const element = document.getElementById(elementId);
     if (element) {
         element.classList.add("active_nav");
+    }
+    const mobileEl = document.getElementById(elementId + "_mobile");
+    if (mobileEl) {
+        mobileEl.classList.add("active_nav");
     }
 }
 
@@ -1238,40 +1246,32 @@ requestDemoForWork &&
             );
         var n = document.getElementById("organisation");
         n && n.addEventListener("click", function (e) {}, !1);
-        var o = document.getElementById("work");
-        o &&
-            o.addEventListener(
-                "click",
-                function (e) {
-                    localStorage.setItem("activeTab", "org-work"),
-                    logevent("click_Happierme_For_Work", "index.php"),
-                    setActiveNav("work");
-                    setActiveNav("organisation");
-                    (window.location.href = "../pages/work.php");
-                },
-                !1
-            );
-        var a = document.getElementById("education");
-        a &&
-            a.addEventListener(
-                "click",
-                function (e) {
-                    localStorage.setItem("activeTab", "org-work"), 
-                    setActiveNav("education");
-                    setActiveNav("organisation");
-                    logevent("click_Happierme_For_education", "index.php"),
-                    (window.location.href = "../pages/education.php");
-                },
-                !1
-            );
-        var i = document.getElementById("healthcare");
-        i &&
-            i.addEventListener("click", function (e) {
-                localStorage.setItem("activeTab", "org-healthcare"),
-                logevent("click_Happierme_For_healthcare", "index.php"),
-                setActiveNav("organisation");
-                (window.location.href = "../pages/healthcare.php");
-            });
+        function attachSubnavClick(id, handler) {
+            var o = document.getElementById(id);
+            o && o.addEventListener("click", handler, !1);
+            var om = document.getElementById(id + "_mobile");
+            om && om.addEventListener("click", handler, !1);
+        }
+        attachSubnavClick("work", function (e) {
+            localStorage.setItem("activeTab", "org-work"),
+            logevent("click_Happierme_For_Work", "index.php"),
+            setActiveNav("work");
+            setActiveNav("organisation");
+            (window.location.href = "../pages/work.php");
+        });
+        attachSubnavClick("education", function (e) {
+            localStorage.setItem("activeTab", "org-work"), 
+            setActiveNav("education");
+            setActiveNav("organisation");
+            logevent("click_Happierme_For_education", "index.php"),
+            (window.location.href = "../pages/education.php");
+        });
+        attachSubnavClick("healthcare", function (e) {
+            localStorage.setItem("activeTab", "org-healthcare"),
+            logevent("click_Happierme_For_healthcare", "index.php"),
+            setActiveNav("organisation");
+            (window.location.href = "../pages/healthcare.php");
+        });
         var c = document.getElementById("pricing");
         c &&
             c.addEventListener(
@@ -1300,14 +1300,12 @@ requestDemoForWork &&
                 },
                 !1
             );
-        var l = document.getElementById("teenagersHeaderClick");
-        l &&
-            l.addEventListener("click", function () {
-                localStorage.setItem("programType", "11"),
-                logevent("click_teenagers_click", "index.php"),
-                setActiveNav("teenagersHeaderClick");
-                (window.location.href = "../pages/teenagers.php");
-            });
+        attachSubnavClick("teenagersHeaderClick", function () {
+            localStorage.setItem("programType", "11"),
+            logevent("click_teenagers_click", "index.php"),
+            setActiveNav("teenagersHeaderClick");
+            (window.location.href = "../pages/teenagers.php");
+        });
         
         // Handle partnership click
         var p = document.getElementById("partnership");

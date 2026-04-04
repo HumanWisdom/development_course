@@ -70,8 +70,15 @@
                     HappierMe app 
                   </a>
                 </h4>
+              <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1&enablejsapi=1"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+
+            
+            
+                <h4 class="mtb20px blog_desc blog_highlight_black">
                   The HappierMe app supports you to put out the fire in your own mind, and then find out why the fire started in the first place so it does not occur again.
                 </h4>
 
@@ -106,8 +113,9 @@
                   It's a quick way of calming the mind. There is a module called Look without language in the app which can guide you on how to do this.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Resources to explore in the HappierMe app:
+                 <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">
                     Breathing exercises,
                   </a>
@@ -173,8 +181,9 @@
                   Just start writing down all your thoughts and feelings as they arise. Don’t filter them or judge them as right or wrong. As they get out of your head and into the journal you will notice your mind begins to calm down. You can use the online journal in the app to do the journaling.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Resources to explore in the HappierMe app:
+                 <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/awareness">
                     Awareness,
                   </a>
@@ -211,8 +220,9 @@
                   and the reaction we have had, accepting it has come from our own mind and not blaming anyone for it. Our mind automatically wants to blame someone for causing this feeling in us — we blame someone else, or the situation. We could also be critical of ourselves for how we feel and not being able to control that feeling. If we are going to explore this feeling further and find out what’s behind it, we need to suspend judgement and accept that though the trigger may have come from the outside, the reaction has been in our own mind, and it is the reaction that has caused our distress. These feelings are not unique to any of us and are part of being human. Acceptance is made easier by realizing that every human being experiences the same range of feelings though the external triggers can be different for each person. Taking ownership does not mean that the external trigger does not need to be addressed, but we can do it with a mind that is calmer.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Resources to explore in the HappierMe app:
+                 <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/no-judgement">
                     No judgement,
                   </a>
@@ -268,8 +278,9 @@
                   You can look at what you wrote in your journal earlier and start asking questions about what you have written. ‘Is there a different, or more positive way to see things, and another way to respond?’
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Resources to explore in the HappierMe app:
+                <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/questions-are-key">
                     Questions are the key,
                   </a>
@@ -289,7 +300,7 @@
                   This is where it gets really interesting and you are going to make some amazing discoveries about your own mind. You will be thrilled by them because understanding WHY you feel the way you do helps you make sense of what you feel and that will feel amazing. It's like walking into a room and putting the light on, except the light will be in your own mind.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc">
                   Here are some examples of the discoveries you could make:
                 </h4>
 
@@ -313,8 +324,9 @@
                   Each topic you explore in the app helps you understand what is going on in your own mind. It is only true if you see it clearly for yourself. It’s in actually doing the work of noticing, questioning and understanding for yourself that change occurs. Imagine being free of stress, or anxiety or having relationships without conflict?
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Resources to explore in the HappierMe app:
+       <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+                  Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/live-your-best-life">
                     Succeed in life,
                   </a>
@@ -373,8 +385,10 @@
                   Use the discussion forum to ask a question, join our live events, or reach out to one of our trained coaches for extra support.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Resources to explore in the HappierMe app:
+                 <h4 class="mtb0px blog_desc">
+                  <span class="blog_highlight_black">
+
+                  Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/insight">
                     Insight,
                   </a>

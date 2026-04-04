@@ -16699,10 +16699,11 @@ input[type="search"].dark::-webkit-search-cancel-button {
   box-shadow: unset;
   border: 0;
   text-align: left;
-  padding-right: 20px;
+  padding-right: 45px;
   /* padding-left: 50px; */
   /* padding-left: 15%; */
   padding-left: 45px;
+  width: 100%;
 }
 
 .h60px {

@@ -235,6 +235,10 @@ textarea {
   width: 44px;
   height: 44px;
   border-radius: 50px;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.4s;
 }
 
@@ -3362,7 +3366,7 @@ audio::-webkit-media-controls-enclosure {
   font-weight: 600;
   line-height: 180%;
   color: #CB6171;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .owl-carousel.owl-drag .owl-item {
@@ -4029,9 +4033,9 @@ audio::-webkit-media-controls-enclosure {
 
 }
 
-a:active {
+/* a:active {
   color: #ffd323;
-}
+} */
 
 button {
   user-select: none;
@@ -4103,9 +4107,10 @@ button {
   height: 456px;
   display: block;
   margin-left: auto;
-  padding-top: 20px;
-    padding-bottom: 20px;
+  /* padding-top: 20px;
+    padding-bottom: 20px; */
   margin-right: auto;
+  margin: 40px;
 }
 
 .product_view .modal-dialog {
