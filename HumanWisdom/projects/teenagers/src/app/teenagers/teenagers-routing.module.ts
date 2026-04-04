@@ -15,6 +15,7 @@ import { QuestionAnswersSelection } from '../../../../shared/component/question-
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 import { HomeComponent } from '../../../../shared/component/home/home.component';
+import { SelfAwarenessRedirectComponent } from './self-awareness-redirect.component';
 import { SocialLoginPage } from '../../../../shared/component/social-login/social-login.component';
 import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-survey-intro/wellness-survey-intro.page';
 const routes: Routes = [
@@ -70,6 +71,11 @@ const routes: Routes = [
     component: HomeComponent,
     loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'self-awareness',
+    pathMatch: 'full',
+    component: SelfAwarenessRedirectComponent,
   },
   {
     path: 'teenager-dashboard',
