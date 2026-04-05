@@ -15,6 +15,7 @@ import { QuestionAnswersSelection } from '../../../../shared/component/question-
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 import { HomeComponent } from '../../../../shared/component/home/home.component';
+import { SelfAwarenessRedirectComponent } from './self-awareness-redirect.component';
 import { SocialLoginPage } from '../../../../shared/component/social-login/social-login.component';
 import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-survey-intro/wellness-survey-intro.page';
 const routes: Routes = [
@@ -70,6 +71,15 @@ const routes: Routes = [
     component: HomeComponent,
     loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'self-awareness',
+    pathMatch: 'full',
+    component: SelfAwarenessRedirectComponent,
+  },
+  {
+    path: 'self-awareness',
+    loadChildren: () => import('../teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule),
   },
   {
     path: 'teenager-dashboard',
@@ -296,11 +306,6 @@ const routes: Routes = [
   {
     path: 'dealing-with-depression',
     loadChildren: () => import('../teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
-  },
-
-  {
-    path: 'wisdom-exercise',
-    loadChildren: () => import('../teenagers/wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
   },
   {
     path: 'find-answers/:url',
@@ -575,7 +580,15 @@ const routes: Routes = [
     path: 'chat-bot',
     component: ChatBotComponent
   },
-
+  {
+    path: 'wisdom-exercise',
+    redirectTo:'curated/self-awareness'
+  },
+  {
+  path: 'wisdom-exercise/:subpath',
+  redirectTo: 'curated/self-awareness',
+  pathMatch: 'full'
+}
 ];
 
 

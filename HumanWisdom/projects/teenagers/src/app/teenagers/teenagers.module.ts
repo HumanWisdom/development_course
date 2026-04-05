@@ -7,9 +7,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TeenagersRoutingModule } from './teenagers-routing.module';
 import { TokenInterceptorService } from '../teenagerOnboarding/token-interceptor.service';
 import { SharedModule } from '../../../../shared/shared.module';
+import { SelfAwarenessRedirectComponent } from './self-awareness-redirect.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SelfAwarenessRedirectComponent,
+  ],
   imports: [
     CommonModule,
     TeenagersRoutingModule,

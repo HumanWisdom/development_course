@@ -540,13 +540,32 @@
 const API_BASE_URL = 'https://staging.humanwisdom.info/api';
 const ProgramId = '9';
 
+(function initOrchaUidFromQuery() {
+  try {
+    var p = new URLSearchParams(window.location.search).get('orcha_uid');
+    if (p && String(p).trim()) {
+      sessionStorage.setItem('orcha_uid', String(p).trim());
+    }
+  } catch (e) {}
+})();
+
+function getOrchaUid() {
+  try {
+    var fromUrl = new URLSearchParams(window.location.search).get('orcha_uid');
+    if (fromUrl && String(fromUrl).trim()) return String(fromUrl).trim();
+    var fromStore = sessionStorage.getItem('orcha_uid');
+    if (fromStore && String(fromStore).trim()) return String(fromStore).trim();
+  } catch (e) {}
+  return '1234';
+}
+
 function addLearner(fname, email, password) {
   const body = JSON.stringify({
     FName: fname,
     Lname: "",
     Email: email,
     Pwd: password,
-    OrchaId:'12345'
+    OrchaId: getOrchaUid()
   });
   return fetch(`${API_BASE_URL}/AddLearner_Website`, {
     method: 'POST',
