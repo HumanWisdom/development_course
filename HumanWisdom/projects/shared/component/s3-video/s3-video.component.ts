@@ -335,16 +335,41 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.videoPlayer?.nativeElement) {
       const video = this.videoPlayer.nativeElement as HTMLVideoElement;
       
+      // Ensure video is not muted
+      video.muted = false;
+      
       // Try to play the video
       const playPromise = video.play();
       
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Auto-play was prevented, try muted play
-          video.muted = true;
-          video.play().catch((err) => {
-            console.warn('Auto-play failed:', err);
-          });
+        playPromise.catch((err) => {
+          console.warn('Auto-play blocked by browser, attempting force play:', err);
+          
+          // Force playback attempt when browser blocks autoplay
+          setTimeout(() => {
+            video.muted = false;
+            
+            // Try multiple approaches to force playback
+            const forcePlay = () => {
+              video.play().catch(forceErr => {
+                console.warn('Force play attempt failed:', forceErr);
+                // Try programmatically clicking the video
+                setTimeout(() => {
+                  if (video) {
+                    video.click();
+                    // Immediately try to play again after click
+                    setTimeout(() => {
+                      video.play().catch(finalErr => {
+                        console.warn('All autoplay attempts failed:', finalErr);
+                      });
+                    }, 100);
+                  }
+                }, 500);
+              });
+            };
+            
+            forcePlay();
+          }, 200);
         });
       }
       
