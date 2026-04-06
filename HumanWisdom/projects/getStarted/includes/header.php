@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    border-top: 1px solid rgba(214, 112, 112, 0.2);
+    border-top: 1px solid rgba(215, 88, 107, 0.25);
     flex-shrink: 0;
   }
   .header_subnav_inner {

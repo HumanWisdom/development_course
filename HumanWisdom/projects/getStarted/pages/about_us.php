@@ -117,6 +117,13 @@
 
     @media (max-width: 767px) {
 
+      .au-hero-banner {
+        margin-top: -4px   !important;
+      }
+      .mb-80px{
+        margin-bottom: -80px !important;
+      }
+
       .w-335px_m {
         width: 335px;
       }
@@ -188,10 +195,20 @@
         font-weight: 600;
       }
 
-      .pt-5px {
-        padding-top: 5px !important;
-
+      .pl_pr10px{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
       }
+      .mt-15px{
+        margin-top: 15px !important;
+      }
+      .mt-45px{
+        margin-top: 45px !important;    
+      } 
+      .mt-0px{
+        margin-top: 0px !important; 
+      }
+}
       
 
       /* Beat responsive.css .section-header h1 15px rule (higher specificity via .m-txt); do not change global stylesheet */
@@ -213,13 +230,6 @@
           font-weight: 600 !important;
         }
 
-        /* "Inspiring content…" h2 — override responsive.css 27px About Us heading rule */
-        section.hpt120px~main#main section .section-header h2.fs_24px.au-inspire-subtitle,
-        section.hpt120px~main#main section .section-header h2.au-inspire-subtitle,
-        section.hpt120px~main#main>section:not(.div_inspire):not(.div_subscription) .section-header h2.fs_24px.au-inspire-subtitle,
-        section.hpt120px~main#main>section:not(.div_inspire):not(.div_subscription) .section-header h2.au-inspire-subtitle {
-          font-size: 21px !important;
-        }
       }
 
       /* About Us mobile video: keep true 16:9 to avoid black bars while playing */
@@ -269,6 +279,59 @@
       color: #120f40 !important;
       text-decoration: none !important;
     }
+
+    /* Hero banner: clear fixed/dual nav so image top matches Figma */
+    .au-hero-banner {
+      margin-top: 50px;
+    }
+
+    /*
+      index.css + responsive.css (max-width: 768px) set .td_underline and .fc_cb6171 to
+      display:flex !important for “center links” — that stacks each book title on its own row.
+      Reset only inside the founder bio (must load after those stylesheets; 768px matches index.css).
+    */
+    @media (max-width: 768px) {
+      section.au-founder-section {
+        padding-top: 72px !important;
+      }
+
+      h4.au-founder-bio .au-founder-bio-line {
+        display: block;
+      }
+      .div_inspire>[class^="col-"] {
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+      section.au-founder-section h4.au-founder-bio a,
+      section.au-founder-section h4.au-founder-bio a .td_underline,
+      section.au-founder-section h4.au-founder-bio a .fc_cb6171,
+      section.au-founder-section h4.au-founder-bio .td_underline,
+      section.au-founder-section h4.au-founder-bio .fc_cb6171 {
+        display: inline !important;
+        text-align: inherit !important;
+        justify-content: unset !important;
+        align-items: unset !important;
+        margin: 0 !important;
+        width: auto !important;
+        max-width: none !important;
+      }    
+      /* Inspiring grid card titles (PATHWAY, Daily practice, …): tighter gap under icon on mobile */
+      section.hpt120px~main#main .div_inspire h3.mt20px.mb10px.fs_21px.fw_500.lh_140p.fc_120f40 {
+        margin-top: 9px !important;
+      }
+
+      /* "Inspiring content to live your best life" — mobile only (override responsive.css heading size) */
+      section.hpt120px~main#main section .section-header h2.fs_24px.au-inspire-subtitle,
+      section.hpt120px~main#main section .section-header h2.au-inspire-subtitle,
+      section.hpt120px~main#main>section:not(.div_inspire):not(.div_subscription) .section-header h2.fs_24px.au-inspire-subtitle,
+      section.hpt120px~main#main>section:not(.div_inspire):not(.div_subscription) .section-header h2.au-inspire-subtitle {
+        font-size: 15px !important;
+      }
+      .mt0px{
+        margin-top: 0px !important;
+      }
+    }
   </style>
 
 </head>
@@ -288,10 +351,10 @@
     <div class="row" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_landing.webp"
-          class="img-responsive w100p display_m_none" alt="About Us">
+          class="img-responsive w100p display_m_none au-hero-banner" alt="About Us">
 
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_mobile.webp"
-          class="img-responsive w100p display_d_none" alt="About Us">
+          class="img-responsive w100p display_d_none au-hero-banner" alt="About Us">
       </div>
     </div>
 
@@ -329,7 +392,7 @@
 
     <!-- aspects -->
     <section class="section-description">
-      <div class="row center_flex mt40px section-row">
+      <div class="row center_flex mt40px section-row mt-0px">
         <div
           class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_au d-lg-flex d-md-flex d-sm-flex d-block gap-40px">
 
@@ -360,7 +423,7 @@
             </div>
           </div>
 
-          <div class="w-300px" data-aos="fade-up"
+          <div class="w-300px mt-45px" data-aos="fade-up"
             data-aos-delay="200">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -387,7 +450,7 @@
             </div>
           </div>
 
-          <div class="w-300px" data-aos="fade-up"
+          <div class="w-300px mt-45px" data-aos="fade-up"
             data-aos-delay="300">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -477,13 +540,13 @@
     <section>
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter w-980px" style="width: 980px !important;">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
-            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px mt0px">
+            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000 ">
               Our HOW
             </h1>
           </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt30px mb60px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt30px mb60px mt-15px">
             <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
               With more than 70 bite-sized modules we help users feel better now, and then take them deeper to
               understand the root cause of problems, for prevention and long-term benefit. Additional support is
@@ -537,7 +600,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40">
+                <h3 class="mt20px mb10px fs_21px fw_500 lh_140p fc_120f40 ">
                   PATHWAY
                 </h3>
               </div>
@@ -847,7 +910,7 @@
     <!-- /content -->
 
     <!-- founder -->
-    <section class="pt-5px">
+    <section class="au-founder-section">
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
@@ -890,16 +953,20 @@
                   <h3 class="mtb10px fs_24px fw_500 lh_160p fc_000000">
                     Dr Manoj Krishna
                   </h3>
-                  <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
-                    Dr Manoj Krishna, previously a spine surgeon in the UK, left his medical career and, along with
-                    other professionals, started the HappierMe Project to help reduce suffering and help people lead
-                    happier lives. He has authored two books -
-                    <a href=" https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301">
-                      <span class="fw_500 fc_cb6171 td_underline">Understanding Me Understanding You,</span></a>
-                    and
-                    <a href="https://www.amazon.co.uk/Stress-Free-Understand-yourself-Discover-ebook/dp/B0B2KM7SMJ"><span
-                        class="fw_500 fc_cb6171 td_underline">Stress-free</span></a>.
-                    He is also a public speaker and has spoken at more than 50 institutions.
+                  <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000 au-founder-bio">
+                    <span class="au-founder-bio-line">Dr Manoj Krishna, previously a spine surgeon in the UK, left his
+                      medical career and, along with other professionals, started the HappierMe Project to help reduce
+                      suffering and help people lead happier lives. He has authored two books -
+                      <a href=" https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span
+                          class="fw_500 fc_cb6171 td_underline">Understanding Me</span></a> </span><span
+                      class="au-founder-bio-line">
+                      <a href=" https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span
+                          class="fw_500 fc_cb6171 td_underline">Understanding You,</span></a>
+                      and
+                      <a href="https://www.amazon.co.uk/Stress-Free-Understand-yourself-Discover-ebook/dp/B0B2KM7SMJ"><span
+                          class="fw_500 fc_cb6171 td_underline">Stress-free</span></a>.
+                      He is also a public </span><span class="au-founder-bio-line">speaker and has spoken at more than 50
+                      institutions.</span>
                   </h4>
                 </div>
               </div>
@@ -930,7 +997,7 @@ We gratefully acknowledge the contributions of the following content experts, an
             <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
               Our Content Experts </h1>
 
-            <h2 class="mtb20px fs_18px fw_400 lh_160p fc_000000">
+            <h2 class="mtb20px fs_18px fw_400 lh_160p fc_000000 pl_pr10px">
               We gratefully acknowledge the contributions of the following content experts, and the many teenagers who
               contributed to the development of the app for Teenagers. </h2>
           </div>
@@ -1593,7 +1660,7 @@ We gratefully acknowledge the contributions of the following content experts, an
         </div>
       </div>
       </a>
-      <div class="row center_flex">
+      <div class="row center_flex mb-80px">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_inspire"
           style="width: 1240px !important;">
 
