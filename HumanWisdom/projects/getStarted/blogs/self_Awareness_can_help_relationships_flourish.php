@@ -222,12 +222,12 @@
                   We become unconsciously attached to our own conditioning and want others to think and behave like us. Wisdom allows us to respect differences because we have a deeper understanding of what is going on in our own thinking.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <!-- <h4 class="mtb0px blog_sub_title">
                   For more information – Explore the Relationship module. Download the HappierMe app from the Apple or Google store, or visit
                   <a class="blog_highlight_peach" href="https://happierme.app/">
                      https://happierme.app
                   </a>
-                </h4>
+                </h4> -->
               </div>
             </div>
 

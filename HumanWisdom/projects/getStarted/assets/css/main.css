@@ -3366,7 +3366,7 @@ audio::-webkit-media-controls-enclosure {
   font-weight: 600;
   line-height: 180%;
   color: #CB6171;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 #signup-form a.blog_highlight_peach {

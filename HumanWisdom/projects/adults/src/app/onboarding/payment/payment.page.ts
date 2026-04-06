@@ -170,8 +170,12 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
               this.enableAlert = true;
               // alert('Your Payment Is Successfully Submitted');
               if (localStorage.getItem('ispartnershipClick') == 'T') {
+                // Clear the subscription flow flag after successful payment
+                localStorage.removeItem('cameFromSubscription');
                 this.router.navigate(['/adults/hwp-premium-congratulations']);
               }
+              // Clear the subscription flow flag after successful payment
+              localStorage.removeItem('cameFromSubscription');
               this.router.navigate(['/onboarding/myprogram'])
               // Successful subscription payment
             }
@@ -202,6 +206,19 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   getAlertcloseEvent(event) {
     this.content = '';
     this.enableAlert = false;
+  }
+
+  back() {
+    // Check if user came from subscription flow (free trial ended)
+    const cameFromSubscription = localStorage.getItem('cameFromSubscription') === 'true';
+    
+    if (cameFromSubscription) {
+      // Navigate back to subscription flow
+      this.router.navigate([`/adults/subscription/proceed-to-payment`]);
+    } else {
+      // Navigate back to regular onboarding flow
+      this.router.navigate(['/adults/onboarding/viewcart']);
+    }
   }
 
 }

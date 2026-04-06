@@ -484,7 +484,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
-                      6 Barriers to overcoming stress
+                      How can we overcome stress?
                     </h4>
                   </div>
                 </div>

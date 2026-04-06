@@ -60,8 +60,10 @@ require_once('./includes/security_config.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     
-    <!-- AOS Animation CSS -->
- 
+    <!-- LCP Hero images preloading -->
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/bannerind.svg" />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/bannermobile11.svg" />
+
   <script>
     $('#myCarousel').carousel({
       interval: 3000,
@@ -1968,11 +1970,11 @@ header a[href*="splash_options.php"] * {
         <div class="div-wrapper">
           <div class="div">
             <div class="div-2">
-              <img class="new-app-adults-teen display_m_none"
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannerind.svg"
+              <img class="new-app-adults-teen display_m_none"  fetchpriority="high"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/bannerind.svg"
                 alt="HappierMe app" />
-             <img class="new-app-adults-teen display_d_none"
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannermobile11.svg"
+             <img class="new-app-adults-teen display_d_none"  fetchpriority="high"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/bannermobile11.svg"
                 alt="HappierMe app" />
           <div class="div-3">
                  <!-- rating row -->
@@ -1999,7 +2001,7 @@ header a[href*="splash_options.php"] * {
                     <div class="div-5">
                      <p class="p" style="text-align: left;line-height: 1.3;">Understand your mind.<br>Change your life.</p>
                       <div class="div-6">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
                         <div class="text-wrapper-3">Now with Olly AI</div>
                       </div>
                     </div>
@@ -2021,7 +2023,7 @@ header a[href*="splash_options.php"] * {
 
       <!-- ===== ORCHA BANNER ===== -->
       <div class="orcha-strip">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/orcha_certified.png" alt="ORCHA Certified"  height="60px" width="60px"/>
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified"  height="60px" width="60px"/>
         <span>ORCHA approved for use in healthcare in the UK and USA</span>
       </div>
 
@@ -2032,19 +2034,19 @@ header a[href*="splash_options.php"] * {
         </div>
         <div class="div-8">
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="text-wrapper-7">Mental wellbeing</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="text-wrapper-7">Mental wellbeing</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalparent"><div class="text-wrapper-7">Better parenting</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalteen"><div class="text-wrapper-7">HappierMe for Teenagers</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalparent"><div class="text-wrapper-7">Better parenting</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalteen"><div class="text-wrapper-7">HappierMe for Teenagers</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
         </div>
       </div>
@@ -2052,7 +2054,7 @@ header a[href*="splash_options.php"] * {
       <!-- ===== OLLY AI ===== -->
       <div class="frame-wrapper-3">
         <div class="div-11">
-          <img class="group-3" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/secowly.svg" alt="Olly AI" />
+          <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" />
           <div class="div-12">
             <div class="div-5">
               <p class="introducing-olly-AI" style="font-size:42px;">Introducing Olly AI,<br />your personal guide inside HappierMe.</p>
@@ -2463,8 +2465,8 @@ header a[href*="splash_options.php"] * {
           <div id="fbn" class="tools-panel active">
             <div class="tools-card">
               <div class="tools-thumb">
-                <video playsinline
-                  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/rec-tool.svg"
+                <video playinline
+                  poster="https://d1tenzemoxuh75.cloudfront.net/website/rec-tool.svg"
                   controlsList="nodownload"
                   class="tools-thumb-video"
                   id="fbn-video">
@@ -2477,7 +2479,7 @@ header a[href*="splash_options.php"] * {
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
                   <span class="tools-label-dot">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/rec-toolcircle.svg" alt="Breathing exercise" class="tools-label-icon" />
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/rec-toolcircle.svg" alt="Breathing exercise" class="tools-label-icon" />
                   </span>
                   <span class="tools-label-text">BREATHING EXERCISE</span>
                 </div>
@@ -2514,7 +2516,7 @@ header a[href*="splash_options.php"] * {
           <div id="journal_tab" class="tools-panel">
             <div>
               <div class="tools-thumb">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/questions.svg" alt="Journal" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/questions.svg" alt="Journal" class="tools-thumb-img_sec" />
                 <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
@@ -2564,7 +2566,7 @@ header a[href*="splash_options.php"] * {
           <div id="survey" class="tools-panel">
             <div>
               <div class="tools-thumb">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
               </div>
              
             </div>
@@ -2662,7 +2664,7 @@ header a[href*="splash_options.php"] * {
                 <div class="div-59">
                   <div class="div-60 faq-open">
                     <div class="text-wrapper-46">What is HappierMe?</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faq-open.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faq-open.svg" alt="" /></span>
                   </div>
                   <p class="faq-body" style="display:block;">HappierMe is an app you can use on your desktop and phone. It can be downloaded from the Android or App store. Many users think it has been life changing. It is your guide to lead a happier and more successful life.</p>
                 </div>
@@ -2671,7 +2673,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How do I start my free trial?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">From the desktop or in the app you will have an option of starting a free trial. You can choose whether to have a one week or 2 week free trial. You can cancel anytime during the free trial.</p>
               </div>
@@ -2679,7 +2681,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How do I get started with HappierMe?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">On the app there is an Introduction section. Begin here. It has videos and audios which help you understand what the app does, and how to make the most of it.</p>
               </div>
@@ -2687,7 +2689,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How much time do I need to spend every day on the app?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">It is up to you but 10 minutes/day will be enough to begin feeling the benefits. You could just do the ‘My daily practice’ every day.</p>
               </div>
@@ -2698,7 +2700,7 @@ header a[href*="splash_options.php"] * {
                 <div class="div-59">
                   <div class="div-60">
                     <div class="text-wrapper-46">What is self-awareness?</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                   </div>
                   <p class="faq-body">Self-awareness is a simple way of noticing what you are thinking and feeling, in your mind and in your body. These thoughts and feelings decide our behaviour. By noticing them we can be curious, learn more about them and explore where they come from.</p>
                 </div>
@@ -2707,7 +2709,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can the app help me manage my own mental health?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">Our mind is reactive and we are usually not aware of, or in control of our reactions. These reactions often create the mental health problems we experience. By understanding our thoughts, feelings and emotions better, we can better manage our reactions, and so manage our own mental health.</p>
               </div>
@@ -2715,7 +2717,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can the app help me to have happier relationships?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">By understanding ourselves, our reactions and our own emotional needs we can understand others better, and this can help us to reduce conflict in our relationships. By learning to communicate with care we can have relationships with depth and meaning.</p>
               </div>
@@ -2723,7 +2725,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can the app help me succeed at work?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">Studies suggest that our soft skills play a much greater role in our long term success than academic achievement. They include emotional intelligence, communication, leadership, empathy, resilience and integrity. All of these are enhanced by self-awareness and the app has a dedicated Work and Leadership section to explore.</p>
               </div>
@@ -2734,7 +2736,7 @@ header a[href*="splash_options.php"] * {
                 <div class="div-59">
                   <div class="div-60">
                     <div class="text-wrapper-46">I want to know more about your live events</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                   </div>
                   <p class="faq-body">We host a live event every two weeks on different subjects and explore how self-awareness can help with that. There is usually an invited guest and an opportunity to contribute and ask questions. You can access our library of past events through the Events section.</p>
                 </div>
@@ -2743,7 +2745,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">What is your partnership program?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">Once you subscribe you can join our partnership program, and be rewarded for sharing HappierMe with your network. Details can be found in the Partnership program in the app.</p>
               </div>
@@ -2751,7 +2753,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can I contact a coach through the app?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">We have trained coaches that can be accessed through the app. They are familiar with the app and can offer 1-2-1 coaching for an extra fee. You can ask a coach a question as part of your subscription through the Forum, and this can be done anonymously.</p>
               </div>
@@ -2759,7 +2761,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">Is there a community forum?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">The app has a community forum for you to make new friends and share your thoughts. There is also a feature where you can ask one of our trained coaches a question anonymously.</p>
               </div>
@@ -2770,7 +2772,7 @@ header a[href*="splash_options.php"] * {
                 <div class="div-59">
                   <div class="div-60">
                     <div class="text-wrapper-46">I want to know more about your teenage program</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                   </div>
                   <p class="faq-body">Teenagers are under so much pressure and need support to manage their mental health, make sense of their emotions, and develop the soft skills to succeed in life. We have a completely separate app designed for teenagers which can be accessed through the main menu in the app.</p>
                 </div>
@@ -2782,7 +2784,7 @@ header a[href*="splash_options.php"] * {
                 <div class="div-59">
                   <div class="div-60">
                     <div class="text-wrapper-46">How can I contact the support team?</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                   </div>
                   <p class="faq-body">Please email us: support@happierme.app</p>
                 </div>
@@ -2791,7 +2793,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can I cancel a subscription?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">Click on My subscriptions in your profile and you can cancel your subscription from there. It will run till your next renewal date.</p>
               </div>
@@ -2799,7 +2801,7 @@ header a[href*="splash_options.php"] * {
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can I share this with others?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">In the hamburger menu of the app (top right in the app) there is a Refer a friend button. You can also buy a subscription for someone else.</p>
               </div>
@@ -3067,7 +3069,7 @@ header a[href*="splash_options.php"] * {
 
             // Reset all icons to "closed".
             document.querySelectorAll('img.faq-toggle-icon').forEach(function(img) {
-              img.src = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg';
+              img.src = 'https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg';
             });
             document.querySelectorAll('.faq-toggle').forEach(function(toggle) {
               if (toggle.querySelector('img.faq-toggle-icon')) return;
@@ -3083,7 +3085,7 @@ header a[href*="splash_options.php"] * {
               // Desktop FAQ icon (open/closed SVG)
               var iconImg = toggle.querySelector('img.faq-toggle-icon');
               if (iconImg) {
-                iconImg.src = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faq-open.svg';
+                iconImg.src = 'https://d1tenzemoxuh75.cloudfront.net/website/faq-open.svg';
               } else {
                 // Fallback (if any mobile/legacy toggle uses text)
                 toggle.textContent = '−';

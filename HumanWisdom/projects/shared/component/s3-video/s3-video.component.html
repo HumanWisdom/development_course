@@ -52,7 +52,7 @@
                       ? 'previous'
                       : 'next'
                   " [style.zIndex]="currentIndex === i ? 1 : 0">
-                    <video *ngIf="currentIndex === i" playsinline disablePictureInPicture autoplay muted class="cvideo"
+                    <video *ngIf="currentIndex === i" playsinline disablePictureInPicture autoplay class="cvideo"
                       [ngClass]="[
                       isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di',
                       isPortrait ? 'video-portrait' : 'video-landscape'
@@ -103,7 +103,7 @@
                 </h1>
                 <div class="row tcenter">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <video playsinline autoplay muted disablePictureInPicture class="cvideo" [ngClass]="[
+                    <video playsinline autoplay disablePictureInPicture class="cvideo" [ngClass]="[
                       isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di',
                       isPortrait ? 'video-portrait' : 'video-landscape'
                     ]" #videoPlayer controls controlsList="nodownload nofullscreen" (click)="onVideoClick()"

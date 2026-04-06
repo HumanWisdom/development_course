@@ -170,9 +170,12 @@ export class TryFreeAndSubscribePage implements OnInit {
     SharedService.setDataInLocalStorage(Constant.isFromCancelled, '');
     var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
     localStorage.setItem('totalAmount', amt);
-    SharedService.setDataInLocalStorage(Constant.Checkout, 'T')
+    SharedService.setDataInLocalStorage(Constant.Checkout, 'T');
+    // Set flag to indicate user came from subscription flow
+    localStorage.setItem('cameFromSubscription', 'true');
     this.router.navigate([`/${SharedService.getprogramName()}/onboarding/payment`], { state: { quan: this.cartList.length.toString(), plan: this.selectedSubscription, rateId: this.pricingModel.RateID } })
   }
+
   getCountry() {
     this.onboardingService.getCountry().subscribe((res: any) => {
       if (res[Constant.In_eu]) {
