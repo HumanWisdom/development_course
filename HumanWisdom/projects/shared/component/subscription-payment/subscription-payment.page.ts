@@ -340,7 +340,17 @@ export class SubscriptionPaymentPage implements AfterViewInit {
   }
 
   back() {
-    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/viewcart`]);
+    // Check if user came from subscription flow (free trial ended)
+    const previousUrl = this.location.getState();
+    const cameFromSubscription = localStorage.getItem('cameFromSubscription') === 'true';
+    
+    if (cameFromSubscription) {
+      // Navigate back to subscription flow
+      this.router.navigate([`/${SharedService.getprogramName()}/subscription/proceed-to-payment`]);
+    } else {
+      // Navigate back to regular onboarding flow
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/viewcart`]);
+    }
   }
 
 
@@ -350,6 +360,8 @@ export class SubscriptionPaymentPage implements AfterViewInit {
     this.content = '';
     this.enableAlert = false;
     if (isSuccess) {
+      // Clear the subscription flow flag after successful payment
+      localStorage.removeItem('cameFromSubscription');
       this.router.navigate([`/${SharedService.getprogramName()}/onboarding/myprogram`]);
     }
     const nameEl = document.getElementById('name') as HTMLInputElement;
@@ -374,6 +386,8 @@ export class SubscriptionPaymentPage implements AfterViewInit {
 
     this.getOrderId();
     localStorage.setItem('personalised', 'F');
+    // Clear the subscription flow flag after successful payment
+    localStorage.removeItem('cameFromSubscription');
     this.content = 'Payment Successful';
     this.enableAlert = true;
   }
