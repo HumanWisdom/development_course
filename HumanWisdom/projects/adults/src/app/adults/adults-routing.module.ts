@@ -429,8 +429,8 @@ const routes: Routes = [
     component: SelfAwarenessRedirectComponent,
   },
   {
-    path: 'self-awareness',
-    loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule),
+    path: 'self-awareness/:subpath',
+    redirectTo: 'wisdom-exercise/:subpath'
   },
   {
     path: 'adverts-hwp',
@@ -742,13 +742,8 @@ const routes: Routes = [
   },
   {
     path: 'wisdom-exercise',
-    redirectTo:'curated/self-awareness'
-  },
-  {
-  path: 'wisdom-exercise/:subpath',
-  redirectTo: 'curated/self-awareness',
-  pathMatch: 'full'
-}
+    loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  }
 
 
 ];
