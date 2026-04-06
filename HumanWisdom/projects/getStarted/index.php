@@ -260,7 +260,31 @@ p:hover {
 ======================================== */
 .div-13 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; gap: 60px; }
 .text-wrapper-21 { font-size: 24px; font-weight: 600; color: #000; text-align: center; margin: 0; }
-.youtube-player { width: 100%; max-width: 810px; aspect-ratio: 16/9; overflow: hidden; position: relative; background: #000; }
+/* 16:9 box; iframe fills it (overrides global #youtubeIntro fixed sizes from responsive.css / index.css) */
+.youtube-player {
+  width: 100%;
+  max-width: 810px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+/* Desktop: square corners. Rounded wrapper + mobile-only tweaks live in @media (max-width: 768px). */
+.youtube-player #youtubeIntro {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: unset !important;
+  margin: 0 !important;
+  display: block;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
 .div-new{
     width: 100%;
     align-items: center;
@@ -1050,6 +1074,10 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
   flex-direction: column;
   gap: 0;
 }
+/* Desktop: wrapper is invisible to layout; mobile: breakout strip like .coaches-track-wrap */
+.blog-track-wrap {
+  display: contents;
+}
 .blog-scroll {
   display: flex;
   gap: 20px;
@@ -1165,19 +1193,68 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
 .blog-more img { width: 8px; height: auto; }
 
 /* Mobile blog card (matches Figma dimensions) */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  /* Intro video: rounded corners + hairline fix — mobile only (desktop stays square) */
+  .youtube-player {
+    background: #fff;
+    isolation: isolate;
+  }
+  .youtube-player #youtubeIntro {
+    transform: scale(1.02);
+    transform-origin: center center;
+  }
+
   .text-wrapper-blog {
     font-size: 18px !important;
     font-weight: 600 !important;
   }
 
+  /* Blog carousel: left/right inset before scroll; edge-to-edge strip after (same idea as coaches + is-scrolled) */
+  .div-13:has(#blog-scroll) {
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  .blog-outer {
+    max-width: none !important;
+    width: 100%;
+    align-self: stretch;
+  }
+  .blog-track-wrap {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .blog-outer.is-scrolled .blog-track-wrap {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    max-width: none;
+  }
+  .div-13:has(#blog-scroll):has(.blog-outer.is-scrolled) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .div-13:has(#blog-scroll):has(.blog-outer.is-scrolled) .text-wrapper-blog,
+  .div-13:has(#blog-scroll):has(.blog-outer.is-scrolled) .blog-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
   .blog-scroll {
     width: 100%;
     margin-left: 0;
+    max-width: none;
     height: 289px;
     overflow-y: visible;
     align-items: center;
     margin-top: -18px;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    padding-right: 0;
   }
   .blog-scroll .blog-card:first-child {
     margin-left: 0;
@@ -1250,6 +1327,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
     visibility: visible !important;
     opacity: 1 !important;
     z-index: 2;
+    text-align: left;
   }
   .accordion-button::after{
     content:"+" !important;
@@ -1517,7 +1595,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
 
 /* ── 1200 px: large monitors ── */
 @media (min-width: 1200px) {
-  .frame-wrapper { padding: 80px 40px;padding-top: 80px;
+  .frame-wrapper { padding: 80px 40px;padding-top: 117px;
         padding-bottom: 60px; }
   .p { font-size: 42px; }
   .introducing-olly-AI { font-size: 42px; }
@@ -1788,6 +1866,22 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
     margin-left: 0;
   }
 
+  /* Section padding was shrinking the % in calc(50% - 50vw) — strip stayed inset. Drop horizontal padding only while scrolled; keep title/footer padded. */
+  .coaches-section:has(.coaches-outer.is-scrolled) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .coaches-section:has(.coaches-outer.is-scrolled) .text-wrapper-6-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  .coaches-section:has(.coaches-outer.is-scrolled) .coaches-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
   /* Coach card sizing (mobile) */
   .coach-card { width: 190px !important; height: 245px !important; border-radius: 10px; }
   .coach-img { width: 160px !important; height: 160px !important; border-radius: 10px; }
@@ -1848,6 +1942,18 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
   .div-13 {padding: 40px 16px;
         gap: 24px;
         padding-left: 16px; }
+
+  /* Coaches / blog: when carousel is scrolled, title + footer use 16px to match narrow layout */
+  .coaches-section:has(.coaches-outer.is-scrolled) .text-wrapper-6-1,
+  .coaches-section:has(.coaches-outer.is-scrolled) .coaches-footer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .div-13:has(#blog-scroll):has(.blog-outer.is-scrolled) .text-wrapper-blog,
+  .div-13:has(#blog-scroll):has(.blog-outer.is-scrolled) .blog-footer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 
   /* Testimonials */
   .frame-wrapper-4 { padding: 24px 18px; }
@@ -2066,8 +2172,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
             src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1"
             title="HappierMe intro"
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-            allowfullscreen
-            style="width:100%;height:100%;border:none;border-radius:12px;">
+            allowfullscreen>
           </iframe>
         </div>
       </div>
@@ -2579,6 +2684,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
       <div class="div-13">
         <div class="text-wrapper-blog">Explore our blog</div>
         <div class="blog-outer">
+          <div class="blog-track-wrap">
           <div class="blog-scroll" id="blog-scroll">
             <a href="./blogs/10_ways_understanding_your_mind_could_transform_your_life.php" class="blog-card">
               <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" alt="Blog 1" />
@@ -2610,6 +2716,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
                 <p class="blog-title" style="position:static !important; color:#000 !important; display:block !important; visibility:visible !important; opacity:1 !important; z-index:5 !important; margin:0 !important; padding:0 !important; width:100% !important;">How to calm anxiety</p>
               </div>
             </a>
+          </div>
           </div>
           <div class="blog-footer">
            
@@ -3179,6 +3286,10 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         if (!el || !prevBtn || !nextBtn) return;
         var atStart = el.scrollLeft <= 1;
         var atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        var outer = el.closest('.blog-outer');
+        if (outer) {
+          outer.classList.toggle('is-scrolled', !atStart);
+        }
         prevBtn.disabled = atStart;
         nextBtn.disabled = atEnd;
       }

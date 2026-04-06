@@ -1688,7 +1688,8 @@
 
   /* Add 10px padding to Our HOW section on mobile - About Us page only */
   section.hpt120px ~ main#main section .row.center_flex .col-lg-10.col-md-10.col-sm-10.col-xs-10.col-10.p0.tcenter {
-    padding: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
   /* Specifically target the Our HOW text container - About Us page only */

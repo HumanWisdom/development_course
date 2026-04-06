@@ -19,6 +19,11 @@ function gtag() {
     gtag("event", e, { screen_name: t });
 }
 
+/** Defer full-page navigation so GA4/gtag can send the event before unload (tabs work because they do not navigate). */
+function afterLogNavigate(run, delayMs) {
+    setTimeout(run, delayMs == null ? 220 : delayMs);
+}
+
 
 setTimeout(() => {
     console.log("Removing preloader...");
@@ -1040,7 +1045,10 @@ document.addEventListener("click", function (evt) {
         } else if (link.id === "view-all-coaches") {
             logevent("click_view_all_coaches", "index.php");
         }
-        window.location.href = link.getAttribute("href") || link.href;
+        var dest = link.getAttribute("href") || link.href;
+        afterLogNavigate(function () {
+            window.location.href = dest;
+        });
     }
 }, true);
 
@@ -1063,11 +1071,14 @@ function updateNewsletterConfig(newConfig) {
 
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
-    loginClick.addEventListener('click', function () {
+    loginClick.addEventListener('click', function (e) {
+        if (e.target.closest("a")) e.preventDefault();
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
         logevent("click_login_header_web", "index.php");
-        window.location.href = "../pages/splash_options.php";
+        afterLogNavigate(function () {
+            window.location.href = "../pages/splash_options.php";
+        });
     });
 }
 
@@ -1075,40 +1086,59 @@ if (loginClick) {
 
 const happiermeTryForFree =  document.getElementById('happiermeTryForFree');
 if (happiermeTryForFree) {
-    happiermeTryForFree.addEventListener('click', function () {
+    happiermeTryForFree.addEventListener('click', function (e) {
+        e.preventDefault();
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
         logevent("click_start_your_free_trial_now", "index.php");
-        window.location.href = "../pages/splash_options.php";
+        afterLogNavigate(function () {
+            window.location.href = happiermeTryForFree.getAttribute("href") || "../pages/splash_options.php";
+        });
     });
 }
 
 const tryhappiermeClick = document.getElementsByClassName('tryhappiermeClick');
 if (tryhappiermeClick[0]) {
-    tryhappiermeClick[0].addEventListener('click', function () {
+    tryhappiermeClick[0].addEventListener('click', function (e) {
+        var el0 = tryhappiermeClick[0];
+        var a = el0.tagName === "A" ? el0 : el0.closest("a") || el0.querySelector("a");
+        if (a) e.preventDefault();
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
-        window.location.href = "../pages/splash_options.php";
+        var href = (a && a.getAttribute("href")) || "../pages/splash_options.php";
+        afterLogNavigate(function () {
+            window.location.href = href;
+        });
     });
 }
 
 const pricingSelectBtn = document.getElementById('PricingSelectBtn');
 if (pricingSelectBtn) {
-    pricingSelectBtn.addEventListener('click', function () {
+    pricingSelectBtn.addEventListener('click', function (e) {
+        var innerA = e.target.closest("a");
+        if (innerA) e.preventDefault();
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
         logevent("start_your_free_trial_button_click", "index.php");
-        window.location.href = "../pages/splash_options.php";
+        var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
+        afterLogNavigate(function () {
+            window.location.href = href;
+        });
     });
 }
 
 const PricingSelectBtn1 = document.getElementById('PricingSelectBtn1');
 if (PricingSelectBtn1) {
-    PricingSelectBtn1.addEventListener('click', function () {
+    PricingSelectBtn1.addEventListener('click', function (e) {
+        var innerA = e.target.closest("a");
+        if (innerA) e.preventDefault();
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
         logevent("start_your_free_trial_button_click", "index.php");
-        window.location.href = "../pages/splash_options.php";
+        var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
+        afterLogNavigate(function () {
+            window.location.href = href;
+        });
     });
 }
 
@@ -1116,22 +1146,30 @@ if (PricingSelectBtn1) {
 
 const OllyChatBtn = document.getElementById('OllyChatBtn');
 if (OllyChatBtn) {
-    OllyChatBtn.addEventListener('click', function () {
+    OllyChatBtn.addEventListener('click', function (e) {
+        e.preventDefault();
         localStorage.setItem('chat-bot',true);
          localStorage.setItem('pricing',false);
         localStorage.setItem('login',false);
         logevent("start_your_free_trial_button_click", "index.php");
-        window.location.href = "../pages/splash_options.php";
+        afterLogNavigate(function () {
+            window.location.href = OllyChatBtn.getAttribute("href") || "../pages/splash_options.php";
+        });
     });
 }
 
 const PricingSelectBtnHomePage = document.getElementById('PricingSelectBtnHomePage');
 if (PricingSelectBtnHomePage) {
-    PricingSelectBtnHomePage.addEventListener('click', function () {
+    PricingSelectBtnHomePage.addEventListener('click', function (e) {
+        var innerA = e.target.closest("a");
+        if (innerA) e.preventDefault();
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
         logevent("start_your_free_trial_button_click", "home.php");
-        window.location.href = "../pages/splash_options.php";
+        var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
+        afterLogNavigate(function () {
+            window.location.href = href;
+        });
     });
 }
 
@@ -1360,9 +1398,13 @@ teenagers &&
     });
 
 var viewAllSucessStories = document.getElementById("viewallsuccessstories");
-viewAllSucessStories && viewAllSucessStories.addEventListener("click", function () {
+viewAllSucessStories && viewAllSucessStories.addEventListener("click", function (e) {
+    e.preventDefault();
     logevent("click_ViewAll_Success_Stories", "index.php");
-    window.location.href = url+"/adults/testimonials";
+    var dest = viewAllSucessStories.getAttribute("href") || url + "/adults/testimonials";
+    afterLogNavigate(function () {
+        window.location.href = dest;
+    });
 }) ;   
 
 const requestDemo = document.getElementById("Request-Demo");
@@ -1447,7 +1489,10 @@ nfsnContactForm &&
                 function (e) {
                     e.preventDefault();
                     logevent("click_View_All_Blogs_web", "index.php");
-                    window.location.href = this.getAttribute("href") || url + "/adults/blogs";
+                    var dest = this.getAttribute("href") || url + "/adults/blogs";
+                    afterLogNavigate(function () {
+                        window.location.href = dest;
+                    });
                 },
                 !1
             );
@@ -1468,24 +1513,24 @@ nfsnContactForm &&
                         : "journal" == e || "journal-tab" == e ? logevent("click_Journal_web", "index.php")
                         : "HapinessScore" == e || "HapinessScore-tab" == e ? logevent("click_Happiness_Score_web", "index.php")
                         : "podcast" == e || "podcast-tab" == e ? logevent("click_Podcast_web", "index.php")
-                        : "appleStore"== e ? (logevent("click_apple_store_web", "index.php") ,(window.location.href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567"))
-                        : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php") ,(window.location.href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US"))
+                        : "appleStore"== e ? (logevent("click_apple_store_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567"}))
+                        : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US"}))
                         : "community" == e || "community-tab" == e ? logevent("click_Community_web", "index.php")
                         : "youtubeIntro" == e ? logevent("click_youtube_intro_web", "index.php")
-                        :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , (window.location.href="https://happierme.app/adults/intro/intro-carousel"))
-                        : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,(window.location.href="https://happierme.app/teenagers/intro-carousel"))
-                        : "findoutMore" == e ? (logevent("click_find_out_More_web", "index.php") ,(window.location.href="../pages/teenagers.php"))
-                        : "partnership" == e ? (logevent("click_partnership_web", "index.php") ,(window.location.href="../pages/partnership.php"))
+                        :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/intro/intro-carousel"}))
+                        : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/teenagers/intro-carousel"}))
+                        : "findoutMore" == e ? (logevent("click_find_out_More_web", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/teenagers.php"}))
+                        : "partnership" == e ? (logevent("click_partnership_web", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
                         : "whywecreatedvideo" == e ? (logevent("whywecreatedvideo", "index.php"))
-                        :"partnershipfooter" == e ? (logevent("click_partnership_footer_web", "index.php") ,(window.location.href="../pages/partnership.php"))
-                         :"view-all-coaches" == e ? (logevent("click_view_all_coaches", "index.php") ,(window.location.href="https://happierme.app/adults/coach"))
-                        : "openInApp1_1" == e || "openInApp1_2" == e ? (logevent("click_open_in_app_web", "index.php") ,(window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"))
-                        : "openInApp2_1" == e || "openInApp2_2" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"))
-                        : "openInApp3_1" == e  || "openInApp3_2" == e ? (logevent("click_open_in_app_web", "index.php") , (window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"))
-                        : "exploreAppWeb" == e ? (logevent("click_explore_on_app_web", "index.php") , ( window.location.href="https://happierme.app/adults/feel-better-now"))
-                        : "ourStory" == e ? (logevent("click_our_story_footer_web", "index.php") ,   (window.location.href = "../pages/about_us.php") )
-                        : "testimonialFooter" == e ? (logevent("click_testimonial_footer_web", "index.php") , (window.location.href = "https://happierme.app/adults/testimonials"))
-                        : "contactUsFooter" == e ? (logevent("click_contact_us_footer_web", "index.php") , (window.location.href="https://happierme.app/adults/contact-us")) : ''
+                        :"partnershipfooter" == e ? (logevent("click_partnership_footer_web", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
+                         :"view-all-coaches" == e ? (logevent("click_view_all_coaches", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/adults/coach"}))
+                        : "openInApp1_1" == e || "openInApp1_2" == e ? (logevent("click_open_in_app_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"}))
+                        : "openInApp2_1" == e || "openInApp2_2" == e ? (logevent("click_open_in_app_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"}))
+                        : "openInApp3_1" == e  || "openInApp3_2" == e ? (logevent("click_open_in_app_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"}))
+                        : "exploreAppWeb" == e ? (logevent("click_explore_on_app_web", "index.php") , afterLogNavigate(function(){ window.location.href="https://happierme.app/adults/feel-better-now"}))
+                        : "ourStory" == e ? (logevent("click_our_story_footer_web", "index.php") ,   afterLogNavigate(function(){window.location.href = "../pages/about_us.php"}))
+                        : "testimonialFooter" == e ? (logevent("click_testimonial_footer_web", "index.php") , afterLogNavigate(function(){window.location.href = "https://happierme.app/adults/testimonials"}))
+                        : "contactUsFooter" == e ? (logevent("click_contact_us_footer_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/contact-us"})) : ''
                         
                 });
         });
