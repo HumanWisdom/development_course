@@ -3371,10 +3371,12 @@ audio::-webkit-media-controls-enclosure {
 
 #signup-form a.blog_highlight_peach {
   color: rgba(0, 0, 0, 1) !important;
+  text-decoration: none;
 }
 
 #signup-form a.blog_highlight_peach:hover {
   color: #803358 !important;
+  text-decoration: none;
 }
 
 .owl-carousel.owl-drag .owl-item {

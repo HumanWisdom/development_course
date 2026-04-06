@@ -387,7 +387,7 @@
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5" style="margin-top:8px;">
                           <span>I agree to the 
-                            <a  class="blog_highlight_peach td_underline fs_12px fw_500" href="https://happierme.app/pages/terms_conditions.php"  
+                            <a class="blog_highlight_peach fs_12px fw_500" href="https://happierme.app/pages/terms_conditions.php"
                              > User Agreement</a>
                           </span>
                         </h4>
@@ -410,7 +410,7 @@
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5 " style="margin-top:7px;">
                           <span>I agree to the 
-                            <a  class="blog_highlight_peach td_underline fs_12px fw_500"   href="https://happierme.app/pages/privacy_policy.php"
+                            <a class="blog_highlight_peach fs_12px fw_500" href="https://happierme.app/pages/privacy_policy.php"
                              > Privacy policy</a>
                           </span>
                         </h4>
