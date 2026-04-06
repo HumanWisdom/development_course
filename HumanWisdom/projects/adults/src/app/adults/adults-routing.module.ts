@@ -429,6 +429,10 @@ const routes: Routes = [
     component: SelfAwarenessRedirectComponent,
   },
   {
+    path: 'self-awareness',
+    loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule),
+  },
+  {
     path: 'adverts-hwp',
     loadChildren: () => import('./adverts-hwp/adverts-hwp.module').then(m => m.AdvertsHwpPageModule)
   },
