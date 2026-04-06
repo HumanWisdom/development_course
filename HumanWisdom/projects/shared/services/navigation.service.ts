@@ -189,8 +189,12 @@ export class NavigationService {
 
     const url = this.goBack();
     
-    // If history provides a valid URL, trust it (including home/dashboard)
-    if (url != null) {
+    // Prevent loops: if the returned URL is the same as current or contains start-your-free-trial, don't use it
+    if (url != null && (url === this.router.url || url.includes('start-your-free-trial'))) {
+      // Reset context and fall through to fallback logic
+      this.lastSource = null;
+      localStorage.removeItem('lastNavSource');
+    } else if (url != null) {
        // Reset context if we derived a valid URL from history
        this.lastSource = null;
        localStorage.removeItem('lastNavSource');
@@ -198,14 +202,20 @@ export class NavigationService {
     }
 
     // Context-driven navigation priority fallback for empty history
-    if (this.lastSource === 'pathway' || this.lastSource === 'search') {
+    if (this.lastSource === 'pathway' || this.lastSource === 'search' || this.lastSource === 'video') {
       const sourceIsPathway = this.lastSource === 'pathway';
+      const sourceIsVideo = this.lastSource === 'video';
       const navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
       
       this.lastSource = null; // Reset after usage check
       localStorage.removeItem('lastNavSource');
 
       if (sourceIsPathway && navFrom && navFrom.includes('pathway')) {
+        this.backClicked = true;
+        return navFrom;
+      }
+      
+      if (sourceIsVideo && navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url && !navFrom.includes('start-your-free-trial')) {
         this.backClicked = true;
         return navFrom;
       }
@@ -217,7 +227,7 @@ export class NavigationService {
 
     // Fallback if history is empty
     let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-    if (navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url) {
+    if (navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url && !navFrom.includes('start-your-free-trial')) {
       return navFrom;
     }
 
