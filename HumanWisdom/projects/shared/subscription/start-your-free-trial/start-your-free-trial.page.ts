@@ -49,20 +49,46 @@ export class StartYourFreeTrialPage implements OnInit {
 
   back() {
     this.logeventservice.logEvent('click_back');
-    let curr = this.servive.previousUrl;
-    var url = this.navigateService.goBack();
-    if (curr == "" || curr == null) {
-      curr = url;
+    
+    // Check if we came from a video page by looking at the lastNavSource
+    const lastNavSource = localStorage.getItem('lastNavSource');
+    const navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+    
+    // If we have a valid navigation source and it's not the current page
+    if (navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url) {
+      // If we came from a video page, go back there
+      if (lastNavSource === 'video') {
+        this.router.navigateByUrl(navFrom);
+        return;
+      }
+      
+      // For other valid sources, navigate back to them
+      if (!navFrom.includes('start-your-free-trial')) {
+        this.router.navigateByUrl(navFrom);
+        return;
+      }
     }
+    
+    // Fallback: try to use navigation service
+    let curr = this.servive.previousUrl;
+    var url = this.navigateService.navigateToBackLink();
+    
+    // Prevent loops by checking if the URL is the same as current or contains free trial
+    if (url && (url === this.router.url || url.includes('start-your-free-trial'))) {
+      // If we're in a loop, go to dashboard
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+      return;
+    }
+    
     let loggedin = localStorage.getItem("isloggedin")
     if ((!loggedin || loggedin || loggedin === 'F' || loggedin === 'T') && curr && (curr.includes('view-stories?sId') || curr.includes('wisdom-shorts/'))) {
       window.history.go(-2)
     } else {
-      if (url == null || (url != null && url.includes("start-your-free-trial"))) {
+      if (url == null) {
         this.router.navigateByUrl(SharedService.getDashboardUrls());
-      }
-      else
+      } else {
         this.router.navigateByUrl(url);
+      }
     }
   }
 
