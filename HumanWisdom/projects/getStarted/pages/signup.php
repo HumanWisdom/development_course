@@ -29,6 +29,10 @@
     </script>
     <!-- vendor_header --> <?php include('../includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
+     <style>
+      .pt-7px{
+        padding-top: 7px;     }
+     </style>
   </head>
   <body>
     <!-- request a demo php script --> <?php
@@ -277,7 +281,7 @@
                       
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_834b66  tcenter ta_lc"> Welcome to HappierMe</h1>
+                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_803358  tcenter ta_lc"> Welcome to HappierMe</h1>
                         </div>
                       </div>
                     </div>
@@ -372,8 +376,8 @@
                        
                       </div>
     </div> -->
-     <div class="row mt5px">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check">
+     <div class="row mt5px align-items-start">
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check pt-7px">
                           <label for="privacy_checkbox" class="chkb_post_anonymously ">
                             <input  style="margin-top:10px;"id="privacy_checkbox"formControlName="privacychk" type="checkbox">
                             <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
@@ -383,7 +387,7 @@
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5" style="margin-top:8px;">
                           <span>I agree to the 
-                            <a  class="blog_highlight_peach td_underline fs_12px fw_500 " href="https://happierme.app/pages/terms_conditions.php"  
+                            <a  class="blog_highlight_peach td_underline fs_12px fw_500" href="https://happierme.app/pages/terms_conditions.php"  
                              > User Agreement</a>
                           </span>
                         </h4>
@@ -395,7 +399,8 @@
 
 
                      
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check">
+                      <div class="row mt5px align-items-start">
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check pt-7px">
                           <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
                             <input style="margin-top:10px;" id="marketing_checkbox" formControlName="privacychk" type="checkbox">
                             <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
@@ -405,10 +410,11 @@
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5 " style="margin-top:7px;">
                           <span>I agree to the 
-                            <a  class="blog_highlight_peach td_underline fs_12px fw_500 "   href="https://happierme.app/pages/privacy_policy.php"
+                            <a  class="blog_highlight_peach td_underline fs_12px fw_500"   href="https://happierme.app/pages/privacy_policy.php"
                              > Privacy policy</a>
                           </span>
                         </h4>
+                    </div>
                     </div>
                     
                      

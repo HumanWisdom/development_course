@@ -503,5 +503,15 @@
       .btn-gradient{
         background: linear-gradient(180deg, #E58D82 0%, #CB6171 100%) !important;
       }
-    
+
+    /* mind.php — “Let’s get started!” CTA only */
+    .mind-cta-gradient {
+      background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
+    }
+
+    .mind-cta-gradient:hover,
+    .mind-cta-gradient:focus {
+      background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+    }
+
   

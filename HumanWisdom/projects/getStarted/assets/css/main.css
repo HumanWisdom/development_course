@@ -3369,6 +3369,14 @@ audio::-webkit-media-controls-enclosure {
   text-decoration: none;
 }
 
+#signup-form a.blog_highlight_peach {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+#signup-form a.blog_highlight_peach:hover {
+  color: #803358 !important;
+}
+
 .owl-carousel.owl-drag .owl-item {
   cursor: pointer;
 }
@@ -4230,6 +4238,17 @@ button {
 .btn-min-block {
   min-width: 170px;
   line-height: 26px;
+}
+.gap_24px{
+  gap: 24px !important;
+}
+.bg-color{
+background: rgba(252, 242, 236, 1) !important;
+
+}
+.bg_circle_mind{
+  background: rgba(255, 249, 238, 1) !important;
+
 }
 
 .btn-theme {
