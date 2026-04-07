@@ -40,10 +40,19 @@ export class NavigationService {
     const urls = url.split('/');
     let urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
+    
+    // Handle URLs with query parameters (like event?eid=123)
+    if (urltoCheck && urltoCheck.includes('?')) {
+      urltoCheck = urltoCheck.split('?')[0];
+    }
+    
+    // Special handling for event pages - always add to history
+    const isEventPage = url.includes('/events/event');
+    
     if(!this.backClicked) {
       if (urltoCheck) {
         let isNan = isNaN(Number(urltoCheck[urltoCheck.length - 1]));
-        if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url) || SharedService.isModuleEnd) {
+        if (isNan || this.endsWith001ForModule(urltoCheck) || this.isExceptionUrl(urltoCheck,url) || SharedService.isModuleEnd || isEventPage) {
           if (this.history.length > 0) {
             const lastUrl = this.history[this.history.length - 1];
             if (lastUrl === url) {
@@ -116,8 +125,8 @@ export class NavigationService {
       'guidedquestions', 'why-do-i', 'how-can-i',
       's29000', 's44001', 's486', 's232',
       's54001', 's92001', 'view-stories', 's42000',
-     's162p0','s51000','s39000','s47000','s324','s47000', 'mp4','s42000','s39000',
-     's72002','s72001','s72003','s72004','s72005','s72006','s72007','event?eid',
+     's162p0','s51000','s39000','s47000', 'mp4','s42000','s39000',
+     's72002','s72001','s72003','s72004','s72005','s72006','s72007',
      '/curated/youtubelink/','why-do-i','how-can-i','blog-article', 'micro-learning',
   ];
 
@@ -264,7 +273,17 @@ export class NavigationService {
       return segments.slice(0, -1).join('/');
     }
 
-    // 4. Module TOC / Index -> Search (If no pathway context was found)
+    // 4. Events: Event inner page -> Events listing -> Previous page
+    if (currentUrl.includes('/events/event')) {
+      console.log("Fallback: Event inner -> Events listing");
+      return `/${prefix}/events`;
+    }
+    if (currentUrl.includes('/events')) {
+      console.log("Fallback: Events listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 5. Module TOC / Index -> Search (If no pathway context was found)
     if (segments.length >= 2 && (segments[0] === 'adults' || segments[0] === 'teenagers' || segments[0] === 'youngadults')) {
        const topLevelPages = ['adult-dashboard', 'dashboard', 'home', 'search', 'journal', 'profile', 'forum', 'notification', 'teenager-dashboard'];
        if (!topLevelPages.includes(segments[1])) {
