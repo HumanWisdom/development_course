@@ -101,6 +101,10 @@
     .navbar .active:focus {
       color: #803358 !important;
     }
+    .profile-img{
+    padding-right: 0px;
+    width: 300px;
+    }
 
     /* Our HOW CTA: desktop keeps 225px; mobile uses .btn-mw-335px (inline width would override that) */
     @media (min-width: 768px) {
@@ -235,7 +239,6 @@
       /* About Us mobile video: keep true 16:9 to avoid black bars while playing */
       section.hpt120px~main#main #youtubeIntro.cvideo_b.yt-embed {
         width: 100% !important;
-        max-width: 335px !important;
         height: auto !important;
         aspect-ratio: 16 / 9 !important;
         padding: 0 !important;
@@ -919,7 +922,7 @@
                 The Founder </h1>
             </div>
             <div class="row center_flex">
-              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11  flex_block" style=" width: 1240px;">
+              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11  flex_block" style=" width: 1240px; gap:40px">
                 <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc mb20px display_d_none" data-aos="fade-up" data-aos-delay="200">
                   <h2 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
                       The Founder                  </h2>
@@ -928,7 +931,7 @@
                 <!-- <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66 tcenter">
               The Founder
             </h1> -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4 plr20px cpr_a founder-image-container"
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4 plr20px cpr_a founder-image-container profile-img"
                   data-aos="fade-up" data-aos-delay="100">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp"
                     class="img-responsive founder-image" alt="Dr Manoj Krishna" style="width:300px;">
@@ -957,14 +960,11 @@
                     <span class="au-founder-bio-line">Dr Manoj Krishna, previously a spine surgeon in the UK, left his
                       medical career and, along with other professionals, started the HappierMe Project to help reduce
                       suffering and help people lead happier lives. He has authored two books -
-                      <a href=" https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span
-                          class="fw_500 fc_cb6171 td_underline">Understanding Me</span></a> </span><span
-                      class="au-founder-bio-line">
-                      <a href=" https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span
-                          class="fw_500 fc_cb6171 td_underline">Understanding You,</span></a>
+                      <a href="https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span
+                          class="fw_500 fc_cb6171 td_underline">'Understanding Me, Understanding You'</span></a>
                       and
                       <a href="https://www.amazon.co.uk/Stress-Free-Understand-yourself-Discover-ebook/dp/B0B2KM7SMJ"><span
-                          class="fw_500 fc_cb6171 td_underline">Stress-free</span></a>.
+                          class="fw_500 fc_cb6171 td_underline">'Stress-free'</span></a>.
                       He is also a public </span><span class="au-founder-bio-line">speaker and has spoken at more than 50
                       institutions.</span>
                   </h4>
