@@ -26,7 +26,7 @@
         <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             
-            <div class="row rmb80px">
+            <div class="row mt40px rmb60px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
                   The missed opportunity in relationships
@@ -171,9 +171,9 @@
                   modules in the app.
                 </h4>
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                <!-- <h4 class="mtb0px blog_desc blog_highlight_black">
                   Download and explore the HappierMe app. There is a free trial.
-                </h4>
+                </h4> -->
               </div>
             </div>
 
