@@ -213,6 +213,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     
  openChat(){
+  this.logeventservice.logEvent('Click_olly_chat');
   if(this.isAdults){
     this.router.navigate(['/adults/chat-bot']);
   } else {
