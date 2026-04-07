@@ -631,6 +631,8 @@ header a[href*="splash_options.php"] * {
   width: 100%;
   padding: 12px 12px 0;
   box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 .tools-thumb-img {
   width: 100%;
@@ -643,104 +645,16 @@ header a[href*="splash_options.php"] * {
 .tools-thumb-video {
   width: 100%;
   height: 206px;
+  max-height: 206px;
   display: block;
   border-radius: 10px;
   background: #FFE8BB;
   object-fit: cover;
-  /* Helps timeline scrub in some Chromium builds */
-  accent-color: #000;
+  box-sizing: border-box;
 }
-/* Homepage FBN: cream bar — scoped selectors + clear background-image (index.css sets video::-webkit-media-controls-panel) */
-.tools-thumb-video::-webkit-media-controls-panel,
-#fbn-video::-webkit-media-controls-panel,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-panel {
-  background: #FFE8BB !important;
-  background-image: none !important;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-}
-/* Time text — panel `color` does not apply; target shadow parts (Chromium/WebKit) */
-.tools-thumb-video::-webkit-media-controls-current-time-display,
-.tools-thumb-video::-webkit-media-controls-time-remaining-display,
-#fbn-video::-webkit-media-controls-current-time-display,
-#fbn-video::-webkit-media-controls-time-remaining-display,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-current-time-display,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-time-remaining-display {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-}
-/* Progress / scrub bar */
-.tools-thumb-video::-webkit-media-controls-timeline,
-#fbn-video::-webkit-media-controls-timeline,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-timeline {
-  background-color: rgba(0, 0, 0, 0.22) !important;
-  border-radius: 4px;
-}
-.tools-thumb-video::-webkit-media-controls-timeline::-webkit-slider-thumb,
-#fbn-video::-webkit-media-controls-timeline::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background: #000 !important;
-}
-/* Built-in control icons are drawn light-on-dark; invert so they read on #FFE8BB */
-.tools-thumb-video::-webkit-media-controls-play-button,
-.tools-thumb-video::-webkit-media-controls-mute-button,
-.tools-thumb-video::-webkit-media-controls-fullscreen-button,
-.tools-thumb-video::-webkit-media-controls-overlay-play-button,
-#fbn-video::-webkit-media-controls-play-button,
-#fbn-video::-webkit-media-controls-mute-button,
-#fbn-video::-webkit-media-controls-fullscreen-button {
-  filter: invert(1);
-}
-/* Overflow ⋮ — invert() often does not affect inner SVG; brightness(0) maps light pixels to black */
-.tools-thumb-video::-webkit-media-controls-overflow-button,
-#fbn-video::-webkit-media-controls-overflow-button,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-  opacity: 1 !important;
-  filter: brightness(0) !important;
-  -webkit-filter: brightness(0) !important;
-}
-/* Chromium variant */
-.tools-thumb-video::-webkit-media-controls-overflow-menu-button,
-#fbn-video::-webkit-media-controls-overflow-menu-button,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-  opacity: 1 !important;
-  filter: brightness(0) !important;
-  -webkit-filter: brightness(0) !important;
-}
-/* Extra fallback selectors for Chromium variants */
-video::-webkit-media-controls-overflow-button,
-video::-webkit-media-controls-overflow-menu-button,
-video.tools-thumb-video::-webkit-media-controls-overflow-button,
-video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-  opacity: 1 !important;
-  filter: brightness(0) !important;
-  -webkit-filter: brightness(0) !important;
-}
-/* FBN: while playing, video fills card (353px) */
-#tab-fbn .tools-card.tools-card-fbn-playing {
-  height: 353px;
-  min-height: 353px;
-}
-#tab-fbn .tools-card.tools-card-fbn-playing .tools-thumb {
-  padding: 0;
-  height: 353px;
-}
-#tab-fbn .tools-card.tools-card-fbn-playing .tools-card-meta {
-  display: none !important;
-}
-#fbn-video.tools-thumb-video-playing {
-  height: 353px !important;
-  max-height: 353px;
-  border-radius: 16px;
-  object-fit: cover;
+/* Keep playback inside the thumbnail slot; native browser controls (no custom -webkit-media-controls theming). */
+#fbn-video.tools-thumb-video {
+  vertical-align: top;
 }
 .tools-thumb-img_sec{
    object-fit: cover;
@@ -1455,16 +1369,9 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
   .tools-panel { padding: 32px 24px; gap: 28px; }
   .tools-card { width: 210px; }
   .tools-thumb-img { height: 155px; }
-  .tools-thumb-video { height: 178px; }
-  #tab-fbn .tools-card.tools-card-fbn-playing,
-  #tab-fbn .tools-card.tools-card-fbn-playing .tools-thumb {
-    height: auto;
-    min-height: min(353px, 85vw);
-    max-height: none;
-  }
-  #fbn-video.tools-thumb-video-playing {
-    height: min(353px, 85vw) !important;
-    max-height: min(353px, 85vw);
+  .tools-thumb-video {
+    height: 178px;
+    max-height: 178px;
   }
   .tools-info-heading { font-size: 22px; }
   .tools-info-body { max-width: 100%; }
@@ -3112,17 +3019,14 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
           t.classList.remove('tool-tab-active');
         });
         el.classList.add('tool-tab-active');
-        if (panelId !== 'tab-fbn') {
+        if (panelId !== 'fbn') {
           var fbnVideo = document.getElementById('fbn-video');
           var fbnPlayBtn = document.getElementById('fbn-play-btn');
-          var fbnCard = document.querySelector('#tab-fbn .tools-card');
           if (fbnVideo) {
             fbnVideo.pause();
             fbnVideo.currentTime = 0;
             fbnVideo.controls = false;
-            fbnVideo.classList.remove('tools-thumb-video-playing');
           }
-          if (fbnCard) fbnCard.classList.remove('tools-card-fbn-playing');
           if (fbnPlayBtn) fbnPlayBtn.hidden = false;
         }
         document.querySelectorAll('.tools-panel').forEach(function(p){
@@ -3198,16 +3102,8 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         var playBtn = document.getElementById('fbn-play-btn');
         if (!video || !playBtn) return;
 
-        var fbnCard = video.closest('.tools-card');
-
-        function setFbnPlayingLayout(on) {
-          video.classList.toggle('tools-thumb-video-playing', on);
-          if (fbnCard) fbnCard.classList.toggle('tools-card-fbn-playing', on);
-        }
-
         playBtn.addEventListener('click', function() {
           video.controls = true;
-          setFbnPlayingLayout(true);
           var playPromise = video.play();
           if (playPromise && typeof playPromise.catch === 'function') {
             playPromise.catch(function() {});
@@ -3217,21 +3113,18 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         video.addEventListener('play', function() {
           video.controls = true;
           playBtn.hidden = true;
-          setFbnPlayingLayout(true);
         });
 
         video.addEventListener('pause', function() {
-          video.controls = false;
+          video.controls = true;
           if (video.currentTime < video.duration) {
             playBtn.hidden = false;
           }
-          setFbnPlayingLayout(false);
         });
 
         video.addEventListener('ended', function() {
           video.controls = false;
           playBtn.hidden = false;
-          setFbnPlayingLayout(false);
         });
       });
 
