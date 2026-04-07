@@ -163,7 +163,7 @@
 
       <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 col-4 p0">
         <a class="" href="../index.php">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo_new.svg" class="img-responsive" alt="logo">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/logo_new.svg" class="img-responsive" alt="logo">
         </a>
       </div>
 
