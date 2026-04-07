@@ -3304,7 +3304,7 @@ audio::-webkit-media-controls-enclosure {
 .btn_blogp {
   margin: 4px;
   padding: 4px 16px;
-  height: 40px;
+  height: 30px;
   border-radius: 21px;
   background: rgba(238, 161, 112, 0.2);
 
@@ -3380,7 +3380,7 @@ audio::-webkit-media-controls-enclosure {
 
 #signup-form a.blog_highlight_peach:hover {
   color: #803358 !important;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .owl-carousel.owl-drag .owl-item {
