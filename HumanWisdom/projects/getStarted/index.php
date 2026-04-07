@@ -2034,19 +2034,19 @@ header a[href*="splash_options.php"] * {
         </div>
         <div class="div-8">
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="text-wrapper-7">Mental wellbeing</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-ga-event="click_mental_wellbeing"><div class="text-wrapper-7">Mental wellbeing</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild" data-ga-event="click_better_relationships"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-ga-event="click_succeed_at_work"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-ga-event="click_learn_meditation"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak" data-ga-event="click_overcome_habits"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions" data-ga-event="click_manage_emotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalparent"><div class="text-wrapper-7">Better parenting</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalteen"><div class="text-wrapper-7">HappierMe for Teenagers</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself" data-ga-event="click_self_awareness"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalparent" data-ga-event="click_better_parenting"><div class="text-wrapper-7">Better parenting</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalteen" data-ga-event="click_happierme_for_teenagers"><div class="text-wrapper-7">HappierMe for Teenagers</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
         </div>
       </div>
@@ -2199,7 +2199,7 @@ header a[href*="splash_options.php"] * {
         <p class="text-wrapper-6">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
-          <a href="/pages/work.php" class="div-25">
+          <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
             <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/work.svg" alt="Work" />
             <div class="frame-wrapper-7">
               <div class="div-26">
@@ -2215,7 +2215,7 @@ header a[href*="splash_options.php"] * {
             </div>
           </a>
           <!-- Education -->
-          <a href="/pages/education.php" class="div-25">
+          <a href="/pages/education.php" class="div-25" id="orgCardEducation">
             <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/education.svg" alt="Education" />
             <div class="frame-wrapper-8">
               <div class="div-29">
@@ -2231,7 +2231,7 @@ header a[href*="splash_options.php"] * {
             </div>
           </a>
           <!-- Healthcare -->
-          <a href="/pages/healthcare.php" class="div-25">
+          <a href="/pages/healthcare.php" class="div-25" id="orgCardHealthcare">
             <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/healthcare.svg" alt="Healthcare" />
             <div class="frame-wrapper-8">
               <div class="div-29">
@@ -2368,7 +2368,7 @@ header a[href*="splash_options.php"] * {
           </div>
           <div class="coaches-footer">
             <div class="coaches-footer-spacer"></div>
-            <a href="https://happierme.app/adults/coach" class="coaches-more">
+            <a href="https://happierme.app/adults/coach" class="coaches-more" id="coachesFindOutMore">
               <span>Find out more</span>
               <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
             </a>
@@ -2590,7 +2590,7 @@ header a[href*="splash_options.php"] * {
       </div>
 
       <!-- ===== BLOG ===== -->
-      <div class="div-13">
+      <div class="div-13" id="exploreBlogSection">
         <div class="text-wrapper-blog">Explore our blog</div>
         <div class="blog-outer">
           <div class="blog-track-wrap">
@@ -3058,6 +3058,7 @@ header a[href*="splash_options.php"] * {
             // If this one is already open, clicking it should close it.
             var isOpen = body.style.display === 'block';
             var nowOpen = !isOpen;
+            if (typeof logevent === 'function' && isOpen) logevent('click_faq_collapse', 'index.php');
 
             // Close all FAQ items first (true accordion behavior).
             document.querySelectorAll('.faq-body').forEach(function(p) {
@@ -3078,6 +3079,7 @@ header a[href*="splash_options.php"] * {
 
             if (nowOpen) {
               body.style.display = 'block';
+              if (typeof logevent === 'function') logevent('click_faq_expand', 'index.php');
 
               var toggle = this.querySelector('.faq-toggle');
               if (!toggle) return;
@@ -3190,6 +3192,7 @@ header a[href*="splash_options.php"] * {
       }
 
       function blogScroll(dir) {
+        if (typeof logevent === 'function') logevent('scroll_blog_carousel', 'index.php');
         var el = document.getElementById('blog-scroll');
         if (!el) return;
         var cardWidth = 490; // blog card 470px + 20px gap
@@ -4607,11 +4610,13 @@ header a[href*="splash_options.php"] * {
         var tY = 'After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.';
         var tM = 'After your free trial, the monthly subscription is ₹300/mo and automatically renews each month until cancelled.';
         function pickMonthly() {
+          if (typeof logevent === 'function') logevent('click_monthly', 'index.php');
           y.classList.add('sub-plan-off');
           m.classList.add('sub-plan-on');
           d.textContent = tM;
         }
         function pickYearly() {
+          if (typeof logevent === 'function') logevent('click_yearly', 'index.php');
           y.classList.remove('sub-plan-off');
           m.classList.remove('sub-plan-on');
           d.textContent = tY;
