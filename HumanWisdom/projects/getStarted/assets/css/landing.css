@@ -59,8 +59,8 @@
 }
 
 .web_home_divlanding {
-    /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png); */
-    background-image: url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/frame.png');
+    /* background: url(https://d1tenzemoxuh75.cloudfront.net/website/frame.png); */
+    background-image: url('https://d1tenzemoxuh75.cloudfront.net/website/frame.png');
     /* background: -webkit-linear-gradient(93deg, #ec9f8d -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);  */
     background-repeat: no-repeat;
     background-position: center;
@@ -285,7 +285,7 @@ a:hover {
 
 
 .div_subscriptionnew {
-    /* background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/web_subscription_bg.png); */
+    /* background: url(https://d1tenzemoxuh75.cloudfront.net/assets/webp/web_subscription_bg.png); */
     background:
         -webkit-linear-gradient(#4267A5, #183C79);
 
