@@ -26,7 +26,7 @@
         <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             
-            <div class="row rmb80px">
+            <div class="row mt40px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
                   Self-Awareness can help relationships flourish
@@ -37,7 +37,8 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                  <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
+
                     Relationships
                   </button>
                 </div>
@@ -48,7 +49,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21_new.webp" class="img-responsive" alt="Self-Awareness can help relationships flourish">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21_new.webp" class="img-responsive" alt="Self-Awareness can help relationships flourish" style="height:653px;">
               </div>
             </div>
 
