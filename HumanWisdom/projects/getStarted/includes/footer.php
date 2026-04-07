@@ -519,7 +519,7 @@
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="rating_icon" alt="playstore">
         <span class="rating_text">Google Play</span>
         <span class="rating_score">4.8</span>
-        <span class="rating_star"><img class="pb_4px" src ="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/star.png" ></span>
+        <span class="rating_star"><img class="pb_4px" src ="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/star.png" alt="star"  ></span>
       </div>
     </div>
 
