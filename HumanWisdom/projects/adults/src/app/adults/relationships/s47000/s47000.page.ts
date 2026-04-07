@@ -178,8 +178,8 @@ export class S47000Page implements OnInit,OnDestroy {
     console.log('Set relationshipsEventSource to true');
     
     // Navigate to the event
-    console.log('Navigating to staging event URL');
-    window.location.href = 'https://staging.happierme.app/adults/curated/youtubelink/gwg-B7c2DwY%3Dvncbxdfchgvxd';
+    console.log('Navigating to event URL via router');
+    this.router.navigate(['/adults/curated/youtubelink/gwg-B7c2DwY=vncbxdfchgvxd']);
   }
  /*  goBack(){
     this.location.back()
