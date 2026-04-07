@@ -54,9 +54,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <!-- <h4 class="mtb0px blog_desc">
-                  In this blog, we will explore the question of ‘Why are we critical of ourselves?’. 
-                </h4> -->
+               
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
@@ -118,7 +116,7 @@
                 <h4 class="mtb0px blog_desc">
                   To find out more explore the
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/self-esteem">
-                    Self-esteem,
+                    Self-esteem
                   </a>
                   and
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/criticism">
