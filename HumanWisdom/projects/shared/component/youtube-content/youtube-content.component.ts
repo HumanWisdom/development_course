@@ -79,22 +79,19 @@ export class YoutubeContentComponent implements OnInit {
   }
 
   goBack() {
-    let historyLength = this.navigationService.getHistoryLength ? this.navigationService.getHistoryLength() : 0;
-    if (historyLength <= 1) {
-      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    var url = this.navigationService.navigateToBackLink();
+    if (url != null && url !== this.router.url) {
+      this.router.navigateByUrl(url);
       return;
     }
 
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
-      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-      if (navFrom && navFrom != null && navFrom != 'null') {
-        this.router.navigateByUrl(navFrom);
-      } else {
-        this.location.back();
-      }
+    // Enhanced fallback logic
+    let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+    if (navFrom && navFrom != null && navFrom != 'null' && navFrom !== this.router.url) {
+      this.router.navigateByUrl(navFrom);
     } else {
-      this.router.navigate([url]);
+      // Try to navigate back using browser history
+      this.location.back();
     }
   }
 
