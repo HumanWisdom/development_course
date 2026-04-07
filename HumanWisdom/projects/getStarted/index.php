@@ -631,6 +631,8 @@ header a[href*="splash_options.php"] * {
   width: 100%;
   padding: 12px 12px 0;
   box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 .tools-thumb-img {
   width: 100%;
@@ -643,104 +645,16 @@ header a[href*="splash_options.php"] * {
 .tools-thumb-video {
   width: 100%;
   height: 206px;
+  max-height: 206px;
   display: block;
   border-radius: 10px;
   background: #FFE8BB;
   object-fit: cover;
-  /* Helps timeline scrub in some Chromium builds */
-  accent-color: #000;
+  box-sizing: border-box;
 }
-/* Homepage FBN: cream bar — scoped selectors + clear background-image (index.css sets video::-webkit-media-controls-panel) */
-.tools-thumb-video::-webkit-media-controls-panel,
-#fbn-video::-webkit-media-controls-panel,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-panel {
-  background: #FFE8BB !important;
-  background-image: none !important;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-}
-/* Time text — panel `color` does not apply; target shadow parts (Chromium/WebKit) */
-.tools-thumb-video::-webkit-media-controls-current-time-display,
-.tools-thumb-video::-webkit-media-controls-time-remaining-display,
-#fbn-video::-webkit-media-controls-current-time-display,
-#fbn-video::-webkit-media-controls-time-remaining-display,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-current-time-display,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-time-remaining-display {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-}
-/* Progress / scrub bar */
-.tools-thumb-video::-webkit-media-controls-timeline,
-#fbn-video::-webkit-media-controls-timeline,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-timeline {
-  background-color: rgba(0, 0, 0, 0.22) !important;
-  border-radius: 4px;
-}
-.tools-thumb-video::-webkit-media-controls-timeline::-webkit-slider-thumb,
-#fbn-video::-webkit-media-controls-timeline::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background: #000 !important;
-}
-/* Built-in control icons are drawn light-on-dark; invert so they read on #FFE8BB */
-.tools-thumb-video::-webkit-media-controls-play-button,
-.tools-thumb-video::-webkit-media-controls-mute-button,
-.tools-thumb-video::-webkit-media-controls-fullscreen-button,
-.tools-thumb-video::-webkit-media-controls-overlay-play-button,
-#fbn-video::-webkit-media-controls-play-button,
-#fbn-video::-webkit-media-controls-mute-button,
-#fbn-video::-webkit-media-controls-fullscreen-button {
-  filter: invert(1);
-}
-/* Overflow ⋮ — invert() often does not affect inner SVG; brightness(0) maps light pixels to black */
-.tools-thumb-video::-webkit-media-controls-overflow-button,
-#fbn-video::-webkit-media-controls-overflow-button,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-button {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-  opacity: 1 !important;
-  filter: brightness(0) !important;
-  -webkit-filter: brightness(0) !important;
-}
-/* Chromium variant */
-.tools-thumb-video::-webkit-media-controls-overflow-menu-button,
-#fbn-video::-webkit-media-controls-overflow-menu-button,
-video#fbn-video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-  opacity: 1 !important;
-  filter: brightness(0) !important;
-  -webkit-filter: brightness(0) !important;
-}
-/* Extra fallback selectors for Chromium variants */
-video::-webkit-media-controls-overflow-button,
-video::-webkit-media-controls-overflow-menu-button,
-video.tools-thumb-video::-webkit-media-controls-overflow-button,
-video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-  opacity: 1 !important;
-  filter: brightness(0) !important;
-  -webkit-filter: brightness(0) !important;
-}
-/* FBN: while playing, video fills card (353px) */
-#tab-fbn .tools-card.tools-card-fbn-playing {
-  height: 353px;
-  min-height: 353px;
-}
-#tab-fbn .tools-card.tools-card-fbn-playing .tools-thumb {
-  padding: 0;
-  height: 353px;
-}
-#tab-fbn .tools-card.tools-card-fbn-playing .tools-card-meta {
-  display: none !important;
-}
-#fbn-video.tools-thumb-video-playing {
-  height: 353px !important;
-  max-height: 353px;
-  border-radius: 16px;
-  object-fit: cover;
+/* Keep playback inside the thumbnail slot; native browser controls (no custom -webkit-media-controls theming). */
+#fbn-video.tools-thumb-video {
+  vertical-align: top;
 }
 .tools-thumb-img_sec{
    object-fit: cover;
@@ -1455,16 +1369,9 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
   .tools-panel { padding: 32px 24px; gap: 28px; }
   .tools-card { width: 210px; }
   .tools-thumb-img { height: 155px; }
-  .tools-thumb-video { height: 178px; }
-  #tab-fbn .tools-card.tools-card-fbn-playing,
-  #tab-fbn .tools-card.tools-card-fbn-playing .tools-thumb {
-    height: auto;
-    min-height: min(353px, 85vw);
-    max-height: none;
-  }
-  #fbn-video.tools-thumb-video-playing {
-    height: min(353px, 85vw) !important;
-    max-height: min(353px, 85vw);
+  .tools-thumb-video {
+    height: 178px;
+    max-height: 178px;
   }
   .tools-info-heading { font-size: 22px; }
   .tools-info-body { max-width: 100%; }
@@ -2127,19 +2034,19 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         </div>
         <div class="div-8">
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="text-wrapper-7">Mental wellbeing</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-ga-event="click_mental_wellbeing"><div class="text-wrapper-7">Mental wellbeing</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild" data-ga-event="click_better_relationships"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-ga-event="click_succeed_at_work"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-ga-event="click_learn_meditation"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak" data-ga-event="click_overcome_habits"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions" data-ga-event="click_manage_emotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalparent"><div class="text-wrapper-7">Better parenting</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalteen"><div class="text-wrapper-7">HappierMe for Teenagers</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself" data-ga-event="click_self_awareness"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalparent" data-ga-event="click_better_parenting"><div class="text-wrapper-7">Better parenting</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalteen" data-ga-event="click_happierme_for_teenagers"><div class="text-wrapper-7">HappierMe for Teenagers</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
         </div>
       </div>
@@ -2292,7 +2199,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         <p class="text-wrapper-6">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
-          <a href="/pages/work.php" class="div-25">
+          <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
             <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/work.svg" alt="Work" />
             <div class="frame-wrapper-7">
               <div class="div-26">
@@ -2308,7 +2215,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
             </div>
           </a>
           <!-- Education -->
-          <a href="/pages/education.php" class="div-25">
+          <a href="/pages/education.php" class="div-25" id="orgCardEducation">
             <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/education.svg" alt="Education" />
             <div class="frame-wrapper-8">
               <div class="div-29">
@@ -2324,7 +2231,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
             </div>
           </a>
           <!-- Healthcare -->
-          <a href="/pages/healthcare.php" class="div-25">
+          <a href="/pages/healthcare.php" class="div-25" id="orgCardHealthcare">
             <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/healthcare.svg" alt="Healthcare" />
             <div class="frame-wrapper-8">
               <div class="div-29">
@@ -2461,7 +2368,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
           </div>
           <div class="coaches-footer">
             <div class="coaches-footer-spacer"></div>
-            <a href="https://happierme.app/adults/coach" class="coaches-more">
+            <a href="https://happierme.app/adults/coach" class="coaches-more" id="coachesFindOutMore">
               <span>Find out more</span>
               <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
             </a>
@@ -2683,7 +2590,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
       </div>
 
       <!-- ===== BLOG ===== -->
-      <div class="div-13">
+      <div class="div-13" id="exploreBlogSection">
         <div class="text-wrapper-blog">Explore our blog</div>
         <div class="blog-outer">
           <div class="blog-track-wrap">
@@ -3112,17 +3019,14 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
           t.classList.remove('tool-tab-active');
         });
         el.classList.add('tool-tab-active');
-        if (panelId !== 'tab-fbn') {
+        if (panelId !== 'fbn') {
           var fbnVideo = document.getElementById('fbn-video');
           var fbnPlayBtn = document.getElementById('fbn-play-btn');
-          var fbnCard = document.querySelector('#tab-fbn .tools-card');
           if (fbnVideo) {
             fbnVideo.pause();
             fbnVideo.currentTime = 0;
             fbnVideo.controls = false;
-            fbnVideo.classList.remove('tools-thumb-video-playing');
           }
-          if (fbnCard) fbnCard.classList.remove('tools-card-fbn-playing');
           if (fbnPlayBtn) fbnPlayBtn.hidden = false;
         }
         document.querySelectorAll('.tools-panel').forEach(function(p){
@@ -3154,6 +3058,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
             // If this one is already open, clicking it should close it.
             var isOpen = body.style.display === 'block';
             var nowOpen = !isOpen;
+            if (typeof logevent === 'function' && isOpen) logevent('click_faq_collapse', 'index.php');
 
             // Close all FAQ items first (true accordion behavior).
             document.querySelectorAll('.faq-body').forEach(function(p) {
@@ -3174,6 +3079,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
 
             if (nowOpen) {
               body.style.display = 'block';
+              if (typeof logevent === 'function') logevent('click_faq_expand', 'index.php');
 
               var toggle = this.querySelector('.faq-toggle');
               if (!toggle) return;
@@ -3198,16 +3104,8 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         var playBtn = document.getElementById('fbn-play-btn');
         if (!video || !playBtn) return;
 
-        var fbnCard = video.closest('.tools-card');
-
-        function setFbnPlayingLayout(on) {
-          video.classList.toggle('tools-thumb-video-playing', on);
-          if (fbnCard) fbnCard.classList.toggle('tools-card-fbn-playing', on);
-        }
-
         playBtn.addEventListener('click', function() {
           video.controls = true;
-          setFbnPlayingLayout(true);
           var playPromise = video.play();
           if (playPromise && typeof playPromise.catch === 'function') {
             playPromise.catch(function() {});
@@ -3217,21 +3115,18 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         video.addEventListener('play', function() {
           video.controls = true;
           playBtn.hidden = true;
-          setFbnPlayingLayout(true);
         });
 
         video.addEventListener('pause', function() {
-          video.controls = false;
+          video.controls = true;
           if (video.currentTime < video.duration) {
             playBtn.hidden = false;
           }
-          setFbnPlayingLayout(false);
         });
 
         video.addEventListener('ended', function() {
           video.controls = false;
           playBtn.hidden = false;
-          setFbnPlayingLayout(false);
         });
       });
 
@@ -3297,6 +3192,7 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
       }
 
       function blogScroll(dir) {
+        if (typeof logevent === 'function') logevent('scroll_blog_carousel', 'index.php');
         var el = document.getElementById('blog-scroll');
         if (!el) return;
         var cardWidth = 490; // blog card 470px + 20px gap
@@ -4714,11 +4610,13 @@ video.tools-thumb-video::-webkit-media-controls-overflow-menu-button {
         var tY = 'After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.';
         var tM = 'After your free trial, the monthly subscription is ₹300/mo and automatically renews each month until cancelled.';
         function pickMonthly() {
+          if (typeof logevent === 'function') logevent('click_monthly', 'index.php');
           y.classList.add('sub-plan-off');
           m.classList.add('sub-plan-on');
           d.textContent = tM;
         }
         function pickYearly() {
+          if (typeof logevent === 'function') logevent('click_yearly', 'index.php');
           y.classList.remove('sub-plan-off');
           m.classList.remove('sub-plan-on');
           d.textContent = tY;
