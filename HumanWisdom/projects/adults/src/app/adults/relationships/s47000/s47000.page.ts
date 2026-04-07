@@ -164,6 +164,23 @@ export class S47000Page implements OnInit,OnDestroy {
   routeJournal(){
     this.router.navigate(['/adults/journal'])
   }
+
+  navigateToEvent() {
+    console.log('S47000Page: navigateToEvent() called');
+    
+    // Set navigation context before navigating to event
+    const navFrom = '/adults/relationships/s47000';
+    localStorage.setItem('NaviagtedFrom', navFrom);
+    console.log('Set NaviagtedFrom to:', navFrom);
+    
+    // Also set a backup context
+    localStorage.setItem('relationshipsEventSource', 'true');
+    console.log('Set relationshipsEventSource to true');
+    
+    // Navigate to the event
+    console.log('Navigating to staging event URL');
+    window.location.href = 'https://staging.happierme.app/adults/curated/youtubelink/gwg-B7c2DwY%3Dvncbxdfchgvxd';
+  }
  /*  goBack(){
     this.location.back()
   } */
