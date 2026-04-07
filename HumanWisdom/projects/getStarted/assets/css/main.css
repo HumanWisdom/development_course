@@ -2298,7 +2298,7 @@ a {
 }
 
 .rmb80px {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .mr8px {
@@ -3306,9 +3306,13 @@ audio::-webkit-media-controls-enclosure {
   padding: 4px 16px;
   height: 40px;
   border-radius: 21px;
-  background: rgba(232, 168, 128, 0.20);
+  background: rgba(238, 161, 112, 0.2);
+
+  /* background: rgba(232, 168, 128, 0.20); */
   border: 0;
   text-align: center;
+    text-transform: uppercase;
+
   cursor: auo;
 }
 
