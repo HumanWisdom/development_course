@@ -103,7 +103,7 @@
           </ul>
           <div id="PricingSelectBtnHomePage">
             <a href="signup.php" id="mind-get-started-link">
-              <button class="cta-button btn-gradient">
+              <button type="button" class="cta-button btn-gradient mind-cta-gradient">
                 <span class="btn-txt">Let's get started!</span>
               </button>
             </a>
@@ -123,7 +123,7 @@
             loading="lazy">
   </div>
     <!-- First Testimonial -->
-    <div class="testimonial-card">
+    <div class="testimonial-card bg-color">
       <div class="testimonial-card-section">
         <div class="quotation-comma">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" alt="quotation"
@@ -146,7 +146,7 @@
     </div>
 
     <!-- Second Testimonial -->
-    <div class="testimonial-card testimonial-card2">
+    <div class="testimonial-card testimonial-card2 bg-color">
       <div class="testimonial-card-section2">
         <div class="quotation-comma testimonial-comma2">
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" alt="quotation"
@@ -176,7 +176,7 @@
   <div class="section-headernew mob-section section-text section-text1">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0.7 text-color fs_18px_mobile">
+        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile">
           Findings from a survey of 1,000 HappierMe app users </h2>
       </div>
     </div>
@@ -184,7 +184,7 @@
 
   <!-- section end -->
 
-  <div class="row center_flex bg-circle" data-aos="fade-up" data-aos-delay="200">
+  <div class="row center_flex bg_circle_mind" data-aos="fade-up" data-aos-delay="200">
     <div class="scroller-container">
       <div>
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
@@ -203,7 +203,7 @@
   <div class="section-headernew mob-section m-top54">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 text-wider">
-        <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0.7 fs_18px_mobile section-text section-text2 text-color">
+        <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile section-text section-text2">
           Discover HappierMe in just 1 minute
         </h2>
       </div>
