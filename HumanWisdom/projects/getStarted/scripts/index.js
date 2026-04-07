@@ -29,17 +29,25 @@ function logevent(e, t, extra) {
 function afterLogNavigate(run, delayMs) {
     setTimeout(run, delayMs == null ? 220 : delayMs);
 }
-/** Topics section ("Find out how HappierMe can help you") — modal open rows */
-(function initTopicsHelpGa() {
-    var grid = document.querySelector(".div-7 .div-8");
-    if (!grid) return;
-    grid.addEventListener("click", function (e) {
-      var row = e.target.closest(".div-10[data-ga-event]");
-      if (!row) return;
-      var name = row.getAttribute("data-ga-event");
-      if (name) logevent(name, "index.php");
-    });
-    })();
+/** Topics section ("Find out how HappierMe can help you") — modal open rows.
+ * Runs after DOM is ready; uses capture on document so logging runs even if inner handlers stop propagation. */
+function initTopicsHelpGa() {
+    document.addEventListener(
+        "click",
+        function (e) {
+            var row = e.target.closest(".div-7 .div-8 .div-10[data-ga-event]");
+            if (!row) return;
+            var name = row.getAttribute("data-ga-event");
+            if (name) logevent(name, "index.php");
+        },
+        true
+    );
+}
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTopicsHelpGa);
+} else {
+    initTopicsHelpGa();
+}
 
 (function logHomepageView() {
     if (document.getElementById("happiermeTryForFree")) {
