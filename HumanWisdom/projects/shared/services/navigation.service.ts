@@ -210,6 +210,30 @@ export class NavigationService {
        return url;
     }
 
+    const prefix = SharedService.getprogramName();
+    const currentUrl = this.router.url;
+
+    // Explicit Context Fallbacks (Highest Priority on Empty History)
+    // 5. Blogs: Blog article -> Blog listing -> Previous page
+    if (currentUrl.includes('/blog-article')) {
+      console.log("Fallback: Blog article -> Blog listing");
+      return `/${prefix}/blogs`;
+    }
+    if (currentUrl.includes('/blogs')) {
+      console.log("Fallback: Blog listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 6. Events: Event inner page -> Events listing -> Search
+    if (currentUrl.includes('/events/event')) {
+      console.log("Fallback: Event inner -> Events listing");
+      return `/${prefix}/events`;
+    }
+    if (currentUrl.includes('/events')) {
+      console.log("Fallback: Events listing -> Search");
+      return `/${prefix}/search`;
+    }
+
     // Context-driven navigation priority fallback for empty history
     if (this.lastSource === 'pathway' || this.lastSource === 'search' || this.lastSource === 'video') {
       const sourceIsPathway = this.lastSource === 'pathway';
@@ -229,10 +253,8 @@ export class NavigationService {
         return navFrom;
       }
       
-      const prefix = SharedService.getprogramName();
       return `/${prefix}/search`;
     }
-
 
     // Fallback if history is empty
     let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
@@ -241,9 +263,6 @@ export class NavigationService {
     }
 
     // Default Fallback Rules (when no history or valid NavigatedFrom exists)
-    const prefix = SharedService.getprogramName();
-    const currentUrl = this.router.url;
-
     // 1. Microlearning: Inner -> Listing -> Search
     if (currentUrl.includes('/micro-learning/inner')) {
       console.log("Fallback: ML Inner -> Listing");
@@ -271,16 +290,6 @@ export class NavigationService {
     if (isSession && segments.length > 2) {
       console.log("Fallback: Session -> Index");
       return segments.slice(0, -1).join('/');
-    }
-
-    // 4. Events: Event inner page -> Events listing -> Previous page
-    if (currentUrl.includes('/events/event')) {
-      console.log("Fallback: Event inner -> Events listing");
-      return `/${prefix}/events`;
-    }
-    if (currentUrl.includes('/events')) {
-      console.log("Fallback: Events listing -> Search");
-      return `/${prefix}/search`;
     }
 
     // 5. Module TOC / Index -> Search (If no pathway context was found)
