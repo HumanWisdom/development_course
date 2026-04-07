@@ -193,7 +193,7 @@
             text-decoration: none !important;
           }
         </style>
-        <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" href="https://onelink.to/qsptex">Try for free</a>
+        <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/qsptex">Try for free</a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       </div>

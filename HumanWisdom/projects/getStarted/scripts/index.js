@@ -15,15 +15,37 @@ const url = "https://happierme.app";
 function gtag() {
     dataLayer.push(arguments);
 }
- function logevent(e, t) {
-    gtag("event", e, { screen_name: t });
+function logevent(e, t, extra) {
+    var p = { screen_name: t };
+    if (extra && typeof extra === "object") {
+        for (var k in extra) {
+            if (Object.prototype.hasOwnProperty.call(extra, k)) p[k] = extra[k];
+        }
+    }
+    gtag("event", e, p);
 }
 
 /** Defer full-page navigation so GA4/gtag can send the event before unload (tabs work because they do not navigate). */
 function afterLogNavigate(run, delayMs) {
     setTimeout(run, delayMs == null ? 220 : delayMs);
 }
+/** Topics section ("Find out how HappierMe can help you") — modal open rows */
+(function initTopicsHelpGa() {
+    var grid = document.querySelector(".div-7 .div-8");
+    if (!grid) return;
+    grid.addEventListener("click", function (e) {
+      var row = e.target.closest(".div-10[data-ga-event]");
+      if (!row) return;
+      var name = row.getAttribute("data-ga-event");
+      if (name) logevent(name, "index.php");
+    });
+    })();
 
+(function logHomepageView() {
+    if (document.getElementById("happiermeTryForFree")) {
+        logevent("homepage_view", "index.php");
+    }
+})();
 
 setTimeout(() => {
     console.log("Removing preloader...");
@@ -840,6 +862,7 @@ function testNewsletterPopup() {
     modalManager.openModal('product_view', {
         handleUI: true,
         onShow: () => {
+            logevent("newsletter_popup", "index.php");
             if (NEWSLETTER_CONFIG.debug) {
                 console.log("Newsletter modal shown successfully");
             }
@@ -877,15 +900,18 @@ function initializeNewsletterPopup() {
         const modalNewsLetterForm = document.getElementById("modal-news-contact-form");
         if (modalNewsLetterForm) {
             modalNewsLetterForm.addEventListener("click", () => {
+                logevent("click_subscribe", "index.php");
                 const email = document.getElementById("modal-news-email").value;
                 const name = document.getElementById("modal-news-name").value;
                 const o = { Name: name, EmailID: email };
               
                 if (!(email && name && "" != email && "" != name)) {
+                    logevent("subscribe_failure", "index.php");
                     alert("All fields must be filled out");
                     return false;
                 }
                 if(!validateEmail(email)){
+                    logevent("subscribe_failure", "index.php");
                     alert("Please enter valid email");
                     return false;
                 }
@@ -900,13 +926,13 @@ function initializeNewsletterPopup() {
                     document.getElementById("modal-news-email").value = "";
                     document.getElementById("modal-news-name").value = "";
                     alert(e?.Message ? e.Message : e);
-                    
-                    // Close modal after successful submission using ModalManager
+                    logevent("subscribe_success", "index.php");
                     modalManager.closeModal('product_view');
                 })
                 .catch((e) => {
                     let content = e['error'] ? e['error']['Message'] : 'An error occurred';
                     console.error("Error:", e);
+                    logevent("subscribe_failure", "index.php");
                     alert(content);
                 });
             });
@@ -935,6 +961,7 @@ function initializeNewsletterPopup() {
         modalManager.openModal('product_view', {
             handleUI: true,
             onShow: () => {
+                logevent("newsletter_popup", "index.php");
                 if (NEWSLETTER_CONFIG.debug) {
                     console.log("Newsletter modal shown successfully");
                 }
@@ -1034,6 +1061,16 @@ function setupNewsletterTiming() {
 // Initialize newsletter timing system
 setupNewsletterTiming();
 
+(function initNewsletterCloseGa() {
+    var m = document.getElementById("product_view");
+    if (!m) return;
+    m.addEventListener("click", function (e) {
+        if (e.target.closest("[data-bs-dismiss=\"modal\"]")) {
+            logevent("newsletter_close", "index.php");
+        }
+    });
+})();
+
 // Event delegation for "See all posts" and "Find out more" - ensures navigation works even if direct handlers fail
 document.addEventListener("click", function (evt) {
     const link = evt.target.closest("a#viewAllBlogs, a#view-all-coaches");
@@ -1041,9 +1078,9 @@ document.addEventListener("click", function (evt) {
         evt.preventDefault();
         evt.stopPropagation();
         if (link.id === "viewAllBlogs") {
-            logevent("click_View_All_Blogs_web", "index.php");
+            logevent("click_see_all_posts", "index.php");
         } else if (link.id === "view-all-coaches") {
-            logevent("click_view_all_coaches", "index.php");
+            logevent("click_footer_link", "index.php", { link_name: "view_all_coaches" });
         }
         var dest = link.getAttribute("href") || link.href;
         afterLogNavigate(function () {
@@ -1069,13 +1106,20 @@ function updateNewsletterConfig(newConfig) {
     }
 }
 
+const headerTryForFree = document.getElementById("headerTryForFree");
+if (headerTryForFree) {
+    headerTryForFree.addEventListener("click", function () {
+        logevent("click_tryforfree", "index.php");
+    });
+}
+
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
     loginClick.addEventListener('click', function (e) {
         if (e.target.closest("a")) e.preventDefault();
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
-        logevent("click_login_header_web", "index.php");
+        logevent("click_login", "index.php");
         afterLogNavigate(function () {
             window.location.href = "../pages/splash_options.php";
         });
@@ -1090,7 +1134,7 @@ if (happiermeTryForFree) {
         e.preventDefault();
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
-        logevent("click_start_your_free_trial_now", "index.php");
+        logevent("click_try_happierme_for_free", "index.php");
         afterLogNavigate(function () {
             window.location.href = happiermeTryForFree.getAttribute("href") || "../pages/splash_options.php";
         });
@@ -1119,7 +1163,7 @@ if (pricingSelectBtn) {
         if (innerA) e.preventDefault();
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
-        logevent("start_your_free_trial_button_click", "index.php");
+        logevent("click_start_free_trial", "index.php");
         var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
         afterLogNavigate(function () {
             window.location.href = href;
@@ -1134,7 +1178,7 @@ if (PricingSelectBtn1) {
         if (innerA) e.preventDefault();
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
-        logevent("start_your_free_trial_button_click", "index.php");
+        logevent("click_start_free_trial", "index.php");
         var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
         afterLogNavigate(function () {
             window.location.href = href;
@@ -1151,7 +1195,7 @@ if (OllyChatBtn) {
         localStorage.setItem('chat-bot',true);
          localStorage.setItem('pricing',false);
         localStorage.setItem('login',false);
-        logevent("start_your_free_trial_button_click", "index.php");
+        logevent("click_olly_chat", "index.php");
         afterLogNavigate(function () {
             window.location.href = OllyChatBtn.getAttribute("href") || "../pages/splash_options.php";
         });
@@ -1165,7 +1209,7 @@ if (PricingSelectBtnHomePage) {
         if (innerA) e.preventDefault();
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
-        logevent("start_your_free_trial_button_click", "home.php");
+        logevent("click_start_free_trial", "home.php");
         var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
         afterLogNavigate(function () {
             window.location.href = href;
@@ -1257,7 +1301,7 @@ element && ("Desktop" == type ? element.classList.add("mb15px") : element.classL
 const requestDemoForWork = document.getElementById("requestDemoForWork");
 requestDemoForWork &&
     requestDemoForWork.addEventListener("click", function (e) {
-        logevent("click_Request_a_demo", "work.php");
+        logevent("click_demo_submit", "work.php");
     }),
     setTimeout(() => {
         var e = document.getElementById("AboutUs");
@@ -1265,7 +1309,7 @@ requestDemoForWork &&
             e.addEventListener(
                 "click",
                 function (e) {
-                    logevent("click_AboutUs", "index.php");
+                    logevent("click_aboutus", "index.php");
                     setActiveNav("AboutUs");
                     localStorage.setItem("activeTab", "aboutUs"), (window.location.href = "../pages/about_us.php");
                 },
@@ -1276,14 +1320,17 @@ requestDemoForWork &&
             t.addEventListener(
                 "click",
                 function (e) {
-                    logevent("click_blogs", "index.php");
+                    logevent("click_blog", "index.php");
                     setActiveNav("blogs");
                     localStorage.setItem("activeTab", "blogs"), (window.location.href = "../blogs/blog_index.php");
                 },
                 !1
             );
         var n = document.getElementById("organisation");
-        n && n.addEventListener("click", function (e) {}, !1);
+        n &&
+            n.addEventListener("click", function () {
+                logevent("click_for_organisations", "index.php");
+            }, !1);
         function attachSubnavClick(id, handler) {
             var o = document.getElementById(id);
             o && o.addEventListener("click", handler, !1);
@@ -1292,7 +1339,7 @@ requestDemoForWork &&
         }
         attachSubnavClick("work", function (e) {
             localStorage.setItem("activeTab", "org-work"),
-            logevent("click_Happierme_For_Work", "index.php"),
+            logevent("click_workplace_card", "index.php", { source: "header_nav" }),
             setActiveNav("work");
             setActiveNav("organisation");
             (window.location.href = "../pages/work.php");
@@ -1301,12 +1348,12 @@ requestDemoForWork &&
             localStorage.setItem("activeTab", "org-work"), 
             setActiveNav("education");
             setActiveNav("organisation");
-            logevent("click_Happierme_For_education", "index.php"),
+            logevent("click_education_card", "index.php", { source: "header_nav" }),
             (window.location.href = "../pages/education.php");
         });
         attachSubnavClick("healthcare", function (e) {
             localStorage.setItem("activeTab", "org-healthcare"),
-            logevent("click_Happierme_For_healthcare", "index.php"),
+            logevent("click_healthcare_card", "index.php", { source: "header_nav" }),
             setActiveNav("organisation");
             (window.location.href = "../pages/healthcare.php");
         });
@@ -1318,7 +1365,7 @@ requestDemoForWork &&
                     e.preventDefault();
                     localStorage.setItem("activeTab", "pricing"), 
                     setActiveNav("pricing");
-                    logevent("Click_Pricing", "index.php#div_subscription");
+                    logevent("click_pricing", "index.php#div_subscription");
                     
                     // Check if we're already on index.php
                     if (window.location.pathname.includes("index.php")) {
@@ -1340,7 +1387,7 @@ requestDemoForWork &&
             );
         attachSubnavClick("teenagersHeaderClick", function () {
             localStorage.setItem("programType", "11"),
-            logevent("click_teenagers_click", "index.php"),
+            logevent("click_teenagers", "index.php"),
             setActiveNav("teenagersHeaderClick");
             (window.location.href = "../pages/teenagers.php");
         });
@@ -1400,7 +1447,7 @@ teenagers &&
 var viewAllSucessStories = document.getElementById("viewallsuccessstories");
 viewAllSucessStories && viewAllSucessStories.addEventListener("click", function (e) {
     e.preventDefault();
-    logevent("click_ViewAll_Success_Stories", "index.php");
+    logevent("click_success_stories_link", "index.php");
     var dest = viewAllSucessStories.getAttribute("href") || url + "/adults/testimonials";
     afterLogNavigate(function () {
         window.location.href = dest;
@@ -1422,16 +1469,18 @@ function closeElement() {
 
 requestDemo &&
     requestDemo.addEventListener("click", () => {
-        var e = window.location.href;
-        e.includes("work.php") && logevent("click_Request_a_demo", "work.php"),
-            e.includes("healthcare.php") && logevent("click_Request_a_demo", "healthcare.php"),
-            e.includes("education.php") && logevent("click_Request_a_demo", "education.php");
+        var page = window.location.href;
+        page.includes("work.php") && logevent("click_demo_submit", "work.php"),
+            page.includes("healthcare.php") && logevent("click_demo_submit", "healthcare.php"),
+            page.includes("education.php") && logevent("click_demo_submit", "education.php");
         const t = document.getElementById("email").value,
             n = document.getElementById("name").value,
             o = document.getElementById("company").value,
             a = document.getElementById("country").value;
+        var screen = page.includes("work.php") ? "work.php" : page.includes("healthcare.php") ? "healthcare.php" : "education.php";
         if (!(t && n && o && a && "" != n && "" != t && "" != o && "" != a)) return alert("All fields must be filled out"), !1;
         if(!validateEmail(t)){
+            logevent("demo_form_failure", screen, { reason: "invalid_email" });
             return alert("Please enter valid email"), !1;
         }
         const i = { Email_Id: "team@happierme.app", Subject: "Request a demo", Body: `Name : ${n} Company: ${o} Country :${a}  Email :${t}` };
@@ -1443,10 +1492,13 @@ requestDemo &&
                     (document.getElementById("name").value = ""),
                     (document.getElementById("company").value = ""),
                     (document.getElementById("country").value = ""),
+                    logevent("demo_form_success", screen),
                     alert("Form submitted successfully!");
             })
             .catch((e) => {
-                console.error("Error:", e), alert("An error occurred. Please try again.");
+                console.error("Error:", e),
+                    logevent("demo_form_failure", screen, { reason: "server" }),
+                    alert("An error occurred. Please try again.");
             });
     });
 const nfsnContactForm = document.getElementById("nfsn-contact-form");
@@ -1470,25 +1522,72 @@ nfsnContactForm &&
         const e = document.getElementById("vid");
         e &&
             e.addEventListener("play", function () {
-                logevent("click_play_app_preview_video", "index.php"), console.log("Video play button was clicked");
+                logevent("click_play_video", "index.php"), console.log("Video play button was clicked");
             });
         const t = document.getElementById("homeVideo");
         t &&
             t.addEventListener("play", function () {
-                logevent("click_play_video_home", "index.php"), console.log("Video play button was clicked");
+                logevent("click_video_play", "index.php"), console.log("Video play button was clicked");
             });
         const n = document.getElementById("teenagerVideo");
         n &&
             n.addEventListener("play", function () {
-                logevent("click_Video_play_teenagers", "teenagers.php"), console.log("Video play button was clicked");
+                logevent("click_video_play", "teenagers.php"), console.log("Video play button was clicked");
             });
+        var fbn = document.getElementById("fbn-video");
+        if (fbn) {
+            var lastMuted = fbn.muted;
+            fbn.addEventListener("pause", function () {
+                if (!fbn.ended) fbn._gaResumeNext = true;
+                if (!fbn.ended) logevent("pause_video", "index.php");
+            });
+            fbn.addEventListener("play", function () {
+                if (fbn._gaResumeNext) {
+                    logevent("resume_video", "index.php");
+                    fbn._gaResumeNext = false;
+                } else {
+                    logevent("click_play_video", "index.php");
+                }
+            });
+            fbn.addEventListener("ended", function () {
+                logevent("complete_video", "index.php");
+            });
+            fbn.addEventListener("seeked", function () {
+                logevent("seek_video", "index.php");
+            });
+            fbn.addEventListener("volumechange", function () {
+                if (fbn.muted !== lastMuted) {
+                    lastMuted = fbn.muted;
+                    logevent("mute_video_toggle", "index.php", { muted: fbn.muted });
+                }
+            });
+            var fbnWasFs = false;
+            document.addEventListener("fullscreenchange", function () {
+                var fs = document.fullscreenElement;
+                if (fs && fs.id === "fbn-video") {
+                    fbnWasFs = true;
+                    logevent("on_video_fullscreen", "index.php");
+                } else if (!fs && fbnWasFs) {
+                    fbnWasFs = false;
+                    logevent("off_video_fullscreen", "index.php");
+                }
+            });
+        }
+        ["aud1", "aud2"].forEach(function (aid) {
+            var aud = document.getElementById(aid);
+            if (aud) {
+                aud.addEventListener("play", function () {
+                    logevent("click_play_audio", "index.php", { audio_id: aid });
+                });
+            }
+        });
         var o = document.getElementById("viewAllBlogs");
         o &&
             o.addEventListener(
                 "click",
                 function (e) {
                     e.preventDefault();
-                    logevent("click_View_All_Blogs_web", "index.php");
+                    logevent("click_see_all_posts", "index.php");
                     var dest = this.getAttribute("href") || url + "/adults/blogs";
                     afterLogNavigate(function () {
                         window.location.href = dest;
@@ -1508,29 +1607,29 @@ nfsnContactForm &&
                              e.startsWith("openInApp")) {
                              evt.preventDefault();
                          }
-                         "feelbetterNow" == e || "feelbetterNow-tab" == e ? logevent("click_Feel_Better_Now_web", "index.php")
-                        : "pathWay" == e || "pathWay-tab" == e ? logevent("click_Pathway_web", "index.php")
-                        : "journal" == e || "journal-tab" == e ? logevent("click_Journal_web", "index.php")
-                        : "HapinessScore" == e || "HapinessScore-tab" == e ? logevent("click_Happiness_Score_web", "index.php")
-                        : "podcast" == e || "podcast-tab" == e ? logevent("click_Podcast_web", "index.php")
+                         "feelbetterNow" == e || "feelbetterNow-tab" == e ? logevent("click_feel_better_now", "index.php")
+                        : "pathWay" == e || "pathWay-tab" == e ? logevent("click_guided_programs", "index.php")
+                        : "journal" == e || "journal-tab" == e ? logevent("click_journal", "index.php")
+                        : "HapinessScore" == e || "HapinessScore-tab" == e ? logevent("click_wellness_score", "index.php")
+                        : "podcast" == e || "podcast-tab" == e ? logevent("click_podcast", "index.php")
                         : "appleStore"== e ? (logevent("click_apple_store_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567"}))
                         : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US"}))
-                        : "community" == e || "community-tab" == e ? logevent("click_Community_web", "index.php")
-                        : "youtubeIntro" == e ? logevent("click_youtube_intro_web", "index.php")
+                        : "community" == e || "community-tab" == e ? logevent("click_community", "index.php")
+                        : "youtubeIntro" == e ? logevent("click_youtube_redirect", "index.php")
                         :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/intro/intro-carousel"}))
                         : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/teenagers/intro-carousel"}))
-                        : "findoutMore" == e ? (logevent("click_find_out_More_web", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/teenagers.php"}))
-                        : "partnership" == e ? (logevent("click_partnership_web", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
+                        : "findoutMore" == e ? (logevent("click_find_out_more", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/teenagers.php"}))
+                        : "partnership" == e ? (logevent("click_partnership", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
                         : "whywecreatedvideo" == e ? (logevent("whywecreatedvideo", "index.php"))
-                        :"partnershipfooter" == e ? (logevent("click_partnership_footer_web", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
-                         :"view-all-coaches" == e ? (logevent("click_view_all_coaches", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/adults/coach"}))
+                        :"partnershipfooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "partnership" }) ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
+                         :"view-all-coaches" == e ? (logevent("click_footer_link", "index.php", { link_name: "view_all_coaches" }) ,afterLogNavigate(function(){window.location.href="https://happierme.app/adults/coach"}))
                         : "openInApp1_1" == e || "openInApp1_2" == e ? (logevent("click_open_in_app_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"}))
                         : "openInApp2_1" == e || "openInApp2_2" == e ? (logevent("click_open_in_app_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"}))
                         : "openInApp3_1" == e  || "openInApp3_2" == e ? (logevent("click_open_in_app_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"}))
                         : "exploreAppWeb" == e ? (logevent("click_explore_on_app_web", "index.php") , afterLogNavigate(function(){ window.location.href="https://happierme.app/adults/feel-better-now"}))
-                        : "ourStory" == e ? (logevent("click_our_story_footer_web", "index.php") ,   afterLogNavigate(function(){window.location.href = "../pages/about_us.php"}))
-                        : "testimonialFooter" == e ? (logevent("click_testimonial_footer_web", "index.php") , afterLogNavigate(function(){window.location.href = "https://happierme.app/adults/testimonials"}))
-                        : "contactUsFooter" == e ? (logevent("click_contact_us_footer_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/contact-us"})) : ''
+                        : "ourStory" == e ? (logevent("click_footer_link", "index.php", { link_name: "our_story" }) ,   afterLogNavigate(function(){window.location.href = "../pages/about_us.php"}))
+                        : "testimonialFooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "success_stories" }) , afterLogNavigate(function(){window.location.href = "https://happierme.app/adults/testimonials"}))
+                        : "contactUsFooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "contact_us" }) , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/contact-us"})) : ''
                         
                 });
         });
@@ -1575,7 +1674,7 @@ function getIsoCode() {
     return "$" == this.pricingModel.CurSymbol ? ` (${this.pricingModel.ISOCode})` : "";
 }
 
-// Newsletter form handler for page section
+// Newsletter form handler for page section (events 1–5 apply to modal popup only; no duplicate GA here)
 const pageNewsLetterForm = document.getElementById("page-news-contact-form");
 pageNewsLetterForm && pageNewsLetterForm.addEventListener("click", () => {
           const  email = document.getElementById("page-news-email").value;
@@ -1589,11 +1688,9 @@ pageNewsLetterForm && pageNewsLetterForm.addEventListener("click", () => {
             fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
                 .then((e) => e.json())
                 .then((e) => {
-                    // (document.getElementById("page-news-email").value = ""), (document.getElementById("page-news-name").value = ""),alert( e?.Message ? e.Message : e );
                     document.getElementById("page-news-email").value = "";
                     document.getElementById("page-news-name").value = "";
                     alert(e?.Message ? e.Message : e);
-
                 })
                 .catch((e) => {
                     let content = e['error'] ? e['error']['Message'] : 'An error occurred';
@@ -1607,7 +1704,93 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 
+/** Index-only: org cards, coaches/blog, blog section view, footer/social (matches webpage event list). */
+function initIndexPageGa() {
+    var orgMap = { orgCardWorkplace: "click_workplace_card", orgCardEducation: "click_education_card", orgCardHealthcare: "click_healthcare_card" };
+    Object.keys(orgMap).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener("click", function (e) {
+            e.preventDefault();
+            logevent(orgMap[id], "index.php", { source: "home_card" });
+            var href = el.getAttribute("href");
+            afterLogNavigate(function () { window.location.href = href; });
+        });
+    });
+
+    var coachScroll = document.getElementById("coaches-scroll");
+    if (coachScroll) {
+        coachScroll.addEventListener("click", function (e) {
+            var card = e.target.closest("a.coach-card");
+            if (!card) return;
+            var nameEl = card.querySelector(".coach-name");
+            var cn = nameEl ? nameEl.textContent.trim() : "";
+            e.preventDefault();
+            logevent("click_coach_name", "index.php", { coach_name: cn });
+            afterLogNavigate(function () { window.location.href = card.href; });
+        });
+    }
+
+    var blogScrollEl = document.getElementById("blog-scroll");
+    if (blogScrollEl) {
+        blogScrollEl.addEventListener("click", function (e) {
+            var card = e.target.closest("a.blog-card");
+            if (!card) return;
+            var tEl = card.querySelector(".blog-title");
+            var bt = tEl ? tEl.textContent.trim() : "";
+            e.preventDefault();
+            logevent("click_blog_card1", "index.php", { blog_title: bt });
+            afterLogNavigate(function () { window.location.href = card.href; });
+        });
+    }
+
+    var coachesMore = document.getElementById("coachesFindOutMore");
+    if (coachesMore) {
+        coachesMore.addEventListener("click", function (e) {
+            e.preventDefault();
+            logevent("click_find_out_more", "index.php", { section: "coaches" });
+            var h = coachesMore.getAttribute("href");
+            afterLogNavigate(function () { window.location.href = h; });
+        });
+    }
+
+    var blogSec = document.getElementById("exploreBlogSection");
+    if (blogSec && "IntersectionObserver" in window) {
+        var io = new IntersectionObserver(
+            function (ents) {
+                ents.forEach(function (ent) {
+                    if (ent.isIntersecting) {
+                        logevent("view_blog_section", "index.php");
+                        io.disconnect();
+                    }
+                });
+            },
+            { threshold: 0.25 }
+        );
+        io.observe(blogSec);
+    }
+
+    document.querySelectorAll(".dfooter_social_links a").forEach(function (a) {
+        a.addEventListener("click", function () {
+            var img = a.querySelector("img");
+            var alt = img ? img.getAttribute("alt") || "social" : "social";
+            logevent("click_social_icon", "index.php", { network: alt });
+        });
+    });
+
+    document.querySelectorAll(".dfooter .dfooter_links a[href]").forEach(function (a) {
+        if (a.id && ["ourStory", "testimonialFooter", "partnershipfooter", "contactUsFooter"].indexOf(a.id) >= 0) return;
+        var href = a.getAttribute("href");
+        if (!href || href === "#") return;
+        a.addEventListener("click", function () {
+            var label = (a.textContent || "").trim().replace(/\s+/g, " ").slice(0, 80);
+            logevent("click_footer_link", "index.php", { link_name: label || href });
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    initIndexPageGa();
     // Convert existing accordion to Bootstrap 5.3
     convertAccordionToBootstrap53();
     
