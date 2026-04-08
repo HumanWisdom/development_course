@@ -338,6 +338,25 @@ export class NavigationService {
       return `/${prefix}/search`;
     }
 
+    // 8. Coach: Inner -> Index -> Search
+    if (currentUrl.includes('/coach/')) {
+      console.log("Fallback: Coach Inner -> Listing");
+      return `/${prefix}/coach`;
+    }
+    if (currentUrl.includes('/coach')) {
+      console.log("Fallback: Coach Listing -> Search");
+      return `/${prefix}/search`;
+    }
+    // 9. Wisdom Stories: Inner -> Listing -> Search
+    if (currentUrl.includes('/wisdom-stories/')) {
+      console.log("Fallback: Wisdom Stories Inner -> Listing");
+      return `/${prefix}/wisdom-stories`;
+    }
+    if (currentUrl.includes('/wisdom-stories')) {
+      console.log("Fallback: Wisdom Stories Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
     // Context-driven navigation priority fallback for empty history
     if (this.lastSource === 'pathway' || this.lastSource === 'search' || this.lastSource === 'video') {
       const sourceIsPathway = this.lastSource === 'pathway';
