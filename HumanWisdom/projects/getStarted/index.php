@@ -7,8 +7,8 @@ require_once('./includes/security_config.php');
 <html lang="en">
  <head>
   <title>HappierMe: For Teens & Adults</title>
-  <meta property="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
-  <meta property="description"
+  <meta name="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
+  <meta name="description"
     content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
   <meta name="keywords"
     content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
@@ -63,7 +63,7 @@ require_once('./includes/security_config.php');
     <!-- LCP Hero images preloading -->
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/bannerind.svg" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/bannermobile11.svg" />
-
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" fetchpriority="high">
     <link rel="stylesheet" href="assets/css/index-inline.css" />
 
   <script>
