@@ -29,19 +29,30 @@ function logevent(e, t, extra) {
 function afterLogNavigate(run, delayMs) {
     setTimeout(run, delayMs == null ? 220 : delayMs);
 }
-/** Topics section ("Find out how HappierMe can help you") — modal open rows.
- * Runs after DOM is ready; uses capture on document so logging runs even if inner handlers stop propagation. */
+/** Topics section ("Find out how HappierMe can help you") — one GA event per topic row (binds to row id so clicks on inner text/img always log). */
+var TOPICS_HELP_GA_MAP = [
+    { id: "topic-help-mental-wellbeing", event: "click_mental_wellbeing" },
+    { id: "topic-help-better-relationships", event: "click_better_relationships" },
+    { id: "topic-help-succeed-at-work", event: "click_succeed_at_work" },
+    { id: "topic-help-learn-meditation", event: "click_learn_meditation" },
+    { id: "topic-help-overcome-habits", event: "click_overcome_habits" },
+    { id: "topic-help-manage-emotions", event: "click_manage_emotions" },
+    { id: "topic-help-self-awareness", event: "click_self_awareness" },
+    { id: "topic-help-better-parenting", event: "click_better_parenting" },
+    { id: "topic-help-teenagers", event: "click_happierme_for_teenagers" }
+];
 function initTopicsHelpGa() {
-    document.addEventListener(
-        "click",
-        function (e) {
-            var row = e.target.closest(".div-7 .div-8 .div-10[data-ga-event]");
-            if (!row) return;
-            var name = row.getAttribute("data-ga-event");
-            if (name) logevent(name, "index.php");
-        },
-        true
-    );
+    TOPICS_HELP_GA_MAP.forEach(function (item) {
+        var el = document.getElementById(item.id);
+        if (!el) return;
+        el.addEventListener(
+            "click",
+            function () {
+                logevent(item.event, "index.php");
+            },
+            false
+        );
+    });
 }
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initTopicsHelpGa);
