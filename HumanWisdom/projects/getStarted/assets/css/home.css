@@ -506,7 +506,7 @@
 
     /* mind.php — “Let’s get started!” CTA only */
     .mind-cta-gradient {
-      background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
+     background: linear-gradient(180deg, #4267A5 0%, #183C79 100%) !important;
     }
 
     .mind-cta-gradient:hover,
