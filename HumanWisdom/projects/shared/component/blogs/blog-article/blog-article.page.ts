@@ -10,6 +10,7 @@ import { SharedService } from '../../../services/shared.service';
 import { OnboardingService } from '../../../services/onboarding.service';
 import { NavigationService } from "../../../services/navigation.service";
 import { LogEventService } from '../../../services/log-event.service';
+import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
@@ -227,7 +228,13 @@ export class BlogArticlePage {
   commentbottom() {
     this.logeventservice.logEvent('click_comment_icon');
     if (this.isLoggedIn) {
-      window.scrollTo(0, document.body.scrollHeight);
+      const commentSection = document.getElementById
+      ('commentSection');
+      if (commentSection){
+        commentSection.scrollIntoView({ behavior: 
+          'smooth',block:'start' });
+      }
+      // window.scrollTo(0, document.body.scrollHeight);
     } else {
       this.enablecancel = true;
       this.content = "Please Register to activate this feature";

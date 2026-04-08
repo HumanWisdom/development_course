@@ -35213,6 +35213,12 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   position: absolute;
   top: 20px;
   right: 20px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 }
 
 .ls_story_img {
