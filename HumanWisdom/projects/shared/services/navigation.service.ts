@@ -328,6 +328,16 @@ export class NavigationService {
       return `/${prefix}/search`;
     }
 
+    // 7. Feel Better Now: Inner -> Index -> Search
+    if (currentUrl.includes('/feel-better-now/')) {
+      console.log("Fallback: Feel Better Now Inner -> Index");
+      return `/${prefix}/feel-better-now`;
+    }
+    if (currentUrl.includes('/feel-better-now')) {
+      console.log("Fallback: Feel Better Now Index -> Search");
+      return `/${prefix}/search`;
+    }
+
     // Context-driven navigation priority fallback for empty history
     if (this.lastSource === 'pathway' || this.lastSource === 'search' || this.lastSource === 'video') {
       const sourceIsPathway = this.lastSource === 'pathway';
