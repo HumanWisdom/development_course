@@ -510,8 +510,9 @@
     }
 
     .mind-cta-gradient:hover,
-    .mind-cta-gradient:focus {
-      background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+    .mind-cta-gradient:focus,
+    .mind-cta-gradient:active {
+      background: linear-gradient(180deg, #2d5392 0%, #0e2e64 100%) !important;
     }
 
   
