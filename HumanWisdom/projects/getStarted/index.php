@@ -63,7 +63,7 @@ require_once('./includes/security_config.php');
     <!-- LCP Hero images preloading -->
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/bannerind.svg" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/bannermobile11.svg" />
-
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" fetchpriority="high">
     <link rel="stylesheet" href="assets/css/index-inline.css" />
 
   <script>
