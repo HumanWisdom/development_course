@@ -1,6 +1,8 @@
 import { HostListener, Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { Location } from '@angular/common';
 import { SharedService } from './shared.service';
+import { filter, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +11,21 @@ export class NavigationService {
   private history: string[] = [];
   public backClicked: boolean = false;
   private lastSource: string | null = null;
+  private isFirstNavigation = true;
+  private hasInjectedFindAnswersHistory = false;
+  private readonly FIND_ANSWERS_REGEX = /\/find-answers\/[\w-]+-a\d+(-at)?$/;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private location: Location) {
     this.lastSource = localStorage.getItem('lastNavSource');
+    this.setupFirstNavigationListener();
+  }
+  private setupFirstNavigationListener(): void {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      take(1)
+    ).subscribe(() => {
+      this.isFirstNavigation = false;
+    });
   }
 
   addToHistory(url: string, source: string | null = null) {
@@ -91,6 +105,86 @@ export class NavigationService {
 
     this.backClicked = false;
     SharedService.isModuleEnd = false;
+
+    // Handle direct navigation to Find Answers pages
+    this.handleFindAnswersDirectNavigation(url);
+  }
+  private handleFindAnswersDirectNavigation(url: string): void {
+    // Only process if it's a Find Answers answer page
+    if (!this.isFindAnswersAnswerPage(url)) {
+      return;
+    }
+
+    // Check if this is a direct entry (no Angular navigation history within app)
+    const isDirectEntry = this.isDirectEntryNavigation();
+    
+    if (isDirectEntry && !this.hasInjectedFindAnswersHistory) {
+      this.injectFindAnswersHistory(url);
+      this.hasInjectedFindAnswersHistory = true;
+    }
+  }
+  private isFindAnswersAnswerPage(url: string): boolean {
+    const cleanUrl = url.split('?')[0];
+    return this.FIND_ANSWERS_REGEX.test(cleanUrl);
+  }
+
+  private isDirectEntryNavigation(): boolean {
+    const navigation = this.router.getCurrentNavigation();
+    
+    // If trigger is imperative, it's programmatic navigation (not direct entry)
+    if (navigation?.trigger === 'imperative') {
+      return false;
+    }
+
+    // Check for Angular navigation state in history
+    const historyState = window.history.state;
+    const hasAngularState = historyState && 
+      (historyState.navigationId || historyState.ɵrouterPageId);
+
+    // If no Angular state in history, likely a direct entry
+    if (!hasAngularState && this.isFirstNavigation) {
+      return true;
+    }
+
+    // If internal history is empty and this is first navigation, it's direct entry
+    if (this.history.length === 0 && this.isFirstNavigation) {
+      return true;
+    }
+
+    return false;
+  }
+  private injectFindAnswersHistory(currentUrl: string): void {
+    const cleanUrl = currentUrl.split('?')[0];
+    const segments = cleanUrl.split('/');
+    const lastSegment = segments[segments.length - 1];
+    
+    // Extract category (e.g., "why-do-i" from "why-do-i-a12")
+    const match = lastSegment.match(/^([\w-]+)-a\d+/);
+    if (!match) return;
+    
+    const category = match[1];
+    const baseUrl = `/${segments[1]}`; // /adults or /teenagers
+    const findAnswersUrl = `${baseUrl}/find-answers`;
+    const categoryUrl = `${findAnswersUrl}/${category}`;
+    
+    try {
+      // Use replaceState and go to create proper history stack
+      // This ensures back button goes: current → category → find-answers
+      this.location.replaceState(findAnswersUrl);
+      this.location.go(categoryUrl);
+      this.location.go(currentUrl);
+
+      // Add these to internal history tracking
+      this.history.push(findAnswersUrl);
+      this.history.push(categoryUrl);
+      this.history.push(currentUrl);
+
+      console.log('[NavigationService] Injected Find Answers history:', {
+        stack: [findAnswersUrl, categoryUrl, currentUrl]
+      });
+    } catch (error) {
+      console.error('[NavigationService] Error injecting Find Answers history:', error);
+    }
   }
 
   /**
@@ -301,6 +395,24 @@ export class NavigationService {
        }
     }
 
+    if (currentUrl.includes('/find-answers/')) {
+      const lastSegment = segments[segments.length - 1];
+      // Check if it's an answer page (ends with -a<number> or -a<number>-at)
+      const isAnswerPage = /-a\d+(-at)?$/.test(lastSegment);
+      
+      if (isAnswerPage) {
+        const categoryMatch = lastSegment.match(/^([\w-]+)-a\d+/);
+        if (categoryMatch) {
+          const category = categoryMatch[1];
+          console.log(`Fallback: Find Answers Answer Page -> Category (${category})`);
+          return `/${prefix}/find-answers/${category}`;
+        }
+      } else if (lastSegment === 'why-do-i' || lastSegment === 'how-can-i') {
+        // If on category page, go to find-answers index
+        console.log("Fallback: Find Answers Category -> Index");
+        return `/${prefix}/find-answers`;
+      }
+    }
 
     console.log("Fallback: Dashboard");
     return SharedService.getDashboardUrls();

@@ -80,20 +80,9 @@ export class FeatureHeaderComponent implements OnInit {
 
 
   goBack() {
-    let historyLength = this.navigationService.getHistoryLength ? this.navigationService.getHistoryLength() : 0;
-    if (historyLength <= 1) {
-      this.router.navigate([SharedService.getDashboardUrls()]);
-      return;
-    }
-
     var url = this.navigationService.navigateToBackLink();
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
-      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-      if (navFrom && navFrom != null && navFrom != 'null') {
-        this.router.navigateByUrl(navFrom);
-      } else {
-        this.router.navigate([SharedService.getDashboardUrls()]);
-      }
+    if (url == null) {
+      this.location.back();
     } else {
       this.router.navigate([url]);
     }
