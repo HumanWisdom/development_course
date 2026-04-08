@@ -29,7 +29,19 @@ function logevent(e, t, extra) {
 function afterLogNavigate(run, delayMs) {
     setTimeout(run, delayMs == null ? 220 : delayMs);
 }
-/** Topics section modals — log after open so GA runs outside Bootstrap/ModalManager click handling (shown.bs.modal fires when modal is visible). */
+/** Topic tiles under .div-8 — GA event name per row id (index.php). */
+var TOPICS_HELP_ROW_GA = [
+    ["topic-help-mental-wellbeing", "click_mental_wellbeing"],
+    ["topic-help-better-relationships", "click_better_relationships"],
+    ["topic-help-succeed-at-work", "click_succeed_at_work"],
+    ["topic-help-learn-meditation", "click_learn_meditation"],
+    ["topic-help-overcome-habits", "click_overcome_habits"],
+    ["topic-help-manage-emotions", "click_manage_emotions"],
+    ["topic-help-self-awareness", "click_self_awareness"],
+    ["topic-help-better-parenting", "click_better_parenting"],
+    ["topic-help-teenagers", "click_happierme_for_teenagers"]
+];
+/** Modal id → same GA names (backup if row click did not log). */
 var TOPICS_HELP_MODAL_GA = {
     exampleModal: "click_mental_wellbeing",
     exampleModalbuild: "click_better_relationships",
@@ -41,20 +53,41 @@ var TOPICS_HELP_MODAL_GA = {
     exampleModalparent: "click_better_parenting",
     exampleModalteen: "click_happierme_for_teenagers"
 };
+var _topicsHelpGaLast = "";
+var _topicsHelpGaInited = false;
 function initTopicsHelpGa() {
-    Object.keys(TOPICS_HELP_MODAL_GA).forEach(function (modalId) {
-        var modal = document.getElementById(modalId);
-        if (!modal) return;
-        modal.addEventListener("shown.bs.modal", function () {
-            logevent(TOPICS_HELP_MODAL_GA[modalId], "index.php");
-        });
+    if (_topicsHelpGaInited) return;
+    _topicsHelpGaInited = true;
+    // Bind on each row by id: capture phase + direct element avoids Text-node targets (no .closest) and document listener order issues.
+    TOPICS_HELP_ROW_GA.forEach(function (pair) {
+        var row = document.getElementById(pair[0]);
+        if (!row) return;
+        var evName = pair[1];
+        row.addEventListener(
+            "click",
+            function () {
+                _topicsHelpGaLast = evName;
+                logevent(evName, "index.php");
+            },
+            true
+        );
+    });
+    document.addEventListener("shown.bs.modal", function (ev) {
+        var el = ev.target;
+        if (!el || el.nodeType !== 1 || !el.id) return;
+        var name = TOPICS_HELP_MODAL_GA[el.id];
+        if (!name || name === _topicsHelpGaLast) return;
+        logevent(name, "index.php");
     });
 }
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initTopicsHelpGa);
-} else {
-    initTopicsHelpGa();
+function runWhenDomReady(fn) {
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", fn);
+    } else {
+        fn();
+    }
 }
+runWhenDomReady(initTopicsHelpGa);
 
 (function logHomepageView() {
     if (document.getElementById("happiermeTryForFree")) {
