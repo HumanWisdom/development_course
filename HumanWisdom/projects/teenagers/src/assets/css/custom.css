@@ -20389,7 +20389,7 @@ share-buttons button {
 
 .ws_view_story {
   object-fit: cover;
-  /* height: 280px; */
+   height: 280px; 
   border-radius: 0px 0px 20px 20px;
   padding: 0 !important;
 }
@@ -24315,10 +24315,15 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #CB6171 !important;
+  color: #EE9596 !important;
   text-decoration: underline;
 }
 
+
+/* .blog_highlight_peach:hover{
+  color: #EE9596 !important;
+   text-decoration: underline; 
+} */
 .yt-embed {
   width: 100%;
   padding: 20px 0px;
@@ -34875,9 +34880,15 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 
 .absolute_ls_like {
-  position: absolute;
+   position: absolute;
   top: 20px;
   right: 20px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 }
 
 .ls_story_img {
@@ -36624,7 +36635,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .toc_adiv_03 a>.row {
   border-radius: 12px;
   border: 0;
-  background: #120F40;
+  background: #0C2B5F;
   /* min-height: 108px; */
   margin-bottom: 16px;
   padding: 12px;
