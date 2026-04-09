@@ -309,6 +309,8 @@ export class NavigationService {
     let prefix = SharedService.getprogramName();
     if (prefix === 'youngadults') prefix = 'teenagers';
     const currentUrl = this.router.url;
+    const segments = currentUrl.split('/');
+    const lastSeg = segments[segments.length - 1];
 
     // Explicit Context Fallbacks (Highest Priority on Empty History)
     // 5. Blogs: Blog article -> Blog listing -> Previous page
@@ -322,11 +324,17 @@ export class NavigationService {
     }
 
     // 6. Events: Event inner page -> Events listing -> Search
-    if (currentUrl.includes('/events/event')) {
+    const hasEventsSeg = segments.some(s => s.toLowerCase() === 'events');
+    const hasEventSeg = segments.some(s => {
+      const l = s.toLowerCase();
+      return l === 'event' || l.startsWith('event?') || l === 'e01' || l.startsWith('e01?');
+    });
+
+    if (hasEventsSeg && hasEventSeg) {
       console.log("Fallback: Event inner -> Events listing");
       return `/${prefix}/events`;
     }
-    if (currentUrl.includes('/events')) {
+    if (hasEventsSeg || segments.some(s => s.toLowerCase() === 'events-index')) {
       console.log("Fallback: Events listing -> Search");
       return `/${prefix}/search`;
     }
@@ -395,12 +403,34 @@ export class NavigationService {
     }
 
     // 13. Soundscapes: Inner -> Listing -> Search
-    if (currentUrl.includes('/audiopage/') && currentUrl.includes('/soundscapes')) {
+    const hasSoundscapes = segments.some(s => s.toLowerCase() === 'soundscapes');
+    if (segments.includes('audiopage') && hasSoundscapes) {
       console.log("Fallback: Soundscapes Inner -> Listing");
       return `/${prefix}/soundscapes`;
     }
-    if (currentUrl.includes('/soundscapes')) {
+    if (hasSoundscapes) {
       console.log("Fallback: Soundscapes Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 15. Podcast: Inner -> Listing -> Search
+    const hasPodcast = segments.some(s => s.toLowerCase() === 'podcast');
+    if (segments.includes('audiopage') && hasPodcast) {
+      console.log("Fallback: Podcast Inner -> Listing");
+      return `/${prefix}/podcast`;
+    }
+    if (hasPodcast) {
+      console.log("Fallback: Podcast Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 14. Microlearning: Inner/End -> Listing -> Search
+    if (currentUrl.includes('/micro-learning/inner') || currentUrl.includes('/micro-learning/end')) {
+      console.log("Fallback: ML Inner/End -> Listing");
+      return `/${prefix}/micro-learning`;
+    }
+    if (currentUrl.includes('/micro-learning')) {
+      console.log("Fallback: ML Listing -> Search");
       return `/${prefix}/search`;
     }
 
@@ -428,17 +458,6 @@ export class NavigationService {
     }
 
 
-    // Default Fallback Rules (when no history or valid NavigatedFrom exists)
-    // 1. Microlearning: Inner -> Listing -> Search
-    if (currentUrl.includes('/micro-learning/inner')) {
-      console.log("Fallback: ML Inner -> Listing");
-      return `/${prefix}/micro-learning`;
-    }
-    if (currentUrl.includes('/micro-learning')) {
-      console.log("Fallback: ML Listing -> Search");
-      return `/${prefix}/search`;
-    }
-
     // 2. Pathways: Pathway -> Search
     if (currentUrl.includes('/pathway/')) {
       console.log("Fallback: Pathway -> Search");
@@ -446,9 +465,6 @@ export class NavigationService {
     }
 
     // 3. Modules: Session -> Index (TOC) -> Pathway/Search
-    const segments = currentUrl.split('/');
-    const lastSeg = segments[segments.length - 1];
-    
     // Sessions usually look like 's123001' or 's123p1'
     const isSessionRegex = /^s[0-9]+/;
     const isSession = isSessionRegex.test(lastSeg);
