@@ -45,7 +45,7 @@
       </div>
 
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                <a (click)="Resume('/teenagers/living-with-peace/');" *ngIf="lastvisited">
+        <a [routerLink]="['/teenagers/living-with-peace', pgResume]" *ngIf="lastvisited">
 
          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
