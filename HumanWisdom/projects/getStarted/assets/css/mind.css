@@ -1,0 +1,637 @@
+.section {
+  width: 100%;
+  height: 605px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  gap: 80px;
+  background-image: url("https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/mind-bg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.container {
+    width: 980px;
+    margin: 0 auto;
+    background-color: initial;
+}
+.mind-title {
+    font-size: 48px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+    line-height: 130%;
+    margin-top: 0;
+}
+.mind-subtext {
+   font-size: 21px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 100%; 
+}
+.testimonial-card{
+
+    width: 475px !important;
+    height: 302px;
+    padding: 36px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #FCF2EC;
+    border-radius: 20px;
+    gap: 30px;
+
+}
+
+.testimonial-image {
+    width: 80px !important;
+    height: 80px !important;
+}
+.testimonial-text {
+    width: 403px;
+    height: 69px;
+    gap: 15px;
+    margin-top: 15px !important;
+}
+.iframe-videos{
+    text-align: center;
+    justify-content: center;
+    display: contents;
+    width: 978px;
+    height: 606px;
+}
+
+.cvideo_b {
+    width: 978px;
+    max-width: 100%;
+    position: relative;
+    border: 0;
+    height: 456px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+/* mind.php — survey + video section titles (override fc_000000_0_75 on all viewports) */
+.section-headernew.mob-section h2.fs_18px_mobile {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+/* mind.php — iPad / tablet (769px–1024px): stack hero & testimonials; min 769 avoids clash with max-width:768 mobile */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body.page-mind h2.mind-heading-ipad {
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center;
+    font-size: 21px !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+  }
+
+  body.page-mind h2.mind-heading-survey {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+
+  body.page-mind h2.mind-heading-video {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    padding-top: 48px;
+  }
+
+  body.page-mind .section-text1 .row.center_flex > [class*="col-"],
+  body.page-mind .section-headernew.m-top54 .text-wider {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Figma Mind Landing_iPad: main content column width 754px */
+  body.page-mind .section .container,
+  body.page-mind .testimonial-wrapper,
+  body.page-mind .section-headernew.mob-section,
+  body.page-mind .row.center_flex.bg_circle_mind,
+  body.page-mind .section-headernew.m-top54,
+  body.page-mind .video-mobile-section {
+    max-width: 754px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hero: override home.css fixed row (402px + 518px) — stack like mobile */
+  body.page-mind .section {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding-top: 32px !important;
+    padding-bottom: 40px !important;
+    box-sizing: border-box;
+  }
+
+  body.page-mind .section .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.page-mind .section .content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 24px 0 16px !important;
+    gap: 18px !important;
+    box-sizing: border-box;
+  }
+
+  body.page-mind .phone-mockups {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  body.page-mind .desktop-image {
+    display: none !important;
+  }
+
+  body.page-mind .mobile-only-image {
+    display: block !important;
+  }
+
+  body.page-mind .mobile-image {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 420px !important;
+    object-fit: contain !important;
+  }
+
+  body.page-mind .text-content {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding-left: 0 !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box;
+  }
+
+  body.page-mind .mind-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(26px, 3.2vw, 34px) !important;
+    line-height: 130% !important;
+    text-align: center !important;
+  }
+
+  body.page-mind .text-content .features {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+
+  body.page-mind .text-content .features li {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+
+  body.page-mind .mind-subtext {
+    font-size: 16px !important;
+    line-height: 140% !important;
+    text-align: center !important;
+  }
+
+  body.page-mind .text-content .icon-container {
+    display: none !important;
+  }
+
+  body.page-mind .text-content .cta-button.mind-cta-gradient {
+    width: 100% !important;
+    max-width: 335px !important;
+    height: 48px !important;
+    padding: 12px 24px !important;
+    margin-top: 16px !important;
+  }
+
+  body.page-mind .text-content .btn-txt {
+    font-size: 16px !important;
+  }
+
+  /* Testimonials: stack — 475px × 2 + gap > 820px */
+  body.page-mind .testimonial-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    gap: 24px !important;
+  }
+
+  body.page-mind .testimonial-card,
+  body.page-mind .testimonial-card.testimonial-card2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-mind .testimonial-header,
+  body.page-mind .testimonial-card-section2 {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  body.page-mind .testimonial-text,
+  body.page-mind .testimonial-text2 {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  body.page-mind .testimonial-card .app-title,
+  body.page-mind .testimonial-card .app-title2 {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Survey charts + video */
+  body.page-mind .bg_circle_mind .scroller-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-mind .bg_circle_mind .scroller-container img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  body.page-mind .iframe-videos {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  body.page-mind .cvideo_b,
+  body.page-mind .yt-embed,
+  body.page-mind #youtubeIntro {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-mind .video-mobile-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* mind.php — desktop: logo-only bar (same as old mind header). Mobile: full index header in header.php */
+@media (min-width: 768px) {
+  body.page-mind .header_fixed.header_site_stack {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+  }
+
+  body.page-mind .header_subnav {
+    display: none !important;
+  }
+
+  body.page-mind .header_site_top {
+    height: 120px !important;
+    padding: 30px 60px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-mind .header_main_inner {
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  body.page-mind .header_main_inner .dflex_end {
+    display: none !important;
+  }
+
+  body.page-mind .header_main_inner > [class*="col-"]:first-child {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* Fixed index header clears the hero (header.php uses max-width: 767px for compact row) */
+@media (max-width: 767px) {
+  body.page-mind .section:first-of-type {
+    padding-top: 72px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile — mind.php (Figma: single column, gradient hero, cream cards)      */
+/* -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .section {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding-top: 24px;
+    padding-bottom: 32px;
+    gap: 0;
+    background-image: url("https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/mind-bg.png");
+  }
+
+  .section .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+
+  .section .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 24px 0 16px;
+    gap: 20px;
+  }
+
+  .phone-mockups {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .mobile-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .text-content {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    padding-left: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mind-title {
+    width: 100%;
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(22px, 5.5vw, 28px);
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+  }
+
+  .text-content .features {
+    width: 100%;
+    max-width: 335px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-content .features li {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .mind-subtext {
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    flex: 1 1 auto;
+  }
+
+  .text-content .icon-container {
+    display: none;
+  }
+
+  .text-content .cta-button.mind-cta-gradient {
+    width: 335px;
+    max-width: 335px;
+    height: 48px;
+    padding: 12px 24px;
+    margin-top: 16px;
+    border-radius: 36px;
+    box-shadow: 0 4px 14px rgba(43, 76, 140, 0.25);
+  }
+
+  .text-content .btn-txt {
+    font-size: 15px;
+  }
+
+  .testimonial-wrapper {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .testimonial-card,
+  .testimonial-card.testimonial-card2 {
+    width: 100% !important;
+    max-width: 335px;
+    height: auto !important;
+    min-height: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background: #fff5e9 !important;
+    border-radius: 16px;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .section-text1 {
+margin-top: 5px !important;
+  }
+
+  .testimonial-header {
+    width: 100% !important;
+    height: auto !important;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-text,
+  .testimonial-text2 {
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 8px !important;
+  }
+
+  .testimonial-card .app-title,
+  .testimonial-card .app-title2 {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .section-headernew.mob-section .col-xs-10,
+  .section-headernew.mob-section .col-xs-8 {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Survey + video section titles */
+  .section-headernew.mob-section h2.fs_18px_mobile {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+  }
+
+  .bg_circle_mind {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .bg_circle_mind .scroller-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  .bg_circle_mind .scroller-container img {
+    max-width: 100%;
+    height: auto;
+    padding-left: 0px !important;
+  }
+
+  .video-mobile-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .iframe-videos {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .cvideo_b {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    margin-top: 16px;
+    overflow: hidden;
+  }
+  .cvideo_b, .yt-embed, #youtubeIntro{
+    margin-bottom: 50px !important;
+  }
+
+  .divhome.mob-section {
+    background: #333333 !important;
+    padding: 20px 16px;
+  }
+
+  .divhome.mob-section h2 {
+    font-size: 12px !important;
+    line-height: 140%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mind-subtext {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .section .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .testimonial-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .testimonial-card {
+        width: 335px !important;
+        height: 197px;
+        padding: 22px;
+        margin: 0 auto;
+    }
+        .mind-title {
+        width: 335px;
+        font-size: 27px;
+    }
+}
+
