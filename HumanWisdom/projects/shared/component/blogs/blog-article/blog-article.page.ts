@@ -107,7 +107,7 @@ export class BlogArticlePage {
     if (this.BlogCommentsLen > 3) {
       this.BlogCommentsListabove = this.blogList['BlogComments'].slice(3);
     }
-    this.likecount = Number.parseInt(this.blogList['LikeCnt']);
+    this.likecount = Number.parseInt(this.blogList['Liked']);
     
     this.title.setTitle(this.blogList['Title']);
     this.updateMetaTags();
