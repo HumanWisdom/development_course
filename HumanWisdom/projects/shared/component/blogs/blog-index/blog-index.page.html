@@ -79,8 +79,10 @@
                           <div class="col-md-1 col-sm-1 col-xs-1 p0 tright center_flex">
                             <div class="div_like_cnt1">
                               <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/ls_like_filled_b.svg" alt=""> -->
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/ls_like_unfilled_b.svg"
+                                class="img-responsive" *ngIf="item.Liked === 0" />
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/ls_like_filled_b.svg"
-                                class="img-responsive" />
+                                class="img-responsive" *ngIf="item.Liked !== 0" />
 
                               <span class="mtb0px fs_15px fw_600 lh_150p ml5px mr5px" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                                 {{ item?.LikeCnt }}
