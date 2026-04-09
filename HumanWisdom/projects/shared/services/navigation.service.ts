@@ -48,9 +48,10 @@ export class NavigationService {
       }
     }
 
-    if (url.includes('/onboarding/add-to-cart')) {
+    if (url.includes('/onboarding/add-to-cart') || this.dontPushToHistory(url)) {
       return;
     }
+
     const urls = url.split('/');
     let urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
@@ -200,10 +201,11 @@ export class NavigationService {
 
 
    dontPushToHistory(url: string) {
-    if(url.includes('wisdom-survey') || url.includes('wisdom-score')) {
+    if(url.includes('wisdom-survey') || url.includes('wisdom-score') || url.includes('wellness-survey')) {
       return true;
     }
    }
+
 
    endsWith001ForModule(url: string): boolean {
     // Regular expression to match URLs ending with "001"
@@ -307,6 +309,8 @@ export class NavigationService {
     let prefix = SharedService.getprogramName();
     if (prefix === 'youngadults') prefix = 'teenagers';
     const currentUrl = this.router.url;
+    const segments = currentUrl.split('/');
+    const lastSeg = segments[segments.length - 1];
 
     // Explicit Context Fallbacks (Highest Priority on Empty History)
     // 5. Blogs: Blog article -> Blog listing -> Previous page
@@ -320,11 +324,17 @@ export class NavigationService {
     }
 
     // 6. Events: Event inner page -> Events listing -> Search
-    if (currentUrl.includes('/events/event')) {
+    const hasEventsSeg = segments.some(s => s.toLowerCase() === 'events');
+    const hasEventSeg = segments.some(s => {
+      const l = s.toLowerCase();
+      return l === 'event' || l.startsWith('event?') || l === 'e01' || l.startsWith('e01?');
+    });
+
+    if (hasEventsSeg && hasEventSeg) {
       console.log("Fallback: Event inner -> Events listing");
       return `/${prefix}/events`;
     }
-    if (currentUrl.includes('/events')) {
+    if (hasEventsSeg || segments.some(s => s.toLowerCase() === 'events-index')) {
       console.log("Fallback: Events listing -> Search");
       return `/${prefix}/search`;
     }
@@ -358,6 +368,73 @@ export class NavigationService {
       return `/${prefix}/search`;
     }
 
+    // 10. Wellness Survey: Survey -> Intro -> Search
+    if (currentUrl.includes('/wellness-survey')) {
+      console.log("Fallback: Wellness Survey -> Intro");
+      return `/${prefix}/wisdom-survey`;
+    }
+    if (currentUrl.includes('/wisdom-survey')) {
+      console.log("Fallback: Wellness Survey Intro -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 11. Audio/Guided Meditation: Inner -> Listing -> Search
+    if (currentUrl.includes('/audio-meditation/audiopage')) {
+      console.log("Fallback: Audio Meditation Inner -> Listing");
+      return `/${prefix}/audio-meditation`;
+    }
+    if (currentUrl.includes('/guided-meditation/audiopage')) {
+      console.log("Fallback: Guided Meditation Inner -> Listing");
+      return `/${prefix}/guided-meditation`;
+    }
+    if (currentUrl.includes('/audio-meditation') || currentUrl.includes('/guided-meditation')) {
+      console.log("Fallback: Meditation Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 12. Wisdom Shorts: Inner -> Listing -> Search
+    if (currentUrl.includes('/wisdom-shorts/')) {
+      console.log("Fallback: Wisdom Shorts Inner -> Listing");
+      return `/${prefix}/wisdom-shorts`;
+    }
+    if (currentUrl.includes('/wisdom-shorts')) {
+      console.log("Fallback: Wisdom Shorts Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 13. Soundscapes: Inner -> Listing -> Search
+    const hasSoundscapes = segments.some(s => s.toLowerCase() === 'soundscapes');
+    if (segments.includes('audiopage') && hasSoundscapes) {
+      console.log("Fallback: Soundscapes Inner -> Listing");
+      return `/${prefix}/soundscapes`;
+    }
+    if (hasSoundscapes) {
+      console.log("Fallback: Soundscapes Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 15. Podcast: Inner -> Listing -> Search
+    const hasPodcast = segments.some(s => s.toLowerCase() === 'podcast');
+    if (segments.includes('audiopage') && hasPodcast) {
+      console.log("Fallback: Podcast Inner -> Listing");
+      return `/${prefix}/podcast`;
+    }
+    if (hasPodcast) {
+      console.log("Fallback: Podcast Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 14. Microlearning: Inner/End -> Listing -> Search
+    if (currentUrl.includes('/micro-learning/inner') || currentUrl.includes('/micro-learning/end')) {
+      console.log("Fallback: ML Inner/End -> Listing");
+      return `/${prefix}/micro-learning`;
+    }
+    if (currentUrl.includes('/micro-learning')) {
+      console.log("Fallback: ML Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+
     // Context-driven navigation priority fallback for empty history
     if (this.lastSource === 'pathway' || this.lastSource === 'search' || this.lastSource === 'video') {
       const sourceIsPathway = this.lastSource === 'pathway';
@@ -381,17 +458,6 @@ export class NavigationService {
     }
 
 
-    // Default Fallback Rules (when no history or valid NavigatedFrom exists)
-    // 1. Microlearning: Inner -> Listing -> Search
-    if (currentUrl.includes('/micro-learning/inner')) {
-      console.log("Fallback: ML Inner -> Listing");
-      return `/${prefix}/micro-learning`;
-    }
-    if (currentUrl.includes('/micro-learning')) {
-      console.log("Fallback: ML Listing -> Search");
-      return `/${prefix}/search`;
-    }
-
     // 2. Pathways: Pathway -> Search
     if (currentUrl.includes('/pathway/')) {
       console.log("Fallback: Pathway -> Search");
@@ -399,9 +465,6 @@ export class NavigationService {
     }
 
     // 3. Modules: Session -> Index (TOC) -> Pathway/Search
-    const segments = currentUrl.split('/');
-    const lastSeg = segments[segments.length - 1];
-    
     // Sessions usually look like 's123001' or 's123p1'
     const isSessionRegex = /^s[0-9]+/;
     const isSession = isSessionRegex.test(lastSeg);

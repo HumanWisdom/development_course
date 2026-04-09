@@ -7,6 +7,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { CommonService } from '../../../services/common.service';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
+import { NavigationService } from '../../../services/navigation.service';
 declare var bootstrap: any;
 
 @Component({
@@ -28,10 +29,16 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
   isIos = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
-  constructor(private location: Location, private router: Router,
+  constructor(
+    private location: Location,
+    private router: Router,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
-    public service: CommonService, private meta: Meta, private title: Title) {
+    public service: CommonService,
+    private meta: Meta,
+    private title: Title,
+    private navigationService: NavigationService
+  ) {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -101,7 +108,12 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigationService.navigateToBackLink();
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      this.location.back();
+    }
   }
 
   youtube(link: string, RowID: number, title?: string) {

@@ -47,12 +47,6 @@ export class TocHeaderComponent implements OnInit {
   }
 
   goBack() {
-    let historyLength = this.navigationService.getHistoryLength ? this.navigationService.getHistoryLength() : 0;
-    if (historyLength <= 1) {
-      this.router.navigateByUrl(SharedService.getDashboardUrls());
-      return;
-    }
-
     var url = this.navigationService.navigateToBackLink();
 
     // Skip duplicates of the current page in history

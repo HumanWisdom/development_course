@@ -228,14 +228,10 @@ export class MicroLearningInnerPage implements OnInit {
     localStorage.removeItem('persist_ml_index');
 
     const url = this.navigationService.navigateToBackLink();
-
-    // If history says we should go to another inner page or current page, take us to the listing instead
-    if (url == null || url.includes('micro-learning/inner') ||
-      url.split('?')[0].split('#')[0] === this.router.url.split('?')[0].split('#')[0]) {
-      const prefix = SharedService.getprogramName();
-      this.router.navigate([`/${prefix}/micro-learning`]);
-    } else {
+    if (url != null) {
       this.router.navigateByUrl(url);
+    } else {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
     }
   }
 
