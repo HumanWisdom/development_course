@@ -227,6 +227,11 @@ export class ContactPage implements OnInit {
   }
 
   backRoute() {
-    this.router.navigate(["/teenagers/coach/profile", this.coachId]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 }

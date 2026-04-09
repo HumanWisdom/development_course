@@ -5,6 +5,9 @@ import { SharedService } from '../../../../../../shared/services/shared.service'
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { TeenagersService } from '../../teenagers.service';
 
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -16,7 +19,12 @@ export class ProfilePage implements OnInit {
   baseUrl: string;
   path:string='';
 
-  constructor(private service: TeenagersService, private router: Router, private route: ActivatedRoute, private ngNavigatorShareService: NgNavigatorShareService) { }
+  constructor(private service: TeenagersService, 
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private ngNavigatorShareService: NgNavigatorShareService,
+    private navigationService: NavigationService,
+    private location: Location) { }
 
   ngOnInit() {
     this.path = this.router.url;
@@ -41,7 +49,12 @@ export class ProfilePage implements OnInit {
   }
 
   backRoute() {
-    this.router.navigate(["/teenagers/coach"]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    }else{
+      this.router.navigate([url]);
+    }
   }
 
   contactCoach() {
