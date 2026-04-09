@@ -5046,3 +5046,23 @@ input[type="password" i]::-ms-reveal {
 .fc_clr {
   color: #803358 !important;
 }
+
+/* Override Bootstrap Icons font-face */
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/fonts/bootstrap-icons.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/fonts/bootstrap-icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* <-- key addition */
+}
+
+/* Override Font Awesome font-face */
+@font-face {
+  font-family: "FontAwesome";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2") format("woff2"),
+       url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* <-- key addition */
+}
