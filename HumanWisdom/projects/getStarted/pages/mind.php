@@ -33,26 +33,13 @@
     })(window, document, 'script', 'dataLayer', 'GTM-NHPHHF97');</script>
   <!-- End Google Tag Manager -->
 
+  <link rel="stylesheet" href="../assets/css/mind.css" />
+
 </head>
 
-<body>
-  <!-- header -->
-  <div class="row ">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex header_new">
-
-      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
-
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo.svg" class="img-responsive"
-          alt="logo">
-
-      </div>
-
-      <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 p0 dflex_end">
-
-      </div>
-
-    </div>
-  </div>
+<body class="page-mind">
+  <!-- header — same as index (full nav + mobile CTA + hamburger); desktop simplified via mind.css -->
+  <?php include('../includes/header.php'); ?>
   <!-- /header -->
 
   <!-- Google Tag Manager (noscript) -->
@@ -70,7 +57,7 @@
         </div>
 
         <div class="text-content">
-          <h1 class="main-title">
+          <h1 class="mind-title">
             Transform your emotional wellbeing with HappierMe
           </h1>
           <ul class="features">
@@ -78,27 +65,27 @@
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""
                   alt="wh_tick_black" loading="lazy">
-              </div><span class="feature-txt">Overcome stress and anxiety.</span>
+              </div><span class="mind-subtext">Overcome stress and anxiety.</span>
             </li>
           
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""
                   alt="wh_tick_black" loading="lazy">
-              </div><span class="feature-txt">Build stronger relationships.</span>
+              </div><span class="mind-subtext">Build stronger relationships.</span>
             </li>
              <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""
                   alt="wh_tick_black" loading="lazy">
-              </div><span class="feature-txt"> Address the root cause, not just the symptoms.</span>
+              </div><span class="mind-subtext"> Address the root cause, not just the symptoms.</span>
             </li>
            
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_tick_black.svg" class=""
                   alt="wh_tick_black" loading="lazy">
-              </div><span class="feature-txt">Manage your emotions and be happier.</span>
+              </div><span class="mind-subtext">Manage your emotions and be happier.</span>
             </li>
           </ul>
           <div id="PricingSelectBtnHomePage">
@@ -118,17 +105,11 @@
 
   <div class="testimonial-wrapper">
 
-  <div class="quotation-comma-mobile">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" alt="quotation"
-            loading="lazy">
-  </div>
+
     <!-- First Testimonial -->
     <div class="testimonial-card bg-color">
       <div class="testimonial-card-section">
-        <div class="quotation-comma">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" alt="quotation"
-            loading="lazy">
-        </div>
+       
         <div class="testimonial-header">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/Brenda+McChesney.webp" alt="Brenda McChesney"
             class="testimonial-image">
@@ -138,9 +119,9 @@
           </div>
         </div>
         <div class="testimonial-text">
-          <span class="app-title"><i>HappierMe is the best app I have found to assist entire families, and the root
+          <span class="app-title"><i>"HappierMe is the best app I have found to assist entire families, and the root
               cause
-              of their struggles, rather than just the symptoms. </i></span>
+              of their struggles, rather than just the symptoms."</i></span>
         </div>
       </div>
     </div>
@@ -148,10 +129,7 @@
     <!-- Second Testimonial -->
     <div class="testimonial-card testimonial-card2 bg-color">
       <div class="testimonial-card-section2">
-        <div class="quotation-comma testimonial-comma2">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/quatation_new.svg" alt="quotation"
-            loading="lazy">
-        </div>
+        
         <div class="testimonial-header">
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_adam_beagley.webp" alt="Adam Beagley"
             class="testimonial-image">
@@ -161,10 +139,10 @@
           </div>
         </div>
         <div class="testimonial-text2">
-          <span class="app-title2"><i>HappierMe has helped me become emotionally intelligent. I used to be shy, passive
+          <span class="app-title2"><i>"HappierMe has helped me become emotionally intelligent. I used to be shy, passive
               and
               fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle
-              with, there are modules to help.</i></span>
+              with, there are modules to help."</i></span>
         </div>
       </div>
     </div>
@@ -176,7 +154,7 @@
   <div class="section-headernew mob-section section-text section-text1">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile">
+        <h2 class="mtb0px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile mind-heading-ipad mind-heading-survey">
           Findings from a survey of 1,000 HappierMe app users </h2>
       </div>
     </div>
@@ -203,7 +181,7 @@
   <div class="section-headernew mob-section m-top54">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 text-wider">
-        <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile section-text section-text2">
+        <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile section-text section-text2 mind-heading-ipad mind-heading-video">
           Discover HappierMe in just 1 minute
         </h2>
       </div>
@@ -211,7 +189,7 @@
 
 
     <div class="row center_flex mob-section video-mobile-section" data-aos="fade-up" data-aos-delay="200">
-      <div class="iframe-video">
+      <div class="iframe-videos">
 
         <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
           src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed"
