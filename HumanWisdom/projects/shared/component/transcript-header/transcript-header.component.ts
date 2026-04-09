@@ -127,30 +127,7 @@ export class TranscriptHeaderComponent implements OnInit {
   }
 
   goToToc() {
-    let historyLength = this.navigationService.getHistoryLength ? this.navigationService.getHistoryLength() : 0;
-    if (historyLength <= 1) {
-      this.router.navigate([SharedService.getDashboardUrls()]);
-      return;
-    }
-
     var url = this.navigationService.navigateToBackLink();
-    if (url != null && !url.includes('home') && !url.includes('dashboard') && !url.includes('pathway')) {
-      this.router.navigateByUrl(url);
-      return;
-    }
-
-    if (this.toc) {
-      let tocUrl = this.toc;
-      let prefix = this.isAdults ? '/adults' : '/teenagers';
-      if (!tocUrl.startsWith('/')) {
-        tocUrl = prefix + '/' + tocUrl;
-      } else if (!tocUrl.startsWith(prefix)) {
-        tocUrl = prefix + tocUrl;
-      }
-      this.router.navigate([tocUrl]);
-      return;
-    }
-
     if (url != null) {
       this.router.navigateByUrl(url);
     } else {

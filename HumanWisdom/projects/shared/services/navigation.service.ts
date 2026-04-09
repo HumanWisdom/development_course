@@ -48,9 +48,10 @@ export class NavigationService {
       }
     }
 
-    if (url.includes('/onboarding/add-to-cart')) {
+    if (url.includes('/onboarding/add-to-cart') || this.dontPushToHistory(url)) {
       return;
     }
+
     const urls = url.split('/');
     let urltoCheck: any;
     urltoCheck = urls[urls.length - 1];
@@ -200,10 +201,11 @@ export class NavigationService {
 
 
    dontPushToHistory(url: string) {
-    if(url.includes('wisdom-survey') || url.includes('wisdom-score')) {
+    if(url.includes('wisdom-survey') || url.includes('wisdom-score') || url.includes('wellness-survey')) {
       return true;
     }
    }
+
 
    endsWith001ForModule(url: string): boolean {
     // Regular expression to match URLs ending with "001"
@@ -357,6 +359,51 @@ export class NavigationService {
       console.log("Fallback: Wisdom Stories Listing -> Search");
       return `/${prefix}/search`;
     }
+
+    // 10. Wellness Survey: Survey -> Intro -> Search
+    if (currentUrl.includes('/wellness-survey')) {
+      console.log("Fallback: Wellness Survey -> Intro");
+      return `/${prefix}/wisdom-survey`;
+    }
+    if (currentUrl.includes('/wisdom-survey')) {
+      console.log("Fallback: Wellness Survey Intro -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 11. Audio/Guided Meditation: Inner -> Listing -> Search
+    if (currentUrl.includes('/audio-meditation/audiopage')) {
+      console.log("Fallback: Audio Meditation Inner -> Listing");
+      return `/${prefix}/audio-meditation`;
+    }
+    if (currentUrl.includes('/guided-meditation/audiopage')) {
+      console.log("Fallback: Guided Meditation Inner -> Listing");
+      return `/${prefix}/guided-meditation`;
+    }
+    if (currentUrl.includes('/audio-meditation') || currentUrl.includes('/guided-meditation')) {
+      console.log("Fallback: Meditation Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 12. Wisdom Shorts: Inner -> Listing -> Search
+    if (currentUrl.includes('/wisdom-shorts/')) {
+      console.log("Fallback: Wisdom Shorts Inner -> Listing");
+      return `/${prefix}/wisdom-shorts`;
+    }
+    if (currentUrl.includes('/wisdom-shorts')) {
+      console.log("Fallback: Wisdom Shorts Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 13. Soundscapes: Inner -> Listing -> Search
+    if (currentUrl.includes('/audiopage/') && currentUrl.includes('/soundscapes')) {
+      console.log("Fallback: Soundscapes Inner -> Listing");
+      return `/${prefix}/soundscapes`;
+    }
+    if (currentUrl.includes('/soundscapes')) {
+      console.log("Fallback: Soundscapes Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
 
     // Context-driven navigation priority fallback for empty history
     if (this.lastSource === 'pathway' || this.lastSource === 'search' || this.lastSource === 'video') {
