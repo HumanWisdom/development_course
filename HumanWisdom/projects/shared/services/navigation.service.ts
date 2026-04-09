@@ -13,7 +13,7 @@ export class NavigationService {
   private lastSource: string | null = null;
   private isFirstNavigation = true;
   private hasInjectedFindAnswersHistory = false;
-  private readonly FIND_ANSWERS_REGEX = /\/find-answers\/[\w-]+-a\d+(-at)?$/;
+  private readonly FIND_ANSWERS_REGEX = /\/find-answers\/(?:[\w-]+\/)?[\w-]+-a\d+(-at)?$/;
 
   constructor(private router: Router, private location: Location) {
     this.lastSource = localStorage.getItem('lastNavSource');
@@ -304,7 +304,8 @@ export class NavigationService {
        return url;
     }
 
-    const prefix = SharedService.getprogramName();
+    let prefix = SharedService.getprogramName();
+    if (prefix === 'youngadults') prefix = 'teenagers';
     const currentUrl = this.router.url;
 
     // Explicit Context Fallbacks (Highest Priority on Empty History)
@@ -379,11 +380,6 @@ export class NavigationService {
       return `/${prefix}/search`;
     }
 
-    // Fallback if history is empty
-    let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-    if (navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url && !navFrom.includes('start-your-free-trial')) {
-      return navFrom;
-    }
 
     // Default Fallback Rules (when no history or valid NavigatedFrom exists)
     // 1. Microlearning: Inner -> Listing -> Search
@@ -415,15 +411,6 @@ export class NavigationService {
       return segments.slice(0, -1).join('/');
     }
 
-    // 5. Module TOC / Index -> Search (If no pathway context was found)
-    if (segments.length >= 2 && (segments[0] === 'adults' || segments[0] === 'teenagers' || segments[0] === 'youngadults')) {
-       const topLevelPages = ['adult-dashboard', 'dashboard', 'home', 'search', 'journal', 'profile', 'forum', 'notification', 'teenager-dashboard'];
-       if (!topLevelPages.includes(segments[1])) {
-          console.log("Fallback: Module TOC -> Search");
-          return `/${prefix}/search`;
-       }
-    }
-
     if (currentUrl.includes('/find-answers/')) {
       const lastSegment = segments[segments.length - 1];
       // Check if it's an answer page (ends with -a<number> or -a<number>-at)
@@ -437,10 +424,30 @@ export class NavigationService {
           return `/${prefix}/find-answers/${category}`;
         }
       } else if (lastSegment === 'why-do-i' || lastSegment === 'how-can-i') {
-        // If on category page, go to find-answers index
-        console.log("Fallback: Find Answers Category -> Index");
-        return `/${prefix}/find-answers`;
+        // If on category page, go to search (matching adult behavior)
+        console.log("Fallback: Find Answers Category -> Search");
+        return `/${prefix}/search`;
       }
+    }
+
+    // 9. Module TOC / Index -> Search (If no pathway context was found)
+    if (segments.length >= 3 && (segments[1] === 'adults' || segments[1] === 'teenagers' || segments[1] === 'youngadults')) {
+       const topLevelPages = [
+         'adult-dashboard', 'dashboard', 'home', 'search', 'journal', 
+         'profile', 'forum', 'notification', 'teenager-dashboard', 
+         'explore', 'coach', 'find-answers', 'feel-better-now'
+       ];
+       if (!topLevelPages.includes(segments[2])) {
+          console.log("Fallback: Module TOC -> Search");
+          return `/${prefix}/search`;
+       }
+    }
+
+    // 10. Previous Session / External Context (Last Resort before Dashboard)
+    const navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+    if (navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url && !navFrom.includes('start-your-free-trial')) {
+      console.log("Fallback: NavigatedFrom -> " + navFrom);
+      return navFrom;
     }
 
     console.log("Fallback: Dashboard");
