@@ -7,6 +7,7 @@ import { NgNavigatorShareService } from 'ng-navigator-share';
 import { CommonService } from  '../../../shared/services/common.service';
 import { SharedService } from "../../../shared/services/shared.service";
 import { ProgramType } from "../../../shared/models/program-model";
+import { NavigationService } from "../../../shared/services/navigation.service";
 
 
 @Component({
@@ -40,7 +41,8 @@ export class CommonScreenPage implements OnInit {
     private location: Location,
     private service: CommonService,
     private meta: Meta,
-    private title: Title
+    private title: Title,
+    private navigationService: NavigationService
   ) {
     this.ngNavigatorShareService = ngNavigatorShareService;
     this.address = this.router.url;
@@ -129,7 +131,12 @@ export class CommonScreenPage implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    const url = this.navigationService.navigateToBackLink();
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
   }
 
   share() {
