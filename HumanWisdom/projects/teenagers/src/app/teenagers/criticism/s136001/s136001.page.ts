@@ -124,7 +124,12 @@ export class S136001Page implements OnInit,OnDestroy {
 
 
     
-    
+     // continue where you left    
+    this.service.clickModule(136, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
 
 
     if(!this.t) //if no token in url- not shared
