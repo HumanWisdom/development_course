@@ -34,7 +34,7 @@
 <noscript><link rel="stylesheet" href="../assets/vendor/swiper/swiper-bundle.min.css"></noscript>
 
 <!-- Template Main CSS File -->
-<!-- <link href="../assets/css/landing.css" rel="stylesheet">
+<link href="../assets/css/landing.css" rel="stylesheet">
 <link href="../assets/css/main.css" rel="stylesheet">
 <link href="../assets/css/home.css" rel="stylesheet">
 <link href="../assets/css/index.css" rel="stylesheet">
@@ -43,37 +43,8 @@
 <link href="../assets/font/font_size.css" rel="stylesheet">
 <link href="../assets/font/font_weight.css" rel="stylesheet">
 <link href="../assets/font/line_height.css" rel="stylesheet">
-<link href="../assets/css/style_hb.css" rel="stylesheet">  -->
+<link href="../assets/css/style_hb.css" rel="stylesheet"> 
 
-<!-- Critical CSS (needed immediately for layout/first paint) -->
-<link rel="stylesheet" href="../assets/css/style_hb.css">
-<link rel="stylesheet" href="../assets/css/main.css">
-
-<!-- Non-critical CSS (preloaded, then applied asynchronously) -->
-<link rel="preload" href="../assets/css/landing.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/css/landing.css"></noscript>
-
-<link rel="preload" href="../assets/css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/css/home.css"></noscript>
-
-<link rel="preload" href="../assets/css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/css/index.css"></noscript>
-
-<link rel="preload" href="../assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/css/responsive.css"></noscript>
-
-<!-- Font-related CSS (small, can be deferred) -->
-<link rel="preload" href="../assets/font/font_colour.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/font/font_colour.css"></noscript>
-
-<link rel="preload" href="../assets/font/font_size.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/font/font_size.css"></noscript>
-
-<link rel="preload" href="../assets/font/font_weight.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/font/font_weight.css"></noscript>
-
-<link rel="preload" href="../assets/font/line_height.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/font/line_height.css"></noscript>
 
 
 
