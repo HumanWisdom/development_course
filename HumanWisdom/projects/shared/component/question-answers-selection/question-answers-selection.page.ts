@@ -105,7 +105,7 @@ export class QuestionAnswersSelection implements OnInit {
     }
 
   ngOnInit() {
-    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userId = SharedService.getUserId();
     this.questionAndAns = JSON.parse(localStorage.getItem("questionAns"));
     if (!this.questionAndAns || this.questionAndAns.length === 0) {
       this.getQuestions();
@@ -116,6 +116,10 @@ export class QuestionAnswersSelection implements OnInit {
     this.loading = true;
     this.service.clickModule(this.moduleId, this.userId)
       .subscribe(res => {
+        if (!res || !res.ListOfQueOpts) {
+          this.loading = false;
+          return;
+        }
         let qrList = res
         let questionA = qrList.ListOfQueOpts;
         let obj = {};
