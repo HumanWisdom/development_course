@@ -15,11 +15,10 @@ import { OnboardingService } from '../../../shared/services/onboarding.service';
 import { LogEventService } from '../../../shared/services/log-event.service';
 
 
+// import { MoengageService } from './moengage.service';
+import { environment } from '../../../environments/environment';
 import { NavigationService } from '../../../shared/services/navigation.service';
 import { CommonService } from '../../../shared/services/common.service';
-import { SessionService } from '../../../shared/services/session.service';
-import { ModalService } from '../../../shared/services/modal.service';
-import { environment } from '../../../environments/environment';
 import { ParentHubPage } from './adults/curated/parent-hub/parent-hub.page';
 /* import { OwlStore } from '../../../shared/stores/owl.store';
 import { Observable } from 'rxjs'; */
@@ -80,13 +79,8 @@ export class AppComponent implements OnDestroy {
     private logeventservice: LogEventService,
     // private owlStore: OwlStore,
     // public moengageService: MoengageService,
-    private navigationService:NavigationService,
-    private sessionService: SessionService,
-    private modalService: ModalService
+    private navigationService:NavigationService
   ) {
-    this.sessionService.sessionExpired$.subscribe(() => {
-      this.modalService.openModal('sessionExpiredModal');
-    });
     this.logeventservice.logEvent('first_open');
     // IMPORTANT: Reset owl state to clear any previous localStorage data
     // Comment this line back after first successful run
@@ -500,9 +494,5 @@ export class AppComponent implements OnDestroy {
      //   window.document.getElementById('adultsCss').setAttribute('href',this.adultsCss);
  }
 
-  logoutFromSession() {
-    this.modalService.closeModal('sessionExpiredModal');
-    localStorage.clear();
-    this.router.navigate(['/onboarding/login']);
-  }
 }
+

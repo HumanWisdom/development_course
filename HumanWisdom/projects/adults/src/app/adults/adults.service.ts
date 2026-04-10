@@ -609,9 +609,6 @@ initialLoginWithGuestUser(id: string = ''): Observable<any> {
     map(res => res) // if you want to transform, you can adjust this
   );
 }
-  emailLoginReturningObservable(email, password): Observable<any> {
-    return this.services.emailLogin(email, password);
-  }
 
   emaillogin(id = '') {
     let email = 'guest@humanwisdom.me';

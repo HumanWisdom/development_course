@@ -10,8 +10,6 @@ import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { CommonService } from '../../../shared/services/common.service';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
-import { SessionService } from '../../../shared/services/session.service';
-import { ModalService } from '../../../shared/services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -43,14 +41,7 @@ export class AppComponent implements OnDestroy {
     private router: Router,
     private renderer: Renderer2,
     private platform: Platform,
-    private services: TeenagersService, 
-    private commonService: CommonService, 
-    private onboardingService: OnboardingService,
-    private sessionService: SessionService,
-    private modalService: ModalService) {
-    this.sessionService.sessionExpired$.subscribe(() => {
-      this.modalService.openModal('sessionExpiredModal');
-    });
+    private services: TeenagersService, private commonService: CommonService, private onboardingService: OnboardingService) {
     SharedService.ProgramId = 11;
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
     moengage.initialize({
@@ -231,10 +222,5 @@ export class AppComponent implements OnDestroy {
     this.enableplaystore = false;
     localStorage.setItem('enablebanner', 'F')
     SharedService.enablebanner = false
-  }
-  logoutFromSession() {
-    this.modalService.closeModal('sessionExpiredModal');
-    localStorage.clear();
-    this.router.navigate(['/onboarding/login']);
   }
 }
