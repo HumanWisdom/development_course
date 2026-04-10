@@ -106,6 +106,17 @@ export class QuestionAnswersSelection implements OnInit {
 
   ngOnInit() {
     this.userId = SharedService.getUserId();
+    if (this.userId === 0 || this.userId === null || this.userId === undefined) {
+      const storedId = localStorage.getItem("userId") || localStorage.getItem("userID");
+      if (storedId) {
+        try {
+          this.userId = JSON.parse(storedId);
+        } catch (e) {
+          this.userId = parseInt(storedId);
+        }
+      }
+    }
+    
     this.questionAndAns = JSON.parse(localStorage.getItem("questionAns"));
     if (!this.questionAndAns || this.questionAndAns.length === 0) {
       this.getQuestions();
@@ -114,10 +125,16 @@ export class QuestionAnswersSelection implements OnInit {
 
   getQuestions() {
     this.loading = true;
+    if (!this.userId || this.userId === 0) {
+      this.loading = false;
+      alert("System could not resolve your user ID. Please log in again.");
+      return;
+    }
     this.service.clickModule(this.moduleId, this.userId)
       .subscribe(res => {
-        if (!res || !res.ListOfQueOpts) {
+        if (!res || !res.ListOfQueOpts || res.ListOfQueOpts.length === 0) {
           this.loading = false;
+          alert("Failed to load questions. Please check your internet connection.");
           return;
         }
         let qrList = res

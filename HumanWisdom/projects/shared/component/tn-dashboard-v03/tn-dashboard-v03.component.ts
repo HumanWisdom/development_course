@@ -160,11 +160,11 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
       this.disableClick = value;
     });
 
-    // this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
-    //   if (value) {
-    //     this.refreshData();
-    //   }
-    // });
+    this.subscription = this.Onboardingservice.getDataRecievedState().subscribe((value) => {
+      if (value) {
+        this.isloggedIn = true;
+      }
+    });
 
     // Listen to route changes to refresh data (additional safety mechanism)
     this.routerSubscription = this.router.events
