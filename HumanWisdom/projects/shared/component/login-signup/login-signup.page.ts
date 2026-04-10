@@ -1142,7 +1142,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       localStorage.setItem("Subscriber", res.Subscriber);
       localStorage.setItem("SubscriberType", res.SubscriberType);
       localStorage.setItem('NoOfDPVisits', res.NoOfDPVisits?.toString() || '0');
-      localStorage.setItem("userId", JSON.stringify(res.UserId));
+      localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
       localStorage.setItem("email", res.Email);
       localStorage.setItem("pswd", this.password);
@@ -1182,7 +1182,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         if (userInfo) {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
           // Trigger update to refresh hamburger menu and other components
-          this.service.setDataRecievedState(true);
+          //  this.service.updateUserDetails.next(true);
           if (userInfo[0]?.SurveyDone == '0') {
             setTimeout(() => {
               this.commonService.updateSurveyData(1);
