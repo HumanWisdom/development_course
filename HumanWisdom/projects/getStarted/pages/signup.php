@@ -32,6 +32,31 @@
      <style>
       .pt-7px{
         padding-top: 7px;     }
+
+      .signup-title {
+        color: rgba(131, 75, 102, 1) !important;
+      }
+
+      #signup-form label.chkb_post_anonymously > input[type="checkbox"]:checked + *::before {
+        background: rgba(237, 125, 111, 1) url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_white.svg) 50% no-repeat;
+        border: 0;
+        border-radius: 4px;
+      }
+
+      /* Download app — gradient + hover (overrides global .btn_tff:hover solid fill) */
+      #download-app-btn.btn_tff:not(:disabled),
+      #download-app-btn.btn_tff:not(:disabled):focus {
+        background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+        color: #fff;
+        transition: background 0.3s ease;
+      }
+
+      #download-app-btn.btn_tff:not(:disabled):hover,
+      #download-app-btn.btn_tff:not(:disabled):focus:hover,
+      #download-app-btn.btn_tff:not(:disabled):active {
+        background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+        color: #fff;
+      }
      </style>
   </head>
   <body>
@@ -50,7 +75,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
 
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo.svg" class="img-responsive"  alt="logo">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/Logo_Only.svg" class="img-responsive"  alt="logo">
       
     </div>
 
@@ -281,7 +306,7 @@
                       
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_803358  tcenter ta_lc"> Welcome to HappierMe</h1>
+                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_803358 tcenter ta_lc signup-title"> Welcome to HappierMe</h1>
                         </div>
                       </div>
                     </div>
@@ -419,7 +444,7 @@
                     
                      
                           
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent mt32px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                               <div class="row mt15px">
                                 <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Download app </button>

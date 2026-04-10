@@ -22,6 +22,9 @@
     line-height: 130%;
     margin-top: 0;
 }
+.tcenter{
+    text-align: center;
+}
 .mind-subtext {
    font-size: 21px;
     font-weight: 400;
@@ -31,7 +34,7 @@
 .testimonial-card{
 
     width: 475px !important;
-    height: 302px;
+    height: 282px !important;
     padding: 36px;
     position: relative;
     display: flex;
@@ -59,7 +62,9 @@
     width: 978px;
     height: 606px;
 }
-
+.mb-0px{
+  margin-bottom: 0px !important;
+}
 .cvideo_b {
     width: 978px;
     max-width: 100%;
@@ -69,7 +74,16 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 30px;
+}
+.testimonial-header {
+   
+    display: flex;
+    align-items: center;
+    width: 403px;
+    height: 80px;
+    gap: 15px;
+
 }
 
 /* mind.php — survey + video section titles (override fc_000000_0_75 on all viewports) */
