@@ -242,7 +242,7 @@ export class OnboardingService {
     this.isEnableHam.next(value);
   }
 
-  getDataRecievedState(): Observable<boolean> {
+  getDataRecivedState(): Observable<boolean> {
     return this.isEnableHam.asObservable();
   }
 
