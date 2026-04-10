@@ -256,8 +256,11 @@ export class ChangeTopicPage implements OnInit {
   loginadult(res) {
     this.loginResponse = res
     this.userId = res.UserId
+    this.userName = res.Name
+
     if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T')
     else localStorage.setItem("guest", 'F')
+    
     sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
     localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
     localStorage.setItem("token", JSON.stringify(res.access_token))
@@ -265,6 +268,8 @@ export class ChangeTopicPage implements OnInit {
     localStorage.setItem("userId", JSON.stringify(this.userId))
     localStorage.setItem("email", res['Email'])
     localStorage.setItem("name", res.Name)
+    localStorage.setItem("userName", JSON.stringify(res.Name))
+
     localStorage.setItem("text", JSON.stringify(this.text))
     localStorage.setItem("video", JSON.stringify(this.video))
     localStorage.setItem("audio", JSON.stringify(this.audio))
@@ -272,37 +277,18 @@ export class ChangeTopicPage implements OnInit {
     localStorage.setItem("question", JSON.stringify(this.question))
     localStorage.setItem("reflection", JSON.stringify(this.reflection))
     localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey))
-    this.userId = JSON.parse(localStorage.getItem("userId"))
     localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio))
     localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo))
-    if (localStorage.getItem("token") && (this.saveUsername == true)) {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
-      this.userName = JSON.parse(localStorage.getItem("userName"))
+
+    if (this.saveUsername == true) {
+      localStorage.setItem("userEmail", JSON.stringify(res.Email))
     }
     else {
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-      this.userName = JSON.parse(sessionStorage.getItem("userName"))
+      sessionStorage.setItem("userId", JSON.stringify(this.userId))
+      sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
+      sessionStorage.setItem("userName", JSON.stringify(this.userName))
     }
     this.getBookmarks()
-    if (res.UserId == 0) {
-    }
-    else {
-      this.userId = res.UserId
-      this.userName = res.Name
-      sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
-      localStorage.setItem("userId", JSON.stringify(this.userId))
-      localStorage.setItem("token", JSON.stringify(res.access_token))
-      if (this.saveUsername == true) {
-        localStorage.setItem("userId", JSON.stringify(this.userId))
-        localStorage.setItem("userEmail", JSON.stringify(res.Email))
-        localStorage.setItem("userName", JSON.stringify(this.userName))
-
-      } else {
-        sessionStorage.setItem("userId", JSON.stringify(this.userId))
-        sessionStorage.setItem("userEmail", JSON.stringify(res.Email))
-        sessionStorage.setItem("userName", JSON.stringify(this.userName))
-      }
-    }
   }
 
     getBookmarks() {

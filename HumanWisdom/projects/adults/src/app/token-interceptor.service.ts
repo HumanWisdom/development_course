@@ -2,7 +2,7 @@ import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest
 import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, switchMap } from 'rxjs/operators';
 import { SessionService } from '../../../shared/services/session.service';
 import { AdultsService } from './adults/adults.service';
 
@@ -17,13 +17,18 @@ export class TokenInterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     try {
-      this.token = JSON.parse(localStorage.getItem("token"))
+      const storedToken = localStorage.getItem("token");
+      if (storedToken === 'null' || storedToken === 'undefined' || !storedToken) {
+        this.token = '';
+      } else {
+        this.token = JSON.parse(storedToken);
+      }
     }
     catch (e) {
-      this.token = localStorage.getItem("token");
+      this.token = localStorage.getItem("token") || '';
     }
 
-    if (req.url.includes('/login') || req.url.includes('/VerifyAuthToken')) {
+    if (req.url.includes('/login') || req.url.includes('/VerifyAuthToken') || req.url.includes('/AddLearner')) {
       return next.handle(req);
     }
 
@@ -43,8 +48,22 @@ export class TokenInterceptorService implements HttpInterceptor {
             if (localStorage.getItem("isloggedin") === 'T') {
               sessionService.notifySessionExpired();
             } else {
-              // Guest user - refresh session
-              adultsService.emaillogin();
+              // Guest user - silently refresh session and retry once
+              return adultsService.emailLoginReturningObservable('guest@humanwisdom.me', '12345').pipe(
+                switchMap((res: any) => {
+                  if (res && res.access_token) {
+                    localStorage.setItem("token", JSON.stringify(res.access_token));
+                    const retryReq = req.clone({
+                      setHeaders: {
+                        Authorization: `Bearer ` + res.access_token
+                      }
+                    });
+                    return next.handle(retryReq);
+                  }
+                  return throwError(err);
+                }),
+                catchError(() => throwError(err))
+              );
             }
           }
         }
