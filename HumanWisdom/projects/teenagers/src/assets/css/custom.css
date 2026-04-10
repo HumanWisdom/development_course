@@ -34889,6 +34889,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   display: flex;
   align-items: center;
   justify-content: center;  
+  width: 54px;
+  height: 40px;
 }
 
 .ls_story_img {
