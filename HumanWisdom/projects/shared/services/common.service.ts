@@ -626,8 +626,8 @@ export class CommonService {
     return this.http.get(this.path + `/GetMicrolearningScreens/${id}`);
   }
   
-  getMicrolearningsEndScreens(id: any): Observable<any> {
-    return this.http.get(this.path + `/getMicrolearningsEndScreens/${id}`);
+  getMicrolearningsEndScreens(id: any,programId:any): Observable<any> {
+    return this.http.get(this.path + `/getMicrolearningsEndScreens/${id}/${programId}`);
   }
 
   GetLastVisitedScreen(data: any,programId:any): Observable<any> {

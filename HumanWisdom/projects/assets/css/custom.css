@@ -35217,6 +35217,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background: rgba(255, 255, 255, 0.75);
   padding: 10px;
   display: flex;
+  width: 54px;
+  height: 40px;
   align-items: center;
   justify-content: center;  
 }
