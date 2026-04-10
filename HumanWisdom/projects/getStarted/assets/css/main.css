@@ -4258,8 +4258,10 @@ background: rgba(255, 244, 230, 1) !important;
 
 }
 .bg_circle_mind{
-  background: rgba(255, 249, 238, 1) !important;
-
+background: rgba(255, 244, 230, 1) !important;
+}
+.mt32px{
+  margin-top: 32px !important;
 }
 
 .btn-theme {
