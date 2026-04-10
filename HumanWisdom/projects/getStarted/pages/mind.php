@@ -50,15 +50,17 @@
     <div class="container">
       <div class="content">
         <div class="phone-mockups">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/AdultHome2.svg"
-            class="mobile-image desktop-image" loading="lazy" alt="HappierMe app interface">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/home_mobile.svg"
-            class="mobile-image mobile-only-image" loading="lazy" alt="HappierMe app interface">
+           <img class="new-app-adults-teen display_m_none"  fetchpriority="high"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/bannerind.svg"
+                alt="HappierMe app" />
+             <img class="new-app-adults-teen display_d_none"  fetchpriority="high"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/bannermobile11.svg"
+                alt="HappierMe app" />
         </div>
 
         <div class="text-content">
           <h1 class="mind-title">
-            Transform your emotional wellbeing with HappierMe
+           Think better. Live better.
           </h1>
           <ul class="features">
             <li>
@@ -135,7 +137,7 @@
             class="testimonial-image">
           <div class="testimonial-info">
             <h5 class="testimonial-h5">Adam Beagley</h5>
-            <h3 class="testimonial-h3">Student,<br /> United Kingdom</h3>
+            <h3 class="testimonial-h3">Student, UK</h3>
           </div>
         </div>
         <div class="testimonial-text2">
@@ -165,14 +167,16 @@
   <div class="row center_flex bg_circle_mind" data-aos="fade-up" data-aos-delay="200">
     <div class="scroller-container">
       <div>
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
-          class="img-responsive d-wider w100p" alt="modules" loading="lazy">
-
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/home_circle.svg"
-          class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
-
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
-          alt="happy user" loading="lazy">
+        <picture>
+          <source media="(min-width: 1800px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg">
+          <source media="(min-width: 769px) and (max-width: 1024px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/tablet_circle.svg">
+          <source media="(max-width: 768px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
+            class="img-responsive w100p" alt="modules" loading="lazy">
+        </picture>
       </div>
     </div>
   </div>
@@ -181,7 +185,7 @@
   <div class="section-headernew mob-section m-top54">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 text-wider">
-        <h2 class="mb20px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile section-text section-text2 mind-heading-ipad mind-heading-video">
+        <h2 class="mb-0px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile section-text section-text2 mind-heading-ipad mind-heading-video">
           Discover HappierMe in just 1 minute
         </h2>
       </div>
@@ -199,8 +203,7 @@
   </div>
 
   <!-- /video -->
-
-  <div class="row center_flex divhome mob-section">
+ <div class="row center_flex divhome mob-section">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <h2 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
@@ -209,6 +212,7 @@
     </div>
 
   </div>
+ 
 
   <script>
     (function () {
