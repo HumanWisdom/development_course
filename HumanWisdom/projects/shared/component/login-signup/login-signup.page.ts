@@ -1119,63 +1119,51 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         (accessObj)?.Moengage.add_first_name(res.Name);
       })
       this.loginResponse = res;
+      this.userId = res.UserId;
+      this.userName = res.Name;
+
       if (this.loginResponse.LastVisit && new Date(this.loginResponse.LastVisit).getDate()) {
         if (new Date().getDate() > new Date(this.loginResponse.LastVisit).getDate()) {
           SharedService.FirstLoginOfTheDay = true;
         }
       }
-      localStorage.setItem("socialLogin", "F");
+
+      localStorage.setItem("socialLogin", social === '' ? "F" : "T");
       localStorage.setItem("isloggedin", "T");
-      localStorage.setItem("guest", "F");
+      localStorage.setItem("guest", res.Email === "guest@humanwisdom.me" ? "T" : "F");
       localStorage.setItem("btnclick", "F");
-      localStorage.setItem(
-        "loginResponse",
-        JSON.stringify(this.loginResponse)
-      );
-      localStorage.setItem("IsPartner", this.loginResponse.IsPartner);
-      localStorage.setItem("PartnerOption", this.loginResponse.PartnerOption);
-      sessionStorage.setItem(
-        "loginResponse",
-        JSON.stringify(this.loginResponse)
-      );
+      localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse));
+      sessionStorage.setItem("loginResponse", JSON.stringify(this.loginResponse));
+      
       localStorage.setItem("token", JSON.stringify(res.access_token));
+      localStorage.setItem("userId", JSON.stringify(this.userId));
+      localStorage.setItem("userID", res.UserId.toString());
+      localStorage.setItem("email", res.Email);
+      localStorage.setItem("pswd", this.password || '');
+      localStorage.setItem("name", res.Name);
+      localStorage.setItem("userName", JSON.stringify(res.Name));
+      localStorage.setItem("userEmail", JSON.stringify(res.Email));
+      
       localStorage.setItem("Subscriber", res.Subscriber);
       localStorage.setItem("SubscriberType", res.SubscriberType);
+      localStorage.setItem("IsPartner", res.IsPartner);
+      localStorage.setItem("isPartner", res.IsPartner); // Duplicate but keeping for compatibility
+      localStorage.setItem("PartnerOption", res.PartnerOption);
       localStorage.setItem('NoOfDPVisits', res.NoOfDPVisits?.toString() || '0');
-      localStorage.setItem("userId", JSON.stringify(this.userId));
       localStorage.setItem("RoleID", JSON.stringify(res.RoleID));
-      localStorage.setItem("email", res.Email);
-      localStorage.setItem("pswd", this.password);
-      localStorage.setItem("name", res.Name);
+      
       localStorage.setItem("first", "T");
       localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
       localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
       localStorage.setItem("video", JSON.stringify(this.video));
       localStorage.setItem("audio", JSON.stringify(this.audio));
-      localStorage.setItem("isPartner", res.IsPartner);
-      localStorage.setItem("userName", JSON.stringify(res.Name));
-      localStorage.setItem("userEmail", JSON.stringify(res.Email));
-      localStorage.setItem("userID", res.UserId);
-      this.showAlert = false;
-      this.userId = res.UserId;
-      this.userName = res.Name;
-      localStorage.setItem(
-        "loginResponse",
-        JSON.stringify(this.loginResponse)
-      );
-      sessionStorage.setItem(
-        "loginResponse",
-        JSON.stringify(this.loginResponse)
-      );
-      localStorage.setItem("userId", JSON.stringify(this.userId));
-      localStorage.setItem("token", JSON.stringify(res.access_token));
+
       if (this.saveUsername == true) {
-        localStorage.setItem("userId", JSON.stringify(this.userId));
-        localStorage.setItem("userEmail", JSON.stringify(this.email));
+        localStorage.setItem("userEmail", JSON.stringify(this.email || res.Email));
         localStorage.setItem("userName", JSON.stringify(this.userName));
       } else {
         sessionStorage.setItem("userId", JSON.stringify(this.userId));
-        sessionStorage.setItem("userEmail", JSON.stringify(this.email));
+        sessionStorage.setItem("userEmail", JSON.stringify(this.email || res.Email));
         sessionStorage.setItem("userName", JSON.stringify(this.userName));
       }
       this.service.getuser(res.UserId).subscribe(userInfo => {
