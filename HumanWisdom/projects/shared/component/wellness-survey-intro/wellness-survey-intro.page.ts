@@ -40,7 +40,7 @@ export class WellnessSurveyIntroPage implements OnInit {
     } else {
       this.isAdults = false;
     }
-    this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userId = SharedService.getUserId();
     if (this.userId) {
       this.apiCall();
     }
