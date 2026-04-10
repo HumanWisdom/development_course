@@ -5965,6 +5965,9 @@ export class TeenagersService {
   AddUserPreference(data: any): Observable<any> {
     return this.http.post(this.path + `/AddUserPreference/${data}/${SharedService.ProgramId}`, null)
   }
+  emailLoginReturningObservable(email, password): Observable<any> {
+    return this.services.emailLogin(email, password);
+  }
 
   emaillogin(id = '') {
     let email = 'guest@humanwisdom.me';
