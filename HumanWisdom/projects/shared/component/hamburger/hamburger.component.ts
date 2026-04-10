@@ -254,7 +254,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.disableClick = value;
     });
 
-    this.subscription = this.Onboardingservice.getDataRecivedState().subscribe((value) => {
+    this.subscription = this.Onboardingservice.getDataRecievedState().subscribe((value) => {
       if (value) {
         let sub: any = localStorage.getItem("Subscriber");
         this.roleid = JSON.parse(localStorage.getItem("RoleID"));
