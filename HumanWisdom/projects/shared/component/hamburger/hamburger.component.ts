@@ -542,32 +542,33 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   private handleLogoutAlert() {
     this.logeventservice.logEvent('click_logout_Hamburger');
     this.chatbotService.clearMessages(); // reset chat history on logout
-    this.closemenuevent();
-    this.isloggedIn = false;
-    this.isPartner = false;
-    this.initialize();
-    const acceptCookie = localStorage.getItem("acceptcookie");
-    const firstTimeTour = localStorage.getItem("firstTimeTour");
-    const firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
-    localStorage.clear();
-    sessionStorage.clear();
-    if (firstTimeTour === 'T') {
-      localStorage.setItem('firstTimeTour', 'T');
-    }
-    if (firstTimeSearchTour === 'T') {
-      localStorage.setItem('firstTimeSearchTour', 'T');
-    }
-    localStorage.setItem("isloggedin", "F");
-    localStorage.setItem("guest", "T");
-    localStorage.setItem("acceptcookie", acceptCookie);
-    localStorage.setItem("navigateToUpgradeToPremium", "false");
-    localStorage.setItem("btnClickBecomePartner", "false");
-    
-    // Clear owl animation keys to show animation on next login
-    localStorage.removeItem("owl_gif_shown");
-    localStorage.removeItem("owl_dialogue_shown");
-
+    // if (this.platform.isBrowser) {
     if (this.isWeb) {
+      this.closemenuevent();
+      this.isloggedIn = false;
+      this.isPartner = false;
+      this.initialize();
+      const acceptCookie = localStorage.getItem("acceptcookie");
+      const firstTimeTour = localStorage.getItem("firstTimeTour");
+      const firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
+      localStorage.clear();
+      sessionStorage.clear();
+      if (firstTimeTour === 'T') {
+        localStorage.setItem('firstTimeTour', 'T');
+      }
+      if (firstTimeSearchTour === 'T') {
+        localStorage.setItem('firstTimeSearchTour', 'T');
+      }
+      localStorage.setItem("isloggedin", "F");
+      localStorage.setItem("guest", "T");
+      localStorage.setItem("acceptcookie", acceptCookie);
+      localStorage.setItem("navigateToUpgradeToPremium", "false");
+      localStorage.setItem("btnClickBecomePartner", "false");
+      
+      // Clear owl animation keys to show animation on next login
+      localStorage.removeItem("owl_gif_shown");
+      localStorage.removeItem("owl_dialogue_shown");
+
       // Reset Google Identity Services state
       this.resetGoogleSignIn();
       this.Onboardingservice.guestEmailLogin();
@@ -579,9 +580,6 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       } else {
         this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
       }
-    } else {
-      this.Onboardingservice.guestEmailLogin();
-      this.router.navigate(["/" + SharedService.getprogramName() + "/onboarding/login"]);
     }
   }
 
