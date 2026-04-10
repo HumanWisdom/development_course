@@ -23,9 +23,7 @@ export class TokenInterceptorService implements HttpInterceptor {
       this.token = localStorage.getItem("token");
     }
 
-    if (req.url.includes('/login') || req.url.includes('/VerifyAuthToken') || 
-        req.url.includes('/getuser') || req.url.includes('/Onboarding') ||
-        req.url.includes('/VerifyEmail')) {
+    if (req.url.includes('/login') || req.url.includes('/VerifyAuthToken')) {
       return next.handle(req);
     }
 
