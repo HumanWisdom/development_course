@@ -205,7 +205,7 @@
   <!-- /video -->
  <div class="row center_flex divhome mob-section">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter text-center">
         <h2 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
           Copyright © 2024 HappierMe. All rights reserved </h2>
       </div>

@@ -173,7 +173,7 @@
             <li><a href="../pages/about_us.php" id="AboutUs" class="nav">About us</a></li>
             <li><a href="../blogs/blog_index.php" id="blogs" class="nav">Blog</a></li>
             <li><a id="pricing" class="nav" href="../index.php#div_subscription">Pricing</a></li>
-            <li><a id="events" class="nav" href="https://happierme.app/adults/events" target="_blank" rel="noopener noreferrer">Events</a></li>
+            <li><a id="events" class="nav" href="https://happierme.app/adults/events" target="_self" rel="noopener noreferrer">Events</a></li>
             <li class="header_nav_mobile_only">
               <a id="teenagersHeaderClick_mobile" class="nav" href="../pages/teenagers.php">
                 For Teenagers
