@@ -63,8 +63,8 @@ require_once('./includes/security_config.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     
     <!-- LCP Hero images preloading -->
-    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" fetchpriority="high/>
-    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp" fetchpriority="high />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp"  />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" fetchpriority="high">
     <link rel="stylesheet" href="assets/css/index-inline.css" />
 
