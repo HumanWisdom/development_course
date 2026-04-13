@@ -89,9 +89,9 @@
 
             </form>
           </div>
-          <hr *ngIf="wisdomRecomm?.length && !justSignedUp" class="hr_style_v3_01">
+          <hr *ngIf="wisdomRecomm?.length" class="hr_style_v3_01">
           <!-- recommendations -->
-          <div *ngIf="wisdomRecomm?.length && !justSignedUp">
+          <div *ngIf="wisdomRecomm?.length">
             <h2 class="fw_500 mt50px mb20px fs_12px lh_150p  tcenter">
               Here are some recommendations for you to explore
             </h2>
@@ -163,7 +163,7 @@
               </button>
             </div>
           </div>
-          <hr *ngIf="wisdomRecomm?.length && !justSignedUp" class="hr_style_v3_01">
+          <hr *ngIf="wisdomRecomm?.length" class="hr_style_v3_01">
 
           <!-- ====== FREE-TRIAL BANNER ====== -->
           <div class="row" *ngIf="isGuest">
