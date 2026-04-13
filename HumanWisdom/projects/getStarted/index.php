@@ -601,7 +601,7 @@ require_once('./includes/security_config.php');
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
                   <span class="tools-label-dot">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/rec-toolcircle.svg" alt="Breathing exercise" class="tools-label-icon" />
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingExerciseicon.svg" alt="Breathing exercise" class="tools-label-icon" />
                   </span>
                   <span class="tools-label-text">BREATHING EXERCISE</span>
                 </div>

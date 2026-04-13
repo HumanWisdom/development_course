@@ -20,7 +20,17 @@
     font-weight: 600;
     color: rgba(0, 0, 0, 1);
     line-height: 130%;
-    margin-top: 0;
+    margin-bottom: 18px !important;
+        margin-top: 4px;
+}
+.features {
+    list-style: none;
+    width: 518px;
+    height: 146px;
+    padding-left: 0px;
+    gap: 6px;
+    display: grid;
+    margin-bottom: 0px;
 }
 .tcenter{
     text-align: center;
@@ -60,7 +70,15 @@
     justify-content: center;
     display: contents;
     width: 978px;
-    height: 606px;
+    height: 551.45px;
+}
+.content {
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+    width: 980px;
+    height: 525px;
+    gap: 54px !important;
 }
 .mb-0px{
   margin-bottom: 0px !important;

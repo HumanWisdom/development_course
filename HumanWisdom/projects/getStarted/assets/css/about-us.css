@@ -10,6 +10,9 @@
       justify-content: center;
       display: flex;
     }
+    .p_100px{
+      padding-top: 100px !important;
+    }
 
     .section-row {
       width: 978px;

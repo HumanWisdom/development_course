@@ -632,7 +632,7 @@ header a[href*="splash_options.php"] * {
   gap: 4px;
 }
 
-/* Label row: pink dot + uppercase category */
+/* Label row: category icon + uppercase label */
 .tools-card-label-row {
   display: flex;
   align-items: center;
@@ -642,10 +642,16 @@ header a[href*="splash_options.php"] * {
 .tools-label-dot {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ed7d6f 0%, #d7586b 100%);
   flex-shrink: 0;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.tools-label-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
 }
 .tools-label-text {
   font-size: 12px;
@@ -667,6 +673,13 @@ header a[href*="splash_options.php"] * {
   font-weight: 400;
   color: #777;
   margin: 0;
+}
+/* Override global `p:hover { color: #000 !important }` so card meta stays on-brand */
+.tools-card-meta .tools-card-title:hover {
+  color: #1a1a1a !important;
+}
+.tools-card-meta .tools-card-duration:hover {
+  color: #777 !important;
 }
 
 /* ---- Info text (right side) ---- */

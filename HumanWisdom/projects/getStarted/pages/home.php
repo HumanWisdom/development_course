@@ -185,14 +185,16 @@ require_once('../includes/security_config.php');
   <div class="row center_flex bg-circle" data-aos="fade-up" data-aos-delay="200">
     <div class="scroller-container">
       <div>
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
-          class="img-responsive d-wider w100p" alt="modules" loading="lazy">
-
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/home_circle.svg"
-          class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
-
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
-          alt="happy user" loading="lazy">
+        <picture>
+          <source media="(min-width: 1800px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg">
+          <source media="(min-width: 769px) and (max-width: 1024px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/tablet_circle.svg">
+          <source media="(max-width: 768px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
+            class="img-responsive w100p" alt="Survey findings infographic" loading="lazy">
+        </picture>
       </div>
     </div>
   </div>
