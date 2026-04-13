@@ -143,10 +143,16 @@ require_once('./includes/security_config.php');
         </div>
       </div>
 
-      <!-- ===== ORCHA BANNER ===== -->
+      <!-- ===== ORCHA / Mind BANNER ===== -->
       <div class="orcha-strip">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified"  height="60px" width="60px"/>
-        <span>ORCHA approved for use in healthcare in the UK and USA</span>
+        <div class="orcha-strip-item orcha-strip-orcha">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
+          <span>ORCHA approved for use in healthcare in the UK and USA</span>
+        </div>
+        <div class="orcha-strip-item orcha-strip-mind">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/mind_index.svg" alt="Working with Mind" width="120" height="54"/>
+          <span>Featured in Mind&rsquo;s app library</span>
+        </div>
       </div>
 
       <!-- ===== TOPICS ===== -->
