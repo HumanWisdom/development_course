@@ -34,12 +34,12 @@
           <div class="x_content p0">
             <form>
 
-              <div class="scoreClass mtb20px" *ngIf="lineChartData[0]['data'].length !== 0">
+              <div class="scoreClass mtb20px" *ngIf="!justSignedUp && lineChartData[0]['data'].length !== 0">
                 <h2 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Wellness score</h2>
                 <h2  [ngClass]="isAdults ? 'fc_ED7D6F' : 'fc_e58d82'">{{acheiviedScore}}%</h2>
               </div>
 
-              <div class="row" id="div_graph" *ngIf="enablebtn && lineChartData[0]['data'].length !== 0">
+              <div class="row" id="div_graph" *ngIf="!justSignedUp && enablebtn && lineChartData[0]['data'].length !== 0">
                 <div class="col-md-12 col-sm-12 col-xs-12">
 
                   <canvas baseChart width="400" height="200"
