@@ -187,7 +187,7 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   getEndScreens() {
-    this.commonService.getMicrolearningsEndScreens(this.contentId).subscribe((res: any) => {
+    this.commonService.getMicrolearningsEndScreens(this.contentId, SharedService.ProgramId).subscribe((res: any) => {
       if(res && res.length > 0) {
         const data = res[0];
         this.resourcesList = [

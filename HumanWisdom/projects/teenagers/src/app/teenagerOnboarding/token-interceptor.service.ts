@@ -1,10 +1,8 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
-import { Injectable, Injector } from "@angular/core";
-import { Router } from "@angular/router";
+import { Injectable } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, throwError } from "rxjs";
-import { catchError } from 'rxjs/operators';
-import { SessionService } from "../../../../shared/services/session.service";
-import { TeenagersService } from "../teenagers/teenagers.service";
+import { catchError } from 'rxjs/internal/operators/catchError';
 
 @Injectable({
   providedIn: 'root'
@@ -12,44 +10,32 @@ import { TeenagersService } from "../teenagers/teenagers.service";
 export class TokenInterceptorService implements HttpInterceptor {
   token = '';
 
-  constructor(private injector: Injector) {
+  constructor() {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    try {
-      this.token = JSON.parse(localStorage.getItem("token"))
-    }
-    catch (e) {
-      this.token = localStorage.getItem("token");
-    }
-
-    if (req.url.includes('/login') || req.url.includes('/VerifyAuthToken')) {
-      return next.handle(req);
-    }
-
+    try{
+      this.token=JSON.parse(localStorage.getItem("token"))
+   }
+   catch(e){ 
+     this.token = localStorage.getItem("token");
+   }
     let tokenizedReq = req.clone({
       setHeaders: {
         Authorization: `Bearer ` + this.token
       }
     })
-
-    return next.handle(tokenizedReq).pipe(
-      catchError((err: any) => {
-        if (err instanceof HttpErrorResponse) {
-          if (err.status === 401) {
-            const sessionService = this.injector.get(SessionService);
-            const teenagersService = this.injector.get(TeenagersService);
-
-            if (localStorage.getItem("isloggedin") === 'T') {
-              sessionService.notifySessionExpired();
-            } else {
-              // Guest user - refresh session
-              teenagersService.emaillogin();
-            }
-          }
+    return next.handle(tokenizedReq).pipe(catchError(err => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 401) {
+          // localStorage.clear()
+          localStorage.setItem('guest', 'T');
+          localStorage.setItem('personalised', 'T');
+          localStorage.setItem('acceptcookie', 'T');
+          // this.router.navigate(['/adults/adult-dashboard'])
         }
         return throwError(err);
-      })
-    );
+      }
+    }));
   }
 }

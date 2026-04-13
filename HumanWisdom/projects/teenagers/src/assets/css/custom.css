@@ -24315,7 +24315,7 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #EE9596 !important;
+  color: #A54265 !important;
   text-decoration: underline;
 }
 
@@ -34884,11 +34884,13 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   top: 20px;
   right: 20px;
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.75);
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;  
+  width: 54px;
+  height: 40px;
 }
 
 .ls_story_img {

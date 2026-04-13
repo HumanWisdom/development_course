@@ -49,6 +49,11 @@ export class WisdomScorePage implements OnInit {
 
   ngOnInit() {
     this.loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    this.points = localStorage.getItem("wisdomScore");
+    if (!this.points || this.points == 'null') {
+      this.points = this.loginResponse?.hwScore || 0;
+    }
+
     if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
       this.isSubscriber = true;
     }
