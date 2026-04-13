@@ -1,6 +1,32 @@
 <?php
 // Include security configuration
 require_once('./includes/security_config.php');
+
+$hero_title_html = 'Understand your mind.<br>Change your life.';
+$hero_subtitle_html = 'Personalized support to reduce stress and anxiety, deepen your relationships and build a happier life from within.';
+
+$getWebsiteTitleUrl = 'https://staging.humanwisdom.info/api/GetWebsiteTitle';
+$getWebsiteTitleCtx = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'timeout' => 5,
+        'header' => "Accept: application/json\r\n",
+        'ignore_errors' => true,
+    ],
+]);
+$getWebsiteTitleResponse = @file_get_contents($getWebsiteTitleUrl, false, $getWebsiteTitleCtx);
+if ($getWebsiteTitleResponse !== false) {
+    $getWebsiteTitleData = json_decode($getWebsiteTitleResponse, true);
+    if (is_array($getWebsiteTitleData) && isset($getWebsiteTitleData[0]) && is_array($getWebsiteTitleData[0])) {
+        $getWebsiteTitleRow = $getWebsiteTitleData[0];
+        if (!empty($getWebsiteTitleRow['title']) && is_string($getWebsiteTitleRow['title'])) {
+            $hero_title_html = html_entity_decode($getWebsiteTitleRow['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        }
+        if (!empty($getWebsiteTitleRow['subtitle']) && is_string($getWebsiteTitleRow['subtitle'])) {
+            $hero_subtitle_html = html_entity_decode($getWebsiteTitleRow['subtitle'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -119,14 +145,14 @@ require_once('./includes/security_config.php');
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                     <p class="p" style="text-align: left;line-height: 1.3;">Understand your mind.<br>Change your life.</p>
+                     <p class="p" style="text-align: left;line-height: 1.3;"><?php echo $hero_title_html; ?></p>
                       <div class="div-6">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
                         <div class="text-wrapper-3">Now with Olly AI</div>
                       </div>
                     </div>
                     <p class="text-wrapper-4">
-                      Personalized support to reduce stress and anxiety, deepen your relationships and build a happier life from within.
+                      <?php echo $hero_subtitle_html; ?>
                     </p>
                   </div>
                 </div>
