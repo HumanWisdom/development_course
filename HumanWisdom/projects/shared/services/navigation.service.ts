@@ -13,6 +13,7 @@ export class NavigationService {
   private lastSource: string | null = null;
   private isFirstNavigation = true;
   private hasInjectedFindAnswersHistory = false;
+  private hasInjectedEventsHistory = false;
   private readonly FIND_ANSWERS_REGEX = /\/find-answers\/(?:[\w-]+\/)?[\w-]+-a\d+(-at)?$/;
 
   constructor(private router: Router, private location: Location) {
@@ -109,6 +110,46 @@ export class NavigationService {
 
     // Handle direct navigation to Find Answers pages
     this.handleFindAnswersDirectNavigation(url);
+    this.handleEventsDirectNavigation(url);
+  }
+
+  private handleEventsDirectNavigation(url: string): void {
+    if (!url.includes('/events/event') && !url.includes('/curated/youtubelink')) {
+      return;
+    }
+
+    const isDirectEntry = this.isDirectEntryNavigation();
+    
+    if (isDirectEntry && !this.hasInjectedEventsHistory) {
+      this.injectEventsHistory(url);
+      this.hasInjectedEventsHistory = true;
+    }
+  }
+
+  private injectEventsHistory(currentUrl: string): void {
+    const cleanUrl = currentUrl.split('?')[0];
+    const segments = cleanUrl.split('/');
+    if (segments.length < 2) return;
+    
+    const baseUrl = `/${segments[1]}`; // /adults or /teenagers
+    const searchUrl = `${baseUrl}/search`;
+    const eventsUrl = `${baseUrl}/events`;
+    
+    try {
+      this.location.replaceState(searchUrl);
+      this.location.go(eventsUrl);
+      this.location.go(currentUrl);
+
+      this.history.push(searchUrl);
+      this.history.push(eventsUrl);
+      this.history.push(currentUrl);
+
+      console.log('[NavigationService] Injected Events history:', {
+        stack: [searchUrl, eventsUrl, currentUrl]
+      });
+    } catch (error) {
+      console.error('[NavigationService] Error injecting Events history:', error);
+    }
   }
   private handleFindAnswersDirectNavigation(url: string): void {
     // Only process if it's a Find Answers answer page
@@ -334,6 +375,12 @@ export class NavigationService {
       console.log("Fallback: Event inner -> Events listing");
       return `/${prefix}/events`;
     }
+
+    if (currentUrl.includes('/curated/youtubelink')) {
+      console.log("Fallback: Curated Youtube Link -> Events listing");
+      return `/${prefix}/events`;
+    }
+
     if (hasEventsSeg || segments.some(s => s.toLowerCase() === 'events-index')) {
       console.log("Fallback: Events listing -> Search");
       return `/${prefix}/search`;
@@ -403,7 +450,7 @@ export class NavigationService {
     }
 
     // 13. Soundscapes: Inner -> Listing -> Search
-    const hasSoundscapes = segments.some(s => s.toLowerCase() === 'soundscapes');
+    const hasSoundscapes = segments.some(s => s.toLowerCase() === 'soundscapes' || s.toLowerCase() === 'soundcapes');
     if (segments.includes('audiopage') && hasSoundscapes) {
       console.log("Fallback: Soundscapes Inner -> Listing");
       return `/${prefix}/soundscapes`;
@@ -431,6 +478,16 @@ export class NavigationService {
     }
     if (currentUrl.includes('/micro-learning')) {
       console.log("Fallback: ML Listing -> Search");
+      return `/${prefix}/search`;
+    }
+
+    // 16. Journal: Inner -> Listing -> Search
+    if (currentUrl.includes('/journal/') || currentUrl.includes('/guidedquestions')) {
+      console.log("Fallback: Journal Inner -> Let component handle");
+      return null;
+    }
+    if (currentUrl.includes('/journal')) {
+      console.log("Fallback: Journal Listing -> Search");
       return `/${prefix}/search`;
     }
 

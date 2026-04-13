@@ -389,22 +389,13 @@ if (SharedService.ProgramId == ProgramType.Adults) {
     });
   }
   goBack() {
-    if(this.isGuidedQueestionsTab && !SharedService.isFromAdults){
-        this.isGuidedQueestionsTab = false;
-        this.isDiary=true;
-        this.viewJournalAndReflections();
-        this.getDailyQuestion();
+    SharedService.isFromAdults = false;
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
     }else{
-      SharedService.isFromAdults =  false;
-        //  this.router.navigate(['/adults/adult-dashboard']);
-        var url = this.navigationService.navigateToBackLink();
-        if (url == null) {
-          this.location.back();
-        }else{
-          this.router.navigate([url]);
-        }
+      this.router.navigate([url]);
     }
-
   }
 
   getAlertcloseEvent(event) {
