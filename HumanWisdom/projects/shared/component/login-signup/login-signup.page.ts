@@ -1308,6 +1308,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
                     localStorage.setItem(
                       "signupfirst", 'F'
                     );
+                    localStorage.setItem('isFromSignupFlow', 'T');
                     if (SharedService.ProgramId === 9) {
                       this.router.navigate(["/adults/change-topic"], {
                         state: {
@@ -1315,7 +1316,6 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
                         }
                       });
                     } else if (SharedService.ProgramId === 11) {
-                      localStorage.setItem('isFromSignupFlow', 'T');
                       this.router.navigate(["/teenagers/change-topic"], {
                         state: {
                           routedFromLogin: true,

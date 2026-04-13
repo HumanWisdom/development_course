@@ -1,26 +1,5 @@
 <?php
 require_once('../includes/security_config.php');
-
-$mind_main_title_html = 'Think better.<br>Live better.';
-$getWebsiteTitleUrl = 'https://staging.humanwisdom.info/api/GetWebsiteTitle';
-$getWebsiteTitleCtx = stream_context_create([
-    'http' => [
-        'method' => 'GET',
-        'timeout' => 5,
-        'header' => "Accept: application/json\r\n",
-        'ignore_errors' => true,
-    ],
-]);
-$getWebsiteTitleResponse = @file_get_contents($getWebsiteTitleUrl, false, $getWebsiteTitleCtx);
-if ($getWebsiteTitleResponse !== false) {
-    $getWebsiteTitleData = json_decode($getWebsiteTitleResponse, true);
-    if (is_array($getWebsiteTitleData) && isset($getWebsiteTitleData[0]) && is_array($getWebsiteTitleData[0])) {
-        $getWebsiteTitleRow = $getWebsiteTitleData[0];
-        if (!empty($getWebsiteTitleRow['title']) && is_string($getWebsiteTitleRow['title'])) {
-            $mind_main_title_html = html_entity_decode($getWebsiteTitleRow['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
-        }
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +37,8 @@ if ($getWebsiteTitleResponse !== false) {
   <!-- End Google Tag Manager -->
 
   <link rel="stylesheet" href="../assets/css/mind.css" />
+  <style>#hw-website-title.hw-website-title-pending{visibility:hidden}</style>
+  <noscript><style>#hw-website-title.hw-website-title-pending{visibility:visible!important}</style></noscript>
 
 </head>
 
@@ -83,7 +64,7 @@ if ($getWebsiteTitleResponse !== false) {
         </div>
 
         <div class="text-content">
-          <h1 class="mind-title"><?php echo $mind_main_title_html; ?></h1>
+          <h1 class="mind-title hw-website-title-pending" id="hw-website-title">Think better.<br>Live better.</h1>
           <ul class="features">
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
@@ -227,7 +208,7 @@ if ($getWebsiteTitleResponse !== false) {
   <!-- /video -->
  <div class="row center_flex divhome mob-section">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter text-center">
         <h2 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
           Copyright © 2024 HappierMe. All rights reserved </h2>
       </div>

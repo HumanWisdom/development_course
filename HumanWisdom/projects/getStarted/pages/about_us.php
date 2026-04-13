@@ -222,35 +222,6 @@
 
         </div>
       </div>
-      <section>
-        <div class="section-header">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-              <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
-                The inspiration behind HappierMe
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row center_flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0 tcenter w-810px">
-            <!-- <video id="homeVideo" controls playinline class="w100p"
-          poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
-          controlsList="nodownload">
-          <source
-            src="https://d1tenzemoxuh75.cloudfront.net/website/videos/adults_intro.mp4"
-            type="video/mp4">
-        </video> -->
-
-            <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
-              src="https://www.youtube.com/embed/qcOZnwQ3jxM?si=h1vq4zHtZwaPYq8E" class="cvideo_b yt-embed"
-              allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
-              onclick="return logevent('click_play_video_home', 'about_us.php')"></iframe>
-          </div>
-        </div>
-      </section>
-      <!-- /video -->
     </section>
     <!-- /our_why -->
 
@@ -288,8 +259,39 @@
     </section>
     <!-- /our_how -->
 
-    <!-- content -->
+    <!-- inspiration / video -->
     <section>
+      <div class="section-header">
+        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+            <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
+              The inspiration behind HappierMe
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row center_flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0 tcenter w-810px">
+          <!-- <video id="homeVideo" controls playinline class="w100p"
+          poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
+          controlsList="nodownload">
+          <source
+            src="https://d1tenzemoxuh75.cloudfront.net/website/videos/adults_intro.mp4"
+            type="video/mp4">
+        </video> -->
+
+          <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/qcOZnwQ3jxM?si=h1vq4zHtZwaPYq8E" class="cvideo_b yt-embed"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'about_us.php')"></iframe>
+        </div>
+      </div>
+    </section>
+    <!-- /inspiration / video -->
+
+    <!-- content -->
+    <section class="p_100px">
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
@@ -666,7 +668,7 @@
               </h3>
             </div> -->
 
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-9 pr0px tleft ta_lc mt_m24px ml10px"
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-9 pr0px tleft ta_lc mt_m24px"
                   data-aos="fade-up" data-aos-delay="200">
                   <h3 class="mtb10px fs_24px fw_500 lh_160p fc_000000">
                     Dr Manoj Krishna

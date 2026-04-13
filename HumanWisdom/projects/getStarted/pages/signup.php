@@ -37,8 +37,24 @@
         color: rgba(131, 75, 102, 1) !important;
       }
 
+      /* Unchecked: Figma — 20×20, 4px radius, 1px #000 @ 50% (inner stroke → border-box) */
+      #signup-form label.chkb_post_anonymously > input[type="checkbox"] + *::before {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+        border-radius: 4px;
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+      }
+
       #signup-form label.chkb_post_anonymously > input[type="checkbox"]:checked + *::before {
-        background: rgba(237, 125, 111, 1) url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_white.svg) 50% no-repeat;
+        background-color: rgba(237, 125, 111, 1);
+        background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_white.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12px 12px;
         border: 0;
         border-radius: 4px;
       }

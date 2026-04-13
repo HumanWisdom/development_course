@@ -272,13 +272,7 @@ export class WisdomScalePage implements OnInit {
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
     const { routedFromLogin } = window.history.state;
 
-    this.justSignedUp = !!token && !this.isGuest && (
-      visits < 5 || 
-      isFromSignupFlow || 
-      SharedService.isRoutedFromLogin || 
-      routedFromLogin === true || 
-      routedFromLogin === 'true'
-    );
+    this.justSignedUp = !!token && !this.isGuest && isFromSignupFlow;
 
     if (this.userId) {
       this.apiCall();

@@ -1,26 +1,5 @@
 <?php
 require_once('../includes/security_config.php');
-
-$home_main_title_html = 'Transform your life<br>with HappierMe';
-$getWebsiteTitleUrl = 'https://staging.humanwisdom.info/api/GetWebsiteTitle';
-$getWebsiteTitleCtx = stream_context_create([
-    'http' => [
-        'method' => 'GET',
-        'timeout' => 5,
-        'header' => "Accept: application/json\r\n",
-        'ignore_errors' => true,
-    ],
-]);
-$getWebsiteTitleResponse = @file_get_contents($getWebsiteTitleUrl, false, $getWebsiteTitleCtx);
-if ($getWebsiteTitleResponse !== false) {
-    $getWebsiteTitleData = json_decode($getWebsiteTitleResponse, true);
-    if (is_array($getWebsiteTitleData) && isset($getWebsiteTitleData[0]) && is_array($getWebsiteTitleData[0])) {
-        $getWebsiteTitleRow = $getWebsiteTitleData[0];
-        if (!empty($getWebsiteTitleRow['title']) && is_string($getWebsiteTitleRow['title'])) {
-            $home_main_title_html = html_entity_decode($getWebsiteTitleRow['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
-        }
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +35,8 @@ if ($getWebsiteTitleResponse !== false) {
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-NHPHHF97');</script>
   <!-- End Google Tag Manager -->
+  <style>#hw-website-title.hw-website-title-pending{visibility:hidden}</style>
+  <noscript><style>#hw-website-title.hw-website-title-pending{visibility:visible!important}</style></noscript>
 
 </head>
 
@@ -94,7 +75,7 @@ if ($getWebsiteTitleResponse !== false) {
         </div>
 
         <div class="text-content">
-          <h1 class="main-title"><?php echo $home_main_title_html; ?></h1>
+          <h1 class="main-title hw-website-title-pending" id="hw-website-title">Transform your life<br>with HappierMe</h1>
           <ul class="features">
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
@@ -204,14 +185,16 @@ if ($getWebsiteTitleResponse !== false) {
   <div class="row center_flex bg-circle" data-aos="fade-up" data-aos-delay="200">
     <div class="scroller-container">
       <div>
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
-          class="img-responsive d-wider w100p" alt="modules" loading="lazy">
-
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/home_circle.svg"
-          class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
-
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
-          alt="happy user" loading="lazy">
+        <picture>
+          <source media="(min-width: 1800px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg">
+          <source media="(min-width: 769px) and (max-width: 1024px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/tablet_circle.svg">
+          <source media="(max-width: 768px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
+            class="img-responsive w100p" alt="Survey findings infographic" loading="lazy">
+        </picture>
       </div>
     </div>
   </div>
