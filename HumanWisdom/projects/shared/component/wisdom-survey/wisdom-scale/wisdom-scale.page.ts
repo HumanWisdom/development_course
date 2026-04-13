@@ -272,7 +272,11 @@ export class WisdomScalePage implements OnInit {
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
     const { routedFromLogin } = window.history.state;
 
-    this.justSignedUp = !!token && !this.isGuest && isFromSignupFlow;
+    this.justSignedUp = isFromSignupFlow;
+
+    if (this.justSignedUp) {
+      this.acheiviedScore = 0;
+    }
 
     if (this.userId) {
       this.apiCall();
@@ -356,6 +360,13 @@ export class WisdomScalePage implements OnInit {
     let dataScore = 0;
 
     this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
+      if (this.justSignedUp) {
+        this.acheiviedScore = 0;
+        this.lineChartData[0]['data'] = [];
+        this.lineChartLabels = [];
+        return;
+      }
+
       const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       r = r.sort((a, b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
       // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
