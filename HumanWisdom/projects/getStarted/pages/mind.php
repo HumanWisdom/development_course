@@ -1,12 +1,5 @@
 <?php
 require_once('../includes/security_config.php');
-require_once('../includes/fetch_get_website_title.php');
-
-$mind_main_title_html = 'Think better<br>Live better.';
-$getWebsiteTitleApi = fetch_get_website_title_from_api();
-if ($getWebsiteTitleApi['title'] !== null) {
-    $mind_main_title_html = $getWebsiteTitleApi['title'];
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +62,7 @@ if ($getWebsiteTitleApi['title'] !== null) {
         </div>
 
         <div class="text-content">
-          <h1 class="mind-title"><?php echo $mind_main_title_html; ?></h1>
+          <h1 class="mind-title" id="hw-website-title">Think better.<br>Live better.</h1>
           <ul class="features">
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
