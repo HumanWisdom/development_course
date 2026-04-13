@@ -1,25 +1,11 @@
 <?php
 require_once('../includes/security_config.php');
+require_once('../includes/fetch_get_website_title.php');
 
 $home_main_title_html = 'Transform your life<br>with HappierMe';
-$getWebsiteTitleUrl = 'https://staging.humanwisdom.info/api/GetWebsiteTitle';
-$getWebsiteTitleCtx = stream_context_create([
-    'http' => [
-        'method' => 'GET',
-        'timeout' => 5,
-        'header' => "Accept: application/json\r\n",
-        'ignore_errors' => true,
-    ],
-]);
-$getWebsiteTitleResponse = @file_get_contents($getWebsiteTitleUrl, false, $getWebsiteTitleCtx);
-if ($getWebsiteTitleResponse !== false) {
-    $getWebsiteTitleData = json_decode($getWebsiteTitleResponse, true);
-    if (is_array($getWebsiteTitleData) && isset($getWebsiteTitleData[0]) && is_array($getWebsiteTitleData[0])) {
-        $getWebsiteTitleRow = $getWebsiteTitleData[0];
-        if (!empty($getWebsiteTitleRow['title']) && is_string($getWebsiteTitleRow['title'])) {
-            $home_main_title_html = html_entity_decode($getWebsiteTitleRow['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
-        }
-    }
+$getWebsiteTitleApi = fetch_get_website_title_from_api();
+if ($getWebsiteTitleApi['title'] !== null) {
+    $home_main_title_html = $getWebsiteTitleApi['title'];
 }
 ?>
 <!DOCTYPE html>
