@@ -44,6 +44,8 @@ require_once('./includes/security_config.php');
   <link rel="canonical" href="https://happierme.app" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
+    <style>#hw-website-title.hw-website-title-pending,#hw-website-subtitle.hw-website-title-pending{visibility:hidden}</style>
+    <noscript><style>#hw-website-title.hw-website-title-pending,#hw-website-subtitle.hw-website-title-pending{visibility:visible!important}</style></noscript>
     <title>HappierMe: For Teens &amp; Adults</title>
     
     <!-- vendor_header -->
@@ -119,13 +121,13 @@ require_once('./includes/security_config.php');
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                     <p class="p" style="text-align: left;line-height: 1.3;" id="hw-website-title">Understand your mind.<br>Change your life.</p>
+                     <p class="p hw-website-title-pending" style="text-align: left;line-height: 1.3;" id="hw-website-title">Understand your mind.<br>Change your life.</p>
                       <div class="div-6">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
                         <div class="text-wrapper-3">Now with Olly AI</div>
                       </div>
                     </div>
-                    <p class="text-wrapper-4" id="hw-website-subtitle">
+                    <p class="text-wrapper-4 hw-website-title-pending" id="hw-website-subtitle">
                       Personalized support to reduce stress and anxiety, deepen your relationships and build a happier life from within.
                     </p>
                   </div>

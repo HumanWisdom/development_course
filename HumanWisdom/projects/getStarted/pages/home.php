@@ -35,6 +35,8 @@ require_once('../includes/security_config.php');
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-NHPHHF97');</script>
   <!-- End Google Tag Manager -->
+  <style>#hw-website-title.hw-website-title-pending{visibility:hidden}</style>
+  <noscript><style>#hw-website-title.hw-website-title-pending{visibility:visible!important}</style></noscript>
 
 </head>
 
@@ -73,7 +75,7 @@ require_once('../includes/security_config.php');
         </div>
 
         <div class="text-content">
-          <h1 class="main-title" id="hw-website-title">Transform your life<br>with HappierMe</h1>
+          <h1 class="main-title hw-website-title-pending" id="hw-website-title">Transform your life<br>with HappierMe</h1>
           <ul class="features">
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
