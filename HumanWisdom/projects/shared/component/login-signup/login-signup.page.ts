@@ -1304,7 +1304,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
                   }
                 } else {
                   localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                  if (this.loginResponse?.NoOfVisits === 1) {
+                  if (Number(this.loginResponse?.NoOfVisits) === 1) {
                     localStorage.setItem(
                       "signupfirst", 'F'
                     );

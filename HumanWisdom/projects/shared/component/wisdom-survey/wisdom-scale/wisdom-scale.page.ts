@@ -161,6 +161,8 @@ export class WisdomScalePage implements OnInit {
     } else {
       this.isAdults = false;
     }
+
+    this.justSignedUp = localStorage.getItem('isFromSignupFlow') === 'T';
     
     let authtoken
     
