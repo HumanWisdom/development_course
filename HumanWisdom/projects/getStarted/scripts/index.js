@@ -1683,6 +1683,7 @@ nfsnContactForm &&
         });
     }, 200),
     fetchData();
+fetchWebsiteTitle();
 var countryCode = "",
     pricingModel = "",
     defaultCurrencySymbol = "";
@@ -1714,6 +1715,22 @@ async function fetchData() {
             (i.textContent = pm.CurSymbol + pm.Monthly + getIsoCode() + "/mo"),
             (a.textContent = `After your free trial, the yearly subscription is ${t.textContent} and automatically renews each year until cancelled.`);
     }
+}
+async function fetchWebsiteTitle() {
+    var titleEl = document.getElementById("hw-website-title"),
+        subtitleEl = document.getElementById("hw-website-subtitle");
+    if (!titleEl && !subtitleEl) return;
+    try {
+        var res = await fetch("https://staging.humanwisdom.info/api/GetWebsiteTitle", {
+            headers: { Accept: "application/json" },
+        });
+        if (!res.ok) return;
+        var data = await res.json();
+        var row = Array.isArray(data) && data[0];
+        if (!row) return;
+        if (titleEl && row.title) titleEl.innerHTML = row.title;
+        if (subtitleEl && row.subtitle) subtitleEl.innerHTML = row.subtitle;
+    } catch (err) {}
 }
 function formatToDecimal(e) {
     return Number.isInteger(e) ? `${e}.00` : e.toFixed(2);

@@ -4,7 +4,7 @@ require_once('./includes/security_config.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en" data-website-title-api="api/get_website_title_proxy.php">
+<html lang="en">
  <head>
   <title>HappierMe: For Teens & Adults</title>
   <meta name="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
@@ -119,13 +119,13 @@ require_once('./includes/security_config.php');
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                     <p class="p" style="text-align: left;line-height: 1.3;" data-website-title>Understand your mind.<br>Change your life.</p>
+                     <p class="p" style="text-align: left;line-height: 1.3;" id="hw-website-title">Understand your mind.<br>Change your life.</p>
                       <div class="div-6">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
                         <div class="text-wrapper-3">Now with Olly AI</div>
                       </div>
                     </div>
-                    <p class="text-wrapper-4" data-website-subtitle>
+                    <p class="text-wrapper-4" id="hw-website-subtitle">
                       Personalized support to reduce stress and anxiety, deepen your relationships and build a happier life from within.
                     </p>
                   </div>
@@ -2662,8 +2662,6 @@ require_once('./includes/security_config.php');
     <!-- vendor_footer -->
     <?php include('./includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
-
-    <script src="assets/js/get_website_title.js" defer></script>
 
     <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
