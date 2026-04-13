@@ -218,13 +218,13 @@ require_once('./includes/security_config.php');
  <div class="div-new">
     <div class="scroller-container div_new1">
       <div>
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
           class="img-responsive d-wider w100p" alt="modules" loading="lazy">
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/home_circle.svg"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg"
           class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg" class="happy-wide-img"
           alt="happy user" loading="lazy">
       </div>
     </div>
