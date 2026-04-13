@@ -1,3 +1,27 @@
+<?php
+require_once('../includes/security_config.php');
+
+$mind_main_title_html = 'Think better.<br>Live better.';
+$getWebsiteTitleUrl = 'https://staging.humanwisdom.info/api/GetWebsiteTitle';
+$getWebsiteTitleCtx = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'timeout' => 5,
+        'header' => "Accept: application/json\r\n",
+        'ignore_errors' => true,
+    ],
+]);
+$getWebsiteTitleResponse = @file_get_contents($getWebsiteTitleUrl, false, $getWebsiteTitleCtx);
+if ($getWebsiteTitleResponse !== false) {
+    $getWebsiteTitleData = json_decode($getWebsiteTitleResponse, true);
+    if (is_array($getWebsiteTitleData) && isset($getWebsiteTitleData[0]) && is_array($getWebsiteTitleData[0])) {
+        $getWebsiteTitleRow = $getWebsiteTitleData[0];
+        if (!empty($getWebsiteTitleRow['title']) && is_string($getWebsiteTitleRow['title'])) {
+            $mind_main_title_html = html_entity_decode($getWebsiteTitleRow['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,9 +83,7 @@
         </div>
 
         <div class="text-content">
-          <h1 class="mind-title">
-           Think better. Live better.
-          </h1>
+          <h1 class="mind-title"><?php echo $mind_main_title_html; ?></h1>
           <ul class="features">
             <li>
               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 icon-container">
