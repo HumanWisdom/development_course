@@ -94,11 +94,16 @@ export class WisdomScorePage implements OnInit {
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
     const { routedFromLogin } = window.history.state;
 
-    this.justSignedUp = isFromSignupFlow;
-
-    if (this.justSignedUp) {
-      this.points = '0';
-    }
+    // Use a combination of flags to determine if the user just signed up/logged in for the first time
+    // For teenagers, background initialization calls might increment visits slightly, so we use < 5
+    // and prioritize the explicit signup flow flag.
+    this.justSignedUp = !!token && !this.isGuest && (
+      visits < 5 || 
+      isFromSignupFlow || 
+      SharedService.isRoutedFromLogin || 
+      routedFromLogin === true || 
+      routedFromLogin === 'true'
+    );
   }
 
   navigateToRecommendation(item: any) {
