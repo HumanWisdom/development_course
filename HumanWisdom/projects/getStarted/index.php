@@ -63,7 +63,7 @@ require_once('./includes/security_config.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     
     <!-- LCP Hero images preloading -->
-    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/bannerind.svg" />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/bannermobile11.svg" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" fetchpriority="high">
     <link rel="stylesheet" href="assets/css/index-inline.css" />
@@ -322,7 +322,7 @@ require_once('./includes/security_config.php');
         <div class="div-24">
           <!-- Workplace -->
           <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/work.svg" alt="Work" />
+            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work.webp" alt="Work" />
             <div class="frame-wrapper-7">
               <div class="div-26">
                 <div class="div-27">
@@ -338,7 +338,7 @@ require_once('./includes/security_config.php');
           </a>
           <!-- Education -->
           <a href="/pages/education.php" class="div-25" id="orgCardEducation">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/education.svg" alt="Education" />
+            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/education.webp" alt="Education" />
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
@@ -354,7 +354,7 @@ require_once('./includes/security_config.php');
           </a>
           <!-- Healthcare -->
           <a href="/pages/healthcare.php" class="div-25" id="orgCardHealthcare">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/healthcare.svg" alt="Healthcare" />
+            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/healthcare.webp" alt="Healthcare" />
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
