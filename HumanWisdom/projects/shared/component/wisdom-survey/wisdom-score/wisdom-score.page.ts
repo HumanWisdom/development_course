@@ -1,5 +1,5 @@
 import { TeenagersService } from './../../../../teenagers/src/app/teenagers/teenagers.service';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from '../../../services/shared.service';
@@ -10,7 +10,7 @@ import { ProgramType } from '../../../models/program-model';
   templateUrl: './wisdom-score.page.html',
   styleUrls: ['./wisdom-score.page.scss'],
 })
-export class WisdomScorePage implements OnInit, OnDestroy {
+export class WisdomScorePage implements OnInit {
 
  formatTitle = (percent: number): string => `${percent}%`;
 
@@ -35,7 +35,6 @@ export class WisdomScorePage implements OnInit, OnDestroy {
   justSignedUp = false;
   isGuest = false;
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
-
   
 
   constructor(private router: Router,
@@ -89,29 +88,30 @@ export class WisdomScorePage implements OnInit, OnDestroy {
 
     this.enableDash = true;
 
-    const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
-    const isMobile = SharedService.isIOSApp() || SharedService.isAndroid();
     const visits = Number(this.loginResponse?.NoOfVisits || '0');
-    const alreadyProceeded = localStorage.getItem('wisdomScoreProceeded') === 'T';
+    const token = SharedService.getDataFromLocalStorage('token');
+    this.isGuest = localStorage.getItem('guest') === 'T';
+    const signupFlowFlag = localStorage.getItem('isFromSignupFlow');
+    const isFromSignupFlow = signupFlowFlag === 'T';
+    const isSignupFlowFinished = signupFlowFlag === 'F';
+    const { routedFromLogin } = window.history.state;
 
-    if (isMobile) {
-      // For mobile apps, visits <= 1 is a reliable indicator of first-time signup
-      this.justSignedUp = (isFromSignupFlow || visits <= 1) && !alreadyProceeded;
-    } else {
-      // For desktop, keep using the existing proven flag
-      this.justSignedUp = isFromSignupFlow && !alreadyProceeded;
-    }
+    // Use a combination of flags to determine if the user just signed up/logged in for the first time
+    // For teenagers, background initialization calls might increment visits slightly, so we use < 5
+    // and prioritize the explicit signup flow flag.
+    this.justSignedUp = !!token && !this.isGuest && !isSignupFlowFinished && (
+      visits < 5 || 
+      isFromSignupFlow || 
+      SharedService.isRoutedFromLogin || 
+      routedFromLogin === true || 
+      routedFromLogin === 'true'
+    );
 
-
-
-  }
-  ngOnDestroy() {
     if (this.justSignedUp) {
-      localStorage.setItem('wisdomScoreProceeded', 'T');
       localStorage.setItem('isFromSignupFlow', 'F');
+      SharedService.isRoutedFromLogin = false;
     }
   }
-
 
   navigateToRecommendation(item: any) {
     const isFree = item.isFree == 1 || item.isFree == '1' || item.isFree === true || item.isFree === 'true';
@@ -153,12 +153,10 @@ export class WisdomScorePage implements OnInit, OnDestroy {
   }
 
   routeToDashboard() {
-    localStorage.setItem('wisdomScoreProceeded', 'T');
-    localStorage.setItem('isFromSignupFlow', 'F');
+        localStorage.setItem('isFromSignupFlow', 'F');
     SharedService.isRoutedFromLogin = false;
     this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
-
 
   goToSubscribe() {
     if (this.isAdults) {
@@ -168,5 +166,3 @@ export class WisdomScorePage implements OnInit, OnDestroy {
     }
   }
 }
-
-
