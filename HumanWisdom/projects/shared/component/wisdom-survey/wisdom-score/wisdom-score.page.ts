@@ -98,7 +98,7 @@ export class WisdomScorePage implements OnInit {
     // For teenagers, background initialization calls might increment visits slightly, so we use < 5
     // and prioritize the explicit signup flow flag.
     this.justSignedUp = !!token && !this.isGuest && (
-      visits < 5 || 
+      visits < 1 || 
       isFromSignupFlow || 
       SharedService.isRoutedFromLogin || 
       routedFromLogin === true || 
