@@ -29,8 +29,66 @@
     </script>
     <!-- vendor_header --> <?php include('../includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
+    <link rel="stylesheet" href="../assets/css/mind.css" />
+    <style>
+      /* OR: lines flanking text (Figma ~121px lines, 1px rgba(0,0,0,.25)) */
+      .download_qr_or_row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .download_qr_or_line {
+        flex: 1 1 0;
+        min-width: 32px;
+        height: 0;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.25);
+        margin: 0;
+        opacity: 1;
+      }
+      .download_qr_or_label {
+        flex: 0 0 auto;
+        margin: 0;
+      }
+      /* Mobile only: keep “Scan to download” on one line (avoid 3-line wrap). Desktop: natural 2-line title like staging. */
+      @media screen and (max-width: 767.98px) {
+        .download_qr_h1_line1 {
+          white-space: nowrap;
+        }
+        /* QR scanner: fixed 200×200 (overrides .img-responsive / .width_unseti) */
+        .download_qr_scan_img {
+          width: 200px !important;
+          height: 200px !important;
+          max-width: 200px !important;
+          object-fit: contain;
+        }
+      }
+      /* Stack: mobile uses source order (badges → OR → heading → QR). Desktop reorders only. */
+      .download_qr_card_stack {
+        display: flex;
+        flex-direction: column;
+      }
+      @media screen and (min-width: 768px) {
+        .download_qr_block--heading {
+          order: 1;
+        }
+        .download_qr_block--qr {
+          order: 2;
+        }
+        .download_qr_block--or {
+          order: 3;
+        }
+        .download_qr_block--badges {
+          order: 4;
+          margin-top: 1.5rem;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="page-signup">
     <!-- request a demo php script --> <?php
       // Simulate fetching country data from a database or external API
       $countries = 
@@ -255,7 +313,7 @@
                       </h5></div></div></div></div></div></section> -->
       <!-- /inspiring -->
      
-        <div class="row center_flex div_subscriptionnews">
+        <div class="row center_flex div_subscriptionnews_mind">
           <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0">
             <div class=" back">
               <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
@@ -264,79 +322,59 @@
               <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mt15px mb0px fs_15px fw_400 lh_160p fc_000000">
                   Connect with our specialists today and see how we can help you
                 </h4></div></div> -->
-              <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
+              <div class="row center_flex mt20px mb10px" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0">
-                  <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0"></div>   -->
-                  <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Isolation_Mode.webp" class="img-responsive w100p display_m_none " loading="lazy" alt="performance">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Isolation_Mobile.svg" class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
-                  </div> -->
-                  <!-- <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 p0"></div>   -->
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="box">
-                      
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <h1 class="plr20px mtb0px fs_30px fw_600 lh_130p fc_803358 ta_lc tcenter"> Scan to download the app</h1>
+                      <div class="download_qr_card_stack">
+                        <div class="download_qr_block download_qr_block--badges">
+                          <div class="row justify-content-center align-items-center g-3 download_qr_store_badges gap_24px" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center">
+                              <a href="https://apps.apple.com/in/app/happierme-for-a-happier-you/id1588535567">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" alt="Download on the App Store"
+                                  class="img-responsive">
+                              </a>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center">
+                              <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/play.svg" alt="Get it on Google Play"
+                                  class="img-responsive">
+                              </a>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                     <div class="row mt40px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                          <!-- <hr class="hr_style_v3_05"> -->
+                        <div class="download_qr_block download_qr_block--or">
+                          <div class="row mtb30px">
+                            <div class="col-12 p0 px-2">
+                              <div class="download_qr_or_row" role="separator" aria-label="Or">
+                                <hr class="download_qr_or_line" aria-hidden="true" />
+                                <h4 class="download_qr_or_label mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tcenter">
+                                  OR
+                                </h4>
+                                <hr class="download_qr_or_line" aria-hidden="true" />
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                  <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/scan.webp" class="img-responsive width_unseti" alt="quotation" loading=lazy> 
-
+                        <div class="download_qr_block download_qr_block--heading">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h1 class="plr20px mtb0px fs_30px fw_600 lh_130p fc_803358 ta_lc tcenter download_qr_scan_heading">
+                                <span class="download_qr_h1_line1">Scan to download</span><br /><span class="download_qr_h1_line2">the app</span>
+                              </h1>
+                            </div>
+                          </div>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                          <!-- <hr class="hr_style_v3_05"> -->
-                        </div>
-                      </div>
-                    </div>
-                     <div class="row mtb30px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                          <hr class="hr_style_v3_05">
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tcenter">
-                            OR
-                          </h4>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
-                          <hr class="hr_style_v3_05">
-                        </div>
-                      </div>
-                    </div>
-
-
-   
-      <!-- /desktop -->
-                    <!-- <div class="row mtb15px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lc"> Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox. </h3>
-                      </div>
-                    </div> -->
-                    <!-- <div class="row mt30px"><div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p0"><h1 class="mtb0px fs_32px fw_600 lh_130p fc_834b66 ta_lc">
-                Subscribe to our newsletter!
-                </h1><div class="row mt15px"><h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000 ta_lcnew">
-                Sign up for regular updates from HappierMe, and get some inspiration straight to your inbox.                  </h3></div> -->
-                    <div class="row justify-content-center align-items-center g-3 download_qr_store_badges gap_24px" data-aos="fade-up" data-aos-delay="100">
-                      <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center">
-                        <a href="https://apps.apple.com/in/app/happierme-for-a-happier-you/id1588535567">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/google.svg" alt="Download on the App Store"
-                            class="img-responsive">
-                        </a>
-                      </div>
-                      <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center">
-                        <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/play.svg" alt="Get it on Google Play"
-                            class="img-responsive">
-                        </a>
-                      </div>
-                    </div>
+                        <div class="download_qr_block download_qr_block--qr">
+                          <div class="row mt40px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0"></div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/scan.webp" class="img-responsive width_unseti download_qr_scan_img" alt="Scan QR code to download the app" loading="lazy">
+                              </div>
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0"></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -346,10 +384,11 @@
             </div>
           </div>
         </div>
-      </div>
-      </div>
-      </div> 
    
     <!-- </div></div> -->
+    <?php include('../includes/footer_copyright_sticky_mind.php'); ?>
+    <!-- vendor_footer -->
+    <?php include('../includes/vendor_footer.php'); ?>
+    <!-- /vendor_footer -->
   </body>
 </html>

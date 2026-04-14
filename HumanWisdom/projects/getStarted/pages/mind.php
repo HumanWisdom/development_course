@@ -175,10 +175,10 @@ require_once('../includes/security_config.php');
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg">
           <source media="(min-width: 769px) and (max-width: 1024px)"
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/tablet_circle.svg">
-          <source media="(max-width: 768px)"
-            srcset="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
-            class="img-responsive w100p" alt="modules" loading="lazy">
+          <source media="(min-width: 1025px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/circle_img.svg">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg"
+            class="img-responsive w100p circle_img" alt="modules" loading="lazy">
         </picture>
       </div>
     </div>
@@ -188,7 +188,7 @@ require_once('../includes/security_config.php');
   <div class="section-headernew mob-section m-top54">
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 text-wider">
-        <h2 class="mb-0px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile section-text section-text2 mind-heading-ipad mind-heading-video">
+        <h2 class="mb-0px mb_18px fs_21px fw_600 lh_120p fc_000000_0_75 fs_18px_mobile section-text section-text2 mind-heading-ipad mind-heading-video">
           Discover HappierMe in just 1 minute
         </h2>
       </div>
@@ -206,16 +206,7 @@ require_once('../includes/security_config.php');
   </div>
 
   <!-- /video -->
- <div class="row center_flex divhome mob-section">
-    <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter text-center">
-        <h2 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
-          Copyright © 2024 HappierMe. All rights reserved </h2>
-      </div>
-    </div>
-
-  </div>
- 
+  <?php include('../includes/footer_copyright_sticky_mind.php'); ?>
 
   <script>
     (function () {
