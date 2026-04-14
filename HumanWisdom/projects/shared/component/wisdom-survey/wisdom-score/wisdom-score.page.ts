@@ -91,19 +91,26 @@ export class WisdomScorePage implements OnInit {
     const visits = Number(this.loginResponse?.NoOfVisits || '0');
     const token = SharedService.getDataFromLocalStorage('token');
     this.isGuest = localStorage.getItem('guest') === 'T';
-    const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
+    const signupFlowFlag = localStorage.getItem('isFromSignupFlow');
+    const isFromSignupFlow = signupFlowFlag === 'T';
+    const isSignupFlowFinished = signupFlowFlag === 'F';
     const { routedFromLogin } = window.history.state;
 
     // Use a combination of flags to determine if the user just signed up/logged in for the first time
     // For teenagers, background initialization calls might increment visits slightly, so we use < 5
     // and prioritize the explicit signup flow flag.
-    this.justSignedUp = !!token && !this.isGuest && (
-      visits < 1 || 
+    this.justSignedUp = !!token && !this.isGuest && !isSignupFlowFinished && (
+      visits < 5 || 
       isFromSignupFlow || 
       SharedService.isRoutedFromLogin || 
       routedFromLogin === true || 
       routedFromLogin === 'true'
     );
+
+    if (this.justSignedUp) {
+      localStorage.setItem('isFromSignupFlow', 'F');
+      SharedService.isRoutedFromLogin = false;
+    }
   }
 
   navigateToRecommendation(item: any) {
@@ -159,5 +166,3 @@ export class WisdomScorePage implements OnInit {
     }
   }
 }
-
-
