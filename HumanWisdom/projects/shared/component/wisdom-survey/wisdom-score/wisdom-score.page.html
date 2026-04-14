@@ -166,7 +166,8 @@
           <hr *ngIf="wisdomRecomm?.length && !justSignedUp" class="hr_style_v3_01">
 
           <!-- ====== FREE-TRIAL BANNER ====== -->
-          <div class="row" *ngIf="isGuest">
+          <div class="row" *ngIf="!isSubscriber && !justSignedUp">
+
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
               <a>
                 <div class="toc_adiv_imgmynew pb30px mttopbot20">

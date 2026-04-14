@@ -33,8 +33,8 @@ export class WisdomScorePage implements OnInit {
   wisdomRecomm: any[] = [];
   isSubscriber: boolean = false;
   justSignedUp = false;
-  isGuest = false;
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
+
   
 
   constructor(private router: Router,
@@ -88,22 +88,13 @@ export class WisdomScorePage implements OnInit {
 
     this.enableDash = true;
 
-    const visits = Number(this.loginResponse?.NoOfVisits || '0');
-    const token = SharedService.getDataFromLocalStorage('token');
-    this.isGuest = localStorage.getItem('guest') === 'T';
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
-    const { routedFromLogin } = window.history.state;
+    this.justSignedUp = isFromSignupFlow;
+    if (this.justSignedUp) {
+      localStorage.setItem('isFromSignupFlow', 'F');
+    }
 
-    // Use a combination of flags to determine if the user just signed up/logged in for the first time
-    // For teenagers, background initialization calls might increment visits slightly, so we use < 5
-    // and prioritize the explicit signup flow flag.
-    this.justSignedUp = !!token && !this.isGuest && (
-      visits < 1 || 
-      isFromSignupFlow || 
-      SharedService.isRoutedFromLogin || 
-      routedFromLogin === true || 
-      routedFromLogin === 'true'
-    );
+
   }
 
   navigateToRecommendation(item: any) {

@@ -265,27 +265,7 @@ export class WisdomScalePage implements OnInit {
     // else { this.userId = JSON.parse(localStorage.getItem("userId")) }
     this.userId =JSON.parse(localStorage.getItem("userId"))
 
-    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-    const visits = Number(loginResponse?.NoOfVisits || '0');
-    const token = SharedService.getDataFromLocalStorage('token');
-    this.isGuest = localStorage.getItem('guest') === 'T';
-    const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
-    const { routedFromLogin } = window.history.state;
-
-    this.justSignedUp = !!token && !this.isGuest && (
-      visits < 5 || 
-      isFromSignupFlow || 
-      SharedService.isRoutedFromLogin || 
-      routedFromLogin === true || 
-      routedFromLogin === 'true'
-    );
-
-    const isMobile = SharedService.isIOSApp() || SharedService.isAndroid() || SharedService.isMobileDevice();
-    if (isMobile) {
-      this.showGraph = !this.justSignedUp && visits > 1;
-    } else {
-      this.showGraph = !this.isGuest && !isFromSignupFlow && visits > 1;
-    }
+    this.showGraph = false;
 
     if (this.userId) {
       this.apiCall();
@@ -369,38 +349,39 @@ export class WisdomScalePage implements OnInit {
     let dataScore = 0;
 
     this.service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
-      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      r = r.sort((a, b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
-      // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
-      // r = r.sort((a,b) => new Date(a['wsDate']).getFullYear() - new Date(b['wsDate']).getFullYear());
-     
-      r.forEach((d) => {
-        let dateStr = Number.parseInt(d['wsDate'].split('-').join());
-        if(this.acheiviedScore <  Number.parseInt(d['Score']))
-          this.acheiviedScore = Number.parseInt(d['Score']);
-
-         if(this.minScore > Number.parseInt(d['Score']))
-          this.minScore = Number.parseInt(d['Score']);
-
-        if(dateStr > dataScore) {
-          dateStr = Number.parseInt(d['wsDate'].split('-').join());
-         
-        }
-        if (this.lineChartData[0]['data'].length < 6) {
-          let name = monthNames[d['month'] - 1];
-          this.lineChartData[0]['data'].push(Number.parseInt(d['Score']));
-          if (!(this.lineChartLabels.find(a => a.includes(d['year'].slice(-2))))) {
-            this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3) + "'" + d['year'].slice(-2));
-          } else {
-            this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3));
+      this.showGraph = r && r.length > 0;
+      if (this.showGraph) {
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        r = r.sort((a, b) => new Date(a['wsDate']).getTime() - new Date(b['wsDate']).getTime());
+        // r = r.sort((a,b) => new Date(b['wsDate']).getDate() - new Date(a['wsDate']).getDate());
+        // r = r.sort((a,b) => new Date(a['wsDate']).getFullYear() - new Date(b['wsDate']).getFullYear());
+       
+        r.forEach((d) => {
+          let dateStr = Number.parseInt(d['wsDate'].split('-').join());
+          if(this.acheiviedScore <  Number.parseInt(d['Score']))
+            this.acheiviedScore = Number.parseInt(d['Score']);
+  
+           if(this.minScore > Number.parseInt(d['Score']))
+            this.minScore = Number.parseInt(d['Score']);
+  
+          if(dateStr > dataScore) {
+            dateStr = Number.parseInt(d['wsDate'].split('-').join());
+           
           }
-        }
-      })
-
-      this.lineChartOptions.scales.yAxes[0].ticks.min = (Math.floor(this.minScore / 10) * 10)-10 ;
-            this.lineChartOptions.scales.yAxes[0].ticks.max = (Math.floor(this.acheiviedScore / 10) * 10) +10;
-
-
+          if (this.lineChartData[0]['data'].length < 6) {
+            let name = monthNames[d['month'] - 1];
+            this.lineChartData[0]['data'].push(Number.parseInt(d['Score']));
+            if (!(this.lineChartLabels.find(a => a.includes(d['year'].slice(-2))))) {
+              this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3) + "'" + d['year'].slice(-2));
+            } else {
+              this.lineChartLabels.push(new Date(d['wsDate']).getDate() + ' ' + name.substring(0, 3));
+            }
+          }
+        })
+  
+        this.lineChartOptions.scales.yAxes[0].ticks.min = (Math.floor(this.minScore / 10) * 10)-10 ;
+        this.lineChartOptions.scales.yAxes[0].ticks.max = (Math.floor(this.acheiviedScore / 10) * 10) +10;
+      }
     });
   }
 
