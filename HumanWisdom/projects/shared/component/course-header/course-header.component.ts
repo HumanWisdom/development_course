@@ -173,6 +173,15 @@ export class CourseHeaderComponent implements OnInit {
     this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
   goToToc() {
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    if (fromMicroLearningEnd === 'true') {
+      var url = this.naviagtorService.navigateToBackLink();
+      if (url != null && url !== this.router.url) {
+        this.router.navigateByUrl(url);
+        return;
+      }
+    }
+
     if (this.toc) {
       let tocUrl = this.toc;
       let prefix = this.isAdults ? '/adults' : '/teenagers';

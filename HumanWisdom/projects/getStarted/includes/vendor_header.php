@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<?php require_once __DIR__ . '/cache_buster.php'; ?>
 
 <!-- Favicons -->
 <link href="https://d1tenzemoxuh75.cloudfront.net/../assets/images/logo/logo_favicon_transparent.png" rel="icon">
@@ -22,28 +23,28 @@
 
     <!-- Vendor CSS Files -->
 <!-- <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" > -->
-<link rel="preload" href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"></noscript>
+<link rel="preload" href="<?= hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>"></noscript>
 
 <!-- <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
-<link rel="preload" href="../assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/vendor/glightbox/css/glightbox.min.css"></noscript>
+<link rel="preload" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>"></noscript>
 
 <!-- <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
-<link rel="preload" href="../assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/vendor/swiper/swiper-bundle.min.css"></noscript>
+<link rel="preload" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>"></noscript>
 
 <!-- Template Main CSS File -->
-<link href="../assets/css/landing.css" rel="stylesheet">
-<link href="../assets/css/main.css" rel="stylesheet">
-<link href="../assets/css/home.css" rel="stylesheet">
-<link href="../assets/css/index.css" rel="stylesheet">
-<link href="../assets/css/responsive.css" rel="stylesheet">
-<link href="../assets/font/font_colour.css" rel="stylesheet">
-<link href="../assets/font/font_size.css" rel="stylesheet">
-<link href="../assets/font/font_weight.css" rel="stylesheet">
-<link href="../assets/font/line_height.css" rel="stylesheet">
-<link href="../assets/css/style_hb.css" rel="stylesheet"> 
+<link href="<?= hw_asset_url('../assets/css/landing.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/css/main.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/css/home.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/css/index.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/css/responsive.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/font/font_colour.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/font/font_size.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/font/font_weight.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/font/line_height.css'); ?>" rel="stylesheet">
+<link href="<?= hw_asset_url('../assets/css/style_hb.css'); ?>" rel="stylesheet"> 
 
 
 
