@@ -1,5 +1,5 @@
 import { TeenagersService } from './../../../../teenagers/src/app/teenagers/teenagers.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from '../../../services/shared.service';
@@ -10,7 +10,7 @@ import { ProgramType } from '../../../models/program-model';
   templateUrl: './wisdom-score.page.html',
   styleUrls: ['./wisdom-score.page.scss'],
 })
-export class WisdomScorePage implements OnInit {
+export class WisdomScorePage implements OnInit, OnDestroy {
 
  formatTitle = (percent: number): string => `${percent}%`;
 
@@ -89,13 +89,28 @@ export class WisdomScorePage implements OnInit {
     this.enableDash = true;
 
     const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
-    this.justSignedUp = isFromSignupFlow;
-    if (this.justSignedUp) {
-      localStorage.setItem('isFromSignupFlow', 'F');
+    const isMobile = SharedService.isIOSApp() || SharedService.isAndroid();
+    const visits = Number(this.loginResponse?.NoOfVisits || '0');
+    const alreadyProceeded = localStorage.getItem('wisdomScoreProceeded') === 'T';
+
+    if (isMobile) {
+      // For mobile apps, visits <= 1 is a reliable indicator of first-time signup
+      this.justSignedUp = (isFromSignupFlow || visits <= 1) && !alreadyProceeded;
+    } else {
+      // For desktop, keep using the existing proven flag
+      this.justSignedUp = isFromSignupFlow && !alreadyProceeded;
     }
 
 
+
   }
+  ngOnDestroy() {
+    if (this.justSignedUp) {
+      localStorage.setItem('wisdomScoreProceeded', 'T');
+      localStorage.setItem('isFromSignupFlow', 'F');
+    }
+  }
+
 
   navigateToRecommendation(item: any) {
     const isFree = item.isFree == 1 || item.isFree == '1' || item.isFree === true || item.isFree === 'true';
@@ -137,10 +152,12 @@ export class WisdomScorePage implements OnInit {
   }
 
   routeToDashboard() {
-        localStorage.setItem('isFromSignupFlow', 'F');
+    localStorage.setItem('wisdomScoreProceeded', 'T');
+    localStorage.setItem('isFromSignupFlow', 'F');
     SharedService.isRoutedFromLogin = false;
     this.router.navigateByUrl(SharedService.getDashboardUrls());
   }
+
 
   goToSubscribe() {
     if (this.isAdults) {
