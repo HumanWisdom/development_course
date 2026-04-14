@@ -66,7 +66,7 @@ require_once('./includes/security_config.php');
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp"  />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" fetchpriority="high">
-    <link rel="stylesheet" href="assets/css/index-inline.css" />
+    <link rel="stylesheet" href="<?= function_exists('hw_asset_url') ? hw_asset_url('assets/css/index-inline.css') : 'assets/css/index-inline.css'; ?>" />
 
   <script>
     $('#myCarousel').carousel({
