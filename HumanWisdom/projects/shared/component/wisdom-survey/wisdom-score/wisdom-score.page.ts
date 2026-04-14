@@ -33,6 +33,7 @@ export class WisdomScorePage implements OnInit, OnDestroy {
   wisdomRecomm: any[] = [];
   isSubscriber: boolean = false;
   justSignedUp = false;
+  isGuest = false;
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
 
   
