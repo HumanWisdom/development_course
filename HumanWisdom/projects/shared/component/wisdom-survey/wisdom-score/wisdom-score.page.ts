@@ -1,5 +1,5 @@
 import { TeenagersService } from './../../../../teenagers/src/app/teenagers/teenagers.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from '../../../services/shared.service';
@@ -10,7 +10,7 @@ import { ProgramType } from '../../../models/program-model';
   templateUrl: './wisdom-score.page.html',
   styleUrls: ['./wisdom-score.page.scss'],
 })
-export class WisdomScorePage implements OnInit {
+export class WisdomScorePage implements OnInit, OnDestroy {
 
  formatTitle = (percent: number): string => `${percent}%`;
 
@@ -88,25 +88,24 @@ export class WisdomScorePage implements OnInit {
 
     this.enableDash = true;
 
-    const visits = Number(this.loginResponse?.NoOfVisits || '0');
-    const token = SharedService.getDataFromLocalStorage('token');
-    this.isGuest = localStorage.getItem('guest') === 'T';
+    const visits = Number(this.loginResponse?.NoOfVisits || localStorage.getItem('NoOfVisits') || '0');
+    const token = SharedService.getDataFromLocalStorage('token') || localStorage.getItem('token');
+    this.isGuest = localStorage.getItem('guest') === 'T' || localStorage.getItem('guest') === 'true';
     const signupFlowFlag = localStorage.getItem('isFromSignupFlow');
     const isFromSignupFlow = signupFlowFlag === 'T';
     const isSignupFlowFinished = signupFlowFlag === 'F';
     const { routedFromLogin } = window.history.state;
 
-    // Use a combination of flags to determine if the user just signed up/logged in for the first time
-    // For teenagers, background initialization calls might increment visits slightly, so we use < 5
-    // and prioritize the explicit signup flow flag.
-    this.justSignedUp = !!token && !this.isGuest && !isSignupFlowFinished && (
+    this.justSignedUp = !this.isGuest && !isSignupFlowFinished && (
       visits < 5 || 
       isFromSignupFlow || 
       SharedService.isRoutedFromLogin || 
       routedFromLogin === true || 
       routedFromLogin === 'true'
     );
+  }
 
+  ngOnDestroy() {
     if (this.justSignedUp) {
       localStorage.setItem('isFromSignupFlow', 'F');
       SharedService.isRoutedFromLogin = false;
