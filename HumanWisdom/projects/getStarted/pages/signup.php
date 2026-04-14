@@ -583,8 +583,8 @@
 </html>
 <script>
 // Replace with your actual API base URL and ProgramId
-//const API_BASE_URL = 'https://www.humanwisdom.info/api';
-const API_BASE_URL = 'https://staging.humanwisdom.info/api';
+const API_BASE_URL = 'https://www.humanwisdom.info/api';
+//const API_BASE_URL = 'https://staging.humanwisdom.info/api';
 const ProgramId = '9';
 
 (function initOrchaUidFromQuery() {
