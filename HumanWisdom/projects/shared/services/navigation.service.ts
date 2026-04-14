@@ -305,11 +305,16 @@ export class NavigationService {
     const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
     let returnUrl = microLearningEndUrl;
     const m_learningId = localStorage.getItem('m_learningId');
+    let prefix = SharedService.getprogramName();
+    if (prefix === 'youngadults') prefix = 'teenagers';
 
     if (fromMicroLearningEnd === 'true' && (returnUrl || m_learningId)) {
       if (!returnUrl && m_learningId) {
-        const prefix = SharedService.getprogramName();
         returnUrl = `/${prefix}/micro-learning/inner/${m_learningId}?isEnd=true`;
+      }
+
+      if (returnUrl && returnUrl.includes('youngadults')) {
+        returnUrl = returnUrl.replace('youngadults', 'teenagers');
       }
 
       localStorage.removeItem('microLearningEndUrl');
@@ -347,8 +352,7 @@ export class NavigationService {
        return url;
     }
 
-    let prefix = SharedService.getprogramName();
-    if (prefix === 'youngadults') prefix = 'teenagers';
+    // Fallback logic starts here
     const currentUrl = this.router.url;
     const segments = currentUrl.split('/');
     const lastSeg = segments[segments.length - 1];
