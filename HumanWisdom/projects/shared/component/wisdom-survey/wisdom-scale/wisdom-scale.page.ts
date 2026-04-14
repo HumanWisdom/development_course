@@ -280,7 +280,12 @@ export class WisdomScalePage implements OnInit {
       routedFromLogin === 'true'
     );
 
-    this.showGraph = !this.isGuest && !isFromSignupFlow && visits > 1;
+    const isMobile = SharedService.isIOSApp() || SharedService.isAndroid() || SharedService.isMobileDevice();
+    if (isMobile) {
+      this.showGraph = !this.justSignedUp && visits > 1;
+    } else {
+      this.showGraph = !this.isGuest && !isFromSignupFlow && visits > 1;
+    }
 
     if (this.userId) {
       this.apiCall();
