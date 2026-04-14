@@ -87,10 +87,10 @@ export class WisdomScalePage implements OnInit {
   rating10 = 1
   wisdomScore: any
   nextPath: any
-    isAdults = true;
+  isAdults = true;
   justSignedUp = false;
   isGuest = false;
-
+  showGraph = false;
 
   public lineChartData: ChartDataSets[] = [
     { data: [], label: 'Happiness Survey' },
@@ -279,6 +279,8 @@ export class WisdomScalePage implements OnInit {
       routedFromLogin === true || 
       routedFromLogin === 'true'
     );
+
+    this.showGraph = !this.isGuest && !isFromSignupFlow && visits > 1;
 
     if (this.userId) {
       this.apiCall();
