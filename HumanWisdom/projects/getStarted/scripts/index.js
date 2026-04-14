@@ -1725,7 +1725,7 @@ async function fetchWebsiteTitle() {
         subtitleEl && subtitleEl.classList.remove("hw-website-title-pending");
     }
     try {
-        var res = await fetch("https://staging.humanwisdom.info/api/GetWebsiteTitle", {
+        var res = await fetch("https://www.humanwisdom.info/api/GetWebsiteTitle", {
             headers: { Accept: "application/json" },
         });
         if (res.ok) {
