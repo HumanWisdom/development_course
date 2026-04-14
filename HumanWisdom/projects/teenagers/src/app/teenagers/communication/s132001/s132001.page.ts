@@ -31,6 +31,7 @@ export class S132001Page implements OnInit,OnDestroy {
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
+  isContentsOpen = false;
   path = setTimeout(() => {
     return this.router.url;
   }, 1000);
@@ -132,6 +133,13 @@ export class S132001Page implements OnInit,OnDestroy {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
 
+
+     // continue where you left    
+    this.service.clickModule(132, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     if(!this.t) //if no token in url- not shared
     {
       if(this.loginResponse.Subscriber!=1 && !this.freeScreens.includes(this.screenNumber))
@@ -152,7 +160,9 @@ export class S132001Page implements OnInit,OnDestroy {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
   }
-
+toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark()
   {
     if(this.bookmark==0)

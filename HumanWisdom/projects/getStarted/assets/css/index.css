@@ -1935,7 +1935,7 @@ body {
     font-size: 11px !important;
     font-weight: 600 !important;
     line-height: 1.4 !important;
-    background: linear-gradient(90deg, #E58D82, #CB6171) !important;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     white-space: nowrap !important;
     color: #FFFFFF !important;
     border: none !important;
@@ -2472,8 +2472,8 @@ body {
 
 /* Override responsive/default styles for modal header illustration */
 .modal-content1 .modal-header img:not(.cross_btn) {
-  width: 90.67px !important;
-  height: 86.54px !important;
+  /* width: 90.67px !important;
+  height: 86.54px !important; */
   object-fit: contain;
 }
 

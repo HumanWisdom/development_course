@@ -4,6 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { OwlStore } from '../../stores/owl.store';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { LogEventService } from '../../services/log-event.service';
 
 @Component({
   selector: 'app-owl-animation',
@@ -83,7 +84,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private cdr: ChangeDetectorRef,
     private router: Router,
-    private owlStore: OwlStore
+    private owlStore: OwlStore,
+    private logeventservice: LogEventService
   ) { }
 
   ngOnInit() {
@@ -406,6 +408,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
   openChat() {
+    this.logeventservice.logEvent('Click_olly_chat');
     this.router.navigate(['/adults/chat-bot']);
   }
 

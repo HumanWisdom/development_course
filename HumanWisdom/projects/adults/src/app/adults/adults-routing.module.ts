@@ -18,6 +18,7 @@ import { ParentHubPageModule } from './curated/parent-hub/parent-hub.module';
 import { ParentHubPage } from './curated/parent-hub/parent-hub.page';
 import { CommonScreenPage } from '../../../../shared/component/common-screen/common-screen.page';
 import { HomeComponent } from '../../../../shared/component/home/home.component';
+import { SelfAwarenessRedirectComponent } from './self-awareness-redirect.component';
 import { ChatBotComponent } from '../../../../shared/component/chat-bot/chat-bot.component';
 import { SocialLoginPage } from '../../../../shared/component/social-login/social-login.component';
 import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-survey-intro/wellness-survey-intro.page';
@@ -424,9 +425,10 @@ const routes: Routes = [
   },
   {
     path: 'self-awareness',
-    loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+    pathMatch: 'full',
+    component: SelfAwarenessRedirectComponent,
   },
-  {
+   {
     path: 'adverts-hwp',
     loadChildren: () => import('./adverts-hwp/adverts-hwp.module').then(m => m.AdvertsHwpPageModule)
   },
@@ -735,14 +737,9 @@ const routes: Routes = [
     component: SingleAudioContentComponent
   },
   {
-    path: 'wisdom-exercise',
-    redirectTo:'curated/self-awareness'
-  },
-  {
-  path: 'wisdom-exercise/:subpath',
-  redirectTo: 'curated/self-awareness',
-  pathMatch: 'full'
-}
+    path: 'self-awareness',
+    loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  }
 
 
 ];

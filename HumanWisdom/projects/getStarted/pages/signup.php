@@ -29,6 +29,51 @@
     </script>
     <!-- vendor_header --> <?php include('../includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
+     <style>
+      .pt-7px{
+        padding-top: 7px;     }
+
+      .signup-title {
+        color: rgba(131, 75, 102, 1) !important;
+      }
+
+      /* Unchecked: Figma — 20×20, 4px radius, 1px #000 @ 50% (inner stroke → border-box) */
+      #signup-form label.chkb_post_anonymously > input[type="checkbox"] + *::before {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+        border-radius: 4px;
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+      }
+
+      #signup-form label.chkb_post_anonymously > input[type="checkbox"]:checked + *::before {
+        background-color: rgba(237, 125, 111, 1);
+        background-image: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/tick_white.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12px 12px;
+        border: 0;
+        border-radius: 4px;
+      }
+
+      /* Download app — gradient + hover (overrides global .btn_tff:hover solid fill) */
+      #download-app-btn.btn_tff:not(:disabled),
+      #download-app-btn.btn_tff:not(:disabled):focus {
+        background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+        color: #fff;
+        transition: background 0.3s ease;
+      }
+
+      #download-app-btn.btn_tff:not(:disabled):hover,
+      #download-app-btn.btn_tff:not(:disabled):focus:hover,
+      #download-app-btn.btn_tff:not(:disabled):active {
+        background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+        color: #fff;
+      }
+     </style>
   </head>
   <body>
     <!-- request a demo php script --> <?php
@@ -46,7 +91,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 p0">
 
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/logo.svg" class="img-responsive"  alt="logo">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/Logo_Only.svg" class="img-responsive"  alt="logo">
       
     </div>
 
@@ -277,7 +322,7 @@
                       
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_834b66  tcenter ta_lc"> Welcome to HappierMe</h1>
+                          <h1 class="mtb0px fs_30px fw_600 lh_130p fc_803358 tcenter ta_lc signup-title"> Welcome to HappierMe</h1>
                         </div>
                       </div>
                     </div>
@@ -372,8 +417,8 @@
                        
                       </div>
     </div> -->
-     <div class="row mt5px">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check">
+     <div class="row mt5px align-items-start">
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check pt-7px">
                           <label for="privacy_checkbox" class="chkb_post_anonymously ">
                             <input  style="margin-top:10px;"id="privacy_checkbox"formControlName="privacychk" type="checkbox">
                             <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
@@ -383,7 +428,7 @@
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5" style="margin-top:8px;">
                           <span>I agree to the 
-                            <a  class="blog_highlight_peach td_underline fs_12px fw_500 " href="https://happierme.app/pages/terms_conditions.php"  
+                            <a class="blog_highlight_peach fs_12px fw_500" href="https://happierme.app/pages/terms_conditions.php"
                              > User Agreement</a>
                           </span>
                         </h4>
@@ -395,7 +440,8 @@
 
 
                      
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check">
+                      <div class="row mt5px align-items-start">
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check pt-7px">
                           <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
                             <input style="margin-top:10px;" id="marketing_checkbox" formControlName="privacychk" type="checkbox">
                             <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
@@ -405,15 +451,16 @@
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                         <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5 " style="margin-top:7px;">
                           <span>I agree to the 
-                            <a  class="blog_highlight_peach td_underline fs_12px fw_500 "   href="https://happierme.app/pages/privacy_policy.php"
+                            <a class="blog_highlight_peach fs_12px fw_500" href="https://happierme.app/pages/privacy_policy.php"
                              > Privacy policy</a>
                           </span>
                         </h4>
                     </div>
+                    </div>
                     
                      
                           
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 input_parent mt32px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 div_input">
                               <div class="row mt15px">
                                 <button id="download-app-btn" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"> Download app </button>
@@ -540,13 +587,32 @@
 const API_BASE_URL = 'https://staging.humanwisdom.info/api';
 const ProgramId = '9';
 
+(function initOrchaUidFromQuery() {
+  try {
+    var p = new URLSearchParams(window.location.search).get('orcha_uid');
+    if (p && String(p).trim()) {
+      sessionStorage.setItem('orcha_uid', String(p).trim());
+    }
+  } catch (e) {}
+})();
+
+function getOrchaUid() {
+  try {
+    var fromUrl = new URLSearchParams(window.location.search).get('orcha_uid');
+    if (fromUrl && String(fromUrl).trim()) return String(fromUrl).trim();
+    var fromStore = sessionStorage.getItem('orcha_uid');
+    if (fromStore && String(fromStore).trim()) return String(fromStore).trim();
+  } catch (e) {}
+  return '1234';
+}
+
 function addLearner(fname, email, password) {
   const body = JSON.stringify({
     FName: fname,
     Lname: "",
     Email: email,
     Pwd: password,
-    OrchaId:'12345'
+    OrchaId: getOrchaUid()
   });
   return fetch(`${API_BASE_URL}/AddLearner_Website`, {
     method: 'POST',

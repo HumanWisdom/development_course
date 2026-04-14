@@ -47,7 +47,7 @@ a {
 }
 
 .active_nav {
-  color: #834B66 !important;
+  color: #803358 !important;
 }
 
 p:hover {
@@ -97,7 +97,7 @@ section {
 
 .section-header {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 
 .section-headernew {
@@ -235,6 +235,10 @@ textarea {
   width: 44px;
   height: 44px;
   border-radius: 50px;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.4s;
 }
 
@@ -245,7 +249,7 @@ textarea {
 }
 
 .scroll-top:hover {
-  background: #D7586B;
+  background: #803358;
   color: #fff;
 }
 
@@ -548,7 +552,7 @@ label>input[type="checkbox"]+*::before {
 
   .navbar .active .navbar .active:focus,
   .navbar li:hover>a {
-    color: #834B66 !important;
+    color: #803358 !important;
   }
 
   .navbar .dropdown ul {
@@ -2294,7 +2298,7 @@ a {
 }
 
 .rmb80px {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .mr8px {
@@ -3137,7 +3141,8 @@ a {
   object-fit: cover;
 }
 
-video::-webkit-media-controls-panel {
+/* Only videos using .cvideo (e.g. nfsn tools block); do not style all <video> or homepage FBN loses custom bar colour */
+video.cvideo::-webkit-media-controls-panel {
   background: #120F40 !important;
   bottom: 0;
   position: absolute;
@@ -3251,7 +3256,8 @@ audio::-webkit-media-controls-enclosure {
   background: rgb(18, 15, 64);
 }
 
-#aud1 {
+#aud1,
+#aud2 {
   width: 100%;
 }
 
@@ -3298,11 +3304,15 @@ audio::-webkit-media-controls-enclosure {
 .btn_blogp {
   margin: 4px;
   padding: 4px 16px;
-  height: 40px;
+  height: 30px;
   border-radius: 21px;
-  background: rgba(232, 168, 128, 0.20);
+  background: rgba(238, 161, 112, 0.2);
+
+  /* background: rgba(232, 168, 128, 0.20); */
   border: 0;
   text-align: center;
+    text-transform: uppercase;
+
   cursor: auo;
 }
 
@@ -3361,6 +3371,21 @@ audio::-webkit-media-controls-enclosure {
   line-height: 180%;
   color: #CB6171;
   text-decoration: underline;
+}
+
+.blog_highlight_peach:hover {
+  color: #803358 !important;
+  text-decoration: underline;
+}
+
+#signup-form a.blog_highlight_peach {
+  color: rgba(0, 0, 0, 1) !important;
+  text-decoration: none;
+}
+
+#signup-form a.blog_highlight_peach:hover {
+  color: #803358 !important;
+  text-decoration: none;
 }
 
 .owl-carousel.owl-drag .owl-item {
@@ -3966,6 +3991,12 @@ audio::-webkit-media-controls-enclosure {
   bottom: 0;
   margin: 0 auto;
 }
+/* Keep NEW badge text unchanged even when h6:hover is global */
+.badge_new h6,
+.badge_new h6:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
 
 .sticky_rating_banner {
   background: #FFF;
@@ -3983,7 +4014,7 @@ audio::-webkit-media-controls-enclosure {
   width: 100%;
   height: 33px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #E58D82, #CB6171);
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 }
 
 .mb-8rem {
@@ -4021,9 +4052,9 @@ audio::-webkit-media-controls-enclosure {
 
 }
 
-a:active {
+/* a:active {
   color: #ffd323;
-}
+} */
 
 button {
   user-select: none;
@@ -4095,9 +4126,10 @@ button {
   height: 456px;
   display: block;
   margin-left: auto;
-  padding-top: 20px;
-    padding-bottom: 20px;
+  /* padding-top: 20px;
+    padding-bottom: 20px; */
   margin-right: auto;
+  margin: 40px;
 }
 
 .product_view .modal-dialog {
@@ -4217,6 +4249,19 @@ button {
 .btn-min-block {
   min-width: 170px;
   line-height: 26px;
+}
+.gap_24px{
+  gap: 24px !important;
+}
+.bg-color{
+background: rgba(255, 244, 230, 1) !important;
+
+}
+.bg_circle_mind{
+background: rgba(255, 244, 230, 1) !important;
+}
+.mt32px{
+  margin-top: 32px !important;
 }
 
 .btn-theme {
@@ -4781,7 +4826,7 @@ input[type="password" i]::-ms-reveal {
 }
 
 .tab_faqs.nav-tabs>li>a:hover {
-  color: #834B66 !important;
+  color: #803358 !important;
   text-decoration: none !important;
 }
 
@@ -5002,4 +5047,24 @@ input[type="password" i]::-ms-reveal {
 
 .fc_clr {
   color: #803358 !important;
+}
+
+/* Override Bootstrap Icons font-face */
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/fonts/bootstrap-icons.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/fonts/bootstrap-icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* <-- key addition */
+}
+
+/* Override Font Awesome font-face */
+@font-face {
+  font-family: "FontAwesome";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2") format("woff2"),
+       url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* <-- key addition */
 }

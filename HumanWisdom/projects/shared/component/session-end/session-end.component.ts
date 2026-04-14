@@ -30,6 +30,7 @@ export class SessionEndComponent implements OnInit {
     private ngNavigatorShareService: NgNavigatorShareService) {
     localStorage.setItem("progressbarvalue", '0')
     this.ngNavigatorShareService = ngNavigatorShareService;
+    SharedService.isModuleEnd = true;
   }
 
   ngOnInit() {
@@ -70,10 +71,20 @@ export class SessionEndComponent implements OnInit {
     this.router.navigate([this.link])
   }
   routeJournal() {
-    this.router.navigate(['/adults/journal'])
+    localStorage.setItem('NaviagtedFrom', this.router.url);
+    if (this.isAdults) {
+      this.router.navigate(['/adults/journal'])
+    } else {
+      this.router.navigate(['/teenagers/journal'])
+    }
   }
 
   routeForum() {
-    this.router.navigate(['/forum'])
+    localStorage.setItem('NaviagtedFrom', this.router.url);
+    if (this.isAdults) {
+      this.router.navigate(['/forum'])
+    } else {
+      this.router.navigate(['/teenagers/forum'])
+    }
   }
 }

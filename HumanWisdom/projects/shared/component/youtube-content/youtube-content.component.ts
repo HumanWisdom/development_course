@@ -79,16 +79,68 @@ export class YoutubeContentComponent implements OnInit {
   }
 
   goBack() {
+    console.log('YoutubeContentComponent: goBack() called');
+    console.log('Current URL:', this.router.url);
+    
+    // Try navigation service first
     var url = this.navigationService.navigateToBackLink();
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
-      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-      if (navFrom && navFrom != null && navFrom != 'null') {
-        this.router.navigateByUrl(navFrom);
-      } else {
-        this.location.back();
+    console.log('Navigation service returned URL:', url);
+    
+    if (url != null && url !== this.router.url && !url.includes('home') && !url.includes('dashboard')) {
+      console.log('Using navigation service URL:', url);
+      this.router.navigateByUrl(url);
+      return;
+    }
+
+    // Try NaviagtedFrom from localStorage
+    let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+    console.log('NaviagtedFrom localStorage:', navFrom);
+    
+    if (navFrom && navFrom != null && navFrom != 'null' && navFrom !== this.router.url) {
+      console.log('Using NaviagtedFrom:', navFrom);
+      this.router.navigateByUrl(navFrom);
+      return;
+    }
+
+    // Check backup context for relationships event
+    const relationshipsEventSource = localStorage.getItem('relationshipsEventSource');
+    console.log('relationshipsEventSource:', relationshipsEventSource);
+    
+    if (relationshipsEventSource === 'true') {
+      console.log('Detected relationships event source, navigating back to relationships');
+      localStorage.removeItem('relationshipsEventSource'); // Clean up
+      const prefix = this.isAdults ? '/adults' : '/teenagers';
+      this.router.navigate([prefix + '/relationships/s47000']);
+      return;
+    }
+
+    // Special handling for YouTube content from relationships
+    const currentUrl = this.router.url;
+    if (currentUrl.includes('/curated/youtubelink/')) {
+      console.log('YouTube content detected, using relationships fallback');
+      const prefix = this.isAdults ? '/adults' : '/teenagers';
+      
+      // Multiple fallback options for relationships
+      const fallbackUrls = [
+        prefix + '/relationships/s47000',
+        prefix + '/relationships',
+        prefix + '/search'
+      ];
+      
+      for (const fallbackUrl of fallbackUrls) {
+        console.log('Trying fallback URL:', fallbackUrl);
+        this.router.navigate([fallbackUrl]);
+        return;
       }
-    } else {
-      this.router.navigate([url]);
+    }
+
+    // Last resort - try browser history
+    console.log('Using browser history as final fallback');
+    try {
+      this.location.back();
+    } catch (error) {
+      console.log('Browser history failed, navigating to dashboard');
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
     }
   }
 

@@ -10,6 +10,7 @@ import { SharedService } from '../../../services/shared.service';
 import { OnboardingService } from '../../../services/onboarding.service';
 import { NavigationService } from "../../../services/navigation.service";
 import { LogEventService } from '../../../services/log-event.service';
+import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'HumanWisdom-blog-article',
   templateUrl: './blog-article.page.html',
@@ -106,7 +107,7 @@ export class BlogArticlePage {
     if (this.BlogCommentsLen > 3) {
       this.BlogCommentsListabove = this.blogList['BlogComments'].slice(3);
     }
-    this.likecount = Number.parseInt(this.blogList['LikeCnt']);
+    this.likecount = Number.parseInt(this.blogList['Liked']);
     
     this.title.setTitle(this.blogList['Title']);
     this.updateMetaTags();
@@ -177,10 +178,11 @@ export class BlogArticlePage {
   }
 
   getimg(data) {
-   /*  console.log(data.split('UsersAvatar\\')[1])
-    return data.split('UsersAvatar\\')[1] */
-    console.log(data)
-    return data
+    if (!data || data === 'undefined' || data.includes('undefined')) {
+      return '';
+    }
+    const cleanedPath = data.replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/');
+    return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + cleanedPath;
   }
 
   goBack() {
@@ -226,7 +228,13 @@ export class BlogArticlePage {
   commentbottom() {
     this.logeventservice.logEvent('click_comment_icon');
     if (this.isLoggedIn) {
-      window.scrollTo(0, document.body.scrollHeight);
+      const commentSection = document.getElementById
+      ('commentSection');
+      if (commentSection){
+        commentSection.scrollIntoView({ behavior: 
+          'smooth',block:'start' });
+      }
+      // window.scrollTo(0, document.body.scrollHeight);
     } else {
       this.enablecancel = true;
       this.content = "Please Register to activate this feature";

@@ -192,17 +192,28 @@ export class CourseHeaderComponent implements OnInit {
     }
 
     var url = this.naviagtorService.navigateToBackLink();
-    if (url != null && !url.includes('home') && !url.includes('dashboard') && !url.includes('pathway')) {
+    if (url != null && url !== this.router.url) {
       this.router.navigateByUrl(url);
       return;
     }
 
+    // Enhanced fallback logic - try to navigate to parent path first
     if (this.router.url.includes('wellness-survey')) {
       this.location.back();
+    } else if (this.router.url.includes('/events/event')) {
+      // Special handling for event pages - go to events listing
+      const prefix = this.isAdults ? '/adults' : '/teenagers';
+      this.router.navigate([prefix + '/events']);
     } else {
+      // Try to navigate to parent path
       let lastSlashIndex = this.router.url.lastIndexOf('/');
       let modifiedUrl = this.router.url.substring(0, lastSlashIndex);
-      this.router.navigate(['/' + modifiedUrl])
+      if (modifiedUrl && modifiedUrl !== this.router.url) {
+        this.router.navigate(['/' + modifiedUrl]);
+      } else {
+        // Final fallback to dashboard
+        this.router.navigate([SharedService.getDashboardUrls()]);
+      }
     }
   }
 

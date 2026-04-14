@@ -1688,7 +1688,8 @@
 
   /* Add 10px padding to Our HOW section on mobile - About Us page only */
   section.hpt120px ~ main#main section .row.center_flex .col-lg-10.col-md-10.col-sm-10.col-xs-10.col-10.p0.tcenter {
-    padding: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
   /* Specifically target the Our HOW text container - About Us page only */
@@ -2118,7 +2119,7 @@
   #startyourfreetrial {
     width: 335px !important;
     max-width: 335px !important;
-    height: 65px !important;
+    height: 48px !important;
     background: linear-gradient(180deg, #E58D82, #CB6171) !important;
     border-radius: 36px !important;
     margin: 0 auto !important;
@@ -2501,7 +2502,7 @@
     font-size: 11px !important;
     font-weight: 600 !important;
     line-height: 1.4 !important;
-    background: linear-gradient(90deg, #E58D82, #CB6171) !important;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     white-space: nowrap !important;
     color: #FFFFFF !important;
     border: none !important;
@@ -2617,7 +2618,7 @@
     border-radius: 16px !important;
     font-size: 12px !important;
     font-weight: 600 !important;
-    background: linear-gradient(180deg, #E58D82, #CB6171) !important;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;

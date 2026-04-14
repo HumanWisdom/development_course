@@ -19,7 +19,10 @@ export class S133001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+    isContentsOpen = false;
+
   bookmark:any
+  
   bookmarkList=[]
   path = setTimeout(() => {
     return this.router.url;
@@ -127,11 +130,21 @@ export class S133001Page implements OnInit,OnDestroy {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
+
+     // continue where you left    
+    this.service.clickModule(133, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
   }
 
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark()
   {
     if(this.bookmark==0)

@@ -225,7 +225,7 @@
     }
 
     .bg-circle {
-      background-color: #FFF9EE;
+      background-color: rgba(255, 244, 230, 1);
     }
 
     .testimonial-text2 {
@@ -503,5 +503,16 @@
       .btn-gradient{
         background: linear-gradient(180deg, #E58D82 0%, #CB6171 100%) !important;
       }
-    
+
+    /* mind.php — “Let’s get started!” CTA only */
+    .mind-cta-gradient {
+     background: linear-gradient(180deg, #4267A5 0%, #183C79 100%) !important;
+    }
+
+    .mind-cta-gradient:hover,
+    .mind-cta-gradient:focus,
+    .mind-cta-gradient:active {
+      background: linear-gradient(180deg, #2d5392 0%, #0e2e64 100%) !important;
+    }
+
   

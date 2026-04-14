@@ -7,6 +7,7 @@ import { ChatStore, ChatMessage } from '../../stores/chat.store';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
+import { LogEventService } from '../../services/log-event.service';
 
 @Component({
   selector: 'app-chat-bot',
@@ -52,7 +53,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     public chatStore: ChatStore,
     private sanitizer: DomSanitizer,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private logeventservice: LogEventService
   ) { }
 
   ngOnInit(): void {
@@ -158,6 +160,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
+    this.logeventservice.logEvent('click_sent_icon');
+
     const originalMessage = this.currentMessage.trim();
     this.currentMessage = '';
     this.errorMessage = '';
@@ -222,6 +226,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onCloseChat(): void {
+    this.logeventservice.logEvent('click_close_olly_popup');
     // Navigate back to dashboard
     // Option 1: Go back in browser history
     // this.location.back();

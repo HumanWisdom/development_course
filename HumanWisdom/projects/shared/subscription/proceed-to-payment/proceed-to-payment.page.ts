@@ -93,7 +93,9 @@ export class ProceedToPaymentPage implements OnInit {
       localStorage.setItem('totalAmount', this.totalCartValueDiscount);
       SharedService.setDataInLocalStorage("Currsymbol", this.pricingModel.CurSymbol);
       SharedService.setDataInLocalStorage("ISOCode", this.pricingModel.ISOCode);
-      SharedService.setDataInLocalStorage(Constant.Checkout, 'T')
+      SharedService.setDataInLocalStorage(Constant.Checkout, 'T');
+      // Set flag to indicate user came from subscription flow
+      localStorage.setItem('cameFromSubscription', 'true');
       if (this.onboardingService.navigateToUpgradeToPremium) {
         localStorage.setItem('ispartnershipClick', 'T');
       }
@@ -139,6 +141,9 @@ export class ProceedToPaymentPage implements OnInit {
           SharedService.setDataInLocalStorage(Constant.SelectedPlanModel, JSON.stringify(this.SelectedPlanModel));
           SharedService.setDataInLocalStorage("IsCoupanApplied", JSON.stringify(this.couponCodeApplied));
           SharedService.setDataInLocalStorage("subscribeToPremiumAfterDiscount", JSON.stringify(this.totalCartValueDiscount));
+          SharedService.setDataInLocalStorage(Constant.Checkout, 'T');
+          // Set flag to indicate user came from subscription flow
+          localStorage.setItem('cameFromSubscription', 'true');
           SharedService.setDataInSessionStorage(Constant.ClientSecret, res.toString());
           if (this.onboardingService.navigateToUpgradeToPremium) {
             localStorage.setItem('ispartnershipClick', 'T');

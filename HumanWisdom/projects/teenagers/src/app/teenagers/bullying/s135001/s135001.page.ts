@@ -25,6 +25,8 @@ export class S135001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+              isContentsOpen = false;
+
   bookmarkList=[]
   path = setTimeout(() => {
     return this.router.url;
@@ -134,6 +136,13 @@ export class S135001Page implements OnInit,OnDestroy {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
 
+
+     // continue where you left    
+    this.service.clickModule(135, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     if(!this.t) //if no token in url- not shared
     {
       if(this.loginResponse.Subscriber!=1 && !this.freeScreens.includes(this.screenNumber))
@@ -155,6 +164,9 @@ export class S135001Page implements OnInit,OnDestroy {
     this.socialShare=true
   }
 
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark()
   {
     if(this.bookmark==0)

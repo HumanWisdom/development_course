@@ -27,6 +27,8 @@ export class SearchPopularItemsPage implements OnInit {
   post: any;
   iframe: any;
   UserID: any;
+  jrList: any = [];
+  jrListC: any = [];
   activereply;
   replyflag = false;
   PostComment: string = ''
@@ -42,6 +44,7 @@ export class SearchPopularItemsPage implements OnInit {
   enablePodcastViewMore: boolean = false;
   enableAudioMedViewMore: boolean = false;
   enableMLMViewMore: boolean = false;
+  enableSoundscapesViewMore: boolean = false;
   isSubscriber = false;
   storyFreeMap: { [key: number]: boolean } = {};
   showModal = false;
@@ -53,6 +56,8 @@ export class SearchPopularItemsPage implements OnInit {
   searchResult = [];
   public moduleList = [];
   filterApplied =  true;
+  isLoading: boolean = false;
+  previousSearch: string = '';
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -72,14 +77,21 @@ export class SearchPopularItemsPage implements OnInit {
     this.isSubscriber = SharedService.isSubscriber();
 
     this.search = decodeURIComponent(this.route.snapshot.paramMap.get('word'))
-    this.UserID = localStorage.getItem('userId');
-    this.initializeSearchObject();
-    this.getSearchData();
     let rem = localStorage.getItem('remember');
     if (!rem || rem === 'F' && localStorage.getItem("isloggedin") === 'T') {
-      this.userId = JSON.parse(localStorage.getItem("userId"))
+      this.UserID = JSON.parse(localStorage.getItem("userId"))
+    } else {
+      this.UserID = JSON.parse(localStorage.getItem("userId"))
     }
-    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+    if (this.UserID == null) {
+      this.UserID = JSON.parse(sessionStorage.getItem("userId"))
+    }
+    this.userId = this.UserID;
+    this.initializeSearchObject();
+    this.previousSearch = this.search;
+    this.getSearchData();
+    this.getModuleList();
+
   }
   initializeSearchObject() {
     this.searchData = {
@@ -93,13 +105,15 @@ export class SearchPopularItemsPage implements OnInit {
       WisdomStoriesRes: [],
       AudioMeditationRes:[],
       FeelBetterNowRes: null,
-      MLMRes: []
+      MLMRes: [],
+      SoundscapesRes: []
     } as SearchDataModel;
   }
 
   searchEvent(moduleName:string) {
     this.filterApplied = false;
     this.post = [];
+    this.jrList = [];
     this.initializeSearchObject();
     this.search = moduleName;
     setTimeout(() => {
@@ -109,9 +123,13 @@ export class SearchPopularItemsPage implements OnInit {
   }
   
   getinp(event) {
+    if(!event || event.toString().trim() === ""){
+       return;
+    }
     let url=""
     let fragment: string | undefined = undefined;
     this.search= event;
+    this.previousSearch = event;
 
     switch(event.toLowerCase())
     {
@@ -138,6 +156,10 @@ export class SearchPopularItemsPage implements OnInit {
       }
       case "guided audio meditation":{
         url = `/${SharedService.getprogramName()}/audio-meditation`
+        break;
+      }
+      case "soundscapes":{
+        url = `/${SharedService.getprogramName()}/soundscapes`
         break;
       }
       case ("short videos"):
@@ -208,6 +230,9 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   getLearningRecords() {
+    if(!this.search || this.search === ""){
+      return 0;
+    }
     if (this.searchDataDup) {
       return this.searchDataDup.ModuleRes.length +
         this.searchDataDup.SessionRes.length +
@@ -217,10 +242,10 @@ export class SearchPopularItemsPage implements OnInit {
         this.searchDataDup.WisdomStoriesRes.length +
         this.searchDataDup.AudioMeditationRes.length +
         this.searchDataDup.MLMRes.length +
+        this.searchDataDup.SoundscapesRes.length +
         this.searchDataDup.BlogRes.length;
     }
     return 0;
-
   }
   view(item) {
     this.onboardingService.clickBlog(Number(item['BlogID'])).subscribe({
@@ -243,16 +268,14 @@ export class SearchPopularItemsPage implements OnInit {
     }
     this.router.navigateByUrl(SharedService.getprogramName() + item['url']);
   }
-
   getSourceForPodBin(url) {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?from=embed&i=" + url + "&square=0&share=0&download=0&fonts=Times%20New%20Roman&skin=1b1b1b&font-color=auto&rtl=0&logo_link=episode_page&btn-skin=60a0c8&size=300");
   }
   getSearchData() {
-    // let searchInpt = (' ' + this.search).slice(1);
     let regexp =  this.search.repeat(1);
     let searchInpt = regexp;
-
     searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+    this.isLoading = true;
     this.commonService.getSearchDataForSearchSite(searchInpt).subscribe(res => {
       if (res) {
         if (res.MLMRes) {
@@ -290,6 +313,12 @@ export class SearchPopularItemsPage implements OnInit {
           this.searchData = res;
         }
 
+        if (res.SoundscapesRes && res.SoundscapesRes.length > 2) {
+          res.SoundscapesRes = res.SoundscapesRes.filter((d, i) => (i === 0 || i === 1));
+          this.searchData = res;
+        } else {
+          this.searchData = res;
+        }
 
         if (res.WisdomStoriesRes && res.WisdomStoriesRes.length > 2) {
           res.WisdomStoriesRes = res.WisdomStoriesRes.filter((d, i) => (i === 0 || i === 1));
@@ -331,6 +360,9 @@ export class SearchPopularItemsPage implements OnInit {
         this.feelBetterNowTopic = this.getFeelBetterNowTitle(this.searchData.FeelBetterNowRes);
       }
       this.toggleBodyScroll(false);
+      this.isLoading = false;
+    }, _ => {
+      this.isLoading = false;
     });
     // fetch story free/lock info
     if (this.searchData && this.searchData.WisdomStoriesRes && this.searchData.WisdomStoriesRes.length > 0) {
@@ -345,21 +377,38 @@ export class SearchPopularItemsPage implements OnInit {
       });
     }
     this.getForumSearchData();
+    this.getJournalSearchData();
+  }
+
+  getJournalSearchData() {
+    if (this.UserID) {
+      if (this.jrListC.length === 0) {
+        this.commonService.viewJournal(this.UserID).subscribe((res) => {
+          if (res) {
+            this.jrListC = res;
+            this.searchjournal(this.search);
+          }
+        });
+      } else {
+        this.searchjournal(this.search);
+      }
+    }
+  }
+
+  searchjournal(text) {
+    if (text === "") {
+        this.jrList = this.jrListC; 
+    } else {
+      this.jrList = this.jrListC.filter(
+        (it) =>
+          it?.Response?.toLowerCase().includes(text.toLowerCase()) ||
+          it?.TitleQue?.toLowerCase().includes(text.toLowerCase()) ||
+          it?.ModuleName?.toLowerCase().includes(text.toLowerCase())
+      );
+    }
   }
   getTotalRecords() {
-    if(this.searchDataDup){
-    return this.searchDataDup.ModuleRes.length +
-      this.searchDataDup.SessionRes.length +
-      this.searchDataDup.PodCastRes.length +
-      this.searchDataDup.AudioMeditationRes.length +
-      this.searchDataDup.WisdomShortsRes.length +
-      this.searchDataDup.EventsRes.length +
-      this.searchDataDup.WisdomStoriesRes.length +
-      this.searchDataDup.MLMRes.length +
-      this.searchDataDup.BlogRes.length + this.getForumSearchRecords() + this.journalSearchRecords();
-    }
-    else return 0;
-
+    return this.getLearningRecords() + this.getForumSearchRecords() + this.journalSearchRecords();
   }
   pageChangeEvent(tabName) {
     this.tabName = tabName;
@@ -483,6 +532,18 @@ export class SearchPopularItemsPage implements OnInit {
         }
         this.enableMLMViewMore = false;
       }
+    }else if(section === 'soundscapes') {
+      if (type === 'more') {
+        if (this.searchDataDup.SoundscapesRes && this.searchDataDup.SoundscapesRes.length > 2) {
+          this.searchData.SoundscapesRes = this.searchDataDup.SoundscapesRes;
+        }
+        this.enableSoundscapesViewMore = true;
+      }else {
+        if (this.searchDataDup.SoundscapesRes && this.searchDataDup.SoundscapesRes.length > 2) {
+          this.searchData.SoundscapesRes = this.searchDataDup.SoundscapesRes.filter((d, i) => (i === 0 || i === 1));
+        }
+        this.enableSoundscapesViewMore = false;
+      }
     }
 
 
@@ -503,6 +564,26 @@ export class SearchPopularItemsPage implements OnInit {
     } else {
       this.router.navigate(['teenagers/guided-meditation/audiopage/', url, data['RowID'], (data['isFree']==1)? "T":"F", title]);
     }
+  }
+
+  soundscapeEvent(data: any) {
+    this.commonService.clickSoundscapes(data.SoundscapeID).subscribe({
+      next: () => {},
+      error: () => {}
+    });
+    const locked = !this.isSubscriber && data['SoundscapeID'] > 1;
+    if (locked) {
+      this.showModal = true;
+      return;
+    }
+    let mediaUrl = data['MediaUrl'] || '';
+    if (mediaUrl.includes('https://d1tenzemoxuh75.cloudfront.net/')) {
+      mediaUrl = mediaUrl.replaceAll('https://d1tenzemoxuh75.cloudfront.net/', '/');
+    }
+    let concat = encodeURIComponent(mediaUrl.replaceAll('/', '~'));
+    const title = (data['Title'] || '').replaceAll(' ', '-');
+    const moduleName = 'Soundscapes';
+    this.router.navigate([`${SharedService.getprogramName()}/audiopage/`, concat, data['SoundscapeID'], 'T', title, moduleName]);
   }
 
   podcastevent(data: any) {
@@ -654,15 +735,14 @@ export class SearchPopularItemsPage implements OnInit {
     console.log(item);
   }
   journalSearchRecords() {
-    if (this.searchData) {
-      return this.searchData.JournalRes;
+    if (this.jrList) {
+      return this.jrList.length;
     }
     return 0;
   }
 
   goBack() {
-    this.router.navigate(['/adults/search']);
-
+    this.router.navigate([SharedService.getUrlfromFeatureName('search')]);
   }
 
   routemodule(res) {
@@ -764,7 +844,7 @@ export class SearchPopularItemsPage implements OnInit {
   getModuleList(isLoad?) {
     this.commonService.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                           {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
@@ -780,16 +860,27 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   onFocusOutEvent() {
-    setTimeout(() => {
-      this.searchResult = [];
-      this.toggleBodyScroll(false);
-    }, 200);
+    // setTimeout(() => {
+    //   this.searchResult = [];
+    //   this.toggleBodyScroll(false);
+    // }, 200);
   }
 
   clearSearch() {
     this.search = "";
+    if (this.moduleList.length === 0) {
+      this.getModuleList(true);
+    } else {
+      this.getAutoCompleteList('');
+    }
+    this.post = [];
+    this.jrList = [];
+  }
+
+  backToPreviousSearch() {
+    this.search = this.previousSearch;
     this.searchResult = [];
-    this.toggleBodyScroll(false);
+    this.getSearchData();
   }
 
   toggleBodyScroll(lock: boolean): void {

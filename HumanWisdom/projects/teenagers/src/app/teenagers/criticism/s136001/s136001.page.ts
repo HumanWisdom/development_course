@@ -19,6 +19,8 @@ export class S136001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+        isContentsOpen = false;
+
   bookmark:any
   bookmarkList=[]
 
@@ -122,7 +124,12 @@ export class S136001Page implements OnInit,OnDestroy {
 
 
     
-    
+     // continue where you left    
+    this.service.clickModule(136, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
 
 
     if(!this.t) //if no token in url- not shared
@@ -151,6 +158,9 @@ export class S136001Page implements OnInit,OnDestroy {
   addToken(){
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  }
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   toggleBookmark(){
     if(this.bookmark==0)

@@ -115,16 +115,6 @@ export class MicroLearningListingPage implements OnInit {
 
   goBack() {
     var url = this.navigationService.navigateToBackLink();
-
-    // Skip any internal micro-learning pages or duplicates to find the real previous page
-    while (url != null && (
-      url.includes('micro-learning/inner') ||
-      url.includes('micro-learning/end') ||
-      url.split('?')[0].split('#')[0] === this.router.url.split('?')[0].split('#')[0]
-    )) {
-      url = this.navigationService.navigateToBackLink();
-    }
-
     if (url != null) {
       this.router.navigateByUrl(url);
     } else {

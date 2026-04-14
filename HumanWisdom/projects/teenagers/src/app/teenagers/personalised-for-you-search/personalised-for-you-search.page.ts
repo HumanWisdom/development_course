@@ -349,6 +349,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
                           {"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"},
                           {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},
                           {"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+                          {"ModuleName":"Soundscapes"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                           {"ModuleName":"Understand how your mind works"}, {"ModuleName":"Mental Health"},
@@ -423,6 +424,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
       case ("videos"):
         {
         url = `/teenagers/wisdom-shorts`
+        break;
+      }
+      case "soundscapes":{
+        url = `/teenagers/soundscapes`
         break;
       }
      case "journal":{

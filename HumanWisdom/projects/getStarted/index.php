@@ -7,8 +7,8 @@ require_once('./includes/security_config.php');
 <html lang="en">
  <head>
   <title>HappierMe: For Teens & Adults</title>
-  <meta property="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
-  <meta property="description"
+  <meta name="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
+  <meta name="description"
     content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
   <meta name="keywords"
     content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
@@ -44,6 +44,8 @@ require_once('./includes/security_config.php');
   <link rel="canonical" href="https://happierme.app" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
+    <style>#hw-website-title.hw-website-title-pending,#hw-website-subtitle.hw-website-title-pending{visibility:hidden}</style>
+    <noscript><style>#hw-website-title.hw-website-title-pending,#hw-website-subtitle.hw-website-title-pending{visibility:visible!important}</style></noscript>
     <title>HappierMe: For Teens &amp; Adults</title>
     
     <!-- vendor_header -->
@@ -60,1526 +62,18 @@ require_once('./includes/security_config.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     
-    <!-- AOS Animation CSS -->
- 
+    <!-- LCP Hero images preloading -->
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp"  />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" fetchpriority="high">
+    <link rel="stylesheet" href="assets/css/index-inline.css" />
+
   <script>
     $('#myCarousel').carousel({
       interval: 3000,
     })
 
   </script>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
-
-/* ── RESET / BASE ── */
-*, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font-family: "Poppins", Helvetica, sans-serif; background: #ffffff; color: #000; }
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
-
-/* ── SHARED HELPERS ── */
-.chevron        { font-size: 20px; color: #000; margin-left: 4px; }
-.chevron-pink   { font-size: 12px; color: rgba(215, 88, 107, 1);padding-top:3px }
-
-/* ========================================
-   HERO
-======================================== */
-.frame { display: flex; flex-direction: column; align-items: center; width: 100%; gap: 0; }
-
-.frame-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 80px;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.div-wrapper { width: 100%; max-width: 1340px; }
-.div         { width: 100%; }
-.div-2       { display: flex; align-items: center; gap: 60px; justify-content: center; flex-wrap: wrap;margin-top:100px }
-
-.new-app-adults-teen { width: 415px; height: 525px; object-fit: contain; flex-shrink: 0; }
-
-.div-3 {margin-top: -20px; display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
-
-/* rating */
-.p0        { padding: 0; }
-.p{
-  padding-top: 0px !important;
-}
-p:hover {
-  color: #000 !important;
-  text-decoration:none !important;
-}
-
-/* Blog cards: prevent underline-on-hover on the title text */
-.blog-card:hover,
-.blog-card:hover .blog-title {
-  text-decoration: none !important;
-}
-.p-18px    { padding: 18px; }
-.mtb0px    { margin-top: 0; margin-bottom: 0; }
-.mb_16px   { margin-bottom: 16px; }
-.fs_12px   { font-size: 12px; }
-.fs_15px   { font-size: 15px; }
-.fw_400    { font-weight: 400; }
-.fw_700    { font-weight: 700; }
-.lh_140p   { line-height: 1.4; }
-.fc_000000 { color: #000; }
-.ta_lc     { text-align: left; }
-
-.rating-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  flex-wrap: nowrap;
-  font-size: 12px;
-  font-weight: 400;
-  color: #000;
-  margin: 0 0 8px;
-  line-height: 1;
-  vertical-align: middle;
-}
-.rating_a {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  line-height: 1;
-}
-.rating_a .fa-star { color: #000; font-size: 16px; line-height: 1; vertical-align: middle;    height: 16px;
-    width: 16px; }
-.appstore_a {
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-}
-.appstore_a .fa-apple { font-size: 16px; color: #000; line-height: 1; vertical-align: middle; }
-.fs_15px.fw_700 { font-size: 15px; font-weight: 700; line-height: 1; vertical-align: middle; }
-
-/* headline */
-.frame-wrapper-2 { width: 100%; }
-.div-4  { display: flex; flex-direction: column; gap: 16px; }
-.div-5  { display: flex; flex-direction: column; gap: 16px; }
-.p      { font-size: 48px; font-weight: 600; line-height: 1.2; color: #000; margin: 0; }
-
-/* Olly pill */
-.div-6  { display: flex; align-items: center; gap: 10px; }
-.text-wrapper-3 { font-size: 21px; font-weight: 600; color: #000; }
-.text-wrapper-4 { font-size: 18px; font-weight: 400; color: rgba(0, 0, 0, 1); line-height: 1.6; margin: 0;line-height: 150%; }
-
-/* CTA button – blue (matches .btn_landing) */
-.start-your-free-wrapper {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 54px;
-  border-radius: 36px;
-  cursor: pointer;
-  background: linear-gradient(180deg, #4267a5 0%, #183c79 100%);
-}
-.start-your-free-wrapper:hover {
-  background: linear-gradient(180deg, #2d5392 0%, #0e2e64 100%);
-}
-.text-wrapper-5 {
-  font-size: 21px;
-  font-weight: 600;
-  color: #fff;
-  white-space: nowrap;
-}
-
-/* CTA button – pink/red (matches .btn_tff / .btn_popup) */
-.start-your-free-wrapper-2,
-.div-wrapper-4 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 54px;
-  border-radius: 36px;
-  cursor: pointer;
-  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%);
-}
-.start-your-free-wrapper-2:hover,
-.div-wrapper-4:hover {
-  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
-}
-
-/* ========================================
-   ORCHA BANNER
-======================================== */
-.orcha-strip {
-  width: 100%; background: rgba(255, 249, 238, 1);
-  display: flex; align-items: center; justify-content: center; gap: 14px;
-  padding: 20px 20px;
-  height: 100px;
-}
-.orcha-strip img { width: 60px; height: 60px; }
-.orcha-strip span { font-size: 18px; font-weight: 400; color: #000000; }
-
-/* ========================================
-   TOPICS GRID
-======================================== */
-.div-7 { width: 100%; max-width: 1340px; padding: 60px 80px; display: flex; flex-direction: column; gap: 60px; }
-.div-wrapper-2 { display: flex; justify-content: center; }
-.text-wrapper-6 { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-bottom: 45px; }
-.text-wrapper-6-1{ font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; }
-.text-wrapper-a { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;    margin-top: 20px; }
-.text-wrapper-user { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-top: 60px; }
-.text-wrapper-blog { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;  }
-.div-8 { display: flex; flex-direction: column; gap: 20px; }
-.div-9 { display: flex; gap: 20px; flex-wrap: wrap; }
-.div-10 {
-  flex: 1; min-width: 260px; height: 70px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 20px; background: rgba(255, 249, 238, 1); border-radius: 12px;
-  border: 0.5px solid rgba(215, 88, 107, 1); cursor: pointer;
-  transition: background 0.2s;
-}
-.div-10:hover { background: #FFEACF; }
-.div-10 .icon { width: 13px; height: 12px; flex-shrink: 0; }
-.text-wrapper-7 { font-size: 18px; font-weight: 500; color: rgba(215, 88, 107, 1); }
-
-/* ========================================
-   OLLY AI SECTION
-======================================== */
-.frame-wrapper-3 { width: 100%; background: rgba(255, 249, 238, 1); display: flex; justify-content: center; padding: 80px 20px; }
-.div-11 { display: flex; align-items: center; gap: 60px; max-width: 1110px; width: 100%; flex-wrap: wrap; }
-.group-3 { width: 400px; height: 360px; object-fit: contain; flex-shrink: 0; }
-.div-12 { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 30px; }
-.introducing-olly-AI { font-size: 42px; font-weight: 600; color: #000; line-height: 1.4; margin: 0; }
-/* responsive override will keep 42px base */
-.text-wrapper-8 { font-size: 18px; font-weight: 400; color: #000; line-height: 1.6; margin: 0; }
-
-/* ========================================
-   VIDEO / GENERIC CENTER COL
-======================================== */
-.div-13 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; gap: 60px; }
-.text-wrapper-21 { font-size: 24px; font-weight: 600; color: #000; text-align: center; margin: 0; }
-.youtube-player { width: 100%; max-width: 810px; aspect-ratio: 16/9; overflow: hidden; position: relative; background: #000; }
-.div-new{
-    width: 100%;
-    align-items: center;
-    background: rgba(255, 249, 238, 1);
-}
-.div-new1{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-}
-
-/* ========================================
-   TESTIMONIALS
-======================================== */
-.div-14 { width: 100%; max-width: 1340px; padding: 0px 20px; display: flex; flex-direction: column; gap: 40px; align-items: center; }
-.div-15 { display: flex; gap: 30px; flex-wrap: wrap; width: 100%;padding-left: 50px;
-    padding-right: 50px; }
-.frame-wrapper-4 { flex: 1; min-width: 280px; background: rgba(255, 244, 230, 1); border-radius: 20px; padding: 36px; }
-.frame-wrapper-5 { width: 100%; }
-.div-16 { display: flex; flex-direction: column; gap: 15px; }
-.div-17 { display: flex; align-items: center; gap: 15px; }
-.image  { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-.flexcontainer, .flexcontainer-2 { display: flex; flex-direction: column; gap: 3px; }
-.text   { font-size: 15px; color: #000; margin: 0; opacity: 0.85; }
-.text-wrapper-10 { font-weight: 600; font-size: 18px; }
-.text-wrapper-11 { font-size: 13px; }
-.div-wrapper-3 { width: 100%; }
-.text-wrapper-12 { font-size: 15px; font-weight: 400; font-style: italic; color: #000; opacity: 0.75; line-height: 1.6; margin: 0; }
-.div-19 { display: flex; align-items: center; gap: 6px; justify-content: center; }
-.text-wrapper-13 { font-size: 18px; font-weight: 500; color: #d7586b; text-decoration: underline; }
-.text-wrapper-13:hover {
-  color: #834B66 !important;
-  text-decoration: underline !important;
-}
-.text-wrapper-13:hover + .chevron-pink,
-.text-wrapper-13:hover + .chevron-pink .bi {
-  color: #834B66 !important;
-}
-/* Same hover colour when moving over the chevron (whole row) */
-.div-19:hover .text-wrapper-13 {
-  color: #834B66 !important;
-  text-decoration: underline !important;
-}
-.div-19:hover .chevron-pink,
-.div-19:hover .chevron-pink .bi {
-  color: #834B66 !important;
-}
-a:hover
-{
-  text-decoration: underline !important;
-}
-.text-wrapper-26:hover,
-.text-wrapper-27:hover {
-  color: #fff !important;
-  text-decoration: none !important;
-}
-/* ========================================
-   ROOT CAUSE
-======================================== */
-.div-20 { width: 100%; background: rgba(255, 249, 238, 1); display: flex; align-items: center; justify-content: center; gap: 80px; padding: 60px 50px; flex-wrap: wrap;     margin-top: 55px;}
-.design { width: 456px; height: 500px; object-fit: contain; flex-shrink: 0; }
-.div-21 { display: flex; flex-direction: column; gap: 32px; max-width: 444px; }
-.frame-wrapper-6 { display: flex; flex-direction: column; gap: 16px; }
-.div-22 { display: flex; flex-direction: column; gap: 8px; }
-.text-wrapper-14 { font-size: 30px; font-weight: 600; color: #000; line-height: 1.5; margin: 0; }
-
-/* ========================================
-   ORGANISATION CARDS
-======================================== */
-.div-23 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; gap: 40px; align-items: center; }
-.div-24 { display: flex; gap: 30px; flex-wrap: wrap; width: 100%; justify-content: center;padding-left: 50px; padding-right: 50px; }
-.div-25 {
-  display: flex; flex-direction: column; flex: 1; min-width: 280px; max-width: 429px;
-  border-radius: 20px; overflow: hidden; background: #fff4e6;
-  transition: box-shadow 0.2s; cursor: pointer;
-}
-/* .div-25:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.10); } */
-/* Card is an <a>. Global `a:hover { text-decoration: underline !important; }` would underline ALL
-   text in the card — override it on the anchor, then re-apply underline only on "Find out more". */
-.div-25:hover {
-  text-decoration: none !important;
-}
-.div-25:hover .view-all-success {
-  text-decoration: underline !important;
-}
-/* Title + description must look the same on card hover (no colour/underline change). */
-.div-25:hover .text-wrapper-15,
-.div-25:hover .text-wrapper-17,
-.div-25:hover .text-wrapper-16 {
-  color: #000 !important;
-  text-decoration: none !important;
-}
-.rectangle { width: 100%; height: 180px; object-fit: cover; }
-.frame-wrapper-7, .frame-wrapper-8 { padding: 36px; display: flex; flex: 1;     max-height: 190px;}
-.div-26, .div-29 { display: flex; flex-direction: column; gap: 12px; width: 100%; }
-.div-27, .div-30 { display: flex; flex-direction: column; gap: 6px; }
-.text-wrapper-15, .text-wrapper-17 { font-size: 20px; font-weight: 500; color: #000; line-height: 1.4; }
-.text-wrapper-16 { font-size: 14px; font-weight: 400; color: #000; line-height: 1.5; margin: 0; }
-.div-28 { display: flex; align-items: center; margin-top: auto; width: 40%;}
-.view-all-success { font-size: 15px; font-weight: 500; color: #d7586b; text-decoration: underline; }
-.view-all-success:hover { color: #834B66 !important; text-decoration: underline !important; }
-.view-all-success:hover + .chevron-pink { color: #834B66 !important; }
-.div-28:hover .view-all-success {
-  color: #834B66 !important;
-  text-decoration: underline !important;
-}
-.div-28:hover .chevron-pink,
-.div-28:hover .chevron-pink .bi {
-  color: #834B66 !important;
-}
-.view-all-success:active {
-  /* On click we keep the original (non-hover) pink to avoid "yellow flash". */
-  color: #d7586b !important;
-  text-decoration: underline !important;
-}
-.view-all-success:active + .chevron-pink {
-  color: #d7586b !important;
-}
-.div-25:active .view-all-success {
-  color: #d7586b !important;
-  text-decoration: underline !important;
-}
-.div-25:active .chevron-pink {
-  color: #d7586b !important;
-}
-
-/* If user clicks while still hovering the "Find out more" area, keep the hover color. */
-.div-25:active .div-28:hover .view-all-success {
-  color: #834B66 !important;
-  text-decoration: underline !important;
-}
-.div-25:active .div-28:hover .chevron-pink,
-.div-25:active .div-28:hover .chevron-pink .bi {
-  color: #834B66 !important;
-}
-.div-wrapper-5 { display: flex; align-items: center; }
-
-/* ========================================
-   TEENAGERS SECTION
-======================================== */
-.div-31 { width: 100%; max-width: 1340px; padding: 5px 20px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center; }
-.teenage-app-copy { width: 554px; height: 555px; object-fit: cover; border-radius: 16px; flex-shrink: 0; }
-.div-32 { display: flex; flex-direction: column; gap: 32px; max-width: 500px; }
-.div-33 { display: flex; flex-direction: column; gap: 15px; }
-.div-34 { display: flex; flex-direction: column; gap: 24px; }
-.div-35 { display: flex; flex-direction: column; gap: 18px; }
-.text-wrapper-18 { font-size: 24px; font-weight: 600; color: #803358; }
-.text-wrapper-19 { font-size: 36px; font-weight: 600; color: #000; line-height: 1.3; margin: 0; }
-.text-wrapper-20 { font-size: 15px; font-weight: 400; color: #000; line-height: 1.6; margin: 0; }
-.text-wrapper-19-mobile,
-.text-wrapper-20-mobile { display: none; }
-
-/* ========================================
-   COACHES CAROUSEL
-======================================== */
-.group-4 { width: 100%; max-width: 980px; position: relative; }
-.div-36 { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scroll-behavior: smooth; }
-.div-36::-webkit-scrollbar { height: 4px; }
-.div-36::-webkit-scrollbar-thumb { background: #d7586b; border-radius: 2px; }
-.div-37 { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 10px; background: #fff4e6; border-radius: 10px; flex-shrink: 0; width: 234px; cursor: pointer; transition: box-shadow 0.2s; }
-.div-37:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-.image-2 { width: 214px; height: 214px; object-fit: cover; border-radius: 8px; }
-.flexcontainer-3 { display: flex; flex-direction: column; align-items: center; gap: 0px; width: 100%; }
-.span-wrapper { font-size: 15px; color: #000; text-align: center; margin: 0; }
-.text-wrapper-22 { font-weight: 600; font-size: 18px; }
-.text-wrapper-23 { font-size: 12px; }
-.text-wrapper-24 { font-weight: 600; font-size: 15px; }
-.div-38 { display: flex; align-items: center; gap: 6px; justify-content: flex-end; margin-top: 16px; }
-
-/* ========================================
-   SUBSCRIPTION
-======================================== */
-.frame-wrapper-9 {
-  width: 100%;
-  background: linear-gradient(180deg, #4267a5 0%, #183c79 100%);
-  display: flex; justify-content: center;
-  padding: 60px 20px;
-}
-.div-39 { display: flex; flex-direction: column; align-items: center; gap: 40px; max-width: 980px; width: 100%; }
-.div-40 { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; }
-.div-wrapper-6 { display: flex; flex-direction: column; align-items: center; }
-.text-wrapper-25 { font-size: 30px; font-weight: 600; color: #fff; text-align: center; line-height: 1.5; margin: 0; }
-.div-41 { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; justify-content: center; }
-.div-42, .div-43 { display: flex; align-items: center; gap: 10px; }
-.group-6, .vector-6 { width: 26px; height: 24px; object-fit: contain; }
-.text-wrapper-26, .text-wrapper-27 { font-size: 18px; font-weight: 500; color: #fff; margin: 0; }
-.ellipse { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(0deg, #ffaca2 0%, #ffcaa9 100%); flex-shrink: 0; }
-.frame-wrapper-10 { width: 100%; }
-.div-44 { display: flex; flex-direction: column; gap: 24px; align-items: center; width: 100%; }
-.div-45 { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; width: 100%; }
-
-/* Yearly card */
-.group-7 { position: relative; width: 420px; min-height: 97px; padding-top: 13px; cursor: pointer; }
-.rectangle-2 { width: 100%; height: 84px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid #fff; }
-.div-wrapper-7 { position: absolute; top: -13px; right: 16px; background: #fff; border-radius: 10px; padding: 4px 16px; }
-.text-wrapper-28 { font-size: 12px; font-weight: 600; color: #325795; }
-.div-46 { position: absolute; top: 24px; left: 20px; display: flex; flex-direction: column; gap: 2px; }
-.text-wrapper-29 { font-size: 18px; font-weight: 500; color: #fff; }
-.INR-yr-INR { font-size: 15px; color: #fff; margin: 0; }
-.text-wrapper-30 { color: rgba(255,255,255,0.5); text-decoration: line-through; }
-.text-wrapper-31 { font-weight: 600; color: #fff; }
-.text-wrapper-32 { position: absolute; top: 36px; right: 20px; font-size: 21px; font-weight: 600; color: #fff; }
-
-/* Monthly card */
-.group-8 { position: relative; width: 420px; height: 84px; cursor: pointer; }
-.rectangle-3 { width: 100%; height: 84px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); }
-.div-47 { position: absolute; top: 18px; left: 22px; display: flex; flex-direction: column; gap: 2px; }
-.text-wrapper-33 { font-size: 15px; font-weight: 400; color: #fff; }
-.text-wrapper-34 { position: absolute; top: 27px; right: 20px; font-size: 21px; font-weight: 600; color: #fff; }
-
-.after-your-free { font-size: 13px; color: #fff; text-align: center; max-width: 860px; line-height: 1.6; margin: 0; }
-.text-wrapper-35 { color: #fff; }
-.text-wrapper-36 { text-decoration: underline; color: #fff; }
-
-/* ========================================
-   TOOLS SECTION (Figma exact)
-======================================== */
-.tools-section {
-  width: 100%;
-  max-width: 1100px;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  box-sizing: border-box;
-}
-
-/* Tab pill row */
-.tools-tabs {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 6.5rem;
-  position:absolute
-}
-.tool-tab {
-  width: 127px;
-  height:26px;
-  padding: 4px 11px;
-  border-radius: 10px;
-  background:  rgba(238, 161, 112, 1);
-  font-family: "Poppins", Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.18s, color 0.18s, border-color 0.18s;
-  white-space: nowrap;
-}
-.tool-tab-active {
-  background:  rgba(237, 125, 111, 1);
-  border: 1px solid rgba(128, 51, 88, 1);
-  color: #fff;
-}
-/* Outer panel container — very light peach */
-.tools-panel-wrap {
-  width: 900px;
-  background: rgba(255, 244, 230, 1);
-  overflow: hidden;
-}
-
-/* Individual panel */
-.tools-panel {
-  display: none;
-  align-items: center;
-  /* Keep app tile + description in one row (prevents large/odd gaps). */
-  gap: 40px;
-  padding: 60px 60px;
-  flex-wrap: nowrap;
-  height: 500px;
-}
-.tools-panel.active { display: flex; }
-
-/* ---- App card (left side) ---- */
-.tools-card {
-  background: rgba(255, 232, 187, 1);
-  border-radius: 16px;
-  flex-shrink: 0;
-  width: 343px;
-  height:340px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* Thumbnail with play button — inset with padding */
-.tools-thumb {
-  position: relative;
-  width: 100%;
-  padding: 12px 12px 0;
-  box-sizing: border-box;
-}
-.tools-thumb-img {
-  width: 100%;
-  height: 206px;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-}
-/* Feel better now: real MP4 (same as indexolder.php tools section) */
-.tools-thumb-video {
-  width: 100%;
-  height: 206px;
-  display: block;
-  border-radius: 10px;
-  background: #120f40;
-  object-fit: cover;
-}
-.tools-thumb-video::-webkit-media-controls-panel {
-  background: #120f40;
-}
-.tools-thumb-img_sec{
-   object-fit: cover;
-    display: block;
-    border-radius: 10px;
-    width: 343px;
-
-}
-.tools-play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.88);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
-  transition: transform 0.2s, background 0.2s;
-}
-.tools-play-btn:hover {
-  background: #fff;
-  transform: translate(-50%, -50%) scale(1.08);
-}
-.tools-play-btn span {
-  font-size: 16px;
-  color: #000;
-  margin-left: 3px;
-  line-height: 1;
-}
-.tools-video-play-btn {
-  border: 0;
-  z-index: 2;
-}
-.tools-video-play-btn[hidden] {
-  display: none !important;
-}
-
-/* Card meta area */
-.tools-card-meta {
-  padding: 12px 14px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-/* Label row: pink dot + uppercase category */
-.tools-card-label-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-.tools-label-dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ed7d6f 0%, #d7586b 100%);
-  flex-shrink: 0;
-  display: inline-block;
-}
-.tools-label-text {
-  font-size: 12px;
-  font-weight: 700;
-  color: #444;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-}
-
-.tools-card-title {
-  font-size: 18px;
-  font-weight: 400;
-  color: #1a1a1a;
-  margin: 0;
-  line-height: 1.3;
-}
-.tools-card-duration {
-  font-size: 12px;
-  font-weight: 400;
-  color: #777;
-  margin: 0;
-}
-
-/* ---- Info text (right side) ---- */
-.tools-info {
-  flex: 1;
-  min-width: 240px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.tools-info-heading {
-  font-size: 21px;
-  font-weight: 500;
-  color: #000000;
-  margin: 0;
-  line-height: 1.25;
-}
-.tools-info-body {
-  font-size: 15px;
-  font-weight: 400;
-  color: #000;
-  line-height: 1.7;
-  margin: 0;
-  max-width: 360px;
-}
-.tools-explore-link {
-  display: inline-flex;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 500;
-  color: rgba(215, 88, 107, 1);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  margin-top: 2px;
-  text-decoration: underline;
-}
-.tools-explore-link:hover { color: #834B66; text-decoration: underline; }
-.tools-explore-link:hover .chevron-pink { color: #834B66 !important; }
-.tools-explore-link:active {
-  color: #834B66 !important;
-  text-decoration: underline !important;
-}
-.tools-explore-link:active .chevron-pink {
-  color: #834B66 !important;
-}
-
-/* index-only: prevent global yellow click/active color */
-#body a:active {
-  color: inherit !important;
-}
-#body a:active .chevron-pink {
-  color: inherit !important;
-}
-
-/* Keep old selectors harmless */
-.group-wrapper, .group-9, .div-51, .div-wrapper-8, .div-wrapper-9, .div-wrapper-10,
-.text-wrapper-42, .text-wrapper-43, .tab-content-panel, .div-49, .div-50,
-.text-wrapper-37, .text-wrapper-38, .group-10, .tool-card-image-wrap,
-.rectangle-5, .group-11, .ellipse-2, .polygon-btn, .tool-card-divider,
-.tool-card-label-row, .tool-card-icon-pill, .tool-card-icon-circle,
-.text-wrapper-39-inline, .tool-card-body, .text-wrapper-39-bold,
-.flexcontainer-4, .text-2, .text-wrapper-40, .text-wrapper-41,
-.text-wrapper-39, .rectangle-4 { display: none !important; }
-
-/* ========================================
-   COACHES SECTION
-======================================== */
-.coaches-section {
-  width: 100%;
-  max-width: 1340px;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-  box-sizing: border-box;
-}
-.coaches-outer {
-  width: auto;
-  max-width: 1340px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding-left: 12rem;
-}
-
-/* track wrap: arrows sit on left/right, scroll strip in between */
-.coaches-track-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-
-/* arrow buttons */
-.coach-arrow {
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(173, 173, 173, 1);;
-  color: #fff;
-  font-size: 16px;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  z-index: 2;
-  padding: 0;
-}
-.coach-arrow:disabled {
-  opacity: 0.5 !important;
-}   
-.coach-arrow-left  { margin-right: 0; }
-.coach-arrow-right { margin-left: 0; }
-
-.coaches-scroll {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  flex: 1;
-  /* hide scrollbar on all browsers */
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE/Edge */
-}
-.coaches-scroll::-webkit-scrollbar { display: none; }
-
-.coach-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  background: #fff4e6;
-  border-radius: 12px;
-  flex-shrink: 0;
-  width: 234px;
-  cursor: pointer;
-  transition: box-shadow 0.2s;
-  text-decoration: none;
-  height:287px
-}
-.coach-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  text-decoration: none !important;
-}
-.coach-card:hover * {
-  text-decoration: none !important;
-}
-.coach-img { width: 214px; height: 214px; object-fit: cover; border-radius: 10px; display: block; }
-.coach-name { font-size: 18px; font-weight: 600; color: #000; text-align: center; margin: 0; }
-.coach-country { font-size: 12px; font-weight: 400; color: #000; text-align: center; margin: 0; }
-
-.coaches-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 40px;
-  width: 100%;
-}
-.coaches-footer-spacer {
-  flex: 1;
-}
-.coaches-nav-btns {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-      margin-left: 15rem;
-}
-                  
-
-.coaches-more {
-  display: inline-flex; align-items: center; gap: 4px;
-  font-size: 17px; font-weight: 500; color: #d7586b;
-  text-decoration: underline;
-}
-.coaches-more .bi-chevron-right {
-  color: #d7586b;
-  font-size: 14px;
-  font-weight: 700;
-}
-/* Icon fix for coach arrow buttons */
-.coach-arrow .bi {
-  font-size: 13px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.coaches-more:hover {
-  opacity: 0.8;
-  color: #834B66 !important;
-  text-decoration: underline !important;
-}
-.coaches-more:hover .bi-chevron-right {
-  color: #834B66 !important;
-}
-.coaches-more:active {
-  /* Prevent global "yellow on click" for this link */
-  color: #d7586b !important;
-}
-.coaches-more:active .bi-chevron-right {
-  color: #d7586b !important;
-}
-.coaches-more:hover:active {
-  color: #834B66 !important;
-}
-.coaches-more:hover:active .bi-chevron-right {
-  color: #834B66 !important;
-}
-.div_new1{
-  justify-content: center;
-    display: flex;
-}
-
-
-/* keep old dot classes harmless */
-.coaches-dots, .cdot { display: none; }
-
-/* ========================================
-   BLOG
-======================================== */
-.blog-outer {
-  width: 100%;
-  max-width: 980px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.blog-scroll {
-  display: flex;
-  gap: 20px;
-  padding-bottom: 4px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  width: 120%;
-  height:370px;
-}
-.blog-scroll::-webkit-scrollbar { display: none; }
-.blog-card {
-  position: relative;
-  width: 470px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: box-shadow 0.2s;
-  display: block;
-}
-.nav-buttons {
-  display: flex;
-  gap: 12px;
-  padding: 10px;
-  background: #f5f5f5;
-}
-
-.circle-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(173, 173, 173, 1);
-  color: rgba(173, 173, 173, 1);
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.circle-btn:disabled {
-  opacity: 0.5;
-  cursor: none;
-}
-
-.circle-btn:active {
-  transform: scale(0.95);
-}
-.blog-img { width: 470px; height: 240px; object-fit: cover; display: block; }
-.blog-caption {
-  width: 100%;
-  height: 130px;
-  background: rgba(255, 244, 230, 1);
-  box-sizing: border-box;
-  padding: 25px 0px 1px 22px;/* keeps title below the image */
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.blog-title {
-  position: static !important;
-  bottom: auto !important;
-  left: auto !important;
-  right: auto !important;
-  font-size: 18px;
-  font-weight: 500;
-  color: #000 !important;
-  line-height: 1.45;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: block;
-  width: 100%;
-  visibility: visible !important;
-  opacity: 1 !important;
-  z-index: 2;
-}
-.blog-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-  margin-left: 27rem;
-}
-.blog-dots { display: flex; gap: 8px; align-items: center; }
-.bdot {
-  width: 10px; height: 10px; border-radius: 50%;
-  border: none; cursor: pointer; padding: 0;
-  background: rgba(215,88,107,0.3);
-  transition: background 0.2s;
-}
-.bdot.active { background: #d7586b; }
-.blog-more {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 16px; font-weight: 500; color: #d7586b;
-  text-decoration: underline;
-}
-.blog-more:hover { color: #834B66 !important; }
-.blog-more:hover .chevron-pink { color: #834B66 !important; }
-.blog-more:active { color: #834B66 !important; }
-.blog-more:active .chevron-pink { color: #834B66 !important; }
-.blog-more img { width: 8px; height: auto; }
-
-/* Mobile blog card (matches Figma dimensions) */
-@media (max-width: 767px) {
-  .text-wrapper-blog {
-    font-size: 18px !important;
-    font-weight: 600 !important;
-  }
-
-  .blog-scroll {
-    width: 100%;
-    overflow-y: visible;
-    align-items: center;
-  }
-
-  .blog-card {
-    width: 100%;
-    max-width: 306px;
-    display: flex;
-    flex-direction: column; /* blog-img on top, blog-caption below */
-    align-items: stretch;
-  }
-
-  .blog-img {
-    width: 100%;
-    height: 156.25531005859375px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    object-fit: cover;
-  }
-
-  .blog-caption {
-    height: 86.28196716308594px;
-    background: rgba(255, 249, 238, 1);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    padding: 10px 5px 0 5px; /* keeps title below the image */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .blog-footer {
-    margin-left: 0;
-    justify-content: center;
-  }
-
-  /* Carousel arrows are horizontal-scroll controls; hide on stacked mobile layout */
-  #blog-prev,
-  #blog-next {
-    display: none;
-  }
-
-  /* Put title inside caption (image then text) */
-  .blog-title {
-    position: static !important;
-    bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
-    margin: 0;
-    padding: 0;
-    font-size: 15px !important;
-    font-weight: 500 !important;
-    line-height: 1.4;
-    display: block;
-    width: 100%;
-    color: #000 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 2;
-  }
-  .accordion-button::after{
-    content:"+" !important;
-    font-size: 15px;
-  }
-  
-.accordion-button:not(.collapsed)::after {
-    content: "-" !important;
-    font-size: 15px;
-  }
-
-  .modal-content1 .cross_btn_row a[data-bs-dismiss="modal"] .cross_btn, .modal-content1 .popup-close-btn .cross_btn{
-        min-width: 20px !important;
-  }
-}
-
-/* keep old selectors harmless */
-.group-13, .div-52, .group-14, .rectangle-6, .rectangle-7, .text-wrapper-44, .div-53 {}
-
-/* ========================================
-   FAQ
-======================================== */
-.div-54 { width: 100%; max-width: 980px; padding: 10px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
-.div-55 { display: flex; gap: 40px; width: 100%; flex-wrap: wrap; }
-.div-56 { display: flex; flex-direction: column; gap: 20px; min-width: 200px; flex-shrink: 0; }
-.about-happierme { font-size: 15px; font-weight: 600; color: rgba(128, 51, 88, 1); cursor: pointer; }
-.text-wrapper-45 { font-size: 15px; font-weight: 500; color: rgba(203, 97, 113, 1);text-decoration: underline; cursor: pointer; }
-.faq-tab:hover { color: #834b66 !important;
-    text-decoration: none !important; }
-.faq-tab-active { opacity: 1 !important; font-weight: 600 !important; }
-.div-57 { flex: 1; min-width: 280px; }
-.faq-panel { display: none; }
-.faq-panel.active { display: block; }
-.div-58 { margin-bottom: 8px; }
-.div-59 { display: flex; flex-direction: column; gap: 8px; }
-.div-70 { width: 100%; display: flex;
-    justify-content: center;}
-.div-71 { width: 100%;}
-.div-60, .div-61 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0;
-}
-.text-wrapper-46 { font-size: 15px; font-weight: 600; color: #000; flex: 1; margin: 0; }
-.icon-2, .icon-3 { width: 13px; height: 8px; object-fit: contain; }
-.faq-toggle {
-  display: flex;
-  align-items: center;
-  margin-left: 12px;
-  cursor: pointer;
-}
-.faq-toggle-icon {
-  width: 14px;
-  height: 8px;
-  object-fit: contain;
-  transition: 0.2s ease;
-}
-.div-60.faq-open .faq-toggle-icon,
-.div-61.faq-open .faq-toggle-icon {
-  transform: none;
-}
-.faq-body {
-  font-size: 15px;
-  color: #000;
-  line-height: 1.6;
-  margin: 6px 0 12px;
-  display: none;
-}
-
-/* Mobile: keep plus / minus instead of chevron */
-@media (max-width: 767px) {
-  .faq-toggle {
-    font-size: 22px;
-    color: #d7586b;
-  }
-  .faq-toggle-icon {
-    display: none;
-  }
-}
-
-  /* ========================================
-   FOOTER
-======================================== */
-.group-16 { width: 100%; position: relative; background: #d7586b; padding: 60px 0 40px; }
-.rectangle-8 { position: absolute; inset: 0; background: #d7586b; z-index: 0; }
-.text-wrapper-47 { position: relative; z-index: 1; font-size: 12px; color: rgba(255,255,255,0.5); text-align: center; margin: 0 0 8px; }
-.div-62 { position: relative; z-index: 1; display: flex; gap: 80px; justify-content: center; flex-wrap: wrap; padding: 0 60px; }
-.div-63 { display: flex; flex-direction: column; gap: 16px; }
-.text-wrapper-48 { font-size: 15px; font-weight: 600; color: #fff; }
-.div-64 { display: flex; flex-direction: column; gap: 10px; }
-.text-wrapper-49 { font-size: 12px; font-weight: 400; color: #fff; margin: 0; }
-.text-wrapper-50 { font-size: 12px; font-weight: 400; color: #fff; margin: 0; }
-.img-2 { position: absolute; bottom: 0; right: 60px; width: 154px; height: auto; z-index: 1; }
-
-/* ========================================
-   RESPONSIVE
-======================================== */
-
-/* ── Global layout helpers ── */
-.div-48 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  align-items: center;
-}
-
-/* Tools responsive */
-@media (max-width: 900px) {
-  .tools-panel { padding: 40px 40px; gap: 40px; flex-wrap: wrap; }
-}
-@media (max-width: 768px) {
-  .tools-panel { padding: 32px 24px; gap: 28px; }
-  .tools-card { width: 210px; }
-  .tools-thumb-img { height: 155px; }
-  .tools-thumb-video { height: 155px; }
-  .tools-info-heading { font-size: 22px; }
-  .tools-info-body { max-width: 100%; }
-}
-@media (max-width: 480px) {
-  .tools-panel {  align-items: center; padding: 24px 18px; }
-  .tools-card { width: 100% }
-  .tools-info { align-items: center; text-align: center; }
-  .tools-info-body { max-width: 100%; }
-  .tools-info-heading { font-size: 20px; }
-  /* Mobile layout: show tools-info above tools-card */
-  .tools-panel { flex-direction: column-reverse; flex-wrap: nowrap; gap: 20px; }
-  .tools-tabs { gap: 7px; flex-wrap: unset;padding-top: 40px;padding-left: 30rem;position: relative;}
-  .tool-tab { font-size: 12px; padding: 4px 14px; }
-  .tools-section{    padding-left: 0px;
-    padding-right: 0px;padding-top: 34px; gap:0px   }
-    .tools-panel-wrap {width: 375px;}
-    .tools-panel.active {justify-content: center;}
-}
-
-/* Subscription price cards — fluid by default */
-.group-7 {
-  position: relative;
-  width: min(420px, 100%);
-  min-height: 97px;
-  padding-top: 0px;
-  cursor: pointer;
-}
-.group-8 {
-  position: relative;
-  width: min(420px, 100%);
-  height: 84px;
-  cursor: pointer;
-}
-
-/* Coaches: smooth touch scroll */
-.div-36 { -webkit-overflow-scrolling: touch; touch-action: pan-x; }
-
-/* Blog card fluid base */
-.group-14 {
-  position: relative;
-  width: clamp(260px, 45vw, 470px);
-  flex-shrink: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-/* Tools mock-app card fluid base */
-.group-10 {
-  width: min(343px, 100%);
-}
-
-/* ── 1200 px: large monitors ── */
-@media (min-width: 1200px) {
-  .frame-wrapper { padding: 80px 40px;padding-top: 80px;
-        padding-bottom: 60px; }
-  .p { font-size: 42px; }
-  .introducing-olly-AI { font-size: 42px; }
-}
-
-/* ── 1024 px: laptop ── */
-@media (max-width: 1024px) {
-  .p { font-size: 36px; }
-  .introducing-olly-AI { font-size: 34px; }
-  .new-app-adults-teen { width: 320px; height: 406px; }
-  .group-3 { width: 300px; height: 270px; }
-  .div-62 { gap: 48px; padding: 0 40px; }
-}
-
-/* ── 768 px: tablet ── */
-@media (max-width: 768px) {
-  /* Hero */
-  /* Mobile hero banner layout (image first, then content) */
-  .frame-wrapper.web_home_divlanding {
-    width: 375px;
-    max-width: 100%;
-    height: 755px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0 auto;
-  }
-
-  .div-2 {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    margin-top: 0;
-    padding-top: 60px;
-  }
-
-  .new-app-adults-teen {
-    width: 237px;
-    height: 300px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-
-  .div-3 { max-width: 100%; text-align: center; align-items: center; gap: 18px; }
-  .div-4 { gap: 18px; }
-  .div-5 { gap: 18px; }
-  .group { justify-content: center; }
-  .start-your-free-wrapper { align-self: center; }
-
-  .p { font-size: 27px; font-weight: 600; text-align: center !important; }
-  .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 1.5; }
-  .text-wrapper-5 { font-size: 16px; }
-  .start-your-free-wrapper,
-  .start-your-free-wrapper-2,
-  .div-wrapper-4 { padding: 14px 32px; }
-
-  /* CTA button size */
-  .start-your-free-wrapper {
-    width: 335px;
-    max-width: 100%;
-    height: 48px;
-    padding: 0 20px !important;
-    gap: 12px;
-  }
-
-  /* Ensure rating stays centered on mobile */
-  .rating-row { justify-content: center; margin: 0; }
-
-  /* Orcha */
-  .orcha-strip { flex-direction: row; flex-wrap: nowrap; gap: 10px; justify-content: center; align-items: center; }
-  .orcha-strip span { font-size: 15px; text-align: left; line-height: 1.3; flex: 1; display: block; }
-
-  /* Topics */
-  .div-7 { padding: 40px 20px; gap: 10px; }
-  .div-8 { gap: 10px; }
-  .div-9 { gap: 10px; }
-  .text-wrapper-6 { font-size: 22px; }
-  .div-9 { flex-direction: column; }
-  .div-10 { min-width: unset; width: 100%; height: auto; min-height: 60px; }
-
-  /* Olly */
-  .div-11 { flex-direction: column; align-items: center; text-align: center; }
-  .group-3 { width: clamp(160px, 50vw, 260px); height: auto; }
-  .introducing-olly-AI { font-size: 24px !important; font-weight: 600; }
-  .div-12 { align-items: center; }
-  .start-your-free-wrapper-2 { align-self: center; }
-  .text-wrapper-8 { font-size: 12px; font-weight: 400; }
-
-  /* Chat with Olly now button */
-  .start-your-free-wrapper-2 {
-    width: 335px;
-    max-width: 100%;
-    height: 48px;
-    border-radius: 24px;
-    padding: 0 20px !important;
-  }
-
-  /* Testimonials */
-  .div-15 { flex-direction: column; }
-  .div-14 { align-items: center; }
-
-  /* Root cause */
-  .div-20 { flex-direction: column; align-items: center; padding: 40px 20px;text-align: center; gap: 30px;}
-  .design { width: 100%; max-width: 340px; height: auto; }
-  .div-21 { max-width: 100%; }
-
-  /* Org cards */
-  .div-24 { flex-direction: column; align-items: center;padding-left: 0px;padding-right:0px; }
-  .div-25 { max-width: 100%; }
-  /* Organisation cards: image + title only */
-  .div-23 .rectangle { width: 335px; height: 150px; object-fit: cover; margin: 0 auto; max-width: 100%; }
-  .div-23 .frame-wrapper-7, .div-23 .frame-wrapper-8 { padding: 18px 20px; max-height: none; }
-  .div-23 .div-27, .div-23 .div-30 { gap: 0px; align-items: center; }
-  .div-23 .text-wrapper-15, .div-23 .text-wrapper-17 { font-size: 15px; font-weight: 400; text-align: center; }
-  .div-23 .text-wrapper-16 { display: none !important; }
-  .div-23 .div-28 { display: none !important; }
-
-  /* Teenagers */
-  .div-31 { flex-direction: column; align-items: center; gap:10px}
-  .teenage-app-copy { width: 100%; max-width: 420px; height: auto; }
-  .div-32 { max-width: 100%; }
-  /* Teenagers mobile: image + title + single paragraph only */
-  /* Collapse wrappers so title + paragraphs can be reordered around the image */
-  .div-31 .div-32 { display: contents; max-width: unset; }
-  .div-31 .div-33 { display: contents; }
-  .div-31 .div-34 { display: contents; }
-  .div-31 .div-35 { display: contents; }
-
-  .div-31 .text-wrapper-18 { font-size: 18px !important; font-weight: 600; color: #000 !important; text-align: center; order: 1; }
-  .div-31 .teenage-app-copy { order: 2; }
-  .div-31 .text-wrapper-19 { display: none !important; }
-  .div-31 .text-wrapper-20 { display: none !important; }
-  .div-31 .text-wrapper-19-mobile { display: block !important; font-size: 18px !important; font-weight: 500; color: #000 !important; text-align: center; line-height: 1.6; margin: 0; order: 3; }
-  .div-31 .text-wrapper-20-mobile { display: block !important; font-size: 12px !important; font-weight: 400; color: #000 !important; line-height: 1.6; margin: 0; text-align: center; order: 4; }
-  .div-31 .div-28 { display: none !important; } /* Hide "Find out more" */
-  .div-31 .div-wrapper-4 { display: none !important; } /* Hide bottom CTA button */
-  .div-31 a[href*="teenagers/intro-carousel"] { display: none !important; }
-
-  /* Subscription */
-  .div-45 { flex-direction: column; align-items: center;padding-left: 18px;
-    padding-right: 18px;gap:10px }
-  .text-wrapper-25 { font-size: 22px; }
-  .div-41 { gap: 16px; flex-direction: column;}
-  .group-6, .vector-6 ,.ellipse{width: 16px; height: 15px;}
-
-  /* Tools tabs */
-  .div-51 { gap: 6px; }
-  .tab-content-panel.active { flex-direction: column; align-items: center; }
-  .group-wrapper { width: 100%; max-width: 100%; }
-  .group-9 { min-height: unset; }
-  .div-49 { min-width: unset; width: 100%; }
-
-  /* Blog */
-  .group-14 { width: clamp(160px, 45vw, 220px); }
-
-  /* FAQ */
-  .div-55 { flex-direction: column; }
-  .div-56 { flex-direction: row; flex-wrap: wrap; gap: 10px; }
-  .about-happierme, .text-wrapper-45 { font-size: 13px; }
-
-  /* Footer */
-  .div-62 { gap: 32px; padding: 0 20px; flex-wrap: wrap; }
-  .group-16 { padding: 40px 0 80px; }
-  .img-2 { width: 100px; right: 16px; }
-
-  /* Headings */
-  .text-wrapper-21 { font-size: 20px; }
-  .text-wrapper-14 { font-size: 24px; }
-  .text-wrapper-19 { font-size: 28px; }
-
-  .text-wrapper-a{
-    font-size: 18px;
-    padding: 2px;
-    margin-top: 0px;
-  }
-  .div-6 {
-    justify-content: center;
-  }
-
-  /* Coaches (mobile): center footer + fix carousel start */
-  .coaches-outer { padding-left: 0 !important; }
-  .coaches-footer { flex-direction: column; justify-content: center; gap: 12px; margin-top: 20px; }
-  .coaches-footer-spacer { display: none; }
-  .coaches-nav-btns { margin-left: 0 !important; justify-content: center; }
-  .coaches-more { justify-content: center; }
-
-  /* Coach card sizing (mobile) */
-  .coach-card { width: 190px !important; height: 245px !important; border-radius: 10px; }
-  .coach-img { width: 160px !important; height: 160px !important; border-radius: 10px; }
-
-  /* Hide bottom scroll buttons (mobile) */
-  .coaches-nav-btns,
-  .coaches-nav-btns * { display: none !important; }
-}
-
-/* ── 480 px: phone ── */
-@media (max-width: 480px) {
-  /* Hero */
-  .frame-wrapper { padding: 36px 16px; }
-  .p { font-size: 27px; }
-  .text-wrapper-3 { font-size: 15px; }
-  .text-wrapper-4 { font-size: 16px; }
-  .new-app-adults-teen { width: clamp(150px, 70vw, 240px); }
-  .div-6 img { width: 28px !important; height: 32px !important; }
-  .tools-panel.active{height: 600px;}
-
-  /* Orcha */
-  .orcha-strip { padding: 12px 16px; }
-
-  /* Organisation cards: image + title only */
-  .div-23 .rectangle { width: 335px; height: 150px; object-fit: cover; margin: 0 auto; max-width: 100%; }
-  .div-23 .frame-wrapper-7, .div-23 .frame-wrapper-8 { padding: 18px 20px; max-height: none; }
-  .div-23 .div-27, .div-23 .div-30 { gap: 0px; align-items: center; }
-  .div-23 .text-wrapper-15, .div-23 .text-wrapper-17 { font-size: 15px; font-weight: 400; text-align: center; }
-  .div-23 .text-wrapper-16 { display: none !important; }
-  .div-23 .div-28 { display: none !important; }
-
-  /* Topics */
-  .div-7 { padding: 40px 16px; gap: 10px; }
-  .div-8 { gap: 10px; }
-  .div-9 { gap: 10px; }
-  .text-wrapper-7 { font-size: 15px; }
-  .introducing-olly-AI{
-    font-size: 24px !important;
-    font-weight: 600;
-  }
-
-  /* Olly */
-  .frame-wrapper-3 { padding: 48px 16px; }
-  .text-wrapper-8 { font-size: 12px; font-weight: 400; }
-  .start-your-free-wrapper-2 {
-    width: 335px;
-    max-width: 100%;
-    height: 48px;
-    border-radius: 24px;
-    padding: 0 20px !important;
-  }
-
-  /* Video */
-  .div-13 {padding: 40px 0px;
-        gap: 24px;
-        padding-left: 16px; }
-
-  /* Testimonials */
-  .frame-wrapper-4 { padding: 24px 18px; }
-  .text-wrapper-10 { font-size: 15px; }
-
-  /* Root cause */
-  .text-wrapper-14 { font-size: 20px; }
-
-  /* Org cards */
-  .frame-wrapper-7, .frame-wrapper-8 { padding: 24px; }
-  .text-wrapper-15, .text-wrapper-17 { font-size: 20px; }
-
-  /* Teenagers */
-  .div-31 { padding: 40px 16px; }
-  .div-31 .text-wrapper-18 { font-size: 18px !important; font-weight: 600; color: #000 !important; }
-  .div-31 .text-wrapper-19 { display: none !important; }
-  .div-31 .text-wrapper-20 { display: none !important; }
-  .div-31 .text-wrapper-19-mobile { display: block !important; font-size: 18px !important; font-weight: 500; color: #000 !important; text-align: center; line-height: 1.6; margin: 0; }
-  .div-31 .text-wrapper-20-mobile { display: block !important; font-size: 12px !important; font-weight: 400; color: #000 !important; line-height: 1.6; margin: 0; text-align: center; }
-  .div-31 .div-28 { display: none !important; } /* Hide "Find out more" */
-  .div-31 .div-wrapper-4 { display: none !important; } /* Hide bottom CTA button */
-  .div-31 a[href*="teenagers/intro-carousel"] { display: none !important; }
-  .div-23 {    padding-bottom: 20px;}
-
-  /* Subscription */
-  .frame-wrapper-9 { padding: 40px 16px; }
-  .text-wrapper-25 { font-size: 18px; }
-  .text-wrapper-26, .text-wrapper-27 { font-size: 15px; }
-  .text-wrapper-29 { font-size: 15px; }
-  .text-wrapper-32, .text-wrapper-34 { font-size: 18px; }
-  .div-46 { top: 16px; left: 14px; }
-  .div-47 { top: 12px; left: 14px; }
-  .coaches-track-wrap {
-    padding-left: 31rem;
-  }
-  .coach-name {font-size: 15px;}
-  .after-your-free {font-size: 12px}
-
-  /* Tools */
-  .tab-content-panel { padding: 20px 14px; }
-  .text-wrapper-37 { font-size: 17px; }
-  .text-wrapper-38 { font-size: 14px; }
-
-  /* Blog */
-  .group-14 { width: calc(70vw); }
-  .rectangle-6 { height: 140px; }
-  .rectangle-7 { height: 100px; }
-  .text-wrapper-44 { font-size: 13px; left: 12px; bottom: 10px; }
-
-  /* FAQ */
-  .div-54 { padding: 40px 16px; }
-  .div-56 { gap: 8px; }
-  .about-happierme, .text-wrapper-45 { font-size: 12px; }
-  .text-wrapper-46 { font-size: 14px; }
-
-  /* Footer */
-  .div-62 { flex-direction: column; gap: 24px; padding: 0 16px; }
-  .text-wrapper-47 { font-size: 11px; padding: 0 16px; }
-  .img-2 { display: none; }
-
-  /* Section headings */
-  .text-wrapper-6 { font-size: 18px; padding-bottom: 8px; }
-  .text-wrapper-21 { font-size: 18px; }
-  .text-wrapper-user {
-        font-size: 18px;
-  }
-  .div-15 {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-
-  /* Coaches (mobile): center footer + fix carousel start */
-  .coaches-outer { padding-left: 0 !important; }
-  .coaches-footer { flex-direction: column; justify-content: center; gap: 12px; margin-top: 20px; }
-  .coaches-footer-spacer { display: none; }
-  .coaches-nav-btns { margin-left: 0 !important; justify-content: center; }
-  .coaches-more { justify-content: center; }
-
-  /* Coach card sizing (mobile) */
-  .coach-card { width: 190px !important; height: 245px !important; border-radius: 10px; }
-  .coach-img { width: 160px !important; height: 160px !important; border-radius: 10px; }
-
-  /* Hide bottom scroll buttons (mobile) */
-  .coaches-nav-btns,
-  .coaches-nav-btns * { display: none !important; }
-}
-
-
-
-
-
-    </style>
   </head>
 <body id="body" style="padding:0px !important">
 
@@ -1591,18 +85,18 @@ a:hover
 
   <!-- /header --> 
 
-    <div class="frame">
+    <div class="frame" id="main">
 
       <!-- ===== HERO ===== -->
       <div class="frame-wrapper web_home_divlanding">
         <div class="div-wrapper">
           <div class="div">
             <div class="div-2">
-              <img class="new-app-adults-teen display_m_none"
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannerind.svg"
+              <img class="new-app-adults-teen display_m_none"  fetchpriority="high"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp"
                 alt="HappierMe app" />
-             <img class="new-app-adults-teen display_d_none"
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/bannermobile11.svg"
+             <img class="new-app-adults-teen display_d_none"  fetchpriority="high"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp"
                 alt="HappierMe app" />
           <div class="div-3">
                  <!-- rating row -->
@@ -1627,18 +121,18 @@ a:hover
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                     <p class="p" style="text-align: left;line-height: 1.3;">Think better.<br>Live better.</p>
+                     <p class="p hw-website-title-pending" style="text-align: left;line-height: 1.3;" id="hw-website-title">Understand your mind.<br>Change your life.</p>
                       <div class="div-6">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
                         <div class="text-wrapper-3">Now with Olly AI</div>
                       </div>
                     </div>
-                    <p class="text-wrapper-4">
-                      Self-awareness tools to reduce stress and anxiety, Improve your relationships and build a happier life.
+                    <p class="text-wrapper-4 hw-website-title-pending" id="hw-website-subtitle">
+                      Personalized support to reduce stress and anxiety, deepen your relationships and build a happier life from within.
                     </p>
                   </div>
                 </div>
-                <a href="https://happierme.app/pages/splash_options.php">
+                <a class="hero-try-free-link" id="happiermeTryForFree" href="https://happierme.app/pages/splash_options.php">
                   <div class="start-your-free-wrapper">
                     <div class="text-wrapper-5">Try HappierMe for free</div>
                   </div>
@@ -1651,7 +145,7 @@ a:hover
 
       <!-- ===== ORCHA BANNER ===== -->
       <div class="orcha-strip">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/orcha_certified.png" alt="ORCHA Certified"  height="60px" width="60px"/>
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified"  height="60px" width="60px"/>
         <span>ORCHA approved for use in healthcare in the UK and USA</span>
       </div>
 
@@ -1662,19 +156,19 @@ a:hover
         </div>
         <div class="div-8">
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="text-wrapper-7">Mental wellbeing</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-mental-wellbeing" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-ga-event="click_mental_wellbeing"><div class="text-wrapper-7">Mental wellbeing</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-better-relationships" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbuild" data-ga-event="click_better_relationships"><div class="text-wrapper-7">Better relationships</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-succeed-at-work" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-ga-event="click_succeed_at_work"><div class="text-wrapper-7">Succeed at work</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-learn-meditation" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-ga-event="click_learn_meditation"><div class="text-wrapper-7">Learn meditation</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-overcome-habits" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalbreak" data-ga-event="click_overcome_habits"><div class="text-wrapper-7">Overcome harmful habits</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-manage-emotions" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalemotions" data-ga-event="click_manage_emotions"><div class="text-wrapper-7">Manage emotions</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
           <div class="div-9">
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalparent"><div class="text-wrapper-7">Better parenting</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
-            <div class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalteen"><div class="text-wrapper-7">HappierMe for Teenagers</div><img class="icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-self-awareness" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalself" data-ga-event="click_self_awareness"><div class="text-wrapper-7">Build self-awareness</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-better-parenting" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalparent" data-ga-event="click_better_parenting"><div class="text-wrapper-7">Better parenting</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
+            <div id="topic-help-teenagers" class="div-10" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#exampleModalteen" data-ga-event="click_happierme_for_teenagers"><div class="text-wrapper-7">HappierMe for Teenagers</div><img class="icon" src="https://d1tenzemoxuh75.cloudfront.net/website/findOutarrow.svg" alt="" /></div>
           </div>
         </div>
       </div>
@@ -1682,7 +176,7 @@ a:hover
       <!-- ===== OLLY AI ===== -->
       <div class="frame-wrapper-3">
         <div class="div-11">
-          <img class="group-3" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/secowly.svg" alt="Olly AI" />
+          <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" />
           <div class="div-12">
             <div class="div-5">
               <p class="introducing-olly-AI" style="font-size:42px;">Introducing Olly AI,<br />your personal guide inside HappierMe.</p>
@@ -1691,7 +185,7 @@ a:hover
                 work. Olly offers practical support and guides you to trusted, expert-backed resources.
               </p>
             </div>
-            <a href="https://happierme.app/pages/splash_options.php">
+            <a href="https://happierme.app/pages/splash_options.php" id="OllyChatBtn">
               <div class="start-your-free-wrapper-2">
                 <div class="text-wrapper-5">Chat with Olly now</div>
               </div>
@@ -1705,11 +199,11 @@ a:hover
         <p class="text-wrapper-a">Discover HappierMe in just 1 minute</p>
         <div class="youtube-player">
           <iframe
+            id="youtubeIntro"
             src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1"
             title="HappierMe intro"
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-            allowfullscreen
-            style="width:100%;height:100%;border:none;border-radius:12px;">
+            allowfullscreen>
           </iframe>
         </div>
       </div>
@@ -1724,13 +218,13 @@ a:hover
  <div class="div-new">
     <div class="scroller-container div_new1">
       <div>
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/surveycircle.svg"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
           class="img-responsive d-wider w100p" alt="modules" loading="lazy">
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/home_circle.svg"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg"
           class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/survetcirclewider.svg" class="happy-wide-img"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg" class="happy-wide-img"
           alt="happy user" loading="lazy">
       </div>
     </div>
@@ -1801,7 +295,7 @@ a:hover
           </div>
         </div>
         <div class="div-19">
-          <a href="https://happierme.app/adults/testimonials" class="text-wrapper-13">View all success stories</a>
+          <a href="https://happierme.app/adults/testimonials" id="viewallsuccessstories" class="text-wrapper-13">View all success stories</a>
           <span class="chevron-pink">  <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
         </div>
       </div>
@@ -1827,12 +321,12 @@ a:hover
         <p class="text-wrapper-6">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
-          <a href="/pages/work.php" class="div-25">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/work.svg" alt="Work" />
+          <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
+            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work.webp" alt="Work" />
             <div class="frame-wrapper-7">
               <div class="div-26">
                 <div class="div-27">
-                  <div class="text-wrapper-15">HappierMe for the Workplace</div>
+                  <div class="text-wrapper-15">HappierMe for the <span class="fw_600">Workplace</span></div>
                   <p class="text-wrapper-16">Upskill your staff to be happier, emotionally intelligent and make better decisions.</p>
                 </div>
                 <div class="div-28">
@@ -1843,12 +337,12 @@ a:hover
             </div>
           </a>
           <!-- Education -->
-          <a href="/pages/education.php" class="div-25">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/education.svg" alt="Education" />
+          <a href="/pages/education.php" class="div-25" id="orgCardEducation">
+            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/education.webp" alt="Education" />
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
-                  <div class="div-wrapper-5"><div class="text-wrapper-17">HappierMe for Education</div></div>
+                  <div class="div-wrapper-5"><div class="text-wrapper-17">HappierMe for <span class="fw_600">Education</span></div></div>
                   <p class="text-wrapper-16">Help students manage stress and anxiety, and to be happier and successful.</p>
                 </div>
                 <div class="div-28">
@@ -1859,12 +353,12 @@ a:hover
             </div>
           </a>
           <!-- Healthcare -->
-          <a href="/pages/healthcare.php" class="div-25">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/healthcare.svg" alt="Healthcare" />
+          <a href="/pages/healthcare.php" class="div-25" id="orgCardHealthcare">
+            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/healthcare.webp" alt="Healthcare" />
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
-                  <div class="div-wrapper-5"><div class="text-wrapper-17">HappierMe for Healthcare</div></div>
+                  <div class="div-wrapper-5"><div class="text-wrapper-17">HappierMe for <span class="fw_600">Healthcare</span></div></div>
                   <p class="text-wrapper-16">Support your staff to be happier at work, and patients to lead healthier lives.</p>
                 </div>
                 <div class="div-28">
@@ -1899,11 +393,11 @@ a:hover
               </div>
             </div>
             <div class="div-28">
-              <a href="/pages/teenagers.php" class="view-all-success">Find out more</a>
+              <a href="/pages/teenagers.php" id="findoutMore" class="view-all-success">Find out more</a>
               <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
             </div>
           </div>
-          <a href="https://happierme.app/teenagers/intro-carousel">
+          <a href="https://happierme.app/teenagers/intro-carousel" id="happiermeTryForFree_teens">
             <div class="div-wrapper-4"><div class="text-wrapper-5">Try HappierMe for free</div></div>
           </a>
         </div>
@@ -1996,7 +490,7 @@ a:hover
           </div>
           <div class="coaches-footer">
             <div class="coaches-footer-spacer"></div>
-            <a href="https://happierme.app/adults/coach" class="coaches-more">
+            <a href="https://happierme.app/adults/coach" class="coaches-more" id="coachesFindOutMore">
               <span>Find out more</span>
               <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
             </a>
@@ -2013,7 +507,7 @@ a:hover
       </div>
 
       <!-- ===== SUBSCRIPTION ===== -->
-      <div class="frame-wrapper-9">
+      <div class="frame-wrapper-9" id="div_subscription">
         <div class="div-39">
           <div class="div-40">
             <div class="div-wrapper-6">
@@ -2038,33 +532,37 @@ a:hover
             <div class="div-44">
               <div class="div-45">
                 <!-- Yearly -->
-                <div class="group-7">
+                <div class="group-7" id="sub-plan-yearly">
                   <div class="rectangle-2"></div>
                   <div class="div-wrapper-7"><div class="text-wrapper-28">14-day free trial</div></div>
                   <div class="div-46">
                     <div class="text-wrapper-29">Yearly</div>
                     <p class="INR-yr-INR">
-                      <span class="text-wrapper-31">₹2400/yr</span>
+                      <span class="text-wrapper-31" id="annualPricingModelHeading">₹2400/yr</span>
                     </p>
                   </div>
-                  <div class="text-wrapper-32">₹200/mo.</div>
+                  <div class="text-wrapper-32" id="spanAnnualLabel">₹200/mo.</div>
                 </div>
                 <!-- Monthly -->
-                <div class="group-8">
+                <div class="group-8" id="sub-plan-monthly">
                   <div class="rectangle-3"></div>
                   <div class="div-47">
                     <div class="text-wrapper-29">Monthly</div>
                     <div class="text-wrapper-33">7-day free trial</div>
                   </div>
-                  <div class="text-wrapper-34">₹300/mo.</div>
+                  <div class="text-wrapper-34" id="monthlyPricingModelHeading">₹300/mo.</div>
                 </div>
               </div>
               <p class="after-your-free">
-                <span class="text-wrapper-35">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
+                <span class="text-wrapper-35" id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
               </p>
-              <a href="https://happierme.app/pages/splash_options.php">
+              <div id="AnnualTypebtn">
+                <div id="PricingSelectBtn1">
+              <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
                 <div class="div-wrapper-4"><div class="text-wrapper-5">Start your free trial</div></div>
               </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2074,23 +572,23 @@ a:hover
       <div class="tools-section">
         <p class="text-wrapper-6">Tools for a happier life</p>
         <!-- Tab pills -->
-        <div class="tools-tabs">
-          <button class="tool-tab tool-tab-active" onclick="switchTab(this,'tab-fbn')">Feel better now</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-pathway')">Guided Programs</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-journal')">Journal</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-podcast')">Podcast</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-community')">Community</button>
-          <button class="tool-tab" onclick="switchTab(this,'tab-wellness')">Happiness score</button>
+        <div class="tools-tabs" id="toolTabs">
+          <button class="tool-tab tool-tab-active" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
+          <button class="tool-tab" id="pathWay-tab" onclick="switchTab(this,'pathway')">Guided Programs</button>
+          <button class="tool-tab" id="journal-tab" onclick="switchTab(this,'journal_tab')">Journal</button>
+          <button class="tool-tab" id="podcast-tab" onclick="switchTab(this,'podcast_tab')">Podcast</button>
+          <button class="tool-tab" id="community-tab" onclick="switchTab(this,'forum')">Community</button>
+          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Happiness score</button>
         </div>
         <!-- Tab content area -->
         <div class="tools-panel-wrap">
 
           <!-- Feel better now -->
-          <div id="tab-fbn" class="tools-panel active">
+          <div id="fbn" class="tools-panel active">
             <div class="tools-card">
               <div class="tools-thumb">
                 <video playinline
-                  poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/rec-tool.svg"
+                  poster="https://d1tenzemoxuh75.cloudfront.net/website/rec-tool.svg"
                   controlsList="nodownload"
                   class="tools-thumb-video"
                   id="fbn-video">
@@ -2103,7 +601,7 @@ a:hover
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
                   <span class="tools-label-dot">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/rec-toolcircle.svg" alt="Breathing exercise" class="tools-label-icon" />
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingExerciseicon.svg" alt="Breathing exercise" class="tools-label-icon" />
                   </span>
                   <span class="tools-label-text">BREATHING EXERCISE</span>
                 </div>
@@ -2114,12 +612,12 @@ a:hover
             <div class="tools-info">
               <h3 class="tools-info-heading">Feel better now</h3>
               <p class="tools-info-body">No matter what the challenge you face, we have breathing exercises, mediations and videos to help you feel better now.</p>
-              <a href="https://happierme.app/adults/feel-better-now" class="tools-explore-link">Explore on app <span class="chevron-pink">  <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
+              <a href="https://happierme.app/adults/feel-better-now" id="exploreAppWeb" class="tools-explore-link">Explore on app <span class="chevron-pink">  <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
 
           <!-- Guided Programs -->
-          <div id="tab-pathway" class="tools-panel">
+          <div id="pathway" class="tools-panel">
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" alt="Guided Programs" class="tools-thumb-img_sec" />
@@ -2129,15 +627,18 @@ a:hover
             <div class="tools-info">
               <h3 class="tools-info-heading">PATHWAY — Guided program</h3>
               <p class="tools-info-body">A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.</p>
+              <audio id="aud1" controls controlslist="nodownload">
+                <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+              </audio>
               <a href="https://happierme.app/adults/pathway/" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
 
           <!-- Journal -->
-          <div id="tab-journal" class="tools-panel">
+          <div id="journal_tab" class="tools-panel">
             <div>
               <div class="tools-thumb">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/questions.svg" alt="Journal" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/questions.svg" alt="Journal" class="tools-thumb-img_sec" />
                 <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
@@ -2150,7 +651,7 @@ a:hover
           </div>
 
           <!-- Podcast -->
-          <div id="tab-podcast" class="tools-panel">
+          <div id="podcast_tab" class="tools-panel">
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="Podcast" class="tools-thumb-img_sec" />
@@ -2159,13 +660,16 @@ a:hover
             </div>
             <div class="tools-info">
               <h3 class="tools-info-heading">HappierMe Podcast</h3>
-              <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, exploring subjects in depth with guests from around the world.</p>
+              <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, where we explore a subject in depth with guests from around the world. They offer fresh ways of dealing with the many challenges we face and living our best life.</p>
+              <audio id="aud2" controls controlslist="nodownload">
+                <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
+              </audio>
               <a href="https://happierme.app/adults/podcast" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
 
           <!-- Community -->
-          <div id="tab-community" class="tools-panel">
+          <div id="forum" class="tools-panel">
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" alt="Community" class="tools-thumb-img_sec" />
@@ -2181,10 +685,10 @@ a:hover
           </div>
 
           <!-- Happiness score -->
-          <div id="tab-wellness" class="tools-panel">
+          <div id="survey" class="tools-panel">
             <div>
               <div class="tools-thumb">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
               </div>
              
             </div>
@@ -2199,14 +703,19 @@ a:hover
       </div>
 
       <!-- CTA after tools -->
-      <a href="https://happierme.app/pages/splash_options.php">
+      <div id="AnnualType">
+        <div id="PricingSelectBtn">
+      <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial">
         <div class="div-wrapper-4" style="margin:0 auto;"><div class="text-wrapper-5">Try HappierMe for free</div></div>
       </a>
+        </div>
+      </div>
 
       <!-- ===== BLOG ===== -->
-      <div class="div-13" id="blog">
+      <div class="div-13" id="exploreBlogSection">
         <div class="text-wrapper-blog">Explore our blog</div>
         <div class="blog-outer">
+          <div class="blog-track-wrap">
           <div class="blog-scroll" id="blog-scroll">
             <a href="./blogs/10_ways_understanding_your_mind_could_transform_your_life.php" class="blog-card">
               <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" alt="Blog 1" />
@@ -2239,9 +748,10 @@ a:hover
               </div>
             </a>
           </div>
+          </div>
           <div class="blog-footer">
            
-            <a href="https://happierme.app/blogs/blog_index.php" class="blog-more">
+            <a href="https://happierme.app/blogs/blog_index.php" id="viewAllBlogs" class="blog-more">
               <span>See all posts</span>
               <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
             </a>
@@ -2263,20 +773,20 @@ a:hover
         <div class="text-wrapper-21">Frequently asked questions</div>
         <div class="div-55">
           <div class="div-56">
-            <div class="about-happierme faq-tab faq-tab-active" onclick="switchFaq(this,'faq-about')">ABOUT HAPPIERME</div>
-            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'faq-help')">HOW CAN THE APP HELP?</div>
-            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'faq-features')">APP FEATURES</div>
-            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'faq-teen')">TEENAGE PROGRAM</div>
-            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'faq-support')">SUPPORT</div>
+            <div class="about-happierme faq-tab faq-tab-active" onclick="switchFaq(this,'about_happierme')">ABOUT HAPPIERME</div>
+            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'how_can_the_app_help')">HOW CAN THE APP HELP?</div>
+            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'app_features')">APP FEATURES</div>
+            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'teenage_program')">TEENAGE PROGRAM</div>
+            <div class="text-wrapper-45 faq-tab" onclick="switchFaq(this,'support')">SUPPORT</div>
           </div>
             <div class="div-57">
             <!-- About -->
-            <div id="faq-about" class="faq-panel active">
+            <div id="about_happierme" class="faq-panel active">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60 faq-open">
                     <div class="text-wrapper-46">What is HappierMe?</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faq-open.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faq-open.svg" alt="" /></span>
                   </div>
                   <p class="faq-body" style="display:block;">HappierMe is an app you can use on your desktop and phone. It can be downloaded from the Android or App store. Many users think it has been life changing. It is your guide to lead a happier and more successful life.</p>
                 </div>
@@ -2285,7 +795,7 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How do I start my free trial?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">From the desktop or in the app you will have an option of starting a free trial. You can choose whether to have a one week or 2 week free trial. You can cancel anytime during the free trial.</p>
               </div>
@@ -2293,7 +803,7 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How do I get started with HappierMe?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">On the app there is an Introduction section. Begin here. It has videos and audios which help you understand what the app does, and how to make the most of it.</p>
               </div>
@@ -2301,18 +811,18 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How much time do I need to spend every day on the app?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">It is up to you but 10 minutes/day will be enough to begin feeling the benefits. You could just do the ‘My daily practice’ every day.</p>
               </div>
             </div>
             <!-- How can app help -->
-            <div id="faq-help" class="faq-panel">
+            <div id="how_can_the_app_help" class="faq-panel">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60">
                     <div class="text-wrapper-46">What is self-awareness?</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                   </div>
                   <p class="faq-body">Self-awareness is a simple way of noticing what you are thinking and feeling, in your mind and in your body. These thoughts and feelings decide our behaviour. By noticing them we can be curious, learn more about them and explore where they come from.</p>
                 </div>
@@ -2321,7 +831,7 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can the app help me manage my own mental health?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">Our mind is reactive and we are usually not aware of, or in control of our reactions. These reactions often create the mental health problems we experience. By understanding our thoughts, feelings and emotions better, we can better manage our reactions, and so manage our own mental health.</p>
               </div>
@@ -2329,7 +839,7 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can the app help me to have happier relationships?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">By understanding ourselves, our reactions and our own emotional needs we can understand others better, and this can help us to reduce conflict in our relationships. By learning to communicate with care we can have relationships with depth and meaning.</p>
               </div>
@@ -2337,18 +847,18 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can the app help me succeed at work?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">Studies suggest that our soft skills play a much greater role in our long term success than academic achievement. They include emotional intelligence, communication, leadership, empathy, resilience and integrity. All of these are enhanced by self-awareness and the app has a dedicated Work and Leadership section to explore.</p>
               </div>
             </div>
             <!-- App features -->
-            <div id="faq-features" class="faq-panel">
+            <div id="app_features" class="faq-panel">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60">
                     <div class="text-wrapper-46">I want to know more about your live events</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                   </div>
                   <p class="faq-body">We host a live event every two weeks on different subjects and explore how self-awareness can help with that. There is usually an invited guest and an opportunity to contribute and ask questions. You can access our library of past events through the Events section.</p>
                 </div>
@@ -2357,7 +867,7 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">What is your partnership program?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">Once you subscribe you can join our partnership program, and be rewarded for sharing HappierMe with your network. Details can be found in the Partnership program in the app.</p>
               </div>
@@ -2365,7 +875,7 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can I contact a coach through the app?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">We have trained coaches that can be accessed through the app. They are familiar with the app and can offer 1-2-1 coaching for an extra fee. You can ask a coach a question as part of your subscription through the Forum, and this can be done anonymously.</p>
               </div>
@@ -2373,30 +883,30 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">Is there a community forum?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">The app has a community forum for you to make new friends and share your thoughts. There is also a feature where you can ask one of our trained coaches a question anonymously.</p>
               </div>
             </div>
             <!-- Teen -->
-            <div id="faq-teen" class="faq-panel">
+            <div id="teenage_program" class="faq-panel">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60">
                     <div class="text-wrapper-46">I want to know more about your teenage program</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                   </div>
                   <p class="faq-body">Teenagers are under so much pressure and need support to manage their mental health, make sense of their emotions, and develop the soft skills to succeed in life. We have a completely separate app designed for teenagers which can be accessed through the main menu in the app.</p>
                 </div>
               </div>
             </div>
             <!-- Support -->
-            <div id="faq-support" class="faq-panel">
+            <div id="support" class="faq-panel">
               <div class="div-58">
                 <div class="div-59">
                   <div class="div-60">
                     <div class="text-wrapper-46">How can I contact the support team?</div>
-                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                    <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                   </div>
                   <p class="faq-body">Please email us: support@happierme.app</p>
                 </div>
@@ -2405,7 +915,7 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can I cancel a subscription?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">Click on My subscriptions in your profile and you can cancel your subscription from there. It will run till your next renewal date.</p>
               </div>
@@ -2413,7 +923,7 @@ a:hover
                 <div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <div class="div-61">
                   <p class="text-wrapper-46">How can I share this with others?</p>
-                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg" alt="" /></span>
+                  <span class="faq-toggle"><img class="faq-toggle-icon" src="https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg" alt="" /></span>
                 </div>
                 <p class="faq-body">In the hamburger menu of the app (top right in the app) there is a Refer a friend button. You can also buy a subscription for someone else.</p>
               </div>
@@ -2426,7 +936,7 @@ a:hover
       <div class="row center_flex prelative display_df_none" style="margin-bottom: 40px;">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
           <div class="text-wrapper-21" style="margin-bottom: 20px;">Frequently asked questions</div>
-          <div class="tab-content tc_faqs mobile" id="faq-mobile-wrap">
+          <div class="tab-content tc_faqs mobile">
             <div id="about_happierme_mobile" class="tab-pane fade in active">
               <h5 class="mt0px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">About HappierMe</h5>
               <div class="panel-group" id="accordion_faq_2">
@@ -2523,7 +1033,7 @@ a:hover
                 </div>
               </div>
             </div>
-            <div id="app_features_mobile" class="tab-pane fade in active">
+            <div id="app_features1" class="tab-pane fade in active">
               <h5 class="mt40px mb20px fs_15px fw_600 lh_150p fc_D7586B tt_uppercase mobile">App features</h5>
               <div class="panel-group" id="accordion_faq_4">
                 <div class="panel panel-default">
@@ -2631,6 +1141,16 @@ a:hover
           t.classList.remove('tool-tab-active');
         });
         el.classList.add('tool-tab-active');
+        if (panelId !== 'fbn') {
+          var fbnVideo = document.getElementById('fbn-video');
+          var fbnPlayBtn = document.getElementById('fbn-play-btn');
+          if (fbnVideo) {
+            fbnVideo.pause();
+            fbnVideo.currentTime = 0;
+            fbnVideo.controls = false;
+          }
+          if (fbnPlayBtn) fbnPlayBtn.hidden = false;
+        }
         document.querySelectorAll('.tools-panel').forEach(function(p){
           p.classList.remove('active');
         });
@@ -2660,6 +1180,7 @@ a:hover
             // If this one is already open, clicking it should close it.
             var isOpen = body.style.display === 'block';
             var nowOpen = !isOpen;
+            if (typeof logevent === 'function' && isOpen) logevent('click_faq_collapse', 'index.php');
 
             // Close all FAQ items first (true accordion behavior).
             document.querySelectorAll('.faq-body').forEach(function(p) {
@@ -2671,7 +1192,7 @@ a:hover
 
             // Reset all icons to "closed".
             document.querySelectorAll('img.faq-toggle-icon').forEach(function(img) {
-              img.src = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faqclosed.svg';
+              img.src = 'https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg';
             });
             document.querySelectorAll('.faq-toggle').forEach(function(toggle) {
               if (toggle.querySelector('img.faq-toggle-icon')) return;
@@ -2680,6 +1201,7 @@ a:hover
 
             if (nowOpen) {
               body.style.display = 'block';
+              if (typeof logevent === 'function') logevent('click_faq_expand', 'index.php');
 
               var toggle = this.querySelector('.faq-toggle');
               if (!toggle) return;
@@ -2687,7 +1209,7 @@ a:hover
               // Desktop FAQ icon (open/closed SVG)
               var iconImg = toggle.querySelector('img.faq-toggle-icon');
               if (iconImg) {
-                iconImg.src = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/faq-open.svg';
+                iconImg.src = 'https://d1tenzemoxuh75.cloudfront.net/website/faq-open.svg';
               } else {
                 // Fallback (if any mobile/legacy toggle uses text)
                 toggle.textContent = '−';
@@ -2713,16 +1235,19 @@ a:hover
         });
 
         video.addEventListener('play', function() {
+          video.controls = true;
           playBtn.hidden = true;
         });
 
         video.addEventListener('pause', function() {
+          video.controls = true;
           if (video.currentTime < video.duration) {
             playBtn.hidden = false;
           }
         });
 
         video.addEventListener('ended', function() {
+          video.controls = false;
           playBtn.hidden = false;
         });
       });
@@ -2735,6 +1260,10 @@ a:hover
         if (!el || !prevBtn || !nextBtn) return;
         var atStart = el.scrollLeft <= 1;
         var atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        var outer = el.closest('.coaches-outer');
+        if (outer) {
+          outer.classList.toggle('is-scrolled', !atStart);
+        }
         prevBtn.disabled = atStart;
         nextBtn.disabled = atEnd;
       }
@@ -2776,11 +1305,16 @@ a:hover
         if (!el || !prevBtn || !nextBtn) return;
         var atStart = el.scrollLeft <= 1;
         var atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        var outer = el.closest('.blog-outer');
+        if (outer) {
+          outer.classList.toggle('is-scrolled', !atStart);
+        }
         prevBtn.disabled = atStart;
         nextBtn.disabled = atEnd;
       }
 
       function blogScroll(dir) {
+        if (typeof logevent === 'function') logevent('scroll_blog_carousel', 'index.php');
         var el = document.getElementById('blog-scroll');
         if (!el) return;
         var cardWidth = 490; // blog card 470px + 20px gap
@@ -2821,7 +1355,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn1" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -2831,7 +1365,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/overcome.svg" class="img-responsive "
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/overcomeanxiety.svg" class="img-responsive "
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -2840,7 +1374,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex popup_w" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex popup_w pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Overcome stress and anxiety
@@ -2856,7 +1390,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row" >
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -2870,7 +1404,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -2884,7 +1418,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/feel.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/feelBetter.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -2905,7 +1439,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -2919,7 +1453,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
@@ -2931,7 +1465,7 @@ a:hover
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                     <div class="row">
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                           class="img-responsive img_aspects" alt="PATHWAY">
                       </div>
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 pr20px mb10px">
@@ -2965,7 +1499,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn2" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading="lazy">
                 </a>
               </div>
@@ -2976,7 +1510,7 @@ a:hover
                   data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build_d.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/BuildDeeperRelationship.svg" class="img-responsive"
                     alt="Mental Health" loading="lazy">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -2985,7 +1519,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex aos-init aos-animate pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Build deeper relationships
@@ -3001,7 +1535,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3016,7 +1550,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3054,7 +1588,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3069,7 +1603,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3082,7 +1616,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3115,7 +1649,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn3" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3125,7 +1659,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/practice.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/meditationPractice.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3134,7 +1668,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Build a meditation practice
@@ -3149,7 +1683,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3214,7 +1748,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn4" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading="lazy">
                 </a>
               </div>
@@ -3225,7 +1759,7 @@ a:hover
                   data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/soft_skill.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/Buildsoftskill.svg" class="img-responsive"
                     alt="Mental Health" loading="lazy">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3234,7 +1768,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex aos-init aos-animate pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Build soft skills for work success
@@ -3250,7 +1784,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3266,7 +1800,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3282,7 +1816,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3314,7 +1848,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching_soft.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/couching.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3327,7 +1861,7 @@ a:hover
                   data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/self_build.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/selfawareness.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3360,7 +1894,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn5" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3370,7 +1904,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/break.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/harmfulhabit.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3379,7 +1913,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Break harmful habits
@@ -3394,7 +1928,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3408,7 +1942,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3439,7 +1973,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3453,7 +1987,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching_soft.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/couching.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3465,7 +1999,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3498,7 +2032,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn6" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3508,7 +2042,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Character.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/manageemotions.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -3517,7 +2051,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Manage your emotions
@@ -3532,7 +2066,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3546,7 +2080,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3560,7 +2094,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3578,7 +2112,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3592,7 +2126,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3604,7 +2138,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3637,7 +2171,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn7" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3647,7 +2181,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/awarness.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/meditationPractice.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -3656,7 +2190,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100" >
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Develop your self-awareness
@@ -3671,7 +2205,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3685,7 +2219,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3715,7 +2249,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/journal.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/journaling.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3741,7 +2275,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3774,7 +2308,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn8" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3784,7 +2318,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/parents.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/supportingparents.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
@@ -3793,7 +2327,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   Supporting parents to flourish
@@ -3808,7 +2342,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3822,7 +2356,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3852,7 +2386,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3866,7 +2400,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/breath.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingexercise.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3878,7 +2412,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3911,7 +2445,7 @@ a:hover
             <div class="row center_flex cross_btn_row">
               <div class="col-lg-12 col-md-12 col-sm-11 col-xs-11 p0  tright">
                 <a href="#" id="closebtn9" data-bs-dismiss="modal" class="popup-close-btn pull-right" aria-label="Close">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/crosspop.svg" class="img-responsive cross_btn"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/closeIcon.svg" class="img-responsive cross_btn"
                     alt="Mental Health" loading=lazy>
                 </a>
               </div>
@@ -3921,7 +2455,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tcenter">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/teebagers.svg" class="img-responsive"
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/teenagerapp.svg" class="img-responsive"
                     alt="Mental Health" loading=lazy>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
@@ -3930,7 +2464,7 @@ a:hover
             </div>
           </div>
           <div class="section-header1">
-            <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="row center_flex pt-12px" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h2 class="popuptitle">
                   A separate app, just for teenagers
@@ -3945,7 +2479,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/guided.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/GuidedPrg.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3960,7 +2494,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/podcast.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/podcast.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3974,7 +2508,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/feel.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/feelBetter.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -3990,7 +2524,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/community.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/communityforum.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4004,7 +2538,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/talk.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/teentalk.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4016,7 +2550,7 @@ a:hover
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
                   <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/short.svg"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/shortvideo.svg"
                         class="img-responsive img_aspects" alt="PATHWAY">
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
@@ -4177,8 +2711,8 @@ a:hover
           });
         }
 
-        // Initialize Bootstrap tabs
-        var triggerTabList = [].slice.call(document.querySelectorAll('#toolTabs button'));
+        // Initialize Bootstrap tabs (older layout: ul#toolTabs.nav-tabs; custom tools use #toolTabs.tools-tabs + switchTab)
+        var triggerTabList = [].slice.call(document.querySelectorAll('#toolTabs.nav-tabs button'));
         triggerTabList.forEach(function (triggerEl) {
           var tabTrigger = new bootstrap.Tab(triggerEl);
           triggerEl.addEventListener('click', function (event) {
@@ -4186,6 +2720,31 @@ a:hover
             tabTrigger.show();
           });
         });
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var y = document.getElementById('sub-plan-yearly');
+        var m = document.getElementById('sub-plan-monthly');
+        var d = document.getElementById('totalAnnualPricingModelHeading');
+        if (!y || !m || !d) return;
+        var tY = 'After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.';
+        var tM = 'After your free trial, the monthly subscription is ₹300/mo and automatically renews each month until cancelled.';
+        function pickMonthly() {
+          if (typeof logevent === 'function') logevent('click_monthly', 'index.php');
+          y.classList.add('sub-plan-off');
+          m.classList.add('sub-plan-on');
+          d.textContent = tM;
+        }
+        function pickYearly() {
+          if (typeof logevent === 'function') logevent('click_yearly', 'index.php');
+          y.classList.remove('sub-plan-off');
+          m.classList.remove('sub-plan-on');
+          d.textContent = tY;
+        }
+        y.addEventListener('click', pickYearly);
+        m.addEventListener('click', pickMonthly);
       });
     </script>
 

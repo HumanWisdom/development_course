@@ -1,4 +1,4 @@
-﻿<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
+<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +44,16 @@
       text-decoration: underline;
     }
 
+    /* Hero: clear stacked fixed headers */
+    .blog-index-hero.hpt120px {
+      margin-top: 50px;
+    }
+
     @media (max-width: 767px) {
+
+      .blog-index-hero.hpt120px {
+        margin-top: -4px !important;
+      }
 
       /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
       /* Override: #accordion_footer .panel-title>a:after { content: url(...svg...) } */
@@ -116,7 +125,7 @@
   <?php Template::header(); ?>
   <!-- /header -->
 
-  <section class="hpt120px">
+  <section class="hpt120px blog-index-hero">
     <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png"
@@ -149,7 +158,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs"
-                    alt="#10 ways understanding your mind could transform your life">
+                    alt="10 ways understanding your mind could transform your life">
                 </div>
               </div>
 
@@ -164,7 +173,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
-                    #10 ways understanding your mind could transform your life
+                    10 ways understanding your mind could transform your life
                   </h4>
                 </div>
               </div>
@@ -475,7 +484,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">
-                      6 Barriers to overcoming stress
+                      How can we overcome stress?
                     </h4>
                   </div>
                 </div>

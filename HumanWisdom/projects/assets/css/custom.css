@@ -16698,10 +16698,11 @@ input[type="search"].dark::-webkit-search-cancel-button {
   box-shadow: unset;
   border: 0;
   text-align: left;
-  padding-right: 20px;
+  padding-right: 45px;
   /* padding-left: 50px; */
   /* padding-left: 15%; */
   padding-left: 45px;
+  width: 100%;
 }
 
 .h60px {
@@ -20428,7 +20429,7 @@ share-buttons button {
 
 .ws_view_story {
   object-fit: cover;
-  /* height: 280px; */
+   height: 280px; 
   border-radius: 0px 0px 20px 20px;
   padding: 0 !important;
 }
@@ -24358,8 +24359,16 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #803358 !important;
+  color: #cb6171 !important;
   text-decoration: underline !important;
+}
+
+.blog_highlight_peach:hover {
+  color: #803358 !important;
+}
+
+.blog_highlight_peach:focus {
+  color: #803358 !important;
 }
 
 .yt-embed {
@@ -24369,15 +24378,22 @@ a {
 }
 
 .blog_sub_title {
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 130%;
+  line-height: 160%;
   color: #000;
   margin-bottom: 10px;
   padding-top: 20px;
   /* margin-top: 30px; */
 }
 
+.blog_highlight_black {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 180%;
+    color: #000;
+    margin-bottom: 10px;
+}
 
 .btn_blog_tags {
   margin: 0;
@@ -35197,6 +35213,14 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   position: absolute;
   top: 20px;
   right: 20px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  display: flex;
+  width: 54px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;  
 }
 
 .ls_story_img {
@@ -35311,6 +35335,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   width: 40px;
   height: 40px;
   border-radius: 40px;
+  object-fit: cover;
 }
 
 .blog_vac .panel {
@@ -36576,6 +36601,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   background: #FFF7E6 !important;
   margin: -20px -20px 0 -20px;
   padding: 20px;
+  margin-bottom:30px;
 
 }
 

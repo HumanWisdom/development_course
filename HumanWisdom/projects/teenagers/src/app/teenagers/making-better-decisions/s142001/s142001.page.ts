@@ -38,6 +38,7 @@ export class S142001Page implements OnInit, OnDestroy {
   loginResponse=JSON.parse(localStorage.getItem("loginResponse"))
   t:any
 
+    isContentsOpen = false;
 
   pgResume: any;
 
@@ -152,6 +153,9 @@ export class S142001Page implements OnInit, OnDestroy {
 
 
   }
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark() {
     if (this.bookmark == 0)
       this.bookmark = 1

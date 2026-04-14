@@ -158,15 +158,10 @@ export class WisdomShortsIndexPage implements OnInit {
 
   goBack() {
     var url = this.navigationService.navigateToBackLink();
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
-      let navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
-      if (navFrom && navFrom != null && navFrom != 'null') {
-        this.router.navigateByUrl(navFrom);
-      } else {
-        this.location.back();
-      }
-    } else {
+    if (url != null) {
       this.router.navigate([url]);
+    } else {
+      this.location.back();
     }
   }
   share() {

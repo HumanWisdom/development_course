@@ -171,7 +171,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     routeJournal() {
       this.logeventservice.logEvent("footer_Journal")
-
+      localStorage.setItem('NaviagtedFrom', this.router.url);
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.journal)]);
     }
 
@@ -198,7 +198,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     routeForum() {
       this.logeventservice.logEvent("footer_Forum")
-
+      localStorage.setItem('NaviagtedFrom', this.router.url);
       // if(localStorage.getItem('isloggedin') === 'T')
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.forum)], { state: { programType: this.programType } })
     }
@@ -213,6 +213,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     
  openChat(){
+  this.logeventservice.logEvent('Click_olly_chat');
   if(this.isAdults){
     this.router.navigate(['/adults/chat-bot']);
   } else {

@@ -7,6 +7,7 @@ import { CommonService } from "../../../services/common.service";
 import { ActivatedRoute } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { HomeStateService } from '../../../services/home-state.service';
+import { NavigationService } from '../../../services/navigation.service';
 
 @Component({
   selector: 'app-micro-learning-end',
@@ -44,7 +45,8 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
     private route: ActivatedRoute,
     private ngNavigatorShareService: NgNavigatorShareService,
     private homeStateService: HomeStateService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private navigationService: NavigationService
   ) {
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
     const state = this.router.getCurrentNavigation()?.extras.state;
@@ -185,7 +187,7 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   getEndScreens() {
-    this.commonService.getMicrolearningsEndScreens(this.contentId).subscribe((res: any) => {
+    this.commonService.getMicrolearningsEndScreens(this.contentId, SharedService.ProgramId).subscribe((res: any) => {
       if(res && res.length > 0) {
         const data = res[0];
         this.resourcesList = [
@@ -236,9 +238,14 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
     // No next page from the end screen
   }
 
-  goToInnerScreen(){
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/micro-learning`]);
+  goToInnerScreen() {
+    const url = this.navigationService.navigateToBackLink();
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`/${prefix}/micro-learning`]);
+    }
   }
   addJournal() {
     if (!this.journalText) return;

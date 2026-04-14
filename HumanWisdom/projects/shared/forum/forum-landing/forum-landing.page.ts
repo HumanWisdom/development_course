@@ -1,6 +1,6 @@
 import { Platform } from "@angular/cdk/platform";
 import { Location } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnInit, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationStart, Router } from '@angular/router';
 // import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
@@ -22,7 +22,7 @@ import { Constant } from '../../../shared/services/constant';
   templateUrl: './forum-landing.page.html',
   styleUrls: ['./forum-landing.page.scss'],
 })
-export class ForumLandingPage implements OnInit {
+export class ForumLandingPage implements OnInit, OnChanges {
   @ViewChild('enablepopup') enablepopup: ElementRef;
   @ViewChild('closepopup') closepopup: ElementRef;
   @ViewChild('closeCategory') closeCategory: any;
@@ -192,6 +192,14 @@ export class ForumLandingPage implements OnInit {
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.isSubscribe = localStorage.getItem('Subscriber') === '1' ? true : false;
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.search && !changes.search.firstChange) {
+      if (!this.defaultShow) {
+        this.getForumSearchData();
+      }
+    }
+  }
   like(item, index) {
     if (this.isLoggedIn) {
       this.serivce.likePost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
@@ -219,10 +227,14 @@ export class ForumLandingPage implements OnInit {
   }
 
   getForumSearchData() {
+    this.isLoading = true;
     this.serivce.getposts(0,this.search,null).subscribe((res) => {
       if (res) {
        this.posts = this.serivce.FormatForumPostData(res);
       }
+      this.isLoading = false;
+    }, _ => {
+      this.isLoading = false;
     });
   }
 
@@ -523,7 +535,7 @@ export class ForumLandingPage implements OnInit {
   }
 
   goBack() {
-      var url = this.navigationService.goBack();
+      var url = this.navigationService.navigateToBackLink();
       if (url == null) {
         this.location.back();
       }else{
@@ -843,7 +855,7 @@ export class ForumLandingPage implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
     // Check if the user has scrolled to the bottom of the page
-    if (this.isScrolledToBottom() && this.searchInput == '' && this.buttonText == "All threads") {
+    if (this.defaultShow && this.isScrolledToBottom() && this.searchInput == '' && this.buttonText == "All threads") {
       this.isLoading=true;
      this.startRecord = this.startRecord+20;
      this.endRecord = this.startRecord+ 20;
