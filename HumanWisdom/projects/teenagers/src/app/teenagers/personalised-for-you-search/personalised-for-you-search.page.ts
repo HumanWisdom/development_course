@@ -346,7 +346,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
       this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},
-                          {"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"},
+                          {"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"},
                           {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},
                           {"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
                           {"ModuleName":"Soundscapes"},
@@ -410,6 +410,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
       }
       case "podcast":{
         url = `/teenagers/podcast`
+        break;
+      }
+      case "microlearning":{
+        url = `/adults/micro-learning`
         break;
       }
       case "audio meditations":{
