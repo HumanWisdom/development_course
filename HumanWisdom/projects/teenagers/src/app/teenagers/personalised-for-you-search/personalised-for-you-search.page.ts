@@ -413,7 +413,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         break;
       }
       case "microlearning":{
-        url = `/adults/micro-learning`
+        url = `/teenagers/micro-learning`
         break;
       }
       case "audio meditations":{
