@@ -29,6 +29,7 @@
     </script>
     <!-- vendor_header --> <?php include('../includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
+    <link rel="stylesheet" href="../assets/css/mind.css" />
      <style>
       .pt-7px{
         padding-top: 7px;     }
@@ -73,9 +74,41 @@
         background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
         color: #fff;
       }
+
+      /* Agreement rows — one flex line: custom checkbox + copy (Figma); avoids broken col-xs-* on BS5 */
+      #signup-form label.signup-agree-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      /* Holder for ::before checkbox — must not grow as a flex item (display:block was stealing row width → link wrapped) */
+      #signup-form label.signup-agree-row .signup-agree-checkbox-ui {
+        flex: 0 0 20px;
+        width: 20px;
+        min-width: 20px;
+        align-self: flex-start;
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+        display: inline-block;
+      }
+
+      #signup-form label.signup-agree-row .signup-agree-copy {
+        flex: 1;
+        min-width: 0;
+        padding-top: 2px;
+      }
+
+      /* Link must not form a flex sub-box next to label text — contents = text flows inline with “I agree to the” */
+      #signup-form a.blog_highlight_peach {
+        display: contents !important;
+      }
      </style>
   </head>
-  <body>
+  <body class="page-signup">
     <!-- request a demo php script --> <?php
       // Simulate fetching country data from a database or external API
       $countries = 
@@ -300,7 +333,7 @@
                       </h5></div></div></div></div></div></section> -->
       <!-- /inspiring -->
      
-        <div class="row center_flex div_subscriptionnews">
+        <div class="row center_flex div_subscriptionnews_mind">
           <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p0">
             <div class=" back">
               <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="100"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
@@ -417,45 +450,26 @@
                        
                       </div>
     </div> -->
-     <div class="row mt5px align-items-start">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check pt-7px">
-                          <label for="privacy_checkbox" class="chkb_post_anonymously ">
-                            <input  style="margin-top:10px;"id="privacy_checkbox"formControlName="privacychk" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
-                            </h4>
+     <div class="row mt10px">
+                      <div class="col-12 p0">
+                          <label for="privacy_checkbox" class="chkb_post_anonymously signup-agree-row">
+                            <input id="privacy_checkbox" formControlName="privacychk" type="checkbox">
+                            <span class="signup-agree-checkbox-ui" aria-hidden="true"></span>
+                            <span class="signup-agree-copy fs_12px fw_500 lh_150p fc_000000_0_5">I agree to the
+                            <a class="blog_highlight_peach fs_12px fw_600" href="https://happierme.app/pages/terms_conditions.php">Terms of use</a></span>
                           </label>
                       </div>
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5" style="margin-top:8px;">
-                          <span>I agree to the 
-                            <a class="blog_highlight_peach fs_12px fw_500" href="https://happierme.app/pages/terms_conditions.php"
-                             > User Agreement</a>
-                          </span>
-                        </h4>
                     </div>
 
-                    
-                    </div>
-
-
-
-                     
-                      <div class="row mt5px align-items-start">
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 check pt-7px">
-                          <label for="marketing_checkbox" class="chkb_post_anonymously mt0px ">
-                            <input style="margin-top:10px;" id="marketing_checkbox" formControlName="privacychk" type="checkbox">
-                            <h4 class=" fs_12px fw_500 lh_130p fc_ffffff">
-                            </h4>
-                          </label>    
+                      <div class="row mt10px">
+                      <div class="col-12 p0">
+                          <label for="marketing_checkbox" class="chkb_post_anonymously signup-agree-row">
+                            <input id="marketing_checkbox" formControlName="privacychk" type="checkbox">
+                            <span class="signup-agree-checkbox-ui" aria-hidden="true"></span>
+                            <span class="signup-agree-copy fs_12px fw_500 lh_150p fc_000000_0_5">I agree to the
+                            <a class="blog_highlight_peach fs_12px fw_600" href="https://happierme.app/pages/privacy_policy.php">Privacy policy</a></span>
+                          </label>
                       </div>
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                        <h4 class=" fs_12px fw_500 lh_150p fc_000000_0_5 " style="margin-top:7px;">
-                          <span>I agree to the 
-                            <a class="blog_highlight_peach fs_12px fw_500" href="https://happierme.app/pages/privacy_policy.php"
-                             > Privacy policy</a>
-                          </span>
-                        </h4>
-                    </div>
                     </div>
                     
                      
@@ -578,13 +592,17 @@
       </div>
       </div> 
    
-    <!-- </div></div> -->   
+    <!-- </div></div> -->
+    <?php include('../includes/footer_copyright_sticky_mind.php'); ?>
+    <!-- vendor_footer -->
+    <?php include('../includes/vendor_footer.php'); ?>
+    <!-- /vendor_footer -->
   </body>
 </html>
 <script>
 // Replace with your actual API base URL and ProgramId
-//const API_BASE_URL = 'https://www.humanwisdom.info/api';
-const API_BASE_URL = 'https://staging.humanwisdom.info/api';
+const API_BASE_URL = 'https://www.humanwisdom.info/api';
+//const API_BASE_URL = 'https://staging.humanwisdom.info/api';
 const ProgramId = '9';
 
 (function initOrchaUidFromQuery() {

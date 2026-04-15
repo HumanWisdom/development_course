@@ -190,9 +190,9 @@ require_once('../includes/security_config.php');
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg">
           <source media="(min-width: 769px) and (max-width: 1024px)"
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/tablet_circle.svg">
-          <source media="(max-width: 768px)"
-            srcset="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
+          <source media="(min-width: 1025px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg"
             class="img-responsive w100p" alt="Survey findings infographic" loading="lazy">
         </picture>
       </div>
