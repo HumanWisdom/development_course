@@ -150,6 +150,10 @@ export class SearchPopularItemsPage implements OnInit {
         url = `/${SharedService.getprogramName()}/podcast`
         break;
       }
+      case "microlearning":{
+        url = `/${SharedService.getprogramName()}/micro-learning`
+        break;
+      }
       case "audio meditations":{
         url = `/${SharedService.getprogramName()}/audio-meditation`
         break;
@@ -844,7 +848,7 @@ export class SearchPopularItemsPage implements OnInit {
   getModuleList(isLoad?) {
     this.commonService.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                           {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
