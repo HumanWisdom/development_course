@@ -72,6 +72,29 @@
     width: 978px;
     height: 551.45px;
 }
+.youtube-player {
+    width: 978px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    margin: 30px auto 0;
+    background: #000;
+}
+.youtube-player #youtubeIntro {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    aspect-ratio: unset !important;
+    margin: 0 !important;
+    display: block;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
 .content {
     display: flex;
     align-items: center;
@@ -613,6 +636,7 @@ margin-top: 5px !important;
   .section-headernew.mob-section h2.fs_18px_mobile {
     font-size: 18px !important;
     font-weight: 600 !important;
+    margin-bottom: 0px !important;
   }
 
   .bg_circle_mind {
@@ -645,6 +669,8 @@ margin-top: 5px !important;
     width: 100%;
     max-width: 100%;
     height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .cvideo_b {
@@ -652,24 +678,38 @@ margin-top: 5px !important;
     max-width: 100%;
     height: auto !important;
     aspect-ratio: 16 / 9;
-    margin-top: 16px;
+    margin-top: 0;
     overflow: hidden;
   }
-  .cvideo_b, .yt-embed, #youtubeIntro{
-    margin-bottom: 50px !important;
+  .video-mobile-section .youtube-player {
+    margin-top: 18px;
+    margin-bottom: 50px;
   }
 
   .divhome.mob-section {
     background: #333333 !important;
     padding: 20px 16px;
     /* Scroll clearance so the bar sits above the fixed sticky Download banner (see main.css .sticky_rating_banner) */
-    margin-bottom: 3.5rem;
+    /* margin-bottom: 3.5rem; */
   }
 
   .divhome.mob-section h2 {
     font-size: 12px !important;
     line-height: 140%;
     text-align: center;
+  }
+}
+
+/* footer_copyright_sticky_mind visibility rules */
+@media screen and (min-width: 768px) {
+  /* signup + download_qr (body class page-signup): hide on desktop */
+  body.page-signup .mind-sticky-copyright {
+    display: none !important;
+  }
+
+  /* mind.php (body class page-mind): always visible */
+  body.page-mind .mind-sticky-copyright {
+    display: flex !important;
   }
 }
 

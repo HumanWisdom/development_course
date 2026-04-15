@@ -147,10 +147,10 @@ require_once('./includes/security_config.php');
       <div class="orcha-strip">
         <div class="orcha-strip-item orcha-strip-orcha">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
-          <span>ORCHA approved for use in healthcare in the UK and USA</span>
+          <span>ORCHA approved for use in healthcare</span>
         </div>
         <div class="orcha-strip-item orcha-strip-mind">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/mind_index.svg" alt="Working with Mind" width="120" height="54"/>
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/working_with_mind.svg" alt="Working with Mind" width="120" height="54"/>
           <span>Featured in Mind&rsquo;s app library</span>
         </div>
       </div>
@@ -340,7 +340,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== ORGANISATION ===== -->
       <div class="div-23">
-        <p class="text-wrapper-6">Find out how HappierMe can help your organisation</p>
+        <p class="text-wrapper-6 text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
           <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
@@ -395,7 +395,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== TEENAGERS ===== -->
       <div class="div-31">
-        <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp" alt="Teenagers app" />
+        <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/help_teenagers.svg" alt="Teenagers app" />
         <div class="div-32">
           <div class="div-33">
             <div class="div-34">

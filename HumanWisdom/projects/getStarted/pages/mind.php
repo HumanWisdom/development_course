@@ -197,17 +197,19 @@ require_once('../includes/security_config.php');
 
     <div class="row center_flex mob-section video-mobile-section" data-aos="fade-up" data-aos-delay="200">
       <div class="iframe-videos">
-
-        <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
-          src="https://www.youtube.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b?" class="cvideo_b yt-embed"
-          allow="autoplay" onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
+        <div class="youtube-player">
+          <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/MgsYk1SZh-w?rel=0&modestbranding=1&playsinline=1"
+            class="cvideo_b yt-embed"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- /video -->
-  <?php include('../includes/footer_copyright_sticky_mind.php'); ?>
-
+ 
+ <?php include('../includes/footer_copyright_sticky_mind.php'); ?>
   <script>
     (function () {
       try {
@@ -227,9 +229,6 @@ require_once('../includes/security_config.php');
       } catch (e) {}
     })();
   </script>
-  <!-- vendor_footer -->
-  <?php include('../includes/vendor_footer.php'); ?>
-  <!-- /vendor_footer -->
 </body>
 
 </html>
