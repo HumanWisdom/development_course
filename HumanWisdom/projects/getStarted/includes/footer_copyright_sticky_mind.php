@@ -3,7 +3,7 @@
  * Copyright strip + mobile sticky download banner (same markup as pages/mind.php).
  */
 ?>
-<div class="row center_flex divhome mob-section d-md-none">
+<div class="row center_flex divhome mob-section mind-sticky-copyright">
   <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tcenter text-center">
       <h2 class="mtb0px fs_12px fw_400 lh_120p fc_ffffff">
@@ -13,7 +13,7 @@
 </div>
 
 <!-- sticky rating banner - MOBILE ONLY (same block as includes/footer.php) -->
-<div id="closeableElement" class="sticky_rating_banner display_df_none display_d_none">
+<!-- <div id="closeableElement" class="sticky_rating_banner display_df_none display_d_none">
   <div class="row">
 
     <div class="banner_close">
@@ -48,5 +48,5 @@
     </div>
 
   </div>
-</div>
+</div> -->
 <!-- /sticky rating banner -->
