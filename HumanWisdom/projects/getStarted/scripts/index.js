@@ -5,6 +5,14 @@ const url = "https://happierme.app";
 //const url ="https://staging.happierme.app"
 //const url ="http://localhost:4200"
 
+var _hwApiCfg = typeof window !== "undefined" && window.__HW_API__;
+var HW_API_BASE = (_hwApiCfg && _hwApiCfg.apiBase) || "https://www.humanwisdom.info/api";
+var HW_IP_LOOKUP_URL = (_hwApiCfg && _hwApiCfg.ipLookup) || "https://ipapi.co/json";
+function hwApiUrl(path) {
+    var base = String(HW_API_BASE).replace(/\/+$/, "");
+    var p = String(path || "").replace(/^\/+/, "");
+    return base + "/" + p;
+}
 
 (window.dataLayer = window.dataLayer || []),
     gtag("js", new Date()),
@@ -964,7 +972,7 @@ function initializeNewsletterPopup() {
                     return false;
                 }
                 
-                fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { 
+                fetch(hwApiUrl("subscribe_newsletter"), { 
                     method: "POST", 
                     headers: { "Content-Type": "application/json" }, 
                     body: JSON.stringify(o) 
@@ -1387,7 +1395,7 @@ requestDemoForWork &&
         }
         attachSubnavClick("work", function (e) {
             localStorage.setItem("activeTab", "org-work"),
-            logevent("click_workplace_card", "index.php", { source: "header_nav" }),
+            logevent("click_workplace", "index.php", { source: "header_nav" }),
             setActiveNav("work");
             setActiveNav("organisation");
             (window.location.href = "../pages/work.php");
@@ -1396,12 +1404,12 @@ requestDemoForWork &&
             localStorage.setItem("activeTab", "org-work"), 
             setActiveNav("education");
             setActiveNav("organisation");
-            logevent("click_education_card", "index.php", { source: "header_nav" }),
+            logevent("click_education", "index.php", { source: "header_nav" }),
             (window.location.href = "../pages/education.php");
         });
         attachSubnavClick("healthcare", function (e) {
             localStorage.setItem("activeTab", "org-healthcare"),
-            logevent("click_healthcare_card", "index.php", { source: "header_nav" }),
+            logevent("click_healthcare", "index.php", { source: "header_nav" }),
             setActiveNav("organisation");
             (window.location.href = "../pages/healthcare.php");
         });
@@ -1532,7 +1540,7 @@ requestDemo &&
             return alert("Please enter valid email"), !1;
         }
         const i = { Email_Id: "team@happierme.app", Subject: "Request a demo", Body: `Name : ${n} Company: ${o} Country :${a}  Email :${t}` };
-        fetch("https://humanwisdom.info/api/SendMail", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(i) })
+        fetch(hwApiUrl("SendMail"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(i) })
             .then((e) => e.json())
             .then((e) => {
                 console.log("Success:", e),
@@ -1557,7 +1565,7 @@ nfsnContactForm &&
             n = document.getElementById("nfsn-name").value;
         if (!t || !n || !e || "" == n || "" == t || "" == e) return alert("All fields must be filled out"), !1;
         const o = { Email_Id: "team@happierme.app", Subject: "NFSN-Get in touch", Body: `Name : ${n} Work Email : ${t} Message :${e}` };
-        fetch("https://humanwisdom.info/api/SendMail", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
+        fetch(hwApiUrl("SendMail"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
             .then((e) => e.json())
             .then((e) => {
                 console.log("Success:", e), (document.getElementById("nfsn-message").value = ""), (document.getElementById("nfsn-email").value = ""), (document.getElementById("nfsn-name").value = ""), alert("Form submitted successfully!");
@@ -1689,11 +1697,11 @@ var countryCode = "",
     defaultCurrencySymbol = "";
 async function fetchData() {
     localStorage.setItem("programType",9)
-    const e = await fetch("https://ipapi.co/json");
+    const e = await fetch(HW_IP_LOOKUP_URL);
     if (!e.ok) throw new Error("Network response was not ok " + e.statusText);
     const t = await e.json();
     console.log(t), t.in_eu ? (this.countryCode = "EUR") : (this.countryCode = t.country_code_iso3);
-    const n = await fetch(`https://www.humanwisdom.info/api/CountryRates/${this.countryCode}`);
+    const n = await fetch(hwApiUrl("CountryRates/" + this.countryCode));
     if (!n.ok) throw new Error("Network response was not ok " + n.statusText);
     {
         const e = await n.json();
@@ -1725,7 +1733,7 @@ async function fetchWebsiteTitle() {
         subtitleEl && subtitleEl.classList.remove("hw-website-title-pending");
     }
     try {
-        var res = await fetch("https://www.humanwisdom.info/api/GetWebsiteTitle", {
+        var res = await fetch(hwApiUrl("GetWebsiteTitle"), {
             headers: { Accept: "application/json" },
         });
         if (res.ok) {
@@ -1757,7 +1765,7 @@ pageNewsLetterForm && pageNewsLetterForm.addEventListener("click", () => {
             if(!validateEmail(email)){
                 return alert("Please enter valid email"), !1;
             }
-            fetch("https://www.humanwisdom.info/api/subscribe_newsletter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
+            fetch(hwApiUrl("subscribe_newsletter"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
                 .then((e) => e.json())
                 .then((e) => {
                     document.getElementById("page-news-email").value = "";
