@@ -35261,7 +35261,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .blog {
   background: #FFE8BB !important;
-  margin: -20px -20px 0 -20px;
+  margin: 0px -20px 0 -20px;
   padding: 20px;
 }
 
