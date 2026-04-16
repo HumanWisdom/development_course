@@ -209,7 +209,10 @@ require_once('../includes/security_config.php');
 
   <!-- /video -->
  
- <?php include('../includes/footer_copyright_sticky_mind.php'); ?>
+  <?php include('../includes/footer_copyright_sticky_mind.php'); ?>
+  <!-- vendor_footer -->
+  <?php include('../includes/vendor_footer.php'); ?>
+  <!-- /vendor_footer -->
   <script>
     (function () {
       try {
