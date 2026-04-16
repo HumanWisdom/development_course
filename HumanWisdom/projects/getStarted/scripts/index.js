@@ -1389,27 +1389,41 @@ requestDemoForWork &&
             }, !1);
         function attachSubnavClick(id, handler) {
             var o = document.getElementById(id);
-            o && o.addEventListener("click", handler, !1);
+            o &&
+                o.addEventListener(
+                    "click",
+                    function (e) {
+                        handler(e, "desktop");
+                    },
+                    !1
+                );
             var om = document.getElementById(id + "_mobile");
-            om && om.addEventListener("click", handler, !1);
+            om &&
+                om.addEventListener(
+                    "click",
+                    function (e) {
+                        handler(e, "mobile");
+                    },
+                    !1
+                );
         }
-        attachSubnavClick("work", function (e) {
+        attachSubnavClick("work", function (e, direction) {
             localStorage.setItem("activeTab", "org-work"),
-            logevent("click_workplace", "index.php", { source: "header_nav" }),
+            logevent("click_workplace", "index.php", { source: "header_nav", direction: direction }),
             setActiveNav("work");
             setActiveNav("organisation");
             (window.location.href = "../pages/work.php");
         });
-        attachSubnavClick("education", function (e) {
+        attachSubnavClick("education", function (e, direction) {
             localStorage.setItem("activeTab", "org-work"), 
             setActiveNav("education");
             setActiveNav("organisation");
-            logevent("click_education", "index.php", { source: "header_nav" }),
+            logevent("click_education", "index.php", { source: "header_nav", direction: direction }),
             (window.location.href = "../pages/education.php");
         });
-        attachSubnavClick("healthcare", function (e) {
+        attachSubnavClick("healthcare", function (e, direction) {
             localStorage.setItem("activeTab", "org-healthcare"),
-            logevent("click_healthcare", "index.php", { source: "header_nav" }),
+            logevent("click_healthcare", "index.php", { source: "header_nav", direction: direction }),
             setActiveNav("organisation");
             (window.location.href = "../pages/healthcare.php");
         });
@@ -1441,9 +1455,9 @@ requestDemoForWork &&
                 },
                 !1
             );
-        attachSubnavClick("teenagersHeaderClick", function () {
+        attachSubnavClick("teenagersHeaderClick", function (e, direction) {
             localStorage.setItem("programType", "11"),
-            logevent("click_teenagers", "index.php"),
+            logevent("click_teenagers", "index.php", { source: "header_nav", direction: direction }),
             setActiveNav("teenagersHeaderClick");
             (window.location.href = "../pages/teenagers.php");
         });
