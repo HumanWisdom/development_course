@@ -600,9 +600,8 @@
   </body>
 </html>
 <script>
-// Replace with your actual API base URL and ProgramId
-const API_BASE_URL = 'https://www.humanwisdom.info/api';
-//const API_BASE_URL = 'https://staging.humanwisdom.info/api';
+// API base: includes/api_config.php → window.__HW_API__.apiBase (vendor_footer loads before this script)
+const API_BASE_URL = (typeof window !== "undefined" && window.__HW_API__ && window.__HW_API__.apiBase) || "https://www.humanwisdom.info/api";
 const ProgramId = '9';
 
 (function initOrchaUidFromQuery() {
