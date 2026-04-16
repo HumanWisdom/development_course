@@ -241,7 +241,7 @@ return [
         },
           {
           id: "1",
-          displayName: "Work",
+          displayName: "Success at work",
           active: false,
           name: 'Work and leadership'
         },
