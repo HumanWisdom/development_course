@@ -101,6 +101,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public streak = '';
   public enableAlert:any=false;
   public isSearchActive: boolean = false;
+  public isFreeTrialEnable: boolean = false;
 
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
