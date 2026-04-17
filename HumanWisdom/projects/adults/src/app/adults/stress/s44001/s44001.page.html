@@ -377,7 +377,7 @@
             </div>
 
             <!-- right side arrow / lock -->
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
               <i class="fa fa-angle-right fc_000000 fs_20px"></i>
             </div>
 
