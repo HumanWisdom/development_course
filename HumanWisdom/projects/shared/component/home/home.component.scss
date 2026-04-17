@@ -493,6 +493,13 @@ background: #FFF7E6;/* Ensure proper stacking context */
   margin-top: -10px;
 }
 
+/* Large desktop displays */
+@media only screen and (min-width: 2560px) {
+  .row.home-container:first-of-type {
+    max-width: 20%;
+  }
+}
+
 /* Tablet and iPad devices (600px to 1024px) */
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
   .row.home-container:first-of-type {

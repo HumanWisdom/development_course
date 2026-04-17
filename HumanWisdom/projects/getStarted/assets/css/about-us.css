@@ -61,6 +61,9 @@
         width: 314px !important;
         max-width: 314px !important;
       }
+      .section-header {
+        padding-bottom: 60px;
+      }
     }
     /* About us CTA hover gradient override */
     #happiermeTryForFree .btn_tff:hover,

@@ -72,6 +72,29 @@
     width: 978px;
     height: 551.45px;
 }
+.youtube-player {
+    width: 978px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    margin: 30px auto 0;
+    background: #000;
+}
+.youtube-player #youtubeIntro {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    aspect-ratio: unset !important;
+    margin: 0 !important;
+    display: block;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
 .content {
     display: flex;
     align-items: center;
@@ -103,6 +126,29 @@
     gap: 15px;
 
 }
+.scroller-container{
+      width: 1440px;
+    height: 282px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.div_subscriptionnews_mind{
+    background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/cover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 90px 20px;
+}
+/* Desktop strip dimensions; mobile uses Mobile_circles.svg (default <img> src) */
+@media (min-width: 1025px) {
+  .circle_img {
+    width: 980px;
+    height: 156px;
+  }
+}
+
 
 /* mind.php — survey + video section titles (override fc_000000_0_75 on all viewports) */
 .section-headernew.mob-section h2.fs_18px_mobile {
@@ -441,6 +487,9 @@
     align-items: center;
     margin-top: 30px;
   }
+  .mb_18px{
+    margin-bottom: 18px !important;
+  }
 
   .mobile-image {
     max-width: 100%;
@@ -462,7 +511,15 @@
     flex-direction: column;
     align-items: center;
   }
+ .scroller-container {
+        padding-top: 0px !important;
+            height: 163px !important;
+            padding-right: 0px !important;
+      }
 
+    .content{
+      gap:0px !important;
+    }
   .mind-title {
     width: 100%;
     max-width: 335px;
@@ -579,6 +636,7 @@ margin-top: 5px !important;
   .section-headernew.mob-section h2.fs_18px_mobile {
     font-size: 18px !important;
     font-weight: 600 !important;
+    margin-bottom: 0px !important;
   }
 
   .bg_circle_mind {
@@ -611,6 +669,8 @@ margin-top: 5px !important;
     width: 100%;
     max-width: 100%;
     height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .cvideo_b {
@@ -618,22 +678,38 @@ margin-top: 5px !important;
     max-width: 100%;
     height: auto !important;
     aspect-ratio: 16 / 9;
-    margin-top: 16px;
+    margin-top: 0;
     overflow: hidden;
   }
-  .cvideo_b, .yt-embed, #youtubeIntro{
-    margin-bottom: 50px !important;
+  .video-mobile-section .youtube-player {
+    margin-top: 18px;
+    margin-bottom: 50px;
   }
 
   .divhome.mob-section {
     background: #333333 !important;
     padding: 20px 16px;
+    /* Scroll clearance so the bar sits above the fixed sticky Download banner (see main.css .sticky_rating_banner) */
+    /* margin-bottom: 3.5rem; */
   }
 
   .divhome.mob-section h2 {
     font-size: 12px !important;
     line-height: 140%;
     text-align: center;
+  }
+}
+
+/* footer_copyright_sticky_mind visibility rules */
+@media screen and (min-width: 768px) {
+  /* signup + download_qr (body class page-signup): hide on desktop */
+  body.page-signup .mind-sticky-copyright {
+    display: none !important;
+  }
+
+  /* mind.php (body class page-mind): always visible */
+  body.page-mind .mind-sticky-copyright {
+    display: flex !important;
   }
 }
 
@@ -665,5 +741,35 @@ margin-top: 5px !important;
         width: 335px;
         font-size: 27px;
     }
+}
+
+/* signup.php — mobile header (Figma: 70px bar, 40px logo) */
+@media screen and (max-width: 768px) {
+  body.page-signup .header_new {
+    height: 70px;
+    padding: 0 !important;
+    box-sizing: border-box;
+    justify-content: left;
+    padding-left: 15px !important;
+  }
+
+  body.page-signup .header_new img.img-responsive {
+    height: 40px !important;
+    width: auto;
+  }
+  .div_subscriptionnews_mind {
+    background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/cover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .blog_highlight_peach {
+    display: contents !important;
+  }
 }
 

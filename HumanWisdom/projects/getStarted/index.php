@@ -143,10 +143,16 @@ require_once('./includes/security_config.php');
         </div>
       </div>
 
-      <!-- ===== ORCHA BANNER ===== -->
+      <!-- ===== ORCHA / Mind BANNER ===== -->
       <div class="orcha-strip">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified"  height="60px" width="60px"/>
-        <span>ORCHA approved for use in healthcare in the UK and USA</span>
+        <div class="orcha-strip-item orcha-strip-orcha">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
+          <span>ORCHA approved for use in healthcare</span>
+        </div>
+        <div class="orcha-strip-item orcha-strip-mind">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/working_with_mind.svg" alt="Working with Mind" width="120" height="54"/>
+          <span>Featured in Mind&rsquo;s app library</span>
+        </div>
       </div>
 
       <!-- ===== TOPICS ===== -->
@@ -198,9 +204,25 @@ require_once('./includes/security_config.php');
       <div class="div-13">
         <p class="text-wrapper-a">Discover HappierMe in just 1 minute</p>
         <div class="youtube-player">
+          <button
+            id="youtubeIntroCover"
+            type="button"
+            aria-label="Play HappierMe intro video"
+            style="position:absolute;inset:0;border:0;padding:0;background:transparent;cursor:pointer;z-index:2;">
+            <img
+              src="https://d1tenzemoxuh75.cloudfront.net/website/yt_cover.svg"
+              alt="HappierMe video cover"
+              style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <span
+              aria-hidden="true"
+              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0, 0, 0, 0.25);font-size:30px;color:#fff;line-height:1;">
+              &#9658;
+            </span>
+          </button>
           <iframe
             id="youtubeIntro"
-            src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1"
+            src="about:blank"
+            data-src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?autoplay=1&rel=0&modestbranding=1&playsinline=1"
             title="HappierMe intro"
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
             allowfullscreen>
@@ -318,7 +340,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== ORGANISATION ===== -->
       <div class="div-23">
-        <p class="text-wrapper-6">Find out how HappierMe can help your organisation</p>
+        <p class="text-wrapper-6 text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
           <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
@@ -373,7 +395,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== TEENAGERS ===== -->
       <div class="div-31">
-        <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp" alt="Teenagers app" />
+        <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/help_teenagers.svg" alt="Teenagers app" />
         <div class="div-32">
           <div class="div-33">
             <div class="div-34">
@@ -2745,6 +2767,21 @@ require_once('./includes/security_config.php');
         }
         y.addEventListener('click', pickYearly);
         m.addEventListener('click', pickMonthly);
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var introFrame = document.getElementById('youtubeIntro');
+        var introCover = document.getElementById('youtubeIntroCover');
+        if (!introFrame || !introCover) return;
+
+        introCover.addEventListener('click', function () {
+          if (!introFrame.src || introFrame.src === 'about:blank') {
+            introFrame.src = introFrame.getAttribute('data-src');
+          }
+          introCover.style.display = 'none';
+        });
       });
     </script>
 

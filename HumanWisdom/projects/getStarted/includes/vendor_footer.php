@@ -1,5 +1,12 @@
 <a href="#" id="scrollTopArrow" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
-<?php require_once __DIR__ . '/cache_buster.php'; ?>
+<?php
+require_once __DIR__ . '/cache_buster.php';
+require_once __DIR__ . '/api_config.php';
+$hw_api_client = hw_api_config();
+?>
+<script>
+window.__HW_API__=<?php echo json_encode($hw_api_client, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS); ?>;
+</script>
 
 <div id="preloader"></div>
 
@@ -23,7 +30,7 @@
 <script defer src="<?= hw_asset_url('../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
 <script defer src="<?= hw_asset_url('../assets/vendor/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
 
-<!-- Template Main JS File -->
+<!-- Template Main JS File (window.__HW_API__ must load before index.js) -->
 <script src="<?= hw_asset_url('../assets/js/main.js'); ?>"></script>
 <script src="<?= hw_asset_url('../scripts/index.js'); ?>"></script>
 
