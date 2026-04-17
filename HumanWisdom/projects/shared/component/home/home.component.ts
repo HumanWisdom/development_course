@@ -135,6 +135,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly VIEW_MORE_INCREMENT = 5;
   mainheader: string = '';
   searchinp: string = '';
+  isSearchActive: boolean = false;
   searchResult: any[] = [];
   moduleList: any[] = [];
   eventList: any[] = [];
@@ -1691,12 +1692,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x =>
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
       }
       // Toggle body scroll based on search result visibility
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -1708,6 +1710,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle focus event - show all modules or filtered results
    */
   onFocus(): void {
+    this.isSearchActive = true;
     const eventName = 'click_search';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Click: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
@@ -1722,7 +1725,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
       );
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -1738,6 +1741,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Navigate to search page when Enter is pressed or search result is clicked
    */
   getinp(searchTerm: string, fromDropdown: boolean = false): void {
+    this.isSearchActive = false;
     if (searchTerm && searchTerm.trim() !== '') {
       if (!fromDropdown) {
         const eventName = `search_${searchTerm.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
@@ -1849,6 +1853,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle search result click - navigate to search page
    */
   searchEvent(moduleName: string): void {
+    this.isSearchActive = false;
     const eventName = `search_dropdown_${moduleName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
     console.log(`%c [ANALYTICS EVENT] Triggering Search Dropdown: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
@@ -1863,6 +1868,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Clear search and hide dropdown
    */
   clearSearch(): void {
+    this.isSearchActive = false;
     const eventName = 'click_search_clear';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Clear: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);

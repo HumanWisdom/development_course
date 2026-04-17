@@ -10,7 +10,7 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
-        [class.search-active]="searchResult.length > 0">
+        [class.search-active]="isSearchActive">
         <div class="x_panel p0">
           <div class="x_content p0">
 
@@ -34,9 +34,9 @@
                     [(ngModel)]="search" autocomplete="off" (input)="getAutoCompleteList($event.target.value)"
                     (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(search)"
                     style="border-radius: 100px !important;">
-                  <span *ngIf="searchResult.length == 0" class="fa fa-search form-control-feedback left pfy_search_icon"
+                  <span *ngIf="!isSearchActive" class="fa fa-search form-control-feedback left pfy_search_icon"
                     aria-hidden="true"></span>
-                  <span *ngIf="searchResult.length > 0" (click)="backToPreviousSearch()" tabindex="0"
+                  <span *ngIf="isSearchActive" (click)="backToPreviousSearch()" tabindex="0"
                     (keydown.enter)="backToPreviousSearch()"
                     class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
                     aria-hidden="true" style="pointer-events: all !important; cursor: pointer !important;"></span>
@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- Search Dropdown -->
-                <div class="row adsearch" *ngIf="searchResult.length > 0">
+                <div class="row adsearch" *ngIf="isSearchActive">
                   <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                     <ul class="list-group autocomplete-list adsearch_ul">
                       <li *ngFor="let item of searchResult" (click)="getinp(item.ModuleName)" name="list"
@@ -60,7 +60,7 @@
             </div>
             <!-- /search -->
 
-            <div class="row mt20px" *ngIf="searchResult.length === 0 && !isLoading">
+            <div class="row mt20px" *ngIf="!isSearchActive && !isLoading">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px fs_12px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   {{getTotalRecords()}} results found
@@ -68,7 +68,7 @@
               </div>
             </div>
 
-            <div class="row tab_lfj center_flex" *ngIf="searchResult.length === 0">
+            <div class="row tab_lfj center_flex" *ngIf="!isSearchActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <ul class="nav nav-tabs search_nav_tabs mtb30px" [ngClass]="isAdults ? 'adults-theme' : 'teens-theme'">
                   <li [class.active]="tabName=='Learning'">

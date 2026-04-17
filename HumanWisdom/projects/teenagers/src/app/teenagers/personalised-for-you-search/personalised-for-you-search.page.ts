@@ -99,8 +99,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   currentList = [];
   public day: string = '';
   public streak = '';
-  public isFreeTrialEnable = false;
   public enableAlert:any=false;
+  public isSearchActive: boolean = false;
 
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
@@ -369,9 +369,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -391,6 +392,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getinp(event) {
+    this.isSearchActive = false;
+    this.toggleBodyScroll(false);
     this.logeventservice.logEvent("search_"+ event)
     let url=""
     switch(event.toLowerCase())
@@ -747,13 +750,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   onFocus() {
+    this.isSearchActive = true;
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -775,6 +779,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   clearSearch() {
+    this.isSearchActive = false;
     this.searchinp = "";
     this.searchResult = [];
     this.toggleBodyScroll(false);

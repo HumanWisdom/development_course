@@ -58,6 +58,7 @@ export class SearchPopularItemsPage implements OnInit {
   filterApplied =  true;
   isLoading: boolean = false;
   previousSearch: string = '';
+  isSearchActive: boolean = false;
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -111,6 +112,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   searchEvent(moduleName:string) {
+    this.isSearchActive = false;
     this.filterApplied = false;
     this.post = [];
     this.jrList = [];
@@ -123,6 +125,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
   
   getinp(event) {
+    this.isSearchActive = false;
     if(!event || event.toString().trim() === ""){
        return;
     }
@@ -821,9 +824,10 @@ export class SearchPopularItemsPage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -832,6 +836,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   onFocus() {
+    this.isSearchActive = true;
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
     }
@@ -840,7 +845,7 @@ export class SearchPopularItemsPage implements OnInit {
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(this.search?.toLocaleLowerCase() || ''));
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -871,6 +876,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   clearSearch() {
+    this.isSearchActive = false;
     this.search = "";
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
@@ -882,6 +888,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   backToPreviousSearch() {
+    this.isSearchActive = false;
     this.search = this.previousSearch;
     this.searchResult = [];
     this.getSearchData();
