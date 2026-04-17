@@ -52,6 +52,7 @@ export class MyDailyPracticePage implements OnInit {
   isSubscriber = false;
   journalHits = 0;
   showSearchBox: boolean = true;
+  isSearchActive: boolean = false;
 
   constructor(
     private commonService: CommonService,
@@ -254,6 +255,7 @@ routeDailyPractice(id: number): void {
 
 
   onFocus() {
+    this.isSearchActive = true;
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
     }
@@ -262,7 +264,7 @@ routeDailyPractice(id: number): void {
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || ''));
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -276,6 +278,7 @@ routeDailyPractice(id: number): void {
 
   
   clearSearch() {
+    this.isSearchActive = false;
     this.searchinp = "";
     this.searchResult = [];
     this.toggleBodyScroll(false);
@@ -312,9 +315,10 @@ routeDailyPractice(id: number): void {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -324,6 +328,7 @@ routeDailyPractice(id: number): void {
 
     
   getinp(searchTerm: string): void {
+    this.isSearchActive = false;
     this.logeventservice.logEvent("search_" + searchTerm);
     let url = "";
     let fragment: string | undefined = undefined;
@@ -416,6 +421,7 @@ routeDailyPractice(id: number): void {
 
 
     searchEvent(module) {
+    this.isSearchActive = false;
     this.logeventservice.logEvent("click_search");
 
     this.searchinp = module;
