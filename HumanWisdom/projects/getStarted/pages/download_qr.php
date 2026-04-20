@@ -83,7 +83,44 @@
         }
         .download_qr_block--badges {
           order: 4;
-          margin-top: 1.5rem;
+          margin-top: 0.5rem;
+        margin-bottom: 16px;
+        }
+      }
+      /* Store badges: top-align so App Store + Google Play share one horizontal line (avoid align-items-center shifting shorter badge) */
+      .download_qr_store_badges {
+        align-items: flex-start !important;
+      }
+      .download_qr_store_badges > [class*="col"] {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .download_qr_store_badges a {
+        display: inline-flex;
+        align-items: flex-start;
+        justify-content: center;
+        line-height: 0;
+      }
+      .download_qr_appstore_badge,
+      .download_qr_play_badge {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        vertical-align: top;
+      }
+      @media screen and (max-width: 767.98px) {
+        .download_qr_appstore_badge,
+        .download_qr_play_badge {
+          max-height: 42px;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .download_qr_appstore_badge,
+        .download_qr_play_badge {
+          max-height: 50px;
         }
       }
     </style>
@@ -328,17 +365,17 @@
                     <div class="box">
                       <div class="download_qr_card_stack">
                         <div class="download_qr_block download_qr_block--badges">
-                          <div class="row justify-content-center align-items-center g-3 download_qr_store_badges gap_24px" data-aos="fade-up" data-aos-delay="100">
+                          <div class="row justify-content-center align-items-start g-3 download_qr_store_badges gap_24px gap_20px" data-aos="fade-up" data-aos-delay="100">
                             <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center">
                               <a href="https://apps.apple.com/in/app/happierme-for-a-happier-you/id1588535567">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/web_appstore.svg" alt="Download on the App Store"
-                                  class="img-responsive">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/appstore.png" alt="Download on the App Store"
+                                  class="img-responsive download_qr_appstore_badge" loading="lazy" decoding="async">
                               </a>
                             </div>
-                            <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center">
+                            <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center mart0px">
                               <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
                                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/play.svg" alt="Get it on Google Play"
-                                  class="img-responsive">
+                                  class="img-responsive download_qr_play_badge">
                               </a>
                             </div>
                           </div>

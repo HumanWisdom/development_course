@@ -95,6 +95,45 @@
     outline: none !important;
     box-shadow: none !important;
 }
+
+/* mind.php intro video — match index: 810px max width, yt_cover.svg until play (see index.php + index-inline.css) */
+body.page-mind .youtube-player {
+  width: 100%;
+  max-width: 810px;
+}
+body.page-mind #youtubeIntroCover {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+body.page-mind #youtubeIntroCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+body.page-mind #youtubeIntroCover .mind-youtube-play-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 30px;
+  color: #fff;
+  line-height: 1;
+  pointer-events: none;
+}
 .content {
     display: flex;
     align-items: center;
@@ -117,6 +156,9 @@
     margin-right: auto;
     margin-top: 30px;
 }
+  .signup-title {
+    padding-bottom: 12px !important;
+  }
 .testimonial-header {
    
     display: flex;
@@ -383,14 +425,23 @@
   }
 
   body.page-mind .cvideo_b,
-  body.page-mind .yt-embed,
-  body.page-mind #youtubeIntro {
+  body.page-mind .yt-embed {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  body.page-mind .video-mobile-section .youtube-player #youtubeIntro {
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    aspect-ratio: unset !important;
+    position: absolute !important;
+    inset: 0 !important;
+    margin: 0 !important;
   }
 
   body.page-mind .video-mobile-section {
@@ -433,6 +484,7 @@
     width: auto !important;
     max-width: none !important;
   }
+
 }
 
 /* Fixed index header clears the hero (header.php uses max-width: 767px for compact row) */
@@ -601,7 +653,7 @@
     margin-top: 20px;
   }
   .section-text1 {
-margin-top: 5px !important;
+    margin-top: 5px !important;
   }
 
   .testimonial-header {
@@ -639,23 +691,45 @@ margin-top: 5px !important;
     margin-bottom: 0px !important;
   }
 
+
   .bg_circle_mind {
     padding-left: 0;
     padding-right: 0;
+    height: 163px;
+  }
+  .mart0px{
+    margin-top: 0px !important;
+  }
+  .gap_20px{
+    gap:20px !important;
   }
 
-  .bg_circle_mind .scroller-container {
+  /* Full-width strip: scroll horizontally on small screens (see scrollingcircle.png) */
+  body.page-mind .bg_circle_mind .scroller-container {
     width: 100%;
     max-width: 100%;
     padding-left: 16px;
     padding-right: 16px;
     box-sizing: border-box;
+    height: auto !important;
+    min-height: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
   }
 
-  .bg_circle_mind .scroller-container img {
-    max-width: 100%;
-    height: auto;
-    padding-left: 0px !important;
+  body.page-mind .bg_circle_mind .scroller-container > div {
+    display: inline-block;
+    min-width: min-content;
+  }
+
+  body.page-mind .bg_circle_mind .scroller-container img.circle-strip-mobile {
+    max-width: none !important;
+    width: auto !important;
+    height: 123px;
+    padding-left: 20 !important;
+    display: block;
   }
 
   .video-mobile-section {
@@ -771,5 +845,32 @@ margin-top: 5px !important;
   .blog_highlight_peach {
     display: contents !important;
   }
+}
+
+/* signup.php — “Let’s get started” flanked by lines (Figma mobile: 71.5px × 1px, rgba(0,0,0,.25)) */
+body.page-signup .signup-lets-start-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body.page-signup .signup-lets-start-line {
+  display: block;
+  width: 71.5px;
+  flex: 0 0 71.5px;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+body.page-signup .signup-lets-start-divider h4 {
+  margin: 0;
+  flex: 0 1 auto;
 }
 
