@@ -171,14 +171,16 @@ require_once('../includes/security_config.php');
     <div class="scroller-container">
       <div>
         <picture>
+          <source media="(max-width: 768px)"
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/scrollingcircle.png">
           <source media="(min-width: 1800px)"
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg">
           <source media="(min-width: 769px) and (max-width: 1024px)"
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/tablet_circle.svg">
           <source media="(min-width: 1025px)"
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/circle_img.svg">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg"
-            class="img-responsive w100p circle_img" alt="modules" loading="lazy">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/scrollingcircle.png"
+            class="img-responsive circle_img circle-strip-mobile" alt="Survey findings from HappierMe app users" loading="lazy">
         </picture>
       </div>
     </div>
@@ -198,9 +200,13 @@ require_once('../includes/security_config.php');
     <div class="row center_flex mob-section video-mobile-section" data-aos="fade-up" data-aos-delay="200">
       <div class="iframe-videos">
         <div class="youtube-player">
-          <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
-            src="https://www.youtube.com/embed/MgsYk1SZh-w?rel=0&modestbranding=1&playsinline=1"
-            class="cvideo_b yt-embed"
+          <button id="youtubeIntroCover" type="button" aria-label="Play HappierMe intro video">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/yt_cover.svg" alt="HappierMe video cover" />
+            <span class="mind-youtube-play-icon" aria-hidden="true">&#9658;</span>
+          </button>
+          <iframe id="youtubeIntro" src="about:blank"
+            data-src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+            title="HappierMe intro"
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
         </div>
       </div>
@@ -231,6 +237,19 @@ require_once('../includes/security_config.php');
         });
       } catch (e) {}
     })();
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var introFrame = document.getElementById('youtubeIntro');
+      var introCover = document.getElementById('youtubeIntroCover');
+      if (!introFrame || !introCover) return;
+      introCover.addEventListener('click', function () {
+        if (!introFrame.src || introFrame.src === 'about:blank') {
+          introFrame.src = introFrame.getAttribute('data-src');
+        }
+        introCover.style.display = 'none';
+      });
+    });
   </script>
 </body>
 

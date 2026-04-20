@@ -360,18 +360,14 @@
                       </div>
                     </div>
 
-                     <div class="row mt10px" >
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <hr class="hr_style_v3_05">
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
+                     <div class="row mt10px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="signup-lets-start-divider">
+                          <span class="signup-lets-start-line" aria-hidden="true"></span>
                           <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tcenter">
                             Let’s get started
                           </h4>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <hr class="hr_style_v3_05">
+                          <span class="signup-lets-start-line" aria-hidden="true"></span>
                         </div>
                       </div>
                     </div>
