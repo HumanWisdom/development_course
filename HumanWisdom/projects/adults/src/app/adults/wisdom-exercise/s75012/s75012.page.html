@@ -49,8 +49,8 @@
                     <div class="row center_flex">
                       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                          <a (click)="back()" href="#mdp_carousel_intro" data-bs-slide="prev">
-                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_000000_0_5">
+                          <a (click)="back()" [attr.href]="enableintro && slideStart <= 1 ? null : '#mdp_carousel_intro'" [attr.data-bs-slide]="enableintro && slideStart <= 1 ? null : 'prev'" [style.pointer-events]="enableintro && slideStart <= 1 ? 'none' : 'auto'">
+                            <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_000000_0_5" [disabled]="enableintro && slideStart <= 1">
                               <i class="fa fa-angle-left fs_16px fc_000000 mr10px"></i>
                               Previous
                             </button>
@@ -1941,8 +1941,8 @@
                            </h4>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                          <a (click)="next()" href="#mdp_carousel_day9" data-bs-slide="next">
-                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff"tcenter cgqtns_sc>
+                          <a (click)="next()" [attr.href]="slideStart >= totalSlidesCount ? null : '#mdp_carousel_day9'" [attr.data-bs-slide]="slideStart >= totalSlidesCount ? null : 'next'" [style.pointer-events]="slideStart >= totalSlidesCount ? 'none' : 'auto'">
+                            <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff" [disabled]="slideStart >= totalSlidesCount">
                               Next
                               <i class="fa fa-angle-right fs_16px ml10px"></i>
                             </button>

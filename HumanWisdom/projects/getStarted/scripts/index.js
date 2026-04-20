@@ -1438,8 +1438,8 @@ requestDemoForWork &&
                     logevent("click_pricing", "index.php#div_subscription");
                     
                     // Check if we're already on index.php
-                    if (window.location.pathname.includes("index.php")) {
-                        // Update URL without reload first
+                    if (window.location.pathname.includes("index.php") && !window.location.pathname.includes("blogs")) {
+                        // Update URL without reload  
                         window.history.pushState(null, null, "#div_subscription");
                         // Scroll to section on same page (header height + 20px extra for better alignment)
                         // Calculate header height dynamically to avoid extra pixels
