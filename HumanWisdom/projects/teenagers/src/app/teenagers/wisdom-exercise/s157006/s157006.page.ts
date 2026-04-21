@@ -90,55 +90,58 @@ export class S157006Page implements OnInit {
 
   
   onSwipe($event) {
-      if (this.lastClick >= (Date.now() - this.delay))
-    {
+    if (this.lastClick >= (Date.now() - this.delay)) {
       return;
     }
-      this.lastClick = Date.now();
-      $event.srcEvent.stopPropagation()
-      $event.srcEvent.cancelBubble=true;
-      this.methodSTartTime=Date.now();
-      let eventText="";
-      const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left'):'';
-      const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
+    this.lastClick = Date.now();
+    $event.srcEvent.stopPropagation()
+    $event.srcEvent.cancelBubble = true;
+    this.methodSTartTime = Date.now();
+    let eventText = "";
+    const x = Math.abs($event.deltaX) > 40 ? ($event.deltaX > 0 ? 'right' : 'left') : '';
+    const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
 
-      eventText += `${x} ${y}<br/>`;
-      let carouselId = '';
-      
-      if (this.enableintro) carouselId = 'mdp_carousel_intro';
-      else if (this.enableday1) carouselId = 'mdp_carousel_day1';
-      else if (this.enableday2) carouselId = 'mdp_carousel_day2';
-      else if (this.enableday3) carouselId = 'mdp_carousel_day3';
-      else if (this.enableday4) carouselId = 'mdp_carousel_day4';
-      else if (this.enableday5) carouselId = 'mdp_carousel_day5';
-      
-      if(eventText.includes("right")){
+    eventText += `${x} ${y}<br/>`;
+    let carouselId = '';
+
+    if (this.enableintro) carouselId = 'mdp_carousel_intro';
+    else if (this.enableday1) carouselId = 'mdp_carousel_day1';
+    else if (this.enableday2) carouselId = 'mdp_carousel_day2';
+    else if (this.enableday3) carouselId = 'mdp_carousel_day3';
+    else if (this.enableday4) carouselId = 'mdp_carousel_day4';
+    else if (this.enableday5) carouselId = 'mdp_carousel_day5';
+
+    if (eventText.includes("right")) {
+      if (this.currentDay == 0 && this.slideStart == 1) {
+        // Guard for first slide of intro
+      } else {
         $(`#${carouselId}`).carousel('prev');
         this.back();
-      }else if(eventText.includes("left")){
+      }
+    } else if (eventText.includes("left")) {
+      if (this.currentDay == 5 && this.slideStart == this.totalSlidesCount) {
+        // Guard for last slide of day 5
+      } else {
         $(`#${carouselId}`).carousel('next');
         this.next();
       }
-      else if(eventText.includes('down')){
-        window.scrollTo({
-          behavior:'smooth',
-          top:0
-        });
-        return;
-      }
-      else if(eventText.includes('up')){
-        window.scrollTo({
-          behavior:'smooth',
-          top:800
-        });
-      }
-      else{
-        this.next();
-        $(`#${carouselId}`).carousel('next');
-      }
+    }
+    else if (eventText.includes('down')) {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: 0
+      });
+      return;
+    }
+    else if (eventText.includes('up')) {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: 800
+      });
+    }
   }
 
-  getdayevent(event) {
+  getdayevent(event, isBack = false) {
     if (event === 'intro') {
       this.slideStart = 0;
       this.totalSlidesCount = 4;
@@ -223,7 +226,11 @@ export class S157006Page implements OnInit {
       this.dayclass = '5';
       this.currentDay = 5;
     }
-    this.next();
+    if (isBack) {
+      this.slideStart = this.totalSlidesCount;
+    } else {
+      this.next();
+    }
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");
       element.scrollIntoView({behavior: "smooth" ,inline: "center"});
@@ -247,6 +254,9 @@ export class S157006Page implements OnInit {
         }
 
       } else if (this.slideStart == this.totalSlidesCount) {
+        if (this.currentDay >= this.totaldays) {
+          return;
+        }
         this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
           "ScreenNo": '157006p' + (parseInt(this.screenNumber.substring(7, 8))),
@@ -326,12 +336,15 @@ export class S157006Page implements OnInit {
     this.nextDay = null;
     this.resetHintValue();
     setTimeout(() => {
+      if (this.currentDay == 0 && this.slideStart == 1) {
+        return;
+      }
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
       }
       else if (this.slideStart == 1) {
         this.currentDay = this.currentDay - 1;
-        this.getdayevent(this.currentDay.toString())
+        this.getdayevent(this.currentDay.toString(), true)
       }
       else {
         this.slideStart = this.slideStart - 1;

@@ -123,9 +123,11 @@ export class S157004Page implements OnInit {
       else if (this.enableday10) carouselId = 'mdp_carousel_day10';
       
       if(eventText.includes("right")){
+        if (this.currentDay == 0 && this.slideStart == 1) return;
         $(`#${carouselId}`).carousel('prev');
         this.back();
       }else if(eventText.includes("left")){
+        if (this.currentDay == 10 && this.slideStart == this.totalSlidesCount) return;
         $(`#${carouselId}`).carousel('next');
         this.next();
       }
@@ -148,8 +150,8 @@ export class S157004Page implements OnInit {
       }
   }
 
-  getdayevent(event) {
-    if (event === 'intro') {
+  getdayevent(event, isBack = false) {
+    if (event === 'intro' || event === '0') {
       this.slideStart = 0;
       this.totalSlidesCount = 6;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
@@ -360,7 +362,18 @@ export class S157004Page implements OnInit {
       this.dayclass = "10";
       this.currentDay = 10;
     }
-    this.next();
+    if (isBack) {
+      this.slideStart = this.totalSlidesCount;
+      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+      setTimeout(() => {
+        let carouselId = 'mdp_carousel_day' + this.currentDay;
+        if (this.currentDay == 0) carouselId = 'mdp_carousel_intro';
+        $(`#${carouselId}`).carousel(this.totalSlidesCount - 1);
+      }, 100);
+    } else {
+      this.slideStart = 0;
+      this.next();
+    }
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");
       element.scrollIntoView({behavior: "smooth" ,inline: "center"});
@@ -368,6 +381,9 @@ export class S157004Page implements OnInit {
   }
 
   next() {
+    if (this.currentDay == 10 && this.slideStart == this.totalSlidesCount) {
+      return;
+    }
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
@@ -423,6 +439,9 @@ export class S157004Page implements OnInit {
   }
   
   back() {
+    if (this.currentDay == 0 && this.slideStart == 1) {
+      return;
+    }
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
@@ -431,8 +450,10 @@ export class S157004Page implements OnInit {
         this.slideStart = this.totalSlidesCount
       }
       else if (this.slideStart == 1) {
-        this.currentDay = this.currentDay - 1;
-        this.getdayevent(this.currentDay.toString())
+        if (this.currentDay > 0) {
+          this.currentDay = this.currentDay - 1;
+          this.getdayevent(this.currentDay.toString(), true)
+        }
       }
       else {
         this.slideStart = this.slideStart - 1;

@@ -97,9 +97,11 @@ export class S157005Page implements OnInit {
       else if (this.enableday14) carouselId = 'mdp_carousel_day14';
       
       if(eventText.includes("right")){
+        if (this.currentDay == 0 && this.slideStart == 1) return;
         $(`#${carouselId}`).carousel('prev');
         this.back();
       }else if(eventText.includes("left")){
+        if (this.currentDay == 14 && this.slideStart == this.totalSlidesCount) return;
         $(`#${carouselId}`).carousel('next');
         this.next();
       }
@@ -155,8 +157,8 @@ export class S157005Page implements OnInit {
     }
     });
   }
-  getdayevent(event) {
-    if (event === 'intro') {
+  getdayevent(event, isBack = false) {
+    if (event === 'intro' || event === '0') {
       this.slideStart = 0;
       this.totalSlidesCount = 5;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
@@ -501,7 +503,18 @@ export class S157005Page implements OnInit {
       this.dayclass = '14';
       this.currentDay = 14;
     }
-    this.next();
+    if (isBack) {
+      this.slideStart = this.totalSlidesCount;
+      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+      setTimeout(() => {
+        let carouselId = 'mdp_carousel_day' + this.currentDay;
+        if (this.currentDay == 0) carouselId = 'mdp_carousel_intro';
+        $(`#${carouselId}`).carousel(this.totalSlidesCount - 1);
+      }, 100);
+    } else {
+      this.slideStart = 0;
+      this.next();
+    }
     setTimeout(() => {
           var element = document.querySelector(".we_ft .editable");
           element.scrollIntoView({behavior: "smooth" ,inline: "center"});
@@ -510,6 +523,9 @@ export class S157005Page implements OnInit {
   }
 
   next() {
+    if (this.currentDay == 14 && this.slideStart == this.totalSlidesCount) {
+      return;
+    }
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
@@ -624,6 +640,9 @@ export class S157005Page implements OnInit {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
+    if (this.currentDay == 0 && this.slideStart == 1) {
+      return;
+    }
     window.scrollTo(0,0);
     this.resetHintValue();
     this.nextDay = null;
@@ -632,8 +651,10 @@ export class S157005Page implements OnInit {
         this.slideStart = this.totalSlidesCount
       }
       else if (this.slideStart == 1) {
-        this.currentDay = this.currentDay - 1;
-        this.getdayevent(this.currentDay.toString())
+        if (this.currentDay > 0) {
+          this.currentDay = this.currentDay - 1;
+          this.getdayevent(this.currentDay.toString(), true)
+        }
       }
       else {
         this.slideStart = this.slideStart - 1;
