@@ -210,9 +210,9 @@ require_once('./includes/security_config.php');
             aria-label="Play HappierMe intro video"
             style="position:absolute;inset:0;border:0;padding:0;background:transparent;cursor:pointer;z-index:2;">
             <img
-              src="https://d1tenzemoxuh75.cloudfront.net/website/yt_cover.svg"
+              src="https://d1tenzemoxuh75.cloudfront.net/website/yt_coverimg.webp"
               alt="HappierMe video cover"
-              style="width:100%;height:100%;object-fit:cover;display:block;" />
+              style="width:100%;height:100%;display:block;" />
             <span
               aria-hidden="true"
               style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0, 0, 0, 0.25);font-size:30px;color:#fff;line-height:1;">
@@ -395,7 +395,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== TEENAGERS ===== -->
       <div class="div-31">
-        <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/help_teenagers.svg" alt="Teenagers app" />
+        <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/help_teenagers.webp" alt="Teenagers app" />
         <div class="div-32">
           <div class="div-33">
             <div class="div-34">
