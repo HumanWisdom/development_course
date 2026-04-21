@@ -1524,10 +1524,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   initializeRegistrationForm() {
     this.registrationForm = this.fb.group(
       {
-        fullname: ["", [Validators.required, Validators.minLength(6)]],
+        fullname: ["", [Validators.required]],
         email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
         ogpassword: ["", [Validators.required, Validators.minLength(6), this.passwordStrengthValidator]],
-        confirmPassword: ["", [Validators.required, Validators.minLength(6), this.passwordStrengthValidator]],
+        confirmPassword: ["", [Validators.required]],
         privacychk: [false, [Validators.requiredTrue]],
       }
       ,
