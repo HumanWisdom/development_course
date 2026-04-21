@@ -34,6 +34,7 @@ export class BlogArticlePage {
   isAdults =  true;
   sanitizedBlogHtml: any;
   showAllComments = false;
+  public isLoading: boolean = false;
   constructor(private readonly sanitizer: DomSanitizer, private readonly service: OnboardingService, private readonly location: Location, private readonly renderer: Renderer2,
     private readonly router: Router, private readonly ngNavigatorShareService: NgNavigatorShareService, private readonly elRef: ElementRef,
     private readonly route: ActivatedRoute, private readonly meta: Meta, private readonly title: Title, public platform: Platform,
@@ -73,13 +74,18 @@ export class BlogArticlePage {
   }
 
   getblog() {
+    this.isLoading = true;
     localStorage.setItem('blogId', this.blogid);
     this.service.getBlogId(this.blogid).subscribe(res => {
       if (res) {
         this.handleBlogResponse(res);
       }
+      this.isLoading = false;
     },
-      error => console.log(error)
+      error =>{
+        console.log(error);
+        this.isLoading = false;
+      }
     );
   }
 
@@ -136,7 +142,7 @@ export class BlogArticlePage {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
   timeSince(date) {
-    return moment.utc(date).fromNow();
+    return moment.utc(date).fromNow().replace('a year ago', '1 year ago').replace('a month ago', '1 month ago');
   }
 
   likebtn() {
@@ -262,6 +268,7 @@ export class BlogArticlePage {
   }
 
   getBlogList(title) {
+    this.isLoading = true;
     this.service.getBlog().subscribe(res => {
       if (res) {
         this.list = res
@@ -271,8 +278,12 @@ export class BlogArticlePage {
           this.getblog();
         }
       }
+      this.isLoading = false;
     },
-      error => console.log(error)
+      error => {
+        console.log(error);
+        this.isLoading = false;
+      }
     )
   }
 

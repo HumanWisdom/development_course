@@ -19,6 +19,7 @@ export class BlogIndexPage implements OnInit {
   isAdults= true;
   isSubscribed = false;
   isLoggedIn = false;
+  public isLoading: boolean = false;
   constructor(private service: OnboardingService, private router: Router, 
     private ngNavigatorShareService: NgNavigatorShareService,
     public meta: Meta, private title: Title) { 
@@ -47,6 +48,7 @@ export class BlogIndexPage implements OnInit {
 
 
   getBlogs(){
+    this.isLoading = true;
     this.service.getBlog().subscribe(res=>
       {
         if(res) {
@@ -54,15 +56,19 @@ export class BlogIndexPage implements OnInit {
           this.blogList =  this.blogList.filter(x=>x.ProgIDs.includes(SharedService.ProgramId));
           this.filteredblogList = this.blogList
       }
+      this.isLoading = false;
     },
-      error=>console.log(error),
+      error=>{
+        console.log(error);
+        this.isLoading = false;
+      },
       ()=>{
       }
     )
 }
 
   timeSince(date) {
-    return moment.utc(date).fromNow();
+    return moment.utc(date).fromNow().replace('a year ago', '1 year ago').replace('a month ago', '1 month ago');
   }
 
 viewblog(item) {
