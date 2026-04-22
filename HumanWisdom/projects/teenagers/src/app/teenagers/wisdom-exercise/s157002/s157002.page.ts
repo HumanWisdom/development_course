@@ -4,8 +4,6 @@ import "bcswipe";
 import "hammerjs";
 import { TeenagersService } from "../../teenagers.service";
 import { SharedService } from '../../../../../../shared/services/shared.service';
-import { NavigationService } from '../../../../../../shared/services/navigation.service';
-import { Location } from '@angular/common';
 declare var $: any;
 declare var bootstrap: any;
 var moveleft = false;
@@ -55,9 +53,7 @@ export class S157002Page implements OnInit, AfterViewInit {
     private elementRef: ElementRef,
     public service: TeenagersService,
     private teenagers: TeenagersService,
-    public router: Router,
-    public navigationService: NavigationService,
-    private location: Location
+    public router: Router
   ) {
     this.startTime = Date.now();
   }
@@ -366,14 +362,7 @@ export class S157002Page implements OnInit, AfterViewInit {
     }, 700);
   }
 
-  goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    } else {
-      this.router.navigate([url]);
-    }
-  }
+
 
   changeType() {
     if (this.isShowTranscript) {

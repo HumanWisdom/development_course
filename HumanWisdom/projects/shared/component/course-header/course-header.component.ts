@@ -174,7 +174,7 @@ export class CourseHeaderComponent implements OnInit {
   }
   goToToc() {
     const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
-    if (fromMicroLearningEnd === 'true') {
+    if (fromMicroLearningEnd && fromMicroLearningEnd !== 'false') {
       var url = this.naviagtorService.navigateToBackLink();
       if (url != null && url !== this.router.url) {
         this.router.navigateByUrl(url);

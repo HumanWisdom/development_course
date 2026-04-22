@@ -16,59 +16,41 @@
     </h4>
   </div>
 </div>
-    <!-- HR separator -->
-    <div class="row"
-    >
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
-        <hr class="hr_style_v4" />
-      </div>
-    </div>
-    <!-- /hr -->
+<!-- HR separator -->
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
+    <hr class="hr_style_v4" />
+  </div>
+</div>
+<!-- /hr -->
 <!-- Accordion Sections -->
 <div class="toc_adiv_01">
   <div *ngFor="let section of contentSections">
     <!-- Section Header (clickable for accordion) -->
-    <div
-      class="d-flex justify-content-between align-items-center section-header rounded-top"
-      (click)="onSectionToggle(section)"
-      (keydown.enter)="onSectionToggle(section)"
-      (keydown.space)="onSectionToggle(section)"
-      tabindex="0"
-      role="button"
-      [attr.aria-expanded]="section.isExpanded"
-      [attr.aria-controls]="'section-' + section.id"
-    >
+    <div class="d-flex justify-content-between align-items-center section-header rounded-top"
+      (click)="onSectionToggle(section)" (keydown.enter)="onSectionToggle(section)"
+      (keydown.space)="onSectionToggle(section)" tabindex="0" role="button" [attr.aria-expanded]="section.isExpanded"
+      [attr.aria-controls]="'section-' + section.id">
       <div class="d-flex flex-column">
         <h5 class="mb-0 section-title" [id]="'section-title-' + section.id">
           {{ section.title }}
         </h5>
-        <span
-          class="text-muted"
-          *ngIf="section.subtitle && !section.isExpanded"
-          >{{ section.subtitle }}</span
-        >
+        <span class="text-muted" *ngIf="section.subtitle && !section.isExpanded">{{ section.subtitle }}</span>
       </div>
       <div class="text-muted">
         <span class="chev" *ngIf="section.isExpanded">></span>
-        <span class="chev-rot" *ngIf="!section.isExpanded"><</span>
+        <span class="chev-rot" *ngIf="!section.isExpanded">></span>
       </div>
     </div>
 
     <!-- Section Content -->
-    <div
-      class="rounded-bottom"
-      [@slideDown]="section.isExpanded ? 'expanded' : 'collapsed'"
-      [id]="'section-' + section.id"
-      role="region"
-      [attr.aria-labelledby]="'section-title-' + section.id"
-    >
+    <div class="rounded-bottom" [@slideDown]="section.isExpanded ? 'expanded' : 'collapsed'"
+      [id]="'section-' + section.id" role="region" [attr.aria-labelledby]="'section-title-' + section.id">
       <div *ngIf="section.cards && section.cards.length">
-        <div class="d-flex card-container" [ngClass]="(section.title || '').toLowerCase() === 'begin here' && section.isExpanded ? 'odiv' : ''">
+        <div class="d-flex card-container"
+          [ngClass]="(section.title || '').toLowerCase() === 'begin here' && section.isExpanded ? 'odiv' : ''">
           <div *ngFor="let card of section.cards">
-            <app-content-card
-              [card]="card"
-              (cardClick)="onCardClick($event)"
-            ></app-content-card>
+            <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
           </div>
         </div>
       </div>
@@ -86,19 +68,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px tcenter">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_01.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_01.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #1
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 See the world freshly
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -121,19 +99,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_02.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_02.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #2
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Notice your body
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -144,15 +118,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -163,19 +133,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_03.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_03.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #3
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Understand your thoughts
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -186,15 +152,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -205,19 +167,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px tcenter">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_04.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_04.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #4
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Understand your feelings
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -228,15 +186,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -247,10 +201,8 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_05.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_05.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
@@ -267,15 +219,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -286,19 +234,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_06.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_06.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #6
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Explore judgement
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -309,15 +253,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -328,38 +268,30 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_07.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_07.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #7
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Question your thoughts and feelings
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
-                10 days
+                7 days
               </h4>
             </div>
 
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -370,19 +302,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_08.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_08.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #8
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Card exercises
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -393,15 +321,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -412,19 +336,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_09.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_09.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #9
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Look without reacting
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -435,15 +355,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -454,19 +370,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_10.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_10.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #10
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Zoom out / zoom in
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -477,15 +389,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -496,19 +404,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_11.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_11.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #11
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Who am I?
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -519,15 +423,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
@@ -538,19 +438,15 @@
         <div class="row p0 center_flex">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_12.svg"
-                class="session_imgnew img-responsive img_podcast_01"
-              />
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_12.svg"
+                class="session_imgnew img-responsive img_podcast_01" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_000000">
                 Exercise #12
               </h4>
-              <h4
-                class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
-              >
+              <h4 class="mt0px mb5px fs_15px fw_500 lh_130p ellipsis_01"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                 Exploring the masks we wear
               </h4>
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_000000_0_5">
@@ -561,15 +457,11 @@
             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
-              <img
-                *ngIf="isGuest"
-                [src]="
+              <img *ngIf="isGuest" [src]="
                   isAdults
                     ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg'
                     : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'
-                "
-                class="img-responsive ws-lock-icon"
-              />
+                " class="img-responsive ws-lock-icon" />
               <!-- /lock -->
             </div>
           </div>
