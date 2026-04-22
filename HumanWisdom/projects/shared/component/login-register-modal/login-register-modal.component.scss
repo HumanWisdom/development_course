@@ -5,9 +5,18 @@
 
 .modal-ext-scroll .lab-modal-body {
     max-height: 100vh; 
-    overflow-y: auto; 
-
+    display: flex;
+    flex-direction: column;
+    overflow: hidden !important;
   }
+
+  .modal-body-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px; /* Minimal padding for scrollbar */
+  }
+
 
   .google-login-socialx {
     opacity: 0.001;
