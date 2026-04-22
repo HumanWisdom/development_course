@@ -2,7 +2,7 @@
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a class="" (click)="goBack()">
+      <a class="" routerLink="/teenagers/home">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/back_round.svg" alt="" class="p0" />
       </a>
     </div>
@@ -54,7 +54,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_intro" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
+                        <a (click)="back()" [attr.href]="null" data-bs-target="#mdp_carousel_intro" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                             <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                             Previous
@@ -67,7 +67,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_intro" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
+                        <a (click)="next()" [attr.href]="null" data-bs-target="#mdp_carousel_intro" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -349,7 +349,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_day1" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
+                        <a (click)="back()" [attr.href]="null" data-bs-target="#mdp_carousel_day1" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                             <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                             Previous
@@ -362,7 +362,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_day1" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
+                        <a (click)="next()" [attr.href]="null" data-bs-target="#mdp_carousel_day1" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -506,7 +506,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_day2" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
+                        <a (click)="back()" [attr.href]="null" data-bs-target="#mdp_carousel_day2" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                             <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                             Previous
@@ -519,7 +519,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_day2" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
+                        <a (click)="next()" [attr.href]="null" data-bs-target="#mdp_carousel_day2" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -689,7 +689,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_day3" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
+                        <a (click)="back()" [attr.href]="null" data-bs-target="#mdp_carousel_day3" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                             <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                             Previous
@@ -702,7 +702,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_day3" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
+                        <a (click)="next()" [attr.href]="null" data-bs-target="#mdp_carousel_day3" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -856,7 +856,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_day4" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
+                        <a (click)="back()" [attr.href]="null" data-bs-target="#mdp_carousel_day4" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                             <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                             Previous
@@ -869,7 +869,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_day4" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
+                        <a (click)="next()" [attr.href]="null" data-bs-target="#mdp_carousel_day4" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -1017,7 +1017,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_day5" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
+                        <a (click)="back()" [attr.href]="null" data-bs-target="#mdp_carousel_day5" role="button" data-bs-slide="prev" [style.pointer-events]="(currentDay == 0 && slideStart == 1) ? 'none' : 'auto'" [style.opacity]="(currentDay == 0 && slideStart == 1) ? '0.5' : '1'">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_ffffff_0_5">
                             <i class="fa fa-angle-left fs_16px fc_ffffff mr10px"></i>
                             Previous
@@ -1030,7 +1030,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_day5" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
+                        <a (click)="next()" [attr.href]="null" data-bs-target="#mdp_carousel_day5" role="button" data-bs-slide="next" [style.pointer-events]="(currentDay == 5 && slideStart == totalSlidesCount) ? 'none' : 'auto'" [style.opacity]="(currentDay == 5 && slideStart == totalSlidesCount) ? '0.5' : '1'">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_e58d82">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>

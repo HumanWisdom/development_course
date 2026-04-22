@@ -308,7 +308,7 @@ export class NavigationService {
     let prefix = SharedService.getprogramName();
     if (prefix === 'youngadults') prefix = 'teenagers';
 
-    if (fromMicroLearningEnd === 'true' && (returnUrl || m_learningId)) {
+    if (fromMicroLearningEnd && fromMicroLearningEnd !== 'false' && (returnUrl || m_learningId)) {
       if (!returnUrl && m_learningId) {
         returnUrl = `/${prefix}/micro-learning/inner/${m_learningId}?isEnd=true`;
       }
