@@ -1075,7 +1075,7 @@ header a[href*="splash_options.php"] * {
   /* Blog carousel: left/right inset before scroll; edge-to-edge strip after (same idea as coaches + is-scrolled) */
   .div-13:has(#blog-scroll) {
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 0px;
     overflow-x: hidden;
     box-sizing: border-box;
   }
@@ -1319,6 +1319,13 @@ header a[href*="splash_options.php"] * {
   .tools-thumb-video {
     height: 178px;
     max-height: 178px;
+    border-radius: 10px;
+  }
+  .tools-thumb > video {
+  border-radius: 10px;
+}
+  .orcha-strip-orcha img {
+    width: 80px;
   }
   .tools-info-heading { font-size: 22px; }
   .tools-info-body { max-width: 100%; }
@@ -1487,6 +1494,10 @@ header a[href*="splash_options.php"] * {
     gap: 18px;
     margin-top: 0;
     padding-top: 60px;
+  }
+
+  .pt_18px{
+    padding-top: 18px;
   }
 
   .new-app-adults-teen {
