@@ -1189,7 +1189,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
               if (isloggedin == 'T') {
                 this.commonService.updateSurveyData(1);
               }
-            }, 60000);
+            }, 160000);
             // document.getElementById('test1').click();
           }
         }
