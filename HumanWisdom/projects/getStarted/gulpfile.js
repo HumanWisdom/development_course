@@ -2,39 +2,37 @@ const gulp = require('gulp');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 
-function minifyCssAssets() {
-  return gulp
-    .src('assets/css/*.css')
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(gulp.dest('assets/css/'));
+function minifyCss() {
+    return gulp.src('assets/css/*.css')  
+        .pipe(cleanCSS({ compatibility: 'ie8' }))  
+        .pipe(gulp.dest('assets/css/'))  
+
+        .pipe(gulp.src('assets/font/*.css'))  
+        .pipe(cleanCSS({ compatibility: 'ie8' }))  
+        .pipe(gulp.dest('assets/font/'))  
+
+        .pipe(gulp.src('assets/css/*.css'))  
+        .pipe(cleanCSS({ compatibility: 'ie8' })) 
+        .pipe(gulp.dest('assets/css/'))
+
+        .pipe(gulp.src('styles/*.css'))  
+        .pipe(cleanCSS({ compatibility: 'ie8' })) 
+        .pipe(gulp.dest('assets/css/'))
 }
 
-function minifyCssFont() {
-  return gulp
-    .src('assets/font/*.css')
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(gulp.dest('assets/font/'));
+function minifyJS() {
+    return gulp.src('scripts/*.js')
+       .pipe(uglify()) 
+       .pipe(gulp.dest('scripts/'))
+       
+       .pipe(gulp.src('assets/js/*.js')) 
+       .pipe(uglify()) 
+       .pipe(gulp.dest('assets/js/'))
 }
 
-function minifyCssStyles() {
-  return gulp
-    .src('styles/**/*.css')
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(gulp.dest('styles/'));
-}
 
-function minifyScripts() {
-  return gulp.src('scripts/*.js').pipe(uglify()).pipe(gulp.dest('scripts/'));
-}
+// Use gulp.series to ensure task completion
+gulp.task('minify-css', minifyCss);
+gulp.task('minify-js', minifyJS);
 
-function minifyAssetsJs() {
-  return gulp.src('assets/js/*.js').pipe(uglify()).pipe(gulp.dest('assets/js/'));
-}
-
-gulp.task(
-  'minify-css',
-  gulp.parallel(minifyCssAssets, minifyCssFont, minifyCssStyles)
-);
-gulp.task('minify-js', gulp.parallel(minifyScripts, minifyAssetsJs));
-
-gulp.task('default', gulp.series('minify-css', 'minify-js'));
+gulp.task('default', gulp.series('minify-css','minify-js'));

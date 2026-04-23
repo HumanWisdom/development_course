@@ -187,7 +187,6 @@
             <li class="header_nav_mobile_only"><a id="education_mobile" class="nav" href="../pages/education.php">For Education</a></li>
           </ul>
         </nav>
-
         <style>
           a.no-underline-hover:hover {
             text-decoration: none !important;

@@ -33103,11 +33103,11 @@ body * {
 
 .session_img {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 10px;
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
-  height: 110px;
+  /* height: 110px;
     object-fit: cover;
-    object-position: 10% 25%;
+    object-position: 10% 25%; */
 }
 
 .session_img_play {
