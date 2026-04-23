@@ -1126,11 +1126,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       }
       localStorage.setItem("socialLogin", "F");
       localStorage.setItem("isloggedin", "T");
-      if (res.Email === "guest@humanwisdom.me") {
-        localStorage.setItem("guest", "T");
-      } else {
-        localStorage.setItem("guest", "F");
-      }
+      localStorage.setItem("guest", "F");
       localStorage.setItem("btnclick", "F");
       localStorage.setItem(
         "loginResponse",
@@ -1187,10 +1183,13 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
           localStorage.setItem("userDetails", JSON.stringify(userInfo[0]));
           // Trigger update to refresh hamburger menu and other components
           //  this.service.updateUserDetails.next(true);
-          if (userInfo[0]?.SurveyDone == '0' && res.Email !== 'guest@humanwisdom.me') {
+          if (userInfo[0]?.SurveyDone == '0') {
             setTimeout(() => {
-              this.commonService.updateSurveyData(1);
-            }, 160000);
+              let isloggedin = localStorage.getItem("isloggedin");
+              if (isloggedin == 'T') {
+                this.commonService.updateSurveyData(1);
+              }
+            }, 60000);
             // document.getElementById('test1').click();
           }
         }
