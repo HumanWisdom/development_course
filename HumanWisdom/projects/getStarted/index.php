@@ -100,7 +100,7 @@ require_once('./includes/security_config.php');
                 alt="HappierMe app" />
           <div class="div-3">
                  <!-- rating row -->
-                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 pt_18px">
                   <h1 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc mb_16px rating-row">
                     <span class="rating_a">
                       <i class="fa fa-star"></i>
@@ -146,7 +146,10 @@ require_once('./includes/security_config.php');
       <!-- ===== ORCHA / Mind BANNER ===== -->
       <div class="orcha-strip">
         <div class="orcha-strip-item orcha-strip-orcha">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
+          <picture>
+            <source media="(max-width: 767px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/orchacertifiedmobile.svg" />
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
+          </picture>
           <span>ORCHA approved for use in healthcare</span>
         </div>
         <div class="orcha-strip-item orcha-strip-mind">
@@ -215,7 +218,7 @@ require_once('./includes/security_config.php');
               style="width:100%;height:100%;display:block;" />
             <span
               aria-hidden="true"
-              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0, 0, 0, 0.25);font-size:30px;color:#fff;line-height:1;">
+              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;font-size:30px;color:#fff;line-height:1;">
               &#9658;
             </span>
           </button>
@@ -243,7 +246,7 @@ require_once('./includes/security_config.php');
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
           class="img-responsive d-wider w100p" alt="modules" loading="lazy">
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/scrollingcircle.png"
           class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
 
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg" class="happy-wide-img"
