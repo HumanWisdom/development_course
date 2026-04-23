@@ -1185,7 +1185,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
           //  this.service.updateUserDetails.next(true);
           if (userInfo[0]?.SurveyDone == '0') {
             setTimeout(() => {
-              this.commonService.updateSurveyData(1);
+              let isloggedin = localStorage.getItem("isloggedin");
+              if (isloggedin == 'T') {
+                this.commonService.updateSurveyData(1);
+              }
             }, 160000);
             // document.getElementById('test1').click();
           }
