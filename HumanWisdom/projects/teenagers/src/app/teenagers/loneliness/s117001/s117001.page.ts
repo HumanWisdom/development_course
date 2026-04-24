@@ -39,6 +39,8 @@ export class S117001Page implements OnInit,OnDestroy {
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+          isContentsOpen = false;
+
   isSubscriber = false;
   pgResume=sessionStorage.getItem("pgResume")
   moduleData:ProgramModel;
@@ -151,6 +153,11 @@ export class S117001Page implements OnInit,OnDestroy {
     this.socialShare=true
   }
 
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
+  
   toggleBookmark()
   {
     if(this.bookmark==0)

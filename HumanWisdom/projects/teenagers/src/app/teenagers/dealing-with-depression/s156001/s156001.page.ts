@@ -26,6 +26,7 @@ export class S156001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+   isContentsOpen = false;
   bookmarkList=[]
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/156.webp"
   tocColor="white"
@@ -156,6 +157,8 @@ export class S156001Page implements OnInit,OnDestroy {
   {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  } toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
 
   toggleBookmark()
@@ -166,6 +169,8 @@ export class S156001Page implements OnInit,OnDestroy {
       this.bookmark=0
   }
 
+
+  
   createScreen()
   {
     this.service.createScreen({

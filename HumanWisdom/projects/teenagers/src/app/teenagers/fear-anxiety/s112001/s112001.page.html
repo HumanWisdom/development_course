@@ -31,12 +31,12 @@
 
          <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-        <a routerLink="/teenagers/relationships/s131002">
+        <a routerLink="/teenagers/fear-anxiety/s112002">
           <button type="button" class="btn mb10pxi btn_begin_here w100" data-dismiss="modal">Begin here</button>
         </a>
       </div>
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-        <a [routerLink]="['/teenagers/relationships', pgResume]" *ngIf="lastvisited">
+        <a (click)="Resume('/teenagers/fear-anxiety');" [routerLink]="['/teenagers/fear-anxiety', pgResume]" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
@@ -219,7 +219,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/teen_talk/images/25.webp" alt="" class="p0 session_img">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
               </div>
-              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+              <div class="col-md-8 col-sm-8 col-xs-8  pl10pxi">
 
               <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                 Session #6
@@ -256,7 +256,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" alt="" class="p0 session_img_play">
               </div>
 
-              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+              <div class="col-md-8 col-sm-8 col-xs-8  pl10pxi">
                 <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                   Session #7
                 </h4>
@@ -304,7 +304,7 @@
               </div>
 
               <!-- session content -->
-              <div class="col-md-8 col-sm-8 col-xs-8 p0 pl20pxi">
+              <div class="col-md-8 col-sm-8 col-xs-8  pl10pxi">
                 <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
                   Session #8
                 </h4>
