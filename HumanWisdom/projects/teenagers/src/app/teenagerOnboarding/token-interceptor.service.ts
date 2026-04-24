@@ -40,15 +40,14 @@ export class TokenInterceptorService implements HttpInterceptor {
           if (isExcluded) {
             return throwError(err);
           }
-
-          localStorage.setItem('guest', 'T');
-          localStorage.setItem('personalised', 'T');
-          localStorage.setItem('acceptcookie', 'T');
           
           if (localStorage.getItem("isloggedin") === 'T') {
             this.showSessionExpiredAlert();
           } else {
-            // For guest users, refresh to get a new guest token from emaillogin()
+            // For guest users only
+            localStorage.setItem('guest', 'T');
+            localStorage.setItem('personalised', 'T');
+            localStorage.setItem('acceptcookie', 'T');
             localStorage.removeItem('token');
             window.location.reload();
           }
