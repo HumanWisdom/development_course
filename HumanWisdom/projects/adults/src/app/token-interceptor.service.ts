@@ -19,12 +19,8 @@ export class TokenInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    try{
-       this.token=JSON.parse(localStorage.getItem("token"))
-    }
-    catch(e){ 
-      this.token = localStorage.getItem("token");
-    }
+    this.token = JSON.parse(localStorage.getItem("token"))
+
     let tokenizedReq = req.clone({
       setHeaders: {
         Authorization: `Bearer ` + this.token
@@ -33,7 +29,7 @@ export class TokenInterceptorService implements HttpInterceptor {
     return next.handle(tokenizedReq).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
-          // Skip handling for login/signup related APIs to avoid breaking onboarding flows
+          // Skip handling for login/signup related APIs
           const excludedUrls = ['/login', '/AddLearner', '/verifyGoogleTokenAndLogin', '/verifyFaceBookTokenAndLogin', '/forgotPassword', '/verificationCode', '/VerifyUserByEmail'];
           const isExcluded = excludedUrls.some(url => err.url && err.url.includes(url));
 
@@ -41,16 +37,20 @@ export class TokenInterceptorService implements HttpInterceptor {
             return throwError(err);
           }
           
-          if (localStorage.getItem("isloggedin") === 'T') {
+          const userEmail = localStorage.getItem('email');
+          const isGuest = userEmail === 'guest@humanwisdom.me' || userEmail === '"guest@humanwisdom.me"';
+          const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
+
+          if (isLoggedIn && !isGuest) {
+            // Real logged-in user: Show session expiry popup
             this.showSessionExpiredAlert();
-          } else {
-            // For guest users only
-            localStorage.setItem('guest', 'T');
-            localStorage.setItem('personalised', 'T');
-            localStorage.setItem('acceptcookie', 'T');
+          } else if (isGuest) {
+            // Actual guest user: Refresh to get a new guest token
             localStorage.removeItem('token');
             window.location.reload();
           }
+          // If it's a real user but not logged in yet (e.g., signup/login flow), 
+          // we do nothing and let the component handle the 401.
         }
         return throwError(err);
       }
