@@ -29,28 +29,29 @@ export class TokenInterceptorService implements HttpInterceptor {
     return next.handle(tokenizedReq).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
+          const browserUrl = window.location.href;
+          const isAuthPage = browserUrl.includes('login') || browserUrl.includes('signup') || browserUrl.includes('onboarding') || browserUrl.includes('wisdom-survey');
+          const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
+
           // Skip handling for login/signup related APIs
           const excludedUrls = ['/login', '/AddLearner', '/verifyGoogleTokenAndLogin', '/verifyFaceBookTokenAndLogin', '/forgotPassword', '/verificationCode', '/VerifyUserByEmail'];
           const isExcluded = excludedUrls.some(url => err.url && err.url.includes(url));
 
-          if (isExcluded) {
+          if (isExcluded || isAuthPage || isFromSignupFlow) {
             return throwError(err);
           }
           
           const userEmail = localStorage.getItem('email');
-          const isGuest = userEmail === 'guest@humanwisdom.me' || userEmail === '"guest@humanwisdom.me"';
+          const isGuestEmail = userEmail === 'guest@humanwisdom.me' || userEmail === '"guest@humanwisdom.me"';
           const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
 
-          if (isLoggedIn && !isGuest) {
-            // Real logged-in user: Show session expiry popup
+          if (isLoggedIn && !isGuestEmail) {
             this.showSessionExpiredAlert();
-          } else if (isGuest) {
-            // Actual guest user: Refresh to get a new guest token
+          } else if (isGuestEmail && !isLoggedIn && !isAuthPage && !isFromSignupFlow) {
+            // ONLY refresh for actual guest users who are NOT in an onboarding flow
             localStorage.removeItem('token');
             window.location.reload();
           }
-          // If it's a real user but not logged in yet (e.g., signup/login flow), 
-          // we do nothing and let the component handle the 401.
         }
         return throwError(err);
       }
