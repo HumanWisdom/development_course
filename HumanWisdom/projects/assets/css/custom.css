@@ -37753,3 +37753,57 @@ div.contentdiv p {
 
   line-height: 140% !important;
 }
+
+/* Session Expired Alert Styles */
+.session-expired-alert {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.session-expired-alert .alert-wrapper {
+  border-radius: 24px !important;
+  background: #fff !important;
+  padding: 10px !important;
+  max-width: 340px !important;
+}
+
+.session-expired-alert .alert-head {
+  padding: 24px 16px 8px !important;
+  text-align: center;
+}
+
+.session-expired-alert .alert-title {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #000 !important;
+}
+
+.session-expired-alert .alert-message {
+  text-align: center;
+  font-size: 16px !important;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7) !important;
+  padding: 0 20px 24px !important;
+}
+
+.session-expired-alert .alert-button-group {
+  padding: 0 20px 20px !important;
+}
+
+.session-expired-alert .session-expired-login-btn {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+  color: #fff !important;
+  border-radius: 100px !important;
+  height: 50px !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  text-transform: none !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25) !important;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.session-expired-alert .session-expired-login-btn .alert-button-inner {
+  justify-content: center;
+}
+
