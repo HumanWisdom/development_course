@@ -21,6 +21,8 @@ export class S118001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+            isContentsOpen = false;
+
   bookmark:any
   bookmarkList=[]
   path = setTimeout(() => {
@@ -161,6 +163,10 @@ export class S118001Page implements OnInit,OnDestroy {
       this.bookmark=0
   }
 
+
+   toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   createScreen()
   {
     this.service.createScreen({
