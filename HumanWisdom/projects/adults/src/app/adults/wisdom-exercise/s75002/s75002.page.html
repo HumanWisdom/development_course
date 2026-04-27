@@ -344,8 +344,8 @@
               <!-- /carousel -->
 
               <!-- Day -->
-              <div class="container" *ngIf="enableDay" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel_Day" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
+              <div class="container" *ngIf="enableday1" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel_day1" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
                   data-bs-ride="carousel" data-bs-interval="3000000">
 
 
@@ -353,7 +353,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_Day" role="button" data-bs-slide="prev">
+                        <a (click)="back()" href="#mdp_carousel_day1" role="button" data-bs-slide="prev">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_000000_0_5">
                             <i class="fa fa-angle-left fs_16px fc_000000 mr10px"></i>
                             Previous
@@ -366,7 +366,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_Day" role="button" data-bs-slide="next">
+                        <a (click)="next()" href="#mdp_carousel_day1" role="button" data-bs-slide="next">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -500,8 +500,8 @@
               <!-- /Day -->
 
               <!-- Day -->
-              <div class="container" *ngIf="enableDay" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel_Day" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
+              <div class="container" *ngIf="enableday2" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel_day2" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
                   data-bs-ride="carousel" data-bs-interval="3000000">
 
 
@@ -509,7 +509,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_Day" role="button" data-bs-slide="prev">
+                        <a (click)="back()" href="#mdp_carousel_day2" role="button" data-bs-slide="prev">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_000000_0_5">
                             <i class="fa fa-angle-left fs_16px fc_000000 mr10px"></i>
                             Previous
@@ -522,7 +522,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_Day" role="button" data-bs-slide="next">
+                        <a (click)="next()" href="#mdp_carousel_day2" role="button" data-bs-slide="next">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -681,8 +681,8 @@
               <!-- /Day -->
 
               <!-- Day -->
-              <div class="container" *ngIf="enableDay" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel_Day" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
+              <div class="container" *ngIf="enableday3" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel_day3" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
                   data-bs-ride="carousel" data-bs-interval="3000000">
 
 
@@ -690,7 +690,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_Day" role="button" data-bs-slide="prev">
+                        <a (click)="back()" href="#mdp_carousel_day3" role="button" data-bs-slide="prev">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_000000_0_5">
                             <i class="fa fa-angle-left fs_16px fc_000000 mr10px"></i>
                             Previous
@@ -703,7 +703,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" [attr.href]="slideStart >= totalSlidesCount ? null : '#mdp_carousel_Day'" role="button" [attr.data-bs-slide]="slideStart >= totalSlidesCount ? null : 'next'">
+                        <a (click)="next()" [attr.href]="slideStart >= totalSlidesCount ? null : '#mdp_carousel_day3'" role="button" [attr.data-bs-slide]="slideStart >= totalSlidesCount ? null : 'next'">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff"
                             [disabled]="slideStart >= totalSlidesCount" [style.pointer-events]="slideStart >= totalSlidesCount ? 'none' : 'auto'">
                             Next
@@ -854,8 +854,8 @@
               <!-- /Day -->
 
               <!-- Day -->
-              <div class="container" *ngIf="enableDay" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel_Day" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
+              <div class="container" *ngIf="enableday4" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel_day4" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
                   data-bs-ride="carousel" data-bs-interval="3000000">
 
 
@@ -863,7 +863,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_Day" role="button" data-bs-slide="prev">
+                        <a (click)="back()" href="#mdp_carousel_day4" role="button" data-bs-slide="prev">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_000000_0_5">
                             <i class="fa fa-angle-left fs_16px fc_000000 mr10px"></i>
                             Previous
@@ -876,7 +876,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" href="#mdp_carousel_Day" role="button" data-bs-slide="next">
+                        <a (click)="next()" href="#mdp_carousel_day4" role="button" data-bs-slide="next">
                           <button type="button" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
@@ -1015,8 +1015,8 @@
               <!-- /Day -->
 
               <!-- Day -->
-              <div class="container" *ngIf="enableDay" (swipe)="onSwipe($event)">
-                <div id="mdp_carousel_Day" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
+              <div class="container" *ngIf="enableday5" (swipe)="onSwipe($event)">
+                <div id="mdp_carousel_day5" class="carousel slide we_carousel mh100vh height_auto mb10rem wec_01"
                   data-bs-ride="carousel" data-bs-interval="3000000">
 
 
@@ -1024,7 +1024,7 @@
                     <div
                       class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex mdp_oli_tray mdp_oli_tray_ext01 col_cw">
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 btn_p0 tleft">
-                        <a (click)="back()" href="#mdp_carousel_Day" role="button" data-bs-slide="prev">
+                        <a (click)="back()" href="#mdp_carousel_day5" role="button" data-bs-slide="prev">
                           <button type="button" class="btn btn_prev_v3 fs_12px fw_400 lh_22px fc_000000_0_5">
                             <i class="fa fa-angle-left fs_16px fc_000000 mr10px"></i>
                             Previous
@@ -1037,7 +1037,7 @@
                         </h4>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
-                        <a (click)="next()" [style.pointer-events]="slideStart >= totalSlidesCount ? 'none' : 'auto'" href="#mdp_carousel_Day" role="button" data-bs-slide="next">
+                        <a (click)="next()" [style.pointer-events]="slideStart >= totalSlidesCount ? 'none' : 'auto'" href="#mdp_carousel_day5" role="button" data-bs-slide="next">
                           <button type="button" [disabled]="slideStart >= totalSlidesCount" class="btn btn_next_v3 fs_15px fw_600 lh_22px fc_ffffff">
                             Next
                             <i class="fa fa-angle-right fs_16px ml10px"></i>
