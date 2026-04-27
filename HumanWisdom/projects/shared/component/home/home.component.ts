@@ -1673,7 +1673,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.commonService.getModuleList().subscribe(res => {
       if (res) {
         this.moduleList = res;
-        this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+        this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                             {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                             {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                             {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
@@ -1796,6 +1796,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         }
         case "exercises":
         case "awareness exercises":
+        case "self awareness":
+        case "self-awareness":
           {
           url = `/${SharedService.getprogramName()}/home`
           fragment = "self-awareness"
@@ -1836,7 +1838,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
        default: {
         let regexp =  this.searchinp.repeat(1);
         let searchInpt = regexp;
-        searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+        searchInpt = searchInpt.replace(/[^a-zA-Z 0-9-]/g, "");
          url=`/${SharedService.getprogramName()}/site-search/${searchInpt}`
           break;
         }
