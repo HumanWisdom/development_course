@@ -35,7 +35,8 @@ jobs:
             --base dev \
             --limit 1 \
             --json headRefOid \
-            --jq '.[0].headRefOid')
+            --jq '.[0].headRefOid' \
+            --repo ${{ github.repository }})
 
           echo "Merged PR head SHA: $PR_HEAD_SHA"
 
