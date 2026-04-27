@@ -180,13 +180,12 @@ jobs:
     steps:
       - name: Download Adults artifact from PR build
         if: needs.find-pr-build.outputs.found == 'true'
-        run: |
-          gh run download ${{ needs.find-pr-build.outputs.run_id }} \
-            --name adults-artifact \
-            --dir ./downloaded-artifacts/adults \
-            --repo ${{ github.repository }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          run_id: ${{ needs.find-pr-build.outputs.run_id }}
+          name: adults-artifact
+          path: ./downloaded-artifacts/adults
 
       - name: Download Adults artifact from fallback build
         if: needs.find-pr-build.outputs.found == 'false'
@@ -212,13 +211,12 @@ jobs:
     steps:
       - name: Download Teenagers artifact from PR build
         if: needs.find-pr-build.outputs.found == 'true'
-        run: |
-          gh run download ${{ needs.find-pr-build.outputs.run_id }} \
-            --name teenagers-artifact \
-            --dir ./downloaded-artifacts/teenagers \
-            --repo ${{ github.repository }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          run_id: ${{ needs.find-pr-build.outputs.run_id }}
+          name: teenagers-artifact
+          path: ./downloaded-artifacts/teenagers
 
       - name: Download Teenagers artifact from fallback build
         if: needs.find-pr-build.outputs.found == 'false'
