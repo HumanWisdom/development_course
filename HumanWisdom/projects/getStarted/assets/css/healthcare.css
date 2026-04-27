@@ -1,0 +1,288 @@
+.mt3rem{
+    margin-top: 3rem;
+}
+
+/* Custom slider nav footer */
+.hc-slider-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 12px;
+  width: 100%;
+  position: relative;
+}
+.hc-slider-nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* "View all blogs" link – centered without position:absolute overlay */
+.hc-view-all-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+/* Hide the empty top-image row inside testimonial cards (profile pics are removed) */
+.div_testimonials > .row:first-child {
+  display: none;
+}
+
+/* Hide OWL auto-generated nav to avoid duplicate buttons */
+.owl_blog .owl-nav,
+.owl_testimonials .owl-nav {
+  display: none !important;
+}
+.hc-arrow {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(173, 173, 173, 1);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s;
+}
+.hc-arrow:disabled {
+  opacity: 0.5;
+}
+.hc-arrow .bi {
+  font-size: 13px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Request a demo button – match hero button gradient */
+.btn_tff {
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%);
+}
+
+/* No text color change on hover for links on this page */
+a,h5:hover {
+  color: #000000;
+}
+
+/* Hover state – matches "Chat with Olly now" button hover on index page */
+.btn_tff:hover,
+.btn_tff:focus:hover {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+}
+
+/* Ensure the form section Request a demo button always matches */
+#Request-Demo,
+#Request-Demo:focus {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+  color: #ffffff !important;
+}
+#Request-Demo:hover,
+#Request-Demo:active {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+  color: #ffffff !important;
+}
+
+.section-header {
+    text-align: center;
+    padding-bottom: 40px;
+}
+.w-980px{
+    width:980px
+}
+.card{
+    width: 313px;
+    height: 145px;
+    border:none;
+    gap:10px;
+}
+.w-1245px{
+    width:1245px !important;
+}
+.gap_40px{
+    gap: 40px;
+}
+.w-384px{
+    width: 384px;;
+}
+
+.req_button{
+    width:205px
+}
+.div_dyk {
+    background: rgba(255, 249, 238, 1);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+.div_testimonials {
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  padding: 20px;
+  width: 300px !important;
+  height: 377px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.owl-carousel .owl-stage {
+    left:15%;
+}
+.div_testimonials::before {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 45px;
+  background-image:
+    url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/comma.png'),
+    url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/comma.png');
+  background-size: 30px 45px, 30px 45px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 36px 0;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+.div_subscription{
+    background: linear-gradient(92.82deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);
+}
+  .t-center{
+    text-align: center;
+  }
+  .pb_15px{
+    padding-bottom: 15px;
+  }
+@media (max-width: 767px) {
+  /* Hero section – center the block with equal padding on both sides */
+  .absolute_desc_m {
+    justify-content: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Hero heading – center on mobile */
+  .absolute_desc_m h1 {
+    text-align: center !important;
+  }
+
+  /* Description section – mobile: column (not reverse) so order is:
+     1. heading (mobile-only div)  2. image  3. paragraph */
+  .w-1245px.gap_40px {
+    flex-direction: column !important;
+  }
+  .mt0px{
+    margin-top: 0px;
+  }
+  .mb0px{
+    margin-bottom: 0px !important;
+  }
+
+
+  .hc-desc-heading-mobile h2 {
+    font-size: 18px !important;
+  }
+
+  /* Hero subtext – left-aligned on mobile */
+  .absolute_desc_m h2,
+  .absolute_desc_m h5,
+  .absolute_desc_m p {
+    text-align: left !important;
+  }
+  .d-contents{
+    display: contents;
+    text-align: center !important;
+  }
+  .gap_m24px{
+    gap: 24px;
+  }
+
+  /* Packages section – mobile */
+  .div_price.w-980px {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  /* Each card: centered, auto height, no asymmetric desktop padding */
+  .div_price .card,
+  .div_price .card.pr20px,
+  .div_price .card.plr20px,
+  .div_price .card.pl20px {
+    width: 85% !important;
+    max-width: 335px !important;
+    height: auto !important;
+    padding: 16px !important;
+    margin: 0 auto !important;
+    float: none !important;
+  }
+
+  /* Card title and description both left-aligned */
+  .div_price .card h4,
+  .div_price .card h6 {
+    text-align: left !important;
+  }
+
+  /* Request a demo button – Figma: Width Fill 335px, Height Hug 47px */
+  .req_button {
+    width: 335px !important;
+    max-width: 90% !important;
+    height: 47px !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* Hide prev/next nav buttons on mobile */
+  .hc-slider-footer {
+    display: none !important;
+  }
+
+  /* Hide scrollbars in "Did you know?" section on mobile */
+  .div_dyk {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .div_dyk::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbars in testimonials and blog owl carousel sections on mobile */
+  .owl_testimonials .owl-stage-outer,
+  .owl_blog .owl-stage-outer {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .owl_testimonials .owl-stage-outer::-webkit-scrollbar,
+  .owl_blog .owl-stage-outer::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+    .row.center_flex .col-sm-10.div_inspire,
+    .row.center_flex .col-xs-10.div_inspire,
+    .row.center_flex .col-10.div_inspire {
+    width: 980px !important;
+}
+ .row.center_flex .col-sm-10 .email-w980px, .row.center_flex .col-xs-10 .email-w980px, .row.center_flex .col-10.email-w980px{
+    width: 980px !important;
+}
+#Request-Demo{
+    width: 205px;
+}
+}

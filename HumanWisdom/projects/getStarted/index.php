@@ -218,7 +218,7 @@ require_once('./includes/security_config.php');
               style="width:100%;height:100%;display:block;" />
             <span
               aria-hidden="true"
-              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;font-size:30px;color:#fff;line-height:1;">
+              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;font-size:30px;color:#fff;line-height:1;background: rgba(0, 0, 0, 0.25);">
               &#9658;
             </span>
           </button>
@@ -612,7 +612,7 @@ require_once('./includes/security_config.php');
           <div id="fbn" class="tools-panel active">
             <div class="tools-card">
               <div class="tools-thumb">
-                <video playinline
+                <video playsinline
                   poster="https://d1tenzemoxuh75.cloudfront.net/website/rec-tool.svg"
                   controlsList="nodownload"
                   class="tools-thumb-video"

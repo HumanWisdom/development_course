@@ -39,6 +39,8 @@
     <?php include('../includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
 
+    <link rel="stylesheet" href="../assets/css/healthcare.css">
+
     <style>
       @media (max-width: 767px) {
 
@@ -154,7 +156,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
 
           <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt3rem">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive w100p display_m_none" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
 
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_mobile.webp" class="img-responsive w100p display_d_none" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
@@ -164,13 +166,13 @@
           <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10  col-10 p0 tleft">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt20px">
-                <h1 class="mtb0px fs_36px fw_600 lh_140p fc_834b66">
+                <h1 class="mtb0px fs_36px fw_600 lh_140p fc_834b66 d-contents">
                   Support your staff to be happier at work, and patients to lead healthier lives.
                 </h1>
               </div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mtb20px">
-                <h5 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000">
+                <h5 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000 d-contents">
                   Support staff to be more resilient, avoid burnout, manage their own emotions and mental health, and be more compassionate.
                   <br>
                   Empower patients to self-regulate their habits, emotions and mental health so they can lead happier and healthier lives.
@@ -208,9 +210,9 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 div_price">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 div_price w-980px justify-content-center">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 pr20px card" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
@@ -230,7 +232,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 plr20px" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 plr20px card" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
@@ -251,7 +253,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 pl20px" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 pl20px card" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
@@ -277,9 +279,9 @@
 
         <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="500">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 center_flex">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  col-12 p0">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  col-12 p0 d-contents t-center">
               <a href="#bring_happierme">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button" >
                   Request a demo
                 </button>
               </a>
@@ -292,23 +294,25 @@
       <!-- description -->
       <section>
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 flex_block">
-            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mb20px display_d_none" data-aos="fade-up" data-aos-delay="200">
-              <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
+          <div class="p0 flex_block w-1245px gap_40px gap_m24px" >
+            <!-- Mobile-only heading: shows above image on mobile -->
+            <div class="col-12 p0 tcenter display_d_none hc-desc-heading-mobile" data-aos="fade-up" data-aos-delay="100">
+              <h2 class="mtb0px fs_18px fw_600 lh_150p fc_834b66">
                 Take charge of your mental health, habits and emotions.
               </h2>
-            </div> -->
-
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pl0px cpr_a ml15px" data-aos="fade-up" data-aos-delay="100">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_app.webp" class="img-responsive healthcare_app_img" alt="Take charge of your mental health, habits and emotions.">
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mt_m24px" data-aos="fade-up" data-aos-delay="200">
-              <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pl0px cpr_a " data-aos="fade-up" data-aos-delay="100">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_app.webp" class="img-responsive" alt="Take charge of your mental health, habits and emotions.">
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mt_m24px w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
+              <!-- Desktop heading: hidden on mobile (mobile uses the div above) -->
+              <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66 display_m_none">
                 Take charge of your mental health, habits and emotions.
               </h2>
 
-              <h5 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000">
+              <h5 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000 mt0px">
                 Reduce the demand for healthcare by helping patients self-regulate their habits and manage their own mental health.
                 <br>
                 Reduce burnout, boost retention and productivity by supporting staff to develop a positive attitude, have healthy relationships, and be happier.
@@ -324,7 +328,7 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66 mb0px">
                 Did you know?
               </h2>
             </div>
@@ -332,7 +336,7 @@
         </div>
         
         <div class="row center_flex div_dyk">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12  col-12 p0 div_dyk_l1">
+          <div class="p0 div_dyk_l1 w-980px">
 
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12  col-12 p0" data-aos="fade-up" data-aos-delay="100">
               <div class="row">
@@ -483,7 +487,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jondi_whitis.webp" class="img-responsive width_unseti" alt="Jondi Whitis" loading=lazy>
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jondi_whitis.webp" class="img-responsive width_unseti" alt="Jondi Whitis" loading=lazy> -->
                       </div>
                     </div>
 
@@ -512,7 +516,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_garry_prigg.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_garry_prigg.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy>  -->
                       </div>
                     </div>
 
@@ -541,7 +545,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy>  -->
                       </div>
                     </div>
 
@@ -570,7 +574,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tim_merrick.webp" class="img-responsive width_unseti" alt="Quotation"> 
+                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tim_merrick.webp" class="img-responsive width_unseti" alt="Quotation">  -->
                       </div>
                     </div>
 
@@ -599,7 +603,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp" class="img-responsive width_unseti" alt="Quotation"> 
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp" class="img-responsive width_unseti" alt="Quotation">  -->
                       </div>
                     </div>
 
@@ -628,7 +632,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_anthony_seldon.webp" class="img-responsive width_unseti" alt="Quotation"> 
+                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_anthony_seldon.webp" class="img-responsive width_unseti" alt="Quotation">  -->
                       </div>
                     </div>
 
@@ -657,7 +661,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rod_berger.webp" class="img-responsive width_unseti" alt="Quotation"> 
+                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rod_berger.webp" class="img-responsive width_unseti" alt="Quotation">  -->
                       </div>
                     </div>
 
@@ -686,7 +690,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_laura_toop.webp" class="img-responsive width_unseti" alt="Quotation">
+                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_laura_toop.webp" class="img-responsive width_unseti" alt="Quotation"> -->
                       </div>
                     </div>
 
@@ -1233,17 +1237,16 @@
                 </a>-->
               </div>
 
-              <div class="owl-theme mt10px">
-                <div class="owl-controls">
-                  <div class="owl-nav owl-nav-w"></div>
+              <div class="hc-slider-footer w-980px">
+                <div class="hc-slider-nav-btns">
+                  <button class="hc-arrow" id="hc-testimonials-prev" aria-label="Previous" disabled>
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button class="hc-arrow" id="hc-testimonials-next" aria-label="Next">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
                 </div>
               </div>
-
-              <a class="sap" href="https://happierme.app/adults/testimonials">
-                <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                  View all Success stories
-                </h4>
-              </a>
             </div>
 
           </div>
@@ -1593,17 +1596,21 @@
                 </a>
               </div>
 
-              <div class="owl-theme mt10px">
-                <div class="owl-controls">
-                  <div class="owl-nav owl-nav-w"></div>
+              <div class="hc-slider-footer">
+                <a class="hc-view-all-link" href="https://happierme.app/adults/blogs">
+                  <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                    View all blogs
+                  </h4>
+                </a>
+                <div class="hc-slider-nav-btns">
+                  <button class="hc-arrow" id="hc-blog-prev" aria-label="Previous" disabled>
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button class="hc-arrow" id="hc-blog-next" aria-label="Next">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
                 </div>
               </div>
-
-              <a class="sap" href="https://happierme.app/adults/blogs">
-                <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                  View all blogs
-                </h4>
-              </a>
             </div>
 
           </div>
@@ -1620,6 +1627,31 @@
     <!-- vendor_footer -->
     <?php include('../includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
+
+    <script>
+      $(document).ready(function () {
+        var $tc = $('.owl_testimonials .owl-carousel');
+        var $bc = $('.owl_blog .owl-carousel');
+
+        $tc.on('changed.owl.carousel', function (e) {
+          var atStart = e.item.index === 0;
+          var atEnd = e.item.index + e.page.size >= e.item.count;
+          $('#hc-testimonials-prev').prop('disabled', atStart);
+          $('#hc-testimonials-next').prop('disabled', atEnd);
+        });
+        $('#hc-testimonials-prev').on('click', function () { $tc.trigger('prev.owl.carousel'); });
+        $('#hc-testimonials-next').on('click', function () { $tc.trigger('next.owl.carousel'); });
+
+        $bc.on('changed.owl.carousel', function (e) {
+          var atStart = e.item.index === 0;
+          var atEnd = e.item.index + e.page.size >= e.item.count;
+          $('#hc-blog-prev').prop('disabled', atStart);
+          $('#hc-blog-next').prop('disabled', atEnd);
+        });
+        $('#hc-blog-prev').on('click', function () { $bc.trigger('prev.owl.carousel'); });
+        $('#hc-blog-next').on('click', function () { $bc.trigger('next.owl.carousel'); });
+      });
+    </script>
     
   </body>
 
