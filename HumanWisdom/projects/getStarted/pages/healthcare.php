@@ -157,7 +157,7 @@
 
           <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt3rem">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive w100p display_m_none" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive w100p display_m_none h-800" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
 
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_mobile.webp" class="img-responsive w100p display_d_none" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
             </div>
@@ -165,13 +165,13 @@
 
           <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10  col-10 p0 tleft">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt20px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt20px m-tcenter">
                 <h1 class="mtb0px fs_36px fw_600 lh_140p fc_834b66 d-contents">
                   Support your staff to be happier at work, and patients to lead healthier lives.
                 </h1>
               </div>
 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mtb20px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mtb20px m-tcenter">
                 <h5 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000 d-contents">
                   Support staff to be more resilient, avoid burnout, manage their own emotions and mental health, and be more compassionate.
                   <br>
@@ -487,7 +487,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jondi_whitis.webp" class="img-responsive width_unseti" alt="Jondi Whitis" loading=lazy> -->
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jondi_whitis.webp" class="img-responsive width_unseti" alt="Jondi Whitis" loading=lazy>
                       </div>
                     </div>
 
@@ -516,7 +516,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_garry_prigg.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy>  -->
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_garry_prigg.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy> 
                       </div>
                     </div>
 
@@ -545,7 +545,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy>  -->
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_saakshi_singla.webp" class="img-responsive width_unseti" alt="Garry Prigg" loading=lazy>
                       </div>
                     </div>
 
@@ -574,7 +574,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tim_merrick.webp" class="img-responsive width_unseti" alt="Quotation">  -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tim_merrick.webp" class="img-responsive width_unseti" alt="Quotation" loading=lazy>
                       </div>
                     </div>
 
@@ -603,7 +603,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp" class="img-responsive width_unseti" alt="Quotation">  -->
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp" class="img-responsive width_unseti" alt="Quotation" loading=lazy> 
                       </div>
                     </div>
 
@@ -632,7 +632,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                      <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_anthony_seldon.webp" class="img-responsive width_unseti" alt="Quotation">  -->
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_anthony_seldon.webp" class="img-responsive width_unseti" alt="Quotation"> 
                       </div>
                     </div>
 
@@ -661,7 +661,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rod_berger.webp" class="img-responsive width_unseti" alt="Quotation">  -->
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rod_berger.webp" class="img-responsive width_unseti" alt="Quotation"> 
                       </div>
                     </div>
 
@@ -690,7 +690,7 @@
                   <div class="div_testimonials">
                     <div class="row">
                       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5  col-5">
-                        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_laura_toop.webp" class="img-responsive width_unseti" alt="Quotation"> -->
+                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_laura_toop.webp" class="img-responsive width_unseti" alt="Quotation"> 
                       </div>
                     </div>
 
@@ -1237,7 +1237,7 @@
                 </a>-->
               </div>
 
-              <div class="hc-slider-footer w-980px">
+              <div class="hc-slider-footer hc-testimonials-footer">
                 <div class="hc-slider-nav-btns">
                   <button class="hc-arrow" id="hc-testimonials-prev" aria-label="Previous" disabled>
                     <i class="bi bi-chevron-left"></i>
