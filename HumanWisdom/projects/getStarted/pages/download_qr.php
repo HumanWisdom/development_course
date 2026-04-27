@@ -367,14 +367,14 @@
                         <div class="download_qr_block download_qr_block--badges">
                           <div class="row justify-content-center align-items-start g-3 download_qr_store_badges gap_24px gap_20px" data-aos="fade-up" data-aos-delay="100">
                             <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center">
-                              <a href="https://apps.apple.com/in/app/happierme-for-a-happier-you/id1588535567">
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/appstore.png" alt="Download on the App Store"
+                              <a href="https://apps.apple.com/in/app/humanwisdom/id1588535567" target="_blank">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_appstore.svg" alt="Download on the App Store"
                                   class="img-responsive download_qr_appstore_badge" loading="lazy" decoding="async">
                               </a>
                             </div>
                             <div class="col-6 col-md-6 col-lg-5 p0 d-flex justify-content-center mart0px">
-                              <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/play.svg" alt="Get it on Google Play"
+                              <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US" target="_blank">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_playstore.svg" alt="Get it on Google Play"
                                   class="img-responsive download_qr_play_badge">
                               </a>
                             </div>
