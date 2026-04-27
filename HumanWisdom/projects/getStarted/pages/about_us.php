@@ -101,7 +101,7 @@
     <section>
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 tcenter">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_app.webp"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/aboutus_landing.webp""
             class="img-responsive w-640px w-335px_m">
         </div>
       </div>

@@ -607,11 +607,18 @@ closeHintModal() {
 }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
+    // Check if we came from micro-learning end screen
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+    
+    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+      // Clear the flags and navigate back to micro-learning end screen
+      localStorage.removeItem('fromMicroLearningEnd');
+      localStorage.removeItem('microLearningEndUrl');
+      this.router.navigateByUrl(microLearningEndUrl);
     } else {
-      this.router.navigate([url]);
+      // Default: go to home
+      this.router.navigate(['/adults/home']);
     }
   }
 
