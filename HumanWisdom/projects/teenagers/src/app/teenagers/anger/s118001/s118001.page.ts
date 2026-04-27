@@ -203,14 +203,14 @@ export class S118001Page implements OnInit,OnDestroy {
     this.router.navigate(['/teenagers/journal'])
   }
 
-  getSetModuleData(moduleId){
-    this.service.setmoduleID(moduleId);
-    this.service.getModulebyId(moduleId).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+  // getSetModuleData(moduleId){
+  //   this.service.setmoduleID(moduleId);
+  //   this.service.getModulebyId(moduleId).subscribe(res=>{
+  //     this.moduleData=res;
+  //     this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
       
-     });
-  }
+  //    });
+  // }
 
     getClickEvent(data) {
     if (!this.isSubscriber) {
