@@ -289,7 +289,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
         {"ModuleName":"Soundscapes"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
@@ -388,6 +388,8 @@ toggleAccordion() {
       }
       case "exercises":
       case "awareness exercises":
+      case "self awareness":
+      case "self-awareness":
         {
         this.route.navigate(['/adults/home'], { fragment: 'self-awareness', state: { source: 'search' } });
         return;
@@ -422,7 +424,7 @@ toggleAccordion() {
       }
      default: {
       let searchInpt = (' ' + this.searchinp).slice(1);
-      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+      searchInpt = searchInpt.replace(/[^a-zA-Z -]/g, "");
        url = `/adults/site-search/${searchInpt}`
         break;
       }
