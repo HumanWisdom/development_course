@@ -119,13 +119,3 @@ jobs:
           name: teenagers-artifact
           path: HumanWisdom/builds/compressed/program.tgz
           retention-days: 7
-
-  enable-auto-merge:
-    name: Enable Auto Merge
-    runs-on: ubuntu-latest
-    needs: [build-adults, build-teenagers]
-    steps:
-      - name: Enable auto-merge on PR
-        run: gh pr merge "${{ github.event.pull_request.number }}" --auto --merge --repo "${{ github.repository }}"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
