@@ -550,13 +550,17 @@ header a[href*="splash_options.php"] * {
 /* ---- App card (left side) ---- */
 .tools-card {
   background: rgba(255, 232, 187, 1);
-  border-radius: 16px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
   flex-shrink: 0;
   width: 343px;
   height:340px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /* Safari iOS: force GPU compositing so border-radius clips child video */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 /* Thumbnail with play button — inset with padding */
@@ -567,13 +571,18 @@ header a[href*="splash_options.php"] * {
   box-sizing: border-box;
   overflow: hidden;
   flex-shrink: 0;
+  border-radius: 12px 12px 0 0;
+  -webkit-border-radius: 12px 12px 0 0;
+  /* Safari iOS: force clip of video corners within the thumb */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 .tools-thumb-img {
   width: 100%;
   height: 206px;
   object-fit: cover;
   display: block;
-  border-radius: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
 }
 /* Feel better now: real MP4 (same as indexolder.php tools section) */
 .tools-thumb-video {
@@ -581,7 +590,8 @@ header a[href*="splash_options.php"] * {
   height: 206px;
   max-height: 206px;
   display: block;
-  border-radius: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
   background: #FFE8BB;
   object-fit: cover;
   box-sizing: border-box;
@@ -1319,11 +1329,13 @@ header a[href*="splash_options.php"] * {
   .tools-thumb-video {
     height: 178px;
     max-height: 178px;
-    border-radius: 10px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
   }
   .tools-thumb > video {
-  border-radius: 10px;
-}
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+  }
   .orcha-strip-orcha img {
     width: 80px;
   }
