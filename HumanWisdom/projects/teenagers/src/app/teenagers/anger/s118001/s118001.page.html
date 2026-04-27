@@ -252,26 +252,25 @@
       <!-- <a routerLink="(isSubscriber) ? ['/teenagers/audiopage/~podcasts~132.mp3/132/T/Managing anger, and angry people'] : ['/teenagers/subscription/start-your-free-trial']"> -->
  <a [routerLink]="isSubscriber ? ['/teenagers/audiopage/~podcasts~75.mp3/75/T/Making-better-decisions'] : ['/teenagers/subscription/start-your-free-trial']">
  
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-   <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
-              <div class="prelative">
-                <!-- <div class="row"> -->
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/132.webp" class="p0 session_img">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" 
+
+
+
+   <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex">
+                  
+                  <!-- session image -->
+                  <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
+                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/132.webp" class="p0 session_img">
+
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_session.svg" 
                         alt="Play" 
                         class="p0 session_img_play">
                   </div>
-                <!-- </div> -->
 
-               
-              </div>
-            </div>
-
-            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl20px pr0px">
-              <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_e58d82">
+                  <!-- session content -->
+                  <div class="col-md-8 col-sm-8 col-xs-8  pl10pxi">
+                    <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_e58d82">
                 Podcast
               </h4>
               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff ellipsis_02">
@@ -280,21 +279,24 @@
               <h4 class="mtb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">
                1:05:12 mins
               </h4>
-            </div>
-</div>
+                  </div>
 
-              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
-              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-            </div>
+                </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
-              <!-- lock -->
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
-              <!-- /lock -->
-            </div>
+                <!-- right side arrow / lock -->
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isLoggedIn && isSubscriber">
+                  <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                </div>
 
-          </div>
-        </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="!isLoggedIn || !isSubscriber">
+                  <!-- lock -->
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" 
+                      class="img-responsive">
+                  <!-- /lock -->
+                </div>
+              </div>
+            </div>
+      
       </a>
       <!-- /audio row -->
    <!-- hr -->
