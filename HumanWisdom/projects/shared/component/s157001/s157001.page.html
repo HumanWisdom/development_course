@@ -21,7 +21,7 @@
   </div>
 </div> -->
 <!-- /top navigation -->
- <!-- top navigation -->
+<!-- top navigation -->
 <div class="row center_flex" *ngIf="!isHome">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
@@ -53,7 +53,7 @@
 <!-- <app-bg-video></app-bg-video> -->
 
 <!-- page content -->
-<div class="right_col imain_container mc_03 " [ngClass]="{'pt8rem': !isHome}"  #screen >
+<div class="right_col imain_container mc_03 " [ngClass]="{'pt8rem': !isHome}" #screen>
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bg_stake sc_01 ">
@@ -62,10 +62,10 @@
 
             <form>
 
-            
 
-        
-                <!-- <div class="row">
+
+
+              <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt0px mb15px">
                   <h4 class="mtb0px fw_500 fs_24px lh_140p fc_ffffff">
                    
@@ -76,7 +76,9 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <h4 class="mt1b0px fw_400 fs_15px lh_140p fc_ffffff">
-                    Self-awareness involves noticing what you are thinking, feeling and doing and understanding why. It can help you regulate your emotions, build stronger relationships, think more clearly and make better decisions. These exercises only take 5 minutes a day
+                    Self-awareness involves noticing what you are thinking, feeling and doing and understanding why. It
+                    can help you regulate your emotions, build stronger relationships, think more clearly and make
+                    better decisions. These exercises only take 5 minutes a day
                   </h4>
                 </div>
               </div>
@@ -87,19 +89,23 @@
                   padding: 20px;
                   width: auto;
                 }
+
                 .section-title {
                   font-weight: 600;
                   font-size: 18px;
                   line-height: 140%;
                   color: #ffffff;
                 }
-                .chev, .chev-rot {
+
+                .chev,
+                .chev-rot {
                   display: inline-block;
                   transform: rotate(270deg);
                   font-size: 18px;
                   line-height: 1;
                   color: #ffffff !important;
                 }
+
                 .rounded-bottom {
                   transition: all 0.3s ease-in-out;
                 }
@@ -112,102 +118,93 @@
               </div>
               <!-- /separator -->
               <div class="toc_adiv">
-              <!-- Begin Here Accordion (horizontal cards) -->
-              <style>
-                .section-header {
-                  height: 75px;
-                  padding: 20px;
-                  width: auto;
-                }
-                .section-title {
-                  font-weight: 600;
-                  font-size: 18px;
-                  line-height: 140%;
-                  color: #ffffff;
-                }
-                .chev, .chev-rot {
-                  display: inline-block;
-                  transform: rotate(270deg);
-                  font-size: 18px;
-                  line-height: 1;
-                  color: #ffffff !important;
-                }
-                .rounded-bottom {
-                  transition: all 0.3s ease-in-out;
-                }
-                .card-container {
-                  overflow-x: auto;
-                  overflow-y: hidden;
-                  padding-left: 20px !important;
-                  padding-bottom: 10px;
-                  gap: 12px;
-                }
-                .odiv {
-                  overflow-x: auto;
-                  overflow-y: hidden;
-                  scrollbar-width: thin;
-                  -ms-overflow-style: auto;
-                }
-              </style>
-              <div class="toc_adiv_01">
-                <div
-                  class="d-flex justify-content-between align-items-center section-header rounded-top"
-                  (click)="toggleBegin()"
-                  (keydown.enter)="toggleBegin()"
-                  (keydown.space)="toggleBegin()"
-                  tabindex="0"
-                  role="button"
-                  [attr.aria-expanded]="beginIsExpanded"
-                  [attr.aria-controls]="'begin-cards'"
-                >
-                  <div class="d-flex flex-column">
-                    <h5 class="mb-0 section-title" id="begin-title">Begin here</h5>
+                <!-- Begin Here Accordion (horizontal cards) -->
+                <style>
+                  .section-header {
+                    height: 75px;
+                    padding: 20px;
+                    width: auto;
+                  }
+
+                  .section-title {
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 140%;
+                    color: #ffffff;
+                  }
+
+                  .chev,
+                  .chev-rot {
+                    display: inline-block;
+                    transform: rotate(270deg);
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #ffffff !important;
+                  }
+
+                  .rounded-bottom {
+                    transition: all 0.3s ease-in-out;
+                  }
+
+                  .card-container {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    padding-left: 20px !important;
+                    padding-bottom: 10px;
+                    gap: 12px;
+                  }
+
+                  .odiv {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    scrollbar-width: thin;
+                    -ms-overflow-style: auto;
+                  }
+                </style>
+                <div class="toc_adiv_01">
+                  <div class="d-flex justify-content-between align-items-center section-header rounded-top"
+                    (click)="toggleBegin()" (keydown.enter)="toggleBegin()" (keydown.space)="toggleBegin()" tabindex="0"
+                    role="button" [attr.aria-expanded]="beginIsExpanded" [attr.aria-controls]="'begin-cards'">
+                    <div class="d-flex flex-column">
+                      <h5 class="mb-0 section-title" id="begin-title">Begin here</h5>
+                    </div>
+                    <div class="text-muted">
+                      <span class="chev" *ngIf="beginIsExpanded">></span>
+                      <span class="chev-rot" *ngIf="!beginIsExpanded">></span>
+                    </div>
                   </div>
-                  <div class="text-muted">
-                    <span class="chev" *ngIf="beginIsExpanded">></span>
-                    <span class="chev-rot" *ngIf="!beginIsExpanded"><</span>
-                  </div>
-                </div>
-                <div
-                  class="rounded-bottom"
-                  [@slideDown]="beginIsExpanded ? 'expanded' : 'collapsed'"
-                  id="begin-cards"
-                  role="region"
-                  aria-labelledby="begin-title"
-                >
-                  <div *ngIf="beginHereCards && beginHereCards.length">
-                    <div class="d-flex card-container" [ngClass]="beginIsExpanded ? 'odiv' : ''">
-                      <div *ngFor="let card of beginHereCards">
-                        <app-content-card
-                          [card]="card"
-                          (cardClick)="onCardClick($event)"
-                        ></app-content-card>
+                  <div class="rounded-bottom" [@slideDown]="beginIsExpanded ? 'expanded' : 'collapsed'" id="begin-cards"
+                    role="region" aria-labelledby="begin-title">
+                    <div *ngIf="beginHereCards && beginHereCards.length">
+                      <div class="d-flex card-container" [ngClass]="beginIsExpanded ? 'odiv' : ''">
+                        <div *ngFor="let card of beginHereCards">
+                          <app-content-card [card]="card" (cardClick)="onCardClick($event)"></app-content-card>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- /Begin Here Accordion -->
-              <!-- separator -->
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <hr class="hr_style_v4 mb20px">
+                <!-- /Begin Here Accordion -->
+                <!-- separator -->
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                    <hr class="hr_style_v4 mb20px">
+                  </div>
                 </div>
-              </div>
-              <!-- /separator -->
-               
+                <!-- /separator -->
+
                 <a routerLink="/teenagers/self-awareness/s157002/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_01.svg" class="img-responsive w100 img_podcast_01">
-                           
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_01.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           See the world freshly
                         </h4>
@@ -230,16 +227,16 @@
                 <a routerLink="/teenagers/self-awareness/s157003/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
+
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_02.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_02.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Notice your body
                         </h4>
@@ -248,11 +245,13 @@
                         </h4>
                       </div>
 
-            
+
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -263,16 +262,16 @@
                 <a routerLink="/teenagers/self-awareness/s157004/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
+
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_03.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_03.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Understand your thoughts
                         </h4>
@@ -281,11 +280,13 @@
                         </h4>
                       </div>
 
-            
+
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -296,16 +297,16 @@
                 <a routerLink="/teenagers/self-awareness/s157005/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
-                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_04.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_04.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Understand your feelings
                         </h4>
@@ -314,11 +315,13 @@
                         </h4>
                       </div>
 
-             
+
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -329,16 +332,16 @@
                 <a routerLink="/teenagers/self-awareness/s157006/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
+
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_05.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_05.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ">
                           Understand the link between thoughts and feelings
                         </h4>
@@ -347,11 +350,13 @@
                         </h4>
                       </div>
 
-          
+
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -362,16 +367,16 @@
                 <a routerLink="/teenagers/self-awareness/s157007/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
+
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_06.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_06.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Explore judgement
                         </h4>
@@ -380,11 +385,13 @@
                         </h4>
                       </div>
 
-             
+
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -395,16 +402,16 @@
                 <a routerLink="/teenagers/self-awareness/s157008/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
-                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_07.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_07.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Question your thoughts and feelings
                         </h4>
@@ -416,7 +423,9 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -427,16 +436,16 @@
                 <a routerLink="/teenagers/self-awareness/s157009/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
+
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_08.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_08.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Card exercises
                         </h4>
@@ -448,7 +457,9 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -459,16 +470,16 @@
                 <a routerLink="/teenagers/self-awareness/s157010/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
+
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_09.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_09.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Look without reacting
                         </h4>
@@ -476,11 +487,13 @@
                           7 days
                         </h4>
                       </div>
-                      
+
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -491,16 +504,16 @@
                 <a routerLink="/teenagers/self-awareness/s157011/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
+
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_10.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_10.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Zoom out / zoom in
                         </h4>
@@ -508,11 +521,13 @@
                           8 days
                         </h4>
                       </div>
-                      
+
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -523,16 +538,16 @@
                 <a routerLink="/teenagers/self-awareness/s157012/">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
+
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p10 tcenter">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_11.svg" class="img-responsive w100 img_podcast_01">
-                           
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_11.svg"
+                          class="img-responsive w100 img_podcast_01">
+
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Who am I?
                         </h4>
@@ -544,7 +559,9 @@
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
                         <i class="fa fa-angle-right fc_ffffff fs_20px" *ngIf="!isGuest"></i>
                         <!-- lock -->
-                        <img *ngIf="isGuest" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg" class="img-responsive">
+                        <img *ngIf="isGuest"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive">
                         <!-- /lock -->
                       </div>
 
@@ -562,9 +579,7 @@
                            
                       </div>
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Exploring the masks we wear
                         </h4>
@@ -583,14 +598,12 @@
                     </div>
                   </div>
                 </a> -->
-             <!--    <a routerLink="/teenagers/self-awareness/s157013/">
+                <!--    <a routerLink="/teenagers/self-awareness/s157013/">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       
                       <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Exploring the masks we wear
                         </h4>
@@ -614,9 +627,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       
                       <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Scenarios
                         </h4>
@@ -641,9 +652,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       
                       <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Being grateful
                         </h4>
@@ -667,9 +676,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                       
                       <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-                        <h4 class="mt0px mb5px fs_12px fw_400 lh_130p fc_ffffff">
-                          Exercise
-                        </h4>
+
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_e58d82 ellipsis_01">
                           Connecting with silence
                         </h4>
@@ -692,8 +699,8 @@
 
               <div class="pagebreak"></div>
 
-            </form>  
-          
+            </form>
+
           </div>
         </div>
       </div>
