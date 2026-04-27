@@ -38,6 +38,8 @@ export class S124001Page implements OnInit,OnDestroy {
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+      isContentsOpen = false;
+
   isSubscriber = false;
   moduleData:ProgramModel;
 
@@ -142,6 +144,9 @@ export class S124001Page implements OnInit,OnDestroy {
   {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  }
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
 
   toggleBookmark()

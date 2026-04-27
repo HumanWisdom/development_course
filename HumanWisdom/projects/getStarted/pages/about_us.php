@@ -1383,20 +1383,19 @@ We gratefully acknowledge the contributions of the following content experts, an
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1000">
 
-            <a href="https://www.linkedin.com/in/nicolerunyonlmsw">
+            <a href="https://www.linkedin.com/in/artichander/">
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
-                    Nicole Runyon </h6>
+                   Art Chander Byrd </h6>
                 </div>
               </div>
             </a>
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  Psychotherapist and parent coach based in Detroit, USA.
-                </h4>
+Executive corporate HR, Culture and Wellbeing Leader.                </h4>
               </div>
             </div>
 

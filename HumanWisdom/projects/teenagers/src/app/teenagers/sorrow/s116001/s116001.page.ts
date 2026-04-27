@@ -21,6 +21,8 @@ export class S116001Page implements OnInit,OnDestroy {
   moduleId:any
   screenNumber="116001"
   startTime:any
+        isContentsOpen = false;
+
   endTime:any
   totalTime:any
   bookmark:any
@@ -128,6 +130,10 @@ export class S116001Page implements OnInit,OnDestroy {
       this.bookmark=0
 
   }
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
+  
   createScreen(){
     this.service.createScreen({
       "ScrId":0,

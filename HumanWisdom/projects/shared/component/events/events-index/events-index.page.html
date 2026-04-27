@@ -52,7 +52,7 @@
                           class="accordion-button mtb0px fs_18px fw_600 lh_24px d-flex justify-content-between align-items-center"
                           type="button" (click)="toggleEventsAccordion()" [attr.aria-expanded]="isEventsOpen"
                           [class.collapsed]="!isEventsOpen" aria-controls="collapse_01">
-                          Upcoming Free Events
+                          Upcoming free events
                           <i class="fa" [ngClass]="{'fa-angle-up': !isEventsOpen, 'fa-angle-down': isEventsOpen}"></i>
                         </button>
                       </h2>
@@ -64,7 +64,7 @@
                               <div class="toc_adiv_02">
                                 <!-- video row -->
                                 <a (click)="routeFutureEvents(item)" *ngFor="let item of futureeventList">
-                                  <div class="row mb0pxi p10px">
+                                  <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                                       <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative text-center">
                                         <img src="{{item.ImgUrl}}" alt="" class="p0 session_img session_imgnew" />
