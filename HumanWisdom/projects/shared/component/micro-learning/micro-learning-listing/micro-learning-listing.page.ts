@@ -52,7 +52,6 @@ export class MicroLearningListingPage implements OnInit {
     }
 
     this.getMicroLearningList();
-    this.selectedPref = 'all';
   }
 
   getMicroLearningList() {
@@ -97,12 +96,26 @@ export class MicroLearningListingPage implements OnInit {
         });
 
         const fragment = this.activatedRoute.snapshot.fragment;
+        const savedTab = localStorage.getItem('microlearningSelectedTab');
+
         if (fragment) {
           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
           if (match) {
             this.getUserPref(match.id);
           }
+        } else if (savedTab) {
+          this.getUserPref(savedTab);
+        } else {
+          this.getUserPref('all');
         }
+
+        const lastId = localStorage.getItem('lastMicrolearningId');
+        if (lastId) {
+          setTimeout(() => {
+            this.scrollToMicroLearning(lastId);
+          }, 400);
+        }
+
         setTimeout(() => {
           this.scrollToActiveTab();
         }, 200);
@@ -114,6 +127,8 @@ export class MicroLearningListingPage implements OnInit {
   }
 
   goBack() {
+    localStorage.removeItem('microlearningSelectedTab');
+    localStorage.removeItem('lastMicrolearningId');
     var url = this.navigationService.navigateToBackLink();
     if (url != null) {
       this.router.navigateByUrl(url);
@@ -168,6 +183,14 @@ export class MicroLearningListingPage implements OnInit {
     }
   }
 
+  scrollToMicroLearning(id) {
+    const element = document.getElementById('ml-' + id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      localStorage.removeItem('lastMicrolearningId');
+    }
+  }
+
   navigateToInner(item) {
     if (!this.isSubscriber && item.isFree === '0') {
       this.showModal = true;
@@ -177,6 +200,10 @@ export class MicroLearningListingPage implements OnInit {
     localStorage.removeItem('fromMicroLearningEnd');
     localStorage.removeItem('ml_index_' + item.id);
     localStorage.removeItem('persist_ml_index');
+    
+    localStorage.setItem('microlearningSelectedTab', this.selectedPref);
+    localStorage.setItem('lastMicrolearningId', item.id);
+
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/micro-learning/inner`, item.id]);
   }
