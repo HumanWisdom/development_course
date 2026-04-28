@@ -31,9 +31,11 @@
 }
 
 
-/* Hide the empty top-image row inside testimonial cards (profile pics are removed) */
-.div_testimonials > .row:first-child {
-  display: none;
+
+/* Testimonials & blog footer: inset buttons to align with OWL stagePadding: 50 */
+.hc-testimonials-footer,
+.owl_blog .hc-slider-footer {
+  padding-right: 12rem;
 }
 
 /* Hide OWL auto-generated nav to avoid duplicate buttons */
@@ -139,23 +141,15 @@ a,h5:hover {
   display: flex;
   flex-direction: column;
 }
+.owl_testimonials .div_testimonials img {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+}
 .owl-carousel .owl-stage {
     left:15%;
 }
-.div_testimonials::before {
-  content: '';
-  display: block;
-  width: 70px;
-  height: 45px;
-  background-image:
-    url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/comma.png'),
-    url('https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/comma.png');
-  background-size: 30px 45px, 30px 45px;
-  background-repeat: no-repeat, no-repeat;
-  background-position: 0 0, 36px 0;
-  flex-shrink: 0;
-  margin-bottom: 4px;
-}
+
 .div_subscription{
     background: linear-gradient(92.82deg, #FCE6E4 -1.46%, #FCEFEB 53.2%, #FCCBCD 112.47%);
 }
@@ -207,6 +201,9 @@ a,h5:hover {
   }
   .gap_m24px{
     gap: 24px;
+  }
+  .m-tcenter{
+    text-align: center;
   }
 
   /* Packages section – mobile */
@@ -284,5 +281,12 @@ a,h5:hover {
 }
 #Request-Demo{
     width: 205px;
+}
+.absolute_desc{
+    width: 1245px !important;
+
+}
+.h-800{
+    height: 800px;
 }
 }
