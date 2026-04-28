@@ -110,15 +110,15 @@ export class S130001Page implements OnInit,OnDestroy {
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/manage-your-emotions');
 
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
 
     
@@ -142,6 +142,12 @@ export class S130001Page implements OnInit,OnDestroy {
       console.log("show")
     }
    
+    // continue where you left    
+    this.service.clickModule(130, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()

@@ -36,7 +36,7 @@
         </a>
       </div>
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-        <a (click)="Resume('/teenagers/fear-anxiety');" [routerLink]="['/teenagers/fear-anxiety', pgResume]" *ngIf="lastvisited">
+        <a [routerLink]="['/teenagers/fear-anxiety', pgResume]" *ngIf="lastvisited">
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>

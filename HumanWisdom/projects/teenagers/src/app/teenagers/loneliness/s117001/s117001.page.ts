@@ -117,15 +117,15 @@ export class S117001Page implements OnInit,OnDestroy {
     // /continue where you left
 
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
 
     
@@ -149,6 +149,12 @@ export class S117001Page implements OnInit,OnDestroy {
       console.log("show")
     }
    
+    // continue where you left    
+    this.service.clickModule(117, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
