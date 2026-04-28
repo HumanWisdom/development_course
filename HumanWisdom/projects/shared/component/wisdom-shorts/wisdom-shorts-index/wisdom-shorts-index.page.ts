@@ -135,7 +135,12 @@ export class WisdomShortsIndexPage implements OnInit {
 
         }
         else {          
-           this.getUserPref("all")
+          const savedTab = localStorage.getItem('wisdomShortsSelectedTab');
+          if (savedTab) {
+            this.getUserPref(savedTab);
+          } else {
+            this.getUserPref("all")
+          }
         }
 
         localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
@@ -149,6 +154,14 @@ export class WisdomShortsIndexPage implements OnInit {
              }, 200);
            }
         }
+
+        const lastId = localStorage.getItem('lastWisdomShortId');
+        if (lastId) {
+          setTimeout(() => {
+            this.scrollToShort(lastId);
+          }, 400);
+        }
+
         setTimeout(() => {
           this.scrollToActiveTab();
         }, 200);
@@ -157,6 +170,8 @@ export class WisdomShortsIndexPage implements OnInit {
   }
 
   goBack() {
+    localStorage.removeItem('wisdomShortsSelectedTab');
+    localStorage.removeItem('lastWisdomShortId');
     var url = this.navigationService.navigateToBackLink();
     if (url != null) {
       this.router.navigate([url]);
@@ -200,11 +215,15 @@ export class WisdomShortsIndexPage implements OnInit {
       if (res === true) {
         // Mark origin so swipe-for-next is enabled only from index
         localStorage.setItem('fromIndex', 'true');
+        localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
+        localStorage.setItem('lastWisdomShortId', id.toString());
         this.router.navigate([route, 'T', title], extras);
       } else {
         if (loggedin === 'T' && sub === '1') {
           // Mark origin so swipe-for-next is enabled only from index
           localStorage.setItem('fromIndex', 'true');
+          localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
+          localStorage.setItem('lastWisdomShortId', id.toString());
           this.router.navigate([route, 'T', title], extras);
         } else {
           this.showModal = true;
@@ -213,7 +232,7 @@ export class WisdomShortsIndexPage implements OnInit {
     });
   }
 
-  private extractShortIdFromUrl(url: string): number | null {
+  public extractShortIdFromUrl(url: string): number | null {
     if (!url) return null;
     const withoutQuery = url.split('?')[0];
     const filename = (withoutQuery.split('/').pop() || withoutQuery).toString();
@@ -283,6 +302,14 @@ export class WisdomShortsIndexPage implements OnInit {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+  }
+
+  scrollToShort(id) {
+    const element = document.getElementById('short-' + id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      localStorage.removeItem('lastWisdomShortId');
     }
   }
 

@@ -91,7 +91,7 @@
               <div class="toc_adiv_02">
                 <ng-container *ngFor="let data of wisdomshorts; let i=index">
                   <!-- video row -->
-                  <a (click)="wisdoshortsevent(data, data['VideoUrl'], data['Title'])">
+                  <a (click)="wisdoshortsevent(data, data['VideoUrl'], data['Title'])" id="short-{{extractShortIdFromUrl(data['VideoUrl'])}}">
                     <div class="row ">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative text-center">
