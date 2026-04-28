@@ -2529,26 +2529,30 @@
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 8px !important;
+    gap: 10px !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
+  .banner_close_logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-shrink: 0 !important;
+  }
+
   .banner_close {
-    /* flex-shrink: 0 !important;
+    flex-shrink: 0 !important;
     width: 16px !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important; */
-    padding-top: 11px;
-    max-width: 21px;
-    padding-right: 0px !important;
+    justify-content: center !important;
   }
 
   .banner_close img {
-    width: 14px !important;
-    height: 14px !important;
+    width: 10px !important;
+    height: 10px !important;
   }
 
   .banner_logo {
@@ -2575,7 +2579,7 @@
   .rating_row {
     display: flex !important;
     align-items: center !important;
-    gap: 4px !important;
+    gap: 6px !important;
   }
 
   .rating_icon {
@@ -2622,7 +2626,6 @@
     color: #FFFFFF !important;
     border: none !important;
     white-space: nowrap !important;
-    margin-left: -22px;
   }
 
   /* Mobile footer accordion icons - white - OVERRIDE ALL BASE STYLES */

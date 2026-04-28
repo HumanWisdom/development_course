@@ -166,7 +166,7 @@
           <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10  col-10 p0 tleft">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt20px m-tcenter">
-                <h1 class="mtb0px fs_36px fw_600 lh_140p fc_834b66 d-contents">
+                <h1 class="mtb0px fs_36px fw_600 lh_140p d-contents" style="color: #803358;">
                   Support your staff to be happier at work, and patients to lead healthier lives.
                 </h1>
               </div>
@@ -182,7 +182,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 p0">
                   <a href="#bring_happierme">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button">
                       Request a demo
                     </button>
                   </a>
@@ -202,7 +202,7 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p" style="color: rgba(128, 51, 88, 1);">
                 Packages to suit your needs
               </h2>
             </div>
@@ -297,7 +297,7 @@
           <div class="p0 flex_block w-1245px gap_40px gap_m24px" >
             <!-- Mobile-only heading: shows above image on mobile -->
             <div class="col-12 p0 tcenter display_d_none hc-desc-heading-mobile" data-aos="fade-up" data-aos-delay="100">
-              <h2 class="mtb0px fs_18px fw_600 lh_150p fc_834b66">
+              <h2 class="mtb0px fs_18px fw_600 lh_150p" style="color: rgba(128, 51, 88, 1);">
                 Take charge of your mental health, habits and emotions.
               </h2>
             </div>
@@ -306,15 +306,17 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_app.webp" class="img-responsive" alt="Take charge of your mental health, habits and emotions.">
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mt_m24px w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mt_m24px w-384px mt0px" data-aos="fade-up" data-aos-delay="200" style="display:flex;flex-direction:column;gap:16px;">
               <!-- Desktop heading: hidden on mobile (mobile uses the div above) -->
-              <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66 display_m_none">
+              <h2 class="mtb0px fs_24px fw_600 lh_150p display_m_none" style="color: rgba(128, 51, 88, 1);">
                 Take charge of your mental health, habits and emotions.
               </h2>
 
-              <h5 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000 mt0px">
+              <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
                 Reduce the demand for healthcare by helping patients self-regulate their habits and manage their own mental health.
-                <br>
+              </h5>
+
+              <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
                 Reduce burnout, boost retention and productivity by supporting staff to develop a positive attitude, have healthy relationships, and be happier.
               </h5>
             </div>
@@ -328,7 +330,7 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66 mb0px">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p mb0px" style="color: rgba(128, 51, 88, 1);">
                 Did you know?
               </h2>
             </div>

@@ -202,7 +202,11 @@ require_once('../includes/security_config.php');
         <div class="youtube-player">
           <button id="youtubeIntroCover" type="button" aria-label="Play HappierMe intro video">
             <img src="https://d1tenzemoxuh75.cloudfront.net/website/yt_cover.svg" alt="HappierMe video cover" />
-            <span class="mind-youtube-play-icon" aria-hidden="true">&#9658;</span>
+            <span class="mind-youtube-play-icon" aria-hidden="true">
+              <svg width="18.37" height="19.18" viewBox="0 0 18.37 19.18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.37 9.59L0 0V19.18L18.37 9.59Z" fill="rgba(234,234,234,1)"/>
+              </svg>
+            </span>
           </button>
           <iframe id="youtubeIntro" src="about:blank"
             data-src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?autoplay=1&rel=0&modestbranding=1&playsinline=1"
