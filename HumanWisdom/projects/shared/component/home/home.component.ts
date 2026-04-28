@@ -1799,6 +1799,30 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         case "self awareness":
         case "self-awareness":
           {
+          // If already on the home page, directly activate the Self Awareness nav item
+          // instead of relying on router.navigate (which ignores same-URL navigation)
+          const currentUrl = this.router.url.split('#')[0].split('?')[0];
+          const homeUrl = `/${SharedService.getprogramName()}/home`;
+          if (currentUrl === homeUrl) {
+            // Find the Self Awareness item from the UI-bound personalisedList
+            // so that onNavigationClick updates the correct active state in the template
+            const selfAwarenessItem = this.personalisedList.find(item => 
+              this.normalizeHash(item.displayName) === 'selfawareness'
+            );
+            if (selfAwarenessItem) {
+              this.searchResult = [];
+              this.toggleBodyScroll(false);
+              (document.activeElement as HTMLElement)?.blur();
+              this.onNavigationClick(selfAwarenessItem);
+              // Scroll to top so the Self Awareness content is visible
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                this.scrollToActiveList();
+              }, 300);
+              return;
+            }
+          }
+          // Fallback: navigate via router (when on a different page)
           url = `/${SharedService.getprogramName()}/home`
           fragment = "self-awareness"
           break;
