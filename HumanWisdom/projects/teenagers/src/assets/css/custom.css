@@ -21796,20 +21796,25 @@ input {
   height: 293.88px;
 }
 
-.carousel-inner>.item {
+.carousel-inner>.carousel-item {
   height: 332.88px;
 }
 
 @media (min-width: 768px) {
-  .carousel-inner>.item {
+  .carousel-inner>.carousel-item {
     height: 380.88px;
   }
 }
 
 @media (min-width: 1200px) {
-  .carousel-inner>.item {
+  .carousel-inner>.carousel-item {
     height: 332.88px;
   }
+}
+
+.carousel-item {
+  overflow: hidden;
+  position: relative;
 }
 
 .carousel-control .fa-chevron-right,
@@ -30891,7 +30896,7 @@ svg path
   margin-bottom: 10rem;
 }
 
-.wec_01 .carousel-inner .item {
+.wec_01 .carousel-inner .carousel-item {
   transition: -webkit-transform 0s;
   transition: transform 0s;
   transition: transform 0s;
