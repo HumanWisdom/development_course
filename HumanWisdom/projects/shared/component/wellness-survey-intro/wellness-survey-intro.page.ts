@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 import { Location } from "@angular/common";
 import { Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
@@ -12,6 +13,14 @@ import { OnboardingService } from '../../services/onboarding.service';
   selector: 'app-wellness-survey-intro',
   templateUrl: './wellness-survey-intro.page.html',
   styleUrls: ['./wellness-survey-intro.page.scss'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        animate('0.6s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
+  ]
 })
 export class WellnessSurveyIntroPage implements OnInit {
   isAdults = true;
