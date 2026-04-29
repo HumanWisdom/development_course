@@ -218,8 +218,10 @@ require_once('./includes/security_config.php');
               style="width:100%;height:100%;display:block;" />
             <span
               aria-hidden="true"
-              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;font-size:30px;color:#fff;line-height:1;background: rgba(0, 0, 0, 0.25);">
-              &#9658;
+              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0,0,0,0.25);">
+              <svg width="18.37" height="19.18" viewBox="0 0 18.37 19.18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.37 9.59L0 0V19.18L18.37 9.59Z" fill="rgba(234,234,234,1)"/>
+              </svg>
             </span>
           </button>
           <iframe

@@ -496,40 +496,42 @@
 
 <!-- sticky rating banner - MOBILE VERSION -->
 <div id="closeableElement" class="sticky_rating_banner display_df_none display_d_none">
-  <div class="row">
+  <div class="sticky_banner_inner">
 
-    <div class="banner_close">
-      <a class="" href="javascript:void(0);" onclick="closeElement();">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_close_grey.svg" class="img-responsive" alt="close">
-      </a>
+    <div class="banner_close_logo">
+      <div class="banner_close">
+        <a class="" href="javascript:void(0);" onclick="closeElement();">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/webpage_close_grey.svg" class="img-responsive" alt="close">
+        </a>
+      </div>
+
+      <div class="banner_logo">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/happiermeicon_mobile.svg" alt="banner">
+      </div>
     </div>
 
-    <div class="banner_logo" style="width: 46px !important;">
-      <img src="https://d1tenzemoxuh75.cloudfront.net/website/happiermeicon.svg" alt="banner">
-    </div>
-
-    <div class="banner_ratings" style="padding-left:0 !important;">
+    <div class="banner_ratings">
       <div class="rating_row">
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_appstore.svg" class="rating_icon" alt="app">
         <span class="rating_text">App store</span>
         <span class="rating_score">4.8</span>
-        <span class="rating_star"><img class="pb_4px" src ="https://d1tenzemoxuh75.cloudfront.net/website/star_vector.svg" alt="star" ></span>
+        <span class="rating_star"><img class="pb_4px" src="https://d1tenzemoxuh75.cloudfront.net/website/star_vector.svg" alt="star"></span>
       </div>
       <div class="rating_row">
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/wh_playstore.svg" class="rating_icon" alt="playstore">
         <span class="rating_text">Google Play</span>
         <span class="rating_score">4.8</span>
-        <span class="rating_star"><img class="pb_4px" src ="https://d1tenzemoxuh75.cloudfront.net/website/star_vector.svg" alt="star"  ></span>
+        <span class="rating_star"><img class="pb_4px" src="https://d1tenzemoxuh75.cloudfront.net/website/star_vector.svg" alt="star"></span>
       </div>
     </div>
 
-    <div class="banner_button" style="width: 20%;">
+    <div class="banner_button">
       <a href="https://onelink.to/qsptex" class="">
         <button class="btn_download">Download app</button>
       </a>
     </div>
 
-  </div>  
+  </div>
 </div>
 <!-- /sticky rating banner - MOBILE VERSION -->
 <script>

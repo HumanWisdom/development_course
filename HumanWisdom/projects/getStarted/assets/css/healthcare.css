@@ -80,6 +80,22 @@ a,h5:hover {
   color: #000000;
 }
 
+/* Package cards: prevent global h6:hover colour/underline change */
+.div_price .card h4,
+.div_price .card h4:hover,
+.div_price .card h4 *,
+.div_price .card h4 *:hover {
+  color: #cb6171 !important;
+  text-decoration: none !important;
+}
+.div_price .card h6,
+.div_price .card h6:hover,
+.div_price .card h6 *,
+.div_price .card h6 *:hover {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
 /* Hover state – matches "Chat with Olly now" button hover on index page */
 .btn_tff:hover,
 .btn_tff:focus:hover {
@@ -121,8 +137,11 @@ a,h5:hover {
     width: 384px;;
 }
 
-.req_button{
-    width:205px
+.req_button {
+  width: 205px !important;
+  height: 47px !important;
+  padding: 13px 40px !important;
+  border-radius: 24px !important;
 }
 .div_dyk {
     background: rgba(255, 249, 238, 1);
