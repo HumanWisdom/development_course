@@ -148,6 +148,9 @@ export class S115001Page implements OnInit,OnDestroy {
     this.socialShare=true
   }
 
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   toggleBookmark()
   {
     if(this.bookmark==0)
