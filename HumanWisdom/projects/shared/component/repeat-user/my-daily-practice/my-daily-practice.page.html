@@ -345,28 +345,17 @@
 
 
 
-                <div class="toc_adiv_imgmynew ">
-
+                <div class="toc_adiv_imgmynew " (click)="goToSubscribe()" (keydown.enter)="goToSubscribe()" style="cursor: pointer;">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="isAdults">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start.svg" alt=""
                           class="p0 session_img">
-
-                        <!-- <div class="progress dprogress">
-                        <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div> -->
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="!isAdults">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_teen.svg"
                           alt="" class="p0 session_img">
-
-                        <!-- <div class="progress dprogress">
-                        <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div> -->
                       </div>
                       <!-- show only when user is NOT subscribed -->
 
@@ -383,15 +372,8 @@
                         </div>
                       </div>
 
-
-
-                      <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                      <i class="fa fa-angle-right fc_000000 fs_20px"></i>
-                    </div> -->
-
                     </div>
                   </div>
-
                 </div>
 
                 <!-- CONTINUE WHERE YOU LEFT -->
