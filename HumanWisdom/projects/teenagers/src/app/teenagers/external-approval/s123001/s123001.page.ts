@@ -19,6 +19,8 @@ export class S123001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+        isContentsOpen = false;
+
   bookmarkList=[]
   path = setTimeout(() => {
     return this.router.url;
@@ -106,15 +108,15 @@ export class S123001Page implements OnInit,OnDestroy {
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/understand-how-your-mind-works');
 
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
 
     
@@ -138,6 +140,12 @@ export class S123001Page implements OnInit,OnDestroy {
       console.log("show")
     }
    
+     // continue where you left    
+    this.service.clickModule(123, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -156,7 +164,9 @@ export class S123001Page implements OnInit,OnDestroy {
     else
       this.bookmark=0
   }
-
+toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   createScreen()
   {
     this.service.createScreen({
