@@ -129,9 +129,6 @@ body.page-mind #youtubeIntroCover .mind-youtube-play-icon {
   height: 48px;
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.25);
-  font-size: 30px;
-  color: #fff;
-  line-height: 1;
   pointer-events: none;
 }
 .content {
