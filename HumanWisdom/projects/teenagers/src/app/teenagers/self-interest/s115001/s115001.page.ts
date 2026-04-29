@@ -38,7 +38,7 @@ export class S115001Page implements OnInit,OnDestroy {
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
-
+        isContentsOpen = false;
   moduleData:ProgramModel;
 
   constructor
