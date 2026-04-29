@@ -164,8 +164,16 @@
         <div class="user-avatar">
           <img [src]="userAvatarUrl" class="avatar-img" alt="User avatar" (error)="onAvatarError($event)" />
         </div>
-        <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"
-          (keypress)="onKeyPress($event)" [disabled]="isLoading" #messageInput />
+
+        <textarea 
+  id="autoResize" 
+  placeholder="Reply..." 
+  rows="1"class="message-input" [(ngModel)]="currentMessage"
+          (keypress)="onKeyPress($event)" [disabled]="isLoading" #messageInput 
+  style="overflow:hidden; resize:none; width:100%; border:none"
+></textarea>
+        <!-- <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"
+          (keypress)="onKeyPress($event)" [disabled]="isLoading" #messageInput /> -->
         <button class="send-button" (click)="onSendMessage()" [disabled]="!currentMessage.trim() || isLoading">
           <svg *ngIf="!isLoading" width="16" height="16" viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -207,3 +215,20 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  const textarea = document.getElementById("autoResize");
+
+  function autoResize(el) {
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  }
+
+  textarea.addEventListener("input", function () {
+    autoResize(this);
+  });
+
+  // Optional: run once on load (if pre-filled text exists)
+  autoResize(textarea);
+</script>
