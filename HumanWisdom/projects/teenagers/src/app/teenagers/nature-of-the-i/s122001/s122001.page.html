@@ -6,7 +6,7 @@
     
     <div class="clearfix"></div>
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 mb30px">
         <h4 class="txt_comparison">
           If we want to understand ourselves we need to ask 'Who am I?', 'Who feels the stress and anxiety?'. Just like all computers share the same operating system which we cannot see, deep down, our minds function in similar ways. In this module we explore the features of the 'I' or the 'Me', that are common to us all. Understanding this can bring illumination, wisdom, and peace.
 
@@ -43,7 +43,9 @@
         </a>
       </div>
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-        <a  (click)="Resume('/teenagers/nature-of-the-i/');"  *ngIf="lastvisited">
+        <!-- <a  (click)="Resume('/teenagers/nature-of-the-i/');"  *ngIf="lastvisited"> -->
+                            <a [routerLink]="['/teenagers/nature-of-the-i', pgResume]" *ngIf="lastvisited">
+
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
