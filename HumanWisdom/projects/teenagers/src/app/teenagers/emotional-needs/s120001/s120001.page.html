@@ -6,7 +6,7 @@
     
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 mb30px">
         <h4 class="txt_comparison">
           
 We have many emotional needs that we are not aware of, like a need 
@@ -39,7 +39,7 @@ allows us to have happier relationships and live with a sense of peace.
       </div>
     </div>
 
-    <div class="toc_adiv"> -->/
+    <div class="toc_adiv"> -->
 
        <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -48,7 +48,9 @@ allows us to have happier relationships and live with a sense of peace.
         </a>
       </div>
       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-        <a (click)="Resume('/teenagers/emotional-needs/');"  *ngIf="lastvisited">
+        <!-- <a (click)="Resume('/teenagers/emotional-needs/');"  *ngIf="lastvisited"> -->
+                  <a [routerLink]="['/teenagers/emotional-needs', pgResume]" *ngIf="lastvisited">
+
           <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
         </a>
       </div>
