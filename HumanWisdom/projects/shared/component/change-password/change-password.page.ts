@@ -5,6 +5,8 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { LogEventService } from '../../services/log-event.service';
 import { SharedService } from "../../services/shared.service";
 import { ProgramType } from "../../models/program-model";
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-common-change-password',
@@ -43,7 +45,8 @@ export class ChangePasswordPage implements OnInit {
   constructor(private router: Router,
     private service: OnboardingService,
     private activate: ActivatedRoute,
-    public logeventservice: LogEventService
+    public logeventservice: LogEventService,
+    private location: Location
   ) {
     this.activate.queryParams.subscribe(params => {
       this.urlEmail = params['email'];
@@ -387,7 +390,7 @@ export class ChangePasswordPage implements OnInit {
   }
 
   Logevent(route) {
-    this.router.navigate(['/' + SharedService.getprogramName() + route])
+    this.location.back();
   }
 
   hideFunction(type) {
