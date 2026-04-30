@@ -45,6 +45,7 @@ export class SubscriptionPaymentPage implements AfterViewInit {
   cardNumberElement: any;
   cardExpiryElement: any;
   cardCvcElement: any;
+  isLoading = true;
 
   constructor(private readonly service: OnboardingService,
     private readonly location: Location,
@@ -260,10 +261,12 @@ export class SubscriptionPaymentPage implements AfterViewInit {
         this.cardNumberElement.mount('#card-number');
         this.cardExpiryElement.mount('#card-expiry');
         this.cardCvcElement.mount('#card-cvc');
+        this.isLoading = false;
 
         const btn = document.querySelector('#btnsubmit');
         btn.addEventListener('click', async (e) => {
           e.preventDefault();
+          this.isLoading = true;
 
           // Create payment method and confirm payment intent.
           stripe.confirmCardPayment(this.stripeId, {
@@ -278,6 +281,7 @@ export class SubscriptionPaymentPage implements AfterViewInit {
             }
           }).then((result) => {
             if (result.error) {
+              this.isLoading = false;
               this.content = result.error.message;
               this.enableAlert = true;
 
@@ -294,6 +298,7 @@ export class SubscriptionPaymentPage implements AfterViewInit {
 
               this.getOrderId();
               localStorage.setItem('personalised', 'F');
+              this.isLoading = false;
               this.content = 'Payment Successful';
               this.enableAlert = true;
             }
