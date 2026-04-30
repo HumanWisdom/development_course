@@ -48,7 +48,7 @@ export class S157016Page implements OnInit {
   DaysWithIntro=8;
   isShowButton = false;
   lastClick = 0;
-  delay = 20;
+  delay = 800;
   methodSTartTime: any;
   methodEndTime: any;
   constructor(private elementRef: ElementRef,
@@ -115,6 +115,10 @@ export class S157016Page implements OnInit {
   }
 
   next() {
+    if (this.lastClick >= (Date.now() - this.delay)) {
+      return;
+    }
+    this.lastClick = Date.now();
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
@@ -190,6 +194,10 @@ export class S157016Page implements OnInit {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
+    if (this.lastClick >= (Date.now() - this.delay)) {
+      return;
+    }
+    this.lastClick = Date.now();
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
