@@ -252,6 +252,11 @@ routeDailyPractice(id: number): void {
     this.router.navigate([SharedService.getDashboardUrls()]);
   }
 
+  goToSubscribe(): void {
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+  }
+
 
 
   onFocus() {

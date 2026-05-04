@@ -168,7 +168,7 @@
           <!-- ====== FREE-TRIAL BANNER ====== -->
           <div class="row" *ngIf="isGuest">
             <div class="col-md-12 col-sm-12 col-xs-12 p0">
-              <a>
+              <a (click)="goToSubscribe()" style="cursor: pointer;">
                 <div class="toc_adiv_imgmynew pb30px mttopbot20">
                   <div class="row center_flex py-3">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -184,8 +184,7 @@
                       </div>
 
                       <!-- copy column -->
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px" (click)="goToSubscribe()"
-                        (keydown.enter)="goToSubscribe()">
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr10px">
                         <h4 class="mtb0px fs_21px lh_130p"
                           [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
                           Start your free trial today!

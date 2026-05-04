@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import "bcswipe";
+
 import "hammerjs";
 import { TeenagersService } from "../../teenagers.service";
 import { SharedService } from '../../../../../../shared/services/shared.service';
@@ -35,7 +35,7 @@ export class S157002Page implements OnInit, AfterViewInit {
   endTime: any;
   startTime: any;
   lastClick = 0;
-  delay = 20;
+  delay = 800;
   moduleId: number = 157;
   bookmark: number = 0;
   slideStart = 0;
@@ -92,7 +92,6 @@ export class S157002Page implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    $(".carousel").bcSwipe({ threshold: 50 });
     var container = document.querySelector(".carousel");
    // container.addEventListener("touchmove", this.moveTouch.bind(this), false);
   }
@@ -256,6 +255,11 @@ export class S157002Page implements OnInit, AfterViewInit {
   }
 
   next() {
+    if (this.lastClick >= (Date.now() - this.delay)) {
+      return;
+    }
+    this.lastClick = Date.now();
+    
     if (this.currentDay == 5 && this.slideStart == this.totalSlidesCount) {
       return;
     }
@@ -317,6 +321,11 @@ export class S157002Page implements OnInit, AfterViewInit {
   }
 
   back() {
+    if (this.lastClick >= (Date.now() - this.delay)) {
+      return;
+    }
+    this.lastClick = Date.now();
+
     if (this.currentDay == 0 && this.slideStart == 1) {
       return;
     }

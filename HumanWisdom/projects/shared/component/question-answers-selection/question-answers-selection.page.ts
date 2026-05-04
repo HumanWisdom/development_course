@@ -15,15 +15,13 @@ import { ProgramType } from '../../models/program-model';
   styleUrls: ['./question-answers-selection.page.scss'],
   animations: [
     trigger('slideAnimation', [
-      // Wildcard transition for swipe left (next)
       transition('* => left', [
-        style({ transform: 'translateX(0%)' }), // start from right
-        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+        style({ transform: 'translateX(100%)', opacity: 0 }),
+        animate('0.5s ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ]),
-      // Wildcard transition for swipe right (previous)
       transition('* => right', [
-        style({ transform: 'translateX(0%)' }), // start from left
-        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' }))
+        style({ transform: 'translateX(-100%)', opacity: 0 }),
+        animate('0.5s ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ])
     ])
   ]
