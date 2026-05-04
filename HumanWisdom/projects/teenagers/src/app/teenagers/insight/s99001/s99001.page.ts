@@ -24,6 +24,8 @@ export class S99001Page  implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+        isContentsOpen = false;
+
   bookmarkList=[]
   insightResume=sessionStorage.getItem("insightResume")
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/99.webp"
@@ -93,15 +95,15 @@ export class S99001Page  implements OnInit,OnDestroy {
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/understand-yourself');
 
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
     localStorage.setItem("moduleId",JSON.stringify(99))
     this.moduleId=localStorage.getItem("moduleId")
@@ -109,6 +111,13 @@ export class S99001Page  implements OnInit,OnDestroy {
       {this.userId=JSON.parse(sessionStorage.getItem("userId"))}
   else
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
+
+   // continue where you left    
+    this.service.clickModule(990, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
   
     this.startTime = Date.now();
@@ -123,6 +132,10 @@ export class S99001Page  implements OnInit,OnDestroy {
     else
       this.bookmark=0
 
+  }
+
+   toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
   createScreen(){
     this.service.createScreen({
