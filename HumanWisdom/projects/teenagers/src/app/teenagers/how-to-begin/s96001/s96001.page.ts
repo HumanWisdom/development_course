@@ -25,7 +25,7 @@ export class S96001Page implements OnInit,OnDestroy {
   totalTime:any
   bookmark:any
   isContentsOpen = false;
-  pgResume=""
+  pgResume="" 
   moduleData:ProgramModel;
   bookmarkList=[]
   beginResume=sessionStorage.getItem("beginResume")

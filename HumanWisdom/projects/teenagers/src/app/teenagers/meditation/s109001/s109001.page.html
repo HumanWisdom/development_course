@@ -4,14 +4,14 @@
     
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12 mb30px">
         <h4 class="txt_comparison">
           In this module we explore the art of meditation, it’s many proven benefits, introduce you to a simple meditation practise, and also explore some of the pitfalls to avoid.
         </h4>
       </div>
     </div>
 
-    <div class="row center_flex">
+    <!-- <div class="row center_flex">
       <div class="col-md-12 col-sm-12 col-xs-12 tcenter">                    
         <a [routerLink]="['/teenagers/meditation', pgResume]" *ngIf="lastvisited">
           <button type="button" class="btn  mb0 btn_begin_here " data-dismiss="modal">Continue where you left</button>
@@ -26,7 +26,44 @@
       </div>
     </div>
     
-    <div class="toc_adiv">
+    <div class="toc_adiv"> -->
+       <div class="row center_flex">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a routerLink="/teenagers/meditation/s109002">
+          <button type="button" class="btn mb10pxi btn_begin_here w100" data-dismiss="modal">Begin here</button>
+        </a>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+        <a [routerLink]="['/teenagers/meditation', pgResume]" *ngIf="lastvisited">
+          <button type="button" class="btn mb0 btn_begin_here" data-dismiss="modal">Continue where you left</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- hr -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+        <hr class="hr_style_v3_01">
+      </div>
+    </div>
+    <!-- /hr -->
+
+    <!-- accordion header -->
+    <div class="row clickable" (click)="toggleContents()">
+      <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex plr10pxi ">
+        <div class="col-md-11 col-sm-11 col-xs-11 p0">
+          <h4 class="title_content mtb0px">
+            Contents
+          </h4>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1 p0 tright">
+          <i class="fa" [ngClass]="isContentsOpen ? 'fa-angle-up' : 'fa-angle-down'"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- accordion body -->
+    <div class="toc_adiv mt20px" *ngIf="isContentsOpen">
       <a routerLink="/teenagers/meditation/s109002">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -126,7 +163,8 @@
     </div>
     <!-- /hr -->
 
-    <app-related-wisdom-stories-tiles [wisdomstories]="stories" *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
+    <app-related-wisdom-stories-tiles [wisdomstories]="stories" 
+    [isAccordion]="true" *ngIf="stories.length !== 0"></app-related-wisdom-stories-tiles>
 
   </form>    
 
