@@ -248,7 +248,7 @@ require_once('./includes/security_config.php');
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
           class="img-responsive d-wider w100p" alt="modules" loading="lazy">
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/scrollingcircle.png"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/mobile_circle.svg"
           class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
 
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg" class="happy-wide-img"
