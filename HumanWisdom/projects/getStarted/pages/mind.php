@@ -172,13 +172,13 @@ require_once('../includes/security_config.php');
       <div>
         <picture>
           <source media="(max-width: 768px)"
-            srcset="https://d1tenzemoxuh75.cloudfront.net/website/scrollingcircle.png">
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/mobile_circle.svg">
           <source media="(min-width: 1800px)"
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg">
           <source media="(min-width: 769px) and (max-width: 1024px)"
             srcset="https://d1tenzemoxuh75.cloudfront.net/website/tablet_circle.svg">
           <source media="(min-width: 1025px)"
-            srcset="https://d1tenzemoxuh75.cloudfront.net/website/circle_img.svg">
+            srcset="https://d1tenzemoxuh75.cloudfront.net/website/mobile_circle.svg">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/mobile_circle.svg"
             class="img-responsive circle_img circle-strip-mobile" alt="Survey findings from HappierMe app users" loading="lazy">
         </picture>
