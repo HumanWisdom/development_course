@@ -19,6 +19,8 @@ export class S102001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+            isContentsOpen = false;
+
   bookmarkList=[]
   path = setTimeout(() => {
     return this.router.url;
@@ -98,15 +100,15 @@ export class S102001Page implements OnInit,OnDestroy {
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/understand-yourself');
 
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
 
     
@@ -120,6 +122,12 @@ export class S102001Page implements OnInit,OnDestroy {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
   
+    // continue where you left    
+    this.service.clickModule(10000, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -131,6 +139,9 @@ export class S102001Page implements OnInit,OnDestroy {
     this.socialShare=true
   }
 
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   toggleBookmark()
   {
     if(this.bookmark==0)
