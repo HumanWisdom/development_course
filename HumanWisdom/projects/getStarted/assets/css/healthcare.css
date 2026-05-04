@@ -143,6 +143,34 @@ a,h5:hover {
   padding: 13px 40px !important;
   border-radius: 24px !important;
 }
+
+.healthcare-hero-shell {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .healthcare-hero-shell .absolute_desc {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 980px !important;
+    max-width: calc(100% - 40px);
+    height: calc(100% - 3rem);
+    margin: 0 auto;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .healthcare-hero-shell .absolute_desc > [class*="col-"] {
+    flex: 0 0 440px;
+    max-width: 440px;
+    width: 440px;
+    margin-left: 34px;
+  }
+}
+
 .div_dyk {
     background: rgba(255, 249, 238, 1);
     background-repeat: no-repeat;
@@ -302,7 +330,9 @@ a,h5:hover {
     width: 205px;
 }
 .absolute_desc{
-    width: 1245px !important;
+    width: 980px !important;
+    top: 3rem;
+    left: 6px;
 
 }
 .h-800{
