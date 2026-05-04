@@ -221,6 +221,36 @@
   cursor: pointer !important;
 }
 
+.practice-card-content {
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.practice-card-thumb {
+  flex: 0 0 82px;
+  max-width: 82px;
+  width: 82px;
+}
+
+.practice-card-thumb .session_imgnew {
+  width: 82px;
+  height: 82px;
+  max-width: 100%;
+}
+
+.practice-card-text {
+  flex: 1 1 auto;
+  max-width: none;
+  min-width: 0;
+}
+
+.practice-card-arrow {
+  flex: 0 0 16px;
+  max-width: 16px;
+  width: 16px;
+}
+
 .pdr20px {
   padding-right: 20px !important;
 }
