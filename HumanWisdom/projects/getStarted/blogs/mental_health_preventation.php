@@ -201,54 +201,105 @@ Prevention is not about eliminating triggers. It is about becoming aware of what
 
  </h4>
 
-                <h4 class="mtb0px blog_desc">
-Understanding where these reactions come from can help you respond instead of react.
-
-
-
-                </h4>
-                 <h4 class="mtb0px blog_desc">
-This creates a more stable and supportive environment for athletes.
-</h4>
-
-
-                
                
-
-                <h4 class="mtb0px blog_desc">
-Listen to the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~191.mp3/191/F/Emotional%20resilience%20for%20coaches/podcast">
- 
-Emotional Resilience for Coaches</a> podcast in the HappierMe app to better understand and manage your emotions.
-
-                </h4>
-
                 
                 <h4 class="mtb0px blog_sub_title">
-#5 Manage Performance Pressure
+3. Managing emotions earlier
 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Coaches often carry pressure from results, expectations, and accountability.
+Most people try to manage emotions when they become intense.
+
 
 
 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Learning to understand and manage this pressure can improve both wellbeing and performance.
+When stress peaks. When anger spills over. When anxiety becomes overwhelming.
+
 
 
  </h4>
 
                 <h4 class="mtb20px blog_desc">
-Listen to this mini podcast on                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~193.mp3/193/F/Coaching%20under%20pressure/podcast">
- Coaching under pressure.</a>to better cope with the pressures of being a coach.
+By then, it feels difficult.
+
+
 
    </h4>
 
+                   <h4 class="mtb20px blog_desc">Prevention means stepping in earlier.
+
+</h4>
+                    <h4 class="mtb20px blog_desc">Noticing the first signs of stress. A tightening in the body. Racing thoughts. Irritability.
+
+</h4>
+                     <h4 class="mtb20px blog_desc">At that stage, small interventions can make a big difference.
+
+</h4>
+                      <h4 class="mtb20px blog_desc">A pause. A breath. A moment of awareness.
+
+</h4>
+                       <h4 class="mtb20px blog_desc">These simple steps can prevent escalation.
+
+</h4>
+                        <h4 class="mtb20px blog_sub_title">4. Building daily mental habits
+</h4>
+                         <h4 class="mtb20px blog_desc">Just like physical health, mental health is shaped by what we do consistently.
+
+</h4>
+                          <h4 class="mtb20px blog_desc">Not occasionally.
+
+</h4>
+<h4 class="mtb20px blog_desc">Daily habits create stability.
+
+</h4>
+    <h4 class="mtb20px blog_desc">This could include:
+        <ul>
+            <li>Taking a few minutes to reflect
+
+</li>
+<li>Practicing breathing or meditation
+</li>
+<li> Journaling thoughts and emotions
+</li>
+<li> Spending time without constant stimulation
+</li>
+</ul>
+
+</h4>
+        <h4 class="mtb20px blog_desc">These are not quick fixes. They are foundations.
+
+</h4>
+            <h4 class="mtb20px blog_desc">Over time, they build a mind that is calmer, clearer, and more resilient.
+
+</h4>
+                <h4 class="mtb20px blog_sub_title">5. Shifting from reaction to awareness
+</h4>
+                    <h4 class="mtb20px blog_desc">Much of our stress comes from automatic reactions.
+
+</h4>
+ <h4 class="mtb20px blog_desc">Something happens, and the mind responds instantly. Often based on past experiences, beliefs, or expectations.</h4>
+ <h4 class="mtb20px blog_desc">We are rarely aware this is happening.
+
+</h4>
+  <h4 class="mtb20px blog_desc">Prevention means understanding this process.
+
+</h4>
+   <h4 class="mtb20px blog_desc">When we see how the mind reacts, we are no longer fully controlled by it.
+
+</h4>
+    <h4 class="mtb20px blog_desc">We can pause. Reflect. Choose a different response.
+
+</h4>
+     <h4 class="mtb20px blog_desc">This is where real change begins.
+
+</h4>
+
  <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
-            src="https://www.youtube-nocookie.com/embed/MgsYk1SZh-w?si=R5mFMHvkINh60C4b&rel=0&modestbranding=1&enablejsapi=1"
+            src="https://www.youtube.com/embed/L_3mdtY1fWs?si=UxaA2zSPLN85HNXb"
             class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
             onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
                       
