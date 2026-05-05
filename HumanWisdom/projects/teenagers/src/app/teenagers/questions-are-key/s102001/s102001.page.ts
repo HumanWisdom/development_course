@@ -123,7 +123,7 @@ export class S102001Page implements OnInit,OnDestroy {
     }
   
     // continue where you left    
-    this.service.clickModule(10000, this.userId).subscribe(res => {
+    this.service.clickModule(102, this.userId).subscribe(res => {
       this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
       this.lastvisited = res.lastVisitedScreen != "" ? true : false;
     })
