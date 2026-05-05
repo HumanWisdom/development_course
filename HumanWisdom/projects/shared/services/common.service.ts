@@ -677,4 +677,12 @@ export class CommonService {
   clickTeenTalk(id: number): Observable<any> {
     return this.http.post(this.path + `/clickteentalk/${id}`, {});
   }
+
+  GetGuidedJourneys(progID: any, userId: any): Observable<any> {
+    return this.http.get(this.path + `/GetGuidedJourneys/${progID}/${userId}`);
+  }
+
+  clickGuidedJourney(id: any): Observable<any> {
+    return this.http.post(this.path + `/clickGuidedJourney/${id}`, null);
+  }
 }
