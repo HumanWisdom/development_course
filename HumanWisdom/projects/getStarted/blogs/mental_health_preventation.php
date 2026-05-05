@@ -114,26 +114,21 @@ You may notice that certain situations always trigger stress. Deadlines. Conflic
                 
 
                 <h4 class="mtb0px blog_desc">Explore the 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#self-awareness">
+                 Prevention begins with simply noticing.
 
-Self-Awareness </a>and
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/making-better-decisions">
- Decision making</a> modules in the HappierMe app to begin building mental strength.
+
 
                 </h4>
 
                 
               
 
-                <h4 class="mtb0px blog_sub_title">
-                  
-#2 Stay Calm Under Pressure
-                </h4>
 
                
 
                 <h4 class="mtb0px blog_desc">
-Coaches are constantly making decisions during high-pressure moments.
+Not judging. Not fixing. Just seeing.
+
 
 
                </h4>
@@ -141,13 +136,15 @@ Coaches are constantly making decisions during high-pressure moments.
                 
 
                 <h4 class="mtb0px blog_desc">
-Staying calm helps you think clearly and guide your team effectively, especially during competition.
+When you start to recognise patterns in your thinking and behaviour, you create space between what happens and how you respond. For example, noticing that your mind is always comparing, without your awareness or permission allows you to step in and compare only when it serves you.
+
 
 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Breathing exercises and mindfulness can help regulate your response in these moments.
+That space is powerful.
+
 
 
 
@@ -157,51 +154,49 @@ Breathing exercises and mindfulness can help regulate your response in these mom
 
                 
 
-                <h4 class="mtb0px blog_desc">
-                 
-Explore the 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">
-Breathing exercises</a> in the HappierMe app to stay composed in high-pressure situations.
-
-                </h4>
+               
 
                 <h4 class="mtb0px blog_sub_title">
-#3 Improve Focus and Clarity
+2. Understanding triggers
 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Distractions, stress, and overthinking can affect decision-making.
+A trigger is not the problem itself. It is a signal.
+
 
 
  </h4>
 
                 <h4 class="mtb0px blog_desc">
-Developing focus helps coaches stay present, read the game better, and respond wisely.
+An email from your manager may trigger anxiety. A comment from a colleague may trigger irritation. A delay may trigger frustration.
+
 
 
   
             </h4>
 
                 <h4 class="mtb0px blog_desc">
-Meditation and mindfulness exercises can strengthen concentration over time.
+We often assume the trigger is the cause of how we feel. But the reaction is coming from within us.
+
 
 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Explore the                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#meditation">
+Understanding this changes everything.
 
-Meditation</a>   module in the HappierMe app to improve focus and mental clarity.
 
           
   </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-#4 Understand Your Emotional Reactions
+Instead of trying to control every external situation, we begin to understand our internal responses.
+
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Coaches experience emotions such as frustration, anger, pressure, and anxiety.
+Prevention is not about eliminating triggers. It is about becoming aware of what they activate in us.
+
 
 
  </h4>
