@@ -113,7 +113,7 @@ export class S99001Page  implements OnInit,OnDestroy {
     {this.userId=JSON.parse(localStorage.getItem("userId"))}
 
    // continue where you left    
-    this.service.clickModule(990, this.userId).subscribe(res => {
+    this.service.clickModule(99, this.userId).subscribe(res => {
       this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
       this.lastvisited = res.lastVisitedScreen != "" ? true : false;
     })
