@@ -1,1 +1,131 @@
-<p>guided-journey-intro works!</p>
+<title>Guided Journey Intro | HumanWisdom</title>
+
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <a class="" (click)="goBack()">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" />
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+      <a class="">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+          {{journeyDetails?.title || 'Guided Journey'}}
+        </h1>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<app-bg-video></app-bg-video>
+
+<!-- page content -->
+<div class="right_col mc_01_v3 mc_01_v3_ext" [ngClass]="{'adults-scroll': isAdults}"
+     (touchstart)="handleTouchStart($event)" (touchend)="handleTouchEnd($event)"
+     (mousedown)="handleTouchStart($event)" (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+
+        <div *ngIf="isLoading" class="row center_flex mt40px">
+          <div class="col-md-12 tcenter">
+            <h4 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">Loading details...</h4>
+          </div>
+        </div>
+
+        <div *ngIf="!isLoading && journeyDetails" class="x_panel p0 nobg">
+          <div class="x_content p0">
+
+            <!-- Breadcrumb -->
+            <div class="row mb20px">
+              <div class="col-md-12 p0">
+                <a (click)="goToListing()" class="center_flex_left">
+                  <i class="fa fa-angle-left mr5px fc_e58d82"></i>
+                  <span class="fs_14px fw_500 fc_e58d82">Guided journeys</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="row mb20px">
+              <div class="col-md-12 p0">
+                <h1 class="mt0px fs_32px fw_600 lh_120p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                  {{journeyDetails.subtitle}}
+                </h1>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="row mb40px">
+              <div class="col-md-12 p0">
+                <h4 class="mt0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                  {{journeyDetails.description}}
+                </h4>
+              </div>
+            </div>
+
+            <!-- Begin Button -->
+            <div class="row mb60px">
+              <div class="col-md-12 p0">
+                <button (click)="beginJourney()" class="btn_begin center_flex">
+                  Begin here <i class="fa fa-angle-right ml10px"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Content continues... -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed Footer & Dots -->
+    <div class="footer_fixed_wrapper">
+      <!-- Dots Row -->
+      <div class="row center_flex">
+        <div class="dots_container">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <!-- Footer Row -->
+      <div class="row center_flex">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer_days col_cw"
+          [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+          <div class="odiv">
+            <div class="day_circle active" (click)="navigateToDay(0)">
+              <span>Intro</span>
+            </div>
+            <div class="day_circle" (click)="navigateToDay(1)">
+              <span>Day 1</span>
+            </div>
+            <div class="day_circle" (click)="navigateToDay(2)">
+              <span>Day 2</span>
+            </div>
+            <div class="day_circle" (click)="navigateToDay(3)">
+              <span>Day 3</span>
+            </div>
+            <div class="day_circle" (click)="navigateToDay(4)">
+              <span>Day 4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

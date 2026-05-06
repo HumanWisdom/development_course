@@ -1,0 +1,182 @@
+.sc_01 {
+  position: relative;
+  min-height: 100vh !important;
+  padding: 80px 20px 60px 20px;
+}
+
+.mc_01_v3_ext {
+  padding-top: 0px !important;
+}
+
+.bg_stake {
+  background: #254170 !important;
+}
+
+.bg_FFF7E6 {
+  background: #FFF7E6 !important;
+}
+
+.nobg {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Well Done Section */
+.well_done_section {
+  text-align: center;
+  padding: 30px 0 20px;
+
+  .checkmark_circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #E58D82;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+
+    i {
+      font-size: 32px;
+      color: #E58D82;
+    }
+  }
+
+  .well_done_title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 15px;
+  }
+
+  .well_done_desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(0,0,0,0.6);
+    margin: 0 0 25px;
+    padding: 0 10px;
+  }
+}
+
+.btn_return {
+  background: #E58D82;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Survey Section */
+.survey_section {
+  border-radius: 16px;
+  padding: 18px;
+  margin: 20px 0 0;
+
+  &.bg_survey_adults {
+    background: #FFE8C8;
+  }
+  &.bg_survey_teens {
+    background: rgba(255,255,255,0.1);
+  }
+
+  .survey_row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+
+  .survey_percent {
+    font-size: 28px;
+    font-weight: 700;
+    color: #E58D82;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+
+  .survey_text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .survey_link {
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    display: block;
+    text-align: right;
+  }
+}
+
+/* Pathway section */
+.pathway_featured_card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: transform 0.2s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  .featured_img {
+    width: 80px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .featured_content {
+    flex: 1;
+  }
+
+  .pathway_arrow {
+    font-size: 18px;
+    opacity: 0.5;
+  }
+}
+
+.module_thumb {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Utilities */
+.tcenter { text-align: center; }
+.mt30px { margin-top: 30px; }
+.mb10px { margin-bottom: 10px !important; }
+.mb20px { margin-bottom: 20px; }
+.mt20px { margin-top: 20px; }
+.fs_24px { font-size: 24px !important; }
+.fs_18px { font-size: 18px !important; }
+.fs_15px { font-size: 15px !important; }
+.fs_12px { font-size: 12px !important; }
+.fw_700 { font-weight: 700 !important; }
+.fw_600 { font-weight: 600 !important; }
+.fw_500 { font-weight: 500 !important; }
+.fw_400 { font-weight: 400 !important; }
+.fc_000000 { color: #000 !important; }
+.fc_ffffff { color: #fff !important; }
+.lh_140p { line-height: 140% !important; }
+.lh_130p { line-height: 130% !important; }
+.fc_e58d82 { color: #E58D82 !important; }
