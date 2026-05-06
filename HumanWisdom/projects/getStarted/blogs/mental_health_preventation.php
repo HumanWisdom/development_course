@@ -59,12 +59,16 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px blog_desc">
-Mental health is often spoken about when something has already gone wrong. When stress becomes overwhelming. When anxiety feels unmanageable. When burnout forces us to stop.
- </h4>
+                  <span class="blog_highlight_black">
+Mental health is often spoken about when something has already gone wrong. When stress becomes overwhelming. When anxiety feels unmanageable. When 
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/burnout">
+burnout </a>  forces us to stop.
+</span></h4>
 
                 <h4 class="mtb0px blog_desc">
+                   <span class="blog_highlight_black">
 But what if we could intervene earlier? What if mental health wasn’t just about recovery, but about prevention?
-                </h4>
+</span></h4>
 
                 <h4 class="mtb0px blog_desc">
 This shift is already beginning to take shape. Organisations like Mind are increasingly highlighting the importance of early support and accessible tools that help people manage their mental wellbeing before it reaches crisis point..</h4>
@@ -104,7 +108,8 @@ Our thoughts, emotions, and reactions are not random. They follow patterns.
 
                 <h4 class="mtb0px blog_desc">
                   
-You may notice that certain situations always trigger stress. Deadlines. Conflict. Uncertainty. Or even silence and stillness.
+You may notice that certain situations always trigger 
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress.</a> Deadlines. Conflict. Uncertainty. Or even silence and stillness.
 
 
 
@@ -169,7 +174,7 @@ A trigger is not the problem itself. It is a signal.
  </h4>
 
                 <h4 class="mtb0px blog_desc">
-An email from your manager may trigger anxiety. A comment from a colleague may trigger irritation. A delay may trigger frustration.
+An email from your manager may trigger <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety. </a>A comment from a colleague may trigger irritation. A delay may trigger frustration.
 
 
 
@@ -209,7 +214,7 @@ Prevention is not about eliminating triggers. It is about becoming aware of what
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Most people try to manage emotions when they become intense.
+Most people try to <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/manage-your-emotions">manage emotions</a> when they become intense.
 
 
 
@@ -261,9 +266,10 @@ By then, it feels difficult.
             <li>Taking a few minutes to reflect
 
 </li>
-<li>Practicing breathing or meditation
+<li>Practicing<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing"> breathing </a>or <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditatio
+n">meditation</a>
 </li>
-<li> Journaling thoughts and emotions
+<li> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling </a>thoughts and emotions
 </li>
 <li> Spending time without constant stimulation
 </li>
@@ -281,7 +287,7 @@ By then, it feels difficult.
                     <h4 class="mtb20px blog_desc">Much of our stress comes from automatic reactions.
 
 </h4>
- <h4 class="mtb20px blog_desc">Something happens, and the mind responds instantly. Often based on past experiences, beliefs, or expectations.</h4>
+ <h4 class="mtb20px blog_desc">Something happens, and the mind responds instantly. Often based on past experiences, <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/opinions-beliefs">beliefs</a>, or expectations.</h4>
  <h4 class="mtb20px blog_desc">We are rarely aware this is happening.
 
 </h4>
@@ -306,13 +312,15 @@ By then, it feels difficult.
                 
 
                 <h4 class="mtb0px blog_sub_title">
-#6 Deal with Setbacks and Losses
+How HappierMe supports prevention
+
 
                   
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Losses, mistakes, and unexpected outcomes are part of sport.
+Prevention becomes easier when you have the right tools and guidance.
+
 
 
 
@@ -323,34 +331,49 @@ Losses, mistakes, and unexpected outcomes are part of sport.
                 
 
                 <h4 class="mtb0px blog_desc">
-Mentally strong coaches learn from setbacks instead of being defined by them.
-
-
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
-This mindset also influences how athletes respond to challenges.
-
+                  <span class="blog_highlight_black">
+HappierMe is part of this growing movement toward proactive mental wellbeing. Its inclusion in Mind’s app library reflects the increasing demand for tools that help people manage their mental health before it reaches crisis point.</span>
 
 
 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Listen to this mini-podcast on
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~192.mp3/192/F/The%20emotional%20load%20of%20coaching/podcast">
- The emotional load of coaching. </a>
+The app helps users:
+<ul>
+  <li>Understand how their mind works
+</li>
+ <li>Recognise patterns and triggers
+
+</li>
+ <li>Manage stress and emotions earlier
+
+</li>
+ <li>Build daily habits that support mental wellbeing
+
+</li>
+
+</ul>
+
+
+
 
 
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc">
+Through guided modules, short exercises, and reflection tools, HappierMe supports both immediate relief and long-term change.
+
+                  
+
+                </h4>
+
+                
+
+                <h4 class="mtb0px blog_desc">
                  
-#7 Manage Stress and Expectations
+It is not just about feeling better in the moment. It is about building the awareness to stay steady over time.
 
-                <h4 class="mtb0px blog_desc">
-                 
-Coaches juggle multiple responsibilities and expectations from different stakeholders.
 
 
 
@@ -360,72 +383,69 @@ Coaches juggle multiple responsibilities and expectations from different stakeho
 
                
 
-                <h4 class="mtb0px blog_desc">
-Understanding stress and learning to manage expectations can help maintain balance and clarity.
+                <h4 class="mtb0px blog_sub_title">
+A new way to think about mental health
 
 
                 </h4>
 
                
 
-                <h4 class="mtb0px blog_desc">
-Explore the
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
- Stress</a> and                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/expectation">
-Expectations </a>resources in the HappierMe app to reduce pressure and stay grounded.
-
-
-                <h4 class="mtb0px blog_sub_title">
-#8 Build Stronger Relationships with Athletes
-                </h4>
+               
+               
 
                 <h4 class="mtb0px blog_desc">
-Trust and communication are at the heart of effective coaching.
+Prevention is not about perfection.
+
 
 
                 </h4>
                 <h4 class="mtb0px blog_desc">
-Understanding people, not just performance, helps build stronger connections and better team environments.
+You will still feel stress. You will still face challenges. Life will still be unpredictable.
+
 
 
 
                 </h4>
                 <h4 class="mtb0px blog_desc">
 
-Explore the                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">
-Communication</a> and                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#relationships">
-Relationships</a> modules in the HappierMe app to strengthen connection and trust.
+But with awareness, those experiences do not have to turn into prolonged struggles.
+
 
 </h4>
-                <h4 class="mtb0px blog_sub_title">
-#9 Avoid Burnout
+               
                 <h4 class="mtb0px blog_desc">
-Coaching can be demanding, with long hours and constant responsibility.
+You begin to understand your mind rather than fight it.
+
 
 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Without balance, this can lead to burnout and reduced effectiveness.
+And that changes your relationship with stress completely.
+
 
 
 </h4>
 <h4 class="mtb0px blog_desc">
-Taking time to rest and reflect is essential for long-term success.
+Mental health does not have to start with a crisis.
+
 
 
 </h4>
 
 <h4 class="mtb0px blog_desc">
-Listen to this podcast on                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~63.mp3/63/T/Avoiding%20burnout">
- Avoiding burnout in coaching.</a>
+It can start with awareness.
+
+It can start with awareness.
+
+
 
 </h4>
-<h4 class="mtb0px blog_sub_title">
-#10 Stay Connected to Your Purpose
-</h4>
+
 <h4 class="mtb0px blog_desc">
-Many coaches start with a passion for the sport and helping others grow.
+And sometimes, that is all it takes to change everything.
+
 
 
 
@@ -440,7 +460,8 @@ Mental fitness helps you stay connected to your purpose and enjoy the journey.
 </h4>
 
       <h4 class="mtb0px blog_desc">
-Explore this micro-learning module on                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/micro-learning/inner/23">
+Explore this micro-learning module on                  
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/micro-learning/inner/23">
 Finding your purpose.</a> 
 
 
