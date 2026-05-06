@@ -1,0 +1,64 @@
+.sc_01 {
+    min-height: 100vh !important;
+    padding: 20px 20px;
+  }
+
+.mc_01_v3_ext {
+    padding-top: 0px !important;
+}
+
+.bg_stake {
+    background: #254170 !important;
+}
+
+.ws-read-icon {
+    bottom: 40px;
+}
+
+.toc_adiv_02 {
+    .row {
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+}
+.toc_adiv_02 a>.row {
+    padding: 12px;
+}
+
+.toc_adiv_03 {
+    .row {
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+}
+.toc_adiv_03 a>.row {
+    padding: 12px;
+}
+
+/* Shared scrollbar base */
+.odiv {
+  overflow: auto !important;
+  scrollbar-width: thin;
+  width: 100% !important;
+  
+  &::-webkit-scrollbar {
+    height: 2px;
+    border-radius: 6px;
+  }
+}
+
+/* Adults scrollbar style */
+.adults-scroll {
+  .odiv {
+    scrollbar-color: #eea170 #f6d1b7;
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #eea170;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #f6d1b7;
+      border-radius: 10px;
+    }
+  }
+}

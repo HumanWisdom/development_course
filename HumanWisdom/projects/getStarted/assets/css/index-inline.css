@@ -1,4 +1,4 @@
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+    /* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"); */
 
 /* ── RESET / BASE ── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -832,6 +832,7 @@ header a[href*="splash_options.php"] * {
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  touch-action: auto;
   flex: 1;
   width: 100%;
   /* hide scrollbar on all browsers */
@@ -1732,7 +1733,7 @@ header a[href*="splash_options.php"] * {
   #coaches-scroll.coaches-scroll {
     width: 100%;
     padding-right: 0;
-    touch-action: pan-x;
+    touch-action: auto;
     overscroll-behavior-x: contain;
   }
   /* Once user starts scrolling, make strip edge-to-edge on mobile */
