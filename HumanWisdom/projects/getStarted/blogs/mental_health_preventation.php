@@ -71,7 +71,7 @@ But what if we could intervene earlier? What if mental health wasn’t just abou
 </span></h4>
 
                 <h4 class="mtb0px blog_desc">
-This shift is already beginning to take shape. Organisations like Mind are increasingly highlighting the importance of early support and accessible tools that help people manage their mental wellbeing before it reaches crisis point..</h4>
+This shift is already beginning to take shape. Organisations like<a class="blog_highlight_peach td_underline" href="https://mind.orchahealth.com/en-GB/featured-apps-mental-health-and-wellbeing-1"> Mind</a> are increasingly highlighting the importance of early support and accessible tools that help people manage their mental wellbeing before it reaches crisis point.</h4>
 
                 <h4 class="mtb0px blog_desc">
 Developing mental toughness, clarity, and emotional resilience can help coaches lead better, make smarter decisions, and create a positive environment for their athletes.
@@ -81,11 +81,11 @@ Developing mental toughness, clarity, and emotional resilience can help coaches 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-Prevention is not a single action. It is a mindset that shapes how we understand and respond to our emotions..</h4>
+Prevention is not a single action. It is a mindset that shapes how we understand and respond to our emotions.</h4>
 <h4 class="mtb0px blog_desc">
 Let’s break it down.
 
-.</h4>
+</h4>
 
 
 
@@ -174,7 +174,7 @@ A trigger is not the problem itself. It is a signal.
  </h4>
 
                 <h4 class="mtb0px blog_desc">
-An email from your manager may trigger <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety. </a>A comment from a colleague may trigger irritation. A delay may trigger frustration.
+An email from your manager may trigger  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety.</a>  A comment from a colleague may trigger irritation. A delay may trigger frustration.
 
 
 
@@ -194,7 +194,7 @@ Understanding this changes everything.
           
   </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc">
 Instead of trying to control every external situation, we begin to understand our internal responses.
 
                 </h4>
@@ -266,10 +266,10 @@ By then, it feels difficult.
             <li>Taking a few minutes to reflect
 
 </li>
-<li>Practicing<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing"> breathing </a>or <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditatio
-n">meditation</a>
+<li>Practicing <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing"> breathing</a>  or   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditatio
+n"> meditation</a>
 </li>
-<li> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling </a>thoughts and emotions
+<li> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling</a>   thoughts and emotions
 </li>
 <li> Spending time without constant stimulation
 </li>
@@ -331,8 +331,10 @@ Prevention becomes easier when you have the right tools and guidance.
                 
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-HappierMe is part of this growing movement toward proactive mental wellbeing. Its inclusion in Mind’s app library reflects the increasing demand for tools that help people manage their mental health before it reaches crisis point.</span>
+                  <span class="blog_highlight_black"><a class="blog_highlight_peach td_underline" href="https://happierme.app">
+HappierMe</a>  is part of this growing movement toward proactive mental wellbeing. Its inclusion in 
+<a class="blog_highlight_peach td_underline" href="https://mind.orchahealth.com/en-GB/featured-apps-mental-health-and-wellbeing-1">Journaling </a>
+Mind’s</a>    app library reflects the increasing demand for tools that help people manage their mental health before it reaches crisis point.</span>
 
 
 
@@ -437,7 +439,6 @@ Mental health does not have to start with a crisis.
 <h4 class="mtb0px blog_desc">
 It can start with awareness.
 
-It can start with awareness.
 
 
 
@@ -449,75 +450,7 @@ And sometimes, that is all it takes to change everything.
 
 
 
-  <h4 class="mtb0px blog_desc">
-Over time, pressure and expectations can shift that focus.
-
-
-</h4> 
-<h4 class="mtb0px blog_desc">
-Mental fitness helps you stay connected to your purpose and enjoy the journey.
-
-</h4>
-
-      <h4 class="mtb0px blog_desc">
-Explore this micro-learning module on                  
-<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/micro-learning/inner/23">
-Finding your purpose.</a> 
-
-
-                </h4>
-
-                <h4 class="mtb0px blog_sub_title">
-How HappierMe Supports Coaches
-</h4>    
-
-<h4 class="mtb0px blog_desc">
-The HappierMe app offers tools designed to support mental training for coaches, including:
-
-</h4>
-<h4 class="mtb0px blog_desc">
-  <ul>
-    <li>
-      Breathing exercises to stay calm under pressure
-
-    </li>
-     <li>
-Meditation practices to improve focus and clarity
-
-    </li>
-     <li>
-Self-awareness exercises to understand thoughts and reactions
-
-    </li>
-     <li>
-Modules on fear, conditioning, and the reactive mind
-
-    </li>
-    
-    <li>                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/podcast#sports">
-
-      Podcasts for athletes and coaches</a>
-    </li>
-  </ul>
-</h4>
-<h4 class="mtb0px blog_desc">
-By developing mental fitness, coaches can lead with clarity, resilience, and confidence.
-
-
-</h4>
-
-
-<h4 class="mtb0px blog_desc">
-Because great coaching is not just about strategy, but about mindset.
-
-
-
-</h4>
-<h4 class="mtb0px blog_desc">
-Start your mental fitness journey today. Explore the HappierMe app to manage pressure, improve decision-making, and lead your athletes more effectively.
-
-
-</h4>
+  
 <!-- <h4 class="mtb0px blog_desc">
 To learn more visit                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
 happierme.app </a>or download the HappierMe app to explore it for free.
