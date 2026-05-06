@@ -98,10 +98,13 @@
     <div class="footer_fixed_wrapper">
       <!-- Dots Row (Intro + Days) -->
       <div class="row center_flex">
-        <div class="dots_container">
-          <span class="dot" [ngClass]="{'active': currentDay === 0}"></span>
-          <span *ngFor="let dayNum of getDaysArray()" class="dot" [ngClass]="{'active': currentDay === dayNum}">
-          </span>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer_dots col_cw"
+             [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+          <div class="dots_container">
+            <span class="dot" [ngClass]="{'active': currentDay === 0}"></span>
+            <span *ngFor="let dayNum of getDaysArray()" class="dot" [ngClass]="{'active': currentDay === dayNum}">
+            </span>
+          </div>
         </div>
       </div>
 

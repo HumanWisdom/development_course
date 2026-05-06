@@ -160,7 +160,6 @@
 
 .footer_days {
   pointer-events: auto;
-  border-top: 1px solid rgba(0,0,0,0.05);
   padding: 0 !important;
 
   .odiv {
@@ -224,12 +223,19 @@
 .fc_000000 { color: #000000 !important; }
 .fc_ffffff { color: #ffffff !important; }
 
+.footer_dots {
+    pointer-events: auto;
+    padding: 10px 0 0 0 !important;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
 /* Animation for dots */
 .dots_container {
     display: flex;
     gap: 6px;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
 
     .dot {
         width: 6px;
@@ -242,6 +248,16 @@
             background: rgba(0, 0, 0, 0.4);
             width: 15px;
             border-radius: 10px;
+        }
+    }
+}
+
+/* Dark theme overrides for dots */
+.bg_stake {
+    .dot {
+        background: rgba(255, 255, 255, 0.3) !important;
+        &.active {
+            background: rgba(255, 255, 255, 0.8) !important;
         }
     }
 }
