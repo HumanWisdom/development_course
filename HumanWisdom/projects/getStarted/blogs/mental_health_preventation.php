@@ -62,7 +62,7 @@
                   <span class="blog_highlight_black">
 Mental health is often spoken about when something has already gone wrong. When stress becomes overwhelming. When anxiety feels unmanageable. When 
 <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/burnout">
-burnout </a>  forces us to stop.
+burnout </a>forces us to stop.
 </span></h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -71,7 +71,7 @@ But what if we could intervene earlier? What if mental health wasn’t just abou
 </span></h4>
 
                 <h4 class="mtb0px blog_desc">
-This shift is already beginning to take shape. Organisations like<a class="blog_highlight_peach td_underline" href="https://mind.orchahealth.com/en-GB/featured-apps-mental-health-and-wellbeing-1"> Mind</a> are increasingly highlighting the importance of early support and accessible tools that help people manage their mental wellbeing before it reaches crisis point.</h4>
+This shift is already beginning to take shape. Organisations like <a class="blog_highlight_peach td_underline" href="https://mind.orchahealth.com/en-GB/featured-apps-mental-health-and-wellbeing-1">Mind</a> are increasingly highlighting the importance of early support and accessible tools that help people manage their mental wellbeing before it reaches crisis point.</h4>
 
                 <h4 class="mtb0px blog_desc">
 Developing mental toughness, clarity, and emotional resilience can help coaches lead better, make smarter decisions, and create a positive environment for their athletes.
@@ -109,7 +109,7 @@ Our thoughts, emotions, and reactions are not random. They follow patterns.
                 <h4 class="mtb0px blog_desc">
                   
 You may notice that certain situations always trigger 
-<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress.</a> Deadlines. Conflict. Uncertainty. Or even silence and stillness.
+<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a>. Deadlines. Conflict. Uncertainty. Or even silence and stillness.
 
 
 
@@ -174,7 +174,7 @@ A trigger is not the problem itself. It is a signal.
  </h4>
 
                 <h4 class="mtb0px blog_desc">
-An email from your manager may trigger  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety.</a>  A comment from a colleague may trigger irritation. A delay may trigger frustration.
+An email from your manager may trigger  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety</a>. A comment from a colleague may trigger irritation. A delay may trigger frustration.
 
 
 
@@ -333,8 +333,8 @@ Prevention becomes easier when you have the right tools and guidance.
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black"><a class="blog_highlight_peach td_underline" href="https://happierme.app">
 HappierMe</a>  is part of this growing movement toward proactive mental wellbeing. Its inclusion in 
-<a class="blog_highlight_peach td_underline" href="https://mind.orchahealth.com/en-GB/featured-apps-mental-health-and-wellbeing-1">Journaling </a>
-Mind’s</a>    app library reflects the increasing demand for tools that help people manage their mental health before it reaches crisis point.</span>
+<a class="blog_highlight_peach td_underline" href="https://mind.orchahealth.com/en-GB/featured-apps-mental-health-and-wellbeing-1">Journaling</a>
+ Mind’s app library reflects the increasing demand for tools that help people manage their mental health before it reaches crisis point.</span>
 
 
 
