@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<app-alert [enableAlert]="enableAlert" [content]="content" (getAlertcloseEvent)="getAlertcloseEvent()"></app-alert>
+<app-modal *ngIf="enableAlert" [content]="content" [okText]="'Ok'" (closeEvent)="getAlertcloseEvent()"></app-modal>
 
 <app-bg-video></app-bg-video>
 
