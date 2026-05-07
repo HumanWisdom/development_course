@@ -251,6 +251,28 @@
     &::placeholder {
         color: #C4C4C4;
     }
+    &:focus{
+        outline: none;
+    }
+  }
+
+  .btn_journal {
+    width: 100%;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    transition: 0.3s;
+    margin-top: 15px;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
   }
 
   .journal_footer {
