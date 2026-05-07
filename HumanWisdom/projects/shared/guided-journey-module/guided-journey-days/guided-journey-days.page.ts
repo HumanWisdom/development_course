@@ -19,6 +19,7 @@ export class GuidedJourneyDaysPage implements OnInit {
   isLoading = true;
   journeyTitle: string = '';
   visitedDays: Set<number> = new Set();
+  isSubscriber = false;
   private touchStartX = 0;
   private touchStartY = 0;
 
@@ -29,6 +30,7 @@ export class GuidedJourneyDaysPage implements OnInit {
     private commonService: CommonService
   ) {
     this.isAdults = SharedService.ProgramId == 9;
+    this.isSubscriber = SharedService.isSubscriber();
   }
 
   ngOnInit() {
@@ -90,7 +92,7 @@ export class GuidedJourneyDaysPage implements OnInit {
 
   navigateToEnd() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-end`], {
+    this.router.navigate([`/${prefix}/guided-journeys/end`], {
       queryParams: { journeyId: this.journeyId, title: 'Stress reduction' }
     });
   }
@@ -104,6 +106,8 @@ export class GuidedJourneyDaysPage implements OnInit {
       if (res && Array.isArray(res)) {
         this.allDaysData = res.map(item => ({
           ...item,
+          Type: item.type ? parseInt(item.type) : 1,
+          Title: item.Title || item.Section,
           imgPath: this.getImgUrl(item.imgPath)
         }));
         this.updateDisplayData();
@@ -182,7 +186,7 @@ export class GuidedJourneyDaysPage implements OnInit {
   navigateToDay(day: number) {
     if (day === 0) {
       const prefix = SharedService.getprogramName();
-      this.router.navigate([`/${prefix}/guided-journey/guided-journey-intro`], { queryParams: { journeyId: this.journeyId } });
+      this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: this.journeyId } });
       return;
     }
     this.currentDay = day;
@@ -202,10 +206,25 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.commonService.clickGuidedJourneyDay(exercise.GuidedJourneyDayID).subscribe();
     
     if (exercise.Url) {
-      // Split URLs if multiple (like in the screenshot "/breathing/s29008p1,/breathing/s107006")
       const urls = exercise.Url.split(',');
-      const targetUrl = urls[0]; // Use the first one or logic to decide
-      this.router.navigate([targetUrl]);
+      let targetUrl = urls[0].trim(); 
+      const prefix = SharedService.getprogramName();
+      
+      if (targetUrl.includes('~podcasts~')) {
+        const parts = targetUrl.split('/');
+        // Format example: ~podcasts~102.mp3/102/T/Why...
+        const id = parts[1]; 
+        this.router.navigate([`/${prefix}/podcast/podcast-details/${id}`]);
+      } else if (targetUrl.startsWith('/')) {
+        // Ensure program prefix for absolute paths
+        if (!targetUrl.startsWith(`/${prefix}/`)) {
+          this.router.navigate([`/${prefix}${targetUrl}`]);
+        } else {
+          this.router.navigate([targetUrl]);
+        }
+      } else {
+        this.router.navigate([targetUrl]);
+      }
     }
   }
 
@@ -217,6 +236,25 @@ export class GuidedJourneyDaysPage implements OnInit {
       case 'MICROLEARNING': return 'microlearning';
       default: return 'default';
     }
+  }
+
+  getSectionIcon(section: string) {
+    if (!section) return null;
+    const s = section.toUpperCase();
+    
+    if (s.includes('MODULE') || s.includes('SESSION')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
+    }
+    
+    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('BREATHING') || s.includes('SOUNDSCAPE')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+    }
+    
+    if (s.includes('VIDEO') || s.includes('SHORT')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+    }
+    
+    return null;
   }
 
   getDaysArray() {

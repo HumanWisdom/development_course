@@ -32,7 +32,7 @@
 
         <div *ngIf="isLoading" class="row center_flex mt40px">
           <div class="col-md-12 tcenter">
-            <h4 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">Loading day content...</h4>
+            <app-spinner [show]="isLoading"></app-spinner>
           </div>
         </div>
 
@@ -51,41 +51,55 @@
             <!-- Exercises List -->
             <div *ngFor="let exercise of displayExercises; let i = index">
 
-              <!-- Large Card Style (e.g., first one or based on some property) -->
-              <div *ngIf="i === 0 || exercise.imgPath.includes(',')" class="exercise_card"
-                (click)="onExerciseClick(exercise)">
-                <img [src]="exercise.imgPath.split(',')[0]" class="card_img" alt="">
+              <!-- Type 1: Horizontal Card (Image Left, Content Right) -->
+              <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1" (click)="onExerciseClick(exercise)">
+                <div class="card_type1_img_container">
+                  <img [src]="exercise.imgPath.split(',')[0]" alt="">
+                </div>
+                <div class="card_type1_content">
+                  <h3 class="card_type1_title">{{exercise.Title}}</h3>
+                  <p class="card_type1_meta">{{exercise.Section}}</p>
+                  <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
+                </div>
+                <div class="card_type1_tick" *ngIf="exercise.isRead === '1'">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
+                </div>
+                <div class="card_type1_lock" *ngIf="!isSubscriber && exercise.isFree === '0'">
+                  <img [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'" width="18" alt="">
+                </div>
+              </div>
+
+              <!-- Type 2: Vertical Card (Large Image Top) -->
+              <div *ngIf="exercise.Type === 2" class="exercise_card" (click)="onExerciseClick(exercise)">
+                <div class="card_image_container">
+                  <img [src]="exercise.imgPath.split(',')[0]" class="card_img" alt="">
+                  <div class="icon_overlay" *ngIf="getSectionIcon(exercise.Section)">
+                    <img [src]="getSectionIcon(exercise.Section)" alt="" class="overlay_icon">
+                  </div>
+                </div>
                 <div class="card_content">
                   <h3 class="exercise_title">{{exercise.Title}}</h3>
                   <p class="exercise_meta">{{exercise.Section}}</p>
                   <div class="read_status" *ngIf="exercise.isRead === '1'">
-                    <i class="fa fa-check-circle"></i>
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="18" alt="">
+                  </div>
+                  <div class="lock_status" *ngIf="!isSubscriber && exercise.isFree === '0'">
+                    <img [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'" width="18" alt="">
                   </div>
                 </div>
               </div>
 
-              <!-- Small Card Style -->
-              <div *ngIf="i > 0 && !exercise.imgPath.includes(',')" class="exercise_card_small"
-                (click)="onExerciseClick(exercise)">
-                <img [src]="exercise.imgPath" class="card_img_small" alt="">
-                <div class="small_content">
-                  <h3 class="exercise_title mb0">{{exercise.Title}}</h3>
-                  <p class="exercise_meta mb0">{{exercise.Section}}</p>
-                </div>
-                <div class="read_status" *ngIf="exercise.isRead === '1'">
-                  <i class="fa fa-check-circle"></i>
+              <!-- Type 3: Journaling Box -->
+              <div *ngIf="exercise.Type === 3" class="journal_box">
+                <h4 class="journal_title">{{exercise.Title}}</h4>
+                <textarea placeholder="Tap to answer"></textarea>
+                <div class="journal_footer">
+                  Your online journal is secure and private to you.
                 </div>
               </div>
 
-            </div>
-
-            <!-- Journal / Question Section (Example based on Figma) -->
-            <div class="journal_box">
-              <h4 class="journal_title">What do you think are your common stress triggers?</h4>
-              <textarea placeholder="Tap to answer"></textarea>
-              <div class="journal_footer">
-                Your online journal is secure and private to you.
-              </div>
+              <!-- Separator -->
+              <div class="card_separator" *ngIf="i < displayExercises.length - 1"></div>
 
             </div>
 
