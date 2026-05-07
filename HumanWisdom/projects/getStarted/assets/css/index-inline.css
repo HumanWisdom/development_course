@@ -1068,6 +1068,26 @@ header a[href*="splash_options.php"] * {
 
 /* Mobile blog card (matches Figma dimensions) */
 @media (max-width: 768px) {
+  /*
+   * Survey circles (mobile_circle.svg): don’t flex-center a wide strip — that hides the 1st circles
+   * and lands the viewport around the middle of the artwork. Start from the left / scroll position 0.
+   */
+  .scroller-container.div_new1 {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .scroller-container.div_new1 > div {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .scroller-container.div_new1 img.circle-mobile {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+
   /* Intro video: rounded corners + hairline fix — mobile only (desktop stays square) */
   .youtube-player {
     background: #fff;
@@ -1126,7 +1146,7 @@ header a[href*="splash_options.php"] * {
     overflow-y: visible;
     align-items: center;
     margin-top: -18px;
-    touch-action: pan-x;
+    touch-action: auto;
     overscroll-behavior-x: contain;
     padding-right: 0;
   }

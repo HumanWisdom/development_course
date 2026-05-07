@@ -139,7 +139,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="page-education">
   <?php
       // Simulate fetching country data from a database or external API
       $countries = 
@@ -151,11 +151,11 @@
 
     <section class="hpt120px">
       <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 healthcare-hero-shell">
 
           <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_landing.webp" class="img-responsive w100p display_m_none" alt="Boost student wellbeing, learning and emotional intelligence">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt3rem">
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_landing.webp" class="img-responsive w100p display_m_none h-800" alt="Boost student wellbeing, learning and emotional intelligence">
 
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_mobile.webp" class="img-responsive w100p display_d_none" alt="Boost student wellbeing, learning and emotional intelligence">
             </div>
@@ -180,7 +180,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 p0">
                   <a href="#bring_happierme">
-                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                    <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button" >
                       Request a demo
                     </button>
                   </a>
@@ -208,9 +208,9 @@
         </div>
 
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 div_price">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 div_price w-980px justify-content-center">
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 pr20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 pr20px card" data-aos="fade-up" data-aos-delay="200">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
@@ -230,7 +230,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 plr20px" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 plr20px card" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
@@ -252,7 +252,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 pl20px" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  col-12 p0 pl20px card" data-aos="fade-up" data-aos-delay="400">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <h4 class="mtb0px fs_18px fw_600 lh_150p fc_cb6171 tt_uppercase">
@@ -276,11 +276,11 @@
           </div>
         </div>
 
-        <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="500">
+        <div class="row center_flex mt40px price-demo-row" data-aos="fade-up" data-aos-delay="500">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 center_flex">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  col-12 p0">
               <a href="#bring_happierme">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" >
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button" >
                   Request a demo
                 </button>
               </a>
@@ -293,7 +293,7 @@
       <!-- description -->
       <section>
         <div class="row center_flex">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 flex_block">
+          <div class="p0 flex_block w-1245px gap_40px gap_m24px">
             <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mb20px display_d_none" data-aos="fade-up" data-aos-delay="200">
               <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
                 Develop a mind that is calm, and open to learning
@@ -304,7 +304,7 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_app.webp" class="img-responsive education_app_img" alt="Develop a mind that is calm, and open to learning">
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mt_m24px" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mt_m24px w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
               <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
                 Develop a mind that is calm, and open to learning
               </h2>
@@ -331,7 +331,7 @@
         </div>
 
         <div class="row center_flex div_dyk">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12  col-12 p0 div_dyk_l1">
+          <div class="p0 div_dyk_l1 w-980px">
 
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12  col-12 p0" data-aos="fade-up" data-aos-delay="100">
               <div class="row">

@@ -32,8 +32,133 @@ body {
   width: 84% !important;
 }
 
+/*
+ * Owl Carousel theme CSS loads after main.css and sets
+ * `.owl-theme .owl-nav [class*=owl-] { border-radius: 3px }`, which makes
+ * blog nav buttons look square. Match index.php blog arrows (.coach-arrow).
+ */
+.owl_blog .owl-theme .owl-nav .owl-prev,
+.owl_blog .owl-theme .owl-nav .owl-next {
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  min-height: 26px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  background: rgba(173, 173, 173, 1) !important;
+  border: 0 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+.owl_blog .owl-theme .owl-nav .owl-prev.disabled,
+.owl_blog .owl-theme .owl-nav .owl-next.disabled {
+  background: rgba(173, 173, 173, 0.5) !important;
+}
+
+.owl_blog .owl-theme .owl-nav .owl-prev .bi,
+.owl_blog .owl-theme .owl-nav .owl-next .bi,
+.owl_blog .owl-theme .owl-nav .owl-prev span.bi,
+.owl_blog .owl-theme .owl-nav .owl-next span.bi {
+  font-size: 13px !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Testimonials carousel (owl_container / owl_testimonials): same circular nav as index */
+.owl_testimonials .owl-theme .owl-nav .owl-prev,
+.owl_testimonials .owl-theme .owl-nav .owl-next {
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  min-height: 26px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  background: rgba(173, 173, 173, 1) !important;
+  border: 0 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+.owl_testimonials .owl-theme .owl-nav .owl-prev.disabled,
+.owl_testimonials .owl-theme .owl-nav .owl-next.disabled {
+  background: rgba(173, 173, 173, 0.5) !important;
+}
+
+.owl_testimonials .owl-theme .owl-nav .owl-prev .bi,
+.owl_testimonials .owl-theme .owl-nav .owl-next .bi,
+.owl_testimonials .owl-theme .owl-nav .owl-prev span.bi,
+.owl_testimonials .owl-theme .owl-nav .owl-next span.bi {
+  font-size: 13px !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 .sap-mt {
   margin-top: -20px;
+}
+
+/*
+ * Teenagers "Learn the skills you need to succeed in life" — Figma: 810 × 544.63, centered.
+ * (col-lg-6 + w-980px was 50% wide below 1600px, which left the iframe small and off-center.)
+ */
+body.page-teenagers .teen-video-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: min(810px, calc(100% - 40px)) !important;
+  flex: 0 1 810px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.page-teenagers .teen-video-wrap .yt-embed {
+  display: block !important;
+  width: 100% !important;
+  max-width: 810px !important;
+  height: 544.63px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border: 0;
+}
+
+/* Teenagers premium CTA: true horizontal center on wide viewports */
+@media screen and (min-width: 992px) {
+  body.page-teenagers #teenagers-AnnualType > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.page-teenagers #teenagers-AnnualType a#teenagersPricing {
+    display: inline-flex !important;
+    justify-content: center !important;
+  }
+
+  body.page-teenagers #teenagers-AnnualType .btn_tff {
+    width: auto !important;
+    min-width: 205px !important;
+    max-width: 100% !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -244,8 +369,142 @@ body {
   margin-top: -8px;
 }
 
-.w-980px {
-  width: 980px
+.w-980px,
+.email-w980px {
+  width: 980px !important;
+  max-width: calc(100% - 40px) !important;
+  flex: 0 1 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.w-1245px {
+  width: 1245px !important;
+  max-width: calc(100% - 40px);
+}
+
+.w-384px {
+  width: 384px !important;
+}
+
+.gap_40px {
+  gap: 40px;
+}
+
+.req_button {
+  width: 205px !important;
+  height: 47px !important;
+  padding: 13px 40px !important;
+  border-radius: 24px !important;
+}
+
+.mt3rem {
+  margin-top: 3rem;
+}
+
+.healthcare-hero-shell {
+  position: relative;
+}
+
+.div_price.w-980px {
+  justify-content: center;
+  width: 980px !important;
+  max-width: calc(100% - 40px) !important;
+  flex: 0 1 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.div_price.w-980px .card {
+  min-height: 145px;
+  border: none;
+  gap: 10px;
+}
+
+.email-w980px .input_parent {
+  width: 100% !important;
+}
+
+.email-w980px .input_parent > [class^="col-"] {
+  width: calc(50% - 10px) !important;
+  max-width: calc(50% - 10px) !important;
+  flex: 0 0 calc(50% - 10px) !important;
+}
+
+@media screen and (max-width: 1599px) {
+  body.page-work .mt3rem,
+  body.page-education .mt3rem,
+  body.page-teenagers .mt3rem {
+    margin-top: 0 !important;
+  }
+
+  body.page-work .h-800,
+  body.page-education .h-800,
+  body.page-teenagers .h-800 {
+    height: auto !important;
+  }
+
+  body.page-work .div_price.w-980px,
+  body.page-education .div_price.w-980px {
+    width: 83.33333333% !important;
+    max-width: 83.33333333% !important;
+    flex: 0 0 83.33333333% !important;
+  }
+
+  body.page-work .w-1245px,
+  body.page-education .w-1245px,
+  body.page-teenagers .w-1245px {
+    width: 83.33333333% !important;
+    max-width: 83.33333333% !important;
+    flex: 0 0 83.33333333% !important;
+  }
+
+  body.page-work .col-lg-6.w-384px,
+  body.page-education .col-lg-6.w-384px {
+    width: 50% !important;
+    max-width: 50% !important;
+    flex: 0 0 50% !important;
+  }
+
+  body.page-teenagers .col-lg-5.w-384px {
+    width: 41.66666667% !important;
+    max-width: 41.66666667% !important;
+    flex: 0 0 41.66666667% !important;
+  }
+
+  body.page-work .email-w980px,
+  body.page-education .email-w980px,
+  body.page-teenagers .email-w980px,
+  body.page-teenagers .col-lg-10.w-980px {
+    width: 83.33333333% !important;
+    max-width: 83.33333333% !important;
+    flex: 0 0 83.33333333% !important;
+  }
+
+  body.page-teenagers .col-lg-6.w-980px:not(.teen-video-wrap) {
+    width: 50% !important;
+    max-width: 50% !important;
+    flex: 0 0 50% !important;
+  }
+
+  body.page-teenagers .teen-video-wrap.col-lg-6.w-980px {
+    width: 100% !important;
+    max-width: min(810px, calc(100% - 40px)) !important;
+    flex: 0 1 810px !important;
+  }
+
+  body.page-teenagers .col-lg-12.w-980px {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  body.page-work .email-w980px .input_parent > [class^="col-"],
+  body.page-education .email-w980px .input_parent > [class^="col-"] {
+    width: auto !important;
+    max-width: none !important;
+    flex: 1 0 0 !important;
+  }
 }
 
 .j-center {
@@ -1148,6 +1407,25 @@ body {
     display: block;
   }
 
+  body.page-teenagers .teen-video-wrap {
+    width: 100% !important;
+    max-width: calc(100% - 24px) !important;
+    flex: 1 1 auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers .teen-video-wrap .yt-embed {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 810 / 544.63;
+    padding: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   /* Fix pricing section alignment and button */
   .div_subscriptionnew {
     text-align: center;
@@ -1505,6 +1783,54 @@ body {
     justify-content: center !important;
     align-items: center !important;
   }
+
+  .w-980px,
+  .w-1245px,
+  .email-w980px {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 1 100% !important;
+  }
+
+  .w-1245px.gap_40px {
+    flex-direction: column !important;
+  }
+
+  .gap_m24px {
+    gap: 24px;
+  }
+
+  .req_button {
+    width: 335px !important;
+    max-width: 90% !important;
+    height: 47px !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  .div_price.w-980px {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .div_price.w-980px .card {
+    width: 85% !important;
+    max-width: 335px !important;
+    height: auto !important;
+    padding: 16px !important;
+    margin: 0 auto !important;
+    float: none !important;
+  }
+
+  .email-w980px .input_parent > [class^="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-right: 0 !important;
+  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -1517,6 +1843,112 @@ body {
   .fixed_w1340 {
     width: 1340px !important;
     margin: 0 auto !important;
+  }
+
+  .row.center_flex .col-sm-10.div_inspire,
+  .row.center_flex .col-xs-10.div_inspire,
+  .row.center_flex .col-10.div_inspire,
+  .email-w980px {
+    width: 980px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .absolute_desc {
+    width: 980px !important;
+    top: 3rem;
+    left: 6px;
+  }
+
+  .healthcare-hero-shell .absolute_desc {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 980px !important;
+    max-width: calc(100% - 40px);
+    height: calc(100% - 3rem);
+    margin: 0 auto;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .healthcare-hero-shell .absolute_desc > [class*="col-"] {
+    flex: 0 0 440px;
+    max-width: 440px;
+    width: 440px;
+    margin-left: 34px;
+  }
+
+  body.page-work .price-demo-row > [class*="col-"],
+  body.page-education .price-demo-row > [class*="col-"] {
+    width: 980px !important;
+    max-width: calc(100% - 40px) !important;
+    flex: 0 1 980px !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-work .price-demo-row > [class*="col-"] > [class*="col-"],
+  body.page-education .price-demo-row > [class*="col-"] > [class*="col-"] {
+    width: auto !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;
+  }
+
+  body.page-work .owl_blog,
+  body.page-education .owl_blog,
+  body.page-teenagers .owl_blog {
+    width: 980px !important;
+    max-width: calc(100% - 40px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-work .owl_blog > .owl-carousel > .owl-stage-outer,
+  body.page-education .owl_blog > .owl-carousel > .owl-stage-outer,
+  body.page-teenagers .owl_blog > .owl-carousel > .owl-stage-outer {
+    margin-left: 0 !important;
+  }
+
+  body.page-work .owl_blog .owl-carousel .owl-stage,
+  body.page-education .owl_blog .owl-carousel .owl-stage,
+  body.page-teenagers .owl_blog .owl-carousel .owl-stage {
+    left: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-work #bring_happierme #Request-Demo,
+  body.page-education #bring_happierme #Request-Demo {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-work #bring_happierme #Request-Demo,
+  body.page-work #bring_happierme #Request-Demo:focus,
+  body.page-education #bring_happierme #Request-Demo,
+  body.page-education #bring_happierme #Request-Demo:focus {
+    width: 205px !important;
+    max-width: 205px !important;
+    height: 47px !important;
+    padding: 13px 40px !important;
+    border-radius: 24px !important;
+    flex: 0 0 205px !important;
+  }
+
+  body.page-work #bring_happierme .row.center_flex.mt40px > [class*="col-"],
+  body.page-education #bring_happierme .row.center_flex.mt40px > [class*="col-"] {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .h-800 {
+    height: 800px;
   }
 
   .land-happierme-margin {

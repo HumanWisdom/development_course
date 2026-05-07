@@ -200,7 +200,7 @@
 
 </head>
 
-<body>
+<body class="page-teenagers">
 
   <!-- header -->
   <?php include('../includes/header.php'); ?>
@@ -213,12 +213,12 @@
 
   <section class="hpt120px">
     <div class="row" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 healthcare-hero-shell">
 
         <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt3rem">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp"
-              class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
+              class="img-responsive w100p display_m_none h-800" loading="lazy" alt="performance">
 
 
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp"
@@ -350,7 +350,7 @@
       </div>
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0">
+        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
           <iframe class="yt-embed" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -382,7 +382,7 @@
       </div>
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-980px">
 
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenegers_bubbles.webp"
             class="img-responsive w100p display_m_none" alt="modules" loading="lazy">
@@ -399,13 +399,13 @@
     <!-- description -->
     <section>
       <div class="row center_flex">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 flex_block">
+        <div class="p0 flex_block w-1245px gap_40px gap_m24px">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pl0px" data-aos="fade-up" data-aos-delay="100">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app.webp"
               class="img-responsive teens-app-img " loading="lazy" alt="Feel calm">
           </div>
 
-          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
             <h2 class="mtb0px fs_24px fw_600 lh_150p fc_183C79">
               Feel calm, capable, and better everyday, with HappierMe!
             </h2>
@@ -430,7 +430,7 @@
       </div>
 
       <div class="row center_flex div_dykt">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-12 p0 div_dyk_l1">
+        <div class="p0 div_dyk_l1 w-980px">
 
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="100">
             <div class="row">
@@ -1171,7 +1171,7 @@
     <!-- subscription -->
     <section id="div_subscription">
       <div class="row center_flex div_subscription">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 w-980px">
 
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -1264,11 +1264,11 @@
           <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
               <a id="teenagersPricing">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
+                <button type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
                   Start your free trial
                 </button>
+              </a>
             </div>
-            </a>
           </div>
 
         </div>
