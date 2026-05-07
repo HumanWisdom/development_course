@@ -21,6 +21,8 @@
   </div>
 </div>
 
+<app-alert [enableAlert]="enableAlert" [content]="content" (getAlertcloseEvent)="getAlertcloseEvent()"></app-alert>
+
 <app-bg-video></app-bg-video>
 
 <!-- page content -->
@@ -92,7 +94,13 @@
               <!-- Type 3: Journaling Box -->
               <div *ngIf="exercise.Type === 3" class="journal_box">
                 <h4 class="journal_title">{{exercise.Title}}</h4>
-                <textarea placeholder="Tap to answer"></textarea>
+                <textarea placeholder="Tap to answer" [(ngModel)]="exercise.Response"></textarea>
+                
+                <button class="btn_journal" (click)="submitJournal(exercise)" 
+                        *ngIf="exercise.Response && exercise.Response.trim() !== ''">
+                  Add to journal
+                </button>
+
                 <div class="journal_footer">
                   Your online journal is secure and private to you.
                 </div>
