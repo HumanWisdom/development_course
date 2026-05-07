@@ -106,17 +106,17 @@ export class GuidedJourneyIntroPage implements OnInit {
 
   goToListing() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-listing`]);
+    this.router.navigate([`/${prefix}/guided-journeys`]);
   }
 
   beginJourney() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-days`], { queryParams: { journeyId: this.journeyId, day: 1 } });
+    this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: 1 } });
   }
 
   navigateToDay(day) {
     // Logic for day navigation if needed
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-days`], { queryParams: { journeyId: this.journeyId, day: day } });
+    this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
   }
 }

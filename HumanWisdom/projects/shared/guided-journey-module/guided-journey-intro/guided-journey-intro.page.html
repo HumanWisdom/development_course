@@ -35,7 +35,7 @@
 
         <div *ngIf="isLoading" class="row center_flex mt40px">
           <div class="col-md-12 tcenter">
-            <h4 [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">Loading details...</h4>
+            <app-spinner [show]="isLoading"></app-spinner>
           </div>
         </div>
 
