@@ -286,6 +286,100 @@
 }
 
 /* Footer Navigation */
+.teenagers-days {
+    .card_type1 {
+        background: #112d5d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+        .card_type1_title {
+            color: #ffffff;
+        }
+
+        .card_type1_meta {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    .exercise_card {
+        background: #112d5d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+        .exercise_title {
+            color: #ffffff;
+        }
+
+        .exercise_meta {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .card_type1_img_container {
+            background: #0c2b5f;
+        }
+
+        .card_type1_title {
+            color: #ffffff;
+        }
+
+        .card_type1_meta {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    .card_separator {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .journal_box {
+        background: #112d5d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        
+        .journal_title {
+            color: #ffffff;
+        }
+
+        textarea {
+            background: #0c2b5f;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .journal_footer {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    .footer_dots {
+        .dot {
+            background: rgba(255, 255, 255, 0.3) !important;
+            &.active {
+                background: rgba(255, 255, 255, 0.8) !important;
+            }
+        }
+    }
+
+    .footer_days {
+        .day_circle {
+            background: #112d5d;
+            border-color: rgba(255, 255, 255, 0.1);
+            span {
+                color: #ffffff;
+            }
+            &.active {
+                background: #e58d82;
+                border-color: #e58d82;
+                span {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
 .footer_fixed_wrapper {
   position: fixed;
   bottom: 0;

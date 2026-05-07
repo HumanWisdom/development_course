@@ -46,6 +46,7 @@ export class GuidedJourneyDaysPage implements OnInit {
         this.markAsVisited(this.currentDay);
       }
       if (this.journeyId) {
+        this.getJourneyDetails();
         this.getGuidedJourneyDays();
       }
     });
@@ -97,7 +98,22 @@ export class GuidedJourneyDaysPage implements OnInit {
   navigateToEnd() {
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/guided-journeys/end`], {
-      queryParams: { journeyId: this.journeyId, title: 'Stress reduction' }
+      queryParams: { journeyId: this.journeyId, title: this.journeyTitle }
+    });
+  }
+
+  getJourneyDetails() {
+    let userid = SharedService.getUserId() || 100;
+    let programId = SharedService.ProgramId;
+    this.commonService.GetGuidedJourneys(programId, userid).subscribe((res: any) => {
+      if (res) {
+        const data = Array.isArray(res) ? res : (res.Data || res.data || res.DataList || res.GuidedJourneys || res.Guided_Journeys || res.list || []);
+        const journey = data.find(item => (item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID) == this.journeyId);
+        
+        if (journey) {
+          this.journeyTitle = journey.Title || journey.title || journey.JourneyName || journey.Name;
+        }
+      }
     });
   }
 
