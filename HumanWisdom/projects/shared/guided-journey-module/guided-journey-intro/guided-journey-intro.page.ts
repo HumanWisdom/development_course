@@ -116,7 +116,12 @@ export class GuidedJourneyIntroPage implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    var url = this.navigationService.navigateToBackLink();
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      this.location.back();
+    }
   }
 
   goToListing() {

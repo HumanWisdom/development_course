@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from "../../services/shared.service";
 import { CommonService } from "../../services/common.service";
+import { NavigationService } from "../../services/navigation.service";
 
 @Component({
   selector: 'app-guided-journey-days',
@@ -22,12 +23,15 @@ export class GuidedJourneyDaysPage implements OnInit {
   isSubscriber = false;
   private touchStartX = 0;
   private touchStartY = 0;
+  enableAlert: boolean = false;
+  content: string = '';
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private navigationService: NavigationService
   ) {
     this.isAdults = SharedService.ProgramId == 9;
     this.isSubscriber = SharedService.isSubscriber();
@@ -111,6 +115,7 @@ export class GuidedJourneyDaysPage implements OnInit {
           imgPath: this.getImgUrl(item.imgPath)
         }));
         this.updateDisplayData();
+        this.getJournalResponses();
         
         // Also check initial read status to mark visited
         this.allDaysData.forEach(item => {
@@ -126,6 +131,60 @@ export class GuidedJourneyDaysPage implements OnInit {
     }, error => {
       this.isLoading = false;
     });
+  }
+
+  getJournalResponses() {
+    const userId = SharedService.getUserId();
+    if (userId && userId !== 100) {
+      this.commonService.viewJournal(userId).subscribe(res => {
+        if (res && Array.isArray(res)) {
+          this.allDaysData.forEach(exercise => {
+            if (exercise.Type === 3) {
+              const reflectionId = exercise.QueId || exercise.QuestId || exercise.ReflectionId || exercise.GuidedJourneyDayID;
+              const response = res.find(r => (r.QueId && r.QueId == reflectionId) || (r.ProgId && r.ProgId == reflectionId));
+              if (response) {
+                exercise.Response = response.Response || response.Ans;
+              }
+            }
+          });
+        }
+      });
+    }
+  }
+
+  submitJournal(exercise: any) {
+    if (!this.isSubscriber && exercise.isFree === '0') {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`/${prefix}/subscription/start-your-free-trial`]);
+      return;
+    }
+
+    const userId = SharedService.getUserId();
+    if (!userId || userId === 100) {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`/${prefix}/onboarding/login`]);
+      return;
+    }
+
+    const reflectionId = exercise.QueId || exercise.QuestId || exercise.ReflectionId || exercise.GuidedJourneyDayID;
+    
+    const data = {
+      SubscriberID: userId,
+      ReflectionId: reflectionId,
+      Resp: exercise.Response
+    };
+
+    this.commonService.addReflection(data).subscribe(res => {
+      if (res) {
+        this.content = 'Successfully added to journal';
+        this.enableAlert = true;
+      }
+    });
+  }
+
+  getAlertcloseEvent() {
+    this.enableAlert = false;
+    this.content = '';
   }
 
   getImgUrl(url: string) {
@@ -170,7 +229,12 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    var url = this.navigationService.navigateToBackLink();
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      this.location.back();
+    }
   }
 
   markAsVisited(day: number) {
@@ -213,8 +277,12 @@ export class GuidedJourneyDaysPage implements OnInit {
       if (targetUrl.includes('~podcasts~')) {
         const parts = targetUrl.split('/');
         // Format example: ~podcasts~102.mp3/102/T/Why...
-        const id = parts[1]; 
-        this.router.navigate([`/${prefix}/podcast/podcast-details/${id}`]);
+        const path = parts[0];
+        const id = parts[1] || '0';
+        const enable = parts[2] || 'T';
+        const title = parts[3] || 'Podcast';
+        const moduleName = 'podcast';
+        this.router.navigate([`/${prefix}/audiopage`, path, id, enable, title, moduleName]);
       } else if (targetUrl.startsWith('/')) {
         // Ensure program prefix for absolute paths
         if (!targetUrl.startsWith(`/${prefix}/`)) {
