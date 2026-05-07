@@ -62,7 +62,7 @@ export class GuidedJourneyEndPage implements OnInit {
 
   goToListing() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-listing`]);
+    this.router.navigate([`/${prefix}/guided-journeys`]);
   }
 
   goToModule(item: any) {

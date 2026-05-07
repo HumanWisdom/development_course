@@ -48,25 +48,6 @@
 
 
 
-.dots_container {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-
-    .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.2);
-
-        &.active {
-            background: rgba(0, 0, 0, 0.5);
-            width: 20px;
-            border-radius: 10px;
-        }
-    }
-}
-
 .footer_fixed_wrapper {
     position: fixed;
     bottom: 0;
@@ -82,7 +63,6 @@
 
 .footer_days {
     pointer-events: auto;
-    border-top: 1px solid rgba(0,0,0,0.05);
     padding: 0 !important;
 
     .odiv {
@@ -108,6 +88,7 @@
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 
         span {
             font-size: 13px;
@@ -117,6 +98,11 @@
 
         &.active {
             background: #FFD889;
+            border-color: #FFD889;
+        }
+        
+        &.intro_circle {
+            background: #F8F8F8;
         }
 
         &:hover {
@@ -124,6 +110,45 @@
         }
     }
 }
+
+.footer_dots {
+    pointer-events: auto;
+    padding: 10px 0 0 0 !important;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.dots_container {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+
+        &.active {
+            background: rgba(0, 0, 0, 0.4);
+            width: 15px;
+            border-radius: 10px;
+        }
+    }
+}
+
+/* Dark theme overrides for dots */
+.bg_stake {
+    .dot {
+        background: rgba(255, 255, 255, 0.3) !important;
+        &.active {
+            background: rgba(255, 255, 255, 0.8) !important;
+        }
+    }
+}
+
 
 .mb10px {
     margin-bottom: 10px !important;

@@ -104,7 +104,7 @@ export class GuidedJourneyListingPage implements OnInit {
 
     // Navigate to intro page of guided journey
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-intro`], { queryParams: { journeyId: item.id } });
+    this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: item.id } });
   }
 
   onModalClose(event: string) {
