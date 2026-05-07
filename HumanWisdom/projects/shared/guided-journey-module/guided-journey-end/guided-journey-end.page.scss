@@ -211,6 +211,76 @@
 .fc_e58d82 { color: #E58D82 !important; }
 
 /* Footer Navigation */
+.teenagers-end {
+    .well_done_section {
+        .checkmark_circle {
+            border-color: #e58d82;
+            i {
+                color: #e58d82;
+            }
+        }
+        .well_done_desc {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    .btn_return {
+        background: #e58d82 !important;
+        box-shadow: 0 4px 10px rgba(229, 141, 130, 0.2);
+    }
+
+    .toc_adiv_01 {
+        background: #112d5d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+    }
+.box_v3_05 {
+  padding: 0 !important;
+}
+.tpr20px{
+  padding-right: 20px;
+}
+    .odiv_pathway {
+        .col-md-3 {
+            background: #112d5d;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px !important;
+            margin-right: 15px;
+            width: 250px !important; /* Ensure they look like cards in the horizontal scroll */
+            flex: 0 0 auto;
+
+            .ctimg {
+                height: 140px;
+            }
+        }
+    }
+
+    .footer_days {
+        .day_circle {
+            background: #112d5d;
+            border-color: rgba(255, 255, 255, 0.1);
+            span {
+                color: #ffffff;
+            }
+            &.active {
+                background: #e58d82;
+                border-color: #e58d82;
+                span {
+                    color: #ffffff;
+                }
+            }
+            &.visited {
+                background: #0c2b5f !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                span {
+                    color: rgba(255, 255, 255, 0.3) !important;
+                }
+            }
+        }
+    }
+}
+
 .footer_fixed_wrapper {
   position: fixed;
   bottom: 0;
