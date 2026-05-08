@@ -5068,3 +5068,42 @@ input[type="password" i]::-ms-reveal {
   font-style: normal;
   font-display: swap; /* <-- key addition */
 }
+@keyframes verticalScroll {
+    0% { transform: translateY(0); }
+    8% { transform: translateY(0); }
+    16% { transform: translateY(-100%); }
+    24% { transform: translateY(-100%); }
+    32% { transform: translateY(-200%); }
+    40% { transform: translateY(-200%); }
+    48% { transform: translateY(-300%); }
+    56% { transform: translateY(-300%); }
+    64% { transform: translateY(-400%); }
+    72% { transform: translateY(-400%); }
+    80% { transform: translateY(-500%); }      
+    88% { transform: translateY(-500%); }     
+    96% { transform: translateY(-600%); }    /* Continue scrolling forward */
+    100% { transform: translateY(-600%); }    /* Continue scrolling forward */
+}
+
+      .scrolling-words {
+            display: inline-block;
+            position: relative;
+            height: 1em;
+            overflow: hidden;
+            vertical-align: baseline;
+        }
+
+        .scrolling-word {
+            display: block;
+            animation: verticalScroll 12s infinite ease-in-out;
+            font-weight: 600;
+            background: #ED7D6F;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-container:hover .scrolling-word {
+            filter: drop-shadow(0 20px 40px rgba(37, 99, 235, 0.2));
+            transition: filter 1.5s ease;
+        }
