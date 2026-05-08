@@ -161,7 +161,7 @@
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright dflex_01">
                         <div class="" *ngIf="item.UserName != userName" (click)="follow(item,index)">
                           <button type="button" class="btn fs_12px fw_600 lh_140p"
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='0'">
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'" *ngIf="item.Followed=='0'">
                             <i class="fa fa-plus fa-xs mr3px"></i>
                             <span class="underline">
                               Follow
@@ -179,7 +179,7 @@
 
                         <div class="" *ngIf="item.UserName == userName" (click)="follow(item,index)">
                           <button type="button" class="btn fs_12px fw_600 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" *ngIf="item.Followed=='0'">
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'" *ngIf="item.Followed=='0'">
                             <i class="fa fa-plus fa-xs mr3px"></i>
                             <span class="underline">
                               Follow
@@ -347,7 +347,7 @@
                       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 ">
                         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-2 p0" *ngIf="!isAdults">
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
                               src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
                               class="img-responsive mr5px">
@@ -359,7 +359,7 @@
                         </div>
                         <div class="col-lg-3 col-md-2 col-sm-2 col-xs-2 p0" *ngIf="isAdults">
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)" (keydown.enter)="like(item,index)"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_heart.svg"
                               class="img-responsive mr5px">
@@ -372,7 +372,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
-                            class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
+                            class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"
                             [disabled]="DisabledComment(item)" (click)="reportpost(item,'comment')">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
@@ -385,7 +385,7 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img
@@ -398,7 +398,7 @@
 
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
                         <button type="button" class="btn fs_12px fw_400 lh_140p"
-                          [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="reportpost(item,'report')">
+                          [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'" (click)="reportpost(item,'report')">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                             class="img-responsive mr5px" *ngIf="!isAdults">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_report.svg"
@@ -494,7 +494,7 @@
 
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 tright dflex_01">
             <div class="" *ngIf="item.UserName != userName" (click)="follow(item,index)">
-              <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
+              <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"
                 *ngIf="item.Followed=='0'">
                 <i class="fa fa-plus fa-xs mr3px"></i>
                 <span class="underline">
@@ -512,7 +512,7 @@
             </div>
 
             <div class="" *ngIf="item.UserName == userName" (click)="follow(item,index)">
-              <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
+              <button type="button" class="btn fs_12px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"
                 *ngIf="item.Followed=='0'">
                 <i class="fa fa-plus fa-xs mr3px"></i>
                 <span class="underline">
@@ -621,19 +621,19 @@
           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
               <button type="button" class="btn fs_12px fw_400 lh_140p "
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                 <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
-                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
+                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/like_teen.svg"
                   class="img-responsive mr5px">
                 <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
-                  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/like_filledteen.svg"
                   class="img-responsive mr5px">
                 {{item.PostLikeCount}}
               </button>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="isAdults">
               <button type="button" class="btn fs_12px fw_400 lh_140p "
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                 <img *ngIf="item.Liked=='0'" (click)="like(item,index)" (keydown.enter)="like(item,index)"
                   src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_heart.svg"
                   class="img-responsive mr5px">
@@ -646,9 +646,9 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
               <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
-                class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
+                class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"
                 [disabled]="DisabledComment(item)" (click)="reportpost(item,'comment')">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment_teen.svg"
                   class="img-responsive mr5px" *ngIf="!isAdults">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_comment.svg"
                   class="img-responsive mr5px" style="height:24px; width:24px" *ngIf="isAdults">
@@ -658,8 +658,8 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
               <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p "
-                [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
+                [ngClass]="isAdults ? 'fc_000000' : 'fc_#EE9596'">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/shre_teen.svg"
                   class="img-responsive mr5px" *ngIf="!isAdults">
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_share.svg"
                   class="img-responsive mr5px" *ngIf="isAdults">
@@ -669,7 +669,7 @@
           </div>
 
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
-            <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'"
+            <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"
               (click)="reportpost(item,'report')">
               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
                 class="img-responsive mr5px" *ngIf="!isAdults">
@@ -1199,7 +1199,7 @@
       <a class="" (click)="filterBasedOnTags(5,'Ask our expert coaches')">
         <div class="row mtb10pxi">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-            <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+            <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
               Ask our expert coaches
             </h3>
           </div>
@@ -1222,7 +1222,7 @@
 
       <!--    <div class="row mb20px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-          <h3 class="mtb0px fs_15px fw_600 lh_140p fc_e58d82">
+          <h3 class="mtb0px fs_15px fw_600 lh_140p fc_EE9596">
             Other
           </h3>
         </div>
@@ -1232,7 +1232,7 @@
         <a class="" (click)="onChange(1)">
           <div class="row mb5px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                 Threads I’m following
               </h3>
             </div>
@@ -1248,7 +1248,7 @@
         <a class="" (click)="onChange(2)">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                 My threads
               </h3>
             </div>
@@ -1264,7 +1264,7 @@
         <a class="" (click)="onChange(3)">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                 Reflections
               </h3>
             </div>
@@ -1280,7 +1280,7 @@
         <a class="" (click)="getAllRecords()">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-              <h3 class="mtb0px fs_15px fw_600 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+              <h3 class="mtb0px fs_15px fw_600 lh_140p fc_ffffff" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 All threads
               </h3>
             </div>
