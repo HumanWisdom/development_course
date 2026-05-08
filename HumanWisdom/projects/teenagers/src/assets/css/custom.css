@@ -21016,13 +21016,13 @@ input {
 
 .btn_post {
   width: 100%;
-  background: #ffffff !important;
+  background: #EE9596 !important;
   border-radius: 100px;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
-  color: #EE9596 !important;
+  color: #ffffff !important;
   text-align: center;
   /* color: #5D5D5D; */
   margin: 0;
@@ -28804,8 +28804,10 @@ video::-webkit-media-controls-panel {
   width: 50px;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
+
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #EE9596 !important;
+  /* background: #EE9596 !important; */
   border-radius: 100%;
   border: 2px solid white;
   text-align: center;
@@ -33866,7 +33868,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0;
   padding: 0;
   background: transparent;
-  color: #EE9596 !important;
+  color: #fff !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -37279,4 +37281,4 @@ div.contentdiv p {
 
 .session-expired-alert .session-expired-login-btn .alert-button-inner {
   justify-content: center;
-}
+}
