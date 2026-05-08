@@ -5097,7 +5097,7 @@ input[type="password" i]::-ms-reveal {
       .scrolling-words {
             display: inline-block;
             position: relative;
-            height: 1em;
+            height: 1.2em;
             overflow: hidden;
             vertical-align: baseline;
         }
