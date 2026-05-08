@@ -105,7 +105,11 @@ export class GuidedJourneyEndPage implements OnInit {
 
   goToModule(item: any) {
     if (item.url) {
-      this.router.navigate([item.url]);
+      let url = item.url;
+      if (!url.startsWith('/')) {
+        url = '/' + url;
+      }
+      this.router.navigateByUrl(url);
     }
   }
 
@@ -145,7 +149,13 @@ export class GuidedJourneyEndPage implements OnInit {
   }
 
   navigateToPathway(url: string) {
-    this.router.navigate([url]);
+    if (url) {
+      let finalUrl = url;
+      if (!finalUrl.startsWith('/')) {
+        finalUrl = '/' + finalUrl;
+      }
+      this.router.navigateByUrl(finalUrl);
+    }
   }
 }
 

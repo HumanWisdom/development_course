@@ -124,12 +124,18 @@ export class GuidedJourneyDaysPage implements OnInit {
 
     this.commonService.GetGuidedJourneyDays(this.journeyId, programId, userId).subscribe((res: any) => {
       if (res && Array.isArray(res)) {
-        this.allDaysData = res.map(item => ({
-          ...item,
-          Type: item.type ? parseInt(item.type) : 1,
-          Title: item.Title || item.Section,
-          imgPath: this.getImgUrl(item.imgPath)
-        }));
+        this.allDaysData = res.map(item => {
+          const rawTitle = item.Title || item.Section;
+          const { mainTitle, subTitle } = this.parseTitle(rawTitle);
+          return {
+            ...item,
+            Type: item.type ? parseInt(item.type) : 1,
+            Title: rawTitle,
+            DisplayTitle: mainTitle,
+            DisplaySubtitle: subTitle,
+            imgPath: this.getImgUrl(item.imgPath)
+          };
+        });
         this.updateDisplayData();
         this.getJournalResponses();
         
@@ -147,6 +153,20 @@ export class GuidedJourneyDaysPage implements OnInit {
     }, error => {
       this.isLoading = false;
     });
+  }
+
+  parseTitle(title: string) {
+    if (title && title.includes('(') && title.includes(')')) {
+      const parts = title.split('(');
+      const mainTitle = parts[0].trim();
+      let subTitle = parts[1].replace(')', '').trim();
+      // Replace comma with bullet point as seen in Figma
+      if (subTitle.includes(',')) {
+        subTitle = subTitle.replace(',', ' •');
+      }
+      return { mainTitle, subTitle };
+    }
+    return { mainTitle: title, subTitle: '' };
   }
 
   getJournalResponses() {
@@ -291,23 +311,47 @@ export class GuidedJourneyDaysPage implements OnInit {
       const prefix = SharedService.getprogramName();
       
       if (targetUrl.includes('~podcasts~')) {
+        // Podcast format: ~podcasts~102.mp3/102/T/Why...
         const parts = targetUrl.split('/');
-        // Format example: ~podcasts~102.mp3/102/T/Why...
         const path = parts[0];
         const id = parts[1] || '0';
         const enable = parts[2] || 'T';
         const title = parts[3] || 'Podcast';
         const moduleName = 'podcast';
         this.router.navigate([`/${prefix}/audiopage`, path, id, enable, title, moduleName]);
-      } else if (targetUrl.startsWith('/')) {
-        // Ensure program prefix for absolute paths
-        if (!targetUrl.startsWith(`/${prefix}/`)) {
-          this.router.navigate([`/${prefix}${targetUrl}`]);
-        } else {
-          this.router.navigate([targetUrl]);
-        }
+
+      } else if (targetUrl.startsWith('https_~~') || (targetUrl.includes('~') && !targetUrl.startsWith('/'))) {
+        // Encoded audio URL format used by AdultsAudioMeditationComponent
+        // Route: /{prefix}/guided-meditation/audiopage/:audiolink/:title/:RowId/:type
+        const rowId = exercise.GuidedJourneyDayID || '0';
+        const title = (exercise.Title || exercise.Section || 'Audio');
+        // User specified working pattern: audiopage/:audiolink/:id/:enable/:title
+        // Mapping: :audiolink = targetUrl, :title = rowId, :RowId = 'T', :type = title
+        const finalUrl = `/${prefix}/guided-meditation/audiopage/${targetUrl}/${rowId}/T/${encodeURIComponent(title)}`;
+        this.router.navigateByUrl(finalUrl);
+
       } else {
-        this.router.navigate([targetUrl]);
+        // Plain relative or absolute path — use navigateByUrl to preserve query params
+        let finalUrl = targetUrl;
+        
+        if (finalUrl.startsWith('http')) {
+          window.location.href = finalUrl;
+          return;
+        }
+
+        if (finalUrl.startsWith('/')) {
+          if (!finalUrl.startsWith(`/${prefix}/`)) {
+            finalUrl = `/${prefix}${finalUrl}`;
+          }
+        } else {
+          if (!finalUrl.startsWith(`${prefix}/`)) {
+            finalUrl = `/${prefix}/${finalUrl}`;
+          } else {
+            finalUrl = `/${finalUrl}`;
+          }
+        }
+        
+        this.router.navigateByUrl(finalUrl);
       }
     }
   }
