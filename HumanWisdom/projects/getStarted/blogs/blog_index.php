@@ -49,6 +49,58 @@
       margin-top: 50px;
     }
 
+    /*
+     * Desktop hero band height — match index.php hero artboard (new-app-adults-teen 525px on wide screens).
+     * Without this, blog_landing.png intrinsic height makes the banner much taller than index.
+     */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      body.page-blog-index .blog-index-hero {
+        overflow: hidden;
+      }
+
+      body.page-blog-index .blog-index-hero img.img-responsive.img_bl {
+        height: 406px !important;
+        width: 100% !important;
+        max-height: 406px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+      }
+    }
+
+    @media screen and (min-width: 1025px) {
+      body.page-blog-index .blog-index-hero {
+        overflow: hidden;
+      }
+
+      body.page-blog-index .blog-index-hero img.img-responsive.img_bl {
+        height: 525px !important;
+        width: 100% !important;
+        max-height: 525px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+      }
+    }
+
+    @media screen and (min-width: 1600px) {
+      body.page-blog-index .blog_links > .col-lg-10,
+      body.page-blog-index .blog_links > .col-md-10,
+      body.page-blog-index .blog_links > .col-sm-10,
+      body.page-blog-index .blog_links > .col-xs-10,
+      body.page-blog-index .blog_links > .col-10 {
+        width: 980px !important;
+        max-width: 980px !important;
+        flex: 0 0 980px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      body.page-blog-index .blog_links .col-lg-4 {
+        width: 33.33333333% !important;
+        max-width: 33.33333333% !important;
+        flex: 0 0 33.33333333% !important;
+      }
+    }
+
     @media (max-width: 767px) {
 
       .blog-index-hero.hpt120px {
@@ -119,7 +171,7 @@
   </style>
 </head>
 
-<body>
+<body class="page-blog-index">
 
   <!-- header -->
   <?php Template::header(); ?>
@@ -1164,6 +1216,36 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">10 Ways to Succeed as a Coach
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+              <a class="" href="mental_health_preventation.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/77.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Manage your emotions</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">What does “Prevention” in Mental Health actually mean?
+
+
 </h4>
                   </div>
                 </div>

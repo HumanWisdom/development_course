@@ -8,6 +8,7 @@ import { GuidedJourneyListingPage } from './guided-journey-listing/guided-journe
 import { GuidedJourneyIntroPage } from './guided-journey-intro/guided-journey-intro.page';
 import { GuidedJourneyDaysPage } from './guided-journey-days/guided-journey-days.page';
 import { GuidedJourneyEndPage } from './guided-journey-end/guided-journey-end.page';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { GuidedJourneyEndPage } from './guided-journey-end/guided-journey-end.pa
     CommonModule,
     IonicModule,
     SharedModule,
+    FormsModule,
     GuidedJourneyModuleRoutingModule
   ],
   exports: [

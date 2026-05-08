@@ -57,7 +57,7 @@ export class GuidedJourneyListingPage implements OnInit {
           title: item.Title || item.title || item.JourneyName || item.Name,
           subtitle: item.Subtitle || item.subtitle,
           description: item.Description || item.description,
-          imgUrl: item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp',
+          imgUrl: this.getImgUrl(item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl),
           isRead: item.isRead || item.IsRead || '0',
           isFree: item.isFree || item.IsFree || '0',
         }));
@@ -104,7 +104,7 @@ export class GuidedJourneyListingPage implements OnInit {
 
     // Navigate to intro page of guided journey
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-intro`], { queryParams: { journeyId: item.id } });
+    this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: item.id } });
   }
 
   onModalClose(event: string) {
@@ -112,5 +112,12 @@ export class GuidedJourneyListingPage implements OnInit {
     if (event === 'ok') {
       this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
     }
+  }
+
+  getImgUrl(url) {
+    if (!url) return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
+    if (url.startsWith('https://') || url.startsWith('http://')) return url;
+    if (url.startsWith('/')) return `https://d1tenzemoxuh75.cloudfront.net${url}`;
+    return `https://d1tenzemoxuh75.cloudfront.net/${url}`;
   }
 }

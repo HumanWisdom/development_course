@@ -1,0 +1,498 @@
+.sc_01 {
+  position: relative;
+  min-height: 100vh !important;
+  padding: 110px 20px 140px 20px;
+}
+
+.mc_01_v3_ext {
+  padding-top: 0px !important;
+}
+
+.bg_stake {
+  background: #254170 !important;
+}
+
+.bg_FFF7E6 {
+  background: #FFF7E6 !important;
+}
+
+.nobg {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Exercise Cards */
+.exercise_card {
+  background: #FFEFC7;
+  border-radius: 16px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  cursor: pointer;
+  position: relative;
+
+  .card_image_container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+
+    .card_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .icon_overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .overlay_icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+  }
+
+  .card_content {
+    transform: scale(0.97);
+  }
+
+  .card_img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  .card_content {
+    padding: 5px 10px 10px;
+    position: relative;
+  }
+
+  .exercise_title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #000;
+    margin: 0;
+  }
+
+  .exercise_meta {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  .read_status {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .lock_status {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+/* Small card variant (for things like '6 Barriers to overcoming stress' in Day 2) */
+.exercise_card_small {
+    display: flex;
+    background: #FFEFC7;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+
+    .card_img_small {
+        width: 80px;
+        height: 60px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .small_content {
+        flex: 1;
+    }
+
+    .read_status {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #E58D82;
+    }
+}
+
+/* Type 1 Card Design */
+.card_type1 {
+    display: flex;
+    background: rgba(255, 232, 187, 1);
+    width: 335px;
+    height: 120px;
+    border-radius: 12px;
+    padding: 10px;
+    gap: 10px;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+
+    .card_type1_img_container {
+        width: 100px;
+        height: 100px;
+        border-radius: 6px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-sizing: border-box;
+
+        img {
+        width: 100px;
+        height: 100px;
+        border-radius: 6px;
+            object-fit: cover;
+        }
+    }
+
+    .card_type1_content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card_type1_title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 130%;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 1);
+        margin: 0;
+    }
+
+    .card_type1_meta {
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        color: #8C8C8C;
+        text-transform: uppercase;
+        margin-top: 4px;
+        line-height: 1.2;
+    }
+
+    .card_type1_tick {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .card_type1_lock {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+.card_separator {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 24px 0;
+    width: 100%;
+}
+
+/* Journal Section */
+.journal_box {
+  background: #ffe8bb;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.03);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  .journal_title {
+    font-size: 15px;
+    line-height: 130%;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  textarea {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    min-height: 100px;
+    font-size: 14px;
+    resize: none;
+    &::placeholder {
+        color: #C4C4C4;
+    }
+    &:focus{
+        outline: none;
+    }
+  }
+
+  .btn_journal {
+    width: 100%;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    transition: 0.3s;
+    margin-top: 15px;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+  }
+
+  .journal_footer {
+    margin-top: 15px;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    line-height: 150%;
+  }
+}
+
+/* Footer Navigation */
+.teenagers-days {
+    .card_type1 {
+        background: #112d5d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+        .card_type1_title {
+            color: #ffffff;
+        }
+
+        .card_type1_meta {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    .exercise_card {
+        background: #112d5d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+        .exercise_title {
+            color: #ffffff;
+        }
+
+        .exercise_meta {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .card_type1_img_container {
+            background: #0c2b5f;
+        }
+
+        .card_type1_title {
+            color: #ffffff;
+        }
+
+        .card_type1_meta {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    .card_separator {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .journal_box {
+        background: #112d5d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        
+        .journal_title {
+            color: #ffffff;
+        }
+
+        textarea {
+            background: #0c2b5f;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .journal_footer {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    .footer_dots {
+        .dot {
+            background: rgba(255, 255, 255, 0.3) !important;
+            &.active {
+                background: rgba(255, 255, 255, 0.8) !important;
+            }
+        }
+    }
+
+    .footer_days {
+        .day_circle {
+            background: #112d5d;
+            border-color: rgba(255, 255, 255, 0.1);
+            span {
+                color: #ffffff;
+            }
+            &.active {
+                background: #e58d82;
+                border-color: #e58d82;
+                span {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+.footer_fixed_wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+
+  .row {
+    margin: 0;
+  }
+}
+
+.footer_days {
+  pointer-events: auto;
+  padding: 0 !important;
+
+  .odiv {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px !important;
+    gap: 15px;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .day_circle {
+    flex: 0 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #FFD889;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    span {
+      font-size: 13px;
+      font-weight: 500;
+      color: #000;
+    }
+
+    &.active {
+      background: #FFD889;
+      border-color: #FFD889;
+    }
+    
+    &.visited {
+      background: #ffffff !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      
+      span {
+        color: rgba(0, 0, 0, 0.3) !important;
+      }
+    }
+    
+    &.intro_circle {
+        background: #F8F8F8;
+    }
+  }
+}
+
+/* Utilities */
+.tcenter { text-align: center; }
+.mb10px { margin-bottom: 10px !important; }
+.mt0px { margin-top: 0px !important; }
+.fs_14px { font-size: 14px !important; }
+.fw_600 { font-weight: 600 !important; }
+.fw_500 { font-weight: 500 !important; }
+.fc_000000 { color: #000000 !important; }
+.fc_ffffff { color: #ffffff !important; }
+
+.footer_dots {
+    pointer-events: auto;
+    padding: 10px 0 0 0 !important;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Animation for dots */
+.dots_container {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+
+        &.active {
+            background: rgba(0, 0, 0, 0.4);
+            width: 15px;
+            border-radius: 10px;
+        }
+    }
+}
+
+/* Dark theme overrides for dots */
+.bg_stake {
+    .dot {
+        background: rgba(255, 255, 255, 0.3) !important;
+        &.active {
+            background: rgba(255, 255, 255, 0.8) !important;
+        }
+    }
+}

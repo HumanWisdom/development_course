@@ -55,9 +55,7 @@
                 <ng-container *ngIf="isLoading">
                   <div class="row mt20px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                      <h4 class="fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                        Loading guided journeys...
-                      </h4>
+                      <app-spinner [show]="isLoading"></app-spinner>
                     </div>
                   </div>
                 </ng-container>

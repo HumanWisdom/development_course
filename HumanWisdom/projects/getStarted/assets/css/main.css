@@ -446,16 +446,25 @@ label>input[type="checkbox"]+*::before {
 
 .btn:hover,
 .btn:focus:hover,
-.btn_tff:hover,
 .btn_pricing:hover,
-.btn_tff:focus:hover,
-.header .btn_tff:hover,
 .header .btn_pricing:hover,
-.header .btn_pricing:focus:hover,
-.header .btn_tff:focus:hover,
-.btn_tff_a:hover {
+.header .btn_pricing:focus:hover {
   color: #fff;
   background: #E58D82;
+}
+
+/* Match index.php pink CTAs (.div-wrapper-4 / .btn_popup hover) — all screen sizes */
+.btn_tff:hover,
+.btn_tff:focus:hover,
+.btn_tff:active,
+.header .btn_tff:hover,
+.header .btn_tff:focus:hover,
+.header .btn_tff:active,
+.btn_tff_a:hover,
+.btn_tff_a:focus:hover,
+.btn_tff_a:active {
+  color: #fff;
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
 }
 
 .navbar a,
@@ -3481,7 +3490,7 @@ audio::-webkit-media-controls-enclosure {
 
 .absolute_desc {
   position: absolute;
-  top: 280px;
+  top: -21px;
   left: 230px;
   right: 0;
   bottom: 0;

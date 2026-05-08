@@ -719,13 +719,14 @@ body.page-mind #youtubeIntroCover .mind-youtube-play-icon {
   body.page-mind .bg_circle_mind .scroller-container > div {
     display: inline-block;
     min-width: min-content;
+    padding-left: clamp(24px, 18vw, 72px);
   }
 
   body.page-mind .bg_circle_mind .scroller-container img.circle-strip-mobile {
     max-width: none !important;
     width: auto !important;
     height: 123px;
-    padding-left: 20 !important;
+    padding-left: 0 !important;
     display: block;
   }
 
