@@ -2,16 +2,16 @@
 
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw" [ngClass]="isAdults ? '' : 'bg_stake'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" />
+        <img [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg'" alt="" class="p0" />
       </a>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
       <a class="">
-        <h1 class="mtb0px fs_18px fw_600 lh_150p fc_000000 tcenter">
+        <h1 class="mtb0px fs_18px fw_600 lh_150p tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
           {{journeyDetails?.title || 'Guided Journey'}}
         </h1>
       </a>
@@ -31,7 +31,7 @@
   (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'" [class.teenagers-intro]="!isAdults">
 
         <div *ngIf="isLoading" class="row center_flex mt40px">
           <div class="col-md-12 tcenter">

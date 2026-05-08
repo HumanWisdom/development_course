@@ -2,14 +2,17 @@
 
 <!-- top navigation -->
 <div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw" [ngClass]="isAdults ? '' : 'bg_stake'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" />
+        <img
+          [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg'"
+          alt="" class="p0" />
       </a>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="mtb0px fs_18px fw_600 lh_150p fc_000000 tcenter">Guided journeys</h1>
+      <h1 class="mtb0px fs_18px fw_600 lh_150p tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Guided journeys
+      </h1>
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright"></div>
   </div>
@@ -22,7 +25,8 @@
 <div class="right_col mc_01_v3 mc_01_v3_ext" [ngClass]="{'adults-scroll': isAdults}">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
+        [class.teenagers-end]="!isAdults">
 
         <div class="x_panel p0 nobg">
           <div class="x_content p0">
@@ -144,7 +148,7 @@
                   </div>
                 </div>
 
-                <div class="row mt20px pl20px pr0px">
+                <div class="row mtb20px pl20px tpr20px">
                   <div class="p0 col-md-12 col-sm-12 col-xs-12 odiv odiv_pathway">
 
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">
