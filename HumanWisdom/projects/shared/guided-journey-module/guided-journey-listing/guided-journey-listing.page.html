@@ -75,6 +75,9 @@
                                 [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
                                 {{data['title']}}
                               </h4>
+                              <p class="mt0px mb5px fs_12px fw_400 lh_130p fc_8c8c8c" *ngIf="data.subtitle">
+                                {{data.subtitle}}
+                              </p>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                               <img *ngIf="data.isRead === '1'"
