@@ -24,7 +24,7 @@
 
 /* Exercise Cards */
 .exercise_card {
-  background: #FFEFC7;
+  background: #ffe8bb;
   border-radius: 16px;
   margin-bottom: 0px;
   overflow: hidden;
@@ -144,7 +144,6 @@
 .card_type1 {
     display: flex;
     background: rgba(255, 232, 187, 1);
-    width: 335px;
     height: 120px;
     border-radius: 12px;
     padding: 10px;
@@ -401,7 +400,9 @@
     display: flex;
     overflow-x: auto;
     padding: 15px !important;
-    gap: 15px;
+    gap: 10px;
+    box-shadow: 0 -2px 2px #00000010;
+    margin-top: 15px;
     
     &::-webkit-scrollbar {
       display: none;
@@ -461,7 +462,6 @@
 .footer_dots {
     pointer-events: auto;
     padding: 10px 0 0 0 !important;
-    border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 /* Animation for dots */

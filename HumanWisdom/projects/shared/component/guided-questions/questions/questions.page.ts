@@ -101,7 +101,7 @@ export class QuestionsPage implements OnInit {
     if (url == null) {
       this.goback();
     } else {
-      this.route.navigate([url]);
+      this.route.navigateByUrl(url);
     }
     window.scrollTo(0, 0);
   }

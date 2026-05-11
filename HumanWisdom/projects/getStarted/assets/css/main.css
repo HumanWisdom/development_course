@@ -5097,19 +5097,22 @@ input[type="password" i]::-ms-reveal {
       .scrolling-words {
             display: inline-block;
             position: relative;
-            height: 1.2em;
+            height: 1em;
             overflow: hidden;
             vertical-align: baseline;
+            width:125px
         }
 
         .scrolling-word {
-            display: block;
+            display: flex;
             animation: verticalScroll 12s infinite ease-in-out;
             font-weight: 600;
             background: #ED7D6F;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            justify-content: flex-end;
+            padding-right: 10px;
         }
 
         .hero-container:hover .scrolling-word {
