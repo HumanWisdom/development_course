@@ -33346,6 +33346,24 @@ body * {
 
 }
 
+
+.session_imgjourney {
+  width: 58px;
+  height: 58px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+  object-position: 50% 25%;
+
+}
+.toc_adiv_03journey a>.row {
+    border-radius: 12px;
+    background: #FFE8BB;
+    min-height: 78px;
+    margin-bottom: 10px;
+    padding: 10px;
+    /* margin: 0 10px 10px 10px; */
+}
 .session_imgforum {
   width: 100px;
   height: 70px;
@@ -37806,4 +37824,4 @@ div.contentdiv p {
 .session-expired-alert .session-expired-login-btn .alert-button-inner {
   justify-content: center;
 }
-
+
