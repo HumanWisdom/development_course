@@ -50,16 +50,16 @@
   }
 
   .well_done_desc {
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(0,0,0,0.6);
+    font-size: 12px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 1);
     margin: 0 0 25px;
     padding: 0 10px;
   }
 }
 
 .btn_return {
-  background: #E58D82;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
   color: #ffffff;
   border: none;
   border-radius: 25px;
@@ -76,47 +76,76 @@
 }
 
 /* Survey Section */
-.survey_section {
-  border-radius: 16px;
-  padding: 18px;
+.survey_box_new {
+  background: linear-gradient(180deg, rgba(11, 138, 141, 1) 0%, rgba(60, 213, 219, 1) 100%);
+  border-radius: 12px;
+  padding: 20px;
   margin: 20px 0 0;
+}
 
-  &.bg_survey_adults {
-    background: #FFE8C8;
-  }
-  &.bg_survey_teens {
-    background: rgba(255,255,255,0.1);
-  }
+.survey_flex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-  .survey_row {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 10px;
-  }
+.score_circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
-  .survey_percent {
-    font-size: 28px;
-    font-weight: 700;
-    color: #E58D82;
-    flex-shrink: 0;
-    line-height: 1.2;
-  }
+.survey_content {
+  flex: 1;
+}
 
-  .survey_text {
-    font-size: 13px;
-    line-height: 1.5;
-    margin: 0;
-  }
+.survey_text {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 1);
+}
 
-  .survey_link {
-    font-size: 13px;
+.survey_link {
+     font-size: 15px;
     font-weight: 600;
+    line-height: 150%;
+    color: #fff;
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    text-decoration: underline;
-    display: block;
-    text-align: right;
+
+  .survey_arrow {
+    width: 7px;
+    display: inline-block;
   }
+}
+
+.td_underline {
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+.flex_ai {
+  display: flex;
+  align-items: center;
+}
+
+.mtb30px {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+
+.box_v3_05 {
+  margin-bottom: 30px;
 }
 
 /* Pathway section */
@@ -180,3 +209,211 @@
 .lh_140p { line-height: 140% !important; }
 .lh_130p { line-height: 130% !important; }
 .fc_e58d82 { color: #E58D82 !important; }
+
+/* Footer Navigation */
+.teenagers-end {
+    .well_done_section {
+        .checkmark_circle {
+            border-color: #e58d82;
+            i {
+                color: #e58d82;
+            }
+        }
+        .well_done_desc {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    .btn_return {
+        background: #e58d82 !important;
+        box-shadow: 0 4px 10px rgba(229, 141, 130, 0.2);
+    }
+
+    .toc_adiv_01 {
+        background: #112d5d;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+    }
+.box_v3_05 {
+  padding: 0 !important;
+}
+.tpr20px{
+  padding-right: 20px;
+}
+    .odiv_pathway {
+        .col-md-3 {
+            background: #112d5d;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px !important;
+            margin-right: 15px;
+            width: 250px !important; /* Ensure they look like cards in the horizontal scroll */
+            flex: 0 0 auto;
+
+            .ctimg {
+                height: 140px;
+            }
+        }
+    }
+
+    .footer_days {
+        .day_circle {
+            background: #112d5d;
+            border-color: rgba(255, 255, 255, 0.1);
+            span {
+                color: #ffffff;
+            }
+            &.active {
+                background: #e58d82;
+                border-color: #e58d82;
+                span {
+                    color: #ffffff;
+                }
+            }
+            &.visited {
+                background: #0c2b5f !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                span {
+                    color: rgba(255, 255, 255, 0.3) !important;
+                }
+            }
+        }
+    }
+}
+
+.footer_fixed_wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+
+  .row {
+    margin: 0;
+  }
+}
+
+.footer_days {
+  pointer-events: auto;
+  padding: 0 !important;
+
+  .odiv {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px !important;
+    gap: 15px;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .day_circle {
+    flex: 0 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #FFD889;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    span {
+      font-size: 13px;
+      font-weight: 500;
+      color: #000;
+    }
+
+    &.active {
+      background: #FFD889;
+      border-color: #FFD889;
+    }
+    
+    &.visited {
+      background: #ffffff !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      
+      span {
+        color: rgba(0, 0, 0, 0.3) !important;
+      }
+    }
+    
+    &.intro_circle {
+        background: #F8F8F8;
+    }
+  }
+}
+
+.footer_dots {
+    pointer-events: auto;
+    padding: 10px 0 0 0 !important;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.dots_container {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+
+        &.active {
+            background: rgba(0, 0, 0, 0.4);
+            width: 15px;
+            border-radius: 10px;
+        }
+    }
+}
+
+/* Dark theme overrides for dots */
+.bg_stake {
+    .dot {
+        background: rgba(255, 255, 255, 0.3) !important;
+        &.active {
+            background: rgba(255, 255, 255, 0.8) !important;
+        }
+    }
+}
+
+.ws_preline { white-space: pre-line !important; }
+.ws_normal { white-space: normal !important; }
+.odiv_pathway {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    &::-webkit-scrollbar { display: none; }
+    
+    .ctimg {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+}
+
+.ptileno {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.ptilemodule {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.fc_000000_0_5 { color: rgba(0,0,0,0.5) !important; }
+.fc_ffffff_0_5 { color: rgba(255,255,255,0.5) !important; }

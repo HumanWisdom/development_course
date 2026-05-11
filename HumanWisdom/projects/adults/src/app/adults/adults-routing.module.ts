@@ -307,7 +307,7 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/micro-learning/micro-learning.module').then(m => m.MicroLearningModule)
   },
   {
-    path: 'guided-journey',
+    path: 'guided-journeys',
     loadChildren: () => import('../../../../shared/guided-journey-module/guided-journey-module.module').then(m => m.GuidedJourneyModuleModule)
   },
   {

@@ -445,7 +445,7 @@ It can start with awareness.
 </h4>
 
 <h4 class="mtb0px blog_desc">
-And sometimes, that is all it takes to change everything.
+And sometimes, that is all it takes to change everything.</h4>
 
 
 

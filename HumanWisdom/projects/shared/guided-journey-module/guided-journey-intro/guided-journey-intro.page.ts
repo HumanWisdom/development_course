@@ -15,6 +15,8 @@ export class GuidedJourneyIntroPage implements OnInit {
   journeyId: any;
   journeyDetails: any;
   isLoading = true;
+  totalDays: number = 0;
+  currentDay: number = 0;
   private touchStartX = 0;
   private touchStartY = 0;
 
@@ -33,6 +35,7 @@ export class GuidedJourneyIntroPage implements OnInit {
       this.journeyId = params['journeyId'];
       if (this.journeyId) {
         this.getJourneyDetails();
+        this.getGuidedJourneyDays();
       }
     });
   }
@@ -93,6 +96,18 @@ export class GuidedJourneyIntroPage implements OnInit {
     });
   }
 
+  getGuidedJourneyDays() {
+    const userId = SharedService.getUserId() || 100;
+    const programId = SharedService.ProgramId;
+
+    this.commonService.GetGuidedJourneyDays(this.journeyId, programId, userId).subscribe((res: any) => {
+      if (res && Array.isArray(res)) {
+        const days = res.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
+        this.totalDays = days.length > 0 ? Math.max(...days) : 0;
+      }
+    });
+  }
+
   getImgUrl(url) {
     if (!url) return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
     if (url.startsWith('https://') || url.startsWith('http://')) return url;
@@ -101,22 +116,31 @@ export class GuidedJourneyIntroPage implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    var url = this.navigationService.navigateToBackLink();
+    if (url != null) {
+      this.router.navigateByUrl(url);
+    } else {
+      this.location.back();
+    }
   }
 
   goToListing() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-listing`]);
+    this.router.navigate([`/${prefix}/guided-journeys`]);
   }
 
   beginJourney() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-days`], { queryParams: { journeyId: this.journeyId, day: 1 } });
+    this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: 1 } });
   }
 
   navigateToDay(day) {
-    // Logic for day navigation if needed
+    if (day === 0) return;
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-days`], { queryParams: { journeyId: this.journeyId, day: day } });
+    this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
+  }
+
+  getDaysArray() {
+    return Array.from({ length: this.totalDays }, (_, i) => i + 1);
   }
 }

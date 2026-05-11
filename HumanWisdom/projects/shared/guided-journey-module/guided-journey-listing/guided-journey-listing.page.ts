@@ -52,15 +52,27 @@ export class GuidedJourneyListingPage implements OnInit {
     this.commonService.GetGuidedJourneys(programId, userid).subscribe((res: any) => {
       if (res) {
         const data = Array.isArray(res) ? res : (res.Data || res.data || res.DataList || res.GuidedJourneys || res.Guided_Journeys || res.list || []);
-        this.guidedJourneyList = data.map(item => ({
-          id: item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID,
-          title: item.Title || item.title || item.JourneyName || item.Name,
-          subtitle: item.Subtitle || item.subtitle,
-          description: item.Description || item.description,
-          imgUrl: this.getImgUrl(item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl),
-          isRead: item.isRead || item.IsRead || '0',
-          isFree: item.isFree || item.IsFree || '0',
-        }));
+        this.guidedJourneyList = data.map(item => {
+          const rawTitle = item.Title || item.title || item.JourneyName || item.Name;
+          let title = rawTitle;
+          let subtitle = item.Subtitle || item.subtitle || '';
+          
+          if (title && title.includes('(') && title.includes(')')) {
+            const parts = title.split('(');
+            title = parts[0].trim();
+            subtitle = parts[1].replace(')', '').trim().replace(',', ' •');
+          }
+
+          return {
+            id: item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID,
+            title: title,
+            subtitle: subtitle,
+            description: item.Description || item.description,
+            imgUrl: this.getImgUrl(item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl),
+            isRead: item.isRead || item.IsRead || '0',
+            isFree: item.isFree || item.IsFree || '0',
+          };
+        });
         this.filteredList = this.guidedJourneyList;
 
         const lastId = localStorage.getItem('lastGuidedJourneyId');
@@ -104,7 +116,7 @@ export class GuidedJourneyListingPage implements OnInit {
 
     // Navigate to intro page of guided journey
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journey/guided-journey-intro`], { queryParams: { journeyId: item.id } });
+    this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: item.id } });
   }
 
   onModalClose(event: string) {

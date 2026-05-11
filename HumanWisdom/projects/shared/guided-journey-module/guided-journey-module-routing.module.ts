@@ -8,19 +8,19 @@ import { GuidedJourneyEndPage } from './guided-journey-end/guided-journey-end.pa
 
 const routes: Routes = [
   {
-    path: 'guided-journey-listing',
+    path: '',
     component: GuidedJourneyListingPage
   },
   {
-    path: 'guided-journey-intro',
+    path: 'intro',
     component: GuidedJourneyIntroPage
   },
   {
-    path: 'guided-journey-days',
+    path: 'days',
     component: GuidedJourneyDaysPage
   },
   {
-    path: 'guided-journey-end',
+    path: 'end',
     component: GuidedJourneyEndPage
   }
 ];
