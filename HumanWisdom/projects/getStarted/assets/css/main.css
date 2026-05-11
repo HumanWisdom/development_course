@@ -4377,6 +4377,10 @@ background: rgba(255, 244, 230, 1) !important;
   .btn_subscription {
     width: 70%;
   }
+  .owl-carousel .owl-stage-outer {
+    overflow: visible;
+    justify-content: center;
+  }
 
 }
 
