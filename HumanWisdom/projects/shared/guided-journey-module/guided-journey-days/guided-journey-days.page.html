@@ -110,6 +110,16 @@
               <div class="card_separator" *ngIf="i < displayExercises.length - 1"></div>
 
             </div>
+            
+            <!-- Continue Button (Last Day) -->
+            <div class="row mt40px mb60px" *ngIf="currentDay === totalDays">
+              <div class="col-md-12 p0 tcenter">
+                <button (click)="navigateToEnd()" class="btn_return">
+                  Continue <i class="fa fa-angle-right ml10px"></i>
+                </button>
+              </div>
+            </div>
+
 
           </div>
         </div>
