@@ -1833,6 +1833,65 @@ body.page-teenagers .teen-video-wrap .yt-embed {
   }
 }
 
+/* Landing blog (education, teenagers, work): .div_blog is 470px in main.css—narrow cards + gutters (≥992px) */
+@media screen and (min-width: 992px) {
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer .owl-item,
+  body.page-teenagers .owl_blog .owl-carousel .owl-stage-outer .owl-item,
+  body.page-work .owl_blog .owl-carousel .owl-stage-outer .owl-item {
+    margin-right: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer .owl-item:first-child,
+  body.page-teenagers .owl_blog .owl-carousel .owl-stage-outer .owl-item:first-child,
+  body.page-work .owl_blog .owl-carousel .owl-stage-outer .owl-item:first-child {
+    padding-left: 0 !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer .owl-item:last-child,
+  body.page-teenagers .owl_blog .owl-carousel .owl-stage-outer .owl-item:last-child,
+  body.page-work .owl_blog .owl-carousel .owl-stage-outer .owl-item:last-child {
+    padding-right: 0 !important;
+  }
+
+  body.page-education .owl_blog .owl-item > a.item,
+  body.page-teenagers .owl_blog .owl-item > a.item,
+  body.page-work .owl_blog .owl-item > a.item {
+    display: block;
+    width: 100%;
+  }
+
+  body.page-education .owl_blog .div_blog,
+  body.page-teenagers .owl_blog .div_blog,
+  body.page-work .owl_blog .div_blog {
+    width: 100% !important;
+    max-width: 294px !important;
+    height: auto !important;
+    min-height: 278px !important;
+    overflow: hidden;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-education .owl_blog .div_blog h4,
+  body.page-teenagers .owl_blog .div_blog h4,
+  body.page-work .owl_blog .div_blog h4 {
+    margin: 12px 14px 16px !important;
+  }
+
+  body.page-education .owl_blog .div_blog img,
+  body.page-teenagers .owl_blog .div_blog img,
+  body.page-work .owl_blog .div_blog img {
+    height: 145px !important;
+    min-height: 145px !important;
+    max-height: 145px !important;
+    object-fit: cover !important;
+  }
+}
+
 @media screen and (min-width: 1600px) {
 
   .fixed_w {
