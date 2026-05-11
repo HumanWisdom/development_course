@@ -118,12 +118,8 @@ export class GuidedJourneyEndPage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url != null) {
-      this.router.navigateByUrl(url);
-    } else {
-      this.location.back();
-    }
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/guided-journeys`]);
   }
 
   navigateToDay(day: number) {
