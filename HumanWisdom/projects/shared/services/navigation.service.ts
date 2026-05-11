@@ -341,7 +341,7 @@ export class NavigationService {
     const url = this.goBack();
     
     // Prevent loops: if the returned URL is the same as current or contains start-your-free-trial, don't use it
-    if (url != null && (url === this.router.url || url.includes('start-your-free-trial'))) {
+    if (url != null && (url === this.router.url || url.includes('start-your-free-trial') || (this.router.url.includes('myprogram') && url.includes('payment')))) {
       // Reset context and fall through to fallback logic
       this.lastSource = null;
       localStorage.removeItem('lastNavSource');
