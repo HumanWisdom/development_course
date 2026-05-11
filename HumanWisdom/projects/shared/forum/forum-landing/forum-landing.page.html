@@ -85,7 +85,7 @@
             <form>
 
               <!-- search -->
-              <div class="row mt30px mb30px prelative">
+              <div class="row mt30px mb20px prelative">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
                   <input type="search" autocomplete="off" (keydown.enter)="onEnterKey($event)" [(ngModel)]="searchInput"
                     (focusout)="onFocusOutEvent()" class="form-control has-feedback-left pfy_search hide_search"
@@ -349,10 +349,10 @@
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/like_teen.svg"
                               class="img-responsive mr5px">
                             <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/like_filledteen.svg"
                               class="img-responsive mr5px">
                             {{item.PostLikeCount}}
                           </button>
@@ -374,7 +374,7 @@
                           <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
                             class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"
                             [disabled]="DisabledComment(item)" (click)="reportpost(item,'comment')">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment_teen.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_comment.svg"
@@ -386,7 +386,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p "
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/shre_teen.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_share.svg"
