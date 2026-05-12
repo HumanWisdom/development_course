@@ -27311,7 +27311,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
   /* identical to box height */
   /* color: #5D5D5D !important; */
   /* color: rgba(255, 255, 255, 0.50)!important; */
-  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(0, 0, 0, 1) !important;
   /* height: 60px; */
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
@@ -33681,7 +33681,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #EE9596 !important;
+   color: #EE9596 !important; 
 }
 
 .btn_forum_ask_a_gift {
@@ -33696,6 +33696,24 @@ body * {
   line-height: 22px;
   color: #cb6171;
   text-align: center;
+}
+.btn_postteen{
+width: 100%;
+    background: #EE9596 !important;
+    border-radius: 100px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff !important;
+    text-align: center;
+    margin: 0;
+    border: 0;
+    height: 40px;
+    box-shadow: unset;
+}
+
+btn btn-warning btn_postteen{
+  color: #fff;
 }
 
 .btn_fpfy {

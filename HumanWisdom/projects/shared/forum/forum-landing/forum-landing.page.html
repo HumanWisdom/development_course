@@ -138,7 +138,7 @@
                 </div>
               </div>
 
-              <!-- post -->
+              <!-- postteen -->
               <div class="div_forum_post" *ngFor="let item of posts;let index=index;">
                 <a class="" [ngClass]="{'deleting': item.isDeleting}">
 
@@ -399,7 +399,7 @@
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
                         <button type="button" class="btn fs_12px fw_400 lh_140p"
                           [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'" (click)="reportpost(item,'report')">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report_teens.svg"
                             class="img-responsive mr5px" *ngIf="!isAdults">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_report.svg"
                             class="img-responsive mr5px" *ngIf="isAdults">
@@ -424,14 +424,14 @@
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12   mt10px p0" *ngIf="isLoggedIn && actionType=='comment'">
-                      <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
+                      <button  style="color:#fff;"type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
                         [disabled]="isProcessing" [class.loading]="isProcessing">
                         Comment
                       </button>
                     </div>
                     <!-- <div class="row" >  -->
                     <div class="col-md-12 col-sm-12 col-xs-12 mtb10px p0" *ngIf="isLoggedIn && actionType=='report'">
-                      <button type="button" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
+                      <button   style="color:#fff;" type="button"  class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
                         [disabled]="isProcessing" [class.loading]="isProcessing">
                         Submit
                       </button>
@@ -671,7 +671,7 @@
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
             <button type="button" class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"
               (click)="reportpost(item,'report')">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report_teens.svg"
                 class="img-responsive mr5px" *ngIf="!isAdults">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_report.svg"
                 class="img-responsive mr5px" *ngIf="isAdults">
