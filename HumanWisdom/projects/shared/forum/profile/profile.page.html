@@ -20,7 +20,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="" (click)="share()">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/shre_teen.svg" alt="" class="p0" *ngIf="!isAdults">
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg" alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
@@ -218,7 +218,7 @@
                           <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
                             [disabled]="DisabledComment(item)" class="btn fs_12px fw_400 lh_140p "
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="reportpost(item,'comment')">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment_teen.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_comment.svg"
@@ -244,7 +244,7 @@
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
                         <button type="button" class="btn fs_12px fw_400 lh_140p "
                           [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'" (click)="reportpost(item,'report')">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report_teens.svg"
                             class="img-responsive mr5px" *ngIf="!isAdults">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_report.svg"
                             class="img-responsive mr5px" *ngIf="isAdults">
