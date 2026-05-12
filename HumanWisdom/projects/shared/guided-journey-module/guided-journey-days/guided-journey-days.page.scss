@@ -284,8 +284,32 @@
   }
 }
 
+.btn_return {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
 /* Footer Navigation */
 .teenagers-days {
+    .btn_return {
+        background: #e58d82 !important;
+        box-shadow: 0 4px 10px rgba(229, 141, 130, 0.2);
+    }
     .card_type1 {
         background: #112d5d;
         border: 1px solid rgba(255, 255, 255, 0.1);
