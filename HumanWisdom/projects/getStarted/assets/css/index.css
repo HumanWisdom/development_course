@@ -137,29 +137,7 @@ body.page-teenagers .teen-video-wrap .yt-embed {
   border: 0;
 }
 
-/* Teenagers premium CTA: true horizontal center on wide viewports */
-@media screen and (min-width: 992px) {
-  body.page-teenagers #teenagers-AnnualType > [class*="col-"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
 
-  body.page-teenagers #teenagers-AnnualType a#teenagersPricing {
-    display: inline-flex !important;
-    justify-content: center !important;
-  }
-
-  body.page-teenagers #teenagers-AnnualType .btn_tff {
-    width: auto !important;
-    min-width: 205px !important;
-    max-width: 100% !important;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .txt-left {
@@ -1833,6 +1811,33 @@ body.page-teenagers .teen-video-wrap .yt-embed {
   }
 }
 
+/* Landing blog (education, teenagers, work): compact cards on all desktop (≥768px) — matches staging. */
+@media screen and (min-width: 768px) {
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer .owl-item,
+  body.page-teenagers .owl_blog .owl-carousel .owl-stage-outer .owl-item,
+  body.page-work .owl_blog .owl-carousel .owl-stage-outer .owl-item {
+    margin-right: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer .owl-item:first-child,
+  body.page-teenagers .owl_blog .owl-carousel .owl-stage-outer .owl-item:first-child,
+  body.page-work .owl_blog .owl-carousel .owl-stage-outer .owl-item:first-child {
+    padding-left: 0 !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer .owl-item:last-child,
+  body.page-teenagers .owl_blog .owl-carousel .owl-stage-outer .owl-item:last-child,
+  body.page-work .owl_blog .owl-carousel .owl-stage-outer .owl-item:last-child {
+    padding-right: 0 !important;
+  }
+
+
+
+}
+
 @media screen and (min-width: 1600px) {
 
   .fixed_w {
@@ -1902,10 +1907,13 @@ body.page-teenagers .teen-video-wrap .yt-embed {
   body.page-work .owl_blog,
   body.page-education .owl_blog,
   body.page-teenagers .owl_blog {
-    width: 980px !important;
+
     max-width: calc(100% - 40px) !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+  .owl-controls{
+    visibility: hidden;
   }
 
   body.page-work .owl_blog > .owl-carousel > .owl-stage-outer,
