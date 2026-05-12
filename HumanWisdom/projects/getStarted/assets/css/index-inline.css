@@ -29,13 +29,90 @@ img { max-width: 100%; display: block; }
   padding-left: 40px;
   padding-right: 40px;
 }
+
+/* Hero (Figma): headline 60px / coral accent line; subtitle 21px white.
+   CMS (GetWebsiteTitle): wrap the second line in <span class="hero-title-accent">…</span> for the coral color. */
+.frame-wrapper.web_home_divlanding #hw-website-title {
+  font-size: 60px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+.frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
+  color: rgba(237, 125, 111, 1);
+}
+.frame-wrapper.web_home_divlanding #hw-website-title:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
+.frame-wrapper.web_home_divlanding #hw-website-title:hover .hero-title-accent {
+  color: rgba(237, 125, 111, 1) !important;
+}
+.frame-wrapper.web_home_divlanding #hw-website-subtitle {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 1);
+  margin: 0;
+}
+.frame-wrapper.web_home_divlanding #hw-website-subtitle:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Hero dark gradient: rating row — light icons/text */
+.frame-wrapper.web_home_divlanding .rating-row,
+.frame-wrapper.web_home_divlanding .rating-row .fs_15px.fw_700,
+.frame-wrapper.web_home_divlanding .rating_a .fa-star,
+.frame-wrapper.web_home_divlanding .appstore_a .fa-apple {
+  color: #fff !important;
+}
+
+/* Hero primary CTA — same gradient + hover as "Chat with Olly now"; Figma 317×65 */
+.web_home_divlanding .hero-try-free-link {
+  display: inline-flex;
+  align-self: flex-start;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.web_home_divlanding .hero-try-free-link .start-your-free-wrapper {
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%);
+  width: 317px;
+  max-width: 100%;
+  height: 65px;
+  box-sizing: border-box;
+  padding: 18px 40px;
+  border-radius: 35px;
+}
+.web_home_divlanding .hero-try-free-link .start-your-free-wrapper:hover {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+}
+.web_home_divlanding .hero-try-free-link:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+@media (min-width: 769px) {
+  .frame-wrapper.web_home_divlanding #hw-website-title {
+    font-size: 60px !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle {
+    font-size: 21px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+}
+
 .div-wrapper { width: 100%; max-width: 1340px; }
 .div         { width: 100%; }
-.div-2       { display: flex; align-items: center; gap: 60px; justify-content: center; flex-wrap: wrap;margin-top:100px }
+.div-2       { display: flex; align-items: center; gap: 50px; justify-content: center; flex-wrap: wrap;margin-top:100px }
 
 .new-app-adults-teen { width: 415px; height: 525px; object-fit: contain; flex-shrink: 0; }
 
-.div-3 {margin-top: -26px; display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
+.div-3 {margin-top: -3.5rem; display: flex; flex-direction: column; gap: 30px; flex: 1; min-width: 280px; max-width: 654px; }
 
 /* rating */
 .p0        { padding: 0; }
@@ -1549,8 +1626,9 @@ header a[href*="splash_options.php"] * {
   /* Anchor must define width: inner .start-your-free-wrapper uses max-width:100% and
      would otherwise shrink-wrap wrong inside .div-3 (align-items:center). */
   .web_home_divlanding .hero-try-free-link {
-    width: 335px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 317px;
+    align-self: center;
     flex-shrink: 0;
     display: flex;
     align-items: stretch;
@@ -1560,6 +1638,13 @@ header a[href*="splash_options.php"] * {
   }
 
   .p { font-size: 27px; font-weight: 600; text-align: center !important; }
+  .frame-wrapper.web_home_divlanding #hw-website-title {
+    font-size: 27px !important;
+  }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+  }
   .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 1.5; }
   .text-wrapper-5 { font-size: 16px; }
   .start-your-free-wrapper,
@@ -1799,8 +1884,10 @@ header a[href*="splash_options.php"] * {
   /* Hero */
   .frame-wrapper { padding: 36px 16px; }
   .p { font-size: 27px; }
+  .frame-wrapper.web_home_divlanding #hw-website-title { font-size: 27px !important; }
   .text-wrapper-3 { font-size: 15px; }
   .text-wrapper-4 { font-size: 16px; }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 16px !important; }
   .new-app-adults-teen { width: clamp(150px, 70vw, 240px); }
   .div-6 img { width: 28px !important; height: 32px !important; }
   /* Let tools panel size to content — fixed 600px + flex:1 on .tools-info caused a large gap under "Explore on app" */
