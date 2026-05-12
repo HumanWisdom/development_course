@@ -5110,7 +5110,7 @@ input[type="password" i]::-ms-reveal {
             height: 1em;
             overflow: hidden;
             vertical-align: baseline;
-            width:125px
+            
         }
 
         .scrolling-word {
