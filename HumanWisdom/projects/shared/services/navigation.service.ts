@@ -337,7 +337,16 @@ export class NavigationService {
     let url;
     if (index !== -1) {
       this.history.splice(index + 1);
-      url = this.goBack();
+      const isGuidedJourneysListing = this.router.url.split('?')[0].endsWith('/guided-journeys');
+      if (isGuidedJourneysListing) {
+        while (this.history.length > 0 && this.history[this.history.length - 1].includes('/guided-journeys')) {
+          this.history.pop();
+        }
+        url = this.history[this.history.length - 1];
+        this.backClicked = true;
+      } else {
+        url = this.goBack();
+      }
     } else {
       url = this.history[this.history.length - 1];
     }
@@ -485,6 +494,19 @@ export class NavigationService {
     if (currentUrl.includes('/micro-learning')) {
       console.log("Fallback: ML Listing -> Search");
       return `/${prefix}/search`;
+    }
+
+    // 17. Guided Journeys: Inner/Days/End -> Listing -> Search
+    if (currentUrl.includes('/guided-journeys/')) {
+      console.log("Fallback: Guided Journeys Inner/Days/End -> Listing");
+      return `/${prefix}/guided-journeys`;
+    }
+    if (currentUrl.includes('/guided-journeys')) {
+       while (this.history.length > 0 && this.history[this.history.length - 1].includes('/guided-journeys')) {
+        this.history.pop();
+      }
+      this.backClicked = true;
+      return this.history.length > 0 ? this.history[this.history.length - 1] : `/${prefix}/search`;
     }
 
     // 16. Journal: Inner -> Listing -> Search

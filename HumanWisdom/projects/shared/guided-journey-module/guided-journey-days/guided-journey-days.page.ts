@@ -21,6 +21,9 @@ export class GuidedJourneyDaysPage implements OnInit {
   journeyTitle: string = '';
   visitedDays: Set<number> = new Set();
   isSubscriber = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   private touchStartX = 0;
   private touchStartY = 0;
   enableAlert: boolean = false;
@@ -137,7 +140,6 @@ export class GuidedJourneyDaysPage implements OnInit {
           };
         });
         this.updateDisplayData();
-        this.getJournalResponses();
         
         // Also check initial read status to mark visited
         this.allDaysData.forEach(item => {
@@ -169,24 +171,7 @@ export class GuidedJourneyDaysPage implements OnInit {
     return { mainTitle: title, subTitle: '' };
   }
 
-  getJournalResponses() {
-    const userId = SharedService.getUserId();
-    if (userId && userId !== 100) {
-      this.commonService.viewJournal(userId).subscribe(res => {
-        if (res && Array.isArray(res)) {
-          this.allDaysData.forEach(exercise => {
-            if (exercise.Type === 3) {
-              const reflectionId = exercise.QueId || exercise.QuestId || exercise.ReflectionId || exercise.GuidedJourneyDayID;
-              const response = res.find(r => (r.QueId && r.QueId == reflectionId) || (r.ProgId && r.ProgId == reflectionId));
-              if (response) {
-                exercise.Response = response.Response || response.Ans;
-              }
-            }
-          });
-        }
-      });
-    }
-  }
+
 
   submitJournal(exercise: any) {
     if (!this.isSubscriber && exercise.isFree === '0') {
@@ -299,6 +284,11 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   onExerciseClick(exercise: any) {
+    if (!this.isSubscriber && exercise.isFree === '0') {
+      this.showModal = true;
+      return;
+    }
+
     this.commonService.clickGuidedJourneyDay(exercise.GuidedJourneyDayID).subscribe();
     
     if (exercise.Url) {
@@ -379,6 +369,14 @@ export class GuidedJourneyDaysPage implements OnInit {
     }
     
     return null;
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+    }
   }
 
   getDaysArray() {
