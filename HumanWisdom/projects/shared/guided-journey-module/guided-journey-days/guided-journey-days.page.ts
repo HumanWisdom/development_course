@@ -21,6 +21,9 @@ export class GuidedJourneyDaysPage implements OnInit {
   journeyTitle: string = '';
   visitedDays: Set<number> = new Set();
   isSubscriber = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   private touchStartX = 0;
   private touchStartY = 0;
   enableAlert: boolean = false;
@@ -281,6 +284,11 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   onExerciseClick(exercise: any) {
+    if (!this.isSubscriber && exercise.isFree === '0') {
+      this.showModal = true;
+      return;
+    }
+
     this.commonService.clickGuidedJourneyDay(exercise.GuidedJourneyDayID).subscribe();
     
     if (exercise.Url) {
@@ -361,6 +369,14 @@ export class GuidedJourneyDaysPage implements OnInit {
     }
     
     return null;
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+    }
   }
 
   getDaysArray() {
