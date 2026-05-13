@@ -110,9 +110,9 @@ img { max-width: 100%; display: block; }
 .div         { width: 100%; }
 .div-2       { display: flex; align-items: center; gap: 50px; justify-content: center; flex-wrap: wrap;margin-top:100px }
 
-.new-app-adults-teen { width: 415px; height: 525px; object-fit: contain; flex-shrink: 0; }
+.new-app-adults-teen { height: 480px; object-fit: contain; flex-shrink: 0; }
 
-.div-3 {margin-top: -3.5rem; display: flex; flex-direction: column; gap: 30px; flex: 1; min-width: 280px; max-width: 654px; }
+.div-3 {margin-top: -6px; display: flex; flex-direction: column; gap: 30px; flex: 1; min-width: 280px; max-width: 654px; }
 
 /* rating */
 .p0        { padding: 0; }
