@@ -44,8 +44,9 @@
   }
 
   .well_done_title {
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 2px;
+    font-weight: 600;
+    line-height: 125%;
     margin: 0 0 15px;
   }
 
@@ -93,7 +94,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
   justify-content: center;

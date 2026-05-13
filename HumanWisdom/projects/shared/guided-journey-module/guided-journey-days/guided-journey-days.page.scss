@@ -240,7 +240,7 @@
 
   textarea {
     width: 100%;
-    background: #ffffff;
+    background: #FFFFFFBF;
     border: none;
     border-radius: 12px;
     padding: 15px;
@@ -285,19 +285,21 @@
 }
 
 .btn_return {
-  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
-  color: #ffffff;
-  border: none;
-  border-radius: 25px;
-  padding: 13px 28px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 13px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 145px;
+    height: 40px;
 
   &:active {
     transform: scale(0.97);

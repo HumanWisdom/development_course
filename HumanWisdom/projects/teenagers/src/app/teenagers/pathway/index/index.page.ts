@@ -31,7 +31,7 @@ export class IndexPage implements OnInit {
     if (url == null) {
       this.defaultGoBack();
     }else{
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     }
   }
 

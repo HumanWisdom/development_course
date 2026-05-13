@@ -410,9 +410,9 @@ export class QuestionAnswersSelection implements OnInit {
   goBack() {
     var url = this.navigation.navigateToBackLink();
     if (url == null) {
-      this.router.navigate(["/" + SharedService.getprogramName() + "/wisdom-survey"]);
+      this.router.navigateByUrl("/" + SharedService.getprogramName() + "/wisdom-survey");
     } else {
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     }
   }
 
