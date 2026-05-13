@@ -80,13 +80,13 @@
                               </p>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                               <img 
+                               <img *ngIf="data.isRead === '1' && isSubscriber"
                                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
                                 class="ws-read-icon" alt="read"> 
 
-                              <!-- <img *ngIf="isSubscriber && data.isFree === '0'"
+                              <img *ngIf="!isSubscriber && data.isFree === '0'"
                                 [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" /> -->
+                                class="img-responsive ws-lock-icon" />
                             </div>
                           </div>
                         </div>

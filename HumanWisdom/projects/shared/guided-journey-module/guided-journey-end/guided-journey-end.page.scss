@@ -43,11 +43,16 @@
     }
   }
 
-  .well_done_title {
-    font-size: 2px;
+  .col-lg-12 {
+    margin-bottom: 25px !important;
+  }
+
+  h2 {
+    margin-top: 0 !important;
+    margin-bottom: 15px;
+    font-size: 21px;
     font-weight: 600;
     line-height: 125%;
-    margin: 0 0 15px;
   }
 
   .well_done_desc {
