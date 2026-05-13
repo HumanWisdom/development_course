@@ -27311,7 +27311,8 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
   /* identical to box height */
   /* color: #5D5D5D !important; */
   /* color: rgba(255, 255, 255, 0.50)!important; */
-  color: rgba(0, 0, 0, 1) !important;
+  
+  color: rgba(0, 0, 0, 0.50) !important;
   /* height: 60px; */
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
@@ -33681,7 +33682,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-   color: #EE9596 !important; 
+   color: #EE9596; 
 }
 
 .btn_forum_ask_a_gift {
@@ -33712,7 +33713,7 @@ width: 100%;
     box-shadow: unset;
 }
 
-btn btn-warning btn_postteen{
+.btn btn-warning btn_postteen{
   color: #fff;
 }
 
