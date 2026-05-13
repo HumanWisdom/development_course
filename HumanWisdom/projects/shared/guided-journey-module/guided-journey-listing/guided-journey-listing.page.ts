@@ -107,10 +107,6 @@ export class GuidedJourneyListingPage implements OnInit {
   }
 
   navigateToInner(item) {
-    if (!this.isSubscriber && item.isFree === '0') {
-      this.showModal = true;
-      return;
-    }
     
     localStorage.setItem('lastGuidedJourneyId', item.id);
 

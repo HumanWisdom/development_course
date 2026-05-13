@@ -409,6 +409,65 @@
     }
 }
 
+/* Adults scrollbar styles */
+.bg_FFF7E6 {
+    .odiv,
+    .odiv_pathway {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: #eea170 #f6d1b7;
+    }
+    .odiv:not(:hover),
+    .odiv_pathway:not(:hover) {
+      scrollbar-color: transparent transparent;
+    }
+    .odiv::-webkit-scrollbar,
+    .odiv_pathway::-webkit-scrollbar {
+      height: 2px;
+      border-radius: 6px;
+    }
+    .odiv::-webkit-scrollbar-thumb,
+    .odiv_pathway::-webkit-scrollbar-thumb {
+      background-color: #eea170;
+      border-radius: 6px;
+    }
+    .odiv::-webkit-scrollbar-track,
+    .odiv_pathway::-webkit-scrollbar-track {
+      background-color: #f6d1b7;
+      border-radius: 10px;
+    }
+}
+
+/* Teenagers scrollbar styles */
+.bg_stake {
+    .odiv,
+    .odiv_pathway {
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #778899 #16366D;
+    }
+    .odiv:not(:hover),
+    .odiv_pathway:not(:hover) {
+      scrollbar-color: transparent transparent;
+    }
+    .odiv::-webkit-scrollbar,
+    .odiv_pathway::-webkit-scrollbar {
+      height: 2px;
+      border-radius: 6px;
+    }
+    .odiv::-webkit-scrollbar-thumb,
+    .odiv_pathway::-webkit-scrollbar-thumb {
+      background-color: #16366D;
+      border-radius: 6px;
+    }
+    .odiv::-webkit-scrollbar-track,
+    .odiv_pathway::-webkit-scrollbar-track {
+      background-color: #778899;
+      border-radius: 10px;
+    }
+}
+
 .ptileno {
     position: absolute;
     top: 15px;
