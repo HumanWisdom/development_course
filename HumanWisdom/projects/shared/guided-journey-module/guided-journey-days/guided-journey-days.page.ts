@@ -137,7 +137,6 @@ export class GuidedJourneyDaysPage implements OnInit {
           };
         });
         this.updateDisplayData();
-        this.getJournalResponses();
         
         // Also check initial read status to mark visited
         this.allDaysData.forEach(item => {
@@ -169,24 +168,7 @@ export class GuidedJourneyDaysPage implements OnInit {
     return { mainTitle: title, subTitle: '' };
   }
 
-  getJournalResponses() {
-    const userId = SharedService.getUserId();
-    if (userId && userId !== 100) {
-      this.commonService.viewJournal(userId).subscribe(res => {
-        if (res && Array.isArray(res)) {
-          this.allDaysData.forEach(exercise => {
-            if (exercise.Type === 3) {
-              const reflectionId = exercise.QueId || exercise.QuestId || exercise.ReflectionId || exercise.GuidedJourneyDayID;
-              const response = res.find(r => (r.QueId && r.QueId == reflectionId) || (r.ProgId && r.ProgId == reflectionId));
-              if (response) {
-                exercise.Response = response.Response || response.Ans;
-              }
-            }
-          });
-        }
-      });
-    }
-  }
+
 
   submitJournal(exercise: any) {
     if (!this.isSubscriber && exercise.isFree === '0') {
