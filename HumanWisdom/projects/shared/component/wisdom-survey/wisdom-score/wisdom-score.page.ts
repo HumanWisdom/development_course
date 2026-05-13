@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
+import { NavigationService } from '../../../services/navigation.service';
 
 @Component({
   selector: 'app-wisdom-score',
@@ -39,6 +40,7 @@ export class WisdomScorePage implements OnInit {
 
   constructor(private router: Router,
     private service: TeenagersService,
+    private navigation: NavigationService,
     private location: Location) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -163,6 +165,15 @@ export class WisdomScorePage implements OnInit {
       this.router.navigate(['/subscription/start-your-free-trial']);
     } else {
       this.router.navigate(['/teenagers/subscription/start-your-free-trial']);
+    }
+  }
+
+  goBack() {
+    var url = this.navigation.navigateToBackLink();
+    if (url == null) {
+      this.router.navigateByUrl("/" + SharedService.getprogramName() + "/wisdom-survey");
+    } else {
+      this.router.navigateByUrl(url);
     }
   }
 }

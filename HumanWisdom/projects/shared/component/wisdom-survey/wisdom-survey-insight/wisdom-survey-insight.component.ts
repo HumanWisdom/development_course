@@ -2,6 +2,8 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnboardingService } from '../../../services/onboarding.service';
+import { NavigationService } from '../../../services/navigation.service';
+import { SharedService } from '../../../services/shared.service';
 
 @Component({
   selector: 'app-wisdom-survey-insight',
@@ -43,7 +45,7 @@ export class WisdomSurveyInsightComponent {
   ]
   userId: any
 
-  constructor(private service: OnboardingService, private router: Router, private location: Location) {
+  constructor(private service: OnboardingService, private router: Router, private location: Location, private navigation: NavigationService) {
     this.userId = JSON.parse(localStorage.getItem("userId"))
     service.wisdomSurveyinsightsummary(this.userId).subscribe((r) => {
       console.log(r)
@@ -166,7 +168,12 @@ export class WisdomSurveyInsightComponent {
   }
 
   goBack() {
-    this.location.back()
+    var url = this.navigation.navigateToBackLink();
+    if (url == null) {
+      this.router.navigateByUrl("/" + SharedService.getprogramName() + "/wisdom-survey");
+    } else {
+      this.router.navigateByUrl(url);
+    }
   }
 
 
