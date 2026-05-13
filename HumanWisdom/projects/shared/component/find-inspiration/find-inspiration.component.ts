@@ -84,6 +84,14 @@ export class FindInspiration {
       url:'micro-learning' 
     },
     { 
+      title: 'Guided journeys', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/micro_learning.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/microlearn_without_bg.svg' ),
+      url:'guided-journeys' 
+    },
+    { 
       title: 'Audio meditation', 
       icon: 'volume-2', 
       color: '#191d3a',
@@ -123,10 +131,7 @@ export class FindInspiration {
       height:'',
       img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
       url:'events'
-    },   
-   
-    
-    
+    }
   ];
 
   if(!this.isAdults){
