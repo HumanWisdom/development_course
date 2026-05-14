@@ -169,7 +169,7 @@
                           </button>
 
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
-                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e8a880_0_5'" *ngIf="item.Followed=='1'">
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_EE9596'" *ngIf="item.Followed=='1'">
                             <i class="fa fa-minus mr3px"></i>
                             <span class="underline">
                               Unfollow
@@ -395,7 +395,6 @@
                           </button>
                         </div>
                       </div>
-
                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
                         <button type="button" class="btn fs_12px fw_400 lh_140p"
                           [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'" (click)="reportpost(item,'report')">
@@ -424,7 +423,7 @@
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12   mt10px p0" *ngIf="isLoggedIn && actionType=='comment'">
-                      <button  style="color:#fff;"type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
+                      <button  type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
                         [disabled]="isProcessing" [class.loading]="isProcessing">
                         Comment
                       </button>

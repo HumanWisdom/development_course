@@ -136,6 +136,7 @@
 
 .div_forum_post  {
       margin-bottom: 20px;
+      color: #EE9596 !important;
 }
 
 .div_forum_post a.deleting,
@@ -143,6 +144,7 @@
   opacity: 0.5;
   pointer-events: none;
   transition: opacity 200ms ease-in-out;
+  color:red;
 }
 /* Follow button: always black */
 button.fc_000000 {
