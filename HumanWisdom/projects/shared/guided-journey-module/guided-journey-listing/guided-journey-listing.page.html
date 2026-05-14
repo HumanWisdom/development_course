@@ -5,7 +5,7 @@
   <div class="row center_flex bg_bv">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw img_podcast"
       [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
-      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp" alt=""
+      <img src="https://d1tenzemoxuh75.cloudfront.net/guided_journeys/guided_journalnew.webp" alt=""
         class="img-responsive w100" style="height:200px; border-bottom-right-radius:20px; border-bottom-left-radius:20px">
     </div>
   </div>
@@ -51,7 +51,7 @@
                 </div>
               </div>
 
-              <div [ngClass]="isAdults ? 'toc_adiv_03journey' : 'toc_adiv_02'" class="mt20px">
+              <div [ngClass]="isAdults ? 'toc_adiv_03journey' : 'toc_adiv_02journey'" class="mt20px">
                 <ng-container *ngIf="isLoading">
                   <div class="row mt20px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -63,30 +63,31 @@
                 <ng-container *ngIf="!isLoading">
                   <ng-container *ngIf="filteredList.length > 0; else noResult">
                     <ng-container *ngFor="let data of filteredList; let i=index">
+
+                      
                       <a (click)="navigateToInner(data)" id="gj-{{data.id}}">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-3 col-sm-3 col-xs-3 p0 prelative">
+                            <div class="col-md-2 col-sm-2 col-xs-2 p0 ">
                               <img src="{{data.imgUrl}}" alt="" class="p0 session_img session_imgjourney" />
                             </div>
 
-                            <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                            <div class="col-md-9 col-sm-9 col-xs-9 plr20px">
                               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p"
                                 [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
                                 {{data['title']}}
                               </h4>
-                              <p class="mt0px mb5px fs_12px fw_400 lh_130p fc_8c8c8c" *ngIf="data.subtitle">
+                              <p class="mt0px mb5px fs_12px fw_400 lh_130p "[ngClass]="isAdults? 'fc_000000_0_5': 'fc_ffffff_0_5'" *ngIf="data.subtitle">
                                 {{data.subtitle}}
                               </p>
+                              
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                               <img 
+                               <img *ngIf="data.isRead === '1' && isLoggedIn"
                                 src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
                                 class="ws-read-icon" alt="read"> 
 
-                              <!-- <img *ngIf="isSubscriber && data.isFree === '0'"
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                                class="img-responsive ws-lock-icon" /> -->
+
                             </div>
                           </div>
                         </div>

@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { SharedService } from "../../services/shared.service";
 import { CommonService } from "../../services/common.service";
 import { NavigationService } from "../../services/navigation.service";
+import { Constant } from "../../services/constant";
 
 @Component({
   selector: 'app-guided-journey-end',
@@ -42,6 +43,8 @@ export class GuidedJourneyEndPage implements OnInit {
       }
     });
 
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+
     const savedLogin = localStorage.getItem("loginResponse") || sessionStorage.getItem("loginResponse");
     if (savedLogin) {
       this.loginResponse = JSON.parse(savedLogin);
@@ -52,7 +55,7 @@ export class GuidedJourneyEndPage implements OnInit {
 
   survey(): void {
     const prefix = this.isAdults ? '/adults' : '/teenagers';
-    this.router.navigate([`${prefix}/wisdom-survey`], { state: { isUseCloseButton: true } });
+    this.router.navigate([`${prefix}/wisdom-survey`], { state: { isUseCloseButton: true, source: 'guided-journey' } });
   }
 
   getGuidedJourneyDays() {
@@ -150,7 +153,7 @@ export class GuidedJourneyEndPage implements OnInit {
       if (!finalUrl.startsWith('/')) {
         finalUrl = '/' + finalUrl;
       }
-      this.router.navigateByUrl(finalUrl);
+      this.router.navigateByUrl(finalUrl, { state: { source: 'guided-journey' } });
     }
   }
 }

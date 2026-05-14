@@ -27311,7 +27311,8 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
   /* identical to box height */
   /* color: #5D5D5D !important; */
   /* color: rgba(255, 255, 255, 0.50)!important; */
-  color: rgba(0, 0, 0, 1) !important;
+  
+  color: rgba(0, 0, 0, 0.50) !important;
   /* height: 60px; */
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
@@ -33117,6 +33118,34 @@ body * {
     object-position: 10% 25%; */
 }
 
+
+.toc_adiv_02journey  a>.row {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #0C2B5F;
+  min-height: 78px;
+  margin-bottom: 10px;
+  padding: 1cqb;
+  /* margin: 0 10px 10px 10px; */
+}
+
+/* .toc_adiv_02journey a>.row {
+    border-radius: 12px;
+    background: #FFE8BB;
+    min-height: 78px;
+    margin-bottom: 10px;
+    padding: 10px; */
+    /* margin: 0 10px 10px 10px; */
+/* } */
+.session_imgjourney {
+    width: 58px;
+    height: 58px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, .25);
+    object-fit: cover;
+    object-position: 50% 25%;
+    margin: 4px;
+}
 .session_img_play {
   position: absolute;
   top: 0;
@@ -33681,7 +33710,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-   color: #EE9596 !important; 
+   color: #EE9596; 
 }
 
 .btn_forum_ask_a_gift {
@@ -33712,7 +33741,7 @@ width: 100%;
     box-shadow: unset;
 }
 
-btn btn-warning btn_postteen{
+.btn btn-warning btn_postteen{
   color: #fff;
 }
 
@@ -35615,7 +35644,7 @@ h3_blogs p a font,
   box-shadow: unset;
 }
 
-.toc_adiv_02 a>.row {
+.toc_adiv_02  a>.row {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #0C2B5F;

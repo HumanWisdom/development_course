@@ -1,12 +1,12 @@
 button.fc_000000_0_5 {
   color: rgba(0, 0, 0, 0.5) !important;
 }
-button.fc_000000_0_5:hover {
-  color: rgba(0, 0, 0, 0.5) !important;
-}
-button.fc_000000_0_5 span.underline:hover {
-  color: rgba(0, 0, 0, 0.5) !important;
-}
+// button.fc_000000_0_5:hover {
+//   color: rgba(0, 0, 0, 0.5) !important;
+// }
+// button.fc_000000_0_5 span.underline:hover {
+//   color: rgba(0, 0, 0, 0.5) !important;
+// }
 
 
 /* Unfollow button: always black with 50% opacity */
@@ -25,8 +25,10 @@ button.fc_e8a880_0_5 span.underline:hover {
       margin-bottom: 20px;
 }
 
+
 .div_forum_post .btn{
   border-color: transparent !important;
+   color:#EE9596;
 }
 .fa-minus{
   transform: scale(0.7);
@@ -38,8 +40,8 @@ button.fc_e8a880_0_5 span.underline:hover {
 
 // Tag color classes
 .tag-mental-health { background: #A54265; color: #FFFFFF !important; }
-.tag-relationships { background: #D7586B; color: #FFFFFF !important; }
-.tag-work-leadership { background: #05BBBF; color: #FFFFFF !important; }
+.tag-relationships { background: #EE9596; color: #FFFFFF !important; }
+.tag-work-leadership { background: #60BEC2; color: #FFFFFF !important; }
 .tag-be-happier { background: #EEA170; color: #FFFFFF !important; }
 .tag-habits-addiction { background: #FFACA2; color: #FFFFFF !important; }
 .tag-dealing-loss { background: #EEA170; color: #FFFFFF !important; }

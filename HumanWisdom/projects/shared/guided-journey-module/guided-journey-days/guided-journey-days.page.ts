@@ -21,6 +21,10 @@ export class GuidedJourneyDaysPage implements OnInit {
   journeyTitle: string = '';
   visitedDays: Set<number> = new Set();
   isSubscriber = false;
+  isLoggedIn = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
   private touchStartX = 0;
   private touchStartY = 0;
   enableAlert: boolean = false;
@@ -50,6 +54,11 @@ export class GuidedJourneyDaysPage implements OnInit {
         this.getGuidedJourneyDays();
       }
     });
+
+    let userid = localStorage.getItem('isloggedin');
+    if (userid === 'T') {
+      this.isLoggedIn = true;
+    }
   }
 
   isDragging = false;
@@ -112,6 +121,9 @@ export class GuidedJourneyDaysPage implements OnInit {
         
         if (journey) {
           this.journeyTitle = journey.Title || journey.title || journey.JourneyName || journey.Name;
+          if (journey.Days) {
+            this.totalDays = parseInt(journey.Days);
+          }
         }
       }
     });
@@ -137,7 +149,6 @@ export class GuidedJourneyDaysPage implements OnInit {
           };
         });
         this.updateDisplayData();
-        this.getJournalResponses();
         
         // Also check initial read status to mark visited
         this.allDaysData.forEach(item => {
@@ -169,27 +180,10 @@ export class GuidedJourneyDaysPage implements OnInit {
     return { mainTitle: title, subTitle: '' };
   }
 
-  getJournalResponses() {
-    const userId = SharedService.getUserId();
-    if (userId && userId !== 100) {
-      this.commonService.viewJournal(userId).subscribe(res => {
-        if (res && Array.isArray(res)) {
-          this.allDaysData.forEach(exercise => {
-            if (exercise.Type === 3) {
-              const reflectionId = exercise.QueId || exercise.QuestId || exercise.ReflectionId || exercise.GuidedJourneyDayID;
-              const response = res.find(r => (r.QueId && r.QueId == reflectionId) || (r.ProgId && r.ProgId == reflectionId));
-              if (response) {
-                exercise.Response = response.Response || response.Ans;
-              }
-            }
-          });
-        }
-      });
-    }
-  }
+
 
   submitJournal(exercise: any) {
-    if (!this.isSubscriber && exercise.isFree === '0') {
+    if (!this.isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)) {
       const prefix = SharedService.getprogramName();
       this.router.navigate([`/${prefix}/subscription/start-your-free-trial`]);
       return;
@@ -202,16 +196,22 @@ export class GuidedJourneyDaysPage implements OnInit {
       return;
     }
 
-    const reflectionId = exercise.QueId || exercise.QuestId || exercise.ReflectionId || exercise.GuidedJourneyDayID;
+    const reflectionId = exercise.ReflectionId || exercise.FeatureID || exercise.QueId || exercise.QuestId || exercise.GuidedJourneyDayID;
     
     const data = {
       SubscriberID: userId,
-      ReflectionId: reflectionId,
-      Resp: exercise.Response
+      ReflectionId: reflectionId ? Number(reflectionId) : 0,
+      Resp: exercise.Response,
+      UserReflectionId: exercise.UserReflectionID ? Number(exercise.UserReflectionID) : 0
     };
 
     this.commonService.addReflection(data).subscribe(res => {
       if (res) {
+        // Handle different possible response keys for the ID
+        const responseId = res.ResponseID || res.UserReflectionId || res.UserReflectionID || res;
+        if (responseId && typeof responseId !== 'object') {
+          exercise.UserReflectionID = responseId.toString();
+        }
         this.content = 'Successfully added to journal';
         this.enableAlert = true;
       }
@@ -247,9 +247,11 @@ export class GuidedJourneyDaysPage implements OnInit {
       return dayNum === this.currentDay;
     });
     
-    // Calculate total days
-    const days = this.allDaysData.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
-    this.totalDays = days.length > 0 ? Math.max(...days) : 0;
+    // Calculate total days as fallback if not already set by journey details
+    if (this.totalDays === 0) {
+      const days = this.allDaysData.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
+      this.totalDays = days.length > 0 ? Math.max(...days) : 0;
+    }
 
     // Scroll to active day
     this.scrollToActiveDay();
@@ -299,12 +301,23 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   onExerciseClick(exercise: any) {
+    if (!this.isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)) {
+      this.showModal = true;
+      return;
+    }
+
     this.commonService.clickGuidedJourneyDay(exercise.GuidedJourneyDayID).subscribe();
+    localStorage.setItem('lastNavSource', 'guided-journey');
+    localStorage.setItem('NaviagtedFrom', this.router.url);
     
     if (exercise.Url) {
       const urls = exercise.Url.split(',');
       let targetUrl = urls[0].trim(); 
       const prefix = SharedService.getprogramName();
+      
+      // Determine if we need to pass the 't' parameter to bypass ActiveGuard for free content
+      const isFree = exercise.isFree === '1' || exercise.isFree === 1;
+      const queryParams = isFree ? { t: 1 } : {};
       
       if (targetUrl.includes('~podcasts~')) {
         // Podcast format: ~podcasts~102.mp3/102/T/Why...
@@ -314,7 +327,7 @@ export class GuidedJourneyDaysPage implements OnInit {
         const enable = parts[2] || 'T';
         const title = parts[3] || 'Podcast';
         const moduleName = 'podcast';
-        this.router.navigate([`/${prefix}/audiopage`, path, id, enable, title, moduleName]);
+        this.router.navigate([`/${prefix}/audiopage`, path, id, enable, title, moduleName], { queryParams });
 
       } else if (targetUrl.startsWith('https_~~') || (targetUrl.includes('~') && !targetUrl.startsWith('/'))) {
         // Encoded audio URL format used by AdultsAudioMeditationComponent
@@ -323,7 +336,10 @@ export class GuidedJourneyDaysPage implements OnInit {
         const title = (exercise.Title || exercise.Section || 'Audio');
         // User specified working pattern: audiopage/:audiolink/:id/:enable/:title
         // Mapping: :audiolink = targetUrl, :title = rowId, :RowId = 'T', :type = title
-        const finalUrl = `/${prefix}/guided-meditation/audiopage/${targetUrl}/${rowId}/T/${encodeURIComponent(title)}`;
+        let finalUrl = `/${prefix}/guided-meditation/audiopage/${targetUrl}/${rowId}/T/${encodeURIComponent(title)}`;
+        if (isFree) {
+          finalUrl += (finalUrl.includes('?') ? '&t=1' : '?t=1');
+        }
         this.router.navigateByUrl(finalUrl);
 
       } else {
@@ -345,6 +361,10 @@ export class GuidedJourneyDaysPage implements OnInit {
           } else {
             finalUrl = `/${finalUrl}`;
           }
+        }
+        
+        if (isFree) {
+          finalUrl += (finalUrl.includes('?') ? '&t=1' : '?t=1');
         }
         
         this.router.navigateByUrl(finalUrl);
@@ -379,6 +399,14 @@ export class GuidedJourneyDaysPage implements OnInit {
     }
     
     return null;
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+    }
   }
 
   getDaysArray() {

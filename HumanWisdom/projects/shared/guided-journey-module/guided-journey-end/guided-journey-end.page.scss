@@ -31,7 +31,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 3px solid #E58D82;
+    border: 3px solid #EE9596;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,14 +39,20 @@
 
     i {
       font-size: 32px;
-      color: #E58D82;
+      color: #EE9596;
     }
   }
 
-  .well_done_title {
-    font-size: 26px;
-    font-weight: 700;
-    margin: 0 0 15px;
+  .col-lg-12 {
+    margin-bottom: 25px !important;
+  }
+
+  h2 {
+    margin-top: 0 !important;
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 125%;
   }
 
   .well_done_desc {
@@ -93,7 +99,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,15 +214,15 @@
 .fc_ffffff { color: #fff !important; }
 .lh_140p { line-height: 140% !important; }
 .lh_130p { line-height: 130% !important; }
-.fc_e58d82 { color: #E58D82 !important; }
+.fc_e58d82 { color: #EE9596 !important; }
 
 /* Footer Navigation */
 .teenagers-end {
     .well_done_section {
         .checkmark_circle {
-            border-color: #e58d82;
+            border-color: #EE9596;
             i {
-                color: #e58d82;
+                color: #EE9596;
             }
         }
         .well_done_desc {
@@ -225,8 +231,8 @@
     }
 
     .btn_return {
-        background: #e58d82 !important;
-        box-shadow: 0 4px 10px rgba(229, 141, 130, 0.2);
+        background: #EE9596 !important;
+        box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
     .toc_adiv_01 {
@@ -241,19 +247,19 @@
   padding-right: 20px;
 }
     .odiv_pathway {
-        .col-md-3 {
-            background: #112d5d;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 15px !important;
-            margin-right: 15px;
-            width: 250px !important; /* Ensure they look like cards in the horizontal scroll */
-            flex: 0 0 auto;
+        // .col-md-3 {
+        //     background: #112d5d;
+        //     border: 1px solid rgba(255, 255, 255, 0.1);
+        //     border-radius: 12px;
+        //     padding: 15px !important;
+        //     margin-right: 15px;
+        //     width: 250px !important; /* Ensure they look like cards in the horizontal scroll */
+        //     flex: 0 0 auto;
 
-            .ctimg {
-                height: 140px;
-            }
-        }
+        //     .ctimg {
+        //         height: 140px;
+        //     }
+        // }
     }
 
     .footer_days {
@@ -264,8 +270,8 @@
                 color: #ffffff;
             }
             &.active {
-                background: #e58d82;
-                border-color: #e58d82;
+                background: #EE9596;
+                border-color: #EE9596;
                 span {
                     color: #ffffff;
                 }
@@ -395,11 +401,71 @@
     padding-bottom: 20px;
     &::-webkit-scrollbar { display: none; }
     
-    .ctimg {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 12px;
+    // .ctimg {
+    //     width: 100%;
+    //     height: 200px;
+    //     object-fit: cover;
+    //     border-radius: 12px;
+    // }
+}
+
+/* Adults scrollbar styles */
+.bg_FFF7E6 {
+    .odiv,
+    .odiv_pathway {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: #eea170 #f6d1b7;
+    }
+    .odiv:not(:hover),
+    .odiv_pathway:not(:hover) {
+      scrollbar-color: transparent transparent;
+    }
+    .odiv::-webkit-scrollbar,
+    .odiv_pathway::-webkit-scrollbar {
+      height: 2px;
+      border-radius: 6px;
+    }
+    .odiv::-webkit-scrollbar-thumb,
+    .odiv_pathway::-webkit-scrollbar-thumb {
+      background-color: #eea170;
+      border-radius: 6px;
+    }
+    .odiv::-webkit-scrollbar-track,
+    .odiv_pathway::-webkit-scrollbar-track {
+      background-color: #f6d1b7;
+      border-radius: 10px;
+    }
+}
+
+/* Teenagers scrollbar styles */
+.bg_stake {
+    .odiv,
+    .odiv_pathway {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: #778899 #16366D;
+    }
+    .odiv:not(:hover),
+    .odiv_pathway:not(:hover) {
+      scrollbar-color: transparent transparent;
+    }
+    .odiv::-webkit-scrollbar,
+    .odiv_pathway::-webkit-scrollbar {
+      height: 2px;
+      border-radius: 6px;
+    }
+    .odiv::-webkit-scrollbar-thumb,
+    .odiv_pathway::-webkit-scrollbar-thumb {
+      background-color: #16366D;
+      border-radius: 6px;
+    }
+    .odiv::-webkit-scrollbar-track,
+    .odiv_pathway::-webkit-scrollbar-track {
+      background-color: #778899;
+      border-radius: 10px;
     }
 }
 

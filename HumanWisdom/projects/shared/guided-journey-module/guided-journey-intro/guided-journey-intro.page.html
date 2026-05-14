@@ -5,7 +5,9 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw" [ngClass]="isAdults ? '' : 'bg_stake'">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <a class="" (click)="goBack()">
-        <img [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg'" alt="" class="p0" />
+        <img
+          [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg'"
+          alt="" class="p0" />
       </a>
     </div>
 
@@ -31,7 +33,8 @@
   (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'" [class.teenagers-intro]="!isAdults">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
+        [class.teenagers-intro]="!isAdults">
 
         <div *ngIf="isLoading" class="row center_flex mt40px">
           <div class="col-md-12 tcenter">
@@ -46,8 +49,8 @@
             <div class="row mb20px">
               <div class="col-md-12 p0">
                 <a (click)="goToListing()" class="center_flex_left">
-                  <i class="fa fa-angle-left mr5px fc_e58d82"></i>
-                  <span class="fs_14px fw_500 fc_e58d82">Guided journeys</span>
+                  <i class="fa fa-angle-left mr5px fc_D7586B"></i>
+                  <span class="fs_14px fw_500 fc_D7586B">Guided journeys</span>
                 </a>
               </div>
             </div>

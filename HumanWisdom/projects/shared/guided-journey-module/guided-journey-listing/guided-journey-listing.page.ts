@@ -17,6 +17,7 @@ export class GuidedJourneyListingPage implements OnInit {
   guidedJourneyList = [];
   filteredList = [];
   isSubscriber = false;
+  isLoggedIn = false;
   showModal = false;
   isLoading = true;
   modalTitle = 'The best is yet to come';
@@ -36,7 +37,10 @@ export class GuidedJourneyListingPage implements OnInit {
     SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
-    if (userid === 'T' && sub === '1') {
+    if (userid === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (this.isLoggedIn && sub === '1') {
       this.isSubscriber = true;
     } else {
       this.isSubscriber = false;
@@ -56,11 +60,16 @@ export class GuidedJourneyListingPage implements OnInit {
           const rawTitle = item.Title || item.title || item.JourneyName || item.Name;
           let title = rawTitle;
           let subtitle = item.Subtitle || item.subtitle || '';
+          const days = item.Days || item.days || 0;
           
           if (title && title.includes('(') && title.includes(')')) {
             const parts = title.split('(');
             title = parts[0].trim();
             subtitle = parts[1].replace(')', '').trim().replace(',', ' •');
+          }
+
+          if (days > 0) {
+            subtitle = days + ' Days';
           }
 
           return {
@@ -71,6 +80,7 @@ export class GuidedJourneyListingPage implements OnInit {
             imgUrl: this.getImgUrl(item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl),
             isRead: item.isRead || item.IsRead || '0',
             isFree: item.isFree || item.IsFree || '0',
+            days: days,
           };
         });
         this.filteredList = this.guidedJourneyList;
@@ -107,10 +117,6 @@ export class GuidedJourneyListingPage implements OnInit {
   }
 
   navigateToInner(item) {
-    if (!this.isSubscriber && item.isFree === '0') {
-      this.showModal = true;
-      return;
-    }
     
     localStorage.setItem('lastGuidedJourneyId', item.id);
 
