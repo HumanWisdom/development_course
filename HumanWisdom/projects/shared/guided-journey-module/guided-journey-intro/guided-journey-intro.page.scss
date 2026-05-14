@@ -50,8 +50,8 @@
 
 .teenagers-intro {
     .btn_return {
-        background: #e58d82 !important;
-        box-shadow: 0 4px 10px rgba(229, 141, 130, 0.2);
+        background: #EE9596 !important;
+        box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
     .footer_days {
@@ -62,8 +62,8 @@
                 color: #ffffff;
             }
             &.active {
-                background: #e58d82;
-                border-color: #e58d82;
+                background: #EE9596;
+                border-color: #EE9596;
                 span {
                     color: #ffffff;
                 }
@@ -183,7 +183,7 @@
 }
 
 .fc_e58d82 {
-    color: #E58D82 !important;
+    color: #EE9596 !important;
 }
 
 .fs_32px {
@@ -200,4 +200,7 @@
 
 .mb60px {
     margin-bottom: 60px;
+}
+.fc_D7586B {
+    color: #D7586B !important;
 }
