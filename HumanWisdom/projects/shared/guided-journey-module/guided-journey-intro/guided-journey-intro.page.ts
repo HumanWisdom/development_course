@@ -88,6 +88,9 @@ export class GuidedJourneyIntroPage implements OnInit {
             description: journey.Description || journey.description,
             imgUrl: this.getImgUrl(journey.ImageUrl || journey.ImgUrl || journey.imgUrl || journey.imageUrl),
           };
+          if (journey.Days) {
+            this.totalDays = parseInt(journey.Days);
+          }
         }
       }
       this.isLoading = false;
@@ -101,7 +104,7 @@ export class GuidedJourneyIntroPage implements OnInit {
     const programId = SharedService.ProgramId;
 
     this.commonService.GetGuidedJourneyDays(this.journeyId, programId, userId).subscribe((res: any) => {
-      if (res && Array.isArray(res)) {
+      if (res && Array.isArray(res) && this.totalDays === 0) {
         const days = res.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
         this.totalDays = days.length > 0 ? Math.max(...days) : 0;
       }

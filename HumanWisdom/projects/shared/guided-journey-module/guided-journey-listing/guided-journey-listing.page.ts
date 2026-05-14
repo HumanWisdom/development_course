@@ -71,6 +71,7 @@ export class GuidedJourneyListingPage implements OnInit {
             imgUrl: this.getImgUrl(item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl),
             isRead: item.isRead || item.IsRead || '0',
             isFree: item.isFree || item.IsFree || '0',
+            days: item.Days || item.days || 0,
           };
         });
         this.filteredList = this.guidedJourneyList;

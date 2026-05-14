@@ -67,13 +67,16 @@
                 </div>
                 <div class="card_type1_content">
                   <h3 class="card_type1_title">{{exercise.DisplayTitle}}</h3>
-                  <p class="card_type1_meta">{{exercise.DisplaySubtitle || exercise.Section}}</p>
+                  <p class="card_type1_meta">
+                    {{exercise.DisplaySubtitle || exercise.Section}}
+                    <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
+                  </p>
                   <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
                 </div>
                 <div class="card_type1_tick" *ngIf="exercise.isRead === '1' && isSubscriber">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
                 </div>
-                <div class="card_type1_lock" *ngIf="!isSubscriber && exercise.isFree === '0'">
+                <div class="card_type1_lock" *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
                   <img
                     [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
                     width="18" alt="">
@@ -90,11 +93,14 @@
                 </div>
                 <div class="card_content">
                   <h3 class="exercise_title">{{exercise.DisplayTitle}}</h3>
-                  <p class="exercise_meta">{{exercise.DisplaySubtitle || exercise.Section}}</p>
+                  <p class="exercise_meta">
+                    {{exercise.DisplaySubtitle || exercise.Section}}
+                    <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
+                  </p>
                   <div class="read_status" *ngIf="exercise.isRead === '1' && isSubscriber">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="18" alt="">
                   </div>
-                  <div class="lock_status" *ngIf="!isSubscriber && exercise.isFree === '0'">
+                  <div class="lock_status" *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
                     <img
                       [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
                       width="18" alt="">
@@ -105,11 +111,17 @@
               <!-- Type 3: Journaling Box -->
               <div *ngIf="exercise.Type === 3" class="journal_box">
                 <h4 class="journal_title">{{exercise.DisplayTitle}}</h4>
-                <textarea placeholder="Tap to answer" [(ngModel)]="exercise.Response"></textarea>
+                <textarea *ngIf="isSubscriber || exercise.isFree === '1' || exercise.isFree === 1"
+                  placeholder="Tap to answer"
+                  [(ngModel)]="exercise.Response"></textarea>
+                <textarea *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)"
+                  [disabled]="true"
+                  [readonly]="true"
+                  [value]="'You need to login and subscribe to use this feature'"></textarea>
 
                 <button class="btn_journal" (click)="submitJournal(exercise)"
-                  *ngIf="exercise.Response && exercise.Response.trim() !== ''">
-                  Add to journal
+                  *ngIf="exercise.Response && exercise.Response.trim() !== '' && (isSubscriber || exercise.isFree === '1' || exercise.isFree === 1)">
+                  {{ (exercise.UserReflectionID && exercise.UserReflectionID !== '0') ? 'Update journal' : 'Add to journal' }}
                 </button>
 
                 <div class="journal_footer">

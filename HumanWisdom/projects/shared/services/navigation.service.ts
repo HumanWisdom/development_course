@@ -339,7 +339,7 @@ export class NavigationService {
       this.history.splice(index + 1);
       const isGuidedJourneysListing = this.router.url.split('?')[0].endsWith('/guided-journeys');
       if (isGuidedJourneysListing) {
-        while (this.history.length > 0 && this.history[this.history.length - 1].includes('/guided-journeys')) {
+        while (this.history.length > 0 && (this.history[this.history.length - 1].includes('/guided-journeys') || this.history[this.history.length - 1].includes('start-your-free-trial'))) {
           this.history.pop();
         }
         url = this.history[this.history.length - 1];
