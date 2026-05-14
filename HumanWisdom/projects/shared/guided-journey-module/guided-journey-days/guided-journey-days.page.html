@@ -73,10 +73,11 @@
                   </p>
                   <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
                 </div>
-                <div class="card_type1_tick" *ngIf="exercise.isRead === '1' && isSubscriber">
+                <div class="card_type1_tick" *ngIf="exercise.isRead === '1' && isLoggedIn">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
                 </div>
-                <div class="card_type1_lock" *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
+                <div class="card_type1_lock"
+                  *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
                   <img
                     [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
                     width="18" alt="">
@@ -97,7 +98,7 @@
                     {{exercise.DisplaySubtitle || exercise.Section}}
                     <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
                   </p>
-                  <div class="read_status" *ngIf="exercise.isRead === '1' && isSubscriber">
+                  <div class="read_status" *ngIf="exercise.isRead === '1' && isLoggedIn">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="18" alt="">
                   </div>
                   <div class="lock_status" *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
@@ -112,16 +113,14 @@
               <div *ngIf="exercise.Type === 3" class="journal_box">
                 <h4 class="journal_title">{{exercise.DisplayTitle}}</h4>
                 <textarea *ngIf="isSubscriber || exercise.isFree === '1' || exercise.isFree === 1"
-                  placeholder="Tap to answer"
-                  [(ngModel)]="exercise.Response"></textarea>
-                <textarea *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)"
-                  [disabled]="true"
-                  [readonly]="true"
-                  [value]="'You need to login and subscribe to use this feature'"></textarea>
+                  placeholder="Tap to answer" [(ngModel)]="exercise.Response"></textarea>
+                <textarea *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)" [disabled]="true"
+                  [readonly]="true" [value]="'You need to subscribe to use this feature'"></textarea>
 
                 <button class="btn_journal" (click)="submitJournal(exercise)"
                   *ngIf="exercise.Response && exercise.Response.trim() !== '' && (isSubscriber || exercise.isFree === '1' || exercise.isFree === 1)">
-                  {{ (exercise.UserReflectionID && exercise.UserReflectionID !== '0') ? 'Update journal' : 'Add to journal' }}
+                  {{ (exercise.UserReflectionID && exercise.UserReflectionID !== '0') ? 'Update journal' : 'Add to
+                  journal' }}
                 </button>
 
                 <div class="journal_footer">
