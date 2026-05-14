@@ -17,6 +17,7 @@ export class GuidedJourneyListingPage implements OnInit {
   guidedJourneyList = [];
   filteredList = [];
   isSubscriber = false;
+  isLoggedIn = false;
   showModal = false;
   isLoading = true;
   modalTitle = 'The best is yet to come';
@@ -36,7 +37,10 @@ export class GuidedJourneyListingPage implements OnInit {
     SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
-    if (userid === 'T' && sub === '1') {
+    if (userid === 'T') {
+      this.isLoggedIn = true;
+    }
+    if (this.isLoggedIn && sub === '1') {
       this.isSubscriber = true;
     } else {
       this.isSubscriber = false;
