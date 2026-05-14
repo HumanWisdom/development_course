@@ -31,7 +31,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 3px solid #E58D82;
+    border: 3px solid #EE9596;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +39,7 @@
 
     i {
       font-size: 32px;
-      color: #E58D82;
+      color: #EE9596;
     }
   }
 
@@ -214,15 +214,15 @@
 .fc_ffffff { color: #fff !important; }
 .lh_140p { line-height: 140% !important; }
 .lh_130p { line-height: 130% !important; }
-.fc_e58d82 { color: #E58D82 !important; }
+.fc_e58d82 { color: #EE9596 !important; }
 
 /* Footer Navigation */
 .teenagers-end {
     .well_done_section {
         .checkmark_circle {
-            border-color: #e58d82;
+            border-color: #EE9596;
             i {
-                color: #e58d82;
+                color: #EE9596;
             }
         }
         .well_done_desc {
@@ -231,8 +231,8 @@
     }
 
     .btn_return {
-        background: #e58d82 !important;
-        box-shadow: 0 4px 10px rgba(229, 141, 130, 0.2);
+        background: #EE9596 !important;
+        box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
     .toc_adiv_01 {
@@ -270,8 +270,8 @@
                 color: #ffffff;
             }
             &.active {
-                background: #e58d82;
-                border-color: #e58d82;
+                background: #EE9596;
+                border-color: #EE9596;
                 span {
                     color: #ffffff;
                 }
@@ -401,12 +401,12 @@
     padding-bottom: 20px;
     &::-webkit-scrollbar { display: none; }
     
-    .ctimg {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 12px;
-    }
+    // .ctimg {
+    //     width: 100%;
+    //     height: 200px;
+    //     object-fit: cover;
+    //     border-radius: 12px;
+    // }
 }
 
 /* Adults scrollbar styles */

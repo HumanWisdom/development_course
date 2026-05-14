@@ -136,7 +136,7 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        color: #E58D82;
+        color: #EE9596;
     }
 }
 
@@ -253,6 +253,10 @@
     &:focus{
         outline: none;
     }
+    &:disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
   }
 
   .btn_journal {
@@ -309,8 +313,12 @@
 /* Footer Navigation */
 .teenagers-days {
     .btn_return {
-        background: #e58d82 !important;
-        box-shadow: 0 4px 10px rgba(229, 141, 130, 0.2);
+        background: #EE9596 !important;
+        box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
+    }
+    .btn_journal {
+        background: #EE9596 !important;
+        box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
     .card_type1 {
         background: #112d5d;
@@ -371,6 +379,10 @@
             &::placeholder {
                 color: rgba(255, 255, 255, 0.4);
             }
+            &:disabled {
+                cursor: not-allowed;
+                pointer-events: none;
+            }
         }
 
         .journal_footer {
@@ -395,8 +407,8 @@
                 color: #ffffff;
             }
             &.active {
-                background: #e58d82;
-                border-color: #e58d82;
+                background: #EE9596;
+                border-color: #EE9596;
                 span {
                     color: #ffffff;
                 }
