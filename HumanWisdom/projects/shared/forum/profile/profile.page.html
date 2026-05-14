@@ -20,7 +20,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a class="" (click)="share()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/shre_teen.svg" alt="" class="p0" *ngIf="!isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share.svg" alt="" class="p0" *ngIf="!isAdults">
         <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg" alt="" class="p0" *ngIf="isAdults">
       </a>
     </div>
@@ -194,10 +194,10 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
                           <button type="button" class="btn fs_12px fw_400 lh_140p fc_EE9596">
                             <img *ngIf="item.Liked=='0'" (click)="like(item,index)"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/like_teen.svg"
                               class="img-responsive mr5px">
                             <img *ngIf="item.Liked=='1'" (click)="like(item,index)"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/like_filledteen.svg"
                               class="img-responsive mr5px">
                             {{item.PostLikeCount}}
                           </button>
@@ -231,7 +231,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0">
                           <button (click)="shareOnThread(item)" type="button" class="btn fs_12px fw_400 lh_140p "
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/shre_teen.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_share.svg"
