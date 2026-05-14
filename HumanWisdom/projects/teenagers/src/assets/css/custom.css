@@ -33119,6 +33119,24 @@ body * {
 }
 
 
+.toc_adiv_02journey  a>.row {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #0C2B5F;
+  min-height: 78px;
+  margin-bottom: 10px;
+  padding: 1cqb;
+  /* margin: 0 10px 10px 10px; */
+}
+
+/* .toc_adiv_02journey a>.row {
+    border-radius: 12px;
+    background: #FFE8BB;
+    min-height: 78px;
+    margin-bottom: 10px;
+    padding: 10px; */
+    /* margin: 0 10px 10px 10px; */
+/* } */
 .session_imgjourney {
     width: 58px;
     height: 58px;
@@ -33126,6 +33144,7 @@ body * {
     border: 1px solid rgba(0, 0, 0, .25);
     object-fit: cover;
     object-position: 50% 25%;
+    margin: 4px;
 }
 .session_img_play {
   position: absolute;
@@ -35625,7 +35644,7 @@ h3_blogs p a font,
   box-shadow: unset;
 }
 
-.toc_adiv_02 a>.row {
+.toc_adiv_02  a>.row {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #0C2B5F;
