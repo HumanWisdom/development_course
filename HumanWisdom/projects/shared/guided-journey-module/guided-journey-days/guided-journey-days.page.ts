@@ -21,6 +21,7 @@ export class GuidedJourneyDaysPage implements OnInit {
   journeyTitle: string = '';
   visitedDays: Set<number> = new Set();
   isSubscriber = false;
+  isLoggedIn = false;
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
@@ -53,6 +54,11 @@ export class GuidedJourneyDaysPage implements OnInit {
         this.getGuidedJourneyDays();
       }
     });
+
+    let userid = localStorage.getItem('isloggedin');
+    if (userid === 'T') {
+      this.isLoggedIn = true;
+    }
   }
 
   isDragging = false;

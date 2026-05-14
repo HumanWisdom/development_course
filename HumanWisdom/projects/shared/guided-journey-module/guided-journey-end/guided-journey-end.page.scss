@@ -247,19 +247,19 @@
   padding-right: 20px;
 }
     .odiv_pathway {
-        .col-md-3 {
-            background: #112d5d;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 15px !important;
-            margin-right: 15px;
-            width: 250px !important; /* Ensure they look like cards in the horizontal scroll */
-            flex: 0 0 auto;
+        // .col-md-3 {
+        //     background: #112d5d;
+        //     border: 1px solid rgba(255, 255, 255, 0.1);
+        //     border-radius: 12px;
+        //     padding: 15px !important;
+        //     margin-right: 15px;
+        //     width: 250px !important; /* Ensure they look like cards in the horizontal scroll */
+        //     flex: 0 0 auto;
 
-            .ctimg {
-                height: 140px;
-            }
-        }
+        //     .ctimg {
+        //         height: 140px;
+        //     }
+        // }
     }
 
     .footer_days {
@@ -443,7 +443,8 @@
 .bg_stake {
     .odiv,
     .odiv_pathway {
-      overflow: auto;
+      overflow-x: auto;
+      overflow-y: hidden;
       scrollbar-width: thin;
       scrollbar-color: #778899 #16366D;
     }

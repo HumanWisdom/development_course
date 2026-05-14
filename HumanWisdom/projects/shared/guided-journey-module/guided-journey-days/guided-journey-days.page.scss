@@ -256,6 +256,7 @@
     &:disabled {
         cursor: not-allowed;
         pointer-events: none;
+        color: #C4C4C4 !important;
     }
   }
 
@@ -373,15 +374,17 @@
         }
 
         textarea {
-            background: #0c2b5f;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .25);
+            background: #4b2c451f;
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             &::placeholder {
                 color: rgba(255, 255, 255, 0.4);
             }
             &:disabled {
                 cursor: not-allowed;
                 pointer-events: none;
+                color: rgba(255, 255, 255, 0.4) !important;
             }
         }
 
