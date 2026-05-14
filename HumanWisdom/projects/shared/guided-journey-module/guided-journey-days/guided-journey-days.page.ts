@@ -190,20 +190,21 @@ export class GuidedJourneyDaysPage implements OnInit {
       return;
     }
 
-    const featureId = exercise.FeatureID || exercise.QueId || exercise.QuestId || exercise.ReflectionId || exercise.GuidedJourneyDayID;
+    const reflectionId = exercise.ReflectionId || exercise.FeatureID || exercise.QueId || exercise.QuestId || exercise.GuidedJourneyDayID;
     
     const data = {
       SubscriberID: userId,
-      FeatureID: featureId,
-      Response: exercise.Response,
-      UserReflectionID: exercise.UserReflectionID || "0",
-      Timing: exercise.Timing || ""
+      ReflectionId: reflectionId ? Number(reflectionId) : 0,
+      Resp: exercise.Response,
+      UserReflectionId: exercise.UserReflectionID ? Number(exercise.UserReflectionID) : 0
     };
 
     this.commonService.addReflection(data).subscribe(res => {
       if (res) {
-        if (res.ResponseID) {
-          exercise.UserReflectionID = res.ResponseID.toString();
+        // Handle different possible response keys for the ID
+        const responseId = res.ResponseID || res.UserReflectionId || res.UserReflectionID || res;
+        if (responseId && typeof responseId !== 'object') {
+          exercise.UserReflectionID = responseId.toString();
         }
         this.content = 'Successfully added to journal';
         this.enableAlert = true;

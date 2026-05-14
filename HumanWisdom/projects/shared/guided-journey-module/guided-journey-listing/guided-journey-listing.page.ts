@@ -56,11 +56,16 @@ export class GuidedJourneyListingPage implements OnInit {
           const rawTitle = item.Title || item.title || item.JourneyName || item.Name;
           let title = rawTitle;
           let subtitle = item.Subtitle || item.subtitle || '';
+          const days = item.Days || item.days || 0;
           
           if (title && title.includes('(') && title.includes(')')) {
             const parts = title.split('(');
             title = parts[0].trim();
             subtitle = parts[1].replace(')', '').trim().replace(',', ' •');
+          }
+
+          if (days > 0) {
+            subtitle = days + ' Days';
           }
 
           return {
@@ -71,7 +76,7 @@ export class GuidedJourneyListingPage implements OnInit {
             imgUrl: this.getImgUrl(item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl),
             isRead: item.isRead || item.IsRead || '0',
             isFree: item.isFree || item.IsFree || '0',
-            days: item.Days || item.days || 0,
+            days: days,
           };
         });
         this.filteredList = this.guidedJourneyList;
