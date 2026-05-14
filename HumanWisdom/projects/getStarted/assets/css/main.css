@@ -5088,22 +5088,18 @@ input[type="password" i]::-ms-reveal {
   font-display: swap; /* <-- key addition */
 }
 @keyframes verticalScroll {
-    0% { transform: translateY(0); }
-    8% { transform: translateY(0); }
-    16% { transform: translateY(-100%); }
-    24% { transform: translateY(-100%); }
-    32% { transform: translateY(-200%); }
-    40% { transform: translateY(-200%); }
-    48% { transform: translateY(-300%); }
-    56% { transform: translateY(-300%); }
-    64% { transform: translateY(-400%); }
-    72% { transform: translateY(-400%); }
-    80% { transform: translateY(-500%); }      
-    88% { transform: translateY(-500%); }     
-    96% { transform: translateY(-600%); }    /* Continue scrolling forward */
-    100% { transform: translateY(-600%); }    /* Continue scrolling forward */
+  0%   { transform: translateY(0); }          /* Live enters */
+  10%  { transform: translateY(0); }          /* Live stays */
+  20%  { transform: translateY(-100%); }      /* Work enters */
+  30%  { transform: translateY(-100%); }      /* Work stays */
+  40%  { transform: translateY(-200%); }      /* Feel enters */
+  50%  { transform: translateY(-200%); }      /* Feel stays */
+  60%  { transform: translateY(-300%); }      /* Love enters */
+  70%  { transform: translateY(-300%); }      /* Love stays */
+  80%  { transform: translateY(-400%); }      /* Lead enters */
+  90%  { transform: translateY(-400%); }      /* Lead stays */
+  100% { transform: translateY(-500%); }      /* Live (duplicate) enters */
 }
-
       .scrolling-words {
             display: inline-block;
             position: relative;
@@ -5115,7 +5111,7 @@ input[type="password" i]::-ms-reveal {
 
         .scrolling-word {
             display: flex;
-            animation: verticalScroll 12s infinite ease-in-out;
+            animation: verticalScroll 10s infinite ease-in-out;
             font-weight: 600;
             background: #ED7D6F;
             -webkit-background-clip: text;
