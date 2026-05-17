@@ -51,6 +51,7 @@
     "@ngrx/component-store": "^15.4.0",
     "@nguniversal/express-engine": "^15.2.0",
     "@ngx-lite/json-ld": "^14.0.0",
+    "@okta/okta-auth-js": "^7.8.1",
     "@swimlane/ngx-charts": "^18.0.1",
     "@types/body-parser": "^1.19.2",
     "@types/chart.js": "^2.9.34",

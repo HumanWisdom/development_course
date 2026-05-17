@@ -4,6 +4,11 @@ import { autoLoginGuard } from '../onboarding/auto-login-guard';
 import {EnableRouteGuard} from '../../../../shared/enable-route.guard'
 const routes: Routes = [
   {
+    path: 'okta-callback',
+    loadComponent: () =>
+      import('../../../../shared/component/okta-callback/okta-callback.page').then((m) => m.OktaCallbackPage),
+  },
+  {
     path: 'login',
     canActivate: [autoLoginGuard],
     loadChildren: () => import('./login-signup/login-signup.module').then(m => m.LoginSignupPageModule)

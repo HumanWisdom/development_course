@@ -10,6 +10,10 @@ export const environment = {
   appleSignInAPITeenagers: "https://staging.humanwisdom.info/api/verifyAppleToken_htmlTeens",
   appleSignInHtmlLocal: "https://staging.humanwisdom.info/api/verifyAppleToken_htmlLocal",
   googleClientId: "907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com",
+  /** Okta OIDC (authorization server issuer URL, e.g. https://dev-xxxxx.okta.com/oauth2/default) */
+  oktaIssuer: "	https://trial-7122525.okta.com/oauth2/aus12nfq2899rd7h2698",
+  /** Okta SPA app client id */
+  oktaClientId: "0oa12lxabfndUC9E9698",
   facebookAppId: "238869214957032",
   stripeKey: "pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl",
   ADULT_CHATBOT_URL: 'https://adults-staging-dev.happierme.app/chat',

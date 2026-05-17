@@ -34,7 +34,7 @@ export class TokenInterceptorService implements HttpInterceptor {
           const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
 
           // Skip handling for login/signup related APIs
-          const excludedUrls = ['/login', '/AddLearner', '/verifyGoogleTokenAndLogin', '/verifyFaceBookTokenAndLogin', '/forgotPassword', '/verificationCode', '/VerifyUserByEmail'];
+          const excludedUrls = ['/login', '/AddLearner', '/verifyGoogleTokenAndLogin', '/verifyFaceBookTokenAndLogin', '/verifyOktaTokenAndLogin', '/forgotPassword', '/verificationCode', '/VerifyUserByEmail'];
           const isExcluded = excludedUrls.some(url => err.url && err.url.includes(url));
 
           if (isExcluded || isAuthPage || isFromSignupFlow) {

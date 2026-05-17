@@ -34,6 +34,11 @@ const routes: Routes = [
    // canActivate: [autoLoginGuard],
     component:LoginSignupPage
   },
+  {
+    path: 'okta-callback',
+    loadComponent: () =>
+      import('../../../../shared/component/okta-callback/okta-callback.page').then((m) => m.OktaCallbackPage),
+  },
  /*  {
     path: 'activationkey',
     loadChildren: () => import('./activationkey/activationkey.module').then(m => m.ActivationkeyPageModule)

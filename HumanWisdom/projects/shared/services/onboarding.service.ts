@@ -270,6 +270,11 @@ export class OnboardingService {
     return this.http.post(this.path + '/verifyFaceBookTokenAndLogin', data)
   }
 
+  /** Okta OIDC id_token — backend should validate JWT against your Okta issuer (JWKS). */
+  verifyOktaToken(data: any): Observable<any> {
+    return this.http.post(this.path + '/verifyOktaTokenAndLogin', data)
+  }
+
   emailLogin(email: any, password: any): Observable<any> {
       this.chatStore.clearChat();
     let param1 = new HttpParams().set("email", email)

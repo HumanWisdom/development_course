@@ -1,6 +1,6 @@
 import { Component, ElementRef, NgZone, OnInit, AfterViewInit, Renderer2, ViewChild, OnDestroy } from "@angular/core";
 import { AbstractControl, NgForm, UntypedFormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute, Router, RouterModule } from "@angular/router";
+import { ActivatedRoute, Params, Router, RouterModule } from "@angular/router";
 import { PlatformModule } from '@angular/cdk/platform';
 import { LogEventService } from "../../services/log-event.service";
 import { OnboardingService } from "../..//services/onboarding.service";
@@ -15,6 +15,7 @@ import { Constant } from "../../services/constant";
 import { CommonService } from "../../services/common.service";
 import { HomeStateService } from "../../services/home-state.service";
 import { ProgramType } from "../../models/program-model";
+import { OktaAuthBridgeService } from "../../services/okta-auth-bridge.service";
 declare var $: any;
 declare var google: any;
 declare var FB: any;
@@ -118,6 +119,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
 
   get confirmpasswordvalid() {
     return this.registrationForm?.get("confirmPassword");
+  }
+
+  get oktaConfigured(): boolean {
+    return this.oktaAuthBridge.isConfigured();
   }
 
   // registrationForm=new FormGroup({
@@ -459,7 +464,8 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     private navigtionService: NavigationService,
     private renderer: Renderer2, private el: ElementRef,
     private commonService: CommonService,
-    private homeStateService: HomeStateService
+    private homeStateService: HomeStateService,
+    private oktaAuthBridge: OktaAuthBridgeService
   ) {
     this.loadRecaptchaScript();
     this.initializeRegistrationForm();
@@ -478,7 +484,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         this.enableLogin = true;
       }
       this.urlKey = params["key"];
-      // Print the parameter to the console.
+      if (params["completeSocial"] === "1") {
+        this.zone.run(() => this.finalizePendingSocialLogin());
+      }
+      if (params["oktaError"]) {
+        this.zone.run(() => this.handleOktaReturnQuery(params));
+      }
     });
     localStorage.setItem("remember", "T");
     localStorage.setItem("firsttime", "T");
@@ -510,6 +521,86 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       script.defer = true;
       document.head.appendChild(script);
     }
+  }
+
+  /** Completes session after Okta redirect (see okta-callback page). */
+  private finalizePendingSocialLogin(): void {
+    const raw = sessionStorage.getItem("pendingSocialLogin");
+    if (!raw) {
+      return;
+    }
+    sessionStorage.removeItem("pendingSocialLogin");
+    try {
+      const { res, provider } = JSON.parse(raw) as { res: any; provider: string };
+      this.setUpLoginConfiguration(res, provider);
+    } catch (e) {
+      console.error("finalizePendingSocialLogin", e);
+    }
+  }
+
+  /** After Okta callback navigates back with ?oktaError=… */
+  private handleOktaReturnQuery(params: Params): void {
+    const pick = (k: string): string => {
+      const v = params[k];
+      const s = Array.isArray(v) ? v[0] : v;
+      return s != null ? String(s) : "";
+    };
+    const code = pick("oktaError");
+    const status = pick("oktaStatus");
+    const detail = pick("oktaDetail");
+    if (code === "api") {
+      if (status === "404" || status === "0") {
+        this.content =
+          "Okta sign-in succeeded, but the API route was not found. Your server needs POST {apiURL}/verifyOktaTokenAndLogin (same kind of response as verifyGoogleTokenAndLogin).";
+      } else if (status === "401" || status === "403") {
+        this.content =
+          "Okta sign-in succeeded, but the API rejected the request. Check CORS, auth, and that the id_token is validated on the server.";
+      } else {
+        this.content =
+          status && status.length
+            ? `Okta sign-in could not finish (HTTP ${status}). Open DevTools → Network and inspect verifyOktaTokenAndLogin.`
+            : "Okta sign-in could not finish. Open DevTools → Network and inspect verifyOktaTokenAndLogin.";
+      }
+      if (detail) {
+        this.content += ` ${detail}`;
+      }
+    } else if (code === "no_email") {
+      this.content = "Okta did not return an email claim. In Okta, ensure the authorization server includes email (or preferred_username) in the ID token.";
+    } else if (code === "verify_failed") {
+      this.content = "Okta sign-in succeeded, but account verification returned no user. Try again or contact support.";
+    } else if (code === "parse") {
+      this.content = "Could not complete Okta sign-in (token exchange). Try again or clear site data for this origin.";
+    } else {
+      this.content = "Okta sign-in did not complete. Please try again.";
+    }
+    this.enableAlert = true;
+    this.router.navigate([], {
+      relativeTo: this.activate,
+      queryParams: {
+        ...(this.urlEmail ? { email: this.urlEmail } : {}),
+        ...(this.urlPassword ? { pwd: this.urlPassword } : {}),
+        ...(this.urlKey ? { key: this.urlKey } : {}),
+      },
+      replaceUrl: true,
+    });
+  }
+
+  signInWithOkta(reqtype: "signup" | "login"): void {
+    if (!this.oktaAuthBridge.isConfigured()) {
+      this.content = "Okta sign-in is not configured.";
+      this.enableAlert = true;
+      return;
+    }
+    if (reqtype === "signup") {
+      this.logeventservice.logEvent("click_signup_okta");
+    } else {
+      this.logeventservice.logEvent("click_login_okta");
+    }
+    this.oktaAuthBridge.signInWithRedirect().catch((err) => {
+      console.error("Okta redirect failed", err);
+      this.content = "Could not start Okta sign-in. Please try again.";
+      this.enableAlert = true;
+    });
   }
 
   ngOnInit() {
@@ -1089,6 +1180,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     } else if (social === 'apple') {
       if (this.isSignUp) this.logeventservice.logEvent('apple_signup_complete');
       else this.logeventservice.logEvent('apple_login_success');
+    } else if (social === 'okta') {
+      if (this.isSignUp) this.logeventservice.logEvent('okta_signup_complete');
+      else this.logeventservice.logEvent('okta_login_success');
     }
 
     if (res.UserId === 0) {

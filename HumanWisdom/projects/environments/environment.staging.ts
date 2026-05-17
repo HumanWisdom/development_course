@@ -6,6 +6,8 @@ export const environment = {
     appleSignInAPITeenagers: "https://staging.humanwisdom.info/api/verifyAppleToken_htmlTeens",
     appleSignInHtmlLocal:"",
       googleClientId: "907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com",
+   oktaIssuer: "",
+   oktaClientId: "",
    facebookAppId: "238869214957032",
     stripeKey: "pk_test_51IDyEyLodCYBgHN86w4iS8izVNRW5BrBHRvNR5hamoNsCx1ccQWEMKVSSONQKVqHyFh5FWuUXTEFqyPdMjc2Nld200mJgPGVrl",
     ADULT_CHATBOT_URL: 'https://adults-staging-dev.happierme.app/chat',

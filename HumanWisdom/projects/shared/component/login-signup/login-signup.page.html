@@ -104,6 +104,15 @@
                       </div>
                     </div>
 
+                    <div class="row center_flex mt10px" *ngIf="oktaConfigured">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                        <button type="button" class="btn btn_login_signup tcenter btn_okta_sso"
+                          (click)="signInWithOkta('signup')">
+                          Continue with Okta
+                        </button>
+                      </div>
+                    </div>
+
 
                     <div class="mtb30px mregister">
                       <div class="row mb10px">
@@ -387,6 +396,14 @@
                     </div>
                   </div>
 
+                  <div class="row center_flex mt10px" *ngIf="oktaConfigured">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                      <button type="button" class="btn btn_login_signup tcenter btn_okta_sso"
+                        (click)="signInWithOkta('login')">
+                        Continue with Okta
+                      </button>
+                    </div>
+                  </div>
 
 
                   <div class="mt30px mregister">
