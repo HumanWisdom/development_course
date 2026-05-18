@@ -22,6 +22,7 @@
     box-sizing: border-box;
     padding: 29px 0;
     height:120px;
+    align-items: center;
   }
   .header_main_inner {
     justify-content: center;
