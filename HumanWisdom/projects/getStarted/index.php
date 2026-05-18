@@ -44,8 +44,6 @@ require_once('./includes/security_config.php');
   <link rel="canonical" href="https://happierme.app" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <style>#hw-website-title.hw-website-title-pending,#hw-website-subtitle.hw-website-title-pending{visibility:hidden}</style>
-    <noscript><style>#hw-website-title.hw-website-title-pending,#hw-website-subtitle.hw-website-title-pending{visibility:visible!important}</style></noscript>
     <title>HappierMe: For Teens &amp; Adults</title>
     
     <!-- vendor_header -->
@@ -125,11 +123,11 @@ require_once('./includes/security_config.php');
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                     <p class="p hw-website-title-pending" style="text-align: left;line-height: 1.3;" id="hw-website-title">Think better.<br><span class="hero-title-accent">Live better.</span></p>
+                     <p class="p" style="text-align: left;line-height: 1.3;" id="hw-website-title">Think better.<br><span class="hero-title-accent">Live better.</span></p>
                      
                     </div>
-                    <p class="text-wrapper-4 hw-website-title-pending" id="hw-website-subtitle" >
-                      Self-awareness tools to reduce stress and anxiety, deepen your relationships and build a happier life. (for Adults &amp; Teenagers)
+                    <p class="text-wrapper-4" id="hw-website-subtitle">
+                      Understand yourself, reduce stress and anxiety, improve relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
                     </p>
                   </div>
                 </div>

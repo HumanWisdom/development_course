@@ -51,7 +51,7 @@
                 </div>
               </div>
 
-              <div [ngClass]="isAdults ? 'toc_adiv_03journey' : 'toc_adiv_02journey'" class="mt20px">
+              <div [ngClass]="isAdults ? 'toc_adiv_03' : 'toc_adiv_02'" class="mt20px">
                 <ng-container *ngIf="isLoading">
                   <div class="row mt20px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
@@ -68,13 +68,13 @@
                       <a (click)="navigateToInner(data)" id="gj-{{data.id}}">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-2 col-sm-2 col-xs-2 p0 ">
-                              <img src="{{data.imgUrl}}" alt="" class="p0 session_img session_imgjourney" />
+                            <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                              <img src="{{data.imgUrl}}" alt="" class="p0 session_img session_imgnew" />
                             </div>
 
-                            <div class="col-md-9 col-sm-9 col-xs-9 plr20px">
+                            <div class="col-md-7 col-sm-7 col-xs-7 ">
                               <h4 class="mt0px mb5px fs_15px fw_500 lh_130p"
-                                [ngClass]="isAdults? 'fc_000000': 'fc_e58d82'">
+                                [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                                 {{data['title']}}
                               </h4>
                               <p class="mt0px mb5px fs_12px fw_400 lh_130p "[ngClass]="isAdults? 'fc_000000_0_5': 'fc_ffffff_0_5'" *ngIf="data.subtitle">

@@ -84,8 +84,12 @@ export class MyDailyPracticePage implements OnInit {
     }
     this.getdailyquestion();
     this.getdailyques();
-    if (this.guest || !this.isloggedIn) {
-      this.placeholder = 'Login to use this feature' ;
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
+    if (!this.isSubscriber) {
+      this.placeholder = 'You need to subscribe to use this feature';
     }
 
     const savedLogin = localStorage.getItem("loginResponse") || sessionStorage.getItem("loginResponse");
