@@ -4,8 +4,7 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw "
-        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'"
-        [class.search-active]="isSearchActive">
+        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'" [class.search-active]="isSearchActive">
 
 
         <div class="x_panel p0">
@@ -38,8 +37,8 @@
                     style="border-radius: 100px !important;">
                   <span *ngIf="!isSearchActive" class="fa fa-search form-control-feedback left pfy_search_icon"
                     aria-hidden="true"></span>
-                  <span *ngIf="isSearchActive" (click)="clearSearch()" (keydown.enter)="clearSearch()"
-                    tabindex="0" class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
+                  <span *ngIf="isSearchActive" (click)="clearSearch()" (keydown.enter)="clearSearch()" tabindex="0"
+                    class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
                     aria-hidden="true" style="pointer-events: all !important; cursor: pointer !important;"></span>
                   <span *ngIf="searchinp!=''" (click)="clearSearch()" (keydown.enter)="clearSearch()" tabindex="0"
                     class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
@@ -345,7 +344,8 @@
 
 
 
-                <div class="toc_adiv_imgmynew " (click)="goToSubscribe()" (keydown.enter)="goToSubscribe()" style="cursor: pointer;">
+                <div class="toc_adiv_imgmynew " (click)="goToSubscribe()" (keydown.enter)="goToSubscribe()"
+                  style="cursor: pointer;">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
@@ -727,17 +727,19 @@
 
                       <div class="row mt10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi ">
-                          <textarea type="text" id="comment" name="thread" [(ngModel)]="questext"
+                          <textarea *ngIf="isSubscriber" type="text" id="comment" name="thread" [(ngModel)]="questext"
                             [placeholder]="placeholder" required="required" class="mdp_answer_heremy"
                             maxlength="200"></textarea>
+                          <textarea *ngIf="!isSubscriber" [disabled]="true" [readonly]="true"
+                            [value]="'Subscribe to use this feature'"
+                            class="mdp_answer_heremy fc_000000_0_5"></textarea>
                         </div>
                       </div>
 
-                      <div class="row mt15px" *ngIf="!(guest || !isloggedIn || questext === '')">
+                      <div class="row mt15px" *ngIf="isSubscriber && questext && questext !== ''">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
 
-                          <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()"
-                            [hidden]="guest || !isloggedIn || (questext=='')">
+                          <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()">
                             Add to journal
                           </button>
                         </div>
