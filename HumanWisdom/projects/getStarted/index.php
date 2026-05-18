@@ -127,7 +127,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Self-awareness tools to reduce stress and anxiety, deepen your relationships and build a happier life.<br>(for Adults &amp; Teenagers)
+                      Understand yourself, reduce stress and anxiety, improve relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
                     </p>
                   </div>
                 </div>

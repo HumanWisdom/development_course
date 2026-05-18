@@ -37,6 +37,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.3;
   font-weight: 600;
   color: rgba(255, 255, 255, 1);
+  width: 400px;
 }
 .frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
   color: rgba(237, 125, 111, 1);
