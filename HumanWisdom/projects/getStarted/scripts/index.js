@@ -1738,14 +1738,17 @@ async function fetchData() {
             (a.textContent = `After your free trial, the yearly subscription is ${t.textContent} and automatically renews each year until cancelled.`);
     }
 }
+var DEFAULT_WEBSITE_TITLE =
+        'Think better.<br><span class="hero-title-accent">Live better.</span>';
+var DEFAULT_WEBSITE_SUBTITLE =
+        "Self-awareness tools to reduce stress and anxiety, deepen your relationships and build a happier life.<br>(for Adults & Teenagers)";
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");
     if (!titleEl && !subtitleEl) return;
-    function revealWebsiteTitle() {
-        titleEl && titleEl.classList.remove("hw-website-title-pending");
-        subtitleEl && subtitleEl.classList.remove("hw-website-title-pending");
-    }
+    if (titleEl && !titleEl.innerHTML.trim()) titleEl.innerHTML = DEFAULT_WEBSITE_TITLE;
+    if (subtitleEl && !subtitleEl.innerHTML.trim())
+        subtitleEl.innerHTML = DEFAULT_WEBSITE_SUBTITLE;
     try {
         var res = await fetch(hwApiUrl("GetWebsiteTitle"), {
             headers: { Accept: "application/json" },
@@ -1759,7 +1762,6 @@ async function fetchWebsiteTitle() {
             }
         }
     } catch (err) {}
-    revealWebsiteTitle();
 }
 function formatToDecimal(e) {
     return Number.isInteger(e) ? `${e}.00` : e.toFixed(2);
