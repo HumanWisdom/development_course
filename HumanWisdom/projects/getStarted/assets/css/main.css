@@ -5088,17 +5088,22 @@ input[type="password" i]::-ms-reveal {
   font-display: swap; /* <-- key addition */
 }
 @keyframes verticalScroll {
-  0%   { transform: translateY(0); }          /* Live enters */
-  10%  { transform: translateY(0); }          /* Live stays */
-  20%  { transform: translateY(-100%); }      /* Work enters */
-  30%  { transform: translateY(-100%); }      /* Work stays */
-  40%  { transform: translateY(-200%); }      /* Feel enters */
-  50%  { transform: translateY(-200%); }      /* Feel stays */
-  60%  { transform: translateY(-300%); }      /* Love enters */
-  70%  { transform: translateY(-300%); }      /* Love stays */
-  80%  { transform: translateY(-400%); }      /* Lead enters */
-  90%  { transform: translateY(-400%); }      /* Lead stays */
-  100% { transform: translateY(-500%); }      /* Live (duplicate) enters */
+  0%   { transform: translateY(0); opacity: 1;}          /* Live enters */
+  15%  { opacity: 1;}          /* Live stays */
+   20%  {  opacity: 0;}          /* Live leaves */
+  20%  { transform: translateY(-100%); opacity: 1;}      /* Work enters */
+  35%  {  opacity: 1;}      /* Work stays */
+   40%  {  opacity: 0;}      /* Work leaves */
+  40%  { transform: translateY(-200%); opacity: 1;}      /* Feel enters */
+  55%  { opacity: 1;}      /* Feel stays */
+  60%  { opacity: 0;}      /* Feel leaves */
+  60%  { transform: translateY(-300%); opacity: 1;}      /* Love enters */
+  75%  { opacity: 1;}      /* Love stays */
+   80%  { opacity: 0;}      /* Love leaves */
+  80%  { transform: translateY(-400%); opacity: 1;}      /* Lead enters */
+  95%  {  opacity: 1;}      /* Lead stays */
+  100%  {  opacity: 0;}      /* Lead leaves */
+  100% { transform: translateY(-500%); opacity: 1;}      /* Live (duplicate) enters */
 }
       .scrolling-words {
             display: inline-block;
@@ -5111,14 +5116,14 @@ input[type="password" i]::-ms-reveal {
 
         .scrolling-word {
             display: flex;
-            animation: verticalScroll 10s infinite ease-in-out;
+            animation: verticalScroll 10s infinite ease-out;
             font-weight: 600;
             background: #ED7D6F;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             justify-content: flex-end;
-            padding-right: 10px;
+            width: 170px;
         }
 
         .hero-container:hover .scrolling-word {
