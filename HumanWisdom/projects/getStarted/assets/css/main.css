@@ -3300,8 +3300,12 @@ audio::-webkit-media-controls-enclosure {
 }
 
 .rpt_01 {
-  padding-left: 10%;
-  padding-right: 10%;
+ /*  padding-left: 10%;
+  padding-right: 10%; */
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px;
+
 }
 
 .bl_text {
