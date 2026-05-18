@@ -49,8 +49,8 @@
             <div class="row mb20px">
               <div class="col-md-12 p0">
                 <a (click)="goToListing()" class="center_flex_left">
-                  <i class="fa fa-angle-left mr5px fc_D7586B"></i>
-                  <span class="fs_14px fw_500 fc_D7586B">Guided journeys</span>
+                  <i class="fa fa-angle-left mr5px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'"></i>
+                  <span class="fs_14px fw_500" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'">Guided journeys</span>
                 </a>
               </div>
             </div>
@@ -108,10 +108,12 @@
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer_days col_cw"
           [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
           <div class="odiv">
-            <div class="day_circle intro_circle active" (click)="navigateToDay(0)">
+            <div class="day_circle intro_circle" [ngClass]="{'active': currentDay === 0, 'visited': isVisited(0) && currentDay !== 0}" (click)="navigateToDay(0)">
               <span>Intro</span>
             </div>
-            <div *ngFor="let dayNum of getDaysArray()" class="day_circle" (click)="navigateToDay(dayNum)">
+            <div *ngFor="let dayNum of getDaysArray()" class="day_circle"
+              [ngClass]="{'active': currentDay === dayNum, 'visited': isVisited(dayNum) && currentDay !== dayNum}"
+              (click)="navigateToDay(dayNum)">
               <span>Day {{dayNum}}</span>
             </div>
           </div>

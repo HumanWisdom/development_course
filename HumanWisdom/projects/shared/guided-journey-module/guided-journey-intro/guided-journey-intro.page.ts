@@ -17,6 +17,7 @@ export class GuidedJourneyIntroPage implements OnInit {
   isLoading = true;
   totalDays: number = 0;
   currentDay: number = 0;
+  allDaysData: any[] = [];
   private touchStartX = 0;
   private touchStartY = 0;
 
@@ -104,9 +105,12 @@ export class GuidedJourneyIntroPage implements OnInit {
     const programId = SharedService.ProgramId;
 
     this.commonService.GetGuidedJourneyDays(this.journeyId, programId, userId).subscribe((res: any) => {
-      if (res && Array.isArray(res) && this.totalDays === 0) {
-        const days = res.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
-        this.totalDays = days.length > 0 ? Math.max(...days) : 0;
+      if (res && Array.isArray(res)) {
+        this.allDaysData = res;
+        if (this.totalDays === 0) {
+          const days = res.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
+          this.totalDays = days.length > 0 ? Math.max(...days) : 0;
+        }
       }
     });
   }
@@ -137,6 +141,19 @@ export class GuidedJourneyIntroPage implements OnInit {
     if (day === 0) return;
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
+  }
+
+  isVisited(day: number) {
+    if (day === 0) return true;
+
+    const dayExercises = this.allDaysData.filter(item => {
+      const dayNum = parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day);
+      return dayNum === day;
+    });
+
+    if (dayExercises.length === 0) return false;
+
+    return dayExercises.every(ex => ex.isRead === '1');
   }
 
   getDaysArray() {
