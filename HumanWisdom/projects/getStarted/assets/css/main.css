@@ -3304,8 +3304,8 @@ audio::-webkit-media-controls-enclosure {
   padding-right: 10%; */
     max-width: 980px;
     margin: 0 auto;
-    padding: 20px;
-
+    /* padding: 20px; */
+    padding-top: 120px;
 }
 
 .bl_text {
