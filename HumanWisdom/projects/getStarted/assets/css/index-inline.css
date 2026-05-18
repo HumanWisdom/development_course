@@ -15,6 +15,9 @@ img { max-width: 100%; display: block; }
   box-sizing: border-box;
 }
 .pt-12px { padding:12px;}
+.pb0px{
+  padding-bottom: 0px !important;
+}
 
 /* ========================================
    HERO
@@ -37,6 +40,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.3;
   font-weight: 600;
   color: rgba(255, 255, 255, 1);
+  width: 400px;
 }
 .frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
   color: rgba(237, 125, 111, 1);
@@ -301,7 +305,7 @@ p:hover {
 .div-new{
     width: 100%;
     align-items: center;
-    background: rgba(255, 249, 238, 1);
+    background: rgba(255, 244, 230, 1);
 }
 .div-new1{
     width: 100%;

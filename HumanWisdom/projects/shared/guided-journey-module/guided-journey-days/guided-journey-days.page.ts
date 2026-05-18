@@ -19,7 +19,6 @@ export class GuidedJourneyDaysPage implements OnInit {
   displayExercises: any[] = [];
   isLoading = true;
   journeyTitle: string = '';
-  visitedDays: Set<number> = new Set();
   isSubscriber = false;
   isLoggedIn = false;
   showModal = false;
@@ -29,6 +28,9 @@ export class GuidedJourneyDaysPage implements OnInit {
   private touchStartY = 0;
   enableAlert: boolean = false;
   content: string = '';
+  alertTitle: string = '';
+  alertContent: string = '';
+  alertOkText: string = 'Ok';
 
   constructor(
     private router: Router,
@@ -47,7 +49,6 @@ export class GuidedJourneyDaysPage implements OnInit {
       const dayParam = params['day'];
       if (dayParam) {
         this.currentDay = parseInt(dayParam);
-        this.markAsVisited(this.currentDay);
       }
       if (this.journeyId) {
         this.getJourneyDetails();
@@ -145,20 +146,14 @@ export class GuidedJourneyDaysPage implements OnInit {
             Title: rawTitle,
             DisplayTitle: mainTitle,
             DisplaySubtitle: subTitle,
-            imgPath: this.getImgUrl(item.imgPath)
+            imgPath: this.getImgUrl(item.imgPath),
+            OriginalResponse: item.Response || ''
           };
         });
         this.updateDisplayData();
         
         // Also check initial read status to mark visited
-        this.allDaysData.forEach(item => {
-          if (item.isRead === '1') {
-            const dayNum = parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day);
-            if (!isNaN(dayNum)) {
-              this.markAsVisited(dayNum);
-            }
-          }
-        });
+        // Removed markAsVisited loop as isVisited now checks allDaysData directly
       }
       this.isLoading = false;
     }, error => {
@@ -205,6 +200,8 @@ export class GuidedJourneyDaysPage implements OnInit {
       UserReflectionId: exercise.UserReflectionID ? Number(exercise.UserReflectionID) : 0
     };
 
+    const isUpdate = exercise.UserReflectionID && exercise.UserReflectionID !== '0';
+
     this.commonService.addReflection(data).subscribe(res => {
       if (res) {
         // Handle different possible response keys for the ID
@@ -212,7 +209,19 @@ export class GuidedJourneyDaysPage implements OnInit {
         if (responseId && typeof responseId !== 'object') {
           exercise.UserReflectionID = responseId.toString();
         }
-        this.content = 'Successfully added to journal';
+        
+        // Update OriginalResponse to the current Response so the button hides
+        exercise.OriginalResponse = exercise.Response;
+
+        if (isUpdate) {
+          this.alertTitle = 'Successfully saved';
+          this.alertContent = '';
+          this.alertOkText = 'Continue';
+        } else {
+          this.alertTitle = '';
+          this.alertContent = 'Successfully added to journal';
+          this.alertOkText = 'Ok';
+        }
         this.enableAlert = true;
       }
     });
@@ -220,7 +229,9 @@ export class GuidedJourneyDaysPage implements OnInit {
 
   getAlertcloseEvent() {
     this.enableAlert = false;
-    this.content = '';
+    this.alertTitle = '';
+    this.alertContent = '';
+    this.alertOkText = 'Ok';
   }
 
   getImgUrl(url: string) {
@@ -271,14 +282,17 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.router.navigate([`/${prefix}/guided-journeys`]);
   }
 
-  markAsVisited(day: number) {
-    this.visitedDays.add(day);
-  }
-
   isVisited(day: number) {
-    // If current day is 3, everything before 3 is considered "viewed" as per user request
-    // "maan le intro se aagye apn day 1 pe basically intro view hogya h"
-    return day < this.currentDay || this.visitedDays.has(day);
+    if (day === 0) return true; 
+
+    const dayExercises = this.allDaysData.filter(item => {
+      const dayNum = parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day);
+      return dayNum === day;
+    });
+
+    if (dayExercises.length === 0) return false;
+
+    return dayExercises.every(ex => ex.isRead === '1');
   }
 
   navigateToDay(day: number) {
@@ -288,7 +302,6 @@ export class GuidedJourneyDaysPage implements OnInit {
       return;
     }
     this.currentDay = day;
-    this.markAsVisited(day);
     this.updateDisplayData();
     // Update URL without reloading
     const prefix = SharedService.getprogramName();

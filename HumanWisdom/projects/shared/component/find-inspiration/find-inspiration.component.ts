@@ -74,6 +74,14 @@ export class FindInspiration {
       height:'',
       img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/video.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg' ),
       url:'wisdom-shorts'
+    },   
+    { 
+      title: 'Events', 
+      icon: 'volume-2', 
+      color: '#191d3a',
+      height:'',
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
+      url:'events'
     },  
     { 
       title: 'Microlearning', 
@@ -123,14 +131,6 @@ export class FindInspiration {
       height:'',
       img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/soundscape1.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/SoundScapes_without_bg.svg' ),
       url:'soundscapes'
-    },   
-    { 
-      title: 'Events', 
-      icon: 'volume-2', 
-      color: '#191d3a',
-      height:'',
-      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/events.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/events_without_bg.svg' ),
-      url:'events'
     }
   ];
 
