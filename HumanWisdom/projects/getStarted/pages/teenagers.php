@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,182 +21,8 @@
   <!-- vendor_header -->
   <?php include('../includes/vendor_header.php'); ?>
 
-  <style>
-    @media (max-width: 767px) {
-      /* Set subtitle and list items to 12px on mobile */
-      .hpt120px h2.fs_24px,
-      .hpt120px h2.ta_lct,
-      .hpt120px h3.fs_15px {
-        font-size: 12px !important;
-      }
-      
-      /* Set "Available for" text to 12px on mobile and keep on one line */
-      .hpt120px h3.fs_12px,
-      .hpt120px h3.dinline_block {
-        font-size: 12px !important;
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-        gap: 5px !important;
-        justify-content: center !important;
-      }
-      .btn_tff1{
-        width:335px !important;
-      }
-      .mt12px{
-        margin-top: 12px !important;
-      }
-      .div_dykt{
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        padding-top: 50px !important
-        padding-bottom: 50px !important;
-      }
-      
-      /* Ensure spans and links stay inline */
-      .hpt120px h3.fs_12px span,
-      .hpt120px h3.dinline_block span,
-      .hpt120px h3.fs_12px a,
-      .hpt120px h3.dinline_block a {
-        display: inline-flex !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-      }
-      
-      /* Ensure images stay inline */
-      .hpt120px h3.fs_12px img,
-      .hpt120px h3.dinline_block img {
-        display: inline-block !important;
-        vertical-align: middle !important;
-        flex-shrink: 0 !important;
-        width: auto !important;
-        height: auto !important;
-      }
-      
-      /* Make testimonial cards same height on mobile */
-      .owl_testimonials .owl-carousel .owl-item {
-        display: flex !important;
-        height: auto !important;
-      }
+  <link rel="stylesheet" href="../assets/css/teenagers.css" />
 
-      .owl_testimonials .owl-carousel .owl-item .item {
-        display: flex !important;
-        height: 100% !important;
-      }
-
-      .owl_testimonials .div_testimonialst {
-        height: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        min-height: 350px !important;
-      }
-
-      .owl_testimonials .div_testimonialst .row:last-child {
-        margin-top: auto !important;
-      }
-
-      .owl-carousel .owl-stage {
-        width: auto !important;
-      }
-      
-      /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
-      /* Override: #accordion_footer .panel-title>a:after { content: url(...svg...) } */
-      #accordion_footer .panel-title > a::after,
-      #accordion_footer .panel-title > a.accordion-toggle::after,
-      .dfooter #accordion_footer .panel-title > a::after,
-      .panel-group#accordion_footer .panel-title > a::after {
-        content: "+" !important;
-        color: #ffffff !important;
-        font-family: inherit !important;
-        font-size: 24px !important;
-        line-height: 24px !important;
-        background: none !important;
-        background-image: none !important;
-        width: 24px !important;
-        height: 24px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        float: right !important;
-        opacity: 1 !important;
-        filter: none !important;
-        -webkit-filter: none !important;
-        transform: none !important;
-      }
-      
-      #accordion_footer .panel-title > a[aria-expanded="true"]::after,
-      #accordion_footer .panel-title > a.accordion-toggle[aria-expanded="true"]::after,
-      .dfooter #accordion_footer .panel-title > a[aria-expanded="true"]::after,
-      .panel-group#accordion_footer .panel-title > a[aria-expanded="true"]::after {
-        content: "-" !important;
-        color: #ffffff !important;
-        background: none !important;
-        background-image: none !important;
-      }
-      
-      /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
-      .accordion-button::after {
-        background-image: none !important;
-        content: "+" !important;
-        color: #ffffff !important;
-        font-size: 16px !important;
-        font-weight: 300 !important;
-        width: auto !important;
-        height: auto !important;
-        transform: none !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-      
-      .accordion-button:not(.collapsed)::after {
-        background-image: none !important;
-        content: "-" !important;
-        transform: none !important;
-      }
-      
-      .accordion {
-        padding: 10px;
-      }
-      
-      /* Add spacing between subscription boxes on mobile */
-      .btn_subscription + .btn_subscription,
-      .btn_subscription.mt20pxi {
-        margin-top: 30px !important;
-      }
-      
-      /* Reorder content on mobile: image first, then title, then description */
-      .flex_block {
-        display: flex !important;
-        flex-direction: column !important;
-      }
-      
-      /* Image column comes first */
-      .flex_block > .col-lg-6.pl0px,
-      .flex_block > .col-sm-12.pl0px,
-      .flex_block > .col-xs-12.pl0px {
-        order: 1 !important;
-      }
-      
-      /* Text column comes second (contains title and description) */
-      .flex_block > .col-lg-5.pr0px,
-      .flex_block > .col-sm-12.pr0px,
-      .flex_block > .col-xs-12.pr0px {
-        order: 2 !important;
-      }
-      /* Reduce section padding on mobile to fix large gaps */
-      section {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-      }
-      
-      .section-header {
-        padding-bottom: 20px !important;
-      }
-    }
-  </style>
 
 </head>
 
@@ -297,14 +123,14 @@
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                 <a id="teenagerCoverClick" class="">
                   <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1">
-                    Try HappierMe for free
+                    Start your free trial now
                   </button>
                 </a>
               </div>
             </div>
 
 
-            <div class="row mt12px">
+            <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <h3 class="mtb0px fs_12px fw_400 lh_140p fc_000000 dinline_block">
                   Available for
@@ -339,7 +165,7 @@
 
     <!-- video -->
     <section>
-      <div class="section-header">
+      <div class="section-header-teen">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
             <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
@@ -381,8 +207,9 @@
         </div>
       </div>
 
-      <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-980px">
+      <div class="teen-topics-bubbles-band" data-aos="fade-up" data-aos-delay="200">
+        <div class="row center_flex">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-980px">
 
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenegers_bubbles.webp"
             class="img-responsive w100p display_m_none" alt="modules" loading="lazy">
@@ -390,6 +217,7 @@
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/bubble_mobile.webp"
             class="img-responsive w100p display_d_none" loading="lazy" alt="performance and productivity">
 
+        </div>
         </div>
       </div>
     </section>

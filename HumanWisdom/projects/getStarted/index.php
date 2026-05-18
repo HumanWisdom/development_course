@@ -346,7 +346,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== ORGANISATION ===== -->
       <div class="div-23">
-        <p class="text-wrapper-6 text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
+        <p class="text-wrapper-6 pb0px text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
           <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
@@ -1174,8 +1174,8 @@ require_once('./includes/security_config.php');
           var fbnPlayBtn = document.getElementById('fbn-play-btn');
           if (fbnVideo) {
             fbnVideo.pause();
-            fbnVideo.currentTime = 0;
             fbnVideo.controls = false;
+            fbnVideo.load();
           }
           if (fbnPlayBtn) fbnPlayBtn.hidden = false;
         }
