@@ -2210,7 +2210,7 @@
   .col-xs-12 a,
   .col-12 a {
     text-align: center !important;
-    display: flex !important;
+    display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
   }
