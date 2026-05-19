@@ -410,9 +410,9 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   }
 
   body.page-healthcare .healthcare-hero-shell .wide-screen-only {
-    object-position: top;
-    height: 600px !important;
-    max-height: 600px;
+    object-position: center;
+    height: 800px !important;
+    max-height: 800px;
   }
 
   body.page-teenagers .healthcare-hero-shell .wide-screen-only {
