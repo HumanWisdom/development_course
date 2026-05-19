@@ -400,17 +400,23 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     display: block !important;
     width: 100%;
     object-fit: cover;
-    object-position: top center;
   }
 
   body.page-work .healthcare-hero-shell .wide-screen-only,
   body.page-education .healthcare-hero-shell .wide-screen-only {
-    height: 400px !important;
-    max-height: 400px;
+    object-position: center;
+    height: 600px !important;
+    max-height: 600px;
   }
 
-  body.page-teenagers .healthcare-hero-shell .wide-screen-only,
   body.page-healthcare .healthcare-hero-shell .wide-screen-only {
+    object-position: top;
+    height: 600px !important;
+    max-height: 600px;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .wide-screen-only {
+    object-position: top center;
     height: 500px !important;
     max-height: 500px;
   }
