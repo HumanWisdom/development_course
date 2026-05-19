@@ -732,7 +732,7 @@
                             maxlength="200"></textarea>
                           <textarea *ngIf="!isSubscriber" [disabled]="true" [readonly]="true"
                             [value]="'Subscribe to use this feature'"
-                            class="mdp_answer_heremy fc_000000_0_5"></textarea>
+                            class="mdp_answer_heremy" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'"></textarea>
                         </div>
                       </div>
 

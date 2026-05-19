@@ -28,7 +28,7 @@
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             
             <div class="row rmb80px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
                   Why HR leaders are shifting to prevention-first mental health support
 
@@ -125,11 +125,11 @@ Yet the return on acting early is compelling.
 
                                <h4  style="font-weight:italic;"class="mtb0px blog_desc" ><i>
 
-<b>Deloitte’s research suggests a return of £5.30 for every £1 invested in early intervention.</b> The question is not whether organisations can afford to invest in prevention. It is whether they can afford not to.
+<b>Deloitte’s research suggests a return of £5.30 for every £1 invested in early intervention.</i></b> The question is not whether organisations can afford to invest in prevention. It is whether they can afford not to.
 
 
 
-              <i>  </h4>
+ </h4>
 
                 <h4 class="mtb0px blog_sub_title">
 The cost of waiting too long
@@ -179,6 +179,9 @@ The focus shifts from crisis management to daily mental wellbeing, from burnout 
 
           
   </h4>
+  <h4 class="mtb0px blog_desc">
+  This approach is calmer, more sustainable, and often more effective long term.
+</h4>
 
                 <h4 class="mtb0px blog_sub_title">
 Why employees often don’t ask for help
@@ -231,7 +234,7 @@ When employees understand how their minds work under pressure, they are better a
 
  </h4>
 
-                <h4 class="mtb20px blog_desc">
+                <h4 class="mtb20px blog_sub_title">
 How HappierMe supports prevention-first mental health
                  
 
@@ -241,8 +244,8 @@ How HappierMe supports prevention-first mental health
                       
                 
 
-                <h4 class="mtb0px blog_sub_title">
-HappierMe (with Olly AI) was designed around this preventative approach.
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">  <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
+HappierMe (with Olly AI).</a> was designed around this preventative approach.</span>
 
 
 
@@ -309,12 +312,13 @@ In workplaces that offer mental health resources, significantly fewer employees 
 
                
 
-                <h4 class="mtb0px blog_desc">
+                                <h4  style="font-weight:italic;"class="mtb0px blog_desc" ><i><b>
+
 What support do people need to deal with their problems before they escalate to disengagement and burnout? Because the best time to support mental health is before it’s needed.
 
 
 
-                </h4>
+</b></i>  </h4>
 
                 <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">

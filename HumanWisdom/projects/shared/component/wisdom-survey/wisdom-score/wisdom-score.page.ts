@@ -126,6 +126,7 @@ export class WisdomScorePage implements OnInit {
       return;
     }
 
+    localStorage.setItem('NaviagtedFrom', this.router.url);
     this.router.navigateByUrl(item.cleanPath, {
       state: { title: item.title }
     });
