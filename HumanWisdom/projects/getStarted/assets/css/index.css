@@ -405,8 +405,8 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   body.page-work .healthcare-hero-shell .wide-screen-only,
   body.page-education .healthcare-hero-shell .wide-screen-only {
     object-position: center;
-    height: 600px !important;
-    max-height: 600px;
+    height: 800px !important;
+    max-height: 800px;
   }
 
   body.page-healthcare .healthcare-hero-shell .wide-screen-only {
@@ -416,9 +416,10 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   }
 
   body.page-teenagers .healthcare-hero-shell .wide-screen-only {
-    object-position: top center;
-    height: 500px !important;
-    max-height: 500px;
+    object-position: center;
+    height: 800px !important;
+    max-height: 800px;
+    object-fit: cover;
   }
 
   body.page-work .healthcare-hero-shell .h-800,

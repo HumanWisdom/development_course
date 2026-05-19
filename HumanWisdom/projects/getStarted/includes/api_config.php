@@ -29,7 +29,7 @@ if (!function_exists('hw_api_config')) {
 
             $apiBase = $useStaging
                 ? 'https://staging.humanwisdom.info/api'
-                : 'https://www.humanwisdom.info/api';
+                : 'https://staging.humanwisdom.info/api';
         }
 
         $ipLookup = getenv('HW_IP_LOOKUP_URL');
