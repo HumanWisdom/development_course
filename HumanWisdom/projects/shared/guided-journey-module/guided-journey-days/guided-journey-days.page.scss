@@ -252,6 +252,8 @@
         justify-content: flex-end;
         width: 100%;
         margin-top: auto;
+        bottom: 10px;
+        position: absolute;
     }
 }
 
@@ -432,6 +434,36 @@
         .journal_footer {
             color: rgba(255, 255, 255, 0.6);
         }
+    }
+
+    .card_type1_status {
+        width: 24px;
+    }
+
+    .lock_status {
+        width: 12px;
+        height: 12px;
+        bottom: 24px;
+        right: 16px;
+    }
+
+    .status-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lock-icon {
+        background-color: rgb(41 36 36);
+    }
+
+    .lock-icon-img {
+        width: 12px !important;
+        height: 12px !important;
+        object-fit: contain;
     }
 
     .footer_dots {
