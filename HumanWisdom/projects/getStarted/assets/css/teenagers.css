@@ -26,7 +26,10 @@ body.page-teenagers .div_dykt {
 }
 
 body.page-teenagers .teen-topics-bubbles-band {
-  padding: 40px 0;
+  /* padding: 40px 0; */
+  background: #daeaf7;
+    padding: 60px 60px;
+    overflow: visible;
 }
 
 body.page-teenagers .div_dykt {
