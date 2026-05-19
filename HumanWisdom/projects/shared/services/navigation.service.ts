@@ -242,7 +242,10 @@ export class NavigationService {
 
 
    dontPushToHistory(url: string) {
-    if(url.includes('wisdom-survey') || url.includes('wisdom-score') || url.includes('wellness-survey')) {
+    if (url.includes('wisdom-score')) {
+      return false;
+    }
+    if (url.includes('wisdom-survey') || url.includes('wellness-survey')) {
       return true;
     }
    }
