@@ -110,12 +110,12 @@ export class WellnessSurveyIntroPage implements OnInit {
     if (url == null) {
       url = SharedService.getDataFromLocalStorage(Constant.NaviagtedFrom);
       if (url && url != null && url != 'null') {
-        this.router.navigate([url]);
+        this.router.navigateByUrl(url);
       } else {
         this.location.back();
       }
     } else {
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     }
   }
 }

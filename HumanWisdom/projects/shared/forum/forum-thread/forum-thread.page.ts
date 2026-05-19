@@ -242,7 +242,7 @@ export class ForumThreadPage implements OnInit, OnDestroy {
     if (url == null) {
       this.location.back();
     }else{
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     }
   }
   like(PostID, index: number, ParentPOstID: any = null) {
