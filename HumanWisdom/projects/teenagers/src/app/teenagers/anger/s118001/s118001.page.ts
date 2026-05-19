@@ -21,6 +21,8 @@ export class S118001Page implements OnInit,OnDestroy {
   startTime:any
   endTime:any
   totalTime:any
+            isContentsOpen = false;
+
   bookmark:any
   bookmarkList=[]
   path = setTimeout(() => {
@@ -110,15 +112,15 @@ export class S118001Page implements OnInit,OnDestroy {
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/manage-your-emotions');
 
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
 
     
@@ -142,6 +144,12 @@ export class S118001Page implements OnInit,OnDestroy {
       console.log("show")
     }
    
+    // continue where you left    
+    this.service.clickModule(118, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -161,6 +169,10 @@ export class S118001Page implements OnInit,OnDestroy {
       this.bookmark=0
   }
 
+
+   toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
   createScreen()
   {
     this.service.createScreen({
@@ -197,14 +209,14 @@ export class S118001Page implements OnInit,OnDestroy {
     this.router.navigate(['/teenagers/journal'])
   }
 
-  getSetModuleData(moduleId){
-    this.service.setmoduleID(moduleId);
-    this.service.getModulebyId(moduleId).subscribe(res=>{
-      this.moduleData=res;
-      this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
+  // getSetModuleData(moduleId){
+  //   this.service.setmoduleID(moduleId);
+  //   this.service.getModulebyId(moduleId).subscribe(res=>{
+  //     this.moduleData=res;
+  //     this.pgResume= (res[0].lastScreen !="")? "s"+ res[0].lastScreen:"";
       
-     });
-  }
+  //    });
+  // }
 
     getClickEvent(data) {
     if (!this.isSubscriber) {

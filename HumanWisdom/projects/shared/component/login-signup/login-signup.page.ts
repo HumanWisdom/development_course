@@ -1185,7 +1185,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
           //  this.service.updateUserDetails.next(true);
           if (userInfo[0]?.SurveyDone == '0') {
             setTimeout(() => {
-              this.commonService.updateSurveyData(1);
+              let isloggedin = localStorage.getItem("isloggedin");
+              if (isloggedin == 'T') {
+                this.commonService.updateSurveyData(1);
+              }
             }, 160000);
             // document.getElementById('test1').click();
           }
@@ -1524,10 +1527,10 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   initializeRegistrationForm() {
     this.registrationForm = this.fb.group(
       {
-        fullname: ["", [Validators.required, Validators.minLength(6)]],
+        fullname: ["", [Validators.required]],
         email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
         ogpassword: ["", [Validators.required, Validators.minLength(6), this.passwordStrengthValidator]],
-        confirmPassword: ["", [Validators.required, Validators.minLength(6), this.passwordStrengthValidator]],
+        confirmPassword: ["", [Validators.required]],
         privacychk: [false, [Validators.requiredTrue]],
       }
       ,

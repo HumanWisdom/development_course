@@ -104,7 +104,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit, OnDestroy 
     if (url == null) {
       this.location.back();
     }else{
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     }
   }
 

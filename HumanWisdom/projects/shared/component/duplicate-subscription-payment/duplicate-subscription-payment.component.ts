@@ -28,6 +28,7 @@ cardCaptureReady = false
   enableAlert = false;
   content = '';
   isAdults = false;
+  isLoading = true;
   constructor(private readonly service: OnboardingService,
     private readonly router: Router, private readonly location: Location) {
       this.amount = localStorage.getItem('totalAmount')
@@ -94,11 +95,13 @@ cardCaptureReady = false
     cardNumberElement.mount('#card-number');
     cardExpiryElement.mount('#card-expiry');
     cardCvcElement.mount('#card-cvc');
+    this.isLoading = false;
 
     const btn = document.querySelector('#btnsubmit');
     if (btn) {
       btn.addEventListener('click', async (e) => {
         e.preventDefault();
+        this.isLoading = true;
         this.handlePayment(stripe, cardNumberElement);
       });
     }
@@ -116,6 +119,7 @@ cardCaptureReady = false
       },
     }).then((result) => {
       if (result.error) {
+        this.isLoading = false;
         this.content = result.error.message;
         this.enableAlert = true;
       } else {
@@ -127,10 +131,15 @@ cardCaptureReady = false
   private attachPayment(paymentMethodId: string) {
     this.service.attachPaymentMethod(this.uID, paymentMethodId)
       .subscribe(res => {
+        this.isLoading = false;
         localStorage.setItem('personalised', 'F');
         this.content = 'Your Card Details Have Been Updated';
         this.enableAlert = true;
         this.router.navigate(['/onboarding/user-profile']);
+      }, error => {
+        this.isLoading = false;
+        this.content = 'Something went wrong. Please try again.';
+        this.enableAlert = true;
       });
   }
 

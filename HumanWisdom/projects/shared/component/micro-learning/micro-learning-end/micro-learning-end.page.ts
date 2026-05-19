@@ -314,7 +314,7 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
           url = `/${url}`;
         }
       }
-      localStorage.setItem('fromMicroLearningEnd', 'true');
+      localStorage.setItem('fromMicroLearningEnd', this.contentId);
       // Store the current micro-learning end page URL so wisdom exercises can navigate back here
       // Robust fix: Always point to the inner flow URL with isEnd=true to ensure correct routing
       const programName = SharedService.getprogramName();

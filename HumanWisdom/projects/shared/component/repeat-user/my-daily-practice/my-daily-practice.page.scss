@@ -6,7 +6,12 @@
     padding: 0 !important;
   }
 }
-
+.fc_000000_0_5{
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+.fc_ffffff_0_5{
+  color: rgba(255, 255, 255, 0.5) !important;
+}
 .v1_3_bg_splashnew {
   background: #FFF7E6 !important;
   min-height: 100vh;
@@ -219,6 +224,36 @@
 .pointer-events-auto {
   pointer-events: all !important;
   cursor: pointer !important;
+}
+
+.practice-card-content {
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.practice-card-thumb {
+  flex: 0 0 82px;
+  max-width: 82px;
+  width: 82px;
+}
+
+.practice-card-thumb .session_imgnew {
+  width: 82px;
+  height: 82px;
+  max-width: 100%;
+}
+
+.practice-card-text {
+  flex: 1 1 auto;
+  max-width: none;
+  min-width: 0;
+}
+
+.practice-card-arrow {
+  flex: 0 0 16px;
+  max-width: 16px;
+  width: 16px;
 }
 
 .pdr20px {

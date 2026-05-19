@@ -105,6 +105,8 @@ export class PodcastTocPage implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.podbean.com/player-v2/?i=ak74u-bf71d6-pbblog-playlist&share=0&download=0&rtl=0&fonts=Times%20New%20Roman&skin=3267a3&font-color=auto&logo_link=podcast_page&logo_link=none&order=episodic&limit=5&filter=tags&tag=16106786&ss=55fe7c7156e4b9c14621bacb4c53cfa7&btn-skin=60a0c8&size=220");
   }
   goBack() {
+    localStorage.removeItem('podcastSelectedTab');
+    localStorage.removeItem('lastPodcastId');
     var url = this.navigationService.navigateToBackLink();
     if (url != null) {
       this.router.navigate([url]);
@@ -147,16 +149,24 @@ export class PodcastTocPage implements OnInit {
         });
 
         const fragment = this.activatedRoute.snapshot.fragment;
-        console.log('PodcastTOC Fragment:', fragment, 'PrefData:', this.prefData);
-        if(fragment) {
-           const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
-           if(match) {
-             console.log('Matching fragment found:', match, 'ID:', match.id);
-             this.getUserPref(match.id);
-           } else {
-             console.log('No matching fragment found for:', fragment);
-           }
+        const savedTab = localStorage.getItem('podcastSelectedTab');
+
+        if (fragment) {
+          const match = this.prefData.find(d => d.displayName && d.displayName.toLowerCase() === fragment.toLowerCase());
+          if (match) {
+            this.getUserPref(match.id);
+          }
+        } else if (savedTab) {
+          this.getUserPref(savedTab);
         }
+
+        const lastPodcastId = localStorage.getItem('lastPodcastId');
+        if (lastPodcastId) {
+          setTimeout(() => {
+            this.scrollToPodcast(lastPodcastId);
+          }, 400);
+        }
+
         setTimeout(() => {
           this.scrollToActiveTab();
         }, 200);
@@ -193,6 +203,9 @@ audioevent(data: any) {
   const route = this.isAdults  
     ? ['adults', 'audiopage', path, data.PodcastID, enable, title, moduleName]
     : ['teenagers', 'audiopage', path, data.PodcastID, enable, title, moduleName];
+
+  localStorage.setItem('podcastSelectedTab', this.selectedPref);
+  localStorage.setItem('lastPodcastId', data.PodcastID);
 
   this.router.navigate(route);
 }
@@ -251,6 +264,14 @@ scrollToActiveTab() {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  }
+}
+
+scrollToPodcast(id) {
+  const element = document.getElementById('podcast-' + id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    localStorage.removeItem('lastPodcastId');
   }
 }
 

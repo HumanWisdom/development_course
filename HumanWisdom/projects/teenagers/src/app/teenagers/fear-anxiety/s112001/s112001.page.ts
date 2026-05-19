@@ -39,6 +39,8 @@ export class S112001Page implements OnInit,OnDestroy {
   stories: any = []
   isLoggedIn = false;
   isSubscriber = false;
+      isContentsOpen = false;
+  
   config: any;
  
   moduleData:ProgramModel;
@@ -104,17 +106,7 @@ export class S112001Page implements OnInit,OnDestroy {
     if(!localStorage.getItem("NaviagtedFrom"))  
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/manage-your-emotions');
 
-    // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
-    // /continue where you left
+
     localStorage.setItem("moduleId",JSON.stringify(109))
     this.moduleId=localStorage.getItem("moduleId")
     if(this.saveUsername==false)
@@ -125,6 +117,13 @@ export class S112001Page implements OnInit,OnDestroy {
     {
       this.userId=JSON.parse(localStorage.getItem("userId"))
     }
+
+    // continue where you left    
+    this.service.clickModule(112, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -138,6 +137,10 @@ export class S112001Page implements OnInit,OnDestroy {
       this.bookmark=0
   }
 
+
+  toggleContents() {
+      this.isContentsOpen = !this.isContentsOpen;
+    }
   createScreen()
   {
     this.service.createScreen({

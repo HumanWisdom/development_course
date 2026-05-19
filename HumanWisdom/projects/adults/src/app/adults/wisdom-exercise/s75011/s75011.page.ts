@@ -86,8 +86,8 @@ export class S75011Page implements OnInit {
    });
   }
 
-  getdayevent(event) {
-    if (event === 'intro' || event == '0') {
+  getdayevent(event, isBack = false) {
+    if (event === 'intro' || event === '0' || event == '0') {
       this.slideStart = 0;
       this.totalSlidesCount = 3;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
@@ -101,7 +101,7 @@ export class S75011Page implements OnInit {
       this.enableday7 = false;
       this.enableday8 = false;
       this.screenNumber = "75011p0";
-      this.dayclass = "0";
+      this.dayclass = "intro";
       this.currentDay = 0;
     }
     else if (event === '1') {
@@ -240,7 +240,31 @@ export class S75011Page implements OnInit {
       this.dayclass = "8";
       this.currentDay = 8;
     }
-    this.next();
+    if (isBack) {
+      this.slideStart = this.totalSlidesCount;
+      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+      const carouselId = this.dayclass === 'intro' ? '#mdp_carousel_intro' : '#mdp_carousel_day' + this.dayclass;
+      setTimeout(() => {
+        $(carouselId).carousel(this.totalSlidesCount - 1);
+        var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
+          children[1]?.children[0]?.lastChild?.classList?.value;
+        if (data === undefined) {
+          data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
+            children[1]?.children[0]?.lastChild?.classList?.value;
+        }
+        if (data === 'audio-test') {
+          this.isShowButton = true;
+          this.isShowTranscript = true;
+          this.isShowAudio = false;
+        } else {
+          this.isShowButton = false;
+          this.isShowTranscript = false;
+          this.isShowAudio = false;
+        }
+      }, 500);
+    } else {
+      this.next();
+    }
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");
       element?.scrollIntoView({behavior: "smooth" ,inline: "center"});
@@ -303,6 +327,7 @@ export class S75011Page implements OnInit {
   }
 
   back() {
+    if (this.enableintro && this.slideStart <= 1) return;
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
@@ -312,19 +337,20 @@ export class S75011Page implements OnInit {
       }
       else if (this.slideStart == 1) {
         this.currentDay = this.currentDay - 1;
-        this.getdayevent(this.currentDay.toString())
+        this.getdayevent(this.currentDay.toString(), true)
+        return;
       }
       else {
         this.slideStart = this.slideStart - 1;
       }
       this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
       var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
-        children[1]?.children[0]?.lastChild?.classList.value
-        if (data == undefined) {
+        children[1]?.children[0]?.lastChild?.classList?.value
+        if (data === undefined) {
           data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
-            children[1]?.children[0]?.lastChild?.classList.value;
+            children[1]?.children[0]?.lastChild?.classList?.value;
         }
-        if (data == "audio-test") {
+        if (data === "audio-test") {
           this.isShowButton=true;
           this.isShowTranscript = true;
           this.isShowAudio=false;
@@ -379,11 +405,14 @@ export class S75011Page implements OnInit {
     const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
   
     eventText += `${x} ${y}<br/>`;
+    const carouselId = this.dayclass === 'intro' ? '#mdp_carousel_intro' : '#mdp_carousel_day' + this.dayclass;
     if(eventText.includes("right")){
-      $('#mdp_carousel_intro, #mdp_carousel_day1, #mdp_carousel_day2, #mdp_carousel_day3, #mdp_carousel_day4, #mdp_carousel_day5, #mdp_carousel_day6, #mdp_carousel_day7, #mdp_carousel_day8').carousel('prev');
+      if (this.enableintro && this.slideStart <= 1) return;
+      $(carouselId).carousel('prev');
     this.back();
     }else if(eventText.includes("left")){
-      $('#mdp_carousel_intro, #mdp_carousel_day1, #mdp_carousel_day2, #mdp_carousel_day3, #mdp_carousel_day4, #mdp_carousel_day5, #mdp_carousel_day6, #mdp_carousel_day7, #mdp_carousel_day8').carousel('next');
+      if (this.slideStart >= this.totalSlidesCount) return;
+      $(carouselId).carousel('next');
       this.next();
     }
     else if(eventText.includes('down')){
@@ -400,8 +429,9 @@ export class S75011Page implements OnInit {
       });
     }
     else{
+      if (this.slideStart >= this.totalSlidesCount) return;
       this.next();
-      $('#mdp_carousel_intro, #mdp_carousel_day1, #mdp_carousel_day2, #mdp_carousel_day3, #mdp_carousel_day4, #mdp_carousel_day5, #mdp_carousel_day6, #mdp_carousel_day7, #mdp_carousel_day8').carousel('next');
+      $(carouselId).carousel('next');
     }
   }
 

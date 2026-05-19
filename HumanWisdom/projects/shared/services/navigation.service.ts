@@ -242,7 +242,10 @@ export class NavigationService {
 
 
    dontPushToHistory(url: string) {
-    if(url.includes('wisdom-survey') || url.includes('wisdom-score') || url.includes('wellness-survey')) {
+    if (url.includes('wisdom-score')) {
+      return false;
+    }
+    if (url.includes('wisdom-survey') || url.includes('wellness-survey')) {
       return true;
     }
    }
@@ -264,11 +267,11 @@ export class NavigationService {
       's54001', 's92001', 'view-stories', 's42000',
      's162p0','s51000','s39000','s47000', 'mp4','s42000','s39000',
      's72002','s72001','s72003','s72004','s72005','s72006','s72007',
-     '/curated/youtubelink/','why-do-i','how-can-i','blog-article', 'micro-learning',
+     '/curated/youtubelink/','why-do-i','how-can-i','blog-article', 'micro-learning', 'guided-journeys',
   ];
 
   const wholeUrlCheckKeywords = [
-     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile','micro-learning','daily-practise','daily-checkin','wisdom-shorts','wisdom-stories','wisdom-exercise','audio-meditation'
+     'mp3','coach/profile/','coach/contact/','videopage','mp4','blog-article','curated/youtubelink','forum-thread','profile','micro-learning','daily-practise','daily-checkin','wisdom-shorts','wisdom-stories','wisdom-exercise','audio-meditation','guided-journeys','pathway'
   ]
   let isValid = false;
   for(const item of wholeUrlCheckKeywords){
@@ -308,7 +311,7 @@ export class NavigationService {
     let prefix = SharedService.getprogramName();
     if (prefix === 'youngadults') prefix = 'teenagers';
 
-    if (fromMicroLearningEnd === 'true' && (returnUrl || m_learningId)) {
+    if (fromMicroLearningEnd && fromMicroLearningEnd !== 'false' && (returnUrl || m_learningId)) {
       if (!returnUrl && m_learningId) {
         returnUrl = `/${prefix}/micro-learning/inner/${m_learningId}?isEnd=true`;
       }
@@ -334,14 +337,25 @@ export class NavigationService {
     }
 
     const index = this.history.lastIndexOf(this.router.url);
+    let url;
     if (index !== -1) {
       this.history.splice(index + 1);
+      const isGuidedJourneysListing = this.router.url.split('?')[0].endsWith('/guided-journeys');
+      if (isGuidedJourneysListing) {
+        while (this.history.length > 0 && (this.history[this.history.length - 1].includes('/guided-journeys') || this.history[this.history.length - 1].includes('start-your-free-trial'))) {
+          this.history.pop();
+        }
+        url = this.history[this.history.length - 1];
+        this.backClicked = true;
+      } else {
+        url = this.goBack();
+      }
+    } else {
+      url = this.history[this.history.length - 1];
     }
-
-    const url = this.goBack();
     
     // Prevent loops: if the returned URL is the same as current or contains start-your-free-trial, don't use it
-    if (url != null && (url === this.router.url || url.includes('start-your-free-trial'))) {
+    if (url != null && (url === this.router.url || url.includes('start-your-free-trial') || (this.router.url.includes('myprogram') && url.includes('payment')))) {
       // Reset context and fall through to fallback logic
       this.lastSource = null;
       localStorage.removeItem('lastNavSource');
@@ -485,6 +499,19 @@ export class NavigationService {
       return `/${prefix}/search`;
     }
 
+    // 17. Guided Journeys: Inner/Days/End -> Listing -> Search
+    if (currentUrl.includes('/guided-journeys/')) {
+      console.log("Fallback: Guided Journeys Inner/Days/End -> Listing");
+      return `/${prefix}/guided-journeys`;
+    }
+    if (currentUrl.includes('/guided-journeys')) {
+       while (this.history.length > 0 && this.history[this.history.length - 1].includes('/guided-journeys')) {
+        this.history.pop();
+      }
+      this.backClicked = true;
+      return this.history.length > 0 ? this.history[this.history.length - 1] : `/${prefix}/search`;
+    }
+
     // 16. Journal: Inner -> Listing -> Search
     if (currentUrl.includes('/journal/') || currentUrl.includes('/guidedquestions')) {
       console.log("Fallback: Journal Inner -> Let component handle");
@@ -497,9 +524,10 @@ export class NavigationService {
 
 
     // Context-driven navigation priority fallback for empty history
-    if (this.lastSource === 'pathway' || this.lastSource === 'search' || this.lastSource === 'video') {
+    if (this.lastSource === 'pathway' || this.lastSource === 'search' || this.lastSource === 'video' || this.lastSource === 'guided-journey') {
       const sourceIsPathway = this.lastSource === 'pathway';
       const sourceIsVideo = this.lastSource === 'video';
+      const sourceIsGuidedJourney = this.lastSource === 'guided-journey';
       const navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
       
       this.lastSource = null; // Reset after usage check
@@ -513,6 +541,15 @@ export class NavigationService {
       if (sourceIsVideo && navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url && !navFrom.includes('start-your-free-trial')) {
         this.backClicked = true;
         return navFrom;
+      }
+
+      if (sourceIsGuidedJourney && navFrom && navFrom != null && navFrom != 'null' && navFrom != this.router.url) {
+        this.backClicked = true;
+        return navFrom;
+      }
+      
+      if (sourceIsGuidedJourney) {
+        return `/${prefix}/guided-journeys`;
       }
       
       return `/${prefix}/search`;

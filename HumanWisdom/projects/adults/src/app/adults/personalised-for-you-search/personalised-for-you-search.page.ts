@@ -116,6 +116,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   modalContent = 'Unlock the full experience and continue your journey to live your\u00a0best\u00a0life';
   showSearchBox: boolean = true;
   isAdults: boolean = false;
+  isSearchActive: boolean = false;
 
 
   //static progress mapping
@@ -288,7 +289,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
         {"ModuleName":"Soundscapes"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
@@ -313,9 +314,10 @@ toggleAccordion() {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -335,6 +337,8 @@ toggleAccordion() {
   }
 
   getinp(event) {
+    this.isSearchActive = false;
+    this.toggleBodyScroll(false);
     this.logeventservice.logEvent("search_"+ event)
     let url=""
     switch(event.toLowerCase())
@@ -374,7 +378,7 @@ toggleAccordion() {
         url = `/adults/wisdom-shorts`
         break;
       }
-     case "journal":{
+      case "journal":{
         url = `/adults/journal`
         break;
       }
@@ -384,6 +388,8 @@ toggleAccordion() {
       }
       case "exercises":
       case "awareness exercises":
+      case "self awareness":
+      case "self-awareness":
         {
         this.route.navigate(['/adults/home'], { fragment: 'self-awareness', state: { source: 'search' } });
         return;
@@ -418,7 +424,7 @@ toggleAccordion() {
       }
      default: {
       let searchInpt = (' ' + this.searchinp).slice(1);
-      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+      searchInpt = searchInpt.replace(/[^a-zA-Z -]/g, "");
        url = `/adults/site-search/${searchInpt}`
         break;
       }
@@ -438,6 +444,7 @@ toggleAccordion() {
   }
 
   searchEvent(module) {
+    this.isSearchActive = false;
     this.logeventservice.logEvent("click_search");
 
     this.searchinp = module;
@@ -703,13 +710,14 @@ toggleAccordion() {
   // }
 
   onFocus() {
+    this.isSearchActive = true;
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -731,6 +739,7 @@ toggleAccordion() {
   }
 
   clearSearch() {
+    this.isSearchActive = false;
     this.searchinp = "";
     this.searchResult = [];
     this.toggleBodyScroll(false);

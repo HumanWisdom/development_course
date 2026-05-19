@@ -1,4 +1,4 @@
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+    /* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"); */
 
 /* ── RESET / BASE ── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -15,6 +15,9 @@ img { max-width: 100%; display: block; }
   box-sizing: border-box;
 }
 .pt-12px { padding:12px;}
+.pb0px{
+  padding-bottom: 0px !important;
+}
 
 /* ========================================
    HERO
@@ -29,13 +32,91 @@ img { max-width: 100%; display: block; }
   padding-left: 40px;
   padding-right: 40px;
 }
+
+/* Hero (Figma): headline 60px / coral accent line; subtitle 21px white.
+   CMS (GetWebsiteTitle): wrap the second line in <span class="hero-title-accent">…</span> for the coral color. */
+.frame-wrapper.web_home_divlanding #hw-website-title {
+  font-size: 60px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  width: 400px;
+}
+.frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
+  color: rgba(237, 125, 111, 1);
+}
+.frame-wrapper.web_home_divlanding #hw-website-title:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
+.frame-wrapper.web_home_divlanding #hw-website-title:hover .hero-title-accent {
+  color: rgba(237, 125, 111, 1) !important;
+}
+.frame-wrapper.web_home_divlanding #hw-website-subtitle {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 1);
+  margin: 0;
+}
+.frame-wrapper.web_home_divlanding #hw-website-subtitle:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Hero dark gradient: rating row — light icons/text */
+.frame-wrapper.web_home_divlanding .rating-row,
+.frame-wrapper.web_home_divlanding .rating-row .fs_15px.fw_700,
+.frame-wrapper.web_home_divlanding .rating_a .fa-star,
+.frame-wrapper.web_home_divlanding .appstore_a .fa-apple {
+  color: #fff !important;
+}
+
+/* Hero primary CTA — same gradient + hover as "Chat with Olly now"; Figma 317×65 */
+.web_home_divlanding .hero-try-free-link {
+  display: inline-flex;
+  align-self: flex-start;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.web_home_divlanding .hero-try-free-link .start-your-free-wrapper {
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%);
+  width: 317px;
+  max-width: 100%;
+  height: 65px;
+  box-sizing: border-box;
+  padding: 18px 40px;
+  border-radius: 35px;
+}
+.web_home_divlanding .hero-try-free-link .start-your-free-wrapper:hover {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+}
+.web_home_divlanding .hero-try-free-link:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+@media (min-width: 769px) {
+  .frame-wrapper.web_home_divlanding #hw-website-title {
+    font-size: 60px !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle {
+    font-size: 21px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+}
+
 .div-wrapper { width: 100%; max-width: 1340px; }
 .div         { width: 100%; }
-.div-2       { display: flex; align-items: center; gap: 60px; justify-content: center; flex-wrap: wrap;margin-top:100px }
+.div-2       { display: flex; align-items: center; gap: 50px; justify-content: center; flex-wrap: wrap;margin-top:100px }
 
-.new-app-adults-teen { width: 415px; height: 525px; object-fit: contain; flex-shrink: 0; }
+.new-app-adults-teen { height: 480px; object-fit: contain; flex-shrink: 0; }
 
-.div-3 {margin-top: -26px; display: flex; flex-direction: column; gap: 24px; flex: 1; min-width: 280px; max-width: 654px; }
+.div-3 {margin-top: -6px; display: flex; flex-direction: column; gap: 30px; flex: 1; min-width: 280px; max-width: 654px; }
 
 /* rating */
 .p0        { padding: 0; }
@@ -95,7 +176,8 @@ p:hover {
 .frame-wrapper-2 { width: 100%; }
 .div-4  { display: flex; flex-direction: column; gap: 16px; }
 .div-5  { display: flex; flex-direction: column; gap: 16px; }
-.p      { font-size: 48px; font-weight: 600; line-height: 1.2; color: #000; margin: 0; }
+@media (max-width: 575px) { .div-5 {flex-direction: row;}}
+.p { font-size: 48px; font-weight: 600; line-height: 1.2; color: #000; margin: 0; }
 
 /* Olly pill */
 .div-6  { display: flex; align-items: center; gap: 10px; }
@@ -224,7 +306,7 @@ p:hover {
 .div-new{
     width: 100%;
     align-items: center;
-    background: rgba(255, 249, 238, 1);
+    background: rgba(255, 244, 230, 1);
 }
 .div-new1{
     width: 100%;
@@ -550,13 +632,17 @@ header a[href*="splash_options.php"] * {
 /* ---- App card (left side) ---- */
 .tools-card {
   background: rgba(255, 232, 187, 1);
-  border-radius: 16px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
   flex-shrink: 0;
   width: 343px;
   height:340px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /* Safari iOS: force GPU compositing so border-radius clips child video */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 /* Thumbnail with play button — inset with padding */
@@ -567,13 +653,18 @@ header a[href*="splash_options.php"] * {
   box-sizing: border-box;
   overflow: hidden;
   flex-shrink: 0;
+  border-radius: 12px 12px 0 0;
+  -webkit-border-radius: 12px 12px 0 0;
+  /* Safari iOS: force clip of video corners within the thumb */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 .tools-thumb-img {
   width: 100%;
   height: 206px;
   object-fit: cover;
   display: block;
-  border-radius: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
 }
 /* Feel better now: real MP4 (same as indexolder.php tools section) */
 .tools-thumb-video {
@@ -581,7 +672,8 @@ header a[href*="splash_options.php"] * {
   height: 206px;
   max-height: 206px;
   display: block;
-  border-radius: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
   background: #FFE8BB;
   object-fit: cover;
   box-sizing: border-box;
@@ -822,6 +914,7 @@ header a[href*="splash_options.php"] * {
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  touch-action: auto;
   flex: 1;
   width: 100%;
   /* hide scrollbar on all browsers */
@@ -1057,6 +1150,26 @@ header a[href*="splash_options.php"] * {
 
 /* Mobile blog card (matches Figma dimensions) */
 @media (max-width: 768px) {
+  /*
+   * Survey circles (mobile_circle.svg): don’t flex-center a wide strip — that hides the 1st circles
+   * and lands the viewport around the middle of the artwork. Start from the left / scroll position 0.
+   */
+  .scroller-container.div_new1 {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .scroller-container.div_new1 > div {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .scroller-container.div_new1 img.circle-mobile {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+
   /* Intro video: rounded corners + hairline fix — mobile only (desktop stays square) */
   .youtube-player {
     background: #fff;
@@ -1075,7 +1188,7 @@ header a[href*="splash_options.php"] * {
   /* Blog carousel: left/right inset before scroll; edge-to-edge strip after (same idea as coaches + is-scrolled) */
   .div-13:has(#blog-scroll) {
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 0px;
     overflow-x: hidden;
     box-sizing: border-box;
   }
@@ -1115,7 +1228,7 @@ header a[href*="splash_options.php"] * {
     overflow-y: visible;
     align-items: center;
     margin-top: -18px;
-    touch-action: pan-x;
+    touch-action: auto;
     overscroll-behavior-x: contain;
     padding-right: 0;
   }
@@ -1319,6 +1432,15 @@ header a[href*="splash_options.php"] * {
   .tools-thumb-video {
     height: 178px;
     max-height: 178px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+  }
+  .tools-thumb > video {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+  }
+  .orcha-strip-orcha img {
+    width: 80px;
   }
   .tools-info-heading { font-size: 22px; }
   .tools-info-body { max-width: 100%; }
@@ -1489,6 +1611,10 @@ header a[href*="splash_options.php"] * {
     padding-top: 60px;
   }
 
+  .pt_18px{
+    padding-top: 18px;
+  }
+
   .new-app-adults-teen {
     width: 237px;
     height: 300px;
@@ -1505,8 +1631,9 @@ header a[href*="splash_options.php"] * {
   /* Anchor must define width: inner .start-your-free-wrapper uses max-width:100% and
      would otherwise shrink-wrap wrong inside .div-3 (align-items:center). */
   .web_home_divlanding .hero-try-free-link {
-    width: 335px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 317px;
+    align-self: center;
     flex-shrink: 0;
     display: flex;
     align-items: stretch;
@@ -1516,6 +1643,13 @@ header a[href*="splash_options.php"] * {
   }
 
   .p { font-size: 27px; font-weight: 600; text-align: center !important; }
+  .frame-wrapper.web_home_divlanding #hw-website-title {
+    font-size: 27px !important;
+  }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+  }
   .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 1.5; }
   .text-wrapper-5 { font-size: 16px; }
   .start-your-free-wrapper,
@@ -1709,7 +1843,7 @@ header a[href*="splash_options.php"] * {
   #coaches-scroll.coaches-scroll {
     width: 100%;
     padding-right: 0;
-    touch-action: pan-x;
+    touch-action: auto;
     overscroll-behavior-x: contain;
   }
   /* Once user starts scrolling, make strip edge-to-edge on mobile */
@@ -1755,8 +1889,10 @@ header a[href*="splash_options.php"] * {
   /* Hero */
   .frame-wrapper { padding: 36px 16px; }
   .p { font-size: 27px; }
+  .frame-wrapper.web_home_divlanding #hw-website-title { font-size: 27px !important; }
   .text-wrapper-3 { font-size: 15px; }
   .text-wrapper-4 { font-size: 16px; }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 16px !important; }
   .new-app-adults-teen { width: clamp(150px, 70vw, 240px); }
   .div-6 img { width: 28px !important; height: 32px !important; }
   /* Let tools panel size to content — fixed 600px + flex:1 on .tools-info caused a large gap under "Explore on app" */

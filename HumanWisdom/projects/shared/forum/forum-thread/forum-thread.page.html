@@ -74,7 +74,7 @@
                         </button>
 
                         <button type="button" class="btn fs_12px fw_600 lh_140p"
-                          [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e8a880_0_5'" *ngIf="posttread.Followed=='1'">
+                          [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_e8a880'" *ngIf="posttread.Followed=='1'">
                           <i class="fa fa-minus mr3px"></i>
                           <span class="underline">
                             Unfollow
@@ -212,10 +212,10 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0" *ngIf="!isAdults">
                           <button type="button" class="btn fs_12px fw_400 lh_140p " (click)="like(posttread.PostID,0)">
                             <img alt="like" *ngIf="posttread.Liked=='0'"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/like_teen.svg"
                               class="img-responsive mr5px">
                             <img alt="like_filled" *ngIf="posttread.Liked=='1'"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_like_filled.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/like_filledteen.svg"
                               class="img-responsive mr5px">
                             {{posttread.PostLikeCount}}
                           </button>
@@ -238,7 +238,7 @@
                             [ngClass]="isAdults ? 'fc_000000_i' : ''" [disabled]="DisabledComment(posttread)"
                             (click)="enableCommentTextBox()">
                             <img alt="comment"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_comment.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment_teen.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img alt="comments"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_comment.svg"
@@ -251,7 +251,7 @@
                           <button type="button" class="btn fs_12px fw_400 lh_140p "
                             [ngClass]="isAdults ? 'fc_000000_i' : ''" (click)="shareOnThread(posttread)">
                             <img alt="shareicon"
-                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_share.svg"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/shre_teen.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img alt="shareicon"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_share.svg"
@@ -265,7 +265,7 @@
                         <button type="button" class="btn fs_12px fw_400 lh_140p "
                           [ngClass]="isAdults ? 'fc_000000_i' : ''" (click)="reportpost()">
                           <img alt="report"
-                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/forum_v3_report.svg"
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/report_teens.svg"
                             class="img-responsive mr5px" *ngIf="!isAdults">
                           <img alt="report"
                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_report.svg"

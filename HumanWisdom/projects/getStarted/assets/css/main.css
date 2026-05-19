@@ -50,7 +50,7 @@ a {
   color: #803358 !important;
 }
 
-p:hover {
+body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare) p:hover {
   color: green;
   text-decoration: underline;
 }
@@ -446,16 +446,25 @@ label>input[type="checkbox"]+*::before {
 
 .btn:hover,
 .btn:focus:hover,
-.btn_tff:hover,
 .btn_pricing:hover,
-.btn_tff:focus:hover,
-.header .btn_tff:hover,
 .header .btn_pricing:hover,
-.header .btn_pricing:focus:hover,
-.header .btn_tff:focus:hover,
-.btn_tff_a:hover {
+.header .btn_pricing:focus:hover {
   color: #fff;
   background: #E58D82;
+}
+
+/* Match index.php pink CTAs (.div-wrapper-4 / .btn_popup hover) — all screen sizes */
+.btn_tff:hover,
+.btn_tff:focus:hover,
+.btn_tff:active,
+.header .btn_tff:hover,
+.header .btn_tff:focus:hover,
+.header .btn_tff:active,
+.btn_tff_a:hover,
+.btn_tff_a:focus:hover,
+.btn_tff_a:active {
+  color: #fff;
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
 }
 
 .navbar a,
@@ -2056,7 +2065,7 @@ div.scroll-container img {
 }
 
 .section-headernew.a,
-h6:hover {
+body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare) h6:hover {
   color: #cb6171;
   text-decoration: underline;
 }
@@ -2678,6 +2687,12 @@ a {
   /* width: 84%; */
 }
 
+/* Contain absolutely positioned ".sap" (View all …) links; z-index stays under .header_fixed (z-index 9) */
+.owl_blog,
+.owl_container.owl_testimonials {
+  position: relative;
+}
+
 .sap {
   position: absolute;
   /* left: 240px; */
@@ -2689,7 +2704,7 @@ a {
   margin: 0 auto;
   cursor: pointer;
   pointer-events: auto;
-  z-index: 10;
+  z-index: 1;
 }
 
 .owl_blog .owl-nav .owl-prev .owl_coach .owl-nav .owl-prev {
@@ -3285,8 +3300,12 @@ audio::-webkit-media-controls-enclosure {
 }
 
 .rpt_01 {
-  padding-left: 10%;
-  padding-right: 10%;
+ /*  padding-left: 10%;
+  padding-right: 10%; */
+    max-width: 980px;
+    margin: 0 auto;
+    /* padding: 20px; */
+    padding-top: 120px;
 }
 
 .bl_text {
@@ -3481,7 +3500,7 @@ audio::-webkit-media-controls-enclosure {
 
 .absolute_desc {
   position: absolute;
-  top: 280px;
+  top: -21px;
   left: 230px;
   right: 0;
   bottom: 0;
@@ -4327,11 +4346,11 @@ background: rgba(255, 244, 230, 1) !important;
   }
 
   .owl_blog>.owl-carousel>.owl-stage-outer {
-    margin-left: 10% !important;
+    margin-left: 0% !important;
   }
-
-  .owl_coach>.owl-carousel>.owl-stage-outer {
-    margin-left: 10% !important;
+    .owl_blog>.owl-carousel>.owl-stage-outer>.owl-stage {
+        justify-content: center;
+        left:0px !important;
   }
 
   .p35 {
@@ -4361,6 +4380,10 @@ background: rgba(255, 244, 230, 1) !important;
 
   .btn_subscription {
     width: 70%;
+  }
+  .owl-carousel .owl-stage-outer {
+    overflow: visible;
+    justify-content: center;
   }
 
 }
@@ -5068,3 +5091,53 @@ input[type="password" i]::-ms-reveal {
   font-style: normal;
   font-display: swap; /* <-- key addition */
 }
+@keyframes verticalScroll {
+  0%   { transform: translateY(0); opacity: 1;}          /* Live enters */
+  15%  { opacity: 1;}          /* Live stays */
+   20%  {  opacity: 0;}          /* Live leaves */
+  20%  { transform: translateY(-100%); opacity: 1;}      /* Work enters */
+  35%  {  opacity: 1;}      /* Work stays */
+   40%  {  opacity: 0;}      /* Work leaves */
+  40%  { transform: translateY(-200%); opacity: 1;}      /* Feel enters */
+  55%  { opacity: 1;}      /* Feel stays */
+  60%  { opacity: 0;}      /* Feel leaves */
+  60%  { transform: translateY(-300%); opacity: 1;}      /* Love enters */
+  75%  { opacity: 1;}      /* Love stays */
+   80%  { opacity: 0;}      /* Love leaves */
+  80%  { transform: translateY(-400%); opacity: 1;}      /* Lead enters */
+  95%  {  opacity: 1;}      /* Lead stays */
+  100%  {  opacity: 0;}      /* Lead leaves */
+  100% { transform: translateY(-500%); opacity: 1;}      /* Live (duplicate) enters */
+}
+      .scrolling-words {
+            display: inline-block;
+            position: relative;
+            height: 1em;
+            overflow: hidden;
+            vertical-align: baseline;
+            
+        }
+
+        .scrolling-word {
+            display: flex;
+            animation: verticalScroll 10s infinite ease-out;
+            font-weight: 600;
+            background: #ED7D6F;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            justify-content: flex-end;
+            width: 170px;
+        }
+
+        @media (max-width: 575px) {
+              .scrolling-word {
+                width: 75px;
+              }
+             
+        }
+
+        .hero-container:hover .scrolling-word {
+            filter: drop-shadow(0 20px 40px rgba(37, 99, 235, 0.2));
+            transition: filter 1.5s ease;
+        }

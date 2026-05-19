@@ -28,6 +28,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
   @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
   amountGBP = "";
   defaultCurrencyName: any;
+  isLoading = true;
 
 
   constructor(private datePipe: DatePipe, private router: Router, private commonService:CommonService,
@@ -148,6 +149,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
       const elements = stripe.elements(options);
       const paymentElement = elements.create('payment', options);
       paymentElement.mount('#payment-element');
+      this.isLoading = false;
       // Access the underlying input element and set autocomplete to "off"
      
       
@@ -167,6 +169,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
       const form = document.getElementById('payment-form');
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
+        this.isLoading = true;
         console.log('production ' + this.isProduction);
         var url  = `/${SharedService.getprogramName()}/subscription/free-trial`;
         if (localStorage.getItem('ispartnershipClick') == 'T' && localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
@@ -205,6 +208,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
         });
         setTimeout(() => 
         {
+            this.isLoading = false;
             if (error) {
                   const messageContainer = document.querySelector('#error-message');
                   messageContainer.textContent = error.message;

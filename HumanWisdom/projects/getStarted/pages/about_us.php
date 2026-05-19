@@ -101,7 +101,7 @@
     <section>
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 tcenter">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_app.webp"
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/aboutus_landing.webp""
             class="img-responsive w-640px w-335px_m">
         </div>
       </div>
@@ -272,7 +272,7 @@
       </div>
 
       <div class="row center_flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-10 p0 tcenter w-810px">
+        <div class="w-810px">
           <!-- <video id="homeVideo" controls playinline class="w100p"
           poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
           controlsList="nodownload">
@@ -676,12 +676,12 @@
                   <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000 au-founder-bio">
                     <span class="au-founder-bio-line">Dr Manoj Krishna, previously a spine surgeon in the UK, left his
                       medical career and, along with other professionals, started the HappierMe Project to help reduce
-                      suffering and help people lead happier lives. He has authored two books -
+                      suffering and help people lead happier lives. He has authored two books, 
                       <a href="https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span
-                          class="fw_500 fc_cb6171 td_underline">'Understanding Me, Understanding You'</span></a>
+                          class="fw_500 clink td_underline">Understanding Me Understanding You</span></a>
                       and
                       <a href="https://www.amazon.co.uk/Stress-Free-Understand-yourself-Discover-ebook/dp/B0B2KM7SMJ"><span
-                          class="fw_500 fc_cb6171 td_underline">'Stress-free'</span></a>.
+                          class="fw_500 clink td_underline">Stress-free</span></a>.
                       He is also a public </span><span class="au-founder-bio-line">speaker and has spoken at more than 50
                       institutions.</span>
                   </h4>
@@ -1383,20 +1383,19 @@ We gratefully acknowledge the contributions of the following content experts, an
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1000">
 
-            <a href="https://www.linkedin.com/in/nicolerunyonlmsw">
+            <a href="https://www.linkedin.com/in/artichander/">
 
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
-                    Nicole Runyon </h6>
+                   Art Chander Byrd </h6>
                 </div>
               </div>
             </a>
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                 <h4 class="mtb0px fs_15px fw_400 lh_150p fc_000000_0_5 tleft">
-                  Psychotherapist and parent coach based in Detroit, USA.
-                </h4>
+Executive corporate HR, Culture and Wellbeing Leader.                </h4>
               </div>
             </div>
 

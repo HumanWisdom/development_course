@@ -26,6 +26,7 @@ export class S156001Page implements OnInit,OnDestroy {
   endTime:any
   totalTime:any
   bookmark:any
+   isContentsOpen = false;
   bookmarkList=[]
   tocImage="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/teenagers/156.webp"
   tocColor="white"
@@ -115,15 +116,15 @@ export class S156001Page implements OnInit,OnDestroy {
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/manage-your-emotions');
 
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
 
     
@@ -146,7 +147,10 @@ export class S156001Page implements OnInit,OnDestroy {
     {
       console.log("show")
     }
-   
+   this.service.clickModule(156, this.userId).subscribe(res => {
+         this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+         this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+       })
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -156,6 +160,8 @@ export class S156001Page implements OnInit,OnDestroy {
   {
     history.replaceState(null, null, this.path+`?t=${this.token}`);
     this.socialShare=true
+  } toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
   }
 
   toggleBookmark()
@@ -166,6 +172,8 @@ export class S156001Page implements OnInit,OnDestroy {
       this.bookmark=0
   }
 
+
+  
   createScreen()
   {
     this.service.createScreen({

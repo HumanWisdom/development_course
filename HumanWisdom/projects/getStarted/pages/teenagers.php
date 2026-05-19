@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,186 +21,12 @@
   <!-- vendor_header -->
   <?php include('../includes/vendor_header.php'); ?>
 
-  <style>
-    @media (max-width: 767px) {
-      /* Set subtitle and list items to 12px on mobile */
-      .hpt120px h2.fs_24px,
-      .hpt120px h2.ta_lct,
-      .hpt120px h3.fs_15px {
-        font-size: 12px !important;
-      }
-      
-      /* Set "Available for" text to 12px on mobile and keep on one line */
-      .hpt120px h3.fs_12px,
-      .hpt120px h3.dinline_block {
-        font-size: 12px !important;
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-        gap: 5px !important;
-        justify-content: center !important;
-      }
-      .btn_tff1{
-        width:335px !important;
-      }
-      .mt12px{
-        margin-top: 12px !important;
-      }
-      .div_dykt{
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        padding-top: 50px !important
-        padding-bottom: 50px !important;
-      }
-      
-      /* Ensure spans and links stay inline */
-      .hpt120px h3.fs_12px span,
-      .hpt120px h3.dinline_block span,
-      .hpt120px h3.fs_12px a,
-      .hpt120px h3.dinline_block a {
-        display: inline-flex !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-      }
-      
-      /* Ensure images stay inline */
-      .hpt120px h3.fs_12px img,
-      .hpt120px h3.dinline_block img {
-        display: inline-block !important;
-        vertical-align: middle !important;
-        flex-shrink: 0 !important;
-        width: auto !important;
-        height: auto !important;
-      }
-      
-      /* Make testimonial cards same height on mobile */
-      .owl_testimonials .owl-carousel .owl-item {
-        display: flex !important;
-        height: auto !important;
-      }
+  <link rel="stylesheet" href="../assets/css/teenagers.css" />
 
-      .owl_testimonials .owl-carousel .owl-item .item {
-        display: flex !important;
-        height: 100% !important;
-      }
-
-      .owl_testimonials .div_testimonialst {
-        height: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        min-height: 350px !important;
-      }
-
-      .owl_testimonials .div_testimonialst .row:last-child {
-        margin-top: auto !important;
-      }
-
-      .owl-carousel .owl-stage {
-        width: auto !important;
-      }
-      
-      /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
-      /* Override: #accordion_footer .panel-title>a:after { content: url(...svg...) } */
-      #accordion_footer .panel-title > a::after,
-      #accordion_footer .panel-title > a.accordion-toggle::after,
-      .dfooter #accordion_footer .panel-title > a::after,
-      .panel-group#accordion_footer .panel-title > a::after {
-        content: "+" !important;
-        color: #ffffff !important;
-        font-family: inherit !important;
-        font-size: 24px !important;
-        line-height: 24px !important;
-        background: none !important;
-        background-image: none !important;
-        width: 24px !important;
-        height: 24px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        float: right !important;
-        opacity: 1 !important;
-        filter: none !important;
-        -webkit-filter: none !important;
-        transform: none !important;
-      }
-      
-      #accordion_footer .panel-title > a[aria-expanded="true"]::after,
-      #accordion_footer .panel-title > a.accordion-toggle[aria-expanded="true"]::after,
-      .dfooter #accordion_footer .panel-title > a[aria-expanded="true"]::after,
-      .panel-group#accordion_footer .panel-title > a[aria-expanded="true"]::after {
-        content: "-" !important;
-        color: #ffffff !important;
-        background: none !important;
-        background-image: none !important;
-      }
-      
-      /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
-      .accordion-button::after {
-        background-image: none !important;
-        content: "+" !important;
-        color: #ffffff !important;
-        font-size: 16px !important;
-        font-weight: 300 !important;
-        width: auto !important;
-        height: auto !important;
-        transform: none !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-      
-      .accordion-button:not(.collapsed)::after {
-        background-image: none !important;
-        content: "-" !important;
-        transform: none !important;
-      }
-      
-      .accordion {
-        padding: 10px;
-      }
-      
-      /* Add spacing between subscription boxes on mobile */
-      .btn_subscription + .btn_subscription,
-      .btn_subscription.mt20pxi {
-        margin-top: 30px !important;
-      }
-      
-      /* Reorder content on mobile: image first, then title, then description */
-      .flex_block {
-        display: flex !important;
-        flex-direction: column !important;
-      }
-      
-      /* Image column comes first */
-      .flex_block > .col-lg-6.pl0px,
-      .flex_block > .col-sm-12.pl0px,
-      .flex_block > .col-xs-12.pl0px {
-        order: 1 !important;
-      }
-      
-      /* Text column comes second (contains title and description) */
-      .flex_block > .col-lg-5.pr0px,
-      .flex_block > .col-sm-12.pr0px,
-      .flex_block > .col-xs-12.pr0px {
-        order: 2 !important;
-      }
-      /* Reduce section padding on mobile to fix large gaps */
-      section {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-      }
-      
-      .section-header {
-        padding-bottom: 20px !important;
-      }
-    }
-  </style>
 
 </head>
 
-<body>
+<body class="page-teenagers">
 
   <!-- header -->
   <?php include('../includes/header.php'); ?>
@@ -213,16 +39,26 @@
 
   <section class="hpt120px">
     <div class="row" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 healthcare-hero-shell">
 
         <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp"
-              class="img-responsive w100p display_m_none" loading="lazy" alt="performance">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt3rem">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp"
+         class="img-responsive w100p display_m_none h-800" 
+         loading="lazy" 
+         alt="HappierMe for Teenagers">
 
+    <!-- Mobile -->
+    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp"
+         class="img-responsive w100p display_d_none" 
+         loading="lazy" 
+         alt="HappierMe for Teenagers">
 
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp"
-              class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+    <!-- Wide Screen (Extra Large) -->
+    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_widescreen.webp"
+         class="img-responsive w100p display_m_none wide-screen-only"
+         loading="lazy"
+         alt="HappierMe for Teenagers">
           </div>
         </div>
 
@@ -297,14 +133,14 @@
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                 <a id="teenagerCoverClick" class="">
                   <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1">
-                    Try HappierMe for free
+                    Start your free trial now
                   </button>
                 </a>
               </div>
             </div>
 
 
-            <div class="row mt12px">
+            <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <h3 class="mtb0px fs_12px fw_400 lh_140p fc_000000 dinline_block">
                   Available for
@@ -339,7 +175,7 @@
 
     <!-- video -->
     <section>
-      <div class="section-header">
+      <div class="section-header-teen">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
             <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
@@ -350,7 +186,7 @@
       </div>
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0">
+        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
           <iframe class="yt-embed" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -374,22 +210,24 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mt0px mb20px fs_24px fw_600 lh_120p fc_183C79">
               Get all the support you need when life gets tough
             </h2>
           </div>
         </div>
       </div>
 
-      <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+      <div class="teen-topics-bubbles-band" data-aos="fade-up" data-aos-delay="200">
+        <div class="row center_flex">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-980px center_flex">
 
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenegers_bubbles.webp"
-            class="img-responsive w100p display_m_none" alt="modules" loading="lazy">
+            class="img-responsive w100p display_m_none w-980px" style="position: relative; margin-top:-11%; margin-bottom:-11%;" alt="modules" loading="lazy">
 
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/bubble_mobile.webp"
-            class="img-responsive w100p display_d_none" loading="lazy" alt="performance and productivity">
+            class="img-responsive w100p display_d_none" loading="lazy" style="position: relative; margin-top:-11%; margin-bottom:-11%;" alt="performance and productivity">
 
+        </div>
         </div>
       </div>
     </section>
@@ -397,15 +235,15 @@
 
 
     <!-- description -->
-    <section>
+    <section class="mt40px">
       <div class="row center_flex">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 flex_block">
+        <div class="p0 flex_block w-1245px gap_40px gap_m24px">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pl0px" data-aos="fade-up" data-aos-delay="100">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_app.webp"
               class="img-responsive teens-app-img " loading="lazy" alt="Feel calm">
           </div>
 
-          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
             <h2 class="mtb0px fs_24px fw_600 lh_150p fc_183C79">
               Feel calm, capable, and better everyday, with HappierMe!
             </h2>
@@ -430,7 +268,7 @@
       </div>
 
       <div class="row center_flex div_dykt">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-12 p0 div_dyk_l1">
+        <div class="p0 div_dyk_l1 w-980px">
 
           <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="100">
             <div class="row">
@@ -1169,111 +1007,92 @@
     </section>
     <!-- /inspiring -->
     <!-- subscription -->
-    <section id="div_subscription">
-      <div class="row center_flex div_subscription">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
+<!-- subscription -->
+<section id="div_subscription">
+  <div class="row center_flex div_subscription">
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0 w-980px">
 
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                40% off HappierMe Premium
-              </h2>
+      <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 text-center">
+          <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+            40% off HappierMe Premium
+          </h2>
+          <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
+            Start your free trial today!
+          </h6>
+        </div>
+      </div>
 
-              <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
-                Start your free trial today!
-              </h6>
+      <!-- Pricing Cards -->
+      <div class="row center_flex mtb40px justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-300px">
+
+          <!-- Yearly -->
+          <button class="btn_subscription btn-subscription-border w-100">
+            <div class="row center_flex btn_subscription_trial btn-subscription-color">
+              <div class="col-12">
+                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                  14-day free trial
+                </h6>
+              </div>
             </div>
-          </div>
 
-          <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 p0">
-
-              <button class="btn_subscription  btn-subscription-border">
-                <div class="row center_flex btn_subscription_trial  btn-subscription-color">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                      14-day free trial
-                    </h6>
-                  </div>
-                </div>
-
-                <div class="row center_flex">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6  p0 tleft">
-                    <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
-                      Yearly
-                    </h5>
-
-                    <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
-                      <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
-
-                      <span class="" id="annualPricingModelHeading"></span>
-                    </h6>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
-                  </div>
-                </div>
-              </button>
-
-              <button class="btn_subscription btn-subscription-border mt20pxi">
-                <div class="row center_flex">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tleft">
-                    <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
-                      Monthly
-                    </h5>
-
-                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                      7-day free trial
-                    </h6>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
-                    <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 700/mo.
-                      </h4> -->
-
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="monthlyPricingModelHeading"></h4>
-                  </div>
-                </div>
-              </button>
-
+            <div class="row center_flex">
+              <div class="col-6 p0 tleft">
+                <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">Yearly</h5>
+                <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
+                  <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
+                  <span id="annualPricingModelHeading"></span>
+                </h6>
+              </div>
+              <div class="col-6 p0 tright">
+                <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
+              </div>
             </div>
-          </div>
+          </button>
 
-          <div class="row center_flex">
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0">
-              <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
-                After your free trial, the yearly subscription is INR 5,999 and automatically
-                renews each year until cancelled.
-                <!-- <span class="">
-                    <a class="fc_000000">
-                      Terms
-                    </a>
-                  </span>
-                  |
-                  <span class="">
-                    <a class="fc_000000">
-                      Cancel anytime
-                    </a>
-                  </span> -->
-              </h6>
+          <!-- Monthly -->
+          <button class="btn_subscription btn-subscription-border mt20pxi w-100">
+            <div class="row center_flex">
+              <div class="col-6 p0 tleft">
+                <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">Monthly</h5>
+                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                  7-day free trial
+                </h6>
+              </div>
+              <div class="col-6 p0 tright">
+                <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="monthlyPricingModelHeading"></h4>
+              </div>
             </div>
-          </div>
-
-          <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
-              <a id="teenagersPricing">
-                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                  Start your free trial
-                </button>
-            </div>
-            </a>
-          </div>
+          </button>
 
         </div>
       </div>
-    </section>
+
+      <!-- Note -->
+      <div class="row center_flex">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0 text-center">
+          <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
+            After your free trial, the yearly subscription is INR 5,999 and automatically 
+            renews each year until cancelled.
+          </h6>
+        </div>
+      </div>
+
+      <!-- Start Trial Button -->
+      <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
+        <div class=" text-center">
+          <a id="teenagersPricing">
+            <button type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" style="width:380px">
+              Start your free trial
+            </button>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
     <!-- /subscription -->
 
 

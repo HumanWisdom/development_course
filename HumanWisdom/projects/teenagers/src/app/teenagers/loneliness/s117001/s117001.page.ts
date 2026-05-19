@@ -39,6 +39,8 @@ export class S117001Page implements OnInit,OnDestroy {
   lastvisited = false;
   stories: any = []
   isLoggedIn = false;
+          isContentsOpen = false;
+
   isSubscriber = false;
   pgResume=sessionStorage.getItem("pgResume")
   moduleData:ProgramModel;
@@ -108,15 +110,22 @@ export class S117001Page implements OnInit,OnDestroy {
     localStorage.setItem("NaviagtedFrom", '/teenagers/pathway/manage-your-emotions');
 
     // continue where you left    
-    let last = localStorage.getItem('lastvisited');
-    if(last === 'T') 
-    {
-      this.lastvisited = true;
-    }
-    else 
-    {
-      this.lastvisited = false;
-    }    
+    this.service.clickModule(117, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
+
+    // continue where you left    
+    // let last = localStorage.getItem('lastvisited');
+    // if(last === 'T') 
+    // {
+    //   this.lastvisited = true;
+    // }
+    // else 
+    // {
+    //   this.lastvisited = false;
+    // }    
     // /continue where you left
 
     
@@ -140,6 +149,12 @@ export class S117001Page implements OnInit,OnDestroy {
       console.log("show")
     }
    
+    // continue where you left    
+    this.service.clickModule(117, this.userId).subscribe(res => {
+      this.pgResume = (res.lastVisitedScreen != "") ? "s" + res.lastVisitedScreen : "";
+      this.lastvisited = res.lastVisitedScreen != "" ? true : false;
+    })
+    // /continue where you left
     this.startTime = Date.now();
     this.startTime = Date.now();
     this.createScreen()
@@ -151,6 +166,11 @@ export class S117001Page implements OnInit,OnDestroy {
     this.socialShare=true
   }
 
+
+  toggleContents() {
+    this.isContentsOpen = !this.isContentsOpen;
+  }
+  
   toggleBookmark()
   {
     if(this.bookmark==0)

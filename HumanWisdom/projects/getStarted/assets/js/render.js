@@ -25,7 +25,7 @@ $(".owl_container .owl-carousel").owlCarousel({
         navContainer: ".owl_coach .owl-nav",
         responsive: { 0: { items: 1 }, 600: { items: 3 }, 1e3: { items: 3 } },
     }),
-    $(".owl_blog .owl-carousel").owlCarousel({
+ $(".owl_blog .owl-carousel").owlCarousel({
         stagePadding: 50,
         loop: !1,
         margin: 40,

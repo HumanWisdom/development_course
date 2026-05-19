@@ -44,8 +44,6 @@ require_once('./includes/security_config.php');
   <link rel="canonical" href="https://happierme.app" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <style>#hw-website-title.hw-website-title-pending,#hw-website-subtitle.hw-website-title-pending{visibility:hidden}</style>
-    <noscript><style>#hw-website-title.hw-website-title-pending,#hw-website-subtitle.hw-website-title-pending{visibility:visible!important}</style></noscript>
     <title>HappierMe: For Teens &amp; Adults</title>
     
     <!-- vendor_header -->
@@ -53,8 +51,12 @@ require_once('./includes/security_config.php');
     <!-- /vendor_header -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" /> -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
+
+
+
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     
@@ -88,7 +90,7 @@ require_once('./includes/security_config.php');
     <div class="frame" id="main">
 
       <!-- ===== HERO ===== -->
-      <div class="frame-wrapper web_home_divlanding">
+      <div class="frame-wrapper web_home_divlanding" style="background: linear-gradient(180deg, #803358 0%, #230F40 100%) no-repeat; background-size: cover;">
         <div class="div-wrapper">
           <div class="div">
             <div class="div-2">
@@ -100,7 +102,7 @@ require_once('./includes/security_config.php');
                 alt="HappierMe app" />
           <div class="div-3">
                  <!-- rating row -->
-                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 pt_18px">
                   <h1 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc mb_16px rating-row">
                     <span class="rating_a">
                       <i class="fa fa-star"></i>
@@ -121,14 +123,11 @@ require_once('./includes/security_config.php');
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-5">
-                     <p class="p hw-website-title-pending" style="text-align: left;line-height: 1.3;" id="hw-website-title">Understand your mind.<br>Change your life.</p>
-                      <div class="div-6">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/olyAi.svg" alt="Olly AI" style="width:38px;height:42px;" />
-                        <div class="text-wrapper-3">Now with Olly AI</div>
-                      </div>
+                     <p class="p" style="text-align: left;line-height: 1.3;" id="hw-website-title">Think better.<br><span class="hero-title-accent">Live better.</span></p>
+                     
                     </div>
-                    <p class="text-wrapper-4 hw-website-title-pending" id="hw-website-subtitle">
-                      Personalized support to reduce stress and anxiety, deepen your relationships and build a happier life from within.
+                    <p class="text-wrapper-4" id="hw-website-subtitle">
+                      Understand yourself, reduce stress and anxiety, improve relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
                     </p>
                   </div>
                 </div>
@@ -146,7 +145,10 @@ require_once('./includes/security_config.php');
       <!-- ===== ORCHA / Mind BANNER ===== -->
       <div class="orcha-strip">
         <div class="orcha-strip-item orcha-strip-orcha">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
+          <picture>
+            <source media="(max-width: 767px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/orchacertifiedmobile.svg" />
+            <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
+          </picture>
           <span>ORCHA approved for use in healthcare</span>
         </div>
         <div class="orcha-strip-item orcha-strip-mind">
@@ -210,13 +212,15 @@ require_once('./includes/security_config.php');
             aria-label="Play HappierMe intro video"
             style="position:absolute;inset:0;border:0;padding:0;background:transparent;cursor:pointer;z-index:2;">
             <img
-              src="https://d1tenzemoxuh75.cloudfront.net/website/yt_cover.svg"
+              src="https://d1tenzemoxuh75.cloudfront.net/website/yt_coverimg.webp"
               alt="HappierMe video cover"
-              style="width:100%;height:100%;object-fit:cover;display:block;" />
+              style="width:100%;height:100%;display:block;" />
             <span
               aria-hidden="true"
-              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0, 0, 0, 0.25);font-size:30px;color:#fff;line-height:1;">
-              &#9658;
+              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0,0,0,0.25);">
+              <svg width="18.37" height="19.18" viewBox="0 0 18.37 19.18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.37 9.59L0 0V19.18L18.37 9.59Z" fill="rgba(234,234,234,1)"/>
+              </svg>
             </span>
           </button>
           <iframe
@@ -243,7 +247,7 @@ require_once('./includes/security_config.php');
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
           class="img-responsive d-wider w100p" alt="modules" loading="lazy">
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/Mobile_circles.svg"
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/mobile_circle.svg"
           class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
 
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg" class="happy-wide-img"
@@ -340,7 +344,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== ORGANISATION ===== -->
       <div class="div-23">
-        <p class="text-wrapper-6 text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
+        <p class="text-wrapper-6 pb0px text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
           <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
@@ -395,7 +399,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== TEENAGERS ===== -->
       <div class="div-31">
-        <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/help_teenagers.svg" alt="Teenagers app" />
+        <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/help_teenagers.webp" alt="Teenagers app" />
         <div class="div-32">
           <div class="div-33">
             <div class="div-34">
@@ -609,7 +613,7 @@ require_once('./includes/security_config.php');
           <div id="fbn" class="tools-panel active">
             <div class="tools-card">
               <div class="tools-thumb">
-                <video playinline
+                <video playsinline
                   poster="https://d1tenzemoxuh75.cloudfront.net/website/rec-tool.svg"
                   controlsList="nodownload"
                   class="tools-thumb-video"
@@ -1168,8 +1172,8 @@ require_once('./includes/security_config.php');
           var fbnPlayBtn = document.getElementById('fbn-play-btn');
           if (fbnVideo) {
             fbnVideo.pause();
-            fbnVideo.currentTime = 0;
             fbnVideo.controls = false;
+            fbnVideo.load();
           }
           if (fbnPlayBtn) fbnPlayBtn.hidden = false;
         }

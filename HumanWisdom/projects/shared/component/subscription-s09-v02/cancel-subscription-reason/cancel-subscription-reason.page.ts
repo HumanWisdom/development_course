@@ -58,7 +58,7 @@ export class CancelSubscriptionReasonPage implements OnInit {
 
   back(){
     var url = this.navigationService.navigateToBackLink();
-    if (url == null || url.includes('home') || url.includes('dashboard')) {
+    if (url == null) {
       this.location.back();
     } else {
       this.router.navigate([url]);

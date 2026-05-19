@@ -191,6 +191,10 @@ const routes: Routes = [
     loadChildren: () => import('../../../../shared/component/viewcart/viewcart.module').then(m => m.ViewcartPageModule)
   },
   {
+    path: 'guided-journeys',
+    loadChildren: () => import('../../../../shared/guided-journey-module/guided-journey-module.module').then(m => m.GuidedJourneyModuleModule)
+  },
+  {
     path: "forum",
     loadChildren: () => import("../teenagers/forum/framework-v1.module").then(m => m.FrameworkV1Module)
   },

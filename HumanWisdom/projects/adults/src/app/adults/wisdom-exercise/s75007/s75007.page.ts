@@ -90,8 +90,8 @@ export class S75007Page implements OnInit {
    
  }
 
-  getdayevent(event) {
-    if (event === 'intro') {
+  getdayevent(event, isBack = false) {
+    if (event === 'intro' || event === '0') {
       this.slideStart = 0;
       this.totalSlidesCount = 4;
       this.details = this.slideStart + '/' + this.totalSlidesCount;
@@ -104,7 +104,7 @@ export class S75007Page implements OnInit {
       this.enableday6 = false;
       this.enableday7 = false;
       this.screenNumber = "75007p0";
-      this.dayclass = '0';
+      this.dayclass = 'intro';
       this.currentDay = 0;
     }
     else if (event === '1') {
@@ -219,11 +219,43 @@ export class S75007Page implements OnInit {
       this.dayclass = '7';
       this.currentDay = 7;
     }
-    this.next();
+
+    if (isBack) {
+      this.slideStart = this.totalSlidesCount;
+      this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
+      
+      setTimeout(() => {
+        let carouselId = this.dayclass === 'intro' ? '#mdp_carousel_intro' : `#mdp_carousel_day${this.dayclass}`;
+        $(carouselId).carousel(this.totalSlidesCount - 1);
+        this.setHint();
+
+        setTimeout(() => {
+          let data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]
+            ?.children[1]?.children[0]?.lastChild?.classList.value;
+
+          if (!data) {
+            data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]
+              ?.children[1]?.children[0]?.lastChild?.classList.value;
+          }
+
+          if (data === "audio-test") {
+            this.isShowButton = true;
+            this.isShowTranscript = true;
+            this.isShowAudio = false;
+          } else {
+            this.isShowButton = false;
+            this.isShowTranscript = false;
+            this.isShowAudio = false;
+          }
+        }, 100);
+      }, 700);
+    } else {
+      this.next();
+    }
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");
-      element.scrollIntoView({behavior: "smooth" ,inline: "center"});
-  }, 2000);
+      element?.scrollIntoView({behavior: "smooth" ,inline: "center"});
+    }, 2000);
   }
 
 
@@ -281,6 +313,7 @@ export class S75007Page implements OnInit {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   back() {
+    if (this.enableintro && this.slideStart <= 1) return;
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
@@ -290,28 +323,28 @@ export class S75007Page implements OnInit {
       }
       else if (this.slideStart == 1) {
         this.currentDay = this.currentDay - 1;
-        this.getdayevent(this.currentDay.toString())
+        this.getdayevent(this.currentDay.toString(), true)
       }
       else {
         this.slideStart = this.slideStart - 1;
       }
       this.details = (this.slideStart > 9 ? this.slideStart : '0' + this.slideStart) + '/' + (this.totalSlidesCount > 9 ? this.totalSlidesCount : '0' + this.totalSlidesCount);
-      var data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]?.
-        children[1]?.children[0]?.lastChild?.classList.value;
-        if (data == undefined) {
-          data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
-            children[1]?.children[0]?.lastChild?.classList.value;
-        }
-        if (data == "audio-test") {
-          this.isShowButton=true;
-          this.isShowTranscript = true;
-          this.isShowAudio=false;
-        } else {
-          this.isShowButton=false;
-          this.isShowTranscript = false;
-          this.isShowAudio = false;
-        }
-        this.setHint();
+      let data = this.elementRef.nativeElement.querySelectorAll('.active')[1]?.firstChild?.children[0]
+        ?.children[1]?.children[0]?.lastChild?.classList.value;
+      if (!data) {
+        data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]
+          ?.children[1]?.children[0]?.lastChild?.classList.value;
+      }
+      if (data === "audio-test") {
+        this.isShowButton = true;
+        this.isShowTranscript = true;
+        this.isShowAudio = false;
+      } else {
+        this.isShowButton = false;
+        this.isShowTranscript = false;
+        this.isShowAudio = false;
+      }
+      this.setHint();
     }, 700);
   }
 
@@ -358,11 +391,15 @@ export class S75007Page implements OnInit {
     const y = Math.abs($event.deltaY) > 40 ? ($event.deltaY > 0 ? 'down' : 'up') : '';
   
     eventText += `${x} ${y}<br/>`;
+    let carouselId = this.dayclass === 'intro' || this.dayclass === '0' ? '#mdp_carousel_intro' : `#mdp_carousel_day${this.dayclass}`;
+    
     if(eventText.includes("right")){
-      $('#mdp_carousel').carousel('prev');
-    this.back();
+      if (this.enableintro && this.slideStart <= 1) return;
+      $(carouselId).carousel('prev');
+      this.back();
     }else if(eventText.includes("left")){
-      $('#mdp_carousel').carousel('next');
+      if (this.enableday7 && this.slideStart >= this.totalSlidesCount) return;
+      $(carouselId).carousel('next');
       this.next();
     }
     else if(eventText.includes('down')){
@@ -379,8 +416,9 @@ export class S75007Page implements OnInit {
       });
     }
     else{
+      if (this.enableday7 && this.slideStart >= this.totalSlidesCount) return;
       this.next();
-      $('#mdp_carousel').carousel('next');
+      $(carouselId).carousel('next');
     }
   }
 

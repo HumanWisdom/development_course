@@ -58,6 +58,7 @@ export class SearchPopularItemsPage implements OnInit {
   filterApplied =  true;
   isLoading: boolean = false;
   previousSearch: string = '';
+  isSearchActive: boolean = false;
   constructor(private commonService: CommonService,
     private sanitizer: DomSanitizer,
     private serivce: ForumService,
@@ -111,6 +112,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   searchEvent(moduleName:string) {
+    this.isSearchActive = false;
     this.filterApplied = false;
     this.post = [];
     this.jrList = [];
@@ -123,6 +125,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
   
   getinp(event) {
+    this.isSearchActive = false;
     if(!event || event.toString().trim() === ""){
        return;
     }
@@ -174,6 +177,8 @@ export class SearchPopularItemsPage implements OnInit {
       }
       case "exercises":
       case "awareness exercises":
+      case "self awareness":
+      case "self-awareness":
         {
         url = `/${SharedService.getprogramName()}/home`
         fragment = "self-awareness"
@@ -220,7 +225,7 @@ export class SearchPopularItemsPage implements OnInit {
 
       let regexp =  this.search.repeat(1);
       let searchInpt = regexp;
-      searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+      searchInpt = searchInpt.replace(/[^a-zA-Z 0-9-]/g, "");
        url=`/${SharedService.getprogramName()}/site-search/${searchInpt}`
         this.searchEvent(searchInpt)
         break;
@@ -278,7 +283,7 @@ export class SearchPopularItemsPage implements OnInit {
   getSearchData() {
     let regexp =  this.search.repeat(1);
     let searchInpt = regexp;
-    searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+    searchInpt = searchInpt.replace(/[^a-zA-Z 0-9-]/g, "");
     this.isLoading = true;
     this.commonService.getSearchDataForSearchSite(searchInpt).subscribe(res => {
       if (res) {
@@ -821,9 +826,10 @@ export class SearchPopularItemsPage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -832,6 +838,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   onFocus() {
+    this.isSearchActive = true;
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
     }
@@ -840,7 +847,7 @@ export class SearchPopularItemsPage implements OnInit {
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(this.search?.toLocaleLowerCase() || ''));
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -848,7 +855,7 @@ export class SearchPopularItemsPage implements OnInit {
   getModuleList(isLoad?) {
     this.commonService.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                           {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
@@ -871,6 +878,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   clearSearch() {
+    this.isSearchActive = false;
     this.search = "";
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
@@ -882,6 +890,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   backToPreviousSearch() {
+    this.isSearchActive = false;
     this.search = this.previousSearch;
     this.searchResult = [];
     this.getSearchData();

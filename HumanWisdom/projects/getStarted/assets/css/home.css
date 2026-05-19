@@ -459,9 +459,8 @@
         /* Firefox */
         -ms-overflow-style: none;
         height: 167px;
-        width: 373px;
         padding-top: 24px;
-        padding-left: 16px;
+        padding-left: 20px;
       }
 
       .scroller-container>div {
@@ -470,10 +469,18 @@
         /* Adjust based on actual content */
       }
 
-      .scroller-container img {
+      .scroller-container img:not(.circle-mobile) {
         max-width: 100%;
         height: auto;
         padding-left: 50px;
+      }
+
+      .scroller-container img.circle-mobile {
+        max-width: none;
+        width: auto;
+        height: auto;
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .circle-mobile {

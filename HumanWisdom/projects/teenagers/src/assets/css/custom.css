@@ -21016,13 +21016,13 @@ input {
 
 .btn_post {
   width: 100%;
-  background: #ffffff !important;
+  background: #EE9596 !important;
   border-radius: 100px;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
-  color: #EE9596 !important;
+  color: #ffffff !important;
   text-align: center;
   /* color: #5D5D5D; */
   margin: 0;
@@ -21796,20 +21796,25 @@ input {
   height: 293.88px;
 }
 
-.carousel-inner>.item {
+.carousel-inner>.carousel-item {
   height: 332.88px;
 }
 
 @media (min-width: 768px) {
-  .carousel-inner>.item {
+  .carousel-inner>.carousel-item {
     height: 380.88px;
   }
 }
 
 @media (min-width: 1200px) {
-  .carousel-inner>.item {
+  .carousel-inner>.carousel-item {
     height: 332.88px;
   }
+}
+
+.carousel-item {
+  overflow: hidden;
+  position: relative;
 }
 
 .carousel-control .fa-chevron-right,
@@ -27283,7 +27288,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 .pfy_search_icon {
   /* color: #5D5D5D; */
-  color: rgba(255, 255, 255, 0.50);
+  color: #ffffff80;
   font-size: 20px;
   /* left: 30px !important; */
   left: 3% !important;
@@ -27296,7 +27301,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 .pfy_search {
   /* background: #EBEBEB; */
-  background: #0C2B5F !important;
+  background: #0C2B5F!important;
   border-radius: 100px;
   font-family: 'Roboto';
   font-style: normal;
@@ -27304,9 +27309,10 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
   font-size: 16px;
   line-height: 19px;
   /* identical to box height */
-  /* color: #5D5D5D !important; */
+ color: #ffffff!important; 
   /* color: rgba(255, 255, 255, 0.50)!important; */
-  color: rgba(255, 255, 255, 1) !important;
+  
+  /* color: rgba(0, 0, 0, 0.50) !important; */
   /* height: 60px; */
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
@@ -27314,7 +27320,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 .pfy_search::placeholder {
   /* color: #5D5D5D !important; */
-  color: rgba(255, 255, 255, 0.70) !important;
+  color: rgba(255, 255, 255, 0.50) !important;
 }
 
 input[type="search"].pfy_search::-webkit-search-cancel-button {
@@ -28799,8 +28805,10 @@ video::-webkit-media-controls-panel {
   width: 50px;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
+
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #EE9596 !important;
+  /* background: #EE9596 !important; */
   border-radius: 100%;
   border: 2px solid white;
   text-align: center;
@@ -30891,7 +30899,7 @@ svg path
   margin-bottom: 10rem;
 }
 
-.wec_01 .carousel-inner .item {
+.wec_01 .carousel-inner .carousel-item {
   transition: -webkit-transform 0s;
   transition: transform 0s;
   transition: transform 0s;
@@ -33079,7 +33087,7 @@ body * {
   background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
-  padding: 20px;
+  padding: 10px 10px 10px 22px;
   /* margin: 0 10px 10px 10px; */
 }
 
@@ -33103,13 +33111,41 @@ body * {
 
 .session_img {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 10px;
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
-  height: 110px;
+  /* height: 110px;
     object-fit: cover;
-    object-position: 10% 25%;
+    object-position: 10% 25%; */
 }
 
+
+.toc_adiv_02journey  a>.row {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #0C2B5F;
+  min-height: 78px;
+  margin-bottom: 10px;
+  padding: 1cqb;
+  /* margin: 0 10px 10px 10px; */
+}
+
+/* .toc_adiv_02journey a>.row {
+    border-radius: 12px;
+    background: #FFE8BB;
+    min-height: 78px;
+    margin-bottom: 10px;
+    padding: 10px; */
+    /* margin: 0 10px 10px 10px; */
+/* } */
+.session_imgjourney {
+    width: 58px;
+    height: 58px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, .25);
+    object-fit: cover;
+    object-position: 50% 25%;
+    margin: 4px;
+}
 .session_img_play {
   position: absolute;
   top: 0;
@@ -33674,7 +33710,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-  color: #EE9596 !important;
+   color: #EE9596; 
 }
 
 .btn_forum_ask_a_gift {
@@ -33689,6 +33725,24 @@ body * {
   line-height: 22px;
   color: #cb6171;
   text-align: center;
+}
+.btn_postteen{
+width: 100%;
+    background: #EE9596 !important;
+    border-radius: 100px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff !important;
+    text-align: center;
+    margin: 0;
+    border: 0;
+    height: 40px;
+    box-shadow: unset;
+}
+
+.btn btn-warning btn_postteen{
+  color: #fff;
 }
 
 .btn_fpfy {
@@ -33861,7 +33915,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0;
   padding: 0;
   background: transparent;
-  color: #EE9596 !important;
+  color: #fff !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -35590,7 +35644,7 @@ h3_blogs p a font,
   box-shadow: unset;
 }
 
-.toc_adiv_02 a>.row {
+.toc_adiv_02  a>.row {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #0C2B5F;
@@ -37222,4 +37276,56 @@ ul.symptom-list li {
 div.contentdiv p {
 
   line-height: 140% !important;
+}
+
+/* Session Expired Alert Styles */
+.session-expired-alert {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.session-expired-alert .alert-wrapper {
+  border-radius: 24px !important;
+  background: #0C2B5F !important;
+  padding: 10px !important;
+  max-width: 340px !important;
+}
+
+.session-expired-alert .alert-head {
+  padding: 24px 16px 8px !important;
+  text-align: center;
+}
+
+.session-expired-alert .alert-title {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+
+.session-expired-alert .alert-message {
+  text-align: center;
+  font-size: 16px !important;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7) !important;
+  padding: 0 20px 24px !important;
+}
+
+.session-expired-alert .alert-button-group {
+  padding: 0 20px 20px !important;
+}
+
+.session-expired-alert .session-expired-login-btn {
+  background: #EE9596 !important;
+  color: #fff !important;
+  border-radius: 100px !important;
+  height: 50px !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  text-transform: none !important;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.session-expired-alert .session-expired-login-btn .alert-button-inner {
+  justify-content: center;
 }

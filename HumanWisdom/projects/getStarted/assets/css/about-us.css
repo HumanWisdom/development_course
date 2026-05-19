@@ -5,6 +5,9 @@
     .w-640px {
       width: 640px;
     }
+    .clink{
+      color: rgba(215, 88, 107, 1);
+    }
 
     .section-description {
       justify-content: center;

@@ -4,13 +4,12 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw "
-        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'"
-        [class.search-active]="searchResult.length > 0">
+        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'" [class.search-active]="isSearchActive">
 
 
         <div class="x_panel p0">
           <div class="x_content p0">
-            <div class="row  mt50px mb5px" *ngIf="searchResult.length === 0">
+            <div class="row  mt50px mb5px" *ngIf="!isSearchActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                 <h4 class="mtb0px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Welcome back, {{userName}}!
@@ -19,7 +18,7 @@
               </div>
             </div>
 
-            <div class="row mt10px" *ngIf="searchResult.length === 0">
+            <div class="row mt10px" *ngIf="!isSearchActive">
               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="mtb0px fw_400 fs_15px lh_140p" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
                   Here’s your daily dose of happiness :)
@@ -36,10 +35,10 @@
                     [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
                     (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keyup.enter)="getinp(searchinp)"
                     style="border-radius: 100px !important;">
-                  <span *ngIf="searchResult.length == 0" class="fa fa-search form-control-feedback left pfy_search_icon"
+                  <span *ngIf="!isSearchActive" class="fa fa-search form-control-feedback left pfy_search_icon"
                     aria-hidden="true"></span>
-                  <span *ngIf="searchResult.length > 0" (click)="clearSearch()" (keydown.enter)="clearSearch()"
-                    tabindex="0" class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
+                  <span *ngIf="isSearchActive" (click)="clearSearch()" (keydown.enter)="clearSearch()" tabindex="0"
+                    class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
                     aria-hidden="true" style="pointer-events: all !important; cursor: pointer !important;"></span>
                   <span *ngIf="searchinp!=''" (click)="clearSearch()" (keydown.enter)="clearSearch()" tabindex="0"
                     class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
@@ -47,7 +46,7 @@
                 </div>
 
                 <!-- Search Dropdown -->
-                <div class="row adsearch" *ngIf="searchResult.length > 0">
+                <div class="row adsearch" *ngIf="isSearchActive">
                   <div class="col-md-12 col-sm-12 col-xs-12 tsp">
                     <ul class="list-group autocomplete-list adsearch_ul">
                       <li *ngFor="let item of searchResult" (click)="searchEvent(item.ModuleName)" name="list"
@@ -189,10 +188,10 @@
               <div class="toc_adiv_imgmy">
                 <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
                   <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex practice-card-content">
 
                       <!-- image -->
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 practice-card-thumb">
                         <div class="prelative">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
@@ -218,7 +217,7 @@
                       </div>
 
                       <!-- text -->
-                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl5px">
+                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 pl5px practice-card-text">
 
                         <h4 class="mtb0px fs_18px fw_600 lh_120p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           {{resumeLastvisited[0]['ModuleName']}}
@@ -234,7 +233,7 @@
                       </div>
 
                       <!-- arrow -->
-                      <div class="col-1 p0 tright">
+                      <div class="col-1 p0 tright practice-card-arrow">
                         <i class="fa fa-angle-right fs_20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i>
                       </div>
 
@@ -259,9 +258,9 @@
 
                 <a (click)="routeToDailyCheckIn()">
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex practice-card-content">
 
-                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 practice-card-thumb">
                         <div class="prelative">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
@@ -279,7 +278,7 @@
                         </div>
                       </div>
 
-                      <div class="col-7 pl5px ">
+                      <div class="col-7 pl5px practice-card-text">
                         <h4 class="mt0px mb5px fw_400 fs_12px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
                           DAILY CHECK-IN
                         </h4>
@@ -292,7 +291,7 @@
                           02:00
                         </h4>
                       </div>
-                      <div class="col-1">
+                      <div class="col-1 practice-card-arrow">
 
                       </div>
 
@@ -345,28 +344,18 @@
 
 
 
-                <div class="toc_adiv_imgmynew ">
-
+                <div class="toc_adiv_imgmynew " (click)="goToSubscribe()" (keydown.enter)="goToSubscribe()"
+                  style="cursor: pointer;">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="isAdults">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start.svg" alt=""
                           class="p0 session_img">
-
-                        <!-- <div class="progress dprogress">
-                        <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div> -->
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="!isAdults">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_teen.svg"
                           alt="" class="p0 session_img">
-
-                        <!-- <div class="progress dprogress">
-                        <div class="progress-bar" role="progressbar" [style.width]="guideP + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div> -->
                       </div>
                       <!-- show only when user is NOT subscribed -->
 
@@ -383,15 +372,8 @@
                         </div>
                       </div>
 
-
-
-                      <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                      <i class="fa fa-angle-right fc_000000 fs_20px"></i>
-                    </div> -->
-
                     </div>
                   </div>
-
                 </div>
 
                 <!-- CONTINUE WHERE YOU LEFT -->
@@ -457,9 +439,9 @@
             </a> -->
                 <a (click)=routeDailyPractice(0)>
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex ">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex practice-card-content">
 
-                      <div class="col-lg-4  col-md-4 col-sm-4 col-xs-4 p0">
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 practice-card-thumb">
                         <div class="prelative">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
@@ -475,7 +457,7 @@
                         </div>
                       </div>
 
-                      <div class="col-7 pl5px">
+                      <div class="col-7 pl5px practice-card-text">
 
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
 
@@ -523,7 +505,7 @@
                           {{DailyInspirationTime}}
                         </h4>
                       </div>
-                      <div class="col-1"> </div>
+                      <div class="col-1 practice-card-arrow"> </div>
                     </div>
                   </div>
                 </a>
@@ -537,9 +519,9 @@
 
                 <a (click)=routeDailyPractice(1)>
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex practice-card-content">
 
-                      <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                      <div class="col-md-4 col-sm-4 col-xs-4 p0 practice-card-thumb">
                         <div class="prelative">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  ">
@@ -556,7 +538,7 @@
                         </div>
                       </div>
 
-                      <div class="col-7 pl5px">
+                      <div class="col-7 pl5px practice-card-text">
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
 
                       </div> -->
@@ -601,7 +583,7 @@
                           {{breatheTime}}
                         </h4>
                       </div>
-                      <div class="col-1"> </div>
+                      <div class="col-1 practice-card-arrow"> </div>
                     </div>
                   </div>
                 </a>
@@ -614,9 +596,9 @@
                 <!-- /hr -->
                 <a (click)=routeDailyPractice(4)>
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex practice-card-content">
 
-                      <div class="col-md-4 col-sm-4 col-xs-4  p0">
+                      <div class="col-md-4 col-sm-4 col-xs-4 p0 practice-card-thumb">
                         <div class="prelative">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
@@ -633,7 +615,7 @@
                         </div>
                       </div>
 
-                      <div class="col-7 pl5px ">
+                      <div class="col-7 pl5px practice-card-text">
                         <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
 
                   </div> -->
@@ -681,7 +663,7 @@
                           {{audioTime}}
                         </h4>
                       </div>
-                      <div class="col-1"> </div>
+                      <div class="col-1 practice-card-arrow"> </div>
 
                     </div>
                   </div>
@@ -745,17 +727,19 @@
 
                       <div class="row mt10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi ">
-                          <textarea type="text" id="comment" name="thread" [(ngModel)]="questext"
+                          <textarea *ngIf="isSubscriber" type="text" id="comment" name="thread" [(ngModel)]="questext"
                             [placeholder]="placeholder" required="required" class="mdp_answer_heremy"
                             maxlength="200"></textarea>
+                          <textarea *ngIf="!isSubscriber" [disabled]="true" [readonly]="true"
+                            [value]="'Subscribe to use this feature'"
+                            class="mdp_answer_heremy" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'"></textarea>
                         </div>
                       </div>
 
-                      <div class="row mt15px" *ngIf="!(guest || !isloggedIn || questext === '')">
+                      <div class="row mt15px" *ngIf="isSubscriber && questext && questext !== ''">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
 
-                          <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()"
-                            [hidden]="guest || !isloggedIn || (questext=='')">
+                          <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()">
                             Add to journal
                           </button>
                         </div>

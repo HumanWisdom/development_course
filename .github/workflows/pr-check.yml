@@ -1,0 +1,121 @@
+name: PR Check - Build Validation
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - main
+      - production
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build-adults:
+    name: Build Adults
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '24.0.0'
+
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: HumanWisdom/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install global dependencies
+        run: |
+          npm install -g @ionic/cli
+          npm install -g @angular/cli
+
+      - name: Install project dependencies
+        run: |
+          cd HumanWisdom
+          npm install --force
+
+      - name: Build Adults
+        run: |
+          cd HumanWisdom
+          export NODE_OPTIONS=--max_old_space_size=8096
+          ng build --configuration=staging --project="adults" --base-href /adults/
+
+      - name: Compress Adults artifact
+        run: |
+          cd HumanWisdom
+          mkdir -p builds/compressed
+          tar -czf builds/compressed/program.tgz www/
+
+      - name: Upload Adults artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: adults-artifact
+          path: HumanWisdom/builds/compressed/program.tgz
+          retention-days: 7
+
+  build-teenagers:
+    name: Build Teenagers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '24.0.0'
+
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: HumanWisdom/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install global dependencies
+        run: |
+          npm install -g @ionic/cli
+          npm install -g @angular/cli
+
+      - name: Install project dependencies
+        run: |
+          cd HumanWisdom
+          npm install --force
+
+      - name: Build Teenagers
+        run: |
+          cd HumanWisdom
+          export NODE_OPTIONS=--max_old_space_size=8096
+          ng build --configuration=staging --project="teenagers" --base-href /teenagers/
+
+      - name: Compress Teenagers artifact
+        run: |
+          cd HumanWisdom
+          mkdir -p builds/compressed
+          tar -czf builds/compressed/program.tgz teenagers/
+
+      - name: Upload Teenagers artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: teenagers-artifact
+          path: HumanWisdom/builds/compressed/program.tgz
+          retention-days: 7

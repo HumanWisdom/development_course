@@ -90,7 +90,7 @@ export class S157007Page implements OnInit {
    
  }
 
-  getdayevent(event) {
+  getdayevent(event, isBack = false) {
     if (event === 'intro') {
       this.slideStart = 0;
       this.totalSlidesCount = 4;
@@ -219,7 +219,11 @@ export class S157007Page implements OnInit {
       this.dayclass = '7';
       this.currentDay = 7;
     }
-    this.next();
+    if (isBack) {
+      this.slideStart = this.totalSlidesCount;
+    } else {
+      this.next();
+    }
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");
       element.scrollIntoView({behavior: "smooth" ,inline: "center"});
@@ -245,6 +249,9 @@ export class S157007Page implements OnInit {
         }
 
       } else if (this.slideStart == this.totalSlidesCount) {
+        if (this.currentDay >= this.totaldays) {
+          return;
+        }
         this.currentDay = this.currentDay + 1;
         this.vistedScreens.push({
           "ScreenNo": '157007p' + (parseInt(this.screenNumber.substring(7, 8))),
@@ -331,12 +338,15 @@ export class S157007Page implements OnInit {
     this.nextDay = null;
     this.resetHintValue();
     setTimeout(() => {
+      if (this.currentDay == 0 && this.slideStart == 1) {
+        return;
+      }
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount
       }
       else if (this.slideStart == 1) {
         this.currentDay = this.currentDay - 1;
-        this.getdayevent(this.currentDay.toString())
+        this.getdayevent(this.currentDay.toString(), true)
       }
       else {
         this.slideStart = this.slideStart - 1;
@@ -416,11 +426,19 @@ export class S157007Page implements OnInit {
       else if (this.enableday7) carouselId = 'mdp_carousel_day7';
       
       if(eventText.includes("right")){
-        $(`#${carouselId}`).carousel('prev');
-        this.back();
+        if (this.currentDay == 0 && this.slideStart == 1) {
+          // Guard for first slide of intro
+        } else {
+          $(`#${carouselId}`).carousel('prev');
+          this.back();
+        }
       }else if(eventText.includes("left")){
-        $(`#${carouselId}`).carousel('next');
-        this.next();
+        if (this.currentDay == 7 && this.slideStart == this.totalSlidesCount) {
+          // Guard for last slide of day 7
+        } else {
+          $(`#${carouselId}`).carousel('next');
+          this.next();
+        }
       }
       else if(eventText.includes('down')){
         window.scrollTo({
@@ -434,10 +452,6 @@ export class S157007Page implements OnInit {
           behavior:'smooth',
           top:800
         });
-      }
-      else{
-        this.next();
-        $(`#${carouselId}`).carousel('next');
       }
   }
 

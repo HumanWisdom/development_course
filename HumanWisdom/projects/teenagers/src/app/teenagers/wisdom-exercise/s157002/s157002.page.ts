@@ -1,11 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import "bcswipe";
+
 import "hammerjs";
 import { TeenagersService } from "../../teenagers.service";
 import { SharedService } from '../../../../../../shared/services/shared.service';
-import { NavigationService } from '../../../../../../shared/services/navigation.service';
-import { Location } from '@angular/common';
 declare var $: any;
 declare var bootstrap: any;
 var moveleft = false;
@@ -37,7 +35,7 @@ export class S157002Page implements OnInit, AfterViewInit {
   endTime: any;
   startTime: any;
   lastClick = 0;
-  delay = 20;
+  delay = 800;
   moduleId: number = 157;
   bookmark: number = 0;
   slideStart = 0;
@@ -55,9 +53,7 @@ export class S157002Page implements OnInit, AfterViewInit {
     private elementRef: ElementRef,
     public service: TeenagersService,
     private teenagers: TeenagersService,
-    public router: Router,
-    public navigationService: NavigationService,
-    private location: Location
+    public router: Router
   ) {
     this.startTime = Date.now();
   }
@@ -96,7 +92,6 @@ export class S157002Page implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    $(".carousel").bcSwipe({ threshold: 50 });
     var container = document.querySelector(".carousel");
    // container.addEventListener("touchmove", this.moveTouch.bind(this), false);
   }
@@ -125,9 +120,11 @@ export class S157002Page implements OnInit, AfterViewInit {
       else if (this.enableday5) carouselId = 'mdp_carousel_day5';
       
       if(eventText.includes("right")){
+        if (this.currentDay == 0 && this.slideStart == 1) return;
         $(`#${carouselId}`).carousel('prev');
         this.back();
       }else if(eventText.includes("left")){
+        if (this.currentDay == 5 && this.slideStart == this.totalSlidesCount) return;
         $(`#${carouselId}`).carousel('next');
         this.next();
       }
@@ -153,8 +150,8 @@ export class S157002Page implements OnInit, AfterViewInit {
   getClass(day) {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
-  getdayevent(event) {
-    if (event === "intro") {
+  getdayevent(event, isBack = false) {
+    if (event === "intro" || event === "0") {
       this.startTime = Date.now();
       this.slideStart = 0;
       this.totalSlidesCount = 6;
@@ -239,7 +236,18 @@ export class S157002Page implements OnInit, AfterViewInit {
       this.screenNumber = "157002p5";
       this.dayclass = "5";
     }
-    this.next();
+    if (isBack) {
+      this.slideStart = this.totalSlidesCount;
+      this.details = (this.slideStart > 9 ? this.slideStart : "0" + this.slideStart) + "/" + (this.totalSlidesCount > 9 ? this.totalSlidesCount : "0" + this.totalSlidesCount);
+      setTimeout(() => {
+        let carouselId = 'mdp_carousel_day' + this.currentDay;
+        if (this.currentDay == 0) carouselId = 'mdp_carousel_intro';
+        $(`#${carouselId}`).carousel(this.totalSlidesCount - 1);
+      }, 100);
+    } else {
+      this.slideStart = 0;
+      this.next();
+    }
     setTimeout(() => {
       var element = document.querySelector(".we_ft .editable");
       element.scrollIntoView({ behavior: "smooth", inline: "center" });
@@ -247,6 +255,14 @@ export class S157002Page implements OnInit, AfterViewInit {
   }
 
   next() {
+    if (this.lastClick >= (Date.now() - this.delay)) {
+      return;
+    }
+    this.lastClick = Date.now();
+    
+    if (this.currentDay == 5 && this.slideStart == this.totalSlidesCount) {
+      return;
+    }
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
@@ -305,6 +321,14 @@ export class S157002Page implements OnInit, AfterViewInit {
   }
 
   back() {
+    if (this.lastClick >= (Date.now() - this.delay)) {
+      return;
+    }
+    this.lastClick = Date.now();
+
+    if (this.currentDay == 0 && this.slideStart == 1) {
+      return;
+    }
     window.scrollTo(0,0);
     this.nextDay = null;
     this.resetHintValue();
@@ -312,8 +336,10 @@ export class S157002Page implements OnInit, AfterViewInit {
       if (this.slideStart < 1) {
         this.slideStart = this.totalSlidesCount;
       } else if (this.slideStart == 1) {
-        this.currentDay = this.currentDay - 1;
-        this.getdayevent(this.currentDay.toString());
+        if (this.currentDay > 0) {
+          this.currentDay = this.currentDay - 1;
+          this.getdayevent(this.currentDay.toString(), true);
+        }
       } else {
         this.slideStart = this.slideStart - 1;
       }
@@ -345,14 +371,7 @@ export class S157002Page implements OnInit, AfterViewInit {
     }, 700);
   }
 
-  goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    } else {
-      this.router.navigate([url]);
-    }
-  }
+
 
   changeType() {
     if (this.isShowTranscript) {

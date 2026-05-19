@@ -135,6 +135,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly VIEW_MORE_INCREMENT = 5;
   mainheader: string = '';
   searchinp: string = '';
+  isSearchActive: boolean = false;
   searchResult: any[] = [];
   moduleList: any[] = [];
   eventList: any[] = [];
@@ -1672,7 +1673,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.commonService.getModuleList().subscribe(res => {
       if (res) {
         this.moduleList = res;
-        this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+        this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                             {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                             {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                             {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
@@ -1691,12 +1692,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x =>
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
       }
       // Toggle body scroll based on search result visibility
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -1708,6 +1710,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle focus event - show all modules or filtered results
    */
   onFocus(): void {
+    this.isSearchActive = true;
     const eventName = 'click_search';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Click: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
@@ -1722,7 +1725,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
       );
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -1738,6 +1741,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Navigate to search page when Enter is pressed or search result is clicked
    */
   getinp(searchTerm: string, fromDropdown: boolean = false): void {
+    this.isSearchActive = false;
     if (searchTerm && searchTerm.trim() !== '') {
       if (!fromDropdown) {
         const eventName = `search_${searchTerm.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
@@ -1792,7 +1796,33 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         }
         case "exercises":
         case "awareness exercises":
+        case "self awareness":
+        case "self-awareness":
           {
+          // If already on the home page, directly activate the Self Awareness nav item
+          // instead of relying on router.navigate (which ignores same-URL navigation)
+          const currentUrl = this.router.url.split('#')[0].split('?')[0];
+          const homeUrl = `/${SharedService.getprogramName()}/home`;
+          if (currentUrl === homeUrl) {
+            // Find the Self Awareness item from the UI-bound personalisedList
+            // so that onNavigationClick updates the correct active state in the template
+            const selfAwarenessItem = this.personalisedList.find(item => 
+              this.normalizeHash(item.displayName) === 'selfawareness'
+            );
+            if (selfAwarenessItem) {
+              this.searchResult = [];
+              this.toggleBodyScroll(false);
+              (document.activeElement as HTMLElement)?.blur();
+              this.onNavigationClick(selfAwarenessItem);
+              // Scroll to top so the Self Awareness content is visible
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                this.scrollToActiveList();
+              }, 300);
+              return;
+            }
+          }
+          // Fallback: navigate via router (when on a different page)
           url = `/${SharedService.getprogramName()}/home`
           fragment = "self-awareness"
           break;
@@ -1832,7 +1862,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
        default: {
         let regexp =  this.searchinp.repeat(1);
         let searchInpt = regexp;
-        searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+        searchInpt = searchInpt.replace(/[^a-zA-Z 0-9-]/g, "");
          url=`/${SharedService.getprogramName()}/site-search/${searchInpt}`
           break;
         }
@@ -1849,6 +1879,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Handle search result click - navigate to search page
    */
   searchEvent(moduleName: string): void {
+    this.isSearchActive = false;
     const eventName = `search_dropdown_${moduleName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
     console.log(`%c [ANALYTICS EVENT] Triggering Search Dropdown: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
@@ -1863,6 +1894,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Clear search and hide dropdown
    */
   clearSearch(): void {
+    this.isSearchActive = false;
     const eventName = 'click_search_clear';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Clear: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);

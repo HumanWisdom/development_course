@@ -99,8 +99,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
   currentList = [];
   public day: string = '';
   public streak = '';
-  public isFreeTrialEnable = false;
   public enableAlert:any=false;
+  public isSearchActive: boolean = false;
+  public isFreeTrialEnable: boolean = false;
 
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
@@ -348,7 +349,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},
                           {"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"},
                           {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},
-                          {"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+                          {"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                           {"ModuleName":"Soundscapes"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
@@ -369,9 +370,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -391,6 +393,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getinp(event) {
+    this.isSearchActive = false;
+    this.toggleBodyScroll(false);
     this.logeventservice.logEvent("search_"+ event)
     let url=""
     switch(event.toLowerCase())
@@ -440,6 +444,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
       }
       case "exercises":
       case "awareness exercises":
+      case "self awareness":
+      case "self-awareness":
         {
         this.route.navigate(['/teenagers/home'], { fragment: 'self-awareness', state: { source: 'search' } });
         return;
@@ -479,7 +485,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       //    break;
       // }
       let searchInpt = (' ' + this.searchinp).slice(1);
-      searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+      searchInpt = searchInpt.replace(/[^a-zA-Z -]/g, "");
        url = `/teenagers/site-search/${searchInpt}`
         break;
       }
@@ -492,7 +498,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   searchEvent(module) {
     let searchInpt = (' ' + module).slice(1);
-    searchInpt = searchInpt.replace(/[^a-zA-Z ]/g, "");
+    searchInpt = searchInpt.replace(/[^a-zA-Z -]/g, "");
     this.searchinp = searchInpt;
     this.searchResult = [];
     this.toggleBodyScroll(false);
@@ -747,13 +753,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   onFocus() {
+    this.isSearchActive = true;
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -775,6 +782,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   clearSearch() {
+    this.isSearchActive = false;
     this.searchinp = "";
     this.searchResult = [];
     this.toggleBodyScroll(false);

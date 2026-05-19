@@ -1,10 +1,10 @@
      <section id="bring_happierme">
         <div class="row center_flex div_subscription">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 email-w980px">
 
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12">
-                <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+                <h4 class="mtb0px fs_24px fw_600 lh_120p fc_834b66 pb_15px">
                   Bring HappierMe to your organization
                 </h4>
               </div>
@@ -18,7 +18,7 @@
               </div>
             </div>
 
-            <div class="row center_flex mt40px mb20px" data-aos="fade-up" data-aos-delay="200">
+            <div class="row center_flex mt40px mb20px " data-aos="fade-up" data-aos-delay="200">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                 <form action="javascript:void(0);">
                   <div class="row">

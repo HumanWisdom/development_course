@@ -52,6 +52,7 @@ export class MyDailyPracticePage implements OnInit {
   isSubscriber = false;
   journalHits = 0;
   showSearchBox: boolean = true;
+  isSearchActive: boolean = false;
 
   constructor(
     private commonService: CommonService,
@@ -83,8 +84,12 @@ export class MyDailyPracticePage implements OnInit {
     }
     this.getdailyquestion();
     this.getdailyques();
-    if (this.guest || !this.isloggedIn) {
-      this.placeholder = 'Login to use this feature' ;
+    if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
+      this.isSubscriber = true;
+    }
+
+    if (!this.isSubscriber) {
+      this.placeholder = 'You need to subscribe to use this feature';
     }
 
     const savedLogin = localStorage.getItem("loginResponse") || sessionStorage.getItem("loginResponse");
@@ -251,9 +256,15 @@ routeDailyPractice(id: number): void {
     this.router.navigate([SharedService.getDashboardUrls()]);
   }
 
+  goToSubscribe(): void {
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+  }
+
 
 
   onFocus() {
+    this.isSearchActive = true;
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
     }
@@ -262,7 +273,7 @@ routeDailyPractice(id: number): void {
     } else {
       this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || ''));
     }
-    if (this.searchResult.length > 0) {
+    if (this.isSearchActive) {
       this.toggleBodyScroll(true);
     }
   }
@@ -276,6 +287,7 @@ routeDailyPractice(id: number): void {
 
   
   clearSearch() {
+    this.isSearchActive = false;
     this.searchinp = "";
     this.searchResult = [];
     this.toggleBodyScroll(false);
@@ -292,7 +304,7 @@ routeDailyPractice(id: number): void {
   getModuleList(isLoad?) {
     this.commonService.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                           {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
@@ -312,9 +324,10 @@ routeDailyPractice(id: number): void {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
+        this.isSearchActive = true;
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
-      if (this.searchResult.length > 0) {
+      if (this.isSearchActive) {
         this.toggleBodyScroll(true);
       } else {
         this.toggleBodyScroll(false);
@@ -324,6 +337,7 @@ routeDailyPractice(id: number): void {
 
     
   getinp(searchTerm: string): void {
+    this.isSearchActive = false;
     this.logeventservice.logEvent("search_" + searchTerm);
     let url = "";
     let fragment: string | undefined = undefined;
@@ -362,7 +376,9 @@ routeDailyPractice(id: number): void {
         break;
       }
       case "exercises":
-      case "awareness exercises": {
+      case "awareness exercises":
+      case "self awareness":
+      case "self-awareness": {
         url = `/${SharedService.getprogramName()}/home`;
         fragment = "self-awareness";
         break;
@@ -402,7 +418,7 @@ routeDailyPractice(id: number): void {
       default: {
         let regexp = searchTerm.repeat(1);
         let searchInpt = regexp;
-        searchInpt = searchInpt.replace(/[^a-zA-Z 0-9]/g, "");
+        searchInpt = searchInpt.replace(/[^a-zA-Z 0-9-]/g, "");
         url = `/${SharedService.getprogramName()}/site-search/${searchInpt}`;
         break;
       }
@@ -416,6 +432,7 @@ routeDailyPractice(id: number): void {
 
 
     searchEvent(module) {
+    this.isSearchActive = false;
     this.logeventservice.logEvent("click_search");
 
     this.searchinp = module;

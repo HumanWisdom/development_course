@@ -56,6 +56,7 @@ export class MicroLearningInnerPage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
+      this.isFromEnd = false;
       this.contentId = params.get('id');
       if (!this.contentId) {
         this.contentId = localStorage.getItem("m_learningId");
@@ -72,11 +73,13 @@ export class MicroLearningInnerPage implements OnInit {
   }
 
   private checkIfComingFromEnd() {
-    const fromLocalStorage = localStorage.getItem('fromMicroLearningEnd') === 'true';
+    const fromLocalStorage = localStorage.getItem('fromMicroLearningEnd') == this.contentId;
     const fromQueryParam = this.route.snapshot.queryParamMap.get('isEnd') === 'true';
     if (fromLocalStorage || fromQueryParam) {
       this.isFromEnd = true;
       localStorage.removeItem('fromMicroLearningEnd');
+    } else {
+      this.isFromEnd = false;
     }
   }
 
