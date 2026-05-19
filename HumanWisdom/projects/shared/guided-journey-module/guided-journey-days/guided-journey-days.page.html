@@ -79,9 +79,12 @@
                   </div>
                   <div class="card_type1_lock"
                     *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
-                    <img
-                      [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                      alt="">
+                    <div [ngClass]="isAdults ? '' : 'status-icon lock-icon'">
+                      <img
+                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                        [class.lock-icon-img]="!isAdults"
+                        alt="">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,9 +111,12 @@
                     </div>
                     <div class="lock_status"
                       *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
-                      <img
-                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                        alt="">
+                      <div [ngClass]="isAdults ? '' : 'status-icon lock-icon'">
+                        <img
+                          [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                          [class.lock-icon-img]="!isAdults"
+                          alt="">
+                      </div>
                     </div>
                   </div>
                 </div>
