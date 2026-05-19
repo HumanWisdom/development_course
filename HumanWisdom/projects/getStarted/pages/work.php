@@ -164,6 +164,8 @@
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_landing.webp" class="img-responsive w100p display_m_none h-800" alt="Boost workplace wellbeing, performance and productivity">
 
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_mobile.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity">
+
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_widescreen.webp" class="img-responsive w100p display_m_none wide-screen-only" loading="lazy" alt="Boost workplace wellbeing, performance and productivity">
                 </div>
               </div>
         

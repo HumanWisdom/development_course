@@ -50,7 +50,7 @@ a {
   color: #803358 !important;
 }
 
-p:hover {
+body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare) p:hover {
   color: green;
   text-decoration: underline;
 }
@@ -2065,7 +2065,7 @@ div.scroll-container img {
 }
 
 .section-headernew.a,
-h6:hover {
+body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare) h6:hover {
   color: #cb6171;
   text-decoration: underline;
 }
@@ -4346,11 +4346,11 @@ background: rgba(255, 244, 230, 1) !important;
   }
 
   .owl_blog>.owl-carousel>.owl-stage-outer {
-    margin-left: 10% !important;
+    margin-left: 0% !important;
   }
-
-  .owl_coach>.owl-carousel>.owl-stage-outer {
-    margin-left: 10% !important;
+    .owl_blog>.owl-carousel>.owl-stage-outer>.owl-stage {
+        justify-content: center;
+        left:0px !important;
   }
 
   .p35 {

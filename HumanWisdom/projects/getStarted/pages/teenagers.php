@@ -43,12 +43,22 @@
 
         <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt3rem">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp"
-              class="img-responsive w100p display_m_none h-800" loading="lazy" alt="performance">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenagers_landing.webp"
+         class="img-responsive w100p display_m_none h-800" 
+         loading="lazy" 
+         alt="HappierMe for Teenagers">
 
+    <!-- Mobile -->
+    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp"
+         class="img-responsive w100p display_d_none" 
+         loading="lazy" 
+         alt="HappierMe for Teenagers">
 
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_mobile.webp"
-              class="img-responsive w100p display_d_none" loading="lazy" alt="performance">
+    <!-- Wide Screen (Extra Large) -->
+    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teen_widescreen.webp"
+         class="img-responsive w100p display_m_none wide-screen-only"
+         loading="lazy"
+         alt="HappierMe for Teenagers">
           </div>
         </div>
 
@@ -997,111 +1007,92 @@
     </section>
     <!-- /inspiring -->
     <!-- subscription -->
-    <section id="div_subscription">
-      <div class="row center_flex div_subscription">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 w-980px">
+<!-- subscription -->
+<section id="div_subscription">
+  <div class="row center_flex div_subscription">
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0 w-980px">
 
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                40% off HappierMe Premium
-              </h2>
+      <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 text-center">
+          <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+            40% off HappierMe Premium
+          </h2>
+          <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
+            Start your free trial today!
+          </h6>
+        </div>
+      </div>
 
-              <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
-                Start your free trial today!
-              </h6>
+      <!-- Pricing Cards -->
+      <div class="row center_flex mtb40px justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-300px">
+
+          <!-- Yearly -->
+          <button class="btn_subscription btn-subscription-border w-100">
+            <div class="row center_flex btn_subscription_trial btn-subscription-color">
+              <div class="col-12">
+                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
+                  14-day free trial
+                </h6>
+              </div>
             </div>
-          </div>
 
-          <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 p0">
-
-              <button class="btn_subscription  btn-subscription-border">
-                <div class="row center_flex btn_subscription_trial  btn-subscription-color">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                      14-day free trial
-                    </h6>
-                  </div>
-                </div>
-
-                <div class="row center_flex">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6  p0 tleft">
-                    <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
-                      Yearly
-                    </h5>
-
-                    <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
-                      <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
-
-                      <span class="" id="annualPricingModelHeading"></span>
-                    </h6>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
-                  </div>
-                </div>
-              </button>
-
-              <button class="btn_subscription btn-subscription-border mt20pxi">
-                <div class="row center_flex">
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tleft">
-                    <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">
-                      Monthly
-                    </h5>
-
-                    <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                      7-day free trial
-                    </h6>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 p0 tright">
-                    <!-- <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                        INR 700/mo.
-                      </h4> -->
-
-                    <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="monthlyPricingModelHeading"></h4>
-                  </div>
-                </div>
-              </button>
-
+            <div class="row center_flex">
+              <div class="col-6 p0 tleft">
+                <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">Yearly</h5>
+                <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
+                  <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
+                  <span id="annualPricingModelHeading"></span>
+                </h6>
+              </div>
+              <div class="col-6 p0 tright">
+                <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
+              </div>
             </div>
-          </div>
+          </button>
 
-          <div class="row center_flex">
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0">
-              <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
-                After your free trial, the yearly subscription is INR 5,999 and automatically
-                renews each year until cancelled.
-                <!-- <span class="">
-                    <a class="fc_000000">
-                      Terms
-                    </a>
-                  </span>
-                  |
-                  <span class="">
-                    <a class="fc_000000">
-                      Cancel anytime
-                    </a>
-                  </span> -->
-              </h6>
+          <!-- Monthly -->
+          <button class="btn_subscription btn-subscription-border mt20pxi w-100">
+            <div class="row center_flex">
+              <div class="col-6 p0 tleft">
+                <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">Monthly</h5>
+                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
+                  7-day free trial
+                </h6>
+              </div>
+              <div class="col-6 p0 tright">
+                <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="monthlyPricingModelHeading"></h4>
+              </div>
             </div>
-          </div>
-
-          <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
-              <a id="teenagersPricing">
-                <button type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff">
-                  Start your free trial
-                </button>
-              </a>
-            </div>
-          </div>
+          </button>
 
         </div>
       </div>
-    </section>
+
+      <!-- Note -->
+      <div class="row center_flex">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0 text-center">
+          <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
+            After your free trial, the yearly subscription is INR 5,999 and automatically 
+            renews each year until cancelled.
+          </h6>
+        </div>
+      </div>
+
+      <!-- Start Trial Button -->
+      <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
+        <div class=" text-center">
+          <a id="teenagersPricing">
+            <button type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" style="width:380px">
+              Start your free trial
+            </button>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
     <!-- /subscription -->
 
 
