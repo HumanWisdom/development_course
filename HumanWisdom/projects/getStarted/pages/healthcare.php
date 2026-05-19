@@ -141,7 +141,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="page-healthcare">
   <?php
       // Simulate fetching country data from a database or external API
       $countries = 
@@ -160,6 +160,8 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_landing.webp" class="img-responsive w100p display_m_none h-800" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
 
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_mobile.webp" class="img-responsive w100p display_d_none" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
+
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/health_widescreen.webp" class="img-responsive w100p display_m_none wide-screen-only" loading="lazy" alt="Support your staff to be happier at work, and patients to lead healthier lives.">
             </div>
           </div>
 
@@ -1604,14 +1606,15 @@
                     View all blogs
                   </h4>
                 </a>
-                <div class="hc-slider-nav-btns">
-                  <button class="hc-arrow" id="hc-blog-prev" aria-label="Previous" disabled>
-                    <i class="bi bi-chevron-left"></i>
-                  </button>
-                  <button class="hc-arrow" id="hc-blog-next" aria-label="Next">
-                    <i class="bi bi-chevron-right"></i>
-                  </button>
-                </div>
+             <!-- Navigation buttons - Hidden ONLY on extra wide screens -->
+<div class="hc-slider-nav-btns d-xxl-none">
+  <button class="hc-arrow" id="hc-blog-prev" aria-label="Previous" disabled>
+    <i class="bi bi-chevron-left"></i>
+  </button>
+  <button class="hc-arrow" id="hc-blog-next" aria-label="Next">
+    <i class="bi bi-chevron-right"></i>
+  </button>
+</div>
               </div>
             </div>
 

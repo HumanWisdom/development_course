@@ -384,6 +384,46 @@ body.page-teenagers .teen-video-wrap .yt-embed {
   position: relative;
 }
 
+/* Organisation hero: widescreen banners (≥1400px), fixed height to avoid stretch */
+body.page-work .healthcare-hero-shell .wide-screen-only,
+body.page-education .healthcare-hero-shell .wide-screen-only,
+body.page-teenagers .healthcare-hero-shell .wide-screen-only,
+body.page-healthcare .healthcare-hero-shell .wide-screen-only {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  body.page-work .healthcare-hero-shell .wide-screen-only,
+  body.page-education .healthcare-hero-shell .wide-screen-only,
+  body.page-teenagers .healthcare-hero-shell .wide-screen-only,
+  body.page-healthcare .healthcare-hero-shell .wide-screen-only {
+    display: block !important;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  body.page-work .healthcare-hero-shell .wide-screen-only,
+  body.page-education .healthcare-hero-shell .wide-screen-only {
+    height: 400px !important;
+    max-height: 400px;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .wide-screen-only,
+  body.page-healthcare .healthcare-hero-shell .wide-screen-only {
+    height: 500px !important;
+    max-height: 500px;
+  }
+
+  body.page-work .healthcare-hero-shell .h-800,
+  body.page-education .healthcare-hero-shell .h-800,
+  body.page-teenagers .healthcare-hero-shell .h-800,
+  body.page-healthcare .healthcare-hero-shell .h-800 {
+    display: none !important;
+  }
+
+}
+
 .div_price.w-980px {
   justify-content: center;
   width: 980px !important;
@@ -399,26 +439,18 @@ body.page-teenagers .teen-video-wrap .yt-embed {
   gap: 10px;
 }
 
-.email-w980px .input_parent {
-  width: 100% !important;
-}
-
-.email-w980px .input_parent > [class^="col-"] {
-  width: calc(50% - 10px) !important;
-  max-width: calc(50% - 10px) !important;
-  flex: 0 0 calc(50% - 10px) !important;
-}
-
 @media screen and (max-width: 1599px) {
   body.page-work .mt3rem,
   body.page-education .mt3rem,
-  body.page-teenagers .mt3rem {
+  body.page-teenagers .mt3rem,
+  body.page-healthcare .mt3rem {
     margin-top: 0 !important;
   }
 
   body.page-work .h-800,
   body.page-education .h-800,
-  body.page-teenagers .h-800 {
+  body.page-teenagers .h-800,
+  body.page-healthcare .h-800 {
     height: auto !important;
   }
 

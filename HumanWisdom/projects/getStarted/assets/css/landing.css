@@ -86,8 +86,11 @@
   color:#834B66;
 }  */
 
-.a,
-h5:hover {
+.a {
+    color: #834B66;
+}
+
+body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare) h5:hover {
     color: #834B66;
 }
 

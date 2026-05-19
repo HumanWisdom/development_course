@@ -13,6 +13,9 @@ body.page-teenagers main#main .section-header h2.fc_183C79 {
     text-align: center;
     padding-bottom: 60px;
 }
+.w-300px {
+    width: 300px !important;
+}
 
 /* Topics bubbles + Did you know — full-width band, teal at 10% opacity */
 body.page-teenagers .teen-topics-bubbles-band,
