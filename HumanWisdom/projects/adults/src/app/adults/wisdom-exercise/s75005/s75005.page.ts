@@ -736,10 +736,18 @@ closeHintModal() {
 }
 
   goBack() {
+    // Check if we came from a guided journey days page
+    const navigatedFrom = localStorage.getItem('NaviagtedFrom');
+    if (navigatedFrom) {
+      localStorage.removeItem('NaviagtedFrom');
+      this.router.navigateByUrl(navigatedFrom);
+      return;
+    }
+
     // Check if we came from micro-learning end screen
     const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
     const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
-    
+
     if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
       // Clear the flags and navigate back to micro-learning end screen
       localStorage.removeItem('fromMicroLearningEnd');
