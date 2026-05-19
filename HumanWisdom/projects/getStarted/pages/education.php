@@ -173,10 +173,10 @@
               </div>
     
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mtb20px">
-                <h1 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000">
+                <h5 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000">
                   <!-- Give students all the support they need to help reduce stress and anxiety, manage their own mental health, be happier and learn the soft skills they need to succeed at work. -->
                   Boost student well-being, learning, and emotional intelligence with HappierMe. Give students all the support they need to help reduce stress and anxiety, manage their own mental health, be happier and learn the soft skills they need to succeed at work.
-                </h1>
+                </h5>
               </div>
     
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">

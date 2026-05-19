@@ -5130,6 +5130,13 @@ input[type="password" i]::-ms-reveal {
             width: 170px;
         }
 
+        @media (max-width: 575px) {
+              .scrolling-word {
+                width: 75px;
+              }
+             
+        }
+
         .hero-container:hover .scrolling-word {
             filter: drop-shadow(0 20px 40px rgba(37, 99, 235, 0.2));
             transition: filter 1.5s ease;
