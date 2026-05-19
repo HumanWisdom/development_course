@@ -42,7 +42,7 @@ export class TnPartnershipAppComponent implements OnInit {
               
              }
              else{
-              this.router.navigate([url]);
+              this.router.navigateByUrl(url);
             }
   }
 

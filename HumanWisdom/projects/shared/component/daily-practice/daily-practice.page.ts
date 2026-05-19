@@ -276,7 +276,7 @@ export class DailyPracticePage implements OnInit {
   routeToDashboard() {
     var url = this.navigationService.navigateToBackLink();
     if (url != null) {
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     } else {
       this.location.back();
     }
