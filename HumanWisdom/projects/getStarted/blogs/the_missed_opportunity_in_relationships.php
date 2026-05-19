@@ -19,14 +19,14 @@
     <?php Template::header(); ?>
     <!-- /header -->
 
-    <main id="main" class="hptblog  120px">
+    <main id="main" class="hptblog120px">
 
       <!-- aspects -->
       <section class="rpt_01">
         <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             
-            <div class="row mt40px rmb60px">
+            <div class="row mt40px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
                   The missed opportunity in relationships

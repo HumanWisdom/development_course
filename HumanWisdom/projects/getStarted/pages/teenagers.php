@@ -200,7 +200,7 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mt0px mb20px fs_24px fw_600 lh_120p fc_183C79">
               Get all the support you need when life gets tough
             </h2>
           </div>
@@ -209,13 +209,13 @@
 
       <div class="teen-topics-bubbles-band" data-aos="fade-up" data-aos-delay="200">
         <div class="row center_flex">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-980px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 w-980px center_flex">
 
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teenegers_bubbles.webp"
-            class="img-responsive w100p display_m_none" alt="modules" loading="lazy">
+            class="img-responsive w100p display_m_none w-980px" style="position: relative; margin-top:-11%; margin-bottom:-11%;" alt="modules" loading="lazy">
 
           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/bubble_mobile.webp"
-            class="img-responsive w100p display_d_none" loading="lazy" alt="performance and productivity">
+            class="img-responsive w100p display_d_none" loading="lazy" style="position: relative; margin-top:-11%; margin-bottom:-11%;" alt="performance and productivity">
 
         </div>
         </div>
@@ -225,7 +225,7 @@
 
 
     <!-- description -->
-    <section>
+    <section class="mt40px">
       <div class="row center_flex">
         <div class="p0 flex_block w-1245px gap_40px gap_m24px">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pl0px" data-aos="fade-up" data-aos-delay="100">
