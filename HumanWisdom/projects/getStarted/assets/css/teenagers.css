@@ -41,6 +41,13 @@ body.page-teenagers .div_dykt {
   padding: 50px 20px;
 }
 
+.dflex {
+  display: flex !important;
+  justify-content: start;   
+  gap: 6px;               
+  flex-wrap: wrap;   
+}
+
 @media (max-width: 767px) {
   .hpt120px h2.fs_24px,
   .hpt120px h2.ta_lct,

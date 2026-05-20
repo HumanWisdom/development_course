@@ -142,7 +142,7 @@
 
             <div class="row mt20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                <h3 class="mtb0px fs_12px fw_400 lh_140p fc_000000 dinline_block">
+                <h3 class="mtb0px fs_12px fw_400 lh_140p fc_000000 dflex">
                   Available for
                   <span class="fw_600">
                     Teenagers
@@ -152,12 +152,12 @@
                   </span>
                   on
                   <a href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567 "><img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" class="mlr5px"
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_appstore.svg" 
                       loading="lazy" alt="appstore">
                   </a>and
                   <a href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US  "><img
                       src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/wh_playstore.svg"
-                      class="mlr5px" loading="lazy" alt="playstore"></a>
+                      loading="lazy" alt="playstore"></a>
                 </h3>
               </div>
             </div>

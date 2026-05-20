@@ -5092,22 +5092,25 @@ input[type="password" i]::-ms-reveal {
   font-display: swap; /* <-- key addition */
 }
 @keyframes verticalScroll {
-  0%   { transform: translateY(0); opacity: 1;}          /* Live enters */
-  15%  { opacity: 1;}          /* Live stays */
-   20%  {  opacity: 0;}          /* Live leaves */
-  20%  { transform: translateY(-100%); opacity: 1;}      /* Work enters */
-  35%  {  opacity: 1;}      /* Work stays */
-   40%  {  opacity: 0;}      /* Work leaves */
-  40%  { transform: translateY(-200%); opacity: 1;}      /* Feel enters */
-  55%  { opacity: 1;}      /* Feel stays */
-  60%  { opacity: 0;}      /* Feel leaves */
-  60%  { transform: translateY(-300%); opacity: 1;}      /* Love enters */
-  75%  { opacity: 1;}      /* Love stays */
-   80%  { opacity: 0;}      /* Love leaves */
-  80%  { transform: translateY(-400%); opacity: 1;}      /* Lead enters */
-  95%  {  opacity: 1;}      /* Lead stays */
-  100%  {  opacity: 0;}      /* Lead leaves */
-  100% { transform: translateY(-500%); opacity: 1;}      /* Live (duplicate) enters */
+  0%   { transform: translateY(0);      opacity: 1; }
+  18%  { transform: translateY(0);      opacity: 1; }
+  19%  {   opacity: 0; }
+
+  20%  { transform: translateY(-100%);  opacity: 1; }
+  38%  { transform: translateY(-100%);  opacity: 1; }
+   39%  {   opacity: 0; }
+
+  40%  { transform: translateY(-200%);  opacity: 1; }
+  58%  { transform: translateY(-200%);  opacity: 1; }
+    59%  {   opacity: 0; }
+
+  60%  { transform: translateY(-300%);  opacity: 1; }
+  78%  { transform: translateY(-300%);  opacity: 1; }
+    79%  {   opacity: 0; }
+  80%  { transform: translateY(-400%);  opacity: 1; }
+  98%  { transform: translateY(-400%);  opacity: 1; }
+    99%  {   opacity: 0; }
+  100% { transform: translateY(-500%);  opacity: 1; }
 }
       .scrolling-words {
             display: inline-block;
@@ -5120,7 +5123,7 @@ input[type="password" i]::-ms-reveal {
 
         .scrolling-word {
             display: flex;
-            animation: verticalScroll 10s infinite ease-out;
+            animation: verticalScroll 24s infinite ease-out;
             font-weight: 600;
             background: #ED7D6F;
             -webkit-background-clip: text;
