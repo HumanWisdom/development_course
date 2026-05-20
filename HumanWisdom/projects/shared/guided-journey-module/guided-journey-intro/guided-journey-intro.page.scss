@@ -1,15 +1,16 @@
 .sc_01 {
-  position: relative; /* For absolute positioning of footer */
-  min-height: 100vh !important;
-  padding: 110px 20px 120px 20px;
+    position: relative;
+    /* For absolute positioning of footer */
+    min-height: 100vh !important;
+    padding: 110px 20px 120px 20px;
 }
 
 .mc_01_v3_ext {
-  padding-top: 0px !important;
+    padding-top: 0px !important;
 }
 
 .bg_stake {
-  background: #254170 !important;
+    background: #254170 !important;
 }
 
 .bg_FFF7E6 {
@@ -17,9 +18,9 @@
 }
 
 .nobg {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .center_flex_left {
@@ -29,23 +30,23 @@
 }
 
 .btn_return {
-  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
-  color: #ffffff;
-  border: none;
-  border-radius: 25px;
-  padding: 13px 28px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 13px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-  &:active {
-    transform: scale(0.97);
-  }
+    &:active {
+        transform: scale(0.97);
+    }
 }
 
 .teenagers-intro {
@@ -58,16 +59,20 @@
         .day_circle {
             background: #112d5d;
             border-color: rgba(255, 255, 255, 0.1);
+
             span {
                 color: #ffffff;
             }
+
             &.active {
                 background: #EE9596;
                 border-color: #EE9596;
+
                 span {
                     color: #ffffff;
                 }
             }
+
             &.intro_circle {
                 background: #0c2b5f;
             }
@@ -82,9 +87,10 @@
     right: 0;
     z-index: 100;
     pointer-events: none;
-    
+
     .row {
-        margin: 0; /* Override Bootstrap row margins to prevent overflow */
+        margin: 0;
+        /* Override Bootstrap row margins to prevent overflow */
     }
 }
 
@@ -93,13 +99,13 @@
     padding: 0 !important;
 
     .odiv {
-    display: flex;
-    overflow-x: auto;
-    padding: 15px !important;
-    gap: 10px;
-    box-shadow: 0 -2px 2px #00000010;
-    margin-top: 15px;
-        
+        display: flex;
+        overflow-x: auto;
+        padding: 15px !important;
+        gap: 10px;
+        box-shadow: 0 -2px 2px #00000010;
+        margin-top: 15px;
+
         &::-webkit-scrollbar {
             display: none;
         }
@@ -117,7 +123,7 @@
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
         span {
             font-size: 13px;
@@ -129,7 +135,7 @@
             background: #FFD889;
             border-color: #FFD889;
         }
-        
+
         &.intro_circle {
             background: #F8F8F8;
         }
@@ -171,6 +177,7 @@
 .bg_stake {
     .dot {
         background: rgba(255, 255, 255, 0.3) !important;
+
         &.active {
             background: rgba(255, 255, 255, 0.8) !important;
         }
@@ -205,6 +212,23 @@
 .mb60px {
     margin-bottom: 60px;
 }
+
 .fc_D7586B {
     color: #D7586B !important;
+}
+
+.slide-out-left {
+    animation: fadeOutGentle 0.3s ease-out forwards;
+}
+
+@keyframes fadeOutGentle {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
 }
