@@ -96,7 +96,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/guided_journey.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/microlearn_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/guided_journey.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_journey_without_bg.svg' ),
       url:'guided-journeys' 
     },
     { 
