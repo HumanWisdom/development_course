@@ -1083,7 +1083,7 @@
       <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
         <div class=" text-center">
           <a id="teenagersPricing">
-            <button type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff" style="width:380px">
+            <button type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_teen_sub">
               Start your free trial
             </button>
           </a>
