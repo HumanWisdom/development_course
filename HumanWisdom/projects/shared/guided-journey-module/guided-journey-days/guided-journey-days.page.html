@@ -44,7 +44,9 @@
           <div class="x_content p0 guided_journey_days_wrapper" [style.transform]="getTransform()" [class.is-animating]="!isDragging && isAnimating">
             
             <!-- Intro Slide -->
-            <div class="guided_journey_day_slide">
+            <div class="guided_journey_day_slide"
+                 [class.active-slide]="currentDay === 0"
+                 [class.inactive-slide]="currentDay !== 0 && !isAnimating && !isDragging">
               <ng-container *ngIf="journeyDetails">
                 <!-- Breadcrumb -->
                 <div class="row mb20px">
@@ -85,7 +87,9 @@
               </ng-container>
             </div>
 
-            <div class="guided_journey_day_slide" *ngFor="let dayNum of getDaysArray()">
+            <div class="guided_journey_day_slide" *ngFor="let dayNum of getDaysArray()"
+                 [class.active-slide]="currentDay === dayNum"
+                 [class.inactive-slide]="currentDay !== dayNum && !isAnimating && !isDragging">
 
               <!-- Day Header -->
               <div class="row mb20px">
@@ -103,6 +107,9 @@
               <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1" (click)="onExerciseClick(exercise)">
                 <div class="card_type1_img_container">
                   <img [src]="exercise.imgPath.split(',')[0]" alt="">
+                  <div class="icon_overlay" *ngIf="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : null)">
+                    <img [src]="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : '')" alt="" class="overlay_icon">
+                  </div>
                 </div>
                 <div class="card_type1_content">
                   <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
