@@ -342,7 +342,7 @@
     color: #ffffff;
     border: none;
     border-radius: 25px;
-    padding: 13px 28px;
+    padding: 13px 15px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -650,8 +650,8 @@
 .card_type1_title_sec8,
 .exercise_title_sec8 {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 12px;
     line-height: 130%;
     letter-spacing: 0.5px;
     color: rgba(0, 0, 0, 1);
@@ -661,13 +661,12 @@
 
 .card_type1_session_label {
     font-family: 'Poppins', sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.5);
     margin-top: 4px;
     margin-bottom: 0px;
     line-height: 1.2;
-    text-transform: uppercase;
 }
 
 .card_type1_session_name {
@@ -727,10 +726,12 @@
 /* Swipe Slider Styles */
 .guided_journey_days_wrapper {
     display: flex;
+    gap: 20px;
     position: relative;
     width: 100%;
     will-change: transform;
     transition: none;
+
     &.is-animating {
         transition: transform 0.4s ease-out;
     }
@@ -741,4 +742,28 @@
     width: 100%;
     box-sizing: border-box;
     touch-action: pan-y !important;
+}
+
+.slide-out-right {
+    animation: fadeOutGentleRight 0.3s ease-out forwards;
+}
+
+@keyframes fadeOutGentleRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+}
+
+.fc_E58D82 {
+    color: #E58D82 !important;
+}
+
+.fc_D7586B {
+    color: #D7586B !important;
 }
