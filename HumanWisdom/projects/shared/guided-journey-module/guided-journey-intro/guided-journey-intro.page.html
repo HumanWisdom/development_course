@@ -29,6 +29,7 @@
 
 <!-- page content -->
 <div class="right_col mc_01_v3 mc_01_v3_ext" [ngClass]="{'adults-scroll': isAdults}"
+  [class.slide-out-left]="isNavigating"
   (touchstart)="handleTouchStart($event)" (touchend)="handleTouchEnd($event)" (mousedown)="handleTouchStart($event)"
   (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
   <div class="cw100p">
