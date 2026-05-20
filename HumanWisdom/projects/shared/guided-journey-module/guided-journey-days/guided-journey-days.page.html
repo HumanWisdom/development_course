@@ -44,7 +44,9 @@
           <div class="x_content p0 guided_journey_days_wrapper" [style.transform]="getTransform()" [class.is-animating]="!isDragging && isAnimating">
             
             <!-- Intro Slide -->
-            <div class="guided_journey_day_slide">
+            <div class="guided_journey_day_slide"
+                 [class.active-slide]="currentDay === 0"
+                 [class.inactive-slide]="currentDay !== 0 && !isAnimating && !isDragging">
               <ng-container *ngIf="journeyDetails">
                 <!-- Breadcrumb -->
                 <div class="row mb20px">
@@ -85,7 +87,9 @@
               </ng-container>
             </div>
 
-            <div class="guided_journey_day_slide" *ngFor="let dayNum of getDaysArray()">
+            <div class="guided_journey_day_slide" *ngFor="let dayNum of getDaysArray()"
+                 [class.active-slide]="currentDay === dayNum"
+                 [class.inactive-slide]="currentDay !== dayNum && !isAnimating && !isDragging">
 
               <!-- Day Header -->
               <div class="row mb20px">

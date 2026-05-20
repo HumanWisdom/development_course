@@ -731,6 +731,7 @@
     width: 100%;
     will-change: transform;
     transition: none;
+    align-items: flex-start;
 
     &.is-animating {
         transition: transform 0.4s ease-out;
@@ -742,6 +743,15 @@
     width: 100%;
     box-sizing: border-box;
     touch-action: pan-y !important;
+    opacity: 1;
+    transition: opacity 0.3s;
+
+    &.inactive-slide {
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 .slide-out-right {
