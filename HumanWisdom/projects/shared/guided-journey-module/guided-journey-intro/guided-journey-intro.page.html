@@ -29,9 +29,8 @@
 
 <!-- page content -->
 <div class="right_col mc_01_v3 mc_01_v3_ext" [ngClass]="{'adults-scroll': isAdults}"
-  [class.slide-out-left]="isNavigating"
-  (touchstart)="handleTouchStart($event)" (touchend)="handleTouchEnd($event)" (mousedown)="handleTouchStart($event)"
-  (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
+  [class.slide-out-left]="isNavigating" (touchstart)="handleTouchStart($event)" (touchend)="handleTouchEnd($event)"
+  (mousedown)="handleTouchStart($event)" (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
@@ -51,7 +50,7 @@
               <div class="col-md-12 p0">
                 <a (click)="goToListing()" class="center_flex_left">
                   <i class="fa fa-angle-left mr5px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'"></i>
-                  <span class="fs_14px fw_500" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'">Guided journeys</span>
+                  <span class="fs_15px fw_400" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'">Guided journeys</span>
                 </a>
               </div>
             </div>
@@ -109,7 +108,9 @@
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer_days col_cw"
           [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
           <div class="odiv">
-            <div class="day_circle intro_circle" [ngClass]="{'active': currentDay === 0, 'visited': isVisited(0) && currentDay !== 0}" (click)="navigateToDay(0)">
+            <div class="day_circle intro_circle"
+              [ngClass]="{'active': currentDay === 0, 'visited': isVisited(0) && currentDay !== 0}"
+              (click)="navigateToDay(0)">
               <span>Intro</span>
             </div>
             <div *ngFor="let dayNum of getDaysArray()" class="day_circle"
