@@ -31,7 +31,10 @@ function minifyJS() {
 }
 
 function minifyVendorCss() {
-    return gulp.src('assets/vendor/**/*.css', { base: '.' })
+    return gulp.src([
+        'assets/vendor/**/*.css',
+        '!assets/vendor/bootstrap-icons/bootstrap-icons.css',
+    ], { base: '.' })
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(gulp.dest('.'));
 }

@@ -45,17 +45,20 @@
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>"></noscript>
 
-<!-- Template Main CSS File -->
-<link href="<?= hw_asset_url('../assets/css/landing.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/css/main.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/css/home.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/css/index.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/css/responsive.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/font/font_colour.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/font/font_size.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/font/font_weight.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/font/line_height.css'); ?>" rel="stylesheet">
-<link href="<?= hw_asset_url('../assets/css/style_hb.css'); ?>" rel="stylesheet"> 
+<!-- LCP-critical CSS inlined; full stylesheets load async (non-render-blocking) -->
+<?php include __DIR__ . '/critical_lcp_style.php'; ?>
+<?php
+hw_defer_stylesheet('../assets/css/landing.css');
+hw_defer_stylesheet('../assets/css/main.css');
+hw_defer_stylesheet('../assets/css/home.css');
+hw_defer_stylesheet('../assets/css/index.css');
+hw_defer_stylesheet('../assets/css/responsive.css');
+hw_defer_stylesheet('../assets/font/font_colour.css');
+hw_defer_stylesheet('../assets/font/font_size.css');
+hw_defer_stylesheet('../assets/font/font_weight.css');
+hw_defer_stylesheet('../assets/font/line_height.css');
+hw_defer_stylesheet('../assets/css/style_hb.css');
+?> 
 
 
 
