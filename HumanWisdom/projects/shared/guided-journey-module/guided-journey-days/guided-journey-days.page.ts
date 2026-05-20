@@ -24,8 +24,15 @@ export class GuidedJourneyDaysPage implements OnInit {
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
+  
+  isAnimating = false;
   private touchStartX = 0;
   private touchStartY = 0;
+  private touchCurrentX = 0;
+  isDragging = false;
+  dragOffset = 0;
+  private containerWidth = 0;
+  private isHorizontalSwipe = false;
   enableAlert: boolean = false;
   content: string = '';
   alertTitle: string = '';
@@ -62,47 +69,75 @@ export class GuidedJourneyDaysPage implements OnInit {
     }
   }
 
-  isDragging = false;
-
   handleTouchStart(event: any) {
+    const target = event.target as HTMLElement;
+    // Don't drag when touching buttons, links, etc.
+    if (target.closest('a') || target.closest('button')) {
+      this.isDragging = false;
+      return;
+    }
+
+    // Don't start drag when touching journal textarea or any input
+    if (target.closest('textarea') || target.closest('input') || target.closest('[contenteditable="true"]')) {
+      this.isDragging = false;
+      return;
+    }
+
+    if (this.isAnimating) return;
     this.touchStartX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
     this.touchStartY = event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY;
+    this.touchCurrentX = this.touchStartX;
     this.isDragging = true;
+    this.dragOffset = 0;
+    this.isHorizontalSwipe = false;
+
+    const container = document.querySelector('.guided_journey_days_wrapper');
+    if (container) {
+      this.containerWidth = container.clientWidth;
+    }
+  }
+
+  handleTouchMove(event: any) {
+    const target = event.target as HTMLElement;
+    if (target.closest('textarea') || target.closest('input') || target.closest('[contenteditable="true"]')) {
+      return;
+    }
+    if (!this.isDragging || this.isAnimating) return;
+    this.touchCurrentX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
+    const deltaX = this.touchCurrentX - this.touchStartX;
+    const deltaY = (event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY) - this.touchStartY;
+
+    if (!this.isHorizontalSwipe) {
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+        this.isHorizontalSwipe = true;
+      } else if (Math.abs(deltaY) > 10) {
+        return;
+      }
+    }
+
+    if (this.isHorizontalSwipe) {
+      this.dragOffset = deltaX;
+      if (event.cancelable) event.preventDefault();
+    }
   }
 
   handleTouchEnd(event: any) {
     if (!this.isDragging) return;
-    this.isDragging = false;
-
-    // Use changedTouches for touch events, or clientX for mouse events
-    const touchEndX = event.type.startsWith('touch') ? event.changedTouches[0].clientX : event.clientX;
-    const touchEndY = event.type.startsWith('touch') ? event.changedTouches[0].clientY : event.clientY;
-    
-    // Only check if it's a mouse event and we don't have clientX (e.g. mouseleave)
-    if (!touchEndX && event.type !== 'touchend') return;
-
-    const deltaX = touchEndX - this.touchStartX;
-    const deltaY = touchEndY - this.touchStartY;
-
-    // Check if swipe is horizontal and significant
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-      if (deltaX < 0) {
-        // Swipe left -> Next day or End screen
-        if (this.currentDay < this.totalDays) {
-          this.navigateToDay(this.currentDay + 1);
-        } else if (this.currentDay === this.totalDays) {
-          // Last day — go to End screen
-          this.navigateToEnd();
-        }
-      } else {
-        // Swipe right -> Previous day / Intro
-        if (this.currentDay > 1) {
-          this.navigateToDay(this.currentDay - 1);
-        } else if (this.currentDay === 1) {
-          this.navigateToDay(0);
-        }
+    const threshold = this.containerWidth * 0.2;
+    if (this.isHorizontalSwipe) {
+      if (this.dragOffset < -threshold && this.currentDay < this.totalDays) {
+        this.navigateToDay(this.currentDay + 1);
+      } else if (this.dragOffset < -threshold && this.currentDay === this.totalDays) {
+        this.navigateToEnd();
+      } else if (this.dragOffset > threshold && this.currentDay > 1) {
+        this.navigateToDay(this.currentDay - 1);
+      } else if (this.dragOffset > threshold && this.currentDay === 1) {
+        this.navigateToDay(0);
       }
     }
+    this.isDragging = false;
+    this.dragOffset = 0;
+    this.isHorizontalSwipe = false;
   }
 
   navigateToEnd() {
@@ -139,13 +174,16 @@ export class GuidedJourneyDaysPage implements OnInit {
       if (res && Array.isArray(res)) {
         this.allDaysData = res.map(item => {
           const rawTitle = item.Title || item.Section;
-          const { mainTitle, subTitle } = this.parseTitle(rawTitle);
+          const { mainTitle, subTitle, sessionLabel, sessionName } = this.parseTitle(rawTitle);
           return {
             ...item,
             Type: item.type ? parseInt(item.type) : 1,
             Title: rawTitle,
             DisplayTitle: mainTitle,
             DisplaySubtitle: subTitle,
+            sessionLabel: sessionLabel,
+            sessionName: sessionName,
+            QuestionCnt: item.QuestionCnt,
             imgPath: this.getImgUrl(item.imgPath),
             OriginalResponse: item.Response || ''
           };
@@ -166,13 +204,70 @@ export class GuidedJourneyDaysPage implements OnInit {
       const parts = title.split('(');
       const mainTitle = parts[0].trim();
       let subTitle = parts[1].replace(')', '').trim();
-      // Replace comma with bullet point as seen in Figma
+      
+      let sessionLabel = '';
+      let sessionName = '';
+      
+      let separator = '';
       if (subTitle.includes(',')) {
-        subTitle = subTitle.replace(',', ' •');
+        separator = ',';
+      } else if (subTitle.includes('•')) {
+        separator = '•';
+      } else if (subTitle.includes('-')) {
+        separator = '-';
       }
-      return { mainTitle, subTitle };
+      
+      if (separator) {
+        const subParts = subTitle.split(separator);
+        sessionLabel = subParts[0].trim();
+        sessionName = subParts.slice(1).join(separator).trim();
+      } else {
+        sessionLabel = subTitle;
+      }
+      
+      if (sessionLabel) {
+        const upper = sessionLabel.toUpperCase();
+        if (upper.startsWith('SESSION#') || upper.startsWith('SESSION #')) {
+          const num = sessionLabel.replace(/SESSION\s*#\s*/i, '').trim();
+          sessionLabel = `Session #${num}`;
+        } else if (upper.startsWith('MEDITATION#') || upper.startsWith('MEDITATION #')) {
+          const num = sessionLabel.replace(/MEDITATION\s*#\s*/i, '').trim();
+          sessionLabel = `Meditation #${num}`;
+        } else {
+          sessionLabel = sessionLabel.charAt(0).toUpperCase() + sessionLabel.slice(1).toLowerCase();
+        }
+      }
+      
+      if (sessionName) {
+        sessionName = sessionName.charAt(0).toUpperCase() + sessionName.slice(1).toLowerCase();
+      }
+      
+      let displaySub = subTitle;
+      if (displaySub.includes(',')) {
+        displaySub = displaySub.replace(',', ' •');
+      }
+      return { mainTitle, subTitle: displaySub, sessionLabel, sessionName };
     }
-    return { mainTitle: title, subTitle: '' };
+    return { mainTitle: title, subTitle: '', sessionLabel: '', sessionName: '' };
+  }
+
+  isSection8(exercise: any): boolean {
+    if (!exercise) return false;
+    const secId = exercise.SectionID || exercise.SectionId || exercise.sectionID || exercise.sectionId;
+    const isSec8 = secId == 8 || secId == '8';
+    
+    const sectionStr = (exercise.Section || '').toUpperCase();
+    const isModuleSession = sectionStr.includes('MODULE') || sectionStr.includes('SESSION') || 
+                            (exercise.DisplaySubtitle && (exercise.DisplaySubtitle.toUpperCase().includes('SESSION') || exercise.DisplaySubtitle.toUpperCase().includes('MODULE')));
+                            
+    return isSec8 && isModuleSession && !!exercise.sessionLabel && !!exercise.sessionName;
+  }
+
+  isGuidedJournaling(exercise: any): boolean {
+    if (!exercise) return false;
+    const isGJ = (exercise.Section || '').toUpperCase() === 'GUIDED JOURNALING' || 
+                 (exercise.SectionID || exercise.SectionId || exercise.sectionID || exercise.sectionId) == 6;
+    return isGJ && !!exercise.QuestionCnt;
   }
 
 
@@ -295,12 +390,26 @@ export class GuidedJourneyDaysPage implements OnInit {
     return dayExercises.every(ex => ex.isRead === '1');
   }
 
+  getExercisesForDay(day: number) {
+    return this.allDaysData.filter(item => {
+      const dayNum = parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day);
+      return dayNum === day;
+    });
+  }
+
+  getTransform() {
+    const baseTranslate = -((this.currentDay - 1) * 100);
+    const dragTranslate = this.containerWidth ? (this.dragOffset / this.containerWidth) * 100 : 0;
+    return `translateX(${baseTranslate + dragTranslate}%)`;
+  }
+
   navigateToDay(day: number) {
     if (day === 0) {
       const prefix = SharedService.getprogramName();
       this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: this.journeyId } });
       return;
     }
+    this.isAnimating = true;
     this.currentDay = day;
     this.updateDisplayData();
     // Update URL without reloading
@@ -311,6 +420,9 @@ export class GuidedJourneyDaysPage implements OnInit {
       queryParamsHandling: 'merge'
     });
     this.scrollToActiveDay();
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 400);
   }
 
   onExerciseClick(exercise: any) {
