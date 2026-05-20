@@ -1072,8 +1072,13 @@
     padding: 0;
   }
 
+  .hptblog120px {
+    padding-top: 20px;
+  }
+
   .rpt_01 {
-    padding-top: 60px;
+    /* padding-top: 60px; */
+    padding: 60px 20px;
   }
 
   .rmb80px {

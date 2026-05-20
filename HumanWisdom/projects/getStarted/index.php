@@ -122,7 +122,7 @@ require_once('./includes/security_config.php');
                 </div>
                 <div class="frame-wrapper-2">
                   <div class="div-4">
-                    <div class="div-5">
+                    <div class="div-65">
                      <p class="p" style="text-align: left;line-height: 1.3;" id="hw-website-title">Think better.<br><span class="hero-title-accent">Live better.</span></p>
                      
                     </div>
