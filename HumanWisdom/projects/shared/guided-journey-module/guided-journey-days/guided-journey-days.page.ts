@@ -38,6 +38,7 @@ export class GuidedJourneyDaysPage implements OnInit {
   alertTitle: string = '';
   alertContent: string = '';
   alertOkText: string = 'Ok';
+  isNavigatingOut: boolean = false;
 
   constructor(
     private router: Router,
@@ -54,8 +55,10 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.journeyId = params['journeyId'];
       const dayParam = params['day'];
-      if (dayParam) {
+      if (dayParam !== undefined && dayParam !== null) {
         this.currentDay = parseInt(dayParam);
+      } else {
+        this.currentDay = 0;
       }
       if (this.journeyId) {
         this.getJourneyDetails();
@@ -129,10 +132,10 @@ export class GuidedJourneyDaysPage implements OnInit {
         this.navigateToDay(this.currentDay + 1);
       } else if (this.dragOffset < -threshold && this.currentDay === this.totalDays) {
         this.navigateToEnd();
-      } else if (this.dragOffset > threshold && this.currentDay > 1) {
+      } else if (this.dragOffset > threshold && this.currentDay > 0) {
         this.navigateToDay(this.currentDay - 1);
-      } else if (this.dragOffset > threshold && this.currentDay === 1) {
-        this.navigateToDay(0);
+      } else if (this.dragOffset > threshold && this.currentDay === 0) {
+        // Already at intro, maybe do nothing or go to listing
       }
     }
     this.isDragging = false;
@@ -147,6 +150,8 @@ export class GuidedJourneyDaysPage implements OnInit {
     });
   }
 
+  journeyDetails: any;
+
   getJourneyDetails() {
     let userid = SharedService.getUserId() || 100;
     let programId = SharedService.ProgramId;
@@ -157,6 +162,13 @@ export class GuidedJourneyDaysPage implements OnInit {
         
         if (journey) {
           this.journeyTitle = journey.Title || journey.title || journey.JourneyName || journey.Name;
+          this.journeyDetails = {
+            id: journey.GuidedJourneyID || journey.JourneyID || journey.journeyID || journey.Id || journey.id || journey.RowID,
+            title: journey.Title || journey.title || journey.JourneyName || journey.Name,
+            subtitle: journey.Subtitle || journey.subtitle,
+            description: journey.Description || journey.description,
+            imgUrl: this.getImgUrl(journey.ImageUrl || journey.ImgUrl || journey.imgUrl || journey.imageUrl),
+          };
           if (journey.Days) {
             this.totalDays = parseInt(journey.Days);
           }
@@ -377,6 +389,11 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.router.navigate([`/${prefix}/guided-journeys`]);
   }
 
+  goToListing() {
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/guided-journeys`]);
+  }
+
   isVisited(day: number) {
     if (day === 0) return true; 
 
@@ -398,17 +415,14 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   getTransform() {
-    const baseTranslate = -((this.currentDay - 1) * 100);
+    const baseTranslate = -(this.currentDay * 100);
     const dragTranslate = this.containerWidth ? (this.dragOffset / this.containerWidth) * 100 : 0;
-    return `translateX(${baseTranslate + dragTranslate}%)`;
+    const gapTranslate = -(this.currentDay * 20); // 20px gap for each day
+    return `translateX(calc(${baseTranslate + dragTranslate}% + ${gapTranslate}px))`;
   }
 
   navigateToDay(day: number) {
-    if (day === 0) {
-      const prefix = SharedService.getprogramName();
-      this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: this.journeyId } });
-      return;
-    }
+    if (day < 0) return;
     this.isAnimating = true;
     this.currentDay = day;
     this.updateDisplayData();

@@ -9,9 +9,9 @@ body.page-teenagers .healthcare-hero-shell .btn_tff1 {
 body.page-teenagers main#main .section-header h2.fc_183C79 {
   color: rgba(24, 60, 121, 1);
 }
-.section-header-teen{
-    text-align: center;
-    padding-bottom: 60px;
+.section-header-teen {
+  text-align: center;
+  padding-bottom: 60px;
 }
 .w-300px {
     width: 300px !important;
@@ -41,15 +41,159 @@ body.page-teenagers .div_dykt {
   padding: 50px 20px;
 }
 
+.dflex {
+  display: flex !important;
+  justify-content: start;   
+  gap: 6px;               
+  flex-wrap: wrap;   
+}
+
+/* Desktop — subscription “Start your free trial” (fixed width like staging; not width:100%) */
+@media (min-width: 768px) {
+  body.page-teenagers #teenagers-AnnualType {
+    display: block !important;
+    text-align: center !important;
+  }
+
+  body.page-teenagers #teenagers-AnnualType > div {
+    width: auto !important;
+    max-width: none !important;
+    display: block !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers #teenagers-AnnualType a#teenagersPricing {
+    display: inline-block !important;
+    width: auto !important;
+  }
+
+  body.page-teenagers #teenagers-AnnualType .btn_tff_teen_sub,
+  body.page-teenagers #teenagers-AnnualType .btn_tff {
+    width: 380px !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+}
+
 @media (max-width: 767px) {
-  .hpt120px h2.fs_24px,
-  .hpt120px h2.ta_lct,
-  .hpt120px h3.fs_15px {
-    font-size: 12px !important;
+  /* Hero — height from image only (no extra 580px min-height gap below overlay) */
+  body.page-teenagers section.hpt120px {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell {
+    min-height: 0 !important;
+    height: auto !important;
+    position: relative;
+  }
+
+  body.page-teenagers .healthcare-hero-shell > .row.prelative {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell > .row.prelative > [class*="col-"] {
+    min-height: 0 !important;
+    height: auto !important;
+    position: relative;
+    margin-top: 0 !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell img.display_d_none {
+    width: 100% !important;
+    height: 500px !important;
+    min-height: 500px !important;
+    display: block !important;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* Hero — Figma mobile: 20px side padding, 335px content, Poppins sizes */
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-bottom: 24px !important;
+    align-items: flex-start !important;
+    top: 70px !important;
+    bottom: auto !important;
+    height: auto !important;
+  }
+
+  /* Standard 60px gap: hero → first main section only */
+  body.page-teenagers section.hpt120px ~ main#main > section:first-child {
+    margin-top: 60px !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m > [class*="col-"] {
+    width: 100% !important;
+    max-width: 335px !important;
+    flex: 0 0 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m h1 {
+    font-size: 27px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: left !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m h2 {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    text-align: left !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m h3.fs_15px {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    text-align: left !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m .row.mtb5px {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* CTA — full width row, button centered (335px) */
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m .row.mt20px > .col-lg-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m a#teenagerCoverClick {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .btn_tff1 {
+    width: 335px !important;
+    max-width: calc(100% - 40px) !important;
+    height: 48px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
   }
 
   .hpt120px h3.fs_12px,
-  .hpt120px h3.dinline_block {
+  .hpt120px h3.dinline_block,
+  .hpt120px h3.dflex {
     font-size: 12px !important;
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -59,12 +203,22 @@ body.page-teenagers .div_dykt {
     justify-content: center !important;
   }
 
-  .btn_tff1 {
-    width: 335px !important;
-  }
-
   .mt12px {
     margin-top: 12px !important;
+  }
+
+  /* Topics bubbles — no band background or side padding on mobile */
+  body.page-teenagers .teen-topics-bubbles-band {
+    padding: 40px 0 !important;
+    background: none !important;
+    background-color: transparent !important;
+  }
+
+  body.page-teenagers .teen-topics-bubbles-band .w-980px.center_flex {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .div_dykt {
@@ -197,12 +351,179 @@ body.page-teenagers .div_dykt {
     order: 2 !important;
   }
 
-  section {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
+  /* "Feel calm…" copy — full width (index.css col-lg-5 = 41.67% below 1600px) */
+  body.page-teenagers .flex_block.w-1245px {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .section-header {
-    padding-bottom: 20px !important;
+  body.page-teenagers .flex_block.w-1245px > [class*="col-"],
+  body.page-teenagers .flex_block .col-lg-5.w-384px,
+  body.page-teenagers .flex_block .w-384px {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  body.page-teenagers .flex_block .ta_lc h2,
+  body.page-teenagers .flex_block .ta_lc h5 {
+    text-align: center !important;
+  }
+
+  /* Figma mobile spacing: 60px between sections, 18px title → content */
+  body.page-teenagers main#main > section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body.page-teenagers main#main > section + section {
+    margin-top: 60px !important;
+  }
+
+  body.page-teenagers main#main > section.mt40px {
+    margin-top: 60px !important;
+  }
+
+  body.page-teenagers .section-header-teen,
+  body.page-teenagers main#main .section-header,
+  body.page-teenagers main#main .section-header-teen {
+    padding-bottom: 18px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-teenagers main#main .section-header h2,
+  body.page-teenagers main#main .section-header-teen h2 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-teenagers main#main .flex_block h2.fc_183C79 {
+    margin-bottom: 18px !important;
+  }
+
+  body.page-teenagers main#main .flex_block h5 {
+    margin-top: 0 !important;
+  }
+
+  /* Video — narrower on mobile (335px content width, centered) */
+  body.page-teenagers .teen-video-wrap.col-lg-6.w-980px,
+  body.page-teenagers .teen-video-wrap {
+    width: 100% !important;
+    max-width: min(335px, calc(100% - 40px)) !important;
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.page-teenagers .teen-video-wrap .yt-embed {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 810 / 544.63;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Section titles — 18px on mobile (overrides global 27px h2 rule) */
+  body.page-teenagers section.hpt120px ~ main#main section h2.fc_183C79,
+  body.page-teenagers section.hpt120px ~ main#main .section-header h2,
+  body.page-teenagers section.hpt120px ~ main#main .flex_block h2.fc_183C79 {
+    font-size: 18px !important;
+    line-height: 140% !important;
+  }
+
+  /* Hide carousel left/right nav on mobile (testimonials + blog) */
+  body.page-teenagers .owl_blog .owl-controls,
+  body.page-teenagers .owl_testimonials .owl-controls,
+  body.page-teenagers .owl_blog .owl-nav,
+  body.page-teenagers .owl_testimonials .owl-nav,
+  body.page-teenagers .owl_blog .owl-theme .owl-nav,
+  body.page-teenagers .owl_testimonials .owl-theme .owl-nav,
+  body.page-teenagers .owl_blog .owl-nav-w,
+  body.page-teenagers .owl_testimonials .owl-nav-w {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* View all stories / View all blogs — center (override .sap margin-left + absolute) */
+  body.page-teenagers .sap {
+    position: static !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  body.page-teenagers .sap h4 {
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Subscription title — 18px (override About Us 27px on .div_subscription h2) */
+  body.page-teenagers main#main #div_subscription h2.fs_24px,
+  body.page-teenagers main#main #div_subscription h2.fc_834b66,
+  body.page-teenagers main#main #div_subscription .div_subscription h2 {
+    font-size: 18px !important;
+    line-height: 140% !important;
+  }
+
+  /* Subscription block — Figma mobile content width 335px */
+  body.page-teenagers #div_subscription .w-300px {
+    width: 335px !important;
+    max-width: calc(100% - 40px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers #div_subscription .btn_subscription {
+    width: 100% !important;
+    max-width: 335px !important;
+  }
+
+  /* Start your free trial — 335px, centered */
+  body.page-teenagers #teenagers-AnnualType {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers #teenagers-AnnualType > div {
+    width: 335px !important;
+    max-width: calc(100% - 40px) !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers #teenagers-AnnualType a#teenagersPricing {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  body.page-teenagers #teenagers-AnnualType .btn_tff_teen_sub,
+  body.page-teenagers #teenagers-AnnualType .btn_tff {
+    width: 335px !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    border-radius: 24px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
   }
 }

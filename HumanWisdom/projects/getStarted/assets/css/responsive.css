@@ -1072,8 +1072,13 @@
     padding: 0;
   }
 
+  .hptblog120px {
+    padding-top: 20px;
+  }
+
   .rpt_01 {
-    padding-top: 60px;
+    /* padding-top: 60px; */
+    padding: 60px 20px;
   }
 
   .rmb80px {
@@ -1880,23 +1885,6 @@
     padding: 0 !important;
     margin: 0 auto;
     display: block;
-  }
-
-  body.page-teenagers .teen-video-wrap {
-    max-width: calc(100% - 24px) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  body.page-teenagers .teen-video-wrap .yt-embed {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    aspect-ratio: 810 / 544.63;
-    padding: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
   }
 
   .div_subscriptionnew {

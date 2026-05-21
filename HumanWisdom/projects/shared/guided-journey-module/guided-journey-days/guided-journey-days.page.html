@@ -38,17 +38,58 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'"
         [class.teenagers-days]="!isAdults">
 
-        <div *ngIf="isLoading" class="row center_flex mt40px">
-          <div class="col-md-12 tcenter">
-            <app-spinner [show]="isLoading"></app-spinner>
-          </div>
-        </div>
-
-        <div *ngIf="!isLoading" class="x_panel p0 nobg" style="overflow-x: hidden; position: relative; width: 100%;"
+        <div class="x_panel p0 nobg" style="overflow-x: hidden; position: relative; width: 100%;"
              (touchstart)="handleTouchStart($event)" (touchmove)="handleTouchMove($event)" (touchend)="handleTouchEnd($event)"
              (mousedown)="handleTouchStart($event)" (mousemove)="handleTouchMove($event)" (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
           <div class="x_content p0 guided_journey_days_wrapper" [style.transform]="getTransform()" [class.is-animating]="!isDragging && isAnimating">
-            <div class="guided_journey_day_slide" *ngFor="let dayNum of getDaysArray()">
+            
+            <!-- Intro Slide -->
+            <div class="guided_journey_day_slide"
+                 [class.active-slide]="currentDay === 0"
+                 [class.inactive-slide]="currentDay !== 0 && !isAnimating && !isDragging">
+              <ng-container *ngIf="journeyDetails">
+                <!-- Breadcrumb -->
+                <div class="row mb20px">
+                  <div class="col-md-12 p0">
+                    <a (click)="goToListing()" class="center_flex_left" style="cursor: pointer; display: flex; align-items: center;">
+                      <i class="fa fa-angle-left mr5px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'"></i>
+                      <span class="fs_14px fw_500" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'">Guided journeys</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Subtitle -->
+                <div class="row">
+                  <div class="col-md-12 p0">
+                    <h1 class="mt0px fs_30px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      {{journeyDetails.subtitle}}
+                    </h1>
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <div class="row mb40px">
+                  <div class="col-md-12 p0">
+                    <h4 class="mt0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      {{journeyDetails.description}}
+                    </h4>
+                  </div>
+                </div>
+
+                <!-- Begin Button -->
+                <div class="row mb60px">
+                  <div class="col-md-12 p0">
+                    <button (click)="navigateToDay(1)" class="btn_return center_flex" style="width: 145px;">
+                      Begin here <i class="fa fa-angle-right ml10px"></i>
+                    </button>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+
+            <div class="guided_journey_day_slide" *ngFor="let dayNum of getDaysArray()"
+                 [class.active-slide]="currentDay === dayNum"
+                 [class.inactive-slide]="currentDay !== dayNum && !isAnimating && !isDragging">
 
               <!-- Day Header -->
               <div class="row mb20px">
@@ -66,6 +107,9 @@
               <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1" (click)="onExerciseClick(exercise)">
                 <div class="card_type1_img_container">
                   <img [src]="exercise.imgPath.split(',')[0]" alt="">
+                  <div class="icon_overlay" *ngIf="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : null)">
+                    <img [src]="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : '')" alt="" class="overlay_icon">
+                  </div>
                 </div>
                 <div class="card_type1_content">
                   <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
