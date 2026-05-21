@@ -10,6 +10,7 @@ import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { CommonService } from '../../../shared/services/common.service';
 import { OnboardingService } from '../../../shared/services/onboarding.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -75,6 +76,7 @@ export class AppComponent implements OnDestroy {
       this.services.ensureModuleContextForUrl(event.url);
     });
     this.services.ensureModuleContextForUrl(window.location.pathname);
+    SharedService.ClientUrl = environment.clientUrl;
     //  this.setDynamicCSS();
   }
 
