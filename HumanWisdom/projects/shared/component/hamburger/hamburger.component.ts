@@ -139,12 +139,17 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   onProgramChange() {
     this.closemenuevent();
+    let clientUrl = environment.clientUrl;
+    const currentOrigin = window.location.origin;
+    if (currentOrigin && !currentOrigin.includes('localhost') && !currentOrigin.includes('127.0.0.1')) {
+      clientUrl = currentOrigin.endsWith('/') ? currentOrigin : (currentOrigin + '/');
+    }
     if (this.isAdults) {
       this.logeventservice.logEvent('click_happiermeforteenagers');
-      window.location.href = environment.clientUrl + "teenagers/home";
+      window.location.href = clientUrl + "teenagers/home";
     } else {
       this.logeventservice.logEvent('click_happiermeforadults');
-      window.location.href = environment.clientUrl + 'adults/home';
+      window.location.href = clientUrl + 'adults/home';
     }
   }
 
