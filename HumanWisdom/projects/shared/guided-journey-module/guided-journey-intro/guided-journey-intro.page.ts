@@ -20,6 +20,7 @@ export class GuidedJourneyIntroPage implements OnInit {
   allDaysData: any[] = [];
   private touchStartX = 0;
   private touchStartY = 0;
+  isNavigating = false;
 
   constructor(
     private router: Router,
@@ -35,8 +36,8 @@ export class GuidedJourneyIntroPage implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.journeyId = params['journeyId'];
       if (this.journeyId) {
-        this.getJourneyDetails();
-        this.getGuidedJourneyDays();
+        const prefix = SharedService.getprogramName();
+        this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: 0 }, replaceUrl: true });
       }
     });
   }
@@ -133,14 +134,20 @@ export class GuidedJourneyIntroPage implements OnInit {
   }
 
   beginJourney() {
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: 1 } });
+    this.isNavigating = true;
+    setTimeout(() => {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: 1 } });
+    }, 400);
   }
 
   navigateToDay(day) {
     if (day === 0) return;
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
+    this.isNavigating = true;
+    setTimeout(() => {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
+    }, 400);
   }
 
   isVisited(day: number) {

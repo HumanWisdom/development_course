@@ -150,8 +150,8 @@ Stress rarely appears overnight. Burnout builds gradually. Anxiety accumulates q
 
                 </h4>
 
-                <h4 class="mtb0px blog_desc"><b>
-63% of UK employees show at least one characteristic of burnout. In the US, 75% of workers report dealing with some kind of mental health challenge in the past year.</b>
+                 <h4 class="mtb0px blog_desc"><i><b>
+63% of UK employees show at least one characteristic of burnout. In the US, 75% of workers report dealing with some kind of mental health challenge in the past year.</b></i>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -271,14 +271,14 @@ Self-awareness cannot be taught in a lecture, but is built through daily reflect
 
                 </h4>
 
-                <h4  style="font-weight:italic;"class="mtb0px blog_desc" ><i>
+                <h4  style="font-weight:italic;"class="mtb0px blog_desc" ><i><b>
 This approach has been recognised by Mind, the leading mental health charity, which recently included HappierMe in its app library to reach millions of people.
 
 
 
 
 
-</i>    </h4>
+</b></i>    </h4>
 
                 <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
             src="https://www.youtube.com/embed/ROP4llA74DA?si=ngzLqAPr4THCpLdv"

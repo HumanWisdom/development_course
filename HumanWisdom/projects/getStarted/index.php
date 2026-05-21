@@ -68,7 +68,7 @@ require_once('./includes/security_config.php');
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp"  />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" fetchpriority="high">
-    <link rel="stylesheet" href="<?= function_exists('hw_asset_url') ? hw_asset_url('assets/css/index-inline.css') : 'assets/css/index-inline.css'; ?>" />
+    <?php hw_defer_stylesheet('assets/css/index-inline.css'); ?>
 
   <script>
     $('#myCarousel').carousel({
@@ -122,7 +122,7 @@ require_once('./includes/security_config.php');
                 </div>
                 <div class="frame-wrapper-2">
                   <div class="div-4">
-                    <div class="div-5">
+                    <div class="div-65">
                      <p class="p" style="text-align: left;line-height: 1.3;" id="hw-website-title">Think better.<br><span class="hero-title-accent">Live better.</span></p>
                      
                     </div>
@@ -2691,8 +2691,6 @@ require_once('./includes/security_config.php');
     <?php include('./includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
 
-    <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
         duration: 1000,
