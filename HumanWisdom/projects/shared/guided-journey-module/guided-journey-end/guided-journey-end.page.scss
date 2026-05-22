@@ -403,7 +403,6 @@
 .ws_preline { white-space: pre-line !important; }
 .ws_normal { white-space: normal !important; }
 .odiv_pathway {
-    display: flex;
     overflow-x: auto;
     padding-bottom: 20px;
     &::-webkit-scrollbar { display: none; }
