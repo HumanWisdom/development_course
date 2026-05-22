@@ -134,19 +134,6 @@ export class FindInspiration {
     }
   ];
 
-  if(!this.isAdults){
-
-    this.inspirationItems.splice( 3,0,
-     { 
-      title: 'PATHWAY', 
-      icon: 'star', 
-      color: '#191d3a',
-      height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/pathway_without_bg.svg",
-      url:'pathway'
-    }  )
-  }
-
   }
   
 
