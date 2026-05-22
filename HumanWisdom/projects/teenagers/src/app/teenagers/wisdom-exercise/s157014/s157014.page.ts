@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
@@ -52,7 +53,7 @@ export class S157014Page implements OnInit {
   methodSTartTime: any;
   methodEndTime: any;
   constructor(private elementRef: ElementRef,
-    public service: TeenagersService, private teenagers: TeenagersService,public router:Router) {
+    public service: TeenagersService, private teenagers: TeenagersService,public router:Router, private location: Location) {
     this.startTime = Date.now()
   }
 
@@ -381,5 +382,9 @@ openHintModal() {
     } catch (error) {
       console.error('Error closing modal:', error);
     }
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

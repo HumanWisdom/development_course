@@ -51,7 +51,7 @@ export class savedPage implements OnInit {
   goBack() {
     const url = this.navigationService.navigateToBackLink();
     if (url) {
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     } else {
       this.router.navigate([SharedService.getUrlfromFeatureName('journal')], { queryParams: { "isGuided": true } });
     }
