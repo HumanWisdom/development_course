@@ -96,7 +96,7 @@ export class FindInspiration {
       icon: 'volume-2', 
       color: '#191d3a',
       height:'',
-      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/micro_learning.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/microlearn_without_bg.svg' ),
+      img: (this.isAdults?  'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/guided_journey.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_journey_without_bg.svg' ),
       url:'guided-journeys' 
     },
     { 
@@ -133,19 +133,6 @@ export class FindInspiration {
       url:'soundscapes'
     }
   ];
-
-  if(!this.isAdults){
-
-    this.inspirationItems.splice( 3,0,
-     { 
-      title: 'PATHWAY', 
-      icon: 'star', 
-      color: '#191d3a',
-      height:'',
-      img:"https://d1tenzemoxuh75.cloudfront.net/assets/icons/pathway_without_bg.svg",
-      url:'pathway'
-    }  )
-  }
 
   }
   

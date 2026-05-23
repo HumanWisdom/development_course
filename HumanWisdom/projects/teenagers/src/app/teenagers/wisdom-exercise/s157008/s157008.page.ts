@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
@@ -54,7 +55,7 @@ export class S157008Page implements OnInit {
   isShowButton = false;
 
   constructor(private elementRef: ElementRef,
-    public service: TeenagersService, private teenagers: TeenagersService,public router:Router) {
+    public service: TeenagersService, private teenagers: TeenagersService,public router:Router, private location: Location) {
     this.startTime = Date.now()
   }
 
@@ -580,4 +581,8 @@ openHintModal() {
     }
   }
 
+
+  goBack() {
+    this.location.back();
+  }
 }

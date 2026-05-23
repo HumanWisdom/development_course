@@ -25,3 +25,15 @@
   content: "• ";
   margin-right: 5px;
 }
+
+/* Allow the page to scroll past the fixed 80px header and fixed footer */
+.right_col.mc_03 {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
+
+/* Push content below fixed header; leave room above fixed footer */
+.sc_01 {
+  padding-top: 100px !important;
+  padding-bottom: 80px !important;
+}

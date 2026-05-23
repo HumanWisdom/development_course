@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild, OnDestroy } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxCaptureService } from 'ngx-capture';
@@ -9,7 +9,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './video-content-cross.component.html',
   styleUrls: ['./video-content-cross.component.scss'],
 })
-export class VideoContentCrossComponent implements OnInit {
+export class VideoContentCrossComponent implements OnInit, OnDestroy {
   @ViewChild('video') video;
   @ViewChild('screen', { static: true }) screen: any;
 
@@ -74,6 +74,12 @@ export class VideoContentCrossComponent implements OnInit {
           window.alert('You Have Reached Free Limit')
         }
       }
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.video && this.video.nativeElement) {
+      this.video.nativeElement.pause();
     }
   }
 }

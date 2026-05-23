@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Location } from '@angular/common';
 
 import "hammerjs";
 import { TeenagersService } from "../../teenagers.service";
@@ -53,7 +54,8 @@ export class S157002Page implements OnInit, AfterViewInit {
     private elementRef: ElementRef,
     public service: TeenagersService,
     private teenagers: TeenagersService,
-    public router: Router
+    public router: Router,
+    private location: Location
   ) {
     this.startTime = Date.now();
   }
@@ -371,6 +373,9 @@ export class S157002Page implements OnInit, AfterViewInit {
     }, 700);
   }
 
+  goBack() {
+    this.location.back();
+  }
 
 
   changeType() {
