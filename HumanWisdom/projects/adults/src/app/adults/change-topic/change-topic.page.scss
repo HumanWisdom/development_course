@@ -34,13 +34,7 @@
 }
 
 .skip-btn {
-  font-family: 'Outfit', 'Montserrat', 'Inter', sans-serif;
-  color: #8C8C8C !important;
+  color: rgba(0, 0, 0, 0.5) !important;
   text-decoration: underline;
-  transition: color 0.2s ease;
   cursor: pointer;
-
-  &:hover {
-    color: #3E270C !important;
-  }
 }
