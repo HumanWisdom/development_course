@@ -189,6 +189,25 @@ export class ChangeTopicPage implements OnInit {
     });
   }
 
+  getTopicDisplayName(name: string): string {
+    const map = {
+      'Succeed in life': 'Succeed in life',
+      'Manage your emotions': 'Manage your emotions',
+      'Relationships': 'Strengthen your relationships',
+      'Be happier': 'Be happier',
+      'Overcome unhelpful habits': 'Overcome unhelpful habits',
+      'Understand yourself': 'Understand yourself',
+      'Feel calm': 'Feel calm',
+      'Manage your mental wellbeing': 'Improve your mental health',
+      'Develop your self awareness': 'Build your self awareness'
+    };
+    return map[name] || name;
+  }
+
+  skip() {
+    this.router.navigate(['/teenagers/teenagers-dashboard']);
+  }
+
   updateList(id, name) {
     this.selectedId = id;
     this.selectedname = name;
