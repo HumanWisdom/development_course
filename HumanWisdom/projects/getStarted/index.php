@@ -187,10 +187,9 @@ require_once('./includes/security_config.php');
           <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" />
           <div class="div-12">
             <div class="div-5">
-              <p class="introducing-olly-AI" style="font-size:42px;">Introducing Olly AI,<br />your personal guide inside HappierMe.</p>
+              <p class="introducing-olly-AI" style="font-size:30px;">Meet Olly AI,<br />your personal guide.</p>
               <p class="text-wrapper-8">
-                Talk to Olly about what's on your mind — stress, anxiety, relationships, tricky habits, parenting, or
-                work. Olly offers practical support and guides you to trusted, expert-backed resources.
+               Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
               </p>
             </div>
             <a href="https://happierme.app/pages/splash_options.php" id="OllyChatBtn">
@@ -336,8 +335,8 @@ require_once('./includes/security_config.php');
         <div class="div-21">
           <div class="frame-wrapper-6">
             <div class="div-22">
-              <p class="text-wrapper-14">Address the root cause of problems for lasting change.</p>
-              <p class="text-wrapper-8">Our happiness depends on many factors. HappierMe addresses them all.</p>
+              <p class="text-wrapper-14">Find support and connection</p>
+              <p class="text-wrapper-8">Join a supportive community of people on their wellness journey. Share experiences, celebrate wins, and grow together.</p>
             </div>
           </div>
           <a href="https://happierme.app/pages/splash_options.php">
@@ -440,7 +439,73 @@ require_once('./includes/security_config.php');
         </div>
       </div>
 
-      <!-- ===== COACHES ===== -->
+
+
+      <!-- ===== SUBSCRIPTION ===== -->
+      <div class="frame-wrapper-9" id="div_subscription">
+        <div class="div-39">
+          <div class="div-40">
+            <div class="div-wrapper-6">
+              <div class="text-wrapper-25">Simple, transparent pricing</div>
+               <span class="div-subs">Start free. Upgrade anytime. Cancel anytime.</span>
+            </div>
+            
+            <div class="div-41">
+              <div class="div-42">
+                <img class="group-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" alt="Expert" />
+                <div class="text-wrapper-26">Expert guidance</div>
+              </div>
+              <div class="div-43">
+                <img class="vector-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" alt="Goals" />
+                <p class="text-wrapper-27">Personalised content to meet your goals</p>
+              </div>
+              <div class="div-42">
+                <div class="ellipse"></div>
+                <p class="text-wrapper-26">Daily practices that fit your life</p>
+              </div>
+            </div>
+          </div>
+          <div class="frame-wrapper-10">
+            <div class="div-44">
+              <div class="div-45">
+                <!-- Yearly -->
+                <div class="group-7" id="sub-plan-yearly">
+                  <div class="rectangle-2"></div>
+                  <div class="div-wrapper-7"><div class="text-wrapper-28">14-day free trial</div></div>
+                  <div class="div-46">
+                    <div class="text-wrapper-29">Yearly</div>
+                    <p class="INR-yr-INR">
+                      <span class="text-wrapper-31" id="annualPricingModelHeading">₹2400/yr</span>
+                    </p>
+                  </div>
+                  <div class="text-wrapper-32" id="spanAnnualLabel">₹200/mo.</div>
+                </div>
+                <!-- Monthly -->
+                <div class="group-8" id="sub-plan-monthly">
+                  <div class="rectangle-3"></div>
+                  <div class="div-47">
+                    <div class="text-wrapper-29">Monthly</div>
+                    <div class="text-wrapper-33">7-day free trial</div>
+                  </div>
+                  <div class="text-wrapper-34" id="monthlyPricingModelHeading">₹300/mo.</div>
+                </div>
+              </div>
+              <p class="after-your-free">
+                <span class="text-wrapper-35" id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
+              </p>
+              <div id="AnnualTypebtn">
+                <div id="PricingSelectBtn1">
+              <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
+                <div class="div-wrapper-4"><div class="text-wrapper-5">Start your free trial</div></div>
+              </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- ===== COACHES ===== -->
       <div class="coaches-section">
         <p class="text-wrapper-6-1">Contact our experienced coaches for personalised support</p>
         <div class="coaches-outer">
@@ -539,68 +604,6 @@ require_once('./includes/security_config.php');
     <i class="bi bi-chevron-right"></i>
   </button>
 </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== SUBSCRIPTION ===== -->
-      <div class="frame-wrapper-9" id="div_subscription">
-        <div class="div-39">
-          <div class="div-40">
-            <div class="div-wrapper-6">
-              <div class="text-wrapper-25">Subscribe to HappierMe Premium</div>
-            </div>
-            <div class="div-41">
-              <div class="div-42">
-                <img class="group-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" alt="Expert" />
-                <div class="text-wrapper-26">Expert guidance</div>
-              </div>
-              <div class="div-43">
-                <img class="vector-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" alt="Goals" />
-                <p class="text-wrapper-27">Personalised content to meet your goals</p>
-              </div>
-              <div class="div-42">
-                <div class="ellipse"></div>
-                <p class="text-wrapper-26">Daily practices that fit your life</p>
-              </div>
-            </div>
-          </div>
-          <div class="frame-wrapper-10">
-            <div class="div-44">
-              <div class="div-45">
-                <!-- Yearly -->
-                <div class="group-7" id="sub-plan-yearly">
-                  <div class="rectangle-2"></div>
-                  <div class="div-wrapper-7"><div class="text-wrapper-28">14-day free trial</div></div>
-                  <div class="div-46">
-                    <div class="text-wrapper-29">Yearly</div>
-                    <p class="INR-yr-INR">
-                      <span class="text-wrapper-31" id="annualPricingModelHeading">₹2400/yr</span>
-                    </p>
-                  </div>
-                  <div class="text-wrapper-32" id="spanAnnualLabel">₹200/mo.</div>
-                </div>
-                <!-- Monthly -->
-                <div class="group-8" id="sub-plan-monthly">
-                  <div class="rectangle-3"></div>
-                  <div class="div-47">
-                    <div class="text-wrapper-29">Monthly</div>
-                    <div class="text-wrapper-33">7-day free trial</div>
-                  </div>
-                  <div class="text-wrapper-34" id="monthlyPricingModelHeading">₹300/mo.</div>
-                </div>
-              </div>
-              <p class="after-your-free">
-                <span class="text-wrapper-35" id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
-              </p>
-              <div id="AnnualTypebtn">
-                <div id="PricingSelectBtn1">
-              <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
-                <div class="div-wrapper-4"><div class="text-wrapper-5">Start your free trial</div></div>
-              </a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -803,6 +806,24 @@ require_once('./includes/security_config.php');
           </div>
         </div>
       </div>
+
+      <!-- ===== READY TO TRANSFORM ===== -->
+      <section class="transform-cta-section">
+        <div class="transform-cta-inner">
+          <div class="transform-cta-text">
+            <h2 class="transform-cta-heading">Ready to transform your life?</h2>
+            <p class="transform-cta-sub">Join thousands of people who've discovered a happier, more resilient version of themselves.</p>
+          </div>
+          <div class="transform-cta-actions">
+            <a href="https://happierme.app/pages/splash_options.php" id="transformStartTrial">
+              <div class="div-wrapper-4 transform-cta-btn"><div class="text-wrapper-5">Start your free trial</div></div>
+            </a>
+            <a href="https://onelink.to/qsptex" id="transformDownloadApp">
+              <div class="transform-cta-btn transform-cta-btn-outline"><div class="text-wrapper-5">Download the app</div></div>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <!-- ===== FAQ ===== -->
       <!-- Desktop FAQ -->
