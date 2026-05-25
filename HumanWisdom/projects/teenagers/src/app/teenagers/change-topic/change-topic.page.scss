@@ -1,0 +1,32 @@
+
+.card-container {
+  padding: 0;
+}
+
+.topic-card-wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.topic-card {
+width: 100%;
+    height: 60px;
+    padding: 20px;
+    background-color: #0C2B5F !important;
+    border: none !important;
+    border-radius: 12px !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    // box-shadow: 0 2px 8px rgba(254, 234, 209, 0.3);
+    cursor: pointer;
+
+}
+
+.skip-btn {
+  color: rgba(235, 235, 235, 0.5) !important;
+  text-decoration: underline;
+  cursor: pointer;
+}

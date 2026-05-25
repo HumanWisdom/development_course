@@ -19,12 +19,9 @@
 
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back_change_topic col_cw" *ngIf="isRoutedFromLogin">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_ffffff mt20px tcenter" >
-        Pick a topic you’re interested in
+      <h1 class="heading-title fw_500 fs_21px lh_160p fc_ffffff mt30px mb10px tcenter">
+        What are you looking for?
       </h1>
-      <h4 class="fw_400 fs_12px lh_150p fc_ffffff_0_5 mt20px tcenter" >
-        Pick one now. You can explore others later. 
-      </h4>
     </div>
   </div>
 </div>
@@ -39,17 +36,23 @@
         <div class="x_panel p0">
           <div class="x_content p0">
 
-            <div class="mt40px div_ct">
+            <div class="div_ct">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div (click)="updateList(item.id,item.name)" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of changeTopicList">
-                    <button [ngClass]="item.id == selectedId ? 'topic-op-point-5': 'topic-op-one'">
-                      <h4 class="mtb0px fw_600 fs_15px lh_140p fc_ffffff tcenter">
-                        {{item.name}}
-                      </h4>
+                <div class="col-xs-12 card-container">
+                  <div (click)="updateList(item.id,item.name)" class="topic-card-wrapper" *ngFor="let item of changeTopicList">
+                    <button class="topic-card" [class.selected]="item.id == selectedId">
+                      <span class="fw_500 fs_15px lh_140p fc_ffffff">
+                        {{getTopicDisplayName(item.name)}}
+                      </span>
                     </button>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div class="row mt20px mb20px tcenter" *ngIf="isRoutedFromLogin">
+              <div class="col-xs-12">
+                <a (click)="skip()" class="skip-btn fs_15px fw_500 td_underline">I'm not sure</a>
               </div>
             </div>
 
