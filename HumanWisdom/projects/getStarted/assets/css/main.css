@@ -5091,25 +5091,26 @@ input[type="password" i]::-ms-reveal {
   font-style: normal;
   font-display: swap; /* <-- key addition */
 }
-@keyframes verticalScroll {
+/* @keyframes verticalScroll {
   0%   { transform: translateY(0);      opacity: 1; }
-  17%  { transform: translateY(0);      opacity: 1; }
-  20%  {   opacity: 0; }
-
+  14%  { transform: translateY(0);      opacity: 1; }
+  19%  { transform: translateY(-100%);   opacity: 0; }
   20%  { transform: translateY(-100%);  opacity: 1; }
-  37%  { transform: translateY(-100%);  opacity: 1; }
-   40%  {   opacity: 0; }
 
+  34%  { transform: translateY(-100%);  opacity: 1; }
+  39%  { transform: translateY(-200%);  opacity: 0; }
   40%  { transform: translateY(-200%);  opacity: 1; }
-  57%  { transform: translateY(-200%);  opacity: 1; }
-    60%  {   opacity: 0; }
 
+  54%  { transform: translateY(-200%);  opacity: 1; }
+  59%  { transform: translateY(-280%);  opacity: 0; }
   60%  { transform: translateY(-300%);  opacity: 1; }
-  77%  { transform: translateY(-300%);  opacity: 1; }
-    80%  {   opacity: 0; }
+
+  74%  { transform: translateY(-300%);  opacity: 1; }
+  79%  { transform: translateY(-380%);  opacity: 0; }
   80%  { transform: translateY(-400%);  opacity: 1; }
-  97%  { transform: translateY(-400%);  opacity: 1; }
-    100%  {   opacity: 0; }
+
+  94%  { transform: translateY(-400%);  opacity: 1; }
+  99%  { transform: translateY(-480%);  opacity: 0; }
   100% { transform: translateY(-500%);  opacity: 1; }
 }
       .scrolling-words {
@@ -5123,7 +5124,7 @@ input[type="password" i]::-ms-reveal {
 
         .scrolling-word {
             display: flex;
-            animation: verticalScroll 12s infinite ease-out;
+            animation: verticalScroll 12s infinite cubic-bezier(0.4, 0, 1, 1);
             font-weight: 600;
             background: #ED7D6F;
             -webkit-background-clip: text;
@@ -5132,16 +5133,67 @@ input[type="password" i]::-ms-reveal {
             justify-content: flex-end;
             width: 165px;
         }
+ */
 
-        @media (max-width: 575px) {
-              .scrolling-word {
-                width: 75px;
-              }
-             
-        }
+
+
+    
 
       /*   .hero-container:hover .scrolling-word {
             filter: drop-shadow(0 20px 40px rgba(37, 99, 235, 0.2));
             transition: filter 1.5s ease;
         }
  */
+
+
+   .scrolling-words {
+        display: inline-block;
+      position: relative;
+      height: 1.3em;
+      overflow: hidden;
+      vertical-align: bottom;
+      min-width: 116px;
+      text-align: right;
+        }
+
+   
+
+
+
+
+.scrolling-word {
+  position: absolute;
+      right: 0;
+      opacity: 0;
+      transform: translateY(60%);
+      color: #ED7D6F;
+      font-weight: 600;
+      white-space: nowrap;
+}
+
+.scrolling-word.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.6, 1),
+              transform 0.45s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.scrolling-word.exit {
+  opacity: 0;
+  transform: translateY(-60%);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 1, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 1, 1);
+}
+
+    @media (max-width: 575px) {
+              .scrolling-word {
+                width: 75px;
+              }
+
+                .scrolling-words {
+        
+      min-width: 75px;
+        }
+
+             
+        }
