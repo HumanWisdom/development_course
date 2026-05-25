@@ -680,12 +680,7 @@ export class S157005Page implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    } else {
-      this.router.navigateByUrl(url);
-    }
+    this.location.back();
   }
 
   submitProgress() {

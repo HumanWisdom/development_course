@@ -504,12 +504,6 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     flex: 0 0 50% !important;
   }
 
-  body.page-teenagers .teen-video-wrap.col-lg-6.w-980px {
-    width: 100% !important;
-    max-width: min(810px, calc(100% - 40px)) !important;
-    flex: 0 1 810px !important;
-  }
-
   body.page-teenagers .col-lg-12.w-980px {
     width: 100% !important;
     max-width: 100% !important;
@@ -1424,25 +1418,6 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     display: block;
   }
 
-  body.page-teenagers .teen-video-wrap {
-    width: 100% !important;
-    max-width: calc(100% - 24px) !important;
-    flex: 1 1 auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  body.page-teenagers .teen-video-wrap .yt-embed {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    aspect-ratio: 810 / 544.63;
-    padding: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
   /* Fix pricing section alignment and button */
   .div_subscriptionnew {
     text-align: center;
@@ -1847,6 +1822,341 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     max-width: 100% !important;
     flex: 0 0 100% !important;
     margin-right: 0 !important;
+  }
+
+  /* Work / education / healthcare — packages full width (override 83% at ≤1599px) */
+  body.page-work .div_price.w-980px,
+  body.page-education .div_price.w-980px,
+  body.page-healthcare .div_price.w-980px {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work main#main .section-header [class*="col-10"],
+  body.page-education main#main .section-header [class*="col-10"],
+  body.page-healthcare main#main .section-header [class*="col-10"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work .div_price.w-980px .card,
+  body.page-education .div_price.w-980px .card,
+  body.page-healthcare .div_price.w-980px .card,
+  body.page-work .div_price.w-980px .card.pr20px,
+  body.page-work .div_price.w-980px .card.plr20px,
+  body.page-work .div_price.w-980px .card.pl20px,
+  body.page-education .div_price.w-980px .card.pr20px,
+  body.page-education .div_price.w-980px .card.plr20px,
+  body.page-education .div_price.w-980px .card.pl20px,
+  body.page-healthcare .div_price.w-980px .card.pr20px,
+  body.page-healthcare .div_price.w-980px .card.plr20px,
+  body.page-healthcare .div_price.w-980px .card.pl20px {
+    width: 335px !important;
+    max-width: calc(100% - 40px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 16px !important;
+  }
+
+  /* Center hero + packages “Request a demo” (335px) */
+  body.page-work .healthcare-hero-shell .absolute_desc_m,
+  body.page-education .healthcare-hero-shell .absolute_desc_m,
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m {
+    justify-content: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m > [class*="col-"],
+  body.page-education .healthcare-hero-shell .absolute_desc_m > [class*="col-"],
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m > [class*="col-"] {
+    width: 100% !important;
+    max-width: calc(100% - 40px) !important;
+    flex: 0 0 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m .col-lg-6,
+  body.page-education .healthcare-hero-shell .absolute_desc_m .col-lg-6,
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m .col-lg-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m a[href="#bring_happierme"],
+  body.page-education .healthcare-hero-shell .absolute_desc_m a[href="#bring_happierme"],
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m a[href="#bring_happierme"] {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m .req_button,
+  body.page-education .healthcare-hero-shell .absolute_desc_m .req_button,
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m .req_button {
+    width: 335px !important;
+    max-width: calc(100% - 40px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+
+  body.page-work .price-demo-row,
+  body.page-education .price-demo-row,
+  body.page-healthcare main#main > section:first-child > .row.center_flex.mt40px {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  body.page-work .price-demo-row > [class*="col-"],
+  body.page-work .price-demo-row > [class*="col-"] > [class*="col-"],
+  body.page-education .price-demo-row > [class*="col-"],
+  body.page-education .price-demo-row > [class*="col-"] > [class*="col-"],
+  body.page-healthcare main#main > section:first-child > .row.center_flex.mt40px > [class*="col-"],
+  body.page-healthcare main#main > section:first-child > .row.center_flex.mt40px > [class*="col-"] > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work .price-demo-row a,
+  body.page-education .price-demo-row a,
+  body.page-healthcare main#main > section:first-child > .row.center_flex.mt40px a[href="#bring_happierme"] {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  body.page-work .req_button,
+  body.page-education .req_button,
+  body.page-healthcare .req_button {
+    width: 335px !important;
+    max-width: calc(100% - 40px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+
+  /* “Feel calm…” / description — match teenagers mobile (full width, 20px gutters) */
+  body.page-work .flex_block,
+  body.page-education .flex_block,
+  body.page-healthcare .flex_block {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  body.page-work .flex_block.w-1245px,
+  body.page-education .flex_block.w-1245px,
+  body.page-healthcare .flex_block.w-1245px {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work .flex_block.w-1245px > [class*="col-"],
+  body.page-education .flex_block.w-1245px > [class*="col-"],
+  body.page-healthcare .flex_block.w-1245px > [class*="col-"],
+  body.page-work .flex_block .w-384px,
+  body.page-education .flex_block .w-384px,
+  body.page-healthcare .flex_block .w-384px,
+  body.page-work .flex_block .col-lg-6.w-384px,
+  body.page-education .flex_block .col-lg-6.w-384px,
+  body.page-healthcare .flex_block .col-lg-6.w-384px {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.page-work .flex_block .ml10px,
+  body.page-education .flex_block .ml10px,
+  body.page-healthcare .flex_block .ml10px {
+    margin-left: 0 !important;
+  }
+
+  body.page-work .flex_block .ta_lc h2,
+  body.page-work .flex_block .ta_lc h5,
+  body.page-work .flex_block .tleft h2,
+  body.page-work .flex_block .tleft h5,
+  body.page-education .flex_block .ta_lc h2,
+  body.page-education .flex_block .ta_lc h5,
+  body.page-education .flex_block .tleft h2,
+  body.page-education .flex_block .tleft h5,
+  body.page-healthcare .flex_block .ta_lc h2,
+  body.page-healthcare .flex_block .ta_lc h5,
+  body.page-healthcare .flex_block .tleft h2,
+  body.page-healthcare .flex_block .tleft h5 {
+    text-align: center !important;
+  }
+
+  /* Work / education / healthcare — mobile org landing (blogs, testimonials, typography) */
+  body.page-work .owl_blog .owl-controls,
+  body.page-work .owl_testimonials .owl-controls,
+  body.page-work .owl_blog .owl-nav,
+  body.page-work .owl_testimonials .owl-nav,
+  body.page-work .owl_blog .owl-theme .owl-nav,
+  body.page-work .owl_testimonials .owl-theme .owl-nav,
+  body.page-work .owl_blog .owl-nav-w,
+  body.page-work .owl_testimonials .owl-nav-w,
+  body.page-education .owl_blog .owl-controls,
+  body.page-education .owl_testimonials .owl-controls,
+  body.page-education .owl_blog .owl-nav,
+  body.page-education .owl_testimonials .owl-nav,
+  body.page-education .owl_blog .owl-theme .owl-nav,
+  body.page-education .owl_testimonials .owl-theme .owl-nav,
+  body.page-education .owl_blog .owl-nav-w,
+  body.page-education .owl_testimonials .owl-nav-w,
+  body.page-healthcare .owl_blog .owl-controls,
+  body.page-healthcare .owl_testimonials .owl-controls,
+  body.page-healthcare .owl_blog .owl-nav,
+  body.page-healthcare .owl_testimonials .owl-nav,
+  body.page-healthcare .owl_blog .owl-theme .owl-nav,
+  body.page-healthcare .owl_testimonials .owl-theme .owl-nav,
+  body.page-healthcare .owl_blog .owl-nav-w,
+  body.page-healthcare .owl_testimonials .owl-nav-w {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  body.page-work .sap,
+  body.page-education .sap,
+  body.page-healthcare .sap {
+    position: static !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  body.page-work .sap h4,
+  body.page-work .sap h5,
+  body.page-work .sap h6,
+  body.page-education .sap h4,
+  body.page-education .sap h5,
+  body.page-education .sap h6,
+  body.page-healthcare .sap h4,
+  body.page-healthcare .sap h5,
+  body.page-healthcare .sap h6 {
+    text-align: center !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+  }
+
+  /* All main headings 18px (override responsive.css 27px on hpt120px ~ main#main) */
+  body.page-work section.hpt120px ~ main#main h1,
+  body.page-work section.hpt120px ~ main#main h2,
+  body.page-work section.hpt120px ~ main#main h3,
+  body.page-work section.hpt120px ~ main#main section h1,
+  body.page-work section.hpt120px ~ main#main section h2,
+  body.page-work section.hpt120px ~ main#main section h3,
+  body.page-work section.hpt120px ~ main#main h1.fs_36px,
+  body.page-work section.hpt120px ~ main#main h1.fs_30px,
+  body.page-work section.hpt120px ~ main#main h1.fs_24px,
+  body.page-work section.hpt120px ~ main#main h2.fs_36px,
+  body.page-work section.hpt120px ~ main#main h2.fs_30px,
+  body.page-work section.hpt120px ~ main#main h2.fs_24px,
+  body.page-work section.hpt120px ~ main#main h3.fs_36px,
+  body.page-work section.hpt120px ~ main#main h3.fs_30px,
+  body.page-work section.hpt120px ~ main#main h3.fs_24px,
+  body.page-work section.hpt120px ~ main#main .section-header h2,
+  body.page-work section.hpt120px ~ main#main .flex_block h2,
+  body.page-education section.hpt120px ~ main#main h1,
+  body.page-education section.hpt120px ~ main#main h2,
+  body.page-education section.hpt120px ~ main#main h3,
+  body.page-education section.hpt120px ~ main#main section h1,
+  body.page-education section.hpt120px ~ main#main section h2,
+  body.page-education section.hpt120px ~ main#main section h3,
+  body.page-education section.hpt120px ~ main#main h1.fs_36px,
+  body.page-education section.hpt120px ~ main#main h1.fs_30px,
+  body.page-education section.hpt120px ~ main#main h1.fs_24px,
+  body.page-education section.hpt120px ~ main#main h2.fs_36px,
+  body.page-education section.hpt120px ~ main#main h2.fs_30px,
+  body.page-education section.hpt120px ~ main#main h2.fs_24px,
+  body.page-education section.hpt120px ~ main#main h3.fs_36px,
+  body.page-education section.hpt120px ~ main#main h3.fs_30px,
+  body.page-education section.hpt120px ~ main#main h3.fs_24px,
+  body.page-education section.hpt120px ~ main#main .section-header h2,
+  body.page-education section.hpt120px ~ main#main .flex_block h2,
+  body.page-healthcare section.hpt120px ~ main#main h1,
+  body.page-healthcare section.hpt120px ~ main#main h2,
+  body.page-healthcare section.hpt120px ~ main#main h3,
+  body.page-healthcare section.hpt120px ~ main#main section h1,
+  body.page-healthcare section.hpt120px ~ main#main section h2,
+  body.page-healthcare section.hpt120px ~ main#main section h3,
+  body.page-healthcare section.hpt120px ~ main#main h1.fs_36px,
+  body.page-healthcare section.hpt120px ~ main#main h1.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h1.fs_24px,
+  body.page-healthcare section.hpt120px ~ main#main h2.fs_36px,
+  body.page-healthcare section.hpt120px ~ main#main h2.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h2.fs_24px,
+  body.page-healthcare section.hpt120px ~ main#main h3.fs_36px,
+  body.page-healthcare section.hpt120px ~ main#main h3.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h3.fs_24px,
+  body.page-healthcare section.hpt120px ~ main#main .section-header h2,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block h2,
+  body.page-healthcare section.hpt120px ~ main#main .hc-desc-heading-mobile h2 {
+    font-size: 18px !important;
+    line-height: 140% !important;
+  }
+
+  /* Hero h1 only — 27px on mobile (all other headings stay 18px) */
+  body.page-work section.hpt120px .absolute_desc_m h1,
+  body.page-work section.hpt120px .absolute_desc_m h1.fs_36px,
+  body.page-education section.hpt120px .absolute_desc_m h1,
+  body.page-education section.hpt120px .absolute_desc_m h1.fs_36px,
+  body.page-healthcare section.hpt120px .absolute_desc_m h1,
+  body.page-healthcare section.hpt120px .absolute_desc_m h1.fs_36px {
+    font-size: 27px !important;
+    line-height: 140% !important;
+  }
+
+  body.page-work main#main .section-header,
+  body.page-education main#main .section-header,
+  body.page-healthcare main#main .section-header {
+    padding-bottom: 24px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-work main#main .section-header h2,
+  body.page-education main#main .section-header h2,
+  body.page-healthcare main#main .section-header h2 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .flex_block h2,
+  body.page-education section.hpt120px ~ main#main .flex_block h2,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block h2 {
+    margin-bottom: 24px !important;
   }
 }
 

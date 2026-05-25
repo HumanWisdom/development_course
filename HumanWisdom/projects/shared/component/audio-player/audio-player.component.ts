@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 
@@ -7,7 +7,7 @@ import { SharedService } from '../../services/shared.service';
   templateUrl: './audio-player.component.html',
   styleUrls: ['./audio-player.component.scss'],
 })
-export class AudioPlayerComponent implements OnInit  {
+export class AudioPlayerComponent implements OnInit, OnDestroy  {
 
   yellow="#FFC455"
   @Input() audioLink: string;
@@ -38,5 +38,11 @@ export class AudioPlayerComponent implements OnInit  {
   
     // Append the <style> element to the document head
     document.head.appendChild(style);
+  }
+
+  ngOnDestroy(): void {
+    if (this.audio && this.audio.nativeElement) {
+      this.audio.nativeElement.pause();
+    }
   }
 }

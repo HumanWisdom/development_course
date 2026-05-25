@@ -482,6 +482,9 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnDestroy(): void {
+    if (this.videoPlayer && this.videoPlayer.nativeElement) {
+      this.videoPlayer.nativeElement.pause();
+    }
     localStorage.setItem('isSwipeAllow', 'false');
     localStorage.removeItem('fromIndex');
   }
