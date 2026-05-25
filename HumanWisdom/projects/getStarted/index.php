@@ -214,7 +214,11 @@ require_once('./includes/security_config.php');
             <img
               src="https://d1tenzemoxuh75.cloudfront.net/website/yt_coverimg.webp"
               alt="HappierMe video cover"
-              style="width:100%;height:100%;display:block;" />
+              style="width:100%;height:100%;display:block;" class="display_m_none" />
+                <img
+              src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/ytcover_mobile.webp"
+              alt="HappierMe video cover"
+              style="width:100%;height:100%;display:block;" class="display_d_none" />
             <span
               aria-hidden="true"
               style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0,0,0,0.25);">
@@ -348,7 +352,9 @@ require_once('./includes/security_config.php');
         <div class="div-24">
           <!-- Workplace -->
           <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work.webp" alt="Work" />
+            <img class="rectangle display_m_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work.webp" alt="Work" />
+                       <img class="rectangle display_d_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/work_mobile.webp" alt="Work" />
+
             <div class="frame-wrapper-7">
               <div class="div-26">
                 <div class="div-27">
@@ -364,7 +370,10 @@ require_once('./includes/security_config.php');
           </a>
           <!-- Education -->
           <a href="/pages/education.php" class="div-25" id="orgCardEducation">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/education.webp" alt="Education" />
+            <img class="rectangle display_m_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/education.webp" alt="Education" />
+                       <img class="rectangle display_d_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/education_mobile.webp" alt="Education" />
+
+           
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
@@ -380,7 +389,9 @@ require_once('./includes/security_config.php');
           </a>
           <!-- Healthcare -->
           <a href="/pages/healthcare.php" class="div-25" id="orgCardHealthcare">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/healthcare.webp" alt="Healthcare" />
+            <img class="rectangle display_m_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/healthcare.webp" alt="Healthcare" />
+                        <img class="rectangle display_d_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/healthcare_mobile.webp" alt="Healthcare"  />
+
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">

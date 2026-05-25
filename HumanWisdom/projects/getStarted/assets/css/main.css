@@ -5093,23 +5093,23 @@ input[type="password" i]::-ms-reveal {
 }
 @keyframes verticalScroll {
   0%   { transform: translateY(0);      opacity: 1; }
-  18%  { transform: translateY(0);      opacity: 1; }
-  19%  {   opacity: 0; }
+  17%  { transform: translateY(0);      opacity: 1; }
+  20%  {   opacity: 0; }
 
   20%  { transform: translateY(-100%);  opacity: 1; }
-  38%  { transform: translateY(-100%);  opacity: 1; }
-   39%  {   opacity: 0; }
+  37%  { transform: translateY(-100%);  opacity: 1; }
+   40%  {   opacity: 0; }
 
   40%  { transform: translateY(-200%);  opacity: 1; }
-  58%  { transform: translateY(-200%);  opacity: 1; }
-    59%  {   opacity: 0; }
+  57%  { transform: translateY(-200%);  opacity: 1; }
+    60%  {   opacity: 0; }
 
   60%  { transform: translateY(-300%);  opacity: 1; }
-  78%  { transform: translateY(-300%);  opacity: 1; }
-    79%  {   opacity: 0; }
+  77%  { transform: translateY(-300%);  opacity: 1; }
+    80%  {   opacity: 0; }
   80%  { transform: translateY(-400%);  opacity: 1; }
-  98%  { transform: translateY(-400%);  opacity: 1; }
-    99%  {   opacity: 0; }
+  97%  { transform: translateY(-400%);  opacity: 1; }
+    100%  {   opacity: 0; }
   100% { transform: translateY(-500%);  opacity: 1; }
 }
       .scrolling-words {
@@ -5123,14 +5123,14 @@ input[type="password" i]::-ms-reveal {
 
         .scrolling-word {
             display: flex;
-            animation: verticalScroll 24s infinite ease-out;
+            animation: verticalScroll 12s infinite ease-out;
             font-weight: 600;
             background: #ED7D6F;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             justify-content: flex-end;
-            width: 170px;
+            width: 165px;
         }
 
         @media (max-width: 575px) {
@@ -5140,7 +5140,8 @@ input[type="password" i]::-ms-reveal {
              
         }
 
-        .hero-container:hover .scrolling-word {
+      /*   .hero-container:hover .scrolling-word {
             filter: drop-shadow(0 20px 40px rgba(37, 99, 235, 0.2));
             transition: filter 1.5s ease;
         }
+ */
