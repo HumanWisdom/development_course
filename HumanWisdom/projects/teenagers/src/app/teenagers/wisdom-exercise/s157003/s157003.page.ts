@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import "bcswipe";
 import { TeenagersService } from '../../teenagers.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Location } from '@angular/common';
 declare var bootstrap: any;
 declare var $: any;
 @Component({
@@ -49,7 +50,7 @@ export class S157003Page implements OnInit {
   methodSTartTime: any;
   methodEndTime: any;
   constructor(private elementRef: ElementRef,
-    public service: TeenagersService, private teenagers: TeenagersService,public router:Router) {
+    public service: TeenagersService, private teenagers: TeenagersService,public router:Router, private location: Location) {
     this.startTime = Date.now()
   }
 
@@ -401,6 +402,10 @@ export class S157003Page implements OnInit {
         }
         this.setHint();
     }, 700);
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   submitProgress() {

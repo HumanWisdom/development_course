@@ -61,9 +61,9 @@ export class MyDashboardComponent {
     goBack(){
     var url = this.navigationService.navigateToBackLink();
     if (url == null) {
-      this.router.navigate([SharedService.getDashboardUrls()]);
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
     }else{
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     }
    } 
 

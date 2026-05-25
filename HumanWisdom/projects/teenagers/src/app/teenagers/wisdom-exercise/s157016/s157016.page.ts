@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
 import { SharedService } from '../../../../../../shared/services/shared.service';
+import { Location } from '@angular/common';
 //import { colorSets } from '@swimlane/ngx-charts';
 declare var $: any;
 @Component({
@@ -52,7 +53,7 @@ export class S157016Page implements OnInit {
   methodSTartTime: any;
   methodEndTime: any;
   constructor(private elementRef: ElementRef,
-    public service: TeenagersService, private teenagers: TeenagersService,public router:Router) {
+    public service: TeenagersService, private teenagers: TeenagersService,public router:Router, private location: Location) {
     this.startTime = Date.now()
   }
 
@@ -260,7 +261,7 @@ export class S157016Page implements OnInit {
         return;
       }
     }
-    this.router.navigate(['/teenagers/home'])
+    this.location.back();
   }
 
   changeType() {

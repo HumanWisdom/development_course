@@ -23,6 +23,10 @@ background: #FFF7E6;/* Ensure proper stacking context */
   padding-right: 0;
   padding-top: 9rem;
   padding-bottom: 9rem;
+
+  &.home-content--playstore-banner {
+    padding-top: 16rem;
+  }
 }
 
 .username-clr {
