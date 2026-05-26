@@ -19,6 +19,16 @@ import { S107008Page } from './s107008/s107008.page';
 import { S107009Page } from './s107009/s107009.page';
 import { S107010Page } from './s107010/s107010.page';
 import { S107011Page } from './s107011/s107011.page';
+import { S107012Page } from './s107012/s107012.page';
+import { S107013Page } from './s107013/s107013.page';
+import { S107014Page } from './s107014/s107014.page';
+import { S107015Page } from './s107015/s107015.page';
+import { S107016Page } from './s107016/s107016.page';
+
+
+
+
+// import { S107013Page } from './s107013/s107013.page';
 import { TeenagersService } from '../teenagers.service';
 
 
@@ -34,7 +44,14 @@ import { TeenagersService } from '../teenagers.service';
     S107008Page,
     S107009Page,
     S107010Page,
-    S107011Page   
+    S107011Page,  
+    S107012Page,
+    S107013Page,
+    S107014Page,
+    S107015Page,
+     S107016Page
+    
+    
   ],
   imports: [
     CommonModule,
