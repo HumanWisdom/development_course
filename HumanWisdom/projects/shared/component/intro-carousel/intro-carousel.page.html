@@ -11,116 +11,117 @@
 
 
               <!-- carousel -->
-              <div class="container" (swipe)="onSwipe($event)">
+              <div class="container p0" (swipe)="onSwipe($event)">
                 <div id="ic_carousel" class="carousel slide">
 
-                  <ol class="m0px">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                        <div
-                          class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter center_flex oli_tray ic_tray_ext col_cw">
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tleft center_flex">
-                            <a (click)="Logevent('', '', 'click_prev_onboarding')"
-                              (keydown.enter)="Logevent('', '', 'click_prev_onboarding')" tabindex="0"
-                              *ngIf="currentSection === 1">
-                              <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
-                                Previous
-                              </button>
-                            </a>
-                          </div>
-
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
-                            <span class="" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ currentSection + 1 }} /
-                              2</span>
-                          </div>
-
-                          <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex"> -->
-                          <!-- <ol class="carousel-indicators" [ngStyle]="{'visibility': loading ? 'visible' : 'hidden'}">
-                              <li data-target="#ic_carousel" data-slide-to="0" class="active"></li>
-                              <li data-target="#ic_carousel" data-slide-to="1"></li> -->
-                          <!-- <li data-target="#ic_carousel" data-slide-to="2"></li> -->
-                          <!-- </ol> -->
-                          <!-- </div> -->
-
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
-                            <a class="next" (click)="Logevent('', '', 'click_next_onboarding')"
-                              (keydown.enter)="Logevent('', '', 'click_next_onboarding')" tabindex="0"
-                              *ngIf="currentSection === 0">
-                              <button type="button" class="btn btn_prev_v3 fs_15px fw_400 lh_140p fc_ffffff">
-                                Next
-                              </button>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                  <!-- Footer Navigation -->
+                  <div class="carousel-footer" *ngIf="currentSection < 5">
+                    <button class="nav-arrow prev-arrow" (click)="back()" *ngIf="currentSection > 0"></button>
+                    <div class="carousel-indicators-custom">
+                      <div class="indicator-dot" *ngFor="let i of [0,1,2,3,4,5]" [class.active]="currentSection === i"></div>
                     </div>
-                  </ol>
+                    <button class="nav-arrow next-arrow" (click)="next()"></button>
+                  </div>
 
                   <div class="carousel-inner">
-                    <!-- <app-splash *ngIf="!loading"></app-splash> -->
-
-                    <div class="carousel-item 0 active" [ngStyle]="isIos ? 
-                        {'opacity': currentSection==1 ? '0' : '1', 'visibility': currentSection==1 ? 'hidden' : 'visible'} : 
-                        {'display': currentSection==1 ? 'none' : 'block'}"
+                    <!-- slide 1: Think better -->
+                    <div class="carousel-item 0 active splash-slide" [ngStyle]="isIos ? 
+                        {'opacity': currentSection==0 ? '1' : '0', 'visibility': currentSection==0 ? 'visible' : 'hidden'} : 
+                        {'display': currentSection==0 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==0 ? '80vh' : '') : ''"
                       [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null"
                       [hidden]="loading">
-                      <!-- slide 1 -->
+                      <div class="img-container">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100">
+                      </div>
+                      <div class="text-container">
+                        <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Think<br>better</h4>
+                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">See why you think, feel, and react the way you do, so you can choose how you respond.</h4>
+                        <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Skip</a>
+                      </div>
+                    </div>
 
+                    <!-- slide 2: Feel better -->
+                    <div class="carousel-item 1 active splash-slide" [ngStyle]="isIos ? 
+                        {'opacity': currentSection==1 ? '1' : '0', 'visibility': currentSection==1 ? 'visible' : 'hidden'} : 
+                        {'display': currentSection==1 ? 'block' : 'none'}"
+                      [style.minHeight]="isIos ? (currentSection==1 ? '80vh' : '') : ''"
+                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
+                      <div class="img-container">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100">
+                      </div>
+                      <div class="text-container">
+                        <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Feel<br>better</h4>
+                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Simple exercises to reduce stress, anxiety, and emotional overwhelm.</h4>
+                        <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Skip</a>
+                      </div>
+                    </div>
 
-                      <!--      <div class="row mt40px center_flex">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                          <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 p0">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/Circles_Adults.webp"
-                              class="img-responsive" style="display:none" (load)="onLoad()" />
+                    <!-- slide 3: Connect better -->
+                    <div class="carousel-item 2 active splash-slide" [ngStyle]="isIos ? 
+                        {'opacity': currentSection==2 ? '1' : '0', 'visibility': currentSection==2 ? 'visible' : 'hidden'} : 
+                        {'display': currentSection==2 ? 'block' : 'none'}"
+                      [style.minHeight]="isIos ? (currentSection==2 ? '80vh' : '') : ''"
+                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
+                      <div class="img-container">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100">
+                      </div>
+                      <div class="text-container">
+                        <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Connect<br>better</h4>
+                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Communicate with care, reduce conflict, and build deeper relationships.</h4>
+                        <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Skip</a>
+                      </div>
+                    </div>
+
+                    <!-- slide 4: Meet Olly AI -->
+                    <div class="carousel-item 3 active splash-slide" [ngStyle]="isIos ? 
+                        {'opacity': currentSection==3 ? '1' : '0', 'visibility': currentSection==3 ? 'visible' : 'hidden'} : 
+                        {'display': currentSection==3 ? 'block' : 'none'}"
+                      [style.minHeight]="isIos ? (currentSection==3 ? '80vh' : '') : ''"
+                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
+                      <div class="img-container">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100">
+                      </div>
+                      <div class="text-container">
+                        <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Meet<br>Olly AI</h4>
+                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Olly listens, helps you reflect, and guides you to expert-curated content you can trust.</h4>
+                        <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Skip</a>
+                      </div>
+                    </div>
+
+                    <!-- slide 5: Working with Mind -->
+                    <div class="carousel-item 4 active splash-slide mind-slide" [ngStyle]="isIos ? 
+                        {'opacity': currentSection==4 ? '1' : '0', 'visibility': currentSection==4 ? 'visible' : 'hidden'} : 
+                        {'display': currentSection==4 ? 'block' : 'none'}"
+                      [style.minHeight]="isIos ? (currentSection==4 ? '80vh' : '') : ''"
+                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
+                      
+                      <div class="mind-content-wrapper">
+                        <div class="mind-card">
+                          <div class="mind-logo">
+                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/working_with_mind.svg" class="img-responsive">
                           </div>
-                        </div>
-                      </div> -->
-
-                      <!-- <div class="row mtb40px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-                            <h4 class="mtb0px fs_21px fw_500 lh_130p  tcenter"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                              Welcome to HappierMe!<br />
-                              Find lasting solutions.
-                            </h4>
-                          </div>
-                        </div>
-                      </div> -->
-
-                      <!-- <div class="row mb15px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0">
-                            <h4 class="mtb0px fs_18px fw_600 lh_150p fc_ffffff tleft">
-                              Our mission is to help you
-                            </h4>
-                          </div>
-                        </div>
-                      </div> -->
-                      <div class="row  mt50px mb5px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adultnew.svg"
-                            class="d-block ">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" *ngIf="!isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teennew.svg"
-                            class="d-block">
+                          <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                            MIND, a leading mental health charity, selected HappierMe to feature in its app library, to support millions of people.
+                          </h4>
                         </div>
                       </div>
 
-
-                      <div class="pagebreak"></div>
-                      <!-- /slide 1 -->
+                      <div class="mind-action-container">
+                        <button type="button" class="btn btn_get_started" (click)="next()">
+                          Get started
+                        </button>
+                      </div>
                     </div>
 
-                    <div class="carousel-item  1 active" [ngStyle]="isIos ? 
-                        {'opacity': currentSection==0 ? '0' : '1', 'visibility': currentSection==0 ? 'hidden' : 'visible'} : 
-                        {'display': currentSection==0 ? 'none' : 'block'}"
-                      [style.minHeight]="isIos ? (currentSection==1 ? '80vh' : '') : ''"
+                    <!-- slide 6: Kept slide (Original Slide 2) -->
+                    <div class="carousel-item  5 active" [ngStyle]="isIos ? 
+                        {'opacity': currentSection==5 ? '1' : '0', 'visibility': currentSection==5 ? 'visible' : 'hidden'} : 
+                        {'display': currentSection==5 ? 'block' : 'none'}"
+                      [style.minHeight]="isIos ? (currentSection==5 ? '80vh' : '') : ''"
                       [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" [style.height]="isIos ? '245px' : ''">
-                          <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100"> -->
                           <!-- Safari-specific video structure -->
                           <ng-container *ngIf="isIos">
                             <video *ngIf="isAdults" controls (play)="LogEvent('play_intro_video')"
@@ -167,70 +168,28 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                             <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="isAdults">
-
-                              <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
-
-                              <!-- <div class="row mt15px">
-                              <h1 class="fw_500 fs_18px lh_140p fc_ffffff mtb0px ">
-      
-      
-                              Your guide for a happier life.
-                              </h1>
-                             </div> -->
                               <div class="row">
                                 <h4 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tcenter">
                                   Overcome stress & anxiety, have happier relationships and succeed in life </h4>
                               </div>
-                              <!-- <hr> -->
                               <div class="row mt15px center_flex">
-
-
                                 <span class="mtb0px fs_12px fw_400 lh_150p  fc_000000 tcenter">
                                   Register today and try HappierMe for free.
-
-                                  <!-- <br/> Get an exclusive wellbeing pack           -->
                                 </span>
                               </div>
-
-
                             </h4>
 
                             <h4 class="mtb0px fs_15px fw_400 lh_140p fc_ffffff tleft" *ngIf="!isAdults">
-                              <!-- To try HappierMe for free and get our welcome offer,sign up today! -->
-                              <!-- <div class="row mt15px"> -->
-                              <!-- <h1 class="fw_500 fs_18px lh_140p fc_ffffff mtb0px ">
-                                  Your guide for a happier life.
-                                </h1> -->
-                              <!-- </div> -->
                               <div class="row mt15px">
                                 <h4 class="mtb0px fs_21px fw_500 lh_140p fc_ffffff tcenter">
                                   Overcome stress & anxiety, have happier relationships and succeed in life
                                 </h4>
                               </div>
-                              <!-- <hr> -->
                               <div class="row mt15px center_flex">
-
                                 <span class="mtb0px fs_12px fw_400  lh_150p fc_ffffff_0_5 tcenter">
                                   Register today and try HappierMe for free.
-                                  <!-- <br />                                   Get an exclusive wellbeing pack. -->
                                 </span>
                               </div>
-                              <!--   <div class="row mt20px tcenter" >
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center_flex">
-                                 <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff_0_7 ">
-                                    By continuing you agree to our   
-                                    <a class="fw_500 fc_ffffff" (click)="navigate('/adults/help-support/terms-conditions')">
-                                      User Agreement
-                                    </a>
-                                    and
-                                    <a class="fw_500 fc_ffffff" (click)="navigate('/adults/help-support/privacy-policy')">
-                                      privacy policy
-                                    </a> and to receive our updates.
-                                    <br />
-                                    We do not share your data with anyone.
-                                  </h4>
-                                </div>
-                              </div> -->
                             </h4>
                           </div>
                         </div>

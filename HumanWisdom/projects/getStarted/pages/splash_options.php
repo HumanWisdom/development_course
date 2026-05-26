@@ -52,15 +52,15 @@
         <div class="row mt80px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 tcenter">
-              <h4 class="mtb0px fs_24px fw_400 lh_140p fc_ffffff tcenter">
+              <h4 class="mtb0px fs_24px fw_400 lh_140p fc_000000 tcenter">
                 Welcome to HappierMe!
               </h4>
       
-              <h4 class="mt0px mb20px fs_15px fw_400 lh_140p fc_ffffff_0_5 tcenter">
+              <h4 class="mt0px mb20px fs_15px fw_400 lh_140p fc_000000_0_5 tcenter">
               Your companion for a happier life
               </h4>
               
-              <h4 class="mt60px mb20px fs_15px fw_400 lh_140p fc_ffffff tcenter">
+              <h4 class="mt60px mb20px fs_15px fw_400 lh_140p fc_000000 tcenter">
               Pick a section to get started
               </h4>
 
@@ -73,7 +73,7 @@
           <a>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img  style="width:120px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/options_teenagers.png" class="img-responsive">
-              <h4 class="mtb5px fs_18px fw_500 lh_140p fc_ffffff td_underline">
+              <h4 class="mtb5px fs_18px fw_500 lh_140p fc_000000">
                 HappierMe for Teenagers
               </h4>
             </div>
@@ -86,7 +86,7 @@
           <a>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img  style="width:120px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/options_adults.png" class="img-responsive">
-              <h4 class="mtb5px fs_18px fw_500 lh_140p fc_ffffff td_underline">
+              <h4 class="mtb5px fs_18px fw_500 lh_140p fc_000000">
                 HappierMe for Adults
               </h4>
             </div>
