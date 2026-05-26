@@ -12,6 +12,15 @@ import { S107008Page } from './s107008/s107008.page';
 import { S107009Page } from './s107009/s107009.page';
 import { S107010Page } from './s107010/s107010.page';
 import { S107011Page } from './s107011/s107011.page';
+
+import { S107012Page } from './s107012/s107012.page';
+import { S107013Page } from './s107013/s107013.page';
+import { S107014Page } from './s107014/s107014.page';
+import { S107015Page } from './s107015/s107015.page';
+import { S107016Page } from './s107016/s107016.page';
+
+
+
 import { ActiveGuard } from 'src/app/authGuard/active.guard';
 
 const routes: Routes = [
@@ -80,7 +89,34 @@ const routes: Routes = [
     canActivate:[ActiveGuard],
     component: S107011Page,
   },
-    
+  {
+  path: 's107012',
+  canActivate: [ActiveGuard],
+  component: S107012Page,
+},
+   
+
+ {
+  path: 's107013',
+   canActivate: [ActiveGuard],
+   component: S107013Page,
+ },
+ {
+  path: 's107014',
+   canActivate: [ActiveGuard],
+   component: S107014Page,
+ },
+
+ {
+  path: 's107015',
+   canActivate: [ActiveGuard],
+   component: S107014Page,
+ },
+ {
+  path: 's107016',
+   canActivate: [ActiveGuard],
+   component: S107016Page,
+ },
 ];
 
 @NgModule({

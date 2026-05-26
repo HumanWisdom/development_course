@@ -82,7 +82,6 @@ export class ChangeTopicPage implements OnInit {
   }
 
   ngOnInit() {
-    debugger;
     let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
     if(loginResponse==null){
       loginResponse = JSON.parse(sessionStorage.getItem("loginResponse"))
@@ -209,6 +208,26 @@ export class ChangeTopicPage implements OnInit {
         
       }
     });
+  }
+
+  getTopicDisplayName(name: string): string {
+    const map = {
+      'Work and Leadership': 'Succeed at work',
+      'Manage your mental wellbeing': 'Improve your mental health',
+      'Relationships': 'Strengthen your relationships',
+      'Habits and Addiction': 'Break addictive habits',
+      'For Parents': 'Be a better parent',
+      'Develop your self awareness': 'Build your self awareness',
+      'Be happier': 'Be happier',
+      'Deal with loss': 'Deal with loss',
+      'Meditation': 'Meditation',
+      'Manage your emotions': 'Manage your emotions'
+    };
+    return map[name] || name;
+  }
+
+  skip() {
+    this.router.navigate(['/adults/adult-dashboard']);
   }
 
   updateList(id,name) {

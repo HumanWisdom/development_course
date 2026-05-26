@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SharedService } from '../../services/shared.service';
@@ -36,11 +36,11 @@ export interface HomeSection {
   title: string;
   Subtitle: string;
   isExpanded: boolean;
-  sectionType?: number | string; // <-- raw from API (1 or 2)
+  sectionType?: number | string;
   overlayIcon: string | null;
   cssClass: string;
-  Cards?: any[]; // <-- API uses capital C
-  cards?: any[]; // <-- fallback for lowercase
+  Cards?: any[];
+  cards?: any[]; 
   contentSections?: HomeSection[];
   sections?: HomeSection[];
   internalSections?: HomeSection[];
@@ -156,7 +156,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private onboardingService: OnboardingService,
     public logeventservice: LogEventService,
     private navigationService: NavigationService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private route: ActivatedRoute
   ) {
  
     this.navigationItems = SharedService.getPreferenceDataForHome();
@@ -176,6 +177,97 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         }, 100);
       });
 
+    // Handle authtoken query parameter
+    this.route.queryParams.subscribe(params => {
+      const authtoken = params?.authtoken;
+      if (authtoken) {
+        this.handleAuthToken(authtoken);
+      }
+    });
+
+  }
+
+  private handleAuthToken(authtoken: string): void {
+    // Check if authtoken is valid
+    if (!authtoken || authtoken.trim() === '') {
+      console.log('Invalid or empty authtoken');
+      return;
+    }
+
+    // Check if token is already in localStorage
+    let storedToken = '';
+    try {
+      storedToken = JSON.parse(localStorage.getItem("token"));
+    } catch(e) { 
+      storedToken = localStorage.getItem("token");
+    }
+
+    const isProgrwamSwitch = localStorage.getItem('isProgrwamSwitch');
+    if (authtoken || isProgrwamSwitch == 'T') {
+      localStorage.setItem("IsProgramSwitch", "F");
+      this.onboardingService.setDataRecievedState(false);
+      localStorage.setItem('socialLogin', 'T');
+      
+      this.commonService.verifytoken(authtoken).subscribe((res) => {
+        if (res) {
+          localStorage.setItem("email", res['Email']);
+          localStorage.setItem("name", res['Name']);
+          let namedata = localStorage.getItem('name').split(' ');
+          localStorage.setItem("FnName", namedata[0]);
+          localStorage.setItem("LName", namedata[1] ? namedata[1] : '');
+          localStorage.setItem("Subscriber", res['Subscriber']);
+          
+          // Update component state
+          this.isSubscriber = SharedService.isSubscriber();
+          this.isloggedIn = SharedService.isLoggedIn();
+          
+          // Update username display
+          const userName = SharedService.FnName();
+          if (userName === "null" || userName === "undefined" || userName === "") {
+            this.username = '';
+            this.streak = '';
+          } else {
+            try {
+              this.username = JSON.parse(userName);
+            } catch (e) {
+              this.username = userName;
+            }
+            this.getStreak();
+          }
+          
+          this.onboardingService.setDataRecievedState(true);
+          console.log('User authenticated via authtoken:', res['Name'], 'Subscriber:', this.isSubscriber);
+          this.cdr.detectChanges();
+        } else {
+          // Token verification failed, set guest user
+          localStorage.setItem("email", 'guest@humanwisdom.me');
+          localStorage.setItem("pswd", '12345');
+          localStorage.setItem('guest', 'T');
+          localStorage.setItem('isloggedin', 'F');
+          this.isloggedIn = false;
+          this.isSubscriber = false;
+          this.username = '';
+          this.streak = '';
+          this.onboardingService.setDataRecievedState(true);
+          this.cdr.detectChanges();
+        }
+      }, error => {
+        // Error in token verification, set guest user
+        localStorage.setItem("email", 'guest@humanwisdom.me');
+        localStorage.setItem("pswd", '12345');
+        localStorage.setItem('guest', 'T');
+        localStorage.setItem('isloggedin', 'F');
+        this.isloggedIn = false;
+        this.isSubscriber = false;
+        this.username = '';
+        this.streak = '';
+        this.onboardingService.setDataRecievedState(true);
+        console.error('Error verifying authtoken:', error);
+        this.cdr.detectChanges();
+      });
+    } else {
+      this.onboardingService.setDataRecievedState(true);
+    }
   }
 
   ngOnInit(): void {
@@ -184,28 +276,24 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isSubscriber = SharedService.isSubscriber();
     console.log('Is Subscriber:', this.isSubscriber);
 
-    // Safely parse username - handle guest users who might have empty/null username
-    try {
-      const userName = SharedService.FnName();
-          if(userName=="null" || userName=="undefined" || userName==""){
-          this.username = localStorage.getItem('FnName');
-        }
-      if (userName && userName.trim() !== '') {
-       
-        this.username = JSON.parse(userName);
-     
-        // Fetch streak for logged-in users
-        this.getStreak();
-      } else {
-        this.username = '';
-        this.streak = '';
-      }
-    } catch (error) {
-      console.warn('Error parsing username, defaulting to Guest:', error);
+    // Safely get username - handle guest users who might have empty/null username
+    const userName = SharedService.FnName();
+    
+    // Check if userName is "null", "undefined", or empty
+    if (userName === "null" || userName === "undefined" || userName === "") {
       this.username = '';
       this.streak = '';
-         this.username = SharedService.FnName();
-       this.getStreak();
+    } else {
+      // Try to parse as JSON (in case it's stored as JSON string)
+      try {
+        this.username = JSON.parse(userName);
+      } catch (e) {
+        // If parsing fails, use the string as-is
+        this.username = userName;
+      }
+      
+      // Fetch streak for logged-in users
+      this.getStreak();
     }
 
     // Restore state from store
