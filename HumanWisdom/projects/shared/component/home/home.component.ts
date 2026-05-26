@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -147,6 +147,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private routerSubscription: Subscription;
   private hashChangeHandler: () => void;
   private lastScrollTop: number = 0;
+  private playstoreBannerObserver: MutationObserver | null = null;
   preference = '';  
   constructor(
     private router: Router,
@@ -154,7 +155,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private homeStateService: HomeStateService,
     private onboardingService: OnboardingService,
     public logeventservice: LogEventService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private cdr: ChangeDetectorRef
   ) {
  
     this.navigationItems = SharedService.getPreferenceDataForHome();
@@ -247,6 +249,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.isAdults = false;
     }
 
+    setTimeout(() => this.updatePlaystoreBannerPadding(), 0);
+
     // Initialize wisdom exercise as hidden
    // this.showWisdomExercise = false;
   }
@@ -287,11 +291,38 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     // Ensure navigation container has horizontal scrolling
     this.setupHorizontalScrolling();
+    this.setupPlaystoreBannerObserver();
 
     // Scroll to active personalized list after view is initialized
     setTimeout(() => {
       this.scrollToActiveList();
     }, 100);
+  }
+
+  private updatePlaystoreBannerPadding(): void {
+    const shouldApplyPadding = !!document.querySelector('.dtn_playstore_banner');
+    if (this.enableBanner !== shouldApplyPadding) {
+      this.enableBanner = shouldApplyPadding;
+      this.cdr.detectChanges();
+    }
+  }
+
+  private setupPlaystoreBannerObserver(): void {
+    this.updatePlaystoreBannerPadding();
+    this.playstoreBannerObserver = new MutationObserver(() => {
+      this.updatePlaystoreBannerPadding();
+    });
+    this.playstoreBannerObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
+
+  private teardownPlaystoreBannerObserver(): void {
+    if (this.playstoreBannerObserver) {
+      this.playstoreBannerObserver.disconnect();
+      this.playstoreBannerObserver = null;
+    }
   }
 
   /**
@@ -1578,6 +1609,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.teardownPlaystoreBannerObserver();
     // Clean up event listeners
     if (this.hashChangeHandler) {
       window.removeEventListener('hashchange', this.hashChangeHandler);

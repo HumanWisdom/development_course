@@ -36,8 +36,8 @@ require_once('./includes/security_config.php');
           "query-input": "required name=search_term_string"
         }
       }
-    </script>
-
+      </script>
+   
 
 
   <!--Canonical Tag-->
@@ -123,7 +123,7 @@ require_once('./includes/security_config.php');
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-65">
-                     <p class="p" style="text-align: left;line-height: 1.3;" id="hw-website-title">Think better.<br><span class="hero-title-accent">Live better.</span></p>
+                     <p class="p" style="color:#ffffff !important;text-align: left;line-height: 1.3;" >Think better.<br><span class="scrolling-words"><span class="scrolling-word">Live</span><span class="scrolling-word ">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span style="color:#ED7D6F"> better.</span></p>
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
@@ -187,10 +187,9 @@ require_once('./includes/security_config.php');
           <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" />
           <div class="div-12">
             <div class="div-5">
-              <p class="introducing-olly-AI" style="font-size:42px;">Introducing Olly AI,<br />your personal guide inside HappierMe.</p>
+              <p class="introducing-olly-AI" style="font-size:30px;">Meet Olly AI,<br />your personal guide.</p>
               <p class="text-wrapper-8">
-                Talk to Olly about what's on your mind — stress, anxiety, relationships, tricky habits, parenting, or
-                work. Olly offers practical support and guides you to trusted, expert-backed resources.
+               Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
               </p>
             </div>
             <a href="https://happierme.app/pages/splash_options.php" id="OllyChatBtn">
@@ -214,7 +213,11 @@ require_once('./includes/security_config.php');
             <img
               src="https://d1tenzemoxuh75.cloudfront.net/website/yt_coverimg.webp"
               alt="HappierMe video cover"
-              style="width:100%;height:100%;display:block;" />
+              style="width:100%;height:100%;display:block;" class="display_m_none" />
+                <img
+              src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/ytcover_mobile.webp"
+              alt="HappierMe video cover"
+              style="width:100%;height:100%;display:block;" class="display_d_none" />
             <span
               aria-hidden="true"
               style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0,0,0,0.25);">
@@ -332,8 +335,8 @@ require_once('./includes/security_config.php');
         <div class="div-21">
           <div class="frame-wrapper-6">
             <div class="div-22">
-              <p class="text-wrapper-14">Address the root cause of problems for lasting change.</p>
-              <p class="text-wrapper-8">Our happiness depends on many factors. HappierMe addresses them all.</p>
+              <p class="text-wrapper-14">Find support and connection</p>
+              <p class="text-wrapper-8">Join a supportive community of people on their wellness journey. Share experiences, celebrate wins, and grow together.</p>
             </div>
           </div>
           <a href="https://happierme.app/pages/splash_options.php">
@@ -348,7 +351,9 @@ require_once('./includes/security_config.php');
         <div class="div-24">
           <!-- Workplace -->
           <a href="/pages/work.php" class="div-25" id="orgCardWorkplace">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work.webp" alt="Work" />
+            <img class="rectangle display_m_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work.webp" alt="Work" />
+                       <img class="rectangle display_d_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/work_mobile.webp" alt="Work" />
+
             <div class="frame-wrapper-7">
               <div class="div-26">
                 <div class="div-27">
@@ -364,7 +369,10 @@ require_once('./includes/security_config.php');
           </a>
           <!-- Education -->
           <a href="/pages/education.php" class="div-25" id="orgCardEducation">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/education.webp" alt="Education" />
+            <img class="rectangle display_m_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/education.webp" alt="Education" />
+                       <img class="rectangle display_d_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/education_mobile.webp" alt="Education" />
+
+           
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
@@ -380,7 +388,9 @@ require_once('./includes/security_config.php');
           </a>
           <!-- Healthcare -->
           <a href="/pages/healthcare.php" class="div-25" id="orgCardHealthcare">
-            <img class="rectangle" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/healthcare.webp" alt="Healthcare" />
+            <img class="rectangle display_m_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/healthcare.webp" alt="Healthcare" />
+                        <img class="rectangle display_d_none" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/healthcare_mobile.webp" alt="Healthcare"  />
+
             <div class="frame-wrapper-8">
               <div class="div-29">
                 <div class="div-30">
@@ -429,7 +439,73 @@ require_once('./includes/security_config.php');
         </div>
       </div>
 
-      <!-- ===== COACHES ===== -->
+
+
+      <!-- ===== SUBSCRIPTION ===== -->
+      <div class="frame-wrapper-9" id="div_subscription">
+        <div class="div-39">
+          <div class="div-40">
+            <div class="div-wrapper-6">
+              <div class="text-wrapper-25">Simple, transparent pricing</div>
+               <span class="div-subs">Start free. Upgrade anytime. Cancel anytime.</span>
+            </div>
+            
+            <div class="div-41">
+              <div class="div-42">
+                <img class="group-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" alt="Expert" />
+                <div class="text-wrapper-26">Expert guidance</div>
+              </div>
+              <div class="div-43">
+                <img class="vector-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" alt="Goals" />
+                <p class="text-wrapper-27">Personalised content to meet your goals</p>
+              </div>
+              <div class="div-42">
+                <div class="ellipse"></div>
+                <p class="text-wrapper-26">Daily practices that fit your life</p>
+              </div>
+            </div>
+          </div>
+          <div class="frame-wrapper-10">
+            <div class="div-44">
+              <div class="div-45">
+                <!-- Yearly -->
+                <div class="group-7" id="sub-plan-yearly">
+                  <div class="rectangle-2"></div>
+                  <div class="div-wrapper-7"><div class="text-wrapper-28">14-day free trial</div></div>
+                  <div class="div-46">
+                    <div class="text-wrapper-29">Yearly</div>
+                    <p class="INR-yr-INR">
+                      <span class="text-wrapper-31" id="annualPricingModelHeading">₹2400/yr</span>
+                    </p>
+                  </div>
+                  <div class="text-wrapper-32" id="spanAnnualLabel">₹200/mo.</div>
+                </div>
+                <!-- Monthly -->
+                <div class="group-8" id="sub-plan-monthly">
+                  <div class="rectangle-3"></div>
+                  <div class="div-47">
+                    <div class="text-wrapper-29">Monthly</div>
+                    <div class="text-wrapper-33">7-day free trial</div>
+                  </div>
+                  <div class="text-wrapper-34" id="monthlyPricingModelHeading">₹300/mo.</div>
+                </div>
+              </div>
+              <p class="after-your-free">
+                <span class="text-wrapper-35" id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
+              </p>
+              <div id="AnnualTypebtn">
+                <div id="PricingSelectBtn1">
+              <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
+                <div class="div-wrapper-4"><div class="text-wrapper-5">Start your free trial</div></div>
+              </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- ===== COACHES ===== -->
       <div class="coaches-section">
         <p class="text-wrapper-6-1">Contact our experienced coaches for personalised support</p>
         <div class="coaches-outer">
@@ -528,68 +604,6 @@ require_once('./includes/security_config.php');
     <i class="bi bi-chevron-right"></i>
   </button>
 </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== SUBSCRIPTION ===== -->
-      <div class="frame-wrapper-9" id="div_subscription">
-        <div class="div-39">
-          <div class="div-40">
-            <div class="div-wrapper-6">
-              <div class="text-wrapper-25">Subscribe to HappierMe Premium</div>
-            </div>
-            <div class="div-41">
-              <div class="div-42">
-                <img class="group-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" alt="Expert" />
-                <div class="text-wrapper-26">Expert guidance</div>
-              </div>
-              <div class="div-43">
-                <img class="vector-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" alt="Goals" />
-                <p class="text-wrapper-27">Personalised content to meet your goals</p>
-              </div>
-              <div class="div-42">
-                <div class="ellipse"></div>
-                <p class="text-wrapper-26">Daily practices that fit your life</p>
-              </div>
-            </div>
-          </div>
-          <div class="frame-wrapper-10">
-            <div class="div-44">
-              <div class="div-45">
-                <!-- Yearly -->
-                <div class="group-7" id="sub-plan-yearly">
-                  <div class="rectangle-2"></div>
-                  <div class="div-wrapper-7"><div class="text-wrapper-28">14-day free trial</div></div>
-                  <div class="div-46">
-                    <div class="text-wrapper-29">Yearly</div>
-                    <p class="INR-yr-INR">
-                      <span class="text-wrapper-31" id="annualPricingModelHeading">₹2400/yr</span>
-                    </p>
-                  </div>
-                  <div class="text-wrapper-32" id="spanAnnualLabel">₹200/mo.</div>
-                </div>
-                <!-- Monthly -->
-                <div class="group-8" id="sub-plan-monthly">
-                  <div class="rectangle-3"></div>
-                  <div class="div-47">
-                    <div class="text-wrapper-29">Monthly</div>
-                    <div class="text-wrapper-33">7-day free trial</div>
-                  </div>
-                  <div class="text-wrapper-34" id="monthlyPricingModelHeading">₹300/mo.</div>
-                </div>
-              </div>
-              <p class="after-your-free">
-                <span class="text-wrapper-35" id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
-              </p>
-              <div id="AnnualTypebtn">
-                <div id="PricingSelectBtn1">
-              <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
-                <div class="div-wrapper-4"><div class="text-wrapper-5">Start your free trial</div></div>
-              </a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -792,6 +806,24 @@ require_once('./includes/security_config.php');
           </div>
         </div>
       </div>
+
+      <!-- ===== READY TO TRANSFORM ===== -->
+      <section class="transform-cta-section">
+        <div class="transform-cta-inner">
+          <div class="transform-cta-text">
+            <h2 class="transform-cta-heading">Ready to transform your life?</h2>
+            <p class="transform-cta-sub">Join thousands of people who've discovered a happier, more resilient version of themselves.</p>
+          </div>
+          <div class="transform-cta-actions">
+            <a href="https://happierme.app/pages/splash_options.php" id="transformStartTrial">
+              <div class="div-wrapper-4 transform-cta-btn"><div class="text-wrapper-5">Start your free trial</div></div>
+            </a>
+            <a href="https://onelink.to/qsptex" id="transformDownloadApp">
+              <div class="transform-cta-btn transform-cta-btn-outline"><div class="text-wrapper-5">Download the app</div></div>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <!-- ===== FAQ ===== -->
       <!-- Desktop FAQ -->
@@ -2823,5 +2855,73 @@ require_once('./includes/security_config.php');
         });
       });
     </script>
+
+       <script>
+ 
+    var words = document.querySelectorAll('.scrolling-word');
+  var current = 0;
+  var timer;
+
+  function resetWords() {
+    words.forEach(function(w) {
+    w.classList.remove('active', 'exit');
+    w.style.transition = 'none';
+    w.style.transform = 'translateY(60%)';
+    w.style.opacity = '0';
+  });
+  current = 0;
+  words[0].style.transition = 'none';
+  words[0].style.transform = '';
+  words[0].style.opacity = '';
+  words[0].classList.add('active');
+  }
+
+  function showNext() {
+    var prev = words[current];
+    prev.classList.remove('active');
+    prev.classList.add('exit');
+
+    setTimeout(function() {
+      prev.classList.remove('exit');
+      prev.style.transition = 'none';
+      prev.style.transform = 'translateY(60%)';
+      prev.style.opacity = '0';
+    }, 420);
+
+    current = (current + 1) % words.length;
+    var next = words[current];
+
+    next.style.transition = 'none';
+    next.style.transform = 'translateY(60%)';
+    next.style.opacity = '0';
+
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        next.style.transition = '';
+        next.style.transform = '';
+        next.style.opacity = '';
+        next.classList.add('active');
+      });
+    });
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(showNext, 2000);
+  }
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') {
+      resetWords();
+      startTimer();
+    } else {
+      clearInterval(timer);
+    }
+  });
+
+  resetWords();
+  startTimer();
+  </script>
+
   </body>
 </html>

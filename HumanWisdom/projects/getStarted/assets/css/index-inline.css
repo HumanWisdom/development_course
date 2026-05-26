@@ -179,7 +179,7 @@ p:hover {
 
 
 .div-65  { display: flex; flex-direction: column; gap: 16px; }
-@media (max-width: 575px) { .div-65 {flex-direction: row;}} 
+/* @media (max-width: 575px) { .div-65 {flex-direction: row;}}  */
 
 .p { font-size: 48px; font-weight: 600; line-height: 1.2; color: #000; margin: 0; }
 
@@ -223,6 +223,10 @@ p:hover {
 .div-wrapper-4:hover {
   background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
 }
+#OllyChatBtn:hover .start-your-free-wrapper-2,
+#OllyChatBtn .start-your-free-wrapper-2:hover {
+  background: linear-gradient(180deg, #2D5392 0%, #0E2E64 100%);
+}
 
 /* ========================================
    ORCHA / Mind BANNER
@@ -248,9 +252,9 @@ p:hover {
 ======================================== */
 .div-7 { width: 100%; max-width: 1340px; padding: 60px 80px; display: flex; flex-direction: column; gap: 60px; }
 .div-wrapper-2 { display: flex; justify-content: center; }
-.text-wrapper-6 { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-bottom: 45px; }
+.text-wrapper-6 { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; padding-bottom: 40px; }
 .text-wrapper-6-1{ font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; }
-.text-wrapper-a { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;    margin-top: 20px; }
+.text-wrapper-a { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; }
 .text-wrapper-user { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;   padding-top: 60px; }
 .text-wrapper-blog { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0;  }
 .div-8 { display: flex; flex-direction: column; gap: 20px; }
@@ -280,7 +284,7 @@ p:hover {
 /* ========================================
    VIDEO / GENERIC CENTER COL
 ======================================== */
-.div-13 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; gap: 60px; }
+.div-13 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
 .text-wrapper-21 { font-size: 24px; font-weight: 600; color: #000; text-align: center; margin: 0; }
 /* 16:9 box; iframe fills it (overrides global #youtubeIntro fixed sizes from responsive.css / index.css) */
 .youtube-player {
@@ -307,10 +311,18 @@ p:hover {
   box-shadow: none !important;
   border-radius: 0;
 }
-.div-new{
-    width: 100%;
-    align-items: center;
-    background: rgba(255, 244, 230, 1);
+.div-new_1 {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.div-new_1 .text-wrapper-6 {
+  padding-bottom: 40px;
+}
+.div-new {
+  width: 100%;
+  align-items: center;
+  background: rgba(255, 244, 230, 1);
+  box-sizing: border-box;
 }
 .div-new1{
     width: 100%;
@@ -509,6 +521,7 @@ header a[href*="splash_options.php"] * {
 .text-wrapper-20 { font-size: 15px; font-weight: 400; color: #000; line-height: 1.6; margin: 0; }
 .text-wrapper-19-mobile,
 .text-wrapper-20-mobile { display: none; }
+.div-subs{font-size: 18px; font-weight: 400; color: white;}
 
 /* ========================================
    COACHES CAROUSEL
@@ -538,7 +551,7 @@ header a[href*="splash_options.php"] * {
 }
 .div-39 { display: flex; flex-direction: column; align-items: center; gap: 40px; max-width: 980px; width: 100%; }
 .div-40 { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; }
-.div-wrapper-6 { display: flex; flex-direction: column; align-items: center; }
+.div-wrapper-6 { display: flex; flex-direction: column; align-items: center;gap:10px }
 .text-wrapper-25 { font-size: 30px; font-weight: 600; color: #fff; text-align: center; line-height: 1.5; margin: 0; }
 .div-41 { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; justify-content: center; }
 .div-42, .div-43 { display: flex; align-items: center; gap: 10px; }
@@ -582,8 +595,11 @@ header a[href*="splash_options.php"] * {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 40px;
   box-sizing: border-box;
+}
+.tools-section > .text-wrapper-6 {
+  padding-bottom: 0;
 }
 
 /* Tab pill row */
@@ -592,8 +608,8 @@ header a[href*="splash_options.php"] * {
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 6.5rem;
-  position:absolute
+  padding-top: 0;
+  position: relative;
 }
 .tool-tab {
   width: 127px;
@@ -862,8 +878,11 @@ header a[href*="splash_options.php"] * {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
   box-sizing: border-box;
+}
+.coaches-section > .text-wrapper-6-1 {
+  padding-bottom: 0;
 }
 .coaches-outer {
   width: 100%;
@@ -1152,6 +1171,87 @@ header a[href*="splash_options.php"] * {
 .blog-more:active .chevron-pink { color: #803358 !important; }
 .blog-more img { width: 8px; height: auto; }
 
+/* ========================================
+   READY TO TRANSFORM CTA (after blog)
+======================================== */
+.transform-cta-section {
+  width: 100%;
+  background: rgba(255, 247, 230, 1);
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  margin-bottom: 70px;
+}
+.transform-cta-inner {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+.transform-cta-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  max-width: 980px;
+}
+.transform-cta-heading {
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+}
+.transform-cta-sub {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  line-height: 1.5;
+
+}
+.transform-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.transform-cta-actions a {
+  text-decoration: none !important;
+}
+.transform-cta-actions a:hover {
+  text-decoration: none !important;
+}
+.transform-cta-btn {
+  min-width: 280px;
+  min-height: 65px;
+  padding: 18px 40px;
+  border-radius: 35px;
+  box-sizing: border-box;
+}
+.transform-cta-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 276px;
+  background: transparent;
+  border: 1px solid rgba(215, 88, 107, 1);
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.transform-cta-btn-outline .text-wrapper-5 {
+  color: rgba(215, 88, 107, 1);
+}
+.transform-cta-btn-outline:hover {
+  background: rgba(215, 88, 107, 0.08);
+}
+
 /* Mobile blog card (matches Figma dimensions) */
 @media (max-width: 768px) {
   /*
@@ -1187,6 +1287,29 @@ header a[href*="splash_options.php"] * {
   .text-wrapper-blog {
     font-size: 18px !important;
     font-weight: 600 !important;
+  }
+
+  .transform-cta-section {
+    padding: 40px 16px;
+  }
+  .transform-cta-inner {
+    gap: 40px;
+  }
+  .transform-cta-heading {
+    font-size: 18px;
+  }
+  .transform-cta-sub {
+    font-size: 16px;
+  }
+  .transform-cta-btn,
+  .transform-cta-btn-outline {
+    width: 100%;
+    max-width: 335px;
+    min-width: unset;
+  }
+  .transform-cta-actions {
+    width: 100%;
+    flex-direction: column;
   }
 
   /* Blog carousel: left/right inset before scroll; edge-to-edge strip after (same idea as coaches + is-scrolled) */
@@ -1521,7 +1644,7 @@ header a[href*="splash_options.php"] * {
     padding-right: 0;
     padding-top: 24px;
     padding-bottom: 60px;
-    gap: 0;
+    gap: 40px;
   }
   .tools-panel-wrap {
     width: 100% !important;
@@ -1816,7 +1939,7 @@ header a[href*="splash_options.php"] * {
     max-width: 100%;
     overflow-x: hidden;
     box-sizing: border-box;
-    gap: 24px;
+    gap: 40px;
     padding-right: 0;
     padding-left: 20px;
   }
@@ -1940,7 +2063,7 @@ header a[href*="splash_options.php"] * {
 
   /* Video */
   .div-13 {padding: 40px 16px;
-        gap: 24px;
+        gap: 40px;
         padding-left: 16px; }
 
   /* Coaches / blog: when carousel is scrolled, title + footer use 16px to match narrow layout */
@@ -2012,7 +2135,9 @@ header a[href*="splash_options.php"] * {
   .img-2 { display: none; }
 
   /* Section headings */
-  .text-wrapper-6 { font-size: 18px; padding-bottom: 30px; }
+  .text-wrapper-6 { font-size: 18px; padding-bottom: 40px; }
+  .tools-section > .text-wrapper-6 { padding-bottom: 0; }
+  .div-new_1 .text-wrapper-6 { padding-bottom: 40px; }
   .text-wrapper-21 { font-size: 18px; }
   .text-wrapper-user {
         font-size: 18px;
