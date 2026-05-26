@@ -321,13 +321,16 @@ require_once('./includes/security_config.php');
         </div>
         <div class="div-19">
           <a href="https://happierme.app/adults/testimonials" id="viewallsuccessstories" class="text-wrapper-13">View all success stories</a>
-          <span class="chevron-pink">  <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+          <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
         </div>
       </div>
 
-      <!-- ===== ROOT CAUSE ===== -->
+      <!-- ===== FIND SUPPORT & CONNECTION ===== -->
       <div class="div-20">
-        <img class="design" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Design.svg" alt="Design" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/find_support_mob.webp" />
+          <img class="design" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Find_Support.webp" alt="Find support and connection" />
+        </picture>
         <div class="div-21">
           <div class="frame-wrapper-6">
             <div class="div-22">
@@ -335,9 +338,29 @@ require_once('./includes/security_config.php');
               <p class="text-wrapper-8">Join a supportive community of people on their wellness journey. Share experiences, celebrate wins, and grow together.</p>
             </div>
           </div>
-          <a href="https://happierme.app/pages/splash_options.php">
-            <div class="div-wrapper-4"><div class="text-wrapper-5">Try HappierMe for free</div></div>
-          </a>
+          <div class="support-features">
+            <div class="support-feature-item">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/communityforum.svg" alt="Community forum" class="support-feature-icon" />
+              <div class="support-feature-content">
+                <a href="https://happierme.app/adults/community" class="support-feature-title">Community forum</a>
+                <p class="support-feature-desc">Connect with others and ask questions anonymously</p>
+              </div>
+            </div>
+            <div class="support-feature-item">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/live_events.svg" alt="Live Events" class="support-feature-icon" />
+              <div class="support-feature-content">
+                <a href="https://happierme.app/adults/events" class="support-feature-title">Live Events</a>
+                <p class="support-feature-desc">Join live discussions with experts and community members</p>
+              </div>
+            </div>
+            <div class="support-feature-item">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching.svg" alt="Expert Coaching" class="support-feature-icon" />
+              <div class="support-feature-content">
+                <a href="https://happierme.app/adults/coaching" class="support-feature-title">Expert Coaching</a>
+                <p class="support-feature-desc">Get personalized 1-on-1 support from trained coaches</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -800,7 +823,7 @@ require_once('./includes/security_config.php');
       <section class="transform-cta-section">
         <div class="transform-cta-inner">
           <div class="transform-cta-text">
-            <h2 class="transform-cta-heading">Ready to transform your life?</h2>
+            <h2 class="transform-cta-heading">Ready to transform<br class="mobile-br"> your life?</h2>
             <p class="transform-cta-sub">Join thousands of people who've discovered a happier, more resilient version of themselves.</p>
           </div>
           <div class="transform-cta-actions">
