@@ -565,7 +565,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
 
   next() {
     this.currentSection++;
-    if (this.currentSection >= 2) {
+    if (this.currentSection >= 6) {
       this.currentSection = 0;
     }
     this.direction = 'left';
@@ -576,7 +576,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
   back() {
     this.direction = 'right';
     if (this.currentSection == 0) {
-      this.currentSection = 1;
+      this.currentSection = 5;
     } else {
       this.currentSection--;
     }
@@ -806,7 +806,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
   Logevent(route, params, evtName) {
     if (evtName === 'click_next_onboarding') {
       this.currentSection++;
-      if (this.currentSection >= 2) {
+      if (this.currentSection >= 6) {
         this.currentSection = 0;
       }
       this.direction = 'left';
@@ -814,7 +814,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     } else if (evtName === 'click_prev_onboarding') {
       this.direction = 'right';
       if (this.currentSection == 0) {
-        this.currentSection = 1;
+        this.currentSection = 5;
       } else {
         this.currentSection--;
       }

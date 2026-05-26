@@ -34,6 +34,187 @@
    height: 52px;
 }
 
+.sc_01 {
+   padding: 0 !important;
+}
+
+.x_panel {
+   border: none !important;
+   padding: 0 !important;
+   margin: 0 !important;
+   background: transparent !important;
+}
+
+.x_content {
+   padding: 0 !important;
+}
+
+.splash-slide {
+   height: 100vh;
+   height: 100dvh; // Use dynamic viewport height for mobile
+   background: #FFB3A1;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   overflow: hidden; // Prevent scrolling
+   
+   .img-container {
+      flex: 0 0 45%; // Fixed 45% of height
+      width: 100%;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         border-radius: 0 !important;
+      }
+   }
+   
+   .text-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2vh 20px 140px; // Reserved space for Skip (80-120) and Footer (0-80)
+      justify-content: flex-start; // Start text from top
+      position: relative;
+      background: inherit;
+   }
+
+   .title-text {
+      font-size: clamp(32px, 8vh, 56px);
+      font-weight: 500;
+      line-height: 125%;
+      text-align: center;
+      margin-top: 4vh;
+      margin-bottom: 2vh;
+      color: #000000;
+   }
+
+   .desc-text {
+      font-size: clamp(14px, 2.5vh, 15px);
+      font-weight: 400;
+      line-height: 150%;
+      text-align: center;
+      max-width: 300px;
+      color: #000000BF;
+   }
+
+   .skip-btn {
+      position: absolute;
+      bottom: 80px; // Fixed just above the 80px footer
+      left: 0;
+      right: 0;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: underline;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 140%;
+      cursor: pointer;
+      color: #00000080;
+      z-index: 110;
+   }
+}
+
+.carousel-footer {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 80px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 40px;
+   z-index: 120;
+   background: transparent;
+}
+
+.carousel-indicators-custom {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   flex: 1;
+
+   .indicator-dot {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      background-color: rgba(255, 255, 255, 0.4) !important;
+      margin: 0 4px !important;
+      transition: all 0.3s ease !important;
+      border: none !important;
+      padding: 0 !important;
+      display: block !important;
+
+      &.active {
+         background-color: #ffffff !important;
+         width: 24px !important;
+         border-radius: 10px !important;
+      }
+   }
+}
+
+// Aggressively hide any other indicators that might be injected
+.carousel-indicators, ol.carousel-indicators, ul.carousel-indicators {
+   display: none !important;
+   visibility: hidden !important;
+   opacity: 0 !important;
+   height: 0 !important;
+   width: 0 !important;
+   overflow: hidden !important;
+}
+
+.nav-arrow {
+   width: 40px;
+   height: 40px;
+   background: transparent;
+   border: none;
+   padding: 0;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   z-index: 130;
+
+   &::after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-top: 2.5px solid #ffffff;
+      border-right: 2.5px solid #ffffff;
+   }
+
+   &.prev-arrow::after {
+      transform: rotate(-135deg);
+      margin-left: 6px;
+   }
+
+   &.next-arrow::after {
+      transform: rotate(45deg);
+      margin-right: 6px;
+   }
+}
+
+.right_col, .cw100p, .sc_01, .x_panel, .x_content, form, .container, #ic_carousel {
+   height: 100vh !important;
+   height: 100dvh !important;
+   overflow: hidden !important;
+   margin: 0 !important;
+   padding: 0 !important;
+}
+
+.oli_tray, .carousel-indicators {
+   display: none !important; // Hide all standard indicators and trays
+}
+
 .safari-browser {
    .carousel-item {
       -webkit-backface-visibility: hidden;
@@ -64,3 +245,88 @@
       transform: translate3d(0, 0, 0);
    }
 }
+
+.mind-slide {
+    background: #FFB3A1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    position: relative;
+  
+    .mind-content-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 30px;
+      width: 100%;
+      z-index: 10;
+    }
+  
+    .mind-card {
+       background: rgba(255, 255, 255, 0.2); 
+       border: 1px solid #ffffff;
+       border-radius: 24px;
+       padding: 40px 25px; // Reduced vertical padding slightly to prevent overlap
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+   
+       .mind-logo {
+         margin-bottom: 30px; // Reduced margin slightly
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+          max-width: 180px;
+          width: 100%;
+          height: auto;
+        }
+      }
+  
+      .desc-text {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        color: #000000 !important;
+        font-weight: 400 !important;
+        max-width: 100% !important;
+      }
+    }
+  
+    .mind-action-container {
+       position: absolute;
+       bottom: 80px; 
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       background: transparent;
+       z-index: 20;
+       height: 80px; // Match footer height area for alignment
+       align-items: center;
+  
+      .btn_get_started {
+        background: #e58d82;
+        border: none;
+        padding: 12px 60px;
+        border-radius: 25px;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 500;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        
+        &:hover, &:active {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
