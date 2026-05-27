@@ -427,14 +427,22 @@ header a[href*="splash_options.php"] * {
   text-decoration: none !important;
 }
 /* ========================================
-   ROOT CAUSE
+   FIND SUPPORT & CONNECTION
 ======================================== */
-.div-20 { width: 100%; background: rgba(255, 249, 238, 1); display: flex; align-items: center; justify-content: center; gap: 80px; padding: 60px 50px; flex-wrap: wrap;     margin-top: 55px;}
-.design { width: 456px; height: 500px; object-fit: contain; flex-shrink: 0; }
-.div-21 { display: flex; flex-direction: column; gap: 32px; max-width: 444px; }
+.div-20 { width: 100%; background: rgba(255, 247, 230, 1); display: flex; align-items: center; justify-content: center; gap: 80px; padding: 0; flex-wrap: wrap; margin-top: 55px; overflow: hidden; }
+.div-20 picture { flex-shrink: 0; line-height: 0; }
+.design { width: 744px; height: 670px; object-fit: cover; display: block; }
+.div-21 { display: flex; flex-direction: column; gap: 24px; max-width: 385px; padding: 60px 0; }
 .frame-wrapper-6 { display: flex; flex-direction: column; gap: 16px; }
 .div-22 { display: flex; flex-direction: column; gap: 8px; }
 .text-wrapper-14 { font-size: 30px; font-weight: 600; color: #000; line-height: 1.5; margin: 0; }
+.support-features { display: flex; flex-direction: column; gap: 24px; }
+.support-feature-item { display: flex; align-items: flex-start; gap: 16px; }
+.support-feature-icon { width: 40px; height: 40px; flex-shrink: 0; }
+.support-feature-content { display: flex; flex-direction: column; gap: 4px; }
+.support-feature-title { font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 600; color: rgba(215, 88, 107, 1); text-decoration: underline; line-height: 150%; margin: 0; }
+.support-feature-title:hover { color: rgba(180, 60, 80, 1); }
+.support-feature-desc { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400; color: #333; line-height: 1.5; margin: 0; }
 
 /* ========================================
    ORGANISATION CARDS
@@ -556,7 +564,7 @@ header a[href*="splash_options.php"] * {
 .div-41 { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; justify-content: center; }
 .div-42, .div-43 { display: flex; align-items: center; gap: 10px; }
 .group-6, .vector-6 { width: 26px; height: 24px; object-fit: contain; }
-.text-wrapper-26, .text-wrapper-27 { font-size: 18px; font-weight: 500; color: #fff; margin: 0; }
+.text-wrapper-26, .text-wrapper-27 { font-size: 18px; font-weight: 500; color: rgba(255, 172, 162, 1); margin: 0; }
 .ellipse { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(0deg, #ffaca2 0%, #ffcaa9 100%); flex-shrink: 0; }
 .frame-wrapper-10 { width: 100%; }
 .div-44 { display: flex; flex-direction: column; gap: 24px; align-items: center; width: 100%; }
@@ -597,6 +605,7 @@ header a[href*="splash_options.php"] * {
   align-items: center;
   gap: 40px;
   box-sizing: border-box;
+  padding-top: 40px;
 }
 .tools-section > .text-wrapper-6 {
   padding-bottom: 0;
@@ -880,6 +889,7 @@ header a[href*="splash_options.php"] * {
   align-items: center;
   gap: 40px;
   box-sizing: border-box;
+  padding-bottom: 40px;
 }
 .coaches-section > .text-wrapper-6-1 {
   padding-bottom: 0;
@@ -1207,6 +1217,7 @@ header a[href*="splash_options.php"] * {
   margin: 0;
   line-height: 1.3;
 }
+.transform-cta-heading .mobile-br { display: none; }
 .transform-cta-sub {
   font-size: 18px;
   font-weight: 400;
@@ -1290,26 +1301,37 @@ header a[href*="splash_options.php"] * {
   }
 
   .transform-cta-section {
-    padding: 40px 16px;
+    padding: 40px 20px;
   }
   .transform-cta-inner {
-    gap: 40px;
+    gap: 20px;
   }
   .transform-cta-heading {
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 140%;
   }
+  .transform-cta-heading .mobile-br { display: inline; }
   .transform-cta-sub {
-    font-size: 16px;
+    font-size: 14px;
   }
   .transform-cta-btn,
   .transform-cta-btn-outline {
     width: 100%;
     max-width: 335px;
     min-width: unset;
+    min-height: unset;
+    height: 55px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    box-sizing: border-box;
   }
   .transform-cta-actions {
     width: 100%;
     flex-direction: column;
+    gap: 10px;
+  }
+  .transform-cta-actions a#transformDownloadApp {
+    display: none;
   }
 
   /* Blog carousel: left/right inset before scroll; edge-to-edge strip after (same idea as coaches + is-scrolled) */
@@ -1851,23 +1873,72 @@ header a[href*="splash_options.php"] * {
     box-sizing: border-box;
   }
 
-  /* Testimonials */
-  .div-15 { flex-direction: column; }
-  .div-14 { align-items: center; }
+  /* Testimonials - horizontal swipe */
+  .div-14 { align-items: center; gap: 20px; padding: 0 !important; }
+  .text-wrapper-user { font-size: 24px; text-align: center; }
+  .div-15 {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    scrollbar-width: none;
+    scroll-padding-left: 20px;
+  }
+  .div-15::-webkit-scrollbar { display: none; }
+  .frame-wrapper-4 {
+    flex: 0 0 280px;
+    min-width: 280px;
+    max-width: 280px;
+    padding: 24px;
+    scroll-snap-align: start;
+    border-radius: 20px;
+  }
+  .div-19 { justify-content: center;         width: 231px; }
 
-  /* Root cause */
-  .div-20 { flex-direction: column; align-items: center; padding: 40px 20px;text-align: center; gap: 30px;}
-  .design { width: 100%; max-width: 340px; height: auto; }
-  .div-21 { max-width: 100%; }
+  /* Find support & connection */
+  .div-20 { flex-direction: column; align-items: center; padding: 0; text-align: center; gap: 0; }
+  .div-20 picture { width: 100%; }
+  .design { width: 100%; height: 338px; object-fit: cover; }
+  .div-21 { max-width: 100%; padding: 40px 20px; gap: 24px; }
+  .text-wrapper-14 { font-size: 24px; line-height: 140%; }
+  .support-features { text-align: left; gap: 16px; }
+  .support-feature-item { align-items: flex-start; gap: 12px; }
+  .support-feature-icon { width: 24px; height: 21px; margin-top: 4px; }
+  .support-feature-title { font-size: 18px; line-height: 150%; }
+  .support-feature-desc { font-size: 12px; }
 
-  /* Org cards */
-  .div-24 { flex-direction: column; align-items: center;padding-left: 0px;padding-right:0px; }
-  .div-25 { max-width: 100%; }
-  /* Organisation cards: image + title only */
-  .div-23 .rectangle { width: 335px; height: 150px; object-fit: cover; margin: 0 auto; max-width: 100%; }
-  .div-23 .frame-wrapper-7, .div-23 .frame-wrapper-8 { padding: 18px 20px; max-height: none; }
-  .div-23 .div-27, .div-23 .div-30 { gap: 0px; align-items: center; }
-  .div-23 .text-wrapper-15, .div-23 .text-wrapper-17 { font-size: 15px; font-weight: 400; text-align: center; }
+  /* Org cards - horizontal swipe */
+  .div-23 { padding: 40px 0 !important; gap: 20px; }
+  .div-24 {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    justify-content: flex-start !important;
+    scrollbar-width: none;
+    scroll-padding-left: 20px;
+  }
+  .div-24::-webkit-scrollbar { display: none; }
+  .div-25 {
+    flex: 0 0 280px;
+    min-width: 280px;
+    max-width: 280px;
+    scroll-snap-align: start;
+  }
+  .div-25:first-child { margin-left: 0; }
+  .div-25:last-child { margin-right: 0; }
+  .div-23 .rectangle { width: 100%; height: 150px; object-fit: cover; }
+  .div-23 .frame-wrapper-7, .div-23 .frame-wrapper-8 { padding: 16px; max-height: none; }
+  .div-23 .div-27, .div-23 .div-30 { gap: 4px; align-items: center; }
+  .div-23 .text-wrapper-15, .div-23 .text-wrapper-17 { font-size: 15px; font-weight: 500; text-align: center; }
   .div-23 .text-wrapper-16 { display: none !important; }
   .div-23 .div-28 { display: none !important; }
 
@@ -1895,7 +1966,9 @@ header a[href*="splash_options.php"] * {
   /* Subscription */
   .div-45 { flex-direction: column; align-items: center;padding-left: 18px;
     padding-right: 18px;gap:10px }
-  .text-wrapper-25 { font-size: 22px; }
+  .text-wrapper-25 { font-size: 24px; text-align: center; }
+  .div-subs { font-size: 12px; text-align: center; }
+  .div-wrapper-6 { text-align: center; align-items: center; gap: 6px; }
   .div-41 { gap: 16px; flex-direction: column;}
   .group-6, .vector-6 ,.ellipse{width: 16px; height: 15px;}
 
@@ -2031,14 +2104,9 @@ header a[href*="splash_options.php"] * {
   /* Orcha */
   .orcha-strip { padding: 12px 16px;height:269.74px }
 
-  /* Organisation cards: image + title only */
-  .div-23 .rectangle { width: 335px; height: 150px; object-fit: cover; margin: 0 auto; max-width: 100%; }
-  .div-23 .frame-wrapper-7, .div-23 .frame-wrapper-8 { padding: 18px 20px; max-height: none; }
-  .div-23 .div-27, .div-23 .div-30 { gap: 0px; align-items: center; }
-  .div-23 .text-wrapper-15, .div-23 .text-wrapper-17 { font-size: 15px; font-weight: 400; text-align: center; }
+  /* Organisation cards: horizontal swipe (same as 768px) */
   .div-23 .text-wrapper-16 { display: none !important; }
   .div-23 .div-28 { display: none !important; }
-  .div-23 {gap: 30px;}
 
   /* Topics */
   .div-7 { padding: 40px 16px; gap: 10px; }
@@ -2079,15 +2147,16 @@ header a[href*="splash_options.php"] * {
   }
 
   /* Testimonials */
-  .frame-wrapper-4 { padding: 24px 18px; }
+  .frame-wrapper-4 { padding: 24px 18px; flex: 0 0 280px; min-width: 280px; max-width: 280px; }
   .text-wrapper-10 { font-size: 15px; }
 
-  /* Root cause */
+  /* Find support */
   .text-wrapper-14 { font-size: 20px; }
 
   /* Org cards */
-  .frame-wrapper-7, .frame-wrapper-8 { padding: 24px; }
-  .text-wrapper-15, .text-wrapper-17 { font-size: 20px; }
+  .div-25 { flex: 0 0 260px; min-width: 260px; max-width: 260px; }
+  .div-23 .frame-wrapper-7, .div-23 .frame-wrapper-8 { padding: 16px; }
+  .div-23 .text-wrapper-15, .div-23 .text-wrapper-17 { font-size: 14px; }
 
   /* Teenagers */
   .div-31 { padding: 40px 16px; }
@@ -2099,11 +2168,12 @@ header a[href*="splash_options.php"] * {
   .div-31 .div-28 { display: none !important; } /* Hide "Find out more" */
   .div-31 .div-wrapper-4 { display: none !important; } /* Hide bottom CTA button */
   .div-31 a[href*="teenagers/intro-carousel"] { display: none !important; }
-  .div-23 {    padding-bottom: 20px;}
+  .div-23 { padding-bottom: 20px; }
 
   /* Subscription */
   .frame-wrapper-9 { padding: 40px 16px; }
-  .text-wrapper-25 { font-size: 18px; }
+  .text-wrapper-25 { font-size: 24px; text-align: center; }
+  .div-subs { font-size: 12px; text-align: center; }
   .text-wrapper-26, .text-wrapper-27 { font-size: 15px; }
   .text-wrapper-29 { font-size: 15px; }
   .text-wrapper-32, .text-wrapper-34 { font-size: 18px; }
@@ -2140,11 +2210,8 @@ header a[href*="splash_options.php"] * {
   .div-new_1 .text-wrapper-6 { padding-bottom: 40px; }
   .text-wrapper-21 { font-size: 18px; }
   .text-wrapper-user {
-        font-size: 18px;
-  }
-  .div-15 {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    font-size: 24px;
+    text-align: center;
   }
 
   /* Coaches (mobile): center footer + fix carousel start */
