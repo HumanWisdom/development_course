@@ -19,19 +19,16 @@
 
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back_change_topic col_cw" *ngIf="isRoutedFromLogin">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-      <h1 class="fw_600 fs_18px lh_140p fc_000000 mt20px tcenter" >
-        Pick a topic you’re interested in
+      <h1 class="fw_500 fs_21px lh_160p fc_000000 mt30px mb10px tcenter">
+        What are you looking for?
       </h1>
-      <h4 class="fw_400 fs_12px lh_140p fc_000000_0_5 mt20px tcenter" >
-        Pick one now. You can explore others later. 
-      </h4>
     </div>
   </div>
 </div>
 <!-- /top navigation -->
 
 <!-- page content -->
-<div class="right_col mc_01">
+<div class="right_col mc_02">
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
@@ -39,21 +36,28 @@
         <div class="x_panel p0">
           <div class="x_content p0">
 
-            <div class="mt20px div_ct">
+            <div class="div_ct">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div  (click)="updateList(item.id,item.name)" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let item of changeTopicList">
-                    <button [ngClass]="item.id == selectedId ? 'topic-op-point-5': 'topic-op-one'">
-                      <h4 class="mtb0px fw_600 fs_15px lh_140p fc_ffffff tcenter">
-                        {{item.name}}
-                      </h4>
+                <div class="col-xs-12 card-container">
+                  <div (click)="updateList(item.id,item.name)" class="topic-card-wrapper"
+                    *ngFor="let item of changeTopicList">
+                    <button class="topic-card" [class.selected]="item.id == selectedId">
+                      <span class="fw_500 fs_15px lh_140p fc_000000">
+                        {{getTopicDisplayName(item.name)}}
+                      </span>
                     </button>
                   </div>
                 </div>
               </div>
             </div>
 
-           <!--  <div class="row mt40px" *ngIf="isRoutedFromLogin">
+            <div class="row mt20px mb20px tcenter" *ngIf="isRoutedFromLogin">
+              <div class="col-xs-12">
+                <a (click)="skip()" class="skip-btn fs_15px fw_500 td_underline">I'm not sure</a>
+              </div>
+            </div>
+
+            <!--  <div class="row mt40px" *ngIf="isRoutedFromLogin">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                 <button class="ct_next " [disabled]="!isSelected" [ngClass]="!isSelected ? 'disabled' :''"
                   (click)="next()">
@@ -75,51 +79,53 @@
               </div>
             </div> -->
 
-            
- <!-- feel better now -->
- <div class="row tour_fbn" *ngIf="!isRoutedFromLogin">
-   <!-- hr -->
-   <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-      <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 p0">
-        <hr class="hr_style_v3_05">
-      </div>
-      <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4 p0">
-        <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
-          or
-        </h4>
-      </div>
-      <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 p0">
-        <hr class="hr_style_v3_05">
-      </div>
-    </div>
-  </div>
-  <!-- /hr -->
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ">
-    <a  routerLink="/adults/pathway">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01ex">
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dots.svg" class="img-responsive w100">
-        </div>
 
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  pl15px">
-          <h4 class="mtb0px fc_ED7D6F fs_15px fw_600 lh_150p">
-            Explore PATHWAY
-          </h4>
-        
-          <h4 class="mtb0px fc_000000 fs_12px fw_400 lh_140p">
-            Explore our 5-step guided program to learn about yourself, grow as a person, and lead an extraordinary life.
-          </h4>
-        </div>
+            <!-- feel better now -->
+            <div class="row tour_fbn" *ngIf="!isRoutedFromLogin">
+              <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                  <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 p0">
+                    <hr class="hr_style_v3_05">
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4 p0">
+                    <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
+                      or
+                    </h4>
+                  </div>
+                  <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 p0">
+                    <hr class="hr_style_v3_05">
+                  </div>
+                </div>
+              </div>
+              <!-- /hr -->
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ">
+                <a routerLink="/adults/pathway">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01ex">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dots.svg"
+                        class="img-responsive w100">
+                    </div>
 
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-          <i class="fa fa-angle-right fc_000000 fs_20px"></i>
-        </div>
-      </div>
-    </a>
-  </div>
-</div>
-<!-- /feel better now -->
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  pl15px">
+                      <h4 class="mtb0px fc_ED7D6F fs_15px fw_600 lh_150p">
+                        Explore PATHWAY
+                      </h4>
+
+                      <h4 class="mtb0px fc_000000 fs_12px fw_400 lh_140p">
+                        Explore our 5-step guided program to learn about yourself, grow as a person, and lead an
+                        extraordinary life.
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                      <i class="fa fa-angle-right fc_000000 fs_20px"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /feel better now -->
 
             <div class="pagebreak"></div>
 

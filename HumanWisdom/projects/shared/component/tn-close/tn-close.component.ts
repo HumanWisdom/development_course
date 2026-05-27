@@ -52,9 +52,9 @@ export class TnCloseComponent implements OnInit {
         this.location.back();
       }
     } else if (url.includes("daily-checkin-save")) {
-      this.router.navigate([SharedService.getDashboardUrls()]);
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
     } else {
-      this.router.navigate([url]);
+      this.router.navigateByUrl(url);
     }
   }
 
