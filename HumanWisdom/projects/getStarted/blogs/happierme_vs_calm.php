@@ -16,6 +16,7 @@
     <style>
 table, th, td {
   border:1px solid black;
+  padding: 5px;
 }
 th{
   text-align:center;
@@ -59,7 +60,7 @@ HappierMe vs Calm: Which mental wellness app Is right for you?
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/78.webp" class="img-responsive" alt="Difficult emotions: a guide to freedom">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/calm_happier.webp" class="img-responsive" alt="Difficult emotions: a guide to freedom">
               </div>
             </div>
 
@@ -154,7 +155,7 @@ What is Calm?
 
                 
 
-                <h4 class="mtb0px blog_desc"><a class="blog_highlight_peach td_underline" href="https://happierme.app/?utm_source=chatgpt.com">
+                <h4 class="mtb0px blog_desc"><a class="blog_highlight_peach td_underline" href="https://happierme.app/?utm_source=chatgpt.com">HappierMe</a> and <a class="blog_highlight_peach td_underline" href="https://www.calm.com/?utm_source=chatgpt.com">
                  
 Calm</a> is one of the world’s most popular meditation and sleep apps, widely recognized for its guided meditations, Sleep Stories, calming music, and relaxation content.
 
@@ -421,7 +422,7 @@ HappierMe’s Olly AI
 
                 <h4 class="mtb0px blog_desc">
                  
-HappierMe introduces Olly AI, a built-in smart wellness guide that helps users discover relevant content based on their emotional state and personal goals.
+HappierMe introduces <span class="blog_highlight_black">Olly AI,</span> a built-in smart wellness guide that helps users discover relevant content based on their emotional state and personal goals.
 
 
 
@@ -619,10 +620,10 @@ It’s ideal for passive relaxation and calming routines.
 
                 </h4>
 
-                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                <!-- <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
                  
 HappierMe’s Olly AI
-</span></h4>
+</span></h4> -->
 
 
                
@@ -701,7 +702,7 @@ Calm primarily relies on pre-recorded sessions and guided audio experiences rath
                 </h4>
 
                 
-   <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+  <h4 class="mtb0px blog_sub_title">
 Which App is Better for Sleep?
 
 </span></h4>
@@ -853,8 +854,8 @@ Both apps offer free content with premium subscription options.
                 
               
 
-                <h4 class="mtb0px blog_desc">
-HappierMe
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+HappierMe</span>
 <ul>
     <li>Focuses on accessible daily wellness practices
 
@@ -876,8 +877,8 @@ HappierMe
 
                 </h4>
 
-                  <h4 class="mtb0px blog_desc">
-Calm
+                  <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+Calm</span>
 
 <ul>
     <li>Premium subscription unlocks extensive meditation and sleep libraries
@@ -933,8 +934,8 @@ Choosing between HappierMe and Calm depends on your wellness goals.
 
                 
    
-                <h4 class="mtb0px blog_desc">
-Choose HappierMe if you want:
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+Choose HappierMe if you want:</span>
 <ul>
     <li>AI-powered personalized wellness guidance
 
@@ -968,8 +969,8 @@ Choose HappierMe if you want:
 
 
                 
-                <h4 class="mtb0px blog_desc">
-Choose Calm if you want:
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+Choose Calm if you want:</span>
 
 <ul>
     <li>Better sleep support
@@ -1018,7 +1019,7 @@ Conclusion
 
                 <h4 class="mtb0px blog_desc">
                  
-Both <a class="blog_highlight_peach td_underline" href="https://happierme.app/?utm_source=chatgpt.com"> HappierMe </a>and <a class="blog_highlight_peach td_underline" href="https://happierme.app/?utm_source=chatgpt.com">Calm </a>offer valuable mental wellness experiences, but they serve different needs.
+Both <a class="blog_highlight_peach td_underline" href="https://happierme.app/?utm_source=chatgpt.com"> HappierMe </a>and <a class="blog_highlight_peach td_underline" href="https://www.calm.com/?utm_source=chatgpt.com">Calm </a>offer valuable mental wellness experiences, but they serve different needs.
 
 
 
