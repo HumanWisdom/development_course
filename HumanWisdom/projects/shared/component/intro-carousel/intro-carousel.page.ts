@@ -184,13 +184,8 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   skip() {
-    if (this.isAdults) {
-      this.router.navigate(['/adults/onboarding/login']);
-    } else {
-      this.router.navigate(['/teenagers/onboarding/login']);
-    }
-    localStorage.setItem('personalised', 'F');
-    localStorage.setItem('fromlandingpage', 'F');
+    this.currentSection = 4;
+    this.direction = 'left';
     this.logeventservice.logEvent('onboarding_skip');
   }
 
