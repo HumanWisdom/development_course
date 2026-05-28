@@ -27,7 +27,7 @@
                         <div class="indicator-dot" *ngFor="let i of [0,1,2,3,4,5]"
                           [class.active]="currentSection === i"></div>
                       </div>
-                      <button class="nav-arrow next-arrow" (click)="next()"></button>
+                      <button class="nav-arrow next-arrow" (click)="next()" [style.visibility]="currentSection === 4 ? 'hidden' : 'visible'"></button>
                     </div>
                   </div>
 
