@@ -52,15 +52,17 @@
 .splash-slide {
    height: 100vh;
    height: 100dvh; // Use dynamic viewport height for mobile
-   background: #FFB3A1;
+   background: transparent !important;
    display: flex;
    flex-direction: column;
    position: relative;
    overflow: hidden; // Prevent scrolling
    
    .img-container {
-      flex: 0 0 45%; // Fixed 45% of height
       width: 100%;
+      aspect-ratio: 5 / 4;
+      flex-shrink: 0;
+      overflow: hidden;
       img {
          width: 100%;
          height: 100%;
@@ -74,48 +76,30 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2vh 20px 140px; // Reserved space for Skip (80-120) and Footer (0-80)
+      padding: 2vh 20px 120px; // Reserved space for Footer (120px)
       justify-content: flex-start; // Start text from top
       position: relative;
       background: inherit;
    }
 
-   .title-text {
-      font-size: clamp(32px, 8vh, 56px);
-      font-weight: 500;
-      line-height: 125%;
-      text-align: center;
-      margin-top: 4vh;
-      margin-bottom: 2vh;
-      color: #000000;
-   }
+    .title-text {
+       font-size: 56px;
+       font-weight: 500;
+       line-height: 125%;
+       text-align: center;
+       margin-top: 4vh;
+       margin-bottom: 2vh;
+       color: #000000;
+    }
 
-   .desc-text {
-      font-size: clamp(14px, 2.5vh, 15px);
-      font-weight: 400;
-      line-height: 150%;
-      text-align: center;
-      max-width: 300px;
-      color: #000000BF;
-   }
-
-   .skip-btn {
-      position: absolute;
-      bottom: 80px; // Fixed just above the 80px footer
-      left: 0;
-      right: 0;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: underline;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 140%;
-      cursor: pointer;
-      color: #00000080;
-      z-index: 110;
-   }
+    .desc-text {
+       font-size: 14px !important;
+       font-weight: 400;
+       line-height: 150%;
+       text-align: center;
+       max-width: 300px;
+       color: #000000BF;
+    }
 }
 
 .carousel-footer {
@@ -123,13 +107,38 @@
    bottom: 0;
    left: 0;
    width: 100%;
-   height: 80px;
+   height: 120px;
    display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0 40px;
+   flex-direction: column;
+   justify-content: flex-end;
    z-index: 120;
    background: transparent;
+
+   .footer-top {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      .skip-btn {
+         text-decoration: underline;
+         font-size: 15px;
+         font-weight: 400;
+         line-height: 140%;
+         cursor: pointer;
+         color: #00000080;
+      }
+   }
+
+   .footer-bottom {
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      width: 100%;
+   }
 }
 
 .carousel-indicators-custom {
@@ -211,6 +220,10 @@
    padding: 0 !important;
 }
 
+#ic_carousel {
+   position: relative !important;
+}
+
 .oli_tray, .carousel-indicators {
    display: none !important; // Hide all standard indicators and trays
 }
@@ -247,7 +260,7 @@
 }
 
 .mind-slide {
-    background: #FFB3A1;
+    background: transparent !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -260,7 +273,7 @@
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
+      bottom: 120px; // Adjusted for 120px footer
       display: flex;
       justify-content: center;
       align-items: center;
@@ -273,11 +286,13 @@
        background: rgba(255, 255, 255, 0.2); 
        border: 1px solid #ffffff;
        border-radius: 24px;
-       padding: 40px 25px; // Reduced vertical padding slightly to prevent overlap
+       padding: 20px 25px;
        width: 100%;
+       height: 300px;
        display: flex;
        flex-direction: column;
        align-items: center;
+       justify-content: center;
        text-align: center;
        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
    
@@ -330,3 +345,114 @@
       }
     }
   }
+
+@media (max-height: 760px) {
+   .splash-slide {
+      .img-container {
+         width: 100% !important;
+         aspect-ratio: 5 / 4 !important;
+         height: auto !important;
+      }
+      
+      .text-container {
+         padding: 1.5vh 20px 120px !important; // Standard 120px footer padding
+      }
+      
+      .title-text {
+         font-size: clamp(26px, 5.5vh, 46px) !important; // Scaled to prevent overlap with 5:4 ratio on short screens
+         margin-top: 2vh !important;
+         margin-bottom: 1.5vh !important;
+      }
+   }
+
+   .carousel-footer {
+      height: 120px !important; // Standard footer height
+      
+      .footer-top {
+         height: 40px !important;
+         
+         .skip-btn {
+            font-size: 15px !important;
+         }
+      }
+      
+      .footer-bottom {
+         height: 80px !important;
+         padding: 0 40px !important;
+      }
+   }
+   
+   .mind-slide {
+      .mind-content-wrapper {
+         bottom: 120px !important;
+         padding: 0 20px !important;
+      }
+       .mind-card {
+          height: 300px !important;
+          justify-content: center !important;
+          padding: 20px !important;
+          .mind-logo {
+             margin-bottom: 20px !important;
+             img {
+                max-width: 160px !important;
+             }
+          }
+          .desc-text {
+             font-size: 15px !important;
+          }
+       }
+      .mind-action-container {
+         bottom: 80px !important;
+         height: 80px !important;
+         .btn_get_started {
+            font-size: 16px !important;
+            padding: 10px 45px !important;
+         }
+      }
+   }
+}
+
+@media (max-height: 600px) {
+   .splash-slide {
+      .title-text {
+         font-size: clamp(22px, 5vh, 26px) !important;
+         margin-top: 1.5vh !important;
+         margin-bottom: 1vh !important;
+      }
+   }
+   
+   .mind-slide {
+      .mind-content-wrapper {
+         bottom: 100px !important;
+      }
+      .mind-card {
+         height: 240px !important;
+         padding: 15px !important;
+         .mind-logo {
+            margin-bottom: 10px !important;
+            img {
+               max-width: 120px !important;
+            }
+         }
+         .desc-text {
+            font-size: 13px !important;
+         }
+      }
+      .mind-action-container {
+         bottom: 60px !important;
+         height: 60px !important;
+         .btn_get_started {
+            font-size: 15px !important;
+            padding: 8px 35px !important;
+         }
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .splash-slide {
+      .title-text {
+         font-size: 46px;
+      }
+   }
+}
