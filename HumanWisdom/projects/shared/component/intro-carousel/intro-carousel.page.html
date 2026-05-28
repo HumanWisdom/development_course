@@ -12,15 +12,20 @@
 
               <!-- carousel -->
               <div class="container p0" (swipe)="onSwipe($event)">
-                <div id="ic_carousel" class="carousel slide">
+                <div id="ic_carousel" class="carousel slide" [style.background-color]="currentSection < 5 ? '#FFB3A1' : 'transparent'">
 
                   <!-- Footer Navigation -->
                   <div class="carousel-footer" *ngIf="currentSection < 5">
-                    <button class="nav-arrow prev-arrow" (click)="back()" *ngIf="currentSection > 0"></button>
-                    <div class="carousel-indicators-custom">
-                      <div class="indicator-dot" *ngFor="let i of [0,1,2,3,4,5]" [class.active]="currentSection === i"></div>
+                    <div class="footer-top">
+                      <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" *ngIf="currentSection < 4">Skip</a>
                     </div>
-                    <button class="nav-arrow next-arrow" (click)="next()"></button>
+                    <div class="footer-bottom">
+                      <button class="nav-arrow prev-arrow" (click)="back()" *ngIf="currentSection > 0"></button>
+                      <div class="carousel-indicators-custom">
+                        <div class="indicator-dot" *ngFor="let i of [0,1,2,3,4,5]" [class.active]="currentSection === i"></div>
+                      </div>
+                      <button class="nav-arrow next-arrow" (click)="next()"></button>
+                    </div>
                   </div>
 
                   <div class="carousel-inner">
@@ -29,15 +34,13 @@
                         {'opacity': currentSection==0 ? '1' : '0', 'visibility': currentSection==0 ? 'visible' : 'hidden'} : 
                         {'display': currentSection==0 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==0 ? '80vh' : '') : ''"
-                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null"
                       [hidden]="loading">
-                      <div class="img-container">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100">
+                      <div class="img-container" [@imageFadeAnimation]="currentSection">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/think_beeter.webp" class="img-responsive w100">
                       </div>
-                      <div class="text-container">
+                      <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null" [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Think<br>better</h4>
                         <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">See why you think, feel, and react the way you do, so you can choose how you respond.</h4>
-                        <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Skip</a>
                       </div>
                     </div>
 
@@ -45,15 +48,13 @@
                     <div class="carousel-item 1 active splash-slide" [ngStyle]="isIos ? 
                         {'opacity': currentSection==1 ? '1' : '0', 'visibility': currentSection==1 ? 'visible' : 'hidden'} : 
                         {'display': currentSection==1 ? 'block' : 'none'}"
-                      [style.minHeight]="isIos ? (currentSection==1 ? '80vh' : '') : ''"
-                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
-                      <div class="img-container">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100">
+                      [style.minHeight]="isIos ? (currentSection==1 ? '80vh' : '') : ''">
+                      <div class="img-container" [@imageFadeAnimation]="currentSection">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/feel_better.webp" class="img-responsive w100">
                       </div>
-                      <div class="text-container">
+                      <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null" [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Feel<br>better</h4>
                         <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Simple exercises to reduce stress, anxiety, and emotional overwhelm.</h4>
-                        <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Skip</a>
                       </div>
                     </div>
 
@@ -61,15 +62,13 @@
                     <div class="carousel-item 2 active splash-slide" [ngStyle]="isIos ? 
                         {'opacity': currentSection==2 ? '1' : '0', 'visibility': currentSection==2 ? 'visible' : 'hidden'} : 
                         {'display': currentSection==2 ? 'block' : 'none'}"
-                      [style.minHeight]="isIos ? (currentSection==2 ? '80vh' : '') : ''"
-                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
-                      <div class="img-container">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100">
+                      [style.minHeight]="isIos ? (currentSection==2 ? '80vh' : '') : ''">
+                      <div class="img-container" [@imageFadeAnimation]="currentSection">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/connect_better.webp" class="img-responsive w100">
                       </div>
-                      <div class="text-container">
+                      <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null" [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Connect<br>better</h4>
                         <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Communicate with care, reduce conflict, and build deeper relationships.</h4>
-                        <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Skip</a>
                       </div>
                     </div>
 
@@ -77,15 +76,13 @@
                     <div class="carousel-item 3 active splash-slide" [ngStyle]="isIos ? 
                         {'opacity': currentSection==3 ? '1' : '0', 'visibility': currentSection==3 ? 'visible' : 'hidden'} : 
                         {'display': currentSection==3 ? 'block' : 'none'}"
-                      [style.minHeight]="isIos ? (currentSection==3 ? '80vh' : '') : ''"
-                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
-                      <div class="img-container">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/intro_carousel_login.png" class="img-responsive w100">
+                      [style.minHeight]="isIos ? (currentSection==3 ? '80vh' : '') : ''">
+                      <div class="img-container" [@imageFadeAnimation]="currentSection">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_breathing.gif" class="img-responsive w100">
                       </div>
-                      <div class="text-container">
+                      <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null" [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Meet<br>Olly AI</h4>
                         <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Olly listens, helps you reflect, and guides you to expert-curated content you can trust.</h4>
-                        <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Skip</a>
                       </div>
                     </div>
 
@@ -93,10 +90,9 @@
                     <div class="carousel-item 4 active splash-slide mind-slide" [ngStyle]="isIos ? 
                         {'opacity': currentSection==4 ? '1' : '0', 'visibility': currentSection==4 ? 'visible' : 'hidden'} : 
                         {'display': currentSection==4 ? 'block' : 'none'}"
-                      [style.minHeight]="isIos ? (currentSection==4 ? '80vh' : '') : ''"
-                      [@slideAnimation]="!isIos ? direction : null" [@slideAnimationSafari]="isIos ? direction : null">
+                      [style.minHeight]="isIos ? (currentSection==4 ? '80vh' : '') : ''">
                       
-                      <div class="mind-content-wrapper">
+                      <div class="mind-content-wrapper" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null" [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <div class="mind-card">
                           <div class="mind-logo">
                             <img src="https://d1tenzemoxuh75.cloudfront.net/website/working_with_mind.svg" class="img-responsive">
@@ -107,7 +103,7 @@
                         </div>
                       </div>
 
-                      <div class="mind-action-container">
+                      <div class="mind-action-container" [@imageFadeAnimation]="currentSection">
                         <button type="button" class="btn btn_get_started" (click)="next()">
                           Get started
                         </button>
