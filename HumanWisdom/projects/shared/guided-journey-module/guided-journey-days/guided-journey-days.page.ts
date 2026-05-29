@@ -521,6 +521,18 @@ export class GuidedJourneyDaysPage implements OnInit {
     }
   }
 
+  isBreathingExercise(exercise: any): boolean {
+    if (!exercise) return false;
+    const section = (exercise.Section || '').toUpperCase();
+    return section.includes('BREATHING EXERCISE');
+  }
+
+  isSoundscape(exercise: any): boolean {
+    if (!exercise) return false;
+    const section = (exercise.Section || '').toUpperCase();
+    return section.includes('SOUNDSCAPE');
+  }
+
   getSectionIcon(section: string) {
     if (!section) return null;
     const s = section.toUpperCase();
