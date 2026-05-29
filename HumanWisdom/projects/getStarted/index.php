@@ -127,7 +127,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself, reduce stress and anxiety, improve relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
+                      Understand yourself, reduce stress and anxiety, improve your relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
                     </p>
                   </div>
                 </div>
