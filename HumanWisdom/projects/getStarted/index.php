@@ -651,7 +651,7 @@ require_once('./includes/security_config.php');
             <div class="tools-card">
               <div class="tools-thumb">
                 <video playsinline
-                  poster="https://d1tenzemoxuh75.cloudfront.net/website/rec-tool.svg"
+                  poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/Feel_betternew.webp"
                   controlsList="nodownload"
                   class="tools-thumb-video"
                   id="fbn-video">
