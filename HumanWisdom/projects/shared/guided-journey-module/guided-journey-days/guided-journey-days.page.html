@@ -103,6 +103,10 @@
               <!-- Exercises List -->
               <div *ngFor="let exercise of getExercisesForDay(dayNum); let i = index; let isLast = last">
 
+              <!-- Instruction Text Above Card -->
+              <p class="exercise_instruction" *ngIf="isBreathingExercise(exercise)">Practice this breathing exercise for 5-10 minutes every day. It can help calm your mind.</p>
+              <p class="exercise_instruction" *ngIf="isSoundscape(exercise)">Listen to this soundscape for 5 minutes.</p>
+
               <!-- Type 1: Horizontal Card (Image Left, Content Right) -->
               <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1" (click)="onExerciseClick(exercise)">
                 <div class="card_type1_img_container">
@@ -129,7 +133,6 @@
                     <p class="card_type1_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle || exercise.Section}}</p>
                     <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
                   </ng-container>
-                  <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
                 </div>
                 <div class="card_type1_status">
                   <div class="card_type1_tick" *ngIf="exercise.isRead === '1' && isLoggedIn">
@@ -137,12 +140,6 @@
                   </div>
                   <div class="card_type1_lock"
                     *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
-                    <!-- <div [ngClass]="isAdults ? '' : 'status-icon lock-icon'">
-                      <img
-                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                        [class.lock-icon-img]="!isAdults"
-                        alt="">
-                    </div> -->
                     <div>
                       <img
                         src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
@@ -186,12 +183,6 @@
                     </div>
                     <div class="lock_status"
                       *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
-                      <!-- <div [ngClass]="isAdults ? '' : 'status-icon lock-icon'">
-                        <img
-                          [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                          [class.lock-icon-img]="!isAdults"
-                          alt="">
-                      </div> -->
                       <div>
                         <img
                           src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
