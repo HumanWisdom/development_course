@@ -1,0 +1,112 @@
+<!-- top navigation -->
+<div class="row center_flex">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"
+    [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+      <a (click)="goBack()">
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0"
+          *ngIf="isAdults">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg" alt="" class="p0"
+          *ngIf="!isAdults">
+      </a>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+    </div>
+  </div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col mc_02">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+        <div class="x_panel p0">
+          <div class="x_content p0">
+
+            <div class="header-section">
+              <h1 class="fw_600 fs_24px lh_140p mt0px mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                {{topicName}}
+              </h1>
+              <p class="fs_15px fw_400 lh_150p mt0px mb20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'">
+                Here are some quick things to try out
+              </p>
+            </div>
+
+            <div class="cards-container">
+              <div *ngIf="isLoading" class="loading-wrapper tcenter">
+                <p [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Loading quick suggestions...</p>
+              </div>
+
+              <div *ngIf="!isLoading && cardsList.length === 0" class="no-data tcenter">
+                <p [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">No quick suggestions available for this topic.</p>
+              </div>
+
+              <div *ngIf="!isLoading && cardsList.length > 0" [ngClass]="isAdults ? 'toc_adiv_03' : 'toc_adiv_02'">
+                <ng-container *ngFor="let card of cardsList">
+                  <a (click)="navigateToResource(card)" class="pointer-events-auto">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                        <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                          <img [src]="card.ImgPath" alt="media suggestion" class="p0 session_img session_imgnew" />
+                          <!-- Media Icon Overlay -->
+                          <div *ngIf="getMediaIcon(card)">
+                            <img class="session_img_play" [src]="getMediaIcon(card)" alt="media type">
+                          </div>
+                        </div>
+
+                        <div class="col-md-7 col-sm-7 col-xs-7 p0">
+                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p"
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                            {{card.Title}}
+                          </h4>
+                          <p class="mtb0px fs_11px fw_500 lh_130p"
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                            {{card.formattedSubTitle}}
+                          </p>
+                        </div>
+
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
+                          <img *ngIf="card.isViewed"
+                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
+                            class="ws-read-icon" alt="read">
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </ng-container>
+              </div>
+            </div>
+
+            <!-- Bottom Actions -->
+            <div class="bottom-actions" *ngIf="!isLoading">
+              <!-- Skip Button: displayed if NOT all cards are viewed -->
+              <div class="skip-btn-container tcenter" *ngIf="!allViewed">
+                <a (click)="onSkipOrContinue()" class="skip-link fs_15px fw_500 td_underline"
+                  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  Skip
+                </a>
+              </div>
+
+              <!-- Continue Button: displayed if ALL cards are viewed -->
+              <div class="continue-btn-container tcenter" *ngIf="allViewed">
+                <button (click)="onSkipOrContinue()" class="continue-btn">
+                  <span class="fs_15px fw_600 fc_ffffff">Continue</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="arrow-icon">
+                    <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.59Z" fill="white" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
