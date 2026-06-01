@@ -3,7 +3,8 @@
   <div class="cw100p" [class.allow-scroll]="currentSection === 5">
     <div class="row flex_jc_center">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 col_cw"
-        [ngClass]="isAdults ? 'div_intro' : 'v1_3_bg_splash_teens'" [class.safari-browser]="isIos" [class.allow-scroll]="currentSection === 5">
+        [ngClass]="isAdults ? 'div_intro' : 'v1_3_bg_splash_teens'" [class.safari-browser]="isIos"
+        [class.allow-scroll]="currentSection === 5">
         <div class="x_panel p0" [class.allow-scroll]="currentSection === 5">
           <div class="x_content p0 tcenter" [class.allow-scroll]="currentSection === 5">
             <form [class.allow-scroll]="currentSection === 5">
@@ -13,8 +14,8 @@
               <!-- carousel -->
               <div class="container p0" (swipe)="onSwipe($event)" [class.allow-scroll]="currentSection === 5">
                 <div id="ic_carousel" class="carousel slide"
-                    [style.background-color]="currentSection < 5 ? '#FFB3A1' : 'transparent'"
-                    [class.allow-scroll]="currentSection === 5">
+                  [style.background-color]="currentSection < 5 ? '#FFB3A1' : 'transparent'"
+                  [class.allow-scroll]="currentSection === 5">
 
                   <!-- Footer Navigation -->
                   <div class="carousel-footer" *ngIf="currentSection < 5">
@@ -25,10 +26,11 @@
                     <div class="footer-bottom">
                       <button class="nav-arrow prev-arrow" (click)="back()" *ngIf="currentSection > 0"></button>
                       <div class="carousel-indicators-custom">
-                        <div class="indicator-dot" *ngFor="let i of [0,1,2,3,4]"
-                          [class.active]="currentSection === i"></div>
+                        <div class="indicator-dot" *ngFor="let i of [0,1,2,3,4]" [class.active]="currentSection === i">
+                        </div>
                       </div>
-                      <button class="nav-arrow next-arrow" (click)="next()" [style.visibility]="currentSection === 4 ? 'hidden' : 'visible'"></button>
+                      <button class="nav-arrow next-arrow" (click)="next()"
+                        [style.visibility]="currentSection === 4 ? 'hidden' : 'visible'"></button>
                     </div>
                   </div>
 
@@ -90,8 +92,8 @@
                         {'display': currentSection==3 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==3 ? '80vh' : '') : ''">
                       <div class="img-container olly-img-container" [@imageFadeAnimation]="currentSection">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_breathing2.gif"
-                          class="img-responsive w100">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_singleloop.gif"
+                          class="img-responsive">
                       </div>
                       <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null"
                         [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
@@ -112,7 +114,8 @@
                         [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <div class="mind-card">
                           <div class="mind-logo">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/website/working_with_mind.svg"
+                            <img
+                              [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/website/working_with_mind.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/working_with_mindteens.svg'"
                               class="img-responsive">
                           </div>
                           <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -334,7 +337,7 @@
                         </div>
                       </div>
 
-                      <div class="pagebreak"></div>
+                      <!-- <div class="pagebreak"></div> -->
                       <!-- /slide 3 -->
                     </div>
 
