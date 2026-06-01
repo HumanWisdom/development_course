@@ -1646,8 +1646,22 @@ nfsnContactForm &&
         ["aud1", "aud2"].forEach(function (aid) {
             var aud = document.getElementById(aid);
             if (aud) {
+                var wrap = aud.closest(".tools-audio-wrap");
+                var setPlaying = function (playing) {
+                    if (wrap) {
+                        wrap.classList.toggle("is-playing", playing);
+                    }
+                };
+                setPlaying(!aud.paused);
                 aud.addEventListener("play", function () {
+                    setPlaying(true);
                     logevent("click_play_audio", "index.php", { audio_id: aid });
+                });
+                aud.addEventListener("pause", function () {
+                    setPlaying(false);
+                });
+                aud.addEventListener("ended", function () {
+                    setPlaying(false);
                 });
             }
         });
