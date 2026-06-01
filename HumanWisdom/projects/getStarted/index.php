@@ -127,7 +127,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself, reduce stress and anxiety, improve relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
+                      Understand yourself, reduce stress and anxiety, improve your relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
                     </p>
                   </div>
                 </div>
@@ -651,7 +651,7 @@ require_once('./includes/security_config.php');
             <div class="tools-card">
               <div class="tools-thumb">
                 <video playsinline
-                  poster="https://d1tenzemoxuh75.cloudfront.net/website/rec-tool.svg"
+                  poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/Feel_betternew.webp"
                   controlsList="nodownload"
                   class="tools-thumb-video"
                   id="fbn-video">
@@ -2809,19 +2809,27 @@ require_once('./includes/security_config.php');
         var m = document.getElementById('sub-plan-monthly');
         var d = document.getElementById('totalAnnualPricingModelHeading');
         if (!y || !m || !d) return;
-        var tY = 'After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.';
-        var tM = 'After your free trial, the monthly subscription is ₹300/mo and automatically renews each month until cancelled.';
+        function yearlyDisclaimer() {
+          var annual = document.getElementById('annualPricingModelHeading');
+          var price = annual ? annual.textContent.trim() : '';
+          return 'After your free trial, the yearly subscription is ' + price + ' and automatically renews each year until cancelled.';
+        }
+        function monthlyDisclaimer() {
+          var monthly = document.getElementById('monthlyPricingModelHeading');
+          var price = monthly ? monthly.textContent.trim() : '';
+          return 'After your free trial, the monthly subscription is ' + price + ' and automatically renews each month until cancelled.';
+        }
         function pickMonthly() {
           if (typeof logevent === 'function') logevent('click_monthly', 'index.php');
           y.classList.add('sub-plan-off');
           m.classList.add('sub-plan-on');
-          d.textContent = tM;
+          d.textContent = monthlyDisclaimer();
         }
         function pickYearly() {
           if (typeof logevent === 'function') logevent('click_yearly', 'index.php');
           y.classList.remove('sub-plan-off');
           m.classList.remove('sub-plan-on');
-          d.textContent = tY;
+          d.textContent = yearlyDisclaimer();
         }
         y.addEventListener('click', pickYearly);
         m.addEventListener('click', pickMonthly);

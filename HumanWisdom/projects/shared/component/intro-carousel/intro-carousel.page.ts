@@ -41,6 +41,32 @@ declare var FB: any;
         style({ transform: 'translate3d(-100%, 0, 0)' }), // start from left
         animate('0.7s ease-in-out', style({ transform: 'translate3d(0, 0, 0)' }))
       ])
+    ]),
+    trigger('textAnimation', [
+      transition((fromState: string, toState: string) => toState && toState.endsWith('left'), [
+        style({ transform: 'translateX(100%)', opacity: 0 }),
+        animate('0.6s cubic-bezier(0.25, 0.8, 0.25, 1)', style({ transform: 'translateX(0)', opacity: 1 }))
+      ]),
+      transition((fromState: string, toState: string) => toState && toState.endsWith('right'), [
+        style({ transform: 'translateX(-100%)', opacity: 0 }),
+        animate('0.6s cubic-bezier(0.25, 0.8, 0.25, 1)', style({ transform: 'translateX(0)', opacity: 1 }))
+      ])
+    ]),
+    trigger('textAnimationSafari', [
+      transition((fromState: string, toState: string) => toState && toState.endsWith('left'), [
+        style({ transform: 'translate3d(100%, 0, 0)', opacity: 0 }),
+        animate('0.6s cubic-bezier(0.25, 0.8, 0.25, 1)', style({ transform: 'translate3d(0, 0, 0)', opacity: 1 }))
+      ]),
+      transition((fromState: string, toState: string) => toState && toState.endsWith('right'), [
+        style({ transform: 'translate3d(-100%, 0, 0)', opacity: 0 }),
+        animate('0.6s cubic-bezier(0.25, 0.8, 0.25, 1)', style({ transform: 'translate3d(0, 0, 0)', opacity: 1 }))
+      ])
+    ]),
+    trigger('imageFadeAnimation', [
+      transition('* => *', [
+        style({ opacity: 0 }),
+        animate('0.6s ease-in-out', style({ opacity: 1 }))
+      ])
     ])
   ]
 })
@@ -158,13 +184,8 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   skip() {
-    if (this.isAdults) {
-      this.router.navigate(['/adults/onboarding/login']);
-    } else {
-      this.router.navigate(['/teenagers/onboarding/login']);
-    }
-    localStorage.setItem('personalised', 'F');
-    localStorage.setItem('fromlandingpage', 'F');
+    this.currentSection = 4;
+    this.direction = 'left';
     this.logeventservice.logEvent('onboarding_skip');
   }
 
