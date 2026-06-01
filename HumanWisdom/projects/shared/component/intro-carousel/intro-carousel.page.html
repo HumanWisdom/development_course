@@ -1,19 +1,20 @@
 <!-- page content -->
-<div class="right_col mc_03">
-  <div class="cw100p">
+<div class="right_col mc_03" [class.allow-scroll]="currentSection === 5">
+  <div class="cw100p" [class.allow-scroll]="currentSection === 5">
     <div class="row flex_jc_center">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 col_cw"
-        [ngClass]="isAdults ? 'div_intro' : 'v1_3_bg_splash_teens'" [class.safari-browser]="isIos">
-        <div class="x_panel p0">
-          <div class="x_content p0 tcenter">
-            <form>
+        [ngClass]="isAdults ? 'div_intro' : 'v1_3_bg_splash_teens'" [class.safari-browser]="isIos" [class.allow-scroll]="currentSection === 5">
+        <div class="x_panel p0" [class.allow-scroll]="currentSection === 5">
+          <div class="x_content p0 tcenter" [class.allow-scroll]="currentSection === 5">
+            <form [class.allow-scroll]="currentSection === 5">
 
 
 
               <!-- carousel -->
-              <div class="container p0" (swipe)="onSwipe($event)">
+              <div class="container p0" (swipe)="onSwipe($event)" [class.allow-scroll]="currentSection === 5">
                 <div id="ic_carousel" class="carousel slide"
-                  [style.background-color]="currentSection < 5 ? '#FFB3A1' : 'transparent'">
+                    [style.background-color]="currentSection < 5 ? '#FFB3A1' : 'transparent'"
+                    [class.allow-scroll]="currentSection === 5">
 
                   <!-- Footer Navigation -->
                   <div class="carousel-footer" *ngIf="currentSection < 5">
@@ -24,14 +25,14 @@
                     <div class="footer-bottom">
                       <button class="nav-arrow prev-arrow" (click)="back()" *ngIf="currentSection > 0"></button>
                       <div class="carousel-indicators-custom">
-                        <div class="indicator-dot" *ngFor="let i of [0,1,2,3,4,5]"
+                        <div class="indicator-dot" *ngFor="let i of [0,1,2,3,4]"
                           [class.active]="currentSection === i"></div>
                       </div>
                       <button class="nav-arrow next-arrow" (click)="next()" [style.visibility]="currentSection === 4 ? 'hidden' : 'visible'"></button>
                     </div>
                   </div>
 
-                  <div class="carousel-inner">
+                  <div class="carousel-inner" [class.allow-scroll]="currentSection === 5">
                     <!-- slide 1: Think better -->
                     <div class="carousel-item 0 active splash-slide" [ngStyle]="isIos ? 
                         {'opacity': currentSection==0 ? '1' : '0', 'visibility': currentSection==0 ? 'visible' : 'hidden'} : 
@@ -129,7 +130,7 @@
                     </div>
 
                     <!-- slide 6: Kept slide (Original Slide 2) -->
-                    <div class="carousel-item  5 active" [ngStyle]="isIos ? 
+                    <div class="carousel-item  5 active signup-login-slide" [ngStyle]="isIos ? 
                         {'opacity': currentSection==5 ? '1' : '0', 'visibility': currentSection==5 ? 'visible' : 'hidden'} : 
                         {'display': currentSection==5 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==5 ? '80vh' : '') : ''"
