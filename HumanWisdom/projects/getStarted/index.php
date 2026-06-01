@@ -346,7 +346,7 @@ require_once('./includes/security_config.php');
             <div class="support-feature-item">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/communityforum.svg" alt="Community forum" class="support-feature-icon" />
               <div class="support-feature-content">
-                <a href="https://happierme.app/adults/community" class="support-feature-title">Community forum</a>
+                <a href="https://happierme.app/adults/forum" class="support-feature-title">Community forum</a>
                 <p class="support-feature-desc">Connect with others and ask questions anonymously</p>
               </div>
             </div>
@@ -360,7 +360,7 @@ require_once('./includes/security_config.php');
             <div class="support-feature-item">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching.svg" alt="Expert Coaching" class="support-feature-icon" />
               <div class="support-feature-content">
-                <a href="https://happierme.app/adults/coaching" class="support-feature-title">Expert Coaching</a>
+                <a href="https://happierme.app/adults/coach" class="support-feature-title">Expert Coaching</a>
                 <p class="support-feature-desc">Get personalized 1-on-1 support from trained coaches</p>
               </div>
             </div>
@@ -663,9 +663,6 @@ require_once('./includes/security_config.php');
               </div>
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
-                  <span class="tools-label-dot">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingExerciseicon.svg" alt="Breathing exercise" class="tools-label-icon" />
-                  </span>
                   <span class="tools-label-text">BREATHING EXERCISE</span>
                 </div>
                 <p class="tools-card-title">Humming bee</p>
@@ -690,9 +687,12 @@ require_once('./includes/security_config.php');
             <div class="tools-info">
               <h3 class="tools-info-heading">PATHWAY — Guided program</h3>
               <p class="tools-info-body">A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.</p>
-              <audio id="aud1" controls controlslist="nodownload">
-                <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
-              </audio>
+              <div class="tools-audio-wrap" data-audio-wrap="aud1">
+                <span class="tools-audio-play-icon" aria-hidden="true"></span>
+                <audio id="aud1" controls controlslist="nodownload">
+                  <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                </audio>
+              </div>
               <a href="https://happierme.app/adults/pathway/" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
@@ -702,7 +702,6 @@ require_once('./includes/security_config.php');
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/questions.svg" alt="Journal" class="tools-thumb-img_sec" />
-                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
             </div>
@@ -724,9 +723,12 @@ require_once('./includes/security_config.php');
             <div class="tools-info">
               <h3 class="tools-info-heading">HappierMe Podcast</h3>
               <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, where we explore a subject in depth with guests from around the world. They offer fresh ways of dealing with the many challenges we face and living our best life.</p>
-              <audio id="aud2" controls controlslist="nodownload">
-                <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
-              </audio>
+              <div class="tools-audio-wrap" data-audio-wrap="aud2">
+                <span class="tools-audio-play-icon" aria-hidden="true"></span>
+                <audio id="aud2" controls controlslist="nodownload">
+                  <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
+                </audio>
+              </div>
               <a href="https://happierme.app/adults/podcast" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
@@ -736,7 +738,6 @@ require_once('./includes/security_config.php');
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" alt="Community" class="tools-thumb-img_sec" />
-                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
             </div>
@@ -758,7 +759,7 @@ require_once('./includes/security_config.php');
             <div class="tools-info">
               <h3 class="tools-info-heading">Track your wellness score</h3>
               <p class="tools-info-body">Check your wellness score and track your progress. Exchange points for discounts. Get a certificate each time you complete a topic.</p>
-              <a href="https://happierme.app/adults/wisdom-survey" class="tools-explore-link">Check your wellness score <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
+              <a href="https://happierme.app/adults/wisdom-survey" class="tools-wellness-btn" id="checkWellnessScore">Check your wellness score</a>
             </div>
           </div>
 
@@ -841,7 +842,7 @@ require_once('./includes/security_config.php');
             <a href="https://happierme.app/pages/splash_options.php" id="transformStartTrial">
               <div class="div-wrapper-4 transform-cta-btn"><div class="text-wrapper-5">Start your free trial</div></div>
             </a>
-            <a href="https://onelink.to/qsptex" id="transformDownloadApp">
+            <a href="https://happierme.app/pages/splash_options.php" id="transformDownloadApp">
               <div class="transform-cta-btn transform-cta-btn-outline"><div class="text-wrapper-5">Download the app</div></div>
             </a>
           </div>
