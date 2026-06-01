@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
   <head>
     <title>How to manage your own mental health</title>
     <meta property="title" content="Take Charge of Your Mental Health">
@@ -11,6 +13,17 @@
     <!-- vendor_header -->
     <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
+
+
+     <style>
+table, th, td {
+  border:1px solid black;
+  padding: 5px;
+}
+th{
+  text-align:center;
+}
+</style>
   </head>
 
   <body>
@@ -60,7 +73,8 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Open the app.Mbr/> Press play.<br/> Listen to calming music or a guided
+                  Open the app.<br/> Press play.<br/> Listen to calming music or a guided meditation.
+
                 
                   <br/>Feel relaxed for a while.
                 </h4>
@@ -128,9 +142,15 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  For many users, this works beautifully. Meditation apps can reduce
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a>
-                  temporarily, <br/>improve sleep quality, <br/>encourage mindfulness habits, and create moments of calm in busy lives.
+                  For many users, this works beautifully.<br/> Meditation apps can <br/>
+                 <span style='font-size:20px;'>&#10003; </span>reduce
+                  stress
+                  temporarily,
+                  <br/>
+                <span style='font-size:20px;'>&#10003; </span>improve sleep quality, <br/>
+                <span style='font-size:20px;'>&#10003; </span>encourage mindfulness habits<br/>
+                <span style='font-size:20px;'>&#10003; </span>
+                create moments of calm in busy lives.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -227,9 +247,9 @@ Meditation
                   Instead of focusing only on relaxation, HappierMe combines:
                   <ul>
                     <li>AI-powered emotional guidance</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">Meditation</a> and mindfulness</li>
+                    <li>Meditation and mindfulness</li>
                     <li>Emotional intelligence development</li>
-                    <li>Guided <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a></li>
+                    <li>Guided journaling<</li>
                     <li>Habit-building</li>
                     <li>Wellness tracking</li>
                     <li>Podcasts and videos</li>
@@ -281,7 +301,7 @@ Meditation
 
                 <h4 class="mtb0px blog_desc">
                   Imagine two users dealing with
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a>
+                  stress
                   and overthinking.
                 </h4>
 
@@ -291,7 +311,7 @@ Meditation
 
                 <h4 class="mtb0px blog_desc">
                   They might listen to a 10-minute
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety</a>
+                  anxiety
                   meditation, relax temporarily, and feel calmer for the evening.
                 </h4>
 
@@ -308,11 +328,11 @@ Meditation
                   <ul>
                     <li>Emotional reflection</li>
                     <li>Personalized guidance</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling prompts</a></li>
+                    <li>Journaling prompts</li>
                     <li>Mindfulness exercises</li>
                     <li>Habit tracking</li>
                     <li>Emotional intelligence learning</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress</a>-management techniques</li>
+                    <li>Stress-management techniques</li>
                   </ul>
                 </h4>
 
@@ -325,8 +345,8 @@ Meditation
                   Feature Comparison
                 </h4>
 
-                <div class="table-responsive mt20px rmb80px">
-                  <table class="table blog_table">
+                <!-- <div class="table-responsive mt20px rmb80px"> -->
+ <table style="width:100%; margin-bottom:25px;">
                     <thead>
                       <tr>
                         <th>Traditional Meditation Apps</th>
@@ -364,7 +384,7 @@ Meditation
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                <!-- </div> -->
 
 
                 <h4 class="mtb0px blog_sub_title">
@@ -380,9 +400,9 @@ Meditation
                   <ul>
                     <li>Social pressure</li>
                     <li>Overthinking</li>
-                    <li>Emotional <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/burnout">burnout</a></li>
+                    <li>Emotional burnout</li>
                     <li>Confidence issues</li>
-                    <li>Relationship <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a></li>
+                    <li>Relationship stress</li>
                   </ul>
                 </h4>
 
@@ -391,7 +411,7 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Apps like <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> feel more relevant because they combine mindfulness with:
+                  Apps like HappierMe feel more relevant because they combine mindfulness with:
                   <ul>
                     <li>Self-awareness</li>
                     <li>Emotional learning</li>
@@ -420,7 +440,7 @@ Meditation
                     <li>Sleep improvement</li>
                     <li>Daily mindfulness practice</li>
                     <li>Focus and concentration</li>
-                    <li>Reducing <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a> temporarily</li>
+                    <li>Reducing stress temporarily</li>
                   </ul>
                 </h4>
 
@@ -445,7 +465,7 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">Meditation</a>
+                  Meditation
                   will still matter — but it will increasingly become just one part of a larger emotional wellness experience.
                 </h4>
 
@@ -459,9 +479,9 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     Traditional meditation apps helped introduce millions of people to mindfulness and
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a>
+                    stress
                     relief. They remain incredibly valuable for relaxation and sleep support.
                   </span>
                 </h4>
@@ -490,7 +510,7 @@ Meditation
 
                 <h4 class="mtb0px blog_desc">
                   By combining mindfulness, emotional intelligence,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a>,
+                  journaling,
                   AI-powered guidance, wellness tracking, and self-growth tools into one connected experience, HappierMe represents the next generation of emotional wellness apps.
                 </h4>
 

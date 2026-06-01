@@ -11,6 +11,16 @@
     <!-- vendor_header -->
     <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
+
+     <style>
+table, th, td {
+  border:1px solid black;
+  padding: 5px;
+}
+th{
+  text-align:center;
+}
+</style>
   </head>
 
   <body>
@@ -46,7 +56,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/best-ai-mental-health-apps-2026.webp" class="img-responsive" alt="Best AI Mental Health Apps in 2026">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/smart.webp" class="img-responsive" alt="Best AI Mental Health Apps in 2026">
               </div>
             </div>
 
@@ -174,20 +184,21 @@
 
 
                 <h4 class="mtb0px blog_sub_title">
-                  3. Youper — Best AI App for Mood Tracking
+                  3.   Youper — Best AI App for Mood Tracking
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Youper combines AI conversations with mood tracking and emotional health exercises.
+                   <a class="blog_highlight_peach td_underline" href="https://www.youper.ai">Youper </a>combines AI conversations with mood tracking and emotional health exercises.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
+
                   The app helps users:
                   <ul>
                     <li>Monitor emotional patterns</li>
                     <li>Reflect on thoughts</li>
-                    <li>Reduce <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety</a></li>
-                    <li>Practice <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/manage-your-emotions">emotional regulation</a> techniques</li>
+                    <li>Reduce anxiety</li>
+                    <li>Practice emotional regulation techniques</li>
                   </ul>
                 </h4>
 
@@ -205,7 +216,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Replika is designed as an AI companion app where users can build ongoing conversations with a virtual friend.
+                 <a class="blog_highlight_peach td_underline" href="https://replika.com/"> Replika </a>is designed as an AI companion app where users can build ongoing conversations with a virtual friend.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -242,7 +253,7 @@
                     <li>Identify negative thought patterns</li>
                     <li>Build emotional coping skills</li>
                     <li>Practice mental wellness exercises</li>
-                    <li>Learn <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/manage-your-emotions">emotional regulation</a></li>
+                    <li>Learn emotional regulation</li>
                   </ul>
                 </h4>
 
@@ -259,8 +270,8 @@
                   Quick Comparison Table
                 </h4>
 
-                <div class="table-responsive mt20px rmb80px">
-                  <table class="table blog_table">
+                <!-- <div class="table-responsive mt20px rmb80px"> -->
+                  <table style="width:100%; margin-bottom:25px;">
                     <thead>
                       <tr>
                         <th>App</th>
@@ -320,7 +331,7 @@
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                <!-- </div> -->
 
 
                 <h4 class="mtb0px blog_sub_title">
@@ -362,7 +373,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> takes a broader approach.
+                  HappierMe takes a broader approach.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -373,7 +384,7 @@
                     <li>AI personalization</li>
                     <li>Self-awareness tools</li>
                     <li>Guided learning</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling</a></li>
+                    <li>Journaling</li>
                     <li>Habit-building</li>
                     <li>Wellness tracking</li>
                   </ul>
@@ -384,7 +395,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Instead of simply helping users cope with emotions temporarily, <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> encourages users to better understand themselves and develop long-term emotional resilience.
+                  Instead of simply helping users cope with emotions temporarily, HappierMe encourages users to better understand themselves and develop long-term emotional resilience.
                 </h4>
 
 
@@ -393,14 +404,14 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     AI is transforming the future of mental wellness.
-                  </span>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Apps today can do much more than play
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+            meditation
                   audio — they can guide, personalize, support, and help users grow emotionally over time.
                 </h4>
 
@@ -416,7 +427,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   By combining AI-powered guidance, mindfulness,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a>,
+                  journaling,
                   emotional intelligence, and self-growth tools into one platform, HappierMe delivers a modern and more holistic approach to emotional wellbeing.
                 </h4>
 
