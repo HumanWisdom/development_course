@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ChangeTopicPage
+  },
+  {
+    path: 'cards/:id',
+    loadChildren: () => import('./cards/cards.module').then( m => m.CardsPageModule)
   }
 ];
 

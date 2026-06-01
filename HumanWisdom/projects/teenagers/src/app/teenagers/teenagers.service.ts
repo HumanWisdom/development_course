@@ -5966,6 +5966,10 @@ export class TeenagersService {
     return this.http.post(this.path + `/AddUserPreference/${data}/${SharedService.ProgramId}`, null)
   }
 
+  GetOnboardingPrefData(id: any): Observable<any> {
+    return this.http.get(this.path + `/GetOnboardingPrefData/${id}`)
+  }
+
   emaillogin(id = '') {
     let email = 'guest@humanwisdom.me';
     let password = '12345';
