@@ -60,7 +60,7 @@ HappierMe vs Calm: Which mental wellness app Is right for you?
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/calm_happier.webp" class="img-responsive" alt="Difficult emotions: a guide to freedom">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/calm.webp" class="img-responsive" alt="Difficult emotions: a guide to freedom">
               </div>
             </div>
 
@@ -197,7 +197,7 @@ With over 100 million users worldwide, Calm has become a mainstream choice for m
 HappierMe vs Calm: Quick Comparison Table
 </h4>
 
- <table style="width:100%">
+ <table style="width:100%; margin-bottom:25px;">
   <tr>
     <th>Feature
 
