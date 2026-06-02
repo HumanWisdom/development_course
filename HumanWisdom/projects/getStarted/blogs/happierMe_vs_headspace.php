@@ -141,9 +141,11 @@ The app goes beyond meditation and relaxation by helping users:
 
    
 </ul>
+</h4>
+ <h4 class="mtb0px blog_desc">
 Its ecosystem combines AI-powered guidance, journaling, mindfulness, podcasts, videos, wellness tracking, and coaching support into one platform.
-<br/>
-
+</h4>
+ <h4 class="mtb0px blog_desc">
 The experience feels more like a personal growth companion than a traditional meditation app.
 
 

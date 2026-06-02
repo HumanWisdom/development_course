@@ -59,7 +59,7 @@ th{
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/ai-wellness-vs-meditation.webp" class="img-responsive" alt="AI Wellness Apps vs Traditional Meditation Apps">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/wellness.webp" class="img-responsive" alt="AI Wellness Apps vs Traditional Meditation Apps">
               </div>
             </div>
 
@@ -84,7 +84,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Apps like and <a class="blog_highlight_peach td_underline" href="https://happierme.app/?utm_source=chatgpt.com">Calm </a> and <a class="blog_highlight_peach td_underline" href="https://happierme.app/?utm_source=chatgpt.com"> HappierMe </a>and <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/?utm_source=chatgpt.com">Headspace</a>helped millions of people discover meditation, mindfulness, sleep support, and
+                  Apps like and <a class="blog_highlight_peach td_underline" href="https://happierme.app/">Calm </a> and <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">Headspace</a> helped millions of people discover meditation, mindfulness, sleep support, and
                   relief.
                 </h4>
 
@@ -193,7 +193,7 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  In simple terms: traditional meditation apps help users <span class="blog_highlight_black">pause</span>. AI wellness apps help users <span class="blog_highlight_black">grow</span>.
+                  In simple terms: traditional meditation apps help users pause. AI wellness apps help users grow.
                 </h4>
 
 
@@ -210,7 +210,18 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Most meditation apps work like content libraries. Users search for anxiety meditation, sleep meditation, relaxation sounds, or focus sessions. The user decides what they need.
+                  Most meditation apps work like content libraries. 
+                  </h4>
+                  <h4 class="mtb0px blog_desc">
+                  Users search for 
+                  <ul>
+                    <li>
+                  anxiety meditation</li>
+
+                 <li> sleep meditation</li>
+                 <li> relaxation sounds</li> 
+                 <li> focus sessions</li>
+                  </ul> The user decides what they need.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -310,13 +321,16 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  They might listen to a 10-minute
+                  They might <ul><li>listen to a 10-minute
                   anxiety
-                  meditation, relax temporarily, and feel calmer for the evening.
+                  meditation</li><li> relax temporarily
+                    </li><li> and feel calmer for the evening.</li></ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Helpful? Absolutely. But the deeper emotional patterns may still remain unchanged.
+                  Helpful? Absolutely.
+                  </h4>
+                   <h4 class="mtb0px blog_desc"> But the deeper emotional patterns may still remain unchanged.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -392,7 +406,11 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Teenagers and young adults are increasingly looking for wellness experiences that feel personalized, interactive, emotionally relatable, and practical for daily life.
+                  Teenagers and young adults are increasingly looking for wellness experiences that feel 
+                  <ul><li>personalized
+                  </li><li> interactive
+                    </li><li> emotionally relatable
+                      </li><li>  practical for daily life</li></ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
