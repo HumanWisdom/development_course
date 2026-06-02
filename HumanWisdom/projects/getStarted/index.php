@@ -346,21 +346,21 @@ require_once('./includes/security_config.php');
             <div class="support-feature-item">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/communityforum.svg" alt="Community forum" class="support-feature-icon" />
               <div class="support-feature-content">
-                <a href="https://happierme.app/adults/forum" class="support-feature-title">Community forum</a>
+                <a href="https://happierme.app/adults/forum" id="supportCommunityForum" class="support-feature-title">Community forum</a>
                 <p class="support-feature-desc">Connect with others and ask questions anonymously</p>
               </div>
             </div>
             <div class="support-feature-item">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/live_events.svg" alt="Live Events" class="support-feature-icon" />
               <div class="support-feature-content">
-                <a href="https://happierme.app/adults/events" class="support-feature-title">Live Events</a>
+                <a href="https://happierme.app/adults/events" id="supportLiveEvents" class="support-feature-title">Live Events</a>
                 <p class="support-feature-desc">Join live discussions with experts and community members</p>
               </div>
             </div>
             <div class="support-feature-item">
               <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching.svg" alt="Expert Coaching" class="support-feature-icon" />
               <div class="support-feature-content">
-                <a href="https://happierme.app/adults/coach" class="support-feature-title">Expert Coaching</a>
+                <a href="https://happierme.app/adults/coach" id="supportExpertCoaching" class="support-feature-title">Expert Coaching</a>
                 <p class="support-feature-desc">Get personalized 1-on-1 support from trained coaches</p>
               </div>
             </div>
@@ -2746,6 +2746,33 @@ require_once('./includes/security_config.php');
     <!-- vendor_footer -->
     <?php include('./includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var supportMap = {
+          supportCommunityForum: 'click_community_forum',
+          supportLiveEvents: 'click_live_events',
+          supportExpertCoaching: 'click_expert_coaching'
+        };
+        Object.keys(supportMap).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          el.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (typeof logevent === 'function') {
+              logevent(supportMap[id], 'index.php', { source: 'support_section' });
+            }
+            var href = el.getAttribute('href');
+            var go = function () { window.location.href = href; };
+            if (typeof afterLogNavigate === 'function') {
+              afterLogNavigate(go);
+            } else {
+              setTimeout(go, 220);
+            }
+          });
+        });
+      });
+    </script>
 
     <script>
       AOS.init({
