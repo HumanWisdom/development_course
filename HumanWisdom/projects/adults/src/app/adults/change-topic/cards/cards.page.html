@@ -32,7 +32,7 @@
               <h1 class="fw_600 fs_24px lh_140p mt0px mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 {{topicName}}
               </h1>
-              <p class="fs_15px fw_400 lh_150p mt0px mb20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'">
+              <p class="fs_15px fw_400 lh_150p mt0px mb20px" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                 Here are some quick things to try out
               </p>
             </div>
@@ -87,7 +87,7 @@
               <!-- Skip Button: displayed if NOT all cards are viewed -->
               <div class="skip-btn-container tcenter" *ngIf="!allViewed">
                 <a (click)="onSkipOrContinue()" class="skip-link fs_15px fw_500 td_underline"
-                  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                   Skip
                 </a>
               </div>
