@@ -20389,7 +20389,7 @@ share-buttons button {
 
 .ws_view_story {
   object-fit: cover;
-   height: 280px; 
+  height: 280px;
   border-radius: 0px 0px 20px 20px;
   padding: 0 !important;
 }
@@ -27301,7 +27301,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 .pfy_search {
   /* background: #EBEBEB; */
-  background: #0C2B5F!important;
+  background: #0C2B5F !important;
   border-radius: 100px;
   font-family: 'Roboto';
   font-style: normal;
@@ -27309,9 +27309,9 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
   font-size: 16px;
   line-height: 19px;
   /* identical to box height */
- color: #ffffff!important; 
+  color: #ffffff !important;
   /* color: rgba(255, 255, 255, 0.50)!important; */
-  
+
   /* color: rgba(0, 0, 0, 0.50) !important; */
   /* height: 60px; */
   height: 50px;
@@ -33119,7 +33119,7 @@ body * {
 }
 
 
-.toc_adiv_02journey  a>.row {
+.toc_adiv_02journey a>.row {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #0C2B5F;
@@ -33135,17 +33135,18 @@ body * {
     min-height: 78px;
     margin-bottom: 10px;
     padding: 10px; */
-    /* margin: 0 10px 10px 10px; */
+/* margin: 0 10px 10px 10px; */
 /* } */
 .session_imgjourney {
-    width: 58px;
-    height: 58px;
-    border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, .25);
-    object-fit: cover;
-    object-position: 50% 25%;
-    margin: 4px;
+  width: 58px;
+  height: 58px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, .25);
+  object-fit: cover;
+  object-position: 50% 25%;
+  margin: 4px;
 }
+
 .session_img_play {
   position: absolute;
   top: 0;
@@ -33710,7 +33711,7 @@ body * {
   justify-content: center;
   filter: none;
   box-shadow: unset;
-   color: #EE9596; 
+  color: #EE9596;
 }
 
 .btn_forum_ask_a_gift {
@@ -33726,22 +33727,23 @@ body * {
   color: #cb6171;
   text-align: center;
 }
-.btn_postteen{
-width: 100%;
-    background: #EE9596 !important;
-    border-radius: 100px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    color: #fff !important;
-    text-align: center;
-    margin: 0;
-    border: 0;
-    height: 40px;
-    box-shadow: unset;
+
+.btn_postteen {
+  width: 100%;
+  background: #EE9596 !important;
+  border-radius: 100px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff !important;
+  text-align: center;
+  margin: 0;
+  border: 0;
+  height: 40px;
+  box-shadow: unset;
 }
 
-.btn btn-warning btn_postteen{
+.btn btn-warning btn_postteen {
   color: #fff;
 }
 
@@ -34937,7 +34939,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 
 .absolute_ls_like {
-   position: absolute;
+  position: absolute;
   top: 20px;
   right: 20px;
   border-radius: 100px;
@@ -34945,7 +34947,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   width: 54px;
   height: 40px;
 }
@@ -35644,7 +35646,7 @@ h3_blogs p a font,
   box-shadow: unset;
 }
 
-.toc_adiv_02  a>.row {
+.toc_adiv_02 a>.row {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #0C2B5F;
@@ -37329,3 +37331,122 @@ div.contentdiv p {
 .session-expired-alert .session-expired-login-btn .alert-button-inner {
   justify-content: center;
 }
+
+/* ===== try-free-and-subscribe new design styles ===== */
+.mt3px {
+  margin-top: 3px;
+}
+
+.tfas-full-access-card {
+  border-radius: 16px;
+  background: #0C2B5F;
+  padding: 20px;
+}
+
+.tfas-full-access-header {
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+
+.tfas-best-value-badge {
+  background: #EE9596;
+  padding: 8px 20px;
+  text-align: center;
+}
+
+.tfas-plan-card-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #0C2B5F;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tfas-plan-card-wrapper.tfas-plan-selected {
+  background: #031A41;
+  margin-bottom: 0;
+}
+
+.tfas-plan-option {
+  padding: 16px 20px;
+  display: flex;
+  background: #031A41;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tfas-plan-monthly {
+  /* Separator border no longer needed as cards are separate */
+}
+
+.tfas-plan-selected .tfas-plan-option {
+  background: #031A41;
+}
+
+.tfas-plan-label {
+  margin-bottom: 4px;
+}
+
+.tfas-plan-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tfas-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 400;
+  margin: 6px 0;
+}
+
+.tfas-separator::before,
+.tfas-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tfas-separator:not(:empty)::before {
+  margin-right: 1.5em;
+}
+
+.tfas-separator:not(:empty)::after {
+  margin-left: 1.5em;
+}
+
+.tfas-separator-teens {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tfas-separator-teens::before,
+.tfas-separator-teens::after {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tfas-alt-option-card {
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.tfas-alt-card-adults {
+  background: #FFE8BB;
+}
+
+.tfas-alt-card-teens {
+  background: #0C2B5F;
+}
+
+.tfas-terms-link {
+  text-decoration: underline !important;
+}
+
+/* ===== /try-free-and-subscribe new design styles ===== */

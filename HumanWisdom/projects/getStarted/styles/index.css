@@ -48798,3 +48798,66 @@ span {
     padding-bottom: 20px !important;
   }
 }
+/* ===== try-free-and-subscribe new design styles ===== */
+.mt3px {
+  margin-top: 3px;
+}
+
+.tfas-full-access-card {
+  border-radius: 16px;
+  background: #FFE8BB;
+  overflow: hidden;
+}
+
+.tfas-full-access-header {
+  padding: 16px 20px 12px 20px;
+}
+
+.tfas-best-value-badge {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  padding: 8px 20px;
+  text-align: center;
+}
+
+.tfas-plan-option {
+  padding: 16px 20px;
+  background: #FFE8BB;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.tfas-plan-monthly {
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.tfas-plan-selected {
+  border: 2px solid #D7586B;
+  border-radius: 12px;
+  background: #FFF3D6;
+}
+
+.tfas-plan-label {
+  margin-bottom: 4px;
+}
+
+.tfas-plan-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.tfas-alt-option-card {
+  border-radius: 16px;
+  padding: 16px 20px;
+  cursor: pointer;
+  display: block;
+}
+
+.tfas-alt-card-adults {
+  background: #FFE8BB;
+}
+
+.tfas-alt-card-teens {
+  background: rgba(255, 255, 255, 0.10);
+}
+/* ===== /try-free-and-subscribe new design styles ===== */

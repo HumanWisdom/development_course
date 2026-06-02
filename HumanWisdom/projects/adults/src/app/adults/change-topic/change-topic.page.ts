@@ -153,7 +153,7 @@ export class ChangeTopicPage implements OnInit {
   }
 
   skip() {
-    this.router.navigate(['/adults/adult-dashboard']);
+    this.router.navigate(['/adults/home']);
   }
 
   updateList(id,name) {

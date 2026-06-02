@@ -20429,7 +20429,7 @@ share-buttons button {
 
 .ws_view_story {
   object-fit: cover;
-   height: 280px; 
+  height: 280px;
   border-radius: 0px 0px 20px 20px;
   padding: 0 !important;
 }
@@ -24388,11 +24388,11 @@ a {
 }
 
 .blog_highlight_black {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 180%;
-    color: #000;
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 180%;
+  color: #000;
+  margin-bottom: 10px;
 }
 
 .btn_blog_tags {
@@ -33356,14 +33356,16 @@ body * {
   object-position: 50% 25%;
 
 }
+
 .toc_adiv_03journey a>.row {
-    border-radius: 12px;
-    background: #FFE8BB;
-    min-height: 78px;
-    margin-bottom: 10px;
-    padding: 10px;
-    /* margin: 0 10px 10px 10px; */
+  border-radius: 12px;
+  background: #FFE8BB;
+  min-height: 78px;
+  margin-bottom: 10px;
+  padding: 10px;
+  /* margin: 0 10px 10px 10px; */
 }
+
 .session_imgforum {
   width: 100px;
   height: 70px;
@@ -35241,7 +35243,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   width: 54px;
   height: 40px;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .ls_story_img {
@@ -35561,13 +35563,13 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 
 /* Free-trial banner: cap illustration height on wide viewports; row uses min-height so copy is not clipped */
-.toc_adiv_imgmynew > .row .prelative {
+.toc_adiv_imgmynew>.row .prelative {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.toc_adiv_imgmynew > .row .session_img {
+.toc_adiv_imgmynew>.row .session_img {
   width: auto;
   max-width: 100%;
   max-height: 128px;
@@ -36638,7 +36640,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   background: #FFF7E6 !important;
   margin: -20px -20px 0 -20px;
   padding: 20px;
-  margin-bottom:30px;
+  margin-bottom: 30px;
 
 }
 
@@ -37841,3 +37843,123 @@ div.contentdiv p {
   justify-content: center;
 }
 
+
+/* ===== try-free-and-subscribe new design styles ===== */
+.mt3px {
+  margin-top: 3px;
+}
+
+.tfas-full-access-card {
+  border-radius: 16px;
+  background: #FFE8BB;
+  padding: 20px;
+}
+
+.tfas-full-access-header {
+  padding: 0 0 20px 0;
+  text-align: center;
+}
+
+.tfas-best-value-badge {
+  background: #ED7D6F;
+  padding: 8px 20px;
+  text-align: center;
+}
+
+.tfas-plan-card-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #FFD889;
+  /* border: 2px solid transparent; */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tfas-plan-card-wrapper.tfas-plan-selected {
+  /* border: 2px solid #D7586B; */
+  background: #FFF3D6;
+  margin-bottom: 0;
+}
+
+.tfas-plan-option {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tfas-plan-monthly {
+  /* Separator border no longer needed as cards are separate */
+}
+
+.tfas-plan-selected .tfas-plan-option {
+  background: #FFD889;
+}
+
+.tfas-plan-label {
+  margin-bottom: 4px;
+}
+
+.tfas-plan-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tfas-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  font-weight: 400;
+  margin: 6px 0;
+}
+
+.tfas-separator::before,
+.tfas-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.tfas-separator:not(:empty)::before {
+  margin-right: 1.5em;
+}
+
+.tfas-separator:not(:empty)::after {
+  margin-left: 1.5em;
+}
+
+.tfas-separator-teens {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tfas-separator-teens::before,
+.tfas-separator-teens::after {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tfas-alt-option-card {
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.tfas-alt-card-adults {
+  background: #FFE8BB;
+}
+
+.tfas-alt-card-teens {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.tfas-terms-link {
+  text-decoration: underline !important;
+}
+
+/* ===== /try-free-and-subscribe new design styles ===== */
