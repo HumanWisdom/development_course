@@ -165,46 +165,7 @@ export class CardsPage implements OnInit {
   }
 
   onSkipOrContinue() {
-    if (this.isRoutedFromLogin) {
-      localStorage.setItem('isFromSignupFlow', 'T');
-      SharedService.isRoutedFromLogin = true;
-      this.router.navigate([`${SharedService.getprogramName()}/wisdom-survey`]);
-    } else {
-      // Regular navigation based on preference
-      const program = SharedService.getprogramName();
-      let redirectUrl = `/${program}/teenagers-dashboard`;
-      const idNum = parseInt(this.id);
-      
-      if (idNum === 14) {
-        localStorage.setItem('curatedurl', `/${program}/curated/manage-your-emotions`);
-        redirectUrl = `/${program}/curated/manage-your-emotions`;
-      } else if (idNum === 10) {
-        localStorage.setItem('curatedurl', `/${program}/curated/overcome-stress-anxiety`);
-        redirectUrl = `/${program}/curated/overcome-stress-anxiety`;
-      } else if (idNum === 17) {
-        localStorage.setItem('curatedurl', `/${program}/curated/succeed-in-life`);
-        redirectUrl = `/${program}/curated/succeed-in-life`;
-      } else if (idNum === 11) {
-        localStorage.setItem('curatedurl', `/${program}/curated/have-fulfilling-relationships`);
-        redirectUrl = `/${program}/curated/have-fulfilling-relationships`;
-      } else if (idNum === 13) {
-        localStorage.setItem('curatedurl', `/${program}/curated/be-happier`);
-        redirectUrl = `/${program}/curated/be-happier`;
-      } else if (idNum === 16) {
-        localStorage.setItem('curatedurl', `/${program}/curated/understand-yourself`);
-        redirectUrl = `/${program}/curated/understand-yourself`;
-      } else if (idNum === 12) {
-        localStorage.setItem('curatedurl', `/${program}/curated/feel-calm`);
-        redirectUrl = `/${program}/curated/feel-calm`;
-      } else if (idNum === 15) {
-        localStorage.setItem('curatedurl', `/${program}/curated/overcome-unhelpful-habits`);
-        redirectUrl = `/${program}/curated/overcome-unhelpful-habits`;
-      } else if (idNum === 20) {
-        localStorage.setItem('curatedurl', `/${program}/wisdom-exercise`);
-        redirectUrl = `/${program}/wisdom-exercise`;
-      }
-
-      this.router.navigate([redirectUrl]);
-    }
+    const program = SharedService.getprogramName();
+    this.router.navigate([`/${program}/subscription/try-free-and-subscribe`]);
   }
 }
