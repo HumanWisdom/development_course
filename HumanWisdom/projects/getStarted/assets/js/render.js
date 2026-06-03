@@ -48,6 +48,14 @@ $(".owl_container .owl-carousel").owlCarousel({
            $(".btn_tff_tn").attr("href", "../pages/splash_options.php");
     }),
     $(window).resize(),
+    $(window).resize(function () {
+        var isMobile = window.matchMedia("(max-width: 768px)").matches;
+        var storeUrl = "https://onelink.to/qsptex";
+        var splashUrl = "https://happierme.app/pages/splash_options.php";
+        $("#transformDownloadApp").attr("href", isMobile ? storeUrl : splashUrl);
+        $("#OllyChatBtn").attr("href", isMobile ? storeUrl : splashUrl);
+    }),
+    $(window).resize(),
     $(".search-button").click(function () {
         $(".search-button").toggleClass("cp_absolute"), $(".fc_web_search").focus();
     }),
