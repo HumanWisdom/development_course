@@ -127,7 +127,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself, reduce stress and anxiety, improve your relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
+                      Understand yourself, reduce stress and anxiety, improve your relationships and handle life better.
                     </p>
                   </div>
                 </div>
@@ -184,7 +184,8 @@ require_once('./includes/security_config.php');
       <!-- ===== OLLY AI ===== -->
       <div class="frame-wrapper-3">
         <div class="div-11">
-          <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" />
+          <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
+          <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_breathing4.gif" alt="Olly AI" />
           <div class="div-12">
             <div class="div-5">
               <p class="introducing-olly-AI" style="font-size:30px;">Meet Olly AI,<br />your personal guide.</p>
