@@ -64,14 +64,14 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                 
                     AI is changing almost every part of our lives — including mental wellness.
-                  </span>
+                
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Today's mental health apps are no longer limited to simple
-                 >meditation
+                 meditation
                   timers or mood trackers. Modern AI-powered wellness apps can now:
                   <ul>
                     <li>Personalize emotional support</li>
@@ -151,7 +151,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> </h4>
+                  <span class="blog_highlight_black">Best for</span> </h4>
                     <h4 class="mtb0px blog_desc">
                   People looking for a modern, AI-driven emotional wellness and self-growth platform.
                 </h4>
@@ -181,7 +181,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span></h4>
+                  <span class="blog_highlight_black">Best for</span></h4>
                   <h4 class="mtb0px blog_desc">
                   Users who prefer chat-based emotional support and CBT-inspired exercises.
                 </h4>
@@ -211,7 +211,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span></h4>
+                  <span class="blog_highlight_black">Best for</span></h4>
                   <h4 class="mtb0px blog_desc">
                   Users who want mood tracking combined with AI-guided emotional support.
                 </h4>
@@ -241,7 +241,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span></h4>
+                  <span class="blog_highlight_black">Best for</span></h4>
                   <h4 class="mtb0px blog_desc">
                   Users looking for conversational companionship and emotional connection.
                 </h4>
@@ -252,7 +252,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Woebot focuses heavily on evidence-based CBT techniques through AI-guided conversations.
+                 <a class="blog_highlight_peach td_underline" href="https://woebothealth.com">  Woebot </a> focuses heavily on evidence-based CBT techniques through AI-guided conversations.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -270,7 +270,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> </h4>
+                  <span class="blog_highlight_black">Best for</span> </h4>
                   <h4 class="mtb0px blog_desc">
                   Users interested in structured CBT-based emotional support.
                 </h4>

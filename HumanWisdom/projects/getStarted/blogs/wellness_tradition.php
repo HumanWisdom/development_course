@@ -84,7 +84,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Apps like and <a class="blog_highlight_peach td_underline" href="https://happierme.app/">Calm </a> and <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">Headspace</a> helped millions of people discover meditation, mindfulness, sleep support, and
+                  Apps like and <a class="blog_highlight_peach td_underline" href="https://www.calm.com">Calm </a> and <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">Headspace</a> helped millions of people discover meditation, mindfulness, sleep support, and
                   relief.
                 </h4>
 
@@ -134,7 +134,7 @@ th{
                   <ul>
                     <li>Guided meditation sessions</li>
                     <li>Sleep stories</li>
-                    <li>Breathing exercises<</li>
+                    <li>Breathing exercises</li>
                     <li>Relaxation sounds</li>
                     <li>Mindfulness audio tracks</li>
                     <li>Focus music</li>
@@ -193,7 +193,9 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  In simple terms: traditional meditation apps help users pause. AI wellness apps help users grow.
+                  In simple terms:
+                  </h4>
+                   <h4 class="mtb0px blog_desc"> traditional meditation apps help users pause.<br/> AI wellness apps help users grow.
                 </h4>
 
 
