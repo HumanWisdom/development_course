@@ -11,6 +11,16 @@
     <!-- vendor_header -->
     <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
+
+     <style>
+table, th, td {
+  border:1px solid black;
+  padding: 5px;
+}
+th{
+  text-align:center;
+}
+</style>
   </head>
 
   <body>
@@ -46,7 +56,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/best-ai-mental-health-apps-2026.webp" class="img-responsive" alt="Best AI Mental Health Apps in 2026">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/smart.webp" class="img-responsive" alt="Best AI Mental Health Apps in 2026">
               </div>
             </div>
 
@@ -61,13 +71,13 @@
 
                 <h4 class="mtb0px blog_desc">
                   Today's mental health apps are no longer limited to simple
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 >meditation
                   timers or mood trackers. Modern AI-powered wellness apps can now:
                   <ul>
                     <li>Personalize emotional support</li>
                     <li>Recommend mindfulness exercises</li>
-                    <li>Guide <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a> sessions</li>
-                    <li>Help users manage <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety</a> and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a></li>
+                    <li>Guide journaling sessions</li>
+                    <li>Help users manage anxiety and stress</li>
                     <li>Offer conversational emotional support</li>
                     <li>Build healthier mental wellness habits</li>
                   </ul>
@@ -99,8 +109,8 @@
                   Unlike traditional meditation apps that focus only on relaxation, HappierMe combines:
                   <ul>
                     <li>AI-guided wellness support</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">Meditation</a> and mindfulness</li>
-                    <li>Guided <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a></li>
+                    <li>Meditation and mindfulness</li>
+                    <li>Guided journaling</li>
                     <li>Emotional intelligence tools</li>
                     <li>Habit-building</li>
                     <li>Wellness tracking</li>
@@ -118,7 +128,7 @@
                   <ul>
                     <li>Mindfulness exercises</li>
                     <li>Emotional wellness tools</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">Meditation</a> sessions</li>
+                    <li>Meditation sessions</li>
                     <li>Reflection prompts</li>
                     <li>Growth-focused learning content</li>
                   </ul>
@@ -129,19 +139,21 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Why HappierMe Stands Out</span>
-                  <ul>
-                    <li>AI-powered personalized emotional guidance</li>
-                    <li>Focus on emotional intelligence and self-awareness</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">Meditation</a> plus practical life wellness tools</li>
-                    <li>Designed for both teens and adults</li>
-                    <li>Helps with <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a>, overthinking, confidence, and relationships</li>
-                    <li>Encourages long-term emotional growth, not just temporary calmness</li>
+                  <span class="blog_highlight_black">Why HappierMe Stands Out</span><br/>
+                
+                    <span style='font-size:20px;'>&#10003; </span>AI-powered personalized emotional guidance</br>
+                    <span style='font-size:20px;'>&#10003; </span>Focus on emotional intelligence and self-awareness</br>
+                    <span style='font-size:20px;'>&#10003; </span>Meditation plus practical life wellness tools</br>
+                    <span style='font-size:20px;'>&#10003; </span>Designed for both teens and adults</br>
+                    <span style='font-size:20px;'>&#10003; </span>Helps with stressoverthinking, confidence, and relationships</br>
+                    <span style='font-size:20px;'>&#10003; </span>Encourages long-term emotional growth, not just temporary calmness</br>
                   </ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> People looking for a modern, AI-driven emotional wellness and self-growth platform.
+                  <span class="blog_highlight_black">Best For:</span> </h4>
+                    <h4 class="mtb0px blog_desc">
+                  People looking for a modern, AI-driven emotional wellness and self-growth platform.
                 </h4>
 
 
@@ -150,17 +162,17 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wysa is one of the best-known AI chatbot mental health apps.
+                  <a class="blog_highlight_peach td_underline" href="https://www.wysa.com/">Wysa </a> is one of the best-known AI chatbot mental health apps.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   The app uses a conversational AI penguin chatbot to help users:
                   <ul>
                     <li>Reflect on emotions</li>
-                    <li>Process <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a></li>
+                    <li>Process stress</li>
                     <li>Practice CBT and DBT exercises</li>
                     <li>Track moods</li>
-                    <li>Manage <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety</a> privately</li>
+                    <li>Manage anxiety privately</li>
                   </ul>
                 </h4>
 
@@ -169,25 +181,28 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who prefer chat-based emotional support and CBT-inspired exercises.
+                  <span class="blog_highlight_black">Best For:</span></h4>
+                  <h4 class="mtb0px blog_desc">
+                  Users who prefer chat-based emotional support and CBT-inspired exercises.
                 </h4>
 
 
                 <h4 class="mtb0px blog_sub_title">
-                  3. Youper — Best AI App for Mood Tracking
+                  3.   Youper — Best AI App for Mood Tracking
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Youper combines AI conversations with mood tracking and emotional health exercises.
+                   <a class="blog_highlight_peach td_underline" href="https://www.youper.ai">Youper </a>combines AI conversations with mood tracking and emotional health exercises.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
+
                   The app helps users:
                   <ul>
                     <li>Monitor emotional patterns</li>
                     <li>Reflect on thoughts</li>
-                    <li>Reduce <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety</a></li>
-                    <li>Practice <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/manage-your-emotions">emotional regulation</a> techniques</li>
+                    <li>Reduce anxiety</li>
+                    <li>Practice emotional regulation techniques</li>
                   </ul>
                 </h4>
 
@@ -196,7 +211,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who want mood tracking combined with AI-guided emotional support.
+                  <span class="blog_highlight_black">Best For:</span></h4>
+                  <h4 class="mtb0px blog_desc">
+                  Users who want mood tracking combined with AI-guided emotional support.
                 </h4>
 
 
@@ -205,7 +222,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Replika is designed as an AI companion app where users can build ongoing conversations with a virtual friend.
+                 <a class="blog_highlight_peach td_underline" href="https://replika.com/"> Replika </a>is designed as an AI companion app where users can build ongoing conversations with a virtual friend.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -214,7 +231,7 @@
                     <li>Emotional companionship</li>
                     <li>Reflection</li>
                     <li>Daily conversations</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress</a> relief</li>
+                    <li>Stres relief</li>
                     <li>Emotional expression</li>
                   </ul>
                 </h4>
@@ -224,7 +241,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users looking for conversational companionship and emotional connection.
+                  <span class="blog_highlight_black">Best For:</span></h4>
+                  <h4 class="mtb0px blog_desc">
+                  Users looking for conversational companionship and emotional connection.
                 </h4>
 
 
@@ -242,7 +261,7 @@
                     <li>Identify negative thought patterns</li>
                     <li>Build emotional coping skills</li>
                     <li>Practice mental wellness exercises</li>
-                    <li>Learn <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/manage-your-emotions">emotional regulation</a></li>
+                    <li>Learn emotional regulation</li>
                   </ul>
                 </h4>
 
@@ -251,7 +270,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users interested in structured CBT-based emotional support.
+                  <span class="blog_highlight_black">Best For:</span> </h4>
+                  <h4 class="mtb0px blog_desc">
+                  Users interested in structured CBT-based emotional support.
                 </h4>
 
 
@@ -259,8 +280,8 @@
                   Quick Comparison Table
                 </h4>
 
-                <div class="table-responsive mt20px rmb80px">
-                  <table class="table blog_table">
+                <!-- <div class="table-responsive mt20px rmb80px"> -->
+                  <table style="width:100%; margin-bottom:25px;">
                     <thead>
                       <tr>
                         <th>App</th>
@@ -320,7 +341,7 @@
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                <!-- </div> -->
 
 
                 <h4 class="mtb0px blog_sub_title">
@@ -362,7 +383,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> takes a broader approach.
+                  HappierMe takes a broader approach.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -373,7 +394,7 @@
                     <li>AI personalization</li>
                     <li>Self-awareness tools</li>
                     <li>Guided learning</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling</a></li>
+                    <li>Journaling</li>
                     <li>Habit-building</li>
                     <li>Wellness tracking</li>
                   </ul>
@@ -384,7 +405,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Instead of simply helping users cope with emotions temporarily, <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> encourages users to better understand themselves and develop long-term emotional resilience.
+                  Instead of simply helping users cope with emotions temporarily, HappierMe encourages users to better understand themselves and develop long-term emotional resilience.
                 </h4>
 
 
@@ -393,14 +414,14 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     AI is transforming the future of mental wellness.
-                  </span>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Apps today can do much more than play
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+            meditation
                   audio — they can guide, personalize, support, and help users grow emotionally over time.
                 </h4>
 
@@ -416,7 +437,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   By combining AI-powered guidance, mindfulness,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a>,
+                  journaling,
                   emotional intelligence, and self-growth tools into one platform, HappierMe delivers a modern and more holistic approach to emotional wellbeing.
                 </h4>
 

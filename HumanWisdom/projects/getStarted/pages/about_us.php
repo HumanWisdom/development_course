@@ -1388,7 +1388,7 @@ We gratefully acknowledge the contributions of the following content experts, an
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                   <h6 class="mtb0px fs_21px fw_500 lh_140p fc_000000 tleft">
-                   Art Chander Byrd </h6>
+                   Arti Chander Byrd </h6>
                 </div>
               </div>
             </a>

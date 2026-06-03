@@ -136,6 +136,14 @@
         padding-bottom: 20px !important;
       }
     }
+
+    /* Education page only: hero copy max-width on wide screens */
+    @media screen and (min-width: 1600px) {
+      body.page-education .healthcare-hero-shell .absolute_desc > [class*="col-"],
+      body.page-education .healthcare-hero-shell .absolute_desc_m > [class*="col-"] {
+        max-width: 258px !important;
+      }
+    }
     </style>
   </head>
 

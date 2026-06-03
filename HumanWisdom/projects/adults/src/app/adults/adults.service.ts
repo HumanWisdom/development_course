@@ -756,6 +756,10 @@ initialLoginWithGuestUser(id: string = ''): Observable<any> {
     return this.http.post(this.path + `/AddUserPreference/${data}`, null)
   }
 
+  GetOnboardingPrefData(id: any): Observable<any> {
+    return this.http.get(this.path + `/GetOnboardingPrefData/${id}`)
+  }
+
   GetPodcastList(): Observable<any> {
     return this.http.get(this.path + '/GetPodcastsListing');
   }

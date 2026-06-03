@@ -127,7 +127,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself, reduce stress and anxiety, improve relationships and handle life better.<br><span  class="fs_13px">(for Adults & Teenagers)</span>
+                      Understand yourself, reduce stress and anxiety, improve your relationships and handle life better.
                     </p>
                   </div>
                 </div>
@@ -184,7 +184,8 @@ require_once('./includes/security_config.php');
       <!-- ===== OLLY AI ===== -->
       <div class="frame-wrapper-3">
         <div class="div-11">
-          <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" />
+          <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
+          <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_breathing4.gif" alt="Olly AI" />
           <div class="div-12">
             <div class="div-5">
               <p class="introducing-olly-AI" style="font-size:30px;">Meet Olly AI,<br />your personal guide.</p>
@@ -325,13 +326,16 @@ require_once('./includes/security_config.php');
         </div>
         <div class="div-19">
           <a href="https://happierme.app/adults/testimonials" id="viewallsuccessstories" class="text-wrapper-13">View all success stories</a>
-          <span class="chevron-pink">  <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+          <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
         </div>
       </div>
 
-      <!-- ===== ROOT CAUSE ===== -->
+      <!-- ===== FIND SUPPORT & CONNECTION ===== -->
       <div class="div-20">
-        <img class="design" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Design.svg" alt="Design" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/find_support_mob.webp" />
+          <img class="design" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Find_Support.webp" alt="Find support and connection" />
+        </picture>
         <div class="div-21">
           <div class="frame-wrapper-6">
             <div class="div-22">
@@ -339,9 +343,29 @@ require_once('./includes/security_config.php');
               <p class="text-wrapper-8">Join a supportive community of people on their wellness journey. Share experiences, celebrate wins, and grow together.</p>
             </div>
           </div>
-          <a href="https://happierme.app/pages/splash_options.php">
-            <div class="div-wrapper-4"><div class="text-wrapper-5">Try HappierMe for free</div></div>
-          </a>
+          <div class="support-features">
+            <div class="support-feature-item">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/communityforum.svg" alt="Community forum" class="support-feature-icon" />
+              <div class="support-feature-content">
+                <a href="https://happierme.app/adults/forum" id="supportCommunityForum" class="support-feature-title">Community forum</a>
+                <p class="support-feature-desc">Connect with others and ask questions anonymously</p>
+              </div>
+            </div>
+            <div class="support-feature-item">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/live_events.svg" alt="Live Events" class="support-feature-icon" />
+              <div class="support-feature-content">
+                <a href="https://happierme.app/adults/events" id="supportLiveEvents" class="support-feature-title">Live Events</a>
+                <p class="support-feature-desc">Join live discussions with experts and community members</p>
+              </div>
+            </div>
+            <div class="support-feature-item">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching.svg" alt="Expert Coaching" class="support-feature-icon" />
+              <div class="support-feature-content">
+                <a href="https://happierme.app/adults/coach" id="supportExpertCoaching" class="support-feature-title">Expert Coaching</a>
+                <p class="support-feature-desc">Get personalized 1-on-1 support from trained coaches</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -628,7 +652,7 @@ require_once('./includes/security_config.php');
             <div class="tools-card">
               <div class="tools-thumb">
                 <video playsinline
-                  poster="https://d1tenzemoxuh75.cloudfront.net/website/rec-tool.svg"
+                  poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/Feel_betternew.webp"
                   controlsList="nodownload"
                   class="tools-thumb-video"
                   id="fbn-video">
@@ -640,9 +664,6 @@ require_once('./includes/security_config.php');
               </div>
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
-                  <span class="tools-label-dot">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/breathingExerciseicon.svg" alt="Breathing exercise" class="tools-label-icon" />
-                  </span>
                   <span class="tools-label-text">BREATHING EXERCISE</span>
                 </div>
                 <p class="tools-card-title">Humming bee</p>
@@ -667,9 +688,12 @@ require_once('./includes/security_config.php');
             <div class="tools-info">
               <h3 class="tools-info-heading">PATHWAY — Guided program</h3>
               <p class="tools-info-body">A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.</p>
-              <audio id="aud1" controls controlslist="nodownload">
-                <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
-              </audio>
+              <div class="tools-audio-wrap" data-audio-wrap="aud1">
+                <span class="tools-audio-play-icon" aria-hidden="true"></span>
+                <audio id="aud1" controls controlslist="nodownload">
+                  <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                </audio>
+              </div>
               <a href="https://happierme.app/adults/pathway/" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
@@ -679,7 +703,6 @@ require_once('./includes/security_config.php');
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/questions.svg" alt="Journal" class="tools-thumb-img_sec" />
-                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
             </div>
@@ -701,9 +724,12 @@ require_once('./includes/security_config.php');
             <div class="tools-info">
               <h3 class="tools-info-heading">HappierMe Podcast</h3>
               <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, where we explore a subject in depth with guests from around the world. They offer fresh ways of dealing with the many challenges we face and living our best life.</p>
-              <audio id="aud2" controls controlslist="nodownload">
-                <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
-              </audio>
+              <div class="tools-audio-wrap" data-audio-wrap="aud2">
+                <span class="tools-audio-play-icon" aria-hidden="true"></span>
+                <audio id="aud2" controls controlslist="nodownload">
+                  <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
+                </audio>
+              </div>
               <a href="https://happierme.app/adults/podcast" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
           </div>
@@ -713,7 +739,6 @@ require_once('./includes/security_config.php');
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" alt="Community" class="tools-thumb-img_sec" />
-                <div class="tools-play-btn"><span>&#9654;</span></div>
               </div>
              
             </div>
@@ -735,7 +760,7 @@ require_once('./includes/security_config.php');
             <div class="tools-info">
               <h3 class="tools-info-heading">Track your wellness score</h3>
               <p class="tools-info-body">Check your wellness score and track your progress. Exchange points for discounts. Get a certificate each time you complete a topic.</p>
-              <a href="https://happierme.app/adults/wisdom-survey" class="tools-explore-link">Check your wellness score <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
+              <a href="https://happierme.app/adults/wisdom-survey" class="tools-wellness-btn" id="checkWellnessScore">Check your wellness score</a>
             </div>
           </div>
 
@@ -811,14 +836,14 @@ require_once('./includes/security_config.php');
       <section class="transform-cta-section">
         <div class="transform-cta-inner">
           <div class="transform-cta-text">
-            <h2 class="transform-cta-heading">Ready to transform your life?</h2>
+            <h2 class="transform-cta-heading">Ready to transform<br class="mobile-br"> your life?</h2>
             <p class="transform-cta-sub">Join thousands of people who've discovered a happier, more resilient version of themselves.</p>
           </div>
           <div class="transform-cta-actions">
             <a href="https://happierme.app/pages/splash_options.php" id="transformStartTrial">
               <div class="div-wrapper-4 transform-cta-btn"><div class="text-wrapper-5">Start your free trial</div></div>
             </a>
-            <a href="https://onelink.to/qsptex" id="transformDownloadApp">
+            <a href="https://happierme.app/pages/splash_options.php" id="transformDownloadApp">
               <div class="transform-cta-btn transform-cta-btn-outline"><div class="text-wrapper-5">Download the app</div></div>
             </a>
           </div>
@@ -2724,6 +2749,33 @@ require_once('./includes/security_config.php');
     <!-- /vendor_footer -->
 
     <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var supportMap = {
+          supportCommunityForum: 'click_community_forum',
+          supportLiveEvents: 'click_live_events',
+          supportExpertCoaching: 'click_expert_coaching'
+        };
+        Object.keys(supportMap).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          el.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (typeof logevent === 'function') {
+              logevent(supportMap[id], 'index.php', { source: 'support_section' });
+            }
+            var href = el.getAttribute('href');
+            var go = function () { window.location.href = href; };
+            if (typeof afterLogNavigate === 'function') {
+              afterLogNavigate(go);
+            } else {
+              setTimeout(go, 220);
+            }
+          });
+        });
+      });
+    </script>
+
+    <script>
       AOS.init({
         duration: 1000,
         easing: 'ease-in-out',
@@ -2785,19 +2837,27 @@ require_once('./includes/security_config.php');
         var m = document.getElementById('sub-plan-monthly');
         var d = document.getElementById('totalAnnualPricingModelHeading');
         if (!y || !m || !d) return;
-        var tY = 'After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.';
-        var tM = 'After your free trial, the monthly subscription is ₹300/mo and automatically renews each month until cancelled.';
+        function yearlyDisclaimer() {
+          var annual = document.getElementById('annualPricingModelHeading');
+          var price = annual ? annual.textContent.trim() : '';
+          return 'After your free trial, the yearly subscription is ' + price + ' and automatically renews each year until cancelled.';
+        }
+        function monthlyDisclaimer() {
+          var monthly = document.getElementById('monthlyPricingModelHeading');
+          var price = monthly ? monthly.textContent.trim() : '';
+          return 'After your free trial, the monthly subscription is ' + price + ' and automatically renews each month until cancelled.';
+        }
         function pickMonthly() {
           if (typeof logevent === 'function') logevent('click_monthly', 'index.php');
           y.classList.add('sub-plan-off');
           m.classList.add('sub-plan-on');
-          d.textContent = tM;
+          d.textContent = monthlyDisclaimer();
         }
         function pickYearly() {
           if (typeof logevent === 'function') logevent('click_yearly', 'index.php');
           y.classList.remove('sub-plan-off');
           m.classList.remove('sub-plan-on');
-          d.textContent = tY;
+          d.textContent = yearlyDisclaimer();
         }
         y.addEventListener('click', pickYearly);
         m.addEventListener('click', pickMonthly);
