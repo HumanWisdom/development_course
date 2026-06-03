@@ -1,0 +1,79 @@
+.sc_01 {
+  min-height: 100vh !important;
+  padding: 0px 20px 30px;
+}
+
+.tn_title_back{
+   box-shadow: none;
+}
+.header-section {
+  text-align: center;
+  margin-bottom: 25px;
+
+  h1 {
+    font-size: 21px;
+    font-weight: 500;
+  }
+  
+  p {
+    font-size: 15px;
+    opacity: 0.85;
+  }
+}
+
+.cards-container {
+  margin-bottom: 40px;
+}
+
+.loading-wrapper, .no-data {
+  padding: 40px 0;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.ws-read-icon {
+  bottom: 40px;
+}
+
+.bottom-actions {
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+.skip-link {
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  opacity: 0.8;
+}
+.session_img_play{
+  right: 8px;
+}
+.continue-btn {
+  background-color: #ed7d6f;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 150%;
+    height: 40px;
+    width: 145px;
+    text-align: center;
+    color: #fff;
+    border: none;
+
+  .arrow-icon {
+    margin-top: 1px;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,23 +1,7 @@
 <!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-      <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" (click)="back()"
-          (keydown.enter)="back()" tabindex="0" alt="" class="p0" *ngIf="!isAdults">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" (click)="back()"
-          (keydown.enter)="back()" tabindex="0" alt="" class="p0" *ngIf="isAdults">
-
-      </a>
-    </div>
-
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="fw_600 fs_18px lh_140p  mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-        HappierMe Premium
-      </h1>
-    </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tright">
       <a class="">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg"
           (click)="routeToDashboard()" (keydown.enter)="routeToDashboard()" tabindex="0" alt="" class="p0"
@@ -25,7 +9,6 @@
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg"
           (click)="routeToDashboard()" (keydown.enter)="routeToDashboard()" tabindex="0" alt="" class="p0"
           *ngIf="isAdults">
-
       </a>
     </div>
   </div>
@@ -36,158 +19,178 @@
 <div class="right_col mc_01">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
 
+              <!-- Page Title -->
               <div class="row mb20px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 *ngIf="trialStatus == 'No Trial'" class="mtb0px fs_24px fw_600 lh_140p "
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <h4 *ngIf="trialStatus == 'No Trial'" class="mtb0px fs_24px fw_600 lh_140p"
                     [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                    Start your free trial today
+                    Start your free trial today!
                   </h4>
-
-                  <h4 *ngIf="trialStatus == 'underway'" class="mtb0px fs_24px fw_600 lh_140p "
+                  <h4 *ngIf="trialStatus == 'underway'" class="mtb0px fs_24px fw_600 lh_140p"
                     [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Your free trial is currently {{trialStatus}}
                   </h4>
-
-
-
-                  <h4 *ngIf="trialStatus == 'ended'" class="mtb0px fs_24px fw_600 lh_140p "
+                  <h4 *ngIf="trialStatus == 'ended'" class="mtb0px fs_24px fw_600 lh_140p"
                     [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Your free trial has {{trialStatus}}
                   </h4>
                 </div>
               </div>
-              <div class="row mb20px">
+
+              <!-- Trial status info (only shown when trial is underway or ended) -->
+              <div class="row mb15px" *ngIf="trialStatus != 'No Trial'">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <span *ngIf="trialStatus == 'ended'" style="font-size: small;" class=""
+                  <span *ngIf="trialStatus == 'ended'" style="font-size: small;"
                     [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">To access HappierMe Premium, choose one of the
                     subscription options below:</span>
-                  <span *ngIf="trialStatus == 'underway'" style="font-size: small;" class=""
+                  <span *ngIf="trialStatus == 'underway'" style="font-size: small;"
                     [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"> Your premium access lasts until {{expDate}}. To
                     revive your subscription and continue to access HappierMe Premium after {{expDate}} , choose one of
                     the subscription options below:</span>
                 </div>
               </div>
 
-              <a class="" (click)="SelectSubscriptionType(Annual)">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                    <div class="row div_best_value"
-                      [ngClass]="{'adult-best-value-annual': selectedSubscription === Annual}">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_500  fc_ffffff lh_140p ">
-                          Best value
-                        </h4>
-                      </div>
-                    </div>
-
-                    <div class="div_annual" [ngClass]="{'adult-selected-plan-border': selectedSubscription === Annual}">
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            Annual
-                          </h4>
-                        </div>
-                      </div>
-
-                      <div class="row mtb5px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_24px fw_600 lh_170p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            {{pricingModel.CurSymbol}}{{pricingModel.Annual}} {{getIsoCode() }}
-                            <span class="fs_15px fw_400 lh_170p "
-                              [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
-                              ({{pricingModel.CurSymbol}}{{this.pricingModel.PerMonthAmountOnAnnual }}/month)
-                            </span>
-                          </h4>
-                        </div>
-                      </div>
-
-                      <div class="row" *ngIf="trialStatus == 'No Trial'">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_170p "
-                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
-                            after 14-day trial
-                          </h4>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </a>
-
-              <a class="mtb15px" (click)="SelectSubscriptionType(Monthly)">
-                <div class="row div_monthly mt15px"
-                  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Monthly}">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                    <div class="row mb5px">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_15px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          Monthly
-                        </h4>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb0px fs_24px fw_600 lh_170p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          {{pricingModel.CurSymbol}}{{pricingModel.Monthly}}{{getIsoCode()}}
-                          <span class="fs_15px fw_400 lh_170p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'"
-                            *ngIf="trialStatus == 'No Trial'">
-                            month after 7-day trial
-                          </span>
-                        </h4>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </a>
-
-              <div class="row mtb15px" *ngIf="trialStatus == 'No Trial'">
+              <!-- ===== Full Access Card ===== -->
+              <div class="row mb10px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                    Cancel anytime during the trial period
-                  </h4>
+                  <div class="tfas-full-access-card">
+
+                    <!-- Card Header -->
+                    <div class="tfas-full-access-header">
+                      <h4 class="mtb0px fs_21px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Full
+                        access</h4>
+                      <h4 class="mt5px mb0px fs_15px fw_400 lh_140p"
+                        [ngClass]="isAdults ? 'fc_000000_0_7' : 'fc_ffffff_0_7'">Try for free. Cancel anytime.</h4>
+                      <h4 class="mt5px mb0px fs_12px fw_400 lh_140p"
+                        [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">Unlimited access to Olly, expert
+                        content, Guided Journeys, Journal, Forum, and more.</h4>
+                    </div>
+
+                    <!-- Annual Plan -->
+                    <div class="tfas-plan-card-wrapper"
+                      [ngClass]="{'tfas-plan-selected': selectedSubscription === Annual}">
+                      <!-- Best Value Badge -->
+                      <div class="tfas-best-value-badge">
+                        <h4 class="mtb0px fs_13px fw_600 lh_140p fc_ffffff tcenter">Best value</h4>
+                      </div>
+
+                      <a id="liAnnual" (click)="SelectSubscriptionType(Annual)"
+                        (keydown.enter)="SelectSubscriptionType(Annual)" tabindex="0">
+                        <div class="tfas-plan-option">
+                          <div class="tfas-plan-label">
+                            <h4 class="mtb0px fs_15px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                              Annual</h4>
+                          </div>
+                          <div class="tfas-plan-price">
+                            <h4 class="mtb0px fs_21px fw_600 lh_170p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                              {{pricingModel.CurSymbol}}{{pricingModel.Annual}}{{getIsoCode()}}
+                              <span class="fs_15px fw_400 lh_140p"
+                                [ngClass]="isAdults ? 'fc_000000_0_6' : 'fc_ffffff_0_7'">
+                                ({{pricingModel.CurSymbol}}{{pricingModel.PerMonthAmountOnAnnual}}/month)
+                              </span>
+                            </h4>
+                            <h4 class="mt3px mb0px fs_12px fw_400 lh_140p"
+                              [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'"
+                              *ngIf="trialStatus == 'No Trial'">
+                              after 14-day free trial
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <!-- Monthly Plan -->
+                    <div class="tfas-plan-card-wrapper"
+                      [ngClass]="{'tfas-plan-selected': selectedSubscription === Monthly}">
+                      <a id="liMonthly" (click)="SelectSubscriptionType(Monthly)"
+                        (keydown.enter)="SelectSubscriptionType(Monthly)" tabindex="0">
+                        <div class="tfas-plan-option">
+                          <div class="tfas-plan-label">
+                            <h4 class="mtb0px fs_15px fw_400 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                              Monthly</h4>
+                          </div>
+                          <div class="tfas-plan-price">
+                            <h4 class="mtb0px fs_21px fw_600 lh_170p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                              {{pricingModel.CurSymbol}}{{pricingModel.Monthly}}{{getIsoCode()}}
+                              <span class="fs_15px fw_400 lh_140p"
+                                [ngClass]="isAdults ? 'fc_000000_0_6' : 'fc_ffffff_0_7'">/month</span>
+                            </h4>
+                            <h4 class="mt3px mb0px fs_12px fw_400 lh_140p"
+                              [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'"
+                              *ngIf="trialStatus == 'No Trial'">
+                              after 7-day free trial
+                            </h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- ===== /Full Access Card ===== -->
+
+              <!-- OR separator -->
+              <div class="row mtb10px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="tfas-separator" [ngClass]="{'tfas-separator-teens': !isAdults}">or</div>
                 </div>
               </div>
 
-              <!-- <a class="" (click)="SelectSubscriptionType(Redeem)">
-                <div class="row div_monthly mt15px"  [ngClass]="{'adult-selected-plan-border': selectedSubscription === Redeem}">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <h4 class="mtb0px fs_15px fw_400 lh_140p "[ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                      Redeem subscription code
-                    </h4>
-                  </div>
+              <!-- ===== Basic Access ===== -->
+              <a id="liBasicAccess" (click)="routeToDashboard()" (keydown.enter)="routeToDashboard()" tabindex="0">
+                <div class="tfas-alt-option-card" [ngClass]="isAdults ? 'tfas-alt-card-adults' : 'tfas-alt-card-teens'">
+                  <h4 class="mtb0px fs_21px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Basic
+                    access</h4>
+                  <h4 class="mt5px mb0px fs_12px fw_400 lh_140p"
+                    [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_7'">Continue to explore at no cost</h4>
                 </div>
-              </a> -->
+              </a>
 
-              <div class="row mtb30px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" (click)="buyGift()">
-                  <h4 class="mtb0px fs_12px fw_400 lh_150p  tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+              <!-- OR separator -->
+              <div class="row mtb10px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="tfas-separator" [ngClass]="{'tfas-separator-teens': !isAdults}">or</div>
+                </div>
+              </div>
+
+              <!-- ===== Have a code? ===== -->
+              <a id="liRedeemCode" (click)="SelectSubscriptionType(Redeem)"
+                (keydown.enter)="SelectSubscriptionType(Redeem)" tabindex="0">
+                <div class="tfas-alt-option-card" [ngClass]="isAdults ? 'tfas-alt-card-adults' : 'tfas-alt-card-teens'">
+                  <h4 class="mtb0px fs_21px fw_600 lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Have a
+                    code?</h4>
+                  <h4 class="mt5px mb0px fs_12px fw_400 lh_140p"
+                    [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_7'">Redeem subscription code here</h4>
+                </div>
+              </a>
+
+              <!-- Buying for someone else -->
+              <div class="row mt20px mb10px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter" (click)="buyGift()"
+                  style="cursor:pointer;">
+                  <h4 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                     Buying this for someone else?
-                    <a class="fs_12px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
+                    <a class="fs_12px fw_600 lh_150p txt_underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
                       Click here
                     </a>
                   </h4>
                 </div>
               </div>
 
-              <div class="row" (click)="terms()">
+              <!-- Terms & Conditions -->
+              <div class="row mb20px" (click)="terms()" style="cursor:pointer;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <a class="fs_12px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
-                    User Agreement
+                  <a class="fs_12px fw_500 lh_150p tfas-terms-link" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
+                    Terms &amp; Conditions
                   </a>
                 </div>
               </div>
-
-              <!-- <div class="pagebreak"></div> -->
 
             </form>
           </div>
@@ -197,25 +200,3 @@
   </div>
 </div>
 <!-- /page content -->
-
-<!-- footer  -->
-
-<!-- footer  -->
-<!-- <div class="mfooter">
-  <div class="row center_flex">
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_sfooter col_cw"  [ngClass]="isAdults ? '' : 'we_ft_cl'">
-      <a> -->
-<!-- <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="trialStatus == 'No Trial'">
-          Try for free
-        </button>
-        <button type="button" (click)="tryFreeSubscribe()" class="btn btn_tfas" *ngIf="trialStatus == 'ended'">
-          Proceed 
-        </button> -->
-<!-- <button type="button" (click)="dashboard()" class="btn btn_tfas" *ngIf="trialStatus == 'underway'">
-          Continue to dashboard
-        </button>
-      </a>
-    </div>
-  </div>
-</div> -->
-<!-- /footer -->
