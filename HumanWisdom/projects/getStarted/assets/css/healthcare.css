@@ -317,6 +317,32 @@ a,h5:hover {
   }
 }
 
+/* Wide screen (1400px+): hide testimonial nav, center cards — match index.php blog/coaches */
+@media (min-width: 1400px) {
+  .hc-testimonials-footer {
+    display: none !important;
+  }
+
+  .owl_testimonials {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .owl_testimonials > .owl-carousel > .owl-stage-outer {
+    margin-left: 0 !important;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+  }
+
+  .owl_testimonials .owl-carousel .owl-stage {
+    left: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
 @media screen and (min-width: 1600px) {
     .row.center_flex .col-sm-10.div_inspire,
     .row.center_flex .col-xs-10.div_inspire,

@@ -1241,7 +1241,7 @@
                 </a>-->
               </div>
 
-              <div class="hc-slider-footer hc-testimonials-footer">
+              <div class="hc-slider-footer hc-testimonials-footer d-xxl-none">
                 <div class="hc-slider-nav-btns">
                   <button class="hc-arrow" id="hc-testimonials-prev" aria-label="Previous" disabled>
                     <i class="bi bi-chevron-left"></i>
@@ -1510,119 +1510,6 @@
       <?php include('../includes/happierme-email.php'); ?>
       <!-- /bring happierme -->
 
-      <!-- blog -->
-      <section>
-        <div class="section-header">
-          <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-                Explore our blog
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row center_flex">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-
-            <div class="owl_blog">
-              <div class="owl-carousel owl-theme">
-                <a class="item" data-aos="fade-up" data-aos-delay="200"href="../blogs/self_awareness_can_help_prevent_addiction.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/30.webp" class="img-responsive" alt="Self-Awareness can help prevent addiction">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Self-Awareness can help prevent addiction 
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="300"href="../blogs/avoid_and_overcome_burnout_with_self_awareness.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/49.webp" class="img-responsive" alt="Avoid and overcome burnout, with self-awareness ">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Avoid and overcome burnout, with self-awareness 
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/to_be_mentally_healthy_we_need_self_awareness.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/23.webp" class="img-responsive" alt="To be mentally healthy, we need self-awareness">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          To be mentally healthy, we need self-awareness
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/addressing_health_problems_with_emotional_intelligence.php">
-                  <div class="div_blog">
-                    <div class="row">
-                      <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/59.webp" class="img-responsive" alt="Addressing health problems with emotional intelligence">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                        <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                          Addressing health problems with emotional intelligence
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="hc-slider-footer">
-                <a class="hc-view-all-link" href="https://happierme.app/adults/blogs">
-                  <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                    View all blogs
-                  </h4>
-                </a>
-             <!-- Navigation buttons - Hidden ONLY on extra wide screens -->
-<div class="hc-slider-nav-btns d-xxl-none">
-  <button class="hc-arrow" id="hc-blog-prev" aria-label="Previous" disabled>
-    <i class="bi bi-chevron-left"></i>
-  </button>
-  <button class="hc-arrow" id="hc-blog-next" aria-label="Next">
-    <i class="bi bi-chevron-right"></i>
-  </button>
-</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      <!-- /blog -->
-
       <!-- footer -->
       <?php include('../includes/footer.php'); ?>
       <!-- /footer -->
@@ -1636,7 +1523,6 @@
     <script>
       $(document).ready(function () {
         var $tc = $('.owl_testimonials .owl-carousel');
-        var $bc = $('.owl_blog .owl-carousel');
 
         $tc.on('changed.owl.carousel', function (e) {
           var atStart = e.item.index === 0;
@@ -1646,15 +1532,6 @@
         });
         $('#hc-testimonials-prev').on('click', function () { $tc.trigger('prev.owl.carousel'); });
         $('#hc-testimonials-next').on('click', function () { $tc.trigger('next.owl.carousel'); });
-
-        $bc.on('changed.owl.carousel', function (e) {
-          var atStart = e.item.index === 0;
-          var atEnd = e.item.index + e.page.size >= e.item.count;
-          $('#hc-blog-prev').prop('disabled', atStart);
-          $('#hc-blog-next').prop('disabled', atEnd);
-        });
-        $('#hc-blog-prev').on('click', function () { $bc.trigger('prev.owl.carousel'); });
-        $('#hc-blog-next').on('click', function () { $bc.trigger('next.owl.carousel'); });
       });
     </script>
     
