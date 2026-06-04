@@ -53,13 +53,13 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
-                    Headspace is one of the most well-known
+                
+                   <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/best">  Headspace  </a> is one of the most well-known
                     meditation
                     apps in the world. It's beginner-friendly, easy to use, and packed with guided meditations,
                     breathing exercises
                     and sleep support. Many wellness experts still recommend it for people starting their mindfulness journey.
-                  </span>
+                 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
