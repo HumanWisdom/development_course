@@ -123,11 +123,21 @@ export class ProceedToPaymentPage implements OnInit {
 
   back() {
   if(sessionStorage.getItem('isPaymentBackClicked') && sessionStorage.getItem('isPaymentBackClicked')=='T'){
-    this.location.back();
+    const previousPage = sessionStorage.getItem('proceedToPaymentPreviousPage');
+    if (previousPage) {
+      this.router.navigateByUrl(previousPage);
+    } else {
+      this.location.back();
+    }
   }else{
     sessionStorage.setItem('isPaymentBackClicked','T');
     this.commonService.updateSurveyData(2);
-    this.location.back();
+    const previousPage = sessionStorage.getItem('proceedToPaymentPreviousPage');
+    if (previousPage) {
+      this.router.navigateByUrl(previousPage);
+    } else {
+      this.location.back();
+    }
   }
   }
 

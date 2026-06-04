@@ -1349,5 +1349,40 @@ describe('ChatBotComponent', () => {
       expect(component['cachedHistoryUserId']).toBeNull();
     });
   });
+
+  describe('Olly Landing Page Integration', () => {
+    it('should initialize showLanding to true by default', () => {
+      expect(component.showLanding).toBe(true);
+    });
+
+    it('should hide landing page when user messages are detected in the store', fakeAsync(() => {
+      const userMessage: ChatMessage = {
+        id: 'user-msg-1',
+        content: 'I need help',
+        sender: 'user',
+        timestamp: new Date()
+      };
+      
+      component.showLanding = true;
+      messagesSubject.next([userMessage]);
+      tick(200); // Flush all timers
+
+      expect(component.showLanding).toBe(false);
+    }));
+
+    it('should start chat when onStartChat is called', fakeAsync(() => {
+      spyOn(component, 'onSendMessage');
+      component.showLanding = true;
+      
+      component.onStartChat('How are you?');
+      
+      expect(component.showLanding).toBe(false);
+      expect(component.currentMessage).toBe('How are you?');
+      tick(100); // Flush the setTimeout in onStartChat
+
+      expect(component.onSendMessage).toHaveBeenCalled();
+    }));
+  });
 });
+
 

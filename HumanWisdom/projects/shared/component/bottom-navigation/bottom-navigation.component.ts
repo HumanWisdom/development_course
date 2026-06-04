@@ -23,6 +23,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   isloggedIn = false
   @Input() enableprofile = false
   @Input() search = false
+  @Input() showOwl = true;
   Subscriber: any;
   guest: any;
   @Input() userdetail: any;

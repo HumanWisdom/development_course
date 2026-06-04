@@ -37357,7 +37357,7 @@ div.contentdiv p {
 .tfas-plan-card-wrapper {
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   background: #0C2B5F;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -37365,7 +37365,7 @@ div.contentdiv p {
 
 .tfas-plan-card-wrapper.tfas-plan-selected {
   background: #031A41;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .tfas-plan-option {
