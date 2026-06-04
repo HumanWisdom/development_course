@@ -18,6 +18,9 @@ table, th, td {
   border:1px solid black;
   padding:5px;
 }
+th{
+  text-align:center;
+}
 </style>
   </head>
 
@@ -318,8 +321,8 @@ table, th, td {
                 </h4>
 
 
-                <h4 class="mtb0px blog_sub_title">
-                  HappierMe Feels Personally Supportive
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  HappierMe Feels Personally Supportive</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
