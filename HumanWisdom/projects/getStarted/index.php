@@ -659,7 +659,7 @@ require_once('./includes/security_config.php');
                   <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                 </video>
                 <button type="button" class="tools-play-btn tools-video-play-btn" aria-label="Play breathing exercise" id="fbn-play-btn">
-                  <span>&#9654;</span>
+                  <i class="bi bi-soundwave tools-play-btn-icon" aria-hidden="true"></i>
                 </button>
               </div>
               <div class="tools-card-meta">
@@ -689,10 +689,20 @@ require_once('./includes/security_config.php');
               <h3 class="tools-info-heading">PATHWAY — Guided program</h3>
               <p class="tools-info-body">A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.</p>
               <div class="tools-audio-wrap" data-audio-wrap="aud1">
-                <span class="tools-audio-play-icon" aria-hidden="true"></span>
-                <audio id="aud1" controls controlslist="nodownload">
+                <audio id="aud1" class="tools-audio-el" preload="metadata" controlslist="nodownload">
                   <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
                 </audio>
+                <div class="tools-audio-player">
+                  <button type="button" class="tools-audio-play-btn" aria-label="Play audio" data-audio-id="aud1"></button>
+                  <div class="tools-audio-body">
+                    <p class="tools-audio-title">Introduction to PATHWAY</p>
+                    <div class="tools-audio-timeline">
+                      <span class="tools-audio-time tools-audio-time-current">0:00</span>
+                      <input type="range" class="tools-audio-seek" value="0" min="0" max="100" step="0.1" aria-label="Playback position">
+                      <span class="tools-audio-time tools-audio-time-duration">0:00</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <a href="https://happierme.app/adults/pathway/" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
@@ -715,20 +725,37 @@ require_once('./includes/security_config.php');
 
           <!-- Podcast -->
           <div id="podcast_tab" class="tools-panel">
-            <div>
+            <div class="tools-card tools-card--podcast">
               <div class="tools-thumb">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="Podcast" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="How can we be happier" class="tools-thumb-img" />
+                <span class="tools-card-media-badge" aria-hidden="true"><i class="bi bi-soundwave"></i></span>
               </div>
-              
+              <div class="tools-card-meta">
+                <div class="tools-card-label-row">
+                  <span class="tools-label-text">PODCAST</span>
+                </div>
+                <p class="tools-card-title">How can we be happier</p>
+                <p class="tools-card-duration tools-card-duration-aud2">0:00</p>
+              </div>
             </div>
             <div class="tools-info">
               <h3 class="tools-info-heading">HappierMe Podcast</h3>
               <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, where we explore a subject in depth with guests from around the world. They offer fresh ways of dealing with the many challenges we face and living our best life.</p>
               <div class="tools-audio-wrap" data-audio-wrap="aud2">
-                <span class="tools-audio-play-icon" aria-hidden="true"></span>
-                <audio id="aud2" controls controlslist="nodownload">
+                <audio id="aud2" class="tools-audio-el" preload="metadata" controlslist="nodownload">
                   <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
                 </audio>
+                <div class="tools-audio-player">
+                  <button type="button" class="tools-audio-play-btn" aria-label="Play audio" data-audio-id="aud2"></button>
+                  <div class="tools-audio-body">
+                    <p class="tools-audio-title">How can we be happier</p>
+                    <div class="tools-audio-timeline">
+                      <span class="tools-audio-time tools-audio-time-current">0:00</span>
+                      <input type="range" class="tools-audio-seek" value="0" min="0" max="100" step="0.1" aria-label="Playback position">
+                      <span class="tools-audio-time tools-audio-time-duration">0:00</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <a href="https://happierme.app/adults/podcast" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
