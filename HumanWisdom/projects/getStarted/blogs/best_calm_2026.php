@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -9,6 +11,16 @@
     <!-- vendor_header -->
     <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
+
+     <style>
+table, th, td {
+  border:1px solid black;
+  padding: 5px;
+}
+th{
+  text-align:center;
+}
+</style>
   </head>
 
   <body>
@@ -44,7 +56,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/best-alternatives-calm-2026.webp" class="img-responsive" alt="Best Alternatives to Calm in 2026">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/best_calm.webp" class="img-responsive" alt="Best Alternatives to Calm in 2026">
               </div>
             </div>
 
@@ -52,15 +64,15 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     Calm has become one of the most popular
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                     and sleep apps in the world. From guided meditations and Sleep Stories to relaxing music and
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">breathing exercises</a>,
+                   breathing exercises,
                     the app has helped millions of users manage
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a>
+                    stress
                     and improve sleep.
-                  </span>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -73,16 +85,16 @@
 
                 <h4 class="mtb0px blog_desc">
                   Because mental wellness today is about more than just
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>.
+                  meditation.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   People are now looking for apps that also support:
                   <ul>
                     <li>Emotional wellbeing</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">Anxiety</a> management</li>
+                    <li>Anxiety management</li>
                     <li>Self-growth</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling</a></li>
+                    <li>Journaling</li>
                     <li>Habit-building</li>
                     <li>Emotional intelligence</li>
                     <li>Personalized wellness experiences</li>
@@ -101,7 +113,7 @@
                 <h4 class="mtb0px blog_desc">
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
                   stands out as one of the strongest alternatives to Calm because it goes beyond
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   and relaxation.
                 </h4>
 
@@ -112,14 +124,14 @@
                 <h4 class="mtb0px blog_desc">
                   The app combines:
                   <ul>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">Meditation</a> and mindfulness</li>
-                    <li>Guided <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a></li>
+                    <li>Meditation and mindfulness</li>
+                    <li>Guided journaling</li>
                     <li>Emotional intelligence tools</li>
                     <li>Habit-building support</li>
                     <li>Wellness tracking</li>
                     <li>Podcasts and videos</li>
                     <li>Self-growth learning</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">Breathing exercises</a></li>
+                    <li>Breathing exercises</li>
                     <li>Coaching support</li>
                   </ul>
                 </h4>
@@ -130,25 +142,25 @@
 
                 <h4 class="mtb0px blog_desc">
                   This makes the experience feel far more interactive and personalized compared to traditional
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                meditation
                   apps.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Why HappierMe Is a Great Calm Alternative</span>
                   <ul>
-                    <li>More than <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a> and sleep support</li>
+                    <li>More than meditation and sleep support</li>
                     <li>Strong emotional wellness focus</li>
                     <li>AI-powered personalized guidance</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling</a> and self-reflection tools</li>
+                    <li>Journaling< and self-reflection tools</li>
                     <li>Designed for both teens and adults</li>
-                    <li>Supports confidence, relationships, overthinking, and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a> management</li>
+                    <li>Supports confidence, relationships, overthinking, and stress management</li>
                   </ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For:</span> People who want a complete emotional wellness and personal growth app — not just
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+               meditation
                   alone.
                 </h4>
 
@@ -159,30 +171,30 @@
 
                 <h4 class="mtb0px blog_desc">
                   Headspace is one of the most beginner-friendly
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   apps available today.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   The app focuses heavily on:
                   <ul>
-                    <li>Guided <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a></li>
+                    <li>Guided meditation</li>
                     <li>Mindfulness practices</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">Breathing exercises</a></li>
+                    <li>Breathing exercises</li>
                     <li>Sleep support</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress</a> reduction</li>
+                    <li>Stress reduction</li>
                   </ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Its clean interface and structured
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   programs make it especially useful for users who are completely new to mindfulness.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For:</span> Beginners looking to build a simple
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   habit.
                 </h4>
 
@@ -199,16 +211,16 @@
                   The app uses an AI chatbot to help users:
                   <ul>
                     <li>Reflect on emotions</li>
-                    <li>Manage <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">anxiety</a></li>
+                    <li>Manage anxiety</li>
                     <li>Practice CBT-based techniques</li>
                     <li>Track moods</li>
-                    <li>Process <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a> privately</li>
+                    <li>Process stress privately</li>
                   </ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Wysa feels more like an emotional support companion than a traditional
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   app.
                 </h4>
 
@@ -223,7 +235,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   Insight Timer is known for having one of the largest collections of free
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   content available.
                 </h4>
 
@@ -233,7 +245,7 @@
                     <li>Thousands of guided meditations</li>
                     <li>Relaxation music</li>
                     <li>Sleep support</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">Breathwork</a> exercises</li>
+                    <li>Breathwork exercises</li>
                     <li>Wellness talks</li>
                   </ul>
                 </h4>
@@ -244,7 +256,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For:</span> Users looking for free
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   variety and flexibility.
                 </h4>
 
@@ -269,7 +281,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   While it's more expensive than
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                  meditation
                   apps, it can be valuable for users seeking deeper therapeutic support.
                 </h4>
 
@@ -282,8 +294,9 @@
                   Quick Comparison Table
                 </h4>
 
-                <div class="table-responsive mt20px rmb80px">
-                  <table class="table blog_table">
+                <!-- <div class="table-responsive mt20px rmb80px"> -->
+                  <table style="width:100%; margin-bottom:25px;">
+
                     <thead>
                       <tr>
                         <th>App</th>
@@ -343,7 +356,7 @@
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                <!-- </div> -->
 
 
                 <h4 class="mtb0px blog_sub_title">
@@ -389,7 +402,7 @@
                     <li>Mindfulness</li>
                     <li>Emotional intelligence</li>
                     <li>AI guidance</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">Journaling</a></li>
+                    <li>Journaling</a></li>
                     <li>Habit-building</li>
                     <li>Wellness tracking</li>
                     <li>Self-growth learning</li>
@@ -414,7 +427,7 @@
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">
                     Calm remains one of the best-known
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                   meditation
                     apps in the world, especially for sleep and relaxation.
                   </span>
                 </h4>
@@ -438,6 +451,7 @@
                 <h4 class="mtb0px blog_desc">
                   That's why apps like
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+
                   are becoming increasingly popular.
                 </h4>
 

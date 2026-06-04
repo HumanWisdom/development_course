@@ -262,7 +262,7 @@ Meditation
                     <li>AI-powered emotional guidance</li>
                     <li>Meditation and mindfulness</li>
                     <li>Emotional intelligence development</li>
-                    <li>Guided journaling<</li>
+                    <li>Guided journaling</li>
                     <li>Habit-building</li>
                     <li>Wellness tracking</li>
                     <li>Podcasts and videos</li>
