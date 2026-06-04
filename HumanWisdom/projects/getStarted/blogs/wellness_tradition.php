@@ -147,7 +147,8 @@ th{
                   stress
                   temporarily,
                   <br/>
-                <span style='font-size:20px;'>&#10003; </span>improve sleep quality, <br/>
+                <span style='font-size:20px;'>&#10003; </span>
+                improve sleep quality, <br/>
                 <span style='font-size:20px;'>&#10003; </span>encourage mindfulness habits<br/>
                 <span style='font-size:20px;'>&#10003; </span>
                 create moments of calm in busy lives.
@@ -252,7 +253,8 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                    HappierMe</a>
                   is a strong example of how AI wellness apps are evolving beyond traditional meditation platforms.
                 </h4>
 
