@@ -245,8 +245,8 @@ th{
                   AI is a major feature in both apps, but the implementation is completely different.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  HappierMe's Olly AI
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  HappierMe's Olly AI </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -267,7 +267,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  The AI helps organize and personalize the wellness journey. The goal is guidance and growth.
+                  The AI helps organize and personalize the wellness journey. 
+                  </h4>
+                    <h4 class="mtb0px blog_desc">The goal is guidance and growth.
                 </h4>
 
 
@@ -276,7 +278,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  In Wysa, the AI <span class="blog_highlight_black">is</span> the experience.
+                  In Wysa, the AI is the experience.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -371,8 +373,8 @@ th{
                 </h4>
 
 
-                <h4 class="mtb0px blog_sub_title">
-                  What Wysa Includes
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  What Wysa Includes</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">

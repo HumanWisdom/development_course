@@ -64,9 +64,9 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     Mental wellness support today comes in many forms.
-                  </span>
+                
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -161,7 +161,7 @@ Let's compare them in depth.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Using <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> feels like having a daily mental wellness companion.
+                  Using HappierMe feels like having a daily mental wellness companion.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -449,8 +449,8 @@ Let's compare them in depth.
                   Interestingly, both platforms personalize support differently.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  HappierMe Personalizes Through AI
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  HappierMe Personalizes Through AI </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
