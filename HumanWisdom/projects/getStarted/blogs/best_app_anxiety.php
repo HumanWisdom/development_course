@@ -65,10 +65,10 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                  Anxiety
                     has become one of the most common mental health challenges today — especially among teenagers and young adults.
-                  </span>
+             
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -165,7 +165,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   Instead of focusing only on
-                 meditation<
+                 meditation
                   or relaxation, HappierMe helps users understand the root causes of
                  Stress,
                  anxiety,
@@ -216,7 +216,8 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> People looking for long-term emotional growth,
+                  <span class="blog_highlight_black">Best For</span> </h4>
+                  <h4 class="mtb0px blog_desc">People looking for long-term emotional growth,
                   anxiety
                   support, and self-understanding — not just temporary relaxation.
                 </h4>
@@ -227,7 +228,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Headspace is one of the world's most popular mindfulness and
+                 <a class="blog_highlight_peach td_underline" href="https://www.headspace.com">  Headspace </a> is one of the world's most popular mindfulness and
                  meditation
                   apps.
                 </h4>
@@ -254,7 +255,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who primarily want
+                  <span class="blog_highlight_black">Best For</span>
+</h4>
+<h4 class="mtb0px blog_desc"> Users who primarily want
                  meditation
                   and
                  breathing exercises
@@ -295,7 +298,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> People struggling with sleep
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                  <h4 class="mtb0px blog_desc"> People struggling with sleep
                   anxiety,
                   nighttime
                  stress,
@@ -326,7 +331,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who prefer chatting and guided emotional reflection.
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                  <h4 class="mtb0px blog_desc"> Users who prefer chatting and guided emotional reflection.
                 </h4>
 
 
