@@ -86,7 +86,7 @@
             <div class="bottom-actions" *ngIf="!isLoading">
               <!-- Skip Button: displayed if NOT all cards are viewed -->
               <div class="skip-btn-container tcenter" *ngIf="!allViewed">
-                <a (click)="onSkipOrContinue()" class="skip-link fs_15px fw_500 td_underline"
+                <a (click)="onContinue()" class="skip-link fs_15px fw_500 td_underline"
                   [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                   Skip
                 </a>
@@ -94,7 +94,7 @@
 
               <!-- Continue Button: displayed if ALL cards are viewed -->
               <div class="continue-btn-container tcenter" *ngIf="allViewed">
-                <button (click)="onSkipOrContinue()" class="continue-btn">
+                <button (click)="onContinue()" class="continue-btn">
                   <span class="fs_15px fw_600 fc_ffffff">Continue</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                     class="arrow-icon">

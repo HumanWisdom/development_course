@@ -776,7 +776,7 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
   }
 
   goBack() {
-    this.router.navigate([SharedService.getDashboardUrls()])
+    this.location.back();
   }
   
   iOS() {

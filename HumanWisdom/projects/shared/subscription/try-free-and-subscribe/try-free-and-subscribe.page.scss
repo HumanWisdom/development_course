@@ -5,3 +5,12 @@
 .tn_title_back{
    box-shadow: none;
 }
+
+.txt_underline {
+  text-decoration: underline !important;
+  
+  &:hover,
+  &:focus {
+    text-decoration: underline !important;
+  }
+}
