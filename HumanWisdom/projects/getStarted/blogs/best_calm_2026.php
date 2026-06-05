@@ -160,7 +160,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For
+                  <span class="blog_highlight_black">Best For</span>
                   </h4>
                                   <h4 class="mtb0px blog_desc">
 People who want a complete emotional wellness and personal growth app — not just
@@ -197,8 +197,8 @@ People who want a complete emotional wellness and personal growth app — not ju
                   programs make it especially useful for users who are completely new to mindfulness.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                  Best For</h4>
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Best For</span></h4>
                   
                                   <h4 class="mtb0px blog_desc">
 Beginners looking to build a simple
@@ -234,7 +234,9 @@ Beginners looking to build a simple
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who prefer conversational emotional support and guided reflection.
+                  <span class="blog_highlight_black">Best For</span>
+                  
+                  </h4> <h4 class="mtb0px blog_desc">Users who prefer conversational emotional support and guided reflection.
                 </h4>
 
 
@@ -265,7 +267,9 @@ Beginners looking to build a simple
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users looking for free
+                  <span class="blog_highlight_black">Best For</span> 
+                  </h4>
+                  <h4 class="mtb0px blog_desc">Users looking for free
                  meditation
                   variety and flexibility.
                 </h4>
@@ -297,7 +301,9 @@ Beginners looking to build a simple
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who want licensed professional therapy online.
+                  <span class="blog_highlight_black">Best For</span> 
+                  </h4>
+                  <h4 class="mtb0px blog_desc">Users who want licensed professional therapy online.
                 </h4>
 
 
@@ -404,8 +410,8 @@ Beginners looking to build a simple
                   BetterHelp provides direct access to licensed therapists.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  But If You Want a More Complete Wellness Experience…
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  But If You Want a More Complete Wellness Experience…</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -438,11 +444,11 @@ Beginners looking to build a simple
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                 
                     Calm remains one of the best-known
                    meditation
                     apps in the world, especially for sleep and relaxation.
-                  </span>
+                 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">

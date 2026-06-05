@@ -10,6 +10,16 @@
     <!-- vendor_header -->
     <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
+
+      <style>
+table, th, td {
+  border:1px solid black;
+  padding: 5px;
+}
+th{
+  text-align:center;
+}
+</style>
   </head>
 
   <body>
@@ -54,7 +64,7 @@
 
                 <h4 class="mtb0px blog_desc">
                 
-                   <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/best">  Headspace  </a> is one of the most well-known
+                   <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">  Headspace  </a> is one of the most well-known
                     meditation
                     apps in the world. It's beginner-friendly, easy to use, and packed with guided meditations,
                     breathing exercises
@@ -124,19 +134,19 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Why People Prefer HappierMe</span>
-                  <ul>
-                    <li>Personalized AI wellness guidance</li>
-                    <li>Focus on emotional intelligence and self-awareness</li>
-                    <li>Journaling and habit-building tools</li>
-                    <li>Teen and young adult wellness support</li>
-                    <li>Practical support for overthinking, confidence, and relationships</li>
-                    <li>Combines mindfulness with real-life emotional growth</li>
-                  </ul>
+                  <span class="blog_highlight_black">Why People Prefer HappierMe</span><br/>
+                  
+                      <span style='font-size:20px;'>&#10003; </span>Personalized AI wellness guidance</br/>
+                      <span style='font-size:20px;'>&#10003; </span>Focus on emotional intelligence and self-awareness</br>
+                      <span style='font-size:20px;'>&#10003; </span>Journaling and habit-building tools</br>
+                      <span style='font-size:20px;'>&#10003; </span>>Teen and young adult wellness support</br/>
+                      <span style='font-size:20px;'>&#10003; </span>Practical support for overthinking, confidence, and relationships</br>
+                      <span style='font-size:20px;'>&#10003; </span>Combines mindfulness with real-life emotional growth</br>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users looking for a modern wellness app that supports long-term emotional wellbeing — not just
+                  <span class="blog_highlight_black">Best For</span> </h4> <h4 class="mtb0px blog_desc"> Users looking for a modern wellness app that supports long-term emotional wellbeing — not just
                   meditation sessions.
                 </h4>
 
@@ -146,7 +156,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Calm is one of the biggest competitors to Headspace and is especially popular for:
+                 <a class="blog_highlight_peach td_underline" href="https://www.calm.com/">  Calm  </a> is one of the biggest competitors to Headspace and is especially popular for:
                   <ul>
                     <li>Sleep Stories</li>
                     <li>Relaxing soundscapes</li>
@@ -163,7 +173,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users primarily focused on sleep improvement and relaxation.
+                  <span class="blog_highlight_black">Best For</span> </h4> <h4 class="mtb0px blog_desc"> Users primarily focused on sleep improvement and relaxation.
                 </h4>
 
 
@@ -172,7 +182,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Insight Timer is often recommended by users looking for a free alternative to Headspace. Multiple reviews and Reddit discussions praise it for having one of the largest collections of free
+                 <a class="blog_highlight_peach td_underline" href="https://insighttimer.com/">  Insight Timer </a> is often recommended by users looking for a free alternative to Headspace. Multiple reviews and Reddit discussions praise it for having one of the largest collections of free
                meditation
                   content available.
                 </h4>
@@ -189,7 +199,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who want a huge free
+                  <span class="blog_highlight_black">Best For</span></h4>
+                    <h4 class="mtb0px blog_desc">
+                  Users who want a huge free
                   meditation
                   library with flexible options.
                 </h4>
@@ -200,7 +212,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Waking Up takes a more intellectual and philosophical approach to mindfulness.
+                  <a class="blog_highlight_peach td_underline" href="https://www.wakingup.com/"> Waking Up </a> takes a more intellectual and philosophical approach to mindfulness.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -219,7 +231,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Experienced meditators and users interested in mindfulness philosophy.
+                  <span class="blog_highlight_black">Best For</span> </h4> <h4 class="mtb0px blog_desc"> Experienced meditators and users interested in mindfulness philosophy.
                 </h4>
 
 
@@ -228,7 +240,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Medito has become popular as a completely free
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app"> Medito </a> has become popular as a completely free
           meditation
                   platform.
                 </h4>
@@ -250,7 +262,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users looking for a free and minimal
+                  <span class="blog_highlight_black">Best For</span> </h4> <h4 class="mtb0px blog_desc"> Users looking for a free and minimal
 meditation
                   experience.
                 </h4>
@@ -332,24 +344,24 @@ meditation
                   The answer depends on what kind of support you actually want.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  If You Mainly Want Meditation
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  If You Mainly Want Meditation</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Insight Timer, Medito, and Waking Up are strong options.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  If You Want Better Sleep &amp; Relaxation
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  If You Want Better Sleep &amp; Relaxation</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Calm remains one of the best choices.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  But If You Want More Than Meditation…
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  But If You Want More Than Meditation…</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -372,7 +384,7 @@ meditation
 
                 <h4 class="mtb0px blog_desc">
                   Instead of simply helping users relax temporarily,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   focuses on helping users understand themselves better and grow emotionally over time.
                 </h4>
 

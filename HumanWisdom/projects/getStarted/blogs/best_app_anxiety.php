@@ -236,9 +236,9 @@ th{
                 <h4 class="mtb0px blog_desc">
                   It focuses heavily on:
                   <ul>
-                    <li>Guided >meditation</li>
+                    <li>Guided meditation</li>
                     <li>Breathing exercises</li>
-                    <li>Stress< reduction</li>
+                    <li>Stress reduction</li>
                     <li>Sleep support</li>
                     <li>Mindfulness routines</li>
                   </ul>
@@ -272,7 +272,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Calm is especially strong for:
+                  <a class="blog_highlight_peach td_underline" href="https://www.calm.com">  Calm </a> is especially strong for:
                   <ul>
                     <li>Sleep support</li>
                     <li>Relaxation</li>
@@ -313,7 +313,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wysa is an AI chatbot-focused mental wellness app designed to help users process emotions through conversation-style support.
+                  <a class="blog_highlight_peach td_underline" href="https://www.wysa.com"> Wysa </a> is an AI chatbot-focused mental wellness app designed to help users process emotions through conversation-style support.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -419,7 +419,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                HappierMe
                   combines all of these while also helping users understand themselves better emotionally.
                 </h4>
 
@@ -456,11 +456,11 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                
                     There's no single
                    anxiety
                     app that works perfectly for everyone.
-                  </span>
+                 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
