@@ -195,8 +195,12 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
 }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-    this.toursubscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+    if (this.toursubscription) {
+      this.toursubscription.unsubscribe();
+    }
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
     }

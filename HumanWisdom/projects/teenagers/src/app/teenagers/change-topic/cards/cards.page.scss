@@ -46,12 +46,20 @@
   cursor: pointer;
   display: inline-block;
   opacity: 0.8;
+  text-decoration: none !important;
+  
+  &:hover,
+  &:focus {
+    color: inherit !important;
+    opacity: 1 !important;
+    text-decoration: none !important;
+  }
 }
 .session_img_play{
   right: 8px;
 }
 .continue-btn {
-  background-color: #ed7d6f;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
     border-radius: 20px;
     font-weight: 600;
     font-size: 15px;

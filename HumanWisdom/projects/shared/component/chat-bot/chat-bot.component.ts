@@ -37,6 +37,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   private cachedHistoryUserId: number | null = null;
   private historyCheckInProgress: boolean = false;
   isAdults = false;
+  showLanding: boolean = true;
 
   // Dislike popup state
   showDislikePopup: boolean = false;
@@ -47,6 +48,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   private sessionSubscription: Subscription = new Subscription();
   private suggestionsSubscription: Subscription = new Subscription();
   userAvatarUrl: string = '';
+  private preloadedQuery: string | null = null;
 
   constructor(
     private chatbotService: ChatbotService,
@@ -55,7 +57,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     private router: Router,
     private location: Location,
     private logeventservice: LogEventService
-  ) { }
+  ) {
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation?.extras?.state && navigation.extras.state['query']) {
+      this.preloadedQuery = navigation.extras.state['query'];
+    }
+  }
 
   ngOnInit(): void {
     this.setUserAvatar();
@@ -82,6 +89,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             } else {
               this.isAdults = false;
             }
+
+         const hasUserMessage = messages.some(msg => msg.sender === 'user');
+         if (hasUserMessage) {
+           this.showLanding = false;
+         }
 
         // Ensure welcome messages if store becomes empty (e.g., after logout)
         if (messages.length === 0) {
@@ -122,6 +134,18 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.checkHistoryAvailability();
     if (this.isGuestUser()) {
       this.checkTokenExpiry();
+    }
+
+    // Check router history state fallback for preloaded query
+    if (!this.preloadedQuery) {
+      const historyState = window.history.state;
+      if (historyState && historyState['query']) {
+        this.preloadedQuery = historyState['query'];
+      }
+    }
+
+    if (this.preloadedQuery) {
+      this.onStartChat(this.preloadedQuery);
     }
   }
 
@@ -216,6 +240,14 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         // Note: Scrolling is handled automatically by messages$ subscription
       }
     });
+  }
+
+  onStartChat(query: string): void {
+    this.showLanding = false;
+    this.currentMessage = query;
+    setTimeout(() => {
+      this.onSendMessage();
+    }, 50);
   }
 
   onKeyPress(event: KeyboardEvent): void {
