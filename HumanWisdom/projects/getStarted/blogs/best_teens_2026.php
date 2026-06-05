@@ -74,7 +74,7 @@ th{
                   Between school pressure, social media, friendships, exams,
 anxiety,
                   sleep issues, and constant digital distractions, many teens struggle to find emotional balance. That's why
-                meditation<
+                meditation
                   and mindfulness apps are becoming increasingly popular among teenagers and parents alike.
                 </h4>
 
@@ -188,7 +188,9 @@ Interactive and engaging learning style</br>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Teens looking for a complete mental wellness and self-growth app — not just
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc"> Teens looking for a complete mental wellness and self-growth app — not just
                  meditation
                   alone.
                 </h4>
