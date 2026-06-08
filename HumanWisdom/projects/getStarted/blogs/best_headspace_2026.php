@@ -139,7 +139,7 @@ th{
                       <span style='font-size:20px;'>&#10003; </span>Personalized AI wellness guidance</br/>
                       <span style='font-size:20px;'>&#10003; </span>Focus on emotional intelligence and self-awareness</br>
                       <span style='font-size:20px;'>&#10003; </span>Journaling and habit-building tools</br>
-                      <span style='font-size:20px;'>&#10003; </span>>Teen and young adult wellness support</br/>
+                      <span style='font-size:20px;'>&#10003; </span>Teen and young adult wellness support</br/>
                       <span style='font-size:20px;'>&#10003; </span>Practical support for overthinking, confidence, and relationships</br>
                       <span style='font-size:20px;'>&#10003; </span>Combines mindfulness with real-life emotional growth</br>
                   
@@ -394,10 +394,10 @@ meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                
                     Meditation
                     apps are evolving.
-                  </span>
+                 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
