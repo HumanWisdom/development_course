@@ -56,7 +56,7 @@ th{
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/best-apps-daily-mental-wellness-2026.webp" class="img-responsive" alt="Best Apps for Daily Mental Wellness in 2026">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/smart.webp" class="img-responsive" alt="Best Apps for Daily Mental Wellness in 2026">
               </div>
             </div>
 
@@ -66,7 +66,7 @@ th{
                 <h4 class="mtb0px blog_desc">
                  
                     Daily mental wellness is no longer a luxury. It has become a necessity in a fast,
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stressful</a>,
+                   stressful,
                     always-connected world.
                  
                 </h4>
@@ -74,10 +74,10 @@ th{
                 <h4 class="mtb0px blog_desc">
                   Most people today deal with:
                   <ul>
-                    <li>Constant <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a> and pressure</li>
+                    <li>Constant stress and pressure</li>
                     <li>Overthinking and mental fatigue</li>
                     <li>Emotional ups and downs</li>
-                    <li>Low focus and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/burnout">burnout</a></li>
+                    <li>Low focus and burnout</li>
                     <li>Irregular sleep and poor habits</li>
                   </ul>
                 </h4>
@@ -88,9 +88,9 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   Among all available options,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app"><span class="blog_highlight_black">HappierMe</span></a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
                   stands out as a complete daily emotional wellness companion because it combines mindfulness, emotional intelligence,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a>,
+                 Journaling,
                   and AI-guided support in one place.
                 </h4>
 
@@ -106,7 +106,7 @@ th{
                 <h4 class="mtb0px blog_desc">
                   Daily mental wellness means taking small, consistent actions every day to:
                   <ul>
-                    <li>Manage <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a> effectively</li>
+                    <li>Manage stress effectively</li>
                     <li>Improve emotional balance</li>
                     <li>Reduce overthinking</li>
                     <li>Build positive habits</li>
@@ -135,7 +135,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   Instead of only offering
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   sessions, it focuses on building a complete daily mental wellness routine.
                 </h4>
 
@@ -143,13 +143,13 @@ th{
                   It includes:
                   <ul>
                     <li>Daily emotional check-ins</li>
-                    <li>Guided <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a></li>
+                    <li>Guided journaling</li>
                     <li>Mindfulness exercises</li>
                     <li>Habit-building tools</li>
                     <li>Wellness tracking</li>
                     <li>Self-growth content</li>
                     <li>Podcasts and learning modules</li>
-                    <li>AI-powered guidance through <span class="blog_highlight_black">Olly AI</span></li>
+                    <li>AI-powered guidance through Olly AI</span></li>
                   </ul>
                 </h4>
 
@@ -169,8 +169,10 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who want a structured daily emotional wellness routine, not just
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>.
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc"> Users who want a structured daily emotional wellness routine, not just
+                meditation.
                 </h4>
 
 
@@ -179,15 +181,15 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Calm focuses on daily
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>,
+                   <a class="blog_highlight_peach td_underline" href="https://www.calm.com">  Calm </a>  focuses on daily
+               meditation,
                   sleep stories, and relaxation audio.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   It helps users:
                   <ul>
-                    <li>Reduce daily <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a></li>
+                    <li>Reduce daily stress</li>
                     <li>Improve sleep quality</li>
                     <li>Relax after work or study</li>
                     <li>Build mindfulness habits</li>
@@ -195,7 +197,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who want daily relaxation and sleep support.
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc"> Users who want daily relaxation and sleep support.
                 </h4>
 
 
@@ -204,24 +208,26 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Headspace offers guided
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">  Headspace </a> offers guided
+               meditation
                   programs designed for daily mindfulness practice.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   It helps users:
                   <ul>
-                    <li>Build <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a> habits</li>
+                    <li>Build meditation habits</li>
                     <li>Improve focus and clarity</li>
-                    <li>Reduce <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a></li>
+                    <li>Reduce stress</li>
                     <li>Stay consistent with mindfulness</li>
                   </ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Beginners looking for structured daily
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>.
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc"> Beginners looking for structured daily
+               meditation.
                 </h4>
 
 
@@ -230,15 +236,15 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Insight Timer offers thousands of free
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                  <a class="blog_highlight_peach td_underline" href="https://insighttimer.com/">   Insight Timer </a> offers thousands of free
+               meditation
                   and mindfulness sessions.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   It helps users:
                   <ul>
-                    <li>Practice daily <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a></li>
+                    <li>Practice daily meditation</li>
                     <li>Explore relaxation techniques</li>
                     <li>Listen to sleep music</li>
                     <li>Join mindfulness communities</li>
@@ -246,7 +252,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users looking for free daily mindfulness content.
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc"> Users looking for free daily mindfulness content.
                 </h4>
 
 
@@ -255,21 +263,25 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wysa uses AI chat-based support to help users manage emotions daily.
+
+                 <a class="blog_highlight_peach td_underline" href="https://www.wysa.com/">    Wysa </a>
+                  uses AI chat-based support to help users manage emotions daily.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   It helps with:
                   <ul>
                     <li>Daily emotional check-ins</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress</a> conversations</li>
+                    <li>Stress conversations</li>
                     <li>CBT-based exercises</li>
                     <li>Mood tracking</li>
                   </ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who prefer talking through emotions daily.
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc"> Users who prefer talking through emotions daily.
                 </h4>
 
 
@@ -342,9 +354,9 @@ th{
                 <h4 class="mtb0px blog_desc">
                   Most wellness apps focus on:
                   <ul>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">Meditation</a> sessions</li>
+                    <li>Meditation sessions</li>
                     <li>Relaxation audio</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress</a> relief techniques</li>
+                    <li>Stress relief techniques</li>
                   </ul>
                 </h4>
 
@@ -377,11 +389,11 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> is ideal for:
+                  HappierMe is ideal for:
                   <ul>
                     <li>Students managing academic pressure</li>
-                    <li>Professionals dealing with <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/burnout">burnout</a></li>
-                    <li>Teenagers facing emotional <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a></li>
+                    <li>Professionals dealing with burnout</li>
+                    <li>Teenagers facing emotional stress</li>
                     <li>Anyone building daily self-care habits</li>
                   </ul>
                 </h4>
@@ -398,22 +410,22 @@ th{
                 <h4 class="mtb0px blog_desc">
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
                   is one of the strongest options because it combines mindfulness,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a>,
+                  journaling,
                   emotional intelligence, AI guidance, and habit-building tools.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Can meditation apps improve daily mental health?
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Can meditation apps improve daily mental health?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Yes, apps like Calm and Headspace help reduce daily
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a>,
+                  stress,
                   but long-term wellness also requires emotional awareness and reflection.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  What is the best free mental wellness app?
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  What is the best free mental wellness app?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -422,8 +434,8 @@ th{
                   offers a more structured emotional wellness experience.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Can apps replace therapy?
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Can apps replace therapy?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -454,7 +466,7 @@ th{
                   <ul>
                     <li>Mindfulness</li>
                     <li>Emotional intelligence</li>
-                    <li>Guided <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a></li>
+                    <li>Guided journaling</li>
                     <li>AI-powered insights</li>
                     <li>Habit building</li>
                     <li>Self-growth learning</li>
