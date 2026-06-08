@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
@@ -10,7 +10,9 @@ import { OLLY_QUESTIONS, OllyTopic } from './olly-questions';
   styleUrls: ['./olly-landing.component.scss']
 })
 export class OllyLandingComponent implements OnInit {
+  @Input() isIntegrated: boolean = false;
   @Output() startChat = new EventEmitter<string>();
+  @Output() viewChanged = new EventEmitter<boolean>();
   
   username: string = '';
   isAdults: boolean = true;
@@ -151,6 +153,7 @@ export class OllyLandingComponent implements OnInit {
 
   toggleQuestionsView(show: boolean): void {
     this.showQuestionsView = show;
+    this.viewChanged.emit(show);
     if (show) {
       this.expandedTopics = {};
       this.topicsList.forEach(topic => {
