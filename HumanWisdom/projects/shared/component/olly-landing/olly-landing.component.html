@@ -1,21 +1,21 @@
 <!-- top navigation -->
-<app-tn-dashboard-v03 [enableHamburger]="true" *ngIf="!showQuestionsView"></app-tn-dashboard-v03>
+<app-tn-dashboard-v03 [enableHamburger]="true" *ngIf="!showQuestionsView && !isIntegrated"></app-tn-dashboard-v03>
 
 <!-- page content -->
-<div class="right_col mc_02" [class.questions-mode]="showQuestionsView">
-  <div class="cw100p">
-    <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [class.questions-mode]="showQuestionsView" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
-        <div class="x_panel p0" [class.questions-mode]="showQuestionsView">
-          <div class="x_content p0" [class.questions-mode]="showQuestionsView">
+<div [class.right_col]="!isIntegrated" [class.mc_02]="!isIntegrated" [class.questions-mode]="showQuestionsView">
+  <div [class.cw100p]="!isIntegrated">
+    <div [class.row]="!isIntegrated" [class.center_flex]="!isIntegrated">
+      <div [class.col-lg-4]="!isIntegrated" [class.col-md-6]="!isIntegrated" [class.col-sm-6]="!isIntegrated" [class.col-xs-12]="!isIntegrated" [class.sc_01]="!isIntegrated" [class.col_cw]="!isIntegrated" [class.questions-mode]="showQuestionsView" [ngClass]="!isIntegrated ? (isAdults ? 'bg_FFF7E6' : 'bg_stake') : ''">
+        <div [class.x_panel]="!isIntegrated" [class.p0]="!isIntegrated" [class.questions-mode]="showQuestionsView">
+          <div [class.x_content]="!isIntegrated" [class.p0]="!isIntegrated" [class.questions-mode]="showQuestionsView">
             
             <!-- Main content container -->
-            <div class="olly-landing-container" [ngClass]="{'adults-theme': isAdults, 'teens-theme': !isAdults, 'questions-mode': showQuestionsView}">
+            <div class="olly-landing-container" [ngClass]="{'adults-theme': isAdults, 'teens-theme': !isAdults, 'questions-mode': showQuestionsView, 'integrated': isIntegrated}">
               <!-- Main landing view -->
               <div class="olly-landing-content" *ngIf="!showQuestionsView">
                 
                 <!-- Greeting -->
-                <h1 class="greeting-title">Hi {{ username ? username : 'there' }}!</h1>
+                <h1 class="greeting-title" *ngIf="!isIntegrated">Hi {{ username ? username : 'there' }}!</h1>
 
                 <!-- Owl Section -->
                 <div class="owl-section">
@@ -52,7 +52,7 @@
                 </div>
 
                 <!-- Suggestion link 2 (bottom link) -->
-                <div class="bottom-suggestion-wrapper" *ngIf="selectedTopic">
+                <div class="bottom-suggestion-wrapper" *ngIf="selectedTopic && !isIntegrated">
                   <a href="javascript:void(0)" 
                      (click)="onTopicLinkClick()" 
                      class="olly-bottom-link">
@@ -131,4 +131,4 @@
 </div>
 
 <!-- Bottom navigation footer -->
-<app-bottom-navigation [dash]="false" [journal]="false" [fourm]="false" [search]="false" [enableprofile]="false" [showOwl]="false" *ngIf="!showQuestionsView"></app-bottom-navigation>
+<app-bottom-navigation [dash]="false" [journal]="false" [fourm]="false" [search]="false" [enableprofile]="false" [showOwl]="false" *ngIf="!showQuestionsView && !isIntegrated"></app-bottom-navigation>

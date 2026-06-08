@@ -53,6 +53,7 @@ export class MyDailyPracticePage implements OnInit {
   journalHits = 0;
   showSearchBox: boolean = true;
   isSearchActive: boolean = false;
+  isQuestionsViewActive: boolean = false;
 
   constructor(
     private commonService: CommonService,
@@ -262,6 +263,10 @@ routeDailyPractice(id: number): void {
   }
 
 
+
+  onOllyViewChanged(active: boolean): void {
+    this.isQuestionsViewActive = active;
+  }
 
   onFocus() {
     this.isSearchActive = true;
