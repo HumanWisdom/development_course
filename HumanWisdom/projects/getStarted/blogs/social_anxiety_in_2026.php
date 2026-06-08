@@ -64,11 +64,11 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                 
                     Social
                    anxiety
                     is one of the most common emotional challenges today, especially among teenagers, students, and young professionals.
-                  </span>
+             
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -88,7 +88,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   Among them,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app"><span class="blog_highlight_black">HappierMe</span></a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
                   stands out because it focuses on building emotional intelligence, self-awareness, and confidence over time — not just short-term calming techniques.
                 </h4>
 
@@ -135,8 +135,8 @@ th{
                   Best Apps for Social Anxiety in 2026
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  1. HappierMe — Best Overall App for Social Anxiety Support
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  1. HappierMe — Best Overall App for Social Anxiety Support </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -155,12 +155,12 @@ th{
                 <h4 class="mtb0px blog_desc">
                   It includes:
                   <ul>
-                    <li>Guided <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a> for self-reflection</li>
+                    <li>Guided journaling for self-reflection</li>
                     <li>Emotional intelligence development tools</li>
-                    <li>Mindfulness and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">breathing exercises</a></li>
+                    <li>Mindfulness and breathing exercises</a></li>
                     <li>Habit-building support</li>
                     <li>Wellness tracking</li>
-                    <li>AI-powered guidance through <span class="blog_highlight_black">Olly AI</span></li>
+                    <li>AI-powered guidance through Olly AI</li>
                     <li>Self-growth learning content</li>
                   </ul>
                 </h4>
@@ -174,7 +174,7 @@ th{
                   <ul>
                     <li>Builds confidence through self-awareness</li>
                     <li>Helps reduce overthinking patterns</li>
-                    <li>Improves <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/manage-your-emotions">emotional regulation</a> skills</li>
+                    <li>Improves emotional regulation skills</li>
                     <li>Encourages daily reflection and growth</li>
                     <li>Offers personalized AI wellness guidance</li>
                   </ul>
@@ -191,7 +191,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wysa uses an AI chatbot that helps users manage
+                 <a class="blog_highlight_peach td_underline" href="https://www.wysa.com/">  Wysa </a> uses an AI chatbot that helps users manage
                  anxiety
                   through structured conversations.
                 </h4>
@@ -200,7 +200,7 @@ th{
                   It uses CBT and DBT techniques to help users:
                   <ul>
                     <li>Challenge negative thoughts</li>
-                    <li>Process emotional <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a></li>
+                    <li>Process emotional stress</li>
                     <li>Practice calming exercises</li>
                     <li>Reflect on daily experiences</li>
                   </ul>
@@ -217,10 +217,10 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Headspace offers guided
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                                    <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">  Headspace </a>  offers guided
+                  meditation
                   programs designed to reduce
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a>
+                 stress
                   and improve emotional balance.
                 </h4>
 
@@ -239,7 +239,7 @@ th{
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For</span> </h4>
                   <h4 class="mtb0px blog_desc"> Users looking for structured
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">meditation</a>
+                 meditation
                   practice.
                 </h4>
 
@@ -249,8 +249,8 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Calm provides calming audio, sleep stories, and
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">breathing exercises</a>
+                 <a class="blog_highlight_peach td_underline" href="https://www.calm.com">  Calm </a> provides calming audio, sleep stories, and
+breathing exercises
                   that help reduce
                  anxiety
                   symptoms.
@@ -261,7 +261,7 @@ th{
                   <ul>
                     <li>Calm their nervous system</li>
                     <li>Improve sleep quality</li>
-                    <li>Reduce <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a> before social situations</li>
+                    <li>Reduce stress before social situations</li>
                   </ul>
                 </h4>
 
@@ -276,7 +276,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  BetterHelp connects users with licensed therapists for professional counseling.
+                  <a class="blog_highlight_peach td_underline" href="https://www.betterhelp.com/"> BetterHelp </a> connects users with licensed therapists for professional counseling.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -372,11 +372,11 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  But <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> focuses on a deeper transformation:
+                  But HappierMe focuses on a deeper transformation:
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Helping users understand the emotional patterns behind social anxiety</span>
+                 Helping users understand the emotional patterns behind social anxiety
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -400,7 +400,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                 HappierMe
                   is especially useful for:
                   <ul>
                     <li>Students dealing with peer pressure</li>
@@ -415,19 +415,19 @@ th{
                   Frequently Asked Questions
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Which app is best for social anxiety?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  Which app is best for social anxiety?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   is one of the strongest options because it combines emotional intelligence tools,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a>,
+                  journaling,
                   mindfulness, and AI guidance to help users build confidence over time.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Can meditation apps help social anxiety?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  Can meditation apps help social anxiety?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -438,16 +438,16 @@ th{
                   improvement often requires emotional awareness and self-reflection.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Is Wysa good for anxiety?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  Is Wysa good for anxiety? </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Wysa is helpful for conversational emotional support and CBT-based techniques.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Is therapy better than apps for social anxiety?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  Is therapy better than apps for social anxiety?</sapn>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -462,11 +462,11 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     Social
                    anxiety
                     is not just about feeling nervous — it is a pattern of thoughts, emotions, and behaviors that develops over time.
-                  </span>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -475,7 +475,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   That is where
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app"><span class="blog_highlight_black">HappierMe</span></a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
                   stands out.
                 </h4>
 
