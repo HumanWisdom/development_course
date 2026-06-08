@@ -64,11 +64,11 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                 
                     Daily mental wellness is no longer a luxury. It has become a necessity in a fast,
                     <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stressful</a>,
                     always-connected world.
-                  </span>
+                 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">

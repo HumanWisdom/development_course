@@ -166,18 +166,18 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Olly AI</span> plays a key role by helping users identify emotional patterns and suggesting personalized exercises to improve confidence and reduce overthinking.
+                  Olly AI plays a key role by helping users identify emotional patterns and suggesting personalized exercises to improve confidence and reduce overthinking.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Why HappierMe Is Effective for Social Anxiety</span>
-                  <ul>
-                    <li>Builds confidence through self-awareness</li>
-                    <li>Helps reduce overthinking patterns</li>
-                    <li>Improves emotional regulation skills</li>
-                    <li>Encourages daily reflection and growth</li>
-                    <li>Offers personalized AI wellness guidance</li>
-                  </ul>
+                  <span class="blog_highlight_black">Why HappierMe Is Effective for Social Anxiety</span><br/>
+                
+                     <span style='font-size:20px;'>&#10003; </span>Builds confidence through self-awareness</br>
+                      <span style='font-size:20px;'>&#10003; </span>Helps reduce overthinking patterns</br>
+                      <span style='font-size:20px;'>&#10003; </span>Improves emotional regulation skills</br>
+                      <span style='font-size:20px;'>&#10003; </span>>Encourages daily reflection and growth</br>
+                      <span style='font-size:20px;'>&#10003; </span>Offers personalized AI wellness guidance</br>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -484,7 +484,7 @@ breathing exercises
                   <ul>
                     <li>Mindfulness</li>
                     <li>Emotional intelligence</li>
-                    <li>Guided <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a></li>
+                    <li>Guided journaling</li>
                     <li>AI-powered insights</li>
                     <li>Habit-building tools</li>
                     <li>Self-growth learning</li>
