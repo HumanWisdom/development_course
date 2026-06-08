@@ -151,7 +151,7 @@ stress
                     <li>Wellness tracking</li>
                     <li>Self-growth learning</li>
                     <li>Podcasts and videos</li>
-                    <li>Personalized support through <span class="blog_highlight_black">Olly AI</span></li>
+                    <li>Personalized support through Olly AI</li>
                   </ul>
                 </h4>
 
@@ -294,7 +294,7 @@ stress
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   focuses on helping users:
                   <ul>
                     <li>Understand emotions</li>
@@ -316,20 +316,20 @@ stress
                   Frequently Asked Questions
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Which app is best for overthinking?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  Which app is best for overthinking?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Many users choose
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                HappierMe
                   because it combines guided
                  journaling,
                   mindfulness, emotional intelligence tools, and AI-powered wellness support designed to help users understand recurring thought patterns.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Is HappierMe better than Calm for overthinking?
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Is HappierMe better than Calm for overthinking?</sapn>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -339,8 +339,8 @@ stress
                   self-growth tools, and AI guidance.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Can mindfulness apps reduce overthinking?
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Can mindfulness apps reduce overthinking?</sapn>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -348,12 +348,12 @@ stress
 emotional regulation.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Which app is best for emotional wellness?
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Which app is best for emotional wellness?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   is one of the strongest emotional wellness platforms because it combines mindfulness,
                   journaling,
                   emotional intelligence, wellness tracking, and self-growth learning in one app.

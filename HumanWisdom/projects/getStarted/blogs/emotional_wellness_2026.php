@@ -89,7 +89,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   Among all available options,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app"><span class="blog_highlight_black">HappierMe</span></a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
                   is emerging as one of the most complete emotional wellness platforms because it focuses on both
                   <span class="blog_highlight_black">mindfulness and emotional intelligence together</span>.
                 </h4>
@@ -158,12 +158,12 @@ th{
                     <li>Habit-building support</li>
                     <li>Wellness tracking</li>
                     <li>Podcasts and learning content</li>
-                    <li>AI-powered guidance through <span class="blog_highlight_black">Olly AI</span></li>
+                    <li>AI-powered guidance through Olly AI</li>
                   </ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Olly AI</span> helps users understand what they are feeling and suggests personalized emotional wellness exercises.
+                  Olly AI helps users understand what they are feeling and suggests personalized emotional wellness exercises.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -180,6 +180,8 @@ th{
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For</span>
                   </h4>
+                                  <h4 class="mtb0px blog_desc">
+                  </h4>
                                   <h4 class="mtb0px blog_desc"> Users who want to build long-term emotional resilience and self-awareness.
                 </h4>
 
@@ -189,7 +191,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wysa is an AI chatbot designed to help users manage
+                 <a class="blog_highlight_peach td_underline" href="https://www.wysa.com/">  Wysa </a> is an AI chatbot designed to help users manage
                   stress,
                  anxiety,
                   and negative thoughts through conversation.
@@ -202,6 +204,8 @@ th{
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For</span>
                   </h4>
+                                  <h4 class="mtb0px blog_desc">
+                  </h4>
                                   <h4 class="mtb0px blog_desc"> Users who prefer chat-based emotional support.
                 </h4>
 
@@ -211,7 +215,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Headspace is widely known for its structured
+                 <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">  Headspace </a>  is widely known for its structured
                  meditation
                   courses and mindfulness training.
                 </h4>
@@ -229,6 +233,8 @@ th{
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For</span>
                   </h4>
+                                  <h4 class="mtb0px blog_desc">
+                  </h4>
                                   <h4 class="mtb0px blog_desc"> Users who want guided
                  meditation
                   routines.
@@ -240,7 +246,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Calm focuses on relaxation techniques such as:
+                 <a class="blog_highlight_peach td_underline" href="https://www.calm.com">  Calm </a>  focuses on relaxation techniques such as:
                   <ul>
                     <li>Sleep stories</li>
                     <li>meditation music</li>
@@ -252,6 +258,8 @@ th{
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For</span>
                   </h4>
+                                  <h4 class="mtb0px blog_desc">
+                  </h4>
                                   <h4 class="mtb0px blog_desc"> Users mainly looking to relax and sleep better.
                 </h4>
 
@@ -261,13 +269,15 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Insight Timer offers thousands of free
+                  <a class="blog_highlight_peach td_underline" href="https://insighttimer.com/">   Insight Timer </a>  offers thousands of free
     meditations
                   and mindfulness sessions.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc">
                   </h4>
                                   <h4 class="mtb0px blog_desc"> Users looking for free and diverse
                  meditation
@@ -351,11 +361,11 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  But <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> focuses on something deeper:
+                  But HappierMe focuses on something deeper:
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Understanding why you feel the way you feel</span>
+                  Understanding why you feel the way you feel
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -379,7 +389,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                HappierMe
                   is especially useful for:
                   <ul>
                     <li>Teenagers dealing with emotional pressure</li>
@@ -394,19 +404,19 @@ th{
                   Frequently Asked Questions
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Which app is best for emotional wellness?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  Which app is best for emotional wellness?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                HappierMe
                   is one of the strongest emotional wellness apps because it combines mindfulness,
                   journaling,
                   emotional intelligence tools, and AI-powered guidance.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Can meditation apps improve emotional health?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  Can meditation apps improve emotional health?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -416,23 +426,23 @@ th{
                   but emotional wellness also requires self-awareness and reflection, which apps like HappierMe focus on.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  What is the difference between Calm and HappierMe?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  What is the difference between Calm and HappierMe? </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Calm focuses mainly on relaxation and sleep, while
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   focuses on emotional understanding, self-growth, and long-term emotional wellbeing.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Is Wysa better than HappierMe?
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  Is Wysa better than HappierMe? </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Wysa is strong for conversational support, while
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   offers a broader emotional wellness ecosystem including
                   journaling,
                   mindfulness, and AI guidance.
