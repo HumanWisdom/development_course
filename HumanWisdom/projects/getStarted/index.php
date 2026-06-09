@@ -182,7 +182,7 @@ require_once('./includes/security_config.php');
                Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
               </p>
             </div>
-            <a href="https://happierme.app/pages/splash_options.php" id="OllyChatBtn">
+            <a href="https://happierme.app/adults/chat-bot" id="OllyChatBtn">
               <div class="start-your-free-wrapper-2">
                 <div class="text-wrapper-5">Chat with Olly now</div>
               </div>
@@ -624,6 +624,7 @@ require_once('./includes/security_config.php');
       <!-- ===== TOOLS ===== -->
       <div class="tools-section">
         <p class="text-wrapper-6">Tools for a happier life</p>
+        <div class="tools-content-wrap">
         <!-- Tab pills -->
         <div class="tools-tabs" id="toolTabs">
           <button class="tool-tab tool-tab-active" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
@@ -648,7 +649,7 @@ require_once('./includes/security_config.php');
                   <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                 </video>
                 <button type="button" class="tools-play-btn tools-video-play-btn" aria-label="Play breathing exercise" id="fbn-play-btn">
-                  <i class="bi bi-soundwave tools-play-btn-icon" aria-hidden="true"></i>
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v14/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" aria-hidden="true" />
                 </button>
               </div>
               <div class="tools-card-meta">
@@ -717,7 +718,9 @@ require_once('./includes/security_config.php');
             <div class="tools-card tools-card--podcast">
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="How can we be happier" class="tools-thumb-img" />
-                <span class="tools-card-media-badge" aria-hidden="true"><i class="bi bi-soundwave"></i></span>
+                <span class="tools-card-media-badge" aria-hidden="true">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v14/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" />
+                </span>
               </div>
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
@@ -780,6 +783,7 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
+        </div>
         </div>
       </div>
 

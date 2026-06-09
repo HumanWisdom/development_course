@@ -713,24 +713,43 @@ header a[href*="splash_options.php"] * {
   gap: 40px;
   box-sizing: border-box;
   padding-top: 40px;
+  overflow: visible;
 }
 .tools-section > .text-wrapper-6 {
   padding-bottom: 0;
 }
 
-/* Tab pill row */
+/* Wrapper — tabs straddle the top edge of the yellow card */
+.tools-content-wrap {
+  position: relative;
+  width: 900px;
+  max-width: 100%;
+  background: transparent;
+  padding-top: 17px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Tab pill row — half above card, half overlapping */
 .tools-tabs {
+  position: absolute;
+  top: 17px;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 0;
-  position: relative;
+  padding: 0 24px;
+  background: transparent;
+  z-index: 2;
 }
 .tool-tab {
   width: 127px;
   height:26px;
   padding: 4px 11px;
+  box-sizing: border-box;
   border-radius: 10px;
   background:  rgba(238, 161, 112, 1);
   font-family: "Poppins", Helvetica, sans-serif;
@@ -746,11 +765,13 @@ header a[href*="splash_options.php"] * {
   border: 1px solid rgba(128, 51, 88, 1);
   color: #fff;
 }
-/* Outer panel container — very light peach */
+/* Yellow card — tabs sit on its top border */
 .tools-panel-wrap {
-  width: 900px;
+  width: 100%;
   background: rgba(255, 244, 230, 1);
+  border-radius: 16px;
   overflow: hidden;
+  padding-top: 22px;
 }
 
 /* Individual panel */
@@ -855,18 +876,20 @@ header a[href*="splash_options.php"] * {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.72);
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 18px;
   line-height: 1;
   pointer-events: none;
   z-index: 1;
+}
+.tools-audio-play-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
 }
 .tools-card--podcast .tools-card-meta {
   padding: 0;
@@ -913,8 +936,17 @@ header a[href*="splash_options.php"] * {
   margin: 0;
 }
 .tools-video-play-btn {
+  width: 48px;
+  height: 48px;
+  padding: 0;
   border: 0;
+  background: transparent;
+  box-shadow: none;
   z-index: 2;
+}
+.tools-video-play-btn:hover {
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1.05);
 }
 .tools-video-play-btn[hidden] {
   display: none !important;
@@ -2031,9 +2063,11 @@ header a[href*="splash_options.php"] * {
     box-sizing: border-box;
   }
   .tools-tabs {
-    position: relative !important;
-    inset: auto !important;
-    padding-top: 0 !important;
+    position: absolute !important;
+    top: 17px !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: translateY(-50%);
     padding-left: 16px;
     padding-right: 16px;
     margin: 0;
@@ -2055,6 +2089,11 @@ header a[href*="splash_options.php"] * {
   }
   .tool-tab {
     flex-shrink: 0;
+  }
+  .tools-content-wrap {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   .tools-panel-wrap {
     width: 100% !important;
@@ -2111,9 +2150,15 @@ header a[href*="splash_options.php"] * {
     padding-bottom: 60px;
     gap: 40px;
   }
+  .tools-content-wrap {
+    width: 100% !important;
+    max-width: 100%;
+    padding-top: 17px;
+  }
   .tools-panel-wrap {
     width: 100% !important;
     max-width: 100%;
+    border-radius: 12px;
   }
   .tools-panel.active {
     justify-content: center;

@@ -52,8 +52,9 @@ $(".owl_container .owl-carousel").owlCarousel({
         var isMobile = window.matchMedia("(max-width: 768px)").matches;
         var storeUrl = "https://onelink.to/qsptex";
         var splashUrl = "https://happierme.app/pages/splash_options.php";
+        var ollyChatUrl = "https://happierme.app/adults/chat-bot";
         $("#transformDownloadApp").attr("href", isMobile ? storeUrl : splashUrl);
-        $("#OllyChatBtn").attr("href", isMobile ? storeUrl : splashUrl);
+        $("#OllyChatBtn").attr("href", ollyChatUrl);
     }),
     $(window).resize(),
     $(".search-button").click(function () {

@@ -1253,7 +1253,7 @@ if (OllyChatBtn) {
         localStorage.setItem('login',false);
         logevent("click_olly_chat", "index.php");
         afterLogNavigate(function () {
-            window.location.href = OllyChatBtn.getAttribute("href") || "../pages/splash_options.php";
+            window.location.href = OllyChatBtn.getAttribute("href") || "https://happierme.app/adults/chat-bot";
         });
     });
 }

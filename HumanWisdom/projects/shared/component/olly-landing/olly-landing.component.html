@@ -22,20 +22,11 @@
                   <div class="owl-section">
                     <div class="olly-character-container">
                       <img
-                        *ngIf="showFlyingOlly"
-                        class="olly-owl-img olly-owl-img--flying"
-                        [class.olly-owl-img--fade-out]="isTransitioning"
-                        [src]="flyingGifUrl"
-                        alt="Flying Olly"
-                        (load)="onFlyingGifLoad()"
-                      />
-                      <img
-                        *ngIf="showBreathingOlly"
+                        *ngIf="showOllyGif"
                         class="olly-owl-img"
-                        [class.olly-owl-img--fade-in]="showBreathingOlly"
-                        [src]="breathingGifUrl"
+                        [src]="ollyGifUrl"
                         alt="Olly"
-                        (load)="onBreathingGifLoad()"
+                        (load)="onOllyGifLoad()"
                       />
                       <div
                         class="olly-cloud-container"
