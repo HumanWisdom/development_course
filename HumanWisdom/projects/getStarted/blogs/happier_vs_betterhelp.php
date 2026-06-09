@@ -10,6 +10,17 @@
     <!-- vendor_header -->
     <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
+
+
+     <style>
+table, th, td {
+  border:1px solid black;
+  padding: 5px;
+}
+th{
+  text-align:center;
+}
+</style>
   </head>
 
   <body>
@@ -53,9 +64,9 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     Mental wellness support today comes in many forms.
-                  </span>
+                
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -63,7 +74,7 @@
                   meditation
                   and emotional wellness tools they can use daily. Others want direct access to licensed therapists for deeper mental health support. This is why apps like
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
-                  and BetterHelp are becoming increasingly popular — even though they serve very different purposes.
+                  and <a class="blog_highlight_peach td_underline" href="https://www.betterhelp.com/"> BetterHelp </a> are becoming increasingly popular — even though they serve very different purposes.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -73,11 +84,14 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  One focuses on <span class="blog_highlight_black">daily emotional growth and self-awareness</span>. The other focuses on <span class="blog_highlight_black">professional online therapy</span>.
+                  One focuses on <span class="blog_highlight_black">daily emotional growth and self-awareness</span>. <br/> The other focuses on <span class="blog_highlight_black">professional online therapy</span>.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  So which one is right for you? Let's compare them in depth.
+                  So which one is right for you? 
+</h4> 
+ <h4 class="mtb0px blog_desc">
+Let's compare them in depth.
                 </h4>
 
 
@@ -123,7 +137,7 @@
                 <!-- </div> -->
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                 HappierMe
                   is designed to help users build healthier emotional habits independently through mindfulness,
                   journaling,
                   emotional intelligence, AI guidance, and self-awareness tools.
@@ -142,12 +156,12 @@
                   What the Experience Feels Like
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  HappierMe: Everyday Emotional Wellness
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  HappierMe: Everyday Emotional Wellness</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Using <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> feels like having a daily mental wellness companion.
+                  Using HappierMe feels like having a daily mental wellness companion.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -331,7 +345,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   is ideal for people who want to:
                   <ul>
                     <li>Improve emotional wellbeing proactively</li>
@@ -403,7 +417,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                 HappierMe
                   follows a wellness-app model with accessible self-growth tools designed for everyday use. The focus is affordability and continuous emotional support.
                 </h4>
 
@@ -435,15 +449,15 @@
                   Interestingly, both platforms personalize support differently.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  HappierMe Personalizes Through AI
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  HappierMe Personalizes Through AI </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Olly AI</span> recommends:
+                Olly AI recommends:
                   <ul>
                     <li>Wellness exercises</li>
-                    <li>Journaling prompts/li>
+                    <li>Journaling prompts</li>
                     <li>Meditationtools</li>
                     <li>Emotional growth content</li>
                     <li>Mindfulness practices</li>
@@ -455,8 +469,8 @@
                 </h4>
 
 
-                <h4 class="mtb0px blog_sub_title">
-                  BetterHelp Personalizes Through Human Therapists
+                <h4 class="mtb0px blog_sub_desc"><span class="blog_highlight_black">
+                  BetterHelp Personalizes Through Human Therapists </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -479,7 +493,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                 HappierMe
                   has a stronger focus on:
                   <ul>
                     <li>Teen mental wellness</li>
@@ -537,10 +551,10 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                
                     <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
-                    and BetterHelp may both support mental wellbeing, but they are designed for very different wellness journeys.
-                  </span>
+                    and   <a class="blog_highlight_peach td_underline" href="https://www.betterhelp.com/">BetterHelp  </a> may both support mental wellbeing, but they are designed for very different wellness journeys.
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -548,7 +562,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>,
+                HappierMe,
                   on the other hand, is a modern emotional wellness ecosystem built around mindfulness, emotional intelligence, AI guidance,
                   journaling
                   habit-building, and self-growth.

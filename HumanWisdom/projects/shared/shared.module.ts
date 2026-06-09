@@ -111,6 +111,7 @@ import { QuestionAnswersSelection } from './component/question-answers-selection
 import { CommonScreenPage } from './component/common-screen/common-screen.page';
 import { OwlAnimationComponent } from './component/owl-animation/owl-animation.component';
 import { ChatBotComponent } from './component/chat-bot/chat-bot.component';
+import { OllyLandingComponent } from './component/olly-landing/olly-landing.component';
 import { ChatbotService } from './services/chatbot.service';
 import { S157001Page } from './component/s157001/s157001.page';
 import {SocialLoginPage} from './component/social-login/social-login.component';
@@ -220,6 +221,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     ContentCardComponent,
     OwlAnimationComponent,
     ChatBotComponent,
+    OllyLandingComponent,
     WisdomExerciseS75001Component,
     S157001Page,
     SocialLoginPage,
@@ -348,6 +350,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     ContentCardComponent,
     OwlAnimationComponent,
     ChatBotComponent,
+    OllyLandingComponent,
     WisdomExerciseS75001Component,
     S157001Page,
     SocialLoginPage,

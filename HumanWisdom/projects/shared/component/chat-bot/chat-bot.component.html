@@ -1,4 +1,6 @@
-<div class="chat-bot-container">
+<app-olly-landing *ngIf="showLanding" (startChat)="onStartChat($event)"></app-olly-landing>
+
+<div class="chat-bot-container" *ngIf="!showLanding">
   <!-- Header -->
   <div class="chat-header">
     <div class="header-content" *ngIf="isAdults">

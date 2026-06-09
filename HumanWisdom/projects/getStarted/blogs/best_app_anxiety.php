@@ -65,10 +65,10 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                  Anxiety
                     has become one of the most common mental health challenges today — especially among teenagers and young adults.
-                  </span>
+             
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -165,7 +165,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   Instead of focusing only on
-                 meditation<
+                 meditation
                   or relaxation, HappierMe helps users understand the root causes of
                  Stress,
                  anxiety,
@@ -216,7 +216,8 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> People looking for long-term emotional growth,
+                  <span class="blog_highlight_black">Best For</span> </h4>
+                  <h4 class="mtb0px blog_desc">People looking for long-term emotional growth,
                   anxiety
                   support, and self-understanding — not just temporary relaxation.
                 </h4>
@@ -227,7 +228,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Headspace is one of the world's most popular mindfulness and
+                 <a class="blog_highlight_peach td_underline" href="https://www.headspace.com">  Headspace </a> is one of the world's most popular mindfulness and
                  meditation
                   apps.
                 </h4>
@@ -235,9 +236,9 @@ th{
                 <h4 class="mtb0px blog_desc">
                   It focuses heavily on:
                   <ul>
-                    <li>Guided >meditation</li>
+                    <li>Guided meditation</li>
                     <li>Breathing exercises</li>
-                    <li>Stress< reduction</li>
+                    <li>Stress reduction</li>
                     <li>Sleep support</li>
                     <li>Mindfulness routines</li>
                   </ul>
@@ -254,7 +255,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who primarily want
+                  <span class="blog_highlight_black">Best For</span>
+</h4>
+<h4 class="mtb0px blog_desc"> Users who primarily want
                  meditation
                   and
                  breathing exercises
@@ -269,7 +272,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Calm is especially strong for:
+                  <a class="blog_highlight_peach td_underline" href="https://www.calm.com">  Calm </a> is especially strong for:
                   <ul>
                     <li>Sleep support</li>
                     <li>Relaxation</li>
@@ -295,7 +298,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> People struggling with sleep
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                  <h4 class="mtb0px blog_desc"> People struggling with sleep
                   anxiety,
                   nighttime
                  stress,
@@ -308,7 +313,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wysa is an AI chatbot-focused mental wellness app designed to help users process emotions through conversation-style support.
+                  <a class="blog_highlight_peach td_underline" href="https://www.wysa.com"> Wysa </a> is an AI chatbot-focused mental wellness app designed to help users process emotions through conversation-style support.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -326,7 +331,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who prefer chatting and guided emotional reflection.
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                  <h4 class="mtb0px blog_desc"> Users who prefer chatting and guided emotional reflection.
                 </h4>
 
 
@@ -412,7 +419,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                HappierMe
                   combines all of these while also helping users understand themselves better emotionally.
                 </h4>
 
@@ -449,11 +456,11 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                
                     There's no single
                    anxiety
                     app that works perfectly for everyone.
-                  </span>
+                 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">

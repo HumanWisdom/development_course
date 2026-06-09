@@ -34283,7 +34283,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0;
   border: 0;
   border-radius: 100px;
-  background: #EE9596 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
   color: #FFF !important;
   font-size: 15px;
   font-weight: 600;
@@ -37357,7 +37357,7 @@ div.contentdiv p {
 .tfas-plan-card-wrapper {
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   background: #0C2B5F;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -37365,7 +37365,7 @@ div.contentdiv p {
 
 .tfas-plan-card-wrapper.tfas-plan-selected {
   background: #031A41;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .tfas-plan-option {

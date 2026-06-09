@@ -55,7 +55,7 @@ th{
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/best-meditation-apps-teens-2026.webp" class="img-responsive" alt="Best Meditation Apps for Teens in 2026">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/best_teens.webp" class="img-responsive" alt="Best Meditation Apps for Teens in 2026">
               </div>
             </div>
 
@@ -63,24 +63,24 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     Teenagers today face more
                     stress
                     than ever before.
-                  </span>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Between school pressure, social media, friendships, exams,
 anxiety,
                   sleep issues, and constant digital distractions, many teens struggle to find emotional balance. That's why
-                meditation<
+                meditation
                   and mindfulness apps are becoming increasingly popular among teenagers and parents alike.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   The right
->meditation
+meditation
                   app can help teens:
                   <ul>
                     <li>Reduce stress and anxiety</li>
@@ -171,18 +171,26 @@ meditation
 
                 <h4 class="mtb0px blog_desc">
                   <span class="blog_highlight_black">Why Teens Love HappierMe</span>
-                  <ul>
-                    <li>Teen-friendly emotional wellness support</li>
-                    <li>AI-powered personalized guidance</li>
-                    <li>Journaling and self-reflection tools</li>
-                    <li>>Meditation plus real-life emotional support</li>
-                    <li>Helps with stress, confidence, relationships, and overthinking</li>
-                    <li>Interactive and engaging learning style</li>
-                  </ul>
+</br>
+                                    <span style='font-size:20px;'>&#10003; </span>
+Teen-friendly emotional wellness support</br>
+                                    <span style='font-size:20px;'>&#10003; </span>
+AI-powered personalized guidance</br>
+                                    <span style='font-size:20px;'>&#10003; </span>
+Journaling and self-reflection tools</br>
+                                    <span style='font-size:20px;'>&#10003; </span>
+Meditation plus real-life emotional support</br>
+                                    <span style='font-size:20px;'>&#10003; </span>
+Helps with stress, confidence, relationships, and overthinking</br>
+                                    <span style='font-size:20px;'>&#10003; </span>
+Interactive and engaging learning style</br>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Teens looking for a complete mental wellness and self-growth app — not just
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc"> Teens looking for a complete mental wellness and self-growth app — not just
                  meditation
                   alone.
                 </h4>
@@ -193,7 +201,7 @@ meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Headspace is one of the world's most popular
+                 <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">  Headspace </a> is one of the world's most popular
              meditation
                   apps and is especially beginner-friendly. The app offers guided mindfulness sessions,
                 breathing exercises,
@@ -219,7 +227,8 @@ meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Teens who want a simple introduction to
+                  <span class="blog_highlight_black">Best For</span></h4>
+                   <h4 class="mtb0px blog_desc"> Teens who want a simple introduction to
                  meditation
                   and mindfulness.
                 </h4>
@@ -230,7 +239,7 @@ meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Calm is widely known for its calming audio experiences, Sleep Stories, soothing soundscapes, and guided
+                    <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">Calm </a> is widely known for its calming audio experiences, Sleep Stories, soothing soundscapes, and guided
                  meditation
                   sessions.
                 </h4>
@@ -258,7 +267,9 @@ meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Teens looking for sleep support and calming relaxation routines.
+                  <span class="blog_highlight_black">Best For</span>
+</h4> 
+ <h4 class="mtb0px blog_desc">Teens looking for sleep support and calming relaxation routines.
                 </h4>
 
 
@@ -267,7 +278,7 @@ meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Insight Timer offers one of the largest collections of free guided
+                 <a class="blog_highlight_peach td_underline" href="https://insighttimer.com/">  Insight Timer </a> offers one of the largest collections of free guided
                  meditations
                   available today.
                 </h4>
@@ -292,7 +303,8 @@ meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Teens who want free
+                  <span class="blog_highlight_black">Best For</span> </h4>
+                   <h4 class="mtb0px blog_desc">Teens who want free
                   meditation
                   content and lots of variety.
                 </h4>
@@ -385,7 +397,7 @@ meditation
 
                 <h4 class="mtb0px blog_desc">
                   That's where
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   stands out by combining:
                   <ul>
                     <li>Meditation</li>
@@ -408,12 +420,12 @@ meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                 
                     Meditation
                     apps can help teens build healthier emotional habits, improve focus, reduce
                     stress,
                     and feel more balanced in everyday life.
-                  </span>
+                 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">

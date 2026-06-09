@@ -164,8 +164,15 @@ export class CardsPage implements OnInit {
     this.router.navigate(['/teenagers/change-topic']);
   }
 
-  onSkipOrContinue() {
+  // onSkip() {
+  //   const program = SharedService.getprogramName();
+  //   this.router.navigate([`/${program}/olly-landing`], { state: { topicId: this.id } });
+  // }
+
+  onContinue() {
     const program = SharedService.getprogramName();
+    sessionStorage.setItem('subscriptionRedirectUrl', `/${program}/olly-landing`);
+    sessionStorage.setItem('subscriptionRedirectState', JSON.stringify({ topicId: this.id }));
     this.router.navigate([`/${program}/subscription/try-free-and-subscribe`]);
   }
 }

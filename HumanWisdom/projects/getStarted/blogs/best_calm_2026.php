@@ -65,7 +65,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   
-                    Calm has become one of the most popular
+                   <a class="blog_highlight_peach td_underline" href="https://www.calm.com/"> Calm </a> has become one of the most popular
                  meditation
                     and sleep apps in the world. From guided meditations and Sleep Stories to relaxing music and
                    breathing exercises,
@@ -111,7 +111,8 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                    HappierMe</a>
                   stands out as one of the strongest alternatives to Calm because it goes beyond
                  meditation
                   and relaxation.
@@ -147,19 +148,22 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Why HappierMe Is a Great Calm Alternative</span>
-                  <ul>
-                    <li>More than meditation and sleep support</li>
-                    <li>Strong emotional wellness focus</li>
-                    <li>AI-powered personalized guidance</li>
-                    <li>Journaling< and self-reflection tools</li>
-                    <li>Designed for both teens and adults</li>
-                    <li>Supports confidence, relationships, overthinking, and stress management</li>
-                  </ul>
+                  <span class="blog_highlight_black">Why HappierMe Is a Great Calm Alternative</span><br/>
+                  <span style='font-size:20px;'>&#10003; </span>
+                    More than meditation and sleep support</br>
+                    <span style='font-size:20px;'>&#10003; </span>Strong emotional wellness focus</br>
+                    <span style='font-size:20px;'>&#10003; </span>AI-powered personalized guidance</br>
+                    <span style='font-size:20px;'>&#10003; </span>Journaling< and self-reflection tools</br>
+                    <span style='font-size:20px;'>&#10003; </span>Designed for both teens and adults</br>
+                    <span style='font-size:20px;'>&#10003; </span>Supports confidence, relationships, overthinking, and stress management</br>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> People who want a complete emotional wellness and personal growth app — not just
+                  <span class="blog_highlight_black">Best For</span>
+                  </h4>
+                                  <h4 class="mtb0px blog_desc">
+People who want a complete emotional wellness and personal growth app — not just
                meditation
                   alone.
                 </h4>
@@ -170,7 +174,8 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Headspace is one of the most beginner-friendly
+                                   <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">
+ Headspace </a> is one of the most beginner-friendly
                  meditation
                   apps available today.
                 </h4>
@@ -192,8 +197,11 @@ th{
                   programs make it especially useful for users who are completely new to mindfulness.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Beginners looking to build a simple
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Best For</span></h4>
+                  
+                                  <h4 class="mtb0px blog_desc">
+Beginners looking to build a simple
                  meditation
                   habit.
                 </h4>
@@ -204,7 +212,8 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wysa offers a different type of mental wellness experience.
+                                   <a class="blog_highlight_peach td_underline" href="https://www.wysa.com/">
+ Wysa </a> offers a different type of mental wellness experience.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -225,7 +234,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who prefer conversational emotional support and guided reflection.
+                  <span class="blog_highlight_black">Best For</span>
+                  
+                  </h4> <h4 class="mtb0px blog_desc">Users who prefer conversational emotional support and guided reflection.
                 </h4>
 
 
@@ -234,7 +245,8 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Insight Timer is known for having one of the largest collections of free
+                                   <a class="blog_highlight_peach td_underline" href="https://insighttimer.com/">
+ Insight Timer </a> is known for having one of the largest collections of free
                  meditation
                   content available.
                 </h4>
@@ -255,7 +267,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users looking for free
+                  <span class="blog_highlight_black">Best For</span> 
+                  </h4>
+                  <h4 class="mtb0px blog_desc">Users looking for free
                  meditation
                   variety and flexibility.
                 </h4>
@@ -266,7 +280,8 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  BetterHelp is very different from Calm because it focuses on online therapy rather than self-guided mindfulness.
+                                   <a class="blog_highlight_peach td_underline" href="https://www.betterhelp.com/">
+ BetterHelp </a> is very different from Calm because it focuses on online therapy rather than self-guided mindfulness.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -286,7 +301,9 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Best For:</span> Users who want licensed professional therapy online.
+                  <span class="blog_highlight_black">Best For</span> 
+                  </h4>
+                  <h4 class="mtb0px blog_desc">Users who want licensed professional therapy online.
                 </h4>
 
 
@@ -367,32 +384,34 @@ th{
                   The answer depends on what you're actually looking for.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  If You Mainly Want Meditation
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  If You Mainly Want Meditation</span>
+                
+                
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Headspace and Insight Timer are strong choices.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  If You Want Emotional Support Through Conversation
+                <h4 class="mtb0px blog_desc">  <span class="blog_highlight_black">
+                  If You Want Emotional Support Through Conversation </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   Wysa offers a unique AI-chat wellness experience.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  If You Need Professional Therapy
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  If You Need Professional Therapy </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   BetterHelp provides direct access to licensed therapists.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  But If You Want a More Complete Wellness Experience…
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  But If You Want a More Complete Wellness Experience…</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -415,7 +434,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   Instead of focusing only on temporary relaxation,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                 HappierMe
                   helps users build long-term emotional resilience and self-awareness.
                 </h4>
 
@@ -425,11 +444,11 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                 
                     Calm remains one of the best-known
                    meditation
                     apps in the world, especially for sleep and relaxation.
-                  </span>
+                 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -457,7 +476,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   If you're looking for a modern wellness app that combines mindfulness with emotional growth and personalized guidance,
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                HappierMe
                   is one of the best alternatives to Calm available today.
                 </h4>
 
