@@ -78,6 +78,11 @@ export class MyDailyPracticePage implements OnInit {
     }   
    
     this.userName = this.userName ? this.userName.replace('"',''): this.userName;
+    
+    // Capitalize the username
+    if (this.userName) {
+      this.userName = this.userName.charAt(0).toUpperCase() + this.userName.slice(1).toLowerCase();
+    }
   if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {

@@ -77,6 +77,27 @@
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     background-color: transparent !important;
+    
+    .suggestion-link-wrapper {
+      margin-bottom: 20px;
+    }
+    
+    &.questions-mode {
+      .questions-search-bar {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      
+      .olly-questions-content {
+        padding: 0 !important;
+      }
+      
+      .questions-list-container {
+        padding: 0 20px 40px 20px !important;
+      }
+    }
   }
 }
 // Inner wrapper for responsive centering
@@ -183,6 +204,7 @@
 
 .suggestion-link-wrapper {
   margin-bottom: 40px;
+  margin-top: 5px;
 }
 
 .olly-different-link {
@@ -216,7 +238,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -270,6 +292,48 @@
   justify-content: space-between;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+// Adults theme modal colors
+.adults-theme {
+  .olly-modal-header {
+    background-color: #FFD889; // Light golden header background
+
+    .olly-modal-title {
+      color: black;
+    }
+  }
+
+  .olly-modal-content {
+    background-color: #FFE8BB; // Very light cream background
+
+    .olly-modal-paragraph {
+      color: #000000;
+    }
+  }
+}
+
+// Teens theme modal colors
+.teens-theme {
+  .olly-modal-header {
+    background-color: #0C2B5F; // Dark blue header background
+
+    .olly-modal-title {
+      color: #ffffff;
+    }
+  }
+
+  .olly-modal-content {
+    background-color: #183C79; // Dark blue content background
+
+    .olly-modal-paragraph {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  .olly-modal-close-btn {
+    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+  }
 }
 
 .olly-modal-text-container {
@@ -591,6 +655,10 @@
       &::placeholder {
         color: rgba(255, 255, 255, 0.5) !important;
       }
+    }
+    
+    .submit-circle {
+      background: linear-gradient(180deg, #EE9596 0%, #D47172 100%) !important;
     }
   }
 

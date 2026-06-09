@@ -142,8 +142,6 @@ export class SharedService {
         return 'adults';
       case ProgramType.Teenagers:
         return 'teenagers';
-      case ProgramType.Young_Adults:
-        return 'youngadults';
       default:
         return 'adults';
     }
@@ -155,8 +153,6 @@ export class SharedService {
         return '/adults/home';
       case ProgramType.Teenagers:
         return '/teenagers/home';
-      case ProgramType.Young_Adults:
-        return '/teenagers/teenager-dashboard';
       default:
         return '/adults/home';
     }
@@ -168,8 +164,6 @@ export class SharedService {
         return `/adults/${name}`;
       case ProgramType.Teenagers:
         return `/teenagers/${name}`;
-      case ProgramType.Young_Adults:
-        return '/adults/journal';
       default:
         return `/adults/${name}`;
     }

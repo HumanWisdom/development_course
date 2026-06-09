@@ -309,15 +309,10 @@ export class NavigationService {
     let returnUrl = microLearningEndUrl;
     const m_learningId = localStorage.getItem('m_learningId');
     let prefix = SharedService.getprogramName();
-    if (prefix === 'youngadults') prefix = 'teenagers';
 
     if (fromMicroLearningEnd && fromMicroLearningEnd !== 'false' && (returnUrl || m_learningId)) {
       if (!returnUrl && m_learningId) {
         returnUrl = `/${prefix}/micro-learning/inner/${m_learningId}?isEnd=true`;
-      }
-
-      if (returnUrl && returnUrl.includes('youngadults')) {
-        returnUrl = returnUrl.replace('youngadults', 'teenagers');
       }
 
       localStorage.removeItem('microLearningEndUrl');
@@ -592,7 +587,7 @@ export class NavigationService {
     }
 
     // 9. Module TOC / Index -> Search (If no pathway context was found)
-    if (segments.length >= 3 && (segments[1] === 'adults' || segments[1] === 'teenagers' || segments[1] === 'youngadults')) {
+    if (segments.length >= 3 && (segments[1] === 'adults' || segments[1] === 'teenagers')) {
        const topLevelPages = [
          'adult-dashboard', 'dashboard', 'home', 'search', 'journal', 
          'profile', 'forum', 'notification', 'teenager-dashboard', 
