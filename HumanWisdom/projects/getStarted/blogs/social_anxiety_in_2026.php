@@ -134,9 +134,8 @@ th{
                 <h4 class="mtb0px blog_sub_title">
                   Best Apps for Social Anxiety in 2026
                 </h4>
-
-                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
-                  1. HappierMe — Best Overall App for Social Anxiety Support </span>
+ <h4 class="mtb0px blog_sub_title">
+                  1. HappierMe — Best Overall App for Social Anxiety Support 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
