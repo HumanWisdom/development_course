@@ -1,5 +1,8 @@
+<!-- top navigation -->
+<app-tn-dashboard-v03 [enableHamburger]="true" *ngIf="!isQuestionsViewActive"></app-tn-dashboard-v03>
+
 <!-- page content -->
-<div class="right_col mc_03">
+<div class="right_col mc_03" [class.no-top-gap]="isQuestionsViewActive">
   <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
@@ -9,10 +12,10 @@
 
         <div class="x_panel p0">
           <div class="x_content p0">
-            <div class="row  mt50px mb5px" *ngIf="!isQuestionsViewActive">
+            <div class="row  mt70px mb5px" *ngIf="!isQuestionsViewActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                <h4 class="mt0px mb30px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                  Welcome back, {{userName}}!
+                <h4 class="mt50px mb30px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  Welcome back,<br>{{userName}}!
                 </h4>
 
               </div>
@@ -27,7 +30,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="panel-group dpanelgroup" id="accordion">
                     <div class="panel panel-default dpanel dpanel_01">
-                      <div class="mb20px">
+                      <div class="mb40px">
                         <h4 class="panel-title dpaneltitle">
                           <div aria-expanded="true">
                             <div class="row">
@@ -949,5 +952,5 @@
   [content]="content"></app-modal>
 
 <!-- footer  -->
-<app-bottom-navigation *ngIf="!isQuestionsViewActive"></app-bottom-navigation>
+<app-bottom-navigation [showOwl]="false" *ngIf="!isQuestionsViewActive"></app-bottom-navigation>
 <!-- /footer -->

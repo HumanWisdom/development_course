@@ -37450,3 +37450,44 @@ div.contentdiv p {
 }
 
 /* ===== /try-free-and-subscribe new design styles ===== */
+.chat-thumbnails a {
+text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+
+}
+
+.chat-thumbnails a img{    
+    max-width: 200px;
+    max-height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.resource-item {
+    background: #60BEC2;
+    border: 1px solid #e0e7ef;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: box-shadow 0.2s;
+    
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.resource-thumbnail{
+    width: 100% !important;
+    max-width: 50px !important;
+    height: 50px !important;
+    border-radius: 6px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}

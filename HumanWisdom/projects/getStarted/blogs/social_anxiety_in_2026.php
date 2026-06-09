@@ -48,7 +48,7 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Mental health
+                   Social Anxiety
                   </button>
                 </div>
               </div>
@@ -134,9 +134,8 @@ th{
                 <h4 class="mtb0px blog_sub_title">
                   Best Apps for Social Anxiety in 2026
                 </h4>
-
-                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
-                  1. HappierMe — Best Overall App for Social Anxiety Support </span>
+ <h4 class="mtb0px blog_sub_title">
+                  1. HappierMe — Best Overall App for Social Anxiety Support 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
