@@ -13,8 +13,7 @@ None=0,
 Adults=9,
 Children=10,
 Teenagers=11,
-Parents=12,
-Young_Adults=13
+Parents=12
 }
 
 export enum SubscriptionType {

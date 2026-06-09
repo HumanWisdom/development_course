@@ -115,7 +115,7 @@
 
 <!-- Why Olly is Different Popup Modal -->
 <div class="olly-modal-overlay" *ngIf="showWhyOllyPopup" (click)="closeWhyOllyPopup()">
-  <div class="olly-modal-container" (click)="$event.stopPropagation()">
+  <div class="olly-modal-container" [ngClass]="isAdults ? 'adults-theme' : 'teens-theme'" (click)="$event.stopPropagation()">
     <div class="olly-modal-header">
       <h2 class="olly-modal-title">Meet Olly AI</h2>
     </div>
