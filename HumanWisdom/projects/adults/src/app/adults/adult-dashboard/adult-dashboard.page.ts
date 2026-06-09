@@ -9,6 +9,7 @@ import { LogEventService } from '../../../../../shared/services/log-event.servic
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
+import { CommonService } from '../../../../../shared/services/common.service';
 import { concat } from 'rxjs';
 // import { driver } from "driver.js";
 // import "driver.js/dist/driver.css";
@@ -130,7 +131,8 @@ export class AdultDashboardPage implements OnInit {
     public router: Router, public service: AdultsService, public services: OnboardingService,
     public cd: ChangeDetectorRef, public fb: UntypedFormBuilder,
     public platform: Platform,private route:ActivatedRoute,
-    public logeventservice: LogEventService, private meta: Meta, private title: Title
+    public logeventservice: LogEventService, private meta: Meta, private title: Title,
+    public commonService: CommonService
   ) {
     localStorage.setItem("fromlandingpage", 'F')
     this.registrationForm = this.fb.group({
@@ -181,7 +183,7 @@ export class AdultDashboardPage implements OnInit {
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
           localStorage.setItem("Subscriber", res['Subscriber']);
           this.isSubscriber = SharedService.isSubscriber();
-          this.loginadult(res);
+          this.commonService.loginadult(res);
           this.services.setDataRecievedState(true);
         } else {
           localStorage.setItem("email", 'guest@humanwisdom.me');

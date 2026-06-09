@@ -27,7 +27,8 @@
   [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)">
 </app-modal>
 
-<app-modal *ngIf="enableAlert" [title]="alertTitle" [content]="alertContent" [okText]="alertOkText" (closeEvent)="getAlertcloseEvent()"></app-modal>
+<app-modal *ngIf="enableAlert" [title]="alertTitle" [content]="alertContent" [okText]="alertOkText"
+  (closeEvent)="getAlertcloseEvent()"></app-modal>
 
 <app-bg-video></app-bg-video>
 
@@ -39,21 +40,25 @@
         [class.teenagers-days]="!isAdults">
 
         <div class="x_panel p0 nobg" style="overflow-x: hidden; position: relative; width: 100%;"
-             (touchstart)="handleTouchStart($event)" (touchmove)="handleTouchMove($event)" (touchend)="handleTouchEnd($event)"
-             (mousedown)="handleTouchStart($event)" (mousemove)="handleTouchMove($event)" (mouseup)="handleTouchEnd($event)" (mouseleave)="handleTouchEnd($event)">
-          <div class="x_content p0 guided_journey_days_wrapper" [style.transform]="getTransform()" [class.is-animating]="!isDragging && isAnimating">
-            
+          (touchstart)="handleTouchStart($event)" (touchmove)="handleTouchMove($event)"
+          (touchend)="handleTouchEnd($event)" (mousedown)="handleTouchStart($event)"
+          (mousemove)="handleTouchMove($event)" (mouseup)="handleTouchEnd($event)"
+          (mouseleave)="handleTouchEnd($event)">
+          <div class="x_content p0 guided_journey_days_wrapper" [style.transform]="getTransform()"
+            [class.is-animating]="!isDragging && isAnimating">
+
             <!-- Intro Slide -->
-            <div class="guided_journey_day_slide"
-                 [class.active-slide]="currentDay === 0"
-                 [class.inactive-slide]="currentDay !== 0 && !isAnimating && !isDragging">
+            <div class="guided_journey_day_slide" [class.active-slide]="currentDay === 0"
+              [class.inactive-slide]="currentDay !== 0 && !isAnimating && !isDragging">
               <ng-container *ngIf="journeyDetails">
                 <!-- Breadcrumb -->
                 <div class="row mb20px">
                   <div class="col-md-12 p0">
-                    <a (click)="goToListing()" class="center_flex_left" style="cursor: pointer; display: flex; align-items: center;">
+                    <a (click)="goToListing()" class="center_flex_left"
+                      style="cursor: pointer; display: flex; align-items: center;">
                       <i class="fa fa-angle-left mr5px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'"></i>
-                      <span class="fs_14px fw_500" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'">Guided journeys</span>
+                      <span class="fs_14px fw_500" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'">Guided
+                        journeys</span>
                     </a>
                   </div>
                 </div>
@@ -88,8 +93,8 @@
             </div>
 
             <div class="guided_journey_day_slide" *ngFor="let dayNum of getDaysArray()"
-                 [class.active-slide]="currentDay === dayNum"
-                 [class.inactive-slide]="currentDay !== dayNum && !isAnimating && !isDragging">
+              [class.active-slide]="currentDay === dayNum"
+              [class.inactive-slide]="currentDay !== dayNum && !isAnimating && !isDragging">
 
               <!-- Day Header -->
               <div class="row mb20px">
@@ -103,125 +108,133 @@
               <!-- Exercises List -->
               <div *ngFor="let exercise of getExercisesForDay(dayNum); let i = index; let isLast = last">
 
-              <!-- Type 1: Horizontal Card (Image Left, Content Right) -->
-              <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1" (click)="onExerciseClick(exercise)">
-                <div class="card_type1_img_container">
-                  <img [src]="exercise.imgPath.split(',')[0]" alt="">
-                  <div class="icon_overlay" *ngIf="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : null)">
-                    <img [src]="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : '')" alt="" class="overlay_icon">
-                  </div>
-                </div>
-                <div class="card_type1_content">
-                  <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
-                    <h3 class="card_type1_title">{{exercise.DisplayTitle}}</h3>
-                    <p class="card_type1_meta">
-                      {{exercise.DisplaySubtitle || exercise.Section}}
-                      <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
-                    </p>
-                  </ng-container>
-                  <ng-container *ngIf="isSection8(exercise)">
-                    <h3 class="card_type1_title_sec8">{{exercise.DisplayTitle}}</h3>
-                    <p class="card_type1_session_label">{{exercise.sessionLabel}}</p>
-                    <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
-                  </ng-container>
-                  <ng-container *ngIf="isGuidedJournaling(exercise)">
-                    <h3 class="card_type1_title_gj">{{exercise.DisplayTitle}}</h3>
-                    <p class="card_type1_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle || exercise.Section}}</p>
-                    <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
-                  </ng-container>
-                  <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
-                </div>
-                <div class="card_type1_status">
-                  <div class="card_type1_tick" *ngIf="exercise.isRead === '1' && isLoggedIn">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
-                  </div>
-                  <div class="card_type1_lock"
-                    *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
-                    <!-- <div [ngClass]="isAdults ? '' : 'status-icon lock-icon'">
+                <!-- Instruction Text Above Card -->
+                <p class="exercise_instruction" *ngIf="isBreathingExercise(exercise)">Do this for 5-10 minutes daily.
+                </p>
+                <p class="exercise_instruction" *ngIf="isSoundscape(exercise)">Listen for 3 minutes at least.
+                </p>
+                <!-- Type 1: Horizontal Card (Image Left, Content Right) -->
+                <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1"
+                  (click)="onExerciseClick(exercise)">
+                  <div class="card_type1_img_container">
+                    <img [src]="exercise.imgPath.split(',')[0]" alt="">
+                    <div class="icon_overlay"
+                      *ngIf="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : null)">
                       <img
-                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                        [class.lock-icon-img]="!isAdults"
-                        alt="">
-                    </div> -->
-                    <div>
-                      <img
-                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
-                        alt="">
+                        [src]="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : '')"
+                        alt="" class="overlay_icon">
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <!-- Type 2: Vertical Card (Large Image Top) -->
-              <div *ngIf="exercise.Type === 2" class="exercise_card" (click)="onExerciseClick(exercise)">
-                <div class="card_image_container">
-                  <img [src]="exercise.imgPath.split(',')[0]" class="card_img" alt="">
-                  <div class="icon_overlay" *ngIf="getSectionIcon(exercise.Section)">
-                    <img [src]="getSectionIcon(exercise.Section)" alt="" class="overlay_icon">
-                  </div>
-                </div>
-                <div class="card_content">
-                  <div class="card_content_text">
+                  <div class="card_type1_content">
                     <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
-                      <h3 class="exercise_title">{{exercise.DisplayTitle}}</h3>
-                      <p class="exercise_meta">
+                      <h3 class="card_type1_title">{{exercise.DisplayTitle}}</h3>
+                      <p class="card_type1_meta">
                         {{exercise.DisplaySubtitle || exercise.Section}}
                         <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
                       </p>
                     </ng-container>
                     <ng-container *ngIf="isSection8(exercise)">
-                      <h3 class="exercise_title_sec8">{{exercise.DisplayTitle}}</h3>
+                      <h3 class="card_type1_title_sec8">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_session_label">{{exercise.sessionLabel}}</p>
                       <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                     </ng-container>
                     <ng-container *ngIf="isGuidedJournaling(exercise)">
-                      <h3 class="exercise_title_gj">{{exercise.DisplayTitle}}</h3>
-                      <p class="exercise_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle || exercise.Section}}</p>
+                      <h3 class="card_type1_title_gj">{{exercise.DisplayTitle}}</h3>
+                      <p class="card_type1_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle ||
+                        exercise.Section}}</p>
                       <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
                     </ng-container>
+                    <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
                   </div>
-                  <div class="card_content_status">
-                    <div class="read_status" *ngIf="exercise.isRead === '1' && isLoggedIn">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" alt="">
+                  <div class="card_type1_status">
+                    <div class="card_type1_tick" *ngIf="exercise.isRead === '1' && isLoggedIn">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
                     </div>
-                    <div class="lock_status"
+                    <div class="card_type1_lock"
                       *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
                       <!-- <div [ngClass]="isAdults ? '' : 'status-icon lock-icon'">
+                      <img
+                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                        [class.lock-icon-img]="!isAdults"
+                        alt="">
+                    </div> -->
+                      <div>
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Type 2: Vertical Card (Large Image Top) -->
+                <div *ngIf="exercise.Type === 2" class="exercise_card" (click)="onExerciseClick(exercise)">
+                  <div class="card_image_container">
+                    <img [src]="exercise.imgPath.split(',')[0]" class="card_img" alt="">
+                    <div class="icon_overlay" *ngIf="getSectionIcon(exercise.Section)">
+                      <img [src]="getSectionIcon(exercise.Section)" alt="" class="overlay_icon">
+                    </div>
+                  </div>
+                  <div class="card_content">
+                    <div class="card_content_text">
+                      <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
+                        <h3 class="exercise_title">{{exercise.DisplayTitle}}</h3>
+                        <p class="exercise_meta">
+                          {{exercise.DisplaySubtitle || exercise.Section}}
+                          <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
+                        </p>
+                      </ng-container>
+                      <ng-container *ngIf="isSection8(exercise)">
+                        <h3 class="exercise_title_sec8">{{exercise.DisplayTitle}}</h3>
+                        <p class="card_type1_session_label">{{exercise.sessionLabel}}</p>
+                        <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
+                      </ng-container>
+                      <ng-container *ngIf="isGuidedJournaling(exercise)">
+                        <h3 class="exercise_title_gj">{{exercise.DisplayTitle}}</h3>
+                        <p class="exercise_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle ||
+                          exercise.Section}}</p>
+                        <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
+                      </ng-container>
+                    </div>
+                    <div class="card_content_status">
+                      <div class="read_status" *ngIf="exercise.isRead === '1' && isLoggedIn">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" alt="">
+                      </div>
+                      <div class="lock_status"
+                        *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
+                        <!-- <div [ngClass]="isAdults ? '' : 'status-icon lock-icon'">
                         <img
                           [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
                           [class.lock-icon-img]="!isAdults"
                           alt="">
                       </div> -->
-                      <div>
-                        <img
-                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
-                          alt="">
+                        <div>
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt="">
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Type 3: Journaling Box -->
-              <div *ngIf="exercise.Type === 3" class="journal_box">
-                <h4 class="journal_title">{{exercise.DisplayTitle}}</h4>
-                <textarea *ngIf="isSubscriber || exercise.isFree === '1' || exercise.isFree === 1"
-                  placeholder="Tap to answer" [(ngModel)]="exercise.Response"></textarea>
-                <textarea *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)" [disabled]="true"
-                  [readonly]="true" [value]="'Subscribe to use this feature'"></textarea>
+                <!-- Type 3: Journaling Box -->
+                <div *ngIf="exercise.Type === 3" class="journal_box">
+                  <h4 class="journal_title">{{exercise.DisplayTitle}}</h4>
+                  <textarea *ngIf="isSubscriber || exercise.isFree === '1' || exercise.isFree === 1"
+                    placeholder="Tap to answer" [(ngModel)]="exercise.Response"></textarea>
+                  <textarea *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)"
+                    [disabled]="true" [readonly]="true" [value]="'Subscribe to use this feature'"></textarea>
 
-                <button class="btn_journal" (click)="submitJournal(exercise)"
-                  *ngIf="exercise.Response && exercise.Response.trim() !== '' && exercise.Response !== (exercise.OriginalResponse || '') && (isSubscriber || exercise.isFree === '1' || exercise.isFree === 1)">
-                  {{ (exercise.UserReflectionID && exercise.UserReflectionID !== '0') ? 'Save changes' : 'Add to journal' }}
-                </button>
+                  <button class="btn_journal" (click)="submitJournal(exercise)"
+                    *ngIf="exercise.Response && exercise.Response.trim() !== '' && exercise.Response !== (exercise.OriginalResponse || '') && (isSubscriber || exercise.isFree === '1' || exercise.isFree === 1)">
+                    {{ (exercise.UserReflectionID && exercise.UserReflectionID !== '0') ? 'Save changes' : 'Add to
+                    journal' }}
+                  </button>
 
-                <div class="journal_footer">
-                  Your online journal is secure and private to you.
+                  <div class="journal_footer">
+                    Your online journal is secure and private to you.
+                  </div>
                 </div>
-              </div>
 
-              <!-- Separator -->
-              <div class="card_separator" *ngIf="!isLast"></div>
+                <!-- Separator -->
+                <div class="card_separator" *ngIf="!isLast"></div>
 
               </div>
 
@@ -259,7 +272,8 @@
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer_days col_cw"
           [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
           <div class="odiv">
-            <div class="day_circle intro_circle" [ngClass]="{'active': currentDay === 0, 'visited': isVisited(0) && currentDay !== 0}"
+            <div class="day_circle intro_circle"
+              [ngClass]="{'active': currentDay === 0, 'visited': isVisited(0) && currentDay !== 0}"
               (click)="navigateToDay(0)">
               <span>Intro</span>
             </div>

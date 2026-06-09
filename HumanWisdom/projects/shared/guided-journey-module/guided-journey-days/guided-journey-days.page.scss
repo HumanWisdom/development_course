@@ -798,3 +798,19 @@
 .fc_D7586B {
     color: #D7586B !important;
 }
+
+
+/* Exercise Instruction Text */
+.exercise_instruction {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.teenagers-days .exercise_instruction {
+    color: rgba(255, 255, 255, 0.8);
+}

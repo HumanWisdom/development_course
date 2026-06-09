@@ -46,14 +46,11 @@
   cursor: pointer;
   display: inline-block;
   opacity: 0.8;
-  text-decoration: none !important;
-  
-  &:hover,
-  &:focus {
-    color: inherit !important;
-    opacity: 1 !important;
-    text-decoration: none !important;
-  }
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.toc_adiv_02 a>.row{
+  padding: 10px;
+
 }
 .session_img_play{
   right: 8px;
