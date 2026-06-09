@@ -108,6 +108,7 @@
   width: 100%;
   box-sizing: border-box;
   text-align: center;
+  overflow: visible;
 }
 
 // Typography & Greeting
@@ -118,29 +119,126 @@
   align-self: flex-start;
 }
 
+// Search Section
+.search-section {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 4;
+  overflow: visible;
+}
+
 .owl-section {
   position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
-  margin-top: 20px;
   margin-bottom: -2px;
   padding-right: 10px;
+  min-height: 0;
+  pointer-events: none;
+}
+
+.olly-character-container {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  z-index: 2;
+  overflow: visible;
 }
 
 .olly-owl-img {
   width: 90px;
   height: auto;
-  z-index: 2;
+  display: block;
+  margin-left: auto;
+  object-fit: contain;
+
+  &--flying {
+    width: 100px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  &--fade-out {
+    opacity: 0;
+  }
+
+  &--fade-in {
+    animation: ollyFadeIn 0.4s ease forwards;
+  }
 }
 
+@keyframes ollyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-// Search Section
-.search-section {
-  width: 100%;
-  margin-bottom: 20px;
-  z-index: 4;
+.olly-cloud-container {
+  position: absolute;
+  top: -102px;
+  left: -45%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 179px;
+  height: 140px;
+  opacity: 1;
+  transform-origin: bottom center;
+
+  &.fade-in {
+    opacity: 0;
+    animation: cloud-fade-in 1.8s ease-out forwards;
+  }
+
+  &.speaking:not(.disappearing) {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  &.disappearing {
+    animation: cloud-fade-out 0.6s ease-out forwards;
+  }
+}
+
+@keyframes cloud-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cloud-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.cloud-image {
+  width: 179px;
+  height: 140px;
+  max-width: 179px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .olly-cloud-container {
+    top: -55px;
+    left: -35%;
+    width: 140px;
+    height: 110px;
+  }
+
+  .cloud-image {
+    width: 140px;
+    max-width: 140px;
+    height: auto;
+  }
 }
 
 .search-input-wrapper {

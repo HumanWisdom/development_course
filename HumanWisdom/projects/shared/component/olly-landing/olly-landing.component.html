@@ -17,15 +17,39 @@
                 <!-- Greeting -->
                 <h1 class="greeting-title" *ngIf="!isIntegrated">Hi {{ username ? username : 'there' }}!</h1>
 
-                <!-- Owl Section -->
-                <div class="owl-section">
-                  <!-- Owl image -->
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owlwingsdown.png" 
-                       alt="Olly Owl" class="olly-owl-img" />
-                </div>
-
-                <!-- Search/Input Area -->
+                <!-- Search/Input Area with Olly perched on top -->
                 <div class="search-section">
+                  <div class="owl-section">
+                    <div class="olly-character-container">
+                      <img
+                        *ngIf="showFlyingOlly"
+                        class="olly-owl-img olly-owl-img--flying"
+                        [class.olly-owl-img--fade-out]="isTransitioning"
+                        [src]="flyingGifUrl"
+                        alt="Flying Olly"
+                        (load)="onFlyingGifLoad()"
+                      />
+                      <img
+                        *ngIf="showBreathingOlly"
+                        class="olly-owl-img"
+                        [class.olly-owl-img--fade-in]="showBreathingOlly"
+                        [src]="breathingGifUrl"
+                        alt="Olly"
+                        (load)="onBreathingGifLoad()"
+                      />
+                      <div
+                        class="olly-cloud-container"
+                        *ngIf="showCloudMessage"
+                        [ngClass]="{
+                          'speaking': isSpeaking,
+                          'disappearing': isDisappearing,
+                          'fade-in': cloudFadeIn
+                        }"
+                      >
+                        <img [src]="cloudImageUrl" alt="Olly Hi" class="cloud-image" />
+                      </div>
+                    </div>
+                  </div>
                   <div class="search-input-wrapper">
                     <input type="text" 
                            placeholder="How can I help today?" 
