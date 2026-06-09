@@ -154,18 +154,18 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Olly AI</span> helps users understand how they are feeling and recommends personalized wellness activities to support their emotional state each day.
+                  Olly AI helps users understand how they are feeling and recommends personalized wellness activities to support their emotional state each day.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Why HappierMe Works for Daily Wellness</span>
-                  <ul>
-                    <li>Encourages daily emotional reflection</li>
-                    <li>Builds consistent mental wellness habits</li>
-                    <li>Helps reduce overthinking gradually</li>
-                    <li>Improves emotional awareness over time</li>
-                    <li>Provides personalized AI guidance daily</li>
-                  </ul>
+                  <span class="blog_highlight_black">Why HappierMe Works for Daily Wellness</span><br/>
+                  
+                    <span style='font-size:20px;'>&#10003; </span> Encourages daily emotional reflection</br>
+                     <span style='font-size:20px;'>&#10003; </span>Builds consistent mental wellness habits</br>
+                     <span style='font-size:20px;'>&#10003; </span>Helps reduce overthinking gradually</br>
+                     <span style='font-size:20px;'>&#10003; </span>Improves emotional awareness over time</br>
+                     <span style='font-size:20px;'>&#10003; </span>Provides personalized AI guidance daily</br>
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -361,11 +361,11 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  But <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> focuses on something more important:
+                  But HappierMe focuses on something more important:
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">Building emotional awareness and mental strength every single day</span>
+                  Building emotional awareness and mental strength every single day
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -403,12 +403,12 @@ th{
                   Frequently Asked Questions
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Which app is best for daily mental wellness?
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Which app is best for daily mental wellness?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   is one of the strongest options because it combines mindfulness,
                   journaling,
                   emotional intelligence, AI guidance, and habit-building tools.
@@ -430,7 +430,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   Insight Timer is one of the most popular free options, while
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   offers a more structured emotional wellness experience.
                 </h4>
 
@@ -457,7 +457,7 @@ th{
 
                 <h4 class="mtb0px blog_desc">
                   That is where
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app"><span class="blog_highlight_black">HappierMe</span></a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
                   stands out.
                 </h4>
 
