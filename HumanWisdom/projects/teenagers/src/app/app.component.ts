@@ -48,6 +48,14 @@ export class AppComponent implements OnDestroy {
       app_id: 'W2R5GQ0DULCQOIF0QXPW1QR1', debug_logs: 0,
       swPath: '/teenagers/serviceworker.js'
     });
+    
+    // Subscribe to login URL subject to handle navigation after login
+    this.commonService.loginUrlSubs.subscribe((url) => {
+      if (url) {
+        console.log('Navigating to:', url);
+        this.router.navigateByUrl(url);
+      }
+    });
     let urls = this.router.url.split('authtoken=');
     if (urls && urls[1] == undefined) {
       if (localStorage.getItem("isloggedin") == 'T') {
