@@ -595,13 +595,7 @@ export class CommonService {
         sessionStorage.setItem("userName", JSON.stringify(this.userName))
       }
 
-      if(isRoutedFromLogin){
-        this.loginSubject(`${SharedService.getprogramName()}/changetopic`);
-        // this.router.navigate([]);
-      }else{
-        this.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
-        // this.router.navigate([]);tlo
-      }
+      this.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
     }
   }
 
