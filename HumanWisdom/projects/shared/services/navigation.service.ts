@@ -29,6 +29,11 @@ export class NavigationService {
     });
   }
 
+  addModuleUrlToHistory(url: string){
+     this.history.push(url);
+
+  }
+
   addToHistory(url: string, source: string | null = null) {
     const navigation = this.router.getCurrentNavigation();
     const newSource = source || navigation?.extras?.state?.source;
