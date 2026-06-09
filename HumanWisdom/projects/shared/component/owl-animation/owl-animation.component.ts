@@ -422,7 +422,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   /**
-   * Called when the static owl image (owlwingsdown.png) has loaded.
+   * Called when the static owl image (justBreathing.gif) has loaded.
    * Triggers the speaking sequence so Olly_Hi.svg cloud appears 200ms later
    * (via the delay inside startSpeakingSequence).
    */
