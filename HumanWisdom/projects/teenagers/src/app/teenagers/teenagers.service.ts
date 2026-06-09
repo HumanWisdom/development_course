@@ -22,40 +22,40 @@ export class TeenagersService {
 
   personalisedforyoulist = [
     {
-      id: "17",
+      id: '10',
+      name: 'Manage your mental health'
+    },
+    {
+      id: '17',
       name: 'Succeed in life'
     },
     {
-      id: "14",
-      name: 'Manage your emotions',
-    },
-     {
-      id: "11",
+      id: '11',
       name: 'Relationships'
     },
     {
-      id: "13",
+      id: '13',
       name: 'Be happier'
     },
     {
-      id: "15",
+      id: '14',
+      name: 'Manage your emotions'
+    },
+    {
+      id: '20',
+      name: 'Develop your self awareness'
+    },
+    {
+      id: '12',
+      name: 'Feel calm'
+    },
+    {
+      id: '15',
       name: 'Overcome unhelpful habits'
     },
     {
-      id: "16",
+      id: '16',
       name: 'Understand yourself'
-       },
-    {
-      id: "12",
-      name: 'Feel calm',
-    },
-    {
-      id: "10",
-      name: 'Manage your mental wellbeing'
-    },
-    {
-      id: "20",
-      name: 'Develop your self awareness'
     }
   ]
 

@@ -88,6 +88,11 @@ export class OllyLandingComponent implements OnInit {
       } catch {
         this.username = userNameVal;
       }
+      
+      // Capitalize the username
+      if (this.username) {
+        this.username = this.username.charAt(0).toUpperCase() + this.username.slice(1).toLowerCase();
+      }
     }
 
     // Resolve topicId with multiple fallbacks:
