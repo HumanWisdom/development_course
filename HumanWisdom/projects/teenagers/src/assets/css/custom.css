@@ -37490,4 +37490,5 @@ text-decoration: none;
     margin-left: auto !important;
     margin-right: auto !important;
     display: block !important;
+    object-fit: cover !important;
 }
