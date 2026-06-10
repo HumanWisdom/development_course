@@ -1797,7 +1797,7 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         'Think better.<br><span class="hero-title-accent">Live better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        "Self-awareness tools to reduce stress and anxiety, deepen your relationships and build a happier life.<br>(for Adults & Teenagers)";
+        'Understand yourself. Reduce stress &amp; anxiety. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">Human Skills</a> that AI cannot replace.';
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");

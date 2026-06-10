@@ -61,6 +61,77 @@ img { max-width: 100%; display: block; }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle:hover {
   color: rgba(255, 255, 255, 1) !important;
 }
+.frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+.frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link:hover {
+  color: #ED7D6F !important;
+}
+
+/* Human Skills popup */
+.human-skills-modal {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 335px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #FFF9EE 0%, #FFF4E1 100%);
+}
+.human-skills-modal-header {
+  background: transparent;
+  padding: 20px 30px;
+  text-align: center;
+}
+.human-skills-modal-title {
+  font-family: Poppins, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  line-height: 1.5;
+}
+.human-skills-modal-body {
+  background: transparent;
+  padding: 24px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.human-skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.human-skills-list li {
+  font-family: Poppins, Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.5;
+}
+.human-skills-close-btn {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  width: 100%;
+  max-width: 275px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.human-skills-close-btn:hover {
+  opacity: 0.9;
+}
 
 /* Hero dark gradient: rating row — light icons/text */
 .frame-wrapper.web_home_divlanding .rating-row,
