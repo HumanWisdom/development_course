@@ -650,7 +650,7 @@ require_once('./includes/security_config.php');
                   <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                 </video>
                 <button type="button" class="tools-play-btn tools-video-play-btn" aria-label="Play breathing exercise" id="fbn-play-btn">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v14/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" aria-hidden="true" />
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" aria-hidden="true" />
                 </button>
               </div>
               <div class="tools-card-meta">
@@ -720,7 +720,7 @@ require_once('./includes/security_config.php');
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="How can we be happier" class="tools-thumb-img" />
                 <span class="tools-card-media-badge" aria-hidden="true">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v14/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" />
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" />
                 </span>
               </div>
               <div class="tools-card-meta">
