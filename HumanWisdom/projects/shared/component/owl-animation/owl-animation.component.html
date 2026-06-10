@@ -4,7 +4,7 @@
 <!-- Static Owl Image with Customizable Text - Shows after video ends -->
 <div class="static-owl-container" *ngIf="showStaticOwl">
   <img 
-    src="                                                                                                                                                                                                                                                                                                                                                                                                https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/justBreathing.gif" 
+    [src]="staticOwlUrl" 
     alt="Olly the Owl" 
     class="static-owl-image"
     (load)="onStaticOwlImageLoaded()"
@@ -18,26 +18,4 @@
   </div>
 </div>
 
-<!-- Animated GIF - Plays only on home page and only once (fallback) -->
-<img
-  #gifElement
-  class="owl-gif"
-  *ngIf="showGif && !showStaticOwl"
-  [src]="gifUrl"
-  alt="Animated Owl"
-  draggable="false"
-  (load)="onGifLoaded()"
-  (error)="handleGifError()"
-/>
-
-  <!-- Debug Info (remove in production) -->
-  <div class="debug-info" *ngIf="gifError">
-    <p>GIF Error: Unable to load the animation</p>
-    <p>Please check the connection or URL</p>
-  </div>
-
-  <!-- Loading indicator -->
-  <!-- <div class="loading-indicator" *ngIf="!gifLoaded && !gifError">
-    <p>Loading owl animation...</p>
-  </div> -->
 </div>
