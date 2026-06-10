@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeenagersService } from '../../teenagers.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-s160049',
@@ -34,6 +35,7 @@ export class S160049Page implements OnInit,OnDestroy {
     private router: Router,
     private service:TeenagersService,
     private location:Location,
+    private navigationService:NavigationService,     
   ) 
   { }
 
@@ -108,6 +110,12 @@ export class S160049Page implements OnInit,OnDestroy {
   {
     this.router.navigate(['/teenagers/career-success/s160048'])
   }
+
+   routernavigate(url) {
+    
+      this.navigationService.addModuleUrlToHistory(this.router.url);
+       this.router.navigateByUrl(url);
+    }
 
   ngOnDestroy()
   {}
