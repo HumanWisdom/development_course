@@ -24,31 +24,25 @@ export class OllyLandingComponent implements OnInit, OnDestroy {
   topicsList: OllyTopic[] = [];
   expandedTopics: { [fragment: string]: boolean } = {};
 
-  private readonly FLYING_GIF_URL =
+  private readonly OLLY_GIF_URL =
     'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_singleloop.gif';
-  private readonly BREATHING_GIF_URL =
-    'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_breathing4.gif';
   private readonly OLLY_HI_URL =
     'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
   private readonly INTRO_SHOWN_KEY = 'olly_landing_intro_shown';
   private readonly DIALOGUE_SHOWN_KEY = 'olly_landing_dialogue_shown';
-  private readonly FLYING_GIF_DURATION_MS = 4000;
   private readonly CLOUD_FADE_IN_MS = 1800;
   private readonly CLOUD_DISPLAY_MS = 5000;
 
-  showFlyingOlly = false;
-  showBreathingOlly = false;
+  showOllyGif = true;
   showCloudMessage = false;
   cloudFadeIn = false;
   isSpeaking = false;
   isDisappearing = false;
-  isTransitioning = false;
-  flyingGifUrl = this.FLYING_GIF_URL;
-  breathingGifUrl = this.BREATHING_GIF_URL;
+  ollyGifUrl = this.OLLY_GIF_URL;
   cloudImageUrl = this.OLLY_HI_URL;
 
   private timers: ReturnType<typeof setTimeout>[] = [];
-  private flyingGifPlayed = false;
+  private gifLoadedOnce = false;
   private cloudSequenceStarted = false;
 
   // Topic mappings for Adults
@@ -163,18 +157,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy {
   }
 
   private initOllyAnimation(): void {
-    if (this.isIntegrated) {
-      this.showBreathingOlly = true;
-      return;
-    }
-
-    const hasSeenIntro = localStorage.getItem(this.INTRO_SHOWN_KEY) === 'true';
-    if (hasSeenIntro) {
-      this.showBreathingOlly = true;
-      this.scheduleTimer(() => this.triggerCloudIfNeeded(), 800);
-      return;
-    }
-    this.startFlyingAnimation();
+    this.showOllyGif = true;
+    this.ollyGifUrl = this.OLLY_GIF_URL;
   }
 
   private scheduleTimer(callback: () => void, delay: number): void {
@@ -182,42 +166,14 @@ export class OllyLandingComponent implements OnInit, OnDestroy {
     this.timers.push(timer);
   }
 
-  private startFlyingAnimation(): void {
-    this.showFlyingOlly = true;
-    this.showBreathingOlly = false;
-    this.flyingGifUrl = `${this.FLYING_GIF_URL}?t=${Date.now()}`;
-
-    this.scheduleTimer(() => {
-      if (this.showFlyingOlly && !this.showBreathingOlly) {
-        this.transitionToBreathingOlly();
-      }
-    }, this.FLYING_GIF_DURATION_MS + 500);
-  }
-
-  onFlyingGifLoad(): void {
-    if (this.flyingGifPlayed) {
+  onOllyGifLoad(): void {
+    if (this.gifLoadedOnce || this.isIntegrated) {
       return;
     }
-    this.flyingGifPlayed = true;
-    this.scheduleTimer(() => this.transitionToBreathingOlly(), this.FLYING_GIF_DURATION_MS);
-  }
-
-  private transitionToBreathingOlly(): void {
-    if (this.showBreathingOlly) {
+    if (localStorage.getItem(this.INTRO_SHOWN_KEY) === 'true') {
       return;
     }
-
-    this.isTransitioning = true;
-    this.scheduleTimer(() => {
-      this.showFlyingOlly = false;
-      this.showBreathingOlly = true;
-      this.isTransitioning = false;
-      // Fallback when breathing GIF is cached and (load) does not fire
-      this.scheduleTimer(() => this.triggerCloudIfNeeded(), 500);
-    }, 300);
-  }
-
-  onBreathingGifLoad(): void {
+    this.gifLoadedOnce = true;
     this.triggerCloudIfNeeded();
   }
 
