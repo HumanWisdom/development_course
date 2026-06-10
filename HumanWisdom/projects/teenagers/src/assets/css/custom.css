@@ -34167,7 +34167,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  background: #EE9596 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
   box-shadow: 1px 1px 2px #00000040;
   padding: 10px 20px;
   color: #FFF !important;
@@ -37451,35 +37451,35 @@ div.contentdiv p {
 
 /* ===== /try-free-and-subscribe new design styles ===== */
 .chat-thumbnails a {
-text-decoration: none;
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
 
 }
 
-.chat-thumbnails a img{    
-    max-width: 200px;
-    max-height: 150px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.chat-thumbnails a img {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 
 .resource-item {
-    background: #60BEC2;
-    border: 1px solid #e0e7ef;
-    border-radius: 8px;
-    padding: 8px 10px;
-    margin: 6px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: box-shadow 0.2s;
-    
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
+  background: #60BEC2;
+  border: 1px solid #e0e7ef;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: box-shadow 0.2s;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .resource-thumbnail{
