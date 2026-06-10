@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'HumanWisdom-s160103',
@@ -33,7 +34,8 @@ export class S160103Page implements OnInit {
   (
     private router: Router,
     private service: TeenagersService,
-    private location: Location
+    private location: Location,
+    private navigationService: NavigationService  
   ) 
   { }
 
@@ -111,6 +113,13 @@ export class S160103Page implements OnInit {
     if (this.userId !== 563) this.submitProgress()
     this.router.navigate(['/teenagers/career-success/s160104'])
   }
+
+  
+  routernavigate(url:string) {
+    
+      this.navigationService.addModuleUrlToHistory(this.router.url);
+       this.router.navigateByUrl(url);
+    }
 
   ngOnDestroy() 
   {}
