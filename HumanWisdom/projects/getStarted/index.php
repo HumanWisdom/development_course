@@ -116,8 +116,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself. Reduce stress &amp; anxiety. Strengthen your relationships.<br>
-                      Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">Human Skills</a> that AI cannot replace.
+                      Understand yourself. Reduce stress &amp; anxiety. Strengthen your relationships. Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">Human Skills</a> that AI cannot replace.
                     </p>
                   </div>
                 </div>
