@@ -632,7 +632,10 @@ export class NavigationService {
         this.backClicked = true;
         // Perform routing logic to the popped path
         prevPath = this.history[this.history.length - 1];
-
+        //special handling for module screens 
+        if (prevPath.includes('/s') && prevPath.includes(this.history[this.history.length - 1])) {
+          this.history.pop();
+        }
 
     } else {
         console.log("Cannot go back. History is empty.");
