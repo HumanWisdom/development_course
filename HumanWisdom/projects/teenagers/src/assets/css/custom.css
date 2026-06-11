@@ -34390,7 +34390,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -34453,7 +34453,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
