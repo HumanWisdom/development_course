@@ -126,7 +126,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   YourTopicofChoice;
   isAdults = false;
   showWisdomExercise: boolean = false;
-  username: string = 'Guest';   // Track which sections are showing all cards
+  username: string = '';
   streak: string = ''; // Streak for logged-in users
   showAllCards: { [sectionId: string]: boolean } = {};
   // Track visible card count per section (View More functionality)
@@ -145,6 +145,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
   private routerSubscription: Subscription;
+  private userDetailsSubscription: Subscription;
   private hashChangeHandler: () => void;
   private lastScrollTop: number = 0;
   private playstoreBannerObserver: MutationObserver | null = null;
@@ -222,18 +223,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           this.isloggedIn = SharedService.isLoggedIn();
           
           // Update username display
-          const userName = SharedService.FnName();
-          if (userName === "null" || userName === "undefined" || userName === "") {
-            this.username = '';
-            this.streak = '';
-          } else {
-            try {
-              this.username = JSON.parse(userName);
-            } catch (e) {
-              this.username = userName;
-            }
-            this.getStreak();
-          }
+          this.loadUsername();
+          this.fetchUserNameFromApi();
           
           this.onboardingService.setDataRecievedState(true);
           console.log('User authenticated via authtoken:', res['Name'], 'Subscriber:', this.isSubscriber);
@@ -276,24 +267,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isSubscriber = SharedService.isSubscriber();
     console.log('Is Subscriber:', this.isSubscriber);
 
-    // Safely get username - handle guest users who might have empty/null username
-    const userName = SharedService.FnName();
-    
-    // Check if userName is "null", "undefined", or empty
-    if (userName === "null" || userName === "undefined" || userName === "") {
-      this.username = '';
-      this.streak = '';
-    } else {
-      // Try to parse as JSON (in case it's stored as JSON string)
-      try {
-        this.username = JSON.parse(userName);
-      } catch (e) {
-        // If parsing fails, use the string as-is
-        this.username = userName;
-      }
-      
-      // Fetch streak for logged-in users
-      this.getStreak();
+    this.loadUsername();
+    if (this.isloggedIn) {
+      this.subscribeToUserDetails();
+      this.fetchUserNameFromApi();
     }
 
     // Restore state from store
@@ -1705,6 +1682,69 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
     }
+    if (this.userDetailsSubscription) {
+      this.userDetailsSubscription.unsubscribe();
+    }
+  }
+
+  private loadUsername(): void {
+    SharedService.syncUserDisplayNameFromLogin();
+    const userName = SharedService.FnName();
+
+    if (!userName || userName === 'null' || userName === 'undefined') {
+      this.username = '';
+      this.streak = '';
+      return;
+    }
+
+    this.username = userName;
+    if (this.isloggedIn) {
+      this.getStreak();
+    }
+  }
+
+  private subscribeToUserDetails(): void {
+    this.userDetailsSubscription = this.onboardingService.getUserDetails.subscribe(res => {
+      if (res?.[0]) {
+        this.applyUserNameFromApi(res[0]);
+      }
+    });
+  }
+
+  private fetchUserNameFromApi(): void {
+    const userId = SharedService.getUserId();
+    if (!userId) {
+      return;
+    }
+
+    this.onboardingService.getuser(userId).subscribe((res: any) => {
+      if (res?.[0]) {
+        this.applyUserNameFromApi(res[0]);
+      }
+    });
+  }
+
+  private applyUserNameFromApi(user: any): void {
+    const fullName = (user?.Name || [user?.FName, user?.LName].filter(Boolean).join(' ')).trim();
+    if (!fullName || fullName.toLowerCase() === 'guest') {
+      return;
+    }
+
+    SharedService.syncUserDisplayName(fullName);
+
+    try {
+      const loginResponse = localStorage.getItem('loginResponse');
+      if (loginResponse) {
+        const loginData = JSON.parse(loginResponse);
+        loginData.Name = fullName;
+        localStorage.setItem('loginResponse', JSON.stringify(loginData));
+      }
+    } catch {
+      // ignore malformed loginResponse
+    }
+
+    this.username = SharedService.FnName();
+    this.cdr.detectChanges();
   }
 
   /**
