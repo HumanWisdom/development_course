@@ -209,7 +209,13 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
         const googleButton = buttonContainer.querySelector('div[id*="google"], div[class*="abcRioButton"], div[class*="gsi"], div[role="button"]') as HTMLElement;
         if (googleButton) {
           // Hide the Google button but keep it functional
-          buttonContainer.style.position = 'relative';
+          buttonContainer.style.position = 'absolute';
+          buttonContainer.style.opacity = '0';
+          buttonContainer.style.width = '100%';
+          buttonContainer.style.height = '100%';
+          buttonContainer.style.top = '0';
+          buttonContainer.style.left = '0';
+          buttonContainer.style.zIndex = '1';
           googleButton.style.opacity = '0';
           googleButton.style.position = 'absolute';
           googleButton.style.pointerEvents = 'auto';

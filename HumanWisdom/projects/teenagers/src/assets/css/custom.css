@@ -34389,7 +34389,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #EE9596 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
   font-weight: 600;
@@ -37482,13 +37482,13 @@ div.contentdiv p {
   margin-bottom: 8px;
 }
 
-.resource-thumbnail{
-    width: 100% !important;
-    max-width: 50px !important;
-    height: 50px !important;
-    border-radius: 6px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    object-fit: cover !important;
+.resource-thumbnail {
+  width: 100% !important;
+  max-width: 50px !important;
+  height: 50px !important;
+  border-radius: 6px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  object-fit: cover !important;
 }
