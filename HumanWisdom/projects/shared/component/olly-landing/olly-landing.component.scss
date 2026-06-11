@@ -345,7 +345,7 @@
 
 .olly-modal-container {
   width: 335px;
-  height: 440px;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
@@ -356,10 +356,9 @@
 
 .olly-modal-header {
   width: 335px;
-  height: 72px;
   background-color: #FFD889; // Light golden header background
   box-sizing: border-box;
-  padding: 20px 30px;
+  padding: 15px 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,19 +374,19 @@
     letter-spacing: 0%;
     text-align: center;
     color:black;
+    margin: 0;
   }
 }
 
 .olly-modal-content {
   width: 335px;
-  height: 359px; // Remaining height to total 440px (440 - 72)
   background-color: #FFE8BB; // Very light cream background
   box-sizing: border-box;
-  padding: 30px;
+  padding: 20px 30px 30px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -436,13 +435,13 @@
 
 .olly-modal-text-container {
   width: 275px;
-  height: 225px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   box-sizing: border-box;
   overflow-y: auto; // Just in case of overflow on smaller font renderings
   text-align: left;
+  margin-bottom: 20px;
 }
 
 .olly-modal-paragraph {
