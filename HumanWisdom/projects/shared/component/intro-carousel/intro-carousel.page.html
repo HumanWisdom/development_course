@@ -20,7 +20,7 @@
                   <!-- Footer Navigation -->
                   <div class="carousel-footer" *ngIf="currentSection < 5">
                     <div class="footer-top">
-                      <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
+                      <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? '' : 'fc_ffffff'"
                         *ngIf="currentSection < 4">Skip</a>
                     </div>
                     <div class="footer-bottom">
