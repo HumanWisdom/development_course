@@ -116,7 +116,8 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself, reduce stress and anxiety, improve your relationships and handle life better.
+                      Understand yourself. Reduce stress &amp; anxiety. Strengthen your relationships.<br>
+                      Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">Human Skills</a> that AI cannot replace.
                     </p>
                   </div>
                 </div>
@@ -649,7 +650,7 @@ require_once('./includes/security_config.php');
                   <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                 </video>
                 <button type="button" class="tools-play-btn tools-video-play-btn" aria-label="Play breathing exercise" id="fbn-play-btn">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v14/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" aria-hidden="true" />
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" aria-hidden="true" />
                 </button>
               </div>
               <div class="tools-card-meta">
@@ -719,7 +720,7 @@ require_once('./includes/security_config.php');
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="How can we be happier" class="tools-thumb-img" />
                 <span class="tools-card-media-badge" aria-hidden="true">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v14/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" />
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" />
                 </span>
               </div>
               <div class="tools-card-meta">
@@ -1448,6 +1449,30 @@ require_once('./includes/security_config.php');
         btn.classList.add('active');
       }
     </script>
+
+    <!-- Human Skills modal -->
+    <div class="modal fade" id="humanSkillsModal" tabindex="-1" aria-labelledby="humanSkillsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content human-skills-modal">
+          <div class="human-skills-modal-header">
+            <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Human Skills</h2>
+          </div>
+          <div class="human-skills-modal-body">
+            <ul class="human-skills-list">
+              <li>Self-awareness</li>
+              <li>Emotional intelligence</li>
+              <li>Communication</li>
+              <li>Relationships</li>
+              <li>Empathy</li>
+              <li>Resilience</li>
+              <li>Confidence</li>
+              <li>Decision-making</li>
+            </ul>
+            <button type="button" class="human-skills-close-btn" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- All Modals from older version -->
     <!-- Mental wellbeing modal -->
