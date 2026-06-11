@@ -62,10 +62,10 @@ img { max-width: 100%; display: block; }
   color: rgba(255, 255, 255, 1) !important;
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link {
-  color: rgba(255, 255, 255, 1);
-  text-decoration: none;
+  color:  #ED7D6F !important;
+  text-decoration: underline;
   cursor: pointer;
- 
+  
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link:hover {
   color: #ED7D6F !important;
