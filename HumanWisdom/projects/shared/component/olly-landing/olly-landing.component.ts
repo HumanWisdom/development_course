@@ -234,12 +234,13 @@ export class OllyLandingComponent implements OnInit, OnDestroy {
   private handleChatStart(query: string): void {
     this.startChat.emit(query);
 
-    // If on standalone landing page route, navigate to the chatbot page with the query
-    const currentUrl = this.router.url;
-    if (currentUrl.includes('olly-landing')) {
-      const program = this.isAdults ? 'adults' : 'teenagers';
-      this.router.navigate([`/${program}/chat-bot`], { state: { query: query } });
+    // When embedded in chat-bot, the parent handles the emitted query.
+    if (this.router.url.includes('chat-bot')) {
+      return;
     }
+
+    const program = this.isAdults ? 'adults' : 'teenagers';
+    this.router.navigate([`/${program}/chat-bot`], { state: { query } });
   }
 
   onTopicLinkClick(): void {

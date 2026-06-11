@@ -1147,6 +1147,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       localStorage.setItem("email", res.Email);
       localStorage.setItem("pswd", this.password);
       localStorage.setItem("name", res.Name);
+      SharedService.syncUserDisplayName(res.Name);
       localStorage.setItem("first", "T");
       localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
       localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
