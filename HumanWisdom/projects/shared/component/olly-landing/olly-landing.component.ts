@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
 import { OLLY_QUESTIONS, OllyTopic } from './olly-questions';
+import { OnboardingService } from '../../services/onboarding.service';
+import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 
 @Component({
   selector: 'app-olly-landing',
@@ -74,11 +76,107 @@ export class OllyLandingComponent implements OnInit, OnDestroy {
 
   private topicIdFromNav: string | null = null;
 
-  constructor(private router: Router) {
+  userId: any;
+  saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
+  text = 2;
+  video = 3;
+  audio = 4;
+  question = 6;
+  reflection = 5;
+  feedbackSurvey = 7;
+  mediaAudio = "https://d1tenzemoxuh75.cloudfront.net";
+  mediaVideo = "https://d1tenzemoxuh75.cloudfront.net";
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private service: OnboardingService,
+    private services: AdultsService
+  ) {
     // Must read getCurrentNavigation() in the constructor — it returns null by the time ngOnInit fires for lazy-loaded modules
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras?.state && navigation.extras.state['topicId']) {
       this.topicIdFromNav = navigation.extras.state['topicId'].toString();
+    }
+
+    let authtoken: any;
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      authtoken = params?.authtoken;
+    });
+
+    if (authtoken) {
+      authtoken = JSON.parse(localStorage.getItem("token"));
+    }
+
+    if (authtoken) {
+      this.service.setDataRecievedState(false);
+      localStorage.setItem('socialLogin', 'T');
+      this.services.verifytoken(authtoken).subscribe((res) => {
+        if (res) {
+          localStorage.setItem("email", res['Email']);
+          localStorage.setItem("name", res['Name']);
+          let namedata = localStorage.getItem('name')?.split(' ');
+          localStorage.setItem("FnName", namedata?.[0] || '');
+          localStorage.setItem("LName", namedata?.[1] || '');
+          localStorage.setItem("Subscriber", res['Subscriber']);
+          this.userId = res['UserId'];
+          localStorage.setItem("userId", JSON.stringify(this.userId));
+          this.loginadult(res);
+          this.service.setDataRecievedState(true);
+        } else {
+          localStorage.setItem("email", 'guest@humanwisdom.me');
+          localStorage.setItem("pswd", '12345');
+          localStorage.setItem('guest', 'T');
+          localStorage.setItem('isloggedin', 'F');
+          this.service.setDataRecievedState(true);
+        }
+      }, error => {
+        localStorage.setItem("email", 'guest@humanwisdom.me');
+        localStorage.setItem("pswd", '12345');
+        localStorage.setItem('guest', 'T');
+        localStorage.setItem('isloggedin', 'F');
+      });
+    } else {
+      this.service.setDataRecievedState(true);
+    }
+  }
+
+  loginadult(res: any) {
+    let loginResponse = res;
+    this.userId = res.UserId;
+    if (res['Email'] === "guest@humanwisdom.me") localStorage.setItem('guest', 'T');
+    else localStorage.setItem("guest", 'F');
+    sessionStorage.setItem("loginResponse", JSON.stringify(loginResponse));
+    localStorage.setItem("loginResponse", JSON.stringify(loginResponse));
+    localStorage.setItem("token", JSON.stringify(res.access_token));
+    localStorage.setItem("Subscriber", res.Subscriber);
+    localStorage.setItem("userId", JSON.stringify(this.userId));
+    localStorage.setItem("email", res['Email']);
+    localStorage.setItem("name", res.Name);
+    localStorage.setItem("text", JSON.stringify(this.text));
+    localStorage.setItem("video", JSON.stringify(this.video));
+    localStorage.setItem("audio", JSON.stringify(this.audio));
+    localStorage.setItem("question", JSON.stringify(this.question));
+    localStorage.setItem("reflection", JSON.stringify(this.reflection));
+    localStorage.setItem("feedbackSurvey", JSON.stringify(this.feedbackSurvey));
+    localStorage.setItem("mediaAudio", JSON.stringify(this.mediaAudio));
+    localStorage.setItem("mediaVideo", JSON.stringify(this.mediaVideo));
+    if (res.UserId === 0) {
+      // Handle guest case
+    } else {
+      sessionStorage.setItem("loginResponse", JSON.stringify(loginResponse));
+      localStorage.setItem("userId", JSON.stringify(res.UserId));
+      localStorage.setItem("token", JSON.stringify(res.access_token));
+      if (this.saveUsername) {
+        localStorage.setItem("userId", JSON.stringify(res.UserId));
+        localStorage.setItem("userEmail", JSON.stringify(res.Email));
+        localStorage.setItem("userName", JSON.stringify(res.Name));
+      } else {
+        sessionStorage.setItem("userId", JSON.stringify(res.UserId));
+        sessionStorage.setItem("userEmail", JSON.stringify(res.Email));
+        sessionStorage.setItem("userName", JSON.stringify(res.Name));
+      }
     }
   }
 

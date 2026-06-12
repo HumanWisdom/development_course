@@ -34182,7 +34182,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  background: #EE9596 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
   padding: 10px 20px;
   color: #FFF !important;
   font-size: 12px;
