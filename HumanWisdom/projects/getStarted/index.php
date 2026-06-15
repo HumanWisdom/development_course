@@ -1454,7 +1454,8 @@ require_once('./includes/security_config.php');
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content human-skills-modal">
           <div class="human-skills-modal-header">
-            <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Human Skills</h2>
+            <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Life skills</h2>
+            <p class="human-skills-modal-subtitle">Feel better. Do better.</p>
           </div>
           <div class="human-skills-modal-body">
             <ul class="human-skills-list">
