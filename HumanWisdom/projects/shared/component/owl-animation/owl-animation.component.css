@@ -457,3 +457,9 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 
 }
+
+/* Teenagers: align owl with shorter footer */
+:host(.teenager-theme) .owl-animation-wrapper,
+:host(.teenager-theme) .owl-animation-wrapper.corner {
+  bottom: 48px;
+}

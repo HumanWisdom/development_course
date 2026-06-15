@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
@@ -11,8 +11,9 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
   templateUrl: './olly-landing.component.html',
   styleUrls: ['./olly-landing.component.scss']
 })
-export class OllyLandingComponent implements OnInit, OnDestroy {
+export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   @Input() isIntegrated: boolean = false;
+  @Input() startInQuestionsView: boolean = false;
   @Output() startChat = new EventEmitter<string>();
   @Output() viewChanged = new EventEmitter<boolean>();
   
@@ -247,6 +248,16 @@ export class OllyLandingComponent implements OnInit, OnDestroy {
     }
 
     this.initOllyAnimation();
+
+    if (this.startInQuestionsView) {
+      this.toggleQuestionsView(true);
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['startInQuestionsView'] && changes['startInQuestionsView'].currentValue) {
+      this.toggleQuestionsView(true);
+    }
   }
 
   ngOnDestroy(): void {
@@ -356,10 +367,11 @@ export class OllyLandingComponent implements OnInit, OnDestroy {
       this.topicsList.forEach(topic => {
         this.expandedTopics[topic.fragment] = false;
       });
-      if (this.selectedTopic) {
-        this.expandedTopics[this.selectedTopic.fragment] = true;
-        this.scrollToActiveTopic(this.selectedTopic.fragment);
-      }
+      // Do not expand any topic by default when opening questions view
+      // if (this.selectedTopic) {
+      //   this.expandedTopics[this.selectedTopic.fragment] = true;
+      //   this.scrollToActiveTopic(this.selectedTopic.fragment);
+      // }
       // Autofocus the questions search input
       setTimeout(() => {
         const inputEl = document.querySelector('.questions-search-input') as HTMLInputElement;

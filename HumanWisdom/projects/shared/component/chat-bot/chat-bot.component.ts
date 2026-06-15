@@ -37,7 +37,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   private cachedHistoryUserId: number | null = null;
   private historyCheckInProgress: boolean = false;
   isAdults = false;
-  showLanding: boolean = true;
+  showLanding: boolean = false;
+  startInQuestionsView: boolean = false;
 
   // Dislike popup state
   showDislikePopup: boolean = false;
@@ -59,8 +60,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     private logeventservice: LogEventService
   ) {
     const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras?.state && navigation.extras.state['query']) {
-      this.preloadedQuery = navigation.extras.state['query'];
+    if (navigation?.extras?.state) {
+      if (navigation.extras.state['query']) {
+        this.preloadedQuery = navigation.extras.state['query'];
+      }
+      if (navigation.extras.state['startWithChat']) {
+        this.showLanding = false;
+      }
     }
   }
 
@@ -139,11 +145,14 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       this.checkTokenExpiry();
     }
 
-    // Check router history state fallback for preloaded query
-    if (!this.preloadedQuery) {
-      const historyState = window.history.state;
-      if (historyState && historyState['query']) {
+    // Check router history state fallback for preloaded query and startWithChat
+    const historyState = window.history.state;
+    if (historyState) {
+      if (!this.preloadedQuery && historyState['query']) {
         this.preloadedQuery = historyState['query'];
+      }
+      if (historyState['startWithChat']) {
+        this.showLanding = false;
       }
     }
 
@@ -267,10 +276,16 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onStartChat(query: string): void {
     this.showLanding = false;
+    this.startInQuestionsView = false;
     this.currentMessage = query;
     setTimeout(() => {
       this.onSendMessage();
     }, 50);
+  }
+
+  onChatInputClick(): void {
+    this.showLanding = true;
+    this.startInQuestionsView = true;
   }
 
   onKeyPress(event: KeyboardEvent): void {
