@@ -35,7 +35,10 @@ describe('ChatbotService', () => {
         'getAllMessages',
         'getCurrentSessionId',
         'getFullQuestionForNumber',
-        'prependHistoryMessages'
+        'prependHistoryMessages',
+        'createStreamingBotMessage',
+        'updateStreamingBotMessage',
+        'finalizeStreamingBotMessage'
       ],
       {
         messages$: of([]),
@@ -57,6 +60,7 @@ describe('ChatbotService', () => {
     });
     spyOn(SharedService, 'getprogramName').and.returnValue('adults');
     spyOn(SharedService, 'getUserId').and.returnValue(100);
+    spyOn(SharedService, 'FnName').and.returnValue('John');
 
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -84,8 +88,92 @@ describe('ChatbotService', () => {
       expect(service).toBeTruthy();
     });
 
-    it('should initialize welcome messages on construction', () => {
+    it('should not initialize welcome messages on construction', () => {
+      expect(mockChatStore.initializeWelcomeMessages).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('initializeChatGreeting', () => {
+    it('should fetch greeting from history API and initialize welcome messages', () => {
+      mockChatStore.getAllMessages.and.returnValue([]);
+
+      service.initializeChatGreeting().subscribe();
+
+      const req = httpMock.expectOne((r) => r.url.includes('history') && r.method === 'GET');
+      req.flush({
+        status: 'success',
+        history: [],
+        user_id: '100',
+        greeting: 'Hi {name}! I\'m Olly...'
+      });
+
       expect(mockChatStore.initializeWelcomeMessages).toHaveBeenCalled();
+      const welcomeMessages = mockChatStore.initializeWelcomeMessages.calls.mostRecent().args[0];
+      expect(welcomeMessages[0].content).toContain('John');
+    });
+  });
+
+  describe('sendMessageStream', () => {
+    it('should parse SSE token and done events from fetch response', (done) => {
+      mockChatStore.getCurrentSessionId.and.returnValue('session-123');
+
+      const encoder = new TextEncoder();
+      const stream = new ReadableStream({
+        start(controller) {
+          controller.enqueue(encoder.encode('data: {"token": "Hello"}\n\n'));
+          controller.enqueue(encoder.encode('data: {"status": "done", "session_id": "session-123", "allow_feedback": true}\n'));
+          controller.close();
+        }
+      });
+
+      spyOn(window, 'fetch').and.returnValue(Promise.resolve({
+        ok: true,
+        body: stream
+      } as Response));
+
+      const events: string[] = [];
+      service.sendMessageStream('Hello').subscribe({
+        next: (event) => events.push(event.type),
+        complete: () => {
+          expect(events).toEqual(['token', 'done']);
+          expect(window.fetch).toHaveBeenCalled();
+          const fetchArgs = (window.fetch as jasmine.Spy).calls.mostRecent().args;
+          expect(fetchArgs[1].headers['Content-Type']).toBe('application/x-www-form-urlencoded;charset=UTF-8');
+          expect(fetchArgs[1].body).toBe('message=Hello&session_id=session-123');
+          done();
+        },
+        error: done.fail
+      });
+    });
+
+    it('should parse start, thinking, error, and done lifecycle events', (done) => {
+      const encoder = new TextEncoder();
+      const stream = new ReadableStream({
+        start(controller) {
+          controller.enqueue(encoder.encode('data: {"status": "start"}\n\n'));
+          controller.enqueue(encoder.encode('data: {"status": "thinking", "token": ""}\n\n'));
+          controller.enqueue(encoder.encode('data: {"status": "error", "response": "Please share your concern."}\n\n'));
+          controller.enqueue(encoder.encode('data: {"status": "done"}\n'));
+          controller.close();
+        }
+      });
+
+      spyOn(window, 'fetch').and.returnValue(Promise.resolve({
+        ok: true,
+        body: stream
+      } as Response));
+
+      const events: Array<{ type: string; rawContent?: string }> = [];
+      service.sendMessageStream('hi').subscribe({
+        next: (event) => events.push({ type: event.type, rawContent: event.rawContent }),
+        complete: () => {
+          expect(events.map(e => e.type)).toEqual(['token', 'done']);
+          expect(events[0].rawContent).toBe('Please share your concern.');
+          expect(events[1].rawContent).toBe('Please share your concern.');
+          done();
+        },
+        error: done.fail
+      });
     });
   });
 
@@ -125,43 +213,8 @@ describe('ChatbotService', () => {
   });
 
   describe('sendMessage', () => {
-    it('should POST to chatbot URL with message and session_id', () => {
-      mockChatStore.getCurrentSessionId.and.returnValue('session-123');
-
-      service.sendMessage('Hello').subscribe((res) => {
-        expect(res.response).toBe('Test response');
-      });
-
-      const req = httpMock.expectOne(
-        (r) => r.url.includes('chat') && r.method === 'POST'
-      );
-      expect(req.request.body).toEqual({
-        message: 'Hello',
-        session_id: 'session-123'
-      });
-      req.flush({
-        status: 'success',
-        response: 'Test response',
-        is_followup: false,
-        session_id: 'session-123'
-      } as ChatbotResponse);
-    });
-
-    it('should omit session_id when not available', () => {
-      mockChatStore.getCurrentSessionId.and.returnValue(null);
-
-      service.sendMessage('Hi').subscribe();
-
-      const req = httpMock.expectOne(
-        (r) => r.url.includes('chat') && r.method === 'POST'
-      );
-      expect(req.request.body.session_id).toBeUndefined();
-      req.flush({
-        status: 'success',
-        response: 'Ok',
-        is_followup: false,
-        session_id: 'new-session'
-      } as ChatbotResponse);
+    it('is replaced by sendMessageStream', () => {
+      expect((service as any).sendMessage).toBeUndefined();
     });
   });
 
@@ -258,13 +311,32 @@ describe('ChatbotService', () => {
       mockChatStore.getFullQuestionForNumber.and.returnValue('Full question?');
       expect(service.getFullQuestionForNumber('1')).toBe('Full question?');
     });
+
+    it('beginStreamingBotMessage should delegate to chatStore', () => {
+      mockChatStore.createStreamingBotMessage.and.returnValue('stream-1');
+      expect(service.beginStreamingBotMessage()).toBe('stream-1');
+    });
+
+    it('updateStreamingBotMessage should delegate to chatStore', () => {
+      service.updateStreamingBotMessage('stream-1', '<p>Hi</p>');
+      expect(mockChatStore.updateStreamingBotMessage).toHaveBeenCalledWith('stream-1', '<p>Hi</p>');
+    });
+
+    it('finalizeStreamingBotMessage should delegate to chatStore', () => {
+      const payload = { htmlContent: '<p>Done</p>', sessionId: 'sess-1' };
+      service.finalizeStreamingBotMessage('stream-1', payload);
+      expect(mockChatStore.finalizeStreamingBotMessage).toHaveBeenCalledWith('stream-1', payload);
+    });
   });
 
   describe('clearMessages', () => {
     it('should clear chat and re-initialize welcome messages', () => {
       service.clearMessages();
       expect(mockChatStore.clearChat).toHaveBeenCalled();
-      expect(mockChatStore.initializeWelcomeMessages).toHaveBeenCalledTimes(2); // once in constructor, once in clearMessages
+      expect(mockChatStore.initializeWelcomeMessages).toHaveBeenCalled();
+
+      const req = httpMock.expectOne((r) => r.url.includes('history') && r.method === 'GET');
+      req.flush({ status: 'success', history: [], user_id: '100' });
     });
   });
 

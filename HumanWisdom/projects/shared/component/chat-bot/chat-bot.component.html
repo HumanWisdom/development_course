@@ -49,7 +49,7 @@
 
           <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
             <!-- Regular message content -->
-            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="message.content"
+            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"
               (click)="onMessageContentClick($event)" (keydown.enter)="onMessageContentClick($event)" tabindex="0">
             </div>
 
@@ -75,7 +75,7 @@
           </div>
 
           <!-- Give More Options Button (shown when bot offers related content or has more options) -->
-          <div *ngIf="isLast && message.sender === 'bot' && (message.offer_related || message.has_more) && !isLoading"
+          <div *ngIf="isLast && message.sender === 'bot' && (message.offer_related || message.has_more) && !isLoading && !message.isStreaming"
             class="more-options-container">
             <button class="action-button more-options-button" (click)="onGiveMoreOptions()">
               Give me more options
@@ -83,7 +83,7 @@
           </div>
 
           <!-- Feedback Buttons (Thumbs Up/Down) - OUTSIDE the message bubble -->
-          <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot'"
+          <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot' && !message.isStreaming"
             class="feedback-container">
             <button class="feedback-button thumbs-up" [class.active]="message.feedback_given === 'positive'"
               [disabled]="message.feedback_given !== null" (click)="onThumbsUp(message)" title="Helpful">
