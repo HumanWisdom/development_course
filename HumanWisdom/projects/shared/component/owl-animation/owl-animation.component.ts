@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef, HostBinding } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { OwlStore } from '../../stores/owl.store';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { LogEventService } from '../../services/log-event.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-owl-animation',
@@ -12,6 +14,10 @@ import { LogEventService } from '../../services/log-event.service';
   styleUrls: ['./owl-animation.component.css']
 })
 export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
+  @HostBinding('class.teenager-theme') get isTeenagerTheme() {
+    return SharedService.ProgramId === ProgramType.Teenagers;
+  }
+
   // Configuration: Time to wait (in milliseconds) before marking as initialized
   // Increase this value to keep the owl visible longer
   private readonly WAIT_TIME_BEFORE_INITIALIZATION = 5000; // 5 seconds

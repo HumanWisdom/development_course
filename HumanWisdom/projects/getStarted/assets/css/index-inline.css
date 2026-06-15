@@ -71,31 +71,39 @@ img { max-width: 100%; display: block; }
   color: #ED7D6F !important;
 }
 
-/* Human Skills popup */
+/* Life skills popup */
 .human-skills-modal {
   border: none;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
   max-width: 335px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #FFF9EE 0%, #FFF4E1 100%);
+  background: #FAF5F0;
 }
 .human-skills-modal-header {
   background: transparent;
-  padding: 20px 30px;
+  padding: 24px 30px 16px;
   text-align: center;
 }
 .human-skills-modal-title {
   font-family: Poppins, sans-serif;
   font-size: 21px;
-  font-weight: 600;
+  font-weight: 700;
   color: #000;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.3;
+}
+.human-skills-modal-subtitle {
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 8px 0 0;
+  line-height: 1.4;
 }
 .human-skills-modal-body {
   background: transparent;
-  padding: 24px 30px 30px;
+  padding: 8px 24px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,34 +111,38 @@ img { max-width: 100%; display: block; }
 .human-skills-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px;
+  margin: 0 0 28px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 .human-skills-list li {
   font-family: Poppins, Inter, sans-serif;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   color: #000;
   line-height: 1.5;
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0,5%);
+}
+.human-skills-list li:last-child {
+  border-bottom: none;
 }
 .human-skills-close-btn {
-  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  background: transparent;
   width: 100%;
   max-width: 275px;
   height: 50px;
-  border-radius: 30px;
-  border: none;
-  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #d5caca;;
+  color: #000;
   font-family: Poppins, Inter, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
 }
 .human-skills-close-btn:hover {
-  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 /* Hero dark gradient: rating row — light icons/text */
@@ -1072,7 +1084,7 @@ header a[href*="splash_options.php"] * {
 .tools-label-text {
   font-size: 12px;
   font-weight: 700;
-  color: #444;
+  color: rgba(0, 0, 0, 1);
   letter-spacing: 1.0px;
   text-transform: uppercase;
 }
@@ -1080,22 +1092,22 @@ header a[href*="splash_options.php"] * {
 .tools-card-title {
   font-size: 18px;
   font-weight: 400;
-  color: #000;
+  color: rgba(0, 0, 0, 1);
   margin: 0;
   line-height: 1.3;
 }
 .tools-card-duration {
   font-size: 12px;
   font-weight: 400;
-  color: #777;
+  color: rgba(0, 0, 0, 1);
   margin: 0;
 }
 /* Override global `p:hover { color: #000 !important }` so card meta stays on-brand */
 .tools-card-meta .tools-card-title:hover {
-  color: #000 !important;
+  color: rgba(0, 0, 0, 1) !important;
 }
 .tools-card-meta .tools-card-duration:hover {
-  color: #777 !important;
+  color: rgba(0, 0, 0, 1) !important;
 }
 
 /* ---- Info text (right side) ---- */
@@ -1150,11 +1162,19 @@ header a[href*="splash_options.php"] * {
   flex-shrink: 0;
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
   border: 0;
   border-radius: 50%;
   padding: 0;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
   cursor: pointer;
-  background: linear-gradient(180deg, rgba(237, 125, 111, 1) 0%, rgba(215, 88, 107, 1) 100%);
+  background-color: transparent;
+  background: linear-gradient(180deg, rgba(215, 88, 107, 1) 0%, rgba(237, 125, 111, 1) 100%);
   box-shadow: none;
   position: relative;
   display: flex;
@@ -1225,14 +1245,17 @@ header a[href*="splash_options.php"] * {
 }
 .tools-audio-time {
   flex-shrink: 0;
+  font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 400;
-  line-height: 1;
-  color: #000;
-  min-width: 28px;
+  line-height: 140%;
+  color: rgba(0, 0, 0, 1);
+  min-width: 26px;
+  opacity: 50%;
 }
 .tools-audio-time-duration {
   text-align: right;
+  color: rgba(0, 0, 0, 1);
 }
 .tools-audio-seek {
   flex: 1;
@@ -1242,7 +1265,8 @@ header a[href*="splash_options.php"] * {
   padding: 0;
   appearance: none;
   -webkit-appearance: none;
-  background: rgba(0, 0, 0, 0.25);
+  background: transparent;
+  border: none;
   border-radius: 0;
   cursor: pointer;
 }
@@ -1272,6 +1296,12 @@ header a[href*="splash_options.php"] * {
   cursor: pointer;
 }
 .tools-audio-seek::-moz-range-track {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 0;
+}
+.tools-audio-seek::-moz-range-progress {
   height: 1px;
   background: rgba(0, 0, 0, 0.25);
   border-radius: 0;
