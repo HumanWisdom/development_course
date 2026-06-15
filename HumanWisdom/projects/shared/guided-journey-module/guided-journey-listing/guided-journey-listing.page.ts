@@ -22,6 +22,7 @@ export class GuidedJourneyListingPage implements OnInit {
   isLoading = true;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
+  resumeData: any = null;
 
   constructor(
     private router: Router,
@@ -44,6 +45,10 @@ export class GuidedJourneyListingPage implements OnInit {
       this.isSubscriber = true;
     } else {
       this.isSubscriber = false;
+    }
+
+    if (this.isLoggedIn) {
+      this.getResumeData();
     }
 
     this.getGuidedJourneyList();
@@ -137,5 +142,39 @@ export class GuidedJourneyListingPage implements OnInit {
     if (url.startsWith('https://') || url.startsWith('http://')) return url;
     if (url.startsWith('/')) return `https://d1tenzemoxuh75.cloudfront.net${url}`;
     return `https://d1tenzemoxuh75.cloudfront.net/${url}`;
+  }
+
+  getResumeData() {
+    let userId = SharedService.getUserId();
+    let programId = SharedService.ProgramId;
+    this.commonService.GetLastScreen_GuidedJourney(userId, programId).subscribe((res: any) => {
+      if (res && res.length > 0 && res[0].guidedJourneyID && res[0].Days_No) {
+        this.resumeData = res[0];
+      } else {
+        this.resumeData = null;
+      }
+    }, error => {
+      this.resumeData = null;
+    });
+  }
+
+  resumeJourney() {
+    console.log('[GuidedJourney] NEW resumeJourney called - calling API fresh');
+    const userId = SharedService.getUserId();
+    const programId = SharedService.ProgramId;
+    console.log('[GuidedJourney] Calling GetLastScreen_GuidedJourney with userId:', userId, 'programId:', programId);
+    this.commonService.GetLastScreen_GuidedJourney(userId, programId).subscribe((res: any) => {
+      console.log('[GuidedJourney] API Response on button click:', JSON.stringify(res));
+      if (res && res.length > 0 && res[0].guidedJourneyID && res[0].Days_No) {
+        this.resumeData = res[0];
+        const prefix = SharedService.getprogramName();
+        this.router.navigate([`/${prefix}/guided-journeys/days`], {
+          queryParams: {
+            journeyId: this.resumeData.guidedJourneyID,
+            day: this.resumeData.Days_No
+          }
+        });
+      }
+    });
   }
 }
