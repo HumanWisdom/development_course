@@ -76,9 +76,6 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Check if program type has changed and clear chat if needed
     this.checkAndHandleProgramTypeChange();
 
-    // Load personalized greeting from /api/history
-    this.chatbotService.initializeChatGreeting().subscribe();
-
     // Ensure welcome messages are shown if store is empty (e.g., after logout)
     this.chatbotService.ensureWelcomeMessages();
 
@@ -200,6 +197,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
     const originalMessage = this.currentMessage.trim();
     this.currentMessage = '';
+    
+    // Reset height of textarea to single row
+    if (this.messageInput && this.messageInput.nativeElement) {
+      this.messageInput.nativeElement.style.height = 'auto';
+    }
+
     this.errorMessage = '';
     this.isLoading = true;
 
@@ -308,6 +311,14 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();
       this.onSendMessage();
+    }
+  }
+
+  adjustHeight(event?: Event): void {
+    const textarea = event ? (event.target as HTMLTextAreaElement) : (this.messageInput?.nativeElement as HTMLTextAreaElement);
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
     }
   }
 

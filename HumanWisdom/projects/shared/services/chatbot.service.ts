@@ -107,7 +107,7 @@ export class ChatbotService {
     const welcomeMessages: ChatMessage[] = [
       {
         id: 'welcome-intro-1',
-        content: introText,
+        content: randomIntro,
         sender: 'bot',
         timestamp: new Date()
       }
@@ -496,7 +496,6 @@ export class ChatbotService {
   clearMessages(): void {
     this.chatStore.clearChat();
     this.initializeWelcomeMessage();
-    this.initializeChatGreeting().subscribe();
   }
 
   ensureWelcomeMessages(): void {
