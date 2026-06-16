@@ -53,6 +53,27 @@
   position: relative;
   z-index: 1000; // Ensure container is above other elements
   pointer-events: auto; // Enable clicks
+
+  // Backend-injected resource thumbnails
+  :host ::ng-deep .chat-thumbnails,
+  .chat-thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+
+    a {
+      display: inline-block;
+      text-decoration: none !important;
+    }
+
+    img {
+      max-width: 120px;
+      max-height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
   
   // Global anchor styles for the entire chat container
   a {
