@@ -975,3 +975,21 @@
     }
   }
 }
+
+.welcome-questions-container {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  
+  .questions-link {
+    color: #1f5bd6 !important;
+    text-decoration: underline !important;
+    cursor: pointer !important;
+    font-weight: 500;
+    font-size: 15px;
+    
+    &:hover {
+      color: #1f5bd6 !important;
+      text-decoration: underline !important;
+    }
+  }
+}
