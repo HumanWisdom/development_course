@@ -51,7 +51,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   searchResult = [];
   personalisedforyou = []
 
-  public isExpanded = false;
+  public isExpanded = true;
 
   indList = []
   isEnableHam = true;

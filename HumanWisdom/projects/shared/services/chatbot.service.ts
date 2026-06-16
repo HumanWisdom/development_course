@@ -74,10 +74,6 @@ export class ChatbotService {
   }
 
   private initializeWelcomeMessage(): void {
-    // Get the program name for the community forum link
-    const programName = SharedService.getprogramName();
-    const communityForumUrl = `/${programName}/forum`;
-
     const introMessages = [
       `Hi  I’m Olly — how are you today? Can I help?`,
       `Welcome!  I’m Olly, here to help you find what you need.`,
@@ -94,14 +90,6 @@ export class ChatbotService {
         content: randomIntro,
         sender: 'bot',
         timestamp: new Date()
-      },
-      {
-        id: 'welcome-intro-2',
-        content: `You can also ask a question in the <a href="${communityForumUrl}" onclick="window.open('${communityForumUrl}', '_self'); return false;">community forum</a>, where one of our coaches will answer your question.`,
-        sender: 'bot',
-        timestamp: new Date(),
-        hideAvatar: true,
-        hideSender: true
       }
     ];
     this.chatStore.initializeWelcomeMessages(welcomeMessages);

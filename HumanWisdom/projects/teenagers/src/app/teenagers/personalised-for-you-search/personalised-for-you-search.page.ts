@@ -76,7 +76,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public fiveCirclesP: any
   public hcwhP: any
   public percentage: any
-  public isExpanded = false;
+  public isExpanded = true;
   wisdomExerciseList = [];
   mediaPercent: any
   freeScreens = []
