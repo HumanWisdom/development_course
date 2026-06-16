@@ -41,6 +41,27 @@ body.page-teenagers .div_dykt {
   padding: 50px 20px;
 }
 
+/* Inspiring section — Figma title/subtitle color rgba(18, 15, 64, 1) */
+body.page-teenagers .div_inspire h3,
+body.page-teenagers .div_inspire h5,
+body.page-teenagers .div_inspire h3:hover,
+body.page-teenagers .div_inspire h5:hover {
+  color: #120F40 !important;
+}
+
+body.page-teenagers .div_inspire h5 {
+  line-height: 150% !important;
+}
+
+/* Pricing — full-width blue band (matches index frame-wrapper-9) */
+body.page-teenagers #div_subscription.frame-wrapper-9 {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
 .dflex {
   display: flex !important;
   justify-content: start;   
@@ -48,35 +69,10 @@ body.page-teenagers .div_dykt {
   flex-wrap: wrap;   
 }
 
-/* Desktop — subscription “Start your free trial” (fixed width like staging; not width:100%) */
+/* Desktop — subscription section spacing */
 @media (min-width: 768px) {
-  body.page-teenagers #teenagers-AnnualType {
-    display: block !important;
-    text-align: center !important;
-  }
-
-  body.page-teenagers #teenagers-AnnualType > div {
-    width: auto !important;
-    max-width: none !important;
-    display: block !important;
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  body.page-teenagers #teenagers-AnnualType a#teenagersPricing {
-    display: inline-block !important;
-    width: auto !important;
-  }
-
-  body.page-teenagers #teenagers-AnnualType .btn_tff_teen_sub,
-  body.page-teenagers #teenagers-AnnualType .btn_tff {
-    width: 380px !important;
-    max-width: 100% !important;
-    height: 48px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
+  body.page-teenagers main#main > section.mt40px {
+    margin-top: 100px !important;
   }
 }
 
@@ -469,62 +465,6 @@ body.page-teenagers .div_dykt {
   body.page-teenagers .sap h4 {
     text-align: center !important;
     margin: 0 auto !important;
-  }
-
-  /* Subscription title — 18px (override About Us 27px on .div_subscription h2) */
-  body.page-teenagers main#main #div_subscription h2.fs_24px,
-  body.page-teenagers main#main #div_subscription h2.fc_834b66,
-  body.page-teenagers main#main #div_subscription .div_subscription h2 {
-    font-size: 18px !important;
-    line-height: 140% !important;
-  }
-
-  /* Subscription block — Figma mobile content width 335px */
-  body.page-teenagers #div_subscription .w-300px {
-    width: 335px !important;
-    max-width: calc(100% - 40px) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  body.page-teenagers #div_subscription .btn_subscription {
-    width: 100% !important;
-    max-width: 335px !important;
-  }
-
-  /* Start your free trial — 335px, centered */
-  body.page-teenagers #teenagers-AnnualType {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  body.page-teenagers #teenagers-AnnualType > div {
-    width: 335px !important;
-    max-width: calc(100% - 40px) !important;
-    display: flex !important;
-    justify-content: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  body.page-teenagers #teenagers-AnnualType a#teenagersPricing {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  body.page-teenagers #teenagers-AnnualType .btn_tff_teen_sub,
-  body.page-teenagers #teenagers-AnnualType .btn_tff {
-    width: 335px !important;
-    max-width: 100% !important;
-    height: 48px !important;
-    border-radius: 24px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
   }
 }
 
