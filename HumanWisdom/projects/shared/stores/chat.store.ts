@@ -22,6 +22,7 @@ export interface ChatMessage {
   is_followup?: boolean; // Whether this is a followup question
   feedback_given?: 'positive' | 'negative' | null; // Track user feedback
   has_more?: boolean; // Whether there are more options available
+  isStreaming?: boolean; // Whether the bot message is still being streamed
 }
 
 /**
@@ -397,64 +398,123 @@ export class ChatStore extends ComponentStore<ChatState> {
         is_followup?: boolean,
         has_more?: boolean
       }) => {
-        const { content, sessionId, allow_feedback, offer_related, is_followup, has_more } = payload;
-        
-        if (sessionId) {
-          this.setSessionId(sessionId);
-        }
-
-        console.log('🔵 ADD BOT MESSAGE - Raw content received:', content);
-        console.log('🔵 Content type:', typeof content);
-        console.log('🔵 Has <li> tags:', content.includes('<li>'));
-        console.log('🔵 Has <ol> tags:', content.includes('<ol>'));
-        
-        // Extract suggestions from bot message if it contains numbered list
-        const suggestions = this.extractSuggestions(content);
-
-        console.log('🔵 Extracted suggestions from bot message:', suggestions);
-
-        // Update active suggestions if new suggestions are found
-        if (suggestions.length > 0) {
-          console.log('🔵 Setting new active suggestions:', suggestions);
-          this.setActiveSuggestions(suggestions);
-        } else {
-          console.log('🔵 No suggestions found, clearing active suggestions');
-        }
-
-        // Format content - only convert newlines to <br> if content doesn't already have HTML tags
-        let formattedContent = content;
-        
-        // Check if content already contains HTML tags (like <div>, <p>, <a>, etc.)
-        const hasHtmlTags = /<\/?[a-z][\s\S]*>/i.test(content);
-        
-        if (!hasHtmlTags) {
-          // Only convert newlines to <br> if no HTML tags present
-          formattedContent = content.replace(/\n/g, '<br>');
-        }
-        
-        if (suggestions.length > 0) {
-          // Remove the numbered list from the message text since we're showing it as buttons
-          formattedContent = this.removeNumberedListFromContent(formattedContent);
-          console.log('🔵 Content after removing list:', formattedContent);
-        }
-
-        const botMessage: ChatMessage = {
-          id: this.generateMessageId(),
-          content: formattedContent,
-          sender: 'bot',
-          timestamp: new Date(),
-          suggestions: suggestions.length > 0 ? suggestions : undefined,
-          allow_feedback,
-          offer_related,
-          is_followup,
-          has_more,
-          feedback_given: null
-        };
-        console.log('🔵 Created bot message with suggestions:', botMessage.suggestions);
+        const botMessage = this.buildBotMessage(payload);
         this.addMessage(botMessage);
       })
     )
   );
+
+  /**
+   * Create a placeholder bot message for SSE streaming.
+   */
+  createStreamingBotMessage(): string {
+    const id = this.generateMessageId();
+    const botMessage: ChatMessage = {
+      id,
+      content: '',
+      sender: 'bot',
+      timestamp: new Date(),
+      isStreaming: true,
+      feedback_given: null
+    };
+    this.addMessage(botMessage);
+    return id;
+  }
+
+  /**
+   * Update streamed bot message content as tokens arrive.
+   */
+  updateStreamingBotMessage(messageId: string, htmlContent: string): void {
+    this.updateMessage({
+      id: messageId,
+      updates: { content: htmlContent }
+    });
+  }
+
+  /**
+   * Finalize a streamed bot message with metadata from the done SSE event.
+   */
+  finalizeStreamingBotMessage(
+    messageId: string,
+    payload: {
+      htmlContent: string;
+      sessionId?: string;
+      allow_feedback?: boolean;
+      offer_related?: boolean;
+      is_followup?: boolean;
+      has_more?: boolean;
+    }
+  ): void {
+    const builtMessage = this.buildBotMessage({
+      content: payload.htmlContent,
+      sessionId: payload.sessionId,
+      allow_feedback: payload.allow_feedback,
+      offer_related: payload.offer_related,
+      is_followup: payload.is_followup,
+      has_more: payload.has_more
+    });
+
+    this.updateMessage({
+      id: messageId,
+      updates: {
+        content: builtMessage.content,
+        suggestions: builtMessage.suggestions,
+        allow_feedback: builtMessage.allow_feedback,
+        offer_related: builtMessage.offer_related,
+        is_followup: builtMessage.is_followup,
+        has_more: builtMessage.has_more,
+        feedback_given: null,
+        isStreaming: false
+      }
+    });
+  }
+
+  private buildBotMessage(payload: {
+    content: string;
+    sessionId?: string;
+    allow_feedback?: boolean;
+    offer_related?: boolean;
+    is_followup?: boolean;
+    has_more?: boolean;
+  }): ChatMessage {
+    const { content, sessionId, allow_feedback, offer_related, is_followup, has_more } = payload;
+
+    if (sessionId) {
+      this.setSessionId(sessionId);
+    }
+
+    const suggestions = this.extractSuggestions(content);
+
+    if (suggestions.length > 0) {
+      this.setActiveSuggestions(suggestions);
+    } else {
+      this.clearActiveSuggestions();
+    }
+
+    let formattedContent = content;
+    const hasHtmlTags = /<\/?[a-z][\s\S]*>/i.test(content);
+
+    if (!hasHtmlTags) {
+      formattedContent = content.replace(/\n/g, '<br>');
+    }
+
+    if (suggestions.length > 0) {
+      formattedContent = this.removeNumberedListFromContent(formattedContent);
+    }
+
+    return {
+      id: this.generateMessageId(),
+      content: formattedContent,
+      sender: 'bot',
+      timestamp: new Date(),
+      suggestions: suggestions.length > 0 ? suggestions : undefined,
+      allow_feedback,
+      offer_related,
+      is_followup,
+      has_more,
+      feedback_given: null
+    };
+  }
 
   /**
    * Add typing indicator effect

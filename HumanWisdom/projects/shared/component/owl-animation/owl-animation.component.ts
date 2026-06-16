@@ -320,7 +320,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   openChat() {
     this.logeventservice.logEvent('Click_olly_chat');
-    this.router.navigate(['/adults/chat-bot']);
+    const program = SharedService.ProgramId === ProgramType.Teenagers ? 'teenagers' : 'adults';
+    this.router.navigate([`/${program}/chat-bot`], { state: { startWithChat: true } });
   }
 
   private detectMobile(): boolean {

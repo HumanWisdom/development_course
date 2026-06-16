@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, 
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { ChatbotService, HistoryMessage } from '../../services/chatbot.service';
+import { ChatbotService, HistoryMessage, ChatStreamEvent } from '../../services/chatbot.service';
 import { ChatStore, ChatMessage } from '../../stores/chat.store';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
@@ -37,7 +37,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   private cachedHistoryUserId: number | null = null;
   private historyCheckInProgress: boolean = false;
   isAdults = false;
-  showLanding: boolean = true;
+  showLanding: boolean = false;
+  startInQuestionsView: boolean = false;
 
   // Dislike popup state
   showDislikePopup: boolean = false;
@@ -59,8 +60,13 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     private logeventservice: LogEventService
   ) {
     const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras?.state && navigation.extras.state['query']) {
-      this.preloadedQuery = navigation.extras.state['query'];
+    if (navigation?.extras?.state) {
+      if (navigation.extras.state['query']) {
+        this.preloadedQuery = navigation.extras.state['query'];
+      }
+      if (navigation.extras.state['startWithChat']) {
+        this.showLanding = false;
+      }
     }
   }
 
@@ -136,11 +142,14 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       this.checkTokenExpiry();
     }
 
-    // Check router history state fallback for preloaded query
-    if (!this.preloadedQuery) {
-      const historyState = window.history.state;
-      if (historyState && historyState['query']) {
+    // Check router history state fallback for preloaded query and startWithChat
+    const historyState = window.history.state;
+    if (historyState) {
+      if (!this.preloadedQuery && historyState['query']) {
         this.preloadedQuery = historyState['query'];
+      }
+      if (historyState['startWithChat']) {
+        this.showLanding = false;
       }
     }
 
@@ -188,6 +197,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
     const originalMessage = this.currentMessage.trim();
     this.currentMessage = '';
+    
+    // Reset height of textarea to single row
+    if (this.messageInput && this.messageInput.nativeElement) {
+      this.messageInput.nativeElement.style.height = 'auto';
+    }
+
     this.errorMessage = '';
     this.isLoading = true;
 
@@ -204,28 +219,49 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Nudge the view slightly down immediately so the typing area / new content is visible
     setTimeout(() => this.scrollSlightlyDown(), 100);
 
-    // Send original message to chatbot API (keep it as number for API)
-    this.chatbotService.sendMessage(originalMessage).subscribe({
-      next: (response) => {
-        this.chatbotService.removeTypingIndicator();
-        this.chatbotService.setTyping(false);
+    // Send original message to chatbot API via SSE streaming
+    this.handleStreamingChatResponse(originalMessage);
+  }
 
-        if (response.status === 'success') {
-          this.chatbotService.addBotMessage(
-            response.response, 
-            response.session_id,
-            response.allow_feedback,
-            response.offer_related,
-            response.is_followup,
-            response.has_more
-          );
-          // Note: Scrolling is handled automatically by messages$ subscription
-        } else if (response.response === 'Unauthorized') {
-          this.handleUnauthorizedError();
-        } else {
-          this.errorMessage = 'Sorry, I encountered an error. Please try again.';
+  private handleStreamingChatResponse(originalMessage: string): void {
+    let streamingMessageId: string | null = null;
+
+    this.chatbotService.sendMessageStream(originalMessage).subscribe({
+      next: (event: ChatStreamEvent) => {
+        if (event.type === 'token') {
+          if (!streamingMessageId) {
+            this.chatbotService.removeTypingIndicator();
+            this.chatbotService.setTyping(false);
+            streamingMessageId = this.chatbotService.beginStreamingBotMessage();
+          }
+          this.chatbotService.updateStreamingBotMessage(streamingMessageId, event.htmlContent);
+        } else if (event.type === 'done') {
+          this.chatbotService.removeTypingIndicator();
+          this.chatbotService.setTyping(false);
+
+          if (streamingMessageId) {
+            this.chatbotService.finalizeStreamingBotMessage(streamingMessageId, {
+              htmlContent: event.htmlContent,
+              sessionId: event.session_id,
+              allow_feedback: event.allow_feedback,
+              offer_related: event.offer_related,
+              is_followup: event.is_followup,
+              has_more: event.has_more
+            });
+          } else if (event.rawContent) {
+            this.chatbotService.addBotMessage(
+              event.htmlContent,
+              event.session_id,
+              event.allow_feedback,
+              event.offer_related,
+              event.is_followup,
+              event.has_more
+            );
+          } else {
+            this.errorMessage = 'Sorry, I encountered an error. Please try again.';
+          }
+          this.isLoading = false;
         }
-        this.isLoading = false;
       },
       error: (error) => {
         console.error('Chatbot API Error:', error);
@@ -237,23 +273,52 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
           this.errorMessage = 'Sorry, I\'m having trouble connecting. Please check your internet connection and try again.';
         }
         this.isLoading = false;
-        // Note: Scrolling is handled automatically by messages$ subscription
       }
     });
   }
 
   onStartChat(query: string): void {
     this.showLanding = false;
+    this.startInQuestionsView = false;
     this.currentMessage = query;
     setTimeout(() => {
       this.onSendMessage();
     }, 50);
   }
 
+  onChatInputClick(): void {
+    this.showLanding = true;
+    this.startInQuestionsView = true;
+  }
+
+  onQuestionsLinkClick(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.showLanding = true;
+    this.startInQuestionsView = true;
+  }
+
+  onLandingViewChanged(isQuestionsView: boolean): void {
+    // When the back arrow in questions view is pressed, viewChanged emits false.
+    // Hide the olly-landing and return to the chat view.
+    if (!isQuestionsView) {
+      this.showLanding = false;
+      this.startInQuestionsView = false;
+    }
+  }
+
   onKeyPress(event: KeyboardEvent): void {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();
       this.onSendMessage();
+    }
+  }
+
+  adjustHeight(event?: Event): void {
+    const textarea = event ? (event.target as HTMLTextAreaElement) : (this.messageInput?.nativeElement as HTMLTextAreaElement);
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
     }
   }
 
@@ -752,22 +817,15 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   sanitizeHtml(html: string): SafeHtml {
-    
-
-    // Add inline styles to anchor tags as a workaround
+    // Style anchor tags and allow backend-injected thumbnail HTML (<a>/<img>)
     const styledHtml = html.replace(/<a\s+([^>]*?)>/gi, (match, attributes) => {
-      // Check if style attribute already exists
       if (attributes.includes('style=')) {
         return match.replace(/style="([^"]*)"/, 'style="$1; font-weight:500; text-decoration: underline !important;"');
-      } else {
-        return `<a ${attributes} style="font-weight:500; text-decoration: underline !important; cursor: pointer !important;">`;
       }
+      return `<a ${attributes} style="font-weight:500; text-decoration: underline !important; cursor: pointer !important;">`;
     });
 
-    
-    const sanitized = this.sanitizer.bypassSecurityTrustHtml(styledHtml);
-   
-    return sanitized;
+    return this.sanitizer.bypassSecurityTrustHtml(styledHtml);
   }
 
   styleAnchorTags(): void {

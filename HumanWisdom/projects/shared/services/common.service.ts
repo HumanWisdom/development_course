@@ -687,4 +687,8 @@ export class CommonService {
   clickGuidedJourneyDay(id: any): Observable<any> {
     return this.http.post(this.path + `/clickGuidedJourneyDays/${id}`, null);
   }
+
+  GetLastScreen_GuidedJourney(userId: any, programId: any): Observable<any> {
+    return this.http.get(this.path + `/GetLastScreen_GuidedJourney/${userId}/${programId}`);
+  }
 }

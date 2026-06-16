@@ -371,6 +371,14 @@ export class GuidedJourneyDaysPage implements OnInit {
       this.totalDays = days.length > 0 ? Math.max(...days) : 0;
     }
 
+    // Track day visit so GetLastScreen_GuidedJourney returns this day
+    if (this.isLoggedIn && this.currentDay > 0 && this.displayExercises.length > 0) {
+      const firstExercise = this.displayExercises[0];
+      if (firstExercise.GuidedJourneyDayID) {
+        this.commonService.clickGuidedJourneyDay(firstExercise.GuidedJourneyDayID).subscribe();
+      }
+    }
+
     // Scroll to active day
     this.scrollToActiveDay();
   }

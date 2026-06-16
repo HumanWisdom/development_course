@@ -51,6 +51,15 @@
                 </div>
               </div>
 
+              <!-- CONTINUE BUTTON -->
+              <div class="row center_flex" *ngIf="resumeData" style="margin-bottom: 20px;">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <button type="button" class="btn mb0 btn_begin_here" (click)="resumeJourney()">
+                    Continue where you left
+                  </button>
+                </div>
+              </div>
+
               <div [ngClass]="isAdults ? 'toc_adiv_03' : 'toc_adiv_02'" class="mt20px">
                 <ng-container *ngIf="isLoading">
                   <div class="row mt20px">

@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { Observable, Observer } from 'rxjs';
+import { tap, map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 import { Router } from '@angular/router';
 import { SharedService } from './shared.service';
 import { ProgramType } from '../models/program-model';
 import { ChatStore, ChatMessage } from '../stores/chat.store';
 import { environment } from '../../../../HumanWisdom/projects/environments/environment';
+import { renderChatMarkdown } from '../utils/chat-markdown.util';
+
 export interface ChatbotRequest {
   message: string;
   session_id?: string;
@@ -17,10 +20,30 @@ export interface ChatbotResponse {
   response: string;
   is_followup: boolean;
   session_id: string;
-  allow_feedback?: boolean; // Whether to show thumbs up/down
-  offer_related?: boolean; // Whether to offer related content
-  has_more?: boolean; // Whether there are more options available
+  allow_feedback?: boolean;
+  offer_related?: boolean;
+  has_more?: boolean;
 }
+
+export interface ChatStreamTokenEvent {
+  type: 'token';
+  token: string;
+  rawContent: string;
+  htmlContent: string;
+}
+
+export interface ChatStreamDoneEvent {
+  type: 'done';
+  rawContent: string;
+  htmlContent: string;
+  session_id: string;
+  allow_feedback?: boolean;
+  offer_related?: boolean;
+  is_followup?: boolean;
+  has_more?: boolean;
+}
+
+export type ChatStreamEvent = ChatStreamTokenEvent | ChatStreamDoneEvent;
 
 export interface HistoryMessage {
   user_message: string;
@@ -33,6 +56,7 @@ export interface HistoryResponse {
   status: 'success' | 'error';
   history: HistoryMessage[];
   user_id: string;
+  greeting?: string;
   response?: string;
 }
 
@@ -53,7 +77,6 @@ export class ChatbotService {
   private readonly TRACK_CLICK_URL_ADULT = environment.TRACK_CLICK_URL_ADULT
   private readonly TRACK_CLICK_URL_TEEN = environment.TRACK_CLICK_URL_TEEN
 
-  // Expose store observables
   public messages$: Observable<ChatMessage[]>;
   public isTyping$: Observable<boolean>;
   public sessionId$: Observable<string | null>;
@@ -64,20 +87,13 @@ export class ChatbotService {
     private chatStore: ChatStore,
     private router: Router
   ) {
-    // Initialize observables from store after injection
     this.messages$ = this.chatStore.messages$;
     this.isTyping$ = this.chatStore.isTyping$;
     this.sessionId$ = this.chatStore.sessionId$;
     this.messageCount$ = this.chatStore.messageCount$;
-    
-    this.initializeWelcomeMessage();
   }
 
   private initializeWelcomeMessage(): void {
-    // Get the program name for the community forum link
-    const programName = SharedService.getprogramName();
-    const communityForumUrl = `/${programName}/forum`;
-
     const introMessages = [
       `Hi  I’m Olly — how are you today? Can I help?`,
       `Welcome!  I’m Olly, here to help you find what you need.`,
@@ -94,44 +110,69 @@ export class ChatbotService {
         content: randomIntro,
         sender: 'bot',
         timestamp: new Date()
-      },
-      {
-        id: 'welcome-intro-2',
-        content: `You can also ask a question in the <a href="${communityForumUrl}" onclick="window.open('${communityForumUrl}', '_self'); return false;">community forum</a>, where one of our coaches will answer your question.`,
-        sender: 'bot',
-        timestamp: new Date(),
-        hideAvatar: true,
-        hideSender: true
       }
     ];
     this.chatStore.initializeWelcomeMessages(welcomeMessages);
   }
 
+  private formatGreeting(greeting: string): string {
+    const name = this.getUserDisplayName();
+    if (name) {
+      return greeting.replace('{name}', name);
+    }
+    return greeting.replace('{name}', '').replace(/\s{2,}/g, ' ').trim();
+  }
+
+  private getUserDisplayName(): string {
+    let userNameVal = SharedService.FnName();
+
+    if (!userNameVal || userNameVal === 'null' || userNameVal === 'undefined' || userNameVal.toLowerCase() === 'guest') {
+      userNameVal = SharedService.getUserName();
+    }
+    if (!userNameVal || userNameVal === 'null' || userNameVal === 'undefined' || userNameVal.toLowerCase() === 'guest') {
+      const fullName = SharedService.getDataFromLocalStorage('name');
+      if (fullName && fullName !== 'null' && fullName !== 'undefined') {
+        userNameVal = fullName.split(' ')[0];
+      }
+    }
+    if (!userNameVal || userNameVal === 'null' || userNameVal === 'undefined' || userNameVal === '' || userNameVal.toLowerCase() === 'guest') {
+      return '';
+    }
+
+    try {
+      userNameVal = JSON.parse(userNameVal);
+    } catch {
+      // keep as-is
+    }
+
+    return userNameVal.charAt(0).toUpperCase() + userNameVal.slice(1).toLowerCase();
+  }
+
   private getChatbotUrl(): string {
-    return SharedService.ProgramId == ProgramType.Adults 
-      ? this.ADULT_CHATBOT_URL 
+    return SharedService.ProgramId == ProgramType.Adults
+      ? this.ADULT_CHATBOT_URL
       : this.TEEN_CHATBOT_URL;
   }
 
   private getHealthCheckUrl(): string {
-    return SharedService.ProgramId == ProgramType.Adults 
-      ? this.HEALTH_CHECK_URL_ADULT 
+    return SharedService.ProgramId == ProgramType.Adults
+      ? this.HEALTH_CHECK_URL_ADULT
       : this.HEALTH_CHECK_URL_TEEN;
   }
 
-  private getAuthHeaders(): HttpHeaders {
+  private getAuthToken(): string {
     const token = localStorage.getItem('token');
-    let authToken = '';
-    
     try {
-      authToken = JSON.parse(token || '');
-    } catch (e) {
-      authToken = token || '';
+      return JSON.parse(token || '');
+    } catch {
+      return token || '';
     }
+  }
 
+  private getAuthHeaders(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${authToken}`
+      'Authorization': `Bearer ${this.getAuthToken()}`
     });
   }
 
@@ -166,27 +207,192 @@ export class ChatbotService {
     });
   }
 
-  sendMessage(message: string): Observable<ChatbotResponse> {
-    const request: ChatbotRequest = {
-      message: message,
-      session_id: this.chatStore.getCurrentSessionId() || undefined
-    };
+  /**
+   * Stream chat response via SSE from POST /chat with URL-encoded form body.
+   */
+  sendMessageStream(message: string): Observable<ChatStreamEvent> {
+    return new Observable((observer: Observer<ChatStreamEvent>) => {
+      const abortController = new AbortController();
+      let rawContent = '';
 
-    return this.http.post<ChatbotResponse>(
-      this.getChatbotUrl(),
-      request,
-      { 
-        headers: this.getAuthHeaders(),
-        withCredentials: true
+      const body = new URLSearchParams();
+      body.set('message', message);
+
+      const sessionId = this.chatStore.getCurrentSessionId();
+      if (sessionId) {
+        body.set('session_id', sessionId);
       }
-    );
+
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Accept': '*/*'
+      };
+      const authToken = this.getAuthToken();
+      if (authToken) {
+        headers['Authorization'] = `Bearer ${authToken}`;
+      }
+
+      fetch(this.getChatbotUrl(), {
+        method: 'POST',
+        body: body.toString(),
+        credentials: 'include',
+        headers,
+        signal: abortController.signal
+      }).then(async (response) => {
+        if (!response.ok) {
+          if (response.status === 401) {
+            throw { status: 401, error: { response: 'Unauthorized' } };
+          }
+          throw new Error(`Chat request failed: ${response.status}`);
+        }
+
+        const reader = response.body?.getReader();
+        if (!reader) {
+          throw new Error('Streaming not supported by this browser');
+        }
+
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) {
+            break;
+          }
+
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            const jsonStr = this.extractSseJsonPayload(line);
+            if (!jsonStr) {
+              continue;
+            }
+
+            try {
+              const data = JSON.parse(jsonStr);
+              rawContent = this.handleStreamPayload(data, rawContent, observer);
+            } catch (parseError) {
+              if ((parseError as { status?: number })?.status === 401) {
+                throw parseError;
+              }
+              console.warn('Failed to parse SSE data line:', jsonStr, parseError);
+            }
+          }
+        }
+
+        if (rawContent) {
+          observer.next({
+            type: 'done',
+            rawContent,
+            htmlContent: renderChatMarkdown(rawContent),
+            session_id: this.chatStore.getCurrentSessionId() || ''
+          });
+        }
+        observer.complete();
+      }).catch((error) => {
+        if (error?.name === 'AbortError') {
+          observer.complete();
+        } else {
+          observer.error(error);
+        }
+      });
+
+      return () => abortController.abort();
+    });
   }
 
   /**
-   * Send thumbs up/down feedback for a bot message
+   * Extract JSON payload from an SSE line (data: {...}) or a bare JSON line.
    */
+  private extractSseJsonPayload(line: string): string | null {
+    const trimmedLine = line.trim();
+    if (!trimmedLine) {
+      return null;
+    }
+
+    if (trimmedLine.startsWith('data:')) {
+      const jsonStr = trimmedLine.startsWith('data: ')
+        ? trimmedLine.slice(6)
+        : trimmedLine.slice(5).trim();
+      return jsonStr || null;
+    }
+
+    if (trimmedLine.startsWith('{') && trimmedLine.endsWith('}')) {
+      return trimmedLine;
+    }
+
+    return null;
+  }
+
+  /**
+   * Handle a parsed SSE JSON payload and return updated accumulated raw content.
+   */
+  private handleStreamPayload(
+    data: Record<string, unknown>,
+    rawContent: string,
+    observer: Observer<ChatStreamEvent>
+  ): string {
+    if (data.response === 'Unauthorized') {
+      throw { status: 401, error: { response: 'Unauthorized' } };
+    }
+
+    const status = data.status as string | undefined;
+
+    // Lifecycle events with no user-visible content yet
+    if (status === 'start' || status === 'thinking') {
+      return rawContent;
+    }
+
+    if (status === 'done') {
+      let finalContent = rawContent;
+      if (!finalContent && typeof data.response === 'string') {
+        finalContent = data.response;
+      }
+
+      observer.next({
+        type: 'done',
+        rawContent: finalContent,
+        htmlContent: renderChatMarkdown(finalContent),
+        session_id: (data.session_id as string) || this.chatStore.getCurrentSessionId() || '',
+        allow_feedback: data.allow_feedback as boolean | undefined,
+        offer_related: data.offer_related as boolean | undefined,
+        is_followup: data.is_followup as boolean | undefined,
+        has_more: data.has_more as boolean | undefined
+      });
+      observer.complete();
+      return finalContent;
+    }
+
+    // Error or informational response delivered as a single payload
+    if (typeof data.response === 'string' && data.response.length > 0) {
+      rawContent = data.response;
+      observer.next({
+        type: 'token',
+        token: data.response,
+        rawContent,
+        htmlContent: renderChatMarkdown(rawContent)
+      });
+      return rawContent;
+    }
+
+    // Incremental markdown token
+    if (typeof data.token === 'string' && data.token.length > 0) {
+      rawContent += data.token;
+      observer.next({
+        type: 'token',
+        token: data.token,
+        rawContent,
+        htmlContent: renderChatMarkdown(rawContent)
+      });
+    }
+
+    return rawContent;
+  }
+
   sendFeedback(
-    messageId: string, 
+    messageId: string,
     feedbackValue: 'thumbs_up' | 'thumbs_down',
     userMessage: string,
     botResponse: string
@@ -209,9 +415,6 @@ export class ChatbotService {
     );
   }
 
-  /**
-   * Send yes/no response to a bot question for related content
-   */
   sendYesNoResponse(response: 'yes' | 'no'): Observable<ChatbotResponse> {
     const request = {
       action: response,
@@ -228,13 +431,8 @@ export class ChatbotService {
     );
   }
 
-  /**
-   * Track user clicks on external links shared by chatbot
-   */
   trackLinkClick(url: string): Observable<any> {
-    const request = {
-      url: url
-    };
+    const request = { url };
 
     return this.http.post(
       this.getTrackClickUrl(),
@@ -250,8 +448,37 @@ export class ChatbotService {
     this.chatStore.addUserMessage(content);
   }
 
-  addBotMessage(content: string, sessionId?: string, allow_feedback?: boolean, offer_related?: boolean, is_followup?: boolean, has_more?: boolean): void {
+  addBotMessage(
+    content: string,
+    sessionId?: string,
+    allow_feedback?: boolean,
+    offer_related?: boolean,
+    is_followup?: boolean,
+    has_more?: boolean
+  ): void {
     this.chatStore.addBotMessage({ content, sessionId, allow_feedback, offer_related, is_followup, has_more });
+  }
+
+  beginStreamingBotMessage(): string {
+    return this.chatStore.createStreamingBotMessage();
+  }
+
+  updateStreamingBotMessage(messageId: string, htmlContent: string): void {
+    this.chatStore.updateStreamingBotMessage(messageId, htmlContent);
+  }
+
+  finalizeStreamingBotMessage(
+    messageId: string,
+    payload: {
+      htmlContent: string;
+      sessionId?: string;
+      allow_feedback?: boolean;
+      offer_related?: boolean;
+      is_followup?: boolean;
+      has_more?: boolean;
+    }
+  ): void {
+    this.chatStore.finalizeStreamingBotMessage(messageId, payload);
   }
 
   addTypingIndicator(): void {
@@ -271,21 +498,12 @@ export class ChatbotService {
     this.initializeWelcomeMessage();
   }
 
-  /**
-   * Ensure welcome messages are present in the chat
-   * If messages are empty, initialize with welcome messages
-   * This is useful after logout or when the store is empty
-   */
   ensureWelcomeMessages(): void {
     const currentMessages = this.chatStore.getAllMessages();
-    // Filter out typing indicators when checking if messages are empty
     const nonTypingMessages = currentMessages.filter(msg => !msg.isTyping);
-    
+
     if (nonTypingMessages.length === 0) {
-      console.log('Store is empty - initializing welcome messages');
       this.initializeWelcomeMessage();
-    } else {
-      console.log('Store has messages, count:', nonTypingMessages.length);
     }
   }
 
@@ -296,39 +514,29 @@ export class ChatbotService {
   formatTimestamp(date: Date): string {
     const now = new Date();
     const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
-    
+
     if (diffInMinutes < 1) {
       return 'Just Now';
     } else if (diffInMinutes < 60) {
       return `${diffInMinutes} min ago`;
     } else {
-      return date.toLocaleTimeString('en-US', { 
-        hour: '2-digit', 
+      return date.toLocaleTimeString('en-US', {
+        hour: '2-digit',
         minute: '2-digit',
-        hour12: true 
+        hour12: true
       });
     }
   }
 
-  /**
-   * Get the full question text for display when user types a number
-   */
   getFullQuestionForNumber(input: string): string {
     return this.chatStore.getFullQuestionForNumber(input);
   }
 
-  /**
-   * Load conversation history from the API
-   * Filters by current user ID to ensure only the authenticated user's history is returned
-   * Guest users (userId = 563) should not see old conversation history
-   */
   loadHistory(): Observable<HistoryResponse> {
     const currentUserId = SharedService.getUserId();
     const GUEST_USER_ID = 563;
-    
-    // Don't load history for guest users (563) or unauthenticated users (<= 0)
+
     if (currentUserId === GUEST_USER_ID || currentUserId <= 0) {
-      console.log('Guest or unauthenticated user detected. Skipping history load.');
       return new Observable<HistoryResponse>(observer => {
         observer.next({
           status: 'success',
@@ -338,8 +546,7 @@ export class ChatbotService {
         observer.complete();
       });
     }
-    
-    // Add user_id as query parameter if available
+
     let params = new HttpParams();
     if (currentUserId && currentUserId > 0) {
       params = params.set('user_id', currentUserId.toString());
@@ -347,12 +554,10 @@ export class ChatbotService {
 
     return this.http.get<HistoryResponse>(this.getHistoryUrl(), {
       headers: this.getAuthHeaders(),
-      params: params,
+      params,
       withCredentials: true
     }).pipe(
       map((response: HistoryResponse) => {
-        // Additional frontend filtering disabled to prevent strict type mismatches.
-        // We trust the backend's token validation to fetch the right history.
         if (currentUserId && currentUserId > 0 && response.user_id) {
           const responseUserId = Number.parseInt(response.user_id, 10);
           console.log('Comparing user IDs:', responseUserId, currentUserId);
@@ -362,11 +567,7 @@ export class ChatbotService {
     );
   }
 
-  /**
-   * Prepend history messages to the current chat
-   */
   prependHistoryMessages(historyMessages: HistoryMessage[]): void {
-    // Convert API format to internal format
     const convertedMessages: Array<{
       content: string;
       sender: 'user' | 'bot';
@@ -374,14 +575,12 @@ export class ChatbotService {
     }> = [];
 
     historyMessages.forEach(historyItem => {
-      // Add user message
       convertedMessages.push({
         content: historyItem.user_message,
         sender: 'user',
         timestamp: historyItem.created_at
       });
 
-      // Add bot response
       convertedMessages.push({
         content: historyItem.bot_response,
         sender: 'bot',
