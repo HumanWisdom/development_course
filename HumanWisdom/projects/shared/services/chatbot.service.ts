@@ -93,41 +93,16 @@ export class ChatbotService {
     this.messageCount$ = this.chatStore.messageCount$;
   }
 
-  /**
-   * Fetch personalized greeting from /api/history and initialize welcome messages.
-   */
-  initializeChatGreeting(): Observable<void> {
-    this.ensureWelcomeMessages();
+  private initializeWelcomeMessage(): void {
+    const introMessages = [
+      `Hi  I’m Olly — how are you today? Can I help?`,
+      `Welcome!  I’m Olly, here to help you find what you need.`,
+      `Hi  I’m Olly — your friendly guide to HappierMe.`,
+      `Hi  I’m Olly — here to make your journey easier. What do you need today?`,
+      `Welcome!  I’m Olly, here to help you find clarity and calm`
+    ];
 
-    return this.http.get<HistoryResponse>(this.getHistoryUrl(), {
-      headers: this.getAuthHeaders(),
-      withCredentials: true
-    }).pipe(
-      tap((response) => {
-        if (response.status === 'success' && response.greeting) {
-          const hasUserMessages = this.chatStore.getAllMessages()
-            .some(msg => msg.sender === 'user');
-
-          if (!hasUserMessages) {
-            this.initializeWelcomeMessage(response.greeting);
-          }
-        }
-      }),
-      map(() => void 0),
-      catchError((error) => {
-        console.error('Error loading chat greeting:', error);
-        return of(void 0);
-      })
-    );
-  }
-
-  private initializeWelcomeMessage(greeting?: string): void {
-    const programName = SharedService.getprogramName();
-    const communityForumUrl = `/${programName}/forum`;
-
-    const introText = greeting
-      ? this.formatGreeting(greeting)
-      : `Hi! I'm Olly — how are you today? Can I help?`;
+    const randomIntro = introMessages[Math.floor(Math.random() * introMessages.length)];
 
     const welcomeMessages: ChatMessage[] = [
       {
@@ -135,14 +110,6 @@ export class ChatbotService {
         content: introText,
         sender: 'bot',
         timestamp: new Date()
-      },
-      {
-        id: 'welcome-intro-2',
-        content: `You can also ask a question in the <a href="${communityForumUrl}" onclick="window.open('${communityForumUrl}', '_self'); return false;">community forum</a>, where one of our coaches will answer your question.`,
-        sender: 'bot',
-        timestamp: new Date(),
-        hideAvatar: true,
-        hideSender: true
       }
     ];
     this.chatStore.initializeWelcomeMessages(welcomeMessages);

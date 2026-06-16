@@ -288,6 +288,22 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.startInQuestionsView = true;
   }
 
+  onQuestionsLinkClick(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.showLanding = true;
+    this.startInQuestionsView = true;
+  }
+
+  onLandingViewChanged(isQuestionsView: boolean): void {
+    // When the back arrow in questions view is pressed, viewChanged emits false.
+    // Hide the olly-landing and return to the chat view.
+    if (!isQuestionsView) {
+      this.showLanding = false;
+      this.startInQuestionsView = false;
+    }
+  }
+
   onKeyPress(event: KeyboardEvent): void {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();

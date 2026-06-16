@@ -1,4 +1,4 @@
-<app-olly-landing *ngIf="showLanding" [startInQuestionsView]="startInQuestionsView" (startChat)="onStartChat($event)"></app-olly-landing>
+<app-olly-landing *ngIf="showLanding" [startInQuestionsView]="startInQuestionsView" (startChat)="onStartChat($event)" (viewChanged)="onLandingViewChanged($event)"></app-olly-landing>
 
 <div class="chat-bot-container" *ngIf="!showLanding">
   <!-- Header -->
@@ -72,6 +72,11 @@
               <span></span>
               <span></span>
             </div>
+          </div>
+
+          <!-- Hyperlink outside the bubble, below the welcome message -->
+          <div *ngIf="message.id === 'welcome-intro-1'" class="welcome-questions-container">
+            <a class="questions-link" (click)="onQuestionsLinkClick($event)">Questions you can ask Olly</a>
           </div>
 
           <!-- Give More Options Button (shown when bot offers related content or has more options) -->
@@ -171,7 +176,7 @@
   id="autoResize" 
   placeholder="Reply..." 
   rows="1" class="message-input" [(ngModel)]="currentMessage"
-          (click)="onChatInputClick()" [disabled]="isLoading" #messageInput 
+          [disabled]="isLoading" #messageInput 
   style="overflow:hidden; resize:none; width:100%; border:none"
 ></textarea>
         <!-- <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"

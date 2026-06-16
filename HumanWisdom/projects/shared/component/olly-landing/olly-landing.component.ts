@@ -349,7 +349,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     const program = this.isAdults ? 'adults' : 'teenagers';
-    this.router.navigate([`/${program}/chat-bot`], { state: { query } });
+    this.router.navigate([`/${program}/chat-bot`], { state: { query }, replaceUrl: true });
   }
 
   onTopicLinkClick(): void {
