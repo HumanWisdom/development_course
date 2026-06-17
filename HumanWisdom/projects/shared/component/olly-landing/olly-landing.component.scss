@@ -678,6 +678,7 @@
 }
 
 .question-item {
+  position: relative;
   padding: 16px 20px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -749,8 +750,17 @@
 
   .question-item {
     background-color: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     transition: background-color 0.25s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.08);
+    }
 
     &:hover {
       background-color: rgba(255, 232, 187, 1);
@@ -825,8 +835,17 @@
 
   .question-item {
     background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: background-color 0.25s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
     &:hover {
       background-color: rgba(12, 43, 95, 1);
