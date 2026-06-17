@@ -266,6 +266,30 @@
   }
 }
 
+/* Ultra-wide: match col_cw 20% column */
+@media (min-width: 2560px) {
+
+  .owl-animation-wrapper {
+    right: calc((100vw - 20vw) / 2 + 16px);
+  }
+
+  .owl-animation-wrapper.corner {
+    right: calc((100vw - 20vw) / 2 + 10px);
+  }
+}
+
+/* Ultra-wide: match col-lg-4 10.33% column */
+@media (min-width: 5120px) {
+
+  .owl-animation-wrapper {
+    right: calc((100vw - 10.333333vw) / 2 + 16px);
+  }
+
+  .owl-animation-wrapper.corner {
+    right: calc((100vw - 10.333333vw) / 2 + 10px);
+  }
+}
+
 /* Journal page specific positioning - handles col-lg-4 (33.33% width) layout */
 .bg_journal .owl-animation-wrapper,
 .bg_journal .owl-animation-wrapper.corner {
