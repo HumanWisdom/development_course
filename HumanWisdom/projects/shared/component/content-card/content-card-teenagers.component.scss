@@ -121,11 +121,11 @@
   font-size: 10px;
 }
 
-/* Lock Icon - Grey background with white lock */
+/* Lock Icon - Grey background with white lock 
 .lock-icon {
-  background-color: rgb(41 36 36); /* Bootstrap secondary grey */
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+  background-color: rgb(41 36 36); 
+ 
+}*/
 
 .lock-icon i {
   color: white !important;
@@ -134,7 +134,7 @@
 
 /* Lock Icon Image - Custom SVG styling */
 .lock-icon-img {
-  width:12px !important;
+  width:22px !important;
   // height: 16px !important;
   object-fit: contain;
 
