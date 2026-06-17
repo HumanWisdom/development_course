@@ -384,9 +384,9 @@ export class ViewcartPage implements OnInit {
 
     this.totalCartAmount = this.totalCartValue;
     if (this.couponCodeApplied) {
-      this.totalCartValueDiscount = this.totalCartValue - this.discount
+      this.totalCartValueDiscount = (this.totalCartValue - this.discount).toFixed(2)
     } else {
-      this.totalCartValueDiscount = this.totalCartValue
+      this.totalCartValueDiscount = this.totalCartValue.toFixed(2)
     }
     localStorage.setItem('totalAmount', this.totalCartValue)
   }
