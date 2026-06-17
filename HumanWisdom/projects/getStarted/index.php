@@ -328,7 +328,7 @@ require_once('./includes/security_config.php');
         <div class="div-21">
           <div class="frame-wrapper-6">
             <div class="div-22">
-              <p class="text-wrapper-14">Find support and connection</p>
+              <p class="text-wrapper-14">Find support and <br class="mobile-br">connection</p>
               <p class="text-wrapper-8">Join a supportive community of people on their wellness journey. Share experiences, celebrate wins, and grow together.</p>
             </div>
           </div>
