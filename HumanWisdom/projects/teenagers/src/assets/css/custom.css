@@ -37493,23 +37493,4 @@ div.contentdiv p {
   object-fit: cover !important;
 }
 
-.lock-icon {
-  top:40px;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 700;
-    background: #292424;
-}
 
-
-/* Lock Icon Image - Custom SVG styling */
-.lock-icon-img {
-  width: 12px !important;
-  object-fit: contain;
-
-}
