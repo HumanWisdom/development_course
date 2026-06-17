@@ -367,11 +367,14 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       this.topicsList.forEach(topic => {
         this.expandedTopics[topic.fragment] = false;
       });
-      // Do not expand any topic by default when opening questions view
-      // if (this.selectedTopic) {
-      //   this.expandedTopics[this.selectedTopic.fragment] = true;
-      //   this.scrollToActiveTopic(this.selectedTopic.fragment);
-      // }
+      
+      // Restore the last expanded topic in this session if it exists
+      const lastExpanded = sessionStorage.getItem('olly_last_expanded_topic');
+      if (lastExpanded && this.expandedTopics[lastExpanded] !== undefined) {
+        this.expandedTopics[lastExpanded] = true;
+        this.scrollToActiveTopic(lastExpanded);
+      }
+      
       // Autofocus the questions search input
       setTimeout(() => {
         const inputEl = document.querySelector('.questions-search-input') as HTMLInputElement;
@@ -383,9 +386,20 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   toggleTopic(fragment: string): void {
-    this.expandedTopics[fragment] = !this.expandedTopics[fragment];
-    if (this.expandedTopics[fragment]) {
+    const isNowExpanded = !this.expandedTopics[fragment];
+    
+    // Close all other topics
+    Object.keys(this.expandedTopics).forEach(key => {
+      this.expandedTopics[key] = false;
+    });
+    
+    this.expandedTopics[fragment] = isNowExpanded;
+    
+    if (isNowExpanded) {
+      sessionStorage.setItem('olly_last_expanded_topic', fragment);
       this.scrollToActiveTopic(fragment);
+    } else {
+      sessionStorage.removeItem('olly_last_expanded_topic');
     }
   }
 
