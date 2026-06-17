@@ -1766,7 +1766,7 @@ var countryCode = "",
     pricingModel = "",
     defaultCurrencySymbol = "";
 async function fetchData() {
-    localStorage.setItem("programType",9)
+    localStorage.setItem("programType", document.body.classList.contains("page-teenagers") ? 11 : 9);
     const e = await fetch(HW_IP_LOOKUP_URL);
     if (!e.ok) throw new Error("Network response was not ok " + e.statusText);
     const t = await e.json();

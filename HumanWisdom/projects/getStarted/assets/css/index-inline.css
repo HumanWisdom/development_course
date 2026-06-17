@@ -643,6 +643,7 @@ header a[href*="splash_options.php"] * {
 .frame-wrapper-6 { display: flex; flex-direction: column; gap: 16px; }
 .div-22 { display: flex; flex-direction: column; gap: 8px; }
 .text-wrapper-14 { font-size: 30px; font-weight: 600; color: #000; line-height: 1.5; margin: 0; }
+.div-21 .text-wrapper-14 .mobile-br { display: none; }
 .support-features { display: flex; flex-direction: column; gap: 24px; }
 .support-feature-item { display: flex; align-items: flex-start; gap: 16px; }
 .support-feature-icon { width: 40px; height: 40px; flex-shrink: 0; }
@@ -2360,14 +2361,15 @@ header a[href*="splash_options.php"] * {
     height: 755px;
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin: 0 auto;
   }
 
   .div-2 {
     flex-direction: column;
     align-items: center;
+    width: 100%;
     gap: 18px;
     margin-top: 0;
     padding-top: 60px;
@@ -2376,13 +2378,19 @@ header a[href*="splash_options.php"] * {
   .pt_18px{
     padding-top: 18px;
   }
-/* 
-  .new-app-adults-teen {
-    width: 237px;
-    height: 300px;
+
+  .web_home_divlanding .new-app-adults-teen {
+    display: block;
+    width: 211px;
+    max-width: 100%;
+    height: 306px;
+    margin-left: 60px;
+    margin-right: auto;
+    align-self: center;
     object-fit: contain;
+    object-position: center center;
     flex-shrink: 0;
-  } */
+  }
 
   .div-3 { max-width: 100%; text-align: center; align-items: center; gap: 18px; }
   .div-4 { gap: 18px; }
@@ -2490,9 +2498,14 @@ header a[href*="splash_options.php"] * {
   .div-20 { flex-direction: column; align-items: center; padding: 0; text-align: center; gap: 0; }
   .div-20 picture { width: 100%; }
   .design { width: 100%; height: 338px; object-fit: cover; }
-  .div-21 { max-width: 100%; padding: 40px 20px; gap: 24px; }
+  .div-21 { max-width: 100%; width: 100%; padding: 40px 20px; gap: 24px; }
+  .div-21 .frame-wrapper-6,
+  .div-21 .div-22 { width: 100%; text-align: center; }
+  .div-21 .text-wrapper-14,
+  .div-21 .text-wrapper-8 { text-align: center; }
+  .div-21 .text-wrapper-14 .mobile-br { display: inline; }
   .text-wrapper-14 { font-size: 24px; line-height: 140%; }
-  .support-features { text-align: left; gap: 16px; }
+  .support-features { text-align: left; gap: 16px; width: 100%; }
   .support-feature-item { align-items: flex-start; gap: 12px; }
   .support-feature-icon { width: 24px; height: 21px; margin-top: 4px; }
   .support-feature-title { font-size: 18px; line-height: 150%; }
@@ -2533,7 +2546,7 @@ header a[href*="splash_options.php"] * {
   .div-31 { flex-direction: column; align-items: center; gap:10px}
   .teenage-app-copy { width: 100%; max-width: 420px; height: auto; }
   .div-32 { max-width: 100%; }
-  /* Teenagers mobile: image + title + single paragraph only */
+  /* Teenagers mobile: reorder content; show Find out more + CTA */
   /* Collapse wrappers so title + paragraphs can be reordered around the image */
   .div-31 .div-32 { display: contents; max-width: unset; }
   .div-31 .div-33 { display: contents; }
@@ -2546,9 +2559,48 @@ header a[href*="splash_options.php"] * {
   .div-31 .text-wrapper-20 { display: none !important; }
   .div-31 .text-wrapper-19-mobile { display: block !important; font-size: 18px !important; font-weight: 500; color: #000 !important; text-align: center; line-height: 1.6; margin: 0; order: 3; }
   .div-31 .text-wrapper-20-mobile { display: block !important; font-size: 12px !important; font-weight: 400; color: #000 !important; line-height: 1.6; margin: 0; text-align: center; order: 4; }
-  .div-31 .div-28 { display: none !important; } /* Hide "Find out more" */
-  .div-31 .div-wrapper-4 { display: none !important; } /* Hide bottom CTA button */
-  .div-31 a[href*="teenagers/intro-carousel"] { display: none !important; }
+  .div-31 .div-28 {
+    display: flex !important;
+    order: 5;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0;
+  }
+  .div-31 .div-28 .chevron-pink { display: none; }
+  .div-31 a[href*="teenagers/intro-carousel"] {
+    display: flex !important;
+    order: 6;
+    width: 335px;
+    max-width: 100%;
+    height: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: stretch;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 55px !important;
+    min-height: 55px;
+    border-radius: 30px !important;
+    padding: 15px 30px !important;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(237, 125, 111, 1) 0%, rgba(215, 88, 107, 1) 100%) !important;
+  }
+  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4:hover {
+    background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+  }
+  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 .text-wrapper-5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+  }
 
   /* Subscription */
   .div-45 { flex-direction: column; align-items: center;padding-left: 18px;
@@ -2748,9 +2800,16 @@ header a[href*="splash_options.php"] * {
   .div-31 .text-wrapper-20 { display: none !important; }
   .div-31 .text-wrapper-19-mobile { display: block !important; font-size: 18px !important; font-weight: 500; color: #000 !important; text-align: center; line-height: 1.6; margin: 0; }
   .div-31 .text-wrapper-20-mobile { display: block !important; font-size: 12px !important; font-weight: 400; color: #000 !important; line-height: 1.6; margin: 0; text-align: center; }
-  .div-31 .div-28 { display: none !important; } /* Hide "Find out more" */
-  .div-31 .div-wrapper-4 { display: none !important; } /* Hide bottom CTA button */
-  .div-31 a[href*="teenagers/intro-carousel"] { display: none !important; }
+  .div-31 a[href*="teenagers/intro-carousel"] {
+    width: 335px;
+    height: 55px;
+  }
+  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 {
+    height: 55px !important;
+    border-radius: 30px !important;
+    padding: 15px 30px !important;
+    background: linear-gradient(180deg, rgba(237, 125, 111, 1) 0%, rgba(215, 88, 107, 1) 100%) !important;
+  }
   .div-23 { padding-bottom: 20px; }
 
   /* Subscription */
