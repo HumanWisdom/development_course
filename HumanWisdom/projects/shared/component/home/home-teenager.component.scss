@@ -7,6 +7,7 @@
         padding-right: 0;
         padding-top: 9rem;
         padding-bottom: 9rem;
+        overflow-x: clip;
 
         &.home-content--playstore-banner {
             padding-top: 16rem;
@@ -124,6 +125,8 @@
         display: flex;
         align-items: center;
         width: 100%;
+        flex-wrap: nowrap !important;
+        overflow: hidden;
     }
 
     /* Navigation scroll buttons */
@@ -145,6 +148,13 @@
         transition: all 0.3s ease;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         flex-shrink: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sticky-nav-container:hover .nav-scroll-btn {
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-scroll-btn:hover {
@@ -351,6 +361,9 @@
         /* Removed max-height to prevent clipping of absolute children in complex fixed layouts */
         opacity: 1;
         margin-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
     }
 
     .story-blog-card {
@@ -404,6 +417,7 @@
         width: 100%;
         background-color: #4267A5;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        overflow-x: hidden;
     }
 
     /* Ensure parent containers don't interfere with sticky */
@@ -412,23 +426,65 @@
     }
 
     .home-content {
-        overflow: visible !important;
+        overflow-y: visible !important;
     }
 
     /* Remove old sticky styles */
     .row.home-container:first-of-type {
         position: fixed;
         z-index: 98;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
         max-width: 30%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         margin-top: -10px;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .row.home-container:first-of-type > [class*="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @media only screen and (min-width: 2560px) {
+        .row.home-container:first-of-type {
+            width: 20%;
+            max-width: 20%;
+        }
+    }
+
+    @media only screen and (min-width: 5120px) {
+        .row.home-container:first-of-type {
+            width: 10.333333%;
+            max-width: 10.333333%;
+        }
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 1024px) {
+        .row.home-container:first-of-type {
+            width: 50%;
+            max-width: 50%;
+        }
     }
 
     @media only screen and (max-width: 768px) {
         .row.home-container:first-of-type {
             position: fixed;
             z-index: 10;
+            left: 0;
+            transform: none;
+            width: 100%;
             max-width: 100%;
             margin-top: -10px;
+        }
+
+        .nav-scroll-btn {
+            display: none !important;
         }
 
         .sticky-nav-container {
