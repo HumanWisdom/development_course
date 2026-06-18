@@ -9,7 +9,7 @@
 }
 
 .bg_stake {
-    background: #254170 !important;
+    background: #183C79 !important;
 }
 
 .bg_FFF7E6 {
@@ -382,7 +382,7 @@
 /* Footer Navigation */
 .teenagers-days {
     .btn_return {
-        background: #EE9596 !important;
+        background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
         box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
@@ -392,7 +392,7 @@
     }
 
     .card_type1 {
-        background: #112d5d;
+        background: #0C2B5F;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
         .card_type1_title {
@@ -405,7 +405,7 @@
     }
 
     .exercise_card {
-        background: #112d5d;
+        background: #0C2B5F;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
         .exercise_title {
@@ -434,7 +434,7 @@
     }
 
     .journal_box {
-        background: #112d5d;
+        background: #0C2B5F;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
         .journal_title {
@@ -443,8 +443,7 @@
 
         textarea {
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, .25);
-            background: #4b2c451f;
+            background: #031A41;
             color: #ffffff;
 
             &::placeholder {
@@ -493,32 +492,32 @@
         object-fit: contain;
     }
 
-    .footer_dots {
-        .dot {
-            background: rgba(255, 255, 255, 0.3) !important;
+}
 
-            &.active {
-                background: rgba(255, 255, 255, 0.8) !important;
-            }
+.footer_days.bg_stake {
+    .day_circle {
+        background: #183C79 !important;
+        border: 1px solid #ffffff !important;
+
+        span {
+            color: #ffffff !important;
         }
-    }
 
-    .footer_days {
-        .day_circle {
-            background: #112d5d;
-            border-color: rgba(255, 255, 255, 0.1);
+        &.active {
+            background: rgba(66, 103, 165, 1) !important;
+            border: 1px solid #ffffff !important;
 
             span {
-                color: #ffffff;
+                color: #ffffff !important;
             }
+        }
 
-            &.active {
-                background: #EE9596;
-                border-color: #EE9596;
+        &.visited {
+            background: rgba(0, 0, 0, 0.25) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
 
-                span {
-                    color: #ffffff;
-                }
+            span {
+                color: rgba(255, 255, 255, 0.7) !important;
             }
         }
     }
@@ -644,11 +643,11 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: rgba(0, 0, 0, 0.15);
+        background: rgba(0, 0, 0, 0.25);
         transition: all 0.3s ease;
 
         &.active {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             width: 15px;
             border-radius: 10px;
         }
@@ -658,10 +657,10 @@
 /* Dark theme overrides for dots */
 .bg_stake {
     .dot {
-        background: rgba(255, 255, 255, 0.3) !important;
+        background: rgba(255, 255, 255, 0.25) !important;
 
         &.active {
-            background: rgba(255, 255, 255, 0.8) !important;
+            background: rgba(255, 255, 255, 0.5) !important;
         }
     }
 }

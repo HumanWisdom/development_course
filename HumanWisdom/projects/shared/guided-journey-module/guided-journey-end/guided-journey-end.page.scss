@@ -9,7 +9,7 @@
 }
 
 .bg_stake {
-  background: #254170 !important;
+  background: #183C79 !important;
 }
 
 .bg_FFF7E6 {
@@ -238,13 +238,13 @@
     }
 
     .btn_return {
-        background: #EE9596 !important;
+        background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
         box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
     .toc_adiv_01 {
-        background: #112d5d;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #0C2B5F;
+        // border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 12px;
     }
 .box_v3_05 {
@@ -255,7 +255,7 @@
 }
     .odiv_pathway {
         // .col-md-3 {
-        //     background: #112d5d;
+        //     background: #0C2B5F;
         //     border: 1px solid rgba(255, 255, 255, 0.1);
         //     border-radius: 12px;
         //     padding: 15px !important;
@@ -271,7 +271,7 @@
 
     .footer_days {
         .day_circle {
-            background: #112d5d;
+            background: #0C2B5F;
             border-color: rgba(255, 255, 255, 0.1);
             span {
                 color: #ffffff;

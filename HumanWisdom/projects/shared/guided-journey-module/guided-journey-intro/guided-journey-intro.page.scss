@@ -10,7 +10,7 @@
 }
 
 .bg_stake {
-    background: #254170 !important;
+    background: #183C79 !important;
 }
 
 .bg_FFF7E6 {
@@ -51,34 +51,40 @@
 
 .teenagers-intro {
     .btn_return {
-        background: #EE9596 !important;
+        background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
         box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
+}
 
-    .footer_days {
-        .day_circle {
-            background: #112d5d;
-            border-color: rgba(255, 255, 255, 0.1);
+.footer_days.bg_stake {
+    .day_circle {
+        background: rgba(12, 43, 95, 1) !important;
+        border: 1px solid #ffffff !important;
+
+        span {
+            color: #ffffff !important;
+        }
+
+        &.active {
+            background: rgba(12, 43, 95, 1) !important;
+            border: 1px solid #ffffff !important;
 
             span {
-                color: #ffffff;
+                color: #ffffff !important;
             }
+        }
 
-            &.active {
-                background: #EE9596;
-                border-color: #EE9596;
+        &.visited {
+            background: rgba(0, 0, 0, 0.25) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
 
-                span {
-                    color: #ffffff;
-                }
-            }
-
-            &.intro_circle {
-                background: #0c2b5f;
+            span {
+                color: rgba(255, 255, 255, 0.7) !important;
             }
         }
     }
 }
+
 
 .footer_fixed_wrapper {
     position: fixed;
