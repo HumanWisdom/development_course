@@ -476,3 +476,33 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 
 }
+
+/* Teenagers: align Olly slightly right above Profile tab */
+@media (max-width: 1024px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    right: 4px;
+  }
+
+  :host(.teenager-theme) .static-owl-container {
+    align-items: flex-end;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    transform-origin: bottom right;
+  }
+}
+
+@media (max-width: 480px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    right: 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    right: 1px;
+  }
+}
