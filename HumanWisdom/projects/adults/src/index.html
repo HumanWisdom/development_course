@@ -468,6 +468,16 @@ if( getAt_Gt != null && getAt_Gt != undefined && getAt_Gt != "")
         }
       });
 
+
+       $(document).on('click', '#btnBack', function () {
+        if (window.AndroidHandler) {
+          window.AndroidHandler.back();
+        }
+        if (window.webkit) {
+          window.webkit.messageHandlers.nativeActionHandler.postMessage("back");
+        }
+      });
+
       $(document).on('click', '#liSubscribe', function () {
         if (window.webkit) {
           window.webkit.messageHandlers.nativeActionHandler.postMessage("Subscribe");
