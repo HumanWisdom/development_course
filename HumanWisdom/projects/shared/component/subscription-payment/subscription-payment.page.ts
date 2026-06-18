@@ -57,6 +57,17 @@ export class SubscriptionPaymentPage implements AfterViewInit {
 
     this.symbol = localStorage.getItem('Currsymbol');
     this.isoCode = localStorage.getItem('ISOCode');
+    let isCoupanCode = false;
+    try {
+      isCoupanCode = JSON.parse(SharedService.getDataFromLocalStorage('IsCoupanApplied'));
+    } catch (e) {
+      isCoupanCode = false;
+    }
+    if (isCoupanCode && this.symbol === '£') {
+      if (this.amount) {
+        this.amount = Number(this.amount).toFixed(2);
+      }
+    }
     this.getGBPcuurency();
 
     let quan = this.router.getCurrentNavigation()?.extras?.state?.quan;

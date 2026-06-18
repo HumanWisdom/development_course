@@ -181,9 +181,15 @@ export class ProceedToPaymentPage implements OnInit {
 
   totalPrice() {
     if (this.couponCodeApplied) {
-      this.totalCartValueDiscount = this.totalCartValue - this.discount
+      let discountedAmount = this.totalCartValue - parseFloat(this.discount);
+      if (this.pricingModel?.CurSymbol === '£') {
+        this.totalCartValueDiscount = discountedAmount.toFixed(2);
+        this.discount = parseFloat(this.discount).toFixed(2);
+      } else {
+        this.totalCartValueDiscount = discountedAmount;
+      }
     } else {
-      this.totalCartValueDiscount = this.totalCartValue
+      this.totalCartValueDiscount = this.totalCartValue;
     }
   }
 
@@ -214,7 +220,13 @@ export class ProceedToPaymentPage implements OnInit {
             this.discount = parseFloat(res[0].Discount)
             localStorage.setItem("couponid", res[0]['CouponID'])
             localStorage.setItem("discountCode", this.discountCode)
-            this.totalCartValueDiscount = this.totalCartValue - this.discount;
+            let discountedAmount = this.totalCartValue - this.discount;
+            if (this.pricingModel?.CurSymbol === '£') {
+              this.totalCartValueDiscount = discountedAmount.toFixed(2);
+              this.discount = this.discount.toFixed(2);
+            } else {
+              this.totalCartValueDiscount = discountedAmount;
+            }
             this.percentage = res[0].Percentage
           }
         }
