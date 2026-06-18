@@ -9,6 +9,30 @@ body.page-teenagers .healthcare-hero-shell .btn_tff1 {
 body.page-teenagers main#main .section-header h2.fc_183C79 {
   color: rgba(24, 60, 121, 1);
 }
+
+/* Did you know? — title only */
+body.page-teenagers .teen-dykt-header {
+  padding-bottom: 40px !important;
+}
+
+body.page-teenagers .teen-dykt-header .teen-dykt-title,
+body.page-teenagers .teen-inspire-header .teen-inspire-title,
+body.page-teenagers .teen-video-title,
+body.page-teenagers .teen-support-title,
+body.page-teenagers .teen-calm-title,
+body.page-teenagers .teen-blog-title {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+body.page-teenagers .teen-support-title {
+  margin-bottom: 40px !important;
+}
+
+/* Inspiring you to succeed in life — section spacing */
+body.page-teenagers .teen-inspire-header {
+  padding-bottom: 60px !important;
+}
+
 .section-header-teen {
   text-align: center;
   padding-bottom: 60px;
@@ -388,10 +412,22 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     margin-bottom: 0 !important;
   }
 
+  body.page-teenagers main#main .section-header.teen-dykt-header {
+    padding-bottom: 40px !important;
+  }
+
+  body.page-teenagers main#main .section-header.teen-inspire-header {
+    padding-bottom: 60px !important;
+  }
+
   body.page-teenagers main#main .section-header h2,
   body.page-teenagers main#main .section-header-teen h2 {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+  }
+
+  body.page-teenagers main#main .section-header .teen-support-title {
+    margin-bottom: 40px !important;
   }
 
   body.page-teenagers main#main .flex_block h2.fc_183C79 {
