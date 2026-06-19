@@ -171,17 +171,16 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== OLLY AI ===== -->
-      <div class="frame-wrapper-3">
+      <div class="frame-wrapper-3" id="olly-ai-section">
         <div class="div-11">
           <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
           <video
             id="olly-ai-video"
             class="group-3"
-            autoplay
             muted
             playsinline
             webkit-playsinline
-            preload="auto"
+            preload="metadata"
             poster="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_breathing4.gif"
             aria-label="Olly AI">
             <source src="https://d1tenzemoxuh75.cloudfront.net/onboarding/oll_AI.mp4" type="video/mp4">
