@@ -106,6 +106,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       if (authtoken) {
         this.service.setDataRecievedState(false);
         localStorage.setItem('socialLogin', 'T');
+        localStorage.setItem("token", JSON.stringify(authtoken));
         this.services.verifytoken(authtoken).subscribe((res) => {
           if (res) {
             localStorage.setItem("email", res['Email']);
@@ -116,8 +117,21 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
             localStorage.setItem("Subscriber", res['Subscriber']);
             this.userId = res['UserId'];
             localStorage.setItem("userId", JSON.stringify(this.userId));
+            localStorage.setItem('isloggedin', 'T');
+            localStorage.setItem('guest', 'F');
+            localStorage.setItem("remember", 'T');
+            localStorage.setItem('adult', 'T');
             this.loginadult(res);
             this.service.setDataRecievedState(true);
+            
+            // Set the username dynamically so it displays immediately without reload
+            if (res['Name']) {
+              let namedata = res['Name'].split(' ');
+              this.username = namedata[0];
+              if (this.username) {
+                this.username = this.username.charAt(0).toUpperCase() + this.username.slice(1).toLowerCase();
+              }
+            }
           } else {
             localStorage.setItem("email", 'guest@humanwisdom.me');
             localStorage.setItem("pswd", '12345');

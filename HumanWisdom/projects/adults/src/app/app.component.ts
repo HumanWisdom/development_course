@@ -111,7 +111,7 @@ export class AppComponent implements OnDestroy {
     
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
   
-    let urls = this.router.url.split('authtoken=');
+    let urls = window.location.href.split('authtoken=');
     if (urls && urls[1] == undefined) {
       if (localStorage.getItem("isloggedin") === 'T') {
         this.getUserInformationById(SharedService.getUserId());
