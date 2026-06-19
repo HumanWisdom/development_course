@@ -1859,14 +1859,29 @@ function validateEmail(email) {
 /** Index-only: org cards, coaches/blog, blog section view, footer/social (matches webpage event list). */
 function initIndexPageGa() {
     var ollyVideo = document.getElementById("olly-ai-video");
-    if (ollyVideo) {
-        var playOlly = function () {
+    var ollySection = document.getElementById("olly-ai-section");
+    if (ollyVideo && ollySection && "IntersectionObserver" in window) {
+        var ollyPlayed = false;
+        var playOllyOnce = function () {
+            if (ollyPlayed) return;
+            ollyPlayed = true;
             ollyVideo.muted = true;
+            ollyVideo.currentTime = 0;
             var p = ollyVideo.play();
             if (p && typeof p.catch === "function") p.catch(function () {});
         };
-        playOlly();
-        ollyVideo.addEventListener("loadeddata", playOlly);
+        var ollyIo = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (ent) {
+                    if (ent.isIntersecting) {
+                        playOllyOnce();
+                        ollyIo.disconnect();
+                    }
+                });
+            },
+            { threshold: 0.35 }
+        );
+        ollyIo.observe(ollySection);
     }
 
     var orgMap = { orgCardWorkplace: "click_workplace_card", orgCardEducation: "click_education_card", orgCardHealthcare: "click_healthcare_card" };
