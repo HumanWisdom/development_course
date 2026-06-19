@@ -1797,7 +1797,7 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         'Think better.<br><span class="hero-title-accent">Live better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        'Understand yourself. Reduce stress &amp; anxiety. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> that AI cannot replace.';
+        'Understand yourself. Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.';
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");
@@ -1858,6 +1858,17 @@ function validateEmail(email) {
 
 /** Index-only: org cards, coaches/blog, blog section view, footer/social (matches webpage event list). */
 function initIndexPageGa() {
+    var ollyVideo = document.getElementById("olly-ai-video");
+    if (ollyVideo) {
+        var playOlly = function () {
+            ollyVideo.muted = true;
+            var p = ollyVideo.play();
+            if (p && typeof p.catch === "function") p.catch(function () {});
+        };
+        playOlly();
+        ollyVideo.addEventListener("loadeddata", playOlly);
+    }
+
     var orgMap = { orgCardWorkplace: "click_workplace_card", orgCardEducation: "click_education_card", orgCardHealthcare: "click_healthcare_card" };
     Object.keys(orgMap).forEach(function (id) {
         var el = document.getElementById(id);

@@ -116,7 +116,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself. Reduce stress &amp; anxiety. Strengthen your relationships. Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> that AI cannot replace.
+                      Understand yourself. Feel calmer. Strengthen your relationships. Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.
                     </p>
                   </div>
                 </div>
@@ -174,7 +174,19 @@ require_once('./includes/security_config.php');
       <div class="frame-wrapper-3">
         <div class="div-11">
           <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
-          <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_breathing4.gif" alt="Olly AI" />
+          <video
+            id="olly-ai-video"
+            class="group-3"
+            autoplay
+            muted
+            playsinline
+            webkit-playsinline
+            preload="auto"
+            poster="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_breathing4.gif"
+            aria-label="Olly AI">
+            <source src="https://d1tenzemoxuh75.cloudfront.net/onboarding/oll_AI.mp4" type="video/mp4">
+            <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/oll_AI.mp4" type="video/mp4">
+          </video>
           <div class="div-12">
             <div class="div-5">
               <p class="introducing-olly-AI" style="font-size:30px;">Meet Olly AI,<br />your personal guide.</p>
