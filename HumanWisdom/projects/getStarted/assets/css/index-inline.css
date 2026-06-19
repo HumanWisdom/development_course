@@ -2348,7 +2348,7 @@ header a[href*="splash_options.php"] * {
   .p { font-size: 36px; }
   .introducing-olly-AI { font-size: 34px; }
   /* .new-app-adults-teen { width: 320px; height: 406px; } */
-  .group-3 { width: 300px; height: 270px; }
+  .group-3 { width: 300px; height: 270px; min-height: auto; }
   .div-62 { gap: 48px; padding: 0 40px; }
 }
 
@@ -2457,7 +2457,7 @@ header a[href*="splash_options.php"] * {
 
   /* Olly */
   .div-11 { flex-direction: column; align-items: center; text-align: center; gap:18px}
-  .group-3 { width: clamp(160px, 50vw, 260px); height: auto; }
+  .group-3 { width: clamp(160px, 50vw, 260px); height: auto; min-height: auto; }
   .introducing-olly-AI { font-size: 24px !important; font-weight: 600; }
   .div-12 { align-items: center; }
   .start-your-free-wrapper-2 { align-self: center; }
