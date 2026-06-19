@@ -181,8 +181,7 @@ require_once('./includes/security_config.php');
             playsinline
             webkit-playsinline
             preload="metadata"
-            poster="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_breathing4.gif"
-            aria-label="Olly AI">
+                      aria-label="Olly AI">
             <source src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.webm" type="video/webm">
             
           </video>
