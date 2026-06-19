@@ -41,7 +41,8 @@
                         {'display': currentSection==0 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==0 ? '80vh' : '') : ''" [hidden]="loading">
                       <div class="img-container" [@imageFadeAnimation]="currentSection">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/think_beeter.webp"
+                        <img
+                          [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/think_beeter.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/think_better_teen.webp'"
                           class="img-responsive w100">
                       </div>
                       <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null"
@@ -50,8 +51,8 @@
                         <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           <ng-container *ngIf="isAdults">See why you think, feel, and react <br> the way you do, so you
                             can <br> choose how you respond.</ng-container>
-                          <ng-container *ngIf="!isAdults">Understand why your mind thinks, <br> feels and reacts the way
-                            it does, so <br> you can think clearly and choose <br> how you respond.</ng-container>
+                          <ng-container *ngIf="!isAdults">Figure outwhy you think <br> the way
+                            you do, so you can <br> choose how you respond.</ng-container>
                         </h4>
                       </div>
                     </div>
@@ -62,7 +63,8 @@
                         {'display': currentSection==1 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==1 ? '80vh' : '') : ''">
                       <div class="img-container" [@imageFadeAnimation]="currentSection">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/feel_better.webp"
+                        <img
+                          [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/feel_better.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/feel_better_teen.webp'"
                           class="img-responsive w100">
                       </div>
                       <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null"
@@ -83,7 +85,8 @@
                         {'display': currentSection==2 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==2 ? '80vh' : '') : ''">
                       <div class="img-container" [@imageFadeAnimation]="currentSection">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/connect_better.webp"
+                        <img
+                          [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/connect_better.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/connect_better_teen.webp'"
                           class="img-responsive w100">
                       </div>
                       <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null"

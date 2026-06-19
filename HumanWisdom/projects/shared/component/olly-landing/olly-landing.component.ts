@@ -100,47 +100,42 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       this.topicIdFromNav = navigation.extras.state['topicId'].toString();
     }
 
-    let authtoken: any;
-
     this.activatedRoute.queryParams.subscribe(params => {
-      authtoken = params?.authtoken;
-    });
+      const authtoken = params?.authtoken;
 
-    if (authtoken) {
-      authtoken = JSON.parse(localStorage.getItem("token"));
-    }
-
-    if (authtoken) {
-      this.service.setDataRecievedState(false);
-      localStorage.setItem('socialLogin', 'T');
-      this.services.verifytoken(authtoken).subscribe((res) => {
-        if (res) {
-          localStorage.setItem("email", res['Email']);
-          localStorage.setItem("name", res['Name']);
-          let namedata = localStorage.getItem('name')?.split(' ');
-          localStorage.setItem("FnName", namedata?.[0] || '');
-          localStorage.setItem("LName", namedata?.[1] || '');
-          localStorage.setItem("Subscriber", res['Subscriber']);
-          this.userId = res['UserId'];
-          localStorage.setItem("userId", JSON.stringify(this.userId));
-          this.loginadult(res);
-          this.service.setDataRecievedState(true);
-        } else {
+      if (authtoken) {
+        this.service.setDataRecievedState(false);
+        localStorage.setItem('socialLogin', 'T');
+        this.services.verifytoken(authtoken).subscribe((res) => {
+          if (res) {
+            localStorage.setItem("email", res['Email']);
+            localStorage.setItem("name", res['Name']);
+            let namedata = localStorage.getItem('name')?.split(' ');
+            localStorage.setItem("FnName", namedata?.[0] || '');
+            localStorage.setItem("LName", namedata?.[1] || '');
+            localStorage.setItem("Subscriber", res['Subscriber']);
+            this.userId = res['UserId'];
+            localStorage.setItem("userId", JSON.stringify(this.userId));
+            this.loginadult(res);
+            this.service.setDataRecievedState(true);
+          } else {
+            localStorage.setItem("email", 'guest@humanwisdom.me');
+            localStorage.setItem("pswd", '12345');
+            localStorage.setItem('guest', 'T');
+            localStorage.setItem('isloggedin', 'F');
+            this.service.setDataRecievedState(true);
+          }
+        }, error => {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
           localStorage.setItem('guest', 'T');
           localStorage.setItem('isloggedin', 'F');
           this.service.setDataRecievedState(true);
-        }
-      }, error => {
-        localStorage.setItem("email", 'guest@humanwisdom.me');
-        localStorage.setItem("pswd", '12345');
-        localStorage.setItem('guest', 'T');
-        localStorage.setItem('isloggedin', 'F');
-      });
-    } else {
-      this.service.setDataRecievedState(true);
-    }
+        });
+      } else {
+        this.service.setDataRecievedState(true);
+      }
+    });
   }
 
   loginadult(res: any) {
