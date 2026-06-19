@@ -1861,10 +1861,8 @@ function initIndexPageGa() {
     var ollyVideo = document.getElementById("olly-ai-video");
     var ollySection = document.getElementById("olly-ai-section");
     if (ollyVideo && ollySection && "IntersectionObserver" in window) {
-        var ollyPlayed = false;
-        var playOllyOnce = function () {
-            if (ollyPlayed) return;
-            ollyPlayed = true;
+        var ollySectionVisible = false;
+        var playOlly = function () {
             ollyVideo.muted = true;
             ollyVideo.currentTime = 0;
             var p = ollyVideo.play();
@@ -1874,12 +1872,17 @@ function initIndexPageGa() {
             function (entries) {
                 entries.forEach(function (ent) {
                     if (ent.isIntersecting) {
-                        playOllyOnce();
-                        ollyIo.disconnect();
+                        if (!ollySectionVisible) {
+                            ollySectionVisible = true;
+                            playOlly();
+                        }
+                    } else {
+                        ollySectionVisible = false;
+                        ollyVideo.pause();
                     }
                 });
             },
-            { threshold: 0.35 }
+            { threshold: 0.15 }
         );
         ollyIo.observe(ollySection);
     }
