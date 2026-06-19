@@ -182,10 +182,9 @@ require_once('./includes/security_config.php');
             playsinline
             webkit-playsinline
             preload="auto"
-            poster="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_breathing4.gif"
             aria-label="Olly AI">
-            <source src="https://d1tenzemoxuh75.cloudfront.net/onboarding/oll_AI.mp4" type="video/mp4">
-            <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/oll_AI.mp4" type="video/mp4">
+            <source src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.webm" type="video/webm">
+            
           </video>
           <div class="div-12">
             <div class="div-5">
