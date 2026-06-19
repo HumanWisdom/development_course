@@ -746,6 +746,7 @@ const routes: Routes = [
   },
   {
     path: 'olly-landing',
+    canActivate: [AuthGuard],
     loadChildren: () => import('../../../../shared/component/olly-landing/olly-landing.module').then(m => m.OllyLandingModule)
   }
 
