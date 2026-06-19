@@ -752,5 +752,6 @@ export class UrlConstant {
   public static sitesearch = 'site-search';
   public static notification = 'notification';
   public static startFreeTrial = '/subscription/start-your-free-trial';
+  public static tryFreeAndSubscribe = '/subscription/try-free-and-subscribe';
 }
 

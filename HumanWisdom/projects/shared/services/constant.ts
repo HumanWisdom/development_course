@@ -39,5 +39,5 @@ export class Constant {
     public static Checkout = "Checkout";
     public static NoTrial = 'No Trial';
     public static ProfileImage='ProfileImage';
-    public static AccountCreated  = 'Account Created Successfully';
+    public static AccountCreated  = 'Account created successfully';
 }
