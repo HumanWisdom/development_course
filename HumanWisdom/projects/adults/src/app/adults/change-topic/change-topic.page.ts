@@ -8,6 +8,7 @@ import { LogEventService } from '../../../../../shared/services/log-event.servic
 import { NavigationService } from '../../../../../shared/services/navigation.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
 import { Constant } from '../../../../../shared/services/constant';
+import { CommonService } from '../../../../../shared/services/common.service';
 
 
 @Component({
@@ -44,7 +45,7 @@ export class ChangeTopicPage implements OnInit {
   public userId = 100;
   public introLogs = [];
   constructor(private location: Location, private service: AdultsService, public logeventservice: LogEventService,
-    public router: Router, public activatedRoute: ActivatedRoute,private navigation:NavigationService) {
+    public router: Router, public activatedRoute: ActivatedRoute,private navigation:NavigationService, private commonService: CommonService) {
     let authtoken;
     this.activatedRoute.queryParams.subscribe(params => {
       authtoken = params?.authtoken
@@ -62,7 +63,7 @@ export class ChangeTopicPage implements OnInit {
           let namedata = localStorage.getItem('name').split(' ');
           
           this.userId = res['UserId']
-          this.loginadult(res)
+          this.commonService.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
           localStorage.setItem("LName", namedata[1] ? namedata[1] : '')
           localStorage.setItem("Subscriber", res['Subscriber'])

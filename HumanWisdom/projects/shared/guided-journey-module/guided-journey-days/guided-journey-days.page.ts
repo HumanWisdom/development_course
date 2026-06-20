@@ -13,6 +13,7 @@ import { NavigationService } from "../../services/navigation.service";
 export class GuidedJourneyDaysPage implements OnInit {
   isAdults = true;
   journeyId: any;
+  private loadedJourneyId: any = null;
   currentDay: number = 1;
   totalDays: number = 0;
   allDaysData: any[] = [];
@@ -53,16 +54,30 @@ export class GuidedJourneyDaysPage implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.journeyId = params['journeyId'];
+      const newJourneyId = params['journeyId'];
       const dayParam = params['day'];
+      
+      let dayChanged = false;
       if (dayParam !== undefined && dayParam !== null) {
-        this.currentDay = parseInt(dayParam);
+        const newDay = parseInt(dayParam);
+        if (this.currentDay !== newDay) {
+          this.currentDay = newDay;
+          dayChanged = true;
+        }
       } else {
-        this.currentDay = 0;
+        if (this.currentDay !== 0) {
+          this.currentDay = 0;
+          dayChanged = true;
+        }
       }
-      if (this.journeyId) {
+
+      if (newJourneyId && newJourneyId !== this.loadedJourneyId) {
+        this.journeyId = newJourneyId;
+        this.loadedJourneyId = newJourneyId;
         this.getJourneyDetails();
         this.getGuidedJourneyDays();
+      } else if (dayChanged) {
+        this.updateDisplayData();
       }
     });
 
@@ -521,7 +536,7 @@ export class GuidedJourneyDaysPage implements OnInit {
     }
   }
 
-  isBreathingExercise(exercise: any): boolean {
+    isBreathingExercise(exercise: any): boolean {
     if (!exercise) return false;
     const section = (exercise.Section || '').toUpperCase();
     return section.includes('BREATHING EXERCISE');
@@ -532,7 +547,7 @@ export class GuidedJourneyDaysPage implements OnInit {
     const section = (exercise.Section || '').toUpperCase();
     return section.includes('SOUNDSCAPE');
   }
-
+  
   getSectionIcon(section: string) {
     if (!section) return null;
     const s = section.toUpperCase();

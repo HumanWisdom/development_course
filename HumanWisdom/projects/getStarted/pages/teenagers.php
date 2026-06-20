@@ -22,8 +22,7 @@
   <?php include('../includes/vendor_header.php'); ?>
 
   <link rel="stylesheet" href="../assets/css/teenagers.css" />
-
-
+  <?php hw_defer_stylesheet('../assets/css/index-inline.css'); ?>
 </head>
 
 <body class="page-teenagers">
@@ -178,7 +177,7 @@
       <div class="section-header-teen">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-video-title">
               Learn the skills you need to succeed in life
             </h2>
           </div>
@@ -210,7 +209,7 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mt0px mb20px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mt0px fs_24px fw_600 lh_120p teen-support-title">
               Get all the support you need when life gets tough
             </h2>
           </div>
@@ -244,7 +243,7 @@
           </div>
 
           <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="mtb0px fs_24px fw_600 lh_150p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_150p teen-calm-title">
               Feel calm, capable, and better everyday, with HappierMe!
             </h2>
 
@@ -257,10 +256,10 @@
     </section>
 
     <section>
-      <div class="section-header">
+      <div class="section-header teen-dykt-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-dykt-title">
               Did you know?
             </h2>
           </div>
@@ -741,10 +740,10 @@
 
     <!-- inspiring -->
     <section>
-      <div class="section-header">
+      <div class="section-header teen-inspire-header">
         <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-inspire-title">
               Inspiring you to succeed in life
             </h2>
           </div>
@@ -1007,92 +1006,65 @@
     </section>
     <!-- /inspiring -->
     <!-- subscription -->
-<!-- subscription -->
-<section id="div_subscription">
-  <div class="row center_flex div_subscription">
-    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-12 p0 w-980px">
-
-      <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 text-center">
-          <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
-            40% off HappierMe Premium
-          </h2>
-          <h6 class="mt15px mb0px fs_12px fw_400 lh_150p fc_000000">
-            Start your free trial today!
-          </h6>
+    <div class="frame-wrapper-9" id="div_subscription">
+      <div class="div-39">
+        <div class="div-40">
+          <div class="div-wrapper-6">
+            <div class="text-wrapper-25">Simple, transparent pricing</div>
+            <span class="div-subs">Start free. Upgrade anytime. Cancel anytime.</span>
+          </div>
+          <div class="div-41">
+            <div class="div-42">
+              <img class="group-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/star.svg" alt="Expert" />
+              <div class="text-wrapper-26">Expert guidance</div>
+            </div>
+            <div class="div-43">
+              <img class="vector-6" src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/goals.svg" alt="Goals" />
+              <p class="text-wrapper-27">Personalised content to meet your goals</p>
+            </div>
+            <div class="div-42">
+              <div class="ellipse"></div>
+              <p class="text-wrapper-26">Daily practices that fit your life</p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Pricing Cards -->
-      <div class="row center_flex mtb40px justify-content-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-300px">
-
-          <!-- Yearly -->
-          <button class="btn_subscription btn-subscription-border w-100">
-            <div class="row center_flex btn_subscription_trial btn-subscription-color">
-              <div class="col-12">
-                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
-                  14-day free trial
-                </h6>
+        <div class="frame-wrapper-10">
+          <div class="div-44">
+            <div class="div-45">
+              <div class="group-7" id="sub-plan-yearly">
+                <div class="rectangle-2"></div>
+                <div class="div-wrapper-7"><div class="text-wrapper-28">14-day free trial</div></div>
+                <div class="div-46">
+                  <div class="text-wrapper-29">Yearly</div>
+                  <p class="INR-yr-INR">
+                    <span class="text-wrapper-31" id="annualPricingModelHeading">₹2400/yr</span>
+                  </p>
+                </div>
+                <div class="text-wrapper-32" id="spanAnnualLabel">₹200/mo.</div>
+              </div>
+              <div class="group-8" id="sub-plan-monthly">
+                <div class="rectangle-3"></div>
+                <div class="div-47">
+                  <div class="text-wrapper-29">Monthly</div>
+                  <div class="text-wrapper-33">7-day free trial</div>
+                </div>
+                <div class="text-wrapper-34" id="monthlyPricingModelHeading">₹300/mo.</div>
               </div>
             </div>
-
-            <div class="row center_flex">
-              <div class="col-6 p0 tleft">
-                <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">Yearly</h5>
-                <h6 class="mtb0px fs_12px fw_600 lh_150p fc_000000">
-                  <span class="td_linethrough fc_000000_0_5" id="strikeOutAnnualPricingModelHeading"></span>
-                  <span id="annualPricingModelHeading"></span>
-                </h6>
-              </div>
-              <div class="col-6 p0 tright">
-                <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="spanAnnualLabel"></h4>
+            <p class="after-your-free">
+              <span class="text-wrapper-35" id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is ₹2400/yr and automatically renews each year until cancelled.</span>
+            </p>
+            <div id="AnnualTypebtn">
+              <div id="teenagers-AnnualType">
+                <a id="teenagersPricing" href="javascript:void(0)">
+                  <div class="div-wrapper-4"><div class="text-wrapper-5">Start your free trial</div></div>
+                </a>
               </div>
             </div>
-          </button>
-
-          <!-- Monthly -->
-          <button class="btn_subscription btn-subscription-border mt20pxi w-100">
-            <div class="row center_flex">
-              <div class="col-6 p0 tleft">
-                <h5 class="mtb0px fs_15px fw_500 lh_150p fc_000000">Monthly</h5>
-                <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                  7-day free trial
-                </h6>
-              </div>
-              <div class="col-6 p0 tright">
-                <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000" id="monthlyPricingModelHeading"></h4>
-              </div>
-            </div>
-          </button>
-
+          </div>
         </div>
       </div>
-
-      <!-- Note -->
-      <div class="row center_flex">
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 p0 text-center">
-          <h6 class="mtb0px fs_12px fw_400 lh_150p fc_000000" id="totalAnnualPricingModelHeading">
-            After your free trial, the yearly subscription is INR 5,999 and automatically 
-            renews each year until cancelled.
-          </h6>
-        </div>
-      </div>
-
-      <!-- Start Trial Button -->
-      <div class="row center_flex mt40px" data-aos="fade-up" data-aos-delay="300" id="teenagers-AnnualType">
-        <div class=" text-center">
-          <a id="teenagersPricing">
-            <button type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_teen_sub">
-              Start your free trial
-            </button>
-          </a>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
     <!-- /subscription -->
 
 
@@ -1105,7 +1077,7 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-blog-title">
               Explore our blog
             </h2>
           </div>
@@ -1248,6 +1220,37 @@
     <!-- /footer -->
 
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var y = document.getElementById('sub-plan-yearly');
+      var m = document.getElementById('sub-plan-monthly');
+      var d = document.getElementById('totalAnnualPricingModelHeading');
+      if (!y || !m || !d) return;
+      function yearlyDisclaimer() {
+        var annual = document.getElementById('annualPricingModelHeading');
+        var price = annual ? annual.textContent.trim() : '';
+        return 'After your free trial, the yearly subscription is ' + price + ' and automatically renews each year until cancelled.';
+      }
+      function monthlyDisclaimer() {
+        var monthly = document.getElementById('monthlyPricingModelHeading');
+        var price = monthly ? monthly.textContent.trim() : '';
+        return 'After your free trial, the monthly subscription is ' + price + ' and automatically renews each month until cancelled.';
+      }
+      function pickMonthly() {
+        y.classList.add('sub-plan-off');
+        m.classList.add('sub-plan-on');
+        d.textContent = monthlyDisclaimer();
+      }
+      function pickYearly() {
+        y.classList.remove('sub-plan-off');
+        m.classList.remove('sub-plan-on');
+        d.textContent = yearlyDisclaimer();
+      }
+      y.addEventListener('click', pickYearly);
+      m.addEventListener('click', pickMonthly);
+    });
+  </script>
 
   <!-- vendor_footer -->
   <?php include('../includes/vendor_footer.php'); ?>

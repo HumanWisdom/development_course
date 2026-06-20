@@ -12,6 +12,16 @@
     <!-- vendor_header -->
     <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
+
+      <style>
+table, th, td {
+  border:1px solid black;
+  padding:5px;
+}
+th{
+  text-align:center;
+}
+</style>
   </head>
 
   <body>
@@ -39,7 +49,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Mental health
+                  AI wellness,
                   </button>
                 </div>
               </div>
@@ -81,7 +91,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  So which one is better? Let's break it down.
+                  So which one is better?
+</h4>
+ <h4 class="mtb0px blog_desc"> Let's break it down.
                 </h4>
 
 
@@ -95,7 +107,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   The moment you explore
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>,
+                  HappierMe,
                   it becomes clear that the app is trying to do more than simply reduce
                   stress
                 </h4>
@@ -210,11 +222,14 @@
                 <!-- </div> -->
 
                 <h4 class="mtb0px blog_desc">
-                  HappierMe asks: <span class="blog_highlight_black">"How can you grow emotionally over time?"</span>
+                  HappierMe asks: 
+                  </h4>
+                   <h4 class="mtb0px blog_desc">"How can you grow emotionally over time?"
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Wysa asks: <span class="blog_highlight_black">"How can you feel better right now?"</span>
+                  Wysa asks: 
+                  </h4>  <h4 class="mtb0px blog_desc">"How can you feel better right now?"<
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -230,12 +245,12 @@
                   AI is a major feature in both apps, but the implementation is completely different.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  HappierMe's Olly AI
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  HappierMe's Olly AI </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  In <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>,
+                  In HappierMe,
                   <span class="blog_highlight_black">Olly AI</span> works like a wellness guide.
                 </h4>
 
@@ -252,7 +267,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  The AI helps organize and personalize the wellness journey. The goal is guidance and growth.
+                  The AI helps organize and personalize the wellness journey. 
+                  </h4>
+                    <h4 class="mtb0px blog_desc">The goal is guidance and growth.
                 </h4>
 
 
@@ -261,7 +278,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  In Wysa, the AI <span class="blog_highlight_black">is</span> the experience.
+                  In Wysa, the AI is the experience.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -269,7 +286,7 @@
                   <ul>
                     <li>Vent emotions</li>
                     <li>Explore thoughts</li>
-                    <li>Process <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">stress</a></li>
+                    <li>Process stress</li>
                     <li>Practice coping techniques</li>
                     <li>Reflect privately</li>
                   </ul>
@@ -288,8 +305,8 @@
                   Interestingly, both apps feel human in different ways.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  Wysa Feels Emotionally Conversational
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  Wysa Feels Emotionally Conversational</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -306,12 +323,12 @@
                 </h4>
 
 
-                <h4 class="mtb0px blog_sub_title">
-                  HappierMe Feels Personally Supportive
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  HappierMe Feels Personally Supportive</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe 
                   feels less like chatting with AI and more like having access to a complete emotional wellness system.
                 </h4>
 
@@ -336,41 +353,41 @@
                   Feature Snapshot
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
-                  What HappierMe Includes
+                <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
+                  What HappierMe Includes</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <ul>
-                    <li>Meditation and mindfulness</li>
-                    <li>Guided journaling</li>
-                    <li>Emotional intelligence tools</li>
-                    <li>Habit-building support</li>
-                    <li>Podcasts and wellness blogs</li>
-                    <li>Wellness surveys and tracking</li>
-                    <li>Personalized AI guidance</li>
-                    <li>Relationship and communication support</li>
-                    <li>Teen and young adult wellness focus</li>
-                    <li>Coaching access and community learning</li>
-                  </ul>
+                  
+                    <span style='font-size:20px;'>&#10003; </span>Meditation and mindfulness</br>
+                   <span style='font-size:20px;'>&#10003; </span>Guided journaling</br>
+                   <span style='font-size:20px;'>&#10003; </span>Emotional intelligence tools</br>
+                    <span style='font-size:20px;'>&#10003; </span>Habit-building support</br>
+                    <span style='font-size:20px;'>&#10003; </span>Podcasts and wellness blogs</br>
+                    <span style='font-size:20px;'>&#10003; </span>Wellness surveys and tracking</br>
+                    <span style='font-size:20px;'>&#10003; </span>Personalized AI guidance</br>
+                    <span style='font-size:20px;'>&#10003; </span>Relationship and communication support</br>
+                    <span style='font-size:20px;'>&#10003; </span>Teen and young adult wellness focus</br>
+                    <span style='font-size:20px;'>&#10003; </span>Coaching access and community learning</br>
+                  
                 </h4>
 
 
-                <h4 class="mtb0px blog_sub_title">
-                  What Wysa Includes
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                  What Wysa Includes</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <ul>
-                    <li>AI chatbot conversations</li>
-                    <li>CBT and DBT exercises</li>
-                    <li>Mood tracking</li>
-                    <li>Guided reflections</li>
-                    <li><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">Meditation</a> audios</li>
-                    <li>Sleep support</li>
-                    <li>Anonymous emotional support</li>
-                    <li>Human coaching access</li>
-                  </ul>
+                  
+                    <span style='font-size:20px;'>&#10003; </span>AI chatbot conversations</br>
+                    <span style='font-size:20px;'>&#10003; </span>CBT and DBT exercises</br>
+                    <span style='font-size:20px;'>&#10003; </span>Mood tracking</br>
+                    <span style='font-size:20px;'>&#10003; </span>Guided reflections</br>
+                    <span style='font-size:20px;'>&#10003; </span>Meditation audios</br>
+                <span style='font-size:20px;'>&#10003; </span>Sleep support</br>
+                    <span style='font-size:20px;'>&#10003; </span>Anonymous emotional support</br>
+                    <span style='font-size:20px;'>&#10003; </span>Human coaching access</br>
+                  
                 </h4>
 
 
@@ -379,7 +396,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   has a stronger teen-focused approach.
                 </h4>
 
@@ -520,11 +537,11 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <span class="blog_highlight_black">
+                  
                     Both
                     <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
-                    and Wysa are valuable mental wellness apps, but they solve different problems.
-                  </span>
+                    and <a class="blog_highlight_peach td_underline" href="https://www.wysa.com/"> Wysa </a> are valuable mental wellness apps, but they solve different problems.
+                  
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -532,7 +549,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  HappierMe
                   offers a broader emotional wellness experience by combining mindfulness, emotional intelligence,
                  journaling
                   self-growth, AI personalization, and practical life guidance into one platform.

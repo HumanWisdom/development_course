@@ -235,9 +235,15 @@ export class PaymentPage implements OnInit, AfterViewInit {
   }
 
   GetAmount() {
-    let isCoupanCode = JSON.parse(SharedService.getDataFromLocalStorage('IsCoupanApplied'));
-    if(isCoupanCode == true || isCoupanCode =='true'){
-      return JSON.parse(SharedService.getDataFromLocalStorage('subscribeToPremiumAfterDiscount'));
+    let isCoupanCode = false;
+    try {
+      isCoupanCode = JSON.parse(SharedService.getDataFromLocalStorage('IsCoupanApplied'));
+    } catch (e) {
+      isCoupanCode = false;
+    }
+    if(isCoupanCode){
+      let amountVal = JSON.parse(SharedService.getDataFromLocalStorage('subscribeToPremiumAfterDiscount'));
+      return Number(amountVal).toFixed(2);
     }
     if (this.selectedSubscription == this.Monthly) 
     {  

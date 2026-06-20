@@ -51,7 +51,7 @@ th{
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Mental health
+                  AI Wellness Apps
                   </button>
                 </div>
               </div>
@@ -84,7 +84,7 @@ th{
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Apps like and <a class="blog_highlight_peach td_underline" href="https://happierme.app/">Calm </a> and <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">Headspace</a> helped millions of people discover meditation, mindfulness, sleep support, and
+                  Apps like and <a class="blog_highlight_peach td_underline" href="https://www.calm.com">Calm </a> and <a class="blog_highlight_peach td_underline" href="https://www.headspace.com/">Headspace</a> helped millions of people discover meditation, mindfulness, sleep support, and
                   relief.
                 </h4>
 
@@ -134,7 +134,7 @@ th{
                   <ul>
                     <li>Guided meditation sessions</li>
                     <li>Sleep stories</li>
-                    <li>Breathing exercises<</li>
+                    <li>Breathing exercises</li>
                     <li>Relaxation sounds</li>
                     <li>Mindfulness audio tracks</li>
                     <li>Focus music</li>
@@ -147,7 +147,8 @@ th{
                   stress
                   temporarily,
                   <br/>
-                <span style='font-size:20px;'>&#10003; </span>improve sleep quality, <br/>
+                <span style='font-size:20px;'>&#10003; </span>
+                improve sleep quality, <br/>
                 <span style='font-size:20px;'>&#10003; </span>encourage mindfulness habits<br/>
                 <span style='font-size:20px;'>&#10003; </span>
                 create moments of calm in busy lives.
@@ -193,7 +194,9 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  In simple terms: traditional meditation apps help users pause. AI wellness apps help users grow.
+                  In simple terms:
+                  </h4>
+                   <h4 class="mtb0px blog_desc"> traditional meditation apps help users pause.<br/> AI wellness apps help users grow.
                 </h4>
 
 
@@ -250,7 +253,8 @@ Meditation
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                    HappierMe</a>
                   is a strong example of how AI wellness apps are evolving beyond traditional meditation platforms.
                 </h4>
 
@@ -260,7 +264,7 @@ Meditation
                     <li>AI-powered emotional guidance</li>
                     <li>Meditation and mindfulness</li>
                     <li>Emotional intelligence development</li>
-                    <li>Guided journaling<</li>
+                    <li>Guided journaling</li>
                     <li>Habit-building</li>
                     <li>Wellness tracking</li>
                     <li>Podcasts and videos</li>

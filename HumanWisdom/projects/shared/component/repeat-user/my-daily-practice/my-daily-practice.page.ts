@@ -53,6 +53,7 @@ export class MyDailyPracticePage implements OnInit {
   journalHits = 0;
   showSearchBox: boolean = true;
   isSearchActive: boolean = false;
+  isQuestionsViewActive: boolean = false;
 
   constructor(
     private commonService: CommonService,
@@ -77,6 +78,11 @@ export class MyDailyPracticePage implements OnInit {
     }   
    
     this.userName = this.userName ? this.userName.replace('"',''): this.userName;
+    
+    // Capitalize the username
+    if (this.userName) {
+      this.userName = this.userName.charAt(0).toUpperCase() + this.userName.slice(1).toLowerCase();
+    }
   if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -262,6 +268,10 @@ routeDailyPractice(id: number): void {
   }
 
 
+
+  onOllyViewChanged(active: boolean): void {
+    this.isQuestionsViewActive = active;
+  }
 
   onFocus() {
     this.isSearchActive = true;

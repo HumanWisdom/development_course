@@ -37869,7 +37869,7 @@ div.contentdiv p {
 .tfas-plan-card-wrapper {
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   background: #FFD889;
   /* border: 2px solid transparent; */
   cursor: pointer;
@@ -37879,7 +37879,7 @@ div.contentdiv p {
 .tfas-plan-card-wrapper.tfas-plan-selected {
   /* border: 2px solid #D7586B; */
   background: #FFF3D6;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .tfas-plan-option {
@@ -37963,3 +37963,47 @@ div.contentdiv p {
 }
 
 /* ===== /try-free-and-subscribe new design styles ===== */
+
+.chat-thumbnails a {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+
+}
+
+.chat-thumbnails a img {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.resource-item {
+  background: #FFFFFF;
+  box-shadow: 1px 1px 1px 0px #00000040;
+  border: 1px solid #e0e7ef;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: box-shadow 0.2s;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.resource-thumbnail{
+    width: 100% !important;
+    max-width: 50px !important;
+    height: 50px !important;
+    border-radius: 6px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    object-fit: cover !important;
+}

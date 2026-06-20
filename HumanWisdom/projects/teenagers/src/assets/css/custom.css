@@ -34167,8 +34167,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  background: #EE9596 !important;
-  box-shadow: 1px 1px 2px #00000040;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+  box-shadow: 1px 1px 2px #00000040 !important;
   padding: 10px 20px;
   color: #FFF !important;
   font-size: 15px;
@@ -34182,7 +34182,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  background: #EE9596 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
   padding: 10px 20px;
   color: #FFF !important;
   font-size: 12px;
@@ -34283,7 +34283,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0;
   border: 0;
   border-radius: 100px;
-  background: #EE9596 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
   color: #FFF !important;
   font-size: 15px;
   font-weight: 600;
@@ -34389,8 +34389,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   height: 50px;
   border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #EE9596 !important;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
@@ -34452,8 +34452,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #EE9596 !important;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset !important;
   font-size: 12px;
   font-weight: 600;
   line-height: 150%;
@@ -34496,7 +34496,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   width: 100%;
   border-radius: 100px;
   border: 1px solid #EE9596;
-  background: #EE9596 !important;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
   padding: 10px 20px;
   color: #fff !important;
   font-size: 15px;
@@ -35070,8 +35070,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .toc_adiv_01 a .row {
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #0C2B5F;
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+  background: #031A41;
   min-height: 88px;
   margin-bottom: 10px;
   padding: 12px;
@@ -37357,7 +37357,7 @@ div.contentdiv p {
 .tfas-plan-card-wrapper {
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   background: #0C2B5F;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -37365,7 +37365,7 @@ div.contentdiv p {
 
 .tfas-plan-card-wrapper.tfas-plan-selected {
   background: #031A41;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .tfas-plan-option {
@@ -37450,3 +37450,45 @@ div.contentdiv p {
 }
 
 /* ===== /try-free-and-subscribe new design styles ===== */
+.chat-thumbnails a {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+
+}
+
+.chat-thumbnails a img {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.resource-item {
+  background: #60BEC2;
+  border: 1px solid #e0e7ef;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: box-shadow 0.2s;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.resource-thumbnail {
+  width: 100% !important;
+  max-width: 50px !important;
+  height: 50px !important;
+  border-radius: 6px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  object-fit: cover !important;
+}

@@ -743,6 +743,11 @@ const routes: Routes = [
   {
     path: 'self-awareness',
     loadChildren: () => import('./wisdom-exercise/wisdom-exercise.module').then(m => m.WisdomExerciseModule)
+  },
+  {
+    path: 'olly-landing',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('../../../../shared/component/olly-landing/olly-landing.module').then(m => m.OllyLandingModule)
   }
 
 

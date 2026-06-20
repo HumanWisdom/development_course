@@ -20,7 +20,7 @@
                   <!-- Footer Navigation -->
                   <div class="carousel-footer" *ngIf="currentSection < 5">
                     <div class="footer-top">
-                      <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
+                      <a (click)="skip()" class="skip-btn" [ngClass]="isAdults ? '' : 'fc_ffffff'"
                         *ngIf="currentSection < 4">Skip</a>
                     </div>
                     <div class="footer-bottom">
@@ -41,14 +41,19 @@
                         {'display': currentSection==0 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==0 ? '80vh' : '') : ''" [hidden]="loading">
                       <div class="img-container" [@imageFadeAnimation]="currentSection">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/think_beeter.webp"
+                        <img
+                          [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/think_beeter.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/think_better_teen.webp'"
                           class="img-responsive w100">
                       </div>
                       <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null"
                         [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Think<br>better</h4>
-                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">See why you think, feel,
-                          and react the way you do, so you can choose how you respond.</h4>
+                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <ng-container *ngIf="isAdults">See why you think, feel, and react <br> the way you do, so you
+                            can <br> choose how you respond.</ng-container>
+                          <ng-container *ngIf="!isAdults">Figure outwhy you think <br> the way
+                            you do, so you can <br> choose how you respond.</ng-container>
+                        </h4>
                       </div>
                     </div>
 
@@ -58,14 +63,19 @@
                         {'display': currentSection==1 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==1 ? '80vh' : '') : ''">
                       <div class="img-container" [@imageFadeAnimation]="currentSection">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/feel_better.webp"
+                        <img
+                          [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/feel_better.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/feel_better_teen.webp'"
                           class="img-responsive w100">
                       </div>
                       <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null"
                         [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Feel<br>better</h4>
-                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Simple exercises to
-                          reduce stress, anxiety, and emotional overwhelm.</h4>
+                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <ng-container *ngIf="isAdults">Simple exercises to <br> reduce stress, anxiety, and <br>
+                            emotional overwhelm.</ng-container>
+                          <ng-container *ngIf="!isAdults">Simple tools to handle stress, <br> anxiety, pressure and big
+                            emotions, <br> and feel calmer.</ng-container>
+                        </h4>
                       </div>
                     </div>
 
@@ -75,14 +85,19 @@
                         {'display': currentSection==2 ? 'block' : 'none'}"
                       [style.minHeight]="isIos ? (currentSection==2 ? '80vh' : '') : ''">
                       <div class="img-container" [@imageFadeAnimation]="currentSection">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/connect_better.webp"
+                        <img
+                          [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/connect_better.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/connect_better_teen.webp'"
                           class="img-responsive w100">
                       </div>
                       <div class="text-container" [@textAnimation]="!isIos ? (currentSection + '_' + direction) : null"
                         [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Connect<br>better</h4>
-                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Communicate with care,
-                          reduce conflict, and build deeper relationships.</h4>
+                        <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <ng-container *ngIf="isAdults">Communicate with care, <br> reduce conflict, and build <br>
+                            deeper relationships.</ng-container>
+                          <ng-container *ngIf="!isAdults">Learn how to express yourself, <br> handle arguments, and
+                            build <br> better friendships and relationships.</ng-container>
+                        </h4>
                       </div>
                     </div>
 
@@ -99,7 +114,7 @@
                         [@textAnimationSafari]="isIos ? (currentSection + '_' + direction) : null">
                         <h4 class="title-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Meet<br>Olly AI</h4>
                         <h4 class="desc-text" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Olly listens, helps you
-                          reflect, and guides you to expert-curated content you can trust.</h4>
+                          reflect, <br> and guides you to expert-curated <br> content you can trust.</h4>
                       </div>
                     </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AdultsService } from "../../adults.service"
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-s92136',
@@ -32,7 +33,9 @@ export class S92136Page implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private service:AdultsService,
-    private location: Location
+    private location: Location,
+      private navigationService:NavigationService
+    
   ) { }
 
   ngOnInit() 
@@ -106,6 +109,13 @@ export class S92136Page implements OnInit, OnDestroy {
     // this.router.navigate(['/dealing-with-depression/s2'])
     if (this.userId !== 563) this.submitProgress()
   }
+
+  routernavigate(url) {
+  
+    this.navigationService.addModuleUrlToHistory(this.router.url);
+     this.router.navigateByUrl(url);
+  }
+
 
   ngOnDestroy() 
   {}

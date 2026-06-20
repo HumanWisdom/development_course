@@ -123,11 +123,21 @@ export class ProceedToPaymentPage implements OnInit {
 
   back() {
   if(sessionStorage.getItem('isPaymentBackClicked') && sessionStorage.getItem('isPaymentBackClicked')=='T'){
-    this.location.back();
+    const previousPage = sessionStorage.getItem('proceedToPaymentPreviousPage');
+    if (previousPage) {
+      this.router.navigateByUrl(previousPage);
+    } else {
+      this.location.back();
+    }
   }else{
     sessionStorage.setItem('isPaymentBackClicked','T');
     this.commonService.updateSurveyData(2);
-    this.location.back();
+    const previousPage = sessionStorage.getItem('proceedToPaymentPreviousPage');
+    if (previousPage) {
+      this.router.navigateByUrl(previousPage);
+    } else {
+      this.location.back();
+    }
   }
   }
 
@@ -171,9 +181,11 @@ export class ProceedToPaymentPage implements OnInit {
 
   totalPrice() {
     if (this.couponCodeApplied) {
-      this.totalCartValueDiscount = this.totalCartValue - this.discount
+      let discountedAmount = this.totalCartValue - parseFloat(this.discount);
+      this.totalCartValueDiscount = discountedAmount.toFixed(2);
+      this.discount = parseFloat(this.discount).toFixed(2);
     } else {
-      this.totalCartValueDiscount = this.totalCartValue
+      this.totalCartValueDiscount = this.totalCartValue;
     }
   }
 
@@ -204,7 +216,9 @@ export class ProceedToPaymentPage implements OnInit {
             this.discount = parseFloat(res[0].Discount)
             localStorage.setItem("couponid", res[0]['CouponID'])
             localStorage.setItem("discountCode", this.discountCode)
-            this.totalCartValueDiscount = this.totalCartValue - this.discount;
+            let discountedAmount = this.totalCartValue - this.discount;
+            this.totalCartValueDiscount = discountedAmount.toFixed(2);
+            this.discount = this.discount.toFixed(2);
             this.percentage = res[0].Percentage
           }
         }

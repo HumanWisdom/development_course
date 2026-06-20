@@ -101,9 +101,17 @@ export class AppComponent implements OnDestroy {
     //   console.log('Owl shouldShow$ emitted:', shouldShow);
     // });
     
+    // Subscribe to login URL subject to handle navigation after login
+    this.commonService.loginUrlSubs.subscribe((url) => {
+      if (url) {
+        console.log('Navigating to:', url);
+        this.router.navigateByUrl(url);
+      }
+    });
+    
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
   
-    let urls = this.router.url.split('authtoken=');
+    let urls = window.location.href.split('authtoken=');
     if (urls && urls[1] == undefined) {
       if (localStorage.getItem("isloggedin") === 'T') {
         this.getUserInformationById(SharedService.getUserId());

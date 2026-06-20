@@ -68,13 +68,17 @@ describe('ChatBotComponent', () => {
     mockSanitizer.bypassSecurityTrustHtml.and.returnValue(mockSafeHtml);
 
     mockChatbotService = jasmine.createSpyObj('ChatbotService', [
-      'sendMessage',
+      'sendMessageStream',
       'addUserMessage',
       'addBotMessage',
+      'beginStreamingBotMessage',
+      'updateStreamingBotMessage',
+      'finalizeStreamingBotMessage',
       'addTypingIndicator',
       'removeTypingIndicator',
       'setTyping',
       'loadHistory',
+      'initializeChatGreeting',
       'ensureWelcomeMessages',
       'prependHistoryMessages',
       'clearMessages',
@@ -99,7 +103,26 @@ describe('ChatBotComponent', () => {
     mockChatStore.updateMessage.and.returnValue(undefined);
 
     // Setup default return values
-    mockChatbotService.sendMessage.and.returnValue(of(mockChatbotResponse));
+    mockChatbotService.sendMessageStream.and.returnValue(of(
+      {
+        type: 'token',
+        token: 'Test response',
+        rawContent: 'Test response',
+        htmlContent: '<p>Test response</p>'
+      },
+      {
+        type: 'done',
+        rawContent: 'Test response',
+        htmlContent: '<p>Test response</p>',
+        session_id: 'session-123',
+        allow_feedback: true,
+        offer_related: false,
+        is_followup: false,
+        has_more: false
+      }
+    ));
+    mockChatbotService.beginStreamingBotMessage.and.returnValue('stream-msg-1');
+    mockChatbotService.initializeChatGreeting.and.returnValue(of(void 0));
     mockChatbotService.loadHistory.and.returnValue(of(mockHistoryResponse));
     mockChatbotService.sendFeedback.and.returnValue(of({ status: 'success' }));
     mockChatbotService.sendYesNoResponse.and.returnValue(of(mockChatbotResponse));
@@ -339,14 +362,14 @@ describe('ChatBotComponent', () => {
       component.currentMessage = '';
       component.onSendMessage();
 
-      expect(mockChatbotService.sendMessage).not.toHaveBeenCalled();
+      expect(mockChatbotService.sendMessageStream).not.toHaveBeenCalled();
     });
 
     it('should not send message if currentMessage is only whitespace', () => {
       component.currentMessage = '   ';
       component.onSendMessage();
 
-      expect(mockChatbotService.sendMessage).not.toHaveBeenCalled();
+      expect(mockChatbotService.sendMessageStream).not.toHaveBeenCalled();
     });
 
     it('should not send message if isLoading is true', () => {
@@ -354,7 +377,7 @@ describe('ChatBotComponent', () => {
       component.isLoading = true;
       component.onSendMessage();
 
-      expect(mockChatbotService.sendMessage).not.toHaveBeenCalled();
+      expect(mockChatbotService.sendMessageStream).not.toHaveBeenCalled();
     });
 
     it('should send message with trimmed content', () => {
@@ -365,7 +388,7 @@ describe('ChatBotComponent', () => {
 
       expect(mockChatbotService.getFullQuestionForNumber).toHaveBeenCalledWith('Test message');
       expect(mockChatbotService.addUserMessage).toHaveBeenCalled();
-      expect(mockChatbotService.sendMessage).toHaveBeenCalledWith('Test message');
+      expect(mockChatbotService.sendMessageStream).toHaveBeenCalledWith('Test message');
     });
 
     it('should clear currentMessage after sending', () => {
@@ -384,24 +407,31 @@ describe('ChatBotComponent', () => {
     });
 
     it('should set isLoading to true when sending', fakeAsync(() => {
-      // Use a Subject to control when the observable completes
       const sendMessageSubject = new Subject<any>();
-      mockChatbotService.sendMessage.and.returnValue(sendMessageSubject.asObservable());
+      mockChatbotService.sendMessageStream.and.returnValue(sendMessageSubject.asObservable());
 
       component.currentMessage = 'Test message';
       component.isLoading = false;
       component.onSendMessage();
 
-      // isLoading should be set to true immediately (synchronously) before observable completes
       expect(component.isLoading).toBe(true);
 
-      // Now complete the observable
-      sendMessageSubject.next(mockChatbotResponse);
+      sendMessageSubject.next({
+        type: 'token',
+        token: 'Hi',
+        rawContent: 'Hi',
+        htmlContent: '<p>Hi</p>'
+      });
+      sendMessageSubject.next({
+        type: 'done',
+        rawContent: 'Hi',
+        htmlContent: '<p>Hi</p>',
+        session_id: 'session-123'
+      });
       sendMessageSubject.complete();
-      tick(150); // Flush all timers including setTimeout(100) in scrollSlightlyDown
-      flush(); // Ensure all pending timers are flushed
+      tick(150);
+      flush();
 
-      // After completion, isLoading should be false
       expect(component.isLoading).toBe(false);
     }));
 
@@ -416,19 +446,19 @@ describe('ChatBotComponent', () => {
     it('should handle successful response', fakeAsync(() => {
       component.currentMessage = 'Test message';
       component.onSendMessage();
-      tick(150); // Flush all timers including setTimeout
+      tick(150);
 
       expect(mockChatbotService.removeTypingIndicator).toHaveBeenCalled();
       expect(mockChatbotService.setTyping).toHaveBeenCalledWith(false);
-      expect(mockChatbotService.addBotMessage).toHaveBeenCalled();
+      expect(mockChatbotService.finalizeStreamingBotMessage).toHaveBeenCalled();
       expect(component.isLoading).toBe(false);
     }));
 
     it('should handle error response', fakeAsync(() => {
-      mockChatbotService.sendMessage.and.returnValue(throwError(() => new Error('API Error')));
+      mockChatbotService.sendMessageStream.and.returnValue(throwError(() => new Error('API Error')));
       component.currentMessage = 'Test message';
       component.onSendMessage();
-      tick(150); // Flush all timers
+      tick(150);
 
       expect(mockChatbotService.removeTypingIndicator).toHaveBeenCalled();
       expect(mockChatbotService.setTyping).toHaveBeenCalledWith(false);
@@ -436,12 +466,16 @@ describe('ChatBotComponent', () => {
       expect(component.isLoading).toBe(false);
     }));
 
-    it('should handle response with error status', fakeAsync(() => {
-      const errorResponse = { ...mockChatbotResponse, status: 'error' as const };
-      mockChatbotService.sendMessage.and.returnValue(of(errorResponse));
+    it('should handle empty streamed response', fakeAsync(() => {
+      mockChatbotService.sendMessageStream.and.returnValue(of({
+        type: 'done',
+        rawContent: '',
+        htmlContent: '',
+        session_id: 'session-123'
+      }));
       component.currentMessage = 'Test message';
       component.onSendMessage();
-      tick(150); // Flush all timers
+      tick(150);
 
       expect(component.errorMessage).toContain('encountered an error');
       expect(component.isLoading).toBe(false);
@@ -1349,5 +1383,40 @@ describe('ChatBotComponent', () => {
       expect(component['cachedHistoryUserId']).toBeNull();
     });
   });
+
+  describe('Olly Landing Page Integration', () => {
+    it('should initialize showLanding to true by default', () => {
+      expect(component.showLanding).toBe(true);
+    });
+
+    it('should hide landing page when user messages are detected in the store', fakeAsync(() => {
+      const userMessage: ChatMessage = {
+        id: 'user-msg-1',
+        content: 'I need help',
+        sender: 'user',
+        timestamp: new Date()
+      };
+      
+      component.showLanding = true;
+      messagesSubject.next([userMessage]);
+      tick(200); // Flush all timers
+
+      expect(component.showLanding).toBe(false);
+    }));
+
+    it('should start chat when onStartChat is called', fakeAsync(() => {
+      spyOn(component, 'onSendMessage');
+      component.showLanding = true;
+      
+      component.onStartChat('How are you?');
+      
+      expect(component.showLanding).toBe(false);
+      expect(component.currentMessage).toBe('How are you?');
+      tick(100); // Flush the setTimeout in onStartChat
+
+      expect(component.onSendMessage).toHaveBeenCalled();
+    }));
+  });
 });
+
 

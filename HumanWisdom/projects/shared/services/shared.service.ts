@@ -142,8 +142,6 @@ export class SharedService {
         return 'adults';
       case ProgramType.Teenagers:
         return 'teenagers';
-      case ProgramType.Young_Adults:
-        return 'youngadults';
       default:
         return 'adults';
     }
@@ -155,8 +153,6 @@ export class SharedService {
         return '/adults/home';
       case ProgramType.Teenagers:
         return '/teenagers/home';
-      case ProgramType.Young_Adults:
-        return '/teenagers/teenager-dashboard';
       default:
         return '/adults/home';
     }
@@ -168,8 +164,6 @@ export class SharedService {
         return `/adults/${name}`;
       case ProgramType.Teenagers:
         return `/teenagers/${name}`;
-      case ProgramType.Young_Adults:
-        return '/adults/journal';
       default:
         return `/adults/${name}`;
     }
@@ -561,15 +555,95 @@ return [
     return '';
   }
 
-   public static FnName() {
-    let FnName = this.getDataFromLocalStorage('FnName');
-    if (FnName && FnName != null) {
-      return FnName;
+  private static isGuestName(value: string | null): boolean {
+    if (!value || value === 'null' || value === 'undefined') {
+      return true;
     }
-    let name = this.getDataFromLocalStorage('name');
-    if (name && name != null) {
-      return name.split(' ')[0];
+    return value.trim().toLowerCase() === 'guest';
+  }
+
+  private static firstNameFromFullName(fullName: string): string {
+    return (fullName || '').trim().split(/\s+/)[0] || '';
+  }
+
+  private static parseStoredName(value: string | null): string {
+    if (!value || value === 'null' || value === 'undefined') {
+      return '';
     }
+    try {
+      const parsed = JSON.parse(value);
+      return typeof parsed === 'string' ? parsed : String(parsed);
+    } catch {
+      return value;
+    }
+  }
+
+  public static syncUserDisplayName(fullName: string): void {
+    const normalizedName = (fullName || '').trim();
+    if (!normalizedName || this.isGuestName(normalizedName)) {
+      return;
+    }
+    localStorage.setItem('name', normalizedName);
+    const namedata = normalizedName.split(/\s+/);
+    localStorage.setItem('FnName', namedata[0]);
+    localStorage.setItem('LName', namedata[1] ? namedata[1] : '');
+  }
+
+  public static syncUserDisplayNameFromLogin(): void {
+    if (!this.isLoggedIn()) {
+      return;
+    }
+    try {
+      const loginResponse = localStorage.getItem('loginResponse');
+      if (!loginResponse) {
+        return;
+      }
+      const loginData = JSON.parse(loginResponse);
+      const loginName = loginData?.Name;
+      if (!loginName || this.isGuestName(loginName)) {
+        return;
+      }
+      const fnName = this.getDataFromLocalStorage('FnName');
+      const name = this.getDataFromLocalStorage('name');
+      if (this.isGuestName(fnName) || this.isGuestName(name)) {
+        this.syncUserDisplayName(loginName);
+      }
+    } catch {
+      // ignore malformed loginResponse
+    }
+  }
+
+  public static FnName() {
+    this.syncUserDisplayNameFromLogin();
+
+    let fnName = this.parseStoredName(this.getDataFromLocalStorage('FnName'));
+    if (fnName && !this.isGuestName(fnName)) {
+      return this.firstNameFromFullName(fnName);
+    }
+
+    let name = this.parseStoredName(this.getDataFromLocalStorage('name'));
+    if (name && !this.isGuestName(name)) {
+      return this.firstNameFromFullName(name);
+    }
+
+    let username = this.parseStoredName(this.getDataFromLocalStorage('userName'));
+    if (username && !this.isGuestName(username)) {
+      return this.firstNameFromFullName(username);
+    }
+
+    try {
+      const loginResponse = localStorage.getItem('loginResponse');
+      if (loginResponse) {
+        const loginData = JSON.parse(loginResponse);
+        const loginName = loginData?.Name;
+        if (loginName && !this.isGuestName(loginName)) {
+          return this.firstNameFromFullName(loginName);
+        }
+      }
+    } catch {
+      // ignore malformed loginResponse
+    }
+
     return '';
   }
 
@@ -678,5 +752,6 @@ export class UrlConstant {
   public static sitesearch = 'site-search';
   public static notification = 'notification';
   public static startFreeTrial = '/subscription/start-your-free-trial';
+  public static tryFreeAndSubscribe = '/subscription/try-free-and-subscribe';
 }
 

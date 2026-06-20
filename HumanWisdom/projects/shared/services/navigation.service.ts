@@ -29,6 +29,11 @@ export class NavigationService {
     });
   }
 
+  addModuleUrlToHistory(url: string){
+     this.history.push(url);
+
+  }
+
   addToHistory(url: string, source: string | null = null) {
     const navigation = this.router.getCurrentNavigation();
     const newSource = source || navigation?.extras?.state?.source;
@@ -309,15 +314,10 @@ export class NavigationService {
     let returnUrl = microLearningEndUrl;
     const m_learningId = localStorage.getItem('m_learningId');
     let prefix = SharedService.getprogramName();
-    if (prefix === 'youngadults') prefix = 'teenagers';
 
     if (fromMicroLearningEnd && fromMicroLearningEnd !== 'false' && (returnUrl || m_learningId)) {
       if (!returnUrl && m_learningId) {
         returnUrl = `/${prefix}/micro-learning/inner/${m_learningId}?isEnd=true`;
-      }
-
-      if (returnUrl && returnUrl.includes('youngadults')) {
-        returnUrl = returnUrl.replace('youngadults', 'teenagers');
       }
 
       localStorage.removeItem('microLearningEndUrl');
@@ -592,7 +592,7 @@ export class NavigationService {
     }
 
     // 9. Module TOC / Index -> Search (If no pathway context was found)
-    if (segments.length >= 3 && (segments[1] === 'adults' || segments[1] === 'teenagers' || segments[1] === 'youngadults')) {
+    if (segments.length >= 3 && (segments[1] === 'adults' || segments[1] === 'teenagers')) {
        const topLevelPages = [
          'adult-dashboard', 'dashboard', 'home', 'search', 'journal', 
          'profile', 'forum', 'notification', 'teenager-dashboard', 
@@ -632,7 +632,10 @@ export class NavigationService {
         this.backClicked = true;
         // Perform routing logic to the popped path
         prevPath = this.history[this.history.length - 1];
-
+        //special handling for module screens 
+        if (prevPath.includes('/s') && prevPath.includes(this.history[this.history.length - 1])) {
+          this.history.pop();
+        }
 
     } else {
         console.log("Cannot go back. History is empty.");

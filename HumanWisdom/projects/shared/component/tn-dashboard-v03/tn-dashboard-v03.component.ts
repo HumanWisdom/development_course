@@ -195,8 +195,12 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
 }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-    this.toursubscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+    if (this.toursubscription) {
+      this.toursubscription.unsubscribe();
+    }
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
     }
@@ -254,7 +258,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     // if (!(SharedService.isIOSApp())) {
       this.logeventservice.logEvent("click_Free_Trial");
 
-      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.startFreeTrial)]);
+      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.tryFreeAndSubscribe)]);
     // }
   }
 

@@ -19,46 +19,46 @@ export class AdultsService {
   programId = ProgramType.Adults;
   //path="http://ec2-18-132-47-231.eu-west-2.compute.amazonaws.com:88/api"
   personalisedforyoulist = [
-    {
-      id: "1",
-      name: 'Work and Leadership'
-    },
-    {
-      id: "2",
-      name: 'Manage your mental wellbeing'
-    },
-    {
-      id: "3",
-      name: 'Relationships'
-    },
-    {
-      id: "4",
-      name: 'Be happier'
-    },
-    {
-      id: "5",
-      name: 'Habits and Addiction'
-    },
-    {
-      id: "6",
-      name: 'Deal with loss'
-    },
-    {
-      id: "7",
-      name: 'Meditation',
-    },
-    {
-      id: "8",
-      name: 'Manage your emotions',
-    },
-     {
-      id: "18",
-      name: 'For Parents',
-    },
-     {
-      id: "19",
-      name: 'Develop your self awareness',
-    }
+        {
+          id: "2",
+          name: 'Manage your mental health'
+        },
+        {
+          id: "1",
+          name: 'Work and Leadership'
+        },
+        {
+          id: "3",
+          name: 'Relationships'
+        },
+        {
+          id: "4",
+          name: 'Be happier'
+        },
+        {
+          id: "8",
+          name: 'Manage your emotions',
+        },
+        {
+          id: "18",
+          name: 'For parents',
+        },
+        {
+             id: "19",
+           name: 'Develop your self awareness',
+        },
+        {
+          id: "7",
+          name: 'Meditation',
+        },       
+        {
+          id: "6",
+          name: 'Deal with loss'
+        },
+         {
+          id: "5",
+          name: 'Habits and addictions'
+        }
   ]
 
   currentUrl: string = '';

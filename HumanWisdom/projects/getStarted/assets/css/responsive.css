@@ -1360,9 +1360,9 @@
 
   /* Center the Chat with Olly button on mobile */
   #OllyChatBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-flex;
+    width: fit-content;
+    align-self: center;
   }
   .pl_pr9px {
     padding-left: 9px !important;

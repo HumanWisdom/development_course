@@ -142,8 +142,10 @@ export class TryFreeAndSubscribePage implements OnInit {
       this.SetDataInLocalStorage();
       if (this.selectedSubscription != this.Redeem) {
         if (this.trialStatus == 'No Trial') {
+          sessionStorage.setItem('proceedToPaymentPreviousPage', this.router.url);
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/proceed-to-payment`);
         } else {
+          sessionStorage.setItem('proceedToPaymentPreviousPage', this.router.url);
           this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/proceed-to-payment`);
           // SharedService.setDataInLocalStorage(Constant.isFromCancelled,'');
           // var amt = this.selectedSubscription == Constant.AnnualPlan ? this.pricingModel.Annual : this.pricingModel.Monthly;
@@ -264,7 +266,35 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   routeToDashboard() {
-    this.router.navigateByUrl(SharedService.getDashboardUrls());
+    const redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
+    const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
+    if (redirectUrl) {
+      sessionStorage.removeItem('subscriptionRedirectUrl');
+      sessionStorage.removeItem('subscriptionRedirectState');
+      let extras = {};
+      if (redirectStateStr) {
+        extras = { state: JSON.parse(redirectStateStr) };
+      }
+      this.router.navigate([redirectUrl], extras);
+    } else {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
+  }
+
+  routeToOllyLanding() {
+    const redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
+    const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
+    if (redirectUrl) {
+      sessionStorage.removeItem('subscriptionRedirectUrl');
+      sessionStorage.removeItem('subscriptionRedirectState');
+      let extras = {};
+      if (redirectStateStr) {
+        extras = { state: JSON.parse(redirectStateStr) };
+      }
+      this.router.navigate([redirectUrl], extras);
+    } else {
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/olly-landing`);
+    }
   }
 
   buyGift() {

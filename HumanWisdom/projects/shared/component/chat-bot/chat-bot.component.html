@@ -1,4 +1,6 @@
-<div class="chat-bot-container">
+<app-olly-landing *ngIf="showLanding" [startInQuestionsView]="startInQuestionsView" (startChat)="onStartChat($event)" (viewChanged)="onLandingViewChanged($event)"></app-olly-landing>
+
+<div class="chat-bot-container" *ngIf="!showLanding">
   <!-- Header -->
   <div class="chat-header">
     <div class="header-content" *ngIf="isAdults">
@@ -47,7 +49,7 @@
 
           <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
             <!-- Regular message content -->
-            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="message.content"
+            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"
               (click)="onMessageContentClick($event)" (keydown.enter)="onMessageContentClick($event)" tabindex="0">
             </div>
 
@@ -72,8 +74,13 @@
             </div>
           </div>
 
+          <!-- Hyperlink outside the bubble, below the welcome message -->
+          <div *ngIf="message.id === 'welcome-intro-1'" class="welcome-questions-container">
+            <a class="questions-link" (click)="onQuestionsLinkClick($event)">Questions you can ask Olly</a>
+          </div>
+
           <!-- Give More Options Button (shown when bot offers related content or has more options) -->
-          <div *ngIf="isLast && message.sender === 'bot' && (message.offer_related || message.has_more) && !isLoading"
+          <div *ngIf="isLast && message.sender === 'bot' && (message.offer_related || message.has_more) && !isLoading && !message.isStreaming"
             class="more-options-container">
             <button class="action-button more-options-button" (click)="onGiveMoreOptions()">
               Give me more options
@@ -81,7 +88,7 @@
           </div>
 
           <!-- Feedback Buttons (Thumbs Up/Down) - OUTSIDE the message bubble -->
-          <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot'"
+          <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot' && !message.isStreaming"
             class="feedback-container">
             <button class="feedback-button thumbs-up" [class.active]="message.feedback_given === 'positive'"
               [disabled]="message.feedback_given !== null" (click)="onThumbsUp(message)" title="Helpful">
@@ -168,8 +175,10 @@
         <textarea 
   id="autoResize" 
   placeholder="Reply..." 
-  rows="1"class="message-input" [(ngModel)]="currentMessage"
-          (keypress)="onKeyPress($event)" [disabled]="isLoading" #messageInput 
+  rows="1" class="message-input" [(ngModel)]="currentMessage"
+          [disabled]="isLoading" #messageInput 
+  (keydown)="onKeyPress($event)"
+  (input)="adjustHeight($event)"
   style="overflow:hidden; resize:none; width:100%; border:none"
 ></textarea>
         <!-- <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"
@@ -215,20 +224,3 @@
     </div>
   </div>
 </div>
-
-
-<script>
-  const textarea = document.getElementById("autoResize");
-
-  function autoResize(el) {
-    el.style.height = "auto";
-    el.style.height = el.scrollHeight + "px";
-  }
-
-  textarea.addEventListener("input", function () {
-    autoResize(this);
-  });
-
-  // Optional: run once on load (if pre-filled text exists)
-  autoResize(textarea);
-</script>

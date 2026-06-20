@@ -595,13 +595,7 @@ export class CommonService {
         sessionStorage.setItem("userName", JSON.stringify(this.userName))
       }
 
-      if(isRoutedFromLogin){
-        this.loginSubject(`${SharedService.getprogramName()}/changetopic`);
-        // this.router.navigate([]);
-      }else{
-        this.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
-        // this.router.navigate([]);tlo
-      }
+      this.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
     }
   }
 
@@ -692,5 +686,9 @@ export class CommonService {
 
   clickGuidedJourneyDay(id: any): Observable<any> {
     return this.http.post(this.path + `/clickGuidedJourneyDays/${id}`, null);
+  }
+
+  GetLastScreen_GuidedJourney(userId: any, programId: any): Observable<any> {
+    return this.http.get(this.path + `/GetLastScreen_GuidedJourney/${userId}/${programId}`);
   }
 }

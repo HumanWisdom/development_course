@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef, HostBinding } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { OwlStore } from '../../stores/owl.store';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { LogEventService } from '../../services/log-event.service';
+import { ProgramType } from '../../models/program-model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-owl-animation',
@@ -12,6 +14,10 @@ import { LogEventService } from '../../services/log-event.service';
   styleUrls: ['./owl-animation.component.css']
 })
 export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
+  @HostBinding('class.teenager-theme') get isTeenagerTheme() {
+    return SharedService.ProgramId === ProgramType.Teenagers;
+  }
+
   // Configuration: Time to wait (in milliseconds) before marking as initialized
   // Increase this value to keep the owl visible longer
   private readonly WAIT_TIME_BEFORE_INITIALIZATION = 5000; // 5 seconds
@@ -23,7 +29,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private _isTransitioning: boolean = false;
   private _isAtCorner: boolean = true; // GIF plays in corner position from the start
   private gifAnimationDuration = 6000; // Duration of GIF animation in milliseconds (10 seconds)
-  public gifUrl: string = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif'; // Dynamic GIF URL
+  public staticOwlUrl: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/justBreathing.gif';
   private gifPlayedOnce: boolean = false; // Track if GIF has played once
   private gifAnimationTimeout: any = null; // Track GIF animation timeout to prevent multiple calls
   private gifAlreadyStarting: boolean = false; // Prevent multiple GIF starts before localStorage is set
@@ -166,116 +172,21 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   /**
-   * Check current route and set owl display accordingly
-   * GIF shows on login (when user is logged in) and only once
+   * Check current route and set owl display accordingly.
+   * Shows justBreathing.gif with Olly_Hi.svg dialogue on first visit.
    */
   private checkRouteAndSetOwlDisplay(): void {
-    const currentUrl = this.router.url;
-    const hasGifBeenShown = sessionStorage.getItem(this.GIF_SHOWN_KEY) === 'true';
+    this.showGif = false;
+    this.showStaticOwl = true;
+    this.isPlaying = false;
+    this.hasCheckedHomePage = true;
 
-    // Check if user is logged in
-    const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
-
-    // Check if home component exists in DOM (most reliable method)
-    // Try multiple selectors to be sure
-    const homeComponent = document.querySelector('app-home');
-    const homeContainer = document.querySelector('.home-container');
-    const homeContent = document.querySelector('.home-content');
-    const stickyTopSection = document.querySelector('.sticky-top-section');
-    const navMenu = document.querySelector('.nav-menu');
-
-    // Also check route-based detection as fallback
-    const isHomeRoute = this.isHomePage(currentUrl);
-
-    const isHomeComponentPresent = !!(homeComponent || homeContainer || homeContent || stickyTopSection || navMenu);
-
-    // Use either DOM detection OR route detection
-    const isHomePage = isHomeComponentPresent || isHomeRoute;
-
-    // Show GIF if GIF hasn't been shown (removed home page restriction and ALL login checks)
-    // CRITICAL: Check gifAlreadyStarting to prevent multiple starts during async load
-    if (!hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
-      // Set flag immediately to prevent re-triggering from multiple checkRouteAndSetOwlDisplay() calls
-      this.gifAlreadyStarting = true;
-
-      // Clear any existing timeout first
-      if (this.gifAnimationTimeout) {
-        clearTimeout(this.gifAnimationTimeout);
-        this.gifAnimationTimeout = null;
-      }
-
-      // Show GIF on login if it hasn't been shown before
-      this.showGif = true;
-      this.showStaticOwl = false;
-      this.isPlaying = true;
-      this.gifLoaded = false;
-      this.gifError = false;
-      this.gifPlayedOnce = false;
-      // Reset dialogue state so it appears after GIF
-      this.dialogueAlreadyShown = false;
-      localStorage.removeItem(this.DIALOGUE_SHOWN_KEY);
-      // Reset GIF URL to ensure fresh load
-      this.gifUrl = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif?t=' + Date.now();
-      this.hasCheckedHomePage = true;
-
-      // Force change detection to ensure it sticks
-      this.cdr.detectChanges();
-      setTimeout(() => {
-        this.cdr.detectChanges();
-      }, 0);
-      setTimeout(() => {
-        this.cdr.detectChanges();
-      }, 100);
-
-      // Don't start speaking sequence yet - wait for GIF to complete
-      return; // Exit early to prevent setting static owl
+    if (this.dialogueAlreadyShown) {
+      this.showCloudMessage = false;
+      this.isSpeaking = false;
+      this.owlMessage = '';
     }
 
-    // Only show static owl if GIF has already been shown or user is not logged in
-    // BUT ONLY if showGif is not already true (to prevent overriding)
-    // Also check if GIF has already been played to prevent re-showing
-    // Only show static owl if GIF has already been shown
-    if (!this.showGif && !this.hasCheckedHomePage && !this.gifPlayedOnce) {
-      if (hasGifBeenShown) {
-        // GIF already shown - show static owl
-        this.showGif = false;
-        this.showStaticOwl = true;
-        this.isPlaying = false;
-        // Clear message if dialogue was already shown
-        if (this.dialogueAlreadyShown) {
-          this.owlMessage = '';
-          this.isSpeaking = false;
-        }
-        this.cdr.detectChanges();
-        return;
-      }
-    } else if (!hasGifBeenShown && !this.gifPlayedOnce && !this.gifAlreadyStarting) {
-      // Force show GIF if it hasn't been shown and we missed the first block
-      this.showGif = true;
-      this.showStaticOwl = false;
-      this.cdr.detectChanges();
-      return;
-    } else if (hasGifBeenShown || this.gifPlayedOnce) {
-      // If GIF has been shown, always show static owl without dialogue
-      this.showGif = false;
-      this.showStaticOwl = true;
-      this.isPlaying = false;
-      // Clear message if dialogue was already shown
-      if (this.dialogueAlreadyShown) {
-        this.owlMessage = '';
-        this.isSpeaking = false;
-      }
-    } else {
-      // Fallback: if none of the above conditions are met, show static owl
-      if (!this.showGif) {
-        this.showStaticOwl = true;
-        this.isPlaying = false;
-        if (this.dialogueAlreadyShown) {
-          this.owlMessage = '';
-          this.isSpeaking = false;
-        }
-      }
-    }
     this.cdr.detectChanges();
   }
 
@@ -409,7 +320,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   openChat() {
     this.logeventservice.logEvent('Click_olly_chat');
-    this.router.navigate(['/adults/chat-bot']);
+    const program = SharedService.ProgramId === ProgramType.Teenagers ? 'teenagers' : 'adults';
+    this.router.navigate([`/${program}/chat-bot`], { state: { startWithChat: true } });
   }
 
   private detectMobile(): boolean {
@@ -422,7 +334,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   /**
-   * Called when the static owl image (owlwingsdown.png) has loaded.
+   * Called when the static owl image (justBreathing.gif) has loaded.
    * Triggers the speaking sequence so Olly_Hi.svg cloud appears 200ms later
    * (via the delay inside startSpeakingSequence).
    */
@@ -536,30 +448,24 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // Method to restart animation (if needed)
   restartAnimation() {
-    // Clear any existing timeout
     if (this.gifAnimationTimeout) {
       clearTimeout(this.gifAnimationTimeout);
       this.gifAnimationTimeout = null;
     }
 
-    // Reset component state - start with GIF again
-    this.isPlaying = true;
+    this.isPlaying = false;
     this.isTransitioning = false;
     this.isAtCorner = true;
     this.gifError = false;
-    this.showStaticOwl = false;
+    this.showGif = false;
+    this.showStaticOwl = true;
     this.isSpeaking = false;
-    this.gifPlayedOnce = false;
-    this.gifAlreadyStarting = false; // Reset flag to allow restart
-    this.gifUrl = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif?t=' + Date.now();
+    this.dialogueAlreadyShown = false;
+    this.showCloudMessage = false;
+    this.staticOwlUrl = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/justBreathing.gif?t=' + Date.now();
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
     this.cdr.detectChanges();
-
-    // Restart the timer for showing static owl
-    setTimeout(() => {
-      this.onGifAnimationComplete();
-    }, this.gifAnimationDuration);
   }
 
   private startSpeakingSequence() {
@@ -656,23 +562,14 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   // Debug method to force show GIF (for testing)
   // Call this from browser console: ng.probe(document.querySelector('app-owl-animation')).componentInstance.forceShowGif()
   forceShowGif() {
-    // Clear any existing timeout
-    if (this.gifAnimationTimeout) {
-      clearTimeout(this.gifAnimationTimeout);
-      this.gifAnimationTimeout = null;
-    }
-
     sessionStorage.removeItem(this.GIF_SHOWN_KEY);
-    localStorage.removeItem(this.DIALOGUE_SHOWN_KEY); // Also reset dialogue for testing
-    this.showGif = true;
-    this.showStaticOwl = false;
-    this.isPlaying = true;
-    this.gifLoaded = false;
-    this.gifError = false;
-    this.gifPlayedOnce = false;
-    this.gifAlreadyStarting = false; // Reset flag for testing
-    this.dialogueAlreadyShown = false; // Reset dialogue flag for testing
-    this.gifUrl = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/owlGif.gif?t=' + Date.now();
+    localStorage.removeItem(this.DIALOGUE_SHOWN_KEY);
+    this.showGif = false;
+    this.showStaticOwl = true;
+    this.isPlaying = false;
+    this.dialogueAlreadyShown = false;
+    this.showCloudMessage = false;
+    this.staticOwlUrl = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/justBreathing.gif?t=' + Date.now();
     this.cdr.detectChanges();
   }
 } 

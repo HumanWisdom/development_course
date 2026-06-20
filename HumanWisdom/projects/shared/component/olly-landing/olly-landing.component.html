@@ -1,0 +1,140 @@
+<!-- top navigation -->
+<app-tn-dashboard-v03 [enableHamburger]="true" *ngIf="!showQuestionsView && !isIntegrated"></app-tn-dashboard-v03>
+
+<!-- page content -->
+<div [class.right_col]="!isIntegrated" [class.mc_02]="!isIntegrated" [class.questions-mode]="showQuestionsView">
+  <div [class.cw100p]="!isIntegrated">
+    <div [class.row]="!isIntegrated" [class.center_flex]="!isIntegrated">
+      <div [class.col-lg-4]="!isIntegrated" [class.col-md-6]="!isIntegrated" [class.col-sm-6]="!isIntegrated"
+        [class.col-xs-12]="!isIntegrated" [class.sc_01]="!isIntegrated" [class.col_cw]="!isIntegrated"
+        [class.questions-mode]="showQuestionsView"
+        [ngClass]="!isIntegrated ? (isAdults ? 'bg_FFF7E6' : 'bg_stake') : ''">
+        <div [class.x_panel]="!isIntegrated" [class.p0]="!isIntegrated" [class.questions-mode]="showQuestionsView">
+          <div [class.x_content]="!isIntegrated" [class.p0]="!isIntegrated" [class.questions-mode]="showQuestionsView">
+
+            <!-- Main content container -->
+            <div class="olly-landing-container"
+              [ngClass]="{'adults-theme': isAdults, 'teens-theme': !isAdults, 'questions-mode': showQuestionsView, 'integrated': isIntegrated}">
+              <!-- Main landing view -->
+              <div class="olly-landing-content" *ngIf="!showQuestionsView">
+
+                <!-- Greeting -->
+                <h1 class="greeting-title" *ngIf="!isIntegrated">Hi {{ username ? username : 'there' }}!</h1>
+
+                <!-- Search/Input Area with Olly perched on top -->
+                <div class="search-section">
+                  <div class="owl-section">
+                    <div class="olly-character-container">
+                      <img *ngIf="showOllyGif" class="olly-owl-img" [src]="ollyGifUrl" alt="Olly"
+                        (load)="onOllyGifLoad()" />
+                      <div class="olly-cloud-container" *ngIf="showCloudMessage" [ngClass]="{
+                          'speaking': isSpeaking,
+                          'disappearing': isDisappearing,
+                          'fade-in': cloudFadeIn
+                        }">
+                        <img [src]="cloudImageUrl" alt="Olly Hi" class="cloud-image" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="search-input-wrapper">
+                    <input type="text" placeholder="How can I help today?" [(ngModel)]="searchQuery"
+                      (click)="toggleQuestionsView(true)" (focus)="toggleQuestionsView(true)" readonly
+                      class="olly-search-input" />
+                  </div>
+                </div>
+
+                <!-- Description Text -->
+                <p class="expert-guidance-text">
+                  Olly offers safe, expert guidance you can trust.
+                </p>
+
+                <!-- Suggestion link 1 -->
+                <div class="suggestion-link-wrapper">
+                  <a href="javascript:void(0)" (click)="openWhyOllyPopup()" class="olly-different-link">
+                    How is Olly different?
+                  </a>
+                </div>
+
+                <!-- Suggestion link 2 (bottom link) -->
+                <div class="bottom-suggestion-wrapper" *ngIf="selectedTopic && !isIntegrated">
+                  <a href="javascript:void(0)" (click)="onTopicLinkClick()" class="olly-bottom-link">
+                    More on '<strong>{{ selectedTopic.displayName }}</strong>'
+                  </a>
+                </div>
+
+              </div>
+
+              <!-- Search/Questions View -->
+              <div class="olly-questions-content" *ngIf="showQuestionsView">
+                <div class="questions-search-bar">
+                  <button class="back-btn" (click)="toggleQuestionsView(false)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <input type="text" [(ngModel)]="searchQuery" (keydown.enter)="onSearch()"
+                    placeholder="How can I help today?" class="questions-search-input" />
+                  <button class="submit-btn" (click)="onSearch()" [disabled]="!searchQuery.trim()">
+                    <div class="submit-circle">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+
+                <div class="questions-list-container">
+                  <p class="questions-instruction-text">Here are some questions you can ask Olly.</p>
+
+                  <div class="topics-accordion">
+                    <div class="accordion-item" *ngFor="let topic of topicsList" [id]="'topic-' + topic.fragment"
+                      [class.expanded]="expandedTopics[topic.fragment]">
+                      <div class="accordion-header" (click)="toggleTopic(topic.fragment)">
+                        <span class="topic-title">{{ topic.displayName }}</span>
+                        <span class="expand-icon">{{ expandedTopics[topic.fragment] ? '−' : '+' }}</span>
+                      </div>
+                      <div class="accordion-body" *ngIf="expandedTopics[topic.fragment]">
+                        <ul class="questions-sublist">
+                          <li *ngFor="let q of topic.questions" class="question-item" (click)="onSuggestionClick(q)">
+                            <span class="question-text">{{ q }}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Olly is Different Popup Modal -->
+<div class="olly-modal-overlay" *ngIf="showWhyOllyPopup" (click)="closeWhyOllyPopup()">
+  <div class="olly-modal-container" [ngClass]="isAdults ? 'adults-theme' : 'teens-theme'"
+    (click)="$event.stopPropagation()">
+    <div class="olly-modal-header">
+      <h2 class="olly-modal-title">Meet Olly AI</h2>
+    </div>
+    <div class="olly-modal-content">
+      <div class="olly-modal-text-container">
+        <p class="olly-modal-paragraph">Olly was created to support you in a more human way.</p>
+        <p class="olly-modal-paragraph">Unlike many AI tools, Olly doesn't pull advice from the internet. It draws from
+          trusted content created by experts.</p>
+        <p class="olly-modal-paragraph">Olly listens, helps you reflect, and gently guides you toward relevant support.
+        </p>
+      </div>
+      <button class="olly-modal-close-btn" (click)="closeWhyOllyPopup()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom navigation footer -->
+<app-bottom-navigation [dash]="false" [journal]="false" [fourm]="false" [search]="false" [enableprofile]="false"
+  [showOwl]="false" *ngIf="!showQuestionsView && !isIntegrated"></app-bottom-navigation>

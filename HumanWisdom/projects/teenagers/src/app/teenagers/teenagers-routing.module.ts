@@ -592,7 +592,12 @@ const routes: Routes = [
   path: 'wisdom-exercise/:subpath',
   redirectTo: 'curated/self-awareness',
   pathMatch: 'full'
-}
+  },
+  {
+    path: 'olly-landing',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('../../../../shared/component/olly-landing/olly-landing.module').then(m => m.OllyLandingModule)
+  }
 ];
 
 

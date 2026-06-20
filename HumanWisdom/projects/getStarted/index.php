@@ -50,24 +50,13 @@ require_once('./includes/security_config.php');
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" /> -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
 
-
-
-    <!-- Bootstrap CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    
-    <!-- LCP Hero images preloading -->
-    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" />
-    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp"  />
-    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" fetchpriority="high">
+    <!-- LCP Hero images preloading (fetchpriority + media so only the viewport LCP image is prioritized) -->
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" fetchpriority="high" media="(min-width: 821px)" />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp" fetchpriority="high" media="(max-width: 820px)" />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" />
     <?php hw_defer_stylesheet('assets/css/index-inline.css'); ?>
 
   <script>
@@ -127,7 +116,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself, reduce stress and anxiety, improve your relationships and handle life better.
+                      Understand yourself. Feel calmer. Strengthen your relationships. Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.
                     </p>
                   </div>
                 </div>
@@ -182,10 +171,20 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== OLLY AI ===== -->
-      <div class="frame-wrapper-3">
+      <div class="frame-wrapper-3" id="olly-ai-section">
         <div class="div-11">
           <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
-          <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_breathing4.gif" alt="Olly AI" />
+          <video
+            id="olly-ai-video"
+            class="group-3"
+            muted
+            playsinline
+            webkit-playsinline
+            preload="metadata"
+                      aria-label="Olly AI">
+            <source src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.webm" type="video/webm">
+            
+          </video>
           <div class="div-12">
             <div class="div-5">
               <p class="introducing-olly-AI" style="font-size:30px;">Meet Olly AI,<br />your personal guide.</p>
@@ -193,7 +192,7 @@ require_once('./includes/security_config.php');
                Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
               </p>
             </div>
-            <a href="https://happierme.app/pages/splash_options.php" id="OllyChatBtn">
+            <a href="https://happierme.app/adults/chat-bot" id="OllyChatBtn">
               <div class="start-your-free-wrapper-2">
                 <div class="text-wrapper-5">Chat with Olly now</div>
               </div>
@@ -339,7 +338,7 @@ require_once('./includes/security_config.php');
         <div class="div-21">
           <div class="frame-wrapper-6">
             <div class="div-22">
-              <p class="text-wrapper-14">Find support and connection</p>
+              <p class="text-wrapper-14">Find support and <br class="mobile-br">connection</p>
               <p class="text-wrapper-8">Join a supportive community of people on their wellness journey. Share experiences, celebrate wins, and grow together.</p>
             </div>
           </div>
@@ -635,6 +634,7 @@ require_once('./includes/security_config.php');
       <!-- ===== TOOLS ===== -->
       <div class="tools-section">
         <p class="text-wrapper-6">Tools for a happier life</p>
+        <div class="tools-content-wrap">
         <!-- Tab pills -->
         <div class="tools-tabs" id="toolTabs">
           <button class="tool-tab tool-tab-active" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
@@ -659,7 +659,7 @@ require_once('./includes/security_config.php');
                   <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                 </video>
                 <button type="button" class="tools-play-btn tools-video-play-btn" aria-label="Play breathing exercise" id="fbn-play-btn">
-                  <span>&#9654;</span>
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" aria-hidden="true" />
                 </button>
               </div>
               <div class="tools-card-meta">
@@ -689,10 +689,20 @@ require_once('./includes/security_config.php');
               <h3 class="tools-info-heading">PATHWAY — Guided program</h3>
               <p class="tools-info-body">A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.</p>
               <div class="tools-audio-wrap" data-audio-wrap="aud1">
-                <span class="tools-audio-play-icon" aria-hidden="true"></span>
-                <audio id="aud1" controls controlslist="nodownload">
+                <audio id="aud1" class="tools-audio-el" preload="metadata" controlslist="nodownload">
                   <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
                 </audio>
+                <div class="tools-audio-player">
+                  <button type="button" class="tools-audio-play-btn" aria-label="Play audio" data-audio-id="aud1"></button>
+                  <div class="tools-audio-body">
+                    <p class="tools-audio-title">Introduction to PATHWAY</p>
+                    <div class="tools-audio-timeline">
+                      <span class="tools-audio-time tools-audio-time-current">0:00</span>
+                      <input type="range" class="tools-audio-seek" value="0" min="0" max="100" step="0.1" aria-label="Playback position">
+                      <span class="tools-audio-time tools-audio-time-duration">0:00</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <a href="https://happierme.app/adults/pathway/" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
@@ -715,20 +725,39 @@ require_once('./includes/security_config.php');
 
           <!-- Podcast -->
           <div id="podcast_tab" class="tools-panel">
-            <div>
+            <div class="tools-card tools-card--podcast">
               <div class="tools-thumb">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="Podcast" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="How can we be happier" class="tools-thumb-img" />
+                <span class="tools-card-media-badge" aria-hidden="true">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" />
+                </span>
               </div>
-              
+              <div class="tools-card-meta">
+                <div class="tools-card-label-row">
+                  <span class="tools-label-text">PODCAST</span>
+                </div>
+                <p class="tools-card-title">How can we be happier</p>
+                <p class="tools-card-duration tools-card-duration-aud2">0:00</p>
+              </div>
             </div>
             <div class="tools-info">
               <h3 class="tools-info-heading">HappierMe Podcast</h3>
               <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, where we explore a subject in depth with guests from around the world. They offer fresh ways of dealing with the many challenges we face and living our best life.</p>
               <div class="tools-audio-wrap" data-audio-wrap="aud2">
-                <span class="tools-audio-play-icon" aria-hidden="true"></span>
-                <audio id="aud2" controls controlslist="nodownload">
+                <audio id="aud2" class="tools-audio-el" preload="metadata" controlslist="nodownload">
                   <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
                 </audio>
+                <div class="tools-audio-player">
+                  <button type="button" class="tools-audio-play-btn" aria-label="Play audio" data-audio-id="aud2"></button>
+                  <div class="tools-audio-body">
+                    <p class="tools-audio-title">How can we be happier</p>
+                    <div class="tools-audio-timeline">
+                      <span class="tools-audio-time tools-audio-time-current">0:00</span>
+                      <input type="range" class="tools-audio-seek" value="0" min="0" max="100" step="0.1" aria-label="Playback position">
+                      <span class="tools-audio-time tools-audio-time-duration">0:00</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <a href="https://happierme.app/adults/podcast" class="tools-explore-link">Explore on app <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span></a>
             </div>
@@ -764,6 +793,7 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
+        </div>
         </div>
       </div>
 
@@ -1428,6 +1458,31 @@ require_once('./includes/security_config.php');
         btn.classList.add('active');
       }
     </script>
+
+    <!-- Human Skills modal -->
+    <div class="modal fade" id="humanSkillsModal" tabindex="-1" aria-labelledby="humanSkillsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content human-skills-modal">
+          <div class="human-skills-modal-header">
+            <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Life skills</h2>
+            <p class="human-skills-modal-subtitle">Feel better. Do better.</p>
+          </div>
+          <div class="human-skills-modal-body">
+            <ul class="human-skills-list">
+              <li>Self-awareness</li>
+              <li>Emotional intelligence</li>
+              <li>Communication</li>
+              <li>Relationships</li>
+              <li>Empathy</li>
+              <li>Resilience</li>
+              <li>Confidence</li>
+              <li>Decision-making</li>
+            </ul>
+            <button type="button" class="human-skills-close-btn" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- All Modals from older version -->
     <!-- Mental wellbeing modal -->

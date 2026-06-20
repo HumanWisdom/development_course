@@ -8,14 +8,30 @@
 }
 
 .bg_stake {
-    background: #254170 !important;
+    background: #183C79 !important;
+
+    .btn_begin_here {
+        background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+    }
 }
 
 .ws-read-icon {
     bottom: 20px;
 }
 
-
+.btn_begin_here{
+  background: #ED7D6F !important;
+    color: #ffffff;
+    height: 40px;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    box-shadow: none;
+    line-height: 22px;
+    margin: 0;
+}
 .toc_adiv_02 {
     .row {
         margin-bottom: 20px;

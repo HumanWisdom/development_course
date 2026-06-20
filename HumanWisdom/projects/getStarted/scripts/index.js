@@ -1253,7 +1253,7 @@ if (OllyChatBtn) {
         localStorage.setItem('login',false);
         logevent("click_olly_chat", "index.php");
         afterLogNavigate(function () {
-            window.location.href = OllyChatBtn.getAttribute("href") || "../pages/splash_options.php";
+            window.location.href = OllyChatBtn.getAttribute("href") || "https://happierme.app/adults/chat-bot";
         });
     });
 }
@@ -1643,28 +1643,70 @@ nfsnContactForm &&
                 }
             });
         }
-        ["aud1", "aud2"].forEach(function (aid) {
-            var aud = document.getElementById(aid);
-            if (aud) {
-                var wrap = aud.closest(".tools-audio-wrap");
-                var setPlaying = function (playing) {
-                    if (wrap) {
-                        wrap.classList.toggle("is-playing", playing);
+        function formatToolsAudioTime(seconds) {
+            if (!isFinite(seconds) || seconds < 0) return "0:00";
+            var m = Math.floor(seconds / 60);
+            var s = Math.floor(seconds % 60);
+            return m + ":" + (s < 10 ? "0" : "") + s;
+        }
+        function initToolsAudioPlayer(wrap) {
+            var aud = wrap.querySelector(".tools-audio-el");
+            if (!aud) return;
+            var playBtn = wrap.querySelector(".tools-audio-play-btn");
+            var seek = wrap.querySelector(".tools-audio-seek");
+            var currentEl = wrap.querySelector(".tools-audio-time-current");
+            var durationEl = wrap.querySelector(".tools-audio-time-duration");
+            if (!playBtn || !seek || !currentEl || !durationEl) return;
+            var setPlaying = function (playing) {
+                wrap.classList.toggle("is-playing", playing);
+                playBtn.setAttribute("aria-label", playing ? "Pause audio" : "Play audio");
+            };
+            var updateProgress = function () {
+                if (aud.duration && isFinite(aud.duration)) {
+                    seek.value = (aud.currentTime / aud.duration) * 100 || 0;
+                    currentEl.textContent = formatToolsAudioTime(aud.currentTime);
+                    durationEl.textContent = formatToolsAudioTime(aud.duration);
+                }
+            };
+            aud.addEventListener("loadedmetadata", function () {
+                updateProgress();
+                var panel = wrap.closest(".tools-panel");
+                if (panel) {
+                    var cardDur = panel.querySelector(".tools-card-duration-aud2");
+                    if (cardDur && aud.id === "aud2") {
+                        cardDur.textContent = formatToolsAudioTime(aud.duration);
                     }
-                };
-                setPlaying(!aud.paused);
-                aud.addEventListener("play", function () {
-                    setPlaying(true);
-                    logevent("click_play_audio", "index.php", { audio_id: aid });
-                });
-                aud.addEventListener("pause", function () {
-                    setPlaying(false);
-                });
-                aud.addEventListener("ended", function () {
-                    setPlaying(false);
-                });
-            }
-        });
+                }
+            });
+            aud.addEventListener("timeupdate", updateProgress);
+            aud.addEventListener("play", function () {
+                setPlaying(true);
+                logevent("click_play_audio", "index.php", { audio_id: aud.id });
+            });
+            aud.addEventListener("pause", function () {
+                setPlaying(false);
+            });
+            aud.addEventListener("ended", function () {
+                setPlaying(false);
+                updateProgress();
+            });
+            playBtn.addEventListener("click", function () {
+                if (aud.paused) {
+                    aud.play();
+                } else {
+                    aud.pause();
+                }
+            });
+            seek.addEventListener("input", function () {
+                if (aud.duration && isFinite(aud.duration)) {
+                    aud.currentTime = (seek.value / 100) * aud.duration;
+                    currentEl.textContent = formatToolsAudioTime(aud.currentTime);
+                }
+            });
+            setPlaying(!aud.paused);
+            updateProgress();
+        }
+        document.querySelectorAll(".tools-audio-wrap").forEach(initToolsAudioPlayer);
         var o = document.getElementById("viewAllBlogs");
         o &&
             o.addEventListener(
@@ -1724,7 +1766,7 @@ var countryCode = "",
     pricingModel = "",
     defaultCurrencySymbol = "";
 async function fetchData() {
-    localStorage.setItem("programType",9)
+    localStorage.setItem("programType", document.body.classList.contains("page-teenagers") ? 11 : 9);
     const e = await fetch(HW_IP_LOOKUP_URL);
     if (!e.ok) throw new Error("Network response was not ok " + e.statusText);
     const t = await e.json();
@@ -1755,7 +1797,7 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         'Think better.<br><span class="hero-title-accent">Live better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        "Self-awareness tools to reduce stress and anxiety, deepen your relationships and build a happier life.<br>(for Adults & Teenagers)";
+        'Understand yourself. Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.';
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");
@@ -1816,6 +1858,35 @@ function validateEmail(email) {
 
 /** Index-only: org cards, coaches/blog, blog section view, footer/social (matches webpage event list). */
 function initIndexPageGa() {
+    var ollyVideo = document.getElementById("olly-ai-video");
+    var ollySection = document.getElementById("olly-ai-section");
+    if (ollyVideo && ollySection && "IntersectionObserver" in window) {
+        var ollySectionVisible = false;
+        var playOlly = function () {
+            ollyVideo.muted = true;
+            ollyVideo.currentTime = 0;
+            var p = ollyVideo.play();
+            if (p && typeof p.catch === "function") p.catch(function () {});
+        };
+        var ollyIo = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (ent) {
+                    if (ent.isIntersecting) {
+                        if (!ollySectionVisible) {
+                            ollySectionVisible = true;
+                            playOlly();
+                        }
+                    } else {
+                        ollySectionVisible = false;
+                        ollyVideo.pause();
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+        ollyIo.observe(ollySection);
+    }
+
     var orgMap = { orgCardWorkplace: "click_workplace_card", orgCardEducation: "click_education_card", orgCardHealthcare: "click_healthcare_card" };
     Object.keys(orgMap).forEach(function (id) {
         var el = document.getElementById(id);

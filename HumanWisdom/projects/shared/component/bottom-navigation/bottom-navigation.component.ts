@@ -23,6 +23,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   isloggedIn = false
   @Input() enableprofile = false
   @Input() search = false
+  @Input() showOwl = true;
   Subscriber: any;
   guest: any;
   @Input() userdetail: any;
@@ -215,9 +216,9 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
  openChat(){
   this.logeventservice.logEvent('Click_olly_chat');
   if(this.isAdults){
-    this.router.navigate(['/adults/chat-bot']);
+    this.router.navigate(['/adults/chat-bot'], { state: { startWithChat: true } });
   } else {
-    this.router.navigate(['/teenagers/chat-bot']);
+    this.router.navigate(['/teenagers/chat-bot'], { state: { startWithChat: true } });
   }
  }
 

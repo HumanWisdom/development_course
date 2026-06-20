@@ -1,0 +1,873 @@
+// Container filling the remaining screen space
+.olly-landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  transition: background-color 0.3s ease;
+  position: relative;
+
+  &.questions-mode {
+    padding-top: 0;
+    align-items: stretch;
+  }
+
+  &.adults-theme {
+    background-color: #FFF7E6; // Adults cream background
+
+    .greeting-title {
+      color: #000000;
+    }
+
+    .olly-search-input {
+      background-color: #ffffff;
+      border: 1px solid #3CD5DB; // Adults cyan border
+      color: #000000;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    .expert-guidance-text {
+      color: #000000BF;
+    }
+
+    .olly-different-link, .olly-bottom-link {
+      color: #D7586B; // Adults coral link
+      text-decoration: underline;
+    }
+  }
+
+  &.teens-theme {
+    background-color: #183C79; // Teens dark blue background
+
+    .greeting-title {
+      color: #ffffff;
+    }
+
+    .olly-search-input {
+      background-color: #0C2B5F; // Lighter dark blue for input
+      border: 1px solid #3CD5DB; // Teens cyan border
+      color: #ffffff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .expert-guidance-text {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .olly-different-link, .olly-bottom-link {
+      color: #EE9596; // Teens coral link
+      text-decoration: underline;
+
+    }
+  }
+
+  &.integrated {
+    min-height: auto !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-color: transparent !important;
+    
+    .suggestion-link-wrapper {
+      margin-bottom: 20px;
+    }
+    
+    &.questions-mode {
+      .questions-search-bar {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      
+      .olly-questions-content {
+        padding: 0 !important;
+      }
+      
+      .questions-list-container {
+        padding: 0 20px 40px 20px !important;
+      }
+    }
+  }
+}
+// Inner wrapper for responsive centering
+.olly-landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: visible;
+}
+
+// Typography & Greeting
+.greeting-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+// Search Section
+.search-section {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 4;
+  overflow: visible;
+}
+
+.owl-section {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: -8px;
+  padding-right: 10px;
+  min-height: 0;
+  pointer-events: none;
+}
+
+.olly-character-container {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  z-index: 2;
+  overflow: visible;
+}
+
+.olly-owl-img {
+  width: 90px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  object-fit: contain;
+
+  &--flying {
+    width: 100px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  &--fade-out {
+    opacity: 0;
+  }
+
+  &--fade-in {
+    animation: ollyFadeIn 0.4s ease forwards;
+  }
+}
+
+@keyframes ollyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.olly-cloud-container {
+  position: absolute;
+  top: -102px;
+  left: -45%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 179px;
+  height: 140px;
+  opacity: 1;
+  transform-origin: bottom center;
+
+  &.fade-in {
+    opacity: 0;
+    animation: cloud-fade-in 1.8s ease-out forwards;
+  }
+
+  &.speaking:not(.disappearing) {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  &.disappearing {
+    animation: cloud-fade-out 0.6s ease-out forwards;
+  }
+}
+
+@keyframes cloud-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cloud-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.cloud-image {
+  width: 179px;
+  height: 140px;
+  max-width: 179px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .olly-cloud-container {
+    top: -55px;
+    left: -35%;
+    width: 140px;
+    height: 110px;
+  }
+
+  .cloud-image {
+    width: 140px;
+    max-width: 140px;
+    height: auto;
+  }
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.olly-search-input {
+  width: 100%;
+  height: 52px;
+  border-radius: 26px;
+  padding: 0 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  text-align: left;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+
+  &:focus {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.olly-search-submit {
+  position: absolute;
+  right: 8px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.2s ease;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+// Subtext and Links
+.expert-guidance-text {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.suggestion-link-wrapper {
+  margin-bottom: 40px;
+  margin-top: 5px;
+}
+
+.olly-different-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.bottom-suggestion-wrapper {
+  margin-top: auto; // Pushes link to the bottom above navigation footer
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.olly-bottom-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+// Why Olly is Different Popup Modal Styles
+.olly-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.olly-modal-container {
+  width: 335px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.olly-modal-header {
+  width: 335px;
+  background-color: #FFD889; // Light golden header background
+  box-sizing: border-box;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  .olly-modal-title {
+    font-family: Poppins;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 21px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    color:black;
+    margin: 0;
+  }
+}
+
+.olly-modal-content {
+  width: 335px;
+  background-color: #FFE8BB; // Very light cream background
+  box-sizing: border-box;
+  padding: 20px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+// Adults theme modal colors
+.adults-theme {
+  .olly-modal-header {
+    background-color: #FFD889; // Light golden header background
+
+    .olly-modal-title {
+      color: black;
+    }
+  }
+
+  .olly-modal-content {
+    background-color: #FFE8BB; // Very light cream background
+
+    .olly-modal-paragraph {
+      color: #000000;
+    }
+  }
+}
+
+// Teens theme modal colors
+.teens-theme {
+  .olly-modal-header {
+    background-color: #0C2B5F; // Dark blue header background
+
+    .olly-modal-title {
+      color: #ffffff;
+    }
+  }
+
+  .olly-modal-content {
+    background-color: #183C79; // Dark blue content background
+
+    .olly-modal-paragraph {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  .olly-modal-close-btn {
+    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+  }
+}
+
+.olly-modal-text-container {
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  overflow-y: auto; // Just in case of overflow on smaller font renderings
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.olly-modal-paragraph {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #000000;
+  margin: 0;
+}
+
+.olly-modal-close-btn {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  width: 275px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  color: #ffffff;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  outline: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+// Search Questions Accordion View
+.olly-questions-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 0 20px 40px 20px;
+}
+
+.status-bar-mask {
+  display: none; // Not needed for web
+}
+
+.questions-search-bar {
+  position: sticky;
+  top: 0;
+  width: calc(100% + 40px); // Break out of parent 20px padding on each side
+  margin-left: -20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  box-shadow: 0px 2px 8px 0px rgba(175, 175, 175, 0.25);
+  box-sizing: border-box;
+  z-index: 99;
+  margin-bottom: 24px;
+
+  .back-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  }
+
+  .questions-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    background: transparent;
+    padding: 0 12px;
+    height: 100%;
+    min-width: 0; // Prevent flex overflow
+    text-align: left;
+  }
+
+  .submit-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    flex-shrink: 0;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+
+  .submit-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    svg {
+      color: #ffffff;
+      display: block;
+    }
+  }
+}
+
+.questions-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.questions-instruction-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.topics-accordion {
+  width: auto;
+  margin-left: -20px;
+  margin-right: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.accordion-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  scroll-margin-top: 100px; // Spacing for sticky search header when scrolled to
+  
+  &.expanded {
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+    
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  
+  .topic-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .expand-icon {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+}
+
+.accordion-body {
+  width: 100%;
+  padding-bottom: 0;
+  overflow: hidden;
+  animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.questions-sublist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.question-item {
+  position: relative;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  
+  .question-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 400;
+    transition: color 0.2s ease;
+  }
+
+}
+
+// Adults Theme Custom Accordion Styling
+.adults-theme {
+  .status-bar-mask {
+    background-color: #FFF7E6;
+  }
+
+  .questions-search-bar {
+    background: #FFFFFF;
+    
+    .back-btn {
+      color: #000000 !important;
+    }
+    
+    .questions-search-input {
+      color: #000000 !important;
+      
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.4) !important;
+      }
+    }
+  }
+
+  .questions-instruction-text {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    
+    &.expanded {
+      border-bottom: none !important;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  .accordion-header {
+    .topic-title {
+      color: #000000;
+    }
+    .expand-icon {
+      color: rgba(0, 0, 0);
+    }
+  }
+
+  .accordion-item.expanded {
+    .accordion-header {
+      background: rgba(255, 232, 187, 1);
+    }
+  }
+
+  .accordion-body {
+    background-color: transparent;
+  }
+
+  .question-item {
+    background-color: transparent;
+    transition: background-color 0.25s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    &:hover {
+      background-color: rgba(255, 232, 187, 1);
+    }
+    
+    .question-text {
+      color: #333333;
+    }
+  }
+}
+
+// Teens Theme Custom Accordion Styling
+.teens-theme {
+  .status-bar-mask {
+    background-color: #183C79;
+  }
+
+  .questions-search-bar {
+    background: #183C79;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    
+    .back-btn {
+      color: #ffffff !important;
+    }
+    
+    .questions-search-input {
+      color: #ffffff !important;
+      
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+      }
+    }
+    
+    .submit-circle {
+      background: linear-gradient(180deg, #EE9596 0%, #D47172 100%) !important;
+    }
+  }
+
+  .questions-instruction-text {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    
+    &.expanded {
+      border-bottom: none !important;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  .accordion-header {
+    .topic-title {
+      color: #ffffff;
+    }
+    .expand-icon {
+      color: rgba(255, 255, 255);
+    }
+  }
+
+  .accordion-item.expanded {
+    .accordion-header {
+      background-color: rgba(12, 43, 95, 1);
+    }
+  }
+
+  .accordion-body {
+    background-color: transparent;
+  }
+
+  .question-item {
+    background-color: transparent;
+    transition: background-color 0.25s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:hover {
+      background-color: rgba(12, 43, 95, 1);
+    }
+    
+    .question-text {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+// Global layout overrides when in questions search mode
+.right_col.mc_02.questions-mode {
+  padding: 0 !important;
+}
+
+.sc_01.questions-mode {
+  padding: 0 !important;
+}
+
+.x_panel.questions-mode {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
