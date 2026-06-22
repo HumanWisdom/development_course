@@ -65,6 +65,47 @@ require_once('./includes/security_config.php');
     })
 
   </script>
+  <script>
+    (function () {
+      var PLACEHOLDER = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+      function prep(section) {
+        if (!section || !section.classList || !section.classList.contains("index-lazy-section")) return;
+        if (section.dataset.lazyPrepared === "1") return;
+        section.dataset.lazyPrepared = "1";
+        section.querySelectorAll("img[src]:not([data-src])").forEach(function (img) {
+          var url = img.getAttribute("src");
+          if (!url || url.indexOf("data:") === 0) return;
+          img.setAttribute("data-src", url);
+          img.setAttribute("src", PLACEHOLDER);
+        });
+        section.querySelectorAll("picture source[srcset]:not([data-srcset])").forEach(function (source) {
+          var srcset = source.getAttribute("srcset");
+          if (!srcset) return;
+          source.setAttribute("data-srcset", srcset);
+          source.removeAttribute("srcset");
+        });
+        section.querySelectorAll("video source[src]:not([data-src])").forEach(function (source) {
+          var url = source.getAttribute("src");
+          if (!url) return;
+          source.setAttribute("data-src", url);
+          source.removeAttribute("src");
+        });
+      }
+      if ("MutationObserver" in window) {
+        var mo = new MutationObserver(function (list) {
+          list.forEach(function (m) {
+            m.addedNodes.forEach(function (node) {
+              if (node.nodeType !== 1) return;
+              if (node.classList && node.classList.contains("index-lazy-section")) prep(node);
+              if (node.querySelectorAll) node.querySelectorAll(".index-lazy-section").forEach(prep);
+            });
+          });
+        });
+        mo.observe(document.documentElement, { childList: true, subtree: true });
+        document.addEventListener("DOMContentLoaded", function () { mo.disconnect(); });
+      }
+    })();
+  </script>
   </head>
 <body id="body" style="padding:0px !important">
 
@@ -132,7 +173,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== ORCHA / Mind BANNER ===== -->
-      <div class="orcha-strip">
+      <div class="orcha-strip index-lazy-section">
         <div class="orcha-strip-item orcha-strip-orcha">
           <picture>
             <source media="(max-width: 767px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/orchacertifiedmobile.svg" />
@@ -147,7 +188,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== TOPICS ===== -->
-      <div class="div-7">
+      <div class="div-7 index-lazy-section">
         <div class="div-wrapper-2">
           <p class="text-wrapper-a">Find out how HappierMe can help you</p>
         </div>
@@ -171,7 +212,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== OLLY AI ===== -->
-      <div class="frame-wrapper-3" id="olly-ai-section">
+      <div class="frame-wrapper-3 index-lazy-section" id="olly-ai-section">
         <div class="div-11">
           <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
           <video
@@ -182,7 +223,7 @@ require_once('./includes/security_config.php');
             webkit-playsinline
             preload="metadata"
                       aria-label="Olly AI">
-            <source src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.webm" type="video/webm">
+            <source data-src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.webm" type="video/webm">
             
           </video>
           <div class="div-12">
@@ -202,7 +243,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== VIDEO ===== -->
-      <div class="div-13">
+      <div class="div-13 index-lazy-section">
         <p class="text-wrapper-a">Discover HappierMe in just 1 minute</p>
         <div class="youtube-player">
           <button
@@ -238,13 +279,13 @@ require_once('./includes/security_config.php');
       </div>
 
 
-   <div class="div-new_1">
+   <div class="div-new_1 index-lazy-section">
     <p class="text-wrapper-6"> Findings from a survey of 1,000 HappierMe app users</p>      
   </div>
 
   <!-- section end -->
 
- <div class="div-new">
+ <div class="div-new index-lazy-section">
     <div class="scroller-container div_new1">
       <div>
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
@@ -259,7 +300,7 @@ require_once('./includes/security_config.php');
     </div>
   </div>              
       <!-- ===== TESTIMONIALS ===== -->
-      <div class="div-14">
+      <div class="div-14 index-lazy-section">
         <div class="text-wrapper-user">Users love HappierMe</div>
         <div class="div-15">
           <!-- Card 1 -->
@@ -330,7 +371,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== FIND SUPPORT & CONNECTION ===== -->
-      <div class="div-20">
+      <div class="div-20 index-lazy-section">
         <picture>
           <source media="(max-width: 768px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/find_support_mob.webp" />
           <img class="design" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Find_Support.webp" alt="Find support and connection" />
@@ -369,7 +410,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== ORGANISATION ===== -->
-      <div class="div-23">
+      <div class="div-23 index-lazy-section">
         <p class="text-wrapper-6 pb0px text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
@@ -431,7 +472,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== TEENAGERS ===== -->
-      <div class="div-31">
+      <div class="div-31 index-lazy-section">
         <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/help_teenagers.webp" alt="Teenagers app" />
         <div class="div-32">
           <div class="div-33">
@@ -465,7 +506,7 @@ require_once('./includes/security_config.php');
 
 
       <!-- ===== SUBSCRIPTION ===== -->
-      <div class="frame-wrapper-9" id="div_subscription">
+      <div class="frame-wrapper-9 index-lazy-section" id="div_subscription">
         <div class="div-39">
           <div class="div-40">
             <div class="div-wrapper-6">
@@ -529,7 +570,7 @@ require_once('./includes/security_config.php');
       </div>
 
             <!-- ===== COACHES ===== -->
-      <div class="coaches-section">
+      <div class="coaches-section index-lazy-section">
         <p class="text-wrapper-6-1">Contact our experienced coaches for personalised support</p>
         <div class="coaches-outer">
           <div class="coaches-track-wrap">
@@ -632,7 +673,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== TOOLS ===== -->
-      <div class="tools-section">
+      <div class="tools-section index-lazy-section">
         <p class="text-wrapper-6">Tools for a happier life</p>
         <div class="tools-content-wrap">
         <!-- Tab pills -->
@@ -807,7 +848,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== BLOG ===== -->
-      <div class="div-13" id="exploreBlogSection">
+      <div class="div-13 index-lazy-section" id="exploreBlogSection">
         <div class="text-wrapper-blog">Explore our blog</div>
         <div class="blog-outer">
           <div class="blog-track-wrap">
@@ -863,7 +904,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== READY TO TRANSFORM ===== -->
-      <section class="transform-cta-section">
+      <section class="transform-cta-section index-lazy-section">
         <div class="transform-cta-inner">
           <div class="transform-cta-text">
             <h2 class="transform-cta-heading">Ready to transform<br class="mobile-br"> your life?</h2>
@@ -882,7 +923,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== FAQ ===== -->
       <!-- Desktop FAQ -->
-      <div class="div-54 display_m_none">
+      <div class="div-54 display_m_none index-lazy-section">
         <div class="text-wrapper-21">Frequently asked questions</div>
         <div class="div-55">
           <div class="div-56">
@@ -1046,7 +1087,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- Mobile FAQ -->
-      <div class="row center_flex prelative display_df_none" style="margin-bottom: 40px;">
+      <div class="row center_flex prelative display_df_none index-lazy-section" style="margin-bottom: 40px;">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
           <div class="text-wrapper-21" style="margin-bottom: 20px;">Frequently asked questions</div>
           <div class="tab-content tc_faqs mobile">
