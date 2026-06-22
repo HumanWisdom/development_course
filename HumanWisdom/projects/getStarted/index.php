@@ -224,7 +224,6 @@ require_once('./includes/security_config.php');
             preload="metadata"
                       aria-label="Olly AI">
             <source data-src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.webm" type="video/webm">
-            
           </video>
           <div class="div-12">
             <div class="div-5">
