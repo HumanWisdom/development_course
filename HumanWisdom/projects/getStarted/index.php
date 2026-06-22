@@ -223,7 +223,7 @@ require_once('./includes/security_config.php');
             webkit-playsinline
             preload="metadata"
                       aria-label="Olly AI">
-            <source data-src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.webm" type="video/webm">
+            <source data-src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.mp4" type="video/webm">
           </video>
           <div class="div-12">
             <div class="div-5">
