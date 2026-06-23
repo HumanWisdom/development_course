@@ -2872,3 +2872,24 @@ header a[href*="splash_options.php"] * {
   .coaches-nav-btns,
   .coaches-nav-btns * { display: none !important; }
 }
+
+/* Scroll lazy sections: fade in/out on scroll */
+.index-lazy-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.index-lazy-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-lazy-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
