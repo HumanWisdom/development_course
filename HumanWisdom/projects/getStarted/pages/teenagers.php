@@ -177,7 +177,7 @@
       <div class="section-header-teen">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-video-title">
               Learn the skills you need to succeed in life
             </h2>
           </div>
@@ -209,7 +209,7 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mt0px mb20px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mt0px fs_24px fw_600 lh_120p teen-support-title">
               Get all the support you need when life gets tough
             </h2>
           </div>
@@ -243,7 +243,7 @@
           </div>
 
           <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="mtb0px fs_24px fw_600 lh_150p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_150p teen-calm-title">
               Feel calm, capable, and better everyday, with HappierMe!
             </h2>
 
@@ -256,10 +256,10 @@
     </section>
 
     <section>
-      <div class="section-header">
+      <div class="section-header teen-dykt-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-dykt-title">
               Did you know?
             </h2>
           </div>
@@ -740,10 +740,10 @@
 
     <!-- inspiring -->
     <section>
-      <div class="section-header">
+      <div class="section-header teen-inspire-header">
         <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-inspire-title">
               Inspiring you to succeed in life
             </h2>
           </div>
@@ -1077,7 +1077,7 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-blog-title">
               Explore our blog
             </h2>
           </div>

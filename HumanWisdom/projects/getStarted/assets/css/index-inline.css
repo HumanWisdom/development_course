@@ -62,13 +62,14 @@ img { max-width: 100%; display: block; }
   color: rgba(255, 255, 255, 1) !important;
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link {
-  color:  #ED7D6F !important;
+  color: #fff !important;
   text-decoration: underline;
+  text-decoration-color: #fff;
   cursor: pointer;
-  
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link:hover {
   color: #ED7D6F !important;
+  text-decoration-color: #ED7D6F;
 }
 
 /* Life skills popup */
@@ -375,7 +376,7 @@ p:hover {
 ======================================== */
 .frame-wrapper-3 { width: 100%; background: rgba(255, 249, 238, 1); display: flex; justify-content: center; padding: 80px 20px; }
 .div-11 { display: flex; align-items: center; gap: 60px; max-width: 1110px; width: 100%; flex-wrap: wrap; }
-.group-3 { width: 400px; height: 360px; object-fit: contain; flex-shrink: 0; }
+.group-3 { width: 400px; height: 360px; min-height: 360px; object-fit: contain; flex-shrink: 0; display: block; background: transparent; }
 .div-12 { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 30px; }
 .introducing-olly-AI { font-size: 42px; font-weight: 600; color: #000; line-height: 1.4; margin: 0; }
 /* responsive override will keep 42px base */
@@ -2347,7 +2348,7 @@ header a[href*="splash_options.php"] * {
   .p { font-size: 36px; }
   .introducing-olly-AI { font-size: 34px; }
   /* .new-app-adults-teen { width: 320px; height: 406px; } */
-  .group-3 { width: 300px; height: 270px; }
+  .group-3 { width: 300px; height: 270px; min-height: auto; }
   .div-62 { gap: 48px; padding: 0 40px; }
 }
 
@@ -2456,7 +2457,7 @@ header a[href*="splash_options.php"] * {
 
   /* Olly */
   .div-11 { flex-direction: column; align-items: center; text-align: center; gap:18px}
-  .group-3 { width: clamp(160px, 50vw, 260px); height: auto; }
+  .group-3 { width: clamp(160px, 50vw, 260px); height: auto; min-height: auto; }
   .introducing-olly-AI { font-size: 24px !important; font-weight: 600; }
   .div-12 { align-items: center; }
   .start-your-free-wrapper-2 { align-self: center; }
@@ -2870,4 +2871,25 @@ header a[href*="splash_options.php"] * {
   /* Hide bottom scroll buttons (mobile) */
   .coaches-nav-btns,
   .coaches-nav-btns * { display: none !important; }
+}
+
+/* Scroll lazy sections: fade in/out on scroll */
+.index-lazy-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.index-lazy-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-lazy-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

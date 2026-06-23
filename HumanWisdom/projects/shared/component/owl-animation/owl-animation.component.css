@@ -3,7 +3,7 @@
   bottom: 60px;
   /* sit along footer line (adjust if footer height changes) */
   /* Align to the right edge of a centered 30% content column */
-  right: calc((100vw - 30vw) / 2 + 16px);
+  right: calc((100% - 30%) / 2 + 16px);
   z-index: 100;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s, top 0.3s ease, right 0.3s ease;
   pointer-events: auto;
@@ -17,7 +17,7 @@
 
 .owl-animation-wrapper.corner {
   bottom: 48px;
-  right: calc((100vw - 30vw) / 2 + 10px);
+  right: calc((100% - 30%) / 2 + 10px);
   transform: none;
   -webkit-transform: none;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
@@ -248,21 +248,15 @@
   }
 }
 
-/* iPad specific positioning (600px width) */
-@media (min-width: 600px) and (max-width: 911px) {
+/* Tablet: match 50% col_cw column */
+@media (min-width: 600px) and (max-width: 1024px) {
 
-  .owl-animation-wrapper,
-  .owl-animation-wrapper.corner {
-    right: 140px;
+  .owl-animation-wrapper {
+    right: calc((100% - 50%) / 2 + 16px);
   }
-}
 
-/* Surface Pro specific positioning (912px width) */
-@media (min-width: 912px) and (max-width: 1024px) {
-
-  .owl-animation-wrapper,
   .owl-animation-wrapper.corner {
-    right: 210px;
+    right: calc((100% - 50%) / 2 + 10px);
   }
 }
 
@@ -270,11 +264,11 @@
 @media (min-width: 2560px) {
 
   .owl-animation-wrapper {
-    right: calc((100vw - 20vw) / 2 + 16px);
+    right: calc((100% - 20%) / 2 + 16px);
   }
 
   .owl-animation-wrapper.corner {
-    right: calc((100vw - 20vw) / 2 + 10px);
+    right: calc((100% - 20%) / 2 + 10px);
   }
 }
 
@@ -282,18 +276,18 @@
 @media (min-width: 5120px) {
 
   .owl-animation-wrapper {
-    right: calc((100vw - 10.333333vw) / 2 + 16px);
+    right: calc((100% - 10.333333%) / 2 + 16px);
   }
 
   .owl-animation-wrapper.corner {
-    right: calc((100vw - 10.333333vw) / 2 + 10px);
+    right: calc((100% - 10.333333%) / 2 + 10px);
   }
 }
 
 /* Journal page specific positioning - handles col-lg-4 (33.33% width) layout */
 .bg_journal .owl-animation-wrapper,
 .bg_journal .owl-animation-wrapper.corner {
-  right: calc((100vw - 33.33vw) / 2 + 16px);
+  right: calc((100% - 33.33%) / 2 + 16px);
 }
 
 @media (max-width: 1024px) {
@@ -481,4 +475,34 @@ body:has(#menu:checked) .owl-animation-wrapper {
     height: auto;
   }
 
+}
+
+/* Teenagers: align Olly slightly right above Profile tab */
+@media (max-width: 1024px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    right: 4px;
+  }
+
+  :host(.teenager-theme) .static-owl-container {
+    align-items: flex-end;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    transform-origin: bottom right;
+  }
+}
+
+@media (max-width: 480px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    right: 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    right: 1px;
+  }
 }

@@ -243,10 +243,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
     }
     if(isCoupanCode){
       let amountVal = JSON.parse(SharedService.getDataFromLocalStorage('subscribeToPremiumAfterDiscount'));
-      if (this.pricingModel?.CurSymbol === '£') {
-        return Number(amountVal).toFixed(2);
-      }
-      return amountVal;
+      return Number(amountVal).toFixed(2);
     }
     if (this.selectedSubscription == this.Monthly) 
     {  
