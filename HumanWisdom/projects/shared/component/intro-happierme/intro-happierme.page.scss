@@ -1,0 +1,131 @@
+.display-contents {
+  display: contents;
+}
+.ws-read-icon {
+    bottom: 40px !important;
+}
+.ws-lock-icon {
+    top: 40px !important;
+}
+.session_img_play{
+  right: 12px !important;
+  height: 24px;
+}
+.btn_podcast .btn {
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0 10px 0 0;
+  padding: 9px 10px;
+  height: 36px;
+  box-shadow: unset;
+  transition: all 0.3s ease;
+}
+
+
+.btn_podcast .btn.active,
+.btn_podcast .btn.focus {
+  background: white !important;
+  color: #000 !important;
+  filter: unset !important;
+  /* box-shadow: inset 0 3px 5px #00000020; */
+  border-color: #ffd889 !important;
+}
+.btn_podcast_t .btn.active,
+.btn_podcast_t .btn.focus {
+  background: #ffffff !important;
+  color: #000 !important;
+}
+.btn_podcast .btn:not(.active):not(#MiniPodcast) {
+  background: #ffd889;
+  color: #000;
+}
+
+.btn_podcast .btn:focus-visible {
+  outline: none;
+}
+/* Adults only scrollbar styling */
+.mtb20px {
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+}
+
+.odiv {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  display: flex !important;
+  -webkit-overflow-scrolling: touch;
+  width: 100% !important;
+
+  &::-webkit-scrollbar {
+    height: 2px;
+    border-radius: 6px;
+  }
+
+  & > div {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    align-items: center;
+  }
+}
+
+/* Shared scrollbar base for hover effect */
+.odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
+  scrollbar-width: thin;
+}
+
+/* Adults scrollbar style */
+.adults-scroll {
+  .odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
+    scrollbar-color: #eea170 #f6d1b7;
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #eea170;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #f6d1b7;
+      border-radius: 10px;
+    }
+    
+    /* Only show on hover for Adults */
+    &:not(:hover) {
+      scrollbar-color: transparent transparent;
+      
+      &::-webkit-scrollbar-thumb,
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/* Teens scrollbar style (when .adults-scroll is not present) */
+.mc_03:not(.adults-scroll) {
+  .odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
+    scrollbar-color: #778899 #16366D;
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #16366D;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #778899;
+      border-radius: 10px;
+    }
+    
+    /* Only show on hover for Teens */
+    &:not(:hover) {
+      scrollbar-color: transparent transparent;
+      
+      &::-webkit-scrollbar-thumb,
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    }
+  }
+}
