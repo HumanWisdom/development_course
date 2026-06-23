@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 import { CommonService } from '../../../services/common.service';
@@ -18,6 +18,7 @@ export class MyDailyPracticePage implements OnInit {
   dailybreathTitle:string ='';
   videoLink:string ='';
   userName:string ='';
+  showFooterOwl: boolean = false;
   enableVideo:boolean;
   dailyInspirationTitle:string='';
   DailyInspirationLink:string='';
@@ -486,6 +487,12 @@ survey(): void {
     this.questext="";
 
     this.content = '';
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.showFooterOwl = scrollOffset > 200;
   }
 
 }
