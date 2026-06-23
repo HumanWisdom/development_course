@@ -220,6 +220,12 @@ export class SharedService {
           displayName: "Habits",
           active: false,
           name: 'Overcome unhelpful habits'
+        },
+         {
+          id: "16",
+          active: false,
+          displayName: "Understand yourself",
+          name: 'Understand yourself'
         }
 
     ]
