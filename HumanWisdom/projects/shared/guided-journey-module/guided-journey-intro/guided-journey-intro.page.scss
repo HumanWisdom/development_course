@@ -34,7 +34,6 @@
     color: #ffffff;
     border: none;
     border-radius: 25px;
-    padding: 13px 15px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -43,6 +42,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 145px;
+    height: 40px;
+    position: relative;
+    padding: 0;
+
+    i {
+        font-size: 20px;
+        position: absolute;
+        right: 16px;
+    }
 
     &:active {
         transform: scale(0.97);
