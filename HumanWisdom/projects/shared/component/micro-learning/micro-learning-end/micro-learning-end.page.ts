@@ -25,6 +25,7 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
   showSuccessPopup = false;
   isAnimating = false;
   direction = 'forward';
+  isGuided = false;
 
   // Touch handling
   private touchStartX = 0;
@@ -75,6 +76,12 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
 
     if (this.contentId) {
       localStorage.setItem("m_learningId", this.contentId);
+    }
+
+    // Check if user navigated here from Guided Journeys
+    const lastNavSource = localStorage.getItem('lastNavSource');
+    if (lastNavSource === 'guided-journey') {
+      this.isGuided = true;
     }
 
     if(!this.isSubComponent) {
@@ -286,7 +293,11 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
 
   navigateToListing() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/micro-learning`]);
+    if (this.isGuided) {
+      this.router.navigate([`/${prefix}/guided-journeys`]);
+    } else {
+      this.router.navigate([`/${prefix}/micro-learning`]);
+    }
   }
 
   goToHome() {

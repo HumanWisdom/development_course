@@ -613,21 +613,25 @@ describe('ForumThreadStartNewPage', () => {
   describe('filterBasedOnTags()', () => {
     it('should set selected option and button text', fakeAsync(() => {
       spyOn(component, 'closeCategoryModal');
+      component.isChecked = true;
       component.filterBasedOnTags('2', 'Relationships');
       tick(100);
 
       expect(mockLogEventService.logEvent).toHaveBeenCalledWith('chooseCategory');
       expect(component.selectedOption).toBe(2);
       expect(component.buttonText).toBe('Relationships');
+      expect(component.isChecked).toBe(false);
       expect(component.closeCategoryModal).toHaveBeenCalled();
     }));
 
-    it('should handle string value conversion', fakeAsync(() => {
+    it('should handle string value conversion and set isChecked to true when option is 5', fakeAsync(() => {
+      component.isChecked = false;
       component.filterBasedOnTags('5', 'Ask a coach');
       tick(100);
 
       expect(component.selectedOption).toBe(5);
       expect(component.buttonText).toBe('Ask a coach');
+      expect(component.isChecked).toBe(true);
     }));
   });
 

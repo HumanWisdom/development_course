@@ -106,7 +106,7 @@
                       <a class="mtb10px fs_15px fw_500 lh_140p  tcenter td_underline dflex_start1"
                         [ngClass]="isAdults? 'fc_803358': 'fc_e58d82'" (click)="navigateToListing()"
                         (keydown.enter)="navigateToListing()" tabindex="0">
-                        Back to Micro learnings </a>
+                        {{ isGuided ? 'Back to Guided Journeys' : 'Back to Micro learnings' }} </a>
                     </div>
                   </div>
                 </div>

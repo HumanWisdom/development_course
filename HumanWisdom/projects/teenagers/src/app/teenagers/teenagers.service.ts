@@ -52,10 +52,6 @@ export class TeenagersService {
     {
       id: '15',
       name: 'Overcome unhelpful habits'
-    },
-    {
-      id: '16',
-      name: 'Understand yourself'
     }
   ]
 
