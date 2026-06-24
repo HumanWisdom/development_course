@@ -266,6 +266,10 @@ export class OnboardingService {
     return this.http.post(this.path + '/verifyGoogleTokenAndLogin', data)
   }
 
+  verifyAwsSso(data: any): Observable<any> {
+    return this.http.post(this.path + '/verifyAwsSSOTokenAndLogin', data)
+  }
+
   verifyFb(data: any): Observable<any> {
     return this.http.post(this.path + '/verifyFaceBookTokenAndLogin', data)
   }

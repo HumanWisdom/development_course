@@ -34,6 +34,17 @@ export const environment = {
     messagingSenderId: "604395199513",
     appId: "1:604395199513:web:33865830c234bc7840de88",
     measurementId: "G-1B7PE7GN89"
+  },
+  awsCognito: {
+    authority: 'https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_rnYMiKepu',
+    userPoolId: 'eu-west-2_rnYMiKepu',
+    clientId: '3j1uskvlpsggkl16pmr380v1ok',
+    domain: 'eu-west-2rnymikepu.auth.eu-west-2.amazoncognito.com',
+    scope: 'openid email',
+    redirectUrlAdults: 'http://localhost:4200/adults/onboarding/login',
+    redirectUrlTeenagers: 'http://localhost:4200/teenagers/onboarding/login',
+    logoutUrlAdults: 'http://localhost:4200/adults/onboarding/login',
+    logoutUrlTeenagers: 'http://localhost:4200/teenagers/onboarding/login',
   }
 };
 

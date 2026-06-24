@@ -32,6 +32,10 @@ import { SplashPage } from './teenagers/splash/splash.page';
 import * as Hammer from 'hammerjs';
 import { SurveyPageModule } from '../../../shared/component/survey/survey.module';
 import { initDependency } from '../initdependency';
+import { AuthModule } from 'angular-auth-oidc-client';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { buildAwsCognitoAuthConfig } from '../../../shared/config/aws-cognito-auth.config';
+import { awsSsoCallbackInitializer } from '../../../shared/config/aws-sso.initializer';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -64,7 +68,10 @@ export class MyHammerConfig extends HammerGestureConfig {
     StripeModule.forRoot("sk_test_51IRj1BGKvnjJ88wcKdzqQeXK9jSAsiRwxGw3GOBvuDSwgAXPqXk99gzD9KJnzQnuu2Nw4HOfCjCtIaa4JjALGNaa00eW4xCHjM"),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
-    SurveyPageModule
+    SurveyPageModule,
+    AuthModule.forRoot({
+      config: buildAwsCognitoAuthConfig('teenagers'),
+    }),
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
@@ -82,6 +89,12 @@ export class MyHammerConfig extends HammerGestureConfig {
     useFactory: initDependency,
     deps: [AdultsService],
     multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: awsSsoCallbackInitializer,
+      deps: [OidcSecurityService],
+      multi: true
     },
     FormsModule,
     TeenagersService,

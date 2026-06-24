@@ -29,5 +29,16 @@ export const environment = {
     messagingSenderId: "907009432190",
     appId: "1:907009432190:web:5855b9c076f6d0ff86d62f",
     measurementId: "G-1WBHRGL7VH"
+  },
+  awsCognito: {
+    authority: 'https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_rnYMiKepu',
+    userPoolId: 'eu-west-2_rnYMiKepu',
+    clientId: '3j1uskvlpsggkl16pmr380v1ok',
+    domain: 'eu-west-2rnymikepu.auth.eu-west-2.amazoncognito.com',
+    scope: 'openid email',
+    redirectUrlAdults: 'https://happierme.app/adults/onboarding/login',
+    redirectUrlTeenagers: 'https://happierme.app/teenagers/onboarding/login',
+    logoutUrlAdults: 'https://happierme.app/adults/onboarding/login',
+    logoutUrlTeenagers: 'https://happierme.app/teenagers/onboarding/login',
   }
 };
