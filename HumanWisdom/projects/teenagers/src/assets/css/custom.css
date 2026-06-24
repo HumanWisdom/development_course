@@ -34303,6 +34303,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   line-height: 150%;
 }
 
+.btn_ctd1:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .fc_img {
   position: absolute;
   right: 20px;
