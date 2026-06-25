@@ -141,6 +141,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   eventList: any[] = [];
   audioMeditationList: any[] = [];
   showSearchBox: boolean = true;
+  showGreeting: boolean = true;
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
@@ -150,6 +151,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private lastScrollTop: number = 0;
   private playstoreBannerObserver: MutationObserver | null = null;
   preference = '';  
+  isHeaderHidden: boolean = false;
   constructor(
     private router: Router,
     private commonService: CommonService,
@@ -1651,9 +1653,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Handle scroll events to show/hide search box
+   * Handle scroll events to show/hide greeting
    * Using HostListener for better performance
-   * Hide search box when scroll exceeds 20% of viewport height
+   * Hide greeting when scroll exceeds 20% of viewport height
    */
   @HostListener('window:scroll', ['$event'])
   handleScroll(): void {
@@ -1661,19 +1663,26 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     const threshold = viewportHeight * 0.2; // 20% of viewport height
 
-    // Hide search box when scroll exceeds 20% of screen height
+    // Hide greeting when scroll exceeds 20% of screen height
     if (scrollTop > threshold) {
-      this.showSearchBox = false;
-      this.searchResult = []; // Close dropdown when hiding search box
+      this.showGreeting = false;
     } else {
-      // Show search box when scroll is within 20% of screen height
-      this.showSearchBox = true;
+      this.showGreeting = true;
+    }
+
+    // Toggle header visibility based on scroll threshold
+    const isHidden = scrollTop > 50;
+    if (this.isHeaderHidden !== isHidden) {
+      this.isHeaderHidden = isHidden;
+      this.commonService.isHeaderVisibleOnScroll = !isHidden;
+      this.cdr.detectChanges();
     }
 
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
   ngOnDestroy(): void {
+    this.commonService.isHeaderVisibleOnScroll = true;
     this.teardownPlaystoreBannerObserver();
     // Clean up event listeners
     if (this.hashChangeHandler) {
