@@ -36728,6 +36728,8 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   right: 3px;
   margin: 0 auto;
   bottom: 5px;
+  width:24px;
+  height:24px;
 }
 
 .cvideo_coach {
