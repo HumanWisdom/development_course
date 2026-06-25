@@ -469,7 +469,12 @@ routeResume(r?: any, enableLastVisited = false): void {
     const first = this.resumeLastvisited[0];
     const id   = first ? first.ModuleId.toString() : '23';
     const url  = first ? first.ModuleUrl.toString() : fallbackUrl;
-    service.setmoduleID(id, url, url);
+    let indexUrl = url;
+    if (first && first.screenno) {
+      const scr = first.screenno.toString();
+      indexUrl = url.endsWith('/') ? `${url}s${scr}` : `${url}/s${scr}`;
+    }
+    service.setmoduleID(id, url, indexUrl);
   }
 
   localStorage.setItem('pageaction', 'next');
