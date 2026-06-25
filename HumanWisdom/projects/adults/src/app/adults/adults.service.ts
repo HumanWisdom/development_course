@@ -424,6 +424,9 @@ export class AdultsService {
     this.clickModule(id, userId)
       .subscribe(res => {
         this.setModuleState(id, res);
+        if (res && res.lastVisitedScreen && res.lastVisitedScreen !== '') {
+          pgResume = "s" + res.lastVisitedScreen;
+        }
       }, error => {
         console.log(error)
       },
