@@ -12,6 +12,13 @@
         &.home-content--playstore-banner {
             padding-top: 16rem;
         }
+
+        &.header-hidden {
+            .row.home-container:first-of-type {
+                top: 0 !important;
+                margin-top: 0px !important;
+            }
+        }
     }
 
 .username-clr {
@@ -444,6 +451,7 @@
         padding-right: 0;
         box-sizing: border-box;
         overflow-x: hidden;
+        background: #183C79;
     }
 
     .row.home-container:first-of-type > [class*="col-"] {
@@ -481,6 +489,7 @@
             width: 100%;
             max-width: 100%;
             margin-top: -10px;
+            background: #183C79;
         }
 
         .nav-scroll-btn {

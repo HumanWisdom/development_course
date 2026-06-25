@@ -10,13 +10,14 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01_home col_cw home-content"
-        [class.home-content--playstore-banner]="enableBanner">
+        [class.home-content--playstore-banner]="enableBanner"
+        [class.header-hidden]="isHeaderHidden">
         <div class="x_panel p0">
           <div class="x_content p0">
             <div class="container">
               <div class="row home-container sticky-top-section" [class.search-active]="isSearchActive">
 
-                <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showSearchBox">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showGreeting">
                   <div class="d-flex header-blk justify-content-between align-items-center plr20px mb0px"
                     [ngStyle]="{'margin-top': (username && username !== '') ? '20px': '20px'}">
                     <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
@@ -48,8 +49,8 @@
                       [(ngModel)]="searchinp" autocomplete="off" (keyup)="getAutoCompleteList($event.target.value)"
                       (focus)="onFocus()" (focusout)="onFocusOutEvent()" (keydown.enter)="getinp(searchinp)"
                       style="border-radius: 100px !important;">
-                    <span *ngIf="!isSearchActive"
-                      class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                    <span *ngIf="!isSearchActive" class="fa fa-search form-control-feedback left pfy_search_icon"
+                      aria-hidden="true"></span>
                     <span *ngIf="isSearchActive" (click)="clearSearch()" (keydown.enter)="clearSearch()"
                       class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
                       aria-hidden="true"></span>
@@ -96,7 +97,7 @@
               </div>
 
               <!-- Spacer to prevent content from being hidden behind fixed header -->
-              <div class="fixed-header-spacer" [style.min-height.px]="showSearchBox ? 120 : 60"></div>
+              <div class="fixed-header-spacer" [style.min-height.px]="(isloggedIn && showGreeting) ? 140 : 90"></div>
 
               <!-- Wisdom Exercise Component Embedding -->
               <div class="row" *ngIf="showWisdomExercise">
@@ -509,11 +510,11 @@
 
                       </div>
                     </a>
-                      <div class="row" *ngIf="section.title==='Begin here' && ( !isSubscriber || !isloggedIn )">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
-                          <hr class="hr_style_v4">
-                        </div>
+                    <div class="row" *ngIf="section.title==='Begin here' && ( !isSubscriber || !isloggedIn )">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
+                        <hr class="hr_style_v4">
                       </div>
+                    </div>
 
                     <!-- ====== /FREE-TRIAL BANNER ====== -->
                   </div>
