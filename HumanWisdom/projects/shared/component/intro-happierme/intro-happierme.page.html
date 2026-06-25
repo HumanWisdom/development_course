@@ -109,7 +109,7 @@
             </div>
 
               <div class="toc_adiv_02">
-              <a href="https://staging.happierme.app/adults/videopage/introduction_to_happierme-videos-video_tour_of_the_app.mp4/T/Video%20tour%20of%20the%20app">
+           <!--    <a  (click)="routeVideoaudio('video','/adults/videopage/introduction_to_happierme-videos-video_tour_of_the_app.mp4', 'Video tour of the app')">
                <div class="row p10px ">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     
@@ -121,14 +121,7 @@
                           </div>
                         </div>
 
-                        <!-- <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                           <img class="session_img_play" [src]="
-                                isAdults
-                                  ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
-                                  : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_play.svg'
-                              " alt="Overlay icon" />                          </div>
-                        </div> -->
+                      
                       </div>
                     </div>
     
@@ -137,13 +130,13 @@
                         Introduction to HappierMe
                       </h4>
                       <h4 class="mtb0px fs_12px lh_130p  ellipsis" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
-                        <!-- 01:56 -->
+                       
                       </h4>
                     </div>
     
                   </div>
                 </div>
-              </a>
+              </a> -->
 
               <a>
                <div class="row p10px ">
@@ -311,7 +304,7 @@
 
 
               
-              <a *ngIf="!enablekeyideasViewMore">
+              <a >
                <div class="row p10px ">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex" (click)="routeVideoaudio('audio','/introduction_to_happierme/audios/key_ideas/look_at_yourself_without_judgement.mp3','Look at yourself without judgment')">
                     
@@ -569,7 +562,7 @@
                 </div>
               </a>
 
-               <a (click)="enableViewMore('key_ideas')" *ngIf="enablekeyideasViewMore">
+     <!--           <a (click)="enableViewMore('key_ideas')" *ngIf="enablekeyideasViewMore">
                 <div class="mt30px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -589,41 +582,39 @@
                     </h4>
                   </div>
                 </div>
-              </a> 
+              </a>  -->
 
 
                <!-- view more & less -->
-                  <!-- <a id="btn_rm">
-                    <div class="row bg_transparent p0 filter_unseti fa_vm" id="vm" (click)="viewMoreAndLess(false)"
-                      *ngIf="isViewMore">
+                   <a id="btn_rm">
+                    <div class="row bg_transparent p0 filter_unseti fa_vm" id="vm" (click)="enableViewMore('key_ideas')"
+                       *ngIf="enablekeyideasViewMore">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <h4 class="mtb30px fw_500 fs_12px lh_140p tcenter underline"
-                          [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                          <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/view_more.svg"
-                            class="img-responsive mb10px"> -->
+                        <h4 class="mtb30px fw_500 fs_12px lh_140p tcenter underline" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          
 
-                          <!-- View more
+                          View more 
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3"
                             [class.arrow-teenagers]="!isAdults" style="transform: rotate(180deg);" alt="arrow">
                         </h4>
                       </div>
                     </div>
 
-                    <div class="row bg_transparent p0 filter_unseti fa_vm" (click)="viewMoreAndLess(true)" id="vl_gq"
-                      *ngIf="!isViewMore">
+                    <div class="row bg_transparent p0 filter_unseti fa_vm" (click)="enableViewLess('key_ideas')" id="vl_gq"
+                      *ngIf="!enablekeyideasViewMore">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb30px fw_500 fs_12px lh_140p tcenter underline"
-                          [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"> -->
+                          [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"> 
                           <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/view_less.svg"
                             class="img-responsive mb10px"> -->
-                          <!-- View less
+                        View less
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg" class="ms-3"
                             [class.arrow-teenagers]="!isAdults" alt="arrow">
 
                         </h4>
                       </div>
                     </div>
-                  </a> --> 
+                  </a> 
                   <!-- /view more & less -->
             </div>
 
