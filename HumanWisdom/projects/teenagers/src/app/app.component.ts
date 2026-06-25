@@ -162,7 +162,7 @@ export class AppComponent implements OnDestroy {
       } else {
         this.enableplaystore = false;
       }
-      this.isShowHeader = true;
+      this.isShowHeader = this.commonService.isHeaderVisibleOnScroll;
       this.isLoginPage = false;
       return true;
     }
