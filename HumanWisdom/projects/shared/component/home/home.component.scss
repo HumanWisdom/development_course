@@ -29,9 +29,12 @@ background: #FFF7E6;/* Ensure proper stacking context */
   }
 
   &.header-hidden {
+    padding-top: 5rem;
+
     .row.home-container:first-of-type {
       top: 0 !important;
       margin-top: 0px !important;
+      padding-top: 10px;
     }
   }
 }
@@ -768,4 +771,21 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 .adsearch_ul .list-group-item:last-child{
   border-radius: 0 !important;
+}
+.header-hidden {
+  .row.home-container:first-of-type {
+    padding-top:0px !important;
+  }
+  .search-box-container{
+    margin-top: 0px !important;
+    padding: 0px !important;
+  }
+  .pfy_search{
+    border: none !important;
+    border-radius: 0px !important;
+    height: 70px;
+  }
+  .sticky-nav-container{
+    margin-top: 0px !important;
+  }
 }

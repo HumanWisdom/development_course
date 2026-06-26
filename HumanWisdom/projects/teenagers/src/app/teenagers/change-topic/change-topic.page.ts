@@ -144,7 +144,8 @@ export class ChangeTopicPage implements OnInit {
   }
 
   skip() {
-    this.router.navigate(['/teenagers/teenagers-dashboard']);
+    localStorage.setItem('fromImNotSure', 'T');
+    this.router.navigate(['/teenagers/subscription/try-free-and-subscribe']);
   }
 
   updateList(id, name) {
