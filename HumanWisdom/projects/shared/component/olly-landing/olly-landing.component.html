@@ -56,7 +56,7 @@
                 </div>
 
                 <!-- Suggestion link 2 (bottom link) -->
-                <div class="bottom-suggestion-wrapper" *ngIf="selectedTopic && !isIntegrated">
+                <div class="bottom-suggestion-wrapper" *ngIf="selectedTopic && !isIntegrated && !fromImNotSure">
                   <a href="javascript:void(0)" (click)="onTopicLinkClick()" class="olly-bottom-link">
                     More on '<strong>{{ selectedTopic.displayName }}</strong>'
                   </a>

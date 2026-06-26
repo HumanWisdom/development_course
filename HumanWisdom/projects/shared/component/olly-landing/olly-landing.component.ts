@@ -21,6 +21,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   isAdults: boolean = true;
   searchQuery: string = '';
   selectedTopic: { name: string; displayName: string; fragment: string } | null = null;
+  fromImNotSure: boolean = false;
   showWhyOllyPopup: boolean = false;
   
   showQuestionsView: boolean = false;
@@ -191,6 +192,9 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnInit(): void {
+    // Check if user came from "I'm not sure" link
+    this.fromImNotSure = localStorage.getItem('fromImNotSure') === 'T';
+    
     // Determine program type (Adults vs Teenagers)
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
     this.topicsList = this.isAdults ? OLLY_QUESTIONS.adults : OLLY_QUESTIONS.teens;
@@ -272,6 +276,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   ngOnDestroy(): void {
     this.timers.forEach((timer) => clearTimeout(timer));
     this.timers = [];
+    // Clear the flag when component is destroyed
+    localStorage.removeItem('fromImNotSure');
   }
 
   private initOllyAnimation(): void {

@@ -14,11 +14,22 @@
         }
 
         &.header-hidden {
-            .row.home-container:first-of-type {
-                top: 0 !important;
-                margin-top: 0px !important;
-            }
-        }
+  .row.home-container:first-of-type {
+    padding-top:0px !important;
+  }
+  .search-box-container{
+    margin-top: 0px !important;
+    padding: 0px !important;
+  }
+  .pfy_search{
+    border: none !important;
+    border-radius: 0px !important;
+    height: 70px;
+  }
+  .sticky-nav-container{
+    margin-top: 0px !important;
+  }
+}
     }
 
 .username-clr {
