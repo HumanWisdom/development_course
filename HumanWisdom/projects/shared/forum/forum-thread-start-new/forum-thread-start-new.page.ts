@@ -207,6 +207,11 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit, OnDestroy 
     this.logeventservice.logEvent("chooseCategory")
     this.selectedOption = Number.parseInt(value);
     this.buttonText =name;
+    if (this.selectedOption == 5) {
+      this.isChecked = true;
+    } else {
+      this.isChecked = false;
+    }
 
     setTimeout(() => {
       this.closeCategoryModal();

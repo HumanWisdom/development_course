@@ -20,7 +20,6 @@
   
   p {
     font-size: 15px;
-    opacity: 0.85;
   }
 }
 
@@ -48,7 +47,6 @@
   font-weight: 500;
   cursor: pointer;
   display: inline-block;
-  opacity: 0.5;
   &:hover {
     color: rgba(0, 0, 0, 0.5) !important;
   }
@@ -57,19 +55,22 @@
   right: 14px;
 }
 .continue-btn {
-    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
-box-shadow: 1px 1px 2px 0px #00000040;
-height: 40px;
-opacity: 1;
-border-radius: 20px;
-padding-right: 30px;
-padding-left: 30px;
-
-    border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  box-shadow: 1px 1px 2px 0px #00000040;
+  height: 40px;
+  opacity: 1;
+  border-radius: 20px;
+  padding-right: 15px;
+  padding-left: 25px;
+  border: none;
 
   .arrow-icon {
-opacity: 1;
-
+    width: 24px;
+    height: 24px;
+    opacity: 1;
   }
 }
 

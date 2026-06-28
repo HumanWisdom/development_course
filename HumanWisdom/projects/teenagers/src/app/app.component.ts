@@ -56,7 +56,7 @@ export class AppComponent implements OnDestroy {
         this.router.navigateByUrl(url);
       }
     });
-    let urls = this.router.url.split('authtoken=');
+    let urls = window.location.href.split('authtoken=');
     if (urls && urls[1] == undefined) {
       if (localStorage.getItem("isloggedin") == 'T') {
         this.getUserInformationById(SharedService.getUserId())
@@ -162,7 +162,7 @@ export class AppComponent implements OnDestroy {
       } else {
         this.enableplaystore = false;
       }
-      this.isShowHeader = true;
+      this.isShowHeader = this.commonService.isHeaderVisibleOnScroll;
       this.isLoginPage = false;
       return true;
     }

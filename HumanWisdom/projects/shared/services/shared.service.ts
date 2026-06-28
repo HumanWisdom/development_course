@@ -220,6 +220,12 @@ export class SharedService {
           displayName: "Habits",
           active: false,
           name: 'Overcome unhelpful habits'
+        },
+         {
+          id: "16",
+          active: false,
+          displayName: "Understand yourself",
+          name: 'Understand yourself'
         }
 
     ]
@@ -752,5 +758,6 @@ export class UrlConstant {
   public static sitesearch = 'site-search';
   public static notification = 'notification';
   public static startFreeTrial = '/subscription/start-your-free-trial';
+  public static tryFreeAndSubscribe = '/subscription/try-free-and-subscribe';
 }
 

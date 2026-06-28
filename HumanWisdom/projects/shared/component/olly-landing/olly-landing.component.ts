@@ -21,6 +21,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   isAdults: boolean = true;
   searchQuery: string = '';
   selectedTopic: { name: string; displayName: string; fragment: string } | null = null;
+  fromImNotSure: boolean = false;
   showWhyOllyPopup: boolean = false;
   
   showQuestionsView: boolean = false;
@@ -100,47 +101,56 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       this.topicIdFromNav = navigation.extras.state['topicId'].toString();
     }
 
-    let authtoken: any;
-
     this.activatedRoute.queryParams.subscribe(params => {
-      authtoken = params?.authtoken;
-    });
+      const authtoken = params?.authtoken;
 
-    if (authtoken) {
-      authtoken = JSON.parse(localStorage.getItem("token"));
-    }
-
-    if (authtoken) {
-      this.service.setDataRecievedState(false);
-      localStorage.setItem('socialLogin', 'T');
-      this.services.verifytoken(authtoken).subscribe((res) => {
-        if (res) {
-          localStorage.setItem("email", res['Email']);
-          localStorage.setItem("name", res['Name']);
-          let namedata = localStorage.getItem('name')?.split(' ');
-          localStorage.setItem("FnName", namedata?.[0] || '');
-          localStorage.setItem("LName", namedata?.[1] || '');
-          localStorage.setItem("Subscriber", res['Subscriber']);
-          this.userId = res['UserId'];
-          localStorage.setItem("userId", JSON.stringify(this.userId));
-          this.loginadult(res);
-          this.service.setDataRecievedState(true);
-        } else {
+      if (authtoken) {
+        this.service.setDataRecievedState(false);
+        localStorage.setItem('socialLogin', 'T');
+        localStorage.setItem("token", JSON.stringify(authtoken));
+        this.services.verifytoken(authtoken).subscribe((res) => {
+          if (res) {
+            localStorage.setItem("email", res['Email']);
+            localStorage.setItem("name", res['Name']);
+            let namedata = localStorage.getItem('name')?.split(' ');
+            localStorage.setItem("FnName", namedata?.[0] || '');
+            localStorage.setItem("LName", namedata?.[1] || '');
+            localStorage.setItem("Subscriber", res['Subscriber']);
+            this.userId = res['UserId'];
+            localStorage.setItem("userId", JSON.stringify(this.userId));
+            localStorage.setItem('isloggedin', 'T');
+            localStorage.setItem('guest', 'F');
+            localStorage.setItem("remember", 'T');
+            localStorage.setItem('adult', 'T');
+            this.loginadult(res);
+            this.service.setDataRecievedState(true);
+            
+            // Set the username dynamically so it displays immediately without reload
+            if (res['Name']) {
+              let namedata = res['Name'].split(' ');
+              this.username = namedata[0];
+              if (this.username) {
+                this.username = this.username.charAt(0).toUpperCase() + this.username.slice(1).toLowerCase();
+              }
+            }
+          } else {
+            localStorage.setItem("email", 'guest@humanwisdom.me');
+            localStorage.setItem("pswd", '12345');
+            localStorage.setItem('guest', 'T');
+            localStorage.setItem('isloggedin', 'F');
+            this.service.setDataRecievedState(true);
+          }
+        }, error => {
           localStorage.setItem("email", 'guest@humanwisdom.me');
           localStorage.setItem("pswd", '12345');
           localStorage.setItem('guest', 'T');
           localStorage.setItem('isloggedin', 'F');
           this.service.setDataRecievedState(true);
-        }
-      }, error => {
-        localStorage.setItem("email", 'guest@humanwisdom.me');
-        localStorage.setItem("pswd", '12345');
-        localStorage.setItem('guest', 'T');
-        localStorage.setItem('isloggedin', 'F');
-      });
-    } else {
-      this.service.setDataRecievedState(true);
-    }
+        });
+      } else {
+        this.service.setDataRecievedState(true);
+      }
+    });
   }
 
   loginadult(res: any) {
@@ -182,6 +192,9 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnInit(): void {
+    // Check if user came from "I'm not sure" link
+    this.fromImNotSure = localStorage.getItem('fromImNotSure') === 'T';
+    
     // Determine program type (Adults vs Teenagers)
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
     this.topicsList = this.isAdults ? OLLY_QUESTIONS.adults : OLLY_QUESTIONS.teens;
@@ -263,6 +276,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   ngOnDestroy(): void {
     this.timers.forEach((timer) => clearTimeout(timer));
     this.timers = [];
+    // Clear the flag when component is destroyed
+    localStorage.removeItem('fromImNotSure');
   }
 
   private initOllyAnimation(): void {

@@ -46,6 +46,7 @@ export class CommonService {
   searchinp = '';
   public moduleList = [];
   isAdults = false;
+  isHeaderVisibleOnScroll = true;
     personalisedforyoulist = [
     {
       id: "1",

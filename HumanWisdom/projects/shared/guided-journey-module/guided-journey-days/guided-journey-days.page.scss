@@ -362,7 +362,6 @@
     color: #ffffff;
     border: none;
     border-radius: 25px;
-    padding: 13px 15px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -373,6 +372,14 @@
     justify-content: center;
     width: 145px;
     height: 40px;
+    position: relative;
+    padding: 0;
+
+    i {
+        font-size: 20px;
+        position: absolute;
+        right: 16px;
+    }
 
     &:active {
         transform: scale(0.97);
@@ -387,7 +394,7 @@
     }
 
     .btn_journal {
-        background: #EE9596 !important;
+        background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
         box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
@@ -445,6 +452,7 @@
             border-radius: 12px;
             background: #031A41;
             color: #ffffff;
+            border: 1px solid #FFFFFF1A;
 
             &::placeholder {
                 color: rgba(255, 255, 255, 0.4);
@@ -514,10 +522,10 @@
 
         &.visited {
             background: rgba(0, 0, 0, 0.25) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border: none !important;
 
             span {
-                color: rgba(255, 255, 255, 0.7) !important;
+                color: rgba(255, 255, 255, 0.25) !important;
             }
         }
     }

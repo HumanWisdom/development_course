@@ -136,7 +136,6 @@ export class ChangeTopicPage implements OnInit {
       'Relationships': 'Strengthen your relationships',
       'Be happier': 'Be happier',
       'Overcome unhelpful habits': 'Overcome unhelpful habits',
-      'Understand yourself': 'Understand yourself',
       'Feel calm': 'Feel calm',
       'Manage your mental wellbeing': 'Improve your mental health',
       'Develop your self awareness': 'Build your self awareness'
@@ -145,7 +144,8 @@ export class ChangeTopicPage implements OnInit {
   }
 
   skip() {
-    this.router.navigate(['/teenagers/teenagers-dashboard']);
+    localStorage.setItem('fromImNotSure', 'T');
+    this.router.navigate(['/teenagers/subscription/try-free-and-subscribe']);
   }
 
   updateList(id, name) {

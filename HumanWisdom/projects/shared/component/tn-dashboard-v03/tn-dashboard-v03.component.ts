@@ -258,7 +258,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     // if (!(SharedService.isIOSApp())) {
       this.logeventservice.logEvent("click_Free_Trial");
 
-      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.startFreeTrial)]);
+      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.tryFreeAndSubscribe)]);
     // }
   }
 
