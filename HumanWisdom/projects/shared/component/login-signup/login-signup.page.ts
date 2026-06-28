@@ -17,6 +17,7 @@ import { HomeStateService } from "../../services/home-state.service";
 import { ProgramType } from "../../models/program-model";
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { take } from 'rxjs/operators';
+import { isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
 declare var $: any;
 declare var google: any;
 declare var FB: any;
@@ -136,6 +137,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
   loginStartTime: any;
+  showAwsSsoLogin = false;
   private awsSsoProcessing = false;
 
 
@@ -539,6 +541,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     //   window.history.pushState('', '', '/log-in');
     // }
     this.isAdults = SharedService.ProgramId === 9;
+    this.showAwsSsoLogin = isAwsSsoLoginVisible();
     const lastUrl = this.navigtionService.getLastUrlVisited()
     if (lastUrl != null && lastUrl.includes('forgotpassword')) {
       this.isSignUp = false;
