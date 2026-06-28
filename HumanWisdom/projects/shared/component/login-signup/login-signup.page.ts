@@ -582,10 +582,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       }
 
       if (window.location.search.includes('code=')) {
+        const redirectUri = `${window.location.origin}${window.location.pathname}`;
         console.warn(
           '[AWS SSO] Authorization code present but token exchange failed. ' +
           'Verify Cognito app client: no client secret, Authorization code grant enabled, ' +
-          'PKCE enabled, and callback URL http://localhost:4200/teenagers/onboarding/login registered.'
+          'PKCE required, and this exact callback URL is registered:',
+          redirectUri
         );
       }
     });

@@ -35,7 +35,7 @@ import { initDependency } from '../initdependency';
 import { AuthModule } from 'angular-auth-oidc-client';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { buildAwsCognitoAuthConfig } from '../../../shared/config/aws-cognito-auth.config';
-import { awsSsoCallbackInitializer } from '../../../shared/config/aws-sso.initializer';
+import { awsSsoCallbackInitializer, awsSsoStorageCleanupInitializer } from '../../../shared/config/aws-sso.initializer';
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
     swipe: { direction: Hammer.DIRECTION_ALL },
@@ -89,6 +89,11 @@ export class MyHammerConfig extends HammerGestureConfig {
     useFactory: initDependency,
     deps: [AdultsService],
     multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: awsSsoStorageCleanupInitializer,
+      multi: true
     },
     {
       provide: APP_INITIALIZER,

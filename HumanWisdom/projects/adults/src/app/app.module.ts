@@ -40,7 +40,7 @@ import { EnableRouteGuard } from './enable-route.guard';
 import { NavigationService } from '../../../shared/services/navigation.service';
 import { AuthModule } from 'angular-auth-oidc-client';
 import { buildAwsCognitoAuthConfig } from '../../../shared/config/aws-cognito-auth.config';
-import { awsSsoCallbackInitializer } from '../../../shared/config/aws-sso.initializer';
+import { awsSsoCallbackInitializer, awsSsoStorageCleanupInitializer } from '../../../shared/config/aws-sso.initializer';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
@@ -110,6 +110,11 @@ export class MyHammerConfig extends HammerGestureConfig {
           provide: APP_INITIALIZER,
           useFactory: initDependency,
           deps: [AdultsService],
+          multi: true
+        },
+         {
+          provide: APP_INITIALIZER,
+          useFactory: awsSsoStorageCleanupInitializer,
           multi: true
         },
          {
