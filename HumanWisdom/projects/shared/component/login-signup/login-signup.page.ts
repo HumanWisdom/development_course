@@ -15,6 +15,9 @@ import { Constant } from "../../services/constant";
 import { CommonService } from "../../services/common.service";
 import { HomeStateService } from "../../services/home-state.service";
 import { ProgramType } from "../../models/program-model";
+import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { take } from 'rxjs/operators';
+import { isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
 declare var $: any;
 declare var google: any;
 declare var FB: any;
@@ -134,6 +137,8 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
   loginStartTime: any;
+  showAwsSsoLogin = false;
+  private awsSsoProcessing = false;
 
 
   ngAfterViewInit(): void {
@@ -459,7 +464,8 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     private navigtionService: NavigationService,
     private renderer: Renderer2, private el: ElementRef,
     private commonService: CommonService,
-    private homeStateService: HomeStateService
+    private homeStateService: HomeStateService,
+    private oidcSecurityService: OidcSecurityService
   ) {
     this.loadRecaptchaScript();
     this.initializeRegistrationForm();
@@ -535,6 +541,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     //   window.history.pushState('', '', '/log-in');
     // }
     this.isAdults = SharedService.ProgramId === 9;
+    this.showAwsSsoLogin = isAwsSsoLoginVisible();
     const lastUrl = this.navigtionService.getLastUrlVisited()
     if (lastUrl != null && lastUrl.includes('forgotpassword')) {
       this.isSignUp = false;
@@ -552,6 +559,65 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         }
       });
     }
+
+    const hasOAuthCallback = window.location.search.includes('code=');
+    if (hasOAuthCallback) {
+      console.log('[AWS SSO] OAuth callback URL detected:', window.location.href);
+    }
+
+    this.tryCompleteAwsSsoLogin();
+  }
+
+  private tryCompleteAwsSsoLogin(): void {
+    if (localStorage.getItem('isloggedin') === 'T') {
+      return;
+    }
+
+    this.oidcSecurityService.isAuthenticated().pipe(take(1)).subscribe((isAuthenticated) => {
+      console.log('[AWS SSO] isAuthenticated:', isAuthenticated);
+
+      if (isAuthenticated) {
+        this.completeAwsSsoFromTokens();
+        return;
+      }
+
+      if (window.location.search.includes('code=')) {
+        console.warn(
+          '[AWS SSO] Authorization code present but token exchange failed. ' +
+          'Verify Cognito app client: no client secret, Authorization code grant enabled, ' +
+          'PKCE enabled, and callback URL http://localhost:4200/teenagers/onboarding/login registered.'
+        );
+      }
+    });
+  }
+
+  private completeAwsSsoFromTokens(): void {
+    this.oidcSecurityService.getIdToken().pipe(take(1)).subscribe((idToken) => {
+      if (!idToken) {
+        console.warn('[AWS SSO] Authenticated but no ID token available');
+        return;
+      }
+
+      try {
+        const decoded = this.decodeJwt(idToken);
+        console.log('[AWS SSO] ID token claims:', {
+          sub: decoded.sub,
+          email: decoded.email,
+          given_name: decoded.given_name,
+          family_name: decoded.family_name,
+          token_use: decoded.token_use,
+          iss: decoded.iss,
+          aud: decoded.aud,
+          exp: decoded.exp,
+        });
+      } catch (e) {
+        console.warn('[AWS SSO] Could not decode ID token for logging', e);
+      }
+
+      this.oidcSecurityService.getUserData().pipe(take(1)).subscribe((userData) => {
+        this.zone.run(() => this.handleAwsSsoLogin(idToken, userData));
+      });
+    });
   }
 
   ngOnDestroy(): void {
@@ -691,6 +757,90 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.handleGoogleSignIn();
+  }
+
+  awsSsoLogin(reqtype: string): void {
+    if (this.awsSsoProcessing) {
+      return;
+    }
+
+    if (reqtype === 'signup') {
+      this.logeventservice.logEvent('click_signup_aws_sso');
+    } else {
+      this.logeventservice.logEvent('click_login_aws_sso');
+    }
+
+    console.log('[AWS SSO] Starting authorize flow, reqtype:', reqtype);
+    this.oidcSecurityService.authorize();
+  }
+
+  private handleAwsSsoLogin(idToken: string, userData: any): void {
+    if (this.awsSsoProcessing || localStorage.getItem('isloggedin') === 'T') {
+      console.log('[AWS SSO] Skipping handleAwsSsoLogin — already processing or logged in');
+      return;
+    }
+
+    this.awsSsoProcessing = true;
+    console.log('[AWS SSO] handleAwsSsoLogin started');
+
+    try {
+      const payload = userData || this.decodeJwt(idToken);
+      this.idToken = idToken;
+      this.socialFirstName = payload.given_name || payload.name?.split(' ')[0] || '';
+      this.socialLastName = payload.family_name || payload.name?.split(' ').slice(1).join(' ') || '';
+      this.socialEmail = payload.email || payload.preferred_username || '';
+
+      console.log('[AWS SSO] User info extracted:', {
+        email: this.socialEmail,
+        firstName: this.socialFirstName,
+        lastName: this.socialLastName,
+      });
+
+      if (!this.socialEmail) {
+        console.error('[AWS SSO] No email in token/userData. Payload:', payload);
+        this.content = "Unable to retrieve email from SSO account. Please try again.";
+        this.enableAlert = true;
+        this.awsSsoProcessing = false;
+        return;
+      }
+
+      console.log('[AWS SSO] Calling verifyAwsSSOTokenAndLogin API...');
+      this.service.verifyAwsSso({
+        TokenID: this.idToken,
+        FName: this.socialFirstName,
+        LName: this.socialLastName,
+        Email: this.socialEmail,
+        VCode: "",
+        Pwd: "",
+      }).subscribe(
+        (res) => {
+          this.awsSsoProcessing = false;
+          console.log('[AWS SSO] verifyAwsSSOTokenAndLogin response:', res);
+          if (res) {
+            console.log('[AWS SSO] Login successful, UserId:', res.UserId);
+            this.setUpLoginConfiguration(res, 'aws');
+          } else {
+            console.warn('[AWS SSO] API returned empty response');
+            this.content = "SSO login verification failed. Please try again.";
+            this.enableAlert = true;
+          }
+        },
+        (error) => {
+          this.awsSsoProcessing = false;
+          this.logeventservice.logEvent('aws_sso_login_failure');
+          console.error('[AWS SSO] verifyAwsSSOTokenAndLogin failed:', error);
+          console.error('[AWS SSO] Error status:', error?.status, 'message:', error?.error?.Message || error?.message);
+          this.content = error.error?.Message || error.message || "SSO login verification failed. Please try again.";
+          this.enableAlert = true;
+        }
+      );
+    } catch (error) {
+      this.awsSsoProcessing = false;
+      this.logeventservice.logEvent('aws_sso_login_failure');
+      console.error('Error processing AWS SSO response:', error);
+      this.content = "SSO login failed. Please try again.";
+      this.enableAlert = true;
+    }
   }
 
   private handleGoogleSignIn(): void {
@@ -1089,6 +1239,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     } else if (social === 'apple') {
       if (this.isSignUp) this.logeventservice.logEvent('apple_signup_complete');
       else this.logeventservice.logEvent('apple_login_success');
+    } else if (social === 'aws') {
+      if (this.isSignUp) this.logeventservice.logEvent('aws_sso_signup_complete');
+      else this.logeventservice.logEvent('aws_sso_login_success');
     }
 
     if (res.UserId === 0) {

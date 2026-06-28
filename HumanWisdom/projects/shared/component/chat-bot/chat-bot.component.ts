@@ -76,6 +76,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Check if program type has changed and clear chat if needed
     this.checkAndHandleProgramTypeChange();
 
+    // Load personalized greeting from /api/history (Adults & Teenagers)
+    this.chatbotService.initializeChatGreeting().subscribe();
+
     // Ensure welcome messages are shown if store is empty (e.g., after logout)
     this.chatbotService.ensureWelcomeMessages();
 
