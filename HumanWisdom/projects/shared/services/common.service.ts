@@ -16,6 +16,8 @@ export class CommonService {
   surveySubs = this.surveySubject.asObservable();
   private loginUrlSubject = new BehaviorSubject<string | null>(null);
   loginUrlSubs = this.loginUrlSubject.asObservable();
+  private isSearchActiveSubject = new BehaviorSubject<boolean>(false);
+  isSearchActive$ = this.isSearchActiveSubject.asObservable();
   public percentage: any
   public bookmarks = []
   public resume = [];
@@ -493,6 +495,10 @@ export class CommonService {
 
   loginSubjectUnsubscribe(){
     this.loginUrlSubject.unsubscribe();
+  }
+
+  setSearchActive(isActive: boolean): void {
+    this.isSearchActiveSubject.next(isActive);
   }
 
 

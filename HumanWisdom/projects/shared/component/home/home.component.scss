@@ -698,7 +698,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 262px) !important;
+  max-height: calc(100vh - 190px) !important;
   overflow-y: auto !important;
   overscroll-behavior: contain;
   border-radius: 0;

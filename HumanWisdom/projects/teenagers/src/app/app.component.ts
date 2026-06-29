@@ -36,6 +36,8 @@ export class AppComponent implements OnDestroy {
   dash = false;
   isLoginPage = false;
   enablefooter = false;
+  isSearchActiveGlobal = false;
+  private searchActiveSubscription: Subscription;
 
   constructor(private navigationService: NavigationService,
     private router: Router,
@@ -55,6 +57,11 @@ export class AppComponent implements OnDestroy {
         console.log('Navigating to:', url);
         this.router.navigateByUrl(url);
       }
+    });
+
+    // Subscribe to search active state
+    this.searchActiveSubscription = this.commonService.isSearchActive$.subscribe((isActive) => {
+      this.isSearchActiveGlobal = isActive;
     });
     let urls = window.location.href.split('authtoken=');
     if (urls && urls[1] == undefined) {
@@ -123,6 +130,9 @@ export class AppComponent implements OnDestroy {
   }
   ngOnDestroy(): void {
     this.navigationSubs.unsubscribe();
+    if (this.searchActiveSubscription) {
+      this.searchActiveSubscription.unsubscribe();
+    }
   }
 
   getclcickevent(event) {
@@ -132,6 +142,9 @@ export class AppComponent implements OnDestroy {
   }
 
   enableFooter() {
+    if (this.isSearchActiveGlobal) {
+      return false;
+    }
     let enable = false;
     if (this.router.url == "/teenagers/search" || this.router.url == "/search"
       || this.router.url.includes('/teenagers/site-search/') ||

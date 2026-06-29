@@ -20,6 +20,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   @Input() journal = false
   @Input() fourm = false
   @Input() profile = true
+  @Input() learn = false
   isloggedIn = false
   @Input() enableprofile = false
   @Input() search = false
@@ -119,20 +120,30 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         }
       }
 
-      if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
+      if (this.router.url.includes('/repeat-user/my-daily-practice')) {
+        this.dash = true;
+        this.journal = false;
+        this.search = false;
+        this.fourm = false;
+        this.learn = false;
+        this.enableprofile = false;
+      }
+      else if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` ) {
+        this.dash = false;
+        this.journal = false;
+        this.search = true;
+        this.fourm = false;
+        this.learn = false;
+        this.enableprofile = false;
+      }
+      else if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
         || this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
         this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search))) {
         this.dash = false
         this.journal = false
         this.fourm = false;
-        this.search = true;
-        this.enableprofile = false;
-      }
-      else if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` ) {
-        this.dash = true;
-        this.journal = false;
         this.search = false;
-        this.fourm = false;
+        this.learn = true;
         this.enableprofile = false;
       }
       else if ((this.router.url == `/${SharedService.getprogramName()}/journal`) ||
@@ -142,6 +153,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.journal = true;
         this.search = false;
         this.fourm = false;
+        this.learn = false;
         this.enableprofile = false;
       }
     else if (this.router.url.includes('/forum')) {
@@ -149,6 +161,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.journal = false
         this.fourm = true;
         this.enableprofile = false;
+        this.learn = false;
         this.journal = false;
       }
       else if (this.router.url == `/${SharedService.getprogramName()}/onboarding/user-profile`
@@ -156,6 +169,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.dash = false
         this.journal = false
         this.fourm = false;
+        this.learn = false;
         this.enableprofile = true;
         this.search = false;
       }
@@ -165,9 +179,24 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
       });
     }
 
+    routeToday() {
+      this.logeventservice.logEvent("footer_today")
+      this.router.navigateByUrl('/repeat-user/my-daily-practice');
+    }
+
+    routeExplore() {
+      this.logeventservice.logEvent("footer_explore")
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
+
     routeDash() {
       this.logeventservice.logEvent("footer_home")
       this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
+
+    routeLearn() {
+      this.logeventservice.logEvent("footer_learn")
+      this.router.navigateByUrl(SharedService.getUrlfromFeatureName(UrlConstant.search));
     }
 
     routeJournal() {

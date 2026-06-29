@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AdultsService } from '../adults.service';
 import { LogEventService } from '../../../../../shared/services/log-event.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
+import { CommonService } from '../../../../../shared/services/common.service';
 import { Location } from '@angular/common';
 import { ShareService } from 'ngx-sharebuttons';
 import { SharedService } from '../../../../../shared/services/shared.service';
@@ -125,7 +126,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
     public cd: ChangeDetectorRef,
     private location: Location,
     private router: Router,
-    private platform: Platform
+    private platform: Platform,
+    private commonService: CommonService
   ) {
 
     // SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, Constant.NullValue);
@@ -315,6 +317,7 @@ toggleAccordion() {
         this.searchResult = this.moduleList;
       } else {
         this.isSearchActive = true;
+        this.commonService.setSearchActive(true);
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
       if (this.isSearchActive) {
@@ -338,6 +341,7 @@ toggleAccordion() {
 
   getinp(event) {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.toggleBodyScroll(false);
     this.logeventservice.logEvent("search_"+ event)
     let url=""
@@ -449,6 +453,7 @@ toggleAccordion() {
 
   searchEvent(module) {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.logeventservice.logEvent("click_search");
 
     this.searchinp = module;
@@ -715,6 +720,7 @@ toggleAccordion() {
 
   onFocus() {
     this.isSearchActive = true;
+    this.commonService.setSearchActive(true);
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
@@ -744,6 +750,7 @@ toggleAccordion() {
 
   clearSearch() {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.searchinp = "";
     this.searchResult = [];
     this.toggleBodyScroll(false);
