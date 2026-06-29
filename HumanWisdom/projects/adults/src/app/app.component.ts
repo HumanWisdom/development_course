@@ -60,6 +60,8 @@ export class AppComponent implements OnDestroy {
   isEnableHam = true;
   enablebanner = false;
   isShowHeader = false;
+  isSearchActiveGlobal = false;
+  private searchActiveSubscription: Subscription;
 /*   
   // Observable for owl component state management
   owlEnable$: Observable<boolean>; */
@@ -107,6 +109,11 @@ export class AppComponent implements OnDestroy {
         console.log('Navigating to:', url);
         this.router.navigateByUrl(url);
       }
+    });
+
+    // Subscribe to search active state
+    this.searchActiveSubscription = this.commonService.isSearchActive$.subscribe((isActive) => {
+      this.isSearchActiveGlobal = isActive;
     });
     
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
@@ -350,6 +357,9 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.navigationSubs.unsubscribe();
+    if (this.searchActiveSubscription) {
+      this.searchActiveSubscription.unsubscribe();
+    }
   }
 
   async getFreeScreens() {
@@ -400,6 +410,9 @@ export class AppComponent implements OnDestroy {
   }
 
   enableFooter() {
+    if (this.isSearchActiveGlobal) {
+      return false;
+    }
     if (this.router.url == "/adults/search" || this.router.url == "/search" 
       || this.router.url.includes('/adults/site-search/') ||
       this.router.url.includes('/adults/search')) {

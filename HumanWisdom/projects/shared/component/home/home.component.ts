@@ -1868,6 +1868,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.searchResult = this.moduleList;
       } else {
         this.isSearchActive = true;
+        this.commonService.setSearchActive(true);
         this.searchResult = this.moduleList.filter(x =>
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
@@ -1886,6 +1887,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   onFocus(): void {
     this.isSearchActive = true;
+    this.commonService.setSearchActive(true);
     // Show header immediately when search is activated
     this.isHeaderHidden = false;
     const dtnEl = document.querySelector('.dtn') as HTMLElement;
@@ -1923,6 +1925,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   getinp(searchTerm: string, fromDropdown: boolean = false): void {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     if (searchTerm && searchTerm.trim() !== '') {
       if (!fromDropdown) {
         const eventName = `search_${searchTerm.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
@@ -2080,6 +2083,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   clearSearch(): void {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     const eventName = 'click_search_clear';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Clear: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);

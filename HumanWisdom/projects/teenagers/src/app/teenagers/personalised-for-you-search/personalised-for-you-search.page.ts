@@ -5,6 +5,7 @@ import { LogEventService } from '../../../../../shared/services/log-event.servic
 import { TeenagersService } from '../teenagers.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
+import { CommonService } from '../../../../../shared/services/common.service';
 import { Constant } from '../../../../../shared/services/constant';
 import {
   trigger,
@@ -106,7 +107,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
    public service: OnboardingService, public logeventservice: LogEventService,
-    public cd: ChangeDetectorRef
+    public cd: ChangeDetectorRef, private commonService: CommonService
   ) {
 
     this.logeventservice.logEvent('View_For_you');
@@ -371,6 +372,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.searchResult = this.moduleList;
       } else {
         this.isSearchActive = true;
+        this.commonService.setSearchActive(true);
         this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
       if (this.isSearchActive) {
@@ -394,6 +396,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   getinp(event) {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.toggleBodyScroll(false);
     this.logeventservice.logEvent("search_"+ event)
     let url=""
@@ -758,6 +761,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   onFocus() {
     this.isSearchActive = true;
+    this.commonService.setSearchActive(true);
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
@@ -787,6 +791,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   clearSearch() {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.searchinp = "";
     this.searchResult = [];
     this.toggleBodyScroll(false);
