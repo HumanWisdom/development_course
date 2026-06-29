@@ -181,7 +181,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     routeToday() {
       this.logeventservice.logEvent("footer_today")
-      this.router.navigateByUrl('/repeat-user/my-daily-practice');
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/repeat-user/my-daily-practice`);
     }
 
     routeExplore() {
