@@ -693,20 +693,19 @@ background: #FFF7E6;/* Ensure proper stacking context */
   z-index: 2005; /* Ensure it stays on top */
   margin-top: 0;
   padding-top: 20px;
-  height: 100vh;
   background-color: #FFF7E6;
+  bottom: 0; /* Extend to bottom of viewport but no further */
 }
 
 .autocomplete-list {
   max-height: calc(100vh - 262px) !important;
-  height: 100vh !important;
   overflow-y: auto !important;
   overscroll-behavior: contain;
   border-radius: 0;
   box-shadow: none !important;
   margin: 0;
   padding: 0;
-  padding-bottom: 150px;
+  padding-bottom: 60px; /* Reduced padding */
   background-color: #FFF7E6 !important;
   border: none !important;
 
@@ -772,7 +771,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 .adsearch_ul .list-group-item:last-child{
   border-radius: 0 !important;
 }
-.header-hidden {
+.header-hidden:not(.search-active) {
   .row.home-container:first-of-type {
     padding-top:0px !important;
   }
