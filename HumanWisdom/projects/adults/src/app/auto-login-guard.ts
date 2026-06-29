@@ -21,7 +21,9 @@ export class autoLoginGuard implements CanActivate, OnInit {
 
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    debugger;
+    if (window.location.search.includes('code=') || window.location.search.includes('error=')) {
+      return true;
+    }
     let m: any = window.location.href;
     if (localStorage.getItem('isloggedin') == 'F' || localStorage.getItem('isloggedin') == null || localStorage.getItem('isloggedin') == undefined) {
       this.onboarding.guestEmailLogin('');
