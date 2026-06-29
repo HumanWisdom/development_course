@@ -367,7 +367,7 @@
   border-top-right-radius: 10px;
 
   .olly-modal-icon {
-    width: 60px;
+    width: 50px;
     height: auto;
     margin-bottom: 10px;
   }
@@ -376,7 +376,7 @@
     font-family: Poppins;
     font-weight: 600;
     font-style: SemiBold;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 150%;
     letter-spacing: 0%;
     text-align: center;
@@ -454,8 +454,10 @@
 .olly-modal-paragraph {
   font-family: 'Poppins', 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-style: normal;
+  font-size: 12px;
   line-height: 150%;
+  letter-spacing: 0%;
   color: #000000;
   margin: 0;
 }
