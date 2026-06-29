@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .owl-animation-wrapper {
   position: fixed;
   bottom: 60px;
@@ -477,32 +481,78 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 }
 
-/* Teenagers: align Olly slightly right above Profile tab */
-@media (max-width: 1024px) {
+/* Teenagers mobile only: perch Olly fully above the footer tab bar */
+@media (max-width: 768px) {
+  :host(.teenager-theme) {
+    overflow: visible;
+    position: static;
+  }
+
   :host(.teenager-theme) .owl-animation-wrapper,
   :host(.teenager-theme) .owl-animation-wrapper.corner {
-    right: 4px;
+    --teen-footer-height: 84px;
+    --teen-footer-tab-center: 12.5%;
+    bottom: calc(var(--teen-footer-height) + env(safe-area-inset-bottom, 0px)) !important;
+    right: max(12px, calc(var(--teen-footer-tab-center) - 38px)) !important;
+    left: auto !important;
+    z-index: 100;
+    overflow: visible;
   }
 
   :host(.teenager-theme) .static-owl-container {
     align-items: flex-end;
+    overflow: visible;
   }
 
   :host(.teenager-theme) .static-owl-image {
     transform-origin: bottom right;
+    height: 92px;
+    width: auto;
+    max-width: min(92px, 24vw);
+    transform: scale(0.72);
+  }
+
+  :host(.teenager-theme) .owl-gif {
+    margin-right: 0;
   }
 }
 
 @media (max-width: 480px) {
   :host(.teenager-theme) .owl-animation-wrapper,
   :host(.teenager-theme) .owl-animation-wrapper.corner {
-    right: 3px;
+    --teen-footer-height: 80px;
+    right: max(10px, calc(var(--teen-footer-tab-center) - 34px)) !important;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    height: 84px;
+    max-width: min(84px, 22vw);
+    transform: scale(0.7);
+  }
+
+  :host(.teenager-theme) .owl-cloud-container {
+    top: -50px;
+    left: -30%;
+    width: 128px;
+    height: 100px;
+  }
+
+  :host(.teenager-theme) .cloud-image {
+    width: 128px;
+    max-width: 128px;
   }
 }
 
 @media (max-width: 360px) {
   :host(.teenager-theme) .owl-animation-wrapper,
   :host(.teenager-theme) .owl-animation-wrapper.corner {
-    right: 1px;
+    --teen-footer-height: 76px;
+    right: max(8px, calc(var(--teen-footer-tab-center) - 30px)) !important;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    height: 76px;
+    max-width: min(76px, 20vw);
+    transform: scale(0.66);
   }
 }

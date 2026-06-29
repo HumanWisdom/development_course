@@ -10,6 +10,10 @@ body.page-teenagers main#main .section-header h2.fc_183C79 {
   color: rgba(24, 60, 121, 1);
 }
 
+body.page-teenagers main#main .section-header {
+  padding-bottom: 40px;
+}
+
 /* Did you know? — title only */
 body.page-teenagers .teen-dykt-header {
   padding-bottom: 40px !important;
@@ -22,6 +26,237 @@ body.page-teenagers .teen-support-title,
 body.page-teenagers .teen-calm-title,
 body.page-teenagers .teen-blog-title {
   color: rgba(0, 0, 0, 1) !important;
+}
+
+body.page-teenagers .teen-blog-wrap {
+  align-items: flex-start;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+body.page-teenagers .teen-blog-wrap .text-wrapper-blog {
+  text-align: center !important;
+  color: rgba(0, 0, 0, 1) !important;
+  align-self: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body.page-teenagers .teen-blog-wrap .blog-outer {
+  align-self: stretch;
+  width: 100%;
+  max-width: none;
+}
+
+body.page-teenagers .teen-blog-more,
+body.page-teenagers .teen-blog-more .chevron-pink {
+  color: rgba(203, 97, 113, 1) !important;
+}
+
+body.page-teenagers .teen-blog-more:hover,
+body.page-teenagers .teen-blog-more:hover .chevron-pink {
+  color: #803358 !important;
+}
+
+body.page-teenagers .teen-blog-wrap .blog-footer {
+  margin-left: 39rem;
+}
+
+body.page-teenagers .teen-testimonials-wrap {
+  max-width: 1340px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1380px) {
+  body.page-teenagers .teen-testimonials-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.page-teenagers .owl_testimonials {
+  --teen-testimonial-row-width: 1340px;
+  --teen-testimonial-gap: 30px;
+  --teen-testimonial-card-width: calc((var(--teen-testimonial-row-width) - 2 * var(--teen-testimonial-gap)) / 3);
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+body.page-teenagers .owl_testimonials .div_testimonialst.teen-testimonial-card {
+  background: rgba(239, 248, 249, 1) !important;
+  border-radius: 20px;
+  padding: 36px;
+  width: var(--teen-testimonial-card-width) !important;
+  height: 305px !important;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-image: none !important;
+}
+
+body.page-teenagers .owl_testimonials .owl-carousel .owl-item .item {
+  display: block !important;
+  width: var(--teen-testimonial-card-width);
+  height: 305px;
+  text-decoration: none;
+  cursor: default;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonial-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonial-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonial-quote {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+body.page-teenagers .owl_testimonials .owl-carousel .owl-stage {
+  left: 0 !important;
+  display: flex;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body.page-teenagers .owl_testimonials > .owl-carousel {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+body.page-teenagers .owl_testimonials > .owl-carousel > .owl-stage-outer {
+  width: 100% !important;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden !important;
+}
+
+body.page-teenagers .owl_testimonials .owl-carousel .owl-item {
+  margin-right: var(--teen-testimonial-gap) !important;
+  width: var(--teen-testimonial-card-width) !important;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonials-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  min-height: 32px;
+  width: 100%;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap {
+  position: static !important;
+  right: auto !important;
+  left: auto !important;
+  width: auto !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .teen-testimonials-nav {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0 !important;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
+  width: auto;
+  justify-content: flex-end;
+}
+
+@media (min-width: 2080px) {
+  body.page-teenagers .owl_testimonials > .owl-carousel > .owl-stage-outer {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: hidden !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  body.page-teenagers .teen-blog-wrap {
+    padding: 40px 16px;
+    align-items: stretch;
+  }
+
+  body.page-teenagers .teen-blog-wrap .text-wrapper-blog {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+  }
+
+  body.page-teenagers .teen-blog-wrap .blog-footer {
+    margin-left: 0;
+  }
+
+  body.page-teenagers .teen-blog-wrap #blog-prev,
+  body.page-teenagers .teen-blog-wrap #blog-next {
+    display: none;
+  }
 }
 
 body.page-teenagers .teen-support-title {
@@ -267,25 +502,66 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     height: auto !important;
   }
 
+  body.page-teenagers .teen-testimonials-wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  body.page-teenagers .owl_testimonials {
+    max-width: 100%;
+  }
+
+  body.page-teenagers .owl_testimonials > .owl-carousel > .owl-stage-outer {
+    width: 100% !important;
+  }
+
   .owl_testimonials .owl-carousel .owl-item {
     display: flex !important;
     height: auto !important;
+    margin-right: 30px !important;
+    width: auto !important;
   }
 
   .owl_testimonials .owl-carousel .owl-item .item {
-    display: flex !important;
-    height: 100% !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  body.page-teenagers .owl_testimonials .div_testimonialst.teen-testimonial-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 36px;
+    gap: 15px;
+  }
+
+  body.page-teenagers .owl_testimonials .teen-testimonial-avatar {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+  }
+
+  body.page-teenagers .owl_testimonials .teen-testimonial-name,
+  body.page-teenagers .owl_testimonials .teen-testimonial-role,
+  body.page-teenagers .owl_testimonials .teen-testimonial-quote {
+    font-size: 14px;
+  }
+
+  body.page-teenagers .owl_testimonials .teen-testimonial-quote {
+    overflow: visible;
+    flex: none;
   }
 
   .owl_testimonials .div_testimonialst {
-    height: 100% !important;
+    height: auto !important;
     display: flex !important;
     flex-direction: column !important;
-    min-height: 350px !important;
+    min-height: 0 !important;
   }
 
   .owl_testimonials .div_testimonialst .row:last-child {
-    margin-top: auto !important;
+    margin-top: 0 !important;
   }
 
   .owl-carousel .owl-stage {
@@ -483,8 +759,23 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     visibility: hidden !important;
   }
 
-  /* View all stories / View all blogs — center (override .sap margin-left + absolute) */
-  body.page-teenagers .sap {
+  /* View all stories — centered; nav hidden on mobile */
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    min-height: 0;
+  }
+
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer .teen-testimonials-nav {
+    position: static;
+    transform: none;
+  }
+
+  body.page-teenagers .sap,
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap {
     position: static !important;
     right: auto !important;
     left: auto !important;
