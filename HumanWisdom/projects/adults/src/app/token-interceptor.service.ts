@@ -19,6 +19,11 @@ export class TokenInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // Never attach app Bearer token to Cognito OIDC requests
+    if (req.url.includes('amazoncognito.com') || req.url.includes('cognito-idp.')) {
+      return next.handle(req);
+    }
+
     this.token = JSON.parse(localStorage.getItem("token"))
 
     let tokenizedReq = req.clone({
@@ -34,7 +39,7 @@ export class TokenInterceptorService implements HttpInterceptor {
           const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
 
           // Skip handling for login/signup related APIs
-          const excludedUrls = ['/login', '/AddLearner', '/verifyGoogleTokenAndLogin', '/verifyFaceBookTokenAndLogin', '/forgotPassword', '/verificationCode', '/VerifyUserByEmail'];
+          const excludedUrls = ['/login', '/AddLearner', '/verifyGoogleTokenAndLogin', '/verifyFaceBookTokenAndLogin', '/verifyAwsSSOTokenAndLogin', '/forgotPassword', '/verificationCode', '/VerifyUserByEmail'];
           const isExcluded = excludedUrls.some(url => err.url && err.url.includes(url));
 
           if (isExcluded || isAuthPage || isFromSignupFlow) {

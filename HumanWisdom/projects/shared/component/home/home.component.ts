@@ -1674,7 +1674,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const isHidden = scrollTop > 50;
     if (this.isHeaderHidden !== isHidden) {
       this.isHeaderHidden = isHidden;
-      this.commonService.isHeaderVisibleOnScroll = !isHidden;
+      // Directly toggle .dtn header since enableFooter() only runs on route changes
+      const dtnEl = document.querySelector('.dtn') as HTMLElement;
+      if (dtnEl) {
+        dtnEl.style.display = isHidden ? 'none' : 'block';
+      }
       this.cdr.detectChanges();
     }
 
@@ -1682,7 +1686,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.commonService.isHeaderVisibleOnScroll = true;
+    // Restore header visibility when leaving home page
+    const dtnEl = document.querySelector('.dtn') as HTMLElement;
+    if (dtnEl) { dtnEl.style.display = 'block'; }
     this.teardownPlaystoreBannerObserver();
     // Clean up event listeners
     if (this.hashChangeHandler) {
