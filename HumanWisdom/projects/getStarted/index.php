@@ -682,7 +682,7 @@ require_once('./includes/security_config.php');
           <button class="tool-tab" id="journal-tab" onclick="switchTab(this,'journal_tab')">Journal</button>
           <button class="tool-tab" id="podcast-tab" onclick="switchTab(this,'podcast_tab')">Podcast</button>
           <button class="tool-tab" id="community-tab" onclick="switchTab(this,'forum')">Community</button>
-          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Happiness score</button>
+          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Wellness score</button>
         </div>
         <!-- Tab content area -->
         <div class="tools-panel-wrap">
@@ -768,16 +768,13 @@ require_once('./includes/security_config.php');
             <div class="tools-card tools-card--podcast">
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="How can we be happier" class="tools-thumb-img" />
-                <span class="tools-card-media-badge" aria-hidden="true">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" />
-                </span>
               </div>
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
                   <span class="tools-label-text">PODCAST</span>
                 </div>
                 <p class="tools-card-title">How can we be happier</p>
-                <p class="tools-card-duration tools-card-duration-aud2">0:00</p>
+                <p class="tools-card-duration tools-card-duration-aud2">51:23</p>
               </div>
             </div>
             <div class="tools-info">
@@ -794,7 +791,7 @@ require_once('./includes/security_config.php');
                     <div class="tools-audio-timeline">
                       <span class="tools-audio-time tools-audio-time-current">0:00</span>
                       <input type="range" class="tools-audio-seek" value="0" min="0" max="100" step="0.1" aria-label="Playback position">
-                      <span class="tools-audio-time tools-audio-time-duration">0:00</span>
+                      <span class="tools-audio-time tools-audio-time-duration">51:23</span>
                     </div>
                   </div>
                 </div>
@@ -818,11 +815,11 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
-          <!-- Happiness score -->
+          <!-- Wellness score -->
           <div id="survey" class="tools-panel">
             <div>
               <div class="tools-thumb">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/track.svg" alt="Wellness score" class="tools-thumb-img_sec" />
               </div>
              
             </div>

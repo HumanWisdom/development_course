@@ -1665,18 +1665,20 @@ nfsnContactForm &&
                 if (aud.duration && isFinite(aud.duration)) {
                     seek.value = (aud.currentTime / aud.duration) * 100 || 0;
                     currentEl.textContent = formatToolsAudioTime(aud.currentTime);
-                    durationEl.textContent = formatToolsAudioTime(aud.duration);
+                    if (aud.id !== "aud2") {
+                        durationEl.textContent = formatToolsAudioTime(aud.duration);
+                    }
                 }
             };
             aud.addEventListener("loadedmetadata", function () {
                 updateProgress();
+                if (aud.id !== "aud2") return;
                 var panel = wrap.closest(".tools-panel");
                 if (panel) {
                     var cardDur = panel.querySelector(".tools-card-duration-aud2");
-                    if (cardDur && aud.id === "aud2") {
-                        cardDur.textContent = formatToolsAudioTime(aud.duration);
-                    }
+                    if (cardDur) cardDur.textContent = "51:23";
                 }
+                durationEl.textContent = "51:23";
             });
             aud.addEventListener("timeupdate", updateProgress);
             aud.addEventListener("play", function () {
