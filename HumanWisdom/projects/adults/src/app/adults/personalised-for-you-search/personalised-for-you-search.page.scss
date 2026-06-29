@@ -235,20 +235,23 @@ nav {
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 190px) !important; 
+  max-height: calc(100vh - 190px) !important;
   width: 100%;
-  height: 100vh !important; 
+  height: 100vh !important;
+  min-height: calc(100vh - 260px) !important;
   overflow-y: auto !important;
   overscroll-behavior: contain;
   border-radius: 0;
-  box-shadow: none !important; 
+  box-shadow: none !important;
   margin: 0;
   padding: 0;
-  padding-bottom: 150px;
-  background-color: #FFF7E6 !important; 
-  border: none !important; 
+  padding-bottom: 60px;
+  background-color: #FFF7E6 !important;
+  border: none !important;
+  display: flex;
+  flex-direction: column;
   scrollbar-width: thin;
-  scrollbar-color: #eea170 #FFF7E6; 
+  scrollbar-color: #eea170 #FFF7E6;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -264,7 +267,7 @@ nav {
 
 .adsearch_ul {
   list-style: none;
-  padding: 0;
+  // padding: 0;
   margin: 0;
   border: none !important;
 }

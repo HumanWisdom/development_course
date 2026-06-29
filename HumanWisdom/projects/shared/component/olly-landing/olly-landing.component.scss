@@ -516,7 +516,7 @@
   box-shadow: 0px 2px 8px 0px rgba(175, 175, 175, 0.25);
   box-sizing: border-box;
   z-index: 99;
-  margin-bottom: 24px;
+  // margin-bottom: 24px;
 
   .back-btn {
     background: none;
@@ -598,10 +598,14 @@
 
 .questions-instruction-text {
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  margin-bottom: 20px;
+  font-size: 15px;
+  margin-bottom: 0px;
   margin-top: 0;
-  font-weight: 400;
+  font-weight: 600;
+  line-height: 140%;
+  padding: 25px 20px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 .topics-accordion {
@@ -723,7 +727,8 @@
   }
 
   .questions-instruction-text {
-    color: rgba(0, 0, 0, 0.5);
+    color: #000000;
+    background-color: #FFD889;
   }
 
   .accordion-item {
@@ -808,7 +813,8 @@
   }
 
   .questions-instruction-text {
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    background-color: #031A41;
   }
 
   .accordion-item {

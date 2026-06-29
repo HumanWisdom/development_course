@@ -614,7 +614,7 @@
     }
 
     .autocomplete-list {
-        max-height: calc(100vh - 260px) !important;
+        max-height: calc(100vh - 190px) !important;
         height: 100vh !important;
         overflow-y: auto !important;
         overscroll-behavior: contain;
@@ -622,7 +622,7 @@
         box-shadow: none !important;
         margin: 0;
         padding: 0;
-        padding-bottom: 150px; /* Increased buffer to ensure items can scroll well above the footer */
+        padding-bottom: 60px; /* Increased buffer to ensure items can scroll well above the footer */
         background-color: #183C79 !important; /* Blue background to match personalised search */
         border: none !important; /* Remove outer border to fix "beside scroll" and "top" border issues */
 
@@ -644,7 +644,7 @@
 
     .adsearch_ul {
         list-style: none;
-        padding: 0;
+        // padding: 0;
         margin: 0;
         border: none !important;
     }
