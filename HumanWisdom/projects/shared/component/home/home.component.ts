@@ -1670,14 +1670,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.showGreeting = true;
     }
 
-    // Toggle header visibility based on scroll threshold
-    const isHidden = scrollTop > 50;
+    // Toggle header visibility based on scroll threshold - don't hide when search is active
+    const isHidden = scrollTop > 50 && !this.isSearchActive;
     if (this.isHeaderHidden !== isHidden) {
       this.isHeaderHidden = isHidden;
       // Directly toggle .dtn header since enableFooter() only runs on route changes
       const dtnEl = document.querySelector('.dtn') as HTMLElement;
       if (dtnEl) {
-        dtnEl.style.display = isHidden ? 'none' : 'block';
+        dtnEl.style.display = this.isSearchActive ? 'block' : (isHidden ? 'none' : 'block');
       }
       this.cdr.detectChanges();
     }
@@ -1886,6 +1886,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   onFocus(): void {
     this.isSearchActive = true;
+    // Show header immediately when search is activated
+    this.isHeaderHidden = false;
+    const dtnEl = document.querySelector('.dtn') as HTMLElement;
+    if (dtnEl) {
+      dtnEl.style.display = 'block';
+    }
     const eventName = 'click_search';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Click: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
