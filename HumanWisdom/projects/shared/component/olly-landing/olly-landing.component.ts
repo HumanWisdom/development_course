@@ -442,9 +442,9 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     if (this.globalOverlay) { return; }
 
     const isAdults = this.isAdults;
-    const headerBg   = isAdults ? '#FFD889' : '#0C2B5F';
+    const headerBg   = isAdults ? '#FFE8BB' : '#0C2B5F';
     const titleColor = isAdults ? '#000000' : '#ffffff';
-    const contentBg  = isAdults ? '#FFE8BB' : '#183C79';
+    const contentBg  = isAdults ? '#FFF7E6' : '#183C79';
     const textColor  = isAdults ? '#000000' : 'rgba(255,255,255,0.9)';
 
     const overlay = document.createElement('div');
@@ -477,13 +477,13 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
           background:${contentBg}; padding:20px 30px 30px;
           display:flex; flex-direction:column; align-items:center;
           border-radius:0 0 10px 10px;">
-          <p style="font-size:14px; color:${textColor}; margin:0 0 8px; width:100%;">Olly was created to support you in a more human way.</p>
-          <p style="font-size:14px; color:${textColor}; margin:0 0 8px; width:100%;">Unlike many AI tools, Olly doesn't pull advice from the internet. It draws from trusted content created by experts.</p>
-          <p style="font-size:14px; color:${textColor}; margin:0 0 8px; width:100%;">Olly listens, helps you reflect, and gently guides you toward relevant support.</p>
-          <p style="font-size:14px; color:${textColor}; margin:0 0 20px; width:100%;">Your conversations with Olly are private and not shared with anyone.</p>
+          <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Olly was created to support you in a more human way.</p>
+          <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Unlike many AI tools, Olly doesn't pull advice from the internet. It draws from trusted content created by experts.</p>
+          <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Olly listens, helps you reflect, and gently guides you toward relevant support.</p>
+          <p style="font-size:14px; line-height:150%; color:${textColor}; margin:0 0 20px; width:100%;">Your conversations with Olly are private and not shared with anyone.</p>
           <button id="olly-popup-close-btn" style="
             width:100%; padding:14px; border:none; border-radius:30px; cursor:pointer;
-            background:linear-gradient(180deg,#EE9596 0%,#F17071 100%);
+            background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
             color:#fff; font-size:16px; font-weight:600; font-family:Poppins;">
             Close
           </button>
