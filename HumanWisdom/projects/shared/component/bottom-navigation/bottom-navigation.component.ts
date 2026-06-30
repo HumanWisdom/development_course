@@ -6,6 +6,7 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { Subscription } from 'rxjs';
 import { LogEventService } from '../../services/log-event.service';
 import { OwlStore } from '../../../shared/stores/owl.store';
+import { CommonService } from '../../services/common.service';
 import { Observable } from 'rxjs';
 
 
@@ -40,29 +41,15 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   
     // Observable for owl component state management
     owlEnable$: Observable<boolean>;
-  constructor(private router: Router,private onboardingService: OnboardingService, 
+  private footerOwlSubscription: Subscription;
+  constructor(private router: Router, private onboardingService: OnboardingService, 
     private logeventservice: LogEventService,
-        private owlStore: OwlStore,
-    
+    private owlStore: OwlStore,
+    private commonService: CommonService,
   ) {
-// IMPORTANT: Reset owl state to clear any previous localStorage data
-    // Comment this line back after first successful run
-    this.owlStore.reset();
-    
-    // Initialize owl state from store (after reset)
-    this.owlEnable$ = this.owlStore.shouldShow$;
-    
-    // Debug: Check owl state
-    console.log('Owl Store State (after reset):', {
-      isEnabled: this.owlStore.getIsEnabled(),
-      isInitialized: this.owlStore.getIsInitialized(),
-      shouldShow: this.owlStore.getShouldShow()
-    });
-    
-    // Debug: Subscribe to owl state changes
-    this.owlEnable$.subscribe(shouldShow => {
-      console.log('Owl shouldShow$ emitted:', shouldShow);
-    });
+    // Drive footer owl visibility from the scroll signal emitted by pages that
+    // have an in-page Olly (e.g. Today page). Default to true for all other pages.
+    this.owlEnable$ = this.commonService.isFooterOwlVisible$;
 
 
 
@@ -239,6 +226,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     ngOnDestroy(): void {
       this.toursubscription?.unsubscribe();
+      this.footerOwlSubscription?.unsubscribe();
     }
 
     
