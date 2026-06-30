@@ -22,7 +22,6 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   searchQuery: string = '';
   selectedTopic: { name: string; displayName: string; fragment: string } | null = null;
   fromImNotSure: boolean = false;
-  showWhyOllyPopup: boolean = false;
   
   showQuestionsView: boolean = false;
   topicsList: OllyTopic[] = [];
@@ -278,6 +277,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.timers = [];
     // Clear the flag when component is destroyed
     localStorage.removeItem('fromImNotSure');
+    // Ensure overlay is removed if popup was open when component destroyed
+    this.removeGlobalOverlay();
   }
 
   private initOllyAnimation(): void {
@@ -427,11 +428,87 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     }, 300);
   }
 
+  private globalOverlay: HTMLElement | null = null;
+
   openWhyOllyPopup(): void {
-    this.showWhyOllyPopup = true;
+    this.createGlobalOverlay();
   }
 
   closeWhyOllyPopup(): void {
-    this.showWhyOllyPopup = false;
+    this.removeGlobalOverlay();
+  }
+
+  private createGlobalOverlay(): void {
+    if (this.globalOverlay) { return; }
+
+    const isAdults = this.isAdults;
+    const headerBg   = isAdults ? '#FFD889' : '#0C2B5F';
+    const titleColor = isAdults ? '#000000' : '#ffffff';
+    const contentBg  = isAdults ? '#FFE8BB' : '#183C79';
+    const textColor  = isAdults ? '#000000' : 'rgba(255,255,255,0.9)';
+
+    const overlay = document.createElement('div');
+    overlay.id = 'olly-global-overlay';
+    overlay.style.cssText = [
+      'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
+      'background:rgba(0,0,0,0.7)', 'z-index:99999',
+      'display:flex', 'justify-content:center', 'align-items:center',
+      'pointer-events:auto'
+    ].join(';');
+
+    overlay.innerHTML = `
+      <div id="olly-popup-card" style="
+        width:335px; max-height:90vh; display:flex; flex-direction:column;
+        box-shadow:0 8px 24px rgba(0,0,0,0.15); border-radius:10px;
+        overflow:hidden; box-sizing:border-box; pointer-events:auto;">
+        <div style="
+          background:${headerBg}; padding:15px 30px;
+          display:flex; flex-direction:column; align-items:center;
+          border-radius:10px 10px 0 0;">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_popup.webp"
+               alt="Olly Owl" style="width:50px; height:auto; margin-bottom:10px;">
+          <h2 style="
+            font-family:Poppins; font-weight:600; font-size:18px;
+            line-height:150%; text-align:center; color:${titleColor}; margin:0;">
+            Meet Olly AI
+          </h2>
+        </div>
+        <div style="
+          background:${contentBg}; padding:20px 30px 30px;
+          display:flex; flex-direction:column; align-items:center;
+          border-radius:0 0 10px 10px;">
+          <p style="font-size:14px; color:${textColor}; margin:0 0 8px; width:100%;">Olly was created to support you in a more human way.</p>
+          <p style="font-size:14px; color:${textColor}; margin:0 0 8px; width:100%;">Unlike many AI tools, Olly doesn't pull advice from the internet. It draws from trusted content created by experts.</p>
+          <p style="font-size:14px; color:${textColor}; margin:0 0 8px; width:100%;">Olly listens, helps you reflect, and gently guides you toward relevant support.</p>
+          <p style="font-size:14px; color:${textColor}; margin:0 0 20px; width:100%;">Your conversations with Olly are private and not shared with anyone.</p>
+          <button id="olly-popup-close-btn" style="
+            width:100%; padding:14px; border:none; border-radius:30px; cursor:pointer;
+            background:linear-gradient(180deg,#EE9596 0%,#F17071 100%);
+            color:#fff; font-size:16px; font-weight:600; font-family:Poppins;">
+            Close
+          </button>
+        </div>
+      </div>`;
+
+    // Close on overlay backdrop click (not on the card itself)
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) { this.closeWhyOllyPopup(); }
+    });
+
+    document.body.appendChild(overlay);
+    this.globalOverlay = overlay;
+
+    // Attach close button listener after DOM insertion
+    const closeBtn = document.getElementById('olly-popup-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => this.closeWhyOllyPopup());
+    }
+  }
+
+  private removeGlobalOverlay(): void {
+    if (this.globalOverlay) {
+      this.globalOverlay.remove();
+      this.globalOverlay = null;
+    }
   }
 }
