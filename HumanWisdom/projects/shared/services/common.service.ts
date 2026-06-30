@@ -18,6 +18,10 @@ export class CommonService {
   loginUrlSubs = this.loginUrlSubject.asObservable();
   private isSearchActiveSubject = new BehaviorSubject<boolean>(false);
   isSearchActive$ = this.isSearchActiveSubject.asObservable();
+  // Controls global nav/footer visibility (e.g. hidden when Olly questions view is open)
+  private isNavVisibleSubject = new BehaviorSubject<boolean>(true);
+  isNavVisible$ = this.isNavVisibleSubject.asObservable();
+  setNavVisible(visible: boolean): void { this.isNavVisibleSubject.next(visible); }
   public percentage: any
   public bookmarks = []
   public resume = [];

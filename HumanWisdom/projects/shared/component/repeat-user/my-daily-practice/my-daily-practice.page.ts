@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 import { CommonService } from '../../../services/common.service';
@@ -13,7 +13,7 @@ import { TeenagersService } from '../../../../teenagers/src/app/teenagers/teenag
   templateUrl: './my-daily-practice.page.html',
   styleUrls: ['./my-daily-practice.page.scss'],
 })
-export class MyDailyPracticePage implements OnInit {
+export class MyDailyPracticePage implements OnInit, OnDestroy {
   isAdults = false;
   dailybreathTitle:string ='';
   videoLink:string ='';
@@ -272,6 +272,20 @@ routeDailyPractice(id: number): void {
 
   onOllyViewChanged(active: boolean): void {
     this.isQuestionsViewActive = active;
+    // Tell the app shell to show/hide the global nav bar
+    this.commonService.setNavVisible(!active);
+    // Clear any residual overflow lock when returning from Olly view
+    if (!active) {
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
+    }
+  }
+
+  ngOnDestroy(): void {
+    // Restore nav visibility when leaving this page
+    this.commonService.setNavVisible(true);
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
   }
 
   onFocus() {

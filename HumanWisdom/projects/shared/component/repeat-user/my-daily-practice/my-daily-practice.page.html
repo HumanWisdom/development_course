@@ -1,5 +1,4 @@
-<!-- top navigation -->
-<app-tn-dashboard-v03 [enableHamburger]="true" *ngIf="!isQuestionsViewActive"></app-tn-dashboard-v03>
+<!-- top navigation is provided by the app shell (app.component.html), same as the Home page -->
 
 <!-- page content -->
 <div class="right_col mc_03" [class.no-top-gap]="isQuestionsViewActive">
@@ -951,6 +950,4 @@
 <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Continue'"
   [content]="content"></app-modal>
 
-<!-- footer  -->
-<app-bottom-navigation [showOwl]="showFooterOwl" *ngIf="!isQuestionsViewActive"></app-bottom-navigation>
-<!-- /footer -->
+<!-- footer is provided by the app shell (app.component.html), same as the Home page -->
