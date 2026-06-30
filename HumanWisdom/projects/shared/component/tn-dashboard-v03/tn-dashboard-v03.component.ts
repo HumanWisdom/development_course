@@ -255,11 +255,11 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   }
 
   Subscribe() {
-    // if (!(SharedService.isIOSApp())) {
+    if (!(SharedService.isIOSApp() || SharedService.isAndroid())) {
       this.logeventservice.logEvent("click_Free_Trial");
 
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.tryFreeAndSubscribe)]);
-    // }
+    }
   }
 
   clickbanner(url = '') {
