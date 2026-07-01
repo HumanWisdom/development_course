@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 import { CommonService } from '../../../services/common.service';
@@ -13,7 +13,7 @@ import { TeenagersService } from '../../../../teenagers/src/app/teenagers/teenag
   templateUrl: './my-daily-practice.page.html',
   styleUrls: ['./my-daily-practice.page.scss'],
 })
-export class MyDailyPracticePage implements OnInit {
+export class MyDailyPracticePage implements OnInit, OnDestroy {
   isAdults = false;
   dailybreathTitle:string ='';
   videoLink:string ='';
@@ -67,7 +67,9 @@ export class MyDailyPracticePage implements OnInit {
   }
 
   ngOnInit() {
- 
+    // Hide footer owl until the user scrolls past the in-page Olly
+    this.commonService.setFooterOwlVisible(false);
+
     try{
 
         this.userName =SharedService.getUserName().split(' ')[0];
@@ -272,6 +274,22 @@ routeDailyPractice(id: number): void {
 
   onOllyViewChanged(active: boolean): void {
     this.isQuestionsViewActive = active;
+    // Tell the app shell to show/hide the global nav bar
+    this.commonService.setNavVisible(!active);
+    // Clear any residual overflow lock when returning from Olly view
+    if (!active) {
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
+    }
+  }
+
+  ngOnDestroy(): void {
+    // Restore footer owl visibility when leaving this page
+    this.commonService.setFooterOwlVisible(true);
+    // Restore nav visibility when leaving this page
+    this.commonService.setNavVisible(true);
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
   }
 
   onFocus() {
@@ -498,6 +516,7 @@ survey(): void {
   onWindowScroll() {
     const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.showFooterOwl = scrollOffset > 200;
+    this.commonService.setFooterOwlVisible(this.showFooterOwl);
   }
 
 }

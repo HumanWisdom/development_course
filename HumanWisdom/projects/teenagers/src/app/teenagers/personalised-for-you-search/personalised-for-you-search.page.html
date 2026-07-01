@@ -1419,7 +1419,7 @@
 <!-- /page content -->
 
 <!-- footer  -->
-<app-bottom-navigation [programType]="11" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
+<app-bottom-navigation *ngIf="!isSearchActive" [programType]="11" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
 <!-- /footer -->
 
 <span data-toggle="modal" #enablepopup data-target="#signuplogin"></span>

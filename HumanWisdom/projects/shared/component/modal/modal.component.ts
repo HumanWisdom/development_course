@@ -69,9 +69,14 @@ export class ModalComponent implements OnInit {
 
   routeTofreetrial(){
     this.closeEvent.emit(''); 
-      this.router.navigate([SharedService.getUrlfromFeatureName('subscription/start-your-free-trial')]);
-    
-    
+    localStorage.setItem('subscriberRedirectUrl', this.router.url);
+
+    if (localStorage.getItem('isloggedin') === 'T') {
+      this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
+    } else {
+      SharedService.UrlToRedirect = `/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
+    }
   }
 }
 

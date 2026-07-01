@@ -21,9 +21,8 @@ import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-s
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
-    canActivate: [AuthGuard]
+    redirectTo: 'repeat-user/my-daily-practice',
+    pathMatch: 'full'
   },
     {
     path: 'social-login',
