@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
+import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
 import { OLLY_QUESTIONS, OllyTopic } from './olly-questions';
 import { OnboardingService } from '../../services/onboarding.service';
@@ -92,7 +93,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private service: OnboardingService,
-    private services: AdultsService
+    private services: AdultsService,
+    private commonService: CommonService
   ) {
     // Must read getCurrentNavigation() in the constructor — it returns null by the time ngOnInit fires for lazy-loaded modules
     const navigation = this.router.getCurrentNavigation();
@@ -230,7 +232,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     // Resolve topicId with multiple fallbacks:
     // 1. From router navigation state (set in constructor)
     // 2. From window.history.state (Angular persists router state here)
-    // 3. From user's saved preference in localStorage
+    // 3. From GetUserPreference API call (works even when login is from native app)
     let topicId = this.topicIdFromNav;
 
     if (!topicId) {
@@ -241,22 +243,18 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       }
     }
 
-    if (!topicId) {
-      // Fallback: read the user's saved preference
-      const savedPref = localStorage.getItem('userPreference');
-      if (savedPref) {
-        topicId = savedPref;
-      }
-    }
-
     const topicMap = this.isAdults ? this.adultTopics : this.teenTopics;
 
     if (topicId && topicMap[topicId]) {
+      // Topic came from navigation state — use it directly
       this.selectedTopic = topicMap[topicId];
     } else {
-      // Final fallback to first topic
+      // Set default topic immediately so the UI doesn't flash empty
       const firstKey = Object.keys(topicMap)[0];
       this.selectedTopic = topicMap[firstKey];
+
+      // Fetch the user's preference from the API (same as home page)
+      this.fetchUserPreferenceFromApi(topicMap);
     }
 
     this.initOllyAnimation();
@@ -366,6 +364,25 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
 
     const program = this.isAdults ? 'adults' : 'teenagers';
     this.router.navigate([`/${program}/chat-bot`], { state: { query }, replaceUrl: true });
+  }
+
+  private fetchUserPreferenceFromApi(topicMap: { [id: string]: { name: string; displayName: string; fragment: string } }): void {
+    this.commonService.getUserpreference().subscribe({
+      next: (res) => {
+        if (res) {
+          const preferenceId = res.toString();
+          if (topicMap[preferenceId]) {
+            this.selectedTopic = topicMap[preferenceId];
+          }
+          // Cache to localStorage for other components that may need it
+          localStorage.setItem('userPreference', preferenceId);
+        }
+      },
+      error: (err) => {
+        console.warn('Failed to fetch user preference from API, using default topic:', err);
+        // Default topic is already set, so no action needed
+      }
+    });
   }
 
   onTopicLinkClick(): void {
