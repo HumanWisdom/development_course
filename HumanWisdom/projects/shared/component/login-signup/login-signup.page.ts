@@ -1263,6 +1263,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       this.logeventservice.logEvent('login_error_view');
     } else {
       this.logeventservice.logEvent('login_success');
+      if (res.NoOfVisits === 1) {
+        localStorage.setItem("signupfirst", 'T');
+      } else {
+        localStorage.setItem("signupfirst", 'F');
+      }
       const timeSpent = Math.round((Date.now() - this.loginStartTime) / 1000);
       this.logeventservice.logEvent('Login_time_spent', true, timeSpent);
       // Clear home state on successful login so API's isExpanded values are used fresh
@@ -1465,7 +1470,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
                   localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
                   if (this.loginResponse?.NoOfVisits === 1) {
                     localStorage.setItem(
-                      "signupfirst", 'F'
+                      "signupfirst", 'T'
                     );
                     if (SharedService.ProgramId === 9) {
                       this.router.navigate(["/adults/change-topic"], {
