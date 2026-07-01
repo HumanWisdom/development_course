@@ -35,8 +35,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    canActivate: [AuthGuard],
-    component: HomeComponent
+    redirectTo: 'repeat-user/my-daily-practice',
+    pathMatch: 'full'
   },
 
   {
