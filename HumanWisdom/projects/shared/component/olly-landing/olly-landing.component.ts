@@ -446,6 +446,9 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     const titleColor = isAdults ? '#000000' : '#ffffff';
     const contentBg  = isAdults ? '#FFF7E6' : '#183C79';
     const textColor  = isAdults ? '#000000' : 'rgba(255,255,255,0.9)';
+    const closeBtnBg = isAdults
+      ? 'linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%)'
+      : 'linear-gradient(180deg, #EE9596 0%, #F17071 100%)';
 
     const overlay = document.createElement('div');
     overlay.id = 'olly-global-overlay';
@@ -480,10 +483,10 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
           <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Olly was created to support you in a more human way.</p>
           <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Unlike many AI tools, Olly doesn't pull advice from the internet. It draws from trusted content created by experts.</p>
           <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Olly listens, helps you reflect, and gently guides you toward relevant support.</p>
-          <p style="font-size:14px; line-height:150%; color:${textColor}; margin:0 0 20px; width:100%;">Your conversations with Olly are private and not shared with anyone.</p>
+          <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 20px; width:100%;">Your conversations with Olly are private and not shared with anyone.</p>
           <button id="olly-popup-close-btn" style="
             width:100%; padding:14px; border:none; border-radius:30px; cursor:pointer;
-            background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+            background: ${closeBtnBg};
             color:#fff; font-size:16px; font-weight:600; font-family:Poppins;">
             Close
           </button>

@@ -23,7 +23,7 @@ export class CommonService {
   isNavVisible$ = this.isNavVisibleSubject.asObservable();
   setNavVisible(visible: boolean): void { this.isNavVisibleSubject.next(visible); }
   // Controls footer owl visibility — false until the in-page Olly has scrolled out of view
-  private isFooterOwlVisibleSubject = new BehaviorSubject<boolean>(false);
+  private isFooterOwlVisibleSubject = new BehaviorSubject<boolean>(true);
   isFooterOwlVisible$ = this.isFooterOwlVisibleSubject.asObservable();
   setFooterOwlVisible(visible: boolean): void { this.isFooterOwlVisibleSubject.next(visible); }
   public percentage: any
