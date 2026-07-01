@@ -17,7 +17,7 @@ export class FreeTrialPage implements OnInit {
   AnnualPlanFreeTrial = 14;
   isAdults = true;
   @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
-  btnText = 'Continue to dashboard';
+  btnText = 'Continue';
   
   constructor(
     private router: Router,private onboardingService:OnboardingService){

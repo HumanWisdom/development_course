@@ -22,7 +22,18 @@ export class SplashOptionsPage implements OnInit {
     } else if (val === 9) {
       this.logeventservice.logEvent('click_adults_section');
     }
+
     SharedService.setProgramId(val);
-    this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true })
+
+    const isLoggedIn = SharedService.isLoggedIn();
+
+    if (isLoggedIn) {
+      // Logged-in user: go straight to the subscription/free-trial page
+      this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
+    } else {
+      // Guest user: set redirect so that after login the user lands on the payment screen
+      SharedService.UrlToRedirect = `/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
+      this.router.navigate(['/adults/onboarding/login'], { replaceUrl: true, skipLocationChange: true });
+    }
   }
 }
