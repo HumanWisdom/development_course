@@ -338,12 +338,31 @@ describe('TnDashboardV03Component', () => {
   });
 
   describe('Subscribe', () => {
-    it('should log event and navigate to start free trial', () => {
+    beforeEach(() => {
+      spyOn(SharedService, 'getprogramName').and.returnValue('adults');
+      spyOn(localStorage, 'setItem').and.callThrough();
+    });
+
+    it('should log event and navigate to login when guest user (not logged in)', () => {
+      localStorage.setItem('isloggedin', 'F');
       component.Subscribe();
       expect(mockLogEventService.logEvent).toHaveBeenCalledWith('click_Free_Trial');
-      expect(SharedService.getUrlfromFeatureName).toHaveBeenCalledWith(UrlConstant.startFreeTrial);
+      expect(localStorage.setItem).toHaveBeenCalledWith('subscriberRedirectUrl', jasmine.any(String));
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/onboarding/login']);
+    });
+
+    it('should set UrlToRedirect when guest user clicks Free Trial', () => {
+      localStorage.setItem('isloggedin', 'F');
+      component.Subscribe();
+      expect(SharedService.UrlToRedirect).toBe('/adults/subscription/try-free-and-subscribe');
+    });
+
+    it('should navigate directly to try-free-and-subscribe when logged in', () => {
+      localStorage.setItem('isloggedin', 'T');
+      component.Subscribe();
+      expect(mockLogEventService.logEvent).toHaveBeenCalledWith('click_Free_Trial');
+      expect(SharedService.getUrlfromFeatureName).toHaveBeenCalledWith(UrlConstant.tryFreeAndSubscribe);
       expect(mockRouter.navigate).toHaveBeenCalled();
-      expect((mockRouter.navigate as jasmine.Spy).calls.mostRecent().args[0][0]).toContain('subscription/start-your-free-trial');
     });
   });
 

@@ -195,36 +195,39 @@ describe('ModalComponent', () => {
 
   describe('routeTofreetrial()', () => {
     beforeEach(() => {
-      spyOn(SharedService, 'getUrlfromFeatureName').and.returnValue('/adults/subscription/start-your-free-trial');
+      spyOn(SharedService, 'getprogramName').and.returnValue('adults');
+      spyOn(localStorage, 'getItem').and.callFake((key) => {
+        if (key === 'isloggedin') return 'F';
+        return null;
+      });
+      spyOn(localStorage, 'setItem');
     });
 
     it('should emit closeEvent with empty string', () => {
       spyOn(component.closeEvent, 'emit');
-      
       component.routeTofreetrial();
-      
       expect(component.closeEvent.emit).toHaveBeenCalledWith('');
     });
 
-    it('should call getUrlfromFeatureName', () => {
+    it('should save current router url as subscriberRedirectUrl in local storage', () => {
+      Object.defineProperty((component as any).router, 'url', { value: '/test-route' });
       component.routeTofreetrial();
-      
-      expect(SharedService.getUrlfromFeatureName).toHaveBeenCalledWith('subscription/start-your-free-trial');
+      expect(localStorage.setItem).toHaveBeenCalledWith('subscriberRedirectUrl', '/test-route');
     });
 
-    it('should navigate to free trial page', () => {
+    it('should navigate to login page if user is not logged in', () => {
       component.routeTofreetrial();
-      
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/subscription/start-your-free-trial']);
+      expect(SharedService.UrlToRedirect).toBe('/adults/subscription/try-free-and-subscribe');
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/onboarding/login']);
     });
 
-    it('should emit closeEvent before navigation', () => {
-      spyOn(component.closeEvent, 'emit');
-      
+    it('should navigate to try-free-and-subscribe if user is logged in', () => {
+      (localStorage.getItem as jasmine.Spy).and.callFake((key) => {
+        if (key === 'isloggedin') return 'T';
+        return null;
+      });
       component.routeTofreetrial();
-      
-      expect(component.closeEvent.emit).toHaveBeenCalledWith('');
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/subscription/start-your-free-trial']);
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/subscription/try-free-and-subscribe']);
     });
   });
 
