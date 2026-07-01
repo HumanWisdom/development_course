@@ -17,7 +17,9 @@ import { HomeStateService } from "../../services/home-state.service";
 import { ProgramType } from "../../models/program-model";
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { take } from 'rxjs/operators';
-import { isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
+import { clearStaleAwsCognitoOidcCache, isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
+import { OrgSsoService } from '../../services/org-sso.service';
+import { OrgSsoDiscoverResult } from '../../models/org-sso.model';
 declare var $: any;
 declare var google: any;
 declare var FB: any;
@@ -137,9 +139,16 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
   loginStartTime: any;
-  showAwsSsoLogin = false;
   private awsSsoProcessing = false;
+  orgWorkEmail = '';
+  orgSsoLoading = false;
+  discoveredOrgName = '';
+  discoveredIdpName = '';
 
+  /** Shown when localStorage enableAwsSsoLogin is not 'F'. */
+  get showAwsSsoLogin(): boolean {
+    return isAwsSsoLoginVisible();
+  }
 
   ngAfterViewInit(): void {
     // Check if we need to force re-initialization (e.g., after logout)
@@ -465,7 +474,8 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     private renderer: Renderer2, private el: ElementRef,
     private commonService: CommonService,
     private homeStateService: HomeStateService,
-    private oidcSecurityService: OidcSecurityService
+    private oidcSecurityService: OidcSecurityService,
+    private orgSsoService: OrgSsoService
   ) {
     this.loadRecaptchaScript();
     this.initializeRegistrationForm();
@@ -541,7 +551,6 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     //   window.history.pushState('', '', '/log-in');
     // }
     this.isAdults = SharedService.ProgramId === 9;
-    this.showAwsSsoLogin = isAwsSsoLoginVisible();
     const lastUrl = this.navigtionService.getLastUrlVisited()
     if (lastUrl != null && lastUrl.includes('forgotpassword')) {
       this.isSignUp = false;
@@ -566,6 +575,83 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.tryCompleteAwsSsoLogin();
+    this.prefillOrgFromQuery();
+  }
+
+  private prefillOrgFromQuery(): void {
+    const orgSlug = this.activate.snapshot.queryParamMap.get('org');
+    if (!orgSlug) {
+      return;
+    }
+
+    this.orgSsoService.discover(undefined, orgSlug).subscribe({
+      next: (result) => {
+        if (result.Found && result.SsoEnabled) {
+          this.discoveredOrgName = result.OrganizationName || orgSlug;
+          this.discoveredIdpName = result.IdpDisplayName || '';
+        }
+      },
+    });
+  }
+
+  continueWithOrganizationSso(): void {
+    const email = this.orgWorkEmail?.trim().toLowerCase();
+    if (!email || !email.includes('@')) {
+      this.content = 'Please enter your work email before continuing (e.g. you@company.com).';
+      this.enableAlert = true;
+      return;
+    }
+
+    if (this.orgSsoLoading || this.awsSsoProcessing) {
+      return;
+    }
+
+    this.orgSsoLoading = true;
+    this.logeventservice.logEvent('click_org_sso_discover');
+
+    const orgSlugFromUrl = this.activate.snapshot.queryParamMap.get('org');
+
+    this.orgSsoService.discover(email, orgSlugFromUrl || undefined).subscribe({
+      next: (result) => {
+        this.orgSsoLoading = false;
+
+        if (!result.Found || !result.SsoEnabled) {
+          this.content = result.Message || 'No organization SSO is configured for this email domain.';
+          this.enableAlert = true;
+          return;
+        }
+
+        if (!result.CognitoIdentityProvider) {
+          this.content = 'Organization SSO is not fully configured. Missing Cognito identity provider.';
+          this.enableAlert = true;
+          return;
+        }
+
+        if (orgSlugFromUrl && result.OrganizationSlug?.toLowerCase() !== orgSlugFromUrl.toLowerCase()) {
+          this.content = `This email belongs to ${result.OrganizationName}, not ${orgSlugFromUrl}.`;
+          this.enableAlert = true;
+          return;
+        }
+
+        this.discoveredOrgName = result.OrganizationName || '';
+        this.discoveredIdpName = result.IdpDisplayName || '';
+        sessionStorage.setItem('pendingOrgSso', JSON.stringify({
+          organizationId: result.OrganizationId,
+          organizationSlug: result.OrganizationSlug,
+          organizationName: result.OrganizationName,
+          email,
+        }));
+
+        // Do not pass login_hint — IAM Identity Center returns "No access" on SP-initiated SAML when hint is set.
+        this.awsSsoLogin('login', result.CognitoIdentityProvider);
+      },
+      error: (error) => {
+        this.orgSsoLoading = false;
+        const body = error.error as OrgSsoDiscoverResult;
+        this.content = body?.Message || 'Unable to find your organization. Please check your work email.';
+        this.enableAlert = true;
+      },
+    });
   }
 
   private tryCompleteAwsSsoLogin(): void {
@@ -761,7 +847,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     this.handleGoogleSignIn();
   }
 
-  awsSsoLogin(reqtype: string): void {
+  awsSsoLogin(reqtype: string, cognitoIdentityProvider?: string, loginHint?: string): void {
     if (this.awsSsoProcessing) {
       return;
     }
@@ -772,7 +858,20 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       this.logeventservice.logEvent('click_login_aws_sso');
     }
 
-    console.log('[AWS SSO] Starting authorize flow, reqtype:', reqtype);
+    clearStaleAwsCognitoOidcCache();
+    console.log('[AWS SSO] Starting authorize flow, reqtype:', reqtype, 'idp:', cognitoIdentityProvider || 'default');
+
+    if (cognitoIdentityProvider) {
+      const customParams: Record<string, string> = {
+        identity_provider: cognitoIdentityProvider,
+      };
+      if (loginHint) {
+        customParams.login_hint = loginHint;
+      }
+      this.oidcSecurityService.authorize(undefined, { customParams });
+      return;
+    }
+
     this.oidcSecurityService.authorize();
   }
 
@@ -820,6 +919,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
           console.log('[AWS SSO] verifyAwsSSOTokenAndLogin response:', res);
           if (res) {
             console.log('[AWS SSO] Login successful, UserId:', res.UserId);
+            const pendingOrgSso = sessionStorage.getItem('pendingOrgSso');
+            if (pendingOrgSso) {
+              localStorage.setItem('enterpriseOrganization', pendingOrgSso);
+              sessionStorage.removeItem('pendingOrgSso');
+            }
             this.setUpLoginConfiguration(res, 'aws');
           } else {
             console.warn('[AWS SSO] API returned empty response');

@@ -192,3 +192,20 @@ background: none !important;
   text-align: left;
   padding: 12px 10px;
 }
+
+.org-sso-section {
+  padding: 0 2px;
+}
+
+.org-sso-btn,
+.aws-sso-btn {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: 16px;
+}
+
+.org-sso-hint {
+  margin-top: 4px;
+}

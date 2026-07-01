@@ -1,6 +1,11 @@
 import { OpenIdConfiguration } from 'angular-auth-oidc-client';
 import { environment } from '../../environments/environment';
-import { buildAwsCognitoWellKnownEndpoints, getAwsCognitoLogoutUrl, getAwsCognitoRedirectUrl } from './aws-cognito.config';
+import {
+  buildAwsCognitoWellKnownEndpoints,
+  getAwsCognitoLogoutUrl,
+  getAwsCognitoRedirectUrl,
+  getAwsCognitoWellKnownConfigurationUrl,
+} from './aws-cognito.config';
 
 export function buildAwsCognitoAuthConfig(app: 'adults' | 'teenagers'): OpenIdConfiguration {
   const loginRoute = `/${app}/onboarding/login`;
@@ -20,6 +25,9 @@ export function buildAwsCognitoAuthConfig(app: 'adults' | 'teenagers'): OpenIdCo
     forbiddenRoute: loginRoute,
     triggerAuthorizationResultEvent: true,
     historyCleanupOff: false,
+    // Must use hosted UI discovery — default authority (cognito-idp) returns a token URL that times out in browsers.
+    authWellknownEndpointUrl: getAwsCognitoWellKnownConfigurationUrl(),
     authWellknownEndpoints: buildAwsCognitoWellKnownEndpoints(),
+    refreshTokenRetryInSeconds: 3,
   };
 }
