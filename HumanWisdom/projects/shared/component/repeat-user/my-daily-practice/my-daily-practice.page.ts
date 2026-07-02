@@ -475,25 +475,52 @@ routeDailyPractice(id: number): void {
   }
 
   
-routeResume(r?: any, enableLastVisited = false): void {
+// routeResume(r?: any, enableLastVisited = false): void {
+routeResume( enableLastVisited = false): void {
   this.logeventservice.logEvent('click_continue_where_left');
   const isAdult = SharedService.ProgramId === ProgramType.Adults;
   const service = isAdult ? this.adultService : this.teenService;
-  const fallbackUrl = isAdult
-    ? '/adults/happiness/'
-    : '/teenagers/happiness/';
+  var lastvisited: any = this.resumeLastvisited[0];
+  const url  = lastvisited.ModuleUrl.toString() 
 
-  if (enableLastVisited) {
-    const first = this.resumeLastvisited[0];
-    const id   = first ? first.ModuleId.toString() : '23';
-    const url  = first ? first.ModuleUrl.toString() : fallbackUrl;
-    let indexUrl = url;
-    if (first && first.screenno) {
-      const scr = first.screenno.toString();
-      indexUrl = url.endsWith('/') ? `${url}s${scr}` : `${url}/s${scr}`;
+  // const fallbackUrl = isAdult
+  //   ? '/adults/happiness/'
+  //   : '/teenagers/happiness/';
+
+  // if (enableLastVisited) {
+  //   const first = this.resumeLastvisited[0];
+  //   const id   = first ? first.ModuleId.toString() : '23';
+  //   const url  = first ? first.ModuleUrl.toString() : fallbackUrl;
+  //   let indexUrl = url;
+  //   if (first && first.screenno) {
+  //     const scr = first.screenno.toString();
+  //     indexUrl = url.endsWith('/') ? `${url}s${scr}` : `${url}/s${scr}`;
+  //   }
+  //   service.setmoduleID(id, url, indexUrl);
+  // }
+
+    if(lastvisited && lastvisited.screenno && lastvisited.screenno != "0"){
+      const id   = lastvisited.ModuleId.toString() 
+      let indexUrl = url;
+      const scr = lastvisited.screenno.toString();
+       indexUrl = url.endsWith('/') ? `${url}s${scr}` : `${url}/s${scr}`;
+        service.setmoduleID(id, url, indexUrl);
     }
-    service.setmoduleID(id, url, indexUrl);
-  }
+    else {
+      if(url.includes('?')) {
+         const [path, queryString] = url.split('?');
+          const params = new URLSearchParams(queryString);
+          const queryParams: any = {};
+
+            params.forEach((value, key) => {
+              queryParams[key] = value;
+            });
+         this.router.navigate([path], { queryParams });
+      }
+      else
+          this.router.navigate([url]);
+
+    }
 
   localStorage.setItem('pageaction', 'next');
 }
