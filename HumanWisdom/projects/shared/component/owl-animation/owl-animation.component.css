@@ -1,0 +1,558 @@
+:host {
+  display: block;
+}
+
+.owl-animation-wrapper {
+  position: fixed;
+  bottom: 60px;
+  /* sit along footer line (adjust if footer height changes) */
+  /* Align to the right edge of a centered 30% content column */
+  right: calc((100% - 30%) / 2 + 16px);
+  z-index: 100;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s, top 0.3s ease, right 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  /* allow click to open chat */
+  background: transparent;
+  background-color: transparent;
+  will-change: transform;
+  -webkit-transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s, top 0.3s ease, right 0.3s ease;
+}
+
+.owl-animation-wrapper.corner {
+  bottom: 48px;
+  right: calc((100% - 30%) / 2 + 10px);
+  transform: none;
+  -webkit-transform: none;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
+  -webkit-transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
+  width: auto;
+  height: auto;
+  z-index: 100;
+}
+
+/* Prevent duplicate owl instances */
+.owl-animation-wrapper:not(:first-of-type) {
+  display: none !important;
+}
+
+.owl-animation-wrapper.transitioning {
+  /* Optionally scale up or add effect during transition */
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.3));
+}
+
+.owl-video {
+  width: 100%;
+  max-width: 1080px;
+  /* match video source resolution */
+  height: auto;
+  /* transform: scale(0.4); */
+  /* shrink to 40% size */
+  transform-origin: center center;
+
+  max-height: 90vh;
+  border-radius: 18px;
+  /*box-shadow: 0 8px 32px rgba(0,0,0,0.25);*/
+  background: transparent;
+  background-color: transparent;
+  user-select: none;
+  pointer-events: none;
+  transition: box-shadow 0.3s, border-radius 0.3s;
+  /* High quality video settings */
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  object-fit: contain;
+  /* Ensure video is visible */
+  display: block;
+  /* High quality rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  /* Additional quality enhancements */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Text visibility enhancements */
+  filter: contrast(1.1) brightness(1.05);
+
+  /* Hide video controls */
+  &::-webkit-media-controls {
+    display: none !important;
+  }
+
+  &::-webkit-media-controls-panel {
+    display: none !important;
+  }
+
+  &::-webkit-media-controls-play-button {
+    display: none !important;
+  }
+
+  &::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+}
+
+/* GIF styles - match static owl image size */
+.owl-gif {
+  /* width: 140px;          Match static-owl-image rendered size (200px * 0.7 scale) */
+  /* height: 140px;         */
+  /*  max-width: 140px;      /* Prevent scaling up 
+  max-height: 140px;     /* Prevent scaling up */
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  /* Maintain aspect ratio */
+  border-radius: 50%;
+  /* Make it circular */
+  user-select: none;
+  pointer-events: none;
+  /* image itself doesn't intercept to keep consistent */
+  transition: all 0.3s ease;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  /* High quality rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  /* Additional quality enhancements */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  margin-right: -40px;
+}
+
+/* Debug and Loading Indicators */
+.debug-info,
+.loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  z-index: 1001;
+}
+
+.debug-info p,
+.loading-indicator p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.loading-indicator {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+
+  .owl-video,
+  .owl-gif {
+    width: 140px;
+    /* Match static owl size */
+    /* height: 140px;        */
+    max-width: 140px;
+    max-height: 140px;
+  }
+
+  .owl-animation-wrapper.corner {
+    bottom: 48px;
+    /* Positioned on footer line */
+    right: 16px;
+    /* mobile: content is near full width, align to safe margin */
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+
+  .owl-video,
+  .owl-gif {
+    width: 140px;
+    /* Match static owl size */
+    /* height: 140px;         */
+    max-width: 140px;
+    max-height: 140px;
+  }
+
+  .owl-animation-wrapper.corner {
+    bottom: 48px;
+    /* Positioned on footer line */
+    right: 16px;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+
+  .owl-video,
+  .owl-gif {
+    width: 120px;
+    /* Match static owl size */
+    /* height: 120px;        */
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .owl-animation-wrapper.corner {
+    bottom: 48px;
+    /* Positioned on footer line */
+    right: 12px;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
+  }
+}
+
+/* Extra small mobile styles */
+@media (max-width: 360px) {
+
+  .owl-video,
+  .owl-gif {
+    width: 100px;
+    /* Match static owl size */
+    /* height: 100px;       */
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .owl-animation-wrapper.corner {
+    bottom: 48px;
+    /* Positioned on footer line */
+    right: 10px;
+    width: auto;
+    height: auto;
+    top: auto;
+    left: auto;
+  }
+}
+
+/* For wide screens where content is 30% of width, calculation above applies.
+   For smaller screens, fall back to safe margins to keep it visible within content. */
+@media (max-width: 1024px) {
+
+  .owl-animation-wrapper,
+  .owl-animation-wrapper.corner {
+    right: 16px;
+  }
+}
+
+/* Tablet: match 50% col_cw column */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+  .owl-animation-wrapper {
+    right: calc((100% - 50%) / 2 + 16px);
+  }
+
+  .owl-animation-wrapper.corner {
+    right: calc((100% - 50%) / 2 + 10px);
+  }
+}
+
+/* Ultra-wide: match col_cw 20% column */
+@media (min-width: 2560px) {
+
+  .owl-animation-wrapper {
+    right: calc((100% - 20%) / 2 + 16px);
+  }
+
+  .owl-animation-wrapper.corner {
+    right: calc((100% - 20%) / 2 + 10px);
+  }
+}
+
+/* Ultra-wide: match col-lg-4 10.33% column */
+@media (min-width: 5120px) {
+
+  .owl-animation-wrapper {
+    right: calc((100% - 10.333333%) / 2 + 16px);
+  }
+
+  .owl-animation-wrapper.corner {
+    right: calc((100% - 10.333333%) / 2 + 10px);
+  }
+}
+
+/* Journal page specific positioning - handles col-lg-4 (33.33% width) layout */
+.bg_journal .owl-animation-wrapper,
+.bg_journal .owl-animation-wrapper.corner {
+  right: calc((100% - 33.33%) / 2 + 16px);
+}
+
+@media (max-width: 1024px) {
+
+  .bg_journal .owl-animation-wrapper,
+  .bg_journal .owl-animation-wrapper.corner {
+    right: 16px;
+  }
+}
+
+/* Ensure only one owl instance is visible at a time */
+body .owl-animation-wrapper~.owl-animation-wrapper {
+  display: none !important;
+}
+
+/* Lower owl z-index when hamburger menu is open */
+#menu:checked~.m-menu~* .owl-animation-wrapper,
+#menu:checked~* .owl-animation-wrapper,
+body:has(#menu:checked) .owl-animation-wrapper {
+  z-index: 10 !important;
+}
+
+/* Static Owl Image Styles */
+.static-owl-container {
+  position: relative;
+  /*  width: 100%;
+  height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /*   height: 100px;
+    width: auto; */
+}
+
+.static-owl-image {
+  width: auto;
+  /* max-width: 200px; */
+  height: 100px;
+  transform: scale(0.7);
+  transform-origin: center center;
+  border-radius: 18px;
+  user-select: none;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Cloud Container - OLLY_HI only: fade in on open, fade out on close */
+.owl-cloud-container {
+  position: absolute;
+  top: -102px;
+  left: -45%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 179px;
+  height: 140px;
+  opacity: 1;
+  animation: none;
+  transform-origin: bottom center;
+}
+
+/* Opening: slow fade in effect for Olly_Hi.svg */
+.owl-cloud-container.fade-in {
+  opacity: 0;
+  animation: cloud-fade-in 4.4s ease-out forwards;
+  transform-origin: bottom center;
+}
+
+@keyframes cloud-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.owl-cloud-container.speaking:not(.disappearing) {
+  transform-origin: bottom center;
+  animation: none;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+/* Update bubble-pop to maintain position from entrance */
+@keyframes bubble-pop {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(0.96);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  }
+
+  55% {
+    transform: translateX(-50%) translateY(0) scale(1.04);
+    filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.13));
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1.0);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  }
+}
+
+@keyframes bubble-pop {
+  0% {
+    transform: translateX(-50%) scale(0.96);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  }
+
+  55% {
+    transform: translateX(-50%) scale(1.04);
+    filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.13));
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1.0);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  }
+}
+
+/* Cloud closing: fade out (no shrink) */
+.owl-cloud-container.disappearing {
+  animation: cloud-fade-out 0.6s ease-out forwards;
+  transform-origin: bottom center;
+}
+
+@keyframes cloud-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.cloud-image {
+  width: 179px;
+  height: 140px;
+  max-width: 179px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  user-select: none;
+  pointer-events: none;
+  transition: width 0.4s ease, height 0.4s ease, max-width 0.4s ease;
+}
+
+
+
+/* Mobile-specific performance optimizations */
+@media (max-width: 768px) {
+  .owl-animation-wrapper {
+    /* Reduce transition duration for mobile */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .owl-video,
+  .owl-gif {
+    /* Enhanced visibility for mobile */
+    filter: contrast(1.1) brightness(1.05);
+  }
+
+  .static-owl-image {
+    max-width: 160px;
+  }
+
+  .owl-cloud-container {
+    top: -55px;
+    left: -35%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 110px;
+  }
+
+  .cloud-image {
+    width: 140px;
+    /* Smaller size for mobile */
+    max-width: 140px;
+    height: auto;
+  }
+
+}
+
+/* Teenagers mobile only: perch Olly fully above the footer tab bar */
+@media (max-width: 768px) {
+  :host(.teenager-theme) {
+    overflow: visible;
+    position: static;
+  }
+
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    --teen-footer-height: 84px;
+    --teen-footer-tab-center: 12.5%;
+    bottom: calc(var(--teen-footer-height) + env(safe-area-inset-bottom, 0px)) !important;
+    right: max(12px, calc(var(--teen-footer-tab-center) - 38px)) !important;
+    left: auto !important;
+    z-index: 100;
+    overflow: visible;
+  }
+
+  :host(.teenager-theme) .static-owl-container {
+    align-items: flex-end;
+    overflow: visible;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    transform-origin: bottom right;
+    height: 92px;
+    width: auto;
+    max-width: min(92px, 24vw);
+    transform: scale(0.72);
+  }
+
+  :host(.teenager-theme) .owl-gif {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    --teen-footer-height: 80px;
+    right: max(10px, calc(var(--teen-footer-tab-center) - 34px)) !important;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    height: 84px;
+    max-width: min(84px, 22vw);
+    transform: scale(0.7);
+  }
+
+  :host(.teenager-theme) .owl-cloud-container {
+    top: -50px;
+    left: -30%;
+    width: 128px;
+    height: 100px;
+  }
+
+  :host(.teenager-theme) .cloud-image {
+    width: 128px;
+    max-width: 128px;
+  }
+}
+
+@media (max-width: 360px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    --teen-footer-height: 76px;
+    right: max(8px, calc(var(--teen-footer-tab-center) - 30px)) !important;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    height: 76px;
+    max-width: min(76px, 20vw);
+    transform: scale(0.66);
+  }
+}
