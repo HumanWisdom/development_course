@@ -113,7 +113,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       }
       if (event instanceof NavigationEnd) {
         // Always close the hamburger when navigating to the Today page
-        if (this.router.url.includes('repeat-user/my-daily-practice')) {
+        if (this.router.url.includes('repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
           this.closemenuevent();
           this.wasBackClicked = false;
           return;

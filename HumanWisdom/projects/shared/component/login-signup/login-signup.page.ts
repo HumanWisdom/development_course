@@ -1744,7 +1744,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   routedashboard() {
     this.logeventservice.logEvent('continue_guest');
     localStorage.setItem('btnclick', 'F')
-    this.router.navigateByUrl(`/${SharedService.getprogramName()}/repeat-user/my-daily-practice`);
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
   }
 
   navigate(url) {

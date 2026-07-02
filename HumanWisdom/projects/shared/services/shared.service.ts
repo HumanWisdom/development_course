@@ -150,11 +150,11 @@ export class SharedService {
   public static getDashboardUrls() {
     switch (this.ProgramId) {
       case ProgramType.Adults:
-        return '/adults/repeat-user/my-daily-practice';
+        return '/adults/explore';
       case ProgramType.Teenagers:
-        return '/teenagers/repeat-user/my-daily-practice';
+        return '/teenagers/explore';
       default:
-        return '/adults/repeat-user/my-daily-practice';
+        return '/adults/explore';
     }
   }
 
@@ -751,7 +751,7 @@ return [
 
 export class UrlConstant {
   public static journal = "journal";
-  public static search = 'search';
+  public static search = 'learn';
   public static login = 'onboarding/login';
   public static userProfile = 'onboarding/user-profile';
   public static forum = 'forum';

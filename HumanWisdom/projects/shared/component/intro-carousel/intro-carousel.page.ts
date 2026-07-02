@@ -879,7 +879,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     this.logeventservice.logEvent('continue_guest');
     this.logeventservice.logEvent('onboarding_complete');
     this.isOnboardingCompleted = true;
-    this.router.navigateByUrl(`/${SharedService.getprogramName()}/repeat-user/my-daily-practice`);
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
   }
 
   pauseVideo() {

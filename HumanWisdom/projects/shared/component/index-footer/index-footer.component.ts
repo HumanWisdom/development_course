@@ -105,7 +105,7 @@ export class IndexFooterComponent implements OnInit, OnDestroy, OnChanges {
       }
     }
 
-    if (this.router.url.includes('/repeat-user/my-daily-practice')) {
+    if (this.router.url.includes('/repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
       this.dash = true;
       this.journal = false;
       this.search = false;
@@ -113,7 +113,7 @@ export class IndexFooterComponent implements OnInit, OnDestroy, OnChanges {
       this.learn = false;
       this.enableprofile = false;
     }
-    else if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home`) {
+    else if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` || this.router.url.includes('/explore')) {
       this.dash = false;
       this.journal = false;
       this.search = true;
@@ -123,7 +123,7 @@ export class IndexFooterComponent implements OnInit, OnDestroy, OnChanges {
     }
     else if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
       || this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
-      this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search))) {
+      this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search)) || this.router.url.includes('/learn') || this.router.url.includes('/search')) {
       this.dash = false
       this.journal = false
       this.fourm = false;
@@ -168,7 +168,7 @@ export class IndexFooterComponent implements OnInit, OnDestroy, OnChanges {
 
   routeToday() {
     this.logeventservice.logEvent("footer_today")
-    this.router.navigateByUrl(`/${SharedService.getprogramName()}/repeat-user/my-daily-practice`);
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
   }
 
   routeExplore() {

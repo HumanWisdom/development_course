@@ -123,7 +123,7 @@ export class AppComponent implements OnDestroy {
     this.navVisibleSubscription = this.commonService.isNavVisible$.subscribe((visible) => {
       this.isNavVisibleGlobal = visible;
       // When on the Today page, update isShowHeader in real time
-      if (this.router.url.includes('repeat-user/my-daily-practice')) {
+      if (this.router.url.includes('repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
         this.isShowHeader = visible;
       }
     });
@@ -430,7 +430,7 @@ export class AppComponent implements OnDestroy {
     }
     if (this.router.url == "/adults/search" || this.router.url == "/search" 
       || this.router.url.includes('/adults/site-search/') ||
-      this.router.url.includes('/adults/search')) {
+      this.router.url.includes('/adults/search') || this.router.url.includes('/adults/learn')) {
       this.dash = false
       this.journal = false
       this.fourm = false;
@@ -444,7 +444,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    else if (this.router.url.includes("home") || this.router.url == "/adults") {
+    else if (this.router.url.includes("home") || this.router.url.includes("explore") || this.router.url == "/adults") {
       this.dash = false;
       this.journal = false;
       this.search = true;
@@ -462,7 +462,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    else if (this.router.url.includes('repeat-user/my-daily-practice')) {
+    else if (this.router.url.includes('repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
       this.dash = true;
       this.journal = false;
       this.search = false;

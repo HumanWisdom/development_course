@@ -7,7 +7,7 @@ import { AdultsService } from '../../../../adults/src/app/adults/adults.service'
 import { ForumService } from '../../../forum/forum.service';
 import { SearchDataModel } from '../../../models/search-data-model';
 import { ProgramType } from '../../../models/program-model';
-import { SharedService } from '../../../services/shared.service';
+import { SharedService, UrlConstant } from '../../../services/shared.service';
 import { CommonService } from '../../../services/common.service';
 import { OnboardingService } from '../../../services/onboarding.service';
 
@@ -753,7 +753,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate([SharedService.getUrlfromFeatureName('search')]);
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.search)]);
   }
 
   routemodule(res) {
