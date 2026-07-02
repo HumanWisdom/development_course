@@ -209,6 +209,19 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
+    if (this.router.url.includes('/repeat-user')) {
+      this.dash = false;
+      this.journal = false;
+      this.search = false;
+      this.learn = false;
+      this.fourm = false;
+      this.enableprofile = false;
+      this.isEnableHam = true;
+      this.enableplaystore = false;
+      this.isShowHeader = true;
+      this.isLoginPage = false;
+      return true;
+    }
     if ((this.router.url == "/teenagers/journal") ||
       (this.router.url.includes('/journal') && !this.router.url.includes('/journal/')) ||
       (this.router.url.indexOf('/teenagers/note') > -1)) {
