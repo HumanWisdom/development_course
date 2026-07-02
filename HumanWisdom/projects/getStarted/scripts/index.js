@@ -6,8 +6,8 @@ var type = "Desktop";
 /Mobi|Android/i.test(userAgent)
     ? (type = "Mobile")
     : /Tablet|iPad|PlayBook/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent))
-      ? (type = "Tablet")
-      : (type = "Desktop");
+        ? (type = "Tablet")
+        : (type = "Desktop");
 //const url ="https://staging.happierme.app"
 //const url ="http://localhost:4200"
 
@@ -135,19 +135,19 @@ runWhenDomReady(initTopicsHelpGa);
 
 // Function to remove active_nav class from all navigation elements
 function removeActiveNavClass(tab) {
- 
-      let  navElements = [
-        'AboutUs', 'blogs', 'organisation', 'work', 'education', 
+
+    let navElements = [
+        'AboutUs', 'blogs', 'organisation', 'work', 'education',
         'healthcare', 'pricing', 'teenagersHeaderClick', 'partnership'
     ];
-     if(tab == 'work' || tab =='education' || tab == 'healthcare'){
-      navElements = [
-        'AboutUs', 'blogs', 'work', 'education', 
-        'healthcare', 'pricing', 'teenagersHeaderClick', 'partnership'
-      ];
-     }
+    if (tab == 'work' || tab == 'education' || tab == 'healthcare') {
+        navElements = [
+            'AboutUs', 'blogs', 'work', 'education',
+            'healthcare', 'pricing', 'teenagersHeaderClick', 'partnership'
+        ];
+    }
 
-   
+
     navElements.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
@@ -175,10 +175,10 @@ function setActiveNav(elementId) {
 
 // Function to check if page is fully loaded
 function isPageLoaded() {
-    return document.readyState === 'complete' && 
-           document.body && 
-           document.body.scrollHeight > 0 &&
-           document.querySelector('.header') !== null;
+    return document.readyState === 'complete' &&
+        document.body &&
+        document.body.scrollHeight > 0 &&
+        document.querySelector('.header') !== null;
 }
 
 // Function to check if element is ready and visible
@@ -193,7 +193,7 @@ function waitForPageLoad(callback, isFirstLoad = false, maxAttempts = 100, attem
     // For first-time page loads, allow more time (10 seconds instead of 5)
     const maxAttemptsForFirstLoad = 100;
     const actualMaxAttempts = isFirstLoad ? maxAttemptsForFirstLoad : maxAttempts;
-    
+
     if (isPageLoaded() || attempt >= actualMaxAttempts) {
         // Use requestAnimationFrame for smoother execution, add 1000ms extra timeout
         requestAnimationFrame(() => {
@@ -216,7 +216,7 @@ function scrollToElement(elementId, offset = null, isFirstLoad = false) {
         }
         return false;
     }
-    
+
     // Wait for page to be fully loaded before scrolling
     waitForPageLoad(() => {
         // Re-check element exists after page load
@@ -228,7 +228,7 @@ function scrollToElement(elementId, offset = null, isFirstLoad = false) {
             }
             return false;
         }
-        
+
         // Wait for element to be ready and visible
         let attempts = 0;
         const checkElementReady = () => {
@@ -239,10 +239,10 @@ function scrollToElement(elementId, offset = null, isFirstLoad = false) {
                 setTimeout(checkElementReady, 100);
             }
         };
-        
+
         checkElementReady();
     }, isFirstLoad);
-    
+
     return true;
 }
 
@@ -253,18 +253,18 @@ function performScroll(targetElement, offset) {
         const header = document.querySelector('.header');
         offset = header ? header.offsetHeight : 120;
     }
-    
+
     // Get element position relative to viewport
     const elementPosition = targetElement.getBoundingClientRect().top;
     // Calculate scroll position: current scroll + element position - offset (no extra pixels)
     const offsetPosition = elementPosition + window.pageYOffset - offset;
-    
+
     // Scroll to element (only once, no double scrolling)
     window.scrollTo({
         top: Math.max(0, offsetPosition),
         behavior: 'smooth'
     });
-    
+
     // Focus the element for accessibility and ensure it's visible (add 1000ms extra timeout)
     setTimeout(() => {
         // Set tabindex if it doesn't have one, then focus
@@ -272,12 +272,12 @@ function performScroll(targetElement, offset) {
             targetElement.setAttribute('tabindex', '-1');
         }
         // targetElement.focus();
-        
+
         // Verify element is in correct position (only adjust if significantly off, to avoid extra scrolling)
         const currentPosition = targetElement.getBoundingClientRect().top;
         const expectedPosition = offset; // Element should be at offset distance from top
         const positionDifference = Math.abs(currentPosition - expectedPosition);
-        
+
         // Only re-scroll if position is off by more than 10px (to avoid unnecessary extra scrolling)
         if (positionDifference > 10) {
             const newOffsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
@@ -293,7 +293,7 @@ function performScroll(targetElement, offset) {
 function updateFAQTabAttributes() {
     // Only target FAQ tabs, not tool tabs
     const faqTabLinks = document.querySelectorAll('.tab_faqs a[data-toggle="tab"]');
-    
+
     faqTabLinks.forEach(link => {
         // Update data-toggle to data-bs-toggle
         link.setAttribute('data-bs-toggle', 'tab');
@@ -305,37 +305,37 @@ function updateFAQTabAttributes() {
 function initializeFAQTabs() {
     // Update tab attributes to Bootstrap 5.3 only for FAQ tabs
     updateFAQTabAttributes();
-    
+
     // Get all FAQ tab links (both old and new Bootstrap syntax)
     const faqTabLinks = document.querySelectorAll('.tab_faqs a[data-toggle="tab"], .tab_faqs a[data-bs-toggle="tab"]');
-    
+
     // Add click event listeners to FAQ tabs
     faqTabLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             // Remove active class from all FAQ tabs
             faqTabLinks.forEach(tab => {
                 tab.parentElement.classList.remove('active');
             });
-            
+
             // Add active class to clicked tab
             this.parentElement.classList.add('active');
-            
+
             // Get target tab content
             const targetId = this.getAttribute('href');
             const targetContent = document.querySelector(targetId);
-            
+
             // Hide all FAQ tab content
             const allFAQTabContent = document.querySelectorAll('.tc_faqs .tab-pane');
             allFAQTabContent.forEach(content => {
                 content.classList.remove('in', 'active', 'show');
             });
-            
+
             // Show target tab content with smooth transition
             if (targetContent) {
                 targetContent.classList.add('in', 'active', 'show');
-                
+
                 // Convert accordion in this tab if it hasn't been converted yet
                 const panelGroups = targetContent.querySelectorAll('.panel-group');
                 if (panelGroups.length > 0) {
@@ -344,7 +344,7 @@ function initializeFAQTabs() {
             }
         });
     });
-    
+
     // Set "About HappierMe" as default active tab
     const aboutHappierMeTab = document.querySelector('.tab_faqs a[href="#about_happierme"]');
     if (aboutHappierMeTab) {
@@ -390,8 +390,8 @@ class ModalManager {
         this.handleUiShakingOnModalOpen();
         if (typeof modalTarget === 'string') {
             modal = document.getElementById(modalTarget);
-              
-             
+
+
         } else if (modalTarget instanceof HTMLElement) {
             modal = modalTarget;
         } else {
@@ -403,7 +403,7 @@ class ModalManager {
             console.error('Modal not found:', modalTarget);
             return false;
         }
-         
+
         try {
             // Prevent Bootstrap from adding padding-right to body
             if (handleUI) {
@@ -416,7 +416,7 @@ class ModalManager {
                 keyboard: true,
                 focus: true
             });
-            
+
             // Store active modal reference
             this.activeModal = modal;
 
@@ -424,7 +424,7 @@ class ModalManager {
             if (onShow) {
                 modal.addEventListener('shown.bs.modal', onShow);
             }
-            
+
             if (onHide) {
                 modal.addEventListener('hidden.bs.modal', onHide);
             }
@@ -458,7 +458,7 @@ class ModalManager {
      */
     closeModal(modalTarget) {
         let modal;
-        
+
         if (typeof modalTarget === 'string') {
             modal = document.getElementById(modalTarget);
         } else if (modalTarget instanceof HTMLElement) {
@@ -519,7 +519,7 @@ class ModalManager {
      */
     isModalOpen(modalTarget) {
         let modal;
-        
+
         if (typeof modalTarget === 'string') {
             modal = document.getElementById(modalTarget);
         } else if (modalTarget instanceof HTMLElement) {
@@ -665,7 +665,7 @@ class ModalManager {
      */
     addModalEventListener(modalTarget, event, callback) {
         let modal;
-        
+
         if (typeof modalTarget === 'string') {
             modal = document.getElementById(modalTarget);
         } else if (modalTarget instanceof HTMLElement) {
@@ -692,7 +692,7 @@ class ModalManager {
      */
     removeModalEventListener(modalTarget, event, callback) {
         let modal;
-        
+
         if (typeof modalTarget === 'string') {
             modal = document.getElementById(modalTarget);
         } else if (modalTarget instanceof HTMLElement) {
@@ -716,28 +716,28 @@ class ModalManager {
 const modalManager = new ModalManager();
 
 /** index.php tools section uses .tool-tab + inline switchTab(); no Bootstrap nav wiring needed. */
-function initializeToolTabs() {}
+function initializeToolTabs() { }
 
 // Accordion functionality with smooth transitions
 function initializeFAQAccordion() {
     // Initialize Bootstrap 5.3 accordion
     const accordionElements = document.querySelectorAll('.accordion');
-    
+
     accordionElements.forEach(accordion => {
         // Initialize Bootstrap 5.3 accordion for each accordion group
         const bsAccordion = new bootstrap.Collapse(accordion, {
             toggle: false
         });
-        
+
         // Add custom event listeners for smooth transitions
         const accordionButtons = accordion.querySelectorAll('.accordion-button');
-        
+
         accordionButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
+            button.addEventListener('click', function (e) {
                 // Get the target collapse element
                 const targetId = this.getAttribute('data-bs-target');
                 const targetCollapse = document.querySelector(targetId);
-                
+
                 if (targetCollapse) {
                     // Close all other accordion items in the same group
                     const parentAccordion = targetCollapse.closest('.accordion');
@@ -761,37 +761,37 @@ function initializeFAQAccordion() {
 // Function to convert existing accordion to Bootstrap 5.3
 function convertAccordionToBootstrap53() {
     const panelGroups = document.querySelectorAll('.panel-group');
-    
+
     panelGroups.forEach((panelGroup, groupIndex) => {
         // Skip if this panel group has already been converted
         if (panelGroup.parentElement.classList.contains('accordion')) {
             return;
         }
-        
+
         // Create new accordion container
         const accordion = document.createElement('div');
         accordion.className = 'accordion';
         accordion.id = `accordion_faq_${groupIndex}_${Date.now()}`;
-        
+
         // Get all panels in this group
         const panels = panelGroup.querySelectorAll('.panel');
-        
+
         panels.forEach((panel, panelIndex) => {
             // Create accordion item
             const accordionItem = document.createElement('div');
             accordionItem.className = 'accordion-item';
-            
+
             // Get the existing content
             const panelHeading = panel.querySelector('.panel-heading');
             const panelTitle = panelHeading.querySelector('.panel-title a');
             const panelCollapse = panel.querySelector('.panel-collapse');
             const panelBody = panelCollapse.querySelector('.panel-body');
-            
+
             // Create accordion header
             const accordionHeader = document.createElement('h2');
             accordionHeader.className = 'accordion-header';
             accordionHeader.id = `heading_${panelTitle.getAttribute('href').substring(1)}`;
-            
+
             // Create accordion button
             const accordionButton = document.createElement('button');
             accordionButton.className = panelCollapse.classList.contains('in') ? 'accordion-button' : 'accordion-button collapsed';
@@ -801,33 +801,33 @@ function convertAccordionToBootstrap53() {
             accordionButton.setAttribute('aria-expanded', panelCollapse.classList.contains('in') ? 'true' : 'false');
             accordionButton.setAttribute('aria-controls', panelTitle.getAttribute('href').substring(1));
             accordionButton.textContent = panelTitle.textContent.trim();
-            
+
             // Create accordion collapse
             const accordionCollapse = document.createElement('div');
             accordionCollapse.id = panelTitle.getAttribute('href').substring(1);
             accordionCollapse.className = panelCollapse.classList.contains('in') ? 'accordion-collapse collapse show' : 'accordion-collapse collapse';
             accordionCollapse.setAttribute('aria-labelledby', `heading_${panelTitle.getAttribute('href').substring(1)}`);
             accordionCollapse.setAttribute('data-bs-parent', `#${accordion.id}`);
-            
+
             // Create accordion body
             const accordionBody = document.createElement('div');
             accordionBody.className = 'accordion-body';
             accordionBody.innerHTML = panelBody.innerHTML;
-            
+
             // Assemble the accordion
             accordionHeader.appendChild(accordionButton);
             accordionCollapse.appendChild(accordionBody);
             accordionItem.appendChild(accordionHeader);
             accordionItem.appendChild(accordionCollapse);
             accordion.appendChild(accordionItem);
-            
+
             // Add HR if it exists after this panel
             const nextElement = panel.nextElementSibling;
             if (nextElement && nextElement.classList.contains('row')) {
                 accordion.appendChild(nextElement.cloneNode(true));
             }
         });
-        
+
         // Replace the old panel group with new accordion
         panelGroup.parentNode.replaceChild(accordion, panelGroup);
     });
@@ -851,7 +851,7 @@ function cleanupModalBackdrop() {
 // Test function to demonstrate ModalManager functionality
 function testModalManager() {
     console.log('Testing ModalManager functionality...');
-    
+
     // Test opening a modal
     const success = modalManager.openModal('exampleModal', {
         handleUI: true,
@@ -863,11 +863,11 @@ function testModalManager() {
             console.log('Modal closed via ModalManager');
         }
     });
-    
+
     if (!success) {
         alert('Failed to open modal. Check console for details.');
     }
-    
+
     // Test checking if modal is open
     setTimeout(() => {
         const isOpen = modalManager.isModalOpen('exampleModal');
@@ -878,12 +878,12 @@ function testModalManager() {
 // Test function to test modal closing
 function testCloseModal() {
     console.log('Testing modal close functionality...');
-    
+
     // Check if any modal is open
     if (modalManager.hasOpenModals()) {
         const openModals = modalManager.getOpenModals();
         console.log('Found open modals:', openModals);
-        
+
         // Close the first open modal
         if (openModals.length > 0) {
             const modalToClose = openModals[0];
@@ -899,34 +899,34 @@ function testCloseModal() {
 // Debug function to check modal status
 function debugModals() {
     console.log('=== Modal Debug Information ===');
-    
+
     // Check all modals
     const allModals = modalManager.getAllModals();
     console.log('All modals found:', allModals.length);
     allModals.forEach(modal => {
         console.log('Modal ID:', modal.id, 'Classes:', modal.className);
     });
-    
+
     // Check open modals
     const openModals = modalManager.getOpenModals();
     console.log('Open modals:', openModals.length);
     openModals.forEach(modal => {
         console.log('Open modal ID:', modal.id);
     });
-    
+
     // Check close buttons
     const closeButtons = document.querySelectorAll('[data-bs-dismiss="modal"]');
     console.log('Close buttons found:', closeButtons.length);
     closeButtons.forEach(btn => {
         console.log('Close button:', btn, 'Parent modal:', btn.closest('.modal')?.id);
     });
-    
+
     // Check Bootstrap instances
     allModals.forEach(modal => {
         const bsInstance = bootstrap.Modal.getInstance(modal);
         console.log('Modal', modal.id, 'Bootstrap instance:', bsInstance ? 'Exists' : 'None');
     });
-    
+
     console.log('=== End Debug Information ===');
 }
 
@@ -935,10 +935,10 @@ function testNewsletterPopup() {
     if (NEWSLETTER_CONFIG.debug) {
         console.log('Forcing newsletter popup...');
     }
-    
+
     // Clear session storage to allow popup
     sessionStorage.removeItem('newsLetterOpened');
-    
+
     // Trigger the popup
     modalManager.openModal('product_view', {
         handleUI: true,
@@ -970,13 +970,13 @@ function initializeNewsletterPopup() {
         console.log("Checking newsletter popup...");
         console.log("Session storage value:", sessionStorage.getItem('newsLetterOpened'));
     }
-    
-    if(sessionStorage.getItem('newsLetterOpened') !== 'true'){
+
+    if (sessionStorage.getItem('newsLetterOpened') !== 'true') {
         if (NEWSLETTER_CONFIG.debug) {
             console.log("Newsletter popup should open");
         }
-        sessionStorage.setItem('newsLetterOpened','true');
-        
+        sessionStorage.setItem('newsLetterOpened', 'true');
+
         // Set up newsletter form handler for modal
         const modalNewsLetterForm = document.getElementById("modal-news-contact-form");
         if (modalNewsLetterForm) {
@@ -985,42 +985,42 @@ function initializeNewsletterPopup() {
                 const email = document.getElementById("modal-news-email").value;
                 const name = document.getElementById("modal-news-name").value;
                 const o = { Name: name, EmailID: email };
-              
+
                 if (!(email && name && "" != email && "" != name)) {
                     logevent("subscribe_failure", "index.php");
                     alert("All fields must be filled out");
                     return false;
                 }
-                if(!validateEmail(email)){
+                if (!validateEmail(email)) {
                     logevent("subscribe_failure", "index.php");
                     alert("Please enter valid email");
                     return false;
                 }
-                
-                fetch(hwApiUrl("subscribe_newsletter"), { 
-                    method: "POST", 
-                    headers: { "Content-Type": "application/json" }, 
-                    body: JSON.stringify(o) 
+
+                fetch(hwApiUrl("subscribe_newsletter"), {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(o)
                 })
-                .then((e) => e.json())
-                .then((e) => {
-                    document.getElementById("modal-news-email").value = "";
-                    document.getElementById("modal-news-name").value = "";
-                    alert(e?.Message ? e.Message : e);
-                    logevent("subscribe_success", "index.php");
-                    modalManager.closeModal('product_view');
-                })
-                .catch((e) => {
-                    let content = e['error'] ? e['error']['Message'] : 'An error occurred';
-                    console.error("Error:", e);
-                    logevent("subscribe_failure", "index.php");
-                    alert(content);
-                });
+                    .then((e) => e.json())
+                    .then((e) => {
+                        document.getElementById("modal-news-email").value = "";
+                        document.getElementById("modal-news-name").value = "";
+                        alert(e?.Message ? e.Message : e);
+                        logevent("subscribe_success", "index.php");
+                        modalManager.closeModal('product_view');
+                    })
+                    .catch((e) => {
+                        let content = e['error'] ? e['error']['Message'] : 'An error occurred';
+                        console.error("Error:", e);
+                        logevent("subscribe_failure", "index.php");
+                        alert(content);
+                    });
             });
         }
-        
+
         // Add event listener for close button - handle multiple close buttons
-      const closeBtns = document.querySelectorAll('[id^="closebtn"]');
+        const closeBtns = document.querySelectorAll('[id^="closebtn"]');
 
         closeBtns.forEach(closeBtn => {
             closeBtn.addEventListener('click', function (e) {
@@ -1034,7 +1034,7 @@ function initializeNewsletterPopup() {
                 }
             });
         });
-        
+
         // Trigger the popup using ModalManager
         if (NEWSLETTER_CONFIG.debug) {
             console.log("Triggering newsletter popup...");
@@ -1052,7 +1052,7 @@ function initializeNewsletterPopup() {
                     console.log("Newsletter modal hidden");
                 }
             }
-        }); 
+        });
     } else {
         if (NEWSLETTER_CONFIG.debug) {
             console.log("Newsletter popup already shown");
@@ -1063,7 +1063,7 @@ function initializeNewsletterPopup() {
 // Function to check if preloader is finished and then trigger newsletter popup
 function checkPreloaderAndShowNewsletter() {
     const preloader = document.querySelector("#preloader");
-    
+
     if (preloader && preloader.parentNode) {
         // Preloader still exists, wait for it to be removed
         if (NEWSLETTER_CONFIG.debug) {
@@ -1082,15 +1082,15 @@ function checkPreloaderAndShowNewsletter() {
 // Enhanced preloader detection with multiple approaches
 function setupNewsletterTiming() {
     let newsletterTriggered = false;
-    
+
     // Method 1: Use MutationObserver to watch for preloader removal
     function setupPreloaderObserver() {
         const preloader = document.querySelector("#preloader");
         if (preloader) {
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
                     if (mutation.type === 'childList') {
-                        mutation.removedNodes.forEach(function(node) {
+                        mutation.removedNodes.forEach(function (node) {
                             if (node.id === 'preloader' || (node.nodeType === 1 && node.querySelector('#preloader'))) {
                                 if (NEWSLETTER_CONFIG.debug) {
                                     console.log("Preloader removed from DOM detected");
@@ -1105,16 +1105,16 @@ function setupNewsletterTiming() {
                     }
                 });
             });
-            
+
             observer.observe(document.body, {
                 childList: true,
                 subtree: true
             });
         }
     }
-    
+
     // Method 2: Listen for window load event (when preloader is removed)
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         if (!newsletterTriggered) {
             if (NEWSLETTER_CONFIG.debug) {
                 console.log("Window loaded, preloader should be finished");
@@ -1127,14 +1127,14 @@ function setupNewsletterTiming() {
             }, NEWSLETTER_CONFIG.delayAfterPreloader);
         }
     });
-    
+
     // Method 3: Fallback polling approach
     setTimeout(() => {
         if (!newsletterTriggered) {
             checkPreloaderAndShowNewsletter();
         }
     }, 3000); // Start checking after 3 seconds as fallback
-    
+
     // Initialize the observer
     setupPreloaderObserver();
 }
@@ -1198,8 +1198,8 @@ const loginClick = document.getElementById('loginClick');
 if (loginClick) {
     loginClick.addEventListener('click', function (e) {
         if (e.target.closest("a")) e.preventDefault();
-        localStorage.setItem('login',true);
-        localStorage.setItem('pricing',false);
+        localStorage.setItem('login', true);
+        localStorage.setItem('pricing', false);
         logevent("click_login", "index.php");
         afterLogNavigate(function () {
             window.location.href = "../pages/splash_options.php";
@@ -1209,12 +1209,12 @@ if (loginClick) {
 
 
 
-const happiermeTryForFree =  document.getElementById('happiermeTryForFree');
+const happiermeTryForFree = document.getElementById('happiermeTryForFree');
 if (happiermeTryForFree) {
     happiermeTryForFree.addEventListener('click', function (e) {
         e.preventDefault();
-        localStorage.setItem('login',true);
-        localStorage.setItem('pricing',false);
+        localStorage.setItem('login', true);
+        localStorage.setItem('pricing', false);
         logevent("click_try_happierme_for_free", "index.php");
         afterLogNavigate(function () {
             window.location.href = happiermeTryForFree.getAttribute("href") || "../pages/splash_options.php";
@@ -1228,8 +1228,8 @@ if (tryhappiermeClick[0]) {
         var el0 = tryhappiermeClick[0];
         var a = el0.tagName === "A" ? el0 : el0.closest("a") || el0.querySelector("a");
         if (a) e.preventDefault();
-        localStorage.setItem('login',true);
-        localStorage.setItem('pricing',false);
+        localStorage.setItem('login', true);
+        localStorage.setItem('pricing', false);
         var href = (a && a.getAttribute("href")) || "../pages/splash_options.php";
         afterLogNavigate(function () {
             window.location.href = href;
@@ -1242,8 +1242,8 @@ if (pricingSelectBtn) {
     pricingSelectBtn.addEventListener('click', function (e) {
         var innerA = e.target.closest("a");
         if (innerA) e.preventDefault();
-        localStorage.setItem('pricing',true);
-        localStorage.setItem('login',false);
+        localStorage.setItem('pricing', true);
+        localStorage.setItem('login', false);
         logevent("click_start_free_trial", "index.php");
         var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
         afterLogNavigate(function () {
@@ -1257,8 +1257,8 @@ if (PricingSelectBtn1) {
     PricingSelectBtn1.addEventListener('click', function (e) {
         var innerA = e.target.closest("a");
         if (innerA) e.preventDefault();
-        localStorage.setItem('pricing',true);
-        localStorage.setItem('login',false);
+        localStorage.setItem('pricing', true);
+        localStorage.setItem('login', false);
         logevent("click_start_free_trial", "index.php");
         var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
         afterLogNavigate(function () {
@@ -1273,9 +1273,9 @@ const OllyChatBtn = document.getElementById('OllyChatBtn');
 if (OllyChatBtn) {
     OllyChatBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        localStorage.setItem('chat-bot',true);
-         localStorage.setItem('pricing',false);
-        localStorage.setItem('login',false);
+        localStorage.setItem('chat-bot', true);
+        localStorage.setItem('pricing', false);
+        localStorage.setItem('login', false);
         logevent("click_olly_chat", "index.php");
         afterLogNavigate(function () {
             window.location.href = OllyChatBtn.getAttribute("href") || "https://happierme.app/adults/chat-bot";
@@ -1288,8 +1288,8 @@ if (PricingSelectBtnHomePage) {
     PricingSelectBtnHomePage.addEventListener('click', function (e) {
         var innerA = e.target.closest("a");
         if (innerA) e.preventDefault();
-        localStorage.setItem('pricing',true);
-        localStorage.setItem('login',false);
+        localStorage.setItem('pricing', true);
+        localStorage.setItem('login', false);
         logevent("click_start_free_trial", "home.php");
         var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
         afterLogNavigate(function () {
@@ -1301,8 +1301,8 @@ if (PricingSelectBtnHomePage) {
 const discoverSectionPricingClick = document.getElementById('discoverSectionPricingClick');
 if (discoverSectionPricingClick) {
     discoverSectionPricingClick.addEventListener('click', function () {
-        localStorage.setItem('pricing',true);
-        localStorage.setItem('login',false);
+        localStorage.setItem('pricing', true);
+        localStorage.setItem('login', false);
         window.location.href = "../pages/splash_options.php";
     });
 }
@@ -1311,35 +1311,35 @@ const teenagersLogin = document.getElementById('teenagersLogin');
 if (teenagersLogin) {
     teenagersLogin.addEventListener('click', function () {
         // window.location.href = url+"/teenagers/onboarding/login";
-         window.location.href = url+"/teenagers/intro-carousel";
+        window.location.href = url + "/teenagers/intro-carousel";
     });
 }
 
 const teenagersPricing = document.getElementById('teenagersPricing');
 if (teenagersPricing) {
     teenagersPricing.addEventListener('click', function () {
-        localStorage.setItem('pricing',true);
-        window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+        localStorage.setItem('pricing', true);
+        window.location.href = url + "/teenagers/onboarding/login";
     });
 }
 
 const teenagersClick = document.getElementById('teenagersClick');
 if (teenagersClick) {
     teenagersClick.addEventListener('click', function () {
-        if(localStorage.getItem('pricing')=='true'){
-           window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+        if (localStorage.getItem('pricing') == 'true') {
+            window.location.href = url + "/teenagers/onboarding/login";
         }
-         else if(localStorage.getItem('chat-bot')=='true'){
-           window.location.href = url+"/teenagers/chat-bot";
+        else if (localStorage.getItem('chat-bot') == 'true') {
+            window.location.href = url + "/teenagers/chat-bot";
         }
-        else if(localStorage.getItem('login')=='true'){
-        //    window.location.href = url+"/teenagers/onboarding/login";
-              window.location.href = url+"/teenagers/intro-carousel";           
-        
+        else if (localStorage.getItem('login') == 'true') {
+            //    window.location.href = url+"/teenagers/onboarding/login";
+            window.location.href = url + "/teenagers/intro-carousel";
+
         }
         else {
             // window.location.href = url + "/teenagers/onboarding/login";
-                        window.location.href = url+"/teenagers/intro-carousel";
+            window.location.href = url + "/teenagers/intro-carousel";
 
         }
     });
@@ -1349,29 +1349,29 @@ const teenagerCoverClick = document.getElementById('teenagerCoverClick');
 if (teenagerCoverClick) {
     teenagerCoverClick.addEventListener('click', function () {
         //    window.location.href = url+"/teenagers/onboarding/login/";
-        window.location.href = url+"/teenagers/intro-carousel";
+        window.location.href = url + "/teenagers/intro-carousel";
     });
 }
 
 const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
     adultsClick.addEventListener('click', function () {
-        if(localStorage.getItem('pricing')=='true'){
-           window.location.href = url+"/adults/subscription/start-your-free-trial";
+        if (localStorage.getItem('pricing') == 'true') {
+            window.location.href = url + "/adults/onboarding/login";
         }
-        else if(localStorage.getItem('chat-bot')=='true'){
-           window.location.href = url+"/adults/chat-bot";
+        else if (localStorage.getItem('chat-bot') == 'true') {
+            window.location.href = url + "/adults/chat-bot";
         }
-        else if(localStorage.getItem('login')=='true'){
-            localStorage.setItem('login',false);
-            localStorage.setItem('pricing',false);
-        //    window.location.href = url+"/adults/onboarding/login";
-            window.location.href = url+"/adults/intro/intro-carousel";
+        else if (localStorage.getItem('login') == 'true') {
+            localStorage.setItem('login', false);
+            localStorage.setItem('pricing', false);
+            //    window.location.href = url+"/adults/onboarding/login";
+            window.location.href = url + "/adults/intro/intro-carousel";
         } else {
-             localStorage.setItem('login',false);
-             localStorage.setItem('pricing',false);
+            localStorage.setItem('login', false);
+            localStorage.setItem('pricing', false);
             // window.location.href = url + "/adults/onboarding/login";
-              window.location.href = url+"/adults/intro/intro-carousel";
+            window.location.href = url + "/adults/intro/intro-carousel";
 
         }
     });
@@ -1434,22 +1434,22 @@ requestDemoForWork &&
         }
         attachSubnavClick("work", function (e, direction) {
             localStorage.setItem("activeTab", "org-work"),
-            logevent("click_workplace", "index.php", { source: "header_nav", direction: direction }),
-            setActiveNav("work");
+                logevent("click_workplace", "index.php", { source: "header_nav", direction: direction }),
+                setActiveNav("work");
             setActiveNav("organisation");
             (window.location.href = "../pages/work.php");
         });
         attachSubnavClick("education", function (e, direction) {
-            localStorage.setItem("activeTab", "org-work"), 
-            setActiveNav("education");
+            localStorage.setItem("activeTab", "org-work"),
+                setActiveNav("education");
             setActiveNav("organisation");
             logevent("click_education", "index.php", { source: "header_nav", direction: direction }),
-            (window.location.href = "../pages/education.php");
+                (window.location.href = "../pages/education.php");
         });
         attachSubnavClick("healthcare", function (e, direction) {
             localStorage.setItem("activeTab", "org-healthcare"),
-            logevent("click_healthcare", "index.php", { source: "header_nav", direction: direction }),
-            setActiveNav("organisation");
+                logevent("click_healthcare", "index.php", { source: "header_nav", direction: direction }),
+                setActiveNav("organisation");
             (window.location.href = "../pages/healthcare.php");
         });
         var c = document.getElementById("pricing");
@@ -1458,10 +1458,10 @@ requestDemoForWork &&
                 "click",
                 function (e) {
                     e.preventDefault();
-                    localStorage.setItem("activeTab", "pricing"), 
-                    setActiveNav("pricing");
+                    localStorage.setItem("activeTab", "pricing"),
+                        setActiveNav("pricing");
                     logevent("click_pricing", "index.php#div_subscription");
-                    
+
                     // Check if we're already on index.php
                     if (window.location.pathname.includes("index.php") && !window.location.pathname.includes("blogs")) {
                         // Update URL without reload  
@@ -1482,11 +1482,11 @@ requestDemoForWork &&
             );
         attachSubnavClick("teenagersHeaderClick", function (e, direction) {
             localStorage.setItem("programType", "11"),
-            logevent("click_teenagers", "index.php", { source: "header_nav", direction: direction }),
-            setActiveNav("teenagersHeaderClick");
+                logevent("click_teenagers", "index.php", { source: "header_nav", direction: direction }),
+                setActiveNav("teenagersHeaderClick");
             (window.location.href = "../pages/teenagers.php");
         });
-        
+
         // Handle partnership click
         var p = document.getElementById("partnership");
         p &&
@@ -1495,19 +1495,19 @@ requestDemoForWork &&
                 logevent("click_partnership", "index.php");
                 (window.location.href = "../pages/partnership.php");
             });
-            
+
         var s = window.location.href;
         // Set active state based on current URL
         if (s.includes("blogs")) {
             setActiveNav("blogs");
         } else if (s.includes("work.php")) {
-               setActiveNav("organisation");
+            setActiveNav("organisation");
             setActiveNav("work");
         } else if (s.includes("healthcare.php")) {
-               setActiveNav("organisation");
+            setActiveNav("organisation");
             setActiveNav("healthcare");
         } else if (s.includes("education.php")) {
-               setActiveNav("organisation");
+            setActiveNav("organisation");
             setActiveNav("education");
         } else if (s.includes("index.php#div_subscription") || window.location.hash === "#div_subscription") {
             setActiveNav("pricing");
@@ -1516,8 +1516,8 @@ requestDemoForWork &&
             const header = document.querySelector('.header');
             const headerHeight = header ? header.offsetHeight : 120;
             // This is likely a first-time page load, so use longer timeout
-            const isFirstLoad = !document.getElementById("div_subscription") || 
-                               document.getElementById("div_subscription").offsetHeight === 0;
+            const isFirstLoad = !document.getElementById("div_subscription") ||
+                document.getElementById("div_subscription").offsetHeight === 0;
             scrollToElement("div_subscription", headerHeight + 20, isFirstLoad);
         } else if (s.includes("about")) {
             setActiveNav("AboutUs");
@@ -1531,12 +1531,12 @@ requestDemoForWork &&
 var adults = document.getElementById("adults");
 adults &&
     adults.addEventListener("click", function () {
-        window.location.href = url+"/adults/intro/intro-carousel";
+        window.location.href = url + "/adults/intro/intro-carousel";
     });
 var teenagers = document.getElementById("teenagers");
 teenagers &&
     teenagers.addEventListener("click", function () {
-        window.location.href = url+"/teenagers/intro-carousel";
+        window.location.href = url + "/teenagers/intro-carousel";
     });
 
 var viewAllSucessStories = document.getElementById("viewallsuccessstories");
@@ -1547,17 +1547,17 @@ viewAllSucessStories && viewAllSucessStories.addEventListener("click", function 
     afterLogNavigate(function () {
         window.location.href = dest;
     });
-}) ;   
+});
 
 const requestDemo = document.getElementById("Request-Demo");
 function closeElement() {
     localStorage.setItem("isDownloadHide", !0);
     var e = document.getElementById("closeableElement");
-    if(e){
+    if (e) {
         (e.style.display = "none"), e.classList.remove("display_df_none");
     }
     var t = document.getElementById("scrollTopArrow");
-    if(t){
+    if (t) {
         "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
     }
 }
@@ -1574,7 +1574,7 @@ requestDemo &&
             a = document.getElementById("country").value;
         var screen = page.includes("work.php") ? "work.php" : page.includes("healthcare.php") ? "healthcare.php" : "education.php";
         if (!(t && n && o && a && "" != n && "" != t && "" != o && "" != a)) return alert("All fields must be filled out"), !1;
-        if(!validateEmail(t)){
+        if (!validateEmail(t)) {
             logevent("demo_form_failure", screen, { reason: "invalid_email" });
             return alert("Please enter valid email"), !1;
         }
@@ -1752,46 +1752,46 @@ nfsnContactForm &&
                 },
                 !1
             );
-        ["feelbetterNow", "feelbetterNow-tab", "pathWay", "pathWay-tab", "journal", "journal-tab", "podcast", "podcast-tab", "community", "community-tab","partnership",
-             "HapinessScore", "HapinessScore-tab","adultsWeb","teensWeb","freeTrialMenu","freeTrialNow","openInApp1_1","openInApp1_2","openInApp2_1","openInApp2_2","openInApp3_1","openInApp3_2",
-             "continueWeb","exploreAppWeb","ourStory","testimonialFooter","contactUsFooter",
-             "partnershipfooter" ,"view-all-coaches","whywecreatedvideo","findoutMore","youtubeIntro","appleStore","googlePlayStore"
-            ].forEach((e) => {
+        ["feelbetterNow", "feelbetterNow-tab", "pathWay", "pathWay-tab", "journal", "journal-tab", "podcast", "podcast-tab", "community", "community-tab", "partnership",
+            "HapinessScore", "HapinessScore-tab", "adultsWeb", "teensWeb", "freeTrialMenu", "freeTrialNow", "openInApp1_1", "openInApp1_2", "openInApp2_1", "openInApp2_2", "openInApp3_1", "openInApp3_2",
+            "continueWeb", "exploreAppWeb", "ourStory", "testimonialFooter", "contactUsFooter",
+            "partnershipfooter", "view-all-coaches", "whywecreatedvideo", "findoutMore", "youtubeIntro", "appleStore", "googlePlayStore"
+        ].forEach((e) => {
             const t = document.getElementById(e);
             t &&
                 t.addEventListener("click", function (evt) {
-                         if (["findoutMore","view-all-coaches","partnership","partnershipfooter","ourStory","testimonialFooter","contactUsFooter","adultsWeb","teensWeb","appleStore","googlePlayStore","exploreAppWeb"].indexOf(e) >= 0 ||
-                             e.startsWith("openInApp")) {
-                             evt.preventDefault();
-                         }
-                         "feelbetterNow" == e || "feelbetterNow-tab" == e ? logevent("click_feel_better_now", "index.php")
+                    if (["findoutMore", "view-all-coaches", "partnership", "partnershipfooter", "ourStory", "testimonialFooter", "contactUsFooter", "adultsWeb", "teensWeb", "appleStore", "googlePlayStore", "exploreAppWeb"].indexOf(e) >= 0 ||
+                        e.startsWith("openInApp")) {
+                        evt.preventDefault();
+                    }
+                    "feelbetterNow" == e || "feelbetterNow-tab" == e ? logevent("click_feel_better_now", "index.php")
                         : "pathWay" == e || "pathWay-tab" == e ? logevent("click_guided_programs", "index.php")
-                        : "journal" == e || "journal-tab" == e ? logevent("click_journal", "index.php")
-                        : "HapinessScore" == e || "HapinessScore-tab" == e ? logevent("click_wellness_score", "index.php")
-                        : "podcast" == e || "podcast-tab" == e ? logevent("click_podcast", "index.php")
-                        : "appleStore"== e ? (logevent("click_apple_store_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567"}))
-                        : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US"}))
-                        : "community" == e || "community-tab" == e ? logevent("click_community", "index.php")
-                        : "youtubeIntro" == e ? logevent("click_youtube_redirect", "index.php")
-                        :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/intro/intro-carousel"}))
-                        : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/teenagers/intro-carousel"}))
-                        : "findoutMore" == e ? (logevent("click_find_out_more", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/teenagers.php"}))
-                        : "partnership" == e ? (logevent("click_partnership", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
-                        : "whywecreatedvideo" == e ? (logevent("whywecreatedvideo", "index.php"))
-                        :"partnershipfooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "partnership" }) ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
-                         :"view-all-coaches" == e ? (logevent("click_footer_link", "index.php", { link_name: "view_all_coaches" }) ,afterLogNavigate(function(){window.location.href="https://happierme.app/adults/coach"}))
-                        : "openInApp1_1" == e || "openInApp1_2" == e ? (logevent("click_open_in_app_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/overcome-stress-anxiety"}))
-                        : "openInApp2_1" == e || "openInApp2_2" == e ? (logevent("click_open_in_app_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"}))
-                        : "openInApp3_1" == e  || "openInApp3_2" == e ? (logevent("click_open_in_app_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"}))
-                        : "exploreAppWeb" == e ? (logevent("click_explore_on_app_web", "index.php") , afterLogNavigate(function(){ window.location.href="https://happierme.app/adults/feel-better-now"}))
-                        : "ourStory" == e ? (logevent("click_footer_link", "index.php", { link_name: "our_story" }) ,   afterLogNavigate(function(){window.location.href = "../pages/about_us.php"}))
-                        : "testimonialFooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "success_stories" }) , afterLogNavigate(function(){window.location.href = "https://happierme.app/adults/testimonials"}))
-                        : "contactUsFooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "contact_us" }) , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/contact-us"})) : ''
-                        
+                            : "journal" == e || "journal-tab" == e ? logevent("click_journal", "index.php")
+                                : "HapinessScore" == e || "HapinessScore-tab" == e ? logevent("click_wellness_score", "index.php")
+                                    : "podcast" == e || "podcast-tab" == e ? logevent("click_podcast", "index.php")
+                                        : "appleStore" == e ? (logevent("click_apple_store_web", "index.php"), afterLogNavigate(function () { window.location.href = "https://apps.apple.com/in/app/happierme-master-your-mind/id1588535567" }))
+                                            : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php"), afterLogNavigate(function () { window.location.href = "https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US" }))
+                                                : "community" == e || "community-tab" == e ? logevent("click_community", "index.php")
+                                                    : "youtubeIntro" == e ? logevent("click_youtube_redirect", "index.php")
+                                                        : "adultsWeb" == e ? (logevent("click_happierme_for_adults_web", "index.php"), afterLogNavigate(function () { window.location.href = "https://happierme.app/adults/intro/intro-carousel" }))
+                                                            : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php"), afterLogNavigate(function () { window.location.href = "https://happierme.app/teenagers/intro-carousel" }))
+                                                                : "findoutMore" == e ? (logevent("click_find_out_more", "index.php"), afterLogNavigate(function () { window.location.href = "../pages/teenagers.php" }))
+                                                                    : "partnership" == e ? (logevent("click_partnership", "index.php"), afterLogNavigate(function () { window.location.href = "../pages/partnership.php" }))
+                                                                        : "whywecreatedvideo" == e ? (logevent("whywecreatedvideo", "index.php"))
+                                                                            : "partnershipfooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "partnership" }), afterLogNavigate(function () { window.location.href = "../pages/partnership.php" }))
+                                                                                : "view-all-coaches" == e ? (logevent("click_footer_link", "index.php", { link_name: "view_all_coaches" }), afterLogNavigate(function () { window.location.href = "https://happierme.app/adults/coach" }))
+                                                                                    : "openInApp1_1" == e || "openInApp1_2" == e ? (logevent("click_open_in_app_web", "index.php"), afterLogNavigate(function () { window.location.href = "https://happierme.app/adults/curated/overcome-stress-anxiety" }))
+                                                                                        : "openInApp2_1" == e || "openInApp2_2" == e ? (logevent("click_open_in_app_web", "index.php"), afterLogNavigate(function () { window.location.href = "https://happierme.app/adults/curated/have-fulfilling-relationships" }))
+                                                                                            : "openInApp3_1" == e || "openInApp3_2" == e ? (logevent("click_open_in_app_web", "index.php"), afterLogNavigate(function () { window.location.href = "https://happierme.app/adults/curated/wisdom-for-workplace" }))
+                                                                                                : "exploreAppWeb" == e ? (logevent("click_explore_on_app_web", "index.php"), afterLogNavigate(function () { window.location.href = "https://happierme.app/adults/feel-better-now" }))
+                                                                                                    : "ourStory" == e ? (logevent("click_footer_link", "index.php", { link_name: "our_story" }), afterLogNavigate(function () { window.location.href = "../pages/about_us.php" }))
+                                                                                                        : "testimonialFooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "success_stories" }), afterLogNavigate(function () { window.location.href = "https://happierme.app/adults/testimonials" }))
+                                                                                                            : "contactUsFooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "contact_us" }), afterLogNavigate(function () { window.location.href = "https://happierme.app/adults/contact-us" })) : ''
+
                 });
         });
     }, 200);
-    scheduleIdleWork(fetchData);
+scheduleIdleWork(fetchData);
 // fetchWebsiteTitle();
 var countryCode = "",
     pricingModel = "",
@@ -1826,9 +1826,9 @@ async function fetchData() {
     }
 }
 var DEFAULT_WEBSITE_TITLE =
-        'Think better.<br><span class="hero-title-accent">Live better.</span>';
+    'Think better.<br><span class="hero-title-accent">Live better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        'Understand yourself. Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.';
+    'Understand yourself. Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.';
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");
@@ -1848,7 +1848,7 @@ async function fetchWebsiteTitle() {
                 if (subtitleEl && row.subtitle) subtitleEl.innerHTML = row.subtitle;
             }
         }
-    } catch (err) {}
+    } catch (err) { }
 }
 function formatToDecimal(e) {
     return Number.isInteger(e) ? `${e}.00` : e.toFixed(2);
@@ -1860,26 +1860,26 @@ function getIsoCode() {
 // Newsletter form handler for page section (events 1–5 apply to modal popup only; no duplicate GA here)
 const pageNewsLetterForm = document.getElementById("page-news-contact-form");
 pageNewsLetterForm && pageNewsLetterForm.addEventListener("click", () => {
-          const  email = document.getElementById("page-news-email").value;
-          const  name = document.getElementById("page-news-name").value;
-            const o = { Name: name, EmailID: email };
-          
-            if (!(email && name && "" != email && "" != name)) return alert("All fields must be filled out"), !1;
-            if(!validateEmail(email)){
-                return alert("Please enter valid email"), !1;
-            }
-            fetch(hwApiUrl("subscribe_newsletter"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
-                .then((e) => e.json())
-                .then((e) => {
-                    document.getElementById("page-news-email").value = "";
-                    document.getElementById("page-news-name").value = "";
-                    alert(e?.Message ? e.Message : e);
-                })
-                .catch((e) => {
-                    let content = e['error'] ? e['error']['Message'] : 'An error occurred';
-                    console.error("Error:", e), alert(content);
-                });
-    })
+    const email = document.getElementById("page-news-email").value;
+    const name = document.getElementById("page-news-name").value;
+    const o = { Name: name, EmailID: email };
+
+    if (!(email && name && "" != email && "" != name)) return alert("All fields must be filled out"), !1;
+    if (!validateEmail(email)) {
+        return alert("Please enter valid email"), !1;
+    }
+    fetch(hwApiUrl("subscribe_newsletter"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(o) })
+        .then((e) => e.json())
+        .then((e) => {
+            document.getElementById("page-news-email").value = "";
+            document.getElementById("page-news-name").value = "";
+            alert(e?.Message ? e.Message : e);
+        })
+        .catch((e) => {
+            let content = e['error'] ? e['error']['Message'] : 'An error occurred';
+            console.error("Error:", e), alert(content);
+        });
+})
 
 
 function validateEmail(email) {
@@ -2001,7 +2001,7 @@ function initIndexPageGa() {
             var start = function () {
                 ollyVideo.currentTime = 0;
                 var p = ollyVideo.play();
-                if (p && typeof p.catch === "function") p.catch(function () {});
+                if (p && typeof p.catch === "function") p.catch(function () { });
             };
             ollyVideo.querySelectorAll("source[data-src]").forEach(function (source) {
                 source.src = source.getAttribute("data-src");
@@ -2104,24 +2104,24 @@ document.addEventListener("DOMContentLoaded", () => {
     initIndexPageGa();
     // Convert existing accordion to Bootstrap 5.3
     convertAccordionToBootstrap53();
-    
+
     // Initialize FAQ functionality
     initializeFAQTabs();
     initializeFAQAccordion();
 
     const arr = ["mental-wellbeing"];
     arr.forEach(element => {
-    const modal = document.getElementById(element);
-    if (modal) {
-          modal.addEventListener("click", () => {
+        const modal = document.getElementById(element);
+        if (modal) {
+            modal.addEventListener("click", () => {
                 modalManager.openModal(modal);
-        });
-    }
+            });
+        }
     });
-    
+
     // Initialize modal manager for the page
     modalManager.initializeModalTriggers('[data-bs-toggle="modal"]');
-    
+
     // Add modal hidden event listener for backdrop cleanup
     const modal = document.getElementById('product_view');
     if (modal) {
@@ -2129,10 +2129,10 @@ document.addEventListener("DOMContentLoaded", () => {
             modalManager.cleanupModalBackdrop();
         });
     }
-    
+
     // Initialize tool tabs separately
     initializeToolTabs();
-    
+
     // Handle hash navigation on page load
     if (window.location.hash === "#div_subscription") {
         // This is a first-time page load, use longer timeout
@@ -2140,19 +2140,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const headerHeight = header ? header.offsetHeight : 120;
         scrollToElement("div_subscription", headerHeight + 20, true);
     }
-    
+
     // Handle hash changes (e.g., when clicking pricing link on same page)
-    window.addEventListener('hashchange', function() {
+    window.addEventListener('hashchange', function () {
         if (window.location.hash === "#div_subscription") {
             // Check if this is a first load or just hash change
-            const isFirstLoad = !document.getElementById("div_subscription") || 
-                               document.getElementById("div_subscription").offsetHeight === 0;
+            const isFirstLoad = !document.getElementById("div_subscription") ||
+                document.getElementById("div_subscription").offsetHeight === 0;
             const header = document.querySelector('.header');
             const headerHeight = header ? header.offsetHeight : 120;
             scrollToElement("div_subscription", headerHeight + 20, isFirstLoad);
         }
     });
-    
+
     // const e = document.getElementById("AnnualType");
     // e?.addEventListener("click", () => {
     //     window.location.href = url+"/adults/subscription/start-your-free-trial";
@@ -2163,36 +2163,36 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 });
 
-$(document).ready(function(){
-  
-    $('.popup-btn').on('click', function(){
-      $('.video-popup').fadeIn('slow');
-      return false;
-    });
-    
-    $('.popup-bg').on('click', function(){
-      $('.video-popup').slideUp('slow');
-      return false;
-    });
-    
-     $('.close-btn').on('click', function(){
-       $('.video-popup').fadeOut('slow');
+$(document).ready(function () {
+
+    $('.popup-btn').on('click', function () {
+        $('.video-popup').fadeIn('slow');
         return false;
-     });
-    
+    });
+
+    $('.popup-bg').on('click', function () {
+        $('.video-popup').slideUp('slow');
+        return false;
+    });
+
+    $('.close-btn').on('click', function () {
+        $('.video-popup').fadeOut('slow');
+        return false;
+    });
+
     // Convert existing accordion to Bootstrap 5.3
     convertAccordionToBootstrap53();
-    
+
     // Initialize FAQ functionality
     initializeFAQTabs();
     initializeFAQAccordion();
-    
+
     // Initialize tool tabs separately to avoid conflicts
     initializeToolTabs();
-    
+
     // Initialize modal manager for the page
     modalManager.initializeModalTriggers('[data-bs-toggle="modal"]');
-    
+
     // Add modal hidden event listener for backdrop cleanup
     const modal = document.getElementById('product_view');
     if (modal) {
@@ -2200,15 +2200,15 @@ $(document).ready(function(){
             modalManager.cleanupModalBackdrop();
         });
     }
-    
+
     // Initialize Bootstrap tabs with conflict resolution
     function initializeTabs() {
         console.log('Initializing tabs...');
-        
+
         // Remove any existing event handlers to prevent conflicts
         $('a[data-toggle="tab"]').off('click');
         $('.nav-tabs a').off('click');
-        
+
         // Initialize Bootstrap 5.3 tabs for FAQ tabs only
         $('.tab_faqs a[data-bs-toggle="tab"]').on('click', function (e) {
             e.preventDefault();
@@ -2217,7 +2217,7 @@ $(document).ready(function(){
             const tab = new bootstrap.Tab(this);
             tab.show();
         });
-        
+
         // Ensure FAQ tabs work on page load
         $('.tab_faqs a').on('click', function (e) {
             e.preventDefault();
@@ -2226,53 +2226,53 @@ $(document).ready(function(){
             const tab = new bootstrap.Tab(this);
             tab.show();
         });
-        
+
         // Initialize FAQ tabs with proper state management
-        $('.tab_faqs a[data-toggle="tab"], .tab_faqs a[data-bs-toggle="tab"]').each(function() {
-            $(this).on('click', function(e) {
+        $('.tab_faqs a[data-toggle="tab"], .tab_faqs a[data-bs-toggle="tab"]').each(function () {
+            $(this).on('click', function (e) {
                 e.preventDefault();
                 var target = $(this).attr('href');
                 console.log('FAQ Tab clicked:', target);
-                
+
                 // Update active states for FAQ tabs only
                 $('.tab_faqs li').removeClass('active');
                 $(this).parent().addClass('active');
-                
+
                 // Show the target FAQ tab content
                 $('.tc_faqs .tab-pane').removeClass('show active');
                 $(target).addClass('show active');
-                
+
                 // Trigger Bootstrap 5.3 tab show
                 const tab = new bootstrap.Tab(this);
                 tab.show();
-                
+
                 console.log('FAQ Tab activated:', target);
             });
         });
-        
+
         console.log('FAQ Tabs initialized successfully');
     }
-    
+
     // Initialize tabs immediately
     initializeTabs();
-    
+
     // Re-initialize tabs after a short delay to handle any loading issues
-    setTimeout(function() {
+    setTimeout(function () {
         initializeTabs();
     }, 500);
-    
+
     // Add click event listeners for debugging
-    $('.tab_faqs a').on('click', function() {
+    $('.tab_faqs a').on('click', function () {
         console.log('FAQ Tab clicked via direct listener:', $(this).attr('href'));
     });
-    
+
     // Newsletter popup test button
     const testNewsPopupBtn = document.getElementById('testNewsPopup');
     if (testNewsPopupBtn) {
-        testNewsPopupBtn.addEventListener('click', function() {
+        testNewsPopupBtn.addEventListener('click', function () {
             console.log('Manual newsletter popup trigger clicked');
             sessionStorage.removeItem('newsLetterOpened'); // Reset for testing
-            
+
             const newsPopupBtn = document.getElementById('newsPopup');
             if (newsPopupBtn) {
                 newsPopupBtn.click();
@@ -2287,9 +2287,9 @@ $(document).ready(function(){
             }
         });
     }
-    
+
     // Ensure Bootstrap 5.3 modal functionality works
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (e.target.matches('[data-bs-toggle="modal"]')) {
             const target = e.target.getAttribute('data-bs-target');
             if (target) {
@@ -2301,5 +2301,5 @@ $(document).ready(function(){
             }
         }
     });
-    
+
 });

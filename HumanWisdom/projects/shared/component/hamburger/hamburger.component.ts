@@ -152,9 +152,9 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     if (currentUrl.includes('/today') || currentUrl.includes('repeat-user/my-daily-practice')) {
       targetTab = 'today';
     } else if (currentUrl.includes('/explore')) {
-      targetTab = 'explore';
+      targetTab = 'today';
     } else if (currentUrl.includes('/learn')) {
-      targetTab = 'learn';
+      targetTab = 'today';
     }
     // Navigate to the same tab in the other program
     if (this.isAdults) {
