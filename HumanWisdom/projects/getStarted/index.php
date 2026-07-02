@@ -2857,51 +2857,9 @@ require_once('./includes/security_config.php');
       });
     </script>
 
+    <!-- Bootstrap tab wiring for legacy nav-tabs (if present) -->
     <script>
-      AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true
-      });
-    </script>
-
-    <!-- Owl Carousel Initialization -->
-    <script>
-      $(document).ready(function() {
-        // Initialize Owl Carousel for coaches
-        if ($('.owl_coach .owl-carousel').length) {
-          $('.owl_coach .owl-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-            dots: false,
-            responsive: {
-              0: { items: 1 },
-              600: { items: 2 },
-              1000: { items: 3 },
-              1200: { items: 4 }
-            }
-          });
-        }
-
-        // Initialize Owl Carousel for blog
-        if ($('.owl_blog .owl-carousel').length) {
-          $('.owl_blog .owl-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-            dots: false,
-            responsive: {
-              0: { items: 1 },
-              600: { items: 2 },
-              1000: { items: 3 }
-            }
-          });
-        }
-
-        // Initialize Bootstrap tabs (older layout: ul#toolTabs.nav-tabs; custom tools use #toolTabs.tools-tabs + switchTab)
+      document.addEventListener('DOMContentLoaded', function() {
         var triggerTabList = [].slice.call(document.querySelectorAll('#toolTabs.nav-tabs button'));
         triggerTabList.forEach(function (triggerEl) {
           var tabTrigger = new bootstrap.Tab(triggerEl);

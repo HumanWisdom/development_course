@@ -2,6 +2,12 @@
 const userAgent = navigator.userAgent;
 const isLoggedIn = localStorage.getItem('isloggedin') == 'T';
 const url = "https://happierme.app";
+var type = "Desktop";
+/Mobi|Android/i.test(userAgent)
+    ? (type = "Mobile")
+    : /Tablet|iPad|PlayBook/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent))
+      ? (type = "Tablet")
+      : (type = "Desktop");
 //const url ="https://staging.happierme.app"
 //const url ="http://localhost:4200"
 
@@ -14,11 +20,21 @@ function hwApiUrl(path) {
     return base + "/" + p;
 }
 
-(window.dataLayer = window.dataLayer || []),
-    gtag("js", new Date()),
-    gtag("config", "G-1WBHRGL7VH"),
-    (type = "Desktop"),
-    /Mobi|Android/i.test(userAgent) ? (type = "Mobile") : /Tablet|iPad|PlayBook/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent)) ? (type = "Tablet") : (type = "Desktop");
+function scheduleIdleWork(fn) {
+    if (typeof requestIdleCallback === "function") {
+        requestIdleCallback(function () { fn(); }, { timeout: 2500 });
+    } else {
+        window.addEventListener("load", fn, { once: true });
+    }
+}
+
+function initAnalytics() {
+    window.dataLayer = window.dataLayer || [];
+    gtag("js", new Date());
+    gtag("config", "G-1WBHRGL7VH");
+}
+
+scheduleIdleWork(initAnalytics);
 
 function gtag() {
     dataLayer.push(arguments);
@@ -99,7 +115,9 @@ runWhenDomReady(initTopicsHelpGa);
 
 (function logHomepageView() {
     if (document.getElementById("happiermeTryForFree")) {
-        logevent("homepage_view", "index.php");
+        scheduleIdleWork(function () {
+            logevent("homepage_view", "index.php");
+        });
     }
 })();
 
@@ -1772,8 +1790,8 @@ nfsnContactForm &&
                         
                 });
         });
-    }, 200),
-    fetchData();
+    }, 200);
+    scheduleIdleWork(fetchData);
 // fetchWebsiteTitle();
 var countryCode = "",
     pricingModel = "",

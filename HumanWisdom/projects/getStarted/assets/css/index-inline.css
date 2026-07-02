@@ -2876,17 +2876,19 @@ header a[href*="splash_options.php"] * {
   .coaches-nav-btns * { display: none !important; }
 }
 
-/* Scroll lazy sections: fade in/out on scroll */
+/* Scroll lazy sections: defer off-screen layout; fade in when visible */
 .index-lazy-section {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  will-change: opacity, transform;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 420px;
 }
 
 .index-lazy-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+  content-visibility: visible;
 }
 
 @media (prefers-reduced-motion: reduce) {

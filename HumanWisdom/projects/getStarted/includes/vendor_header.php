@@ -1,6 +1,10 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<?php require_once __DIR__ . '/cache_buster.php'; ?>
+<?php
+require_once __DIR__ . '/cache_buster.php';
+require_once __DIR__ . '/page_profile.php';
+$hwProfile = hw_vendor_profile();
+?>
 
 <!-- Favicons -->
 <link href="https://d1tenzemoxuh75.cloudfront.net/../assets/images/logo/logo_favicon_transparent.png" rel="icon">
@@ -30,20 +34,23 @@
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
 
     <!-- Vendor CSS Files -->
+<?php if ($hwProfile !== 'landing') : ?>
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>"></noscript>
 
-<!-- <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>"></noscript>
+<?php endif; ?>
 
 <!-- LCP-critical CSS inlined; full stylesheets load async (non-render-blocking) -->
 <?php include __DIR__ . '/critical_lcp_style.php'; ?>
 <?php
 hw_defer_stylesheet('../assets/css/landing.css');
 hw_defer_stylesheet('../assets/css/main.css');
-hw_defer_stylesheet('../assets/css/home.css');
-hw_defer_stylesheet('../assets/css/index.css');
+if ($hwProfile !== 'landing') {
+    hw_defer_stylesheet('../assets/css/home.css');
+    hw_defer_stylesheet('../assets/css/index.css');
+}
 hw_defer_stylesheet('../assets/css/responsive.css');
 hw_defer_stylesheet('../assets/font/font_colour.css');
 hw_defer_stylesheet('../assets/font/font_size.css');
@@ -51,159 +58,12 @@ hw_defer_stylesheet('../assets/font/font_weight.css');
 hw_defer_stylesheet('../assets/font/line_height.css');
 hw_defer_stylesheet('../assets/css/style_hb.css');
 hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
-hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+hw_defer_stylesheet('../assets/css/vendor-ui.css');
+if ($hwProfile !== 'landing') {
+    hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
+    hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+}
 ?> 
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WBHRGL7VH"></script>
-
-<!-- Debug CSS for tabs and modals -->
-<style>
-/* Ensure tab content is visible when active */
-.tab-content > .tab-pane.active {
-    display: block !important;
-}
-
-.tab-content > .tab-pane.active.show {
-    display: block !important;
-}
-
-/* Ensure tab navigation is clickable */
-.nav-tabs > li > a {
-    cursor: pointer;
-}
-
-.nav-tabs > li.active > a {
-    background-color: #f5f5f5;
-    border-color: #ddd;
-}
-
-/* Debug styles to ensure tabs are working */
-.tab-pane {
-    transition: opacity 0.3s ease;
-}
-
-.tab-pane.show.active {
-    opacity: 1;
-}
-
-.tab-pane:not(.show.active) {
-    opacity: 0;
-    display: none;
-}
-
-/* Bootstrap 5.3 Modal styles */
-.modal {
-    display: none;
-}
-
-.modal.show {
-    display: block !important;
-}
-
-.modal.fade .modal-dialog {
-    transform: translate(0, -25%);
-    transition: transform 0.3s ease-out;
-}
-
-.modal.show .modal-dialog {
-    transform: translate(0, 0) !important;
-}
-
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1040;
-    background-color: #000;
-}
-
-.modal-backdrop.show {
-    opacity: 0.5;
-}
-
-/* Ensure modal is visible when shown */
-.modal.show {
-    display: block !important;
-}
-
-.modal.show .modal-dialog {
-    transform: translate(0, 0) !important;
-}
-
-/* Bootstrap 5.3 specific styles */
-.btn-close {
-    background: transparent;
-    border: 0;
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-}
-
-.btn-close::before {
-    content: "×";
-    display: block;
-    width: 1em;
-    height: 1em;
-    line-height: 1;
-    text-align: center;
-}
-
-/* Prevent Bootstrap from adding padding-right to body when modal opens */
-body {
-    padding-right: 0px !important;
-}
-
-body.modal-open {
-    padding-right: 0px !important;
-    overflow: hidden;
-}
-
-/* Custom Scrollbar Styles */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #E58D82;
-}
-
-/* For Firefox */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: #ccc #f1f1f1;
-}
-
-/* Mobile Layout Overrides - Text above Image */
-@media (max-width: 767px) {
-    .flex_block, 
-    .flex_fd_cr,
-    .flex_fd_cr.flex_fd_cr,
-    .tab-content .flex_fd_cr,
-    .tab-content .row.center_flex > [class^="col-"].flex_fd_cr {
-        display: flex !important;
-        flex-direction: column-reverse !important;
-    }
-    
-    /* Ensure the inner columns also don't force a standard column order */
-    .flex_block > div, 
-    .flex_fd_cr > div {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-}
-</style>
