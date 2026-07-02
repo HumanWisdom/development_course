@@ -17,6 +17,7 @@ export class FreeTrialPage implements OnInit {
   AnnualPlanFreeTrial = 14;
   isAdults = true;
   @ViewChild('payementSubmitBtnClick') payementSubmitBtnClick: any;
+  btnText = 'Continue';
   
   constructor(
     private router: Router,private onboardingService:OnboardingService){
@@ -63,6 +64,12 @@ export class FreeTrialPage implements OnInit {
     }
     
     this.GetDataFromLocalStorage();
+
+    if (localStorage.getItem('subscriberRedirectUrl')) {
+      this.btnText = 'Continue';
+    } else {
+      this.btnText = 'Continue';
+    }
   }
 
   GetDataFromLocalStorage() {
@@ -70,7 +77,13 @@ export class FreeTrialPage implements OnInit {
   }
   routeToDashboard(){
     this.clearData();
-    this.router.navigateByUrl(SharedService.getDashboardUrls());
+    const redirectUrl = localStorage.getItem('subscriberRedirectUrl');
+    if (redirectUrl) {
+      localStorage.removeItem('subscriberRedirectUrl');
+      this.router.navigateByUrl(redirectUrl);
+    } else {
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
   }
 
   manageSubscription(){
