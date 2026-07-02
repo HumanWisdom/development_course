@@ -2,9 +2,9 @@
     "use strict";
     const e = document.querySelector("#preloader");
     e &&
-        window.addEventListener("load", () => {
-            e.remove();
-        });
+        (document.readyState === "loading"
+            ? document.addEventListener("DOMContentLoaded", () => e.remove(), { once: true })
+            : e.remove());
     const t = document.querySelector("#header");
     t &&
         document.addEventListener("scroll", () => {

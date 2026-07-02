@@ -23,16 +23,16 @@ window.__HW_API__=<?php echo json_encode($hw_api_client, JSON_UNESCAPED_SLASHES 
 
 <!-- Additional vendor scripts -->
 <script defer src="<?= hw_asset_url('../assets/vendor/aos/aos.js'); ?>"></script>
-<script src="<?= hw_asset_url('../assets/vendor/glightbox/js/glightbox.min.js'); ?>"></script>
-<script src="<?= hw_asset_url('../assets/vendor/purecounter/purecounter_vanilla.js'); ?>"></script>
-<script src="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.js'); ?>"></script>
+<script defer src="<?= hw_asset_url('../assets/vendor/glightbox/js/glightbox.min.js'); ?>"></script>
+<script defer src="<?= hw_asset_url('../assets/vendor/purecounter/purecounter_vanilla.js'); ?>"></script>
+<script defer src="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.js'); ?>"></script>
 <script defer  src="<?= hw_asset_url('../assets/vendor/php-email-form/validate.js'); ?>"></script>
 <script defer src="<?= hw_asset_url('../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
 <script defer src="<?= hw_asset_url('../assets/vendor/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
 
 <!-- Template Main JS File (window.__HW_API__ must load before index.js) -->
-<script src="<?= hw_asset_url('../assets/js/main.js'); ?>"></script>
-<script src="<?= hw_asset_url('../scripts/index.js'); ?>"></script>
+<script defer src="<?= hw_asset_url('../assets/js/main.js'); ?>"></script>
+<script defer src="<?= hw_asset_url('../scripts/index.js'); ?>"></script>
 
 <!-- Font Awesome -->
 <script defer src="https://kit.fontawesome.com/e7db147a51.js" crossorigin="anonymous"></script>
@@ -41,11 +41,3 @@ window.__HW_API__=<?php echo json_encode($hw_api_client, JSON_UNESCAPED_SLASHES 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
 
 <script defer src="<?= hw_asset_url('../assets/js/render.js'); ?>"></script>
-
-<!-- Additional vendor scripts -->
-<script src="<?= hw_asset_url('../assets/vendor/glightbox/js/glightbox.min.js'); ?>"></script>
-<script src="<?= hw_asset_url('../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
-<script src="<?= hw_asset_url('../assets/vendor/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
-<script src="<?= hw_asset_url('../assets/vendor/purecounter/purecounter_vanilla.js'); ?>"></script>
-<!-- <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script> -->
-<script src="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.js'); ?>"></script>

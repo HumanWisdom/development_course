@@ -103,10 +103,17 @@ runWhenDomReady(initTopicsHelpGa);
     }
 })();
 
-setTimeout(() => {
-    console.log("Removing preloader...");
-    document.getElementById("preloader").remove();
-}, 500);
+(function removePreloaderEarly() {
+    var preloader = document.getElementById("preloader");
+    if (!preloader) return;
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+            preloader.remove();
+        }, { once: true });
+    } else {
+        preloader.remove();
+    }
+})();
 
 // Function to remove active_nav class from all navigation elements
 function removeActiveNavClass(tab) {
@@ -1694,6 +1701,10 @@ nfsnContactForm &&
             });
             playBtn.addEventListener("click", function () {
                 if (aud.paused) {
+                    aud.querySelectorAll("source[data-src]").forEach(function (source) {
+                        if (!source.src) source.src = source.getAttribute("data-src");
+                    });
+                    if (aud.querySelector("source[data-src]")) aud.load();
                     aud.play();
                 } else {
                     aud.pause();
@@ -1885,15 +1896,19 @@ function prepareIndexLazySection(section) {
 }
 
 function activateIndexLazyMedia(section) {
-    section.querySelectorAll("img[data-src]").forEach(function (img) {
+    var mediaRoot = section;
+    if (section.classList && section.classList.contains("tools-section")) {
+        mediaRoot = section.querySelector(".tools-panel.active") || section;
+    }
+    mediaRoot.querySelectorAll("img[data-src]").forEach(function (img) {
         var url = img.getAttribute("data-src");
         if (url && img.getAttribute("src") !== url) img.src = url;
     });
-    section.querySelectorAll("picture source[data-srcset]").forEach(function (source) {
+    mediaRoot.querySelectorAll("picture source[data-srcset]").forEach(function (source) {
         var srcset = source.getAttribute("data-srcset");
         if (srcset) source.srcset = srcset;
     });
-    section.querySelectorAll("video").forEach(function (video) {
+    mediaRoot.querySelectorAll("video").forEach(function (video) {
         var changed = false;
         video.querySelectorAll("source[data-src]").forEach(function (source) {
             source.src = source.getAttribute("data-src");
@@ -1901,7 +1916,22 @@ function activateIndexLazyMedia(section) {
         });
         if (changed) video.load();
     });
+    mediaRoot.querySelectorAll("audio").forEach(function (audio) {
+        var changed = false;
+        audio.querySelectorAll("source[data-src]").forEach(function (source) {
+            source.src = source.getAttribute("data-src");
+            changed = true;
+        });
+        if (changed) audio.load();
+    });
 }
+
+function activateToolsPanelMedia(panelId) {
+    var panel = document.getElementById(panelId);
+    if (!panel) return;
+    activateIndexLazyMedia(panel);
+}
+window.activateToolsPanelMedia = activateToolsPanelMedia;
 
 function showIndexLazySection(section) {
     section.classList.add("is-visible");
