@@ -80,7 +80,7 @@ export class AuthGuard implements CanActivate, OnInit {
     let firstTimeTour = localStorage.getItem("firstTimeTour");
     let firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
     if (token[1] !== undefined && token[1] !== '') {
-      if(m.includes('repeat-user') || m.includes('change-topic') || m.includes('adult-dashboard') || m.includes('wisdom-survey')) {
+      if(m.includes('repeat-user') || m.includes('change-topic') || m.includes('adult-dashboard') || m.includes('wisdom-survey') || m.includes('today') || m.includes('explore') || m.includes('learn')) {
         localStorage.setItem("isPWA", 'APP')
         if( m.includes('wisdom-survey'))
           SharedService.isRoutedFromLogin =true

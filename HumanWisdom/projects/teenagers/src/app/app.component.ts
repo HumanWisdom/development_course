@@ -163,7 +163,7 @@ export class AppComponent implements OnDestroy {
     let enable = false;
     if (this.router.url == "/teenagers/search" || this.router.url == "/search"
       || this.router.url.includes('/teenagers/site-search/') ||
-      this.router.url.includes('/teenagers/search')) {
+      this.router.url.includes('/teenagers/search') || this.router.url.includes('/teenagers/learn') || this.router.url.includes('/learn')) {
       this.dash = false
       this.journal = false
       this.fourm = false;
@@ -178,7 +178,7 @@ export class AppComponent implements OnDestroy {
       return true;
     }
     if ((this.router.url == "/teenagers" || this.router.url == "/teenagers/teenager-dashboard") || (this.router.url == "/teenager-dashboard")
-      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard") || this.router.url == "/teenagers/home" || this.router.url == "/home" || this.router.url.includes("home")) {
+      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard") || this.router.url == "/teenagers/home" || this.router.url == "/home" || this.router.url.includes("home") || this.router.url.includes("explore")) {
       this.dash = false;
       this.journal = false;
       this.search = true;
@@ -196,7 +196,7 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    if (this.router.url.includes('repeat-user/my-daily-practice')) {
+    if (this.router.url.includes('repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
       this.dash = true;
       this.journal = false;
       this.search = false;

@@ -112,7 +112,7 @@ export class RepeatUserPage implements OnInit {
       // }else{
       //    this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
       // }
-      this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
+      this.router.navigate([`${SharedService.getprogramName()}/today`])
     }, 3000);
 
     if (SharedService.ProgramId == ProgramType.Adults) {
