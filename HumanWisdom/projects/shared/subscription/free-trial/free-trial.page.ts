@@ -68,7 +68,7 @@ export class FreeTrialPage implements OnInit {
     if (localStorage.getItem('subscriberRedirectUrl')) {
       this.btnText = 'Continue';
     } else {
-      this.btnText = 'Continue to dashboard';
+      this.btnText = 'Continue';
     }
   }
 

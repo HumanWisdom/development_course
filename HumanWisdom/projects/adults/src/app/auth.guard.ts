@@ -35,6 +35,15 @@ export class AuthGuard implements CanActivate, OnInit {
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
 
+      const isPricing = localStorage.getItem('pricing') === 'true';
+      const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+      const isGuest = localStorage.getItem('guest') === 'T';
+      if (isPricing && (!isLoggedIn || isGuest)) {
+        this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
+        return false;
+      }
+
+
       if(localStorage.getItem("saveUsername") && localStorage.getItem("saveUsername")!=null){
         this.saveUsername = JSON.parse(localStorage.getItem("saveUsername"));
       }
