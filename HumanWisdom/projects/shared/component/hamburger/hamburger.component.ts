@@ -146,12 +146,23 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   onProgramChange() {
     this.closemenuevent();
+    // Determine current tab from URL
+    const currentUrl = this.router.url;
+    let targetTab = 'home'; // Default to home
+    if (currentUrl.includes('/today') || currentUrl.includes('repeat-user/my-daily-practice')) {
+      targetTab = 'today';
+    } else if (currentUrl.includes('/explore')) {
+      targetTab = 'explore';
+    } else if (currentUrl.includes('/learn')) {
+      targetTab = 'learn';
+    }
+    // Navigate to the same tab in the other program
     if (this.isAdults) {
-      this.logeventservice.logEvent('click_happiermeforteenagers');
-      window.location.href = environment.clientUrl + "teenagers/home";
+      this.logeventservice.logEvent('click_happierme_forteenagers');
+      window.location.href = environment.clientUrl + 'teenagers/' + targetTab;
     } else {
-      this.logeventservice.logEvent('click_happiermeforadults');
-      window.location.href = environment.clientUrl + 'adults/home';
+      this.logeventservice.logEvent('click_happierme_foradults');
+      window.location.href = environment.clientUrl + 'adults/' + targetTab;
     }
   }
 
