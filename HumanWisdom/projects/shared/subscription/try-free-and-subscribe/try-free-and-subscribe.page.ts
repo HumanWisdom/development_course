@@ -60,6 +60,14 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    const isPricing = localStorage.getItem('pricing') === 'true';
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    const isGuest = localStorage.getItem('guest') === 'T';
+    if (isPricing && (!isLoggedIn || isGuest)) {
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
+      return;
+    }
+
     this.isSignupFirst = localStorage.getItem("signupfirst") === 'T';
     this.logeventservice.logEvent('view_try_free_subscribe');
     this.InitializeDefaultValues();
@@ -165,7 +173,7 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
         this.router.navigateByUrl(`/${SharedService.getprogramName()}/redeem-subscription`);
       }
     } else {
-      this.router.navigateByUrl('/login');
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
     }
   }
 
