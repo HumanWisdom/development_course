@@ -489,7 +489,13 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       this.urlPassword = params["pwd"];
       let res = localStorage.getItem("isloggedin");
       if (res === "T") {
-        this.router.navigate(['/adults/adult-dashboard'])
+        let isPricing = localStorage.getItem('pricing') === 'true';
+        if (isPricing) {
+          localStorage.removeItem('pricing');
+          this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
+        } else {
+          this.router.navigate(['/adults/adult-dashboard'])
+        }
       } else {
         this.enableLogin = true;
       }
@@ -529,6 +535,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('pricing') === 'true' && localStorage.getItem('login') === 'false') {
+      this.isSignUp = true;
+    }
     // Clear owl animation session so GIF and dialogue play again after login
     sessionStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_gif_shown');
@@ -1460,6 +1469,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         }
       })
       this.freescreens();
+      let isPricing = localStorage.getItem('pricing') === 'true';
+      if (isPricing) {
+        localStorage.removeItem('pricing');
+        this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
+        return;
+      }
       let roleid = JSON.parse(localStorage.getItem("RoleID"));
       let emailcode = localStorage.getItem("emailCode");
       if (localStorage.getItem("btnClickBecomePartner") == "T") {
