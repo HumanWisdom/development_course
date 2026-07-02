@@ -50,10 +50,21 @@ require_once('./includes/security_config.php');
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
     
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
+
+    <!-- LCP Hero images preloading (fetchpriority + media so only the viewport LCP image is prioritized) -->
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" fetchpriority="high" media="(min-width: 821px)" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp" fetchpriority="high" media="(max-width: 820px)" />
+    <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" />
     <?php hw_defer_stylesheet('assets/css/index-inline.css'); ?>
 
+  <script>
+    $('#myCarousel').carousel({
+      interval: 3000,
+    })
+
+  </script>
   <script>
     (function () {
       var PLACEHOLDER = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
@@ -100,8 +111,11 @@ require_once('./includes/security_config.php');
 
   <!-- header -->
   <?php include('./includes/header.php'); ?>
+  <?php include('../includes/assets/css/landing.css'); ?>
+  <?php include('.../includes/assets/css/landing.css'); ?>
 
-  <!-- /header -->
+
+  <!-- /header --> 
 
     <div class="frame" id="main">
 
@@ -110,12 +124,12 @@ require_once('./includes/security_config.php');
         <div class="div-wrapper">
           <div class="div">
             <div class="div-2">
-              <picture>
-                <source media="(max-width: 820px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp" />
-                <img class="new-app-adults-teen" fetchpriority="high" width="659" height="956"
-                  src="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp"
-                  alt="HappierMe app" />
-              </picture>
+              <img class="new-app-adults-teen display_m_none"  fetchpriority="high"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp"
+                alt="HappierMe app" />
+             <img class="new-app-adults-teen display_d_none"  fetchpriority="high"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp"
+                alt="HappierMe app" />
           <div class="div-3">
                  <!-- rating row -->
                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 pt_18px">
@@ -681,9 +695,8 @@ require_once('./includes/security_config.php');
                   poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/Feel_betternew.webp"
                   controlsList="nodownload"
                   class="tools-thumb-video"
-                  id="fbn-video"
-                  preload="none">
-                  <source data-src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
+                  id="fbn-video">
+                  <source src="https://d1tenzemoxuh75.cloudfront.net/breathing/videos/1.5.mp4" type="video/mp4">
                 </video>
                 <button type="button" class="tools-play-btn tools-video-play-btn" aria-label="Play breathing exercise" id="fbn-play-btn">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" aria-hidden="true" />
@@ -708,7 +721,7 @@ require_once('./includes/security_config.php');
           <div id="pathway" class="tools-panel">
             <div>
               <div class="tools-thumb">
-                <img data-src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Guided Programs" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_pathway.webp" alt="Guided Programs" class="tools-thumb-img_sec" />
               </div>
              
             </div>
@@ -716,8 +729,8 @@ require_once('./includes/security_config.php');
               <h3 class="tools-info-heading">PATHWAY — Guided program</h3>
               <p class="tools-info-body">A 5-step guided program to learn about yourself, grow as a person, and lead a happier and more successful life.</p>
               <div class="tools-audio-wrap" data-audio-wrap="aud1">
-                <audio id="aud1" class="tools-audio-el" preload="none" controlslist="nodownload">
-                  <source data-src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
+                <audio id="aud1" class="tools-audio-el" preload="metadata" controlslist="nodownload">
+                  <source src="https://d1tenzemoxuh75.cloudfront.net/curated_dbs/audios/p_index.mp3" type="audio/mpeg">
                 </audio>
                 <div class="tools-audio-player">
                   <button type="button" class="tools-audio-play-btn" aria-label="Play audio" data-audio-id="aud1"></button>
@@ -754,7 +767,7 @@ require_once('./includes/security_config.php');
           <div id="podcast_tab" class="tools-panel">
             <div class="tools-card tools-card--podcast">
               <div class="tools-thumb">
-                <img data-src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="How can we be happier" class="tools-thumb-img" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="How can we be happier" class="tools-thumb-img" />
               </div>
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
@@ -768,8 +781,8 @@ require_once('./includes/security_config.php');
               <h3 class="tools-info-heading">HappierMe Podcast</h3>
               <p class="tools-info-body">A library of engaging podcasts on a wide variety of topics, where we explore a subject in depth with guests from around the world. They offer fresh ways of dealing with the many challenges we face and living our best life.</p>
               <div class="tools-audio-wrap" data-audio-wrap="aud2">
-                <audio id="aud2" class="tools-audio-el" preload="none" controlslist="nodownload">
-                  <source data-src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
+                <audio id="aud2" class="tools-audio-el" preload="metadata" controlslist="nodownload">
+                  <source src="https://d1tenzemoxuh75.cloudfront.net/podcasts/54.mp3" type="audio/mpeg">
                 </audio>
                 <div class="tools-audio-player">
                   <button type="button" class="tools-audio-play-btn" aria-label="Play audio" data-audio-id="aud2"></button>
@@ -791,7 +804,7 @@ require_once('./includes/security_config.php');
           <div id="forum" class="tools-panel">
             <div>
               <div class="tools-thumb">
-                <img data-src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Community" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_forum.webp" alt="Community" class="tools-thumb-img_sec" />
               </div>
              
             </div>
@@ -1292,9 +1305,6 @@ require_once('./includes/security_config.php');
           p.classList.remove('active');
         });
         document.getElementById(panelId).classList.add('active');
-        if (typeof activateToolsPanelMedia === 'function') {
-          activateToolsPanelMedia(panelId);
-        }
       }
 
       /* FAQ tab switcher */
@@ -2857,9 +2867,51 @@ require_once('./includes/security_config.php');
       });
     </script>
 
-    <!-- Bootstrap tab wiring for legacy nav-tabs (if present) -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true
+      });
+    </script>
+
+    <!-- Owl Carousel Initialization -->
+    <script>
+      $(document).ready(function() {
+        // Initialize Owl Carousel for coaches
+        if ($('.owl_coach .owl-carousel').length) {
+          $('.owl_coach .owl-carousel').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+            dots: false,
+            responsive: {
+              0: { items: 1 },
+              600: { items: 2 },
+              1000: { items: 3 },
+              1200: { items: 4 }
+            }
+          });
+        }
+
+        // Initialize Owl Carousel for blog
+        if ($('.owl_blog .owl-carousel').length) {
+          $('.owl_blog .owl-carousel').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+            dots: false,
+            responsive: {
+              0: { items: 1 },
+              600: { items: 2 },
+              1000: { items: 3 }
+            }
+          });
+        }
+
+        // Initialize Bootstrap tabs (older layout: ul#toolTabs.nav-tabs; custom tools use #toolTabs.tools-tabs + switchTab)
         var triggerTabList = [].slice.call(document.querySelectorAll('#toolTabs.nav-tabs button'));
         triggerTabList.forEach(function (triggerEl) {
           var tabTrigger = new bootstrap.Tab(triggerEl);

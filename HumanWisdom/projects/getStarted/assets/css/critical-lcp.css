@@ -1,56 +1,7 @@
 /* Minimal above-the-fold CSS for index LCP (hero). Full styles load deferred. */
-#preloader { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; font-family: "Poppins", Helvetica, sans-serif; background: #fff; color: #000; }
 img { max-width: 100%; display: block; }
-a { text-decoration: none; }
-
-/* Prevent blue link flash before deferred CSS (Bootstrap / main.css) loads */
-.header_fixed a:link,
-.header_fixed a:visited {
-  color: #D7586B;
-}
-.header_fixed .navbar a,
-.header_fixed .navbar a:link,
-.header_fixed .navbar a:visited {
-  color: #CB6171;
-}
-.header_subnav_inner a,
-.header_subnav_inner a:link,
-.header_subnav_inner a:visited,
-.header_subnav a,
-.header_subnav a:link,
-.header_subnav a:visited {
-  color: rgba(215, 88, 107, 1);
-}
-.header_fixed .btn_tff,
-.header_fixed .btn_tff:link,
-.header_fixed .btn_tff:visited {
-  color: #fff !important;
-  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
-  border: 0;
-  border-radius: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none !important;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 1.4;
-  padding: 15px;
-  width: 134px;
-  height: 48px;
-  box-sizing: border-box;
-}
-.header_site_top { background: #fff; }
-.header_subnav { background: rgba(255, 249, 238, 1); }
-.frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link,
-.frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link:link,
-.frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link:visited {
-  color: #fff !important;
-  text-decoration: underline;
-  text-decoration-color: #fff;
-}
 
 /* Hero image visibility per viewport (from responsive.css) */
 .display_d_none { display: none !important; }
@@ -121,12 +72,7 @@ a { text-decoration: none; }
   flex-wrap: wrap;
   margin-top: 100px;
 }
-.new-app-adults-teen { height: 480px; object-fit: contain; flex-shrink: 0; width: auto; max-width: 100%; }
-.frame-wrapper.web_home_divlanding {
-  min-height: 520px;
-  background: linear-gradient(180deg, #803358 0%, #230F40 100%) no-repeat;
-  background-size: cover;
-}
+.new-app-adults-teen {height: 480px;  object-fit: contain; flex-shrink: 0; }
 .div-3 {
   margin-top: -6px;
   display: flex;

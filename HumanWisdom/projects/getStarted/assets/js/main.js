@@ -2,9 +2,9 @@
     "use strict";
     const e = document.querySelector("#preloader");
     e &&
-        (document.readyState === "loading"
-            ? document.addEventListener("DOMContentLoaded", () => e.remove(), { once: true })
-            : e.remove());
+        window.addEventListener("load", () => {
+            e.remove();
+        });
     const t = document.querySelector("#header");
     t &&
         document.addEventListener("scroll", () => {
@@ -59,9 +59,8 @@
         };
         window.addEventListener("load", e), document.addEventListener("scroll", e), s.addEventListener("click", window.scrollTo({ top: 0, behavior: "smooth" }));
     }
-    GLightbox && document.querySelector(".glightbox") && GLightbox({ selector: ".glightbox" });
-    document.querySelector(".purecounter") && typeof PureCounter !== "undefined" && new PureCounter();
-    document.querySelector(".slides-1") &&
+    GLightbox({ selector: ".glightbox" });
+    new PureCounter(),
         new Swiper(".slides-1", {
             speed: 600,
             loop: !0,
@@ -70,7 +69,6 @@
             pagination: { el: ".swiper-pagination", type: "bullets", clickable: !0 },
             navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
         }),
-    document.querySelector(".slides-3") &&
         new Swiper(".slides-3", {
             speed: 600,
             loop: !0,
@@ -80,7 +78,6 @@
             navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
             breakpoints: { 320: { slidesPerView: 1, spaceBetween: 40 }, 1200: { slidesPerView: 3 } },
         }),
-    document.querySelector(".gallery-slider") &&
         new Swiper(".gallery-slider", {
             speed: 400,
             loop: !0,
@@ -90,12 +87,10 @@
             pagination: { el: ".swiper-pagination", type: "bullets", clickable: !0 },
             breakpoints: { 320: { slidesPerView: 1, spaceBetween: 20 }, 640: { slidesPerView: 3, spaceBetween: 20 }, 992: { slidesPerView: 5, spaceBetween: 20 } },
         }),
-    typeof AOS !== "undefined" &&
-        document.querySelector("[data-aos]") &&
         window.addEventListener("load", () => {
             AOS.init({ duration: 1e3, easing: "ease-in-out", once: !0, mirror: !1 });
         }),
-    document.querySelectorAll(".isotope-layout").forEach(function (e) {
+        document.querySelectorAll(".isotope-layout").forEach(function (e) {
             let t,
                 o = e.getAttribute("data-layout") ?? "masonry",
                 i = e.getAttribute("data-default-filter") ?? "*",
