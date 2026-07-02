@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SubscriptionType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
@@ -15,8 +15,9 @@ import { CommonService } from '../../services/common.service';
   templateUrl: './try-free-and-subscribe.page.html',
   styleUrls: ['./try-free-and-subscribe.page.scss'],
 })
-export class TryFreeAndSubscribePage implements OnInit {
+export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
 
+  isSignupFirst: boolean = false;
   selectedSubscription: string;
   countryCode: string = 'USA';
   defaultCountry: string;
@@ -59,10 +60,15 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   ngOnInit() {
+    this.isSignupFirst = localStorage.getItem("signupfirst") === 'T';
     this.logeventservice.logEvent('view_try_free_subscribe');
     this.InitializeDefaultValues();
     this.getUserDetails();
     this.getCountry();
+  }
+
+  ngOnDestroy() {
+    localStorage.setItem("signupfirst", 'F');
   }
 
   getUserDetails() {

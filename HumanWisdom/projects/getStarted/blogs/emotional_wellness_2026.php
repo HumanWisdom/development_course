@@ -56,7 +56,7 @@ th{
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/calm.webp" class="img-responsive" alt="Best Apps for Emotional Wellness in 2026">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/emotional+_wellness.webp" class="img-responsive" alt="Best Apps for Emotional Wellness in 2026">
               </div>
             </div>
 

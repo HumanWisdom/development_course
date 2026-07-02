@@ -112,6 +112,13 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         this.wasBackClicked = this.navigationService.backClicked || event.navigationTrigger === 'popstate';
       }
       if (event instanceof NavigationEnd) {
+        // Always close the hamburger when navigating to the Today page
+        if (this.router.url.includes('repeat-user/my-daily-practice')) {
+          this.closemenuevent();
+          this.wasBackClicked = false;
+          return;
+        }
+
         const isOpen = sessionStorage.getItem('openHamburger') === 'true';
         const sourceUrl = sessionStorage.getItem('hamburgerSourceUrl');
         const isSamePage = this.router.url === sourceUrl;

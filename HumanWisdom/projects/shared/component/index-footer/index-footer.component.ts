@@ -1,132 +1,242 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { OnboardingService } from '../../services/onboarding.service';
-import { SharedService,  UrlConstant } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
+import { SharedService, UrlConstant } from '../../services/shared.service';
+import { OnboardingService } from '../../services/onboarding.service';
+import { Subscription } from 'rxjs';
+import { LogEventService } from '../../services/log-event.service';
+import { OwlStore } from '../../../shared/stores/owl.store';
+import { CommonService } from '../../services/common.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-index-footer',
   templateUrl: './index-footer.component.html',
   styleUrls: ['./index-footer.component.scss'],
 })
-export class IndexFooterComponent implements OnInit {
-  dash=false
-  journal=false
-  fourm=false
-  profile = false
-  isloggedIn=false
-  enableprofile=false
-  search=false
+export class IndexFooterComponent implements OnInit, OnDestroy, OnChanges {
+  @Input() dash = false;
+  @Input() programType: ProgramType = ProgramType.Adults;
+  @Input() journal = false
+  @Input() fourm = false
+  @Input() profile = true
+  isloggedIn = false
+  @Input() enableprofile = false
+  @Input() search = false
+  @Input() showOwl = true;
   Subscriber: any;
-  url='';
-  userdetail:any;
-  isAdults: boolean = true; 
-  
-  defaultUrl = "https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_active.svg";
-  constructor(private router: Router,private onboardingService: OnboardingService) { }
+  guest: any;
+  @Input() userdetail: any;
+  url: string = '';
+  defaultUrl = "https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/footer/dashboard/profile_inactive.svg";
+  @Input() isGuidedQuestion?: boolean = false;
+  @Output() saveQuestion = new EventEmitter();
+  @Output() journalclick = new EventEmitter();
+  toursubscription: Subscription;
+  disableClick = false;
+  isAdults = false;
+  isDataRecieved = false;
 
-  ngOnInit() {
-    let userid = localStorage.getItem('isloggedin');
-      if (SharedService.ProgramId == ProgramType.Adults) {
-          this.isAdults = true;
-        } else {
-          this.isAdults = false;
+  // Observable for owl component state management
+  owlEnable$: Observable<boolean>;
+  private footerOwlSubscription: Subscription;
+
+  constructor(
+    private router: Router,
+    private onboardingService: OnboardingService,
+    private logeventservice: LogEventService,
+    private owlStore: OwlStore,
+    private commonService: CommonService,
+  ) {
+    // Drive footer owl visibility from the scroll signal emitted by pages that
+    // have an in-page Olly (e.g. Today page). Default to true for all other pages.
+    this.owlEnable$ = this.commonService.isFooterOwlVisible$;
+
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes) {
+      let userdetail = localStorage.getItem("userDetails");
+      if (userdetail) {
+        this.userdetail = JSON.parse(userdetail);
+        if (this.userdetail && this.userdetail['UserImagePath'] != '') {
+          this.url = this.userdetail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
         }
-    if(userid === 'T') {
-      this.isloggedIn = true;
-      this.Subscriber = localStorage.getItem('Subscriber')
-    }
-    var loggedInUserId = SharedService.getUserId();
-    if(loggedInUserId>0){
-      this.onboardingService.getuser(loggedInUserId).subscribe((res) => {
-        this.userdetail = res[0];
-        if(this.userdetail['UserImagePath'] !='')
-        {
-            this.url = this.userdetail['UserImagePath'].replace(/\\/g,'/').replace(/([^:])\/\/+/g, '$1/') + '?' + (new Date()).getTime();
-        }
-        this.profile = true;
-      });
-    }
-    if(this.router.url=="/adults/adult-dashboard")
-    {
-      this.dash=true
-      this.journal=false
-      this.profile=false
-      this.search = false;
-    }else {
-      this.dash=false
-      this.journal=false
-      this.profile=false
-      this.fourm = false;
-      this.search = false;
-    }
-    if(this.router.url=="/adults/search") {
-      this.dash=false
-      this.journal=false
-      this.profile=false
-      this.fourm = false;
-      this.search = true;
-    }
-    if((this.router.url=="/adults/journal")||(this.router.url.indexOf('/adults/note') > -1))
-    {
-      this.dash=false
-      this.profile=false
-      this.journal=true
-    }
-    let reg = new RegExp('forum')
-    if((reg.test(this.router.url)))
-    {
-      this.dash=false
-      this.journal=false
-      this.profile=false
-      this.fourm = true;
-    }
-    if(this.router.url=="/onboarding/user-profile") {
-      this.dash=false
-      this.journal=false
-      this.fourm = false;
-      this.profile = true
-      if(this.Subscriber === '1') {
-        this.enableprofile = true;
       }
     }
-     
-    
   }
-  routeDash(){
-    // this.router.navigate(['/adults/adult-dashboard'])
+
+  ngOnInit() {
+    this.onboardingService.updateUserDetails.next(true);
+
+    this.onboardingService.getUserDetails.subscribe(res => {
+      if (res) {
+        this.userdetail = res[0];
+        this.isDataRecieved = true;
+        if (this.userdetail && this.userdetail['UserImagePath'] != '') {
+          this.url = this.userdetail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
+        }
+        this.isDataRecieved = false;
+      }
+    });
+
+    let userid = localStorage.getItem('isloggedin');
+    if (userid === 'T') {
+      this.isloggedIn = true
+      this.Subscriber = localStorage.getItem('Subscriber')
+      this.guest = localStorage.getItem('guest')
+    }
+
+    if (this.isloggedIn) {
+      var loggedInUserId = SharedService.getUserId();
+      if (loggedInUserId > 0 && this.userdetail) {
+        if (this.userdetail['UserImagePath'] != '') {
+          this.url = this.userdetail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
+        }
+        this.profile = true;
+      } else {
+        this.profile = true;
+      }
+    }
+
+    if (this.router.url.includes('/repeat-user/my-daily-practice')) {
+      this.dash = true;
+      this.journal = false;
+      this.search = false;
+      this.fourm = false;
+      this.learn = false;
+      this.enableprofile = false;
+    }
+    else if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home`) {
+      this.dash = false;
+      this.journal = false;
+      this.search = true;
+      this.fourm = false;
+      this.learn = false;
+      this.enableprofile = false;
+    }
+    else if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
+      || this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
+      this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search))) {
+      this.dash = false
+      this.journal = false
+      this.fourm = false;
+      this.search = false;
+      this.learn = true;
+      this.enableprofile = false;
+    }
+    else if ((this.router.url == `/${SharedService.getprogramName()}/journal`) ||
+      this.router.url.includes('/journal') || this.router.url.includes('/guidedquestions') ||
+      (this.router.url.indexOf(`/${SharedService.getprogramName()}/note`) > -1)) {
+      this.dash = false
+      this.journal = true;
+      this.search = false;
+      this.fourm = false;
+      this.learn = false;
+      this.enableprofile = false;
+    }
+    else if (this.router.url.includes('/forum')) {
+      this.dash = false
+      this.journal = false
+      this.fourm = true;
+      this.enableprofile = false;
+      this.learn = false;
+      this.journal = false;
+    }
+    else if (this.router.url == `/${SharedService.getprogramName()}/onboarding/user-profile`
+      || this.router.url.includes('/profile-edit')) {
+      this.dash = false
+      this.journal = false
+      this.fourm = false;
+      this.learn = false;
+      this.enableprofile = true;
+      this.search = false;
+    }
+
+    this.toursubscription = this.onboardingService.getEnableTour().subscribe((value) => {
+      this.disableClick = value;
+    });
+  }
+
+  learn = false;
+
+  routeToday() {
+    this.logeventservice.logEvent("footer_today")
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/repeat-user/my-daily-practice`);
+  }
+
+  routeExplore() {
+    this.logeventservice.logEvent("footer_explore")
     this.router.navigateByUrl(SharedService.getDashboardUrls());
-
-  }
-  routeJournal(){
-      localStorage.setItem('NaviagtedFrom', this.router.url);
-      // this.router.navigate(['/adults/journal'])
-      this.router.navigateByUrl(`/${SharedService.getprogramName()}/journal`);
   }
 
-  routeSearch(){
-    // this.router.navigate(['/adults/search']);
-    this.router.navigateByUrl(`/${SharedService.getprogramName()}/search`);
-  } 
+  routeDash() {
+    this.logeventservice.logEvent("footer_home")
+    this.router.navigateByUrl(SharedService.getDashboardUrls());
+  }
+
+  routeLearn() {
+    this.logeventservice.logEvent("footer_learn")
+    this.router.navigateByUrl(SharedService.getUrlfromFeatureName(UrlConstant.search));
+  }
+
+  routeJournal() {
+    this.logeventservice.logEvent("footer_Journal")
+    localStorage.setItem('NaviagtedFrom', this.router.url);
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.journal)]);
+  }
+
+  routeSearch() {
+    this.logeventservice.logEvent("footer_Explore")
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.search)]);
+  }
+
   profileclickevent() {
-    if(localStorage.getItem('isloggedin') === 'T') {
-    //  this.router.navigate(['/onboarding/user-profile'])
-      this.router.navigateByUrl(`/${SharedService.getprogramName()}/onboarding/user-profile`);
-
+    if (localStorage.getItem('isloggedin') === 'T') {
+      this.logeventservice.logEvent('footer_profile')
+      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.userProfile)]);
     } else {
-      // if(localStorage.getItem('acceptcookie') !== null)  {
-        localStorage.setItem('btnclick', 'T')
-        //this.router.navigate(['/onboarding/login'])
-        this.router.navigateByUrl(`/${SharedService.getprogramName()}/onboarding/login`);
-      // }
-      
+      this.logeventservice.logEvent('footer_login')
+      localStorage.setItem('btnclick', 'F')
+      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.login)]);
     }
   }
 
-  routeForum(){
-      localStorage.setItem('NaviagtedFrom', this.router.url);
-      //  this.router.navigate(['/forum'])
-      this.router.navigateByUrl(`/${SharedService.getprogramName()}/forum`);
+  routeForum() {
+    this.logeventservice.logEvent("footer_Forum")
+    localStorage.setItem('NaviagtedFrom', this.router.url);
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.forum)], { state: { programType: this.programType } })
   }
 
+  saveQuestionButton() {
+    this.saveQuestion.emit();
+  }
+
+  ngOnDestroy(): void {
+    this.toursubscription?.unsubscribe();
+    this.footerOwlSubscription?.unsubscribe();
+  }
+
+  openChat() {
+    this.logeventservice.logEvent('Click_olly_chat');
+    if (this.isAdults) {
+      this.router.navigate(['/adults/chat-bot'], { state: { startWithChat: true } });
+    } else {
+      this.router.navigate(['/teenagers/chat-bot'], { state: { startWithChat: true } });
+    }
+  }
+
+  /**
+   * Reset owl animation state - useful for testing or re-showing the animation
+   * Call this method if you want to show the owl animation again
+   */
+  resetOwlAnimation() {
+    this.owlStore.reset();
+  }
 }

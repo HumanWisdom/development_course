@@ -134,6 +134,12 @@
       visibility: hidden !important;
     }
   }
+  #teenagersHeaderClick,
+  #teenagersHeaderClick_mobile {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+  }
   #teenagersHeaderClick .badge_new,
   #teenagersHeaderClick_mobile .badge_new {
     background: #D7586B !important;
@@ -143,6 +149,20 @@
     border-radius: 999px;
     padding: 2px 6px;
     line-height: 1;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 22px;
+    min-height: 12px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    flex-shrink: 0;
   }
   #teenagersHeaderClick:hover .badge_new,
   #teenagersHeaderClick.active_nav .badge_new,
@@ -156,6 +176,12 @@
   #teenagersHeaderClick_mobile .badge_new h6:hover {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
+    font-size: 6px !important;
+    font-weight: 600 !important;
+    line-height: 130% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap;
   }
 </style>
 <div class="header_fixed header header_site_stack" style="justify-content: flex-start; display: flex;">

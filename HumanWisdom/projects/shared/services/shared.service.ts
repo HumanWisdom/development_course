@@ -150,11 +150,11 @@ export class SharedService {
   public static getDashboardUrls() {
     switch (this.ProgramId) {
       case ProgramType.Adults:
-        return '/adults/home';
+        return '/adults/repeat-user/my-daily-practice';
       case ProgramType.Teenagers:
-        return '/teenagers/home';
+        return '/teenagers/repeat-user/my-daily-practice';
       default:
-        return '/adults/home';
+        return '/adults/repeat-user/my-daily-practice';
     }
   }
 
