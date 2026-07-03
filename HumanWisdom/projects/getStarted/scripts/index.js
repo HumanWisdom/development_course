@@ -2,12 +2,6 @@
 const userAgent = navigator.userAgent;
 const isLoggedIn = localStorage.getItem('isloggedin') == 'T';
 const url = "https://happierme.app";
-var type = "Desktop";
-/Mobi|Android/i.test(userAgent)
-    ? (type = "Mobile")
-    : /Tablet|iPad|PlayBook/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent))
-      ? (type = "Tablet")
-      : (type = "Desktop");
 //const url ="https://staging.happierme.app"
 //const url ="http://localhost:4200"
 
@@ -20,21 +14,11 @@ function hwApiUrl(path) {
     return base + "/" + p;
 }
 
-function scheduleIdleWork(fn) {
-    if (typeof requestIdleCallback === "function") {
-        requestIdleCallback(function () { fn(); }, { timeout: 2500 });
-    } else {
-        window.addEventListener("load", fn, { once: true });
-    }
-}
-
-function initAnalytics() {
-    window.dataLayer = window.dataLayer || [];
-    gtag("js", new Date());
-    gtag("config", "G-1WBHRGL7VH");
-}
-
-scheduleIdleWork(initAnalytics);
+(window.dataLayer = window.dataLayer || []),
+    gtag("js", new Date()),
+    gtag("config", "G-1WBHRGL7VH"),
+    (type = "Desktop"),
+    /Mobi|Android/i.test(userAgent) ? (type = "Mobile") : /Tablet|iPad|PlayBook/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent)) ? (type = "Tablet") : (type = "Desktop");
 
 function gtag() {
     dataLayer.push(arguments);
@@ -115,23 +99,14 @@ runWhenDomReady(initTopicsHelpGa);
 
 (function logHomepageView() {
     if (document.getElementById("happiermeTryForFree")) {
-        scheduleIdleWork(function () {
-            logevent("homepage_view", "index.php");
-        });
+        logevent("homepage_view", "index.php");
     }
 })();
 
-(function removePreloaderEarly() {
-    var preloader = document.getElementById("preloader");
-    if (!preloader) return;
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", function () {
-            preloader.remove();
-        }, { once: true });
-    } else {
-        preloader.remove();
-    }
-})();
+setTimeout(() => {
+    console.log("Removing preloader...");
+    document.getElementById("preloader").remove();
+}, 500);
 
 // Function to remove active_nav class from all navigation elements
 function removeActiveNavClass(tab) {
@@ -1719,10 +1694,6 @@ nfsnContactForm &&
             });
             playBtn.addEventListener("click", function () {
                 if (aud.paused) {
-                    aud.querySelectorAll("source[data-src]").forEach(function (source) {
-                        if (!source.src) source.src = source.getAttribute("data-src");
-                    });
-                    if (aud.querySelector("source[data-src]")) aud.load();
                     aud.play();
                 } else {
                     aud.pause();
@@ -1790,8 +1761,8 @@ nfsnContactForm &&
                         
                 });
         });
-    }, 200);
-    scheduleIdleWork(fetchData);
+    }, 200),
+    fetchData();
 // fetchWebsiteTitle();
 var countryCode = "",
     pricingModel = "",
@@ -1914,19 +1885,15 @@ function prepareIndexLazySection(section) {
 }
 
 function activateIndexLazyMedia(section) {
-    var mediaRoot = section;
-    if (section.classList && section.classList.contains("tools-section")) {
-        mediaRoot = section.querySelector(".tools-panel.active") || section;
-    }
-    mediaRoot.querySelectorAll("img[data-src]").forEach(function (img) {
+    section.querySelectorAll("img[data-src]").forEach(function (img) {
         var url = img.getAttribute("data-src");
         if (url && img.getAttribute("src") !== url) img.src = url;
     });
-    mediaRoot.querySelectorAll("picture source[data-srcset]").forEach(function (source) {
+    section.querySelectorAll("picture source[data-srcset]").forEach(function (source) {
         var srcset = source.getAttribute("data-srcset");
         if (srcset) source.srcset = srcset;
     });
-    mediaRoot.querySelectorAll("video").forEach(function (video) {
+    section.querySelectorAll("video").forEach(function (video) {
         var changed = false;
         video.querySelectorAll("source[data-src]").forEach(function (source) {
             source.src = source.getAttribute("data-src");
@@ -1934,22 +1901,7 @@ function activateIndexLazyMedia(section) {
         });
         if (changed) video.load();
     });
-    mediaRoot.querySelectorAll("audio").forEach(function (audio) {
-        var changed = false;
-        audio.querySelectorAll("source[data-src]").forEach(function (source) {
-            source.src = source.getAttribute("data-src");
-            changed = true;
-        });
-        if (changed) audio.load();
-    });
 }
-
-function activateToolsPanelMedia(panelId) {
-    var panel = document.getElementById(panelId);
-    if (!panel) return;
-    activateIndexLazyMedia(panel);
-}
-window.activateToolsPanelMedia = activateToolsPanelMedia;
 
 function showIndexLazySection(section) {
     section.classList.add("is-visible");
