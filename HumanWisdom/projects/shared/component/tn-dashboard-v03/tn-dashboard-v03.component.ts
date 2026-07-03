@@ -128,6 +128,10 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    if(changes && changes.enableplaystore){
+      console.log('CHILD HEADER COMPONENT changes.enableplaystore:', changes.enableplaystore.currentValue);
+    }
+
     if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
       if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
         this.enableHamburger = changes.enableHamburger.currentValue;
