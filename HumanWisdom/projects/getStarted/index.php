@@ -227,7 +227,7 @@ require_once('./includes/security_config.php');
           </video>
           <div class="div-12">
             <div class="div-5">
-              <p class="introducing-olly-AI" style="font-size:30px;">Meet Olly AI,<br />your personal guide.</p>
+              <p class="introducing-olly-AI">Meet Olly AI,<br />your personal guide.</p>
               <p class="text-wrapper-8">
                Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
               </p>
@@ -677,12 +677,12 @@ require_once('./includes/security_config.php');
         <div class="tools-content-wrap">
         <!-- Tab pills -->
         <div class="tools-tabs" id="toolTabs">
+          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Wellness score</button>
           <button class="tool-tab tool-tab-active" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
           <button class="tool-tab" id="pathWay-tab" onclick="switchTab(this,'pathway')">Guided Programs</button>
           <button class="tool-tab" id="journal-tab" onclick="switchTab(this,'journal_tab')">Journal</button>
           <button class="tool-tab" id="podcast-tab" onclick="switchTab(this,'podcast_tab')">Podcast</button>
           <button class="tool-tab" id="community-tab" onclick="switchTab(this,'forum')">Community</button>
-          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Wellness score</button>
         </div>
         <!-- Tab content area -->
         <div class="tools-panel-wrap">

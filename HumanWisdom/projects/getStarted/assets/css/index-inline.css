@@ -323,7 +323,11 @@ p:hover {
 #OllyChatBtn {
   display: inline-flex;
   width: fit-content;
-  align-self: flex-start;
+}
+@media (min-width: 769px) {
+  #OllyChatBtn {
+    align-self: flex-start;
+  }
 }
 #OllyChatBtn .start-your-free-wrapper-2:hover {
   background: linear-gradient(180deg, #2D5392 0%, #0E2E64 100%);
@@ -2457,12 +2461,69 @@ header a[href*="splash_options.php"] * {
   .div-10 { min-width: unset; width: 100%; height: auto; min-height: 60px; }
 
   /* Olly */
-  .div-11 { flex-direction: column; align-items: center; text-align: center; gap:18px}
-  .group-3 { width: clamp(160px, 50vw, 260px); height: auto; min-height: auto; }
-  .introducing-olly-AI { font-size: 24px !important; font-weight: 600; }
-  .div-12 { align-items: center; }
-  .start-your-free-wrapper-2 { align-self: center; }
-  .text-wrapper-8 { font-size: 12px; font-weight: 400; }
+  .frame-wrapper-3 {
+    padding: 48px 16px;
+    box-sizing: border-box;
+  }
+  .frame-wrapper-3 .div-11 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .frame-wrapper-3 .div-12 {
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+  .frame-wrapper-3 .div-5 {
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  .frame-wrapper-3 .group-3 {
+    width: clamp(160px, 50vw, 260px);
+    height: auto;
+    min-height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .frame-wrapper-3 .introducing-olly-AI {
+    font-size: 24px !important;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+  }
+  .frame-wrapper-3 .text-wrapper-8 {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .frame-wrapper-3 #OllyChatBtn {
+    display: flex;
+    width: 335px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .frame-wrapper-3 #OllyChatBtn .start-your-free-wrapper-2 {
+    width: 100%;
+    max-width: none;
+    height: 48px;
+    border-radius: 24px;
+    padding: 0 20px !important;
+    align-self: stretch;
+    justify-content: center;
+  }
 
   /* Chat with Olly now button */
   .start-your-free-wrapper-2 {
@@ -2756,20 +2817,9 @@ header a[href*="splash_options.php"] * {
   .div-8 { gap: 10px; }
   .div-9 { gap: 10px; }
   .text-wrapper-7 { font-size: 15px; }
-  .introducing-olly-AI{
+  .frame-wrapper-3 .introducing-olly-AI {
     font-size: 24px !important;
     font-weight: 600;
-  }
-
-  /* Olly */
-  .frame-wrapper-3 { padding: 48px 16px; }
-  .text-wrapper-8 { font-size: 12px; font-weight: 400; }
-  .start-your-free-wrapper-2 {
-    width: 335px;
-    max-width: 100%;
-    height: 48px;
-    border-radius: 24px;
-    padding: 0 20px !important;
   }
 
   /* Video */

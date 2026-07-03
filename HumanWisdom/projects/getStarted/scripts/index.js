@@ -933,6 +933,7 @@ function testNewsletterPopup() {
 
 // Newsletter popup configuration
 const NEWSLETTER_CONFIG = {
+    enabled: false,
     delayAfterPreloader: 2000, // 5 seconds after preloader finishes
     fallbackDelay: 50000, // 10 seconds as fallback
     checkInterval: 100, // Check interval for preloader status
@@ -941,6 +942,7 @@ const NEWSLETTER_CONFIG = {
 
 // Newsletter popup functionality using ModalManager - Dynamic timing based on preloader
 function initializeNewsletterPopup() {
+    if (!NEWSLETTER_CONFIG.enabled) return;
     if (NEWSLETTER_CONFIG.debug) {
         console.log("Checking newsletter popup...");
         console.log("Session storage value:", sessionStorage.getItem('newsLetterOpened'));
@@ -1056,6 +1058,7 @@ function checkPreloaderAndShowNewsletter() {
 
 // Enhanced preloader detection with multiple approaches
 function setupNewsletterTiming() {
+    if (!NEWSLETTER_CONFIG.enabled) return;
     let newsletterTriggered = false;
     
     // Method 1: Use MutationObserver to watch for preloader removal
