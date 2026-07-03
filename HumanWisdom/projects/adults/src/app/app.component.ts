@@ -453,7 +453,7 @@ export class AppComponent implements OnDestroy {
       this.enableprofile = false;
       this.isEnableHam = true;
       let ban = localStorage.getItem('enablebanner');
-      if (ban === null || ban === 'T') {
+      if ((ban === null || ban === 'T') && !this.router.url.includes("explore")) {
        this.enableplaystore = true;
       } else {
         this.enableplaystore = false;
@@ -470,7 +470,12 @@ export class AppComponent implements OnDestroy {
       this.fourm = false;
       this.enableprofile = false;
       this.isEnableHam = true;
-      this.enableplaystore = false;
+      let ban = localStorage.getItem('enablebanner');
+      if (ban === null || ban === 'T') {
+        this.enableplaystore = true;
+      } else {
+        this.enableplaystore = false;
+      }
       this.isShowHeader = this.isNavVisibleGlobal;
       this.isLoginPage = false;
       return true;
