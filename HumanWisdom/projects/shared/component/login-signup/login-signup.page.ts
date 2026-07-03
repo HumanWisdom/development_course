@@ -1607,7 +1607,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
                     }
 
                   } else {
-                    this.router.navigate([`${SharedService.getprogramName()}/repeat-user`]);
+                    this.router.navigate([`${SharedService.getprogramName()}/today`]);
                   }
                 }
               }
