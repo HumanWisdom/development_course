@@ -1319,7 +1319,7 @@ const teenagersPricing = document.getElementById('teenagersPricing');
 if (teenagersPricing) {
     teenagersPricing.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
-        window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+        window.location.href = url+"/teenagers/onboarding/login";
     });
 }
 
@@ -1327,7 +1327,7 @@ const teenagersClick = document.getElementById('teenagersClick');
 if (teenagersClick) {
     teenagersClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-           window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+           window.location.href = url+"/teenagers/onboarding/login";
         }
          else if(localStorage.getItem('chat-bot')=='true'){
            window.location.href = url+"/teenagers/chat-bot";
@@ -1357,7 +1357,7 @@ const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-           window.location.href = url+"/adults/subscription/start-your-free-trial";
+           window.location.href = url+"/adults/onboarding/login";
         }
         else if(localStorage.getItem('chat-bot')=='true'){
            window.location.href = url+"/adults/chat-bot";
