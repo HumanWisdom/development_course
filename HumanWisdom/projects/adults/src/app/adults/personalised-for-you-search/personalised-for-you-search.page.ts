@@ -34,7 +34,7 @@ import {
         })),
         state('expanded', style({
           height: '*',
-          overflow: 'auto',
+          overflow: 'visible',
           opacity: 1
         })),
         transition('collapsed <=> expanded', [
@@ -55,6 +55,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public isExpanded = true;
   public isGuidedJourneysExpanded = true;
   public isMicrolearningExpanded = true;
+  public microlearningPreview: any[] = [];
+  public guidedJourneyPreview: any[] = [];
 
   indList = []
   isEnableHam = true;
@@ -194,6 +196,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
       this.streak = this.loginResponse.Streak;
     }
     this.getUserPreference();
+    this.loadMicrolearningPreview();
+    this.loadGuidedJourneyPreview();
     this.isSubscribe = SharedService.isSubscriber();
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -330,6 +334,43 @@ toggleAccordion() {
     this.logeventservice.logEvent('click_microlearning_' + id);
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.router.navigate(['/adults/micro-learning/inner', id]);
+  }
+
+  loadMicrolearningPreview() {
+    this.commonService.GetMicrolearningList(SharedService.ProgramId).subscribe((res: any) => {
+      if (res && res.length) {
+        const pageCounts = [8, 7, 8];
+        this.microlearningPreview = res.slice(0, 3).map((item, i) => ({
+          id: item.microlearningID,
+          title: item.Title,
+          imgUrl: item.ImageUrl,
+          pages: pageCounts[i]
+        }));
+      }
+    });
+  }
+
+  loadGuidedJourneyPreview() {
+    const userId = SharedService.getUserId() || 100;
+    this.commonService.GetGuidedJourneys(SharedService.ProgramId, userId).subscribe((res: any) => {
+      if (res) {
+        const data = Array.isArray(res) ? res :
+          (res.Data || res.data || res.DataList || res.GuidedJourneys || res.Guided_Journeys || res.list || []);
+        this.guidedJourneyPreview = data.slice(0, 3).map(item => ({
+          id: item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID,
+          title: item.Title || item.title || item.JourneyName || item.Name,
+          subtitle: (item.Days || item.days) > 0 ? `${item.Days || item.days} days` : (item.Subtitle || item.subtitle || ''),
+          imgUrl: this.resolveImgUrl(item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl)
+        }));
+      }
+    });
+  }
+
+  resolveImgUrl(url: string): string {
+    if (!url) return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
+    if (url.startsWith('https://') || url.startsWith('http://')) return url;
+    if (url.startsWith('/')) return `https://d1tenzemoxuh75.cloudfront.net${url}`;
+    return `https://d1tenzemoxuh75.cloudfront.net/${url}`;
   }
 
   
