@@ -610,7 +610,7 @@ export class CommonService {
         sessionStorage.setItem("userName", JSON.stringify(this.userName))
       }
 
-      this.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
+      this.loginSubject(`${SharedService.getprogramName()}/today`);
     }
   }
 

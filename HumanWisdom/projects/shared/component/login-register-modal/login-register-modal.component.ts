@@ -702,7 +702,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                 }
               });
             } else {
-              this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+              this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
             }
           }
         }
@@ -1348,7 +1348,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                   }
                 });
               } else {
-                this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
               }
             }
           }
@@ -1594,9 +1594,9 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                         } 
                     }else{
                     if (SharedService.ProgramId === 9) {
-                      this.router.navigate(["/adults/repeat-user"]);
+                      this.router.navigate(["/adults/today"]);
                     } else if (SharedService.ProgramId === 11) {
-                      this.router.navigate(["/teenazgers/repeat-user"]);
+                      this.router.navigate(["/teenagers/today"]);
                     }
                   }
                   }
