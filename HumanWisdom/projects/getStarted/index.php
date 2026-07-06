@@ -175,10 +175,7 @@ require_once('./includes/security_config.php');
       <!-- ===== ORCHA / Mind BANNER ===== -->
       <div class="orcha-strip index-lazy-section">
         <div class="orcha-strip-item orcha-strip-orcha">
-          <picture>
-            <source media="(max-width: 767px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/orchacertifiedmobile.svg" />
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
-          </picture>
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/orcha_certifie.svg" alt="ORCHA Certified" height="60" width="60"/>
           <span>ORCHA approved for use in healthcare</span>
         </div>
         <div class="orcha-strip-item orcha-strip-mind">

@@ -1418,6 +1418,8 @@ header a[href*="splash_options.php"] * {
   flex-shrink: 0;
   width: 26px;
   height: 26px;
+  min-width: 26px;
+  min-height: 26px;
   border-radius: 50%;
   border: none;
   background: rgba(173, 173, 173, 1);;
@@ -1431,6 +1433,8 @@ header a[href*="splash_options.php"] * {
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   z-index: 2;
   padding: 0;
+  overflow: visible;
+  box-sizing: border-box;
 }
 .coach-arrow:disabled {
   opacity: 0.5 !important;
@@ -1442,6 +1446,7 @@ header a[href*="splash_options.php"] * {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  overscroll-behavior-y: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   touch-action: auto;
@@ -1490,6 +1495,9 @@ header a[href*="splash_options.php"] * {
   width: 100%;
   padding-left: 12rem;
   box-sizing: border-box;
+  overflow: visible;
+  min-height: 40px;
+  padding-bottom: 6px;
 }
 .coaches-footer-spacer {
   flex: 1;
@@ -1500,7 +1508,9 @@ header a[href*="splash_options.php"] * {
   align-items: center;
   justify-content: center;
   gap: 8px;
-      margin-left: 15rem;
+  margin-left: 15rem;
+  overflow: visible;
+  padding: 4px 0;
 }
                   
 
@@ -1559,6 +1569,7 @@ header a[href*="splash_options.php"] * {
   display: flex;
   flex-direction: column;
   gap: 0;
+  overflow: visible;
 }
 /* Desktop: wrapper is invisible to layout; mobile: breakout strip like .coaches-track-wrap */
 .blog-track-wrap {
@@ -1570,6 +1581,7 @@ header a[href*="splash_options.php"] * {
   padding-bottom: 4px;
   overflow-x: auto;
   overflow-y: hidden;
+  overscroll-behavior-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -1658,6 +1670,9 @@ header a[href*="splash_options.php"] * {
   margin-top: 20px;
   flex-wrap: wrap;
   margin-left: 27rem;
+  overflow: visible;
+  min-height: 40px;
+  padding-bottom: 6px;
 }
 .blog-dots { display: flex; gap: 8px; align-items: center; }
 .bdot {

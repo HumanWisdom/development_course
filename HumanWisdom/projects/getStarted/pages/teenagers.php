@@ -1022,13 +1022,6 @@
       if (blogScrollEl) {
         updateBlogNavButtons();
         blogScrollEl.addEventListener('scroll', updateBlogNavButtons);
-        blogScrollEl.addEventListener('wheel', function (e) {
-          if (blogScrollEl.scrollWidth <= blogScrollEl.clientWidth) return;
-          if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
-          e.preventDefault();
-          blogScrollEl.scrollLeft += e.deltaY;
-          updateBlogNavButtons();
-        }, { passive: false });
       }
 
       var y = document.getElementById('sub-plan-yearly');
