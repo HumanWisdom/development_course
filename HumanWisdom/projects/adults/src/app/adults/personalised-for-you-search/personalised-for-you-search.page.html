@@ -113,7 +113,7 @@
                             <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex"> -->
                             <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/Introduction/images/intro_pathway.webp"
-                                alt="" class="p0 session_img">
+                                alt="" style="height: 76px !important; width: 114px !important;" class="p0 session_img">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
                                 alt="" class="p0 session_img_play" *ngIf="!isAdults">
@@ -395,62 +395,21 @@
                     </div>
                     <div [@accordionAnimation]="isGuidedJourneysExpanded ? 'expanded' : 'collapsed'"
                       class="panel-collapse of-h" style="overflow:visible !important">
-                      <div class="toc_adiv_03 mt20px">
+                      <div class="toc_adiv_03">
 
-                        <!-- Card 1 -->
-                        <a (click)="routeToGuidedJourney(1)">
+                        <a *ngFor="let journey of guidedJourneyPreview" (click)="routeToGuidedJourney(journey.id)">
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                               <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/guided_journeys/1.webp" alt=""
-                                  class="p0 session_img session_imgnew" style="border-radius: 10px;" />
+                                <img [src]="journey.imgUrl" alt="" class="p0 session_img session_imgnew"
+                                  style="border-radius: 10px;" />
                               </div>
                               <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
                                 <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000">
-                                  Journey to less stress
+                                  {{journey.title}}
                                 </h4>
                                 <p class="mt0px mb0px fs_12px fw_400 lh_130p fc_000000_0_5">
-                                  8 days
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-
-                        <!-- Card 2 -->
-                        <a (click)="routeToGuidedJourney(2)">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/guided_journeys/2.webp" alt=""
-                                  class="p0 session_img session_imgnew" style="border-radius: 10px;" />
-                              </div>
-                              <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
-                                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000">
-                                  Journey to reduced anxiety
-                                </h4>
-                                <p class="mt0px mb0px fs_12px fw_400 lh_130p fc_000000_0_5">
-                                  8 days
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-
-                        <!-- Card 3 -->
-                        <a (click)="routeToGuidedJourney(10)">
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/guided_journeys/10.webp" alt=""
-                                  class="p0 session_img session_imgnew" style="border-radius: 10px;" />
-                              </div>
-                              <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
-                                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000">
-                                  Dealing with sadness / depression
-                                </h4>
-                                <p class="mt0px mb0px fs_12px fw_400 lh_130p fc_000000_0_5">
-                                  9 days
+                                  {{journey.subtitle}}
                                 </p>
                               </div>
                             </div>
@@ -463,7 +422,7 @@
                       <div class="row mt15px mb15px tcenter">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <a routerlink="/adults/guided-journeys"
-                            style="color:#000; display:inline-flex; align-items:center; gap:5px; text-decoration:none;">
+                            style="color:rgba(0, 0, 0, 0.75); display:inline-flex; align-items:center; gap:10px; text-decoration:none;">
 
                             <span style="text-decoration: underline;">View more</span>
 
@@ -704,7 +663,7 @@
 
             <!-- microlearning -->
             <div class="row">
-              <div class="col-12 p0 accordion_row bg_profile_t">
+              <div class="col-12 p0 accordion_row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="panel-group dpanelgroup" id="microlearningAccordion">
                     <div class="panel panel-default dpanel dpanel_01">
@@ -731,77 +690,31 @@
                         class="panel-collapse of-h" style="overflow:visible !important">
 
                         <!-- Horizontal scroll carousel -->
-                        <div class="mt20px"
-                          style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 20px;">
+                        <div class="odiv odiv_microlearning">
 
-                          <!-- Card 1 -->
-                          <a (click)="routeToMicrolearning(70)"
-                            style="display: inline-block; width: 150px; vertical-align: top; margin-right: 12px; cursor: pointer; white-space: normal;">
+                          <a *ngFor="let item of microlearningPreview" (click)="routeToMicrolearning(item.id)"
+                            class="ml_card">
                             <div>
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/microlearning/70.webp" alt=""
-                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;" />
-                              <h4 class="mt5px mb5px fs_13px fw_500 lh_130p fc_000000" style="white-space: normal;">
-                                Comparison - an avoidable cause of suffering
+                              <img [src]="item.imgUrl" alt="" class="ml_card_img" />
+                              <h4 class="mt5px mb5px fs_13px fw_500 lh_130p fc_000000 ml_card_title">
+                                {{item.title}}
                               </h4>
-                              <p class="mt0px mb0px fs_11px fw_400 lh_130p" style="color: rgba(0,0,0,0.5);">
-                                MODULE · 8 pages
-                              </p>
-                            </div>
-                          </a>
-
-                          <!-- Card 2 -->
-                          <a (click)="routeToMicrolearning(81)"
-                            style="display: inline-block; width: 150px; vertical-align: top; margin-right: 12px; cursor: pointer; white-space: normal;">
-                            <div>
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/microlearning/81.webp" alt=""
-                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;" />
-                              <h4 class="mt5px mb5px fs_13px fw_500 lh_130p fc_000000" style="white-space: normal;">
-                                Dealing with our inner boredom/ restlessness
-                              </h4>
-                              <p class="mt0px mb0px fs_11px fw_400 lh_130p" style="color: rgba(0,0,0,0.5);">
-                                MODULE · 8 pages
-                              </p>
-                            </div>
-                          </a>
-
-                          <!-- Card 3 -->
-                          <a (click)="routeToMicrolearning(69)"
-                            style="display: inline-block; width: 150px; vertical-align: top; margin-right: 12px; cursor: pointer; white-space: normal;">
-                            <div>
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/microlearning/69.webp" alt=""
-                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;" />
-                              <h4 class="mt5px mb5px fs_13px fw_500 lh_130p fc_000000" style="white-space: normal;">
-                                Why we try to control others
-                              </h4>
-                              <p class="mt0px mb0px fs_11px fw_400 lh_130p" style="color: rgba(0,0,0,0.5);">
-                                MODULE · 8 pages
+                              <p class="mt0px mb0px fw_400 lh_130p fc_000000_0_5" style="font-size: 10px;">
+                                MODULE<ng-container *ngIf="item.pages"> • {{item.pages}} pages</ng-container>
                               </p>
                             </div>
                           </a>
 
                           <!-- View More -->
                           <a routerLink="/adults/micro-learning"
-                            (click)="logEvent('click_view_more_microlearning', '/adults/micro-learning')" style="display:inline-flex;
-          flex-direction:row;
-          align-items:center;
-          justify-content:center;
-          gap:4px;
-          width:80px;
-          height:150px;
-          cursor:pointer;
-          padding-top:60px;
-          text-decoration:none;
-          color:rgba(0, 0, 0, 0.75);">
-
-                            <span class="fs_12px fw_500 lh_150p" style="text-decoration:underline;">
-                              View more
-                            </span>
-
-                            <i class="fa fa-angle-down" style="font-size:14px; text-decoration:none;"></i>
-
+                            (click)="logEvent('click_view_more_microlearning', '/adults/micro-learning')"
+                            class="ml_card ml_card_viewmore">
+                            <span class="fs_12px fw_500 lh_150p">View more</span>
+                            <i class="fa fa-angle-right" style="font-size:14px;"></i>
                           </a>
 
                         </div>
+                        <!-- /horizontal scroll carousel -->
 
                       </div>
                     </div>
@@ -811,21 +724,7 @@
             </div>
             <!-- /microlearning -->
 
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-            <!-- /hr -->
-
-            <!-- hr -->
-            <!-- <div class="row ">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div> -->
-            <!-- /hr -->
+            <!-- COMMENTED OUT SECTIONS BELOW -->
 
             <!-- find answers -->
             <!-- <a (click)="routeToFindAnswer('why-do-i')">
@@ -1399,7 +1298,7 @@
             <!-- <div class="row center_flex faq_category">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group" id="accordion_faq"> -->
-            <div class="row accordion_row make_category">
+            <!-- <div class="row accordion_row make_category">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group">
                   <div class="">
@@ -1425,17 +1324,7 @@
                       <div class="">
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
-
-                            <!-- <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a>
-                                <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/01.svg"
-                                  alt="Stress Management" class="crimg">
-                                <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                  Tackling racism
-                                </h4>
-                              </a>
-                            </div> -->
+                         
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
                               <a class=""
@@ -1718,7 +1607,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -1741,7 +1630,6 @@
       </div>
     </div>
   </div>
-  <!--/class -->
 </div>
 <!-- /page content -->
 
