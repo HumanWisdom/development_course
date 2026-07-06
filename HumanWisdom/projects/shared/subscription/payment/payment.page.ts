@@ -120,7 +120,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
           },
          '.TermsText': {
             fontSize: '10px',
-            color: 'rgba(0,0,0,0.50)'
+            color: (this.isAdults? 'rgba(0,0,0,0.50)' : 'rgba(255, 255, 255, 0.50)' ) ,
           },
 
           /* '.Input::placeholder': {
