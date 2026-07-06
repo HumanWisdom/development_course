@@ -369,6 +369,124 @@
 
             <!-- /hr -->
 
+            <!-- guided journeys -->
+            <div class="row accordion_row plr20px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group">
+                  <div class="">
+                    <div class="panel-heading pt0px">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" (click)="toggleGuidedJourneys()">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
+                                  Guided journeys
+                                </h2>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                                <i class="fa" [ngClass]="isGuidedJourneysExpanded ? 'fa-angle-up' : 'fa-angle-down'"
+                                  style="font-size: 20px; color: #000000;"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </h4>
+                    </div>
+                    <div [@accordionAnimation]="isGuidedJourneysExpanded ? 'expanded' : 'collapsed'"
+                      class="panel-collapse of-h" style="overflow:visible !important">
+                      <div class="toc_adiv_03 mt20px">
+
+                        <!-- Card 1 -->
+                        <a (click)="routeToGuidedJourney(1)">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/guided_journeys/1.webp" alt=""
+                                  class="p0 session_img session_imgnew" style="border-radius: 10px;" />
+                              </div>
+                              <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
+                                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000">
+                                  Journey to less stress
+                                </h4>
+                                <p class="mt0px mb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                                  8 days
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+
+                        <!-- Card 2 -->
+                        <a (click)="routeToGuidedJourney(2)">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/guided_journeys/2.webp" alt=""
+                                  class="p0 session_img session_imgnew" style="border-radius: 10px;" />
+                              </div>
+                              <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
+                                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000">
+                                  Journey to reduced anxiety
+                                </h4>
+                                <p class="mt0px mb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                                  8 days
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+
+                        <!-- Card 3 -->
+                        <a (click)="routeToGuidedJourney(10)">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/guided_journeys/10.webp" alt=""
+                                  class="p0 session_img session_imgnew" style="border-radius: 10px;" />
+                              </div>
+                              <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
+                                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000">
+                                  Dealing with sadness / depression
+                                </h4>
+                                <p class="mt0px mb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                                  9 days
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+
+                      </div>
+
+                      <!-- View More Link -->
+                      <div class="row mt15px mb15px tcenter">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <a routerlink="/adults/guided-journeys"
+                            style="color:#000; display:inline-flex; align-items:center; gap:5px; text-decoration:none;">
+
+                            <span style="text-decoration: underline;">View more</span>
+
+                            <i class="fa fa-angle-down" style="text-decoration:none;"></i>
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /guided journeys -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
             <!-- daily practice -->
             <!-- accordion -->
             <!-- 
@@ -557,7 +675,6 @@
 
             <!-- /hr -->
 
-
             <!-- find inspiration -->
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -584,6 +701,124 @@
               </div>
             </div>
             <!-- /hr -->
+
+            <!-- microlearning -->
+            <div class="row">
+              <div class="col-12 p0 accordion_row bg_profile_t">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group dpanelgroup" id="microlearningAccordion">
+                    <div class="panel panel-default dpanel dpanel_01">
+                      <div class="panel-heading">
+                        <h4 class="panel-title dpaneltitle">
+                          <a (click)="toggleMicrolearning()" style="cursor: pointer;">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
+                                    Microlearning
+                                  </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                                  <i class="fa" [ngClass]="isMicrolearningExpanded ? 'fa-angle-up' : 'fa-angle-down'"
+                                    style="font-size: 20px; color: #000000;"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </h4>
+                      </div>
+                      <div [@accordionAnimation]="isMicrolearningExpanded ? 'expanded' : 'collapsed'"
+                        class="panel-collapse of-h" style="overflow:visible !important">
+
+                        <!-- Horizontal scroll carousel -->
+                        <div class="mt20px"
+                          style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 20px;">
+
+                          <!-- Card 1 -->
+                          <a (click)="routeToMicrolearning(70)"
+                            style="display: inline-block; width: 150px; vertical-align: top; margin-right: 12px; cursor: pointer; white-space: normal;">
+                            <div>
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/microlearning/70.webp" alt=""
+                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;" />
+                              <h4 class="mt5px mb5px fs_13px fw_500 lh_130p fc_000000" style="white-space: normal;">
+                                Comparison - an avoidable cause of suffering
+                              </h4>
+                              <p class="mt0px mb0px fs_11px fw_400 lh_130p" style="color: rgba(0,0,0,0.5);">
+                                MODULE · 8 pages
+                              </p>
+                            </div>
+                          </a>
+
+                          <!-- Card 2 -->
+                          <a (click)="routeToMicrolearning(81)"
+                            style="display: inline-block; width: 150px; vertical-align: top; margin-right: 12px; cursor: pointer; white-space: normal;">
+                            <div>
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/microlearning/81.webp" alt=""
+                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;" />
+                              <h4 class="mt5px mb5px fs_13px fw_500 lh_130p fc_000000" style="white-space: normal;">
+                                Dealing with our inner boredom/ restlessness
+                              </h4>
+                              <p class="mt0px mb0px fs_11px fw_400 lh_130p" style="color: rgba(0,0,0,0.5);">
+                                MODULE · 8 pages
+                              </p>
+                            </div>
+                          </a>
+
+                          <!-- Card 3 -->
+                          <a (click)="routeToMicrolearning(69)"
+                            style="display: inline-block; width: 150px; vertical-align: top; margin-right: 12px; cursor: pointer; white-space: normal;">
+                            <div>
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/microlearning/69.webp" alt=""
+                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;" />
+                              <h4 class="mt5px mb5px fs_13px fw_500 lh_130p fc_000000" style="white-space: normal;">
+                                Why we try to control others
+                              </h4>
+                              <p class="mt0px mb0px fs_11px fw_400 lh_130p" style="color: rgba(0,0,0,0.5);">
+                                MODULE · 8 pages
+                              </p>
+                            </div>
+                          </a>
+
+                          <!-- View More -->
+                          <a routerLink="/adults/micro-learning"
+                            (click)="logEvent('click_view_more_microlearning', '/adults/micro-learning')" style="display:inline-flex;
+          flex-direction:row;
+          align-items:center;
+          justify-content:center;
+          gap:4px;
+          width:80px;
+          height:150px;
+          cursor:pointer;
+          padding-top:60px;
+          text-decoration:none;
+          color:rgba(0, 0, 0, 0.75);">
+
+                            <span class="fs_12px fw_500 lh_150p" style="text-decoration:underline;">
+                              View more
+                            </span>
+
+                            <i class="fa fa-angle-down" style="font-size:14px; text-decoration:none;"></i>
+
+                          </a>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /microlearning -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
             <!-- hr -->
             <!-- <div class="row ">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">

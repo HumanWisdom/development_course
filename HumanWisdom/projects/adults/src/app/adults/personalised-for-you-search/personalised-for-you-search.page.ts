@@ -53,6 +53,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
   personalisedforyou = []
 
   public isExpanded = true;
+  public isGuidedJourneysExpanded = true;
+  public isMicrolearningExpanded = true;
 
   indList = []
   isEnableHam = true;
@@ -308,6 +310,26 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 toggleAccordion() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  toggleGuidedJourneys() {
+    this.isGuidedJourneysExpanded = !this.isGuidedJourneysExpanded;
+  }
+
+  routeToGuidedJourney(journeyId) {
+    this.logeventservice.logEvent('click_guided_journey_' + journeyId);
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.router.navigate(['/adults/guided-journeys/intro'], { queryParams: { journeyId } });
+  }
+
+  toggleMicrolearning() {
+    this.isMicrolearningExpanded = !this.isMicrolearningExpanded;
+  }
+
+  routeToMicrolearning(id) {
+    this.logeventservice.logEvent('click_microlearning_' + id);
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.router.navigate(['/adults/micro-learning/inner', id]);
   }
 
   
