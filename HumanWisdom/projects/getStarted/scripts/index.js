@@ -933,6 +933,7 @@ function testNewsletterPopup() {
 
 // Newsletter popup configuration
 const NEWSLETTER_CONFIG = {
+    enabled: false,
     delayAfterPreloader: 2000, // 5 seconds after preloader finishes
     fallbackDelay: 50000, // 10 seconds as fallback
     checkInterval: 100, // Check interval for preloader status
@@ -941,6 +942,7 @@ const NEWSLETTER_CONFIG = {
 
 // Newsletter popup functionality using ModalManager - Dynamic timing based on preloader
 function initializeNewsletterPopup() {
+    if (!NEWSLETTER_CONFIG.enabled) return;
     if (NEWSLETTER_CONFIG.debug) {
         console.log("Checking newsletter popup...");
         console.log("Session storage value:", sessionStorage.getItem('newsLetterOpened'));
@@ -1056,6 +1058,7 @@ function checkPreloaderAndShowNewsletter() {
 
 // Enhanced preloader detection with multiple approaches
 function setupNewsletterTiming() {
+    if (!NEWSLETTER_CONFIG.enabled) return;
     let newsletterTriggered = false;
     
     // Method 1: Use MutationObserver to watch for preloader removal
@@ -1942,6 +1945,17 @@ function initIndexLazySections() {
     });
 }
 
+/** Let vertical wheel scroll the page over horizontal carousels (avoids scroll trap). */
+function initCarouselWheelPassthrough(el) {
+    if (!el || el.getAttribute("data-wheel-passthrough") === "1") return;
+    el.setAttribute("data-wheel-passthrough", "1");
+    el.addEventListener("wheel", function (e) {
+        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+        e.preventDefault();
+        window.scrollBy({ top: e.deltaY, behavior: "auto" });
+    }, { passive: false });
+}
+
 /** Index-only: org cards, coaches/blog, blog section view, footer/social (matches webpage event list). */
 function initIndexPageGa() {
     var ollyVideo = document.getElementById("olly-ai-video");
@@ -1998,6 +2012,7 @@ function initIndexPageGa() {
 
     var coachScroll = document.getElementById("coaches-scroll");
     if (coachScroll) {
+        initCarouselWheelPassthrough(coachScroll);
         coachScroll.addEventListener("click", function (e) {
             var card = e.target.closest("a.coach-card");
             if (!card) return;
@@ -2011,6 +2026,7 @@ function initIndexPageGa() {
 
     var blogScrollEl = document.getElementById("blog-scroll");
     if (blogScrollEl) {
+        initCarouselWheelPassthrough(blogScrollEl);
         blogScrollEl.addEventListener("click", function (e) {
             var card = e.target.closest("a.blog-card");
             if (!card) return;
