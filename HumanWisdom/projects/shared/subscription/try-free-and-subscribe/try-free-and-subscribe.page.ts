@@ -291,7 +291,7 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
       }
       this.router.navigate([redirectUrl], extras);
     } else {
-      this.router.navigateByUrl(SharedService.getDashboardUrls());
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
     }
   }
 
