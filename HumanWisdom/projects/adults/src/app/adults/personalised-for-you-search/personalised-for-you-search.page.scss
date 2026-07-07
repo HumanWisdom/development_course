@@ -417,7 +417,9 @@ nav {
 .ml_card_title {
   white-space: normal;
 }
-
+.panel-heading {
+  padding-bottom: 12px !important;
+}
 .ml_card_viewmore {
   display: inline-flex;
   flex-direction: row;

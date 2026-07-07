@@ -298,6 +298,8 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   routeToOllyLanding() {
     const redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
     const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
+    // Flag that the user arrived via the basic-access sign-up path
+    sessionStorage.setItem('fromBasicAccessSignup', 'T');
     if (redirectUrl) {
       sessionStorage.removeItem('subscriptionRedirectUrl');
       sessionStorage.removeItem('subscriptionRedirectState');
