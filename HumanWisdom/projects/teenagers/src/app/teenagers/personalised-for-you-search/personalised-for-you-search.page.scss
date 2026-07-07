@@ -495,7 +495,9 @@ li:hover:before {
 .adsearch_ul .list-group-item:last-child{
   border-radius: 0 !important;
 }
-
+.panel-heading {
+  padding-bottom: 12px !important;
+}
 .pointer-events-auto {
   pointer-events: all !important;
   cursor: pointer !important;
