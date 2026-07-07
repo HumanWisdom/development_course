@@ -179,7 +179,7 @@
       <div class="section-header-teen">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-video-title">
+            <h2 class="mtb0px fs_24px fw_600 lh_140p teen-video-title">
               Learn the skills you need to succeed in life
             </h2>
           </div>
@@ -188,11 +188,13 @@
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
-          <iframe class="yt-embed" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+          <div class="youtube-player teen-youtube-player">
+            <iframe class="yt-embed" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
           <!-- <video id="teenagerVideo" controls playinline class="w100p"
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_poster.webp"
               controlsList="nodownload">
@@ -211,7 +213,7 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mt0px fs_24px fw_600 lh_120p teen-support-title">
+            <h2 class="mt0px fs_24px fw_600 lh_140p teen-support-title">
               Get all the support you need when life gets tough
             </h2>
           </div>
@@ -437,7 +439,7 @@
       <div class="section-header">
         <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
+            <h2 class="mtb0px fs_24px fw_600 lh_140p fc_000000 teen-testimonials-title">
               Teens love HappierMe
             </h2>
           </div>
@@ -447,9 +449,9 @@
       <div class="row center_flex">
         <div class="teen-testimonials-wrap">
 
-          <div class="owl_container owl_testimonials">
+          <div class="owl_testimonials">
             <div class="owl-carousel owl-theme">
-              <a class="item" data-aos="fade-up" data-aos-delay="400">
+              <div class="item" data-aos="fade-up" data-aos-delay="400">
                 <div class="div_testimonialst teen-testimonial-card">
                   <div class="teen-testimonial-header">
                     <img
@@ -462,10 +464,10 @@
                   </div>
                   <p class="teen-testimonial-quote">&ldquo;HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
 
-              <a class="item" data-aos="fade-up" data-aos-delay="500">
+              <div class="item" data-aos="fade-up" data-aos-delay="500">
                 <div class="div_testimonialst teen-testimonial-card">
                   <div class="teen-testimonial-header">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_sree.webp"
@@ -477,10 +479,10 @@
                   </div>
                   <p class="teen-testimonial-quote">&ldquo;The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app offers a range of practical tools such as the Awareness exercises and Journaling that have been incredibly beneficial to me.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
 
-              <a class="item" data-aos="fade-up" data-aos-delay="600">
+              <div class="item" data-aos="fade-up" data-aos-delay="600">
                 <div class="div_testimonialst teen-testimonial-card">
                   <div class="teen-testimonial-header">
                     <img
@@ -493,10 +495,10 @@
                   </div>
                   <p class="teen-testimonial-quote">&ldquo;HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
 
-              <a class="item" data-aos="fade-up" data-aos-delay="600">
+              <div class="item" data-aos="fade-up" data-aos-delay="600">
                 <div class="div_testimonialst teen-testimonial-card">
                   <div class="teen-testimonial-header">
                     <img
@@ -509,9 +511,9 @@
                   </div>
                   <p class="teen-testimonial-quote">&ldquo;The HappierMe App has been introduced to Symbiosis University students. I think it is an absolute necessity to provide this amazing platform to students in Universities worldwide, to help them take charge of their own wellbeing and succeed in life.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
-              <a class="item" data-aos="fade-up" data-aos-delay="600">
+              <div class="item" data-aos="fade-up" data-aos-delay="600">
                 <div class="div_testimonialst teen-testimonial-card">
                   <div class="teen-testimonial-header">
                     <img
@@ -524,9 +526,9 @@
                   </div>
                   <p class="teen-testimonial-quote">&ldquo;The HappierMe App has helped me to look at what I think, how I think, and helped me to question why I think in certain ways. This understanding has transformed my life.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
-              <a class="item" data-aos="fade-up" data-aos-delay="500">
+              <div class="item" data-aos="fade-up" data-aos-delay="500">
                 <div class="div_testimonialst teen-testimonial-card">
                   <div class="teen-testimonial-header">
                     <img
@@ -539,9 +541,9 @@
                   </div>
                   <p class="teen-testimonial-quote">&ldquo;Through its modules, awareness exercises and life stories the HappierMe app has helped me better understand why I think and act the way I do. This gave me a new perspective on how to handle various situations like stress and peer pressure.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
-              <a class="item">
+              <div class="item">
                 <div class="div_testimonialst teen-testimonial-card">
                   <div class="teen-testimonial-header">
                     <img
@@ -554,9 +556,9 @@
                   </div>
                   <p class="teen-testimonial-quote">&ldquo;HappierMe is a unique and inspiring app that has encouraged me to dig deeper within myself. Its various modules and journaling activities have helped me learn more about myself and how to cope with life's challenges.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
-              <a class="item" data-aos="fade-up" data-aos-delay="200">
+              <div class="item" data-aos="fade-up" data-aos-delay="200">
                 <div class="div_testimonialst teen-testimonial-card">
                   <div class="teen-testimonial-header">
                     <img
@@ -569,7 +571,7 @@
                   </div>
                   <p class="teen-testimonial-quote">&ldquo;HappierMe is the best app I&rsquo;ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
 
             </div>
@@ -1020,13 +1022,6 @@
       if (blogScrollEl) {
         updateBlogNavButtons();
         blogScrollEl.addEventListener('scroll', updateBlogNavButtons);
-        blogScrollEl.addEventListener('wheel', function (e) {
-          if (blogScrollEl.scrollWidth <= blogScrollEl.clientWidth) return;
-          if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
-          e.preventDefault();
-          blogScrollEl.scrollLeft += e.deltaY;
-          updateBlogNavButtons();
-        }, { passive: false });
       }
 
       var y = document.getElementById('sub-plan-yearly');
@@ -1063,11 +1058,25 @@
   <!-- /vendor_footer -->
 
   <script>
-    window.addEventListener('load', function () {
+    function initTeenTestimonialsCarousel() {
       var $tc = $('body.page-teenagers .owl_testimonials .owl-carousel');
-      if (!$tc.length || typeof $.fn.owlCarousel !== 'function') return;
+      if (!$tc.length) return;
 
-      $tc.trigger('destroy.owl.carousel');
+      var isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+      if ($tc.hasClass('owl-loaded')) {
+        $tc.trigger('destroy.owl.carousel');
+      }
+
+      $tc.removeClass('teen-testimonials-native owl-loaded owl-drag');
+
+      if (isMobile) {
+        $tc.addClass('teen-testimonials-native');
+        return;
+      }
+
+      if (typeof $.fn.owlCarousel !== 'function') return;
+
       $tc.owlCarousel({
         stagePadding: 0,
         loop: false,
@@ -1075,11 +1084,22 @@
         nav: true,
         autoWidth: true,
         dots: false,
+        touchDrag: true,
+        mouseDrag: true,
+        pullDrag: true,
         navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
         navContainer: '.owl_testimonials .owl-nav-w',
-        responsive: { 0: { items: 1 }, 600: { items: 3 }, 1000: { items: 3 } }
+        responsive: {
+          0: { items: 1 },
+          600: { items: 3 },
+          1000: { items: 3 }
+        }
       });
-    });
+    }
+
+    document.addEventListener('DOMContentLoaded', initTeenTestimonialsCarousel);
+    window.addEventListener('load', initTeenTestimonialsCarousel);
+    window.addEventListener('resize', initTeenTestimonialsCarousel);
   </script>
 
 </body>

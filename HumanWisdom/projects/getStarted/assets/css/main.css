@@ -633,6 +633,11 @@ label>input[type="checkbox"]+*::before {
 
 @media (min-width: 1280px) {
 
+  .mobile-nav-social,
+  .mobile-nav-close {
+    display: none !important;
+  }
+
   .mobile-nav-show,
   .mobile-nav-hide {
     display: none;
@@ -646,30 +651,42 @@ label>input[type="checkbox"]+*::before {
   .navbar {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 100%;
-    max-width: 400px;
-    border-left: 1px solid #666;
+    left: 0;
+    right: 0;
     bottom: 0;
-    transition: 0.3s;
-    z-index: 9997;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    border-left: none;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 10050;
     display: block;
-    background: #fff;
+    background: rgba(255, 247, 230, 1);
+    box-sizing: border-box;
+    padding: 0 16px 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .navbar ul {
-    position: absolute;
-    inset: 0;
-    padding: 50px 0 10px 0;
+  .navbar ul.mobile-nav-list {
+    position: relative;
+    inset: auto;
+    padding: 48px 0 0;
     margin: 0;
-    background: #fff;
-    overflow-y: auto;
+    background: transparent;
+    overflow: visible;
     transition: 0.3s;
-    z-index: 9998;
-    display: block;
-    height: 100%;
+    z-index: 10051;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     width: 100%;
     text-align: left !important;
+    list-style: none;
   }
 
   .navbar a,
@@ -677,20 +694,28 @@ label>input[type="checkbox"]+*::before {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    padding: 10px 20px;
-    font-family: var(--font-secondary);
+    padding: 10px 0;
+    font-family: "Poppins", var(--font-secondary);
     border-bottom: 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: #D7586B;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    color: rgba(215, 88, 107, 1);
     white-space: nowrap;
-    transition: 0.3s;
+    transition: 0.2s;
     text-align: left !important;
   }
 
   .navbar li {
     text-align: left !important;
     display: block !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar li:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   /* Override Bootstrap .nav class */
@@ -713,7 +738,8 @@ label>input[type="checkbox"]+*::before {
   }
 
   .navbar a:hover,
-  .navbar li:hover>a {
+  .navbar li:hover>a,
+  .navbar a.active_nav {
     color: #803358;
   }
 
@@ -739,6 +765,70 @@ label>input[type="checkbox"]+*::before {
     display: block;
   }
 
+  .mobile-nav-close {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 232, 187, 1);
+    color: #000;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10052;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  .mobile-nav-close.d-none {
+    display: none !important;
+  }
+
+  .mobile-nav-active .mobile-nav-close:not(.d-none) {
+    display: flex !important;
+  }
+
+  .mobile-nav-social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+    padding: 0 0 8px;
+    margin: 16px 0 0 !important;
+    box-sizing: border-box;
+  }
+
+  .mobile-nav-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: rgba(255, 232, 187, 1);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  .mobile-nav-social-link img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0);
+  }
+
   .mobile-nav-show {
     color: #CB6171;
     font-size: 28px;
@@ -749,7 +839,7 @@ label>input[type="checkbox"]+*::before {
     margin: 0 10px 0 20px;
   }
 
-  .mobile-nav-hide {
+  .mobile-nav-hide:not(.mobile-nav-close) {
     color: var(--color-secondary);
     font-size: 32px;
     cursor: pointer;
@@ -765,16 +855,21 @@ label>input[type="checkbox"]+*::before {
     overflow: hidden;
   }
 
-  .mobile-nav-active .navbar {
-    right: 0;
+  .mobile-nav-active .sticky_rating_banner,
+  .mobile-nav-active #closeableElement,
+  .mobile-nav-active .scroll-top {
+    display: none !important;
   }
 
-  .mobile-nav-active .navbar:before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.8);
-    z-index: 9996;
+  .mobile-nav-active .navbar {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 1025px) {
+  .mobile-nav-social,
+  .mobile-nav-close {
+    display: none !important;
   }
 }
 
