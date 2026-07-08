@@ -292,7 +292,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   }
 
   routedashboard() {
-    this.router.navigate([SharedService.getDashboardUrls()])
+    this.router.navigate([`/${SharedService.getprogramName()}/today`]);
   }
 
 
