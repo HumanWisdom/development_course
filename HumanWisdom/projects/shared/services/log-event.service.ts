@@ -9,12 +9,16 @@ declare const fbq;
 })
 export class LogEventService {
 
+  private lastAppliedUserId: string | null = null;
+  private lastAppliedDomain: string | null = null;
+
   constructor(
     private analytics: AngularFireAnalytics,
     private deviceService: DeviceDetectorService
   ) { }
 
   logEvent(eventname: string, module = false, screenNo: any = 0) {
+    this.setUserEngagementIdentity();
     let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User';
     let device_info: any = this.deviceService.getDeviceInfo()
     const isMobile = this.deviceService.isMobile();
@@ -69,6 +73,50 @@ export class LogEventService {
 
     }, 5000);
 
+  }
+
+  /**
+   * Sends the user identity + email domain to Google Analytics (GA4 via Firebase)
+   * so an external dashboard can query active users / engagement by `email_domain`.
+   *
+   * Called globally on every logEvent. When no args are passed the values are
+   * pulled from localStorage (userId + email, which login already persists), so
+   * this stays in sync across reloads/sessions. GA is only hit when a value
+   * actually changes.
+   */
+  setUserEngagementIdentity(userId?: string | number, email?: string) {
+    const id = userId != null ? String(userId) : this.getStoredUserId();
+    const domain = this.emailDomainFromAddress(email || localStorage.getItem('email') || '');
+
+    if (id && id !== this.lastAppliedUserId) {
+      this.analytics.setUserId(id);
+      this.lastAppliedUserId = id;
+    }
+    if (domain && domain !== this.lastAppliedDomain) {
+      this.analytics.setUserProperties({ email_domain: domain });
+      this.lastAppliedDomain = domain;
+    }
+  }
+
+  private getStoredUserId(): string {
+    if (localStorage.getItem('isloggedin') !== 'T') {
+      return '';
+    }
+    const raw = localStorage.getItem('userId');
+    if (!raw) {
+      return '';
+    }
+    try {
+      return String(JSON.parse(raw));
+    } catch {
+      return raw;
+    }
+  }
+
+  emailDomainFromAddress(email: string): string {
+    const normalized = (email || '').replace(/"/g, '').trim().toLowerCase();
+    const at = normalized.lastIndexOf('@');
+    return at > 0 ? normalized.substring(at + 1) : '';
   }
 
   isBrowser(browser) {
