@@ -34,6 +34,12 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
   private readonly INTRO_SHOWN_KEY = 'olly_landing_intro_shown';
   private readonly DIALOGUE_SHOWN_KEY = 'olly_landing_dialogue_shown';
+  // Integrated mode is used on the Today page (embedded inside the dashboard).
+  // We keep separate keys so the dialogue can appear on both Olly landing and Today.
+  private readonly INTEGRATED_INTRO_SHOWN_KEY = 'olly_today_intro_shown';
+  private readonly INTEGRATED_DIALOGUE_SHOWN_KEY = 'olly_today_dialogue_shown';
+  // Footer owl (app-owl-animation) uses this key to decide whether to show the dialogue cloud.
+  private readonly OWL_DIALOGUE_SHOWN_KEY = 'owl_dialogue_shown';
   private readonly CLOUD_FADE_IN_MS = 1800;
   private readonly CLOUD_DISPLAY_MS = 5000;
 
@@ -289,11 +295,19 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.timers.push(timer);
   }
 
+  private getIntroShownKey(): string {
+    return this.isIntegrated ? this.INTEGRATED_INTRO_SHOWN_KEY : this.INTRO_SHOWN_KEY;
+  }
+
+  private getDialogueShownKey(): string {
+    return this.isIntegrated ? this.INTEGRATED_DIALOGUE_SHOWN_KEY : this.DIALOGUE_SHOWN_KEY;
+  }
+
   onOllyGifLoad(): void {
-    if (this.gifLoadedOnce || this.isIntegrated) {
+    if (this.gifLoadedOnce) {
       return;
     }
-    if (localStorage.getItem(this.INTRO_SHOWN_KEY) === 'true') {
+    if (localStorage.getItem(this.getIntroShownKey()) === 'true') {
       return;
     }
     this.gifLoadedOnce = true;
@@ -304,7 +318,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     if (this.cloudSequenceStarted) {
       return;
     }
-    if (localStorage.getItem(this.DIALOGUE_SHOWN_KEY) === 'true') {
+    if (localStorage.getItem(this.getDialogueShownKey()) === 'true') {
       return;
     }
     this.cloudSequenceStarted = true;
@@ -317,6 +331,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       this.cloudFadeIn = true;
       this.isSpeaking = true;
       this.isDisappearing = false;
+      // Suppress footer owl dialogue once the in-page dialogue has started showing.
+      localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
     }, 1000);
 
     this.scheduleTimer(() => {
@@ -339,8 +355,10 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.scheduleTimer(() => {
       this.showCloudMessage = false;
       this.isDisappearing = false;
-      localStorage.setItem(this.DIALOGUE_SHOWN_KEY, 'true');
-      localStorage.setItem(this.INTRO_SHOWN_KEY, 'true');
+      localStorage.setItem(this.getDialogueShownKey(), 'true');
+      localStorage.setItem(this.getIntroShownKey(), 'true');
+      // Ensure the footer owl dialogue does not re-appear after the in-page Olly dialogue.
+      localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
     }, 600);
   }
 
