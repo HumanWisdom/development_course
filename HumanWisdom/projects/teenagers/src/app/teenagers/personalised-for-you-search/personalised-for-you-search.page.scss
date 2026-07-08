@@ -351,10 +351,10 @@ li:hover:before {
   text-decoration: none;
   vertical-align: top;
   white-space: normal;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
 
   span, i {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.75) !important;
   }
 }
 // Microlearning accordion dark background
@@ -495,7 +495,12 @@ li:hover:before {
 .adsearch_ul .list-group-item:last-child{
   border-radius: 0 !important;
 }
-
+.box_v3_01 {
+  background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%) !important;
+}
+.panel-heading {
+  padding-bottom: 12px !important;
+}
 .pointer-events-auto {
   pointer-events: all !important;
   cursor: pointer !important;

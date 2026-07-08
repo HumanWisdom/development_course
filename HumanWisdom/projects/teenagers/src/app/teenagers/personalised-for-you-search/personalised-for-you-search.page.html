@@ -213,6 +213,47 @@
             </div>
             <!-- /hr -->
 
+            <!-- teen talk -->
+            <!-- <div class="row tour_fbn pl20px pr20px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <a routerLink="/teenagers/teen-talk"
+                  (click)="DashboardLogevent('teenagers/teen-talk', '', 'click_teenTalk')">
+
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/teen_talk.svg"
+                        class="img-responsive w100" style="width: 48px; height: 40px; margin-bottom:10px;">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                      <h4 class="mtb0px fc_0C2B5F fs_18px fw_600 lh_140p">
+                        Teen Talk
+                      </h4>
+
+                      <h4 class="mtb0px fc_0C2B5F fs_12px fw_400 lh_140p">
+                        Conversations with teens from around the world
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+
+                  </div>
+                </a>
+              </div>
+            </div> -->
+            <!-- /teen talk -->
+
+            <!-- hr -->
+            <!-- <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div> -->
+            <!-- /hr -->
+
             <!-- contact a coach button -->
             <div class="row tour_fbn pl20px pr20px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -221,16 +262,16 @@
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
                       <img
                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/contact_coach_teens.svg"
-                        class="img-responsive w100" style="width:48px;height:40px;">
+                        class="img-responsive w100" style="width: 48px;height: 40px;margin-bottom: 18px !important;">
                     </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
-                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">Contact a coach</h4>
-                      <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">Speak to expert coaches from around the
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 pl15px">
+                      <h4 class="mtb0px fc_0C2B5F fs_18px fw_600 lh_140p">Contact a coach</h4>
+                      <h4 class="mtb0px fc_0C2B5F fs_12px fw_400 lh_140p">Speak to expert coaches from around the
                         world</h4>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                    <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                    </div>
+                    </div> -->
                   </div>
                 </a>
               </div>
@@ -250,7 +291,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group">
                   <div class="">
-                    <div class="panel-heading pt0px">
+                    <div class="panel-heading plr0px pt0px">
                       <h4 class="panel-title">
                         <a class="accordion-toggle" (click)="toggleGuidedJourneys()">
                           <div class="row">
@@ -259,8 +300,11 @@
                                 <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">Guided journeys</h2>
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                                <i class="fa" [ngClass]="isGuidedJourneysExpanded ? 'fa-angle-up' : 'fa-angle-down'"
-                                  style="font-size: 20px; color: #ffffff;"></i>
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                  alt="arrow" class="section-arrow arrow-expanded" [ngStyle]="{
+                                      'filter': 'brightness(0) invert(1)',
+                                      'transform': !isGuidedJourneysExpanded ? 'rotate(180deg)' : 'rotate(0deg)'
+                                    }">
                               </div>
                             </div>
                           </div>
@@ -277,7 +321,7 @@
                                 <img [src]="journey.imgUrl" alt="" class="p0 session_img session_imgnew"
                                   style="border-radius: 10px;" />
                               </div>
-                              <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
+                              <div class="col-md-8 col-sm-8 col-xs-8 pl0px">
                                 <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff">{{journey.title}}</h4>
                                 <p class="mt0px mb0px fs_12px fw_400 lh_130p fc_ffffff_0_5">{{journey.subtitle}}</p>
                               </div>
@@ -286,7 +330,7 @@
                         </a>
                       </div>
                       <!-- View More Link -->
-                      <div class="row mt15px mb15px tcenter">
+                      <div class="row mt20px tcenter">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <a routerLink="/teenagers/guided-journeys"
                             style="color:rgba(255, 255, 255, 0.75); display:inline-flex; align-items:center; gap:10px; text-decoration:none;">
@@ -337,7 +381,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="panel-group dpanelgroup" id="microlearningAccordion">
                     <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading">
+                      <div class="panel-heading plr0px">
                         <h4 class="panel-title dpaneltitle">
                           <a (click)="toggleMicrolearning()" style="cursor: pointer;">
                             <div class="row">
@@ -346,8 +390,11 @@
                                   <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">Microlearning</h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                                  <i class="fa" [ngClass]="isMicrolearningExpanded ? 'fa-angle-up' : 'fa-angle-down'"
-                                    style="font-size: 20px; color: #ffffff;"></i>
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                    alt="arrow" class="section-arrow arrow-expanded" [ngStyle]="{
+                                      'filter': 'brightness(0) invert(1)',
+                                      'transform': !isMicrolearningExpanded ? 'rotate(180deg)' : 'rotate(0deg)'
+                                    }">
                                 </div>
                               </div>
                             </div>

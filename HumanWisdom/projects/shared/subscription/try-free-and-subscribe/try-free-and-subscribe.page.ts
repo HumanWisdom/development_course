@@ -291,13 +291,15 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
       }
       this.router.navigate([redirectUrl], extras);
     } else {
-      this.router.navigateByUrl(SharedService.getDashboardUrls());
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
     }
   }
 
   routeToOllyLanding() {
     const redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
     const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
+    // Flag that the user arrived via the basic-access sign-up path
+    sessionStorage.setItem('fromBasicAccessSignup', 'T');
     if (redirectUrl) {
       sessionStorage.removeItem('subscriptionRedirectUrl');
       sessionStorage.removeItem('subscriptionRedirectState');

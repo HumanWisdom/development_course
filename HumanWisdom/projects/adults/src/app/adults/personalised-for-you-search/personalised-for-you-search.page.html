@@ -336,7 +336,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <a routerLink="" (click)="logEvent('click_contactCoach', '/adults/coach')">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
-                    <div class="col-2 p0 mb15px text-center">
+                    <div class="col-2 p0 mb8px text-center">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach.svg">
                     </div>
 
@@ -374,7 +374,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group">
                   <div class="">
-                    <div class="panel-heading pt0px">
+                    <div class="panel-heading plr0px pt0px">
                       <h4 class="panel-title">
                         <a class="accordion-toggle" (click)="toggleGuidedJourneys()">
                           <div class="row">
@@ -385,8 +385,9 @@
                                 </h2>
                               </div>
                               <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                                <i class="fa" [ngClass]="isGuidedJourneysExpanded ? 'fa-angle-up' : 'fa-angle-down'"
-                                  style="font-size: 20px; color: #000000;"></i>
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                  alt="arrow" class="section-arrow arrow-expanded"
+                                  [ngStyle]="!isGuidedJourneysExpanded ? {'transform': 'rotate(180deg)'} : {}">
                               </div>
                             </div>
                           </div>
@@ -404,7 +405,7 @@
                                 <img [src]="journey.imgUrl" alt="" class="p0 session_img session_imgnew"
                                   style="border-radius: 10px;" />
                               </div>
-                              <div class="col-md-8 col-sm-8 col-xs-8 pl15px">
+                              <div class="col-md-8 col-sm-8 col-xs-8 pl0px">
                                 <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000">
                                   {{journey.title}}
                                 </h4>
@@ -419,9 +420,9 @@
                       </div>
 
                       <!-- View More Link -->
-                      <div class="row mt15px mb15px tcenter">
+                      <div class="row mt20px tcenter">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          <a routerlink="/adults/guided-journeys"
+                          <a routerLink="/adults/guided-journeys"
                             style="color:rgba(0, 0, 0, 0.75); display:inline-flex; align-items:center; gap:10px; text-decoration:none;">
 
                             <span style="text-decoration: underline;">View more</span>
@@ -667,7 +668,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="panel-group dpanelgroup" id="microlearningAccordion">
                     <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading">
+                      <div class="panel-heading plr0px">
                         <h4 class="panel-title dpaneltitle">
                           <a (click)="toggleMicrolearning()" style="cursor: pointer;">
                             <div class="row">
@@ -678,8 +679,9 @@
                                   </h2>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
-                                  <i class="fa" [ngClass]="isMicrolearningExpanded ? 'fa-angle-up' : 'fa-angle-down'"
-                                    style="font-size: 20px; color: #000000;"></i>
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                    alt="arrow" class="section-arrow arrow-expanded"
+                                    [ngStyle]="!isMicrolearningExpanded ? {'transform': 'rotate(180deg)'} : {}">
                                 </div>
                               </div>
                             </div>

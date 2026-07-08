@@ -301,7 +301,8 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   goToHome() {
-    this.router.navigate([SharedService.getDashboardUrls()]);
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/today`]);
   }
 
   handleResourceClick(resource) {

@@ -82,7 +82,7 @@ export class FreeTrialPage implements OnInit {
       localStorage.removeItem('subscriberRedirectUrl');
       this.router.navigateByUrl(redirectUrl);
     } else {
-      this.router.navigateByUrl(SharedService.getDashboardUrls());
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
     }
   }
 

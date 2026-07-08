@@ -96,7 +96,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   token: string | undefined;
   t = new Date();
   private clientId = '1840609876679041'; // Replace with your Instagram App Client ID
-  private redirectUri = environment.clientUrl + "/adults/adult-dashboard";
+  private redirectUri = environment.clientUrl + "/adults/today";
   private authUrl = `https://api.instagram.com/oauth/authorize`;
   private accessToken: string | null = null;
   minDate =
@@ -494,7 +494,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
           localStorage.removeItem('pricing');
           this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
         } else {
-          this.router.navigate(['/adults/adult-dashboard'])
+          this.router.navigate(['/adults/today'])
         }
       } else {
         this.enableLogin = true;
@@ -1495,11 +1495,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       let giftwisdom = localStorage.getItem("giftwisdom");
       const url = SharedService.UrlToRedirect;
       if (url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
-        this.router.navigate(['adults/adult-dashboard']);
+        this.router.navigate(['adults/today']);
         return;
       }
       else if (url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
-        this.router.navigate(['/teenagers/teenager-dashboard']);
+        this.router.navigate(['/teenagers/today']);
         return;
       }
       else if (url != null) {

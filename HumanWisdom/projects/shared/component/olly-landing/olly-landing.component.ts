@@ -23,6 +23,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   searchQuery: string = '';
   selectedTopic: { name: string; displayName: string; fragment: string } | null = null;
   fromImNotSure: boolean = false;
+  fromBasicAccessSignup: boolean = false;
   
   showQuestionsView: boolean = false;
   topicsList: OllyTopic[] = [];
@@ -201,6 +202,12 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   ngOnInit(): void {
     // Check if user came from "I'm not sure" link
     this.fromImNotSure = localStorage.getItem('fromImNotSure') === 'T';
+
+    // Check if user arrived from the basic-access sign-up flow — suppress topic link in that case
+    this.fromBasicAccessSignup = sessionStorage.getItem('fromBasicAccessSignup') === 'T';
+    if (this.fromBasicAccessSignup) {
+      sessionStorage.removeItem('fromBasicAccessSignup');
+    }
     
     // Determine program type (Adults vs Teenagers)
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;

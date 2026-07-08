@@ -125,7 +125,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
       }
       else if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
         || this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
-        this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search)) || this.router.url.includes('/learn') || this.router.url.includes('/search')) {
+        this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search)) || this.router.url.includes('/learn') || this.router.url.includes('/search') || this.router.url.includes('/pathway')) {
         this.dash = false
         this.journal = false
         this.fourm = false;
