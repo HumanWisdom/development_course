@@ -488,7 +488,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
                       }
                       } */
 
-                      this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                      this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
                     }
                   }
                 }
@@ -798,7 +798,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
                       // }
                       // }
 
-                      this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                      this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
                     }
                   }
                 }
@@ -1318,7 +1318,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
                 }
               });
             } else {
-              this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+              this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
             }
           }
         }

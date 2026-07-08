@@ -20,10 +20,10 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="isloggedIn && showGreeting">
                   <div class="d-flex header-blk justify-content-between align-items-center plr20px mb0px"
                     [ngStyle]="{'margin-top': (username && username !== '') ? '20px': '20px'}">
-                    <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
+                    <!-- <h2 *ngIf="username && username !== ''" class="fw_600 fs_24px lh_140p username-clr mt0px mb0px">
                       Hi {{username}}!
-                    </h2>
-                    <div *ngIf="streak && streak !== '' " class="streak-container"
+                    </h2> -->
+                    <!-- <div *ngIf="streak && streak !== '' " class="streak-container"
                       [ngStyle]="{'background-color': !isAdults ? '#F1AC5E': '#FFE8BB'}"
                       style=" width: 128px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: center; padding: 0 10px;">
                       <img *ngIf="isAdults" class="stk-icon"
@@ -37,7 +37,7 @@
                         </span>
                         days
                       </span>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <!-- Search Box -->

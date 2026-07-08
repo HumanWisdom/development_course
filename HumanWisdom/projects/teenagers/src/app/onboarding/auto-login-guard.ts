@@ -32,7 +32,7 @@ export class autoLoginGuard implements CanActivate, OnInit {
       return true;
     } else {
       debugger;
-      this.router.navigate([SharedService.getDashboardUrls()])
+      this.router.navigate([`/${SharedService.getprogramName()}/today`])
       return false;
     }
   }

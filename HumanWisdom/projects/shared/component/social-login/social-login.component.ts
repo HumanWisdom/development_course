@@ -271,7 +271,7 @@ export class SocialLoginPage implements OnInit {
         this.router.navigateByUrl(`${SharedService.getprogramName()}/change-topic`);
         // this.commonService.loginSubject(`${SharedService.getprogramName()}/change-topic`);
       }else{
-        this.router.navigateByUrl(`${SharedService.getprogramName()}/repeat-user`);
+        this.router.navigateByUrl(`${SharedService.getprogramName()}/today`);
         // this.commonService.loginSubject();
       }
     
