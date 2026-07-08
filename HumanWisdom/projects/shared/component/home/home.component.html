@@ -114,7 +114,7 @@
             </div> -->
 
               <div class="row" *ngIf="!showWisdomExercise">
-                <div class="col-12 p-0">
+                <div class="col-12 p-0" [ngClass]="!isloggedIn ? 'mt30px' : ''">
 
                   <!-- recursive template for a section -->
                   <ng-template #renderSection let-section>
