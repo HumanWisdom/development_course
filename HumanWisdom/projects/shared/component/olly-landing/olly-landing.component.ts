@@ -262,9 +262,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       // Topic came from navigation state — use it directly
       this.selectedTopic = topicMap[topicId];
     } else {
-      // Set default topic immediately so the UI doesn't flash empty
-      const firstKey = Object.keys(topicMap)[0];
-      this.selectedTopic = topicMap[firstKey];
+      this.selectedTopic = null;
 
       // Fetch the user's preference from the API (same as home page)
       this.fetchUserPreferenceFromApi(topicMap);
@@ -396,16 +394,20 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       next: (res) => {
         if (res) {
           const preferenceId = res.toString();
-          if (topicMap[preferenceId]) {
+          // Treat "0" or empty string as "no preference selected"
+          if (preferenceId && preferenceId !== '0' && topicMap[preferenceId]) {
             this.selectedTopic = topicMap[preferenceId];
+            localStorage.setItem('userPreference', preferenceId);
+          } else {
+            this.selectedTopic = null;
           }
-          // Cache to localStorage for other components that may need it
-          localStorage.setItem('userPreference', preferenceId);
+        } else {
+          this.selectedTopic = null;
         }
       },
       error: (err) => {
-        console.warn('Failed to fetch user preference from API, using default topic:', err);
-        // Default topic is already set, so no action needed
+        console.warn('Failed to fetch user preference from API:', err);
+        this.selectedTopic = null;
       }
     });
   }
