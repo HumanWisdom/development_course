@@ -127,7 +127,7 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  dfooter_links">
-            <a href="https://happierme.app/adults/faqs">
+            <a href="../pages/faq.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 FAQ
               </h4>
