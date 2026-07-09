@@ -107,7 +107,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         }
       }
 
-      if (this.router.url.includes('/repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
+      if (this.router.url.includes('/repeat-user/my-daily-practice') || this.router.url.includes('/today') || this.router.url.includes('/olly-landing')) {
         this.dash = true;
         this.journal = false;
         this.search = false;
