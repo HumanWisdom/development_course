@@ -157,7 +157,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself. Feel calmer. Strengthen your relationships. Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.
+                      Feel calmer, strengthen your relationships, and<br>build the skills to handle life better.
                     </p>
                   </div>
                 </div>
@@ -365,6 +365,54 @@ require_once('./includes/security_config.php');
           <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
         </div>
       </div>
+
+      <!-- ===== WHY HAPPIERME IS DIFFERENT ===== -->
+      <section class="why-different-section index-lazy-section" aria-labelledby="why-different-title">
+        <div class="why-different-inner">
+          <div class="why-different-header">
+            <h2 class="why-different-title" id="why-different-title">Why HappierMe is different</h2>
+            <p class="why-different-subtitle">Most apps help you cope. We help you change.</p>
+          </div>
+          <div class="why-different-cards">
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--prevention">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Prevention.svg" alt="" width="66" height="66" />
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Prevention</h3>
+                <p class="why-different-card-desc">Deal with problems early, before they escalate</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--root-cause">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/root.svg" alt="" width="66" height="66" />
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Root cause focus</h3>
+                <p class="why-different-card-desc">Understand your own mind, so change can last</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--inner-skills">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build.svg" alt="" width="66" height="66" />
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Build inner skills</h3>
+                <p class="why-different-card-desc">Self-awareness, emotional intelligence and healthier habits</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--whole-life">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/life.svg" alt="" width="66" height="66" />
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Whole-life approach</h3>
+                <p class="why-different-card-desc">Mental health, relationships and work skills, all in one place</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <!-- ===== FIND SUPPORT & CONNECTION ===== -->
       <div class="div-20 index-lazy-section">

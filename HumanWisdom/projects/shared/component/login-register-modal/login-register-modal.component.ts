@@ -740,6 +740,10 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     sessionStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_dialogue_shown');
+    localStorage.removeItem('olly_today_intro_shown');
+    localStorage.removeItem('olly_today_dialogue_shown');
+    localStorage.removeItem('olly_landing_intro_shown');
+    localStorage.removeItem('olly_landing_dialogue_shown');
 
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }

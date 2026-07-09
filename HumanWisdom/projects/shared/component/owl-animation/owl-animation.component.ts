@@ -95,8 +95,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    // Check if dialogue has been shown before
-    this.dialogueAlreadyShown = localStorage.getItem(this.DIALOGUE_SHOWN_KEY) === 'true';
+    // Check if dialogue has been shown before (in-page Olly on Today/Olly landing, or footer)
+    this.dialogueAlreadyShown = this.hasInPageOllyDialogueBeenShown();
 
     // Debug mode - show static owl immediately for testing (cloud shows 200ms after image loads)
     if (this.debugMode) {
@@ -327,6 +327,17 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private detectMobile(): boolean {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
       window.innerWidth <= 768;
+  }
+
+  private hasInPageOllyDialogueBeenShown(): boolean {
+    const keys = [
+      this.DIALOGUE_SHOWN_KEY,
+      'olly_today_intro_shown',
+      'olly_today_dialogue_shown',
+      'olly_landing_intro_shown',
+      'olly_landing_dialogue_shown',
+    ];
+    return keys.some((key) => localStorage.getItem(key) === 'true');
   }
 
   private isSmallScreen(): boolean {
