@@ -157,7 +157,8 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Feel calmer, strengthen your relationships, and<br>build the skills to handle life better.
+                      Feel calmer. Strengthen your relationships.<br>
+                      Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">these skills</a> to thrive at home and at work.
                     </p>
                   </div>
                 </div>

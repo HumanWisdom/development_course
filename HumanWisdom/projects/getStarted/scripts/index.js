@@ -1802,7 +1802,30 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         'Think better.<br><span class="hero-title-accent">Live better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        'Feel calmer, strengthen your relationships, and<br>build the skills to handle life better.';
+        'Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">these skills</a> to thrive at home and at work.';
+
+function initHumanSkillsLink() {
+    document.querySelectorAll("#hw-website-subtitle .human-skills-link").forEach(function (link) {
+        if (link.dataset.skillsBound === "1") return;
+        link.dataset.skillsBound = "1";
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            var modal = document.getElementById("humanSkillsModal");
+            if (modal && typeof bootstrap !== "undefined") {
+                var bsModal = bootstrap.Modal.getInstance(modal);
+                if (!bsModal) bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+            }
+        });
+        link.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                link.click();
+            }
+        });
+    });
+}
+
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");
@@ -1823,6 +1846,7 @@ async function fetchWebsiteTitle() {
             }
         }
     } catch (err) {}
+    initHumanSkillsLink();
 }
 function formatToDecimal(e) {
     return Number.isInteger(e) ? `${e}.00` : e.toFixed(2);
@@ -2269,5 +2293,7 @@ $(document).ready(function(){
             }
         }
     });
+
+    initHumanSkillsLink();
     
 });
