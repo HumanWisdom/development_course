@@ -1,4 +1,12 @@
 
+:host-context(body) {
+  overflow: auto !important;
+}
+
+:host-context(html) {
+  overflow: auto !important;
+}
+
 .card-container {
   padding: 0;
 }
