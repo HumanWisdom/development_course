@@ -71,6 +71,8 @@ export class ChangeTopicPage implements OnInit {
   }
 
   ngOnInit() {
+    this.releaseScrollLock();
+
     this.getIntroDashboardStatus();
     let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
@@ -83,6 +85,15 @@ export class ChangeTopicPage implements OnInit {
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
     this.getUserPreferenceMapping();
+  }
+  private releaseScrollLock(): void {
+    sessionStorage.setItem('openHamburger', 'false');
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
+    const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+    if (menuCheckbox) {
+      menuCheckbox.checked = false;
+    }
   }
 
   getUserPreferenceMapping() {
