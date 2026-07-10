@@ -26,6 +26,54 @@ export class CommonService {
   private isFooterOwlVisibleSubject = new BehaviorSubject<boolean>(true);
   isFooterOwlVisible$ = this.isFooterOwlVisibleSubject.asObservable();
   setFooterOwlVisible(visible: boolean): void { this.isFooterOwlVisibleSubject.next(visible); }
+
+  /** True when in-page Olly was shown on Today or Olly landing (suppress footer bubble only). */
+  hasSeenInPageOlly(): boolean {
+    const keys = [
+      'olly_today_intro_shown',
+      'olly_today_dialogue_shown',
+      'olly_landing_intro_shown',
+      'olly_landing_dialogue_shown',
+    ];
+    return keys.some((key) => localStorage.getItem(key) === 'true');
+  }
+
+  // In-memory session flags — survive footer owl component destroy/recreate on route changes.
+  private footerBubbleShownThisSession = false;
+  private footerBubbleSequenceScheduled = false;
+
+  hasFooterBubbleShownThisSession(): boolean {
+    return this.footerBubbleShownThisSession;
+  }
+
+  markFooterBubbleShownThisSession(): void {
+    this.footerBubbleShownThisSession = true;
+  }
+
+  hasFooterBubbleSequenceScheduled(): boolean {
+    return this.footerBubbleSequenceScheduled;
+  }
+
+  markFooterBubbleSequenceScheduled(): void {
+    this.footerBubbleSequenceScheduled = true;
+  }
+
+  resetFooterBubbleSequenceScheduled(): void {
+    this.footerBubbleSequenceScheduled = false;
+  }
+
+  resetFooterBubbleSession(): void {
+    this.footerBubbleShownThisSession = false;
+    this.footerBubbleSequenceScheduled = false;
+  }
+
+  /** Footer Hi bubble: show on direct navigation; hide after Today / Olly landing in-page Olly. */
+  shouldShowFooterBubble(): boolean {
+    if (this.hasSeenInPageOlly()) {
+      return false;
+    }
+    return !this.footerBubbleShownThisSession;
+  }
   public percentage: any
   public bookmarks = []
   public resume = [];

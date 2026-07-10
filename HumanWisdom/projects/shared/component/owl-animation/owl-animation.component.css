@@ -481,8 +481,8 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 }
 
-/* Teenagers mobile only: perch Olly fully above the footer tab bar */
-@media (max-width: 768px) {
+/* Teenagers: perch Olly on the footer bar above the Forum tab (rightmost) */
+@media (max-width: 1024px) {
   :host(.teenager-theme) {
     overflow: visible;
     position: static;
@@ -490,10 +490,11 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
   :host(.teenager-theme) .owl-animation-wrapper,
   :host(.teenager-theme) .owl-animation-wrapper.corner {
-    --teen-footer-height: 84px;
-    --teen-footer-tab-center: 12.5%;
+    /* Forum tab center is at 90% from left → 10% from right */
+    --teen-forum-tab-center: 10%;
+    --teen-footer-height: 52px;
     bottom: calc(var(--teen-footer-height) + env(safe-area-inset-bottom, 0px)) !important;
-    right: max(12px, calc(var(--teen-footer-tab-center) - 38px)) !important;
+    right: max(8px, calc(var(--teen-forum-tab-center) - 22px)) !important;
     left: auto !important;
     z-index: 100;
     overflow: visible;
@@ -506,28 +507,14 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
   :host(.teenager-theme) .static-owl-image {
     transform-origin: bottom right;
-    height: 92px;
+    height: 80px;
     width: auto;
-    max-width: min(92px, 24vw);
-    transform: scale(0.72);
+    max-width: min(80px, 22vw);
+    transform: scale(0.68);
   }
 
   :host(.teenager-theme) .owl-gif {
     margin-right: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  :host(.teenager-theme) .owl-animation-wrapper,
-  :host(.teenager-theme) .owl-animation-wrapper.corner {
-    --teen-footer-height: 80px;
-    right: max(10px, calc(var(--teen-footer-tab-center) - 34px)) !important;
-  }
-
-  :host(.teenager-theme) .static-owl-image {
-    height: 84px;
-    max-width: min(84px, 22vw);
-    transform: scale(0.7);
   }
 
   :host(.teenager-theme) .owl-cloud-container {
@@ -543,16 +530,30 @@ body:has(#menu:checked) .owl-animation-wrapper {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   :host(.teenager-theme) .owl-animation-wrapper,
   :host(.teenager-theme) .owl-animation-wrapper.corner {
-    --teen-footer-height: 76px;
-    right: max(8px, calc(var(--teen-footer-tab-center) - 30px)) !important;
+    --teen-footer-height: 48px;
+    right: max(6px, calc(var(--teen-forum-tab-center) - 20px)) !important;
   }
 
   :host(.teenager-theme) .static-owl-image {
-    height: 76px;
-    max-width: min(76px, 20vw);
-    transform: scale(0.66);
+    height: 72px;
+    max-width: min(72px, 20vw);
+    transform: scale(0.64);
+  }
+}
+
+@media (max-width: 360px) {
+  :host(.teenager-theme) .owl-animation-wrapper,
+  :host(.teenager-theme) .owl-animation-wrapper.corner {
+    --teen-footer-height: 46px;
+    right: max(4px, calc(var(--teen-forum-tab-center) - 18px)) !important;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    height: 68px;
+    max-width: min(68px, 18vw);
+    transform: scale(0.6);
   }
 }

@@ -5,6 +5,7 @@ import { OwlStore } from '../../stores/owl.store';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { LogEventService } from '../../services/log-event.service';
+import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 
@@ -23,6 +24,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly WAIT_TIME_BEFORE_INITIALIZATION = 5000; // 5 seconds
 
   @ViewChild('gifElement', { static: false }) gifElement!: ElementRef<HTMLImageElement>;
+  @ViewChild('staticOwlImage', { static: false }) staticOwlImage!: ElementRef<HTMLImageElement>;
   gifError = false;
   gifLoaded = false;
   private _isPlaying: boolean = true;
@@ -49,8 +51,9 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private loginCheckInterval: any = null; // Interval to check login status
   private lastLoginStatus: string | null = null; // Track last login status
   private readonly GIF_SHOWN_KEY = 'owl_gif_shown'; // localStorage key to track if GIF has been shown
-  private readonly DIALOGUE_SHOWN_KEY = 'owl_dialogue_shown'; // localStorage key to track if dialogue has been shown
-  private dialogueAlreadyShown: boolean = false; // Track if dialogue has been shown in this session
+  private readonly DIALOGUE_SHOWN_KEY = 'owl_dialogue_shown';
+  private dialogueAlreadyShown: boolean = false;
+  private bubbleRetryInterval: any = null;
 
   // Cloud image: only OLLY_HI – fade in on open, fade out on close
   public showCloudMessage: boolean = false;
@@ -91,12 +94,12 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     private cdr: ChangeDetectorRef,
     private router: Router,
     private owlStore: OwlStore,
-    private logeventservice: LogEventService
+    private logeventservice: LogEventService,
+    private commonService: CommonService,
   ) { }
 
   ngOnInit() {
-    // Check if dialogue has been shown before
-    this.dialogueAlreadyShown = localStorage.getItem(this.DIALOGUE_SHOWN_KEY) === 'true';
+    this.refreshDialogueState();
 
     // Debug mode - show static owl immediately for testing (cloud shows 200ms after image loads)
     if (this.debugMode) {
@@ -142,6 +145,9 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this.checkRouteAndSetOwlDisplay();
+        if (this.commonService.shouldShowFooterBubble()) {
+          this.startFooterBubbleRetry();
+        }
       });
 
     // Monitor login status changes to trigger GIF on login
@@ -176,17 +182,12 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
    * Shows justBreathing.gif with Olly_Hi.svg dialogue on first visit.
    */
   private checkRouteAndSetOwlDisplay(): void {
+    this.refreshDialogueState();
     this.showGif = false;
     this.showStaticOwl = true;
     this.isPlaying = false;
     this.hasCheckedHomePage = true;
-
-    if (this.dialogueAlreadyShown) {
-      this.showCloudMessage = false;
-      this.isSpeaking = false;
-      this.owlMessage = '';
-    }
-
+    this.maybeStartFooterBubble();
     this.cdr.detectChanges();
   }
 
@@ -227,6 +228,44 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     setTimeout(() => {
       this.checkRouteAndSetOwlDisplay();
     }, 800);
+
+    this.startFooterBubbleRetry();
+  }
+
+  private startFooterBubbleRetry(): void {
+    if (this.bubbleRetryInterval) {
+      return;
+    }
+    this.maybeStartFooterBubble();
+    let attempts = 0;
+    this.bubbleRetryInterval = setInterval(() => {
+      attempts++;
+      this.maybeStartFooterBubble();
+      if (
+        attempts >= 12 ||
+        this.commonService.hasFooterBubbleShownThisSession() ||
+        this.commonService.hasFooterBubbleSequenceScheduled() ||
+        !this.commonService.shouldShowFooterBubble()
+      ) {
+        clearInterval(this.bubbleRetryInterval);
+        this.bubbleRetryInterval = null;
+      }
+    }, 500);
+  }
+
+  private maybeStartFooterBubble(): void {
+    if (
+      !this.showStaticOwl ||
+      !this.commonService.shouldShowFooterBubble() ||
+      this.commonService.hasFooterBubbleSequenceScheduled() ||
+      this.showCloudMessage
+    ) {
+      return;
+    }
+    const img = this.staticOwlImage?.nativeElement;
+    if (img?.complete && img.naturalWidth > 0) {
+      this.onStaticOwlImageLoaded();
+    }
   }
 
   private monitorMenuState() {
@@ -278,6 +317,11 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
   ngOnDestroy() {
+    // Allow the bubble to retry if this instance is destroyed before it was shown.
+    if (!this.commonService.hasFooterBubbleShownThisSession()) {
+      this.commonService.resetFooterBubbleSequenceScheduled();
+    }
+
     // Clear any pending timers
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
@@ -315,6 +359,10 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       clearInterval(this.loginCheckInterval);
       this.loginCheckInterval = null;
     }
+    if (this.bubbleRetryInterval) {
+      clearInterval(this.bubbleRetryInterval);
+      this.bubbleRetryInterval = null;
+    }
   }
 
 
@@ -329,6 +377,10 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
       window.innerWidth <= 768;
   }
 
+  private refreshDialogueState(): void {
+    this.dialogueAlreadyShown = !this.commonService.shouldShowFooterBubble();
+  }
+
   private isSmallScreen(): boolean {
     return window.innerWidth <= 600;
   }
@@ -339,7 +391,10 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
    * (via the delay inside startSpeakingSequence).
    */
   onStaticOwlImageLoaded(): void {
-    this.startSpeakingSequence();
+    this.refreshDialogueState();
+    if (!this.dialogueAlreadyShown) {
+      this.startSpeakingSequence();
+    }
     this.cdr.detectChanges();
   }
 
@@ -469,42 +524,45 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private startSpeakingSequence() {
-    // Only show dialogue if it hasn't been shown before (first time only)
+    if (this.commonService.hasFooterBubbleSequenceScheduled()) {
+      return;
+    }
+    this.refreshDialogueState();
     if (this.dialogueAlreadyShown) {
-      // Dialogue already shown - just show static owl without message
-      this.showCloudMessage = false;
-      this.isSpeaking = false;
-      this.cdr.detectChanges();
       return;
     }
 
-    // Mark dialogue as shown immediately to prevent multiple calls
+    this.commonService.markFooterBubbleSequenceScheduled();
+    this.messageTimers.forEach(t => clearTimeout(t));
+    this.messageTimers = [];
 
-    setTimeout(() => {
-       this.dialogueAlreadyShown = true;
-    localStorage.setItem(this.DIALOGUE_SHOWN_KEY, 'true');
+    const showBubble = setTimeout(() => {
+      this.refreshDialogueState();
+      if (!this.commonService.shouldShowFooterBubble()) {
+        return;
+      }
 
-    // Show only OLLY_HI – fade in on open, fade out on close
-    this.currentCloudImage = this.OLLY_HI_URL;
-    this.showCloudMessage = true;
-    this.cloudFadeIn = true;
-    this.isSpeaking = true;
-    this.isDisappearing = false;
-    this.cdr.detectChanges();
+      this.commonService.markFooterBubbleShownThisSession();
+      this.dialogueAlreadyShown = true;
+
+      this.currentCloudImage = this.OLLY_HI_URL;
+      this.showCloudMessage = true;
+      this.cloudFadeIn = true;
+      this.isSpeaking = true;
+      this.isDisappearing = false;
+      this.cdr.detectChanges();
     }, 1000);
-   
+    this.messageTimers.push(showBubble);
 
-    // Clear fade-in class after animation so cloud stays visible
     const clearFadeIn = setTimeout(() => {
       this.cloudFadeIn = false;
       this.cdr.detectChanges();
-    }, this.CLOUD_FADE_IN_MS);
+    }, 1000 + this.CLOUD_FADE_IN_MS);
     this.messageTimers.push(clearFadeIn);
 
-    // After display duration, close with fade out
     const hideCloud = setTimeout(() => {
       this.hideCloudWithAnimation();
-    }, 5000);
+    }, 6000);
     this.messageTimers.push(hideCloud);
   }
 
@@ -564,6 +622,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   forceShowGif() {
     sessionStorage.removeItem(this.GIF_SHOWN_KEY);
     localStorage.removeItem(this.DIALOGUE_SHOWN_KEY);
+    this.commonService.resetFooterBubbleSession();
     this.showGif = false;
     this.showStaticOwl = true;
     this.isPlaying = false;
