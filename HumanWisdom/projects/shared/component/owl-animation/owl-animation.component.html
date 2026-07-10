@@ -4,6 +4,7 @@
 <!-- Static Owl Image with Customizable Text - Shows after video ends -->
 <div class="static-owl-container" *ngIf="showStaticOwl">
   <img 
+    #staticOwlImage
     [src]="staticOwlUrl" 
     alt="Olly the Owl" 
     class="static-owl-image"

@@ -336,7 +336,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       this.cloudFadeIn = true;
       this.isSpeaking = true;
       this.isDisappearing = false;
-      // Suppress footer owl dialogue once the in-page dialogue has started showing.
+      // Mark in-page Olly seen so the footer Hi bubble stays hidden on other pages.
+      localStorage.setItem(this.getDialogueShownKey(), 'true');
       localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
     }, 1000);
 
