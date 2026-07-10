@@ -287,6 +287,19 @@ export class AppComponent implements OnDestroy {
     if (this.router.url == "/teenagers/onboarding/login") {
       this.isLoginPage = true;
     }
+    if (this.router.url.includes('/teenagers/chat-bot') || this.router.url.includes('/teenagers/olly-landing')) {
+      this.dash = false;
+      this.journal = false;
+      this.fourm = false;
+      this.search = false;
+      this.learn = false;
+      this.enableprofile = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader = false;
+      this.isLoginPage = false;
+      return false;
+    }
     this.isShowHeader = false;
     return false;
   }
