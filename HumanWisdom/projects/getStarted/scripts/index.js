@@ -1172,6 +1172,20 @@ if (headerTryForFree) {
     });
 }
 
+const lifeskills = document.getElementById("lifeskills");
+if (lifeskills) {
+    lifeskills.addEventListener("click", function () {
+        logevent("click_skillsPopup", "index.php");
+    });
+}
+
+const transformDownloadApp = document.getElementById("transformDownloadApp");
+if (transformDownloadApp) {
+    transformDownloadApp.addEventListener("click", function () {
+        logevent("click_downloadApp", "index.php");
+    });
+}
+
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
     loginClick.addEventListener('click', function (e) {
@@ -1371,6 +1385,16 @@ requestDemoForWork &&
                     logevent("click_aboutus", "index.php");
                     setActiveNav("AboutUs");
                     localStorage.setItem("activeTab", "aboutUs"), (window.location.href = "../pages/about_us.php");
+                },
+                !1
+            );
+             var b = document.getElementById("events");
+        b &&
+            b.addEventListener(
+                "click",
+                function (e) {
+                    logevent("click_events", "index.php");
+                   
                 },
                 !1
             );
