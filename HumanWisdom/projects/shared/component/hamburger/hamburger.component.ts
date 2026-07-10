@@ -149,7 +149,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     // Determine current tab from URL
     const currentUrl = this.router.url;
     let targetTab = 'home'; // Default to home
-    if (currentUrl.includes('/today') || currentUrl.includes('repeat-user/my-daily-practice')) {
+    if (currentUrl.includes('/today') || currentUrl.includes('repeat-user/my-daily-practice') || currentUrl.includes('/olly-landing')) {
       targetTab = 'today';
     } else if (currentUrl.includes('/explore')) {
       targetTab = 'today';
