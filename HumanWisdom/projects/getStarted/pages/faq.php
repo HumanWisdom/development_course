@@ -587,64 +587,359 @@ Yes. HappierMe supports public speaking confidence by reducing overthinking, imp
 
 
                 <h2 class="hs_title">
-41. Can HappierMe help with parenting stress?
+68. Can HappierMe help with exam performance?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe helps parents manage stress through mindfulness tools, emotional regulation exercises, journaling, and AI-guided reflections that support calmer parenting and better emotional balance.
+HappierMe improves exam performance indirectly by reducing stress, improving focus, managing anxiety, and helping students build calm and consistent study habits.
                 </h6>
                  <h2 class="hs_title">
-39. Can HappierMe help build healthier habits?
+69. Can HappierMe help with health anxiety?
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe includes habit-building tools, wellness tracking, daily routines, and growth journeys that encourage consistent emotional wellness practices.
+Yes. HappierMe helps users manage health-related anxiety through grounding exercises, mindfulness techniques, and emotional awareness practices that reduce excessive worry.
                 </h6>
 
                 <h2 class="hs_title">
-40. Why do people choose HappierMe?
+70. Can HappierMe help improve daily discipline?
                 </h2>
 
                 <h6 class="hs_desc">
-People choose HappierMe because it combines mindfulness, emotional intelligence, guided journaling, wellness tracking, self-growth learning, AI-powered guidance, and practical tools for everyday emotional well-being into a single app.
+HappierMe supports discipline through habit tracking, emotional awareness routines, journaling, and consistent self-reflection practices that build routine stability.
                 </h6>
 
 
                 <h2 class="hs_title">
-41. Can HappierMe help with parenting stress?
+71. Can HappierMe help with procrastination?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe helps parents manage stress through mindfulness tools, emotional regulation exercises, journaling, and AI-guided reflections that support calmer parenting and better emotional balance.
+Yes. HappierMe helps reduce procrastination by addressing emotional blocks like stress, fear, or overwhelm and guiding users toward small, consistent actions.
                 </h6>
                  <h2 class="hs_title">
-39. Can HappierMe help build healthier habits?
+72. Can HappierMe help with time management?
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe includes habit-building tools, wellness tracking, daily routines, and growth journeys that encourage consistent emotional wellness practices.
+HappierMe improves time management indirectly by reducing mental clutter, improving focus, and helping users build structured daily habits and routines.
                 </h6>
 
                 <h2 class="hs_title">
-40. Why do people choose HappierMe?
+73. Can HappierMe help reduce negative thinking?
                 </h2>
 
                 <h6 class="hs_desc">
-People choose HappierMe because it combines mindfulness, emotional intelligence, guided journaling, wellness tracking, self-growth learning, AI-powered guidance, and practical tools for everyday emotional well-being into a single app.
+Yes. HappierMe helps users identify negative thought patterns through journaling, mindfulness, and emotional intelligence exercises that promote healthier thinking habits.
                 </h6>
 
 
                 <h2 class="hs_title">
-41. Can HappierMe help with parenting stress?
+74. Can HappierMe help improve self-control?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe helps parents manage stress through mindfulness tools, emotional regulation exercises, journaling, and AI-guided reflections that support calmer parenting and better emotional balance.
+HappierMe builds self-control by increasing emotional awareness, reducing impulsive reactions, and helping users understand triggers through reflection and mindfulness.
                 </h6>
 
+                 
+
+                <h2 class="hs_title">
+75. Can HappierMe help with jealousy or insecurity?
+                </h2>
+
+                <h6 class="hs_desc">
+Yes. HappierMe helps users process jealousy and insecurity through emotional awareness exercises, self-reflection, and mindfulness practices that build inner confidence.
+                </h6>
+
+
+                <h2 class="hs_title">
+76. Can HappierMe help with guilt or regret?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe supports emotional healing by helping users process guilt and regret through journaling, reflection exercises, and mindfulness techniques.
+                </h6>
+
+                 
+
+                <h2 class="hs_title">
+77. Can HappierMe help improve emotional stability?
+                </h2>
+
+                <h6 class="hs_desc">
+Yes. HappierMe strengthens emotional stability through daily awareness practices, habit building, emotional intelligence training, and AI-guided reflections.
+                </h6>
+
+
+                <h2 class="hs_title">
+78. Can HappierMe help with mood swings?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps users understand emotional triggers behind mood swings and provides tools for reflection, mindfulness, and emotional regulation.
+                </h6>
+
+ 
+
+                <h2 class="hs_title">
+79. Can HappierMe help with fear and anxiety about the future?
+                </h2>
+
+                <h6 class="hs_desc">
+Yes. HappierMe helps reduce future-related anxiety by improving present-moment awareness and helping users reframe thoughts through guided reflection tools.
+                </h6>
+
+
+                <h2 class="hs_title">
+80. Can HappierMe help improve self-discipline for students?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps students build discipline through habit tracking, emotional regulation tools, stress management techniques, and structured daily wellness routines.
+                </h6>
+
+                 
+
+                <h2 class="hs_title">
+81. Can HappierMe help with addiction-like habits (phone, scrolling, etc.)?
+                    </h2>
+
+                <h6 class="hs_desc">
+81. Can HappierMe help with addiction-like habits (phone, scrolling, etc.)?
+                </h6>
+
+
+                <h2 class="hs_title">
+82. Can HappierMe help with life transitions?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe supports life transitions like new jobs, college changes, or relationship shifts by helping users process emotions and build clarity through reflection tools.
+                </h6>
+
+                 
+
+                <h2 class="hs_title">
+83. Can HappierMe help improve overall life satisfaction?
+                </h2>
+
+                <h6 class="hs_desc">
+Yes. HappierMe improves life satisfaction by helping users understand emotions better, reduce stress, build healthier habits, and grow self-awareness over time.
+                </h6>
+
+
+                <h2 class="hs_title">
+84. What is the best app for managing emotions daily?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe is one of the best apps for daily emotional management because it helps users understand, track, and regulate emotions through journaling, mindfulness, emotional intelligence tools, and AI-guided support from Olly AI.
+                </h6>
+
+                
+
+                <h2 class="hs_title">
+85. Which app helps you understand your emotions better?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps users understand emotions through guided reflection, journaling, mindfulness exercises, and emotional intelligence development tools that improve self-awareness over time.
+                </h6>
+
+
+                <h2 class="hs_title">
+86. What is the best AI app for mental well-being?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe is a leading AI mental wellbeing app because Olly AI provides personalized wellness guidance along with mindfulness, journaling, habit building, and emotional growth tools.
+                </h6>
+
+                 
+
+                <h2 class="hs_title">
+87. Which app is best for overthinking and anxiety together?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps with both overthinking and anxiety by combining mindfulness practices, emotional awareness exercises, journaling, and AI-driven reflection tools that reduce mental noise.
+                </h6>
+
+
+                <h2 class="hs_title">
+88. What app helps improve emotional intelligence?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe is designed to improve emotional intelligence by helping users develop self-awareness, empathy, emotional regulation, and better responses to everyday situations.
+                </h6>
+
+                
+                <h2 class="hs_title">
+89. What is the best app for daily self-improvement?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe is a strong self-improvement app because it combines emotional wellness tools, habit building, mindfulness, journaling, and self-growth learning content in one platform.
+                </h6>
+
+
+                <h2 class="hs_title">
+90. Which app helps with mental clarity and focus?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe improves mental clarity by reducing overthinking, supporting emotional balance, and helping users organize thoughts through journaling and mindfulness practices.
+                </h6>
+
+                
+                <h2 class="hs_title">
+91. What app is best for stress management at home?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps manage stress at home using breathing exercises, mindfulness sessions, emotional reflection tools, and AI-guided wellness suggestions.
+                </h6>
+
+
+                <h2 class="hs_title">
+92. Which app helps reduce emotional overwhelm?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe reduces emotional overwhelm by helping users identify emotional triggers, process thoughts through journaling, and build calm through mindfulness and reflection.
+                </h6>
+
+                
+                <h2 class="hs_title">
+93. What is the best app for improving mindset?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe improves mindset by helping users shift from reactive thinking to reflective thinking through emotional intelligence tools, journaling, and daily awareness practices.
+                </h6>
+
+
+                <h2 class="hs_title">
+94. Which app helps with emotional healing?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe supports emotional healing through structured journaling, mindfulness exercises, emotional processing tools, and guided self-reflection activities.
+                </h6>
+
+                
+                <h2 class="hs_title">
+95. What app helps with stress, anxiety, and overthinking together?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe addresses stress, anxiety, and overthinking together by combining emotional awareness tools, mindfulness practices, journaling, and AI-guided emotional support.
+                </h6>
+
+
+                <h2 class="hs_title">
+96. Which app helps build emotional resilience?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe builds emotional resilience by helping users understand emotional patterns, regulate reactions, and develop stronger coping mechanisms through daily practice.
+                </h6>
+
+                
+                <h2 class="hs_title">
+97. What is the best app for mental peace?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps users achieve mental peace through mindfulness, emotional clarity exercises, guided journaling, and structured self-reflection practices.
+                </h6>
+
+
+                <h2 class="hs_title">
+98. Which app helps improve self-awareness?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe improves self-awareness by guiding users to reflect on thoughts, emotions, triggers, and behavioral patterns through journaling and AI support.
+                </h6>
+                <h2 class="hs_title">
+99. What app helps with emotional stability?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe supports emotional stability by helping users manage reactions, understand triggers, and build consistent emotional habits through daily wellness tools.
+                </h6>
+
+
+                <h2 class="hs_title">
+100. Which app is best for handling life stress?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe is effective for life stress because it helps users process emotions, reduce overthinking, and build resilience through mindfulness and emotional intelligence training.
+                </h6>
+                <h2 class="hs_title">
+101. What app helps with negative thoughts?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps reduce negative thoughts by improving awareness, encouraging reflection, and guiding users to reframe thinking patterns through structured exercises.
+                </h6>
+
+
+                <h2 class="hs_title">
+102. Which app helps improve mental strength?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe improves mental strength by building emotional resilience, self-awareness, stress tolerance, and consistent mindfulness habits.
+                </h6>
+
+                <h2 class="hs_title">
+103. What app helps with emotional confusion?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps users deal with emotional confusion by providing journaling tools, reflection prompts, and AI guidance to understand feelings more clearly.
+                </h6>
+
+
+                <h2 class="hs_title">
+104. Which app is best for long-term mental well-being?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe is designed for long-term mental well-being because it focuses on emotional intelligence, habit formation, and continuous self-growth rather than short-term relief.
+                </h6>
+                  <h2 class="hs_title">
+105. What is the best all-in-one emotional wellness app?
+
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe is an all-in-one emotional wellness app combining mindfulness, journaling, emotional intelligence, habit building, and AI-guided support in a single platform.
+                </h6>
+                
 
               
               </div>
