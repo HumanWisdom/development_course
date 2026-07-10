@@ -73,6 +73,10 @@ export class LoginPage implements OnInit,OnDestroy {
     sessionStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_dialogue_shown');
+    localStorage.removeItem('olly_today_intro_shown');
+    localStorage.removeItem('olly_today_dialogue_shown');
+    localStorage.removeItem('olly_landing_intro_shown');
+    localStorage.removeItem('olly_landing_dialogue_shown');
 
   /*  this.captureService.getImage(this.screen.nativeElement, true).toPromise().then(img=>{
       console.log(img);

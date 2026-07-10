@@ -587,6 +587,14 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       // Clear owl animation keys to show animation on next login
       localStorage.removeItem("owl_gif_shown");
       localStorage.removeItem("owl_dialogue_shown");
+      localStorage.removeItem("olly_today_intro_shown");
+      localStorage.removeItem("olly_today_dialogue_shown");
+      localStorage.removeItem("olly_landing_intro_shown");
+      localStorage.removeItem("olly_landing_dialogue_shown");
+      localStorage.removeItem("olly_today_intro_shown");
+      localStorage.removeItem("olly_today_dialogue_shown");
+      localStorage.removeItem("olly_landing_intro_shown");
+      localStorage.removeItem("olly_landing_dialogue_shown");
 
       // Reset Google Identity Services state
       this.resetGoogleSignIn();

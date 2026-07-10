@@ -1172,6 +1172,20 @@ if (headerTryForFree) {
     });
 }
 
+const lifeskills = document.getElementById("lifeskills");
+if (lifeskills) {
+    lifeskills.addEventListener("click", function () {
+        logevent("click_skillsPopup", "index.php");
+    });
+}
+
+const transformDownloadApp = document.getElementById("transformDownloadApp");
+if (transformDownloadApp) {
+    transformDownloadApp.addEventListener("click", function () {
+        logevent("click_downloadApp", "index.php");
+    });
+}
+
 const loginClick = document.getElementById('loginClick');
 if (loginClick) {
     loginClick.addEventListener('click', function (e) {
@@ -1371,6 +1385,16 @@ requestDemoForWork &&
                     logevent("click_aboutus", "index.php");
                     setActiveNav("AboutUs");
                     localStorage.setItem("activeTab", "aboutUs"), (window.location.href = "../pages/about_us.php");
+                },
+                !1
+            );
+             var b = document.getElementById("events");
+        b &&
+            b.addEventListener(
+                "click",
+                function (e) {
+                    logevent("click_events", "index.php");
+                   
                 },
                 !1
             );
@@ -1802,7 +1826,30 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         'Think better.<br><span class="hero-title-accent">Live better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        'Understand yourself. Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.';
+        'Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">these skills</a> to thrive at home and at work.';
+
+function initHumanSkillsLink() {
+    document.querySelectorAll("#hw-website-subtitle .human-skills-link").forEach(function (link) {
+        if (link.dataset.skillsBound === "1") return;
+        link.dataset.skillsBound = "1";
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            var modal = document.getElementById("humanSkillsModal");
+            if (modal && typeof bootstrap !== "undefined") {
+                var bsModal = bootstrap.Modal.getInstance(modal);
+                if (!bsModal) bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+            }
+        });
+        link.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                link.click();
+            }
+        });
+    });
+}
+
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");
@@ -1823,6 +1870,7 @@ async function fetchWebsiteTitle() {
             }
         }
     } catch (err) {}
+    initHumanSkillsLink();
 }
 function formatToDecimal(e) {
     return Number.isInteger(e) ? `${e}.00` : e.toFixed(2);
@@ -2269,5 +2317,7 @@ $(document).ready(function(){
             }
         }
     });
+
+    initHumanSkillsLink();
     
 });
