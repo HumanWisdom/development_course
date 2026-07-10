@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { ProgramType } from '../../models/program-model';
 import { SharedService, UrlConstant } from '../../services/shared.service';
 import { OnboardingService } from '../../services/onboarding.service';
@@ -8,6 +8,7 @@ import { LogEventService } from '../../services/log-event.service';
 import { OwlStore } from '../../../shared/stores/owl.store';
 import { CommonService } from '../../services/common.service';
 import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -38,10 +39,12 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   disableClick = false;
   isAdults = false;
   isDataRecieved = false;
+  shouldShowFooterOwl = true;
   
     // Observable for owl component state management
     owlEnable$: Observable<boolean>;
   private footerOwlSubscription: Subscription;
+  private routerSubscription: Subscription;
   constructor(private router: Router, private onboardingService: OnboardingService, 
     private logeventservice: LogEventService,
     private owlStore: OwlStore,
@@ -75,6 +78,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   }
 
     ngOnInit() {
+      this.shouldShowFooterOwl = this.commonService.shouldShowFooterOwl();
       this.onboardingService.updateUserDetails.next(true);
 
       this.onboardingService.getUserDetails.subscribe(res => {
@@ -164,6 +168,12 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
       this.toursubscription = this.onboardingService.getEnableTour().subscribe((value) => {
         this.disableClick = value;
       });
+
+      this.routerSubscription = this.router.events
+        .pipe(filter((event) => event instanceof NavigationEnd))
+        .subscribe(() => {
+          this.shouldShowFooterOwl = this.commonService.shouldShowFooterOwl();
+        });
     }
 
     routeToday() {
@@ -227,6 +237,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     ngOnDestroy(): void {
       this.toursubscription?.unsubscribe();
       this.footerOwlSubscription?.unsubscribe();
+      this.routerSubscription?.unsubscribe();
     }
 
     

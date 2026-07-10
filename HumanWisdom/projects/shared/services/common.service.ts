@@ -26,6 +26,22 @@ export class CommonService {
   private isFooterOwlVisibleSubject = new BehaviorSubject<boolean>(true);
   isFooterOwlVisible$ = this.isFooterOwlVisibleSubject.asObservable();
   setFooterOwlVisible(visible: boolean): void { this.isFooterOwlVisibleSubject.next(visible); }
+
+  /** True when the user has already seen in-page Olly on Today or Olly landing. */
+  hasSeenInPageOlly(): boolean {
+    const keys = [
+      'olly_today_intro_shown',
+      'olly_today_dialogue_shown',
+      'olly_landing_intro_shown',
+      'olly_landing_dialogue_shown',
+    ];
+    return keys.some((key) => localStorage.getItem(key) === 'true');
+  }
+
+  /** Footer Olly is hidden after in-page Olly on Today or Olly landing; shown on direct navigation. */
+  shouldShowFooterOwl(): boolean {
+    return !this.hasSeenInPageOlly();
+  }
   public percentage: any
   public bookmarks = []
   public resume = [];

@@ -285,7 +285,7 @@ routeDailyPractice(id: number): void {
 
   ngOnDestroy(): void {
     // Restore footer owl visibility when leaving this page
-    this.commonService.setFooterOwlVisible(true);
+    this.commonService.setFooterOwlVisible(this.commonService.shouldShowFooterOwl());
     // Restore nav visibility when leaving this page
     this.commonService.setNavVisible(true);
     document.body.style.removeProperty('overflow');
@@ -543,7 +543,7 @@ survey(): void {
   onWindowScroll() {
     const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.showFooterOwl = scrollOffset > 200;
-    this.commonService.setFooterOwlVisible(this.showFooterOwl);
+    this.commonService.setFooterOwlVisible(this.showFooterOwl && this.commonService.shouldShowFooterOwl());
   }
 
 }

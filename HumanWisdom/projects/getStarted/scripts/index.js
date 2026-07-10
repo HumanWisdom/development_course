@@ -1802,7 +1802,7 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         'Think better.<br><span class="hero-title-accent">Live better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        'Understand yourself. Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.';
+        'Feel calmer, strengthen your relationships, and<br>build the skills to handle life better.';
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");

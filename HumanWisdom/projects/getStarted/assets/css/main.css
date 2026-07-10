@@ -675,7 +675,7 @@ label>input[type="checkbox"]+*::before {
   .navbar ul.mobile-nav-list {
     position: relative;
     inset: auto;
-    padding: 48px 0 0;
+    padding: 95px 0 0;
     margin: 0;
     background: transparent;
     overflow: visible;
@@ -694,16 +694,18 @@ label>input[type="checkbox"]+*::before {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    padding: 10px 0;
+    padding: 14px 0;
+    min-height: 23px;
     font-family: "Poppins", var(--font-secondary);
     border-bottom: 0;
     font-size: 15px;
     font-weight: 500;
-    line-height: 150%;
+    line-height: 1.5;
     color: rgba(215, 88, 107, 1);
     white-space: nowrap;
     transition: 0.2s;
     text-align: left !important;
+    box-sizing: border-box;
   }
 
   .navbar li {
@@ -771,7 +773,7 @@ label>input[type="checkbox"]+*::before {
     right: 12px;
     width: 40px;
     height: 40px;
-    margin: 0;
+    margin: 20px 0 0;
     padding: 0;
     border: none;
     border-radius: 50%;
@@ -800,11 +802,12 @@ label>input[type="checkbox"]+*::before {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     flex-wrap: nowrap;
-    gap: 10px;
-    width: 100%;
-    padding: 0 0 8px;
-    margin: 16px 0 0 !important;
+    gap: 11px;
+    width: fit-content;
+    padding: 0;
+    margin: 32px 0 0 !important;
     box-sizing: border-box;
   }
 
@@ -814,7 +817,8 @@ label>input[type="checkbox"]+*::before {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 20px;
+    padding: 0;
+    border-radius: 50%;
     background: rgba(255, 232, 187, 1);
     flex-shrink: 0;
     box-sizing: border-box;
@@ -826,6 +830,7 @@ label>input[type="checkbox"]+*::before {
     height: 18px;
     object-fit: contain;
     display: block;
+    margin: 0;
     filter: brightness(0);
   }
 
