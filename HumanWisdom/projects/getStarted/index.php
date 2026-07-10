@@ -176,7 +176,7 @@ require_once('./includes/security_config.php');
       <!-- ===== ORCHA / Mind BANNER ===== -->
       <div class="orcha-strip index-lazy-section">
         <div class="orcha-strip-item orcha-strip-orcha">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/orcha_certifie.svg" alt="ORCHA Certified" height="60" width="60"/>
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/orcha_certifie.svg" alt="ORCHA Certified" height="60" width="60"/>
           <span>ORCHA approved for use in healthcare</span>
         </div>
         <div class="orcha-strip-item orcha-strip-mind">
@@ -377,7 +377,7 @@ require_once('./includes/security_config.php');
           <div class="why-different-cards">
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--prevention">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Prevention.svg" alt="" width="66" height="66" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Prevention.svg" alt="" width="66" height="66" />
               </div>
               <div class="why-different-card-body">
                 <h3 class="why-different-card-title">Prevention</h3>
@@ -386,7 +386,7 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--root-cause">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/root.svg" alt="" width="66" height="66" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/root.svg" alt="" width="66" height="66" />
               </div>
               <div class="why-different-card-body">
                 <h3 class="why-different-card-title">Root cause focus</h3>
@@ -395,7 +395,7 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--inner-skills">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build.svg" alt="" width="66" height="66" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build.svg" alt="" width="66" height="66" />
               </div>
               <div class="why-different-card-body">
                 <h3 class="why-different-card-title">Build inner skills</h3>
@@ -404,7 +404,7 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--whole-life">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/life.svg" alt="" width="66" height="66" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life.svg" alt="" width="66" height="66" />
               </div>
               <div class="why-different-card-body">
                 <h3 class="why-different-card-title">Whole-life approach</h3>
