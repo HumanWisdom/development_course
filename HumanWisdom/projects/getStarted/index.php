@@ -723,8 +723,8 @@ require_once('./includes/security_config.php');
         <div class="tools-content-wrap">
         <!-- Tab pills -->
         <div class="tools-tabs" id="toolTabs">
-          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Wellness score</button>
-          <button class="tool-tab tool-tab-active" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
+          <button class="tool-tab tool-tab-active" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Wellness score</button>
+          <button class="tool-tab" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
           <button class="tool-tab" id="pathWay-tab" onclick="switchTab(this,'pathway')">Guided Programs</button>
           <button class="tool-tab" id="journal-tab" onclick="switchTab(this,'journal_tab')">Journal</button>
           <button class="tool-tab" id="podcast-tab" onclick="switchTab(this,'podcast_tab')">Podcast</button>
@@ -734,7 +734,7 @@ require_once('./includes/security_config.php');
         <div class="tools-panel-wrap">
 
           <!-- Feel better now -->
-          <div id="fbn" class="tools-panel active">
+          <div id="fbn" class="tools-panel">
             <div class="tools-card">
               <div class="tools-thumb">
                 <video playsinline
@@ -862,7 +862,7 @@ require_once('./includes/security_config.php');
           </div>
 
           <!-- Wellness score -->
-          <div id="survey" class="tools-panel">
+          <div id="survey" class="tools-panel active">
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/track.svg" alt="Wellness score" class="tools-thumb-img_sec" />
