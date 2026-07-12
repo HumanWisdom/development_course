@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .owl-animation-wrapper {
   position: fixed;
   bottom: 60px;
@@ -477,32 +481,79 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 }
 
-/* Teenagers: align Olly slightly right above Profile tab */
+/* Teenagers: perch Olly on the footer bar above the Forum tab (rightmost) */
 @media (max-width: 1024px) {
+  :host(.teenager-theme) {
+    overflow: visible;
+    position: static;
+  }
+
   :host(.teenager-theme) .owl-animation-wrapper,
   :host(.teenager-theme) .owl-animation-wrapper.corner {
-    right: 4px;
+    /* Forum tab center is at 90% from left → 10% from right */
+    --teen-forum-tab-center: 10%;
+    --teen-footer-height: 52px;
+    bottom: calc(var(--teen-footer-height) + env(safe-area-inset-bottom, 0px)) !important;
+    right: max(8px, calc(var(--teen-forum-tab-center) - 22px)) !important;
+    left: auto !important;
+    z-index: 100;
+    overflow: visible;
   }
 
   :host(.teenager-theme) .static-owl-container {
     align-items: flex-end;
+    overflow: visible;
   }
 
   :host(.teenager-theme) .static-owl-image {
     transform-origin: bottom right;
+    height: 80px;
+    width: auto;
+    max-width: min(80px, 22vw);
+    transform: scale(0.68);
+  }
+
+  :host(.teenager-theme) .owl-gif {
+    margin-right: 0;
+  }
+
+  :host(.teenager-theme) .owl-cloud-container {
+    top: -50px;
+    left: -30%;
+    width: 128px;
+    height: 100px;
+  }
+
+  :host(.teenager-theme) .cloud-image {
+    width: 128px;
+    max-width: 128px;
   }
 }
 
 @media (max-width: 480px) {
   :host(.teenager-theme) .owl-animation-wrapper,
   :host(.teenager-theme) .owl-animation-wrapper.corner {
-    right: 3px;
+    --teen-footer-height: 48px;
+    right: max(6px, calc(var(--teen-forum-tab-center) - 20px)) !important;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    height: 72px;
+    max-width: min(72px, 20vw);
+    transform: scale(0.64);
   }
 }
 
 @media (max-width: 360px) {
   :host(.teenager-theme) .owl-animation-wrapper,
   :host(.teenager-theme) .owl-animation-wrapper.corner {
-    right: 1px;
+    --teen-footer-height: 46px;
+    right: max(4px, calc(var(--teen-forum-tab-center) - 18px)) !important;
+  }
+
+  :host(.teenager-theme) .static-owl-image {
+    height: 68px;
+    max-width: min(68px, 18vw);
+    transform: scale(0.6);
   }
 }

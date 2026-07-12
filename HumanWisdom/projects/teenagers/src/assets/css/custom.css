@@ -34303,6 +34303,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   line-height: 150%;
 }
 
+.btn_ctd1:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .fc_img {
   position: absolute;
   right: 20px;
@@ -36723,6 +36728,8 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   right: 3px;
   margin: 0 auto;
   bottom: 5px;
+  width:24px;
+  height:24px;
 }
 
 .cvideo_coach {

@@ -112,7 +112,7 @@ export class RepeatUserPage implements OnInit {
       // }else{
       //    this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
       // }
-      this.router.navigate([`${SharedService.getprogramName()}/repeat-user/my-daily-practice`])
+      this.router.navigate([`${SharedService.getprogramName()}/today`])
     }, 3000);
 
     if (SharedService.ProgramId == ProgramType.Adults) {
@@ -207,9 +207,11 @@ export class RepeatUserPage implements OnInit {
        //let r = this.resume[0]['screenno'].substring(0, 2);
 
     localStorage.setItem("pageaction", 'next')
-    let id = this.resume[0]['ModuleId'].toString();
-
-    this.service.setmoduleID(id, this.resume[0]['ModuleUrl'].toString(), this.resume[0]['ModuleUrl'].toString()+'s'+this.resume[0]['screenno'].toString())
+    const id = this.resume[0]['ModuleId'].toString();
+    const url = this.resume[0]['ModuleUrl'].toString();
+    const scr = this.resume[0]['screenno'].toString();
+    const indexUrl = url.endsWith('/') ? `${url}s${scr}` : `${url}/s${scr}`;
+    this.service.setmoduleID(id, url, indexUrl);
 
 
     /* switch (r.toString()) {

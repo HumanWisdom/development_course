@@ -26,6 +26,11 @@ import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-s
 const routes: Routes = [
   {
     path: 'home',
+    redirectTo: 'explore',
+    pathMatch: 'full'
+  },
+  {
+    path: 'explore',
     canActivate: [AuthGuard],
     component: HomeComponent
   },
@@ -35,8 +40,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    canActivate: [AuthGuard],
-    component: HomeComponent
+    redirectTo: 'today',
+    pathMatch: 'full'
   },
 
   {
@@ -324,6 +329,11 @@ const routes: Routes = [
   },
   {
     path: 'search',
+    redirectTo: 'learn',
+    pathMatch: 'full'
+  },
+  {
+    path: 'learn',
     loadChildren: () => import('./personalised-for-you-search/personalised-for-you-search.module').then(m => m.PersonalisedForYouSearchPageModule),
     canActivate: [AuthGuard]
   },
@@ -487,6 +497,11 @@ const routes: Routes = [
   {
     path: 'diversity-and-inclusion',
     loadChildren: () => import('./diversity-and-inclusion/diversity-and-inclusion.module').then(m=>m.DiversityAndInclusionModule)
+  },
+  {
+    path: 'today',
+    loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'repeat-user',

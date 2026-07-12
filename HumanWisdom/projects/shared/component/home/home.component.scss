@@ -27,6 +27,16 @@ background: #FFF7E6;/* Ensure proper stacking context */
   &.home-content--playstore-banner {
     padding-top: 16rem;
   }
+
+  &.header-hidden {
+    padding-top: 5rem;
+
+    .row.home-container:first-of-type {
+      top: 0 !important;
+      margin-top: 0px !important;
+      padding-top: 10px;
+    }
+  }
 }
 
 .username-clr {
@@ -38,6 +48,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
     z-index: 98;
     max-width: 30%;
     margin-top: -10px;
+    background: #FFF7E6;
 }
 
 /* Navigation menu styling */
@@ -495,6 +506,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
   z-index: 98;
   max-width: 30%;
   margin-top: -10px;
+  background: #FFF7E6;
 }
 
 /* Large desktop displays */
@@ -511,6 +523,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
     z-index: 98;
     max-width: 50%;
     margin-top: -10px;
+    background: #FFF7E6;
   }
 }
 
@@ -520,7 +533,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
     position: fixed;
     z-index: 98;
     max-width: 100%;
-    margin-top: -10;
+    margin-top: -10px;
     background: #FFF7E6;
   }
 
@@ -680,22 +693,26 @@ background: #FFF7E6;/* Ensure proper stacking context */
   z-index: 2005; /* Ensure it stays on top */
   margin-top: 0;
   padding-top: 20px;
-  height: 100vh;
   background-color: #FFF7E6;
+  bottom: 0; /* Extend to bottom of viewport but no further */
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 262px) !important;
+  max-height: calc(100vh - 190px) !important;
+  width: 100%;
   height: 100vh !important;
+  min-height: calc(100vh - 260px) !important;
   overflow-y: auto !important;
   overscroll-behavior: contain;
   border-radius: 0;
   box-shadow: none !important;
   margin: 0;
   padding: 0;
-  padding-bottom: 150px;
+  padding-bottom: 60px; /* Reduced padding */
   background-color: #FFF7E6 !important;
   border: none !important;
+  display: flex;
+  flex-direction: column;
 
   /* Scrollbar styling */
   scrollbar-width: thin;
@@ -715,7 +732,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 
 .adsearch_ul {
   list-style: none;
-  padding: 0;
+  // padding: 0;
   margin: 0;
   border: none !important;
 }
@@ -758,4 +775,21 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 .adsearch_ul .list-group-item:last-child{
   border-radius: 0 !important;
+}
+.header-hidden:not(.search-active) {
+  .row.home-container:first-of-type {
+    padding-top:0px !important;
+  }
+  .search-box-container{
+    margin-top: 0px !important;
+    padding: 0px !important;
+  }
+  .pfy_search{
+    border: none !important;
+    border-radius: 0px !important;
+    height: 70px;
+  }
+  .sticky-nav-container{
+    margin-top: 0px !important;
+  }
 }

@@ -1136,6 +1136,17 @@
     font-size: 18px !important;
   }
 
+  /* Teenagers page — section titles stay 24px per Figma (not global fs_24px → 18px) */
+  body.page-teenagers h2.fs_24px.teen-video-title,
+  body.page-teenagers h2.fs_24px.teen-support-title,
+  body.page-teenagers h2.fs_24px.teen-calm-title,
+  body.page-teenagers h2.fs_24px.teen-dykt-title,
+  body.page-teenagers h2.fs_24px.teen-inspire-title,
+  body.page-teenagers h2.fs_24px.teen-testimonials-title {
+    font-size: 24px !important;
+    line-height: 140% !important;
+  }
+
   .fs_42px {
     font-size: 24px !important;
   }
@@ -1358,11 +1369,26 @@
     justify-content: center;
   }
 
-  /* Center the Chat with Olly button on mobile */
-  #OllyChatBtn {
-    display: inline-flex;
-    width: fit-content;
+  /* Center Olly AI section content on mobile */
+  .frame-wrapper-3 .div-11,
+  .frame-wrapper-3 .div-12,
+  .frame-wrapper-3 .div-5 {
+    align-items: center;
+    text-align: center;
+  }
+  .frame-wrapper-3 .introducing-olly-AI,
+  .frame-wrapper-3 .text-wrapper-8 {
+    text-align: center;
+    width: 100%;
+  }
+  .frame-wrapper-3 #OllyChatBtn {
+    display: flex;
+    width: 335px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     align-self: center;
+    justify-content: center;
   }
   .pl_pr9px {
     padding-left: 9px !important;
@@ -1647,6 +1673,25 @@
   section.hpt120px ~ main#main .div_subscription h3.fs_24px,
   section.hpt120px ~ main#main .div_subscription h3 {
     font-size: 27px !important;
+  }
+
+  /* Teenagers — Figma 24px (beats About Us 27px leak on section.hpt120px ~ main#main section h2) */
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-video-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-video-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-support-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-support-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-dykt-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-dykt-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-inspire-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-inspire-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-testimonials-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-testimonials-title,
+  body.page-teenagers section.hpt120px ~ main#main .section-header-teen h2 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
   }
 
   /* Override: .section-headernew h2 should be 12px (descriptive text, not heading) - ABOUT US PAGE ONLY */

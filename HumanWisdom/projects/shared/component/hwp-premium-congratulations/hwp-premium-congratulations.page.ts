@@ -64,7 +64,13 @@ export class HwpPremiumCongratulationsPage implements OnInit {
   }
 
   NotNow() {
-    this.router.navigate([`/${SharedService.getprogramName()}/hwp-premium-congratulations`])
+    const redirectUrl = localStorage.getItem('subscriberRedirectUrl');
+    if (redirectUrl) {
+      localStorage.removeItem('subscriberRedirectUrl');
+      this.router.navigateByUrl(redirectUrl);
+    } else {
+      this.router.navigate([SharedService.getDashboardUrls()]);
+    }
   }
   GoToIndex() {
     this.router.navigate(['adults/partnership-webpage/partnership-index']);
@@ -74,6 +80,12 @@ export class HwpPremiumCongratulationsPage implements OnInit {
     this.location.back();
   }
   ProceedToDashboard() {
-    this.router.navigate([SharedService.getDashboardUrls()]);
+    const redirectUrl = localStorage.getItem('subscriberRedirectUrl');
+    if (redirectUrl) {
+      localStorage.removeItem('subscriberRedirectUrl');
+      this.router.navigateByUrl(redirectUrl);
+    } else {
+      this.router.navigate([SharedService.getDashboardUrls()]);
+    }
   }
 }

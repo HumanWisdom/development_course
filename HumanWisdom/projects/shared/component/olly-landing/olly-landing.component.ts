@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
+import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
 import { OLLY_QUESTIONS, OllyTopic } from './olly-questions';
 import { OnboardingService } from '../../services/onboarding.service';
@@ -21,7 +22,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   isAdults: boolean = true;
   searchQuery: string = '';
   selectedTopic: { name: string; displayName: string; fragment: string } | null = null;
-  showWhyOllyPopup: boolean = false;
+  fromImNotSure: boolean = false;
+  fromBasicAccessSignup: boolean = false;
   
   showQuestionsView: boolean = false;
   topicsList: OllyTopic[] = [];
@@ -33,6 +35,12 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
   private readonly INTRO_SHOWN_KEY = 'olly_landing_intro_shown';
   private readonly DIALOGUE_SHOWN_KEY = 'olly_landing_dialogue_shown';
+  // Integrated mode is used on the Today page (embedded inside the dashboard).
+  // We keep separate keys so the dialogue can appear on both Olly landing and Today.
+  private readonly INTEGRATED_INTRO_SHOWN_KEY = 'olly_today_intro_shown';
+  private readonly INTEGRATED_DIALOGUE_SHOWN_KEY = 'olly_today_dialogue_shown';
+  // Footer owl (app-owl-animation) uses this key to decide whether to show the dialogue cloud.
+  private readonly OWL_DIALOGUE_SHOWN_KEY = 'owl_dialogue_shown';
   private readonly CLOUD_FADE_IN_MS = 1800;
   private readonly CLOUD_DISPLAY_MS = 5000;
 
@@ -92,7 +100,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private service: OnboardingService,
-    private services: AdultsService
+    private services: AdultsService,
+    private commonService: CommonService
   ) {
     // Must read getCurrentNavigation() in the constructor — it returns null by the time ngOnInit fires for lazy-loaded modules
     const navigation = this.router.getCurrentNavigation();
@@ -191,6 +200,15 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnInit(): void {
+    // Check if user came from "I'm not sure" link
+    this.fromImNotSure = localStorage.getItem('fromImNotSure') === 'T';
+
+    // Check if user arrived from the basic-access sign-up flow — suppress topic link in that case
+    this.fromBasicAccessSignup = sessionStorage.getItem('fromBasicAccessSignup') === 'T';
+    if (this.fromBasicAccessSignup) {
+      sessionStorage.removeItem('fromBasicAccessSignup');
+    }
+    
     // Determine program type (Adults vs Teenagers)
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
     this.topicsList = this.isAdults ? OLLY_QUESTIONS.adults : OLLY_QUESTIONS.teens;
@@ -227,7 +245,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     // Resolve topicId with multiple fallbacks:
     // 1. From router navigation state (set in constructor)
     // 2. From window.history.state (Angular persists router state here)
-    // 3. From user's saved preference in localStorage
+    // 3. From GetUserPreference API call (works even when login is from native app)
     let topicId = this.topicIdFromNav;
 
     if (!topicId) {
@@ -238,22 +256,16 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       }
     }
 
-    if (!topicId) {
-      // Fallback: read the user's saved preference
-      const savedPref = localStorage.getItem('userPreference');
-      if (savedPref) {
-        topicId = savedPref;
-      }
-    }
-
     const topicMap = this.isAdults ? this.adultTopics : this.teenTopics;
 
     if (topicId && topicMap[topicId]) {
+      // Topic came from navigation state — use it directly
       this.selectedTopic = topicMap[topicId];
     } else {
-      // Final fallback to first topic
-      const firstKey = Object.keys(topicMap)[0];
-      this.selectedTopic = topicMap[firstKey];
+      this.selectedTopic = null;
+
+      // Fetch the user's preference from the API (same as home page)
+      this.fetchUserPreferenceFromApi(topicMap);
     }
 
     this.initOllyAnimation();
@@ -272,6 +284,10 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   ngOnDestroy(): void {
     this.timers.forEach((timer) => clearTimeout(timer));
     this.timers = [];
+    // Clear the flag when component is destroyed
+    localStorage.removeItem('fromImNotSure');
+    // Ensure overlay is removed if popup was open when component destroyed
+    this.removeGlobalOverlay();
   }
 
   private initOllyAnimation(): void {
@@ -284,11 +300,19 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.timers.push(timer);
   }
 
+  private getIntroShownKey(): string {
+    return this.isIntegrated ? this.INTEGRATED_INTRO_SHOWN_KEY : this.INTRO_SHOWN_KEY;
+  }
+
+  private getDialogueShownKey(): string {
+    return this.isIntegrated ? this.INTEGRATED_DIALOGUE_SHOWN_KEY : this.DIALOGUE_SHOWN_KEY;
+  }
+
   onOllyGifLoad(): void {
-    if (this.gifLoadedOnce || this.isIntegrated) {
+    if (this.gifLoadedOnce) {
       return;
     }
-    if (localStorage.getItem(this.INTRO_SHOWN_KEY) === 'true') {
+    if (localStorage.getItem(this.getIntroShownKey()) === 'true') {
       return;
     }
     this.gifLoadedOnce = true;
@@ -299,7 +323,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     if (this.cloudSequenceStarted) {
       return;
     }
-    if (localStorage.getItem(this.DIALOGUE_SHOWN_KEY) === 'true') {
+    if (localStorage.getItem(this.getDialogueShownKey()) === 'true') {
       return;
     }
     this.cloudSequenceStarted = true;
@@ -312,6 +336,9 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       this.cloudFadeIn = true;
       this.isSpeaking = true;
       this.isDisappearing = false;
+      // Mark in-page Olly seen so the footer Hi bubble stays hidden on other pages.
+      localStorage.setItem(this.getDialogueShownKey(), 'true');
+      localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
     }, 1000);
 
     this.scheduleTimer(() => {
@@ -334,8 +361,10 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.scheduleTimer(() => {
       this.showCloudMessage = false;
       this.isDisappearing = false;
-      localStorage.setItem(this.DIALOGUE_SHOWN_KEY, 'true');
-      localStorage.setItem(this.INTRO_SHOWN_KEY, 'true');
+      localStorage.setItem(this.getDialogueShownKey(), 'true');
+      localStorage.setItem(this.getIntroShownKey(), 'true');
+      // Ensure the footer owl dialogue does not re-appear after the in-page Olly dialogue.
+      localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
     }, 600);
   }
 
@@ -359,6 +388,29 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
 
     const program = this.isAdults ? 'adults' : 'teenagers';
     this.router.navigate([`/${program}/chat-bot`], { state: { query }, replaceUrl: true });
+  }
+
+  private fetchUserPreferenceFromApi(topicMap: { [id: string]: { name: string; displayName: string; fragment: string } }): void {
+    this.commonService.getUserpreference().subscribe({
+      next: (res) => {
+        if (res) {
+          const preferenceId = res.toString();
+          // Treat "0" or empty string as "no preference selected"
+          if (preferenceId && preferenceId !== '0' && topicMap[preferenceId]) {
+            this.selectedTopic = topicMap[preferenceId];
+            localStorage.setItem('userPreference', preferenceId);
+          } else {
+            this.selectedTopic = null;
+          }
+        } else {
+          this.selectedTopic = null;
+        }
+      },
+      error: (err) => {
+        console.warn('Failed to fetch user preference from API:', err);
+        this.selectedTopic = null;
+      }
+    });
   }
 
   onTopicLinkClick(): void {
@@ -421,11 +473,90 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     }, 300);
   }
 
+  private globalOverlay: HTMLElement | null = null;
+
   openWhyOllyPopup(): void {
-    this.showWhyOllyPopup = true;
+    this.createGlobalOverlay();
   }
 
   closeWhyOllyPopup(): void {
-    this.showWhyOllyPopup = false;
+    this.removeGlobalOverlay();
+  }
+
+  private createGlobalOverlay(): void {
+    if (this.globalOverlay) { return; }
+
+    const isAdults = this.isAdults;
+    const headerBg   = isAdults ? '#FFE8BB' : '#0C2B5F';
+    const titleColor = isAdults ? '#000000' : '#ffffff';
+    const contentBg  = isAdults ? '#FFF7E6' : '#183C79';
+    const textColor  = isAdults ? '#000000' : 'rgba(255,255,255,0.9)';
+    const closeBtnBg = isAdults
+      ? 'linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%)'
+      : 'linear-gradient(180deg, #EE9596 0%, #F17071 100%)';
+
+    const overlay = document.createElement('div');
+    overlay.id = 'olly-global-overlay';
+    overlay.style.cssText = [
+      'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:100%',
+      'background:rgba(0,0,0,0.7)', 'z-index:99999',
+      'display:flex', 'justify-content:center', 'align-items:center',
+      'pointer-events:auto'
+    ].join(';');
+
+    overlay.innerHTML = `
+      <div id="olly-popup-card" style="
+        width:335px; max-height:90vh; display:flex; flex-direction:column;
+        box-shadow:0 8px 24px rgba(0,0,0,0.15); border-radius:10px;
+        overflow:hidden; box-sizing:border-box; pointer-events:auto;">
+        <div style="
+          background:${headerBg}; padding:15px 30px;
+          display:flex; flex-direction:column; align-items:center;
+          border-radius:10px 10px 0 0;">
+          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_popup.webp"
+               alt="Olly Owl" style="width:50px; height:auto; margin-bottom:10px;">
+          <h2 style="
+            font-family:Poppins; font-weight:600; font-size:18px;
+            line-height:150%; text-align:center; color:${titleColor}; margin:0;">
+            Meet Olly AI
+          </h2>
+        </div>
+        <div style="
+          background:${contentBg}; padding:20px 30px 30px;
+          display:flex; flex-direction:column; align-items:center;
+          border-radius:0 0 10px 10px;">
+          <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Olly was created to support you in a more human way.</p>
+          <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Unlike many AI tools, Olly doesn't pull advice from the internet. It draws from trusted content created by experts.</p>
+          <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 6px; width:100%;">Olly listens, helps you reflect, and gently guides you toward relevant support.</p>
+          <p style="font-size:12px; line-height:150%; color:${textColor}; margin:0 0 20px; width:100%;">Your conversations with Olly are private and not shared with anyone.</p>
+          <button id="olly-popup-close-btn" style="
+            width:100%; padding:14px; border:none; border-radius:30px; cursor:pointer;
+            background: ${closeBtnBg};
+            color:#fff; font-size:16px; font-weight:600; font-family:Poppins;">
+            Close
+          </button>
+        </div>
+      </div>`;
+
+    // Close on overlay backdrop click (not on the card itself)
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) { this.closeWhyOllyPopup(); }
+    });
+
+    document.body.appendChild(overlay);
+    this.globalOverlay = overlay;
+
+    // Attach close button listener after DOM insertion
+    const closeBtn = document.getElementById('olly-popup-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => this.closeWhyOllyPopup());
+    }
+  }
+
+  private removeGlobalOverlay(): void {
+    if (this.globalOverlay) {
+      this.globalOverlay.remove();
+      this.globalOverlay = null;
+    }
   }
 }

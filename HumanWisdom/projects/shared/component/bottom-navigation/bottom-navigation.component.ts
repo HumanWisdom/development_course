@@ -6,6 +6,7 @@ import { OnboardingService } from '../../services/onboarding.service';
 import { Subscription } from 'rxjs';
 import { LogEventService } from '../../services/log-event.service';
 import { OwlStore } from '../../../shared/stores/owl.store';
+import { CommonService } from '../../services/common.service';
 import { Observable } from 'rxjs';
 
 
@@ -20,6 +21,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   @Input() journal = false
   @Input() fourm = false
   @Input() profile = true
+  @Input() learn = false
   isloggedIn = false
   @Input() enableprofile = false
   @Input() search = false
@@ -39,29 +41,15 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   
     // Observable for owl component state management
     owlEnable$: Observable<boolean>;
-  constructor(private router: Router,private onboardingService: OnboardingService, 
+  private footerOwlSubscription: Subscription;
+  constructor(private router: Router, private onboardingService: OnboardingService, 
     private logeventservice: LogEventService,
-        private owlStore: OwlStore,
-    
+    private owlStore: OwlStore,
+    private commonService: CommonService,
   ) {
-// IMPORTANT: Reset owl state to clear any previous localStorage data
-    // Comment this line back after first successful run
-    this.owlStore.reset();
-    
-    // Initialize owl state from store (after reset)
-    this.owlEnable$ = this.owlStore.shouldShow$;
-    
-    // Debug: Check owl state
-    console.log('Owl Store State (after reset):', {
-      isEnabled: this.owlStore.getIsEnabled(),
-      isInitialized: this.owlStore.getIsInitialized(),
-      shouldShow: this.owlStore.getShouldShow()
-    });
-    
-    // Debug: Subscribe to owl state changes
-    this.owlEnable$.subscribe(shouldShow => {
-      console.log('Owl shouldShow$ emitted:', shouldShow);
-    });
+    // Drive footer owl visibility from the scroll signal emitted by pages that
+    // have an in-page Olly (e.g. Today page). Default to true for all other pages.
+    this.owlEnable$ = this.commonService.isFooterOwlVisible$;
 
 
 
@@ -119,20 +107,30 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         }
       }
 
-      if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
-        || this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
-        this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search))) {
-        this.dash = false
-        this.journal = false
-        this.fourm = false;
-        this.search = true;
-        this.enableprofile = false;
-      }
-      else if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` ) {
+      if (this.router.url.includes('/repeat-user/my-daily-practice') || this.router.url.includes('/today') || this.router.url.includes('/olly-landing')) {
         this.dash = true;
         this.journal = false;
         this.search = false;
         this.fourm = false;
+        this.learn = false;
+        this.enableprofile = false;
+      }
+      else if (this.router.url == SharedService.getDashboardUrls() || this.router.url == `/${SharedService.getprogramName()}/home` || this.router.url.includes('/explore')) {
+        this.dash = false;
+        this.journal = false;
+        this.search = true;
+        this.fourm = false;
+        this.learn = false;
+        this.enableprofile = false;
+      }
+      else if (this.router.url == SharedService.getUrlfromFeatureName(UrlConstant.search)
+        || this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.sitesearch)) ||
+        this.router.url.includes(SharedService.getUrlfromFeatureName(UrlConstant.search)) || this.router.url.includes('/learn') || this.router.url.includes('/search') || this.router.url.includes('/pathway')) {
+        this.dash = false
+        this.journal = false
+        this.fourm = false;
+        this.search = false;
+        this.learn = true;
         this.enableprofile = false;
       }
       else if ((this.router.url == `/${SharedService.getprogramName()}/journal`) ||
@@ -142,6 +140,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.journal = true;
         this.search = false;
         this.fourm = false;
+        this.learn = false;
         this.enableprofile = false;
       }
     else if (this.router.url.includes('/forum')) {
@@ -149,6 +148,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.journal = false
         this.fourm = true;
         this.enableprofile = false;
+        this.learn = false;
         this.journal = false;
       }
       else if (this.router.url == `/${SharedService.getprogramName()}/onboarding/user-profile`
@@ -156,6 +156,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
         this.dash = false
         this.journal = false
         this.fourm = false;
+        this.learn = false;
         this.enableprofile = true;
         this.search = false;
       }
@@ -165,9 +166,24 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
       });
     }
 
+    routeToday() {
+      this.logeventservice.logEvent("footer_today")
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
+    }
+
+    routeExplore() {
+      this.logeventservice.logEvent("footer_explore")
+      this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
+
     routeDash() {
       this.logeventservice.logEvent("footer_home")
       this.router.navigateByUrl(SharedService.getDashboardUrls());
+    }
+
+    routeLearn() {
+      this.logeventservice.logEvent("footer_learn")
+      this.router.navigateByUrl(SharedService.getUrlfromFeatureName(UrlConstant.search));
     }
 
     routeJournal() {
@@ -210,6 +226,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     ngOnDestroy(): void {
       this.toursubscription?.unsubscribe();
+      this.footerOwlSubscription?.unsubscribe();
     }
 
     

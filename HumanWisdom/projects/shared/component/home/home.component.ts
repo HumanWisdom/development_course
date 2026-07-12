@@ -141,6 +141,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   eventList: any[] = [];
   audioMeditationList: any[] = [];
   showSearchBox: boolean = true;
+  showGreeting: boolean = true;
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
@@ -150,6 +151,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private lastScrollTop: number = 0;
   private playstoreBannerObserver: MutationObserver | null = null;
   preference = '';  
+  isHeaderHidden: boolean = false;
   constructor(
     private router: Router,
     private commonService: CommonService,
@@ -1651,9 +1653,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Handle scroll events to show/hide search box
+   * Handle scroll events to show/hide greeting
    * Using HostListener for better performance
-   * Hide search box when scroll exceeds 20% of viewport height
+   * Hide greeting when scroll exceeds 20% of viewport height
    */
   @HostListener('window:scroll', ['$event'])
   handleScroll(): void {
@@ -1661,19 +1663,32 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     const threshold = viewportHeight * 0.2; // 20% of viewport height
 
-    // Hide search box when scroll exceeds 20% of screen height
+    // Hide greeting when scroll exceeds 20% of screen height
     if (scrollTop > threshold) {
-      this.showSearchBox = false;
-      this.searchResult = []; // Close dropdown when hiding search box
+      this.showGreeting = false;
     } else {
-      // Show search box when scroll is within 20% of screen height
-      this.showSearchBox = true;
+      this.showGreeting = true;
+    }
+
+    // Toggle header visibility based on scroll threshold - don't hide when search is active
+    const isHidden = scrollTop > 50 && !this.isSearchActive;
+    if (this.isHeaderHidden !== isHidden) {
+      this.isHeaderHidden = isHidden;
+      // Directly toggle .dtn header since enableFooter() only runs on route changes
+      const dtnEl = document.querySelector('.dtn') as HTMLElement;
+      if (dtnEl) {
+        dtnEl.style.display = this.isSearchActive ? 'block' : (isHidden ? 'none' : 'block');
+      }
+      this.cdr.detectChanges();
     }
 
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
   ngOnDestroy(): void {
+    // Restore header visibility when leaving home page
+    const dtnEl = document.querySelector('.dtn') as HTMLElement;
+    if (dtnEl) { dtnEl.style.display = 'block'; }
     this.teardownPlaystoreBannerObserver();
     // Clean up event listeners
     if (this.hashChangeHandler) {
@@ -1853,6 +1868,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.searchResult = this.moduleList;
       } else {
         this.isSearchActive = true;
+        this.commonService.setSearchActive(true);
         this.searchResult = this.moduleList.filter(x =>
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
@@ -1871,6 +1887,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   onFocus(): void {
     this.isSearchActive = true;
+    this.commonService.setSearchActive(true);
+    // Show header immediately when search is activated
+    this.isHeaderHidden = false;
+    const dtnEl = document.querySelector('.dtn') as HTMLElement;
+    if (dtnEl) {
+      dtnEl.style.display = 'block';
+    }
     const eventName = 'click_search';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Click: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
@@ -1902,6 +1925,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   getinp(searchTerm: string, fromDropdown: boolean = false): void {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     if (searchTerm && searchTerm.trim() !== '') {
       if (!fromDropdown) {
         const eventName = `search_${searchTerm.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
@@ -2059,6 +2083,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   clearSearch(): void {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     const eventName = 'click_search_clear';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Clear: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);

@@ -112,6 +112,13 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         this.wasBackClicked = this.navigationService.backClicked || event.navigationTrigger === 'popstate';
       }
       if (event instanceof NavigationEnd) {
+        // Always close the hamburger when navigating to the Today page
+        if (this.router.url.includes('repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
+          this.closemenuevent();
+          this.wasBackClicked = false;
+          return;
+        }
+
         const isOpen = sessionStorage.getItem('openHamburger') === 'true';
         const sourceUrl = sessionStorage.getItem('hamburgerSourceUrl');
         const isSamePage = this.router.url === sourceUrl;
@@ -139,12 +146,23 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   onProgramChange() {
     this.closemenuevent();
+    // Determine current tab from URL
+    const currentUrl = this.router.url;
+    let targetTab = 'home'; // Default to home
+    if (currentUrl.includes('/today') || currentUrl.includes('repeat-user/my-daily-practice') || currentUrl.includes('/olly-landing')) {
+      targetTab = 'today';
+    } else if (currentUrl.includes('/explore')) {
+      targetTab = 'today';
+    } else if (currentUrl.includes('/learn')) {
+      targetTab = 'today';
+    }
+    // Navigate to the same tab in the other program
     if (this.isAdults) {
-      this.logeventservice.logEvent('click_happiermeforteenagers');
-      window.location.href = environment.clientUrl + "teenagers/home";
+      this.logeventservice.logEvent('click_happierme_forteenagers');
+      window.location.href = environment.clientUrl + 'teenagers/' + targetTab;
     } else {
-      this.logeventservice.logEvent('click_happiermeforadults');
-      window.location.href = environment.clientUrl + 'adults/home';
+      this.logeventservice.logEvent('click_happierme_foradults');
+      window.location.href = environment.clientUrl + 'adults/today';
     }
   }
 
@@ -569,6 +587,14 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       // Clear owl animation keys to show animation on next login
       localStorage.removeItem("owl_gif_shown");
       localStorage.removeItem("owl_dialogue_shown");
+      localStorage.removeItem("olly_today_intro_shown");
+      localStorage.removeItem("olly_today_dialogue_shown");
+      localStorage.removeItem("olly_landing_intro_shown");
+      localStorage.removeItem("olly_landing_dialogue_shown");
+      localStorage.removeItem("olly_today_intro_shown");
+      localStorage.removeItem("olly_today_dialogue_shown");
+      localStorage.removeItem("olly_landing_intro_shown");
+      localStorage.removeItem("olly_landing_dialogue_shown");
 
       // Reset Google Identity Services state
       this.resetGoogleSignIn();

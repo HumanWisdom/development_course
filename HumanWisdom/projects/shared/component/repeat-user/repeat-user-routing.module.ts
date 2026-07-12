@@ -6,7 +6,7 @@ import { MyDailyPracticePage } from './my-daily-practice/my-daily-practice.page'
 const routes: Routes = [
   {
     path: '',
-    component: RepeatUserPage
+    component: MyDailyPracticePage
   },
   {
     path: 'my-daily-practice',

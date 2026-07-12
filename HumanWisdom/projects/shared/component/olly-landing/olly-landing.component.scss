@@ -1,11 +1,14 @@
 // Container filling the remaining screen space
+.sc_01{
+  min-height: 80vh;
+}
 .olly-landing-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   box-sizing: border-box;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -95,7 +98,7 @@
       }
       
       .questions-list-container {
-        padding: 0 20px 40px 20px !important;
+        padding: 0 20px 120px 20px !important;
       }
     }
   }
@@ -336,11 +339,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: transparent; // backdrop is handled by global DOM overlay
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999; // above the global overlay (9998)
+  pointer-events: none; // let clicks pass through to global overlay backdrop
+
+  .olly-modal-container {
+    pointer-events: auto; // but the card itself is clickable
+  }
 }
 
 .olly-modal-container {
@@ -352,6 +360,8 @@
   border-radius: 10px;
   overflow: hidden;
   box-sizing: border-box;
+  position: relative;
+  z-index: 9999;
 }
 
 .olly-modal-header {
@@ -360,16 +370,23 @@
   box-sizing: border-box;
   padding: 15px 30px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
+  .olly-modal-icon {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
   .olly-modal-title {
     font-family: Poppins;
     font-weight: 600;
     font-style: SemiBold;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 150%;
     letter-spacing: 0%;
     text-align: center;
@@ -437,7 +454,7 @@
   width: 275px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
   box-sizing: border-box;
   overflow-y: auto; // Just in case of overflow on smaller font renderings
   text-align: left;
@@ -447,8 +464,10 @@
 .olly-modal-paragraph {
   font-family: 'Poppins', 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-style: normal;
+  font-size: 12px;
   line-height: 150%;
+  letter-spacing: 0%;
   color: #000000;
   margin: 0;
 }
@@ -509,7 +528,7 @@
   box-shadow: 0px 2px 8px 0px rgba(175, 175, 175, 0.25);
   box-sizing: border-box;
   z-index: 99;
-  margin-bottom: 24px;
+  // margin-bottom: 24px;
 
   .back-btn {
     background: none;
@@ -591,10 +610,14 @@
 
 .questions-instruction-text {
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 0px;
   margin-top: 0;
-  font-weight: 400;
+  font-weight: 600;
+  line-height: 140%;
+  padding: 25px 20px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 .topics-accordion {
@@ -716,7 +739,7 @@
   }
 
   .questions-instruction-text {
-    color: rgba(0, 0, 0, 0.5);
+    color: #000000;
   }
 
   .accordion-item {
@@ -801,7 +824,7 @@
   }
 
   .questions-instruction-text {
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
   }
 
   .accordion-item {

@@ -5,6 +5,7 @@ import { LogEventService } from '../../../../../shared/services/log-event.servic
 import { TeenagersService } from '../teenagers.service';
 import { OnboardingService } from '../../../../../shared/services/onboarding.service';
 import { SharedService } from '../../../../../shared/services/shared.service';
+import { CommonService } from '../../../../../shared/services/common.service';
 import { Constant } from '../../../../../shared/services/constant';
 import {
   trigger,
@@ -27,7 +28,7 @@ import {
       })),
       state('expanded', style({
         height: '*',
-        overflow: 'auto',
+        overflow: 'visible',
         opacity: 1
       })),
       transition('collapsed <=> expanded', [
@@ -77,6 +78,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public hcwhP: any
   public percentage: any
   public isExpanded = true;
+  public isGuidedJourneysExpanded = true;
+  public isMicrolearningExpanded = true;
+  public microlearningPreview: any[] = [];
+  public guidedJourneyPreview: any[] = [];
   wisdomExerciseList = [];
   mediaPercent: any
   freeScreens = []
@@ -106,7 +111,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
    public service: OnboardingService, public logeventservice: LogEventService,
-    public cd: ChangeDetectorRef
+    public cd: ChangeDetectorRef, private commonService: CommonService
   ) {
 
     this.logeventservice.logEvent('View_For_you');
@@ -155,6 +160,8 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     this.GetWisdomScreens();
     this.getUserPreference();
+    this.loadMicrolearningPreview();
+    this.loadGuidedJourneyPreview();
     this.isSubscribe = SharedService.isSubscriber();
     let closetour = localStorage.getItem('closeTour');
 
@@ -166,6 +173,63 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   toggleAccordion() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  toggleGuidedJourneys() {
+    this.isGuidedJourneysExpanded = !this.isGuidedJourneysExpanded;
+  }
+
+  routeToGuidedJourney(journeyId) {
+    this.logeventservice.logEvent('click_guided_journey_' + journeyId);
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.router.navigate(['/teenagers/guided-journeys/intro'], { queryParams: { journeyId } });
+  }
+
+  toggleMicrolearning() {
+    this.isMicrolearningExpanded = !this.isMicrolearningExpanded;
+  }
+
+  routeToMicrolearning(id) {
+    this.logeventservice.logEvent('click_microlearning_' + id);
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.router.navigate(['/teenagers/micro-learning/inner', id]);
+  }
+
+  loadMicrolearningPreview() {
+    this.commonService.GetMicrolearningList(SharedService.ProgramId).subscribe((res: any) => {
+      if (res && res.length) {
+        const pageCounts = [8, 7, 8];
+        this.microlearningPreview = res.slice(0, 3).map((item, i) => ({
+          id: item.microlearningID,
+          title: item.Title,
+          imgUrl: item.ImageUrl,
+          pages: pageCounts[i]
+        }));
+      }
+    });
+  }
+
+  loadGuidedJourneyPreview() {
+    const userId = SharedService.getUserId() || 100;
+    this.commonService.GetGuidedJourneys(SharedService.ProgramId, userId).subscribe((res: any) => {
+      if (res) {
+        const data = Array.isArray(res) ? res :
+          (res.Data || res.data || res.DataList || res.GuidedJourneys || res.Guided_Journeys || res.list || []);
+        this.guidedJourneyPreview = data.slice(0, 3).map(item => ({
+          id: item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID,
+          title: item.Title || item.title || item.JourneyName || item.Name,
+          subtitle: (item.Days || item.days) > 0 ? `${item.Days || item.days} days` : (item.Subtitle || item.subtitle || ''),
+          imgUrl: this.resolveImgUrl(item.ImageUrl || item.ImgUrl || item.imgUrl || item.imageUrl)
+        }));
+      }
+    });
+  }
+
+  resolveImgUrl(url: string): string {
+    if (!url) return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
+    if (url.startsWith('https://') || url.startsWith('http://')) return url;
+    if (url.startsWith('/')) return `https://d1tenzemoxuh75.cloudfront.net${url}`;
+    return `https://d1tenzemoxuh75.cloudfront.net/${url}`;
   }
 
   // logEvent(eventName: string, path: string) {
@@ -371,6 +435,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
         this.searchResult = this.moduleList;
       } else {
         this.isSearchActive = true;
+        this.commonService.setSearchActive(true);
         this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(value?.toLocaleLowerCase()));
       }
       if (this.isSearchActive) {
@@ -394,6 +459,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   getinp(event) {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.toggleBodyScroll(false);
     this.logeventservice.logEvent("search_"+ event)
     let url=""
@@ -758,6 +824,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   onFocus() {
     this.isSearchActive = true;
+    this.commonService.setSearchActive(true);
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
@@ -787,6 +854,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   clearSearch() {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.searchinp = "";
     this.searchResult = [];
     this.toggleBodyScroll(false);

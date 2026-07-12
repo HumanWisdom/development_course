@@ -57,6 +57,7 @@
     "@types/html2canvas": "^1.0.0",
     "@types/jspdf": "^2.0.0",
     "@types/stripe-v3": "^3.1.23",
+    "angular-auth-oidc-client": "^15.0.5",
     "angular-socialshare": "^2.3.11",
     "angularx-social-login": "^3.5.4",
     "bcswipe": "^2.0.4",

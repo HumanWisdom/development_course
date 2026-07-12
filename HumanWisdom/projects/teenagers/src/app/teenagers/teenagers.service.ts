@@ -52,10 +52,6 @@ export class TeenagersService {
     {
       id: '15',
       name: 'Overcome unhelpful habits'
-    },
-    {
-      id: '16',
-      name: 'Understand yourself'
     }
   ]
 
@@ -5947,6 +5943,9 @@ export class TeenagersService {
     this.clickModule(id, userId)
       .subscribe(res => {
         this.setModuleState(id, res);
+        if (res && res.lastVisitedScreen && res.lastVisitedScreen !== '') {
+          pgResume = "s" + res.lastVisitedScreen;
+        }
       }, error => {
         console.log(error)
       },

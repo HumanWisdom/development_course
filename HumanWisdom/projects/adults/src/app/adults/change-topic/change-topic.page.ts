@@ -83,6 +83,8 @@ export class ChangeTopicPage implements OnInit {
   }
 
   ngOnInit() {
+    this.releaseScrollLock();
+
     let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
     if(loginResponse==null){
       loginResponse = JSON.parse(sessionStorage.getItem("loginResponse"))
@@ -95,6 +97,16 @@ export class ChangeTopicPage implements OnInit {
     console.log(NoOfVisits);
     this.changeTopicList = this.service.personalisedforyoulist;
     this.getUserPreferenceMapping();
+  }
+
+  private releaseScrollLock(): void {
+    sessionStorage.setItem('openHamburger', 'false');
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
+    const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+    if (menuCheckbox) {
+      menuCheckbox.checked = false;
+    }
   }
 
   getUserPreferenceMapping() {
@@ -154,7 +166,8 @@ export class ChangeTopicPage implements OnInit {
   }
 
   skip() {
-    this.router.navigate(['/adults/home']);
+    localStorage.setItem('fromImNotSure', 'T');
+    this.router.navigate(['/adults/subscription/try-free-and-subscribe']);
   }
 
   updateList(id,name) {

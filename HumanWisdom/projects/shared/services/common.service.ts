@@ -16,6 +16,64 @@ export class CommonService {
   surveySubs = this.surveySubject.asObservable();
   private loginUrlSubject = new BehaviorSubject<string | null>(null);
   loginUrlSubs = this.loginUrlSubject.asObservable();
+  private isSearchActiveSubject = new BehaviorSubject<boolean>(false);
+  isSearchActive$ = this.isSearchActiveSubject.asObservable();
+  // Controls global nav/footer visibility (e.g. hidden when Olly questions view is open)
+  private isNavVisibleSubject = new BehaviorSubject<boolean>(true);
+  isNavVisible$ = this.isNavVisibleSubject.asObservable();
+  setNavVisible(visible: boolean): void { this.isNavVisibleSubject.next(visible); }
+  // Controls footer owl visibility — false until the in-page Olly has scrolled out of view
+  private isFooterOwlVisibleSubject = new BehaviorSubject<boolean>(true);
+  isFooterOwlVisible$ = this.isFooterOwlVisibleSubject.asObservable();
+  setFooterOwlVisible(visible: boolean): void { this.isFooterOwlVisibleSubject.next(visible); }
+
+  /** True when in-page Olly was shown on Today or Olly landing (suppress footer bubble only). */
+  hasSeenInPageOlly(): boolean {
+    const keys = [
+      'olly_today_intro_shown',
+      'olly_today_dialogue_shown',
+      'olly_landing_intro_shown',
+      'olly_landing_dialogue_shown',
+    ];
+    return keys.some((key) => localStorage.getItem(key) === 'true');
+  }
+
+  // In-memory session flags — survive footer owl component destroy/recreate on route changes.
+  private footerBubbleShownThisSession = false;
+  private footerBubbleSequenceScheduled = false;
+
+  hasFooterBubbleShownThisSession(): boolean {
+    return this.footerBubbleShownThisSession;
+  }
+
+  markFooterBubbleShownThisSession(): void {
+    this.footerBubbleShownThisSession = true;
+  }
+
+  hasFooterBubbleSequenceScheduled(): boolean {
+    return this.footerBubbleSequenceScheduled;
+  }
+
+  markFooterBubbleSequenceScheduled(): void {
+    this.footerBubbleSequenceScheduled = true;
+  }
+
+  resetFooterBubbleSequenceScheduled(): void {
+    this.footerBubbleSequenceScheduled = false;
+  }
+
+  resetFooterBubbleSession(): void {
+    this.footerBubbleShownThisSession = false;
+    this.footerBubbleSequenceScheduled = false;
+  }
+
+  /** Footer Hi bubble: show on direct navigation; hide after Today / Olly landing in-page Olly. */
+  shouldShowFooterBubble(): boolean {
+    if (this.hasSeenInPageOlly()) {
+      return false;
+    }
+    return !this.footerBubbleShownThisSession;
+  }
   public percentage: any
   public bookmarks = []
   public resume = [];
@@ -46,6 +104,7 @@ export class CommonService {
   searchinp = '';
   public moduleList = [];
   isAdults = false;
+  isHeaderVisibleOnScroll = true;
     personalisedforyoulist = [
     {
       id: "1",
@@ -494,6 +553,10 @@ export class CommonService {
     this.loginUrlSubject.unsubscribe();
   }
 
+  setSearchActive(isActive: boolean): void {
+    this.isSearchActiveSubject.next(isActive);
+  }
+
 
   verifyTokenAndHandleResponse(authtoken:any){
     if (authtoken) {
@@ -595,7 +658,7 @@ export class CommonService {
         sessionStorage.setItem("userName", JSON.stringify(this.userName))
       }
 
-      this.loginSubject(`${SharedService.getprogramName()}/repeat-user`);
+      this.loginSubject(`${SharedService.getprogramName()}/today`);
     }
   }
 

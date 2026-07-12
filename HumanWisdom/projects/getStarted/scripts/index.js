@@ -933,6 +933,7 @@ function testNewsletterPopup() {
 
 // Newsletter popup configuration
 const NEWSLETTER_CONFIG = {
+    enabled: false,
     delayAfterPreloader: 2000, // 5 seconds after preloader finishes
     fallbackDelay: 50000, // 10 seconds as fallback
     checkInterval: 100, // Check interval for preloader status
@@ -941,6 +942,7 @@ const NEWSLETTER_CONFIG = {
 
 // Newsletter popup functionality using ModalManager - Dynamic timing based on preloader
 function initializeNewsletterPopup() {
+    if (!NEWSLETTER_CONFIG.enabled) return;
     if (NEWSLETTER_CONFIG.debug) {
         console.log("Checking newsletter popup...");
         console.log("Session storage value:", sessionStorage.getItem('newsLetterOpened'));
@@ -1056,6 +1058,7 @@ function checkPreloaderAndShowNewsletter() {
 
 // Enhanced preloader detection with multiple approaches
 function setupNewsletterTiming() {
+    if (!NEWSLETTER_CONFIG.enabled) return;
     let newsletterTriggered = false;
     
     // Method 1: Use MutationObserver to watch for preloader removal
@@ -1166,6 +1169,20 @@ const headerTryForFree = document.getElementById("headerTryForFree");
 if (headerTryForFree) {
     headerTryForFree.addEventListener("click", function () {
         logevent("click_tryforfree", "index.php");
+    });
+}
+
+const lifeskills = document.getElementById("lifeskills");
+if (lifeskills) {
+    lifeskills.addEventListener("click", function () {
+        logevent("click_skillsPopup", "index.php");
+    });
+}
+
+const transformDownloadApp = document.getElementById("transformDownloadApp");
+if (transformDownloadApp) {
+    transformDownloadApp.addEventListener("click", function () {
+        logevent("click_downloadApp", "index.php");
     });
 }
 
@@ -1294,7 +1311,7 @@ const teenagersPricing = document.getElementById('teenagersPricing');
 if (teenagersPricing) {
     teenagersPricing.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
-        window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+        window.location.href = url+"/teenagers/onboarding/login";
     });
 }
 
@@ -1302,7 +1319,7 @@ const teenagersClick = document.getElementById('teenagersClick');
 if (teenagersClick) {
     teenagersClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-           window.location.href = url+"/teenagers/subscription/start-your-free-trial";
+           window.location.href = url+"/teenagers/onboarding/login";
         }
          else if(localStorage.getItem('chat-bot')=='true'){
            window.location.href = url+"/teenagers/chat-bot";
@@ -1332,7 +1349,7 @@ const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
-           window.location.href = url+"/adults/subscription/start-your-free-trial";
+           window.location.href = url+"/adults/onboarding/login";
         }
         else if(localStorage.getItem('chat-bot')=='true'){
            window.location.href = url+"/adults/chat-bot";
@@ -1368,6 +1385,16 @@ requestDemoForWork &&
                     logevent("click_aboutus", "index.php");
                     setActiveNav("AboutUs");
                     localStorage.setItem("activeTab", "aboutUs"), (window.location.href = "../pages/about_us.php");
+                },
+                !1
+            );
+             var b = document.getElementById("events");
+        b &&
+            b.addEventListener(
+                "click",
+                function (e) {
+                    logevent("click_events", "index.php");
+                   
                 },
                 !1
             );
@@ -1665,18 +1692,20 @@ nfsnContactForm &&
                 if (aud.duration && isFinite(aud.duration)) {
                     seek.value = (aud.currentTime / aud.duration) * 100 || 0;
                     currentEl.textContent = formatToolsAudioTime(aud.currentTime);
-                    durationEl.textContent = formatToolsAudioTime(aud.duration);
+                    if (aud.id !== "aud2") {
+                        durationEl.textContent = formatToolsAudioTime(aud.duration);
+                    }
                 }
             };
             aud.addEventListener("loadedmetadata", function () {
                 updateProgress();
+                if (aud.id !== "aud2") return;
                 var panel = wrap.closest(".tools-panel");
                 if (panel) {
                     var cardDur = panel.querySelector(".tools-card-duration-aud2");
-                    if (cardDur && aud.id === "aud2") {
-                        cardDur.textContent = formatToolsAudioTime(aud.duration);
-                    }
+                    if (cardDur) cardDur.textContent = "51:23";
                 }
+                durationEl.textContent = "51:23";
             });
             aud.addEventListener("timeupdate", updateProgress);
             aud.addEventListener("play", function () {
@@ -1797,7 +1826,30 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         'Think better.<br><span class="hero-title-accent">Live better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        'Understand yourself. Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.';
+        'Feel calmer. Strengthen your relationships.<br>Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">these skills</a> to thrive at home and at work.';
+
+function initHumanSkillsLink() {
+    document.querySelectorAll("#hw-website-subtitle .human-skills-link").forEach(function (link) {
+        if (link.dataset.skillsBound === "1") return;
+        link.dataset.skillsBound = "1";
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            var modal = document.getElementById("humanSkillsModal");
+            if (modal && typeof bootstrap !== "undefined") {
+                var bsModal = bootstrap.Modal.getInstance(modal);
+                if (!bsModal) bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+            }
+        });
+        link.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                link.click();
+            }
+        });
+    });
+}
+
 async function fetchWebsiteTitle() {
     var titleEl = document.getElementById("hw-website-title"),
         subtitleEl = document.getElementById("hw-website-subtitle");
@@ -1818,6 +1870,7 @@ async function fetchWebsiteTitle() {
             }
         }
     } catch (err) {}
+    initHumanSkillsLink();
 }
 function formatToDecimal(e) {
     return Number.isInteger(e) ? `${e}.00` : e.toFixed(2);
@@ -1856,6 +1909,101 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 
+var INDEX_LAZY_PLACEHOLDER = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+function prepareIndexLazySection(section) {
+    if (!section || !section.classList || !section.classList.contains("index-lazy-section")) return;
+    if (section.dataset.lazyPrepared === "1") return;
+    section.dataset.lazyPrepared = "1";
+    section.querySelectorAll("img[src]:not([data-src])").forEach(function (img) {
+        var url = img.getAttribute("src");
+        if (!url || url.indexOf("data:") === 0) return;
+        img.setAttribute("data-src", url);
+        img.setAttribute("src", INDEX_LAZY_PLACEHOLDER);
+    });
+    section.querySelectorAll("picture source[srcset]:not([data-srcset])").forEach(function (source) {
+        var srcset = source.getAttribute("srcset");
+        if (!srcset) return;
+        source.setAttribute("data-srcset", srcset);
+        source.removeAttribute("srcset");
+    });
+    section.querySelectorAll("video source[src]:not([data-src])").forEach(function (source) {
+        var url = source.getAttribute("src");
+        if (!url) return;
+        source.setAttribute("data-src", url);
+        source.removeAttribute("src");
+    });
+}
+
+function activateIndexLazyMedia(section) {
+    section.querySelectorAll("img[data-src]").forEach(function (img) {
+        var url = img.getAttribute("data-src");
+        if (url && img.getAttribute("src") !== url) img.src = url;
+    });
+    section.querySelectorAll("picture source[data-srcset]").forEach(function (source) {
+        var srcset = source.getAttribute("data-srcset");
+        if (srcset) source.srcset = srcset;
+    });
+    section.querySelectorAll("video").forEach(function (video) {
+        var changed = false;
+        video.querySelectorAll("source[data-src]").forEach(function (source) {
+            source.src = source.getAttribute("data-src");
+            changed = true;
+        });
+        if (changed) video.load();
+    });
+}
+
+function showIndexLazySection(section) {
+    section.classList.add("is-visible");
+    if (section.dataset.lazyLoaded === "1") return;
+    section.dataset.lazyLoaded = "1";
+    activateIndexLazyMedia(section);
+    if (section.id === "exploreBlogSection" && typeof logevent === "function") {
+        logevent("view_blog_section", "index.php");
+    }
+}
+
+function hideIndexLazySection(section) {
+    section.classList.remove("is-visible");
+}
+
+function initIndexLazySections() {
+    document.querySelectorAll(".index-lazy-section").forEach(prepareIndexLazySection);
+    var sections = document.querySelectorAll(".index-lazy-section");
+    if (!sections.length) return;
+    if (!("IntersectionObserver" in window)) {
+        sections.forEach(showIndexLazySection);
+        return;
+    }
+    var io = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (ent) {
+                if (ent.isIntersecting) {
+                    showIndexLazySection(ent.target);
+                } else {
+                    hideIndexLazySection(ent.target);
+                }
+            });
+        },
+        { rootMargin: "0px 0px -6% 0px", threshold: [0, 0.12, 0.25] }
+    );
+    sections.forEach(function (section) {
+        io.observe(section);
+    });
+}
+
+/** Let vertical wheel scroll the page over horizontal carousels (avoids scroll trap). */
+function initCarouselWheelPassthrough(el) {
+    if (!el || el.getAttribute("data-wheel-passthrough") === "1") return;
+    el.setAttribute("data-wheel-passthrough", "1");
+    el.addEventListener("wheel", function (e) {
+        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+        e.preventDefault();
+        window.scrollBy({ top: e.deltaY, behavior: "auto" });
+    }, { passive: false });
+}
+
 /** Index-only: org cards, coaches/blog, blog section view, footer/social (matches webpage event list). */
 function initIndexPageGa() {
     var ollyVideo = document.getElementById("olly-ai-video");
@@ -1864,9 +2012,20 @@ function initIndexPageGa() {
         var ollySectionVisible = false;
         var playOlly = function () {
             ollyVideo.muted = true;
-            ollyVideo.currentTime = 0;
-            var p = ollyVideo.play();
-            if (p && typeof p.catch === "function") p.catch(function () {});
+            var start = function () {
+                ollyVideo.currentTime = 0;
+                var p = ollyVideo.play();
+                if (p && typeof p.catch === "function") p.catch(function () {});
+            };
+            ollyVideo.querySelectorAll("source[data-src]").forEach(function (source) {
+                source.src = source.getAttribute("data-src");
+            });
+            if (ollyVideo.readyState >= 2) {
+                start();
+            } else {
+                ollyVideo.addEventListener("canplay", start, { once: true });
+                ollyVideo.load();
+            }
         };
         var ollyIo = new IntersectionObserver(
             function (entries) {
@@ -1901,6 +2060,7 @@ function initIndexPageGa() {
 
     var coachScroll = document.getElementById("coaches-scroll");
     if (coachScroll) {
+        initCarouselWheelPassthrough(coachScroll);
         coachScroll.addEventListener("click", function (e) {
             var card = e.target.closest("a.coach-card");
             if (!card) return;
@@ -1914,6 +2074,7 @@ function initIndexPageGa() {
 
     var blogScrollEl = document.getElementById("blog-scroll");
     if (blogScrollEl) {
+        initCarouselWheelPassthrough(blogScrollEl);
         blogScrollEl.addEventListener("click", function (e) {
             var card = e.target.closest("a.blog-card");
             if (!card) return;
@@ -1933,22 +2094,6 @@ function initIndexPageGa() {
             var h = coachesMore.getAttribute("href");
             afterLogNavigate(function () { window.location.href = h; });
         });
-    }
-
-    var blogSec = document.getElementById("exploreBlogSection");
-    if (blogSec && "IntersectionObserver" in window) {
-        var io = new IntersectionObserver(
-            function (ents) {
-                ents.forEach(function (ent) {
-                    if (ent.isIntersecting) {
-                        logevent("view_blog_section", "index.php");
-                        io.disconnect();
-                    }
-                });
-            },
-            { threshold: 0.25 }
-        );
-        io.observe(blogSec);
     }
 
     document.querySelectorAll(".dfooter_social_links a").forEach(function (a) {
@@ -1971,6 +2116,7 @@ function initIndexPageGa() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    initIndexLazySections();
     initIndexPageGa();
     // Convert existing accordion to Bootstrap 5.3
     convertAccordionToBootstrap53();
@@ -2171,5 +2317,7 @@ $(document).ready(function(){
             }
         }
     });
+
+    initHumanSkillsLink();
     
 });

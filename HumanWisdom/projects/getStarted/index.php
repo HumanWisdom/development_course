@@ -65,6 +65,47 @@ require_once('./includes/security_config.php');
     })
 
   </script>
+  <script>
+    (function () {
+      var PLACEHOLDER = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+      function prep(section) {
+        if (!section || !section.classList || !section.classList.contains("index-lazy-section")) return;
+        if (section.dataset.lazyPrepared === "1") return;
+        section.dataset.lazyPrepared = "1";
+        section.querySelectorAll("img[src]:not([data-src])").forEach(function (img) {
+          var url = img.getAttribute("src");
+          if (!url || url.indexOf("data:") === 0) return;
+          img.setAttribute("data-src", url);
+          img.setAttribute("src", PLACEHOLDER);
+        });
+        section.querySelectorAll("picture source[srcset]:not([data-srcset])").forEach(function (source) {
+          var srcset = source.getAttribute("srcset");
+          if (!srcset) return;
+          source.setAttribute("data-srcset", srcset);
+          source.removeAttribute("srcset");
+        });
+        section.querySelectorAll("video source[src]:not([data-src])").forEach(function (source) {
+          var url = source.getAttribute("src");
+          if (!url) return;
+          source.setAttribute("data-src", url);
+          source.removeAttribute("src");
+        });
+      }
+      if ("MutationObserver" in window) {
+        var mo = new MutationObserver(function (list) {
+          list.forEach(function (m) {
+            m.addedNodes.forEach(function (node) {
+              if (node.nodeType !== 1) return;
+              if (node.classList && node.classList.contains("index-lazy-section")) prep(node);
+              if (node.querySelectorAll) node.querySelectorAll(".index-lazy-section").forEach(prep);
+            });
+          });
+        });
+        mo.observe(document.documentElement, { childList: true, subtree: true });
+        document.addEventListener("DOMContentLoaded", function () { mo.disconnect(); });
+      }
+    })();
+  </script>
   </head>
 <body id="body" style="padding:0px !important">
 
@@ -116,7 +157,8 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Understand yourself. Feel calmer. Strengthen your relationships. Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal">life skills</a> to thrive in an AI world.
+                      Feel calmer. Strengthen your relationships.<br>
+                      Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a> to thrive at home and at work.
                     </p>
                   </div>
                 </div>
@@ -132,12 +174,9 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== ORCHA / Mind BANNER ===== -->
-      <div class="orcha-strip">
+      <div class="orcha-strip index-lazy-section">
         <div class="orcha-strip-item orcha-strip-orcha">
-          <picture>
-            <source media="(max-width: 767px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/orchacertifiedmobile.svg" />
-            <img src="https://d1tenzemoxuh75.cloudfront.net/website/orcha_certified.png" alt="ORCHA Certified" height="60" width="60"/>
-          </picture>
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/orcha_certifie.svg" alt="ORCHA Certified" height="60" width="60"/>
           <span>ORCHA approved for use in healthcare</span>
         </div>
         <div class="orcha-strip-item orcha-strip-mind">
@@ -147,7 +186,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== TOPICS ===== -->
-      <div class="div-7">
+      <div class="div-7 index-lazy-section">
         <div class="div-wrapper-2">
           <p class="text-wrapper-a">Find out how HappierMe can help you</p>
         </div>
@@ -171,7 +210,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== OLLY AI ===== -->
-      <div class="frame-wrapper-3" id="olly-ai-section">
+      <div class="frame-wrapper-3 index-lazy-section" id="olly-ai-section">
         <div class="div-11">
           <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
           <video
@@ -182,12 +221,11 @@ require_once('./includes/security_config.php');
             webkit-playsinline
             preload="metadata"
                       aria-label="Olly AI">
-            <source src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.webm" type="video/webm">
-            
+            <source data-src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.mp4" type="video/mp4">
           </video>
           <div class="div-12">
             <div class="div-5">
-              <p class="introducing-olly-AI" style="font-size:30px;">Meet Olly AI,<br />your personal guide.</p>
+              <p class="introducing-olly-AI">Meet Olly AI,<br />your personal guide.</p>
               <p class="text-wrapper-8">
                Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
               </p>
@@ -202,7 +240,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== VIDEO ===== -->
-      <div class="div-13">
+      <div class="div-13 index-lazy-section">
         <p class="text-wrapper-a">Discover HappierMe in just 1 minute</p>
         <div class="youtube-player">
           <button
@@ -238,13 +276,13 @@ require_once('./includes/security_config.php');
       </div>
 
 
-   <div class="div-new_1">
+   <div class="div-new_1 index-lazy-section">
     <p class="text-wrapper-6"> Findings from a survey of 1,000 HappierMe app users</p>      
   </div>
 
   <!-- section end -->
 
- <div class="div-new">
+ <div class="div-new index-lazy-section">
     <div class="scroller-container div_new1">
       <div>
         <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
@@ -259,7 +297,7 @@ require_once('./includes/security_config.php');
     </div>
   </div>              
       <!-- ===== TESTIMONIALS ===== -->
-      <div class="div-14">
+      <div class="div-14 index-lazy-section">
         <div class="text-wrapper-user">Users love HappierMe</div>
         <div class="div-15">
           <!-- Card 1 -->
@@ -329,8 +367,56 @@ require_once('./includes/security_config.php');
         </div>
       </div>
 
+      <!-- ===== WHY HAPPIERME IS DIFFERENT ===== -->
+      <section class="why-different-section index-lazy-section" aria-labelledby="why-different-title">
+        <div class="why-different-inner">
+          <div class="why-different-header">
+            <h2 class="why-different-title" id="why-different-title">Why HappierMe is different</h2>
+            <p class="why-different-subtitle">Most apps help you cope. We help you change.</p>
+          </div>
+          <div class="why-different-cards">
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--prevention">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Prevention.svg" alt="" width="66" height="66" />
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Prevention</h3>
+                <p class="why-different-card-desc">Deal with problems early, before they escalate</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--root-cause">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/root.svg" alt="" width="66" height="66" />
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Root cause focus</h3>
+                <p class="why-different-card-desc">Understand your own mind, so change can last</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--inner-skills">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build.svg" alt="" width="66" height="66" />
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Build inner skills</h3>
+                <p class="why-different-card-desc">Self-awareness, emotional intelligence and healthier habits</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--whole-life">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life.svg" alt="" width="66" height="66" />
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Whole-life approach</h3>
+                <p class="why-different-card-desc">Mental health, relationships and work skills, all in one place</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== FIND SUPPORT & CONNECTION ===== -->
-      <div class="div-20">
+      <div class="div-20 index-lazy-section">
         <picture>
           <source media="(max-width: 768px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/find_support_mob.webp" />
           <img class="design" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Find_Support.webp" alt="Find support and connection" />
@@ -369,7 +455,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== ORGANISATION ===== -->
-      <div class="div-23">
+      <div class="div-23 index-lazy-section">
         <p class="text-wrapper-6 pb0px text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
         <div class="div-24">
           <!-- Workplace -->
@@ -431,7 +517,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== TEENAGERS ===== -->
-      <div class="div-31">
+      <div class="div-31 index-lazy-section">
         <img class="teenage-app-copy" src="https://d1tenzemoxuh75.cloudfront.net/website/help_teenagers.webp" alt="Teenagers app" />
         <div class="div-32">
           <div class="div-33">
@@ -465,7 +551,7 @@ require_once('./includes/security_config.php');
 
 
       <!-- ===== SUBSCRIPTION ===== -->
-      <div class="frame-wrapper-9" id="div_subscription">
+      <div class="frame-wrapper-9 index-lazy-section" id="div_subscription">
         <div class="div-39">
           <div class="div-40">
             <div class="div-wrapper-6">
@@ -529,7 +615,7 @@ require_once('./includes/security_config.php');
       </div>
 
             <!-- ===== COACHES ===== -->
-      <div class="coaches-section">
+      <div class="coaches-section index-lazy-section">
         <p class="text-wrapper-6-1">Contact our experienced coaches for personalised support</p>
         <div class="coaches-outer">
           <div class="coaches-track-wrap">
@@ -632,23 +718,23 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== TOOLS ===== -->
-      <div class="tools-section">
+      <div class="tools-section index-lazy-section">
         <p class="text-wrapper-6">Tools for a happier life</p>
         <div class="tools-content-wrap">
         <!-- Tab pills -->
         <div class="tools-tabs" id="toolTabs">
-          <button class="tool-tab tool-tab-active" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
+          <button class="tool-tab tool-tab-active" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Wellness score</button>
+          <button class="tool-tab" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
           <button class="tool-tab" id="pathWay-tab" onclick="switchTab(this,'pathway')">Guided Programs</button>
           <button class="tool-tab" id="journal-tab" onclick="switchTab(this,'journal_tab')">Journal</button>
           <button class="tool-tab" id="podcast-tab" onclick="switchTab(this,'podcast_tab')">Podcast</button>
           <button class="tool-tab" id="community-tab" onclick="switchTab(this,'forum')">Community</button>
-          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Happiness score</button>
         </div>
         <!-- Tab content area -->
         <div class="tools-panel-wrap">
 
           <!-- Feel better now -->
-          <div id="fbn" class="tools-panel active">
+          <div id="fbn" class="tools-panel">
             <div class="tools-card">
               <div class="tools-thumb">
                 <video playsinline
@@ -728,16 +814,13 @@ require_once('./includes/security_config.php');
             <div class="tools-card tools-card--podcast">
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/tools_podcast.webp" alt="How can we be happier" class="tools-thumb-img" />
-                <span class="tools-card-media-badge" aria-hidden="true">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg" class="tools-audio-play-icon" width="48" height="48" alt="" />
-                </span>
               </div>
               <div class="tools-card-meta">
                 <div class="tools-card-label-row">
                   <span class="tools-label-text">PODCAST</span>
                 </div>
                 <p class="tools-card-title">How can we be happier</p>
-                <p class="tools-card-duration tools-card-duration-aud2">0:00</p>
+                <p class="tools-card-duration tools-card-duration-aud2">51:23</p>
               </div>
             </div>
             <div class="tools-info">
@@ -754,7 +837,7 @@ require_once('./includes/security_config.php');
                     <div class="tools-audio-timeline">
                       <span class="tools-audio-time tools-audio-time-current">0:00</span>
                       <input type="range" class="tools-audio-seek" value="0" min="0" max="100" step="0.1" aria-label="Playback position">
-                      <span class="tools-audio-time tools-audio-time-duration">0:00</span>
+                      <span class="tools-audio-time tools-audio-time-duration">51:23</span>
                     </div>
                   </div>
                 </div>
@@ -778,11 +861,11 @@ require_once('./includes/security_config.php');
             </div>
           </div>
 
-          <!-- Happiness score -->
-          <div id="survey" class="tools-panel">
+          <!-- Wellness score -->
+          <div id="survey" class="tools-panel active">
             <div>
               <div class="tools-thumb">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/track.svg" alt="Happiness score" class="tools-thumb-img_sec" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/track.svg" alt="Wellness score" class="tools-thumb-img_sec" />
               </div>
              
             </div>
@@ -807,7 +890,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== BLOG ===== -->
-      <div class="div-13" id="exploreBlogSection">
+      <div class="div-13 index-lazy-section" id="exploreBlogSection">
         <div class="text-wrapper-blog">Explore our blog</div>
         <div class="blog-outer">
           <div class="blog-track-wrap">
@@ -863,7 +946,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- ===== READY TO TRANSFORM ===== -->
-      <section class="transform-cta-section">
+      <section class="transform-cta-section index-lazy-section">
         <div class="transform-cta-inner">
           <div class="transform-cta-text">
             <h2 class="transform-cta-heading">Ready to transform<br class="mobile-br"> your life?</h2>
@@ -882,7 +965,7 @@ require_once('./includes/security_config.php');
 
       <!-- ===== FAQ ===== -->
       <!-- Desktop FAQ -->
-      <div class="div-54 display_m_none">
+      <div class="div-54 display_m_none index-lazy-section">
         <div class="text-wrapper-21">Frequently asked questions</div>
         <div class="div-55">
           <div class="div-56">
@@ -1046,7 +1129,7 @@ require_once('./includes/security_config.php');
       </div>
 
       <!-- Mobile FAQ -->
-      <div class="row center_flex prelative display_df_none" style="margin-bottom: 40px;">
+      <div class="row center_flex prelative display_df_none index-lazy-section" style="margin-bottom: 40px;">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
           <div class="text-wrapper-21" style="margin-bottom: 20px;">Frequently asked questions</div>
           <div class="tab-content tc_faqs mobile">

@@ -21,9 +21,8 @@ import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-s
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
-    canActivate: [AuthGuard]
+    redirectTo: 'today',
+    pathMatch: 'full'
   },
     {
     path: 'social-login',
@@ -68,8 +67,12 @@ const routes: Routes = [
   },
     {
     path: 'home',
+    redirectTo: 'explore',
+    pathMatch: 'full'
+  },
+  {
+    path: 'explore',
     component: HomeComponent,
-    loadChildren: () => import('../teenagers/teenagers-dashboard/teenagers-dashboard.module').then(m => m.TeenagersDashboardPageModule),
     canActivate: [AuthGuard]
   },
   {
@@ -200,6 +203,11 @@ const routes: Routes = [
   },
   {
     path: 'search',
+    redirectTo: 'learn',
+    pathMatch: 'full'
+  },
+  {
+    path: 'learn',
     loadChildren: () => import('../teenagers/personalised-for-you-search/personalised-for-you-search.module').then(m => m.PersonalisedForYouSearchPageModule),
     // canActivate: [AuthGu]
   },
@@ -369,16 +377,17 @@ const routes: Routes = [
     loadChildren: () => import('../teenagers/teen-talk/teen-talk.module').then(m => m.TeenTalkPageModule)
   },
   {
-    path: 'explore',
-    loadChildren: () => import('../teenagers/explore/explore.module').then(m => m.ExplorePageModule)
-  },
-  {
     path: 'videopage/:videolink/:enable/:title',
     component: S3VideoComponent
   },
   {
+    path: 'today',
+    loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'repeat-user',
-    loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then(m => m.RepeatUserPageModule),
+    loadChildren: () => import('../../../../shared/component/repeat-user/repeat-user.module').then( m => m.RepeatUserPageModule),
     canActivate: [AuthGuard]
   },
   {

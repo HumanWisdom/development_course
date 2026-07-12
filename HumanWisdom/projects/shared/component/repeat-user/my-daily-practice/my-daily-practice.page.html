@@ -1,5 +1,4 @@
-<!-- top navigation -->
-<app-tn-dashboard-v03 [enableHamburger]="true" *ngIf="!isQuestionsViewActive"></app-tn-dashboard-v03>
+<!-- top navigation is provided by the app shell (app.component.html), same as the Home page -->
 
 <!-- page content -->
 <div class="right_col mc_03" [class.no-top-gap]="isQuestionsViewActive">
@@ -15,7 +14,7 @@
             <div class="row  mt70px mb5px" *ngIf="!isQuestionsViewActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                 <h4 class="mt50px mb30px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                  Welcome back,<br>{{userName}}!
+                  Hi {{userName}}!
                 </h4>
 
               </div>
@@ -150,7 +149,8 @@
 
                 <!-- clickable card -->
                 <div class="toc_adiv_imgmy">
-                  <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)">
+                  <!-- <a (click)="routeResume(resumeLastvisited[0]['ModuleId'], true)"> -->
+                    <a (click)="routeResume(true)">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex practice-card-content">
 
@@ -164,11 +164,11 @@
                   class="p0 session_imgnew" style="border: none;"> -->
 
                                 <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/{{resumeLastvisited[0]['ModuleId']}}.webp"
-                                  *ngIf="isAdults" class="p0 session_imgnew" style="border: none;">
-                                <img
+                                  src="https://d1tenzemoxuh75.cloudfront.net{{resumeLastvisited[0]['imgPath']}}"
+                                  class="p0 session_imgnew" style="border: none;">
+                               <!--  <img
                                   src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/{{resumeLastvisited[0]['ModuleId']}}.webp"
-                                  *ngIf="!isAdults" class="p0 session_imgnew" style="border: none;">
+                                  *ngIf="!isAdults" class="p0 session_imgnew" style="border: none;"> -->
                               </div>
                             </div>
 
@@ -186,7 +186,7 @@
                           <h4 class="mtb0px fs_18px fw_600 lh_120p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                             {{resumeLastvisited[0]['ModuleName']}}
                           </h4>
-                          <h4 class="mtb0px fs_12px fw_400 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p p0" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"  *ngIf="resumeLastvisited[0]?.SessionCnt !== '0'">
                             Session #{{resumeLastvisited[0]['SessionCnt']}}
                           </h4>
                           <h4 class="mt0px fs_15px fw_500 lh_130p ellipsis p0 "
@@ -951,6 +951,4 @@
 <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Continue'"
   [content]="content"></app-modal>
 
-<!-- footer  -->
-<app-bottom-navigation [showOwl]="false" *ngIf="!isQuestionsViewActive"></app-bottom-navigation>
-<!-- /footer -->
+<!-- footer is provided by the app shell (app.component.html), same as the Home page -->

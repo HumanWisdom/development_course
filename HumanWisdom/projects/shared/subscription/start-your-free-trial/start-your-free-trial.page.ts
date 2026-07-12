@@ -34,8 +34,23 @@ export class StartYourFreeTrialPage implements OnInit {
     this.logeventservice.logEvent('view_start_trial');
   }
 
+  isDashboardUrl(url: string): boolean {
+    if (!url) return true;
+    const dashboardUrls = ['/adults/home', '/teenagers/home', '/adults/adult-dashboard', '/teenagers/teenager-dashboard'];
+    return dashboardUrls.some(d => url.includes(d));
+  }
+
   tryFreeSubscribe() {
     this.logeventservice.logEvent('click_start_trial');
+    
+    // Save the source URL if they came from locked content
+    const navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+    if (navFrom && navFrom !== 'null' && navFrom !== 'undefined' && !this.isDashboardUrl(navFrom)) {
+      localStorage.setItem('subscriberRedirectUrl', navFrom);
+    } else {
+      localStorage.removeItem('subscriberRedirectUrl');
+    }
+
     if (!(SharedService.isIOSApp() || SharedService.isAndroid())) {
       if (this.CheckIfUserIsLoggedIn()) {
         this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);

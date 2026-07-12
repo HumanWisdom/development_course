@@ -323,7 +323,11 @@ p:hover {
 #OllyChatBtn {
   display: inline-flex;
   width: fit-content;
-  align-self: flex-start;
+}
+@media (min-width: 769px) {
+  #OllyChatBtn {
+    align-self: flex-start;
+  }
 }
 #OllyChatBtn .start-your-free-wrapper-2:hover {
   background: linear-gradient(180deg, #2D5392 0%, #0E2E64 100%);
@@ -634,6 +638,168 @@ header a[href*="splash_options.php"] * {
   color: rgba(255, 172, 162, 1) !important;
   text-decoration: none !important;
 }
+
+/* ========================================
+   WHY HAPPIERME IS DIFFERENT
+======================================== */
+.why-different-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+.why-different-inner {
+  width: 100%;
+  max-width: 1340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.why-different-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.why-different-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #000;
+  margin: 0;
+}
+.why-different-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+  margin: 0;
+}
+.why-different-cards {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.why-different-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.why-different-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  border-radius: 20px 20px 0 0;
+  box-sizing: border-box;
+}
+.why-different-card-icon img {
+  display: block;
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+}
+.why-different-card-icon--prevention { background: rgba(238, 161, 112, 1); }
+.why-different-card-icon--root-cause { background: rgba(237, 125, 111, 1); }
+.why-different-card-icon--inner-skills { background: rgba(215, 88, 107, 1); }
+.why-different-card-icon--whole-life { background: rgba(128, 51, 88, 1); }
+.why-different-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 146px;
+  padding: 24px 30px;
+  background: rgba(255, 247, 230, 1);
+  border-radius: 0 0 20px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.why-different-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #000;
+  margin: 0;
+}
+.why-different-card-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+  margin: 0;
+  max-width: 260px;
+}
+
+@media (max-width: 767px) {
+  .why-different-section {
+    padding: 40px 0 40px 20px;
+  }
+  .why-different-inner {
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .why-different-header {
+    padding-right: 20px;
+    align-items: center;
+    width: 100%;
+  }
+  .why-different-title {
+    font-size: 24px;
+  }
+  .why-different-subtitle {
+    font-size: 15px;
+  }
+  .why-different-cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    gap: 16px;
+    width: 100%;
+    padding-right: 20px;
+    scrollbar-width: none;
+  }
+  .why-different-cards::-webkit-scrollbar {
+    display: none;
+  }
+  .why-different-card {
+    scroll-snap-align: start;
+    flex: 0 0 280px;
+    width: 280px;
+  }
+  .why-different-card-icon {
+    height: 130px;
+  }
+  .why-different-card-body {
+    height: auto;
+    min-height: 146px;
+    padding: 24px 20px;
+    gap: 12px;
+  }
+  .why-different-card-title {
+    font-size: 20px;
+  }
+  .why-different-card-desc {
+    font-size: 14px;
+    max-width: none;
+  }
+}
+
 /* ========================================
    FIND SUPPORT & CONNECTION
 ======================================== */
@@ -646,8 +812,11 @@ header a[href*="splash_options.php"] * {
 .text-wrapper-14 { font-size: 30px; font-weight: 600; color: #000; line-height: 1.5; margin: 0; }
 .div-21 .text-wrapper-14 .mobile-br { display: none; }
 .support-features { display: flex; flex-direction: column; gap: 24px; }
-.support-feature-item { display: flex; align-items: flex-start; gap: 16px; }
-.support-feature-icon { width: 40px; height: 40px; flex-shrink: 0; }
+.support-feature-item { display: flex; align-items: flex-start; gap: 18px; }
+.support-feature-icon { flex-shrink: 0; display: block; object-fit: contain; }
+.support-feature-item:nth-child(1) .support-feature-icon { width: 39px; height: 39px; }
+.support-feature-item:nth-child(2) .support-feature-icon { width: 39px; height: 39.42px; }
+.support-feature-item:nth-child(3) .support-feature-icon { width: 39px; height: 43.96px; }
 .support-feature-content { display: flex; flex-direction: column; gap: 4px; }
 .support-feature-title { font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 600; color: rgba(215, 88, 107, 1); text-decoration: underline; line-height: 150%; margin: 0; }
 .support-feature-title:hover { color: rgba(180, 60, 80, 1); }
@@ -727,7 +896,7 @@ header a[href*="splash_options.php"] * {
 /* ========================================
    TEENAGERS SECTION
 ======================================== */
-.div-31 { width: 100%; max-width: 1340px; padding: 5px 20px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center; }
+.div-31 { width: 100%; max-width: 1340px; padding: 5px 20px 80px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center; }
 .teenage-app-copy { width: 554px; height: 555px; object-fit: cover; border-radius: 16px; flex-shrink: 0; }
 .div-32 { display: flex; flex-direction: column; gap: 32px; max-width: 500px; }
 .div-33 { display: flex; flex-direction: column; gap: 15px; }
@@ -1101,7 +1270,7 @@ header a[href*="splash_options.php"] * {
 .tools-card-duration {
   font-size: 12px;
   font-weight: 400;
-  color: rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 0.5);
   margin: 0;
 }
 /* Override global `p:hover { color: #000 !important }` so card meta stays on-brand */
@@ -1109,7 +1278,7 @@ header a[href*="splash_options.php"] * {
   color: rgba(0, 0, 0, 1) !important;
 }
 .tools-card-meta .tools-card-duration:hover {
-  color: rgba(0, 0, 0, 1) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
 /* ---- Info text (right side) ---- */
@@ -1251,13 +1420,11 @@ header a[href*="splash_options.php"] * {
   font-size: 12px;
   font-weight: 400;
   line-height: 140%;
-  color: rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 0.5);
   min-width: 26px;
-  opacity: 50%;
 }
 .tools-audio-time-duration {
   text-align: right;
-  color: rgba(0, 0, 0, 1);
 }
 .tools-audio-seek {
   flex: 1;
@@ -1413,6 +1580,8 @@ header a[href*="splash_options.php"] * {
   flex-shrink: 0;
   width: 26px;
   height: 26px;
+  min-width: 26px;
+  min-height: 26px;
   border-radius: 50%;
   border: none;
   background: rgba(173, 173, 173, 1);;
@@ -1426,6 +1595,8 @@ header a[href*="splash_options.php"] * {
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   z-index: 2;
   padding: 0;
+  overflow: visible;
+  box-sizing: border-box;
 }
 .coach-arrow:disabled {
   opacity: 0.5 !important;
@@ -1437,6 +1608,7 @@ header a[href*="splash_options.php"] * {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  overscroll-behavior-y: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   touch-action: auto;
@@ -1485,6 +1657,9 @@ header a[href*="splash_options.php"] * {
   width: 100%;
   padding-left: 12rem;
   box-sizing: border-box;
+  overflow: visible;
+  min-height: 40px;
+  padding-bottom: 6px;
 }
 .coaches-footer-spacer {
   flex: 1;
@@ -1495,7 +1670,9 @@ header a[href*="splash_options.php"] * {
   align-items: center;
   justify-content: center;
   gap: 8px;
-      margin-left: 15rem;
+  margin-left: 15rem;
+  overflow: visible;
+  padding: 4px 0;
 }
                   
 
@@ -1554,6 +1731,7 @@ header a[href*="splash_options.php"] * {
   display: flex;
   flex-direction: column;
   gap: 0;
+  overflow: visible;
 }
 /* Desktop: wrapper is invisible to layout; mobile: breakout strip like .coaches-track-wrap */
 .blog-track-wrap {
@@ -1565,6 +1743,7 @@ header a[href*="splash_options.php"] * {
   padding-bottom: 4px;
   overflow-x: auto;
   overflow-y: hidden;
+  overscroll-behavior-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -1653,6 +1832,9 @@ header a[href*="splash_options.php"] * {
   margin-top: 20px;
   flex-wrap: wrap;
   margin-left: 27rem;
+  overflow: visible;
+  min-height: 40px;
+  padding-bottom: 6px;
 }
 .blog-dots { display: flex; gap: 8px; align-items: center; }
 .bdot {
@@ -2456,12 +2638,69 @@ header a[href*="splash_options.php"] * {
   .div-10 { min-width: unset; width: 100%; height: auto; min-height: 60px; }
 
   /* Olly */
-  .div-11 { flex-direction: column; align-items: center; text-align: center; gap:18px}
-  .group-3 { width: clamp(160px, 50vw, 260px); height: auto; min-height: auto; }
-  .introducing-olly-AI { font-size: 24px !important; font-weight: 600; }
-  .div-12 { align-items: center; }
-  .start-your-free-wrapper-2 { align-self: center; }
-  .text-wrapper-8 { font-size: 12px; font-weight: 400; }
+  .frame-wrapper-3 {
+    padding: 48px 16px;
+    box-sizing: border-box;
+  }
+  .frame-wrapper-3 .div-11 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .frame-wrapper-3 .div-12 {
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+  .frame-wrapper-3 .div-5 {
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  .frame-wrapper-3 .group-3 {
+    width: clamp(160px, 50vw, 260px);
+    height: auto;
+    min-height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .frame-wrapper-3 .introducing-olly-AI {
+    font-size: 24px !important;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+  }
+  .frame-wrapper-3 .text-wrapper-8 {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .frame-wrapper-3 #OllyChatBtn {
+    display: flex;
+    width: 335px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .frame-wrapper-3 #OllyChatBtn .start-your-free-wrapper-2 {
+    width: 100%;
+    max-width: none;
+    height: 48px;
+    border-radius: 24px;
+    padding: 0 20px !important;
+    align-self: stretch;
+    justify-content: center;
+  }
 
   /* Chat with Olly now button */
   .start-your-free-wrapper-2 {
@@ -2507,8 +2746,10 @@ header a[href*="splash_options.php"] * {
   .div-21 .text-wrapper-14 .mobile-br { display: inline; }
   .text-wrapper-14 { font-size: 24px; line-height: 140%; }
   .support-features { text-align: left; gap: 16px; width: 100%; }
-  .support-feature-item { align-items: flex-start; gap: 12px; }
-  .support-feature-icon { width: 24px; height: 21px; margin-top: 4px; }
+  .support-feature-item { align-items: flex-start; gap: 18px; }
+  .support-feature-item:nth-child(1) .support-feature-icon { width: 24px; height: 24px; margin-top: 0; }
+  .support-feature-item:nth-child(2) .support-feature-icon { width: 24px; height: calc(39.42 / 39 * 24px); margin-top: 0; }
+  .support-feature-item:nth-child(3) .support-feature-icon { width: 24px; height: calc(43.96 / 39 * 24px); margin-top: 4px; }
   .support-feature-title { font-size: 18px; line-height: 150%; }
   .support-feature-desc { font-size: 12px; }
 
@@ -2753,20 +2994,9 @@ header a[href*="splash_options.php"] * {
   .div-8 { gap: 10px; }
   .div-9 { gap: 10px; }
   .text-wrapper-7 { font-size: 15px; }
-  .introducing-olly-AI{
+  .frame-wrapper-3 .introducing-olly-AI {
     font-size: 24px !important;
     font-weight: 600;
-  }
-
-  /* Olly */
-  .frame-wrapper-3 { padding: 48px 16px; }
-  .text-wrapper-8 { font-size: 12px; font-weight: 400; }
-  .start-your-free-wrapper-2 {
-    width: 335px;
-    max-width: 100%;
-    height: 48px;
-    border-radius: 24px;
-    padding: 0 20px !important;
   }
 
   /* Video */
@@ -2795,7 +3025,7 @@ header a[href*="splash_options.php"] * {
   .div-23 .text-wrapper-15, .div-23 .text-wrapper-17 { font-size: 14px; }
 
   /* Teenagers */
-  .div-31 { padding: 40px 16px; }
+  .div-31 { padding: 40px 16px 80px; }
   .div-31 .text-wrapper-18 { font-size: 18px !important; font-weight: 600; color: #000 !important; }
   .div-31 .text-wrapper-19 { display: none !important; }
   .div-31 .text-wrapper-20 { display: none !important; }
@@ -2871,4 +3101,25 @@ header a[href*="splash_options.php"] * {
   /* Hide bottom scroll buttons (mobile) */
   .coaches-nav-btns,
   .coaches-nav-btns * { display: none !important; }
+}
+
+/* Scroll lazy sections: fade in/out on scroll */
+.index-lazy-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.index-lazy-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-lazy-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

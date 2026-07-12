@@ -45,278 +45,6 @@
               </div>
             </div>
             <!-- /search -->
-
-            <!-- daily practice -->
-            <!-- accordion -->
-
-            <div class="row">
-              <div class="col-12 p0 accordion_row bg_profile_t">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="panel-group dpanelgroup tour_dp" id="accordion">
-                    <div class="panel panel-default dpanel dpanel_01">
-                      <div class="panel-heading">
-                        <h4 class="panel-title dpaneltitle">
-                          <div aria-expanded="true">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
-                                  <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
-                                    Daily practice
-                                  </h2>
-                                </div>
-                                <div *ngIf="streak && streak !== '' " class="streak-container"
-                                  [ngStyle]="{'background-color': !isAdults ? '#F1AC5E': '#FFE8BB'}"
-                                  style=" width: 128px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: space-around; padding: 0 10px;">
-                                  <img *ngIf="isAdults" class="stk-icon"
-                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak.svg">
-                                  <img *ngIf="!isAdults" class="stk-icon"
-                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg">
-                                  <span class="fw_500 fs_12px lh_140p" [ngClass]="isAdults ?'fc_000000':'fc_ffffff'">
-                                    Streak:
-                                    <span class="fw_600">
-                                      {{streak}}
-                                    </span>
-                                    days
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </h4>
-                      </div>
-                      <div id="ca_mdp">
-                        <div class="dpanel_daily">
-
-                          <div class="row">
-                            <div class="odiv odiv_mdp pl0">
-
-                              <div class="col-md-3 col-sm-6 col-xs-6">
-                                <a
-                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-checkin', '', 'click_daily_checkin') : $event.preventDefault()">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/checkin.svg" alt=""
-                                    class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
-                                    Daily <br /> check-in
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-1 col-sm-1 col-xs-1 w0p">
-                                <hr class="vhr_03">
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6">
-                                <a
-                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '0', 'click_daily_inspiration') : $event.preventDefault()">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/inspiration.svg"
-                                    alt="Testimonials" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
-                                    Daily
-                                    <br>
-                                    inspiration
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6">
-                                <a
-                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/breathing.svg"
-                                    alt="Wisdom Stories" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
-                                    Breathing <br /> exercise
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6">
-                                <a
-                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '2', 'click_question_of_the_day') : $event.preventDefault()">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/question.svg"
-                                    alt="Journal" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
-                                    Question
-                                    <br>
-                                    of the day
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6">
-                                <a
-                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '3','click_daily_quotation') : $event.preventDefault()">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/quete_new.svg"
-                                    alt="Testimonials" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
-                                    Quote <br> of the day
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6">
-                                <a
-                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '4', 'click_daily_meditation') : $event.preventDefault()">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg"
-                                    alt="Forum" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
-                                    Daily <br> meditation
-                                  </h4>
-                                </a>
-                              </div>
-
-                              <div class="col-md-3 col-sm-6 col-xs-6">
-                                <a
-                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '5', 'click_daily_challenge') : $event.preventDefault()">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/challenge.svg"
-                                    alt="Forum" class="crimg">
-                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
-                                    Daily
-                                    <br>
-                                    challenge
-                                  </h4>
-                                </a>
-                              </div>
-
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /accordion -->
-            <!-- /daily practice -->
-
-            <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent"
-              [okText]="'Start your free trial'" [cancelText]="'Cancel'" [enableCancel]="true"
-              [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)"></app-modal>
-
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-
-            <!-- /hr -->
-
-            <!-- feel better now -->
-            <div class="row tour_fbn">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <a
-                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/feel-better-now/', '', 'click_feel-better-now') : $event.preventDefault()">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01"
-                    style="background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/fbn_like.svg"
-                        class="w100explore" style="width:48px;height:40px;">
-                    </div>
-
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
-                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                        Feel better now
-                      </h4>
-
-                      <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
-                        Quick tips to feel better right now
-                      </h4>
-                    </div>
-
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- /feel better now -->
-            <!-- hr -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-
-            <!-- /hr -->
-
-
-            <!-- find inspiration -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <div class="row ">
-                  <h2 class="inspiration-title">Find inspiration</h2>
-                  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 odiv p-section">
-                    <app-find-inspiration></app-find-inspiration>
-                  </div>
-
-                  <!--     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
-                        <hr class="hr_style_v4">
-                      </div> -->
-
-                </div>
-
-
-              </div>
-            </div>
-            <!-- /find inspiration -->
-            <!-- hr -->
-            <div class="row ">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_new">
-              </div>
-            </div>
-            <!-- /hr -->
-            <!-- hr -->
-            <!-- <div class="row ">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div> -->
-            <!-- /hr -->
-
-            <!-- contact a coach button -->
-            <div class="row plr20px">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <a routerLink="" (click)="logEvent('click_contactCoach', '/adults/coach')">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
-                    <div class="col-2 p0 mb15px text-center">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach.svg">
-                    </div>
-
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
-                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
-                        Contact a coach
-                      </h4>
-
-                      <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
-                        <!-- Quick tips to help you feel better right now -->
-                        Contact our experienced coaches for personalised support
-                      </h4>
-                    </div>
-
-                    <div class="col-1  p0 tright">
-                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- /contact a coach button -->
-
-            <!-- hr -->
-            <div class="row ">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
-                <hr class="hr_style_v3_01">
-              </div>
-            </div>
-
-            <!-- /hr -->
-
-
-
             <!-- pathway -->
             <div class="row box_v3_05  mlr20px border-0">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -385,7 +113,7 @@
                             <!-- <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 center_flex"> -->
                             <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/Introduction/images/intro_pathway.webp"
-                                alt="" class="p0 session_img">
+                                alt="" style="height: 76px !important; width: 114px !important;" class="p0 session_img">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
                                 alt="" class="p0 session_img_play" *ngIf="!isAdults">
@@ -602,8 +330,406 @@
             </div>
             <!-- /hr -->
 
+
+            <!-- contact a coach button -->
+            <div class="row plr20px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <a routerLink="" (click)="logEvent('click_contactCoach', '/adults/coach')">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
+                    <div class="col-2 p0 mb8px text-center">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach.svg">
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
+                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                        Contact a coach
+                      </h4>
+
+                      <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
+                        <!-- Quick tips to help you feel better right now -->
+                        Contact our experienced coaches for personalised support
+                      </h4>
+                    </div>
+
+                    <div class="col-1  p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /contact a coach button -->
+
+            <!-- hr -->
+            <div class="row ">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+
+            <!-- /hr -->
+
+            <!-- guided journeys -->
+            <div class="row accordion_row plr20px">
+              <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="panel-group">
+                  <div class="">
+                    <div class="panel-heading plr0px pt0px">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" (click)="toggleGuidedJourneys()">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
+                                  Guided journeys
+                                </h2>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                  alt="arrow" class="section-arrow arrow-expanded"
+                                  [ngStyle]="!isGuidedJourneysExpanded ? {'transform': 'rotate(180deg)'} : {}">
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </h4>
+                    </div>
+                    <div [@accordionAnimation]="isGuidedJourneysExpanded ? 'expanded' : 'collapsed'"
+                      class="panel-collapse of-h" style="overflow:visible !important">
+                      <div class="toc_adiv_03">
+
+                        <a *ngFor="let journey of guidedJourneyPreview" (click)="routeToGuidedJourney(journey.id)">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                              <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                                <img [src]="journey.imgUrl" alt="" class="p0 session_img session_imgnew"
+                                  style="border-radius: 10px;" />
+                              </div>
+                              <div class="col-md-8 col-sm-8 col-xs-8 pl0px">
+                                <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_000000">
+                                  {{journey.title}}
+                                </h4>
+                                <p class="mt0px mb0px fs_12px fw_400 lh_130p fc_000000_0_5">
+                                  {{journey.subtitle}}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+
+                      </div>
+
+                      <!-- View More Link -->
+                      <div class="row mt20px tcenter">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <a routerLink="/adults/guided-journeys"
+                            style="color:rgba(0, 0, 0, 0.75); display:inline-flex; align-items:center; gap:10px; text-decoration:none;">
+
+                            <span style="text-decoration: underline;">View more</span>
+
+                            <i class="fa fa-angle-down" style="text-decoration:none;"></i>
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /guided journeys -->
+
+            <!-- hr -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- daily practice -->
+            <!-- accordion -->
+            <!-- 
+            <div class="row">
+              <div class="col-12 p0 accordion_row bg_profile_t">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group dpanelgroup tour_dp" id="accordion">
+                    <div class="panel panel-default dpanel dpanel_01">
+                      <div class="panel-heading">
+                        <h4 class="panel-title dpaneltitle">
+                          <div aria-expanded="true">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
+                                    Daily practice
+                                  </h2>
+                                </div>
+                                <div *ngIf="streak && streak !== '' " class="streak-container"
+                                  [ngStyle]="{'background-color': !isAdults ? '#F1AC5E': '#FFE8BB'}"
+                                  style=" width: 128px; height: 34px; border-radius: 45px; display: flex; align-items: center; justify-content: space-around; padding: 0 10px;">
+                                  <img *ngIf="isAdults" class="stk-icon"
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak.svg">
+                                  <img *ngIf="!isAdults" class="stk-icon"
+                                    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg">
+                                  <span class="fw_500 fs_12px lh_140p" [ngClass]="isAdults ?'fc_000000':'fc_ffffff'">
+                                    Streak:
+                                    <span class="fw_600">
+                                      {{streak}}
+                                    </span>
+                                    days
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </h4>
+                      </div>
+                      <div id="ca_mdp">
+                        <div class="dpanel_daily">
+
+                          <div class="row">
+                            <div class="odiv odiv_mdp pl0">
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-checkin', '', 'click_daily_checkin') : $event.preventDefault()">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/checkin.svg" alt=""
+                                    class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
+                                    Daily <br /> check-in
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-1 col-sm-1 col-xs-1 w0p">
+                                <hr class="vhr_03">
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '0', 'click_daily_inspiration') : $event.preventDefault()">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/inspiration.svg"
+                                    alt="Testimonials" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
+                                    Daily
+                                    <br>
+                                    inspiration
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '1', 'click_breathing_exercise') : $event.preventDefault()">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/breathing.svg"
+                                    alt="Wisdom Stories" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
+                                    Breathing <br /> exercise
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '2', 'click_question_of_the_day') : $event.preventDefault()">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/question.svg"
+                                    alt="Journal" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
+                                    Question
+                                    <br>
+                                    of the day
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '3','click_daily_quotation') : $event.preventDefault()">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/quete_new.svg"
+                                    alt="Testimonials" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
+                                    Quote <br> of the day
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '4', 'click_daily_meditation') : $event.preventDefault()">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg"
+                                    alt="Forum" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
+                                    Daily <br> meditation
+                                  </h4>
+                                </a>
+                              </div>
+
+                              <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a
+                                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/daily-practise', '5', 'click_daily_challenge') : $event.preventDefault()">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/challenge.svg"
+                                    alt="Forum" class="crimg">
+                                  <h4 class="tcenter fw_400 fs_12px lh_130p fc_000000 mdpd_title">
+                                    Daily
+                                    <br>
+                                    challenge
+                                  </h4>
+                                </a>
+                              </div>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- /accordion -->
+            <!-- /daily practice -->
+            <!-- 
+            <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent"
+              [okText]="'Start your free trial'" [cancelText]="'Cancel'" [enableCancel]="true"
+              [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)"></app-modal> -->
+
+
+            <!-- feel better now -->
+            <!-- <div class="row tour_fbn">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <a
+                  (click)="tourIndex === 1 ? DashboardLogevent('/adults/feel-better-now/', '', 'click_feel-better-now') : $event.preventDefault()">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01"
+                    style="background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/fbn_like.svg"
+                        class="w100explore" style="width:48px;height:40px;">
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                      <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                        Feel better now
+                      </h4>
+
+                      <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
+                        Quick tips to feel better right now
+                      </h4>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+                      <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div> -->
+            <!-- /feel better now -->
+            <!-- hr -->
+            <!-- <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_v3_01">
+              </div>
+            </div> -->
+
+            <!-- /hr -->
+
+            <!-- find inspiration -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <div class="row ">
+                  <h2 class="inspiration-title">Find inspiration</h2>
+                  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 odiv p-section">
+                    <app-find-inspiration></app-find-inspiration>
+                  </div>
+
+                  <!--     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px">
+                        <hr class="hr_style_v4">
+                      </div> -->
+
+                </div>
+
+
+              </div>
+            </div>
+            <!-- /find inspiration -->
+            <!-- hr -->
+            <div class="row ">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                <hr class="hr_style_new">
+              </div>
+            </div>
+            <!-- /hr -->
+
+            <!-- microlearning -->
+            <div class="row">
+              <div class="col-12 p0 accordion_row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="panel-group dpanelgroup" id="microlearningAccordion">
+                    <div class="panel panel-default dpanel dpanel_01">
+                      <div class="panel-heading plr0px">
+                        <h4 class="panel-title dpaneltitle">
+                          <a (click)="toggleMicrolearning()" style="cursor: pointer;">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                                <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                                  <h2 class="fw_600 fs_18px lh_140p fc_000000 mtb0px">
+                                    Microlearning
+                                  </h2>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
+                                    alt="arrow" class="section-arrow arrow-expanded"
+                                    [ngStyle]="!isMicrolearningExpanded ? {'transform': 'rotate(180deg)'} : {}">
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </h4>
+                      </div>
+                      <div [@accordionAnimation]="isMicrolearningExpanded ? 'expanded' : 'collapsed'"
+                        class="panel-collapse of-h" style="overflow:visible !important">
+
+                        <!-- Horizontal scroll carousel -->
+                        <div class="odiv odiv_microlearning">
+
+                          <a *ngFor="let item of microlearningPreview" (click)="routeToMicrolearning(item.id)"
+                            class="ml_card">
+                            <div>
+                              <img [src]="item.imgUrl" alt="" class="ml_card_img" />
+                              <h4 class="mt5px mb5px fs_13px fw_500 lh_130p fc_000000 ml_card_title">
+                                {{item.title}}
+                              </h4>
+                              <p class="mt0px mb0px fw_400 lh_130p fc_000000_0_5" style="font-size: 10px;">
+                                MODULE<ng-container *ngIf="item.pages"> • {{item.pages}} pages</ng-container>
+                              </p>
+                            </div>
+                          </a>
+
+                          <!-- View More -->
+                          <a routerLink="/adults/micro-learning"
+                            (click)="logEvent('click_view_more_microlearning', '/adults/micro-learning')"
+                            class="ml_card ml_card_viewmore">
+                            <span class="fs_12px fw_500 lh_150p">View more</span>
+                            <i class="fa fa-angle-right" style="font-size:14px;"></i>
+                          </a>
+
+                        </div>
+                        <!-- /horizontal scroll carousel -->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /microlearning -->
+
+            <!-- COMMENTED OUT SECTIONS BELOW -->
+
             <!-- find answers -->
-            <a (click)="routeToFindAnswer('why-do-i')">
+            <!-- <a (click)="routeToFindAnswer('why-do-i')">
               <div class="row plr20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01new ">
 
@@ -618,7 +744,6 @@
                     </h4>
 
                     <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
-                      <!-- Quick tips to help you feel better right now -->
                       Find fresh ways to deal with common challenges
                     </h4>
                   </div>
@@ -630,15 +755,15 @@
 
                 </div>
               </div>
-            </a>
+            </a> -->
             <!-- /find answers -->
 
             <!-- hr -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
-            </div>
+            </div> -->
             <!-- /hr -->
 
             <!-- find inspiration -->
@@ -778,13 +903,12 @@
             <!-- /hr -->
             <!-- my progress -->
             <!-- accordion -->
-            <div class="row ">
+            <!-- <div class="row ">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group dpanelgroup" id="accordion">
                   <div class="panel panel-default dpanel_new dpanel_01 plr20px">
                     <div class="mb10px">
                       <h4 class="panel-title dpaneltitle">
-                        <!-- <a (click)="DashboardLogevent('', '', 'click_daily_pratice')" data-toggle="collapse" data-parent="#accordion" href="#ca_mdp" aria-expanded="true"> -->
                         <div aria-expanded="true">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0  mb10px flex_ai">
@@ -826,7 +950,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  mtb5px tcenter">
                               <h4 class="mtb0px fs_15px fw_600 lh_120p fc_000000">
                                 5,499
-                                <!-- {{loginResponse.Points}} -->
+                              
                               </h4>
                             </div>
 
@@ -841,7 +965,7 @@
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  ">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fs_30px fw_700 lh_140p fc_ffffff">
-                                  <!-- 74% -->
+                                
                                   {{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%
                                 </h4>
                               </div>
@@ -866,11 +990,6 @@
                               </div>
                             </div>
 
-                            <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/emojis/4.svg" class="img-responsive">
-                                </div>
-                              </div> -->
                           </div>
 
                         </div>
@@ -881,14 +1000,14 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- /accordion -->
             <!-- hr -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
                 <hr class="hr_style_v3_01">
               </div>
-            </div>
+            </div> -->
             <!-- /hr -->
 
 
@@ -1181,7 +1300,7 @@
             <!-- <div class="row center_flex faq_category">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group" id="accordion_faq"> -->
-            <div class="row accordion_row make_category">
+            <!-- <div class="row accordion_row make_category">
               <div class="col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="panel-group">
                   <div class="">
@@ -1207,17 +1326,7 @@
                       <div class="">
                         <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12 odiv odiv_wfgi">
-
-                            <!-- <div class="col-md-6 col-sm-7 col-xs-7 p0">
-                              <a>
-                                <img
-                                  src="https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/make_the_world_better_place/01.svg"
-                                  alt="Stress Management" class="crimg">
-                                <h4 class="fw_500 fs_16px lh_19px fc_000000 tile_title whitespace_preline">
-                                  Tackling racism
-                                </h4>
-                              </a>
-                            </div> -->
+                         
 
                             <div class="col-md-6 col-sm-7 col-xs-7 p0">
                               <a class=""
@@ -1500,7 +1609,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
@@ -1523,7 +1632,6 @@
       </div>
     </div>
   </div>
-  <!--/class -->
 </div>
 <!-- /page content -->
 

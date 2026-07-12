@@ -7,7 +7,7 @@ import { AdultsService } from '../../../../adults/src/app/adults/adults.service'
 import { ForumService } from '../../../forum/forum.service';
 import { SearchDataModel } from '../../../models/search-data-model';
 import { ProgramType } from '../../../models/program-model';
-import { SharedService } from '../../../services/shared.service';
+import { SharedService, UrlConstant } from '../../../services/shared.service';
 import { CommonService } from '../../../services/common.service';
 import { OnboardingService } from '../../../services/onboarding.service';
 
@@ -113,6 +113,7 @@ export class SearchPopularItemsPage implements OnInit {
 
   searchEvent(moduleName:string) {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.filterApplied = false;
     this.post = [];
     this.jrList = [];
@@ -126,6 +127,7 @@ export class SearchPopularItemsPage implements OnInit {
   
   getinp(event) {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     if(!event || event.toString().trim() === ""){
        return;
     }
@@ -751,7 +753,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate([SharedService.getUrlfromFeatureName('search')]);
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.search)]);
   }
 
   routemodule(res) {
@@ -827,6 +829,7 @@ export class SearchPopularItemsPage implements OnInit {
         this.searchResult = this.moduleList;
       } else {
         this.isSearchActive = true;
+        this.commonService.setSearchActive(true);
         this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
       if (this.isSearchActive) {
@@ -839,6 +842,7 @@ export class SearchPopularItemsPage implements OnInit {
 
   onFocus() {
     this.isSearchActive = true;
+    this.commonService.setSearchActive(true);
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
     }
@@ -879,6 +883,7 @@ export class SearchPopularItemsPage implements OnInit {
 
   clearSearch() {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.search = "";
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
@@ -891,6 +896,7 @@ export class SearchPopularItemsPage implements OnInit {
 
   backToPreviousSearch() {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
     this.search = this.previousSearch;
     this.searchResult = [];
     this.getSearchData();

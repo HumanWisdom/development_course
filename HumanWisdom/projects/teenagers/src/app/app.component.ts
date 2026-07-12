@@ -28,6 +28,7 @@ export class AppComponent implements OnDestroy {
   isloggedIn = false
   enableprofile = false
   search = false;
+  learn = false;
   enableplaystore = false;
   routeid = 'search';
   isEnableHam = true;
@@ -36,6 +37,10 @@ export class AppComponent implements OnDestroy {
   dash = false;
   isLoginPage = false;
   enablefooter = false;
+  isSearchActiveGlobal = false;
+  isNavVisibleGlobal = true;
+  private searchActiveSubscription: Subscription;
+  private navVisibleSubscription: Subscription;
 
   constructor(private navigationService: NavigationService,
     private router: Router,
@@ -54,6 +59,20 @@ export class AppComponent implements OnDestroy {
       if (url) {
         console.log('Navigating to:', url);
         this.router.navigateByUrl(url);
+      }
+    });
+
+    // Subscribe to search active state
+    this.searchActiveSubscription = this.commonService.isSearchActive$.subscribe((isActive) => {
+      this.isSearchActiveGlobal = isActive;
+    });
+
+    // Subscribe to nav visibility (e.g. Olly questions view hides the global nav)
+    this.navVisibleSubscription = this.commonService.isNavVisible$.subscribe((visible) => {
+      this.isNavVisibleGlobal = visible;
+      // When on the Today page, update isShowHeader in real time
+      if (this.router.url.includes('repeat-user/my-daily-practice')) {
+        this.isShowHeader = visible;
       }
     });
     let urls = window.location.href.split('authtoken=');
@@ -123,6 +142,12 @@ export class AppComponent implements OnDestroy {
   }
   ngOnDestroy(): void {
     this.navigationSubs.unsubscribe();
+    if (this.searchActiveSubscription) {
+      this.searchActiveSubscription.unsubscribe();
+    }
+    if (this.navVisibleSubscription) {
+      this.navVisibleSubscription.unsubscribe();
+    }
   }
 
   getclcickevent(event) {
@@ -132,14 +157,18 @@ export class AppComponent implements OnDestroy {
   }
 
   enableFooter() {
+    if (this.isSearchActiveGlobal) {
+      return false;
+    }
     let enable = false;
     if (this.router.url == "/teenagers/search" || this.router.url == "/search"
       || this.router.url.includes('/teenagers/site-search/') ||
-      this.router.url.includes('/teenagers/search')) {
+      this.router.url.includes('/teenagers/search') || this.router.url.includes('/teenagers/learn') || this.router.url.includes('/learn')) {
       this.dash = false
       this.journal = false
       this.fourm = false;
-      this.search = true;
+      this.search = false;
+      this.learn = true;
       this.enableprofile = false;
       this.routeid = 'search';
       this.isEnableHam = true;
@@ -149,10 +178,29 @@ export class AppComponent implements OnDestroy {
       return true;
     }
     if ((this.router.url == "/teenagers" || this.router.url == "/teenagers/teenager-dashboard") || (this.router.url == "/teenager-dashboard")
-      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard") || this.router.url == "/teenagers/home" || this.router.url == "/home" || this.router.url.includes("home")) {
+      || this.router.url.includes("/teenagers/teenager-dashboard") || this.router.url.includes("teenager-dashboard") || this.router.url == "/teenagers/home" || this.router.url == "/home" || this.router.url.includes("home") || this.router.url.includes("explore")) {
+      this.dash = false;
+      this.journal = false;
+      this.search = true;
+      this.learn = false;
+      this.fourm = false;
+      this.enableprofile = false;
+      this.isEnableHam = true;
+      let ban = localStorage.getItem('enablebanner');
+      if ((ban === null || ban === 'T') && !this.router.url.includes("explore")) {
+        this.enableplaystore = true;
+      } else {
+        this.enableplaystore = false;
+      }
+      this.isShowHeader = this.commonService.isHeaderVisibleOnScroll;
+      this.isLoginPage = false;
+      return true;
+    }
+    if (this.router.url.includes('repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
       this.dash = true;
       this.journal = false;
       this.search = false;
+      this.learn = false;
       this.fourm = false;
       this.enableprofile = false;
       this.isEnableHam = true;
@@ -162,6 +210,19 @@ export class AppComponent implements OnDestroy {
       } else {
         this.enableplaystore = false;
       }
+      this.isShowHeader = this.isNavVisibleGlobal;
+      this.isLoginPage = false;
+      return true;
+    }
+    if (this.router.url.includes('/repeat-user')) {
+      this.dash = false;
+      this.journal = false;
+      this.search = false;
+      this.learn = false;
+      this.fourm = false;
+      this.enableprofile = false;
+      this.isEnableHam = true;
+      this.enableplaystore = false;
       this.isShowHeader = true;
       this.isLoginPage = false;
       return true;
@@ -172,6 +233,7 @@ export class AppComponent implements OnDestroy {
       this.dash = false
       this.journal = true;
       this.search = false;
+      this.learn = false;
       this.fourm = false;
       this.enableprofile = false;
       this.isEnableHam = false;
@@ -189,6 +251,7 @@ export class AppComponent implements OnDestroy {
       this.journal = false;
       this.isEnableHam = false;
       this.search = false;
+      this.learn = false;
       this.enableplaystore = false;
       this.isShowHeader = false;
       this.isLoginPage = false;
@@ -201,6 +264,7 @@ export class AppComponent implements OnDestroy {
       this.fourm = false;
       this.enableprofile = true;
       this.search = false;
+      this.learn = false;
       this.isEnableHam = false;
       this.enableplaystore = false;
       this.isShowHeader = false;
@@ -213,6 +277,7 @@ export class AppComponent implements OnDestroy {
       this.fourm = false;
       this.enableprofile = false;
       this.search = false;
+      this.learn = false;
       this.isEnableHam = false;
       this.enableplaystore = false;
       this.isShowHeader = false;
@@ -221,6 +286,19 @@ export class AppComponent implements OnDestroy {
     }
     if (this.router.url == "/teenagers/onboarding/login") {
       this.isLoginPage = true;
+    }
+    if (this.router.url.includes('/teenagers/chat-bot') || this.router.url.includes('/teenagers/olly-landing')) {
+      this.dash = false;
+      this.journal = false;
+      this.fourm = false;
+      this.search = false;
+      this.learn = false;
+      this.enableprofile = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader = false;
+      this.isLoginPage = false;
+      return false;
     }
     this.isShowHeader = false;
     return false;

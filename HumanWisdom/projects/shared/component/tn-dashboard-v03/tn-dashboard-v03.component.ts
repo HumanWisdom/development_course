@@ -128,6 +128,10 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    if(changes && changes.enableplaystore){
+      console.log('CHILD HEADER COMPONENT changes.enableplaystore:', changes.enableplaystore.currentValue);
+    }
+
     if(changes && changes.enableHamburger && !changes.enableHamburger.firstChange){
       if(changes.enableHamburger.currentValue != changes.enableHamburger.previousValue){
         this.enableHamburger = changes.enableHamburger.currentValue;
@@ -255,11 +259,19 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   }
 
   Subscribe() {
-    // if (!(SharedService.isIOSApp())) {
+    if (!(SharedService.isIOSApp() || SharedService.isAndroid())) {
       this.logeventservice.logEvent("click_Free_Trial");
 
-      this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.tryFreeAndSubscribe)]);
-    // }
+      const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+      if (isLoggedIn) {
+        this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.tryFreeAndSubscribe)]);
+      } else {
+        // Save the current page so we can return after login + subscription
+        localStorage.setItem('subscriberRedirectUrl', this.router.url);
+        SharedService.UrlToRedirect = `/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
+        this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
+      }
+    }
   }
 
   clickbanner(url = '') {
@@ -280,7 +292,7 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   }
 
   routedashboard() {
-    this.router.navigate([SharedService.getDashboardUrls()])
+    this.router.navigate([`/${SharedService.getprogramName()}/today`]);
   }
 
 

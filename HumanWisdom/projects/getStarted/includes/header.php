@@ -170,23 +170,38 @@
 
       <div class="col-lg-10 col-md-10 col-sm-8 col-xs-8 col-8 p0 dflex_end">
         <nav id="navbar" class="navbar m0pxi">
-          <ul>
+          <button type="button" class="mobile-nav-toggle mobile-nav-hide mobile-nav-close d-none" aria-label="Close menu">
+            <i class="bi bi-x" aria-hidden="true"></i>
+          </button>
+          <ul class="mobile-nav-list">
             <li><a href="../pages/about_us.php" id="AboutUs" class="nav">About us</a></li>
             <li><a href="../blogs/blog_index.php" id="blogs" class="nav">Blog</a></li>
             <li><a id="pricing" class="nav" href="../index.php#div_subscription">Pricing</a></li>
-            <li><a id="events" class="nav" href="https://happierme.app/adults/events" target="_self" rel="noopener noreferrer">Events</a></li>
+            <li><a id="events" class="nav" href="https://happierme.app/adults/events" target="_self" rel="noopener noreferrer" id="events">Events</a></li>
             <li class="header_nav_mobile_only">
-              <a id="teenagersHeaderClick_mobile" class="nav" href="../pages/teenagers.php">
-                For Teenagers
-                <div class="badge_new">
-                  <h6 class="mtb0px fs_6px fw_600 lh_130p fc_ffffff">NEW</h6>
-                </div>
-              </a>
+              <a id="teenagersHeaderClick_mobile" class="nav" href="../pages/teenagers.php">For Teenagers</a>
             </li>
-            <li class="header_nav_mobile_only"><a id="work_mobile" class="nav" href="../pages/work.php">For Work</a></li>
+            <li class="header_nav_mobile_only"><a id="work_mobile" class="nav" href="../pages/work.php">For Organisations</a></li>
             <li class="header_nav_mobile_only"><a id="healthcare_mobile" class="nav" href="../pages/healthcare.php">For Healthcare</a></li>
             <li class="header_nav_mobile_only"><a id="education_mobile" class="nav" href="../pages/education.php">For Education</a></li>
           </ul>
+          <div class="mobile-nav-social" aria-label="Social media">
+            <a href="https://facebook.com/happiermeapp/" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_facebook.svg" alt="facebook">
+            </a>
+            <a href="https://twitter.com/happiermeapp" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_twitter.svg" alt="twitter">
+            </a>
+            <a href="https://www.instagram.com/happierme.app/" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_instagram.svg" alt="instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/humanwisdom" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_linkedin.svg" alt="linkedin">
+            </a>
+            <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_youtube.svg" alt="youtube">
+            </a>
+          </div>
         </nav>
         <style>
           a.no-underline-hover:hover {
@@ -194,8 +209,7 @@
           }
         </style>
         <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/qsptex">Try for free</a>
-        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list" role="button" aria-label="Open menu" tabindex="0"></i>
       </div>
 
     </div>

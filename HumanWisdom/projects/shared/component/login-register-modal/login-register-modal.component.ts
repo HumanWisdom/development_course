@@ -702,7 +702,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                 }
               });
             } else {
-              this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+              this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
             }
           }
         }
@@ -740,6 +740,14 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
     sessionStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_dialogue_shown');
+    localStorage.removeItem('olly_today_intro_shown');
+    localStorage.removeItem('olly_today_dialogue_shown');
+    localStorage.removeItem('olly_landing_intro_shown');
+    localStorage.removeItem('olly_landing_dialogue_shown');
+    localStorage.removeItem('olly_today_intro_shown');
+    localStorage.removeItem('olly_today_dialogue_shown');
+    localStorage.removeItem('olly_landing_intro_shown');
+    localStorage.removeItem('olly_landing_dialogue_shown');
 
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
@@ -1348,7 +1356,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                   }
                 });
               } else {
-                this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
               }
             }
           }
@@ -1594,9 +1602,9 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
                         } 
                     }else{
                     if (SharedService.ProgramId === 9) {
-                      this.router.navigate(["/adults/repeat-user"]);
+                      this.router.navigate(["/adults/today"]);
                     } else if (SharedService.ProgramId === 11) {
-                      this.router.navigate(["/teenazgers/repeat-user"]);
+                      this.router.navigate(["/teenagers/today"]);
                     }
                   }
                   }

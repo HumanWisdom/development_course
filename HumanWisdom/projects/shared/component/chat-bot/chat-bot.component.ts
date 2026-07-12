@@ -76,6 +76,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Check if program type has changed and clear chat if needed
     this.checkAndHandleProgramTypeChange();
 
+    // Load personalized greeting from /api/history (Adults & Teenagers)
+    this.chatbotService.initializeChatGreeting().subscribe();
+
     // Ensure welcome messages are shown if store is empty (e.g., after logout)
     this.chatbotService.ensureWelcomeMessages();
 
@@ -324,13 +327,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onCloseChat(): void {
     this.logeventservice.logEvent('click_close_olly_popup');
-    // Navigate back to dashboard
-    // Option 1: Go back in browser history
-    // this.location.back();
+    // Navigate back to the Today page
     if (SharedService.ProgramId === ProgramType.Adults) {
-      this.router.navigate(['/adults/home']);
+      this.router.navigate(['/adults/today']);
     } else {
-      this.router.navigate(['/teenagers/teenager-dashboard']);
+      this.router.navigate(['/teenagers/today']);
     }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SubscriptionType } from '../../models/program-model';
 import { SharedService } from '../../services/shared.service';
 import { Constant } from '../../services/constant';
@@ -15,8 +15,9 @@ import { CommonService } from '../../services/common.service';
   templateUrl: './try-free-and-subscribe.page.html',
   styleUrls: ['./try-free-and-subscribe.page.scss'],
 })
-export class TryFreeAndSubscribePage implements OnInit {
+export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
 
+  isSignupFirst: boolean = false;
   selectedSubscription: string;
   countryCode: string = 'USA';
   defaultCountry: string;
@@ -59,10 +60,23 @@ export class TryFreeAndSubscribePage implements OnInit {
   }
 
   ngOnInit() {
+    const isPricing = localStorage.getItem('pricing') === 'true';
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    const isGuest = localStorage.getItem('guest') === 'T';
+    if (isPricing && (!isLoggedIn || isGuest)) {
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
+      return;
+    }
+
+    this.isSignupFirst = localStorage.getItem("signupfirst") === 'T';
     this.logeventservice.logEvent('view_try_free_subscribe');
     this.InitializeDefaultValues();
     this.getUserDetails();
     this.getCountry();
+  }
+
+  ngOnDestroy() {
+    localStorage.setItem("signupfirst", 'F');
   }
 
   getUserDetails() {
@@ -159,7 +173,7 @@ export class TryFreeAndSubscribePage implements OnInit {
         this.router.navigateByUrl(`/${SharedService.getprogramName()}/redeem-subscription`);
       }
     } else {
-      this.router.navigateByUrl('/login');
+      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`]);
     }
   }
 
@@ -277,13 +291,15 @@ export class TryFreeAndSubscribePage implements OnInit {
       }
       this.router.navigate([redirectUrl], extras);
     } else {
-      this.router.navigateByUrl(SharedService.getDashboardUrls());
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
     }
   }
 
   routeToOllyLanding() {
     const redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
     const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
+    // Flag that the user arrived via the basic-access sign-up path
+    sessionStorage.setItem('fromBasicAccessSignup', 'T');
     if (redirectUrl) {
       sessionStorage.removeItem('subscriptionRedirectUrl');
       sessionStorage.removeItem('subscriptionRedirectState');

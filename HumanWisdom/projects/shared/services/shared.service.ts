@@ -150,11 +150,11 @@ export class SharedService {
   public static getDashboardUrls() {
     switch (this.ProgramId) {
       case ProgramType.Adults:
-        return '/adults/home';
+        return '/adults/explore';
       case ProgramType.Teenagers:
-        return '/teenagers/home';
+        return '/teenagers/explore';
       default:
-        return '/adults/home';
+        return '/adults/explore';
     }
   }
 
@@ -220,6 +220,12 @@ export class SharedService {
           displayName: "Habits",
           active: false,
           name: 'Overcome unhelpful habits'
+        },
+         {
+          id: "16",
+          active: false,
+          displayName: "Understand yourself",
+          name: 'Understand yourself'
         }
 
     ]
@@ -745,7 +751,7 @@ return [
 
 export class UrlConstant {
   public static journal = "journal";
-  public static search = 'search';
+  public static search = 'learn';
   public static login = 'onboarding/login';
   public static userProfile = 'onboarding/user-profile';
   public static forum = 'forum';

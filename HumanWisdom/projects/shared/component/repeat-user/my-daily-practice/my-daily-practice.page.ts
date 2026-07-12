@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 import { CommonService } from '../../../services/common.service';
@@ -13,11 +13,12 @@ import { TeenagersService } from '../../../../teenagers/src/app/teenagers/teenag
   templateUrl: './my-daily-practice.page.html',
   styleUrls: ['./my-daily-practice.page.scss'],
 })
-export class MyDailyPracticePage implements OnInit {
+export class MyDailyPracticePage implements OnInit, OnDestroy {
   isAdults = false;
   dailybreathTitle:string ='';
   videoLink:string ='';
   userName:string ='';
+  showFooterOwl: boolean = false;
   enableVideo:boolean;
   dailyInspirationTitle:string='';
   DailyInspirationLink:string='';
@@ -66,7 +67,9 @@ export class MyDailyPracticePage implements OnInit {
   }
 
   ngOnInit() {
- 
+    // Hide footer owl until the user scrolls past the in-page Olly
+    this.commonService.setFooterOwlVisible(false);
+
     try{
 
         this.userName =SharedService.getUserName().split(' ')[0];
@@ -271,6 +274,22 @@ routeDailyPractice(id: number): void {
 
   onOllyViewChanged(active: boolean): void {
     this.isQuestionsViewActive = active;
+    // Tell the app shell to show/hide the global nav bar
+    this.commonService.setNavVisible(!active);
+    // Clear any residual overflow lock when returning from Olly view
+    if (!active) {
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
+    }
+  }
+
+  ngOnDestroy(): void {
+    // Restore footer owl visibility when leaving this page
+    this.commonService.setFooterOwlVisible(true);
+    // Restore nav visibility when leaving this page
+    this.commonService.setNavVisible(true);
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
   }
 
   onFocus() {
@@ -456,20 +475,52 @@ routeDailyPractice(id: number): void {
   }
 
   
-routeResume(r?: any, enableLastVisited = false): void {
+// routeResume(r?: any, enableLastVisited = false): void {
+routeResume( enableLastVisited = false): void {
   this.logeventservice.logEvent('click_continue_where_left');
   const isAdult = SharedService.ProgramId === ProgramType.Adults;
   const service = isAdult ? this.adultService : this.teenService;
-  const fallbackUrl = isAdult
-    ? '/adults/happiness/'
-    : '/teenagers/happiness/';
+  var lastvisited: any = this.resumeLastvisited[0];
+  const url  = lastvisited.ModuleUrl.toString() 
 
-  if (enableLastVisited) {
-    const first = this.resumeLastvisited[0];
-    const id   = first ? first.ModuleId.toString() : '23';
-    const url  = first ? first.ModuleUrl.toString() : fallbackUrl;
-    service.setmoduleID(id, url, url);
-  }
+  // const fallbackUrl = isAdult
+  //   ? '/adults/happiness/'
+  //   : '/teenagers/happiness/';
+
+  // if (enableLastVisited) {
+  //   const first = this.resumeLastvisited[0];
+  //   const id   = first ? first.ModuleId.toString() : '23';
+  //   const url  = first ? first.ModuleUrl.toString() : fallbackUrl;
+  //   let indexUrl = url;
+  //   if (first && first.screenno) {
+  //     const scr = first.screenno.toString();
+  //     indexUrl = url.endsWith('/') ? `${url}s${scr}` : `${url}/s${scr}`;
+  //   }
+  //   service.setmoduleID(id, url, indexUrl);
+  // }
+
+    if(lastvisited && lastvisited.screenno && lastvisited.screenno != "0"){
+      const id   = lastvisited.ModuleId.toString() 
+      let indexUrl = url;
+      const scr = lastvisited.screenno.toString();
+       indexUrl = url.endsWith('/') ? `${url}s${scr}` : `${url}/s${scr}`;
+        service.setmoduleID(id, url, indexUrl);
+    }
+    else {
+      if(url.includes('?')) {
+         const [path, queryString] = url.split('?');
+          const params = new URLSearchParams(queryString);
+          const queryParams: any = {};
+
+            params.forEach((value, key) => {
+              queryParams[key] = value;
+            });
+         this.router.navigate([path], { queryParams });
+      }
+      else
+          this.router.navigate([url]);
+
+    }
 
   localStorage.setItem('pageaction', 'next');
 }
@@ -486,6 +537,13 @@ survey(): void {
     this.questext="";
 
     this.content = '';
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.showFooterOwl = scrollOffset > 200;
+    this.commonService.setFooterOwlVisible(this.showFooterOwl);
   }
 
 }

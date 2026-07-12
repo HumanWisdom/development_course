@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -64,7 +64,7 @@
         <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
           <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 col-10 p0 tleft">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
-              <h1 class="mtb0px fs_36px fw_600 lh_130p fc_183C79 ta_lct">
+              <h1 class="mtb0px fs_36px fw_600 lh_140p fc_000000 ta_lct">
                 HappierMe for Teenagers
               </h1>
             </div>
@@ -128,7 +128,8 @@
               </div>
             </div>
 
-            <div class="row mt20px">
+            <div class="teen-hero-cta-block">
+            <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
                 <a id="teenagerCoverClick" class="">
                   <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1">
@@ -139,7 +140,7 @@
             </div>
 
 
-            <div class="row mt20px">
+            <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                 <h3 class="mtb0px fs_12px fw_400 lh_140p fc_000000 dflex">
                   Available for
@@ -160,6 +161,7 @@
                 </h3>
               </div>
             </div>
+            </div>
 
           </div>
         </div>
@@ -177,7 +179,7 @@
       <div class="section-header-teen">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-video-title">
+            <h2 class="mtb0px fs_24px fw_600 lh_140p teen-video-title">
               Learn the skills you need to succeed in life
             </h2>
           </div>
@@ -186,11 +188,13 @@
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
-          <iframe class="yt-embed" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+          <div class="youtube-player teen-youtube-player">
+            <iframe class="yt-embed" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
           <!-- <video id="teenagerVideo" controls playinline class="w100p"
               poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_poster.webp"
               controlsList="nodownload">
@@ -209,7 +213,7 @@
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mt0px fs_24px fw_600 lh_120p teen-support-title">
+            <h2 class="mt0px fs_24px fw_600 lh_140p teen-support-title">
               Get all the support you need when life gets tough
             </h2>
           </div>
@@ -435,7 +439,7 @@
       <div class="section-header">
         <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p fc_183C79">
+            <h2 class="mtb0px fs_24px fw_600 lh_140p fc_000000 teen-testimonials-title">
               Teens love HappierMe
             </h2>
           </div>
@@ -443,293 +447,147 @@
       </div>
 
       <div class="row center_flex">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+        <div class="teen-testimonials-wrap">
 
-          <div class="owl_container owl_testimonials">
+          <div class="owl_testimonials">
             <div class="owl-carousel owl-theme">
-              <a class="item" data-aos="fade-up" data-aos-delay="400">
-                <div class="div_testimonialst">
-                  <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5">
-                      <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_samaira_giri.webp"
-                        class="testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy>
+              <div class="item" data-aos="fade-up" data-aos-delay="400">
+                <div class="div_testimonialst teen-testimonial-card">
+                  <div class="teen-testimonial-header">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_samaira_giri.webp"
+                      class="teen-testimonial-avatar" alt="Samaira" loading="lazy">
+                    <div class="teen-testimonial-meta">
+                      <p class="teen-testimonial-name">Samaira</p>
+                      <p class="teen-testimonial-role">Student, India</p>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mt20px mb12px fs_14px fw_400 lh_150p fc_ffffff">
-                        HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or
-                        impatient to talk to somebody about it, HappierMe is my go to app.
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Samaira,
-                      </h5>
-                      <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Student. India.
-                      </p>
-
-                    </div>
-                  </div>
+                  <p class="teen-testimonial-quote">&ldquo;HappierMe is more than an app to me. Whenever I need an answer to a question and I'm too shy or impatient to talk to somebody about it, HappierMe is my go to app. It has helped me be emotionally intelligent and given me an understanding of my emotions.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
 
-              <a class="item" data-aos="fade-up" data-aos-delay="500">
-                <div class="div_testimonialst">
-                  <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_sree.webp"
-                        class=" testimonial_user_image img-responsive width_unseti" alt="Sree" loading=lazy>
+              <div class="item" data-aos="fade-up" data-aos-delay="500">
+                <div class="div_testimonialst teen-testimonial-card">
+                  <div class="teen-testimonial-header">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_sree.webp"
+                      class="teen-testimonial-avatar" alt="Sree" loading="lazy">
+                    <div class="teen-testimonial-meta">
+                      <p class="teen-testimonial-name">Sree</p>
+                      <p class="teen-testimonial-role">Student, Dubai</p>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app
-                        offers a range of practical tools such as the Awareness exercises and Journaling that have been
-                        incredibly beneficial.
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Sree,
-                      </h5>
-                      <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Student. Dubai.
-                      </p>
-                    </div>
-                  </div>
+                  <p class="teen-testimonial-quote">&ldquo;The HappierMe app has been a game-changer in my journey towards wellness and wisdom. The app offers a range of practical tools such as the Awareness exercises and Journaling that have been incredibly beneficial to me.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
 
-              <a class="item" data-aos="fade-up" data-aos-delay="600">
-                <div class="div_testimonialst">
-                  <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5">
-                      <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_adam_beagley.webp"
-                        class=" testimonial_user_image img-responsive width_unseti" alt="Adam Beagley" loading=lazy>
-
+              <div class="item" data-aos="fade-up" data-aos-delay="600">
+                <div class="div_testimonialst teen-testimonial-card">
+                  <div class="teen-testimonial-header">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_adam_beagley.webp"
+                      class="teen-testimonial-avatar" alt="Adam Beagley" loading="lazy">
+                    <div class="teen-testimonial-meta">
+                      <p class="teen-testimonial-name">Adam Beagley</p>
+                      <p class="teen-testimonial-role">Student, UK</p>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful.
-                        The app has transformed my way of thinking and relieved me of my anxiety.
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Adam Beagley,
-                      </h5>
-                      <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Student. UK.
-                      </p>
-                    </div>
-                  </div>
+                  <p class="teen-testimonial-quote">&ldquo;HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved me of my anxiety. Whatever you struggle with, there are modules to help.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
 
-              <a class="item" data-aos="fade-up" data-aos-delay="600">
-                <div class="div_testimonialst">
-                  <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5">
-                      <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rahul_bagale.webp"
-                        class="testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy>
-
+              <div class="item" data-aos="fade-up" data-aos-delay="600">
+                <div class="div_testimonialst teen-testimonial-card">
+                  <div class="teen-testimonial-header">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rahul_bagale.webp"
+                      class="teen-testimonial-avatar" alt="Dr Rahul Bagale" loading="lazy">
+                    <div class="teen-testimonial-meta">
+                      <p class="teen-testimonial-name">Dr Rahul Bagale</p>
+                      <p class="teen-testimonial-role">Psychiatrist, Symbiosis University, India</p>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        The HappierMe App has been introduced to Symbiosis University students. I think it is an
-                        absolute necessity to provide this amazing platform to students in Universities worldwide, to
-                        help them take charge of their own wellbeing and succeed in life. </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Dr Rahul Bagale,
-
-                      </h5>
-                      <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Psychiatrist, Symbiosis University. India
-                      </p>
-                    </div>
-                  </div>
+                  <p class="teen-testimonial-quote">&ldquo;The HappierMe App has been introduced to Symbiosis University students. I think it is an absolute necessity to provide this amazing platform to students in Universities worldwide, to help them take charge of their own wellbeing and succeed in life.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
-              <a class="item" data-aos="fade-up" data-aos-delay="600">
-                <div class="div_testimonialst">
-                  <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5">
-                      <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp"
-                        class="testimonial_user_image img-responsive width_unseti" alt="Sree" loading=lazy>
+              <div class="item" data-aos="fade-up" data-aos-delay="600">
+                <div class="div_testimonialst teen-testimonial-card">
+                  <div class="teen-testimonial-header">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp"
+                      class="teen-testimonial-avatar" alt="Dominic Curran" loading="lazy">
+                    <div class="teen-testimonial-meta">
+                      <p class="teen-testimonial-name">Dominic Curran</p>
+                      <p class="teen-testimonial-role">England</p>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        The HappierMe App has helped me to look at what I think, how I think, and helped me to question
-                        why I think in certain ways. This understanding has transformed my life.
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff " style="font-style:italic" ;>
-                        Dominic Curran,<br />
-
-                      </h5>
-                      <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff " style="font-style:italic" ;>
-
-                        England
-                      </h5>
-                    </div>
-                  </div>
+                  <p class="teen-testimonial-quote">&ldquo;The HappierMe App has helped me to look at what I think, how I think, and helped me to question why I think in certain ways. This understanding has transformed my life.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
-              <a class="item" data-aos="fade-up" data-aos-delay="500">
-                <div class="div_testimonialst">
-                  <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5">
-                      <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_swati_nair.webp"
-                        class="testimonial_user_image img-responsive width_unseti" alt="Sree" loading=lazy>
+              <div class="item" data-aos="fade-up" data-aos-delay="500">
+                <div class="div_testimonialst teen-testimonial-card">
+                  <div class="teen-testimonial-header">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_swati_nair.webp"
+                      class="teen-testimonial-avatar" alt="Swati" loading="lazy">
+                    <div class="teen-testimonial-meta">
+                      <p class="teen-testimonial-name">Swati</p>
+                      <p class="teen-testimonial-role">Student, UAE</p>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        Through its modules, awareness exercises and life stories the HappierMe app has helped me better
-                        understand why I think and act the way I do.This gave me a new perspective on how to handle
-                        various situations like stress and peer pressure.
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Swati,
-                      </h5>
-                      <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Student. UAE.
-                      </p>
-                    </div>
-                  </div>
+                  <p class="teen-testimonial-quote">&ldquo;Through its modules, awareness exercises and life stories the HappierMe app has helped me better understand why I think and act the way I do. This gave me a new perspective on how to handle various situations like stress and peer pressure.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
-              <a class="item">
-                <div class="div_testimonialst">
-                  <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5">
-                      <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_camille_hoffheinz.webp"
-                        alt="Quotation" loading="lazy" class="testimonial_user_image img-responsive width_unseti">
+              <div class="item">
+                <div class="div_testimonialst teen-testimonial-card">
+                  <div class="teen-testimonial-header">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_camille_hoffheinz.webp"
+                      alt="Camille" loading="lazy" class="teen-testimonial-avatar">
+                    <div class="teen-testimonial-meta">
+                      <p class="teen-testimonial-name">Camille</p>
+                      <p class="teen-testimonial-role">USA</p>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        HappierMe is a unique and inspiring app that has encouraged me to dig deeper within myself. Its
-                        various modules and journaling activities have helped me learn more about myself and how to cope
-                        with life's challenges.
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Camille,
-                      </h5>
-                      <h5 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        USA
-                      </h5>
-                    </div>
-                  </div>
+                  <p class="teen-testimonial-quote">&ldquo;HappierMe is a unique and inspiring app that has encouraged me to dig deeper within myself. Its various modules and journaling activities have helped me learn more about myself and how to cope with life's challenges.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
-              <a class="item" data-aos="fade-up" data-aos-delay="200">
-                <div class="div_testimonialst">
-                  <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5">
-                      <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_leah_christensen.webp"
-                        class="testimonial_user_image img-responsive width_unseti" alt="quotation" loading=lazy>
-                    </div>
-
-
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mt20px mb12px fs_15px fw_500 lh_150p fc_ffffff">
-                        HappierMe is the best app I’ve found that fosters self connection, awareness, and an overall
-                        happier life. As a Psychology graduate I can say the lessons that are taught on this app are
-                        ones that will stick with you for a lifetime.
+              <div class="item" data-aos="fade-up" data-aos-delay="200">
+                <div class="div_testimonialst teen-testimonial-card">
+                  <div class="teen-testimonial-header">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_leah_christensen.webp"
+                      class="teen-testimonial-avatar" alt="Leah Christensen" loading="lazy">
+                    <div class="teen-testimonial-meta">
+                      <p class="teen-testimonial-name">Leah Christensen</p>
+                      <p class="teen-testimonial-role">Student, USA</p>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h5 class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Leah Christensen,
-                      </h5>
-                      <p class="mtb0px fs_14px fw_400 lh_150p fc_ffffff" style="font-style:italic" ;>
-                        Student. USA.
-                      </p>
-
-                    </div>
-                  </div>
+                  <p class="teen-testimonial-quote">&ldquo;HappierMe is the best app I&rsquo;ve found that fosters self connection, awareness, and an overall happier life. As a Psychology graduate I can say the lessons that are taught on this app are ones that will stick with you for a lifetime.&rdquo;</p>
                 </div>
-              </a>
+              </div>
 
 
             </div>
 
-            <div class="owl-theme mt10px">
-              <div class="owl-controls">
-                <div class="owl-nav owl-nav-w"></div>
+            <div class="teen-testimonials-footer">
+              <a class="sap teen-testimonials-more" href="https://happierme.app/teenagers/testimonials">
+                <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                  View all Success stories
+                </h4>
+              </a>
+              <div class="owl-theme mt10px teen-testimonials-nav">
+                <div class="owl-controls">
+                  <div class="owl-nav owl-nav-w"></div>
+                </div>
               </div>
             </div>
-
-            <a class="sap" href="https://happierme.app/teenagers/testimonials">
-              <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                View all Success stories
-              </h4>
-            </a>
           </div>
 
         </div>
@@ -1073,141 +931,58 @@
 
 
     <!-- blog -->
-    <section>
-      <div class="section-header">
-        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_24px fw_600 lh_120p teen-blog-title">
-              Explore our blog
-            </h2>
+    <section class="teen-blog-section">
+      <div class="div-13 teen-blog-wrap" id="teenBlogSection">
+        <h2 class="text-wrapper-blog teen-blog-title">Explore our blog</h2>
+        <div class="blog-outer">
+          <div class="blog-track-wrap">
+            <div class="blog-scroll" id="blog-scroll">
+              <a href="../blogs/transforming_the_lives_of_children_through_self-knowledge.php" class="blog-card">
+                <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" alt="Transforming the lives of children through self-knowledge" loading="lazy" />
+                <div class="blog-caption">
+                  <p class="blog-title">Transforming the lives of children through self-knowledge</p>
+                </div>
+              </a>
+              <a href="../blogs/the_future_of_education_a_happierme_survey.php" class="blog-card">
+                <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" alt="The Future of Education: A HappierMe Survey" loading="lazy" />
+                <div class="blog-caption">
+                  <p class="blog-title">The Future of Education: A HappierMe Survey</p>
+                </div>
+              </a>
+              <a href="../blogs/transforming_education_to_meet_the_needs_of_students_and_society.php" class="blog-card">
+                <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" alt="Transforming education to meet the needs of students and society" loading="lazy" />
+                <div class="blog-caption">
+                  <p class="blog-title">Transforming education to meet the needs of students and society.</p>
+                </div>
+              </a>
+              <a href="../blogs/does_education_make_us_intelligent.php" class="blog-card">
+                <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp" alt="Does education make us intelligent?" loading="lazy" />
+                <div class="blog-caption">
+                  <p class="blog-title">Does education make us intelligent?</p>
+                </div>
+              </a>
+              <a href="../blogs/how_to_manage_your_own_mental_health.php" class="blog-card">
+                <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" alt="How to manage your own mental health" loading="lazy" />
+                <div class="blog-caption">
+                  <p class="blog-title">How to manage your own mental health</p>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="row center_flex">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-
-          <div class="owl_blog">
-            <div class="owl-carousel owl-theme">
-              <a class="item" data-aos="fade-up" data-aos-delay="200"
-                href="../blogs/transforming_the_lives_of_children_through_self-knowledge.php">
-                <div class="div_blog">
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" class="img-responsive"
-                        alt=" Transforming" loading="lazy">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                        Transforming the lives of children through self-knowledge
-
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <a class="item" data-aos="fade-up" data-aos-delay="300"
-                href="../blogs/the_future_of_education_a_happierme_survey.php">
-                <div class="div_blog">
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" class="img-responsive"
-                        alt="The Future" loading="lazy">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                        The Future of Education: A HappierMe Survey
-
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <a class="item" data-aos="fade-up" data-aos-delay="400"
-                href="../blogs/transforming_education_to_meet_the_needs_of_students_and_society.php">
-                <div class="div_blog">
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" class="img-responsive"
-                        alt="Transforming" loading="lazy">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                        Transforming education to meet the needs of students and society.
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <a class="item" data-aos="fade-up" data-aos-delay="500"
-                href="../blogs/does_education_make_us_intelligent.php">
-                <div class="div_blog">
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp" class="img-responsive"
-                        alt=" make us intelligent?" loading="lazy">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                        Does education make us intelligent?
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <a class="item" data-aos="fade-up" data-aos-delay="600"
-                href="../blogs/how_to_manage_your_own_mental_health.php">
-                <div class="div_blog">
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" class="img-responsive"
-                        alt="  mental health" loading="lazy">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
-                        How to manage your own mental health
-
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-
-            </div>
-
-            <div class="owl-theme mt10px">
-              <div class="owl-controls">
-                <div class="owl-nav owl-nav-w"></div>
-              </div>
-            </div>
-
-            <a class="sap" href="https://happierme.app/blogs/blog_index.php">
-              <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
-                View all blogs
-              </h4>
+          <div class="blog-footer">
+            <a href="https://happierme.app/blogs/blog_index.php" class="blog-more teen-blog-more">
+              <span>View all blogs</span>
+              <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
             </a>
+            <div class="coaches-nav-btns">
+              <button class="coach-arrow coach-arrow-left" id="blog-prev" type="button" aria-label="Previous" onclick="blogScroll(-1)" disabled>
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="coach-arrow coach-arrow-right" id="blog-next" type="button" aria-label="Next" onclick="blogScroll(1)">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -1222,7 +997,33 @@
   </main>
 
   <script>
+    function updateBlogNavButtons() {
+      var el = document.getElementById('blog-scroll');
+      var prevBtn = document.getElementById('blog-prev');
+      var nextBtn = document.getElementById('blog-next');
+      if (!el || !prevBtn || !nextBtn) return;
+      var atStart = el.scrollLeft <= 1;
+      var atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+      var outer = el.closest('.blog-outer');
+      if (outer) outer.classList.toggle('is-scrolled', !atStart);
+      prevBtn.disabled = atStart;
+      nextBtn.disabled = atEnd;
+    }
+
+    function blogScroll(dir) {
+      var el = document.getElementById('blog-scroll');
+      if (!el) return;
+      el.scrollBy({ left: dir * 490, behavior: 'smooth' });
+      setTimeout(updateBlogNavButtons, 350);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
+      var blogScrollEl = document.getElementById('blog-scroll');
+      if (blogScrollEl) {
+        updateBlogNavButtons();
+        blogScrollEl.addEventListener('scroll', updateBlogNavButtons);
+      }
+
       var y = document.getElementById('sub-plan-yearly');
       var m = document.getElementById('sub-plan-monthly');
       var d = document.getElementById('totalAnnualPricingModelHeading');
@@ -1255,6 +1056,51 @@
   <!-- vendor_footer -->
   <?php include('../includes/vendor_footer.php'); ?>
   <!-- /vendor_footer -->
+
+  <script>
+    function initTeenTestimonialsCarousel() {
+      var $tc = $('body.page-teenagers .owl_testimonials .owl-carousel');
+      if (!$tc.length) return;
+
+      var isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+      if ($tc.hasClass('owl-loaded')) {
+        $tc.trigger('destroy.owl.carousel');
+      }
+
+      $tc.removeClass('teen-testimonials-native owl-loaded owl-drag');
+
+      if (isMobile) {
+        $tc.addClass('teen-testimonials-native');
+        return;
+      }
+
+      if (typeof $.fn.owlCarousel !== 'function') return;
+
+      $tc.owlCarousel({
+        stagePadding: 0,
+        loop: false,
+        margin: 30,
+        nav: true,
+        autoWidth: true,
+        dots: false,
+        touchDrag: true,
+        mouseDrag: true,
+        pullDrag: true,
+        navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+        navContainer: '.owl_testimonials .owl-nav-w',
+        responsive: {
+          0: { items: 1 },
+          600: { items: 3 },
+          1000: { items: 3 }
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initTeenTestimonialsCarousel);
+    window.addEventListener('load', initTeenTestimonialsCarousel);
+    window.addEventListener('resize', initTeenTestimonialsCarousel);
+  </script>
 
 </body>
 

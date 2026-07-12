@@ -488,7 +488,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
                       }
                       } */
 
-                      this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                      this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
                     }
                   }
                 }
@@ -798,7 +798,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
                       // }
                       // }
 
-                      this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+                      this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
                     }
                   }
                 }
@@ -879,11 +879,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     this.logeventservice.logEvent('continue_guest');
     this.logeventservice.logEvent('onboarding_complete');
     this.isOnboardingCompleted = true;
-    if (this.isAdults) {
-      this.router.navigate(['/adults/adult-dashboard'])
-    } else {
-      this.router.navigate(['/teenagers/teenager-dashboard'])
-    }
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
   }
 
   pauseVideo() {
@@ -1322,7 +1318,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
                 }
               });
             } else {
-              this.router.navigate(["/" + SharedService.getprogramName() + "/repeat-user"]);
+              this.router.navigate(["/" + SharedService.getprogramName() + "/today"]);
             }
           }
         }

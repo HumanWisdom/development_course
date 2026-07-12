@@ -12,6 +12,7 @@ import { CommonService } from '../../services/common.service';
 import { HomeStateService } from '../../services/home-state.service';
 import { ProgramType } from '../../models/program-model';
 import { Constant } from '../../services/constant';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 
 describe('LoginSignupPage', () => {
   let component: LoginSignupPage;
@@ -22,6 +23,7 @@ describe('LoginSignupPage', () => {
   let mockNavigationService: jasmine.SpyObj<NavigationService>;
   let mockCommonService: jasmine.SpyObj<CommonService>;
   let mockHomeStateService: jasmine.SpyObj<HomeStateService>;
+  let mockOidcSecurityService: jasmine.SpyObj<OidcSecurityService>;
   let queryParamsSubject: BehaviorSubject<any>;
   let originalProgramId: PropertyDescriptor | undefined;
 
@@ -36,6 +38,7 @@ describe('LoginSignupPage', () => {
       'addUser',
       'emailLogin',
       'verifyGoogle',
+      'verifyAwsSso',
       'verifyFb',
       'verifyCode',
       'verifyCaptcha',
@@ -70,6 +73,16 @@ describe('LoginSignupPage', () => {
     mockCommonService = jasmine.createSpyObj('CommonService', ['updateSurveyData']);
     mockHomeStateService = jasmine.createSpyObj('HomeStateService', ['resetState']);
 
+    mockOidcSecurityService = jasmine.createSpyObj('OidcSecurityService', ['checkAuth', 'authorize', 'isAuthenticated', 'getIdToken', 'getUserData']);
+    mockOidcSecurityService.checkAuth.and.returnValue(of({
+      isAuthenticated: false,
+      idToken: '',
+      userData: null
+    }));
+    mockOidcSecurityService.isAuthenticated.and.returnValue(of(false));
+    mockOidcSecurityService.getIdToken.and.returnValue(of(''));
+    mockOidcSecurityService.getUserData.and.returnValue(of(null));
+
     Object.defineProperty(SharedService, 'ProgramId', {
       get: () => ProgramType.Adults,
       configurable: true
@@ -99,7 +112,8 @@ describe('LoginSignupPage', () => {
         { provide: LogEventService, useValue: mockLogEventService },
         { provide: NavigationService, useValue: mockNavigationService },
         { provide: CommonService, useValue: mockCommonService },
-        { provide: HomeStateService, useValue: mockHomeStateService }
+        { provide: HomeStateService, useValue: mockHomeStateService },
+        { provide: OidcSecurityService, useValue: mockOidcSecurityService }
       ]
     }).compileComponents();
 

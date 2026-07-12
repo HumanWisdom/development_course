@@ -38,6 +38,10 @@ import { initDependency } from './initdependency';
 import { AudioVideoGuard } from './audio-video.guard';
 import { EnableRouteGuard } from './enable-route.guard';
 import { NavigationService } from '../../../shared/services/navigation.service';
+import { AuthModule } from 'angular-auth-oidc-client';
+import { buildAwsCognitoAuthConfig } from '../../../shared/config/aws-cognito-auth.config';
+import { awsSsoCallbackInitializer, awsSsoStorageCleanupInitializer } from '../../../shared/config/aws-sso.initializer';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
@@ -76,7 +80,10 @@ export class MyHammerConfig extends HammerGestureConfig {
         AngularFireAnalyticsModule,
         NgxJsonLdModule,
         ToastrModule.forRoot(),
-        SurveyPageModule
+        SurveyPageModule,
+        AuthModule.forRoot({
+            config: buildAwsCognitoAuthConfig('adults'),
+        }),
     ],
     providers: [
         StatusBar,
@@ -103,6 +110,17 @@ export class MyHammerConfig extends HammerGestureConfig {
           provide: APP_INITIALIZER,
           useFactory: initDependency,
           deps: [AdultsService],
+          multi: true
+        },
+         {
+          provide: APP_INITIALIZER,
+          useFactory: awsSsoStorageCleanupInitializer,
+          multi: true
+        },
+         {
+          provide: APP_INITIALIZER,
+          useFactory: awsSsoCallbackInitializer,
+          deps: [OidcSecurityService],
           multi: true
         },
       

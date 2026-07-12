@@ -24232,6 +24232,10 @@ a {
   margin-bottom: 15px;
 }
 
+.mb8px {
+  margin-bottom: 8px !important;
+}
+
 .panel_search {
   background: #FFFFFF;
   opacity: 0.9;
@@ -34557,6 +34561,11 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   line-height: 150%;
 }
 
+.btn_ctd1:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .btn_ctdf {
   height: 50px;
   width: 100%;
@@ -37997,13 +38006,13 @@ div.contentdiv p {
   margin-bottom: 8px;
 }
 
-.resource-thumbnail{
-    width: 100% !important;
-    max-width: 50px !important;
-    height: 50px !important;
-    border-radius: 6px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    object-fit: cover !important;
+.resource-thumbnail {
+  width: 100% !important;
+  max-width: 50px !important;
+  height: 50px !important;
+  border-radius: 6px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  object-fit: cover !important;
 }

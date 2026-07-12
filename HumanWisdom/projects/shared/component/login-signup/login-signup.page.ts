@@ -15,6 +15,11 @@ import { Constant } from "../../services/constant";
 import { CommonService } from "../../services/common.service";
 import { HomeStateService } from "../../services/home-state.service";
 import { ProgramType } from "../../models/program-model";
+import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { take } from 'rxjs/operators';
+import { clearStaleAwsCognitoOidcCache, isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
+import { OrgSsoService } from '../../services/org-sso.service';
+import { OrgSsoDiscoverResult } from '../../models/org-sso.model';
 declare var $: any;
 declare var google: any;
 declare var FB: any;
@@ -91,7 +96,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   token: string | undefined;
   t = new Date();
   private clientId = '1840609876679041'; // Replace with your Instagram App Client ID
-  private redirectUri = environment.clientUrl + "/adults/adult-dashboard";
+  private redirectUri = environment.clientUrl + "/adults/today";
   private authUrl = `https://api.instagram.com/oauth/authorize`;
   private accessToken: string | null = null;
   minDate =
@@ -134,7 +139,16 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   passwordhide: boolean = true;
   confirmpasswordhide: boolean = true;
   loginStartTime: any;
+  private awsSsoProcessing = false;
+  orgWorkEmail = '';
+  orgSsoLoading = false;
+  discoveredOrgName = '';
+  discoveredIdpName = '';
 
+  /** Shown when localStorage enableAwsSsoLogin is not 'F'. */
+  get showAwsSsoLogin(): boolean {
+    return isAwsSsoLoginVisible();
+  }
 
   ngAfterViewInit(): void {
     // Check if we need to force re-initialization (e.g., after logout)
@@ -459,7 +473,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     private navigtionService: NavigationService,
     private renderer: Renderer2, private el: ElementRef,
     private commonService: CommonService,
-    private homeStateService: HomeStateService
+    private homeStateService: HomeStateService,
+    private oidcSecurityService: OidcSecurityService,
+    private orgSsoService: OrgSsoService
   ) {
     this.loadRecaptchaScript();
     this.initializeRegistrationForm();
@@ -473,7 +489,13 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       this.urlPassword = params["pwd"];
       let res = localStorage.getItem("isloggedin");
       if (res === "T") {
-        this.router.navigate(['/adults/adult-dashboard'])
+        let isPricing = localStorage.getItem('pricing') === 'true';
+        if (isPricing) {
+          localStorage.removeItem('pricing');
+          this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
+        } else {
+          this.router.navigate(['/adults/today'])
+        }
       } else {
         this.enableLogin = true;
       }
@@ -513,10 +535,21 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('pricing') === 'true' && localStorage.getItem('login') === 'false') {
+      this.isSignUp = true;
+    }
     // Clear owl animation session so GIF and dialogue play again after login
     sessionStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_dialogue_shown');
+    localStorage.removeItem('olly_today_intro_shown');
+    localStorage.removeItem('olly_today_dialogue_shown');
+    localStorage.removeItem('olly_landing_intro_shown');
+    localStorage.removeItem('olly_landing_dialogue_shown');
+    localStorage.removeItem('olly_today_intro_shown');
+    localStorage.removeItem('olly_today_dialogue_shown');
+    localStorage.removeItem('olly_landing_intro_shown');
+    localStorage.removeItem('olly_landing_dialogue_shown');
 
     if (document.getElementById('password-reveal')) {
       document.getElementById('password-reveal').style.display = 'none';
@@ -552,6 +585,144 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         }
       });
     }
+
+    const hasOAuthCallback = window.location.search.includes('code=');
+    if (hasOAuthCallback) {
+      console.log('[AWS SSO] OAuth callback URL detected:', window.location.href);
+    }
+
+    this.tryCompleteAwsSsoLogin();
+    this.prefillOrgFromQuery();
+  }
+
+  private prefillOrgFromQuery(): void {
+    const orgSlug = this.activate.snapshot.queryParamMap.get('org');
+    if (!orgSlug) {
+      return;
+    }
+
+    this.orgSsoService.discover(undefined, orgSlug).subscribe({
+      next: (result) => {
+        if (result.Found && result.SsoEnabled) {
+          this.discoveredOrgName = result.OrganizationName || orgSlug;
+          this.discoveredIdpName = result.IdpDisplayName || '';
+        }
+      },
+    });
+  }
+
+  continueWithOrganizationSso(): void {
+    const email = this.orgWorkEmail?.trim().toLowerCase();
+    if (!email || !email.includes('@')) {
+      this.content = 'Please enter your work email before continuing (e.g. you@company.com).';
+      this.enableAlert = true;
+      return;
+    }
+
+    if (this.orgSsoLoading || this.awsSsoProcessing) {
+      return;
+    }
+
+    this.orgSsoLoading = true;
+    this.logeventservice.logEvent('click_org_sso_discover');
+
+    const orgSlugFromUrl = this.activate.snapshot.queryParamMap.get('org');
+
+    this.orgSsoService.discover(email, orgSlugFromUrl || undefined).subscribe({
+      next: (result) => {
+        this.orgSsoLoading = false;
+
+        if (!result.Found || !result.SsoEnabled) {
+          this.content = result.Message || 'No organization SSO is configured for this email domain.';
+          this.enableAlert = true;
+          return;
+        }
+
+        if (!result.CognitoIdentityProvider) {
+          this.content = 'Organization SSO is not fully configured. Missing Cognito identity provider.';
+          this.enableAlert = true;
+          return;
+        }
+
+        if (orgSlugFromUrl && result.OrganizationSlug?.toLowerCase() !== orgSlugFromUrl.toLowerCase()) {
+          this.content = `This email belongs to ${result.OrganizationName}, not ${orgSlugFromUrl}.`;
+          this.enableAlert = true;
+          return;
+        }
+
+        this.discoveredOrgName = result.OrganizationName || '';
+        this.discoveredIdpName = result.IdpDisplayName || '';
+        sessionStorage.setItem('pendingOrgSso', JSON.stringify({
+          organizationId: result.OrganizationId,
+          organizationSlug: result.OrganizationSlug,
+          organizationName: result.OrganizationName,
+          email,
+        }));
+
+        // Do not pass login_hint — IAM Identity Center returns "No access" on SP-initiated SAML when hint is set.
+        this.awsSsoLogin('login', result.CognitoIdentityProvider);
+      },
+      error: (error) => {
+        this.orgSsoLoading = false;
+        const body = error.error as OrgSsoDiscoverResult;
+        this.content = body?.Message || 'Unable to find your organization. Please check your work email.';
+        this.enableAlert = true;
+      },
+    });
+  }
+
+  private tryCompleteAwsSsoLogin(): void {
+    if (localStorage.getItem('isloggedin') === 'T') {
+      return;
+    }
+
+    this.oidcSecurityService.isAuthenticated().pipe(take(1)).subscribe((isAuthenticated) => {
+      console.log('[AWS SSO] isAuthenticated:', isAuthenticated);
+
+      if (isAuthenticated) {
+        this.completeAwsSsoFromTokens();
+        return;
+      }
+
+      if (window.location.search.includes('code=')) {
+        const redirectUri = `${window.location.origin}${window.location.pathname}`;
+        console.warn(
+          '[AWS SSO] Authorization code present but token exchange failed. ' +
+          'Verify Cognito app client: no client secret, Authorization code grant enabled, ' +
+          'PKCE required, and this exact callback URL is registered:',
+          redirectUri
+        );
+      }
+    });
+  }
+
+  private completeAwsSsoFromTokens(): void {
+    this.oidcSecurityService.getIdToken().pipe(take(1)).subscribe((idToken) => {
+      if (!idToken) {
+        console.warn('[AWS SSO] Authenticated but no ID token available');
+        return;
+      }
+
+      try {
+        const decoded = this.decodeJwt(idToken);
+        console.log('[AWS SSO] ID token claims:', {
+          sub: decoded.sub,
+          email: decoded.email,
+          given_name: decoded.given_name,
+          family_name: decoded.family_name,
+          token_use: decoded.token_use,
+          iss: decoded.iss,
+          aud: decoded.aud,
+          exp: decoded.exp,
+        });
+      } catch (e) {
+        console.warn('[AWS SSO] Could not decode ID token for logging', e);
+      }
+
+      this.oidcSecurityService.getUserData().pipe(take(1)).subscribe((userData) => {
+        this.zone.run(() => this.handleAwsSsoLogin(idToken, userData));
+      });
+    });
   }
 
   ngOnDestroy(): void {
@@ -691,6 +862,108 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.handleGoogleSignIn();
+  }
+
+  awsSsoLogin(reqtype: string, cognitoIdentityProvider?: string, loginHint?: string): void {
+    if (this.awsSsoProcessing) {
+      return;
+    }
+
+    if (reqtype === 'signup') {
+      this.logeventservice.logEvent('click_signup_aws_sso');
+    } else {
+      this.logeventservice.logEvent('click_login_aws_sso');
+    }
+
+    clearStaleAwsCognitoOidcCache();
+    console.log('[AWS SSO] Starting authorize flow, reqtype:', reqtype, 'idp:', cognitoIdentityProvider || 'default');
+
+    if (cognitoIdentityProvider) {
+      const customParams: Record<string, string> = {
+        identity_provider: cognitoIdentityProvider,
+      };
+      if (loginHint) {
+        customParams.login_hint = loginHint;
+      }
+      this.oidcSecurityService.authorize(undefined, { customParams });
+      return;
+    }
+
+    this.oidcSecurityService.authorize();
+  }
+
+  private handleAwsSsoLogin(idToken: string, userData: any): void {
+    if (this.awsSsoProcessing || localStorage.getItem('isloggedin') === 'T') {
+      console.log('[AWS SSO] Skipping handleAwsSsoLogin — already processing or logged in');
+      return;
+    }
+
+    this.awsSsoProcessing = true;
+    console.log('[AWS SSO] handleAwsSsoLogin started');
+
+    try {
+      const payload = userData || this.decodeJwt(idToken);
+      this.idToken = idToken;
+      this.socialFirstName = payload.given_name || payload.name?.split(' ')[0] || '';
+      this.socialLastName = payload.family_name || payload.name?.split(' ').slice(1).join(' ') || '';
+      this.socialEmail = payload.email || payload.preferred_username || '';
+
+      console.log('[AWS SSO] User info extracted:', {
+        email: this.socialEmail,
+        firstName: this.socialFirstName,
+        lastName: this.socialLastName,
+      });
+
+      if (!this.socialEmail) {
+        console.error('[AWS SSO] No email in token/userData. Payload:', payload);
+        this.content = "Unable to retrieve email from SSO account. Please try again.";
+        this.enableAlert = true;
+        this.awsSsoProcessing = false;
+        return;
+      }
+
+      console.log('[AWS SSO] Calling verifyAwsSSOTokenAndLogin API...');
+      this.service.verifyAwsSso({
+        TokenID: this.idToken,
+        FName: this.socialFirstName,
+        LName: this.socialLastName,
+        Email: this.socialEmail,
+        VCode: "",
+        Pwd: "",
+      }).subscribe(
+        (res) => {
+          this.awsSsoProcessing = false;
+          console.log('[AWS SSO] verifyAwsSSOTokenAndLogin response:', res);
+          if (res) {
+            console.log('[AWS SSO] Login successful, UserId:', res.UserId);
+            const pendingOrgSso = sessionStorage.getItem('pendingOrgSso');
+            if (pendingOrgSso) {
+              localStorage.setItem('enterpriseOrganization', pendingOrgSso);
+              sessionStorage.removeItem('pendingOrgSso');
+            }
+            this.setUpLoginConfiguration(res, 'aws');
+          } else {
+            console.warn('[AWS SSO] API returned empty response');
+            this.content = "SSO login verification failed. Please try again.";
+            this.enableAlert = true;
+          }
+        },
+        (error) => {
+          this.awsSsoProcessing = false;
+          this.logeventservice.logEvent('aws_sso_login_failure');
+          console.error('[AWS SSO] verifyAwsSSOTokenAndLogin failed:', error);
+          console.error('[AWS SSO] Error status:', error?.status, 'message:', error?.error?.Message || error?.message);
+          this.content = error.error?.Message || error.message || "SSO login verification failed. Please try again.";
+          this.enableAlert = true;
+        }
+      );
+    } catch (error) {
+      this.awsSsoProcessing = false;
+      this.logeventservice.logEvent('aws_sso_login_failure');
+      console.error('Error processing AWS SSO response:', error);
+      this.content = "SSO login failed. Please try again.";
+      this.enableAlert = true;
+    }
   }
 
   private handleGoogleSignIn(): void {
@@ -1089,6 +1362,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     } else if (social === 'apple') {
       if (this.isSignUp) this.logeventservice.logEvent('apple_signup_complete');
       else this.logeventservice.logEvent('apple_login_success');
+    } else if (social === 'aws') {
+      if (this.isSignUp) this.logeventservice.logEvent('aws_sso_signup_complete');
+      else this.logeventservice.logEvent('aws_sso_login_success');
     }
 
     if (res.UserId === 0) {
@@ -1108,6 +1384,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       this.logeventservice.logEvent('login_error_view');
     } else {
       this.logeventservice.logEvent('login_success');
+      if (res.NoOfVisits === 1) {
+        localStorage.setItem("signupfirst", 'T');
+      } else {
+        localStorage.setItem("signupfirst", 'F');
+      }
       const timeSpent = Math.round((Date.now() - this.loginStartTime) / 1000);
       this.logeventservice.logEvent('Login_time_spent', true, timeSpent);
       // Clear home state on successful login so API's isExpanded values are used fresh
@@ -1196,6 +1477,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         }
       })
       this.freescreens();
+      let isPricing = localStorage.getItem('pricing') === 'true';
+      if (isPricing) {
+        localStorage.removeItem('pricing');
+        this.router.navigate([`/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`]);
+        return;
+      }
       let roleid = JSON.parse(localStorage.getItem("RoleID"));
       let emailcode = localStorage.getItem("emailCode");
       if (localStorage.getItem("btnClickBecomePartner") == "T") {
@@ -1216,11 +1503,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       let giftwisdom = localStorage.getItem("giftwisdom");
       const url = SharedService.UrlToRedirect;
       if (url == '/adults/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
-        this.router.navigate(['adults/adult-dashboard']);
+        this.router.navigate(['adults/today']);
         return;
       }
       else if (url == '/teenagers/subscription/try-free-and-subscribe' && SharedService.isSubscriber()) {
-        this.router.navigate(['/teenagers/teenager-dashboard']);
+        this.router.navigate(['/teenagers/today']);
         return;
       }
       else if (url != null) {
@@ -1310,7 +1597,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
                   localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
                   if (this.loginResponse?.NoOfVisits === 1) {
                     localStorage.setItem(
-                      "signupfirst", 'F'
+                      "signupfirst", 'T'
                     );
                     if (SharedService.ProgramId === 9) {
                       this.router.navigate(["/adults/change-topic"], {
@@ -1328,7 +1615,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
                     }
 
                   } else {
-                    this.router.navigate([`${SharedService.getprogramName()}/repeat-user`]);
+                    this.router.navigate([`${SharedService.getprogramName()}/today`]);
                   }
                 }
               }
@@ -1465,7 +1752,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   routedashboard() {
     this.logeventservice.logEvent('continue_guest');
     localStorage.setItem('btnclick', 'F')
-    this.router.navigateByUrl(SharedService.getDashboardUrls());
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
   }
 
   navigate(url) {
