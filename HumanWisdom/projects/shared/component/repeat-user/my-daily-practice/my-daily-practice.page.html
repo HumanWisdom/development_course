@@ -13,10 +13,13 @@
           <div class="x_content p0">
             <div class="row  mt70px mb5px" *ngIf="!isQuestionsViewActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                <h4 class="mt50px mb30px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                  Hi {{userName}}!
+                <h4 class="mt50px mb5px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  <span *ngIf="guest || !userName">Hi there!</span>
+                  <span *ngIf="!guest && userName">Hi {{userName}}!</span>
                 </h4>
-
+                <p class="fs_15px fw_400 lh_140p mt0px mb30px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_7'" style="opacity: 0.9;">
+                  Take a moment for yourself today.
+                </p>
               </div>
             </div>
 
@@ -483,7 +486,7 @@
                   </div>
                   <!-- /hr -->
 
-                  <a (click)=routeDailyPractice(1)>
+                  <a (click)="routeActiveExercise()" *ngIf="activeExerciseTitle">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex practice-card-content">
 
@@ -491,146 +494,33 @@
                           <div class="prelative">
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  ">
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/29.png"
+                                <img [src]="activeExerciseImg"
                                   class="p0 session_imgnew">
                               </div>
                             </div>
-
-                            <!-- <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
-                          </div>
-                        </div> -->
                           </div>
                         </div>
 
                         <div class="col-7 pl5px practice-card-text">
-                          <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-
-                      </div> -->
-
-                          <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3.svg"
-                        alt="breathingExercise" class="crimg1"> -->
                           <div class=" va_middle">
-
-                            <div id="photo3">
-                              <h4 class=" fw_400 fs_12px  lh_140p fc_000000" *ngIf="isAdults">
-                                <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg"
+                            <div id="photoActiveExercise">
+                              <h4 class=" fw_400 fs_12px  lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                                <img [src]="activeExerciseIcon"
                                   alt="play" style="margin-top: -3px;">
-                                BREATHING EXERCISE
+                                {{activeExerciseLabel}}
                               </h4>
-                              <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82" *ngIf="!isAdults">
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg"
-                                  alt="play" style="margin-top: -3px;">
-                                BREATHING EXERCISE
-                              </h4>
-
-                              <!-- <img    src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/videomy.svg" alt=""> -->
-                              <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_000000 plr5px"> 
-                            BREATHING EXERCISE</span> -->
                             </div>
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/video-d.svg" class="img-responsive" style="width:12px; height:12px">
-                      </div>
-                      <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-
-                      <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_000000">
-                        BREATHING EXERCISE
-                      </h4>
-                      </div> -->
                           </div>
                           <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            {{dailybreathTitle}}
+                            {{activeExerciseTitle}}
                           </h4>
                           <h4 class="mt0px mb5px fs_12px fw_400 lh_140p  "
                             [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
-                            {{breatheTime}}
+                            {{activeExerciseTime}}
                           </h4>
                         </div>
                         <div class="col-1 practice-card-arrow"> </div>
-                      </div>
-                    </div>
-                  </a>
-                  <!-- hr -->
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
-                      <hr class="hr_style_v3_02">
-                    </div>
-                  </div>
-                  <!-- /hr -->
-                  <a (click)=routeDailyPractice(4)>
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex practice-card-content">
-
-                        <div class="col-md-4 col-sm-4 col-xs-4 p0 practice-card-thumb">
-                          <div class="prelative">
-                            <div class="row">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
-                                  class="p0 session_imgnew">
-                              </div>
-                            </div>
-
-                            <!-- <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 img_absolute_01">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_24_24.svg" class="img-responsive">
-                      </div>
-                    </div> -->
-                          </div>
-                        </div>
-
-                        <div class="col-7 pl5px practice-card-text">
-                          <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-
-                  </div> -->
-
-                          <!-- <img
-                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3.svg"
-                        alt="med" class="crimg1" > -->
-
-
-                          <div class=" va_middle">
-                            <div id="photo4">
-                              <h4 class=" fw_400 fs_12px  lh_140p fc_000000" *ngIf="isAdults">
-                                <img
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audii_daily1.svg"
-                                  alt="play" style="margin-top: -3px;">
-                                DAILY MEDITATION
-                              </h4>
-                              <h4 class=" fw_400 fs_12px  lh_140p fc_e58d82" *ngIf="!isAdults">
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_inv.svg"
-                                  alt="play" style="margin-top: -3px;">
-                                DAILY MEDITATION
-                              </h4>
-
-                              <!-- <img  
-                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audiomy.svg" alt=""> -->
-                              <!-- <span style="vertical-align:middle" class="mt0px mb5px fw_400 fs_12px lh_130p fc_000000 plr5px"> 
-                        DAILY MEDITATION</span> -->
-                            </div>
-                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 w5p">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/video-d.svg" class="img-responsive" style="width:12px; height:12px">
-                  </div>
-                  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0">
-
-                  <h4 class="mt0px mb5px fw_400 fs_12px lh_130p fc_000000">
-                    DAILY MEDITATION
-                  </h4>
-                  </div> -->
-                          </div>
-                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p  ellipsis"
-                            [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            {{audioTitle}}
-                          </h4>
-                          <h4 class="mt0px mb5px fs_12px  fw_400 lh_140p  "
-                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff'">
-                            {{audioTime}}
-                          </h4>
-                        </div>
-                        <div class="col-1 practice-card-arrow"> </div>
-
                       </div>
                     </div>
                   </a>

@@ -4,9 +4,9 @@
 
 <head>
   <title>Explore Your Inner World with Our Self-Discovery Blog</title>
-  <meta property="title" content="Explore Your Inner World with Our Self-Discovery Blog">
+  <meta property="title" content="Mental Wellbeing and Life Skills Blog | HappierMe">
   <meta property="description"
-    content="Discover your true self with our self-discovery blog. Explore your inner world and unlock your full potential with inspiring articles and wisdom.">
+    content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
   <meta property="keyword"
     content="Personal growth blog, Self-improvement blog, Inspirational blog, Life lessons blog, Mindfulness blog, Adult development blog">
 

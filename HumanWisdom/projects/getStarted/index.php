@@ -7,9 +7,9 @@ require_once('./includes/security_config.php');
 <html lang="en">
  <head>
   <title>HappierMe: For Teens & Adults</title>
-  <meta name="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
+  <meta name="title" content="Mental Wellbeing, Self-awareness and Life Skills | HappierMe">
   <meta name="description"
-    content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
+    content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta name="keywords"
     content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
   <meta property="og:title" content="HappierMe: For Teens & Adults">
@@ -158,7 +158,7 @@ require_once('./includes/security_config.php');
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
                       Feel calmer. Strengthen your relationships.<br>
-                      Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">these skills</a> to thrive at home and at work.
+                      Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a> to thrive at home and at work.
                     </p>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ require_once('./includes/security_config.php');
       <!-- ===== ORCHA / Mind BANNER ===== -->
       <div class="orcha-strip index-lazy-section">
         <div class="orcha-strip-item orcha-strip-orcha">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/orcha_certifie.svg" alt="ORCHA Certified" height="60" width="60"/>
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/orcha_certifie.svg" alt="ORCHA Certified" height="60" width="60"/>
           <span>ORCHA approved for use in healthcare</span>
         </div>
         <div class="orcha-strip-item orcha-strip-mind">
@@ -377,7 +377,7 @@ require_once('./includes/security_config.php');
           <div class="why-different-cards">
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--prevention">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/Prevention.svg" alt="" width="66" height="66" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Prevention.svg" alt="" width="66" height="66" />
               </div>
               <div class="why-different-card-body">
                 <h3 class="why-different-card-title">Prevention</h3>
@@ -386,7 +386,7 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--root-cause">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/root.svg" alt="" width="66" height="66" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/root.svg" alt="" width="66" height="66" />
               </div>
               <div class="why-different-card-body">
                 <h3 class="why-different-card-title">Root cause focus</h3>
@@ -395,7 +395,7 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--inner-skills">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/build.svg" alt="" width="66" height="66" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build.svg" alt="" width="66" height="66" />
               </div>
               <div class="why-different-card-body">
                 <h3 class="why-different-card-title">Build inner skills</h3>
@@ -404,7 +404,7 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--whole-life">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/life.svg" alt="" width="66" height="66" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life.svg" alt="" width="66" height="66" />
               </div>
               <div class="why-different-card-body">
                 <h3 class="why-different-card-title">Whole-life approach</h3>
@@ -723,8 +723,8 @@ require_once('./includes/security_config.php');
         <div class="tools-content-wrap">
         <!-- Tab pills -->
         <div class="tools-tabs" id="toolTabs">
-          <button class="tool-tab" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Wellness score</button>
-          <button class="tool-tab tool-tab-active" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
+          <button class="tool-tab tool-tab-active" id="HapinessScore-tab" onclick="switchTab(this,'survey')">Wellness score</button>
+          <button class="tool-tab" id="feelbetterNow-tab" onclick="switchTab(this,'fbn')">Feel better now</button>
           <button class="tool-tab" id="pathWay-tab" onclick="switchTab(this,'pathway')">Guided Programs</button>
           <button class="tool-tab" id="journal-tab" onclick="switchTab(this,'journal_tab')">Journal</button>
           <button class="tool-tab" id="podcast-tab" onclick="switchTab(this,'podcast_tab')">Podcast</button>
@@ -734,7 +734,7 @@ require_once('./includes/security_config.php');
         <div class="tools-panel-wrap">
 
           <!-- Feel better now -->
-          <div id="fbn" class="tools-panel active">
+          <div id="fbn" class="tools-panel">
             <div class="tools-card">
               <div class="tools-thumb">
                 <video playsinline
@@ -862,7 +862,7 @@ require_once('./includes/security_config.php');
           </div>
 
           <!-- Wellness score -->
-          <div id="survey" class="tools-panel">
+          <div id="survey" class="tools-panel active">
             <div>
               <div class="tools-thumb">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/track.svg" alt="Wellness score" class="tools-thumb-img_sec" />
