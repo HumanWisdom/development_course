@@ -54,7 +54,7 @@
                           </a>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 center_flex">
-                          <span class="fc_ffffff" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ currentSection + 1 }} / 6</span>
+                          <span class="fc_ffffff" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ currentIndex + 1 }} / {{ sectionList.length }}</span>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright center_flex">
                           <a  data-slide="next" class="next"
@@ -403,6 +403,90 @@
                   </div>
                   <!-- /exercise -->
 
+                  <!-- TeenTalk -->
+                  <div [@slideAnimation]="direction" *ngIf="currentSection === 8">
+                    <div class="row mb6px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_video_v3_teens.svg" alt="" class=" crimg" *ngIf="!isAdults">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/breathing.svg" alt="" class=" crimg" *ngIf="isAdults">
+                      </div>
+                    </div>
+                    <div class="row mb6px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class=" fs_18px fw_600 lh_150p fc_e58d82">TeenTalk</h4>
+                      </div>                     
+                    </div> 
+                    <div class="row mb30px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0" >
+                        <a (click)="routeToUrl('teenagers/teen-talk')">
+                          <span class=" fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                            View all
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="box_journal_v3_03">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <h1 class="fw_600 fs_15px lh_140p fc_fmtb0px tcenter m0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                            {{teenTalkTitle}}
+                          </h1>
+                        </div>
+                      </div>
+                      <br/>
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                          <video playinline class="cvideo" *ngIf="videoLink && enableVideo" #videoPlayer controlsList="nodownload" preload="metadata"
+                            (play)="Logevent('click_play_video_teentalk')" controls [poster]="teenTalkImg || 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg'">
+                            <source [src]="videoLink" type="video/mp4">
+                          </video>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Podcast -->
+                  <div [@slideAnimation]="direction" *ngIf="currentSection === 9">
+                    <div class="row mb6px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/mdp_audio_meditation_v3_teens.svg" alt="" class=" crimg"*ngIf="!isAdults">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio.svg" alt="" class=" crimg"*ngIf="isAdults">
+                      </div>
+                    </div>
+                    <div class="row mb6px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_18px fw_600 lh_150p fc_e58d82">
+                          Podcast
+                        </h4>
+                      </div>
+                    </div>
+                    <div class="row mb30px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0" >
+                        <a (click)="routeToUrl('podcast')" >
+                          <span class="mtb0px fs_12px fw_500 lh_140p  tcenter underline"  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                            View all
+                          </span>
+                        </a>
+                      </div>
+                    </div> 
+                    <div class="box_journal_v3_03">
+                      <div class="row mb30px">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                          <h1 class="mtb0px fs_24px fw_500 lh_130p "  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                            {{podcastTitle}}
+                          </h1>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="audioLink && enableVideo ">
+                          <app-audio-player class="audio-test" 
+                            [ngClass]="[isAdults ? 'invert-controls' : '']"
+                            [audioLink]="audioLink">
+                          </app-audio-player>  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                     <!-- Journal, Quote, Audio, Exercise - similar blocks for other sections -->
                     <!-- Add sections here similarly as per your content -->
