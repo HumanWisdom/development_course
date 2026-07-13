@@ -93,6 +93,9 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     }   
    
     this.userName = this.userName ? this.userName.replace('"',''): this.userName;
+    if (this.userName === "null" || this.userName === "undefined" || (this.userName && this.userName.trim() === "")) {
+      this.userName = "";
+    }
     
     // Capitalize the username
     if (this.userName) {

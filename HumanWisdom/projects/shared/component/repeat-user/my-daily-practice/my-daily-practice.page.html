@@ -13,10 +13,13 @@
           <div class="x_content p0">
             <div class="row  mt70px mb5px" *ngIf="!isQuestionsViewActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                <h4 class="mt50px mb30px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                  Hi {{userName}}!
+                <h4 class="mt50px mb5px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  <span *ngIf="guest || !userName">Hi there!</span>
+                  <span *ngIf="!guest && userName">Hi {{userName}}!</span>
                 </h4>
-
+                <p class="fs_15px fw_400 lh_140p mt0px mb30px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_7'" style="opacity: 0.9;">
+                  Take a moment for yourself today.
+                </p>
               </div>
             </div>
 
