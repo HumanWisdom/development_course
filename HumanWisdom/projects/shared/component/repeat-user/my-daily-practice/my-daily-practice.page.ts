@@ -43,6 +43,18 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   breatheTime:string = '';
   placeholder = 'Tap to answer'
   guest = true;
+  teenTalkTitle: string = '';
+  teenTalkLink: string = '';
+  teenTalkImg: string = '';
+  podcastTitle: string = '';
+  podcastLink: string = '';
+  podcastImg: string = '';
+  activeExerciseLabel: string = '';
+  activeExerciseTitle: string = '';
+  activeExerciseTime: string = '';
+  activeExerciseImg: string = '';
+  activeExerciseIcon: string = '';
+  selectedExerciseType: 'breathing' | 'meditation' | 'teentalk' | 'podcast' = 'breathing';
   isFirstLogin:boolean = false;
   searchinp = '';
   searchResult = [];
@@ -127,57 +139,146 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     }
   }
 
+  resolveMediaUrl(url: string): string {
+    if (!url) return '';
+    if (url.includes('videopage')) {
+      const parts = url.split('/');
+      const code = parts[2];
+      let name = code.split('-videos')[0];
+      let link = code.split('-videos')[1];
+      let path = `${name}/videos${link?.replaceAll('-', '/')}`;
+      if (path.includes('teenagers')) {
+        path = path.replaceAll('-', '/');
+      }
+      path = path.replaceAll('~', '-');
+      path = path.replace(/\/+/g, '/');
+      return `https://d1tenzemoxuh75.cloudfront.net/${path}`;
+    } else if (url.includes('audiopage')) {
+      const parts = url.split('/');
+      const audioUrl = parts[2];
+      let path = audioUrl.replace(/\~/g, '/');
+      path = path.replace(/\/+/g, '/');
+      return `https://d1tenzemoxuh75.cloudfront.net/${path}`;
+    }
+    return '';
+  }
+
   getdailyquestion() {
-    this.commonService.getDailypractiseQuestionbreath().subscribe((res) => {
-      if (res) {
-        this.dailybreathTitle = res.split(';')[0]
-        this.videoLink = res.split(';')[1];
-        this.enableVideo = true;
-        this.breatheTime =  res.split(';')[2];
-      }
-    })
-    this.commonService.getDailyInspirationQuestion().subscribe((res) => {
-      if (res) {
-        this.dailyInspirationTitle = res.split(';')[0]
-        this.DailyInspirationLink = res.split(';')[1];
-        this.DailyInspirationImage = res.split(';')[2];
-        this.DailyInspirationTime = res.split(';')[4];
-       if(res.split(';')[3]==="6")
-       { 
-        this.isVoices = true; 
+    const programId = SharedService.ProgramId;
+    this.commonService.getTodayDailyPractise(programId).subscribe((res: any[]) => {
+      if (res && res.length > 0) {
+        const date = new Date().getDate();
+        const isOdd = date % 2 !== 0;
 
-       }
+        // 1. Daily Inspiration / Short video (type 5 & 6)
+        const shortVideos = res.filter(item => item.dailyPractTypeID === '5' || item.dailyPractTypeID === '6');
+        let selectedShort = null;
+        if (shortVideos.length > 1) {
+          selectedShort = isOdd ? shortVideos.find(x => x.dailyPractTypeID === '5') : shortVideos.find(x => x.dailyPractTypeID === '6');
+          if (!selectedShort) selectedShort = shortVideos[0];
+        } else if (shortVideos.length === 1) {
+          selectedShort = shortVideos[0];
+        }
 
+        if (selectedShort) {
+          this.dailyInspirationTitle = selectedShort.title;
+          this.DailyInspirationLink = selectedShort.Text_URL || this.resolveMediaUrl(selectedShort.url);
+          this.DailyInspirationImg = selectedShort.imgPath;
+          this.DailyInspirationTime = selectedShort.timing;
+          this.isVoices = selectedShort.dailyPractTypeID === '6';
+          this.enableVideo = true;
+        }
 
-        this.dailyInsModule = res.split(';')[2] ? res.split(';')[2]?.toString()?.replaceAll('/', '') : "";
-       // this.DailyInspirationImg = "https://d1tenzemoxuh75.cloudfront.net/daily_inspiration/portrait" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().replace("mp4", "webp")
-       
-       //https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_109.webp 
-       
-       this.DailyInspirationImg = "https://d1tenzemoxuh75.cloudfront.net/assets/images/tiles/dashboard/wisdom_shorts/wisdom_shorts_" + this.DailyInspirationLink.substring(this.DailyInspirationLink.lastIndexOf('/')).toString().split('.')[1].toString()  +".webp"
+        // 2. Quote of the day (type 2)
+        const quoteItem = res.find(item => item.dailyPractTypeID === '2');
+        if (quoteItem) {
+          this.dailyinstext = quoteItem.Text_URL;
+          this.dailyinsAuthor = quoteItem.title;
+        }
 
-       this.enableVideo = true;
+        // 3. Try This Today / Challenge (type 4)
+        const challengeItem = res.find(item => item.dailyPractTypeID === '4');
+        if (challengeItem) {
+          this.trythistoday = challengeItem.Text_URL;
+        }
+
+        // 4. Alternating Cards logic
+        if (this.isAdults) {
+          const breathingItem = res.find(item => item.dailyPractTypeID === '1');
+          const meditationItem = res.find(item => item.dailyPractTypeID === '3');
+          
+          let selectType: 'breathing' | 'meditation' = 'breathing';
+          if (breathingItem && meditationItem) {
+            selectType = isOdd ? 'breathing' : 'meditation';
+          } else if (breathingItem) {
+            selectType = 'breathing';
+          } else if (meditationItem) {
+            selectType = 'meditation';
+          }
+
+          if (selectType === 'breathing' && breathingItem) {
+            this.dailybreathTitle = breathingItem.title;
+            this.videoLink = breathingItem.Text_URL || this.resolveMediaUrl(breathingItem.url);
+            this.breatheTime = breathingItem.timing;
+            this.enableVideo = true;
+            this.selectedExerciseType = 'breathing';
+
+            this.activeExerciseLabel = 'BREATHING EXERCISE';
+            this.activeExerciseIcon = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg';
+            this.activeExerciseTitle = this.dailybreathTitle;
+            this.activeExerciseTime = this.breatheTime;
+            this.activeExerciseImg = breathingItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/29.png';
+          } else if (selectType === 'meditation' && meditationItem) {
+            this.audioTitle = meditationItem.title;
+            this.audioLink = meditationItem.Text_URL || this.resolveMediaUrl(meditationItem.url);
+            this.audioTime = meditationItem.timing;
+            this.selectedExerciseType = 'meditation';
+
+            this.activeExerciseLabel = 'DAILY MEDITATION';
+            this.activeExerciseIcon = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audii_daily1.svg';
+            this.activeExerciseTitle = this.audioTitle;
+            this.activeExerciseTime = this.audioTime;
+            this.activeExerciseImg = meditationItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
+          }
+        } else {
+          const teenTalkItem = res.find(item => item.dailyPractTypeID === '8');
+          const podcastItem = res.find(item => item.dailyPractTypeID === '9');
+
+          let selectType: 'teentalk' | 'podcast' = 'teentalk';
+          if (teenTalkItem && podcastItem) {
+            selectType = isOdd ? 'teentalk' : 'podcast';
+          } else if (teenTalkItem) {
+            selectType = 'teentalk';
+          } else if (podcastItem) {
+            selectType = 'podcast';
+          }
+
+          if (selectType === 'teentalk' && teenTalkItem) {
+            this.teenTalkTitle = teenTalkItem.title;
+            this.teenTalkLink = teenTalkItem.Text_URL || this.resolveMediaUrl(teenTalkItem.url);
+            this.teenTalkImg = teenTalkItem.imgPath;
+            this.selectedExerciseType = 'teentalk';
+
+            this.activeExerciseLabel = 'TEENTALK';
+            this.activeExerciseIcon = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg';
+            this.activeExerciseTitle = this.teenTalkTitle;
+            this.activeExerciseTime = teenTalkItem.timing;
+            this.activeExerciseImg = teenTalkItem.imgPath || 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg';
+          } else if (selectType === 'podcast' && podcastItem) {
+            this.podcastTitle = podcastItem.title;
+            this.podcastLink = podcastItem.Text_URL || this.resolveMediaUrl(podcastItem.url);
+            this.podcastImg = podcastItem.imgPath;
+            this.selectedExerciseType = 'podcast';
+
+            this.activeExerciseLabel = 'PODCAST';
+            this.activeExerciseIcon = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_inv.svg';
+            this.activeExerciseTitle = this.podcastTitle;
+            this.activeExerciseTime = podcastItem.timing;
+            this.activeExerciseImg = podcastItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/webp/podcast/01.webp';
+          }
+        }
       }
-    })
-    this.commonService.getDailypractiseQuestionins().subscribe((res) => {
-      if (res) {
-        //this.dailyinstext = res;
-        this.dailyinsAuthor = res.split(';')[0]
-        this.dailyinstext = res.split(';')[1];
-      }
-    })
-    this.commonService.getDailypractiseQuestionmeditation().subscribe((res) => {
-      if (res) {
-        this.audioTitle = res.split(';')[0]
-        this.audioLink = res.split(';')[1];
-        this.audioTime = res.split(';')[2];
-      }
-    })
-    this.commonService.getDailypractiseQuestiontoday().subscribe((res) => {
-      if (res) {
-        this.trythistoday = res;
-      }
-    })
+    });
   }
 
   getdailyques() {
@@ -235,6 +336,8 @@ routeDailyPractice(id: number): void {
   if (id === 0)       this.logeventservice.logEvent('click_daily_inspiration');
   else if (id === 1)  this.logeventservice.logEvent('click_breathing_exercise');
   else if (id === 4)  this.logeventservice.logEvent('click_daily_meditation');
+  else if (id === 8)  this.logeventservice.logEvent('click_teentalk');
+  else if (id === 9)  this.logeventservice.logEvent('click_podcast');
 
   /* already subscribed – go straight in */
   if (this.isSubscriber) {          // <── use the boolean flag
@@ -253,6 +356,22 @@ routeDailyPractice(id: number): void {
 
   localStorage.setItem(key, String(hits + 1));
   this.router.navigate([SharedService.getprogramName(), 'daily-practise', id]);
+}
+
+routeActiveExercise() {
+  if (this.isAdults) {
+    if (this.selectedExerciseType === 'breathing') {
+      this.routeDailyPractice(1);
+    } else {
+      this.routeDailyPractice(4);
+    }
+  } else {
+    if (this.selectedExerciseType === 'teentalk') {
+      this.routeDailyPractice(8);
+    } else {
+      this.routeDailyPractice(9);
+    }
+  }
 }
 
   routeToDailyCheckIn(){
