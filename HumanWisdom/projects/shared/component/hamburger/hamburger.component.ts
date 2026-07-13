@@ -459,7 +459,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
-
+    if(evtName === 'click_Subscribe'){
+      if (this.ios || this.isAndroid) {
+      return; // Do not navigate on mobile devices for subscription
+      }
+    }
     let currentRoute = route;
     if (!this.isAdults && route) {
       currentRoute = route.toString().replace('adults', 'teenagers');
