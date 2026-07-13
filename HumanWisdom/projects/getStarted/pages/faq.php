@@ -38,7 +38,7 @@
                 <h6 class="hs_desc">
 HappierMe is an emotional wellness, mindfulness, and self-growth app that helps users reduce stress, manage anxiety, build emotional intelligence, improve relationships, and develop healthier habits through guided tools, journaling, meditation, wellness tracking, and AI-powered support from Olly AI.
                 </h6>
-
+<div style="width:100%;height:1px;background:#e0e0e0;"></div>
                 <h2 class="hs_title">
 2. How does HappierMe help with stress?
                 </h2>
