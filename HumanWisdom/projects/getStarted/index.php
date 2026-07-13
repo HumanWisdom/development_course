@@ -7,9 +7,9 @@ require_once('./includes/security_config.php');
 <html lang="en">
  <head>
   <title>HappierMe: For Teens & Adults</title>
-  <meta name="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
+  <meta name="title" content="Mental Wellbeing, Self-awareness and Life Skills | HappierMe">
   <meta name="description"
-    content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
+    content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta name="keywords"
     content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
   <meta property="og:title" content="HappierMe: For Teens & Adults">

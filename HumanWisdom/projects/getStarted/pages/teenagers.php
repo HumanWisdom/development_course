@@ -3,9 +3,9 @@
 
 <head>
   <title>HappierMe: Master your mind</title>
-  <meta property="title" content="HappierMe for Teenagers">
+  <meta property="title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
   <meta property="description"
-    content="HappierMe supports teenagers in building emotional intelligence and mental wellness through personalized tools. Learn how the app empowers teens for a healthier mindset.">
+    content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
   <meta name="keywords" content="Steenagers, mental health app, development, growth, acceptance, love, school">
   <meta property="og:title" content="HappierMe:For Teens & Adults">
   <meta property="og:site_name" content="HappierMe">
