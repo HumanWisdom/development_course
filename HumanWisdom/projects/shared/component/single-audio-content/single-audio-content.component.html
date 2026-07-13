@@ -44,16 +44,7 @@
                 </div>
               </div> -->
 
-              <div class="row tcenter" (click)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')"
-                (keydown.enter)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')" tabindex="0"
-                *ngIf="audioLink !== '' && textContent !== ''">
-                <!-- <p class="txt1 mt40px mb30px"> -->
-                <a class="">
-                  <h6 class="fs_15px fw_400 lh_140p fc_D7586B underline mb10px">
-                    {{!enableTextContent ? 'Read text' : 'Back To Audio' }} </h6>
-                </a>
-                <!-- </p> -->
-              </div>
+        
 
               <div class="row" *ngIf="enableTextContent">
                 <!-- <p class="txt1 mt40px mb30px"> -->
@@ -80,7 +71,18 @@
                   </audio> -->
                   <app-audio-player id="aud1" [ngClass]="[isAdults ? 'invert-controls' : '']" [audioLink]="audioLink">
                   </app-audio-player>
+
                 </div>
+              </div>
+              <div class="row tcenter" (click)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')"
+                (keydown.enter)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')" tabindex="0"
+                *ngIf="audioLink !== '' && textContent !== ''">
+                <!-- <p class="txt1 mt40px mb30px"> -->
+                <a class="">
+                  <h6 class="fs_15px fw_400 lh_140p fc_D7586B underline mtb10px">
+                    {{!enableTextContent ? 'Read text' : 'Back To Audio' }} </h6>
+                </a>
+                <!-- </p> -->
               </div>
 
             </form>
