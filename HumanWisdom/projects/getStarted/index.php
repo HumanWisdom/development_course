@@ -377,8 +377,8 @@ require_once('./includes/security_config.php');
           <div class="why-different-cards">
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--prevention">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Prevention.svg" alt="" width="66" height="66"  class="display_d_none" />
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/preventation_mob.svg" alt="" width="66" height="66" class="display_m_none" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Prevention.svg" alt="" width="66" height="66"  class="display_m_none" />
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/preventation_mob.svg" alt="" width="66" height="66" class="display_d_none" />
 
               </div>
               <div class="why-different-card-body">
@@ -388,8 +388,8 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--root-cause">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/root.svg" alt="" width="66" height="66"  class="display_d_none" />
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/route_mob.svg" alt="" width="66" height="66" class="display_m_none" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/root.svg" alt="" width="66" height="66"  class="display_m_none" />
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/route_mob.svg" alt="" width="66" height="66" class="display_d_none" />
 
               </div>
               <div class="why-different-card-body">
@@ -399,8 +399,8 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--inner-skills">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build.svg" alt="" width="66" height="66"  class="display_d_none" />
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/skills_mob.svg" alt="" width="66" height="66" class="display_m_none" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build.svg" alt="" width="66" height="66"  class="display_m_none" />
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/skills_mob.svg" alt="" width="66" height="66" class="display_d_none" />
 
               </div>
               <div class="why-different-card-body">
@@ -410,8 +410,8 @@ require_once('./includes/security_config.php');
             </article>
             <article class="why-different-card">
               <div class="why-different-card-icon why-different-card-icon--whole-life">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life.svg" alt="" width="66" height="66"  class="display_d_none" />
-                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life_mob.svg" alt="" width="66" height="66" class="display_m_none" />
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life.svg" alt="" width="66" height="66"  class="display_m_none" />
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life_mob.svg" alt="" width="66" height="66" class="display_d_none" />
 
               </div>
               <div class="why-different-card-body">
