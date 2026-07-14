@@ -372,7 +372,7 @@ require_once('./includes/security_config.php');
         <div class="why-different-inner">
           <div class="why-different-header">
             <h2 class="why-different-title" id="why-different-title">Why HappierMe is different</h2>
-            <p class="why-different-subtitle">Most apps help you cope. We help you change.</p>
+            <p class="why-different-subtitle">Most apps help you cope.<br class="why-different-subtitle-br"> We help you change.</p>
           </div>
           <div class="why-different-cards">
             <article class="why-different-card">
@@ -430,25 +430,25 @@ require_once('./includes/security_config.php');
           </div>
           <div class="support-features">
             <div class="support-feature-item">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/communityforum.svg" alt="Community forum" class="support-feature-icon" />
-              <div class="support-feature-content">
+              <div class="support-feature-heading">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/communityforum.svg" alt="Community forum" class="support-feature-icon" />
                 <a href="https://happierme.app/adults/forum" id="supportCommunityForum" class="support-feature-title">Community forum</a>
-                <p class="support-feature-desc">Connect with others and ask questions anonymously</p>
               </div>
+              <p class="support-feature-desc">Connect with others and ask questions anonymously</p>
             </div>
             <div class="support-feature-item">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/live_events.svg" alt="Live Events" class="support-feature-icon" />
-              <div class="support-feature-content">
+              <div class="support-feature-heading">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/live_events.svg" alt="Live Events" class="support-feature-icon" />
                 <a href="https://happierme.app/adults/events" id="supportLiveEvents" class="support-feature-title">Live Events</a>
-                <p class="support-feature-desc">Join live discussions with experts and community members</p>
               </div>
+              <p class="support-feature-desc">Join live discussions with experts and community members</p>
             </div>
             <div class="support-feature-item">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching.svg" alt="Expert Coaching" class="support-feature-icon" />
-              <div class="support-feature-content">
+              <div class="support-feature-heading">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching.svg" alt="Expert Coaching" class="support-feature-icon" />
                 <a href="https://happierme.app/adults/coach" id="supportExpertCoaching" class="support-feature-title">Expert Coaching</a>
-                <p class="support-feature-desc">Get personalized 1-on-1 support from trained coaches</p>
               </div>
+              <p class="support-feature-desc">Get personalized 1-on-1 support from trained coaches</p>
             </div>
           </div>
         </div>
@@ -1424,6 +1424,7 @@ require_once('./includes/security_config.php');
 
         playBtn.addEventListener('click', function() {
           video.controls = true;
+          playBtn.hidden = true;
           var playPromise = video.play();
           if (playPromise && typeof playPromise.catch === 'function') {
             playPromise.catch(function() {});
@@ -1435,11 +1436,12 @@ require_once('./includes/security_config.php');
           playBtn.hidden = true;
         });
 
+        // Mid-playback pause: keep native controls only — do not re-show the custom
+        // overlay (it stacks an audio/play icon on top of the browser play button).
         video.addEventListener('pause', function() {
+          if (video.ended) return;
           video.controls = true;
-          if (video.currentTime < video.duration) {
-            playBtn.hidden = false;
-          }
+          playBtn.hidden = true;
         });
 
         video.addEventListener('ended', function() {
@@ -1544,13 +1546,20 @@ require_once('./includes/security_config.php');
 
     <!-- Human Skills modal -->
     <div class="modal fade" id="humanSkillsModal" tabindex="-1" aria-labelledby="humanSkillsModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered human-skills-dialog">
         <div class="modal-content human-skills-modal">
-          <div class="human-skills-modal-header">
-            <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Life skills</h2>
-            <p class="human-skills-modal-subtitle">Feel better. Do better.</p>
+          <div class="human-skills-modal-close-row">
+            <button type="button" class="human-skills-modal-close" data-bs-dismiss="modal" aria-label="Close">
+              <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" focusable="false">
+                <path d="M1 1l8 8M9 1L1 9" stroke="#E89170" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
           </div>
-          <div class="human-skills-modal-body">
+          <div class="human-skills-modal-inner">
+            <div class="human-skills-modal-header">
+              <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Life skills</h2>
+              <p class="human-skills-modal-subtitle">Feel better. Do better.</p>
+            </div>
             <ul class="human-skills-list">
               <li>Self-awareness</li>
               <li>Emotional intelligence</li>
@@ -1560,8 +1569,8 @@ require_once('./includes/security_config.php');
               <li>Resilience</li>
               <li>Confidence</li>
               <li>Decision-making</li>
+              <li>Self-regulation</li>
             </ul>
-            <button type="button" class="human-skills-close-btn" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

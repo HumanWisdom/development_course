@@ -37,7 +37,7 @@ img { max-width: 100%; display: block; }
   font-size: 21px;
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 247, 230, 1);
   margin: 0;
 }
 .frame-wrapper.web_home_divlanding .rating-row,
@@ -120,7 +120,7 @@ img { max-width: 100%; display: block; }
     font-size: 21px !important;
     line-height: 1.5 !important;
     font-weight: 400 !important;
-    color: rgba(255, 255, 255, 1) !important;
+    color: rgba(255, 247, 230, 1) !important;
   }
 }
 
