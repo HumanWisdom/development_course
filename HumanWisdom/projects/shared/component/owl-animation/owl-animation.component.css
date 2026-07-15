@@ -1,34 +1,38 @@
+/* Nested inside Forum tab (.olly-anchor { position: relative }).
+   Sit on the footer top line, nudged only slightly right of Forum center. */
 :host {
+  position: absolute;
+  /* Sit feet exactly on the beige/white footer line */
+  bottom: calc(100% + 3px);
+  left: 50%;
+  /* -50% centers on Forum; +2px = slight right only */
+  transform: translateX(calc(-50% + 2px));
+  z-index: 100;
   display: block;
+  width: max-content;
+  pointer-events: auto;
+  overflow: visible;
+  line-height: 0;
 }
 
-.owl-animation-wrapper {
-  position: fixed;
-  bottom: 60px;
-  /* sit along footer line (adjust if footer height changes) */
-  /* Align to the right edge of a centered 30% content column */
-  right: calc((100% - 30%) / 2 + 16px);
+.owl-animation-wrapper,
+.owl-animation-wrapper.corner {
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  -webkit-transform: none !important;
   z-index: 100;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s, top 0.3s ease, right 0.3s ease;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
   pointer-events: auto;
   cursor: pointer;
-  /* allow click to open chat */
   background: transparent;
   background-color: transparent;
-  will-change: transform;
-  -webkit-transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s, top 0.3s ease, right 0.3s ease;
-}
-
-.owl-animation-wrapper.corner {
-  bottom: 48px;
-  right: calc((100% - 30%) / 2 + 10px);
-  transform: none;
-  -webkit-transform: none;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
-  -webkit-transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s;
   width: auto;
   height: auto;
-  z-index: 100;
 }
 
 /* Prevent duplicate owl instances */
@@ -161,15 +165,8 @@
     max-height: 140px;
   }
 
-  .owl-animation-wrapper.corner {
-    bottom: 48px;
-    /* Positioned on footer line */
-    right: 16px;
-    /* mobile: content is near full width, align to safe margin */
-    width: auto;
-    height: auto;
-    top: auto;
-    left: auto;
+  :host {
+    transform: translateX(calc(-50% + 4px));
   }
 }
 
@@ -185,14 +182,8 @@
     max-height: 140px;
   }
 
-  .owl-animation-wrapper.corner {
-    bottom: 48px;
-    /* Positioned on footer line */
-    right: 16px;
-    width: auto;
-    height: auto;
-    top: auto;
-    left: auto;
+  :host {
+    transform: translateX(calc(-50% + 4px));
   }
 }
 
@@ -208,14 +199,8 @@
     max-height: 120px;
   }
 
-  .owl-animation-wrapper.corner {
-    bottom: 48px;
-    /* Positioned on footer line */
-    right: 12px;
-    width: auto;
-    height: auto;
-    top: auto;
-    left: auto;
+  :host {
+    transform: translateX(calc(-50% + 3px));
   }
 }
 
@@ -231,75 +216,14 @@
     max-height: 100px;
   }
 
-  .owl-animation-wrapper.corner {
-    bottom: 48px;
-    /* Positioned on footer line */
-    right: 10px;
-    width: auto;
-    height: auto;
-    top: auto;
-    left: auto;
+  :host {
+    transform: translateX(calc(-50% + 2px));
   }
 }
 
-/* For wide screens where content is 30% of width, calculation above applies.
-   For smaller screens, fall back to safe margins to keep it visible within content. */
+/* Deprecated fixed-position column calcs — owl is now nested in Forum tab */
 @media (max-width: 1024px) {
-
-  .owl-animation-wrapper,
-  .owl-animation-wrapper.corner {
-    right: 16px;
-  }
-}
-
-/* Tablet: match 50% col_cw column */
-@media (min-width: 600px) and (max-width: 1024px) {
-
-  .owl-animation-wrapper {
-    right: calc((100% - 50%) / 2 + 16px);
-  }
-
-  .owl-animation-wrapper.corner {
-    right: calc((100% - 50%) / 2 + 10px);
-  }
-}
-
-/* Ultra-wide: match col_cw 20% column */
-@media (min-width: 2560px) {
-
-  .owl-animation-wrapper {
-    right: calc((100% - 20%) / 2 + 16px);
-  }
-
-  .owl-animation-wrapper.corner {
-    right: calc((100% - 20%) / 2 + 10px);
-  }
-}
-
-/* Ultra-wide: match col-lg-4 10.33% column */
-@media (min-width: 5120px) {
-
-  .owl-animation-wrapper {
-    right: calc((100% - 10.333333%) / 2 + 16px);
-  }
-
-  .owl-animation-wrapper.corner {
-    right: calc((100% - 10.333333%) / 2 + 10px);
-  }
-}
-
-/* Journal page specific positioning - handles col-lg-4 (33.33% width) layout */
-.bg_journal .owl-animation-wrapper,
-.bg_journal .owl-animation-wrapper.corner {
-  right: calc((100% - 33.33%) / 2 + 16px);
-}
-
-@media (max-width: 1024px) {
-
-  .bg_journal .owl-animation-wrapper,
-  .bg_journal .owl-animation-wrapper.corner {
-    right: 16px;
-  }
+  /* intentionally empty: keep breakpoint for any future mobile tweaks */
 }
 
 /* Ensure only one owl instance is visible at a time */
@@ -322,7 +246,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 
   /*   height: 100px;
     width: auto; */
@@ -333,11 +257,14 @@ body:has(#menu:checked) .owl-animation-wrapper {
   /* max-width: 200px; */
   height: 100px;
   transform: scale(0.7);
-  transform-origin: center center;
+  transform-origin: bottom center;
   border-radius: 18px;
   user-select: none;
   pointer-events: none;
   transition: all 0.3s ease;
+  display: block;
+  margin: 0;
+  vertical-align: bottom;
 }
 
 /* Cloud Container - OLLY_HI only: fade in on open, fade out on close */
@@ -481,32 +408,15 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 }
 
-/* Teenagers: perch Olly on the footer bar above the Forum tab (rightmost) */
+/* Teenagers sizing tweaks (position comes from :host nested in Forum) */
 @media (max-width: 1024px) {
-  :host(.teenager-theme) {
-    overflow: visible;
-    position: static;
-  }
-
-  :host(.teenager-theme) .owl-animation-wrapper,
-  :host(.teenager-theme) .owl-animation-wrapper.corner {
-    /* Forum tab center is at 90% from left → 10% from right */
-    --teen-forum-tab-center: 10%;
-    --teen-footer-height: 52px;
-    bottom: calc(var(--teen-footer-height) + env(safe-area-inset-bottom, 0px)) !important;
-    right: max(8px, calc(var(--teen-forum-tab-center) - 22px)) !important;
-    left: auto !important;
-    z-index: 100;
-    overflow: visible;
-  }
-
   :host(.teenager-theme) .static-owl-container {
-    align-items: flex-end;
+    align-items: center;
     overflow: visible;
   }
 
   :host(.teenager-theme) .static-owl-image {
-    transform-origin: bottom right;
+    transform-origin: bottom center;
     height: 80px;
     width: auto;
     max-width: min(80px, 22vw);
@@ -531,12 +441,6 @@ body:has(#menu:checked) .owl-animation-wrapper {
 }
 
 @media (max-width: 480px) {
-  :host(.teenager-theme) .owl-animation-wrapper,
-  :host(.teenager-theme) .owl-animation-wrapper.corner {
-    --teen-footer-height: 48px;
-    right: max(6px, calc(var(--teen-forum-tab-center) - 20px)) !important;
-  }
-
   :host(.teenager-theme) .static-owl-image {
     height: 72px;
     max-width: min(72px, 20vw);
@@ -545,12 +449,6 @@ body:has(#menu:checked) .owl-animation-wrapper {
 }
 
 @media (max-width: 360px) {
-  :host(.teenager-theme) .owl-animation-wrapper,
-  :host(.teenager-theme) .owl-animation-wrapper.corner {
-    --teen-footer-height: 46px;
-    right: max(4px, calc(var(--teen-forum-tab-center) - 18px)) !important;
-  }
-
   :host(.teenager-theme) .static-owl-image {
     height: 68px;
     max-width: min(68px, 18vw);

@@ -37102,10 +37102,9 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
 .toc_adiv_03 .play {
   position: absolute;
-  margin: auto;
-  right: 5%;
-  margin: 0 auto;
-  bottom: 5%;
+  right: 4px;
+  bottom: 4px;
+  margin: 0;
   height: 24px;
   width: 24px;
 }
