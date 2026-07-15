@@ -37,16 +37,19 @@
                 {{getName()}}
               </h4>
             </a>
-
+<!-- <a  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
+              <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe">
+                log in
+              </h4></a> -->
             <!-- <a  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
               <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe">
                 View Profile
-              </h4> -->
-            <!-- <a *ngIf="!subscriber" (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
+              </h4> 
+            <a *ngIf="!subscriber" (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
               <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe">
                 Subscribe now
               </h4>
-            </a> -->
+            </a>  -->
             <div class="row" *ngIf="!subscriber">
               <!-- <div class="row" > -->
               <a id="liSubscribe" (click)="Logevent('/subscription/try-free-and-subscribe', '', 'click_Subscribe')" class="p0 b0px">
@@ -56,7 +59,7 @@
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg"
                         class="img-responsive" *ngIf="!isAdults">
 
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg"
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial_ad.svg"
                         class="img-responsive" *ngIf="isAdults">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 ">
@@ -121,7 +124,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/tlogo.svg" alt=""
                   class="img-responsive" *ngIf="!isAdults">
 
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/alogo.svg  "
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/logo_blackadult.svg"
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
@@ -211,7 +214,7 @@
               <div class="col-md-1 col-sm-1 col-xs-1 p0">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/03.svg"
                   class="img-responsive" *ngIf="!isAdults">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/atest.svg"
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/testimonial_blackad.svg"
                   alt="" class="p0" *ngIf="isAdults">
 
 
@@ -237,7 +240,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/17.svg"
                   class="img-responsive" *ngIf="!isAdults">
 
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg"
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/partnership_blackad.svg"
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
@@ -375,7 +378,7 @@
               <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/07_new.svg" alt=""
                   class="img-responsive" *ngIf="!isAdults">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/agift.svg "
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/subs_blackad.svg "
                   alt="" class="p0" *ngIf="isAdults">
 
 
@@ -416,7 +419,7 @@
               <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/08.svg" alt=""
                   class="img-responsive" *ngIf="!isAdults">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/arefer.svg  "
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/friend_blackad.svg"
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
@@ -545,7 +548,7 @@
               <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/11.svg" alt=""
                   class="img-responsive" *ngIf="!isAdults">
-                <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/atree.svg "
+                <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/tree_blak.svg "
                   alt="" class="p0" *ngIf="isAdults">
 
 
@@ -568,7 +571,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/15.svg" alt=""
                   class="img-responsive" *ngIf="!isAdults">
 
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/asign.svg  "
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/news_blackad.svg "
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
@@ -711,7 +714,7 @@
               <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt=""
                   class="img-responsive" *ngIf="!isAdults">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg"
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/help_blackad.svg"
                   alt="" class="img-responsive back_p" *ngIf="isAdults">
               </div>
               <div class="col-md-10 col-sm-10 col-xs-10 ">
@@ -935,46 +938,49 @@
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_facebook.svg" alt=""
               class="img-responsive" *ngIf="!isAdults">
 
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/aface.svg" alt=""
-              class="img-responsive" *ngIf="isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/facebook_ad.svg" alt=""
+              class="p0" *ngIf="isAdults">
 
           </a>
           <a class="" href="https://twitter.com/happiermeapp" target="_blank">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_twitter.svg" alt=""
               class="img-responsive" *ngIf="!isAdults">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/atwet.svg" alt=""
-              class="img-responsive" *ngIf="isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/twiter_ad.svg" alt=""
+              class="p0" *ngIf="isAdults">
 
 
           </a>
           <a class="" href="https://www.instagram.com/happiermeapp/" target="_blank">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_instagram.svg" alt=""
               class="img-responsive" *ngIf="!isAdults">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ainsta.svg  " alt=""
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/insta_ad.svg  " alt=""
               class="p0" *ngIf="isAdults">
 
           </a>
           <a class="" href="https://www.linkedin.com/company/humanwisdom" target="_blank">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_linkedin.svg" alt=""
               class="img-responsive" *ngIf="!isAdults">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/alink.svg" alt=""
-              class="img-responsive" *ngIf="isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/link_ad.svg" alt=""
+              class="p0" *ngIf="isAdults">
           </a>
           <a class="" href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_youtube.svg" alt=""
               class="img-responsive" *ngIf="!isAdults">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ayou.svg" alt=""
-              class="img-responsive" *ngIf="isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/youtube_ad.svg" alt=""
+              class="p0" *ngIf="isAdults">
           </a>
         </div>
       </div>
 
       <div class="row" *ngIf="isloggedIn">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="logout()"
+          <button type="submit" class="btn btn_ctdout center_flex" data-toggle="modal" (click)="logout()"
             data-target="#modal_logout">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg"
-              class="img-responsive mr5px">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/log_ad.svg"
+              class="img-responsive mr5px"  *ngIf="isAdults">
+
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg" alt=""
+              class="img-responsive mr5px" *ngIf="!isAdults">
             Logout
           </button>
         </div>

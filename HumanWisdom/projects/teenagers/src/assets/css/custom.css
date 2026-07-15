@@ -34277,6 +34277,19 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   padding: 12px 10px;
 }
 
+
+.btn_ctdout {
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 100px;
+    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%;
+}
 .btn_ctd {
   height: 50px;
   width: 100%;

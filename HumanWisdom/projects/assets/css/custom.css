@@ -34531,6 +34531,21 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin-top: 100px;
 }
 
+
+
+.btn_ctdout {
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 100px;
+    /* background: #ED7D6F !important; */
+    background: #FFD889 !important;
+    color: #000 !important;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%;
+}
 .btn_ctd {
   height: 50px;
   width: 100%;
