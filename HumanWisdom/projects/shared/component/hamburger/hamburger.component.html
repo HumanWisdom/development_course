@@ -31,16 +31,16 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt20px mb15px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mt50px mb15px">
             <a (click)="Logevent('/onboarding/user-profile', '', 'click_profile')" *ngIf="enableprofile">
               <h4 class="mt0px mb5px fs_20px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 {{getName()}}
               </h4>
             </a>
-<!-- <a  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
+<a  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
               <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe">
-                log in
-              </h4></a> -->
+                Log in
+              </h4></a> 
             <!-- <a  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
               <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82 underline subscribe">
                 View Profile
@@ -63,7 +63,7 @@
                         class="img-responsive" *ngIf="isAdults">
                     </div>
                     <div class="col-md-11 col-sm-11 col-xs-11 ">
-                      <h4 class="fw_500 fs_15px lh_16px  mtb0px   underline subscribe"
+                      <h4 class="fw_600 fs_15px lh_16px  mtb0px   underline subscribe"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
                         Start your free trial
                       </h4>
@@ -932,7 +932,7 @@
         </div>
       </li>
       <!-- /multilayer li for help & support -->
-      <div class="row mtb50px">
+      <div class="row mt80px mb50px">
         <div class="col-md-12 col-sm-12 col-xs-12 hamburger_sociali p0">
           <a class="" href="https://facebook.com/happiermeapp/" target="_blank">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_facebook.svg" alt=""
