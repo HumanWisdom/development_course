@@ -15,6 +15,7 @@ import { TeenagersService } from '../../../../teenagers/src/app/teenagers/teenag
 })
 export class MyDailyPracticePage implements OnInit, OnDestroy {
   isAdults = false;
+  dailyPractices: any[] = [];
   dailybreathTitle:string ='';
   videoLink:string ='';
   userName:string ='';
@@ -280,6 +281,14 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
             this.activeExerciseImg = podcastItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/webp/podcast/01.webp';
           }
         }
+
+        // 5. Populate dailyPractices for dynamic looping
+        this.dailyPractices = res.filter(item => {
+          const type = item.DailyPractise?.toLowerCase();
+          const typeId = item.dailyPractTypeID;
+          return type !== 'quote of the day' && typeId !== '2' && 
+                 type !== 'try this today' && typeId !== '4';
+        });
       }
     });
   }
@@ -334,6 +343,76 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
           (!this.isSubscriber && this.journalHits >= 2);
   }
 
+  getPracticeImg(item: any): string {
+    if (item.imgPath && item.imgPath.trim() !== '') {
+      if (item.imgPath.startsWith('http')) {
+        return item.imgPath;
+      }
+      return 'https://d1tenzemoxuh75.cloudfront.net' + (item.imgPath.startsWith('/') ? '' : '/') + item.imgPath;
+    }
+    const type = item.DailyPractise?.toLowerCase();
+    if (type === 'breathing exercise') {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/29.png';
+    } else if (type === 'audio meditation') {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
+    } else if (type === 'short video') {
+      return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait_new/default.webp';
+    } else if (type === 'podcast') {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/webp/podcast/01.webp';
+    } else if (type === 'teentalk') {
+      return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg';
+    } else if (type === 'micro-learning' || type === 'microlearning') {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/77.webp';
+    }
+    return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait_new/default.webp';
+  }
+
+  routePracticeItem(item: any): void {
+    const type = item.DailyPractise?.toLowerCase();
+    const typeId = item.dailyPractTypeID;
+    const textUrl = item.Text_URL;
+
+    if (type === 'breathing exercise' || typeId === '1') {
+      this.routeDailyPractice(1);
+    } else if (type === 'audio meditation' || typeId === '3') {
+      this.routeDailyPractice(4);
+    } else if (type === 'short video' || typeId === '5' || typeId === '6') {
+      this.routeDailyPractice(0);
+    } else if (type === 'teentalk' || typeId === '8') {
+      this.routeDailyPractice(8);
+    } else if (type === 'podcast' || typeId === '9') {
+      this.routeDailyPractice(9);
+    } else if (type === 'micro-learning' || type === 'microlearning' || typeId === '7') {
+      this.logeventservice.logEvent('click_microlearning');
+      if (this.isSubscriber) {
+        this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/inner`, textUrl]);
+      } else {
+        const key = `dly_prac_ml_${textUrl}`;
+        let hits = +(localStorage.getItem(key) || 0);
+        if (hits >= 2) {
+          this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+          return;
+        }
+        localStorage.setItem(key, String(hits + 1));
+        this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/inner`, textUrl]);
+      }
+    }
+  }
+
+  routeToCoach(): void {
+    const prefix = SharedService.getprogramName();
+    if (prefix === 'teenagers') {
+      this.router.navigate([`/${prefix}/coach`]);
+    } else {
+      this.router.navigate([`/${prefix}/contact-coach`]);
+    }
+  }
+
+  routeToForum(): void {
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`/${prefix}/forum`]);
+  }
+
 routeDailyPractice(id: number): void {
   /* analytics */
   if (id === 0)       this.logeventservice.logEvent('click_daily_inspiration');
@@ -385,6 +464,12 @@ routeActiveExercise() {
   routeToDashboard(){
     this.logeventservice.logEvent('click_proceed_to_home' );    
     this.router.navigate([SharedService.getDashboardUrls()]);
+  }
+
+  routeToGuidedJourneys(): void {
+    this.logeventservice.logEvent('click_guided_journeys');
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`${prefix}/guided-journeys`]);
   }
 
   goToSubscribe(): void {
