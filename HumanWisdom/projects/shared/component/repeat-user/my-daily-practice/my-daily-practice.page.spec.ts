@@ -64,7 +64,7 @@ describe('MyDailyPracticePage - ngOnInit', () => {
     spyOn(SharedService, 'getUserName').and.returnValue('Test User');
     spyOn(SharedService, 'getUserId').and.returnValue(123);
     spyOn(SharedService, 'getprogramName').and.returnValue('teenagers');
-    spyOn(SharedService, 'getDashboardUrls').and.returnValue('/teenagers/home');
+    spyOn(SharedService, 'getDashboardUrls').and.returnValue('/teenagers/home' as any);
     Object.defineProperty(SharedService, 'isRoutedFromLogin', {
       writable: true,
       configurable: true,
@@ -1165,7 +1165,7 @@ describe('MyDailyPracticePage - ngOnInit', () => {
       mockProgramId = ProgramType.Adults;
 
       // Act
-      component.routeResume({}, true);
+      component.routeResume(true);
 
       // Assert
       expect(mockAdultsService.setmoduleID).toHaveBeenCalledWith('5', '/test-url', '/test-url');
@@ -1177,7 +1177,7 @@ describe('MyDailyPracticePage - ngOnInit', () => {
       mockProgramId = ProgramType.Adults;
 
       // Act
-      component.routeResume({}, true);
+      component.routeResume(true);
 
       // Assert
       expect(mockAdultsService.setmoduleID).toHaveBeenCalledWith('23', '/adults/happiness/', '/adults/happiness/');
@@ -1189,7 +1189,7 @@ describe('MyDailyPracticePage - ngOnInit', () => {
       mockProgramId = ProgramType.Teenagers;
 
       // Act
-      component.routeResume({}, true);
+      component.routeResume(true);
 
       // Assert
       expect(mockTeenagersService.setmoduleID).toHaveBeenCalledWith('3', '/teen-url', '/teen-url');

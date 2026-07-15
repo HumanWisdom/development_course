@@ -300,3 +300,892 @@
 .v1_3_bg_splash_teens .mdp_add_to_journal {
   background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
 }
+
+/* Premium Figma Redesign Card Styles */
+
+/* "CONTINUE WHERE YOU LEFT" section label */
+.continue-section-label {
+  font-family: Poppins, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 140% !important;
+  letter-spacing: 0% !important;
+}
+
+.continue-card-new {
+  /* Adults: loading/skeleton bg; overridden to teens bg via parent class below */
+  background: #FFE8BB !important;
+  border-radius: 16px !important;
+  padding: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* Teens variant: dark card bg */
+.v1_3_bg_splash_teens .continue-card-new {
+  background: #0C2B5F !important;
+
+  .continue-tag {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .continue-title {
+    color: #ffffff !important;
+  }
+}
+
+.continue-thumb-new {
+  width: 100px !important;
+  height: 100px !important;
+  flex-shrink: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+
+  img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
+
+.continue-text-new {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+
+  .continue-tag {
+    font-family: Poppins, sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 130% !important;
+    letter-spacing: 0% !important;
+    vertical-align: middle !important;
+    color: #000000 !important;
+    margin-bottom: 4px !important;
+    text-transform: uppercase !important;
+  }
+
+  .continue-title {
+    font-family: Poppins, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    line-height: 130% !important;
+    letter-spacing: 0% !important;
+    vertical-align: middle !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.v1_3_bg_splash_teens .continue-arrow-new i {
+  color: #ffffff !important;
+}
+
+/* Side by side section */
+.mood-wellness-row-new {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  padding: 0 0px 20px !important;
+}
+
+.mood-card-new {
+  flex: 1 !important;
+  height: 115px !important;
+  border-radius: 16px !important;
+  background: linear-gradient(180deg, #7E3157 0%, #220E3F 100%) !important;
+  padding: 12px 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  transition: transform 0.2s ease;
+
+  .mood-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+
+  .mood-title {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin: 0 0 2px 0 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+
+  .mood-sub {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+}
+
+.wellness-card-new {
+  flex: 1 !important;
+  height: 115px !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, #3DCFC4 0%, #2BB5AA 100%) !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  .wellness-score-num {
+    color: #ffffff !important;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    margin: 0 0 2px 0 !important;
+    line-height: 1.1 !important;
+  }
+
+  .wellness-title {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .wellness-link {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+
+    .wellness-chevron {
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0 !important;
+
+      svg {
+        width: 12px !important;
+        height: 7.27px !important;
+        display: block !important;
+        transform: rotate(270deg);
+      }
+    }
+  }
+}
+
+/* Guided Journeys */
+.guided-journey-card-new {
+  background: #FFE8BB !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  margin-bottom: 15px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+
+  .guided-journey-img-wrap-new {
+    width: 100% !important;
+    aspect-ratio: 16/9 !important;
+    overflow: hidden !important;
+    
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+  }
+
+  .guided-journey-body-new {
+    padding: 30px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    .guided-journey-title {
+      font-size: 21px !important;
+      font-weight: 600 !important;
+      color: #000000 !important;
+      margin: 0 0 10px 0 !important;
+      line-height: 1.3 !important;
+    }
+
+    .guided-journey-desc {
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      color: rgba(0, 0, 0, 0.7) !important;
+      margin: 0 0 15px 0 !important;
+      line-height: 1.5 !important;
+    }
+
+    .guided-journey-btn-new {
+      background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+      border: none !important;
+      border-radius: 30px !important;
+      padding: 14px 30px !important;
+      color: #ffffff !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      width: 100% !important;
+      max-width: 280px !important;
+    }
+  }
+}
+
+/* Dynamic Practice Cards Redesign */
+.practice-card-new {
+  background: #FFE8BB !important;
+  border-radius: 16px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex !important;
+  gap: 14px !important;
+  margin-bottom: 20px !important;
+
+
+  /* Horizontal layout variant (Breathing, Meditation, Podcast, TeenTalk) */
+  &.horizontal-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 10px !important;
+
+    .practice-thumb-new.horizontal-thumb {
+      width: 100px !important;
+      height: 100px !important;
+      position: relative !important;
+      flex-shrink: 0 !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+
+      img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+      }
+    }
+
+    .practice-text-new.horizontal-text {
+      flex-grow: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      min-width: 0 !important;
+
+      .practice-title-text {
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        color: #000000 !important;
+        margin: 0 0 4px 0 !important;
+        line-height: 1.25 !important;
+      }
+
+      .practice-category-text {
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        color: rgba(0, 0, 0, 0.5) !important;
+        margin: 0 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+      }
+    }
+  }
+
+  /* Vertical layout variant (Short video, Micro-learning) */
+  &.vertical-card {
+    flex-direction: column !important;
+    padding: 12px !important;
+
+    .practice-thumb-new.vertical-thumb {
+      width: 100% !important;
+      aspect-ratio: 16/9 !important;
+      position: relative !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+
+      img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+      }
+    }
+
+    .practice-text-new.vertical-text {
+      padding: 4px 6px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 4px !important;
+
+      .practice-title-text {
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+      }
+
+      .practice-category-text {
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        color: rgba(0, 0, 0, 0.5) !important;
+        margin: 0 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+      }
+    }
+  }
+}
+
+/* Play/Audio Overlay Buttons on cards */
+.play-icon-overlay-large,
+.play-icon-overlay-small,
+.audio-icon-overlay-small {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.play-icon-overlay-large {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.play-icon-overlay-small {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.audio-icon-overlay-small {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+/* Contact a Coach Card */
+.coach-card-new {
+  background: linear-gradient(135deg, #6C2366 0%, #1A0D2E 100%) !important;
+  border-radius: 16px !important;
+  padding: 18px 20px !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+
+
+  .coach-icon-wrap {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .coach-text-wrap {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+
+    .coach-title {
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      margin: 0 !important;
+      line-height: 1.2 !important;
+    }
+
+    .coach-desc {
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      color: rgba(255, 255, 255, 0.8) !important;
+      margin: 0 !important;
+      line-height: 1.4 !important;
+    }
+  }
+
+  .coach-arrow-wrap {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+
+    svg {
+      stroke: #ffffff !important;
+    }
+  }
+}
+
+/* Quote of the Day Card */
+.quote-card-new {
+  background: #FFE8BB !important;
+  border: 4px solid #FFD889;
+  border-radius: 12px !important;
+  padding: 40px 30px !important;
+  // margin-bottom: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+  .quote-header {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 22px !important;
+    width: 100% !important;
+  }
+
+  .speech-bubble-wrap {
+    position: relative !important;
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+    border: 1.5px solid #FFD4A0 !important;
+    border-radius: 20px 20px 20px 0px !important;
+    padding: 10px 24px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    display: inline-block !important;
+  }
+
+  .speech-bubble-text {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+  }
+
+  .speech-bubble-tail {
+    position: absolute !important;
+    bottom: -13px !important;
+    left: -1.5px !important;
+    width: 24px !important;
+    height: 14px !important;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #FFD4A0,
+      #FFD4A0 2px,
+      #ED7D6F 2px,
+      #ED7D6F 4px
+    ) !important;
+    clip-path: polygon(0 0, 100% 0, 40% 100%, 0 0) !important;
+    border-left: 1.5px solid #FFD4A0 !important;
+    border-bottom: 1.5px solid #FFD4A0 !important;
+  }
+
+  .quote-text {
+    color: #000000 !important;
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Italic;
+    font-size: 15px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+
+  }
+
+  .quote-author {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #000000 !important;
+    line-height: 150%;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+}
+
+/* Daily Challenge Card */
+.challenge-card-new {
+  background: #FFE8BB !important;
+  border: 4px solid #FFD889;
+  border-radius: 12px !important;
+  padding: 40px 30px !important;
+  // margin-bottom: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+  .challenge-icon-wrap {
+    margin-bottom: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    .challenge-icon {
+      width: 44px !important;
+      height: 44px !important;
+    }
+  }
+
+  .challenge-title {
+    font-size: 21px !important;
+    font-weight: 600 !important;
+    line-height: 130%;
+    color: #000000 !important;
+    margin: 0 0 10px 0 !important;
+    text-align: center !important;
+  }
+
+  .challenge-text {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #000000 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+}
+
+/* Question of the Day Card */
+.question-card-new {
+  background: #FFE8BB !important;
+  border: 4px solid #FFD889;
+  border-radius: 12px !important;
+  padding: 30px 20px !important;
+  // margin-bottom: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+  .question-illustration {
+    margin-bottom: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .question-title {
+    font-size: 21px !important;
+    font-weight: 600 !important;
+    line-height: 130%;
+    color: #000000 !important;
+    margin: 0 0 10px 0 !important;
+    text-align: center !important;
+  }
+
+  .question-text {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #000000 !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .question-input-wrap {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+
+    .question-input-field {
+      width: 100% !important;
+      height: 50px !important;
+      background: #ffffff !important;
+      border: 1px solid #FFE3C0 !important;
+      border-radius: 12px !important;
+      padding: 12px 16px !important;
+      font-size: 14px !important;
+      color: #000000 !important;
+      resize: none !important;
+      outline: none !important;
+      text-align: left !important;
+
+      &::placeholder {
+        color: #A3A3A3 !important;
+      }
+      
+      &.disabled-field {
+        background: #F5F5F5 !important;
+        color: #A3A3A3 !important;
+        cursor: not-allowed !important;
+      }
+    }
+  }
+
+  .mdp_add_to_journal {
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .question-footer {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: #000000B2 !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+}
+
+/* Community Forum Card */
+.forum-card-new {
+  background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%) !important;
+  border-radius: 16px !important;
+  padding: 16px 20px !important;
+  // margin-bottom: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+
+  .forum-icon-wrap {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    .forum-icon {
+      width: 80px !important;
+      height: auto !important;
+      object-fit: contain !important;
+    }
+  }
+
+  .forum-text-wrap {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+
+    .forum-title {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      color: #000000 !important;
+      margin: 0 !important;
+      line-height: 1.3 !important;
+    }
+
+    .forum-desc {
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      color: #000000 !important;
+      margin: 0 !important;
+      line-height: 1.5 !important;
+    }
+  }
+}
+
+
+
+/* ============================================================
+   TEENS THEME OVERRIDES (.v1_3_bg_splash_teens)
+   Blue palette — all new card components
+   ============================================================ */
+
+.v1_3_bg_splash_teens {
+
+  /* ---- Practice cards ---- */
+  .practice-card-new {
+    background: #0C2B5F !important;
+
+    &.horizontal-card {
+      .practice-text-new.horizontal-text {
+        .practice-title-text {
+          color: #ffffff !important;
+        }
+        .practice-category-text {
+          color: rgba(255, 255, 255, 0.6) !important;
+        }
+      }
+    }
+
+    &.vertical-card {
+      .practice-text-new.vertical-text {
+        .practice-title-text {
+          color: #ffffff !important;
+        }
+        .practice-category-text {
+          color: rgba(255, 255, 255, 0.6) !important;
+        }
+      }
+    }
+  }
+
+  /* flat selectors as extra fallback */
+  .practice-card-new .practice-title-text {
+    color: #ffffff !important;
+  }
+
+  .practice-card-new .practice-category-text {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  /* ---- Continue where you left ---- */
+  .continue-card-new {
+    background: #0C2B5F !important;
+
+    .continue-tag {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .continue-title {
+      color: #ffffff !important;
+    }
+  }
+
+  .continue-arrow-new i {
+    color: #ffffff !important;
+  }
+
+  /* ---- Wellness score card ---- */
+  .wellness-card-new {
+    background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%) !important;
+  }
+  .mood-card-new {
+    background: linear-gradient(180deg, #6183BE 0%, #4267A5 100%) !important;
+  }
+
+  /* ---- Guided Journeys card ---- */
+  .guided-journey-card-new {
+    background: #0C2B5F !important;
+
+    .guided-journey-title {
+      color: #ffffff !important;
+    }
+
+    .guided-journey-desc {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .guided-journey-btn-new {
+      background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+    }
+  }
+
+  /* ---- Contact a coach (box_v3_01) ---- */
+  .box_v3_01 {
+    background: linear-gradient(180deg, #6183BE 0%, #4267A5 100%) !important;
+    border-radius: 16px !important;
+  }
+
+  /* ---- Quote of the day ---- */
+  .quote-card-new {
+    background: #0C2B5F !important;
+    border-color: #1A3B7A !important;
+
+    .quote-text {
+      color: #ffffff !important;
+    }
+
+    .quote-author {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+
+  /* ---- Daily Challenge ---- */
+  .challenge-card-new {
+    background: #0C2B5F !important;
+    border-color: #1A3B7A !important;
+
+    .challenge-title {
+      color: #ffffff !important;
+    }
+
+    .challenge-text {
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+  }
+
+  /* ---- Question of the day ---- */
+  .question-card-new {
+    background: #0C2B5F !important;
+    border-color: #1A3B7A !important;
+
+    .question-title {
+      color: #ffffff !important;
+    }
+
+    .question-text {
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .question-input-wrap {
+      .question-input-field {
+        background: #031A41 !important;
+        border-color: #1A3B7A !important;
+        color: #ffffff !important;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.4) !important;
+        }
+
+        &.disabled-field {
+          background: #031A41 !important;
+          color: rgba(255, 255, 255, 0.4) !important;
+        }
+      }
+    }
+
+    .question-footer {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+  }
+
+  /* ---- Community Forum card ---- */
+  .forum-card-new {
+    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+
+    .forum-title {
+      color: #ffffff !important;
+    }
+
+    .forum-desc {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+  }
+
+  /* ---- HR dividers ---- */
+  .hr_style_v3_02 {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+}

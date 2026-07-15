@@ -771,7 +771,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     }
 
     if (this.url.toString().includes("https://") == false)
-      this.url = this.url === '' || this.url.includes('undefined') ? (this.isAdults? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/profile_default.svg': 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg') : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
+      this.url = this.url === '' || this.url.includes('undefined') ? (this.isAdults? '': 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/user/profile_default.svg') : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/tiles/' + this.url;
     console.log("url:" + this.url)
     this.cd.detectChanges();
   }
