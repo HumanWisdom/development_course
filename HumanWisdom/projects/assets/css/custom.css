@@ -37560,6 +37560,12 @@ span {
   opacity: 50%;
 }
 
+.hr_style_v3_15 {
+  border: 1px solid #000000;
+  opacity: 0.1;
+  margin: 0 0 20px 0;
+}
+
 .dflex_start {
   display: flex;
   align-items: start;
