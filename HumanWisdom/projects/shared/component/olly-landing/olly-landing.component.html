@@ -18,14 +18,6 @@
               <!-- Main landing view -->
               <div class="olly-landing-content" *ngIf="!showQuestionsView">
 
-                <!-- Streak badge — logged-in teenagers only -->
-                <div class="streak-badge-row" *ngIf="!isIntegrated && !isAdults && isLoggedIn && streak">
-                  <div class="streak-badge">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/streak.svg" alt="streak" class="streak-icon" />
-                    <span class="streak-label">Streak: <strong>{{ streak }}</strong> days</span>
-                  </div>
-                </div>
-
                 <!-- Greeting -->
                 <h1 class="greeting-title" *ngIf="!isIntegrated">Hi {{ username ? username : 'there' }}!</h1>
 

@@ -13,7 +13,13 @@
           <div class="x_content p0">
             <div class="row  mt70px mb5px" *ngIf="!isQuestionsViewActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                <h4 class="mt50px mb5px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                <div class="mdp-streak-row" *ngIf="isloggedIn && streak">
+                  <div class="mdp-streak-badge" [ngClass]="isAdults ? 'mdp-streak-badge--adults' : 'mdp-streak-badge--teens'">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/streak_teenn.svg" alt="streak" class="mdp-streak-icon" />
+                    <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> days</span>
+                  </div>
+                </div>
+                <h4 class="mb5px fw_600 fs_24px lh_140p" [ngClass]="[isAdults ? 'fc_000000' : 'fc_ffffff', (isloggedIn && streak) ? 'mt10px' : 'mt50px']">
                   <span *ngIf="guest || !userName">Hi there!</span>
                   <span *ngIf="!guest && userName">Hi {{userName}}!</span>
                 </h4>

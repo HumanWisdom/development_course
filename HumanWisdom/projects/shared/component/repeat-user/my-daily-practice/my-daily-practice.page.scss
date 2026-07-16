@@ -1189,3 +1189,47 @@
     border-color: rgba(255, 255, 255, 0.15) !important;
   }
 }
+
+// Streak badge on my-daily-practice page
+.mdp-streak-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+.mdp-streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 45px;
+  padding: 6px 14px;
+  height: 34px;
+  box-sizing: border-box;
+
+  &--adults {
+    background-color: #FFE8BB;
+  }
+
+  &--teens {
+    background-color: #F5C842;
+  }
+
+  .mdp-streak-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .mdp-streak-label {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #000000;
+    white-space: nowrap;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+}
