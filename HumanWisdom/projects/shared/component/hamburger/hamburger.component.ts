@@ -768,6 +768,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       if (detail && detail['UserImagePath'] != '') {
         this.url = detail['UserImagePath'].replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/+/g, '/') + '?' + (new Date()).getTime();
       }
+      
     }
 
     if (this.url.toString().includes("https://") == false)
