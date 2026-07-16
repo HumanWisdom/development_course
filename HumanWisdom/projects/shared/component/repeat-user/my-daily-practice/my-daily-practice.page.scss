@@ -465,7 +465,7 @@
     font-size: 15px !important;
     font-weight: 600 !important;
     margin: 0 0 8px 0 !important;
-    line-height: 1.2 !important;
+    line-height: 1.5 !important;
   }
 
   .wellness-link {
@@ -503,7 +503,7 @@
 
   .guided-journey-img-wrap-new {
     width: 100% !important;
-    aspect-ratio: 16/9 !important;
+    aspect-ratio: 335/150 !important;
     overflow: hidden !important;
     
     img {
@@ -765,7 +765,7 @@
   border: 4px solid #FFD889;
   border-radius: 12px !important;
   padding: 40px 30px !important;
-  // margin-bottom: 15px !important;
+  margin-bottom: 20px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -841,7 +841,7 @@
   border: 4px solid #FFD889;
   border-radius: 12px !important;
   padding: 40px 30px !important;
-  // margin-bottom: 15px !important;
+  margin-bottom: 20px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -1187,5 +1187,49 @@
   /* ---- HR dividers ---- */
   .hr_style_v3_02 {
     border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+}
+
+// Streak badge on my-daily-practice page
+.mdp-streak-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+.mdp-streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 45px;
+  padding: 6px 14px;
+  height: 34px;
+  box-sizing: border-box;
+
+  &--adults {
+    background-color: #FFE8BB;
+  }
+
+  &--teens {
+    background-color: #F5C842;
+  }
+
+  .mdp-streak-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .mdp-streak-label {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #000000;
+    white-space: nowrap;
+
+    strong {
+      font-weight: 700;
+    }
   }
 }

@@ -13,12 +13,18 @@
           <div class="x_content p0">
             <div class="row  mt70px mb5px" *ngIf="!isQuestionsViewActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                <h4 class="mt50px mb5px fw_600 fs_24px lh_140p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                <div class="mdp-streak-row" *ngIf="isloggedIn && streak">
+                  <div class="mdp-streak-badge" [ngClass]="isAdults ? 'mdp-streak-badge--adults' : 'mdp-streak-badge--teens'">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/streak_teenn.svg" alt="streak" class="mdp-streak-icon" />
+                    <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> days</span>
+                  </div>
+                </div>
+                <h4 class="mb5px fw_600 fs_24px lh_140p" [ngClass]="[isAdults ? 'fc_000000' : 'fc_ffffff', (isloggedIn && streak) ? 'mt10px' : 'mt50px']">
                   <span *ngIf="guest || !userName">Hi there!</span>
                   <span *ngIf="!guest && userName">Hi {{userName}}!</span>
                 </h4>
-                <p class="fs_15px fw_400 lh_140p mt0px mb30px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_7'"
-                  style="opacity: 0.9;">
+                <p class="fs_15px fw_400 lh_140p mt0px mb30px" [ngClass]="isAdults ? 'fc_000000_0_7' : 'fc_ffffff_0_7'"
+                  style="opacity: 0.75;">
                   Take a moment for yourself today.
                 </p>
               </div>
@@ -59,7 +65,7 @@
                 </a>
 
                 <!-- hr -->
-                <div class="row" style="margin-left: 0; margin-right: 0; margin-top: 5px; margin-bottom: 10px;">
+                <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <hr class="hr_style_v3_02">
                   </div>
@@ -89,12 +95,14 @@
 
                 <!-- Right card: Wellness score -->
                 <div class="wellness-card-new" (click)="survey()">
-                  <h4 class="wellness-score-num">
-                    <ng-container
-                      *ngIf="loginResponse && loginResponse.hwScore; else noScoreCard">{{(loginResponse.hwScore=='')?0:loginResponse.hwScore}}%</ng-container>
-                    <ng-template #noScoreCard>0%</ng-template>
-                  </h4>
-                  <h4 class="wellness-title">Wellness score</h4>
+                  <ng-container
+                    *ngIf="loginResponse && loginResponse.hwScore && loginResponse.hwScore !== '' && loginResponse.hwScore !== '0' && loginResponse.hwScore !== 0; else noScoreCard">
+                    <h4 class="wellness-score-num">{{loginResponse.hwScore}}%</h4>
+                    <h4 class="wellness-title">Wellness score</h4>
+                  </ng-container>
+                  <ng-template #noScoreCard>
+                    <h4 class="wellness-title">Find out your<br>Wellness score</h4>
+                  </ng-template>
                   <a (click)="survey(); $event.stopPropagation()" class="wellness-link">
                     Take the survey <span class="wellness-chevron">
                       <svg width="12" height="7.27" viewBox="0 0 12 7.27" fill="none"
@@ -137,7 +145,7 @@
                 </div>
               </div>
               <!-- /hr -->
-              <div class="row" *ngIf="!isSubscriber">
+              <!-- <div class="row" *ngIf="!isSubscriber">
 
 
 
@@ -154,33 +162,30 @@
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_teen.svg"
                           alt="" class="p0 session_img">
                       </div>
-                      <!-- show only when user is NOT subscribed -->
 
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px">
-                        <div class="row">
-                          <h4 class="mtb0px fs_21px lh_130p"
-                            [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
-                            Start your free trial today!
-                          </h4>
-                          <h4 class="mtb0px fs_12px fw_400" style="line-height:18px;"
-                            [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
-                            Get expert guidance and personalized tools with HappierMe Premium
-                          </h4>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 plr20px">
+                <div class="row">
+                  <h4 class="mtb0px fs_21px lh_130p" [ngClass]="isAdults ? 'fc_ffffff fw_500' : 'fc_0C2B5F fw_600'">
+                    Start your free trial today!
+                  </h4>
+                  <h4 class="mtb0px fs_12px fw_400" style="line-height:18px;"
+                    [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
+                    Get expert guidance and personalized tools with HappierMe Premium
+                  </h4>
                 </div>
-
-                <!-- CONTINUE WHERE YOU LEFT -->
               </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div> -->
               <!-- hr -->
-              <div class="row" *ngIf="!isSubscriber">
+              <!-- <div class="row" *ngIf="!isSubscriber">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
                   <hr class="hr_style_v3_02">
                 </div>
-              </div>
+              </div> -->
               <!-- /hr -->
 
 
@@ -266,7 +271,8 @@
                         <a routerLink="" (click)="routeToCoach()">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
                             <div class="col-2 p0 mb8px text-center">
-                              <img [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_tenn.svg'">
+                              <img
+                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_tenn.svg'">
                             </div>
 
                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
@@ -300,20 +306,13 @@
                   <!-- Quote of the day -->
                   <div class="quote-card-new" *ngIf="dailyinstext">
                     <div class="quote-header">
-                      <img [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quote_ad.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quete_teenn.webp'"
+                      <img
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quote_ad.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quete_teenn.webp'"
                         alt="Quote of the day">
                     </div>
                     <p class="quote-text">“{{dailyinstext}}”</p>
                     <p class="quote-author">{{dailyinsAuthor}}</p>
                   </div>
-
-                  <!-- hr -->
-                  <div class="row" *ngIf="dailyinstext">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
-                      <hr class="hr_style_v3_02">
-                    </div>
-                  </div>
-                  <!-- /hr -->
 
                   <!-- Daily Challenge -->
                   <div class="challenge-card-new" *ngIf="trythistoday">
@@ -326,18 +325,11 @@
                     <p class="challenge-text">{{trythistoday}}</p>
                   </div>
 
-                  <!-- hr -->
-                  <div class="row" *ngIf="trythistoday">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
-                      <hr class="hr_style_v3_02">
-                    </div>
-                  </div>
-                  <!-- /hr -->
-
                   <!-- Question of the day -->
                   <div class="question-card-new" *ngIf="dailyqus">
                     <div class="question-illustration">
-                      <img [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_ad.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_teenn.webp'"
+                      <img
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_ad.webp' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_teenn.webp'"
                         alt="Question of the day">
                     </div>
                     <h4 class="question-title">Question of the day</h4>
@@ -376,7 +368,8 @@
                   <!-- Community Forum -->
                   <a (click)="routeToForum()" class="forum-card-new">
                     <div class="forum-icon-wrap">
-                      <img [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_ad.png' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/foram_tenn.webp'"
+                      <img
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_ad.png' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/foram_tenn.webp'"
                         alt="Forum chat bubbles" class="forum-icon">
                     </div>
                     <div class="forum-text-wrap">
