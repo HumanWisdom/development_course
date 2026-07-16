@@ -283,12 +283,51 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
         }
 
         // 5. Populate dailyPractices for dynamic looping
+        // Exclude: quote (type 2), try-this-today (type 4),
+        // and the non-selected short video (type 5 vs 6 alternate),
+        // and the non-selected exercise (breathing vs meditation / teentalk vs podcast alternate)
+        const excludedShortTypeId = shortVideos.length > 1
+          ? (selectedShort?.dailyPractTypeID === '5' ? '6' : '5')
+          : null;
+
+        let excludedExerciseTypeId: string | null = null;
+        if (this.isAdults) {
+          const breathingItem = res.find(item => item.dailyPractTypeID === '1');
+          const meditationItem = res.find(item => item.dailyPractTypeID === '3');
+          if (breathingItem && meditationItem) {
+            excludedExerciseTypeId = this.selectedExerciseType === 'breathing' ? '3' : '1';
+          }
+        } else {
+          const teenTalkItem = res.find(item => item.dailyPractTypeID === '8');
+          const podcastItem = res.find(item => item.dailyPractTypeID === '9');
+          if (teenTalkItem && podcastItem) {
+            excludedExerciseTypeId = this.selectedExerciseType === 'teentalk' ? '9' : '8';
+          }
+        }
+
         this.dailyPractices = res.filter(item => {
           const type = item.DailyPractise?.toLowerCase();
           const typeId = item.dailyPractTypeID;
-          return type !== 'quote of the day' && typeId !== '2' && 
-                 type !== 'try this today' && typeId !== '4';
+          if (type === 'quote of the day' || typeId === '2') return false;
+          if (type === 'try this today' || typeId === '4') return false;
+          if (excludedShortTypeId && typeId === excludedShortTypeId) return false;
+          if (excludedExerciseTypeId && typeId === excludedExerciseTypeId) return false;
+          return true;
         });
+
+        // Enforce display order: breathing/meditation → short video → podcast → micro-learning
+        const typeOrder: { [id: string]: number } = {
+          '1': 1, // Breathing exercise
+          '3': 1, // Audio meditation
+          '8': 1, // TalkTalk (teens alternates with podcast at same slot)
+          '5': 2, // Short video
+          '6': 2, // Short video (voices)
+          '9': 3, // Podcast
+          '7': 4, // Micro-learning
+        };
+        this.dailyPractices.sort((a, b) =>
+          (typeOrder[a.dailyPractTypeID] ?? 99) - (typeOrder[b.dailyPractTypeID] ?? 99)
+        );
       }
     });
   }
@@ -370,42 +409,100 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   routePracticeItem(item: any): void {
     const type = item.DailyPractise?.toLowerCase();
     const typeId = item.dailyPractTypeID;
-    const textUrl = item.Text_URL;
+    const apiUrl: string = item.url || '';
+    const textUrl: string = item.Text_URL || '';
+    const prefix = SharedService.getprogramName();
 
+    // Micro-learning: route by Text_URL (module id)
+    if (type === 'micro-learning' || type === 'microlearning' || typeId === '7') {
+      this.logeventservice.logEvent('click_microlearning');
+      const mlId = textUrl || item.id;
+      if (this.isSubscriber) {
+        this.router.navigate([`/${prefix}/micro-learning/inner`, mlId]);
+      } else {
+        const key = `dly_prac_ml_${mlId}`;
+        let hits = +(localStorage.getItem(key) || 0);
+        if (hits >= 2) {
+          this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+          return;
+        }
+        localStorage.setItem(key, String(hits + 1));
+        this.router.navigate([`/${prefix}/micro-learning/inner`, mlId]);
+      }
+      return;
+    }
+
+    // Breathing exercise & Audio meditation: use internal daily-practise player
     if (type === 'breathing exercise' || typeId === '1') {
       this.routeDailyPractice(1);
-    } else if (type === 'audio meditation' || typeId === '3') {
-      this.routeDailyPractice(4);
-    } else if (type === 'short video' || typeId === '5' || typeId === '6') {
+      return;
+    }
+    if (type === 'audio meditation' || typeId === '3') {
+      if (apiUrl) {
+        if (!this.isSubscriber) {
+          const key = `dly_prac_${typeId}`;
+          let hits = +(localStorage.getItem(key) || 0);
+          if (hits >= 2) {
+            this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+            return;
+          }
+          localStorage.setItem(key, String(hits + 1));
+        }
+        this.logeventservice.logEvent('click_daily_meditation');
+        const urlPath = apiUrl.startsWith('/') ? apiUrl : `/${apiUrl}`;
+        this.router.navigate([urlPath]);
+      } else {
+        this.routeDailyPractice(4);
+      }
+      return;
+    }
+
+    // For all other types: navigate via the API-provided url when present
+    if (apiUrl) {
+      // Gate non-subscribers (allow 2 free plays per type)
+      if (!this.isSubscriber) {
+        const key = `dly_prac_${typeId}`;
+        let hits = +(localStorage.getItem(key) || 0);
+        if (hits >= 2) {
+          this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+          return;
+        }
+        localStorage.setItem(key, String(hits + 1));
+      }
+
+      // Log analytics
+      if (type === 'short video') this.logeventservice.logEvent('click_daily_inspiration');
+      else if (type === 'teentalk' || typeId === '8') this.logeventservice.logEvent('click_teentalk');
+      else if (type === 'podcast' || typeId === '9') this.logeventservice.logEvent('click_podcast');
+
+      // The url field from the API is a relative path starting with /
+      // Route: parse query params if any, otherwise navigate directly
+      const urlPath = apiUrl.startsWith('/') ? apiUrl : `/${apiUrl}`;
+      if (urlPath.includes('?')) {
+        const [path, queryString] = urlPath.split('?');
+        const params = new URLSearchParams(queryString);
+        const queryParams: any = {};
+        params.forEach((value, key) => { queryParams[key] = value; });
+        this.router.navigate([path], { queryParams });
+      } else {
+        this.router.navigate([urlPath]);
+      }
+      return;
+    }
+
+    // Fallback to legacy routeDailyPractice for types without a url
+    if (type === 'short video' || typeId === '5' || typeId === '6') {
       this.routeDailyPractice(0);
     } else if (type === 'teentalk' || typeId === '8') {
       this.routeDailyPractice(8);
     } else if (type === 'podcast' || typeId === '9') {
       this.routeDailyPractice(9);
-    } else if (type === 'micro-learning' || type === 'microlearning' || typeId === '7') {
-      this.logeventservice.logEvent('click_microlearning');
-      if (this.isSubscriber) {
-        this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/inner`, textUrl]);
-      } else {
-        const key = `dly_prac_ml_${textUrl}`;
-        let hits = +(localStorage.getItem(key) || 0);
-        if (hits >= 2) {
-          this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
-          return;
-        }
-        localStorage.setItem(key, String(hits + 1));
-        this.router.navigate([`/${SharedService.getprogramName()}/micro-learning/inner`, textUrl]);
-      }
     }
   }
 
   routeToCoach(): void {
     const prefix = SharedService.getprogramName();
-    if (prefix === 'teenagers') {
-      this.router.navigate([`/${prefix}/coach`]);
-    } else {
-      this.router.navigate([`/${prefix}/contact-coach`]);
-    }
+    this.router.navigate([`/${prefix}/coach`]);
   }
 
   routeToForum(): void {

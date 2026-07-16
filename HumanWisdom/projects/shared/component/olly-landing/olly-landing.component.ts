@@ -19,6 +19,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   @Output() viewChanged = new EventEmitter<boolean>();
   
   username: string = '';
+  streak: string = '';
+  isLoggedIn: boolean = false;
   isAdults: boolean = true;
   searchQuery: string = '';
   selectedTopic: { name: string; displayName: string; fragment: string } | null = null;
@@ -213,6 +215,14 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
     this.topicsList = this.isAdults ? OLLY_QUESTIONS.adults : OLLY_QUESTIONS.teens;
 
+    // Determine login state
+    this.isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+
+    // Load streak for logged-in users (teens only — adults handle streak in home component)
+    if (this.isLoggedIn && !this.isAdults) {
+      this.loadStreak();
+    }
+
     // Get username - try multiple sources to find the actual user name
     let userNameVal = SharedService.FnName();
 
@@ -272,6 +282,22 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
 
     if (this.startInQuestionsView) {
       this.toggleQuestionsView(true);
+    }
+  }
+
+  private loadStreak(): void {
+    try {
+      const loginResponse = localStorage.getItem('loginResponse');
+      if (loginResponse) {
+        const loginData = JSON.parse(loginResponse);
+        if (loginData && loginData.Streak) {
+          this.streak = loginData.Streak;
+          return;
+        }
+      }
+      this.streak = '';
+    } catch (error) {
+      this.streak = '';
     }
   }
 
