@@ -36737,12 +36737,11 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
 .toc_adiv_03 .play {
   position: absolute;
-  margin: auto;
-  right: 3px;
-  margin: 0 auto;
-  bottom: 5px;
-  width:24px;
-  height:24px;
+  right: 4px;
+  bottom: 4px;
+  margin: 0;
+  width: 24px;
+  height: 24px;
 }
 
 .cvideo_coach {
