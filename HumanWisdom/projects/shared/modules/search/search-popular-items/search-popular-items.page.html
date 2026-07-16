@@ -266,7 +266,8 @@
                         *ngFor="let item of searchData.WisdomShortsRes">
                         <div class="row p10px">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                            <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                              <div class="prelative list-thumb-media">
                               <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
@@ -274,7 +275,7 @@
 
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg  " alt=""
                                 class="p0" class="p0 session_img_play" *ngIf="isAdults">
-
+                              </div>
                             </div>
 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0">
@@ -417,7 +418,8 @@
                       <a (click)="podcastevent(item)" *ngFor="let item of searchData.PodCastRes">
                         <div class="row p10px">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                            <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                              <div class="prelative list-thumb-media">
                               <img [src]="getPodcastImage(item.PodcastID)" alt=""
                                 class="session_imgnew img-responsive img_podcast_01">
                               <img class="session_img_play" [src]="
@@ -425,6 +427,7 @@
                                   ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
                                   : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_play.svg'
                               " alt="Overlay icon" />
+                              </div>
                             </div>
 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0">
@@ -549,13 +552,15 @@
                       <a (click)="audioevent(item)" *ngFor="let item of searchData.AudioMeditationRes">
                         <div class="row p10px">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                            <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                              <div class="prelative list-thumb-media">
                               <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
                               <img class="session_img_play" [src]="
                                 isAdults
                                   ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
                                   : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'
                               " alt="Overlay icon" />
+                              </div>
                             </div>
 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0">
@@ -682,13 +687,15 @@
                       <a (click)="soundscapeEvent(item)" *ngFor="let item of searchData.SoundscapesRes">
                         <div class="row p10px">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                            <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                              <div class="prelative list-thumb-media">
                               <img [src]="item.ImageUrl" alt="" class="session_imgnew img-responsive img_podcast_01">
                               <img class="session_img_play" [src]="
                                 isAdults
                                   ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
                                   : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'
                                " alt="Overlay icon" />
+                              </div>
                             </div>
 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0">
@@ -1187,7 +1194,8 @@
                       <a (click)="youtube(item)" *ngFor="let item of searchData.EventsRes">
                         <div class="row p10px">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                            <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
+                            <div class="col-md-4 col-sm-4 col-xs-4 p0">
+                              <div class="prelative list-thumb-media">
                               <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
@@ -1195,6 +1203,7 @@
 
                               <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg  " alt=""
                                 class="p0" class="p0 session_img_play" *ngIf="isAdults">
+                              </div>
                             </div>
 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0">
