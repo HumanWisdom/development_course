@@ -1339,6 +1339,7 @@ if (teenagersClick) {
 
 const teenagerCoverClick = document.getElementById('teenagerCoverClick');
 if (teenagerCoverClick) {
+    logevent("click_teenagers", "splash_options.php");
     teenagerCoverClick.addEventListener('click', function () {
         //    window.location.href = url+"/teenagers/onboarding/login/";
         window.location.href = url+"/teenagers/intro-carousel";
@@ -1347,6 +1348,8 @@ if (teenagerCoverClick) {
 
 const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
+    logevent("click_adults", "splash_options.php");
+
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
            window.location.href = url+"/adults/onboarding/login";
