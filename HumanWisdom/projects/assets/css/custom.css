@@ -31882,7 +31882,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 .hamburger_sociali {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .hamburger_sociali a {
@@ -34531,6 +34531,21 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin-top: 100px;
 }
 
+
+
+.btn_ctdout {
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 100px;
+    /* background: #ED7D6F !important; */
+    background: #FFD889 !important;
+    color: #000 !important;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%;
+}
 .btn_ctd {
   height: 50px;
   width: 100%;
@@ -37102,10 +37117,9 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
 .toc_adiv_03 .play {
   position: absolute;
-  margin: auto;
-  right: 5%;
-  margin: 0 auto;
-  bottom: 5%;
+  right: 4px;
+  bottom: 4px;
+  margin: 0;
   height: 24px;
   width: 24px;
 }
@@ -37545,6 +37559,12 @@ span {
   opacity: 50%;
 }
 
+.hr_style_v3_15 {
+  border: 1px solid #000000;
+  opacity: 0.1;
+  margin: 0 0 20px 0;
+}
+
 .dflex_start {
   display: flex;
   align-items: start;
@@ -37878,7 +37898,7 @@ div.contentdiv p {
 .tfas-plan-card-wrapper {
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   background: #FFD889;
   /* border: 2px solid transparent; */
   cursor: pointer;
@@ -37888,7 +37908,7 @@ div.contentdiv p {
 .tfas-plan-card-wrapper.tfas-plan-selected {
   /* border: 2px solid #D7586B; */
   background: #FFF3D6;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .tfas-plan-option {

@@ -4,3 +4,14 @@
     border-radius: 39px;
     object-fit: cover;
 }
+
+/* Forum tab is the positioning anchor for Olly */
+.olly-anchor {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+:host ::ng-deep .mfooter,
+:host ::ng-deep .ftray {
+  overflow: visible !important;
+}

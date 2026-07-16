@@ -34277,6 +34277,19 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   padding: 12px 10px;
 }
 
+
+.btn_ctdout {
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 100px;
+    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 150%;
+}
 .btn_ctd {
   height: 50px;
   width: 100%;
@@ -36724,12 +36737,11 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 
 .toc_adiv_03 .play {
   position: absolute;
-  margin: auto;
-  right: 3px;
-  margin: 0 auto;
-  bottom: 5px;
-  width:24px;
-  height:24px;
+  right: 4px;
+  bottom: 4px;
+  margin: 0;
+  width: 24px;
+  height: 24px;
 }
 
 .cvideo_coach {
@@ -37364,7 +37376,7 @@ div.contentdiv p {
 .tfas-plan-card-wrapper {
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   background: #0C2B5F;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -37372,7 +37384,7 @@ div.contentdiv p {
 
 .tfas-plan-card-wrapper.tfas-plan-selected {
   background: #031A41;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .tfas-plan-option {
