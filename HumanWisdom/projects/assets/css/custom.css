@@ -23971,6 +23971,7 @@ ul.dh_ul li:last-child {
   width: 82px;
   height: 82px;
   position: relative;
+  border: 5px solid #FFE8BB;
   overflow: hidden;
   border-radius: 50%;
   object-fit: cover;
