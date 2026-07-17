@@ -26,7 +26,7 @@ import { WellnessSurveyIntroPage } from '../../../../shared/component/wellness-s
 const routes: Routes = [
   {
     path: 'home',
-    redirectTo: 'explore',
+    redirectTo: 'today',
     pathMatch: 'full'
   },
   {

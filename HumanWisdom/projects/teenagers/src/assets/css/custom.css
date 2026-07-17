@@ -34279,17 +34279,18 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 
 .btn_ctdout {
-    height: 50px;
-    width: 100%;
-    margin: 0;
-    border: 0;
-    border-radius: 100px;
-    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
-    color: #fff !important;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 150%;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 100px;
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+  color: #fff !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
 }
+
 .btn_ctd {
   height: 50px;
   width: 100%;
@@ -37064,6 +37065,11 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   border-top: 1px rgba(255, 255, 255, .5) dashed;
   margin: 15px 0;
   opacity: 50%;
+}
+
+.hr_style_v3_15 {
+  border: 1px solid #FFFFFF1A;
+  margin: 0 0 20px 0;
 }
 
 .dflex_start {
