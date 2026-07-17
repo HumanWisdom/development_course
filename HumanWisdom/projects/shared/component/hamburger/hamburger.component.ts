@@ -463,6 +463,13 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       if (this.ios || this.isAndroid) {
       return; // Do not navigate on mobile devices for subscription
       }
+
+      if (!this.isloggedIn) {
+             localStorage.setItem('subscriberRedirectUrl', this.router.url);
+            SharedService.UrlToRedirect = `/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
+            this.loginroute();
+             return;
+      }
     }
     let currentRoute = route;
     if (!this.isAdults && route) {
