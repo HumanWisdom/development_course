@@ -27,7 +27,7 @@ img { max-width: 100%; display: block; }
   font-size: 60px;
   line-height: 1.3;
   font-weight: 600;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 247, 230, 1);
   width: 400px;
 }
 .frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
@@ -44,7 +44,7 @@ img { max-width: 100%; display: block; }
 .frame-wrapper.web_home_divlanding .rating-row .fs_15px.fw_700,
 .frame-wrapper.web_home_divlanding .rating_a .fa-star,
 .frame-wrapper.web_home_divlanding .appstore_a .fa-apple {
-  color: #fff !important;
+  color: rgba(255, 247, 230, 1) !important;
 }
 .web_home_divlanding .hero-try-free-link {
   display: inline-flex;
@@ -114,7 +114,7 @@ img { max-width: 100%; display: block; }
     font-size: 60px !important;
     line-height: 1.3 !important;
     font-weight: 600 !important;
-    color: rgba(255, 255, 255, 1) !important;
+    color: rgba(255, 247, 230, 1) !important;
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle {
     font-size: 21px !important;
