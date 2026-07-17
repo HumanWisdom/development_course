@@ -39,14 +39,14 @@ img { max-width: 100%; display: block; }
   font-size: 60px;
   line-height: 1.3;
   font-weight: 600;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 247, 230, 1);
   width: 400px;
 }
 .frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
   color: rgba(237, 125, 111, 1);
 }
 .frame-wrapper.web_home_divlanding #hw-website-title:hover {
-  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(255, 247, 230, 1) !important;
 }
 .frame-wrapper.web_home_divlanding #hw-website-title:hover .hero-title-accent {
   color: rgba(237, 125, 111, 1) !important;
@@ -72,7 +72,7 @@ img { max-width: 100%; display: block; }
   text-decoration-color: #ED7D6F;
 }
 
-/* Life skills popup — Figma: 335×524 hug, pad 20, gap 20, radius 24; close in own row */
+/* Life skills popup — Figma: 335 hug height, pad 20, gap 20, radius 24; close 30×30 */
 .human-skills-dialog {
   width: 335px;
   max-width: calc(100vw - 40px);
@@ -89,13 +89,13 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   width: 335px;
   max-width: 100%;
-  min-height: 524px;
   height: auto;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(255, 249, 238, 1) 0%, rgba(255, 244, 225, 1) 100%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  height:524px;
 }
 .human-skills-modal-close-row {
   display: flex;
@@ -123,6 +123,11 @@ img { max-width: 100%; display: block; }
 .human-skills-modal-close:hover {
   background: rgba(238, 161, 112, 0.35);
 }
+.human-skills-modal-close svg {
+  width: 9px;
+  height: 9px;
+  display: block;
+}
 .human-skills-modal-inner {
   display: flex;
   flex-direction: column;
@@ -132,7 +137,7 @@ img { max-width: 100%; display: block; }
   width: 100%;
   max-width: 295px;
   margin: 0 auto;
-  flex: 1;
+  flex: 0 0 auto;
 }
 .human-skills-modal-header {
   background: transparent;
@@ -181,17 +186,18 @@ img { max-width: 100%; display: block; }
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
+  padding-bottom: 4px;
 }
 .human-skills-list li:last-child {
   border-bottom: none;
 }
 
-/* Hero dark gradient: rating row — light icons/text */
+/* Hero dark gradient: rating row — cream icons/text (Figma) */
 .frame-wrapper.web_home_divlanding .rating-row,
 .frame-wrapper.web_home_divlanding .rating-row .fs_15px.fw_700,
 .frame-wrapper.web_home_divlanding .rating_a .fa-star,
 .frame-wrapper.web_home_divlanding .appstore_a .fa-apple {
-  color: #fff !important;
+  color: rgba(255, 247, 230, 1) !important;
 }
 
 /* Hero primary CTA — same gradient + hover as "Chat with Olly now"; Figma 317×65 */
@@ -224,7 +230,7 @@ img { max-width: 100%; display: block; }
     font-size: 60px !important;
     line-height: 1.3 !important;
     font-weight: 600 !important;
-    color: rgba(255, 255, 255, 1) !important;
+    color: rgba(255, 247, 230, 1) !important;
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle {
     font-size: 21px !important;
@@ -298,7 +304,7 @@ p:hover {
 
 /* headline */
 .frame-wrapper-2 { width: 100%; }
-.div-4  { display: flex; flex-direction: column; gap: 16px; }
+.div-4  { display: flex; flex-direction: column; gap: 24px; }
 .div-5  { display: flex; flex-direction: column; gap: 16px; }
 
 
@@ -395,7 +401,7 @@ p:hover {
 /* ========================================
    TOPICS GRID
 ======================================== */
-.div-7 { width: 100%; max-width: 1340px; padding: 60px 80px; display: flex; flex-direction: column; gap: 60px; }
+.div-7 { width: 100%; max-width: 1340px; padding: 60px 80px; display: flex; flex-direction: column; gap: 40px; }
 .div-wrapper-2 { display: flex; justify-content: center; }
 .text-wrapper-6 { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; padding-bottom: 40px; }
 .text-wrapper-6-1{ font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; }
@@ -430,6 +436,7 @@ p:hover {
    VIDEO / GENERIC CENTER COL
 ======================================== */
 .div-13 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.div-13:not(#exploreBlogSection) { padding-top: 20px; }
 .text-wrapper-21 { font-size: 24px; font-weight: 600; color: #000; text-align: center; margin: 0; }
 /* 16:9 box; iframe fills it (overrides global #youtubeIntro fixed sizes from responsive.css / index.css) */
 .youtube-player {
@@ -457,7 +464,7 @@ p:hover {
   border-radius: 0;
 }
 .div-new_1 {
-  padding: 0 20px;
+  padding: 100px 20px 0;
   box-sizing: border-box;
 }
 .div-new_1 .text-wrapper-6 {
@@ -480,7 +487,7 @@ p:hover {
 /* ========================================
    TESTIMONIALS
 ======================================== */
-.div-14 { width: 100%; max-width: 1340px; padding: 0px 20px; display: flex; flex-direction: column; gap: 40px; align-items: center; }
+.div-14 { width: 100%; max-width: 1340px; padding: 20px 20px 0; display: flex; flex-direction: column; gap: 40px; align-items: center; }
 .div-15 { display: flex; gap: 30px; flex-wrap: wrap; width: 100%;padding-left: 50px;
     padding-right: 50px; }
 .frame-wrapper-4 { flex: 1; min-width: 280px; background: rgba(255, 244, 230, 1); border-radius: 20px; padding: 36px; }
@@ -686,7 +693,7 @@ header a[href*="splash_options.php"] * {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 20px 20px 60px;
   box-sizing: border-box;
 }
 .why-different-inner {
@@ -910,6 +917,7 @@ header a[href*="splash_options.php"] * {
    ORGANISATION CARDS
 ======================================== */
 .div-23 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; gap: 40px; align-items: center; }
+.div-23 > .text-wrapper-6 { padding-top: 20px; }
 .div-24 { display: flex; gap: 30px; flex-wrap: wrap; width: 100%; justify-content: center;padding-left: 50px; padding-right: 50px; }
 .div-25 {
   display: flex; flex-direction: column; flex: 1; min-width: 280px; max-width: 429px;
@@ -1635,6 +1643,7 @@ header a[href*="splash_options.php"] * {
   padding-bottom: 40px;
 }
 .coaches-section > .text-wrapper-6-1 {
+  padding-top: 40px;
   padding-bottom: 0;
 }
 .coaches-outer {
