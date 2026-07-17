@@ -315,7 +315,7 @@
 .continue-card-new {
   /* Adults: loading/skeleton bg; overridden to teens bg via parent class below */
   background: #FFE8BB !important;
-  border-radius: 16px !important;
+  border-radius: 12px !important;
   padding: 15px !important;
   display: flex !important;
   align-items: center !important;
@@ -342,7 +342,7 @@
   width: 100px !important;
   height: 100px !important;
   flex-shrink: 0 !important;
-  border-radius: 12px !important;
+  border-radius: 6px !important;
   overflow: hidden !important;
 
   img {
@@ -402,7 +402,7 @@
 .mood-card-new {
   flex: 1 !important;
   height: 115px !important;
-  border-radius: 16px !important;
+  border-radius: 12px !important;
   background: linear-gradient(180deg, #7E3157 0%, #220E3F 100%) !important;
   padding: 12px 10px !important;
   display: flex !important;
@@ -443,8 +443,8 @@
 .wellness-card-new {
   flex: 1 !important;
   height: 115px !important;
-  border-radius: 16px !important;
-  background: linear-gradient(135deg, #3DCFC4 0%, #2BB5AA 100%) !important;
+  border-radius: 12px !important;
+  background: linear-gradient(360deg, #0B8A8D 0%, #3CD5DB 100%) !important;
   padding: 12px 16px !important;
   display: flex !important;
   flex-direction: column !important;
@@ -495,9 +495,9 @@
 /* Guided Journeys */
 .guided-journey-card-new {
   background: #FFE8BB !important;
-  border-radius: 16px !important;
+  border-radius: 12px !important;
   overflow: hidden !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 20px !important;
   cursor: pointer !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 
@@ -553,7 +553,7 @@
 /* Dynamic Practice Cards Redesign */
 .practice-card-new {
   background: #FFE8BB !important;
-  border-radius: 16px !important;
+  border-radius: 12px !important;
   text-decoration: none !important;
   cursor: pointer !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
@@ -573,7 +573,7 @@
       height: 100px !important;
       position: relative !important;
       flex-shrink: 0 !important;
-      border-radius: 12px !important;
+      border-radius: 6px !important;
       overflow: hidden !important;
 
       img {
@@ -618,7 +618,7 @@
       width: 100% !important;
       aspect-ratio: 16/9 !important;
       position: relative !important;
-      border-radius: 12px !important;
+      border-radius: 6px !important;
       overflow: hidden !important;
 
       img {
@@ -705,7 +705,7 @@
 /* Contact a Coach Card */
 .coach-card-new {
   background: linear-gradient(135deg, #6C2366 0%, #1A0D2E 100%) !important;
-  border-radius: 16px !important;
+  border-radius: 12px !important;
   padding: 18px 20px !important;
   margin-top: 15px !important;
   margin-bottom: 15px !important;
@@ -967,7 +967,7 @@
 /* Community Forum Card */
 .forum-card-new {
   background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%) !important;
-  border-radius: 16px !important;
+  border-radius: 12px !important;
   padding: 16px 20px !important;
   // margin-bottom: 15px !important;
   display: flex !important;
@@ -1105,7 +1105,8 @@
   /* ---- Contact a coach (box_v3_01) ---- */
   .box_v3_01 {
     background: linear-gradient(180deg, #6183BE 0%, #4267A5 100%) !important;
-    border-radius: 16px !important;
+    border-radius: 12px !important;
+    border: none !important;
   }
 
   /* ---- Quote of the day ---- */
@@ -1231,5 +1232,15 @@
     strong {
       font-weight: 700;
     }
+  }
+
+  .hr_style_v3_02, .hr_style_v3_15{
+    border: 1px solid #0000001A;
+  }
+}
+
+.v1_3_bg_splash_teens {
+  .hr_style_v3_02, .hr_style_v3_15 {
+    border: 1px solid #FFFFFF1A;
   }
 }

@@ -11,15 +11,18 @@
 
         <div class="x_panel p0">
           <div class="x_content p0">
-            <div class="row  mt70px mb5px" *ngIf="!isQuestionsViewActive">
+            <div class="row mb5px" [style.margin-top]="checkBanner() ? '140px' : '70px'" *ngIf="!isQuestionsViewActive">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                 <div class="mdp-streak-row" *ngIf="isloggedIn && streak">
-                  <div class="mdp-streak-badge" [ngClass]="isAdults ? 'mdp-streak-badge--adults' : 'mdp-streak-badge--teens'">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/streak_teenn.svg" alt="streak" class="mdp-streak-icon" />
+                  <div class="mdp-streak-badge"
+                    [ngClass]="isAdults ? 'mdp-streak-badge--adults' : 'mdp-streak-badge--teens'">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/streak_teenn.svg"
+                      alt="streak" class="mdp-streak-icon" />
                     <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> days</span>
                   </div>
                 </div>
-                <h4 class="mb5px fw_600 fs_24px lh_140p" [ngClass]="[isAdults ? 'fc_000000' : 'fc_ffffff', (isloggedIn && streak) ? 'mt10px' : 'mt50px']">
+                <h4 class="mb5px fw_600 fs_24px lh_140p"
+                  [ngClass]="[isAdults ? 'fc_000000' : 'fc_ffffff', (isloggedIn && streak) ? 'mt10px' : 'mt50px']">
                   <span *ngIf="guest || !userName">Hi there!</span>
                   <span *ngIf="!guest && userName">Hi {{userName}}!</span>
                 </h4>
@@ -36,7 +39,7 @@
             <!-- v1.1 -->
             <div *ngIf="!isQuestionsViewActive">
               <!-- CONTINUE WHERE YOU LEFT - moved first per Figma -->
-              <div class="row mt30px" *ngIf="isloggedIn && resumeLastvisited.length !== 0"
+              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0"
                 style="margin-left: 0; margin-right: 0;">
                 <h4 class="continue-section-label mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                   style="letter-spacing: 0.5px;">
@@ -138,13 +141,6 @@
                 </div>
               </div>
 
-              <!-- hr -->
-              <div class="row" style="margin-left: 0; margin-right: 0; margin-top: 5px; margin-bottom: 15px;">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <hr class="hr_style_v3_02" style="margin: 0;">
-                </div>
-              </div>
-              <!-- /hr -->
               <!-- <div class="row" *ngIf="!isSubscriber">
 
 
